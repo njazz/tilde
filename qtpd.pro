@@ -31,7 +31,8 @@ SOURCES += main.cpp\
     cm_gui.cpp \
     cm_menu.cpp \
     cm_pdwindow.cpp \
-    cm_patchwindow.cpp
+    cm_patchwindow.cpp \
+    cm_objectmaker.cpp
 
 HEADERS  += \
     cm_box.h \
@@ -41,7 +42,8 @@ HEADERS  += \
     cm_gui.h \
     cm_menu.h \
     cm_pdwindow.h \
-    cm_patchwindow.h
+    cm_patchwindow.h \
+    cm_objectmaker.h
 
 FORMS    += \
     cm_basewindow.ui \

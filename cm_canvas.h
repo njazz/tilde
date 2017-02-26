@@ -5,13 +5,14 @@
 #include <QtGui>
 #include <QtWidgets>
 #include "cm_box.h"
+#include "cm_objectmaker.h"
 
 class cm_canvas : public QWidget
 {
     Q_OBJECT
 public:
     //encapsulate
-    cm_box *dragObject;
+    QWidget *dragObject;
 
     explicit cm_canvas(QWidget *parent = 0);
 
@@ -34,9 +35,18 @@ public:
 
     }
 
+    /////
+
+
+
 signals:
 
 public slots:
+
+    void portMousePressed();
+    void portMouseReleased();
+    void portMouseEntered();
+    void portMouseLeaved();
 
 private:
 

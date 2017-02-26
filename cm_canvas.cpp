@@ -12,3 +12,22 @@ cm_canvas::cm_canvas(QWidget *parent) : QWidget(parent)
 
 }
 
+///////
+
+
+void cm_canvas::portMousePressed()
+{
+
+}
+void cm_canvas::portMouseReleased()
+{
+
+}
+void cm_canvas::portMouseEntered()
+{
+
+}
+void cm_canvas::portMouseLeaved()
+{
+
+}

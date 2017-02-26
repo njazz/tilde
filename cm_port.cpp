@@ -2,9 +2,12 @@
 
 cm_port::cm_port(QWidget *parent) : QWidget(parent)
 {
-    this->setBaseSize(8,3);
+    this->setFixedSize(8,3);
 
 }
 
+
+
+//////////
 
 

@@ -15,9 +15,11 @@ private:
     QAction *putSymbolAct;
     QAction *putCommentAct;
 
+    cm_objectmaker* objectMaker;
 public:
     cm_patchwindow();
     cm_canvas* canvas;
+
 
     void createActions()
     {
@@ -54,11 +56,32 @@ public:
 
     void newObjectBox()
     {
-        cm_box* newBox = new cm_box(this);
-        newBox->move(50,50);
+        //        cm_box* newBox = new cm_box(this);
+        //        newBox->move(50,50);
+        //        newBox->show();
+
+        //if (!this->objectMaker)
+
+        this->objectMaker->move(100,50);
+        this->objectMaker->setFixedSize(60,30);
+        this->objectMaker->setFocus();
+
+        this->canvas->dragObject = this->objectMaker;
+        this->objectMaker->show();
+
+    }
+
+    void objectMakerDone()
+    {
+        cm_box* newBox = new cm_box(this->canvas);
+        newBox->move(this->objectMaker->pos());
+        newBox->pdObjName = this->objectMaker->text().toStdString();
         newBox->show();
 
-        //this->canvas->dragObject = newBox;
+        this->canvas->dragObject = 0;
+        this->objectMaker->close();
+
+        //delete this->objectMaker;
     }
 
 

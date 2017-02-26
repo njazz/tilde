@@ -11,13 +11,6 @@ cm_patchwindow::cm_patchwindow()
 
     QScrollArea *scr = new QScrollArea(this);
 
-//    QHBoxLayout *horizontalLayout = new QHBoxLayout(this);
-
-//    horizontalLayout->setContentsMargins(0, 0, 0, 0);
-//    horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-
-//    horizontalLayout->addWidget(scr);
-
     scr->setFrameShape(QFrame::NoFrame);
 
     this->canvas = new cm_canvas(scr);
@@ -30,6 +23,13 @@ cm_patchwindow::cm_patchwindow()
     cm_box *box2 = new cm_box(this->canvas);
     box2->move(30,100);
     box2->pdObjName = "dac~";
+
+    this->objectMaker = new cm_objectmaker();
+    this->objectMaker->setParent(this->canvas);
+    connect(this->objectMaker,&cm_objectmaker::returnPressed, this, &cm_patchwindow::objectMakerDone);
+    this->objectMaker->close();
+
+
 
 
 

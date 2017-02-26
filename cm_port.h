@@ -37,11 +37,15 @@ public:
         this->hover = true;
         this->repaint();
 
+        emit mouseEntered();
+
     }
     void leaveEvent(QEvent *)
     {
         this->hover = false;
         this->repaint();
+
+        emit mouseLeaved();
 
     }
 

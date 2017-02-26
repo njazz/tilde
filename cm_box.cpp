@@ -14,3 +14,26 @@ cm_box::cm_box(QWidget *parent) : QWidget(parent)
     this->move(30,30);
 
 }
+
+
+
+
+///////////////////
+
+
+void cm_box::portMousePressed()
+{
+
+}
+void cm_box::portMouseReleased()
+{
+
+}
+void cm_box::portMouseEntered()
+{
+
+}
+void cm_box::portMouseLeaved()
+{
+
+}

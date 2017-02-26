@@ -84,6 +84,8 @@ public:
         cm_port* new_in = new cm_port;
         new_in->port_type = cm_port::cm_pt_inlet;
         inlets_.push_back(new_in);
+        connect(new_in,&cm_port::mousePressed, this, &cm_box::portMousePressed);
+        connect(new_in,&cm_port::mouseReleased, this, &cm_box::portMouseReleased);
     }
 
     void addOutlet()
@@ -91,6 +93,8 @@ public:
         cm_port* new_out = new cm_port;
         new_out->port_type = cm_port::cm_pt_outlet;
         outlets_.push_back(new_out);
+        connect(new_out,&cm_port::mousePressed, this, &cm_box::portMousePressed);
+        connect(new_out,&cm_port::mouseReleased, this, &cm_box::portMouseReleased);
     }
 
 signals:
@@ -106,10 +110,10 @@ signals:
 
 public slots:
 
-    void inletMousePressed();
-    void inletMouseReleased();
-    void inletMouseEntered();
-    void inletMouseLeaved();
+    void portMousePressed();
+    void portMouseReleased();
+    void portMouseEntered();
+    void portMouseLeaved();
 
 
 
