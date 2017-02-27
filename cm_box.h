@@ -48,11 +48,11 @@ public:
                 }
     }
 
-    void resizeEvent()
-    {
+//    void resizeEvent()
+//    {
 
 
-    }
+//    }
 
     void mousePressEvent(QMouseEvent *ev)
     {
@@ -61,7 +61,7 @@ public:
         this->dragOffset = ev->pos();
     }
 
-    void mouseReleaseEvent(QMouseEvent *e)
+    void mouseReleaseEvent(QMouseEvent *)
     {
         //this->selected_ = false;
         this->repaint();
@@ -81,7 +81,7 @@ public:
 
     void setInletsPos()
     {
-        for (int i =0;i<inlets_.size(); i++)
+        for (int i =0;i<(int)inlets_.size(); i++)
         {
             float w = this->width()-1;
             w = (w<30)?30:w;
@@ -95,7 +95,7 @@ public:
 
     void setOutletsPos()
     {
-        for (int i =0;i<outlets_.size(); i++)
+        for (int i =0;i<(int)outlets_.size(); i++)
         {
             float w = this->width()-1;
             w = (w<30)?30:w;

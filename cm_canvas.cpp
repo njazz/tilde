@@ -23,7 +23,7 @@ cm_canvas::cm_canvas(cm_widget *parent) : cm_widget(parent)
 
 ///////
 
-void cm_canvas::s_InMousePressed(cm_widget* obj, QMouseEvent* ev)
+void cm_canvas::s_InMousePressed(cm_widget* obj, QMouseEvent* )
 {
     //    printf("in: mouse pressed\n");
 
@@ -41,7 +41,7 @@ void cm_canvas::s_InMousePressed(cm_widget* obj, QMouseEvent* ev)
 
 }
 
-void cm_canvas::s_InMouseReleased(cm_widget* obj, QMouseEvent* ev)
+void cm_canvas::s_InMouseReleased(cm_widget* , QMouseEvent* )
 {
     //    printf("in:  mouse released\n");
 
@@ -49,7 +49,7 @@ void cm_canvas::s_InMouseReleased(cm_widget* obj, QMouseEvent* ev)
 
 }
 
-void cm_canvas::s_OutMousePressed(cm_widget* obj, QMouseEvent* ev)
+void cm_canvas::s_OutMousePressed(cm_widget* obj, QMouseEvent* )
 {
     //    printf("out: mouse pressed\n");
 
@@ -62,7 +62,7 @@ void cm_canvas::s_OutMousePressed(cm_widget* obj, QMouseEvent* ev)
 
 }
 
-void cm_canvas::s_OutMouseReleased(cm_widget* obj, QMouseEvent* ev)
+void cm_canvas::s_OutMouseReleased(cm_widget* , QMouseEvent* )
 {
     //    printf("out:  mouse released\n");
 

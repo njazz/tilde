@@ -80,7 +80,7 @@ public:
     }
     void paintPatchcords()
     {
-        for (int i=0; i< this->patchcords.size(); i++)
+        for (int i=0; i< (int)this->patchcords.size(); i++)
         {
             QPainter p(this);
 
@@ -97,7 +97,7 @@ public:
     bool hoverPatchcords(QPoint pos)
     {
         bool ret = false;
-        for (int i=0; i< this->patchcords.size(); i++)
+        for (int i=0; i< (int)this->patchcords.size(); i++)
         {
             ((cm_patchcord*)this->patchcords.at(i))->mouseover = ((cm_patchcord*)this->patchcords.at(i))->hover(pos);
             if (((cm_patchcord*)this->patchcords.at(i))->mouseover) ret=true;
@@ -108,7 +108,7 @@ public:
     bool clickPatchcords(QPoint pos)
     {
         bool ret = false;
-        for (int i=0; i< this->patchcords.size(); i++)
+        for (int i=0; i< (int)this->patchcords.size(); i++)
         {
             ((cm_patchcord*)this->patchcords.at(i))->selected = ((cm_patchcord*)this->patchcords.at(i))->hover(pos);
             if (((cm_patchcord*)this->patchcords.at(i))->selected) ret=true;
@@ -136,7 +136,7 @@ public:
         //selection frame
         if (this->selFrame.active)
         {
-            for (int i=0; i< this->objectBoxes.size();i++)
+            for (int i=0; i< (int)this->objectBoxes.size();i++)
             {
                 QPoint pos = ((cm_box*)this->objectBoxes.at(i))->pos();
                 QSize size = ((cm_box*)this->objectBoxes.at(i))->size();
@@ -165,17 +165,25 @@ public:
         //patchcords
         if (this->hoverPatchcords(pos)) this->repaint();
 
+        //remove patchcord selection if making frame
+        if (this->selFrame.active)
+            this->clickPatchcords(QPoint(-1,-1));
+
     }
 
     void mousePressEvent(QMouseEvent* ev)
     {
         this->selFrame.active = true;
         this->selFrame.start = ev->pos();
-        this->selFrame.end = ev->pos();
+        this->selFrame.end = QPoint(0,0);
 
         deselectBoxes();
 
+        //deselect
+        this->hoverPatchcords(QPoint(-1,-1));
+
         this->clickPatchcords(ev->pos());
+        this->repaint();
 
     }
     void mouseReleaseEvent(QMouseEvent*)
@@ -192,7 +200,7 @@ public:
 
     void deselectBoxes()
     {
-        for (int i=0;i<this->selObjectBoxes.size();i++)
+        for (int i=0;i< (int)this->selObjectBoxes.size();i++)
         {
             if (this->selObjectBoxes.at(i))
                 ((cm_box*)this->selObjectBoxes.at(i))->deselect();
@@ -285,7 +293,7 @@ public:
 
     void delBoxes()
     {
-        for (int i=0;i<this->selObjectBoxes.size(); i++)
+        for (int i=0;i< (int)this->selObjectBoxes.size(); i++)
         {
             this->deleteBox( ((cm_box*) this->selObjectBoxes.at(i))  );
         }
@@ -314,9 +322,9 @@ signals:
 public slots:
 
     void s_InMousePressed(cm_widget* obj, QMouseEvent* ev);
-    void s_InMouseReleased(cm_widget* obj, QMouseEvent* ev);
-    void s_OutMousePressed(cm_widget* obj, QMouseEvent* ev);
-    void s_OutMouseReleased(cm_widget* obj, QMouseEvent* ev);
+    void s_InMouseReleased(cm_widget*, QMouseEvent*);
+    void s_OutMousePressed(cm_widget* obj, QMouseEvent*);
+    void s_OutMouseReleased(cm_widget*, QMouseEvent*);
 
     void s_SelectBox(cm_box* box);
 

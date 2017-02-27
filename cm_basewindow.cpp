@@ -1,5 +1,5 @@
 #include "cm_basewindow.h"
-#include "ui_mainwindow.h"
+#include "ui_cm_basewindow.h"
 #include <QApplication>
 #include <QtGui>
 #include <QGridLayout>

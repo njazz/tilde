@@ -15,9 +15,7 @@ private:
     cm_widget* obj2;
     cm_widget* in2;
 
-
     enum {cm_pt_anything, cm_pt_signal} patchcordType;
-
 
 public:
     bool mouseover;
@@ -27,15 +25,6 @@ public:
     cm_patchcord();
     cm_patchcord(cm_widget* obj1, cm_widget* out1, cm_widget* obj2, cm_widget* in2);
 
-//    void paintEvent(QPaintEvent *)
-//    {    QPainter p(this);
-//         //p.setRenderHint(QPainter::SmoothPixmapTransform,true);
-//         p.setPen(QPen((!this->selected_? QColor(0, 0, 0) : QColor(0,192,255)), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-//          p.drawLine(0,0,this->width(),this->height());
-//    }
-
-//    /////
-//    //todo move
     QPoint getStartPoint()
     {
 
@@ -68,9 +57,23 @@ public:
         float rx = end.x() - start.x();
         float ry = end.y() - start.y();
 
-        float ty = ry * (pos.x() - start.x()) / rx + start.y();
+        float ty = ry * (pos.x() - start.x()) / rx + start.y()  ;
+        float tx = rx * (pos.y() - start.y()) / ry + start.x()  ;
 
-        return (abs(pos.y() - ty)<5);
+        bool rx1_res = (abs((float)pos.y() - ty)<7.) ;
+        //bool rx0_res = (abs(pos.x() - (int)tx)<7) ;
+
+        bool rx0_res = ( (
+                             (pos.y() > start.y())
+                             &&
+                             (pos.y() < end.y())
+                             )
+                         &&
+                         (pos.x() == start.x())
+                         );
+
+        return (rx>0) ? rx1_res : rx0_res;
+
 
     }
 
