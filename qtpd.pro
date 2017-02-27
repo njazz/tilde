@@ -47,7 +47,8 @@ HEADERS  += \
     cm_patchwindow.h \
     cm_objectmaker.h \
     cm_widget.h \
-    cm_patchcord.h
+    cm_patchcord.h \
+    cm_pdlink.h
 
 FORMS    += \
     cm_basewindow.ui \

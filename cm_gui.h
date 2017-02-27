@@ -11,8 +11,6 @@
 
 #include "cm_canvas.h"
 
-
-
 //#include "cm_menu.h"
 
 class cm_gui : public QObject

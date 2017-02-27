@@ -9,7 +9,7 @@
 #include "cm_menu.h"
 
 namespace Ui {
-class cm_basewindow;
+    class cm_basewindow;
 }
 
 class cm_basewindow : public QMainWindow
