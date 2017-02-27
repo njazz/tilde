@@ -145,12 +145,14 @@ public:
 
     cm_port* getInletAt(int idx)
     {
+        //check range!
         return this->inlets_.at(idx);
 
     }
 
     cm_port* getOutletAt(int idx)
     {
+        //check range!
         return this->outlets_.at(idx);
 
 

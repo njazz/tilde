@@ -26,6 +26,7 @@ cm_patchwindow::cm_patchwindow()
     box2->move(30,100);
 
     this->canvas->patchcord(box1,0,box2,1);
+    this->canvas->patchcord(box1,0,box2,0);
 
     //cm_patchcord *pc = new cm_patchcord(this->canvas);
     //pc->setPorts(box1,box2,box1->getOutletAt(0), box2->getInletAt(1));

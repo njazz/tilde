@@ -42,6 +42,11 @@ class cm_canvas : public cm_widget
 
     tRectPlus selFrame;
     tRectPlus newLine;
+
+    //
+    cm_widget *conn_obj1;
+    cm_widget *conn_out;
+
     Q_OBJECT
 public:
     //encapsulate
@@ -189,6 +194,17 @@ public:
     {
         cm_port* outport = obj1->getOutletAt(outlet);
         cm_port* inport = obj2->getInletAt(inlet);
+
+        cm_patchcord* pc = new cm_patchcord(obj1,outport,obj2,inport);
+
+        this->patchcords.push_back(pc);
+
+
+    }
+
+    //temporary?
+    void patchcord(cm_widget* obj1, cm_widget* outport, cm_widget* obj2, cm_widget* inport)
+    {
 
         cm_patchcord* pc = new cm_patchcord(obj1,outport,obj2,inport);
 
