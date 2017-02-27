@@ -9,6 +9,8 @@ class cm_patchwindow : public cm_basewindow
 {
 
 private:
+    QAction *delObjectAct;
+
     QAction *putObjectAct;
     QAction *putMessageAct;
     QAction *putNumberAct;
@@ -23,6 +25,10 @@ public:
 
     void createActions()
     {
+
+        delObjectAct = new QAction(tr("Delete object"), this);
+        delObjectAct->setShortcut(tr("Backspace"));
+        connect(delObjectAct, &QAction::triggered, this, &cm_patchwindow::delObjectBox);
 
         putObjectAct = new QAction(tr("Object"), this);
         putObjectAct->setShortcut(tr("Ctrl+1"));
@@ -45,6 +51,9 @@ public:
     void createMenus()
     {
 
+        editMenu->addSeparator();
+        editMenu->addAction(delObjectAct);
+
         putMenu->addAction(putObjectAct);
         putMenu->addAction(putMessageAct);
         putMenu->addAction(putNumberAct);
@@ -56,11 +65,6 @@ public:
 
     void newObjectBox()
     {
-        //        cm_box* newBox = new cm_box(this);
-        //        newBox->move(50,50);
-        //        newBox->show();
-
-        //if (!this->objectMaker)
 
         this->objectMaker->move(100,50);
         this->objectMaker->setFixedSize(60,30);
@@ -68,6 +72,12 @@ public:
 
         this->canvas->dragObject = this->objectMaker;
         this->objectMaker->show();
+
+    }
+
+    void delObjectBox()
+    {
+        this->canvas->delBoxes();
 
     }
 
