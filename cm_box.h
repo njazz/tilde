@@ -7,11 +7,11 @@
 
 #include "cm_port.h"
 
-//#include "cm_gui.h"
+#include "cm_widget.h"
 
 // basic object
 
-class cm_box : public QWidget
+class cm_box : public cm_widget
 {
     Q_OBJECT
 
@@ -26,26 +26,26 @@ public:
 
     QPoint dragOffset;
 
-    explicit cm_box(QWidget *parent = 0);
+    explicit cm_box(cm_widget *parent = 0);
 
     void paintEvent(QPaintEvent *)
     {    QPainter p(this);
-         p.setRenderHint(QPainter::SmoothPixmapTransform,true);
-          p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-           p.drawRect(0,0,this->width(),this->height());
-            QTextOption *op = new QTextOption;
-             op->setAlignment(Qt::AlignLeft);
-              p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+         //p.setRenderHint(QPainter::SmoothPixmapTransform,true);
+         p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+          p.drawRect(0,0,this->width(),this->height());
+           QTextOption *op = new QTextOption;
+            op->setAlignment(Qt::AlignLeft);
+             p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
-               p.setFont(QFont("Monaco",12,0,false));
-                p.drawText(2,2,this->width()-2,this->height()-2,0,this->pdObjName.c_str(),0);
+              p.setFont(QFont("Monaco",11,0,false));
+               p.drawText(2,3,this->width()-2,this->height()-3,0,this->pdObjName.c_str(),0);
 
-                 if (this->selected_)
-                 {
-                     p.setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-                     p.drawRect(0,0,this->width(),this->height());
+                if (this->selected_)
+                {
+                    p.setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+                    p.drawRect(0,0,this->width(),this->height());
 
-                 }
+                }
     }
 
     void resizeEvent()
@@ -73,47 +73,98 @@ public:
         if(event->buttons() & Qt::LeftButton)
         {
 
-        this->move(mapToParent(event->pos() - this->dragOffset));
+            this->move(mapToParent(event->pos() - this->dragOffset));
         }
 
-        emit moved();
+        event->ignore();
+
+    }
+
+    void setInletsPos()
+    {
+        for (int i =0;i<inlets_.size(); i++)
+        {
+            float w = this->width()-1;
+            w = (w<30)?30:w;
+            float x = (w) / inlets_.size() * i;
+            float y = 0;
+
+            inlets_.at(i)->move(x,y);
+            inlets_.at(i)->repaint();
+        }
+    }
+
+    void setOutletsPos()
+    {
+        for (int i =0;i<outlets_.size(); i++)
+        {
+            float w = this->width()-1;
+            w = (w<30)?30:w;
+            float x = (w) / outlets_.size() * i;
+            float y = this->height()-4;
+
+            outlets_.at(i)->move(x,y);
+            outlets_.at(i)->repaint();
+        }
     }
 
     void addInlet()
     {
-        cm_port* new_in = new cm_port;
+        cm_port* new_in = new cm_port(this);
         new_in->port_type = cm_port::cm_pt_inlet;
         inlets_.push_back(new_in);
-        connect(new_in,&cm_port::mousePressed, this, &cm_box::portMousePressed);
-        connect(new_in,&cm_port::mouseReleased, this, &cm_box::portMouseReleased);
+        connect(new_in,&cm_port::mousePressed, (cm_widget*)this->parent(), &cm_widget::s_InMousePressed);
+        connect(new_in,&cm_port::mouseReleased, (cm_widget*)this->parent(), &cm_widget::s_InMouseReleased);
+
+        this->setInletsPos();
     }
 
     void addOutlet()
     {
-        cm_port* new_out = new cm_port;
+        cm_port* new_out = new cm_port(this);
         new_out->port_type = cm_port::cm_pt_outlet;
         outlets_.push_back(new_out);
-        connect(new_out,&cm_port::mousePressed, this, &cm_box::portMousePressed);
-        connect(new_out,&cm_port::mouseReleased, this, &cm_box::portMouseReleased);
+        connect(new_out,&cm_port::mousePressed, (cm_widget*)this->parent(), &cm_widget::s_OutMousePressed);
+        connect(new_out,&cm_port::mouseReleased, (cm_widget*)this->parent(), &cm_widget::s_OutMouseReleased);
+
+        this->setOutletsPos();
     }
 
 signals:
 
-    void mousePressed();
-    void mouseReleased();
-    void mouseEntered();
-    void mouseLeaved();
+    //    void mousePressed();
+    //    void mouseReleased();
+    //    void mouseEntered();
+    //    void mouseLeaved();
+
     void mouseMoved();
     void rightClicked();
 
-    void moved();
+    void inletMousePressed();
+    void inletMouseReleased();
 
-public slots:
+    void inletMouseEntered();
+    void inletMouseLeaved();
 
-    void portMousePressed();
-    void portMouseReleased();
-    void portMouseEntered();
-    void portMouseLeaved();
+    void outletMousePressed();
+    void outletMouseReleased();
+
+    void outletMouseEntered();
+    void outletMouseLeaved();
+
+    //void moved();
+
+private slots:
+
+    //    void boxInMousePressed();
+    //    void boxInMouseReleased();
+    //    void boxInMouseEntered();
+    //    void boxInMouseLeaved();
+
+    //    void boxOutMousePressed();
+    //    void boxOutMouseReleased();
+    //    void boxOutMouseEntered();
+    //    void boxOutMouseLeaved();
 
 
 

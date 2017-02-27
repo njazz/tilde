@@ -81,7 +81,6 @@ public:
         this->canvas->dragObject = 0;
         this->objectMaker->close();
 
-        //delete this->objectMaker;
     }
 
 
