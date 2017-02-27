@@ -141,6 +141,21 @@ public:
         this->repaint();
     }
 
+    /////
+
+    cm_port* getInletAt(int idx)
+    {
+        return this->inlets_.at(idx);
+
+    }
+
+    cm_port* getOutletAt(int idx)
+    {
+        return this->outlets_.at(idx);
+
+
+    }
+
 signals:
 
     //    void mousePressed();

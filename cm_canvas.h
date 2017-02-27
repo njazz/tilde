@@ -5,16 +5,25 @@
 #include <QtGui>
 #include <QtWidgets>
 #include "cm_box.h"
+#include "cm_patchcord.h"
+
 #include "cm_objectmaker.h"
 
 
-typedef struct
-{
-    cm_box* obj1;
-    int outletIdx;
-    cm_box* obj2;
-    int inletIdx;
-} tConnection;
+
+
+//typedef struct
+//{
+//    cm_box* obj1;
+//    int outletIdx;
+//    cm_box* obj2;
+//    int inletIdx;
+
+//    bool selected;
+//    enum {cm_pt_anything, cm_pt_signal} patchcordType;
+
+//} tPatchcord;
+
 
 typedef struct
 {
@@ -28,7 +37,7 @@ class cm_canvas : public cm_widget
 {
     //todo move this to data class
     std::vector<cm_box*> objectBoxes;
-    std::vector<tConnection> connections;       //todo class
+    std::vector<cm_patchcord> patchcords;
     std::vector<cm_box*> selObjectBoxes;
 
     tRectPlus selFrame;
@@ -113,6 +122,7 @@ public:
         this->selFrame.start = ev->pos();
         this->selFrame.end = ev->pos();
 
+        deselectBoxes();
 
     }
     void mouseReleaseEvent(QMouseEvent*)
@@ -121,8 +131,6 @@ public:
 
         this->selFrame.active = false;
         this->newLine.active = false;
-
-        deselectBoxes();
 
         this->repaint();
     }
@@ -141,6 +149,7 @@ public:
         this->selObjectBoxes.clear();
     }
 
+    //////////
     cm_box* createBox(std::string pdObjectName, QPoint pos, int ins, int outs)
     {
         cm_box *box = new cm_box(this);
@@ -159,6 +168,22 @@ public:
         box->show();
 
         return box;
+
+    }
+
+    //////////
+    void deleteBox(cm_box* box)
+    {
+        box->close();
+        //TODO
+    }
+
+    void delBoxes()
+    {
+        for (int i=0;i<this->selObjectBoxes.size(); i++)
+        {
+            this->deleteBox( ((cm_box*) this->selObjectBoxes.at(i))  );
+        }
 
     }
 

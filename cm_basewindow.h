@@ -136,7 +136,7 @@ private:
     Ui::cm_basewindow *ui;
 
     QMenu *fileMenu;
-    QMenu *editMenu;
+
 
     QMenu *findMenu;
     QMenu *mediaMenu;
@@ -163,6 +163,7 @@ private:
 
     QAction *pdWindowAct;
 public:
+    QMenu *editMenu;
     QMenu *putMenu;
 
 private slots:

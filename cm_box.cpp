@@ -4,8 +4,6 @@ cm_box::cm_box(cm_widget *parent) : cm_widget(parent)
 {
 
     this->setFixedSize(65,20);
-    //this->move(30,30);
-
     this->setMouseTracking(true);
 
 }
