@@ -37,7 +37,7 @@ class cm_canvas : public cm_widget
 {
     //todo move this to data class
     std::vector<cm_box*> objectBoxes;
-    std::vector<cm_patchcord> patchcords;
+    std::vector<cm_patchcord*> patchcords;
     std::vector<cm_box*> selObjectBoxes;
 
     tRectPlus selFrame;
@@ -70,7 +70,21 @@ public:
 
         }
 
+        this->paintPatchcords();
+
     }
+    void paintPatchcords()
+    {
+        for (int i=0; i< this->patchcords.size(); i++)
+        {
+            QPainter p(this);
+
+            p.setPen(QPen(QColor(0, 0, 0), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p.drawLine(((cm_patchcord*)this->patchcords.at(i))->getStartPoint(), ((cm_patchcord*)this->patchcords.at(i))->getEndPoint());
+        }
+
+    }
+
     void mouseMoveEvent(QMouseEvent* ev)
     {
         this->selFrame.end = ev->pos() - this->selFrame.start;
@@ -168,6 +182,18 @@ public:
         box->show();
 
         return box;
+
+    }
+
+    void patchcord(cm_box* obj1, int outlet, cm_box* obj2, int inlet)
+    {
+        cm_port* outport = obj1->getOutletAt(outlet);
+        cm_port* inport = obj2->getInletAt(inlet);
+
+        cm_patchcord* pc = new cm_patchcord(obj1,outport,obj2,inport);
+
+        this->patchcords.push_back(pc);
+
 
     }
 
