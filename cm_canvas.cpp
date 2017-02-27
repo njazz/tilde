@@ -25,23 +25,25 @@ cm_canvas::cm_canvas(cm_widget *parent) : cm_widget(parent)
 
 void cm_canvas::s_InMousePressed(cm_widget* obj, QMouseEvent* ev)
 {
-//    printf("in: mouse pressed\n");
+    //    printf("in: mouse pressed\n");
 
     this->newLine.active = false;
 
     if ( (this->conn_obj1) && (this->conn_out))
     {
         this->patchcord(this->conn_obj1, this->conn_out, (cm_widget*)obj->parent(), obj);
-
+        this->repaint();
     }
 
     this->conn_obj1 = 0;
     this->conn_out = 0;
+
+
 }
 
 void cm_canvas::s_InMouseReleased(cm_widget* obj, QMouseEvent* ev)
 {
-//    printf("in:  mouse released\n");
+    //    printf("in:  mouse released\n");
 
 
 
@@ -49,7 +51,7 @@ void cm_canvas::s_InMouseReleased(cm_widget* obj, QMouseEvent* ev)
 
 void cm_canvas::s_OutMousePressed(cm_widget* obj, QMouseEvent* ev)
 {
-//    printf("out: mouse pressed\n");
+    //    printf("out: mouse pressed\n");
 
     this->newLine.start = ((QWidget*)obj->parent())->pos() + obj->pos() + QPoint(5,1);
 
@@ -62,7 +64,7 @@ void cm_canvas::s_OutMousePressed(cm_widget* obj, QMouseEvent* ev)
 
 void cm_canvas::s_OutMouseReleased(cm_widget* obj, QMouseEvent* ev)
 {
-//    printf("out:  mouse released\n");
+    //    printf("out:  mouse released\n");
 
 
 

@@ -28,7 +28,7 @@ public:
 
         delObjectAct = new QAction(tr("Delete object"), this);
         delObjectAct->setShortcut(tr("Backspace"));
-        connect(delObjectAct, &QAction::triggered, this, &cm_patchwindow::delObjectBox);
+        connect(delObjectAct, &QAction::triggered, this, &cm_patchwindow::delSelected);
 
         putObjectAct = new QAction(tr("Object"), this);
         putObjectAct->setShortcut(tr("Ctrl+1"));
@@ -75,9 +75,10 @@ public:
 
     }
 
-    void delObjectBox()
+    void delSelected()
     {
         this->canvas->delBoxes();
+        this->canvas->delSelectedPatchcords();
 
     }
 

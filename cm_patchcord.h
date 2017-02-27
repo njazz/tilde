@@ -15,12 +15,13 @@ private:
     cm_widget* obj2;
     cm_widget* in2;
 
-    bool selected;
+
     enum {cm_pt_anything, cm_pt_signal} patchcordType;
 
 
 public:
-
+    bool mouseover;
+    bool selected;
     //explicit cm_patchcord(cm_widget *parent = 0);
 
     cm_patchcord();
@@ -53,6 +54,26 @@ public:
         return end;
 
     }
+
+    bool connectsObject(cm_widget* obj)
+    {
+        return ( (obj == this->obj1) || (obj == this->obj2) );
+    }
+
+    bool hover(QPoint pos)
+    {
+        QPoint start = this->getStartPoint();
+        QPoint end = this->getEndPoint();
+
+        float rx = end.x() - start.x();
+        float ry = end.y() - start.y();
+
+        float ty = ry * (pos.x() - start.x()) / rx + start.y();
+
+        return (abs(pos.y() - ty)<5);
+
+    }
+
 };
 
 #endif // CM_PATCHCORD_H

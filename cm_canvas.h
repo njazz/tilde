@@ -84,17 +84,45 @@ public:
         {
             QPainter p(this);
 
-            p.setPen(QPen(QColor(0, 0, 0), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            // cleanup
+            QColor pc_color = ((cm_patchcord*)this->patchcords.at(i))->mouseover ? QColor(255, 192, 0) : QColor(0, 0, 0);
+            if (((cm_patchcord*)this->patchcords.at(i))->selected) pc_color = QColor(0,192,255);
+
+            p.setPen(QPen(pc_color, 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
             p.drawLine(((cm_patchcord*)this->patchcords.at(i))->getStartPoint(), ((cm_patchcord*)this->patchcords.at(i))->getEndPoint());
         }
 
     }
 
+    bool hoverPatchcords(QPoint pos)
+    {
+        bool ret = false;
+        for (int i=0; i< this->patchcords.size(); i++)
+        {
+            ((cm_patchcord*)this->patchcords.at(i))->mouseover = ((cm_patchcord*)this->patchcords.at(i))->hover(pos);
+            if (((cm_patchcord*)this->patchcords.at(i))->mouseover) ret=true;
+        }
+        return ret;
+    }
+
+    bool clickPatchcords(QPoint pos)
+    {
+        bool ret = false;
+        for (int i=0; i< this->patchcords.size(); i++)
+        {
+            ((cm_patchcord*)this->patchcords.at(i))->selected = ((cm_patchcord*)this->patchcords.at(i))->hover(pos);
+            if (((cm_patchcord*)this->patchcords.at(i))->selected) ret=true;
+        }
+        return ret;
+    }
+
     void mouseMoveEvent(QMouseEvent* ev)
     {
-        this->selFrame.end = ev->pos() - this->selFrame.start;
+        QPoint pos =  ev->pos();
 
-        this->newLine.end = ev->pos();
+        this->selFrame.end = pos - this->selFrame.start;
+
+        this->newLine.end = pos;
 
         this->repaint();
 
@@ -133,6 +161,10 @@ public:
             }
 
         }
+
+        //patchcords
+        if (this->hoverPatchcords(pos)) this->repaint();
+
     }
 
     void mousePressEvent(QMouseEvent* ev)
@@ -142,6 +174,8 @@ public:
         this->selFrame.end = ev->pos();
 
         deselectBoxes();
+
+        this->clickPatchcords(ev->pos());
 
     }
     void mouseReleaseEvent(QMouseEvent*)
@@ -213,11 +247,40 @@ public:
 
     }
 
+//    void deletePatchcord(cm_patchcord* pc)
+//    {
+//        // no repaint
+
+//        //cleanup !!!
+//        auto it = std::find(this->patchcords.begin(), this->patchcords.end(), pc);
+
+//        if (it != this->patchcords.end()) { this->patchcords.erase(it); }
+
+//    }
+
+    void deletePatchcordsFor(cm_box* obj)
+    {
+        //for //(int i=0;i<this->patchcords.size();i++)
+        std::vector<cm_patchcord*>::iterator it;
+        for (it=this->patchcords.begin(); it!= this->patchcords.end(); )
+        {
+            if ((*it)->connectsObject(obj))
+                it =this->patchcords.erase(it);
+            else
+                ++it;
+
+        }
+
+        this->repaint();
+    }
+
     //////////
     void deleteBox(cm_box* box)
     {
         box->close();
         //TODO
+
+        this->deletePatchcordsFor(box);
     }
 
     void delBoxes()
@@ -227,6 +290,23 @@ public:
             this->deleteBox( ((cm_box*) this->selObjectBoxes.at(i))  );
         }
 
+    }
+
+    void delSelectedPatchcords()
+    {
+        //cleanup
+        //for (int i=0;i<this->patchcords.size(); i++)
+        std::vector<cm_patchcord*>::iterator it;
+        for (it=this->patchcords.begin(); it!= this->patchcords.end(); )
+        {
+            if ( (*it) -> selected )
+                //it = this->deletePatchcord(*it);
+                it = this->patchcords.erase(it);
+            else
+                ++it;
+        }
+
+        this->repaint();
     }
 
 signals:
