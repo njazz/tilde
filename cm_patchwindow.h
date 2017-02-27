@@ -73,9 +73,8 @@ public:
 
     void objectMakerDone()
     {
-        cm_box* newBox = new cm_box(this->canvas);
-        newBox->move(this->objectMaker->pos());
-        newBox->pdObjName = this->objectMaker->text().toStdString();
+
+        cm_box* newBox = this->canvas->createBox(this->objectMaker->text().toStdString(),this->objectMaker->pos(),1,1);
         newBox->show();
 
         this->canvas->dragObject = 0;

@@ -10,13 +10,27 @@
 
 typedef struct
 {
+    cm_box* obj1;
+    int outletIdx;
+    cm_box* obj2;
+    int inletIdx;
+} tConnection;
+
+typedef struct
+{
     bool active;
     QPoint start;
     QPoint end;
 
 } tRectPlus;
+
 class cm_canvas : public cm_widget
 {
+    //todo move this to data class
+    std::vector<cm_box*> objectBoxes;
+    std::vector<tConnection> connections;       //todo class
+    std::vector<cm_box*> selObjectBoxes;
+
     tRectPlus selFrame;
     tRectPlus newLine;
     Q_OBJECT
@@ -62,6 +76,35 @@ public:
             this->dragObject->move(mapToParent(ev->pos() - offset));
 
         }
+
+        //selection frame
+        if (this->selFrame.active)
+        {
+            for (int i=0; i< this->objectBoxes.size();i++)
+            {
+                QPoint pos = ((cm_box*)this->objectBoxes.at(i))->pos();
+                QSize size = ((cm_box*)this->objectBoxes.at(i))->size();
+                QRect r = QRect(pos, pos+QPoint(size.width(), size.height()) );
+
+                QRect frame = QRect (this->selFrame.start, this->selFrame.start + this->selFrame.end );
+
+                if (frame.contains(r,false))
+                {
+                    ((cm_box*)this->objectBoxes.at(i))->select();
+                    this->selObjectBoxes.push_back(this->objectBoxes.at(i));
+                }
+                else
+                {
+                    ((cm_box*)this->objectBoxes.at(i))->deselect();
+
+                    auto it = std::find(this->selObjectBoxes.begin(), this->selObjectBoxes.end(), this->objectBoxes.at(i));
+                    if (it != this->selObjectBoxes.end()) { this->selObjectBoxes.erase(it); }
+
+
+                }
+            }
+
+        }
     }
 
     void mousePressEvent(QMouseEvent* ev)
@@ -69,6 +112,7 @@ public:
         this->selFrame.active = true;
         this->selFrame.start = ev->pos();
         this->selFrame.end = ev->pos();
+
 
     }
     void mouseReleaseEvent(QMouseEvent*)
@@ -78,12 +122,45 @@ public:
         this->selFrame.active = false;
         this->newLine.active = false;
 
+        deselectBoxes();
+
         this->repaint();
     }
 
     /////
 
+    void deselectBoxes()
+    {
+        for (int i=0;i<this->selObjectBoxes.size();i++)
+        {
+            if (this->selObjectBoxes.at(i))
+                ((cm_box*)this->selObjectBoxes.at(i))->deselect();
 
+        }
+
+        this->selObjectBoxes.clear();
+    }
+
+    cm_box* createBox(std::string pdObjectName, QPoint pos, int ins, int outs)
+    {
+        cm_box *box = new cm_box(this);
+        box->pdObjName = pdObjectName.c_str();
+        for (int i=0;i<ins;i++)
+            box->addInlet();
+        for (int i=0;i<outs;i++)
+            box->addOutlet();
+
+        connect(box,&cm_box::selectBox, this, &cm_canvas::s_SelectBox);
+
+        box->move(pos);
+
+        this->objectBoxes.push_back(box);
+
+        box->show();
+
+        return box;
+
+    }
 
 signals:
 
@@ -94,9 +171,11 @@ public slots:
     void s_OutMousePressed(cm_widget* obj, QMouseEvent* ev);
     void s_OutMouseReleased(cm_widget* obj, QMouseEvent* ev);
 
-//    void portMouseReleased();
-//    void portMouseEntered();
-//    void portMouseLeaved();
+    void s_SelectBox(cm_box* box);
+
+    //    void portMouseReleased();
+    //    void portMouseEntered();
+    //    void portMouseLeaved();
 
 private:
 

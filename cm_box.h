@@ -56,15 +56,14 @@ public:
 
     void mousePressEvent(QMouseEvent *ev)
     {
-        this->selected_ = true;
-        this->repaint();
 
+        emit selectBox(this);
         this->dragOffset = ev->pos();
     }
 
     void mouseReleaseEvent(QMouseEvent *e)
     {
-        this->selected_ = false;
+        //this->selected_ = false;
         this->repaint();
     }
 
@@ -130,6 +129,18 @@ public:
         this->setOutletsPos();
     }
 
+    void select()
+    {
+        this->selected_ = true;
+        this->repaint();
+    }
+
+    void deselect()
+    {
+        this->selected_ = false;
+        this->repaint();
+    }
+
 signals:
 
     //    void mousePressed();
@@ -153,6 +164,7 @@ signals:
     void outletMouseLeaved();
 
     //void moved();
+    void selectBox(cm_box*box);
 
 private slots:
 

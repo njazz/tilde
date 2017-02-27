@@ -51,3 +51,11 @@ void cm_canvas::s_OutMouseReleased(cm_widget* obj, QMouseEvent* ev)
     printf("out:  mouse released\n");
 
 }
+
+void cm_canvas::s_SelectBox(cm_box* box)
+{
+    this->selObjectBoxes.clear();
+    this->selObjectBoxes.push_back(box);
+    box->select();
+
+}
