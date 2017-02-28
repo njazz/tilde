@@ -103,15 +103,15 @@ void cm_menu::putComment()
 }
 
 
-void cm_menu::dspOn()
-{
-    //   infoLabel->setText(tr("Invoked <b>Edit|Paste</b>"));
-}
+//void cm_menu::dspOn()
+//{
+//    //   infoLabel->setText(tr("Invoked <b>Edit|Paste</b>"));
+//}
 
-void cm_menu::dspOff()
-{
-    //   infoLabel->setText(tr("Invoked <b>Edit|Paste</b>"));
-}
+//void cm_menu::dspOff()
+//{
+//    //   infoLabel->setText(tr("Invoked <b>Edit|Paste</b>"));
+//}
 
 void cm_menu::pdWindow()
 {

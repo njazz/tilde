@@ -7,6 +7,9 @@ extern "C" {
 #include <g_canvas.h>
 #include <s_stuff.h>
 
+void pd_init(void);
+int sys_startgui(const char *libdir);
+
 }
 
 #include <stdbool.h>
@@ -29,17 +32,35 @@ void cmp_error(std::string msg)
 }
 
  // copied from libpd
-void pd_init(void);
-int sys_startgui(const char *libdir);
+
 
 void cmp_pdinit()
 {
     //pd_init();
 
     // copied from libpd
+    signal(SIGFPE, SIG_IGN);
+    sys_soundin = NULL;
+    sys_soundout = NULL;
+
+    // are all these settings necessary?
+    sys_schedblocksize = DEFDACBLKSIZE;
+    sys_externalschedlib = 0;
+    sys_printtostderr = 0;
+    sys_usestdpath = 0; // don't use pd_extrapath, only sys_searchpath
+    sys_debuglevel = 0;
+    sys_verbose = 0;
+    sys_noloadbang = 0;
+    sys_nogui = 1;
+    sys_hipriority = 0;
+    sys_nmidiin = 0;
+    sys_nmidiout = 0;
+    sys_init_fdpoll();
+
+    pd_init();
     sys_set_audio_api(API_DUMMY);
     sys_searchpath = NULL;
-    //sys_startgui(NULL);
+    sys_startgui(NULL);
 
     cm_pd = pdinstance_new();
 
@@ -61,7 +82,7 @@ void cmp_setprinthook(t_printhook h)
 
 t_canvas* cmp_newpatch()
 {
-    qDebug("new");
+    qDebug("new patch: %lu", (long)cm_pd);
 
     AtomList list(Atom(gensym("Untitled-1")));
     list.append(Atom(gensym("~/")));
@@ -69,16 +90,14 @@ t_canvas* cmp_newpatch()
 //    qDebug("atomlist off");
 
 
-    t_pd* dest = gensym("Pd")->s_thing;
+    t_pd* dest = gensym("pd")->s_thing;
     if (dest==NULL)
     {
       cmp_error("Pd object not found");
       return 0;
     };
 
-    //qDebug("new");
-
-    //pd_typedmess(dest, gensym("menunew"), (int)list.size(), list.toPdData());
+   pd_typedmess(dest, gensym("menunew"), (int)list.size(), list.toPdData());
 
     //glob_menunew(0, gensym("Untitled-1"),gensym("~/"));
 
