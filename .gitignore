@@ -20,3 +20,9 @@ build-test_1-Desktop_Qt_5_7_1_clang_64bit-Debug/test_1.app/Contents/PkgInfo
 build-test_1-Desktop_Qt_5_7_1_clang_64bit-Debug/test_1.app/Contents/Resources/empty.lproj
 
 build-test_1-Desktop_Qt_5_7_1_clang_64bit-Debug/ui_mainwindow.h
+
+build-pdlib-Desktop_Qt_5_7_1_clang_64bit-Debug/.qmake.stash
+
+*.o
+
+build-pdlib-Desktop_Qt_5_7_1_clang_64bit-Debug/Makefile
