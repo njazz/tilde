@@ -1,3 +1,4 @@
+build-*/*
 
 build-test_1-Desktop_Qt_5_7_1_clang_64bit-Debug/.qmake.stash
 
@@ -26,6 +27,10 @@ build-pdlib-Desktop_Qt_5_7_1_clang_64bit-Debug/.qmake.stash
 *.o
 
 build-pdlib-Desktop_Qt_5_7_1_clang_64bit-Debug/Makefile
+
+build-pdlib-Desktop_Qt_5_7_1_clang_64bit-Debug/libpdlib.a
+
+build-pdlib-Desktop_Qt_5_7_1_clang_64bit-Debug/libpdlib.a
 
 build-pdlib-Desktop_Qt_5_7_1_clang_64bit-Debug/libpdlib.a
 
