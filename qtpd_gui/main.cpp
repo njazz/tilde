@@ -13,7 +13,6 @@ int main(int argc, char *argv[])
     a.setQuitOnLastWindowClosed(false);
 
     cmp_pdinit();
-    qDebug("pd init");
 
     cm_pdwindow pdw;
     pdw.move(0,100);

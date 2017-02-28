@@ -1,11 +1,12 @@
 #ifndef CM_PDLINK_H
 #define CM_PDLINK_H
 
+#include "../qtpd_lib/src/m_pd.h"
 // prototype for Pd 'server' interaction
 
 // use m.pd.h
-typedef void* t_canvas;
-typedef void* t_object;
+//typedef void* t_canvas;
+//typedef void* t_object;
 typedef void (*t_printhook)(const char *s);
 
 ///////

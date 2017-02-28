@@ -31,7 +31,7 @@ void cmp_error(std::string msg)
     qDebug ("## Pd lib error: %s\n",msg.c_str());
 }
 
- // copied from libpd
+// copied from libpd
 
 
 void cmp_pdinit()
@@ -64,9 +64,10 @@ void cmp_pdinit()
 
     cm_pd = pdinstance_new();
 
-    if (!cm_pd) cmp_error("Initialization failed");
-
-    qDebug("Pd library initialized: %lu", (long)cm_pd);
+    if (!cm_pd)
+        cmp_error("Initialization failed");
+    else
+        qDebug("Pd library initialized: %lu", (long)cm_pd);
 
 }
 
@@ -77,9 +78,6 @@ void cmp_setprinthook(t_printhook h)
 
 #pragma mark -
 
-
-//extern void glob_menunew(void *dummy, t_symbol *filesym, t_symbol *dirsym);
-
 t_canvas* cmp_newpatch()
 {
     qDebug("new patch: %lu", (long)cm_pd);
@@ -87,17 +85,14 @@ t_canvas* cmp_newpatch()
     AtomList list(Atom(gensym("Untitled-1")));
     list.append(Atom(gensym("~/")));
 
-//    qDebug("atomlist off");
-
-
     t_pd* dest = gensym("pd")->s_thing;
     if (dest==NULL)
     {
-      cmp_error("Pd object not found");
-      return 0;
+        cmp_error("Pd object not found");
+        return 0;
     };
 
-   pd_typedmess(dest, gensym("menunew"), (int)list.size(), list.toPdData());
+    pd_typedmess(dest, gensym("menunew"), (int)list.size(), list.toPdData());
 
     t_canvas* ret = 0;
     ret = canvas_getcurrent();
@@ -108,15 +103,18 @@ t_canvas* cmp_newpatch()
 //void cmp_openpatch(char* filename)
 //{
 //}
+
 //void cmp_savepatch(t_canvas* canvas, char* filename)
 //{
 //    //message to canvas
 //}
-//void cmp_closepatch(t_canvas* canvas)
-//{
-//    //message to canvas
-    
-//}
+
+void cmp_closepatch(t_canvas* canvas)
+{
+    if (canvas)
+        pd_free((t_pd*)canvas);
+
+}
 
 //#pragma mark -
 
@@ -124,8 +122,7 @@ t_object* cmp_create_object(t_canvas* canvas, char* class_name, int x, int y)
 {
     t_object* ret;
     
-    AtomList list;
-    list.append(Atom(gensym(class_name)));
+    AtomList list(Atom(gensym(class_name)));
     list.append(Atom(x));
     list.append(Atom(y));
     
@@ -138,7 +135,7 @@ t_object* cmp_create_object(t_canvas* canvas, char* class_name, int x, int y)
 
 //void cmp_moveobject(t_object* obj, int x, int y)
 //{
-    
+
 //}
 
 void cmp_patchcord(t_object* obj1, int outno, t_object* obj2, int inno)
@@ -184,8 +181,8 @@ void cmp_switch_dsp(bool on)
     t_pd* dest = gensym("pd")->s_thing;
     if (dest==NULL)
     {
-      cmp_error("Pd object not found");
-      return;
+        cmp_error("Pd object not found");
+        return;
     };
     pd_typedmess(dest, gensym("dsp"), (int)list.size(), list.toPdData());
 };

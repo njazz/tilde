@@ -36,19 +36,19 @@ cm_patchwindow::cm_patchwindow()
     //pc->setPorts(box1,box2,box1->getOutletAt(0), box2->getInletAt(1));
 
     //move
-//    cm_box *box = new cm_box(this->canvas);
-//    box->pdObjName = "osc~ 440";
-//    box->addInlet();
-//    box->addOutlet();
-//    connect(box,&cm_box::selectBox, this->canvas, &cm_canvas::s_SelectBox);
+    //    cm_box *box = new cm_box(this->canvas);
+    //    box->pdObjName = "osc~ 440";
+    //    box->addInlet();
+    //    box->addOutlet();
+    //    connect(box,&cm_box::selectBox, this->canvas, &cm_canvas::s_SelectBox);
 
-//    cm_box *box2 = new cm_box(this->canvas);
-//    box2->move(30,100);
-//    box2->pdObjName = "dac~";
-//    box2->addInlet();
-//    box2->addInlet();
-//    box2->setFixedWidth(45);
-//    connect(box2,&cm_box::selectBox, this->canvas, &cm_canvas::s_SelectBox);
+    //    cm_box *box2 = new cm_box(this->canvas);
+    //    box2->move(30,100);
+    //    box2->pdObjName = "dac~";
+    //    box2->addInlet();
+    //    box2->addInlet();
+    //    box2->setFixedWidth(45);
+    //    connect(box2,&cm_box::selectBox, this->canvas, &cm_canvas::s_SelectBox);
 
 
 
@@ -70,15 +70,25 @@ void cm_patchwindow::objectMakerDone()
     QByteArray ba = objNameStr.toLatin1();
     const char * obj_name = ba.data();
 
-//    t_object* new_obj = cmp_create_object(this->pd_canvas,(char*)obj_name,(int)this->objectMaker->pos().x(), (int)this->objectMaker->pos().y());
-//    if (!new_obj)
-//    {
-//        qDebug("Error: no such object %s", obj_name);
-//    }
-//    else
+    t_object* new_obj ;
+
+    //temp
+    if (!this->pd_canvas)
     {
-        int in_c = 1;//cmp_get_inlet_count(new_obj);
-        int out_c = 1;//cmp_get_outlet_count(new_obj);
+        qDebug("bad pd canvas instance");
+    }
+    else
+    {
+        new_obj = cmp_create_object(this->pd_canvas,(char*)obj_name,(int)this->objectMaker->pos().x(), (int)this->objectMaker->pos().y());
+    }
+    if (!new_obj)
+    {
+        qDebug("Error: no such object %s", obj_name);
+    }
+    else
+    {
+        int in_c = cmp_get_inlet_count(new_obj);
+        int out_c = cmp_get_outlet_count(new_obj);
 
         cm_box* newBox = this->canvas->createBox(this->objectMaker->text().toStdString(),this->objectMaker->pos(),in_c,out_c);
         newBox->show();
