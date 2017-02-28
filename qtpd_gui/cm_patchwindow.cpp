@@ -1,6 +1,6 @@
 #include "cm_patchwindow.h"
 
-#include "cm_canvas.h"
+//#include "cm_canvas.h"
 
 cm_patchwindow::cm_patchwindow()
 {
@@ -27,6 +27,10 @@ cm_patchwindow::cm_patchwindow()
 
     this->canvas->patchcord(box1,0,box2,1);
     this->canvas->patchcord(box1,0,box2,0);
+
+    this->pd_canvas = cmp_newpatch();
+    if (!this->pd_canvas)
+    {qDebug("Failed to create canvas!");}
 
     //cm_patchcord *pc = new cm_patchcord(this->canvas);
     //pc->setPorts(box1,box2,box1->getOutletAt(0), box2->getInletAt(1));
@@ -56,5 +60,31 @@ cm_patchwindow::cm_patchwindow()
 
 
 
+
+}
+
+
+void cm_patchwindow::objectMakerDone()
+{
+    QString objNameStr = this->objectMaker->text();
+    QByteArray ba = objNameStr.toLatin1();
+    const char * obj_name = ba.data();
+
+//    t_object* new_obj = cmp_create_object(this->pd_canvas,(char*)obj_name,(int)this->objectMaker->pos().x(), (int)this->objectMaker->pos().y());
+//    if (!new_obj)
+//    {
+//        qDebug("Error: no such object %s", obj_name);
+//    }
+//    else
+    {
+        int in_c = 1;//cmp_get_inlet_count(new_obj);
+        int out_c = 1;//cmp_get_outlet_count(new_obj);
+
+        cm_box* newBox = this->canvas->createBox(this->objectMaker->text().toStdString(),this->objectMaker->pos(),in_c,out_c);
+        newBox->show();
+    }
+
+    this->canvas->dragObject = 0;
+    this->objectMaker->close();
 
 }

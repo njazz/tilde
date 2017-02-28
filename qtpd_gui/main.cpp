@@ -12,17 +12,16 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     a.setQuitOnLastWindowClosed(false);
 
-    cm_patchwindow w;
-    w.show();
+    cmp_pdinit();
+    qDebug("pd init");
 
     cm_pdwindow pdw;
     pdw.move(0,100);
     pdw.show();
 
-    cmp_pdinit();
-    qDebug("pd init");
+    cm_patchwindow w;
+    w.show();
 
-    //cm_gui * Gui = new cm_gui;
 
     return a.exec();
 }

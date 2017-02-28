@@ -5,6 +5,8 @@
 #include "cm_box.h"
 #include "cm_canvas.h"
 
+#include "cm_pdlink.h"
+
 class cm_patchwindow : public cm_basewindow
 {
 
@@ -18,6 +20,8 @@ private:
     QAction *putCommentAct;
 
     cm_objectmaker* objectMaker;
+
+    t_canvas* pd_canvas;
 public:
     cm_patchwindow();
     cm_canvas* canvas;
@@ -82,16 +86,7 @@ public:
 
     }
 
-    void objectMakerDone()
-    {
-
-        cm_box* newBox = this->canvas->createBox(this->objectMaker->text().toStdString(),this->objectMaker->pos(),1,1);
-        newBox->show();
-
-        this->canvas->dragObject = 0;
-        this->objectMaker->close();
-
-    }
+    void objectMakerDone();
 
 
 

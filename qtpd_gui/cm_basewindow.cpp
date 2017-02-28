@@ -44,13 +44,13 @@ void cm_basewindow::close()
 void cm_basewindow::dspOn()
 {
     cmp_switch_dsp(true);
-    //dspOnAct->setChecked(true);
+    dspOnAct->setChecked(true);
 
 }
 
 void cm_basewindow::dspOff()
 {
     cmp_switch_dsp(false);
-    //dspOnAct->setChecked(false);
+    dspOnAct->setChecked(false);
 }
 

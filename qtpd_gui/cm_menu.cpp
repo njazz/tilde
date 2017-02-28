@@ -16,9 +16,6 @@ void cm_menu::newFile()
     //qDebug("new file");
 
     cm_patchwindow *newWindow = new cm_patchwindow;
-
-    cmp_newpatch();
-
     newWindow->show();
 }
 

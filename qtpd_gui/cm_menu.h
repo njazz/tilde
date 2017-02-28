@@ -32,8 +32,8 @@ public slots:
     static void putSymbol();
     static void putComment();
 
-    static void dspOn();
-    static void dspOff();
+//    static void dspOn();
+//    static void dspOff();
 
     static void pdWindow();
 };

@@ -99,14 +99,12 @@ t_canvas* cmp_newpatch()
 
    pd_typedmess(dest, gensym("menunew"), (int)list.size(), list.toPdData());
 
-    //glob_menunew(0, gensym("Untitled-1"),gensym("~/"));
-
-    
     t_canvas* ret = 0;
-//    ret = canvas_getcurrent();
+    ret = canvas_getcurrent();
     
     return ret;
 }
+
 //void cmp_openpatch(char* filename)
 //{
 //}
@@ -120,7 +118,7 @@ t_canvas* cmp_newpatch()
     
 //}
 
-#pragma mark -
+//#pragma mark -
 
 t_object* cmp_create_object(t_canvas* canvas, char* class_name, int x, int y)
 {
