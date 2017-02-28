@@ -3,6 +3,8 @@
 #include "cm_basewindow.h"
 #include "cm_patchwindow.h"
 
+#include "cm_pdlink.h"
+
 cm_menu::cm_menu(QObject *parent) : QObject(parent)
 {
 
@@ -14,6 +16,8 @@ void cm_menu::newFile()
     printf("new file\n");
 
     cm_patchwindow *newWindow = new cm_patchwindow;
+
+    cmp_newpatch();
 
     newWindow->show();
 }

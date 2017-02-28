@@ -8,6 +8,8 @@
 
 #include "cm_menu.h"
 
+#include "cm_pdlink.h"
+
 namespace Ui {
     class cm_basewindow;
 }
@@ -81,8 +83,11 @@ public:
 
         dspOnAct = new QAction(tr("DSP On"), this);
         dspOnAct->setShortcut(tr("Ctrl+/"));
+        connect(dspOnAct, &QAction::triggered, this, &cm_basewindow::dspOn);
+
         dspOffAct = new QAction(tr("DSP Off"), this);
         dspOffAct->setShortcut(tr("Ctrl+."));
+        connect(dspOffAct, &QAction::triggered, this, &cm_basewindow::dspOff);
 
         pdWindowAct = new QAction(tr("Pd Window"), this);
         pdWindowAct->setShortcut(tr("Ctrl+R"));
@@ -169,6 +174,9 @@ public:
 private slots:
 
     void close();
+
+    void dspOn();
+    void dspOff();
 
 
 };

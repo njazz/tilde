@@ -4,7 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       -= core gui
+
+QT       -= gui
 
 TARGET = pdlib
 TEMPLATE = lib
@@ -17,7 +18,8 @@ CONFIG += staticlib
 DEFINES += QT_DEPRECATED_WARNINGS \
     APPLE \
     PD \
-    HAVE_UNISTD_H
+    HAVE_UNISTD_H \
+    USEAPI_DUMMY
 
 
 # You can also make your code fail to compile if you use deprecated APIs.
@@ -29,15 +31,15 @@ SOURCES += pdlib.cpp \
     ceammc-lib/ceammc.cpp \
     ceammc-lib/ceammc_atom.cpp \
     ceammc-lib/ceammc_atomlist.cpp \
-    ceammc-lib/ceammc_fn_list.cpp \
-    ceammc-lib/ceammc_fn_vector.cpp \
+#    ceammc-lib/ceammc_fn_list.cpp \
+#    ceammc-lib/ceammc_fn_vector.cpp \
     ceammc-lib/ceammc_format.cpp \
     ceammc-lib/ceammc_impl.cpp \
     ceammc-lib/ceammc_log.cpp \
     ceammc-lib/ceammc_message.cpp \
     ceammc-lib/ceammc_object.cpp \
-    ceammc-lib/ceammc_property.cpp \
-    ceammc-lib/ceammc_timeline.cpp \
+#    ceammc-lib/ceammc_property.cpp \
+#    ceammc-lib/ceammc_timeline.cpp \
     ceammc-lib/ceammc.c \
     src/d_arithmetic.c \
     src/d_array.c \
@@ -45,7 +47,7 @@ SOURCES += pdlib.cpp \
     src/d_dac.c \
     src/d_delay.c \
     src/d_fft.c \
-#    src/d_fft_fftsg.c \
+    src/d_fft_fftsg.c \
 #    src/d_fft_fftw.c \
     src/d_filter.c \
     src/d_global.c \

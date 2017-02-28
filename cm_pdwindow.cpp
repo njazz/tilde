@@ -6,6 +6,7 @@
 #include <QGridLayout>
 #include <QLabel>
 
+
 cm_pdwindow::cm_pdwindow() :
 
     ui(new Ui::cm_pdwindow)
@@ -17,5 +18,7 @@ cm_pdwindow::cm_pdwindow() :
 
 
     ((QMainWindow*)this)->setWindowTitle("Pd");
+
+
 
 }

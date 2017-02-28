@@ -28,7 +28,6 @@ SOURCES += main.cpp\
     cm_port.cpp \
     cm_canvas.cpp \
     cm_basewindow.cpp \
-    cm_gui.cpp \
     cm_menu.cpp \
     cm_pdwindow.cpp \
     cm_patchwindow.cpp \
@@ -41,7 +40,6 @@ HEADERS  += \
     cm_port.h \
     cm_canvas.h \
     cm_basewindow.h \
-    cm_gui.h \
     cm_menu.h \
     cm_pdwindow.h \
     cm_patchwindow.h \
@@ -53,3 +51,5 @@ HEADERS  += \
 FORMS    += \
     cm_basewindow.ui \
     cm_pdwindow.ui
+
+LIBS += -L$$PWD/ -lpdlib

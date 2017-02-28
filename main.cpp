@@ -1,8 +1,10 @@
 
 #include <QApplication>
 
-#include "cm_gui.h"
+#include "cm_pdlink.h"
 
+#include "cm_pdwindow.h"
+#include "cm_patchwindow.h"
 
 
 int main(int argc, char *argv[])
@@ -16,6 +18,9 @@ int main(int argc, char *argv[])
     cm_pdwindow pdw;
     pdw.move(0,100);
     pdw.show();
+
+    cmp_pdinit();
+    qDebug("pd init");
 
     //cm_gui * Gui = new cm_gui;
 

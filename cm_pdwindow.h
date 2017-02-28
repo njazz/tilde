@@ -6,6 +6,9 @@
 #include <QMainWindow>
 #include <QtWidgets>
 
+#include "cm_pdlink.h"
+
+
 namespace Ui {
 class cm_pdwindow;
 }
