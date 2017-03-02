@@ -168,7 +168,7 @@ t_object* cmp_create_object(t_canvas* canvas, char* class_name, int x, int y)
         list.append(Atom(gensym(atoms_.at(i).c_str())));
     }
 
-    qDebug("obj name: %s", list.at(0).asString().c_str());
+    qDebug("obj name: %s", list.at(2).asString().c_str());
 
     //ret = (t_object*)&canvas->gl_next;//(t_object*)pd_newest();
 
@@ -179,18 +179,23 @@ t_object* cmp_create_object(t_canvas* canvas, char* class_name, int x, int y)
 //        ret = (t_object*)ret->te_g.g_next;
 
     //t_gobj* xx;
-    t_gobj* yy;
-    for (yy = glist_getcanvas(canvas)->gl_list; yy; yy = yy->g_next)
-    {
+//    t_gobj* yy;
+//    for (yy = glist_getcanvas(canvas)->gl_list; yy; yy = yy->g_next)
+//    {
 //        t_object *ob = 0;
 //        if ((ob = pd_checkobject(&y->g_pd)))
 
-    }
+//    }
 
     qDebug("canvas %lu gllist %lu", (long)canvas, (long)canvas->gl_list);
 
+
     ret2 = (t_object*)pd_newest();
-    ret = (t_object*)yy;//pd_checkobject(&yy->g_pd);//(t_object*)newest;
+    if (!ret2) return 0;
+
+    if (ret2 != pd_checkobject((t_pd*)ret2)) return 0;
+
+//    ret = (t_object*)yy;//pd_checkobject(&yy->g_pd);//(t_object*)newest;
     
     char* bufp = new char[1024];
     int lenp;
@@ -198,8 +203,10 @@ t_object* cmp_create_object(t_canvas* canvas, char* class_name, int x, int y)
     binbuf_gettext(ret2->te_binbuf,&bufp,&lenp);
     qDebug("object data: %s", bufp);
 
-    qDebug("newest: %lu %lu", (long)ret ,(long)ret2 );
+//    qDebug("newest: %lu %lu", (long)ret ,(long)ret2 );
     //if ( ((long)ret) != ((long)ret2) )
+
+
 
     return ret2;
     //else return 0;

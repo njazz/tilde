@@ -90,6 +90,8 @@ void cm_patchwindow::objectMakerDone()
     if (new_obj)
     {
 
+         qDebug ("created object %lu, new_obj");
+
         in_c = cmp_get_inlet_count(new_obj);
         out_c = cmp_get_outlet_count(new_obj);
 

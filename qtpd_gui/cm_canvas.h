@@ -106,6 +106,18 @@ public:
         return ret;
     }
 
+
+    void hoverPatchcordsOff()
+    {
+        //bool ret = false;
+        for (int i=0; i< (int)this->patchcords.size(); i++)
+        {
+            ((cm_patchcord*)this->patchcords.at(i))->mouseover = false;// ((cm_patchcord*)this->patchcords.at(i))->hover(pos);
+            //if (((cm_patchcord*)this->patchcords.at(i))->mouseover) ret=true;
+        }
+        //return ret;
+    }
+
     bool clickPatchcords(QPoint pos)
     {
         bool ret = false;
@@ -181,7 +193,7 @@ public:
         deselectBoxes();
 
         //deselect
-        this->hoverPatchcords(QPoint(-1,-1));
+        this->hoverPatchcordsOff();
 
         this->clickPatchcords(ev->pos());
         this->repaint();

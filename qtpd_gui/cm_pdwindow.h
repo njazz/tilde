@@ -25,6 +25,10 @@ public:
     cm_pdwindow();
 
     void cm_log(std::string text);
+
+
 };
+
+
 
 #endif // CM_PDWINDOW_H
