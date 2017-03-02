@@ -23,14 +23,13 @@ cm_patchwindow::cm_patchwindow()
     if (!this->canvas->pd_canvas)
     {qDebug("Failed to create canvas!");}
 
-    cm_box *box1 = this->canvas->createBox("osc~ 440", QPoint(30,30), 1,1);
-    cm_box *box2 = this->canvas->createBox("dac~ 1 2", QPoint(30,100), 2,0);
+    this->objectMaker = new cm_objectmaker();
+    this->objectMaker->setParent(this->canvas);
+    connect(this->objectMaker,&cm_objectmaker::returnPressed, this, &cm_patchwindow::objectMakerDone);
+    this->objectMaker->close();
 
-    //    box2->setFixedWidth(45);
-
-//    box1->move(30,30);
-//    box2->move(30,100);
-
+    cm_box *box1 = this->canvas->createBox("osc~", QPoint(30,30));
+    cm_box *box2 = this->canvas->createBox("dac~ 1 2", QPoint(30,100));
     cmo_msg *msg1 = this->canvas->createMsg("test123", QPoint(100,30));
 
     this->canvas->patchcord(box1,0, box2,1);
@@ -60,10 +59,7 @@ cm_patchwindow::cm_patchwindow()
 
 
 
-    this->objectMaker = new cm_objectmaker();
-    this->objectMaker->setParent(this->canvas);
-    connect(this->objectMaker,&cm_objectmaker::returnPressed, this, &cm_patchwindow::objectMakerDone);
-    this->objectMaker->close();
+
 
 
 
@@ -78,7 +74,7 @@ void cm_patchwindow::objectMakerDone()
 
 std::string obj_name = this->objectMaker->text().toStdString();
 
-    cmo_msg *msg1 = this->canvas->createMsg(obj_name, this->objectMaker->pos());
+   cm_box *box1 = this->canvas->createBox(obj_name, this->objectMaker->pos());
 
 
     this->canvas->dragObject = 0;

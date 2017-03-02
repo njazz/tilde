@@ -238,10 +238,14 @@ public:
 
     //////////
 
-    cm_box* createBox(std::string pdObjectName, QPoint pos, int ins, int outs)
+    cm_box* createBox(std::string pdObjectName, QPoint pos)
     {
         cm_box *box = new cm_box(this);
         box->setPdObjName(pdObjectName);
+
+        connect(box,&cm_box::selectBox, this, &cm_canvas::s_SelectBox);
+        connect(box,&cm_box::moveBox, this, &cm_canvas::s_MoveBox);
+        box->setEditModeRef(&this->editMode);
 
         const char * obj_name = pdObjectName.c_str();
 
@@ -275,16 +279,13 @@ public:
         else
         {
             qDebug("Error: no such object %s", obj_name);
+            return 0;
         }
 
-        for (int i=0;i<ins;i++)
+        for (int i=0;i<in_c;i++)
             box->addInlet();
-        for (int i=0;i<outs;i++)
+        for (int i=0;i<out_c;i++)
             box->addOutlet();
-
-        connect(box,&cm_box::selectBox, this, &cm_canvas::s_SelectBox);
-        connect(box,&cm_box::moveBox, this, &cm_canvas::s_MoveBox);
-        box->setEditModeRef(&this->editMode);
 
         box->move(pos);
 
