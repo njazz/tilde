@@ -6,7 +6,17 @@
 #include <QGridLayout>
 #include <QLabel>
 
+void cm_pdwindow::cm_log(std::string text)
+{
+    QTableWidgetItem *item = new QTableWidgetItem;
+    item->setText(QDateTime().currentDateTime().toString((QString("hh:mm:ss"))));
+    ui->log->setItem(0,0,item);
 
+    item = new QTableWidgetItem;
+    item->setText(QString(text.c_str()));
+    ui->log->setItem(0,1,item);
+
+}
 cm_pdwindow::cm_pdwindow() :
 
     ui(new Ui::cm_pdwindow)
@@ -19,6 +29,14 @@ cm_pdwindow::cm_pdwindow() :
 
     ((QMainWindow*)this)->setWindowTitle("Pd");
 
+    QHeaderView *verticalHeader = ui->log->verticalHeader();
+    verticalHeader->setSectionResizeMode(QHeaderView::Fixed);
+    verticalHeader->setDefaultSectionSize(18);
+     ui->log->horizontalHeader()->setStretchLastSection(true);
+
+     ui->log->insertColumn(0);
+
+    this->cm_log("qtpd started");
 
 
 }
