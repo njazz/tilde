@@ -91,6 +91,7 @@ public:
 
         pdWindowAct = new QAction(tr("Pd Window"), this);
         pdWindowAct->setShortcut(tr("Ctrl+R"));
+        connect(pdWindowAct, &QAction::triggered, this, &cm_menu::pdWindow);
 
     }
 
@@ -177,6 +178,8 @@ private slots:
 
     void dspOn();
     void dspOff();
+
+    void pdWindow();
 
 
 };

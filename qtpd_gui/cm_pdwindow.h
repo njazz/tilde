@@ -8,6 +8,8 @@
 
 #include "cm_pdlink.h"
 
+//temporary
+
 
 namespace Ui {
 class cm_pdwindow;
@@ -28,6 +30,9 @@ public:
 
 
 };
+
+//fix - normal singleton here
+static cm_pdwindow* pdw;
 
 
 

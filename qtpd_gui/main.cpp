@@ -6,8 +6,7 @@
 #include "cm_pdwindow.h"
 #include "cm_patchwindow.h"
 
-//temporary
-cm_pdwindow* pdw;
+
 
 void pd_window_printhook(const char* s)
 {

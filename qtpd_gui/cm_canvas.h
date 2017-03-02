@@ -50,6 +50,11 @@ private:
     cm_widget *conn_out;
 
     //
+    QPoint newObjectPos;
+
+    QPoint dragPrevPos;
+
+    //
     bool editMode;
 
     Q_OBJECT
@@ -238,6 +243,7 @@ public:
             box->addOutlet();
 
         connect(box,&cm_box::selectBox, this, &cm_canvas::s_SelectBox);
+        connect(box,&cm_box::moveBox, this, &cm_canvas::s_MoveBox);
 
         box->move(pos);
 
@@ -257,7 +263,7 @@ public:
             msg->addOutlet();
 
             connect(msg,&cmo_msg::selectBox, this, &cm_canvas::s_SelectBox);
-
+            connect(msg,&cmo_msg::moveBox, this, &cm_canvas::s_MoveBox);
 
             msg->move(pos);
 
@@ -384,6 +390,7 @@ public slots:
     void s_OutMouseReleased(cm_widget*, QMouseEvent*);
 
     void s_SelectBox(cm_widget* box);
+    void s_MoveBox(cm_widget* box, QMouseEvent* event);
 
     //    void portMouseReleased();
     //    void portMouseEntered();

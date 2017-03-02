@@ -11,7 +11,7 @@ class cmo_msg : public cm_widget
     Q_OBJECT
 
 private:
-    QPoint dragOffset;
+    //QPoint dragOffset;
 
 public:
     //bool selected_;
@@ -74,7 +74,6 @@ public:
 
     void mousePressEvent(QMouseEvent *ev)
     {
-
         emit selectBox(this);
         this->dragOffset = ev->pos();
     }
@@ -83,6 +82,16 @@ public:
     {
         //this->selected_ = false;
         this->repaint();
+    }
+
+    void mouseMoveEvent(QMouseEvent *event)
+    {
+        if(event->buttons() & Qt::LeftButton)
+        {
+            emit moveBox(this, event);
+        }
+        event->ignore();
+
     }
 
     ///////

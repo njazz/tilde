@@ -70,9 +70,6 @@ cm_patchwindow::cm_patchwindow()
 
 void cm_patchwindow::objectMakerDone()
 {
-    //    QString objNameStr = this->objectMaker->text();
-    //    QByteArray ba = objNameStr.toLatin1();
-    //    const char * obj_name = ba.data();
 
     const char * obj_name = this->objectMaker->text().toStdString().c_str();
     t_object* new_obj = 0 ;
@@ -107,7 +104,6 @@ void cm_patchwindow::objectMakerDone()
     {
         qDebug("Error: no such object %s", obj_name);
     }
-
 
     this->canvas->dragObject = 0;
     this->objectMaker->close();

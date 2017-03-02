@@ -2,6 +2,7 @@
 
 #include "cm_basewindow.h"
 #include "cm_patchwindow.h"
+#include "cm_pdwindow.h"
 
 #include "cm_pdlink.h"
 
@@ -74,30 +75,30 @@ void cm_menu::paste()
 
 
 
-void cm_menu::putObject()
-{
-    //   infoLabel->setText(tr("Invoked <b>Edit|Paste</b>"));
-}
+//void cm_menu::putObject()
+//{
+//    //   infoLabel->setText(tr("Invoked <b>Edit|Paste</b>"));
+//}
 
-void cm_menu::putMessage()
-{
-    //   infoLabel->setText(tr("Invoked <b>Edit|Paste</b>"));
-}
+//void cm_menu::putMessage()
+//{
+//    //   infoLabel->setText(tr("Invoked <b>Edit|Paste</b>"));
+//}
 
-void cm_menu::putNumber()
-{
-    //   infoLabel->setText(tr("Invoked <b>Edit|Paste</b>"));
-}
+//void cm_menu::putNumber()
+//{
+//    //   infoLabel->setText(tr("Invoked <b>Edit|Paste</b>"));
+//}
 
-void cm_menu::putSymbol()
-{
-    //   infoLabel->setText(tr("Invoked <b>Edit|Paste</b>"));
-}
+//void cm_menu::putSymbol()
+//{
+//    //   infoLabel->setText(tr("Invoked <b>Edit|Paste</b>"));
+//}
 
-void cm_menu::putComment()
-{
-    //   infoLabel->setText(tr("Invoked <b>Edit|Paste</b>"));
-}
+//void cm_menu::putComment()
+//{
+//    //   infoLabel->setText(tr("Invoked <b>Edit|Paste</b>"));
+//}
 
 
 //void cm_menu::dspOn()
@@ -113,4 +114,11 @@ void cm_menu::putComment()
 void cm_menu::pdWindow()
 {
     //   infoLabel->setText(tr("Invoked <b>Edit|Paste</b>"));
+
+    if(pdw)
+       // if (pdw->isVisible())
+            pdw->hide();
+    //else pdw->show();
+
+//    post("pd window");
 }

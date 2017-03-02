@@ -27,7 +27,7 @@ public:
     //temporary?
     void* pdObject;
 
-    QPoint dragOffset;
+
 
     explicit cm_box(cm_widget *parent = 0);
 
@@ -74,10 +74,8 @@ public:
     {
         if(event->buttons() & Qt::LeftButton)
         {
-
-            this->move(mapToParent(event->pos() - this->dragOffset));
+            emit moveBox(this, event);
         }
-
         event->ignore();
 
     }

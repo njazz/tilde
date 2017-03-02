@@ -89,6 +89,39 @@ public:
 
     void newMessageBox()
     {
+
+        const char * obj_name = this->objectMaker->text().toStdString().c_str();
+        t_object* new_obj = 0 ;
+
+        //temp
+        if (!this->pd_canvas)
+        {
+            qDebug("bad pd canvas instance");
+        }
+        else
+        {
+            new_obj = cmp_create_object(this->pd_canvas,(char*)obj_name,50, 50);
+        }
+
+        if (new_obj)
+        {
+
+             qDebug ("created object %lu, new_obj");
+
+//            in_c = cmp_get_inlet_count(new_obj);
+//            out_c = cmp_get_outlet_count(new_obj);
+
+            qDebug ("created msgbox %sptr %lu", obj_name, new_obj);
+
+            //cm_box* newBox = this->canvas->createBox(this->objectMaker->text().toStdString(),this->objectMaker->pos(),in_c,out_c);
+            //newBox->pdObject = new_obj;
+            //newBox->show();
+        }
+        else
+        {
+            qDebug("Error: no such object %s", obj_name);
+        }
+        //
         cmo_msg *newMsg = this->canvas->createMsg("new",QPoint(100,100));
         this->canvas->dragObject = newMsg;
         newMsg->show();

@@ -6,6 +6,7 @@
 #include <QGridLayout>
 #include <QLabel>
 
+
 void cm_pdwindow::cm_log(std::string text)
 {
     qDebug("cm_log %s", text.c_str());

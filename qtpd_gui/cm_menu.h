@@ -26,11 +26,11 @@ public slots:
     static void copy();
     static void paste();
 
-    static void putObject();
-    static void putMessage();
-    static void putNumber();
-    static void putSymbol();
-    static void putComment();
+//    static void putObject();
+//    static void putMessage();
+//    static void putNumber();
+//    static void putSymbol();
+//    static void putComment();
 
 //    static void dspOn();
 //    static void dspOff();

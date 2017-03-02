@@ -75,8 +75,31 @@ void cm_canvas::s_OutMouseReleased(cm_widget* , QMouseEvent* )
 
 void cm_canvas::s_SelectBox(cm_widget *box)
 {
-    this->selObjectBoxes.clear();
+
     this->selObjectBoxes.push_back(box);
     box->select();
+
+    //temporary
+    this->dragObject = 0;
+
+    //this->dragPrevPos = box->pos();
+}
+
+
+void cm_canvas::s_MoveBox(cm_widget *box, QMouseEvent* event)
+{
+    for (int i=0;i<this->selObjectBoxes.size();i++)
+    {
+        ((cm_widget*)this->selObjectBoxes.at(i))->move(
+
+                        ((cm_widget*)this->selObjectBoxes.at(i))->pos() +
+                        mapToParent((event->pos()-box->dragOffset))
+
+                    );
+
+
+
+    }
+
 
 }

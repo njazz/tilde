@@ -14,6 +14,10 @@ private:
     bool selected_;
 
 public:
+
+    QPoint dragOffset;
+    //QPoint dragStart;
+
     explicit cm_widget(QWidget *parent = 0);
 
     void select()
@@ -38,6 +42,7 @@ signals:
     void mouseLeaved();
 
     void selectBox(cm_widget*box);
+    void moveBox(cm_widget*box, QMouseEvent* event);
 
 public slots:
 

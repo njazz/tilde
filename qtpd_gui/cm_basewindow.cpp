@@ -54,3 +54,8 @@ void cm_basewindow::dspOff()
     dspOnAct->setChecked(false);
 }
 
+void cm_basewindow::pdWindow()
+{
+    //if (pdw->isVisible()) pdw->hide(); else pdw->show();
+}
+
