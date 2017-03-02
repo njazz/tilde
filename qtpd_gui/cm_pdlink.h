@@ -20,7 +20,7 @@ extern t_canvas* cmp_newpatch();
 
 //void cmp_openpatch(char* filename)
 //void cmp_savepatch(t_canvas* canvas, char* filename)
-//void cmp_closepatch(t_canvas* canvas)
+void cmp_closepatch(t_canvas* canvas);
 
 #pragma mark -
 
@@ -41,26 +41,6 @@ extern int cmp_get_outlet_count(t_object* obj);
 #pragma mark -
 
 extern void cmp_switch_dsp(bool on);
-
-
-//void cmp_newpatch(){}
-//void cmp_openpatch(char * filename){}
-//void cmp_savepatch(char * filename){}
-//void cmp_closepatch(){}
-
-//typedef void t_object;
-
-//void cmp_moveobject(t_object*, int x, int y){}
-//void cmp_patchcord(t_object*, int out, t_object*, int in){}
-//void cmp_delete_patchcord(t_object*, int out, t_object*, int in){}    //?
-
-//t_object* cmp_create_object(char * class_name, int x, int y){}          //returns pointer
-//void cmp_get_inlet_count(t_object obj){};
-//void cmp_get_outlet_count(t_object obj){};
-//void cmp_get_inlet_type(t_object obj, int idx){};
-//void cmp_get_outlet_type(t_object obj, int idx){};
-
-//void cmp_switch_dsp(bool on){};
 
 
 

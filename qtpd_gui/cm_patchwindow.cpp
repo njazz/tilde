@@ -66,11 +66,14 @@ cm_patchwindow::cm_patchwindow()
 
 void cm_patchwindow::objectMakerDone()
 {
-    QString objNameStr = this->objectMaker->text();
-    QByteArray ba = objNameStr.toLatin1();
-    const char * obj_name = ba.data();
+    //    QString objNameStr = this->objectMaker->text();
+    //    QByteArray ba = objNameStr.toLatin1();
+    //    const char * obj_name = ba.data();
 
-    t_object* new_obj ;
+    const char * obj_name = this->objectMaker->text().toStdString().c_str();
+    t_object* new_obj = 0 ;
+
+    int in_c=0, out_c=0;
 
     //temp
     if (!this->pd_canvas)
@@ -81,18 +84,23 @@ void cm_patchwindow::objectMakerDone()
     {
         new_obj = cmp_create_object(this->pd_canvas,(char*)obj_name,(int)this->objectMaker->pos().x(), (int)this->objectMaker->pos().y());
     }
-    if (!new_obj)
+
+    if (new_obj)
     {
-        qDebug("Error: no such object %s", obj_name);
-    }
-    else
-    {
-        int in_c = cmp_get_inlet_count(new_obj);
-        int out_c = cmp_get_outlet_count(new_obj);
+
+        in_c = cmp_get_inlet_count(new_obj);
+        out_c = cmp_get_outlet_count(new_obj);
+
+        qDebug ("created object %s ins %i outs %i ptr %lu", obj_name, in_c, out_c, new_obj);
 
         cm_box* newBox = this->canvas->createBox(this->objectMaker->text().toStdString(),this->objectMaker->pos(),in_c,out_c);
         newBox->show();
     }
+    else
+    {
+        qDebug("Error: no such object %s", obj_name);
+    }
+
 
     this->canvas->dragObject = 0;
     this->objectMaker->close();

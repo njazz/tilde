@@ -8,6 +8,9 @@ cm_box::cm_box(cm_widget *parent) : cm_widget(parent)
 
     this->selected_ = false;
 
+    //this->setAttribute(Qt::WA_NoMousePropagation);
+
+
 }
 
 

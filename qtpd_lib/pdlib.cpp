@@ -16,7 +16,8 @@ int sys_startgui(const char *libdir);
 
 #include "ceammc-lib/ceammc_atomlist.h"
 
-#include <string.h>
+#include <string>
+#include <sstream>
 
 #include <QDebug>
 
@@ -95,7 +96,14 @@ t_canvas* cmp_newpatch()
     pd_typedmess(dest, gensym("menunew"), (int)list.size(), list.toPdData());
 
     t_canvas* ret = 0;
-    ret = canvas_getcurrent();
+    ret = (t_canvas*)pd_newest();//canvas_getcurrent();
+
+    if (pd_this)
+    {
+        ret = pd_this->pd_canvaslist->gl_next;
+    }
+
+    qDebug("new canvas: %lu", (long)ret);
     
     return ret;
 }
@@ -118,19 +126,83 @@ void cmp_closepatch(t_canvas* canvas)
 
 //#pragma mark -
 
+//temporary
+template<typename Out>
+void split(const std::string &s, char delim, Out result) {
+    std::stringstream ss;
+    ss.str(s);
+    std::string item;
+    while (std::getline(ss, item, delim)) {
+        *(result++) = item;
+    }
+}
+
+
+std::vector<std::string> string_split(const std::string &s, char delim) {
+    std::vector<std::string> elems;
+    split(s, delim, std::back_inserter(elems));
+    return elems;
+}
+
+
 t_object* cmp_create_object(t_canvas* canvas, char* class_name, int x, int y)
 {
     t_object* ret;
+    t_object* ret2;
     
-    AtomList list(Atom(gensym(class_name)));
-    list.append(Atom(x));
-    list.append(Atom(y));
-    
+    std::vector<std::string> atoms_ = string_split(class_name, ' ');
+
+    if (atoms_.size()==0) {return 0;}
+
+    AtomList list;
+
+      //atoms_.at(0).c_str()
+    list.append(Atom((float)x));
+    list.append(Atom((float)y));
+
+    //list.append(Atom(gensym(class_name)));
+
+    for (int i=0;i<atoms_.size();i++)
+    {
+        list.append(Atom(gensym(atoms_.at(i).c_str())));
+    }
+
+    qDebug("obj name: %s", list.at(0).asString().c_str());
+
+    //ret = (t_object*)&canvas->gl_next;//(t_object*)pd_newest();
+
     pd_typedmess((t_pd*)canvas, gensym("obj"), (int)list.size(), list.toPdData());
     
-    ret = (t_object*)newest;
+//    ret = (t_object*)canvas->gl_list->g_next;
+//    while(ret->te_g.g_next)
+//        ret = (t_object*)ret->te_g.g_next;
+
+    //t_gobj* xx;
+    t_gobj* yy;
+    for (yy = glist_getcanvas(canvas)->gl_list; yy; yy = yy->g_next)
+    {
+//        t_object *ob = 0;
+//        if ((ob = pd_checkobject(&y->g_pd)))
+
+    }
+
+    qDebug("canvas %lu gllist %lu", (long)canvas, (long)canvas->gl_list);
+
+    ret2 = (t_object*)pd_newest();
+    ret = (t_object*)yy;//pd_checkobject(&yy->g_pd);//(t_object*)newest;
     
-    return ret;
+    char* bufp = new char[1024];
+    int lenp;
+
+    binbuf_gettext(ret2->te_binbuf,&bufp,&lenp);
+    qDebug("object data: %s", bufp);
+
+    qDebug("newest: %lu %lu", (long)ret ,(long)ret2 );
+    //if ( ((long)ret) != ((long)ret2) )
+
+    return ret2;
+    //else return 0;
+
 }
 
 //void cmp_moveobject(t_object* obj, int x, int y)
@@ -153,12 +225,13 @@ void cmp_delete_patchcord(t_object* obj1, int outno, t_object* obj2, int inno) {
 
 #pragma mark -
 
-int cmp_get_inlet_count(t_object* obj)
+int cmp_get_outlet_count(t_object* obj)
 {
+    //qDebug("inlet count for %lu", (long)obj);
     return obj_noutlets(obj);
 };
 
-int cmp_get_outlet_count(t_object* obj)
+int cmp_get_inlet_count(t_object* obj)
 {
     return obj_ninlets(obj);
 };
