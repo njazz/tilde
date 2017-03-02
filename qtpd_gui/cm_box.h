@@ -1,7 +1,7 @@
 #ifndef CM_BOX_H
 #define CM_BOX_H
 
-#include <QWidget>
+//#include <QWidget>
 
 #include <QtGui>
 
@@ -18,7 +18,7 @@ class cm_box : public cm_widget
 
 private:
 
-    bool selected_;
+    //bool selected_;
     std::vector<cm_port*> inlets_;
     std::vector<cm_port*> outlets_;
 
@@ -43,7 +43,7 @@ public:
               p.setFont(QFont("Monaco",11,0,false));
                p.drawText(2,3,this->width()-2,this->height()-3,0,this->pdObjName.c_str(),0);
 
-                if (this->selected_)
+                if (this->isSelected())
                 {
                     p.setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
                     p.drawRect(0,0,this->width(),this->height());
@@ -133,18 +133,6 @@ public:
         this->setOutletsPos();
     }
 
-    void select()
-    {
-        this->selected_ = true;
-        this->repaint();
-    }
-
-    void deselect()
-    {
-        this->selected_ = false;
-        this->repaint();
-    }
-
     /////
 
     cm_port* getInletAt(int idx)
@@ -185,7 +173,7 @@ signals:
     void outletMouseLeaved();
 
     //void moved();
-    void selectBox(cm_box*box);
+    //void selectBox(cm_widget* box);
 
 private slots:
 

@@ -13,6 +13,8 @@ cm_canvas::cm_canvas(cm_widget *parent) : cm_widget(parent)
     this->selFrame.active = false;
     this->newLine.active = false;
 
+    this->editMode = true;
+
 }
 
 //cm_canvas::cm_canvas(QWidget *parent) : cm_widget((cm_widget*)parent)
@@ -71,7 +73,7 @@ void cm_canvas::s_OutMouseReleased(cm_widget* , QMouseEvent* )
 
 }
 
-void cm_canvas::s_SelectBox(cm_box* box)
+void cm_canvas::s_SelectBox(cm_widget *box)
 {
     this->selObjectBoxes.clear();
     this->selObjectBoxes.push_back(box);

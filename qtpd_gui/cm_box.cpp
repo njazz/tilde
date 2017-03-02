@@ -6,10 +6,15 @@ cm_box::cm_box(cm_widget *parent) : cm_widget(parent)
     this->setFixedSize(65,20);
     this->setMouseTracking(true);
 
-    this->selected_ = false;
+    this->deselect();// = false;
 
     //this->setAttribute(Qt::WA_NoMousePropagation);
 
+
+    QPalette Pal(palette());
+    Pal.setColor(QPalette::Background, QColor(240,240,240));
+    this->setAutoFillBackground(true);
+    this->setPalette(Pal);
 
 }
 

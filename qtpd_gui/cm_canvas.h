@@ -36,6 +36,7 @@ typedef struct
 
 class cm_canvas : public cm_widget
 {
+private:
     //todo move this to data class
     std::vector<cm_widget*> objectBoxes;
     std::vector<cm_patchcord*> patchcords;
@@ -47,6 +48,9 @@ class cm_canvas : public cm_widget
     //
     cm_widget *conn_obj1;
     cm_widget *conn_out;
+
+    //
+    bool editMode;
 
     Q_OBJECT
 public:
@@ -252,6 +256,9 @@ public:
             msg->addInlet();
             msg->addOutlet();
 
+            connect(msg,&cmo_msg::selectBox, this, &cm_canvas::s_SelectBox);
+
+
             msg->move(pos);
 
             this->objectBoxes.push_back(msg);
@@ -348,6 +355,25 @@ public:
         this->repaint();
     }
 
+    ////////
+
+    void setEditMode(bool mode)
+    {
+        this->editMode = mode;
+
+        QPalette Pal(palette());
+        Pal.setColor(QPalette::Background, (mode)?QColor(255,255,255):QColor(245,245,245));
+        this->setAutoFillBackground(true);
+        this->setPalette(Pal);
+
+        this->deselectBoxes();
+        this->hoverPatchcordsOff();
+
+        this->repaint();
+    }
+
+    bool getEditMode(){return this->editMode;}
+
 signals:
 
 public slots:
@@ -357,7 +383,7 @@ public slots:
     void s_OutMousePressed(cm_widget* obj, QMouseEvent*);
     void s_OutMouseReleased(cm_widget*, QMouseEvent*);
 
-    void s_SelectBox(cm_box* box);
+    void s_SelectBox(cm_widget* box);
 
     //    void portMouseReleased();
     //    void portMouseEntered();

@@ -12,6 +12,7 @@ class cm_patchwindow : public cm_basewindow
 
 private:
     QAction *delObjectAct;
+    QAction *editModeAct;
 
     QAction *putObjectAct;
     QAction *putMessageAct;
@@ -33,6 +34,11 @@ public:
         delObjectAct = new QAction(tr("Delete object"), this);
         delObjectAct->setShortcut(tr("Backspace"));
         connect(delObjectAct, &QAction::triggered, this, &cm_patchwindow::delSelected);
+
+        editModeAct = new QAction(tr("Edit mode"), this);
+        editModeAct->setShortcut(tr("Ctrl+E"));
+        editModeAct->setCheckable(true);
+        connect(editModeAct, &QAction::triggered, this, &cm_patchwindow::setEditMode);
 
         putObjectAct = new QAction(tr("Object"), this);
         putObjectAct->setShortcut(tr("Ctrl+1"));
@@ -58,6 +64,7 @@ public:
 
         editMenu->addSeparator();
         editMenu->addAction(delObjectAct);
+        editMenu->addAction(editModeAct);
 
         putMenu->addAction(putObjectAct);
         putMenu->addAction(putMessageAct);
@@ -97,7 +104,11 @@ public:
 
     void objectMakerDone();
 
-
+    void setEditMode()
+    {
+        this->canvas->setEditMode(!this->canvas->getEditMode());
+        this->editModeAct->setChecked(this->canvas->getEditMode());
+    }
 
 };
 

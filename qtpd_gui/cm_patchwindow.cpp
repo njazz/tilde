@@ -34,6 +34,8 @@ cm_patchwindow::cm_patchwindow()
     if (!this->pd_canvas)
     {qDebug("Failed to create canvas!");}
 
+    this->editModeAct->setChecked(true);
+
     //cm_patchcord *pc = new cm_patchcord(this->canvas);
     //pc->setPorts(box1,box2,box1->getOutletAt(0), box2->getInletAt(1));
 
