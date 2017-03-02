@@ -108,13 +108,14 @@ t_canvas* cmp_newpatch()
     return ret;
 }
 
-//void cmp_openpatch(char* filename)
-//{
-//}
+t_canvas* cmp_openpatch(char* filename, char* path)
+{
+   return (t_canvas*) glob_evalfile(0, gensym(filename), gensym(path));
+}
 
 //void cmp_savepatch(t_canvas* canvas, char* filename)
 //{
-//    //message to canvas
+//    //message to canvas?
 //}
 
 void cmp_closepatch(t_canvas* canvas)

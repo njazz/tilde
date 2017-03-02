@@ -34,7 +34,8 @@ SOURCES += main.cpp\
     cm_patchwindow.cpp \
     cm_objectmaker.cpp \
     cm_widget.cpp \
-    cm_patchcord.cpp
+    cm_patchcord.cpp \
+    cmo_msg.cpp
 
 HEADERS  += \
     cm_box.h \
@@ -47,7 +48,8 @@ HEADERS  += \
     cm_objectmaker.h \
     cm_widget.h \
     cm_patchcord.h \
-    cm_pdlink.h
+    cm_pdlink.h \
+    cmo_msg.h
 
 FORMS    += \
     cm_basewindow.ui \

@@ -6,6 +6,7 @@
 #include <QtWidgets>
 #include "cm_box.h"
 #include "cm_patchcord.h"
+#include "cmo_msg.h"
 
 #include "cm_objectmaker.h"
 
@@ -36,9 +37,9 @@ typedef struct
 class cm_canvas : public cm_widget
 {
     //todo move this to data class
-    std::vector<cm_box*> objectBoxes;
+    std::vector<cm_widget*> objectBoxes;
     std::vector<cm_patchcord*> patchcords;
-    std::vector<cm_box*> selObjectBoxes;
+    std::vector<cm_widget*> selObjectBoxes;
 
     tRectPlus selFrame;
     tRectPlus newLine;
@@ -229,6 +230,24 @@ public:
         box->show();
 
         return box;
+
+    }
+
+    cmo_msg* createMsg(std::string message, QPoint pos)
+    {
+            cmo_msg *msg = new cmo_msg(this);
+            msg->pdObjName = message.c_str();
+            msg->addInlet();
+            msg->addOutlet();
+
+            msg->move(pos);
+
+            this->objectBoxes.push_back(msg);
+
+            msg->show();
+
+            return msg;
+
 
     }
 

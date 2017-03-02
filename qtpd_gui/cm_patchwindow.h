@@ -40,6 +40,7 @@ public:
 
         putMessageAct = new QAction(tr("Message"), this);
         putMessageAct->setShortcut(tr("Ctrl+2"));
+        connect(putMessageAct, &QAction::triggered, this, &cm_patchwindow::newMessageBox);
 
         putNumberAct = new QAction(tr("Number"), this);
         putNumberAct->setShortcut(tr("Ctrl+3"));
@@ -76,6 +77,14 @@ public:
 
         this->canvas->dragObject = this->objectMaker;
         this->objectMaker->show();
+
+    }
+
+    void newMessageBox()
+    {
+        cmo_msg *newMsg = this->canvas->createMsg("new",QPoint(100,100));
+        this->canvas->dragObject = newMsg;
+        newMsg->show();
 
     }
 

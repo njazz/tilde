@@ -22,11 +22,13 @@ cm_patchwindow::cm_patchwindow()
     cm_box *box2 = this->canvas->createBox("dac~", QPoint(30,100), 2,0);
     box2->setFixedWidth(45);
 
-    box1->move(30,30);
-    box2->move(30,100);
+//    box1->move(30,30);
+//    box2->move(30,100);
 
-    this->canvas->patchcord(box1,0,box2,1);
-    this->canvas->patchcord(box1,0,box2,0);
+    cmo_msg *msg1 = this->canvas->createMsg("1 2 3", QPoint(100,30));
+
+    this->canvas->patchcord(box1,0, box2,1);
+    this->canvas->patchcord(box1,0, box2,0);
 
     this->pd_canvas = cmp_newpatch();
     if (!this->pd_canvas)
@@ -94,6 +96,7 @@ void cm_patchwindow::objectMakerDone()
         qDebug ("created object %s ins %i outs %i ptr %lu", obj_name, in_c, out_c, new_obj);
 
         cm_box* newBox = this->canvas->createBox(this->objectMaker->text().toStdString(),this->objectMaker->pos(),in_c,out_c);
+        newBox->pdObject = new_obj;
         newBox->show();
     }
     else

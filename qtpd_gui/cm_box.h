@@ -9,6 +9,7 @@
 
 #include "cm_widget.h"
 
+//typedef void t_object;
 // basic object
 
 class cm_box : public cm_widget
@@ -23,6 +24,8 @@ private:
 
 public:
     std::string pdObjName;
+    //temporary?
+    void* pdObject;
 
     QPoint dragOffset;
 
@@ -107,6 +110,7 @@ public:
         }
     }
 
+    //move to cm_widget?
     void addInlet()
     {
         cm_port* new_in = new cm_port(this);
