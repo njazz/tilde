@@ -169,7 +169,7 @@ t_object* cmp_create_object(t_canvas* canvas, char* class_name, int x, int y)
 
     pd_typedmess((t_pd*)canvas, gensym("obj"), (int)list.size(), list.toPdData());
     
-    qDebug("canvas %lu gllist %lu", (long)canvas, (long)canvas->gl_list);
+//    qDebug("canvas %lu gllist %lu", (long)canvas, (long)canvas->gl_list);
 
     ret2 = (t_object*)pd_newest();
     if (!ret2) return 0;
@@ -208,7 +208,7 @@ t_object* cmp_create_message(t_canvas* canvas, char* class_name, int x, int y)
 
     pd_typedmess((t_pd*)canvas, gensym("msg"), (int)list.size(), list.toPdData());
 
-    qDebug("canvas %lu gllist %lu", (long)canvas, (long)canvas->gl_list);
+//    qDebug("canvas %lu gllist %lu", (long)canvas, (long)canvas->gl_list);
 
     ret2 = (t_object*)pd_newest();
     if (!ret2) return 0;

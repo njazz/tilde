@@ -150,7 +150,7 @@ public:
         QFontMetrics fm(myFont);
 
 
-        this->setFixedWidth((int)fm.width(QString(this->pdObjName.c_str())) + 3);
+        this->setFixedWidth((int)fm.width(QString(this->pdObjName.c_str())) + 5);
     }
     
     std::string getPdObjName()

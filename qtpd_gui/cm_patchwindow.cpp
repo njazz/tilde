@@ -14,9 +14,14 @@ cm_patchwindow::cm_patchwindow()
     scr->setFrameShape(QFrame::NoFrame);
 
     this->canvas = new cm_canvas((cm_widget*)scr);
+    this->canvas->pd_canvas = cmp_newpatch();
+
     scr->setWidgetResizable(true);
 
     this->setCentralWidget(this->canvas);
+
+    if (!this->canvas->pd_canvas)
+    {qDebug("Failed to create canvas!");}
 
     cm_box *box1 = this->canvas->createBox("osc~ 440", QPoint(30,30), 1,1);
     cm_box *box2 = this->canvas->createBox("dac~ 1 2", QPoint(30,100), 2,0);
@@ -26,14 +31,12 @@ cm_patchwindow::cm_patchwindow()
 //    box1->move(30,30);
 //    box2->move(30,100);
 
-    cmo_msg *msg1 = this->canvas->createMsg("1 2 3", QPoint(100,30));
+    cmo_msg *msg1 = this->canvas->createMsg("test123", QPoint(100,30));
 
     this->canvas->patchcord(box1,0, box2,1);
     this->canvas->patchcord(box1,0, box2,0);
 
-    this->canvas->pd_canvas = cmp_newpatch();
-    if (!this->canvas->pd_canvas)
-    {qDebug("Failed to create canvas!");}
+
 
     this->editModeAct->setChecked(true);
 
@@ -72,39 +75,11 @@ cm_patchwindow::cm_patchwindow()
 void cm_patchwindow::objectMakerDone()
 {
 
-    const char * obj_name = this->objectMaker->text().toStdString().c_str();
-    t_object* new_obj = 0 ;
 
-    int in_c=0, out_c=0;
+std::string obj_name = this->objectMaker->text().toStdString();
 
-    //temp
-    if (!this->canvas->pd_canvas)
-    {
-        qDebug("bad pd canvas instance");
-    }
-    else
-    {
-        new_obj = cmp_create_object(this->canvas->pd_canvas,(char*)obj_name,(int)this->objectMaker->pos().x(), (int)this->objectMaker->pos().y());
-    }
+    cmo_msg *msg1 = this->canvas->createMsg(obj_name, this->objectMaker->pos());
 
-    if (new_obj)
-    {
-
-         qDebug ("created object %lu, new_obj");
-
-        in_c = cmp_get_inlet_count(new_obj);
-        out_c = cmp_get_outlet_count(new_obj);
-
-        qDebug ("created object %s ins %i outs %i ptr %lu", obj_name, in_c, out_c, new_obj);
-
-        cm_box* newBox = this->canvas->createBox(this->objectMaker->text().toStdString(),this->objectMaker->pos(),in_c,out_c);
-        newBox->pdObject = new_obj;
-        newBox->show();
-    }
-    else
-    {
-        qDebug("Error: no such object %s", obj_name);
-    }
 
     this->canvas->dragObject = 0;
     this->objectMaker->close();

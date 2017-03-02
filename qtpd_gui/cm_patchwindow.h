@@ -91,9 +91,6 @@ public:
     {
 
         //const char * obj_name = this->objectMaker->text().toStdString().c_str();
-
-
-
         //
         cmo_msg *newMsg = this->canvas->createMsg("new",QPoint(100,100));
         this->canvas->dragObject = newMsg;
