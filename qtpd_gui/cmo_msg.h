@@ -6,6 +6,8 @@
 #include "cm_widget.h"
 #include "cm_port.h"
 
+#include "cm_pdlink.h"
+
 class cmo_msg : public cm_widget
 {
     Q_OBJECT
@@ -45,30 +47,30 @@ public:
             QPainterPath tmpPath;
              tmpPath.addPolygon(poly);
               QBrush br = QBrush(QColor(220,220,220), Qt::SolidPattern);
-              p.fillPath(tmpPath,br);
+               p.fillPath(tmpPath,br);
 
-               if (this->isSelected() )
-               {
-                   p.setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-               }
-               if (this->clicked_)
-               {
-                   p.setPen(QPen(QColor(0, 192, 255), 4, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
-               }
-               else
-               {
-                   p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-               }
+                if (this->isSelected() )
+                {
+                    p.setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+                }
+                if (this->clicked_)
+                {
+                    p.setPen(QPen(QColor(0, 192, 255), 4, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+                }
+                else
+                {
+                    p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+                }
 
-                p.drawPolygon(poly);
+                 p.drawPolygon(poly);
 
 
-                QTextOption *op = new QTextOption;
-                 op->setAlignment(Qt::AlignLeft);
-                  p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+                  QTextOption *op = new QTextOption;
+                   op->setAlignment(Qt::AlignLeft);
+                    p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
-                   p.setFont(QFont("Monaco",11,0,false));
-                    p.drawText(2,3,this->width()-2,this->height()-3,0,this->pdObjName.c_str(),0);
+                     p.setFont(QFont("Monaco",11,0,false));
+                      p.drawText(2,3,this->width()-2,this->height()-3,0,this->pdObjName.c_str(),0);
 
 
     }
@@ -86,6 +88,24 @@ public:
         {
             this->clicked_ = true;
             this->repaint();
+        }
+
+        //temporary
+        //move
+        if (!this->getEditMode())
+        {
+            if (!this->pdObject)
+            {
+                qDebug("msg: bad pd object!");
+            }
+            else
+            {
+
+                std::string msg = ("list "+ this->pdObjName);
+                qDebug("send msg %s", msg.c_str());
+                cmp_sendstring((t_pd*)this->pdObject, msg.c_str());
+            }
+
         }
     }
 
@@ -137,7 +157,7 @@ public:
             float w = this->width()-1;
             w = (w<30)?30:w;
             float x = (w) / outlets_.size() * i;
-            float y = this->height()-4;
+            float y = this->height()-3;
 
             outlets_.at(i)->move(x,y);
             outlets_.at(i)->repaint();

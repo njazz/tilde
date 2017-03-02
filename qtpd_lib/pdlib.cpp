@@ -280,6 +280,25 @@ void cmp_switch_dsp(bool on)
 };
 
 
+void cmp_sendstring(t_pd* obj, std::string msg)
+{
+    std::vector<std::string> atoms_ = string_split(msg, ' ');
+
+    AtomList list;
+
+    if (atoms_.size()<1) return;
+
+    for (int i = 1;i<atoms_.size();i++)
+    {
+        list.append(Atom(gensym(atoms_.at(i).c_str())));
+    }
+
+    pd_typedmess(obj, gensym(atoms_.at(0).c_str()), (int)list.size(), list.toPdData());
+
+}
+
+//////////
+
 pdlib::pdlib()
 {
 }

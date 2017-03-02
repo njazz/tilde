@@ -85,6 +85,7 @@ void cm_canvas::s_SelectBox(cm_widget *box)
 
 void cm_canvas::s_MoveBox(cm_widget *box, QMouseEvent* event)
 {
+    if (!this->getEditMode()) return;
     for (int i=0;i<this->selObjectBoxes.size();i++)
     {
         ((cm_widget*)this->selObjectBoxes.at(i))->move(

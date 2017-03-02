@@ -43,7 +43,9 @@ extern int cmp_get_outlet_count(t_object* obj);
 
 extern void cmp_switch_dsp(bool on);
 
+#pragma mark -
 
+void cmp_sendstring(t_pd* obj, std::string msg);
 
 
 #endif // CM_PDLINK_H

@@ -62,6 +62,9 @@ public:
     //encapsulate
     QWidget *dragObject;
 
+    //temp
+    t_canvas* pd_canvas;
+
     explicit cm_canvas(cm_widget *parent = 0);
     cm_canvas(QWidget *parent = 0);
 
@@ -148,6 +151,7 @@ public:
 
         this->repaint();
 
+        // move new object
         if (this->dragObject)
         {
             QPoint offset = QPoint(10,10);
@@ -233,6 +237,7 @@ public:
     }
 
     //////////
+
     cm_box* createBox(std::string pdObjectName, QPoint pos, int ins, int outs)
     {
         cm_box *box = new cm_box(this);
@@ -271,6 +276,23 @@ public:
             msg->move(pos);
 
             this->objectBoxes.push_back(msg);
+
+            //temp
+            t_object* new_obj = 0 ;
+            if (!this->pd_canvas)
+            {qDebug("bad pd canvas instance");}
+            else
+            {new_obj = cmp_create_message(this->pd_canvas,(char*) message.c_str(),50, 50);}
+
+            if (new_obj)
+            {
+                qDebug ("created msgbox %sptr %lu",  message.c_str(), new_obj);
+                msg->pdObject = new_obj;
+            }
+            else
+            {
+                qDebug("Error: no such object %s",  message.c_str());
+            }
 
             msg->show();
 

@@ -23,8 +23,7 @@ private:
     std::string pdObjName;
 
 public:
-    //temporary?
-    void* pdObject;
+
 
     explicit cm_box(cm_widget* parent = 0);
 
@@ -75,11 +74,13 @@ public:
 
     void setInletsPos()
     {
-        float w = this->width() + 5;
+        float w = this->width() - 10;
         w = (w < 30) ? 30 : w;
 
+        float s = (inlets_.size()<2)?inlets_.size():(inlets_.size()-1);
+
         for (int i = 0; i < (int)inlets_.size(); i++) {
-            float x = (w) / (float)(inlets_.size()+1) * (float)i;
+            float x = (w) / s * (float)i;
             float y = 0;
 
             inlets_.at(i)->move(x, y);
@@ -89,12 +90,14 @@ public:
 
     void setOutletsPos()
     {
-        float w = this->width() + 5;
+        float w = this->width() - 10;
         w = (w < 30) ? 30 : w;
 
+        float s = (outlets_.size()<2)?outlets_.size():(outlets_.size()-1);
+
         for (int i = 0; i < (int)outlets_.size(); i++) {
-            float x = (w) / (float)(outlets_.size()+1) * (float)i;
-            float y = this->height() - 4;
+            float x = (w) / s * (float)i;
+            float y = this->height() - 3;
 
             outlets_.at(i)->move(x, y);
             outlets_.at(i)->repaint();

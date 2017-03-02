@@ -16,6 +16,8 @@ private:
     bool *editMode_;
 
 public:
+    //temporary?
+    void* pdObject;
 
     QPoint dragOffset;
     //QPoint dragStart;

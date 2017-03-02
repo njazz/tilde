@@ -19,8 +19,9 @@ cm_patchwindow::cm_patchwindow()
     this->setCentralWidget(this->canvas);
 
     cm_box *box1 = this->canvas->createBox("osc~ 440", QPoint(30,30), 1,1);
-    cm_box *box2 = this->canvas->createBox("dac~", QPoint(30,100), 2,0);
-//    box2->setFixedWidth(45);
+    cm_box *box2 = this->canvas->createBox("dac~ 1 2", QPoint(30,100), 2,0);
+
+    //    box2->setFixedWidth(45);
 
 //    box1->move(30,30);
 //    box2->move(30,100);
@@ -30,8 +31,8 @@ cm_patchwindow::cm_patchwindow()
     this->canvas->patchcord(box1,0, box2,1);
     this->canvas->patchcord(box1,0, box2,0);
 
-    this->pd_canvas = cmp_newpatch();
-    if (!this->pd_canvas)
+    this->canvas->pd_canvas = cmp_newpatch();
+    if (!this->canvas->pd_canvas)
     {qDebug("Failed to create canvas!");}
 
     this->editModeAct->setChecked(true);
@@ -77,13 +78,13 @@ void cm_patchwindow::objectMakerDone()
     int in_c=0, out_c=0;
 
     //temp
-    if (!this->pd_canvas)
+    if (!this->canvas->pd_canvas)
     {
         qDebug("bad pd canvas instance");
     }
     else
     {
-        new_obj = cmp_create_object(this->pd_canvas,(char*)obj_name,(int)this->objectMaker->pos().x(), (int)this->objectMaker->pos().y());
+        new_obj = cmp_create_object(this->canvas->pd_canvas,(char*)obj_name,(int)this->objectMaker->pos().x(), (int)this->objectMaker->pos().y());
     }
 
     if (new_obj)
