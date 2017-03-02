@@ -28,7 +28,6 @@ cm_canvas::cm_canvas(cm_widget *parent) : cm_widget(parent)
 void cm_canvas::s_InMousePressed(cm_widget* obj, QMouseEvent* )
 {
     //    printf("in: mouse pressed\n");
-
     this->newLine.active = false;
 
     if ( (this->conn_obj1) && (this->conn_out))
@@ -46,8 +45,6 @@ void cm_canvas::s_InMousePressed(cm_widget* obj, QMouseEvent* )
 void cm_canvas::s_InMouseReleased(cm_widget* , QMouseEvent* )
 {
     //    printf("in:  mouse released\n");
-
-
 
 }
 

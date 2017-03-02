@@ -3,7 +3,8 @@
 cm_box::cm_box(cm_widget *parent) : cm_widget(parent)
 {
 
-    this->setFixedSize(65,20);
+    //this->setFixedSize(65,20);
+    this->setFixedHeight(20);
     this->setMouseTracking(true);
 
     this->deselect();// = false;

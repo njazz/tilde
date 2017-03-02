@@ -20,7 +20,7 @@ cm_patchwindow::cm_patchwindow()
 
     cm_box *box1 = this->canvas->createBox("osc~ 440", QPoint(30,30), 1,1);
     cm_box *box2 = this->canvas->createBox("dac~", QPoint(30,100), 2,0);
-    box2->setFixedWidth(45);
+//    box2->setFixedWidth(45);
 
 //    box1->move(30,30);
 //    box2->move(30,100);

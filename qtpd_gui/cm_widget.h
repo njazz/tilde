@@ -13,6 +13,8 @@ class cm_widget : public QWidget
 private:
     bool selected_;
 
+    bool *editMode_;
+
 public:
 
     QPoint dragOffset;
@@ -33,6 +35,16 @@ public:
     }
 
     bool isSelected() {return this->selected_;}
+
+    void setEditModeRef(bool* canvasEditMode)
+    {
+        this->editMode_ = canvasEditMode;
+    }
+
+    bool getEditMode()
+    {
+        return (this->editMode_)?(*this->editMode_):false;
+    }
 
 signals:
 

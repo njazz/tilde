@@ -236,7 +236,8 @@ public:
     cm_box* createBox(std::string pdObjectName, QPoint pos, int ins, int outs)
     {
         cm_box *box = new cm_box(this);
-        box->pdObjName = pdObjectName.c_str();
+        box->setPdObjName(pdObjectName);
+
         for (int i=0;i<ins;i++)
             box->addInlet();
         for (int i=0;i<outs;i++)
@@ -244,6 +245,7 @@ public:
 
         connect(box,&cm_box::selectBox, this, &cm_canvas::s_SelectBox);
         connect(box,&cm_box::moveBox, this, &cm_canvas::s_MoveBox);
+        box->setEditModeRef(&this->editMode);
 
         box->move(pos);
 
@@ -264,6 +266,7 @@ public:
 
             connect(msg,&cmo_msg::selectBox, this, &cm_canvas::s_SelectBox);
             connect(msg,&cmo_msg::moveBox, this, &cm_canvas::s_MoveBox);
+            msg->setEditModeRef(&this->editMode);
 
             msg->move(pos);
 

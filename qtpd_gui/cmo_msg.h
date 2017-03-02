@@ -12,6 +12,7 @@ class cmo_msg : public cm_widget
 
 private:
     //QPoint dragOffset;
+    bool clicked_;
 
 public:
     //bool selected_;
@@ -46,9 +47,13 @@ public:
               QBrush br = QBrush(QColor(220,220,220), Qt::SolidPattern);
               p.fillPath(tmpPath,br);
 
-               if (this->isSelected())
+               if (this->isSelected() )
                {
                    p.setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+               }
+               if (this->clicked_)
+               {
+                   p.setPen(QPen(QColor(0, 192, 255), 4, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
                }
                else
                {
@@ -76,12 +81,26 @@ public:
     {
         emit selectBox(this);
         this->dragOffset = ev->pos();
+
+        if (!this->getEditMode())
+        {
+            this->clicked_ = true;
+            this->repaint();
+        }
     }
 
     void mouseReleaseEvent(QMouseEvent *)
     {
         //this->selected_ = false;
-        this->repaint();
+
+        if (!this->getEditMode())
+        {
+            this->clicked_ = false;
+            this->repaint();
+        }
+
+
+
     }
 
     void mouseMoveEvent(QMouseEvent *event)
