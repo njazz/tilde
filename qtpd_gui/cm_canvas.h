@@ -189,7 +189,8 @@ public:
         }
 
         //patchcords
-        if (this->hoverPatchcords(pos)) this->repaint();
+        if (this->editMode)
+            if (this->hoverPatchcords(pos)) this->repaint();
 
         //remove patchcord selection if making frame
         if (this->selFrame.active)
@@ -199,17 +200,25 @@ public:
 
     void mousePressEvent(QMouseEvent* ev)
     {
-        this->selFrame.active = true;
-        this->selFrame.start = ev->pos();
-        this->selFrame.end = QPoint(0,0);
+
 
         deselectBoxes();
 
         //deselect
         this->hoverPatchcordsOff();
 
-        this->clickPatchcords(ev->pos());
-        this->repaint();
+
+        if (this->editMode)
+        {
+            //sel frame
+            this->selFrame.active = true;
+            this->selFrame.start = ev->pos();
+            this->selFrame.end = QPoint(0,0);
+
+            //click patchcords
+            this->clickPatchcords(ev->pos());
+            this->repaint();
+        }
 
     }
     void mouseReleaseEvent(QMouseEvent*)
@@ -300,7 +309,6 @@ public:
     cmo_msg* createMsg(std::string message, QPoint pos)
     {
             cmo_msg *msg = new cmo_msg(this);
-            msg->pdObjName = message.c_str();
             msg->addInlet();
             msg->addOutlet();
 
@@ -328,6 +336,9 @@ public:
             {
                 qDebug("Error: no such object %s",  message.c_str());
             }
+
+            msg->setPdMessage(message.c_str());
+
 
             msg->show();
 

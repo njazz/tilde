@@ -149,7 +149,6 @@ public:
         QFont myFont("Monaco", 11);
         QFontMetrics fm(myFont);
 
-
         this->setFixedWidth((int)fm.width(QString(this->pdObjName.c_str())) + 5);
     }
     

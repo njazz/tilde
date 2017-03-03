@@ -3,10 +3,14 @@
 
 //#include <QWidget>
 
+#include <qlineedit.h>
+
 #include "cm_widget.h"
 #include "cm_port.h"
 
 #include "cm_pdlink.h"
+
+
 
 class cmo_msg : public cm_widget
 {
@@ -16,10 +20,14 @@ private:
     //QPoint dragOffset;
     bool clicked_;
 
+    QLineEdit* editor_;
+
+    std::string pdMessage_;
+
 public:
     //bool selected_;
 
-    std::string pdObjName;
+
 
 
     std::vector<cm_port*> inlets_;
@@ -70,7 +78,7 @@ public:
                     p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
                      p.setFont(QFont("Monaco",11,0,false));
-                      p.drawText(2,3,this->width()-2,this->height()-3,0,this->pdObjName.c_str(),0);
+                      p.drawText(2,3,this->width()-2,this->height()-3,0,this->getPdMessage().c_str(),0);
 
 
     }
@@ -101,11 +109,17 @@ public:
             else
             {
 
-                std::string msg = ("list "+ this->pdObjName);
+                std::string msg = ("list "+ this->getPdMessage());
                 qDebug("send msg %s", msg.c_str());
                 cmp_sendstring((t_pd*)this->pdObject, msg.c_str());
             }
 
+        }
+        if (this->getEditMode())
+        {
+            this->editor_->setText(QString(this->getPdMessage().c_str()));
+            this->editor_->show();
+            this->editor_->setFocus();
         }
     }
 
@@ -132,6 +146,39 @@ public:
         event->ignore();
 
     }
+
+
+    ///////
+
+    void setPdMessage(std::string message)
+    {
+        this->pdMessage_ = message;
+        QFont myFont("Monaco", 11);
+        QFontMetrics fm(myFont);
+
+        //temporary
+        //move
+        if (!this->getEditMode())
+        {
+            if (!this->pdObject)
+            {
+                qDebug("msg: bad pd object!");
+            }
+            else
+            {
+
+                std::string msg = ("set "+ this->getPdMessage());
+                qDebug("send msg %s", msg.c_str());
+                cmp_sendstring((t_pd*)this->pdObject, msg.c_str());
+            }
+
+        }
+
+        this->setFixedWidth((int)fm.width(QString(this->getPdMessage().c_str())) + 10);
+
+    }
+
+    std::string getPdMessage() {return this->pdMessage_;};
 
     ///////
 
@@ -188,6 +235,8 @@ public:
 
 signals:
     //void selectBox(cm_widget*box);
+private slots:
+    void editorDone();
 
 };
 
