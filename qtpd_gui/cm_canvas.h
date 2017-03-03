@@ -368,7 +368,7 @@ public:
 
         cm_patchcord* pc = new cm_patchcord(obj1,outport,obj2,inport);
         cmp_patchcord((t_object*)obj1->getPdObject(),((cm_port*)outport)->portIndex,(t_object*)obj2->getPdObject(),((cm_port*)inport)->portIndex);
-        qDebug("no connection");
+        //qDebug("no connection");
 
         this->patchcords.push_back(pc);
 

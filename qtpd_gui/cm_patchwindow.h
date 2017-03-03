@@ -83,6 +83,7 @@ public:
         this->objectMaker->setFocus();
 
         this->canvas->dragObject = this->objectMaker;
+        this->objectMaker->setText(QString(""));
         this->objectMaker->show();
 
     }
