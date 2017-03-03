@@ -27,7 +27,7 @@ typedef struct _ui_msg {
 
 static void uimsg_set(t_ui_msg* x, t_symbol *s, int argc, t_atom* argv)
 {
-    post("uimsg set");
+    //post("uimsg set");
     x->s = s;
     x->message = argv;
     x->message_c = argc;
@@ -36,9 +36,9 @@ static void uimsg_set(t_ui_msg* x, t_symbol *s, int argc, t_atom* argv)
 
 static void uimsg_bang(t_ui_msg* x, t_symbol *s, int argc, t_atom* argv)
 {
-    post ("uimsg anything");
+    //post ("uimsg anything");
 
-    outlet_anything(x->out1, x->s, x->message_c, x->message);
+    outlet_anything(x->out1, &s_list, x->message_c, x->message);
 
 }
 

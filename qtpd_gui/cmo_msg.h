@@ -110,7 +110,7 @@ public:
             {
 
                 std::string msg = ("list "+ this->getPdMessage());
-                qDebug("send msg %s", msg.c_str());
+                //qDebug("send msg %s", msg.c_str());
 
                 cmp_sendstring((t_pd*)this->getPdObject(), ((std::string)"bang").c_str());
             }
@@ -171,7 +171,7 @@ public:
             {
 
                 std::string msg = ("set "+ this->getPdMessage());
-                qDebug("send msg %s", msg.c_str());
+                //qDebug("send msg %s", msg.c_str());
                 cmp_sendstring((t_pd*)this->getPdObject(), msg.c_str());
             }
 

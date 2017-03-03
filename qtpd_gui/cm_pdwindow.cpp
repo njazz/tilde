@@ -16,10 +16,16 @@ void cm_pdwindow::cm_log(std::string text)
     //if (!text.length()) return;
 
 
-    if (text.length()>0)
+    //if (text.length()>0)
     {
 
         std::string last_c = &text.at(text.length()-1);
+
+        if((last_c == "\n"))
+        {
+             cm_log_string += text;
+
+        }
         if ( (text == "\n") || (last_c == "\n") )
         {
 
