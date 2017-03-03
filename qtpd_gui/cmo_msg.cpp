@@ -11,6 +11,8 @@ cmo_msg::cmo_msg(cm_widget *parent) : cm_widget(parent)
 
     this->setMouseTracking(true);
 
+    this->deselect();
+
     this->editor_ = new QLineEdit(this);
     this->editor_->setFixedSize(65-5,18);
     this->editor_->move(1,1);

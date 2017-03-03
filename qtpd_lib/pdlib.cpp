@@ -145,25 +145,46 @@ std::vector<std::string> string_split(const std::string &s, char delim) {
     return elems;
 }
 
+AtomList AtomListFromString(std::string in_string)
+{
+    t_binbuf *nb = binbuf_new();
+
+    binbuf_text(nb, (char*)in_string.c_str(), in_string.size());
+    int argc = binbuf_getnatom(nb);
+    t_atom* argv = binbuf_getvec(nb);
+
+    AtomList list(argc,argv);
+
+    return list;
+
+}
+
+////////
 
 t_object* cmp_create_object(t_canvas* canvas, char* class_name, int x, int y)
 {
     t_object* ret;
     t_object* ret2;
     
-    std::vector<std::string> atoms_ = string_split(class_name, ' ');
+//    std::vector<std::string> atoms_ = string_split(class_name, ' ');
 
-    if (atoms_.size()==0) {return 0;}
+//    if (atoms_.size()==0) {return 0;}
 
-    AtomList list;
+//    AtomList list;
 
-    list.append(Atom((float)x));
-    list.append(Atom((float)y));
+    AtomList list = AtomListFromString(class_name);
+     if (list.size()==0) {return 0;}
 
-    for (int i=0;i<atoms_.size();i++)
-    {
-        list.append(Atom(gensym(atoms_.at(i).c_str())));
-    }
+    list.insert(1,Atom((float)x));
+    list.insert(2,Atom((float)y));
+
+//    list.append(Atom((float)x));
+//    list.append(Atom((float)y));
+
+//    for (int i=0;i<atoms_.size();i++)
+//    {
+//        list.append(Atom(gensym(atoms_.at(i).c_str())));
+//    }
 
     qDebug("obj name: %s", list.at(2).asString().c_str());
 
@@ -185,24 +206,18 @@ t_object* cmp_create_object(t_canvas* canvas, char* class_name, int x, int y)
 
 }
 
-t_object* cmp_create_message(t_canvas* canvas, char* class_name, int x, int y)
+
+
+t_object* cmp_create_message(t_canvas* canvas, std::string class_name, int x, int y)
 {
     t_object* ret;
     t_object* ret2;
 
-    std::vector<std::string> atoms_ = string_split(class_name, ' ');
+    AtomList list = AtomListFromString(class_name);
+     if (list.size()==0) {return 0;}
 
-    if (atoms_.size()==0) {return 0;}
-
-    AtomList list;
-
-    list.append(Atom((float)x));
-    list.append(Atom((float)y));
-
-    for (int i=0;i<atoms_.size();i++)
-    {
-        list.append(Atom(gensym(atoms_.at(i).c_str())));
-    }
+    list.insert(0,Atom((float)x));
+    list.insert(1,Atom((float)y));
 
     qDebug("obj name: %s", list.at(2).asString().c_str());
 

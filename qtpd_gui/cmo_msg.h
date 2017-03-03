@@ -115,7 +115,7 @@ public:
             }
 
         }
-        if (this->getEditMode())
+        if (this->getEditMode() && this->isSelected())
         {
             this->editor_->setText(QString(this->getPdMessage().c_str()));
             this->editor_->show();
