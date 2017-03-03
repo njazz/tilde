@@ -6,25 +6,50 @@
 #include <QGridLayout>
 #include <QLabel>
 
+static std::string cm_log_string;
 
 void cm_pdwindow::cm_log(std::string text)
 {
     qDebug("cm_log %s", text.c_str());
 
     //temporary
-    if (!text.length()) return;
+    //if (!text.length()) return;
 
-    ui->log->insertRow(0);
-    QTableWidgetItem *item = new QTableWidgetItem;
-    item->setText(QDateTime().currentDateTime().toString((QString("hh:mm:ss"))));
-    ui->log->setItem(0,0,item);
 
-    item = new QTableWidgetItem;
     if (text.length()>0)
-        item->setText(QString(text.c_str()));
-    else
-        item->setText(QString(""));
-    ui->log->setItem(0,1,item);
+    {
+
+        std::string last_c = &text.at(text.length()-1);
+        if ( (text == "\n") || (last_c == "\n") )
+        {
+
+
+            ui->log->insertRow(0);
+            QTableWidgetItem *item = new QTableWidgetItem;
+            item->setText(QDateTime().currentDateTime().toString((QString("hh:mm:ss"))));
+            ui->log->setItem(0,0,item);
+
+            item = new QTableWidgetItem;
+            item->setText(QString(cm_log_string.c_str()));
+            ui->log->setItem(0,1,item);
+
+            cm_log_string = "";
+        }
+        else
+        {
+            cm_log_string += text;
+        }
+    }
+//    else
+//        item->setText(QString(""));
+
+
+}
+
+void cm_pdwindow::cm_post(std::string text)
+{
+    cm_pdwindow::cm_log(text);
+    cm_pdwindow::cm_log("\n");
 
 }
 cm_pdwindow::cm_pdwindow() :
@@ -42,12 +67,12 @@ cm_pdwindow::cm_pdwindow() :
     QHeaderView *verticalHeader = ui->log->verticalHeader();
     verticalHeader->setSectionResizeMode(QHeaderView::Fixed);
     verticalHeader->setDefaultSectionSize(18);
-     ui->log->horizontalHeader()->setStretchLastSection(true);
+    ui->log->horizontalHeader()->setStretchLastSection(true);
 
-     ui->log->insertColumn(0);
+    ui->log->insertColumn(0);
 
-    this->cm_log("qtpd started");
-     this->cm_log("---");
+    this->cm_post("qtpd started");
+    this->cm_post("---");
 
 
 }

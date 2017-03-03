@@ -27,6 +27,7 @@ public:
     cm_pdwindow();
 
     void cm_log(std::string text);
+    void cm_post(std::string text);
 
 
 };
