@@ -102,7 +102,7 @@ public:
         //move
         if (!this->getEditMode())
         {
-            if (!this->pdObject)
+            if (!this->getPdObject())
             {
                 qDebug("msg: bad pd object!");
             }
@@ -111,7 +111,8 @@ public:
 
                 std::string msg = ("list "+ this->getPdMessage());
                 qDebug("send msg %s", msg.c_str());
-                cmp_sendstring((t_pd*)this->pdObject, msg.c_str());
+
+                cmp_sendstring((t_pd*)this->getPdObject(), ((std::string)"bang").c_str());
             }
 
         }
@@ -155,12 +156,14 @@ public:
         this->pdMessage_ = message;
         QFont myFont("Monaco", 11);
         QFontMetrics fm(myFont);
+        this->setFixedWidth((int)fm.width(QString(this->getPdMessage().c_str())) + 10);
+        this->editor_->setFixedWidth(this->width()-5);
 
         //temporary
         //move
-        if (!this->getEditMode())
+        if (this->getEditMode())
         {
-            if (!this->pdObject)
+            if (!this->getPdObject())
             {
                 qDebug("msg: bad pd object!");
             }
@@ -169,12 +172,12 @@ public:
 
                 std::string msg = ("set "+ this->getPdMessage());
                 qDebug("send msg %s", msg.c_str());
-                cmp_sendstring((t_pd*)this->pdObject, msg.c_str());
+                cmp_sendstring((t_pd*)this->getPdObject(), msg.c_str());
             }
 
         }
 
-        this->setFixedWidth((int)fm.width(QString(this->getPdMessage().c_str())) + 10);
+
 
     }
 

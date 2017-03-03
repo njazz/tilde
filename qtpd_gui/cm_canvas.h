@@ -274,7 +274,7 @@ public:
         if (new_obj)
         {
 
-             qDebug ("created object %lu, new_obj");
+            // qDebug ("created object %lu, new_obj");
 
             in_c = cmp_get_inlet_count(new_obj);
             out_c = cmp_get_outlet_count(new_obj);
@@ -282,7 +282,7 @@ public:
             qDebug ("created object %s ins %i outs %i ptr %lu", obj_name, in_c, out_c, new_obj);
 
             //cm_box* newBox = this->canvas->createBox(this->objectMaker->text().toStdString(),this->objectMaker->pos(),in_c,out_c);
-            box->pdObject = new_obj;
+            box->setPdObject(new_obj);
 
         }
         else
@@ -323,14 +323,16 @@ public:
             //temp
             t_object* new_obj = 0 ;
             if (!this->pd_canvas)
-            {qDebug("bad pd canvas instance");}
+                {qDebug("bad pd canvas instance");}
             else
-            {new_obj = cmp_create_message(this->pd_canvas,(char*) message.c_str(),50, 50);}
+            {
+                new_obj = cmp_create_message(this->pd_canvas, message, pos.x(), pos.y());
+            }
 
             if (new_obj)
             {
-                qDebug ("created msgbox %sptr %lu",  message.c_str(), new_obj);
-                msg->pdObject = new_obj;
+                qDebug ("created msgbox %s | ptr %lu\n",  message.c_str(), new_obj);
+                msg->setPdObject(new_obj);
             }
             else
             {
@@ -338,7 +340,6 @@ public:
             }
 
             msg->setPdMessage(message.c_str());
-
 
             msg->show();
 
@@ -353,6 +354,7 @@ public:
         cm_port* inport = obj2->getInletAt(inlet);
 
         cm_patchcord* pc = new cm_patchcord(obj1,outport,obj2,inport);
+        cmp_patchcord((t_object*)obj1->getPdObject(),outlet,(t_object*)obj2->getPdObject(),inlet);
 
         this->patchcords.push_back(pc);
 
@@ -363,7 +365,10 @@ public:
     void patchcord(cm_widget* obj1, cm_widget* outport, cm_widget* obj2, cm_widget* inport)
     {
 
+
         cm_patchcord* pc = new cm_patchcord(obj1,outport,obj2,inport);
+        cmp_patchcord((t_object*)obj1->getPdObject(),((cm_port*)outport)->portIndex,(t_object*)obj2->getPdObject(),((cm_port*)inport)->portIndex);
+        qDebug("no connection");
 
         this->patchcords.push_back(pc);
 
@@ -380,6 +385,9 @@ public:
 //        if (it != this->patchcords.end()) { this->patchcords.erase(it); }
 
 //    }
+
+    //cm_patchcord* pc = new cm_patchcord(obj1,outport,obj2,inport);
+
 
     void deletePatchcordsFor(cm_box* obj)
     {

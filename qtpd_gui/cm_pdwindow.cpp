@@ -11,6 +11,9 @@ void cm_pdwindow::cm_log(std::string text)
 {
     qDebug("cm_log %s", text.c_str());
 
+    //temporary
+    if (!text.length()) return;
+
     ui->log->insertRow(0);
     QTableWidgetItem *item = new QTableWidgetItem;
     item->setText(QDateTime().currentDateTime().toString((QString("hh:mm:ss"))));

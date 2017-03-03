@@ -24,8 +24,8 @@ void cmp_closepatch(t_canvas* canvas);
 
 #pragma mark -
 
-extern t_object* cmp_create_object(t_canvas* canvas, char* class_name, int x, int y);
-extern t_object* cmp_create_message(t_canvas* canvas, char* class_name, int x, int y);
+extern t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int y);
+extern t_object* cmp_create_message(t_canvas* canvas, std::string message, int x, int y);
 //void cmp_moveobject(t_object* obj, int x, int y)
 
 extern void cmp_patchcord(t_object* obj1, int outno, t_object* obj2, int inno);

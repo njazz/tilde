@@ -133,7 +133,9 @@ SOURCES += pdlib.cpp \
     src/x_time.c \
     src/x_vexp.c \
     src/x_vexp_fun.c \
-    src/x_vexp_if.c
+    src/x_vexp_if.c \
+    extra/list_product.cpp \
+    extra/cm_uimsg.cpp
 
 HEADERS += pdlib.h \
     ceammc-lib/ceammc.h \
@@ -170,7 +172,8 @@ HEADERS += pdlib.h \
     src/s_utf8.h \
     src/x_vexp.h
 
-INCLUDEPATH += src/
+INCLUDEPATH += src/ \
+    extra/
 
 unix {
     target.path = /usr/lib

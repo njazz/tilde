@@ -10,6 +10,10 @@ extern "C" {
 void pd_init(void);
 int sys_startgui(const char *libdir);
 
+//temporary externals setup
+extern void setup_ui0x2emsg();
+extern void setup_list0x2eproduct();
+
 }
 
 #include <stdbool.h>
@@ -26,6 +30,8 @@ using namespace ceammc;
 t_pdinstance* cm_pd;
 
 extern t_pd *newest;    /* OK - this should go into a .h file now :) */
+
+
 
 void cmp_error(std::string msg)
 {
@@ -69,6 +75,11 @@ void cmp_pdinit()
         cmp_error("Initialization failed");
     else
         qDebug("Pd library initialized: %lu", (long)cm_pd);
+
+    //temporary extra objects
+    setup_ui0x2emsg();
+    setup_list0x2eproduct();
+    qDebug("pd extras");
 
 }
 
@@ -128,24 +139,24 @@ void cmp_closepatch(t_canvas* canvas)
 //#pragma mark -
 
 //temporary
-template<typename Out>
-void split(const std::string &s, char delim, Out result) {
-    std::stringstream ss;
-    ss.str(s);
-    std::string item;
-    while (std::getline(ss, item, delim)) {
-        *(result++) = item;
-    }
-}
+//template<typename Out>
+//void split(const std::string &s, char delim, Out result) {
+//    std::stringstream ss;
+//    ss.str(s);
+//    std::string item;
+//    while (std::getline(ss, item, delim)) {
+//        *(result++) = item;
+//    }
+//}
 
 
-std::vector<std::string> string_split(const std::string &s, char delim) {
-    std::vector<std::string> elems;
-    split(s, delim, std::back_inserter(elems));
-    return elems;
-}
+//std::vector<std::string> string_split(const std::string &s, char delim) {
+//    std::vector<std::string> elems;
+//    split(s, delim, std::back_inserter(elems));
+//    return elems;
+//}
 
-AtomList AtomListFromString(std::string in_string)
+AtomList* AtomListFromString(std::string in_string)
 {
     t_binbuf *nb = binbuf_new();
 
@@ -153,7 +164,7 @@ AtomList AtomListFromString(std::string in_string)
     int argc = binbuf_getnatom(nb);
     t_atom* argv = binbuf_getvec(nb);
 
-    AtomList list(argc,argv);
+    AtomList* list = new AtomList(argc,argv);
 
     return list;
 
@@ -161,36 +172,17 @@ AtomList AtomListFromString(std::string in_string)
 
 ////////
 
-t_object* cmp_create_object(t_canvas* canvas, char* class_name, int x, int y)
+t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int y)
 {
-    t_object* ret;
     t_object* ret2;
     
-//    std::vector<std::string> atoms_ = string_split(class_name, ' ');
+    AtomList* list = AtomListFromString(class_name);
+     if (list->size()==0) {return 0;}
 
-//    if (atoms_.size()==0) {return 0;}
+    list->insert(0,Atom((float)x));
+    list->insert(1,Atom((float)y));
 
-//    AtomList list;
-
-    AtomList list = AtomListFromString(class_name);
-     if (list.size()==0) {return 0;}
-
-    list.insert(1,Atom((float)x));
-    list.insert(2,Atom((float)y));
-
-//    list.append(Atom((float)x));
-//    list.append(Atom((float)y));
-
-//    for (int i=0;i<atoms_.size();i++)
-//    {
-//        list.append(Atom(gensym(atoms_.at(i).c_str())));
-//    }
-
-    qDebug("obj name: %s", list.at(2).asString().c_str());
-
-    pd_typedmess((t_pd*)canvas, gensym("obj"), (int)list.size(), list.toPdData());
-    
-//    qDebug("canvas %lu gllist %lu", (long)canvas, (long)canvas->gl_list);
+    pd_typedmess((t_pd*)canvas, gensym("obj"), (int)list->size(), list->toPdData());
 
     ret2 = (t_object*)pd_newest();
     if (!ret2) return 0;
@@ -208,30 +200,34 @@ t_object* cmp_create_object(t_canvas* canvas, char* class_name, int x, int y)
 
 
 
-t_object* cmp_create_message(t_canvas* canvas, std::string class_name, int x, int y)
+t_object* cmp_create_message(t_canvas* canvas, std::string message, int x, int y)
 {
-    t_object* ret;
     t_object* ret2;
 
-    AtomList list = AtomListFromString(class_name);
-     if (list.size()==0) {return 0;}
+    AtomList* list = AtomListFromString(message);
+    if (list->size()==0) {return 0;}
 
-    list.insert(0,Atom((float)x));
-    list.insert(1,Atom((float)y));
+    list->insert(0,Atom((float)x));
+    list->insert(1,Atom((float)y));
+    list->insert(2,gensym("ui.msg"));
 
-    qDebug("obj name: %s", list.at(2).asString().c_str());
+    qDebug("list size %i", list->size());
 
-    pd_typedmess((t_pd*)canvas, gensym("msg"), (int)list.size(), list.toPdData());
+//    for (int i=0;i<list.size();i++)
+//    {
+//        qDebug("*message data: %s", list.at(i).asString().c_str());
+//    }
 
-//    qDebug("canvas %lu gllist %lu", (long)canvas, (long)canvas->gl_list);
+    //pd_typedmess((t_pd*)canvas, gensym("msg"), (int)list->size(), list->toPdData());
+
+    pd_typedmess((t_pd*)canvas, gensym("obj"), list->size(), list->toPdData());
 
     ret2 = (t_object*)pd_newest();
-    if (!ret2) return 0;
+     if (!ret2) return 0;
     if (ret2 != pd_checkobject((t_pd*)ret2)) return 0;
 
     char* bufp = new char[1024];
     int lenp;
-
     binbuf_gettext(ret2->te_binbuf,&bufp,&lenp);
     qDebug("object data: %s", bufp);
 
@@ -246,6 +242,8 @@ t_object* cmp_create_message(t_canvas* canvas, std::string class_name, int x, in
 
 void cmp_patchcord(t_object* obj1, int outno, t_object* obj2, int inno)
 {
+    //qDebug("patchcord");
+
     obj_connect(obj1, outno, obj2, inno);
 }
 
@@ -297,18 +295,23 @@ void cmp_switch_dsp(bool on)
 
 void cmp_sendstring(t_pd* obj, std::string msg)
 {
-    std::vector<std::string> atoms_ = string_split(msg, ' ');
+    //std::vector<std::string> atoms_ = string_split(msg, ' ');
 
-    AtomList list;
+    //AtomList list;
 
-    if (atoms_.size()<1) return;
+    AtomList* list = AtomListFromString(msg);
 
-    for (int i = 1;i<atoms_.size();i++)
-    {
-        list.append(Atom(gensym(atoms_.at(i).c_str())));
-    }
+    AtomList* list2 = new AtomList;
+    *list2 = list->subList(1, list->size());
 
-    pd_typedmess(obj, gensym(atoms_.at(0).c_str()), (int)list.size(), list.toPdData());
+//    if (atoms_.size()<1) return;
+
+//    for (int i = 1;i<atoms_.size();i++)
+//    {
+//        list.append(Atom(gensym(atoms_.at(i).c_str())));
+//    }
+
+    pd_typedmess(obj, list->at(0).asSymbol(), (int)list2->size(), list2->toPdData());
 
 }
 

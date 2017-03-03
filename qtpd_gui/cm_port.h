@@ -14,6 +14,8 @@ class cm_port : public cm_widget
 private:
     bool hover;
 public:
+    int portIndex;
+
     enum {cm_pt_inlet, cm_pt_outlet} port_type;
 
     explicit cm_port(cm_widget *parent = 0);

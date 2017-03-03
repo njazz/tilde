@@ -109,9 +109,13 @@ public:
     {
         cm_port* new_in = new cm_port(this);
         new_in->port_type = cm_port::cm_pt_inlet;
+
+        new_in->portIndex = inlets_.size();
+
         inlets_.push_back(new_in);
         connect(new_in, &cm_port::mousePressed, (cm_widget*)this->parent(), &cm_widget::s_InMousePressed);
         connect(new_in, &cm_port::mouseReleased, (cm_widget*)this->parent(), &cm_widget::s_InMouseReleased);
+
 
         this->setInletsPos();
     }
@@ -120,6 +124,9 @@ public:
     {
         cm_port* new_out = new cm_port(this);
         new_out->port_type = cm_port::cm_pt_outlet;
+
+        new_out->portIndex = outlets_.size();
+
         outlets_.push_back(new_out);
         connect(new_out, &cm_port::mousePressed, (cm_widget*)this->parent(), &cm_widget::s_OutMousePressed);
         connect(new_out, &cm_port::mouseReleased, (cm_widget*)this->parent(), &cm_widget::s_OutMouseReleased);

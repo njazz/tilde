@@ -15,9 +15,12 @@ private:
 
     bool *editMode_;
 
-public:
     //temporary?
-    void* pdObject;
+    void* pdObject_;
+
+public:
+
+
 
     QPoint dragOffset;
     //QPoint dragStart;
@@ -48,6 +51,8 @@ public:
         return (this->editMode_)?(*this->editMode_):false;
     }
 
+    void* getPdObject() {return this->pdObject_;}
+    void setPdObject(void*obj) {this->pdObject_ = obj;}
 signals:
 
     void mousePressed(cm_widget* obj, QMouseEvent* ev);
