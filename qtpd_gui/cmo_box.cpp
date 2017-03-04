@@ -1,6 +1,6 @@
-#include "cm_box.h"
+#include "cmo_box.h"
 
-cm_box::cm_box(cm_widget *parent) : cm_widget(parent)
+cmo_box::cmo_box(cm_widget *parent) : cm_widget(parent)
 {
 
     //this->setFixedSize(65,20);
@@ -22,6 +22,12 @@ cm_box::cm_box(cm_widget *parent) : cm_widget(parent)
     this->isErrorBox = false;
 
 }
+
+cmo_box::cmo_box(cm_widget *parent, QStringList stringList) : cm_widget(parent)
+{
+
+}
+
 
 
 

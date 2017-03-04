@@ -12,7 +12,7 @@
 //typedef void t_object;
 // basic object
 
-class cm_box : public cm_widget {
+class cmo_box : public cm_widget {
     Q_OBJECT
 
 private:
@@ -26,7 +26,8 @@ public:
 
     bool isErrorBox;
 
-    explicit cm_box(cm_widget* parent = 0);
+    explicit cmo_box(cm_widget* parent = 0);
+    //cmo_box(cm_widget* parent = 0, QStringList stringList);
 
     void paintEvent(QPaintEvent*)
     {
