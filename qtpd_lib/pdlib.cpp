@@ -136,7 +136,7 @@ void cmp_savepatch(t_canvas* canvas, char* filename, char* path)
     AtomList list(Atom(gensym(filename)));
     list.append(Atom(gensym(path)));
 
-   pd_typedmess((t_pd*)canvas, gensym("savetofile"), (int)list.size(), list.toPdData());
+    pd_typedmess((t_pd*)canvas, gensym("savetofile"), (int)list.size(), list.toPdData());
 }
 
 void cmp_closepatch(t_canvas* canvas)
@@ -259,6 +259,17 @@ t_object* cmp_create_message(t_canvas* canvas, std::string message, int x, int y
 
 //}
 
+void cmp_deleteobject(t_canvas* canvas, t_object* obj)
+{
+
+    glist_delete(canvas, &obj->te_g);
+
+    qDebug("deleted obj");
+
+}
+
+///////
+
 void cmp_patchcord(t_object* obj1, int outno, t_object* obj2, int inno)
 {
     //qDebug("patchcord");
@@ -331,6 +342,8 @@ void cmp_sendstring(t_pd* obj, std::string msg)
     //    }
 
     pd_typedmess(obj, list->at(0).asSymbol(), (int)list2->size(), list2->toPdData());
+
+
 
 }
 

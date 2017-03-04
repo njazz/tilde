@@ -46,6 +46,13 @@ void cm_pdwindow::cm_log(std::string text)
             cm_log_string += text;
         }
     }
+
+    //todo move
+
+
+    fileMenu->removeAction(saveAct);
+    fileMenu->removeAction(saveAsAct);
+
 //    else
 //        item->setText(QString(""));
 

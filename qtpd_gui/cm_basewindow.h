@@ -114,6 +114,8 @@ public:
         fileMenu->addSeparator();
         fileMenu->addAction(exitAct);
 
+
+
         editMenu = menuBar()->addMenu(tr("&Edit"));
         editMenu->addAction(undoAct);
         editMenu->addAction(redoAct);
@@ -143,7 +145,7 @@ public:
 private:
     Ui::cm_basewindow *ui;
 
-    QMenu *fileMenu;
+
 
 
     QMenu *findMenu;
@@ -169,10 +171,13 @@ private:
 
     QAction *pdWindowAct;
 public:
+
+
     QAction *saveAct;
     QAction *saveAsAct;
 
 
+    QMenu *fileMenu;
     QMenu *editMenu;
     QMenu *putMenu;
 
