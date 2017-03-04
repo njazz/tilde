@@ -15,6 +15,8 @@ cm_canvas::cm_canvas(cm_widget *parent) : cm_widget(parent)
 
     this->editMode = true;
 
+    this->fileName = "";
+
 }
 
 //cm_canvas::cm_canvas(QWidget *parent) : cm_widget((cm_widget*)parent)

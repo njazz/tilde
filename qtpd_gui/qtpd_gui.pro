@@ -25,7 +25,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-    cm_box.cpp \
     cm_port.cpp \
     cm_canvas.cpp \
     cm_basewindow.cpp \
@@ -35,10 +34,10 @@ SOURCES += main.cpp\
     cm_objectmaker.cpp \
     cm_widget.cpp \
     cm_patchcord.cpp \
-    cmo_msg.cpp
+    cmo_msg.cpp \
+    cmo_box.cpp
 
 HEADERS  += \
-    cm_box.h \
     cm_port.h \
     cm_canvas.h \
     cm_basewindow.h \
@@ -49,7 +48,8 @@ HEADERS  += \
     cm_widget.h \
     cm_patchcord.h \
     cm_pdlink.h \
-    cmo_msg.h
+    cmo_msg.h \
+    cmo_box.h
 
 FORMS    += \
     cm_basewindow.ui \

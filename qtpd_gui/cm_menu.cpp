@@ -23,6 +23,12 @@ void cm_menu::newFile()
 void cm_menu::open()
 {
     //    infoLabel->setText(tr("Invoked <b>File|Open</b>"));
+
+        QString fname = QFileDialog::getOpenFileName(0,QString("Open patch"), QString("~/"), QString("*.pd"), 0, 0);
+
+        cm_patchwindow *newWindow = new cm_patchwindow(fname);
+        newWindow->show();
+
 }
 
 void cm_menu::close(QObject *)  //sender

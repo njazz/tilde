@@ -30,18 +30,26 @@ public:
 
         openAct = new QAction(tr("&Open..."), this);
         openAct->setShortcuts(QKeySequence::Open);
+        connect(openAct, &QAction::triggered, this, &cm_menu::open);
+
 
         saveAct = new QAction(tr("&Save"), this);
         saveAct->setShortcuts(QKeySequence::Save);
+        saveAct->setDisabled(true);
 
         saveAsAct = new QAction(tr("&Save As..."), this);
         saveAsAct->setShortcuts(QKeySequence::SaveAs);
 
 
 
+
         closeAct = new QAction(tr("Close"), this);
         closeAct->setShortcut(tr("Ctrl+W"));
         connect(closeAct, &QAction::triggered, this, &cm_basewindow::close);
+
+
+        messageAct = new QAction(tr("Message..."), this);
+        messageAct->setShortcut(tr("Ctrl+Shift+M"));
 
         //printAct = new QAction(tr("&Print..."), this);
         //printAct->setShortcuts(QKeySequence::Print);
@@ -153,11 +161,12 @@ private:
     QMenu *windowMenu;
 
     QAction *newAct;
-    QAction *openAct;
+
     QAction *closeAct;
     QAction *messageAct;
 
     QAction *exitAct;
+
     QAction *undoAct;
     QAction *redoAct;
     QAction *cutAct;
@@ -172,6 +181,7 @@ private:
     QAction *pdWindowAct;
 public:
 
+    QAction *openAct;
 
     QAction *saveAct;
     QAction *saveAsAct;

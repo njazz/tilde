@@ -144,7 +144,11 @@ void cmp_closepatch(t_canvas* canvas)
     if (canvas)
         pd_free((t_pd*)canvas);
 
+    qDebug("closed patch");
+
 }
+
+
 
 //#pragma mark -
 

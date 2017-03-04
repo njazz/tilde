@@ -4,7 +4,7 @@
 #include <QWidget>
 #include <QtGui>
 #include <QtWidgets>
-#include "cm_box.h"
+#include "cmo_box.h"
 #include "cm_patchcord.h"
 #include "cmo_msg.h"
 
@@ -57,10 +57,13 @@ private:
     //
     bool editMode;
 
+
+
     Q_OBJECT
 public:
     //encapsulate
     QWidget *dragObject;
+    QString fileName;
 
     //temp
     t_canvas* pd_canvas;
@@ -146,7 +149,6 @@ public:
         QPoint pos =  ev->pos();
 
         this->selFrame.end = pos - this->selFrame.start;
-
         this->newLine.end = pos;
 
         this->repaint();
@@ -164,20 +166,20 @@ public:
         {
             for (int i=0; i< (int)this->objectBoxes.size();i++)
             {
-                QPoint pos = ((cm_box*)this->objectBoxes.at(i))->pos();
-                QSize size = ((cm_box*)this->objectBoxes.at(i))->size();
+                QPoint pos = ((cmo_box*)this->objectBoxes.at(i))->pos();
+                QSize size = ((cmo_box*)this->objectBoxes.at(i))->size();
                 QRect r = QRect(pos, pos+QPoint(size.width(), size.height()) );
 
                 QRect frame = QRect (this->selFrame.start, this->selFrame.start + this->selFrame.end );
 
                 if (frame.contains(r,false))
                 {
-                    ((cm_box*)this->objectBoxes.at(i))->select();
+                    ((cmo_box*)this->objectBoxes.at(i))->select();
                     this->selObjectBoxes.push_back(this->objectBoxes.at(i));
                 }
                 else
                 {
-                    ((cm_box*)this->objectBoxes.at(i))->deselect();
+                    ((cmo_box*)this->objectBoxes.at(i))->deselect();
 
                     auto it = std::find(this->selObjectBoxes.begin(), this->selObjectBoxes.end(), this->objectBoxes.at(i));
                     if (it != this->selObjectBoxes.end()) { this->selObjectBoxes.erase(it); }
@@ -240,7 +242,7 @@ public:
         for (int i=0;i< (int)this->selObjectBoxes.size();i++)
         {
             if (this->selObjectBoxes.at(i))
-                ((cm_box*)this->selObjectBoxes.at(i))->deselect();
+                ((cmo_box*)this->selObjectBoxes.at(i))->deselect();
 
         }
 
@@ -249,13 +251,13 @@ public:
 
     //////////
 
-    cm_box* createBox(std::string pdObjectName, QPoint pos)
+    cmo_box* createBox(std::string pdObjectName, QPoint pos)
     {
-        cm_box *box = new cm_box(this);
+        cmo_box *box = new cmo_box(this);
         box->setPdObjName(pdObjectName);
 
-        connect(box,&cm_box::selectBox, this, &cm_canvas::s_SelectBox);
-        connect(box,&cm_box::moveBox, this, &cm_canvas::s_MoveBox);
+        connect(box,&cmo_box::selectBox, this, &cm_canvas::s_SelectBox);
+        connect(box,&cmo_box::moveBox, this, &cm_canvas::s_MoveBox);
         box->setEditModeRef(&this->editMode);
 
         const char * obj_name = pdObjectName.c_str();
@@ -352,7 +354,7 @@ public:
 
     }
 
-    void patchcord(cm_box* obj1, int outlet, cm_box* obj2, int inlet)
+    void patchcord(cmo_box* obj1, int outlet, cmo_box* obj2, int inlet)
     {
         cm_port* outport = obj1->getOutletAt(outlet);
         cm_port* inport = obj2->getInletAt(inlet);
@@ -393,7 +395,7 @@ public:
     //cm_patchcord* pc = new cm_patchcord(obj1,outport,obj2,inport);
 
 
-    void deletePatchcordsFor(cm_box* obj)
+    void deletePatchcordsFor(cmo_box* obj)
     {
         //for //(int i=0;i<this->patchcords.size();i++)
         std::vector<cm_patchcord*>::iterator it;
@@ -410,7 +412,7 @@ public:
     }
 
     //////////
-    void deleteBox(cm_box* box)
+    void deleteBox(cmo_box* box)
     {
         box->close();
         //TODO
@@ -427,7 +429,7 @@ public:
     {
         for (int i=0;i< (int)this->selObjectBoxes.size(); i++)
         {
-            this->deleteBox( ((cm_box*) this->selObjectBoxes.at(i))  );
+            this->deleteBox( ((cmo_box*) this->selObjectBoxes.at(i))  );
         }
 
     }

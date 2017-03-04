@@ -2,7 +2,7 @@
 #define CM_PATCHWINDOW_H
 
 #include "cm_basewindow.h"
-#include "cm_box.h"
+#include "cmo_box.h"
 #include "cm_canvas.h"
 
 #include "cm_pdlink.h"
@@ -24,16 +24,21 @@ private:
     cm_objectmaker* objectMaker;
 
 private slots:
+    //void open();
+    void save();
     void saveAs();
 
 public:
     cm_patchwindow();
+    cm_patchwindow(QString file);
     cm_canvas* canvas;
 
 
     void createActions()
     {
+//        connect(openAct, &QAction::triggered, this, &cm_patchwindow::open);
         connect(saveAsAct, &QAction::triggered, this, &cm_patchwindow::saveAs);
+        connect(saveAct, &QAction::triggered, this, &cm_patchwindow::save);
 
         delObjectAct = new QAction(tr("Delete object"), this);
         delObjectAct->setShortcut(tr("Backspace"));
@@ -135,6 +140,13 @@ public:
 //            this->canvas->setEditMode(true);
 //    }
 
+
+    void closeEvent(QCloseEvent *event)
+    {
+        cmp_closepatch(this->canvas->pd_canvas);
+
+        event->accept();
+    }
 
     ///////
 

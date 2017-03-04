@@ -5,7 +5,7 @@
 #include <QGridLayout>
 #include <QLabel>
 
-#include "cm_box.h"
+#include "cmo_box.h"
 #include "cm_canvas.h"
 
 #include "cm_menu.h"
