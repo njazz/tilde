@@ -121,13 +121,23 @@ t_canvas* cmp_newpatch()
 
 t_canvas* cmp_openpatch(char* filename, char* path)
 {
-   return (t_canvas*) glob_evalfile(0, gensym(filename), gensym(path));
+    return (t_canvas*) glob_evalfile(0, gensym(filename), gensym(path));
 }
 
-//void cmp_savepatch(t_canvas* canvas, char* filename)
-//{
-//    //message to canvas?
-//}
+void cmp_savepatch(t_canvas* canvas, char* filename, char* path)
+{
+    t_pd* dest = gensym("pd")->s_thing;
+    if (dest==NULL)
+    {
+        cmp_error("Pd object not found");
+        return;
+    };
+
+    AtomList list(Atom(gensym(filename)));
+    list.append(Atom(gensym(path)));
+
+   pd_typedmess((t_pd*)canvas, gensym("savetofile"), (int)list.size(), list.toPdData());
+}
 
 void cmp_closepatch(t_canvas* canvas)
 {
@@ -158,13 +168,22 @@ void cmp_closepatch(t_canvas* canvas)
 
 AtomList* AtomListFromString(std::string in_string)
 {
-    t_binbuf *nb = binbuf_new();
+    AtomList* list;
 
-    binbuf_text(nb, (char*)in_string.c_str(), in_string.size());
-    int argc = binbuf_getnatom(nb);
-    t_atom* argv = binbuf_getvec(nb);
+    if (in_string.size())
+    {
+        t_binbuf *nb = binbuf_new();
 
-    AtomList* list = new AtomList(argc,argv);
+        binbuf_text(nb, (char*)in_string.c_str(), in_string.size());
+        int argc = binbuf_getnatom(nb);
+        t_atom* argv = binbuf_getvec(nb);
+
+        list = new AtomList(argc,argv);
+    }
+    else
+    {
+        list = new AtomList;
+    }
 
     return list;
 
@@ -177,7 +196,7 @@ t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int
     t_object* ret2;
     
     AtomList* list = AtomListFromString(class_name);
-     if (list->size()==0) {return 0;}
+    if (list->size()==0) {return 0;}
 
     list->insert(0,Atom((float)x));
     list->insert(1,Atom((float)y));
@@ -205,7 +224,7 @@ t_object* cmp_create_message(t_canvas* canvas, std::string message, int x, int y
     t_object* ret2;
 
     AtomList* list = AtomListFromString(message);
-    if (list->size()==0) {return 0;}
+    //if (list->size()==0) {return 0;}
 
     list->insert(0,Atom((float)x));
     list->insert(1,Atom((float)y));
@@ -213,17 +232,17 @@ t_object* cmp_create_message(t_canvas* canvas, std::string message, int x, int y
 
     qDebug("list size %i", list->size());
 
-//    for (int i=0;i<list.size();i++)
-//    {
-//        qDebug("*message data: %s", list.at(i).asString().c_str());
-//    }
+    //    for (int i=0;i<list.size();i++)
+    //    {
+    //        qDebug("*message data: %s", list.at(i).asString().c_str());
+    //    }
 
     //pd_typedmess((t_pd*)canvas, gensym("msg"), (int)list->size(), list->toPdData());
 
     pd_typedmess((t_pd*)canvas, gensym("obj"), list->size(), list->toPdData());
 
     ret2 = (t_object*)pd_newest();
-     if (!ret2) return 0;
+    if (!ret2) return 0;
     if (ret2 != pd_checkobject((t_pd*)ret2)) return 0;
 
     char* bufp = new char[1024];
@@ -304,12 +323,12 @@ void cmp_sendstring(t_pd* obj, std::string msg)
     AtomList* list2 = new AtomList;
     *list2 = list->subList(1, list->size());
 
-//    if (atoms_.size()<1) return;
+    //    if (atoms_.size()<1) return;
 
-//    for (int i = 1;i<atoms_.size();i++)
-//    {
-//        list.append(Atom(gensym(atoms_.at(i).c_str())));
-//    }
+    //    for (int i = 1;i<atoms_.size();i++)
+    //    {
+    //        list.append(Atom(gensym(atoms_.at(i).c_str())));
+    //    }
 
     pd_typedmess(obj, list->at(0).asSymbol(), (int)list2->size(), list2->toPdData());
 

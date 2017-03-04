@@ -11,6 +11,7 @@ class cm_patchwindow : public cm_basewindow
 {
 
 private:
+
     QAction *delObjectAct;
     QAction *editModeAct;
 
@@ -22,6 +23,8 @@ private:
 
     cm_objectmaker* objectMaker;
 
+private slots:
+    void saveAs();
 
 public:
     cm_patchwindow();
@@ -30,6 +33,7 @@ public:
 
     void createActions()
     {
+        connect(saveAsAct, &QAction::triggered, this, &cm_patchwindow::saveAs);
 
         delObjectAct = new QAction(tr("Delete object"), this);
         delObjectAct->setShortcut(tr("Backspace"));
@@ -99,7 +103,7 @@ public:
 
         if (this->canvas->getEditMode())
         {
-        cmo_msg *newMsg = this->canvas->createMsg("new",QPoint(100,100));
+        cmo_msg *newMsg = this->canvas->createMsg("",QPoint(100,100));
         this->canvas->dragObject = newMsg;
         newMsg->show();
         }
@@ -120,6 +124,20 @@ public:
         this->canvas->setEditMode(!this->canvas->getEditMode());
         this->editModeAct->setChecked(this->canvas->getEditMode());
     }
+
+//    void keyPressEvent(QKeyEvent *event)
+//    {
+//        if (event->modifiers() & Qt::ControlModifier)
+//        {
+//            this->canvas->setEditMode(false);
+//        }
+//        else
+//            this->canvas->setEditMode(true);
+//    }
+
+
+    ///////
+
 
 };
 

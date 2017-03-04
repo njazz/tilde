@@ -87,6 +87,11 @@ public:
 
     ///////////////////
 
+//    void resizeEvent(QResizeEvent *)
+//    {
+//        float w = this->width()-1;
+//        this->setFixedWidth((w<30)?30:w);
+//    }
 
     void mousePressEvent(QMouseEvent *ev)
     {
@@ -160,7 +165,9 @@ public:
         this->pdMessage_ = message;
         QFont myFont("Monaco", 11);
         QFontMetrics fm(myFont);
-        this->setFixedWidth((int)fm.width(QString(this->getPdMessage().c_str())) + 10);
+        int new_w = fm.width(QString(this->getPdMessage().c_str())) + 10;
+        new_w = (new_w<25) ? 25 : new_w;
+        this->setFixedWidth(new_w);
         this->editor_->setFixedWidth(this->width()-5);
 
         //temporary
@@ -196,6 +203,7 @@ public:
         {
             float w = this->width()-1;
             w = (w<30)?30:w;
+
             float x = (w) / inlets_.size() * i;
             float y = 0;
 
@@ -244,6 +252,7 @@ signals:
     //void selectBox(cm_widget*box);
 private slots:
     void editorDone();
+    void editorChanged();
 
 };
 

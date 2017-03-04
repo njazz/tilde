@@ -67,6 +67,19 @@ cm_patchwindow::cm_patchwindow()
 
 }
 
+void cm_patchwindow::saveAs()
+{
+    QString fname = QFileDialog::getSaveFileName(this,QString("Save patch as..."), QString("~/"), QString("*.pd"), 0, 0);
+
+    //QString path = fname.fileName();
+    QString file = fname.section("/",-1,-1);
+    QString dir = fname.section("/",0,-2);
+
+    qDebug("filename: %s %s", file.toStdString().c_str(), dir.toStdString().c_str());
+
+    cmp_savepatch(this->canvas->pd_canvas, (char*)file.toStdString().c_str(), (char*)dir.toStdString().c_str());
+}
+
 
 void cm_patchwindow::objectMakerDone()
 {

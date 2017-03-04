@@ -19,7 +19,8 @@ extern void cmp_setprinthook(t_printhook h);
 extern t_canvas* cmp_newpatch();
 
 //void cmp_openpatch(char* filename)
-//void cmp_savepatch(t_canvas* canvas, char* filename)
+
+void cmp_savepatch(t_canvas* canvas, char* filename, char* path);
 void cmp_closepatch(t_canvas* canvas);
 
 #pragma mark -

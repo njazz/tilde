@@ -48,10 +48,14 @@ public:
         }
     }
 
-    //    void resizeEvent()
-    //    {
+    //////////
 
-    //    }
+//    void resizeEvent(QResizeEvent *event)
+//    {
+//        float w = this->width()-1;
+//        this->setFixedWidth((w<22)?22:w);
+
+//    }
 
     void mousePressEvent(QMouseEvent* ev)
     {

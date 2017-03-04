@@ -11,7 +11,7 @@
 #include "cm_pdlink.h"
 
 namespace Ui {
-    class cm_basewindow;
+class cm_basewindow;
 }
 
 class cm_basewindow : public QMainWindow
@@ -36,6 +36,8 @@ public:
 
         saveAsAct = new QAction(tr("&Save As..."), this);
         saveAsAct->setShortcuts(QKeySequence::SaveAs);
+
+
 
         closeAct = new QAction(tr("Close"), this);
         closeAct->setShortcut(tr("Ctrl+W"));
@@ -103,7 +105,7 @@ public:
         fileMenu->addAction(newAct);
         fileMenu->addAction(openAct);
         //QMenu *recent =
-                fileMenu->addMenu(tr("Open Recent"));
+        fileMenu->addMenu(tr("Open Recent"));
 
         fileMenu->addAction(closeAct);
         fileMenu->addSeparator();
@@ -151,8 +153,6 @@ private:
     QAction *newAct;
     QAction *openAct;
     QAction *closeAct;
-    QAction *saveAct;
-    QAction *saveAsAct;
     QAction *messageAct;
 
     QAction *exitAct;
@@ -169,6 +169,10 @@ private:
 
     QAction *pdWindowAct;
 public:
+    QAction *saveAct;
+    QAction *saveAsAct;
+
+
     QMenu *editMenu;
     QMenu *putMenu;
 

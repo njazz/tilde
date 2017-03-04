@@ -7,6 +7,7 @@
 
 cmo_msg::cmo_msg(cm_widget *parent) : cm_widget(parent)
 {
+    this->setMinimumWidth(30);
     this->setFixedSize(65,20);
 
     this->setMouseTracking(true);
@@ -24,6 +25,7 @@ cmo_msg::cmo_msg(cm_widget *parent) : cm_widget(parent)
 
 
     connect(this->editor_,&QLineEdit::editingFinished,this,&cmo_msg::editorDone);
+    connect(this->editor_,&QLineEdit::textEdited, this,&cmo_msg::editorChanged);
 
 //    QPalette Pal(palette());
 //    Pal.setColor(QPalette::Background, QColor(220,220,220));
@@ -42,4 +44,15 @@ void  cmo_msg::editorDone()
     //todo
 
     this->editor_->hide();
+}
+
+void  cmo_msg::editorChanged()
+{
+    QFont myFont("Monaco", 11);
+    QFontMetrics fm(myFont);
+    int new_w = fm.width(QString(this->editor_->text())) + 10;
+    new_w = (new_w<25) ? 25 : new_w;
+    this->setFixedWidth(new_w);
+    this->editor_->setFixedWidth(this->width()-5);
+
 }
