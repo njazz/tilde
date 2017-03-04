@@ -2,11 +2,11 @@
 #define PDLIB_H
 
 
-class pdlib
-{
+//class pdlib
+//{
 
-public:
-    pdlib();
-};
+//public:
+//    pdlib();
+//};
 
 #endif // PDLIB_H

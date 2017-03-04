@@ -38,17 +38,9 @@ cm_patchwindow::cm_patchwindow()
 
 }
 
-cm_patchwindow::cm_patchwindow(QString fname)
+cm_patchwindow::cm_patchwindow(QStringList arguments)
 {
-    QString file = fname.section("/",-1,-1);
-    QString dir = fname.section("/",0,-2);
-
-    qDebug("filename: %s %s", file.toStdString().c_str(), dir.toStdString().c_str());
-
-    //
-
-    ((QMainWindow*)this)->setWindowTitle(file);
-    ((QMainWindow*)this)->setWindowFilePath(fname);
+    ((QMainWindow*)this)->setWindowTitle("Untitled-1");
 
     this->createActions();
     this->createMenus();
@@ -57,12 +49,7 @@ cm_patchwindow::cm_patchwindow(QString fname)
     scr->setFrameShape(QFrame::NoFrame);
 
     this->canvas = new cm_canvas((cm_widget*)scr);
-    this->canvas->pd_canvas = cmp_openpatch((char*)file.toStdString().c_str(), (char*)dir.toStdString().c_str());
-
-    //load objects here
-
-
-    //
+    this->canvas->pd_canvas = cmp_newpatch();
 
     scr->setWidgetResizable(true);
 
@@ -76,7 +63,58 @@ cm_patchwindow::cm_patchwindow(QString fname)
     connect(this->objectMaker,&cm_objectmaker::returnPressed, this, &cm_patchwindow::objectMakerDone);
     this->objectMaker->close();
 
+    this->editModeAct->setChecked(true);
+
 }
+
+//cm_patchwindow::cm_patchwindow(QString fname)
+//{
+//    QString file = fname.section("/",-1,-1);
+//    QString dir = fname.section("/",0,-2);
+
+//    qDebug("filename: %s %s", file.toStdString().c_str(), dir.toStdString().c_str());
+
+//    //
+
+//    ((QMainWindow*)this)->setWindowTitle(file);
+//    ((QMainWindow*)this)->setWindowFilePath(fname);
+
+//    this->createActions();
+//    this->createMenus();
+
+//    QScrollArea *scr = new QScrollArea(this);
+//    scr->setFrameShape(QFrame::NoFrame);
+
+//    this->canvas = new cm_canvas((cm_widget*)scr);
+//    this->canvas->pd_canvas = cmp_openpatch((char*)file.toStdString().c_str(), (char*)dir.toStdString().c_str());
+
+//    //load objects here
+
+//    t_object* obj = (t_object*)this->canvas->pd_canvas;
+
+//    t_binbuf *bb;
+//    bb->
+
+//    for (_gobj* y = &obj->te_g; y; y = obj->te_g.g_next)
+//    {
+//        qDebug("obj ptr %lu", (long) y);
+//    }
+
+//    //
+
+//    scr->setWidgetResizable(true);
+
+//    this->setCentralWidget(this->canvas);
+
+//    if (!this->canvas->pd_canvas)
+//    {qDebug("Failed to create canvas!");}
+
+//    this->objectMaker = new cm_objectmaker();
+//    this->objectMaker->setParent(this->canvas);
+//    connect(this->objectMaker,&cm_objectmaker::returnPressed, this, &cm_patchwindow::objectMakerDone);
+//    this->objectMaker->close();
+
+//}
 
 
 

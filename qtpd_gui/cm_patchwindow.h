@@ -30,13 +30,13 @@ private slots:
 
 public:
     cm_patchwindow();
-    cm_patchwindow(QString file);
+    cm_patchwindow(QStringList arguments);
     cm_canvas* canvas;
 
 
     void createActions()
     {
-//        connect(openAct, &QAction::triggered, this, &cm_patchwindow::open);
+        //        connect(openAct, &QAction::triggered, this, &cm_patchwindow::open);
         connect(saveAsAct, &QAction::triggered, this, &cm_patchwindow::saveAs);
         connect(saveAct, &QAction::triggered, this, &cm_patchwindow::save);
 
@@ -108,9 +108,9 @@ public:
 
         if (this->canvas->getEditMode())
         {
-        cmo_msg *newMsg = this->canvas->createMsg("",QPoint(100,100));
-        this->canvas->dragObject = newMsg;
-        newMsg->show();
+            cmo_msg *newMsg = this->canvas->createMsg("",QPoint(100,100));
+            this->canvas->dragObject = newMsg;
+            newMsg->show();
         }
 
     }
@@ -130,15 +130,89 @@ public:
         this->editModeAct->setChecked(this->canvas->getEditMode());
     }
 
-//    void keyPressEvent(QKeyEvent *event)
-//    {
-//        if (event->modifiers() & Qt::ControlModifier)
-//        {
-//            this->canvas->setEditMode(false);
-//        }
-//        else
-//            this->canvas->setEditMode(true);
-//    }
+
+    /////
+
+    void loadPdString(QStringList list) //rename
+    {
+        if (list.at(0) == "obj")
+        {
+            qDebug("new obj");
+            if (list.size()>3)
+            {
+                QString objname;
+                QPoint pos;
+
+                pos.setX(((QString)list.value(0)).toFloat());
+                pos.setY(((QString)list.value(1)).toFloat());
+
+                //lol
+                QStringList objList = list;
+                objList.removeAt(0);
+                objList.removeAt(0);
+                objList.removeAt(0);
+                objname = objList.join(" ");
+
+                qDebug() << "objname" << objname;
+                //temporary
+                //load gui boxes?
+                if (objList.at(0) == "ui.msg")
+                    this->canvas->createMsg(objname.toStdString(), pos);
+                else
+                    this->canvas->createBox(objname.toStdString(), pos);
+
+
+            }
+            else
+            {
+                qDebug("list error");
+            }
+        }
+
+        //        if (list.at(0) == "msg")
+        //        {
+        //            qDebug("new msg");
+        //            if (list.size()>3)
+        //            {
+        //                QString objname;
+        //                QPoint pos;
+
+        //                pos.setX(((QString)list.value(0)).toFloat());
+        //                pos.setY(((QString)list.value(1)).toFloat());
+
+        //                //lol
+        //                QStringList objList = list;
+        //                objList.removeAt(0);
+        //                objList.removeAt(0);
+        //                objList.removeAt(0);
+        //                objname = objList.join(" ");
+
+
+
+        //                this->canvas->createMsg(objname.toStdString(), pos);
+        //            }
+        //            else
+        //            {
+        //                qDebug("list error");
+        //            }
+        //        }
+
+        if (list.at(0) == "connect")
+        {
+            qDebug("new connect");
+        }
+
+    }
+
+    //    void keyPressEvent(QKeyEvent *event)
+    //    {
+    //        if (event->modifiers() & Qt::ControlModifier)
+    //        {
+    //            this->canvas->setEditMode(false);
+    //        }
+    //        else
+    //            this->canvas->setEditMode(true);
+    //    }
 
 
     void closeEvent(QCloseEvent *event)

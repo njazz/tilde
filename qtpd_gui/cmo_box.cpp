@@ -6,13 +6,11 @@ cmo_box::cmo_box(cm_widget *parent) : cm_widget(parent)
     //this->setFixedSize(65,20);
     this->setFixedHeight(20);
     this->setMinimumWidth(22);
-
     this->setMouseTracking(true);
 
     this->deselect();// = false;
 
     //this->setAttribute(Qt::WA_NoMousePropagation);
-
 
     QPalette Pal(palette());
     Pal.setColor(QPalette::Background, QColor(240,240,240));
@@ -23,10 +21,10 @@ cmo_box::cmo_box(cm_widget *parent) : cm_widget(parent)
 
 }
 
-cmo_box::cmo_box(cm_widget *parent, QStringList stringList) : cm_widget(parent)
-{
+//cmo_box::cmo_box(cm_widget *parent, QStringList stringList) : cm_widget(parent)
+//{
 
-}
+//}
 
 
 

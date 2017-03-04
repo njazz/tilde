@@ -1,4 +1,4 @@
-#include "pdlib.h"
+//#include "pdlib.h"
 
 extern "C" {
 
@@ -353,6 +353,6 @@ void cmp_sendstring(t_pd* obj, std::string msg)
 
 //////////
 
-pdlib::pdlib()
-{
-}
+//pdlib::pdlib()
+//{
+//}
