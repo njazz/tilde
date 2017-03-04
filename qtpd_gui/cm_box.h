@@ -24,6 +24,7 @@ private:
 
 public:
 
+    bool isErrorBox;
 
     explicit cm_box(cm_widget* parent = 0);
 
@@ -31,7 +32,8 @@ public:
     {
         QPainter p(this);
         //p.setRenderHint(QPainter::SmoothPixmapTransform,true);
-        p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        QColor rectColor = (this->isErrorBox)? QColor(255, 0, 0) : QColor(128, 128, 128);
+        p.setPen(QPen(rectColor, 2,(this->isErrorBox)? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         p.drawRect(0, 0, this->width(), this->height());
         QTextOption* op = new QTextOption;
         op->setAlignment(Qt::AlignLeft);
@@ -41,7 +43,7 @@ public:
         p.drawText(2, 3, this->width() - 2, this->height() - 3, 0, this->pdObjName.c_str(), 0);
 
         if (this->isSelected()) {
-            p.setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p.setPen(QPen(QColor(0, 192, 255), 2,(this->isErrorBox)? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
             p.drawRect(0, 0, this->width(), this->height());
         }
     }

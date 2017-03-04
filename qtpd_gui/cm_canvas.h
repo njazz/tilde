@@ -288,7 +288,9 @@ public:
         else
         {
             qDebug("Error: no such object %s", obj_name);
-            return 0;
+            box->isErrorBox = true;
+            in_c = 0; out_c = 0;
+            //return 0;
         }
 
         for (int i=0;i<in_c;i++)

@@ -17,6 +17,8 @@ cm_box::cm_box(cm_widget *parent) : cm_widget(parent)
     this->setAutoFillBackground(true);
     this->setPalette(Pal);
 
+    this->isErrorBox = false;
+
 }
 
 
