@@ -16,8 +16,9 @@ cmo_msg::cmo_msg(cm_widget *parent) : cm_widget(parent)
     this->editor_ = new QLineEdit(this);
     this->editor_->setFixedSize(65-5,18);
     this->editor_->move(1,1);
+    this->editor_->setFont(QFont("Monaco",11,0,false));
     this->editor_->hide();
-
+    this->editor_->setAttribute(Qt::WA_MacShowFocusRect, 0);
     this->editor_->setFrame(false);
 
     connect(this->editor_,&QLineEdit::editingFinished,this,&cmo_msg::editorDone);

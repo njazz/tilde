@@ -78,13 +78,16 @@ public:
     void newObjectBox()
     {
 
-        this->objectMaker->move(100,50);
-        this->objectMaker->setFixedSize(60,30);
-        this->objectMaker->setFocus();
+        if (this->canvas->getEditMode())
+        {
+            this->objectMaker->move(100,50);
+            this->objectMaker->setFixedSize(60,30);
+            this->objectMaker->setFocus();
 
-        this->canvas->dragObject = this->objectMaker;
-        this->objectMaker->setText(QString(""));
-        this->objectMaker->show();
+            this->canvas->dragObject = this->objectMaker;
+            this->objectMaker->setText(QString(""));
+            this->objectMaker->show();
+        }
 
     }
 
@@ -93,9 +96,13 @@ public:
 
         //const char * obj_name = this->objectMaker->text().toStdString().c_str();
         //
+
+        if (this->canvas->getEditMode())
+        {
         cmo_msg *newMsg = this->canvas->createMsg("new",QPoint(100,100));
         this->canvas->dragObject = newMsg;
         newMsg->show();
+        }
 
     }
 
