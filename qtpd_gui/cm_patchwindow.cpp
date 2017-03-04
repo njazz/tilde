@@ -28,12 +28,12 @@ cm_patchwindow::cm_patchwindow()
     connect(this->objectMaker,&cm_objectmaker::returnPressed, this, &cm_patchwindow::objectMakerDone);
     this->objectMaker->close();
 
-    cm_box *box1 = this->canvas->createBox("osc~", QPoint(30,30));
-    cm_box *box2 = this->canvas->createBox("dac~ 1 2", QPoint(30,100));
-    cmo_msg *msg1 = this->canvas->createMsg("test123", QPoint(100,30));
+//    cm_box *box1 = this->canvas->createBox("osc~", QPoint(30,30));
+//    cm_box *box2 = this->canvas->createBox("dac~ 1 2", QPoint(30,100));
+//    cmo_msg *msg1 = this->canvas->createMsg("test123", QPoint(100,30));
 
-    this->canvas->patchcord(box1,0, box2,1);
-    this->canvas->patchcord(box1,0, box2,0);
+//    this->canvas->patchcord(box1,0, box2,1);
+//    this->canvas->patchcord(box1,0, box2,0);
 
 
 

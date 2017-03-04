@@ -77,6 +77,7 @@ void cm_canvas::s_SelectBox(cm_widget *box)
     {
         this->selObjectBoxes.push_back(box);
         box->select();
+        box->repaint();
     }
 
     //temporary

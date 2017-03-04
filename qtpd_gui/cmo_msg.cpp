@@ -12,6 +12,7 @@ cmo_msg::cmo_msg(cm_widget *parent) : cm_widget(parent)
     this->setMouseTracking(true);
 
     this->deselect();
+    this->clicked_ = false;
 
     this->editor_ = new QLineEdit(this);
     this->editor_->setFixedSize(65-5,18);
@@ -20,6 +21,7 @@ cmo_msg::cmo_msg(cm_widget *parent) : cm_widget(parent)
     this->editor_->hide();
     this->editor_->setAttribute(Qt::WA_MacShowFocusRect, 0);
     this->editor_->setFrame(false);
+
 
     connect(this->editor_,&QLineEdit::editingFinished,this,&cmo_msg::editorDone);
 

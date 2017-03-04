@@ -61,6 +61,7 @@ public:
                 {
                     p.setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
                 }
+                else
                 if (this->clicked_)
                 {
                     p.setPen(QPen(QColor(0, 192, 255), 4, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
@@ -89,6 +90,14 @@ public:
 
     void mousePressEvent(QMouseEvent *ev)
     {
+
+        if (this->getEditMode() && this->isSelected())
+        {
+            this->editor_->setText(QString(this->getPdMessage().c_str()));
+            this->editor_->show();
+            this->editor_->setFocus();
+        }
+
         emit selectBox(this);
         this->dragOffset = ev->pos();
 
@@ -116,12 +125,7 @@ public:
             }
 
         }
-        if (this->getEditMode() && this->isSelected())
-        {
-            this->editor_->setText(QString(this->getPdMessage().c_str()));
-            this->editor_->show();
-            this->editor_->setFocus();
-        }
+
     }
 
     void mouseReleaseEvent(QMouseEvent *)
