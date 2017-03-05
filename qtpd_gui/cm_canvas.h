@@ -75,8 +75,10 @@ public:
     explicit cm_canvas(cm_widget *parent = 0);
     cm_canvas(QWidget *parent = 0);
 
+    ////
+    /// \brief main paint routine
+    ///
     void paintEvent(QPaintEvent *)
-
     {
         //grid
         if (this->gridEnabled && this->editMode)
@@ -114,6 +116,10 @@ public:
         this->paintPatchcords();
 
     }
+
+    ////
+    /// \brief paint patchcords
+    ///
     void paintPatchcords()
     {
         for (int i=0; i< (int)this->patchcords.size(); i++)
@@ -130,6 +136,11 @@ public:
 
     }
 
+    ////
+    /// \brief changes patchcords color when mouse is over
+    /// \param pos
+    /// \return true if mouse is over any of the patchcords
+    ///
     bool hoverPatchcords(QPoint pos)
     {
         bool ret = false;
@@ -142,17 +153,25 @@ public:
     }
 
 
+    ////
+    /// \brief resets all patchcords hover color flag
+    ///
     void hoverPatchcordsOff()
     {
         //bool ret = false;
         for (int i=0; i< (int)this->patchcords.size(); i++)
         {
             ((cm_patchcord*)this->patchcords.at(i))->mouseover = false;// ((cm_patchcord*)this->patchcords.at(i))->hover(pos);
-            //if (((cm_patchcord*)this->patchcords.at(i))->mouseover) ret=true;
+
         }
-        //return ret;
+
     }
 
+    ////
+    /// \brief marks clicked patchcord
+    /// \param pos
+    /// \return true if there was a patchcord
+    ///
     bool clickPatchcords(QPoint pos)
     {
         bool ret = false;
@@ -164,6 +183,10 @@ public:
         return ret;
     }
 
+    ////
+    /// \brief mouse move handling
+    /// \param ev
+    ///
     void mouseMoveEvent(QMouseEvent* ev)
     {
         if (!ev) return;
@@ -222,6 +245,10 @@ public:
 
     }
 
+    ////
+    /// \brief mouse down handling
+    /// \param ev
+    ///
     void mousePressEvent(QMouseEvent* ev)
     {
 
@@ -245,6 +272,10 @@ public:
         }
 
     }
+
+    ////
+    /// \brief mouse up handling
+    ///
     void mouseReleaseEvent(QMouseEvent*)
     {
         this->dragObject = 0;
@@ -257,8 +288,9 @@ public:
 
 
 
-    /////
-
+    ////
+    /// \brief deselect all object boxes
+    ///
     void deselectBoxes()
     {
         for (int i=0;i< (int)this->selObjectBoxes.size();i++)
@@ -271,8 +303,13 @@ public:
         this->selObjectBoxes.clear();
     }
 
-    //////////
 
+    ////
+    /// \brief create new object box
+    /// \param pdObjectName TODO rename. object name and arguments
+    /// \param pos
+    /// \return pointer to cm_box
+    ///
     cmo_box* createBox(std::string pdObjectName, QPoint pos)
     {
         cmo_box *box = new cmo_box(this);
@@ -334,6 +371,12 @@ public:
 
     }
 
+    ////
+    /// \brief create new message box (ui.msg now)
+    /// \param pdObjectName TODO rename. object name and arguments
+    /// \param pos
+    /// \return pointer to cm_box
+    ///
     cmo_msg* createMsg(std::string message, QPoint pos)
     {
             cmo_msg *msg = new cmo_msg(this);
@@ -376,6 +419,13 @@ public:
 
     }
 
+    ////
+    /// \brief creates patchcord
+    /// \param obj1
+    /// \param outlet
+    /// \param obj2
+    /// \param inlet
+    ///
     void patchcord(cmo_box* obj1, int outlet, cmo_box* obj2, int inlet)
     {
         cm_port* outport = obj1->getOutletAt(outlet);
@@ -389,7 +439,13 @@ public:
 
     }
 
-    //temporary?
+    ////
+    /// \brief creates patchcord, uses pointers to inlets/outlets. TODO temporary?
+    /// \param obj1
+    /// \param outport
+    /// \param obj2
+    /// \param inport
+    ///
     void patchcord(cm_widget* obj1, cm_widget* outport, cm_widget* obj2, cm_widget* inport)
     {
 
@@ -416,7 +472,10 @@ public:
 
     //cm_patchcord* pc = new cm_patchcord(obj1,outport,obj2,inport);
 
-
+    ////
+    /// \brief delete all patchcords for object
+    /// \param obj
+    ///
     void deletePatchcordsFor(cmo_box* obj)
     {
         //for //(int i=0;i<this->patchcords.size();i++)
@@ -433,7 +492,10 @@ public:
         this->repaint();
     }
 
-    //////////
+    ////
+    /// \brief delete object box
+    /// \param box
+    ///
     void deleteBox(cmo_box* box)
     {
         box->close();
@@ -447,6 +509,9 @@ public:
         this->deletePatchcordsFor(box);
     }
 
+    ////
+    /// \brief delete all selected object boxes
+    ///
     void delBoxes()
     {
         for (int i=0;i< (int)this->selObjectBoxes.size(); i++)
@@ -456,6 +521,9 @@ public:
 
     }
 
+    ////
+    /// \brief delete all selected patchcords
+    ///
     void delSelectedPatchcords()
     {
         //cleanup
@@ -473,7 +541,10 @@ public:
         this->repaint();
     }
 
-    ////////
+    ////
+    /// \brief change edit mode flag
+    /// \param mode
+    ///
 
     void setEditMode(bool mode)
     {
@@ -490,6 +561,10 @@ public:
         this->repaint();
     }
 
+    ////
+    /// \brief get edit mode flag
+    /// \return
+    ///
     bool getEditMode(){return this->editMode;}
 
 signals:
@@ -501,7 +576,17 @@ public slots:
     void s_OutMousePressed(cm_widget* obj, QMouseEvent*);
     void s_OutMouseReleased(cm_widget*, QMouseEvent*);
 
+    ////
+    /// \brief slot called by box when it is selected
+    /// \param box
+    ///
     void s_SelectBox(cm_widget* box);
+
+    ////
+    /// \brief TODO check. slot called by box when it starts moving
+    /// \param box
+    /// \param event
+    ///
     void s_MoveBox(cm_widget* box, QMouseEvent* event);
 
     //    void portMouseReleased();
