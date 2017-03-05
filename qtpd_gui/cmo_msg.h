@@ -24,7 +24,7 @@ private:
 
     QLineEdit* editor_;
 
-    std::string pdMessage_;
+//    std::string pdMessage_;
 
     //todo move
 //    std::vector<cm_port*> inlets_;
@@ -85,7 +85,7 @@ public:
                     p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
                      p.setFont(QFont("Monaco",11,0,false));
-                      p.drawText(2,3,this->width()-2,this->height()-3,0,this->getPdMessage().c_str(),0);
+                      p.drawText(2,3,this->width()-2,this->height()-3,0,this->getObjectData().c_str(),0);
 
 
     }
@@ -104,7 +104,7 @@ public:
 
         if (this->getEditMode() && this->isSelected())
         {
-            this->editor_->setText(QString(this->getPdMessage().c_str()));
+            this->editor_->setText(QString(this->getObjectData().c_str()));
             this->editor_->show();
             this->editor_->setFocus();
         }
@@ -129,7 +129,7 @@ public:
             else
             {
 
-                std::string msg = ("list "+ this->getPdMessage());
+                std::string msg = ("list "+ this->getObjectData());
                 //qDebug("send msg %s", msg.c_str());
 
                 cmp_sendstring((t_pd*)this->getPdObject(), ((std::string)"bang").c_str());
@@ -168,10 +168,11 @@ public:
 
     void setPdMessage(std::string message)
     {
-        this->pdMessage_ = message;
+        this->setObjectData(message);
+
         QFont myFont("Monaco", 11);
         QFontMetrics fm(myFont);
-        int new_w = fm.width(QString(this->getPdMessage().c_str())) + 10;
+        int new_w = fm.width(QString(this->getObjectData().c_str())) + 10;
         new_w = (new_w<25) ? 25 : new_w;
         this->setFixedWidth(new_w);
         this->editor_->setFixedWidth(this->width()-5);
@@ -187,7 +188,7 @@ public:
             else
             {
 
-                std::string msg = ("set "+ this->getPdMessage());
+                std::string msg = ("set "+ this->getObjectData());
                 //qDebug("send msg %s", msg.c_str());
                 cmp_sendstring((t_pd*)this->getPdObject(), msg.c_str());
             }
@@ -198,7 +199,7 @@ public:
 
     }
 
-    std::string getPdMessage() {return this->pdMessage_;};
+    //std::string getPdMessage() {return this->pdMessage_;};
 
 //    ///////
 

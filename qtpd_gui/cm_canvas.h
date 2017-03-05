@@ -452,13 +452,11 @@ public:
     void patchcord(cm_object* obj1, cm_widget* outport, cm_object* obj2, cm_widget* inport)
     {
 
-
         cm_patchcord* pc = new cm_patchcord(obj1,outport,obj2,inport);
         cmp_patchcord((t_object*)obj1->getPdObject(),((cm_port*)outport)->portIndex,(t_object*)obj2->getPdObject(),((cm_port*)inport)->portIndex);
         //qDebug("no connection");
 
         this->patchcords.push_back(pc);
-
 
     }
 
@@ -577,7 +575,7 @@ public:
     ///
     cm_object* getObjectByIndex(int idx)
     {
-        if (idx< this->objectBoxes.size())
+        if ((idx< this->objectBoxes.size()) && (idx>=0))
             return this->objectBoxes.at(idx);
         else
             qDebug("object not found");
