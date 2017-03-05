@@ -26,13 +26,13 @@ addons:
       - qttools5-dev-tools
 
 # Build your code e.g. by calling make
-script:
-  - qmake -project
-  - qmake qtpd_main.pro 
-  - make
+#script:
+#  - qmake -project
+#  - qmake qtpd_main.pro 
+#  - make
 
-# Generate and deploy documentation
-after_success:
+# Generate and deploy documentation #after_success
+script:
   - cd $TRAVIS_BUILD_DIR
   - chmod +x generateDocs.sh
   - ./generateDocumentationAndDeploy.sh
