@@ -39,7 +39,7 @@ typedef struct
 class cm_canvas : public cm_widget
 {
 private:
-    //todo move this to data class
+    //todo move this to data class?
     std::vector<cm_widget*> objectBoxes;
     std::vector<cm_patchcord*> patchcords;
     std::vector<cm_widget*> selObjectBoxes;
@@ -426,10 +426,10 @@ public:
     /// \param obj2
     /// \param inlet
     ///
-    void patchcord(cmo_box* obj1, int outlet, cmo_box* obj2, int inlet)
+    void patchcord(cm_widget* obj1, int outlet, cm_widget* obj2, int inlet)
     {
-        cm_port* outport = obj1->getOutletAt(outlet);
-        cm_port* inport = obj2->getInletAt(inlet);
+        cm_port* outport = ((cmo_box*)obj1)->getOutletAt(outlet);
+        cm_port* inport = ((cmo_box*)obj2)->getInletAt(inlet);
 
         cm_patchcord* pc = new cm_patchcord(obj1,outport,obj2,inport);
         cmp_patchcord((t_object*)obj1->getPdObject(),outlet,(t_object*)obj2->getPdObject(),inlet);
@@ -476,7 +476,7 @@ public:
     /// \brief delete all patchcords for object
     /// \param obj
     ///
-    void deletePatchcordsFor(cmo_box* obj)
+    void deletePatchcordsFor(cm_widget* obj)
     {
         //for //(int i=0;i<this->patchcords.size();i++)
         std::vector<cm_patchcord*>::iterator it;
@@ -496,7 +496,7 @@ public:
     /// \brief delete object box
     /// \param box
     ///
-    void deleteBox(cmo_box* box)
+    void deleteBox(cm_widget* box)
     {
         box->close();
         //TODO
@@ -516,7 +516,7 @@ public:
     {
         for (int i=0;i< (int)this->selObjectBoxes.size(); i++)
         {
-            this->deleteBox( ((cmo_box*) this->selObjectBoxes.at(i))  );
+            this->deleteBox( ((cm_widget*) this->selObjectBoxes.at(i))  );
         }
 
     }
@@ -566,6 +566,19 @@ public:
     /// \return
     ///
     bool getEditMode(){return this->editMode;}
+
+    ////
+    /// \brief returns object by index - this is needed by parser
+    /// \param idx
+    /// \return cm_widget pointer
+    ///
+    cm_widget* getObjectByIndex(int idx)
+    {
+        if (idx< this->objectBoxes.size())
+            return this->objectBoxes.at(idx);
+        else
+            qDebug("object not found");
+    }
 
 signals:
 

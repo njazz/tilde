@@ -15,9 +15,9 @@ private:
     cm_fileparser(){};
 public:
 
-
-       // or t_canvas?
+    // or t_canvas?
     static cm_canvas* pdParserCanvas;
+
 
     ////
     /// \brief parses QStringLists of atoms to canvas - creates objects etc
@@ -92,7 +92,23 @@ public:
         {
             qDebug("new connect");
 
+            if (list.size()>4)
+            {
+                cm_widget * obj1 = cmcanvas->getObjectByIndex( ((QString)list.value(1)).toInt() );
+                cm_widget * obj2 = cmcanvas->getObjectByIndex( ((QString)list.value(3)).toInt() );
 
+                int idx1 = ((QString)list.value(2)).toInt() ;
+                int idx2 = ((QString)list.value(4)).toInt() ;
+
+                //cmcanvas->patchcord();
+                cmcanvas->patchcord(obj1,idx1,obj2,idx2);
+
+            }
+
+            else
+            {
+                qDebug("list error");
+            }
         }
 
     }

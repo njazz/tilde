@@ -26,14 +26,18 @@ private:
 
     std::string pdMessage_;
 
+    //todo move
+    std::vector<cm_port*> inlets_;
+    std::vector<cm_port*> outlets_;
+
 public:
     //bool selected_;
 
 
 
 
-    std::vector<cm_port*> inlets_;
-    std::vector<cm_port*> outlets_;
+//    std::vector<cm_port*> inlets_;
+//    std::vector<cm_port*> outlets_;
 
     //cmo_msg();
     explicit cmo_msg(cm_widget *parent = 0);
@@ -248,6 +252,20 @@ public:
         connect(new_out,&cm_port::mouseReleased, (cm_widget*)this->parent(), &cm_widget::s_OutMouseReleased);
 
         this->setOutletsPos();
+    }
+
+    ///////
+
+    cm_port* getInletAt(int idx)
+    {
+        //check range!
+        return this->inlets_.at(idx);
+    }
+
+    cm_port* getOutletAt(int idx)
+    {
+        //check range!
+        return this->outlets_.at(idx);
     }
 
 signals:
