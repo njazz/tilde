@@ -10,7 +10,7 @@ branches:
 env:
   global:
     - GH_REPO_NAME: qtpd
-    - DOXYFILE: $TRAVIS_BUILD_DIR/doxygen/DOXYGEN
+    - DOXYFILE: $TRAVIS_BUILD_DIR/DOXYGEN
     - GH_REPO_REF: github.com/njazz/qtpd.git
 
 # Install dependencies
