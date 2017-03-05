@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QLineEdit>
 
+
 class cm_objectmaker : public QLineEdit
 {
 public:

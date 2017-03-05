@@ -12,6 +12,9 @@
 //typedef void t_object;
 // basic object
 
+////
+/// \brief gui object: standard object box
+///
 class cmo_box : public cm_widget {
     Q_OBJECT
 

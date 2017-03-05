@@ -7,6 +7,9 @@
 
 #include "cm_widget.h"
 
+////
+/// \brief gui representation of t_inlet / t_outlet
+///
 class cm_port : public cm_widget
 {
     Q_OBJECT

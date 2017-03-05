@@ -6,6 +6,9 @@
 //#include <QWidget>
 //#include <QtGui>
 
+////
+/// \brief gui patchcord class
+///
 class cm_patchcord
 {
 private:

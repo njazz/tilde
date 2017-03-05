@@ -25,7 +25,6 @@
 
 //} tPatchcord;
 
-
 typedef struct
 {
     bool active;
@@ -34,6 +33,9 @@ typedef struct
 
 } tRectPlus;
 
+////
+/// \brief 't_canvas' counterpart. creates objects
+///
 class cm_canvas : public cm_widget
 {
 private:

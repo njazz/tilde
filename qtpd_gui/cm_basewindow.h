@@ -14,6 +14,9 @@ namespace Ui {
 class cm_basewindow;
 }
 
+////
+/// \brief Base class for windows (patch, pd)
+///
 class cm_basewindow : public QMainWindow
 {
     Q_OBJECT
@@ -22,6 +25,9 @@ public:
     explicit cm_basewindow(QWidget *parent = 0);
     ~cm_basewindow();
 
+    ////
+    /// \brief create menu actions (File, Edit)
+    ///
     void createActions()
     {
         newAct = new QAction(tr("&New"), this);
@@ -108,7 +114,9 @@ public:
     }
 
 
-
+    ////
+    /// \brief create all menus
+    ///
     void createMenus()
     {
         fileMenu = menuBar()->addMenu(tr("&File"));

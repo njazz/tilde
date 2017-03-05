@@ -11,7 +11,9 @@
 #include "cm_pdlink.h"
 
 
-
+////
+/// \brief gui object: message box (ui.msg)
+///
 class cmo_msg : public cm_widget
 {
     Q_OBJECT

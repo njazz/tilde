@@ -6,6 +6,9 @@
 // Widget extension
 // check / fix
 
+////
+/// \brief parent class for all gui objects
+///
 class cm_widget : public QWidget
 {
     Q_OBJECT
