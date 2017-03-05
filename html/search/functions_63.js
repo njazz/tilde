@@ -7,6 +7,7 @@ var searchData=
   ['cm_5fcanvas',['cm_canvas',['../classcm__canvas.html#af6475003cce31cf1f5319b373dda7aee',1,'cm_canvas::cm_canvas(cm_widget *parent=0)'],['../classcm__canvas.html#a63239e162bd55b393bd78bfdbd688061',1,'cm_canvas::cm_canvas(QWidget *parent=0)']]],
   ['cm_5flog',['cm_log',['../classcm__pdwindow.html#a41289ac3b4d58eb7287242f344ce6833',1,'cm_pdwindow']]],
   ['cm_5fmenu',['cm_menu',['../classcm__menu.html#abc50e09d5f9e7747256694b559d035ae',1,'cm_menu']]],
+  ['cm_5fobject',['cm_object',['../classcm__object.html#a1ad710ac19f2b747ad8b0fae90d9845f',1,'cm_object']]],
   ['cm_5fobjectmaker',['cm_objectmaker',['../classcm__objectmaker.html#a3d13bebcd102b777d3e9c1066348b69c',1,'cm_objectmaker']]],
   ['cm_5fpatchcord',['cm_patchcord',['../classcm__patchcord.html#a5871c45e718bc3ab2e57c716b9524db9',1,'cm_patchcord::cm_patchcord()'],['../classcm__patchcord.html#a73fc0ef79bc39f2149bccf6267863e8c',1,'cm_patchcord::cm_patchcord(cm_widget *obj1, cm_widget *out1, cm_widget *obj2, cm_widget *in2)']]],
   ['cm_5fpatchwindow',['cm_patchwindow',['../classcm__patchwindow.html#adde66f2ffc03eb905173c0783696f725',1,'cm_patchwindow::cm_patchwindow()'],['../classcm__patchwindow.html#a2a33a5332255eb752485aa878a92a13c',1,'cm_patchwindow::cm_patchwindow(QStringList arguments)']]],
@@ -14,8 +15,8 @@ var searchData=
   ['cm_5fport',['cm_port',['../classcm__port.html#a61c805c9541a68e47098ad41c6f74025',1,'cm_port']]],
   ['cm_5fpost',['cm_post',['../classcm__pdwindow.html#a41aed0375c6b028bcdcb3615105c3182',1,'cm_pdwindow']]],
   ['cm_5fwidget',['cm_widget',['../classcm__widget.html#a7aca8db9e88ee379ff3bc07c430c21ac',1,'cm_widget']]],
-  ['cmo_5fbox',['cmo_box',['../classcmo__box.html#a7befe58b2696546f0ae6c5e1bccff7d5',1,'cmo_box']]],
-  ['cmo_5fmsg',['cmo_msg',['../classcmo__msg.html#af13c4cc7fee8b14f1fa9378fdc08bc91',1,'cmo_msg']]],
+  ['cmo_5fbox',['cmo_box',['../classcmo__box.html#a7d4669447c4e7b2a403a37d6f3ca0161',1,'cmo_box']]],
+  ['cmo_5fmsg',['cmo_msg',['../classcmo__msg.html#a3bc69e1fac13ab3ee80258c1c598c55f',1,'cmo_msg']]],
   ['cmp_5fclosepatch',['cmp_closepatch',['../cm__pdlink_8h.html#af08cbd72d5b239361a801b4b67247a9c',1,'cm_pdlink.h']]],
   ['cmp_5fcreate_5fmessage',['cmp_create_message',['../cm__pdlink_8h.html#a3bac993f5ef2ae3ddcb123762d3668d0',1,'cm_pdlink.h']]],
   ['cmp_5fcreate_5fobject',['cmp_create_object',['../cm__pdlink_8h.html#a2c0a0d9150791897b85a167998ecf7c2',1,'cm_pdlink.h']]],
@@ -33,10 +34,8 @@ var searchData=
   ['cmp_5fsetprinthook',['cmp_setprinthook',['../cm__pdlink_8h.html#ac9fb723d2c58a1e062720cc19e199e08',1,'cm_pdlink.h']]],
   ['cmp_5fswitch_5fdsp',['cmp_switch_dsp',['../cm__pdlink_8h.html#a0f1f4951cf99dff0634789791dcde1ba',1,'cm_pdlink.h']]],
   ['connectsobject',['connectsObject',['../classcm__patchcord.html#a11ec64fcf2f1772302c98c2980ef79c7',1,'cm_patchcord']]],
-  ['copy',['copy',['../classcm__menu.html#ac9c0abdaefffc414d45213b8519ef619',1,'cm_menu']]],
   ['createactions',['createActions',['../classcm__basewindow.html#a28d95f8bbc8ce7d3a325f6276bae20fa',1,'cm_basewindow::createActions()'],['../classcm__patchwindow.html#a23e89d610e3d192ffdc7ad495f74da59',1,'cm_patchwindow::createActions()']]],
   ['createbox',['createBox',['../classcm__canvas.html#aa39d462d3483b07462c814383fee57c1',1,'cm_canvas']]],
   ['createmenus',['createMenus',['../classcm__basewindow.html#a553c93f8cf60c983ae27e4dc5034f18d',1,'cm_basewindow::createMenus()'],['../classcm__patchwindow.html#a2514fec437b9207934e0753ace19502e',1,'cm_patchwindow::createMenus()']]],
-  ['createmsg',['createMsg',['../classcm__canvas.html#ae6a27ff3f49acc1d3e04e619c822b5a0',1,'cm_canvas']]],
-  ['cut',['cut',['../classcm__menu.html#ab9473275f3017542665281ee1caed15f',1,'cm_menu']]]
+  ['createmsg',['createMsg',['../classcm__canvas.html#ae6a27ff3f49acc1d3e04e619c822b5a0',1,'cm_canvas']]]
 ];

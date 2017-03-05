@@ -98,72 +98,71 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00019"></a>00019     <span class="keywordtype">bool</span> *editMode_;
 <a name="l00020"></a>00020 
 <a name="l00021"></a>00021     <span class="comment">//temporary?</span>
-<a name="l00022"></a>00022     <span class="keywordtype">void</span>* pdObject_;
+<a name="l00022"></a>00022 <span class="comment">//    void* pdObject_;</span>
 <a name="l00023"></a>00023 
 <a name="l00024"></a>00024 <span class="keyword">public</span>:
 <a name="l00025"></a>00025 
-<a name="l00026"></a>00026 
-<a name="l00027"></a>00027 
-<a name="l00028"></a><a class="code" href="classcm__widget.html#a86dfa257abe398cef8603e8ec97add78">00028</a>     QPoint <a class="code" href="classcm__widget.html#a86dfa257abe398cef8603e8ec97add78">dragOffset</a>;
-<a name="l00029"></a>00029     <span class="comment">//QPoint dragStart;</span>
+<a name="l00026"></a><a class="code" href="classcm__widget.html#a86dfa257abe398cef8603e8ec97add78">00026</a>     QPoint <a class="code" href="classcm__widget.html#a86dfa257abe398cef8603e8ec97add78">dragOffset</a>;
+<a name="l00027"></a>00027     <span class="comment">//QPoint dragStart;</span>
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029     <span class="keyword">explicit</span> <a class="code" href="classcm__widget.html#a7aca8db9e88ee379ff3bc07c430c21ac">cm_widget</a>(QWidget *parent = 0);
 <a name="l00030"></a>00030 
-<a name="l00031"></a>00031     <span class="keyword">explicit</span> <a class="code" href="classcm__widget.html#a7aca8db9e88ee379ff3bc07c430c21ac">cm_widget</a>(QWidget *parent = 0);
-<a name="l00032"></a>00032 
-<a name="l00033"></a><a class="code" href="classcm__widget.html#a2789b084155e10f5630c458b65e01bd3">00033</a>     <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#a2789b084155e10f5630c458b65e01bd3">select</a>()
-<a name="l00034"></a>00034     {
-<a name="l00035"></a>00035         this-&gt;selected_ = <span class="keyword">true</span>;
-<a name="l00036"></a>00036         this-&gt;repaint();
-<a name="l00037"></a>00037     }
-<a name="l00038"></a>00038 
-<a name="l00039"></a><a class="code" href="classcm__widget.html#af2b0e90bf7abce97f6b047d9741f8f4a">00039</a>     <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#af2b0e90bf7abce97f6b047d9741f8f4a">deselect</a>()
-<a name="l00040"></a>00040     {
-<a name="l00041"></a>00041         this-&gt;selected_ = <span class="keyword">false</span>;
-<a name="l00042"></a>00042         this-&gt;repaint();
-<a name="l00043"></a>00043     }
+<a name="l00031"></a><a class="code" href="classcm__widget.html#a2789b084155e10f5630c458b65e01bd3">00031</a>     <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#a2789b084155e10f5630c458b65e01bd3">select</a>()
+<a name="l00032"></a>00032     {
+<a name="l00033"></a>00033         this-&gt;selected_ = <span class="keyword">true</span>;
+<a name="l00034"></a>00034         this-&gt;repaint();
+<a name="l00035"></a>00035     }
+<a name="l00036"></a>00036 
+<a name="l00037"></a><a class="code" href="classcm__widget.html#af2b0e90bf7abce97f6b047d9741f8f4a">00037</a>     <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#af2b0e90bf7abce97f6b047d9741f8f4a">deselect</a>()
+<a name="l00038"></a>00038     {
+<a name="l00039"></a>00039         this-&gt;selected_ = <span class="keyword">false</span>;
+<a name="l00040"></a>00040         this-&gt;repaint();
+<a name="l00041"></a>00041     }
+<a name="l00042"></a>00042 
+<a name="l00043"></a><a class="code" href="classcm__widget.html#aef5286ed1b9244dd393d9c7f0967adc0">00043</a>     <span class="keywordtype">bool</span> <a class="code" href="classcm__widget.html#aef5286ed1b9244dd393d9c7f0967adc0">isSelected</a>() {<span class="keywordflow">return</span> this-&gt;selected_;}
 <a name="l00044"></a>00044 
-<a name="l00045"></a><a class="code" href="classcm__widget.html#aef5286ed1b9244dd393d9c7f0967adc0">00045</a>     <span class="keywordtype">bool</span> <a class="code" href="classcm__widget.html#aef5286ed1b9244dd393d9c7f0967adc0">isSelected</a>() {<span class="keywordflow">return</span> this-&gt;selected_;}
-<a name="l00046"></a>00046 
-<a name="l00047"></a><a class="code" href="classcm__widget.html#aab8c5295ebd3e17dbec0659b2f1d7af8">00047</a>     <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#aab8c5295ebd3e17dbec0659b2f1d7af8">setEditModeRef</a>(<span class="keywordtype">bool</span>* canvasEditMode)
-<a name="l00048"></a>00048     {
-<a name="l00049"></a>00049         this-&gt;editMode_ = canvasEditMode;
-<a name="l00050"></a>00050     }
-<a name="l00051"></a>00051 
-<a name="l00052"></a><a class="code" href="classcm__widget.html#ad7eaedd32b823edfddeb661b4ea57269">00052</a>     <span class="keywordtype">bool</span> <a class="code" href="classcm__widget.html#ad7eaedd32b823edfddeb661b4ea57269">getEditMode</a>()
-<a name="l00053"></a>00053     {
-<a name="l00054"></a>00054         <span class="keywordflow">return</span> (this-&gt;editMode_)?(*this-&gt;editMode_):<span class="keyword">false</span>;
-<a name="l00055"></a>00055     }
-<a name="l00056"></a>00056 
-<a name="l00057"></a><a class="code" href="classcm__widget.html#a0d35ee127b85fd8ef253890a695e78db">00057</a>     <span class="keywordtype">void</span>* <a class="code" href="classcm__widget.html#a0d35ee127b85fd8ef253890a695e78db">getPdObject</a>() {<span class="keywordflow">return</span> this-&gt;pdObject_;}
-<a name="l00058"></a><a class="code" href="classcm__widget.html#ad9e8f140e85efb365c46f9828904da6b">00058</a>     <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#ad9e8f140e85efb365c46f9828904da6b">setPdObject</a>(<span class="keywordtype">void</span>*obj) {this-&gt;pdObject_ = obj;}
-<a name="l00059"></a>00059 signals:
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061     <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#a65eb468fe29f2e1e81059835e435087c">mousePressed</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>* obj, QMouseEvent* ev);
-<a name="l00062"></a>00062     <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#aae7405cf993a32a835164483ba4d6813">mouseReleased</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>* obj, QMouseEvent* ev);
-<a name="l00063"></a>00063     <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#aa475a8ac9f99094b3a3500816c25722a">mouseEntered</a>();
-<a name="l00064"></a>00064     <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#a324532bd98a2cb5be1853a3fa397bf3a">mouseLeaved</a>();
-<a name="l00065"></a>00065 
-<a name="l00066"></a>00066     <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#a14294c167a8229465541a0fe9c1ec69f">selectBox</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>*box);
-<a name="l00067"></a>00067     <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#a52c8dca2c35251f95e0cb5420c77d224">moveBox</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>*box, QMouseEvent* event);
-<a name="l00068"></a>00068 
-<a name="l00069"></a>00069 <span class="keyword">public</span> slots:
-<a name="l00070"></a>00070 
-<a name="l00071"></a>00071     <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#a89bedc3abc0fc19e4c1bfa34aabebd5b">s_MousePressed</a>();
-<a name="l00072"></a>00072     <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#a31243d096b4674cf65f043c55ec2cd6f">s_MouseReleased</a>();
-<a name="l00073"></a>00073     <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#a91a5ca0aeb7d6641a2a4a31d90ceacbe">s_MouseEntered</a>();
-<a name="l00074"></a>00074     <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#a2a327488ade8f05eda6c898c7f62bbd9">s_MouseLeaved</a>();
-<a name="l00075"></a>00075 
-<a name="l00076"></a>00076     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#addf020b1f3992daad4833a1f54fb007a">s_InMousePressed</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>* obj, QMouseEvent* ev);
-<a name="l00077"></a>00077     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#a888648e57b4e556af7e8349c6f7b647d">s_InMouseReleased</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>* obj, QMouseEvent* ev);
-<a name="l00078"></a>00078     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#aaa3af95db6c7d50e8a8f6515fe919edf">s_InMouseEntered</a>();
-<a name="l00079"></a>00079     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#a31075285171a8d50b993ffedce833ec9">s_InMouseLeaved</a>();
-<a name="l00080"></a>00080 
-<a name="l00081"></a>00081     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#a8b8e6417cb50ec31773fef56d5f6497c">s_OutMousePressed</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>* obj, QMouseEvent* ev);
-<a name="l00082"></a>00082     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#a8d66381e7bf31868708a557ccb25e60e">s_OutMouseReleased</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>* obj, QMouseEvent* ev);
-<a name="l00083"></a>00083     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#acc6f5f14da30eaef96e120495bb87c06">s_OutMouseEntered</a>();
-<a name="l00084"></a>00084     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#a3a51db9535dc24c91e412694b664ec8f">s_OutMouseLeaved</a>();
-<a name="l00085"></a>00085 };
-<a name="l00086"></a>00086 
-<a name="l00087"></a>00087 <span class="preprocessor">#endif // CM_WIDGET_H</span>
+<a name="l00045"></a><a class="code" href="classcm__widget.html#aab8c5295ebd3e17dbec0659b2f1d7af8">00045</a>     <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#aab8c5295ebd3e17dbec0659b2f1d7af8">setEditModeRef</a>(<span class="keywordtype">bool</span>* canvasEditMode)
+<a name="l00046"></a>00046     {
+<a name="l00047"></a>00047         this-&gt;editMode_ = canvasEditMode;
+<a name="l00048"></a>00048     }
+<a name="l00049"></a>00049 
+<a name="l00050"></a><a class="code" href="classcm__widget.html#ad7eaedd32b823edfddeb661b4ea57269">00050</a>     <span class="keywordtype">bool</span> <a class="code" href="classcm__widget.html#ad7eaedd32b823edfddeb661b4ea57269">getEditMode</a>()
+<a name="l00051"></a>00051     {
+<a name="l00052"></a>00052         <span class="keywordflow">return</span> (this-&gt;editMode_)?(*this-&gt;editMode_):<span class="keyword">false</span>;
+<a name="l00053"></a>00053     }
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055 <span class="comment">//    void* getPdObject() {return this-&gt;pdObject_;}</span>
+<a name="l00056"></a>00056 <span class="comment">//    void setPdObject(void*obj) {this-&gt;pdObject_ = obj;}</span>
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058 signals:
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060     <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#a65eb468fe29f2e1e81059835e435087c">mousePressed</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>* obj, QMouseEvent* ev);
+<a name="l00061"></a>00061     <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#aae7405cf993a32a835164483ba4d6813">mouseReleased</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>* obj, QMouseEvent* ev);
+<a name="l00062"></a>00062     <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#aa475a8ac9f99094b3a3500816c25722a">mouseEntered</a>();
+<a name="l00063"></a>00063     <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#a324532bd98a2cb5be1853a3fa397bf3a">mouseLeaved</a>();
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065     <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#a14294c167a8229465541a0fe9c1ec69f">selectBox</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>*box);
+<a name="l00066"></a>00066     <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#a52c8dca2c35251f95e0cb5420c77d224">moveBox</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>*box, QMouseEvent* event);
+<a name="l00067"></a>00067 
+<a name="l00068"></a>00068 <span class="keyword">public</span> slots:
+<a name="l00069"></a>00069 
+<a name="l00070"></a>00070     <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#a89bedc3abc0fc19e4c1bfa34aabebd5b">s_MousePressed</a>();
+<a name="l00071"></a>00071     <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#a31243d096b4674cf65f043c55ec2cd6f">s_MouseReleased</a>();
+<a name="l00072"></a>00072     <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#a91a5ca0aeb7d6641a2a4a31d90ceacbe">s_MouseEntered</a>();
+<a name="l00073"></a>00073     <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#a2a327488ade8f05eda6c898c7f62bbd9">s_MouseLeaved</a>();
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#addf020b1f3992daad4833a1f54fb007a">s_InMousePressed</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>* obj, QMouseEvent* ev);
+<a name="l00076"></a>00076     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#a888648e57b4e556af7e8349c6f7b647d">s_InMouseReleased</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>* obj, QMouseEvent* ev);
+<a name="l00077"></a>00077     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#aaa3af95db6c7d50e8a8f6515fe919edf">s_InMouseEntered</a>();
+<a name="l00078"></a>00078     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#a31075285171a8d50b993ffedce833ec9">s_InMouseLeaved</a>();
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#a8b8e6417cb50ec31773fef56d5f6497c">s_OutMousePressed</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>* obj, QMouseEvent* ev);
+<a name="l00081"></a>00081     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#a8d66381e7bf31868708a557ccb25e60e">s_OutMouseReleased</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>* obj, QMouseEvent* ev);
+<a name="l00082"></a>00082     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#acc6f5f14da30eaef96e120495bb87c06">s_OutMouseEntered</a>();
+<a name="l00083"></a>00083     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcm__widget.html#a3a51db9535dc24c91e412694b664ec8f">s_OutMouseLeaved</a>();
+<a name="l00084"></a>00084 };
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086 <span class="preprocessor">#endif // CM_WIDGET_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -182,7 +181,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 5 2017 11:39:38 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 5 2017 15:48:22 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

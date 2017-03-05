@@ -139,14 +139,14 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">create new object box  <a href="#aa39d462d3483b07462c814383fee57c1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcmo__msg.html">cmo_msg</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__canvas.html#ae6a27ff3f49acc1d3e04e619c822b5a0">createMsg</a> (std::string message, QPoint pos)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">create new message box (ui.msg now)  <a href="#ae6a27ff3f49acc1d3e04e619c822b5a0"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__canvas.html#a6b4da3667bb2cf082f9e071b0910b5bc">patchcord</a> (<a class="el" href="classcmo__box.html">cmo_box</a> *obj1, int outlet, <a class="el" href="classcmo__box.html">cmo_box</a> *obj2, int inlet)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates patchcord  <a href="#a6b4da3667bb2cf082f9e071b0910b5bc"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__canvas.html#a67a8c8d46d87618dde7ee0405993e77c">patchcord</a> (<a class="el" href="classcm__widget.html">cm_widget</a> *obj1, <a class="el" href="classcm__widget.html">cm_widget</a> *outport, <a class="el" href="classcm__widget.html">cm_widget</a> *obj2, <a class="el" href="classcm__widget.html">cm_widget</a> *inport)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates patchcord, uses pointers to inlets/outlets. TODO temporary?  <a href="#a67a8c8d46d87618dde7ee0405993e77c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__canvas.html#ab912f88b527d1d074d67bb588fa8b591">deletePatchcordsFor</a> (<a class="el" href="classcmo__box.html">cmo_box</a> *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete all patchcords for object  <a href="#ab912f88b527d1d074d67bb588fa8b591"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__canvas.html#a1e33418f0ba523e78a359c4a416c4978">deleteBox</a> (<a class="el" href="classcmo__box.html">cmo_box</a> *box)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete object box  <a href="#a1e33418f0ba523e78a359c4a416c4978"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__canvas.html#a2a1033a389c107a2c67d118ecd874f0e">patchcord</a> (<a class="el" href="classcm__object.html">cm_object</a> *obj1, int outlet, <a class="el" href="classcm__object.html">cm_object</a> *obj2, int inlet)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates patchcord  <a href="#a2a1033a389c107a2c67d118ecd874f0e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__canvas.html#aa645fbcd973c7a741879e795d8f4ad72">patchcord</a> (<a class="el" href="classcm__object.html">cm_object</a> *obj1, <a class="el" href="classcm__widget.html">cm_widget</a> *outport, <a class="el" href="classcm__object.html">cm_object</a> *obj2, <a class="el" href="classcm__widget.html">cm_widget</a> *inport)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates patchcord, uses pointers to inlets/outlets. TODO temporary?  <a href="#aa645fbcd973c7a741879e795d8f4ad72"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__canvas.html#ae5c3788081e8cc35774ac65400f6e2bd">deletePatchcordsFor</a> (<a class="el" href="classcm__widget.html">cm_widget</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete all patchcords for object  <a href="#ae5c3788081e8cc35774ac65400f6e2bd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__canvas.html#a41f0756dbd81deb83c3f902b22d19bc1">deleteBox</a> (<a class="el" href="classcm__object.html">cm_object</a> *box)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete object box  <a href="#a41f0756dbd81deb83c3f902b22d19bc1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__canvas.html#aa6ea601dedf2ca093281001122c82ece">delBoxes</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete all selected object boxes  <a href="#aa6ea601dedf2ca093281001122c82ece"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__canvas.html#a87795e8449086c27620bf2a97a2c9ca0">delSelectedPatchcords</a> ()</td></tr>
@@ -155,6 +155,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">change edit mode flag  <a href="#a82bccf1798bb6e39e805da20da2f00f2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__canvas.html#af57ab43141d39a55af192377af93cb26">getEditMode</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get edit mode flag  <a href="#af57ab43141d39a55af192377af93cb26"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcm__object.html">cm_object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__canvas.html#a6de16ed0f1b9e42474441788758f9a88">getObjectByIndex</a> (int idx)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns object by index - this is needed by parser  <a href="#a6de16ed0f1b9e42474441788758f9a88"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__canvas.html#aab9da787d6b29f28aeac4d3ca7f6f8b9">dragObject</a></td></tr>
@@ -317,14 +319,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a1e33418f0ba523e78a359c4a416c4978"></a><!-- doxytag: member="cm_canvas::deleteBox" ref="a1e33418f0ba523e78a359c4a416c4978" args="(cmo_box *box)" -->
+<a class="anchor" id="a41f0756dbd81deb83c3f902b22d19bc1"></a><!-- doxytag: member="cm_canvas::deleteBox" ref="a41f0756dbd81deb83c3f902b22d19bc1" args="(cm_object *box)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classcm__canvas.html#a1e33418f0ba523e78a359c4a416c4978">cm_canvas::deleteBox</a> </td>
+          <td class="memname">void <a class="el" href="classcm__canvas.html#a41f0756dbd81deb83c3f902b22d19bc1">cm_canvas::deleteBox</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classcmo__box.html">cmo_box</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="classcm__object.html">cm_object</a> *&#160;</td>
           <td class="paramname"><em>box</em></td><td>)</td>
           <td><code> [inline]</code></td>
         </tr>
@@ -342,14 +344,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab912f88b527d1d074d67bb588fa8b591"></a><!-- doxytag: member="cm_canvas::deletePatchcordsFor" ref="ab912f88b527d1d074d67bb588fa8b591" args="(cmo_box *obj)" -->
+<a class="anchor" id="ae5c3788081e8cc35774ac65400f6e2bd"></a><!-- doxytag: member="cm_canvas::deletePatchcordsFor" ref="ae5c3788081e8cc35774ac65400f6e2bd" args="(cm_widget *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classcm__canvas.html#ab912f88b527d1d074d67bb588fa8b591">cm_canvas::deletePatchcordsFor</a> </td>
+          <td class="memname">void <a class="el" href="classcm__canvas.html#ae5c3788081e8cc35774ac65400f6e2bd">cm_canvas::deletePatchcordsFor</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classcmo__box.html">cmo_box</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="classcm__widget.html">cm_widget</a> *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
           <td><code> [inline]</code></td>
         </tr>
@@ -421,6 +423,32 @@ Public Attributes</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
 <p>Reimplemented from <a class="el" href="classcm__widget.html#ad7eaedd32b823edfddeb661b4ea57269">cm_widget</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6de16ed0f1b9e42474441788758f9a88"></a><!-- doxytag: member="cm_canvas::getObjectByIndex" ref="a6de16ed0f1b9e42474441788758f9a88" args="(int idx)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcm__object.html">cm_object</a>* <a class="el" href="classcm__canvas.html#a6de16ed0f1b9e42474441788758f9a88">cm_canvas::getObjectByIndex</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>idx</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>returns object by index - this is needed by parser </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idx</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a> pointer </dd></dl>
 
 </div>
 </div>
@@ -574,14 +602,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a6b4da3667bb2cf082f9e071b0910b5bc"></a><!-- doxytag: member="cm_canvas::patchcord" ref="a6b4da3667bb2cf082f9e071b0910b5bc" args="(cmo_box *obj1, int outlet, cmo_box *obj2, int inlet)" -->
+<a class="anchor" id="a2a1033a389c107a2c67d118ecd874f0e"></a><!-- doxytag: member="cm_canvas::patchcord" ref="a2a1033a389c107a2c67d118ecd874f0e" args="(cm_object *obj1, int outlet, cm_object *obj2, int inlet)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classcm__canvas.html#a6b4da3667bb2cf082f9e071b0910b5bc">cm_canvas::patchcord</a> </td>
+          <td class="memname">void <a class="el" href="classcm__canvas.html#a2a1033a389c107a2c67d118ecd874f0e">cm_canvas::patchcord</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classcmo__box.html">cmo_box</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="classcm__object.html">cm_object</a> *&#160;</td>
           <td class="paramname"><em>obj1</em>, </td>
         </tr>
         <tr>
@@ -593,7 +621,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classcmo__box.html">cmo_box</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="classcm__object.html">cm_object</a> *&#160;</td>
           <td class="paramname"><em>obj2</em>, </td>
         </tr>
         <tr>
@@ -624,14 +652,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a67a8c8d46d87618dde7ee0405993e77c"></a><!-- doxytag: member="cm_canvas::patchcord" ref="a67a8c8d46d87618dde7ee0405993e77c" args="(cm_widget *obj1, cm_widget *outport, cm_widget *obj2, cm_widget *inport)" -->
+<a class="anchor" id="aa645fbcd973c7a741879e795d8f4ad72"></a><!-- doxytag: member="cm_canvas::patchcord" ref="aa645fbcd973c7a741879e795d8f4ad72" args="(cm_object *obj1, cm_widget *outport, cm_object *obj2, cm_widget *inport)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classcm__canvas.html#a6b4da3667bb2cf082f9e071b0910b5bc">cm_canvas::patchcord</a> </td>
+          <td class="memname">void <a class="el" href="classcm__canvas.html#a2a1033a389c107a2c67d118ecd874f0e">cm_canvas::patchcord</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classcm__widget.html">cm_widget</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="classcm__object.html">cm_object</a> *&#160;</td>
           <td class="paramname"><em>obj1</em>, </td>
         </tr>
         <tr>
@@ -643,7 +671,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classcm__widget.html">cm_widget</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="classcm__object.html">cm_object</a> *&#160;</td>
           <td class="paramname"><em>obj2</em>, </td>
         </tr>
         <tr>
@@ -938,7 +966,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 5 2017 11:39:38 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 5 2017 15:48:23 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

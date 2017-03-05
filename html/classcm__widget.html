@@ -99,9 +99,10 @@ Inheritance diagram for cm_widget:</div>
   <img src="classcm__widget.png" usemap="#cm_widget_map" alt=""/>
   <map id="cm_widget_map" name="cm_widget_map">
 <area href="classcm__canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects" alt="cm_canvas" shape="rect" coords="0,56,76,80"/>
-<area href="classcm__port.html" title="gui representation of t_inlet / t_outlet" alt="cm_port" shape="rect" coords="86,56,162,80"/>
-<area href="classcmo__box.html" title="gui object: standard object box" alt="cmo_box" shape="rect" coords="172,56,248,80"/>
-<area href="classcmo__msg.html" title="gui object: message box (ui.msg)" alt="cmo_msg" shape="rect" coords="258,56,334,80"/>
+<area href="classcm__object.html" title="base class for all object boxes - standard and special" alt="cm_object" shape="rect" coords="86,56,162,80"/>
+<area href="classcm__port.html" title="gui representation of t_inlet / t_outlet" alt="cm_port" shape="rect" coords="172,56,248,80"/>
+<area href="classcmo__box.html" title="gui object: standard object box" alt="cmo_box" shape="rect" coords="43,112,119,136"/>
+<area href="classcmo__msg.html" title="gui object: message box (ui.msg)" alt="cmo_msg" shape="rect" coords="129,112,205,136"/>
 </map>
  </div></div>
 
@@ -137,8 +138,6 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__widget.html#aef5286ed1b9244dd393d9c7f0967adc0">isSelected</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__widget.html#aab8c5295ebd3e17dbec0659b2f1d7af8">setEditModeRef</a> (bool *canvasEditMode)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__widget.html#ad7eaedd32b823edfddeb661b4ea57269">getEditMode</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__widget.html#a0d35ee127b85fd8ef253890a695e78db">getPdObject</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__widget.html#ad9e8f140e85efb365c46f9828904da6b">setPdObject</a> (void *obj)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QPoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__widget.html#a86dfa257abe398cef8603e8ec97add78">dragOffset</a></td></tr>
@@ -195,22 +194,6 @@ Public Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classcm__canvas.html#af57ab43141d39a55af192377af93cb26">cm_canvas</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a0d35ee127b85fd8ef253890a695e78db"></a><!-- doxytag: member="cm_widget::getPdObject" ref="a0d35ee127b85fd8ef253890a695e78db" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void* <a class="el" href="classcm__widget.html#a0d35ee127b85fd8ef253890a695e78db">cm_widget::getPdObject</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
 
 </div>
 </div>
@@ -637,23 +620,6 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad9e8f140e85efb365c46f9828904da6b"></a><!-- doxytag: member="cm_widget::setPdObject" ref="ad9e8f140e85efb365c46f9828904da6b" args="(void *obj)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classcm__widget.html#ad9e8f140e85efb365c46f9828904da6b">cm_widget::setPdObject</a> </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <hr/><h2>Member Data Documentation</h2>
 <a class="anchor" id="a86dfa257abe398cef8603e8ec97add78"></a><!-- doxytag: member="cm_widget::dragOffset" ref="a86dfa257abe398cef8603e8ec97add78" args="" -->
 <div class="memitem">
@@ -690,7 +656,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 5 2017 11:39:38 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 5 2017 15:48:23 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

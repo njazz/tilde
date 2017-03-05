@@ -80,13 +80,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#signals">Signals</a> &#124;
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a>  </div>
+<a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">cmo_box Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="cmo_box" --><!-- doxytag: inherits="cm_widget" -->
+<!-- doxytag: class="cmo_box" --><!-- doxytag: inherits="cm_object" -->
 <p>gui object: standard object box  
  <a href="classcmo__box.html#details">More...</a></p>
 
@@ -97,6 +96,7 @@ Inheritance diagram for cmo_box:</div>
  <div class="center">
   <img src="classcmo__box.png" usemap="#cmo_box_map" alt=""/>
   <map id="cmo_box_map" name="cmo_box_map">
+<area href="classcm__object.html" title="base class for all object boxes - standard and special" alt="cm_object" shape="rect" coords="0,56,71,80"/>
 <area href="classcm__widget.html" title="parent class for all gui objects" alt="cm_widget" shape="rect" coords="0,0,71,24"/>
 </map>
  </div></div>
@@ -117,34 +117,23 @@ Signals</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__box.html#ae63995d39b83b73232fcdd53aa62f734">outletMouseLeaved</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__box.html#a7befe58b2696546f0ae6c5e1bccff7d5">cmo_box</a> (<a class="el" href="classcm__widget.html">cm_widget</a> *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__box.html#a7d4669447c4e7b2a403a37d6f3ca0161">cmo_box</a> (<a class="el" href="classcm__object.html">cm_object</a> *parent=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__box.html#a14fbae4adba16f0c1927b01f28f04bab">paintEvent</a> (QPaintEvent *)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__box.html#a245d3cb6652ead56b300aa7ff96a9037">mousePressEvent</a> (QMouseEvent *ev)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__box.html#add133ab45184420c7a66e752d200c9d3">mouseReleaseEvent</a> (QMouseEvent *)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__box.html#ad57e410a01d1367c86434768149f8a71">mouseMoveEvent</a> (QMouseEvent *event)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__box.html#afdfca5159f5a1eb2a8ed96e0ee3e2513">setInletsPos</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__box.html#a46381a824f97a3d2a387eabdf2526bd8">setOutletsPos</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__box.html#a99229463063af84b992ff156bce25d2d">addInlet</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__box.html#af8b544bc7e6f5de7425d3979a201ff47">addOutlet</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcm__port.html">cm_port</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__box.html#a047201945d53c0631c6e6c26692d1988">getInletAt</a> (int idx)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcm__port.html">cm_port</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__box.html#ae18ca8d62707181ba66086cd7b17d46d">getOutletAt</a> (int idx)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__box.html#a7f4089eba89dc9a9ac7de8da00b472a6">setPdObjName</a> (std::string objName)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__box.html#ad12d35b27574c03f80b99b68fa9397a2">getPdObjName</a> ()</td></tr>
-<tr><td colspan="2"><h2><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__box.html#a818440d41acc557c6fe00682cab226b4">isErrorBox</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>gui object: standard object box </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a7befe58b2696546f0ae6c5e1bccff7d5"></a><!-- doxytag: member="cmo_box::cmo_box" ref="a7befe58b2696546f0ae6c5e1bccff7d5" args="(cm_widget *parent=0)" -->
+<a class="anchor" id="a7d4669447c4e7b2a403a37d6f3ca0161"></a><!-- doxytag: member="cmo_box::cmo_box" ref="a7d4669447c4e7b2a403a37d6f3ca0161" args="(cm_object *parent=0)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcmo__box.html#a7befe58b2696546f0ae6c5e1bccff7d5">cmo_box::cmo_box</a> </td>
+          <td class="memname"><a class="el" href="classcmo__box.html#a7d4669447c4e7b2a403a37d6f3ca0161">cmo_box::cmo_box</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classcm__widget.html">cm_widget</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="classcm__object.html">cm_object</a> *&#160;</td>
           <td class="paramname"><em>parent</em> = <code>0</code></td><td>)</td>
           <td><code> [explicit]</code></td>
         </tr>
@@ -155,88 +144,6 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a99229463063af84b992ff156bce25d2d"></a><!-- doxytag: member="cmo_box::addInlet" ref="a99229463063af84b992ff156bce25d2d" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classcmo__box.html#a99229463063af84b992ff156bce25d2d">cmo_box::addInlet</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="af8b544bc7e6f5de7425d3979a201ff47"></a><!-- doxytag: member="cmo_box::addOutlet" ref="af8b544bc7e6f5de7425d3979a201ff47" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classcmo__box.html#af8b544bc7e6f5de7425d3979a201ff47">cmo_box::addOutlet</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a047201945d53c0631c6e6c26692d1988"></a><!-- doxytag: member="cmo_box::getInletAt" ref="a047201945d53c0631c6e6c26692d1988" args="(int idx)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classcm__port.html">cm_port</a>* <a class="el" href="classcmo__box.html#a047201945d53c0631c6e6c26692d1988">cmo_box::getInletAt</a> </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>idx</em></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ae18ca8d62707181ba66086cd7b17d46d"></a><!-- doxytag: member="cmo_box::getOutletAt" ref="ae18ca8d62707181ba66086cd7b17d46d" args="(int idx)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classcm__port.html">cm_port</a>* <a class="el" href="classcmo__box.html#ae18ca8d62707181ba66086cd7b17d46d">cmo_box::getOutletAt</a> </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>idx</em></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ad12d35b27574c03f80b99b68fa9397a2"></a><!-- doxytag: member="cmo_box::getPdObjName" ref="ad12d35b27574c03f80b99b68fa9397a2" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string <a class="el" href="classcmo__box.html#ad12d35b27574c03f80b99b68fa9397a2">cmo_box::getPdObjName</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a55394cc501f3ea920336e8db37d6aed7"></a><!-- doxytag: member="cmo_box::inletMouseEntered" ref="a55394cc501f3ea920336e8db37d6aed7" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -465,69 +372,6 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="afdfca5159f5a1eb2a8ed96e0ee3e2513"></a><!-- doxytag: member="cmo_box::setInletsPos" ref="afdfca5159f5a1eb2a8ed96e0ee3e2513" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classcmo__box.html#afdfca5159f5a1eb2a8ed96e0ee3e2513">cmo_box::setInletsPos</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a46381a824f97a3d2a387eabdf2526bd8"></a><!-- doxytag: member="cmo_box::setOutletsPos" ref="a46381a824f97a3d2a387eabdf2526bd8" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classcmo__box.html#a46381a824f97a3d2a387eabdf2526bd8">cmo_box::setOutletsPos</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a7f4089eba89dc9a9ac7de8da00b472a6"></a><!-- doxytag: member="cmo_box::setPdObjName" ref="a7f4089eba89dc9a9ac7de8da00b472a6" args="(std::string objName)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classcmo__box.html#a7f4089eba89dc9a9ac7de8da00b472a6">cmo_box::setPdObjName</a> </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>objName</em></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="a818440d41acc557c6fe00682cab226b4"></a><!-- doxytag: member="cmo_box::isErrorBox" ref="a818440d41acc557c6fe00682cab226b4" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="classcmo__box.html#a818440d41acc557c6fe00682cab226b4">cmo_box::isErrorBox</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/travis/build/njazz/qtpd/qtpd_gui/<a class="el" href="cmo__box_8h_source.html">cmo_box.h</a></li>
 <li>/home/travis/build/njazz/qtpd/qtpd_gui/<a class="el" href="cmo__box_8cpp.html">cmo_box.cpp</a></li>
@@ -550,7 +394,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 5 2017 11:39:38 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 5 2017 15:48:23 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

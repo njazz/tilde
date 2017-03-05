@@ -90,8 +90,8 @@ This is the complete list of members for <a class="el" href="classcm__canvas.htm
   <tr class="memlist"><td><a class="el" href="classcm__canvas.html#aa39d462d3483b07462c814383fee57c1">createBox</a>(std::string pdObjectName, QPoint pos)</td><td><a class="el" href="classcm__canvas.html">cm_canvas</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classcm__canvas.html#ae6a27ff3f49acc1d3e04e619c822b5a0">createMsg</a>(std::string message, QPoint pos)</td><td><a class="el" href="classcm__canvas.html">cm_canvas</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classcm__canvas.html#aa6ea601dedf2ca093281001122c82ece">delBoxes</a>()</td><td><a class="el" href="classcm__canvas.html">cm_canvas</a></td><td><code> [inline]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="classcm__canvas.html#a1e33418f0ba523e78a359c4a416c4978">deleteBox</a>(cmo_box *box)</td><td><a class="el" href="classcm__canvas.html">cm_canvas</a></td><td><code> [inline]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="classcm__canvas.html#ab912f88b527d1d074d67bb588fa8b591">deletePatchcordsFor</a>(cmo_box *obj)</td><td><a class="el" href="classcm__canvas.html">cm_canvas</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classcm__canvas.html#a41f0756dbd81deb83c3f902b22d19bc1">deleteBox</a>(cm_object *box)</td><td><a class="el" href="classcm__canvas.html">cm_canvas</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classcm__canvas.html#ae5c3788081e8cc35774ac65400f6e2bd">deletePatchcordsFor</a>(cm_widget *obj)</td><td><a class="el" href="classcm__canvas.html">cm_canvas</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classcm__canvas.html#a87795e8449086c27620bf2a97a2c9ca0">delSelectedPatchcords</a>()</td><td><a class="el" href="classcm__canvas.html">cm_canvas</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classcm__widget.html#af2b0e90bf7abce97f6b047d9741f8f4a">deselect</a>()</td><td><a class="el" href="classcm__widget.html">cm_widget</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classcm__canvas.html#a771117a550aeb9ce3999637d63b6596d">deselectBoxes</a>()</td><td><a class="el" href="classcm__canvas.html">cm_canvas</a></td><td><code> [inline]</code></td></tr>
@@ -99,7 +99,7 @@ This is the complete list of members for <a class="el" href="classcm__canvas.htm
   <tr class="memlist"><td><a class="el" href="classcm__widget.html#a86dfa257abe398cef8603e8ec97add78">dragOffset</a></td><td><a class="el" href="classcm__widget.html">cm_widget</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classcm__canvas.html#aaef3b39a3e34a8b4b7934086f7116a80">fileName</a></td><td><a class="el" href="classcm__canvas.html">cm_canvas</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classcm__canvas.html#af57ab43141d39a55af192377af93cb26">getEditMode</a>()</td><td><a class="el" href="classcm__canvas.html">cm_canvas</a></td><td><code> [inline]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="classcm__widget.html#a0d35ee127b85fd8ef253890a695e78db">getPdObject</a>()</td><td><a class="el" href="classcm__widget.html">cm_widget</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classcm__canvas.html#a6de16ed0f1b9e42474441788758f9a88">getObjectByIndex</a>(int idx)</td><td><a class="el" href="classcm__canvas.html">cm_canvas</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classcm__canvas.html#a14efd6f2651c400cb8b821f9ca17b4c4">hoverPatchcords</a>(QPoint pos)</td><td><a class="el" href="classcm__canvas.html">cm_canvas</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classcm__canvas.html#aa2dc87d79203a2782f353e730e835c92">hoverPatchcordsOff</a>()</td><td><a class="el" href="classcm__canvas.html">cm_canvas</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classcm__widget.html#aef5286ed1b9244dd393d9c7f0967adc0">isSelected</a>()</td><td><a class="el" href="classcm__widget.html">cm_widget</a></td><td><code> [inline]</code></td></tr>
@@ -113,8 +113,8 @@ This is the complete list of members for <a class="el" href="classcm__canvas.htm
   <tr class="memlist"><td><a class="el" href="classcm__widget.html#a52c8dca2c35251f95e0cb5420c77d224">moveBox</a>(cm_widget *box, QMouseEvent *event)</td><td><a class="el" href="classcm__widget.html">cm_widget</a></td><td><code> [signal]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classcm__canvas.html#ac3b27e8652041539fe9645a9215d818d">paintEvent</a>(QPaintEvent *)</td><td><a class="el" href="classcm__canvas.html">cm_canvas</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classcm__canvas.html#a0489e9290c712a81c1f337670ddaf0a6">paintPatchcords</a>()</td><td><a class="el" href="classcm__canvas.html">cm_canvas</a></td><td><code> [inline]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="classcm__canvas.html#a6b4da3667bb2cf082f9e071b0910b5bc">patchcord</a>(cmo_box *obj1, int outlet, cmo_box *obj2, int inlet)</td><td><a class="el" href="classcm__canvas.html">cm_canvas</a></td><td><code> [inline]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="classcm__canvas.html#a67a8c8d46d87618dde7ee0405993e77c">patchcord</a>(cm_widget *obj1, cm_widget *outport, cm_widget *obj2, cm_widget *inport)</td><td><a class="el" href="classcm__canvas.html">cm_canvas</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classcm__canvas.html#a2a1033a389c107a2c67d118ecd874f0e">patchcord</a>(cm_object *obj1, int outlet, cm_object *obj2, int inlet)</td><td><a class="el" href="classcm__canvas.html">cm_canvas</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classcm__canvas.html#aa645fbcd973c7a741879e795d8f4ad72">patchcord</a>(cm_object *obj1, cm_widget *outport, cm_object *obj2, cm_widget *inport)</td><td><a class="el" href="classcm__canvas.html">cm_canvas</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classcm__canvas.html#ab4cebf6fd47966558324cd53f3108704">pd_canvas</a></td><td><a class="el" href="classcm__canvas.html">cm_canvas</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classcm__widget.html#aaa3af95db6c7d50e8a8f6515fe919edf">s_InMouseEntered</a>()</td><td><a class="el" href="classcm__widget.html">cm_widget</a></td><td><code> [virtual, slot]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classcm__widget.html#a31075285171a8d50b993ffedce833ec9">s_InMouseLeaved</a>()</td><td><a class="el" href="classcm__widget.html">cm_widget</a></td><td><code> [virtual, slot]</code></td></tr>
@@ -134,7 +134,6 @@ This is the complete list of members for <a class="el" href="classcm__canvas.htm
   <tr class="memlist"><td><a class="el" href="classcm__widget.html#a14294c167a8229465541a0fe9c1ec69f">selectBox</a>(cm_widget *box)</td><td><a class="el" href="classcm__widget.html">cm_widget</a></td><td><code> [signal]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classcm__canvas.html#a82bccf1798bb6e39e805da20da2f00f2">setEditMode</a>(bool mode)</td><td><a class="el" href="classcm__canvas.html">cm_canvas</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classcm__widget.html#aab8c5295ebd3e17dbec0659b2f1d7af8">setEditModeRef</a>(bool *canvasEditMode)</td><td><a class="el" href="classcm__widget.html">cm_widget</a></td><td><code> [inline]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="classcm__widget.html#ad9e8f140e85efb365c46f9828904da6b">setPdObject</a>(void *obj)</td><td><a class="el" href="classcm__widget.html">cm_widget</a></td><td><code> [inline]</code></td></tr>
 </table></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -153,7 +152,7 @@ This is the complete list of members for <a class="el" href="classcm__canvas.htm
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 5 2017 11:39:38 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 5 2017 15:48:23 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

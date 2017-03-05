@@ -86,6 +86,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="cm_fileparser" -->
+<p>Parses pd files on client(GUI) side.  
+ <a href="classcm__fileparser.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="cm__fileparser_8h_source.html">cm_fileparser.h</a>&gt;</code></p>
 
 <p><a href="classcm__fileparser-members.html">List of all members.</a></p>
@@ -93,13 +96,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__fileparser.html#a6afa0fb2cfa77a4973338a796bacc531">stringToCanvas</a> (<a class="el" href="classcm__canvas.html">cm_canvas</a> *cmcanvas, QStringList list)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">parses QStringLists of atoms to canvas - creates objects etc  <a href="#a6afa0fb2cfa77a4973338a796bacc531"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__fileparser.html#aa966ba5995666763187f76380df12fd7">parseString</a> (QString line)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">checks first atoms ("#N", "#X" etc) and sends QStringList  <a href="#aa966ba5995666763187f76380df12fd7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__fileparser.html#a33ca4b2eb9e50e8e55639c273bdc3a9e">open</a> (QString fname)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">opens file, converts to QStrings, calls 'parseString'  <a href="#a33ca4b2eb9e50e8e55639c273bdc3a9e"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classcm__canvas.html">cm_canvas</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__fileparser.html#a66488c39370c4aac056c5b4ca38023bc">pdParserCanvas</a></td></tr>
 </table>
-<hr/><h2>Member Function Documentation</h2>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Parses pd files on client(GUI) side. </p>
+</div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a33ca4b2eb9e50e8e55639c273bdc3a9e"></a><!-- doxytag: member="cm_fileparser::open" ref="a33ca4b2eb9e50e8e55639c273bdc3a9e" args="(QString fname)" -->
 <div class="memitem">
 <div class="memproto">
@@ -114,6 +122,14 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>opens file, converts to QStrings, calls 'parseString' </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fname</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -131,6 +147,14 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>checks first atoms ("#N", "#X" etc) and sends QStringList </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">line</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -158,6 +182,15 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>parses QStringLists of atoms to canvas - creates objects etc </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cmcanvas</td><td></td></tr>
+    <tr><td class="paramname">list</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -197,7 +230,7 @@ Static Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 5 2017 11:39:38 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 5 2017 15:48:23 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

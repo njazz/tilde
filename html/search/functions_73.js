@@ -20,10 +20,11 @@ var searchData=
   ['selectbox',['selectBox',['../classcm__widget.html#a14294c167a8229465541a0fe9c1ec69f',1,'cm_widget']]],
   ['seteditmode',['setEditMode',['../classcm__canvas.html#a82bccf1798bb6e39e805da20da2f00f2',1,'cm_canvas::setEditMode()'],['../classcm__patchwindow.html#a1d061d74acb6b5a7d6ef9252f53a7cd8',1,'cm_patchwindow::setEditMode()']]],
   ['seteditmoderef',['setEditModeRef',['../classcm__widget.html#aab8c5295ebd3e17dbec0659b2f1d7af8',1,'cm_widget']]],
-  ['setinletspos',['setInletsPos',['../classcmo__box.html#afdfca5159f5a1eb2a8ed96e0ee3e2513',1,'cmo_box::setInletsPos()'],['../classcmo__msg.html#ac248cdce57d7cf17da6966ba3e106dfd',1,'cmo_msg::setInletsPos()']]],
-  ['setoutletspos',['setOutletsPos',['../classcmo__box.html#a46381a824f97a3d2a387eabdf2526bd8',1,'cmo_box::setOutletsPos()'],['../classcmo__msg.html#a07e2dd31c5d53cf7fb39cefe589c8859',1,'cmo_msg::setOutletsPos()']]],
+  ['seterrorbox',['setErrorBox',['../classcm__object.html#a5c381b627b0d2fce833711fb5aff4eaf',1,'cm_object']]],
+  ['setinletspos',['setInletsPos',['../classcm__object.html#a96570d85d1b4d6838ebe31957328dfdb',1,'cm_object']]],
+  ['setobjectdata',['setObjectData',['../classcm__object.html#a002a0bcd7ac0648a11a176a40e528bab',1,'cm_object']]],
+  ['setoutletspos',['setOutletsPos',['../classcm__object.html#a0a7f036984bb75d7099e2c0e687e1c62',1,'cm_object']]],
   ['setpdmessage',['setPdMessage',['../classcmo__msg.html#a44e862270c272f0942e93553976ee6e1',1,'cmo_msg']]],
-  ['setpdobject',['setPdObject',['../classcm__widget.html#ad9e8f140e85efb365c46f9828904da6b',1,'cm_widget']]],
-  ['setpdobjname',['setPdObjName',['../classcmo__box.html#a7f4089eba89dc9a9ac7de8da00b472a6',1,'cmo_box']]],
+  ['setpdobject',['setPdObject',['../classcm__object.html#a7a877f5530c1de919014256222279756',1,'cm_object']]],
   ['stringtocanvas',['stringToCanvas',['../classcm__fileparser.html#a6afa0fb2cfa77a4973338a796bacc531',1,'cm_fileparser']]]
 ];

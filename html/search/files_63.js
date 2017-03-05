@@ -8,6 +8,8 @@ var searchData=
   ['cm_5ffileparser_2eh',['cm_fileparser.h',['../cm__fileparser_8h.html',1,'']]],
   ['cm_5fmenu_2ecpp',['cm_menu.cpp',['../cm__menu_8cpp.html',1,'']]],
   ['cm_5fmenu_2eh',['cm_menu.h',['../cm__menu_8h.html',1,'']]],
+  ['cm_5fobject_2ecpp',['cm_object.cpp',['../cm__object_8cpp.html',1,'']]],
+  ['cm_5fobject_2eh',['cm_object.h',['../cm__object_8h.html',1,'']]],
   ['cm_5fobjectmaker_2ecpp',['cm_objectmaker.cpp',['../cm__objectmaker_8cpp.html',1,'']]],
   ['cm_5fobjectmaker_2eh',['cm_objectmaker.h',['../cm__objectmaker_8h.html',1,'']]],
   ['cm_5fpatchcord_2ecpp',['cm_patchcord.cpp',['../cm__patchcord_8cpp.html',1,'']]],
