@@ -94,14 +94,13 @@ void cm_canvas::s_MoveBox(cm_widget *box, QMouseEvent* event)
     if (!this->getEditMode()) return;
     for (int i=0;i<this->selObjectBoxes.size();i++)
     {
-        ((cm_widget*)this->selObjectBoxes.at(i))->move(
+        cm_widget* w = ((cm_widget*)this->selObjectBoxes.at(i));
+        QPoint pos = ((cm_widget*)this->selObjectBoxes.at(i))->pos() +
+                mapToParent((event->pos()-box->dragOffset));
 
-                    ((cm_widget*)this->selObjectBoxes.at(i))->pos() +
-                    mapToParent((event->pos()-box->dragOffset))
+        w->move(pos);
 
-                    );
-
-
+        cmp_moveobject((t_object*)w->getPdObject(), (int)pos.x(), (int)pos.y() );
 
     }
 

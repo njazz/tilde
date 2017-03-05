@@ -143,8 +143,8 @@ public:
                 QString objname;
                 QPoint pos;
 
-                pos.setX(((QString)list.value(0)).toFloat());
-                pos.setY(((QString)list.value(1)).toFloat());
+                pos.setX(((QString)list.value(1)).toFloat());
+                pos.setY(((QString)list.value(2)).toFloat());
 
                 //lol
                 QStringList objList = list;
@@ -177,8 +177,8 @@ public:
         //                QString objname;
         //                QPoint pos;
 
-        //                pos.setX(((QString)list.value(0)).toFloat());
-        //                pos.setY(((QString)list.value(1)).toFloat());
+        //                pos.setX(((QString)list.value(1)).toFloat());
+        //                pos.setY(((QString)list.value(2)).toFloat());
 
         //                //lol
         //                QStringList objList = list;

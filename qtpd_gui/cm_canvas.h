@@ -146,6 +146,8 @@ public:
 
     void mouseMoveEvent(QMouseEvent* ev)
     {
+        if (!ev) return;
+
         QPoint pos =  ev->pos();
 
         this->selFrame.end = pos - this->selFrame.start;

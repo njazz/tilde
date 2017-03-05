@@ -258,10 +258,12 @@ t_object* cmp_create_message(t_canvas* canvas, std::string message, int x, int y
 
 }
 
-//void cmp_moveobject(t_object* obj, int x, int y)
-//{
+void cmp_moveobject(t_object* obj, int x, int y)
+{
+    obj->te_xpix = x;
+    obj->te_ypix = y;
 
-//}
+}
 
 void cmp_deleteobject(t_canvas* canvas, t_object* obj)
 {
