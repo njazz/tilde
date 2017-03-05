@@ -70,7 +70,7 @@ private slots:
 
 public:
     cm_patchwindow();
-    cm_patchwindow(QStringList arguments);
+    cm_patchwindow(QStringList ); //arguments
     cm_canvas* canvas;
 
 

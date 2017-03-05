@@ -3,7 +3,6 @@
 cmo_box::cmo_box(cm_object *parent) : cm_object(parent)
 {
 
-    //this->setFixedSize(65,20);
     this->setFixedHeight(20);
     this->setMinimumWidth(22);
     this->setMouseTracking(true);
@@ -21,32 +20,3 @@ cmo_box::cmo_box(cm_object *parent) : cm_object(parent)
 
 }
 
-//cmo_box::cmo_box(cm_widget *parent, QStringList stringList) : cm_widget(parent)
-//{
-
-//}
-
-
-
-
-
-///////////////////
-
-
-//void cm_box::boxInMousePressed()
-//{}
-//void cm_box::boxInMouseReleased()
-//{}
-//void cm_box::boxInMouseEntered()
-//{}
-//void cm_box::boxInMouseLeaved()
-//{}
-
-//void cm_box::boxOutMousePressed()
-//{}
-//void cm_box::boxOutMouseReleased()
-//{}
-//void cm_box::boxOutMouseEntered()
-//{}
-//void cm_box::boxOutMouseLeaved()
-//{}

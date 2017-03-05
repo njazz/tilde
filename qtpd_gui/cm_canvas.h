@@ -132,6 +132,7 @@ public:
             QColor pc_color = ((cm_patchcord*)this->patchcords.at(i))->mouseover ? QColor(255, 192, 0) : QColor(0, 0, 0);
             if (((cm_patchcord*)this->patchcords.at(i))->selected) pc_color = QColor(0,192,255);
 
+            p.setRenderHint(QPainter::HighQualityAntialiasing, true);
             p.setPen(QPen(pc_color, 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
             p.drawLine(((cm_patchcord*)this->patchcords.at(i))->getStartPoint(), ((cm_patchcord*)this->patchcords.at(i))->getEndPoint());
         }
@@ -345,7 +346,7 @@ public:
             in_c = cmp_get_inlet_count(new_obj);
             out_c = cmp_get_outlet_count(new_obj);
 
-            qDebug ("created object %s ins %i outs %i ptr %lu", obj_name, in_c, out_c, new_obj);
+            qDebug ("created object %s ins %i outs %i ptr %lu", obj_name, in_c, out_c, (long)new_obj);
 
             //cm_box* newBox = this->canvas->createBox(this->objectMaker->text().toStdString(),this->objectMaker->pos(),in_c,out_c);
             box->setPdObject(new_obj);
@@ -407,7 +408,7 @@ public:
 
             if (new_obj)
             {
-                qDebug ("created msgbox %s | ptr %lu\n",  message.c_str(), new_obj);
+                qDebug ("created msgbox %s | ptr %lu\n",  message.c_str(), (long)new_obj);
                 msg->setPdObject(new_obj);
             }
             else
@@ -581,10 +582,13 @@ public:
     ///
     cm_object* getObjectByIndex(int idx)
     {
-        if ((idx< this->objectBoxes.size()) && (idx>=0))
+        if ((idx< (int)this->objectBoxes.size()) && (idx>=0))
             return this->objectBoxes.at(idx);
         else
+        {
             qDebug("object not found");
+            return 0;
+        }
     }
 
 signals:

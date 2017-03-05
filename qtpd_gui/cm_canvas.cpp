@@ -95,7 +95,7 @@ void cm_canvas::s_SelectBox(cm_widget *box)
 void cm_canvas::s_MoveBox(cm_widget *box, QMouseEvent* event)
 {
     if (! (this->getEditMode() == em_Unlocked) ) return;
-    for (int i=0;i<this->selObjectBoxes.size();i++)
+    for (int i=0;i<(int)this->selObjectBoxes.size();i++)
     {
         cm_object* w = ((cm_object*)this->selObjectBoxes.at(i));
         QPoint pos = ((cm_object*)this->selObjectBoxes.at(i))->pos() +

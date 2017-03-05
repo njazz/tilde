@@ -38,7 +38,7 @@ cm_patchwindow::cm_patchwindow()
 
 }
 
-cm_patchwindow::cm_patchwindow(QStringList arguments)
+cm_patchwindow::cm_patchwindow(QStringList )    //
 {
     ((QMainWindow*)this)->setWindowTitle("Untitled-1");
 
@@ -157,12 +157,11 @@ void cm_patchwindow::saveAs()
 
 void cm_patchwindow::objectMakerDone()
 {
-
-
     std::string obj_name = this->objectMaker->text().toStdString();
 
-    cmo_box *box1 = this->canvas->createBox(obj_name, this->objectMaker->pos());
+    // cmo_box *box1 =
 
+    this->canvas->createBox(obj_name, this->objectMaker->pos());
 
     this->canvas->dragObject = 0;
     this->objectMaker->close();
