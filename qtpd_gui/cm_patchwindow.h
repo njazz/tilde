@@ -232,7 +232,7 @@ public:
     void newObjectBox()
     {
 
-        if (this->canvas->getEditMode())
+        if (this->canvas->getEditMode() != em_Locked)
         {
             this->objectMaker->move(100,50);
             this->objectMaker->setFixedSize(60,30);
@@ -251,7 +251,7 @@ public:
         //const char * obj_name = this->objectMaker->text().toStdString().c_str();
         //
 
-        if (this->canvas->getEditMode())
+        if (this->canvas->getEditMode() != em_Locked)
         {
             cmo_msg *newMsg = this->canvas->createMsg("",QPoint(100,100));
             this->canvas->dragObject = newMsg;
@@ -271,8 +271,11 @@ public:
 
     void setEditMode()
     {
-        this->canvas->setEditMode(!this->canvas->getEditMode());
-        this->editModeAct->setChecked(this->canvas->getEditMode());
+        if (! (( this->canvas->getEditMode()) == em_Locked ))
+            this->canvas->setEditMode(em_Locked);
+        else
+            this->canvas->setEditMode(em_Unlocked);
+        this->editModeAct->setChecked(this->canvas->getEditMode() == em_Unlocked);
     }
 
 
@@ -299,6 +302,22 @@ public:
     }
 
     ///////
+
+    void keyPressEvent(QKeyEvent *event){
+        if (event->modifiers() & Qt::ControlModifier)
+        {
+            if (this->canvas->getEditMode() != em_Locked)
+                this->canvas->setEditMode(em_Temporary);
+        }
+    }
+
+    void keyReleaseEvent(QKeyEvent *event){
+        if (event->key() == Qt::Key_Control)
+        {
+            if (this->canvas->getEditMode() == em_Temporary)
+                this->canvas->setEditMode(em_Unlocked);
+        }
+    }
 
 
 };

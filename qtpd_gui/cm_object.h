@@ -4,6 +4,9 @@
 #include "cm_widget.h"
 #include "cm_port.h"
 
+
+
+
 ////
 /// \brief base class for all object boxes - standard and special
 ///

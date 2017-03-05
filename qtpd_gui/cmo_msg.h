@@ -102,7 +102,7 @@ public:
     void mousePressEvent(QMouseEvent *ev)
     {
 
-        if (this->getEditMode() && this->isSelected())
+        if ( (this->getEditMode()==em_Unlocked) && this->isSelected())
         {
             this->editor_->setText(QString(this->getObjectData().c_str()));
             this->editor_->show();
@@ -112,15 +112,17 @@ public:
         emit selectBox(this);
         this->dragOffset = ev->pos();
 
-        if (!this->getEditMode())
+        if (!(this->getEditMode()==em_Unlocked))
         {
             this->clicked_ = true;
             this->repaint();
+
+            //todo timer
         }
 
         //temporary
         //move
-        if (!this->getEditMode())
+        if (this->getEditMode() != em_Unlocked)
         {
             if (!this->getPdObject())
             {
@@ -143,7 +145,7 @@ public:
     {
         //this->selected_ = false;
 
-        if (!this->getEditMode())
+        //if (!this->getEditMode())
         {
             this->clicked_ = false;
             this->repaint();
@@ -179,7 +181,7 @@ public:
 
         //temporary
         //move
-        if (this->getEditMode())
+        if (this->getEditMode() == em_Unlocked)
         {
             if (!this->getPdObject())
             {

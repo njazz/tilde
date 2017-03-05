@@ -33,6 +33,8 @@ typedef struct
 
 } tRectPlus;
 
+
+
 ////
 /// \brief 't_canvas' counterpart. creates objects
 ///
@@ -57,7 +59,7 @@ private:
     QPoint dragPrevPos;
 
     //
-    bool editMode;
+    t_editMode editMode;
 
     //
     bool gridEnabled;
@@ -81,7 +83,7 @@ public:
     void paintEvent(QPaintEvent *)
     {
         //grid
-        if (this->gridEnabled && this->editMode)
+        if (this->gridEnabled && (this->editMode != em_Locked) )
         {
             QPainter p(this);
 
@@ -236,7 +238,7 @@ public:
         }
 
         //patchcords
-        if (this->editMode)
+        if (this->editMode == em_Unlocked)
             if (this->hoverPatchcords(pos)) this->repaint();
 
         //remove patchcord selection if making frame
@@ -259,7 +261,7 @@ public:
         this->hoverPatchcordsOff();
 
 
-        if (this->editMode)
+        if (this->editMode == em_Unlocked)
         {
             //sel frame
             this->selFrame.active = true;
@@ -547,12 +549,12 @@ public:
     /// \param mode
     ///
 
-    void setEditMode(bool mode)
+    void setEditMode(t_editMode mode)
     {
         this->editMode = mode;
 
         QPalette Pal(palette());
-        Pal.setColor(QPalette::Background, (mode)?QColor(255,255,255):QColor(245,245,245));
+        Pal.setColor(QPalette::Background, (mode != em_Locked)?QColor(255,255,255):QColor(245,245,245));
         this->setAutoFillBackground(true);
         this->setPalette(Pal);
 
@@ -562,11 +564,12 @@ public:
         this->repaint();
     }
 
+
     ////
     /// \brief get edit mode flag
     /// \return
     ///
-    bool getEditMode(){return this->editMode;}
+    t_editMode getEditMode(){return this->editMode;}
 
     ////
     /// \brief returns object by index - this is needed by parser

@@ -13,7 +13,7 @@ cm_canvas::cm_canvas(cm_widget *parent) : cm_widget(parent)
     this->selFrame.active = false;
     this->newLine.active = false;
 
-    this->editMode = true;
+    this->editMode = em_Unlocked;
 
     this->fileName = "";
 
@@ -78,7 +78,7 @@ void cm_canvas::s_OutMouseReleased(cm_widget* , QMouseEvent* )
 void cm_canvas::s_SelectBox(cm_widget *box)
 {
 
-    if (this->editMode)
+    if (this->editMode == em_Unlocked)
     {
         this->selObjectBoxes.push_back((cm_object*)box);
         box->select();
@@ -94,7 +94,7 @@ void cm_canvas::s_SelectBox(cm_widget *box)
 
 void cm_canvas::s_MoveBox(cm_widget *box, QMouseEvent* event)
 {
-    if (!this->getEditMode()) return;
+    if (! (this->getEditMode() == em_Unlocked) ) return;
     for (int i=0;i<this->selObjectBoxes.size();i++)
     {
         cm_object* w = ((cm_object*)this->selObjectBoxes.at(i));

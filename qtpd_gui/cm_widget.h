@@ -6,6 +6,18 @@
 // Widget extension
 // check / fix
 
+
+////
+/// \brief edit mode types
+///
+typedef enum
+{
+    em_Unlocked,
+    em_Locked,
+    em_Temporary
+} t_editMode;
+
+
 ////
 /// \brief parent class for all gui objects
 ///
@@ -16,7 +28,7 @@ class cm_widget : public QWidget
 private:
     bool selected_;
 
-    bool *editMode_;
+    t_editMode *editMode_;
 
     //temporary?
 //    void* pdObject_;
@@ -42,14 +54,14 @@ public:
 
     bool isSelected() {return this->selected_;}
 
-    void setEditModeRef(bool* canvasEditMode)
+    void setEditModeRef(t_editMode* canvasEditMode)
     {
         this->editMode_ = canvasEditMode;
     }
 
     bool getEditMode()
     {
-        return (this->editMode_)?(*this->editMode_):false;
+        return (this->editMode_)?(*this->editMode_):em_Unlocked;
     }
 
 //    void* getPdObject() {return this->pdObject_;}
