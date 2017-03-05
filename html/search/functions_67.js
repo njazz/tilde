@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['geteditmode',['getEditMode',['../classcm__canvas.html#af57ab43141d39a55af192377af93cb26',1,'cm_canvas::getEditMode()'],['../classcm__widget.html#ad7eaedd32b823edfddeb661b4ea57269',1,'cm_widget::getEditMode()']]],
+  ['geteditmode',['getEditMode',['../classcm__canvas.html#a13bc38c9911e6040be42dbb57d6812ae',1,'cm_canvas::getEditMode()'],['../classcm__widget.html#ad7eaedd32b823edfddeb661b4ea57269',1,'cm_widget::getEditMode()']]],
   ['getendpoint',['getEndPoint',['../classcm__patchcord.html#afd0ba2ba08b6bdbc90585c8ce311bf98',1,'cm_patchcord']]],
   ['getinletat',['getInletAt',['../classcm__object.html#a7852c6bb15bc430d9ffbfee044905116',1,'cm_object']]],
   ['getobjectbyindex',['getObjectByIndex',['../classcm__canvas.html#a6de16ed0f1b9e42474441788758f9a88',1,'cm_canvas']]],
