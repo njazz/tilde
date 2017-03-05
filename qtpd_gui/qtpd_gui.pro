@@ -35,7 +35,8 @@ SOURCES += main.cpp\
     cm_widget.cpp \
     cm_patchcord.cpp \
     cmo_msg.cpp \
-    cmo_box.cpp
+    cmo_box.cpp \
+    cm_fileparser.cpp
 
 HEADERS  += \
     cm_port.h \
@@ -49,7 +50,8 @@ HEADERS  += \
     cm_patchcord.h \
     cm_pdlink.h \
     cmo_msg.h \
-    cmo_box.h
+    cmo_box.h \
+    cm_fileparser.h
 
 FORMS    += \
     cm_basewindow.ui \

@@ -17,9 +17,46 @@ private:
 
     QAction *putObjectAct;
     QAction *putMessageAct;
-    QAction *putNumberAct;
-    QAction *putSymbolAct;
+
+    //    QAction *putSymbolAct;
     QAction *putCommentAct;
+
+    QAction *putBangAct;
+    QAction *putToggleAct;
+    QAction *putNumberAct;
+    QAction *putSliderAct;
+    QAction *putKnobAct;
+    QAction *putRadioAct;
+    QAction *putDisplay;
+
+    QAction *putArray;
+
+    QAction *putKeyboard;
+    QAction *putSlider2D;
+    QAction *putBPF;
+
+    QAction *putScope;
+    QAction *putSpectroscope;
+
+
+
+
+    QAction *showGridAct;
+    QAction *snapToGridAct;
+
+    QAction *alignToGridAct;
+
+    QAction *alignLeftAct;
+    QAction *alignRightAct;
+    QAction *alignTopAct;
+    QAction *alignBottomAct;
+
+    QAction *distHAct;
+    QAction *distVAct;
+
+    QAction *tidyUpAct;
+
+
 
     cm_objectmaker* objectMaker;
 
@@ -57,14 +94,89 @@ public:
         putMessageAct->setShortcut(tr("Ctrl+2"));
         connect(putMessageAct, &QAction::triggered, this, &cm_patchwindow::newMessageBox);
 
-        putNumberAct = new QAction(tr("Number"), this);
-        putNumberAct->setShortcut(tr("Ctrl+3"));
 
-        putSymbolAct = new QAction(tr("Symbol"), this);
-        putSymbolAct->setShortcut(tr("Ctrl+4"));
+
+        //        putSymbolAct = new QAction(tr("Symbol"), this);
+        //        putSymbolAct->setShortcut(tr("Ctrl+4"));
 
         putCommentAct = new QAction(tr("Comment"), this);
         putCommentAct->setShortcut(tr("Ctrl+5"));
+
+
+
+        putBangAct = new QAction(tr("Bang"), this);
+        putBangAct->setShortcut(tr("Ctrl+Shift+B"));
+
+        putToggleAct = new QAction(tr("Toggle"), this);
+        putToggleAct->setShortcut(tr("Ctrl+Shift+T"));
+
+        putNumberAct = new QAction(tr("Number"), this);
+        putNumberAct->setShortcut(tr("Ctrl+3"));
+
+        putSliderAct = new QAction(tr("Slider(s)..."), this);
+        putSliderAct->setShortcut(tr("Ctrl+Shift+V"));
+
+        putKnobAct = new QAction(tr("Knob"), this);
+        putKnobAct->setShortcut(tr("Ctrl+Shift+K"));
+
+        putRadioAct = new QAction(tr("Radio buttons..."), this);
+        putRadioAct->setShortcut(tr("Ctrl+Shift+D"));
+
+        putDisplay = new QAction(tr("Display"), this);
+        //putDisplay->setShortcut(tr("Ctrl+Shift+T"));
+
+        putArray = new QAction(tr("Array"), this);
+        putArray->setShortcut(tr("Ctrl+Shift+A"));
+
+
+        putKeyboard = new QAction(tr("Keyboard"), this);
+        //putArray->setShortcut(tr("Ctrl+Shift+T"));
+
+        putSlider2D = new QAction(tr("Slider2D"), this);
+        //putArray->setShortcut(tr("Ctrl+Shift+T"));
+
+        putBPF = new QAction(tr("BPF"), this);
+        //putArray->setShortcut(tr("Ctrl+Shift+T"));
+
+
+        putScope = new QAction(tr("Scope"), this);
+        //putArray->setShortcut(tr("Ctrl+Shift+T"));
+
+        putSpectroscope = new QAction(tr("Spectroscope"), this);
+        //putArray->setShortcut(tr("Ctrl+Shift+T"));
+
+
+
+
+        showGridAct = new QAction(tr("Show grid"), this);
+        //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
+
+        snapToGridAct = new QAction(tr("Snap to grid"), this);
+        //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
+
+        alignToGridAct = new QAction(tr("Align to grid"), this);
+        //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
+
+        alignLeftAct = new QAction(tr("Align left"), this);
+        //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
+
+        alignRightAct = new QAction(tr("Align right"), this);
+        //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
+
+        alignTopAct = new QAction(tr("Align top"), this);
+        //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
+
+        alignBottomAct = new QAction(tr("Align bottom"), this);
+        //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
+
+        distHAct = new QAction(tr("Distribute objects horizontaly"), this);
+        //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
+
+        distVAct = new QAction(tr("Distribute objects verticaly"), this);
+        //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
+
+        tidyUpAct = new QAction(tr("Tidy up"), this);
+        //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
 
     }
 
@@ -77,10 +189,40 @@ public:
 
         putMenu->addAction(putObjectAct);
         putMenu->addAction(putMessageAct);
-        putMenu->addAction(putNumberAct);
-        putMenu->addAction(putSymbolAct);
+        //        putMenu->addAction(putNumberAct);
+        //        putMenu->addAction(putSymbolAct);
         putMenu->addAction(putCommentAct);
         putMenu->addSeparator();
+        putMenu->addAction(putBangAct);
+        putMenu->addAction(putToggleAct);
+        putMenu->addAction(putNumberAct);
+        putMenu->addAction(putSliderAct);
+        putMenu->addAction(putKnobAct);
+        putMenu->addAction(putRadioAct);
+        putMenu->addAction(putDisplay);
+        putMenu->addSeparator();
+        putMenu->addAction(putArray);
+        putMenu->addSeparator();
+        putMenu->addAction(putKeyboard);
+        putMenu->addAction(putSlider2D);
+        putMenu->addAction(putBPF);
+        putMenu->addSeparator();
+        putMenu->addAction(putScope);
+        putMenu->addAction(putSpectroscope);
+
+        arrangeMenu->addAction(showGridAct);
+        arrangeMenu->addAction(snapToGridAct);
+        arrangeMenu->addSeparator();
+        arrangeMenu->addAction(alignToGridAct);
+        arrangeMenu->addAction(alignLeftAct);
+        arrangeMenu->addAction(alignRightAct);
+        arrangeMenu->addSeparator();
+        arrangeMenu->addAction(distHAct);
+        arrangeMenu->addAction(distVAct);
+        arrangeMenu->addSeparator();
+        arrangeMenu->addAction(tidyUpAct);
+
+
 
     }
 
@@ -133,76 +275,7 @@ public:
 
     /////
 
-    void loadPdString(QStringList list) //rename
-    {
-        if (list.at(0) == "obj")
-        {
-            qDebug("new obj");
-            if (list.size()>3)
-            {
-                QString objname;
-                QPoint pos;
 
-                pos.setX(((QString)list.value(1)).toFloat());
-                pos.setY(((QString)list.value(2)).toFloat());
-
-                //lol
-                QStringList objList = list;
-                objList.removeAt(0);
-                objList.removeAt(0);
-                objList.removeAt(0);
-                objname = objList.join(" ");
-
-                qDebug() << "objname" << objname;
-                //temporary
-                //load gui boxes?
-                if (objList.at(0) == "ui.msg")
-                    this->canvas->createMsg(objname.toStdString(), pos);
-                else
-                    this->canvas->createBox(objname.toStdString(), pos);
-
-
-            }
-            else
-            {
-                qDebug("list error");
-            }
-        }
-
-        //        if (list.at(0) == "msg")
-        //        {
-        //            qDebug("new msg");
-        //            if (list.size()>3)
-        //            {
-        //                QString objname;
-        //                QPoint pos;
-
-        //                pos.setX(((QString)list.value(1)).toFloat());
-        //                pos.setY(((QString)list.value(2)).toFloat());
-
-        //                //lol
-        //                QStringList objList = list;
-        //                objList.removeAt(0);
-        //                objList.removeAt(0);
-        //                objList.removeAt(0);
-        //                objname = objList.join(" ");
-
-
-
-        //                this->canvas->createMsg(objname.toStdString(), pos);
-        //            }
-        //            else
-        //            {
-        //                qDebug("list error");
-        //            }
-        //        }
-
-        if (list.at(0) == "connect")
-        {
-            qDebug("new connect");
-        }
-
-    }
 
     //    void keyPressEvent(QKeyEvent *event)
     //    {

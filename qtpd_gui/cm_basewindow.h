@@ -103,6 +103,8 @@ public:
         pdWindowAct->setShortcut(tr("Ctrl+R"));
         connect(pdWindowAct, &QAction::triggered, this, &cm_menu::pdWindow);
 
+        pdHelpAct = new QAction(tr("Pd help"), this);
+
     }
 
 
@@ -135,18 +137,23 @@ public:
 
         putMenu = menuBar()->addMenu(tr("&Put"));
 
+        arrangeMenu = menuBar()->addMenu(tr("&Arrange"));
+
+
         findMenu = menuBar()->addMenu(tr("&Find"));
         findMenu->addSeparator();
 
         mediaMenu = menuBar()->addMenu(tr("&Media"));
         mediaMenu->addAction(dspOnAct);
         mediaMenu->addAction(dspOffAct);
-        mediaMenu->addSeparator();
+        //mediaMenu->addSeparator();
 
         windowMenu = menuBar()->addMenu(tr("&Window"));
         windowMenu->addAction(pdWindowAct);
-        windowMenu->addSeparator();
+        //windowMenu->addSeparator();
 
+        helpMenu = menuBar()->addMenu(tr("&Help"));
+        helpMenu->addAction(pdHelpAct);
 
     }
 
@@ -179,6 +186,9 @@ private:
     QAction *dspOffAct;
 
     QAction *pdWindowAct;
+
+    QAction *pdHelpAct;
+
 public:
 
     QAction *openAct;
@@ -190,6 +200,10 @@ public:
     QMenu *fileMenu;
     QMenu *editMenu;
     QMenu *putMenu;
+    QMenu *arrangeMenu;
+
+    QMenu *helpMenu;
+
 
 private slots:
 

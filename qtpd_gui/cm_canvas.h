@@ -57,7 +57,9 @@ private:
     //
     bool editMode;
 
-
+    //
+    bool gridEnabled;
+    int gridStep;
 
     Q_OBJECT
 public:
@@ -74,6 +76,22 @@ public:
     void paintEvent(QPaintEvent *)
 
     {
+        //grid
+        if (this->gridEnabled && this->editMode)
+        {
+            QPainter p(this);
+
+            p.setPen(QPen(QColor(224, 224, 224), 1, Qt::DotLine, Qt::SquareCap, Qt::BevelJoin));
+            for (int x=0; x<this->width();x+= this->gridStep)
+            {
+                p.drawLine(x,0,x,this->height());
+            }
+            for (int y=0; y<this->height();y+= this->gridStep)
+            {
+                p.drawLine(0,y,this->width(),y);
+            }
+
+        }
         if (this->selFrame.active)
         {
             QPainter p(this);
