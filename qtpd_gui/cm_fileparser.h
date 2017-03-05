@@ -6,6 +6,9 @@
 
 #include "cm_patchwindow.h"
 
+////
+/// \brief Parses pd files on client(GUI) side
+///
 class cm_fileparser
 {
 private:
@@ -15,6 +18,12 @@ public:
 
        // or t_canvas?
     static cm_canvas* pdParserCanvas;
+
+    ////
+    /// \brief parses QStringLists of atoms to canvas - creates objects etc
+    /// \param cmcanvas
+    /// \param list
+    ///
     static void stringToCanvas(cm_canvas* cmcanvas, QStringList list) //rename
     {
         if (list.at(0) == "obj")
@@ -88,6 +97,10 @@ public:
 
     }
 
+    ////
+    /// \brief checks first atoms ("#N", "#X" etc) and sends QStringList
+    /// \param line
+    ///
     static void parseString(QString line)
     {
         QStringList atoms = line.split( " " );
@@ -121,6 +134,10 @@ public:
         //TODO
     }
 
+    ////
+    /// \brief opens file, converts to QStrings, calls 'parseString'
+    /// \param fname
+    ///
     static void open(QString fname)
     {
         QFile f(fname);

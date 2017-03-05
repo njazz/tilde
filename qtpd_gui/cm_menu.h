@@ -3,6 +3,9 @@
 
 #include <QObject>
 
+////
+/// \brief Common menu. TODO cleanup
+///
 class cm_menu : public QObject
 {
     Q_OBJECT
@@ -20,11 +23,11 @@ public slots:
     static void saveAs();
     static void message();
 
-    static void undo();
-    static void redo();
-    static void cut();
-    static void copy();
-    static void paste();
+//    static void undo();
+//    static void redo();
+//    static void cut();
+//    static void copy();
+//    static void paste();
 
 //    static void putObject();
 //    static void putMessage();

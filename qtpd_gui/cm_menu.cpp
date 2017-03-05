@@ -124,30 +124,30 @@ void cm_menu::message()
 
 
 
-void cm_menu::undo()
-{
-    //    infoLabel->setText(tr("Invoked <b>Edit|Undo</b>"));
-}
+//void cm_menu::undo()
+//{
+//    //    infoLabel->setText(tr("Invoked <b>Edit|Undo</b>"));
+//}
 
-void cm_menu::redo()
-{
-    //    infoLabel->setText(tr("Invoked <b>Edit|Redo</b>"));
-}
+//void cm_menu::redo()
+//{
+//    //    infoLabel->setText(tr("Invoked <b>Edit|Redo</b>"));
+//}
 
-void cm_menu::cut()
-{
-    //    infoLabel->setText(tr("Invoked <b>Edit|Cut</b>"));
-}
+//void cm_menu::cut()
+//{
+//    //    infoLabel->setText(tr("Invoked <b>Edit|Cut</b>"));
+//}
 
-void cm_menu::copy()
-{
-    //    infoLabel->setText(tr("Invoked <b>Edit|Copy</b>"));
-}
+//void cm_menu::copy()
+//{
+//    //    infoLabel->setText(tr("Invoked <b>Edit|Copy</b>"));
+//}
 
-void cm_menu::paste()
-{
-    //   infoLabel->setText(tr("Invoked <b>Edit|Paste</b>"));
-}
+//void cm_menu::paste()
+//{
+//    //   infoLabel->setText(tr("Invoked <b>Edit|Paste</b>"));
+//}
 
 
 
@@ -189,8 +189,6 @@ void cm_menu::paste()
 
 void cm_menu::pdWindow()
 {
-    //   infoLabel->setText(tr("Invoked <b>Edit|Paste</b>"));
-
     if(pdw)
         // if (pdw->isVisible())
         pdw->hide();

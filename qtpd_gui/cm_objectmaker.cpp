@@ -8,7 +8,6 @@ cm_objectmaker::cm_objectmaker()
 
 }
 
-
 void  cm_objectmaker::editorChanged()
 {
     QFont myFont("Monaco", 11);

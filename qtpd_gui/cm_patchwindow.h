@@ -7,6 +7,9 @@
 
 #include "cm_pdlink.h"
 
+////
+/// \brief Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas
+///
 class cm_patchwindow : public cm_basewindow
 {
 

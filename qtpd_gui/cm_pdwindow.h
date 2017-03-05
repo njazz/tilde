@@ -10,12 +10,13 @@
 
 //temporary
 
-
 namespace Ui {
 class cm_pdwindow;
 }
 
-
+////
+/// \brief Pd console window
+///
 class cm_pdwindow : public cm_basewindow
 {
     Q_OBJECT
