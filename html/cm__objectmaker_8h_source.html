@@ -86,15 +86,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00004"></a>00004 <span class="preprocessor">#include &lt;QWidget&gt;</span>
 <a name="l00005"></a>00005 <span class="preprocessor">#include &lt;QLineEdit&gt;</span>
 <a name="l00006"></a>00006 
-<a name="l00007"></a>00007 
-<a name="l00008"></a><a class="code" href="classcm__objectmaker.html">00008</a> <span class="keyword">class </span><a class="code" href="classcm__objectmaker.html">cm_objectmaker</a> : <span class="keyword">public</span> QLineEdit
-<a name="l00009"></a>00009 {
-<a name="l00010"></a>00010 <span class="keyword">public</span>:
-<a name="l00011"></a>00011     <a class="code" href="classcm__objectmaker.html#a3d13bebcd102b777d3e9c1066348b69c">cm_objectmaker</a>();
-<a name="l00012"></a>00012 };
-<a name="l00013"></a>00013 
-<a name="l00014"></a>00014 <span class="preprocessor">#endif // CM_OBJECTMAKER_H</span>
-<a name="l00015"></a>00015 <span class="preprocessor"></span>
+<a name="l00010"></a><a class="code" href="classcm__objectmaker.html">00010</a> <span class="keyword">class </span><a class="code" href="classcm__objectmaker.html" title="creates lineedit box for new object">cm_objectmaker</a> : <span class="keyword">public</span> QLineEdit
+<a name="l00011"></a>00011 {
+<a name="l00012"></a>00012 <span class="keyword">public</span>:
+<a name="l00013"></a>00013     <a class="code" href="classcm__objectmaker.html#a3d13bebcd102b777d3e9c1066348b69c">cm_objectmaker</a>();
+<a name="l00014"></a>00014 <span class="keyword">private</span> slots:
+<a name="l00018"></a>00018     <span class="keywordtype">void</span> editorChanged();
+<a name="l00019"></a>00019 };
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021 <span class="preprocessor">#endif // CM_OBJECTMAKER_H</span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -113,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 5 2017 11:21:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 5 2017 11:39:38 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
