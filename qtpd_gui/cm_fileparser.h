@@ -121,6 +121,7 @@ public:
     {
         QStringList atoms = line.split( " " );
 
+        atoms.last() = atoms.last().remove(";");
         //switch (atoms.at(0))
 
         if (atoms.at(0) == "#N")
