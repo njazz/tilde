@@ -95,21 +95,37 @@ Typedefs</h2></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a0a5eb98f82b947afc8ae05735839e8f3">cmp_pdinit</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">initializes pd library  <a href="#a0a5eb98f82b947afc8ae05735839e8f3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#ac9fb723d2c58a1e062720cc19e199e08">cmp_setprinthook</a> (<a class="el" href="s__stuff_8h.html#a60e4f3209d8f267b0aa06105b0b1a4ff">t_printhook</a> h)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">connects to print hook function  <a href="#ac9fb723d2c58a1e062720cc19e199e08"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">t_canvas *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#aaa3daab402dd07f9fd7633395859df01">cmp_newpatch</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates new t_canvas  <a href="#aaa3daab402dd07f9fd7633395859df01"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">t_canvas *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a4022f8d97c01f6305e4047b586000bb1">cmp_openpatch</a> (char *filename, char *path)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates canvas from file. TODO probably unused with parser on client app.  <a href="#a4022f8d97c01f6305e4047b586000bb1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#ab0f0e50abffd603051b47240f7dcd04c">cmp_savepatch</a> (t_canvas *canvas, char *filename, char *path)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">saves canvas as pd file  <a href="#ab0f0e50abffd603051b47240f7dcd04c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#af08cbd72d5b239361a801b4b67247a9c">cmp_closepatch</a> (t_canvas *canvas)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">closes and frees the canvas  <a href="#af08cbd72d5b239361a801b4b67247a9c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">t_object *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a2c0a0d9150791897b85a167998ecf7c2">cmp_create_object</a> (t_canvas *canvas, std::string class_name, int x, int y)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates pd object  <a href="#a2c0a0d9150791897b85a167998ecf7c2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">t_object *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a3bac993f5ef2ae3ddcb123762d3668d0">cmp_create_message</a> (t_canvas *canvas, std::string message, int x, int y)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates pd message TODO not working now  <a href="#a3bac993f5ef2ae3ddcb123762d3668d0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a89dd190ed6863563fcecc6c9001a0f1c">cmp_moveobject</a> (t_object *obj, int x, int y)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">move pd object to new location  <a href="#a89dd190ed6863563fcecc6c9001a0f1c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a69094de48546687863d38bc9d3689993">cmp_deleteobject</a> (t_canvas *canvas, t_object *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete pd object  <a href="#a69094de48546687863d38bc9d3689993"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a6d06b5d8cde66b3cada1fe52a6e5ac83">cmp_patchcord</a> (t_object *obj1, int outno, t_object *obj2, int inno)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">new patchcord  <a href="#a6d06b5d8cde66b3cada1fe52a6e5ac83"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a3b0a14ab77137204a0f68e45f45e92c8">cmp_delete_patchcord</a> (t_object *obj1, int outno, t_object *obj2, int inno)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete patchcord  <a href="#a3b0a14ab77137204a0f68e45f45e92c8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a7fcb3388b050e30e14b731b7288a7f76">cmp_get_inlet_count</a> (t_object *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get number of inlets for object  <a href="#a7fcb3388b050e30e14b731b7288a7f76"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a680a1380d6950cd336b5631b3d3a7737">cmp_get_outlet_count</a> (t_object *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get number of outlets for object  <a href="#a680a1380d6950cd336b5631b3d3a7737"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a0f1f4951cf99dff0634789791dcde1ba">cmp_switch_dsp</a> (bool on)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">switch dsp on or off  <a href="#a0f1f4951cf99dff0634789791dcde1ba"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a9bca4af04ea4fac6b910933e5ba16814">cmp_sendstring</a> (<a class="el" href="x__vexp_8h.html#ac085bef486c0e262349075ffce8a9752">t_pd</a> *obj, std::string msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">send string as pd message to object  <a href="#a9bca4af04ea4fac6b910933e5ba16814"></a><br/></td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
 <a class="anchor" id="a60e4f3209d8f267b0aa06105b0b1a4ff"></a><!-- doxytag: member="cm_pdlink.h::t_printhook" ref="a60e4f3209d8f267b0aa06105b0b1a4ff" args=")(const char *s)" -->
@@ -140,6 +156,14 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>closes and frees the canvas </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">canvas</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -180,6 +204,18 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>creates pd message TODO not working now </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">canvas</td><td></td></tr>
+    <tr><td class="paramname">message</td><td></td></tr>
+    <tr><td class="paramname">x</td><td></td></tr>
+    <tr><td class="paramname">y</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>pointer to object </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="a2c0a0d9150791897b85a167998ecf7c2"></a><!-- doxytag: member="cm_pdlink.h::cmp_create_object" ref="a2c0a0d9150791897b85a167998ecf7c2" args="(t_canvas *canvas, std::string class_name, int x, int y)" -->
@@ -218,6 +254,18 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>creates pd object </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">canvas</td><td>pointer to canvas </td></tr>
+    <tr><td class="paramname">class_name</td><td>TODO rename. class name and arguments </td></tr>
+    <tr><td class="paramname">x</td><td>position </td></tr>
+    <tr><td class="paramname">y</td><td>position </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>pointer to object </dd></dl>
 
 </div>
 </div>
@@ -258,6 +306,17 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>delete patchcord </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj1</td><td></td></tr>
+    <tr><td class="paramname">outno</td><td></td></tr>
+    <tr><td class="paramname">obj2</td><td></td></tr>
+    <tr><td class="paramname">inno</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="a69094de48546687863d38bc9d3689993"></a><!-- doxytag: member="cm_pdlink.h::cmp_deleteobject" ref="a69094de48546687863d38bc9d3689993" args="(t_canvas *canvas, t_object *obj)" -->
@@ -285,6 +344,15 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>delete pd object </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">canvas</td><td></td></tr>
+    <tr><td class="paramname">obj</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="a7fcb3388b050e30e14b731b7288a7f76"></a><!-- doxytag: member="cm_pdlink.h::cmp_get_inlet_count" ref="a7fcb3388b050e30e14b731b7288a7f76" args="(t_object *obj)" -->
@@ -302,6 +370,15 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>get number of inlets for object </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>inlet count </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="a680a1380d6950cd336b5631b3d3a7737"></a><!-- doxytag: member="cm_pdlink.h::cmp_get_outlet_count" ref="a680a1380d6950cd336b5631b3d3a7737" args="(t_object *obj)" -->
@@ -318,6 +395,15 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>get number of outlets for object </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>outlet count </dd></dl>
 
 </div>
 </div>
@@ -352,6 +438,16 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>move pd object to new location </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td></td></tr>
+    <tr><td class="paramname">x</td><td></td></tr>
+    <tr><td class="paramname">y</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="aaa3daab402dd07f9fd7633395859df01"></a><!-- doxytag: member="cm_pdlink.h::cmp_newpatch" ref="aaa3daab402dd07f9fd7633395859df01" args="()" -->
@@ -367,6 +463,9 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>creates new t_canvas </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>new canvas or 0 if failed </dd></dl>
 
 </div>
 </div>
@@ -394,6 +493,16 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>creates canvas from file. TODO probably unused with parser on client app. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td></td></tr>
+    <tr><td class="paramname">path</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>new canvas or 0 if failed </dd></dl>
 
 </div>
 </div>
@@ -434,6 +543,17 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>new patchcord </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj1</td><td></td></tr>
+    <tr><td class="paramname">outno</td><td></td></tr>
+    <tr><td class="paramname">obj2</td><td></td></tr>
+    <tr><td class="paramname">inno</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="a0a5eb98f82b947afc8ae05735839e8f3"></a><!-- doxytag: member="cm_pdlink.h::cmp_pdinit" ref="a0a5eb98f82b947afc8ae05735839e8f3" args="()" -->
@@ -449,6 +569,8 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>initializes pd library </p>
 
 </div>
 </div>
@@ -483,6 +605,16 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>saves canvas as pd file </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">canvas</td><td></td></tr>
+    <tr><td class="paramname">filename</td><td></td></tr>
+    <tr><td class="paramname">path</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="a9bca4af04ea4fac6b910933e5ba16814"></a><!-- doxytag: member="cm_pdlink.h::cmp_sendstring" ref="a9bca4af04ea4fac6b910933e5ba16814" args="(t_pd *obj, std::string msg)" -->
@@ -510,6 +642,15 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>send string as pd message to object </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td></td></tr>
+    <tr><td class="paramname">msg</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="ac9fb723d2c58a1e062720cc19e199e08"></a><!-- doxytag: member="cm_pdlink.h::cmp_setprinthook" ref="ac9fb723d2c58a1e062720cc19e199e08" args="(t_printhook h)" -->
@@ -527,6 +668,14 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>connects to print hook function </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">h</td><td>- pointer to function </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="a0f1f4951cf99dff0634789791dcde1ba"></a><!-- doxytag: member="cm_pdlink.h::cmp_switch_dsp" ref="a0f1f4951cf99dff0634789791dcde1ba" args="(bool on)" -->
@@ -543,6 +692,14 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>switch dsp on or off </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">on</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -564,7 +721,7 @@ Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 5 2017 10:32:23 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 5 2017 10:45:41 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
