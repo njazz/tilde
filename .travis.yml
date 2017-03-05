@@ -22,10 +22,14 @@ addons:
       - doxygen-latex
       - doxygen-gui
       - graphviz
+      - qt5-default 
+      - qttools5-dev-tools
 
 # Build your code e.g. by calling make
-# script:
-#  - make
+script:
+  - qmake -project
+  - qmake qtpd_main.pro 
+  - make
 
 # Generate and deploy documentation
 after_success:
