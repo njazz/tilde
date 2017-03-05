@@ -5,7 +5,7 @@
 
 //}
 
-cmo_msg::cmo_msg(cm_widget *parent) : cm_widget(parent)
+cmo_msg::cmo_msg(cm_object *parent) : cm_object(parent)
 {
     this->setMinimumWidth(30);
     this->setFixedSize(65,20);

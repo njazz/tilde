@@ -40,16 +40,16 @@ class cm_canvas : public cm_widget
 {
 private:
     //todo move this to data class?
-    std::vector<cm_widget*> objectBoxes;
+    std::vector<cm_object*> objectBoxes;
     std::vector<cm_patchcord*> patchcords;
-    std::vector<cm_widget*> selObjectBoxes;
+    std::vector<cm_object*> selObjectBoxes;
 
     tRectPlus selFrame;
     tRectPlus newLine;
 
     //
-    cm_widget *conn_obj1;
-    cm_widget *conn_out;
+    cm_object *conn_obj1;
+    cm_object *conn_out;
 
     //
     QPoint newObjectPos;
@@ -312,11 +312,12 @@ public:
     ///
     cmo_box* createBox(std::string pdObjectName, QPoint pos)
     {
-        cmo_box *box = new cmo_box(this);
-        box->setPdObjName(pdObjectName);
+        cmo_box *box = new cmo_box((cm_object*)this);   //test?
+        box->setObjectData(pdObjectName);
 
         connect(box,&cmo_box::selectBox, this, &cm_canvas::s_SelectBox);
         connect(box,&cmo_box::moveBox, this, &cm_canvas::s_MoveBox);
+
         box->setEditModeRef(&this->editMode);
 
         const char * obj_name = pdObjectName.c_str();
@@ -351,7 +352,7 @@ public:
         else
         {
             qDebug("Error: no such object %s", obj_name);
-            box->isErrorBox = true;
+            box->setErrorBox(true);
             in_c = 0; out_c = 0;
             //return 0;
         }
@@ -379,12 +380,14 @@ public:
     ///
     cmo_msg* createMsg(std::string message, QPoint pos)
     {
-            cmo_msg *msg = new cmo_msg(this);
+            cmo_msg *msg = new cmo_msg((cm_object*)this);   //check
+
             msg->addInlet();
             msg->addOutlet();
 
             connect(msg,&cmo_msg::selectBox, this, &cm_canvas::s_SelectBox);
             connect(msg,&cmo_msg::moveBox, this, &cm_canvas::s_MoveBox);
+
             msg->setEditModeRef(&this->editMode);
 
             msg->move(pos);
@@ -426,7 +429,7 @@ public:
     /// \param obj2
     /// \param inlet
     ///
-    void patchcord(cm_widget* obj1, int outlet, cm_widget* obj2, int inlet)
+    void patchcord(cm_object* obj1, int outlet, cm_object* obj2, int inlet)
     {
         cm_port* outport = ((cmo_box*)obj1)->getOutletAt(outlet);
         cm_port* inport = ((cmo_box*)obj2)->getInletAt(inlet);
@@ -446,7 +449,7 @@ public:
     /// \param obj2
     /// \param inport
     ///
-    void patchcord(cm_widget* obj1, cm_widget* outport, cm_widget* obj2, cm_widget* inport)
+    void patchcord(cm_object* obj1, cm_widget* outport, cm_object* obj2, cm_widget* inport)
     {
 
 
@@ -496,7 +499,7 @@ public:
     /// \brief delete object box
     /// \param box
     ///
-    void deleteBox(cm_widget* box)
+    void deleteBox(cm_object* box)
     {
         box->close();
         //TODO
@@ -516,7 +519,7 @@ public:
     {
         for (int i=0;i< (int)this->selObjectBoxes.size(); i++)
         {
-            this->deleteBox( ((cm_widget*) this->selObjectBoxes.at(i))  );
+            this->deleteBox( ((cm_object*) this->selObjectBoxes.at(i))  );
         }
 
     }
@@ -572,7 +575,7 @@ public:
     /// \param idx
     /// \return cm_widget pointer
     ///
-    cm_widget* getObjectByIndex(int idx)
+    cm_object* getObjectByIndex(int idx)
     {
         if (idx< this->objectBoxes.size())
             return this->objectBoxes.at(idx);
@@ -586,7 +589,7 @@ public slots:
 
     void s_InMousePressed(cm_widget* obj, QMouseEvent* ev);
     void s_InMouseReleased(cm_widget*, QMouseEvent*);
-    void s_OutMousePressed(cm_widget* obj, QMouseEvent*);
+    void s_OutMousePressed(cm_widget *obj, QMouseEvent*);
     void s_OutMouseReleased(cm_widget*, QMouseEvent*);
 
     ////

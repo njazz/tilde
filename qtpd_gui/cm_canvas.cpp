@@ -37,7 +37,7 @@ void cm_canvas::s_InMousePressed(cm_widget* obj, QMouseEvent* )
 
     if ( (this->conn_obj1) && (this->conn_out))
     {
-        this->patchcord(this->conn_obj1, this->conn_out, (cm_widget*)obj->parent(), obj);
+        this->patchcord(this->conn_obj1, this->conn_out, (cm_object*)obj->parent(), obj);
         this->repaint();
     }
 
@@ -61,8 +61,8 @@ void cm_canvas::s_OutMousePressed(cm_widget* obj, QMouseEvent* )
 
     this->newLine.active = true;
 
-    this->conn_obj1 = (cm_widget*)obj->parent();
-    this->conn_out = obj;
+    this->conn_obj1 = (cm_object*)obj->parent();
+    this->conn_out = (cm_object*)obj;
 
 }
 
@@ -80,7 +80,7 @@ void cm_canvas::s_SelectBox(cm_widget *box)
 
     if (this->editMode)
     {
-        this->selObjectBoxes.push_back(box);
+        this->selObjectBoxes.push_back((cm_object*)box);
         box->select();
         box->repaint();
     }
@@ -97,8 +97,8 @@ void cm_canvas::s_MoveBox(cm_widget *box, QMouseEvent* event)
     if (!this->getEditMode()) return;
     for (int i=0;i<this->selObjectBoxes.size();i++)
     {
-        cm_widget* w = ((cm_widget*)this->selObjectBoxes.at(i));
-        QPoint pos = ((cm_widget*)this->selObjectBoxes.at(i))->pos() +
+        cm_object* w = ((cm_object*)this->selObjectBoxes.at(i));
+        QPoint pos = ((cm_object*)this->selObjectBoxes.at(i))->pos() +
                 mapToParent((event->pos()-box->dragOffset));
 
         w->move(pos);

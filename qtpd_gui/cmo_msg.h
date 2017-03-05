@@ -5,7 +5,7 @@
 
 #include <qlineedit.h>
 
-#include "cm_widget.h"
+#include "cm_object.h"
 #include "cm_port.h"
 
 #include "cm_pdlink.h"
@@ -14,7 +14,7 @@
 ////
 /// \brief gui object: message box (ui.msg)
 ///
-class cmo_msg : public cm_widget
+class cmo_msg : public cm_object
 {
     Q_OBJECT
 
@@ -27,8 +27,8 @@ private:
     std::string pdMessage_;
 
     //todo move
-    std::vector<cm_port*> inlets_;
-    std::vector<cm_port*> outlets_;
+//    std::vector<cm_port*> inlets_;
+//    std::vector<cm_port*> outlets_;
 
 public:
     //bool selected_;
@@ -40,7 +40,7 @@ public:
 //    std::vector<cm_port*> outlets_;
 
     //cmo_msg();
-    explicit cmo_msg(cm_widget *parent = 0);
+    explicit cmo_msg(cm_object *parent = 0);
 
     void paintEvent(QPaintEvent *)
     {    QPainter p(this);
@@ -200,73 +200,73 @@ public:
 
     std::string getPdMessage() {return this->pdMessage_;};
 
-    ///////
+//    ///////
 
 
-    void setInletsPos()
-    {
-        for (int i =0;i<(int)inlets_.size(); i++)
-        {
-            float w = this->width()-1;
-            w = (w<30)?30:w;
+//    void setInletsPos()
+//    {
+//        for (int i =0;i<(int)inlets_.size(); i++)
+//        {
+//            float w = this->width()-1;
+//            w = (w<30)?30:w;
 
-            float x = (w) / inlets_.size() * i;
-            float y = 0;
+//            float x = (w) / inlets_.size() * i;
+//            float y = 0;
 
-            inlets_.at(i)->move(x,y);
-            inlets_.at(i)->repaint();
-        }
-    }
+//            inlets_.at(i)->move(x,y);
+//            inlets_.at(i)->repaint();
+//        }
+//    }
 
-    void setOutletsPos()
-    {
-        for (int i =0;i<(int)outlets_.size(); i++)
-        {
-            float w = this->width()-1;
-            w = (w<30)?30:w;
-            float x = (w) / outlets_.size() * i;
-            float y = this->height()-3;
+//    void setOutletsPos()
+//    {
+//        for (int i =0;i<(int)outlets_.size(); i++)
+//        {
+//            float w = this->width()-1;
+//            w = (w<30)?30:w;
+//            float x = (w) / outlets_.size() * i;
+//            float y = this->height()-3;
 
-            outlets_.at(i)->move(x,y);
-            outlets_.at(i)->repaint();
-        }
-    }
+//            outlets_.at(i)->move(x,y);
+//            outlets_.at(i)->repaint();
+//        }
+//    }
 
-    void addInlet()
-    {
-        cm_port* new_in = new cm_port(this);
-        new_in->port_type = cm_port::cm_pt_inlet;
-        inlets_.push_back(new_in);
-        connect(new_in,&cm_port::mousePressed, (cm_widget*)this->parent(), &cm_widget::s_InMousePressed);
-        connect(new_in,&cm_port::mouseReleased, (cm_widget*)this->parent(), &cm_widget::s_InMouseReleased);
+//    void addInlet()
+//    {
+//        cm_port* new_in = new cm_port(this);
+//        new_in->port_type = cm_port::cm_pt_inlet;
+//        inlets_.push_back(new_in);
+//        connect(new_in,&cm_port::mousePressed, (cm_widget*)this->parent(), &cm_widget::s_InMousePressed);
+//        connect(new_in,&cm_port::mouseReleased, (cm_widget*)this->parent(), &cm_widget::s_InMouseReleased);
 
-        this->setInletsPos();
-    }
+//        this->setInletsPos();
+//    }
 
-    void addOutlet()
-    {
-        cm_port* new_out = new cm_port(this);
-        new_out->port_type = cm_port::cm_pt_outlet;
-        outlets_.push_back(new_out);
-        connect(new_out,&cm_port::mousePressed, (cm_widget*)this->parent(), &cm_widget::s_OutMousePressed);
-        connect(new_out,&cm_port::mouseReleased, (cm_widget*)this->parent(), &cm_widget::s_OutMouseReleased);
+//    void addOutlet()
+//    {
+//        cm_port* new_out = new cm_port(this);
+//        new_out->port_type = cm_port::cm_pt_outlet;
+//        outlets_.push_back(new_out);
+//        connect(new_out,&cm_port::mousePressed, (cm_widget*)this->parent(), &cm_widget::s_OutMousePressed);
+//        connect(new_out,&cm_port::mouseReleased, (cm_widget*)this->parent(), &cm_widget::s_OutMouseReleased);
 
-        this->setOutletsPos();
-    }
+//        this->setOutletsPos();
+//    }
 
-    ///////
+//    ///////
 
-    cm_port* getInletAt(int idx)
-    {
-        //check range!
-        return this->inlets_.at(idx);
-    }
+//    cm_port* getInletAt(int idx)
+//    {
+//        //check range!
+//        return this->inlets_.at(idx);
+//    }
 
-    cm_port* getOutletAt(int idx)
-    {
-        //check range!
-        return this->outlets_.at(idx);
-    }
+//    cm_port* getOutletAt(int idx)
+//    {
+//        //check range!
+//        return this->outlets_.at(idx);
+//    }
 
 signals:
     //void selectBox(cm_widget*box);

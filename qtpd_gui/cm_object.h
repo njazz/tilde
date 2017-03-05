@@ -18,8 +18,11 @@ private:
 
     std::string objectData;     //name and arguments etc
 
+    bool errorBox_;
+
 public:
-    cm_object();
+    //cm_object();
+    explicit cm_object(cm_widget *parent = 0);
 
 
     void setInletsPos()
@@ -62,8 +65,8 @@ public:
         new_in->portIndex = inlets_.size();
 
         inlets_.push_back(new_in);
-        connect(new_in, &cm_port::mousePressed, (cm_widget*)this->parent()->parent(), &cm_widget::s_InMousePressed);
-        connect(new_in, &cm_port::mouseReleased, (cm_widget*)this->parent()->parent(), &cm_widget::s_InMouseReleased);
+        connect(new_in, &cm_port::mousePressed, (cm_widget*)this->parent(), &cm_widget::s_InMousePressed);
+        connect(new_in, &cm_port::mouseReleased, (cm_widget*)this->parent(), &cm_widget::s_InMouseReleased);
 
 
         this->setInletsPos();
@@ -77,8 +80,8 @@ public:
         new_out->portIndex = outlets_.size();
 
         outlets_.push_back(new_out);
-        connect(new_out, &cm_port::mousePressed, (cm_widget*)this->parent()->parent(), &cm_widget::s_OutMousePressed);
-        connect(new_out, &cm_port::mouseReleased, (cm_widget*)this->parent()->parent(), &cm_widget::s_OutMouseReleased);
+        connect(new_out, &cm_port::mousePressed, (cm_widget*)this->parent(), &cm_widget::s_OutMousePressed);
+        connect(new_out, &cm_port::mouseReleased, (cm_widget*)this->parent(), &cm_widget::s_OutMouseReleased);
 
         this->setOutletsPos();
     }
@@ -113,6 +116,9 @@ public:
 
     void* getPdObject() {return this->pdObject_;}
     void setPdObject(void*obj) {this->pdObject_ = obj;}
+
+    bool isErrorBox() {return this->errorBox_;}
+    void setErrorBox(bool val) {this->errorBox_ = val;}
 
 };
 

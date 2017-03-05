@@ -94,8 +94,8 @@ public:
 
             if (list.size()>4)
             {
-                cm_widget * obj1 = cmcanvas->getObjectByIndex( ((QString)list.value(1)).toInt() );
-                cm_widget * obj2 = cmcanvas->getObjectByIndex( ((QString)list.value(3)).toInt() );
+                cm_object * obj1 = cmcanvas->getObjectByIndex( ((QString)list.value(1)).toInt() );
+                cm_object * obj2 = cmcanvas->getObjectByIndex( ((QString)list.value(3)).toInt() );
 
                 int idx1 = ((QString)list.value(2)).toInt() ;
                 int idx2 = ((QString)list.value(4)).toInt() ;

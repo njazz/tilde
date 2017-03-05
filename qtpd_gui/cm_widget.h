@@ -19,7 +19,7 @@ private:
     bool *editMode_;
 
     //temporary?
-    void* pdObject_;
+//    void* pdObject_;
 
 public:
 
@@ -52,8 +52,9 @@ public:
         return (this->editMode_)?(*this->editMode_):false;
     }
 
-    void* getPdObject() {return this->pdObject_;}
-    void setPdObject(void*obj) {this->pdObject_ = obj;}
+//    void* getPdObject() {return this->pdObject_;}
+//    void setPdObject(void*obj) {this->pdObject_ = obj;}
+
 signals:
 
     void mousePressed(cm_widget* obj, QMouseEvent* ev);
