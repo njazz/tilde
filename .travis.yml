@@ -22,8 +22,8 @@ addons:
       - doxygen-latex
       - doxygen-gui
       - graphviz
-      - qt5-default 
-      - qttools5-dev-tools
+#      - qt5-default 
+#      - qttools5-dev-tools
 
 # Build your code e.g. by calling make
 #script:
