@@ -20,6 +20,7 @@ DEFINES += QT_DEPRECATED_WARNINGS \
     PD \
     HAVE_UNISTD_H \
     USEAPI_DUMMY
+#    THREAD_LOCKING
 
 
 # You can also make your code fail to compile if you use deprecated APIs.

@@ -501,15 +501,18 @@ public:
     ///
     void deleteBox(cm_object* box)
     {
-        box->close();
+
         //TODO
 
         if (box->getPdObject())
         {
-            cmp_deleteobject(this->pd_canvas, (t_object*)box->getPdObject());
+//NEEDS FIX
+            //            cmp_deleteobject(this->pd_canvas, (t_object*)box->getPdObject());
         }
 
         this->deletePatchcordsFor(box);
+
+        box->close();
     }
 
     ////
