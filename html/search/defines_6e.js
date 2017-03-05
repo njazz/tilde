@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['name_5fok',['name_ok',['../x__vexp_8h.html#a535853eba514cd310bdf08ddd8a5d886',1,'x_vexp.h']]],
+  ['naports',['NAPORTS',['../s__audio__mmio_8c.html#a092b8c497d339377720f5f59aa99d471',1,'s_audio_mmio.c']]],
+  ['nbin',['NBIN',['../m__sched_8c.html#a5ca55c5fd9c3f5dcb8c298d6e82577da',1,'m_sched.c']]],
+  ['ndefaultfont',['NDEFAULTFONT',['../s__inter_8c.html#a9c6979238cc1001c4f6515eb77914179',1,'s_inter.c']]],
+  ['nfont',['NFONT',['../s__main_8c.html#a4057ebbf95d5a2e9b243b36e0a8ccf5b',1,'s_main.c']]],
+  ['nhist',['NHIST',['../g__editor_8c.html#aceb7835db76fab36997cd7f90c1e1b4a',1,'NHIST():&#160;g_editor.c'],['../m__sched_8c.html#aceb7835db76fab36997cd7f90c1e1b4a',1,'NHIST():&#160;m_sched.c']]],
+  ['nomod',['NOMOD',['../g__editor_8c.html#a41466df57810f7288abfd01ef90df2e8',1,'g_editor.c']]],
+  ['nomouse',['NOMOUSE',['../g__template_8c.html#a00b2a43d9774bc018bd3ae0157460492',1,'g_template.c']]],
+  ['nothing',['NOTHING',['../s__audio__mmio_8c.html#aad4a7ebff687dc5228cc3fd4d25067f2',1,'s_audio_mmio.c']]],
+  ['nresync',['NRESYNC',['../m__sched_8c.html#ac7ab56e4a553fce40153b252cdce6a03',1,'m_sched.c']]],
+  ['ns_5fformat_5ffloat',['NS_FORMAT_FLOAT',['../d__soundfile_8c.html#aeeb57a35fa83b692f8295f56bafae8d3',1,'d_soundfile.c']]],
+  ['ns_5fformat_5flinear_5f16',['NS_FORMAT_LINEAR_16',['../d__soundfile_8c.html#ac6c4980bd4886ac8365e39265a49e038',1,'d_soundfile.c']]],
+  ['ns_5fformat_5flinear_5f24',['NS_FORMAT_LINEAR_24',['../d__soundfile_8c.html#a33b69d08aa357f02aac053996eef8f4e',1,'d_soundfile.c']]],
+  ['nsearch',['NSEARCH',['../s__midi__oss_8c.html#abd44c26a62874237d30a1059fee2dedd',1,'s_midi_oss.c']]],
+  ['numargs',['NUMARGS',['../s__path_8c.html#a812b646ce3e36b504eb71b37604eb6de',1,'s_path.c']]],
+  ['nzoom',['NZOOM',['../s__main_8c.html#a75c2d39260c2099793657f28eb0334a9',1,'s_main.c']]]
+];
