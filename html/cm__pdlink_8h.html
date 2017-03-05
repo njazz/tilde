@@ -47,11 +47,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
-      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -85,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">/home/travis/build/njazz/qtpd/qtpd_gui/cm_pdlink.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="m__pd_8h_source.html">../qtpd_lib/src/m_pd.h</a>&quot;</code><br/>
+<div class="textblock"><code>#include &quot;../qtpd_lib/src/m_pd.h&quot;</code><br/>
 </div>
 <p><a href="cm__pdlink_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -96,7 +94,7 @@ Typedefs</h2></td></tr>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a0a5eb98f82b947afc8ae05735839e8f3">cmp_pdinit</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">initializes pd library  <a href="#a0a5eb98f82b947afc8ae05735839e8f3"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#ac9fb723d2c58a1e062720cc19e199e08">cmp_setprinthook</a> (<a class="el" href="s__stuff_8h.html#a60e4f3209d8f267b0aa06105b0b1a4ff">t_printhook</a> h)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#ac9fb723d2c58a1e062720cc19e199e08">cmp_setprinthook</a> (<a class="el" href="cm__pdlink_8h.html#a60e4f3209d8f267b0aa06105b0b1a4ff">t_printhook</a> h)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">connects to print hook function  <a href="#ac9fb723d2c58a1e062720cc19e199e08"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">t_canvas *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#aaa3daab402dd07f9fd7633395859df01">cmp_newpatch</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates new t_canvas  <a href="#aaa3daab402dd07f9fd7633395859df01"></a><br/></td></tr>
@@ -124,7 +122,7 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get number of outlets for object  <a href="#a680a1380d6950cd336b5631b3d3a7737"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a0f1f4951cf99dff0634789791dcde1ba">cmp_switch_dsp</a> (bool on)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">switch dsp on or off  <a href="#a0f1f4951cf99dff0634789791dcde1ba"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a9bca4af04ea4fac6b910933e5ba16814">cmp_sendstring</a> (<a class="el" href="x__vexp_8h.html#ac085bef486c0e262349075ffce8a9752">t_pd</a> *obj, std::string msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a9bca4af04ea4fac6b910933e5ba16814">cmp_sendstring</a> (t_pd *obj, std::string msg)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">send string as pd message to object  <a href="#a9bca4af04ea4fac6b910933e5ba16814"></a><br/></td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
@@ -133,7 +131,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(* <a class="el" href="s__stuff_8h.html#a60e4f3209d8f267b0aa06105b0b1a4ff">t_printhook</a>)(const char *s)</td>
+          <td class="memname">typedef void(* <a class="el" href="cm__pdlink_8h.html#a60e4f3209d8f267b0aa06105b0b1a4ff">t_printhook</a>)(const char *s)</td>
         </tr>
       </table>
 </div>
@@ -147,7 +145,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="pdlib_8cpp.html#af08cbd72d5b239361a801b4b67247a9c">cmp_closepatch</a> </td>
+          <td class="memname">void <a class="el" href="cm__pdlink_8h.html#af08cbd72d5b239361a801b4b67247a9c">cmp_closepatch</a> </td>
           <td>(</td>
           <td class="paramtype">t_canvas *&#160;</td>
           <td class="paramname"><em>canvas</em></td><td>)</td>
@@ -172,7 +170,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">t_object* <a class="el" href="pdlib_8cpp.html#a3bac993f5ef2ae3ddcb123762d3668d0">cmp_create_message</a> </td>
+          <td class="memname">t_object* <a class="el" href="cm__pdlink_8h.html#a3bac993f5ef2ae3ddcb123762d3668d0">cmp_create_message</a> </td>
           <td>(</td>
           <td class="paramtype">t_canvas *&#160;</td>
           <td class="paramname"><em>canvas</em>, </td>
@@ -223,7 +221,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">t_object* <a class="el" href="pdlib_8cpp.html#a2c0a0d9150791897b85a167998ecf7c2">cmp_create_object</a> </td>
+          <td class="memname">t_object* <a class="el" href="cm__pdlink_8h.html#a2c0a0d9150791897b85a167998ecf7c2">cmp_create_object</a> </td>
           <td>(</td>
           <td class="paramtype">t_canvas *&#160;</td>
           <td class="paramname"><em>canvas</em>, </td>
@@ -274,7 +272,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="pdlib_8cpp.html#a3b0a14ab77137204a0f68e45f45e92c8">cmp_delete_patchcord</a> </td>
+          <td class="memname">void <a class="el" href="cm__pdlink_8h.html#a3b0a14ab77137204a0f68e45f45e92c8">cmp_delete_patchcord</a> </td>
           <td>(</td>
           <td class="paramtype">t_object *&#160;</td>
           <td class="paramname"><em>obj1</em>, </td>
@@ -324,7 +322,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="pdlib_8cpp.html#a69094de48546687863d38bc9d3689993">cmp_deleteobject</a> </td>
+          <td class="memname">void <a class="el" href="cm__pdlink_8h.html#a69094de48546687863d38bc9d3689993">cmp_deleteobject</a> </td>
           <td>(</td>
           <td class="paramtype">t_canvas *&#160;</td>
           <td class="paramname"><em>canvas</em>, </td>
@@ -360,7 +358,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="pdlib_8cpp.html#a7fcb3388b050e30e14b731b7288a7f76">cmp_get_inlet_count</a> </td>
+          <td class="memname">int <a class="el" href="cm__pdlink_8h.html#a7fcb3388b050e30e14b731b7288a7f76">cmp_get_inlet_count</a> </td>
           <td>(</td>
           <td class="paramtype">t_object *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
@@ -386,7 +384,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="pdlib_8cpp.html#a680a1380d6950cd336b5631b3d3a7737">cmp_get_outlet_count</a> </td>
+          <td class="memname">int <a class="el" href="cm__pdlink_8h.html#a680a1380d6950cd336b5631b3d3a7737">cmp_get_outlet_count</a> </td>
           <td>(</td>
           <td class="paramtype">t_object *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
@@ -412,7 +410,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="pdlib_8cpp.html#a89dd190ed6863563fcecc6c9001a0f1c">cmp_moveobject</a> </td>
+          <td class="memname">void <a class="el" href="cm__pdlink_8h.html#a89dd190ed6863563fcecc6c9001a0f1c">cmp_moveobject</a> </td>
           <td>(</td>
           <td class="paramtype">t_object *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -455,7 +453,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">t_canvas* <a class="el" href="pdlib_8cpp.html#aaa3daab402dd07f9fd7633395859df01">cmp_newpatch</a> </td>
+          <td class="memname">t_canvas* <a class="el" href="cm__pdlink_8h.html#aaa3daab402dd07f9fd7633395859df01">cmp_newpatch</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -474,7 +472,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">t_canvas* <a class="el" href="pdlib_8cpp.html#a4022f8d97c01f6305e4047b586000bb1">cmp_openpatch</a> </td>
+          <td class="memname">t_canvas* <a class="el" href="cm__pdlink_8h.html#a4022f8d97c01f6305e4047b586000bb1">cmp_openpatch</a> </td>
           <td>(</td>
           <td class="paramtype">char *&#160;</td>
           <td class="paramname"><em>filename</em>, </td>
@@ -511,7 +509,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="pdlib_8cpp.html#a6d06b5d8cde66b3cada1fe52a6e5ac83">cmp_patchcord</a> </td>
+          <td class="memname">void <a class="el" href="cm__pdlink_8h.html#a6d06b5d8cde66b3cada1fe52a6e5ac83">cmp_patchcord</a> </td>
           <td>(</td>
           <td class="paramtype">t_object *&#160;</td>
           <td class="paramname"><em>obj1</em>, </td>
@@ -561,7 +559,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="pdlib_8cpp.html#a0a5eb98f82b947afc8ae05735839e8f3">cmp_pdinit</a> </td>
+          <td class="memname">void <a class="el" href="cm__pdlink_8h.html#a0a5eb98f82b947afc8ae05735839e8f3">cmp_pdinit</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -579,7 +577,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="pdlib_8cpp.html#ab0f0e50abffd603051b47240f7dcd04c">cmp_savepatch</a> </td>
+          <td class="memname">void <a class="el" href="cm__pdlink_8h.html#ab0f0e50abffd603051b47240f7dcd04c">cmp_savepatch</a> </td>
           <td>(</td>
           <td class="paramtype">t_canvas *&#160;</td>
           <td class="paramname"><em>canvas</em>, </td>
@@ -622,9 +620,9 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="pdlib_8cpp.html#a9bca4af04ea4fac6b910933e5ba16814">cmp_sendstring</a> </td>
+          <td class="memname">void <a class="el" href="cm__pdlink_8h.html#a9bca4af04ea4fac6b910933e5ba16814">cmp_sendstring</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="x__vexp_8h.html#ac085bef486c0e262349075ffce8a9752">t_pd</a> *&#160;</td>
+          <td class="paramtype">t_pd *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
@@ -658,9 +656,9 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="pdlib_8cpp.html#ac9fb723d2c58a1e062720cc19e199e08">cmp_setprinthook</a> </td>
+          <td class="memname">void <a class="el" href="cm__pdlink_8h.html#ac9fb723d2c58a1e062720cc19e199e08">cmp_setprinthook</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="s__stuff_8h.html#a60e4f3209d8f267b0aa06105b0b1a4ff">t_printhook</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="cm__pdlink_8h.html#a60e4f3209d8f267b0aa06105b0b1a4ff">t_printhook</a>&#160;</td>
           <td class="paramname"><em>h</em></td><td>)</td>
           <td></td>
         </tr>
@@ -683,7 +681,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="pdlib_8cpp.html#a0f1f4951cf99dff0634789791dcde1ba">cmp_switch_dsp</a> </td>
+          <td class="memname">void <a class="el" href="cm__pdlink_8h.html#a0f1f4951cf99dff0634789791dcde1ba">cmp_switch_dsp</a> </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>on</em></td><td>)</td>
@@ -709,7 +707,7 @@ Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -721,7 +719,7 @@ Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 5 2017 10:45:41 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 5 2017 11:21:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
