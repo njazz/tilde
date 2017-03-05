@@ -26,7 +26,6 @@ private:
     std::string pdObjName;
 
 public:
-
     bool isErrorBox;
 
     explicit cmo_box(cm_widget* parent = 0);
@@ -53,13 +52,6 @@ public:
     }
 
     //////////
-
-//    void resizeEvent(QResizeEvent *event)
-//    {
-//        float w = this->width()-1;
-//        this->setFixedWidth((w<22)?22:w);
-
-//    }
 
     void mousePressEvent(QMouseEvent* ev)
     {

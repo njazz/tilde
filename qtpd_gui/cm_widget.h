@@ -23,8 +23,6 @@ private:
 
 public:
 
-
-
     QPoint dragOffset;
     //QPoint dragStart;
 
