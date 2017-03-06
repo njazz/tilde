@@ -17,3 +17,5 @@ void  cm_objectmaker::editorChanged()
     this->setFixedWidth(new_w);
 
 }
+
+

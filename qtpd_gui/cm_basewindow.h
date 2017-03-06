@@ -136,7 +136,7 @@ public:
         fileMenu->addAction(openAct);
         //QMenu *recent =
         fileMenu->addMenu(tr("Open Recent"));
-
+        fileMenu->addSeparator();
         fileMenu->addAction(closeAct);
         fileMenu->addSeparator();
         fileMenu->addAction(saveAct);

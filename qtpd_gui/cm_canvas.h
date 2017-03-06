@@ -627,6 +627,15 @@ public slots:
     //    void portMouseEntered();
     //    void portMouseLeaved();
 
+
+    ////
+    /// \brief cancels patchcord creation
+    ///
+    void cancelPatchcord()
+    {
+        this->newLine.active = false;
+        this->repaint();
+    }
 private:
 
 };

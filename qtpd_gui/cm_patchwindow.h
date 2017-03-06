@@ -337,13 +337,24 @@ public:
 
     void setFileName(QString fname);
 
-    ///////
 
+    ////
+    /// \brief keys: ctrl for temporary lock; esc to stop editing actions
+    /// \param event
+    ///
     void keyPressEvent(QKeyEvent *event){
         if (event->modifiers() & Qt::ControlModifier)
         {
             if (this->canvas->getEditMode() != em_Locked)
                 this->canvas->setEditMode(em_Temporary);
+        }
+
+        if (event->key() == Qt::Key_Escape)
+        {
+            this->objectMaker->setText("");
+            this->objectMakerDone();
+
+            this->canvas->cancelPatchcord();
         }
     }
 
