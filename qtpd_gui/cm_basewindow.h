@@ -109,6 +109,20 @@ public:
         pdWindowAct->setShortcut(tr("Ctrl+R"));
         connect(pdWindowAct, &QAction::triggered, this, &cm_menu::pdWindow);
 
+        pdAudioSettingsAct = new QAction(tr("Audio settings..."), this);
+        //pdAudioSettingsAct->setShortcut(tr("Ctrl+R"));
+
+        //moves to app menu on mac
+        pdPreferencesAct = new QAction(tr("Preferences..."), this);
+        pdPreferencesAct->setShortcut(tr("Ctrl+,"));
+
+        pdKeyBindingsAct = new QAction(tr("Key bindings..."), this);
+        //pdKeyBindingsAct->setShortcut(tr("Ctrl+R"));
+
+//        QAction *pdAudioSettingsAct;
+//        QAction *pdPreferencesAct;
+//        QAction *pdKeyBindingsAct;
+
         pdHelpAct = new QAction(tr("Pd help"), this);
 
     }
@@ -158,7 +172,11 @@ public:
 
         windowMenu = menuBar()->addMenu(tr("&Window"));
         windowMenu->addAction(pdWindowAct);
-        //windowMenu->addSeparator();
+        windowMenu->addSeparator();
+        windowMenu->addAction(pdAudioSettingsAct);
+        windowMenu->addAction(pdPreferencesAct);
+        windowMenu->addAction(pdKeyBindingsAct);
+        windowMenu->addSeparator();
 
         helpMenu = menuBar()->addMenu(tr("&Help"));
         helpMenu->addAction(pdHelpAct);
@@ -194,6 +212,9 @@ private:
     QAction *dspOffAct;
 
     QAction *pdWindowAct;
+    QAction *pdAudioSettingsAct;
+    QAction *pdPreferencesAct;
+    QAction *pdKeyBindingsAct;
 
     QAction *pdHelpAct;
 
