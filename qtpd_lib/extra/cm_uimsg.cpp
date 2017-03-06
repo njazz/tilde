@@ -57,6 +57,20 @@ static void* uimsg_new(t_symbol *s, int argc, t_atom* argv)
     return (void*)x;
 }
 
+void uimsg_save(t_gobj *z, t_binbuf *b)
+{
+    t_ui_msg* x = (t_ui_msg*)z;
+
+    binbuf_addv(b,"ss", gensym("#X"), gensym("obj"));
+
+    binbuf_addv(b,"ff", (float)x->x_obj.te_xpix, (float)x->x_obj.te_ypix);
+
+    binbuf_addv(b,"s", gensym("ui.msg"));
+
+    binbuf_add(b, x->message_c, x->message );
+    binbuf_addv(b, ";");
+}
+
 static void uimsg_free(t_object* obj)
 {
 
@@ -77,5 +91,6 @@ extern "C" void setup_ui0x2emsg()
     class_addmethod(ui_msg_class, (t_method)uimsg_set, &s_anything, A_GIMME, 0);
     class_addmethod(ui_msg_class, (t_method)uimsg_bang, &s_bang, A_NULL, 0);
 
+    class_setsavefn(ui_msg_class, uimsg_save);
     
 }
