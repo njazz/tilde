@@ -16,7 +16,9 @@ private:
 public:
 
     // or t_canvas?
+    static cm_canvas* pdParserPrevCanvas;
     static cm_canvas* pdParserCanvas;
+    static std::string pdParserFileName;
 
 
     ////
@@ -117,6 +119,12 @@ public:
             }
         }
 
+        if (list.at(0) == "restore")
+        {
+            //draw subpatch
+            pdParserCanvas = pdParserPrevCanvas;
+        }
+
     }
 
     ////
@@ -135,9 +143,12 @@ public:
             QStringList msg = atoms;
             msg.removeFirst();
 
+            pdParserPrevCanvas = pdParserCanvas;
             cm_patchwindow* newWnd = new cm_patchwindow(msg);
             pdParserCanvas = newWnd->canvas;
-            newWnd->show();   //move to constructor?
+            //newWnd->canvas->fileName = QString(pdParserFileName.c_str());
+            newWnd->setFileName(QString(pdParserFileName.c_str()));
+            newWnd->show();   //move to constructor? check for subcanvases the vis flag
         }
 
         if (atoms.at(0) == "#X")
@@ -169,6 +180,7 @@ public:
         QStringList stringList;
 
         pdParserCanvas = 0;
+        pdParserFileName = fname.toStdString();
 
         QTextStream textStream(&f);
         while (true)
