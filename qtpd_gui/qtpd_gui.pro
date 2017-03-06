@@ -59,6 +59,5 @@ FORMS    += \
     cm_basewindow.ui \
     cm_pdwindow.ui
 
-#LIBS += -L$$PWD/ -lqtpd
-LIBS += -L../qtpd_lib/ -lqtpd
-LIBS += -L/usr/local/lib -lportaudio
+LIBS += "../qtpd_lib/libqtpd.a"
+LIBS += "/usr/local/lib/libportaudio.dylib"
