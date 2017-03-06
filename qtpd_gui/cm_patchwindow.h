@@ -155,7 +155,11 @@ public:
 
 
         showGridAct = new QAction(tr("Show grid"), this);
-        //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
+        showGridAct->setShortcut(tr("Ctrl+Shift+G"));
+        showGridAct->setCheckable(true);
+        showGridAct->setChecked(true);
+        connect(showGridAct, &QAction::triggered, this, &cm_patchwindow::setGridVisible);
+
 
         snapToGridAct = new QAction(tr("Snap to grid"), this);
         //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
@@ -289,6 +293,19 @@ public:
         else
             this->canvas->setEditMode(em_Unlocked);
         this->editModeAct->setChecked(this->canvas->getEditMode() == em_Unlocked);
+    }
+
+    void setGridVisible()
+    {
+//        if (! (( this->canvas->getEditMode()) == em_Locked ))
+//            this->canvas->setEditMode(em_Locked);
+//        else
+//            this->canvas->setEditMode(em_Unlocked);
+
+
+        this->showGridAct->setChecked(this->showGridAct->isChecked());
+        this->canvas->setGridEnabled(this->showGridAct->isChecked());
+        this->canvas->repaint();
     }
 
 

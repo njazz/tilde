@@ -592,6 +592,15 @@ public:
         }
     }
 
+    ////
+    /// \brief set the show/hide grid flag
+    /// \param val
+    ///
+    void setGridEnabled(bool val)
+    {this->gridEnabled = val;}
+
+
+
 signals:
 
 public slots:
