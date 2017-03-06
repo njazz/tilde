@@ -3,3 +3,5 @@ build-qtpd_main-Desktop_Qt_5_7_1_clang_64bit-Debug/Makefile build-qtpd_main-Desk
 build-*/*
 
 qtpd_main.pro.user
+
+qtpd_main.pro.user
