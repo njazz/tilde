@@ -585,28 +585,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00592"></a>00592         }
 <a name="l00593"></a>00593     }
 <a name="l00594"></a>00594 
-<a name="l00595"></a>00595 signals:
-<a name="l00596"></a>00596 
-<a name="l00597"></a>00597 <span class="keyword">public</span> slots:
-<a name="l00598"></a>00598 
-<a name="l00599"></a>00599     <span class="keywordtype">void</span> <a class="code" href="classcm__canvas.html#a53655a36402f01e6f3ce64f4a8165a4e">s_InMousePressed</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>* obj, QMouseEvent* ev);
-<a name="l00600"></a>00600     <span class="keywordtype">void</span> <a class="code" href="classcm__canvas.html#a18444c9cf9f781515140a2af893009da">s_InMouseReleased</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>*, QMouseEvent*);
-<a name="l00601"></a>00601     <span class="keywordtype">void</span> <a class="code" href="classcm__canvas.html#a6517d92eb8c2529e3ff9f00db61bdf59">s_OutMousePressed</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a> *obj, QMouseEvent*);
-<a name="l00602"></a>00602     <span class="keywordtype">void</span> <a class="code" href="classcm__canvas.html#a0e35a1e5d91dae56cb730ee04d5d86d6">s_OutMouseReleased</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>*, QMouseEvent*);
+<a name="l00599"></a><a class="code" href="classcm__canvas.html#af2820c90df78c8ca00c1db3f0f8eb6aa">00599</a>     <span class="keywordtype">void</span> <a class="code" href="classcm__canvas.html#af2820c90df78c8ca00c1db3f0f8eb6aa" title="set the show/hide grid flag">setGridEnabled</a>(<span class="keywordtype">bool</span> val)
+<a name="l00600"></a>00600     {this-&gt;gridEnabled = val;}
+<a name="l00601"></a>00601 
+<a name="l00602"></a>00602 
 <a name="l00603"></a>00603 
-<a name="l00608"></a>00608     <span class="keywordtype">void</span> <a class="code" href="classcm__canvas.html#a845596ee54b019d2c015e0052312be62" title="slot called by box when it is selected">s_SelectBox</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>* box);
-<a name="l00609"></a>00609 
-<a name="l00615"></a>00615     <span class="keywordtype">void</span> <a class="code" href="classcm__canvas.html#adbec9207f183a6cc43373c13c6c7179f" title="TODO check. slot called by box when it starts moving.">s_MoveBox</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>* box, QMouseEvent* event);
-<a name="l00616"></a>00616 
-<a name="l00617"></a>00617     <span class="comment">//    void portMouseReleased();</span>
-<a name="l00618"></a>00618     <span class="comment">//    void portMouseEntered();</span>
-<a name="l00619"></a>00619     <span class="comment">//    void portMouseLeaved();</span>
-<a name="l00620"></a>00620 
-<a name="l00621"></a>00621 <span class="keyword">private</span>:
-<a name="l00622"></a>00622 
-<a name="l00623"></a>00623 };
-<a name="l00624"></a>00624 
-<a name="l00625"></a>00625 <span class="preprocessor">#endif // CM_CANVAS_H</span>
+<a name="l00604"></a>00604 signals:
+<a name="l00605"></a>00605 
+<a name="l00606"></a>00606 <span class="keyword">public</span> slots:
+<a name="l00607"></a>00607 
+<a name="l00608"></a>00608     <span class="keywordtype">void</span> <a class="code" href="classcm__canvas.html#a53655a36402f01e6f3ce64f4a8165a4e">s_InMousePressed</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>* obj, QMouseEvent* ev);
+<a name="l00609"></a>00609     <span class="keywordtype">void</span> <a class="code" href="classcm__canvas.html#a18444c9cf9f781515140a2af893009da">s_InMouseReleased</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>*, QMouseEvent*);
+<a name="l00610"></a>00610     <span class="keywordtype">void</span> <a class="code" href="classcm__canvas.html#a6517d92eb8c2529e3ff9f00db61bdf59">s_OutMousePressed</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a> *obj, QMouseEvent*);
+<a name="l00611"></a>00611     <span class="keywordtype">void</span> <a class="code" href="classcm__canvas.html#a0e35a1e5d91dae56cb730ee04d5d86d6">s_OutMouseReleased</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>*, QMouseEvent*);
+<a name="l00612"></a>00612 
+<a name="l00617"></a>00617     <span class="keywordtype">void</span> <a class="code" href="classcm__canvas.html#a845596ee54b019d2c015e0052312be62" title="slot called by box when it is selected">s_SelectBox</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>* box);
+<a name="l00618"></a>00618 
+<a name="l00624"></a>00624     <span class="keywordtype">void</span> <a class="code" href="classcm__canvas.html#adbec9207f183a6cc43373c13c6c7179f" title="TODO check. slot called by box when it starts moving.">s_MoveBox</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>* box, QMouseEvent* event);
+<a name="l00625"></a>00625 
+<a name="l00626"></a>00626     <span class="comment">//    void portMouseReleased();</span>
+<a name="l00627"></a>00627     <span class="comment">//    void portMouseEntered();</span>
+<a name="l00628"></a>00628     <span class="comment">//    void portMouseLeaved();</span>
+<a name="l00629"></a>00629 
+<a name="l00630"></a>00630 
+<a name="l00634"></a><a class="code" href="classcm__canvas.html#ab61a6834e1c78113b4278aaa1f0985d2">00634</a>     <span class="keywordtype">void</span> <a class="code" href="classcm__canvas.html#ab61a6834e1c78113b4278aaa1f0985d2" title="cancels patchcord creation">cancelPatchcord</a>()
+<a name="l00635"></a>00635     {
+<a name="l00636"></a>00636         this-&gt;newLine.<a class="code" href="structt_rect_plus.html#aecc28cd0419c50f8c2943325856c9f4c">active</a> = <span class="keyword">false</span>;
+<a name="l00637"></a>00637         this-&gt;repaint();
+<a name="l00638"></a>00638     }
+<a name="l00639"></a>00639 <span class="keyword">private</span>:
+<a name="l00640"></a>00640 
+<a name="l00641"></a>00641 };
+<a name="l00642"></a>00642 
+<a name="l00643"></a>00643 <span class="preprocessor">#endif // CM_CANVAS_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -625,7 +636,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 6 2017 20:55:44 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 6 2017 22:55:07 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

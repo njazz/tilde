@@ -7,6 +7,8 @@ var searchData=
   ['pd_5fcanvas',['pd_canvas',['../classcm__canvas.html#ab4cebf6fd47966558324cd53f3108704',1,'cm_canvas']]],
   ['pd_5fwindow_5fprinthook',['pd_window_printhook',['../main_8cpp.html#ae66fea7642262d20892deca8b7ee5753',1,'main.cpp']]],
   ['pdparsercanvas',['pdParserCanvas',['../classcm__fileparser.html#a66488c39370c4aac056c5b4ca38023bc',1,'cm_fileparser']]],
+  ['pdparserfilename',['pdParserFileName',['../classcm__fileparser.html#aca0fe04dc418200682007f081c26c01d',1,'cm_fileparser']]],
+  ['pdparserprevcanvas',['pdParserPrevCanvas',['../classcm__fileparser.html#ac0d53ad8285f7f101552e6c21acba10d',1,'cm_fileparser']]],
   ['pdwindow',['pdWindow',['../classcm__menu.html#a59479cf38a2f0d25a2049104d05b671e',1,'cm_menu']]],
   ['port_5ftype',['port_type',['../classcm__port.html#af2bc746729ee36352f3ec92913207000',1,'cm_port']]],
   ['portindex',['portIndex',['../classcm__port.html#aecc871d97106bc43ad62b1cee127191d',1,'cm_port']]],

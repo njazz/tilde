@@ -1,7 +1,7 @@
 var searchData=
 [
+  ['cancelpatchcord',['cancelPatchcord',['../classcm__canvas.html#ab61a6834e1c78113b4278aaa1f0985d2',1,'cm_canvas']]],
   ['clickpatchcords',['clickPatchcords',['../classcm__canvas.html#a195217c42c079e64c2d30c0ee0cf6ff9',1,'cm_canvas']]],
-  ['close',['close',['../classcm__menu.html#a262c5ee409a8f6d64be626375bc87261',1,'cm_menu']]],
   ['closeevent',['closeEvent',['../classcm__patchwindow.html#a8685067087c7446e874cc9988444647a',1,'cm_patchwindow']]],
   ['cm_5fbasewindow',['cm_basewindow',['../classcm__basewindow.html#a2068045f57dd6a9de5835a63eb732779',1,'cm_basewindow']]],
   ['cm_5fcanvas',['cm_canvas',['../classcm__canvas.html#af6475003cce31cf1f5319b373dda7aee',1,'cm_canvas::cm_canvas(cm_widget *parent=0)'],['../classcm__canvas.html#a63239e162bd55b393bd78bfdbd688061',1,'cm_canvas::cm_canvas(QWidget *parent=0)']]],

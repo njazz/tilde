@@ -86,7 +86,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="cm_menu" -->
-<p>Common menu. TODO cleanup.  
+<p>Common menu - creates new windows (patch, Pd)  
  <a href="classcm__menu.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="cm__menu_8h_source.html">cm_menu.h</a>&gt;</code></p>
@@ -96,18 +96,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__menu.html#a562e762756c4796ea464f944516848b6">newFile</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">new patch window  <a href="#a562e762756c4796ea464f944516848b6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__menu.html#a9928745100a788356ac551761dda7389">open</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__menu.html#a262c5ee409a8f6d64be626375bc87261">close</a> (QObject *sender)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__menu.html#a4a1e04fb8f0e5707c0b76da935924c62">save</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__menu.html#a6216919363eed5d873b7251127056aa3">saveAs</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__menu.html#afc70bb5d97eb98d3834a2db480c8a5b9">message</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">new patch window from file  <a href="#a9928745100a788356ac551761dda7389"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__menu.html#a59479cf38a2f0d25a2049104d05b671e">pdWindow</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">show/hide Pd console  <a href="#a59479cf38a2f0d25a2049104d05b671e"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__menu.html#abc50e09d5f9e7747256694b559d035ae">cm_menu</a> (QObject *parent=0)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Common menu. TODO cleanup. </p>
+<div class="textblock"><p>Common menu - creates new windows (patch, Pd) </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="abc50e09d5f9e7747256694b559d035ae"></a><!-- doxytag: member="cm_menu::cm_menu" ref="abc50e09d5f9e7747256694b559d035ae" args="(QObject *parent=0)" -->
 <div class="memitem">
@@ -127,39 +126,6 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a262c5ee409a8f6d64be626375bc87261"></a><!-- doxytag: member="cm_menu::close" ref="a262c5ee409a8f6d64be626375bc87261" args="(QObject *sender)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classcm__menu.html#a262c5ee409a8f6d64be626375bc87261">cm_menu::close</a> </td>
-          <td>(</td>
-          <td class="paramtype">QObject *&#160;</td>
-          <td class="paramname"><em>sender</em></td><td>)</td>
-          <td><code> [static, slot]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="afc70bb5d97eb98d3834a2db480c8a5b9"></a><!-- doxytag: member="cm_menu::message" ref="afc70bb5d97eb98d3834a2db480c8a5b9" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classcm__menu.html#afc70bb5d97eb98d3834a2db480c8a5b9">cm_menu::message</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [static, slot]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a562e762756c4796ea464f944516848b6"></a><!-- doxytag: member="cm_menu::newFile" ref="a562e762756c4796ea464f944516848b6" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -173,6 +139,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>new patch window </p>
 
 </div>
 </div>
@@ -190,6 +158,8 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>new patch window from file </p>
+
 </div>
 </div>
 <a class="anchor" id="a59479cf38a2f0d25a2049104d05b671e"></a><!-- doxytag: member="cm_menu::pdWindow" ref="a59479cf38a2f0d25a2049104d05b671e" args="()" -->
@@ -206,37 +176,7 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-</div>
-</div>
-<a class="anchor" id="a4a1e04fb8f0e5707c0b76da935924c62"></a><!-- doxytag: member="cm_menu::save" ref="a4a1e04fb8f0e5707c0b76da935924c62" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classcm__menu.html#a4a1e04fb8f0e5707c0b76da935924c62">cm_menu::save</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [static, slot]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a6216919363eed5d873b7251127056aa3"></a><!-- doxytag: member="cm_menu::saveAs" ref="a6216919363eed5d873b7251127056aa3" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classcm__menu.html#a6216919363eed5d873b7251127056aa3">cm_menu::saveAs</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [static, slot]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
+<p>show/hide Pd console </p>
 
 </div>
 </div>
@@ -262,7 +202,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 6 2017 20:55:44 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 6 2017 22:55:07 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
