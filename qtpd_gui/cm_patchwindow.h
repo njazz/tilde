@@ -71,6 +71,7 @@ private slots:
     void save();
     void saveAs();
 
+
 public:
     cm_patchwindow();
     cm_patchwindow(QStringList ); //arguments
@@ -81,7 +82,7 @@ public:
     {
         //        connect(openAct, &QAction::triggered, this, &cm_patchwindow::open);
         connect(saveAsAct, &QAction::triggered, this, &cm_patchwindow::saveAs);
-        connect(saveAct, &QAction::triggered, this, &cm_patchwindow::save);
+        connect(saveAct, &QAction::triggered, this, &cm_patchwindow::saveAs);
 
         delObjectAct = new QAction(tr("Delete object"), this);
         delObjectAct->setShortcut(tr("Backspace"));
@@ -330,6 +331,11 @@ public:
 
         event->accept();
     }
+
+
+    ////
+
+    void setFileName(QString fname);
 
     ///////
 

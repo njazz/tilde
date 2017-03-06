@@ -65,7 +65,7 @@ void cmp_pdinit()
     sys_init_fdpoll();
 
     pd_init();
-    sys_set_audio_api(API_DUMMY);
+    sys_set_audio_api(API_PORTAUDIO);
     sys_searchpath = NULL;
     sys_startgui(NULL);
 

@@ -150,7 +150,21 @@ void cm_patchwindow::saveAs()
     this->setWindowTitle(file);
     this->setWindowFilePath(fname);
 
-    saveAct->setEnabled(true);
+    //saveAct->setEnabled(true);
+
+    connect(saveAct, &QAction::triggered, this, &cm_patchwindow::save);
+
+}
+
+void cm_patchwindow::setFileName(QString fname)
+{
+
+    this->canvas->fileName = fname;
+
+    QString file = fname.section("/",-1,-1);
+
+    this->setWindowTitle(file);
+    this->setWindowFilePath(fname);
 
 }
 
