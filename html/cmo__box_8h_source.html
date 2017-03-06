@@ -105,68 +105,69 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00029"></a>00029     {
 <a name="l00030"></a>00030         QPainter p(<span class="keyword">this</span>);
 <a name="l00031"></a>00031         p.setRenderHint(QPainter::HighQualityAntialiasing, <span class="keyword">true</span>);
-<a name="l00032"></a>00032         QColor rectColor = (this-&gt;<a class="code" href="classcm__object.html#ab30ed0e19c6420f700a05243e0b76ed7">isErrorBox</a>())? QColor(255, 0, 0) : QColor(128, 128, 128);
-<a name="l00033"></a>00033         p.setPen(QPen(rectColor, 2,(this-&gt;<a class="code" href="classcm__object.html#ab30ed0e19c6420f700a05243e0b76ed7">isErrorBox</a>())? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-<a name="l00034"></a>00034         p.drawRect(0, 0, this-&gt;width(), this-&gt;height());
-<a name="l00035"></a>00035         QTextOption* op = <span class="keyword">new</span> QTextOption;
-<a name="l00036"></a>00036         op-&gt;setAlignment(Qt::AlignLeft);
-<a name="l00037"></a>00037         p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039         p.setFont(QFont(<span class="stringliteral">&quot;Monaco&quot;</span>, 11, 0, <span class="keyword">false</span>));
-<a name="l00040"></a>00040         p.drawText(2, 3, this-&gt;width() - 2, this-&gt;height() - 3, 0, this-&gt;<a class="code" href="classcm__object.html#ae49e229d6522dc139a8162dc58f3f446">getObjectData</a>().c_str(), 0);
-<a name="l00041"></a>00041 
-<a name="l00042"></a>00042         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm__widget.html#aef5286ed1b9244dd393d9c7f0967adc0">isSelected</a>()) {
-<a name="l00043"></a>00043             p.setPen(QPen(QColor(0, 192, 255), 2,(this-&gt;<a class="code" href="classcm__object.html#ab30ed0e19c6420f700a05243e0b76ed7">isErrorBox</a>())? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-<a name="l00044"></a>00044             p.drawRect(0, 0, this-&gt;width(), this-&gt;height());
-<a name="l00045"></a>00045         }
-<a name="l00046"></a>00046     }
-<a name="l00047"></a>00047 
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033         QColor rectColor = (this-&gt;<a class="code" href="classcm__object.html#ab30ed0e19c6420f700a05243e0b76ed7">isErrorBox</a>())? QColor(255, 0, 0) : QColor(128, 128, 128);
+<a name="l00034"></a>00034         p.setPen(QPen(rectColor, 2,(this-&gt;<a class="code" href="classcm__object.html#ab30ed0e19c6420f700a05243e0b76ed7">isErrorBox</a>())? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+<a name="l00035"></a>00035         p.drawRect(0, 0, this-&gt;width(), this-&gt;height());
+<a name="l00036"></a>00036         QTextOption* op = <span class="keyword">new</span> QTextOption;
+<a name="l00037"></a>00037         op-&gt;setAlignment(Qt::AlignLeft);
+<a name="l00038"></a>00038         p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040         p.setFont(QFont(<span class="stringliteral">&quot;Monaco&quot;</span>, 11, 0, <span class="keyword">false</span>));
+<a name="l00041"></a>00041         p.drawText(2, 3, this-&gt;width() - 2, this-&gt;height() - 3, 0, this-&gt;<a class="code" href="classcm__object.html#ae49e229d6522dc139a8162dc58f3f446">getObjectData</a>().c_str(), 0);
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm__widget.html#aef5286ed1b9244dd393d9c7f0967adc0">isSelected</a>()) {
+<a name="l00044"></a>00044             p.setPen(QPen(QColor(0, 192, 255), 2,(this-&gt;<a class="code" href="classcm__object.html#ab30ed0e19c6420f700a05243e0b76ed7">isErrorBox</a>())? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+<a name="l00045"></a>00045             p.drawRect(0, 0, this-&gt;width(), this-&gt;height());
+<a name="l00046"></a>00046         }
+<a name="l00047"></a>00047     }
 <a name="l00048"></a>00048 
-<a name="l00053"></a><a class="code" href="classcmo__box.html#a245d3cb6652ead56b300aa7ff96a9037">00053</a>     <span class="keywordtype">void</span> <a class="code" href="classcmo__box.html#a245d3cb6652ead56b300aa7ff96a9037" title="mouse down">mousePressEvent</a>(QMouseEvent* ev)
-<a name="l00054"></a>00054     {
-<a name="l00055"></a>00055         emit <a class="code" href="classcm__widget.html#a14294c167a8229465541a0fe9c1ec69f">selectBox</a>(<span class="keyword">this</span>);
-<a name="l00056"></a>00056         this-&gt;<a class="code" href="classcm__widget.html#a86dfa257abe398cef8603e8ec97add78">dragOffset</a> = ev-&gt;pos();
-<a name="l00057"></a>00057     }
-<a name="l00058"></a>00058 
-<a name="l00062"></a><a class="code" href="classcmo__box.html#add133ab45184420c7a66e752d200c9d3">00062</a>     <span class="keywordtype">void</span> <a class="code" href="classcmo__box.html#add133ab45184420c7a66e752d200c9d3" title="mouse up">mouseReleaseEvent</a>(QMouseEvent*)
-<a name="l00063"></a>00063     {
-<a name="l00064"></a>00064         <span class="comment">//this-&gt;selected_ = false;</span>
-<a name="l00065"></a>00065         this-&gt;repaint();
-<a name="l00066"></a>00066     }
-<a name="l00067"></a>00067 
-<a name="l00072"></a><a class="code" href="classcmo__box.html#ad57e410a01d1367c86434768149f8a71">00072</a>     <span class="keywordtype">void</span> <a class="code" href="classcmo__box.html#ad57e410a01d1367c86434768149f8a71" title="mouse move">mouseMoveEvent</a>(QMouseEvent* event)
-<a name="l00073"></a>00073     {
-<a name="l00074"></a>00074         <span class="keywordflow">if</span> (event-&gt;buttons() &amp; Qt::LeftButton) {
-<a name="l00075"></a>00075             emit <a class="code" href="classcm__widget.html#a52c8dca2c35251f95e0cb5420c77d224">moveBox</a>(<span class="keyword">this</span>, event);
-<a name="l00076"></a>00076         }
-<a name="l00077"></a>00077         <span class="keyword">event</span>-&gt;ignore();
-<a name="l00078"></a>00078     }
-<a name="l00079"></a>00079 
+<a name="l00049"></a>00049 
+<a name="l00054"></a><a class="code" href="classcmo__box.html#a245d3cb6652ead56b300aa7ff96a9037">00054</a>     <span class="keywordtype">void</span> <a class="code" href="classcmo__box.html#a245d3cb6652ead56b300aa7ff96a9037" title="mouse down">mousePressEvent</a>(QMouseEvent* ev)
+<a name="l00055"></a>00055     {
+<a name="l00056"></a>00056         emit <a class="code" href="classcm__widget.html#a14294c167a8229465541a0fe9c1ec69f">selectBox</a>(<span class="keyword">this</span>);
+<a name="l00057"></a>00057         this-&gt;<a class="code" href="classcm__widget.html#a86dfa257abe398cef8603e8ec97add78">dragOffset</a> = ev-&gt;pos();
+<a name="l00058"></a>00058     }
+<a name="l00059"></a>00059 
+<a name="l00063"></a><a class="code" href="classcmo__box.html#add133ab45184420c7a66e752d200c9d3">00063</a>     <span class="keywordtype">void</span> <a class="code" href="classcmo__box.html#add133ab45184420c7a66e752d200c9d3" title="mouse up">mouseReleaseEvent</a>(QMouseEvent*)
+<a name="l00064"></a>00064     {
+<a name="l00065"></a>00065         <span class="comment">//this-&gt;selected_ = false;</span>
+<a name="l00066"></a>00066         this-&gt;repaint();
+<a name="l00067"></a>00067     }
+<a name="l00068"></a>00068 
+<a name="l00073"></a><a class="code" href="classcmo__box.html#ad57e410a01d1367c86434768149f8a71">00073</a>     <span class="keywordtype">void</span> <a class="code" href="classcmo__box.html#ad57e410a01d1367c86434768149f8a71" title="mouse move">mouseMoveEvent</a>(QMouseEvent* event)
+<a name="l00074"></a>00074     {
+<a name="l00075"></a>00075         <span class="keywordflow">if</span> (event-&gt;buttons() &amp; Qt::LeftButton) {
+<a name="l00076"></a>00076             emit <a class="code" href="classcm__widget.html#a52c8dca2c35251f95e0cb5420c77d224">moveBox</a>(<span class="keyword">this</span>, event);
+<a name="l00077"></a>00077         }
+<a name="l00078"></a>00078         <span class="keyword">event</span>-&gt;ignore();
+<a name="l00079"></a>00079     }
 <a name="l00080"></a>00080 
 <a name="l00081"></a>00081 
-<a name="l00082"></a>00082 signals:
-<a name="l00083"></a>00083 
-<a name="l00084"></a>00084     <span class="keywordtype">void</span> <a class="code" href="classcmo__box.html#a9b41f187fd2d94281e2b387a30e82928">mouseMoved</a>();
-<a name="l00085"></a>00085     <span class="keywordtype">void</span> <a class="code" href="classcmo__box.html#a5a1f2e26756e3ae6b3be49de97a656e9">rightClicked</a>();
-<a name="l00086"></a>00086 
-<a name="l00087"></a>00087 <span class="comment">//    void inletMousePressed();</span>
-<a name="l00088"></a>00088 <span class="comment">//    void inletMouseReleased();</span>
-<a name="l00089"></a>00089 
-<a name="l00090"></a>00090 <span class="comment">//    void inletMouseEntered();</span>
-<a name="l00091"></a>00091 <span class="comment">//    void inletMouseLeaved();</span>
-<a name="l00092"></a>00092 
-<a name="l00093"></a>00093 <span class="comment">//    void outletMousePressed();</span>
-<a name="l00094"></a>00094 <span class="comment">//    void outletMouseReleased();</span>
-<a name="l00095"></a>00095 
-<a name="l00096"></a>00096 <span class="comment">//    void outletMouseEntered();</span>
-<a name="l00097"></a>00097 <span class="comment">//    void outletMouseLeaved();</span>
-<a name="l00098"></a>00098 
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083 signals:
+<a name="l00084"></a>00084 
+<a name="l00085"></a>00085     <span class="keywordtype">void</span> <a class="code" href="classcmo__box.html#a9b41f187fd2d94281e2b387a30e82928">mouseMoved</a>();
+<a name="l00086"></a>00086     <span class="keywordtype">void</span> <a class="code" href="classcmo__box.html#a5a1f2e26756e3ae6b3be49de97a656e9">rightClicked</a>();
+<a name="l00087"></a>00087 
+<a name="l00088"></a>00088 <span class="comment">//    void inletMousePressed();</span>
+<a name="l00089"></a>00089 <span class="comment">//    void inletMouseReleased();</span>
+<a name="l00090"></a>00090 
+<a name="l00091"></a>00091 <span class="comment">//    void inletMouseEntered();</span>
+<a name="l00092"></a>00092 <span class="comment">//    void inletMouseLeaved();</span>
+<a name="l00093"></a>00093 
+<a name="l00094"></a>00094 <span class="comment">//    void outletMousePressed();</span>
+<a name="l00095"></a>00095 <span class="comment">//    void outletMouseReleased();</span>
+<a name="l00096"></a>00096 
+<a name="l00097"></a>00097 <span class="comment">//    void outletMouseEntered();</span>
+<a name="l00098"></a>00098 <span class="comment">//    void outletMouseLeaved();</span>
 <a name="l00099"></a>00099 
-<a name="l00100"></a>00100 <span class="keyword">private</span> slots:
-<a name="l00101"></a>00101 
-<a name="l00102"></a>00102 };
-<a name="l00103"></a>00103 
-<a name="l00104"></a>00104 <span class="preprocessor">#endif // CM_BOX_H</span>
+<a name="l00100"></a>00100 
+<a name="l00101"></a>00101 <span class="keyword">private</span> slots:
+<a name="l00102"></a>00102 
+<a name="l00103"></a>00103 };
+<a name="l00104"></a>00104 
+<a name="l00105"></a>00105 <span class="preprocessor">#endif // CM_BOX_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -185,7 +186,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 6 2017 07:19:07 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 6 2017 15:29:26 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

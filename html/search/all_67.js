@@ -7,5 +7,6 @@ var searchData=
   ['getobjectdata',['getObjectData',['../classcm__object.html#ae49e229d6522dc139a8162dc58f3f446',1,'cm_object']]],
   ['getoutletat',['getOutletAt',['../classcm__object.html#ade83577301e7b5a8e6cf33e1695c4291',1,'cm_object']]],
   ['getpdobject',['getPdObject',['../classcm__object.html#a6d7e0f714e801e61e6c2f76047f1589e',1,'cm_object']]],
+  ['getscale',['getScale',['../classcm__widget.html#ac1017e2f36ea483f884b11b08f93dcfd',1,'cm_widget']]],
   ['getstartpoint',['getStartPoint',['../classcm__patchcord.html#a6698e93c5934891740ad9670c3545351',1,'cm_patchcord']]]
 ];
