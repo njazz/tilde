@@ -26,7 +26,7 @@ var searchData=
   ['cm_5fpatchcord',['cm_patchcord',['../classcm__patchcord.html',1,'cm_patchcord'],['../classcm__patchcord.html#a5871c45e718bc3ab2e57c716b9524db9',1,'cm_patchcord::cm_patchcord()'],['../classcm__patchcord.html#a73fc0ef79bc39f2149bccf6267863e8c',1,'cm_patchcord::cm_patchcord(cm_widget *obj1, cm_widget *out1, cm_widget *obj2, cm_widget *in2)']]],
   ['cm_5fpatchcord_2ecpp',['cm_patchcord.cpp',['../cm__patchcord_8cpp.html',1,'']]],
   ['cm_5fpatchcord_2eh',['cm_patchcord.h',['../cm__patchcord_8h.html',1,'']]],
-  ['cm_5fpatchwindow',['cm_patchwindow',['../classcm__patchwindow.html',1,'cm_patchwindow'],['../classcm__patchwindow.html#adde66f2ffc03eb905173c0783696f725',1,'cm_patchwindow::cm_patchwindow()'],['../classcm__patchwindow.html#a2a33a5332255eb752485aa878a92a13c',1,'cm_patchwindow::cm_patchwindow(QStringList arguments)']]],
+  ['cm_5fpatchwindow',['cm_patchwindow',['../classcm__patchwindow.html',1,'cm_patchwindow'],['../classcm__patchwindow.html#adde66f2ffc03eb905173c0783696f725',1,'cm_patchwindow::cm_patchwindow()'],['../classcm__patchwindow.html#a499ed0190bd81668f1bd26b0a13d0008',1,'cm_patchwindow::cm_patchwindow(QStringList)']]],
   ['cm_5fpatchwindow_2ecpp',['cm_patchwindow.cpp',['../cm__patchwindow_8cpp.html',1,'']]],
   ['cm_5fpatchwindow_2eh',['cm_patchwindow.h',['../cm__patchwindow_8h.html',1,'']]],
   ['cm_5fpdlink_2eh',['cm_pdlink.h',['../cm__pdlink_8h.html',1,'']]],
