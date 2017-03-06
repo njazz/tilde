@@ -332,6 +332,7 @@ public:
         if (!this->pd_canvas)
         {
             qDebug("bad pd canvas instance");
+            box->setErrorBox(true);
         }
         else
         {

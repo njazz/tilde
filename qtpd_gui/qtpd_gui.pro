@@ -61,3 +61,4 @@ FORMS    += \
 
 #LIBS += -L$$PWD/ -lqtpd
 LIBS += -L../qtpd_lib/ -lqtpd
+LIBS += -L/usr/local/lib -lportaudio

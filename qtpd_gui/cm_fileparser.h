@@ -28,7 +28,7 @@ public:
     {
         if (list.at(0) == "obj")
         {
-            qDebug("new obj");
+            //qDebug("new obj");
             if (list.size()>3)
             {
                 QString objname;
@@ -97,11 +97,17 @@ public:
                 cm_object * obj1 = cmcanvas->getObjectByIndex( ((QString)list.value(1)).toInt() );
                 cm_object * obj2 = cmcanvas->getObjectByIndex( ((QString)list.value(3)).toInt() );
 
+                 if (!obj1 || !obj2)
+                 {
+                     qDebug("object not found - could not connect");
+                     return;
+                 }
                 int idx1 = ((QString)list.value(2)).toInt() ;
                 int idx2 = ((QString)list.value(4)).toInt() ;
 
                 //cmcanvas->patchcord();
-                cmcanvas->patchcord(obj1,idx1,obj2,idx2);
+                if (!obj1->isErrorBox() && !obj2->isErrorBox() )
+                    cmcanvas->patchcord(obj1,idx1,obj2,idx2);
 
             }
 

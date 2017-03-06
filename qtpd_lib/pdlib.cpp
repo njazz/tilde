@@ -81,6 +81,20 @@ void cmp_pdinit()
     setup_list0x2eproduct();
     qDebug("pd extras");
 
+    // init audio
+    int indev[MAXAUDIOINDEV], inch[MAXAUDIOINDEV],
+    outdev[MAXAUDIOOUTDEV], outch[MAXAUDIOOUTDEV];
+
+    indev[0] = outdev[0] = DEFAULTAUDIODEV;
+    inch[0] = 1;
+    outch[0] = 2;
+
+    sys_set_audio_settings(1, indev, 1, inch,
+                           1, outdev, 1, outch, 44100, -1, 1, DEFDACBLKSIZE);
+    sched_set_using_audio(SCHED_AUDIO_CALLBACK);
+
+    sys_reopen_audio();
+
 }
 
 void cmp_setprinthook(t_printhook h)

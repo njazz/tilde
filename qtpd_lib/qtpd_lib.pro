@@ -19,7 +19,7 @@ DEFINES += QT_DEPRECATED_WARNINGS \
     APPLE \
     PD \
     HAVE_UNISTD_H \
-    USEAPI_DUMMY
+    USEAPI_PORTAUDIO
 #    THREAD_LOCKING
 
 
@@ -96,12 +96,12 @@ SOURCES += pdlib.cpp \
 #    src/s_audio_alsa.c \
 #    src/s_audio_alsamm.c \
 #    src/s_audio_audiounit.c \
-    src/s_audio_dummy.c \
+#    src/s_audio_dummy.c \
 #    src/s_audio_esd.c \
 #    src/s_audio_jack.c \
 #    src/s_audio_mmio.c \
 #    src/s_audio_oss.c \
-#    src/s_audio_pa.c \
+    src/s_audio_pa.c \
     src/s_audio_paring.c \
     src/s_entry.c \
     src/s_file.c \
@@ -171,10 +171,14 @@ HEADERS += pdlib.h \
     src/s_audio_paring.h \
     src/s_stuff.h \
     src/s_utf8.h \
-    src/x_vexp.h
+    src/x_vexp.h \
+    portaudio/include/portaudio.h
 
 INCLUDEPATH += src/ \
-    extra/
+    extra/ \
+    portaudio/include/
+
+#LIBS += -L/usr/local/lib -lportaudio
 
 unix {
     target.path = /usr/lib

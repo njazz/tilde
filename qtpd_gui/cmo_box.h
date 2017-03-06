@@ -29,6 +29,7 @@ public:
     {
         QPainter p(this);
         p.setRenderHint(QPainter::HighQualityAntialiasing, true);
+
         QColor rectColor = (this->isErrorBox())? QColor(255, 0, 0) : QColor(128, 128, 128);
         p.setPen(QPen(rectColor, 2,(this->isErrorBox())? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         p.drawRect(0, 0, this->width(), this->height());

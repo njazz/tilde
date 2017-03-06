@@ -59,6 +59,9 @@ private:
 
     QAction *tidyUpAct;
 
+    QAction *zoomInAct;
+    QAction *zoomOutAct;
+
 
 
     cm_objectmaker* objectMaker;
@@ -181,6 +184,12 @@ public:
         tidyUpAct = new QAction(tr("Tidy up"), this);
         //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
 
+        zoomInAct = new QAction(tr("Zoom in"), this);
+        zoomInAct->setShortcut(tr("Ctrl++"));
+
+        zoomOutAct = new QAction(tr("Zoom out"), this);
+        zoomOutAct->setShortcut(tr("Ctrl+-"));
+
     }
 
     void createMenus()
@@ -219,12 +228,16 @@ public:
         arrangeMenu->addAction(alignToGridAct);
         arrangeMenu->addAction(alignLeftAct);
         arrangeMenu->addAction(alignRightAct);
+        arrangeMenu->addAction(alignTopAct);
+        arrangeMenu->addAction(alignBottomAct);
         arrangeMenu->addSeparator();
         arrangeMenu->addAction(distHAct);
         arrangeMenu->addAction(distVAct);
         arrangeMenu->addSeparator();
         arrangeMenu->addAction(tidyUpAct);
-
+        arrangeMenu->addSeparator();
+        arrangeMenu->addAction(zoomInAct);
+        arrangeMenu->addAction(zoomOutAct);
 
 
     }

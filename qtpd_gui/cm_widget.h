@@ -33,6 +33,8 @@ private:
     //temporary?
 //    void* pdObject_;
 
+    float scale;
+
 public:
 
     QPoint dragOffset;
@@ -63,6 +65,12 @@ public:
     {
         return (this->editMode_)?(*this->editMode_):em_Unlocked;
     }
+
+    void setScale(float scale_)
+    {
+        this->scale = scale_;
+    }
+    float getScale() {return this->scale;}
 
 //    void* getPdObject() {return this->pdObject_;}
 //    void setPdObject(void*obj) {this->pdObject_ = obj;}

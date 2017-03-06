@@ -3,6 +3,7 @@
 cm_widget::cm_widget(QWidget *parent) : QWidget(parent)
 {
     this->selected_ = false;
+    this->setScale(1.);
 
 }
 
