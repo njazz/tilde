@@ -8,10 +8,10 @@
 
 #include "cm_fileparser.h"
 
-cm_menu::cm_menu(QObject *parent) : QObject(parent)
-{
+//cm_menu::cm_menu(QObject *parent) : QObject(parent)
+//{
 
-}
+//}
 
 void cm_menu::newFile()
 {
@@ -22,72 +22,6 @@ void cm_menu::newFile()
     newWindow->show();
 }
 
-///////
-
-//todo a class
-
-//cm_patchwindow* pdParserCanvas;   // or t_canvas?
-
-//void parsePdString(QString line)
-//{
-//    QStringList atoms = line.split( " " );
-
-//    //switch (atoms.at(0))
-
-//    if (atoms.at(0) == "#N")
-//    {
-//        QStringList msg = atoms;
-//        msg.removeFirst();
-
-//        pdParserCanvas = new cm_patchwindow(msg);
-//        pdParserCanvas->show();   //move to constructor?
-//    }
-
-//    if (atoms.at(0) == "#X")
-//    {
-//        QStringList msg = atoms;
-//        msg.removeFirst();
-
-//        if (pdParserCanvas)
-//        {
-//            pdParserCanvas->loadPdString(msg);
-//        }
-//        else
-//        {
-//            qDebug("parser error - no canvas");
-//        }
-//    }
-//    //TODO
-//}
-
-
-//void parsePdFile(QString fname)
-//{
-//    QFile f(fname);
-//    f.open(QIODevice::ReadOnly);
-
-//    QStringList stringList;
-
-//    pdParserCanvas = 0;
-
-//    QTextStream textStream(&f);
-//    while (true)
-//    {
-//        QString line = textStream.readLine();
-//        if (line.isNull())
-//            break;
-//        else
-//        {
-//            stringList.append(line);
-//            qDebug("* %s", line.toStdString().c_str());
-//            //
-//            parsePdString(line);
-
-//        }
-//    }
-//    f.close();
-
-//}
 
 void cm_menu::open()
 {
@@ -101,25 +35,25 @@ void cm_menu::open()
 
 }
 
-void cm_menu::close(QObject *)  //sender
-{
+//void cm_menu::close(QObject *)  //sender
+//{
 
-}
+//}
 
-void cm_menu::save()
-{
-    //    infoLabel->setText(tr("Invoked <b>File|Save</b>"));
-}
+//void cm_menu::save()
+//{
+//    //    infoLabel->setText(tr("Invoked <b>File|Save</b>"));
+//}
 
-void cm_menu::saveAs()
-{
-    //    infoLabel->setText(tr("Invoked <b>File|Save</b>"));
-}
+//void cm_menu::saveAs()
+//{
+//    //    infoLabel->setText(tr("Invoked <b>File|Save</b>"));
+//}
 
-void cm_menu::message()
-{
-    //    infoLabel->setText(tr("Invoked <b>File|Save</b>"));
-}
+//void cm_menu::message()
+//{
+//    //    infoLabel->setText(tr("Invoked <b>File|Save</b>"));
+//}
 
 
 

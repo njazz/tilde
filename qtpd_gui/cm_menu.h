@@ -23,21 +23,6 @@ public slots:
     static void saveAs();
     static void message();
 
-//    static void undo();
-//    static void redo();
-//    static void cut();
-//    static void copy();
-//    static void paste();
-
-//    static void putObject();
-//    static void putMessage();
-//    static void putNumber();
-//    static void putSymbol();
-//    static void putComment();
-
-//    static void dspOn();
-//    static void dspOff();
-
     static void pdWindow();
 };
 
