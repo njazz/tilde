@@ -38,10 +38,8 @@ public:
         openAct->setShortcuts(QKeySequence::Open);
         connect(openAct, &QAction::triggered, this, &cm_menu::open);
 
-
         saveAct = new QAction(tr("&Save"), this);
         saveAct->setShortcuts(QKeySequence::Save);
-        saveAct->setDisabled(true);
 
         saveAsAct = new QAction(tr("&Save As..."), this);
         saveAsAct->setShortcuts(QKeySequence::SaveAs);

@@ -4,7 +4,7 @@
 #include <QObject>
 
 ////
-/// \brief Common menu. TODO cleanup
+/// \brief Common menu - creates new windows (patch, Pd)
 ///
 class cm_menu : public QObject
 {
@@ -18,10 +18,6 @@ public slots:
 
     static void newFile();
     static void open();
-    static void close(QObject *sender);
-    static void save();
-    static void saveAs();
-    static void message();
 
     static void pdWindow();
 };
