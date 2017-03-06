@@ -23,7 +23,7 @@ void cm_menu::newFile()
 void cm_menu::open()
 {
     QString fname = QFileDialog::getOpenFileName(0,QString("Open patch"), QString("~/"), QString("*.pd"), 0, 0);
-    if (file)
+    if (fname!="")
         cm_fileparser::open(fname);
 }
 
