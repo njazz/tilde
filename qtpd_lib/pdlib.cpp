@@ -214,7 +214,7 @@ t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int
     t_object* ret2;
     
     AtomList* list = AtomListFromString(class_name);
-    if (list->size()==0) {return 0;}
+    if (list->size()==0) {delete list; return 0;}
 
     list->insert(0,Atom((float)x));
     list->insert(1,Atom((float)y));

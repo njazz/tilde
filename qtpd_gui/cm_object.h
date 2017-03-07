@@ -96,14 +96,18 @@ public:
 
     cm_port* getInletAt(int idx)
     {
-        //check range!
-        return this->inlets_.at(idx);
+        if (idx<((int)this->inlets_.size()))
+            return this->inlets_.at(idx);
+        else
+            return 0;
     }
 
     cm_port* getOutletAt(int idx)
     {
-        //check range!
-        return this->outlets_.at(idx);
+        if (idx<((int)this->outlets_.size()))
+            return this->outlets_.at(idx);
+        else
+            return 0;
     }
 
     ///////

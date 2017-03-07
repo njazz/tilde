@@ -33,18 +33,21 @@ public:
     QPoint getStartPoint()
     {
 
-        QPoint start;
-        start = QPoint( obj1->pos().x() + out1->pos().x() + out1->width()/2,
-                        obj1->pos().y() + out1->pos().y() + out1->height()/2 );
+        QPoint start = QPoint(0,0);
+
+        if (obj1 && out1)
+            start = QPoint( obj1->pos().x() + out1->pos().x() + out1->width()/2,
+                            obj1->pos().y() + out1->pos().y() + out1->height()/2 );
 
         return start;
     }
 
     QPoint getEndPoint()
     {
-        QPoint end;
-        end = QPoint (obj2->pos().x() + in2->pos().x() + in2->width()/2,
-                      obj2->pos().y() + in2->pos().y() + in2->height()/2);
+        QPoint end = QPoint(0,0);
+        if (obj2 && in2)
+            end = QPoint (obj2->pos().x() + in2->pos().x() + in2->width()/2,
+                          obj2->pos().y() + in2->pos().y() + in2->height()/2);
         return end;
 
     }

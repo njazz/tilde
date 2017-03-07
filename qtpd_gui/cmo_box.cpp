@@ -21,3 +21,11 @@ cmo_box::cmo_box(cm_object *parent) : cm_object(parent)
     this->cmSubcanvas = 0;
 }
 
+
+cmo_box::~cmo_box()
+{
+    if (this->cmSubcanvas)
+    {
+        delete this->cmSubcanvas;
+    }
+}

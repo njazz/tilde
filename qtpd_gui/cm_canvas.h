@@ -315,67 +315,67 @@ public:
     ///
 
     cmo_box* restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas* canvas)
-{
-    cmo_box *box = new cmo_box((cm_object*)this);   //test?
-    box->setObjectData(pdObjectName);
-
-    connect(box,&cmo_box::selectBox, this, &cm_canvas::s_SelectBox);
-    connect(box,&cmo_box::moveBox, this, &cm_canvas::s_MoveBox);
-
-    box->setEditModeRef(&this->editMode);
-
-    const char * obj_name = pdObjectName.c_str();
-
-    t_object* new_obj = 0 ;
-    int in_c=0, out_c=0;
-
-    //temp
-    if (!this->pd_canvas)
     {
-        qDebug("bad pd canvas instance");
-        box->setErrorBox(true);
+        cmo_box *box = new cmo_box((cm_object*)this);   //test?
+        box->setObjectData(pdObjectName);
+
+        connect(box,&cmo_box::selectBox, this, &cm_canvas::s_SelectBox);
+        connect(box,&cmo_box::moveBox, this, &cm_canvas::s_MoveBox);
+
+        box->setEditModeRef(&this->editMode);
+
+        const char * obj_name = pdObjectName.c_str();
+
+        t_object* new_obj = 0 ;
+        int in_c=0, out_c=0;
+
+        //temp
+        if (!this->pd_canvas)
+        {
+            qDebug("bad pd canvas instance");
+            box->setErrorBox(true);
+        }
+        else
+        {
+            new_obj = (t_object*)canvas;//cmp_create_object(this->pd_canvas,(char*)obj_name,pos.x(), pos.y());
+        }
+
+        if (new_obj)
+        {
+
+            // qDebug ("created object %lu, new_obj");
+
+            in_c = cmp_get_inlet_count(new_obj);
+            out_c = cmp_get_outlet_count(new_obj);
+
+            qDebug ("created object %s ins %i outs %i ptr %lu", obj_name, in_c, out_c, (long)new_obj);
+
+            //cm_box* newBox = this->canvas->createBox(this->objectMaker->text().toStdString(),this->objectMaker->pos(),in_c,out_c);
+            box->setPdObject(new_obj);
+
+        }
+        else
+        {
+            qDebug("Error: no such object %s", obj_name);
+            box->setErrorBox(true);
+            in_c = 0; out_c = 0;
+            //return 0;
+        }
+
+        for (int i=0;i<in_c;i++)
+            box->addInlet();
+        for (int i=0;i<out_c;i++)
+            box->addOutlet();
+
+        box->move(pos);
+
+        this->objectBoxes.push_back(box);
+
+        box->show();
+
+        return box;
+
     }
-    else
-    {
-        new_obj = (t_object*)canvas;//cmp_create_object(this->pd_canvas,(char*)obj_name,pos.x(), pos.y());
-    }
-
-    if (new_obj)
-    {
-
-        // qDebug ("created object %lu, new_obj");
-
-        in_c = cmp_get_inlet_count(new_obj);
-        out_c = cmp_get_outlet_count(new_obj);
-
-        qDebug ("created object %s ins %i outs %i ptr %lu", obj_name, in_c, out_c, (long)new_obj);
-
-        //cm_box* newBox = this->canvas->createBox(this->objectMaker->text().toStdString(),this->objectMaker->pos(),in_c,out_c);
-        box->setPdObject(new_obj);
-
-    }
-    else
-    {
-        qDebug("Error: no such object %s", obj_name);
-        box->setErrorBox(true);
-        in_c = 0; out_c = 0;
-        //return 0;
-    }
-
-    for (int i=0;i<in_c;i++)
-        box->addInlet();
-    for (int i=0;i<out_c;i++)
-        box->addOutlet();
-
-    box->move(pos);
-
-    this->objectBoxes.push_back(box);
-
-    box->show();
-
-    return box;
-
-}
 
     ////
     /// \brief create new object box
@@ -427,7 +427,7 @@ public:
         {
             qDebug("Error: no such object %s", obj_name);
             box->setErrorBox(true);
-            in_c = 0; out_c = 0;
+            in_c = 1; out_c = 1;
             //return 0;
         }
 
@@ -454,44 +454,45 @@ public:
     ///
     cmo_msg* createMsg(std::string message, QPoint pos)
     {
-            cmo_msg *msg = new cmo_msg((cm_object*)this);   //check
+        cmo_msg *msg = new cmo_msg((cm_object*)this);   //check
+        msg->setObjectData(message);
 
-            msg->addInlet();
-            msg->addOutlet();
+        msg->addInlet();
+        msg->addOutlet();
 
-            connect(msg,&cmo_msg::selectBox, this, &cm_canvas::s_SelectBox);
-            connect(msg,&cmo_msg::moveBox, this, &cm_canvas::s_MoveBox);
+        connect(msg,&cmo_msg::selectBox, this, &cm_canvas::s_SelectBox);
+        connect(msg,&cmo_msg::moveBox, this, &cm_canvas::s_MoveBox);
 
-            msg->setEditModeRef(&this->editMode);
+        msg->setEditModeRef(&this->editMode);
 
-            msg->move(pos);
+        msg->move(pos);
 
-            this->objectBoxes.push_back(msg);
+        this->objectBoxes.push_back(msg);
 
-            //temp
-            t_object* new_obj = 0 ;
-            if (!this->pd_canvas)
-                {qDebug("bad pd canvas instance");}
-            else
-            {
-                new_obj = cmp_create_message(this->pd_canvas, message, pos.x(), pos.y());
-            }
+        //temp
+        t_object* new_obj = 0 ;
+        if (!this->pd_canvas)
+        {qDebug("bad pd canvas instance");}
+        else
+        {
+            new_obj = cmp_create_message(this->pd_canvas, message, pos.x(), pos.y());
+        }
 
-            if (new_obj)
-            {
-                qDebug ("created msgbox %s | ptr %lu\n",  message.c_str(), (long)new_obj);
-                msg->setPdObject(new_obj);
-            }
-            else
-            {
-                qDebug("Error: no such object %s",  message.c_str());
-            }
+        if (new_obj)
+        {
+            qDebug ("created msgbox %s | ptr %lu\n",  message.c_str(), (long)new_obj);
+            msg->setPdObject(new_obj);
+        }
+        else
+        {
+            qDebug("Error: no such object %s",  message.c_str());
+        }
 
-            msg->setPdMessage(message.c_str());
+        msg->setPdMessage(message.c_str());
 
-            msg->show();
+        msg->show();
 
-            return msg;
+        return msg;
 
 
     }
@@ -505,13 +506,21 @@ public:
     ///
     void patchcord(cm_object* obj1, int outlet, cm_object* obj2, int inlet)
     {
-        cm_port* outport = ((cmo_box*)obj1)->getOutletAt(outlet);
-        cm_port* inport = ((cmo_box*)obj2)->getInletAt(inlet);
+        if (obj1->getPdObject() && obj2->getPdObject())
+        {
+            cm_port* outport = ((cmo_box*)obj1)->getOutletAt(outlet);
+            cm_port* inport = ((cmo_box*)obj2)->getInletAt(inlet);
 
-        cm_patchcord* pc = new cm_patchcord(obj1,outport,obj2,inport);
-        cmp_patchcord((t_object*)obj1->getPdObject(),outlet,(t_object*)obj2->getPdObject(),inlet);
+            cm_patchcord* pc = new cm_patchcord(obj1,outport,obj2,inport);
 
-        this->patchcords.push_back(pc);
+            qDebug("pdlib patchcord");
+            cmp_patchcord((t_object*)obj1->getPdObject(),outlet,(t_object*)obj2->getPdObject(),inlet);
+            this->patchcords.push_back(pc);
+        }
+        else
+            qDebug("canvas patchcord error");
+
+
 
 
     }
@@ -534,16 +543,16 @@ public:
 
     }
 
-//    void deletePatchcord(cm_patchcord* pc)
-//    {
-//        // no repaint
+    //    void deletePatchcord(cm_patchcord* pc)
+    //    {
+    //        // no repaint
 
-//        //cleanup !!!
-//        auto it = std::find(this->patchcords.begin(), this->patchcords.end(), pc);
+    //        //cleanup !!!
+    //        auto it = std::find(this->patchcords.begin(), this->patchcords.end(), pc);
 
-//        if (it != this->patchcords.end()) { this->patchcords.erase(it); }
+    //        if (it != this->patchcords.end()) { this->patchcords.erase(it); }
 
-//    }
+    //    }
 
     //cm_patchcord* pc = new cm_patchcord(obj1,outport,obj2,inport);
 
@@ -578,8 +587,10 @@ public:
 
         if (box->getPdObject())
         {
-//NEEDS FIX
-            //            cmp_deleteobject(this->pd_canvas, (t_object*)box->getPdObject());
+            //NEEDS FIX
+            if ((t_object*)box->getPdObject())
+                if (!box->isErrorBox())
+                    cmp_deleteobject(this->pd_canvas, (t_object*)box->getPdObject());
         }
 
         this->deletePatchcordsFor(box);

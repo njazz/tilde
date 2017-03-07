@@ -63,33 +63,34 @@ public:
             }
         }
 
-        //        if (list.at(0) == "msg")
-        //        {
-        //            qDebug("new msg");
-        //            if (list.size()>3)
-        //            {
-        //                QString objname;
-        //                QPoint pos;
+        //compatibility
+        if (list.at(0) == "msg")
+        {
+            qDebug("new msg");
+            if (list.size()>3)
+            {
+                QString objname;
+                QPoint pos;
 
-        //                pos.setX(((QString)list.value(1)).toFloat());
-        //                pos.setY(((QString)list.value(2)).toFloat());
+                pos.setX(((QString)list.value(1)).toFloat());
+                pos.setY(((QString)list.value(2)).toFloat());
 
-        //                //lol
-        //                QStringList objList = list;
-        //                objList.removeAt(0);
-        //                objList.removeAt(0);
-        //                objList.removeAt(0);
-        //                objname = objList.join(" ");
+                //lol
+                QStringList objList = list;
+                objList.removeAt(0);
+                objList.removeAt(0);
+                objList.removeAt(0);
+                objname = objList.join(" ");
 
+                qDebug() << "msg name" << objname;
 
-
-        //                this->canvas->createMsg(objname.toStdString(), pos);
-        //            }
-        //            else
-        //            {
-        //                qDebug("list error");
-        //            }
-        //        }
+                cmcanvas->createMsg(objname.toStdString(), pos);
+            }
+            else
+            {
+                qDebug("list error");
+            }
+        }
 
         if (list.at(0) == "connect")
         {
@@ -97,21 +98,27 @@ public:
 
             if (list.size()>4)
             {
-                cm_object * obj1 = cmcanvas->getObjectByIndex( ((QString)list.value(1)).toInt() );
-                cm_object * obj2 = cmcanvas->getObjectByIndex( ((QString)list.value(3)).toInt() );
-
-                if (!obj1 || !obj2)
+                //if (cmcanvas)
                 {
-                    qDebug("object not found - could not connect");
-                    return;
+                    cm_object * obj1 = cmcanvas->getObjectByIndex( ((QString)list.value(1)).toInt() );
+                    cm_object * obj2 = cmcanvas->getObjectByIndex( ((QString)list.value(3)).toInt() );
+
+                    if (!obj1 || !obj2)
+                    {
+                        qDebug("object not found - could not connect");
+                        return;
+                    }
+
+                    int idx1 = ((QString)list.value(2)).toInt() ;
+                    int idx2 = ((QString)list.value(4)).toInt() ;
+
+                    //cmcanvas->patchcord();
+                    if ( !obj1->isErrorBox() && !obj2->isErrorBox() )
+                    {
+                        qDebug("patchcord");
+                        cmcanvas->patchcord(obj1,idx1,obj2,idx2);
+                    }
                 }
-                int idx1 = ((QString)list.value(2)).toInt() ;
-                int idx2 = ((QString)list.value(4)).toInt() ;
-
-                //cmcanvas->patchcord();
-                if (!obj1->isErrorBox() && !obj2->isErrorBox() )
-                    cmcanvas->patchcord(obj1,idx1,obj2,idx2);
-
             }
 
             else

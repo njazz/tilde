@@ -28,6 +28,7 @@ class cmo_box : public cm_object {
 
 public:
     explicit cmo_box(cm_object* parent = 0);
+    ~cmo_box();
 
     ////
     /// \brief temporary - make separate ui class for subpatches?
