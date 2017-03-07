@@ -4,7 +4,7 @@
 #include "cm_widget.h"
 #include "cm_port.h"
 
-
+#include "cm_preferences.h"
 
 
 ////
@@ -108,7 +108,7 @@ public:
     void setObjectData(std::string objData)
     {
         this->objectData = objData;
-        QFont myFont("Monaco", 11);
+        QFont myFont(cmp_font, 11);
         QFontMetrics fm(myFont);
 
         this->setFixedWidth((int)fm.width(QString(this->objectData.c_str())) + 5);

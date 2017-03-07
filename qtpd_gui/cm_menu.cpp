@@ -13,7 +13,7 @@
 ///
 void cm_menu::newFile()
 {
-    cm_patchwindow *newWindow = new cm_patchwindow;
+    cm_patchwindow *newWindow = cm_patchwindow::newWindow();
     newWindow->show();
 }
 

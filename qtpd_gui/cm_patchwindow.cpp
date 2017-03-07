@@ -2,23 +2,16 @@
 
 cm_patchwindow::cm_patchwindow()
 {
-    ((QMainWindow*)this)->setWindowTitle("Untitled-1");
-
     this->createActions();
     this->createMenus();
 
-    QScrollArea *scr = new QScrollArea(this);
-    scr->setFrameShape(QFrame::NoFrame);
+    this->scroll = new QScrollArea(this);
+    this->scroll->setFrameShape(QFrame::NoFrame);
+    this->scroll->setWidgetResizable(true);
 
-    this->canvas = new cm_canvas((cm_widget*)scr);
-    this->canvas->pd_canvas = cmp_newpatch();
-
-    scr->setWidgetResizable(true);
+    this->canvas = new cm_canvas((cm_widget*)this->scroll);
 
     this->setCentralWidget(this->canvas);
-
-    if (!this->canvas->pd_canvas)
-    {qDebug("Failed to create canvas!");}
 
     this->objectMaker = new cm_objectmaker();
     this->objectMaker->setParent(this->canvas);
@@ -26,41 +19,77 @@ cm_patchwindow::cm_patchwindow()
     this->objectMaker->close();
 
     this->editModeAct->setChecked(true);
-
 }
+
+cm_patchwindow* cm_patchwindow::newWindow()
+{
+    cm_patchwindow* this_;
+    this_ = new cm_patchwindow;
+
+    ((QMainWindow*)this_)->setWindowTitle("Untitled-1");
+
+    this_->canvas->pd_canvas = cmp_newpatch();
+
+    if (!this_->canvas->pd_canvas)
+    {qDebug("Failed to create canvas!");}
+
+    return this_;
+}
+
+//////
+///// \brief this constructor is used by pd file parser
+/////
+//cm_patchwindow* cm_patchwindow::loadWindow(QStringList)    //
+//{
+//    cm_patchwindow* this_;
+//    this_ = new cm_patchwindow;
+
+//    ((QMainWindow*)this_)->setWindowTitle("Untitled-1");
+
+//    this_->createActions();
+//    this_->createMenus();
+
+//    QScrollArea *scr = new QScrollArea(this_);
+//    scr->setFrameShape(QFrame::NoFrame);
+
+//    this_->canvas = new cm_canvas((cm_widget*)scr);
+//    this_->canvas->pd_canvas = cmp_newpatch();
+
+//    scr->setWidgetResizable(this_);
+
+//    this_->setCentralWidget(this_->canvas);
+
+//    if (!this_->canvas->pd_canvas)
+//    {qDebug("Failed to create canvas!");}
+
+//    this_->objectMaker = new cm_objectmaker();
+//    this_->objectMaker->setParent(this_->canvas);
+//    connect(this_->objectMaker,&cm_objectmaker::returnPressed, this_, &cm_patchwindow::objectMakerDone);
+//    this_->objectMaker->close();
+
+//    this_->editModeAct->setChecked(true);
+
+//    return this_;
+//}
 
 ////
-/// \brief this constructor is used by pd file parser
+/// \brief constructor for the subpatches' windows
+/// \param subpatch
 ///
-cm_patchwindow::cm_patchwindow(QStringList)    //
+cm_patchwindow* cm_patchwindow::newSubpatch(t_canvas* subpatch)
 {
-    ((QMainWindow*)this)->setWindowTitle("Untitled-1");
+    cm_patchwindow* this_;
+    this_ = new cm_patchwindow;
 
-    this->createActions();
-    this->createMenus();
+    ((QMainWindow*)this_)->setWindowTitle("<subpatch>");
 
-    QScrollArea *scr = new QScrollArea(this);
-    scr->setFrameShape(QFrame::NoFrame);
+    this_->canvas->pd_canvas = subpatch;
 
-    this->canvas = new cm_canvas((cm_widget*)scr);
-    this->canvas->pd_canvas = cmp_newpatch();
-
-    scr->setWidgetResizable(true);
-
-    this->setCentralWidget(this->canvas);
-
-    if (!this->canvas->pd_canvas)
+    if (!this_->canvas->pd_canvas)
     {qDebug("Failed to create canvas!");}
 
-    this->objectMaker = new cm_objectmaker();
-    this->objectMaker->setParent(this->canvas);
-    connect(this->objectMaker,&cm_objectmaker::returnPressed, this, &cm_patchwindow::objectMakerDone);
-    this->objectMaker->close();
-
-    this->editModeAct->setChecked(true);
-
+    return this_;
 }
-
 
 
 
@@ -136,10 +165,22 @@ void cm_patchwindow::objectMakerDone()
 
     if (obj_name!="")
     {
-        this->canvas->createBox(obj_name, this->objectMaker->pos());
+        cmo_box* b = this->canvas->createBox(obj_name, this->objectMaker->pos());
 
         this->canvas->dragObject = 0;
         this->objectMaker->close();
+
+
+        //subpatch
+
+        QStringList atoms = QString(obj_name.c_str()).split( " " );
+        if (atoms.at(0) == "pd")
+        {
+            qDebug("subpatch");
+
+            cm_patchwindow *subPatch = cm_patchwindow::newSubpatch((t_canvas*)b->getPdObject());
+            subPatch->show();
+        }
     }
 
 }

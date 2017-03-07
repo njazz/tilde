@@ -37,7 +37,7 @@ public:
         op->setAlignment(Qt::AlignLeft);
         p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
-        p.setFont(QFont("Monaco", 11, 0, false));
+        p.setFont(QFont(cmp_font, 11, 0, false));
         p.drawText(2, 3, this->width() - 2, this->height() - 3, 0, this->getObjectData().c_str(), 0);
 
         if (this->isSelected()) {

@@ -77,6 +77,7 @@ public:
     explicit cm_canvas(cm_widget *parent = 0);
     cm_canvas(QWidget *parent = 0);
 
+
     ////
     /// \brief main paint routine
     ///

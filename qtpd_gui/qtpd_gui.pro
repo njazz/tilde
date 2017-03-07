@@ -53,7 +53,8 @@ HEADERS  += \
     cmo_msg.h \
     cmo_box.h \
     cm_fileparser.h \
-    cm_object.h
+    cm_object.h \
+    cm_preferences.h
 
 FORMS    += \
     cm_basewindow.ui \

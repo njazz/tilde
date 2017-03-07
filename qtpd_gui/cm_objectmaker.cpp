@@ -1,4 +1,5 @@
 #include "cm_objectmaker.h"
+#include "cm_preferences.h"
 
 cm_objectmaker::cm_objectmaker()
 {
@@ -10,7 +11,7 @@ cm_objectmaker::cm_objectmaker()
 
 void  cm_objectmaker::editorChanged()
 {
-    QFont myFont("Monaco", 11);
+    QFont myFont(cmp_font, 11);
     QFontMetrics fm(myFont);
     int new_w = fm.width(QString(this->text())) + 10;
     new_w = (new_w<65) ? 65 : new_w;

@@ -8,6 +8,8 @@
 
 #include "cm_pdlink.h"
 
+#include "cm_preferences.h"
+
 //temporary
 
 namespace Ui {

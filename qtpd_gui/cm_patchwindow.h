@@ -14,6 +14,9 @@ class cm_patchwindow : public cm_basewindow
 {
 
 private:
+    QScrollArea *scroll;
+
+    ////
 
     QAction *delObjectAct;
     QAction *editModeAct;
@@ -71,10 +74,12 @@ private slots:
     void save();
     void saveAs();
 
-
-public:
     cm_patchwindow();
-    cm_patchwindow(QStringList ); //arguments
+public:
+    static cm_patchwindow* newWindow();
+//    static cm_patchwindow* loadWindow(QStringList); //arguments
+    static cm_patchwindow* newSubpatch(t_canvas *subpatch = 0);
+
     cm_canvas* canvas;
 
 
@@ -247,6 +252,8 @@ public:
 
     }
 
+    ///////
+
     void newObjectBox()
     {
 
@@ -298,12 +305,6 @@ public:
 
     void setGridVisible()
     {
-//        if (! (( this->canvas->getEditMode()) == em_Locked ))
-//            this->canvas->setEditMode(em_Locked);
-//        else
-//            this->canvas->setEditMode(em_Unlocked);
-
-
         this->showGridAct->setChecked(this->showGridAct->isChecked());
         this->canvas->setGridEnabled(this->showGridAct->isChecked());
         this->canvas->repaint();
@@ -311,8 +312,6 @@ public:
 
 
     /////
-
-
 
     //    void keyPressEvent(QKeyEvent *event)
     //    {

@@ -144,7 +144,7 @@ public:
             msg.removeFirst();
 
             pdParserPrevCanvas = pdParserCanvas;
-            cm_patchwindow* newWnd = new cm_patchwindow(msg);
+            cm_patchwindow* newWnd = cm_patchwindow::newWindow();
             pdParserCanvas = newWnd->canvas;
             //newWnd->canvas->fileName = QString(pdParserFileName.c_str());
             newWnd->setFileName(QString(pdParserFileName.c_str()));

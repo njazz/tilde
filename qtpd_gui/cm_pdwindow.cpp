@@ -32,6 +32,7 @@ void cm_pdwindow::cm_log(std::string text)
 
             ui->log->insertRow(0);
             QTableWidgetItem *item = new QTableWidgetItem;
+            item->setFlags(item->flags() &  ~Qt::ItemIsEditable);
             item->setText(QDateTime().currentDateTime().toString((QString("hh:mm:ss"))));
             ui->log->setItem(0,0,item);
 
@@ -83,6 +84,10 @@ cm_pdwindow::cm_pdwindow() :
     ui->log->horizontalHeader()->setStretchLastSection(true);
 
     ui->log->insertColumn(0);
+
+    ui->log->setFont(QFont(cmp_font, 12, 0, false));
+
+    ui->log->setColumnWidth(0,70);
 
     this->cm_post("qtpd started");
     this->cm_post("---");
