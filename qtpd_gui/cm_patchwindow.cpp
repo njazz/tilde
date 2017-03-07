@@ -179,6 +179,7 @@ void cm_patchwindow::objectMakerDone()
             qDebug("subpatch");
 
             cm_patchwindow *subPatch = cm_patchwindow::newSubpatch((t_canvas*)b->getPdObject());
+            b->cmSubcanvas = (QMainWindow*)subPatch;
             subPatch->show();
         }
     }

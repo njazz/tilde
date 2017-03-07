@@ -10,6 +10,10 @@
 #include "cm_widget.h"
 #include "cm_object.h"
 
+#include "cm_pdlink.h"
+
+#include <QMainWindow>
+
 //typedef void t_object;
 // basic object
 
@@ -17,10 +21,18 @@
 /// \brief gui object: standard object box
 ///
 class cmo_box : public cm_object {
+
     Q_OBJECT
+
+
 
 public:
     explicit cmo_box(cm_object* parent = 0);
+
+    ////
+    /// \brief temporary - make separate ui class for subpatches?
+    ///
+    QMainWindow *cmSubcanvas;
 
     ////
     /// \brief paint event
@@ -43,6 +55,14 @@ public:
         if (this->isSelected()) {
             p.setPen(QPen(QColor(0, 192, 255), 2,(this->isErrorBox())? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
             p.drawRect(0, 0, this->width(), this->height());
+        }
+
+        if (this->cmSubcanvas)
+        {
+
+            p.setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p.drawRect(2, 2, this->width()-4, this->height()-4);
+
         }
     }
 
@@ -85,17 +105,17 @@ signals:
     void mouseMoved();
     void rightClicked();
 
-//    void inletMousePressed();
-//    void inletMouseReleased();
+    //    void inletMousePressed();
+    //    void inletMouseReleased();
 
-//    void inletMouseEntered();
-//    void inletMouseLeaved();
+    //    void inletMouseEntered();
+    //    void inletMouseLeaved();
 
-//    void outletMousePressed();
-//    void outletMouseReleased();
+    //    void outletMousePressed();
+    //    void outletMouseReleased();
 
-//    void outletMouseEntered();
-//    void outletMouseLeaved();
+    //    void outletMouseEntered();
+    //    void outletMouseLeaved();
 
 
 private slots:

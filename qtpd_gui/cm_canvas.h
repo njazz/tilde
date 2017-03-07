@@ -306,6 +306,76 @@ public:
         this->selObjectBoxes.clear();
     }
 
+    ////
+    /// \brief restore "pd" object when loading from file
+    /// \param pdObjectData
+    /// \param pos
+    /// \param canvas
+    /// \return
+    ///
+
+    cmo_box* restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas* canvas)
+{
+    cmo_box *box = new cmo_box((cm_object*)this);   //test?
+    box->setObjectData(pdObjectName);
+
+    connect(box,&cmo_box::selectBox, this, &cm_canvas::s_SelectBox);
+    connect(box,&cmo_box::moveBox, this, &cm_canvas::s_MoveBox);
+
+    box->setEditModeRef(&this->editMode);
+
+    const char * obj_name = pdObjectName.c_str();
+
+    t_object* new_obj = 0 ;
+    int in_c=0, out_c=0;
+
+    //temp
+    if (!this->pd_canvas)
+    {
+        qDebug("bad pd canvas instance");
+        box->setErrorBox(true);
+    }
+    else
+    {
+        new_obj = (t_object*)canvas;//cmp_create_object(this->pd_canvas,(char*)obj_name,pos.x(), pos.y());
+    }
+
+    if (new_obj)
+    {
+
+        // qDebug ("created object %lu, new_obj");
+
+        in_c = cmp_get_inlet_count(new_obj);
+        out_c = cmp_get_outlet_count(new_obj);
+
+        qDebug ("created object %s ins %i outs %i ptr %lu", obj_name, in_c, out_c, (long)new_obj);
+
+        //cm_box* newBox = this->canvas->createBox(this->objectMaker->text().toStdString(),this->objectMaker->pos(),in_c,out_c);
+        box->setPdObject(new_obj);
+
+    }
+    else
+    {
+        qDebug("Error: no such object %s", obj_name);
+        box->setErrorBox(true);
+        in_c = 0; out_c = 0;
+        //return 0;
+    }
+
+    for (int i=0;i<in_c;i++)
+        box->addInlet();
+    for (int i=0;i<out_c;i++)
+        box->addOutlet();
+
+    box->move(pos);
+
+    this->objectBoxes.push_back(box);
+
+    box->show();
+
+    return box;
+
+}
 
     ////
     /// \brief create new object box

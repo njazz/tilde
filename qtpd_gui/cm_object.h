@@ -7,6 +7,8 @@
 #include "cm_preferences.h"
 
 
+
+
 ////
 /// \brief base class for all object boxes - standard and special
 ///

@@ -17,8 +17,8 @@ private:
 public:
 
     // or t_canvas?
-    static cm_canvas* pdParserPrevCanvas;
-    static cm_canvas* pdParserCanvas;
+    static cm_patchwindow* pdParserPrevWindow;
+    static cm_patchwindow* pdParserWindow;
     static std::string pdParserFileName;
 
 
@@ -122,8 +122,63 @@ public:
 
         if (list.at(0) == "restore")
         {
-            //draw subpatch
-            pdParserCanvas = pdParserPrevCanvas;
+
+            qDebug("restore canvas: %lu | previous %lu", pdParserWindow, pdParserPrevWindow);
+
+
+            //parserwindow - subpatch
+            //prev window - parent patch
+
+            //restore pd box
+            if (list.size()>3)
+            {
+                QString objname;
+                QPoint pos;
+
+                pos.setX(((QString)list.value(1)).toFloat());
+                pos.setY(((QString)list.value(2)).toFloat());
+
+                //lol
+                QStringList objList = list;
+                objList.removeAt(0);
+                objList.removeAt(0);
+                objList.removeAt(0);
+                objname = objList.join(" ");
+
+                qDebug() << "objname" << objname;
+                //temporary
+
+                cmo_box *b1 = 0;
+
+                if (objList.at(0) == "pd")
+                {
+                    if (pdParserPrevWindow)
+                    {
+                        if (pdParserPrevWindow->canvas)
+                        {
+                            b1 = pdParserPrevWindow->canvas->restoreSubcanvas(objname.toStdString(), pos, pdParserWindow->canvas->pd_canvas);
+                            b1->cmSubcanvas = pdParserWindow;
+                        }
+                    }
+                }
+                else
+                {
+                    qDebug("pd subpatch error");
+                }
+
+                //draw subpatch
+                pdParserWindow = pdParserPrevWindow;
+
+
+
+            }
+            else
+            {
+                qDebug("list error");
+            }
+
+
+
         }
 
     }
@@ -144,16 +199,16 @@ public:
             QStringList msg = atoms;
             msg.removeFirst();
 
+            pdParserPrevWindow = pdParserWindow;
 
             cm_patchwindow* newWnd = cm_patchwindow::newWindow();
-            pdParserCanvas = newWnd->canvas;
-            //newWnd->canvas->fileName = QString(pdParserFileName.c_str());
-            //newWnd->setFileName(QString(pdParserFileName.c_str()));
-            if (pdParserPrevCanvas)
+            pdParserWindow = newWnd;
+
+            if (pdParserPrevWindow)
                 newWnd->setWindowTitle("<subpatch>");
             newWnd->show();   //move to constructor? check for subcanvases the vis flag
 
-            pdParserPrevCanvas = pdParserCanvas;
+
         }
 
         if (atoms.at(0) == "#X")
@@ -161,9 +216,9 @@ public:
             QStringList msg = atoms;
             msg.removeFirst();
 
-            if (pdParserCanvas)
+            if (pdParserWindow)
             {
-                cm_fileparser::stringToCanvas(pdParserCanvas, msg);
+                cm_fileparser::stringToCanvas(pdParserWindow->canvas, msg);
             }
             else
             {
@@ -184,8 +239,8 @@ public:
 
         QStringList stringList;
 
-        pdParserCanvas = 0;
-        pdParserPrevCanvas = 0;
+        pdParserWindow = 0;
+        pdParserPrevWindow = 0;
         pdParserFileName = fname.toStdString();
 
         QTextStream textStream(&f);
