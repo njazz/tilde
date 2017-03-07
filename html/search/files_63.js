@@ -21,6 +21,7 @@ var searchData=
   ['cm_5fpdwindow_2eh',['cm_pdwindow.h',['../cm__pdwindow_8h.html',1,'']]],
   ['cm_5fport_2ecpp',['cm_port.cpp',['../cm__port_8cpp.html',1,'']]],
   ['cm_5fport_2eh',['cm_port.h',['../cm__port_8h.html',1,'']]],
+  ['cm_5fpreferences_2eh',['cm_preferences.h',['../cm__preferences_8h.html',1,'']]],
   ['cm_5fwidget_2ecpp',['cm_widget.cpp',['../cm__widget_8cpp.html',1,'']]],
   ['cm_5fwidget_2eh',['cm_widget.h',['../cm__widget_8h.html',1,'']]],
   ['cmo_5fbox_2ecpp',['cmo_box.cpp',['../cmo__box_8cpp.html',1,'']]],

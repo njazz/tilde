@@ -106,71 +106,74 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00027"></a><a class="code" href="classcm__patchcord.html#a5e5532093b721647388119809f6d286f">00027</a>     <span class="keywordtype">bool</span> <a class="code" href="classcm__patchcord.html#a5e5532093b721647388119809f6d286f">selected</a>;
 <a name="l00028"></a>00028     <span class="comment">//explicit cm_patchcord(cm_widget *parent = 0);</span>
 <a name="l00029"></a>00029 
-<a name="l00030"></a>00030     <a class="code" href="classcm__patchcord.html#a5871c45e718bc3ab2e57c716b9524db9">cm_patchcord</a>();
-<a name="l00031"></a>00031     <a class="code" href="classcm__patchcord.html#a5871c45e718bc3ab2e57c716b9524db9">cm_patchcord</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>* obj1, <a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>* out1, <a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>* obj2, <a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>* in2);
+<a name="l00030"></a>00030     <span class="comment">//cm_patchcord();</span>
+<a name="l00031"></a>00031     <span class="keyword">explicit</span> <a class="code" href="classcm__patchcord.html#a73fc0ef79bc39f2149bccf6267863e8c">cm_patchcord</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>* obj1, <a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>* out1, <a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>* obj2, <a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>* in2);
 <a name="l00032"></a>00032 
 <a name="l00033"></a><a class="code" href="classcm__patchcord.html#a6698e93c5934891740ad9670c3545351">00033</a>     QPoint <a class="code" href="classcm__patchcord.html#a6698e93c5934891740ad9670c3545351">getStartPoint</a>()
 <a name="l00034"></a>00034     {
 <a name="l00035"></a>00035 
-<a name="l00036"></a>00036         QPoint start;
-<a name="l00037"></a>00037         start = QPoint( obj1-&gt;pos().x() + out1-&gt;pos().x() + out1-&gt;width()/2,
-<a name="l00038"></a>00038                         obj1-&gt;pos().y() + out1-&gt;pos().y() + out1-&gt;height()/2 );
-<a name="l00039"></a>00039 
-<a name="l00040"></a>00040         <span class="keywordflow">return</span> start;
-<a name="l00041"></a>00041     }
-<a name="l00042"></a>00042 
-<a name="l00043"></a><a class="code" href="classcm__patchcord.html#afd0ba2ba08b6bdbc90585c8ce311bf98">00043</a>     QPoint <a class="code" href="classcm__patchcord.html#afd0ba2ba08b6bdbc90585c8ce311bf98">getEndPoint</a>()
-<a name="l00044"></a>00044     {
-<a name="l00045"></a>00045         QPoint end;
-<a name="l00046"></a>00046         end = QPoint (obj2-&gt;pos().x() + in2-&gt;pos().x() + in2-&gt;width()/2,
-<a name="l00047"></a>00047                       obj2-&gt;pos().y() + in2-&gt;pos().y() + in2-&gt;height()/2);
-<a name="l00048"></a>00048         <span class="keywordflow">return</span> end;
-<a name="l00049"></a>00049 
-<a name="l00050"></a>00050     }
-<a name="l00051"></a>00051 
-<a name="l00052"></a><a class="code" href="classcm__patchcord.html#a11ec64fcf2f1772302c98c2980ef79c7">00052</a>     <span class="keywordtype">bool</span> <a class="code" href="classcm__patchcord.html#a11ec64fcf2f1772302c98c2980ef79c7">connectsObject</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>* obj)
-<a name="l00053"></a>00053     {
-<a name="l00054"></a>00054         <span class="keywordflow">return</span> ( (obj == this-&gt;obj1) || (obj == this-&gt;obj2) );
-<a name="l00055"></a>00055     }
-<a name="l00056"></a>00056 
-<a name="l00057"></a><a class="code" href="classcm__patchcord.html#a6448e6c277c584968e6be69916d3d161">00057</a>     <span class="keywordtype">bool</span> <a class="code" href="classcm__patchcord.html#a6448e6c277c584968e6be69916d3d161">hover</a>(QPoint pos)
-<a name="l00058"></a>00058     {
-<a name="l00059"></a>00059         QPoint start = this-&gt;<a class="code" href="classcm__patchcord.html#a6698e93c5934891740ad9670c3545351">getStartPoint</a>();
-<a name="l00060"></a>00060         QPoint end = this-&gt;<a class="code" href="classcm__patchcord.html#afd0ba2ba08b6bdbc90585c8ce311bf98">getEndPoint</a>();
-<a name="l00061"></a>00061 
-<a name="l00062"></a>00062         <span class="keywordtype">float</span> rx = end.x() - start.x();
-<a name="l00063"></a>00063         <span class="keywordtype">float</span> ry = end.y() - start.y();
+<a name="l00036"></a>00036         QPoint start = QPoint(0,0);
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038         <span class="keywordflow">if</span> (obj1 &amp;&amp; out1)
+<a name="l00039"></a>00039             start = QPoint( obj1-&gt;pos().x() + out1-&gt;pos().x() + out1-&gt;width()/2,
+<a name="l00040"></a>00040                             obj1-&gt;pos().y() + out1-&gt;pos().y() + out1-&gt;height()/2 );
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042         <span class="keywordflow">return</span> start;
+<a name="l00043"></a>00043     }
+<a name="l00044"></a>00044 
+<a name="l00045"></a><a class="code" href="classcm__patchcord.html#afd0ba2ba08b6bdbc90585c8ce311bf98">00045</a>     QPoint <a class="code" href="classcm__patchcord.html#afd0ba2ba08b6bdbc90585c8ce311bf98">getEndPoint</a>()
+<a name="l00046"></a>00046     {
+<a name="l00047"></a>00047         QPoint end = QPoint(0,0);
+<a name="l00048"></a>00048         <span class="keywordflow">if</span> (obj2 &amp;&amp; in2)
+<a name="l00049"></a>00049             end = QPoint (obj2-&gt;pos().x() + in2-&gt;pos().x() + in2-&gt;width()/2,
+<a name="l00050"></a>00050                           obj2-&gt;pos().y() + in2-&gt;pos().y() + in2-&gt;height()/2);
+<a name="l00051"></a>00051         <span class="keywordflow">return</span> end;
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053     }
+<a name="l00054"></a>00054 
+<a name="l00055"></a><a class="code" href="classcm__patchcord.html#a11ec64fcf2f1772302c98c2980ef79c7">00055</a>     <span class="keywordtype">bool</span> <a class="code" href="classcm__patchcord.html#a11ec64fcf2f1772302c98c2980ef79c7">connectsObject</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>* obj)
+<a name="l00056"></a>00056     {
+<a name="l00057"></a>00057         <span class="keywordflow">return</span> ( (obj == this-&gt;obj1) || (obj == this-&gt;obj2) );
+<a name="l00058"></a>00058     }
+<a name="l00059"></a>00059 
+<a name="l00060"></a><a class="code" href="classcm__patchcord.html#a6448e6c277c584968e6be69916d3d161">00060</a>     <span class="keywordtype">bool</span> <a class="code" href="classcm__patchcord.html#a6448e6c277c584968e6be69916d3d161">hover</a>(QPoint pos)
+<a name="l00061"></a>00061     {
+<a name="l00062"></a>00062         QPoint start = this-&gt;<a class="code" href="classcm__patchcord.html#a6698e93c5934891740ad9670c3545351">getStartPoint</a>();
+<a name="l00063"></a>00063         QPoint end = this-&gt;<a class="code" href="classcm__patchcord.html#afd0ba2ba08b6bdbc90585c8ce311bf98">getEndPoint</a>();
 <a name="l00064"></a>00064 
-<a name="l00065"></a>00065         <span class="keywordtype">float</span> ty = ry * (pos.x() - start.x()) / rx + start.y()  ;
-<a name="l00066"></a>00066         <span class="comment">//float tx = rx * (pos.y() - start.y()) / ry + start.x()  ;</span>
+<a name="l00065"></a>00065         <span class="keywordtype">float</span> rx = end.x() - start.x();
+<a name="l00066"></a>00066         <span class="keywordtype">float</span> ry = end.y() - start.y();
 <a name="l00067"></a>00067 
-<a name="l00068"></a>00068         <span class="keywordtype">bool</span> rx1_res = (fabs((<span class="keywordtype">float</span>)pos.y() - ty)&lt;7.) ;
-<a name="l00069"></a>00069         <span class="comment">//bool rx0_res = (abs(pos.x() - (int)tx)&lt;7) ;</span>
+<a name="l00068"></a>00068         <span class="keywordtype">float</span> ty = ry * (pos.x() - start.x()) / rx + start.y()  ;
+<a name="l00069"></a>00069         <span class="comment">//float tx = rx * (pos.y() - start.y()) / ry + start.x()  ;</span>
 <a name="l00070"></a>00070 
-<a name="l00071"></a>00071         <span class="keywordtype">bool</span> rx0_res = ( (
-<a name="l00072"></a>00072                              (pos.y() &gt; start.y())
-<a name="l00073"></a>00073                              &amp;&amp;
-<a name="l00074"></a>00074                              (pos.y() &lt; end.y())
-<a name="l00075"></a>00075                              )
-<a name="l00076"></a>00076                          &amp;&amp;
-<a name="l00077"></a>00077                          (pos.x() == start.x())
-<a name="l00078"></a>00078                          );
-<a name="l00079"></a>00079 
-<a name="l00080"></a>00080         <span class="keywordflow">return</span> (rx&gt;0) ? rx1_res : rx0_res;
-<a name="l00081"></a>00081 
+<a name="l00071"></a>00071         <span class="keywordtype">bool</span> rx1_res = (fabs((<span class="keywordtype">float</span>)pos.y() - ty)&lt;7.) ;
+<a name="l00072"></a>00072         <span class="comment">//bool rx0_res = (abs(pos.x() - (int)tx)&lt;7) ;</span>
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074         <span class="keywordtype">bool</span> rx0_res = ( (
+<a name="l00075"></a>00075                              (pos.y() &gt; start.y())
+<a name="l00076"></a>00076                              &amp;&amp;
+<a name="l00077"></a>00077                              (pos.y() &lt; end.y())
+<a name="l00078"></a>00078                              )
+<a name="l00079"></a>00079                          &amp;&amp;
+<a name="l00080"></a>00080                          (pos.x() == start.x())
+<a name="l00081"></a>00081                          );
 <a name="l00082"></a>00082 
-<a name="l00083"></a>00083     }
+<a name="l00083"></a>00083         <span class="keywordflow">return</span> (rx&gt;0) ? rx1_res : rx0_res;
 <a name="l00084"></a>00084 
-<a name="l00085"></a>00085 };
-<a name="l00086"></a>00086 
-<a name="l00087"></a>00087 <span class="preprocessor">#endif // CM_PATCHCORD_H</span>
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086     }
+<a name="l00087"></a>00087 
+<a name="l00088"></a>00088 };
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090 <span class="preprocessor">#endif // CM_PATCHCORD_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -182,7 +185,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 6 2017 22:55:07 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Mar 7 2017 11:20:23 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -80,6 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">cm_patchwindow Class Reference</div>  </div>
@@ -104,9 +105,6 @@ Inheritance diagram for cm_patchwindow:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__patchwindow.html#adde66f2ffc03eb905173c0783696f725">cm_patchwindow</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__patchwindow.html#a499ed0190bd81668f1bd26b0a13d0008">cm_patchwindow</a> (QStringList)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">this constructor is used by pd file parser  <a href="#a499ed0190bd81668f1bd26b0a13d0008"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__patchwindow.html#a23e89d610e3d192ffdc7ad495f74da59">createActions</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">create menu actions (File, Edit)  <a href="#a23e89d610e3d192ffdc7ad495f74da59"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__patchwindow.html#a2514fec437b9207934e0753ace19502e">createMenus</a> ()</td></tr>
@@ -124,49 +122,18 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__patchwindow.html#a3a4eec852b4212e1ef6fb42bd7db0ca6">keyPressEvent</a> (QKeyEvent *event)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">keys: ctrl for temporary lock; esc to stop editing actions  <a href="#a3a4eec852b4212e1ef6fb42bd7db0ca6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__patchwindow.html#ae491ac449532e8986428153b5b8c0a3e">keyReleaseEvent</a> (QKeyEvent *event)</td></tr>
+<tr><td colspan="2"><h2><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classcm__patchwindow.html">cm_patchwindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__patchwindow.html#ab97ced2778a0acdd78356a855b7fe1f3">newWindow</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classcm__patchwindow.html">cm_patchwindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__patchwindow.html#a79ddcd725c3fefe26b5be7e41d217cd9">newSubpatch</a> (t_canvas *subpatch=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor for the subpatches' windows  <a href="#a79ddcd725c3fefe26b5be7e41d217cd9"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcm__canvas.html">cm_canvas</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__patchwindow.html#a7c189d24956c7a3d6f9bbf3f12773bde">canvas</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Patch window. Creates scroll view and <a class="el" href="classcm__canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">cm_canvas</a>; Creates menu commands, forwards them to <a class="el" href="classcm__canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">cm_canvas</a>. </p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="adde66f2ffc03eb905173c0783696f725"></a><!-- doxytag: member="cm_patchwindow::cm_patchwindow" ref="adde66f2ffc03eb905173c0783696f725" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classcm__patchwindow.html#adde66f2ffc03eb905173c0783696f725">cm_patchwindow::cm_patchwindow</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a499ed0190bd81668f1bd26b0a13d0008"></a><!-- doxytag: member="cm_patchwindow::cm_patchwindow" ref="a499ed0190bd81668f1bd26b0a13d0008" args="(QStringList)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classcm__patchwindow.html#adde66f2ffc03eb905173c0783696f725">cm_patchwindow::cm_patchwindow</a> </td>
-          <td>(</td>
-          <td class="paramtype">QStringList&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>this constructor is used by pd file parser </p>
-
-</div>
-</div>
-<hr/><h2>Member Function Documentation</h2>
+</div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a8685067087c7446e874cc9988444647a"></a><!-- doxytag: member="cm_patchwindow::closeEvent" ref="a8685067087c7446e874cc9988444647a" args="(QCloseEvent *event)" -->
 <div class="memitem">
 <div class="memproto">
@@ -314,6 +281,47 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a79ddcd725c3fefe26b5be7e41d217cd9"></a><!-- doxytag: member="cm_patchwindow::newSubpatch" ref="a79ddcd725c3fefe26b5be7e41d217cd9" args="(t_canvas *subpatch=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcm__patchwindow.html">cm_patchwindow</a> * <a class="el" href="classcm__patchwindow.html#a79ddcd725c3fefe26b5be7e41d217cd9">cm_patchwindow::newSubpatch</a> </td>
+          <td>(</td>
+          <td class="paramtype">t_canvas *&#160;</td>
+          <td class="paramname"><em>subpatch</em> = <code>0</code></td><td>)</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>constructor for the subpatches' windows </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">subpatch</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab97ced2778a0acdd78356a855b7fe1f3"></a><!-- doxytag: member="cm_patchwindow::newWindow" ref="ab97ced2778a0acdd78356a855b7fe1f3" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcm__patchwindow.html">cm_patchwindow</a> * <a class="el" href="classcm__patchwindow.html#ab97ced2778a0acdd78356a855b7fe1f3">cm_patchwindow::newWindow</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ae4ac21d8ad380fbfeaa436550b971371"></a><!-- doxytag: member="cm_patchwindow::objectMakerDone" ref="ae4ac21d8ad380fbfeaa436550b971371" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -413,7 +421,7 @@ Public Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -425,7 +433,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 6 2017 22:55:07 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Mar 7 2017 11:20:23 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

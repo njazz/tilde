@@ -90,41 +90,43 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00008"></a>00008 
 <a name="l00009"></a>00009 <span class="preprocessor">#include &quot;<a class="code" href="cm__pdlink_8h.html">cm_pdlink.h</a>&quot;</span>
 <a name="l00010"></a>00010 
-<a name="l00011"></a>00011 <span class="comment">//temporary</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="cm__preferences_8h.html">cm_preferences.h</a>&quot;</span>
 <a name="l00012"></a>00012 
-<a name="l00013"></a>00013 <span class="keyword">namespace </span>Ui {
-<a name="l00014"></a>00014 <span class="keyword">class </span><a class="code" href="classcm__pdwindow.html" title="Pd console window.">cm_pdwindow</a>;
-<a name="l00015"></a>00015 }
-<a name="l00016"></a>00016 
-<a name="l00020"></a><a class="code" href="classcm__pdwindow.html">00020</a> <span class="keyword">class </span><a class="code" href="classcm__pdwindow.html" title="Pd console window.">cm_pdwindow</a> : <span class="keyword">public</span> <a class="code" href="classcm__basewindow.html" title="Base class for windows (patch, pd)">cm_basewindow</a>
-<a name="l00021"></a>00021 {
-<a name="l00022"></a>00022     Q_OBJECT
-<a name="l00023"></a>00023 
-<a name="l00024"></a>00024 <span class="keyword">private</span>:
-<a name="l00025"></a>00025     Ui::cm_pdwindow *ui;
-<a name="l00026"></a>00026 
-<a name="l00027"></a>00027 <span class="keyword">public</span>:
-<a name="l00028"></a>00028     <a class="code" href="classcm__pdwindow.html#a2f80c11500cd5082e90291baea88dabf">cm_pdwindow</a>();
-<a name="l00029"></a>00029 
-<a name="l00030"></a>00030     <span class="keywordtype">void</span> <a class="code" href="classcm__pdwindow.html#a41289ac3b4d58eb7287242f344ce6833">cm_log</a>(std::string text);
-<a name="l00031"></a>00031     <span class="keywordtype">void</span> <a class="code" href="classcm__pdwindow.html#a41aed0375c6b028bcdcb3615105c3182">cm_post</a>(std::string text);
-<a name="l00032"></a>00032 
-<a name="l00033"></a>00033 
-<a name="l00034"></a>00034 };
+<a name="l00013"></a>00013 <span class="comment">//temporary</span>
+<a name="l00014"></a>00014 
+<a name="l00015"></a>00015 <span class="keyword">namespace </span>Ui {
+<a name="l00016"></a>00016 <span class="keyword">class </span><a class="code" href="classcm__pdwindow.html" title="Pd console window.">cm_pdwindow</a>;
+<a name="l00017"></a>00017 }
+<a name="l00018"></a>00018 
+<a name="l00022"></a><a class="code" href="classcm__pdwindow.html">00022</a> <span class="keyword">class </span><a class="code" href="classcm__pdwindow.html" title="Pd console window.">cm_pdwindow</a> : <span class="keyword">public</span> <a class="code" href="classcm__basewindow.html" title="Base class for windows (patch, pd)">cm_basewindow</a>
+<a name="l00023"></a>00023 {
+<a name="l00024"></a>00024     Q_OBJECT
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026 <span class="keyword">private</span>:
+<a name="l00027"></a>00027     Ui::cm_pdwindow *ui;
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 <span class="keyword">public</span>:
+<a name="l00030"></a>00030     <a class="code" href="classcm__pdwindow.html#a2f80c11500cd5082e90291baea88dabf">cm_pdwindow</a>();
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032     <span class="keywordtype">void</span> <a class="code" href="classcm__pdwindow.html#a41289ac3b4d58eb7287242f344ce6833">cm_log</a>(std::string text);
+<a name="l00033"></a>00033     <span class="keywordtype">void</span> <a class="code" href="classcm__pdwindow.html#a41aed0375c6b028bcdcb3615105c3182">cm_post</a>(std::string text);
+<a name="l00034"></a>00034 
 <a name="l00035"></a>00035 
-<a name="l00036"></a>00036 <span class="comment">//fix - normal singleton here</span>
-<a name="l00037"></a>00037 <span class="keyword">static</span> <a class="code" href="classcm__pdwindow.html" title="Pd console window.">cm_pdwindow</a>* pdw;
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039 
+<a name="l00036"></a>00036 };
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038 <span class="comment">//fix - normal singleton here</span>
+<a name="l00039"></a>00039 <span class="keyword">static</span> <a class="code" href="classcm__pdwindow.html" title="Pd console window.">cm_pdwindow</a>* pdw;
 <a name="l00040"></a>00040 
-<a name="l00041"></a>00041 <span class="preprocessor">#endif // CM_PDWINDOW_H</span>
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043 <span class="preprocessor">#endif // CM_PDWINDOW_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -136,7 +138,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 6 2017 22:55:07 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Mar 7 2017 11:20:23 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
