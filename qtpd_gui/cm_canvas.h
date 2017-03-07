@@ -207,7 +207,6 @@ public:
         {
             QPoint offset = QPoint(10,10);
             this->dragObject->move(mapToParent(ev->pos() - offset));
-
         }
 
         //selection frame

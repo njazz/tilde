@@ -13,6 +13,7 @@ class cm_fileparser
 {
 private:
     cm_fileparser(){};
+
 public:
 
     // or t_canvas?
@@ -99,11 +100,11 @@ public:
                 cm_object * obj1 = cmcanvas->getObjectByIndex( ((QString)list.value(1)).toInt() );
                 cm_object * obj2 = cmcanvas->getObjectByIndex( ((QString)list.value(3)).toInt() );
 
-                 if (!obj1 || !obj2)
-                 {
-                     qDebug("object not found - could not connect");
-                     return;
-                 }
+                if (!obj1 || !obj2)
+                {
+                    qDebug("object not found - could not connect");
+                    return;
+                }
                 int idx1 = ((QString)list.value(2)).toInt() ;
                 int idx2 = ((QString)list.value(4)).toInt() ;
 
@@ -143,12 +144,16 @@ public:
             QStringList msg = atoms;
             msg.removeFirst();
 
-            pdParserPrevCanvas = pdParserCanvas;
+
             cm_patchwindow* newWnd = cm_patchwindow::newWindow();
             pdParserCanvas = newWnd->canvas;
             //newWnd->canvas->fileName = QString(pdParserFileName.c_str());
-            newWnd->setFileName(QString(pdParserFileName.c_str()));
+            //newWnd->setFileName(QString(pdParserFileName.c_str()));
+            if (pdParserPrevCanvas)
+                newWnd->setWindowTitle("<subpatch>");
             newWnd->show();   //move to constructor? check for subcanvases the vis flag
+
+            pdParserPrevCanvas = pdParserCanvas;
         }
 
         if (atoms.at(0) == "#X")
@@ -180,6 +185,7 @@ public:
         QStringList stringList;
 
         pdParserCanvas = 0;
+        pdParserPrevCanvas = 0;
         pdParserFileName = fname.toStdString();
 
         QTextStream textStream(&f);
