@@ -148,7 +148,6 @@ public:
                 qDebug() << "objname" << objname;
                 //temporary
 
-                cmo_box *b1 = 0;
 
                 if (objList.at(0) == "pd")
                 {
@@ -156,6 +155,8 @@ public:
                     {
                         if (pdParserPrevWindow->canvas)
                         {
+                            cmo_box *b1 = 0;
+
                             b1 = pdParserPrevWindow->canvas->restoreSubcanvas(objname.toStdString(), pos, pdParserWindow->canvas->pd_canvas);
                             b1->cmSubcanvas = pdParserWindow;
                         }

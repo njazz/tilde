@@ -75,7 +75,7 @@ public:
     t_canvas* pd_canvas;
 
     explicit cm_canvas(cm_widget *parent = 0);
-    cm_canvas(QWidget *parent = 0);
+    explicit cm_canvas(QWidget *parent = 0);
 
 
     ////

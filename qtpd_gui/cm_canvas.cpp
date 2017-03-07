@@ -20,6 +20,12 @@ cm_canvas::cm_canvas(cm_widget *parent) : cm_widget(parent)
     //
     this->gridEnabled = true;
     this->gridStep = 20;
+
+    //
+    this->conn_obj1 = 0;
+    this->conn_out = 0;
+    this->dragObject = 0;
+    this->pd_canvas = 0;
 }
 
 //cm_canvas::cm_canvas(QWidget *parent) : cm_widget((cm_widget*)parent)

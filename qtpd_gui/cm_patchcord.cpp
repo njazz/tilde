@@ -1,9 +1,9 @@
 #include "cm_patchcord.h"
 
-cm_patchcord::cm_patchcord()
-{
-    this->patchcordType = cm_pt_anything;
-}
+//cm_patchcord::cm_patchcord()
+//{
+//    this->patchcordType = cm_pt_anything;
+//}
 
 
 cm_patchcord::cm_patchcord(cm_widget *obj1, cm_widget *out1, cm_widget *obj2, cm_widget *in2)

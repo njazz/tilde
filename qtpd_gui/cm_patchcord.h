@@ -27,8 +27,8 @@ public:
     bool selected;
     //explicit cm_patchcord(cm_widget *parent = 0);
 
-    cm_patchcord();
-    cm_patchcord(cm_widget* obj1, cm_widget* out1, cm_widget* obj2, cm_widget* in2);
+    //cm_patchcord();
+    explicit cm_patchcord(cm_widget* obj1, cm_widget* out1, cm_widget* obj2, cm_widget* in2);
 
     QPoint getStartPoint()
     {

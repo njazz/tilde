@@ -221,6 +221,9 @@ t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int
 
     pd_typedmess((t_pd*)canvas, gensym("obj"), (int)list->size(), list->toPdData());
 
+    delete list;
+
+
     ret2 = (t_object*)pd_newest();
     if (!ret2) return 0;
     if (ret2 != pd_checkobject((t_pd*)ret2)) return 0;
@@ -230,6 +233,7 @@ t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int
 
     binbuf_gettext(ret2->te_binbuf,&bufp,&lenp);
     qDebug("object data: %s", bufp);
+
 
     return ret2;
 
@@ -259,6 +263,8 @@ t_object* cmp_create_message(t_canvas* canvas, std::string message, int x, int y
 
     pd_typedmess((t_pd*)canvas, gensym("obj"), list->size(), list->toPdData());
 
+    delete list;
+
     ret2 = (t_object*)pd_newest();
     if (!ret2) return 0;
     if (ret2 != pd_checkobject((t_pd*)ret2)) return 0;
@@ -267,6 +273,8 @@ t_object* cmp_create_message(t_canvas* canvas, std::string message, int x, int y
     int lenp;
     binbuf_gettext(ret2->te_binbuf,&bufp,&lenp);
     qDebug("object data: %s", bufp);
+
+
 
     return ret2;
 

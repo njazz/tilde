@@ -7,6 +7,9 @@ cm_port::cm_port(cm_widget *parent) : cm_widget(parent)
     this->setAttribute(Qt::WA_NoMousePropagation);
 
     this->hover = false;
+
+    this->port_type = cm_pt_inlet;
+    this->portIndex = 0;
 }
 
 

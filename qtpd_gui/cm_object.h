@@ -25,6 +25,7 @@ private:
 
     bool errorBox_;
 
+    cm_object();
 public:
     //cm_object();
     explicit cm_object(cm_widget *parent = 0);
@@ -70,8 +71,8 @@ public:
         new_in->portIndex = inlets_.size();
 
         inlets_.push_back(new_in);
-        connect(new_in, &cm_port::mousePressed, (cm_widget*)this->parent(), &cm_widget::s_InMousePressed);
-        connect(new_in, &cm_port::mouseReleased, (cm_widget*)this->parent(), &cm_widget::s_InMouseReleased);
+        connect(new_in, &cm_port::mousePressed, static_cast<cm_widget*>(this->parent()), &cm_widget::s_InMousePressed);
+        connect(new_in, &cm_port::mouseReleased, static_cast<cm_widget*>(this->parent()), &cm_widget::s_InMouseReleased);
 
 
         this->setInletsPos();
@@ -85,8 +86,8 @@ public:
         new_out->portIndex = outlets_.size();
 
         outlets_.push_back(new_out);
-        connect(new_out, &cm_port::mousePressed, (cm_widget*)this->parent(), &cm_widget::s_OutMousePressed);
-        connect(new_out, &cm_port::mouseReleased, (cm_widget*)this->parent(), &cm_widget::s_OutMouseReleased);
+        connect(new_out, &cm_port::mousePressed, static_cast<cm_widget*>(this->parent()), &cm_widget::s_OutMousePressed);
+        connect(new_out, &cm_port::mouseReleased, static_cast<cm_widget*>(this->parent()), &cm_widget::s_OutMouseReleased);
 
         this->setOutletsPos();
     }
