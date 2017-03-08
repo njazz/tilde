@@ -280,7 +280,7 @@ public:
         if (this->canvas->getEditMode() != em_Locked)
         {
             this->objectMaker->move(100,50);
-            this->objectMaker->setFixedSize(60,30);
+            this->objectMaker->setFixedSize(60,20);
             this->objectMaker->setFocus();
 
             this->canvas->dragObject = this->objectMaker;

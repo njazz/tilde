@@ -11,7 +11,8 @@
 class cm_objectmaker : public QLineEdit
 {
 public:
-    cm_objectmaker();
+    explicit cm_objectmaker(QLineEdit *parent = 0);
+    //cm_objectmaker();
 
 //    ////
 //    /// \brief filter esc key

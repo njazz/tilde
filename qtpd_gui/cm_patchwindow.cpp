@@ -13,8 +13,9 @@ cm_patchwindow::cm_patchwindow()
 
     this->setCentralWidget(this->canvas);
 
-    this->objectMaker = new cm_objectmaker();
-    this->objectMaker->setParent(this->canvas);
+    //TODO weird
+    this->objectMaker = new cm_objectmaker((QLineEdit*)this->canvas);
+    //this->objectMaker->setParent(this->canvas);
     connect(this->objectMaker,&cm_objectmaker::returnPressed, this, &cm_patchwindow::objectMakerDone);
     this->objectMaker->close();
 
