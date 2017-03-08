@@ -142,7 +142,19 @@ public:
         }
         event->ignore();
 
+       //todo move!
+        if (this->getEditMode() != em_Unlocked)
+        {
+            this->setCursor(QCursor(Qt::PointingHandCursor));
+        }
+        else
+        {
+            this->setCursor(QCursor(Qt::ArrowCursor));
+        }
+
     }
+
+
 
 
     ///////

@@ -61,7 +61,7 @@ public:
         this->editMode_ = canvasEditMode;
     }
 
-    bool getEditMode()
+    t_editMode getEditMode()
     {
         return (this->editMode_)?(*this->editMode_):em_Unlocked;
     }
