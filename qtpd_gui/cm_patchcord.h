@@ -85,6 +85,12 @@ public:
 
     }
 
+    std::string getAsString()
+    {
+        //TODO
+
+    }
+
 };
 
 #endif // CM_PATCHCORD_H

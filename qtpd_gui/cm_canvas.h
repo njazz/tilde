@@ -143,8 +143,34 @@ public:
             QPoint start = ((cm_patchcord*)this->patchcords.at(i))->getStartPoint();
             QPoint end = ((cm_patchcord*)this->patchcords.at(i))->getEndPoint();
 
-            QPoint b1 = QPoint(start.x(),fabs(end.y() - start.y()) * .5 + start.y());
-            QPoint b2 = QPoint(end.x(), -fabs(end.y() - start.y()) * .5 + end.y());
+            QPoint b1 = QPoint(start.x() + (end.x() - start.x()) * .5, fabs(end.y() - start.y()) * .5 + start.y());
+            QPoint b2 = QPoint(end.x() - (end.x() - start.x()) * .5, -fabs(end.y() - start.y()) * .5 + end.y());
+
+            //TODO
+//            //spaghetti lol
+//            if (start.y()>end.y())
+//            {
+//                if (b1.y() - start.y() > 80)
+//                {
+//                    b1.setY(start.y() + 80);
+//                }
+
+//                if (b2.y() - end.y() < -80)
+//                {
+//                    b2.setY(end.y() - 80);
+//                }
+
+//               if (b1.x() - start.x() < 20)
+//                {
+//                    b1.setX(start.x() + 20);
+//                }
+
+//                if (b2.x() - end.x() < -20)
+//                {
+//                    b2.setX(end.x() - 20);
+//                }
+
+//            }
 
             path.moveTo(start);
             path.cubicTo(b1, b2 , end);
@@ -704,6 +730,10 @@ public:
         return this->objectBoxes;
     }
 
+    std::vector<cm_patchcord*>getPatchcords()
+    {
+        return this->patchcords;
+    }
 signals:
 
 public slots:

@@ -251,6 +251,7 @@ AtomList* AtomListFromString(std::string in_string)
 t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int y)
 {
     t_object* ret2;
+    t_object* ret1;
     
     AtomList* list = AtomListFromString(class_name);
     if (list->size()==0) {delete list; return 0;}
@@ -258,6 +259,7 @@ t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int
     list->insert(0,Atom((float)x));
     list->insert(1,Atom((float)y));
 
+    ret1 = (t_object*)pd_newest();
     pd_typedmess((t_pd*)canvas, gensym("obj"), (int)list->size(), list->toPdData());
 
     delete list;
@@ -266,6 +268,7 @@ t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int
     ret2 = (t_object*)pd_newest();
     if (!ret2) return 0;
     if (ret2 != pd_checkobject((t_pd*)ret2)) return 0;
+    if (ret2==ret1) return 0;
 
     char* bufp = new char[1024];
     int lenp;
@@ -283,6 +286,7 @@ t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int
 t_object* cmp_create_message(t_canvas* canvas, std::string message, int x, int y)
 {
     t_object* ret2;
+    t_object* ret1;
 
     AtomList* list = AtomListFromString(message);
     //if (list->size()==0) {return 0;}
@@ -300,6 +304,8 @@ t_object* cmp_create_message(t_canvas* canvas, std::string message, int x, int y
 
     //pd_typedmess((t_pd*)canvas, gensym("msg"), (int)list->size(), list->toPdData());
 
+    ret1 = (t_object*)pd_newest();
+
     pd_typedmess((t_pd*)canvas, gensym("obj"), list->size(), list->toPdData());
 
     delete list;
@@ -307,6 +313,7 @@ t_object* cmp_create_message(t_canvas* canvas, std::string message, int x, int y
     ret2 = (t_object*)pd_newest();
     if (!ret2) return 0;
     if (ret2 != pd_checkobject((t_pd*)ret2)) return 0;
+    if (ret2==ret1) return 0;
 
     char* bufp = new char[1024];
     int lenp;
