@@ -163,9 +163,14 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns object by index - this is needed by parser  <a href="#a6de16ed0f1b9e42474441788758f9a88"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__canvas.html#af2820c90df78c8ca00c1db3f0f8eb6aa">setGridEnabled</a> (bool val)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">set the show/hide grid flag  <a href="#af2820c90df78c8ca00c1db3f0f8eb6aa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__canvas.html#aa09faec48fae7ade7a52912f6371aeae">setGridSnap</a> (bool val)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">align to grid flag  <a href="#aa09faec48fae7ade7a52912f6371aeae"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classcm__object.html">cm_object</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__canvas.html#aa7d5b7699cdae8c062ff8bf3c43e920c">getObjectBoxes</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns vector of all object boxes - needed by filesaver  <a href="#aa7d5b7699cdae8c062ff8bf3c43e920c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classcm__patchcord.html">cm_patchcord</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__canvas.html#acfe3d18940b9784bd7ec04bb6fb23e75">getPatchcords</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__canvas.html#a925f47a5057741858504fd6e0da9f287">findObjectIndex</a> (<a class="el" href="classcm__object.html">cm_object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">converts object pointers to their numbers in canvas and returns pd string for filesaver  <a href="#a925f47a5057741858504fd6e0da9f287"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__canvas.html#a491b223eb33eab3f8a6acc51325848b5">getPatchcordAsString</a> (<a class="el" href="classcm__patchcord.html">cm_patchcord</a> *<a class="el" href="classcm__canvas.html#a2a1033a389c107a2c67d118ecd874f0e">patchcord</a>)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__canvas.html#aab9da787d6b29f28aeac4d3ca7f6f8b9">dragObject</a></td></tr>
@@ -432,6 +437,32 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a925f47a5057741858504fd6e0da9f287"></a><!-- doxytag: member="cm_canvas::findObjectIndex" ref="a925f47a5057741858504fd6e0da9f287" args="(cm_object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classcm__canvas.html#a925f47a5057741858504fd6e0da9f287">cm_canvas::findObjectIndex</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcm__object.html">cm_object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>converts object pointers to their numbers in canvas and returns pd string for filesaver </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">patchcord</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a13bc38c9911e6040be42dbb57d6812ae"></a><!-- doxytag: member="cm_canvas::getEditMode" ref="a13bc38c9911e6040be42dbb57d6812ae" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -449,7 +480,7 @@ Public Attributes</h2></td></tr>
 <p>get edit mode flag </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Reimplemented from <a class="el" href="classcm__widget.html#ad7eaedd32b823edfddeb661b4ea57269">cm_widget</a>.</p>
+<p>Reimplemented from <a class="el" href="classcm__widget.html#a39b4268bc690c1b708ba5d8ce6d1cc8f">cm_widget</a>.</p>
 
 </div>
 </div>
@@ -495,6 +526,23 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a> pointer </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a491b223eb33eab3f8a6acc51325848b5"></a><!-- doxytag: member="cm_canvas::getPatchcordAsString" ref="a491b223eb33eab3f8a6acc51325848b5" args="(cm_patchcord *patchcord)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classcm__canvas.html#a491b223eb33eab3f8a6acc51325848b5">cm_canvas::getPatchcordAsString</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcm__patchcord.html">cm_patchcord</a> *&#160;</td>
+          <td class="paramname"><em>patchcord</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
 </div>
 </div>
@@ -1035,6 +1083,31 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aa09faec48fae7ade7a52912f6371aeae"></a><!-- doxytag: member="cm_canvas::setGridSnap" ref="aa09faec48fae7ade7a52912f6371aeae" args="(bool val)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcm__canvas.html#aa09faec48fae7ade7a52912f6371aeae">cm_canvas::setGridSnap</a> </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>align to grid flag </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/><h2>Member Data Documentation</h2>
 <a class="anchor" id="aab9da787d6b29f28aeac4d3ca7f6f8b9"></a><!-- doxytag: member="cm_canvas::dragObject" ref="aab9da787d6b29f28aeac4d3ca7f6f8b9" args="" -->
 <div class="memitem">
@@ -1097,7 +1170,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 8 2017 17:11:35 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 8 2017 20:48:44 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

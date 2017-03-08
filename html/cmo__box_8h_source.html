@@ -116,18 +116,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00043"></a>00043         QPainter p(<span class="keyword">this</span>);
 <a name="l00044"></a>00044         p.setRenderHint(QPainter::HighQualityAntialiasing, <span class="keyword">true</span>);
 <a name="l00045"></a>00045 
-<a name="l00046"></a>00046         QColor rectColor = (this-&gt;<a class="code" href="classcm__object.html#ab30ed0e19c6420f700a05243e0b76ed7">isErrorBox</a>())? QColor(255, 0, 0) : QColor(128, 128, 128);
-<a name="l00047"></a>00047         p.setPen(QPen(rectColor, 2,(this-&gt;<a class="code" href="classcm__object.html#ab30ed0e19c6420f700a05243e0b76ed7">isErrorBox</a>())? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+<a name="l00046"></a>00046         QColor rectColor = (this-&gt;<a class="code" href="classcm__object.html#ab30ed0e19c6420f700a05243e0b76ed7" title="returns true if object doesn&#39;t exist">isErrorBox</a>())? QColor(255, 0, 0) : QColor(128, 128, 128);
+<a name="l00047"></a>00047         p.setPen(QPen(rectColor, 2,(this-&gt;<a class="code" href="classcm__object.html#ab30ed0e19c6420f700a05243e0b76ed7" title="returns true if object doesn&#39;t exist">isErrorBox</a>())? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 <a name="l00048"></a>00048         p.drawRect(0, 0, this-&gt;width(), this-&gt;height());
 <a name="l00049"></a>00049         QTextOption* op = <span class="keyword">new</span> QTextOption;
 <a name="l00050"></a>00050         op-&gt;setAlignment(Qt::AlignLeft);
 <a name="l00051"></a>00051         p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 <a name="l00052"></a>00052 
 <a name="l00053"></a>00053         p.setFont(QFont(<a class="code" href="cm__preferences_8h.html#a287939dd6908b7f2be7a432b51941dfa">cmp_font</a>, 11, 0, <span class="keyword">false</span>));
-<a name="l00054"></a>00054         p.drawText(2, 3, this-&gt;width() - 2, this-&gt;height() - 3, 0, this-&gt;<a class="code" href="classcm__object.html#ae49e229d6522dc139a8162dc58f3f446">getObjectData</a>().c_str(), 0);
+<a name="l00054"></a>00054         p.drawText(2, 3, this-&gt;width() - 2, this-&gt;height() - 3, 0, this-&gt;<a class="code" href="classcm__object.html#ae49e229d6522dc139a8162dc58f3f446" title="gets object text data /usually overriden by ui objects/">getObjectData</a>().c_str(), 0);
 <a name="l00055"></a>00055 
-<a name="l00056"></a>00056         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm__widget.html#aef5286ed1b9244dd393d9c7f0967adc0">isSelected</a>()) {
-<a name="l00057"></a>00057             p.setPen(QPen(QColor(0, 192, 255), 2,(this-&gt;<a class="code" href="classcm__object.html#ab30ed0e19c6420f700a05243e0b76ed7">isErrorBox</a>())? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+<a name="l00056"></a>00056         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm__widget.html#aef5286ed1b9244dd393d9c7f0967adc0" title="get object&#39;s selected flag">isSelected</a>()) {
+<a name="l00057"></a>00057             p.setPen(QPen(QColor(0, 192, 255), 2,(this-&gt;<a class="code" href="classcm__object.html#ab30ed0e19c6420f700a05243e0b76ed7" title="returns true if object doesn&#39;t exist">isErrorBox</a>())? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 <a name="l00058"></a>00058             p.drawRect(0, 0, this-&gt;width(), this-&gt;height());
 <a name="l00059"></a>00059         }
 <a name="l00060"></a>00060 
@@ -204,7 +204,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 8 2017 17:11:35 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 8 2017 20:48:44 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

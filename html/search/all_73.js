@@ -26,6 +26,7 @@ var searchData=
   ['seterrorbox',['setErrorBox',['../classcm__object.html#a5c381b627b0d2fce833711fb5aff4eaf',1,'cm_object']]],
   ['setfilename',['setFileName',['../classcm__patchwindow.html#a42468d180c495d37ecbdf5313737bec9',1,'cm_patchwindow']]],
   ['setgridenabled',['setGridEnabled',['../classcm__canvas.html#af2820c90df78c8ca00c1db3f0f8eb6aa',1,'cm_canvas']]],
+  ['setgridsnap',['setGridSnap',['../classcm__canvas.html#aa09faec48fae7ade7a52912f6371aeae',1,'cm_canvas::setGridSnap()'],['../classcm__patchwindow.html#a486867e7a1c51da253422a439e0e2224',1,'cm_patchwindow::setGridSnap()']]],
   ['setgridvisible',['setGridVisible',['../classcm__patchwindow.html#a3f8059544927116b3f4b706ebe805cd9',1,'cm_patchwindow']]],
   ['setinletspos',['setInletsPos',['../classcm__object.html#a96570d85d1b4d6838ebe31957328dfdb',1,'cm_object']]],
   ['setobjectdata',['setObjectData',['../classcm__object.html#a002a0bcd7ac0648a11a176a40e528bab',1,'cm_object']]],

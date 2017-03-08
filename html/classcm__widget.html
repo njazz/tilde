@@ -134,11 +134,17 @@ Signals</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__widget.html#a7aca8db9e88ee379ff3bc07c430c21ac">cm_widget</a> (QWidget *parent=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__widget.html#a2789b084155e10f5630c458b65e01bd3">select</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">select object  <a href="#a2789b084155e10f5630c458b65e01bd3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__widget.html#af2b0e90bf7abce97f6b047d9741f8f4a">deselect</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">deselect object  <a href="#af2b0e90bf7abce97f6b047d9741f8f4a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__widget.html#aef5286ed1b9244dd393d9c7f0967adc0">isSelected</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get object's selected flag  <a href="#aef5286ed1b9244dd393d9c7f0967adc0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__widget.html#a71bebd622bbfdc3dcf9b08b4860c3a23">setEditModeRef</a> (<a class="el" href="cm__widget_8h.html#afd0995990651dbc203c3e07baa11db60">t_editMode</a> *canvasEditMode)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__widget.html#ad7eaedd32b823edfddeb661b4ea57269">getEditMode</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets pointer to edit mode flag in parent canvas  <a href="#a71bebd622bbfdc3dcf9b08b4860c3a23"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="cm__widget_8h.html#afd0995990651dbc203c3e07baa11db60">t_editMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__widget.html#a39b4268bc690c1b708ba5d8ce6d1cc8f">getEditMode</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get edit mode flag value  <a href="#a39b4268bc690c1b708ba5d8ce6d1cc8f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__widget.html#ae45279e143fd0cb22aa4cd932939d83d">setScale</a> (float scale_)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">temporary. scale value for zoom  <a href="#ae45279e143fd0cb22aa4cd932939d83d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__widget.html#ac1017e2f36ea483f884b11b08f93dcfd">getScale</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -179,14 +185,16 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>deselect object </p>
+
 </div>
 </div>
-<a class="anchor" id="ad7eaedd32b823edfddeb661b4ea57269"></a><!-- doxytag: member="cm_widget::getEditMode" ref="ad7eaedd32b823edfddeb661b4ea57269" args="()" -->
+<a class="anchor" id="a39b4268bc690c1b708ba5d8ce6d1cc8f"></a><!-- doxytag: member="cm_widget::getEditMode" ref="a39b4268bc690c1b708ba5d8ce6d1cc8f" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classcm__widget.html#ad7eaedd32b823edfddeb661b4ea57269">cm_widget::getEditMode</a> </td>
+          <td class="memname"><a class="el" href="cm__widget_8h.html#afd0995990651dbc203c3e07baa11db60">t_editMode</a> <a class="el" href="classcm__widget.html#a39b4268bc690c1b708ba5d8ce6d1cc8f">cm_widget::getEditMode</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [inline]</code></td>
@@ -194,6 +202,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>get edit mode flag value </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
 <p>Reimplemented in <a class="el" href="classcm__canvas.html#a13bc38c9911e6040be42dbb57d6812ae">cm_canvas</a>.</p>
 
@@ -228,6 +239,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>get object's selected flag </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -602,6 +616,8 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>select object </p>
+
 </div>
 </div>
 <a class="anchor" id="a14294c167a8229465541a0fe9c1ec69f"></a><!-- doxytag: member="cm_widget::selectBox" ref="a14294c167a8229465541a0fe9c1ec69f" args="(cm_widget *box)" -->
@@ -636,6 +652,15 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>sets pointer to edit mode flag in parent canvas </p>
+<p>this is set by "constructor" (createObj etc) in canvas </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">canvasEditMode</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="ae45279e143fd0cb22aa4cd932939d83d"></a><!-- doxytag: member="cm_widget::setScale" ref="ae45279e143fd0cb22aa4cd932939d83d" args="(float scale_)" -->
@@ -652,6 +677,14 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>temporary. scale value for zoom </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scale_</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -691,7 +724,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 8 2017 17:11:35 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 8 2017 20:48:44 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

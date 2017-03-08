@@ -99,7 +99,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00022"></a>00022         <span class="comment">//todo canvas is subpatch flag</span>
 <a name="l00023"></a>00023         std::string out1;
 <a name="l00024"></a>00024 
-<a name="l00025"></a>00025         out1 = <span class="stringliteral">&quot;#N canvas 0 0 400 300 10;&quot;</span>;     <span class="comment">//temporary</span>
+<a name="l00025"></a>00025         out1 = <span class="stringliteral">&quot;#N canvas 0 0 400 300 10;\n\r&quot;</span>;     <span class="comment">//temporary</span>
 <a name="l00026"></a>00026         file-&gt;write(out1.c_str(),out1.size());
 <a name="l00027"></a>00027 
 <a name="l00028"></a>00028         <span class="comment">//objects</span>
@@ -109,25 +109,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00032"></a>00032         <span class="keywordflow">for</span> (it = objects.begin(); it!= objects.end(); ++it)
 <a name="l00033"></a>00033         {
 <a name="l00034"></a>00034             <span class="comment">// check for subpatches</span>
-<a name="l00035"></a>00035             out1 = <span class="stringliteral">&quot;#X object&quot;</span>;
-<a name="l00036"></a>00036             out1 += ((<a class="code" href="classcm__object.html" title="base class for all object boxes - standard and special">cm_object</a>*)*it)-&gt;getObjectData();
-<a name="l00037"></a>00037             out1 +=<span class="stringliteral">&quot;;&quot;</span>;
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039             file-&gt;write(out1.c_str(),out1.size());
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041         }
-<a name="l00042"></a>00042 
-<a name="l00043"></a>00043         <span class="comment">//patchcords</span>
-<a name="l00044"></a>00044         std::vector&lt;cm_patchcord*&gt; patchcords = canvas-&gt;<a class="code" href="classcm__canvas.html#acfe3d18940b9784bd7ec04bb6fb23e75">getPatchcords</a>();
-<a name="l00045"></a>00045         std::vector&lt;cm_patchcord*&gt;::iterator it2;
-<a name="l00046"></a>00046 
-<a name="l00047"></a>00047         <span class="keywordflow">for</span> (it2 = patchcords.begin(); it2!= patchcords.end(); ++it2)
-<a name="l00048"></a>00048         {
-<a name="l00049"></a>00049             <span class="comment">// check for subpatches</span>
-<a name="l00050"></a>00050             out1 = <span class="stringliteral">&quot;#X connect&quot;</span>;
-<a name="l00051"></a>00051             <span class="comment">//out1 += ((cm_object*)*it)-&gt;getObjectData();</span>
-<a name="l00052"></a>00052             <span class="comment">//out1 += *it2;</span>
-<a name="l00053"></a>00053             out1 +=<span class="stringliteral">&quot;;&quot;</span>;
+<a name="l00035"></a>00035             out1 = <span class="stringliteral">&quot;#X obj &quot;</span>;
+<a name="l00036"></a>00036             out1 += std::to_string(((<a class="code" href="classcm__object.html" title="base class for all object boxes - standard and special">cm_object</a>*)*it)-&gt;x()) + <span class="stringliteral">&quot; &quot;</span> + std::to_string(((<a class="code" href="classcm__object.html" title="base class for all object boxes - standard and special">cm_object</a>*)*it)-&gt;y())+ <span class="stringliteral">&quot; &quot;</span>;
+<a name="l00037"></a>00037             out1 += ((<a class="code" href="classcm__object.html" title="base class for all object boxes - standard and special">cm_object</a>*)*it)-&gt;getSaveString();
+<a name="l00038"></a>00038             out1 +=<span class="stringliteral">&quot;;\n\r&quot;</span> ;
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040             file-&gt;write(out1.c_str(),out1.size());
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042         }
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044         <span class="comment">//patchcords</span>
+<a name="l00045"></a>00045         std::vector&lt;cm_patchcord*&gt; patchcords = canvas-&gt;<a class="code" href="classcm__canvas.html#acfe3d18940b9784bd7ec04bb6fb23e75">getPatchcords</a>();
+<a name="l00046"></a>00046         std::vector&lt;cm_patchcord*&gt;::iterator it2;
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048         <span class="keywordflow">for</span> (it2 = patchcords.begin(); it2!= patchcords.end(); ++it2)
+<a name="l00049"></a>00049         {
+<a name="l00050"></a>00050             <span class="comment">// check for subpatches</span>
+<a name="l00051"></a>00051             out1 = <span class="stringliteral">&quot;#X connect &quot;</span>;
+<a name="l00052"></a>00052             out1 += canvas-&gt;<a class="code" href="classcm__canvas.html#a491b223eb33eab3f8a6acc51325848b5">getPatchcordAsString</a>(*it2);
+<a name="l00053"></a>00053             out1 +=<span class="stringliteral">&quot;;\n\r&quot;</span>;
 <a name="l00054"></a>00054 
 <a name="l00055"></a>00055             file-&gt;write(out1.c_str(),out1.size());
 <a name="l00056"></a>00056 
@@ -167,7 +167,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 8 2017 17:11:35 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 8 2017 20:48:44 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

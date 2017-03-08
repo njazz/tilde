@@ -98,9 +98,12 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__patchcord.html#a73fc0ef79bc39f2149bccf6267863e8c">cm_patchcord</a> (<a class="el" href="classcm__widget.html">cm_widget</a> *obj1, <a class="el" href="classcm__widget.html">cm_widget</a> *out1, <a class="el" href="classcm__widget.html">cm_widget</a> *obj2, <a class="el" href="classcm__widget.html">cm_widget</a> *in2)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QPoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__patchcord.html#a6698e93c5934891740ad9670c3545351">getStartPoint</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QPoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__patchcord.html#afd0ba2ba08b6bdbc90585c8ce311bf98">getEndPoint</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcm__object.html">cm_object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__patchcord.html#a590924b962ec509d9d943f7f0a411592">getObj1</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcm__object.html">cm_object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__patchcord.html#ad1bf95d87b4ed1eed20931ea96863228">getObj2</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__patchcord.html#a9e6c849d22fe51c76daafc4b237b32fe">getOutIdx</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__patchcord.html#a0089088fb1192317a83791a42f793dbe">getInIdx</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__patchcord.html#a11ec64fcf2f1772302c98c2980ef79c7">connectsObject</a> (<a class="el" href="classcm__widget.html">cm_widget</a> *obj)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__patchcord.html#a6448e6c277c584968e6be69916d3d161">hover</a> (QPoint pos)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__patchcord.html#a661dcec53a97afdb462cd4e008ad5040">getAsString</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__patchcord.html#a667b1bb83e22bd016a5aa62b68c41154">mouseover</a></td></tr>
@@ -166,12 +169,12 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a661dcec53a97afdb462cd4e008ad5040"></a><!-- doxytag: member="cm_patchcord::getAsString" ref="a661dcec53a97afdb462cd4e008ad5040" args="()" -->
+<a class="anchor" id="afd0ba2ba08b6bdbc90585c8ce311bf98"></a><!-- doxytag: member="cm_patchcord::getEndPoint" ref="afd0ba2ba08b6bdbc90585c8ce311bf98" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string <a class="el" href="classcm__patchcord.html#a661dcec53a97afdb462cd4e008ad5040">cm_patchcord::getAsString</a> </td>
+          <td class="memname">QPoint <a class="el" href="classcm__patchcord.html#afd0ba2ba08b6bdbc90585c8ce311bf98">cm_patchcord::getEndPoint</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [inline]</code></td>
@@ -182,12 +185,60 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="afd0ba2ba08b6bdbc90585c8ce311bf98"></a><!-- doxytag: member="cm_patchcord::getEndPoint" ref="afd0ba2ba08b6bdbc90585c8ce311bf98" args="()" -->
+<a class="anchor" id="a0089088fb1192317a83791a42f793dbe"></a><!-- doxytag: member="cm_patchcord::getInIdx" ref="a0089088fb1192317a83791a42f793dbe" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">QPoint <a class="el" href="classcm__patchcord.html#afd0ba2ba08b6bdbc90585c8ce311bf98">cm_patchcord::getEndPoint</a> </td>
+          <td class="memname">int <a class="el" href="classcm__patchcord.html#a0089088fb1192317a83791a42f793dbe">cm_patchcord::getInIdx</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a590924b962ec509d9d943f7f0a411592"></a><!-- doxytag: member="cm_patchcord::getObj1" ref="a590924b962ec509d9d943f7f0a411592" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcm__object.html">cm_object</a>* <a class="el" href="classcm__patchcord.html#a590924b962ec509d9d943f7f0a411592">cm_patchcord::getObj1</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad1bf95d87b4ed1eed20931ea96863228"></a><!-- doxytag: member="cm_patchcord::getObj2" ref="ad1bf95d87b4ed1eed20931ea96863228" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcm__object.html">cm_object</a>* <a class="el" href="classcm__patchcord.html#ad1bf95d87b4ed1eed20931ea96863228">cm_patchcord::getObj2</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9e6c849d22fe51c76daafc4b237b32fe"></a><!-- doxytag: member="cm_patchcord::getOutIdx" ref="a9e6c849d22fe51c76daafc4b237b32fe" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classcm__patchcord.html#a9e6c849d22fe51c76daafc4b237b32fe">cm_patchcord::getOutIdx</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [inline]</code></td>
@@ -280,7 +331,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 8 2017 17:11:35 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 8 2017 20:48:44 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -1,15 +1,20 @@
 var searchData=
 [
-  ['getasstring',['getAsString',['../classcm__patchcord.html#a661dcec53a97afdb462cd4e008ad5040',1,'cm_patchcord']]],
-  ['geteditmode',['getEditMode',['../classcm__canvas.html#a13bc38c9911e6040be42dbb57d6812ae',1,'cm_canvas::getEditMode()'],['../classcm__widget.html#ad7eaedd32b823edfddeb661b4ea57269',1,'cm_widget::getEditMode()']]],
+  ['geteditmode',['getEditMode',['../classcm__canvas.html#a13bc38c9911e6040be42dbb57d6812ae',1,'cm_canvas::getEditMode()'],['../classcm__widget.html#a39b4268bc690c1b708ba5d8ce6d1cc8f',1,'cm_widget::getEditMode()']]],
   ['getendpoint',['getEndPoint',['../classcm__patchcord.html#afd0ba2ba08b6bdbc90585c8ce311bf98',1,'cm_patchcord']]],
+  ['getinidx',['getInIdx',['../classcm__patchcord.html#a0089088fb1192317a83791a42f793dbe',1,'cm_patchcord']]],
   ['getinletat',['getInletAt',['../classcm__object.html#a7852c6bb15bc430d9ffbfee044905116',1,'cm_object']]],
+  ['getobj1',['getObj1',['../classcm__patchcord.html#a590924b962ec509d9d943f7f0a411592',1,'cm_patchcord']]],
+  ['getobj2',['getObj2',['../classcm__patchcord.html#ad1bf95d87b4ed1eed20931ea96863228',1,'cm_patchcord']]],
   ['getobjectboxes',['getObjectBoxes',['../classcm__canvas.html#aa7d5b7699cdae8c062ff8bf3c43e920c',1,'cm_canvas']]],
   ['getobjectbyindex',['getObjectByIndex',['../classcm__canvas.html#a6de16ed0f1b9e42474441788758f9a88',1,'cm_canvas']]],
   ['getobjectdata',['getObjectData',['../classcm__object.html#ae49e229d6522dc139a8162dc58f3f446',1,'cm_object']]],
+  ['getoutidx',['getOutIdx',['../classcm__patchcord.html#a9e6c849d22fe51c76daafc4b237b32fe',1,'cm_patchcord']]],
   ['getoutletat',['getOutletAt',['../classcm__object.html#ade83577301e7b5a8e6cf33e1695c4291',1,'cm_object']]],
+  ['getpatchcordasstring',['getPatchcordAsString',['../classcm__canvas.html#a491b223eb33eab3f8a6acc51325848b5',1,'cm_canvas']]],
   ['getpatchcords',['getPatchcords',['../classcm__canvas.html#acfe3d18940b9784bd7ec04bb6fb23e75',1,'cm_canvas']]],
   ['getpdobject',['getPdObject',['../classcm__object.html#a6d7e0f714e801e61e6c2f76047f1589e',1,'cm_object']]],
+  ['getsavestring',['getSaveString',['../classcm__object.html#a55c2eca839b7e2f8b34f8ed5290393e0',1,'cm_object::getSaveString()'],['../classcmo__msg.html#a2da4aed3ba9ef2cabdb9aff01861ea4e',1,'cmo_msg::getSaveString()']]],
   ['getscale',['getScale',['../classcm__widget.html#ac1017e2f36ea483f884b11b08f93dcfd',1,'cm_widget']]],
   ['getstartpoint',['getStartPoint',['../classcm__patchcord.html#a6698e93c5934891740ad9670c3545351',1,'cm_patchcord']]]
 ];
