@@ -143,8 +143,11 @@ public:
             QPoint start = ((cm_patchcord*)this->patchcords.at(i))->getStartPoint();
             QPoint end = ((cm_patchcord*)this->patchcords.at(i))->getEndPoint();
 
+            QPoint b1 = QPoint(start.x(),fabs(end.y() - start.y()) * .5 + start.y());
+            QPoint b2 = QPoint(end.x(), -fabs(end.y() - start.y()) * .5 + end.y());
+
             path.moveTo(start);
-            path.cubicTo(QPoint(start.x(),end.y()), QPoint(end.x(), start.y()), end);
+            path.cubicTo(b1, b2 , end);
 
             p.drawPath(path);
         }
@@ -692,6 +695,14 @@ public:
     {this->gridEnabled = val;}
 
 
+    ////
+    /// \brief returns vector of all object boxes - needed by filesaver
+    /// \return
+    ///
+    std::vector<cm_object*> getObjectBoxes()
+    {
+        return this->objectBoxes;
+    }
 
 signals:
 
