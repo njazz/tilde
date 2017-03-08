@@ -42,30 +42,53 @@ public:
 
     explicit cm_widget(QWidget *parent = 0);
 
+    ////
+    /// \brief select object
+    ///
     void select()
     {
         this->selected_ = true;
         this->repaint();
     }
 
+    ////
+    /// \brief deselect object
+    ///
     void deselect()
     {
         this->selected_ = false;
         this->repaint();
     }
 
+    ////
+    /// \brief get object's selected flag
+    /// \return
+    ///
     bool isSelected() {return this->selected_;}
 
+    ////
+    /// \brief sets pointer to edit mode flag in parent canvas
+    /// \details this is set by "constructor" (createObj etc) in canvas
+    /// \param canvasEditMode
+    ///
     void setEditModeRef(t_editMode* canvasEditMode)
     {
         this->editMode_ = canvasEditMode;
     }
 
+    ////
+    /// \brief get edit mode flag value
+    /// \return
+    ///
     t_editMode getEditMode()
     {
         return (this->editMode_)?(*this->editMode_):em_Unlocked;
     }
 
+    ////
+    /// \brief temporary. scale value for zoom
+    /// \param scale_
+    ///
     void setScale(float scale_)
     {
         this->scale = scale_;

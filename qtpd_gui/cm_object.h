@@ -31,6 +31,14 @@ public:
     explicit cm_object(cm_widget *parent = 0);
 
 
+    ////
+    /// \brief sets inlet position (cm_port)
+    /// \details this is reserved for more versatile UI
+    /// \param idx
+    /// \return
+    ///
+    ///
+
     void setInletsPos()
     {
         float w = this->width() - 10;
@@ -47,6 +55,13 @@ public:
         }
     }
 
+    ////
+    /// \brief sets outlet position (cm_port)
+    /// \details this is reserved for more versatile UI
+    /// \param idx
+    /// \return
+    ///
+    ///
     void setOutletsPos()
     {
         float w = this->width() - 10;
@@ -63,6 +78,12 @@ public:
         }
     }
 
+    ////
+    /// \brief adds single inlet (cm_port)
+    /// \param idx
+    /// \return
+    ///
+    ///
     void addInlet()
     {
         cm_port* new_in = new cm_port(this);
@@ -78,6 +99,12 @@ public:
         this->setInletsPos();
     }
 
+    ////
+    /// \brief adds single outlet (cm_port)
+    /// \param idx
+    /// \return
+    ///
+
     void addOutlet()
     {
         cm_port* new_out = new cm_port(this);
@@ -92,7 +119,11 @@ public:
         this->setOutletsPos();
     }
 
-    /////
+    ////
+    /// \brief gets inlet (cm_port) at specified index
+    /// \param idx
+    /// \return
+    ///
 
     cm_port* getInletAt(int idx)
     {
@@ -102,6 +133,12 @@ public:
             return 0;
     }
 
+    ////
+    /// \brief gets outlet (cm_port) at specified index
+    /// \param idx
+    /// \return
+    ///
+
     cm_port* getOutletAt(int idx)
     {
         if (idx<((int)this->outlets_.size()))
@@ -110,7 +147,12 @@ public:
             return 0;
     }
 
-    ///////
+    ////////
+
+    ////
+    /// \brief sets object text data /usually overriden by ui objects/
+    /// \return
+    ///
 
     void setObjectData(std::string objData)
     {
@@ -122,13 +164,35 @@ public:
         if (this->width()<40) this->setFixedWidth(40);
     }
 
+    ////
+    /// \brief gets object text data /usually overriden by ui objects/
+    /// \return
+    ///
     std::string getObjectData()
     {return this->objectData;}
 
+    ////
+    /// \brief returns pointer to pd object
+    /// \return
+    ///
     void* getPdObject() {return this->pdObject_;}
+
+    ////
+    /// \brief sets pointer to pd object
+    /// \param obj
+    ///
     void setPdObject(void*obj) {this->pdObject_ = obj;}
 
+    ////
+    /// \brief returns true if object doesn't exist
+    /// \return
+    ///
     bool isErrorBox() {return this->errorBox_;}
+
+    ////
+    /// \brief sets object box error flag
+    /// \param val
+    ///
     void setErrorBox(bool val) {this->errorBox_ = val;}
 
     ////
