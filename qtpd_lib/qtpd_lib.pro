@@ -136,7 +136,48 @@ SOURCES += pdlib.cpp \
     src/x_vexp_fun.c \
     src/x_vexp_if.c \
     extra/list_product.cpp \
-    extra/cm_uimsg.cpp
+    extra/cm_uimsg.cpp \
+    ceammc-ui/ui_display.cpp \
+    ceammc-ui/ui_knob.cpp \
+    ceammc-ui/ui_link.cpp \
+    ceammc-ui/ui_slider2d.cpp \
+    ceammc-ui/ui_sliders.cpp \
+    ceammc-ui/ui_keyboard.cpp \
+    ceammc-ui/ui_spectroscope~.cpp \
+    ceammc-ui/ui_bpfunc.cpp \
+    ceammc-ui/ui_ecanvas.cpp \
+    ceammc-ui/ui_scope~.cpp \
+    creamlibrary/Sources/c.bang.cpp \
+    creamlibrary/Sources/c.blackboard.cpp \
+    creamlibrary/Sources/c.breakpoints.cpp \
+    creamlibrary/Sources/c.camomile.cpp \
+    creamlibrary/Sources/c.colorpanel.cpp \
+    creamlibrary/Sources/c.dsp_tilde.cpp \
+    creamlibrary/Sources/c.gain_tilde.cpp \
+    creamlibrary/Sources/c.incdec.cpp \
+    creamlibrary/Sources/c.keyboard.cpp \
+    creamlibrary/Sources/c.knob.cpp \
+    creamlibrary/Sources/c.matrix.cpp \
+    creamlibrary/Sources/c.menu.cpp \
+    creamlibrary/Sources/c.meter_tilde.cpp \
+    creamlibrary/Sources/c.number.cpp \
+    creamlibrary/Sources/c.number_tilde.cpp \
+    creamlibrary/Sources/c.plane.cpp \
+    creamlibrary/Sources/c.preset.cpp \
+    creamlibrary/Sources/c.radio.cpp \
+    creamlibrary/Sources/c.rslider.cpp \
+    creamlibrary/Sources/c.scope_tilde.cpp \
+    creamlibrary/Sources/c.slider.cpp \
+    creamlibrary/Sources/c.tab.cpp \
+    creamlibrary/Sources/c.toggle.cpp \
+    creamlibrary/Sources/c.wavesel.cpp \
+    creamlibrary/c.library.cpp \
+    CicmWrapper/Sources/ebox.c \
+    CicmWrapper/Sources/eclass.c \
+    CicmWrapper/Sources/ecommon.c \
+    CicmWrapper/Sources/egraphics.c \
+    CicmWrapper/Sources/eobj.c \
+    CicmWrapper/Sources/epopup.c
 
 HEADERS += pdlib.h \
     ceammc-lib/ceammc.h \
@@ -172,11 +213,23 @@ HEADERS += pdlib.h \
     src/s_stuff.h \
     src/s_utf8.h \
     src/x_vexp.h \
-    portaudio/include/portaudio.h
+    portaudio/include/portaudio.h \
+    creamlibrary/c.library.hpp \
+    CicmWrapper/Sources/cicm_wrapper.h \
+    CicmWrapper/Sources/ebox.h \
+    CicmWrapper/Sources/eclass.h \
+    CicmWrapper/Sources/ecommon.h \
+    CicmWrapper/Sources/edefine.h \
+    CicmWrapper/Sources/egraphics.h \
+    CicmWrapper/Sources/enative.h \
+    CicmWrapper/Sources/eobj.h \
+    CicmWrapper/Sources/epdmax.h \
+    CicmWrapper/Sources/epopup.h
 
 INCLUDEPATH += src/ \
     extra/ \
-    portaudio/include/
+    portaudio/include/ \
+    ceammc-lib/
 
 #LIBS += -L/usr/local/lib -lportaudio
 
