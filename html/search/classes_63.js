@@ -13,5 +13,6 @@ var searchData=
   ['cm_5fport',['cm_port',['../classcm__port.html',1,'']]],
   ['cm_5fwidget',['cm_widget',['../classcm__widget.html',1,'']]],
   ['cmo_5fbox',['cmo_box',['../classcmo__box.html',1,'']]],
+  ['cmo_5ffloat',['cmo_float',['../classcmo__float.html',1,'']]],
   ['cmo_5fmsg',['cmo_msg',['../classcmo__msg.html',1,'']]]
 ];

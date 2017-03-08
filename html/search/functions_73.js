@@ -28,7 +28,7 @@ var searchData=
   ['setinletspos',['setInletsPos',['../classcm__object.html#a96570d85d1b4d6838ebe31957328dfdb',1,'cm_object']]],
   ['setobjectdata',['setObjectData',['../classcm__object.html#a002a0bcd7ac0648a11a176a40e528bab',1,'cm_object']]],
   ['setoutletspos',['setOutletsPos',['../classcm__object.html#a0a7f036984bb75d7099e2c0e687e1c62',1,'cm_object']]],
-  ['setpdmessage',['setPdMessage',['../classcmo__msg.html#a44e862270c272f0942e93553976ee6e1',1,'cmo_msg']]],
+  ['setpdmessage',['setPdMessage',['../classcmo__float.html#a572a2a372d2f62f94b7bb06e7294e5fd',1,'cmo_float::setPdMessage()'],['../classcmo__msg.html#a44e862270c272f0942e93553976ee6e1',1,'cmo_msg::setPdMessage()']]],
   ['setpdobject',['setPdObject',['../classcm__object.html#a7a877f5530c1de919014256222279756',1,'cm_object']]],
   ['setscale',['setScale',['../classcm__widget.html#ae45279e143fd0cb22aa4cd932939d83d',1,'cm_widget']]],
   ['stringtocanvas',['stringToCanvas',['../classcm__fileparser.html#a6afa0fb2cfa77a4973338a796bacc531',1,'cm_fileparser']]]

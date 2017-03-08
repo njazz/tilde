@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['patchcords',['patchcords',['../structt_canvas_data.html#acf5e1023fcc4ee6fd3a4157e32a1bd4d',1,'tCanvasData']]],
   ['pd_5fcanvas',['pd_canvas',['../classcm__canvas.html#ab4cebf6fd47966558324cd53f3108704',1,'cm_canvas']]],
   ['pdparserfilename',['pdParserFileName',['../classcm__fileparser.html#aca0fe04dc418200682007f081c26c01d',1,'cm_fileparser']]],
   ['pdparserprevwindow',['pdParserPrevWindow',['../classcm__fileparser.html#a44cadf1181c27de2c1a7bfdc48c26c7c',1,'cm_fileparser']]],

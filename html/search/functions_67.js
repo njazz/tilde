@@ -14,7 +14,7 @@ var searchData=
   ['getpatchcordasstring',['getPatchcordAsString',['../classcm__canvas.html#a491b223eb33eab3f8a6acc51325848b5',1,'cm_canvas']]],
   ['getpatchcords',['getPatchcords',['../classcm__canvas.html#acfe3d18940b9784bd7ec04bb6fb23e75',1,'cm_canvas']]],
   ['getpdobject',['getPdObject',['../classcm__object.html#a6d7e0f714e801e61e6c2f76047f1589e',1,'cm_object']]],
-  ['getsavestring',['getSaveString',['../classcm__object.html#a55c2eca839b7e2f8b34f8ed5290393e0',1,'cm_object::getSaveString()'],['../classcmo__msg.html#a2da4aed3ba9ef2cabdb9aff01861ea4e',1,'cmo_msg::getSaveString()']]],
+  ['getsavestring',['getSaveString',['../classcm__object.html#a55c2eca839b7e2f8b34f8ed5290393e0',1,'cm_object::getSaveString()'],['../classcmo__float.html#a32c43a289b0e426a68c7a276f6b3b60b',1,'cmo_float::getSaveString()'],['../classcmo__msg.html#a2da4aed3ba9ef2cabdb9aff01861ea4e',1,'cmo_msg::getSaveString()']]],
   ['getscale',['getScale',['../classcm__widget.html#ac1017e2f36ea483f884b11b08f93dcfd',1,'cm_widget']]],
   ['getstartpoint',['getStartPoint',['../classcm__patchcord.html#a6698e93c5934891740ad9670c3545351',1,'cm_patchcord']]]
 ];

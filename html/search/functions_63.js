@@ -15,6 +15,7 @@ var searchData=
   ['cm_5fpost',['cm_post',['../classcm__pdwindow.html#a41aed0375c6b028bcdcb3615105c3182',1,'cm_pdwindow']]],
   ['cm_5fwidget',['cm_widget',['../classcm__widget.html#a7aca8db9e88ee379ff3bc07c430c21ac',1,'cm_widget']]],
   ['cmo_5fbox',['cmo_box',['../classcmo__box.html#a7d4669447c4e7b2a403a37d6f3ca0161',1,'cmo_box']]],
+  ['cmo_5ffloat',['cmo_float',['../classcmo__float.html#a5bc7a439b218b4e62fc7b2bf0b16de2a',1,'cmo_float']]],
   ['cmo_5fmsg',['cmo_msg',['../classcmo__msg.html#a3bc69e1fac13ab3ee80258c1c598c55f',1,'cmo_msg']]],
   ['cmp_5fclosepatch',['cmp_closepatch',['../cm__pdlink_8h.html#af08cbd72d5b239361a801b4b67247a9c',1,'cm_pdlink.h']]],
   ['cmp_5fcreate_5fmessage',['cmp_create_message',['../cm__pdlink_8h.html#a3bac993f5ef2ae3ddcb123762d3668d0',1,'cm_pdlink.h']]],
@@ -35,6 +36,7 @@ var searchData=
   ['connectsobject',['connectsObject',['../classcm__patchcord.html#a11ec64fcf2f1772302c98c2980ef79c7',1,'cm_patchcord']]],
   ['createactions',['createActions',['../classcm__basewindow.html#a28d95f8bbc8ce7d3a325f6276bae20fa',1,'cm_basewindow::createActions()'],['../classcm__patchwindow.html#a23e89d610e3d192ffdc7ad495f74da59',1,'cm_patchwindow::createActions()']]],
   ['createbox',['createBox',['../classcm__canvas.html#aa39d462d3483b07462c814383fee57c1',1,'cm_canvas']]],
+  ['createfloat',['createFloat',['../classcm__canvas.html#a72bd3e0766f6845c9c7bedf9b2465387',1,'cm_canvas']]],
   ['createmenus',['createMenus',['../classcm__basewindow.html#a553c93f8cf60c983ae27e4dc5034f18d',1,'cm_basewindow::createMenus()'],['../classcm__patchwindow.html#a2514fec437b9207934e0753ace19502e',1,'cm_patchwindow::createMenus()']]],
   ['createmsg',['createMsg',['../classcm__canvas.html#ae6a27ff3f49acc1d3e04e619c822b5a0',1,'cm_canvas']]]
 ];
