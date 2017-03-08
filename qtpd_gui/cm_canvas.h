@@ -135,7 +135,18 @@ public:
 
             p.setRenderHint(QPainter::HighQualityAntialiasing, true);
             p.setPen(QPen(pc_color, 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-            p.drawLine(((cm_patchcord*)this->patchcords.at(i))->getStartPoint(), ((cm_patchcord*)this->patchcords.at(i))->getEndPoint());
+
+            //todo option
+            //p.drawLine(((cm_patchcord*)this->patchcords.at(i))->getStartPoint(), ((cm_patchcord*)this->patchcords.at(i))->getEndPoint());
+
+            QPainterPath path;
+            QPoint start = ((cm_patchcord*)this->patchcords.at(i))->getStartPoint();
+            QPoint end = ((cm_patchcord*)this->patchcords.at(i))->getEndPoint();
+
+            path.moveTo(start);
+            path.cubicTo(QPoint(start.x(),end.y()), QPoint(end.x(), start.y()), end);
+
+            p.drawPath(path);
         }
 
     }
