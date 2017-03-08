@@ -19,6 +19,7 @@ cm_canvas::cm_canvas(cm_widget *parent) : cm_widget(parent)
 
     //
     this->gridEnabled = true;
+    this->gridSnap = true;
     this->gridStep = 20;
 
     //
@@ -106,6 +107,13 @@ void cm_canvas::s_MoveBox(cm_widget *box, QMouseEvent* event)
         cm_object* w = ((cm_object*)this->selObjectBoxes.at(i));
         QPoint pos = ((cm_object*)this->selObjectBoxes.at(i))->pos() +
                 mapToParent((event->pos()-box->dragOffset));
+
+        if (this->gridSnap)
+        {
+            pos.setX(floor(pos.x()/this->gridStep)*this->gridStep);
+            pos.setY(floor(pos.y()/this->gridStep)*this->gridStep);
+        }
+
 
         w->move(pos);
 

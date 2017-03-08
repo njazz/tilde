@@ -63,6 +63,7 @@ private:
 
     //
     bool gridEnabled;
+    bool gridSnap;
     int gridStep;
 
     Q_OBJECT
@@ -147,30 +148,31 @@ public:
             QPoint b2 = QPoint(end.x() - (end.x() - start.x()) * .5, -fabs(end.y() - start.y()) * .5 + end.y());
 
             //TODO
-//            //spaghetti lol
-//            if (start.y()>end.y())
-//            {
-//                if (b1.y() - start.y() > 80)
-//                {
-//                    b1.setY(start.y() + 80);
-//                }
+            //spaghetti lol
+            if (start.y()>end.y())
+            {
+                if (b1.y() - start.y() > 80)
+                {
+                    b1.setY(start.y() + 80);
+                }
 
-//                if (b2.y() - end.y() < -80)
-//                {
-//                    b2.setY(end.y() - 80);
-//                }
+                if (b2.y() - end.y() < -80)
+                {
+                    b2.setY(end.y() - 80);
+                }
+            }
 
-//               if (b1.x() - start.x() < 20)
-//                {
-//                    b1.setX(start.x() + 20);
-//                }
+            //               if (b1.x() - start.x() < 20)
+            //                {
+            //                    b1.setX(start.x() + 20);
+            //                }
 
-//                if (b2.x() - end.x() < -20)
-//                {
-//                    b2.setX(end.x() - 20);
-//                }
+            //                if (b2.x() - end.x() < -20)
+            //                {
+            //                    b2.setX(end.x() - 20);
+            //                }
 
-//            }
+            //            }
 
             path.moveTo(start);
             path.cubicTo(b1, b2 , end);
@@ -246,7 +248,15 @@ public:
         if (this->dragObject)
         {
             QPoint offset = QPoint(10,10);
-            this->dragObject->move(mapToParent(ev->pos() - offset));
+
+            QPoint newpos = mapToParent(ev->pos() - offset);
+            if (this->gridSnap)
+            {
+                newpos.setX(floor(newpos.x()/this->gridStep)*this->gridStep);
+                newpos.setY(floor(newpos.y()/this->gridStep)*this->gridStep);
+            }
+
+            this->dragObject->move(newpos);
         }
 
         //selection frame
@@ -713,12 +723,23 @@ public:
         }
     }
 
+
     ////
     /// \brief set the show/hide grid flag
     /// \param val
     ///
     void setGridEnabled(bool val)
     {this->gridEnabled = val;}
+
+
+    ////
+    /// \brief align to grid flag
+    /// \param val
+    ///
+    void setGridSnap(bool val)
+    {
+        this->gridSnap = val;
+    }
 
 
     ////

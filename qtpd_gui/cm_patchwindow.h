@@ -168,7 +168,11 @@ public:
 
 
         snapToGridAct = new QAction(tr("Snap to grid"), this);
-        //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
+        snapToGridAct->setShortcut(tr("Alt+G"));
+        snapToGridAct->setCheckable(true);
+        snapToGridAct->setChecked(true);
+        connect(snapToGridAct, &QAction::triggered, this, &cm_patchwindow::setGridSnap);
+
 
         alignToGridAct = new QAction(tr("Align to grid"), this);
         //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
@@ -308,6 +312,13 @@ public:
         this->showGridAct->setChecked(this->showGridAct->isChecked());
         this->canvas->setGridEnabled(this->showGridAct->isChecked());
         this->canvas->repaint();
+    }
+
+    void setGridSnap()
+    {
+        this->snapToGridAct->setChecked(this->snapToGridAct->isChecked());
+        this->canvas->setGridSnap(this->snapToGridAct->isChecked());
+        //this->canvas->repaint();
     }
 
 
