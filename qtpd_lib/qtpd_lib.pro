@@ -137,16 +137,7 @@ SOURCES += pdlib.cpp \
     src/x_vexp_if.c \
     extra/list_product.cpp \
     extra/cm_uimsg.cpp \
-    ceammc-ui/ui_display.cpp \
-    ceammc-ui/ui_knob.cpp \
-    ceammc-ui/ui_link.cpp \
-    ceammc-ui/ui_slider2d.cpp \
-    ceammc-ui/ui_sliders.cpp \
-    ceammc-ui/ui_keyboard.cpp \
-    ceammc-ui/ui_spectroscope~.cpp \
-    ceammc-ui/ui_bpfunc.cpp \
-    ceammc-ui/ui_ecanvas.cpp \
-    ceammc-ui/ui_scope~.cpp \
+\
     creamlibrary/Sources/c.bang.cpp \
     creamlibrary/Sources/c.blackboard.cpp \
     creamlibrary/Sources/c.breakpoints.cpp \
@@ -172,6 +163,18 @@ SOURCES += pdlib.cpp \
     creamlibrary/Sources/c.toggle.cpp \
     creamlibrary/Sources/c.wavesel.cpp \
     creamlibrary/c.library.cpp \
+\
+    ceammc-ui/ui_display.cpp \
+    ceammc-ui/ui_knob.cpp \
+#    ceammc-ui/ui_link.cpp \ # needs fix
+    ceammc-ui/ui_slider2d.cpp \
+    ceammc-ui/ui_sliders.cpp \
+    ceammc-ui/ui_keyboard.cpp \
+    ceammc-ui/ui_spectroscope~.cpp \
+    ceammc-ui/ui_bpfunc.cpp \
+    ceammc-ui/ui_ecanvas.cpp \
+    ceammc-ui/ui_scope~.cpp \
+\
     CicmWrapper/Sources/ebox.c \
     CicmWrapper/Sources/eclass.c \
     CicmWrapper/Sources/ecommon.c \
@@ -229,7 +232,10 @@ HEADERS += pdlib.h \
 INCLUDEPATH += src/ \
     extra/ \
     portaudio/include/ \
-    ceammc-lib/
+    creamlibrary/ \
+    ceammc-lib/ \
+    CicmWrapper/Sources/
+
 
 #LIBS += -L/usr/local/lib -lportaudio
 

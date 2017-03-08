@@ -24,6 +24,7 @@
 #include <string>
 
 #include <cicm_wrapper.h>
+#include <c.library.hpp>
 #include "m_pd.h"
 
 namespace ceammc_gui {

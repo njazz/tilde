@@ -14,6 +14,31 @@ int sys_startgui(const char *libdir);
 extern void setup_ui0x2emsg();
 extern void setup_list0x2eproduct();
 
+//temporary
+extern "C" void setup_ui0x2ebang(void);
+extern "C" void setup_ui0x2etoggle(void);
+extern "C" void setup_ui0x2enumber_tilde(void);
+extern "C" void setup_ui0x2enumber(void);
+extern "C" void setup_ui0x2eslider(void);
+extern "C" void setup_ui0x2eradio(void);
+
+extern "C" void setup_ui0x2ebpfunc(void);
+extern "C" void setup_ui0x2eknob(void);
+extern "C" void setup_ui0x2escope_tilde(void);
+extern "C" void setup_ui0x2espectroscope_tilde(void);
+
+//extern "C" void setup_ui0x2ecolorpanel(void);
+//extern "C" void setup_ui0x2edsp_tilde(void);
+//extern "C" void setup_ui0x2eincdec(void);
+//extern "C" void setup_ui0x2ematrix(void);
+//extern "C" void setup_ui0x2emenu(void);
+//extern "C" void setup_ui0x2emeter_tilde(void);
+//extern "C" void setup_ui0x2epreset(void);
+//extern "C" void setup_ui0x2erslider(void);
+//extern "C" void setup_ui0x2etab(void);
+
+
+
 }
 
 #include <stdbool.h>
@@ -79,6 +104,20 @@ void cmp_pdinit()
     //temporary extra objects
     setup_ui0x2emsg();
     setup_list0x2eproduct();
+
+    //temporary initialisations
+    setup_ui0x2ebang();
+    setup_ui0x2ebpfunc();
+    setup_ui0x2eknob();
+    setup_ui0x2emsg();
+    setup_ui0x2enumber();
+    setup_ui0x2enumber_tilde();
+    setup_ui0x2eradio();
+    setup_ui0x2escope_tilde();
+    setup_ui0x2eslider();
+    setup_ui0x2espectroscope_tilde();
+    setup_ui0x2etoggle();
+
     qDebug("pd extras");
 
     // init audio
