@@ -14,6 +14,8 @@ var searchData=
   ['s_5foutmousepressed',['s_OutMousePressed',['../classcm__canvas.html#a6517d92eb8c2529e3ff9f00db61bdf59',1,'cm_canvas::s_OutMousePressed()'],['../classcm__widget.html#a8b8e6417cb50ec31773fef56d5f6497c',1,'cm_widget::s_OutMousePressed()']]],
   ['s_5foutmousereleased',['s_OutMouseReleased',['../classcm__canvas.html#a0e35a1e5d91dae56cb730ee04d5d86d6',1,'cm_canvas::s_OutMouseReleased()'],['../classcm__widget.html#a8d66381e7bf31868708a557ccb25e60e',1,'cm_widget::s_OutMouseReleased()']]],
   ['s_5fselectbox',['s_SelectBox',['../classcm__canvas.html#a845596ee54b019d2c015e0052312be62',1,'cm_canvas']]],
+  ['save',['save',['../classcm__filesaver.html#afbe04afc6483b1186b9c10f4aa907931',1,'cm_filesaver']]],
+  ['savecanvas',['saveCanvas',['../classcm__filesaver.html#a826a3e1c0ace43081caec26e4d075113',1,'cm_filesaver']]],
   ['select',['select',['../classcm__widget.html#a2789b084155e10f5630c458b65e01bd3',1,'cm_widget']]],
   ['selectbox',['selectBox',['../classcm__widget.html#a14294c167a8229465541a0fe9c1ec69f',1,'cm_widget']]],
   ['seteditmode',['setEditMode',['../classcm__canvas.html#a665a170e89bfb8ab052172e9d8d74899',1,'cm_canvas::setEditMode()'],['../classcm__patchwindow.html#a1d061d74acb6b5a7d6ef9252f53a7cd8',1,'cm_patchwindow::setEditMode()']]],

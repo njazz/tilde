@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>qtpd: /home/travis/build/njazz/qtpd/qtpd_gui/cm_widget.h File Reference</title>
+<title>qtpd: cm_filesaver Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -48,8 +48,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -70,61 +70,108 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 </div>
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#pub-static-methods">Static Public Member Functions</a>  </div>
   <div class="headertitle">
-<div class="title">/home/travis/build/njazz/qtpd/qtpd_gui/cm_widget.h File Reference</div>  </div>
+<div class="title">cm_filesaver Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;QWidget&gt;</code><br/>
-</div>
-<p><a href="cm__widget_8h_source.html">Go to the source code of this file.</a></p>
+<!-- doxytag: class="cm_filesaver" -->
+<p><code>#include &lt;<a class="el" href="cm__filesaver_8h_source.html">cm_filesaver.h</a>&gt;</code></p>
+
+<p><a href="classcm__filesaver-members.html">List of all members.</a></p>
 <table class="memberdecls">
-<tr><td colspan="2"><h2><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__widget.html">cm_widget</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">parent class for all gui objects  <a href="classcm__widget.html#details">More...</a><br/></td></tr>
-<tr><td colspan="2"><h2><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__widget_8h.html#afd0995990651dbc203c3e07baa11db60">t_editMode</a> { <a class="el" href="cm__widget_8h.html#afd0995990651dbc203c3e07baa11db60a465f5170a546b0bdcd92633c2e693566">em_Unlocked</a>, 
-<a class="el" href="cm__widget_8h.html#afd0995990651dbc203c3e07baa11db60a6c11f4113322a63856ad60aca545b573">em_Locked</a>, 
-<a class="el" href="cm__widget_8h.html#afd0995990651dbc203c3e07baa11db60af276ad649d38a874686b04721824d527">em_Temporary</a>
- }</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">edit mode types  <a href="cm__widget_8h.html#afd0995990651dbc203c3e07baa11db60">More...</a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__filesaver.html#a826a3e1c0ace43081caec26e4d075113">saveCanvas</a> (<a class="el" href="classcm__canvas.html">cm_canvas</a> *canvas, QFile *file)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">save canvas  <a href="#a826a3e1c0ace43081caec26e4d075113"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__filesaver.html#afbe04afc6483b1186b9c10f4aa907931">save</a> (QString fname, <a class="el" href="classcm__canvas.html">cm_canvas</a> *canvas)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">save file to disk; runs 'savecanvas' recursively  <a href="#afbe04afc6483b1186b9c10f4aa907931"></a><br/></td></tr>
 </table>
-<hr/><h2>Enumeration Type Documentation</h2>
-<a class="anchor" id="afd0995990651dbc203c3e07baa11db60"></a><!-- doxytag: member="cm_widget.h::t_editMode" ref="afd0995990651dbc203c3e07baa11db60" args="" -->
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="afbe04afc6483b1186b9c10f4aa907931"></a><!-- doxytag: member="cm_filesaver::save" ref="afbe04afc6483b1186b9c10f4aa907931" args="(QString fname, cm_canvas *canvas)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="cm__widget_8h.html#afd0995990651dbc203c3e07baa11db60">t_editMode</a></td>
+          <td class="memname">static void <a class="el" href="classcm__filesaver.html#afbe04afc6483b1186b9c10f4aa907931">cm_filesaver::save</a> </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>fname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcm__canvas.html">cm_canvas</a> *&#160;</td>
+          <td class="paramname"><em>canvas</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>edit mode types </p>
-<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="afd0995990651dbc203c3e07baa11db60a465f5170a546b0bdcd92633c2e693566"></a><!-- doxytag: member="em_Unlocked" ref="afd0995990651dbc203c3e07baa11db60a465f5170a546b0bdcd92633c2e693566" args="" -->em_Unlocked</em>&nbsp;</td><td>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="afd0995990651dbc203c3e07baa11db60a6c11f4113322a63856ad60aca545b573"></a><!-- doxytag: member="em_Locked" ref="afd0995990651dbc203c3e07baa11db60a6c11f4113322a63856ad60aca545b573" args="" -->em_Locked</em>&nbsp;</td><td>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="afd0995990651dbc203c3e07baa11db60af276ad649d38a874686b04721824d527"></a><!-- doxytag: member="em_Temporary" ref="afd0995990651dbc203c3e07baa11db60af276ad649d38a874686b04721824d527" args="" -->em_Temporary</em>&nbsp;</td><td>
-</td></tr>
-</table>
-</dd>
+<p>save file to disk; runs 'savecanvas' recursively </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fname</td><td></td></tr>
+    <tr><td class="paramname">canvas</td><td></td></tr>
+  </table>
+  </dd>
 </dl>
 
 </div>
 </div>
+<a class="anchor" id="a826a3e1c0ace43081caec26e4d075113"></a><!-- doxytag: member="cm_filesaver::saveCanvas" ref="a826a3e1c0ace43081caec26e4d075113" args="(cm_canvas *canvas, QFile *file)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="classcm__filesaver.html#a826a3e1c0ace43081caec26e4d075113">cm_filesaver::saveCanvas</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcm__canvas.html">cm_canvas</a> *&#160;</td>
+          <td class="paramname"><em>canvas</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QFile *&#160;</td>
+          <td class="paramname"><em>file</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>save canvas </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td></td></tr>
+    <tr><td class="paramname">canvas</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>/home/travis/build/njazz/qtpd/qtpd_gui/<a class="el" href="cm__filesaver_8h_source.html">cm_filesaver.h</a></li>
+</ul>
 </div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"

@@ -3,6 +3,7 @@ var searchData=
   ['cm_5fbasewindow',['cm_basewindow',['../classcm__basewindow.html',1,'']]],
   ['cm_5fcanvas',['cm_canvas',['../classcm__canvas.html',1,'']]],
   ['cm_5ffileparser',['cm_fileparser',['../classcm__fileparser.html',1,'']]],
+  ['cm_5ffilesaver',['cm_filesaver',['../classcm__filesaver.html',1,'']]],
   ['cm_5fmenu',['cm_menu',['../classcm__menu.html',1,'']]],
   ['cm_5fobject',['cm_object',['../classcm__object.html',1,'']]],
   ['cm_5fobjectmaker',['cm_objectmaker',['../classcm__objectmaker.html',1,'']]],

@@ -163,6 +163,9 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns object by index - this is needed by parser  <a href="#a6de16ed0f1b9e42474441788758f9a88"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__canvas.html#af2820c90df78c8ca00c1db3f0f8eb6aa">setGridEnabled</a> (bool val)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">set the show/hide grid flag  <a href="#af2820c90df78c8ca00c1db3f0f8eb6aa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classcm__object.html">cm_object</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__canvas.html#aa7d5b7699cdae8c062ff8bf3c43e920c">getObjectBoxes</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns vector of all object boxes - needed by filesaver  <a href="#aa7d5b7699cdae8c062ff8bf3c43e920c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classcm__patchcord.html">cm_patchcord</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__canvas.html#acfe3d18940b9784bd7ec04bb6fb23e75">getPatchcords</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__canvas.html#aab9da787d6b29f28aeac4d3ca7f6f8b9">dragObject</a></td></tr>
@@ -450,6 +453,25 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aa7d5b7699cdae8c062ff8bf3c43e920c"></a><!-- doxytag: member="cm_canvas::getObjectBoxes" ref="aa7d5b7699cdae8c062ff8bf3c43e920c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classcm__object.html">cm_object</a>*&gt; <a class="el" href="classcm__canvas.html#aa7d5b7699cdae8c062ff8bf3c43e920c">cm_canvas::getObjectBoxes</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>returns vector of all object boxes - needed by filesaver </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a6de16ed0f1b9e42474441788758f9a88"></a><!-- doxytag: member="cm_canvas::getObjectByIndex" ref="a6de16ed0f1b9e42474441788758f9a88" args="(int idx)" -->
 <div class="memitem">
 <div class="memproto">
@@ -473,6 +495,22 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a> pointer </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acfe3d18940b9784bd7ec04bb6fb23e75"></a><!-- doxytag: member="cm_canvas::getPatchcords" ref="acfe3d18940b9784bd7ec04bb6fb23e75" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classcm__patchcord.html">cm_patchcord</a>*&gt; <a class="el" href="classcm__canvas.html#acfe3d18940b9784bd7ec04bb6fb23e75">cm_canvas::getPatchcords</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
 </div>
 </div>
@@ -1059,7 +1097,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 8 2017 12:32:10 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 8 2017 17:11:35 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
