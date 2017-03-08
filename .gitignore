@@ -5,3 +5,5 @@ build-*/*
 qtpd_main.pro.user
 
 qtpd_main.pro.user
+
+qtpd_lib/qtpd_lib.pro.user
