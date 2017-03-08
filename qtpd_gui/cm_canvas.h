@@ -755,6 +755,54 @@ public:
     {
         return this->patchcords;
     }
+
+
+    ////
+    /// \brief converts object pointers to their numbers in canvas and returns pd string for filesaver
+    /// \param patchcord
+    /// \return
+    ///
+
+
+    int findObjectIndex(cm_object * obj)
+    {
+        cm_object* obj1;
+        std::vector<cm_object*>::iterator iter = std::find(this->objectBoxes.begin(), objectBoxes.end(), obj);
+        size_t index = std::distance(this->objectBoxes.begin(), iter);
+        if(index != this->objectBoxes.size())
+        {
+            return index;
+        }
+        return -1;
+
+    }
+    std::string getPatchcordAsString(cm_patchcord* patchcord)
+    {
+        //TODO
+
+
+        int obj1i = this->findObjectIndex(patchcord->getObj1());
+        int obj2i = this->findObjectIndex(patchcord->getObj2());
+
+        if ((obj1i>=0) && (obj2i>=0))
+        {
+            std::string ret;
+
+            ret += std::to_string(obj1i) + " ";
+            ret += std::to_string(patchcord->getOutIdx()) + " ";
+
+            ret += std::to_string(obj2i) + " ";
+            ret += std::to_string(patchcord->getInIdx()) + " ";
+
+            return ret;
+
+        }
+        else qDebug ("patchcord to string error");
+
+        return "";
+
+    }
+
 signals:
 
 public slots:

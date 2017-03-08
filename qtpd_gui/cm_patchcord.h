@@ -1,7 +1,8 @@
 #ifndef CM_PATCHCORD_H
 #define CM_PATCHCORD_H
 
-#include "cm_widget.h"
+#include "cm_object.h"
+#include"cm_port.h"
 
 #include <math.h>
 
@@ -52,6 +53,30 @@ public:
 
     }
 
+    ////
+
+    cm_object* getObj1()
+    {
+        return (cm_object*)this->obj1;
+    }
+
+    cm_object* getObj2()
+    {
+        return (cm_object*)this->obj2;
+    }
+
+    int getOutIdx()
+    {
+        return ((cm_port*)this->out1)->portIndex;
+    }
+
+    int getInIdx()
+    {
+        return ((cm_port*)this->in2)->portIndex;
+    }
+
+    ////
+
     bool connectsObject(cm_widget* obj)
     {
         return ( (obj == this->obj1) || (obj == this->obj2) );
@@ -85,11 +110,7 @@ public:
 
     }
 
-    std::string getAsString()
-    {
-        //TODO
 
-    }
 
 };
 

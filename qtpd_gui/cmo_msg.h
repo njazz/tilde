@@ -192,6 +192,8 @@ public:
 
     }
 
+    std::string getSaveString()
+    {return "ui.msg "+ this->getObjectData();}
 
 
 signals:

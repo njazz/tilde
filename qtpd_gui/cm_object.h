@@ -131,6 +131,13 @@ public:
     bool isErrorBox() {return this->errorBox_;}
     void setErrorBox(bool val) {this->errorBox_ = val;}
 
+    ////
+    /// \brief returns object's text for client-based file saving
+    /// \return
+    ///
+    virtual std::string getSaveString()
+    {return this->objectData;}
+
 };
 
 #endif // CM_OBJECT_H

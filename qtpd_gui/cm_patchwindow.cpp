@@ -107,8 +107,8 @@ void cm_patchwindow::save()
 
     qDebug("filename: %s %s", file.toStdString().c_str(), dir.toStdString().c_str());
 
-    cmp_savepatch(this->canvas->pd_canvas, (char*)file.toStdString().c_str(), (char*)dir.toStdString().c_str());
-
+    //cmp_savepatch(this->canvas->pd_canvas, (char*)file.toStdString().c_str(), (char*)dir.toStdString().c_str());
+    cm_filesaver::save(fname, this->canvas);
 }
 
 ////
@@ -126,7 +126,8 @@ void cm_patchwindow::saveAs()
 
         qDebug("filename: %s %s", file.toStdString().c_str(), dir.toStdString().c_str());
 
-        cmp_savepatch(this->canvas->pd_canvas, (char*)file.toStdString().c_str(), (char*)dir.toStdString().c_str());
+        //        cmp_savepatch(this->canvas->pd_canvas, (char*)file.toStdString().c_str(), (char*)dir.toStdString().c_str());
+        cm_filesaver::save(fname, this->canvas);
 
         //
         this->canvas->fileName = fname;

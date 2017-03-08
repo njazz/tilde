@@ -3,6 +3,8 @@
 
 #include <QObject>
 
+
+
 ////
 /// \brief Common menu - creates new windows (patch, Pd)
 ///
