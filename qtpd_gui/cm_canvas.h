@@ -642,6 +642,10 @@ public:
                 if (!box->isErrorBox())
                     cmp_deleteobject(this->pd_canvas, (t_object*)box->getPdObject());
         }
+        else
+        {
+            qDebug("didn't delete pd object");
+        }
 
         this->deletePatchcordsFor(box);
 

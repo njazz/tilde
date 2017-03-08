@@ -3,6 +3,9 @@
 
 #include "cm_patchwindow.h"
 
+////
+/// \brief saves pd files on 'client' (GUI) side
+///
 class cm_filesaver
 {
 private:
@@ -16,7 +19,6 @@ public:
     ///
     static void saveCanvas(cm_canvas* canvas, QFile* file)
     {
-
 
         //save canvas
         //todo canvas is subpatch flag

@@ -228,6 +228,9 @@ public:
     {
 
         editMenu->addSeparator();
+        editMenu->addAction(selectAllAct);
+        editMenu->addAction(selectAgainAct);
+        editMenu->addSeparator();
         editMenu->addAction(delObjectAct);
         editMenu->addAction(editModeAct);
 

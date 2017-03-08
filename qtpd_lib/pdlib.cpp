@@ -122,7 +122,7 @@ void cmp_pdinit()
 
     // init audio
     int indev[MAXAUDIOINDEV], inch[MAXAUDIOINDEV],
-    outdev[MAXAUDIOOUTDEV], outch[MAXAUDIOOUTDEV];
+            outdev[MAXAUDIOOUTDEV], outch[MAXAUDIOOUTDEV];
 
     indev[0] = outdev[0] = DEFAULTAUDIODEV;
     inch[0] = 1;
@@ -336,7 +336,13 @@ void cmp_moveobject(t_object* obj, int x, int y)
 void cmp_deleteobject(t_canvas* canvas, t_object* obj)
 {
 
-    glist_delete(canvas, &obj->te_g);
+
+    // one more extra check
+    // if (canvas)
+    {
+        glist_delete(canvas, &obj->te_g);
+        //canvas_restoreconnections(glist_getcanvas(canvas));
+    }
 
     qDebug("deleted obj");
 
