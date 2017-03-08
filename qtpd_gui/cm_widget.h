@@ -2,6 +2,7 @@
 #define CM_WIDGET_H
 
 #include <QWidget>
+//#include <QGraphicsScene>
 
 // Widget extension
 // check / fix

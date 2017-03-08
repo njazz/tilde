@@ -136,6 +136,7 @@ public:
 
         putNumberAct = new QAction(tr("Number"), this);
         putNumberAct->setShortcut(tr("Ctrl+3"));
+        connect(putNumberAct, &QAction::triggered, this, &cm_patchwindow::newFloatBox);
 
         putSliderAct = new QAction(tr("Slider(s)..."), this);
         putSliderAct->setShortcut(tr("Ctrl+Shift+V"));
@@ -306,6 +307,22 @@ public:
             cmo_msg *newMsg = this->canvas->createMsg("",QPoint(100,100));
             this->canvas->dragObject = newMsg;
             newMsg->show();
+        }
+
+    }
+
+
+    void newFloatBox()
+    {
+
+        //const char * obj_name = this->objectMaker->text().toStdString().c_str();
+        //
+
+        if (this->canvas->getEditMode() != em_Locked)
+        {
+            cmo_float *newFlo = this->canvas->createFloat("0",QPoint(100,100));
+            this->canvas->dragObject = newFlo;
+            newFlo->show();
         }
 
     }

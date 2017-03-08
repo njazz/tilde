@@ -38,7 +38,8 @@ SOURCES += main.cpp\
     cmo_box.cpp \
     cm_fileparser.cpp \
     cm_object.cpp \
-    cm_filesaver.cpp
+    cm_filesaver.cpp \
+    cmo_float.cpp
 
 HEADERS  += \
     cm_port.h \
@@ -56,7 +57,8 @@ HEADERS  += \
     cm_fileparser.h \
     cm_object.h \
     cm_preferences.h \
-    cm_filesaver.h
+    cm_filesaver.h \
+    cmo_float.h
 
 FORMS    += \
     cm_basewindow.ui \

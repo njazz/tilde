@@ -4,9 +4,12 @@
 #include <QWidget>
 #include <QtGui>
 #include <QtWidgets>
-#include "cmo_box.h"
+
 #include "cm_patchcord.h"
+
+#include "cmo_box.h"
 #include "cmo_msg.h"
+#include "cmo_float.h"
 
 #include "cm_objectmaker.h"
 
@@ -25,6 +28,8 @@
 
 //} tPatchcord;
 
+////
+/// \brief structure for selection rectangle
 typedef struct
 {
     bool active;
@@ -33,7 +38,12 @@ typedef struct
 
 } tRectPlus;
 
+typedef struct
+{
+    std::vector<cm_object*> boxes;
+    std::vector<cm_patchcord*> patchcords;
 
+} tCanvasData;
 
 ////
 /// \brief 't_canvas' counterpart. creates objects
@@ -45,6 +55,12 @@ private:
     std::vector<cm_object*> objectBoxes;
     std::vector<cm_patchcord*> patchcords;
     std::vector<cm_object*> selObjectBoxes;
+    std::vector<cm_patchcord*> selPatchcords;
+
+    //move here
+    tCanvasData data;
+    tCanvasData selData;
+
 
     tRectPlus selFrame;
     tRectPlus newLine;
@@ -543,6 +559,58 @@ public:
         msg->show();
 
         return msg;
+
+
+    }
+
+
+    ////
+    /// \brief create new float box (ui.msg yet)
+    /// \param pdObjectName TODO rename. object name and arguments
+    /// \param pos
+    /// \return pointer to cm_box
+    ///
+    cmo_float* createFloat(std::string message, QPoint pos)
+    {
+        cmo_float *flo = new cmo_float((cm_object*)this);   //check
+        flo->setObjectData(message);
+
+        flo->addInlet();
+        flo->addOutlet();
+
+        connect(flo,&cmo_float::selectBox, this, &cm_canvas::s_SelectBox);
+        connect(flo,&cmo_float::moveBox, this, &cm_canvas::s_MoveBox);
+
+        flo->setEditModeRef(&this->editMode);
+
+        flo->move(pos);
+
+        this->objectBoxes.push_back(flo);
+
+        //temp
+        t_object* new_obj = 0 ;
+        if (!this->pd_canvas)
+        {qDebug("bad pd canvas instance");}
+        else
+        {
+            new_obj = cmp_create_message(this->pd_canvas, message, pos.x(), pos.y());
+        }
+
+        if (new_obj)
+        {
+            qDebug ("created msgbox %s | ptr %lu\n",  message.c_str(), (long)new_obj);
+            flo->setPdObject(new_obj);
+        }
+        else
+        {
+            qDebug("Error: no such object %s",  message.c_str());
+        }
+
+        flo->setPdMessage(message.c_str());
+
+        flo->show();
+
+        return flo;
 
 
     }
