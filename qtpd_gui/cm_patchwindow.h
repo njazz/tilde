@@ -18,6 +18,10 @@ private:
 
     ////
 
+    QAction *selectAllAct;
+    QAction *selectAgainAct;
+
+
     QAction *delObjectAct;
     QAction *editModeAct;
 
@@ -77,7 +81,7 @@ private slots:
     cm_patchwindow();
 public:
     static cm_patchwindow* newWindow();
-//    static cm_patchwindow* loadWindow(QStringList); //arguments
+    //    static cm_patchwindow* loadWindow(QStringList); //arguments
     static cm_patchwindow* newSubpatch(t_canvas *subpatch = 0);
 
     cm_canvas* canvas;
@@ -92,6 +96,12 @@ public:
         delObjectAct = new QAction(tr("Delete object"), this);
         delObjectAct->setShortcut(tr("Backspace"));
         connect(delObjectAct, &QAction::triggered, this, &cm_patchwindow::delSelected);
+
+        selectAllAct = new QAction(tr("Select all"), this);
+        selectAllAct->setShortcut(tr("Ctrl+A"));
+
+        selectAgainAct = new QAction(tr("Select again"), this);
+        //selectAgainAct->setShortcut(tr("Ctrl+A"));
 
         editModeAct = new QAction(tr("Edit mode"), this);
         editModeAct->setShortcut(tr("Ctrl+E"));
@@ -158,8 +168,6 @@ public:
         //putArray->setShortcut(tr("Ctrl+Shift+T"));
 
 
-
-
         showGridAct = new QAction(tr("Show grid"), this);
         showGridAct->setShortcut(tr("Ctrl+Shift+G"));
         showGridAct->setCheckable(true);
@@ -175,27 +183,35 @@ public:
 
 
         alignToGridAct = new QAction(tr("Align to grid"), this);
+        alignToGridAct->setEnabled(false);
         //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
 
         alignLeftAct = new QAction(tr("Align left"), this);
+        alignLeftAct->setEnabled(false);
         //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
 
         alignRightAct = new QAction(tr("Align right"), this);
+        alignRightAct->setEnabled(false);
         //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
 
         alignTopAct = new QAction(tr("Align top"), this);
+        alignTopAct->setEnabled(false);
         //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
 
         alignBottomAct = new QAction(tr("Align bottom"), this);
+        alignBottomAct->setEnabled(false);
         //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
 
         distHAct = new QAction(tr("Distribute objects horizontaly"), this);
+        distHAct->setEnabled(false);
         //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
 
         distVAct = new QAction(tr("Distribute objects verticaly"), this);
+        distVAct->setEnabled(false);
         //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
 
         tidyUpAct = new QAction(tr("Tidy up"), this);
+        tidyUpAct->setEnabled(false);
         //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
 
         zoomInAct = new QAction(tr("Zoom in"), this);

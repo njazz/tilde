@@ -34,7 +34,7 @@ public:
     void setInletsPos()
     {
         float w = this->width() - 10;
-        w = (w < 22) ? 22 : w;
+        //w = (w < 40) ? 40 : w;
 
         float s = (inlets_.size()<2)?inlets_.size():(inlets_.size()-1);
 
@@ -50,7 +50,7 @@ public:
     void setOutletsPos()
     {
         float w = this->width() - 10;
-        w = (w < 22) ? 22 : w;
+        //w = (w < 40) ? 40 : w;
 
         float s = (outlets_.size()<2)?outlets_.size():(outlets_.size()-1);
 
@@ -119,6 +119,7 @@ public:
         QFontMetrics fm(myFont);
 
         this->setFixedWidth((int)fm.width(QString(this->objectData.c_str())) + 5);
+        if (this->width()<40) this->setFixedWidth(40);
     }
 
     std::string getObjectData()
