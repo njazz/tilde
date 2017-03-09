@@ -49,6 +49,11 @@ public:
         this->addUIobject("ui.msg", &cmo_msg::createObject);
         this->addUIobject("ui.float", &cmo_float::createObject);
         this->addUIobject("ui.text", &cmo_text::createObject);
+
+        //compatibility
+        //this->addUIobject("msg", &cmo_msg::createObject);
+        //this->addUIobject("floatatom", &cmo_msg::createObject);
+        //this->addUIobject("symbolatom", &cmo_msg::createObject);
     }
 
     void addUIobject(std::string name, cmObjectConstructor constructor)

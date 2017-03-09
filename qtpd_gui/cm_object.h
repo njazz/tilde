@@ -3,11 +3,20 @@
 
 #include "cm_widget.h"
 #include "cm_port.h"
+#include "cm_sizebox.h"
 
 #include "cm_preferences.h"
 
 
-
+////
+/// \brief object box size constraints
+///
+typedef enum
+{
+    os_Fixed,
+    os_FixedHeight,
+    os_Free
+} t_objectSize;
 
 ////
 /// \brief base class for all object boxes - standard and special
@@ -24,6 +33,10 @@ private:
     std::string objectData;     //name and arguments etc
 
     bool errorBox_;
+
+    t_objectSize objectSizeMode;
+
+    cm_sizebox sizeBox;
 
     cm_object();
 public:
@@ -95,6 +108,8 @@ public:
 
         new_in->portIndex = inlets_.size();
 
+        new_in->setEditModeRef(this->getEditModeRef());
+
         inlets_.push_back(new_in);
         connect(new_in, &cm_port::mousePressed, static_cast<cm_widget*>(this->parent()), &cm_widget::s_InMousePressed);
         connect(new_in, &cm_port::mouseReleased, static_cast<cm_widget*>(this->parent()), &cm_widget::s_InMouseReleased);
@@ -115,6 +130,8 @@ public:
         new_out->port_type = cm_port::cm_pt_outlet;
 
         new_out->portIndex = outlets_.size();
+
+        new_out->setEditModeRef(this->getEditModeRef());
 
         outlets_.push_back(new_out);
         connect(new_out, &cm_port::mousePressed, static_cast<cm_widget*>(this->parent()), &cm_widget::s_OutMousePressed);
@@ -209,6 +226,22 @@ public:
     virtual std::string getSaveString()
     {return this->objectData;}
 
+
+    void setEditModeRef(t_editMode *canvasEditMode)
+    {
+        cm_widget::setEditModeRef(canvasEditMode);
+
+        // todo
+        for (int i=0;i<this->inlets_.size();i++)
+        {
+            this->getInletAt(i)->setEditModeRef(canvasEditMode);
+        }
+
+        for (int i=0;i<this->outlets_.size();i++)
+        {
+            this->getOutletAt(i)->setEditModeRef(canvasEditMode);
+        }
+    }
 };
 
 #endif // CM_OBJECT_H

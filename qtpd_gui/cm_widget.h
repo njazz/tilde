@@ -18,6 +18,12 @@ typedef enum
     em_Temporary
 } t_editMode;
 
+typedef enum
+{
+    os_Fixed,
+    os_FixedHeight,
+    os_Free
+} t_objectSize;
 
 ////
 /// \brief parent class for all gui objects
@@ -72,9 +78,18 @@ public:
     /// \details this is set by "constructor" (createObj etc) in canvas
     /// \param canvasEditMode
     ///
-    void setEditModeRef(t_editMode* canvasEditMode)
+    virtual void setEditModeRef(t_editMode* canvasEditMode)
     {
         this->editMode_ = canvasEditMode;
+    }
+
+    ////
+    /// \brief get edit mode pointer - for inlets/outlets
+    /// \return
+    ///
+    t_editMode* getEditModeRef()
+    {
+        return this->editMode_;
     }
 
     ////
