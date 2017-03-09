@@ -24,7 +24,7 @@ public:
         //todo canvas is subpatch flag
         std::string out1;
 
-        out1 = "#N canvas 0 0 400 300 10;\n\r";     //temporary
+        out1 = "#N canvas 0 0 400 300 10;\r\n";     //temporary
         file->write(out1.c_str(),out1.size());
 
         //objects
@@ -37,7 +37,7 @@ public:
             out1 = "#X obj ";
             out1 += std::to_string(((cm_object*)*it)->x()) + " " + std::to_string(((cm_object*)*it)->y())+ " ";
             out1 += ((cm_object*)*it)->getSaveString();
-            out1 +=";\n\r" ;
+            out1 +=";\r\n" ;
 
             file->write(out1.c_str(),out1.size());
 
@@ -52,7 +52,7 @@ public:
             // check for subpatches
             out1 = "#X connect ";
             out1 += canvas->getPatchcordAsString(*it2);
-            out1 +=";\n\r";
+            out1 +=";\r\n";
 
             file->write(out1.c_str(),out1.size());
 

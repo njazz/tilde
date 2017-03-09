@@ -31,10 +31,11 @@ public:
     {
         if (list.at(0) == "obj")
         {
-            //qDebug("new obj");
+            qDebug("new obj");
             if (list.size()>3)
             {
                 QString objname;
+                QString msgname;
                 QPoint pos;
 
                 pos.setX(((QString)list.value(1)).toFloat());
@@ -45,13 +46,23 @@ public:
                 objList.removeAt(0);
                 objList.removeAt(0);
                 objList.removeAt(0);
+
                 objname = objList.join(" ");
+
+                objList.removeAt(0);
+                msgname = objList.join(" ");
+
+
 
                 qDebug() << "objname" << objname;
                 //temporary
                 //load gui boxes?
-                if (objList.at(0) == "ui.msg")
-                    cmcanvas->createMsg(objname.toStdString(), pos);
+                if (list.at(3) == "ui.msg")
+                    cmcanvas->createMsg(msgname.toStdString(), pos);
+                else if (list.at(3) == "ui.text")
+                    cmcanvas->createText(msgname.toStdString(), pos);
+                else if (list.at(3) == "ui.float")
+                    cmcanvas->createFloat(msgname.toStdString(), pos);
                 else
                     cmcanvas->createBox(objname.toStdString(), pos);
 
@@ -214,6 +225,9 @@ public:
 
             if (pdParserPrevWindow)
                 newWnd->setWindowTitle("<subpatch>");
+//            else
+//            {
+//            }
             newWnd->show();   //move to constructor? check for subcanvases the vis flag
 
 
@@ -226,6 +240,7 @@ public:
 
             if (pdParserWindow)
             {
+                qDebug("X");
                 cm_fileparser::stringToCanvas(pdParserWindow->canvas, msg);
             }
             else
