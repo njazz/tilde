@@ -3,7 +3,8 @@
 
 //#include <QWidget>
 
-#include <qlineedit.h>
+//#include <qlineedit.h>
+#include <QPlainTextEdit>
 
 #include "cm_object.h"
 #include "cm_port.h"
@@ -12,7 +13,7 @@
 
 
 ////
-/// \brief gui object: message box (ui.msg)
+/// \brief gui object: comment box (ui.text)
 ///
 class cmo_text : public cm_object
 {
@@ -21,7 +22,7 @@ class cmo_text : public cm_object
 private:
     bool clicked_;
 
-    QLineEdit* editor_;
+    QPlainTextEdit* editor_;
 
 public:
     explicit cmo_text(cm_object *parent = 0);
@@ -87,7 +88,8 @@ public:
 
         if ( (this->getEditMode()==em_Unlocked) && this->isSelected())
         {
-            this->editor_->setText(QString(this->getObjectData().c_str()));
+
+            this->editor_->document()->setPlainText(QString(this->getObjectData().c_str()));
             this->editor_->show();
             this->editor_->setFocus();
         }
@@ -224,8 +226,23 @@ public:
     std::string getSaveString()
     {return "ui.text "+ this->getObjectData();}
 
+    bool eventFilter(QObject *watched, QEvent *event)
+    {
+        qDebug("event filter");
+        if (event->type() == QEvent::KeyPress) {
 
+                    QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
+                    qDebug("key event");
 
+                    if  ( (keyEvent->key() == Qt::Key_Return) && (keyEvent->modifiers() == Qt::ShiftModifier) )
+                    {
+                        this->editorDone();
+                        qDebug("done");
+                        return true;
+                    }
+                }
+
+    }
 
 signals:
     //void selectBox(cm_widget*box);

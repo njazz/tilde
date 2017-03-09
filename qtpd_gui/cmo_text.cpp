@@ -11,19 +11,24 @@ cmo_text::cmo_text(cm_object *parent) : cm_object(parent)
     this->deselect();
     this->clicked_ = false;
 
-    this->editor_ = new QLineEdit(this);
+    this->editor_ = new QPlainTextEdit(this);
     this->editor_->setFixedSize(65-5,18);
     this->editor_->move(1,1);
     this->editor_->setFont(QFont(PREF_STRING("Font"),11,0,false));
     this->editor_->hide();
     this->editor_->setAttribute(Qt::WA_MacShowFocusRect, 0);
-    this->editor_->setFrame(false);
+    //this->editor_->setFrameStyle();
+    //this->editor_->setFrame(false);
+
+    //this->editor_->setCompleter();
 
 
-    connect(this->editor_,&QLineEdit::editingFinished,this,&cmo_text::editorDone);
-    connect(this->editor_,&QLineEdit::textEdited, this,&cmo_text::editorChanged);
+    //connect(this->editor_,&QPlainTextEdit::editingFinished,this,&cmo_text::editorDone);
+    connect(this->editor_,&QPlainTextEdit::textChanged, this,&cmo_text::editorChanged);
 
+    this->editor_->installEventFilter(this);
 
+    //->document()->setPlain
 
 //    QPalette Pal(palette());
 //    Pal.setColor(QPalette::Background, QColor(220,220,220));
@@ -32,13 +37,15 @@ cmo_text::cmo_text(cm_object *parent) : cm_object(parent)
 
 }
 
+
+
 ///////
 
 void  cmo_text::editorDone()
 {
     qDebug("editor done");
 
-    this->setPdMessage(this->editor_->text().toStdString());
+    this->setPdMessage(this->editor_->document()->toPlainText().toStdString());//text().toStdString());
     //todo
 
     this->editor_->hide();
@@ -48,10 +55,18 @@ void  cmo_text::editorChanged()
 {
     QFont myFont(PREF_STRING("Font"), 11);
     QFontMetrics fm(myFont);
-    int new_w = fm.width(QString(this->editor_->text())) + 10;
+    QString text = QString(this->editor_->document()->toPlainText());
+    int new_w = fm.width(text) + 20;
     new_w = (new_w<25) ? 25 : new_w;
-    this->setFixedWidth(new_w);
-    this->editor_->setFixedWidth(this->width()-5);
 
+    int new_h = fm.boundingRect(QRect(0,0,new_w,100), 0, text).height() + 20 ;
+
+    new_h = (new_h<25) ? 25 : new_h;
+
+    this->setFixedWidth(new_w);
+    this->setFixedHeight(new_h);
+
+    this->editor_->setFixedWidth(this->width()-1);
+    this->editor_->setFixedHeight(this->height()-2);
 }
 

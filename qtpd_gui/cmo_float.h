@@ -12,7 +12,7 @@
 
 
 ////
-/// \brief gui object: float number box (ui.msg)
+/// \brief gui object: float number box (ui.float)
 ///
 class cmo_float : public cm_object
 {
