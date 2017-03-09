@@ -11,11 +11,12 @@
 
 #include "cm_pdlink.h"
 
+using namespace cm;
 
 ////
 /// \brief gui object: comment box (ui.text)
 ///
-class cmo_text : public cm_object
+class cmo_text : public UIObject
 {
     Q_OBJECT
 
@@ -25,9 +26,9 @@ private:
     QPlainTextEdit* editor_;
 
 public:
-    explicit cmo_text(cm_object *parent = 0);
+    explicit cmo_text(UIObject *parent = 0);
 
-    static cm_object* createObject(std::string objectData, cm_widget *parent=0) {};
+    static UIObject* createObject(std::string objectData, UIWidget *parent=0) {};
 
     void paintEvent(QPaintEvent *)
     {    QPainter p(this);

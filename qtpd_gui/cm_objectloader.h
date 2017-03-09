@@ -14,17 +14,19 @@
 #include "cmo_float.h"
 #include "cmo_text.h"
 
-typedef cm_object* (*cmObjectConstructor)(std::string objectData, cm_widget *parent);
+namespace cm
+{
+typedef UIObject* (*cmObjectConstructor)(std::string objectData, UIWidget *parent);
 
 ////
 /// \brief prototype for ui externals handling
 ///
-class cm_objectloader
+class ObjectLoader
 {
 public:
-    static cm_objectloader& inst()
+    static ObjectLoader& inst()
     {
-        static cm_objectloader    instance;
+        static ObjectLoader    instance;
         return instance;
     }
 private:
@@ -33,14 +35,14 @@ private:
 
     std::map<std::string, cmObjectConstructor> objectConstructors_;
 
-    cm_objectloader() {
+    ObjectLoader() {
 
     }
 
 
 public:
-    cm_objectloader(cm_objectloader const&) = delete;
-    void operator=(cm_objectloader const&)  = delete;
+    ObjectLoader(ObjectLoader const&) = delete;
+    void operator=(ObjectLoader const&)  = delete;
 
     void loadObjects()
     {
@@ -89,7 +91,7 @@ public:
 
     }
 
-    cm_object* createObject(std::string objName, std::string objectData, cm_widget *parent)
+    UIObject* createObject(std::string objName, std::string objectData, UIWidget *parent)
     {
         if (objName == "ui.obj")
         {
@@ -106,5 +108,7 @@ public:
 
 
 };
+
+}
 
 #endif // CM_OBJECTLOADER_H

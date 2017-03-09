@@ -6,6 +6,8 @@
 // Widget extension
 // check / fix
 
+namespace cm
+{
 
 ////
 /// \brief edit mode types
@@ -20,9 +22,9 @@ typedef enum
 
 
 ////
-/// \brief parent class for all gui objects
+/// \brief parent class for all objects in the canvas
 ///
-class cm_widget : public QWidget
+class UIWidget : public QWidget
 {
     Q_OBJECT
 
@@ -41,7 +43,7 @@ public:
     QPoint dragOffset;
     //QPoint dragStart;
 
-    explicit cm_widget(QWidget *parent = 0);
+    explicit UIWidget(QWidget *parent = 0);
 
     ////
     /// \brief select object
@@ -110,13 +112,13 @@ public:
 
 signals:
 
-    void mousePressed(cm_widget* obj, QMouseEvent* ev);
-    void mouseReleased(cm_widget* obj, QMouseEvent* ev);
+    void mousePressed(UIWidget* obj, QMouseEvent* ev);
+    void mouseReleased(UIWidget* obj, QMouseEvent* ev);
     void mouseEntered();
     void mouseLeaved();
 
-    void selectBox(cm_widget*box);
-    void moveBox(cm_widget*box, QMouseEvent* event);
+    void selectBox(UIWidget*box);
+    void moveBox(UIWidget*box, QMouseEvent* event);
 
 public slots:
 
@@ -125,15 +127,17 @@ public slots:
     void s_MouseEntered();
     void s_MouseLeaved();
 
-    virtual void s_InMousePressed(cm_widget* obj, QMouseEvent* ev);
-    virtual void s_InMouseReleased(cm_widget* obj, QMouseEvent* ev);
+    virtual void s_InMousePressed(UIWidget* obj, QMouseEvent* ev);
+    virtual void s_InMouseReleased(UIWidget* obj, QMouseEvent* ev);
     virtual void s_InMouseEntered();
     virtual void s_InMouseLeaved();
 
-    virtual void s_OutMousePressed(cm_widget* obj, QMouseEvent* ev);
-    virtual void s_OutMouseReleased(cm_widget* obj, QMouseEvent* ev);
+    virtual void s_OutMousePressed(UIWidget* obj, QMouseEvent* ev);
+    virtual void s_OutMouseReleased(UIWidget* obj, QMouseEvent* ev);
     virtual void s_OutMouseEntered();
     virtual void s_OutMouseLeaved();
 };
+
+}
 
 #endif // CM_WIDGET_H

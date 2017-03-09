@@ -21,17 +21,8 @@
 
 
 
-//typedef struct
-//{
-//    cm_box* obj1;
-//    int outletIdx;
-//    cm_box* obj2;
-//    int inletIdx;
-
-//    bool selected;
-//    enum {cm_pt_anything, cm_pt_signal} patchcordType;
-
-//} tPatchcord;
+namespace cm
+{
 
 ////
 /// \brief structure for selection rectangle
@@ -48,21 +39,21 @@ typedef struct
 /// \details todo: merge with clipboard class's types
 typedef struct
 {
-    std::vector<cm_object*> boxes;
-    std::vector<cm_patchcord*> patchcords;
+    std::vector<UIObject*> boxes;
+    std::vector<Patchcord*> patchcords;
 } tCanvasData;
 
 ////
 /// \brief 't_canvas' counterpart. creates objects
 ///
-class cm_canvas : public cm_widget
+class Canvas : public UIWidget
 {
 private:
     //todo move this to data class?
-    std::vector<cm_object*> objectBoxes;
-    std::vector<cm_patchcord*> patchcords;
-    std::vector<cm_object*> selObjectBoxes;
-    std::vector<cm_patchcord*> selPatchcords;
+    std::vector<UIObject*> objectBoxes;
+    std::vector<Patchcord*> patchcords;
+    std::vector<UIObject*> selObjectBoxes;
+    std::vector<Patchcord*> selPatchcords;
 
     //move here
     tCanvasData data;
@@ -73,8 +64,8 @@ private:
     tRectPlus newLine;
 
     //
-    cm_object *conn_obj1;
-    cm_object *conn_out;
+    UIObject *connObj1;
+    UIObject *connOutlet;
 
     //
     QPoint newObjectPos;
@@ -96,10 +87,10 @@ public:
     QString fileName;
 
     //temp
-    t_canvas* pd_canvas;
+    t_canvas* pdCanvas;
 
-    explicit cm_canvas(cm_widget *parent = 0);
-    explicit cm_canvas(QWidget *parent = 0);
+    explicit Canvas(UIWidget *parent = 0);
+    explicit Canvas(QWidget *parent = 0);
 
 
     ////
@@ -154,8 +145,8 @@ public:
             QPainter p(this);
 
             // cleanup
-            QColor pc_color = ((cm_patchcord*)this->patchcords.at(i))->mouseover ? QColor(255, 192, 0) : QColor(0, 0, 0);
-            if (((cm_patchcord*)this->patchcords.at(i))->selected) pc_color = QColor(0,192,255);
+            QColor pc_color = ((Patchcord*)this->patchcords.at(i))->mouseover ? QColor(255, 192, 0) : QColor(0, 0, 0);
+            if (((Patchcord*)this->patchcords.at(i))->selected) pc_color = QColor(0,192,255);
 
             p.setRenderHint(QPainter::HighQualityAntialiasing, true);
             p.setPen(QPen(pc_color, 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
@@ -164,8 +155,8 @@ public:
             //p.drawLine(((cm_patchcord*)this->patchcords.at(i))->getStartPoint(), ((cm_patchcord*)this->patchcords.at(i))->getEndPoint());
 
             QPainterPath path;
-            QPoint start = ((cm_patchcord*)this->patchcords.at(i))->getStartPoint();
-            QPoint end = ((cm_patchcord*)this->patchcords.at(i))->getEndPoint();
+            QPoint start = ((Patchcord*)this->patchcords.at(i))->getStartPoint();
+            QPoint end = ((Patchcord*)this->patchcords.at(i))->getEndPoint();
 
             QPoint b1 = QPoint(start.x() + (end.x() - start.x()) * .5, fabs(end.y() - start.y()) * .5 + start.y());
             QPoint b2 = QPoint(end.x() - (end.x() - start.x()) * .5, -fabs(end.y() - start.y()) * .5 + end.y());
@@ -215,8 +206,8 @@ public:
         bool ret = false;
         for (int i=0; i< (int)this->patchcords.size(); i++)
         {
-            ((cm_patchcord*)this->patchcords.at(i))->mouseover = ((cm_patchcord*)this->patchcords.at(i))->hover(pos);
-            if (((cm_patchcord*)this->patchcords.at(i))->mouseover) ret=true;
+            ((Patchcord*)this->patchcords.at(i))->mouseover = ((Patchcord*)this->patchcords.at(i))->hover(pos);
+            if (((Patchcord*)this->patchcords.at(i))->mouseover) ret=true;
         }
         return ret;
     }
@@ -230,7 +221,7 @@ public:
         //bool ret = false;
         for (int i=0; i< (int)this->patchcords.size(); i++)
         {
-            ((cm_patchcord*)this->patchcords.at(i))->mouseover = false;// ((cm_patchcord*)this->patchcords.at(i))->hover(pos);
+            ((Patchcord*)this->patchcords.at(i))->mouseover = false;// ((cm_patchcord*)this->patchcords.at(i))->hover(pos);
 
         }
 
@@ -246,8 +237,8 @@ public:
         bool ret = false;
         for (int i=0; i< (int)this->patchcords.size(); i++)
         {
-            ((cm_patchcord*)this->patchcords.at(i))->selected = ((cm_patchcord*)this->patchcords.at(i))->hover(pos);
-            if (((cm_patchcord*)this->patchcords.at(i))->selected) ret=true;
+            ((Patchcord*)this->patchcords.at(i))->selected = ((Patchcord*)this->patchcords.at(i))->hover(pos);
+            if (((Patchcord*)this->patchcords.at(i))->selected) ret=true;
         }
         return ret;
     }
@@ -389,11 +380,11 @@ public:
 
     cmo_box* restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas* canvas)
     {
-        cmo_box *box = new cmo_box((cm_object*)this);   //test?
+        cmo_box *box = new cmo_box((UIObject*)this);   //test?
         box->setObjectData(pdObjectName);
 
-        connect(box,&cmo_box::selectBox, this, &cm_canvas::s_SelectBox);
-        connect(box,&cmo_box::moveBox, this, &cm_canvas::s_MoveBox);
+        connect(box,&cmo_box::selectBox, this, &Canvas::s_SelectBox);
+        connect(box,&cmo_box::moveBox, this, &Canvas::s_MoveBox);
 
         box->setEditModeRef(&this->editMode);
 
@@ -403,7 +394,7 @@ public:
         int in_c=0, out_c=0;
 
         //temp
-        if (!this->pd_canvas)
+        if (!this->pdCanvas)
         {
             qDebug("bad pd canvas instance");
             box->setErrorBox(true);
@@ -458,11 +449,11 @@ public:
     ///
     cmo_box* createBox(std::string pdObjectName, QPoint pos)
     {
-        cmo_box *box = new cmo_box((cm_object*)this);   //test?
+        cmo_box *box = new cmo_box((UIObject*)this);   //test?
         box->setObjectData(pdObjectName);
 
-        connect(box,&cmo_box::selectBox, this, &cm_canvas::s_SelectBox);
-        connect(box,&cmo_box::moveBox, this, &cm_canvas::s_MoveBox);
+        connect(box,&cmo_box::selectBox, this, &Canvas::s_SelectBox);
+        connect(box,&cmo_box::moveBox, this, &Canvas::s_MoveBox);
 
         box->setEditModeRef(&this->editMode);
 
@@ -472,14 +463,14 @@ public:
         int in_c=0, out_c=0;
 
         //temp
-        if (!this->pd_canvas)
+        if (!this->pdCanvas)
         {
             qDebug("bad pd canvas instance");
             box->setErrorBox(true);
         }
         else
         {
-            new_obj = cmp_create_object(this->pd_canvas,(char*)obj_name,pos.x(), pos.y());
+            new_obj = cmp_create_object(this->pdCanvas,(char*)obj_name,pos.x(), pos.y());
         }
 
         if (new_obj)
@@ -527,14 +518,14 @@ public:
     ///
     cmo_msg* createMsg(std::string message, QPoint pos)
     {
-        cmo_msg *msg = new cmo_msg((cm_object*)this);   //check
+        cmo_msg *msg = new cmo_msg((UIObject*)this);   //check
         msg->setObjectData(message);
 
         msg->addInlet();
         msg->addOutlet();
 
-        connect(msg,&cmo_msg::selectBox, this, &cm_canvas::s_SelectBox);
-        connect(msg,&cmo_msg::moveBox, this, &cm_canvas::s_MoveBox);
+        connect(msg,&cmo_msg::selectBox, this, &Canvas::s_SelectBox);
+        connect(msg,&cmo_msg::moveBox, this, &Canvas::s_MoveBox);
 
         msg->setEditModeRef(&this->editMode);
 
@@ -544,11 +535,11 @@ public:
 
         //temp
         t_object* new_obj = 0 ;
-        if (!this->pd_canvas)
+        if (!this->pdCanvas)
         {qDebug("bad pd canvas instance");}
         else
         {
-            new_obj = cmp_create_message(this->pd_canvas, message, pos.x(), pos.y());
+            new_obj = cmp_create_message(this->pdCanvas, message, pos.x(), pos.y());
         }
 
         if (new_obj)
@@ -579,14 +570,14 @@ public:
     ///
     cmo_float* createFloat(std::string message, QPoint pos)
     {
-        cmo_float *flo = new cmo_float((cm_object*)this);   //check
+        cmo_float *flo = new cmo_float((UIObject*)this);   //check
         flo->setObjectData(message);
 
         flo->addInlet();
         flo->addOutlet();
 
-        connect(flo,&cmo_float::selectBox, this, &cm_canvas::s_SelectBox);
-        connect(flo,&cmo_float::moveBox, this, &cm_canvas::s_MoveBox);
+        connect(flo,&cmo_float::selectBox, this, &Canvas::s_SelectBox);
+        connect(flo,&cmo_float::moveBox, this, &Canvas::s_MoveBox);
 
         flo->setEditModeRef(&this->editMode);
 
@@ -596,11 +587,11 @@ public:
 
         //temp
         t_object* new_obj = 0 ;
-        if (!this->pd_canvas)
+        if (!this->pdCanvas)
         {qDebug("bad pd canvas instance");}
         else
         {
-            new_obj = cmp_create_message(this->pd_canvas, message, pos.x(), pos.y());
+            new_obj = cmp_create_message(this->pdCanvas, message, pos.x(), pos.y());
         }
 
         if (new_obj)
@@ -628,12 +619,12 @@ public:
     /// \param pos
     /// \return
     ///
-    cm_object* createObject(std::string uiObjectName, std::string objectData, QPoint pos)
+    UIObject* createObject(std::string uiObjectName, std::string objectData, QPoint pos)
     {
-        cm_object *obj = cm_objectloader::inst().createObject(uiObjectName, objectData, (cm_widget*)this);
+        UIObject *obj = ObjectLoader::inst().createObject(uiObjectName, objectData, (UIWidget*)this);
 
-        connect(obj,&cmo_msg::selectBox, this, &cm_canvas::s_SelectBox);
-        connect(obj,&cmo_msg::moveBox, this, &cm_canvas::s_MoveBox);
+        connect(obj,&cmo_msg::selectBox, this, &Canvas::s_SelectBox);
+        connect(obj,&cmo_msg::moveBox, this, &Canvas::s_MoveBox);
         obj->setEditModeRef(&this->editMode);
         obj->move(pos);
         this->objectBoxes.push_back(obj);
@@ -655,14 +646,14 @@ public:
     ///
     cmo_text* createText(std::string message, QPoint pos)
     {
-        cmo_text *txt = new cmo_text((cm_object*)this);   //check
+        cmo_text *txt = new cmo_text((UIObject*)this);   //check
         txt->setObjectData(message);
 
         //msg->addInlet();
         //msg->addOutlet();
 
-        connect(txt,&cmo_msg::selectBox, this, &cm_canvas::s_SelectBox);
-        connect(txt,&cmo_msg::moveBox, this, &cm_canvas::s_MoveBox);
+        connect(txt,&cmo_msg::selectBox, this, &Canvas::s_SelectBox);
+        connect(txt,&cmo_msg::moveBox, this, &Canvas::s_MoveBox);
 
         txt->setEditModeRef(&this->editMode);
 
@@ -686,14 +677,14 @@ public:
     /// \param obj2
     /// \param inlet
     ///
-    void patchcord(cm_object* obj1, int outlet, cm_object* obj2, int inlet)
+    void patchcord(UIObject* obj1, int outlet, UIObject* obj2, int inlet)
     {
         if (obj1->getPdObject() && obj2->getPdObject())
         {
-            cm_port* outport = ((cmo_box*)obj1)->getOutletAt(outlet);
-            cm_port* inport = ((cmo_box*)obj2)->getInletAt(inlet);
+            Port* outport = ((cmo_box*)obj1)->getOutletAt(outlet);
+            Port* inport = ((cmo_box*)obj2)->getInletAt(inlet);
 
-            cm_patchcord* pc = new cm_patchcord(obj1,outport,obj2,inport);
+            Patchcord* pc = new Patchcord(obj1,outport,obj2,inport);
 
             qDebug("pdlib patchcord");
             cmp_patchcord((t_object*)obj1->getPdObject(),outlet,(t_object*)obj2->getPdObject(),inlet);
@@ -714,11 +705,11 @@ public:
     /// \param obj2
     /// \param inport
     ///
-    void patchcord(cm_object* obj1, cm_widget* outport, cm_object* obj2, cm_widget* inport)
+    void patchcord(UIObject* obj1, UIWidget* outport, UIObject* obj2, UIWidget* inport)
     {
 
-        cm_patchcord* pc = new cm_patchcord(obj1,outport,obj2,inport);
-        cmp_patchcord((t_object*)obj1->getPdObject(),((cm_port*)outport)->portIndex,(t_object*)obj2->getPdObject(),((cm_port*)inport)->portIndex);
+        Patchcord* pc = new Patchcord(obj1,outport,obj2,inport);
+        cmp_patchcord((t_object*)obj1->getPdObject(),((Port*)outport)->portIndex,(t_object*)obj2->getPdObject(),((Port*)inport)->portIndex);
         //qDebug("no connection");
 
         this->patchcords.push_back(pc);
@@ -742,10 +733,10 @@ public:
     /// \brief delete all patchcords for object
     /// \param obj
     ///
-    void deletePatchcordsFor(cm_widget* obj)
+    void deletePatchcordsFor(UIWidget* obj)
     {
         //for //(int i=0;i<this->patchcords.size();i++)
-        std::vector<cm_patchcord*>::iterator it;
+        std::vector<Patchcord*>::iterator it;
         for (it=this->patchcords.begin(); it!= this->patchcords.end(); )
         {
             if ((*it)->connectsObject(obj))
@@ -762,7 +753,7 @@ public:
     /// \brief delete object box
     /// \param box
     ///
-    void deleteBox(cm_object* box)
+    void deleteBox(UIObject* box)
     {
 
         //TODO
@@ -772,7 +763,7 @@ public:
             //NEEDS FIX
             if ((t_object*)box->getPdObject())
                 if (!box->isErrorBox())
-                    cmp_deleteobject(this->pd_canvas, (t_object*)box->getPdObject());
+                    cmp_deleteobject(this->pdCanvas, (t_object*)box->getPdObject());
         }
         else
         {
@@ -791,7 +782,7 @@ public:
     {
         for (int i=0;i< (int)this->selObjectBoxes.size(); i++)
         {
-            this->deleteBox( ((cm_object*) this->selObjectBoxes.at(i))  );
+            this->deleteBox( ((UIObject*) this->selObjectBoxes.at(i))  );
         }
 
     }
@@ -803,7 +794,7 @@ public:
     {
         //cleanup
         //for (int i=0;i<this->patchcords.size(); i++)
-        std::vector<cm_patchcord*>::iterator it;
+        std::vector<Patchcord*>::iterator it;
         for (it=this->patchcords.begin(); it!= this->patchcords.end(); )
         {
             if ( (*it) -> selected )
@@ -848,7 +839,7 @@ public:
     /// \param idx
     /// \return cm_widget pointer
     ///
-    cm_object* getObjectByIndex(int idx)
+    UIObject* getObjectByIndex(int idx)
     {
         if ((idx< (int)this->objectBoxes.size()) && (idx>=0))
             return this->objectBoxes.at(idx);
@@ -882,12 +873,12 @@ public:
     /// \brief returns vector of all object boxes - needed by filesaver
     /// \return
     ///
-    std::vector<cm_object*> getObjectBoxes()
+    std::vector<UIObject*> getObjectBoxes()
     {
         return this->objectBoxes;
     }
 
-    std::vector<cm_patchcord*>getPatchcords()
+    std::vector<Patchcord*>getPatchcords()
     {
         return this->patchcords;
     }
@@ -900,10 +891,10 @@ public:
     ///
 
 
-    int findObjectIndex(cm_object * obj)
+    int findObjectIndex(UIObject * obj)
     {
-        cm_object* obj1;
-        std::vector<cm_object*>::iterator iter = std::find(this->objectBoxes.begin(), objectBoxes.end(), obj);
+        UIObject* obj1;
+        std::vector<UIObject*>::iterator iter = std::find(this->objectBoxes.begin(), objectBoxes.end(), obj);
         size_t index = std::distance(this->objectBoxes.begin(), iter);
         if(index != this->objectBoxes.size())
         {
@@ -912,7 +903,7 @@ public:
         return -1;
 
     }
-    std::string getPatchcordAsString(cm_patchcord* patchcord)
+    std::string getPatchcordAsString(Patchcord* patchcord)
     {
         //TODO
 
@@ -943,23 +934,23 @@ signals:
 
 public slots:
 
-    void s_InMousePressed(cm_widget* obj, QMouseEvent* ev);
-    void s_InMouseReleased(cm_widget*, QMouseEvent*);
-    void s_OutMousePressed(cm_widget *obj, QMouseEvent*);
-    void s_OutMouseReleased(cm_widget*, QMouseEvent*);
+    void s_InMousePressed(UIWidget* obj, QMouseEvent* ev);
+    void s_InMouseReleased(UIWidget*, QMouseEvent*);
+    void s_OutMousePressed(UIWidget *obj, QMouseEvent*);
+    void s_OutMouseReleased(UIWidget*, QMouseEvent*);
 
     ////
     /// \brief slot called by box when it is selected
     /// \param box
     ///
-    void s_SelectBox(cm_widget* box);
+    void s_SelectBox(UIWidget* box);
 
     ////
     /// \brief TODO check. slot called by box when it starts moving
     /// \param box
     /// \param event
     ///
-    void s_MoveBox(cm_widget* box, QMouseEvent* event);
+    void s_MoveBox(UIWidget* box, QMouseEvent* event);
 
     //    void portMouseReleased();
     //    void portMouseEntered();
@@ -977,5 +968,7 @@ public slots:
 private:
 
 };
+
+}
 
 #endif // CM_CANVAS_H

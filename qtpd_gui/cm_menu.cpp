@@ -8,29 +8,32 @@
 
 #include "cm_fileparser.h"
 
+
+namespace cm
+{
 ////
 /// \brief new patch window
 ///
-void cm_menu::newFile()
+void BaseMenu::newFile()
 {
-    cm_patchwindow *newWindow = cm_patchwindow::newWindow();
+    PatchWindow *newWindow = PatchWindow::newWindow();
     newWindow->show();
 }
 
 ////
 /// \brief new patch window from file
 ///
-void cm_menu::open()
+void BaseMenu::open()
 {
     QString fname = QFileDialog::getOpenFileName(0,QString("Open patch"), QString("~/"), QString("*.pd"), 0, 0);
     if (fname!="")
-        cm_fileparser::open(fname);
+        FileParser::open(fname);
 }
 
 ////
 /// \brief show/hide Pd console
 ///
-void cm_menu::pdWindow()
+void BaseMenu::pdWindow()
 {
     if(pdw)
         // if (pdw->isVisible())
@@ -38,4 +41,6 @@ void cm_menu::pdWindow()
     //else pdw->show();
 
     //    post("pd window");
+}
+
 }

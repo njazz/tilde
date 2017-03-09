@@ -16,10 +16,12 @@ namespace Ui {
 class cm_pdwindow;
 }
 
+namespace cm
+{
 ////
 /// \brief Pd console window
 ///
-class cm_pdwindow : public cm_basewindow
+class PdWindow : public BaseWindow
 {
     Q_OBJECT
 
@@ -27,7 +29,7 @@ private:
     Ui::cm_pdwindow *ui;
 
 public:
-    cm_pdwindow();
+    PdWindow();
 
     void cm_log(std::string text);
     void cm_post(std::string text);
@@ -36,8 +38,8 @@ public:
 };
 
 //fix - normal singleton here
-static cm_pdwindow* pdw;
+static PdWindow* pdw;
 
-
+}
 
 #endif // CM_PDWINDOW_H

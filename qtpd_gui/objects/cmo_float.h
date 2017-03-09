@@ -10,11 +10,12 @@
 
 #include "cm_pdlink.h"
 
+using namespace cm;
 
 ////
 /// \brief gui object: float number box (ui.float)
 ///
-class cmo_float : public cm_object
+class cmo_float : public UIObject
 {
     Q_OBJECT
 
@@ -23,9 +24,9 @@ private:
     float startY;
 
 public:
-    explicit cmo_float(cm_object *parent = 0);
+    explicit cmo_float(UIObject *parent = 0);
 
-    static cm_object* createObject(std::string objectData, cm_widget *parent=0) {};
+    static UIObject* createObject(std::string objectData, UIWidget *parent=0) {};
 
     void paintEvent(QPaintEvent *)
     {    QPainter p(this);
@@ -181,7 +182,7 @@ public:
 
     void setPdObject(void *obj)
     {
-        cm_object::setPdObject(obj);
+        UIObject::setPdObject(obj);
         cmp_connectUI((t_pd*)this->getPdObject(), (void*)this, &cmo_float::updateUI);
     }
 

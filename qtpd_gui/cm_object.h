@@ -7,6 +7,8 @@
 
 #include "cm_preferences.h"
 
+namespace cm
+{
 
 ////
 /// \brief object box size constraints
@@ -21,14 +23,14 @@ typedef enum
 ////
 /// \brief base class for all object boxes - standard and special
 ///
-class cm_object : public cm_widget
+class UIObject : public UIWidget
 {
 private:
     //temporary?
     void* pdObject_;
 
-    std::vector<cm_port*> inlets_;
-    std::vector<cm_port*> outlets_;
+    std::vector<Port*> inlets_;
+    std::vector<Port*> outlets_;
 
     std::string objectData;     //name and arguments etc
 
@@ -36,12 +38,12 @@ private:
 
     t_objectSize objectSizeMode;
 
-    cm_sizebox* sizeBox;
+    SizeBox* sizeBox;
 
-    cm_object();
+    UIObject();
 public:
     //cm_object();
-    explicit cm_object(cm_widget *parent = 0);
+    explicit UIObject(UIWidget *parent = 0);
 
     //cm_object(std::string objectData, cm_widget *parent=0) {};
 
@@ -103,16 +105,16 @@ public:
     ///
     void addInlet()
     {
-        cm_port* new_in = new cm_port(this);
-        new_in->port_type = cm_port::cm_pt_inlet;
+        Port* new_in = new Port(this);
+        new_in->port_type = Port::cm_pt_inlet;
 
         new_in->portIndex = inlets_.size();
 
         new_in->setEditModeRef(this->getEditModeRef());
 
         inlets_.push_back(new_in);
-        connect(new_in, &cm_port::mousePressed, static_cast<cm_widget*>(this->parent()), &cm_widget::s_InMousePressed);
-        connect(new_in, &cm_port::mouseReleased, static_cast<cm_widget*>(this->parent()), &cm_widget::s_InMouseReleased);
+        connect(new_in, &Port::mousePressed, static_cast<UIWidget*>(this->parent()), &UIWidget::s_InMousePressed);
+        connect(new_in, &Port::mouseReleased, static_cast<UIWidget*>(this->parent()), &UIWidget::s_InMouseReleased);
 
 
         this->setInletsPos();
@@ -126,16 +128,16 @@ public:
 
     void addOutlet()
     {
-        cm_port* new_out = new cm_port(this);
-        new_out->port_type = cm_port::cm_pt_outlet;
+        Port* new_out = new Port(this);
+        new_out->port_type = Port::cm_pt_outlet;
 
         new_out->portIndex = outlets_.size();
 
         new_out->setEditModeRef(this->getEditModeRef());
 
         outlets_.push_back(new_out);
-        connect(new_out, &cm_port::mousePressed, static_cast<cm_widget*>(this->parent()), &cm_widget::s_OutMousePressed);
-        connect(new_out, &cm_port::mouseReleased, static_cast<cm_widget*>(this->parent()), &cm_widget::s_OutMouseReleased);
+        connect(new_out, &Port::mousePressed, static_cast<UIWidget*>(this->parent()), &UIWidget::s_OutMousePressed);
+        connect(new_out, &Port::mouseReleased, static_cast<UIWidget*>(this->parent()), &UIWidget::s_OutMouseReleased);
 
         this->setOutletsPos();
     }
@@ -146,7 +148,7 @@ public:
     /// \return
     ///
 
-    cm_port* getInletAt(int idx)
+    Port* getInletAt(int idx)
     {
         if (idx<((int)this->inlets_.size()))
             return this->inlets_.at(idx);
@@ -160,7 +162,7 @@ public:
     /// \return
     ///
 
-    cm_port* getOutletAt(int idx)
+    Port* getOutletAt(int idx)
     {
         if (idx<((int)this->outlets_.size()))
             return this->outlets_.at(idx);
@@ -229,7 +231,7 @@ public:
 
     void setEditModeRef(t_editMode *canvasEditMode)
     {
-        cm_widget::setEditModeRef(canvasEditMode);
+        UIWidget::setEditModeRef(canvasEditMode);
 
         // todo
         for (int i=0;i<this->inlets_.size();i++)
@@ -248,5 +250,7 @@ public:
         this->sizeBox->move(this->width()-5, this->height()-5);
     }
 };
+
+}
 
 #endif // CM_OBJECT_H

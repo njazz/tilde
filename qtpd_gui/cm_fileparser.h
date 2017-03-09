@@ -6,19 +6,22 @@
 
 #include "cm_patchwindow.h"
 
+
+namespace cm
+{
 ////
 /// \brief Parses pd files on 'client' (GUI) side
 ///
-class cm_fileparser
+class FileParser
 {
 private:
-    cm_fileparser(){};
+    FileParser(){};
 
 public:
 
     // or t_canvas?
-    static cm_patchwindow* pdParserPrevWindow;
-    static cm_patchwindow* pdParserWindow;
+    static PatchWindow* pdParserPrevWindow;
+    static PatchWindow* pdParserWindow;
     static std::string pdParserFileName;
 
 
@@ -27,7 +30,7 @@ public:
     /// \param cmcanvas
     /// \param list
     ///
-    static void stringToCanvas(cm_canvas* cmcanvas, QStringList list) //rename
+    static void stringToCanvas(Canvas* cmcanvas, QStringList list) //rename
     {
         if (list.at(0) == "obj")
         {
@@ -111,8 +114,8 @@ public:
             {
                 //if (cmcanvas)
                 {
-                    cm_object * obj1 = cmcanvas->getObjectByIndex( ((QString)list.value(1)).toInt() );
-                    cm_object * obj2 = cmcanvas->getObjectByIndex( ((QString)list.value(3)).toInt() );
+                    UIObject * obj1 = cmcanvas->getObjectByIndex( ((QString)list.value(1)).toInt() );
+                    UIObject * obj2 = cmcanvas->getObjectByIndex( ((QString)list.value(3)).toInt() );
 
                     if (!obj1 || !obj2)
                     {
@@ -175,7 +178,7 @@ public:
                         {
                             cmo_box *b1 = 0;
 
-                            b1 = pdParserPrevWindow->canvas->restoreSubcanvas(objname.toStdString(), pos, pdParserWindow->canvas->pd_canvas);
+                            b1 = pdParserPrevWindow->canvas->restoreSubcanvas(objname.toStdString(), pos, pdParserWindow->canvas->pdCanvas);
                             b1->cmSubcanvas = pdParserWindow;
                         }
                     }
@@ -220,7 +223,7 @@ public:
 
             pdParserPrevWindow = pdParserWindow;
 
-            cm_patchwindow* newWnd = cm_patchwindow::newWindow();
+            PatchWindow* newWnd = PatchWindow::newWindow();
             pdParserWindow = newWnd;
 
             if (pdParserPrevWindow)
@@ -241,7 +244,7 @@ public:
             if (pdParserWindow)
             {
                 qDebug("X");
-                cm_fileparser::stringToCanvas(pdParserWindow->canvas, msg);
+                FileParser::stringToCanvas(pdParserWindow->canvas, msg);
             }
             else
             {
@@ -277,7 +280,7 @@ public:
                 stringList.append(line);
                 qDebug("* %s", line.toStdString().c_str());
                 //
-                cm_fileparser::parseString(line);
+                FileParser::parseString(line);
 
             }
         }
@@ -285,5 +288,6 @@ public:
 
     }
 };
+}
 
 #endif // CM_FILEPARSER_H

@@ -40,7 +40,6 @@ SOURCES += main.cpp\
     objects/cmo_text.cpp \
     cm_fileparser.cpp \
     cm_object.cpp \
-    cm_filesaver.cpp \
     cm_sizebox.cpp \
     properties/cm_property.cpp \
     properties/cm_propertylist.cpp

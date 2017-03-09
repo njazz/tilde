@@ -1,7 +1,7 @@
 #include "cmo_msg.h"
 
 
-cmo_msg::cmo_msg(cm_object *parent) : cm_object(parent)
+cmo_msg::cmo_msg(UIObject *parent) : UIObject(parent)
 {
     this->setMinimumWidth(30);
     this->setFixedSize(65,20);

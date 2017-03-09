@@ -6,9 +6,12 @@
 #include <QGridLayout>
 #include <QLabel>
 
+namespace cm
+{
 static std::string cm_log_string;
 
-void cm_pdwindow::cm_log(std::string text)
+
+void PdWindow::cm_log(std::string text)
 {
     qDebug("cm_log %s", text.c_str());
 
@@ -60,20 +63,20 @@ void cm_pdwindow::cm_log(std::string text)
 
 }
 
-void cm_pdwindow::cm_post(std::string text)
+void PdWindow::cm_post(std::string text)
 {
-    cm_pdwindow::cm_log(text);
-    cm_pdwindow::cm_log("\n");
+    PdWindow::cm_log(text);
+    PdWindow::cm_log("\n");
 
 }
-cm_pdwindow::cm_pdwindow() :
+PdWindow::PdWindow() :
 
     ui(new Ui::cm_pdwindow)
 {
     ui->setupUi(this);
 
-    ((cm_basewindow*)this)->createActions();
-    ((cm_basewindow*)this)->createMenus();
+    ((BaseWindow*)this)->createActions();
+    ((BaseWindow*)this)->createMenus();
 
 
     ((QMainWindow*)this)->setWindowTitle("Pd");
@@ -93,4 +96,5 @@ cm_pdwindow::cm_pdwindow() :
     this->cm_post("---");
 
 
+}
 }

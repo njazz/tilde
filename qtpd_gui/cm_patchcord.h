@@ -9,17 +9,19 @@
 //#include <QWidget>
 //#include <QtGui>
 
+namespace cm
+{
 ////
 /// \brief gui patchcord class
 ///
-class cm_patchcord
+class Patchcord
 {
 private:
 
-    cm_widget* obj1;
-    cm_widget* out1;
-    cm_widget* obj2;
-    cm_widget* in2;
+    UIWidget* obj1;
+    UIWidget* out1;
+    UIWidget* obj2;
+    UIWidget* in2;
 
     enum {cm_pt_anything, cm_pt_signal} patchcordType;
 
@@ -29,7 +31,7 @@ public:
     //explicit cm_patchcord(cm_widget *parent = 0);
 
     //cm_patchcord();
-    explicit cm_patchcord(cm_widget* obj1, cm_widget* out1, cm_widget* obj2, cm_widget* in2);
+    explicit Patchcord(UIWidget* obj1, UIWidget* out1, UIWidget* obj2, UIWidget* in2);
 
     QPoint getStartPoint()
     {
@@ -55,29 +57,29 @@ public:
 
     ////
 
-    cm_object* getObj1()
+    UIObject* getObj1()
     {
-        return (cm_object*)this->obj1;
+        return (UIObject*)this->obj1;
     }
 
-    cm_object* getObj2()
+    UIObject* getObj2()
     {
-        return (cm_object*)this->obj2;
+        return (UIObject*)this->obj2;
     }
 
     int getOutIdx()
     {
-        return ((cm_port*)this->out1)->portIndex;
+        return ((Port*)this->out1)->portIndex;
     }
 
     int getInIdx()
     {
-        return ((cm_port*)this->in2)->portIndex;
+        return ((Port*)this->in2)->portIndex;
     }
 
     ////
 
-    bool connectsObject(cm_widget* obj)
+    bool connectsObject(UIWidget* obj)
     {
         return ( (obj == this->obj1) || (obj == this->obj2) );
     }
@@ -113,5 +115,6 @@ public:
 
 
 };
+}
 
 #endif // CM_PATCHCORD_H

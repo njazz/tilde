@@ -1,6 +1,8 @@
 #include "cm_patchwindow.h"
 
-cm_patchwindow::cm_patchwindow()
+namespace cm
+{
+PatchWindow::PatchWindow()
 {
     this->createActions();
     this->createMenus();
@@ -9,29 +11,29 @@ cm_patchwindow::cm_patchwindow()
     this->scroll->setFrameShape(QFrame::NoFrame);
     this->scroll->setWidgetResizable(true);
 
-    this->canvas = new cm_canvas((cm_widget*)this->scroll);
+    this->canvas = new Canvas((UIWidget*)this->scroll);
 
     this->setCentralWidget(this->canvas);
 
     //TODO weird
-    this->objectMaker = new cm_objectmaker((QLineEdit*)this->canvas);
+    this->objectMaker = new ObjectMaker((QLineEdit*)this->canvas);
     //this->objectMaker->setParent(this->canvas);
-    connect(this->objectMaker,&cm_objectmaker::returnPressed, this, &cm_patchwindow::objectMakerDone);
+    connect(this->objectMaker,&ObjectMaker::returnPressed, this, &PatchWindow::objectMakerDone);
     this->objectMaker->close();
 
     this->editModeAct->setChecked(true);
 }
 
-cm_patchwindow* cm_patchwindow::newWindow()
+PatchWindow* PatchWindow::newWindow()
 {
-    cm_patchwindow* this_;
-    this_ = new cm_patchwindow;
+    PatchWindow* this_;
+    this_ = new PatchWindow;
 
     ((QMainWindow*)this_)->setWindowTitle("Untitled-1");
 
-    this_->canvas->pd_canvas = cmp_newpatch();
+    this_->canvas->pdCanvas = cmp_newpatch();
 
-    if (!this_->canvas->pd_canvas)
+    if (!this_->canvas->pdCanvas)
     {qDebug("Failed to create canvas!");}
 
     return this_;
@@ -77,16 +79,16 @@ cm_patchwindow* cm_patchwindow::newWindow()
 /// \brief constructor for the subpatches' windows
 /// \param subpatch
 ///
-cm_patchwindow* cm_patchwindow::newSubpatch(t_canvas* subpatch)
+PatchWindow* PatchWindow::newSubpatch(t_canvas* subpatch)
 {
-    cm_patchwindow* this_;
-    this_ = new cm_patchwindow;
+    PatchWindow* this_;
+    this_ = new PatchWindow;
 
     ((QMainWindow*)this_)->setWindowTitle("<subpatch>");
 
-    this_->canvas->pd_canvas = subpatch;
+    this_->canvas->pdCanvas = subpatch;
 
-    if (!this_->canvas->pd_canvas)
+    if (!this_->canvas->pdCanvas)
     {qDebug("Failed to create canvas!");}
 
     return this_;
@@ -97,7 +99,7 @@ cm_patchwindow* cm_patchwindow::newSubpatch(t_canvas* subpatch)
 ////
 /// \brief re-save patch, uses its current name
 ///
-void cm_patchwindow::save()
+void PatchWindow::save()
 {
 
     QString fname = this->canvas->fileName;
@@ -108,13 +110,13 @@ void cm_patchwindow::save()
     qDebug("filename: %s %s", file.toStdString().c_str(), dir.toStdString().c_str());
 
     //cmp_savepatch(this->canvas->pd_canvas, (char*)file.toStdString().c_str(), (char*)dir.toStdString().c_str());
-    cm_filesaver::save(fname, this->canvas);
+    FileSaver::save(fname, this->canvas);
 }
 
 ////
 /// \brief first save of the patch
 ///
-void cm_patchwindow::saveAs()
+void PatchWindow::saveAs()
 {
     QString fname = QFileDialog::getSaveFileName(this,QString("Save patch as..."), QString("~/"), QString("*.pd"), 0, 0);
 
@@ -127,7 +129,7 @@ void cm_patchwindow::saveAs()
         qDebug("filename: %s %s", file.toStdString().c_str(), dir.toStdString().c_str());
 
         //        cmp_savepatch(this->canvas->pd_canvas, (char*)file.toStdString().c_str(), (char*)dir.toStdString().c_str());
-        cm_filesaver::save(fname, this->canvas);
+        FileSaver::save(fname, this->canvas);
 
         //
         this->canvas->fileName = fname;
@@ -137,7 +139,7 @@ void cm_patchwindow::saveAs()
 
         //saveAct->setEnabled(true);
 
-        connect(saveAct, &QAction::triggered, this, &cm_patchwindow::save);
+        connect(saveAct, &QAction::triggered, this, &PatchWindow::save);
     }
 
 }
@@ -146,7 +148,7 @@ void cm_patchwindow::saveAs()
 /// \brief set file name when opening patch file
 /// \param fname
 ///
-void cm_patchwindow::setFileName(QString fname)
+void PatchWindow::setFileName(QString fname)
 {
 
     this->canvas->fileName = fname;
@@ -161,7 +163,7 @@ void cm_patchwindow::setFileName(QString fname)
 ////
 /// \brief creates object
 ///
-void cm_patchwindow::objectMakerDone()
+void PatchWindow::objectMakerDone()
 {
     std::string obj_name = this->objectMaker->text().toStdString();
 
@@ -180,14 +182,14 @@ void cm_patchwindow::objectMakerDone()
         {
             qDebug("subpatch");
 
-            cm_patchwindow *subPatch = cm_patchwindow::newSubpatch((t_canvas*)b->getPdObject());
+            PatchWindow *subPatch = PatchWindow::newSubpatch((t_canvas*)b->getPdObject());
             b->cmSubcanvas = (QMainWindow*)subPatch;
             subPatch->show();
         }
     }
 
 }
-
+}
 
 
 

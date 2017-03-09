@@ -5,29 +5,17 @@
 #include <QLineEdit>
 #include <QMainWindow>
 
+
+namespace cm
+{
 ////
 /// \brief creates lineedit box for new object
 ///
-class cm_objectmaker : public QLineEdit
+class ObjectMaker : public QLineEdit
 {
 public:
-    explicit cm_objectmaker(QLineEdit *parent = 0);
-    //cm_objectmaker();
+    explicit ObjectMaker(QLineEdit *parent = 0);
 
-//    ////
-//    /// \brief filter esc key
-//    /// \param event
-//    ///
-//    void keyPressEvent(QKeyEvent *event)
-//    {
-//        if (event->key() == Qt::Key_Escape)
-//        {
-//            this->setText("");
-//            emit textEdited("");
-//            }
-
-//        QLineEdit::keyPressEvent(event);
-//    }
 private slots:
     ////
     /// \brief resize to text
@@ -35,6 +23,8 @@ private slots:
     void editorChanged();
 
 };
+
+}
 
 #endif // CM_OBJECTMAKER_H
 

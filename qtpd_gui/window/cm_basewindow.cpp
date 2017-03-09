@@ -10,7 +10,9 @@
 
 #include "cm_menu.h"
 
-cm_basewindow::cm_basewindow(QWidget *parent) :
+namespace cm
+{
+BaseWindow::BaseWindow(QWidget *parent) :
 
     QMainWindow(parent),
 
@@ -23,7 +25,7 @@ cm_basewindow::cm_basewindow(QWidget *parent) :
 
 }
 
-cm_basewindow::~cm_basewindow()
+BaseWindow::~BaseWindow()
 {
     delete ui;
 }
@@ -31,7 +33,7 @@ cm_basewindow::~cm_basewindow()
 
 //////////////////////////////////////
 
-void cm_basewindow::close()
+void BaseWindow::close()
 {
     // ?
     //cm_menu::close(this);
@@ -41,21 +43,22 @@ void cm_basewindow::close()
 
 //////////
 
-void cm_basewindow::dspOn()
+void BaseWindow::dspOn()
 {
     cmp_switch_dsp(true);
     dspOnAct->setChecked(true);
 
 }
 
-void cm_basewindow::dspOff()
+void BaseWindow::dspOff()
 {
     cmp_switch_dsp(false);
     dspOnAct->setChecked(false);
 }
 
-void cm_basewindow::pdWindow()
+void BaseWindow::pdWindow()
 {
     //if (pdw->isVisible()) pdw->hide(); else pdw->show();
 }
 
+}

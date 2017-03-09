@@ -5,8 +5,9 @@
 //    this->patchcordType = cm_pt_anything;
 //}
 
-
-cm_patchcord::cm_patchcord(cm_widget *obj1, cm_widget *out1, cm_widget *obj2, cm_widget *in2)
+namespace cm
+{
+Patchcord::Patchcord(UIWidget *obj1, UIWidget *out1, UIWidget *obj2, UIWidget *in2)
 {
     this->obj1 = obj1;
     this->out1 = out1;
@@ -18,5 +19,6 @@ cm_patchcord::cm_patchcord(cm_widget *obj1, cm_widget *out1, cm_widget *obj2, cm
     this->mouseover = false;
     this->selected = false;
 
+}
 }
 

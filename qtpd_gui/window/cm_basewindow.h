@@ -12,16 +12,17 @@ namespace Ui {
 class cm_basewindow;
 }
 
+namespace cm{
 ////
 /// \brief Base class for windows (patch, pd)
 ///
-class cm_basewindow : public QMainWindow
+class BaseWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit cm_basewindow(QWidget *parent = 0);
-    ~cm_basewindow();
+    explicit BaseWindow(QWidget *parent = 0);
+    ~BaseWindow();
 
     ////
     /// \brief create menu actions (File, Edit)
@@ -30,11 +31,11 @@ public:
     {
         newAct = new QAction(tr("&New"), this);
         newAct->setShortcuts(QKeySequence::New);
-        connect(newAct, &QAction::triggered, this, &cm_menu::newFile);
+        connect(newAct, &QAction::triggered, this, &BaseMenu::newFile);
 
         openAct = new QAction(tr("&Open..."), this);
         openAct->setShortcuts(QKeySequence::Open);
-        connect(openAct, &QAction::triggered, this, &cm_menu::open);
+        connect(openAct, &QAction::triggered, this, &BaseMenu::open);
 
         saveAct = new QAction(tr("&Save"), this);
         saveAct->setShortcuts(QKeySequence::Save);
@@ -47,7 +48,7 @@ public:
 
         closeAct = new QAction(tr("Close"), this);
         closeAct->setShortcut(tr("Ctrl+W"));
-        connect(closeAct, &QAction::triggered, this, &cm_basewindow::close);
+        connect(closeAct, &QAction::triggered, this, &BaseWindow::close);
 
 
         messageAct = new QAction(tr("Message..."), this);
@@ -95,15 +96,15 @@ public:
 
         dspOnAct = new QAction(tr("DSP On"), this);
         dspOnAct->setShortcut(tr("Ctrl+/"));
-        connect(dspOnAct, &QAction::triggered, this, &cm_basewindow::dspOn);
+        connect(dspOnAct, &QAction::triggered, this, &BaseWindow::dspOn);
 
         dspOffAct = new QAction(tr("DSP Off"), this);
         dspOffAct->setShortcut(tr("Ctrl+."));
-        connect(dspOffAct, &QAction::triggered, this, &cm_basewindow::dspOff);
+        connect(dspOffAct, &QAction::triggered, this, &BaseWindow::dspOff);
 
         pdWindowAct = new QAction(tr("Pd Window"), this);
         pdWindowAct->setShortcut(tr("Ctrl+R"));
-        connect(pdWindowAct, &QAction::triggered, this, &cm_menu::pdWindow);
+        connect(pdWindowAct, &QAction::triggered, this, &BaseMenu::pdWindow);
 
         pdAudioSettingsAct = new QAction(tr("Audio settings..."), this);
         //pdAudioSettingsAct->setShortcut(tr("Ctrl+R"));
@@ -115,9 +116,9 @@ public:
         pdKeyBindingsAct = new QAction(tr("Key bindings..."), this);
         //pdKeyBindingsAct->setShortcut(tr("Ctrl+R"));
 
-//        QAction *pdAudioSettingsAct;
-//        QAction *pdPreferencesAct;
-//        QAction *pdKeyBindingsAct;
+        //        QAction *pdAudioSettingsAct;
+        //        QAction *pdPreferencesAct;
+        //        QAction *pdKeyBindingsAct;
 
         pdHelpAct = new QAction(tr("Pd help"), this);
 
@@ -241,5 +242,6 @@ private slots:
 
 
 };
+}
 
 #endif // MAINWINDOW_H

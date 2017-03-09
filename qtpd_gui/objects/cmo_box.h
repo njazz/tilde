@@ -16,11 +16,12 @@
 
 #include <QLineEdit>
 
+using namespace cm;
 
 ////
 /// \brief gui object: standard object box
 ///
-class cmo_box : public cm_object {
+class cmo_box : public UIObject {
 
     Q_OBJECT
 
@@ -28,10 +29,10 @@ private:
     QLineEdit* editor_;
 
 public:
-    explicit cmo_box(cm_object* parent = 0);
+    explicit cmo_box(UIObject* parent = 0);
     ~cmo_box();
 
-    static cm_object* createObject(std::string objectData, cm_widget *parent=0) {};
+    static UIObject* createObject(std::string objectData, UIWidget *parent=0) {};
 
 
     ////

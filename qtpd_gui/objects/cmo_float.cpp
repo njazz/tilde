@@ -1,6 +1,6 @@
 #include "cmo_float.h"
 
-cmo_float::cmo_float(cm_object *parent) : cm_object(parent)
+cmo_float::cmo_float(UIObject *parent) : UIObject(parent)
 {
     this->setMinimumWidth(30);
     this->setFixedSize(45,20);

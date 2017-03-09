@@ -4,31 +4,33 @@
 #include "cm_object.h"
 #include "cm_patchcord.h"
 
+namespace cm
+{
 
-typedef std::vector<cm_object*> cm_obj_vec;
-typedef std::vector<cm_patchcord*> cm_cord_vec;
+typedef std::vector<UIObject*> cm_obj_vec;
+typedef std::vector<Patchcord*> cm_cord_vec;
 
 ////
 /// \brief clipboard singleton
 ///
-class cm_clipboard
+class Clipboard
 {
 public:
-    static cm_clipboard& inst()
+    static Clipboard& inst()
     {
-        static cm_clipboard    instance;
+        static Clipboard    instance;
         return instance;
     }
 private:
-    cm_clipboard() {}
+    Clipboard() {}
 //    cm_clipboard(cm_clipboard const&);
 //    void operator=(cm_clipboard const&);
 
 public:
-    cm_clipboard(cm_clipboard const&)        = delete;
-    void operator=(cm_clipboard const&)  = delete;
+    Clipboard(Clipboard const&)        = delete;
+    void operator=(Clipboard const&)  = delete;
 
-    void addObject(cm_object* obj)
+    void addObject(UIObject* obj)
     {
 
     }
@@ -36,7 +38,7 @@ public:
     {
 
     }
-    void addPatchcord(cm_patchcord* obj)
+    void addPatchcord(Patchcord* obj)
     {
 
     }
@@ -59,5 +61,6 @@ public:
     void clear();
 
 };
+}
 
 #endif // CM_CLIPBOARD_H

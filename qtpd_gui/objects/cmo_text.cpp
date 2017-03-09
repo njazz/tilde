@@ -1,7 +1,7 @@
 #include "cmo_text.h"
 
 
-cmo_text::cmo_text(cm_object *parent) : cm_object(parent)
+cmo_text::cmo_text(UIObject *parent) : UIObject(parent)
 {
     this->setMinimumWidth(30);
     this->setFixedSize(65,20);

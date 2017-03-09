@@ -1,6 +1,6 @@
 #include "cmo_box.h"
 
-cmo_box::cmo_box(cm_object *parent) : cm_object(parent)
+cmo_box::cmo_box(UIObject *parent) : UIObject(parent)
 {
 
     this->setFixedHeight(20);

@@ -11,24 +11,26 @@
 //#define cmp_font "Source Code Pro"
 //#define cmp_font "Bitstream Vera Sans Mono"
 
-#define PREF_STRING(x) cm_prefs::inst().getString(x)
+#define PREF_STRING(x) cm::Preferences::inst().getString(x)
+
+namespace cm{
 
 ////
 /// \brief preferences singleton
 ///
-class cm_prefs : public cm_propertylist // TODO
+class Preferences : public UIPropertyList // TODO
 {
 public:
-    static cm_prefs& inst()
+    static Preferences& inst()
     {
-        static cm_prefs    instance;
+        static Preferences    instance;
         return instance;
     }
 
 private:
     std::map<std::string, QString> data_;
 
-    cm_prefs() {
+    Preferences() {
 
         //temporary
         data_["Font"] = "Source Code Pro";
@@ -37,8 +39,8 @@ private:
 //    void operator=(cm_prefs const&);
 
 public:
-    cm_prefs(cm_prefs const&)        = delete;
-    void operator=(cm_prefs const&)  = delete;
+    Preferences(Preferences const&)        = delete;
+    void operator=(Preferences const&)  = delete;
 
     //temporary
     QString getString(std::string key)
@@ -48,6 +50,7 @@ public:
     }
 };
 
+}
 
 //ideas:
 // -compatibility level for saving files

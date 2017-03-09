@@ -1,6 +1,8 @@
 #include "cm_canvas.h"
 
-cm_canvas::cm_canvas(cm_widget *parent) : cm_widget(parent)
+namespace cm{
+
+Canvas::Canvas(UIWidget *parent) : UIWidget(parent)
 {
 
     QPalette Pal;
@@ -23,10 +25,10 @@ cm_canvas::cm_canvas(cm_widget *parent) : cm_widget(parent)
     this->gridStep = 20;
 
     //
-    this->conn_obj1 = 0;
-    this->conn_out = 0;
+    this->connObj1 = 0;
+    this->connOutlet = 0;
     this->dragObject = 0;
-    this->pd_canvas = 0;
+    this->pdCanvas = 0;
 }
 
 //cm_canvas::cm_canvas(QWidget *parent) : cm_widget((cm_widget*)parent)
@@ -37,30 +39,30 @@ cm_canvas::cm_canvas(cm_widget *parent) : cm_widget(parent)
 
 ///////
 
-void cm_canvas::s_InMousePressed(cm_widget* obj, QMouseEvent* )
+void Canvas::s_InMousePressed(UIWidget* obj, QMouseEvent* )
 {
     //    printf("in: mouse pressed\n");
     this->newLine.active = false;
 
-    if ( (this->conn_obj1) && (this->conn_out))
+    if ( (this->connObj1) && (this->connOutlet))
     {
-        this->patchcord(this->conn_obj1, this->conn_out, (cm_object*)obj->parent(), obj);
+        this->patchcord(this->connObj1, this->connOutlet, (UIObject*)obj->parent(), obj);
         this->repaint();
     }
 
-    this->conn_obj1 = 0;
-    this->conn_out = 0;
+    this->connObj1 = 0;
+    this->connOutlet = 0;
 
 
 }
 
-void cm_canvas::s_InMouseReleased(cm_widget* , QMouseEvent* )
+void Canvas::s_InMouseReleased(UIWidget* , QMouseEvent* )
 {
     //    printf("in:  mouse released\n");
 
 }
 
-void cm_canvas::s_OutMousePressed(cm_widget* obj, QMouseEvent* )
+void Canvas::s_OutMousePressed(UIWidget* obj, QMouseEvent* )
 {
     //    printf("out: mouse pressed\n");
 
@@ -68,12 +70,12 @@ void cm_canvas::s_OutMousePressed(cm_widget* obj, QMouseEvent* )
 
     this->newLine.active = true;
 
-    this->conn_obj1 = (cm_object*)obj->parent();
-    this->conn_out = (cm_object*)obj;
+    this->connObj1 = (UIObject*)obj->parent();
+    this->connOutlet = (UIObject*)obj;
 
 }
 
-void cm_canvas::s_OutMouseReleased(cm_widget* , QMouseEvent* )
+void Canvas::s_OutMouseReleased(UIWidget* , QMouseEvent* )
 {
     //    printf("out:  mouse released\n");
 
@@ -82,12 +84,12 @@ void cm_canvas::s_OutMouseReleased(cm_widget* , QMouseEvent* )
 
 }
 
-void cm_canvas::s_SelectBox(cm_widget *box)
+void Canvas::s_SelectBox(UIWidget *box)
 {
 
     if (this->editMode == em_Unlocked)
     {
-        this->selObjectBoxes.push_back((cm_object*)box);
+        this->selObjectBoxes.push_back((UIObject*)box);
         box->select();
         box->repaint();
     }
@@ -99,13 +101,13 @@ void cm_canvas::s_SelectBox(cm_widget *box)
 }
 
 
-void cm_canvas::s_MoveBox(cm_widget *box, QMouseEvent* event)
+void Canvas::s_MoveBox(UIWidget *box, QMouseEvent* event)
 {
     if (! (this->getEditMode() == em_Unlocked) ) return;
     for (int i=0;i<(int)this->selObjectBoxes.size();i++)
     {
-        cm_object* w = ((cm_object*)this->selObjectBoxes.at(i));
-        QPoint pos = ((cm_object*)this->selObjectBoxes.at(i))->pos() +
+        UIObject* w = ((UIObject*)this->selObjectBoxes.at(i));
+        QPoint pos = ((UIObject*)this->selObjectBoxes.at(i))->pos() +
                 mapToParent((event->pos()-box->dragOffset));
 
         if (this->gridSnap)
@@ -122,5 +124,7 @@ void cm_canvas::s_MoveBox(cm_widget *box, QMouseEvent* event)
 
     }
 
+
+}
 
 }

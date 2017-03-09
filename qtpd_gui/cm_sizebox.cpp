@@ -1,13 +1,12 @@
 #include "cm_sizebox.h"
 
-
-cm_sizebox::cm_sizebox(cm_widget *parent) : cm_widget(parent)
+namespace cm
+{
+SizeBox::SizeBox(UIWidget *parent) : UIWidget(parent)
 {
     this->setFixedSize(5,5);
 
 }
 
-//cm_sizebox::cm_sizebox()
-//{
+}
 
-//}

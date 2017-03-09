@@ -3,13 +3,16 @@
 
 #include "cm_patchwindow.h"
 
+namespace cm
+{
+
 ////
 /// \brief saves pd files on 'client' (GUI) side
 ///
-class cm_filesaver
+class FileSaver
 {
 private:
-    cm_filesaver(){};
+    FileSaver(){};
 public:
 
     ////
@@ -17,7 +20,7 @@ public:
     /// \param file
     /// \param canvas
     ///
-    static void saveCanvas(cm_canvas* canvas, QFile* file)
+    static void saveCanvas(Canvas* canvas, QFile* file)
     {
 
         //save canvas
@@ -28,15 +31,15 @@ public:
         file->write(out1.c_str(),out1.size());
 
         //objects
-        std::vector<cm_object*> objects = canvas->getObjectBoxes();
-        std::vector<cm_object*>::iterator it;
+        std::vector<UIObject*> objects = canvas->getObjectBoxes();
+        std::vector<UIObject*>::iterator it;
 
         for (it = objects.begin(); it!= objects.end(); ++it)
         {
             // check for subpatches
             out1 = "#X obj ";
-            out1 += std::to_string(((cm_object*)*it)->x()) + " " + std::to_string(((cm_object*)*it)->y())+ " ";
-            out1 += ((cm_object*)*it)->getSaveString();
+            out1 += std::to_string(((UIObject*)*it)->x()) + " " + std::to_string(((UIObject*)*it)->y())+ " ";
+            out1 += ((UIObject*)*it)->getSaveString();
             out1 +=";\r\n" ;
 
             file->write(out1.c_str(),out1.size());
@@ -44,8 +47,8 @@ public:
         }
 
         //patchcords
-        std::vector<cm_patchcord*> patchcords = canvas->getPatchcords();
-        std::vector<cm_patchcord*>::iterator it2;
+        std::vector<Patchcord*> patchcords = canvas->getPatchcords();
+        std::vector<Patchcord*>::iterator it2;
 
         for (it2 = patchcords.begin(); it2!= patchcords.end(); ++it2)
         {
@@ -65,17 +68,19 @@ public:
     /// \param fname
     /// \param canvas
     ///
-    static void save(QString fname, cm_canvas* canvas)
+    static void save(QString fname, Canvas* canvas)
     {
         QFile f(fname);
         f.open(QIODevice::WriteOnly);
 
-        cm_filesaver::saveCanvas(canvas, &f);
+        FileSaver::saveCanvas(canvas, &f);
 
 
         f.close();
 
     }
 };
+
+}
 
 #endif // CM_FILESAVER_H

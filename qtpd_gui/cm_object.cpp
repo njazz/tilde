@@ -1,10 +1,13 @@
 #include "cm_object.h"
 
+namespace cm{
 
-cm_object::cm_object(cm_widget *parent) : cm_widget(parent)
+UIObject::UIObject(UIWidget *parent) : UIWidget(parent)
 {
     this->errorBox_ = false;
 
-    this->sizeBox = new cm_sizebox(this);
+    this->sizeBox = new SizeBox(this);
     this->sizeBox->show();
+}
+
 }

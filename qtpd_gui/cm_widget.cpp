@@ -1,6 +1,8 @@
 #include "cm_widget.h"
 
-cm_widget::cm_widget(QWidget *parent) : QWidget(parent)
+namespace cm
+{
+UIWidget::UIWidget(QWidget *parent) : QWidget(parent)
 {
     this->selected_ = false;
     this->setScale(1.);
@@ -10,31 +12,33 @@ cm_widget::cm_widget(QWidget *parent) : QWidget(parent)
 
 
 
-void cm_widget::s_MousePressed()
+void UIWidget::s_MousePressed()
 {}
-void cm_widget::s_MouseReleased()
+void UIWidget::s_MouseReleased()
 {}
-void cm_widget::s_MouseEntered()
+void UIWidget::s_MouseEntered()
 {}
-void cm_widget::s_MouseLeaved()
-{}
-
-
-void cm_widget::s_InMousePressed(cm_widget* obj, QMouseEvent* ev)
-{}
-void cm_widget::s_InMouseReleased(cm_widget* obj, QMouseEvent* ev)
-{}
-void cm_widget::s_InMouseEntered()
-{}
-void cm_widget::s_InMouseLeaved()
+void UIWidget::s_MouseLeaved()
 {}
 
 
-void cm_widget::s_OutMousePressed(cm_widget* obj, QMouseEvent* ev)
+void UIWidget::s_InMousePressed(UIWidget* obj, QMouseEvent* ev)
 {}
-void cm_widget::s_OutMouseReleased(cm_widget* obj, QMouseEvent* ev)
+void UIWidget::s_InMouseReleased(UIWidget* obj, QMouseEvent* ev)
 {}
-void cm_widget::s_OutMouseEntered()
+void UIWidget::s_InMouseEntered()
 {}
-void cm_widget::s_OutMouseLeaved()
+void UIWidget::s_InMouseLeaved()
 {}
+
+
+void UIWidget::s_OutMousePressed(UIWidget* obj, QMouseEvent* ev)
+{}
+void UIWidget::s_OutMouseReleased(UIWidget* obj, QMouseEvent* ev)
+{}
+void UIWidget::s_OutMouseEntered()
+{}
+void UIWidget::s_OutMouseLeaved()
+{}
+
+}

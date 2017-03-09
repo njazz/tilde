@@ -31,7 +31,7 @@ extern void cmp_setprinthook(t_printhook h);
 /// \brief creates new t_canvas
 /// \return new canvas or 0 if failed
 ///
-extern t_canvas* cmp_newpatch();
+extern "C" t_canvas* cmp_newpatch();
 
 ////
 /// \brief creates canvas from file. TODO probably unused with parser on client app.
@@ -53,7 +53,7 @@ extern void cmp_savepatch(t_canvas* canvas, char* filename, char* path);
 /// \brief closes and frees the canvas
 /// \param canvas
 ///
-extern void cmp_closepatch(t_canvas* canvas);
+extern "C" void cmp_closepatch(t_canvas* canvas);
 
 #pragma mark -
 

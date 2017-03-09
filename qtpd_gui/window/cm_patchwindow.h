@@ -9,10 +9,12 @@
 
 #include "cm_filesaver.h"
 
+namespace cm
+{
 ////
 /// \brief Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas
 ///
-class cm_patchwindow : public cm_basewindow
+class PatchWindow : public BaseWindow
 {
 
 private:
@@ -73,31 +75,31 @@ private:
 
 
 
-    cm_objectmaker* objectMaker;
+    ObjectMaker* objectMaker;
 
 private slots:
     //void open();
     void save();
     void saveAs();
 
-    cm_patchwindow();
+    PatchWindow();
 public:
-    static cm_patchwindow* newWindow();
+    static PatchWindow* newWindow();
     //    static cm_patchwindow* loadWindow(QStringList); //arguments
-    static cm_patchwindow* newSubpatch(t_canvas *subpatch = 0);
+    static PatchWindow* newSubpatch(t_canvas *subpatch = 0);
 
-    cm_canvas* canvas;
+    Canvas* canvas;
 
 
     void createActions()
     {
         //        connect(openAct, &QAction::triggered, this, &cm_patchwindow::open);
-        connect(saveAsAct, &QAction::triggered, this, &cm_patchwindow::saveAs);
-        connect(saveAct, &QAction::triggered, this, &cm_patchwindow::saveAs);
+        connect(saveAsAct, &QAction::triggered, this, &PatchWindow::saveAs);
+        connect(saveAct, &QAction::triggered, this, &PatchWindow::saveAs);
 
         delObjectAct = new QAction(tr("Delete object"), this);
         delObjectAct->setShortcut(tr("Backspace"));
-        connect(delObjectAct, &QAction::triggered, this, &cm_patchwindow::delSelected);
+        connect(delObjectAct, &QAction::triggered, this, &PatchWindow::delSelected);
 
         selectAllAct = new QAction(tr("Select all"), this);
         selectAllAct->setShortcut(tr("Ctrl+A"));
@@ -108,15 +110,15 @@ public:
         editModeAct = new QAction(tr("Edit mode"), this);
         editModeAct->setShortcut(tr("Ctrl+E"));
         editModeAct->setCheckable(true);
-        connect(editModeAct, &QAction::triggered, this, &cm_patchwindow::setEditMode);
+        connect(editModeAct, &QAction::triggered, this, &PatchWindow::setEditMode);
 
         putObjectAct = new QAction(tr("Object"), this);
         putObjectAct->setShortcut(tr("Ctrl+1"));
-        connect(putObjectAct, &QAction::triggered, this, &cm_patchwindow::newObjectBox);
+        connect(putObjectAct, &QAction::triggered, this, &PatchWindow::newObjectBox);
 
         putMessageAct = new QAction(tr("Message"), this);
         putMessageAct->setShortcut(tr("Ctrl+2"));
-        connect(putMessageAct, &QAction::triggered, this, &cm_patchwindow::newMessageBox);
+        connect(putMessageAct, &QAction::triggered, this, &PatchWindow::newMessageBox);
 
 
 
@@ -125,7 +127,7 @@ public:
 
         putCommentAct = new QAction(tr("Comment"), this);
         putCommentAct->setShortcut(tr("Ctrl+5"));
-        connect(putCommentAct, &QAction::triggered, this, &cm_patchwindow::newCommentBox);
+        connect(putCommentAct, &QAction::triggered, this, &PatchWindow::newCommentBox);
 
 
 
@@ -137,7 +139,7 @@ public:
 
         putNumberAct = new QAction(tr("Number"), this);
         putNumberAct->setShortcut(tr("Ctrl+3"));
-        connect(putNumberAct, &QAction::triggered, this, &cm_patchwindow::newFloatBox);
+        connect(putNumberAct, &QAction::triggered, this, &PatchWindow::newFloatBox);
 
         putSliderAct = new QAction(tr("Slider(s)..."), this);
         putSliderAct->setShortcut(tr("Ctrl+Shift+V"));
@@ -176,14 +178,14 @@ public:
         showGridAct->setShortcut(tr("Ctrl+Shift+G"));
         showGridAct->setCheckable(true);
         showGridAct->setChecked(true);
-        connect(showGridAct, &QAction::triggered, this, &cm_patchwindow::setGridVisible);
+        connect(showGridAct, &QAction::triggered, this, &PatchWindow::setGridVisible);
 
 
         snapToGridAct = new QAction(tr("Snap to grid"), this);
         snapToGridAct->setShortcut(tr("Alt+G"));
         snapToGridAct->setCheckable(true);
         snapToGridAct->setChecked(true);
-        connect(snapToGridAct, &QAction::triggered, this, &cm_patchwindow::setGridSnap);
+        connect(snapToGridAct, &QAction::triggered, this, &PatchWindow::setGridSnap);
 
 
         alignToGridAct = new QAction(tr("Align to grid"), this);
@@ -391,7 +393,7 @@ public:
 
     void closeEvent(QCloseEvent *event)
     {
-        cmp_closepatch(this->canvas->pd_canvas);
+        cmp_closepatch(this->canvas->pdCanvas);
 
         event->accept();
     }
@@ -432,5 +434,6 @@ public:
 
 
 };
+}
 
 #endif // CM_PATCHWINDOW_H

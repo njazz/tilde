@@ -5,11 +5,12 @@
 
 #include <QPainter>
 
-class cm_sizebox : public cm_widget
+namespace cm{
+class SizeBox : public UIWidget
 {
 public:
     //cm_sizebox();
-    explicit cm_sizebox(cm_widget *parent = 0);
+    explicit SizeBox(UIWidget *parent = 0);
 
 
     void paintEvent(QPaintEvent*)   //QPaintEvent *pe
@@ -28,5 +29,7 @@ public:
     }
 
 };
+
+}
 
 #endif // CM_SIZEBOX_H

@@ -7,10 +7,13 @@
 
 #include "cm_widget.h"
 
+namespace cm
+{
+
 ////
 /// \brief gui representation of t_inlet / t_outlet
 ///
-class cm_port : public cm_widget
+class Port : public UIWidget
 {
     Q_OBJECT
 
@@ -21,7 +24,7 @@ public:
 
     enum {cm_pt_inlet, cm_pt_outlet} port_type;
 
-    explicit cm_port(cm_widget *parent = 0);
+    explicit Port(UIWidget *parent = 0);
 
     void paintEvent(QPaintEvent*)   //QPaintEvent *pe
     {    QPainter p(this);
@@ -83,5 +86,7 @@ public:
 
 public slots:
 };
+
+}
 
 #endif // CM_PORT_H
