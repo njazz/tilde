@@ -8,7 +8,7 @@ namespace cm
 {
 
 typedef std::vector<UIObject*> objectVec;
-typedef std::vector<Patchcord*> PatchcordVec;
+typedef std::vector<Patchcord*> patchcordVec;
 
 ////
 /// \brief clipboard singleton
@@ -42,7 +42,7 @@ public:
     {
 
     }
-    void addPatchcords(PatchcordVec vec)
+    void addPatchcords(patchcordVec vec)
     {
 
     }
@@ -52,8 +52,8 @@ public:
         return ret;
     };
 
-    PatchcordVec getPatchcords(){
-        PatchcordVec ret;
+    patchcordVec getPatchcords(){
+        patchcordVec ret;
         return ret;
     };
 
