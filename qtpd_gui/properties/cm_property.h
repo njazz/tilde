@@ -7,10 +7,13 @@
 #include <QString>
 
 using namespace ceammc;
+
+namespace cm
+{
 ////
 /// \brief yet another property handling class for ui object.
 ///
-class cm_property
+class UIProperty
 {
 private:
     AtomList data_;
@@ -20,7 +23,7 @@ private:
 
     bool applyToPd; //true if property value should be passed to pd object
 public:
-    cm_property();
+    UIProperty(){};
 
     void setData(AtomList list){}
     void setData(QPoint point){}
@@ -37,5 +40,6 @@ public:
 
 
 };
+}
 
 #endif // CM_PROPERTY_H

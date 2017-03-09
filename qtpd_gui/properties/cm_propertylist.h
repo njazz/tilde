@@ -3,21 +3,24 @@
 
 #include "cm_property.h"
 
+namespace cm
+{
 ////
 /// \brief yet another property handling class for ui object. List
 ///
 class UIPropertyList
 {
 private:
-    std::vector<cm_property*> data_;
+    std::vector<UIProperty*> data_;
 
 public:
-    UIPropertyList();
+    UIPropertyList(){};
 
-    std::vector<cm_property*> fromGroup(std::string grpName){ std::vector<cm_property*> ret; return ret;}
-    std::vector<cm_property*> fromGroup(QString grpName){ std::vector<cm_property*> ret; return ret;}
+    std::vector<UIProperty*> fromGroup(std::string grpName){ std::vector<UIProperty*> ret; return ret;}
+    std::vector<UIProperty*> fromGroup(QString grpName){ std::vector<UIProperty*> ret; return ret;}
 
 
 };
+}
 
 #endif // CM_PROPERTYLIST_H
