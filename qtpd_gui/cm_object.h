@@ -106,7 +106,7 @@ public:
     void addInlet()
     {
         Port* new_in = new Port(this);
-        new_in->port_type = Port::cm_pt_inlet;
+        new_in->portType = Port::portInlet;
 
         new_in->portIndex = inlets_.size();
 
@@ -129,7 +129,7 @@ public:
     void addOutlet()
     {
         Port* new_out = new Port(this);
-        new_out->port_type = Port::cm_pt_outlet;
+        new_out->portType = Port::portOutlet;
 
         new_out->portIndex = outlets_.size();
 

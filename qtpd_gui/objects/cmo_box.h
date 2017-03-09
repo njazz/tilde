@@ -13,7 +13,6 @@
 #include "cm_pdlink.h"
 
 #include <QMainWindow>
-
 #include <QLineEdit>
 
 using namespace cm;

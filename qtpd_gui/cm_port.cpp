@@ -10,7 +10,7 @@ Port::Port(UIWidget *parent) : UIWidget(parent)
 
     this->hover = false;
 
-    this->port_type = cm_pt_inlet;
+    this->portType = portInlet;
     this->portIndex = 0;
 }
 

@@ -106,6 +106,34 @@ public:
             }
         }
 
+        if (list.at(0) == "text")
+        {
+            qDebug("new text");
+            if (list.size()>3)
+            {
+                QString objname;
+                QPoint pos;
+
+                pos.setX(((QString)list.value(1)).toFloat());
+                pos.setY(((QString)list.value(2)).toFloat());
+
+                //lol
+                QStringList objList = list;
+                objList.removeAt(0);
+                objList.removeAt(0);
+                objList.removeAt(0);
+                objname = objList.join(" ");
+
+                qDebug() << "msg name" << objname;
+
+                cmcanvas->createText(objname.toStdString(), pos);
+            }
+            else
+            {
+                qDebug("list error");
+            }
+        }
+
         if (list.at(0) == "connect")
         {
             qDebug("new connect");

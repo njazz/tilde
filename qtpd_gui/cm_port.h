@@ -22,7 +22,7 @@ private:
 public:
     int portIndex;
 
-    enum {cm_pt_inlet, cm_pt_outlet} port_type;
+    enum {portInlet, portOutlet} portType;
 
     explicit Port(UIWidget *parent = 0);
 
