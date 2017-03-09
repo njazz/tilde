@@ -19,7 +19,7 @@ var searchData=
   ['select',['select',['../classcm__widget.html#a2789b084155e10f5630c458b65e01bd3',1,'cm_widget']]],
   ['selectbox',['selectBox',['../classcm__widget.html#a14294c167a8229465541a0fe9c1ec69f',1,'cm_widget']]],
   ['seteditmode',['setEditMode',['../classcm__canvas.html#a665a170e89bfb8ab052172e9d8d74899',1,'cm_canvas::setEditMode()'],['../classcm__patchwindow.html#a1d061d74acb6b5a7d6ef9252f53a7cd8',1,'cm_patchwindow::setEditMode()']]],
-  ['seteditmoderef',['setEditModeRef',['../classcm__widget.html#a71bebd622bbfdc3dcf9b08b4860c3a23',1,'cm_widget']]],
+  ['seteditmoderef',['setEditModeRef',['../classcm__object.html#a7863b19f1465d7871a56133152e44f80',1,'cm_object::setEditModeRef()'],['../classcm__widget.html#ae78e20131ddb59cee8b5a615d4331ea7',1,'cm_widget::setEditModeRef()']]],
   ['seterrorbox',['setErrorBox',['../classcm__object.html#a5c381b627b0d2fce833711fb5aff4eaf',1,'cm_object']]],
   ['setfilename',['setFileName',['../classcm__patchwindow.html#a42468d180c495d37ecbdf5313737bec9',1,'cm_patchwindow']]],
   ['setgridenabled',['setGridEnabled',['../classcm__canvas.html#af2820c90df78c8ca00c1db3f0f8eb6aa',1,'cm_canvas']]],

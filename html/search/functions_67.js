@@ -2,6 +2,7 @@ var searchData=
 [
   ['getconstructorfor',['getConstructorFor',['../classcm__objectloader.html#a5c97e6359252b8dfb78affe944bf1ee2',1,'cm_objectloader']]],
   ['geteditmode',['getEditMode',['../classcm__canvas.html#a13bc38c9911e6040be42dbb57d6812ae',1,'cm_canvas::getEditMode()'],['../classcm__widget.html#a39b4268bc690c1b708ba5d8ce6d1cc8f',1,'cm_widget::getEditMode()']]],
+  ['geteditmoderef',['getEditModeRef',['../classcm__widget.html#a05fa5103316e6fcb145088457c978aed',1,'cm_widget']]],
   ['getendpoint',['getEndPoint',['../classcm__patchcord.html#afd0ba2ba08b6bdbc90585c8ce311bf98',1,'cm_patchcord']]],
   ['getinidx',['getInIdx',['../classcm__patchcord.html#a0089088fb1192317a83791a42f793dbe',1,'cm_patchcord']]],
   ['getinletat',['getInletAt',['../classcm__object.html#a7852c6bb15bc430d9ffbfee044905116',1,'cm_object']]],

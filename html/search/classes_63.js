@@ -14,6 +14,7 @@ var searchData=
   ['cm_5fpdwindow',['cm_pdwindow',['../classcm__pdwindow.html',1,'']]],
   ['cm_5fport',['cm_port',['../classcm__port.html',1,'']]],
   ['cm_5fprefs',['cm_prefs',['../classcm__prefs.html',1,'']]],
+  ['cm_5fsizebox',['cm_sizebox',['../classcm__sizebox.html',1,'']]],
   ['cm_5fwidget',['cm_widget',['../classcm__widget.html',1,'']]],
   ['cmo_5fbox',['cmo_box',['../classcmo__box.html',1,'']]],
   ['cmo_5ffloat',['cmo_float',['../classcmo__float.html',1,'']]],

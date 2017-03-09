@@ -98,13 +98,14 @@ Inheritance diagram for cm_widget:</div>
  <div class="center">
   <img src="classcm__widget.png" usemap="#cm_widget_map" alt=""/>
   <map id="cm_widget_map" name="cm_widget_map">
-<area href="classcm__canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects" alt="cm_canvas" shape="rect" coords="0,56,76,80"/>
-<area href="classcm__object.html" title="base class for all object boxes - standard and special" alt="cm_object" shape="rect" coords="129,56,205,80"/>
-<area href="classcm__port.html" title="gui representation of t_inlet / t_outlet" alt="cm_port" shape="rect" coords="215,56,291,80"/>
-<area href="classcmo__box.html" title="gui object: standard object box" alt="cmo_box" shape="rect" coords="0,112,76,136"/>
-<area href="classcmo__float.html" title="gui object: float number box (ui.float)" alt="cmo_float" shape="rect" coords="86,112,162,136"/>
-<area href="classcmo__msg.html" title="gui object: message box (ui.msg)" alt="cmo_msg" shape="rect" coords="172,112,248,136"/>
-<area href="classcmo__text.html" title="gui object: comment box (ui.text)" alt="cmo_text" shape="rect" coords="258,112,334,136"/>
+<area href="classcm__canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects" alt="cm_canvas" shape="rect" coords="0,56,77,80"/>
+<area href="classcm__object.html" title="base class for all object boxes - standard and special" alt="cm_object" shape="rect" coords="130,56,207,80"/>
+<area href="classcm__port.html" title="gui representation of t_inlet / t_outlet" alt="cm_port" shape="rect" coords="217,56,294,80"/>
+<area href="classcm__sizebox.html" alt="cm_sizebox" shape="rect" coords="304,56,381,80"/>
+<area href="classcmo__box.html" title="gui object: standard object box" alt="cmo_box" shape="rect" coords="0,112,77,136"/>
+<area href="classcmo__float.html" title="gui object: float number box (ui.float)" alt="cmo_float" shape="rect" coords="87,112,164,136"/>
+<area href="classcmo__msg.html" title="gui object: message box (ui.msg)" alt="cmo_msg" shape="rect" coords="174,112,251,136"/>
+<area href="classcmo__text.html" title="gui object: comment box (ui.text)" alt="cmo_text" shape="rect" coords="261,112,338,136"/>
 </map>
  </div></div>
 
@@ -141,8 +142,10 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">deselect object  <a href="#af2b0e90bf7abce97f6b047d9741f8f4a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__widget.html#aef5286ed1b9244dd393d9c7f0967adc0">isSelected</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get object's selected flag  <a href="#aef5286ed1b9244dd393d9c7f0967adc0"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__widget.html#a71bebd622bbfdc3dcf9b08b4860c3a23">setEditModeRef</a> (<a class="el" href="cm__widget_8h.html#afd0995990651dbc203c3e07baa11db60">t_editMode</a> *canvasEditMode)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets pointer to edit mode flag in parent canvas  <a href="#a71bebd622bbfdc3dcf9b08b4860c3a23"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__widget.html#ae78e20131ddb59cee8b5a615d4331ea7">setEditModeRef</a> (<a class="el" href="cm__widget_8h.html#afd0995990651dbc203c3e07baa11db60">t_editMode</a> *canvasEditMode)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets pointer to edit mode flag in parent canvas  <a href="#ae78e20131ddb59cee8b5a615d4331ea7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="cm__widget_8h.html#afd0995990651dbc203c3e07baa11db60">t_editMode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__widget.html#a05fa5103316e6fcb145088457c978aed">getEditModeRef</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get edit mode pointer - for inlets/outlets  <a href="#a05fa5103316e6fcb145088457c978aed"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="cm__widget_8h.html#afd0995990651dbc203c3e07baa11db60">t_editMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__widget.html#a39b4268bc690c1b708ba5d8ce6d1cc8f">getEditMode</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get edit mode flag value  <a href="#a39b4268bc690c1b708ba5d8ce6d1cc8f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__widget.html#ae45279e143fd0cb22aa4cd932939d83d">setScale</a> (float scale_)</td></tr>
@@ -209,6 +212,25 @@ Public Attributes</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
 <p>Reimplemented in <a class="el" href="classcm__canvas.html#a13bc38c9911e6040be42dbb57d6812ae">cm_canvas</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a05fa5103316e6fcb145088457c978aed"></a><!-- doxytag: member="cm_widget::getEditModeRef" ref="a05fa5103316e6fcb145088457c978aed" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cm__widget_8h.html#afd0995990651dbc203c3e07baa11db60">t_editMode</a>* <a class="el" href="classcm__widget.html#a05fa5103316e6fcb145088457c978aed">cm_widget::getEditModeRef</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>get edit mode pointer - for inlets/outlets </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -639,16 +661,16 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a71bebd622bbfdc3dcf9b08b4860c3a23"></a><!-- doxytag: member="cm_widget::setEditModeRef" ref="a71bebd622bbfdc3dcf9b08b4860c3a23" args="(t_editMode *canvasEditMode)" -->
+<a class="anchor" id="ae78e20131ddb59cee8b5a615d4331ea7"></a><!-- doxytag: member="cm_widget::setEditModeRef" ref="ae78e20131ddb59cee8b5a615d4331ea7" args="(t_editMode *canvasEditMode)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classcm__widget.html#a71bebd622bbfdc3dcf9b08b4860c3a23">cm_widget::setEditModeRef</a> </td>
+          <td class="memname">virtual void <a class="el" href="classcm__widget.html#ae78e20131ddb59cee8b5a615d4331ea7">cm_widget::setEditModeRef</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="cm__widget_8h.html#afd0995990651dbc203c3e07baa11db60">t_editMode</a> *&#160;</td>
           <td class="paramname"><em>canvasEditMode</em></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td><code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -662,6 +684,8 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Reimplemented in <a class="el" href="classcm__object.html#a7863b19f1465d7871a56133152e44f80">cm_object</a>.</p>
 
 </div>
 </div>
@@ -726,7 +750,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 9 2017 15:22:48 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 9 2017 16:16:52 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

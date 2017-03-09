@@ -429,7 +429,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00395"></a>00395         connect(box,&amp;<a class="code" href="classcm__widget.html#a14294c167a8229465541a0fe9c1ec69f">cmo_box::selectBox</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classcm__canvas.html#a845596ee54b019d2c015e0052312be62" title="slot called by box when it is selected">cm_canvas::s_SelectBox</a>);
 <a name="l00396"></a>00396         connect(box,&amp;<a class="code" href="classcm__widget.html#a52c8dca2c35251f95e0cb5420c77d224">cmo_box::moveBox</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classcm__canvas.html#adbec9207f183a6cc43373c13c6c7179f" title="TODO check. slot called by box when it starts moving.">cm_canvas::s_MoveBox</a>);
 <a name="l00397"></a>00397 
-<a name="l00398"></a>00398         box-&gt;<a class="code" href="classcm__widget.html#a71bebd622bbfdc3dcf9b08b4860c3a23" title="sets pointer to edit mode flag in parent canvas">setEditModeRef</a>(&amp;this-&gt;editMode);
+<a name="l00398"></a>00398         box-&gt;<a class="code" href="classcm__object.html#a7863b19f1465d7871a56133152e44f80" title="sets pointer to edit mode flag in parent canvas">setEditModeRef</a>(&amp;this-&gt;editMode);
 <a name="l00399"></a>00399 
 <a name="l00400"></a>00400         <span class="keyword">const</span> <span class="keywordtype">char</span> * obj_name = pdObjectName.c_str();
 <a name="l00401"></a>00401 
@@ -492,7 +492,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00464"></a>00464         connect(box,&amp;<a class="code" href="classcm__widget.html#a14294c167a8229465541a0fe9c1ec69f">cmo_box::selectBox</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classcm__canvas.html#a845596ee54b019d2c015e0052312be62" title="slot called by box when it is selected">cm_canvas::s_SelectBox</a>);
 <a name="l00465"></a>00465         connect(box,&amp;<a class="code" href="classcm__widget.html#a52c8dca2c35251f95e0cb5420c77d224">cmo_box::moveBox</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classcm__canvas.html#adbec9207f183a6cc43373c13c6c7179f" title="TODO check. slot called by box when it starts moving.">cm_canvas::s_MoveBox</a>);
 <a name="l00466"></a>00466 
-<a name="l00467"></a>00467         box-&gt;<a class="code" href="classcm__widget.html#a71bebd622bbfdc3dcf9b08b4860c3a23" title="sets pointer to edit mode flag in parent canvas">setEditModeRef</a>(&amp;this-&gt;editMode);
+<a name="l00467"></a>00467         box-&gt;<a class="code" href="classcm__object.html#a7863b19f1465d7871a56133152e44f80" title="sets pointer to edit mode flag in parent canvas">setEditModeRef</a>(&amp;this-&gt;editMode);
 <a name="l00468"></a>00468 
 <a name="l00469"></a>00469         <span class="keyword">const</span> <span class="keywordtype">char</span> * obj_name = pdObjectName.c_str();
 <a name="l00470"></a>00470 
@@ -558,7 +558,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00536"></a>00536         connect(msg,&amp;<a class="code" href="classcm__widget.html#a14294c167a8229465541a0fe9c1ec69f">cmo_msg::selectBox</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classcm__canvas.html#a845596ee54b019d2c015e0052312be62" title="slot called by box when it is selected">cm_canvas::s_SelectBox</a>);
 <a name="l00537"></a>00537         connect(msg,&amp;<a class="code" href="classcm__widget.html#a52c8dca2c35251f95e0cb5420c77d224">cmo_msg::moveBox</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classcm__canvas.html#adbec9207f183a6cc43373c13c6c7179f" title="TODO check. slot called by box when it starts moving.">cm_canvas::s_MoveBox</a>);
 <a name="l00538"></a>00538 
-<a name="l00539"></a>00539         msg-&gt;<a class="code" href="classcm__widget.html#a71bebd622bbfdc3dcf9b08b4860c3a23" title="sets pointer to edit mode flag in parent canvas">setEditModeRef</a>(&amp;this-&gt;editMode);
+<a name="l00539"></a>00539         msg-&gt;<a class="code" href="classcm__object.html#a7863b19f1465d7871a56133152e44f80" title="sets pointer to edit mode flag in parent canvas">setEditModeRef</a>(&amp;this-&gt;editMode);
 <a name="l00540"></a>00540 
 <a name="l00541"></a>00541         msg-&gt;move(pos);
 <a name="l00542"></a>00542 
@@ -604,7 +604,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00588"></a>00588         connect(flo,&amp;<a class="code" href="classcm__widget.html#a14294c167a8229465541a0fe9c1ec69f">cmo_float::selectBox</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classcm__canvas.html#a845596ee54b019d2c015e0052312be62" title="slot called by box when it is selected">cm_canvas::s_SelectBox</a>);
 <a name="l00589"></a>00589         connect(flo,&amp;<a class="code" href="classcm__widget.html#a52c8dca2c35251f95e0cb5420c77d224">cmo_float::moveBox</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classcm__canvas.html#adbec9207f183a6cc43373c13c6c7179f" title="TODO check. slot called by box when it starts moving.">cm_canvas::s_MoveBox</a>);
 <a name="l00590"></a>00590 
-<a name="l00591"></a>00591         flo-&gt;<a class="code" href="classcm__widget.html#a71bebd622bbfdc3dcf9b08b4860c3a23" title="sets pointer to edit mode flag in parent canvas">setEditModeRef</a>(&amp;this-&gt;editMode);
+<a name="l00591"></a>00591         flo-&gt;<a class="code" href="classcm__object.html#a7863b19f1465d7871a56133152e44f80" title="sets pointer to edit mode flag in parent canvas">setEditModeRef</a>(&amp;this-&gt;editMode);
 <a name="l00592"></a>00592 
 <a name="l00593"></a>00593         flo-&gt;move(pos);
 <a name="l00594"></a>00594 
@@ -644,7 +644,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00634"></a>00634 
 <a name="l00635"></a>00635         connect(obj,&amp;<a class="code" href="classcm__widget.html#a14294c167a8229465541a0fe9c1ec69f">cmo_msg::selectBox</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classcm__canvas.html#a845596ee54b019d2c015e0052312be62" title="slot called by box when it is selected">cm_canvas::s_SelectBox</a>);
 <a name="l00636"></a>00636         connect(obj,&amp;<a class="code" href="classcm__widget.html#a52c8dca2c35251f95e0cb5420c77d224">cmo_msg::moveBox</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classcm__canvas.html#adbec9207f183a6cc43373c13c6c7179f" title="TODO check. slot called by box when it starts moving.">cm_canvas::s_MoveBox</a>);
-<a name="l00637"></a>00637         obj-&gt;<a class="code" href="classcm__widget.html#a71bebd622bbfdc3dcf9b08b4860c3a23" title="sets pointer to edit mode flag in parent canvas">setEditModeRef</a>(&amp;this-&gt;editMode);
+<a name="l00637"></a>00637         obj-&gt;<a class="code" href="classcm__object.html#a7863b19f1465d7871a56133152e44f80" title="sets pointer to edit mode flag in parent canvas">setEditModeRef</a>(&amp;this-&gt;editMode);
 <a name="l00638"></a>00638         obj-&gt;move(pos);
 <a name="l00639"></a>00639         this-&gt;objectBoxes.push_back(obj);
 <a name="l00640"></a>00640 
@@ -668,7 +668,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00664"></a>00664         connect(txt,&amp;<a class="code" href="classcm__widget.html#a14294c167a8229465541a0fe9c1ec69f">cmo_msg::selectBox</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classcm__canvas.html#a845596ee54b019d2c015e0052312be62" title="slot called by box when it is selected">cm_canvas::s_SelectBox</a>);
 <a name="l00665"></a>00665         connect(txt,&amp;<a class="code" href="classcm__widget.html#a52c8dca2c35251f95e0cb5420c77d224">cmo_msg::moveBox</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classcm__canvas.html#adbec9207f183a6cc43373c13c6c7179f" title="TODO check. slot called by box when it starts moving.">cm_canvas::s_MoveBox</a>);
 <a name="l00666"></a>00666 
-<a name="l00667"></a>00667         txt-&gt;<a class="code" href="classcm__widget.html#a71bebd622bbfdc3dcf9b08b4860c3a23" title="sets pointer to edit mode flag in parent canvas">setEditModeRef</a>(&amp;this-&gt;editMode);
+<a name="l00667"></a>00667         txt-&gt;<a class="code" href="classcm__object.html#a7863b19f1465d7871a56133152e44f80" title="sets pointer to edit mode flag in parent canvas">setEditModeRef</a>(&amp;this-&gt;editMode);
 <a name="l00668"></a>00668 
 <a name="l00669"></a>00669         txt-&gt;move(pos);
 <a name="l00670"></a>00670 
@@ -931,7 +931,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 9 2017 15:22:48 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 9 2017 16:16:52 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
