@@ -86,12 +86,6 @@ public:
 
         this->startY = ev->pos().y();
 
-        //        if ( (this->getEditMode()==em_Unlocked) && this->isSelected())
-        //        {
-        //            this->editor_->setText(QString(this->getObjectData().c_str()));
-        //            this->editor_->show();
-        //            this->editor_->setFocus();
-        //        }
 
         if ( (this->getEditMode()==em_Unlocked) )
         {
@@ -99,47 +93,11 @@ public:
             this->dragOffset = ev->pos();
         }
 
-        //        if (!(this->getEditMode()==em_Unlocked))
-        //        {
-        //            this->clicked_ = true;
-        //            this->repaint();
-
-        //            //todo timer
-        //        }
-
-        //        //temporary
-        //        //move
-        //        if (this->getEditMode() != em_Unlocked)
-        //        {
-        //            if (!this->getPdObject())
-        //            {
-        //                qDebug("msg: bad pd object!");
-        //            }
-        //            else
-        //            {
-
-        //                //std::string msg = ("list "+ this->getObjectData());
-        //                //qDebug("send msg %s", msg.c_str());
-
-        //                cmp_sendstring((t_pd*)this->getPdObject(), ((std::string)"bang").c_str());
-        //                //cmp_sendstring((t_pd*)this->getPdObject(), ((std::string)"bang").c_str());
-        //            }
-
-        //        }
 
     }
 
     void mouseReleaseEvent(QMouseEvent *)
     {
-        //this->selected_ = false;
-
-        //if (!this->getEditMode())
-        //        {
-        //            this->clicked_ = false;
-        //            this->repaint();
-        //        }
-
-
 
     }
 

@@ -176,10 +176,11 @@ public:
     {return this->objectData;}
 
     ////
-    /// \brief returns pointer to pd object
+    /// \brief returns pointer to pd object.
+    /// \details gui-only objects can ovverride it with function that returns 0
     /// \return
     ///
-    void* getPdObject() {return this->pdObject_;}
+    virtual void* getPdObject() {return this->pdObject_;}
 
     ////
     /// \brief sets pointer to pd object

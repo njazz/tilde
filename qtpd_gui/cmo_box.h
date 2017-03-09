@@ -14,6 +14,8 @@
 
 #include <QMainWindow>
 
+#include <QLineEdit>
+
 //#include "cm_objectloader.h"
 
 //typedef void t_object;
@@ -26,7 +28,8 @@ class cmo_box : public cm_object {
 
     Q_OBJECT
 
-
+private:
+    QLineEdit* editor_;
 
 public:
     explicit cmo_box(cm_object* parent = 0);
@@ -79,9 +82,6 @@ public:
     ///
     void mousePressEvent(QMouseEvent* ev)
     {
-        emit selectBox(this);
-        this->dragOffset = ev->pos();
-
         //open canvas for subpatch
         if (this->getEditMode() != em_Unlocked)
         {
@@ -90,6 +90,16 @@ public:
                 this->cmSubcanvas->show();
             }
         }
+
+        if ( (this->getEditMode()==em_Unlocked) && this->isSelected())
+        {
+            this->editor_->setText(QString(this->getObjectData().c_str()));
+            this->editor_->show();
+            this->editor_->setFocus();
+        }
+
+        emit selectBox(this);
+        this->dragOffset = ev->pos();
     }
 
     ////
@@ -97,7 +107,6 @@ public:
     ///
     void mouseReleaseEvent(QMouseEvent*)
     {
-        //this->selected_ = false;
         this->repaint();
     }
 
@@ -111,13 +120,35 @@ public:
             emit moveBox(this, event);
         }
         event->ignore();
+
+
+        if ( (this->getEditMode() != em_Unlocked) && (this->cmSubcanvas) )
+        {
+            this->setCursor(QCursor(Qt::PointingHandCursor));
+        }
+        else
+        {
+            this->setCursor(QCursor(Qt::ArrowCursor));
+        }
     }
 
-//    static void reg()
-//    {
-//        cm_objectloader::inst().addUIobject("ui.obj", &cmo_box::createObject);
-//    }
+    void setPdMessage(std::string message)
+    {
+        this->setObjectData(message);
 
+        QFont myFont(PREF_STRING("Font"), 11);
+        QFontMetrics fm(myFont);
+        int new_w = fm.width(QString(this->getObjectData().c_str())) + 10;
+        new_w = (new_w<25) ? 25 : new_w;
+        this->setFixedWidth(new_w);
+        this->editor_->setFixedWidth(this->width()-5);
+
+        //todo: del object and create new + patchcords
+
+        //
+        this->setInletsPos();
+        this->setOutletsPos();
+    }
 
 signals:
 
@@ -138,6 +169,8 @@ signals:
 
 
 private slots:
+    void editorDone();
+    void editorChanged();
 
 };
 

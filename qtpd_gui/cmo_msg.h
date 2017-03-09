@@ -188,11 +188,7 @@ public:
                 //qDebug("send msg %s", msg.c_str());
                 cmp_sendstring((t_pd*)this->getPdObject(), msg);
             }
-
         }
-
-
-
     }
 
     static void updateUI(void* uiobj, ceammc::AtomList msg)

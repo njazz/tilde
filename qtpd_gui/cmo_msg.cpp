@@ -23,13 +23,6 @@ cmo_msg::cmo_msg(cm_object *parent) : cm_object(parent)
     connect(this->editor_,&QLineEdit::editingFinished,this,&cmo_msg::editorDone);
     connect(this->editor_,&QLineEdit::textEdited, this,&cmo_msg::editorChanged);
 
-
-
-//    QPalette Pal(palette());
-//    Pal.setColor(QPalette::Background, QColor(220,220,220));
-//    this->editor_->setAutoFillBackground(true);
-//    this->editor_->setPalette(Pal);
-
 }
 
 ///////

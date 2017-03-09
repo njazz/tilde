@@ -175,31 +175,21 @@ public:
 
         QFont myFont(PREF_STRING("Font"), 11);
         QFontMetrics fm(myFont);
-        int new_w = fm.width(QString(this->getObjectData().c_str())) + 10;
+        QString text = QString(this->editor_->document()->toPlainText());
+        int new_w = fm.width(text) + 20;
         new_w = (new_w<25) ? 25 : new_w;
+
+        int new_h = fm.boundingRect(QRect(0,0,new_w,100), 0, text).height() + 7 ;
+
+        new_h = (new_h<25) ? 25 : new_h;
+
         this->setFixedWidth(new_w);
-        this->editor_->setFixedWidth(this->width()-5);
+        this->setFixedHeight(new_h);
 
-        //temporary
-        //move
-        if (this->getEditMode() == em_Unlocked)
-        {
-            if (!this->getPdObject())
-            {
-                qDebug("msg: bad pd object!");
-            }
-            else
-            {
+        this->editor_->setFixedWidth(this->width()-1);
+        this->editor_->setFixedHeight(this->height()-2);
 
-                //std::string msg = ("set "+ this->getObjectData());
-                //qDebug("send msg %s", msg.c_str());
-                //cmp_sendstring((t_pd*)this->getPdObject(), msg);
-            }
-
-        }
-
-
-
+        this->editor_->hide();
     }
 
     static void updateUI(void* uiobj, ceammc::AtomList msg)
@@ -227,6 +217,11 @@ public:
 
     std::string getSaveString()
     {return "ui.text "+ this->getObjectData();}
+
+    void* getPdObject()
+    {
+        return 0;
+    }
 
     bool eventFilter(QObject *watched, QEvent *event)
     {
