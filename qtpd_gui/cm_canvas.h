@@ -14,6 +14,10 @@
 
 #include "cm_objectmaker.h"
 
+#include "cm_objectloader.h"
+
+//todo - move to window?
+#include "cm_clipboard.h"
 
 
 

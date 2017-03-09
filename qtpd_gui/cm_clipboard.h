@@ -50,8 +50,8 @@ public:
         return ret;
     };
 
-    cm_obj_vec getPatchcords(){
-        cm_cords_vec ret;
+    cm_cord_vec getPatchcords(){
+        cm_cord_vec ret;
         return ret;
     };
 
