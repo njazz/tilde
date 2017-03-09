@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['dragobject',['dragObject',['../classcm__canvas.html#aab9da787d6b29f28aeac4d3ca7f6f8b9',1,'cm_canvas']]],
-  ['dragoffset',['dragOffset',['../classcm__widget.html#a86dfa257abe398cef8603e8ec97add78',1,'cm_widget']]]
+  ['dragobject',['dragObject',['../classcm_1_1_canvas.html#a606fde5bd5e21aaaefa0fdfae00b7213',1,'cm::Canvas']]],
+  ['dragoffset',['dragOffset',['../classcm_1_1_u_i_widget.html#abbdced5d563d6bee223750b009267b53',1,'cm::UIWidget']]]
 ];

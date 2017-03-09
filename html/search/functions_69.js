@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['inst',['inst',['../classcm__clipboard.html#a1265b6d372a8040d995f96be9f61c4dc',1,'cm_clipboard::inst()'],['../classcm__objectloader.html#a0b3933475f4037ceda9e53c00918f6ef',1,'cm_objectloader::inst()'],['../classcm__prefs.html#aa1230bbe4abb91e65dcca23dcaf402fb',1,'cm_prefs::inst()']]],
-  ['iserrorbox',['isErrorBox',['../classcm__object.html#ab30ed0e19c6420f700a05243e0b76ed7',1,'cm_object']]],
-  ['isselected',['isSelected',['../classcm__widget.html#aef5286ed1b9244dd393d9c7f0967adc0',1,'cm_widget']]]
+  ['inst',['inst',['../classcm_1_1_clipboard.html#a714d1dce22822bbaaae16221f15068b7',1,'cm::Clipboard::inst()'],['../classcm_1_1_object_loader.html#ac29ac3ba87ae3e09a8e2499f59ab2608',1,'cm::ObjectLoader::inst()'],['../classcm_1_1_preferences.html#afca871afbb2cbbdb47d10b57f026266a',1,'cm::Preferences::inst()']]],
+  ['iserrorbox',['isErrorBox',['../classcm_1_1_u_i_object.html#ab4c42d67697dc2de41d0b3656bc69498',1,'cm::UIObject']]],
+  ['isselected',['isSelected',['../classcm_1_1_u_i_widget.html#af2f48a7f0b6a400545fe63e9388756e3',1,'cm::UIWidget']]]
 ];

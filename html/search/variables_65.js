@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['editmenu',['editMenu',['../classcm__basewindow.html#adcea9637a6693c854344f2975e46c55e',1,'cm_basewindow']]],
-  ['end',['end',['../structt_rect_plus.html#a9c2c0165a993c2de370b3b71e0501665',1,'tRectPlus']]]
+  ['editmenu',['editMenu',['../classcm_1_1_base_window.html#ab01493dacb810f2f676f6e1ba3fba3c9',1,'cm::BaseWindow']]],
+  ['end',['end',['../structcm_1_1t_rect_plus.html#aeb805b640d84f06e50bf0aeffb57e8d2',1,'cm::tRectPlus']]]
 ];

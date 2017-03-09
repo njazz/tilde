@@ -86,60 +86,63 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00004"></a>00004 <span class="preprocessor">#include &quot;<a class="code" href="cm__object_8h.html">cm_object.h</a>&quot;</span>
 <a name="l00005"></a>00005 <span class="preprocessor">#include &quot;<a class="code" href="cm__patchcord_8h.html">cm_patchcord.h</a>&quot;</span>
 <a name="l00006"></a>00006 
-<a name="l00007"></a>00007 
-<a name="l00008"></a><a class="code" href="cm__clipboard_8h.html#adae41a3d204b3beeb433f8ec589c49b5">00008</a> <span class="keyword">typedef</span> std::vector&lt;cm_object*&gt; <a class="code" href="cm__clipboard_8h.html#adae41a3d204b3beeb433f8ec589c49b5">cm_obj_vec</a>;
-<a name="l00009"></a><a class="code" href="cm__clipboard_8h.html#a44682a0d8d56d3789bd64d369480ada0">00009</a> <span class="keyword">typedef</span> std::vector&lt;cm_patchcord*&gt; <a class="code" href="cm__clipboard_8h.html#a44682a0d8d56d3789bd64d369480ada0">cm_cord_vec</a>;
-<a name="l00010"></a>00010 
-<a name="l00014"></a><a class="code" href="classcm__clipboard.html">00014</a> <span class="keyword">class </span><a class="code" href="classcm__clipboard.html" title="clipboard singleton">cm_clipboard</a>
-<a name="l00015"></a>00015 {
-<a name="l00016"></a>00016 <span class="keyword">public</span>:
-<a name="l00017"></a><a class="code" href="classcm__clipboard.html#a1265b6d372a8040d995f96be9f61c4dc">00017</a>     <span class="keyword">static</span> <a class="code" href="classcm__clipboard.html" title="clipboard singleton">cm_clipboard</a>&amp; <a class="code" href="classcm__clipboard.html#a1265b6d372a8040d995f96be9f61c4dc">inst</a>()
-<a name="l00018"></a>00018     {
-<a name="l00019"></a>00019         <span class="keyword">static</span> <a class="code" href="classcm__clipboard.html" title="clipboard singleton">cm_clipboard</a>    instance;
-<a name="l00020"></a>00020         <span class="keywordflow">return</span> instance;
-<a name="l00021"></a>00021     }
-<a name="l00022"></a>00022 <span class="keyword">private</span>:
-<a name="l00023"></a>00023     <a class="code" href="classcm__clipboard.html" title="clipboard singleton">cm_clipboard</a>() {}
-<a name="l00024"></a>00024 <span class="comment">//    cm_clipboard(cm_clipboard const&amp;);</span>
-<a name="l00025"></a>00025 <span class="comment">//    void operator=(cm_clipboard const&amp;);</span>
-<a name="l00026"></a>00026 
-<a name="l00027"></a>00027 <span class="keyword">public</span>:
-<a name="l00028"></a>00028     <a class="code" href="classcm__clipboard.html" title="clipboard singleton">cm_clipboard</a>(<a class="code" href="classcm__clipboard.html" title="clipboard singleton">cm_clipboard</a> <span class="keyword">const</span>&amp;)        = <span class="keyword">delete</span>;
-<a name="l00029"></a>00029     <span class="keywordtype">void</span> <a class="code" href="classcm__clipboard.html#a3f6f359c8009c3ca1f34a7cd41f0a96d">operator=</a>(<a class="code" href="classcm__clipboard.html" title="clipboard singleton">cm_clipboard</a> <span class="keyword">const</span>&amp;)  = <span class="keyword">delete</span>;
-<a name="l00030"></a>00030 
-<a name="l00031"></a><a class="code" href="classcm__clipboard.html#aa75f15b67186d2f32de80c309ff35984">00031</a>     <span class="keywordtype">void</span> <a class="code" href="classcm__clipboard.html#aa75f15b67186d2f32de80c309ff35984">addObject</a>(<a class="code" href="classcm__object.html" title="base class for all object boxes - standard and special">cm_object</a>* obj)
-<a name="l00032"></a>00032     {
-<a name="l00033"></a>00033 
-<a name="l00034"></a>00034     }
-<a name="l00035"></a><a class="code" href="classcm__clipboard.html#af1324a2ed5fe348f53f94561630a3363">00035</a>     <span class="keywordtype">void</span> <a class="code" href="classcm__clipboard.html#af1324a2ed5fe348f53f94561630a3363">addObjects</a>(<a class="code" href="cm__clipboard_8h.html#adae41a3d204b3beeb433f8ec589c49b5">cm_obj_vec</a> vec)
-<a name="l00036"></a>00036     {
-<a name="l00037"></a>00037 
-<a name="l00038"></a>00038     }
-<a name="l00039"></a><a class="code" href="classcm__clipboard.html#abcb776ae28057cae0b8777d0f2e8fe1b">00039</a>     <span class="keywordtype">void</span> <a class="code" href="classcm__clipboard.html#abcb776ae28057cae0b8777d0f2e8fe1b">addPatchcord</a>(<a class="code" href="classcm__patchcord.html" title="gui patchcord class">cm_patchcord</a>* obj)
-<a name="l00040"></a>00040     {
-<a name="l00041"></a>00041 
-<a name="l00042"></a>00042     }
-<a name="l00043"></a><a class="code" href="classcm__clipboard.html#a724f8c40110fe449cd2997f9e12b7d6d">00043</a>     <span class="keywordtype">void</span> <a class="code" href="classcm__clipboard.html#a724f8c40110fe449cd2997f9e12b7d6d">addPatchcords</a>(<a class="code" href="cm__clipboard_8h.html#a44682a0d8d56d3789bd64d369480ada0">cm_cord_vec</a> vec)
-<a name="l00044"></a>00044     {
-<a name="l00045"></a>00045 
-<a name="l00046"></a>00046     }
+<a name="l00007"></a>00007 <span class="keyword">namespace </span>cm
+<a name="l00008"></a>00008 {
+<a name="l00009"></a>00009 
+<a name="l00010"></a><a class="code" href="namespacecm.html#a60e51de5d8db6f5d745d79c3ff888d6a">00010</a> <span class="keyword">typedef</span> std::vector&lt;UIObject*&gt; <a class="code" href="namespacecm.html#a60e51de5d8db6f5d745d79c3ff888d6a">cm_obj_vec</a>;
+<a name="l00011"></a><a class="code" href="namespacecm.html#a89114bc8e4660932aa4cb0c2da633246">00011</a> <span class="keyword">typedef</span> std::vector&lt;Patchcord*&gt; <a class="code" href="namespacecm.html#a89114bc8e4660932aa4cb0c2da633246">cm_cord_vec</a>;
+<a name="l00012"></a>00012 
+<a name="l00016"></a><a class="code" href="classcm_1_1_clipboard.html">00016</a> <span class="keyword">class </span><a class="code" href="classcm_1_1_clipboard.html" title="clipboard singleton">Clipboard</a>
+<a name="l00017"></a>00017 {
+<a name="l00018"></a>00018 <span class="keyword">public</span>:
+<a name="l00019"></a><a class="code" href="classcm_1_1_clipboard.html#a714d1dce22822bbaaae16221f15068b7">00019</a>     <span class="keyword">static</span> <a class="code" href="classcm_1_1_clipboard.html" title="clipboard singleton">Clipboard</a>&amp; <a class="code" href="classcm_1_1_clipboard.html#a714d1dce22822bbaaae16221f15068b7">inst</a>()
+<a name="l00020"></a>00020     {
+<a name="l00021"></a>00021         <span class="keyword">static</span> <a class="code" href="classcm_1_1_clipboard.html" title="clipboard singleton">Clipboard</a>    instance;
+<a name="l00022"></a>00022         <span class="keywordflow">return</span> instance;
+<a name="l00023"></a>00023     }
+<a name="l00024"></a>00024 <span class="keyword">private</span>:
+<a name="l00025"></a>00025     <a class="code" href="classcm_1_1_clipboard.html" title="clipboard singleton">Clipboard</a>() {}
+<a name="l00026"></a>00026 <span class="comment">//    cm_clipboard(cm_clipboard const&amp;);</span>
+<a name="l00027"></a>00027 <span class="comment">//    void operator=(cm_clipboard const&amp;);</span>
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 <span class="keyword">public</span>:
+<a name="l00030"></a>00030     Clipboard(Clipboard <span class="keyword">const</span>&amp;)        = <span class="keyword">delete</span>;
+<a name="l00031"></a>00031     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_clipboard.html#a23b03522f641a74b1d3a980a74aa634e">operator=</a>(Clipboard <span class="keyword">const</span>&amp;)  = <span class="keyword">delete</span>;
+<a name="l00032"></a>00032 
+<a name="l00033"></a><a class="code" href="classcm_1_1_clipboard.html#aba8e9cd226382fe48d3431df9d71beab">00033</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_clipboard.html#aba8e9cd226382fe48d3431df9d71beab">addObject</a>(<a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* obj)
+<a name="l00034"></a>00034     {
+<a name="l00035"></a>00035 
+<a name="l00036"></a>00036     }
+<a name="l00037"></a><a class="code" href="classcm_1_1_clipboard.html#a8401a399697e10a3d89d33994ebf3361">00037</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_clipboard.html#a8401a399697e10a3d89d33994ebf3361">addObjects</a>(<a class="code" href="namespacecm.html#a60e51de5d8db6f5d745d79c3ff888d6a">cm_obj_vec</a> vec)
+<a name="l00038"></a>00038     {
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040     }
+<a name="l00041"></a><a class="code" href="classcm_1_1_clipboard.html#aa87b860bd3c37748240b5efb67d88262">00041</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_clipboard.html#aa87b860bd3c37748240b5efb67d88262">addPatchcord</a>(<a class="code" href="classcm_1_1_patchcord.html" title="gui patchcord class">Patchcord</a>* obj)
+<a name="l00042"></a>00042     {
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044     }
+<a name="l00045"></a><a class="code" href="classcm_1_1_clipboard.html#a36bee9e68cb0345c0772aed83d8df5f6">00045</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_clipboard.html#a36bee9e68cb0345c0772aed83d8df5f6">addPatchcords</a>(<a class="code" href="namespacecm.html#a89114bc8e4660932aa4cb0c2da633246">cm_cord_vec</a> vec)
+<a name="l00046"></a>00046     {
 <a name="l00047"></a>00047 
-<a name="l00048"></a><a class="code" href="classcm__clipboard.html#ad15fb2531d6931084b1aca747a28ad99">00048</a>     <a class="code" href="cm__clipboard_8h.html#adae41a3d204b3beeb433f8ec589c49b5">cm_obj_vec</a> <a class="code" href="classcm__clipboard.html#ad15fb2531d6931084b1aca747a28ad99">getObjects</a>(){
-<a name="l00049"></a>00049         <a class="code" href="cm__clipboard_8h.html#adae41a3d204b3beeb433f8ec589c49b5">cm_obj_vec</a> ret;
-<a name="l00050"></a>00050         <span class="keywordflow">return</span> ret;
-<a name="l00051"></a>00051     };
-<a name="l00052"></a>00052 
-<a name="l00053"></a><a class="code" href="classcm__clipboard.html#a215722e776b2666802a7475dae66af44">00053</a>     <a class="code" href="cm__clipboard_8h.html#a44682a0d8d56d3789bd64d369480ada0">cm_cord_vec</a> <a class="code" href="classcm__clipboard.html#a215722e776b2666802a7475dae66af44">getPatchcords</a>(){
-<a name="l00054"></a>00054         <a class="code" href="cm__clipboard_8h.html#a44682a0d8d56d3789bd64d369480ada0">cm_cord_vec</a> ret;
-<a name="l00055"></a>00055         <span class="keywordflow">return</span> ret;
-<a name="l00056"></a>00056     };
-<a name="l00057"></a>00057 
-<a name="l00058"></a>00058 
-<a name="l00059"></a>00059     <span class="keywordtype">void</span> <a class="code" href="classcm__clipboard.html#abd2d18646044bade37c1238d77463cea">clear</a>();
+<a name="l00048"></a>00048     }
+<a name="l00049"></a>00049 
+<a name="l00050"></a><a class="code" href="classcm_1_1_clipboard.html#a6274b2cd8b3e71c15df5f2a961ef846d">00050</a>     <a class="code" href="namespacecm.html#a60e51de5d8db6f5d745d79c3ff888d6a">cm_obj_vec</a> <a class="code" href="classcm_1_1_clipboard.html#a6274b2cd8b3e71c15df5f2a961ef846d">getObjects</a>(){
+<a name="l00051"></a>00051         <a class="code" href="namespacecm.html#a60e51de5d8db6f5d745d79c3ff888d6a">cm_obj_vec</a> ret;
+<a name="l00052"></a>00052         <span class="keywordflow">return</span> ret;
+<a name="l00053"></a>00053     };
+<a name="l00054"></a>00054 
+<a name="l00055"></a><a class="code" href="classcm_1_1_clipboard.html#ac28eb5d53c219928b43528286b6d875c">00055</a>     <a class="code" href="namespacecm.html#a89114bc8e4660932aa4cb0c2da633246">cm_cord_vec</a> <a class="code" href="classcm_1_1_clipboard.html#ac28eb5d53c219928b43528286b6d875c">getPatchcords</a>(){
+<a name="l00056"></a>00056         <a class="code" href="namespacecm.html#a89114bc8e4660932aa4cb0c2da633246">cm_cord_vec</a> ret;
+<a name="l00057"></a>00057         <span class="keywordflow">return</span> ret;
+<a name="l00058"></a>00058     };
+<a name="l00059"></a>00059 
 <a name="l00060"></a>00060 
-<a name="l00061"></a>00061 };
+<a name="l00061"></a>00061     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_clipboard.html#a52d498841c9ae5b7f039d74e58838448">clear</a>();
 <a name="l00062"></a>00062 
-<a name="l00063"></a>00063 <span class="preprocessor">#endif // CM_CLIPBOARD_H</span>
+<a name="l00063"></a>00063 };
+<a name="l00064"></a>00064 }
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066 <span class="preprocessor">#endif // CM_CLIPBOARD_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -158,7 +161,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 9 2017 16:16:52 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 9 2017 22:24:25 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

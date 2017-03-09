@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['keypressevent',['keyPressEvent',['../classcm__patchwindow.html#a3a4eec852b4212e1ef6fb42bd7db0ca6',1,'cm_patchwindow']]],
-  ['keyreleaseevent',['keyReleaseEvent',['../classcm__patchwindow.html#ae491ac449532e8986428153b5b8c0a3e',1,'cm_patchwindow']]]
+  ['keypressevent',['keyPressEvent',['../classcm_1_1_patch_window.html#a0e79c818eccbc41679c4e32d3fcaa32a',1,'cm::PatchWindow']]],
+  ['keyreleaseevent',['keyReleaseEvent',['../classcm_1_1_patch_window.html#a7e3df19ab22be86aa724b599769c7189',1,'cm::PatchWindow']]]
 ];

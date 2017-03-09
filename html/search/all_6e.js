@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['newcommentbox',['newCommentBox',['../classcm__patchwindow.html#a897c5cd53383293f9b5fd0c2c22f7ea1',1,'cm_patchwindow']]],
-  ['newfile',['newFile',['../classcm__menu.html#a562e762756c4796ea464f944516848b6',1,'cm_menu']]],
-  ['newfloatbox',['newFloatBox',['../classcm__patchwindow.html#a616d1aa98a1bdac76fbdc05b77c261c1',1,'cm_patchwindow']]],
-  ['newmessagebox',['newMessageBox',['../classcm__patchwindow.html#a89e9ce9042ae37a6cd095a48dd41ec6e',1,'cm_patchwindow']]],
-  ['newobjectbox',['newObjectBox',['../classcm__patchwindow.html#a9ee3e30cd65d015a421a5b9b95d5e072',1,'cm_patchwindow']]],
-  ['newsubpatch',['newSubpatch',['../classcm__patchwindow.html#a79ddcd725c3fefe26b5be7e41d217cd9',1,'cm_patchwindow']]],
-  ['newwindow',['newWindow',['../classcm__patchwindow.html#ab97ced2778a0acdd78356a855b7fe1f3',1,'cm_patchwindow']]]
+  ['newcommentbox',['newCommentBox',['../classcm_1_1_patch_window.html#a3b9a4cfd55b5c9366cc426ab37a2d52b',1,'cm::PatchWindow']]],
+  ['newfile',['newFile',['../classcm_1_1_base_menu.html#ada75cfe378867a4ceb65f297ceb3c2cd',1,'cm::BaseMenu']]],
+  ['newfloatbox',['newFloatBox',['../classcm_1_1_patch_window.html#a03c5dda25eb6c158f460a9a298add88f',1,'cm::PatchWindow']]],
+  ['newmessagebox',['newMessageBox',['../classcm_1_1_patch_window.html#a6e3b2c53c06419ea77d0ec75e8b0a90f',1,'cm::PatchWindow']]],
+  ['newobjectbox',['newObjectBox',['../classcm_1_1_patch_window.html#a60826555b736d69ef5688eebc4d375d5',1,'cm::PatchWindow']]],
+  ['newsubpatch',['newSubpatch',['../classcm_1_1_patch_window.html#a222447f0df64274c0995fef86e5463bb',1,'cm::PatchWindow']]],
+  ['newwindow',['newWindow',['../classcm_1_1_patch_window.html#a4b86cb1a56afcbbc8e5117e69cc65444',1,'cm::PatchWindow']]]
 ];

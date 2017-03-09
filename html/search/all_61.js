@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['active',['active',['../structt_rect_plus.html#aecc28cd0419c50f8c2943325856c9f4c',1,'tRectPlus']]],
-  ['addinlet',['addInlet',['../classcm__object.html#ab3e9cab690cdca8447abe22ea47fb87e',1,'cm_object']]],
-  ['addobject',['addObject',['../classcm__clipboard.html#aa75f15b67186d2f32de80c309ff35984',1,'cm_clipboard']]],
-  ['addobjects',['addObjects',['../classcm__clipboard.html#af1324a2ed5fe348f53f94561630a3363',1,'cm_clipboard']]],
-  ['addoutlet',['addOutlet',['../classcm__object.html#aa90bab70210eef08f6fecef46014f451',1,'cm_object']]],
-  ['addpatchcord',['addPatchcord',['../classcm__clipboard.html#abcb776ae28057cae0b8777d0f2e8fe1b',1,'cm_clipboard']]],
-  ['addpatchcords',['addPatchcords',['../classcm__clipboard.html#a724f8c40110fe449cd2997f9e12b7d6d',1,'cm_clipboard']]],
-  ['adduiobject',['addUIobject',['../classcm__objectloader.html#adffb08374bfc5b1458ee14209f65b2d2',1,'cm_objectloader']]],
-  ['arrangemenu',['arrangeMenu',['../classcm__basewindow.html#a3f00ea6cacad0a0a7443d1969b2e54a2',1,'cm_basewindow']]]
+  ['active',['active',['../structcm_1_1t_rect_plus.html#a2dbab8139df56ffb17379b3278d3cc80',1,'cm::tRectPlus']]],
+  ['addinlet',['addInlet',['../classcm_1_1_u_i_object.html#a3e735691241c3d28b660b0ee945b3ab5',1,'cm::UIObject']]],
+  ['addobject',['addObject',['../classcm_1_1_clipboard.html#aba8e9cd226382fe48d3431df9d71beab',1,'cm::Clipboard']]],
+  ['addobjects',['addObjects',['../classcm_1_1_clipboard.html#a8401a399697e10a3d89d33994ebf3361',1,'cm::Clipboard']]],
+  ['addoutlet',['addOutlet',['../classcm_1_1_u_i_object.html#a8ddae9dbc64fa5687d8c38baddd3a56b',1,'cm::UIObject']]],
+  ['addpatchcord',['addPatchcord',['../classcm_1_1_clipboard.html#aa87b860bd3c37748240b5efb67d88262',1,'cm::Clipboard']]],
+  ['addpatchcords',['addPatchcords',['../classcm_1_1_clipboard.html#a36bee9e68cb0345c0772aed83d8df5f6',1,'cm::Clipboard']]],
+  ['adduiobject',['addUIobject',['../classcm_1_1_object_loader.html#a63c27fbfeb9e3233f6aee6a79420d9d6',1,'cm::ObjectLoader']]],
+  ['arrangemenu',['arrangeMenu',['../classcm_1_1_base_window.html#a59676dc2856cbc10be698439b96d57c2',1,'cm::BaseWindow']]]
 ];

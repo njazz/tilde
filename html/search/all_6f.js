@@ -1,10 +1,14 @@
 var searchData=
 [
-  ['objectmakerdone',['objectMakerDone',['../classcm__patchwindow.html#ae4ac21d8ad380fbfeaa436550b971371',1,'cm_patchwindow']]],
-  ['open',['open',['../classcm__fileparser.html#a33ca4b2eb9e50e8e55639c273bdc3a9e',1,'cm_fileparser::open()'],['../classcm__menu.html#a9928745100a788356ac551761dda7389',1,'cm_menu::open()']]],
-  ['openact',['openAct',['../classcm__basewindow.html#a93839e2a10d1bfc18fbbab8086cb6179',1,'cm_basewindow']]],
-  ['operator_3d',['operator=',['../classcm__clipboard.html#a3f6f359c8009c3ca1f34a7cd41f0a96d',1,'cm_clipboard::operator=()'],['../classcm__objectloader.html#a98245ab2d74972b9c68bca7b6ef93d63',1,'cm_objectloader::operator=()'],['../classcm__prefs.html#af38ada391a907b47b511f9aab01acd04',1,'cm_prefs::operator=()']]],
-  ['os_5ffixed',['os_Fixed',['../cm__object_8h.html#a084df40b0908bbe1a0628dbb936e3c49ac2b1dcc4166b4904e22149a0a583dee8',1,'cm_object.h']]],
-  ['os_5ffixedheight',['os_FixedHeight',['../cm__object_8h.html#a084df40b0908bbe1a0628dbb936e3c49a614e9fc7304c3fd007fabd7991c8bec4',1,'cm_object.h']]],
-  ['os_5ffree',['os_Free',['../cm__object_8h.html#a084df40b0908bbe1a0628dbb936e3c49a186e483484ca64752fee1b1eb8f92b3d',1,'cm_object.h']]]
+  ['objectloader',['ObjectLoader',['../classcm_1_1_object_loader.html',1,'cm']]],
+  ['objectloader',['ObjectLoader',['../classcm_1_1_object_loader.html#a776b899e5cd1350f0ddcebbe23b1746c',1,'cm::ObjectLoader']]],
+  ['objectmaker',['ObjectMaker',['../classcm_1_1_object_maker.html',1,'cm']]],
+  ['objectmaker',['ObjectMaker',['../classcm_1_1_object_maker.html#afdf51e4beaed0320bee5324742fc5f74',1,'cm::ObjectMaker']]],
+  ['objectmakerdone',['objectMakerDone',['../classcm_1_1_patch_window.html#a5a971522ef75365dde9ee9c44c61d5df',1,'cm::PatchWindow']]],
+  ['open',['open',['../classcm_1_1_file_parser.html#a4af8840a801d384b5830a61a607cc298',1,'cm::FileParser::open()'],['../classcm_1_1_base_menu.html#a3c5fa62eb1d84eca7f1bdf05e473f497',1,'cm::BaseMenu::open()']]],
+  ['openact',['openAct',['../classcm_1_1_base_window.html#a34c89d5052a282df6c9271d96ab7e34d',1,'cm::BaseWindow']]],
+  ['operator_3d',['operator=',['../classcm_1_1_clipboard.html#a23b03522f641a74b1d3a980a74aa634e',1,'cm::Clipboard::operator=()'],['../classcm_1_1_object_loader.html#a33cafe9baf04f81d6954474e9cfd964d',1,'cm::ObjectLoader::operator=()'],['../classcm_1_1_preferences.html#a5773b75d32900c3d33963b3caedb22f4',1,'cm::Preferences::operator=()']]],
+  ['os_5ffixed',['os_Fixed',['../namespacecm.html#a5ec512b3876769d22b1b8c7daa3706ada79548b1dd7ae325718690d64b0cdddb0',1,'cm']]],
+  ['os_5ffixedheight',['os_FixedHeight',['../namespacecm.html#a5ec512b3876769d22b1b8c7daa3706ada6a57bf8b09e26966840462efe1f788fb',1,'cm']]],
+  ['os_5ffree',['os_Free',['../namespacecm.html#a5ec512b3876769d22b1b8c7daa3706adae088fcfd368cbd1f371bc1bbb4f2ab60',1,'cm']]]
 ];

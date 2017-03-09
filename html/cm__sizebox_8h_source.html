@@ -85,16 +85,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &quot;<a class="code" href="cm__widget_8h.html">cm_widget.h</a>&quot;</span>
 <a name="l00005"></a>00005 
-<a name="l00006"></a><a class="code" href="classcm__sizebox.html">00006</a> <span class="keyword">class </span><a class="code" href="classcm__sizebox.html">cm_sizebox</a> : <span class="keyword">public</span> <a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a>
-<a name="l00007"></a>00007 {
-<a name="l00008"></a>00008 <span class="keyword">public</span>:
-<a name="l00009"></a>00009     <span class="comment">//cm_sizebox();</span>
-<a name="l00010"></a>00010     <span class="keyword">explicit</span> <a class="code" href="classcm__sizebox.html#ae6fba5bdba8c32d22c5b5708ff9a4a05">cm_sizebox</a>(<a class="code" href="classcm__widget.html" title="parent class for all gui objects">cm_widget</a> *parent = 0);
-<a name="l00011"></a>00011 
-<a name="l00012"></a>00012 
-<a name="l00013"></a>00013 };
+<a name="l00006"></a>00006 <span class="preprocessor">#include &lt;QPainter&gt;</span>
+<a name="l00007"></a>00007 
+<a name="l00008"></a>00008 <span class="keyword">namespace </span>cm{
+<a name="l00009"></a><a class="code" href="classcm_1_1_size_box.html">00009</a> <span class="keyword">class </span><a class="code" href="classcm_1_1_size_box.html">SizeBox</a> : <span class="keyword">public</span> <a class="code" href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>
+<a name="l00010"></a>00010 {
+<a name="l00011"></a>00011 <span class="keyword">public</span>:
+<a name="l00012"></a>00012     <span class="comment">//cm_sizebox();</span>
+<a name="l00013"></a>00013     <span class="keyword">explicit</span> <a class="code" href="classcm_1_1_size_box.html#ad7eea41674442aebf6c5659411b7448a">SizeBox</a>(<a class="code" href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a> *parent = 0);
 <a name="l00014"></a>00014 
-<a name="l00015"></a>00015 <span class="preprocessor">#endif // CM_SIZEBOX_H</span>
+<a name="l00015"></a>00015 
+<a name="l00016"></a><a class="code" href="classcm_1_1_size_box.html#a01444b5d54f1f64197c1ec22680d1727">00016</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_size_box.html#a01444b5d54f1f64197c1ec22680d1727">paintEvent</a>(QPaintEvent*)   <span class="comment">//QPaintEvent *pe</span>
+<a name="l00017"></a>00017     {    QPainter p(<span class="keyword">this</span>);
+<a name="l00018"></a>00018 
+<a name="l00019"></a>00019          <span class="comment">//p.setRenderHint(QPainter::SmoothPixmapTransform,true);</span>
+<a name="l00020"></a>00020          p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+<a name="l00021"></a>00021          p.drawRect(0,0,this-&gt;width(),this-&gt;height());
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023 <span class="comment">//           if (this-&gt;hover)</span>
+<a name="l00024"></a>00024 <span class="comment">//           {</span>
+<a name="l00025"></a>00025 <span class="comment">//               p.setPen(QPen(QColor(192, 192, 192), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));</span>
+<a name="l00026"></a>00026 <span class="comment">//               p.drawRect(0,0,this-&gt;width(),this-&gt;height());</span>
+<a name="l00027"></a>00027 <span class="comment">//           }</span>
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029     }
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031 };
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033 }
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035 <span class="preprocessor">#endif // CM_SIZEBOX_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -113,7 +133,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 9 2017 16:16:52 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 9 2017 22:24:25 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

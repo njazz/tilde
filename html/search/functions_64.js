@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['delboxes',['delBoxes',['../classcm__canvas.html#aa6ea601dedf2ca093281001122c82ece',1,'cm_canvas']]],
-  ['deletebox',['deleteBox',['../classcm__canvas.html#a41f0756dbd81deb83c3f902b22d19bc1',1,'cm_canvas']]],
-  ['deletepatchcordsfor',['deletePatchcordsFor',['../classcm__canvas.html#ae5c3788081e8cc35774ac65400f6e2bd',1,'cm_canvas']]],
-  ['delselected',['delSelected',['../classcm__patchwindow.html#ac7011e0a3f0edaeb5077e4519564297b',1,'cm_patchwindow']]],
-  ['delselectedpatchcords',['delSelectedPatchcords',['../classcm__canvas.html#a87795e8449086c27620bf2a97a2c9ca0',1,'cm_canvas']]],
-  ['deselect',['deselect',['../classcm__widget.html#af2b0e90bf7abce97f6b047d9741f8f4a',1,'cm_widget']]],
-  ['deselectboxes',['deselectBoxes',['../classcm__canvas.html#a771117a550aeb9ce3999637d63b6596d',1,'cm_canvas']]]
+  ['delboxes',['delBoxes',['../classcm_1_1_canvas.html#a27e99bde9c7a8418f6bc4e6bcc97dcf6',1,'cm::Canvas']]],
+  ['deletebox',['deleteBox',['../classcm_1_1_canvas.html#a408601f96f1fc5664d2767c73ff49364',1,'cm::Canvas']]],
+  ['deletepatchcordsfor',['deletePatchcordsFor',['../classcm_1_1_canvas.html#a8ad9a1d8abd5bf69131f885a782e437f',1,'cm::Canvas']]],
+  ['delselected',['delSelected',['../classcm_1_1_patch_window.html#a06f635af622c64a38c97d0b695c1d58f',1,'cm::PatchWindow']]],
+  ['delselectedpatchcords',['delSelectedPatchcords',['../classcm_1_1_canvas.html#a876a3b7b9fd328792032d421ca7c89d5',1,'cm::Canvas']]],
+  ['deselect',['deselect',['../classcm_1_1_u_i_widget.html#ae4b9236b24293454621d1eb1e56e9d1c',1,'cm::UIWidget']]],
+  ['deselectboxes',['deselectBoxes',['../classcm_1_1_canvas.html#a778eed76ee578ce93ab149d489147760',1,'cm::Canvas']]]
 ];

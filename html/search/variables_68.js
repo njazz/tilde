@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['helpmenu',['helpMenu',['../classcm__basewindow.html#a5be699694490c8f45b19abd2a29f2d7a',1,'cm_basewindow']]]
+  ['helpmenu',['helpMenu',['../classcm_1_1_base_window.html#ab2fda33620da6e1e4faf50ff9d10ed94',1,'cm::BaseWindow']]]
 ];
