@@ -2,7 +2,6 @@
 #define CM_WIDGET_H
 
 #include <QWidget>
-//#include <QGraphicsScene>
 
 // Widget extension
 // check / fix
@@ -18,12 +17,7 @@ typedef enum
     em_Temporary
 } t_editMode;
 
-typedef enum
-{
-    os_Fixed,
-    os_FixedHeight,
-    os_Free
-} t_objectSize;
+
 
 ////
 /// \brief parent class for all gui objects
