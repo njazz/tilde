@@ -58,7 +58,8 @@ HEADERS  += \
     cm_preferences.h \
     cm_filesaver.h \
     cmo_float.h \
-    cm_pdlink.h
+    cm_pdlink.h \
+    cm_clipboard.h
 
 FORMS    += \
     cm_basewindow.ui \

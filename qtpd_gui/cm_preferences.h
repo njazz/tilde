@@ -9,6 +9,25 @@
 
 //todo singleton
 
+class cm_prefs
+{
+public:
+    static cm_prefs& inst()
+    {
+        static cm_prefs    instance;
+        return instance;
+    }
+private:
+    cm_prefs() {}
+    cm_prefs(cm_prefs const&);
+    void operator=(cm_prefs const&);
+
+public:
+    cm_prefs(cm_prefs const&)        = delete;
+    void operator=(cm_prefs const&)  = delete;
+};
+
+
 //ideas:
 // -compatibility level for saving files
 
