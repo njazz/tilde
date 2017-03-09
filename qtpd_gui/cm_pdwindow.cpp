@@ -85,7 +85,7 @@ cm_pdwindow::cm_pdwindow() :
 
     ui->log->insertColumn(0);
 
-    ui->log->setFont(QFont(cmp_font, 12, 0, false));
+    ui->log->setFont(QFont(PREF_STRING("Font"), 12, 0, false));
 
     ui->log->setColumnWidth(0,70);
 
