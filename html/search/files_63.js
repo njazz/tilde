@@ -32,5 +32,7 @@ var searchData=
   ['cmo_5ffloat_2ecpp',['cmo_float.cpp',['../cmo__float_8cpp.html',1,'']]],
   ['cmo_5ffloat_2eh',['cmo_float.h',['../cmo__float_8h.html',1,'']]],
   ['cmo_5fmsg_2ecpp',['cmo_msg.cpp',['../cmo__msg_8cpp.html',1,'']]],
-  ['cmo_5fmsg_2eh',['cmo_msg.h',['../cmo__msg_8h.html',1,'']]]
+  ['cmo_5fmsg_2eh',['cmo_msg.h',['../cmo__msg_8h.html',1,'']]],
+  ['cmo_5ftext_2ecpp',['cmo_text.cpp',['../cmo__text_8cpp.html',1,'']]],
+  ['cmo_5ftext_2eh',['cmo_text.h',['../cmo__text_8h.html',1,'']]]
 ];

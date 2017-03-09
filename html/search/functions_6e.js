@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['newcommentbox',['newCommentBox',['../classcm__patchwindow.html#a897c5cd53383293f9b5fd0c2c22f7ea1',1,'cm_patchwindow']]],
   ['newfile',['newFile',['../classcm__menu.html#a562e762756c4796ea464f944516848b6',1,'cm_menu']]],
   ['newfloatbox',['newFloatBox',['../classcm__patchwindow.html#a616d1aa98a1bdac76fbdc05b77c261c1',1,'cm_patchwindow']]],
   ['newmessagebox',['newMessageBox',['../classcm__patchwindow.html#a89e9ce9042ae37a6cd095a48dd41ec6e',1,'cm_patchwindow']]],

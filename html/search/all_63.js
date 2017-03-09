@@ -61,6 +61,9 @@ var searchData=
   ['cmo_5fmsg',['cmo_msg',['../classcmo__msg.html',1,'cmo_msg'],['../classcmo__msg.html#a3bc69e1fac13ab3ee80258c1c598c55f',1,'cmo_msg::cmo_msg()']]],
   ['cmo_5fmsg_2ecpp',['cmo_msg.cpp',['../cmo__msg_8cpp.html',1,'']]],
   ['cmo_5fmsg_2eh',['cmo_msg.h',['../cmo__msg_8h.html',1,'']]],
+  ['cmo_5ftext',['cmo_text',['../classcmo__text.html',1,'cmo_text'],['../classcmo__text.html#ab12f3e9534395d5baaf5ecf7d489e6ba',1,'cmo_text::cmo_text()']]],
+  ['cmo_5ftext_2ecpp',['cmo_text.cpp',['../cmo__text_8cpp.html',1,'']]],
+  ['cmo_5ftext_2eh',['cmo_text.h',['../cmo__text_8h.html',1,'']]],
   ['cmp_5fclosepatch',['cmp_closepatch',['../cm__pdlink_8h.html#af08cbd72d5b239361a801b4b67247a9c',1,'cm_pdlink.h']]],
   ['cmp_5fconnectui',['cmp_connectUI',['../cm__pdlink_8h.html#a9b4bef98ca39e6d157ee073b5139ae9d',1,'cm_pdlink.h']]],
   ['cmp_5fcreate_5fmessage',['cmp_create_message',['../cm__pdlink_8h.html#a3bac993f5ef2ae3ddcb123762d3668d0',1,'cm_pdlink.h']]],
@@ -84,5 +87,6 @@ var searchData=
   ['createbox',['createBox',['../classcm__canvas.html#aa39d462d3483b07462c814383fee57c1',1,'cm_canvas']]],
   ['createfloat',['createFloat',['../classcm__canvas.html#a72bd3e0766f6845c9c7bedf9b2465387',1,'cm_canvas']]],
   ['createmenus',['createMenus',['../classcm__basewindow.html#a553c93f8cf60c983ae27e4dc5034f18d',1,'cm_basewindow::createMenus()'],['../classcm__patchwindow.html#a2514fec437b9207934e0753ace19502e',1,'cm_patchwindow::createMenus()']]],
-  ['createmsg',['createMsg',['../classcm__canvas.html#ae6a27ff3f49acc1d3e04e619c822b5a0',1,'cm_canvas']]]
+  ['createmsg',['createMsg',['../classcm__canvas.html#ae6a27ff3f49acc1d3e04e619c822b5a0',1,'cm_canvas']]],
+  ['createtext',['createText',['../classcm__canvas.html#afa89733f85b1692c4b4f54665e090916',1,'cm_canvas']]]
 ];
