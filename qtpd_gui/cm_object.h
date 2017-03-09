@@ -36,7 +36,7 @@ private:
 
     t_objectSize objectSizeMode;
 
-    cm_sizebox sizeBox;
+    cm_sizebox* sizeBox;
 
     cm_object();
 public:
@@ -241,6 +241,11 @@ public:
         {
             this->getOutletAt(i)->setEditModeRef(canvasEditMode);
         }
+    }
+
+    void resizeEvent(QResizeEvent *event)
+    {
+        this->sizeBox->move(this->width()-5, this->height()-5);
     }
 };
 
