@@ -38,11 +38,13 @@ typedef struct
 
 } tRectPlus;
 
+////
+/// \brief canvas data - boxes and patchcords
+/// \details todo: merge with clipboard class's types
 typedef struct
 {
     std::vector<cm_object*> boxes;
     std::vector<cm_patchcord*> patchcords;
-
 } tCanvasData;
 
 ////
