@@ -62,7 +62,7 @@ public:
         {
 
             p.setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-            p.drawRect(2, 2, this->width()-4, this->height()-4);
+            p.drawRect(0, 2, this->width(), this->height()-4);
 
         }
     }
@@ -76,6 +76,15 @@ public:
     {
         emit selectBox(this);
         this->dragOffset = ev->pos();
+
+        //open canvas for subpatch
+        if (this->getEditMode() != em_Unlocked)
+        {
+            if (this->cmSubcanvas)
+            {
+                this->cmSubcanvas->show();
+            }
+        }
     }
 
     ////
