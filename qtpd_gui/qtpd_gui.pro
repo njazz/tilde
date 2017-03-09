@@ -27,20 +27,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp\
     cm_port.cpp \
     cm_canvas.cpp \
-    cm_basewindow.cpp \
+    window/cm_basewindow.cpp \
+    window/cm_pdwindow.cpp \
+    window/cm_patchwindow.cpp \
     cm_menu.cpp \
-    cm_pdwindow.cpp \
-    cm_patchwindow.cpp \
     cm_objectmaker.cpp \
     cm_widget.cpp \
     cm_patchcord.cpp \
-    cmo_msg.cpp \
-    cmo_box.cpp \
+    objects/cmo_msg.cpp \
+    objects/cmo_box.cpp \
+    objects/cmo_float.cpp \
+    objects/cmo_text.cpp \
     cm_fileparser.cpp \
     cm_object.cpp \
     cm_filesaver.cpp \
-    cmo_float.cpp \
-    cmo_text.cpp \
     cm_sizebox.cpp \
     properties/cm_property.cpp \
     properties/cm_propertylist.cpp
@@ -48,31 +48,31 @@ SOURCES += main.cpp\
 HEADERS  += \
     cm_port.h \
     cm_canvas.h \
-    cm_basewindow.h \
+    window/cm_basewindow.h \
+    window/cm_pdwindow.h \
+    window/cm_patchwindow.h \
     cm_menu.h \
-    cm_pdwindow.h \
-    cm_patchwindow.h \
     cm_objectmaker.h \
     cm_widget.h \
     cm_patchcord.h \
-    cmo_msg.h \
-    cmo_box.h \
+    objects/cmo_msg.h \
+    objects/cmo_box.h \
+    objects/cmo_float.h \
+    objects/cmo_text.h \
     cm_fileparser.h \
     cm_object.h \
     cm_preferences.h \
     cm_filesaver.h \
-    cmo_float.h \
     cm_pdlink.h \
     cm_clipboard.h \
-    cmo_text.h \
     cm_objectloader.h \
     cm_sizebox.h \
     properties/cm_property.h \
     properties/cm_propertylist.h
 
 FORMS    += \
-    cm_basewindow.ui \
-    cm_pdwindow.ui
+    window/cm_basewindow.ui \
+    window/cm_pdwindow.ui
 
 LIBS += "../qtpd_lib/libqtpd.a"
 LIBS += "/usr/local/lib/libportaudio.dylib"
@@ -83,4 +83,9 @@ DISTFILES += \
 
 win32:RC_ICONS += your_icon.ico
 
-INCLUDEPATH += "../qtpd_lib/src/"
+INCLUDEPATH += \
+    "../qtpd_lib/src/" \
+    window/ \
+    objects/ \
+    properties/
+

@@ -111,12 +111,7 @@ public:
             else
             {
 
-                //std::string msg = ("list "+ this->getObjectData());
-                //qDebug("send msg %s", msg.c_str());
-
                 cmp_sendstring((t_pd*)this->getPdObject(), ((std::string)"bang").c_str());
-
-                //cmp_sendstring((t_pd*)this->getPdObject(), ((std::string)"bang").c_str());
             }
 
         }

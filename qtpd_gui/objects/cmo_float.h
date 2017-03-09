@@ -19,9 +19,6 @@ class cmo_float : public cm_object
     Q_OBJECT
 
 private:
-    //bool clicked_;
-
-    //QLineEdit* editor_;
 
     float startY;
 
@@ -55,11 +52,7 @@ public:
                 {
                     p.setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
                 }
-                //                else
-                //                if (this->clicked_)
-                //                {
-                //                    p.setPen(QPen(QColor(0, 192, 255), 4, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
-                //                }
+
                 else
                 {
                     p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
@@ -180,7 +173,6 @@ public:
             x->setObjectData(msg.at(0).asString());
             x->repaint();
 
-            //qDebug() << x->getObjectData().c_str();
         }
     }
 

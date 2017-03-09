@@ -32,27 +32,6 @@ public:
     void paintEvent(QPaintEvent *)
     {    QPainter p(this);
 
-
-         //         QPolygon poly;
-         //          poly << QPoint(0,0) <<
-         //                  QPoint(this->width(),0) <<
-         //                  QPoint(this->width()-4,4) <<
-         //                  QPoint(this->width()-4,this->height()-4) <<
-         //                  QPoint(this->width(),this->height()) <<
-         //                  QPoint(0,this->height());
-
-         //       if (this->getEditMode() == em_Unlocked)
-         //       {
-         //           p.setPen(QPen(QColor(220, 220, 220), 2,  Qt::DashDotDotLine, Qt::SquareCap, Qt::BevelJoin));
-         //           p.drawRect(0,0,this->width(),this->height());
-         //       }
-
-
-         //QPainterPath tmpPath;
-         //tmpPath.addPolygon(poly);
-         //QBrush br = QBrush(QColor(220,220,220), Qt::SolidPattern);
-         //p.fillPath(tmpPath,br);
-
          if (this->getEditMode() == em_Unlocked){
              if (this->isSelected() )
              {
@@ -107,27 +86,6 @@ public:
             //todo timer
         }
 
-        //temporary
-        //move
-        if (this->getEditMode() != em_Unlocked)
-        {
-            if (!this->getPdObject())
-            {
-                //qDebug("msg: bad pd object!");
-            }
-            else
-            {
-
-                //std::string msg = ("list "+ this->getObjectData());
-                //qDebug("send msg %s", msg.c_str());
-
-                //cmp_sendstring((t_pd*)this->getPdObject(), ((std::string)"bang").c_str());
-
-                //cmp_sendstring((t_pd*)this->getPdObject(), ((std::string)"bang").c_str());
-            }
-
-        }
-
     }
 
     void mouseReleaseEvent(QMouseEvent *)
@@ -139,8 +97,6 @@ public:
             this->clicked_ = false;
             this->repaint();
         }
-
-
 
     }
 
@@ -163,8 +119,6 @@ public:
         }
 
     }
-
-
 
 
     ///////

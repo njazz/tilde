@@ -4,8 +4,6 @@
 #include <QMainWindow>
 #include <QtWidgets>
 
-//#include "cm_gui.h"
-
 #include "cm_menu.h"
 
 #include "cm_pdlink.h"

@@ -5,6 +5,8 @@
 #include <map>
 #include <QString>
 
+#include "cm_propertylist.h"
+
 //#define cmp_font "Monaco"
 //#define cmp_font "Source Code Pro"
 //#define cmp_font "Bitstream Vera Sans Mono"
@@ -14,7 +16,7 @@
 ////
 /// \brief preferences singleton
 ///
-class cm_prefs
+class cm_prefs : public cm_propertylist // TODO
 {
 public:
     static cm_prefs& inst()

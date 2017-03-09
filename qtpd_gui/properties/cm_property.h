@@ -4,7 +4,9 @@
 #include "../ceammc-lib/ceammc_atomlist.h"
 #include <QRect>
 #include <QPoint>
+#include <QString>
 
+using namespace ceammc;
 ////
 /// \brief yet another property handling class for ui object.
 ///
@@ -16,6 +18,7 @@ private:
     std::string name_;
     std::string group_;
 
+    bool applyToPd; //true if property value should be passed to pd object
 public:
     cm_property();
 

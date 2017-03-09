@@ -16,10 +16,6 @@
 
 #include <QLineEdit>
 
-//#include "cm_objectloader.h"
-
-//typedef void t_object;
-// basic object
 
 ////
 /// \brief gui object: standard object box
@@ -154,18 +150,6 @@ signals:
 
     void mouseMoved();
     void rightClicked();
-
-    //    void inletMousePressed();
-    //    void inletMouseReleased();
-
-    //    void inletMouseEntered();
-    //    void inletMouseLeaved();
-
-    //    void outletMousePressed();
-    //    void outletMouseReleased();
-
-    //    void outletMouseEntered();
-    //    void outletMouseLeaved();
 
 
 private slots:

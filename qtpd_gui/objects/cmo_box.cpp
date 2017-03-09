@@ -9,8 +9,6 @@ cmo_box::cmo_box(cm_object *parent) : cm_object(parent)
 
     this->deselect();// = false;
 
-    //this->setAttribute(Qt::WA_NoMousePropagation);
-
     QPalette Pal(palette());
     Pal.setColor(QPalette::Background, QColor(240,240,240));
     this->setAutoFillBackground(true);

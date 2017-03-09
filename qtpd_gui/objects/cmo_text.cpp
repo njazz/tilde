@@ -17,23 +17,12 @@ cmo_text::cmo_text(cm_object *parent) : cm_object(parent)
     this->editor_->setFont(QFont(PREF_STRING("Font"),11,0,false));
     this->editor_->hide();
     this->editor_->setAttribute(Qt::WA_MacShowFocusRect, 0);
-    //this->editor_->setFrameStyle();
-    //this->editor_->setFrame(false);
 
-    //this->editor_->setCompleter();
-
-
-    //connect(this->editor_,&QPlainTextEdit::editingFinished,this,&cmo_text::editorDone);
     connect(this->editor_,&QPlainTextEdit::textChanged, this,&cmo_text::editorChanged);
 
     this->editor_->installEventFilter(this);
 
-    //->document()->setPlain
 
-//    QPalette Pal(palette());
-//    Pal.setColor(QPalette::Background, QColor(220,220,220));
-//    this->editor_->setAutoFillBackground(true);
-//    this->editor_->setPalette(Pal);
 
 }
 
