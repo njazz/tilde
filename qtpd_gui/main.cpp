@@ -19,6 +19,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     a.setQuitOnLastWindowClosed(false);
+    a.setWindowIcon(QIcon("./pd_ceammc.png"));
 
     cmp_pdinit();
     cmp_setprinthook(&pd_window_printhook);

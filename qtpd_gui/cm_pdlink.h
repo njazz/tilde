@@ -2,7 +2,11 @@
 #define CM_PDLINK_H
 
 #include "../qtpd_lib/src/m_pd.h"
+#include "../qtpd_lib/ceammc-lib/ceammc_atomlist.h"
+
 // prototype for Pd 'server' interaction
+
+typedef void (*t_updateUI)(void* uiobj, ceammc::AtomList msg);
 
 // use m.pd.h
 //typedef void* t_canvas;
@@ -141,6 +145,13 @@ extern void cmp_switch_dsp(bool on);
 /// \param msg
 ///
 void cmp_sendstring(t_pd* obj, std::string msg);
+
+////
+/// \brief set the 'repaint' function of the ui object to be accessible from pd object
+/// \param obj
+/// \param func
+///
+void cmp_connectUI(t_pd* obj, void* uiobj, t_updateUI func);
 
 
 #endif // CM_PDLINK_H

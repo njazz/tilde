@@ -1,9 +1,5 @@
 #include "cmo_msg.h"
 
-//cmo_msg::cmo_msg()
-//{
-
-//}
 
 cmo_msg::cmo_msg(cm_object *parent) : cm_object(parent)
 {
@@ -26,6 +22,8 @@ cmo_msg::cmo_msg(cm_object *parent) : cm_object(parent)
 
     connect(this->editor_,&QLineEdit::editingFinished,this,&cmo_msg::editorDone);
     connect(this->editor_,&QLineEdit::textEdited, this,&cmo_msg::editorChanged);
+
+
 
 //    QPalette Pal(palette());
 //    Pal.setColor(QPalette::Background, QColor(220,220,220));
@@ -56,3 +54,4 @@ void  cmo_msg::editorChanged()
     this->editor_->setFixedWidth(this->width()-5);
 
 }
+

@@ -182,7 +182,7 @@ SOURCES += pdlib.cpp \
     CicmWrapper/Sources/eobj.c \
     CicmWrapper/Sources/epopup.c
 
-HEADERS += pdlib.h \
+HEADERS += \
     ceammc-lib/ceammc.h \
     ceammc-lib/ceammc.hpp \
     ceammc-lib/ceammc_atom.h \
@@ -227,7 +227,8 @@ HEADERS += pdlib.h \
     CicmWrapper/Sources/enative.h \
     CicmWrapper/Sources/eobj.h \
     CicmWrapper/Sources/epdmax.h \
-    CicmWrapper/Sources/epopup.h
+    CicmWrapper/Sources/epopup.h \
+    pdlib.hpp
 
 INCLUDEPATH += src/ \
     extra/ \

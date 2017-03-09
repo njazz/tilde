@@ -51,14 +51,14 @@ HEADERS  += \
     cm_objectmaker.h \
     cm_widget.h \
     cm_patchcord.h \
-    cm_pdlink.h \
     cmo_msg.h \
     cmo_box.h \
     cm_fileparser.h \
     cm_object.h \
     cm_preferences.h \
     cm_filesaver.h \
-    cmo_float.h
+    cmo_float.h \
+    cm_pdlink.h
 
 FORMS    += \
     cm_basewindow.ui \
@@ -66,3 +66,11 @@ FORMS    += \
 
 LIBS += "../qtpd_lib/libqtpd.a"
 LIBS += "/usr/local/lib/libportaudio.dylib"
+
+DISTFILES += \
+    pd_ceammc.ico \
+    pd_ceammc.png
+
+win32:RC_ICONS += your_icon.ico
+
+INCLUDEPATH += "../qtpd_lib/src/"

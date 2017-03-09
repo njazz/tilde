@@ -153,6 +153,10 @@ public:
             //todo fix
             this->setObjectData( std::to_string( ::atof(this->getObjectData().c_str()) - event->pos().y() + this->startY) );  //- this->startY
             this->startY = event->pos().y();
+
+            std::string send = "set " + this->getObjectData();
+            cmp_sendstring((t_pd*)this->getPdObject(), send.c_str());
+
             this->repaint();
         }
 
@@ -206,9 +210,28 @@ public:
 
     }
 
+    static void updateUI(void* uiobj, ceammc::AtomList msg)
+    {
+        qDebug("update ui - float");
+        cmo_float *x = (cmo_float*)uiobj;
+
+        if (msg.size()>0)
+        {
+            x->setObjectData(msg.at(0).asString());
+            x->repaint();
+
+            //qDebug() << x->getObjectData().c_str();
+        }
+    }
+
     std::string getSaveString()
     {return "ui.msg "+ this->getObjectData();}
 
+    void setPdObject(void *obj)
+    {
+        cm_object::setPdObject(obj);
+        cmp_connectUI((t_pd*)this->getPdObject(), (void*)this, &cmo_float::updateUI);
+    }
 
 signals:
 

@@ -113,6 +113,7 @@ public:
                 //qDebug("send msg %s", msg.c_str());
 
                 cmp_sendstring((t_pd*)this->getPdObject(), ((std::string)"bang").c_str());
+
                 //cmp_sendstring((t_pd*)this->getPdObject(), ((std::string)"bang").c_str());
             }
 
@@ -192,8 +193,33 @@ public:
 
     }
 
+    static void updateUI(void* uiobj, ceammc::AtomList msg)
+    {
+        qDebug("update ui");
+        cmo_msg *x = (cmo_msg*)uiobj;
+
+        std::string obj_data;
+        for (int i=0; i<msg.size();i++)
+        {
+            obj_data += msg.at(i).asString() + " ";
+        }
+
+        x->setObjectData(obj_data);
+
+        x->repaint();
+    }
+
+    void setPdObject(void *obj)
+    {
+        cm_object::setPdObject(obj);
+        cmp_connectUI((t_pd*)this->getPdObject(), (void*)this, &cmo_msg::updateUI);
+    }
+
+
     std::string getSaveString()
     {return "ui.msg "+ this->getObjectData();}
+
+
 
 
 signals:

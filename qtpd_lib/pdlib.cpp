@@ -1,5 +1,7 @@
 //#include "pdlib.h"
 
+#include "pdlib.hpp"
+
 extern "C" {
 
 #include <m_pd.h>
@@ -26,6 +28,9 @@ extern "C" void setup_ui0x2ebpfunc(void);
 extern "C" void setup_ui0x2eknob(void);
 extern "C" void setup_ui0x2escope_tilde(void);
 extern "C" void setup_ui0x2espectroscope_tilde(void);
+
+//temporary
+extern void uimsg_set_updateUI(t_pd* x, void* uiobj, t_updateUI func);
 
 //extern "C" void setup_ui0x2ecolorpanel(void);
 //extern "C" void setup_ui0x2edsp_tilde(void);
@@ -406,7 +411,6 @@ void cmp_switch_dsp(bool on)
 void cmp_sendstring(t_pd* obj, std::string msg)
 {
     //std::vector<std::string> atoms_ = string_split(msg, ' ');
-
     //AtomList list;
 
     AtomList* list = AtomListFromString(msg);
@@ -415,7 +419,6 @@ void cmp_sendstring(t_pd* obj, std::string msg)
     *list2 = list->subList(1, list->size());
 
     //    if (atoms_.size()<1) return;
-
     //    for (int i = 1;i<atoms_.size();i++)
     //    {
     //        list.append(Atom(gensym(atoms_.at(i).c_str())));
@@ -423,8 +426,11 @@ void cmp_sendstring(t_pd* obj, std::string msg)
 
     pd_typedmess(obj, list->at(0).asSymbol(), (int)list2->size(), list2->toPdData());
 
+}
 
-
+void cmp_connectUI(t_pd* obj, void* uiobj, t_updateUI func)
+{
+    uimsg_set_updateUI(obj, uiobj, func);
 }
 
 //////////

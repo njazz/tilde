@@ -179,12 +179,14 @@ public:
 
     ////
     /// \brief sets pointer to pd object
+    /// \details overriden by ui objects to be able to connect to pd objects
     /// \param obj
     ///
-    void setPdObject(void*obj) {this->pdObject_ = obj;}
+    virtual void setPdObject(void*obj) {this->pdObject_ = obj;}
 
     ////
     /// \brief returns true if object doesn't exist
+    /// \details
     /// \return
     ///
     bool isErrorBox() {return this->errorBox_;}
