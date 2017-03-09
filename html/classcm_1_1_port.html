@@ -125,8 +125,8 @@ Inheritance diagram for cm::Port:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="classcm_1_1_port.html#a8406951d06eaedf9d9953451189a49a1ad23a8f2370ac340ec6e85a35a2187880">cm_pt_inlet</a>, 
-<a class="el" href="classcm_1_1_port.html#a8406951d06eaedf9d9953451189a49a1abc97b0340912c71bd7f5d571bc468440">cm_pt_outlet</a>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="classcm_1_1_port.html#a8406951d06eaedf9d9953451189a49a1a27e4e3a7708cb733be400e73d60bd5f9">portInlet</a>, 
+<a class="el" href="classcm_1_1_port.html#a8406951d06eaedf9d9953451189a49a1a32fe98c295cb7f9ba2353963f5afdfb5">portOutlet</a>
  }</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -139,7 +139,7 @@ Public Member Functions</h2></td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_port.html#a1d3862f2481a7e22f98a3a8bc04cd9cc">portIndex</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">enum cm::Port:: { ... } &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_port.html#a5614a79447a8fc75578ccd7bd2744733">port_type</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum cm::Port:: { ... } &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_port.html#a885f9a0d298909b6aa0da44171c3d3f6">portType</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>gui representation of t_inlet / t_outlet </p>
@@ -155,9 +155,9 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="a8406951d06eaedf9d9953451189a49a1ad23a8f2370ac340ec6e85a35a2187880"></a><!-- doxytag: member="cm_pt_inlet" ref="a8406951d06eaedf9d9953451189a49a1ad23a8f2370ac340ec6e85a35a2187880" args="" -->cm_pt_inlet</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="a8406951d06eaedf9d9953451189a49a1a27e4e3a7708cb733be400e73d60bd5f9"></a><!-- doxytag: member="portInlet" ref="a8406951d06eaedf9d9953451189a49a1a27e4e3a7708cb733be400e73d60bd5f9" args="" -->portInlet</em>&nbsp;</td><td>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="a8406951d06eaedf9d9953451189a49a1abc97b0340912c71bd7f5d571bc468440"></a><!-- doxytag: member="cm_pt_outlet" ref="a8406951d06eaedf9d9953451189a49a1abc97b0340912c71bd7f5d571bc468440" args="" -->cm_pt_outlet</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="a8406951d06eaedf9d9953451189a49a1a32fe98c295cb7f9ba2353963f5afdfb5"></a><!-- doxytag: member="portOutlet" ref="a8406951d06eaedf9d9953451189a49a1a32fe98c295cb7f9ba2353963f5afdfb5" args="" -->portOutlet</em>&nbsp;</td><td>
 </td></tr>
 </table>
 </dd>
@@ -270,12 +270,12 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="a5614a79447a8fc75578ccd7bd2744733"></a><!-- doxytag: member="cm::Port::port_type" ref="a5614a79447a8fc75578ccd7bd2744733" args="" -->
+<a class="anchor" id="a1d3862f2481a7e22f98a3a8bc04cd9cc"></a><!-- doxytag: member="cm::Port::portIndex" ref="a1d3862f2481a7e22f98a3a8bc04cd9cc" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum { ... }   <a class="el" href="classcm_1_1_port.html#a5614a79447a8fc75578ccd7bd2744733">cm::Port::port_type</a></td>
+          <td class="memname">int <a class="el" href="classcm_1_1_port.html#a1d3862f2481a7e22f98a3a8bc04cd9cc">cm::Port::portIndex</a></td>
         </tr>
       </table>
 </div>
@@ -283,12 +283,12 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a1d3862f2481a7e22f98a3a8bc04cd9cc"></a><!-- doxytag: member="cm::Port::portIndex" ref="a1d3862f2481a7e22f98a3a8bc04cd9cc" args="" -->
+<a class="anchor" id="a885f9a0d298909b6aa0da44171c3d3f6"></a><!-- doxytag: member="cm::Port::portType" ref="a885f9a0d298909b6aa0da44171c3d3f6" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="classcm_1_1_port.html#a1d3862f2481a7e22f98a3a8bc04cd9cc">cm::Port::portIndex</a></td>
+          <td class="memname">enum { ... }   <a class="el" href="classcm_1_1_port.html#a885f9a0d298909b6aa0da44171c3d3f6">cm::Port::portType</a></td>
         </tr>
       </table>
 </div>
@@ -318,7 +318,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 9 2017 22:31:04 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 9 2017 22:52:13 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -89,8 +89,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00007"></a>00007 <span class="keyword">namespace </span>cm
 <a name="l00008"></a>00008 {
 <a name="l00009"></a>00009 
-<a name="l00010"></a><a class="code" href="namespacecm.html#a60e51de5d8db6f5d745d79c3ff888d6a">00010</a> <span class="keyword">typedef</span> std::vector&lt;UIObject*&gt; <a class="code" href="namespacecm.html#a60e51de5d8db6f5d745d79c3ff888d6a">cm_obj_vec</a>;
-<a name="l00011"></a><a class="code" href="namespacecm.html#a89114bc8e4660932aa4cb0c2da633246">00011</a> <span class="keyword">typedef</span> std::vector&lt;Patchcord*&gt; <a class="code" href="namespacecm.html#a89114bc8e4660932aa4cb0c2da633246">cm_cord_vec</a>;
+<a name="l00010"></a><a class="code" href="namespacecm.html#a3cb4165a0eb6668a29e5a6fc3d6e2907">00010</a> <span class="keyword">typedef</span> std::vector&lt;UIObject*&gt; <a class="code" href="namespacecm.html#a3cb4165a0eb6668a29e5a6fc3d6e2907">objectVec</a>;
+<a name="l00011"></a><a class="code" href="namespacecm.html#a4fbe818fcb69b4e702645d041ae17b1a">00011</a> <span class="keyword">typedef</span> std::vector&lt;Patchcord*&gt; <a class="code" href="namespacecm.html#a4fbe818fcb69b4e702645d041ae17b1a">PatchcordVec</a>;
 <a name="l00012"></a>00012 
 <a name="l00016"></a><a class="code" href="classcm_1_1_clipboard.html">00016</a> <span class="keyword">class </span><a class="code" href="classcm_1_1_clipboard.html" title="clipboard singleton">Clipboard</a>
 <a name="l00017"></a>00017 {
@@ -113,7 +113,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00034"></a>00034     {
 <a name="l00035"></a>00035 
 <a name="l00036"></a>00036     }
-<a name="l00037"></a><a class="code" href="classcm_1_1_clipboard.html#a8401a399697e10a3d89d33994ebf3361">00037</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_clipboard.html#a8401a399697e10a3d89d33994ebf3361">addObjects</a>(<a class="code" href="namespacecm.html#a60e51de5d8db6f5d745d79c3ff888d6a">cm_obj_vec</a> vec)
+<a name="l00037"></a><a class="code" href="classcm_1_1_clipboard.html#a3dae96f69095f62338df8e0b7c5ae619">00037</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_clipboard.html#a3dae96f69095f62338df8e0b7c5ae619">addObjects</a>(<a class="code" href="namespacecm.html#a3cb4165a0eb6668a29e5a6fc3d6e2907">objectVec</a> vec)
 <a name="l00038"></a>00038     {
 <a name="l00039"></a>00039 
 <a name="l00040"></a>00040     }
@@ -121,18 +121,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00042"></a>00042     {
 <a name="l00043"></a>00043 
 <a name="l00044"></a>00044     }
-<a name="l00045"></a><a class="code" href="classcm_1_1_clipboard.html#a36bee9e68cb0345c0772aed83d8df5f6">00045</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_clipboard.html#a36bee9e68cb0345c0772aed83d8df5f6">addPatchcords</a>(<a class="code" href="namespacecm.html#a89114bc8e4660932aa4cb0c2da633246">cm_cord_vec</a> vec)
+<a name="l00045"></a><a class="code" href="classcm_1_1_clipboard.html#a7742f288a444249d6a63351d6a01c7d1">00045</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_clipboard.html#a7742f288a444249d6a63351d6a01c7d1">addPatchcords</a>(<a class="code" href="namespacecm.html#a4fbe818fcb69b4e702645d041ae17b1a">PatchcordVec</a> vec)
 <a name="l00046"></a>00046     {
 <a name="l00047"></a>00047 
 <a name="l00048"></a>00048     }
 <a name="l00049"></a>00049 
-<a name="l00050"></a><a class="code" href="classcm_1_1_clipboard.html#a6274b2cd8b3e71c15df5f2a961ef846d">00050</a>     <a class="code" href="namespacecm.html#a60e51de5d8db6f5d745d79c3ff888d6a">cm_obj_vec</a> <a class="code" href="classcm_1_1_clipboard.html#a6274b2cd8b3e71c15df5f2a961ef846d">getObjects</a>(){
-<a name="l00051"></a>00051         <a class="code" href="namespacecm.html#a60e51de5d8db6f5d745d79c3ff888d6a">cm_obj_vec</a> ret;
+<a name="l00050"></a><a class="code" href="classcm_1_1_clipboard.html#a560510c5eddb611a327ee1cad6194dc3">00050</a>     <a class="code" href="namespacecm.html#a3cb4165a0eb6668a29e5a6fc3d6e2907">objectVec</a> <a class="code" href="classcm_1_1_clipboard.html#a560510c5eddb611a327ee1cad6194dc3">getObjects</a>(){
+<a name="l00051"></a>00051         <a class="code" href="namespacecm.html#a3cb4165a0eb6668a29e5a6fc3d6e2907">objectVec</a> ret;
 <a name="l00052"></a>00052         <span class="keywordflow">return</span> ret;
 <a name="l00053"></a>00053     };
 <a name="l00054"></a>00054 
-<a name="l00055"></a><a class="code" href="classcm_1_1_clipboard.html#ac28eb5d53c219928b43528286b6d875c">00055</a>     <a class="code" href="namespacecm.html#a89114bc8e4660932aa4cb0c2da633246">cm_cord_vec</a> <a class="code" href="classcm_1_1_clipboard.html#ac28eb5d53c219928b43528286b6d875c">getPatchcords</a>(){
-<a name="l00056"></a>00056         <a class="code" href="namespacecm.html#a89114bc8e4660932aa4cb0c2da633246">cm_cord_vec</a> ret;
+<a name="l00055"></a><a class="code" href="classcm_1_1_clipboard.html#a82ef669a05df41fb25a05041487b4475">00055</a>     <a class="code" href="namespacecm.html#a4fbe818fcb69b4e702645d041ae17b1a">PatchcordVec</a> <a class="code" href="classcm_1_1_clipboard.html#a82ef669a05df41fb25a05041487b4475">getPatchcords</a>(){
+<a name="l00056"></a>00056         <a class="code" href="namespacecm.html#a4fbe818fcb69b4e702645d041ae17b1a">PatchcordVec</a> ret;
 <a name="l00057"></a>00057         <span class="keywordflow">return</span> ret;
 <a name="l00058"></a>00058     };
 <a name="l00059"></a>00059 
@@ -161,7 +161,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 9 2017 22:31:04 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 9 2017 22:52:13 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
