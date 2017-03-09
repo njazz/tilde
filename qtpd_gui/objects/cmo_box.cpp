@@ -40,6 +40,7 @@ cmo_box::~cmo_box()
 {
     if (this->cmSubcanvas)
     {
+        this->cmSubcanvas->hide();
         delete this->cmSubcanvas;
     }
 }

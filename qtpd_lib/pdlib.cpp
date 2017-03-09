@@ -17,6 +17,10 @@ extern void setup_ui0x2emsg();
 extern void setup_list0x2eproduct();
 
 //temporary
+t_canvas* cmp_newpatch();
+void cmp_closepatch(t_canvas* canvas);
+
+//temporary
 extern "C" void setup_ui0x2ebang(void);
 extern "C" void setup_ui0x2etoggle(void);
 extern "C" void setup_ui0x2enumber_tilde(void);
@@ -60,7 +64,6 @@ using namespace ceammc;
 t_pdinstance* cm_pd;
 
 extern t_pd *newest;    /* OK - this should go into a .h file now :) */
-
 
 
 void cmp_error(std::string msg)
@@ -138,6 +141,9 @@ void cmp_pdinit()
     sched_set_using_audio(SCHED_AUDIO_CALLBACK);
 
     sys_reopen_audio();
+
+    //hack lol - removes empty canvas with array template
+    cmp_closepatch(cmp_newpatch());
 
 }
 
