@@ -116,8 +116,9 @@ void cm_canvas::s_MoveBox(cm_widget *box, QMouseEvent* event)
 
 
         w->move(pos);
-
-        cmp_moveobject((t_object*)w->getPdObject(), (int)pos.x(), (int)pos.y() );
+        t_object *obj = (t_object*)w->getPdObject();
+        if (obj)
+            cmp_moveobject(obj, (int)pos.x(), (int)pos.y() );
 
     }
 

@@ -225,7 +225,7 @@ public:
     }
 
     std::string getSaveString()
-    {return "ui.msg "+ this->getObjectData();}
+    {return "ui.float "+ this->getObjectData();}
 
     void setPdObject(void *obj)
     {

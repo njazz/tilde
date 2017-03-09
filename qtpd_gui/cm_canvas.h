@@ -10,6 +10,7 @@
 #include "cmo_box.h"
 #include "cmo_msg.h"
 #include "cmo_float.h"
+#include "cmo_text.h"
 
 #include "cm_objectmaker.h"
 
@@ -613,6 +614,58 @@ public:
         flo->show();
 
         return flo;
+
+
+    }
+
+
+    ////
+    /// \brief create new comment box (ui only)
+    /// \param pdObjectName TODO rename. object name and arguments
+    /// \param pos
+    /// \return pointer to cm_box
+    ///
+    cmo_text* createText(std::string message, QPoint pos)
+    {
+        cmo_text *txt = new cmo_text((cm_object*)this);   //check
+        txt->setObjectData(message);
+
+        //msg->addInlet();
+        //msg->addOutlet();
+
+        connect(txt,&cmo_msg::selectBox, this, &cm_canvas::s_SelectBox);
+        connect(txt,&cmo_msg::moveBox, this, &cm_canvas::s_MoveBox);
+
+        txt->setEditModeRef(&this->editMode);
+
+        txt->move(pos);
+
+        this->objectBoxes.push_back(txt);
+
+//        //temp
+//        t_object* new_obj = 0 ;
+//        if (!this->pd_canvas)
+//        {qDebug("bad pd canvas instance");}
+//        else
+//        {
+//            new_obj = cmp_create_message(this->pd_canvas, message, pos.x(), pos.y());
+//        }
+
+//        if (new_obj)
+//        {
+//            qDebug ("created msgbox %s | ptr %lu\n",  message.c_str(), (long)new_obj);
+//            msg->setPdObject(new_obj);
+//        }
+//        else
+//        {
+//            qDebug("Error: no such object %s",  message.c_str());
+//        }
+
+        txt->setPdMessage(message.c_str());
+
+        txt->show();
+
+        return txt;
 
 
     }

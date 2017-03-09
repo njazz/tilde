@@ -7,7 +7,7 @@
 #include "cm_patchwindow.h"
 
 ////
-/// \brief Parses pd files on client(GUI) side
+/// \brief Parses pd files on 'client' (GUI) side
 ///
 class cm_fileparser
 {
