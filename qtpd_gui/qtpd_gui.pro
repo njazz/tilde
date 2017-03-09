@@ -41,7 +41,9 @@ SOURCES += main.cpp\
     cm_filesaver.cpp \
     cmo_float.cpp \
     cmo_text.cpp \
-    cm_sizebox.cpp
+    cm_sizebox.cpp \
+    properties/cm_property.cpp \
+    properties/cm_propertylist.cpp
 
 HEADERS  += \
     cm_port.h \
@@ -64,7 +66,9 @@ HEADERS  += \
     cm_clipboard.h \
     cmo_text.h \
     cm_objectloader.h \
-    cm_sizebox.h
+    cm_sizebox.h \
+    properties/cm_property.h \
+    properties/cm_propertylist.h
 
 FORMS    += \
     cm_basewindow.ui \
