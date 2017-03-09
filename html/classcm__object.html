@@ -124,8 +124,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets object text data /usually overriden by ui objects/  <a href="#a002a0bcd7ac0648a11a176a40e528bab"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__object.html#ae49e229d6522dc139a8162dc58f3f446">getObjectData</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gets object text data /usually overriden by ui objects/  <a href="#ae49e229d6522dc139a8162dc58f3f446"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__object.html#a6d7e0f714e801e61e6c2f76047f1589e">getPdObject</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns pointer to pd object  <a href="#a6d7e0f714e801e61e6c2f76047f1589e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__object.html#a42df0fdc053f91e7cbc91566aed8c32c">getPdObject</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns pointer to pd object.  <a href="#a42df0fdc053f91e7cbc91566aed8c32c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__object.html#a589be9154b0319cf9938b8cab2a42226">setPdObject</a> (void *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets pointer to pd object  <a href="#a589be9154b0319cf9938b8cab2a42226"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__object.html#ab30ed0e19c6420f700a05243e0b76ed7">isErrorBox</a> ()</td></tr>
@@ -277,22 +277,25 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a6d7e0f714e801e61e6c2f76047f1589e"></a><!-- doxytag: member="cm_object::getPdObject" ref="a6d7e0f714e801e61e6c2f76047f1589e" args="()" -->
+<a class="anchor" id="a42df0fdc053f91e7cbc91566aed8c32c"></a><!-- doxytag: member="cm_object::getPdObject" ref="a42df0fdc053f91e7cbc91566aed8c32c" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void* <a class="el" href="classcm__object.html#a6d7e0f714e801e61e6c2f76047f1589e">cm_object::getPdObject</a> </td>
+          <td class="memname">virtual void* <a class="el" href="classcm__object.html#a42df0fdc053f91e7cbc91566aed8c32c">cm_object::getPdObject</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td><code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>returns pointer to pd object </p>
+<p>returns pointer to pd object. </p>
+<p>gui-only objects can ovverride it with function that returns 0 </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Reimplemented in <a class="el" href="classcmo__text.html#a8e9c8a6936c890376733392e532c6f29">cmo_text</a>.</p>
 
 </div>
 </div>
@@ -313,7 +316,7 @@ Public Member Functions</h2></td></tr>
 <p>returns object's text for client-based file saving </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Reimplemented in <a class="el" href="classcmo__float.html#a32c43a289b0e426a68c7a276f6b3b60b">cmo_float</a>, <a class="el" href="classcmo__text.html#adbf06526a74d47e4bf24f750d9cb0d53">cmo_text</a>, and <a class="el" href="classcmo__msg.html#a2da4aed3ba9ef2cabdb9aff01861ea4e">cmo_msg</a>.</p>
+<p>Reimplemented in <a class="el" href="classcmo__text.html#adbf06526a74d47e4bf24f750d9cb0d53">cmo_text</a>, <a class="el" href="classcmo__msg.html#a2da4aed3ba9ef2cabdb9aff01861ea4e">cmo_msg</a>, and <a class="el" href="classcmo__float.html#a32c43a289b0e426a68c7a276f6b3b60b">cmo_float</a>.</p>
 
 </div>
 </div>
@@ -457,7 +460,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classcmo__float.html#a5a86972d1cfe55e6c4b7dd0fab6a6b05">cmo_float</a>, and <a class="el" href="classcmo__msg.html#aae56b316e3178314807f700ac50785de">cmo_msg</a>.</p>
+<p>Reimplemented in <a class="el" href="classcmo__msg.html#aae56b316e3178314807f700ac50785de">cmo_msg</a>, and <a class="el" href="classcmo__float.html#a5a86972d1cfe55e6c4b7dd0fab6a6b05">cmo_float</a>.</p>
 
 </div>
 </div>
@@ -483,7 +486,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 9 2017 10:55:58 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 9 2017 15:22:48 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

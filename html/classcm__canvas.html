@@ -145,6 +145,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">create new message box (ui.msg now)  <a href="#ae6a27ff3f49acc1d3e04e619c822b5a0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcmo__float.html">cmo_float</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__canvas.html#a72bd3e0766f6845c9c7bedf9b2465387">createFloat</a> (std::string message, QPoint pos)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">create new float box (ui.msg yet)  <a href="#a72bd3e0766f6845c9c7bedf9b2465387"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcm__object.html">cm_object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__canvas.html#a14e6a12ffdd326d8526704a052d1f47f">createObject</a> (std::string uiObjectName, std::string objectData, QPoint pos)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">prototype for universal object 'constructor'  <a href="#a14e6a12ffdd326d8526704a052d1f47f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcmo__text.html">cmo_text</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__canvas.html#afa89733f85b1692c4b4f54665e090916">createText</a> (std::string message, QPoint pos)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">create new comment box (ui only)  <a href="#afa89733f85b1692c4b4f54665e090916"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__canvas.html#a2a1033a389c107a2c67d118ecd874f0e">patchcord</a> (<a class="el" href="classcm__object.html">cm_object</a> *obj1, int outlet, <a class="el" href="classcm__object.html">cm_object</a> *obj2, int inlet)</td></tr>
@@ -371,6 +373,49 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>pointer to cm_box </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a14e6a12ffdd326d8526704a052d1f47f"></a><!-- doxytag: member="cm_canvas::createObject" ref="a14e6a12ffdd326d8526704a052d1f47f" args="(std::string uiObjectName, std::string objectData, QPoint pos)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcm__object.html">cm_object</a>* <a class="el" href="classcm__canvas.html#a14e6a12ffdd326d8526704a052d1f47f">cm_canvas::createObject</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>uiObjectName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>objectData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QPoint&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>prototype for universal object 'constructor' </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td></td></tr>
+    <tr><td class="paramname">pos</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -1248,7 +1293,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 9 2017 10:55:58 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 9 2017 15:22:48 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

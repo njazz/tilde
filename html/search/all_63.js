@@ -28,6 +28,8 @@ var searchData=
   ['cm_5fobject',['cm_object',['../classcm__object.html',1,'cm_object'],['../classcm__object.html#a1ad710ac19f2b747ad8b0fae90d9845f',1,'cm_object::cm_object()']]],
   ['cm_5fobject_2ecpp',['cm_object.cpp',['../cm__object_8cpp.html',1,'']]],
   ['cm_5fobject_2eh',['cm_object.h',['../cm__object_8h.html',1,'']]],
+  ['cm_5fobjectloader',['cm_objectloader',['../classcm__objectloader.html',1,'cm_objectloader'],['../classcm__objectloader.html#ae357c401da91fefde4be7801a57c0118',1,'cm_objectloader::cm_objectloader()']]],
+  ['cm_5fobjectloader_2eh',['cm_objectloader.h',['../cm__objectloader_8h.html',1,'']]],
   ['cm_5fobjectmaker',['cm_objectmaker',['../classcm__objectmaker.html',1,'cm_objectmaker'],['../classcm__objectmaker.html#ae7e9b18a88c9e07a799a719223f0d7e4',1,'cm_objectmaker::cm_objectmaker()']]],
   ['cm_5fobjectmaker_2ecpp',['cm_objectmaker.cpp',['../cm__objectmaker_8cpp.html',1,'']]],
   ['cm_5fobjectmaker_2eh',['cm_objectmaker.h',['../cm__objectmaker_8h.html',1,'']]],
@@ -64,6 +66,7 @@ var searchData=
   ['cmo_5ftext',['cmo_text',['../classcmo__text.html',1,'cmo_text'],['../classcmo__text.html#ab12f3e9534395d5baaf5ecf7d489e6ba',1,'cmo_text::cmo_text()']]],
   ['cmo_5ftext_2ecpp',['cmo_text.cpp',['../cmo__text_8cpp.html',1,'']]],
   ['cmo_5ftext_2eh',['cmo_text.h',['../cmo__text_8h.html',1,'']]],
+  ['cmobjectconstructor',['cmObjectConstructor',['../cm__objectloader_8h.html#a44e7d5177df816e3f8f3e0a0bf361141',1,'cm_objectloader.h']]],
   ['cmp_5fclosepatch',['cmp_closepatch',['../cm__pdlink_8h.html#af08cbd72d5b239361a801b4b67247a9c',1,'cm_pdlink.h']]],
   ['cmp_5fconnectui',['cmp_connectUI',['../cm__pdlink_8h.html#a9b4bef98ca39e6d157ee073b5139ae9d',1,'cm_pdlink.h']]],
   ['cmp_5fcreate_5fmessage',['cmp_create_message',['../cm__pdlink_8h.html#a3bac993f5ef2ae3ddcb123762d3668d0',1,'cm_pdlink.h']]],
@@ -88,5 +91,6 @@ var searchData=
   ['createfloat',['createFloat',['../classcm__canvas.html#a72bd3e0766f6845c9c7bedf9b2465387',1,'cm_canvas']]],
   ['createmenus',['createMenus',['../classcm__basewindow.html#a553c93f8cf60c983ae27e4dc5034f18d',1,'cm_basewindow::createMenus()'],['../classcm__patchwindow.html#a2514fec437b9207934e0753ace19502e',1,'cm_patchwindow::createMenus()']]],
   ['createmsg',['createMsg',['../classcm__canvas.html#ae6a27ff3f49acc1d3e04e619c822b5a0',1,'cm_canvas']]],
+  ['createobject',['createObject',['../classcm__canvas.html#a14e6a12ffdd326d8526704a052d1f47f',1,'cm_canvas::createObject()'],['../classcm__objectloader.html#a72e961533d838032b3ca742b74d551aa',1,'cm_objectloader::createObject()'],['../classcmo__box.html#a2b167d48f02e51b20fdbb262877ddb4d',1,'cmo_box::createObject()'],['../classcmo__float.html#a971fee72c0cb3cb8a398026bfb4d6b50',1,'cmo_float::createObject()'],['../classcmo__msg.html#a50aff4fe07f2a7a16ed1156dd2d9f7ac',1,'cmo_msg::createObject()'],['../classcmo__text.html#a1c2ce678e5f11bb559fb47e70736e8f6',1,'cmo_text::createObject()']]],
   ['createtext',['createText',['../classcm__canvas.html#afa89733f85b1692c4b4f54665e090916',1,'cm_canvas']]]
 ];

@@ -7,6 +7,7 @@ var searchData=
   ['cm_5ffilesaver',['cm_filesaver',['../classcm__filesaver.html',1,'']]],
   ['cm_5fmenu',['cm_menu',['../classcm__menu.html',1,'']]],
   ['cm_5fobject',['cm_object',['../classcm__object.html',1,'']]],
+  ['cm_5fobjectloader',['cm_objectloader',['../classcm__objectloader.html',1,'']]],
   ['cm_5fobjectmaker',['cm_objectmaker',['../classcm__objectmaker.html',1,'']]],
   ['cm_5fpatchcord',['cm_patchcord',['../classcm__patchcord.html',1,'']]],
   ['cm_5fpatchwindow',['cm_patchwindow',['../classcm__patchwindow.html',1,'']]],

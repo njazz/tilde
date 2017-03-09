@@ -113,9 +113,12 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__text.html#a79e167f0493b5b93f991b14987343cc6">setPdMessage</a> (std::string message)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__text.html#adbf06526a74d47e4bf24f750d9cb0d53">getSaveString</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns object's text for client-based file saving  <a href="#adbf06526a74d47e4bf24f750d9cb0d53"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__text.html#a8e9c8a6936c890376733392e532c6f29">getPdObject</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns pointer to pd object.  <a href="#a8e9c8a6936c890376733392e532c6f29"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__text.html#a541f009949b0f5ac6b7180c3b05dd767">eventFilter</a> (QObject *watched, QEvent *event)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classcm__object.html">cm_object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__text.html#a1c2ce678e5f11bb559fb47e70736e8f6">createObject</a> (std::string objectData, <a class="el" href="classcm__widget.html">cm_widget</a> *parent=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__text.html#a0807182142d98236db375de7658d465a">updateUI</a> (void *uiobj, ceammc::AtomList msg)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
@@ -139,6 +142,33 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a1c2ce678e5f11bb559fb47e70736e8f6"></a><!-- doxytag: member="cmo_text::createObject" ref="a1c2ce678e5f11bb559fb47e70736e8f6" args="(std::string objectData, cm_widget *parent=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classcm__object.html">cm_object</a>* <a class="el" href="classcmo__text.html#a1c2ce678e5f11bb559fb47e70736e8f6">cmo_text::createObject</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>objectData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcm__widget.html">cm_widget</a> *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a541f009949b0f5ac6b7180c3b05dd767"></a><!-- doxytag: member="cmo_text::eventFilter" ref="a541f009949b0f5ac6b7180c3b05dd767" args="(QObject *watched, QEvent *event)" -->
 <div class="memitem">
 <div class="memproto">
@@ -163,6 +193,28 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8e9c8a6936c890376733392e532c6f29"></a><!-- doxytag: member="cmo_text::getPdObject" ref="a8e9c8a6936c890376733392e532c6f29" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* <a class="el" href="classcmo__text.html#a8e9c8a6936c890376733392e532c6f29">cmo_text::getPdObject</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>returns pointer to pd object. </p>
+<p>gui-only objects can ovverride it with function that returns 0 </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Reimplemented from <a class="el" href="classcm__object.html#a42df0fdc053f91e7cbc91566aed8c32c">cm_object</a>.</p>
 
 </div>
 </div>
@@ -321,7 +373,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 9 2017 10:55:58 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 9 2017 15:22:48 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
