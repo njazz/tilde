@@ -84,11 +84,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;../qtpd_lib/src/m_pd.h&quot;</code><br/>
+<code>#include &quot;../qtpd_lib/ceammc-lib/ceammc_atomlist.h&quot;</code><br/>
 </div>
 <p><a href="cm__pdlink_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#aef7ba73145c14cf0ffca487d734e38f0">t_updateUI</a> )(void *uiobj, ceammc::AtomList msg)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a60e4f3209d8f267b0aa06105b0b1a4ff">t_printhook</a> )(const char *s)</td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -124,6 +126,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">switch dsp on or off  <a href="#a0f1f4951cf99dff0634789791dcde1ba"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a9bca4af04ea4fac6b910933e5ba16814">cmp_sendstring</a> (t_pd *obj, std::string msg)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">send string as pd message to object  <a href="#a9bca4af04ea4fac6b910933e5ba16814"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a9b4bef98ca39e6d157ee073b5139ae9d">cmp_connectUI</a> (t_pd *obj, void *uiobj, <a class="el" href="cm__pdlink_8h.html#aef7ba73145c14cf0ffca487d734e38f0">t_updateUI</a> func)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">set the 'repaint' function of the ui object to be accessible from pd object  <a href="#a9b4bef98ca39e6d157ee073b5139ae9d"></a><br/></td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
 <a class="anchor" id="a60e4f3209d8f267b0aa06105b0b1a4ff"></a><!-- doxytag: member="cm_pdlink.h::t_printhook" ref="a60e4f3209d8f267b0aa06105b0b1a4ff" args=")(const char *s)" -->
@@ -132,6 +136,19 @@ Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">typedef void(* <a class="el" href="cm__pdlink_8h.html#a60e4f3209d8f267b0aa06105b0b1a4ff">t_printhook</a>)(const char *s)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aef7ba73145c14cf0ffca487d734e38f0"></a><!-- doxytag: member="cm_pdlink.h::t_updateUI" ref="aef7ba73145c14cf0ffca487d734e38f0" args=")(void *uiobj, ceammc::AtomList msg)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* <a class="el" href="cm__pdlink_8h.html#aef7ba73145c14cf0ffca487d734e38f0">t_updateUI</a>)(void *uiobj, ceammc::AtomList msg)</td>
         </tr>
       </table>
 </div>
@@ -159,6 +176,48 @@ Functions</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">canvas</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a9b4bef98ca39e6d157ee073b5139ae9d"></a><!-- doxytag: member="cm_pdlink.h::cmp_connectUI" ref="a9b4bef98ca39e6d157ee073b5139ae9d" args="(t_pd *obj, void *uiobj, t_updateUI func)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="cm__pdlink_8h.html#a9b4bef98ca39e6d157ee073b5139ae9d">cmp_connectUI</a> </td>
+          <td>(</td>
+          <td class="paramtype">t_pd *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>uiobj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="cm__pdlink_8h.html#aef7ba73145c14cf0ffca487d734e38f0">t_updateUI</a>&#160;</td>
+          <td class="paramname"><em>func</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>set the 'repaint' function of the ui object to be accessible from pd object </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td></td></tr>
+    <tr><td class="paramname">func</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -719,7 +778,7 @@ Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 8 2017 22:15:00 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 9 2017 09:24:47 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

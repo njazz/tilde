@@ -125,8 +125,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gets object text data /usually overriden by ui objects/  <a href="#ae49e229d6522dc139a8162dc58f3f446"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__object.html#a6d7e0f714e801e61e6c2f76047f1589e">getPdObject</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns pointer to pd object  <a href="#a6d7e0f714e801e61e6c2f76047f1589e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__object.html#a7a877f5530c1de919014256222279756">setPdObject</a> (void *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets pointer to pd object  <a href="#a7a877f5530c1de919014256222279756"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__object.html#a589be9154b0319cf9938b8cab2a42226">setPdObject</a> (void *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets pointer to pd object  <a href="#a589be9154b0319cf9938b8cab2a42226"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__object.html#ab30ed0e19c6420f700a05243e0b76ed7">isErrorBox</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns true if object doesn't exist  <a href="#ab30ed0e19c6420f700a05243e0b76ed7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm__object.html#a5c381b627b0d2fce833711fb5aff4eaf">setErrorBox</a> (bool val)</td></tr>
@@ -432,28 +432,31 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a7a877f5530c1de919014256222279756"></a><!-- doxytag: member="cm_object::setPdObject" ref="a7a877f5530c1de919014256222279756" args="(void *obj)" -->
+<a class="anchor" id="a589be9154b0319cf9938b8cab2a42226"></a><!-- doxytag: member="cm_object::setPdObject" ref="a589be9154b0319cf9938b8cab2a42226" args="(void *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classcm__object.html#a7a877f5530c1de919014256222279756">cm_object::setPdObject</a> </td>
+          <td class="memname">virtual void <a class="el" href="classcm__object.html#a589be9154b0319cf9938b8cab2a42226">cm_object::setPdObject</a> </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td><code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
 <p>sets pointer to pd object </p>
+<p>overriden by ui objects to be able to connect to pd objects </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">obj</td><td></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Reimplemented in <a class="el" href="classcmo__float.html#a5a86972d1cfe55e6c4b7dd0fab6a6b05">cmo_float</a>, and <a class="el" href="classcmo__msg.html#aae56b316e3178314807f700ac50785de">cmo_msg</a>.</p>
 
 </div>
 </div>
@@ -479,7 +482,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 8 2017 22:15:00 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 9 2017 09:24:47 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -9,12 +9,14 @@ var searchData=
   ['getobjectboxes',['getObjectBoxes',['../classcm__canvas.html#aa7d5b7699cdae8c062ff8bf3c43e920c',1,'cm_canvas']]],
   ['getobjectbyindex',['getObjectByIndex',['../classcm__canvas.html#a6de16ed0f1b9e42474441788758f9a88',1,'cm_canvas']]],
   ['getobjectdata',['getObjectData',['../classcm__object.html#ae49e229d6522dc139a8162dc58f3f446',1,'cm_object']]],
+  ['getobjects',['getObjects',['../classcm__clipboard.html#ad15fb2531d6931084b1aca747a28ad99',1,'cm_clipboard']]],
   ['getoutidx',['getOutIdx',['../classcm__patchcord.html#a9e6c849d22fe51c76daafc4b237b32fe',1,'cm_patchcord']]],
   ['getoutletat',['getOutletAt',['../classcm__object.html#ade83577301e7b5a8e6cf33e1695c4291',1,'cm_object']]],
   ['getpatchcordasstring',['getPatchcordAsString',['../classcm__canvas.html#a491b223eb33eab3f8a6acc51325848b5',1,'cm_canvas']]],
-  ['getpatchcords',['getPatchcords',['../classcm__canvas.html#acfe3d18940b9784bd7ec04bb6fb23e75',1,'cm_canvas']]],
+  ['getpatchcords',['getPatchcords',['../classcm__canvas.html#acfe3d18940b9784bd7ec04bb6fb23e75',1,'cm_canvas::getPatchcords()'],['../classcm__clipboard.html#aabbb26d947a155e7da3a6afb0bb374a0',1,'cm_clipboard::getPatchcords()']]],
   ['getpdobject',['getPdObject',['../classcm__object.html#a6d7e0f714e801e61e6c2f76047f1589e',1,'cm_object']]],
   ['getsavestring',['getSaveString',['../classcm__object.html#a55c2eca839b7e2f8b34f8ed5290393e0',1,'cm_object::getSaveString()'],['../classcmo__float.html#a32c43a289b0e426a68c7a276f6b3b60b',1,'cmo_float::getSaveString()'],['../classcmo__msg.html#a2da4aed3ba9ef2cabdb9aff01861ea4e',1,'cmo_msg::getSaveString()']]],
   ['getscale',['getScale',['../classcm__widget.html#ac1017e2f36ea483f884b11b08f93dcfd',1,'cm_widget']]],
-  ['getstartpoint',['getStartPoint',['../classcm__patchcord.html#a6698e93c5934891740ad9670c3545351',1,'cm_patchcord']]]
+  ['getstartpoint',['getStartPoint',['../classcm__patchcord.html#a6698e93c5934891740ad9670c3545351',1,'cm_patchcord']]],
+  ['getstring',['getString',['../classcm__prefs.html#a9df7ed2b937c5f64ba6b2147a091db83',1,'cm_prefs']]]
 ];

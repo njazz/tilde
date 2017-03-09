@@ -4,6 +4,7 @@ var searchData=
   ['cm_5fbasewindow_2eh',['cm_basewindow.h',['../cm__basewindow_8h.html',1,'']]],
   ['cm_5fcanvas_2ecpp',['cm_canvas.cpp',['../cm__canvas_8cpp.html',1,'']]],
   ['cm_5fcanvas_2eh',['cm_canvas.h',['../cm__canvas_8h.html',1,'']]],
+  ['cm_5fclipboard_2eh',['cm_clipboard.h',['../cm__clipboard_8h.html',1,'']]],
   ['cm_5ffileparser_2ecpp',['cm_fileparser.cpp',['../cm__fileparser_8cpp.html',1,'']]],
   ['cm_5ffileparser_2eh',['cm_fileparser.h',['../cm__fileparser_8h.html',1,'']]],
   ['cm_5ffilesaver_2ecpp',['cm_filesaver.cpp',['../cm__filesaver_8cpp.html',1,'']]],

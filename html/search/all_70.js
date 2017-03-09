@@ -13,5 +13,6 @@ var searchData=
   ['pdwindow',['pdWindow',['../classcm__menu.html#a59479cf38a2f0d25a2049104d05b671e',1,'cm_menu']]],
   ['port_5ftype',['port_type',['../classcm__port.html#af2bc746729ee36352f3ec92913207000',1,'cm_port']]],
   ['portindex',['portIndex',['../classcm__port.html#aecc871d97106bc43ad62b1cee127191d',1,'cm_port']]],
+  ['pref_5fstring',['PREF_STRING',['../cm__preferences_8h.html#a8d0930cabebdaa4ba925d1ec93594bb2',1,'cm_preferences.h']]],
   ['putmenu',['putMenu',['../classcm__basewindow.html#ab6d3fe7efe3cdca6f7470dcc773d5fb9',1,'cm_basewindow']]]
 ];

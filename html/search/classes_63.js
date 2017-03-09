@@ -2,6 +2,7 @@ var searchData=
 [
   ['cm_5fbasewindow',['cm_basewindow',['../classcm__basewindow.html',1,'']]],
   ['cm_5fcanvas',['cm_canvas',['../classcm__canvas.html',1,'']]],
+  ['cm_5fclipboard',['cm_clipboard',['../classcm__clipboard.html',1,'']]],
   ['cm_5ffileparser',['cm_fileparser',['../classcm__fileparser.html',1,'']]],
   ['cm_5ffilesaver',['cm_filesaver',['../classcm__filesaver.html',1,'']]],
   ['cm_5fmenu',['cm_menu',['../classcm__menu.html',1,'']]],
@@ -11,6 +12,7 @@ var searchData=
   ['cm_5fpatchwindow',['cm_patchwindow',['../classcm__patchwindow.html',1,'']]],
   ['cm_5fpdwindow',['cm_pdwindow',['../classcm__pdwindow.html',1,'']]],
   ['cm_5fport',['cm_port',['../classcm__port.html',1,'']]],
+  ['cm_5fprefs',['cm_prefs',['../classcm__prefs.html',1,'']]],
   ['cm_5fwidget',['cm_widget',['../classcm__widget.html',1,'']]],
   ['cmo_5fbox',['cmo_box',['../classcmo__box.html',1,'']]],
   ['cmo_5ffloat',['cmo_float',['../classcmo__float.html',1,'']]],

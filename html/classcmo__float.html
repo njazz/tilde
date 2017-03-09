@@ -79,7 +79,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">cmo_float Class Reference</div>  </div>
 </div><!--header-->
@@ -112,6 +113,11 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__float.html#a572a2a372d2f62f94b7bb06e7294e5fd">setPdMessage</a> (std::string message)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__float.html#a32c43a289b0e426a68c7a276f6b3b60b">getSaveString</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns object's text for client-based file saving  <a href="#a32c43a289b0e426a68c7a276f6b3b60b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__float.html#a5a86972d1cfe55e6c4b7dd0fab6a6b05">setPdObject</a> (void *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets pointer to pd object  <a href="#a5a86972d1cfe55e6c4b7dd0fab6a6b05"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__float.html#a443ceff722bd92e1d2c11d395508a6f3">updateUI</a> (void *uiobj, ceammc::AtomList msg)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>gui object: float number box (ui.msg) </p>
@@ -240,6 +246,61 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a5a86972d1cfe55e6c4b7dd0fab6a6b05"></a><!-- doxytag: member="cmo_float::setPdObject" ref="a5a86972d1cfe55e6c4b7dd0fab6a6b05" args="(void *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcmo__float.html#a5a86972d1cfe55e6c4b7dd0fab6a6b05">cmo_float::setPdObject</a> </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>sets pointer to pd object </p>
+<p>overriden by ui objects to be able to connect to pd objects </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="classcm__object.html#a589be9154b0319cf9938b8cab2a42226">cm_object</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a443ceff722bd92e1d2c11d395508a6f3"></a><!-- doxytag: member="cmo_float::updateUI" ref="a443ceff722bd92e1d2c11d395508a6f3" args="(void *uiobj, ceammc::AtomList msg)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="classcmo__float.html#a443ceff722bd92e1d2c11d395508a6f3">cmo_float::updateUI</a> </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>uiobj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ceammc::AtomList&#160;</td>
+          <td class="paramname"><em>msg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/travis/build/njazz/qtpd/qtpd_gui/<a class="el" href="cmo__float_8h_source.html">cmo_float.h</a></li>
 <li>/home/travis/build/njazz/qtpd/qtpd_gui/<a class="el" href="cmo__float_8cpp.html">cmo_float.cpp</a></li>
@@ -262,7 +323,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 8 2017 22:15:00 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 9 2017 09:24:47 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
