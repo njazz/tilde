@@ -622,6 +622,30 @@ public:
 
     }
 
+    ////
+    /// \brief prototype for universal object 'constructor'
+    /// \param message
+    /// \param pos
+    /// \return
+    ///
+    cm_object* createObject(std::string uiObjectName, std::string objectData, QPoint pos)
+    {
+        cm_object *obj = cm_objectloader::inst().createObject(uiObjectName, objectData, (cm_widget*)this);
+
+        connect(obj,&cmo_msg::selectBox, this, &cm_canvas::s_SelectBox);
+        connect(obj,&cmo_msg::moveBox, this, &cm_canvas::s_MoveBox);
+        obj->setEditModeRef(&this->editMode);
+        obj->move(pos);
+        this->objectBoxes.push_back(obj);
+
+        obj->show();
+
+        return obj;
+
+        //cm_object *obj = new cmo_float((cm_object*)this);   //check
+
+    }
+
 
     ////
     /// \brief create new comment box (ui only)
@@ -645,25 +669,6 @@ public:
         txt->move(pos);
 
         this->objectBoxes.push_back(txt);
-
-//        //temp
-//        t_object* new_obj = 0 ;
-//        if (!this->pd_canvas)
-//        {qDebug("bad pd canvas instance");}
-//        else
-//        {
-//            new_obj = cmp_create_message(this->pd_canvas, message, pos.x(), pos.y());
-//        }
-
-//        if (new_obj)
-//        {
-//            qDebug ("created msgbox %s | ptr %lu\n",  message.c_str(), (long)new_obj);
-//            msg->setPdObject(new_obj);
-//        }
-//        else
-//        {
-//            qDebug("Error: no such object %s",  message.c_str());
-//        }
 
         txt->setPdMessage(message.c_str());
 

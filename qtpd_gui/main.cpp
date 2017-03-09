@@ -6,7 +6,7 @@
 #include "cm_pdwindow.h"
 #include "cm_patchwindow.h"
 
-
+#include "cm_objectloader.h"
 
 void pd_window_printhook(const char* s)
 {
@@ -20,6 +20,8 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     a.setQuitOnLastWindowClosed(false);
     a.setWindowIcon(QIcon("./pd_ceammc.png"));
+
+    cm_objectloader::inst().loadObjects();
 
     cmp_pdinit();
     cmp_setprinthook(&pd_window_printhook);

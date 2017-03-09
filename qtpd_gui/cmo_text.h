@@ -27,6 +27,8 @@ private:
 public:
     explicit cmo_text(cm_object *parent = 0);
 
+    static cm_object* createObject(std::string objectData, cm_widget *parent=0) {};
+
     void paintEvent(QPaintEvent *)
     {    QPainter p(this);
 
@@ -228,19 +230,19 @@ public:
 
     bool eventFilter(QObject *watched, QEvent *event)
     {
-        qDebug("event filter");
+        //qDebug("event filter");
         if (event->type() == QEvent::KeyPress) {
 
-                    QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
-                    qDebug("key event");
+            QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
+            //qDebug("key event");
 
-                    if  ( (keyEvent->key() == Qt::Key_Return) && (keyEvent->modifiers() == Qt::ShiftModifier) )
-                    {
-                        this->editorDone();
-                        qDebug("done");
-                        return true;
-                    }
-                }
+            if  ( (keyEvent->key() == Qt::Key_Return) && (keyEvent->modifiers() == Qt::ShiftModifier) )
+            {
+                this->editorDone();
+                //qDebug("done");
+                return true;
+            }
+        }
 
     }
 

@@ -14,6 +14,8 @@
 
 #include <QMainWindow>
 
+//#include "cm_objectloader.h"
+
 //typedef void t_object;
 // basic object
 
@@ -29,6 +31,9 @@ class cmo_box : public cm_object {
 public:
     explicit cmo_box(cm_object* parent = 0);
     ~cmo_box();
+
+    static cm_object* createObject(std::string objectData, cm_widget *parent=0) {};
+
 
     ////
     /// \brief temporary - make separate ui class for subpatches?
@@ -108,6 +113,10 @@ public:
         event->ignore();
     }
 
+//    static void reg()
+//    {
+//        cm_objectloader::inst().addUIobject("ui.obj", &cmo_box::createObject);
+//    }
 
 
 signals:

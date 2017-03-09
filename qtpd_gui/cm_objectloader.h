@@ -4,7 +4,21 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include <map>
 
+//#include "cm_object.h"
+
+//temporary
+#include "cmo_box.h"
+#include "cmo_msg.h"
+#include "cmo_float.h"
+#include "cmo_text.h"
+
+typedef cm_object* (*cmObjectConstructor)(std::string objectData, cm_widget *parent);
+
+////
+/// \brief prototype for ui externals handling
+///
 class cm_objectloader
 {
 public:
@@ -17,21 +31,31 @@ private:
     std::vector<std::string> names_;    //ui object names
     std::vector<std::string> pdNames_;  //pd object names - for auto-completion
 
+    std::map<std::string, cmObjectConstructor> objectConstructors_;
+
     cm_objectloader() {
-
-        //built in
-        names_.push_back("ui.msg");
-        names_.push_back("ui.float");
-        names_.push_back("ui.text");
-
-        // load externals here
 
     }
 
 
 public:
-    cm_objectloader(cm_objectloader const&)        = delete;
+    cm_objectloader(cm_objectloader const&) = delete;
     void operator=(cm_objectloader const&)  = delete;
+
+    void loadObjects()
+    {
+        //temporary
+        //this->addUIobject("ui.obj", &cmo_box::createObject);
+        this->addUIobject("ui.msg", &cmo_msg::createObject);
+        this->addUIobject("ui.float", &cmo_float::createObject);
+        this->addUIobject("ui.text", &cmo_text::createObject);
+    }
+
+    void addUIobject(std::string name, cmObjectConstructor constructor)
+    {
+        names_.push_back(name);
+        objectConstructors_[name] = constructor;
+    }
 
     std::vector<std::string> getUINames()
     {
@@ -47,6 +71,34 @@ public:
     {
         return std::find(names_.begin(), names_.end(), objName) != names_.end();
     }
+
+    // todo remove?
+    cmObjectConstructor getConstructorFor(std::string objName)
+    {
+        if (this->hasUI(objName))
+        {
+            return objectConstructors_[objName];
+        }
+
+        return 0;
+
+    }
+
+    cm_object* createObject(std::string objName, std::string objectData, cm_widget *parent)
+    {
+        if (objName == "ui.obj")
+        {
+            objectData = objName + " " + objectData;
+
+            return cmo_box::createObject(objectData, parent);
+        }
+        else
+        {
+            cmObjectConstructor cmc = this->getConstructorFor(objName);
+            return cmc(objectData,parent);
+        }
+    }
+
 
 };
 

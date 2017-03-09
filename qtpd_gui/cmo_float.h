@@ -28,6 +28,8 @@ private:
 public:
     explicit cmo_float(cm_object *parent = 0);
 
+    static cm_object* createObject(std::string objectData, cm_widget *parent=0) {};
+
     void paintEvent(QPaintEvent *)
     {    QPainter p(this);
 

@@ -30,6 +30,10 @@ public:
     //cm_object();
     explicit cm_object(cm_widget *parent = 0);
 
+    //cm_object(std::string objectData, cm_widget *parent=0) {};
+
+
+   // static cm_object* createObject(std::string objectData, cm_widget *parent=0) {};
 
     ////
     /// \brief sets inlet position (cm_port)
