@@ -1,7 +1,7 @@
-#include "cmo_msg.h"
+#include "cmo_toggle.h"
 
 
-UIMessage::UIMessage(UIObject *parent) : UIObject(parent)
+UIToggle::UIToggle(UIObject *parent) : UIObject(parent)
 {
     //this->setMinimumWidth(30);
     this->setFixedSize(65,20);
@@ -20,15 +20,15 @@ UIMessage::UIMessage(UIObject *parent) : UIObject(parent)
     this->editor_->setFrame(false);
 
 
-    connect(this->editor_,&QLineEdit::editingFinished,this,&UIMessage::editorDone);
-    connect(this->editor_,&QLineEdit::textEdited, this,&UIMessage::editorChanged);
+    connect(this->editor_,&QLineEdit::editingFinished,this,&UIToggle::editorDone);
+    connect(this->editor_,&QLineEdit::textEdited, this,&UIToggle::editorChanged);
 
     this->setMinimumWidth(40);
 }
 
 ///////
 
-void  UIMessage::editorDone()
+void  UIToggle::editorDone()
 {
     qDebug("editor done");
 
@@ -38,7 +38,7 @@ void  UIMessage::editorDone()
     this->editor_->hide();
 }
 
-void  UIMessage::editorChanged()
+void  UIToggle::editorChanged()
 {
     QFont myFont(PREF_STRING("Font"), 11);
     QFontMetrics fm(myFont);

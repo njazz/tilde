@@ -178,7 +178,7 @@ public:
                                     {
                                         if (pdParserPrevWindow->canvas)
                                         {
-                                            cmo_box *b1 = 0;
+                                            UIBox *b1 = 0;
 
                                             b1 = pdParserPrevWindow->canvas->restoreSubcanvas(objname.toStdString(), pos, pdParserWindow->canvas->pdCanvas);
                                             b1->cmSubcanvas = pdParserWindow;

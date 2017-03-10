@@ -169,7 +169,7 @@ void PatchWindow::objectMakerDone()
 
     if (obj_name!="")
     {
-        cmo_box* b = this->canvas->createBox(obj_name, this->objectMaker->pos());
+        UIBox* b = this->canvas->createBox(obj_name, this->objectMaker->pos());
 
         this->canvas->dragObject = 0;
         this->objectMaker->close();

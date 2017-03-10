@@ -1,9 +1,8 @@
-#include "cmo_msg.h"
+#include "cmo_bang.h"
 
 
-UIMessage::UIMessage(UIObject *parent) : UIObject(parent)
+UIBang::UIBang(UIObject *parent) : UIObject(parent)
 {
-    //this->setMinimumWidth(30);
     this->setFixedSize(65,20);
 
     this->setMouseTracking(true);
@@ -20,15 +19,15 @@ UIMessage::UIMessage(UIObject *parent) : UIObject(parent)
     this->editor_->setFrame(false);
 
 
-    connect(this->editor_,&QLineEdit::editingFinished,this,&UIMessage::editorDone);
-    connect(this->editor_,&QLineEdit::textEdited, this,&UIMessage::editorChanged);
+    connect(this->editor_,&QLineEdit::editingFinished,this,&UIBang::editorDone);
+    connect(this->editor_,&QLineEdit::textEdited, this,&UIBang::editorChanged);
 
     this->setMinimumWidth(40);
 }
 
 ///////
 
-void  UIMessage::editorDone()
+void  UIBang::editorDone()
 {
     qDebug("editor done");
 
@@ -38,7 +37,7 @@ void  UIMessage::editorDone()
     this->editor_->hide();
 }
 
-void  UIMessage::editorChanged()
+void  UIBang::editorChanged()
 {
     QFont myFont(PREF_STRING("Font"), 11);
     QFontMetrics fm(myFont);

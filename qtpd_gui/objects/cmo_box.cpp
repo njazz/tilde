@@ -1,6 +1,6 @@
 #include "cmo_box.h"
 
-cmo_box::cmo_box(UIObject *parent) : UIObject(parent)
+UIBox::UIBox(UIObject *parent) : UIObject(parent)
 {
 
     this->setFixedHeight(20);
@@ -30,14 +30,14 @@ cmo_box::cmo_box(UIObject *parent) : UIObject(parent)
     this->editor_->setFrame(false);
 
 
-    connect(this->editor_,&QLineEdit::editingFinished,this,&cmo_box::editorDone);
-    connect(this->editor_,&QLineEdit::textEdited, this,&cmo_box::editorChanged);
+    connect(this->editor_,&QLineEdit::editingFinished,this,&UIBox::editorDone);
+    connect(this->editor_,&QLineEdit::textEdited, this,&UIBox::editorChanged);
 
     this->setMinimumWidth(40);
 }
 
 
-cmo_box::~cmo_box()
+UIBox::~UIBox()
 {
     if (this->cmSubcanvas)
     {
@@ -53,7 +53,7 @@ cmo_box::~cmo_box()
 
 ///////
 
-void  cmo_box::editorDone()
+void  UIBox::editorDone()
 {
     qDebug("editor done");
 
@@ -63,7 +63,7 @@ void  cmo_box::editorDone()
     this->editor_->hide();
 }
 
-void  cmo_box::editorChanged()
+void  UIBox::editorChanged()
 {
     QFont myFont(PREF_STRING("Font"), 11);
     QFontMetrics fm(myFont);

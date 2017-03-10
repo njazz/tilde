@@ -48,9 +48,12 @@ public:
     {
         //temporary
         //this->addUIobject("ui.obj", &cmo_box::createObject);
-        this->addUIobject("ui.msg", &cmo_msg::createObject);
-        this->addUIobject("ui.float", &cmo_float::createObject);
-        this->addUIobject("ui.text", &cmo_text::createObject);
+        this->addUIobject("ui.msg", &UIMessage::createObject);
+        this->addUIobject("ui.float", &UIFloat::createObject);
+        this->addUIobject("ui.text", &UIText::createObject);
+
+        this->addUIobject("ui.bang", &UIText::createObject);
+        this->addUIobject("ui.toggle", &UIText::createObject);
 
         //compatibility
         //this->addUIobject("msg", &cmo_msg::createObject);
@@ -97,7 +100,7 @@ public:
         {
             objectData = objName + " " + objectData;
 
-            return cmo_box::createObject(objectData, parent);
+            return UIBox::createObject(objectData, parent);
         }
         else
         {

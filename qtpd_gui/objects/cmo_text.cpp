@@ -1,7 +1,7 @@
 #include "cmo_text.h"
 
 
-cmo_text::cmo_text(UIObject *parent) : UIObject(parent)
+UIText::UIText(UIObject *parent) : UIObject(parent)
 {
     //this->setMinimumWidth(30);
     this->setFixedSize(65,20);
@@ -18,7 +18,7 @@ cmo_text::cmo_text(UIObject *parent) : UIObject(parent)
     this->editor_->hide();
     this->editor_->setAttribute(Qt::WA_MacShowFocusRect, 0);
 
-    connect(this->editor_,&QPlainTextEdit::textChanged, this,&cmo_text::editorChanged);
+    connect(this->editor_,&QPlainTextEdit::textChanged, this,&UIText::editorChanged);
 
     this->editor_->installEventFilter(this);
 
@@ -30,7 +30,7 @@ cmo_text::cmo_text(UIObject *parent) : UIObject(parent)
 
 ///////
 
-void  cmo_text::editorDone()
+void  UIText::editorDone()
 {
     qDebug("editor done");
 
@@ -40,7 +40,7 @@ void  cmo_text::editorDone()
     this->editor_->hide();
 }
 
-void  cmo_text::editorChanged()
+void  UIText::editorChanged()
 {
     QFont myFont(PREF_STRING("Font"), 11);
     QFontMetrics fm(myFont);

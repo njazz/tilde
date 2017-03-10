@@ -15,7 +15,7 @@ using namespace cm;
 ////
 /// \brief gui object: message box (ui.msg)
 ///
-class cmo_msg : public UIObject
+class UIMessage : public UIObject
 {
     Q_OBJECT
 
@@ -25,7 +25,7 @@ private:
     QLineEdit* editor_;
 
 public:
-    explicit cmo_msg(UIObject *parent = 0);
+    explicit UIMessage(UIObject *parent = 0);
 
     static UIObject* createObject(std::string objectData, UIWidget *parent=0) {};
 
@@ -190,7 +190,7 @@ public:
     static void updateUI(void* uiobj, ceammc::AtomList msg)
     {
         qDebug("update ui");
-        cmo_msg *x = (cmo_msg*)uiobj;
+        UIMessage *x = (UIMessage*)uiobj;
 
         std::string obj_data;
         for (int i=0; i<msg.size();i++)
@@ -206,7 +206,7 @@ public:
     void setPdObject(void *obj)
     {
         UIObject::setPdObject(obj);
-        cmp_connectUI((t_pd*)this->getPdObject(), (void*)this, &cmo_msg::updateUI);
+        cmp_connectUI((t_pd*)this->getPdObject(), (void*)this, &UIMessage::updateUI);
     }
 
 

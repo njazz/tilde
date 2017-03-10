@@ -42,7 +42,9 @@ SOURCES += main.cpp\
     cm_object.cpp \
     cm_sizebox.cpp \
     properties/cm_property.cpp \
-    properties/cm_propertylist.cpp
+    properties/cm_propertylist.cpp \
+    objects/cmo_bang.cpp \
+    objects/cmo_toggle.cpp
 
 HEADERS  += \
     cm_port.h \
@@ -67,7 +69,9 @@ HEADERS  += \
     cm_objectloader.h \
     cm_sizebox.h \
     properties/cm_property.h \
-    properties/cm_propertylist.h
+    properties/cm_propertylist.h \
+    objects/cmo_bang.h \
+    objects/cmo_toggle.h
 
 FORMS    += \
     window/cm_basewindow.ui \

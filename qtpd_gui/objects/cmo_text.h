@@ -16,7 +16,7 @@ using namespace cm;
 ////
 /// \brief gui object: comment box (ui.text)
 ///
-class cmo_text : public UIObject
+class UIText : public UIObject
 {
     Q_OBJECT
 
@@ -26,7 +26,7 @@ private:
     QPlainTextEdit* editor_;
 
 public:
-    explicit cmo_text(UIObject *parent = 0);
+    explicit UIText(UIObject *parent = 0);
 
     static UIObject* createObject(std::string objectData, UIWidget *parent=0) {};
 
@@ -150,7 +150,7 @@ public:
     static void updateUI(void* uiobj, ceammc::AtomList msg)
     {
         qDebug("update ui");
-        cmo_text *x = (cmo_text*)uiobj;
+        UIText *x = (UIText*)uiobj;
 
         std::string obj_data;
         for (int i=0; i<msg.size();i++)

@@ -20,7 +20,7 @@ using namespace cm;
 ////
 /// \brief gui object: standard object box
 ///
-class cmo_box : public UIObject {
+class UIBox : public UIObject {
 
     Q_OBJECT
 
@@ -28,8 +28,8 @@ private:
     QLineEdit* editor_;
 
 public:
-    explicit cmo_box(UIObject* parent = 0);
-    ~cmo_box();
+    explicit UIBox(UIObject* parent = 0);
+    ~UIBox();
 
     static UIObject* createObject(std::string objectData, UIWidget *parent=0) {};
 

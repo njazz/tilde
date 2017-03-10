@@ -1,5 +1,5 @@
-#ifndef cmo_float_H
-#define cmo_float_H
+#ifndef CMO_MSG_H
+#define CMO_MSG_H
 
 //#include <QWidget>
 
@@ -13,18 +13,19 @@
 using namespace cm;
 
 ////
-/// \brief gui object: float number box (ui.float)
+/// \brief gui object: message box (ui.msg)
 ///
-class UIFloat : public UIObject
+class UIToggle : public UIObject
 {
     Q_OBJECT
 
 private:
+    bool clicked_;
 
-    float startY;
+    QLineEdit* editor_;
 
 public:
-    explicit UIFloat(UIObject *parent = 0);
+    explicit UIToggle(UIObject *parent = 0);
 
     static UIObject* createObject(std::string objectData, UIWidget *parent=0) {};
 
@@ -34,9 +35,9 @@ public:
 
          QPolygon poly;
           poly << QPoint(0,0) <<
-                  QPoint(this->width()-5,0) <<
-                  //QPoint(this->width()-4,4) <<
-                  QPoint(this->width(),5) <<
+                  QPoint(this->width(),0) <<
+                  QPoint(this->width()-4,4) <<
+                  QPoint(this->width()-4,this->height()-4) <<
                   QPoint(this->width(),this->height()) <<
                   QPoint(0,this->height());
 
@@ -53,7 +54,11 @@ public:
                 {
                     p.setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
                 }
-
+                else
+                if (this->clicked_)
+                {
+                    p.setPen(QPen(QColor(0, 192, 255), 4, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+                }
                 else
                 {
                     p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
@@ -78,48 +83,68 @@ public:
     void mousePressEvent(QMouseEvent *ev)
     {
 
-        this->startY = ev->pos().y();
-
-
-        if ( (this->getEditMode()==em_Unlocked) )
+        if ( (this->getEditMode()==em_Unlocked) && this->isSelected())
         {
-            emit selectBox(this);
-            this->dragOffset = ev->pos();
+            this->editor_->setText(QString(this->getObjectData().c_str()));
+            this->editor_->show();
+            this->editor_->setFocus();
         }
 
+        emit selectBox(this);
+        this->dragOffset = ev->pos();
+
+        if (!(this->getEditMode()==em_Unlocked))
+        {
+            this->clicked_ = true;
+            this->repaint();
+
+            //todo timer
+        }
+
+        //temporary
+        //move
+        if (this->getEditMode() != em_Unlocked)
+        {
+            if (!this->getPdObject())
+            {
+                qDebug("msg: bad pd object!");
+            }
+            else
+            {
+
+                cmp_sendstring((t_pd*)this->getPdObject(), ((std::string)"bang").c_str());
+            }
+
+        }
 
     }
 
     void mouseReleaseEvent(QMouseEvent *)
     {
+        //this->selected_ = false;
+
+        //if (!this->getEditMode())
+        {
+            this->clicked_ = false;
+            this->repaint();
+        }
+
+
 
     }
 
     void mouseMoveEvent(QMouseEvent *event)
     {
-        if( (event->buttons() & Qt::LeftButton ) && (this->getEditMode() == em_Unlocked))
+        if(event->buttons() & Qt::LeftButton)
         {
             emit moveBox(this, event);
         }
-
-        if( (event->buttons() & Qt::LeftButton) && (this->getEditMode() != em_Unlocked))
-        {
-            //todo fix
-            this->setObjectData( std::to_string( ::atof(this->getObjectData().c_str()) - event->pos().y() + this->startY) );  //- this->startY
-            this->startY = event->pos().y();
-
-            std::string send = "set " + this->getObjectData();
-            cmp_sendstring((t_pd*)this->getPdObject(), send.c_str());
-
-            this->repaint();
-        }
-
         event->ignore();
 
-        //todo move!
+       //todo move!
         if (this->getEditMode() != em_Unlocked)
         {
-            this->setCursor(QCursor(Qt::UpArrowCursor));
+            this->setCursor(QCursor(Qt::PointingHandCursor));
         }
         else
         {
@@ -127,6 +152,8 @@ public:
         }
 
     }
+
+
 
 
     ///////
@@ -140,7 +167,7 @@ public:
         int new_w = fm.width(QString(this->getObjectData().c_str())) + 10;
         new_w = (new_w<25) ? 25 : new_w;
         this->setFixedWidth(new_w);
-        //this->editor_->setFixedWidth(this->width()-5);
+        this->editor_->setFixedWidth(this->width()-5);
 
         //temporary
         //move
@@ -157,40 +184,45 @@ public:
                 //qDebug("send msg %s", msg.c_str());
                 cmp_sendstring((t_pd*)this->getPdObject(), msg);
             }
-
         }
-
-
-
     }
 
     static void updateUI(void* uiobj, ceammc::AtomList msg)
     {
-        qDebug("update ui - float");
-        UIFloat *x = (UIFloat*)uiobj;
+        qDebug("update ui");
+        UIToggle *x = (UIToggle*)uiobj;
 
-        if (msg.size()>0)
+        std::string obj_data;
+        for (int i=0; i<msg.size();i++)
         {
-            x->setObjectData(msg.at(0).asString());
-            x->repaint();
-
+            obj_data += msg.at(i).asString() + " ";
         }
-    }
 
-    std::string getSaveString()
-    {return "ui.float "+ this->getObjectData();}
+        x->setObjectData(obj_data);
+
+        x->repaint();
+    }
 
     void setPdObject(void *obj)
     {
         UIObject::setPdObject(obj);
-        cmp_connectUI((t_pd*)this->getPdObject(), (void*)this, &UIFloat::updateUI);
+        cmp_connectUI((t_pd*)this->getPdObject(), (void*)this, &UIToggle::updateUI);
     }
 
-signals:
 
+    std::string getSaveString()
+    {return "ui.msg "+ this->getObjectData();}
+
+
+
+
+signals:
+    //void selectBox(cm_widget*box);
 private slots:
+    void editorDone();
+    void editorChanged();
 
 };
 
 
-#endif // cmo_float_H
+#endif // CMO_MSG_H
