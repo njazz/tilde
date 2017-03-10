@@ -18,7 +18,7 @@ var searchData=
   ['getoutidx',['getOutIdx',['../classcm_1_1_patchcord.html#ad1ca115978dcef276616a1fb9991db0f',1,'cm::Patchcord']]],
   ['getoutletat',['getOutletAt',['../classcm_1_1_u_i_object.html#aba30a377b7eae09f970ed9f90008b236',1,'cm::UIObject']]],
   ['getpatchcordasstring',['getPatchcordAsString',['../classcm_1_1_canvas.html#ad31cd1c8b89e95b56eb6f633a61fdba6',1,'cm::Canvas']]],
-  ['getpatchcords',['getPatchcords',['../classcm_1_1_canvas.html#a80b76980682beb5f277ce94e64a0f09b',1,'cm::Canvas::getPatchcords()'],['../classcm_1_1_clipboard.html#a82ef669a05df41fb25a05041487b4475',1,'cm::Clipboard::getPatchcords()']]],
+  ['getpatchcords',['getPatchcords',['../classcm_1_1_canvas.html#a80b76980682beb5f277ce94e64a0f09b',1,'cm::Canvas::getPatchcords()'],['../classcm_1_1_clipboard.html#a64708b2d91ee32037228d9154336b015',1,'cm::Clipboard::getPatchcords()']]],
   ['getpdnames',['getPDNames',['../classcm_1_1_object_loader.html#a887c21b1facfabe2556cc942766cb70f',1,'cm::ObjectLoader']]],
   ['getpdobject',['getPdObject',['../classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a',1,'cm::UIObject::getPdObject()'],['../classcmo__text.html#a8e9c8a6936c890376733392e532c6f29',1,'cmo_text::getPdObject()']]],
   ['getsavestring',['getSaveString',['../classcm_1_1_u_i_object.html#a0e3f36996412372a7ab1990c788bdd4c',1,'cm::UIObject::getSaveString()'],['../classcmo__float.html#a32c43a289b0e426a68c7a276f6b3b60b',1,'cmo_float::getSaveString()'],['../classcmo__msg.html#a2da4aed3ba9ef2cabdb9aff01861ea4e',1,'cmo_msg::getSaveString()'],['../classcmo__text.html#adbf06526a74d47e4bf24f750d9cb0d53',1,'cmo_text::getSaveString()']]],
