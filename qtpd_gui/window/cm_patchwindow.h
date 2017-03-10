@@ -342,7 +342,8 @@ public:
 
         if (this->canvas->getEditMode() != em_Locked)
         {
-            UIText *newTxt = this->canvas->createText("comment",QPoint(100,100));
+            //UIText *newTxt = this->canvas->createText("comment",QPoint(100,100));
+            UIObject *newTxt = this->canvas->createObject("ui.text","",QPoint(100,100));
             this->canvas->dragObject = newTxt;
             newTxt->show();
         }

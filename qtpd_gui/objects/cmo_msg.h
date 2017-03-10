@@ -28,10 +28,40 @@ private:
 public:
     explicit UIMessage(UIObject *parent = 0);
 
-    static UIObject* createObject(std::string objectData, UIWidget *parent=0)
+    static UIObject* createObject(std::string objectData, t_canvas* pdCanvas, UIWidget *parent=0)
     {
         UIMessage* b = new UIMessage((UIObject*)parent);
+
+        b->addInlet();
+        b->addOutlet();
+
         b->setObjectData(objectData);
+
+        std::string message = "ui.msg";
+
+        //temp
+        t_object* new_obj = 0 ;
+        if (!pdCanvas)
+        {qDebug("bad pd canvas instance");}
+        else
+        {
+            QPoint pos = QPoint(0,0);
+            new_obj = cmp_create_message(pdCanvas, message, pos.x(), pos.y());
+        }
+
+        if (new_obj)
+        {
+            qDebug ("created msgbox %s | ptr %lu\n",  message.c_str(), (long)new_obj);
+            b->setPdObject(new_obj);
+        }
+        else
+        {
+            qDebug("Error: no such object %s",  message.c_str());
+        }
+
+        b->setPdMessage(objectData.c_str());
+
+        //b->setObjectData(objectData);
         return (UIObject*) b;
     };
 

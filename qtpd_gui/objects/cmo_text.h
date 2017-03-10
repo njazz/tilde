@@ -29,9 +29,10 @@ private:
 public:
     explicit UIText(UIObject *parent = 0);
 
-    static UIObject* createObject(std::string objectData, UIWidget *parent=0)
+    static UIObject* createObject(std::string objectData, t_canvas* pdCanvas, UIWidget *parent=0)
     {
         UIText* b = new UIText((UIObject*)parent);
+        //temporary
         b->setObjectData(objectData);
         return (UIObject*) b;
     };

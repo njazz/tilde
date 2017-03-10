@@ -621,7 +621,7 @@ public:
     ///
     UIObject* createObject(std::string uiObjectName, std::string objectData, QPoint pos)
     {
-        UIObject *obj = ObjectLoader::inst().createObject(uiObjectName, objectData, (UIWidget*)this);
+        UIObject *obj = ObjectLoader::inst().createObject(uiObjectName, objectData, this->pdCanvas, (UIWidget*)this);
 
         connect(obj,&UIMessage::selectBox, this, &Canvas::s_SelectBox);
         connect(obj,&UIMessage::moveBox, this, &Canvas::s_MoveBox);
@@ -631,6 +631,8 @@ public:
 
         obj->show();
 
+        qDebug() << "create object: " << QString(uiObjectName.c_str()) << ":" << QString(objectData.c_str());
+
         return obj;
 
         //cm_object *obj = new cmo_float((cm_object*)this);   //check
@@ -638,37 +640,37 @@ public:
     }
 
 
-    ////
-    /// \brief create new comment box (ui only)
-    /// \param pdObjectName TODO rename. object name and arguments
-    /// \param pos
-    /// \return pointer to cm_box
-    ///
-    UIText* createText(std::string message, QPoint pos)
-    {
-        UIText *txt = new UIText((UIObject*)this);   //check
-        txt->setObjectData(message);
+//    ////
+//    /// \brief create new comment box (ui only)
+//    /// \param pdObjectName TODO rename. object name and arguments
+//    /// \param pos
+//    /// \return pointer to cm_box
+//    ///
+//    UIText* createText(std::string message, QPoint pos)
+//    {
+//        UIText *txt = new UIText((UIObject*)this);   //check
+//        txt->setObjectData(message);
 
-        //msg->addInlet();
-        //msg->addOutlet();
+//        //msg->addInlet();
+//        //msg->addOutlet();
 
-        connect(txt,&UIMessage::selectBox, this, &Canvas::s_SelectBox);
-        connect(txt,&UIMessage::moveBox, this, &Canvas::s_MoveBox);
+//        connect(txt,&UIMessage::selectBox, this, &Canvas::s_SelectBox);
+//        connect(txt,&UIMessage::moveBox, this, &Canvas::s_MoveBox);
 
-        txt->setEditModeRef(&this->editMode);
+//        txt->setEditModeRef(&this->editMode);
 
-        txt->move(pos);
+//        txt->move(pos);
 
-        this->objectBoxes.push_back(txt);
+//        this->objectBoxes.push_back(txt);
 
-        txt->setPdMessage(message.c_str());
+//        txt->setPdMessage(message.c_str());
 
-        txt->show();
+//        txt->show();
 
-        return txt;
+//        return txt;
 
 
-    }
+//    }
 
     ////
     /// \brief creates patchcord

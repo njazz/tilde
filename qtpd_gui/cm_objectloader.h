@@ -19,7 +19,7 @@
 
 namespace cm
 {
-typedef UIObject* (*cmObjectConstructor)(std::string objectData, UIWidget *parent);
+typedef UIObject* (*cmObjectConstructor)(std::string objectData, t_canvas* pdCanvas, UIWidget *parent);
 
 ////
 /// \brief prototype for ui externals handling
@@ -97,18 +97,18 @@ public:
 
     }
 
-    UIObject* createObject(std::string objName, std::string objectData, UIWidget *parent)
+    UIObject* createObject(std::string objName, std::string objectData, t_canvas* pdCanvas, UIWidget *parent)
     {
         if (objName == "ui.obj")
         {
             objectData = objName + " " + objectData;
 
-            return UIBox::createObject(objectData, parent);
+            return UIBox::createObject(objectData, pdCanvas,  parent);
         }
         else
         {
             cmObjectConstructor cmc = this->getConstructorFor(objName);
-            return cmc(objectData,parent);
+            return cmc(objectData, pdCanvas, parent);
         }
     }
 

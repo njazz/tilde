@@ -28,7 +28,7 @@ private:
 public:
     explicit UIBang(UIObject *parent = 0);
 
-    static UIObject* createObject(std::string objectData, UIWidget *parent=0)
+    static UIObject* createObject(std::string objectData, t_canvas* pdCanvas,UIWidget *parent=0)
     {
         UIBang* b = new UIBang((UIObject*)parent);
         b->setObjectData(objectData);

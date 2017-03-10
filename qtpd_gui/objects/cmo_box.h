@@ -32,17 +32,19 @@ public:
     explicit UIBox(UIObject* parent = 0);
     ~UIBox();
 
-    static UIObject* createObject(std::string objectData,  UIWidget *parent=0)
+    static UIObject* createObject(std::string objectData, t_canvas* pd_Canvas, UIWidget *parent=0)
     {
         //TODO fix all constructors
-        t_canvas* pd_Canvas;
+        //t_canvas* pd_Canvas;
 
         UIBox* b = new UIBox((UIObject*)parent);
-        b->setObjectData(objectData);
 
+        //truncate "ui.obj"
         QStringList list = QString(objectData.c_str()).split(" ");
-        const char * obj_name = list.at(1).toStdString().c_str();
-
+        list.removeAt(0);
+        QString list_s = list.join(" ");
+        const char * obj_name = list_s.toStdString().c_str();
+        b->setObjectData(obj_name);
 
         t_object* new_obj = 0 ;
         int in_c=0, out_c=0;
