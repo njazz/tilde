@@ -260,7 +260,14 @@ public:
     {
         if (this->getEditMode() ==  em_Unlocked)
             this->sizeBox->hide();
-    }
+    };
+
+public slots:
+    void resizeBox(int dx)
+    {
+        this->setFixedWidth(this->width() + dx);
+    };
+
 };
 
 }

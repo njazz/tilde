@@ -15,13 +15,8 @@ SizeBox::SizeBox(UIWidget *parent) : UIWidget(parent)
 
 }
 
-void SizeBox::resizeStart()
+void SizeBox::resizeBoxEvent(int dx)
 {}
-
-void SizeBox::resizeEnd()
-{}
-
-
 
 }
 
