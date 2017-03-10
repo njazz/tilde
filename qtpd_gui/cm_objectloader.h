@@ -14,9 +14,12 @@
 #include "cmo_float.h"
 #include "cmo_text.h"
 
+#include "cmo_bang.h"
+#include "cmo_toggle.h"
+
 namespace cm
 {
-typedef UIObject* (*cmObjectConstructor)(std::string objectData, UIWidget *parent);
+typedef UIObject* (*cmObjectConstructor)(std::string objectData, t_canvas* pdCanvas, UIWidget *parent);
 
 ////
 /// \brief prototype for ui externals handling
@@ -47,13 +50,13 @@ public:
     void loadObjects()
     {
         //temporary
-        //this->addUIobject("ui.obj", &cmo_box::createObject);
+        this->addUIobject("ui.obj", &UIBox::createObject);
         this->addUIobject("ui.msg", &UIMessage::createObject);
         this->addUIobject("ui.float", &UIFloat::createObject);
         this->addUIobject("ui.text", &UIText::createObject);
 
-        this->addUIobject("ui.bang", &UIText::createObject);
-        this->addUIobject("ui.toggle", &UIText::createObject);
+//        this->addUIobject("ui.bang", &UIBang::createObject);
+//        this->addUIobject("ui.toggle", &UIToggle::createObject);
 
         //compatibility
         //this->addUIobject("msg", &cmo_msg::createObject);
@@ -94,18 +97,18 @@ public:
 
     }
 
-    UIObject* createObject(std::string objName, std::string objectData, UIWidget *parent)
+    UIObject* createObject(std::string objName, std::string objectData, t_canvas* pdCanvas, UIWidget *parent)
     {
         if (objName == "ui.obj")
         {
             objectData = objName + " " + objectData;
 
-            return UIBox::createObject(objectData, parent);
+            return UIBox::createObject(objectData, pdCanvas,  parent);
         }
         else
         {
             cmObjectConstructor cmc = this->getConstructorFor(objName);
-            return cmc(objectData,parent);
+            return cmc(objectData, pdCanvas, parent);
         }
     }
 

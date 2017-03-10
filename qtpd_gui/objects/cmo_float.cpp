@@ -1,5 +1,8 @@
 #include "cmo_float.h"
 
+namespace cm
+{
+
 UIFloat::UIFloat(UIObject *parent) : UIObject(parent)
 {
     //this->setMinimumWidth(30);
@@ -10,5 +13,7 @@ UIFloat::UIFloat(UIObject *parent) : UIObject(parent)
     this->deselect();
 
     this->setMinimumWidth(45);
+
+}
 
 }

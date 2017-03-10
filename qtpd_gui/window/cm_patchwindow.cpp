@@ -169,8 +169,9 @@ void PatchWindow::objectMakerDone()
 
     if (obj_name!="")
     {
-        UIBox* b = this->canvas->createBox(obj_name, this->objectMaker->pos());
+        //UIBox* b = this->canvas->createBox(obj_name, this->objectMaker->pos());
 
+        UIObject *b = this->canvas->createObject("ui.obj", obj_name, this->objectMaker->pos());
         this->canvas->dragObject = 0;
         this->objectMaker->close();
 
@@ -183,7 +184,7 @@ void PatchWindow::objectMakerDone()
             qDebug("subpatch");
 
             PatchWindow *subPatch = PatchWindow::newSubpatch((t_canvas*)b->getPdObject());
-            b->cmSubcanvas = (QMainWindow*)subPatch;
+            ((UIBox*)b)->cmSubcanvas = (QMainWindow*)subPatch;
             subPatch->show();
         }
     }

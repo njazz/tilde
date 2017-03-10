@@ -10,7 +10,8 @@
 
 #include "cm_pdlink.h"
 
-using namespace cm;
+namespace cm
+{
 
 ////
 /// \brief gui object: message box (ui.msg)
@@ -27,7 +28,12 @@ private:
 public:
     explicit UIToggle(UIObject *parent = 0);
 
-    static UIObject* createObject(std::string objectData, UIWidget *parent=0) {};
+    static UIObject* createObject(std::string objectData, t_canvas* pdCanvas, UIWidget *parent=0)
+    {
+        UIToggle* b = new UIToggle((UIObject*)parent);
+        b->setObjectData(objectData);
+        return (UIObject*) b;
+    };
 
     void paintEvent(QPaintEvent *)
     {    QPainter p(this);
@@ -224,5 +230,6 @@ private slots:
 
 };
 
+}
 
 #endif // CMO_MSG_H

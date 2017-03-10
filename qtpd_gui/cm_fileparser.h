@@ -51,16 +51,20 @@ public:
 
 
             qDebug() << "objname" << objname;
-            //temporary
-            //load gui boxes?
+
+            //cleanup this
             if (list.at(3) == "ui.msg")
-                cmcanvas->createMsg(msgname.toStdString(), pos);
+                //cmcanvas->createMsg(msgname.toStdString(), pos);
+                cmcanvas->createObject("ui.msg", msgname.toStdString(), pos);
             else if (list.at(3) == "ui.text")
-                cmcanvas->createText(msgname.toStdString(), pos);
+                //cmcanvas->createText(msgname.toStdString(), pos);
+                cmcanvas->createObject("ui.text", msgname.toStdString(), pos);
             else if (list.at(3) == "ui.float")
-                cmcanvas->createFloat(msgname.toStdString(), pos);
+                //cmcanvas->createFloat(msgname.toStdString(), pos);
+                cmcanvas->createObject("ui.float", msgname.toStdString(), pos);
             else
-                cmcanvas->createBox(objname.toStdString(), pos);
+                //cmcanvas->createBox(objname.toStdString(), pos);
+                cmcanvas->createObject("ui.obj", objname.toStdString(), pos);
 
 
         }
@@ -107,131 +111,131 @@ public:
 
                     }
 
-                else
-                    if (list.at(0) == "connect")
-                    {
-                        qDebug("new connect");
-
-                        if (list.size()>4)
+                    else
+                        if (list.at(0) == "connect")
                         {
-                            //if (cmcanvas)
+                            qDebug("new connect");
+
+                            if (list.size()>4)
                             {
-                                UIObject * obj1 = cmcanvas->getObjectByIndex( ((QString)list.value(1)).toInt() );
-                                UIObject * obj2 = cmcanvas->getObjectByIndex( ((QString)list.value(3)).toInt() );
-
-                                if (!obj1 || !obj2)
+                                //if (cmcanvas)
                                 {
-                                    qDebug("object not found - could not connect");
-                                    return;
-                                }
+                                    UIObject * obj1 = cmcanvas->getObjectByIndex( ((QString)list.value(1)).toInt() );
+                                    UIObject * obj2 = cmcanvas->getObjectByIndex( ((QString)list.value(3)).toInt() );
 
-                                int idx1 = ((QString)list.value(2)).toInt() ;
-                                int idx2 = ((QString)list.value(4)).toInt() ;
+                                    if (!obj1 || !obj2)
+                                    {
+                                        qDebug("object not found - could not connect");
+                                        return;
+                                    }
 
-                                //cmcanvas->patchcord();
-                                if ( !obj1->isErrorBox() && !obj2->isErrorBox() )
-                                {
-                                    qDebug("patchcord");
-                                    cmcanvas->patchcord(obj1,idx1,obj2,idx2);
+                                    int idx1 = ((QString)list.value(2)).toInt() ;
+                                    int idx2 = ((QString)list.value(4)).toInt() ;
+
+                                    //cmcanvas->patchcord();
+                                    if ( !obj1->isErrorBox() && !obj2->isErrorBox() )
+                                    {
+                                        qDebug("patchcord");
+                                        cmcanvas->patchcord(obj1,idx1,obj2,idx2);
+                                    }
                                 }
                             }
-                        }
 
-                        else
-                        {
-                            qDebug("list error");
-                        }
-                    }
-                    else
-                        if (list.at(0) == "restore")
-                        {
-
-                            qDebug("restore canvas: %lu | previous %lu", pdParserWindow, pdParserPrevWindow);
-
-
-                            //parserwindow - subpatch
-                            //prev window - parent patch
-
-                            //restore pd box
-                            if (list.size()>3)
+                            else
                             {
-                                QString objname;
-                                QPoint pos;
+                                qDebug("list error");
+                            }
+                        }
+                        else
+                            if (list.at(0) == "restore")
+                            {
 
-                                pos.setX(((QString)list.value(1)).toFloat());
-                                pos.setY(((QString)list.value(2)).toFloat());
-
-                                //lol
-                                QStringList objList = list;
-                                objList.removeAt(0);
-                                objList.removeAt(0);
-                                objList.removeAt(0);
-                                objname = objList.join(" ");
-
-                                qDebug() << "objname" << objname;
-                                //temporary
+                                qDebug("restore canvas: %lu | previous %lu", pdParserWindow, pdParserPrevWindow);
 
 
-                                if (objList.at(0) == "pd")
+                                //parserwindow - subpatch
+                                //prev window - parent patch
+
+                                //restore pd box
+                                if (list.size()>3)
                                 {
-                                    if (pdParserPrevWindow)
-                                    {
-                                        if (pdParserPrevWindow->canvas)
-                                        {
-                                            UIBox *b1 = 0;
+                                    QString objname;
+                                    QPoint pos;
 
-                                            b1 = pdParserPrevWindow->canvas->restoreSubcanvas(objname.toStdString(), pos, pdParserWindow->canvas->pdCanvas);
-                                            b1->cmSubcanvas = pdParserWindow;
+                                    pos.setX(((QString)list.value(1)).toFloat());
+                                    pos.setY(((QString)list.value(2)).toFloat());
+
+                                    //lol
+                                    QStringList objList = list;
+                                    objList.removeAt(0);
+                                    objList.removeAt(0);
+                                    objList.removeAt(0);
+                                    objname = objList.join(" ");
+
+                                    qDebug() << "objname" << objname;
+                                    //temporary
+
+
+                                    if (objList.at(0) == "pd")
+                                    {
+                                        if (pdParserPrevWindow)
+                                        {
+                                            if (pdParserPrevWindow->canvas)
+                                            {
+                                                UIBox *b1 = 0;
+
+                                                b1 = pdParserPrevWindow->canvas->restoreSubcanvas(objname.toStdString(), pos, pdParserWindow->canvas->pdCanvas);
+                                                b1->cmSubcanvas = pdParserWindow;
+                                            }
                                         }
                                     }
+                                    else
+                                    {
+                                        qDebug("pd subpatch error");
+                                    }
+
+                                    //draw subpatch
+                                    pdParserWindow = pdParserPrevWindow;
+
+
+
                                 }
                                 else
                                 {
-                                    qDebug("pd subpatch error");
+                                    qDebug("list error");
                                 }
-
-                                //draw subpatch
-                                pdParserWindow = pdParserPrevWindow;
 
 
 
                             }
                             else
                             {
-                                qDebug("list error");
-                            }
+                                // add dummy object to keep connections
 
+                                if (list.size()>2)
+                                {
+                                    QString objname;
+                                    QString msgname;
+                                    QPoint pos;
 
+                                    pos.setX(((QString)list.value(1)).toFloat());
+                                    pos.setY(((QString)list.value(2)).toFloat());
 
-                        }
-                        else
-                        {
-                            // add dummy object to keep connections
+                                    //lol
+                                    QStringList objList = list;
+                                    objList.removeAt(1);
+                                    objList.removeAt(1);
 
-                            if (list.size()>2)
-                            {
-                                QString objname;
-                                QString msgname;
-                                QPoint pos;
+                                    objname = objList.join(" ");
 
-                                pos.setX(((QString)list.value(1)).toFloat());
-                                pos.setY(((QString)list.value(2)).toFloat());
+                                    qDebug() << "objname" << objname;
+                                    //temporary
+                                    //cmcanvas->createBox(objname.toStdString(), pos);
+                                    cmcanvas->createObject("ui.obj", objname.toStdString(), pos);
 
-                                //lol
-                                QStringList objList = list;
-                                objList.removeAt(1);
-                                objList.removeAt(1);
-
-                                objname = objList.join(" ");
-
-                                qDebug() << "objname" << objname;
-                                //temporary
-                                cmcanvas->createBox(objname.toStdString(), pos);
-
+                                }
 
                             }
-
-                        }
     }
 
     ////

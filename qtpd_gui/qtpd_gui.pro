@@ -38,13 +38,14 @@ SOURCES += main.cpp\
     objects/cmo_box.cpp \
     objects/cmo_float.cpp \
     objects/cmo_text.cpp \
+    objects/cmo_bang.cpp \
+    objects/cmo_toggle.cpp \
     cm_fileparser.cpp \
     cm_object.cpp \
     cm_sizebox.cpp \
     properties/cm_property.cpp \
     properties/cm_propertylist.cpp \
-    objects/cmo_bang.cpp \
-    objects/cmo_toggle.cpp
+
 
 HEADERS  += \
     cm_port.h \
@@ -60,6 +61,8 @@ HEADERS  += \
     objects/cmo_box.h \
     objects/cmo_float.h \
     objects/cmo_text.h \
+    objects/cmo_bang.h \
+    objects/cmo_toggle.h \
     cm_fileparser.h \
     cm_object.h \
     cm_preferences.h \
@@ -70,8 +73,7 @@ HEADERS  += \
     cm_sizebox.h \
     properties/cm_property.h \
     properties/cm_propertylist.h \
-    objects/cmo_bang.h \
-    objects/cmo_toggle.h
+
 
 FORMS    += \
     window/cm_basewindow.ui \
