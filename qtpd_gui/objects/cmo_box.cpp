@@ -4,7 +4,7 @@ cmo_box::cmo_box(UIObject *parent) : UIObject(parent)
 {
 
     this->setFixedHeight(20);
-    this->setMinimumWidth(22);
+    //this->setMinimumWidth(22);
     this->setMouseTracking(true);
 
     this->deselect();// = false;
@@ -33,6 +33,7 @@ cmo_box::cmo_box(UIObject *parent) : UIObject(parent)
     connect(this->editor_,&QLineEdit::editingFinished,this,&cmo_box::editorDone);
     connect(this->editor_,&QLineEdit::textEdited, this,&cmo_box::editorChanged);
 
+    this->setMinimumWidth(40);
 }
 
 

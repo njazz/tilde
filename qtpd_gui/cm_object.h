@@ -10,21 +10,15 @@
 namespace cm
 {
 
-////
-/// \brief object box size constraints
-///
-typedef enum
-{
-    os_Fixed,
-    os_FixedHeight,
-    os_Free
-} t_objectSize;
+
 
 ////
 /// \brief base class for all object boxes - standard and special
 ///
 class UIObject : public UIWidget
 {
+    //Q_OBJECT
+
 private:
     //temporary?
     void* pdObject_;
@@ -37,6 +31,7 @@ private:
     bool errorBox_;
 
     t_objectSize objectSizeMode;
+    int minimumBoxWidth_;
 
     SizeBox* sizeBox;
 
@@ -247,8 +242,17 @@ public:
 
     void resizeEvent(QResizeEvent *event)
     {
+
         this->sizeBox->move(this->width()-7, this->height()-7);
+
+        //todo fixed width
+        if (this->width()<this->minimumWidth()) this->setFixedWidth(this->minimumWidth());
+
+        this->setInletsPos();
+        this->setOutletsPos();
+
     }
+
 
     void enterEvent(QEvent*)
     {
@@ -262,11 +266,20 @@ public:
             this->sizeBox->hide();
     };
 
-public slots:
-    void resizeBox(int dx)
+
+    void setMinimumBoxWidth(int w)
     {
-        this->setFixedWidth(this->width() + dx);
-    };
+        this->minimumBoxWidth_ = w;
+    }
+    int minimumBoxWidth()
+    {
+        return this->minimumBoxWidth_;
+    }
+
+public slots:
+    void resizeBox(int dx);
+
+
 
 };
 

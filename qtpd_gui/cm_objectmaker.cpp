@@ -12,7 +12,7 @@ ObjectMaker::ObjectMaker(QLineEdit *parent) : QLineEdit(parent)
 
 }
 
-void  ObjectMaker::editorChanged()
+void ObjectMaker::editorChanged()
 {
     QFont myFont(PREF_STRING("Font"), 11);
     QFontMetrics fm(myFont);

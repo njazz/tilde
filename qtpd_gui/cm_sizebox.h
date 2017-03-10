@@ -7,18 +7,30 @@
 #include <QMouseEvent>
 #include <QDebug>
 
+#include <QObject>
 
 namespace cm{
+
+////
+/// \brief object box size constraints
+///
+typedef enum
+{
+    os_Fixed,
+    os_FixedHeight,
+    os_Free
+} t_objectSize;
+
 class SizeBox : public UIWidget
 {
-    Q_OBJECT;
+    Q_OBJECT
 
 private:
     int prevX;
-public:
-    //cm_sizebox();
-    explicit SizeBox(UIWidget *parent = 0);
 
+    t_objectSize* objectSizeType;
+public:
+    explicit SizeBox(UIWidget *parent = 0);
 
     void paintEvent(QPaintEvent*)   //QPaintEvent *pe
     {    QPainter p(this);
@@ -27,14 +39,12 @@ public:
          p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
           p.drawRect(0,0,this->width(),this->height());
 
-
     };
 
 
     void mousePressEvent(QMouseEvent *event)
     {
         this->setCursor(QCursor(Qt::SizeHorCursor));
-        //emit resizeStart();
 
         event->accept();
 
@@ -44,15 +54,14 @@ public:
     void mouseReleaseEvent(QMouseEvent *event)
     {
         this->setCursor(QCursor(Qt::ArrowCursor));
-        //emit resizeEnd();
 
         event->accept();
     };
 
     void mouseMoveEvent(QMouseEvent *ev)
     {
-        qDebug() << "resize" << (ev->x() - prevX);
-        emit this->resizeBoxEvent(ev->x() - this->prevX);
+        //qDebug() << "resize" << (ev->x() - prevX);
+        emit resizeBoxEvent(ev->x() - this->prevX);
 
     }
 

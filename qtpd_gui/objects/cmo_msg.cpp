@@ -3,7 +3,7 @@
 
 cmo_msg::cmo_msg(UIObject *parent) : UIObject(parent)
 {
-    this->setMinimumWidth(30);
+    //this->setMinimumWidth(30);
     this->setFixedSize(65,20);
 
     this->setMouseTracking(true);
@@ -23,6 +23,7 @@ cmo_msg::cmo_msg(UIObject *parent) : UIObject(parent)
     connect(this->editor_,&QLineEdit::editingFinished,this,&cmo_msg::editorDone);
     connect(this->editor_,&QLineEdit::textEdited, this,&cmo_msg::editorChanged);
 
+    this->setMinimumWidth(40);
 }
 
 ///////

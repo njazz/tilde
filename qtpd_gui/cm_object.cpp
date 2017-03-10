@@ -11,7 +11,13 @@ UIObject::UIObject(UIWidget *parent) : UIWidget(parent)
 
     this->setAttribute(Qt::WA_Hover, true);
 
-    connect(this->sizeBox,&SizeBox::resizeBoxEvent, this, &UIObject::resizeBox);
+   connect(this->sizeBox, &SizeBox::resizeBoxEvent, this, &UIObject::resizeBox);
+
 }
+
+void UIObject::resizeBox(int dx)
+{
+    this->setFixedWidth(this->width() + dx);
+};
 
 }

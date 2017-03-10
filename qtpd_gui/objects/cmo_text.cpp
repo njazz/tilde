@@ -3,7 +3,7 @@
 
 cmo_text::cmo_text(UIObject *parent) : UIObject(parent)
 {
-    this->setMinimumWidth(30);
+    //this->setMinimumWidth(30);
     this->setFixedSize(65,20);
 
     this->setMouseTracking(true);
@@ -22,7 +22,7 @@ cmo_text::cmo_text(UIObject *parent) : UIObject(parent)
 
     this->editor_->installEventFilter(this);
 
-
+    this->setMinimumWidth(80);
 
 }
 

@@ -2,6 +2,7 @@
 
 namespace cm
 {
+
 SizeBox::SizeBox(UIWidget *parent) : UIWidget(parent)
 {
     this->setFixedSize(7,7);
@@ -15,8 +16,7 @@ SizeBox::SizeBox(UIWidget *parent) : UIWidget(parent)
 
 }
 
-void SizeBox::resizeBoxEvent(int dx)
-{}
+
 
 }
 
