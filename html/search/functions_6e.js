@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['newbangbox',['newBangBox',['../classcm_1_1_patch_window.html#af0ca47c15f398734068542942e124044',1,'cm::PatchWindow']]],
   ['newcommentbox',['newCommentBox',['../classcm_1_1_patch_window.html#a3b9a4cfd55b5c9366cc426ab37a2d52b',1,'cm::PatchWindow']]],
   ['newfile',['newFile',['../classcm_1_1_base_menu.html#ada75cfe378867a4ceb65f297ceb3c2cd',1,'cm::BaseMenu']]],
   ['newfloatbox',['newFloatBox',['../classcm_1_1_patch_window.html#a03c5dda25eb6c158f460a9a298add88f',1,'cm::PatchWindow']]],
