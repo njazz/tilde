@@ -133,6 +133,7 @@ public:
 
         putBangAct = new QAction(tr("Bang"), this);
         putBangAct->setShortcut(tr("Ctrl+Shift+B"));
+        connect(putBangAct, &QAction::triggered, this, &PatchWindow::newBangBox);
 
         putToggleAct = new QAction(tr("Toggle"), this);
         putToggleAct->setShortcut(tr("Ctrl+Shift+T"));
@@ -346,6 +347,17 @@ public:
             UIObject *newTxt = this->canvas->createObject("ui.text","",QPoint(100,100));
             this->canvas->dragObject = newTxt;
             newTxt->show();
+        }
+
+    }
+
+    void newBangBox()
+    {
+        if (this->canvas->getEditMode() != em_Locked)
+        {
+            UIObject *newBng = this->canvas->createObject("ui.bang","",QPoint(100,100));
+            this->canvas->dragObject = newBng;
+            newBng->show();
         }
 
     }

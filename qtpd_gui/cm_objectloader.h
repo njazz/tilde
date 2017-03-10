@@ -55,8 +55,8 @@ public:
         this->addUIobject("ui.float", &UIFloat::createObject);
         this->addUIobject("ui.text", &UIText::createObject);
 
-//        this->addUIobject("ui.bang", &UIBang::createObject);
-//        this->addUIobject("ui.toggle", &UIToggle::createObject);
+        this->addUIobject("ui.bang", &UIBang::createObject);
+        this->addUIobject("ui.toggle", &UIToggle::createObject);
 
         //compatibility
         //this->addUIobject("msg", &cmo_msg::createObject);

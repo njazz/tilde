@@ -12,7 +12,7 @@ UIFloat::UIFloat(UIObject *parent) : UIObject(parent)
 
     this->deselect();
 
-    this->setMinimumWidth(45);
+    this->setMinimumBoxWidth(45);
 
 }
 

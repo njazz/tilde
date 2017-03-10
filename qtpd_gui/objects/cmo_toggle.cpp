@@ -25,7 +25,7 @@ UIToggle::UIToggle(UIObject *parent) : UIObject(parent)
     connect(this->editor_,&QLineEdit::editingFinished,this,&UIToggle::editorDone);
     connect(this->editor_,&QLineEdit::textEdited, this,&UIToggle::editorChanged);
 
-    this->setMinimumWidth(40);
+    this->setMinimumBoxWidth(20);
 }
 
 ///////

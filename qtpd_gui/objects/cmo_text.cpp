@@ -23,7 +23,7 @@ UIText::UIText(UIObject *parent) : UIObject(parent)
 
     this->editor_->installEventFilter(this);
 
-    this->setMinimumWidth(80);
+    this->setMinimumBoxWidth(80);
 
 }
 

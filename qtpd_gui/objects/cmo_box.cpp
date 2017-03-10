@@ -36,7 +36,7 @@ UIBox::UIBox(UIObject *parent) : UIObject(parent)
     connect(this->editor_,&QLineEdit::editingFinished,this,&UIBox::editorDone);
     connect(this->editor_,&QLineEdit::textEdited, this,&UIBox::editorChanged);
 
-    this->setMinimumWidth(40);
+    this->setMinimumBoxWidth(40);
 }
 
 

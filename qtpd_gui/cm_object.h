@@ -179,7 +179,7 @@ public:
         QFontMetrics fm(myFont);
 
         this->setFixedWidth((int)fm.width(QString(this->objectData.c_str())) + 5);
-        if (this->width()<40) this->setFixedWidth(40);
+        if (this->width()<this->minimumBoxWidth()) this->setFixedWidth(this->minimumBoxWidth());
     }
 
     ////
@@ -246,7 +246,7 @@ public:
         this->sizeBox->move(this->width()-7, this->height()-7);
 
         //todo fixed width
-        if (this->width()<this->minimumWidth()) this->setFixedWidth(this->minimumWidth());
+        if (this->width()<this->minimumBoxWidth()) this->setFixedWidth(this->minimumBoxWidth());
 
         this->setInletsPos();
         this->setOutletsPos();

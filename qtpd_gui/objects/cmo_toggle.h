@@ -1,5 +1,5 @@
-#ifndef CMO_MSG_H
-#define CMO_MSG_H
+#ifndef CMO_TOGGLE_H
+#define CMO_TOGGLE_H
 
 //#include <QWidget>
 
