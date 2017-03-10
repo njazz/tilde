@@ -307,7 +307,9 @@ public:
 
         if (this->canvas->getEditMode() != em_Locked)
         {
-            UIMessage *newMsg = this->canvas->createMsg("",QPoint(100,100));
+            //UIMessage *newMsg = this->canvas->createMsg("",QPoint(100,100));
+
+            UIObject *newMsg = this->canvas->createObject("ui.msg","",QPoint(100,100));
             this->canvas->dragObject = newMsg;
             newMsg->show();
         }
@@ -323,7 +325,9 @@ public:
 
         if (this->canvas->getEditMode() != em_Locked)
         {
-            UIFloat *newFlo = this->canvas->createFloat("0",QPoint(100,100));
+            //UIFloat *newFlo = this->canvas->createFloat("0",QPoint(100,100));
+
+            UIObject *newFlo = this->canvas->createObject("ui.float","0",QPoint(100,100));
             this->canvas->dragObject = newFlo;
             newFlo->show();
         }

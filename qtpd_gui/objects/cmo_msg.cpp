@@ -1,5 +1,7 @@
 #include "cmo_msg.h"
 
+namespace cm
+{
 
 UIMessage::UIMessage(UIObject *parent) : UIObject(parent)
 {
@@ -49,3 +51,4 @@ void  UIMessage::editorChanged()
 
 }
 
+}

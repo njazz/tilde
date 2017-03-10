@@ -10,7 +10,8 @@
 
 #include "cm_pdlink.h"
 
-using namespace cm;
+namespace cm
+{
 
 ////
 /// \brief gui object: float number box (ui.float)
@@ -26,7 +27,12 @@ private:
 public:
     explicit UIFloat(UIObject *parent = 0);
 
-    static UIObject* createObject(std::string objectData, UIWidget *parent=0) {};
+    static UIObject* createObject(std::string objectData, UIWidget *parent=0)
+    {
+        UIFloat* b = new UIFloat((UIObject*)parent);
+        b->setObjectData(objectData);
+        return (UIObject*) b;
+    };
 
     void paintEvent(QPaintEvent *)
     {    QPainter p(this);
@@ -191,6 +197,7 @@ signals:
 private slots:
 
 };
+}
 
 
 #endif // cmo_float_H

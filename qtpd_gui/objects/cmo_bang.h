@@ -10,7 +10,8 @@
 
 #include "cm_pdlink.h"
 
-using namespace cm;
+namespace cm
+{
 
 ////
 /// \brief gui object: message box (ui.msg)
@@ -27,7 +28,12 @@ private:
 public:
     explicit UIBang(UIObject *parent = 0);
 
-    static UIObject* createObject(std::string objectData, UIWidget *parent=0) {};
+    static UIObject* createObject(std::string objectData, UIWidget *parent=0)
+    {
+        UIBang* b = new UIBang((UIObject*)parent);
+        b->setObjectData(objectData);
+        return (UIObject*) b;
+    };
 
     void paintEvent(QPaintEvent *)
     {    QPainter p(this);
@@ -55,14 +61,14 @@ public:
                     p.setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
                 }
                 else
-                if (this->clicked_)
-                {
-                    p.setPen(QPen(QColor(0, 192, 255), 4, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
-                }
-                else
-                {
-                    p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-                }
+                    if (this->clicked_)
+                    {
+                        p.setPen(QPen(QColor(0, 192, 255), 4, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+                    }
+                    else
+                    {
+                        p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+                    }
 
                  p.drawPolygon(poly);
 
@@ -141,7 +147,7 @@ public:
         }
         event->ignore();
 
-       //todo move!
+        //todo move!
         if (this->getEditMode() != em_Unlocked)
         {
             this->setCursor(QCursor(Qt::PointingHandCursor));
@@ -224,5 +230,6 @@ private slots:
 
 };
 
+}
 
 #endif // CMO_MSG_H

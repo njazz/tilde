@@ -1,6 +1,10 @@
 #include "cmo_bang.h"
 
 
+namespace cm
+{
+
+
 UIBang::UIBang(UIObject *parent) : UIObject(parent)
 {
     this->setFixedSize(65,20);
@@ -45,6 +49,8 @@ void  UIBang::editorChanged()
     new_w = (new_w<25) ? 25 : new_w;
     this->setFixedWidth(new_w);
     this->editor_->setFixedWidth(this->width()-5);
+
+}
 
 }
 

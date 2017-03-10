@@ -1,5 +1,7 @@
 #include "cmo_toggle.h"
 
+namespace cm
+{
 
 UIToggle::UIToggle(UIObject *parent) : UIObject(parent)
 {
@@ -46,6 +48,8 @@ void  UIToggle::editorChanged()
     new_w = (new_w<25) ? 25 : new_w;
     this->setFixedWidth(new_w);
     this->editor_->setFixedWidth(this->width()-5);
+
+}
 
 }
 

@@ -15,7 +15,8 @@
 #include <QMainWindow>
 #include <QLineEdit>
 
-using namespace cm;
+namespace cm
+{
 
 ////
 /// \brief gui object: standard object box
@@ -31,7 +32,58 @@ public:
     explicit UIBox(UIObject* parent = 0);
     ~UIBox();
 
-    static UIObject* createObject(std::string objectData, UIWidget *parent=0) {};
+    static UIObject* createObject(std::string objectData,  UIWidget *parent=0)
+    {
+        //TODO fix all constructors
+        t_canvas* pd_Canvas;
+
+        UIBox* b = new UIBox((UIObject*)parent);
+        b->setObjectData(objectData);
+
+        QStringList list = QString(objectData.c_str()).split(" ");
+        const char * obj_name = list.at(1).toStdString().c_str();
+
+
+        t_object* new_obj = 0 ;
+        int in_c=0, out_c=0;
+
+        if (!pd_Canvas)
+        {
+            qDebug("bad pd canvas instance");
+            b->setErrorBox(true);
+        }
+        else
+        {
+            //temp pos = 0;
+            QPoint pos = QPoint(0,0);
+            new_obj = cmp_create_object(pd_Canvas,(char*)obj_name,pos.x(), pos.y());
+        }
+
+        if (new_obj)
+        {
+            in_c = cmp_get_inlet_count(new_obj);
+            out_c = cmp_get_outlet_count(new_obj);
+
+            qDebug ("created object %s ins %i outs %i ptr %lu", obj_name, in_c, out_c, (long)new_obj);
+
+            b->setPdObject(new_obj);
+
+        }
+        else
+        {
+            qDebug("Error: no such object %s", obj_name);
+            b->setErrorBox(true);
+            in_c = 1; out_c = 1;
+
+        }
+
+        for (int i=0;i<in_c;i++)
+            b->addInlet();
+        for (int i=0;i<out_c;i++)
+            b->addOutlet();
+
+        return (UIObject*) b;
+    };
 
 
     ////
@@ -157,5 +209,7 @@ private slots:
     void editorChanged();
 
 };
+
+}
 
 #endif // CM_BOX_H

@@ -1,6 +1,7 @@
 #include "cmo_text.h"
 
-
+namespace cm
+{
 UIText::UIText(UIObject *parent) : UIObject(parent)
 {
     //this->setMinimumWidth(30);
@@ -59,3 +60,4 @@ void  UIText::editorChanged()
     this->editor_->setFixedHeight(this->height()-2);
 }
 
+}

@@ -14,6 +14,9 @@
 #include "cmo_float.h"
 #include "cmo_text.h"
 
+#include "cmo_bang.h"
+#include "cmo_toggle.h"
+
 namespace cm
 {
 typedef UIObject* (*cmObjectConstructor)(std::string objectData, UIWidget *parent);
@@ -47,13 +50,13 @@ public:
     void loadObjects()
     {
         //temporary
-        //this->addUIobject("ui.obj", &cmo_box::createObject);
+        this->addUIobject("ui.obj", &UIBox::createObject);
         this->addUIobject("ui.msg", &UIMessage::createObject);
         this->addUIobject("ui.float", &UIFloat::createObject);
         this->addUIobject("ui.text", &UIText::createObject);
 
-        this->addUIobject("ui.bang", &UIText::createObject);
-        this->addUIobject("ui.toggle", &UIText::createObject);
+//        this->addUIobject("ui.bang", &UIBang::createObject);
+//        this->addUIobject("ui.toggle", &UIToggle::createObject);
 
         //compatibility
         //this->addUIobject("msg", &cmo_msg::createObject);

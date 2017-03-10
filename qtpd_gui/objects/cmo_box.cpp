@@ -1,5 +1,8 @@
 #include "cmo_box.h"
 
+
+namespace cm
+{
 UIBox::UIBox(UIObject *parent) : UIObject(parent)
 {
 
@@ -75,5 +78,7 @@ void  UIBox::editorChanged()
     //
     this->setInletsPos();
     this->setOutletsPos();
+
+}
 
 }
