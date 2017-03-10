@@ -99,6 +99,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
+<a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">cm::SizeBox Class Reference</div>  </div>
@@ -118,10 +119,16 @@ Inheritance diagram for cm::SizeBox:</div>
 
 <p><a href="classcm_1_1_size_box-members.html">List of all members.</a></p>
 <table class="memberdecls">
+<tr><td colspan="2"><h2><a name="signals"></a>
+Signals</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_size_box.html#ad71317accd1fc5b3e3ddacb5eff2bb05">resizeBoxEvent</a> (int dx)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_size_box.html#ad7eea41674442aebf6c5659411b7448a">SizeBox</a> (<a class="el" href="classcm_1_1_u_i_widget.html">UIWidget</a> *parent=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_size_box.html#a01444b5d54f1f64197c1ec22680d1727">paintEvent</a> (QPaintEvent *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_size_box.html#a254381a9116f3cfe97796c01dce69c01">mousePressEvent</a> (QMouseEvent *event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_size_box.html#a80122a2072ba6318983a6b401b508068">mouseReleaseEvent</a> (QMouseEvent *event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_size_box.html#a58d6bc84dbaaee7f57c33de86b525da1">mouseMoveEvent</a> (QMouseEvent *ev)</td></tr>
 </table>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ad7eea41674442aebf6c5659411b7448a"></a><!-- doxytag: member="cm::SizeBox::SizeBox" ref="ad7eea41674442aebf6c5659411b7448a" args="(UIWidget *parent=0)" -->
@@ -142,6 +149,57 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a58d6bc84dbaaee7f57c33de86b525da1"></a><!-- doxytag: member="cm::SizeBox::mouseMoveEvent" ref="a58d6bc84dbaaee7f57c33de86b525da1" args="(QMouseEvent *ev)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcm_1_1_size_box.html#a58d6bc84dbaaee7f57c33de86b525da1">cm::SizeBox::mouseMoveEvent</a> </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *&#160;</td>
+          <td class="paramname"><em>ev</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a254381a9116f3cfe97796c01dce69c01"></a><!-- doxytag: member="cm::SizeBox::mousePressEvent" ref="a254381a9116f3cfe97796c01dce69c01" args="(QMouseEvent *event)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcm_1_1_size_box.html#a254381a9116f3cfe97796c01dce69c01">cm::SizeBox::mousePressEvent</a> </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a80122a2072ba6318983a6b401b508068"></a><!-- doxytag: member="cm::SizeBox::mouseReleaseEvent" ref="a80122a2072ba6318983a6b401b508068" args="(QMouseEvent *event)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcm_1_1_size_box.html#a80122a2072ba6318983a6b401b508068">cm::SizeBox::mouseReleaseEvent</a> </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a01444b5d54f1f64197c1ec22680d1727"></a><!-- doxytag: member="cm::SizeBox::paintEvent" ref="a01444b5d54f1f64197c1ec22680d1727" args="(QPaintEvent *)" -->
 <div class="memitem">
 <div class="memproto">
@@ -152,6 +210,23 @@ Public Member Functions</h2></td></tr>
           <td class="paramtype">QPaintEvent *&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad71317accd1fc5b3e3ddacb5eff2bb05"></a><!-- doxytag: member="cm::SizeBox::resizeBoxEvent" ref="ad71317accd1fc5b3e3ddacb5eff2bb05" args="(int dx)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcm_1_1_size_box.html#ad71317accd1fc5b3e3ddacb5eff2bb05">cm::SizeBox::resizeBoxEvent</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dx</em></td><td>)</td>
+          <td><code> [signal]</code></td>
         </tr>
       </table>
 </div>
@@ -181,7 +256,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 10 2017 07:10:19 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 10 2017 11:25:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
