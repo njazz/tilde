@@ -681,6 +681,15 @@ public:
     {
         if (obj1->getPdObject() && obj2->getPdObject())
         {
+            if (((cmo_box*)obj1)->isErrorBox())
+            {
+                //create dummy inlets / outlets
+            };
+            if (((cmo_box*)obj2)->isErrorBox())
+            {
+                //create dummy inlets / outlets
+            };
+
             Port* outport = ((cmo_box*)obj1)->getOutletAt(outlet);
             Port* inport = ((cmo_box*)obj2)->getInletAt(inlet);
 

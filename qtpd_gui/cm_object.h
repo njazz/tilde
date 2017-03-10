@@ -247,7 +247,19 @@ public:
 
     void resizeEvent(QResizeEvent *event)
     {
-        this->sizeBox->move(this->width()-5, this->height()-5);
+        this->sizeBox->move(this->width()-7, this->height()-7);
+    }
+
+    void enterEvent(QEvent*)
+    {
+        if (this->getEditMode() ==  em_Unlocked)
+            this->sizeBox->show();
+    }
+
+    void leaveEvent(QEvent*)
+    {
+        if (this->getEditMode() ==  em_Unlocked)
+            this->sizeBox->hide();
     }
 };
 

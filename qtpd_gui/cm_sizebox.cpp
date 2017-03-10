@@ -4,9 +4,24 @@ namespace cm
 {
 SizeBox::SizeBox(UIWidget *parent) : UIWidget(parent)
 {
-    this->setFixedSize(5,5);
+    this->setFixedSize(7,7);
+
+    //
+
+    QPalette Pal(palette());
+    Pal.setColor(QPalette::Background, QColor(255,255,255));
+    this->setAutoFillBackground(true);
+    this->setPalette(Pal);
 
 }
+
+void SizeBox::resizeStart()
+{}
+
+void SizeBox::resizeEnd()
+{}
+
+
 
 }
 

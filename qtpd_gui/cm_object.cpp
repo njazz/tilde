@@ -7,7 +7,11 @@ UIObject::UIObject(UIWidget *parent) : UIWidget(parent)
     this->errorBox_ = false;
 
     this->sizeBox = new SizeBox(this);
-    this->sizeBox->show();
+    this->sizeBox->hide();
+
+    this->setAttribute(Qt::WA_Hover, true);
+
+
 }
 
 }
