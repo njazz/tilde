@@ -157,18 +157,10 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">mouse up handling  <a href="#abcc8fd79096b6d4fd64b143e17f127da"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a778eed76ee578ce93ab149d489147760">deselectBoxes</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">deselect all object boxes  <a href="#a778eed76ee578ce93ab149d489147760"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcmo__box.html">cmo_box</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#ac20a5df02fb0f848d14ac7af0225dd90">restoreSubcanvas</a> (std::string pdObjectName, QPoint pos, t_canvas *canvas)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">restore "pd" object when loading from file  <a href="#ac20a5df02fb0f848d14ac7af0225dd90"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcmo__box.html">cmo_box</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a7ca8ba44895120ddec3b02ae347d51af">createBox</a> (std::string pdObjectName, QPoint pos)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">create new object box  <a href="#a7ca8ba44895120ddec3b02ae347d51af"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcmo__msg.html">cmo_msg</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#ac145953e7bd540bd2f387086d4184b80">createMsg</a> (std::string message, QPoint pos)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">create new message box (ui.msg now)  <a href="#ac145953e7bd540bd2f387086d4184b80"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcmo__float.html">cmo_float</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#ada72731cdfbcd67b38ee77ffb723d92c">createFloat</a> (std::string message, QPoint pos)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">create new float box (ui.msg yet)  <a href="#ada72731cdfbcd67b38ee77ffb723d92c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcm_1_1_u_i_box.html">UIBox</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a272a3024a0662b07f91f0dbc2ae57fdb">restoreSubcanvas</a> (std::string pdObjectName, QPoint pos, t_canvas *canvas)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">restore "pd" object when loading from file  <a href="#a272a3024a0662b07f91f0dbc2ae57fdb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a4300009cd6b822e26b672c7881fee4d0">createObject</a> (std::string uiObjectName, std::string objectData, QPoint pos)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">prototype for universal object 'constructor'  <a href="#a4300009cd6b822e26b672c7881fee4d0"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcmo__text.html">cmo_text</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#ad10364932c20a325e48884a8a8b2d5e9">createText</a> (std::string message, QPoint pos)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">create new comment box (ui only)  <a href="#ad10364932c20a325e48884a8a8b2d5e9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a24db3dbfed7d2801f397a560e3eb3729">patchcord</a> (<a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *obj1, int outlet, <a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *obj2, int inlet)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates patchcord  <a href="#a24db3dbfed7d2801f397a560e3eb3729"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a7b7f2034b77ae87e3adc8627e02ee77e">patchcord</a> (<a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *obj1, <a class="el" href="classcm_1_1_u_i_widget.html">UIWidget</a> *outport, <a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *obj2, <a class="el" href="classcm_1_1_u_i_widget.html">UIWidget</a> *inport)</td></tr>
@@ -285,117 +277,6 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a7ca8ba44895120ddec3b02ae347d51af"></a><!-- doxytag: member="cm::Canvas::createBox" ref="a7ca8ba44895120ddec3b02ae347d51af" args="(std::string pdObjectName, QPoint pos)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classcmo__box.html">cmo_box</a>* <a class="el" href="classcm_1_1_canvas.html#a7ca8ba44895120ddec3b02ae347d51af">cm::Canvas::createBox</a> </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>pdObjectName</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">QPoint&#160;</td>
-          <td class="paramname"><em>pos</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>create new object box </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pdObjectName</td><td>TODO rename. object name and arguments </td></tr>
-    <tr><td class="paramname">pos</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>pointer to cm_box </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ada72731cdfbcd67b38ee77ffb723d92c"></a><!-- doxytag: member="cm::Canvas::createFloat" ref="ada72731cdfbcd67b38ee77ffb723d92c" args="(std::string message, QPoint pos)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classcmo__float.html">cmo_float</a>* <a class="el" href="classcm_1_1_canvas.html#ada72731cdfbcd67b38ee77ffb723d92c">cm::Canvas::createFloat</a> </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>message</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">QPoint&#160;</td>
-          <td class="paramname"><em>pos</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>create new float box (ui.msg yet) </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pdObjectName</td><td>TODO rename. object name and arguments </td></tr>
-    <tr><td class="paramname">pos</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>pointer to cm_box </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ac145953e7bd540bd2f387086d4184b80"></a><!-- doxytag: member="cm::Canvas::createMsg" ref="ac145953e7bd540bd2f387086d4184b80" args="(std::string message, QPoint pos)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classcmo__msg.html">cmo_msg</a>* <a class="el" href="classcm_1_1_canvas.html#ac145953e7bd540bd2f387086d4184b80">cm::Canvas::createMsg</a> </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>message</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">QPoint&#160;</td>
-          <td class="paramname"><em>pos</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>create new message box (ui.msg now) </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pdObjectName</td><td>TODO rename. object name and arguments </td></tr>
-    <tr><td class="paramname">pos</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>pointer to cm_box </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="a4300009cd6b822e26b672c7881fee4d0"></a><!-- doxytag: member="cm::Canvas::createObject" ref="a4300009cd6b822e26b672c7881fee4d0" args="(std::string uiObjectName, std::string objectData, QPoint pos)" -->
 <div class="memitem">
 <div class="memproto">
@@ -436,43 +317,6 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ad10364932c20a325e48884a8a8b2d5e9"></a><!-- doxytag: member="cm::Canvas::createText" ref="ad10364932c20a325e48884a8a8b2d5e9" args="(std::string message, QPoint pos)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classcmo__text.html">cmo_text</a>* <a class="el" href="classcm_1_1_canvas.html#ad10364932c20a325e48884a8a8b2d5e9">cm::Canvas::createText</a> </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>message</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">QPoint&#160;</td>
-          <td class="paramname"><em>pos</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>create new comment box (ui only) </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pdObjectName</td><td>TODO rename. object name and arguments </td></tr>
-    <tr><td class="paramname">pos</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>pointer to cm_box </dd></dl>
 
 </div>
 </div>
@@ -955,12 +799,12 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ac20a5df02fb0f848d14ac7af0225dd90"></a><!-- doxytag: member="cm::Canvas::restoreSubcanvas" ref="ac20a5df02fb0f848d14ac7af0225dd90" args="(std::string pdObjectName, QPoint pos, t_canvas *canvas)" -->
+<a class="anchor" id="a272a3024a0662b07f91f0dbc2ae57fdb"></a><!-- doxytag: member="cm::Canvas::restoreSubcanvas" ref="a272a3024a0662b07f91f0dbc2ae57fdb" args="(std::string pdObjectName, QPoint pos, t_canvas *canvas)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcmo__box.html">cmo_box</a>* <a class="el" href="classcm_1_1_canvas.html#ac20a5df02fb0f848d14ac7af0225dd90">cm::Canvas::restoreSubcanvas</a> </td>
+          <td class="memname"><a class="el" href="classcm_1_1_u_i_box.html">UIBox</a>* <a class="el" href="classcm_1_1_canvas.html#a272a3024a0662b07f91f0dbc2ae57fdb">cm::Canvas::restoreSubcanvas</a> </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>pdObjectName</em>, </td>
@@ -1313,7 +1157,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 10 2017 11:25:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 10 2017 22:17:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -116,11 +116,13 @@ Inheritance diagram for cm::UIObject:</div>
  <div class="center">
   <img src="classcm_1_1_u_i_object.png" usemap="#cm::UIObject_map" alt=""/>
   <map id="cm::UIObject_map" name="cm::UIObject_map">
-<area href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas" alt="cm::UIWidget" shape="rect" coords="139,0,222,24"/>
-<area href="classcmo__box.html" title="gui object: standard object box" alt="cmo_box" shape="rect" coords="0,112,83,136"/>
-<area href="classcmo__float.html" title="gui object: float number box (ui.float)" alt="cmo_float" shape="rect" coords="93,112,176,136"/>
-<area href="classcmo__msg.html" title="gui object: message box (ui.msg)" alt="cmo_msg" shape="rect" coords="186,112,269,136"/>
-<area href="classcmo__text.html" title="gui object: comment box (ui.text)" alt="cmo_text" shape="rect" coords="279,112,362,136"/>
+<area href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas" alt="cm::UIWidget" shape="rect" coords="265,0,361,24"/>
+<area href="classcm_1_1_u_i_bang.html" title="gui object: message box (ui.msg)" alt="cm::UIBang" shape="rect" coords="0,112,96,136"/>
+<area href="classcm_1_1_u_i_box.html" title="gui object: standard object box" alt="cm::UIBox" shape="rect" coords="106,112,202,136"/>
+<area href="classcm_1_1_u_i_float.html" title="gui object: float number box (ui.float)" alt="cm::UIFloat" shape="rect" coords="212,112,308,136"/>
+<area href="classcm_1_1_u_i_message.html" title="gui object: message box (ui.msg)" alt="cm::UIMessage" shape="rect" coords="318,112,414,136"/>
+<area href="classcm_1_1_u_i_text.html" title="gui object: comment box (ui.text)" alt="cm::UIText" shape="rect" coords="424,112,520,136"/>
+<area href="classcm_1_1_u_i_toggle.html" title="gui object: message box (ui.msg)" alt="cm::UIToggle" shape="rect" coords="530,112,626,136"/>
 </map>
  </div></div>
 
@@ -163,6 +165,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#a3dc91c26e2de5f53d198e1a9cb31a742">resizeEvent</a> (QResizeEvent *event)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#a761d8689150eb45689b8da5f3630d211">enterEvent</a> (QEvent *)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#afeaaa5b35138b22e432581c42b9647aa">leaveEvent</a> (QEvent *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#ae37d466dcab243be17de1b19091713ef">setMinimumBoxWidth</a> (int w)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#af92bb5f80600a5e1656a0ed069865c19">minimumBoxWidth</a> ()</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>base class for all object boxes - standard and special </p>
@@ -341,7 +345,7 @@ Public Member Functions</h2></td></tr>
 <p>gui-only objects can ovverride it with function that returns 0 </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Reimplemented in <a class="el" href="classcmo__text.html#a8e9c8a6936c890376733392e532c6f29">cmo_text</a>.</p>
+<p>Reimplemented in <a class="el" href="classcm_1_1_u_i_text.html#a001605a0a1c806951865709bc392299a">cm::UIText</a>.</p>
 
 </div>
 </div>
@@ -362,7 +366,7 @@ Public Member Functions</h2></td></tr>
 <p>returns object's text for client-based file saving </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Reimplemented in <a class="el" href="classcmo__msg.html#a2da4aed3ba9ef2cabdb9aff01861ea4e">cmo_msg</a>, <a class="el" href="classcmo__float.html#a32c43a289b0e426a68c7a276f6b3b60b">cmo_float</a>, and <a class="el" href="classcmo__text.html#adbf06526a74d47e4bf24f750d9cb0d53">cmo_text</a>.</p>
+<p>Reimplemented in <a class="el" href="classcm_1_1_u_i_message.html#ad5dba4e2bcf56289c4bc44f6ffa7588f">cm::UIMessage</a>, <a class="el" href="classcm_1_1_u_i_float.html#a54b0dc86dc39ea9e658b49b3a1be59bc">cm::UIFloat</a>, <a class="el" href="classcm_1_1_u_i_bang.html#a6d2be36c3cd5e872b32066a4e5c04891">cm::UIBang</a>, <a class="el" href="classcm_1_1_u_i_toggle.html#a6e36333a6bfb86fe0cc3d946cacbc38f">cm::UIToggle</a>, and <a class="el" href="classcm_1_1_u_i_text.html#ae6d4537ddefd8eb22abeee911edc6d8d">cm::UIText</a>.</p>
 
 </div>
 </div>
@@ -402,6 +406,22 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="af92bb5f80600a5e1656a0ed069865c19"></a><!-- doxytag: member="cm::UIObject::minimumBoxWidth" ref="af92bb5f80600a5e1656a0ed069865c19" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classcm_1_1_u_i_object.html#af92bb5f80600a5e1656a0ed069865c19">cm::UIObject::minimumBoxWidth</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a7c02ba26e6840fe09773e82e35137f83"></a><!-- doxytag: member="cm::UIObject::resizeBox" ref="a7c02ba26e6840fe09773e82e35137f83" args="(int dx)" -->
 <div class="memitem">
 <div class="memproto">
@@ -411,7 +431,7 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>dx</em></td><td>)</td>
-          <td><code> [inline, slot]</code></td>
+          <td><code> [slot]</code></td>
         </tr>
       </table>
 </div>
@@ -515,6 +535,23 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ae37d466dcab243be17de1b19091713ef"></a><!-- doxytag: member="cm::UIObject::setMinimumBoxWidth" ref="ae37d466dcab243be17de1b19091713ef" args="(int w)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcm_1_1_u_i_object.html#ae37d466dcab243be17de1b19091713ef">cm::UIObject::setMinimumBoxWidth</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>w</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a42cd816b2e061057104f1e1ade6b8a71"></a><!-- doxytag: member="cm::UIObject::setObjectData" ref="a42cd816b2e061057104f1e1ade6b8a71" args="(std::string objData)" -->
 <div class="memitem">
 <div class="memproto">
@@ -585,7 +622,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classcmo__msg.html#aae56b316e3178314807f700ac50785de">cmo_msg</a>, and <a class="el" href="classcmo__float.html#a5a86972d1cfe55e6c4b7dd0fab6a6b05">cmo_float</a>.</p>
+<p>Reimplemented in <a class="el" href="classcm_1_1_u_i_message.html#a3b8286f1ff1e80796962cb1db646f353">cm::UIMessage</a>, <a class="el" href="classcm_1_1_u_i_float.html#ab6ef218accfe836599a188c1d5045134">cm::UIFloat</a>, <a class="el" href="classcm_1_1_u_i_bang.html#a2fb846e6ddde33f6d1af7876a7f38239">cm::UIBang</a>, and <a class="el" href="classcm_1_1_u_i_toggle.html#a2638be20a2c6bf9e9d46a4639a6329b2">cm::UIToggle</a>.</p>
 
 </div>
 </div>
@@ -611,7 +648,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 10 2017 11:25:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 10 2017 22:17:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

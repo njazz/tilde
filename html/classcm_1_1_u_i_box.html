@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>qtpd: cmo_box Class Reference</title>
+<title>qtpd: cm::UIBox Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -76,6 +76,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><a class="el" href="namespacecm.html">cm</a>      </li>
+      <li class="navelem"><a class="el" href="classcm_1_1_u_i_box.html">UIBox</a>      </li>
+    </ul>
+  </div>
 </div>
 <div class="header">
   <div class="summary">
@@ -84,61 +104,61 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a>  </div>
   <div class="headertitle">
-<div class="title">cmo_box Class Reference</div>  </div>
+<div class="title">cm::UIBox Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="cmo_box" --><!-- doxytag: inherits="cm::UIObject" -->
+<!-- doxytag: class="cm::UIBox" --><!-- doxytag: inherits="cm::UIObject" -->
 <p>gui object: standard object box  
- <a href="classcmo__box.html#details">More...</a></p>
+ <a href="classcm_1_1_u_i_box.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="cmo__box_8h_source.html">cmo_box.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for cmo_box:</div>
+Inheritance diagram for cm::UIBox:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="classcmo__box.png" usemap="#cmo_box_map" alt=""/>
-  <map id="cmo_box_map" name="cmo_box_map">
+  <img src="classcm_1_1_u_i_box.png" usemap="#cm::UIBox_map" alt=""/>
+  <map id="cm::UIBox_map" name="cm::UIBox_map">
 <area href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special" alt="cm::UIObject" shape="rect" coords="0,56,83,80"/>
 <area href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas" alt="cm::UIWidget" shape="rect" coords="0,0,83,24"/>
 </map>
  </div></div>
 
-<p><a href="classcmo__box-members.html">List of all members.</a></p>
+<p><a href="classcm_1_1_u_i_box-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="signals"></a>
 Signals</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__box.html#a9b41f187fd2d94281e2b387a30e82928">mouseMoved</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__box.html#a5a1f2e26756e3ae6b3be49de97a656e9">rightClicked</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_box.html#ac2ecf3b12674a3dd0630e920c5555ef2">mouseMoved</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_box.html#a14803a7d1f3626fc5d63016a32c16de7">rightClicked</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__box.html#a54a0ff511401f76155ce4e157578b61d">cmo_box</a> (<a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *parent=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__box.html#acc9cf45e6c7f192b2eb2a83c9b36327f">~cmo_box</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__box.html#a14fbae4adba16f0c1927b01f28f04bab">paintEvent</a> (QPaintEvent *)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">paint event  <a href="#a14fbae4adba16f0c1927b01f28f04bab"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__box.html#a245d3cb6652ead56b300aa7ff96a9037">mousePressEvent</a> (QMouseEvent *ev)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">mouse down  <a href="#a245d3cb6652ead56b300aa7ff96a9037"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__box.html#add133ab45184420c7a66e752d200c9d3">mouseReleaseEvent</a> (QMouseEvent *)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">mouse up  <a href="#add133ab45184420c7a66e752d200c9d3"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__box.html#ad57e410a01d1367c86434768149f8a71">mouseMoveEvent</a> (QMouseEvent *event)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">mouse move  <a href="#ad57e410a01d1367c86434768149f8a71"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__box.html#a3685f3b0db2482c683ddbefeaf758a4b">setPdMessage</a> (std::string message)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_box.html#ad34d2a1404481b6fe28fb97b8abbb7b3">UIBox</a> (<a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_box.html#a519ac3a4055a9decaac1776984785e9c">~UIBox</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_box.html#a281b9606d90880fc45ddb298d94166a5">paintEvent</a> (QPaintEvent *)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">paint event  <a href="#a281b9606d90880fc45ddb298d94166a5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_box.html#a43b4fb67a390ae2e190a9bb09b0a1177">mousePressEvent</a> (QMouseEvent *ev)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">mouse down  <a href="#a43b4fb67a390ae2e190a9bb09b0a1177"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_box.html#ab09140d36bee1bfc88a72db07c4ddf18">mouseReleaseEvent</a> (QMouseEvent *)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">mouse up  <a href="#ab09140d36bee1bfc88a72db07c4ddf18"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_box.html#ae9586a00cb1f7209d753e4203d7da9ef">mouseMoveEvent</a> (QMouseEvent *event)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">mouse move  <a href="#ae9586a00cb1f7209d753e4203d7da9ef"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_box.html#a813aec9940426c4cde3e86e25fc3c2aa">setPdMessage</a> (std::string message)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__box.html#a690671c2ac72c6b2ef64f88b0be7cdb1">createObject</a> (std::string objectData, <a class="el" href="classcm_1_1_u_i_widget.html">UIWidget</a> *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_box.html#a88cb253bdca57d2e41db6d3434f281b7">createObject</a> (std::string objectData, t_canvas *pd_Canvas, <a class="el" href="classcm_1_1_u_i_widget.html">UIWidget</a> *parent=0)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">QMainWindow *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcmo__box.html#a8cf4af6a80932be8b2fe736c2d7140c4">cmSubcanvas</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">temporary - make separate ui class for subpatches?  <a href="#a8cf4af6a80932be8b2fe736c2d7140c4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QMainWindow *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_box.html#ab997404a419ad6f86a5941013c8ea3bb">cmSubcanvas</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">temporary - make separate ui class for subpatches?  <a href="#ab997404a419ad6f86a5941013c8ea3bb"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>gui object: standard object box </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a54a0ff511401f76155ce4e157578b61d"></a><!-- doxytag: member="cmo_box::cmo_box" ref="a54a0ff511401f76155ce4e157578b61d" args="(UIObject *parent=0)" -->
+<a class="anchor" id="ad34d2a1404481b6fe28fb97b8abbb7b3"></a><!-- doxytag: member="cm::UIBox::UIBox" ref="ad34d2a1404481b6fe28fb97b8abbb7b3" args="(UIObject *parent=0)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcmo__box.html#a54a0ff511401f76155ce4e157578b61d">cmo_box::cmo_box</a> </td>
+          <td class="memname"><a class="el" href="classcm_1_1_u_i_box.html#ad34d2a1404481b6fe28fb97b8abbb7b3">cm::UIBox::UIBox</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *&#160;</td>
           <td class="paramname"><em>parent</em> = <code>0</code></td><td>)</td>
@@ -150,12 +170,12 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="acc9cf45e6c7f192b2eb2a83c9b36327f"></a><!-- doxytag: member="cmo_box::~cmo_box" ref="acc9cf45e6c7f192b2eb2a83c9b36327f" args="()" -->
+<a class="anchor" id="a519ac3a4055a9decaac1776984785e9c"></a><!-- doxytag: member="cm::UIBox::~UIBox" ref="a519ac3a4055a9decaac1776984785e9c" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcmo__box.html#acc9cf45e6c7f192b2eb2a83c9b36327f">cmo_box::~cmo_box</a> </td>
+          <td class="memname"><a class="el" href="classcm_1_1_u_i_box.html#a519ac3a4055a9decaac1776984785e9c">cm::UIBox::~UIBox</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -167,15 +187,21 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a690671c2ac72c6b2ef64f88b0be7cdb1"></a><!-- doxytag: member="cmo_box::createObject" ref="a690671c2ac72c6b2ef64f88b0be7cdb1" args="(std::string objectData, UIWidget *parent=0)" -->
+<a class="anchor" id="a88cb253bdca57d2e41db6d3434f281b7"></a><!-- doxytag: member="cm::UIBox::createObject" ref="a88cb253bdca57d2e41db6d3434f281b7" args="(std::string objectData, t_canvas *pd_Canvas, UIWidget *parent=0)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classcm_1_1_u_i_object.html">UIObject</a>* <a class="el" href="classcmo__box.html#a690671c2ac72c6b2ef64f88b0be7cdb1">cmo_box::createObject</a> </td>
+          <td class="memname">static <a class="el" href="classcm_1_1_u_i_object.html">UIObject</a>* <a class="el" href="classcm_1_1_u_i_box.html#a88cb253bdca57d2e41db6d3434f281b7">cm::UIBox::createObject</a> </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>objectData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">t_canvas *&#160;</td>
+          <td class="paramname"><em>pd_Canvas</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -194,12 +220,12 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a9b41f187fd2d94281e2b387a30e82928"></a><!-- doxytag: member="cmo_box::mouseMoved" ref="a9b41f187fd2d94281e2b387a30e82928" args="()" -->
+<a class="anchor" id="ac2ecf3b12674a3dd0630e920c5555ef2"></a><!-- doxytag: member="cm::UIBox::mouseMoved" ref="ac2ecf3b12674a3dd0630e920c5555ef2" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classcmo__box.html#a9b41f187fd2d94281e2b387a30e82928">cmo_box::mouseMoved</a> </td>
+          <td class="memname">void <a class="el" href="classcm_1_1_u_i_box.html#ac2ecf3b12674a3dd0630e920c5555ef2">cm::UIBox::mouseMoved</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [signal]</code></td>
@@ -210,12 +236,12 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad57e410a01d1367c86434768149f8a71"></a><!-- doxytag: member="cmo_box::mouseMoveEvent" ref="ad57e410a01d1367c86434768149f8a71" args="(QMouseEvent *event)" -->
+<a class="anchor" id="ae9586a00cb1f7209d753e4203d7da9ef"></a><!-- doxytag: member="cm::UIBox::mouseMoveEvent" ref="ae9586a00cb1f7209d753e4203d7da9ef" args="(QMouseEvent *event)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classcmo__box.html#ad57e410a01d1367c86434768149f8a71">cmo_box::mouseMoveEvent</a> </td>
+          <td class="memname">void <a class="el" href="classcm_1_1_u_i_box.html#ae9586a00cb1f7209d753e4203d7da9ef">cm::UIBox::mouseMoveEvent</a> </td>
           <td>(</td>
           <td class="paramtype">QMouseEvent *&#160;</td>
           <td class="paramname"><em>event</em></td><td>)</td>
@@ -235,12 +261,12 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a245d3cb6652ead56b300aa7ff96a9037"></a><!-- doxytag: member="cmo_box::mousePressEvent" ref="a245d3cb6652ead56b300aa7ff96a9037" args="(QMouseEvent *ev)" -->
+<a class="anchor" id="a43b4fb67a390ae2e190a9bb09b0a1177"></a><!-- doxytag: member="cm::UIBox::mousePressEvent" ref="a43b4fb67a390ae2e190a9bb09b0a1177" args="(QMouseEvent *ev)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classcmo__box.html#a245d3cb6652ead56b300aa7ff96a9037">cmo_box::mousePressEvent</a> </td>
+          <td class="memname">void <a class="el" href="classcm_1_1_u_i_box.html#a43b4fb67a390ae2e190a9bb09b0a1177">cm::UIBox::mousePressEvent</a> </td>
           <td>(</td>
           <td class="paramtype">QMouseEvent *&#160;</td>
           <td class="paramname"><em>ev</em></td><td>)</td>
@@ -260,12 +286,12 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="add133ab45184420c7a66e752d200c9d3"></a><!-- doxytag: member="cmo_box::mouseReleaseEvent" ref="add133ab45184420c7a66e752d200c9d3" args="(QMouseEvent *)" -->
+<a class="anchor" id="ab09140d36bee1bfc88a72db07c4ddf18"></a><!-- doxytag: member="cm::UIBox::mouseReleaseEvent" ref="ab09140d36bee1bfc88a72db07c4ddf18" args="(QMouseEvent *)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classcmo__box.html#add133ab45184420c7a66e752d200c9d3">cmo_box::mouseReleaseEvent</a> </td>
+          <td class="memname">void <a class="el" href="classcm_1_1_u_i_box.html#ab09140d36bee1bfc88a72db07c4ddf18">cm::UIBox::mouseReleaseEvent</a> </td>
           <td>(</td>
           <td class="paramtype">QMouseEvent *&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -279,12 +305,12 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a14fbae4adba16f0c1927b01f28f04bab"></a><!-- doxytag: member="cmo_box::paintEvent" ref="a14fbae4adba16f0c1927b01f28f04bab" args="(QPaintEvent *)" -->
+<a class="anchor" id="a281b9606d90880fc45ddb298d94166a5"></a><!-- doxytag: member="cm::UIBox::paintEvent" ref="a281b9606d90880fc45ddb298d94166a5" args="(QPaintEvent *)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classcmo__box.html#a14fbae4adba16f0c1927b01f28f04bab">cmo_box::paintEvent</a> </td>
+          <td class="memname">void <a class="el" href="classcm_1_1_u_i_box.html#a281b9606d90880fc45ddb298d94166a5">cm::UIBox::paintEvent</a> </td>
           <td>(</td>
           <td class="paramtype">QPaintEvent *&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -298,12 +324,12 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a5a1f2e26756e3ae6b3be49de97a656e9"></a><!-- doxytag: member="cmo_box::rightClicked" ref="a5a1f2e26756e3ae6b3be49de97a656e9" args="()" -->
+<a class="anchor" id="a14803a7d1f3626fc5d63016a32c16de7"></a><!-- doxytag: member="cm::UIBox::rightClicked" ref="a14803a7d1f3626fc5d63016a32c16de7" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classcmo__box.html#a5a1f2e26756e3ae6b3be49de97a656e9">cmo_box::rightClicked</a> </td>
+          <td class="memname">void <a class="el" href="classcm_1_1_u_i_box.html#a14803a7d1f3626fc5d63016a32c16de7">cm::UIBox::rightClicked</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [signal]</code></td>
@@ -314,12 +340,12 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a3685f3b0db2482c683ddbefeaf758a4b"></a><!-- doxytag: member="cmo_box::setPdMessage" ref="a3685f3b0db2482c683ddbefeaf758a4b" args="(std::string message)" -->
+<a class="anchor" id="a813aec9940426c4cde3e86e25fc3c2aa"></a><!-- doxytag: member="cm::UIBox::setPdMessage" ref="a813aec9940426c4cde3e86e25fc3c2aa" args="(std::string message)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classcmo__box.html#a3685f3b0db2482c683ddbefeaf758a4b">cmo_box::setPdMessage</a> </td>
+          <td class="memname">void <a class="el" href="classcm_1_1_u_i_box.html#a813aec9940426c4cde3e86e25fc3c2aa">cm::UIBox::setPdMessage</a> </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>message</em></td><td>)</td>
@@ -332,12 +358,12 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="a8cf4af6a80932be8b2fe736c2d7140c4"></a><!-- doxytag: member="cmo_box::cmSubcanvas" ref="a8cf4af6a80932be8b2fe736c2d7140c4" args="" -->
+<a class="anchor" id="ab997404a419ad6f86a5941013c8ea3bb"></a><!-- doxytag: member="cm::UIBox::cmSubcanvas" ref="ab997404a419ad6f86a5941013c8ea3bb" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">QMainWindow* <a class="el" href="classcmo__box.html#a8cf4af6a80932be8b2fe736c2d7140c4">cmo_box::cmSubcanvas</a></td>
+          <td class="memname">QMainWindow* <a class="el" href="classcm_1_1_u_i_box.html#ab997404a419ad6f86a5941013c8ea3bb">cm::UIBox::cmSubcanvas</a></td>
         </tr>
       </table>
 </div>
@@ -369,7 +395,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 10 2017 11:25:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 10 2017 22:17:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

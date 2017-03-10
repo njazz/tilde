@@ -92,6 +92,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;<a class="el" href="cmo__msg_8h_source.html">cmo_msg.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="cmo__float_8h_source.html">cmo_float.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="cmo__text_8h_source.html">cmo_text.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="cmo__bang_8h_source.html">cmo_bang.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="cmo__toggle_8h_source.html">cmo_toggle.h</a>&quot;</code><br/>
 </div>
 <p><a href="cm__objectloader_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -104,7 +106,7 @@ Namespaces</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecm.html">cm</a></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecm.html#a6b5f58109443acbd402e04f9958e05be">cm::cmObjectConstructor</a> )(std::string objectData, <a class="el" href="classcm_1_1_u_i_widget.html">UIWidget</a> *parent)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef UIObject *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecm.html#aa1960a2b50fc448372249c7b7308a1de">cm::cmObjectConstructor</a> )(std::string objectData, t_canvas *pdCanvas, UIWidget *parent)</td></tr>
 </table>
 </div><!-- contents -->
 <!-- window showing the filter options -->
@@ -124,7 +126,7 @@ Typedefs</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 10 2017 11:25:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 10 2017 22:17:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

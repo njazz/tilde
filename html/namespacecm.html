@@ -116,6 +116,18 @@ Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_size_box.html">SizeBox</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_widget.html">UIWidget</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">parent class for all objects in the canvas  <a href="classcm_1_1_u_i_widget.html#details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_bang.html">UIBang</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gui object: message box (ui.msg)  <a href="classcm_1_1_u_i_bang.html#details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_box.html">UIBox</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gui object: standard object box  <a href="classcm_1_1_u_i_box.html#details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_float.html">UIFloat</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gui object: float number box (ui.float)  <a href="classcm_1_1_u_i_float.html#details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_message.html">UIMessage</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gui object: message box (ui.msg)  <a href="classcm_1_1_u_i_message.html#details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_text.html">UIText</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gui object: comment box (ui.text)  <a href="classcm_1_1_u_i_text.html#details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_toggle.html">UIToggle</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gui object: message box (ui.msg)  <a href="classcm_1_1_u_i_toggle.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_property.html">UIProperty</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">yet another property handling class for ui object.  <a href="classcm_1_1_u_i_property.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_property_list.html">UIPropertyList</a></td></tr>
@@ -130,7 +142,7 @@ Classes</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecm.html#a3cb4165a0eb6668a29e5a6fc3d6e2907">objectVec</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="classcm_1_1_patchcord.html">Patchcord</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecm.html#a635d087e10a42053c6a4011f3ee6b1c8">patchcordVec</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecm.html#a6b5f58109443acbd402e04f9958e05be">cmObjectConstructor</a> )(std::string objectData, <a class="el" href="classcm_1_1_u_i_widget.html">UIWidget</a> *parent)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecm.html#aa1960a2b50fc448372249c7b7308a1de">cmObjectConstructor</a> )(std::string objectData, t_canvas *pdCanvas, <a class="el" href="classcm_1_1_u_i_widget.html">UIWidget</a> *parent)</td></tr>
 <tr><td colspan="2"><h2><a name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecm.html#a5ec512b3876769d22b1b8c7daa3706ad">t_objectSize</a> { <a class="el" href="namespacecm.html#a5ec512b3876769d22b1b8c7daa3706ada79548b1dd7ae325718690d64b0cdddb0">os_Fixed</a>, 
@@ -145,12 +157,12 @@ Enumerations</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">edit mode types  <a href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7">More...</a><br/></td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
-<a class="anchor" id="a6b5f58109443acbd402e04f9958e05be"></a><!-- doxytag: member="cm::cmObjectConstructor" ref="a6b5f58109443acbd402e04f9958e05be" args=")(std::string objectData, UIWidget *parent)" -->
+<a class="anchor" id="aa1960a2b50fc448372249c7b7308a1de"></a><!-- doxytag: member="cm::cmObjectConstructor" ref="aa1960a2b50fc448372249c7b7308a1de" args=")(std::string objectData, t_canvas *pdCanvas, UIWidget *parent)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="classcm_1_1_u_i_object.html">UIObject</a>*(* <a class="el" href="namespacecm.html#a6b5f58109443acbd402e04f9958e05be">cm::cmObjectConstructor</a>)(std::string objectData, <a class="el" href="classcm_1_1_u_i_widget.html">UIWidget</a> *parent)</td>
+          <td class="memname">typedef <a class="el" href="classcm_1_1_u_i_object.html">UIObject</a>*(* <a class="el" href="namespacecm.html#aa1960a2b50fc448372249c7b7308a1de">cm::cmObjectConstructor</a>)(std::string objectData, t_canvas *pdCanvas, <a class="el" href="classcm_1_1_u_i_widget.html">UIWidget</a> *parent)</td>
         </tr>
       </table>
 </div>
@@ -253,7 +265,7 @@ Enumerations</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 10 2017 11:25:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 10 2017 22:17:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

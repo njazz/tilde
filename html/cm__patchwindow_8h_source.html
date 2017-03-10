@@ -384,130 +384,135 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00307"></a>00307 
 <a name="l00308"></a>00308         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a1c94aab3160a86ad1083413ca831d24a" title="get edit mode flag">getEditMode</a>() != <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7a40e07370861a560fc6e4cebf2bb1ebd3">em_Locked</a>)
 <a name="l00309"></a>00309         {
-<a name="l00310"></a>00310             <a class="code" href="classcmo__msg.html" title="gui object: message box (ui.msg)">cmo_msg</a> *newMsg = this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#ac145953e7bd540bd2f387086d4184b80" title="create new message box (ui.msg now)">createMsg</a>(<span class="stringliteral">&quot;&quot;</span>,QPoint(100,100));
-<a name="l00311"></a>00311             this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a606fde5bd5e21aaaefa0fdfae00b7213">dragObject</a> = newMsg;
-<a name="l00312"></a>00312             newMsg-&gt;show();
-<a name="l00313"></a>00313         }
-<a name="l00314"></a>00314 
-<a name="l00315"></a>00315     }
+<a name="l00310"></a>00310             <span class="comment">//UIMessage *newMsg = this-&gt;canvas-&gt;createMsg(&quot;&quot;,QPoint(100,100));</span>
+<a name="l00311"></a>00311 
+<a name="l00312"></a>00312             <a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> *newMsg = this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a4300009cd6b822e26b672c7881fee4d0" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.msg&quot;</span>,<span class="stringliteral">&quot;&quot;</span>,QPoint(100,100));
+<a name="l00313"></a>00313             this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a606fde5bd5e21aaaefa0fdfae00b7213">dragObject</a> = newMsg;
+<a name="l00314"></a>00314             newMsg-&gt;show();
+<a name="l00315"></a>00315         }
 <a name="l00316"></a>00316 
-<a name="l00317"></a>00317 
-<a name="l00318"></a><a class="code" href="classcm_1_1_patch_window.html#a03c5dda25eb6c158f460a9a298add88f">00318</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a03c5dda25eb6c158f460a9a298add88f">newFloatBox</a>()
-<a name="l00319"></a>00319     {
-<a name="l00320"></a>00320 
-<a name="l00321"></a>00321         <span class="comment">//const char * obj_name = this-&gt;objectMaker-&gt;text().toStdString().c_str();</span>
-<a name="l00322"></a>00322         <span class="comment">//</span>
-<a name="l00323"></a>00323 
-<a name="l00324"></a>00324         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a1c94aab3160a86ad1083413ca831d24a" title="get edit mode flag">getEditMode</a>() != <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7a40e07370861a560fc6e4cebf2bb1ebd3">em_Locked</a>)
-<a name="l00325"></a>00325         {
-<a name="l00326"></a>00326             <a class="code" href="classcmo__float.html" title="gui object: float number box (ui.float)">cmo_float</a> *newFlo = this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#ada72731cdfbcd67b38ee77ffb723d92c" title="create new float box (ui.msg yet)">createFloat</a>(<span class="stringliteral">&quot;0&quot;</span>,QPoint(100,100));
-<a name="l00327"></a>00327             this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a606fde5bd5e21aaaefa0fdfae00b7213">dragObject</a> = newFlo;
-<a name="l00328"></a>00328             newFlo-&gt;show();
-<a name="l00329"></a>00329         }
-<a name="l00330"></a>00330 
-<a name="l00331"></a>00331     }
-<a name="l00332"></a>00332 
-<a name="l00333"></a><a class="code" href="classcm_1_1_patch_window.html#a3b9a4cfd55b5c9366cc426ab37a2d52b">00333</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a3b9a4cfd55b5c9366cc426ab37a2d52b">newCommentBox</a>()
-<a name="l00334"></a>00334     {
-<a name="l00335"></a>00335 
-<a name="l00336"></a>00336         <span class="comment">//const char * obj_name = this-&gt;objectMaker-&gt;text().toStdString().c_str();</span>
-<a name="l00337"></a>00337         <span class="comment">//</span>
-<a name="l00338"></a>00338 
-<a name="l00339"></a>00339         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a1c94aab3160a86ad1083413ca831d24a" title="get edit mode flag">getEditMode</a>() != <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7a40e07370861a560fc6e4cebf2bb1ebd3">em_Locked</a>)
-<a name="l00340"></a>00340         {
-<a name="l00341"></a>00341             <a class="code" href="classcmo__text.html" title="gui object: comment box (ui.text)">cmo_text</a> *newTxt = this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#ad10364932c20a325e48884a8a8b2d5e9" title="create new comment box (ui only)">createText</a>(<span class="stringliteral">&quot;comment&quot;</span>,QPoint(100,100));
-<a name="l00342"></a>00342             this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a606fde5bd5e21aaaefa0fdfae00b7213">dragObject</a> = newTxt;
-<a name="l00343"></a>00343             newTxt-&gt;show();
-<a name="l00344"></a>00344         }
-<a name="l00345"></a>00345 
-<a name="l00346"></a>00346     }
-<a name="l00347"></a>00347 
-<a name="l00348"></a><a class="code" href="classcm_1_1_patch_window.html#a06f635af622c64a38c97d0b695c1d58f">00348</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a06f635af622c64a38c97d0b695c1d58f">delSelected</a>()
-<a name="l00349"></a>00349     {
-<a name="l00350"></a>00350         this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a27e99bde9c7a8418f6bc4e6bcc97dcf6" title="delete all selected object boxes">delBoxes</a>();
-<a name="l00351"></a>00351         this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a876a3b7b9fd328792032d421ca7c89d5" title="delete all selected patchcords">delSelectedPatchcords</a>();
+<a name="l00317"></a>00317     }
+<a name="l00318"></a>00318 
+<a name="l00319"></a>00319 
+<a name="l00320"></a><a class="code" href="classcm_1_1_patch_window.html#a03c5dda25eb6c158f460a9a298add88f">00320</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a03c5dda25eb6c158f460a9a298add88f">newFloatBox</a>()
+<a name="l00321"></a>00321     {
+<a name="l00322"></a>00322 
+<a name="l00323"></a>00323         <span class="comment">//const char * obj_name = this-&gt;objectMaker-&gt;text().toStdString().c_str();</span>
+<a name="l00324"></a>00324         <span class="comment">//</span>
+<a name="l00325"></a>00325 
+<a name="l00326"></a>00326         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a1c94aab3160a86ad1083413ca831d24a" title="get edit mode flag">getEditMode</a>() != <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7a40e07370861a560fc6e4cebf2bb1ebd3">em_Locked</a>)
+<a name="l00327"></a>00327         {
+<a name="l00328"></a>00328             <span class="comment">//UIFloat *newFlo = this-&gt;canvas-&gt;createFloat(&quot;0&quot;,QPoint(100,100));</span>
+<a name="l00329"></a>00329 
+<a name="l00330"></a>00330             <a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> *newFlo = this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a4300009cd6b822e26b672c7881fee4d0" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.float&quot;</span>,<span class="stringliteral">&quot;0&quot;</span>,QPoint(100,100));
+<a name="l00331"></a>00331             this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a606fde5bd5e21aaaefa0fdfae00b7213">dragObject</a> = newFlo;
+<a name="l00332"></a>00332             newFlo-&gt;show();
+<a name="l00333"></a>00333         }
+<a name="l00334"></a>00334 
+<a name="l00335"></a>00335     }
+<a name="l00336"></a>00336 
+<a name="l00337"></a><a class="code" href="classcm_1_1_patch_window.html#a3b9a4cfd55b5c9366cc426ab37a2d52b">00337</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a3b9a4cfd55b5c9366cc426ab37a2d52b">newCommentBox</a>()
+<a name="l00338"></a>00338     {
+<a name="l00339"></a>00339 
+<a name="l00340"></a>00340         <span class="comment">//const char * obj_name = this-&gt;objectMaker-&gt;text().toStdString().c_str();</span>
+<a name="l00341"></a>00341         <span class="comment">//</span>
+<a name="l00342"></a>00342 
+<a name="l00343"></a>00343         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a1c94aab3160a86ad1083413ca831d24a" title="get edit mode flag">getEditMode</a>() != <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7a40e07370861a560fc6e4cebf2bb1ebd3">em_Locked</a>)
+<a name="l00344"></a>00344         {
+<a name="l00345"></a>00345             <span class="comment">//UIText *newTxt = this-&gt;canvas-&gt;createText(&quot;comment&quot;,QPoint(100,100));</span>
+<a name="l00346"></a>00346             <a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> *newTxt = this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a4300009cd6b822e26b672c7881fee4d0" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.text&quot;</span>,<span class="stringliteral">&quot;&quot;</span>,QPoint(100,100));
+<a name="l00347"></a>00347             this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a606fde5bd5e21aaaefa0fdfae00b7213">dragObject</a> = newTxt;
+<a name="l00348"></a>00348             newTxt-&gt;show();
+<a name="l00349"></a>00349         }
+<a name="l00350"></a>00350 
+<a name="l00351"></a>00351     }
 <a name="l00352"></a>00352 
-<a name="l00353"></a>00353     }
-<a name="l00354"></a>00354 
-<a name="l00355"></a>00355     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a5a971522ef75365dde9ee9c44c61d5df" title="creates object">objectMakerDone</a>();
-<a name="l00356"></a>00356 
-<a name="l00357"></a><a class="code" href="classcm_1_1_patch_window.html#a7bd7ecd86a671bc2aedd9eb08cfff391">00357</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a7bd7ecd86a671bc2aedd9eb08cfff391">setEditMode</a>()
-<a name="l00358"></a>00358     {
-<a name="l00359"></a>00359         <span class="keywordflow">if</span> (! (( this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a1c94aab3160a86ad1083413ca831d24a" title="get edit mode flag">getEditMode</a>()) == <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7a40e07370861a560fc6e4cebf2bb1ebd3">em_Locked</a> ))
-<a name="l00360"></a>00360             this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a46331a593d63e1ba3d11de9ee3913a56" title="change edit mode flag">setEditMode</a>(<a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7a40e07370861a560fc6e4cebf2bb1ebd3">em_Locked</a>);
-<a name="l00361"></a>00361         <span class="keywordflow">else</span>
-<a name="l00362"></a>00362             this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a46331a593d63e1ba3d11de9ee3913a56" title="change edit mode flag">setEditMode</a>(<a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7ae6f93cdd04849ebf6af6952e8127d099">em_Unlocked</a>);
-<a name="l00363"></a>00363         this-&gt;editModeAct-&gt;setChecked(this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a1c94aab3160a86ad1083413ca831d24a" title="get edit mode flag">getEditMode</a>() == <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7ae6f93cdd04849ebf6af6952e8127d099">em_Unlocked</a>);
-<a name="l00364"></a>00364     }
-<a name="l00365"></a>00365 
-<a name="l00366"></a><a class="code" href="classcm_1_1_patch_window.html#a36c22a10e18697f6acdd523659568ed1">00366</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a36c22a10e18697f6acdd523659568ed1">setGridVisible</a>()
-<a name="l00367"></a>00367     {
-<a name="l00368"></a>00368         this-&gt;showGridAct-&gt;setChecked(this-&gt;showGridAct-&gt;isChecked());
-<a name="l00369"></a>00369         this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#ac2eac4ed2f2bdc5eee0544143847eab8" title="set the show/hide grid flag">setGridEnabled</a>(this-&gt;showGridAct-&gt;isChecked());
-<a name="l00370"></a>00370         this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;repaint();
-<a name="l00371"></a>00371     }
-<a name="l00372"></a>00372 
-<a name="l00373"></a><a class="code" href="classcm_1_1_patch_window.html#a9612db971d447997a07b7e3fd5ccfe67">00373</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a9612db971d447997a07b7e3fd5ccfe67">setGridSnap</a>()
-<a name="l00374"></a>00374     {
-<a name="l00375"></a>00375         this-&gt;snapToGridAct-&gt;setChecked(this-&gt;snapToGridAct-&gt;isChecked());
-<a name="l00376"></a>00376         this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a885e83ef501901e03b0e3b7b32bf977a" title="align to grid flag">setGridSnap</a>(this-&gt;snapToGridAct-&gt;isChecked());
-<a name="l00377"></a>00377         <span class="comment">//this-&gt;canvas-&gt;repaint();</span>
-<a name="l00378"></a>00378     }
-<a name="l00379"></a>00379 
-<a name="l00380"></a>00380 
-<a name="l00382"></a>00382 
-<a name="l00383"></a>00383     <span class="comment">//    void keyPressEvent(QKeyEvent *event)</span>
-<a name="l00384"></a>00384     <span class="comment">//    {</span>
-<a name="l00385"></a>00385     <span class="comment">//        if (event-&gt;modifiers() &amp; Qt::ControlModifier)</span>
-<a name="l00386"></a>00386     <span class="comment">//        {</span>
-<a name="l00387"></a>00387     <span class="comment">//            this-&gt;canvas-&gt;setEditMode(false);</span>
-<a name="l00388"></a>00388     <span class="comment">//        }</span>
-<a name="l00389"></a>00389     <span class="comment">//        else</span>
-<a name="l00390"></a>00390     <span class="comment">//            this-&gt;canvas-&gt;setEditMode(true);</span>
-<a name="l00391"></a>00391     <span class="comment">//    }</span>
-<a name="l00392"></a>00392 
-<a name="l00393"></a>00393 
-<a name="l00394"></a><a class="code" href="classcm_1_1_patch_window.html#aec2f7db0e8fdda218e4d489e6d7864cc">00394</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#aec2f7db0e8fdda218e4d489e6d7864cc">closeEvent</a>(QCloseEvent *event)
-<a name="l00395"></a>00395     {
-<a name="l00396"></a>00396         <a class="code" href="cm__pdlink_8h.html#af08cbd72d5b239361a801b4b67247a9c" title="closes and frees the canvas">cmp_closepatch</a>(this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a24d8522284d0bc2886e426f251752f12">pdCanvas</a>);
+<a name="l00353"></a><a class="code" href="classcm_1_1_patch_window.html#a06f635af622c64a38c97d0b695c1d58f">00353</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a06f635af622c64a38c97d0b695c1d58f">delSelected</a>()
+<a name="l00354"></a>00354     {
+<a name="l00355"></a>00355         this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a27e99bde9c7a8418f6bc4e6bcc97dcf6" title="delete all selected object boxes">delBoxes</a>();
+<a name="l00356"></a>00356         this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a876a3b7b9fd328792032d421ca7c89d5" title="delete all selected patchcords">delSelectedPatchcords</a>();
+<a name="l00357"></a>00357 
+<a name="l00358"></a>00358     }
+<a name="l00359"></a>00359 
+<a name="l00360"></a>00360     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a5a971522ef75365dde9ee9c44c61d5df" title="creates object">objectMakerDone</a>();
+<a name="l00361"></a>00361 
+<a name="l00362"></a><a class="code" href="classcm_1_1_patch_window.html#a7bd7ecd86a671bc2aedd9eb08cfff391">00362</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a7bd7ecd86a671bc2aedd9eb08cfff391">setEditMode</a>()
+<a name="l00363"></a>00363     {
+<a name="l00364"></a>00364         <span class="keywordflow">if</span> (! (( this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a1c94aab3160a86ad1083413ca831d24a" title="get edit mode flag">getEditMode</a>()) == <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7a40e07370861a560fc6e4cebf2bb1ebd3">em_Locked</a> ))
+<a name="l00365"></a>00365             this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a46331a593d63e1ba3d11de9ee3913a56" title="change edit mode flag">setEditMode</a>(<a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7a40e07370861a560fc6e4cebf2bb1ebd3">em_Locked</a>);
+<a name="l00366"></a>00366         <span class="keywordflow">else</span>
+<a name="l00367"></a>00367             this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a46331a593d63e1ba3d11de9ee3913a56" title="change edit mode flag">setEditMode</a>(<a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7ae6f93cdd04849ebf6af6952e8127d099">em_Unlocked</a>);
+<a name="l00368"></a>00368         this-&gt;editModeAct-&gt;setChecked(this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a1c94aab3160a86ad1083413ca831d24a" title="get edit mode flag">getEditMode</a>() == <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7ae6f93cdd04849ebf6af6952e8127d099">em_Unlocked</a>);
+<a name="l00369"></a>00369     }
+<a name="l00370"></a>00370 
+<a name="l00371"></a><a class="code" href="classcm_1_1_patch_window.html#a36c22a10e18697f6acdd523659568ed1">00371</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a36c22a10e18697f6acdd523659568ed1">setGridVisible</a>()
+<a name="l00372"></a>00372     {
+<a name="l00373"></a>00373         this-&gt;showGridAct-&gt;setChecked(this-&gt;showGridAct-&gt;isChecked());
+<a name="l00374"></a>00374         this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#ac2eac4ed2f2bdc5eee0544143847eab8" title="set the show/hide grid flag">setGridEnabled</a>(this-&gt;showGridAct-&gt;isChecked());
+<a name="l00375"></a>00375         this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;repaint();
+<a name="l00376"></a>00376     }
+<a name="l00377"></a>00377 
+<a name="l00378"></a><a class="code" href="classcm_1_1_patch_window.html#a9612db971d447997a07b7e3fd5ccfe67">00378</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a9612db971d447997a07b7e3fd5ccfe67">setGridSnap</a>()
+<a name="l00379"></a>00379     {
+<a name="l00380"></a>00380         this-&gt;snapToGridAct-&gt;setChecked(this-&gt;snapToGridAct-&gt;isChecked());
+<a name="l00381"></a>00381         this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a885e83ef501901e03b0e3b7b32bf977a" title="align to grid flag">setGridSnap</a>(this-&gt;snapToGridAct-&gt;isChecked());
+<a name="l00382"></a>00382         <span class="comment">//this-&gt;canvas-&gt;repaint();</span>
+<a name="l00383"></a>00383     }
+<a name="l00384"></a>00384 
+<a name="l00385"></a>00385 
+<a name="l00387"></a>00387 
+<a name="l00388"></a>00388     <span class="comment">//    void keyPressEvent(QKeyEvent *event)</span>
+<a name="l00389"></a>00389     <span class="comment">//    {</span>
+<a name="l00390"></a>00390     <span class="comment">//        if (event-&gt;modifiers() &amp; Qt::ControlModifier)</span>
+<a name="l00391"></a>00391     <span class="comment">//        {</span>
+<a name="l00392"></a>00392     <span class="comment">//            this-&gt;canvas-&gt;setEditMode(false);</span>
+<a name="l00393"></a>00393     <span class="comment">//        }</span>
+<a name="l00394"></a>00394     <span class="comment">//        else</span>
+<a name="l00395"></a>00395     <span class="comment">//            this-&gt;canvas-&gt;setEditMode(true);</span>
+<a name="l00396"></a>00396     <span class="comment">//    }</span>
 <a name="l00397"></a>00397 
-<a name="l00398"></a>00398         <span class="keyword">event</span>-&gt;accept();
-<a name="l00399"></a>00399     }
-<a name="l00400"></a>00400 
-<a name="l00401"></a>00401 
-<a name="l00403"></a>00403 
-<a name="l00404"></a>00404     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a0974294005dd2cb2a63e5b7765581c51" title="set file name when opening patch file">setFileName</a>(QString fname);
+<a name="l00398"></a>00398 
+<a name="l00399"></a><a class="code" href="classcm_1_1_patch_window.html#aec2f7db0e8fdda218e4d489e6d7864cc">00399</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#aec2f7db0e8fdda218e4d489e6d7864cc">closeEvent</a>(QCloseEvent *event)
+<a name="l00400"></a>00400     {
+<a name="l00401"></a>00401         <a class="code" href="cm__pdlink_8h.html#af08cbd72d5b239361a801b4b67247a9c" title="closes and frees the canvas">cmp_closepatch</a>(this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a24d8522284d0bc2886e426f251752f12">pdCanvas</a>);
+<a name="l00402"></a>00402 
+<a name="l00403"></a>00403         <span class="keyword">event</span>-&gt;accept();
+<a name="l00404"></a>00404     }
 <a name="l00405"></a>00405 
 <a name="l00406"></a>00406 
-<a name="l00411"></a><a class="code" href="classcm_1_1_patch_window.html#a0e79c818eccbc41679c4e32d3fcaa32a">00411</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a0e79c818eccbc41679c4e32d3fcaa32a" title="keys: ctrl for temporary lock; esc to stop editing actions">keyPressEvent</a>(QKeyEvent *event){
-<a name="l00412"></a>00412         <span class="keywordflow">if</span> (event-&gt;modifiers() &amp; Qt::ControlModifier)
-<a name="l00413"></a>00413         {
-<a name="l00414"></a>00414             <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a1c94aab3160a86ad1083413ca831d24a" title="get edit mode flag">getEditMode</a>() != <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7a40e07370861a560fc6e4cebf2bb1ebd3">em_Locked</a>)
-<a name="l00415"></a>00415                 this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a46331a593d63e1ba3d11de9ee3913a56" title="change edit mode flag">setEditMode</a>(<a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7af623804e3572b6568db8c7537ce1d721">em_Temporary</a>);
-<a name="l00416"></a>00416         }
-<a name="l00417"></a>00417 
-<a name="l00418"></a>00418         <span class="keywordflow">if</span> (event-&gt;key() == Qt::Key_Escape)
-<a name="l00419"></a>00419         {
-<a name="l00420"></a>00420             this-&gt;objectMaker-&gt;setText(<span class="stringliteral">&quot;&quot;</span>);
-<a name="l00421"></a>00421             this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a5a971522ef75365dde9ee9c44c61d5df" title="creates object">objectMakerDone</a>();
+<a name="l00408"></a>00408 
+<a name="l00409"></a>00409     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a0974294005dd2cb2a63e5b7765581c51" title="set file name when opening patch file">setFileName</a>(QString fname);
+<a name="l00410"></a>00410 
+<a name="l00411"></a>00411 
+<a name="l00416"></a><a class="code" href="classcm_1_1_patch_window.html#a0e79c818eccbc41679c4e32d3fcaa32a">00416</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a0e79c818eccbc41679c4e32d3fcaa32a" title="keys: ctrl for temporary lock; esc to stop editing actions">keyPressEvent</a>(QKeyEvent *event){
+<a name="l00417"></a>00417         <span class="keywordflow">if</span> (event-&gt;modifiers() &amp; Qt::ControlModifier)
+<a name="l00418"></a>00418         {
+<a name="l00419"></a>00419             <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a1c94aab3160a86ad1083413ca831d24a" title="get edit mode flag">getEditMode</a>() != <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7a40e07370861a560fc6e4cebf2bb1ebd3">em_Locked</a>)
+<a name="l00420"></a>00420                 this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a46331a593d63e1ba3d11de9ee3913a56" title="change edit mode flag">setEditMode</a>(<a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7af623804e3572b6568db8c7537ce1d721">em_Temporary</a>);
+<a name="l00421"></a>00421         }
 <a name="l00422"></a>00422 
-<a name="l00423"></a>00423             this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a1a9501ade5a1506d81c4874ebe874094" title="cancels patchcord creation">cancelPatchcord</a>();
-<a name="l00424"></a>00424         }
-<a name="l00425"></a>00425     }
-<a name="l00426"></a>00426 
-<a name="l00427"></a><a class="code" href="classcm_1_1_patch_window.html#a7e3df19ab22be86aa724b599769c7189">00427</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a7e3df19ab22be86aa724b599769c7189">keyReleaseEvent</a>(QKeyEvent *event){
-<a name="l00428"></a>00428         <span class="keywordflow">if</span> (event-&gt;key() == Qt::Key_Control)
-<a name="l00429"></a>00429         {
-<a name="l00430"></a>00430             <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a1c94aab3160a86ad1083413ca831d24a" title="get edit mode flag">getEditMode</a>() == <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7af623804e3572b6568db8c7537ce1d721">em_Temporary</a>)
-<a name="l00431"></a>00431                 this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a46331a593d63e1ba3d11de9ee3913a56" title="change edit mode flag">setEditMode</a>(<a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7ae6f93cdd04849ebf6af6952e8127d099">em_Unlocked</a>);
-<a name="l00432"></a>00432         }
-<a name="l00433"></a>00433     }
-<a name="l00434"></a>00434 
-<a name="l00435"></a>00435 
-<a name="l00436"></a>00436 };
-<a name="l00437"></a>00437 }
-<a name="l00438"></a>00438 
-<a name="l00439"></a>00439 <span class="preprocessor">#endif // CM_PATCHWINDOW_H</span>
+<a name="l00423"></a>00423         <span class="keywordflow">if</span> (event-&gt;key() == Qt::Key_Escape)
+<a name="l00424"></a>00424         {
+<a name="l00425"></a>00425             this-&gt;objectMaker-&gt;setText(<span class="stringliteral">&quot;&quot;</span>);
+<a name="l00426"></a>00426             this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a5a971522ef75365dde9ee9c44c61d5df" title="creates object">objectMakerDone</a>();
+<a name="l00427"></a>00427 
+<a name="l00428"></a>00428             this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a1a9501ade5a1506d81c4874ebe874094" title="cancels patchcord creation">cancelPatchcord</a>();
+<a name="l00429"></a>00429         }
+<a name="l00430"></a>00430     }
+<a name="l00431"></a>00431 
+<a name="l00432"></a><a class="code" href="classcm_1_1_patch_window.html#a7e3df19ab22be86aa724b599769c7189">00432</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a7e3df19ab22be86aa724b599769c7189">keyReleaseEvent</a>(QKeyEvent *event){
+<a name="l00433"></a>00433         <span class="keywordflow">if</span> (event-&gt;key() == Qt::Key_Control)
+<a name="l00434"></a>00434         {
+<a name="l00435"></a>00435             <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a1c94aab3160a86ad1083413ca831d24a" title="get edit mode flag">getEditMode</a>() == <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7af623804e3572b6568db8c7537ce1d721">em_Temporary</a>)
+<a name="l00436"></a>00436                 this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a46331a593d63e1ba3d11de9ee3913a56" title="change edit mode flag">setEditMode</a>(<a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7ae6f93cdd04849ebf6af6952e8127d099">em_Unlocked</a>);
+<a name="l00437"></a>00437         }
+<a name="l00438"></a>00438     }
+<a name="l00439"></a>00439 
+<a name="l00440"></a>00440 
+<a name="l00441"></a>00441 };
+<a name="l00442"></a>00442 }
+<a name="l00443"></a>00443 
+<a name="l00444"></a>00444 <span class="preprocessor">#endif // CM_PATCHWINDOW_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -526,7 +531,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 10 2017 11:25:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 10 2017 22:17:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

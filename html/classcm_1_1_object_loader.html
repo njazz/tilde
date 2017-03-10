@@ -118,12 +118,12 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_object_loader.html#a776b899e5cd1350f0ddcebbe23b1746c">ObjectLoader</a> (<a class="el" href="classcm_1_1_object_loader.html">ObjectLoader</a> const &amp;)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_object_loader.html#a33cafe9baf04f81d6954474e9cfd964d">operator=</a> (<a class="el" href="classcm_1_1_object_loader.html">ObjectLoader</a> const &amp;)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_object_loader.html#a4b554d60a4c4791bc3429ff3bdd14222">loadObjects</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_object_loader.html#a63c27fbfeb9e3233f6aee6a79420d9d6">addUIobject</a> (std::string name, <a class="el" href="namespacecm.html#a6b5f58109443acbd402e04f9958e05be">cmObjectConstructor</a> constructor)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_object_loader.html#a63c27fbfeb9e3233f6aee6a79420d9d6">addUIobject</a> (std::string name, <a class="el" href="namespacecm.html#aa1960a2b50fc448372249c7b7308a1de">cmObjectConstructor</a> constructor)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_object_loader.html#a63bfe437603c165a8d8e2212ba6a4781">getUINames</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_object_loader.html#a887c21b1facfabe2556cc942766cb70f">getPDNames</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_object_loader.html#af1e8006ddb5923e3aace3bc2392de0eb">hasUI</a> (std::string objName)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacecm.html#a6b5f58109443acbd402e04f9958e05be">cmObjectConstructor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_object_loader.html#a783328f941313e9d29c329fb0d2647b8">getConstructorFor</a> (std::string objName)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_object_loader.html#ada074a949d569c7597eae975a3d55202">createObject</a> (std::string objName, std::string objectData, <a class="el" href="classcm_1_1_u_i_widget.html">UIWidget</a> *parent)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacecm.html#aa1960a2b50fc448372249c7b7308a1de">cmObjectConstructor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_object_loader.html#a783328f941313e9d29c329fb0d2647b8">getConstructorFor</a> (std::string objName)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_object_loader.html#a1eb8184c6f0a5c0770b9d81dea676510">createObject</a> (std::string objName, std::string objectData, t_canvas *pdCanvas, <a class="el" href="classcm_1_1_u_i_widget.html">UIWidget</a> *parent)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classcm_1_1_object_loader.html">ObjectLoader</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_object_loader.html#ac29ac3ba87ae3e09a8e2499f59ab2608">inst</a> ()</td></tr>
@@ -162,7 +162,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacecm.html#a6b5f58109443acbd402e04f9958e05be">cmObjectConstructor</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacecm.html#aa1960a2b50fc448372249c7b7308a1de">cmObjectConstructor</a>&#160;</td>
           <td class="paramname"><em>constructor</em>&#160;</td>
         </tr>
         <tr>
@@ -176,12 +176,12 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ada074a949d569c7597eae975a3d55202"></a><!-- doxytag: member="cm::ObjectLoader::createObject" ref="ada074a949d569c7597eae975a3d55202" args="(std::string objName, std::string objectData, UIWidget *parent)" -->
+<a class="anchor" id="a1eb8184c6f0a5c0770b9d81dea676510"></a><!-- doxytag: member="cm::ObjectLoader::createObject" ref="a1eb8184c6f0a5c0770b9d81dea676510" args="(std::string objName, std::string objectData, t_canvas *pdCanvas, UIWidget *parent)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcm_1_1_u_i_object.html">UIObject</a>* <a class="el" href="classcm_1_1_object_loader.html#ada074a949d569c7597eae975a3d55202">cm::ObjectLoader::createObject</a> </td>
+          <td class="memname"><a class="el" href="classcm_1_1_u_i_object.html">UIObject</a>* <a class="el" href="classcm_1_1_object_loader.html#a1eb8184c6f0a5c0770b9d81dea676510">cm::ObjectLoader::createObject</a> </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>objName</em>, </td>
@@ -191,6 +191,12 @@ Static Public Member Functions</h2></td></tr>
           <td></td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>objectData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">t_canvas *&#160;</td>
+          <td class="paramname"><em>pdCanvas</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -214,7 +220,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespacecm.html#a6b5f58109443acbd402e04f9958e05be">cmObjectConstructor</a> <a class="el" href="classcm_1_1_object_loader.html#a783328f941313e9d29c329fb0d2647b8">cm::ObjectLoader::getConstructorFor</a> </td>
+          <td class="memname"><a class="el" href="namespacecm.html#aa1960a2b50fc448372249c7b7308a1de">cmObjectConstructor</a> <a class="el" href="classcm_1_1_object_loader.html#a783328f941313e9d29c329fb0d2647b8">cm::ObjectLoader::getConstructorFor</a> </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>objName</em></td><td>)</td>
@@ -345,7 +351,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 10 2017 11:25:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 10 2017 22:17:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

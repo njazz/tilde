@@ -8,10 +8,6 @@ var searchData=
   ['closeevent',['closeEvent',['../classcm_1_1_patch_window.html#aec2f7db0e8fdda218e4d489e6d7864cc',1,'cm::PatchWindow']]],
   ['cm_5flog',['cm_log',['../classcm_1_1_pd_window.html#a992a0990afedfd8df1a0e82effc6a202',1,'cm::PdWindow']]],
   ['cm_5fpost',['cm_post',['../classcm_1_1_pd_window.html#aced4cb1fd5ebb4b320966165f75cce29',1,'cm::PdWindow']]],
-  ['cmo_5fbox',['cmo_box',['../classcmo__box.html#a54a0ff511401f76155ce4e157578b61d',1,'cmo_box']]],
-  ['cmo_5ffloat',['cmo_float',['../classcmo__float.html#afd728f20a4728adb09fb4cad3c310b78',1,'cmo_float']]],
-  ['cmo_5fmsg',['cmo_msg',['../classcmo__msg.html#a5dfbc092517addf74e92abaef0ee7cac',1,'cmo_msg']]],
-  ['cmo_5ftext',['cmo_text',['../classcmo__text.html#a6333ad09799c3d80620834d46dfa7194',1,'cmo_text']]],
   ['cmp_5fclosepatch',['cmp_closepatch',['../cm__pdlink_8h.html#af08cbd72d5b239361a801b4b67247a9c',1,'cm_pdlink.h']]],
   ['cmp_5fconnectui',['cmp_connectUI',['../cm__pdlink_8h.html#a9b4bef98ca39e6d157ee073b5139ae9d',1,'cm_pdlink.h']]],
   ['cmp_5fcreate_5fmessage',['cmp_create_message',['../cm__pdlink_8h.html#a3bac993f5ef2ae3ddcb123762d3668d0',1,'cm_pdlink.h']]],
@@ -31,10 +27,6 @@ var searchData=
   ['cmp_5fswitch_5fdsp',['cmp_switch_dsp',['../cm__pdlink_8h.html#a0f1f4951cf99dff0634789791dcde1ba',1,'cm_pdlink.h']]],
   ['connectsobject',['connectsObject',['../classcm_1_1_patchcord.html#a2d195bc505a5975fbf1a7af6f192f4ad',1,'cm::Patchcord']]],
   ['createactions',['createActions',['../classcm_1_1_base_window.html#a39e8dd19b5d1da40ecc192368d5b9190',1,'cm::BaseWindow::createActions()'],['../classcm_1_1_patch_window.html#a39603c8deea46bbfe2a782a9c6c46e60',1,'cm::PatchWindow::createActions()']]],
-  ['createbox',['createBox',['../classcm_1_1_canvas.html#a7ca8ba44895120ddec3b02ae347d51af',1,'cm::Canvas']]],
-  ['createfloat',['createFloat',['../classcm_1_1_canvas.html#ada72731cdfbcd67b38ee77ffb723d92c',1,'cm::Canvas']]],
   ['createmenus',['createMenus',['../classcm_1_1_base_window.html#ae166291858c8f651902846977edc00b9',1,'cm::BaseWindow::createMenus()'],['../classcm_1_1_patch_window.html#a3942a3aacbe85faece2718d294762c23',1,'cm::PatchWindow::createMenus()']]],
-  ['createmsg',['createMsg',['../classcm_1_1_canvas.html#ac145953e7bd540bd2f387086d4184b80',1,'cm::Canvas']]],
-  ['createobject',['createObject',['../classcm_1_1_canvas.html#a4300009cd6b822e26b672c7881fee4d0',1,'cm::Canvas::createObject()'],['../classcm_1_1_object_loader.html#ada074a949d569c7597eae975a3d55202',1,'cm::ObjectLoader::createObject()'],['../classcmo__box.html#a690671c2ac72c6b2ef64f88b0be7cdb1',1,'cmo_box::createObject()'],['../classcmo__float.html#a997cd40f62db64a96b588004dc0f9434',1,'cmo_float::createObject()'],['../classcmo__msg.html#a6e1cb50525401f7c9305a5df110c4f55',1,'cmo_msg::createObject()'],['../classcmo__text.html#a309ae665602b7ace158ddaf6a7d2e615',1,'cmo_text::createObject()']]],
-  ['createtext',['createText',['../classcm_1_1_canvas.html#ad10364932c20a325e48884a8a8b2d5e9',1,'cm::Canvas']]]
+  ['createobject',['createObject',['../classcm_1_1_canvas.html#a4300009cd6b822e26b672c7881fee4d0',1,'cm::Canvas::createObject()'],['../classcm_1_1_object_loader.html#a1eb8184c6f0a5c0770b9d81dea676510',1,'cm::ObjectLoader::createObject()'],['../classcm_1_1_u_i_bang.html#a71df5198a2b1c99179e32fdaba0e3f9b',1,'cm::UIBang::createObject()'],['../classcm_1_1_u_i_box.html#a88cb253bdca57d2e41db6d3434f281b7',1,'cm::UIBox::createObject()'],['../classcm_1_1_u_i_float.html#a6bcc2dd96a1fe50642bb9f1df1078d68',1,'cm::UIFloat::createObject()'],['../classcm_1_1_u_i_message.html#a5f1c0998a90512c373bdcf91ed5ae2ad',1,'cm::UIMessage::createObject()'],['../classcm_1_1_u_i_text.html#afb9da697ca75f78f9b678bc90f528406',1,'cm::UIText::createObject()'],['../classcm_1_1_u_i_toggle.html#a569e65c06a522791dacce2a8836740f1',1,'cm::UIToggle::createObject()']]]
 ];

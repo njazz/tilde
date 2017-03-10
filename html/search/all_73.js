@@ -31,14 +31,15 @@ var searchData=
   ['setgridvisible',['setGridVisible',['../classcm_1_1_patch_window.html#a36c22a10e18697f6acdd523659568ed1',1,'cm::PatchWindow']]],
   ['setgroup',['setGroup',['../classcm_1_1_u_i_property.html#ae1d6458015c72b0f003a21d075001d95',1,'cm::UIProperty']]],
   ['setinletspos',['setInletsPos',['../classcm_1_1_u_i_object.html#adffee45a9a518cb046db758b878010d4',1,'cm::UIObject']]],
+  ['setminimumboxwidth',['setMinimumBoxWidth',['../classcm_1_1_u_i_object.html#ae37d466dcab243be17de1b19091713ef',1,'cm::UIObject']]],
   ['setname',['setName',['../classcm_1_1_u_i_property.html#a0befa4152e3e19c78520eab19cb7fe72',1,'cm::UIProperty::setName(std::string name)'],['../classcm_1_1_u_i_property.html#a03749178c339baf5a2c28ffe91cb336d',1,'cm::UIProperty::setName(QString name)']]],
   ['setobjectdata',['setObjectData',['../classcm_1_1_u_i_object.html#a42cd816b2e061057104f1e1ade6b8a71',1,'cm::UIObject']]],
   ['setoutletspos',['setOutletsPos',['../classcm_1_1_u_i_object.html#ab81eb32b46ae2b776b3780c10a67a419',1,'cm::UIObject']]],
-  ['setpdmessage',['setPdMessage',['../classcmo__box.html#a3685f3b0db2482c683ddbefeaf758a4b',1,'cmo_box::setPdMessage()'],['../classcmo__float.html#a572a2a372d2f62f94b7bb06e7294e5fd',1,'cmo_float::setPdMessage()'],['../classcmo__msg.html#a44e862270c272f0942e93553976ee6e1',1,'cmo_msg::setPdMessage()'],['../classcmo__text.html#a79e167f0493b5b93f991b14987343cc6',1,'cmo_text::setPdMessage()']]],
-  ['setpdobject',['setPdObject',['../classcm_1_1_u_i_object.html#a897fffbdb2363d9c0ba5acbc80d7512d',1,'cm::UIObject::setPdObject()'],['../classcmo__float.html#a5a86972d1cfe55e6c4b7dd0fab6a6b05',1,'cmo_float::setPdObject()'],['../classcmo__msg.html#aae56b316e3178314807f700ac50785de',1,'cmo_msg::setPdObject()']]],
+  ['setpdmessage',['setPdMessage',['../classcm_1_1_u_i_bang.html#a7de5638fcab16f602c981f8868909fb4',1,'cm::UIBang::setPdMessage()'],['../classcm_1_1_u_i_box.html#a813aec9940426c4cde3e86e25fc3c2aa',1,'cm::UIBox::setPdMessage()'],['../classcm_1_1_u_i_float.html#a40a6717409b74c4bcff180c55fb19929',1,'cm::UIFloat::setPdMessage()'],['../classcm_1_1_u_i_message.html#ace2d0662ff24bc7bbe771bdb287905f0',1,'cm::UIMessage::setPdMessage()'],['../classcm_1_1_u_i_text.html#a7b9dca9a817c01ec5e29d9260aee56ff',1,'cm::UIText::setPdMessage()'],['../classcm_1_1_u_i_toggle.html#a10df294d70cc3b8c5bdbf39c2ccb465b',1,'cm::UIToggle::setPdMessage()']]],
+  ['setpdobject',['setPdObject',['../classcm_1_1_u_i_object.html#a897fffbdb2363d9c0ba5acbc80d7512d',1,'cm::UIObject::setPdObject()'],['../classcm_1_1_u_i_bang.html#a2fb846e6ddde33f6d1af7876a7f38239',1,'cm::UIBang::setPdObject()'],['../classcm_1_1_u_i_float.html#ab6ef218accfe836599a188c1d5045134',1,'cm::UIFloat::setPdObject()'],['../classcm_1_1_u_i_message.html#a3b8286f1ff1e80796962cb1db646f353',1,'cm::UIMessage::setPdObject()'],['../classcm_1_1_u_i_toggle.html#a2638be20a2c6bf9e9d46a4639a6329b2',1,'cm::UIToggle::setPdObject()']]],
   ['setscale',['setScale',['../classcm_1_1_u_i_widget.html#ab19dfbac026586878943a23b85be26ee',1,'cm::UIWidget']]],
-  ['sizebox',['SizeBox',['../classcm_1_1_size_box.html',1,'cm']]],
   ['sizebox',['SizeBox',['../classcm_1_1_size_box.html#ad7eea41674442aebf6c5659411b7448a',1,'cm::SizeBox']]],
+  ['sizebox',['SizeBox',['../classcm_1_1_size_box.html',1,'cm']]],
   ['start',['start',['../structcm_1_1t_rect_plus.html#a08ead848f4fb174d0997b620942d295b',1,'cm::tRectPlus']]],
   ['stringtocanvas',['stringToCanvas',['../classcm_1_1_file_parser.html#aeb02a7ed4edafeddd95a63fbe6ed28f5',1,'cm::FileParser']]]
 ];

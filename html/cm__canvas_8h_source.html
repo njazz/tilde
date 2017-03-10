@@ -329,20 +329,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00278"></a>00278         {
 <a name="l00279"></a>00279             <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt; (int)this-&gt;objectBoxes.size();i++)
 <a name="l00280"></a>00280             {
-<a name="l00281"></a>00281                 QPoint pos = ((<a class="code" href="classcmo__box.html" title="gui object: standard object box">cmo_box</a>*)this-&gt;objectBoxes.at(i))-&gt;pos();
-<a name="l00282"></a>00282                 QSize size = ((<a class="code" href="classcmo__box.html" title="gui object: standard object box">cmo_box</a>*)this-&gt;objectBoxes.at(i))-&gt;size();
+<a name="l00281"></a>00281                 QPoint pos = ((<a class="code" href="classcm_1_1_u_i_box.html" title="gui object: standard object box">UIBox</a>*)this-&gt;objectBoxes.at(i))-&gt;pos();
+<a name="l00282"></a>00282                 QSize size = ((<a class="code" href="classcm_1_1_u_i_box.html" title="gui object: standard object box">UIBox</a>*)this-&gt;objectBoxes.at(i))-&gt;size();
 <a name="l00283"></a>00283                 QRect r = QRect(pos, pos+QPoint(size.width(), size.height()) );
 <a name="l00284"></a>00284 
 <a name="l00285"></a>00285                 QRect frame = QRect (this-&gt;selFrame.<a class="code" href="structcm_1_1t_rect_plus.html#a08ead848f4fb174d0997b620942d295b">start</a>, this-&gt;selFrame.start + this-&gt;selFrame.end );
 <a name="l00286"></a>00286 
 <a name="l00287"></a>00287                 <span class="keywordflow">if</span> (frame.contains(r,<span class="keyword">false</span>))
 <a name="l00288"></a>00288                 {
-<a name="l00289"></a>00289                     ((<a class="code" href="classcmo__box.html" title="gui object: standard object box">cmo_box</a>*)this-&gt;objectBoxes.at(i))-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#abb414248c8ba47d60ee6f5792fd9a3a2" title="select object">select</a>();
+<a name="l00289"></a>00289                     ((<a class="code" href="classcm_1_1_u_i_box.html" title="gui object: standard object box">UIBox</a>*)this-&gt;objectBoxes.at(i))-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#abb414248c8ba47d60ee6f5792fd9a3a2" title="select object">select</a>();
 <a name="l00290"></a>00290                     this-&gt;selObjectBoxes.push_back(this-&gt;objectBoxes.at(i));
 <a name="l00291"></a>00291                 }
 <a name="l00292"></a>00292                 <span class="keywordflow">else</span>
 <a name="l00293"></a>00293                 {
-<a name="l00294"></a>00294                     ((<a class="code" href="classcmo__box.html" title="gui object: standard object box">cmo_box</a>*)this-&gt;objectBoxes.at(i))-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#ae4b9236b24293454621d1eb1e56e9d1c" title="deselect object">deselect</a>();
+<a name="l00294"></a>00294                     ((<a class="code" href="classcm_1_1_u_i_box.html" title="gui object: standard object box">UIBox</a>*)this-&gt;objectBoxes.at(i))-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#ae4b9236b24293454621d1eb1e56e9d1c" title="deselect object">deselect</a>();
 <a name="l00295"></a>00295 
 <a name="l00296"></a>00296                     <span class="keyword">auto</span> it = std::find(this-&gt;selObjectBoxes.begin(), this-&gt;selObjectBoxes.end(), this-&gt;objectBoxes.at(i));
 <a name="l00297"></a>00297                     <span class="keywordflow">if</span> (it != this-&gt;selObjectBoxes.end()) { this-&gt;selObjectBoxes.erase(it); }
@@ -404,7 +404,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00363"></a>00363         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0;i&lt; (int)this-&gt;selObjectBoxes.size();i++)
 <a name="l00364"></a>00364         {
 <a name="l00365"></a>00365             <span class="keywordflow">if</span> (this-&gt;selObjectBoxes.at(i))
-<a name="l00366"></a>00366                 ((<a class="code" href="classcmo__box.html" title="gui object: standard object box">cmo_box</a>*)this-&gt;selObjectBoxes.at(i))-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#ae4b9236b24293454621d1eb1e56e9d1c" title="deselect object">deselect</a>();
+<a name="l00366"></a>00366                 ((<a class="code" href="classcm_1_1_u_i_box.html" title="gui object: standard object box">UIBox</a>*)this-&gt;selObjectBoxes.at(i))-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#ae4b9236b24293454621d1eb1e56e9d1c" title="deselect object">deselect</a>();
 <a name="l00367"></a>00367 
 <a name="l00368"></a>00368         }
 <a name="l00369"></a>00369 
@@ -412,13 +412,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00371"></a>00371     }
 <a name="l00372"></a>00372 
 <a name="l00380"></a>00380 
-<a name="l00381"></a><a class="code" href="classcm_1_1_canvas.html#ac20a5df02fb0f848d14ac7af0225dd90">00381</a>     <a class="code" href="classcmo__box.html" title="gui object: standard object box">cmo_box</a>* <a class="code" href="classcm_1_1_canvas.html#ac20a5df02fb0f848d14ac7af0225dd90" title="restore &quot;pd&quot; object when loading from file">restoreSubcanvas</a>(std::string pdObjectName, QPoint pos, t_canvas* canvas)
+<a name="l00381"></a><a class="code" href="classcm_1_1_canvas.html#a272a3024a0662b07f91f0dbc2ae57fdb">00381</a>     <a class="code" href="classcm_1_1_u_i_box.html" title="gui object: standard object box">UIBox</a>* <a class="code" href="classcm_1_1_canvas.html#a272a3024a0662b07f91f0dbc2ae57fdb" title="restore &quot;pd&quot; object when loading from file">restoreSubcanvas</a>(std::string pdObjectName, QPoint pos, t_canvas* canvas)
 <a name="l00382"></a>00382     {
-<a name="l00383"></a>00383         <a class="code" href="classcmo__box.html" title="gui object: standard object box">cmo_box</a> *box = <span class="keyword">new</span> <a class="code" href="classcmo__box.html" title="gui object: standard object box">cmo_box</a>((<a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*)<span class="keyword">this</span>);   <span class="comment">//test?</span>
+<a name="l00383"></a>00383         <a class="code" href="classcm_1_1_u_i_box.html" title="gui object: standard object box">UIBox</a> *box = <span class="keyword">new</span> <a class="code" href="classcm_1_1_u_i_box.html" title="gui object: standard object box">UIBox</a>((<a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*)<span class="keyword">this</span>);   <span class="comment">//test?</span>
 <a name="l00384"></a>00384         box-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a42cd816b2e061057104f1e1ade6b8a71" title="sets object text data /usually overriden by ui objects/">setObjectData</a>(pdObjectName);
 <a name="l00385"></a>00385 
-<a name="l00386"></a>00386         connect(box,&amp;<a class="code" href="classcm_1_1_u_i_widget.html#a493fc15e906775728038ef1e7de6bebc">cmo_box::selectBox</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classcm_1_1_canvas.html#a6c11512b7368573759ef28f6c968afce" title="slot called by box when it is selected">Canvas::s_SelectBox</a>);
-<a name="l00387"></a>00387         connect(box,&amp;<a class="code" href="classcm_1_1_u_i_widget.html#a0538edf982efa304002cc089b5414fda">cmo_box::moveBox</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classcm_1_1_canvas.html#adf8a90ecdad3403af907a69af3d77bec" title="TODO check. slot called by box when it starts moving.">Canvas::s_MoveBox</a>);
+<a name="l00386"></a>00386         connect(box,&amp;<a class="code" href="classcm_1_1_u_i_widget.html#a493fc15e906775728038ef1e7de6bebc">UIBox::selectBox</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classcm_1_1_canvas.html#a6c11512b7368573759ef28f6c968afce" title="slot called by box when it is selected">Canvas::s_SelectBox</a>);
+<a name="l00387"></a>00387         connect(box,&amp;<a class="code" href="classcm_1_1_u_i_widget.html#a0538edf982efa304002cc089b5414fda">UIBox::moveBox</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classcm_1_1_canvas.html#adf8a90ecdad3403af907a69af3d77bec" title="TODO check. slot called by box when it starts moving.">Canvas::s_MoveBox</a>);
 <a name="l00388"></a>00388 
 <a name="l00389"></a>00389         box-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a007ca2f57bda522a33ecaf15923e9067" title="sets pointer to edit mode flag in parent canvas">setEditModeRef</a>(&amp;this-&gt;editMode);
 <a name="l00390"></a>00390 
@@ -475,446 +475,472 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00441"></a>00441 
 <a name="l00442"></a>00442     }
 <a name="l00443"></a>00443 
-<a name="l00450"></a><a class="code" href="classcm_1_1_canvas.html#a7ca8ba44895120ddec3b02ae347d51af">00450</a>     <a class="code" href="classcmo__box.html" title="gui object: standard object box">cmo_box</a>* <a class="code" href="classcm_1_1_canvas.html#a7ca8ba44895120ddec3b02ae347d51af" title="create new object box">createBox</a>(std::string pdObjectName, QPoint pos)
-<a name="l00451"></a>00451     {
-<a name="l00452"></a>00452         <a class="code" href="classcmo__box.html" title="gui object: standard object box">cmo_box</a> *box = <span class="keyword">new</span> <a class="code" href="classcmo__box.html" title="gui object: standard object box">cmo_box</a>((<a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*)<span class="keyword">this</span>);   <span class="comment">//test?</span>
-<a name="l00453"></a>00453         box-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a42cd816b2e061057104f1e1ade6b8a71" title="sets object text data /usually overriden by ui objects/">setObjectData</a>(pdObjectName);
+<a name="l00444"></a>00444 <span class="comment">//    ////</span>
+<a name="l00445"></a>00445 <span class="comment">//    /// \brief create new object box</span>
+<a name="l00446"></a>00446 <span class="comment">//    /// \param pdObjectName TODO rename. object name and arguments</span>
+<a name="l00447"></a>00447 <span class="comment">//    /// \param pos</span>
+<a name="l00448"></a>00448 <span class="comment">//    /// \return pointer to cm_box</span>
+<a name="l00449"></a>00449 <span class="comment">//    ///</span>
+<a name="l00450"></a>00450 <span class="comment">//    UIBox* createBox(std::string pdObjectName, QPoint pos)</span>
+<a name="l00451"></a>00451 <span class="comment">//    {</span>
+<a name="l00452"></a>00452 <span class="comment">//        UIBox *box = new UIBox((UIObject*)this);   //test?</span>
+<a name="l00453"></a>00453 <span class="comment">//        box-&gt;setObjectData(pdObjectName);</span>
 <a name="l00454"></a>00454 
-<a name="l00455"></a>00455         connect(box,&amp;<a class="code" href="classcm_1_1_u_i_widget.html#a493fc15e906775728038ef1e7de6bebc">cmo_box::selectBox</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classcm_1_1_canvas.html#a6c11512b7368573759ef28f6c968afce" title="slot called by box when it is selected">Canvas::s_SelectBox</a>);
-<a name="l00456"></a>00456         connect(box,&amp;<a class="code" href="classcm_1_1_u_i_widget.html#a0538edf982efa304002cc089b5414fda">cmo_box::moveBox</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classcm_1_1_canvas.html#adf8a90ecdad3403af907a69af3d77bec" title="TODO check. slot called by box when it starts moving.">Canvas::s_MoveBox</a>);
+<a name="l00455"></a>00455 <span class="comment">//        connect(box,&amp;UIBox::selectBox, this, &amp;Canvas::s_SelectBox);</span>
+<a name="l00456"></a>00456 <span class="comment">//        connect(box,&amp;UIBox::moveBox, this, &amp;Canvas::s_MoveBox);</span>
 <a name="l00457"></a>00457 
-<a name="l00458"></a>00458         box-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a007ca2f57bda522a33ecaf15923e9067" title="sets pointer to edit mode flag in parent canvas">setEditModeRef</a>(&amp;this-&gt;editMode);
+<a name="l00458"></a>00458 <span class="comment">//        box-&gt;setEditModeRef(&amp;this-&gt;editMode);</span>
 <a name="l00459"></a>00459 
-<a name="l00460"></a>00460         <span class="keyword">const</span> <span class="keywordtype">char</span> * obj_name = pdObjectName.c_str();
+<a name="l00460"></a>00460 <span class="comment">//        const char * obj_name = pdObjectName.c_str();</span>
 <a name="l00461"></a>00461 
-<a name="l00462"></a>00462         t_object* new_obj = 0 ;
-<a name="l00463"></a>00463         <span class="keywordtype">int</span> in_c=0, out_c=0;
+<a name="l00462"></a>00462 <span class="comment">//        t_object* new_obj = 0 ;</span>
+<a name="l00463"></a>00463 <span class="comment">//        int in_c=0, out_c=0;</span>
 <a name="l00464"></a>00464 
-<a name="l00465"></a>00465         <span class="comment">//temp</span>
-<a name="l00466"></a>00466         <span class="keywordflow">if</span> (!this-&gt;<a class="code" href="classcm_1_1_canvas.html#a24d8522284d0bc2886e426f251752f12">pdCanvas</a>)
-<a name="l00467"></a>00467         {
-<a name="l00468"></a>00468             qDebug(<span class="stringliteral">&quot;bad pd canvas instance&quot;</span>);
-<a name="l00469"></a>00469             box-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a8304b1fc7a03d92509b142995201fd7c" title="sets object box error flag">setErrorBox</a>(<span class="keyword">true</span>);
-<a name="l00470"></a>00470         }
-<a name="l00471"></a>00471         <span class="keywordflow">else</span>
-<a name="l00472"></a>00472         {
-<a name="l00473"></a>00473             new_obj = <a class="code" href="cm__pdlink_8h.html#a2c0a0d9150791897b85a167998ecf7c2" title="creates pd object">cmp_create_object</a>(this-&gt;<a class="code" href="classcm_1_1_canvas.html#a24d8522284d0bc2886e426f251752f12">pdCanvas</a>,(<span class="keywordtype">char</span>*)obj_name,pos.x(), pos.y());
-<a name="l00474"></a>00474         }
+<a name="l00465"></a>00465 <span class="comment">//        //temp</span>
+<a name="l00466"></a>00466 <span class="comment">//        if (!this-&gt;pdCanvas)</span>
+<a name="l00467"></a>00467 <span class="comment">//        {</span>
+<a name="l00468"></a>00468 <span class="comment">//            qDebug(&quot;bad pd canvas instance&quot;);</span>
+<a name="l00469"></a>00469 <span class="comment">//            box-&gt;setErrorBox(true);</span>
+<a name="l00470"></a>00470 <span class="comment">//        }</span>
+<a name="l00471"></a>00471 <span class="comment">//        else</span>
+<a name="l00472"></a>00472 <span class="comment">//        {</span>
+<a name="l00473"></a>00473 <span class="comment">//            new_obj = cmp_create_object(this-&gt;pdCanvas,(char*)obj_name,pos.x(), pos.y());</span>
+<a name="l00474"></a>00474 <span class="comment">//        }</span>
 <a name="l00475"></a>00475 
-<a name="l00476"></a>00476         <span class="keywordflow">if</span> (new_obj)
-<a name="l00477"></a>00477         {
+<a name="l00476"></a>00476 <span class="comment">//        if (new_obj)</span>
+<a name="l00477"></a>00477 <span class="comment">//        {</span>
 <a name="l00478"></a>00478 
-<a name="l00479"></a>00479             <span class="comment">// qDebug (&quot;created object %lu, new_obj&quot;);</span>
+<a name="l00479"></a>00479 <span class="comment">//            // qDebug (&quot;created object %lu, new_obj&quot;);</span>
 <a name="l00480"></a>00480 
-<a name="l00481"></a>00481             in_c = <a class="code" href="cm__pdlink_8h.html#a7fcb3388b050e30e14b731b7288a7f76" title="get number of inlets for object">cmp_get_inlet_count</a>(new_obj);
-<a name="l00482"></a>00482             out_c = <a class="code" href="cm__pdlink_8h.html#a680a1380d6950cd336b5631b3d3a7737" title="get number of outlets for object">cmp_get_outlet_count</a>(new_obj);
+<a name="l00481"></a>00481 <span class="comment">//            in_c = cmp_get_inlet_count(new_obj);</span>
+<a name="l00482"></a>00482 <span class="comment">//            out_c = cmp_get_outlet_count(new_obj);</span>
 <a name="l00483"></a>00483 
-<a name="l00484"></a>00484             qDebug (<span class="stringliteral">&quot;created object %s ins %i outs %i ptr %lu&quot;</span>, obj_name, in_c, out_c, (<span class="keywordtype">long</span>)new_obj);
+<a name="l00484"></a>00484 <span class="comment">//            qDebug (&quot;created object %s ins %i outs %i ptr %lu&quot;, obj_name, in_c, out_c, (long)new_obj);</span>
 <a name="l00485"></a>00485 
-<a name="l00486"></a>00486             <span class="comment">//cm_box* newBox = this-&gt;canvas-&gt;createBox(this-&gt;objectMaker-&gt;text().toStdString(),this-&gt;objectMaker-&gt;pos(),in_c,out_c);</span>
-<a name="l00487"></a>00487             box-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a897fffbdb2363d9c0ba5acbc80d7512d" title="sets pointer to pd object">setPdObject</a>(new_obj);
+<a name="l00486"></a>00486 <span class="comment">//            //cm_box* newBox = this-&gt;canvas-&gt;createBox(this-&gt;objectMaker-&gt;text().toStdString(),this-&gt;objectMaker-&gt;pos(),in_c,out_c);</span>
+<a name="l00487"></a>00487 <span class="comment">//            box-&gt;setPdObject(new_obj);</span>
 <a name="l00488"></a>00488 
-<a name="l00489"></a>00489         }
-<a name="l00490"></a>00490         <span class="keywordflow">else</span>
-<a name="l00491"></a>00491         {
-<a name="l00492"></a>00492             qDebug(<span class="stringliteral">&quot;Error: no such object %s&quot;</span>, obj_name);
-<a name="l00493"></a>00493             box-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a8304b1fc7a03d92509b142995201fd7c" title="sets object box error flag">setErrorBox</a>(<span class="keyword">true</span>);
-<a name="l00494"></a>00494             in_c = 1; out_c = 1;
-<a name="l00495"></a>00495             <span class="comment">//return 0;</span>
-<a name="l00496"></a>00496         }
+<a name="l00489"></a>00489 <span class="comment">//        }</span>
+<a name="l00490"></a>00490 <span class="comment">//        else</span>
+<a name="l00491"></a>00491 <span class="comment">//        {</span>
+<a name="l00492"></a>00492 <span class="comment">//            qDebug(&quot;Error: no such object %s&quot;, obj_name);</span>
+<a name="l00493"></a>00493 <span class="comment">//            box-&gt;setErrorBox(true);</span>
+<a name="l00494"></a>00494 <span class="comment">//            in_c = 1; out_c = 1;</span>
+<a name="l00495"></a>00495 <span class="comment">//            //return 0;</span>
+<a name="l00496"></a>00496 <span class="comment">//        }</span>
 <a name="l00497"></a>00497 
-<a name="l00498"></a>00498         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0;i&lt;in_c;i++)
-<a name="l00499"></a>00499             box-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a3e735691241c3d28b660b0ee945b3ab5" title="adds single inlet (cm_port)">addInlet</a>();
-<a name="l00500"></a>00500         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0;i&lt;out_c;i++)
-<a name="l00501"></a>00501             box-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a8ddae9dbc64fa5687d8c38baddd3a56b" title="adds single outlet (cm_port)">addOutlet</a>();
+<a name="l00498"></a>00498 <span class="comment">//        for (int i=0;i&lt;in_c;i++)</span>
+<a name="l00499"></a>00499 <span class="comment">//            box-&gt;addInlet();</span>
+<a name="l00500"></a>00500 <span class="comment">//        for (int i=0;i&lt;out_c;i++)</span>
+<a name="l00501"></a>00501 <span class="comment">//            box-&gt;addOutlet();</span>
 <a name="l00502"></a>00502 
-<a name="l00503"></a>00503         box-&gt;move(pos);
+<a name="l00503"></a>00503 <span class="comment">//        box-&gt;move(pos);</span>
 <a name="l00504"></a>00504 
-<a name="l00505"></a>00505         this-&gt;objectBoxes.push_back(box);
+<a name="l00505"></a>00505 <span class="comment">//        this-&gt;objectBoxes.push_back(box);</span>
 <a name="l00506"></a>00506 
-<a name="l00507"></a>00507         box-&gt;show();
+<a name="l00507"></a>00507 <span class="comment">//        box-&gt;show();</span>
 <a name="l00508"></a>00508 
-<a name="l00509"></a>00509         <span class="keywordflow">return</span> box;
+<a name="l00509"></a>00509 <span class="comment">//        return box;</span>
 <a name="l00510"></a>00510 
-<a name="l00511"></a>00511     }
+<a name="l00511"></a>00511 <span class="comment">//    }</span>
 <a name="l00512"></a>00512 
-<a name="l00519"></a><a class="code" href="classcm_1_1_canvas.html#ac145953e7bd540bd2f387086d4184b80">00519</a>     <a class="code" href="classcmo__msg.html" title="gui object: message box (ui.msg)">cmo_msg</a>* <a class="code" href="classcm_1_1_canvas.html#ac145953e7bd540bd2f387086d4184b80" title="create new message box (ui.msg now)">createMsg</a>(std::string message, QPoint pos)
-<a name="l00520"></a>00520     {
-<a name="l00521"></a>00521         <a class="code" href="classcmo__msg.html" title="gui object: message box (ui.msg)">cmo_msg</a> *msg = <span class="keyword">new</span> <a class="code" href="classcmo__msg.html" title="gui object: message box (ui.msg)">cmo_msg</a>((<a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*)<span class="keyword">this</span>);   <span class="comment">//check</span>
-<a name="l00522"></a>00522         msg-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a42cd816b2e061057104f1e1ade6b8a71" title="sets object text data /usually overriden by ui objects/">setObjectData</a>(message);
+<a name="l00513"></a>00513 <span class="comment">//    ////</span>
+<a name="l00514"></a>00514 <span class="comment">//    /// \brief create new message box (ui.msg now)</span>
+<a name="l00515"></a>00515 <span class="comment">//    /// \param pdObjectName TODO rename. object name and arguments</span>
+<a name="l00516"></a>00516 <span class="comment">//    /// \param pos</span>
+<a name="l00517"></a>00517 <span class="comment">//    /// \return pointer to cm_box</span>
+<a name="l00518"></a>00518 <span class="comment">//    ///</span>
+<a name="l00519"></a>00519 <span class="comment">//    UIMessage* createMsg(std::string message, QPoint pos)</span>
+<a name="l00520"></a>00520 <span class="comment">//    {</span>
+<a name="l00521"></a>00521 <span class="comment">//        UIMessage *msg = new UIMessage((UIObject*)this);   //check</span>
+<a name="l00522"></a>00522 <span class="comment">//        msg-&gt;setObjectData(message);</span>
 <a name="l00523"></a>00523 
-<a name="l00524"></a>00524         msg-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a3e735691241c3d28b660b0ee945b3ab5" title="adds single inlet (cm_port)">addInlet</a>();
-<a name="l00525"></a>00525         msg-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a8ddae9dbc64fa5687d8c38baddd3a56b" title="adds single outlet (cm_port)">addOutlet</a>();
+<a name="l00524"></a>00524 <span class="comment">//        msg-&gt;addInlet();</span>
+<a name="l00525"></a>00525 <span class="comment">//        msg-&gt;addOutlet();</span>
 <a name="l00526"></a>00526 
-<a name="l00527"></a>00527         connect(msg,&amp;<a class="code" href="classcm_1_1_u_i_widget.html#a493fc15e906775728038ef1e7de6bebc">cmo_msg::selectBox</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classcm_1_1_canvas.html#a6c11512b7368573759ef28f6c968afce" title="slot called by box when it is selected">Canvas::s_SelectBox</a>);
-<a name="l00528"></a>00528         connect(msg,&amp;<a class="code" href="classcm_1_1_u_i_widget.html#a0538edf982efa304002cc089b5414fda">cmo_msg::moveBox</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classcm_1_1_canvas.html#adf8a90ecdad3403af907a69af3d77bec" title="TODO check. slot called by box when it starts moving.">Canvas::s_MoveBox</a>);
+<a name="l00527"></a>00527 <span class="comment">//        connect(msg,&amp;UIMessage::selectBox, this, &amp;Canvas::s_SelectBox);</span>
+<a name="l00528"></a>00528 <span class="comment">//        connect(msg,&amp;UIMessage::moveBox, this, &amp;Canvas::s_MoveBox);</span>
 <a name="l00529"></a>00529 
-<a name="l00530"></a>00530         msg-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a007ca2f57bda522a33ecaf15923e9067" title="sets pointer to edit mode flag in parent canvas">setEditModeRef</a>(&amp;this-&gt;editMode);
+<a name="l00530"></a>00530 <span class="comment">//        msg-&gt;setEditModeRef(&amp;this-&gt;editMode);</span>
 <a name="l00531"></a>00531 
-<a name="l00532"></a>00532         msg-&gt;move(pos);
+<a name="l00532"></a>00532 <span class="comment">//        msg-&gt;move(pos);</span>
 <a name="l00533"></a>00533 
-<a name="l00534"></a>00534         this-&gt;objectBoxes.push_back(msg);
+<a name="l00534"></a>00534 <span class="comment">//        this-&gt;objectBoxes.push_back(msg);</span>
 <a name="l00535"></a>00535 
-<a name="l00536"></a>00536         <span class="comment">//temp</span>
-<a name="l00537"></a>00537         t_object* new_obj = 0 ;
-<a name="l00538"></a>00538         <span class="keywordflow">if</span> (!this-&gt;<a class="code" href="classcm_1_1_canvas.html#a24d8522284d0bc2886e426f251752f12">pdCanvas</a>)
-<a name="l00539"></a>00539         {qDebug(<span class="stringliteral">&quot;bad pd canvas instance&quot;</span>);}
-<a name="l00540"></a>00540         <span class="keywordflow">else</span>
-<a name="l00541"></a>00541         {
-<a name="l00542"></a>00542             new_obj = <a class="code" href="cm__pdlink_8h.html#a3bac993f5ef2ae3ddcb123762d3668d0" title="creates pd message TODO not working now">cmp_create_message</a>(this-&gt;<a class="code" href="classcm_1_1_canvas.html#a24d8522284d0bc2886e426f251752f12">pdCanvas</a>, message, pos.x(), pos.y());
-<a name="l00543"></a>00543         }
+<a name="l00536"></a>00536 <span class="comment">//        //temp</span>
+<a name="l00537"></a>00537 <span class="comment">//        t_object* new_obj = 0 ;</span>
+<a name="l00538"></a>00538 <span class="comment">//        if (!this-&gt;pdCanvas)</span>
+<a name="l00539"></a>00539 <span class="comment">//        {qDebug(&quot;bad pd canvas instance&quot;);}</span>
+<a name="l00540"></a>00540 <span class="comment">//        else</span>
+<a name="l00541"></a>00541 <span class="comment">//        {</span>
+<a name="l00542"></a>00542 <span class="comment">//            new_obj = cmp_create_message(this-&gt;pdCanvas, message, pos.x(), pos.y());</span>
+<a name="l00543"></a>00543 <span class="comment">//        }</span>
 <a name="l00544"></a>00544 
-<a name="l00545"></a>00545         <span class="keywordflow">if</span> (new_obj)
-<a name="l00546"></a>00546         {
-<a name="l00547"></a>00547             qDebug (<span class="stringliteral">&quot;created msgbox %s | ptr %lu\n&quot;</span>,  message.c_str(), (long)new_obj);
-<a name="l00548"></a>00548             msg-&gt;<a class="code" href="classcmo__msg.html#aae56b316e3178314807f700ac50785de" title="sets pointer to pd object">setPdObject</a>(new_obj);
-<a name="l00549"></a>00549         }
-<a name="l00550"></a>00550         <span class="keywordflow">else</span>
-<a name="l00551"></a>00551         {
-<a name="l00552"></a>00552             qDebug(<span class="stringliteral">&quot;Error: no such object %s&quot;</span>,  message.c_str());
-<a name="l00553"></a>00553         }
+<a name="l00545"></a>00545 <span class="comment">//        if (new_obj)</span>
+<a name="l00546"></a>00546 <span class="comment">//        {</span>
+<a name="l00547"></a>00547 <span class="comment">//            qDebug (&quot;created msgbox %s | ptr %lu\n&quot;,  message.c_str(), (long)new_obj);</span>
+<a name="l00548"></a>00548 <span class="comment">//            msg-&gt;setPdObject(new_obj);</span>
+<a name="l00549"></a>00549 <span class="comment">//        }</span>
+<a name="l00550"></a>00550 <span class="comment">//        else</span>
+<a name="l00551"></a>00551 <span class="comment">//        {</span>
+<a name="l00552"></a>00552 <span class="comment">//            qDebug(&quot;Error: no such object %s&quot;,  message.c_str());</span>
+<a name="l00553"></a>00553 <span class="comment">//        }</span>
 <a name="l00554"></a>00554 
-<a name="l00555"></a>00555         msg-&gt;<a class="code" href="classcmo__msg.html#a44e862270c272f0942e93553976ee6e1">setPdMessage</a>(message.c_str());
+<a name="l00555"></a>00555 <span class="comment">//        msg-&gt;setPdMessage(message.c_str());</span>
 <a name="l00556"></a>00556 
-<a name="l00557"></a>00557         msg-&gt;show();
+<a name="l00557"></a>00557 <span class="comment">//        msg-&gt;show();</span>
 <a name="l00558"></a>00558 
-<a name="l00559"></a>00559         <span class="keywordflow">return</span> msg;
+<a name="l00559"></a>00559 <span class="comment">//        return msg;</span>
 <a name="l00560"></a>00560 
 <a name="l00561"></a>00561 
-<a name="l00562"></a>00562     }
+<a name="l00562"></a>00562 <span class="comment">//    }</span>
 <a name="l00563"></a>00563 
 <a name="l00564"></a>00564 
-<a name="l00571"></a><a class="code" href="classcm_1_1_canvas.html#ada72731cdfbcd67b38ee77ffb723d92c">00571</a>     <a class="code" href="classcmo__float.html" title="gui object: float number box (ui.float)">cmo_float</a>* <a class="code" href="classcm_1_1_canvas.html#ada72731cdfbcd67b38ee77ffb723d92c" title="create new float box (ui.msg yet)">createFloat</a>(std::string message, QPoint pos)
-<a name="l00572"></a>00572     {
-<a name="l00573"></a>00573         <a class="code" href="classcmo__float.html" title="gui object: float number box (ui.float)">cmo_float</a> *flo = <span class="keyword">new</span> <a class="code" href="classcmo__float.html" title="gui object: float number box (ui.float)">cmo_float</a>((<a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*)<span class="keyword">this</span>);   <span class="comment">//check</span>
-<a name="l00574"></a>00574         flo-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a42cd816b2e061057104f1e1ade6b8a71" title="sets object text data /usually overriden by ui objects/">setObjectData</a>(message);
+<a name="l00565"></a>00565 <span class="comment">//    ////</span>
+<a name="l00566"></a>00566 <span class="comment">//    /// \brief create new float box (ui.msg yet)</span>
+<a name="l00567"></a>00567 <span class="comment">//    /// \param pdObjectName TODO rename. object name and arguments</span>
+<a name="l00568"></a>00568 <span class="comment">//    /// \param pos</span>
+<a name="l00569"></a>00569 <span class="comment">//    /// \return pointer to cm_box</span>
+<a name="l00570"></a>00570 <span class="comment">//    ///</span>
+<a name="l00571"></a>00571 <span class="comment">//    UIFloat* createFloat(std::string message, QPoint pos)</span>
+<a name="l00572"></a>00572 <span class="comment">//    {</span>
+<a name="l00573"></a>00573 <span class="comment">//        UIFloat *flo = new UIFloat((UIObject*)this);   //check</span>
+<a name="l00574"></a>00574 <span class="comment">//        flo-&gt;setObjectData(message);</span>
 <a name="l00575"></a>00575 
-<a name="l00576"></a>00576         flo-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a3e735691241c3d28b660b0ee945b3ab5" title="adds single inlet (cm_port)">addInlet</a>();
-<a name="l00577"></a>00577         flo-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a8ddae9dbc64fa5687d8c38baddd3a56b" title="adds single outlet (cm_port)">addOutlet</a>();
+<a name="l00576"></a>00576 <span class="comment">//        flo-&gt;addInlet();</span>
+<a name="l00577"></a>00577 <span class="comment">//        flo-&gt;addOutlet();</span>
 <a name="l00578"></a>00578 
-<a name="l00579"></a>00579         connect(flo,&amp;<a class="code" href="classcm_1_1_u_i_widget.html#a493fc15e906775728038ef1e7de6bebc">cmo_float::selectBox</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classcm_1_1_canvas.html#a6c11512b7368573759ef28f6c968afce" title="slot called by box when it is selected">Canvas::s_SelectBox</a>);
-<a name="l00580"></a>00580         connect(flo,&amp;<a class="code" href="classcm_1_1_u_i_widget.html#a0538edf982efa304002cc089b5414fda">cmo_float::moveBox</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classcm_1_1_canvas.html#adf8a90ecdad3403af907a69af3d77bec" title="TODO check. slot called by box when it starts moving.">Canvas::s_MoveBox</a>);
+<a name="l00579"></a>00579 <span class="comment">//        connect(flo,&amp;UIFloat::selectBox, this, &amp;Canvas::s_SelectBox);</span>
+<a name="l00580"></a>00580 <span class="comment">//        connect(flo,&amp;UIFloat::moveBox, this, &amp;Canvas::s_MoveBox);</span>
 <a name="l00581"></a>00581 
-<a name="l00582"></a>00582         flo-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a007ca2f57bda522a33ecaf15923e9067" title="sets pointer to edit mode flag in parent canvas">setEditModeRef</a>(&amp;this-&gt;editMode);
+<a name="l00582"></a>00582 <span class="comment">//        flo-&gt;setEditModeRef(&amp;this-&gt;editMode);</span>
 <a name="l00583"></a>00583 
-<a name="l00584"></a>00584         flo-&gt;move(pos);
+<a name="l00584"></a>00584 <span class="comment">//        flo-&gt;move(pos);</span>
 <a name="l00585"></a>00585 
-<a name="l00586"></a>00586         this-&gt;objectBoxes.push_back(flo);
+<a name="l00586"></a>00586 <span class="comment">//        this-&gt;objectBoxes.push_back(flo);</span>
 <a name="l00587"></a>00587 
-<a name="l00588"></a>00588         <span class="comment">//temp</span>
-<a name="l00589"></a>00589         t_object* new_obj = 0 ;
-<a name="l00590"></a>00590         <span class="keywordflow">if</span> (!this-&gt;<a class="code" href="classcm_1_1_canvas.html#a24d8522284d0bc2886e426f251752f12">pdCanvas</a>)
-<a name="l00591"></a>00591         {qDebug(<span class="stringliteral">&quot;bad pd canvas instance&quot;</span>);}
-<a name="l00592"></a>00592         <span class="keywordflow">else</span>
-<a name="l00593"></a>00593         {
-<a name="l00594"></a>00594             new_obj = <a class="code" href="cm__pdlink_8h.html#a3bac993f5ef2ae3ddcb123762d3668d0" title="creates pd message TODO not working now">cmp_create_message</a>(this-&gt;<a class="code" href="classcm_1_1_canvas.html#a24d8522284d0bc2886e426f251752f12">pdCanvas</a>, message, pos.x(), pos.y());
-<a name="l00595"></a>00595         }
+<a name="l00588"></a>00588 <span class="comment">//        //temp</span>
+<a name="l00589"></a>00589 <span class="comment">//        t_object* new_obj = 0 ;</span>
+<a name="l00590"></a>00590 <span class="comment">//        if (!this-&gt;pdCanvas)</span>
+<a name="l00591"></a>00591 <span class="comment">//        {qDebug(&quot;bad pd canvas instance&quot;);}</span>
+<a name="l00592"></a>00592 <span class="comment">//        else</span>
+<a name="l00593"></a>00593 <span class="comment">//        {</span>
+<a name="l00594"></a>00594 <span class="comment">//            new_obj = cmp_create_message(this-&gt;pdCanvas, message, pos.x(), pos.y());</span>
+<a name="l00595"></a>00595 <span class="comment">//        }</span>
 <a name="l00596"></a>00596 
-<a name="l00597"></a>00597         <span class="keywordflow">if</span> (new_obj)
-<a name="l00598"></a>00598         {
-<a name="l00599"></a>00599             qDebug (<span class="stringliteral">&quot;created msgbox %s | ptr %lu\n&quot;</span>,  message.c_str(), (long)new_obj);
-<a name="l00600"></a>00600             flo-&gt;<a class="code" href="classcmo__float.html#a5a86972d1cfe55e6c4b7dd0fab6a6b05" title="sets pointer to pd object">setPdObject</a>(new_obj);
-<a name="l00601"></a>00601         }
-<a name="l00602"></a>00602         <span class="keywordflow">else</span>
-<a name="l00603"></a>00603         {
-<a name="l00604"></a>00604             qDebug(<span class="stringliteral">&quot;Error: no such object %s&quot;</span>,  message.c_str());
-<a name="l00605"></a>00605         }
+<a name="l00597"></a>00597 <span class="comment">//        if (new_obj)</span>
+<a name="l00598"></a>00598 <span class="comment">//        {</span>
+<a name="l00599"></a>00599 <span class="comment">//            qDebug (&quot;created msgbox %s | ptr %lu\n&quot;,  message.c_str(), (long)new_obj);</span>
+<a name="l00600"></a>00600 <span class="comment">//            flo-&gt;setPdObject(new_obj);</span>
+<a name="l00601"></a>00601 <span class="comment">//        }</span>
+<a name="l00602"></a>00602 <span class="comment">//        else</span>
+<a name="l00603"></a>00603 <span class="comment">//        {</span>
+<a name="l00604"></a>00604 <span class="comment">//            qDebug(&quot;Error: no such object %s&quot;,  message.c_str());</span>
+<a name="l00605"></a>00605 <span class="comment">//        }</span>
 <a name="l00606"></a>00606 
-<a name="l00607"></a>00607         flo-&gt;<a class="code" href="classcmo__float.html#a572a2a372d2f62f94b7bb06e7294e5fd">setPdMessage</a>(message.c_str());
+<a name="l00607"></a>00607 <span class="comment">//        flo-&gt;setPdMessage(message.c_str());</span>
 <a name="l00608"></a>00608 
-<a name="l00609"></a>00609         flo-&gt;show();
+<a name="l00609"></a>00609 <span class="comment">//        flo-&gt;show();</span>
 <a name="l00610"></a>00610 
-<a name="l00611"></a>00611         <span class="keywordflow">return</span> flo;
+<a name="l00611"></a>00611 <span class="comment">//        return flo;</span>
 <a name="l00612"></a>00612 
 <a name="l00613"></a>00613 
-<a name="l00614"></a>00614     }
+<a name="l00614"></a>00614 <span class="comment">//    }</span>
 <a name="l00615"></a>00615 
 <a name="l00622"></a><a class="code" href="classcm_1_1_canvas.html#a4300009cd6b822e26b672c7881fee4d0">00622</a>     <a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classcm_1_1_canvas.html#a4300009cd6b822e26b672c7881fee4d0" title="prototype for universal object &#39;constructor&#39;">createObject</a>(std::string uiObjectName, std::string objectData, QPoint pos)
 <a name="l00623"></a>00623     {
-<a name="l00624"></a>00624         <a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> *obj = <a class="code" href="classcm_1_1_object_loader.html#ac29ac3ba87ae3e09a8e2499f59ab2608">ObjectLoader::inst</a>().<a class="code" href="classcm_1_1_object_loader.html#ada074a949d569c7597eae975a3d55202">createObject</a>(uiObjectName, objectData, (<a class="code" href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>*)<span class="keyword">this</span>);
+<a name="l00624"></a>00624         <a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> *obj = <a class="code" href="classcm_1_1_object_loader.html#ac29ac3ba87ae3e09a8e2499f59ab2608">ObjectLoader::inst</a>().<a class="code" href="classcm_1_1_object_loader.html#a1eb8184c6f0a5c0770b9d81dea676510">createObject</a>(uiObjectName, objectData, this-&gt;<a class="code" href="classcm_1_1_canvas.html#a24d8522284d0bc2886e426f251752f12">pdCanvas</a>, (<a class="code" href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>*)<span class="keyword">this</span>);
 <a name="l00625"></a>00625 
-<a name="l00626"></a>00626         connect(obj,&amp;<a class="code" href="classcm_1_1_u_i_widget.html#a493fc15e906775728038ef1e7de6bebc">cmo_msg::selectBox</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classcm_1_1_canvas.html#a6c11512b7368573759ef28f6c968afce" title="slot called by box when it is selected">Canvas::s_SelectBox</a>);
-<a name="l00627"></a>00627         connect(obj,&amp;<a class="code" href="classcm_1_1_u_i_widget.html#a0538edf982efa304002cc089b5414fda">cmo_msg::moveBox</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classcm_1_1_canvas.html#adf8a90ecdad3403af907a69af3d77bec" title="TODO check. slot called by box when it starts moving.">Canvas::s_MoveBox</a>);
+<a name="l00626"></a>00626         connect(obj,&amp;<a class="code" href="classcm_1_1_u_i_widget.html#a493fc15e906775728038ef1e7de6bebc">UIMessage::selectBox</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classcm_1_1_canvas.html#a6c11512b7368573759ef28f6c968afce" title="slot called by box when it is selected">Canvas::s_SelectBox</a>);
+<a name="l00627"></a>00627         connect(obj,&amp;<a class="code" href="classcm_1_1_u_i_widget.html#a0538edf982efa304002cc089b5414fda">UIMessage::moveBox</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classcm_1_1_canvas.html#adf8a90ecdad3403af907a69af3d77bec" title="TODO check. slot called by box when it starts moving.">Canvas::s_MoveBox</a>);
 <a name="l00628"></a>00628         obj-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a007ca2f57bda522a33ecaf15923e9067" title="sets pointer to edit mode flag in parent canvas">setEditModeRef</a>(&amp;this-&gt;editMode);
 <a name="l00629"></a>00629         obj-&gt;move(pos);
 <a name="l00630"></a>00630         this-&gt;objectBoxes.push_back(obj);
 <a name="l00631"></a>00631 
 <a name="l00632"></a>00632         obj-&gt;show();
 <a name="l00633"></a>00633 
-<a name="l00634"></a>00634         <span class="keywordflow">return</span> obj;
+<a name="l00634"></a>00634         qDebug() &lt;&lt; <span class="stringliteral">&quot;create object: &quot;</span> &lt;&lt; QString(uiObjectName.c_str()) &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; QString(objectData.c_str());
 <a name="l00635"></a>00635 
-<a name="l00636"></a>00636         <span class="comment">//cm_object *obj = new cmo_float((cm_object*)this);   //check</span>
+<a name="l00636"></a>00636         <span class="keywordflow">return</span> obj;
 <a name="l00637"></a>00637 
-<a name="l00638"></a>00638     }
+<a name="l00638"></a>00638         <span class="comment">//cm_object *obj = new cmo_float((cm_object*)this);   //check</span>
 <a name="l00639"></a>00639 
-<a name="l00640"></a>00640 
-<a name="l00647"></a><a class="code" href="classcm_1_1_canvas.html#ad10364932c20a325e48884a8a8b2d5e9">00647</a>     <a class="code" href="classcmo__text.html" title="gui object: comment box (ui.text)">cmo_text</a>* <a class="code" href="classcm_1_1_canvas.html#ad10364932c20a325e48884a8a8b2d5e9" title="create new comment box (ui only)">createText</a>(std::string message, QPoint pos)
-<a name="l00648"></a>00648     {
-<a name="l00649"></a>00649         <a class="code" href="classcmo__text.html" title="gui object: comment box (ui.text)">cmo_text</a> *txt = <span class="keyword">new</span> <a class="code" href="classcmo__text.html" title="gui object: comment box (ui.text)">cmo_text</a>((<a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*)<span class="keyword">this</span>);   <span class="comment">//check</span>
-<a name="l00650"></a>00650         txt-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a42cd816b2e061057104f1e1ade6b8a71" title="sets object text data /usually overriden by ui objects/">setObjectData</a>(message);
-<a name="l00651"></a>00651 
-<a name="l00652"></a>00652         <span class="comment">//msg-&gt;addInlet();</span>
-<a name="l00653"></a>00653         <span class="comment">//msg-&gt;addOutlet();</span>
-<a name="l00654"></a>00654 
-<a name="l00655"></a>00655         connect(txt,&amp;<a class="code" href="classcm_1_1_u_i_widget.html#a493fc15e906775728038ef1e7de6bebc">cmo_msg::selectBox</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classcm_1_1_canvas.html#a6c11512b7368573759ef28f6c968afce" title="slot called by box when it is selected">Canvas::s_SelectBox</a>);
-<a name="l00656"></a>00656         connect(txt,&amp;<a class="code" href="classcm_1_1_u_i_widget.html#a0538edf982efa304002cc089b5414fda">cmo_msg::moveBox</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classcm_1_1_canvas.html#adf8a90ecdad3403af907a69af3d77bec" title="TODO check. slot called by box when it starts moving.">Canvas::s_MoveBox</a>);
-<a name="l00657"></a>00657 
-<a name="l00658"></a>00658         txt-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a007ca2f57bda522a33ecaf15923e9067" title="sets pointer to edit mode flag in parent canvas">setEditModeRef</a>(&amp;this-&gt;editMode);
+<a name="l00640"></a>00640     }
+<a name="l00641"></a>00641 
+<a name="l00642"></a>00642 
+<a name="l00643"></a>00643 <span class="comment">//    ////</span>
+<a name="l00644"></a>00644 <span class="comment">//    /// \brief create new comment box (ui only)</span>
+<a name="l00645"></a>00645 <span class="comment">//    /// \param pdObjectName TODO rename. object name and arguments</span>
+<a name="l00646"></a>00646 <span class="comment">//    /// \param pos</span>
+<a name="l00647"></a>00647 <span class="comment">//    /// \return pointer to cm_box</span>
+<a name="l00648"></a>00648 <span class="comment">//    ///</span>
+<a name="l00649"></a>00649 <span class="comment">//    UIText* createText(std::string message, QPoint pos)</span>
+<a name="l00650"></a>00650 <span class="comment">//    {</span>
+<a name="l00651"></a>00651 <span class="comment">//        UIText *txt = new UIText((UIObject*)this);   //check</span>
+<a name="l00652"></a>00652 <span class="comment">//        txt-&gt;setObjectData(message);</span>
+<a name="l00653"></a>00653 
+<a name="l00654"></a>00654 <span class="comment">//        //msg-&gt;addInlet();</span>
+<a name="l00655"></a>00655 <span class="comment">//        //msg-&gt;addOutlet();</span>
+<a name="l00656"></a>00656 
+<a name="l00657"></a>00657 <span class="comment">//        connect(txt,&amp;UIMessage::selectBox, this, &amp;Canvas::s_SelectBox);</span>
+<a name="l00658"></a>00658 <span class="comment">//        connect(txt,&amp;UIMessage::moveBox, this, &amp;Canvas::s_MoveBox);</span>
 <a name="l00659"></a>00659 
-<a name="l00660"></a>00660         txt-&gt;move(pos);
+<a name="l00660"></a>00660 <span class="comment">//        txt-&gt;setEditModeRef(&amp;this-&gt;editMode);</span>
 <a name="l00661"></a>00661 
-<a name="l00662"></a>00662         this-&gt;objectBoxes.push_back(txt);
+<a name="l00662"></a>00662 <span class="comment">//        txt-&gt;move(pos);</span>
 <a name="l00663"></a>00663 
-<a name="l00664"></a>00664         txt-&gt;<a class="code" href="classcmo__text.html#a79e167f0493b5b93f991b14987343cc6">setPdMessage</a>(message.c_str());
+<a name="l00664"></a>00664 <span class="comment">//        this-&gt;objectBoxes.push_back(txt);</span>
 <a name="l00665"></a>00665 
-<a name="l00666"></a>00666         txt-&gt;show();
+<a name="l00666"></a>00666 <span class="comment">//        txt-&gt;setPdMessage(message.c_str());</span>
 <a name="l00667"></a>00667 
-<a name="l00668"></a>00668         <span class="keywordflow">return</span> txt;
+<a name="l00668"></a>00668 <span class="comment">//        txt-&gt;show();</span>
 <a name="l00669"></a>00669 
-<a name="l00670"></a>00670 
-<a name="l00671"></a>00671     }
+<a name="l00670"></a>00670 <span class="comment">//        return txt;</span>
+<a name="l00671"></a>00671 
 <a name="l00672"></a>00672 
-<a name="l00680"></a><a class="code" href="classcm_1_1_canvas.html#a24db3dbfed7d2801f397a560e3eb3729">00680</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#a24db3dbfed7d2801f397a560e3eb3729" title="creates patchcord">patchcord</a>(<a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* obj1, <span class="keywordtype">int</span> outlet, <a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* obj2, <span class="keywordtype">int</span> inlet)
-<a name="l00681"></a>00681     {
-<a name="l00682"></a>00682         <span class="keywordflow">if</span> (obj1-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a" title="returns pointer to pd object.">getPdObject</a>() &amp;&amp; obj2-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a" title="returns pointer to pd object.">getPdObject</a>())
-<a name="l00683"></a>00683         {
-<a name="l00684"></a>00684             <span class="keywordflow">if</span> (((<a class="code" href="classcmo__box.html" title="gui object: standard object box">cmo_box</a>*)obj1)-&gt;isErrorBox())
-<a name="l00685"></a>00685             {
-<a name="l00686"></a>00686                 <span class="comment">//create dummy inlets / outlets</span>
-<a name="l00687"></a>00687             };
-<a name="l00688"></a>00688             <span class="keywordflow">if</span> (((<a class="code" href="classcmo__box.html" title="gui object: standard object box">cmo_box</a>*)obj2)-&gt;isErrorBox())
-<a name="l00689"></a>00689             {
-<a name="l00690"></a>00690                 <span class="comment">//create dummy inlets / outlets</span>
-<a name="l00691"></a>00691             };
-<a name="l00692"></a>00692 
-<a name="l00693"></a>00693             <a class="code" href="classcm_1_1_port.html" title="gui representation of t_inlet / t_outlet">Port</a>* outport = ((<a class="code" href="classcmo__box.html" title="gui object: standard object box">cmo_box</a>*)obj1)-&gt;getOutletAt(outlet);
-<a name="l00694"></a>00694             <a class="code" href="classcm_1_1_port.html" title="gui representation of t_inlet / t_outlet">Port</a>* inport = ((<a class="code" href="classcmo__box.html" title="gui object: standard object box">cmo_box</a>*)obj2)-&gt;getInletAt(inlet);
-<a name="l00695"></a>00695 
-<a name="l00696"></a>00696             <a class="code" href="classcm_1_1_patchcord.html" title="gui patchcord class">Patchcord</a>* pc = <span class="keyword">new</span> <a class="code" href="classcm_1_1_patchcord.html" title="gui patchcord class">Patchcord</a>(obj1,outport,obj2,inport);
+<a name="l00673"></a>00673 <span class="comment">//    }</span>
+<a name="l00674"></a>00674 
+<a name="l00682"></a><a class="code" href="classcm_1_1_canvas.html#a24db3dbfed7d2801f397a560e3eb3729">00682</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#a24db3dbfed7d2801f397a560e3eb3729" title="creates patchcord">patchcord</a>(<a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* obj1, <span class="keywordtype">int</span> outlet, <a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* obj2, <span class="keywordtype">int</span> inlet)
+<a name="l00683"></a>00683     {
+<a name="l00684"></a>00684         <span class="keywordflow">if</span> (obj1-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a" title="returns pointer to pd object.">getPdObject</a>() &amp;&amp; obj2-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a" title="returns pointer to pd object.">getPdObject</a>())
+<a name="l00685"></a>00685         {
+<a name="l00686"></a>00686             <span class="keywordflow">if</span> (((<a class="code" href="classcm_1_1_u_i_box.html" title="gui object: standard object box">UIBox</a>*)obj1)-&gt;isErrorBox())
+<a name="l00687"></a>00687             {
+<a name="l00688"></a>00688                 <span class="comment">//create dummy inlets / outlets</span>
+<a name="l00689"></a>00689             };
+<a name="l00690"></a>00690             <span class="keywordflow">if</span> (((<a class="code" href="classcm_1_1_u_i_box.html" title="gui object: standard object box">UIBox</a>*)obj2)-&gt;isErrorBox())
+<a name="l00691"></a>00691             {
+<a name="l00692"></a>00692                 <span class="comment">//create dummy inlets / outlets</span>
+<a name="l00693"></a>00693             };
+<a name="l00694"></a>00694 
+<a name="l00695"></a>00695             <a class="code" href="classcm_1_1_port.html" title="gui representation of t_inlet / t_outlet">Port</a>* outport = ((<a class="code" href="classcm_1_1_u_i_box.html" title="gui object: standard object box">UIBox</a>*)obj1)-&gt;getOutletAt(outlet);
+<a name="l00696"></a>00696             <a class="code" href="classcm_1_1_port.html" title="gui representation of t_inlet / t_outlet">Port</a>* inport = ((<a class="code" href="classcm_1_1_u_i_box.html" title="gui object: standard object box">UIBox</a>*)obj2)-&gt;getInletAt(inlet);
 <a name="l00697"></a>00697 
-<a name="l00698"></a>00698             qDebug(<span class="stringliteral">&quot;pdlib patchcord&quot;</span>);
-<a name="l00699"></a>00699             <a class="code" href="cm__pdlink_8h.html#a6d06b5d8cde66b3cada1fe52a6e5ac83" title="new patchcord">cmp_patchcord</a>((t_object*)obj1-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a" title="returns pointer to pd object.">getPdObject</a>(),outlet,(t_object*)obj2-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a" title="returns pointer to pd object.">getPdObject</a>(),inlet);
-<a name="l00700"></a>00700             this-&gt;patchcords.push_back(pc);
-<a name="l00701"></a>00701         }
-<a name="l00702"></a>00702         <span class="keywordflow">else</span>
-<a name="l00703"></a>00703             qDebug(<span class="stringliteral">&quot;canvas patchcord error&quot;</span>);
-<a name="l00704"></a>00704 
-<a name="l00705"></a>00705 
+<a name="l00698"></a>00698             <a class="code" href="classcm_1_1_patchcord.html" title="gui patchcord class">Patchcord</a>* pc = <span class="keyword">new</span> <a class="code" href="classcm_1_1_patchcord.html" title="gui patchcord class">Patchcord</a>(obj1,outport,obj2,inport);
+<a name="l00699"></a>00699 
+<a name="l00700"></a>00700             qDebug(<span class="stringliteral">&quot;pdlib patchcord&quot;</span>);
+<a name="l00701"></a>00701             <a class="code" href="cm__pdlink_8h.html#a6d06b5d8cde66b3cada1fe52a6e5ac83" title="new patchcord">cmp_patchcord</a>((t_object*)obj1-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a" title="returns pointer to pd object.">getPdObject</a>(),outlet,(t_object*)obj2-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a" title="returns pointer to pd object.">getPdObject</a>(),inlet);
+<a name="l00702"></a>00702             this-&gt;patchcords.push_back(pc);
+<a name="l00703"></a>00703         }
+<a name="l00704"></a>00704         <span class="keywordflow">else</span>
+<a name="l00705"></a>00705             qDebug(<span class="stringliteral">&quot;canvas patchcord error&quot;</span>);
 <a name="l00706"></a>00706 
 <a name="l00707"></a>00707 
-<a name="l00708"></a>00708     }
+<a name="l00708"></a>00708 
 <a name="l00709"></a>00709 
-<a name="l00717"></a><a class="code" href="classcm_1_1_canvas.html#a7b7f2034b77ae87e3adc8627e02ee77e">00717</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#a24db3dbfed7d2801f397a560e3eb3729" title="creates patchcord">patchcord</a>(<a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* obj1, <a class="code" href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* outport, <a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* obj2, <a class="code" href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* inport)
-<a name="l00718"></a>00718     {
-<a name="l00719"></a>00719 
-<a name="l00720"></a>00720         <a class="code" href="classcm_1_1_patchcord.html" title="gui patchcord class">Patchcord</a>* pc = <span class="keyword">new</span> <a class="code" href="classcm_1_1_patchcord.html" title="gui patchcord class">Patchcord</a>(obj1,outport,obj2,inport);
-<a name="l00721"></a>00721         <a class="code" href="cm__pdlink_8h.html#a6d06b5d8cde66b3cada1fe52a6e5ac83" title="new patchcord">cmp_patchcord</a>((t_object*)obj1-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a" title="returns pointer to pd object.">getPdObject</a>(),((<a class="code" href="classcm_1_1_port.html" title="gui representation of t_inlet / t_outlet">Port</a>*)outport)-&gt;portIndex,(t_object*)obj2-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a" title="returns pointer to pd object.">getPdObject</a>(),((<a class="code" href="classcm_1_1_port.html" title="gui representation of t_inlet / t_outlet">Port</a>*)inport)-&gt;portIndex);
-<a name="l00722"></a>00722         <span class="comment">//qDebug(&quot;no connection&quot;);</span>
-<a name="l00723"></a>00723 
-<a name="l00724"></a>00724         this-&gt;patchcords.push_back(pc);
+<a name="l00710"></a>00710     }
+<a name="l00711"></a>00711 
+<a name="l00719"></a><a class="code" href="classcm_1_1_canvas.html#a7b7f2034b77ae87e3adc8627e02ee77e">00719</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#a24db3dbfed7d2801f397a560e3eb3729" title="creates patchcord">patchcord</a>(<a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* obj1, <a class="code" href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* outport, <a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* obj2, <a class="code" href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* inport)
+<a name="l00720"></a>00720     {
+<a name="l00721"></a>00721 
+<a name="l00722"></a>00722         <a class="code" href="classcm_1_1_patchcord.html" title="gui patchcord class">Patchcord</a>* pc = <span class="keyword">new</span> <a class="code" href="classcm_1_1_patchcord.html" title="gui patchcord class">Patchcord</a>(obj1,outport,obj2,inport);
+<a name="l00723"></a>00723         <a class="code" href="cm__pdlink_8h.html#a6d06b5d8cde66b3cada1fe52a6e5ac83" title="new patchcord">cmp_patchcord</a>((t_object*)obj1-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a" title="returns pointer to pd object.">getPdObject</a>(),((<a class="code" href="classcm_1_1_port.html" title="gui representation of t_inlet / t_outlet">Port</a>*)outport)-&gt;portIndex,(t_object*)obj2-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a" title="returns pointer to pd object.">getPdObject</a>(),((<a class="code" href="classcm_1_1_port.html" title="gui representation of t_inlet / t_outlet">Port</a>*)inport)-&gt;portIndex);
+<a name="l00724"></a>00724         <span class="comment">//qDebug(&quot;no connection&quot;);</span>
 <a name="l00725"></a>00725 
-<a name="l00726"></a>00726     }
+<a name="l00726"></a>00726         this-&gt;patchcords.push_back(pc);
 <a name="l00727"></a>00727 
-<a name="l00728"></a>00728     <span class="comment">//    void deletePatchcord(cm_patchcord* pc)</span>
-<a name="l00729"></a>00729     <span class="comment">//    {</span>
-<a name="l00730"></a>00730     <span class="comment">//        // no repaint</span>
-<a name="l00731"></a>00731 
-<a name="l00732"></a>00732     <span class="comment">//        //cleanup !!!</span>
-<a name="l00733"></a>00733     <span class="comment">//        auto it = std::find(this-&gt;patchcords.begin(), this-&gt;patchcords.end(), pc);</span>
-<a name="l00734"></a>00734 
-<a name="l00735"></a>00735     <span class="comment">//        if (it != this-&gt;patchcords.end()) { this-&gt;patchcords.erase(it); }</span>
+<a name="l00728"></a>00728     }
+<a name="l00729"></a>00729 
+<a name="l00730"></a>00730     <span class="comment">//    void deletePatchcord(cm_patchcord* pc)</span>
+<a name="l00731"></a>00731     <span class="comment">//    {</span>
+<a name="l00732"></a>00732     <span class="comment">//        // no repaint</span>
+<a name="l00733"></a>00733 
+<a name="l00734"></a>00734     <span class="comment">//        //cleanup !!!</span>
+<a name="l00735"></a>00735     <span class="comment">//        auto it = std::find(this-&gt;patchcords.begin(), this-&gt;patchcords.end(), pc);</span>
 <a name="l00736"></a>00736 
-<a name="l00737"></a>00737     <span class="comment">//    }</span>
+<a name="l00737"></a>00737     <span class="comment">//        if (it != this-&gt;patchcords.end()) { this-&gt;patchcords.erase(it); }</span>
 <a name="l00738"></a>00738 
-<a name="l00739"></a>00739     <span class="comment">//cm_patchcord* pc = new cm_patchcord(obj1,outport,obj2,inport);</span>
+<a name="l00739"></a>00739     <span class="comment">//    }</span>
 <a name="l00740"></a>00740 
-<a name="l00745"></a><a class="code" href="classcm_1_1_canvas.html#a8ad9a1d8abd5bf69131f885a782e437f">00745</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#a8ad9a1d8abd5bf69131f885a782e437f" title="delete all patchcords for object">deletePatchcordsFor</a>(<a class="code" href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* obj)
-<a name="l00746"></a>00746     {
-<a name="l00747"></a>00747         <span class="comment">//for //(int i=0;i&lt;this-&gt;patchcords.size();i++)</span>
-<a name="l00748"></a>00748         std::vector&lt;Patchcord*&gt;::iterator it;
-<a name="l00749"></a>00749         <span class="keywordflow">for</span> (it=this-&gt;patchcords.begin(); it!= this-&gt;patchcords.end(); )
-<a name="l00750"></a>00750         {
-<a name="l00751"></a>00751             <span class="keywordflow">if</span> ((*it)-&gt;connectsObject(obj))
-<a name="l00752"></a>00752                 it =this-&gt;patchcords.erase(it);
-<a name="l00753"></a>00753             <span class="keywordflow">else</span>
-<a name="l00754"></a>00754                 ++it;
-<a name="l00755"></a>00755 
-<a name="l00756"></a>00756         }
+<a name="l00741"></a>00741     <span class="comment">//cm_patchcord* pc = new cm_patchcord(obj1,outport,obj2,inport);</span>
+<a name="l00742"></a>00742 
+<a name="l00747"></a><a class="code" href="classcm_1_1_canvas.html#a8ad9a1d8abd5bf69131f885a782e437f">00747</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#a8ad9a1d8abd5bf69131f885a782e437f" title="delete all patchcords for object">deletePatchcordsFor</a>(<a class="code" href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* obj)
+<a name="l00748"></a>00748     {
+<a name="l00749"></a>00749         <span class="comment">//for //(int i=0;i&lt;this-&gt;patchcords.size();i++)</span>
+<a name="l00750"></a>00750         std::vector&lt;Patchcord*&gt;::iterator it;
+<a name="l00751"></a>00751         <span class="keywordflow">for</span> (it=this-&gt;patchcords.begin(); it!= this-&gt;patchcords.end(); )
+<a name="l00752"></a>00752         {
+<a name="l00753"></a>00753             <span class="keywordflow">if</span> ((*it)-&gt;connectsObject(obj))
+<a name="l00754"></a>00754                 it =this-&gt;patchcords.erase(it);
+<a name="l00755"></a>00755             <span class="keywordflow">else</span>
+<a name="l00756"></a>00756                 ++it;
 <a name="l00757"></a>00757 
-<a name="l00758"></a>00758         this-&gt;repaint();
-<a name="l00759"></a>00759     }
-<a name="l00760"></a>00760 
-<a name="l00765"></a><a class="code" href="classcm_1_1_canvas.html#a408601f96f1fc5664d2767c73ff49364">00765</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#a408601f96f1fc5664d2767c73ff49364" title="delete object box">deleteBox</a>(<a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* box)
-<a name="l00766"></a>00766     {
-<a name="l00767"></a>00767 
-<a name="l00768"></a>00768         <span class="comment">//TODO</span>
+<a name="l00758"></a>00758         }
+<a name="l00759"></a>00759 
+<a name="l00760"></a>00760         this-&gt;repaint();
+<a name="l00761"></a>00761     }
+<a name="l00762"></a>00762 
+<a name="l00767"></a><a class="code" href="classcm_1_1_canvas.html#a408601f96f1fc5664d2767c73ff49364">00767</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#a408601f96f1fc5664d2767c73ff49364" title="delete object box">deleteBox</a>(<a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* box)
+<a name="l00768"></a>00768     {
 <a name="l00769"></a>00769 
-<a name="l00770"></a>00770         <span class="keywordflow">if</span> (box-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a" title="returns pointer to pd object.">getPdObject</a>())
-<a name="l00771"></a>00771         {
-<a name="l00772"></a>00772             <span class="comment">//NEEDS FIX</span>
-<a name="l00773"></a>00773             <span class="keywordflow">if</span> ((t_object*)box-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a" title="returns pointer to pd object.">getPdObject</a>())
-<a name="l00774"></a>00774                 <span class="keywordflow">if</span> (!box-&gt;<a class="code" href="classcm_1_1_u_i_object.html#ab4c42d67697dc2de41d0b3656bc69498" title="returns true if object doesn&#39;t exist">isErrorBox</a>())
-<a name="l00775"></a>00775                     <a class="code" href="cm__pdlink_8h.html#a69094de48546687863d38bc9d3689993" title="delete pd object">cmp_deleteobject</a>(this-&gt;<a class="code" href="classcm_1_1_canvas.html#a24d8522284d0bc2886e426f251752f12">pdCanvas</a>, (t_object*)box-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a" title="returns pointer to pd object.">getPdObject</a>());
-<a name="l00776"></a>00776         }
-<a name="l00777"></a>00777         <span class="keywordflow">else</span>
-<a name="l00778"></a>00778         {
-<a name="l00779"></a>00779             qDebug(<span class="stringliteral">&quot;didn&#39;t delete pd object&quot;</span>);
-<a name="l00780"></a>00780         }
-<a name="l00781"></a>00781 
-<a name="l00782"></a>00782         this-&gt;<a class="code" href="classcm_1_1_canvas.html#a8ad9a1d8abd5bf69131f885a782e437f" title="delete all patchcords for object">deletePatchcordsFor</a>(box);
+<a name="l00770"></a>00770         <span class="comment">//TODO</span>
+<a name="l00771"></a>00771 
+<a name="l00772"></a>00772         <span class="keywordflow">if</span> (box-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a" title="returns pointer to pd object.">getPdObject</a>())
+<a name="l00773"></a>00773         {
+<a name="l00774"></a>00774             <span class="comment">//NEEDS FIX</span>
+<a name="l00775"></a>00775             <span class="keywordflow">if</span> ((t_object*)box-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a" title="returns pointer to pd object.">getPdObject</a>())
+<a name="l00776"></a>00776                 <span class="keywordflow">if</span> (!box-&gt;<a class="code" href="classcm_1_1_u_i_object.html#ab4c42d67697dc2de41d0b3656bc69498" title="returns true if object doesn&#39;t exist">isErrorBox</a>())
+<a name="l00777"></a>00777                     <a class="code" href="cm__pdlink_8h.html#a69094de48546687863d38bc9d3689993" title="delete pd object">cmp_deleteobject</a>(this-&gt;<a class="code" href="classcm_1_1_canvas.html#a24d8522284d0bc2886e426f251752f12">pdCanvas</a>, (t_object*)box-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a" title="returns pointer to pd object.">getPdObject</a>());
+<a name="l00778"></a>00778         }
+<a name="l00779"></a>00779         <span class="keywordflow">else</span>
+<a name="l00780"></a>00780         {
+<a name="l00781"></a>00781             qDebug(<span class="stringliteral">&quot;didn&#39;t delete pd object&quot;</span>);
+<a name="l00782"></a>00782         }
 <a name="l00783"></a>00783 
-<a name="l00784"></a>00784         box-&gt;close();
-<a name="l00785"></a>00785     }
-<a name="l00786"></a>00786 
-<a name="l00790"></a><a class="code" href="classcm_1_1_canvas.html#a27e99bde9c7a8418f6bc4e6bcc97dcf6">00790</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#a27e99bde9c7a8418f6bc4e6bcc97dcf6" title="delete all selected object boxes">delBoxes</a>()
-<a name="l00791"></a>00791     {
-<a name="l00792"></a>00792         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0;i&lt; (int)this-&gt;selObjectBoxes.size(); i++)
-<a name="l00793"></a>00793         {
-<a name="l00794"></a>00794             this-&gt;<a class="code" href="classcm_1_1_canvas.html#a408601f96f1fc5664d2767c73ff49364" title="delete object box">deleteBox</a>( ((<a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*) this-&gt;selObjectBoxes.at(i))  );
-<a name="l00795"></a>00795         }
-<a name="l00796"></a>00796 
-<a name="l00797"></a>00797     }
+<a name="l00784"></a>00784         this-&gt;<a class="code" href="classcm_1_1_canvas.html#a8ad9a1d8abd5bf69131f885a782e437f" title="delete all patchcords for object">deletePatchcordsFor</a>(box);
+<a name="l00785"></a>00785 
+<a name="l00786"></a>00786         box-&gt;close();
+<a name="l00787"></a>00787     }
+<a name="l00788"></a>00788 
+<a name="l00792"></a><a class="code" href="classcm_1_1_canvas.html#a27e99bde9c7a8418f6bc4e6bcc97dcf6">00792</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#a27e99bde9c7a8418f6bc4e6bcc97dcf6" title="delete all selected object boxes">delBoxes</a>()
+<a name="l00793"></a>00793     {
+<a name="l00794"></a>00794         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0;i&lt; (int)this-&gt;selObjectBoxes.size(); i++)
+<a name="l00795"></a>00795         {
+<a name="l00796"></a>00796             this-&gt;<a class="code" href="classcm_1_1_canvas.html#a408601f96f1fc5664d2767c73ff49364" title="delete object box">deleteBox</a>( ((<a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*) this-&gt;selObjectBoxes.at(i))  );
+<a name="l00797"></a>00797         }
 <a name="l00798"></a>00798 
-<a name="l00802"></a><a class="code" href="classcm_1_1_canvas.html#a876a3b7b9fd328792032d421ca7c89d5">00802</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#a876a3b7b9fd328792032d421ca7c89d5" title="delete all selected patchcords">delSelectedPatchcords</a>()
-<a name="l00803"></a>00803     {
-<a name="l00804"></a>00804         <span class="comment">//cleanup</span>
-<a name="l00805"></a>00805         <span class="comment">//for (int i=0;i&lt;this-&gt;patchcords.size(); i++)</span>
-<a name="l00806"></a>00806         std::vector&lt;Patchcord*&gt;::iterator it;
-<a name="l00807"></a>00807         <span class="keywordflow">for</span> (it=this-&gt;patchcords.begin(); it!= this-&gt;patchcords.end(); )
-<a name="l00808"></a>00808         {
-<a name="l00809"></a>00809             <span class="keywordflow">if</span> ( (*it) -&gt; selected )
-<a name="l00810"></a>00810                 <span class="comment">//it = this-&gt;deletePatchcord(*it);</span>
-<a name="l00811"></a>00811                 it = this-&gt;patchcords.erase(it);
-<a name="l00812"></a>00812             <span class="keywordflow">else</span>
-<a name="l00813"></a>00813                 ++it;
-<a name="l00814"></a>00814         }
-<a name="l00815"></a>00815 
-<a name="l00816"></a>00816         this-&gt;repaint();
-<a name="l00817"></a>00817     }
-<a name="l00818"></a>00818 
-<a name="l00823"></a>00823 
-<a name="l00824"></a><a class="code" href="classcm_1_1_canvas.html#a46331a593d63e1ba3d11de9ee3913a56">00824</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#a46331a593d63e1ba3d11de9ee3913a56" title="change edit mode flag">setEditMode</a>(<a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7" title="edit mode types">t_editMode</a> mode)
-<a name="l00825"></a>00825     {
-<a name="l00826"></a>00826         this-&gt;editMode = mode;
-<a name="l00827"></a>00827 
-<a name="l00828"></a>00828         QPalette Pal(palette());
-<a name="l00829"></a>00829         Pal.setColor(QPalette::Background, (mode != <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7a40e07370861a560fc6e4cebf2bb1ebd3">em_Locked</a>)?QColor(255,255,255):QColor(245,245,245));
-<a name="l00830"></a>00830         this-&gt;setAutoFillBackground(<span class="keyword">true</span>);
-<a name="l00831"></a>00831         this-&gt;setPalette(Pal);
-<a name="l00832"></a>00832 
-<a name="l00833"></a>00833         this-&gt;<a class="code" href="classcm_1_1_canvas.html#a778eed76ee578ce93ab149d489147760" title="deselect all object boxes">deselectBoxes</a>();
-<a name="l00834"></a>00834         this-&gt;<a class="code" href="classcm_1_1_canvas.html#a455efbc61819175b2b5a667a6be6b8e8" title="resets all patchcords hover color flag">hoverPatchcordsOff</a>();
-<a name="l00835"></a>00835 
-<a name="l00836"></a>00836         this-&gt;repaint();
-<a name="l00837"></a>00837     }
-<a name="l00838"></a>00838 
-<a name="l00839"></a>00839 
-<a name="l00844"></a><a class="code" href="classcm_1_1_canvas.html#a1c94aab3160a86ad1083413ca831d24a">00844</a>     <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7" title="edit mode types">t_editMode</a> <a class="code" href="classcm_1_1_canvas.html#a1c94aab3160a86ad1083413ca831d24a" title="get edit mode flag">getEditMode</a>(){<span class="keywordflow">return</span> this-&gt;editMode;}
-<a name="l00845"></a>00845 
-<a name="l00851"></a><a class="code" href="classcm_1_1_canvas.html#a39c75aa337290c7b1157d4ac7144f217">00851</a>     <a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classcm_1_1_canvas.html#a39c75aa337290c7b1157d4ac7144f217" title="returns object by index - this is needed by parser">getObjectByIndex</a>(<span class="keywordtype">int</span> idx)
-<a name="l00852"></a>00852     {
-<a name="l00853"></a>00853         <span class="keywordflow">if</span> ((idx&lt; (<span class="keywordtype">int</span>)this-&gt;objectBoxes.size()) &amp;&amp; (idx&gt;=0))
-<a name="l00854"></a>00854             <span class="keywordflow">return</span> this-&gt;objectBoxes.at(idx);
-<a name="l00855"></a>00855         <span class="keywordflow">else</span>
-<a name="l00856"></a>00856         {
-<a name="l00857"></a>00857             qDebug(<span class="stringliteral">&quot;object not found&quot;</span>);
-<a name="l00858"></a>00858             <span class="keywordflow">return</span> 0;
-<a name="l00859"></a>00859         }
-<a name="l00860"></a>00860     }
-<a name="l00861"></a>00861 
-<a name="l00862"></a>00862 
-<a name="l00867"></a><a class="code" href="classcm_1_1_canvas.html#ac2eac4ed2f2bdc5eee0544143847eab8">00867</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#ac2eac4ed2f2bdc5eee0544143847eab8" title="set the show/hide grid flag">setGridEnabled</a>(<span class="keywordtype">bool</span> val)
-<a name="l00868"></a>00868     {this-&gt;gridEnabled = val;}
-<a name="l00869"></a>00869 
-<a name="l00870"></a>00870 
-<a name="l00875"></a><a class="code" href="classcm_1_1_canvas.html#a885e83ef501901e03b0e3b7b32bf977a">00875</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#a885e83ef501901e03b0e3b7b32bf977a" title="align to grid flag">setGridSnap</a>(<span class="keywordtype">bool</span> val)
-<a name="l00876"></a>00876     {
-<a name="l00877"></a>00877         this-&gt;gridSnap = val;
-<a name="l00878"></a>00878     }
-<a name="l00879"></a>00879 
-<a name="l00880"></a>00880 
-<a name="l00885"></a><a class="code" href="classcm_1_1_canvas.html#a0fc34f174cb461a4eba94c195d29a120">00885</a>     std::vector&lt;UIObject*&gt; <a class="code" href="classcm_1_1_canvas.html#a0fc34f174cb461a4eba94c195d29a120" title="returns vector of all object boxes - needed by filesaver">getObjectBoxes</a>()
-<a name="l00886"></a>00886     {
-<a name="l00887"></a>00887         <span class="keywordflow">return</span> this-&gt;objectBoxes;
-<a name="l00888"></a>00888     }
-<a name="l00889"></a>00889 
-<a name="l00890"></a><a class="code" href="classcm_1_1_canvas.html#a80b76980682beb5f277ce94e64a0f09b">00890</a>     std::vector&lt;Patchcord*&gt;<a class="code" href="classcm_1_1_canvas.html#a80b76980682beb5f277ce94e64a0f09b">getPatchcords</a>()
-<a name="l00891"></a>00891     {
-<a name="l00892"></a>00892         <span class="keywordflow">return</span> this-&gt;patchcords;
-<a name="l00893"></a>00893     }
-<a name="l00894"></a>00894 
-<a name="l00895"></a>00895 
-<a name="l00901"></a>00901 
-<a name="l00902"></a>00902 
-<a name="l00903"></a><a class="code" href="classcm_1_1_canvas.html#ac101a00bbd2f856dd6639a6ab3e1b356">00903</a>     <span class="keywordtype">int</span> <a class="code" href="classcm_1_1_canvas.html#ac101a00bbd2f856dd6639a6ab3e1b356" title="converts object pointers to their numbers in canvas and returns pd string for filesaver">findObjectIndex</a>(<a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> * obj)
-<a name="l00904"></a>00904     {
-<a name="l00905"></a>00905         <a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* obj1;
-<a name="l00906"></a>00906         std::vector&lt;UIObject*&gt;::iterator iter = std::find(this-&gt;objectBoxes.begin(), objectBoxes.end(), obj);
-<a name="l00907"></a>00907         <span class="keywordtype">size_t</span> index = std::distance(this-&gt;objectBoxes.begin(), iter);
-<a name="l00908"></a>00908         <span class="keywordflow">if</span>(index != this-&gt;objectBoxes.size())
-<a name="l00909"></a>00909         {
-<a name="l00910"></a>00910             <span class="keywordflow">return</span> index;
-<a name="l00911"></a>00911         }
-<a name="l00912"></a>00912         <span class="keywordflow">return</span> -1;
-<a name="l00913"></a>00913 
-<a name="l00914"></a>00914     }
-<a name="l00915"></a><a class="code" href="classcm_1_1_canvas.html#ad31cd1c8b89e95b56eb6f633a61fdba6">00915</a>     std::string <a class="code" href="classcm_1_1_canvas.html#ad31cd1c8b89e95b56eb6f633a61fdba6">getPatchcordAsString</a>(<a class="code" href="classcm_1_1_patchcord.html" title="gui patchcord class">Patchcord</a>* <a class="code" href="classcm_1_1_canvas.html#a24db3dbfed7d2801f397a560e3eb3729" title="creates patchcord">patchcord</a>)
-<a name="l00916"></a>00916     {
-<a name="l00917"></a>00917         <span class="comment">//TODO</span>
-<a name="l00918"></a>00918 
-<a name="l00919"></a>00919 
-<a name="l00920"></a>00920         <span class="keywordtype">int</span> obj1i = this-&gt;<a class="code" href="classcm_1_1_canvas.html#ac101a00bbd2f856dd6639a6ab3e1b356" title="converts object pointers to their numbers in canvas and returns pd string for filesaver">findObjectIndex</a>(patchcord-&gt;<a class="code" href="classcm_1_1_patchcord.html#ade6b17a35cb1c5d10603e656db0b331f">getObj1</a>());
-<a name="l00921"></a>00921         <span class="keywordtype">int</span> obj2i = this-&gt;<a class="code" href="classcm_1_1_canvas.html#ac101a00bbd2f856dd6639a6ab3e1b356" title="converts object pointers to their numbers in canvas and returns pd string for filesaver">findObjectIndex</a>(patchcord-&gt;<a class="code" href="classcm_1_1_patchcord.html#a402f06730ad205b5430a60b3e12b3e53">getObj2</a>());
-<a name="l00922"></a>00922 
-<a name="l00923"></a>00923         <span class="keywordflow">if</span> ((obj1i&gt;=0) &amp;&amp; (obj2i&gt;=0))
-<a name="l00924"></a>00924         {
-<a name="l00925"></a>00925             std::string ret;
-<a name="l00926"></a>00926 
-<a name="l00927"></a>00927             ret += std::to_string(obj1i) + <span class="stringliteral">&quot; &quot;</span>;
-<a name="l00928"></a>00928             ret += std::to_string(patchcord-&gt;<a class="code" href="classcm_1_1_patchcord.html#ad1ca115978dcef276616a1fb9991db0f">getOutIdx</a>()) + <span class="stringliteral">&quot; &quot;</span>;
-<a name="l00929"></a>00929 
-<a name="l00930"></a>00930             ret += std::to_string(obj2i) + <span class="stringliteral">&quot; &quot;</span>;
-<a name="l00931"></a>00931             ret += std::to_string(patchcord-&gt;<a class="code" href="classcm_1_1_patchcord.html#a6751041c0050d81650a94d80538d2dac">getInIdx</a>()) + <span class="stringliteral">&quot; &quot;</span>;
-<a name="l00932"></a>00932 
-<a name="l00933"></a>00933             <span class="keywordflow">return</span> ret;
+<a name="l00799"></a>00799     }
+<a name="l00800"></a>00800 
+<a name="l00804"></a><a class="code" href="classcm_1_1_canvas.html#a876a3b7b9fd328792032d421ca7c89d5">00804</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#a876a3b7b9fd328792032d421ca7c89d5" title="delete all selected patchcords">delSelectedPatchcords</a>()
+<a name="l00805"></a>00805     {
+<a name="l00806"></a>00806         <span class="comment">//cleanup</span>
+<a name="l00807"></a>00807         <span class="comment">//for (int i=0;i&lt;this-&gt;patchcords.size(); i++)</span>
+<a name="l00808"></a>00808         std::vector&lt;Patchcord*&gt;::iterator it;
+<a name="l00809"></a>00809         <span class="keywordflow">for</span> (it=this-&gt;patchcords.begin(); it!= this-&gt;patchcords.end(); )
+<a name="l00810"></a>00810         {
+<a name="l00811"></a>00811             <span class="keywordflow">if</span> ( (*it) -&gt; selected )
+<a name="l00812"></a>00812                 <span class="comment">//it = this-&gt;deletePatchcord(*it);</span>
+<a name="l00813"></a>00813                 it = this-&gt;patchcords.erase(it);
+<a name="l00814"></a>00814             <span class="keywordflow">else</span>
+<a name="l00815"></a>00815                 ++it;
+<a name="l00816"></a>00816         }
+<a name="l00817"></a>00817 
+<a name="l00818"></a>00818         this-&gt;repaint();
+<a name="l00819"></a>00819     }
+<a name="l00820"></a>00820 
+<a name="l00825"></a>00825 
+<a name="l00826"></a><a class="code" href="classcm_1_1_canvas.html#a46331a593d63e1ba3d11de9ee3913a56">00826</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#a46331a593d63e1ba3d11de9ee3913a56" title="change edit mode flag">setEditMode</a>(<a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7" title="edit mode types">t_editMode</a> mode)
+<a name="l00827"></a>00827     {
+<a name="l00828"></a>00828         this-&gt;editMode = mode;
+<a name="l00829"></a>00829 
+<a name="l00830"></a>00830         QPalette Pal(palette());
+<a name="l00831"></a>00831         Pal.setColor(QPalette::Background, (mode != <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7a40e07370861a560fc6e4cebf2bb1ebd3">em_Locked</a>)?QColor(255,255,255):QColor(245,245,245));
+<a name="l00832"></a>00832         this-&gt;setAutoFillBackground(<span class="keyword">true</span>);
+<a name="l00833"></a>00833         this-&gt;setPalette(Pal);
+<a name="l00834"></a>00834 
+<a name="l00835"></a>00835         this-&gt;<a class="code" href="classcm_1_1_canvas.html#a778eed76ee578ce93ab149d489147760" title="deselect all object boxes">deselectBoxes</a>();
+<a name="l00836"></a>00836         this-&gt;<a class="code" href="classcm_1_1_canvas.html#a455efbc61819175b2b5a667a6be6b8e8" title="resets all patchcords hover color flag">hoverPatchcordsOff</a>();
+<a name="l00837"></a>00837 
+<a name="l00838"></a>00838         this-&gt;repaint();
+<a name="l00839"></a>00839     }
+<a name="l00840"></a>00840 
+<a name="l00841"></a>00841 
+<a name="l00846"></a><a class="code" href="classcm_1_1_canvas.html#a1c94aab3160a86ad1083413ca831d24a">00846</a>     <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7" title="edit mode types">t_editMode</a> <a class="code" href="classcm_1_1_canvas.html#a1c94aab3160a86ad1083413ca831d24a" title="get edit mode flag">getEditMode</a>(){<span class="keywordflow">return</span> this-&gt;editMode;}
+<a name="l00847"></a>00847 
+<a name="l00853"></a><a class="code" href="classcm_1_1_canvas.html#a39c75aa337290c7b1157d4ac7144f217">00853</a>     <a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classcm_1_1_canvas.html#a39c75aa337290c7b1157d4ac7144f217" title="returns object by index - this is needed by parser">getObjectByIndex</a>(<span class="keywordtype">int</span> idx)
+<a name="l00854"></a>00854     {
+<a name="l00855"></a>00855         <span class="keywordflow">if</span> ((idx&lt; (<span class="keywordtype">int</span>)this-&gt;objectBoxes.size()) &amp;&amp; (idx&gt;=0))
+<a name="l00856"></a>00856             <span class="keywordflow">return</span> this-&gt;objectBoxes.at(idx);
+<a name="l00857"></a>00857         <span class="keywordflow">else</span>
+<a name="l00858"></a>00858         {
+<a name="l00859"></a>00859             qDebug(<span class="stringliteral">&quot;object not found&quot;</span>);
+<a name="l00860"></a>00860             <span class="keywordflow">return</span> 0;
+<a name="l00861"></a>00861         }
+<a name="l00862"></a>00862     }
+<a name="l00863"></a>00863 
+<a name="l00864"></a>00864 
+<a name="l00869"></a><a class="code" href="classcm_1_1_canvas.html#ac2eac4ed2f2bdc5eee0544143847eab8">00869</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#ac2eac4ed2f2bdc5eee0544143847eab8" title="set the show/hide grid flag">setGridEnabled</a>(<span class="keywordtype">bool</span> val)
+<a name="l00870"></a>00870     {this-&gt;gridEnabled = val;}
+<a name="l00871"></a>00871 
+<a name="l00872"></a>00872 
+<a name="l00877"></a><a class="code" href="classcm_1_1_canvas.html#a885e83ef501901e03b0e3b7b32bf977a">00877</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#a885e83ef501901e03b0e3b7b32bf977a" title="align to grid flag">setGridSnap</a>(<span class="keywordtype">bool</span> val)
+<a name="l00878"></a>00878     {
+<a name="l00879"></a>00879         this-&gt;gridSnap = val;
+<a name="l00880"></a>00880     }
+<a name="l00881"></a>00881 
+<a name="l00882"></a>00882 
+<a name="l00887"></a><a class="code" href="classcm_1_1_canvas.html#a0fc34f174cb461a4eba94c195d29a120">00887</a>     std::vector&lt;UIObject*&gt; <a class="code" href="classcm_1_1_canvas.html#a0fc34f174cb461a4eba94c195d29a120" title="returns vector of all object boxes - needed by filesaver">getObjectBoxes</a>()
+<a name="l00888"></a>00888     {
+<a name="l00889"></a>00889         <span class="keywordflow">return</span> this-&gt;objectBoxes;
+<a name="l00890"></a>00890     }
+<a name="l00891"></a>00891 
+<a name="l00892"></a><a class="code" href="classcm_1_1_canvas.html#a80b76980682beb5f277ce94e64a0f09b">00892</a>     std::vector&lt;Patchcord*&gt;<a class="code" href="classcm_1_1_canvas.html#a80b76980682beb5f277ce94e64a0f09b">getPatchcords</a>()
+<a name="l00893"></a>00893     {
+<a name="l00894"></a>00894         <span class="keywordflow">return</span> this-&gt;patchcords;
+<a name="l00895"></a>00895     }
+<a name="l00896"></a>00896 
+<a name="l00897"></a>00897 
+<a name="l00903"></a>00903 
+<a name="l00904"></a>00904 
+<a name="l00905"></a><a class="code" href="classcm_1_1_canvas.html#ac101a00bbd2f856dd6639a6ab3e1b356">00905</a>     <span class="keywordtype">int</span> <a class="code" href="classcm_1_1_canvas.html#ac101a00bbd2f856dd6639a6ab3e1b356" title="converts object pointers to their numbers in canvas and returns pd string for filesaver">findObjectIndex</a>(<a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> * obj)
+<a name="l00906"></a>00906     {
+<a name="l00907"></a>00907         <a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* obj1;
+<a name="l00908"></a>00908         std::vector&lt;UIObject*&gt;::iterator iter = std::find(this-&gt;objectBoxes.begin(), objectBoxes.end(), obj);
+<a name="l00909"></a>00909         <span class="keywordtype">size_t</span> index = std::distance(this-&gt;objectBoxes.begin(), iter);
+<a name="l00910"></a>00910         <span class="keywordflow">if</span>(index != this-&gt;objectBoxes.size())
+<a name="l00911"></a>00911         {
+<a name="l00912"></a>00912             <span class="keywordflow">return</span> index;
+<a name="l00913"></a>00913         }
+<a name="l00914"></a>00914         <span class="keywordflow">return</span> -1;
+<a name="l00915"></a>00915 
+<a name="l00916"></a>00916     }
+<a name="l00917"></a><a class="code" href="classcm_1_1_canvas.html#ad31cd1c8b89e95b56eb6f633a61fdba6">00917</a>     std::string <a class="code" href="classcm_1_1_canvas.html#ad31cd1c8b89e95b56eb6f633a61fdba6">getPatchcordAsString</a>(<a class="code" href="classcm_1_1_patchcord.html" title="gui patchcord class">Patchcord</a>* <a class="code" href="classcm_1_1_canvas.html#a24db3dbfed7d2801f397a560e3eb3729" title="creates patchcord">patchcord</a>)
+<a name="l00918"></a>00918     {
+<a name="l00919"></a>00919         <span class="comment">//TODO</span>
+<a name="l00920"></a>00920 
+<a name="l00921"></a>00921 
+<a name="l00922"></a>00922         <span class="keywordtype">int</span> obj1i = this-&gt;<a class="code" href="classcm_1_1_canvas.html#ac101a00bbd2f856dd6639a6ab3e1b356" title="converts object pointers to their numbers in canvas and returns pd string for filesaver">findObjectIndex</a>(patchcord-&gt;<a class="code" href="classcm_1_1_patchcord.html#ade6b17a35cb1c5d10603e656db0b331f">getObj1</a>());
+<a name="l00923"></a>00923         <span class="keywordtype">int</span> obj2i = this-&gt;<a class="code" href="classcm_1_1_canvas.html#ac101a00bbd2f856dd6639a6ab3e1b356" title="converts object pointers to their numbers in canvas and returns pd string for filesaver">findObjectIndex</a>(patchcord-&gt;<a class="code" href="classcm_1_1_patchcord.html#a402f06730ad205b5430a60b3e12b3e53">getObj2</a>());
+<a name="l00924"></a>00924 
+<a name="l00925"></a>00925         <span class="keywordflow">if</span> ((obj1i&gt;=0) &amp;&amp; (obj2i&gt;=0))
+<a name="l00926"></a>00926         {
+<a name="l00927"></a>00927             std::string ret;
+<a name="l00928"></a>00928 
+<a name="l00929"></a>00929             ret += std::to_string(obj1i) + <span class="stringliteral">&quot; &quot;</span>;
+<a name="l00930"></a>00930             ret += std::to_string(patchcord-&gt;<a class="code" href="classcm_1_1_patchcord.html#ad1ca115978dcef276616a1fb9991db0f">getOutIdx</a>()) + <span class="stringliteral">&quot; &quot;</span>;
+<a name="l00931"></a>00931 
+<a name="l00932"></a>00932             ret += std::to_string(obj2i) + <span class="stringliteral">&quot; &quot;</span>;
+<a name="l00933"></a>00933             ret += std::to_string(patchcord-&gt;<a class="code" href="classcm_1_1_patchcord.html#a6751041c0050d81650a94d80538d2dac">getInIdx</a>()) + <span class="stringliteral">&quot; &quot;</span>;
 <a name="l00934"></a>00934 
-<a name="l00935"></a>00935         }
-<a name="l00936"></a>00936         <span class="keywordflow">else</span> qDebug (<span class="stringliteral">&quot;patchcord to string error&quot;</span>);
-<a name="l00937"></a>00937 
-<a name="l00938"></a>00938         <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;
+<a name="l00935"></a>00935             <span class="keywordflow">return</span> ret;
+<a name="l00936"></a>00936 
+<a name="l00937"></a>00937         }
+<a name="l00938"></a>00938         <span class="keywordflow">else</span> qDebug (<span class="stringliteral">&quot;patchcord to string error&quot;</span>);
 <a name="l00939"></a>00939 
-<a name="l00940"></a>00940     }
+<a name="l00940"></a>00940         <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;
 <a name="l00941"></a>00941 
-<a name="l00942"></a>00942 signals:
+<a name="l00942"></a>00942     }
 <a name="l00943"></a>00943 
-<a name="l00944"></a>00944 <span class="keyword">public</span> slots:
+<a name="l00944"></a>00944 signals:
 <a name="l00945"></a>00945 
-<a name="l00946"></a>00946     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#abd6637e12b1d142e65c797fbcf6eade5">s_InMousePressed</a>(<a class="code" href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* obj, QMouseEvent* ev);
-<a name="l00947"></a>00947     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#acd7402ea2fe35d343b783dddd4191b96">s_InMouseReleased</a>(<a class="code" href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>*, QMouseEvent*);
-<a name="l00948"></a>00948     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#aef8ff5a771f148c046bbbd0bbc189175">s_OutMousePressed</a>(<a class="code" href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a> *obj, QMouseEvent*);
-<a name="l00949"></a>00949     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#afb51e48c9197a6d7d0fab2bb24dfa5f7">s_OutMouseReleased</a>(<a class="code" href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>*, QMouseEvent*);
-<a name="l00950"></a>00950 
-<a name="l00955"></a>00955     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#a6c11512b7368573759ef28f6c968afce" title="slot called by box when it is selected">s_SelectBox</a>(<a class="code" href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* box);
-<a name="l00956"></a>00956 
-<a name="l00962"></a>00962     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#adf8a90ecdad3403af907a69af3d77bec" title="TODO check. slot called by box when it starts moving.">s_MoveBox</a>(<a class="code" href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* box, QMouseEvent* event);
-<a name="l00963"></a>00963 
-<a name="l00964"></a>00964     <span class="comment">//    void portMouseReleased();</span>
-<a name="l00965"></a>00965     <span class="comment">//    void portMouseEntered();</span>
-<a name="l00966"></a>00966     <span class="comment">//    void portMouseLeaved();</span>
-<a name="l00967"></a>00967 
-<a name="l00968"></a>00968 
-<a name="l00972"></a><a class="code" href="classcm_1_1_canvas.html#a1a9501ade5a1506d81c4874ebe874094">00972</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#a1a9501ade5a1506d81c4874ebe874094" title="cancels patchcord creation">cancelPatchcord</a>()
-<a name="l00973"></a>00973     {
-<a name="l00974"></a>00974         this-&gt;newLine.<a class="code" href="structcm_1_1t_rect_plus.html#a2dbab8139df56ffb17379b3278d3cc80">active</a> = <span class="keyword">false</span>;
-<a name="l00975"></a>00975         this-&gt;repaint();
-<a name="l00976"></a>00976     }
-<a name="l00977"></a>00977 <span class="keyword">private</span>:
-<a name="l00978"></a>00978 
-<a name="l00979"></a>00979 };
+<a name="l00946"></a>00946 <span class="keyword">public</span> slots:
+<a name="l00947"></a>00947 
+<a name="l00948"></a>00948     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#abd6637e12b1d142e65c797fbcf6eade5">s_InMousePressed</a>(<a class="code" href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* obj, QMouseEvent* ev);
+<a name="l00949"></a>00949     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#acd7402ea2fe35d343b783dddd4191b96">s_InMouseReleased</a>(<a class="code" href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>*, QMouseEvent*);
+<a name="l00950"></a>00950     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#aef8ff5a771f148c046bbbd0bbc189175">s_OutMousePressed</a>(<a class="code" href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a> *obj, QMouseEvent*);
+<a name="l00951"></a>00951     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#afb51e48c9197a6d7d0fab2bb24dfa5f7">s_OutMouseReleased</a>(<a class="code" href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>*, QMouseEvent*);
+<a name="l00952"></a>00952 
+<a name="l00957"></a>00957     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#a6c11512b7368573759ef28f6c968afce" title="slot called by box when it is selected">s_SelectBox</a>(<a class="code" href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* box);
+<a name="l00958"></a>00958 
+<a name="l00964"></a>00964     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#adf8a90ecdad3403af907a69af3d77bec" title="TODO check. slot called by box when it starts moving.">s_MoveBox</a>(<a class="code" href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* box, QMouseEvent* event);
+<a name="l00965"></a>00965 
+<a name="l00966"></a>00966     <span class="comment">//    void portMouseReleased();</span>
+<a name="l00967"></a>00967     <span class="comment">//    void portMouseEntered();</span>
+<a name="l00968"></a>00968     <span class="comment">//    void portMouseLeaved();</span>
+<a name="l00969"></a>00969 
+<a name="l00970"></a>00970 
+<a name="l00974"></a><a class="code" href="classcm_1_1_canvas.html#a1a9501ade5a1506d81c4874ebe874094">00974</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_canvas.html#a1a9501ade5a1506d81c4874ebe874094" title="cancels patchcord creation">cancelPatchcord</a>()
+<a name="l00975"></a>00975     {
+<a name="l00976"></a>00976         this-&gt;newLine.<a class="code" href="structcm_1_1t_rect_plus.html#a2dbab8139df56ffb17379b3278d3cc80">active</a> = <span class="keyword">false</span>;
+<a name="l00977"></a>00977         this-&gt;repaint();
+<a name="l00978"></a>00978     }
+<a name="l00979"></a>00979 <span class="keyword">private</span>:
 <a name="l00980"></a>00980 
-<a name="l00981"></a>00981 }
+<a name="l00981"></a>00981 };
 <a name="l00982"></a>00982 
-<a name="l00983"></a>00983 <span class="preprocessor">#endif // CM_CANVAS_H</span>
+<a name="l00983"></a>00983 }
+<a name="l00984"></a>00984 
+<a name="l00985"></a>00985 <span class="preprocessor">#endif // CM_CANVAS_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -933,7 +959,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 10 2017 11:25:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 10 2017 22:17:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
