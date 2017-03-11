@@ -46,12 +46,14 @@ public:
     {
         UIProperty *newP = new UIProperty;
 
-        newP->setGroup(pGroup);
+        //newP->setGroup(pGroup);
         newP->setVersion(pVersion);
         newP->set(defaultData);
         newP->setDefault();
 
         data_[pName] = newP;
+        //fix
+        //groups_[pGroup][pName] = newP;
 
         qDebug("new property");
         qDebug() << data_[pName]->asQString();
@@ -60,9 +62,8 @@ public:
 
     // todo []
 
-    // todo templates
-
-    void set(std::string pName, std::string value)
+    template <typename U>
+    void set(std::string pName, U value)
     {
         this->data_[pName]->set(value);
     };

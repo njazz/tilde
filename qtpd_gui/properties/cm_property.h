@@ -41,58 +41,9 @@ private:
 
     bool applyToPd; //true if property value should be passed to pd object
 public:
-    void set(AtomList list)
-    {
-        data_ = list;
-        type_ = ptList;
-    }
 
-    void set(QPoint point){}
-    void set(QRect rect){}
-    void set(QSize size){}
-
-    void set(QColor color)
-    {
-        AtomList list;
-
-        list.append(color.red());
-        list.append(color.green());
-        list.append(color.blue());
-        list.append(color.alpha());
-
-        data_ = list;
-        type_ = ptColor;
-    }
-
-    void set(float val)
-    {
-        data_ = AtomList(val);
-        type_ = ptFloat;
-    }
-
-    void set(t_symbol* s)
-    {
-        data_ = AtomList(s);
-        type_ = ptSymbol;
-    }
-
-    void set(std::string string)
-    {
-        data_ = AtomList(gensym(string.c_str()));
-        type_ = ptList;
-    }
-
-    void set(QString string)
-    {
-        data_ = AtomList(gensym(string.toStdString().c_str()));
-        type_ = ptString;
-    }
-
-    void set(QStringList list){}
-
-    //////////
-
-
+    template <typename T>
+    void set(T val);
 
     ////
     /// \brief copy current value to default value
@@ -102,27 +53,12 @@ public:
         this->defaultData_ = this->data_;
     }
 
-    //    void setName(std::string name){}
-    //    void setName(QString name){}
-
-    void setGroup(std::string name){}
-    void getGroup(QString name){}
-
-    void setVersion(std::string version){}
-    void getVersion(QString version){}
-
-
-
-    std::string getNameAsString()
+    void setVersion(std::string version)
     {
-        return data_.at(0).asString();
+        this->version_ = version;
     }
 
-    QString getNameAsQString()
-    {
-        return "";
-    }
-
+    std::string version(){return version_;}
 
     //////////
 

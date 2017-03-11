@@ -9,10 +9,7 @@
 
 #include <QDebug>
 
-//#define cmp_font "Monaco"
 //#define cmp_font "Source Code Pro"
-//#define cmp_font "Bitstream Vera Sans Mono"
-
 
 #define PREF_QSTRING(x) cm::Preferences::inst().getQString(x)
 
