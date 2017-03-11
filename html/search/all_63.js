@@ -2,7 +2,7 @@ var searchData=
 [
   ['cancelpatchcord',['cancelPatchcord',['../classcm_1_1_canvas.html#a1a9501ade5a1506d81c4874ebe874094',1,'cm::Canvas']]],
   ['canvas',['Canvas',['../classcm_1_1_canvas.html',1,'cm']]],
-  ['canvas',['Canvas',['../classcm_1_1_canvas.html#a97725fa9b9881963cc5c07b98425c69a',1,'cm::Canvas::Canvas(UIWidget *parent=0)'],['../classcm_1_1_canvas.html#a750cfb0b2eec9dc34def77ef6c192064',1,'cm::Canvas::Canvas(QWidget *parent=0)'],['../classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0',1,'cm::PatchWindow::canvas()']]],
+  ['canvas',['canvas',['../classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0',1,'cm::PatchWindow::canvas()'],['../classcm_1_1_canvas.html#a97725fa9b9881963cc5c07b98425c69a',1,'cm::Canvas::Canvas(UIWidget *parent=0)'],['../classcm_1_1_canvas.html#a750cfb0b2eec9dc34def77ef6c192064',1,'cm::Canvas::Canvas(QWidget *parent=0)']]],
   ['clear',['clear',['../classcm_1_1_clipboard.html#a52d498841c9ae5b7f039d74e58838448',1,'cm::Clipboard']]],
   ['clickpatchcords',['clickPatchcords',['../classcm_1_1_canvas.html#a31e1bd751116fb4853d3c941da997f24',1,'cm::Canvas']]],
   ['clipboard',['Clipboard',['../classcm_1_1_clipboard.html',1,'cm']]],
