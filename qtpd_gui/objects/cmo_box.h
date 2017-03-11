@@ -45,6 +45,7 @@ public:
         QString list_s = list.join(" ");
         const char * obj_name = list_s.toStdString().c_str();
         b->setObjectData(obj_name);
+        b->autoResize();
 
         t_object* new_obj = 0 ;
         int in_c=0, out_c=0;
@@ -185,6 +186,7 @@ public:
     void setPdMessage(std::string message)
     {
         this->setObjectData(message);
+        this->autoResize();
 
         QFont myFont(PREF_QSTRING("Font"), 11);
         QFontMetrics fm(myFont);

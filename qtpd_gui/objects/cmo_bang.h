@@ -23,7 +23,7 @@ class UIBang : public UIObject
 private:
     bool clicked_;
 
-//    QLineEdit* editor_;
+    //    QLineEdit* editor_;
 
 public:
     explicit UIBang(UIObject *parent = 0);
@@ -83,23 +83,23 @@ public:
          }
 
 
-                if (this->isSelected() )
-                {
-                    p.setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-                }
-                else
-                {
-                    p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-                }
+          if (this->isSelected() )
+          {
+              p.setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+          }
+          else
+          {
+              p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+          }
 
-                 p.drawRect(0,0,this->width(),this->height());
+           p.drawRect(0,0,this->width(),this->height());
 
 
     }
 
 
     void resizeEvent(QResizeEvent *event)
-{
+    {
         UIObject::resizeEvent(event);
         this->setFixedHeight(this->width());
     }
@@ -206,11 +206,7 @@ public:
 
 
 
-signals:
-    //void selectBox(cm_widget*box);
-private slots:
-    void editorDone();
-    void editorChanged();
+
 
 };
 

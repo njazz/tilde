@@ -34,6 +34,7 @@ public:
         UIText* b = new UIText((UIObject*)parent);
         //temporary
         b->setObjectData(objectData);
+        b->autoResize();
         return (UIObject*) b;
     };
 
@@ -134,6 +135,7 @@ public:
     void setPdMessage(std::string message)
     {
         this->setObjectData(message);
+        this->autoResize();
 
         QFont myFont(PREF_QSTRING("Font"), 11);
         QFontMetrics fm(myFont);
@@ -166,6 +168,7 @@ public:
         }
 
         x->setObjectData(obj_data);
+        x->autoResize();
 
         x->repaint();
     }

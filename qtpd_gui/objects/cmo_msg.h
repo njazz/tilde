@@ -36,6 +36,7 @@ public:
         b->addOutlet();
 
         b->setObjectData(objectData);
+        b->autoResize();
 
         std::string message = "ui.msg";
 
@@ -197,6 +198,7 @@ public:
     void setPdMessage(std::string message)
     {
         this->setObjectData(message);
+        this->autoResize();
 
         QFont myFont(PREF_QSTRING("Font"), 11);
         QFontMetrics fm(myFont);
@@ -235,6 +237,7 @@ public:
         }
 
         x->setObjectData(obj_data);
+        x->autoResize();
 
         x->repaint();
     }

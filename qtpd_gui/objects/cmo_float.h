@@ -40,6 +40,7 @@ public:
 //        QString list_s = list.join(" ");
 //        const char * obj_name = list_s.toStdString().c_str();
         b->setObjectData(objectData);
+        b->autoResize();
 
         std::string message = "ui.msg";
 
@@ -153,6 +154,7 @@ public:
         {
             //todo fix
             this->setObjectData( std::to_string( ::atof(this->getObjectData().c_str()) - event->pos().y() + this->startY) );  //- this->startY
+            this->autoResize();
             this->startY = event->pos().y();
 
             std::string send = "set " + this->getObjectData();
@@ -182,6 +184,7 @@ public:
     void setPdMessage(std::string message)
     {
         this->setObjectData(message);
+        this->autoResize();
 
         QFont myFont(PREF_QSTRING("Font"), 11);
         QFontMetrics fm(myFont);
@@ -220,6 +223,7 @@ public:
         if (msg.size()>0)
         {
             x->setObjectData(msg.at(0).asString());
+            x->autoResize();
             x->repaint();
 
         }

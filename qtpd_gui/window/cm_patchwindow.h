@@ -137,6 +137,7 @@ public:
 
         putToggleAct = new QAction(tr("Toggle"), this);
         putToggleAct->setShortcut(tr("Ctrl+Shift+T"));
+        connect(putToggleAct, &QAction::triggered, this, &PatchWindow::newToggleBox);
 
         putNumberAct = new QAction(tr("Number"), this);
         putNumberAct->setShortcut(tr("Ctrl+3"));
@@ -356,6 +357,18 @@ public:
         if (this->canvas->getEditMode() != em_Locked)
         {
             UIObject *newBng = this->canvas->createObject("ui.bang","",QPoint(100,100));
+            this->canvas->dragObject = newBng;
+            newBng->show();
+        }
+
+    }
+
+
+    void newToggleBox()
+    {
+        if (this->canvas->getEditMode() != em_Locked)
+        {
+            UIObject *newBng = this->canvas->createObject("ui.toggle","",QPoint(100,100));
             this->canvas->dragObject = newBng;
             newBng->show();
         }

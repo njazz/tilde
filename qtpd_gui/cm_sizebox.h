@@ -21,6 +21,9 @@ typedef enum
     os_Free
 } t_objectSize;
 
+////
+/// \brief resize widget for all object boxes in patch
+///
 class SizeBox : public UIWidget
 {
     Q_OBJECT
@@ -68,8 +71,6 @@ public:
 signals:
 
     void resizeBoxEvent(int dx);
-
-
 
 };
 
