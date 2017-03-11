@@ -349,12 +349,15 @@ void cmp_deleteobject(t_canvas* canvas, t_object* obj)
 
 
     // one more extra check
-    // if (canvas)
+    if (canvas)
     {
         glist_delete(canvas, &obj->te_g);
         //canvas_restoreconnections(glist_getcanvas(canvas));
     }
-
+    else
+    {
+        qDebug("pd canvas not found - not deleted");
+    }
     qDebug("deleted obj");
 
 }
@@ -439,8 +442,4 @@ void cmp_connectUI(t_pd* obj, void* uiobj, t_updateUI func)
     uimsg_set_updateUI(obj, uiobj, func);
 }
 
-//////////
 
-//pdlib::pdlib()
-//{
-//}
