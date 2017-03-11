@@ -118,7 +118,7 @@ void Canvas::s_MoveBox(UIWidget *box, QMouseEvent* event)
 
 
         w->move(pos);
-        t_object *obj = (t_object*)w->getPdObject();
+        t_object *obj = (t_object*)w->pdObject();
         if (obj)
             cmp_moveobject(obj, (int)pos.x(), (int)pos.y() );
 

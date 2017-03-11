@@ -1,14 +1,12 @@
 #ifndef CMO_MSG_H
 #define CMO_MSG_H
 
-//#include <QWidget>
-
 #include <qlineedit.h>
 
 #include "cm_object.h"
 #include "cm_port.h"
 
-#include "cm_pdlink.h"
+//#include "cm_pdlink.h"
 
 namespace cm
 {
@@ -112,7 +110,7 @@ public:
                     p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
                      p.setFont(QFont(PREF_QSTRING("Font"),11,0,false));
-                      p.drawText(2,3,this->width()-2,this->height()-3,0,this->getObjectData().c_str(),0);
+                      p.drawText(2,3,this->width()-2,this->height()-3,0,this->objectData().c_str(),0);
 
 
     }
@@ -125,7 +123,7 @@ public:
 
         if ( (this->getEditMode()==em_Unlocked) && this->isSelected())
         {
-            this->editor_->setText(QString(this->getObjectData().c_str()));
+            this->editor_->setText(QString(this->objectData().c_str()));
             this->editor_->show();
             this->editor_->setFocus();
         }
@@ -145,14 +143,14 @@ public:
         //move
         if (this->getEditMode() != em_Unlocked)
         {
-            if (!this->getPdObject())
+            if (!this->pdObject())
             {
                 qDebug("msg: bad pd object!");
             }
             else
             {
 
-                cmp_sendstring((t_pd*)this->getPdObject(), ((std::string)"bang").c_str());
+                cmp_sendstring((t_pd*)this->pdObject(), ((std::string)"bang").c_str());
             }
 
         }
@@ -205,7 +203,7 @@ public:
 
         QFont myFont(PREF_QSTRING("Font"), 11);
         QFontMetrics fm(myFont);
-        int new_w = fm.width(QString(this->getObjectData().c_str())) + 10;
+        int new_w = fm.width(QString(this->objectData().c_str())) + 10;
         new_w = (new_w<25) ? 25 : new_w;
         this->setFixedWidth(new_w);
         this->editor_->setFixedWidth(this->width()-5);
@@ -214,16 +212,16 @@ public:
         //move
         if (this->getEditMode() == em_Unlocked)
         {
-            if (!this->getPdObject())
+            if (!this->pdObject())
             {
                 qDebug("msg: bad pd object!");
             }
             else
             {
 
-                std::string msg = ("set "+ this->getObjectData());
+                std::string msg = ("set "+ this->objectData());
                 //qDebug("send msg %s", msg.c_str());
-                cmp_sendstring((t_pd*)this->getPdObject(), msg);
+                cmp_sendstring((t_pd*)this->pdObject(), msg);
             }
         }
     }
@@ -248,12 +246,12 @@ public:
     void setPdObject(void *obj)
     {
         UIObject::setPdObject(obj);
-        cmp_connectUI((t_pd*)this->getPdObject(), (void*)this, &UIMessage::updateUI);
+        cmp_connectUI((t_pd*)this->pdObject(), (void*)this, &UIMessage::updateUI);
     }
 
 
-    std::string getSaveString()
-    {return "ui.msg "+ this->getObjectData();}
+    std::string asPdFileString()
+    {return "ui.msg "+ this->objectData();}
 
 
 

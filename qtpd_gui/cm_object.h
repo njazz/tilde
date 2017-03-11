@@ -28,7 +28,7 @@ private:
     std::vector<Port*> inlets_;
     std::vector<Port*> outlets_;
 
-    std::string objectData;     //name and arguments etc
+    std::string objectData_;     //name and arguments etc
 
     bool errorBox_;
 
@@ -183,7 +183,7 @@ public:
     /// \return
     ///
 
-    Port* getInletAt(int idx)
+    Port* inletAt(int idx)
     {
         if (idx<((int)this->inlets_.size()))
             return this->inlets_.at(idx);
@@ -197,7 +197,7 @@ public:
     /// \return
     ///
 
-    Port* getOutletAt(int idx)
+    Port* outletAt(int idx)
     {
         if (idx<((int)this->outlets_.size()))
             return this->outlets_.at(idx);
@@ -210,7 +210,7 @@ public:
     /// \param idx
     /// \return
     ///
-    int getInletType(int idx)
+    int inletType(int idx)
     {
         return cmp_get_inlet_type((t_object*)this->pdObject_, idx);
     }
@@ -220,7 +220,7 @@ public:
     /// \param idx
     /// \return
     ///
-    int getOutletType(int idx)
+    int outletType(int idx)
     {
         return cmp_get_outlet_type((t_object*)this->pdObject_, idx);
     }
@@ -234,7 +234,7 @@ public:
 
     void setObjectData(std::string objData)
     {
-        this->objectData = objData;
+        this->objectData_ = objData;
 
     }
 
@@ -246,7 +246,7 @@ public:
         QFont myFont(PREF_QSTRING("Font"), 11);
         QFontMetrics fm(myFont);
 
-        this->setFixedWidth((int)fm.width(QString(this->objectData.c_str())) + 5);
+        this->setFixedWidth((int)fm.width(QString(this->objectData_.c_str())) + 5);
         if (this->width()<this->minimumBoxWidth()) this->setFixedWidth(this->minimumBoxWidth());
 
     }
@@ -255,15 +255,15 @@ public:
     /// \brief gets object text data /usually overriden by ui objects/
     /// \return
     ///
-    std::string getObjectData()
-    {return this->objectData;}
+    std::string objectData()
+    {return this->objectData_;}
 
     ////
     /// \brief returns pointer to pd object.
     /// \details gui-only objects can ovverride it with function that returns 0
     /// \return
     ///
-    virtual void* getPdObject() {return this->pdObject_;}
+    virtual void* pdObject() {return this->pdObject_;}
 
     ////
     /// \brief sets pointer to pd object
@@ -277,7 +277,7 @@ public:
     /// \details
     /// \return
     ///
-    bool isErrorBox() {return this->errorBox_;}
+    bool errorBox() {return this->errorBox_;}
 
     ////
     /// \brief sets object box error flag
@@ -289,9 +289,9 @@ public:
     /// \brief returns object's text for client-based file saving
     /// \return
     ///
-    virtual std::string getSaveString()
+    virtual std::string asPdFileString()
     {
-        return this->objectData + this->properties_.asPdString();
+        return this->objectData_ + this->properties_.asPdFileString();
     }
 
 
@@ -302,12 +302,12 @@ public:
         // todo
         for (int i=0;i<this->inlets_.size();i++)
         {
-            this->getInletAt(i)->setEditModeRef(canvasEditMode);
+            this->inletAt(i)->setEditModeRef(canvasEditMode);
         }
 
         for (int i=0;i<this->outlets_.size();i++)
         {
-            this->getOutletAt(i)->setEditModeRef(canvasEditMode);
+            this->outletAt(i)->setEditModeRef(canvasEditMode);
         }
     }
 

@@ -1,9 +1,8 @@
 #ifndef CMO_BANG_H
 #define CMO_BANG_H
 
-//#include <QWidget>
 
-#include <qlineedit.h>
+#include <QLineEdit>
 
 #include "cm_object.h"
 #include "cm_port.h"
@@ -23,15 +22,12 @@ class UIBang : public UIObject
 private:
     bool clicked_;
 
-    //    QLineEdit* editor_;
-
 public:
     explicit UIBang(UIObject *parent = 0);
 
     static UIObject* createObject(std::string objectData, t_canvas* pdCanvas,UIWidget *parent=0)
     {
         UIBang* b = new UIBang((UIObject*)parent);
-
 
         b->setObjectData("");
 
@@ -124,14 +120,14 @@ public:
         //move
         if (this->getEditMode() != em_Unlocked)
         {
-            if (!this->getPdObject())
+            if (!this->pdObject())
             {
                 qDebug("msg: bad pd object!");
             }
             else
             {
-                cmp_sendstring((t_pd*)this->getPdObject(), ((std::string)"set bang").c_str());
-                cmp_sendstring((t_pd*)this->getPdObject(), ((std::string)"bang").c_str());
+                cmp_sendstring((t_pd*)this->pdObject(), ((std::string)"set bang").c_str());
+                cmp_sendstring((t_pd*)this->pdObject(), ((std::string)"bang").c_str());
             }
 
         }
@@ -197,17 +193,12 @@ public:
     void setPdObject(void *obj)
     {
         UIObject::setPdObject(obj);
-        cmp_connectUI((t_pd*)this->getPdObject(), (void*)this, &UIBang::updateUI);
+        cmp_connectUI((t_pd*)this->pdObject(), (void*)this, &UIBang::updateUI);
     }
 
 
-    std::string getSaveString()
-    {return "ui.bang "+ this->getObjectData();}
-
-
-
-
-
+    std::string asPdFileString()
+    {return "ui.bang "+ this->objectData();}
 
 };
 

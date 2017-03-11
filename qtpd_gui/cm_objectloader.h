@@ -6,7 +6,6 @@
 #include <algorithm>
 #include <map>
 
-//#include "cm_object.h"
 
 //temporary
 #include "cmo_box.h"

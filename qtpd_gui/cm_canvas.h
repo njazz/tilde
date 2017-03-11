@@ -7,11 +7,6 @@
 
 #include "cm_patchcord.h"
 
-#include "cmo_box.h"
-#include "cmo_msg.h"
-#include "cmo_float.h"
-#include "cmo_text.h"
-
 #include "cm_objectmaker.h"
 
 #include "cm_objectloader.h"
@@ -39,8 +34,8 @@ typedef struct
 /// \details todo: merge with clipboard class's types
 typedef struct
 {
-    std::vector<UIObject*> boxes;
-    std::vector<Patchcord*> patchcords;
+    objectVec boxes;
+    patchcordVec patchcords;
 } tCanvasData;
 
 ////
@@ -682,26 +677,26 @@ public:
     ///
     void patchcord(UIObject* obj1, int outlet, UIObject* obj2, int inlet)
     {
-        if (obj1->getPdObject() && obj2->getPdObject())
+        if (obj1->pdObject() && obj2->pdObject())
         {
-            if (((UIBox*)obj1)->isErrorBox())
+            if (((UIBox*)obj1)->errorBox())
             {
                 //create dummy inlets / outlets
             };
-            if (((UIBox*)obj2)->isErrorBox())
+            if (((UIBox*)obj2)->errorBox())
             {
                 //create dummy inlets / outlets
             };
 
-            Port* outport = obj1->getOutletAt(outlet);
-            Port* inport = obj2->getInletAt(inlet);
+            Port* outport = obj1->outletAt(outlet);
+            Port* inport = obj2->inletAt(inlet);
 
             Patchcord* pc = new Patchcord(obj1,outport,obj2,inport);
 
-            if (obj1->getOutletType(outlet)) pc->setPatchcordType(cm_pt_signal);
+            if (obj1->outletType(outlet)) pc->setPatchcordType(cm_pt_signal);
 
             qDebug("pdlib patchcord");
-            cmp_patchcord((t_object*)obj1->getPdObject(),outlet,(t_object*)obj2->getPdObject(),inlet);
+            cmp_patchcord((t_object*)obj1->pdObject(),outlet,(t_object*)obj2->pdObject(),inlet);
             this->patchcords.push_back(pc);
         }
         else
@@ -736,16 +731,18 @@ public:
 
     }
 
-    //    void deletePatchcord(cm_patchcord* pc)
-    //    {
-    //        // no repaint
 
-    //        //cleanup !!!
-    //        auto it = std::find(this->patchcords.begin(), this->patchcords.end(), pc);
+    ////unused?
+        void deletePatchcord(Patchcord* pc)
+        {
+            // no repaint
 
-    //        if (it != this->patchcords.end()) { this->patchcords.erase(it); }
+            //cleanup !!!
+            patchcordVec::iterator it = std::find(this->patchcords.begin(), this->patchcords.end(), pc);
 
-    //    }
+            if (it != this->patchcords.end()) { this->patchcords.erase(it); }
+
+        }
 
     //cm_patchcord* pc = new cm_patchcord(obj1,outport,obj2,inport);
 
@@ -778,12 +775,12 @@ public:
 
         //TODO
 
-        if (box->getPdObject())
+        if (box->pdObject())
         {
             //NEEDS FIX
-            if ((t_object*)(box->getPdObject()))
-                if (!box->isErrorBox())
-                    cmp_deleteobject(this->pdCanvas, (t_object*)box->getPdObject());
+            if ((t_object*)(box->pdObject()))
+                if (!box->errorBox())
+                    cmp_deleteobject(this->pdCanvas, (t_object*)box->pdObject());
         }
         else
         {
@@ -822,8 +819,18 @@ public:
         for (it=this->patchcords.begin(); it!= this->patchcords.end(); )
         {
             if ( (*it) -> selected )
-                //it = this->deletePatchcord(*it);
+            {
+                Patchcord*p = *it;
+
+                t_object* obj1 =(t_object*) p->getObj1()->pdObject();
+                t_object* obj2 =(t_object*) p->getObj2()->pdObject();
+
+                int out1 = p->getOutIdx();
+                int in2 = p->getInIdx();
+
+                cmp_delete_patchcord(obj1,out1,obj2,in2);
                 it = this->patchcords.erase(it);
+            }
             else
                 ++it;
         }

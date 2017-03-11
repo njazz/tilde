@@ -183,7 +183,7 @@ void PatchWindow::objectMakerDone()
         {
             qDebug("subpatch");
 
-            PatchWindow *subPatch = PatchWindow::newSubpatch((t_canvas*)b->getPdObject());
+            PatchWindow *subPatch = PatchWindow::newSubpatch((t_canvas*)b->pdObject());
             ((UIBox*)b)->cmSubcanvas = (QMainWindow*)subPatch;
             subPatch->show();
         }

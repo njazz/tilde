@@ -1,8 +1,6 @@
 #ifndef CMO_TOGGLE_H
 #define CMO_TOGGLE_H
 
-//#include <QWidget>
-
 #include <qlineedit.h>
 
 #include "cm_object.h"
@@ -25,7 +23,6 @@ private:
 
     bool value_;
 
-    //QLineEdit* editor_;
 
 public:
     explicit UIToggle(UIObject *parent = 0);
@@ -90,12 +87,6 @@ public:
 
 
          }
-         //         else
-         //         {
-         //             p.setPen(QPen(QColor(220, 220, 220), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-         //             p.drawEllipse(QRect(1,1,this->width()-2,this->height()-2));
-         //         }
-
 
          if (this->isSelected() )
          {
@@ -140,16 +131,16 @@ public:
             this->value_ = !this->value_;
             this->repaint();
 
-            if (!this->getPdObject())
+            if (!this->pdObject())
             {
                 qDebug("msg: bad pd object!");
             }
             else
             {
                 //lol
-                cmp_sendstring((t_pd*)this->getPdObject(), ((this->value_)?((std::string)"set 1").c_str():((std::string)"set 0").c_str()));
+                cmp_sendstring((t_pd*)this->pdObject(), ((this->value_)?((std::string)"set 1").c_str():((std::string)"set 0").c_str()));
 
-                cmp_sendstring((t_pd*)this->getPdObject(), ((std::string)"bang").c_str());
+                cmp_sendstring((t_pd*)this->pdObject(), ((std::string)"bang").c_str());
             }
 
         }
@@ -242,12 +233,12 @@ public:
     void setPdObject(void *obj)
     {
         UIObject::setPdObject(obj);
-        cmp_connectUI((t_pd*)this->getPdObject(), (void*)this, &UIToggle::updateUI);
+        cmp_connectUI((t_pd*)this->pdObject(), (void*)this, &UIToggle::updateUI);
     }
 
 
-    std::string getSaveString()
-    {return "ui.toggle "+ this->getObjectData();}
+    std::string asPdFileString()
+    {return "ui.toggle "+ this->objectData();}
 
 
 

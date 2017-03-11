@@ -1,15 +1,12 @@
 #ifndef cmo_text_H
 #define cmo_text_H
 
-//#include <QWidget>
-
-//#include <qlineedit.h>
 #include <QPlainTextEdit>
 
 #include "cm_object.h"
 #include "cm_port.h"
 
-#include "cm_pdlink.h"
+//#include "cm_pdlink.h"
 
 namespace cm
 {
@@ -65,7 +62,7 @@ public:
            p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
             p.setFont(QFont(PREF_QSTRING("Font"),11,0,false));
-             p.drawText(2,3,this->width()-2,this->height()-3,0,this->getObjectData().c_str(),0);
+             p.drawText(2,3,this->width()-2,this->height()-3,0,this->objectData().c_str(),0);
 
 
     }
@@ -79,7 +76,7 @@ public:
         if ( (this->getEditMode()==em_Unlocked) && this->isSelected())
         {
 
-            this->editor_->document()->setPlainText(QString(this->getObjectData().c_str()));
+            this->editor_->document()->setPlainText(QString(this->objectData().c_str()));
             this->editor_->show();
             this->editor_->setFocus();
         }
@@ -180,26 +177,23 @@ public:
     //    }
 
 
-    std::string getSaveString()
-    {return "ui.text "+ this->getObjectData();}
+    std::string asPdFileString()
+    {return "ui.text "+ this->objectData();}
 
-    void* getPdObject()
+    void* pdObject()
     {
         return 0;
     }
 
     bool eventFilter(QObject *watched, QEvent *event)
     {
-        //qDebug("event filter");
         if (event->type() == QEvent::KeyPress) {
 
             QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
-            //qDebug("key event");
 
             if  ( (keyEvent->key() == Qt::Key_Return) && (keyEvent->modifiers() == Qt::ShiftModifier) )
             {
                 this->editorDone();
-                //qDebug("done");
                 return true;
             }
         }
@@ -207,7 +201,7 @@ public:
     }
 
 signals:
-    //void selectBox(cm_widget*box);
+
 private slots:
     void editorDone();
     void editorChanged();

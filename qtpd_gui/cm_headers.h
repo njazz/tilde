@@ -9,6 +9,8 @@
 #include "cm_filesaver.h"
 
 #include "cm_pdlink.h"
+#include "../qtpd_lib/src/m_pd.h"
+#include "../qtpd_lib/ceammc-lib/ceammc_atomlist.h"
 
 #endif // CM_HEADERS_H
 

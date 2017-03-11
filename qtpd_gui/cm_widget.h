@@ -33,15 +33,11 @@ private:
 
     t_editMode *editMode_;
 
-    //temporary?
-//    void* pdObject_;
-
     float scale;
 
 public:
 
     QPoint dragOffset;
-    //QPoint dragStart;
 
     explicit UIWidget(QWidget *parent = 0);
 
@@ -106,9 +102,6 @@ public:
         this->scale = scale_;
     }
     float getScale() {return this->scale;}
-
-//    void* getPdObject() {return this->pdObject_;}
-//    void setPdObject(void*obj) {this->pdObject_ = obj;}
 
 signals:
 

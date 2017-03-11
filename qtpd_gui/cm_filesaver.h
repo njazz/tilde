@@ -39,7 +39,7 @@ public:
             // check for subpatches
             out1 = "#X obj ";
             out1 += std::to_string(((UIObject*)*it)->x()) + " " + std::to_string(((UIObject*)*it)->y())+ " ";
-            out1 += ((UIObject*)*it)->getSaveString();
+            out1 += ((UIObject*)*it)->asPdFileString();
             out1 +=";\r\n" ;
 
             file->write(out1.c_str(),out1.size());

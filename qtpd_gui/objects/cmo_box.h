@@ -1,19 +1,16 @@
 #ifndef CM_BOX_H
 #define CM_BOX_H
 
-//#include <QWidget>
 
 #include <QtGui>
+#include <QMainWindow>
+#include <QLineEdit>
 
 #include "cm_port.h"
 
-#include "cm_widget.h"
 #include "cm_object.h"
 
-#include "cm_pdlink.h"
-
-#include <QMainWindow>
-#include <QLineEdit>
+//#include "cm_pdlink.h"
 
 namespace cm
 {
@@ -108,18 +105,18 @@ public:
             p.drawRect(0, 2, this->width(), this->height()-4);
         }
 
-        QColor rectColor = (this->isErrorBox())? QColor(255, 0, 0) : QColor(128, 128, 128);
-        p.setPen(QPen(rectColor, 2,(this->isErrorBox())? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        QColor rectColor = (this->errorBox())? QColor(255, 0, 0) : QColor(128, 128, 128);
+        p.setPen(QPen(rectColor, 2,(this->errorBox())? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         p.drawRect(0, 0, this->width(), this->height());
         QTextOption* op = new QTextOption;
         op->setAlignment(Qt::AlignLeft);
         p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
         p.setFont(QFont(PREF_QSTRING("Font"), 11, 0, false));
-        p.drawText(2, 3, this->width() - 2, this->height() - 3, 0, this->getObjectData().c_str(), 0);
+        p.drawText(2, 3, this->width() - 2, this->height() - 3, 0, this->objectData().c_str(), 0);
 
         if (this->isSelected()) {
-            p.setPen(QPen(QColor(0, 192, 255), 2,(this->isErrorBox())? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p.setPen(QPen(QColor(0, 192, 255), 2,(this->errorBox())? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
             p.drawRect(0, 0, this->width(), this->height());
         }
 
@@ -144,7 +141,7 @@ public:
 
         if ( (this->getEditMode()==em_Unlocked) && this->isSelected())
         {
-            this->editor_->setText(QString(this->getObjectData().c_str()));
+            this->editor_->setText(QString(this->objectData().c_str()));
             this->editor_->show();
             this->editor_->setFocus();
         }
@@ -190,7 +187,7 @@ public:
 
         QFont myFont(PREF_QSTRING("Font"), 11);
         QFontMetrics fm(myFont);
-        int new_w = fm.width(QString(this->getObjectData().c_str())) + 10;
+        int new_w = fm.width(QString(this->objectData().c_str())) + 10;
         new_w = (new_w<25) ? 25 : new_w;
         this->setFixedWidth(new_w);
         this->editor_->setFixedWidth(this->width()-5);

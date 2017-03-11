@@ -137,7 +137,7 @@ public:
                                     int idx2 = ((QString)list.value(4)).toInt() ;
 
                                     //cmcanvas->patchcord();
-                                    if ( !obj1->isErrorBox() && !obj2->isErrorBox() )
+                                    if ( !obj1->errorBox() && !obj2->errorBox() )
                                     {
                                         qDebug("patchcord");
                                         cmcanvas->patchcord(obj1,idx1,obj2,idx2);

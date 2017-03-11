@@ -84,7 +84,7 @@ public:
     /// \brief returns string for saving in file
     /// \return
     ///
-    std::string asPdString()
+    std::string asPdFileString()
     {
         std::string ret;
 
