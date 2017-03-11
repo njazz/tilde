@@ -8,6 +8,8 @@
 
 #include "cm_objectloader.h"
 
+#include "cm_preferences.h"
+
 using namespace cm;
 
 void pd_window_printhook(const char* s)
@@ -22,6 +24,8 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     a.setQuitOnLastWindowClosed(false);
     a.setWindowIcon(QIcon("./pd_ceammc.png"));
+
+    QTPD_PREF_INIT;
 
     ObjectLoader::inst().loadObjects();
 

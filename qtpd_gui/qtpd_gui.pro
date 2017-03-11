@@ -65,7 +65,6 @@ HEADERS  += \
     objects/cmo_toggle.h \
     cm_fileparser.h \
     cm_object.h \
-    cm_preferences.h \
     cm_filesaver.h \
     cm_pdlink.h \
     cm_clipboard.h \
@@ -73,6 +72,7 @@ HEADERS  += \
     cm_sizebox.h \
     properties/cm_property.h \
     properties/cm_propertylist.h \
+    properties/cm_preferences.h \
 
 
 FORMS    += \

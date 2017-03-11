@@ -63,7 +63,7 @@ public:
           op->setAlignment(Qt::AlignLeft);
            p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
-            p.setFont(QFont(PREF_STRING("Font"),11,0,false));
+            p.setFont(QFont(PREF_QSTRING("Font"),11,0,false));
              p.drawText(2,3,this->width()-2,this->height()-3,0,this->getObjectData().c_str(),0);
 
 
@@ -135,7 +135,7 @@ public:
     {
         this->setObjectData(message);
 
-        QFont myFont(PREF_STRING("Font"), 11);
+        QFont myFont(PREF_QSTRING("Font"), 11);
         QFontMetrics fm(myFont);
         QString text = QString(this->editor_->document()->toPlainText());
         int new_w = fm.width(text) + 20;

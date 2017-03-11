@@ -27,7 +27,7 @@ UIBox::UIBox(UIObject *parent) : UIObject(parent)
     this->editor_ = new QLineEdit(this);
     this->editor_->setFixedSize(65-5,18);
     this->editor_->move(1,1);
-    this->editor_->setFont(QFont(PREF_STRING("Font"),11,0,false));
+    this->editor_->setFont(QFont(PREF_QSTRING("Font"),11,0,false));
     this->editor_->hide();
     this->editor_->setAttribute(Qt::WA_MacShowFocusRect, 0);
     this->editor_->setFrame(false);
@@ -68,7 +68,7 @@ void  UIBox::editorDone()
 
 void  UIBox::editorChanged()
 {
-    QFont myFont(PREF_STRING("Font"), 11);
+    QFont myFont(PREF_QSTRING("Font"), 11);
     QFontMetrics fm(myFont);
     int new_w = fm.width(QString(this->editor_->text())) + 10;
     new_w = (new_w<25) ? 25 : new_w;
