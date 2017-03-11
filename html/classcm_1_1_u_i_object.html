@@ -150,7 +150,9 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcm_1_1_port.html">Port</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#aba30a377b7eae09f970ed9f90008b236">getOutletAt</a> (int idx)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gets outlet (cm_port) at specified index  <a href="#aba30a377b7eae09f970ed9f90008b236"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#a42cd816b2e061057104f1e1ade6b8a71">setObjectData</a> (std::string objData)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets object text data /usually overriden by ui objects/  <a href="#a42cd816b2e061057104f1e1ade6b8a71"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets object text data  <a href="#a42cd816b2e061057104f1e1ade6b8a71"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#a4dfba5f783dde18c19b3ce750ccfead8">autoResize</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">call this after setting object data  <a href="#a4dfba5f783dde18c19b3ce750ccfead8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#a1a988c71aba5c7d15a0d6814db8d823e">getObjectData</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gets object text data /usually overriden by ui objects/  <a href="#a1a988c71aba5c7d15a0d6814db8d823e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a">getPdObject</a> ()</td></tr>
@@ -239,6 +241,24 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4dfba5f783dde18c19b3ce750ccfead8"></a><!-- doxytag: member="cm::UIObject::autoResize" ref="a4dfba5f783dde18c19b3ce750ccfead8" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcm_1_1_u_i_object.html#a4dfba5f783dde18c19b3ce750ccfead8">cm::UIObject::autoResize</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>call this after setting object data </p>
 
 </div>
 </div>
@@ -369,7 +389,7 @@ Public Member Functions</h2></td></tr>
 <p>returns object's text for client-based file saving </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Reimplemented in <a class="el" href="classcm_1_1_u_i_message.html#ad5dba4e2bcf56289c4bc44f6ffa7588f">cm::UIMessage</a>, <a class="el" href="classcm_1_1_u_i_float.html#a54b0dc86dc39ea9e658b49b3a1be59bc">cm::UIFloat</a>, <a class="el" href="classcm_1_1_u_i_toggle.html#a6e36333a6bfb86fe0cc3d946cacbc38f">cm::UIToggle</a>, <a class="el" href="classcm_1_1_u_i_bang.html#a6d2be36c3cd5e872b32066a4e5c04891">cm::UIBang</a>, and <a class="el" href="classcm_1_1_u_i_text.html#ae6d4537ddefd8eb22abeee911edc6d8d">cm::UIText</a>.</p>
+<p>Reimplemented in <a class="el" href="classcm_1_1_u_i_message.html#ad5dba4e2bcf56289c4bc44f6ffa7588f">cm::UIMessage</a>, <a class="el" href="classcm_1_1_u_i_toggle.html#a6e36333a6bfb86fe0cc3d946cacbc38f">cm::UIToggle</a>, <a class="el" href="classcm_1_1_u_i_float.html#a54b0dc86dc39ea9e658b49b3a1be59bc">cm::UIFloat</a>, <a class="el" href="classcm_1_1_u_i_bang.html#a6d2be36c3cd5e872b32066a4e5c04891">cm::UIBang</a>, and <a class="el" href="classcm_1_1_u_i_text.html#ae6d4537ddefd8eb22abeee911edc6d8d">cm::UIText</a>.</p>
 
 </div>
 </div>
@@ -493,7 +513,7 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classcm_1_1_u_i_bang.html#a6e15bfa4db7a1842f03efb9a8046bed0">cm::UIBang</a>.</p>
+<p>Reimplemented in <a class="el" href="classcm_1_1_u_i_toggle.html#a5591e857a2314ef091ed233f32f5f693">cm::UIToggle</a>, and <a class="el" href="classcm_1_1_u_i_bang.html#a6e15bfa4db7a1842f03efb9a8046bed0">cm::UIBang</a>.</p>
 
 </div>
 </div>
@@ -608,7 +628,7 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>sets object text data /usually overriden by ui objects/ </p>
+<p>sets object text data </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
 </div>
@@ -663,7 +683,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classcm_1_1_u_i_message.html#a3b8286f1ff1e80796962cb1db646f353">cm::UIMessage</a>, <a class="el" href="classcm_1_1_u_i_float.html#ab6ef218accfe836599a188c1d5045134">cm::UIFloat</a>, <a class="el" href="classcm_1_1_u_i_toggle.html#a2638be20a2c6bf9e9d46a4639a6329b2">cm::UIToggle</a>, and <a class="el" href="classcm_1_1_u_i_bang.html#a2fb846e6ddde33f6d1af7876a7f38239">cm::UIBang</a>.</p>
+<p>Reimplemented in <a class="el" href="classcm_1_1_u_i_message.html#a3b8286f1ff1e80796962cb1db646f353">cm::UIMessage</a>, <a class="el" href="classcm_1_1_u_i_toggle.html#a2638be20a2c6bf9e9d46a4639a6329b2">cm::UIToggle</a>, <a class="el" href="classcm_1_1_u_i_float.html#ab6ef218accfe836599a188c1d5045134">cm::UIFloat</a>, and <a class="el" href="classcm_1_1_u_i_bang.html#a2fb846e6ddde33f6d1af7876a7f38239">cm::UIBang</a>.</p>
 
 </div>
 </div>
@@ -689,7 +709,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Mar 11 2017 21:15:39 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 11 2017 22:38:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

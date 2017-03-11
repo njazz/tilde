@@ -5,7 +5,7 @@ var searchData=
   ['parsestring',['parseString',['../classcm_1_1_file_parser.html#ac056657648c841c16c7eca63da56b373',1,'cm::FileParser']]],
   ['patchcord',['Patchcord',['../classcm_1_1_patchcord.html#a31a85e2d05fd583ba9ebfb0d583ab03d',1,'cm::Patchcord::Patchcord()'],['../classcm_1_1_canvas.html#a24db3dbfed7d2801f397a560e3eb3729',1,'cm::Canvas::patchcord(UIObject *obj1, int outlet, UIObject *obj2, int inlet)'],['../classcm_1_1_canvas.html#a7b7f2034b77ae87e3adc8627e02ee77e',1,'cm::Canvas::patchcord(UIObject *obj1, UIWidget *outport, UIObject *obj2, UIWidget *inport)']]],
   ['pd_5fwindow_5fprinthook',['pd_window_printhook',['../main_8cpp.html#ae66fea7642262d20892deca8b7ee5753',1,'main.cpp']]],
-  ['pdwindow',['PdWindow',['../classcm_1_1_pd_window.html#aed4498a525662c9dec4dad3cafea079c',1,'cm::PdWindow::PdWindow()'],['../classcm_1_1_base_menu.html#a2b65c47eaa3cce2ffa4dd5657ce33c1b',1,'cm::BaseMenu::pdWindow()']]],
+  ['pdwindow',['pdWindow',['../classcm_1_1_base_menu.html#a2b65c47eaa3cce2ffa4dd5657ce33c1b',1,'cm::BaseMenu::pdWindow()'],['../classcm_1_1_pd_window.html#aed4498a525662c9dec4dad3cafea079c',1,'cm::PdWindow::PdWindow()']]],
   ['port',['Port',['../classcm_1_1_port.html#a4d071b089f4e72513d280cfde14b05ce',1,'cm::Port']]],
   ['preferences',['Preferences',['../classcm_1_1_preferences.html#aea987360ca0da6187f9ce007af0744ce',1,'cm::Preferences']]],
   ['properties',['properties',['../classcm_1_1_u_i_object.html#a1153fca42a8202fed028f8b263150dcd',1,'cm::UIObject']]]

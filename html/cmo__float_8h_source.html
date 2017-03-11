@@ -118,208 +118,212 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00039"></a>00039 <span class="comment">//        list.removeAt(0);</span>
 <a name="l00040"></a>00040 <span class="comment">//        QString list_s = list.join(&quot; &quot;);</span>
 <a name="l00041"></a>00041 <span class="comment">//        const char * obj_name = list_s.toStdString().c_str();</span>
-<a name="l00042"></a>00042         b-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a42cd816b2e061057104f1e1ade6b8a71" title="sets object text data /usually overriden by ui objects/">setObjectData</a>(objectData);
-<a name="l00043"></a>00043 
-<a name="l00044"></a>00044         std::string message = <span class="stringliteral">&quot;ui.msg&quot;</span>;
-<a name="l00045"></a>00045 
-<a name="l00046"></a>00046         <span class="comment">//temp</span>
-<a name="l00047"></a>00047         t_object* new_obj = 0 ;
-<a name="l00048"></a>00048         <span class="keywordflow">if</span> (!pdCanvas)
-<a name="l00049"></a>00049         {qDebug(<span class="stringliteral">&quot;bad pd canvas instance&quot;</span>);}
-<a name="l00050"></a>00050         <span class="keywordflow">else</span>
-<a name="l00051"></a>00051         {
-<a name="l00052"></a>00052             QPoint pos = QPoint(0,0);
-<a name="l00053"></a>00053             new_obj = <a class="code" href="cm__pdlink_8h.html#a3bac993f5ef2ae3ddcb123762d3668d0" title="creates pd message TODO not working now">cmp_create_message</a>(pdCanvas, message, pos.x(), pos.y());
-<a name="l00054"></a>00054         }
-<a name="l00055"></a>00055 
-<a name="l00056"></a>00056         <span class="keywordflow">if</span> (new_obj)
-<a name="l00057"></a>00057         {
-<a name="l00058"></a>00058             qDebug (<span class="stringliteral">&quot;created msgbox %s | ptr %lu\n&quot;</span>,  message.c_str(), (long)new_obj);
-<a name="l00059"></a>00059             b-&gt;<a class="code" href="classcm_1_1_u_i_float.html#ab6ef218accfe836599a188c1d5045134" title="sets pointer to pd object">setPdObject</a>(new_obj);
-<a name="l00060"></a>00060         }
-<a name="l00061"></a>00061         <span class="keywordflow">else</span>
-<a name="l00062"></a>00062         {
-<a name="l00063"></a>00063             qDebug(<span class="stringliteral">&quot;Error: no such object %s&quot;</span>,  message.c_str());
-<a name="l00064"></a>00064         }
-<a name="l00065"></a>00065 
-<a name="l00066"></a>00066         b-&gt;<a class="code" href="classcm_1_1_u_i_float.html#a40a6717409b74c4bcff180c55fb19929">setPdMessage</a>(objectData.c_str());
-<a name="l00067"></a>00067 
-<a name="l00068"></a>00068         <span class="keywordflow">return</span> (<a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*) b;
-<a name="l00069"></a>00069     };
-<a name="l00070"></a>00070 
-<a name="l00071"></a><a class="code" href="classcm_1_1_u_i_float.html#afc0f9351bbb038b0b9f1d8eef192a981">00071</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_u_i_float.html#afc0f9351bbb038b0b9f1d8eef192a981" title="init properties for the class - called from constructor">initProperties</a>()
-<a name="l00072"></a>00072     {
-<a name="l00073"></a>00073         <a class="code" href="classcm_1_1_u_i_float.html#afc0f9351bbb038b0b9f1d8eef192a981" title="init properties for the class - called from constructor">UIObject::initProperties</a>();
-<a name="l00074"></a>00074 
-<a name="l00075"></a>00075         this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a1153fca42a8202fed028f8b263150dcd">properties</a>()-&gt;<a class="code" href="classcm_1_1_u_i_property_list.html#a09f417acc7c9e0da0242fa32ae0b7ad8">create</a>(<span class="stringliteral">&quot;Value&quot;</span>,<span class="stringliteral">&quot;Preset&quot;</span>,<span class="stringliteral">&quot;0.1&quot;</span>,0.);
-<a name="l00076"></a>00076     }
-<a name="l00077"></a>00077 
-<a name="l00078"></a><a class="code" href="classcm_1_1_u_i_float.html#ab867568d57d63e836cba883722400961">00078</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_u_i_float.html#ab867568d57d63e836cba883722400961">paintEvent</a>(QPaintEvent *)
-<a name="l00079"></a>00079     {    QPainter p(<span class="keyword">this</span>);
-<a name="l00080"></a>00080 
+<a name="l00042"></a>00042         b-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a42cd816b2e061057104f1e1ade6b8a71" title="sets object text data">setObjectData</a>(objectData);
+<a name="l00043"></a>00043         b-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a4dfba5f783dde18c19b3ce750ccfead8" title="call this after setting object data">autoResize</a>();
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045         std::string message = <span class="stringliteral">&quot;ui.msg&quot;</span>;
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047         <span class="comment">//temp</span>
+<a name="l00048"></a>00048         t_object* new_obj = 0 ;
+<a name="l00049"></a>00049         <span class="keywordflow">if</span> (!pdCanvas)
+<a name="l00050"></a>00050         {qDebug(<span class="stringliteral">&quot;bad pd canvas instance&quot;</span>);}
+<a name="l00051"></a>00051         <span class="keywordflow">else</span>
+<a name="l00052"></a>00052         {
+<a name="l00053"></a>00053             QPoint pos = QPoint(0,0);
+<a name="l00054"></a>00054             new_obj = <a class="code" href="cm__pdlink_8h.html#a3bac993f5ef2ae3ddcb123762d3668d0" title="creates pd message TODO not working now">cmp_create_message</a>(pdCanvas, message, pos.x(), pos.y());
+<a name="l00055"></a>00055         }
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057         <span class="keywordflow">if</span> (new_obj)
+<a name="l00058"></a>00058         {
+<a name="l00059"></a>00059             qDebug (<span class="stringliteral">&quot;created msgbox %s | ptr %lu\n&quot;</span>,  message.c_str(), (long)new_obj);
+<a name="l00060"></a>00060             b-&gt;<a class="code" href="classcm_1_1_u_i_float.html#ab6ef218accfe836599a188c1d5045134" title="sets pointer to pd object">setPdObject</a>(new_obj);
+<a name="l00061"></a>00061         }
+<a name="l00062"></a>00062         <span class="keywordflow">else</span>
+<a name="l00063"></a>00063         {
+<a name="l00064"></a>00064             qDebug(<span class="stringliteral">&quot;Error: no such object %s&quot;</span>,  message.c_str());
+<a name="l00065"></a>00065         }
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067         b-&gt;<a class="code" href="classcm_1_1_u_i_float.html#a40a6717409b74c4bcff180c55fb19929">setPdMessage</a>(objectData.c_str());
+<a name="l00068"></a>00068 
+<a name="l00069"></a>00069         <span class="keywordflow">return</span> (<a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*) b;
+<a name="l00070"></a>00070     };
+<a name="l00071"></a>00071 
+<a name="l00072"></a><a class="code" href="classcm_1_1_u_i_float.html#afc0f9351bbb038b0b9f1d8eef192a981">00072</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_u_i_float.html#afc0f9351bbb038b0b9f1d8eef192a981" title="init properties for the class - called from constructor">initProperties</a>()
+<a name="l00073"></a>00073     {
+<a name="l00074"></a>00074         <a class="code" href="classcm_1_1_u_i_float.html#afc0f9351bbb038b0b9f1d8eef192a981" title="init properties for the class - called from constructor">UIObject::initProperties</a>();
+<a name="l00075"></a>00075 
+<a name="l00076"></a>00076         this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a1153fca42a8202fed028f8b263150dcd">properties</a>()-&gt;<a class="code" href="classcm_1_1_u_i_property_list.html#a09f417acc7c9e0da0242fa32ae0b7ad8">create</a>(<span class="stringliteral">&quot;Value&quot;</span>,<span class="stringliteral">&quot;Preset&quot;</span>,<span class="stringliteral">&quot;0.1&quot;</span>,0.);
+<a name="l00077"></a>00077     }
+<a name="l00078"></a>00078 
+<a name="l00079"></a><a class="code" href="classcm_1_1_u_i_float.html#ab867568d57d63e836cba883722400961">00079</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_u_i_float.html#ab867568d57d63e836cba883722400961">paintEvent</a>(QPaintEvent *)
+<a name="l00080"></a>00080     {    QPainter p(<span class="keyword">this</span>);
 <a name="l00081"></a>00081 
-<a name="l00082"></a>00082          QPolygon poly;
-<a name="l00083"></a>00083           poly &lt;&lt; QPoint(0,0) &lt;&lt;
-<a name="l00084"></a>00084                   QPoint(this-&gt;width()-5,0) &lt;&lt;
-<a name="l00085"></a>00085                   <span class="comment">//QPoint(this-&gt;width()-4,4) &lt;&lt;</span>
-<a name="l00086"></a>00086                   QPoint(this-&gt;width(),5) &lt;&lt;
-<a name="l00087"></a>00087                   QPoint(this-&gt;width(),this-&gt;height()) &lt;&lt;
-<a name="l00088"></a>00088                   QPoint(0,this-&gt;height());
-<a name="l00089"></a>00089 
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083          QPolygon poly;
+<a name="l00084"></a>00084           poly &lt;&lt; QPoint(0,0) &lt;&lt;
+<a name="l00085"></a>00085                   QPoint(this-&gt;width()-5,0) &lt;&lt;
+<a name="l00086"></a>00086                   <span class="comment">//QPoint(this-&gt;width()-4,4) &lt;&lt;</span>
+<a name="l00087"></a>00087                   QPoint(this-&gt;width(),5) &lt;&lt;
+<a name="l00088"></a>00088                   QPoint(this-&gt;width(),this-&gt;height()) &lt;&lt;
+<a name="l00089"></a>00089                   QPoint(0,this-&gt;height());
 <a name="l00090"></a>00090 
-<a name="l00091"></a>00091            <span class="comment">//p.drawRect(0,0,this-&gt;width(),this-&gt;height());</span>
-<a name="l00092"></a>00092 
-<a name="l00093"></a>00093            p.setPen(QPen(QColor(220, 220, 220), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-<a name="l00094"></a>00094             QPainterPath tmpPath;
-<a name="l00095"></a>00095              tmpPath.addPolygon(poly);
-<a name="l00096"></a>00096               QBrush br = QBrush(QColor(220,220,220), Qt::SolidPattern);
-<a name="l00097"></a>00097                p.fillPath(tmpPath,br);
-<a name="l00098"></a>00098 
-<a name="l00099"></a>00099                 <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#af2f48a7f0b6a400545fe63e9388756e3" title="get object&#39;s selected flag">isSelected</a>() )
-<a name="l00100"></a>00100                 {
-<a name="l00101"></a>00101                     p.setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-<a name="l00102"></a>00102                 }
-<a name="l00103"></a>00103 
-<a name="l00104"></a>00104                 <span class="keywordflow">else</span>
-<a name="l00105"></a>00105                 {
-<a name="l00106"></a>00106                     p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-<a name="l00107"></a>00107                 }
-<a name="l00108"></a>00108 
-<a name="l00109"></a>00109                  p.drawPolygon(poly);
-<a name="l00110"></a>00110 
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092            <span class="comment">//p.drawRect(0,0,this-&gt;width(),this-&gt;height());</span>
+<a name="l00093"></a>00093 
+<a name="l00094"></a>00094            p.setPen(QPen(QColor(220, 220, 220), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+<a name="l00095"></a>00095             QPainterPath tmpPath;
+<a name="l00096"></a>00096              tmpPath.addPolygon(poly);
+<a name="l00097"></a>00097               QBrush br = QBrush(QColor(220,220,220), Qt::SolidPattern);
+<a name="l00098"></a>00098                p.fillPath(tmpPath,br);
+<a name="l00099"></a>00099 
+<a name="l00100"></a>00100                 <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#af2f48a7f0b6a400545fe63e9388756e3" title="get object&#39;s selected flag">isSelected</a>() )
+<a name="l00101"></a>00101                 {
+<a name="l00102"></a>00102                     p.setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+<a name="l00103"></a>00103                 }
+<a name="l00104"></a>00104 
+<a name="l00105"></a>00105                 <span class="keywordflow">else</span>
+<a name="l00106"></a>00106                 {
+<a name="l00107"></a>00107                     p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+<a name="l00108"></a>00108                 }
+<a name="l00109"></a>00109 
+<a name="l00110"></a>00110                  p.drawPolygon(poly);
 <a name="l00111"></a>00111 
-<a name="l00112"></a>00112                   QTextOption *op = <span class="keyword">new</span> QTextOption;
-<a name="l00113"></a>00113                    op-&gt;setAlignment(Qt::AlignLeft);
-<a name="l00114"></a>00114                     p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-<a name="l00115"></a>00115 
-<a name="l00116"></a>00116                      p.setFont(QFont(<a class="code" href="cm__preferences_8h.html#a3f95dcdc217e1a88365c8306beaf1c72">PREF_QSTRING</a>(<span class="stringliteral">&quot;Font&quot;</span>),11,0,<span class="keyword">false</span>));
-<a name="l00117"></a>00117                       p.drawText(2,3,this-&gt;width()-2,this-&gt;height()-3,0,this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a1a988c71aba5c7d15a0d6814db8d823e" title="gets object text data /usually overriden by ui objects/">getObjectData</a>().c_str(),0);
-<a name="l00118"></a>00118 
+<a name="l00112"></a>00112 
+<a name="l00113"></a>00113                   QTextOption *op = <span class="keyword">new</span> QTextOption;
+<a name="l00114"></a>00114                    op-&gt;setAlignment(Qt::AlignLeft);
+<a name="l00115"></a>00115                     p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+<a name="l00116"></a>00116 
+<a name="l00117"></a>00117                      p.setFont(QFont(<a class="code" href="cm__preferences_8h.html#a3f95dcdc217e1a88365c8306beaf1c72">PREF_QSTRING</a>(<span class="stringliteral">&quot;Font&quot;</span>),11,0,<span class="keyword">false</span>));
+<a name="l00118"></a>00118                       p.drawText(2,3,this-&gt;width()-2,this-&gt;height()-3,0,this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a1a988c71aba5c7d15a0d6814db8d823e" title="gets object text data /usually overriden by ui objects/">getObjectData</a>().c_str(),0);
 <a name="l00119"></a>00119 
-<a name="l00120"></a>00120     }
-<a name="l00121"></a>00121 
+<a name="l00120"></a>00120 
+<a name="l00121"></a>00121     }
 <a name="l00122"></a>00122 
-<a name="l00124"></a>00124 
-<a name="l00125"></a><a class="code" href="classcm_1_1_u_i_float.html#af5c93edd9df2f144990c27cdabcbb801">00125</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_u_i_float.html#af5c93edd9df2f144990c27cdabcbb801">mousePressEvent</a>(QMouseEvent *ev)
-<a name="l00126"></a>00126     {
-<a name="l00127"></a>00127 
-<a name="l00128"></a>00128         this-&gt;startY = ev-&gt;pos().y();
-<a name="l00129"></a>00129 
+<a name="l00123"></a>00123 
+<a name="l00125"></a>00125 
+<a name="l00126"></a><a class="code" href="classcm_1_1_u_i_float.html#af5c93edd9df2f144990c27cdabcbb801">00126</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_u_i_float.html#af5c93edd9df2f144990c27cdabcbb801">mousePressEvent</a>(QMouseEvent *ev)
+<a name="l00127"></a>00127     {
+<a name="l00128"></a>00128 
+<a name="l00129"></a>00129         this-&gt;startY = ev-&gt;pos().y();
 <a name="l00130"></a>00130 
-<a name="l00131"></a>00131         <span class="keywordflow">if</span> ( (this-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#ac7ab5e3859278cbf6a8cd644a618b361" title="get edit mode flag value">getEditMode</a>()==<a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7ae6f93cdd04849ebf6af6952e8127d099">em_Unlocked</a>) )
-<a name="l00132"></a>00132         {
-<a name="l00133"></a>00133             emit <a class="code" href="classcm_1_1_u_i_widget.html#a493fc15e906775728038ef1e7de6bebc">selectBox</a>(<span class="keyword">this</span>);
-<a name="l00134"></a>00134             this-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#abbdced5d563d6bee223750b009267b53">dragOffset</a> = ev-&gt;pos();
-<a name="l00135"></a>00135         }
-<a name="l00136"></a>00136 
+<a name="l00131"></a>00131 
+<a name="l00132"></a>00132         <span class="keywordflow">if</span> ( (this-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#ac7ab5e3859278cbf6a8cd644a618b361" title="get edit mode flag value">getEditMode</a>()==<a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7ae6f93cdd04849ebf6af6952e8127d099">em_Unlocked</a>) )
+<a name="l00133"></a>00133         {
+<a name="l00134"></a>00134             emit <a class="code" href="classcm_1_1_u_i_widget.html#a493fc15e906775728038ef1e7de6bebc">selectBox</a>(<span class="keyword">this</span>);
+<a name="l00135"></a>00135             this-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#abbdced5d563d6bee223750b009267b53">dragOffset</a> = ev-&gt;pos();
+<a name="l00136"></a>00136         }
 <a name="l00137"></a>00137 
-<a name="l00138"></a>00138     }
-<a name="l00139"></a>00139 
-<a name="l00140"></a><a class="code" href="classcm_1_1_u_i_float.html#ac0d9fe319ce6f1ad3a2e44fc42176fb9">00140</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_u_i_float.html#ac0d9fe319ce6f1ad3a2e44fc42176fb9">mouseReleaseEvent</a>(QMouseEvent *)
-<a name="l00141"></a>00141     {
-<a name="l00142"></a>00142 
-<a name="l00143"></a>00143     }
-<a name="l00144"></a>00144 
-<a name="l00145"></a><a class="code" href="classcm_1_1_u_i_float.html#a2670e158ee67567924fa4b06771494cd">00145</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_u_i_float.html#a2670e158ee67567924fa4b06771494cd">mouseMoveEvent</a>(QMouseEvent *event)
-<a name="l00146"></a>00146     {
-<a name="l00147"></a>00147         <span class="keywordflow">if</span>( (event-&gt;buttons() &amp; Qt::LeftButton ) &amp;&amp; (this-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#ac7ab5e3859278cbf6a8cd644a618b361" title="get edit mode flag value">getEditMode</a>() == <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7ae6f93cdd04849ebf6af6952e8127d099">em_Unlocked</a>))
-<a name="l00148"></a>00148         {
-<a name="l00149"></a>00149             emit <a class="code" href="classcm_1_1_u_i_widget.html#a0538edf982efa304002cc089b5414fda">moveBox</a>(<span class="keyword">this</span>, event);
-<a name="l00150"></a>00150         }
-<a name="l00151"></a>00151 
-<a name="l00152"></a>00152         <span class="keywordflow">if</span>( (event-&gt;buttons() &amp; Qt::LeftButton) &amp;&amp; (this-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#ac7ab5e3859278cbf6a8cd644a618b361" title="get edit mode flag value">getEditMode</a>() != <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7ae6f93cdd04849ebf6af6952e8127d099">em_Unlocked</a>))
-<a name="l00153"></a>00153         {
-<a name="l00154"></a>00154             <span class="comment">//todo fix</span>
-<a name="l00155"></a>00155             this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a42cd816b2e061057104f1e1ade6b8a71" title="sets object text data /usually overriden by ui objects/">setObjectData</a>( std::to_string( ::atof(this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a1a988c71aba5c7d15a0d6814db8d823e" title="gets object text data /usually overriden by ui objects/">getObjectData</a>().c_str()) - event-&gt;pos().y() + this-&gt;startY) );  <span class="comment">//- this-&gt;startY</span>
-<a name="l00156"></a>00156             this-&gt;startY = <span class="keyword">event</span>-&gt;pos().y();
-<a name="l00157"></a>00157 
-<a name="l00158"></a>00158             std::string send = <span class="stringliteral">&quot;set &quot;</span> + this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a1a988c71aba5c7d15a0d6814db8d823e" title="gets object text data /usually overriden by ui objects/">getObjectData</a>();
-<a name="l00159"></a>00159             <a class="code" href="cm__pdlink_8h.html#a9bca4af04ea4fac6b910933e5ba16814" title="send string as pd message to object">cmp_sendstring</a>((t_pd*)this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a" title="returns pointer to pd object.">getPdObject</a>(), send.c_str());
-<a name="l00160"></a>00160             <a class="code" href="cm__pdlink_8h.html#a9bca4af04ea4fac6b910933e5ba16814" title="send string as pd message to object">cmp_sendstring</a>((t_pd*)this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a" title="returns pointer to pd object.">getPdObject</a>(), ((std::string)<span class="stringliteral">&quot;bang&quot;</span>).c_str());
-<a name="l00161"></a>00161 
-<a name="l00162"></a>00162             this-&gt;repaint();
-<a name="l00163"></a>00163         }
-<a name="l00164"></a>00164 
-<a name="l00165"></a>00165         <span class="keyword">event</span>-&gt;ignore();
+<a name="l00138"></a>00138 
+<a name="l00139"></a>00139     }
+<a name="l00140"></a>00140 
+<a name="l00141"></a><a class="code" href="classcm_1_1_u_i_float.html#ac0d9fe319ce6f1ad3a2e44fc42176fb9">00141</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_u_i_float.html#ac0d9fe319ce6f1ad3a2e44fc42176fb9">mouseReleaseEvent</a>(QMouseEvent *)
+<a name="l00142"></a>00142     {
+<a name="l00143"></a>00143 
+<a name="l00144"></a>00144     }
+<a name="l00145"></a>00145 
+<a name="l00146"></a><a class="code" href="classcm_1_1_u_i_float.html#a2670e158ee67567924fa4b06771494cd">00146</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_u_i_float.html#a2670e158ee67567924fa4b06771494cd">mouseMoveEvent</a>(QMouseEvent *event)
+<a name="l00147"></a>00147     {
+<a name="l00148"></a>00148         <span class="keywordflow">if</span>( (event-&gt;buttons() &amp; Qt::LeftButton ) &amp;&amp; (this-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#ac7ab5e3859278cbf6a8cd644a618b361" title="get edit mode flag value">getEditMode</a>() == <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7ae6f93cdd04849ebf6af6952e8127d099">em_Unlocked</a>))
+<a name="l00149"></a>00149         {
+<a name="l00150"></a>00150             emit <a class="code" href="classcm_1_1_u_i_widget.html#a0538edf982efa304002cc089b5414fda">moveBox</a>(<span class="keyword">this</span>, event);
+<a name="l00151"></a>00151         }
+<a name="l00152"></a>00152 
+<a name="l00153"></a>00153         <span class="keywordflow">if</span>( (event-&gt;buttons() &amp; Qt::LeftButton) &amp;&amp; (this-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#ac7ab5e3859278cbf6a8cd644a618b361" title="get edit mode flag value">getEditMode</a>() != <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7ae6f93cdd04849ebf6af6952e8127d099">em_Unlocked</a>))
+<a name="l00154"></a>00154         {
+<a name="l00155"></a>00155             <span class="comment">//todo fix</span>
+<a name="l00156"></a>00156             this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a42cd816b2e061057104f1e1ade6b8a71" title="sets object text data">setObjectData</a>( std::to_string( ::atof(this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a1a988c71aba5c7d15a0d6814db8d823e" title="gets object text data /usually overriden by ui objects/">getObjectData</a>().c_str()) - event-&gt;pos().y() + this-&gt;startY) );  <span class="comment">//- this-&gt;startY</span>
+<a name="l00157"></a>00157             this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a4dfba5f783dde18c19b3ce750ccfead8" title="call this after setting object data">autoResize</a>();
+<a name="l00158"></a>00158             this-&gt;startY = <span class="keyword">event</span>-&gt;pos().y();
+<a name="l00159"></a>00159 
+<a name="l00160"></a>00160             std::string send = <span class="stringliteral">&quot;set &quot;</span> + this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a1a988c71aba5c7d15a0d6814db8d823e" title="gets object text data /usually overriden by ui objects/">getObjectData</a>();
+<a name="l00161"></a>00161             <a class="code" href="cm__pdlink_8h.html#a9bca4af04ea4fac6b910933e5ba16814" title="send string as pd message to object">cmp_sendstring</a>((t_pd*)this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a" title="returns pointer to pd object.">getPdObject</a>(), send.c_str());
+<a name="l00162"></a>00162             <a class="code" href="cm__pdlink_8h.html#a9bca4af04ea4fac6b910933e5ba16814" title="send string as pd message to object">cmp_sendstring</a>((t_pd*)this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a" title="returns pointer to pd object.">getPdObject</a>(), ((std::string)<span class="stringliteral">&quot;bang&quot;</span>).c_str());
+<a name="l00163"></a>00163 
+<a name="l00164"></a>00164             this-&gt;repaint();
+<a name="l00165"></a>00165         }
 <a name="l00166"></a>00166 
-<a name="l00167"></a>00167         <span class="comment">//todo move!</span>
-<a name="l00168"></a>00168         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#ac7ab5e3859278cbf6a8cd644a618b361" title="get edit mode flag value">getEditMode</a>() != <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7ae6f93cdd04849ebf6af6952e8127d099">em_Unlocked</a>)
-<a name="l00169"></a>00169         {
-<a name="l00170"></a>00170             this-&gt;setCursor(QCursor(Qt::UpArrowCursor));
-<a name="l00171"></a>00171         }
-<a name="l00172"></a>00172         <span class="keywordflow">else</span>
-<a name="l00173"></a>00173         {
-<a name="l00174"></a>00174             this-&gt;setCursor(QCursor(Qt::ArrowCursor));
-<a name="l00175"></a>00175         }
-<a name="l00176"></a>00176 
-<a name="l00177"></a>00177     }
+<a name="l00167"></a>00167         <span class="keyword">event</span>-&gt;ignore();
+<a name="l00168"></a>00168 
+<a name="l00169"></a>00169         <span class="comment">//todo move!</span>
+<a name="l00170"></a>00170         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#ac7ab5e3859278cbf6a8cd644a618b361" title="get edit mode flag value">getEditMode</a>() != <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7ae6f93cdd04849ebf6af6952e8127d099">em_Unlocked</a>)
+<a name="l00171"></a>00171         {
+<a name="l00172"></a>00172             this-&gt;setCursor(QCursor(Qt::UpArrowCursor));
+<a name="l00173"></a>00173         }
+<a name="l00174"></a>00174         <span class="keywordflow">else</span>
+<a name="l00175"></a>00175         {
+<a name="l00176"></a>00176             this-&gt;setCursor(QCursor(Qt::ArrowCursor));
+<a name="l00177"></a>00177         }
 <a name="l00178"></a>00178 
-<a name="l00179"></a>00179 
+<a name="l00179"></a>00179     }
+<a name="l00180"></a>00180 
 <a name="l00181"></a>00181 
-<a name="l00182"></a><a class="code" href="classcm_1_1_u_i_float.html#a40a6717409b74c4bcff180c55fb19929">00182</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_u_i_float.html#a40a6717409b74c4bcff180c55fb19929">setPdMessage</a>(std::string message)
-<a name="l00183"></a>00183     {
-<a name="l00184"></a>00184         this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a42cd816b2e061057104f1e1ade6b8a71" title="sets object text data /usually overriden by ui objects/">setObjectData</a>(message);
-<a name="l00185"></a>00185 
-<a name="l00186"></a>00186         QFont myFont(<a class="code" href="cm__preferences_8h.html#a3f95dcdc217e1a88365c8306beaf1c72">PREF_QSTRING</a>(<span class="stringliteral">&quot;Font&quot;</span>), 11);
-<a name="l00187"></a>00187         QFontMetrics fm(myFont);
-<a name="l00188"></a>00188         <span class="keywordtype">int</span> new_w = fm.width(QString(this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a1a988c71aba5c7d15a0d6814db8d823e" title="gets object text data /usually overriden by ui objects/">getObjectData</a>().c_str())) + 10;
-<a name="l00189"></a>00189         new_w = (new_w&lt;25) ? 25 : new_w;
-<a name="l00190"></a>00190         this-&gt;setFixedWidth(new_w);
-<a name="l00191"></a>00191         <span class="comment">//this-&gt;editor_-&gt;setFixedWidth(this-&gt;width()-5);</span>
-<a name="l00192"></a>00192 
-<a name="l00193"></a>00193         <span class="comment">//temporary</span>
-<a name="l00194"></a>00194         <span class="comment">//move</span>
-<a name="l00195"></a>00195         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#ac7ab5e3859278cbf6a8cd644a618b361" title="get edit mode flag value">getEditMode</a>() == <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7ae6f93cdd04849ebf6af6952e8127d099">em_Unlocked</a>)
-<a name="l00196"></a>00196         {
-<a name="l00197"></a>00197             <span class="keywordflow">if</span> (!this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a" title="returns pointer to pd object.">getPdObject</a>())
-<a name="l00198"></a>00198             {
-<a name="l00199"></a>00199                 qDebug(<span class="stringliteral">&quot;msg: bad pd object!&quot;</span>);
-<a name="l00200"></a>00200             }
-<a name="l00201"></a>00201             <span class="keywordflow">else</span>
-<a name="l00202"></a>00202             {
-<a name="l00203"></a>00203 
-<a name="l00204"></a>00204                 std::string msg = (<span class="stringliteral">&quot;set &quot;</span>+ this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a1a988c71aba5c7d15a0d6814db8d823e" title="gets object text data /usually overriden by ui objects/">getObjectData</a>());
-<a name="l00205"></a>00205                 <span class="comment">//qDebug(&quot;send msg %s&quot;, msg.c_str());</span>
-<a name="l00206"></a>00206                 <a class="code" href="cm__pdlink_8h.html#a9bca4af04ea4fac6b910933e5ba16814" title="send string as pd message to object">cmp_sendstring</a>((t_pd*)this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a" title="returns pointer to pd object.">getPdObject</a>(), msg);
-<a name="l00207"></a>00207             }
-<a name="l00208"></a>00208 
-<a name="l00209"></a>00209         }
-<a name="l00210"></a>00210 
+<a name="l00183"></a>00183 
+<a name="l00184"></a><a class="code" href="classcm_1_1_u_i_float.html#a40a6717409b74c4bcff180c55fb19929">00184</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_u_i_float.html#a40a6717409b74c4bcff180c55fb19929">setPdMessage</a>(std::string message)
+<a name="l00185"></a>00185     {
+<a name="l00186"></a>00186         this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a42cd816b2e061057104f1e1ade6b8a71" title="sets object text data">setObjectData</a>(message);
+<a name="l00187"></a>00187         this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a4dfba5f783dde18c19b3ce750ccfead8" title="call this after setting object data">autoResize</a>();
+<a name="l00188"></a>00188 
+<a name="l00189"></a>00189         QFont myFont(<a class="code" href="cm__preferences_8h.html#a3f95dcdc217e1a88365c8306beaf1c72">PREF_QSTRING</a>(<span class="stringliteral">&quot;Font&quot;</span>), 11);
+<a name="l00190"></a>00190         QFontMetrics fm(myFont);
+<a name="l00191"></a>00191         <span class="keywordtype">int</span> new_w = fm.width(QString(this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a1a988c71aba5c7d15a0d6814db8d823e" title="gets object text data /usually overriden by ui objects/">getObjectData</a>().c_str())) + 10;
+<a name="l00192"></a>00192         new_w = (new_w&lt;25) ? 25 : new_w;
+<a name="l00193"></a>00193         this-&gt;setFixedWidth(new_w);
+<a name="l00194"></a>00194         <span class="comment">//this-&gt;editor_-&gt;setFixedWidth(this-&gt;width()-5);</span>
+<a name="l00195"></a>00195 
+<a name="l00196"></a>00196         <span class="comment">//temporary</span>
+<a name="l00197"></a>00197         <span class="comment">//move</span>
+<a name="l00198"></a>00198         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#ac7ab5e3859278cbf6a8cd644a618b361" title="get edit mode flag value">getEditMode</a>() == <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7ae6f93cdd04849ebf6af6952e8127d099">em_Unlocked</a>)
+<a name="l00199"></a>00199         {
+<a name="l00200"></a>00200             <span class="keywordflow">if</span> (!this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a" title="returns pointer to pd object.">getPdObject</a>())
+<a name="l00201"></a>00201             {
+<a name="l00202"></a>00202                 qDebug(<span class="stringliteral">&quot;msg: bad pd object!&quot;</span>);
+<a name="l00203"></a>00203             }
+<a name="l00204"></a>00204             <span class="keywordflow">else</span>
+<a name="l00205"></a>00205             {
+<a name="l00206"></a>00206 
+<a name="l00207"></a>00207                 std::string msg = (<span class="stringliteral">&quot;set &quot;</span>+ this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a1a988c71aba5c7d15a0d6814db8d823e" title="gets object text data /usually overriden by ui objects/">getObjectData</a>());
+<a name="l00208"></a>00208                 <span class="comment">//qDebug(&quot;send msg %s&quot;, msg.c_str());</span>
+<a name="l00209"></a>00209                 <a class="code" href="cm__pdlink_8h.html#a9bca4af04ea4fac6b910933e5ba16814" title="send string as pd message to object">cmp_sendstring</a>((t_pd*)this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a" title="returns pointer to pd object.">getPdObject</a>(), msg);
+<a name="l00210"></a>00210             }
 <a name="l00211"></a>00211 
-<a name="l00212"></a>00212 
-<a name="l00213"></a>00213     }
+<a name="l00212"></a>00212         }
+<a name="l00213"></a>00213 
 <a name="l00214"></a>00214 
-<a name="l00215"></a><a class="code" href="classcm_1_1_u_i_float.html#ac332de78b00c9c2f42221ad17443d430">00215</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_u_i_float.html#ac332de78b00c9c2f42221ad17443d430">updateUI</a>(<span class="keywordtype">void</span>* uiobj, ceammc::AtomList msg)
-<a name="l00216"></a>00216     {
-<a name="l00217"></a>00217         qDebug(<span class="stringliteral">&quot;update ui - float&quot;</span>);
-<a name="l00218"></a>00218         <a class="code" href="classcm_1_1_u_i_float.html" title="gui object: float number box (ui.float)">UIFloat</a> *x = (<a class="code" href="classcm_1_1_u_i_float.html" title="gui object: float number box (ui.float)">UIFloat</a>*)uiobj;
-<a name="l00219"></a>00219 
-<a name="l00220"></a>00220         <span class="keywordflow">if</span> (msg.size()&gt;0)
-<a name="l00221"></a>00221         {
-<a name="l00222"></a>00222             x-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a42cd816b2e061057104f1e1ade6b8a71" title="sets object text data /usually overriden by ui objects/">setObjectData</a>(msg.at(0).asString());
-<a name="l00223"></a>00223             x-&gt;repaint();
-<a name="l00224"></a>00224 
-<a name="l00225"></a>00225         }
-<a name="l00226"></a>00226     }
-<a name="l00227"></a>00227 
-<a name="l00228"></a><a class="code" href="classcm_1_1_u_i_float.html#a54b0dc86dc39ea9e658b49b3a1be59bc">00228</a>     std::string <a class="code" href="classcm_1_1_u_i_float.html#a54b0dc86dc39ea9e658b49b3a1be59bc" title="returns object&#39;s text for client-based file saving">getSaveString</a>()
-<a name="l00229"></a>00229     {<span class="keywordflow">return</span> <span class="stringliteral">&quot;ui.float &quot;</span>+ this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a1a988c71aba5c7d15a0d6814db8d823e" title="gets object text data /usually overriden by ui objects/">getObjectData</a>();}
-<a name="l00230"></a>00230 
-<a name="l00231"></a><a class="code" href="classcm_1_1_u_i_float.html#ab6ef218accfe836599a188c1d5045134">00231</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_u_i_float.html#ab6ef218accfe836599a188c1d5045134" title="sets pointer to pd object">setPdObject</a>(<span class="keywordtype">void</span> *obj)
-<a name="l00232"></a>00232     {
-<a name="l00233"></a>00233         <a class="code" href="classcm_1_1_u_i_float.html#ab6ef218accfe836599a188c1d5045134" title="sets pointer to pd object">UIObject::setPdObject</a>(obj);
-<a name="l00234"></a>00234         <a class="code" href="cm__pdlink_8h.html#a9b4bef98ca39e6d157ee073b5139ae9d" title="set the &#39;repaint&#39; function of the ui object to be accessible from pd object">cmp_connectUI</a>((t_pd*)this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a" title="returns pointer to pd object.">getPdObject</a>(), (<span class="keywordtype">void</span>*)<span class="keyword">this</span>, &amp;<a class="code" href="classcm_1_1_u_i_float.html#ac332de78b00c9c2f42221ad17443d430">UIFloat::updateUI</a>);
-<a name="l00235"></a>00235     }
-<a name="l00236"></a>00236 
-<a name="l00237"></a>00237 signals:
-<a name="l00238"></a>00238 
-<a name="l00239"></a>00239 <span class="keyword">private</span> slots:
+<a name="l00215"></a>00215 
+<a name="l00216"></a>00216     }
+<a name="l00217"></a>00217 
+<a name="l00218"></a><a class="code" href="classcm_1_1_u_i_float.html#ac332de78b00c9c2f42221ad17443d430">00218</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_u_i_float.html#ac332de78b00c9c2f42221ad17443d430">updateUI</a>(<span class="keywordtype">void</span>* uiobj, ceammc::AtomList msg)
+<a name="l00219"></a>00219     {
+<a name="l00220"></a>00220         qDebug(<span class="stringliteral">&quot;update ui - float&quot;</span>);
+<a name="l00221"></a>00221         <a class="code" href="classcm_1_1_u_i_float.html" title="gui object: float number box (ui.float)">UIFloat</a> *x = (<a class="code" href="classcm_1_1_u_i_float.html" title="gui object: float number box (ui.float)">UIFloat</a>*)uiobj;
+<a name="l00222"></a>00222 
+<a name="l00223"></a>00223         <span class="keywordflow">if</span> (msg.size()&gt;0)
+<a name="l00224"></a>00224         {
+<a name="l00225"></a>00225             x-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a42cd816b2e061057104f1e1ade6b8a71" title="sets object text data">setObjectData</a>(msg.at(0).asString());
+<a name="l00226"></a>00226             x-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a4dfba5f783dde18c19b3ce750ccfead8" title="call this after setting object data">autoResize</a>();
+<a name="l00227"></a>00227             x-&gt;repaint();
+<a name="l00228"></a>00228 
+<a name="l00229"></a>00229         }
+<a name="l00230"></a>00230     }
+<a name="l00231"></a>00231 
+<a name="l00232"></a><a class="code" href="classcm_1_1_u_i_float.html#a54b0dc86dc39ea9e658b49b3a1be59bc">00232</a>     std::string <a class="code" href="classcm_1_1_u_i_float.html#a54b0dc86dc39ea9e658b49b3a1be59bc" title="returns object&#39;s text for client-based file saving">getSaveString</a>()
+<a name="l00233"></a>00233     {<span class="keywordflow">return</span> <span class="stringliteral">&quot;ui.float &quot;</span>+ this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a1a988c71aba5c7d15a0d6814db8d823e" title="gets object text data /usually overriden by ui objects/">getObjectData</a>();}
+<a name="l00234"></a>00234 
+<a name="l00235"></a><a class="code" href="classcm_1_1_u_i_float.html#ab6ef218accfe836599a188c1d5045134">00235</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_u_i_float.html#ab6ef218accfe836599a188c1d5045134" title="sets pointer to pd object">setPdObject</a>(<span class="keywordtype">void</span> *obj)
+<a name="l00236"></a>00236     {
+<a name="l00237"></a>00237         <a class="code" href="classcm_1_1_u_i_float.html#ab6ef218accfe836599a188c1d5045134" title="sets pointer to pd object">UIObject::setPdObject</a>(obj);
+<a name="l00238"></a>00238         <a class="code" href="cm__pdlink_8h.html#a9b4bef98ca39e6d157ee073b5139ae9d" title="set the &#39;repaint&#39; function of the ui object to be accessible from pd object">cmp_connectUI</a>((t_pd*)this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a" title="returns pointer to pd object.">getPdObject</a>(), (<span class="keywordtype">void</span>*)<span class="keyword">this</span>, &amp;<a class="code" href="classcm_1_1_u_i_float.html#ac332de78b00c9c2f42221ad17443d430">UIFloat::updateUI</a>);
+<a name="l00239"></a>00239     }
 <a name="l00240"></a>00240 
-<a name="l00241"></a>00241 };
-<a name="l00242"></a>00242 }
-<a name="l00243"></a>00243 
+<a name="l00241"></a>00241 signals:
+<a name="l00242"></a>00242 
+<a name="l00243"></a>00243 <span class="keyword">private</span> slots:
 <a name="l00244"></a>00244 
-<a name="l00245"></a>00245 <span class="preprocessor">#endif // cmo_float_H</span>
+<a name="l00245"></a>00245 };
+<a name="l00246"></a>00246 }
+<a name="l00247"></a>00247 
+<a name="l00248"></a>00248 
+<a name="l00249"></a>00249 <span class="preprocessor">#endif // cmo_float_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -338,7 +342,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Mar 11 2017 21:15:39 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 11 2017 22:38:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

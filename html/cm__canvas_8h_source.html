@@ -415,7 +415,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00381"></a><a class="code" href="classcm_1_1_canvas.html#a272a3024a0662b07f91f0dbc2ae57fdb">00381</a>     <a class="code" href="classcm_1_1_u_i_box.html" title="gui object: standard object box">UIBox</a>* <a class="code" href="classcm_1_1_canvas.html#a272a3024a0662b07f91f0dbc2ae57fdb" title="restore &quot;pd&quot; object when loading from file">restoreSubcanvas</a>(std::string pdObjectName, QPoint pos, t_canvas* canvas)
 <a name="l00382"></a>00382     {
 <a name="l00383"></a>00383         <a class="code" href="classcm_1_1_u_i_box.html" title="gui object: standard object box">UIBox</a> *box = <span class="keyword">new</span> <a class="code" href="classcm_1_1_u_i_box.html" title="gui object: standard object box">UIBox</a>((<a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*)<span class="keyword">this</span>);   <span class="comment">//test?</span>
-<a name="l00384"></a>00384         box-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a42cd816b2e061057104f1e1ade6b8a71" title="sets object text data /usually overriden by ui objects/">setObjectData</a>(pdObjectName);
+<a name="l00384"></a>00384         box-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a42cd816b2e061057104f1e1ade6b8a71" title="sets object text data">setObjectData</a>(pdObjectName);
 <a name="l00385"></a>00385 
 <a name="l00386"></a>00386         connect(box,&amp;<a class="code" href="classcm_1_1_u_i_widget.html#a493fc15e906775728038ef1e7de6bebc">UIBox::selectBox</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classcm_1_1_canvas.html#a6c11512b7368573759ef28f6c968afce" title="slot called by box when it is selected">Canvas::s_SelectBox</a>);
 <a name="l00387"></a>00387         connect(box,&amp;<a class="code" href="classcm_1_1_u_i_widget.html#a0538edf982efa304002cc089b5414fda">UIBox::moveBox</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classcm_1_1_canvas.html#adf8a90ecdad3403af907a69af3d77bec" title="TODO check. slot called by box when it starts moving.">Canvas::s_MoveBox</a>);
@@ -963,7 +963,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Mar 11 2017 21:15:39 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 11 2017 22:38:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

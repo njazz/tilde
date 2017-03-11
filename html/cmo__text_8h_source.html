@@ -112,184 +112,187 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00033"></a>00033     {
 <a name="l00034"></a>00034         <a class="code" href="classcm_1_1_u_i_text.html" title="gui object: comment box (ui.text)">UIText</a>* b = <span class="keyword">new</span> <a class="code" href="classcm_1_1_u_i_text.html#a0eeb8018de271a0d83c9db0798a10431">UIText</a>((<a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*)parent);
 <a name="l00035"></a>00035         <span class="comment">//temporary</span>
-<a name="l00036"></a>00036         b-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a42cd816b2e061057104f1e1ade6b8a71" title="sets object text data /usually overriden by ui objects/">setObjectData</a>(objectData);
-<a name="l00037"></a>00037         <span class="keywordflow">return</span> (<a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*) b;
-<a name="l00038"></a>00038     };
-<a name="l00039"></a>00039 
-<a name="l00040"></a><a class="code" href="classcm_1_1_u_i_text.html#a33c77db17647f602fc01a023398e964c">00040</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_u_i_text.html#a33c77db17647f602fc01a023398e964c">paintEvent</a>(QPaintEvent *)
-<a name="l00041"></a>00041     {    QPainter p(<span class="keyword">this</span>);
-<a name="l00042"></a>00042 
-<a name="l00043"></a>00043          <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#ac7ab5e3859278cbf6a8cd644a618b361" title="get edit mode flag value">getEditMode</a>() == <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7ae6f93cdd04849ebf6af6952e8127d099">em_Unlocked</a>){
-<a name="l00044"></a>00044              <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#af2f48a7f0b6a400545fe63e9388756e3" title="get object&#39;s selected flag">isSelected</a>() )
-<a name="l00045"></a>00045              {
-<a name="l00046"></a>00046                  p.setPen(QPen(QColor(0, 192, 255), 2, Qt::DotLine, Qt::SquareCap, Qt::BevelJoin));
-<a name="l00047"></a>00047              }
-<a name="l00048"></a>00048              <span class="keywordflow">else</span>
-<a name="l00049"></a>00049                  <span class="keywordflow">if</span> (this-&gt;clicked_)
-<a name="l00050"></a>00050                  {
-<a name="l00051"></a>00051                      p.setPen(QPen(QColor(0, 192, 255), 4, Qt::DotLine, Qt::RoundCap, Qt::RoundJoin));
-<a name="l00052"></a>00052                  }
-<a name="l00053"></a>00053                  <span class="keywordflow">else</span>
-<a name="l00054"></a>00054                  {
-<a name="l00055"></a>00055                      p.setPen(QPen(QColor(128, 128, 128), 2, Qt::DotLine, Qt::SquareCap, Qt::BevelJoin));
-<a name="l00056"></a>00056                  }
-<a name="l00057"></a>00057 
-<a name="l00058"></a>00058              p.drawRect(0,0,this-&gt;width(),this-&gt;height());
-<a name="l00059"></a>00059              <span class="comment">//p.drawPolygon(poly);</span>
-<a name="l00060"></a>00060          }
-<a name="l00061"></a>00061 
-<a name="l00062"></a>00062          QTextOption *op = <span class="keyword">new</span> QTextOption;
-<a name="l00063"></a>00063           op-&gt;setAlignment(Qt::AlignLeft);
-<a name="l00064"></a>00064            p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-<a name="l00065"></a>00065 
-<a name="l00066"></a>00066             p.setFont(QFont(<a class="code" href="cm__preferences_8h.html#a3f95dcdc217e1a88365c8306beaf1c72">PREF_QSTRING</a>(<span class="stringliteral">&quot;Font&quot;</span>),11,0,<span class="keyword">false</span>));
-<a name="l00067"></a>00067              p.drawText(2,3,this-&gt;width()-2,this-&gt;height()-3,0,this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a1a988c71aba5c7d15a0d6814db8d823e" title="gets object text data /usually overriden by ui objects/">getObjectData</a>().c_str(),0);
-<a name="l00068"></a>00068 
+<a name="l00036"></a>00036         b-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a42cd816b2e061057104f1e1ade6b8a71" title="sets object text data">setObjectData</a>(objectData);
+<a name="l00037"></a>00037         b-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a4dfba5f783dde18c19b3ce750ccfead8" title="call this after setting object data">autoResize</a>();
+<a name="l00038"></a>00038         <span class="keywordflow">return</span> (<a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*) b;
+<a name="l00039"></a>00039     };
+<a name="l00040"></a>00040 
+<a name="l00041"></a><a class="code" href="classcm_1_1_u_i_text.html#a33c77db17647f602fc01a023398e964c">00041</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_u_i_text.html#a33c77db17647f602fc01a023398e964c">paintEvent</a>(QPaintEvent *)
+<a name="l00042"></a>00042     {    QPainter p(<span class="keyword">this</span>);
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044          <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#ac7ab5e3859278cbf6a8cd644a618b361" title="get edit mode flag value">getEditMode</a>() == <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7ae6f93cdd04849ebf6af6952e8127d099">em_Unlocked</a>){
+<a name="l00045"></a>00045              <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#af2f48a7f0b6a400545fe63e9388756e3" title="get object&#39;s selected flag">isSelected</a>() )
+<a name="l00046"></a>00046              {
+<a name="l00047"></a>00047                  p.setPen(QPen(QColor(0, 192, 255), 2, Qt::DotLine, Qt::SquareCap, Qt::BevelJoin));
+<a name="l00048"></a>00048              }
+<a name="l00049"></a>00049              <span class="keywordflow">else</span>
+<a name="l00050"></a>00050                  <span class="keywordflow">if</span> (this-&gt;clicked_)
+<a name="l00051"></a>00051                  {
+<a name="l00052"></a>00052                      p.setPen(QPen(QColor(0, 192, 255), 4, Qt::DotLine, Qt::RoundCap, Qt::RoundJoin));
+<a name="l00053"></a>00053                  }
+<a name="l00054"></a>00054                  <span class="keywordflow">else</span>
+<a name="l00055"></a>00055                  {
+<a name="l00056"></a>00056                      p.setPen(QPen(QColor(128, 128, 128), 2, Qt::DotLine, Qt::SquareCap, Qt::BevelJoin));
+<a name="l00057"></a>00057                  }
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059              p.drawRect(0,0,this-&gt;width(),this-&gt;height());
+<a name="l00060"></a>00060              <span class="comment">//p.drawPolygon(poly);</span>
+<a name="l00061"></a>00061          }
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063          QTextOption *op = <span class="keyword">new</span> QTextOption;
+<a name="l00064"></a>00064           op-&gt;setAlignment(Qt::AlignLeft);
+<a name="l00065"></a>00065            p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067             p.setFont(QFont(<a class="code" href="cm__preferences_8h.html#a3f95dcdc217e1a88365c8306beaf1c72">PREF_QSTRING</a>(<span class="stringliteral">&quot;Font&quot;</span>),11,0,<span class="keyword">false</span>));
+<a name="l00068"></a>00068              p.drawText(2,3,this-&gt;width()-2,this-&gt;height()-3,0,this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a1a988c71aba5c7d15a0d6814db8d823e" title="gets object text data /usually overriden by ui objects/">getObjectData</a>().c_str(),0);
 <a name="l00069"></a>00069 
-<a name="l00070"></a>00070     }
-<a name="l00071"></a>00071 
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071     }
 <a name="l00072"></a>00072 
-<a name="l00074"></a>00074 
-<a name="l00075"></a><a class="code" href="classcm_1_1_u_i_text.html#aced8bbe1fa9efa6172c3750b2d450efe">00075</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_u_i_text.html#aced8bbe1fa9efa6172c3750b2d450efe">mousePressEvent</a>(QMouseEvent *ev)
-<a name="l00076"></a>00076     {
-<a name="l00077"></a>00077 
-<a name="l00078"></a>00078         <span class="keywordflow">if</span> ( (this-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#ac7ab5e3859278cbf6a8cd644a618b361" title="get edit mode flag value">getEditMode</a>()==<a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7ae6f93cdd04849ebf6af6952e8127d099">em_Unlocked</a>) &amp;&amp; this-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#af2f48a7f0b6a400545fe63e9388756e3" title="get object&#39;s selected flag">isSelected</a>())
-<a name="l00079"></a>00079         {
-<a name="l00080"></a>00080 
-<a name="l00081"></a>00081             this-&gt;editor_-&gt;document()-&gt;setPlainText(QString(this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a1a988c71aba5c7d15a0d6814db8d823e" title="gets object text data /usually overriden by ui objects/">getObjectData</a>().c_str()));
-<a name="l00082"></a>00082             this-&gt;editor_-&gt;show();
-<a name="l00083"></a>00083             this-&gt;editor_-&gt;setFocus();
-<a name="l00084"></a>00084         }
-<a name="l00085"></a>00085 
-<a name="l00086"></a>00086         emit <a class="code" href="classcm_1_1_u_i_widget.html#a493fc15e906775728038ef1e7de6bebc">selectBox</a>(<span class="keyword">this</span>);
-<a name="l00087"></a>00087         this-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#abbdced5d563d6bee223750b009267b53">dragOffset</a> = ev-&gt;pos();
-<a name="l00088"></a>00088 
-<a name="l00089"></a>00089         <span class="keywordflow">if</span> (!(this-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#ac7ab5e3859278cbf6a8cd644a618b361" title="get edit mode flag value">getEditMode</a>()==<a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7ae6f93cdd04849ebf6af6952e8127d099">em_Unlocked</a>))
-<a name="l00090"></a>00090         {
-<a name="l00091"></a>00091             this-&gt;clicked_ = <span class="keyword">true</span>;
-<a name="l00092"></a>00092             this-&gt;repaint();
-<a name="l00093"></a>00093 
-<a name="l00094"></a>00094             <span class="comment">//todo timer</span>
-<a name="l00095"></a>00095         }
-<a name="l00096"></a>00096 
-<a name="l00097"></a>00097     }
-<a name="l00098"></a>00098 
-<a name="l00099"></a><a class="code" href="classcm_1_1_u_i_text.html#a88ed19ec9dd8302cee36d928502d5d1a">00099</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_u_i_text.html#a88ed19ec9dd8302cee36d928502d5d1a">mouseReleaseEvent</a>(QMouseEvent *)
-<a name="l00100"></a>00100     {
-<a name="l00101"></a>00101         <span class="comment">//this-&gt;selected_ = false;</span>
-<a name="l00102"></a>00102 
-<a name="l00103"></a>00103         <span class="comment">//if (!this-&gt;getEditMode())</span>
-<a name="l00104"></a>00104         {
-<a name="l00105"></a>00105             this-&gt;clicked_ = <span class="keyword">false</span>;
-<a name="l00106"></a>00106             this-&gt;repaint();
-<a name="l00107"></a>00107         }
-<a name="l00108"></a>00108 
-<a name="l00109"></a>00109     }
-<a name="l00110"></a>00110 
-<a name="l00111"></a><a class="code" href="classcm_1_1_u_i_text.html#a599ced5b61be50102260a92f1bfb4f0b">00111</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_u_i_text.html#a599ced5b61be50102260a92f1bfb4f0b">mouseMoveEvent</a>(QMouseEvent *event)
-<a name="l00112"></a>00112     {
-<a name="l00113"></a>00113         <span class="keywordflow">if</span>(event-&gt;buttons() &amp; Qt::LeftButton)
-<a name="l00114"></a>00114         {
-<a name="l00115"></a>00115             emit <a class="code" href="classcm_1_1_u_i_widget.html#a0538edf982efa304002cc089b5414fda">moveBox</a>(<span class="keyword">this</span>, event);
-<a name="l00116"></a>00116         }
-<a name="l00117"></a>00117         <span class="keyword">event</span>-&gt;ignore();
-<a name="l00118"></a>00118 
-<a name="l00119"></a>00119         <span class="comment">//todo move!</span>
-<a name="l00120"></a>00120         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#ac7ab5e3859278cbf6a8cd644a618b361" title="get edit mode flag value">getEditMode</a>() != <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7ae6f93cdd04849ebf6af6952e8127d099">em_Unlocked</a>)
-<a name="l00121"></a>00121         {
-<a name="l00122"></a>00122             this-&gt;setCursor(QCursor(Qt::PointingHandCursor));
-<a name="l00123"></a>00123         }
-<a name="l00124"></a>00124         <span class="keywordflow">else</span>
-<a name="l00125"></a>00125         {
-<a name="l00126"></a>00126             this-&gt;setCursor(QCursor(Qt::ArrowCursor));
-<a name="l00127"></a>00127         }
-<a name="l00128"></a>00128 
-<a name="l00129"></a>00129     }
-<a name="l00130"></a>00130 
+<a name="l00073"></a>00073 
+<a name="l00075"></a>00075 
+<a name="l00076"></a><a class="code" href="classcm_1_1_u_i_text.html#aced8bbe1fa9efa6172c3750b2d450efe">00076</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_u_i_text.html#aced8bbe1fa9efa6172c3750b2d450efe">mousePressEvent</a>(QMouseEvent *ev)
+<a name="l00077"></a>00077     {
+<a name="l00078"></a>00078 
+<a name="l00079"></a>00079         <span class="keywordflow">if</span> ( (this-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#ac7ab5e3859278cbf6a8cd644a618b361" title="get edit mode flag value">getEditMode</a>()==<a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7ae6f93cdd04849ebf6af6952e8127d099">em_Unlocked</a>) &amp;&amp; this-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#af2f48a7f0b6a400545fe63e9388756e3" title="get object&#39;s selected flag">isSelected</a>())
+<a name="l00080"></a>00080         {
+<a name="l00081"></a>00081 
+<a name="l00082"></a>00082             this-&gt;editor_-&gt;document()-&gt;setPlainText(QString(this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a1a988c71aba5c7d15a0d6814db8d823e" title="gets object text data /usually overriden by ui objects/">getObjectData</a>().c_str()));
+<a name="l00083"></a>00083             this-&gt;editor_-&gt;show();
+<a name="l00084"></a>00084             this-&gt;editor_-&gt;setFocus();
+<a name="l00085"></a>00085         }
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087         emit <a class="code" href="classcm_1_1_u_i_widget.html#a493fc15e906775728038ef1e7de6bebc">selectBox</a>(<span class="keyword">this</span>);
+<a name="l00088"></a>00088         this-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#abbdced5d563d6bee223750b009267b53">dragOffset</a> = ev-&gt;pos();
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090         <span class="keywordflow">if</span> (!(this-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#ac7ab5e3859278cbf6a8cd644a618b361" title="get edit mode flag value">getEditMode</a>()==<a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7ae6f93cdd04849ebf6af6952e8127d099">em_Unlocked</a>))
+<a name="l00091"></a>00091         {
+<a name="l00092"></a>00092             this-&gt;clicked_ = <span class="keyword">true</span>;
+<a name="l00093"></a>00093             this-&gt;repaint();
+<a name="l00094"></a>00094 
+<a name="l00095"></a>00095             <span class="comment">//todo timer</span>
+<a name="l00096"></a>00096         }
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098     }
+<a name="l00099"></a>00099 
+<a name="l00100"></a><a class="code" href="classcm_1_1_u_i_text.html#a88ed19ec9dd8302cee36d928502d5d1a">00100</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_u_i_text.html#a88ed19ec9dd8302cee36d928502d5d1a">mouseReleaseEvent</a>(QMouseEvent *)
+<a name="l00101"></a>00101     {
+<a name="l00102"></a>00102         <span class="comment">//this-&gt;selected_ = false;</span>
+<a name="l00103"></a>00103 
+<a name="l00104"></a>00104         <span class="comment">//if (!this-&gt;getEditMode())</span>
+<a name="l00105"></a>00105         {
+<a name="l00106"></a>00106             this-&gt;clicked_ = <span class="keyword">false</span>;
+<a name="l00107"></a>00107             this-&gt;repaint();
+<a name="l00108"></a>00108         }
+<a name="l00109"></a>00109 
+<a name="l00110"></a>00110     }
+<a name="l00111"></a>00111 
+<a name="l00112"></a><a class="code" href="classcm_1_1_u_i_text.html#a599ced5b61be50102260a92f1bfb4f0b">00112</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_u_i_text.html#a599ced5b61be50102260a92f1bfb4f0b">mouseMoveEvent</a>(QMouseEvent *event)
+<a name="l00113"></a>00113     {
+<a name="l00114"></a>00114         <span class="keywordflow">if</span>(event-&gt;buttons() &amp; Qt::LeftButton)
+<a name="l00115"></a>00115         {
+<a name="l00116"></a>00116             emit <a class="code" href="classcm_1_1_u_i_widget.html#a0538edf982efa304002cc089b5414fda">moveBox</a>(<span class="keyword">this</span>, event);
+<a name="l00117"></a>00117         }
+<a name="l00118"></a>00118         <span class="keyword">event</span>-&gt;ignore();
+<a name="l00119"></a>00119 
+<a name="l00120"></a>00120         <span class="comment">//todo move!</span>
+<a name="l00121"></a>00121         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm_1_1_u_i_widget.html#ac7ab5e3859278cbf6a8cd644a618b361" title="get edit mode flag value">getEditMode</a>() != <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7ae6f93cdd04849ebf6af6952e8127d099">em_Unlocked</a>)
+<a name="l00122"></a>00122         {
+<a name="l00123"></a>00123             this-&gt;setCursor(QCursor(Qt::PointingHandCursor));
+<a name="l00124"></a>00124         }
+<a name="l00125"></a>00125         <span class="keywordflow">else</span>
+<a name="l00126"></a>00126         {
+<a name="l00127"></a>00127             this-&gt;setCursor(QCursor(Qt::ArrowCursor));
+<a name="l00128"></a>00128         }
+<a name="l00129"></a>00129 
+<a name="l00130"></a>00130     }
 <a name="l00131"></a>00131 
-<a name="l00133"></a>00133 
-<a name="l00134"></a><a class="code" href="classcm_1_1_u_i_text.html#a7b9dca9a817c01ec5e29d9260aee56ff">00134</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_u_i_text.html#a7b9dca9a817c01ec5e29d9260aee56ff">setPdMessage</a>(std::string message)
-<a name="l00135"></a>00135     {
-<a name="l00136"></a>00136         this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a42cd816b2e061057104f1e1ade6b8a71" title="sets object text data /usually overriden by ui objects/">setObjectData</a>(message);
-<a name="l00137"></a>00137 
-<a name="l00138"></a>00138         QFont myFont(<a class="code" href="cm__preferences_8h.html#a3f95dcdc217e1a88365c8306beaf1c72">PREF_QSTRING</a>(<span class="stringliteral">&quot;Font&quot;</span>), 11);
-<a name="l00139"></a>00139         QFontMetrics fm(myFont);
-<a name="l00140"></a>00140         QString text = QString(this-&gt;editor_-&gt;document()-&gt;toPlainText());
-<a name="l00141"></a>00141         <span class="keywordtype">int</span> new_w = fm.width(text) + 20;
-<a name="l00142"></a>00142         new_w = (new_w&lt;25) ? 25 : new_w;
-<a name="l00143"></a>00143 
-<a name="l00144"></a>00144         <span class="keywordtype">int</span> new_h = fm.boundingRect(QRect(0,0,new_w,100), 0, text).height() + 7 ;
+<a name="l00132"></a>00132 
+<a name="l00134"></a>00134 
+<a name="l00135"></a><a class="code" href="classcm_1_1_u_i_text.html#a7b9dca9a817c01ec5e29d9260aee56ff">00135</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_u_i_text.html#a7b9dca9a817c01ec5e29d9260aee56ff">setPdMessage</a>(std::string message)
+<a name="l00136"></a>00136     {
+<a name="l00137"></a>00137         this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a42cd816b2e061057104f1e1ade6b8a71" title="sets object text data">setObjectData</a>(message);
+<a name="l00138"></a>00138         this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a4dfba5f783dde18c19b3ce750ccfead8" title="call this after setting object data">autoResize</a>();
+<a name="l00139"></a>00139 
+<a name="l00140"></a>00140         QFont myFont(<a class="code" href="cm__preferences_8h.html#a3f95dcdc217e1a88365c8306beaf1c72">PREF_QSTRING</a>(<span class="stringliteral">&quot;Font&quot;</span>), 11);
+<a name="l00141"></a>00141         QFontMetrics fm(myFont);
+<a name="l00142"></a>00142         QString text = QString(this-&gt;editor_-&gt;document()-&gt;toPlainText());
+<a name="l00143"></a>00143         <span class="keywordtype">int</span> new_w = fm.width(text) + 20;
+<a name="l00144"></a>00144         new_w = (new_w&lt;25) ? 25 : new_w;
 <a name="l00145"></a>00145 
-<a name="l00146"></a>00146         new_h = (new_h&lt;25) ? 25 : new_h;
+<a name="l00146"></a>00146         <span class="keywordtype">int</span> new_h = fm.boundingRect(QRect(0,0,new_w,100), 0, text).height() + 7 ;
 <a name="l00147"></a>00147 
-<a name="l00148"></a>00148         this-&gt;setFixedWidth(new_w);
-<a name="l00149"></a>00149         this-&gt;setFixedHeight(new_h);
-<a name="l00150"></a>00150 
-<a name="l00151"></a>00151         this-&gt;editor_-&gt;setFixedWidth(this-&gt;width()-1);
-<a name="l00152"></a>00152         this-&gt;editor_-&gt;setFixedHeight(this-&gt;height()-2);
-<a name="l00153"></a>00153 
-<a name="l00154"></a>00154         this-&gt;editor_-&gt;hide();
-<a name="l00155"></a>00155     }
-<a name="l00156"></a>00156 
-<a name="l00157"></a><a class="code" href="classcm_1_1_u_i_text.html#a8a21e8d192be68e7fb8b3a876bdd6f0e">00157</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_u_i_text.html#a8a21e8d192be68e7fb8b3a876bdd6f0e">updateUI</a>(<span class="keywordtype">void</span>* uiobj, ceammc::AtomList msg)
-<a name="l00158"></a>00158     {
-<a name="l00159"></a>00159         qDebug(<span class="stringliteral">&quot;update ui&quot;</span>);
-<a name="l00160"></a>00160         <a class="code" href="classcm_1_1_u_i_text.html" title="gui object: comment box (ui.text)">UIText</a> *x = (<a class="code" href="classcm_1_1_u_i_text.html" title="gui object: comment box (ui.text)">UIText</a>*)uiobj;
-<a name="l00161"></a>00161 
-<a name="l00162"></a>00162         std::string obj_data;
-<a name="l00163"></a>00163         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;msg.size();i++)
-<a name="l00164"></a>00164         {
-<a name="l00165"></a>00165             obj_data += msg.at(i).asString() + <span class="stringliteral">&quot; &quot;</span>;
-<a name="l00166"></a>00166         }
-<a name="l00167"></a>00167 
-<a name="l00168"></a>00168         x-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a42cd816b2e061057104f1e1ade6b8a71" title="sets object text data /usually overriden by ui objects/">setObjectData</a>(obj_data);
+<a name="l00148"></a>00148         new_h = (new_h&lt;25) ? 25 : new_h;
+<a name="l00149"></a>00149 
+<a name="l00150"></a>00150         this-&gt;setFixedWidth(new_w);
+<a name="l00151"></a>00151         this-&gt;setFixedHeight(new_h);
+<a name="l00152"></a>00152 
+<a name="l00153"></a>00153         this-&gt;editor_-&gt;setFixedWidth(this-&gt;width()-1);
+<a name="l00154"></a>00154         this-&gt;editor_-&gt;setFixedHeight(this-&gt;height()-2);
+<a name="l00155"></a>00155 
+<a name="l00156"></a>00156         this-&gt;editor_-&gt;hide();
+<a name="l00157"></a>00157     }
+<a name="l00158"></a>00158 
+<a name="l00159"></a><a class="code" href="classcm_1_1_u_i_text.html#a8a21e8d192be68e7fb8b3a876bdd6f0e">00159</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_u_i_text.html#a8a21e8d192be68e7fb8b3a876bdd6f0e">updateUI</a>(<span class="keywordtype">void</span>* uiobj, ceammc::AtomList msg)
+<a name="l00160"></a>00160     {
+<a name="l00161"></a>00161         qDebug(<span class="stringliteral">&quot;update ui&quot;</span>);
+<a name="l00162"></a>00162         <a class="code" href="classcm_1_1_u_i_text.html" title="gui object: comment box (ui.text)">UIText</a> *x = (<a class="code" href="classcm_1_1_u_i_text.html" title="gui object: comment box (ui.text)">UIText</a>*)uiobj;
+<a name="l00163"></a>00163 
+<a name="l00164"></a>00164         std::string obj_data;
+<a name="l00165"></a>00165         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;msg.size();i++)
+<a name="l00166"></a>00166         {
+<a name="l00167"></a>00167             obj_data += msg.at(i).asString() + <span class="stringliteral">&quot; &quot;</span>;
+<a name="l00168"></a>00168         }
 <a name="l00169"></a>00169 
-<a name="l00170"></a>00170         x-&gt;repaint();
-<a name="l00171"></a>00171     }
+<a name="l00170"></a>00170         x-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a42cd816b2e061057104f1e1ade6b8a71" title="sets object text data">setObjectData</a>(obj_data);
+<a name="l00171"></a>00171         x-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a4dfba5f783dde18c19b3ce750ccfead8" title="call this after setting object data">autoResize</a>();
 <a name="l00172"></a>00172 
-<a name="l00173"></a>00173     <span class="comment">//    void setPdObject(void *obj)</span>
-<a name="l00174"></a>00174     <span class="comment">//    {</span>
-<a name="l00175"></a>00175     <span class="comment">//        cm_object::setPdObject(obj);</span>
-<a name="l00176"></a>00176     <span class="comment">//        //cmp_connectUI((t_pd*)this-&gt;getPdObject(), (void*)this, &amp;cmo_text::updateUI);</span>
-<a name="l00177"></a>00177     <span class="comment">//    }</span>
-<a name="l00178"></a>00178 
-<a name="l00179"></a>00179 
-<a name="l00180"></a><a class="code" href="classcm_1_1_u_i_text.html#ae6d4537ddefd8eb22abeee911edc6d8d">00180</a>     std::string <a class="code" href="classcm_1_1_u_i_text.html#ae6d4537ddefd8eb22abeee911edc6d8d" title="returns object&#39;s text for client-based file saving">getSaveString</a>()
-<a name="l00181"></a>00181     {<span class="keywordflow">return</span> <span class="stringliteral">&quot;ui.text &quot;</span>+ this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a1a988c71aba5c7d15a0d6814db8d823e" title="gets object text data /usually overriden by ui objects/">getObjectData</a>();}
+<a name="l00173"></a>00173         x-&gt;repaint();
+<a name="l00174"></a>00174     }
+<a name="l00175"></a>00175 
+<a name="l00176"></a>00176     <span class="comment">//    void setPdObject(void *obj)</span>
+<a name="l00177"></a>00177     <span class="comment">//    {</span>
+<a name="l00178"></a>00178     <span class="comment">//        cm_object::setPdObject(obj);</span>
+<a name="l00179"></a>00179     <span class="comment">//        //cmp_connectUI((t_pd*)this-&gt;getPdObject(), (void*)this, &amp;cmo_text::updateUI);</span>
+<a name="l00180"></a>00180     <span class="comment">//    }</span>
+<a name="l00181"></a>00181 
 <a name="l00182"></a>00182 
-<a name="l00183"></a><a class="code" href="classcm_1_1_u_i_text.html#a001605a0a1c806951865709bc392299a">00183</a>     <span class="keywordtype">void</span>* <a class="code" href="classcm_1_1_u_i_text.html#a001605a0a1c806951865709bc392299a" title="returns pointer to pd object.">getPdObject</a>()
-<a name="l00184"></a>00184     {
-<a name="l00185"></a>00185         <span class="keywordflow">return</span> 0;
-<a name="l00186"></a>00186     }
-<a name="l00187"></a>00187 
-<a name="l00188"></a><a class="code" href="classcm_1_1_u_i_text.html#a02023e0a9c48dd6fe4aecc9f8fdc56fd">00188</a>     <span class="keywordtype">bool</span> <a class="code" href="classcm_1_1_u_i_text.html#a02023e0a9c48dd6fe4aecc9f8fdc56fd">eventFilter</a>(QObject *watched, QEvent *event)
-<a name="l00189"></a>00189     {
-<a name="l00190"></a>00190         <span class="comment">//qDebug(&quot;event filter&quot;);</span>
-<a name="l00191"></a>00191         <span class="keywordflow">if</span> (event-&gt;type() == QEvent::KeyPress) {
-<a name="l00192"></a>00192 
-<a name="l00193"></a>00193             QKeyEvent *keyEvent = <span class="keyword">static_cast&lt;</span>QKeyEvent *<span class="keyword">&gt;</span>(event);
-<a name="l00194"></a>00194             <span class="comment">//qDebug(&quot;key event&quot;);</span>
+<a name="l00183"></a><a class="code" href="classcm_1_1_u_i_text.html#ae6d4537ddefd8eb22abeee911edc6d8d">00183</a>     std::string <a class="code" href="classcm_1_1_u_i_text.html#ae6d4537ddefd8eb22abeee911edc6d8d" title="returns object&#39;s text for client-based file saving">getSaveString</a>()
+<a name="l00184"></a>00184     {<span class="keywordflow">return</span> <span class="stringliteral">&quot;ui.text &quot;</span>+ this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a1a988c71aba5c7d15a0d6814db8d823e" title="gets object text data /usually overriden by ui objects/">getObjectData</a>();}
+<a name="l00185"></a>00185 
+<a name="l00186"></a><a class="code" href="classcm_1_1_u_i_text.html#a001605a0a1c806951865709bc392299a">00186</a>     <span class="keywordtype">void</span>* <a class="code" href="classcm_1_1_u_i_text.html#a001605a0a1c806951865709bc392299a" title="returns pointer to pd object.">getPdObject</a>()
+<a name="l00187"></a>00187     {
+<a name="l00188"></a>00188         <span class="keywordflow">return</span> 0;
+<a name="l00189"></a>00189     }
+<a name="l00190"></a>00190 
+<a name="l00191"></a><a class="code" href="classcm_1_1_u_i_text.html#a02023e0a9c48dd6fe4aecc9f8fdc56fd">00191</a>     <span class="keywordtype">bool</span> <a class="code" href="classcm_1_1_u_i_text.html#a02023e0a9c48dd6fe4aecc9f8fdc56fd">eventFilter</a>(QObject *watched, QEvent *event)
+<a name="l00192"></a>00192     {
+<a name="l00193"></a>00193         <span class="comment">//qDebug(&quot;event filter&quot;);</span>
+<a name="l00194"></a>00194         <span class="keywordflow">if</span> (event-&gt;type() == QEvent::KeyPress) {
 <a name="l00195"></a>00195 
-<a name="l00196"></a>00196             <span class="keywordflow">if</span>  ( (keyEvent-&gt;key() == Qt::Key_Return) &amp;&amp; (keyEvent-&gt;modifiers() == Qt::ShiftModifier) )
-<a name="l00197"></a>00197             {
-<a name="l00198"></a>00198                 this-&gt;editorDone();
-<a name="l00199"></a>00199                 <span class="comment">//qDebug(&quot;done&quot;);</span>
-<a name="l00200"></a>00200                 <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00201"></a>00201             }
-<a name="l00202"></a>00202         }
-<a name="l00203"></a>00203 
-<a name="l00204"></a>00204     }
-<a name="l00205"></a>00205 
-<a name="l00206"></a>00206 signals:
-<a name="l00207"></a>00207     <span class="comment">//void selectBox(cm_widget*box);</span>
-<a name="l00208"></a>00208 <span class="keyword">private</span> slots:
-<a name="l00209"></a>00209     <span class="keywordtype">void</span> editorDone();
-<a name="l00210"></a>00210     <span class="keywordtype">void</span> editorChanged();
-<a name="l00211"></a>00211 
-<a name="l00212"></a>00212 };
-<a name="l00213"></a>00213 
-<a name="l00214"></a>00214 }
-<a name="l00215"></a>00215 <span class="preprocessor">#endif // cmo_text_H</span>
+<a name="l00196"></a>00196             QKeyEvent *keyEvent = <span class="keyword">static_cast&lt;</span>QKeyEvent *<span class="keyword">&gt;</span>(event);
+<a name="l00197"></a>00197             <span class="comment">//qDebug(&quot;key event&quot;);</span>
+<a name="l00198"></a>00198 
+<a name="l00199"></a>00199             <span class="keywordflow">if</span>  ( (keyEvent-&gt;key() == Qt::Key_Return) &amp;&amp; (keyEvent-&gt;modifiers() == Qt::ShiftModifier) )
+<a name="l00200"></a>00200             {
+<a name="l00201"></a>00201                 this-&gt;editorDone();
+<a name="l00202"></a>00202                 <span class="comment">//qDebug(&quot;done&quot;);</span>
+<a name="l00203"></a>00203                 <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00204"></a>00204             }
+<a name="l00205"></a>00205         }
+<a name="l00206"></a>00206 
+<a name="l00207"></a>00207     }
+<a name="l00208"></a>00208 
+<a name="l00209"></a>00209 signals:
+<a name="l00210"></a>00210     <span class="comment">//void selectBox(cm_widget*box);</span>
+<a name="l00211"></a>00211 <span class="keyword">private</span> slots:
+<a name="l00212"></a>00212     <span class="keywordtype">void</span> editorDone();
+<a name="l00213"></a>00213     <span class="keywordtype">void</span> editorChanged();
+<a name="l00214"></a>00214 
+<a name="l00215"></a>00215 };
+<a name="l00216"></a>00216 
+<a name="l00217"></a>00217 }
+<a name="l00218"></a>00218 <span class="preprocessor">#endif // cmo_text_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -308,7 +311,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Mar 11 2017 21:15:39 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 11 2017 22:38:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

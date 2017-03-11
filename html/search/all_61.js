@@ -12,5 +12,6 @@ var searchData=
   ['aspdstring',['asPdString',['../classcm_1_1_u_i_property_list.html#aafd1f16f696c9ba2470bb0d7eb406533',1,'cm::UIPropertyList']]],
   ['asqstring',['asQString',['../classcm_1_1_u_i_property.html#a446323ed4c31adaad6b0f2f005fe52fa',1,'cm::UIProperty']]],
   ['asqstringlist',['asQStringList',['../classcm_1_1_u_i_property.html#aef472d8b63af90c767b2cab3c233eebc',1,'cm::UIProperty']]],
-  ['asstdstring',['asStdString',['../classcm_1_1_u_i_property.html#ae2382952f16aa26197f1543e36247100',1,'cm::UIProperty']]]
+  ['asstdstring',['asStdString',['../classcm_1_1_u_i_property.html#ae2382952f16aa26197f1543e36247100',1,'cm::UIProperty']]],
+  ['autoresize',['autoResize',['../classcm_1_1_u_i_object.html#a4dfba5f783dde18c19b3ce750ccfead8',1,'cm::UIObject']]]
 ];
