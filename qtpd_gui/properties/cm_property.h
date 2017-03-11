@@ -6,6 +6,7 @@
 #include <QPoint>
 #include <QString>
 #include <QStringList>
+#include <QColor>
 
 using namespace ceammc;
 
@@ -18,7 +19,8 @@ typedef enum
     ptSymbol,
     ptList,
     ptString,
-    ptVector
+    ptVector,
+    ptColor
 
 } UIPropertyType;
 
@@ -48,6 +50,19 @@ public:
     void set(QPoint point){}
     void set(QRect rect){}
     void set(QSize size){}
+
+    void set(QColor color)
+    {
+        AtomList list;
+
+        list.append(color.red());
+        list.append(color.green());
+        list.append(color.blue());
+        list.append(color.alpha());
+
+        data_ = list;
+        type_ = ptColor;
+    }
 
     void set(float val)
     {

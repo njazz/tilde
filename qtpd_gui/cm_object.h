@@ -63,6 +63,8 @@ public:
         this->properties()->create("SendSymbol","Preset","0.1",gensym(""));
         this->properties()->create("ReceiveSymbol","Preset","0.1",gensym(""));
 
+        this->properties()->create("BorderColor","Color","0.1",QColor(224,224,224,255));
+
     }
 
     UIPropertyList* properties()
