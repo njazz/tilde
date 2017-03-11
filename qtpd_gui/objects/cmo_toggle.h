@@ -23,6 +23,8 @@ class UIToggle : public UIObject
 private:
     bool clicked_;
 
+    bool value_;
+
     QLineEdit* editor_;
 
 public:
@@ -224,7 +226,7 @@ public:
 
 
     std::string getSaveString()
-    {return "ui.msg "+ this->getObjectData();}
+    {return "ui.toggle "+ this->getObjectData();}
 
 
 

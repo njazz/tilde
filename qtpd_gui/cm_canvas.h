@@ -50,10 +50,10 @@ class Canvas : public UIWidget
 {
 private:
     //todo move this to data class?
-    std::vector<UIObject*> objectBoxes;
-    std::vector<Patchcord*> patchcords;
-    std::vector<UIObject*> selObjectBoxes;
-    std::vector<Patchcord*> selPatchcords;
+    objectVec objectBoxes;
+    patchcordVec patchcords;
+    objectVec selObjectBoxes;
+    patchcordVec selPatchcords;
 
     //move here
     tCanvasData data;
@@ -631,7 +631,7 @@ public:
 
         obj->show();
 
-        qDebug() << "create object: " << QString(uiObjectName.c_str()) << ":" << QString(objectData.c_str());
+        qDebug() << "create object: " << QString(uiObjectName.c_str()) << "@" << QString(std::to_string((long)this->pdCanvas).c_str());
 
         return obj;
 
@@ -772,7 +772,7 @@ public:
         if (box->getPdObject())
         {
             //NEEDS FIX
-            if ((t_object*)box->getPdObject())
+            if ((t_object*)(box->getPdObject()))
                 if (!box->isErrorBox())
                     cmp_deleteobject(this->pdCanvas, (t_object*)box->getPdObject());
         }
@@ -791,10 +791,14 @@ public:
     ///
     void delBoxes()
     {
-        for (int i=0;i< (int)this->selObjectBoxes.size(); i++)
+        objectVec::iterator it;
+        for (it = selObjectBoxes.begin() ; it != selObjectBoxes.end(); ++it)
         {
-            this->deleteBox( ((UIObject*) this->selObjectBoxes.at(i))  );
+            //((UIObject*) this->selObjectBoxes.at(i))
+            this->deleteBox( *it  );
         }
+
+        selObjectBoxes.clear();;
 
     }
 
