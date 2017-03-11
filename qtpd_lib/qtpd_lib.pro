@@ -245,6 +245,8 @@ unix {
     INSTALLS += target
 }
 
+PRECOMPILED_HEADER = src/m_pd.h
+
 #DISTFILES += \
 #    src/pd.ico \
 #    src/pd.rc \
