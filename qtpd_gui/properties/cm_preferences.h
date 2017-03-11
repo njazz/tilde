@@ -16,17 +16,18 @@
 
 #define PREF_QSTRING(x) cm::Preferences::inst().getQString(x)
 
+
 //move
 #define QTPD_APP_VERSION "0.1"
 #define QTPD_PREF_INIT cm::Preferences::inst().init( QTPD_APP_VERSION )
 
 //move
-#define QTPD_PREF_STR(x) AtomList(gensym(x))
+//#define QTPD_PREF_STR(x) AtomList(gensym(x))
 
 namespace cm{
 
 ////
-/// \brief preferences singleton
+/// \brief app preferences singleton
 ///
 class Preferences : public UIPropertyList // TODO
 {
@@ -57,8 +58,8 @@ public:
 
     void init(std::string appVersion)
     {
-        this->create("appVersion", "System", QTPD_APP_VERSION, QTPD_PREF_STR(QTPD_APP_VERSION) );
-        this->create("Font", "UI",  QTPD_APP_VERSION , QTPD_PREF_STR("Source Code Pro"));    //
+        this->create("appVersion", "System", QTPD_APP_VERSION, (std::string)(QTPD_APP_VERSION) );
+        this->create("Font", "UI",  QTPD_APP_VERSION , (std::string)("Source Code Pro"));    //
 
         qDebug("pref init");
         qDebug() << this->getQString("appVersion");

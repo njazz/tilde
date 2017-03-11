@@ -68,6 +68,13 @@ public:
         return (UIObject*) b;
     };
 
+    void initProperties()
+    {
+        UIObject::initProperties();
+
+        this->properties()->create("Value","Preset","0.1",0.);
+    }
+
     void paintEvent(QPaintEvent *)
     {    QPainter p(this);
 

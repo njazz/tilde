@@ -13,6 +13,7 @@ UIObject::UIObject(UIWidget *parent) : UIWidget(parent)
 
    connect(this->sizeBox, &SizeBox::resizeBoxEvent, this, &UIObject::resizeBox);
 
+   this->initProperties();
 }
 
 void UIObject::resizeBox(int dx)

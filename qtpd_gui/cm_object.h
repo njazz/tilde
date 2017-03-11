@@ -35,7 +35,12 @@ private:
 
     SizeBox* sizeBox;
 
+    UIPropertyList properties_;
+
     UIObject();
+
+
+
 public:
     //cm_object();
     explicit UIObject(UIWidget *parent = 0);
@@ -44,6 +49,26 @@ public:
 
 
    // static cm_object* createObject(std::string objectData, cm_widget *parent=0) {};
+
+    ////
+    /// \brief init properties for the class - called from constructor
+    ///
+    virtual void initProperties()
+    {
+        this->properties()->create("Size","Box","0.1",this->size());
+        this->properties()->create("Position","Box","0.1",this->pos());
+        this->properties()->create("FontSize","Box","0.1",11.);
+
+        this->properties()->create("PresetName","Preset","0.1",gensym(""));
+        this->properties()->create("SendSymbol","Preset","0.1",gensym(""));
+        this->properties()->create("ReceiveSymbol","Preset","0.1",gensym(""));
+
+    }
+
+    UIPropertyList* properties()
+    {
+        return &this->properties_;
+    }
 
     ////
     /// \brief sets inlet position (cm_port)
@@ -221,7 +246,9 @@ public:
     /// \return
     ///
     virtual std::string getSaveString()
-    {return this->objectData;}
+    {
+        return this->objectData + this->properties_.asPdString();
+    }
 
 
     void setEditModeRef(t_editMode *canvasEditMode)
