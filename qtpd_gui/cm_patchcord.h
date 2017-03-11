@@ -11,6 +11,8 @@
 
 namespace cm
 {
+
+typedef enum {cm_pt_anything, cm_pt_signal} patchcordTypeEnum;
 ////
 /// \brief gui patchcord class
 ///
@@ -23,7 +25,7 @@ private:
     UIWidget* obj2;
     UIWidget* in2;
 
-    enum {cm_pt_anything, cm_pt_signal} patchcordType;
+    patchcordTypeEnum patchcordType_;
 
 public:
     bool mouseover;
@@ -54,6 +56,10 @@ public:
         return end;
 
     }
+
+    //// will not be unused if drawed by the class itself
+    patchcordTypeEnum patchcordType(){return this->patchcordType_;}
+    void setPatchcordType(patchcordTypeEnum v){this->patchcordType_=v;}
 
     ////
 

@@ -34,8 +34,7 @@ public:
     {
         UIToggle* b = new UIToggle((UIObject*)parent);
 
-        b->addInlet();
-        b->addOutlet();
+
 
         b->setObjectData("");
 
@@ -63,6 +62,9 @@ public:
         //b->setFixedSize(20,20);
 
         b->setPdMessage("");
+
+        b->addInlet();
+        b->addOutlet();
 
         return (UIObject*) b;
     };

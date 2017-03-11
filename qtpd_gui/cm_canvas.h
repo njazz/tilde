@@ -144,12 +144,13 @@ public:
         {
             QPainter p(this);
 
+            QColor b_pc_color = (((Patchcord*)this->patchcords.at(i))->patchcordType() == cm_pt_signal) ? QColor(128, 160, 192) : QColor(0, 0, 0);
             // cleanup
-            QColor pc_color = ((Patchcord*)this->patchcords.at(i))->mouseover ? QColor(255, 192, 0) : QColor(0, 0, 0);
+            QColor pc_color = ((Patchcord*)this->patchcords.at(i))->mouseover ? QColor(255, 192, 0) : b_pc_color;
             if (((Patchcord*)this->patchcords.at(i))->selected) pc_color = QColor(0,192,255);
 
             p.setRenderHint(QPainter::HighQualityAntialiasing, true);
-            p.setPen(QPen(pc_color, 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p.setPen(QPen(pc_color, 1 + (((Patchcord*)this->patchcords.at(i))->patchcordType() == cm_pt_signal) , Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
             //todo option
             //p.drawLine(((cm_patchcord*)this->patchcords.at(i))->getStartPoint(), ((cm_patchcord*)this->patchcords.at(i))->getEndPoint());
@@ -692,10 +693,12 @@ public:
                 //create dummy inlets / outlets
             };
 
-            Port* outport = ((UIBox*)obj1)->getOutletAt(outlet);
-            Port* inport = ((UIBox*)obj2)->getInletAt(inlet);
+            Port* outport = obj1->getOutletAt(outlet);
+            Port* inport = obj2->getInletAt(inlet);
 
             Patchcord* pc = new Patchcord(obj1,outport,obj2,inport);
+
+            if (obj1->getOutletType(outlet)) pc->setPatchcordType(cm_pt_signal);
 
             qDebug("pdlib patchcord");
             cmp_patchcord((t_object*)obj1->getPdObject(),outlet,(t_object*)obj2->getPdObject(),inlet);
@@ -719,11 +722,17 @@ public:
     void patchcord(UIObject* obj1, UIWidget* outport, UIObject* obj2, UIWidget* inport)
     {
 
-        Patchcord* pc = new Patchcord(obj1,outport,obj2,inport);
-        cmp_patchcord((t_object*)obj1->getPdObject(),((Port*)outport)->portIndex,(t_object*)obj2->getPdObject(),((Port*)inport)->portIndex);
-        //qDebug("no connection");
+        //todo
 
-        this->patchcords.push_back(pc);
+        int n1 = ((Port*)outport)->portIndex;
+        int n2 = ((Port*)inport)->portIndex;
+        this->patchcord(obj1,n1,obj2,n2);
+
+//        Patchcord* pc = new Patchcord(obj1,outport,obj2,inport);
+//        cmp_patchcord((t_object*)obj1->getPdObject(),((Port*)outport)->portIndex,(t_object*)obj2->getPdObject(),((Port*)inport)->portIndex);
+//        //qDebug("no connection");
+
+//        this->patchcords.push_back(pc);
 
     }
 

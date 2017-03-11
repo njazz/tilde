@@ -31,14 +31,6 @@ public:
     {
         UIFloat* b = new UIFloat((UIObject*)parent);
 
-
-        b->addInlet();
-        b->addOutlet();
-
-//        QStringList list = QString(objectData.c_str()).split(" ");
-//        list.removeAt(0);
-//        QString list_s = list.join(" ");
-//        const char * obj_name = list_s.toStdString().c_str();
         b->setObjectData(objectData);
         b->autoResize();
 
@@ -65,6 +57,10 @@ public:
         }
 
         b->setPdMessage(objectData.c_str());
+
+        b->addInlet();
+        b->addOutlet();
+
 
         return (UIObject*) b;
     };

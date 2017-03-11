@@ -14,7 +14,7 @@ Patchcord::Patchcord(UIWidget *obj1, UIWidget *out1, UIWidget *obj2, UIWidget *i
     this->obj2 = obj2;
     this->in2   = in2;
 
-    this->patchcordType = cm_pt_anything;
+    this->patchcordType_ = cm_pt_anything;
 
     this->mouseover = false;
     this->selected = false;

@@ -19,7 +19,7 @@ UIToggle::UIToggle(UIObject *parent) : UIObject(parent)
 
     this->setMinimumBoxWidth(20);
 
-
+    this->value_ = false;
 }
 
 

@@ -32,8 +32,6 @@ public:
     {
         UIMessage* b = new UIMessage((UIObject*)parent);
 
-        b->addInlet();
-        b->addOutlet();
 
         b->setObjectData(objectData);
         b->autoResize();
@@ -63,6 +61,11 @@ public:
         b->setPdMessage(objectData.c_str());
 
         //b->setObjectData(objectData);
+
+        b->addInlet();
+        b->addOutlet();
+
+
         return (UIObject*) b;
     };
 

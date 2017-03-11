@@ -135,7 +135,7 @@ public:
 
         if (this->pdObject_)
         {
-            new_in->portClass = cmp_get_outlet_type((t_object*)this->pdObject_, new_in->portIndex);
+            new_in->portClass = cmp_get_inlet_type((t_object*)this->pdObject_, new_in->portIndex);
         }
 
 
@@ -163,7 +163,7 @@ public:
 
         if (this->pdObject_)
         {
-            new_out->portClass = cmp_get_inlet_type((t_object*)this->pdObject_, new_out->portIndex);
+            new_out->portClass = cmp_get_outlet_type((t_object*)this->pdObject_, new_out->portIndex);
         }
 
 
@@ -203,6 +203,26 @@ public:
             return this->outlets_.at(idx);
         else
             return 0;
+    }
+
+    ////
+    /// \brief returns 1 if signal~
+    /// \param idx
+    /// \return
+    ///
+    int getInletType(int idx)
+    {
+        return cmp_get_inlet_type((t_object*)this->pdObject_, idx);
+    }
+
+    ////
+    /// \brief returns 1 if signal~
+    /// \param idx
+    /// \return
+    ///
+    int getOutletType(int idx)
+    {
+        return cmp_get_outlet_type((t_object*)this->pdObject_, idx);
     }
 
     ////////
