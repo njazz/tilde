@@ -57,7 +57,7 @@ public:
         this->addUIobject("ui.bang", &UIBang::createObject);
         this->addUIobject("ui.toggle", &UIToggle::createObject);
 
-        //compatibility
+        //TODO compatibility
         //this->addUIobject("msg", &cmo_msg::createObject);
         //this->addUIobject("floatatom", &cmo_msg::createObject);
         //this->addUIobject("symbolatom", &cmo_msg::createObject);

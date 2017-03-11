@@ -934,6 +934,13 @@ public:
         return -1;
 
     }
+
+
+    virtual std::string asPdFileString()
+    {
+        return "#N canvas 0 0 400 300 10;\r\n";     //temporary
+    }
+
     std::string getPatchcordAsString(Patchcord* patchcord)
     {
         //TODO

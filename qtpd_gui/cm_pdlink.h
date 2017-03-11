@@ -7,10 +7,6 @@
 // prototype for Pd 'server' interaction
 
 typedef void (*t_updateUI)(void* uiobj, ceammc::AtomList msg);
-
-// use m.pd.h
-//typedef void* t_canvas;
-//typedef void* t_object;
 typedef void (*t_printhook)(const char *s);
 
 

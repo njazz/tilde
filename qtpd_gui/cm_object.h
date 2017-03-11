@@ -48,8 +48,6 @@ public:
     explicit UIObject(UIWidget *parent = 0);
 
     //cm_object(std::string objectData, cm_widget *parent=0) {};
-
-
     // static cm_object* createObject(std::string objectData, cm_widget *parent=0) {};
 
     ////

@@ -27,7 +27,7 @@ public:
         //todo canvas is subpatch flag
         std::string out1;
 
-        out1 = "#N canvas 0 0 400 300 10;\r\n";     //temporary
+        out1 = canvas->asPdFileString(); //"#N canvas 0 0 400 300 10;\r\n";     //temporary
         file->write(out1.c_str(),out1.size());
 
         //objects

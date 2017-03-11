@@ -99,10 +99,8 @@ public:
         float ry = end.y() - start.y();
 
         float ty = ry * (pos.x() - start.x()) / rx + start.y()  ;
-        //float tx = rx * (pos.y() - start.y()) / ry + start.x()  ;
 
         bool rx1_res = (fabs((float)pos.y() - ty)<7.) ;
-        //bool rx0_res = (abs(pos.x() - (int)tx)<7) ;
 
         bool rx0_res = ( (
                              (pos.y() > start.y())
