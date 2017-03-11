@@ -7,6 +7,8 @@
 
 #include "cm_preferences.h"
 
+#include "cm_pdlink.h"
+
 namespace cm
 {
 
@@ -48,7 +50,7 @@ public:
     //cm_object(std::string objectData, cm_widget *parent=0) {};
 
 
-   // static cm_object* createObject(std::string objectData, cm_widget *parent=0) {};
+    // static cm_object* createObject(std::string objectData, cm_widget *parent=0) {};
 
     ////
     /// \brief init properties for the class - called from constructor
@@ -129,8 +131,13 @@ public:
     {
         Port* new_in = new Port(this);
         new_in->portType = Port::portInlet;
-
         new_in->portIndex = inlets_.size();
+
+        if (this->pdObject_)
+        {
+            new_in->portClass = cmp_get_outlet_type((t_object*)this->pdObject_, new_in->portIndex);
+        }
+
 
         new_in->setEditModeRef(this->getEditModeRef());
 
@@ -152,8 +159,14 @@ public:
     {
         Port* new_out = new Port(this);
         new_out->portType = Port::portOutlet;
-
         new_out->portIndex = outlets_.size();
+
+        if (this->pdObject_)
+        {
+            new_out->portClass = cmp_get_inlet_type((t_object*)this->pdObject_, new_out->portIndex);
+        }
+
+
 
         new_out->setEditModeRef(this->getEditModeRef());
 

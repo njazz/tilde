@@ -23,6 +23,7 @@ public:
     int portIndex;
 
     enum {portInlet, portOutlet} portType;
+    int portClass; //enum {portAnything=0, portSignal=1}
 
     explicit Port(UIWidget *parent = 0);
 
@@ -30,9 +31,14 @@ public:
     {    QPainter p(this);
 
          //p.setRenderHint(QPainter::SmoothPixmapTransform,true);
+         if (this->portClass)
+             p.fillRect(0,0,this->width(),this->height(), QColor(128,160,192));
+         //    else
+         //{
          p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
           p.drawRect(0,0,this->width(),this->height());
+           //}
 
            if (this->hover)
            {
@@ -70,7 +76,7 @@ public:
         if (this->getEditMode() == em_Unlocked)
         {
 
-        emit mousePressed(this,ev);
+            emit mousePressed(this,ev);
         }
     }
 
@@ -78,7 +84,7 @@ public:
     {
         if (this->getEditMode() == em_Unlocked)
         {
-        emit mouseReleased(this,ev);
+            emit mouseReleased(this,ev);
         }
     }
 

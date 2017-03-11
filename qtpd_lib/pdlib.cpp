@@ -392,8 +392,18 @@ int cmp_get_inlet_count(t_object* obj)
     return obj_ninlets(obj);
 };
 
-//void cmp_get_inlet_type(t_object* obj, int idx){};
-//void cmp_get_outlet_type(t_object* obj, int idx){};
+#pragma mark -
+
+
+int cmp_get_inlet_type(t_object* obj, int idx)
+{
+    return obj_issignalinlet(obj,idx);
+};
+
+int cmp_get_outlet_type(t_object* obj, int idx)
+{
+    return obj_issignaloutlet(obj,idx);
+};
 
 #pragma mark -
 

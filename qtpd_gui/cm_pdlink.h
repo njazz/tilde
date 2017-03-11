@@ -126,8 +126,21 @@ extern int cmp_get_inlet_count(t_object* obj);
 ///
 extern int cmp_get_outlet_count(t_object* obj);
 
-//void cmp_get_inlet_type(t_object* obj, int idx){};
-//void cmp_get_outlet_type(t_object* obj, int idx){};
+////
+/// \brief check if inlet is signal~
+/// \param obj
+/// \param idx
+/// \return
+///
+extern int cmp_get_inlet_type(t_object* obj, int idx);
+
+////
+/// \brief check if outlet is signal~
+/// \param obj
+/// \param idx
+/// \return
+///
+extern int cmp_get_outlet_type(t_object* obj, int idx);
 
 #pragma mark -
 
