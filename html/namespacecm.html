@@ -111,8 +111,6 @@ Classes</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gui patchcord class  <a href="classcm_1_1_patchcord.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_port.html">Port</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gui representation of t_inlet / t_outlet  <a href="classcm_1_1_port.html#details">More...</a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_preferences.html">Preferences</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">preferences singleton  <a href="classcm_1_1_preferences.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_size_box.html">SizeBox</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_widget.html">UIWidget</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">parent class for all objects in the canvas  <a href="classcm_1_1_u_i_widget.html#details">More...</a><br/></td></tr>
@@ -128,6 +126,8 @@ Classes</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gui object: comment box (ui.text)  <a href="classcm_1_1_u_i_text.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_toggle.html">UIToggle</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gui object: message box (ui.msg)  <a href="classcm_1_1_u_i_toggle.html#details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_preferences.html">Preferences</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">app preferences singleton  <a href="classcm_1_1_preferences.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_property.html">UIProperty</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">yet another property handling class for ui object.  <a href="classcm_1_1_u_i_property.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_property_list.html">UIPropertyList</a></td></tr>
@@ -143,6 +143,12 @@ Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecm.html#a3cb4165a0eb6668a29e5a6fc3d6e2907">objectVec</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="classcm_1_1_patchcord.html">Patchcord</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecm.html#a635d087e10a42053c6a4011f3ee6b1c8">patchcordVec</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecm.html#aa1960a2b50fc448372249c7b7308a1de">cmObjectConstructor</a> )(std::string objectData, t_canvas *pdCanvas, <a class="el" href="classcm_1_1_u_i_widget.html">UIWidget</a> *parent)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; std::string, <br class="typebreak"/>
+<a class="el" href="classcm_1_1_u_i_property.html">UIProperty</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecm.html#a14c61e1560f2067db687494d536edc7f">UIPropertyData</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; std::string, <br class="typebreak"/>
+<a class="el" href="namespacecm.html#a14c61e1560f2067db687494d536edc7f">UIPropertyData</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecm.html#a16636e84e945e1e5c7269d48140009bf">UIPropertyGroups</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; std::string, <br class="typebreak"/>
+<a class="el" href="classcm_1_1_u_i_property.html">UIProperty</a> * &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecm.html#a5d956af40d9d7dcac0690956bb647e58">UIPropertyDataIterator</a></td></tr>
 <tr><td colspan="2"><h2><a name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecm.html#a5ec512b3876769d22b1b8c7daa3706ad">t_objectSize</a> { <a class="el" href="namespacecm.html#a5ec512b3876769d22b1b8c7daa3706ada79548b1dd7ae325718690d64b0cdddb0">os_Fixed</a>, 
@@ -155,6 +161,16 @@ Enumerations</h2></td></tr>
 <a class="el" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7af623804e3572b6568db8c7537ce1d721">em_Temporary</a>
  }</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">edit mode types  <a href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecm.html#a39e8cb7a4e0e86f5808867795593edd5">UIPropertyType</a> { <br/>
+&#160;&#160;<a class="el" href="namespacecm.html#a39e8cb7a4e0e86f5808867795593edd5a3984b18573248c88cd64baaab6857c14">ptFloat</a>, 
+<a class="el" href="namespacecm.html#a39e8cb7a4e0e86f5808867795593edd5af8fe5fd599281a7f7d093800ac982de9">ptSymbol</a>, 
+<a class="el" href="namespacecm.html#a39e8cb7a4e0e86f5808867795593edd5a215540fb665f61449551f8f929daa742">ptList</a>, 
+<a class="el" href="namespacecm.html#a39e8cb7a4e0e86f5808867795593edd5af3a99155dbe5e997355274f0fae83700">ptString</a>, 
+<br/>
+&#160;&#160;<a class="el" href="namespacecm.html#a39e8cb7a4e0e86f5808867795593edd5af9da1f8f3c12751fdb8dabdec556a323">ptVector</a>, 
+<a class="el" href="namespacecm.html#a39e8cb7a4e0e86f5808867795593edd5a969c5f78870e39208ad6ee496db30cf4">ptColor</a>
+<br/>
+ }</td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
 <a class="anchor" id="aa1960a2b50fc448372249c7b7308a1de"></a><!-- doxytag: member="cm::cmObjectConstructor" ref="aa1960a2b50fc448372249c7b7308a1de" args=")(std::string objectData, t_canvas *pdCanvas, UIWidget *parent)" -->
@@ -189,6 +205,45 @@ Enumerations</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">typedef std::vector&lt;<a class="el" href="classcm_1_1_patchcord.html">Patchcord</a>*&gt; <a class="el" href="namespacecm.html#a635d087e10a42053c6a4011f3ee6b1c8">cm::patchcordVec</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a14c61e1560f2067db687494d536edc7f"></a><!-- doxytag: member="cm::UIPropertyData" ref="a14c61e1560f2067db687494d536edc7f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::map&lt;std::string, <a class="el" href="classcm_1_1_u_i_property.html">UIProperty</a>*&gt; <a class="el" href="namespacecm.html#a14c61e1560f2067db687494d536edc7f">cm::UIPropertyData</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5d956af40d9d7dcac0690956bb647e58"></a><!-- doxytag: member="cm::UIPropertyDataIterator" ref="a5d956af40d9d7dcac0690956bb647e58" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::map&lt;std::string, <a class="el" href="classcm_1_1_u_i_property.html">UIProperty</a>*&gt;::iterator <a class="el" href="namespacecm.html#a5d956af40d9d7dcac0690956bb647e58">cm::UIPropertyDataIterator</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a16636e84e945e1e5c7269d48140009bf"></a><!-- doxytag: member="cm::UIPropertyGroups" ref="a16636e84e945e1e5c7269d48140009bf" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::map&lt;std::string, <a class="el" href="namespacecm.html#a14c61e1560f2067db687494d536edc7f">UIPropertyData</a>*&gt; <a class="el" href="namespacecm.html#a16636e84e945e1e5c7269d48140009bf">cm::UIPropertyGroups</a></td>
         </tr>
       </table>
 </div>
@@ -247,6 +302,35 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a39e8cb7a4e0e86f5808867795593edd5"></a><!-- doxytag: member="cm::UIPropertyType" ref="a39e8cb7a4e0e86f5808867795593edd5" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespacecm.html#a39e8cb7a4e0e86f5808867795593edd5">cm::UIPropertyType</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a39e8cb7a4e0e86f5808867795593edd5a3984b18573248c88cd64baaab6857c14"></a><!-- doxytag: member="ptFloat" ref="a39e8cb7a4e0e86f5808867795593edd5a3984b18573248c88cd64baaab6857c14" args="" -->ptFloat</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a39e8cb7a4e0e86f5808867795593edd5af8fe5fd599281a7f7d093800ac982de9"></a><!-- doxytag: member="ptSymbol" ref="a39e8cb7a4e0e86f5808867795593edd5af8fe5fd599281a7f7d093800ac982de9" args="" -->ptSymbol</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a39e8cb7a4e0e86f5808867795593edd5a215540fb665f61449551f8f929daa742"></a><!-- doxytag: member="ptList" ref="a39e8cb7a4e0e86f5808867795593edd5a215540fb665f61449551f8f929daa742" args="" -->ptList</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a39e8cb7a4e0e86f5808867795593edd5af3a99155dbe5e997355274f0fae83700"></a><!-- doxytag: member="ptString" ref="a39e8cb7a4e0e86f5808867795593edd5af3a99155dbe5e997355274f0fae83700" args="" -->ptString</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a39e8cb7a4e0e86f5808867795593edd5af9da1f8f3c12751fdb8dabdec556a323"></a><!-- doxytag: member="ptVector" ref="a39e8cb7a4e0e86f5808867795593edd5af9da1f8f3c12751fdb8dabdec556a323" args="" -->ptVector</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a39e8cb7a4e0e86f5808867795593edd5a969c5f78870e39208ad6ee496db30cf4"></a><!-- doxytag: member="ptColor" ref="a39e8cb7a4e0e86f5808867795593edd5a969c5f78870e39208ad6ee496db30cf4" args="" -->ptColor</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -265,7 +349,7 @@ Enumerations</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 10 2017 23:07:50 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 11 2017 19:03:43 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -115,7 +115,7 @@ Inheritance diagram for cm::UIPropertyList:</div>
  <div class="center">
   <img src="classcm_1_1_u_i_property_list.png" usemap="#cm::UIPropertyList_map" alt=""/>
   <map id="cm::UIPropertyList_map" name="cm::UIPropertyList_map">
-<area href="classcm_1_1_preferences.html" title="preferences singleton" alt="cm::Preferences" shape="rect" coords="0,56,113,80"/>
+<area href="classcm_1_1_preferences.html" title="app preferences singleton" alt="cm::Preferences" shape="rect" coords="0,56,113,80"/>
 </map>
  </div></div>
 
@@ -124,8 +124,14 @@ Inheritance diagram for cm::UIPropertyList:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_property_list.html#a38aa05962a4f6fe06ccf74bc4b4b93c1">UIPropertyList</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classcm_1_1_u_i_property.html">UIProperty</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_property_list.html#aec21a39559229f811e6e016e48f617e4">fromGroup</a> (std::string grpName)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classcm_1_1_u_i_property.html">UIProperty</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_property_list.html#a9c9e80e2453e4bf91a268d5476585514">fromGroup</a> (QString grpName)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacecm.html#a14c61e1560f2067db687494d536edc7f">UIPropertyData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_property_list.html#a0075a94bc0f544ee876cc8c3c1160b20">fromGroup</a> (std::string grpName)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacecm.html#a14c61e1560f2067db687494d536edc7f">UIPropertyData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_property_list.html#a91924e13596a86f86c307b9efed566a7">fromGroup</a> (QString grpName)</td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_property_list.html#a09f417acc7c9e0da0242fa32ae0b7ad8">create</a> (std::string pName, std::string pGroup, std::string pVersion, T defaultData)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_property_list.html#a65c32ee509eaa3f8bd4f953cc8b18252">set</a> (std::string pName, std::string value)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcm_1_1_u_i_property.html">UIProperty</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_property_list.html#a93f9e5e30d6b44e184391884454b57bb">get</a> (std::string pName)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_property_list.html#aafd1f16f696c9ba2470bb0d7eb406533">asPdString</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns string for saving in file  <a href="#aafd1f16f696c9ba2470bb0d7eb406533"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>yet another property handling class for ui object. List </p>
@@ -147,12 +153,72 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="aec21a39559229f811e6e016e48f617e4"></a><!-- doxytag: member="cm::UIPropertyList::fromGroup" ref="aec21a39559229f811e6e016e48f617e4" args="(std::string grpName)" -->
+<a class="anchor" id="aafd1f16f696c9ba2470bb0d7eb406533"></a><!-- doxytag: member="cm::UIPropertyList::asPdString" ref="aafd1f16f696c9ba2470bb0d7eb406533" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="classcm_1_1_u_i_property.html">UIProperty</a>*&gt; <a class="el" href="classcm_1_1_u_i_property_list.html#aec21a39559229f811e6e016e48f617e4">cm::UIPropertyList::fromGroup</a> </td>
+          <td class="memname">std::string <a class="el" href="classcm_1_1_u_i_property_list.html#aafd1f16f696c9ba2470bb0d7eb406533">cm::UIPropertyList::asPdString</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>returns string for saving in file </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a09f417acc7c9e0da0242fa32ae0b7ad8"></a><!-- doxytag: member="cm::UIPropertyList::create" ref="a09f417acc7c9e0da0242fa32ae0b7ad8" args="(std::string pName, std::string pGroup, std::string pVersion, T defaultData)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcm_1_1_u_i_property_list.html#a09f417acc7c9e0da0242fa32ae0b7ad8">cm::UIPropertyList::create</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>pName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>pGroup</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>pVersion</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>defaultData</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0075a94bc0f544ee876cc8c3c1160b20"></a><!-- doxytag: member="cm::UIPropertyList::fromGroup" ref="a0075a94bc0f544ee876cc8c3c1160b20" args="(std::string grpName)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacecm.html#a14c61e1560f2067db687494d536edc7f">UIPropertyData</a>* <a class="el" href="classcm_1_1_u_i_property_list.html#a0075a94bc0f544ee876cc8c3c1160b20">cm::UIPropertyList::fromGroup</a> </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>grpName</em></td><td>)</td>
@@ -164,16 +230,60 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a9c9e80e2453e4bf91a268d5476585514"></a><!-- doxytag: member="cm::UIPropertyList::fromGroup" ref="a9c9e80e2453e4bf91a268d5476585514" args="(QString grpName)" -->
+<a class="anchor" id="a91924e13596a86f86c307b9efed566a7"></a><!-- doxytag: member="cm::UIPropertyList::fromGroup" ref="a91924e13596a86f86c307b9efed566a7" args="(QString grpName)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="classcm_1_1_u_i_property.html">UIProperty</a>*&gt; <a class="el" href="classcm_1_1_u_i_property_list.html#aec21a39559229f811e6e016e48f617e4">cm::UIPropertyList::fromGroup</a> </td>
+          <td class="memname"><a class="el" href="namespacecm.html#a14c61e1560f2067db687494d536edc7f">UIPropertyData</a>* <a class="el" href="classcm_1_1_u_i_property_list.html#a0075a94bc0f544ee876cc8c3c1160b20">cm::UIPropertyList::fromGroup</a> </td>
           <td>(</td>
           <td class="paramtype">QString&#160;</td>
           <td class="paramname"><em>grpName</em></td><td>)</td>
           <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a93f9e5e30d6b44e184391884454b57bb"></a><!-- doxytag: member="cm::UIPropertyList::get" ref="a93f9e5e30d6b44e184391884454b57bb" args="(std::string pName)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcm_1_1_u_i_property.html">UIProperty</a>* <a class="el" href="classcm_1_1_u_i_property_list.html#a93f9e5e30d6b44e184391884454b57bb">cm::UIPropertyList::get</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>pName</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a65c32ee509eaa3f8bd4f953cc8b18252"></a><!-- doxytag: member="cm::UIPropertyList::set" ref="a65c32ee509eaa3f8bd4f953cc8b18252" args="(std::string pName, std::string value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcm_1_1_u_i_property_list.html#a65c32ee509eaa3f8bd4f953cc8b18252">cm::UIPropertyList::set</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>pName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -202,7 +312,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 10 2017 23:07:50 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 11 2017 19:03:43 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

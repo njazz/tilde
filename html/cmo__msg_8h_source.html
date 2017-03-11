@@ -186,7 +186,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00107"></a>00107                    op-&gt;setAlignment(Qt::AlignLeft);
 <a name="l00108"></a>00108                     p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 <a name="l00109"></a>00109 
-<a name="l00110"></a>00110                      p.setFont(QFont(<a class="code" href="cm__preferences_8h.html#a8d0930cabebdaa4ba925d1ec93594bb2">PREF_STRING</a>(<span class="stringliteral">&quot;Font&quot;</span>),11,0,<span class="keyword">false</span>));
+<a name="l00110"></a>00110                      p.setFont(QFont(<a class="code" href="cm__preferences_8h.html#a3f95dcdc217e1a88365c8306beaf1c72">PREF_QSTRING</a>(<span class="stringliteral">&quot;Font&quot;</span>),11,0,<span class="keyword">false</span>));
 <a name="l00111"></a>00111                       p.drawText(2,3,this-&gt;width()-2,this-&gt;height()-3,0,this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a1a988c71aba5c7d15a0d6814db8d823e" title="gets object text data /usually overriden by ui objects/">getObjectData</a>().c_str(),0);
 <a name="l00112"></a>00112 
 <a name="l00113"></a>00113 
@@ -275,7 +275,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00198"></a>00198     {
 <a name="l00199"></a>00199         this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a42cd816b2e061057104f1e1ade6b8a71" title="sets object text data /usually overriden by ui objects/">setObjectData</a>(message);
 <a name="l00200"></a>00200 
-<a name="l00201"></a>00201         QFont myFont(<a class="code" href="cm__preferences_8h.html#a8d0930cabebdaa4ba925d1ec93594bb2">PREF_STRING</a>(<span class="stringliteral">&quot;Font&quot;</span>), 11);
+<a name="l00201"></a>00201         QFont myFont(<a class="code" href="cm__preferences_8h.html#a3f95dcdc217e1a88365c8306beaf1c72">PREF_QSTRING</a>(<span class="stringliteral">&quot;Font&quot;</span>), 11);
 <a name="l00202"></a>00202         QFontMetrics fm(myFont);
 <a name="l00203"></a>00203         <span class="keywordtype">int</span> new_w = fm.width(QString(this-&gt;<a class="code" href="classcm_1_1_u_i_object.html#a1a988c71aba5c7d15a0d6814db8d823e" title="gets object text data /usually overriden by ui objects/">getObjectData</a>().c_str())) + 10;
 <a name="l00204"></a>00204         new_w = (new_w&lt;25) ? 25 : new_w;
@@ -358,7 +358,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 10 2017 23:07:50 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 11 2017 19:03:43 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['get',['get',['../classcm_1_1_u_i_property_list.html#a93f9e5e30d6b44e184391884454b57bb',1,'cm::UIPropertyList']]],
   ['getconstructorfor',['getConstructorFor',['../classcm_1_1_object_loader.html#a783328f941313e9d29c329fb0d2647b8',1,'cm::ObjectLoader']]],
   ['geteditmode',['getEditMode',['../classcm_1_1_canvas.html#a1c94aab3160a86ad1083413ca831d24a',1,'cm::Canvas::getEditMode()'],['../classcm_1_1_u_i_widget.html#ac7ab5e3859278cbf6a8cd644a618b361',1,'cm::UIWidget::getEditMode()']]],
   ['geteditmoderef',['getEditModeRef',['../classcm_1_1_u_i_widget.html#a3cf2202d02378656bbb09c2d613d5f7a',1,'cm::UIWidget']]],
@@ -21,9 +22,10 @@ var searchData=
   ['getpatchcords',['getPatchcords',['../classcm_1_1_canvas.html#a80b76980682beb5f277ce94e64a0f09b',1,'cm::Canvas::getPatchcords()'],['../classcm_1_1_clipboard.html#a64708b2d91ee32037228d9154336b015',1,'cm::Clipboard::getPatchcords()']]],
   ['getpdnames',['getPDNames',['../classcm_1_1_object_loader.html#a887c21b1facfabe2556cc942766cb70f',1,'cm::ObjectLoader']]],
   ['getpdobject',['getPdObject',['../classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a',1,'cm::UIObject::getPdObject()'],['../classcm_1_1_u_i_text.html#a001605a0a1c806951865709bc392299a',1,'cm::UIText::getPdObject()']]],
+  ['getqstring',['getQString',['../classcm_1_1_preferences.html#abbf18deab741444be76d782ce9b02444',1,'cm::Preferences']]],
   ['getsavestring',['getSaveString',['../classcm_1_1_u_i_object.html#a0e3f36996412372a7ab1990c788bdd4c',1,'cm::UIObject::getSaveString()'],['../classcm_1_1_u_i_bang.html#a6d2be36c3cd5e872b32066a4e5c04891',1,'cm::UIBang::getSaveString()'],['../classcm_1_1_u_i_float.html#a54b0dc86dc39ea9e658b49b3a1be59bc',1,'cm::UIFloat::getSaveString()'],['../classcm_1_1_u_i_message.html#ad5dba4e2bcf56289c4bc44f6ffa7588f',1,'cm::UIMessage::getSaveString()'],['../classcm_1_1_u_i_text.html#ae6d4537ddefd8eb22abeee911edc6d8d',1,'cm::UIText::getSaveString()'],['../classcm_1_1_u_i_toggle.html#a6e36333a6bfb86fe0cc3d946cacbc38f',1,'cm::UIToggle::getSaveString()']]],
   ['getscale',['getScale',['../classcm_1_1_u_i_widget.html#ac429d1de7b0a883085f8c42a3b6bbcb1',1,'cm::UIWidget']]],
   ['getstartpoint',['getStartPoint',['../classcm_1_1_patchcord.html#a10e7265d74c471202f352afd1eb4fce4',1,'cm::Patchcord']]],
-  ['getstring',['getString',['../classcm_1_1_preferences.html#ad52ef30d319bf9fe3f484993752db8c0',1,'cm::Preferences']]],
-  ['getuinames',['getUINames',['../classcm_1_1_object_loader.html#a63bfe437603c165a8d8e2212ba6a4781',1,'cm::ObjectLoader']]]
+  ['getuinames',['getUINames',['../classcm_1_1_object_loader.html#a63bfe437603c165a8d8e2212ba6a4781',1,'cm::ObjectLoader']]],
+  ['getversion',['getVersion',['../classcm_1_1_u_i_property.html#a9e19ce51fdc791c3b57e2c6f272ac284',1,'cm::UIProperty']]]
 ];

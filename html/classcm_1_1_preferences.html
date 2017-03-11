@@ -106,7 +106,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="cm::Preferences" --><!-- doxytag: inherits="cm::UIPropertyList" -->
-<p>preferences singleton  
+<p>app preferences singleton  
  <a href="classcm_1_1_preferences.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="cm__preferences_8h_source.html">cm_preferences.h</a>&gt;</code></p>
@@ -126,13 +126,14 @@ Inheritance diagram for cm::Preferences:</div>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_preferences.html#aea987360ca0da6187f9ce007af0744ce">Preferences</a> (<a class="el" href="classcm_1_1_preferences.html">Preferences</a> const &amp;)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_preferences.html#a5773b75d32900c3d33963b3caedb22f4">operator=</a> (<a class="el" href="classcm_1_1_preferences.html">Preferences</a> const &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_preferences.html#ad52ef30d319bf9fe3f484993752db8c0">getString</a> (std::string key)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_preferences.html#abbf18deab741444be76d782ce9b02444">getQString</a> (std::string key)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_preferences.html#a8de833a1440a934a53982ad5568c8fd7">init</a> (std::string appVersion)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classcm_1_1_preferences.html">Preferences</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_preferences.html#afca871afbb2cbbdb47d10b57f026266a">inst</a> ()</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>preferences singleton </p>
+<div class="textblock"><p>app preferences singleton </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aea987360ca0da6187f9ce007af0744ce"></a><!-- doxytag: member="cm::Preferences::Preferences" ref="aea987360ca0da6187f9ce007af0744ce" args="(Preferences const &amp;)" -->
 <div class="memitem">
@@ -152,15 +153,32 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="ad52ef30d319bf9fe3f484993752db8c0"></a><!-- doxytag: member="cm::Preferences::getString" ref="ad52ef30d319bf9fe3f484993752db8c0" args="(std::string key)" -->
+<a class="anchor" id="abbf18deab741444be76d782ce9b02444"></a><!-- doxytag: member="cm::Preferences::getQString" ref="abbf18deab741444be76d782ce9b02444" args="(std::string key)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">QString <a class="el" href="classcm_1_1_preferences.html#ad52ef30d319bf9fe3f484993752db8c0">cm::Preferences::getString</a> </td>
+          <td class="memname">QString <a class="el" href="classcm_1_1_preferences.html#abbf18deab741444be76d782ce9b02444">cm::Preferences::getQString</a> </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8de833a1440a934a53982ad5568c8fd7"></a><!-- doxytag: member="cm::Preferences::init" ref="a8de833a1440a934a53982ad5568c8fd7" args="(std::string appVersion)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcm_1_1_preferences.html#a8de833a1440a934a53982ad5568c8fd7">cm::Preferences::init</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>appVersion</em></td><td>)</td>
           <td><code> [inline]</code></td>
         </tr>
       </table>
@@ -203,7 +221,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/travis/build/njazz/qtpd/qtpd_gui/<a class="el" href="cm__preferences_8h_source.html">cm_preferences.h</a></li>
+<li>/home/travis/build/njazz/qtpd/qtpd_gui/properties/<a class="el" href="cm__preferences_8h_source.html">cm_preferences.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- window showing the filter options -->
@@ -223,7 +241,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 10 2017 23:07:50 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 11 2017 19:03:43 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

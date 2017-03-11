@@ -6,5 +6,9 @@ var searchData=
   ['addoutlet',['addOutlet',['../classcm_1_1_u_i_object.html#a8ddae9dbc64fa5687d8c38baddd3a56b',1,'cm::UIObject']]],
   ['addpatchcord',['addPatchcord',['../classcm_1_1_clipboard.html#aa87b860bd3c37748240b5efb67d88262',1,'cm::Clipboard']]],
   ['addpatchcords',['addPatchcords',['../classcm_1_1_clipboard.html#af8aff2c31f07f14a5d8a986208cfc9d7',1,'cm::Clipboard']]],
-  ['adduiobject',['addUIobject',['../classcm_1_1_object_loader.html#a63c27fbfeb9e3233f6aee6a79420d9d6',1,'cm::ObjectLoader']]]
+  ['adduiobject',['addUIobject',['../classcm_1_1_object_loader.html#a63c27fbfeb9e3233f6aee6a79420d9d6',1,'cm::ObjectLoader']]],
+  ['aspdstring',['asPdString',['../classcm_1_1_u_i_property_list.html#aafd1f16f696c9ba2470bb0d7eb406533',1,'cm::UIPropertyList']]],
+  ['asqstring',['asQString',['../classcm_1_1_u_i_property.html#a446323ed4c31adaad6b0f2f005fe52fa',1,'cm::UIProperty']]],
+  ['asqstringlist',['asQStringList',['../classcm_1_1_u_i_property.html#aef472d8b63af90c767b2cab3c233eebc',1,'cm::UIProperty']]],
+  ['asstdstring',['asStdString',['../classcm_1_1_u_i_property.html#ae2382952f16aa26197f1543e36247100',1,'cm::UIProperty']]]
 ];
