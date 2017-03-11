@@ -195,18 +195,27 @@ public:
     ////////
 
     ////
-    /// \brief sets object text data /usually overriden by ui objects/
+    /// \brief sets object text data
     /// \return
     ///
 
     void setObjectData(std::string objData)
     {
         this->objectData = objData;
+
+    }
+
+    ////
+    /// \brief call this after setting object data
+    ///
+    void autoResize()
+    {
         QFont myFont(PREF_QSTRING("Font"), 11);
         QFontMetrics fm(myFont);
 
         this->setFixedWidth((int)fm.width(QString(this->objectData.c_str())) + 5);
         if (this->width()<this->minimumBoxWidth()) this->setFixedWidth(this->minimumBoxWidth());
+
     }
 
     ////

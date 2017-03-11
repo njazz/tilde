@@ -73,6 +73,7 @@ HEADERS  += \
     properties/cm_property.h \
     properties/cm_propertylist.h \
     properties/cm_preferences.h \
+    cm_headers.h
 
 
 FORMS    += \
@@ -94,3 +95,4 @@ INCLUDEPATH += \
     objects/ \
     properties/
 
+PRECOMPILED_HEADER = cm_headers.h
