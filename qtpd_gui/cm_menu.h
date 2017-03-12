@@ -8,6 +8,7 @@ namespace cm
 {
 ////
 /// \brief Common menu - creates new windows (patch, Pd)
+/// \details this is used only to create new windows. all other items are now in basewindow - probably they should be moved here
 ///
 class BaseMenu : public QObject
 {

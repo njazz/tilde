@@ -37,9 +37,6 @@ int main(int argc, char *argv[])
     pdw->move(0,100);
     pdw->show();
 
-    //    cm_patchwindow w;
-    //    w.show();
-
 
     return a.exec();
 }

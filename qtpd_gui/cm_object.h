@@ -37,7 +37,7 @@ private:
 
     SizeBox* sizeBox;
 
-    UIPropertyList properties_;
+    PropertyList properties_;
 
     UIObject();
 
@@ -67,7 +67,7 @@ public:
 
     }
 
-    UIPropertyList* properties()
+    PropertyList* properties()
     {
         return &this->properties_;
     }

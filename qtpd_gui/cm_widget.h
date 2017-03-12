@@ -115,20 +115,20 @@ signals:
 
 public slots:
 
-    void s_MousePressed();
-    void s_MouseReleased();
-    void s_MouseEntered();
-    void s_MouseLeaved();
+//    void s_MousePressed();
+//    void s_MouseReleased();
+//    void s_MouseEntered();
+//    void s_MouseLeaved();
 
     virtual void s_InMousePressed(UIWidget* obj, QMouseEvent* ev);
     virtual void s_InMouseReleased(UIWidget* obj, QMouseEvent* ev);
-    virtual void s_InMouseEntered();
-    virtual void s_InMouseLeaved();
+//    virtual void s_InMouseEntered();
+//    virtual void s_InMouseLeaved();
 
     virtual void s_OutMousePressed(UIWidget* obj, QMouseEvent* ev);
     virtual void s_OutMouseReleased(UIWidget* obj, QMouseEvent* ev);
-    virtual void s_OutMouseEntered();
-    virtual void s_OutMouseLeaved();
+//    virtual void s_OutMouseEntered();
+//    virtual void s_OutMouseLeaved();
 };
 
 }

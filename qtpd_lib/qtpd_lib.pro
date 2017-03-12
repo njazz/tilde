@@ -136,7 +136,11 @@ SOURCES += pdlib.cpp \
     src/x_vexp_fun.c \
     src/x_vexp_if.c \
     extra/list_product.cpp \
-    extra/cm_uimsg.cpp \
+\
+    ui_objects/uimsg.cpp \
+    ui_objects/uifloat.cpp \
+    ui_objects/uibang.cpp \
+    ui_objects/uitoggle.cpp \
 \
     creamlibrary/Sources/c.bang.cpp \
     creamlibrary/Sources/c.blackboard.cpp \

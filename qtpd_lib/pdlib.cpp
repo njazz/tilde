@@ -23,15 +23,20 @@ void cmp_closepatch(t_canvas* canvas);
 //temporary
 extern "C" void setup_ui0x2ebang(void);
 extern "C" void setup_ui0x2etoggle(void);
-extern "C" void setup_ui0x2enumber_tilde(void);
-extern "C" void setup_ui0x2enumber(void);
-extern "C" void setup_ui0x2eslider(void);
-extern "C" void setup_ui0x2eradio(void);
+extern "C" void setup_ui0x2emsg(void);
+extern "C" void setup_ui0x2efloat(void);
 
-extern "C" void setup_ui0x2ebpfunc(void);
-extern "C" void setup_ui0x2eknob(void);
-extern "C" void setup_ui0x2escope_tilde(void);
-extern "C" void setup_ui0x2espectroscope_tilde(void);
+//extern "C" void setup_ui0x2ebang(void);
+//extern "C" void setup_ui0x2etoggle(void);
+//extern "C" void setup_ui0x2enumber_tilde(void);
+//extern "C" void setup_ui0x2enumber(void);
+//extern "C" void setup_ui0x2eslider(void);
+//extern "C" void setup_ui0x2eradio(void);
+
+//extern "C" void setup_ui0x2ebpfunc(void);
+//extern "C" void setup_ui0x2eknob(void);
+//extern "C" void setup_ui0x2escope_tilde(void);
+//extern "C" void setup_ui0x2espectroscope_tilde(void);
 
 //temporary
 extern void uimsg_set_updateUI(t_pd* x, void* uiobj, t_updateUI func);
@@ -111,20 +116,24 @@ void cmp_pdinit()
 
     //temporary extra objects
     setup_ui0x2emsg();
+    setup_ui0x2efloat();
+    setup_ui0x2ebang();
+    setup_ui0x2etoggle();
+
     setup_list0x2eproduct();
 
     //temporary initialisations
-    setup_ui0x2ebang();
-    setup_ui0x2ebpfunc();
-    setup_ui0x2eknob();
-    setup_ui0x2emsg();
-    setup_ui0x2enumber();
-    setup_ui0x2enumber_tilde();
-    setup_ui0x2eradio();
-    setup_ui0x2escope_tilde();
-    setup_ui0x2eslider();
-    setup_ui0x2espectroscope_tilde();
-    setup_ui0x2etoggle();
+//    setup_ui0x2ebang();
+//    setup_ui0x2ebpfunc();
+//    setup_ui0x2eknob();
+//    setup_ui0x2emsg();
+//    setup_ui0x2enumber();
+//    setup_ui0x2enumber_tilde();
+//    setup_ui0x2eradio();
+//    setup_ui0x2escope_tilde();
+//    setup_ui0x2eslider();
+//    setup_ui0x2espectroscope_tilde();
+//    setup_ui0x2etoggle();
 
     qDebug("pd extras");
 

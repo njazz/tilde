@@ -27,7 +27,7 @@ typedef enum
 ////
 /// \brief yet another property handling class for ui object.
 ///
-class UIProperty
+class Property
 {
 private:
     AtomList data_;
