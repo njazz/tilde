@@ -10,10 +10,10 @@
 namespace cm
 {
 
-typedef std::map<std::string, UIProperty*> UIPropertyData;
+typedef std::map<std::string, Property*> UIPropertyData;
 typedef std::map<std::string, UIPropertyData*> UIPropertyGroups;
 
-typedef std::map<std::string, UIProperty*>::iterator UIPropertyDataIterator;
+typedef std::map<std::string, Property*>::iterator UIPropertyDataIterator;
 
 ////
 /// \brief yet another property handling class for ui object. List
@@ -44,7 +44,7 @@ public:
     template <typename T>
     void create(std::string pName, std::string pGroup, std::string pVersion, T defaultData)
     {
-        UIProperty *newP = new UIProperty;
+        Property *newP = new Property;
 
         //newP->setGroup(pGroup);
         newP->setVersion(pVersion);
@@ -67,10 +67,10 @@ public:
         this->data_[pName]->set(value);
     };
 
-    UIProperty *get(std::string pName)
+    Property *get(std::string pName)
     {
-        UIProperty *ret = 0;
-        std::map<std::string, UIProperty*>::iterator it = data_.find(pName);
+        Property *ret = 0;
+        std::map<std::string, Property*>::iterator it = data_.find(pName);
         if ( it != data_.end() )
             ret = this->data_[pName];
         return ret;

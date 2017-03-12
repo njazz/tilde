@@ -26,7 +26,7 @@ namespace cm{
 ////
 /// \brief app preferences singleton
 ///
-class Preferences : public UIPropertyList // TODO
+class Preferences : public PropertyList // TODO
 {
 public:
     static Preferences& inst()

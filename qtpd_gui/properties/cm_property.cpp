@@ -7,13 +7,13 @@
 
 namespace cm{
 
-template<> void UIProperty::set(AtomList list)
+template<> void Property::set(AtomList list)
 {
     data_ = list;
     type_ = ptList;
 }
 
-template<> void UIProperty::set(QPoint point)
+template<> void Property::set(QPoint point)
 {
     AtomList list;
 
@@ -23,7 +23,7 @@ template<> void UIProperty::set(QPoint point)
     data_ = list;
     type_ = ptVector;
 }
-template<> void UIProperty::set(QRect rect)
+template<> void Property::set(QRect rect)
 {
     AtomList list;
 
@@ -36,7 +36,7 @@ template<> void UIProperty::set(QRect rect)
     type_ = ptVector;
 
 }
-template<> void UIProperty::set(QSize size)
+template<> void Property::set(QSize size)
 {
     AtomList list;
 
@@ -48,7 +48,7 @@ template<> void UIProperty::set(QSize size)
 
 }
 
-template<> void UIProperty::set(QColor color)
+template<> void Property::set(QColor color)
 {
     AtomList list;
 
@@ -61,37 +61,37 @@ template<> void UIProperty::set(QColor color)
     type_ = ptColor;
 }
 
-template<> void UIProperty::set(float val)
+template<> void Property::set(float val)
 {
     data_ = AtomList(val);
     type_ = ptFloat;
 }
 
-template<> void UIProperty::set(double val)
+template<> void Property::set(double val)
 {
     data_ = AtomList(val);
     type_ = ptFloat;
 }
 
-template<> void UIProperty::set(t_symbol* s)
+template<> void Property::set(t_symbol* s)
 {
     data_ = AtomList(s);
     type_ = ptSymbol;
 }
 
-template<> void UIProperty::set(std::string string)
+template<> void Property::set(std::string string)
 {
     data_ = AtomList(gensym(string.c_str()));
     type_ = ptList;
 }
 
-template<> void UIProperty::set(QString string)
+template<> void Property::set(QString string)
 {
     data_ = AtomList(gensym(string.toStdString().c_str()));
     type_ = ptString;
 }
 
-template<> void UIProperty::set(QStringList list)
+template<> void Property::set(QStringList list)
 {
 
 }
