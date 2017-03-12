@@ -82,6 +82,7 @@ private slots:
     void save();
     void saveAs();
 
+    // this is hidden, use "newWindow"
     PatchWindow();
 public:
     static PatchWindow* newWindow();

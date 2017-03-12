@@ -230,7 +230,7 @@ public:
     /// \return
     ///
 
-    void setObjectData(std::string objData)
+    virtual void setObjectData(std::string objData)
     {
         this->objectData_ = objData;
 

@@ -39,9 +39,13 @@ typedef struct
 } tCanvasData;
 
 ////
+/// \brief draw canvas as patch, box or pd "G-O-P" / patch in patch
+typedef enum {ds_Canvas, ds_Box, ds_CanvasInBox} canvasDrawStyle;
+
+////
 /// \brief 't_canvas' counterpart. creates objects
 ///
-class Canvas : public UIWidget
+class Canvas : public UIObject
 {
 private:
     //todo move this to data class?
@@ -75,6 +79,13 @@ private:
     bool gridSnap;
     int gridStep;
 
+    //
+    canvasDrawStyle drawStyle_;
+    // if the canvas is the box, it can have this. Check this later
+    QMainWindow *Subcanvas_;
+
+    QLineEdit* editor_;
+
     Q_OBJECT
 public:
     //encapsulate
@@ -84,14 +95,45 @@ public:
     //temp
     t_canvas* pdCanvas;
 
-    explicit Canvas(UIWidget *parent = 0);
-    explicit Canvas(QWidget *parent = 0);
+    explicit Canvas(UIObject *parent = 0);
+    //explicit Canvas(QWidget *parent = 0);
 
+    //temporary
+    static Canvas* newView(Canvas* srcCanvas, UIObject* parentCanvas, canvasDrawStyle dStyle)
+    {
+        Canvas* ret = new Canvas(parentCanvas);
+
+        //copy here
+        ret->setPdObject(srcCanvas->pdObject());
+        ret->setDrawStyle(dStyle);
+
+        ret->setMinimumWidth(40);
+
+        return ret;
+
+    }
+
+    void setDrawStyle(canvasDrawStyle ds)
+    {
+        this->drawStyle_ = ds;
+    }
+    canvasDrawStyle drawStyle() {return this->drawStyle_;}
 
     ////
     /// \brief main paint routine
     ///
     void paintEvent(QPaintEvent *)
+    {
+        if (this->drawStyle_ == ds_Canvas)
+            this->drawCanvas();
+        if (this->drawStyle_ == ds_Box)
+            this->drawObjectBox();
+    }
+
+    ////
+    /// \brief draws canvas contents
+    ///
+    void drawCanvas()
     {
         //grid
         if (this->gridEnabled && (this->editMode != em_Locked) )
@@ -128,6 +170,36 @@ public:
 
         this->paintPatchcords();
 
+
+    }
+
+    ////
+    /// \brief draw object box for the canvas
+    ///
+    void drawObjectBox()
+    {
+        QPainter p(this);
+        p.setRenderHint(QPainter::HighQualityAntialiasing, true);
+
+        {
+            p.setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p.drawRect(0, 2, this->width(), this->height()-4);
+        }
+
+        QColor rectColor = (this->errorBox())? QColor(255, 0, 0) : QColor(128, 128, 128);
+        p.setPen(QPen(rectColor, 2,(this->errorBox())? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p.drawRect(0, 0, this->width(), this->height());
+        QTextOption* op = new QTextOption;
+        op->setAlignment(Qt::AlignLeft);
+        p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+
+        p.setFont(QFont(PREF_QSTRING("Font"), 11, 0, false));
+        p.drawText(2, 3, this->width() - 2, this->height() - 3, 0, this->objectData().c_str(), 0);
+
+        if (this->isSelected()) {
+            p.setPen(QPen(QColor(0, 192, 255), 2,(this->errorBox())? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p.drawRect(0, 0, this->width(), this->height());
+        }
     }
 
     ////
@@ -240,10 +312,48 @@ public:
     }
 
     ////
-    /// \brief mouse move handling
+    /// \brief route mouse move handling for different vis types
     /// \param ev
     ///
     void mouseMoveEvent(QMouseEvent* ev)
+    {
+        if (this->drawStyle() == ds_Canvas)
+            this->mouseMoveEventForCanvas(ev);
+        if (this->drawStyle() == ds_Box)
+            this->mouseMoveEventForBox(ev);
+    }
+
+    ////
+    /// \brief route mouse press handling for different vis types
+    /// \param ev
+    ///
+    void mousePressEvent(QMouseEvent* ev)
+    {
+        if (this->drawStyle() == ds_Canvas)
+            this->mousePressEventForCanvas(ev);
+        if (this->drawStyle() == ds_Box)
+            this->mousePressEventForBox(ev);
+    }
+
+    ////
+    /// \brief route mouse release handling for different vis types
+    /// \param ev
+    ///
+    void mouseReleaseEvent(QMouseEvent* ev)
+    {
+        if (this->drawStyle() == ds_Canvas)
+            this->mouseReleaseEventForCanvas(ev);
+        if (this->drawStyle() == ds_Box)
+            this->mouseReleaseEventForBox(ev);
+    }
+
+    /////////
+
+    ////
+    /// \brief mouse move handling
+    /// \param ev
+    ///
+    void mouseMoveEventForCanvas(QMouseEvent *ev)
     {
         if (!ev) return;
 
@@ -308,11 +418,12 @@ public:
 
     }
 
+
     ////
-    /// \brief mouse down handling
+    /// \brief mouse down handling for Canvas
     /// \param ev
     ///
-    void mousePressEvent(QMouseEvent* ev)
+    void mousePressEventForCanvas(QMouseEvent* ev)
     {
 
 
@@ -336,10 +447,12 @@ public:
 
     }
 
+
+
     ////
     /// \brief mouse up handling
     ///
-    void mouseReleaseEvent(QMouseEvent*)
+    void mouseReleaseEventForCanvas(QMouseEvent*)
     {
         this->dragObject = 0;
 
@@ -350,6 +463,65 @@ public:
     }
 
 
+    /////////
+
+    ////
+    /// \brief mouse down ForBox
+    /// \param ev
+    ///
+    void mousePressEventForBox(QMouseEvent* ev)
+    {
+        //open canvas for subpatch
+        if (this->getEditMode() != em_Unlocked)
+        {
+            if (this->Subcanvas_)
+            {
+                this->Subcanvas_->show();
+            }
+        }
+
+        if ( (this->getEditMode()==em_Unlocked) && this->isSelected())
+        {
+            this->editor_->setText(QString(this->objectData().c_str()));
+            this->editor_->show();
+            this->editor_->setFocus();
+        }
+
+        emit selectBox(this);
+        this->dragOffset = ev->pos();
+    }
+
+    ////
+    /// \brief mouse up ForBox
+    ///
+    void mouseReleaseEventForBox(QMouseEvent*)
+    {
+        this->repaint();
+    }
+
+    ////
+    /// \brief mouse move ForBox
+    /// \param event
+    ///
+    void mouseMoveEventForBox(QMouseEvent* event)
+    {
+        if (event->buttons() & Qt::LeftButton) {
+            emit moveBox(this, event);
+        }
+        event->ignore();
+
+
+        if ( (this->getEditMode() != em_Unlocked) && (this->Subcanvas_) )
+        {
+            this->setCursor(QCursor(Qt::PointingHandCursor));
+        }
+        else
+        {
+            this->setCursor(QCursor(Qt::ArrowCursor));
+        }
+    }
+
+    /////////
 
     ////
     /// \brief deselect all object boxes
@@ -437,177 +609,177 @@ public:
 
     }
 
-//    ////
-//    /// \brief create new object box
-//    /// \param pdObjectName TODO rename. object name and arguments
-//    /// \param pos
-//    /// \return pointer to cm_box
-//    ///
-//    UIBox* createBox(std::string pdObjectName, QPoint pos)
-//    {
-//        UIBox *box = new UIBox((UIObject*)this);   //test?
-//        box->setObjectData(pdObjectName);
+    //    ////
+    //    /// \brief create new object box
+    //    /// \param pdObjectName TODO rename. object name and arguments
+    //    /// \param pos
+    //    /// \return pointer to cm_box
+    //    ///
+    //    UIBox* createBox(std::string pdObjectName, QPoint pos)
+    //    {
+    //        UIBox *box = new UIBox((UIObject*)this);   //test?
+    //        box->setObjectData(pdObjectName);
 
-//        connect(box,&UIBox::selectBox, this, &Canvas::s_SelectBox);
-//        connect(box,&UIBox::moveBox, this, &Canvas::s_MoveBox);
+    //        connect(box,&UIBox::selectBox, this, &Canvas::s_SelectBox);
+    //        connect(box,&UIBox::moveBox, this, &Canvas::s_MoveBox);
 
-//        box->setEditModeRef(&this->editMode);
+    //        box->setEditModeRef(&this->editMode);
 
-//        const char * obj_name = pdObjectName.c_str();
+    //        const char * obj_name = pdObjectName.c_str();
 
-//        t_object* new_obj = 0 ;
-//        int in_c=0, out_c=0;
+    //        t_object* new_obj = 0 ;
+    //        int in_c=0, out_c=0;
 
-//        //temp
-//        if (!this->pdCanvas)
-//        {
-//            qDebug("bad pd canvas instance");
-//            box->setErrorBox(true);
-//        }
-//        else
-//        {
-//            new_obj = cmp_create_object(this->pdCanvas,(char*)obj_name,pos.x(), pos.y());
-//        }
+    //        //temp
+    //        if (!this->pdCanvas)
+    //        {
+    //            qDebug("bad pd canvas instance");
+    //            box->setErrorBox(true);
+    //        }
+    //        else
+    //        {
+    //            new_obj = cmp_create_object(this->pdCanvas,(char*)obj_name,pos.x(), pos.y());
+    //        }
 
-//        if (new_obj)
-//        {
+    //        if (new_obj)
+    //        {
 
-//            // qDebug ("created object %lu, new_obj");
+    //            // qDebug ("created object %lu, new_obj");
 
-//            in_c = cmp_get_inlet_count(new_obj);
-//            out_c = cmp_get_outlet_count(new_obj);
+    //            in_c = cmp_get_inlet_count(new_obj);
+    //            out_c = cmp_get_outlet_count(new_obj);
 
-//            qDebug ("created object %s ins %i outs %i ptr %lu", obj_name, in_c, out_c, (long)new_obj);
+    //            qDebug ("created object %s ins %i outs %i ptr %lu", obj_name, in_c, out_c, (long)new_obj);
 
-//            //cm_box* newBox = this->canvas->createBox(this->objectMaker->text().toStdString(),this->objectMaker->pos(),in_c,out_c);
-//            box->setPdObject(new_obj);
+    //            //cm_box* newBox = this->canvas->createBox(this->objectMaker->text().toStdString(),this->objectMaker->pos(),in_c,out_c);
+    //            box->setPdObject(new_obj);
 
-//        }
-//        else
-//        {
-//            qDebug("Error: no such object %s", obj_name);
-//            box->setErrorBox(true);
-//            in_c = 1; out_c = 1;
-//            //return 0;
-//        }
+    //        }
+    //        else
+    //        {
+    //            qDebug("Error: no such object %s", obj_name);
+    //            box->setErrorBox(true);
+    //            in_c = 1; out_c = 1;
+    //            //return 0;
+    //        }
 
-//        for (int i=0;i<in_c;i++)
-//            box->addInlet();
-//        for (int i=0;i<out_c;i++)
-//            box->addOutlet();
+    //        for (int i=0;i<in_c;i++)
+    //            box->addInlet();
+    //        for (int i=0;i<out_c;i++)
+    //            box->addOutlet();
 
-//        box->move(pos);
+    //        box->move(pos);
 
-//        this->objectBoxes.push_back(box);
+    //        this->objectBoxes.push_back(box);
 
-//        box->show();
+    //        box->show();
 
-//        return box;
+    //        return box;
 
-//    }
+    //    }
 
-//    ////
-//    /// \brief create new message box (ui.msg now)
-//    /// \param pdObjectName TODO rename. object name and arguments
-//    /// \param pos
-//    /// \return pointer to cm_box
-//    ///
-//    UIMessage* createMsg(std::string message, QPoint pos)
-//    {
-//        UIMessage *msg = new UIMessage((UIObject*)this);   //check
-//        msg->setObjectData(message);
+    //    ////
+    //    /// \brief create new message box (ui.msg now)
+    //    /// \param pdObjectName TODO rename. object name and arguments
+    //    /// \param pos
+    //    /// \return pointer to cm_box
+    //    ///
+    //    UIMessage* createMsg(std::string message, QPoint pos)
+    //    {
+    //        UIMessage *msg = new UIMessage((UIObject*)this);   //check
+    //        msg->setObjectData(message);
 
-//        msg->addInlet();
-//        msg->addOutlet();
+    //        msg->addInlet();
+    //        msg->addOutlet();
 
-//        connect(msg,&UIMessage::selectBox, this, &Canvas::s_SelectBox);
-//        connect(msg,&UIMessage::moveBox, this, &Canvas::s_MoveBox);
+    //        connect(msg,&UIMessage::selectBox, this, &Canvas::s_SelectBox);
+    //        connect(msg,&UIMessage::moveBox, this, &Canvas::s_MoveBox);
 
-//        msg->setEditModeRef(&this->editMode);
+    //        msg->setEditModeRef(&this->editMode);
 
-//        msg->move(pos);
+    //        msg->move(pos);
 
-//        this->objectBoxes.push_back(msg);
+    //        this->objectBoxes.push_back(msg);
 
-//        //temp
-//        t_object* new_obj = 0 ;
-//        if (!this->pdCanvas)
-//        {qDebug("bad pd canvas instance");}
-//        else
-//        {
-//            new_obj = cmp_create_message(this->pdCanvas, message, pos.x(), pos.y());
-//        }
+    //        //temp
+    //        t_object* new_obj = 0 ;
+    //        if (!this->pdCanvas)
+    //        {qDebug("bad pd canvas instance");}
+    //        else
+    //        {
+    //            new_obj = cmp_create_message(this->pdCanvas, message, pos.x(), pos.y());
+    //        }
 
-//        if (new_obj)
-//        {
-//            qDebug ("created msgbox %s | ptr %lu\n",  message.c_str(), (long)new_obj);
-//            msg->setPdObject(new_obj);
-//        }
-//        else
-//        {
-//            qDebug("Error: no such object %s",  message.c_str());
-//        }
+    //        if (new_obj)
+    //        {
+    //            qDebug ("created msgbox %s | ptr %lu\n",  message.c_str(), (long)new_obj);
+    //            msg->setPdObject(new_obj);
+    //        }
+    //        else
+    //        {
+    //            qDebug("Error: no such object %s",  message.c_str());
+    //        }
 
-//        msg->setPdMessage(message.c_str());
+    //        msg->setPdMessage(message.c_str());
 
-//        msg->show();
+    //        msg->show();
 
-//        return msg;
-
-
-//    }
+    //        return msg;
 
 
-//    ////
-//    /// \brief create new float box (ui.msg yet)
-//    /// \param pdObjectName TODO rename. object name and arguments
-//    /// \param pos
-//    /// \return pointer to cm_box
-//    ///
-//    UIFloat* createFloat(std::string message, QPoint pos)
-//    {
-//        UIFloat *flo = new UIFloat((UIObject*)this);   //check
-//        flo->setObjectData(message);
-
-//        flo->addInlet();
-//        flo->addOutlet();
-
-//        connect(flo,&UIFloat::selectBox, this, &Canvas::s_SelectBox);
-//        connect(flo,&UIFloat::moveBox, this, &Canvas::s_MoveBox);
-
-//        flo->setEditModeRef(&this->editMode);
-
-//        flo->move(pos);
-
-//        this->objectBoxes.push_back(flo);
-
-//        //temp
-//        t_object* new_obj = 0 ;
-//        if (!this->pdCanvas)
-//        {qDebug("bad pd canvas instance");}
-//        else
-//        {
-//            new_obj = cmp_create_message(this->pdCanvas, message, pos.x(), pos.y());
-//        }
-
-//        if (new_obj)
-//        {
-//            qDebug ("created msgbox %s | ptr %lu\n",  message.c_str(), (long)new_obj);
-//            flo->setPdObject(new_obj);
-//        }
-//        else
-//        {
-//            qDebug("Error: no such object %s",  message.c_str());
-//        }
-
-//        flo->setPdMessage(message.c_str());
-
-//        flo->show();
-
-//        return flo;
+    //    }
 
 
-//    }
+    //    ////
+    //    /// \brief create new float box (ui.msg yet)
+    //    /// \param pdObjectName TODO rename. object name and arguments
+    //    /// \param pos
+    //    /// \return pointer to cm_box
+    //    ///
+    //    UIFloat* createFloat(std::string message, QPoint pos)
+    //    {
+    //        UIFloat *flo = new UIFloat((UIObject*)this);   //check
+    //        flo->setObjectData(message);
+
+    //        flo->addInlet();
+    //        flo->addOutlet();
+
+    //        connect(flo,&UIFloat::selectBox, this, &Canvas::s_SelectBox);
+    //        connect(flo,&UIFloat::moveBox, this, &Canvas::s_MoveBox);
+
+    //        flo->setEditModeRef(&this->editMode);
+
+    //        flo->move(pos);
+
+    //        this->objectBoxes.push_back(flo);
+
+    //        //temp
+    //        t_object* new_obj = 0 ;
+    //        if (!this->pdCanvas)
+    //        {qDebug("bad pd canvas instance");}
+    //        else
+    //        {
+    //            new_obj = cmp_create_message(this->pdCanvas, message, pos.x(), pos.y());
+    //        }
+
+    //        if (new_obj)
+    //        {
+    //            qDebug ("created msgbox %s | ptr %lu\n",  message.c_str(), (long)new_obj);
+    //            flo->setPdObject(new_obj);
+    //        }
+    //        else
+    //        {
+    //            qDebug("Error: no such object %s",  message.c_str());
+    //        }
+
+    //        flo->setPdMessage(message.c_str());
+
+    //        flo->show();
+
+    //        return flo;
+
+
+    //    }
 
     ////
     /// \brief prototype for universal object 'constructor'
@@ -631,42 +803,81 @@ public:
 
         return obj;
 
-        //cm_object *obj = new cmo_float((cm_object*)this);   //check
+    }
+
+    ////
+    /// \brief TODO check. creates object box for subcanvas
+    /// \param canvas
+    /// \param objectData
+    /// \param pos
+    /// \return
+    ///
+    UIObject* createBoxForCanvas(Canvas* newCanvas, std::string objectData, QPoint pos)
+    {
+
+        //cleanup
+        UIObject *obj = (UIObject*) Canvas::newView(newCanvas, (UIObject*)this, ds_Box);
+
+        //test
+        //obj->setFixedWidth(40);
+
+        obj->setObjectData(objectData);
+
+        connect(obj,&UIMessage::selectBox, this, &Canvas::s_SelectBox);
+        connect(obj,&UIMessage::moveBox, this, &Canvas::s_MoveBox);
+
+        obj->setEditModeRef(&this->editMode);
+        obj->move(pos);
+        this->objectBoxes.push_back(obj);
+
+        QPalette Pal(palette());
+        Pal.setColor(QPalette::Background, QColor(240,240,240));
+        obj->setAutoFillBackground(true);
+        obj->setPalette(Pal);
+
+
+
+
+        obj->show();
+
+        qDebug() << "create subcanvas @" << QString(std::to_string((long)this->pdCanvas).c_str());
+
+        return obj;
 
     }
 
 
-//    ////
-//    /// \brief create new comment box (ui only)
-//    /// \param pdObjectName TODO rename. object name and arguments
-//    /// \param pos
-//    /// \return pointer to cm_box
-//    ///
-//    UIText* createText(std::string message, QPoint pos)
-//    {
-//        UIText *txt = new UIText((UIObject*)this);   //check
-//        txt->setObjectData(message);
+    //    ////
+    //    /// \brief create new comment box (ui only)
+    //    /// \param pdObjectName TODO rename. object name and arguments
+    //    /// \param pos
+    //    /// \return pointer to cm_box
+    //    ///
+    //    UIText* createText(std::string message, QPoint pos)
+    //    {
+    //        UIText *txt = new UIText((UIObject*)this);   //check
+    //        txt->setObjectData(message);
 
-//        //msg->addInlet();
-//        //msg->addOutlet();
+    //        //msg->addInlet();
+    //        //msg->addOutlet();
 
-//        connect(txt,&UIMessage::selectBox, this, &Canvas::s_SelectBox);
-//        connect(txt,&UIMessage::moveBox, this, &Canvas::s_MoveBox);
+    //        connect(txt,&UIMessage::selectBox, this, &Canvas::s_SelectBox);
+    //        connect(txt,&UIMessage::moveBox, this, &Canvas::s_MoveBox);
 
-//        txt->setEditModeRef(&this->editMode);
+    //        txt->setEditModeRef(&this->editMode);
 
-//        txt->move(pos);
+    //        txt->move(pos);
 
-//        this->objectBoxes.push_back(txt);
+    //        this->objectBoxes.push_back(txt);
 
-//        txt->setPdMessage(message.c_str());
+    //        txt->setPdMessage(message.c_str());
 
-//        txt->show();
+    //        txt->show();
 
-//        return txt;
+    //        return txt;
 
 
-//    }
+    //    }
 
     ////
     /// \brief creates patchcord
@@ -723,26 +934,26 @@ public:
         int n2 = ((Port*)inport)->portIndex;
         this->patchcord(obj1,n1,obj2,n2);
 
-//        Patchcord* pc = new Patchcord(obj1,outport,obj2,inport);
-//        cmp_patchcord((t_object*)obj1->getPdObject(),((Port*)outport)->portIndex,(t_object*)obj2->getPdObject(),((Port*)inport)->portIndex);
-//        //qDebug("no connection");
+        //        Patchcord* pc = new Patchcord(obj1,outport,obj2,inport);
+        //        cmp_patchcord((t_object*)obj1->getPdObject(),((Port*)outport)->portIndex,(t_object*)obj2->getPdObject(),((Port*)inport)->portIndex);
+        //        //qDebug("no connection");
 
-//        this->patchcords.push_back(pc);
+        //        this->patchcords.push_back(pc);
 
     }
 
 
     ////unused?
-        void deletePatchcord(Patchcord* pc)
-        {
-            // no repaint
+    void deletePatchcord(Patchcord* pc)
+    {
+        // no repaint
 
-            //cleanup !!!
-            patchcordVec::iterator it = std::find(this->patchcords.begin(), this->patchcords.end(), pc);
+        //cleanup !!!
+        patchcordVec::iterator it = std::find(this->patchcords.begin(), this->patchcords.end(), pc);
 
-            if (it != this->patchcords.end()) { this->patchcords.erase(it); }
+        if (it != this->patchcords.end()) { this->patchcords.erase(it); }
 
-        }
+    }
 
     //cm_patchcord* pc = new cm_patchcord(obj1,outport,obj2,inport);
 
@@ -881,6 +1092,25 @@ public:
         }
     }
 
+    void setObjectData(std::string objData)
+    {
+        if (this->drawStyle() == ds_Box)
+        {
+            UIObject::setObjectData(objData);
+
+            QFont myFont(PREF_QSTRING("Font"), 11);
+            QFontMetrics fm(myFont);
+            int new_w = fm.width(QString(objData.c_str())) + 10;
+            new_w = (new_w<25) ? 25 : new_w;
+            this->setFixedWidth(new_w);
+            this->setFixedHeight(20);
+
+            qDebug("obj width %i", new_w);
+            //
+            this->setInletsPos();
+            this->setOutletsPos();
+        }
+    }
 
     ////
     /// \brief set the show/hide grid flag
@@ -968,6 +1198,15 @@ public:
 
     }
 
+    ////
+    /// \brief change size to fit all objects
+    ///
+    void resizeToObjects()
+    {
+
+
+    }
+
 signals:
 
 public slots:
@@ -1003,7 +1242,14 @@ public slots:
         this->newLine.active = false;
         this->repaint();
     }
+
+
 private:
+
+private slots:
+    void editorDone();
+    void editorChanged();
+
 
 };
 

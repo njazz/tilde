@@ -11,7 +11,7 @@ PatchWindow::PatchWindow()
     this->scroll->setFrameShape(QFrame::NoFrame);
     this->scroll->setWidgetResizable(true);
 
-    this->canvas = new Canvas((UIWidget*)this->scroll);
+    this->canvas = new Canvas((UIObject*)this->scroll);
 
     this->setCentralWidget(this->canvas);
 
@@ -171,21 +171,42 @@ void PatchWindow::objectMakerDone()
     {
         //UIBox* b = this->canvas->createBox(obj_name, this->objectMaker->pos());
 
-        UIObject *b = this->canvas->createObject("ui.obj", obj_name, this->objectMaker->pos());
-        this->canvas->dragObject = 0;
-        this->objectMaker->close();
-
-
-        //subpatch
-
         QStringList atoms = QString(obj_name.c_str()).split( " " );
+
         if (atoms.at(0) == "pd")
         {
+            //fix here / replace with new canvas box
+            //UIObject *b = this->canvas->createObject("ui.obj", obj_name, this->objectMaker->pos());
+
+            //new
+
+            t_canvas* newPdCanvas = cmp_newpatch();
+            PatchWindow *subPatch = PatchWindow::newSubpatch((t_canvas*)newPdCanvas);
+
+
+            UIObject *b = this->canvas->createBoxForCanvas(subPatch->canvas, obj_name, this->objectMaker->pos());
+            ((UIBox*)b)->cmSubcanvas = (QMainWindow*)subPatch;
+
+
+            this->canvas->dragObject = 0;
+            this->objectMaker->close();
+
+
             qDebug("subpatch");
 
-            PatchWindow *subPatch = PatchWindow::newSubpatch((t_canvas*)b->pdObject());
-            ((UIBox*)b)->cmSubcanvas = (QMainWindow*)subPatch;
+
             subPatch->show();
+        }
+        else
+        {
+            UIObject *b = this->canvas->createObject("ui.obj", obj_name, this->objectMaker->pos());
+            this->canvas->dragObject = 0;
+            this->objectMaker->close();
+
+
+            //subpatch
+
+            QStringList atoms = QString(obj_name.c_str()).split( " " );
         }
     }
 

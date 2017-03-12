@@ -164,7 +164,7 @@ public:
                                 //prev window - parent patch
 
                                 //restore pd box
-                                if (list.size()>3)
+                                if (list.size()>2)
                                 {
                                     QString objname;
                                     QPoint pos;
@@ -182,6 +182,7 @@ public:
                                     qDebug() << "objname" << objname;
                                     //temporary
 
+                                    std::string objData = objList.join(" ").toStdString();
 
                                     if (objList.at(0) == "pd")
                                     {
@@ -189,10 +190,15 @@ public:
                                         {
                                             if (pdParserPrevWindow->canvas)
                                             {
-                                                UIBox *b1 = 0;
+//                                                UIBox *b1 = 0;
 
-                                                b1 = pdParserPrevWindow->canvas->restoreSubcanvas(objname.toStdString(), pos, pdParserWindow->canvas->pdCanvas);
-                                                b1->cmSubcanvas = pdParserWindow;
+//                                                b1 = pdParserPrevWindow->canvas->restoreSubcanvas(objname.toStdString(), pos, pdParserWindow->canvas->pdCanvas);
+//                                                b1->cmSubcanvas = pdParserWindow;
+
+                                                qDebug("restore");
+
+                                                pdParserPrevWindow->canvas->createBoxForCanvas(pdParserPrevWindow->canvas,objData, pos);
+
                                             }
                                         }
                                     }
