@@ -215,15 +215,18 @@ Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h...
 Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/cm_objectloader.h...
 Generating docs for fil/home/travis/build/njazz/qtpd/qtpd_gui/cm_pdlink.h:158: warning: The following parameters of cmp_connectUI(t_pd *obj, void *uiobj, t_updateUI func) are not documented:
   parameter 'uiobj'
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:612: warning: argument 'message' of command @param is not found in the argument list of cm::Canvas::createObject(std::string uiObjectName, std::string objectData, QPoint pos)
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:612: warning: The following parameters of cm::Canvas::createObject(std::string uiObjectName, std::string objectData, QPoint pos) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:808: warning: argument 'canvas' of command @param is not found in the argument list of cm::Canvas::createBoxForCanvas(Canvas *newCanvas, std::string objectData, QPoint pos)
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:808: warning: The following parameters of cm::Canvas::createBoxForCanvas(Canvas *newCanvas, std::string objectData, QPoint pos) are not documented:
+  parameter 'newCanvas'
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:784: warning: argument 'message' of command @param is not found in the argument list of cm::Canvas::createObject(std::string uiObjectName, std::string objectData, QPoint pos)
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:784: warning: The following parameters of cm::Canvas::createObject(std::string uiObjectName, std::string objectData, QPoint pos) are not documented:
   parameter 'uiObjectName'
   parameter 'objectData'
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:918: warning: argument 'patchcord' of command @param is not found in the argument list of cm::Canvas::findObjectIndex(UIObject *obj)
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:918: warning: The following parameters of cm::Canvas::findObjectIndex(UIObject *obj) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:1148: warning: argument 'patchcord' of command @param is not found in the argument list of cm::Canvas::findObjectIndex(UIObject *obj)
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:1148: warning: The following parameters of cm::Canvas::findObjectIndex(UIObject *obj) are not documented:
   parameter 'obj'
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:369: warning: argument 'pdObjectData' of command @param is not found in the argument list of cm::Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas *canvas)
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:369: warning: The following parameters of cm::Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas *canvas) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:541: warning: argument 'pdObjectData' of command @param is not found in the argument list of cm::Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas *canvas)
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:541: warning: The following parameters of cm::Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas *canvas) are not documented:
   parameter 'pdObjectName'
 /home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:122: warning: argument 'idx' of command @param is not found in the argument list of cm::UIObject::addInlet()
 /home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:150: warning: argument 'idx' of command @param is not found in the argument list of cm::UIObject::addOutlet()
@@ -310,6 +313,6 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-symbol cache used 482/65536 hits=26582 misses=482
-lookup cache used 936/65536 hits=4901 misses=964
+symbol cache used 506/65536 hits=28223 misses=506
+lookup cache used 967/65536 hits=5149 misses=995
 finished...

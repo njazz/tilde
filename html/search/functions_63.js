@@ -1,7 +1,7 @@
 var searchData=
 [
   ['cancelpatchcord',['cancelPatchcord',['../classcm_1_1_canvas.html#a1a9501ade5a1506d81c4874ebe874094',1,'cm::Canvas']]],
-  ['canvas',['Canvas',['../classcm_1_1_canvas.html#a97725fa9b9881963cc5c07b98425c69a',1,'cm::Canvas::Canvas(UIWidget *parent=0)'],['../classcm_1_1_canvas.html#a750cfb0b2eec9dc34def77ef6c192064',1,'cm::Canvas::Canvas(QWidget *parent=0)']]],
+  ['canvas',['Canvas',['../classcm_1_1_canvas.html#ac86ad9074e991d057dd83c25a159947b',1,'cm::Canvas']]],
   ['clear',['clear',['../classcm_1_1_clipboard.html#a52d498841c9ae5b7f039d74e58838448',1,'cm::Clipboard']]],
   ['clickpatchcords',['clickPatchcords',['../classcm_1_1_canvas.html#a31e1bd751116fb4853d3c941da997f24',1,'cm::Canvas']]],
   ['clipboard',['Clipboard',['../classcm_1_1_clipboard.html#a9b32139d4e29d5ca52862dee675b2185',1,'cm::Clipboard']]],
@@ -30,6 +30,7 @@ var searchData=
   ['connectsobject',['connectsObject',['../classcm_1_1_patchcord.html#a2d195bc505a5975fbf1a7af6f192f4ad',1,'cm::Patchcord']]],
   ['create',['create',['../classcm_1_1_u_i_property_list.html#a09f417acc7c9e0da0242fa32ae0b7ad8',1,'cm::UIPropertyList']]],
   ['createactions',['createActions',['../classcm_1_1_base_window.html#a39e8dd19b5d1da40ecc192368d5b9190',1,'cm::BaseWindow::createActions()'],['../classcm_1_1_patch_window.html#a39603c8deea46bbfe2a782a9c6c46e60',1,'cm::PatchWindow::createActions()']]],
+  ['createboxforcanvas',['createBoxForCanvas',['../classcm_1_1_canvas.html#ac66fd43b32fdf2a3972812de53fc0d74',1,'cm::Canvas']]],
   ['createmenus',['createMenus',['../classcm_1_1_base_window.html#ae166291858c8f651902846977edc00b9',1,'cm::BaseWindow::createMenus()'],['../classcm_1_1_patch_window.html#a3942a3aacbe85faece2718d294762c23',1,'cm::PatchWindow::createMenus()']]],
   ['createobject',['createObject',['../classcm_1_1_canvas.html#a4300009cd6b822e26b672c7881fee4d0',1,'cm::Canvas::createObject()'],['../classcm_1_1_object_loader.html#a1eb8184c6f0a5c0770b9d81dea676510',1,'cm::ObjectLoader::createObject()'],['../classcm_1_1_u_i_bang.html#a71df5198a2b1c99179e32fdaba0e3f9b',1,'cm::UIBang::createObject()'],['../classcm_1_1_u_i_box.html#a88cb253bdca57d2e41db6d3434f281b7',1,'cm::UIBox::createObject()'],['../classcm_1_1_u_i_float.html#a6bcc2dd96a1fe50642bb9f1df1078d68',1,'cm::UIFloat::createObject()'],['../classcm_1_1_u_i_message.html#a5f1c0998a90512c373bdcf91ed5ae2ad',1,'cm::UIMessage::createObject()'],['../classcm_1_1_u_i_text.html#afb9da697ca75f78f9b678bc90f528406',1,'cm::UIText::createObject()'],['../classcm_1_1_u_i_toggle.html#a569e65c06a522791dacce2a8836740f1',1,'cm::UIToggle::createObject()']]]
 ];

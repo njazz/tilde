@@ -116,13 +116,14 @@ Inheritance diagram for cm::UIObject:</div>
  <div class="center">
   <img src="classcm_1_1_u_i_object.png" usemap="#cm::UIObject_map" alt=""/>
   <map id="cm::UIObject_map" name="cm::UIObject_map">
-<area href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas" alt="cm::UIWidget" shape="rect" coords="265,0,361,24"/>
-<area href="classcm_1_1_u_i_bang.html" title="gui object: message box (ui.msg)" alt="cm::UIBang" shape="rect" coords="0,112,96,136"/>
-<area href="classcm_1_1_u_i_box.html" title="gui object: standard object box" alt="cm::UIBox" shape="rect" coords="106,112,202,136"/>
-<area href="classcm_1_1_u_i_float.html" title="gui object: float number box (ui.float)" alt="cm::UIFloat" shape="rect" coords="212,112,308,136"/>
-<area href="classcm_1_1_u_i_message.html" title="gui object: message box (ui.msg)" alt="cm::UIMessage" shape="rect" coords="318,112,414,136"/>
-<area href="classcm_1_1_u_i_text.html" title="gui object: comment box (ui.text)" alt="cm::UIText" shape="rect" coords="424,112,520,136"/>
-<area href="classcm_1_1_u_i_toggle.html" title="gui object: message box (ui.msg)" alt="cm::UIToggle" shape="rect" coords="530,112,626,136"/>
+<area href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas" alt="cm::UIWidget" shape="rect" coords="318,0,414,24"/>
+<area href="classcm_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects" alt="cm::Canvas" shape="rect" coords="0,112,96,136"/>
+<area href="classcm_1_1_u_i_bang.html" title="gui object: message box (ui.msg)" alt="cm::UIBang" shape="rect" coords="106,112,202,136"/>
+<area href="classcm_1_1_u_i_box.html" title="gui object: standard object box" alt="cm::UIBox" shape="rect" coords="212,112,308,136"/>
+<area href="classcm_1_1_u_i_float.html" title="gui object: float number box (ui.float)" alt="cm::UIFloat" shape="rect" coords="318,112,414,136"/>
+<area href="classcm_1_1_u_i_message.html" title="gui object: message box (ui.msg)" alt="cm::UIMessage" shape="rect" coords="424,112,520,136"/>
+<area href="classcm_1_1_u_i_text.html" title="gui object: comment box (ui.text)" alt="cm::UIText" shape="rect" coords="530,112,626,136"/>
+<area href="classcm_1_1_u_i_toggle.html" title="gui object: message box (ui.msg)" alt="cm::UIToggle" shape="rect" coords="636,112,732,136"/>
 </map>
  </div></div>
 
@@ -153,8 +154,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns 1 if signal~  <a href="#a83fe02d91f6512fdf13dcb45452494cd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#aa5b8ec7c907d0002e2973dcb5b754911">outletType</a> (int idx)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns 1 if signal~  <a href="#aa5b8ec7c907d0002e2973dcb5b754911"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#a42cd816b2e061057104f1e1ade6b8a71">setObjectData</a> (std::string objData)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets object text data  <a href="#a42cd816b2e061057104f1e1ade6b8a71"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#aa8477317f76d41139681df5bf210c833">setObjectData</a> (std::string objData)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets object text data  <a href="#aa8477317f76d41139681df5bf210c833"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#a4dfba5f783dde18c19b3ce750ccfead8">autoResize</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">call this after setting object data  <a href="#a4dfba5f783dde18c19b3ce750ccfead8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#a386b924f67213bc650da2e8c107b03d6">objectData</a> ()</td></tr>
@@ -265,7 +266,7 @@ Public Member Functions</h2></td></tr>
 <p>returns object's text for client-based file saving </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Reimplemented in <a class="el" href="classcm_1_1_u_i_message.html#a263b6e69ef28c7ce5fe0d3359107b3f9">cm::UIMessage</a>, <a class="el" href="classcm_1_1_u_i_toggle.html#aa0bce94d5f3f1834922ad7401f89d06a">cm::UIToggle</a>, <a class="el" href="classcm_1_1_u_i_float.html#ae9ea462ceda2744f16f71edf5314f729">cm::UIFloat</a>, <a class="el" href="classcm_1_1_u_i_bang.html#a279d36589232ddd58bb5c9af469f4b58">cm::UIBang</a>, and <a class="el" href="classcm_1_1_u_i_text.html#aa5eb654034f6bf2ae640303af6ee2ba5">cm::UIText</a>.</p>
+<p>Reimplemented in <a class="el" href="classcm_1_1_canvas.html#ac798d3f35a088a37e8286dd75c119fbe">cm::Canvas</a>, <a class="el" href="classcm_1_1_u_i_message.html#a263b6e69ef28c7ce5fe0d3359107b3f9">cm::UIMessage</a>, <a class="el" href="classcm_1_1_u_i_toggle.html#aa0bce94d5f3f1834922ad7401f89d06a">cm::UIToggle</a>, <a class="el" href="classcm_1_1_u_i_float.html#ae9ea462ceda2744f16f71edf5314f729">cm::UIFloat</a>, <a class="el" href="classcm_1_1_u_i_bang.html#a279d36589232ddd58bb5c9af469f4b58">cm::UIBang</a>, and <a class="el" href="classcm_1_1_u_i_text.html#aa5eb654034f6bf2ae640303af6ee2ba5">cm::UIText</a>.</p>
 
 </div>
 </div>
@@ -669,16 +670,16 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a42cd816b2e061057104f1e1ade6b8a71"></a><!-- doxytag: member="cm::UIObject::setObjectData" ref="a42cd816b2e061057104f1e1ade6b8a71" args="(std::string objData)" -->
+<a class="anchor" id="aa8477317f76d41139681df5bf210c833"></a><!-- doxytag: member="cm::UIObject::setObjectData" ref="aa8477317f76d41139681df5bf210c833" args="(std::string objData)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classcm_1_1_u_i_object.html#a42cd816b2e061057104f1e1ade6b8a71">cm::UIObject::setObjectData</a> </td>
+          <td class="memname">virtual void <a class="el" href="classcm_1_1_u_i_object.html#aa8477317f76d41139681df5bf210c833">cm::UIObject::setObjectData</a> </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>objData</em></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td><code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -686,6 +687,8 @@ Public Member Functions</h2></td></tr>
 
 <p>sets object text data </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Reimplemented in <a class="el" href="classcm_1_1_canvas.html#aaf2b376261f8b0a234c949437b646339">cm::Canvas</a>.</p>
 
 </div>
 </div>
@@ -765,7 +768,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 12 2017 00:01:08 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 12 2017 20:55:11 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

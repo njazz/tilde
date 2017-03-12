@@ -101,12 +101,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">cm::Canvas Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="cm::Canvas" --><!-- doxytag: inherits="cm::UIWidget" -->
+<!-- doxytag: class="cm::Canvas" --><!-- doxytag: inherits="cm::UIObject" -->
 <p>'t_canvas' counterpart. creates objects  
  <a href="classcm_1_1_canvas.html#details">More...</a></p>
 
@@ -117,6 +118,7 @@ Inheritance diagram for cm::Canvas:</div>
  <div class="center">
   <img src="classcm_1_1_canvas.png" usemap="#cm::Canvas_map" alt=""/>
   <map id="cm::Canvas_map" name="cm::Canvas_map">
+<area href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special" alt="cm::UIObject" shape="rect" coords="0,56,83,80"/>
 <area href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas" alt="cm::UIWidget" shape="rect" coords="0,0,83,24"/>
 </map>
  </div></div>
@@ -137,10 +139,15 @@ Public Slots</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">cancels patchcord creation  <a href="#a1a9501ade5a1506d81c4874ebe874094"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a97725fa9b9881963cc5c07b98425c69a">Canvas</a> (<a class="el" href="classcm_1_1_u_i_widget.html">UIWidget</a> *parent=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a750cfb0b2eec9dc34def77ef6c192064">Canvas</a> (QWidget *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#ac86ad9074e991d057dd83c25a159947b">Canvas</a> (<a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a5ba5c6d8eb8d084fff1b2cb34f00df9c">setDrawStyle</a> (<a class="el" href="namespacecm.html#a6c838d65e47f09497b9a053ab1f11494">canvasDrawStyle</a> ds)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacecm.html#a6c838d65e47f09497b9a053ab1f11494">canvasDrawStyle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a6c59558dcf19b70e5bdc709eba594815">drawStyle</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a19d70870858870b187187a056a3d3838">paintEvent</a> (QPaintEvent *)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">main paint routine  <a href="#a19d70870858870b187187a056a3d3838"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#af5acf7b81b84e03cda1a162f469d0916">drawCanvas</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">draws canvas contents  <a href="#af5acf7b81b84e03cda1a162f469d0916"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#ac8079ec975ac4d8378355f074c092847">drawObjectBox</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">draw object box for the canvas  <a href="#ac8079ec975ac4d8378355f074c092847"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a4501250dc644db6e4c6b725ce2442f0d">paintPatchcords</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">paint patchcords  <a href="#a4501250dc644db6e4c6b725ce2442f0d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a647b8c144878c152b4801ba530533680">hoverPatchcords</a> (QPoint pos)</td></tr>
@@ -150,17 +157,31 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a31e1bd751116fb4853d3c941da997f24">clickPatchcords</a> (QPoint pos)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">marks clicked patchcord  <a href="#a31e1bd751116fb4853d3c941da997f24"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#ad32a9ca3251c0ff8945ba3c970c31fb9">mouseMoveEvent</a> (QMouseEvent *ev)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">mouse move handling  <a href="#ad32a9ca3251c0ff8945ba3c970c31fb9"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">route mouse move handling for different vis types  <a href="#ad32a9ca3251c0ff8945ba3c970c31fb9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#aebd8a16716f96fd590e97bee3847ce08">mousePressEvent</a> (QMouseEvent *ev)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">mouse down handling  <a href="#aebd8a16716f96fd590e97bee3847ce08"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#abcc8fd79096b6d4fd64b143e17f127da">mouseReleaseEvent</a> (QMouseEvent *)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">mouse up handling  <a href="#abcc8fd79096b6d4fd64b143e17f127da"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">route mouse press handling for different vis types  <a href="#aebd8a16716f96fd590e97bee3847ce08"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a757d76d0d26ebcaa4bcfd9501a6754e7">mouseReleaseEvent</a> (QMouseEvent *ev)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">route mouse release handling for different vis types  <a href="#a757d76d0d26ebcaa4bcfd9501a6754e7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a0af78045857c1b9efe91d84804fa398d">mouseMoveEventForCanvas</a> (QMouseEvent *ev)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">mouse move handling  <a href="#a0af78045857c1b9efe91d84804fa398d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a3dcab4ac747553068ebad14d4bdfdc0e">mousePressEventForCanvas</a> (QMouseEvent *ev)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">mouse down handling for <a class="el" href="classcm_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>  <a href="#a3dcab4ac747553068ebad14d4bdfdc0e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a89a152eb1e282a33abfd220ea6b42fc2">mouseReleaseEventForCanvas</a> (QMouseEvent *)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">mouse up handling  <a href="#a89a152eb1e282a33abfd220ea6b42fc2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#aa29314eadbe70ff85e0bea55073ec785">mousePressEventForBox</a> (QMouseEvent *ev)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">mouse down ForBox  <a href="#aa29314eadbe70ff85e0bea55073ec785"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#acea419625b9934af891030313070bce7">mouseReleaseEventForBox</a> (QMouseEvent *)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">mouse up ForBox  <a href="#acea419625b9934af891030313070bce7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a3c9b98082a007d95267edab0710a6a46">mouseMoveEventForBox</a> (QMouseEvent *event)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">mouse move ForBox  <a href="#a3c9b98082a007d95267edab0710a6a46"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a778eed76ee578ce93ab149d489147760">deselectBoxes</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">deselect all object boxes  <a href="#a778eed76ee578ce93ab149d489147760"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcm_1_1_u_i_box.html">UIBox</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a272a3024a0662b07f91f0dbc2ae57fdb">restoreSubcanvas</a> (std::string pdObjectName, QPoint pos, t_canvas *canvas)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">restore "pd" object when loading from file  <a href="#a272a3024a0662b07f91f0dbc2ae57fdb"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a4300009cd6b822e26b672c7881fee4d0">createObject</a> (std::string uiObjectName, std::string objectData, QPoint pos)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a4300009cd6b822e26b672c7881fee4d0">createObject</a> (std::string uiObjectName, std::string <a class="el" href="classcm_1_1_u_i_object.html#a386b924f67213bc650da2e8c107b03d6">objectData</a>, QPoint pos)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">prototype for universal object 'constructor'  <a href="#a4300009cd6b822e26b672c7881fee4d0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#ac66fd43b32fdf2a3972812de53fc0d74">createBoxForCanvas</a> (<a class="el" href="classcm_1_1_canvas.html">Canvas</a> *newCanvas, std::string <a class="el" href="classcm_1_1_u_i_object.html#a386b924f67213bc650da2e8c107b03d6">objectData</a>, QPoint pos)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">TODO check. creates object box for subcanvas.  <a href="#ac66fd43b32fdf2a3972812de53fc0d74"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a24db3dbfed7d2801f397a560e3eb3729">patchcord</a> (<a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *obj1, int outlet, <a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *obj2, int inlet)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates patchcord  <a href="#a24db3dbfed7d2801f397a560e3eb3729"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a7b7f2034b77ae87e3adc8627e02ee77e">patchcord</a> (<a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *obj1, <a class="el" href="classcm_1_1_u_i_widget.html">UIWidget</a> *outport, <a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *obj2, <a class="el" href="classcm_1_1_u_i_widget.html">UIWidget</a> *inport)</td></tr>
@@ -180,6 +201,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get edit mode flag  <a href="#a1c94aab3160a86ad1083413ca831d24a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a39c75aa337290c7b1157d4ac7144f217">getObjectByIndex</a> (int idx)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns object by index - this is needed by parser  <a href="#a39c75aa337290c7b1157d4ac7144f217"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#aaf2b376261f8b0a234c949437b646339">setObjectData</a> (std::string objData)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets object text data  <a href="#aaf2b376261f8b0a234c949437b646339"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#ac2eac4ed2f2bdc5eee0544143847eab8">setGridEnabled</a> (bool val)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">set the show/hide grid flag  <a href="#ac2eac4ed2f2bdc5eee0544143847eab8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a885e83ef501901e03b0e3b7b32bf977a">setGridSnap</a> (bool val)</td></tr>
@@ -190,7 +213,13 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#ac101a00bbd2f856dd6639a6ab3e1b356">findObjectIndex</a> (<a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">converts object pointers to their numbers in canvas and returns pd string for filesaver  <a href="#ac101a00bbd2f856dd6639a6ab3e1b356"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#ac798d3f35a088a37e8286dd75c119fbe">asPdFileString</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns object's text for client-based file saving  <a href="#ac798d3f35a088a37e8286dd75c119fbe"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#ad31cd1c8b89e95b56eb6f633a61fdba6">getPatchcordAsString</a> (<a class="el" href="classcm_1_1_patchcord.html">Patchcord</a> *<a class="el" href="classcm_1_1_canvas.html#a24db3dbfed7d2801f397a560e3eb3729">patchcord</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a5bd124a61eafeb9e114e2a65b77c97e3">resizeToObjects</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">change size to fit all objects  <a href="#a5bd124a61eafeb9e114e2a65b77c97e3"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classcm_1_1_canvas.html">Canvas</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#ac4041536615159af4051fd1d085e5901">newView</a> (<a class="el" href="classcm_1_1_canvas.html">Canvas</a> *srcCanvas, <a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *parentCanvas, <a class="el" href="namespacecm.html#a6c838d65e47f09497b9a053ab1f11494">canvasDrawStyle</a> dStyle)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a606fde5bd5e21aaaefa0fdfae00b7213">dragObject</a></td></tr>
@@ -200,31 +229,14 @@ Public Attributes</h2></td></tr>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>'t_canvas' counterpart. creates objects </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a97725fa9b9881963cc5c07b98425c69a"></a><!-- doxytag: member="cm::Canvas::Canvas" ref="a97725fa9b9881963cc5c07b98425c69a" args="(UIWidget *parent=0)" -->
+<a class="anchor" id="ac86ad9074e991d057dd83c25a159947b"></a><!-- doxytag: member="cm::Canvas::Canvas" ref="ac86ad9074e991d057dd83c25a159947b" args="(UIObject *parent=0)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcm_1_1_canvas.html#a97725fa9b9881963cc5c07b98425c69a">cm::Canvas::Canvas</a> </td>
+          <td class="memname"><a class="el" href="classcm_1_1_canvas.html#ac86ad9074e991d057dd83c25a159947b">cm::Canvas::Canvas</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classcm_1_1_u_i_widget.html">UIWidget</a> *&#160;</td>
-          <td class="paramname"><em>parent</em> = <code>0</code></td><td>)</td>
-          <td><code> [explicit]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a750cfb0b2eec9dc34def77ef6c192064"></a><!-- doxytag: member="cm::Canvas::Canvas" ref="a750cfb0b2eec9dc34def77ef6c192064" args="(QWidget *parent=0)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classcm_1_1_canvas.html#a97725fa9b9881963cc5c07b98425c69a">cm::Canvas::Canvas</a> </td>
-          <td>(</td>
-          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramtype"><a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *&#160;</td>
           <td class="paramname"><em>parent</em> = <code>0</code></td><td>)</td>
           <td><code> [explicit]</code></td>
         </tr>
@@ -248,6 +260,11 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>returns object's text for client-based file saving </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Reimplemented from <a class="el" href="classcm_1_1_u_i_object.html#a81c1405a3586d544c5581f193357a2a8">cm::UIObject</a>.</p>
 
 </div>
 </div>
@@ -292,6 +309,50 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>true if there was a patchcord </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac66fd43b32fdf2a3972812de53fc0d74"></a><!-- doxytag: member="cm::Canvas::createBoxForCanvas" ref="ac66fd43b32fdf2a3972812de53fc0d74" args="(Canvas *newCanvas, std::string objectData, QPoint pos)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcm_1_1_u_i_object.html">UIObject</a>* <a class="el" href="classcm_1_1_canvas.html#ac66fd43b32fdf2a3972812de53fc0d74">cm::Canvas::createBoxForCanvas</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcm_1_1_canvas.html">Canvas</a> *&#160;</td>
+          <td class="paramname"><em>newCanvas</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>objectData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QPoint&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>TODO check. creates object box for subcanvas. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">canvas</td><td></td></tr>
+    <tr><td class="paramname">objectData</td><td></td></tr>
+    <tr><td class="paramname">pos</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -456,6 +517,58 @@ Public Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>deselect all object boxes </p>
+
+</div>
+</div>
+<a class="anchor" id="af5acf7b81b84e03cda1a162f469d0916"></a><!-- doxytag: member="cm::Canvas::drawCanvas" ref="af5acf7b81b84e03cda1a162f469d0916" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcm_1_1_canvas.html#af5acf7b81b84e03cda1a162f469d0916">cm::Canvas::drawCanvas</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>draws canvas contents </p>
+
+</div>
+</div>
+<a class="anchor" id="ac8079ec975ac4d8378355f074c092847"></a><!-- doxytag: member="cm::Canvas::drawObjectBox" ref="ac8079ec975ac4d8378355f074c092847" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcm_1_1_canvas.html#ac8079ec975ac4d8378355f074c092847">cm::Canvas::drawObjectBox</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>draw object box for the canvas </p>
+
+</div>
+</div>
+<a class="anchor" id="a6c59558dcf19b70e5bdc709eba594815"></a><!-- doxytag: member="cm::Canvas::drawStyle" ref="a6c59558dcf19b70e5bdc709eba594815" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacecm.html#a6c838d65e47f09497b9a053ab1f11494">canvasDrawStyle</a> <a class="el" href="classcm_1_1_canvas.html#a6c59558dcf19b70e5bdc709eba594815">cm::Canvas::drawStyle</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
 </div>
 </div>
@@ -643,6 +756,56 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>route mouse move handling for different vis types </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ev</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a3c9b98082a007d95267edab0710a6a46"></a><!-- doxytag: member="cm::Canvas::mouseMoveEventForBox" ref="a3c9b98082a007d95267edab0710a6a46" args="(QMouseEvent *event)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcm_1_1_canvas.html#a3c9b98082a007d95267edab0710a6a46">cm::Canvas::mouseMoveEventForBox</a> </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>mouse move ForBox </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0af78045857c1b9efe91d84804fa398d"></a><!-- doxytag: member="cm::Canvas::mouseMoveEventForCanvas" ref="a0af78045857c1b9efe91d84804fa398d" args="(QMouseEvent *ev)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcm_1_1_canvas.html#a0af78045857c1b9efe91d84804fa398d">cm::Canvas::mouseMoveEventForCanvas</a> </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *&#160;</td>
+          <td class="paramname"><em>ev</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
 <p>mouse move handling </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -668,7 +831,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>mouse down handling </p>
+<p>route mouse press handling for different vis types </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">ev</td><td></td></tr>
@@ -678,12 +841,106 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="abcc8fd79096b6d4fd64b143e17f127da"></a><!-- doxytag: member="cm::Canvas::mouseReleaseEvent" ref="abcc8fd79096b6d4fd64b143e17f127da" args="(QMouseEvent *)" -->
+<a class="anchor" id="aa29314eadbe70ff85e0bea55073ec785"></a><!-- doxytag: member="cm::Canvas::mousePressEventForBox" ref="aa29314eadbe70ff85e0bea55073ec785" args="(QMouseEvent *ev)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classcm_1_1_canvas.html#abcc8fd79096b6d4fd64b143e17f127da">cm::Canvas::mouseReleaseEvent</a> </td>
+          <td class="memname">void <a class="el" href="classcm_1_1_canvas.html#aa29314eadbe70ff85e0bea55073ec785">cm::Canvas::mousePressEventForBox</a> </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *&#160;</td>
+          <td class="paramname"><em>ev</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>mouse down ForBox </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ev</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a3dcab4ac747553068ebad14d4bdfdc0e"></a><!-- doxytag: member="cm::Canvas::mousePressEventForCanvas" ref="a3dcab4ac747553068ebad14d4bdfdc0e" args="(QMouseEvent *ev)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcm_1_1_canvas.html#a3dcab4ac747553068ebad14d4bdfdc0e">cm::Canvas::mousePressEventForCanvas</a> </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *&#160;</td>
+          <td class="paramname"><em>ev</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>mouse down handling for <a class="el" href="classcm_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a> </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ev</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a757d76d0d26ebcaa4bcfd9501a6754e7"></a><!-- doxytag: member="cm::Canvas::mouseReleaseEvent" ref="a757d76d0d26ebcaa4bcfd9501a6754e7" args="(QMouseEvent *ev)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcm_1_1_canvas.html#a757d76d0d26ebcaa4bcfd9501a6754e7">cm::Canvas::mouseReleaseEvent</a> </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *&#160;</td>
+          <td class="paramname"><em>ev</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>route mouse release handling for different vis types </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ev</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="acea419625b9934af891030313070bce7"></a><!-- doxytag: member="cm::Canvas::mouseReleaseEventForBox" ref="acea419625b9934af891030313070bce7" args="(QMouseEvent *)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcm_1_1_canvas.html#acea419625b9934af891030313070bce7">cm::Canvas::mouseReleaseEventForBox</a> </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>mouse up ForBox </p>
+
+</div>
+</div>
+<a class="anchor" id="a89a152eb1e282a33abfd220ea6b42fc2"></a><!-- doxytag: member="cm::Canvas::mouseReleaseEventForCanvas" ref="a89a152eb1e282a33abfd220ea6b42fc2" args="(QMouseEvent *)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcm_1_1_canvas.html#a89a152eb1e282a33abfd220ea6b42fc2">cm::Canvas::mouseReleaseEventForCanvas</a> </td>
           <td>(</td>
           <td class="paramtype">QMouseEvent *&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -694,6 +951,39 @@ Public Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>mouse up handling </p>
+
+</div>
+</div>
+<a class="anchor" id="ac4041536615159af4051fd1d085e5901"></a><!-- doxytag: member="cm::Canvas::newView" ref="ac4041536615159af4051fd1d085e5901" args="(Canvas *srcCanvas, UIObject *parentCanvas, canvasDrawStyle dStyle)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classcm_1_1_canvas.html">Canvas</a>* <a class="el" href="classcm_1_1_canvas.html#ac4041536615159af4051fd1d085e5901">cm::Canvas::newView</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcm_1_1_canvas.html">Canvas</a> *&#160;</td>
+          <td class="paramname"><em>srcCanvas</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *&#160;</td>
+          <td class="paramname"><em>parentCanvas</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacecm.html#a6c838d65e47f09497b9a053ab1f11494">canvasDrawStyle</a>&#160;</td>
+          <td class="paramname"><em>dStyle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
 </div>
 </div>
@@ -831,6 +1121,24 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="a5bd124a61eafeb9e114e2a65b77c97e3"></a><!-- doxytag: member="cm::Canvas::resizeToObjects" ref="a5bd124a61eafeb9e114e2a65b77c97e3" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcm_1_1_canvas.html#a5bd124a61eafeb9e114e2a65b77c97e3">cm::Canvas::resizeToObjects</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>change size to fit all objects </p>
 
 </div>
 </div>
@@ -1055,6 +1363,23 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a5ba5c6d8eb8d084fff1b2cb34f00df9c"></a><!-- doxytag: member="cm::Canvas::setDrawStyle" ref="a5ba5c6d8eb8d084fff1b2cb34f00df9c" args="(canvasDrawStyle ds)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcm_1_1_canvas.html#a5ba5c6d8eb8d084fff1b2cb34f00df9c">cm::Canvas::setDrawStyle</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacecm.html#a6c838d65e47f09497b9a053ab1f11494">canvasDrawStyle</a>&#160;</td>
+          <td class="paramname"><em>ds</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a46331a593d63e1ba3d11de9ee3913a56"></a><!-- doxytag: member="cm::Canvas::setEditMode" ref="a46331a593d63e1ba3d11de9ee3913a56" args="(t_editMode mode)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1130,6 +1455,28 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aaf2b376261f8b0a234c949437b646339"></a><!-- doxytag: member="cm::Canvas::setObjectData" ref="aaf2b376261f8b0a234c949437b646339" args="(std::string objData)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcm_1_1_canvas.html#aaf2b376261f8b0a234c949437b646339">cm::Canvas::setObjectData</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>objData</em></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>sets object text data </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Reimplemented from <a class="el" href="classcm_1_1_u_i_object.html#aa8477317f76d41139681df5bf210c833">cm::UIObject</a>.</p>
+
+</div>
+</div>
 <hr/><h2>Member Data Documentation</h2>
 <a class="anchor" id="a606fde5bd5e21aaaefa0fdfae00b7213"></a><!-- doxytag: member="cm::Canvas::dragObject" ref="a606fde5bd5e21aaaefa0fdfae00b7213" args="" -->
 <div class="memitem">
@@ -1192,7 +1539,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 12 2017 00:01:08 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 12 2017 20:55:11 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

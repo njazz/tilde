@@ -8,5 +8,6 @@ var searchData=
   ['newobjectbox',['newObjectBox',['../classcm_1_1_patch_window.html#a60826555b736d69ef5688eebc4d375d5',1,'cm::PatchWindow']]],
   ['newsubpatch',['newSubpatch',['../classcm_1_1_patch_window.html#a222447f0df64274c0995fef86e5463bb',1,'cm::PatchWindow']]],
   ['newtogglebox',['newToggleBox',['../classcm_1_1_patch_window.html#aa47ebb5351718dcfef60322af9911e50',1,'cm::PatchWindow']]],
+  ['newview',['newView',['../classcm_1_1_canvas.html#ac4041536615159af4051fd1d085e5901',1,'cm::Canvas']]],
   ['newwindow',['newWindow',['../classcm_1_1_patch_window.html#a4b86cb1a56afcbbc8e5117e69cc65444',1,'cm::PatchWindow']]]
 ];

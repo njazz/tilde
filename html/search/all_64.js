@@ -11,5 +11,11 @@ var searchData=
   ['deselect',['deselect',['../classcm_1_1_u_i_widget.html#ae4b9236b24293454621d1eb1e56e9d1c',1,'cm::UIWidget']]],
   ['deselectboxes',['deselectBoxes',['../classcm_1_1_canvas.html#a778eed76ee578ce93ab149d489147760',1,'cm::Canvas']]],
   ['dragobject',['dragObject',['../classcm_1_1_canvas.html#a606fde5bd5e21aaaefa0fdfae00b7213',1,'cm::Canvas']]],
-  ['dragoffset',['dragOffset',['../classcm_1_1_u_i_widget.html#abbdced5d563d6bee223750b009267b53',1,'cm::UIWidget']]]
+  ['dragoffset',['dragOffset',['../classcm_1_1_u_i_widget.html#abbdced5d563d6bee223750b009267b53',1,'cm::UIWidget']]],
+  ['drawcanvas',['drawCanvas',['../classcm_1_1_canvas.html#af5acf7b81b84e03cda1a162f469d0916',1,'cm::Canvas']]],
+  ['drawobjectbox',['drawObjectBox',['../classcm_1_1_canvas.html#ac8079ec975ac4d8378355f074c092847',1,'cm::Canvas']]],
+  ['drawstyle',['drawStyle',['../classcm_1_1_canvas.html#a6c59558dcf19b70e5bdc709eba594815',1,'cm::Canvas']]],
+  ['ds_5fbox',['ds_Box',['../namespacecm.html#a6c838d65e47f09497b9a053ab1f11494a5c8ff49c5008868823017c36ee023591',1,'cm']]],
+  ['ds_5fcanvas',['ds_Canvas',['../namespacecm.html#a6c838d65e47f09497b9a053ab1f11494ad4d11f5d22e3bd455455e056005f5505',1,'cm']]],
+  ['ds_5fcanvasinbox',['ds_CanvasInBox',['../namespacecm.html#a6c838d65e47f09497b9a053ab1f11494aee6ca2d84c983041a93e7e9c92f988fb',1,'cm']]]
 ];
