@@ -47,9 +47,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -303,15 +305,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00226"></a>00226         }
 <a name="l00227"></a>00227     }
 <a name="l00228"></a>00228 
-<a name="l00229"></a><a class="code" href="classcm_1_1_u_i_message.html#adb4dba45dd02b142d552d26021627f5a">00229</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_u_i_message.html#adb4dba45dd02b142d552d26021627f5a">updateUI</a>(<span class="keywordtype">void</span>* uiobj, ceammc::AtomList msg)
+<a name="l00229"></a><a class="code" href="classcm_1_1_u_i_message.html#adb4dba45dd02b142d552d26021627f5a">00229</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_u_i_message.html#adb4dba45dd02b142d552d26021627f5a">updateUI</a>(<span class="keywordtype">void</span>* uiobj, <a class="code" href="classceammc_1_1_atom_list.html">ceammc::AtomList</a> msg)
 <a name="l00230"></a>00230     {
 <a name="l00231"></a>00231         qDebug(<span class="stringliteral">&quot;update ui&quot;</span>);
 <a name="l00232"></a>00232         <a class="code" href="classcm_1_1_u_i_message.html" title="gui object: message box (ui.msg)">UIMessage</a> *x = (<a class="code" href="classcm_1_1_u_i_message.html" title="gui object: message box (ui.msg)">UIMessage</a>*)uiobj;
 <a name="l00233"></a>00233 
 <a name="l00234"></a>00234         std::string obj_data;
-<a name="l00235"></a>00235         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;msg.size();i++)
+<a name="l00235"></a>00235         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;msg.<a class="code" href="classceammc_1_1_atom_list.html#ad52fdc5b4f54329460495caa1b00d1ac">size</a>();i++)
 <a name="l00236"></a>00236         {
-<a name="l00237"></a>00237             obj_data += msg.at(i).asString() + <span class="stringliteral">&quot; &quot;</span>;
+<a name="l00237"></a>00237             obj_data += msg.<a class="code" href="classceammc_1_1_atom_list.html#aa2d99dac15a5a5fe7afa41a38f2aeece" title="returns reference to element at specified position">at</a>(i).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>() + <span class="stringliteral">&quot; &quot;</span>;
 <a name="l00238"></a>00238         }
 <a name="l00239"></a>00239 
 <a name="l00240"></a>00240         x-&gt;<a class="code" href="classcm_1_1_u_i_object.html#aa8477317f76d41139681df5bf210c833" title="sets object text data">setObjectData</a>(obj_data);
@@ -350,7 +352,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -362,7 +364,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 12 2017 22:37:21 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 12 2017 22:43:47 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

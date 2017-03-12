@@ -1,7 +1,20 @@
 var searchData=
 [
+  ['s_5ftype',['s_type',['../structui__display.html#a9bc0bf4a1c698cee0b469f9dce51fe8c',1,'ui_display']]],
+  ['s_5fvalue',['s_value',['../structui__display.html#a44b110b7e2161c9541f2d3beac32a259',1,'ui_display']]],
   ['saveact',['saveAct',['../classcm_1_1_base_window.html#ac3f5f9b024593648ac40de6fe8910897',1,'cm::BaseWindow']]],
   ['saveasact',['saveAsAct',['../classcm_1_1_base_window.html#a17fd8e749f41b4f4bfcc06cf6cd01f47',1,'cm::BaseWindow']]],
-  ['selected',['selected',['../classcm_1_1_patchcord.html#afab1449d3251a251cdcf169c8f9a8acc',1,'cm::Patchcord']]],
+  ['scale_5fcolor',['scale_color',['../structui__knob.html#a858ac6419ebf82631e9e4585c0f217ea',1,'ui_knob']]],
+  ['sel_5fidx',['sel_idx',['../structui__sliders.html#ac48febb220a6dc27f1484928ba077fc4',1,'ui_sliders']]],
+  ['select_5fidx',['select_idx',['../structceammc__gui_1_1ui__bpfunc.html#a6086459de231032bf24d5725601db422',1,'ceammc_gui::ui_bpfunc']]],
+  ['selected',['selected',['../classcm_1_1_patchcord.html#afab1449d3251a251cdcf169c8f9a8acc',1,'cm::Patchcord::selected()'],['../structceammc_1_1t__bpt.html#a8150fa0eeb9754fd59ccd0688fea9fc4',1,'ceammc::t_bpt::selected()']]],
+  ['shift',['shift',['../structui__keyboard.html#aa9206710a42b80cd44628b0bd033c660',1,'ui_keyboard::shift()'],['../structui__knob.html#a4183c297fe976aa97fc932b70b2d3609',1,'ui_knob::shift()'],['../structui__sliders.html#a7bb38ba9b142bde4f3549dafb034eef7',1,'ui_sliders::shift()']]],
+  ['shift_5fx',['shift_x',['../classceammc_1_1_b_p_f.html#a223382b51ec4a9bde8d58593b523a9bb',1,'ceammc::BPF::shift_x()'],['../structui__slider2d.html#ad5e749bf726fb28fccf24aacdf277e23',1,'ui_slider2d::shift_x()']]],
+  ['shift_5fy',['shift_y',['../classceammc_1_1_b_p_f.html#a850adf128b5abef1b97d2467cf27db9f',1,'ceammc::BPF::shift_y()'],['../structui__slider2d.html#a3fefa7adc7475912dd28d500a7822f2b',1,'ui_slider2d::shift_y()']]],
+  ['show_5fbang',['show_bang',['../structui__display.html#ab321236520945c7b5a0c0b54bceb14e7',1,'ui_display']]],
+  ['show_5frange',['show_range',['../structui__knob.html#a49d09d2016342e7a6cdec522098402db',1,'ui_knob::show_range()'],['../structui__slider2d.html#a914cf74604f95b7f286a1724fc7a25cd',1,'ui_slider2d::show_range()'],['../structui__sliders.html#a3db5459842975b84caffa56069a2a531',1,'ui_sliders::show_range()']]],
+  ['show_5ftype',['show_type',['../structui__display.html#ab3a58fb0d451ed23d5d6a1ca5c925782',1,'ui_display']]],
+  ['slider_5fcolor',['slider_color',['../structui__sliders.html#ae9b76a7cb8a75061044234fbf94982e5',1,'ui_sliders']]],
+  ['slider_5fcolor_5fselect',['slider_color_select',['../structui__sliders.html#ab1ce200e1ae2ea015a9c505474747078',1,'ui_sliders']]],
   ['start',['start',['../structcm_1_1t_rect_plus.html#a08ead848f4fb174d0997b620942d295b',1,'cm::tRectPlus']]]
 ];

@@ -1,5 +1,11 @@
 var searchData=
 [
+  ['name',['name',['../classceammc_1_1_global_data.html#a4f4625c0c50d33bca1b7035a4c1b1e4f',1,'ceammc::GlobalData::name()'],['../classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d',1,'ceammc::Property::name()'],['../classceammc_1_1tl_1_1_cue_data.html#abc0985e300542e4b4b1a6f6066c92dbe',1,'ceammc::tl::CueData::name()']]],
+  ['nameddatadict',['NamedDataDict',['../classceammc_1_1_named_data_dict.html#a5a681add645bc32edae2d4d728d59b23',1,'ceammc::NamedDataDict']]],
+  ['nameddatadict',['NamedDataDict',['../classceammc_1_1_named_data_dict.html',1,'ceammc']]],
+  ['nameddatadict_3c_20bpf_20_3e',['NamedDataDict< BPF >',['../classceammc_1_1_named_data_dict.html',1,'ceammc']]],
+  ['new_5fext',['new_ext',['../classceammc__gui_1_1_gui_factory.html#a21c7460bb48d34f0dc09ca7e8bdedd3f',1,'ceammc_gui::GuiFactory']]],
+  ['new_5fmethod',['new_method',['../classceammc__gui_1_1_gui_factory.html#a7f7becdbe5be37f3493ec46f6cbd6c4b',1,'ceammc_gui::GuiFactory']]],
   ['newbangbox',['newBangBox',['../classcm_1_1_patch_window.html#af0ca47c15f398734068542942e124044',1,'cm::PatchWindow']]],
   ['newcommentbox',['newCommentBox',['../classcm_1_1_patch_window.html#a3b9a4cfd55b5c9366cc426ab37a2d52b',1,'cm::PatchWindow']]],
   ['newfile',['newFile',['../classcm_1_1_base_menu.html#ada75cfe378867a4ceb65f297ceb3c2cd',1,'cm::BaseMenu']]],
@@ -9,5 +15,13 @@ var searchData=
   ['newsubpatch',['newSubpatch',['../classcm_1_1_patch_window.html#a222447f0df64274c0995fef86e5463bb',1,'cm::PatchWindow']]],
   ['newtogglebox',['newToggleBox',['../classcm_1_1_patch_window.html#aa47ebb5351718dcfef60322af9911e50',1,'cm::PatchWindow']]],
   ['newview',['newView',['../classcm_1_1_canvas.html#ac4041536615159af4051fd1d085e5901',1,'cm::Canvas']]],
-  ['newwindow',['newWindow',['../classcm_1_1_patch_window.html#a4b86cb1a56afcbbc8e5117e69cc65444',1,'cm::PatchWindow']]]
+  ['newwindow',['newWindow',['../classcm_1_1_patch_window.html#a4b86cb1a56afcbbc8e5117e69cc65444',1,'cm::PatchWindow']]],
+  ['none',['NONE',['../classceammc_1_1_atom.html#a7da58aeebfc1db2f1064e24089f84e0daa76b5bbc10ec2e88976660e18ad0a8bd',1,'ceammc::Atom::NONE()'],['../classceammc_1_1_message.html#a42a4c7d7d3e7297197e83b34966a09d5aaef05473d2ab708de294d2aa9bd5deb2',1,'ceammc::Message::NONE()']]],
+  ['noneoff',['noneOff',['../classceammc_1_1_atom_list.html#a6ed911c35a83b24c3216f1697735771e',1,'ceammc::AtomList']]],
+  ['nonequallengthbehaivor',['NonEqualLengthBehaivor',['../classceammc_1_1_atom_list.html#adcc13ae2c5194b6d83691b56835ed29e',1,'ceammc::AtomList']]],
+  ['normalizefloats',['normalizeFloats',['../classceammc_1_1_atom_list.html#aaec92e339b35846963cb66fbcb7ba0e7',1,'ceammc::AtomList']]],
+  ['normvalueat',['normValueAt',['../structui__sliders.html#ab2d3f8a4c2586d097b966e3088e2cbcf',1,'ui_sliders']]],
+  ['numenums',['numEnums',['../classceammc_1_1_enum_property.html#ae80d226bb2af6e20b0a5cf4f11cf3d35',1,'ceammc::EnumProperty']]],
+  ['numinlets',['numInlets',['../classceammc_1_1_base_object.html#abae3dc33d5b4fa26740e10164d9819f2',1,'ceammc::BaseObject']]],
+  ['numoutlets',['numOutlets',['../classceammc_1_1_base_object.html#a9247c64e6ff4e67bb552025dacd28170',1,'ceammc::BaseObject']]]
 ];
