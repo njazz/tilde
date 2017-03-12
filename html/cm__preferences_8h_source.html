@@ -105,7 +105,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00023"></a>00023 
 <a name="l00024"></a>00024 <span class="keyword">namespace </span>cm{
 <a name="l00025"></a>00025 
-<a name="l00029"></a><a class="code" href="classcm_1_1_preferences.html">00029</a> <span class="keyword">class </span><a class="code" href="classcm_1_1_preferences.html" title="app preferences singleton">Preferences</a> : <span class="keyword">public</span> <a class="code" href="classcm_1_1_u_i_property_list.html" title="yet another property handling class for ui object. List">UIPropertyList</a> <span class="comment">// TODO</span>
+<a name="l00029"></a><a class="code" href="classcm_1_1_preferences.html">00029</a> <span class="keyword">class </span><a class="code" href="classcm_1_1_preferences.html" title="app preferences singleton">Preferences</a> : <span class="keyword">public</span> <a class="code" href="classcm_1_1_property_list.html" title="yet another property handling class for ui object. List">PropertyList</a> <span class="comment">// TODO</span>
 <a name="l00030"></a>00030 {
 <a name="l00031"></a>00031 <span class="keyword">public</span>:
 <a name="l00032"></a><a class="code" href="classcm_1_1_preferences.html#afca871afbb2cbbdb47d10b57f026266a">00032</a>     <span class="keyword">static</span> <a class="code" href="classcm_1_1_preferences.html" title="app preferences singleton">Preferences</a>&amp; <a class="code" href="classcm_1_1_preferences.html#afca871afbb2cbbdb47d10b57f026266a">inst</a>()
@@ -134,8 +134,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00055"></a>00055 
 <a name="l00056"></a><a class="code" href="classcm_1_1_preferences.html#a8de833a1440a934a53982ad5568c8fd7">00056</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_preferences.html#a8de833a1440a934a53982ad5568c8fd7">init</a>(std::string appVersion)
 <a name="l00057"></a>00057     {
-<a name="l00058"></a>00058         this-&gt;<a class="code" href="classcm_1_1_u_i_property_list.html#a09f417acc7c9e0da0242fa32ae0b7ad8">create</a>(<span class="stringliteral">&quot;appVersion&quot;</span>, <span class="stringliteral">&quot;System&quot;</span>, <a class="code" href="cm__preferences_8h.html#ae09bed4115d5e989b65c733ad8ace663">QTPD_APP_VERSION</a>, (std::string)(<a class="code" href="cm__preferences_8h.html#ae09bed4115d5e989b65c733ad8ace663">QTPD_APP_VERSION</a>) );
-<a name="l00059"></a>00059         this-&gt;<a class="code" href="classcm_1_1_u_i_property_list.html#a09f417acc7c9e0da0242fa32ae0b7ad8">create</a>(<span class="stringliteral">&quot;Font&quot;</span>, <span class="stringliteral">&quot;UI&quot;</span>,  <a class="code" href="cm__preferences_8h.html#ae09bed4115d5e989b65c733ad8ace663">QTPD_APP_VERSION</a> , (std::string)(<span class="stringliteral">&quot;Source Code Pro&quot;</span>));    <span class="comment">//</span>
+<a name="l00058"></a>00058         this-&gt;<a class="code" href="classcm_1_1_property_list.html#a544d01f0522fc460762782f74be321be">create</a>(<span class="stringliteral">&quot;appVersion&quot;</span>, <span class="stringliteral">&quot;System&quot;</span>, <a class="code" href="cm__preferences_8h.html#ae09bed4115d5e989b65c733ad8ace663">QTPD_APP_VERSION</a>, (std::string)(<a class="code" href="cm__preferences_8h.html#ae09bed4115d5e989b65c733ad8ace663">QTPD_APP_VERSION</a>) );
+<a name="l00059"></a>00059         this-&gt;<a class="code" href="classcm_1_1_property_list.html#a544d01f0522fc460762782f74be321be">create</a>(<span class="stringliteral">&quot;Font&quot;</span>, <span class="stringliteral">&quot;UI&quot;</span>,  <a class="code" href="cm__preferences_8h.html#ae09bed4115d5e989b65c733ad8ace663">QTPD_APP_VERSION</a> , (std::string)(<span class="stringliteral">&quot;Source Code Pro&quot;</span>));    <span class="comment">//</span>
 <a name="l00060"></a>00060 
 <a name="l00061"></a>00061         qDebug(<span class="stringliteral">&quot;pref init&quot;</span>);
 <a name="l00062"></a>00062         qDebug() &lt;&lt; this-&gt;<a class="code" href="classcm_1_1_preferences.html#abbf18deab741444be76d782ce9b02444">getQString</a>(<span class="stringliteral">&quot;appVersion&quot;</span>);
@@ -170,7 +170,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 12 2017 21:46:53 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 12 2017 22:37:21 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

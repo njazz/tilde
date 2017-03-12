@@ -10,5 +10,6 @@ var searchData=
   ['pdwindow',['PdWindow',['../classcm_1_1_pd_window.html#aed4498a525662c9dec4dad3cafea079c',1,'cm::PdWindow::PdWindow()'],['../classcm_1_1_base_menu.html#a2b65c47eaa3cce2ffa4dd5657ce33c1b',1,'cm::BaseMenu::pdWindow()']]],
   ['port',['Port',['../classcm_1_1_port.html#a4d071b089f4e72513d280cfde14b05ce',1,'cm::Port']]],
   ['preferences',['Preferences',['../classcm_1_1_preferences.html#aea987360ca0da6187f9ce007af0744ce',1,'cm::Preferences']]],
-  ['properties',['properties',['../classcm_1_1_u_i_object.html#a1153fca42a8202fed028f8b263150dcd',1,'cm::UIObject']]]
+  ['properties',['properties',['../classcm_1_1_u_i_object.html#ab592d6fbe380a419e85376c6917a096c',1,'cm::UIObject']]],
+  ['propertylist',['PropertyList',['../classcm_1_1_property_list.html#a9c1207323659728fe38ac1b8da56cce1',1,'cm::PropertyList']]]
 ];

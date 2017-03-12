@@ -2,7 +2,7 @@ var searchData=
 [
   ['cancelpatchcord',['cancelPatchcord',['../classcm_1_1_canvas.html#a1a9501ade5a1506d81c4874ebe874094',1,'cm::Canvas']]],
   ['canvas',['Canvas',['../classcm_1_1_canvas.html',1,'cm']]],
-  ['canvas',['canvas',['../classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0',1,'cm::PatchWindow::canvas()'],['../classcm_1_1_canvas.html#ac86ad9074e991d057dd83c25a159947b',1,'cm::Canvas::Canvas()']]],
+  ['canvas',['Canvas',['../classcm_1_1_canvas.html#ac86ad9074e991d057dd83c25a159947b',1,'cm::Canvas::Canvas()'],['../classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0',1,'cm::PatchWindow::canvas()']]],
   ['canvasdrawstyle',['canvasDrawStyle',['../namespacecm.html#a6c838d65e47f09497b9a053ab1f11494',1,'cm']]],
   ['clear',['clear',['../classcm_1_1_clipboard.html#a52d498841c9ae5b7f039d74e58838448',1,'cm::Clipboard']]],
   ['clickpatchcords',['clickPatchcords',['../classcm_1_1_canvas.html#a31e1bd751116fb4853d3c941da997f24',1,'cm::Canvas']]],
@@ -83,7 +83,7 @@ var searchData=
   ['cmp_5fswitch_5fdsp',['cmp_switch_dsp',['../cm__pdlink_8h.html#a0f1f4951cf99dff0634789791dcde1ba',1,'cm_pdlink.h']]],
   ['cmsubcanvas',['cmSubcanvas',['../classcm_1_1_u_i_box.html#ab997404a419ad6f86a5941013c8ea3bb',1,'cm::UIBox']]],
   ['connectsobject',['connectsObject',['../classcm_1_1_patchcord.html#a2d195bc505a5975fbf1a7af6f192f4ad',1,'cm::Patchcord']]],
-  ['create',['create',['../classcm_1_1_u_i_property_list.html#a09f417acc7c9e0da0242fa32ae0b7ad8',1,'cm::UIPropertyList']]],
+  ['create',['create',['../classcm_1_1_property_list.html#a544d01f0522fc460762782f74be321be',1,'cm::PropertyList']]],
   ['createactions',['createActions',['../classcm_1_1_base_window.html#a39e8dd19b5d1da40ecc192368d5b9190',1,'cm::BaseWindow::createActions()'],['../classcm_1_1_patch_window.html#a39603c8deea46bbfe2a782a9c6c46e60',1,'cm::PatchWindow::createActions()']]],
   ['createboxforcanvas',['createBoxForCanvas',['../classcm_1_1_canvas.html#ac66fd43b32fdf2a3972812de53fc0d74',1,'cm::Canvas']]],
   ['createmenus',['createMenus',['../classcm_1_1_base_window.html#ae166291858c8f651902846977edc00b9',1,'cm::BaseWindow::createMenus()'],['../classcm_1_1_patch_window.html#a3942a3aacbe85faece2718d294762c23',1,'cm::PatchWindow::createMenus()']]],

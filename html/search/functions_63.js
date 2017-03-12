@@ -28,7 +28,7 @@ var searchData=
   ['cmp_5fsetprinthook',['cmp_setprinthook',['../cm__pdlink_8h.html#ac9fb723d2c58a1e062720cc19e199e08',1,'cm_pdlink.h']]],
   ['cmp_5fswitch_5fdsp',['cmp_switch_dsp',['../cm__pdlink_8h.html#a0f1f4951cf99dff0634789791dcde1ba',1,'cm_pdlink.h']]],
   ['connectsobject',['connectsObject',['../classcm_1_1_patchcord.html#a2d195bc505a5975fbf1a7af6f192f4ad',1,'cm::Patchcord']]],
-  ['create',['create',['../classcm_1_1_u_i_property_list.html#a09f417acc7c9e0da0242fa32ae0b7ad8',1,'cm::UIPropertyList']]],
+  ['create',['create',['../classcm_1_1_property_list.html#a544d01f0522fc460762782f74be321be',1,'cm::PropertyList']]],
   ['createactions',['createActions',['../classcm_1_1_base_window.html#a39e8dd19b5d1da40ecc192368d5b9190',1,'cm::BaseWindow::createActions()'],['../classcm_1_1_patch_window.html#a39603c8deea46bbfe2a782a9c6c46e60',1,'cm::PatchWindow::createActions()']]],
   ['createboxforcanvas',['createBoxForCanvas',['../classcm_1_1_canvas.html#ac66fd43b32fdf2a3972812de53fc0d74',1,'cm::Canvas']]],
   ['createmenus',['createMenus',['../classcm_1_1_base_window.html#ae166291858c8f651902846977edc00b9',1,'cm::BaseWindow::createMenus()'],['../classcm_1_1_patch_window.html#a3942a3aacbe85faece2718d294762c23',1,'cm::PatchWindow::createMenus()']]],

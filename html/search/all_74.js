@@ -7,5 +7,5 @@ var searchData=
   ['tcanvasdata',['tCanvasData',['../namespacecm.html#a537a73faee30df567e8003211ec508d4',1,'cm']]],
   ['tcanvasdataplus',['tCanvasDataPlus',['../namespacecm.html#ad5333217127f3d79793353ab5b4eea29',1,'cm']]],
   ['trectplus',['tRectPlus',['../structcm_1_1t_rect_plus.html',1,'cm']]],
-  ['type',['type',['../classcm_1_1_u_i_property.html#a0fdc4d8295699c9ecf499730af698d35',1,'cm::UIProperty']]]
+  ['type',['type',['../classcm_1_1_property.html#abe3ab42004b39e971a9fad0aac654cdb',1,'cm::Property']]]
 ];

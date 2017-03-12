@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['version',['version',['../classcm_1_1_u_i_property.html#a7e7f283cd77fba7655f5b65268fed701',1,'cm::UIProperty']]]
+  ['version',['version',['../classcm_1_1_property.html#a399023f6e1e469a8177465a1f3f88065',1,'cm::Property']]]
 ];

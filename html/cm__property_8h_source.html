@@ -106,7 +106,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00024"></a>00024 
 <a name="l00025"></a>00025 } <a class="code" href="namespacecm.html#a39e8cb7a4e0e86f5808867795593edd5">UIPropertyType</a>;
 <a name="l00026"></a>00026 
-<a name="l00030"></a><a class="code" href="classcm_1_1_u_i_property.html">00030</a> <span class="keyword">class </span><a class="code" href="classcm_1_1_u_i_property.html" title="yet another property handling class for ui object.">UIProperty</a>
+<a name="l00030"></a><a class="code" href="classcm_1_1_property.html">00030</a> <span class="keyword">class </span><a class="code" href="classcm_1_1_property.html" title="yet another property handling class for ui object.">Property</a>
 <a name="l00031"></a>00031 {
 <a name="l00032"></a>00032 <span class="keyword">private</span>:
 <a name="l00033"></a>00033     AtomList data_;
@@ -124,39 +124,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00045"></a>00045     <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;
 <a name="l00046"></a>00046     <span class="keywordtype">void</span> <span class="keyword">set</span>(T val);
 <a name="l00047"></a>00047 
-<a name="l00051"></a><a class="code" href="classcm_1_1_u_i_property.html#aec13a9b55e1e0886c8ec2183f90d22a6">00051</a>     <span class="keywordtype">void</span> setDefault()
+<a name="l00051"></a><a class="code" href="classcm_1_1_property.html#ad9129940aa0ac9c6505163501853008c">00051</a>     <span class="keywordtype">void</span> setDefault()
 <a name="l00052"></a>00052     {
 <a name="l00053"></a>00053         this-&gt;defaultData_ = this-&gt;data_;
 <a name="l00054"></a>00054     }
 <a name="l00055"></a>00055 
-<a name="l00056"></a><a class="code" href="classcm_1_1_u_i_property.html#a2d9bdea12d3b5f58fe31b08982621da9">00056</a>     <span class="keywordtype">void</span> setVersion(std::string version)
+<a name="l00056"></a><a class="code" href="classcm_1_1_property.html#a81530cf995d414e389a1839ec453945f">00056</a>     <span class="keywordtype">void</span> setVersion(std::string version)
 <a name="l00057"></a>00057     {
 <a name="l00058"></a>00058         this-&gt;version_ = version;
 <a name="l00059"></a>00059     }
 <a name="l00060"></a>00060 
-<a name="l00061"></a><a class="code" href="classcm_1_1_u_i_property.html#a7e7f283cd77fba7655f5b65268fed701">00061</a>     std::string <a class="code" href="classcm_1_1_u_i_property.html#a7e7f283cd77fba7655f5b65268fed701">version</a>(){<span class="keywordflow">return</span> version_;}
+<a name="l00061"></a><a class="code" href="classcm_1_1_property.html#a399023f6e1e469a8177465a1f3f88065">00061</a>     std::string <a class="code" href="classcm_1_1_property.html#a399023f6e1e469a8177465a1f3f88065">version</a>(){<span class="keywordflow">return</span> version_;}
 <a name="l00062"></a>00062 
 <a name="l00064"></a>00064 
-<a name="l00065"></a><a class="code" href="classcm_1_1_u_i_property.html#a0fdc4d8295699c9ecf499730af698d35">00065</a>     <a class="code" href="namespacecm.html#a39e8cb7a4e0e86f5808867795593edd5">UIPropertyType</a> <a class="code" href="classcm_1_1_u_i_property.html#a0fdc4d8295699c9ecf499730af698d35">type</a>() {<span class="keywordflow">return</span> this-&gt;type_;};
+<a name="l00065"></a><a class="code" href="classcm_1_1_property.html#abe3ab42004b39e971a9fad0aac654cdb">00065</a>     <a class="code" href="namespacecm.html#a39e8cb7a4e0e86f5808867795593edd5">UIPropertyType</a> <a class="code" href="classcm_1_1_property.html#abe3ab42004b39e971a9fad0aac654cdb">type</a>() {<span class="keywordflow">return</span> this-&gt;type_;};
 <a name="l00066"></a>00066 
 <a name="l00067"></a>00067 
-<a name="l00068"></a><a class="code" href="classcm_1_1_u_i_property.html#a0fe354c93c0a6de3dd636a78aa7ff04a">00068</a>     AtomList data()
+<a name="l00068"></a><a class="code" href="classcm_1_1_property.html#ac1a0a696ff2d4589097334115e92f071">00068</a>     AtomList data()
 <a name="l00069"></a>00069     {
 <a name="l00070"></a>00070         <span class="keywordflow">return</span> data_;
 <a name="l00071"></a>00071     }
 <a name="l00072"></a>00072 
-<a name="l00073"></a><a class="code" href="classcm_1_1_u_i_property.html#aa9284b71aec79e4c607e2ffe4214742b">00073</a>     AtomList defaultData()
+<a name="l00073"></a><a class="code" href="classcm_1_1_property.html#a3e6eb0f6c0abe5f81bfb4b08f69754ff">00073</a>     AtomList defaultData()
 <a name="l00074"></a>00074     {
 <a name="l00075"></a>00075         <span class="keywordflow">return</span> defaultData_;
 <a name="l00076"></a>00076     }
 <a name="l00077"></a>00077 
 <a name="l00078"></a>00078 
-<a name="l00079"></a><a class="code" href="classcm_1_1_u_i_property.html#aef472d8b63af90c767b2cab3c233eebc">00079</a>     QStringList asQStringList()
+<a name="l00079"></a><a class="code" href="classcm_1_1_property.html#a42b04f74c52e85b54eeefc1ef6ecbaa5">00079</a>     QStringList asQStringList()
 <a name="l00080"></a>00080     {
 <a name="l00081"></a>00081         QStringList ret; <span class="keywordflow">return</span> ret;
 <a name="l00082"></a>00082     }
 <a name="l00083"></a>00083 
-<a name="l00084"></a><a class="code" href="classcm_1_1_u_i_property.html#ae2382952f16aa26197f1543e36247100">00084</a>     std::string asStdString()
+<a name="l00084"></a><a class="code" href="classcm_1_1_property.html#a50e90891412fcc846e5b29e41648b062">00084</a>     std::string asStdString()
 <a name="l00085"></a>00085     {
 <a name="l00086"></a>00086         std::string ret=<span class="stringliteral">&quot;&quot;</span>;
 <a name="l00087"></a>00087         <span class="keywordflow">if</span> (data_.size())
@@ -164,7 +164,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00089"></a>00089         <span class="keywordflow">return</span> ret;
 <a name="l00090"></a>00090     }
 <a name="l00091"></a>00091 
-<a name="l00092"></a><a class="code" href="classcm_1_1_u_i_property.html#a446323ed4c31adaad6b0f2f005fe52fa">00092</a>     QString asQString()
+<a name="l00092"></a><a class="code" href="classcm_1_1_property.html#a4ec1a203ab9c6de7aadc6835cad798f9">00092</a>     QString asQString()
 <a name="l00093"></a>00093     {
 <a name="l00094"></a>00094         QString ret = <span class="stringliteral">&quot;&quot;</span>;
 <a name="l00095"></a>00095         <span class="keywordflow">if</span> (data_.size())
@@ -194,7 +194,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 12 2017 21:46:53 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 12 2017 22:37:21 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['data',['data',['../classcm_1_1_u_i_property.html#a0fe354c93c0a6de3dd636a78aa7ff04a',1,'cm::UIProperty']]],
-  ['defaultdata',['defaultData',['../classcm_1_1_u_i_property.html#aa9284b71aec79e4c607e2ffe4214742b',1,'cm::UIProperty']]],
+  ['data',['data',['../classcm_1_1_property.html#ac1a0a696ff2d4589097334115e92f071',1,'cm::Property']]],
+  ['defaultdata',['defaultData',['../classcm_1_1_property.html#a3e6eb0f6c0abe5f81bfb4b08f69754ff',1,'cm::Property']]],
   ['delboxes',['delBoxes',['../classcm_1_1_canvas.html#a27e99bde9c7a8418f6bc4e6bcc97dcf6',1,'cm::Canvas']]],
   ['deletebox',['deleteBox',['../classcm_1_1_canvas.html#a408601f96f1fc5664d2767c73ff49364',1,'cm::Canvas']]],
   ['deletepatchcordsfor',['deletePatchcordsFor',['../classcm_1_1_canvas.html#a8ad9a1d8abd5bf69131f885a782e437f',1,'cm::Canvas']]],
