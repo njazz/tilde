@@ -107,6 +107,8 @@ public:
         ret->setPdObject(srcCanvas->pdObject());
         ret->setDrawStyle(dStyle);
 
+        ret->setMinimumWidth(40);
+
         return ret;
 
     }
@@ -816,6 +818,9 @@ public:
         //cleanup
         UIObject *obj = (UIObject*) Canvas::newView(newCanvas, (UIObject*)this, ds_Box);
 
+        //test
+        //obj->setFixedWidth(40);
+
         obj->setObjectData(objectData);
 
         connect(obj,&UIMessage::selectBox, this, &Canvas::s_SelectBox);
@@ -829,6 +834,9 @@ public:
         Pal.setColor(QPalette::Background, QColor(240,240,240));
         obj->setAutoFillBackground(true);
         obj->setPalette(Pal);
+
+
+
 
         obj->show();
 
@@ -1190,6 +1198,15 @@ public:
 
     }
 
+    ////
+    /// \brief change size to fit all objects
+    ///
+    void resizeToObjects()
+    {
+
+
+    }
+
 signals:
 
 public slots:
@@ -1225,7 +1242,14 @@ public slots:
         this->newLine.active = false;
         this->repaint();
     }
+
+
 private:
+
+private slots:
+    void editorDone();
+    void editorChanged();
+
 
 };
 
