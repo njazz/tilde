@@ -65,6 +65,9 @@ public:
             else if (list.at(3) == "ui.bang")
                 //cmcanvas->createFloat(msgname.toStdString(), pos);
                 cmcanvas->createObject("ui.bang", msgname.toStdString(), pos);
+            else if (list.at(3) == "ui.toggle")
+                //cmcanvas->createFloat(msgname.toStdString(), pos);
+                cmcanvas->createObject("ui.toggle", msgname.toStdString(), pos);
 
             else
                 //cmcanvas->createBox(objname.toStdString(), pos);

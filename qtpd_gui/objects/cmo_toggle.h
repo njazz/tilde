@@ -120,8 +120,8 @@ public:
         //            this->editor_->show();
         //            this->editor_->setFocus();
         //        }
-
-        //        emit selectBox(this);
+        if  (this->getEditMode()==em_Unlocked)
+            emit selectBox(this);
 
         this->dragOffset = ev->pos();
 
@@ -219,13 +219,22 @@ public:
         qDebug("update ui");
         UIToggle *x = (UIToggle*)uiobj;
 
-        std::string obj_data;
-        for (int i=0; i<msg.size();i++)
-        {
-            obj_data += msg.at(i).asString() + " ";
-        }
+//        std::string obj_data;
+//        for (int i=0; i<msg.size();i++)
+//        {
+//            obj_data += msg.at(i).asString() + " ";
+//        }
 
- //       x->setObjectData(obj_data);
+        //x->setObjectData(obj_data);
+
+        if (msg.size()>0)
+        {
+            if (msg.at(0).isFloat())
+                x->value_ = msg.at(0).asFloat()>0;
+            if (msg.at(0).isSymbol())
+                if (msg.at(0).asSymbol() == gensym("bang"))
+                    x->value_ = !x->value_;
+        }
 
         x->repaint();
     }

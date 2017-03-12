@@ -3,6 +3,7 @@
 
 
 #include <QLineEdit>
+#include <QTimer>
 
 #include "cm_object.h"
 #include "cm_port.h"
@@ -21,6 +22,8 @@ class UIBang : public UIObject
 
 private:
     bool clicked_;
+
+    QTimer timer_;
 
 public:
     explicit UIBang(UIObject *parent = 0);
@@ -113,6 +116,8 @@ public:
             this->clicked_ = true;
             this->repaint();
 
+            this->timer_.start(100);
+
             //todo timer
         }
 
@@ -126,7 +131,6 @@ public:
             }
             else
             {
-                cmp_sendstring((t_pd*)this->pdObject(), ((std::string)"set bang").c_str());
                 cmp_sendstring((t_pd*)this->pdObject(), ((std::string)"bang").c_str());
             }
 
@@ -139,10 +143,10 @@ public:
         //this->selected_ = false;
 
         //if (!this->getEditMode())
-        {
-            this->clicked_ = false;
-            this->repaint();
-        }
+//        {
+//            this->clicked_ = false;
+//            this->repaint();
+//        }
 
 
 
@@ -182,23 +186,36 @@ public:
         qDebug("update ui");
         UIBang *x = (UIBang*)uiobj;
 
-        std::string obj_data;
-        for (int i=0; i<msg.size();i++)
-        {
-            obj_data += msg.at(i).asString() + " ";
-        }
+//        std::string obj_data;
+//        for (int i=0; i<msg.size();i++)
+//        {
+//            obj_data += msg.at(i).asString() + " ";
+//        }
+        x->clicked_ = true;
+        x->timer_.start(100);
+        x->repaint();
+
 
     }
 
     void setPdObject(void *obj)
     {
         UIObject::setPdObject(obj);
+        cmp_sendstring((t_pd*)this->pdObject(), ((std::string)"set ").c_str());
         cmp_connectUI((t_pd*)this->pdObject(), (void*)this, &UIBang::updateUI);
+
     }
 
 
     std::string asPdFileString()
     {return "ui.bang "+ this->objectData();}
+
+private slots:
+    void timerAction()
+    {
+        this->clicked_ = false;
+        this->repaint();
+    }
 
 };
 

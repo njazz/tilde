@@ -22,7 +22,7 @@ typedef struct _ui_msg {
     t_object x_obj;
     t_symbol* s;
 
-    AtomList msg;
+    AtomList* msg;
 
     t_outlet *out1;
 
@@ -42,15 +42,29 @@ static void uimsg_set(t_ui_msg* x, t_symbol *s, int argc, t_atom* argv)
 {
     //post("uimsg set");
     x->s = s;
-    x->msg = AtomList(argc,argv);
 
-    if(x->updateUI) x->updateUI(x->uiobj, x->msg);  //x->msg
+    if (x->msg)
+        delete x->msg;
+
+    x->msg = new AtomList(argc,argv);
+
+    //quick fix
+    if (x->msg->size())
+        if (x->msg->at(0).asSymbol() == gensym("bang"))
+        {
+            *x->msg = AtomList(0,0);
+        }
+
+    if(x->updateUI) x->updateUI(x->uiobj, *x->msg);  //x->msg
 
 }
 
 static void uimsg_bang(t_ui_msg* x, t_symbol *s, int argc, t_atom* argv)
 {
-    x->msg.output(x->out1);
+    if (x->msg->size())
+        x->msg->output(x->out1);
+    else
+        outlet_bang(x->out1);
 }
 
 static void* uimsg_new(t_symbol *s, int argc, t_atom* argv)
@@ -59,7 +73,7 @@ static void* uimsg_new(t_symbol *s, int argc, t_atom* argv)
 
     x->s = s;
 
-    x->msg = AtomList(argc,argv);
+    x->msg = new AtomList(argc,argv);
 
     x->out1 = outlet_new((t_object*)x, &s_anything);
 
@@ -73,7 +87,7 @@ void uimsg_save(t_gobj *z, t_binbuf *b)
     binbuf_addv(b,"ss", gensym("#X"), gensym("obj"));
     binbuf_addv(b,"ff", (float)x->x_obj.te_xpix, (float)x->x_obj.te_ypix);
     binbuf_addv(b,"s", gensym("ui.msg"));
-    binbuf_add(b, x->msg.size(), x->msg.toPdData() );
+    binbuf_add(b, x->msg->size(), x->msg->toPdData() );
     binbuf_addv(b, ";");
 
 }
