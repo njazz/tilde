@@ -2,7 +2,7 @@
 
 namespace cm{
 
-Canvas::Canvas(UIWidget *parent) : UIWidget(parent)
+Canvas::Canvas(UIObject *parent) : UIObject(parent)
 {
 
     QPalette Pal;
@@ -29,6 +29,9 @@ Canvas::Canvas(UIWidget *parent) : UIWidget(parent)
     this->connOutlet = 0;
     this->dragObject = 0;
     this->pdCanvas = 0;
+
+    //
+    this->drawStyle = cm_cd_Canvas;
 }
 
 //cm_canvas::cm_canvas(QWidget *parent) : cm_widget((cm_widget*)parent)

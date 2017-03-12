@@ -41,7 +41,7 @@ typedef struct
 ////
 /// \brief 't_canvas' counterpart. creates objects
 ///
-class Canvas : public UIWidget
+class Canvas : public UIObject
 {
 private:
     //todo move this to data class?
@@ -75,6 +75,9 @@ private:
     bool gridSnap;
     int gridStep;
 
+    //
+    enum {cm_cd_Canvas, cm_cd_Box, cm_cd_CanvasInBox} drawStyle;
+
     Q_OBJECT
 public:
     //encapsulate
@@ -84,14 +87,33 @@ public:
     //temp
     t_canvas* pdCanvas;
 
-    explicit Canvas(UIWidget *parent = 0);
-    explicit Canvas(QWidget *parent = 0);
+    explicit Canvas(UIObject *parent = 0);
+    //explicit Canvas(QWidget *parent = 0);
 
+    //temporary
+    static Canvas* newView(Canvas* srcCanvas)
+    {
+        Canvas* ret = new Canvas((UIObject*)srcCanvas->parent());
+
+        //copy here
+        ret->setPdObject(srcCanvas->pdObject());
+
+        return ret;
+
+    }
 
     ////
     /// \brief main paint routine
     ///
     void paintEvent(QPaintEvent *)
+    {
+        this->drawCanvas();
+    }
+
+    ////
+    /// \brief draws canvas contents
+    ///
+    void drawCanvas()
     {
         //grid
         if (this->gridEnabled && (this->editMode != em_Locked) )
@@ -127,6 +149,7 @@ public:
         }
 
         this->paintPatchcords();
+
 
     }
 
