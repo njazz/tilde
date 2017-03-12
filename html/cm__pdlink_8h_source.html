@@ -89,62 +89,59 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00007"></a>00007 <span class="comment">// prototype for Pd &#39;server&#39; interaction</span>
 <a name="l00008"></a>00008 
 <a name="l00009"></a><a class="code" href="cm__pdlink_8h.html#aef7ba73145c14cf0ffca487d734e38f0">00009</a> <span class="keyword">typedef</span> void (*<a class="code" href="cm__pdlink_8h.html#aef7ba73145c14cf0ffca487d734e38f0">t_updateUI</a>)(<span class="keywordtype">void</span>* uiobj, ceammc::AtomList msg);
-<a name="l00010"></a>00010 
-<a name="l00011"></a>00011 <span class="comment">// use m.pd.h</span>
-<a name="l00012"></a>00012 <span class="comment">//typedef void* t_canvas;</span>
-<a name="l00013"></a>00013 <span class="comment">//typedef void* t_object;</span>
-<a name="l00014"></a><a class="code" href="cm__pdlink_8h.html#a60e4f3209d8f267b0aa06105b0b1a4ff">00014</a> <span class="keyword">typedef</span> void (*<a class="code" href="cm__pdlink_8h.html#a60e4f3209d8f267b0aa06105b0b1a4ff">t_printhook</a>)(<span class="keyword">const</span> <span class="keywordtype">char</span> *s);
-<a name="l00015"></a>00015 
-<a name="l00016"></a>00016 
-<a name="l00020"></a>00020 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="cm__pdlink_8h.html#a0a5eb98f82b947afc8ae05735839e8f3" title="initializes pd library">cmp_pdinit</a>();
-<a name="l00021"></a>00021 
-<a name="l00026"></a>00026 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="cm__pdlink_8h.html#ac9fb723d2c58a1e062720cc19e199e08" title="connects to print hook function">cmp_setprinthook</a>(<a class="code" href="cm__pdlink_8h.html#a60e4f3209d8f267b0aa06105b0b1a4ff">t_printhook</a> h);
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028 <span class="preprocessor">#pragma mark -</span>
-<a name="l00029"></a>00029 <span class="preprocessor"></span>
-<a name="l00034"></a>00034 <span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> t_canvas* <a class="code" href="cm__pdlink_8h.html#aaa3daab402dd07f9fd7633395859df01" title="creates new t_canvas">cmp_newpatch</a>();
-<a name="l00035"></a>00035 
-<a name="l00042"></a>00042 t_canvas* <a class="code" href="cm__pdlink_8h.html#a4022f8d97c01f6305e4047b586000bb1" title="creates canvas from file. TODO probably unused with parser on client app.">cmp_openpatch</a>(<span class="keywordtype">char</span>* filename, <span class="keywordtype">char</span>* path);
-<a name="l00043"></a>00043 
-<a name="l00050"></a>00050 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="cm__pdlink_8h.html#ab0f0e50abffd603051b47240f7dcd04c" title="saves canvas as pd file">cmp_savepatch</a>(t_canvas* canvas, <span class="keywordtype">char</span>* filename, <span class="keywordtype">char</span>* path);
-<a name="l00051"></a>00051 
-<a name="l00056"></a>00056 <span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> <span class="keywordtype">void</span> <a class="code" href="cm__pdlink_8h.html#af08cbd72d5b239361a801b4b67247a9c" title="closes and frees the canvas">cmp_closepatch</a>(t_canvas* canvas);
-<a name="l00057"></a>00057 
-<a name="l00058"></a>00058 <span class="preprocessor">#pragma mark -</span>
-<a name="l00059"></a>00059 <span class="preprocessor"></span>
-<a name="l00068"></a>00068 <span class="keyword">extern</span> t_object* <a class="code" href="cm__pdlink_8h.html#a2c0a0d9150791897b85a167998ecf7c2" title="creates pd object">cmp_create_object</a>(t_canvas* canvas, std::string class_name, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);
-<a name="l00069"></a>00069 
-<a name="l00078"></a>00078 <span class="keyword">extern</span> t_object* <a class="code" href="cm__pdlink_8h.html#a3bac993f5ef2ae3ddcb123762d3668d0" title="creates pd message TODO not working now">cmp_create_message</a>(t_canvas* canvas, std::string message, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);
-<a name="l00079"></a>00079 
-<a name="l00086"></a>00086 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="cm__pdlink_8h.html#a89dd190ed6863563fcecc6c9001a0f1c" title="move pd object to new location">cmp_moveobject</a>(t_object* obj, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);
-<a name="l00087"></a>00087 
-<a name="l00093"></a>00093 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="cm__pdlink_8h.html#a69094de48546687863d38bc9d3689993" title="delete pd object">cmp_deleteobject</a>(t_canvas* canvas, t_object* obj);
-<a name="l00094"></a>00094 
-<a name="l00102"></a>00102 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="cm__pdlink_8h.html#a6d06b5d8cde66b3cada1fe52a6e5ac83" title="new patchcord">cmp_patchcord</a>(t_object* obj1, <span class="keywordtype">int</span> outno, t_object* obj2, <span class="keywordtype">int</span> inno);
-<a name="l00103"></a>00103 
-<a name="l00111"></a>00111 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="cm__pdlink_8h.html#a3b0a14ab77137204a0f68e45f45e92c8" title="delete patchcord">cmp_delete_patchcord</a>(t_object* obj1, <span class="keywordtype">int</span> outno, t_object* obj2, <span class="keywordtype">int</span> inno);
-<a name="l00112"></a>00112 
-<a name="l00113"></a>00113 <span class="preprocessor">#pragma mark -</span>
-<a name="l00114"></a>00114 <span class="preprocessor"></span>
-<a name="l00120"></a>00120 <span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="cm__pdlink_8h.html#a7fcb3388b050e30e14b731b7288a7f76" title="get number of inlets for object">cmp_get_inlet_count</a>(t_object* obj);
-<a name="l00121"></a>00121 
-<a name="l00127"></a>00127 <span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="cm__pdlink_8h.html#a680a1380d6950cd336b5631b3d3a7737" title="get number of outlets for object">cmp_get_outlet_count</a>(t_object* obj);
-<a name="l00128"></a>00128 
-<a name="l00129"></a>00129 <span class="comment">//void cmp_get_inlet_type(t_object* obj, int idx){};</span>
-<a name="l00130"></a>00130 <span class="comment">//void cmp_get_outlet_type(t_object* obj, int idx){};</span>
-<a name="l00131"></a>00131 
-<a name="l00132"></a>00132 <span class="preprocessor">#pragma mark -</span>
-<a name="l00133"></a>00133 <span class="preprocessor"></span>
-<a name="l00138"></a>00138 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="cm__pdlink_8h.html#a0f1f4951cf99dff0634789791dcde1ba" title="switch dsp on or off">cmp_switch_dsp</a>(<span class="keywordtype">bool</span> on);
-<a name="l00139"></a>00139 
-<a name="l00140"></a>00140 <span class="preprocessor">#pragma mark -</span>
-<a name="l00141"></a>00141 <span class="preprocessor"></span>
-<a name="l00147"></a>00147 <span class="keywordtype">void</span> <a class="code" href="cm__pdlink_8h.html#a9bca4af04ea4fac6b910933e5ba16814" title="send string as pd message to object">cmp_sendstring</a>(t_pd* obj, std::string msg);
+<a name="l00010"></a><a class="code" href="cm__pdlink_8h.html#a60e4f3209d8f267b0aa06105b0b1a4ff">00010</a> <span class="keyword">typedef</span> void (*<a class="code" href="cm__pdlink_8h.html#a60e4f3209d8f267b0aa06105b0b1a4ff">t_printhook</a>)(<span class="keyword">const</span> <span class="keywordtype">char</span> *s);
+<a name="l00011"></a>00011 
+<a name="l00012"></a>00012 
+<a name="l00016"></a>00016 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="cm__pdlink_8h.html#a0a5eb98f82b947afc8ae05735839e8f3" title="initializes pd library">cmp_pdinit</a>();
+<a name="l00017"></a>00017 
+<a name="l00022"></a>00022 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="cm__pdlink_8h.html#ac9fb723d2c58a1e062720cc19e199e08" title="connects to print hook function">cmp_setprinthook</a>(<a class="code" href="cm__pdlink_8h.html#a60e4f3209d8f267b0aa06105b0b1a4ff">t_printhook</a> h);
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024 <span class="preprocessor">#pragma mark -</span>
+<a name="l00025"></a>00025 <span class="preprocessor"></span>
+<a name="l00030"></a>00030 <span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> t_canvas* <a class="code" href="cm__pdlink_8h.html#aaa3daab402dd07f9fd7633395859df01" title="creates new t_canvas">cmp_newpatch</a>();
+<a name="l00031"></a>00031 
+<a name="l00038"></a>00038 t_canvas* <a class="code" href="cm__pdlink_8h.html#a4022f8d97c01f6305e4047b586000bb1" title="creates canvas from file. TODO probably unused with parser on client app.">cmp_openpatch</a>(<span class="keywordtype">char</span>* filename, <span class="keywordtype">char</span>* path);
+<a name="l00039"></a>00039 
+<a name="l00046"></a>00046 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="cm__pdlink_8h.html#ab0f0e50abffd603051b47240f7dcd04c" title="saves canvas as pd file">cmp_savepatch</a>(t_canvas* canvas, <span class="keywordtype">char</span>* filename, <span class="keywordtype">char</span>* path);
+<a name="l00047"></a>00047 
+<a name="l00052"></a>00052 <span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> <span class="keywordtype">void</span> <a class="code" href="cm__pdlink_8h.html#af08cbd72d5b239361a801b4b67247a9c" title="closes and frees the canvas">cmp_closepatch</a>(t_canvas* canvas);
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054 <span class="preprocessor">#pragma mark -</span>
+<a name="l00055"></a>00055 <span class="preprocessor"></span>
+<a name="l00064"></a>00064 <span class="keyword">extern</span> t_object* <a class="code" href="cm__pdlink_8h.html#a2c0a0d9150791897b85a167998ecf7c2" title="creates pd object">cmp_create_object</a>(t_canvas* canvas, std::string class_name, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);
+<a name="l00065"></a>00065 
+<a name="l00074"></a>00074 <span class="keyword">extern</span> t_object* <a class="code" href="cm__pdlink_8h.html#a3bac993f5ef2ae3ddcb123762d3668d0" title="creates pd message TODO not working now">cmp_create_message</a>(t_canvas* canvas, std::string message, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);
+<a name="l00075"></a>00075 
+<a name="l00082"></a>00082 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="cm__pdlink_8h.html#a89dd190ed6863563fcecc6c9001a0f1c" title="move pd object to new location">cmp_moveobject</a>(t_object* obj, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);
+<a name="l00083"></a>00083 
+<a name="l00089"></a>00089 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="cm__pdlink_8h.html#a69094de48546687863d38bc9d3689993" title="delete pd object">cmp_deleteobject</a>(t_canvas* canvas, t_object* obj);
+<a name="l00090"></a>00090 
+<a name="l00098"></a>00098 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="cm__pdlink_8h.html#a6d06b5d8cde66b3cada1fe52a6e5ac83" title="new patchcord">cmp_patchcord</a>(t_object* obj1, <span class="keywordtype">int</span> outno, t_object* obj2, <span class="keywordtype">int</span> inno);
+<a name="l00099"></a>00099 
+<a name="l00107"></a>00107 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="cm__pdlink_8h.html#a3b0a14ab77137204a0f68e45f45e92c8" title="delete patchcord">cmp_delete_patchcord</a>(t_object* obj1, <span class="keywordtype">int</span> outno, t_object* obj2, <span class="keywordtype">int</span> inno);
+<a name="l00108"></a>00108 
+<a name="l00109"></a>00109 <span class="preprocessor">#pragma mark -</span>
+<a name="l00110"></a>00110 <span class="preprocessor"></span>
+<a name="l00116"></a>00116 <span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="cm__pdlink_8h.html#a7fcb3388b050e30e14b731b7288a7f76" title="get number of inlets for object">cmp_get_inlet_count</a>(t_object* obj);
+<a name="l00117"></a>00117 
+<a name="l00123"></a>00123 <span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="cm__pdlink_8h.html#a680a1380d6950cd336b5631b3d3a7737" title="get number of outlets for object">cmp_get_outlet_count</a>(t_object* obj);
+<a name="l00124"></a>00124 
+<a name="l00131"></a>00131 <span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="cm__pdlink_8h.html#afdf250ff92087538d026d24b87d66cec" title="check if inlet is signal~">cmp_get_inlet_type</a>(t_object* obj, <span class="keywordtype">int</span> idx);
+<a name="l00132"></a>00132 
+<a name="l00139"></a>00139 <span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="cm__pdlink_8h.html#a4f45abf6ebba2aeed6853269919dc1c9" title="check if outlet is signal~">cmp_get_outlet_type</a>(t_object* obj, <span class="keywordtype">int</span> idx);
+<a name="l00140"></a>00140 
+<a name="l00141"></a>00141 <span class="preprocessor">#pragma mark -</span>
+<a name="l00142"></a>00142 <span class="preprocessor"></span>
+<a name="l00147"></a>00147 <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="cm__pdlink_8h.html#a0f1f4951cf99dff0634789791dcde1ba" title="switch dsp on or off">cmp_switch_dsp</a>(<span class="keywordtype">bool</span> on);
 <a name="l00148"></a>00148 
-<a name="l00154"></a>00154 <span class="keywordtype">void</span> <a class="code" href="cm__pdlink_8h.html#a9b4bef98ca39e6d157ee073b5139ae9d" title="set the &#39;repaint&#39; function of the ui object to be accessible from pd object">cmp_connectUI</a>(t_pd* obj, <span class="keywordtype">void</span>* uiobj, <a class="code" href="cm__pdlink_8h.html#aef7ba73145c14cf0ffca487d734e38f0">t_updateUI</a> func);
-<a name="l00155"></a>00155 
-<a name="l00156"></a>00156 
-<a name="l00157"></a>00157 <span class="preprocessor">#endif // CM_PDLINK_H</span>
+<a name="l00149"></a>00149 <span class="preprocessor">#pragma mark -</span>
+<a name="l00150"></a>00150 <span class="preprocessor"></span>
+<a name="l00156"></a>00156 <span class="keywordtype">void</span> <a class="code" href="cm__pdlink_8h.html#a9bca4af04ea4fac6b910933e5ba16814" title="send string as pd message to object">cmp_sendstring</a>(t_pd* obj, std::string msg);
+<a name="l00157"></a>00157 
+<a name="l00163"></a>00163 <span class="keywordtype">void</span> <a class="code" href="cm__pdlink_8h.html#a9b4bef98ca39e6d157ee073b5139ae9d" title="set the &#39;repaint&#39; function of the ui object to be accessible from pd object">cmp_connectUI</a>(t_pd* obj, <span class="keywordtype">void</span>* uiobj, <a class="code" href="cm__pdlink_8h.html#aef7ba73145c14cf0ffca487d734e38f0">t_updateUI</a> func);
+<a name="l00164"></a>00164 
+<a name="l00165"></a>00165 
+<a name="l00166"></a>00166 <span class="preprocessor">#endif // CM_PDLINK_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -163,7 +160,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Mar 11 2017 22:38:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 12 2017 00:01:08 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

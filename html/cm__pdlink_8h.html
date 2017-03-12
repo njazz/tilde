@@ -122,6 +122,10 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get number of inlets for object  <a href="#a7fcb3388b050e30e14b731b7288a7f76"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a680a1380d6950cd336b5631b3d3a7737">cmp_get_outlet_count</a> (t_object *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get number of outlets for object  <a href="#a680a1380d6950cd336b5631b3d3a7737"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#afdf250ff92087538d026d24b87d66cec">cmp_get_inlet_type</a> (t_object *obj, int idx)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">check if inlet is signal~  <a href="#afdf250ff92087538d026d24b87d66cec"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a4f45abf6ebba2aeed6853269919dc1c9">cmp_get_outlet_type</a> (t_object *obj, int idx)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">check if outlet is signal~  <a href="#a4f45abf6ebba2aeed6853269919dc1c9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a0f1f4951cf99dff0634789791dcde1ba">cmp_switch_dsp</a> (bool on)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">switch dsp on or off  <a href="#a0f1f4951cf99dff0634789791dcde1ba"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a9bca4af04ea4fac6b910933e5ba16814">cmp_sendstring</a> (t_pd *obj, std::string msg)</td></tr>
@@ -438,6 +442,43 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="afdf250ff92087538d026d24b87d66cec"></a><!-- doxytag: member="cm_pdlink.h::cmp_get_inlet_type" ref="afdf250ff92087538d026d24b87d66cec" args="(t_object *obj, int idx)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="cm__pdlink_8h.html#afdf250ff92087538d026d24b87d66cec">cmp_get_inlet_type</a> </td>
+          <td>(</td>
+          <td class="paramtype">t_object *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>idx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>check if inlet is signal~ </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td></td></tr>
+    <tr><td class="paramname">idx</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a680a1380d6950cd336b5631b3d3a7737"></a><!-- doxytag: member="cm_pdlink.h::cmp_get_outlet_count" ref="a680a1380d6950cd336b5631b3d3a7737" args="(t_object *obj)" -->
 <div class="memitem">
 <div class="memproto">
@@ -461,6 +502,43 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>outlet count </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4f45abf6ebba2aeed6853269919dc1c9"></a><!-- doxytag: member="cm_pdlink.h::cmp_get_outlet_type" ref="a4f45abf6ebba2aeed6853269919dc1c9" args="(t_object *obj, int idx)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="cm__pdlink_8h.html#a4f45abf6ebba2aeed6853269919dc1c9">cmp_get_outlet_type</a> </td>
+          <td>(</td>
+          <td class="paramtype">t_object *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>idx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>check if outlet is signal~ </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td></td></tr>
+    <tr><td class="paramname">idx</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -778,7 +856,7 @@ Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Mar 11 2017 22:38:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 12 2017 00:01:08 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

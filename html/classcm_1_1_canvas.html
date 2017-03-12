@@ -165,6 +165,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates patchcord  <a href="#a24db3dbfed7d2801f397a560e3eb3729"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a7b7f2034b77ae87e3adc8627e02ee77e">patchcord</a> (<a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *obj1, <a class="el" href="classcm_1_1_u_i_widget.html">UIWidget</a> *outport, <a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *obj2, <a class="el" href="classcm_1_1_u_i_widget.html">UIWidget</a> *inport)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates patchcord, uses pointers to inlets/outlets. TODO temporary?  <a href="#a7b7f2034b77ae87e3adc8627e02ee77e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a485bc7c7a5e06dca2c44a3d9a422dd7d">deletePatchcord</a> (<a class="el" href="classcm_1_1_patchcord.html">Patchcord</a> *pc)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a8ad9a1d8abd5bf69131f885a782e437f">deletePatchcordsFor</a> (<a class="el" href="classcm_1_1_u_i_widget.html">UIWidget</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete all patchcords for object  <a href="#a8ad9a1d8abd5bf69131f885a782e437f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a408601f96f1fc5664d2767c73ff49364">deleteBox</a> (<a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *box)</td></tr>
@@ -188,6 +189,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classcm_1_1_patchcord.html">Patchcord</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a80b76980682beb5f277ce94e64a0f09b">getPatchcords</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#ac101a00bbd2f856dd6639a6ab3e1b356">findObjectIndex</a> (<a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">converts object pointers to their numbers in canvas and returns pd string for filesaver  <a href="#ac101a00bbd2f856dd6639a6ab3e1b356"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#ac798d3f35a088a37e8286dd75c119fbe">asPdFileString</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#ad31cd1c8b89e95b56eb6f633a61fdba6">getPatchcordAsString</a> (<a class="el" href="classcm_1_1_patchcord.html">Patchcord</a> *<a class="el" href="classcm_1_1_canvas.html#a24db3dbfed7d2801f397a560e3eb3729">patchcord</a>)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -233,6 +235,22 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ac798d3f35a088a37e8286dd75c119fbe"></a><!-- doxytag: member="cm::Canvas::asPdFileString" ref="ac798d3f35a088a37e8286dd75c119fbe" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::string <a class="el" href="classcm_1_1_canvas.html#ac798d3f35a088a37e8286dd75c119fbe">cm::Canvas::asPdFileString</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a1a9501ade5a1506d81c4874ebe874094"></a><!-- doxytag: member="cm::Canvas::cancelPatchcord" ref="a1a9501ade5a1506d81c4874ebe874094" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -360,6 +378,23 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="a485bc7c7a5e06dca2c44a3d9a422dd7d"></a><!-- doxytag: member="cm::Canvas::deletePatchcord" ref="a485bc7c7a5e06dca2c44a3d9a422dd7d" args="(Patchcord *pc)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcm_1_1_canvas.html#a485bc7c7a5e06dca2c44a3d9a422dd7d">cm::Canvas::deletePatchcord</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcm_1_1_patchcord.html">Patchcord</a> *&#160;</td>
+          <td class="paramname"><em>pc</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
 </div>
 </div>
@@ -1157,7 +1192,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Mar 11 2017 22:38:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 12 2017 00:01:08 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

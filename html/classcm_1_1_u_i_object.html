@@ -145,26 +145,30 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">adds single inlet (cm_port)  <a href="#a3e735691241c3d28b660b0ee945b3ab5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#a8ddae9dbc64fa5687d8c38baddd3a56b">addOutlet</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">adds single outlet (cm_port)  <a href="#a8ddae9dbc64fa5687d8c38baddd3a56b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcm_1_1_port.html">Port</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#ab736b5df2c979925ccee85b479955635">getInletAt</a> (int idx)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gets inlet (cm_port) at specified index  <a href="#ab736b5df2c979925ccee85b479955635"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcm_1_1_port.html">Port</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#aba30a377b7eae09f970ed9f90008b236">getOutletAt</a> (int idx)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gets outlet (cm_port) at specified index  <a href="#aba30a377b7eae09f970ed9f90008b236"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcm_1_1_port.html">Port</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#a525005f35448757c50d929abd5f4cdd9">inletAt</a> (int idx)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gets inlet (cm_port) at specified index  <a href="#a525005f35448757c50d929abd5f4cdd9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcm_1_1_port.html">Port</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#a22bdfb6fb7c9670af5ba6c803656a7d5">outletAt</a> (int idx)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gets outlet (cm_port) at specified index  <a href="#a22bdfb6fb7c9670af5ba6c803656a7d5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#a83fe02d91f6512fdf13dcb45452494cd">inletType</a> (int idx)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns 1 if signal~  <a href="#a83fe02d91f6512fdf13dcb45452494cd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#aa5b8ec7c907d0002e2973dcb5b754911">outletType</a> (int idx)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns 1 if signal~  <a href="#aa5b8ec7c907d0002e2973dcb5b754911"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#a42cd816b2e061057104f1e1ade6b8a71">setObjectData</a> (std::string objData)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets object text data  <a href="#a42cd816b2e061057104f1e1ade6b8a71"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#a4dfba5f783dde18c19b3ce750ccfead8">autoResize</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">call this after setting object data  <a href="#a4dfba5f783dde18c19b3ce750ccfead8"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#a1a988c71aba5c7d15a0d6814db8d823e">getObjectData</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gets object text data /usually overriden by ui objects/  <a href="#a1a988c71aba5c7d15a0d6814db8d823e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a">getPdObject</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns pointer to pd object.  <a href="#a072f4f72317fbae8e1254cc97b95ed2a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#a386b924f67213bc650da2e8c107b03d6">objectData</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gets object text data /usually overriden by ui objects/  <a href="#a386b924f67213bc650da2e8c107b03d6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#a5fb77b074b4b1857ceab8507ebf3b9cb">pdObject</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns pointer to pd object.  <a href="#a5fb77b074b4b1857ceab8507ebf3b9cb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#a897fffbdb2363d9c0ba5acbc80d7512d">setPdObject</a> (void *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets pointer to pd object  <a href="#a897fffbdb2363d9c0ba5acbc80d7512d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#ab4c42d67697dc2de41d0b3656bc69498">isErrorBox</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns true if object doesn't exist  <a href="#ab4c42d67697dc2de41d0b3656bc69498"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#ac5f4313739e33eb7d8c650382b76d88e">errorBox</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns true if object doesn't exist  <a href="#ac5f4313739e33eb7d8c650382b76d88e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#a8304b1fc7a03d92509b142995201fd7c">setErrorBox</a> (bool val)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets object box error flag  <a href="#a8304b1fc7a03d92509b142995201fd7c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#a0e3f36996412372a7ab1990c788bdd4c">getSaveString</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns object's text for client-based file saving  <a href="#a0e3f36996412372a7ab1990c788bdd4c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#a81c1405a3586d544c5581f193357a2a8">asPdFileString</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns object's text for client-based file saving  <a href="#a81c1405a3586d544c5581f193357a2a8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#a007ca2f57bda522a33ecaf15923e9067">setEditModeRef</a> (<a class="el" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7">t_editMode</a> *canvasEditMode)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets pointer to edit mode flag in parent canvas  <a href="#a007ca2f57bda522a33ecaf15923e9067"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#a3dc91c26e2de5f53d198e1a9cb31a742">resizeEvent</a> (QResizeEvent *event)</td></tr>
@@ -244,6 +248,27 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a81c1405a3586d544c5581f193357a2a8"></a><!-- doxytag: member="cm::UIObject::asPdFileString" ref="a81c1405a3586d544c5581f193357a2a8" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::string <a class="el" href="classcm_1_1_u_i_object.html#a81c1405a3586d544c5581f193357a2a8">cm::UIObject::asPdFileString</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>returns object's text for client-based file saving </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Reimplemented in <a class="el" href="classcm_1_1_u_i_message.html#a263b6e69ef28c7ce5fe0d3359107b3f9">cm::UIMessage</a>, <a class="el" href="classcm_1_1_u_i_toggle.html#aa0bce94d5f3f1834922ad7401f89d06a">cm::UIToggle</a>, <a class="el" href="classcm_1_1_u_i_float.html#ae9ea462ceda2744f16f71edf5314f729">cm::UIFloat</a>, <a class="el" href="classcm_1_1_u_i_bang.html#a279d36589232ddd58bb5c9af469f4b58">cm::UIBang</a>, and <a class="el" href="classcm_1_1_u_i_text.html#aa5eb654034f6bf2ae640303af6ee2ba5">cm::UIText</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a4dfba5f783dde18c19b3ce750ccfead8"></a><!-- doxytag: member="cm::UIObject::autoResize" ref="a4dfba5f783dde18c19b3ce750ccfead8" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -279,12 +304,51 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab736b5df2c979925ccee85b479955635"></a><!-- doxytag: member="cm::UIObject::getInletAt" ref="ab736b5df2c979925ccee85b479955635" args="(int idx)" -->
+<a class="anchor" id="ac5f4313739e33eb7d8c650382b76d88e"></a><!-- doxytag: member="cm::UIObject::errorBox" ref="ac5f4313739e33eb7d8c650382b76d88e" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcm_1_1_port.html">Port</a>* <a class="el" href="classcm_1_1_u_i_object.html#ab736b5df2c979925ccee85b479955635">cm::UIObject::getInletAt</a> </td>
+          <td class="memname">bool <a class="el" href="classcm_1_1_u_i_object.html#ac5f4313739e33eb7d8c650382b76d88e">cm::UIObject::errorBox</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>returns true if object doesn't exist </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab27720e688c7808ea6536ff9b947709b"></a><!-- doxytag: member="cm::UIObject::initProperties" ref="ab27720e688c7808ea6536ff9b947709b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classcm_1_1_u_i_object.html#ab27720e688c7808ea6536ff9b947709b">cm::UIObject::initProperties</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>init properties for the class - called from constructor </p>
+
+<p>Reimplemented in <a class="el" href="classcm_1_1_u_i_toggle.html#ab9cdc03df1537f328c48eb44891876c2">cm::UIToggle</a>, and <a class="el" href="classcm_1_1_u_i_float.html#afc0f9351bbb038b0b9f1d8eef192a981">cm::UIFloat</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a525005f35448757c50d929abd5f4cdd9"></a><!-- doxytag: member="cm::UIObject::inletAt" ref="a525005f35448757c50d929abd5f4cdd9" args="(int idx)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcm_1_1_port.html">Port</a>* <a class="el" href="classcm_1_1_u_i_object.html#a525005f35448757c50d929abd5f4cdd9">cm::UIObject::inletAt</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>idx</em></td><td>)</td>
@@ -305,31 +369,12 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a1a988c71aba5c7d15a0d6814db8d823e"></a><!-- doxytag: member="cm::UIObject::getObjectData" ref="a1a988c71aba5c7d15a0d6814db8d823e" args="()" -->
+<a class="anchor" id="a83fe02d91f6512fdf13dcb45452494cd"></a><!-- doxytag: member="cm::UIObject::inletType" ref="a83fe02d91f6512fdf13dcb45452494cd" args="(int idx)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string <a class="el" href="classcm_1_1_u_i_object.html#a1a988c71aba5c7d15a0d6814db8d823e">cm::UIObject::getObjectData</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>gets object text data /usually overriden by ui objects/ </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="aba30a377b7eae09f970ed9f90008b236"></a><!-- doxytag: member="cm::UIObject::getOutletAt" ref="aba30a377b7eae09f970ed9f90008b236" args="(int idx)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classcm_1_1_port.html">Port</a>* <a class="el" href="classcm_1_1_u_i_object.html#aba30a377b7eae09f970ed9f90008b236">cm::UIObject::getOutletAt</a> </td>
+          <td class="memname">int <a class="el" href="classcm_1_1_u_i_object.html#a83fe02d91f6512fdf13dcb45452494cd">cm::UIObject::inletType</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>idx</em></td><td>)</td>
@@ -339,95 +384,13 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>gets outlet (cm_port) at specified index </p>
+<p>returns 1 if signal~ </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">idx</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a072f4f72317fbae8e1254cc97b95ed2a"></a><!-- doxytag: member="cm::UIObject::getPdObject" ref="a072f4f72317fbae8e1254cc97b95ed2a" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void* <a class="el" href="classcm_1_1_u_i_object.html#a072f4f72317fbae8e1254cc97b95ed2a">cm::UIObject::getPdObject</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline, virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>returns pointer to pd object. </p>
-<p>gui-only objects can ovverride it with function that returns 0 </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
-
-<p>Reimplemented in <a class="el" href="classcm_1_1_u_i_text.html#a001605a0a1c806951865709bc392299a">cm::UIText</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a0e3f36996412372a7ab1990c788bdd4c"></a><!-- doxytag: member="cm::UIObject::getSaveString" ref="a0e3f36996412372a7ab1990c788bdd4c" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual std::string <a class="el" href="classcm_1_1_u_i_object.html#a0e3f36996412372a7ab1990c788bdd4c">cm::UIObject::getSaveString</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline, virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>returns object's text for client-based file saving </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
-
-<p>Reimplemented in <a class="el" href="classcm_1_1_u_i_message.html#ad5dba4e2bcf56289c4bc44f6ffa7588f">cm::UIMessage</a>, <a class="el" href="classcm_1_1_u_i_toggle.html#a6e36333a6bfb86fe0cc3d946cacbc38f">cm::UIToggle</a>, <a class="el" href="classcm_1_1_u_i_float.html#a54b0dc86dc39ea9e658b49b3a1be59bc">cm::UIFloat</a>, <a class="el" href="classcm_1_1_u_i_bang.html#a6d2be36c3cd5e872b32066a4e5c04891">cm::UIBang</a>, and <a class="el" href="classcm_1_1_u_i_text.html#ae6d4537ddefd8eb22abeee911edc6d8d">cm::UIText</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ab27720e688c7808ea6536ff9b947709b"></a><!-- doxytag: member="cm::UIObject::initProperties" ref="ab27720e688c7808ea6536ff9b947709b" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="classcm_1_1_u_i_object.html#ab27720e688c7808ea6536ff9b947709b">cm::UIObject::initProperties</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline, virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>init properties for the class - called from constructor </p>
-
-<p>Reimplemented in <a class="el" href="classcm_1_1_u_i_float.html#afc0f9351bbb038b0b9f1d8eef192a981">cm::UIFloat</a>, and <a class="el" href="classcm_1_1_u_i_toggle.html#ab9cdc03df1537f328c48eb44891876c2">cm::UIToggle</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ab4c42d67697dc2de41d0b3656bc69498"></a><!-- doxytag: member="cm::UIObject::isErrorBox" ref="ab4c42d67697dc2de41d0b3656bc69498" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="classcm_1_1_u_i_object.html#ab4c42d67697dc2de41d0b3656bc69498">cm::UIObject::isErrorBox</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>returns true if object doesn't exist </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
 </div>
@@ -462,6 +425,99 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a386b924f67213bc650da2e8c107b03d6"></a><!-- doxytag: member="cm::UIObject::objectData" ref="a386b924f67213bc650da2e8c107b03d6" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classcm_1_1_u_i_object.html#a386b924f67213bc650da2e8c107b03d6">cm::UIObject::objectData</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>gets object text data /usually overriden by ui objects/ </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a22bdfb6fb7c9670af5ba6c803656a7d5"></a><!-- doxytag: member="cm::UIObject::outletAt" ref="a22bdfb6fb7c9670af5ba6c803656a7d5" args="(int idx)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcm_1_1_port.html">Port</a>* <a class="el" href="classcm_1_1_u_i_object.html#a22bdfb6fb7c9670af5ba6c803656a7d5">cm::UIObject::outletAt</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>idx</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>gets outlet (cm_port) at specified index </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idx</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa5b8ec7c907d0002e2973dcb5b754911"></a><!-- doxytag: member="cm::UIObject::outletType" ref="aa5b8ec7c907d0002e2973dcb5b754911" args="(int idx)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classcm_1_1_u_i_object.html#aa5b8ec7c907d0002e2973dcb5b754911">cm::UIObject::outletType</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>idx</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>returns 1 if signal~ </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idx</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5fb77b074b4b1857ceab8507ebf3b9cb"></a><!-- doxytag: member="cm::UIObject::pdObject" ref="a5fb77b074b4b1857ceab8507ebf3b9cb" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void* <a class="el" href="classcm_1_1_u_i_object.html#a5fb77b074b4b1857ceab8507ebf3b9cb">cm::UIObject::pdObject</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>returns pointer to pd object. </p>
+<p>gui-only objects can ovverride it with function that returns 0 </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Reimplemented in <a class="el" href="classcm_1_1_u_i_text.html#ab4673412b0adb675083946605f1413f3">cm::UIText</a>.</p>
 
 </div>
 </div>
@@ -709,7 +765,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Mar 11 2017 22:38:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 12 2017 00:01:08 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -134,11 +134,11 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_bang.html#a7de5638fcab16f602c981f8868909fb4">setPdMessage</a> (std::string message)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_bang.html#a2fb846e6ddde33f6d1af7876a7f38239">setPdObject</a> (void *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets pointer to pd object  <a href="#a2fb846e6ddde33f6d1af7876a7f38239"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_bang.html#a6d2be36c3cd5e872b32066a4e5c04891">getSaveString</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns object's text for client-based file saving  <a href="#a6d2be36c3cd5e872b32066a4e5c04891"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_bang.html#a279d36589232ddd58bb5c9af469f4b58">asPdFileString</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns object's text for client-based file saving  <a href="#a279d36589232ddd58bb5c9af469f4b58"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_bang.html#a71df5198a2b1c99179e32fdaba0e3f9b">createObject</a> (std::string objectData, t_canvas *pdCanvas, <a class="el" href="classcm_1_1_u_i_widget.html">UIWidget</a> *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_bang.html#a71df5198a2b1c99179e32fdaba0e3f9b">createObject</a> (std::string <a class="el" href="classcm_1_1_u_i_object.html#a386b924f67213bc650da2e8c107b03d6">objectData</a>, t_canvas *pdCanvas, <a class="el" href="classcm_1_1_u_i_widget.html">UIWidget</a> *parent=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_bang.html#a2c900a6a7489b93b012fe827c9725aff">updateUI</a> (void *uiobj, ceammc::AtomList msg)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
@@ -162,6 +162,27 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a279d36589232ddd58bb5c9af469f4b58"></a><!-- doxytag: member="cm::UIBang::asPdFileString" ref="a279d36589232ddd58bb5c9af469f4b58" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classcm_1_1_u_i_bang.html#a279d36589232ddd58bb5c9af469f4b58">cm::UIBang::asPdFileString</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>returns object's text for client-based file saving </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Reimplemented from <a class="el" href="classcm_1_1_u_i_object.html#a81c1405a3586d544c5581f193357a2a8">cm::UIObject</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a71df5198a2b1c99179e32fdaba0e3f9b"></a><!-- doxytag: member="cm::UIBang::createObject" ref="a71df5198a2b1c99179e32fdaba0e3f9b" args="(std::string objectData, t_canvas *pdCanvas, UIWidget *parent=0)" -->
 <div class="memitem">
 <div class="memproto">
@@ -192,27 +213,6 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a6d2be36c3cd5e872b32066a4e5c04891"></a><!-- doxytag: member="cm::UIBang::getSaveString" ref="a6d2be36c3cd5e872b32066a4e5c04891" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string <a class="el" href="classcm_1_1_u_i_bang.html#a6d2be36c3cd5e872b32066a4e5c04891">cm::UIBang::getSaveString</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline, virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>returns object's text for client-based file saving </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
-
-<p>Reimplemented from <a class="el" href="classcm_1_1_u_i_object.html#a0e3f36996412372a7ab1990c788bdd4c">cm::UIObject</a>.</p>
 
 </div>
 </div>
@@ -397,7 +397,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Mar 11 2017 22:38:43 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 12 2017 00:01:08 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

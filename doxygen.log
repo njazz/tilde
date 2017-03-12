@@ -213,20 +213,20 @@ Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/cm_menu.h...
 Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/cm_object.cpp...
 Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h...
 Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/cm_objectloader.h...
-Generating docs for fil/home/travis/build/njazz/qtpd/qtpd_gui/cm_pdlink.h:149: warning: The following parameters of cmp_connectUI(t_pd *obj, void *uiobj, t_updateUI func) are not documented:
+Generating docs for fil/home/travis/build/njazz/qtpd/qtpd_gui/cm_pdlink.h:158: warning: The following parameters of cmp_connectUI(t_pd *obj, void *uiobj, t_updateUI func) are not documented:
   parameter 'uiobj'
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:616: warning: argument 'message' of command @param is not found in the argument list of cm::Canvas::createObject(std::string uiObjectName, std::string objectData, QPoint pos)
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:616: warning: The following parameters of cm::Canvas::createObject(std::string uiObjectName, std::string objectData, QPoint pos) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:612: warning: argument 'message' of command @param is not found in the argument list of cm::Canvas::createObject(std::string uiObjectName, std::string objectData, QPoint pos)
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:612: warning: The following parameters of cm::Canvas::createObject(std::string uiObjectName, std::string objectData, QPoint pos) are not documented:
   parameter 'uiObjectName'
   parameter 'objectData'
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:902: warning: argument 'patchcord' of command @param is not found in the argument list of cm::Canvas::findObjectIndex(UIObject *obj)
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:902: warning: The following parameters of cm::Canvas::findObjectIndex(UIObject *obj) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:918: warning: argument 'patchcord' of command @param is not found in the argument list of cm::Canvas::findObjectIndex(UIObject *obj)
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:918: warning: The following parameters of cm::Canvas::findObjectIndex(UIObject *obj) are not documented:
   parameter 'obj'
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:373: warning: argument 'pdObjectData' of command @param is not found in the argument list of cm::Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas *canvas)
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:373: warning: The following parameters of cm::Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas *canvas) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:369: warning: argument 'pdObjectData' of command @param is not found in the argument list of cm::Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas *canvas)
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:369: warning: The following parameters of cm::Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas *canvas) are not documented:
   parameter 'pdObjectName'
 /home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:122: warning: argument 'idx' of command @param is not found in the argument list of cm::UIObject::addInlet()
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:145: warning: argument 'idx' of command @param is not found in the argument list of cm::UIObject::addOutlet()
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:150: warning: argument 'idx' of command @param is not found in the argument list of cm::UIObject::addOutlet()
 /home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:75: warning: argument 'idx' of command @param is not found in the argument list of cm::UIObject::setInletsPos()
 /home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:99: warning: argument 'idx' of command @param is not found in the argument list of cm::UIObject::setOutletsPos()
 e /home/travis/build/njazz/qtpd/qtpd_gui/cm_objectmaker.cpp...
@@ -310,6 +310,6 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-symbol cache used 473/65536 hits=25721 misses=473
-lookup cache used 915/65536 hits=4780 misses=943
+symbol cache used 482/65536 hits=26582 misses=482
+lookup cache used 936/65536 hits=4901 misses=964
 finished...
