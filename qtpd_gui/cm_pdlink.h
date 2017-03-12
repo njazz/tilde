@@ -6,7 +6,14 @@
 
 // prototype for Pd 'server' interaction
 
+////
+/// \brief callback function when UI needs update
+///
 typedef void (*t_updateUI)(void* uiobj, ceammc::AtomList msg);
+
+////
+/// standard pd hook for print function
+///
 typedef void (*t_printhook)(const char *s);
 
 

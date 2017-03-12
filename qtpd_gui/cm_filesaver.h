@@ -16,7 +16,7 @@ private:
 public:
 
     ////
-    /// \brief save canvas
+    /// \brief save canvas TODO move parts to canvas
     /// \param file
     /// \param canvas
     ///

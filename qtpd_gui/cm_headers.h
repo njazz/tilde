@@ -8,6 +8,8 @@
 #include "cm_fileparser.h"
 #include "cm_filesaver.h"
 
+#include "cm_canvas_types.h"
+
 #include "cm_pdlink.h"
 #include "../qtpd_lib/src/m_pd.h"
 #include "../qtpd_lib/ceammc-lib/ceammc_atomlist.h"

@@ -73,7 +73,8 @@ HEADERS  += \
     properties/cm_property.h \
     properties/cm_propertylist.h \
     properties/cm_preferences.h \
-    cm_headers.h
+    cm_headers.h \
+    cm_canvas_types.h
 
 
 FORMS    += \

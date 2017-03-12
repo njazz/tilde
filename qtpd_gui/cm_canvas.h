@@ -14,7 +14,7 @@
 //todo - move to window?
 #include "cm_clipboard.h"
 
-
+//#include "cm_canvas_types.h"
 
 namespace cm
 {
@@ -29,14 +29,7 @@ typedef struct
 
 } tRectPlus;
 
-////
-/// \brief canvas data - boxes and patchcords
-/// \details todo: merge with clipboard class's types
-typedef struct
-{
-    objectVec boxes;
-    patchcordVec patchcords;
-} tCanvasData;
+
 
 ////
 /// \brief draw canvas as patch, box or pd "G-O-P" / patch in patch
@@ -54,27 +47,28 @@ private:
     objectVec selObjectBoxes;
     patchcordVec selPatchcords;
 
-    //move here
-    tCanvasData data;
+    //move here. these are global for all draw types (Canvas, Box)
+    tCanvasDataPlus data;
     tCanvasData selData;
 
-
+    //
+    // local !Box
     tRectPlus selFrame;
     tRectPlus newLine;
 
-    //
+    // local, !Box
     UIObject *connObj1;
     UIObject *connOutlet;
 
-    //
+    // local, !Box
     QPoint newObjectPos;
-
     QPoint dragPrevPos;
 
-    //
+    // TODO use widget's standard and create in constructor
+    // local, !Box
     t_editMode editMode;
 
-    //
+    // local, !Box
     bool gridEnabled;
     bool gridSnap;
     int gridStep;
@@ -82,12 +76,16 @@ private:
     //
     canvasDrawStyle drawStyle_;
     // if the canvas is the box, it can have this. Check this later
+    // !Canvas
     QMainWindow *Subcanvas_;
 
+    // !Canvas
     QLineEdit* editor_;
 
     Q_OBJECT
+
 public:
+
     //encapsulate
     QWidget *dragObject;
     QString fileName;
@@ -96,9 +94,14 @@ public:
     t_canvas* pdCanvas;
 
     explicit Canvas(UIObject *parent = 0);
-    //explicit Canvas(QWidget *parent = 0);
 
-    //temporary
+    ////
+    /// \brief creates new view of existing canvas. check this
+    /// \param srcCanvas
+    /// \param parentCanvas
+    /// \param dStyle draw style - Canvas, Box, CanvasInBox
+    /// \return
+    ///
     static Canvas* newView(Canvas* srcCanvas, UIObject* parentCanvas, canvasDrawStyle dStyle)
     {
         Canvas* ret = new Canvas(parentCanvas);
@@ -113,11 +116,23 @@ public:
 
     }
 
+    ////
+    /// \brief set draw style
+    /// \param ds
+    ///
     void setDrawStyle(canvasDrawStyle ds)
     {
         this->drawStyle_ = ds;
     }
-    canvasDrawStyle drawStyle() {return this->drawStyle_;}
+
+    ////
+    /// \brief get draw style
+    /// \param ds
+    ///
+    canvasDrawStyle drawStyle()
+    {
+        return this->drawStyle_;
+    }
 
     ////
     /// \brief main paint routine
@@ -540,6 +555,7 @@ public:
 
     ////
     /// \brief restore "pd" object when loading from file
+    /// \details this is probably useless -
     /// \param pdObjectData
     /// \param pos
     /// \param canvas
@@ -943,19 +959,18 @@ public:
     }
 
 
-    ////unused?
-    void deletePatchcord(Patchcord* pc)
-    {
-        // no repaint
+//    ////unused?
+//    void deletePatchcord(Patchcord* pc)
+//    {
+//        // no repaint
 
-        //cleanup !!!
-        patchcordVec::iterator it = std::find(this->patchcords.begin(), this->patchcords.end(), pc);
+//        //cleanup !!!
+//        patchcordVec::iterator it = std::find(this->patchcords.begin(), this->patchcords.end(), pc);
 
-        if (it != this->patchcords.end()) { this->patchcords.erase(it); }
+//        if (it != this->patchcords.end()) { this->patchcords.erase(it); }
 
-    }
+//    }
 
-    //cm_patchcord* pc = new cm_patchcord(obj1,outport,obj2,inport);
 
     ////
     /// \brief delete all patchcords for object
@@ -1092,6 +1107,10 @@ public:
         }
     }
 
+    ////
+    /// \brief set object value - mostly for canvas as box
+    /// \param objData
+    ///
     void setObjectData(std::string objData)
     {
         if (this->drawStyle() == ds_Box)
@@ -1139,19 +1158,29 @@ public:
         return this->objectBoxes;
     }
 
+    ////
+    /// \brief returns vector of all patchcords - needed by filesaver
+    /// \return
+    ///
     std::vector<Patchcord*>getPatchcords()
     {
         return this->patchcords;
     }
 
 
+//    //
+//    / \brief converts object pointers to their numbers in canvas and returns pd string for filesaver
+//    / \param patchcord
+//    / \return
+//    /
+
+
     ////
-    /// \brief converts object pointers to their numbers in canvas and returns pd string for filesaver
-    /// \param patchcord
+    /// \brief find object index in list
+    /// \details this may be different from object index inside pd canvas
+    /// \param obj
     /// \return
     ///
-
-
     int findObjectIndex(UIObject * obj)
     {
         UIObject* obj1;
@@ -1165,12 +1194,20 @@ public:
 
     }
 
-
+    ////
+    /// \brief this returns "restore ..." for canvas as box or calls filesaver for canvas
+    /// \return
+    ///
     virtual std::string asPdFileString()
     {
         return "#N canvas 0 0 400 300 10;\r\n";     //temporary
     }
 
+    /////
+    /// \brief returns patchcord as pd string
+    /// \param patchcord
+    /// \return
+    ///
     std::string getPatchcordAsString(Patchcord* patchcord)
     {
         //TODO

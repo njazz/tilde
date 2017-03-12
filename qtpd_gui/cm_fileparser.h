@@ -24,7 +24,11 @@ public:
     static PatchWindow* pdParserWindow;
     static std::string pdParserFileName;
 
-
+    ////
+    /// \brief converts string from pd file - creates new object
+    /// \param cmcanvas
+    /// \param list
+    ///
     static void objFromString(Canvas* cmcanvas, QStringList list)
     {
         qDebug("new obj");
@@ -82,8 +86,10 @@ public:
         }
 
     }
+
     ////
     /// \brief parses QStringLists of atoms to canvas - creates objects etc
+    /// \details converts list, passes data to 'objFromString'
     /// \param cmcanvas
     /// \param list
     ///

@@ -293,6 +293,10 @@ public:
     }
 
 
+    ////
+    /// \brief sets pointer to edit mode flag value in parent canvas
+    /// \param canvasEditMode
+    ///
     void setEditModeRef(t_editMode *canvasEditMode)
     {
         UIWidget::setEditModeRef(canvasEditMode);
@@ -308,6 +312,8 @@ public:
             this->outletAt(i)->setEditModeRef(canvasEditMode);
         }
     }
+
+    //////////
 
     void resizeEvent(QResizeEvent *event)
     {
@@ -335,11 +341,19 @@ public:
             this->sizeBox->hide();
     };
 
-
+    ////
+    /// \brief set secondary 'minimum width' value - used for object box resize
+    /// \param w
+    ///
     void setMinimumBoxWidth(int w)
     {
         this->minimumBoxWidth_ = w;
     }
+
+    ////
+    /// \brief get secondary 'minimum width' value - used for object box resize
+    /// \param w
+    ///
     int minimumBoxWidth()
     {
         return this->minimumBoxWidth_;
@@ -347,8 +361,6 @@ public:
 
 public slots:
     void resizeBox(int dx);
-
-
 
 };
 

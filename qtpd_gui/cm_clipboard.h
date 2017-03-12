@@ -1,14 +1,15 @@
 #ifndef CM_CLIPBOARD_H
 #define CM_CLIPBOARD_H
 
-#include "cm_object.h"
-#include "cm_patchcord.h"
+//#include "cm_object.h"
+//#include "cm_patchcord.h"
+
+#include "cm_canvas_types.h"
 
 namespace cm
 {
 
-typedef std::vector<UIObject*> objectVec;
-typedef std::vector<Patchcord*> patchcordVec;
+
 
 ////
 /// \brief clipboard singleton

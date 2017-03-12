@@ -21,7 +21,7 @@ namespace cm
 typedef UIObject* (*cmObjectConstructor)(std::string objectData, t_canvas* pdCanvas, UIWidget *parent);
 
 ////
-/// \brief prototype for ui externals handling
+/// \brief prototype for ui externals handling. stub
 ///
 class ObjectLoader
 {
