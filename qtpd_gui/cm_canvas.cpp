@@ -31,7 +31,7 @@ Canvas::Canvas(UIObject *parent) : UIObject(parent)
     this->pdCanvas = 0;
 
     //
-    this->drawStyle = cm_cd_Canvas;
+    this->drawStyle_ = ds_Canvas;
 }
 
 //cm_canvas::cm_canvas(QWidget *parent) : cm_widget((cm_widget*)parent)

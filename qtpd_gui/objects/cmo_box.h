@@ -87,7 +87,7 @@ public:
 
 
     ////
-    /// \brief temporary - make separate ui class for subpatches?
+    /// \brief temporary - remove later
     ///
     QMainWindow *cmSubcanvas;
 
@@ -99,6 +99,7 @@ public:
         QPainter p(this);
         p.setRenderHint(QPainter::HighQualityAntialiasing, true);
 
+        //remove this later
         if (this->cmSubcanvas)
         {
             p.setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
