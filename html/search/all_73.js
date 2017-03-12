@@ -40,8 +40,10 @@ var searchData=
   ['setpdobject',['setPdObject',['../classcm_1_1_u_i_object.html#a897fffbdb2363d9c0ba5acbc80d7512d',1,'cm::UIObject::setPdObject()'],['../classcm_1_1_u_i_bang.html#a2fb846e6ddde33f6d1af7876a7f38239',1,'cm::UIBang::setPdObject()'],['../classcm_1_1_u_i_float.html#ab6ef218accfe836599a188c1d5045134',1,'cm::UIFloat::setPdObject()'],['../classcm_1_1_u_i_message.html#a3b8286f1ff1e80796962cb1db646f353',1,'cm::UIMessage::setPdObject()'],['../classcm_1_1_u_i_toggle.html#a2638be20a2c6bf9e9d46a4639a6329b2',1,'cm::UIToggle::setPdObject()']]],
   ['setscale',['setScale',['../classcm_1_1_u_i_widget.html#ab19dfbac026586878943a23b85be26ee',1,'cm::UIWidget']]],
   ['setversion',['setVersion',['../classcm_1_1_u_i_property.html#a2d9bdea12d3b5f58fe31b08982621da9',1,'cm::UIProperty']]],
-  ['sizebox',['SizeBox',['../classcm_1_1_size_box.html#ad7eea41674442aebf6c5659411b7448a',1,'cm::SizeBox']]],
   ['sizebox',['SizeBox',['../classcm_1_1_size_box.html',1,'cm']]],
+  ['sizebox',['SizeBox',['../classcm_1_1_size_box.html#ad7eea41674442aebf6c5659411b7448a',1,'cm::SizeBox']]],
   ['start',['start',['../structcm_1_1t_rect_plus.html#a08ead848f4fb174d0997b620942d295b',1,'cm::tRectPlus']]],
-  ['stringtocanvas',['stringToCanvas',['../classcm_1_1_file_parser.html#aeb02a7ed4edafeddd95a63fbe6ed28f5',1,'cm::FileParser']]]
+  ['stringtocanvas',['stringToCanvas',['../classcm_1_1_file_parser.html#aeb02a7ed4edafeddd95a63fbe6ed28f5',1,'cm::FileParser']]],
+  ['structcanvasdata',['structCanvasData',['../structcm_1_1struct_canvas_data.html',1,'cm']]],
+  ['structcanvasdataplus',['structCanvasDataPlus',['../structcm_1_1struct_canvas_data_plus.html',1,'cm']]]
 ];

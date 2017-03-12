@@ -171,12 +171,14 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#a81c1405a3586d544c5581f193357a2a8">asPdFileString</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns object's text for client-based file saving  <a href="#a81c1405a3586d544c5581f193357a2a8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#a007ca2f57bda522a33ecaf15923e9067">setEditModeRef</a> (<a class="el" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7">t_editMode</a> *canvasEditMode)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets pointer to edit mode flag in parent canvas  <a href="#a007ca2f57bda522a33ecaf15923e9067"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets pointer to edit mode flag value in parent canvas  <a href="#a007ca2f57bda522a33ecaf15923e9067"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#a3dc91c26e2de5f53d198e1a9cb31a742">resizeEvent</a> (QResizeEvent *event)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#a761d8689150eb45689b8da5f3630d211">enterEvent</a> (QEvent *)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#afeaaa5b35138b22e432581c42b9647aa">leaveEvent</a> (QEvent *)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#ae37d466dcab243be17de1b19091713ef">setMinimumBoxWidth</a> (int w)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">set secondary 'minimum width' value - used for object box resize  <a href="#ae37d466dcab243be17de1b19091713ef"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_u_i_object.html#af92bb5f80600a5e1656a0ed069865c19">minimumBoxWidth</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get secondary 'minimum width' value - used for object box resize  <a href="#af92bb5f80600a5e1656a0ed069865c19"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>base class for all object boxes - standard and special </p>
@@ -427,6 +429,14 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>get secondary 'minimum width' value - used for object box resize </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">w</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="a386b924f67213bc650da2e8c107b03d6"></a><!-- doxytag: member="cm::UIObject::objectData" ref="a386b924f67213bc650da2e8c107b03d6" args="()" -->
@@ -589,8 +599,7 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>sets pointer to edit mode flag in parent canvas </p>
-<p>this is set by "constructor" (createObj etc) in canvas </p>
+<p>sets pointer to edit mode flag value in parent canvas </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">canvasEditMode</td><td></td></tr>
@@ -667,6 +676,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>set secondary 'minimum width' value - used for object box resize </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">w</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -768,7 +785,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 12 2017 20:55:11 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 12 2017 21:46:53 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

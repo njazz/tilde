@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['patchcords',['patchcords',['../structcm_1_1t_canvas_data.html#aa4ee88f0c6fbaca806d36789fedb7e46',1,'cm::tCanvasData']]],
+  ['patchcords',['patchcords',['../structcm_1_1struct_canvas_data.html#a7d93a1a7657e80f37bd5069e128adb3e',1,'cm::structCanvasData']]],
   ['pdcanvas',['pdCanvas',['../classcm_1_1_canvas.html#a24d8522284d0bc2886e426f251752f12',1,'cm::Canvas']]],
   ['pdparserfilename',['pdParserFileName',['../classcm_1_1_file_parser.html#abc47b4f119ab484f73fc4fb7aadb75a1',1,'cm::FileParser']]],
   ['pdparserprevwindow',['pdParserPrevWindow',['../classcm_1_1_file_parser.html#ac27b1b7a9c27f31c9bfeb1a019842781',1,'cm::FileParser']]],

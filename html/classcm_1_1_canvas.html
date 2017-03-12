@@ -141,7 +141,9 @@ Public Slots</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#ac86ad9074e991d057dd83c25a159947b">Canvas</a> (<a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *parent=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a5ba5c6d8eb8d084fff1b2cb34f00df9c">setDrawStyle</a> (<a class="el" href="namespacecm.html#a6c838d65e47f09497b9a053ab1f11494">canvasDrawStyle</a> ds)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">set draw style  <a href="#a5ba5c6d8eb8d084fff1b2cb34f00df9c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacecm.html#a6c838d65e47f09497b9a053ab1f11494">canvasDrawStyle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a6c59558dcf19b70e5bdc709eba594815">drawStyle</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get draw style  <a href="#a6c59558dcf19b70e5bdc709eba594815"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a19d70870858870b187187a056a3d3838">paintEvent</a> (QPaintEvent *)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">main paint routine  <a href="#a19d70870858870b187187a056a3d3838"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#af5acf7b81b84e03cda1a162f469d0916">drawCanvas</a> ()</td></tr>
@@ -186,7 +188,6 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates patchcord  <a href="#a24db3dbfed7d2801f397a560e3eb3729"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a7b7f2034b77ae87e3adc8627e02ee77e">patchcord</a> (<a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *obj1, <a class="el" href="classcm_1_1_u_i_widget.html">UIWidget</a> *outport, <a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *obj2, <a class="el" href="classcm_1_1_u_i_widget.html">UIWidget</a> *inport)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates patchcord, uses pointers to inlets/outlets. TODO temporary?  <a href="#a7b7f2034b77ae87e3adc8627e02ee77e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a485bc7c7a5e06dca2c44a3d9a422dd7d">deletePatchcord</a> (<a class="el" href="classcm_1_1_patchcord.html">Patchcord</a> *pc)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a8ad9a1d8abd5bf69131f885a782e437f">deletePatchcordsFor</a> (<a class="el" href="classcm_1_1_u_i_widget.html">UIWidget</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete all patchcords for object  <a href="#a8ad9a1d8abd5bf69131f885a782e437f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a408601f96f1fc5664d2767c73ff49364">deleteBox</a> (<a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *box)</td></tr>
@@ -202,7 +203,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a39c75aa337290c7b1157d4ac7144f217">getObjectByIndex</a> (int idx)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns object by index - this is needed by parser  <a href="#a39c75aa337290c7b1157d4ac7144f217"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#aaf2b376261f8b0a234c949437b646339">setObjectData</a> (std::string objData)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets object text data  <a href="#aaf2b376261f8b0a234c949437b646339"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">set object value - mostly for canvas as box  <a href="#aaf2b376261f8b0a234c949437b646339"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#ac2eac4ed2f2bdc5eee0544143847eab8">setGridEnabled</a> (bool val)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">set the show/hide grid flag  <a href="#ac2eac4ed2f2bdc5eee0544143847eab8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a885e83ef501901e03b0e3b7b32bf977a">setGridSnap</a> (bool val)</td></tr>
@@ -210,16 +211,19 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a0fc34f174cb461a4eba94c195d29a120">getObjectBoxes</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns vector of all object boxes - needed by filesaver  <a href="#a0fc34f174cb461a4eba94c195d29a120"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classcm_1_1_patchcord.html">Patchcord</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a80b76980682beb5f277ce94e64a0f09b">getPatchcords</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns vector of all patchcords - needed by filesaver  <a href="#a80b76980682beb5f277ce94e64a0f09b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#ac101a00bbd2f856dd6639a6ab3e1b356">findObjectIndex</a> (<a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">converts object pointers to their numbers in canvas and returns pd string for filesaver  <a href="#ac101a00bbd2f856dd6639a6ab3e1b356"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">find object index in list  <a href="#ac101a00bbd2f856dd6639a6ab3e1b356"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#ac798d3f35a088a37e8286dd75c119fbe">asPdFileString</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns object's text for client-based file saving  <a href="#ac798d3f35a088a37e8286dd75c119fbe"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">this returns "restore ..." for canvas as box or calls filesaver for canvas  <a href="#ac798d3f35a088a37e8286dd75c119fbe"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#ad31cd1c8b89e95b56eb6f633a61fdba6">getPatchcordAsString</a> (<a class="el" href="classcm_1_1_patchcord.html">Patchcord</a> *<a class="el" href="classcm_1_1_canvas.html#a24db3dbfed7d2801f397a560e3eb3729">patchcord</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns patchcord as pd string  <a href="#ad31cd1c8b89e95b56eb6f633a61fdba6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a5bd124a61eafeb9e114e2a65b77c97e3">resizeToObjects</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">change size to fit all objects  <a href="#a5bd124a61eafeb9e114e2a65b77c97e3"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classcm_1_1_canvas.html">Canvas</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#ac4041536615159af4051fd1d085e5901">newView</a> (<a class="el" href="classcm_1_1_canvas.html">Canvas</a> *srcCanvas, <a class="el" href="classcm_1_1_u_i_object.html">UIObject</a> *parentCanvas, <a class="el" href="namespacecm.html#a6c838d65e47f09497b9a053ab1f11494">canvasDrawStyle</a> dStyle)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates new view of existing canvas. check this  <a href="#ac4041536615159af4051fd1d085e5901"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcm_1_1_canvas.html#a606fde5bd5e21aaaefa0fdfae00b7213">dragObject</a></td></tr>
@@ -261,7 +265,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>returns object's text for client-based file saving </p>
+<p>this returns "restore ..." for canvas as box or calls filesaver for canvas </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
 <p>Reimplemented from <a class="el" href="classcm_1_1_u_i_object.html#a81c1405a3586d544c5581f193357a2a8">cm::UIObject</a>.</p>
@@ -442,23 +446,6 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a485bc7c7a5e06dca2c44a3d9a422dd7d"></a><!-- doxytag: member="cm::Canvas::deletePatchcord" ref="a485bc7c7a5e06dca2c44a3d9a422dd7d" args="(Patchcord *pc)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classcm_1_1_canvas.html#a485bc7c7a5e06dca2c44a3d9a422dd7d">cm::Canvas::deletePatchcord</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classcm_1_1_patchcord.html">Patchcord</a> *&#160;</td>
-          <td class="paramname"><em>pc</em></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a8ad9a1d8abd5bf69131f885a782e437f"></a><!-- doxytag: member="cm::Canvas::deletePatchcordsFor" ref="a8ad9a1d8abd5bf69131f885a782e437f" args="(UIWidget *obj)" -->
 <div class="memitem">
 <div class="memproto">
@@ -570,6 +557,14 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>get draw style </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ds</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="ac101a00bbd2f856dd6639a6ab3e1b356"></a><!-- doxytag: member="cm::Canvas::findObjectIndex" ref="ac101a00bbd2f856dd6639a6ab3e1b356" args="(UIObject *obj)" -->
@@ -587,10 +582,11 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>converts object pointers to their numbers in canvas and returns pd string for filesaver </p>
+<p>find object index in list </p>
+<p>this may be different from object index inside pd canvas </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">patchcord</td><td></td></tr>
+    <tr><td class="paramname">obj</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -679,6 +675,15 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>returns patchcord as pd string </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">patchcord</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="a80b76980682beb5f277ce94e64a0f09b"></a><!-- doxytag: member="cm::Canvas::getPatchcords" ref="a80b76980682beb5f277ce94e64a0f09b" args="()" -->
@@ -694,6 +699,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>returns vector of all patchcords - needed by filesaver </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -985,6 +993,17 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>creates new view of existing canvas. check this </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">srcCanvas</td><td></td></tr>
+    <tr><td class="paramname">parentCanvas</td><td></td></tr>
+    <tr><td class="paramname">dStyle</td><td>draw style - <a class="el" href="classcm_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>, Box, CanvasInBox </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="a19d70870858870b187187a056a3d3838"></a><!-- doxytag: member="cm::Canvas::paintEvent" ref="a19d70870858870b187187a056a3d3838" args="(QPaintEvent *)" -->
@@ -1174,6 +1193,7 @@ Public Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>restore "pd" object when loading from file </p>
+<p>this is probably useless - </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">pdObjectData</td><td></td></tr>
@@ -1378,6 +1398,14 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>set draw style </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ds</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="a46331a593d63e1ba3d11de9ee3913a56"></a><!-- doxytag: member="cm::Canvas::setEditMode" ref="a46331a593d63e1ba3d11de9ee3913a56" args="(t_editMode mode)" -->
@@ -1470,8 +1498,13 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>sets object text data </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+<p>set object value - mostly for canvas as box </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">objData</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Reimplemented from <a class="el" href="classcm_1_1_u_i_object.html#aa8477317f76d41139681df5bf210c833">cm::UIObject</a>.</p>
 
@@ -1539,7 +1572,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 12 2017 20:55:11 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 12 2017 21:46:53 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
