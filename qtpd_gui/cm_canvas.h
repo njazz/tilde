@@ -84,6 +84,8 @@ private:
     // if the canvas is the box, it can have this. Check this later
     QMainWindow *Subcanvas_;
 
+    QLineEdit* editor_;
+
     Q_OBJECT
 public:
     //encapsulate
@@ -308,10 +310,48 @@ public:
     }
 
     ////
-    /// \brief mouse move handling
+    /// \brief route mouse move handling for different vis types
     /// \param ev
     ///
     void mouseMoveEvent(QMouseEvent* ev)
+    {
+        if (this->drawStyle() == ds_Canvas)
+            this->mouseMoveEventForCanvas(ev);
+        if (this->drawStyle() == ds_Box)
+            this->mouseMoveEventForBox(ev);
+    }
+
+    ////
+    /// \brief route mouse press handling for different vis types
+    /// \param ev
+    ///
+    void mousePressEvent(QMouseEvent* ev)
+    {
+        if (this->drawStyle() == ds_Canvas)
+            this->mousePressEventForCanvas(ev);
+        if (this->drawStyle() == ds_Box)
+            this->mousePressEventForBox(ev);
+    }
+
+    ////
+    /// \brief route mouse release handling for different vis types
+    /// \param ev
+    ///
+    void mouseReleaseEvent(QMouseEvent* ev)
+    {
+        if (this->drawStyle() == ds_Canvas)
+            this->mouseReleaseEventForCanvas(ev);
+        if (this->drawStyle() == ds_Box)
+            this->mouseReleaseEventForBox(ev);
+    }
+
+    /////////
+
+    ////
+    /// \brief mouse move handling
+    /// \param ev
+    ///
+    void mouseMoveEventForCanvas(QMouseEvent *ev)
     {
         if (!ev) return;
 
@@ -376,11 +416,12 @@ public:
 
     }
 
+
     ////
-    /// \brief mouse down handling
+    /// \brief mouse down handling for Canvas
     /// \param ev
     ///
-    void mousePressEvent(QMouseEvent* ev)
+    void mousePressEventForCanvas(QMouseEvent* ev)
     {
 
 
@@ -404,10 +445,12 @@ public:
 
     }
 
+
+
     ////
     /// \brief mouse up handling
     ///
-    void mouseReleaseEvent(QMouseEvent*)
+    void mouseReleaseEventForCanvas(QMouseEvent*)
     {
         this->dragObject = 0;
 
@@ -418,6 +461,65 @@ public:
     }
 
 
+    /////////
+
+    ////
+    /// \brief mouse down ForBox
+    /// \param ev
+    ///
+    void mousePressEventForBox(QMouseEvent* ev)
+    {
+        //open canvas for subpatch
+        if (this->getEditMode() != em_Unlocked)
+        {
+            if (this->Subcanvas_)
+            {
+                this->Subcanvas_->show();
+            }
+        }
+
+        if ( (this->getEditMode()==em_Unlocked) && this->isSelected())
+        {
+            this->editor_->setText(QString(this->objectData().c_str()));
+            this->editor_->show();
+            this->editor_->setFocus();
+        }
+
+        emit selectBox(this);
+        this->dragOffset = ev->pos();
+    }
+
+    ////
+    /// \brief mouse up ForBox
+    ///
+    void mouseReleaseEventForBox(QMouseEvent*)
+    {
+        this->repaint();
+    }
+
+    ////
+    /// \brief mouse move ForBox
+    /// \param event
+    ///
+    void mouseMoveEventForBox(QMouseEvent* event)
+    {
+        if (event->buttons() & Qt::LeftButton) {
+            emit moveBox(this, event);
+        }
+        event->ignore();
+
+
+        if ( (this->getEditMode() != em_Unlocked) && (this->Subcanvas_) )
+        {
+            this->setCursor(QCursor(Qt::PointingHandCursor));
+        }
+        else
+        {
+            this->setCursor(QCursor(Qt::ArrowCursor));
+        }
+    }
+
+    /////////
 
     ////
     /// \brief deselect all object boxes

@@ -32,6 +32,15 @@ Canvas::Canvas(UIObject *parent) : UIObject(parent)
 
     //
     this->drawStyle_ = ds_Canvas;
+
+    //
+    this->editor_ = new QLineEdit(this);
+    this->editor_->setFixedSize(65-5,18);
+    this->editor_->move(1,1);
+    this->editor_->setFont(QFont(PREF_QSTRING("Font"),11,0,false));
+    this->editor_->hide();
+    this->editor_->setAttribute(Qt::WA_MacShowFocusRect, 0);
+    this->editor_->setFrame(false);
 }
 
 //cm_canvas::cm_canvas(QWidget *parent) : cm_widget((cm_widget*)parent)
