@@ -42,14 +42,14 @@ class Canvas : public UIObject
 {
 private:
     //todo move this to data class?
-    objectVec objectBoxes;
-    patchcordVec patchcords;
-    objectVec selObjectBoxes;
-    patchcordVec selPatchcords;
+//    objectVec objectBoxes;
+//    patchcordVec patchcords;
+//    objectVec selectionData_.boxes;
+//    patchcordVec selPatchcords;
 
     //move here. these are global for all draw types (Canvas, Box)
-    tCanvasDataPlus data;
-    tCanvasData selData;
+    tCanvasDataPlus data_;
+    tCanvasData selectionData_;
 
     //
     // local !Box
@@ -222,24 +222,24 @@ public:
     ///
     void paintPatchcords()
     {
-        for (int i=0; i< (int)this->patchcords.size(); i++)
+        for (int i=0; i< (int)this->data_.patchcords.size(); i++)
         {
             QPainter p(this);
 
-            QColor b_pc_color = (((Patchcord*)this->patchcords.at(i))->patchcordType() == cm_pt_signal) ? QColor(128, 160, 192) : QColor(0, 0, 0);
+            QColor b_pc_color = (((Patchcord*)this->data_.patchcords.at(i))->patchcordType() == cm_pt_signal) ? QColor(128, 160, 192) : QColor(0, 0, 0);
             // cleanup
-            QColor pc_color = ((Patchcord*)this->patchcords.at(i))->mouseover ? QColor(255, 192, 0) : b_pc_color;
-            if (((Patchcord*)this->patchcords.at(i))->selected) pc_color = QColor(0,192,255);
+            QColor pc_color = ((Patchcord*)this->data_.patchcords.at(i))->mouseover ? QColor(255, 192, 0) : b_pc_color;
+            if (((Patchcord*)this->data_.patchcords.at(i))->selected) pc_color = QColor(0,192,255);
 
             p.setRenderHint(QPainter::HighQualityAntialiasing, true);
-            p.setPen(QPen(pc_color, 1 + (((Patchcord*)this->patchcords.at(i))->patchcordType() == cm_pt_signal) , Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p.setPen(QPen(pc_color, 1 + (((Patchcord*)this->data_.patchcords.at(i))->patchcordType() == cm_pt_signal) , Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
             //todo option
-            //p.drawLine(((cm_patchcord*)this->patchcords.at(i))->getStartPoint(), ((cm_patchcord*)this->patchcords.at(i))->getEndPoint());
+            //p.drawLine(((cm_patchcord*)this->data_.patchcords.at(i))->getStartPoint(), ((cm_patchcord*)this->data_.patchcords.at(i))->getEndPoint());
 
             QPainterPath path;
-            QPoint start = ((Patchcord*)this->patchcords.at(i))->getStartPoint();
-            QPoint end = ((Patchcord*)this->patchcords.at(i))->getEndPoint();
+            QPoint start = ((Patchcord*)this->data_.patchcords.at(i))->getStartPoint();
+            QPoint end = ((Patchcord*)this->data_.patchcords.at(i))->getEndPoint();
 
             QPoint b1 = QPoint(start.x() + (end.x() - start.x()) * .5, fabs(end.y() - start.y()) * .5 + start.y());
             QPoint b2 = QPoint(end.x() - (end.x() - start.x()) * .5, -fabs(end.y() - start.y()) * .5 + end.y());
@@ -287,10 +287,10 @@ public:
     bool hoverPatchcords(QPoint pos)
     {
         bool ret = false;
-        for (int i=0; i< (int)this->patchcords.size(); i++)
+        for (int i=0; i< (int)this->data_.patchcords.size(); i++)
         {
-            ((Patchcord*)this->patchcords.at(i))->mouseover = ((Patchcord*)this->patchcords.at(i))->hover(pos);
-            if (((Patchcord*)this->patchcords.at(i))->mouseover) ret=true;
+            ((Patchcord*)this->data_.patchcords.at(i))->mouseover = ((Patchcord*)this->data_.patchcords.at(i))->hover(pos);
+            if (((Patchcord*)this->data_.patchcords.at(i))->mouseover) ret=true;
         }
         return ret;
     }
@@ -302,9 +302,9 @@ public:
     void hoverPatchcordsOff()
     {
         //bool ret = false;
-        for (int i=0; i< (int)this->patchcords.size(); i++)
+        for (int i=0; i< (int)this->data_.patchcords.size(); i++)
         {
-            ((Patchcord*)this->patchcords.at(i))->mouseover = false;// ((cm_patchcord*)this->patchcords.at(i))->hover(pos);
+            ((Patchcord*)this->data_.patchcords.at(i))->mouseover = false;// ((cm_patchcord*)this->data_.patchcords.at(i))->hover(pos);
 
         }
 
@@ -318,10 +318,10 @@ public:
     bool clickPatchcords(QPoint pos)
     {
         bool ret = false;
-        for (int i=0; i< (int)this->patchcords.size(); i++)
+        for (int i=0; i< (int)this->data_.patchcords.size(); i++)
         {
-            ((Patchcord*)this->patchcords.at(i))->selected = ((Patchcord*)this->patchcords.at(i))->hover(pos);
-            if (((Patchcord*)this->patchcords.at(i))->selected) ret=true;
+            ((Patchcord*)this->data_.patchcords.at(i))->selected = ((Patchcord*)this->data_.patchcords.at(i))->hover(pos);
+            if (((Patchcord*)this->data_.patchcords.at(i))->selected) ret=true;
         }
         return ret;
     }
@@ -397,25 +397,25 @@ public:
         //selection frame
         if (this->selFrame.active)
         {
-            for (int i=0; i< (int)this->objectBoxes.size();i++)
+            for (int i=0; i< (int)this->data_.boxes.size();i++)
             {
-                QPoint pos = ((UIBox*)this->objectBoxes.at(i))->pos();
-                QSize size = ((UIBox*)this->objectBoxes.at(i))->size();
+                QPoint pos = ((UIBox*)this->data_.boxes.at(i))->pos();
+                QSize size = ((UIBox*)this->data_.boxes.at(i))->size();
                 QRect r = QRect(pos, pos+QPoint(size.width(), size.height()) );
 
                 QRect frame = QRect (this->selFrame.start, this->selFrame.start + this->selFrame.end );
 
                 if (frame.contains(r,false))
                 {
-                    ((UIBox*)this->objectBoxes.at(i))->select();
-                    this->selObjectBoxes.push_back(this->objectBoxes.at(i));
+                    ((UIBox*)this->data_.boxes.at(i))->select();
+                    this->selectionData_.boxes.push_back(this->data_.boxes.at(i));
                 }
                 else
                 {
-                    ((UIBox*)this->objectBoxes.at(i))->deselect();
+                    ((UIBox*)this->data_.boxes.at(i))->deselect();
 
-                    auto it = std::find(this->selObjectBoxes.begin(), this->selObjectBoxes.end(), this->objectBoxes.at(i));
-                    if (it != this->selObjectBoxes.end()) { this->selObjectBoxes.erase(it); }
+                    auto it = std::find(this->selectionData_.boxes.begin(), this->selectionData_.boxes.end(), this->data_.boxes.at(i));
+                    if (it != this->selectionData_.boxes.end()) { this->selectionData_.boxes.erase(it); }
 
 
                 }
@@ -543,14 +543,14 @@ public:
     ///
     void deselectBoxes()
     {
-        for (int i=0;i< (int)this->selObjectBoxes.size();i++)
+        for (int i=0;i< (int)this->selectionData_.boxes.size();i++)
         {
-            if (this->selObjectBoxes.at(i))
-                ((UIBox*)this->selObjectBoxes.at(i))->deselect();
+            if (this->selectionData_.boxes.at(i))
+                ((UIBox*)this->selectionData_.boxes.at(i))->deselect();
 
         }
 
-        this->selObjectBoxes.clear();
+        this->selectionData_.boxes.clear();
     }
 
     ////
@@ -617,7 +617,7 @@ public:
 
         box->move(pos);
 
-        this->objectBoxes.push_back(box);
+        this->data_.boxes.push_back(box);
 
         box->show();
 
@@ -686,7 +686,7 @@ public:
 
     //        box->move(pos);
 
-    //        this->objectBoxes.push_back(box);
+    //        this->data_.boxes.push_back(box);
 
     //        box->show();
 
@@ -715,7 +715,7 @@ public:
 
     //        msg->move(pos);
 
-    //        this->objectBoxes.push_back(msg);
+    //        this->data_.boxes.push_back(msg);
 
     //        //temp
     //        t_object* new_obj = 0 ;
@@ -767,7 +767,7 @@ public:
 
     //        flo->move(pos);
 
-    //        this->objectBoxes.push_back(flo);
+    //        this->data_.boxes.push_back(flo);
 
     //        //temp
     //        t_object* new_obj = 0 ;
@@ -811,7 +811,7 @@ public:
         connect(obj,&UIMessage::moveBox, this, &Canvas::s_MoveBox);
         obj->setEditModeRef(&this->editMode);
         obj->move(pos);
-        this->objectBoxes.push_back(obj);
+        this->data_.boxes.push_back(obj);
 
         obj->show();
 
@@ -844,7 +844,7 @@ public:
 
         obj->setEditModeRef(&this->editMode);
         obj->move(pos);
-        this->objectBoxes.push_back(obj);
+        this->data_.boxes.push_back(obj);
 
         QPalette Pal(palette());
         Pal.setColor(QPalette::Background, QColor(240,240,240));
@@ -884,7 +884,7 @@ public:
 
     //        txt->move(pos);
 
-    //        this->objectBoxes.push_back(txt);
+    //        this->data_.boxes.push_back(txt);
 
     //        txt->setPdMessage(message.c_str());
 
@@ -924,7 +924,7 @@ public:
 
             qDebug("pdlib patchcord");
             cmp_patchcord((t_object*)obj1->pdObject(),outlet,(t_object*)obj2->pdObject(),inlet);
-            this->patchcords.push_back(pc);
+            this->data_.patchcords.push_back(pc);
         }
         else
             qDebug("canvas patchcord error");
@@ -954,7 +954,7 @@ public:
         //        cmp_patchcord((t_object*)obj1->getPdObject(),((Port*)outport)->portIndex,(t_object*)obj2->getPdObject(),((Port*)inport)->portIndex);
         //        //qDebug("no connection");
 
-        //        this->patchcords.push_back(pc);
+        //        this->data_.patchcords.push_back(pc);
 
     }
 
@@ -965,9 +965,9 @@ public:
 //        // no repaint
 
 //        //cleanup !!!
-//        patchcordVec::iterator it = std::find(this->patchcords.begin(), this->patchcords.end(), pc);
+//        patchcordVec::iterator it = std::find(this->data_.patchcords.begin(), this->data_.patchcords.end(), pc);
 
-//        if (it != this->patchcords.end()) { this->patchcords.erase(it); }
+//        if (it != this->data_.patchcords.end()) { this->data_.patchcords.erase(it); }
 
 //    }
 
@@ -978,12 +978,12 @@ public:
     ///
     void deletePatchcordsFor(UIWidget* obj)
     {
-        //for //(int i=0;i<this->patchcords.size();i++)
+        //for //(int i=0;i<this->data_.patchcords.size();i++)
         std::vector<Patchcord*>::iterator it;
-        for (it=this->patchcords.begin(); it!= this->patchcords.end(); )
+        for (it=this->data_.patchcords.begin(); it!= this->data_.patchcords.end(); )
         {
             if ((*it)->connectsObject(obj))
-                it =this->patchcords.erase(it);
+                it =this->data_.patchcords.erase(it);
             else
                 ++it;
 
@@ -1024,13 +1024,13 @@ public:
     void delBoxes()
     {
         objectVec::iterator it;
-        for (it = selObjectBoxes.begin() ; it != selObjectBoxes.end(); ++it)
+        for (it = selectionData_.boxes.begin() ; it != selectionData_.boxes.end(); ++it)
         {
-            //((UIObject*) this->selObjectBoxes.at(i))
+            //((UIObject*) this->selectionData_.boxes.at(i))
             this->deleteBox( *it  );
         }
 
-        selObjectBoxes.clear();;
+        selectionData_.boxes.clear();;
 
     }
 
@@ -1040,9 +1040,9 @@ public:
     void delSelectedPatchcords()
     {
         //cleanup
-        //for (int i=0;i<this->patchcords.size(); i++)
+        //for (int i=0;i<this->data_.patchcords.size(); i++)
         std::vector<Patchcord*>::iterator it;
-        for (it=this->patchcords.begin(); it!= this->patchcords.end(); )
+        for (it=this->data_.patchcords.begin(); it!= this->data_.patchcords.end(); )
         {
             if ( (*it) -> selected )
             {
@@ -1055,7 +1055,7 @@ public:
                 int in2 = p->getInIdx();
 
                 cmp_delete_patchcord(obj1,out1,obj2,in2);
-                it = this->patchcords.erase(it);
+                it = this->data_.patchcords.erase(it);
             }
             else
                 ++it;
@@ -1098,8 +1098,8 @@ public:
     ///
     UIObject* getObjectByIndex(int idx)
     {
-        if ((idx< (int)this->objectBoxes.size()) && (idx>=0))
-            return this->objectBoxes.at(idx);
+        if ((idx< (int)this->data_.boxes.size()) && (idx>=0))
+            return this->data_.boxes.at(idx);
         else
         {
             qDebug("object not found");
@@ -1155,7 +1155,7 @@ public:
     ///
     std::vector<UIObject*> getObjectBoxes()
     {
-        return this->objectBoxes;
+        return this->data_.boxes;
     }
 
     ////
@@ -1164,7 +1164,7 @@ public:
     ///
     std::vector<Patchcord*>getPatchcords()
     {
-        return this->patchcords;
+        return this->data_.patchcords;
     }
 
 
@@ -1184,9 +1184,9 @@ public:
     int findObjectIndex(UIObject * obj)
     {
         UIObject* obj1;
-        std::vector<UIObject*>::iterator iter = std::find(this->objectBoxes.begin(), objectBoxes.end(), obj);
-        size_t index = std::distance(this->objectBoxes.begin(), iter);
-        if(index != this->objectBoxes.size())
+        std::vector<UIObject*>::iterator iter = std::find(this->data_.boxes.begin(), data_.boxes.end(), obj);
+        size_t index = std::distance(this->data_.boxes.begin(), iter);
+        if(index != this->data_.boxes.size())
         {
             return index;
         }

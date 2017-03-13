@@ -23,6 +23,8 @@ public:
         return instance;
     }
 private:
+    structCanvasData data_;
+
     Clipboard() {}
 //    cm_clipboard(cm_clipboard const&);
 //    void operator=(cm_clipboard const&);

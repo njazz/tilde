@@ -108,7 +108,7 @@ void Canvas::s_SelectBox(UIWidget *box)
 
     if (this->editMode == em_Unlocked)
     {
-        this->selObjectBoxes.push_back((UIObject*)box);
+        this->selectionData_.boxes.push_back((UIObject*)box);
         box->select();
         box->repaint();
     }
@@ -123,10 +123,10 @@ void Canvas::s_SelectBox(UIWidget *box)
 void Canvas::s_MoveBox(UIWidget *box, QMouseEvent* event)
 {
     if (! (this->getEditMode() == em_Unlocked) ) return;
-    for (int i=0;i<(int)this->selObjectBoxes.size();i++)
+    for (int i=0;i<(int)this->selectionData_.boxes.size();i++)
     {
-        UIObject* w = ((UIObject*)this->selObjectBoxes.at(i));
-        QPoint pos = ((UIObject*)this->selObjectBoxes.at(i))->pos() +
+        UIObject* w = ((UIObject*)this->selectionData_.boxes.at(i));
+        QPoint pos = ((UIObject*)this->selectionData_.boxes.at(i))->pos() +
                 mapToParent((event->pos()-box->dragOffset));
 
         if (this->gridSnap)
