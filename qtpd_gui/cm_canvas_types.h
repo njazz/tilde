@@ -4,7 +4,7 @@
 #include "cm_object.h"
 #include "cm_patchcord.h"
 
-namespace cm{
+namespace qtpd{
 
 typedef std::vector<UIObject*> objectVec;
 typedef std::vector<Patchcord*> patchcordVec;
@@ -25,8 +25,11 @@ typedef struct structCanvasData
 /// \details todo: merge with clipboard class's types
 typedef struct structCanvasDataPlus : structCanvasData
 {
+    portVec* inlets_;
+    portVec* outlets_;
 
 } tCanvasDataPlus;
+
 }
 
 #endif // CM_CANVAS_TYPES_H

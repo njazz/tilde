@@ -115,7 +115,7 @@ extern "C" void setup_ui0x2efloat()
     class_addmethod(ui_float_class, (t_method)uifloat_set, &s_anything, A_GIMME, 0);
     class_addmethod(ui_float_class, (t_method)uifloat_bang, &s_bang, A_NULL, 0);
 
-    class_addfloat(ui_float_class, (t_method)uifloat_float, &s_anything, A_GIMME, 0);
+    class_addfloat(ui_float_class, (t_method)uifloat_float);
 
     class_setsavefn(ui_float_class, uifloat_save);
     

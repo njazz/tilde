@@ -9,10 +9,10 @@
 
 #include "cm_pdlink.h"
 
-namespace cm
+namespace qtpd
 {
 
-
+typedef std::vector<Port*> portVec;
 
 ////
 /// \brief base class for all object boxes - standard and special
@@ -25,8 +25,8 @@ private:
     //temporary?
     void* pdObject_;
 
-    std::vector<Port*> inlets_;
-    std::vector<Port*> outlets_;
+    portVec* inlets_;
+    portVec*  outlets_;
 
     std::string objectData_;     //name and arguments etc
 
@@ -85,14 +85,14 @@ public:
         float w = this->width() - 10;
         //w = (w < 40) ? 40 : w;
 
-        float s = (inlets_.size()<2)?inlets_.size():(inlets_.size()-1);
+        float s = (inlets_->size()<2)?inlets_->size():(inlets_->size()-1);
 
-        for (int i = 0; i < (int)inlets_.size(); i++) {
+        for (int i = 0; i < (int)inlets_->size(); i++) {
             float x = (w) / s * (float)i;
             float y = 0;
 
-            inlets_.at(i)->move(x, y);
-            inlets_.at(i)->repaint();
+            inlets_->at(i)->move(x, y);
+            inlets_->at(i)->repaint();
         }
     }
 
@@ -108,14 +108,14 @@ public:
         float w = this->width() - 10;
         //w = (w < 40) ? 40 : w;
 
-        float s = (outlets_.size()<2)?outlets_.size():(outlets_.size()-1);
+        float s = (outlets_->size()<2)?outlets_->size():(outlets_->size()-1);
 
-        for (int i = 0; i < (int)outlets_.size(); i++) {
+        for (int i = 0; i < (int)outlets_->size(); i++) {
             float x = (w) / s * (float)i;
             float y = this->height() - 3;
 
-            outlets_.at(i)->move(x, y);
-            outlets_.at(i)->repaint();
+            outlets_->at(i)->move(x, y);
+            outlets_->at(i)->repaint();
         }
     }
 
@@ -129,7 +129,7 @@ public:
     {
         Port* new_in = new Port(this);
         new_in->portType = Port::portInlet;
-        new_in->portIndex = inlets_.size();
+        new_in->portIndex = inlets_->size();
 
         if (this->pdObject_)
         {
@@ -139,7 +139,7 @@ public:
 
         new_in->setEditModeRef(this->getEditModeRef());
 
-        inlets_.push_back(new_in);
+        inlets_->push_back(new_in);
         connect(new_in, &Port::mousePressed, static_cast<UIWidget*>(this->parent()), &UIWidget::s_InMousePressed);
         connect(new_in, &Port::mouseReleased, static_cast<UIWidget*>(this->parent()), &UIWidget::s_InMouseReleased);
 
@@ -157,7 +157,7 @@ public:
     {
         Port* new_out = new Port(this);
         new_out->portType = Port::portOutlet;
-        new_out->portIndex = outlets_.size();
+        new_out->portIndex = outlets_->size();
 
         if (this->pdObject_)
         {
@@ -168,7 +168,7 @@ public:
 
         new_out->setEditModeRef(this->getEditModeRef());
 
-        outlets_.push_back(new_out);
+        outlets_->push_back(new_out);
         connect(new_out, &Port::mousePressed, static_cast<UIWidget*>(this->parent()), &UIWidget::s_OutMousePressed);
         connect(new_out, &Port::mouseReleased, static_cast<UIWidget*>(this->parent()), &UIWidget::s_OutMouseReleased);
 
@@ -183,8 +183,8 @@ public:
 
     Port* inletAt(int idx)
     {
-        if (idx<((int)this->inlets_.size()))
-            return this->inlets_.at(idx);
+        if (idx<((int)this->inlets_->size()))
+            return this->inlets_->at(idx);
         else
             return 0;
     }
@@ -197,8 +197,8 @@ public:
 
     Port* outletAt(int idx)
     {
-        if (idx<((int)this->outlets_.size()))
-            return this->outlets_.at(idx);
+        if (idx<((int)this->outlets_->size()))
+            return this->outlets_->at(idx);
         else
             return 0;
     }
@@ -302,12 +302,12 @@ public:
         UIWidget::setEditModeRef(canvasEditMode);
 
         // todo
-        for (int i=0;i<this->inlets_.size();i++)
+        for (int i=0;i<this->inlets_->size();i++)
         {
             this->inletAt(i)->setEditModeRef(canvasEditMode);
         }
 
-        for (int i=0;i<this->outlets_.size();i++)
+        for (int i=0;i<this->outlets_->size();i++)
         {
             this->outletAt(i)->setEditModeRef(canvasEditMode);
         }

@@ -1,10 +1,13 @@
 #include "cm_object.h"
 
-namespace cm{
+namespace qtpd{
 
 UIObject::UIObject(UIWidget *parent) : UIWidget(parent)
 {
     this->errorBox_ = false;
+
+    this->inlets_ = new portVec;
+    this->outlets_ = new portVec;
 
     this->sizeBox = new SizeBox(this);
     this->sizeBox->hide();

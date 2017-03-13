@@ -11,12 +11,12 @@
 
 //#define cmp_font "Source Code Pro"
 
-#define PREF_QSTRING(x) cm::Preferences::inst().getQString(x)
+#define PREF_QSTRING(x) qtpd::Preferences::inst().getQString(x)
 
 
 //move
 #define QTPD_APP_VERSION "0.1"
-#define QTPD_PREF_INIT cm::Preferences::inst().init( QTPD_APP_VERSION )
+#define QTPD_PREF_INIT qtpd::Preferences::inst().init( QTPD_APP_VERSION )
 
 //move
 //#define QTPD_PREF_STR(x) AtomList(gensym(x))
