@@ -32,13 +32,13 @@ typedef struct _ui_toggle {
 } t_ui_toggle;
 
 // special
-extern "C" void uimsg_set_updateUI(t_pd* x, void* obj, t_updateUI func)
+extern "C" void uitoggle_set_updateUI(t_pd* x, void* obj, t_updateUI func)
 {
     ((t_ui_toggle*)x)->updateUI = func;
     ((t_ui_toggle*)x)->uiobj = obj;
 }
 
-static void uimsg_set(t_ui_toggle* x, t_symbol *s, int argc, t_atom* argv)
+static void uitoggle_set(t_ui_toggle* x, t_symbol *s, int argc, t_atom* argv)
 {
     //post("uimsg set");
     x->s = s;
@@ -59,7 +59,7 @@ static void uimsg_set(t_ui_toggle* x, t_symbol *s, int argc, t_atom* argv)
 
 }
 
-static void uimsg_bang(t_ui_toggle* x, t_symbol *s, int argc, t_atom* argv)
+static void uitoggle_bang(t_ui_toggle* x, t_symbol *s, int argc, t_atom* argv)
 {
     if (x->msg->size())
         x->msg->output(x->out1);
@@ -67,7 +67,7 @@ static void uimsg_bang(t_ui_toggle* x, t_symbol *s, int argc, t_atom* argv)
         outlet_bang(x->out1);
 }
 
-static void* uimsg_new(t_symbol *s, int argc, t_atom* argv)
+static void* uitoggle_new(t_symbol *s, int argc, t_atom* argv)
 {
     t_ui_toggle *x = (t_ui_toggle*)pd_new(ui_toggle_class);
 
@@ -80,7 +80,7 @@ static void* uimsg_new(t_symbol *s, int argc, t_atom* argv)
     return (void*)x;
 }
 
-void uimsg_save(t_gobj *z, t_binbuf *b)
+void uitoggle_save(t_gobj *z, t_binbuf *b)
 {
     t_ui_toggle* x = (t_ui_toggle*)z;
 
@@ -92,7 +92,7 @@ void uimsg_save(t_gobj *z, t_binbuf *b)
 
 }
 
-static void uimsg_free(t_object* obj)
+static void uitoggle_free(t_object* obj)
 {
 
 }
@@ -103,14 +103,14 @@ extern "C" void setup_ui0x2etoggle()
     // printf("ui.msg init\n");
     // class_new()
     ui_toggle_class = class_new(gensym("ui.toggle"),
-                             (t_newmethod)(uimsg_new),
+                             (t_newmethod)(uitoggle_new),
                              (t_method)(0),
                              sizeof(t_ui_toggle), 0, A_GIMME, 0);
     
-    class_addmethod(ui_toggle_class, (t_method)uimsg_set, &s_anything, A_GIMME, 0);
-    class_addmethod(ui_toggle_class, (t_method)uimsg_bang, &s_bang, A_NULL, 0);
+    class_addmethod(ui_toggle_class, (t_method)uitoggle_set, &s_anything, A_GIMME, 0);
+    class_addmethod(ui_toggle_class, (t_method)uitoggle_bang, &s_bang, A_NULL, 0);
 
-    class_setsavefn(ui_toggle_class, uimsg_save);
+    class_setsavefn(ui_toggle_class, uitoggle_save);
     
 }
 

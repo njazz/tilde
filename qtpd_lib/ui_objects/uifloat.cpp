@@ -32,13 +32,13 @@ typedef struct _ui_float {
 } t_ui_float;
 
 // special
-extern "C" void uimsg_set_updateUI(t_pd* x, void* obj, t_updateUI func)
+extern "C" void uifloat_set_updateUI(t_pd* x, void* obj, t_updateUI func)
 {
     ((t_ui_float*)x)->updateUI = func;
     ((t_ui_float*)x)->uiobj = obj;
 }
 
-static void uimsg_set(t_ui_float* x, t_symbol *s, int argc, t_atom* argv)
+static void uifloat_set(t_ui_float* x, t_symbol *s, int argc, t_atom* argv)
 {
     //post("uimsg set");
     x->s = s;
@@ -59,7 +59,7 @@ static void uimsg_set(t_ui_float* x, t_symbol *s, int argc, t_atom* argv)
 
 }
 
-static void uimsg_bang(t_ui_float* x, t_symbol *s, int argc, t_atom* argv)
+static void uifloat_bang(t_ui_float* x, t_symbol *s, int argc, t_atom* argv)
 {
     if (x->msg->size())
         x->msg->output(x->out1);
@@ -67,7 +67,12 @@ static void uimsg_bang(t_ui_float* x, t_symbol *s, int argc, t_atom* argv)
         outlet_bang(x->out1);
 }
 
-static void* uimsg_new(t_symbol *s, int argc, t_atom* argv)
+static void uifloat_float(t_ui_float* x, t_float f)
+{
+
+}
+
+static void* uifloat_new(t_symbol *s, int argc, t_atom* argv)
 {
     t_ui_float *x = (t_ui_float*)pd_new(ui_float_class);
 
@@ -80,7 +85,7 @@ static void* uimsg_new(t_symbol *s, int argc, t_atom* argv)
     return (void*)x;
 }
 
-void uimsg_save(t_gobj *z, t_binbuf *b)
+void uifloat_save(t_gobj *z, t_binbuf *b)
 {
     t_ui_float* x = (t_ui_float*)z;
 
@@ -92,7 +97,7 @@ void uimsg_save(t_gobj *z, t_binbuf *b)
 
 }
 
-static void uimsg_free(t_object* obj)
+static void uifloat_free(t_object* obj)
 {
 
 }
@@ -103,14 +108,16 @@ extern "C" void setup_ui0x2efloat()
     // printf("ui.msg init\n");
     // class_new()
     ui_float_class = class_new(gensym("ui.float"),
-                             (t_newmethod)(uimsg_new),
+                             (t_newmethod)(uifloat_new),
                              (t_method)(0),
                              sizeof(t_ui_float), 0, A_GIMME, 0);
     
-    class_addmethod(ui_float_class, (t_method)uimsg_set, &s_anything, A_GIMME, 0);
-    class_addmethod(ui_float_class, (t_method)uimsg_bang, &s_bang, A_NULL, 0);
+    class_addmethod(ui_float_class, (t_method)uifloat_set, &s_anything, A_GIMME, 0);
+    class_addmethod(ui_float_class, (t_method)uifloat_bang, &s_bang, A_NULL, 0);
 
-    class_setsavefn(ui_float_class, uimsg_save);
+    class_addfloat(ui_float_class, (t_method)uifloat_float, &s_anything, A_GIMME, 0);
+
+    class_setsavefn(ui_float_class, uifloat_save);
     
 }
 
