@@ -7,7 +7,7 @@
 #include "cm_patchwindow.h"
 
 
-namespace cm
+namespace qtpd
 {
 ////
 /// \brief Parses pd files on 'client' (GUI) side

@@ -5,6 +5,7 @@
 #include "cm_patchcord.h"
 
 namespace cm{
+
 typedef std::vector<UIObject*> objectVec;
 typedef std::vector<Patchcord*> patchcordVec;
 

@@ -7,7 +7,7 @@
 
 #include "cm_widget.h"
 
-namespace cm
+namespace qtpd
 {
 
 ////

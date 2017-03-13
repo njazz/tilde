@@ -10,7 +10,7 @@
 
 #include "cm_preferences.h"
 
-using namespace cm;
+using namespace qtpd;
 
 void pd_window_printhook(const char* s)
 {

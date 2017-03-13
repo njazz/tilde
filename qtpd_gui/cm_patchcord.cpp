@@ -5,7 +5,7 @@
 //    this->patchcordType = cm_pt_anything;
 //}
 
-namespace cm
+namespace qtpd
 {
 Patchcord::Patchcord(UIWidget *obj1, UIWidget *out1, UIWidget *obj2, UIWidget *in2)
 {

@@ -7,7 +7,7 @@
 
 #include <QDebug>
 
-namespace cm
+namespace qtpd
 {
 
 typedef std::map<std::string, Property*> UIPropertyData;

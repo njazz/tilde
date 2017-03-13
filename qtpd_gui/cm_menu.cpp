@@ -9,7 +9,7 @@
 #include "cm_fileparser.h"
 
 
-namespace cm
+namespace qtpd
 {
 ////
 /// \brief new patch window

@@ -6,7 +6,7 @@
 // Widget extension
 // check / fix
 
-namespace cm
+namespace qtpd
 {
 
 ////

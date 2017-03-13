@@ -4,7 +4,7 @@
 #include <QObject>
 
 
-namespace cm
+namespace qtpd
 {
 ////
 /// \brief Common menu - creates new windows (patch, Pd)

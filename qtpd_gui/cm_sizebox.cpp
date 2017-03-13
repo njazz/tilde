@@ -1,6 +1,6 @@
 #include "cm_sizebox.h"
 
-namespace cm
+namespace qtpd
 {
 
 SizeBox::SizeBox(UIWidget *parent) : UIWidget(parent)

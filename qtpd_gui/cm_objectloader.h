@@ -16,7 +16,7 @@
 #include "cmo_bang.h"
 #include "cmo_toggle.h"
 
-namespace cm
+namespace qtpd
 {
 typedef UIObject* (*cmObjectConstructor)(std::string objectData, t_canvas* pdCanvas, UIWidget *parent);
 

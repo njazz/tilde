@@ -16,7 +16,7 @@
 
 //#include "cm_canvas_types.h"
 
-namespace cm
+namespace qtpd
 {
 
 ////

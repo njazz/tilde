@@ -12,7 +12,7 @@ namespace Ui {
 class cm_basewindow;
 }
 
-namespace cm{
+namespace qtpd{
 ////
 /// \brief Base class for windows (patch, pd)
 ///

@@ -1,6 +1,6 @@
 #include "cmo_msg.h"
 
-namespace cm
+namespace qtpd
 {
 
 UIMessage::UIMessage(UIObject *parent) : UIObject(parent)

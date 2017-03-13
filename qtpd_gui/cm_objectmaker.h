@@ -6,7 +6,7 @@
 #include <QMainWindow>
 
 
-namespace cm
+namespace qtpd
 {
 ////
 /// \brief creates lineedit box for new object

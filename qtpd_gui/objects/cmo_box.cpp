@@ -1,7 +1,7 @@
 #include "cmo_box.h"
 
 
-namespace cm
+namespace qtpd
 {
 UIBox::UIBox(UIObject *parent) : UIObject(parent)
 {

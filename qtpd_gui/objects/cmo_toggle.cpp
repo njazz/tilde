@@ -1,6 +1,6 @@
 #include "cmo_toggle.h"
 
-namespace cm
+namespace qtpd
 {
 
 UIToggle::UIToggle(UIObject *parent) : UIObject(parent)

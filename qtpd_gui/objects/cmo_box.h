@@ -12,7 +12,7 @@
 
 //#include "cm_pdlink.h"
 
-namespace cm
+namespace qtpd
 {
 
 ////

@@ -1,7 +1,7 @@
 #include "cmo_bang.h"
 
 
-namespace cm
+namespace qtpd
 {
 
 

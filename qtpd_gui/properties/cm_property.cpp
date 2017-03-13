@@ -5,7 +5,7 @@
 
 //}
 
-namespace cm{
+namespace qtpd{
 
 template<> void Property::set(AtomList list)
 {

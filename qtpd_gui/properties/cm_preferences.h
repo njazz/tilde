@@ -21,7 +21,7 @@
 //move
 //#define QTPD_PREF_STR(x) AtomList(gensym(x))
 
-namespace cm{
+namespace qtpd{
 
 ////
 /// \brief app preferences singleton

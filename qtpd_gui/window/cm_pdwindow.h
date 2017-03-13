@@ -16,7 +16,7 @@ namespace Ui {
 class cm_pdwindow;
 }
 
-namespace cm
+namespace qtpd
 {
 ////
 /// \brief Pd console window

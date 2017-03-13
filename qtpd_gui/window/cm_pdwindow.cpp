@@ -6,7 +6,7 @@
 #include <QGridLayout>
 #include <QLabel>
 
-namespace cm
+namespace qtpd
 {
 static std::string cm_log_string;
 

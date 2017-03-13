@@ -9,7 +9,7 @@
 
 #include <QObject>
 
-namespace cm{
+namespace qtpd{
 
 ////
 /// \brief object box size constraints

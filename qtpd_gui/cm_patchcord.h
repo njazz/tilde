@@ -9,7 +9,7 @@
 //#include <QWidget>
 //#include <QtGui>
 
-namespace cm
+namespace qtpd
 {
 
 typedef enum {cm_pt_anything, cm_pt_signal} patchcordTypeEnum;

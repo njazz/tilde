@@ -3,7 +3,7 @@
 
 #include "cm_patchwindow.h"
 
-namespace cm
+namespace qtpd
 {
 
 ////

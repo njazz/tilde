@@ -10,7 +10,7 @@
 
 using namespace ceammc;
 
-namespace cm
+namespace qtpd
 {
 
 typedef enum

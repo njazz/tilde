@@ -10,7 +10,7 @@
 
 #include "cm_menu.h"
 
-namespace cm
+namespace qtpd
 {
 BaseWindow::BaseWindow(QWidget *parent) :
 

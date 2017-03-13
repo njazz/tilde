@@ -1,7 +1,7 @@
 #include "cm_objectmaker.h"
 #include "cm_preferences.h"
 
-namespace cm
+namespace qtpd
 {
 ObjectMaker::ObjectMaker(QLineEdit *parent) : QLineEdit(parent)
 {

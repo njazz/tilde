@@ -1,6 +1,6 @@
 #include "cm_widget.h"
 
-namespace cm
+namespace qtpd
 {
 UIWidget::UIWidget(QWidget *parent) : QWidget(parent)
 {

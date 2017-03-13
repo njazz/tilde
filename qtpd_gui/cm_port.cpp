@@ -1,6 +1,6 @@
 #include "cm_port.h"
 
-namespace cm
+namespace qtpd
 {
 Port::Port(UIWidget *parent) : UIWidget(parent)
 {

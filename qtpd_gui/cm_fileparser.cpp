@@ -1,6 +1,6 @@
 #include "cm_fileparser.h"
 
-namespace cm
+namespace qtpd
 {
 PatchWindow* FileParser::pdParserPrevWindow = 0;
 PatchWindow* FileParser::pdParserWindow = 0;

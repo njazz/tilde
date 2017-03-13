@@ -1,6 +1,6 @@
 #include "cm_canvas.h"
 
-namespace cm{
+namespace qtpd{
 
 Canvas::Canvas(UIObject *parent) : UIObject(parent)
 {

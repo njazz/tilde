@@ -1,6 +1,6 @@
 #include "cmo_float.h"
 
-namespace cm
+namespace qtpd
 {
 
 UIFloat::UIFloat(UIObject *parent) : UIObject(parent)

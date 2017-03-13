@@ -9,7 +9,7 @@
 
 #include "cm_filesaver.h"
 
-namespace cm
+namespace qtpd
 {
 ////
 /// \brief Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas

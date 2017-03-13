@@ -1,6 +1,6 @@
 #include "cmo_text.h"
 
-namespace cm
+namespace qtpd
 {
 UIText::UIText(UIObject *parent) : UIObject(parent)
 {
