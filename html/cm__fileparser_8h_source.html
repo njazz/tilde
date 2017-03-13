@@ -91,21 +91,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00007"></a>00007 <span class="preprocessor">#include &quot;<a class="code" href="cm__patchwindow_8h.html">cm_patchwindow.h</a>&quot;</span>
 <a name="l00008"></a>00008 
 <a name="l00009"></a>00009 
-<a name="l00010"></a>00010 <span class="keyword">namespace </span>cm
+<a name="l00010"></a>00010 <span class="keyword">namespace </span>qtpd
 <a name="l00011"></a>00011 {
-<a name="l00015"></a><a class="code" href="classcm_1_1_file_parser.html">00015</a> <span class="keyword">class </span><a class="code" href="classcm_1_1_file_parser.html" title="Parses pd files on &#39;client&#39; (GUI) side.">FileParser</a>
+<a name="l00015"></a><a class="code" href="classqtpd_1_1_file_parser.html">00015</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_file_parser.html" title="Parses pd files on &#39;client&#39; (GUI) side.">FileParser</a>
 <a name="l00016"></a>00016 {
 <a name="l00017"></a>00017 <span class="keyword">private</span>:
-<a name="l00018"></a><a class="code" href="classcm_1_1_file_parser.html#ac27b1b7a9c27f31c9bfeb1a019842781">00018</a>     <a class="code" href="classcm_1_1_file_parser.html" title="Parses pd files on &#39;client&#39; (GUI) side.">FileParser</a>(){};
+<a name="l00018"></a><a class="code" href="classqtpd_1_1_file_parser.html#ab7f750a51e76c8a60b90d1479796466a">00018</a>     <a class="code" href="classqtpd_1_1_file_parser.html" title="Parses pd files on &#39;client&#39; (GUI) side.">FileParser</a>(){};
 <a name="l00019"></a>00019 
 <a name="l00020"></a>00020 <span class="keyword">public</span>:
 <a name="l00021"></a>00021 
 <a name="l00022"></a>00022     <span class="comment">// or t_canvas?</span>
-<a name="l00023"></a>00023     <span class="keyword">static</span> <a class="code" href="classcm_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* <a class="code" href="classcm_1_1_file_parser.html#ac27b1b7a9c27f31c9bfeb1a019842781">pdParserPrevWindow</a>;
-<a name="l00024"></a><a class="code" href="classcm_1_1_file_parser.html#ae5dca711fea774e789a651fa73f60109">00024</a>     <span class="keyword">static</span> <a class="code" href="classcm_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* <a class="code" href="classcm_1_1_file_parser.html#ae5dca711fea774e789a651fa73f60109">pdParserWindow</a>;
-<a name="l00025"></a><a class="code" href="classcm_1_1_file_parser.html#abc47b4f119ab484f73fc4fb7aadb75a1">00025</a>     <span class="keyword">static</span> std::string <a class="code" href="classcm_1_1_file_parser.html#abc47b4f119ab484f73fc4fb7aadb75a1">pdParserFileName</a>;
+<a name="l00023"></a>00023     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* <a class="code" href="classqtpd_1_1_file_parser.html#ab7f750a51e76c8a60b90d1479796466a">pdParserPrevWindow</a>;
+<a name="l00024"></a><a class="code" href="classqtpd_1_1_file_parser.html#a5dc01b5bbec80d216ce14596ca0bd6c9">00024</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* <a class="code" href="classqtpd_1_1_file_parser.html#a5dc01b5bbec80d216ce14596ca0bd6c9">pdParserWindow</a>;
+<a name="l00025"></a><a class="code" href="classqtpd_1_1_file_parser.html#ab7dc8008ff768523c4633c29f8c030d2">00025</a>     <span class="keyword">static</span> std::string <a class="code" href="classqtpd_1_1_file_parser.html#ab7dc8008ff768523c4633c29f8c030d2">pdParserFileName</a>;
 <a name="l00026"></a>00026 
-<a name="l00032"></a><a class="code" href="classcm_1_1_file_parser.html#a15052d2cc22fcc0e878efc69358c7aac">00032</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_file_parser.html#a15052d2cc22fcc0e878efc69358c7aac" title="converts string from pd file - creates new object">objFromString</a>(<a class="code" href="classcm_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* cmcanvas, QStringList list)
+<a name="l00032"></a><a class="code" href="classqtpd_1_1_file_parser.html#a76dab7b07a8883bfebde3be6098f6b7e">00032</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_file_parser.html#a76dab7b07a8883bfebde3be6098f6b7e" title="converts string from pd file - creates new object">objFromString</a>(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* cmcanvas, QStringList list)
 <a name="l00033"></a>00033     {
 <a name="l00034"></a>00034         qDebug(<span class="stringliteral">&quot;new obj&quot;</span>);
 <a name="l00035"></a>00035         <span class="keywordflow">if</span> (list.size()&gt;3)
@@ -135,23 +135,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00059"></a>00059             <span class="comment">//cleanup this - &quot;checkvalid&quot;</span>
 <a name="l00060"></a>00060             <span class="keywordflow">if</span> (list.at(3) == <span class="stringliteral">&quot;ui.msg&quot;</span>)
 <a name="l00061"></a>00061                 <span class="comment">//cmcanvas-&gt;createMsg(msgname.toStdString(), pos);</span>
-<a name="l00062"></a>00062                 cmcanvas-&gt;<a class="code" href="classcm_1_1_canvas.html#a4300009cd6b822e26b672c7881fee4d0" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.msg&quot;</span>, msgname.toStdString(), pos);
+<a name="l00062"></a>00062                 cmcanvas-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a74125b9039d694a8d191ef438cd15dbd" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.msg&quot;</span>, msgname.toStdString(), pos);
 <a name="l00063"></a>00063             <span class="keywordflow">else</span> <span class="keywordflow">if</span> (list.at(3) == <span class="stringliteral">&quot;ui.text&quot;</span>)
 <a name="l00064"></a>00064                 <span class="comment">//cmcanvas-&gt;createText(msgname.toStdString(), pos);</span>
-<a name="l00065"></a>00065                 cmcanvas-&gt;<a class="code" href="classcm_1_1_canvas.html#a4300009cd6b822e26b672c7881fee4d0" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.text&quot;</span>, msgname.toStdString(), pos);
+<a name="l00065"></a>00065                 cmcanvas-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a74125b9039d694a8d191ef438cd15dbd" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.text&quot;</span>, msgname.toStdString(), pos);
 <a name="l00066"></a>00066             <span class="keywordflow">else</span> <span class="keywordflow">if</span> (list.at(3) == <span class="stringliteral">&quot;ui.float&quot;</span>)
 <a name="l00067"></a>00067                 <span class="comment">//cmcanvas-&gt;createFloat(msgname.toStdString(), pos);</span>
-<a name="l00068"></a>00068                 cmcanvas-&gt;<a class="code" href="classcm_1_1_canvas.html#a4300009cd6b822e26b672c7881fee4d0" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.float&quot;</span>, msgname.toStdString(), pos);
+<a name="l00068"></a>00068                 cmcanvas-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a74125b9039d694a8d191ef438cd15dbd" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.float&quot;</span>, msgname.toStdString(), pos);
 <a name="l00069"></a>00069             <span class="keywordflow">else</span> <span class="keywordflow">if</span> (list.at(3) == <span class="stringliteral">&quot;ui.bang&quot;</span>)
 <a name="l00070"></a>00070                 <span class="comment">//cmcanvas-&gt;createFloat(msgname.toStdString(), pos);</span>
-<a name="l00071"></a>00071                 cmcanvas-&gt;<a class="code" href="classcm_1_1_canvas.html#a4300009cd6b822e26b672c7881fee4d0" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.bang&quot;</span>, msgname.toStdString(), pos);
+<a name="l00071"></a>00071                 cmcanvas-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a74125b9039d694a8d191ef438cd15dbd" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.bang&quot;</span>, msgname.toStdString(), pos);
 <a name="l00072"></a>00072             <span class="keywordflow">else</span> <span class="keywordflow">if</span> (list.at(3) == <span class="stringliteral">&quot;ui.toggle&quot;</span>)
 <a name="l00073"></a>00073                 <span class="comment">//cmcanvas-&gt;createFloat(msgname.toStdString(), pos);</span>
-<a name="l00074"></a>00074                 cmcanvas-&gt;<a class="code" href="classcm_1_1_canvas.html#a4300009cd6b822e26b672c7881fee4d0" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.toggle&quot;</span>, msgname.toStdString(), pos);
+<a name="l00074"></a>00074                 cmcanvas-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a74125b9039d694a8d191ef438cd15dbd" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.toggle&quot;</span>, msgname.toStdString(), pos);
 <a name="l00075"></a>00075 
 <a name="l00076"></a>00076             <span class="keywordflow">else</span>
 <a name="l00077"></a>00077                 <span class="comment">//cmcanvas-&gt;createBox(objname.toStdString(), pos);</span>
-<a name="l00078"></a>00078                 cmcanvas-&gt;<a class="code" href="classcm_1_1_canvas.html#a4300009cd6b822e26b672c7881fee4d0" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.obj&quot;</span>, objname.toStdString(), pos);
+<a name="l00078"></a>00078                 cmcanvas-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a74125b9039d694a8d191ef438cd15dbd" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.obj&quot;</span>, objname.toStdString(), pos);
 <a name="l00079"></a>00079 
 <a name="l00080"></a>00080 
 <a name="l00081"></a>00081         }
@@ -163,11 +163,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00087"></a>00087 
 <a name="l00088"></a>00088     }
 <a name="l00089"></a>00089 
-<a name="l00096"></a><a class="code" href="classcm_1_1_file_parser.html#aeb02a7ed4edafeddd95a63fbe6ed28f5">00096</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_file_parser.html#aeb02a7ed4edafeddd95a63fbe6ed28f5" title="parses QStringLists of atoms to canvas - creates objects etc">stringToCanvas</a>(<a class="code" href="classcm_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* cmcanvas, QStringList list) <span class="comment">//rename</span>
+<a name="l00096"></a><a class="code" href="classqtpd_1_1_file_parser.html#aae900841ee5ecd47583f72528ab1a289">00096</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_file_parser.html#aae900841ee5ecd47583f72528ab1a289" title="parses QStringLists of atoms to canvas - creates objects etc">stringToCanvas</a>(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* cmcanvas, QStringList list) <span class="comment">//rename</span>
 <a name="l00097"></a>00097     {
 <a name="l00098"></a>00098         <span class="keywordflow">if</span> (list.at(0) == <span class="stringliteral">&quot;obj&quot;</span>)
 <a name="l00099"></a>00099         {
-<a name="l00100"></a>00100             <a class="code" href="classcm_1_1_file_parser.html#a15052d2cc22fcc0e878efc69358c7aac" title="converts string from pd file - creates new object">FileParser::objFromString</a>(cmcanvas,list);
+<a name="l00100"></a>00100             <a class="code" href="classqtpd_1_1_file_parser.html#a76dab7b07a8883bfebde3be6098f6b7e" title="converts string from pd file - creates new object">FileParser::objFromString</a>(cmcanvas,list);
 <a name="l00101"></a>00101         }
 <a name="l00102"></a>00102         <span class="keywordflow">else</span>
 <a name="l00103"></a>00103             <span class="comment">//compatibility</span>
@@ -175,14 +175,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00105"></a>00105             {
 <a name="l00106"></a>00106                 list[0] = <span class="stringliteral">&quot;obj&quot;</span>;
 <a name="l00107"></a>00107                 list.insert(3,<span class="stringliteral">&quot;ui.msg&quot;</span>);
-<a name="l00108"></a>00108                 <a class="code" href="classcm_1_1_file_parser.html#a15052d2cc22fcc0e878efc69358c7aac" title="converts string from pd file - creates new object">FileParser::objFromString</a>(cmcanvas,list);
+<a name="l00108"></a>00108                 <a class="code" href="classqtpd_1_1_file_parser.html#a76dab7b07a8883bfebde3be6098f6b7e" title="converts string from pd file - creates new object">FileParser::objFromString</a>(cmcanvas,list);
 <a name="l00109"></a>00109             }
 <a name="l00110"></a>00110             <span class="keywordflow">else</span>
 <a name="l00111"></a>00111                 <span class="keywordflow">if</span> (list.at(0) == <span class="stringliteral">&quot;text&quot;</span>)
 <a name="l00112"></a>00112                 {
 <a name="l00113"></a>00113                     list[0] = <span class="stringliteral">&quot;obj&quot;</span>;
 <a name="l00114"></a>00114                     list.insert(3,<span class="stringliteral">&quot;ui.text&quot;</span>);
-<a name="l00115"></a>00115                     <a class="code" href="classcm_1_1_file_parser.html#a15052d2cc22fcc0e878efc69358c7aac" title="converts string from pd file - creates new object">FileParser::objFromString</a>(cmcanvas,list);
+<a name="l00115"></a>00115                     <a class="code" href="classqtpd_1_1_file_parser.html#a76dab7b07a8883bfebde3be6098f6b7e" title="converts string from pd file - creates new object">FileParser::objFromString</a>(cmcanvas,list);
 <a name="l00116"></a>00116 
 <a name="l00117"></a>00117                 }
 <a name="l00118"></a>00118                 <span class="keywordflow">else</span>
@@ -190,7 +190,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00120"></a>00120                     {
 <a name="l00121"></a>00121                         list[0] = <span class="stringliteral">&quot;obj&quot;</span>;
 <a name="l00122"></a>00122                         list.insert(3,<span class="stringliteral">&quot;ui.float&quot;</span>);
-<a name="l00123"></a>00123                         <a class="code" href="classcm_1_1_file_parser.html#a15052d2cc22fcc0e878efc69358c7aac" title="converts string from pd file - creates new object">FileParser::objFromString</a>(cmcanvas,list);
+<a name="l00123"></a>00123                         <a class="code" href="classqtpd_1_1_file_parser.html#a76dab7b07a8883bfebde3be6098f6b7e" title="converts string from pd file - creates new object">FileParser::objFromString</a>(cmcanvas,list);
 <a name="l00124"></a>00124 
 <a name="l00125"></a>00125                     }
 <a name="l00126"></a>00126 
@@ -203,8 +203,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00133"></a>00133                             {
 <a name="l00134"></a>00134                                 <span class="comment">//if (cmcanvas)</span>
 <a name="l00135"></a>00135                                 {
-<a name="l00136"></a>00136                                     <a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> * obj1 = cmcanvas-&gt;<a class="code" href="classcm_1_1_canvas.html#a39c75aa337290c7b1157d4ac7144f217" title="returns object by index - this is needed by parser">getObjectByIndex</a>( ((QString)list.value(1)).toInt() );
-<a name="l00137"></a>00137                                     <a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> * obj2 = cmcanvas-&gt;<a class="code" href="classcm_1_1_canvas.html#a39c75aa337290c7b1157d4ac7144f217" title="returns object by index - this is needed by parser">getObjectByIndex</a>( ((QString)list.value(3)).toInt() );
+<a name="l00136"></a>00136                                     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> * obj1 = cmcanvas-&gt;<a class="code" href="classqtpd_1_1_canvas.html#ad52070b113de5af28265adc503653c77" title="returns object by index - this is needed by parser">getObjectByIndex</a>( ((QString)list.value(1)).toInt() );
+<a name="l00137"></a>00137                                     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> * obj2 = cmcanvas-&gt;<a class="code" href="classqtpd_1_1_canvas.html#ad52070b113de5af28265adc503653c77" title="returns object by index - this is needed by parser">getObjectByIndex</a>( ((QString)list.value(3)).toInt() );
 <a name="l00138"></a>00138 
 <a name="l00139"></a>00139                                     <span class="keywordflow">if</span> (!obj1 || !obj2)
 <a name="l00140"></a>00140                                     {
@@ -216,10 +216,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00146"></a>00146                                     <span class="keywordtype">int</span> idx2 = ((QString)list.value(4)).toInt() ;
 <a name="l00147"></a>00147 
 <a name="l00148"></a>00148                                     <span class="comment">//cmcanvas-&gt;patchcord();</span>
-<a name="l00149"></a>00149                                     <span class="keywordflow">if</span> ( !obj1-&gt;<a class="code" href="classcm_1_1_u_i_object.html#ac5f4313739e33eb7d8c650382b76d88e" title="returns true if object doesn&#39;t exist">errorBox</a>() &amp;&amp; !obj2-&gt;<a class="code" href="classcm_1_1_u_i_object.html#ac5f4313739e33eb7d8c650382b76d88e" title="returns true if object doesn&#39;t exist">errorBox</a>() )
+<a name="l00149"></a>00149                                     <span class="keywordflow">if</span> ( !obj1-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a1a55479c564318cbf31c0f09d02d39bb" title="returns true if object doesn&#39;t exist">errorBox</a>() &amp;&amp; !obj2-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a1a55479c564318cbf31c0f09d02d39bb" title="returns true if object doesn&#39;t exist">errorBox</a>() )
 <a name="l00150"></a>00150                                     {
 <a name="l00151"></a>00151                                         qDebug(<span class="stringliteral">&quot;patchcord&quot;</span>);
-<a name="l00152"></a>00152                                         cmcanvas-&gt;<a class="code" href="classcm_1_1_canvas.html#a24db3dbfed7d2801f397a560e3eb3729" title="creates patchcord">patchcord</a>(obj1,idx1,obj2,idx2);
+<a name="l00152"></a>00152                                         cmcanvas-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a3625736a403310d179fe0738156e572f" title="creates patchcord">patchcord</a>(obj1,idx1,obj2,idx2);
 <a name="l00153"></a>00153                                     }
 <a name="l00154"></a>00154                                 }
 <a name="l00155"></a>00155                             }
@@ -233,7 +233,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00163"></a>00163                             <span class="keywordflow">if</span> (list.at(0) == <span class="stringliteral">&quot;restore&quot;</span>)
 <a name="l00164"></a>00164                             {
 <a name="l00165"></a>00165 
-<a name="l00166"></a>00166                                 qDebug(<span class="stringliteral">&quot;restore canvas: %lu | previous %lu&quot;</span>, <a class="code" href="classcm_1_1_file_parser.html#ae5dca711fea774e789a651fa73f60109">pdParserWindow</a>, <a class="code" href="classcm_1_1_file_parser.html#ac27b1b7a9c27f31c9bfeb1a019842781">pdParserPrevWindow</a>);
+<a name="l00166"></a>00166                                 qDebug(<span class="stringliteral">&quot;restore canvas: %lu | previous %lu&quot;</span>, <a class="code" href="classqtpd_1_1_file_parser.html#a5dc01b5bbec80d216ce14596ca0bd6c9">pdParserWindow</a>, <a class="code" href="classqtpd_1_1_file_parser.html#ab7f750a51e76c8a60b90d1479796466a">pdParserPrevWindow</a>);
 <a name="l00167"></a>00167 
 <a name="l00168"></a>00168 
 <a name="l00169"></a>00169                                 <span class="comment">//parserwindow - subpatch</span>
@@ -262,9 +262,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00192"></a>00192 
 <a name="l00193"></a>00193                                     <span class="keywordflow">if</span> (objList.at(0) == <span class="stringliteral">&quot;pd&quot;</span>)
 <a name="l00194"></a>00194                                     {
-<a name="l00195"></a>00195                                         <span class="keywordflow">if</span> (<a class="code" href="classcm_1_1_file_parser.html#ac27b1b7a9c27f31c9bfeb1a019842781">pdParserPrevWindow</a>)
+<a name="l00195"></a>00195                                         <span class="keywordflow">if</span> (<a class="code" href="classqtpd_1_1_file_parser.html#ab7f750a51e76c8a60b90d1479796466a">pdParserPrevWindow</a>)
 <a name="l00196"></a>00196                                         {
-<a name="l00197"></a>00197                                             <span class="keywordflow">if</span> (<a class="code" href="classcm_1_1_file_parser.html#ac27b1b7a9c27f31c9bfeb1a019842781">pdParserPrevWindow</a>-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>)
+<a name="l00197"></a>00197                                             <span class="keywordflow">if</span> (<a class="code" href="classqtpd_1_1_file_parser.html#ab7f750a51e76c8a60b90d1479796466a">pdParserPrevWindow</a>-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>)
 <a name="l00198"></a>00198                                             {
 <a name="l00199"></a>00199 <span class="comment">//                                                UIBox *b1 = 0;</span>
 <a name="l00200"></a>00200 
@@ -273,7 +273,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00203"></a>00203 
 <a name="l00204"></a>00204                                                 qDebug(<span class="stringliteral">&quot;restore&quot;</span>);
 <a name="l00205"></a>00205 
-<a name="l00206"></a>00206                                                 <a class="code" href="classcm_1_1_file_parser.html#ac27b1b7a9c27f31c9bfeb1a019842781">pdParserPrevWindow</a>-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#ac66fd43b32fdf2a3972812de53fc0d74" title="TODO check. creates object box for subcanvas.">createBoxForCanvas</a>(<a class="code" href="classcm_1_1_file_parser.html#ac27b1b7a9c27f31c9bfeb1a019842781">pdParserPrevWindow</a>-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>,objData, pos);
+<a name="l00206"></a>00206                                                 <a class="code" href="classqtpd_1_1_file_parser.html#ab7f750a51e76c8a60b90d1479796466a">pdParserPrevWindow</a>-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#aed3ee862975185c251ffb066d0c8318b" title="TODO check. creates object box for subcanvas.">createBoxForCanvas</a>(<a class="code" href="classqtpd_1_1_file_parser.html#ab7f750a51e76c8a60b90d1479796466a">pdParserPrevWindow</a>-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>,objData, pos);
 <a name="l00207"></a>00207 
 <a name="l00208"></a>00208                                             }
 <a name="l00209"></a>00209                                         }
@@ -284,7 +284,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00214"></a>00214                                     }
 <a name="l00215"></a>00215 
 <a name="l00216"></a>00216                                     <span class="comment">//draw subpatch</span>
-<a name="l00217"></a>00217                                     <a class="code" href="classcm_1_1_file_parser.html#ae5dca711fea774e789a651fa73f60109">pdParserWindow</a> = <a class="code" href="classcm_1_1_file_parser.html#ac27b1b7a9c27f31c9bfeb1a019842781">pdParserPrevWindow</a>;
+<a name="l00217"></a>00217                                     <a class="code" href="classqtpd_1_1_file_parser.html#a5dc01b5bbec80d216ce14596ca0bd6c9">pdParserWindow</a> = <a class="code" href="classqtpd_1_1_file_parser.html#ab7f750a51e76c8a60b90d1479796466a">pdParserPrevWindow</a>;
 <a name="l00218"></a>00218 
 <a name="l00219"></a>00219 
 <a name="l00220"></a>00220 
@@ -320,14 +320,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00250"></a>00250                                     qDebug() &lt;&lt; <span class="stringliteral">&quot;objname&quot;</span> &lt;&lt; objname;
 <a name="l00251"></a>00251                                     <span class="comment">//temporary</span>
 <a name="l00252"></a>00252                                     <span class="comment">//cmcanvas-&gt;createBox(objname.toStdString(), pos);</span>
-<a name="l00253"></a>00253                                     cmcanvas-&gt;<a class="code" href="classcm_1_1_canvas.html#a4300009cd6b822e26b672c7881fee4d0" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.obj&quot;</span>, objname.toStdString(), pos);
+<a name="l00253"></a>00253                                     cmcanvas-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a74125b9039d694a8d191ef438cd15dbd" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.obj&quot;</span>, objname.toStdString(), pos);
 <a name="l00254"></a>00254 
 <a name="l00255"></a>00255                                 }
 <a name="l00256"></a>00256 
 <a name="l00257"></a>00257                             }
 <a name="l00258"></a>00258     }
 <a name="l00259"></a>00259 
-<a name="l00264"></a><a class="code" href="classcm_1_1_file_parser.html#ac056657648c841c16c7eca63da56b373">00264</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_file_parser.html#ac056657648c841c16c7eca63da56b373" title="checks first atoms (&quot;#N&quot;, &quot;#X&quot; etc) and sends QStringList">parseString</a>(QString line)
+<a name="l00264"></a><a class="code" href="classqtpd_1_1_file_parser.html#ae09cab80a56d87bc9dabe76e89b8f4ce">00264</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_file_parser.html#ae09cab80a56d87bc9dabe76e89b8f4ce" title="checks first atoms (&quot;#N&quot;, &quot;#X&quot; etc) and sends QStringList">parseString</a>(QString line)
 <a name="l00265"></a>00265     {
 <a name="l00266"></a>00266         QStringList atoms = line.split( <span class="stringliteral">&quot; &quot;</span> );
 <a name="l00267"></a>00267 
@@ -339,12 +339,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00273"></a>00273             QStringList msg = atoms;
 <a name="l00274"></a>00274             msg.removeFirst();
 <a name="l00275"></a>00275 
-<a name="l00276"></a>00276             <a class="code" href="classcm_1_1_file_parser.html#ac27b1b7a9c27f31c9bfeb1a019842781">pdParserPrevWindow</a> = <a class="code" href="classcm_1_1_file_parser.html#ae5dca711fea774e789a651fa73f60109">pdParserWindow</a>;
+<a name="l00276"></a>00276             <a class="code" href="classqtpd_1_1_file_parser.html#ab7f750a51e76c8a60b90d1479796466a">pdParserPrevWindow</a> = <a class="code" href="classqtpd_1_1_file_parser.html#a5dc01b5bbec80d216ce14596ca0bd6c9">pdParserWindow</a>;
 <a name="l00277"></a>00277 
-<a name="l00278"></a>00278             <a class="code" href="classcm_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* newWnd = <a class="code" href="classcm_1_1_patch_window.html#a4b86cb1a56afcbbc8e5117e69cc65444">PatchWindow::newWindow</a>();
-<a name="l00279"></a>00279             <a class="code" href="classcm_1_1_file_parser.html#ae5dca711fea774e789a651fa73f60109">pdParserWindow</a> = newWnd;
+<a name="l00278"></a>00278             <a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* newWnd = <a class="code" href="classqtpd_1_1_patch_window.html#a465802c46cfee0432f72284319faf1d3">PatchWindow::newWindow</a>();
+<a name="l00279"></a>00279             <a class="code" href="classqtpd_1_1_file_parser.html#a5dc01b5bbec80d216ce14596ca0bd6c9">pdParserWindow</a> = newWnd;
 <a name="l00280"></a>00280 
-<a name="l00281"></a>00281             <span class="keywordflow">if</span> (<a class="code" href="classcm_1_1_file_parser.html#ac27b1b7a9c27f31c9bfeb1a019842781">pdParserPrevWindow</a>)
+<a name="l00281"></a>00281             <span class="keywordflow">if</span> (<a class="code" href="classqtpd_1_1_file_parser.html#ab7f750a51e76c8a60b90d1479796466a">pdParserPrevWindow</a>)
 <a name="l00282"></a>00282                 newWnd-&gt;setWindowTitle(<span class="stringliteral">&quot;&lt;subpatch&gt;&quot;</span>);
 <a name="l00283"></a>00283             <span class="comment">//            else</span>
 <a name="l00284"></a>00284             <span class="comment">//            {</span>
@@ -359,10 +359,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00293"></a>00293             QStringList msg = atoms;
 <a name="l00294"></a>00294             msg.removeFirst();
 <a name="l00295"></a>00295 
-<a name="l00296"></a>00296             <span class="keywordflow">if</span> (<a class="code" href="classcm_1_1_file_parser.html#ae5dca711fea774e789a651fa73f60109">pdParserWindow</a>)
+<a name="l00296"></a>00296             <span class="keywordflow">if</span> (<a class="code" href="classqtpd_1_1_file_parser.html#a5dc01b5bbec80d216ce14596ca0bd6c9">pdParserWindow</a>)
 <a name="l00297"></a>00297             {
 <a name="l00298"></a>00298                 qDebug(<span class="stringliteral">&quot;X&quot;</span>);
-<a name="l00299"></a>00299                 <a class="code" href="classcm_1_1_file_parser.html#aeb02a7ed4edafeddd95a63fbe6ed28f5" title="parses QStringLists of atoms to canvas - creates objects etc">FileParser::stringToCanvas</a>(<a class="code" href="classcm_1_1_file_parser.html#ae5dca711fea774e789a651fa73f60109">pdParserWindow</a>-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>, msg);
+<a name="l00299"></a>00299                 <a class="code" href="classqtpd_1_1_file_parser.html#aae900841ee5ecd47583f72528ab1a289" title="parses QStringLists of atoms to canvas - creates objects etc">FileParser::stringToCanvas</a>(<a class="code" href="classqtpd_1_1_file_parser.html#a5dc01b5bbec80d216ce14596ca0bd6c9">pdParserWindow</a>-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>, msg);
 <a name="l00300"></a>00300             }
 <a name="l00301"></a>00301             <span class="keywordflow">else</span>
 <a name="l00302"></a>00302             {
@@ -372,16 +372,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00306"></a>00306         <span class="comment">//TODO</span>
 <a name="l00307"></a>00307     }
 <a name="l00308"></a>00308 
-<a name="l00313"></a><a class="code" href="classcm_1_1_file_parser.html#a4af8840a801d384b5830a61a607cc298">00313</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_file_parser.html#a4af8840a801d384b5830a61a607cc298" title="opens file, converts to QStrings, calls &#39;parseString&#39;">open</a>(QString fname)
+<a name="l00313"></a><a class="code" href="classqtpd_1_1_file_parser.html#aefb0a28455be5a6bae8a5fdba01f18e6">00313</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_file_parser.html#aefb0a28455be5a6bae8a5fdba01f18e6" title="opens file, converts to QStrings, calls &#39;parseString&#39;">open</a>(QString fname)
 <a name="l00314"></a>00314     {
 <a name="l00315"></a>00315         QFile f(fname);
 <a name="l00316"></a>00316         f.open(QIODevice::ReadOnly);
 <a name="l00317"></a>00317 
 <a name="l00318"></a>00318         QStringList stringList;
 <a name="l00319"></a>00319 
-<a name="l00320"></a>00320         <a class="code" href="classcm_1_1_file_parser.html#ae5dca711fea774e789a651fa73f60109">pdParserWindow</a> = 0;
-<a name="l00321"></a>00321         <a class="code" href="classcm_1_1_file_parser.html#ac27b1b7a9c27f31c9bfeb1a019842781">pdParserPrevWindow</a> = 0;
-<a name="l00322"></a>00322         <a class="code" href="classcm_1_1_file_parser.html#abc47b4f119ab484f73fc4fb7aadb75a1">pdParserFileName</a> = fname.toStdString();
+<a name="l00320"></a>00320         <a class="code" href="classqtpd_1_1_file_parser.html#a5dc01b5bbec80d216ce14596ca0bd6c9">pdParserWindow</a> = 0;
+<a name="l00321"></a>00321         <a class="code" href="classqtpd_1_1_file_parser.html#ab7f750a51e76c8a60b90d1479796466a">pdParserPrevWindow</a> = 0;
+<a name="l00322"></a>00322         <a class="code" href="classqtpd_1_1_file_parser.html#ab7dc8008ff768523c4633c29f8c030d2">pdParserFileName</a> = fname.toStdString();
 <a name="l00323"></a>00323 
 <a name="l00324"></a>00324         QTextStream textStream(&amp;f);
 <a name="l00325"></a>00325         <span class="keywordflow">while</span> (<span class="keyword">true</span>)
@@ -394,7 +394,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00332"></a>00332                 stringList.append(line);
 <a name="l00333"></a>00333                 qDebug(<span class="stringliteral">&quot;* %s&quot;</span>, line.toStdString().c_str());
 <a name="l00334"></a>00334                 <span class="comment">//</span>
-<a name="l00335"></a>00335                 <a class="code" href="classcm_1_1_file_parser.html#ac056657648c841c16c7eca63da56b373" title="checks first atoms (&quot;#N&quot;, &quot;#X&quot; etc) and sends QStringList">FileParser::parseString</a>(line);
+<a name="l00335"></a>00335                 <a class="code" href="classqtpd_1_1_file_parser.html#ae09cab80a56d87bc9dabe76e89b8f4ce" title="checks first atoms (&quot;#N&quot;, &quot;#X&quot; etc) and sends QStringList">FileParser::parseString</a>(line);
 <a name="l00336"></a>00336 
 <a name="l00337"></a>00337             }
 <a name="l00338"></a>00338         }
@@ -423,7 +423,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 12 2017 22:43:47 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 13 2017 22:38:45 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

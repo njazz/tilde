@@ -6,6 +6,6 @@ var searchData=
   ['b_5ffreeze',['b_freeze',['../structui__scope.html#acc0e7343d6d5e3b03735a9af35a91141',1,'ui_scope']]],
   ['bang',['bang',['../structui__display.html#a4635313be62d6346e691e63038bee6f6',1,'ui_display']]],
   ['bg_5flayer',['BG_LAYER',['../classceammc__gui_1_1_gui_factory.html#af70815e88d7efeaaa42be56da6ac2bff',1,'ceammc_gui::GuiFactory']]],
-  ['boxes',['boxes',['../structcm_1_1struct_canvas_data.html#a2b6a72ec5f66c4ccae3bb5ab45d2e961',1,'cm::structCanvasData']]],
+  ['boxes',['boxes',['../structqtpd_1_1struct_canvas_data.html#aea272f4d874595f5bf303a741ac7ef56',1,'qtpd::structCanvasData']]],
   ['buf',['buf',['../structui__scope.html#a5df3b6a39ba275d94d50ba0c46f13af7',1,'ui_scope::buf()'],['../structui__spectroscope.html#ad42c5ef43561fbf48f9f3c99046f1283',1,'ui_spectroscope::buf()']]]
 ];

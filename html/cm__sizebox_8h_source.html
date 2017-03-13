@@ -93,27 +93,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00009"></a>00009 
 <a name="l00010"></a>00010 <span class="preprocessor">#include &lt;QObject&gt;</span>
 <a name="l00011"></a>00011 
-<a name="l00012"></a>00012 <span class="keyword">namespace </span>cm{
+<a name="l00012"></a>00012 <span class="keyword">namespace </span>qtpd{
 <a name="l00013"></a>00013 
-<a name="l00017"></a><a class="code" href="namespacecm.html#a5ec512b3876769d22b1b8c7daa3706ad">00017</a> <span class="keyword">typedef</span> <span class="keyword">enum</span>
+<a name="l00017"></a><a class="code" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3">00017</a> <span class="keyword">typedef</span> <span class="keyword">enum</span>
 <a name="l00018"></a>00018 {
-<a name="l00019"></a><a class="code" href="namespacecm.html#a5ec512b3876769d22b1b8c7daa3706ada79548b1dd7ae325718690d64b0cdddb0">00019</a>     <a class="code" href="namespacecm.html#a5ec512b3876769d22b1b8c7daa3706ada79548b1dd7ae325718690d64b0cdddb0">os_Fixed</a>,
-<a name="l00020"></a><a class="code" href="namespacecm.html#a5ec512b3876769d22b1b8c7daa3706ada6a57bf8b09e26966840462efe1f788fb">00020</a>     <a class="code" href="namespacecm.html#a5ec512b3876769d22b1b8c7daa3706ada6a57bf8b09e26966840462efe1f788fb">os_FixedHeight</a>,
-<a name="l00021"></a><a class="code" href="namespacecm.html#a5ec512b3876769d22b1b8c7daa3706adae088fcfd368cbd1f371bc1bbb4f2ab60">00021</a>     <a class="code" href="namespacecm.html#a5ec512b3876769d22b1b8c7daa3706adae088fcfd368cbd1f371bc1bbb4f2ab60">os_Free</a>
-<a name="l00022"></a>00022 } <a class="code" href="namespacecm.html#a5ec512b3876769d22b1b8c7daa3706ad" title="object box size constraints">t_objectSize</a>;
+<a name="l00019"></a><a class="code" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3a0af9814af3758d6fd8a9c5de202f937e">00019</a>     <a class="code" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3a0af9814af3758d6fd8a9c5de202f937e">os_Fixed</a>,
+<a name="l00020"></a><a class="code" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3a71f8acecda7a72aa0247ed121da53c1e">00020</a>     <a class="code" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3a71f8acecda7a72aa0247ed121da53c1e">os_FixedHeight</a>,
+<a name="l00021"></a><a class="code" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3a57b863bd243ae8d733c28c3ac9b6c631">00021</a>     <a class="code" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3a57b863bd243ae8d733c28c3ac9b6c631">os_Free</a>
+<a name="l00022"></a>00022 } <a class="code" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3" title="object box size constraints">t_objectSize</a>;
 <a name="l00023"></a>00023 
-<a name="l00027"></a><a class="code" href="classcm_1_1_size_box.html">00027</a> <span class="keyword">class </span><a class="code" href="classcm_1_1_size_box.html" title="resize widget for all object boxes in patch">SizeBox</a> : <span class="keyword">public</span> <a class="code" href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>
+<a name="l00027"></a><a class="code" href="classqtpd_1_1_size_box.html">00027</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_size_box.html" title="resize widget for all object boxes in patch">SizeBox</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>
 <a name="l00028"></a>00028 {
 <a name="l00029"></a>00029     Q_OBJECT
 <a name="l00030"></a>00030 
 <a name="l00031"></a>00031 <span class="keyword">private</span>:
 <a name="l00032"></a>00032     <span class="keywordtype">int</span> prevX;
 <a name="l00033"></a>00033 
-<a name="l00034"></a>00034     <a class="code" href="namespacecm.html#a5ec512b3876769d22b1b8c7daa3706ad" title="object box size constraints">t_objectSize</a>* objectSizeType;
+<a name="l00034"></a>00034     <a class="code" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3" title="object box size constraints">t_objectSize</a>* objectSizeType;
 <a name="l00035"></a>00035 <span class="keyword">public</span>:
-<a name="l00036"></a>00036     <span class="keyword">explicit</span> <a class="code" href="classcm_1_1_size_box.html#ad7eea41674442aebf6c5659411b7448a">SizeBox</a>(<a class="code" href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a> *parent = 0);
+<a name="l00036"></a>00036     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_size_box.html#a7eb6db1db936af8e770b85f527f26bb0">SizeBox</a>(<a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a> *parent = 0);
 <a name="l00037"></a>00037 
-<a name="l00038"></a><a class="code" href="classcm_1_1_size_box.html#a01444b5d54f1f64197c1ec22680d1727">00038</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_size_box.html#a01444b5d54f1f64197c1ec22680d1727">paintEvent</a>(QPaintEvent*)   <span class="comment">//QPaintEvent *pe</span>
+<a name="l00038"></a><a class="code" href="classqtpd_1_1_size_box.html#aa15cc695003a7740ac6d561732a6ffc4">00038</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_size_box.html#aa15cc695003a7740ac6d561732a6ffc4">paintEvent</a>(QPaintEvent*)   <span class="comment">//QPaintEvent *pe</span>
 <a name="l00039"></a>00039     {    QPainter p(<span class="keyword">this</span>);
 <a name="l00040"></a>00040 
 <a name="l00041"></a>00041          <span class="comment">//p.setRenderHint(QPainter::SmoothPixmapTransform,true);</span>
@@ -123,7 +123,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00045"></a>00045     };
 <a name="l00046"></a>00046 
 <a name="l00047"></a>00047 
-<a name="l00048"></a><a class="code" href="classcm_1_1_size_box.html#a254381a9116f3cfe97796c01dce69c01">00048</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_size_box.html#a254381a9116f3cfe97796c01dce69c01">mousePressEvent</a>(QMouseEvent *event)
+<a name="l00048"></a><a class="code" href="classqtpd_1_1_size_box.html#acdbf235000c9e7789f418026aca3dacc">00048</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_size_box.html#acdbf235000c9e7789f418026aca3dacc">mousePressEvent</a>(QMouseEvent *event)
 <a name="l00049"></a>00049     {
 <a name="l00050"></a>00050         this-&gt;setCursor(QCursor(Qt::SizeHorCursor));
 <a name="l00051"></a>00051 
@@ -132,23 +132,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00054"></a>00054         this-&gt; prevX = 0;
 <a name="l00055"></a>00055     };
 <a name="l00056"></a>00056 
-<a name="l00057"></a><a class="code" href="classcm_1_1_size_box.html#a80122a2072ba6318983a6b401b508068">00057</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_size_box.html#a80122a2072ba6318983a6b401b508068">mouseReleaseEvent</a>(QMouseEvent *event)
+<a name="l00057"></a><a class="code" href="classqtpd_1_1_size_box.html#afd27b8071dc940e941a674d67451c69c">00057</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_size_box.html#afd27b8071dc940e941a674d67451c69c">mouseReleaseEvent</a>(QMouseEvent *event)
 <a name="l00058"></a>00058     {
 <a name="l00059"></a>00059         this-&gt;setCursor(QCursor(Qt::ArrowCursor));
 <a name="l00060"></a>00060 
 <a name="l00061"></a>00061         <span class="keyword">event</span>-&gt;accept();
 <a name="l00062"></a>00062     };
 <a name="l00063"></a>00063 
-<a name="l00064"></a><a class="code" href="classcm_1_1_size_box.html#a58d6bc84dbaaee7f57c33de86b525da1">00064</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_size_box.html#a58d6bc84dbaaee7f57c33de86b525da1">mouseMoveEvent</a>(QMouseEvent *ev)
+<a name="l00064"></a><a class="code" href="classqtpd_1_1_size_box.html#ac424a70e44d8f70cc832f32f7f0b027f">00064</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_size_box.html#ac424a70e44d8f70cc832f32f7f0b027f">mouseMoveEvent</a>(QMouseEvent *ev)
 <a name="l00065"></a>00065     {
 <a name="l00066"></a>00066         <span class="comment">//qDebug() &lt;&lt; &quot;resize&quot; &lt;&lt; (ev-&gt;x() - prevX);</span>
-<a name="l00067"></a>00067         emit <a class="code" href="classcm_1_1_size_box.html#ad71317accd1fc5b3e3ddacb5eff2bb05">resizeBoxEvent</a>(ev-&gt;x() - this-&gt;prevX);
+<a name="l00067"></a>00067         emit <a class="code" href="classqtpd_1_1_size_box.html#a430703b08f8ae796cfeddf05f83a606b">resizeBoxEvent</a>(ev-&gt;x() - this-&gt;prevX);
 <a name="l00068"></a>00068 
 <a name="l00069"></a>00069     }
 <a name="l00070"></a>00070 
 <a name="l00071"></a>00071 signals:
 <a name="l00072"></a>00072 
-<a name="l00073"></a>00073     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_size_box.html#ad71317accd1fc5b3e3ddacb5eff2bb05">resizeBoxEvent</a>(<span class="keywordtype">int</span> dx);
+<a name="l00073"></a>00073     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_size_box.html#a430703b08f8ae796cfeddf05f83a606b">resizeBoxEvent</a>(<span class="keywordtype">int</span> dx);
 <a name="l00074"></a>00074 
 <a name="l00075"></a>00075 };
 <a name="l00076"></a>00076 
@@ -173,7 +173,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 12 2017 22:43:47 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 13 2017 22:38:45 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

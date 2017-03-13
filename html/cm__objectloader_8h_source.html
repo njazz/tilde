@@ -100,16 +100,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00016"></a>00016 <span class="preprocessor">#include &quot;<a class="code" href="cmo__bang_8h.html">cmo_bang.h</a>&quot;</span>
 <a name="l00017"></a>00017 <span class="preprocessor">#include &quot;<a class="code" href="cmo__toggle_8h.html">cmo_toggle.h</a>&quot;</span>
 <a name="l00018"></a>00018 
-<a name="l00019"></a>00019 <span class="keyword">namespace </span>cm
+<a name="l00019"></a>00019 <span class="keyword">namespace </span>qtpd
 <a name="l00020"></a>00020 {
-<a name="l00021"></a><a class="code" href="namespacecm.html#aa1960a2b50fc448372249c7b7308a1de">00021</a> <span class="keyword">typedef</span> <a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* (*cmObjectConstructor)(std::string objectData, t_canvas* pdCanvas, <a class="code" href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a> *parent);
+<a name="l00021"></a><a class="code" href="namespaceqtpd.html#ac3f9500ed88e58abf682bbc072d74647">00021</a> <span class="keyword">typedef</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* (*cmObjectConstructor)(std::string objectData, t_canvas* pdCanvas, <a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a> *parent);
 <a name="l00022"></a>00022 
-<a name="l00026"></a><a class="code" href="classcm_1_1_object_loader.html">00026</a> <span class="keyword">class </span><a class="code" href="classcm_1_1_object_loader.html" title="prototype for ui externals handling. stub">ObjectLoader</a>
+<a name="l00026"></a><a class="code" href="classqtpd_1_1_object_loader.html">00026</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_object_loader.html" title="prototype for ui externals handling. stub">ObjectLoader</a>
 <a name="l00027"></a>00027 {
 <a name="l00028"></a>00028 <span class="keyword">public</span>:
-<a name="l00029"></a><a class="code" href="classcm_1_1_object_loader.html#ac29ac3ba87ae3e09a8e2499f59ab2608">00029</a>     <span class="keyword">static</span> <a class="code" href="classcm_1_1_object_loader.html" title="prototype for ui externals handling. stub">ObjectLoader</a>&amp; <a class="code" href="classcm_1_1_object_loader.html#ac29ac3ba87ae3e09a8e2499f59ab2608">inst</a>()
+<a name="l00029"></a><a class="code" href="classqtpd_1_1_object_loader.html#ab0d2dafc82b31dc7e2e35f8527de3df7">00029</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_object_loader.html" title="prototype for ui externals handling. stub">ObjectLoader</a>&amp; <a class="code" href="classqtpd_1_1_object_loader.html#ab0d2dafc82b31dc7e2e35f8527de3df7">inst</a>()
 <a name="l00030"></a>00030     {
-<a name="l00031"></a>00031         <span class="keyword">static</span> <a class="code" href="classcm_1_1_object_loader.html" title="prototype for ui externals handling. stub">ObjectLoader</a>    instance;
+<a name="l00031"></a>00031         <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_object_loader.html" title="prototype for ui externals handling. stub">ObjectLoader</a>    instance;
 <a name="l00032"></a>00032         <span class="keywordflow">return</span> instance;
 <a name="l00033"></a>00033     }
 <a name="l00034"></a>00034 <span class="keyword">private</span>:
@@ -118,25 +118,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00037"></a>00037 
 <a name="l00038"></a>00038     std::map&lt;std::string, cmObjectConstructor&gt; objectConstructors_;
 <a name="l00039"></a>00039 
-<a name="l00040"></a>00040     <a class="code" href="classcm_1_1_object_loader.html" title="prototype for ui externals handling. stub">ObjectLoader</a>() {
+<a name="l00040"></a>00040     <a class="code" href="classqtpd_1_1_object_loader.html" title="prototype for ui externals handling. stub">ObjectLoader</a>() {
 <a name="l00041"></a>00041 
 <a name="l00042"></a>00042     }
 <a name="l00043"></a>00043 
 <a name="l00044"></a>00044 
 <a name="l00045"></a>00045 <span class="keyword">public</span>:
 <a name="l00046"></a>00046     ObjectLoader(ObjectLoader <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;
-<a name="l00047"></a>00047     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_object_loader.html#a33cafe9baf04f81d6954474e9cfd964d">operator=</a>(ObjectLoader <span class="keyword">const</span>&amp;)  = <span class="keyword">delete</span>;
+<a name="l00047"></a>00047     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_object_loader.html#a8ac4f79cbad3c85732667e33da9e6d5b">operator=</a>(ObjectLoader <span class="keyword">const</span>&amp;)  = <span class="keyword">delete</span>;
 <a name="l00048"></a>00048 
-<a name="l00049"></a><a class="code" href="classcm_1_1_object_loader.html#a4b554d60a4c4791bc3429ff3bdd14222">00049</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_object_loader.html#a4b554d60a4c4791bc3429ff3bdd14222">loadObjects</a>()
+<a name="l00049"></a><a class="code" href="classqtpd_1_1_object_loader.html#a411e5881f56306dc5e7b666a20e0af01">00049</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_object_loader.html#a411e5881f56306dc5e7b666a20e0af01">loadObjects</a>()
 <a name="l00050"></a>00050     {
 <a name="l00051"></a>00051         <span class="comment">//temporary</span>
-<a name="l00052"></a>00052         this-&gt;<a class="code" href="classcm_1_1_object_loader.html#a63c27fbfeb9e3233f6aee6a79420d9d6">addUIobject</a>(<span class="stringliteral">&quot;ui.obj&quot;</span>, &amp;<a class="code" href="classcm_1_1_u_i_box.html#a88cb253bdca57d2e41db6d3434f281b7">UIBox::createObject</a>);
-<a name="l00053"></a>00053         this-&gt;<a class="code" href="classcm_1_1_object_loader.html#a63c27fbfeb9e3233f6aee6a79420d9d6">addUIobject</a>(<span class="stringliteral">&quot;ui.msg&quot;</span>, &amp;<a class="code" href="classcm_1_1_u_i_message.html#a5f1c0998a90512c373bdcf91ed5ae2ad">UIMessage::createObject</a>);
-<a name="l00054"></a>00054         this-&gt;<a class="code" href="classcm_1_1_object_loader.html#a63c27fbfeb9e3233f6aee6a79420d9d6">addUIobject</a>(<span class="stringliteral">&quot;ui.float&quot;</span>, &amp;<a class="code" href="classcm_1_1_u_i_float.html#a6bcc2dd96a1fe50642bb9f1df1078d68">UIFloat::createObject</a>);
-<a name="l00055"></a>00055         this-&gt;<a class="code" href="classcm_1_1_object_loader.html#a63c27fbfeb9e3233f6aee6a79420d9d6">addUIobject</a>(<span class="stringliteral">&quot;ui.text&quot;</span>, &amp;<a class="code" href="classcm_1_1_u_i_text.html#afb9da697ca75f78f9b678bc90f528406">UIText::createObject</a>);
+<a name="l00052"></a>00052         this-&gt;<a class="code" href="classqtpd_1_1_object_loader.html#a9fa9ecfce511f15b2b3ccc187f0872df">addUIobject</a>(<span class="stringliteral">&quot;ui.obj&quot;</span>, &amp;<a class="code" href="classqtpd_1_1_u_i_box.html#ac6ae4a80e978841875d520f5f63d3fba">UIBox::createObject</a>);
+<a name="l00053"></a>00053         this-&gt;<a class="code" href="classqtpd_1_1_object_loader.html#a9fa9ecfce511f15b2b3ccc187f0872df">addUIobject</a>(<span class="stringliteral">&quot;ui.msg&quot;</span>, &amp;<a class="code" href="classqtpd_1_1_u_i_message.html#adf0b09318f0687236050263cb8321577">UIMessage::createObject</a>);
+<a name="l00054"></a>00054         this-&gt;<a class="code" href="classqtpd_1_1_object_loader.html#a9fa9ecfce511f15b2b3ccc187f0872df">addUIobject</a>(<span class="stringliteral">&quot;ui.float&quot;</span>, &amp;<a class="code" href="classqtpd_1_1_u_i_float.html#a0ba469d10848833c102367c605aa91e3">UIFloat::createObject</a>);
+<a name="l00055"></a>00055         this-&gt;<a class="code" href="classqtpd_1_1_object_loader.html#a9fa9ecfce511f15b2b3ccc187f0872df">addUIobject</a>(<span class="stringliteral">&quot;ui.text&quot;</span>, &amp;<a class="code" href="classqtpd_1_1_u_i_text.html#af82e0d158b0fdb9b5709acb76a695f60">UIText::createObject</a>);
 <a name="l00056"></a>00056 
-<a name="l00057"></a>00057         this-&gt;<a class="code" href="classcm_1_1_object_loader.html#a63c27fbfeb9e3233f6aee6a79420d9d6">addUIobject</a>(<span class="stringliteral">&quot;ui.bang&quot;</span>, &amp;<a class="code" href="classcm_1_1_u_i_bang.html#a71df5198a2b1c99179e32fdaba0e3f9b">UIBang::createObject</a>);
-<a name="l00058"></a>00058         this-&gt;<a class="code" href="classcm_1_1_object_loader.html#a63c27fbfeb9e3233f6aee6a79420d9d6">addUIobject</a>(<span class="stringliteral">&quot;ui.toggle&quot;</span>, &amp;<a class="code" href="classcm_1_1_u_i_toggle.html#a569e65c06a522791dacce2a8836740f1">UIToggle::createObject</a>);
+<a name="l00057"></a>00057         this-&gt;<a class="code" href="classqtpd_1_1_object_loader.html#a9fa9ecfce511f15b2b3ccc187f0872df">addUIobject</a>(<span class="stringliteral">&quot;ui.bang&quot;</span>, &amp;<a class="code" href="classqtpd_1_1_u_i_bang.html#a51a2fb4d71db68993c97e68c0ede7304">UIBang::createObject</a>);
+<a name="l00058"></a>00058         this-&gt;<a class="code" href="classqtpd_1_1_object_loader.html#a9fa9ecfce511f15b2b3ccc187f0872df">addUIobject</a>(<span class="stringliteral">&quot;ui.toggle&quot;</span>, &amp;<a class="code" href="classqtpd_1_1_u_i_toggle.html#a99e5c79cecfc7b9b7fc75620b3a5e925">UIToggle::createObject</a>);
 <a name="l00059"></a>00059 
 <a name="l00060"></a>00060         <span class="comment">//TODO compatibility</span>
 <a name="l00061"></a>00061         <span class="comment">//this-&gt;addUIobject(&quot;msg&quot;, &amp;cmo_msg::createObject);</span>
@@ -144,31 +144,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00063"></a>00063         <span class="comment">//this-&gt;addUIobject(&quot;symbolatom&quot;, &amp;cmo_msg::createObject);</span>
 <a name="l00064"></a>00064     }
 <a name="l00065"></a>00065 
-<a name="l00066"></a><a class="code" href="classcm_1_1_object_loader.html#a63c27fbfeb9e3233f6aee6a79420d9d6">00066</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_object_loader.html#a63c27fbfeb9e3233f6aee6a79420d9d6">addUIobject</a>(std::string name, <a class="code" href="namespacecm.html#aa1960a2b50fc448372249c7b7308a1de">cmObjectConstructor</a> constructor)
+<a name="l00066"></a><a class="code" href="classqtpd_1_1_object_loader.html#a9fa9ecfce511f15b2b3ccc187f0872df">00066</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_object_loader.html#a9fa9ecfce511f15b2b3ccc187f0872df">addUIobject</a>(std::string name, <a class="code" href="namespaceqtpd.html#ac3f9500ed88e58abf682bbc072d74647">cmObjectConstructor</a> constructor)
 <a name="l00067"></a>00067     {
 <a name="l00068"></a>00068         names_.push_back(name);
 <a name="l00069"></a>00069         objectConstructors_[name] = constructor;
 <a name="l00070"></a>00070     }
 <a name="l00071"></a>00071 
-<a name="l00072"></a><a class="code" href="classcm_1_1_object_loader.html#a63bfe437603c165a8d8e2212ba6a4781">00072</a>     std::vector&lt;std::string&gt; <a class="code" href="classcm_1_1_object_loader.html#a63bfe437603c165a8d8e2212ba6a4781">getUINames</a>()
+<a name="l00072"></a><a class="code" href="classqtpd_1_1_object_loader.html#a5475dcd7b849d9f05a8349c32e5198f0">00072</a>     std::vector&lt;std::string&gt; <a class="code" href="classqtpd_1_1_object_loader.html#a5475dcd7b849d9f05a8349c32e5198f0">getUINames</a>()
 <a name="l00073"></a>00073     {
 <a name="l00074"></a>00074         <span class="keywordflow">return</span> this-&gt;names_;
 <a name="l00075"></a>00075     }
 <a name="l00076"></a>00076 
-<a name="l00077"></a><a class="code" href="classcm_1_1_object_loader.html#a887c21b1facfabe2556cc942766cb70f">00077</a>     std::vector&lt;std::string&gt; <a class="code" href="classcm_1_1_object_loader.html#a887c21b1facfabe2556cc942766cb70f">getPDNames</a>()
+<a name="l00077"></a><a class="code" href="classqtpd_1_1_object_loader.html#ac8178b634c3a288d2bca6bbe6f0f7f7b">00077</a>     std::vector&lt;std::string&gt; <a class="code" href="classqtpd_1_1_object_loader.html#ac8178b634c3a288d2bca6bbe6f0f7f7b">getPDNames</a>()
 <a name="l00078"></a>00078     {
 <a name="l00079"></a>00079         <span class="keywordflow">return</span> this-&gt;pdNames_;
 <a name="l00080"></a>00080     }
 <a name="l00081"></a>00081 
-<a name="l00082"></a><a class="code" href="classcm_1_1_object_loader.html#af1e8006ddb5923e3aace3bc2392de0eb">00082</a>     <span class="keywordtype">bool</span> <a class="code" href="classcm_1_1_object_loader.html#af1e8006ddb5923e3aace3bc2392de0eb">hasUI</a>(std::string objName)
+<a name="l00082"></a><a class="code" href="classqtpd_1_1_object_loader.html#af239c0e007aed45a838eeca575f4e22b">00082</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_object_loader.html#af239c0e007aed45a838eeca575f4e22b">hasUI</a>(std::string objName)
 <a name="l00083"></a>00083     {
 <a name="l00084"></a>00084         <span class="keywordflow">return</span> std::find(names_.begin(), names_.end(), objName) != names_.end();
 <a name="l00085"></a>00085     }
 <a name="l00086"></a>00086 
 <a name="l00087"></a>00087     <span class="comment">// todo remove?</span>
-<a name="l00088"></a><a class="code" href="classcm_1_1_object_loader.html#a783328f941313e9d29c329fb0d2647b8">00088</a>     <a class="code" href="namespacecm.html#aa1960a2b50fc448372249c7b7308a1de">cmObjectConstructor</a> <a class="code" href="classcm_1_1_object_loader.html#a783328f941313e9d29c329fb0d2647b8">getConstructorFor</a>(std::string objName)
+<a name="l00088"></a><a class="code" href="classqtpd_1_1_object_loader.html#a11212c6c0cdc8f01a905264c15db322f">00088</a>     <a class="code" href="namespaceqtpd.html#ac3f9500ed88e58abf682bbc072d74647">cmObjectConstructor</a> <a class="code" href="classqtpd_1_1_object_loader.html#a11212c6c0cdc8f01a905264c15db322f">getConstructorFor</a>(std::string objName)
 <a name="l00089"></a>00089     {
-<a name="l00090"></a>00090         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm_1_1_object_loader.html#af1e8006ddb5923e3aace3bc2392de0eb">hasUI</a>(objName))
+<a name="l00090"></a>00090         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classqtpd_1_1_object_loader.html#af239c0e007aed45a838eeca575f4e22b">hasUI</a>(objName))
 <a name="l00091"></a>00091         {
 <a name="l00092"></a>00092             <span class="keywordflow">return</span> objectConstructors_[objName];
 <a name="l00093"></a>00093         }
@@ -177,17 +177,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00096"></a>00096 
 <a name="l00097"></a>00097     }
 <a name="l00098"></a>00098 
-<a name="l00099"></a><a class="code" href="classcm_1_1_object_loader.html#a1eb8184c6f0a5c0770b9d81dea676510">00099</a>     <a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classcm_1_1_object_loader.html#a1eb8184c6f0a5c0770b9d81dea676510">createObject</a>(std::string objName, std::string objectData, t_canvas* pdCanvas, <a class="code" href="classcm_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a> *parent)
+<a name="l00099"></a><a class="code" href="classqtpd_1_1_object_loader.html#adc88d0d99f962e98a621abd0248e055f">00099</a>     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_object_loader.html#adc88d0d99f962e98a621abd0248e055f">createObject</a>(std::string objName, std::string objectData, t_canvas* pdCanvas, <a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a> *parent)
 <a name="l00100"></a>00100     {
 <a name="l00101"></a>00101         <span class="keywordflow">if</span> (objName == <span class="stringliteral">&quot;ui.obj&quot;</span>)
 <a name="l00102"></a>00102         {
 <a name="l00103"></a>00103             objectData = objName + <span class="stringliteral">&quot; &quot;</span> + objectData;
 <a name="l00104"></a>00104 
-<a name="l00105"></a>00105             <span class="keywordflow">return</span> <a class="code" href="classcm_1_1_object_loader.html#a1eb8184c6f0a5c0770b9d81dea676510">UIBox::createObject</a>(objectData, pdCanvas,  parent);
+<a name="l00105"></a>00105             <span class="keywordflow">return</span> <a class="code" href="classqtpd_1_1_object_loader.html#adc88d0d99f962e98a621abd0248e055f">UIBox::createObject</a>(objectData, pdCanvas,  parent);
 <a name="l00106"></a>00106         }
 <a name="l00107"></a>00107         <span class="keywordflow">else</span>
 <a name="l00108"></a>00108         {
-<a name="l00109"></a>00109             <a class="code" href="namespacecm.html#aa1960a2b50fc448372249c7b7308a1de">cmObjectConstructor</a> cmc = this-&gt;<a class="code" href="classcm_1_1_object_loader.html#a783328f941313e9d29c329fb0d2647b8">getConstructorFor</a>(objName);
+<a name="l00109"></a>00109             <a class="code" href="namespaceqtpd.html#ac3f9500ed88e58abf682bbc072d74647">cmObjectConstructor</a> cmc = this-&gt;<a class="code" href="classqtpd_1_1_object_loader.html#a11212c6c0cdc8f01a905264c15db322f">getConstructorFor</a>(objName);
 <a name="l00110"></a>00110             <span class="keywordflow">return</span> cmc(objectData, pdCanvas, parent);
 <a name="l00111"></a>00111         }
 <a name="l00112"></a>00112     }
@@ -216,7 +216,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 12 2017 22:43:47 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 13 2017 22:38:45 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

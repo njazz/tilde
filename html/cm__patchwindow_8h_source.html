@@ -93,9 +93,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00009"></a>00009 
 <a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="cm__filesaver_8h.html">cm_filesaver.h</a>&quot;</span>
 <a name="l00011"></a>00011 
-<a name="l00012"></a>00012 <span class="keyword">namespace </span>cm
+<a name="l00012"></a>00012 <span class="keyword">namespace </span>qtpd
 <a name="l00013"></a>00013 {
-<a name="l00017"></a><a class="code" href="classcm_1_1_patch_window.html">00017</a> <span class="keyword">class </span><a class="code" href="classcm_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a> : <span class="keyword">public</span> <a class="code" href="classcm_1_1_base_window.html" title="Base class for windows (patch, pd)">BaseWindow</a>
+<a name="l00017"></a><a class="code" href="classqtpd_1_1_patch_window.html">00017</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1_base_window.html" title="Base class for windows (patch, pd)">BaseWindow</a>
 <a name="l00018"></a>00018 {
 <a name="l00019"></a>00019 
 <a name="l00020"></a>00020 <span class="keyword">private</span>:
@@ -155,7 +155,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00075"></a>00075 
 <a name="l00076"></a>00076 
 <a name="l00077"></a>00077 
-<a name="l00078"></a>00078     <a class="code" href="classcm_1_1_object_maker.html" title="creates lineedit box for new object">ObjectMaker</a>* objectMaker;
+<a name="l00078"></a>00078     <a class="code" href="classqtpd_1_1_object_maker.html" title="creates lineedit box for new object">ObjectMaker</a>* objectMaker;
 <a name="l00079"></a>00079 
 <a name="l00080"></a>00080 <span class="keyword">private</span> slots:
 <a name="l00081"></a>00081     <span class="comment">//void open();</span>
@@ -163,24 +163,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00083"></a>00083     <span class="keywordtype">void</span> saveAs();
 <a name="l00084"></a>00084 
 <a name="l00085"></a>00085     <span class="comment">// this is hidden, use &quot;newWindow&quot;</span>
-<a name="l00086"></a>00086     <a class="code" href="classcm_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>();
+<a name="l00086"></a>00086     <a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>();
 <a name="l00087"></a>00087 <span class="keyword">public</span>:
-<a name="l00088"></a>00088     <span class="keyword">static</span> <a class="code" href="classcm_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* <a class="code" href="classcm_1_1_patch_window.html#a4b86cb1a56afcbbc8e5117e69cc65444">newWindow</a>();
+<a name="l00088"></a>00088     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* <a class="code" href="classqtpd_1_1_patch_window.html#a465802c46cfee0432f72284319faf1d3">newWindow</a>();
 <a name="l00089"></a>00089     <span class="comment">//    static cm_patchwindow* loadWindow(QStringList); //arguments</span>
-<a name="l00090"></a>00090     <span class="keyword">static</span> <a class="code" href="classcm_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* <a class="code" href="classcm_1_1_patch_window.html#a222447f0df64274c0995fef86e5463bb" title="constructor for the subpatches&#39; windows">newSubpatch</a>(t_canvas *subpatch = 0);
+<a name="l00090"></a>00090     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* <a class="code" href="classqtpd_1_1_patch_window.html#a0a56073dafc551b0c5c1b7031f9ead66" title="constructor for the subpatches&#39; windows">newSubpatch</a>(t_canvas *subpatch = 0);
 <a name="l00091"></a>00091 
-<a name="l00092"></a><a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">00092</a>     <a class="code" href="classcm_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* <a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>;
+<a name="l00092"></a><a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">00092</a>     <a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* <a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>;
 <a name="l00093"></a>00093 
 <a name="l00094"></a>00094 
-<a name="l00095"></a><a class="code" href="classcm_1_1_patch_window.html#a39603c8deea46bbfe2a782a9c6c46e60">00095</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a39603c8deea46bbfe2a782a9c6c46e60" title="create menu actions (File, Edit)">createActions</a>()
+<a name="l00095"></a><a class="code" href="classqtpd_1_1_patch_window.html#a9e0317548dc5606f8df0fe8085d16bec">00095</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a9e0317548dc5606f8df0fe8085d16bec" title="create menu actions (File, Edit)">createActions</a>()
 <a name="l00096"></a>00096     {
 <a name="l00097"></a>00097         <span class="comment">//        connect(openAct, &amp;QAction::triggered, this, &amp;cm_patchwindow::open);</span>
-<a name="l00098"></a>00098         connect(<a class="code" href="classcm_1_1_base_window.html#a17fd8e749f41b4f4bfcc06cf6cd01f47">saveAsAct</a>, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;PatchWindow::saveAs);
-<a name="l00099"></a>00099         connect(<a class="code" href="classcm_1_1_base_window.html#ac3f5f9b024593648ac40de6fe8910897">saveAct</a>, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;PatchWindow::saveAs);
+<a name="l00098"></a>00098         connect(<a class="code" href="classqtpd_1_1_base_window.html#a4aac4f28cf7b733653ad465297bc2038">saveAsAct</a>, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;PatchWindow::saveAs);
+<a name="l00099"></a>00099         connect(<a class="code" href="classqtpd_1_1_base_window.html#aaa3a2ed7429dc62b3ea6d25a4c397de2">saveAct</a>, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;PatchWindow::saveAs);
 <a name="l00100"></a>00100 
 <a name="l00101"></a>00101         delObjectAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;Delete object&quot;</span>), <span class="keyword">this</span>);
 <a name="l00102"></a>00102         delObjectAct-&gt;setShortcut(tr(<span class="stringliteral">&quot;Backspace&quot;</span>));
-<a name="l00103"></a>00103         connect(delObjectAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;<a class="code" href="classcm_1_1_patch_window.html#a06f635af622c64a38c97d0b695c1d58f">PatchWindow::delSelected</a>);
+<a name="l00103"></a>00103         connect(delObjectAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;<a class="code" href="classqtpd_1_1_patch_window.html#a9f2e7fc3b36eccf313302095b33349c6">PatchWindow::delSelected</a>);
 <a name="l00104"></a>00104 
 <a name="l00105"></a>00105         selectAllAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;Select all&quot;</span>), <span class="keyword">this</span>);
 <a name="l00106"></a>00106         selectAllAct-&gt;setShortcut(tr(<span class="stringliteral">&quot;Ctrl+A&quot;</span>));
@@ -191,15 +191,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00111"></a>00111         editModeAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;Edit mode&quot;</span>), <span class="keyword">this</span>);
 <a name="l00112"></a>00112         editModeAct-&gt;setShortcut(tr(<span class="stringliteral">&quot;Ctrl+E&quot;</span>));
 <a name="l00113"></a>00113         editModeAct-&gt;setCheckable(<span class="keyword">true</span>);
-<a name="l00114"></a>00114         connect(editModeAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;<a class="code" href="classcm_1_1_patch_window.html#a7bd7ecd86a671bc2aedd9eb08cfff391">PatchWindow::setEditMode</a>);
+<a name="l00114"></a>00114         connect(editModeAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;<a class="code" href="classqtpd_1_1_patch_window.html#af36a7d056eb78261cd495cda1c40e8b9">PatchWindow::setEditMode</a>);
 <a name="l00115"></a>00115 
 <a name="l00116"></a>00116         putObjectAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;Object&quot;</span>), <span class="keyword">this</span>);
 <a name="l00117"></a>00117         putObjectAct-&gt;setShortcut(tr(<span class="stringliteral">&quot;Ctrl+1&quot;</span>));
-<a name="l00118"></a>00118         connect(putObjectAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;<a class="code" href="classcm_1_1_patch_window.html#a60826555b736d69ef5688eebc4d375d5">PatchWindow::newObjectBox</a>);
+<a name="l00118"></a>00118         connect(putObjectAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;<a class="code" href="classqtpd_1_1_patch_window.html#a9dea55bcdf6c35f6394784cfa273cdf1">PatchWindow::newObjectBox</a>);
 <a name="l00119"></a>00119 
 <a name="l00120"></a>00120         putMessageAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;Message&quot;</span>), <span class="keyword">this</span>);
 <a name="l00121"></a>00121         putMessageAct-&gt;setShortcut(tr(<span class="stringliteral">&quot;Ctrl+2&quot;</span>));
-<a name="l00122"></a>00122         connect(putMessageAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;<a class="code" href="classcm_1_1_patch_window.html#a6e3b2c53c06419ea77d0ec75e8b0a90f">PatchWindow::newMessageBox</a>);
+<a name="l00122"></a>00122         connect(putMessageAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;<a class="code" href="classqtpd_1_1_patch_window.html#a83e7f93159893bdaa0082fd6d8c140dc">PatchWindow::newMessageBox</a>);
 <a name="l00123"></a>00123 
 <a name="l00124"></a>00124 
 <a name="l00125"></a>00125 
@@ -208,21 +208,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00128"></a>00128 
 <a name="l00129"></a>00129         putCommentAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;Comment&quot;</span>), <span class="keyword">this</span>);
 <a name="l00130"></a>00130         putCommentAct-&gt;setShortcut(tr(<span class="stringliteral">&quot;Ctrl+5&quot;</span>));
-<a name="l00131"></a>00131         connect(putCommentAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;<a class="code" href="classcm_1_1_patch_window.html#a3b9a4cfd55b5c9366cc426ab37a2d52b">PatchWindow::newCommentBox</a>);
+<a name="l00131"></a>00131         connect(putCommentAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;<a class="code" href="classqtpd_1_1_patch_window.html#a403ba665e965bc5e72dc54ef5d9cc5cb">PatchWindow::newCommentBox</a>);
 <a name="l00132"></a>00132 
 <a name="l00133"></a>00133 
 <a name="l00134"></a>00134 
 <a name="l00135"></a>00135         putBangAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;Bang&quot;</span>), <span class="keyword">this</span>);
 <a name="l00136"></a>00136         putBangAct-&gt;setShortcut(tr(<span class="stringliteral">&quot;Ctrl+Shift+B&quot;</span>));
-<a name="l00137"></a>00137         connect(putBangAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;<a class="code" href="classcm_1_1_patch_window.html#af0ca47c15f398734068542942e124044">PatchWindow::newBangBox</a>);
+<a name="l00137"></a>00137         connect(putBangAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;<a class="code" href="classqtpd_1_1_patch_window.html#af4aba12d1c4bc7dc86e23431970c5bcc">PatchWindow::newBangBox</a>);
 <a name="l00138"></a>00138 
 <a name="l00139"></a>00139         putToggleAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;Toggle&quot;</span>), <span class="keyword">this</span>);
 <a name="l00140"></a>00140         putToggleAct-&gt;setShortcut(tr(<span class="stringliteral">&quot;Ctrl+Shift+T&quot;</span>));
-<a name="l00141"></a>00141         connect(putToggleAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;<a class="code" href="classcm_1_1_patch_window.html#aa47ebb5351718dcfef60322af9911e50">PatchWindow::newToggleBox</a>);
+<a name="l00141"></a>00141         connect(putToggleAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;<a class="code" href="classqtpd_1_1_patch_window.html#a44d1c60e80fdef22f4c4fdbb72b62389">PatchWindow::newToggleBox</a>);
 <a name="l00142"></a>00142 
 <a name="l00143"></a>00143         putNumberAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;Number&quot;</span>), <span class="keyword">this</span>);
 <a name="l00144"></a>00144         putNumberAct-&gt;setShortcut(tr(<span class="stringliteral">&quot;Ctrl+3&quot;</span>));
-<a name="l00145"></a>00145         connect(putNumberAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;<a class="code" href="classcm_1_1_patch_window.html#a03c5dda25eb6c158f460a9a298add88f">PatchWindow::newFloatBox</a>);
+<a name="l00145"></a>00145         connect(putNumberAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;<a class="code" href="classqtpd_1_1_patch_window.html#ade58be29247e42c7838db5a7b6344539">PatchWindow::newFloatBox</a>);
 <a name="l00146"></a>00146 
 <a name="l00147"></a>00147         putSliderAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;Slider(s)...&quot;</span>), <span class="keyword">this</span>);
 <a name="l00148"></a>00148         putSliderAct-&gt;setShortcut(tr(<span class="stringliteral">&quot;Ctrl+Shift+V&quot;</span>));
@@ -261,14 +261,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00181"></a>00181         showGridAct-&gt;setShortcut(tr(<span class="stringliteral">&quot;Ctrl+Shift+G&quot;</span>));
 <a name="l00182"></a>00182         showGridAct-&gt;setCheckable(<span class="keyword">true</span>);
 <a name="l00183"></a>00183         showGridAct-&gt;setChecked(<span class="keyword">true</span>);
-<a name="l00184"></a>00184         connect(showGridAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;<a class="code" href="classcm_1_1_patch_window.html#a36c22a10e18697f6acdd523659568ed1">PatchWindow::setGridVisible</a>);
+<a name="l00184"></a>00184         connect(showGridAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;<a class="code" href="classqtpd_1_1_patch_window.html#a0c7818b279e4fa727102b64f0fab95b5">PatchWindow::setGridVisible</a>);
 <a name="l00185"></a>00185 
 <a name="l00186"></a>00186 
 <a name="l00187"></a>00187         snapToGridAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;Snap to grid&quot;</span>), <span class="keyword">this</span>);
 <a name="l00188"></a>00188         snapToGridAct-&gt;setShortcut(tr(<span class="stringliteral">&quot;Alt+G&quot;</span>));
 <a name="l00189"></a>00189         snapToGridAct-&gt;setCheckable(<span class="keyword">true</span>);
 <a name="l00190"></a>00190         snapToGridAct-&gt;setChecked(<span class="keyword">true</span>);
-<a name="l00191"></a>00191         connect(snapToGridAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;<a class="code" href="classcm_1_1_patch_window.html#a9612db971d447997a07b7e3fd5ccfe67">PatchWindow::setGridSnap</a>);
+<a name="l00191"></a>00191         connect(snapToGridAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;<a class="code" href="classqtpd_1_1_patch_window.html#ac0135abb9a3e8dab5133d50416b19415">PatchWindow::setGridSnap</a>);
 <a name="l00192"></a>00192 
 <a name="l00193"></a>00193 
 <a name="l00194"></a>00194         alignToGridAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;Align to grid&quot;</span>), <span class="keyword">this</span>);
@@ -311,179 +311,179 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00231"></a>00231 
 <a name="l00232"></a>00232     }
 <a name="l00233"></a>00233 
-<a name="l00234"></a><a class="code" href="classcm_1_1_patch_window.html#a3942a3aacbe85faece2718d294762c23">00234</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a3942a3aacbe85faece2718d294762c23" title="create all menus">createMenus</a>()
+<a name="l00234"></a><a class="code" href="classqtpd_1_1_patch_window.html#aa76806f8177fc8869defa837d2571dc8">00234</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#aa76806f8177fc8869defa837d2571dc8" title="create all menus">createMenus</a>()
 <a name="l00235"></a>00235     {
 <a name="l00236"></a>00236 
-<a name="l00237"></a>00237         <a class="code" href="classcm_1_1_base_window.html#ab01493dacb810f2f676f6e1ba3fba3c9">editMenu</a>-&gt;addSeparator();
-<a name="l00238"></a>00238         <a class="code" href="classcm_1_1_base_window.html#ab01493dacb810f2f676f6e1ba3fba3c9">editMenu</a>-&gt;addAction(selectAllAct);
-<a name="l00239"></a>00239         <a class="code" href="classcm_1_1_base_window.html#ab01493dacb810f2f676f6e1ba3fba3c9">editMenu</a>-&gt;addAction(selectAgainAct);
-<a name="l00240"></a>00240         <a class="code" href="classcm_1_1_base_window.html#ab01493dacb810f2f676f6e1ba3fba3c9">editMenu</a>-&gt;addSeparator();
-<a name="l00241"></a>00241         <a class="code" href="classcm_1_1_base_window.html#ab01493dacb810f2f676f6e1ba3fba3c9">editMenu</a>-&gt;addAction(delObjectAct);
-<a name="l00242"></a>00242         <a class="code" href="classcm_1_1_base_window.html#ab01493dacb810f2f676f6e1ba3fba3c9">editMenu</a>-&gt;addAction(editModeAct);
+<a name="l00237"></a>00237         <a class="code" href="classqtpd_1_1_base_window.html#a95354b589a86f9a8845c25428baf03b5">editMenu</a>-&gt;addSeparator();
+<a name="l00238"></a>00238         <a class="code" href="classqtpd_1_1_base_window.html#a95354b589a86f9a8845c25428baf03b5">editMenu</a>-&gt;addAction(selectAllAct);
+<a name="l00239"></a>00239         <a class="code" href="classqtpd_1_1_base_window.html#a95354b589a86f9a8845c25428baf03b5">editMenu</a>-&gt;addAction(selectAgainAct);
+<a name="l00240"></a>00240         <a class="code" href="classqtpd_1_1_base_window.html#a95354b589a86f9a8845c25428baf03b5">editMenu</a>-&gt;addSeparator();
+<a name="l00241"></a>00241         <a class="code" href="classqtpd_1_1_base_window.html#a95354b589a86f9a8845c25428baf03b5">editMenu</a>-&gt;addAction(delObjectAct);
+<a name="l00242"></a>00242         <a class="code" href="classqtpd_1_1_base_window.html#a95354b589a86f9a8845c25428baf03b5">editMenu</a>-&gt;addAction(editModeAct);
 <a name="l00243"></a>00243 
-<a name="l00244"></a>00244         <a class="code" href="classcm_1_1_base_window.html#a76decf1acf70aa363cc556b6512cb4ff">putMenu</a>-&gt;addAction(putObjectAct);
-<a name="l00245"></a>00245         <a class="code" href="classcm_1_1_base_window.html#a76decf1acf70aa363cc556b6512cb4ff">putMenu</a>-&gt;addAction(putMessageAct);
+<a name="l00244"></a>00244         <a class="code" href="classqtpd_1_1_base_window.html#a0173ffc9eceb29b6c95bb5601ea7d6d7">putMenu</a>-&gt;addAction(putObjectAct);
+<a name="l00245"></a>00245         <a class="code" href="classqtpd_1_1_base_window.html#a0173ffc9eceb29b6c95bb5601ea7d6d7">putMenu</a>-&gt;addAction(putMessageAct);
 <a name="l00246"></a>00246         <span class="comment">//        putMenu-&gt;addAction(putNumberAct);</span>
 <a name="l00247"></a>00247         <span class="comment">//        putMenu-&gt;addAction(putSymbolAct);</span>
-<a name="l00248"></a>00248         <a class="code" href="classcm_1_1_base_window.html#a76decf1acf70aa363cc556b6512cb4ff">putMenu</a>-&gt;addAction(putCommentAct);
-<a name="l00249"></a>00249         <a class="code" href="classcm_1_1_base_window.html#a76decf1acf70aa363cc556b6512cb4ff">putMenu</a>-&gt;addSeparator();
-<a name="l00250"></a>00250         <a class="code" href="classcm_1_1_base_window.html#a76decf1acf70aa363cc556b6512cb4ff">putMenu</a>-&gt;addAction(putBangAct);
-<a name="l00251"></a>00251         <a class="code" href="classcm_1_1_base_window.html#a76decf1acf70aa363cc556b6512cb4ff">putMenu</a>-&gt;addAction(putToggleAct);
-<a name="l00252"></a>00252         <a class="code" href="classcm_1_1_base_window.html#a76decf1acf70aa363cc556b6512cb4ff">putMenu</a>-&gt;addAction(putNumberAct);
-<a name="l00253"></a>00253         <a class="code" href="classcm_1_1_base_window.html#a76decf1acf70aa363cc556b6512cb4ff">putMenu</a>-&gt;addAction(putSliderAct);
-<a name="l00254"></a>00254         <a class="code" href="classcm_1_1_base_window.html#a76decf1acf70aa363cc556b6512cb4ff">putMenu</a>-&gt;addAction(putKnobAct);
-<a name="l00255"></a>00255         <a class="code" href="classcm_1_1_base_window.html#a76decf1acf70aa363cc556b6512cb4ff">putMenu</a>-&gt;addAction(putRadioAct);
-<a name="l00256"></a>00256         <a class="code" href="classcm_1_1_base_window.html#a76decf1acf70aa363cc556b6512cb4ff">putMenu</a>-&gt;addAction(putDisplay);
-<a name="l00257"></a>00257         <a class="code" href="classcm_1_1_base_window.html#a76decf1acf70aa363cc556b6512cb4ff">putMenu</a>-&gt;addSeparator();
-<a name="l00258"></a>00258         <a class="code" href="classcm_1_1_base_window.html#a76decf1acf70aa363cc556b6512cb4ff">putMenu</a>-&gt;addAction(putArray);
-<a name="l00259"></a>00259         <a class="code" href="classcm_1_1_base_window.html#a76decf1acf70aa363cc556b6512cb4ff">putMenu</a>-&gt;addSeparator();
-<a name="l00260"></a>00260         <a class="code" href="classcm_1_1_base_window.html#a76decf1acf70aa363cc556b6512cb4ff">putMenu</a>-&gt;addAction(putKeyboard);
-<a name="l00261"></a>00261         <a class="code" href="classcm_1_1_base_window.html#a76decf1acf70aa363cc556b6512cb4ff">putMenu</a>-&gt;addAction(putSlider2D);
-<a name="l00262"></a>00262         <a class="code" href="classcm_1_1_base_window.html#a76decf1acf70aa363cc556b6512cb4ff">putMenu</a>-&gt;addAction(putBPF);
-<a name="l00263"></a>00263         <a class="code" href="classcm_1_1_base_window.html#a76decf1acf70aa363cc556b6512cb4ff">putMenu</a>-&gt;addSeparator();
-<a name="l00264"></a>00264         <a class="code" href="classcm_1_1_base_window.html#a76decf1acf70aa363cc556b6512cb4ff">putMenu</a>-&gt;addAction(putScope);
-<a name="l00265"></a>00265         <a class="code" href="classcm_1_1_base_window.html#a76decf1acf70aa363cc556b6512cb4ff">putMenu</a>-&gt;addAction(putSpectroscope);
+<a name="l00248"></a>00248         <a class="code" href="classqtpd_1_1_base_window.html#a0173ffc9eceb29b6c95bb5601ea7d6d7">putMenu</a>-&gt;addAction(putCommentAct);
+<a name="l00249"></a>00249         <a class="code" href="classqtpd_1_1_base_window.html#a0173ffc9eceb29b6c95bb5601ea7d6d7">putMenu</a>-&gt;addSeparator();
+<a name="l00250"></a>00250         <a class="code" href="classqtpd_1_1_base_window.html#a0173ffc9eceb29b6c95bb5601ea7d6d7">putMenu</a>-&gt;addAction(putBangAct);
+<a name="l00251"></a>00251         <a class="code" href="classqtpd_1_1_base_window.html#a0173ffc9eceb29b6c95bb5601ea7d6d7">putMenu</a>-&gt;addAction(putToggleAct);
+<a name="l00252"></a>00252         <a class="code" href="classqtpd_1_1_base_window.html#a0173ffc9eceb29b6c95bb5601ea7d6d7">putMenu</a>-&gt;addAction(putNumberAct);
+<a name="l00253"></a>00253         <a class="code" href="classqtpd_1_1_base_window.html#a0173ffc9eceb29b6c95bb5601ea7d6d7">putMenu</a>-&gt;addAction(putSliderAct);
+<a name="l00254"></a>00254         <a class="code" href="classqtpd_1_1_base_window.html#a0173ffc9eceb29b6c95bb5601ea7d6d7">putMenu</a>-&gt;addAction(putKnobAct);
+<a name="l00255"></a>00255         <a class="code" href="classqtpd_1_1_base_window.html#a0173ffc9eceb29b6c95bb5601ea7d6d7">putMenu</a>-&gt;addAction(putRadioAct);
+<a name="l00256"></a>00256         <a class="code" href="classqtpd_1_1_base_window.html#a0173ffc9eceb29b6c95bb5601ea7d6d7">putMenu</a>-&gt;addAction(putDisplay);
+<a name="l00257"></a>00257         <a class="code" href="classqtpd_1_1_base_window.html#a0173ffc9eceb29b6c95bb5601ea7d6d7">putMenu</a>-&gt;addSeparator();
+<a name="l00258"></a>00258         <a class="code" href="classqtpd_1_1_base_window.html#a0173ffc9eceb29b6c95bb5601ea7d6d7">putMenu</a>-&gt;addAction(putArray);
+<a name="l00259"></a>00259         <a class="code" href="classqtpd_1_1_base_window.html#a0173ffc9eceb29b6c95bb5601ea7d6d7">putMenu</a>-&gt;addSeparator();
+<a name="l00260"></a>00260         <a class="code" href="classqtpd_1_1_base_window.html#a0173ffc9eceb29b6c95bb5601ea7d6d7">putMenu</a>-&gt;addAction(putKeyboard);
+<a name="l00261"></a>00261         <a class="code" href="classqtpd_1_1_base_window.html#a0173ffc9eceb29b6c95bb5601ea7d6d7">putMenu</a>-&gt;addAction(putSlider2D);
+<a name="l00262"></a>00262         <a class="code" href="classqtpd_1_1_base_window.html#a0173ffc9eceb29b6c95bb5601ea7d6d7">putMenu</a>-&gt;addAction(putBPF);
+<a name="l00263"></a>00263         <a class="code" href="classqtpd_1_1_base_window.html#a0173ffc9eceb29b6c95bb5601ea7d6d7">putMenu</a>-&gt;addSeparator();
+<a name="l00264"></a>00264         <a class="code" href="classqtpd_1_1_base_window.html#a0173ffc9eceb29b6c95bb5601ea7d6d7">putMenu</a>-&gt;addAction(putScope);
+<a name="l00265"></a>00265         <a class="code" href="classqtpd_1_1_base_window.html#a0173ffc9eceb29b6c95bb5601ea7d6d7">putMenu</a>-&gt;addAction(putSpectroscope);
 <a name="l00266"></a>00266 
-<a name="l00267"></a>00267         <a class="code" href="classcm_1_1_base_window.html#a59676dc2856cbc10be698439b96d57c2">arrangeMenu</a>-&gt;addAction(showGridAct);
-<a name="l00268"></a>00268         <a class="code" href="classcm_1_1_base_window.html#a59676dc2856cbc10be698439b96d57c2">arrangeMenu</a>-&gt;addAction(snapToGridAct);
-<a name="l00269"></a>00269         <a class="code" href="classcm_1_1_base_window.html#a59676dc2856cbc10be698439b96d57c2">arrangeMenu</a>-&gt;addSeparator();
-<a name="l00270"></a>00270         <a class="code" href="classcm_1_1_base_window.html#a59676dc2856cbc10be698439b96d57c2">arrangeMenu</a>-&gt;addAction(alignToGridAct);
-<a name="l00271"></a>00271         <a class="code" href="classcm_1_1_base_window.html#a59676dc2856cbc10be698439b96d57c2">arrangeMenu</a>-&gt;addAction(alignLeftAct);
-<a name="l00272"></a>00272         <a class="code" href="classcm_1_1_base_window.html#a59676dc2856cbc10be698439b96d57c2">arrangeMenu</a>-&gt;addAction(alignRightAct);
-<a name="l00273"></a>00273         <a class="code" href="classcm_1_1_base_window.html#a59676dc2856cbc10be698439b96d57c2">arrangeMenu</a>-&gt;addAction(alignTopAct);
-<a name="l00274"></a>00274         <a class="code" href="classcm_1_1_base_window.html#a59676dc2856cbc10be698439b96d57c2">arrangeMenu</a>-&gt;addAction(alignBottomAct);
-<a name="l00275"></a>00275         <a class="code" href="classcm_1_1_base_window.html#a59676dc2856cbc10be698439b96d57c2">arrangeMenu</a>-&gt;addSeparator();
-<a name="l00276"></a>00276         <a class="code" href="classcm_1_1_base_window.html#a59676dc2856cbc10be698439b96d57c2">arrangeMenu</a>-&gt;addAction(distHAct);
-<a name="l00277"></a>00277         <a class="code" href="classcm_1_1_base_window.html#a59676dc2856cbc10be698439b96d57c2">arrangeMenu</a>-&gt;addAction(distVAct);
-<a name="l00278"></a>00278         <a class="code" href="classcm_1_1_base_window.html#a59676dc2856cbc10be698439b96d57c2">arrangeMenu</a>-&gt;addSeparator();
-<a name="l00279"></a>00279         <a class="code" href="classcm_1_1_base_window.html#a59676dc2856cbc10be698439b96d57c2">arrangeMenu</a>-&gt;addAction(tidyUpAct);
-<a name="l00280"></a>00280         <a class="code" href="classcm_1_1_base_window.html#a59676dc2856cbc10be698439b96d57c2">arrangeMenu</a>-&gt;addSeparator();
-<a name="l00281"></a>00281         <a class="code" href="classcm_1_1_base_window.html#a59676dc2856cbc10be698439b96d57c2">arrangeMenu</a>-&gt;addAction(zoomInAct);
-<a name="l00282"></a>00282         <a class="code" href="classcm_1_1_base_window.html#a59676dc2856cbc10be698439b96d57c2">arrangeMenu</a>-&gt;addAction(zoomOutAct);
+<a name="l00267"></a>00267         <a class="code" href="classqtpd_1_1_base_window.html#a4765b54e6384d48b901951f5853f6401">arrangeMenu</a>-&gt;addAction(showGridAct);
+<a name="l00268"></a>00268         <a class="code" href="classqtpd_1_1_base_window.html#a4765b54e6384d48b901951f5853f6401">arrangeMenu</a>-&gt;addAction(snapToGridAct);
+<a name="l00269"></a>00269         <a class="code" href="classqtpd_1_1_base_window.html#a4765b54e6384d48b901951f5853f6401">arrangeMenu</a>-&gt;addSeparator();
+<a name="l00270"></a>00270         <a class="code" href="classqtpd_1_1_base_window.html#a4765b54e6384d48b901951f5853f6401">arrangeMenu</a>-&gt;addAction(alignToGridAct);
+<a name="l00271"></a>00271         <a class="code" href="classqtpd_1_1_base_window.html#a4765b54e6384d48b901951f5853f6401">arrangeMenu</a>-&gt;addAction(alignLeftAct);
+<a name="l00272"></a>00272         <a class="code" href="classqtpd_1_1_base_window.html#a4765b54e6384d48b901951f5853f6401">arrangeMenu</a>-&gt;addAction(alignRightAct);
+<a name="l00273"></a>00273         <a class="code" href="classqtpd_1_1_base_window.html#a4765b54e6384d48b901951f5853f6401">arrangeMenu</a>-&gt;addAction(alignTopAct);
+<a name="l00274"></a>00274         <a class="code" href="classqtpd_1_1_base_window.html#a4765b54e6384d48b901951f5853f6401">arrangeMenu</a>-&gt;addAction(alignBottomAct);
+<a name="l00275"></a>00275         <a class="code" href="classqtpd_1_1_base_window.html#a4765b54e6384d48b901951f5853f6401">arrangeMenu</a>-&gt;addSeparator();
+<a name="l00276"></a>00276         <a class="code" href="classqtpd_1_1_base_window.html#a4765b54e6384d48b901951f5853f6401">arrangeMenu</a>-&gt;addAction(distHAct);
+<a name="l00277"></a>00277         <a class="code" href="classqtpd_1_1_base_window.html#a4765b54e6384d48b901951f5853f6401">arrangeMenu</a>-&gt;addAction(distVAct);
+<a name="l00278"></a>00278         <a class="code" href="classqtpd_1_1_base_window.html#a4765b54e6384d48b901951f5853f6401">arrangeMenu</a>-&gt;addSeparator();
+<a name="l00279"></a>00279         <a class="code" href="classqtpd_1_1_base_window.html#a4765b54e6384d48b901951f5853f6401">arrangeMenu</a>-&gt;addAction(tidyUpAct);
+<a name="l00280"></a>00280         <a class="code" href="classqtpd_1_1_base_window.html#a4765b54e6384d48b901951f5853f6401">arrangeMenu</a>-&gt;addSeparator();
+<a name="l00281"></a>00281         <a class="code" href="classqtpd_1_1_base_window.html#a4765b54e6384d48b901951f5853f6401">arrangeMenu</a>-&gt;addAction(zoomInAct);
+<a name="l00282"></a>00282         <a class="code" href="classqtpd_1_1_base_window.html#a4765b54e6384d48b901951f5853f6401">arrangeMenu</a>-&gt;addAction(zoomOutAct);
 <a name="l00283"></a>00283 
 <a name="l00284"></a>00284 
 <a name="l00285"></a>00285     }
 <a name="l00286"></a>00286 
 <a name="l00288"></a>00288 
-<a name="l00289"></a><a class="code" href="classcm_1_1_patch_window.html#a60826555b736d69ef5688eebc4d375d5">00289</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a60826555b736d69ef5688eebc4d375d5">newObjectBox</a>()
+<a name="l00289"></a><a class="code" href="classqtpd_1_1_patch_window.html#a9dea55bcdf6c35f6394784cfa273cdf1">00289</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a9dea55bcdf6c35f6394784cfa273cdf1">newObjectBox</a>()
 <a name="l00290"></a>00290     {
 <a name="l00291"></a>00291 
-<a name="l00292"></a>00292         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a1c94aab3160a86ad1083413ca831d24a" title="get edit mode flag">getEditMode</a>() != <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7a40e07370861a560fc6e4cebf2bb1ebd3">em_Locked</a>)
+<a name="l00292"></a>00292         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a114919833e4fdd434726e8dad524da93" title="get edit mode flag">getEditMode</a>() != <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aac9d3b5321b0a8c731588f74bb4302eb1">em_Locked</a>)
 <a name="l00293"></a>00293         {
 <a name="l00294"></a>00294             this-&gt;objectMaker-&gt;move(100,50);
 <a name="l00295"></a>00295             this-&gt;objectMaker-&gt;setFixedSize(60,20);
 <a name="l00296"></a>00296             this-&gt;objectMaker-&gt;setFocus();
 <a name="l00297"></a>00297 
-<a name="l00298"></a>00298             this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a606fde5bd5e21aaaefa0fdfae00b7213">dragObject</a> = this-&gt;objectMaker;
+<a name="l00298"></a>00298             this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#ae2c013a94a5244db8672c6e0b3cf879f">dragObject</a> = this-&gt;objectMaker;
 <a name="l00299"></a>00299             this-&gt;objectMaker-&gt;setText(QString(<span class="stringliteral">&quot;&quot;</span>));
 <a name="l00300"></a>00300             this-&gt;objectMaker-&gt;show();
 <a name="l00301"></a>00301         }
 <a name="l00302"></a>00302 
 <a name="l00303"></a>00303     }
 <a name="l00304"></a>00304 
-<a name="l00305"></a><a class="code" href="classcm_1_1_patch_window.html#a6e3b2c53c06419ea77d0ec75e8b0a90f">00305</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a6e3b2c53c06419ea77d0ec75e8b0a90f">newMessageBox</a>()
+<a name="l00305"></a><a class="code" href="classqtpd_1_1_patch_window.html#a83e7f93159893bdaa0082fd6d8c140dc">00305</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a83e7f93159893bdaa0082fd6d8c140dc">newMessageBox</a>()
 <a name="l00306"></a>00306     {
 <a name="l00307"></a>00307 
 <a name="l00308"></a>00308         <span class="comment">//const char * obj_name = this-&gt;objectMaker-&gt;text().toStdString().c_str();</span>
 <a name="l00309"></a>00309         <span class="comment">//</span>
 <a name="l00310"></a>00310 
-<a name="l00311"></a>00311         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a1c94aab3160a86ad1083413ca831d24a" title="get edit mode flag">getEditMode</a>() != <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7a40e07370861a560fc6e4cebf2bb1ebd3">em_Locked</a>)
+<a name="l00311"></a>00311         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a114919833e4fdd434726e8dad524da93" title="get edit mode flag">getEditMode</a>() != <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aac9d3b5321b0a8c731588f74bb4302eb1">em_Locked</a>)
 <a name="l00312"></a>00312         {
 <a name="l00313"></a>00313             <span class="comment">//UIMessage *newMsg = this-&gt;canvas-&gt;createMsg(&quot;&quot;,QPoint(100,100));</span>
 <a name="l00314"></a>00314 
-<a name="l00315"></a>00315             <a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> *newMsg = this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a4300009cd6b822e26b672c7881fee4d0" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.msg&quot;</span>,<span class="stringliteral">&quot;&quot;</span>,QPoint(100,100));
-<a name="l00316"></a>00316             this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a606fde5bd5e21aaaefa0fdfae00b7213">dragObject</a> = newMsg;
+<a name="l00315"></a>00315             <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> *newMsg = this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a74125b9039d694a8d191ef438cd15dbd" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.msg&quot;</span>,<span class="stringliteral">&quot;&quot;</span>,QPoint(100,100));
+<a name="l00316"></a>00316             this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#ae2c013a94a5244db8672c6e0b3cf879f">dragObject</a> = newMsg;
 <a name="l00317"></a>00317             newMsg-&gt;show();
 <a name="l00318"></a>00318         }
 <a name="l00319"></a>00319 
 <a name="l00320"></a>00320     }
 <a name="l00321"></a>00321 
 <a name="l00322"></a>00322 
-<a name="l00323"></a><a class="code" href="classcm_1_1_patch_window.html#a03c5dda25eb6c158f460a9a298add88f">00323</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a03c5dda25eb6c158f460a9a298add88f">newFloatBox</a>()
+<a name="l00323"></a><a class="code" href="classqtpd_1_1_patch_window.html#ade58be29247e42c7838db5a7b6344539">00323</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#ade58be29247e42c7838db5a7b6344539">newFloatBox</a>()
 <a name="l00324"></a>00324     {
 <a name="l00325"></a>00325 
 <a name="l00326"></a>00326         <span class="comment">//const char * obj_name = this-&gt;objectMaker-&gt;text().toStdString().c_str();</span>
 <a name="l00327"></a>00327         <span class="comment">//</span>
 <a name="l00328"></a>00328 
-<a name="l00329"></a>00329         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a1c94aab3160a86ad1083413ca831d24a" title="get edit mode flag">getEditMode</a>() != <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7a40e07370861a560fc6e4cebf2bb1ebd3">em_Locked</a>)
+<a name="l00329"></a>00329         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a114919833e4fdd434726e8dad524da93" title="get edit mode flag">getEditMode</a>() != <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aac9d3b5321b0a8c731588f74bb4302eb1">em_Locked</a>)
 <a name="l00330"></a>00330         {
 <a name="l00331"></a>00331             <span class="comment">//UIFloat *newFlo = this-&gt;canvas-&gt;createFloat(&quot;0&quot;,QPoint(100,100));</span>
 <a name="l00332"></a>00332 
-<a name="l00333"></a>00333             <a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> *newFlo = this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a4300009cd6b822e26b672c7881fee4d0" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.float&quot;</span>,<span class="stringliteral">&quot;0&quot;</span>,QPoint(100,100));
-<a name="l00334"></a>00334             this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a606fde5bd5e21aaaefa0fdfae00b7213">dragObject</a> = newFlo;
+<a name="l00333"></a>00333             <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> *newFlo = this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a74125b9039d694a8d191ef438cd15dbd" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.float&quot;</span>,<span class="stringliteral">&quot;0&quot;</span>,QPoint(100,100));
+<a name="l00334"></a>00334             this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#ae2c013a94a5244db8672c6e0b3cf879f">dragObject</a> = newFlo;
 <a name="l00335"></a>00335             newFlo-&gt;show();
 <a name="l00336"></a>00336         }
 <a name="l00337"></a>00337 
 <a name="l00338"></a>00338     }
 <a name="l00339"></a>00339 
-<a name="l00340"></a><a class="code" href="classcm_1_1_patch_window.html#a3b9a4cfd55b5c9366cc426ab37a2d52b">00340</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a3b9a4cfd55b5c9366cc426ab37a2d52b">newCommentBox</a>()
+<a name="l00340"></a><a class="code" href="classqtpd_1_1_patch_window.html#a403ba665e965bc5e72dc54ef5d9cc5cb">00340</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a403ba665e965bc5e72dc54ef5d9cc5cb">newCommentBox</a>()
 <a name="l00341"></a>00341     {
 <a name="l00342"></a>00342 
 <a name="l00343"></a>00343         <span class="comment">//const char * obj_name = this-&gt;objectMaker-&gt;text().toStdString().c_str();</span>
 <a name="l00344"></a>00344         <span class="comment">//</span>
 <a name="l00345"></a>00345 
-<a name="l00346"></a>00346         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a1c94aab3160a86ad1083413ca831d24a" title="get edit mode flag">getEditMode</a>() != <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7a40e07370861a560fc6e4cebf2bb1ebd3">em_Locked</a>)
+<a name="l00346"></a>00346         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a114919833e4fdd434726e8dad524da93" title="get edit mode flag">getEditMode</a>() != <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aac9d3b5321b0a8c731588f74bb4302eb1">em_Locked</a>)
 <a name="l00347"></a>00347         {
 <a name="l00348"></a>00348             <span class="comment">//UIText *newTxt = this-&gt;canvas-&gt;createText(&quot;comment&quot;,QPoint(100,100));</span>
-<a name="l00349"></a>00349             <a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> *newTxt = this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a4300009cd6b822e26b672c7881fee4d0" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.text&quot;</span>,<span class="stringliteral">&quot;&quot;</span>,QPoint(100,100));
-<a name="l00350"></a>00350             this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a606fde5bd5e21aaaefa0fdfae00b7213">dragObject</a> = newTxt;
+<a name="l00349"></a>00349             <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> *newTxt = this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a74125b9039d694a8d191ef438cd15dbd" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.text&quot;</span>,<span class="stringliteral">&quot;&quot;</span>,QPoint(100,100));
+<a name="l00350"></a>00350             this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#ae2c013a94a5244db8672c6e0b3cf879f">dragObject</a> = newTxt;
 <a name="l00351"></a>00351             newTxt-&gt;show();
 <a name="l00352"></a>00352         }
 <a name="l00353"></a>00353 
 <a name="l00354"></a>00354     }
 <a name="l00355"></a>00355 
-<a name="l00356"></a><a class="code" href="classcm_1_1_patch_window.html#af0ca47c15f398734068542942e124044">00356</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#af0ca47c15f398734068542942e124044">newBangBox</a>()
+<a name="l00356"></a><a class="code" href="classqtpd_1_1_patch_window.html#af4aba12d1c4bc7dc86e23431970c5bcc">00356</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#af4aba12d1c4bc7dc86e23431970c5bcc">newBangBox</a>()
 <a name="l00357"></a>00357     {
-<a name="l00358"></a>00358         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a1c94aab3160a86ad1083413ca831d24a" title="get edit mode flag">getEditMode</a>() != <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7a40e07370861a560fc6e4cebf2bb1ebd3">em_Locked</a>)
+<a name="l00358"></a>00358         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a114919833e4fdd434726e8dad524da93" title="get edit mode flag">getEditMode</a>() != <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aac9d3b5321b0a8c731588f74bb4302eb1">em_Locked</a>)
 <a name="l00359"></a>00359         {
-<a name="l00360"></a>00360             <a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> *newBng = this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a4300009cd6b822e26b672c7881fee4d0" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.bang&quot;</span>,<span class="stringliteral">&quot;&quot;</span>,QPoint(100,100));
-<a name="l00361"></a>00361             this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a606fde5bd5e21aaaefa0fdfae00b7213">dragObject</a> = newBng;
+<a name="l00360"></a>00360             <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> *newBng = this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a74125b9039d694a8d191ef438cd15dbd" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.bang&quot;</span>,<span class="stringliteral">&quot;&quot;</span>,QPoint(100,100));
+<a name="l00361"></a>00361             this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#ae2c013a94a5244db8672c6e0b3cf879f">dragObject</a> = newBng;
 <a name="l00362"></a>00362             newBng-&gt;show();
 <a name="l00363"></a>00363         }
 <a name="l00364"></a>00364 
 <a name="l00365"></a>00365     }
 <a name="l00366"></a>00366 
 <a name="l00367"></a>00367 
-<a name="l00368"></a><a class="code" href="classcm_1_1_patch_window.html#aa47ebb5351718dcfef60322af9911e50">00368</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#aa47ebb5351718dcfef60322af9911e50">newToggleBox</a>()
+<a name="l00368"></a><a class="code" href="classqtpd_1_1_patch_window.html#a44d1c60e80fdef22f4c4fdbb72b62389">00368</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a44d1c60e80fdef22f4c4fdbb72b62389">newToggleBox</a>()
 <a name="l00369"></a>00369     {
-<a name="l00370"></a>00370         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a1c94aab3160a86ad1083413ca831d24a" title="get edit mode flag">getEditMode</a>() != <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7a40e07370861a560fc6e4cebf2bb1ebd3">em_Locked</a>)
+<a name="l00370"></a>00370         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a114919833e4fdd434726e8dad524da93" title="get edit mode flag">getEditMode</a>() != <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aac9d3b5321b0a8c731588f74bb4302eb1">em_Locked</a>)
 <a name="l00371"></a>00371         {
-<a name="l00372"></a>00372             <a class="code" href="classcm_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> *newBng = this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a4300009cd6b822e26b672c7881fee4d0" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.toggle&quot;</span>,<span class="stringliteral">&quot;&quot;</span>,QPoint(100,100));
-<a name="l00373"></a>00373             this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a606fde5bd5e21aaaefa0fdfae00b7213">dragObject</a> = newBng;
+<a name="l00372"></a>00372             <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> *newBng = this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a74125b9039d694a8d191ef438cd15dbd" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.toggle&quot;</span>,<span class="stringliteral">&quot;&quot;</span>,QPoint(100,100));
+<a name="l00373"></a>00373             this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#ae2c013a94a5244db8672c6e0b3cf879f">dragObject</a> = newBng;
 <a name="l00374"></a>00374             newBng-&gt;show();
 <a name="l00375"></a>00375         }
 <a name="l00376"></a>00376 
 <a name="l00377"></a>00377     }
 <a name="l00378"></a>00378 
-<a name="l00379"></a><a class="code" href="classcm_1_1_patch_window.html#a06f635af622c64a38c97d0b695c1d58f">00379</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a06f635af622c64a38c97d0b695c1d58f">delSelected</a>()
+<a name="l00379"></a><a class="code" href="classqtpd_1_1_patch_window.html#a9f2e7fc3b36eccf313302095b33349c6">00379</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a9f2e7fc3b36eccf313302095b33349c6">delSelected</a>()
 <a name="l00380"></a>00380     {
-<a name="l00381"></a>00381         this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a27e99bde9c7a8418f6bc4e6bcc97dcf6" title="delete all selected object boxes">delBoxes</a>();
-<a name="l00382"></a>00382         this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a876a3b7b9fd328792032d421ca7c89d5" title="delete all selected patchcords">delSelectedPatchcords</a>();
+<a name="l00381"></a>00381         this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a6e1c926dcc12807478e7af475c8276b3" title="delete all selected object boxes">delBoxes</a>();
+<a name="l00382"></a>00382         this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#af8e0dde6555249f775562b2cd4ab02bd" title="delete all selected patchcords">delSelectedPatchcords</a>();
 <a name="l00383"></a>00383 
 <a name="l00384"></a>00384     }
 <a name="l00385"></a>00385 
-<a name="l00386"></a>00386     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a5a971522ef75365dde9ee9c44c61d5df" title="creates object">objectMakerDone</a>();
+<a name="l00386"></a>00386     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a65452a0d74483f4351d2703898ed22eb" title="creates object">objectMakerDone</a>();
 <a name="l00387"></a>00387 
-<a name="l00388"></a><a class="code" href="classcm_1_1_patch_window.html#a7bd7ecd86a671bc2aedd9eb08cfff391">00388</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a7bd7ecd86a671bc2aedd9eb08cfff391">setEditMode</a>()
+<a name="l00388"></a><a class="code" href="classqtpd_1_1_patch_window.html#af36a7d056eb78261cd495cda1c40e8b9">00388</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#af36a7d056eb78261cd495cda1c40e8b9">setEditMode</a>()
 <a name="l00389"></a>00389     {
-<a name="l00390"></a>00390         <span class="keywordflow">if</span> (! (( this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a1c94aab3160a86ad1083413ca831d24a" title="get edit mode flag">getEditMode</a>()) == <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7a40e07370861a560fc6e4cebf2bb1ebd3">em_Locked</a> ))
-<a name="l00391"></a>00391             this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a46331a593d63e1ba3d11de9ee3913a56" title="change edit mode flag">setEditMode</a>(<a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7a40e07370861a560fc6e4cebf2bb1ebd3">em_Locked</a>);
+<a name="l00390"></a>00390         <span class="keywordflow">if</span> (! (( this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a114919833e4fdd434726e8dad524da93" title="get edit mode flag">getEditMode</a>()) == <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aac9d3b5321b0a8c731588f74bb4302eb1">em_Locked</a> ))
+<a name="l00391"></a>00391             this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a0c032dbe358e3b444920fe8fa3eac002" title="change edit mode flag">setEditMode</a>(<a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aac9d3b5321b0a8c731588f74bb4302eb1">em_Locked</a>);
 <a name="l00392"></a>00392         <span class="keywordflow">else</span>
-<a name="l00393"></a>00393             this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a46331a593d63e1ba3d11de9ee3913a56" title="change edit mode flag">setEditMode</a>(<a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7ae6f93cdd04849ebf6af6952e8127d099">em_Unlocked</a>);
-<a name="l00394"></a>00394         this-&gt;editModeAct-&gt;setChecked(this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a1c94aab3160a86ad1083413ca831d24a" title="get edit mode flag">getEditMode</a>() == <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7ae6f93cdd04849ebf6af6952e8127d099">em_Unlocked</a>);
+<a name="l00393"></a>00393             this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a0c032dbe358e3b444920fe8fa3eac002" title="change edit mode flag">setEditMode</a>(<a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aaa528336eacc29596e8365b88a4f62d82">em_Unlocked</a>);
+<a name="l00394"></a>00394         this-&gt;editModeAct-&gt;setChecked(this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a114919833e4fdd434726e8dad524da93" title="get edit mode flag">getEditMode</a>() == <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aaa528336eacc29596e8365b88a4f62d82">em_Unlocked</a>);
 <a name="l00395"></a>00395     }
 <a name="l00396"></a>00396 
-<a name="l00397"></a><a class="code" href="classcm_1_1_patch_window.html#a36c22a10e18697f6acdd523659568ed1">00397</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a36c22a10e18697f6acdd523659568ed1">setGridVisible</a>()
+<a name="l00397"></a><a class="code" href="classqtpd_1_1_patch_window.html#a0c7818b279e4fa727102b64f0fab95b5">00397</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a0c7818b279e4fa727102b64f0fab95b5">setGridVisible</a>()
 <a name="l00398"></a>00398     {
 <a name="l00399"></a>00399         this-&gt;showGridAct-&gt;setChecked(this-&gt;showGridAct-&gt;isChecked());
-<a name="l00400"></a>00400         this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#ac2eac4ed2f2bdc5eee0544143847eab8" title="set the show/hide grid flag">setGridEnabled</a>(this-&gt;showGridAct-&gt;isChecked());
-<a name="l00401"></a>00401         this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;repaint();
+<a name="l00400"></a>00400         this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#ab7a119de1e6406317bbcceca17fee5ed" title="set the show/hide grid flag">setGridEnabled</a>(this-&gt;showGridAct-&gt;isChecked());
+<a name="l00401"></a>00401         this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;repaint();
 <a name="l00402"></a>00402     }
 <a name="l00403"></a>00403 
-<a name="l00404"></a><a class="code" href="classcm_1_1_patch_window.html#a9612db971d447997a07b7e3fd5ccfe67">00404</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a9612db971d447997a07b7e3fd5ccfe67">setGridSnap</a>()
+<a name="l00404"></a><a class="code" href="classqtpd_1_1_patch_window.html#ac0135abb9a3e8dab5133d50416b19415">00404</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#ac0135abb9a3e8dab5133d50416b19415">setGridSnap</a>()
 <a name="l00405"></a>00405     {
 <a name="l00406"></a>00406         this-&gt;snapToGridAct-&gt;setChecked(this-&gt;snapToGridAct-&gt;isChecked());
-<a name="l00407"></a>00407         this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a885e83ef501901e03b0e3b7b32bf977a" title="align to grid flag">setGridSnap</a>(this-&gt;snapToGridAct-&gt;isChecked());
+<a name="l00407"></a>00407         this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#ad6a8a14cfe6188f0cc5f14a675d36708" title="align to grid flag">setGridSnap</a>(this-&gt;snapToGridAct-&gt;isChecked());
 <a name="l00408"></a>00408         <span class="comment">//this-&gt;canvas-&gt;repaint();</span>
 <a name="l00409"></a>00409     }
 <a name="l00410"></a>00410 
@@ -500,39 +500,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00422"></a>00422     <span class="comment">//    }</span>
 <a name="l00423"></a>00423 
 <a name="l00424"></a>00424 
-<a name="l00425"></a><a class="code" href="classcm_1_1_patch_window.html#aec2f7db0e8fdda218e4d489e6d7864cc">00425</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#aec2f7db0e8fdda218e4d489e6d7864cc">closeEvent</a>(QCloseEvent *event)
+<a name="l00425"></a><a class="code" href="classqtpd_1_1_patch_window.html#a9cf14c7e3179165fb9569516e5879879">00425</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a9cf14c7e3179165fb9569516e5879879">closeEvent</a>(QCloseEvent *event)
 <a name="l00426"></a>00426     {
-<a name="l00427"></a>00427         <a class="code" href="cm__pdlink_8h.html#af08cbd72d5b239361a801b4b67247a9c" title="closes and frees the canvas">cmp_closepatch</a>(this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a24d8522284d0bc2886e426f251752f12">pdCanvas</a>);
+<a name="l00427"></a>00427         <a class="code" href="cm__pdlink_8h.html#af08cbd72d5b239361a801b4b67247a9c" title="closes and frees the canvas">cmp_closepatch</a>(this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a6b63d8863dcee011dbd54a2b4de94c00">pdCanvas</a>);
 <a name="l00428"></a>00428 
 <a name="l00429"></a>00429         <span class="keyword">event</span>-&gt;accept();
 <a name="l00430"></a>00430     }
 <a name="l00431"></a>00431 
 <a name="l00432"></a>00432 
 <a name="l00434"></a>00434 
-<a name="l00435"></a>00435     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a0974294005dd2cb2a63e5b7765581c51" title="set file name when opening patch file">setFileName</a>(QString fname);
+<a name="l00435"></a>00435     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a30e20cd05bcbd200b0d00cb258eb7dfe" title="set file name when opening patch file">setFileName</a>(QString fname);
 <a name="l00436"></a>00436 
 <a name="l00437"></a>00437 
-<a name="l00442"></a><a class="code" href="classcm_1_1_patch_window.html#a0e79c818eccbc41679c4e32d3fcaa32a">00442</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a0e79c818eccbc41679c4e32d3fcaa32a" title="keys: ctrl for temporary lock; esc to stop editing actions">keyPressEvent</a>(QKeyEvent *event){
+<a name="l00442"></a><a class="code" href="classqtpd_1_1_patch_window.html#a34852d3b857bd5c44472b208ee7dcdf8">00442</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a34852d3b857bd5c44472b208ee7dcdf8" title="keys: ctrl for temporary lock; esc to stop editing actions">keyPressEvent</a>(QKeyEvent *event){
 <a name="l00443"></a>00443         <span class="keywordflow">if</span> (event-&gt;modifiers() &amp; Qt::ControlModifier)
 <a name="l00444"></a>00444         {
-<a name="l00445"></a>00445             <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a1c94aab3160a86ad1083413ca831d24a" title="get edit mode flag">getEditMode</a>() != <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7a40e07370861a560fc6e4cebf2bb1ebd3">em_Locked</a>)
-<a name="l00446"></a>00446                 this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a46331a593d63e1ba3d11de9ee3913a56" title="change edit mode flag">setEditMode</a>(<a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7af623804e3572b6568db8c7537ce1d721">em_Temporary</a>);
+<a name="l00445"></a>00445             <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a114919833e4fdd434726e8dad524da93" title="get edit mode flag">getEditMode</a>() != <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aac9d3b5321b0a8c731588f74bb4302eb1">em_Locked</a>)
+<a name="l00446"></a>00446                 this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a0c032dbe358e3b444920fe8fa3eac002" title="change edit mode flag">setEditMode</a>(<a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aa9911e692d63257d7be0dbee257aba9f7">em_Temporary</a>);
 <a name="l00447"></a>00447         }
 <a name="l00448"></a>00448 
 <a name="l00449"></a>00449         <span class="keywordflow">if</span> (event-&gt;key() == Qt::Key_Escape)
 <a name="l00450"></a>00450         {
 <a name="l00451"></a>00451             this-&gt;objectMaker-&gt;setText(<span class="stringliteral">&quot;&quot;</span>);
-<a name="l00452"></a>00452             this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a5a971522ef75365dde9ee9c44c61d5df" title="creates object">objectMakerDone</a>();
+<a name="l00452"></a>00452             this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#a65452a0d74483f4351d2703898ed22eb" title="creates object">objectMakerDone</a>();
 <a name="l00453"></a>00453 
-<a name="l00454"></a>00454             this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a1a9501ade5a1506d81c4874ebe874094" title="cancels patchcord creation">cancelPatchcord</a>();
+<a name="l00454"></a>00454             this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a83af5295678ba3687f02189504528cc4" title="cancels patchcord creation">cancelPatchcord</a>();
 <a name="l00455"></a>00455         }
 <a name="l00456"></a>00456     }
 <a name="l00457"></a>00457 
-<a name="l00458"></a><a class="code" href="classcm_1_1_patch_window.html#a7e3df19ab22be86aa724b599769c7189">00458</a>     <span class="keywordtype">void</span> <a class="code" href="classcm_1_1_patch_window.html#a7e3df19ab22be86aa724b599769c7189">keyReleaseEvent</a>(QKeyEvent *event){
+<a name="l00458"></a><a class="code" href="classqtpd_1_1_patch_window.html#ae3068ea0a740fc38c62bf56e26974fec">00458</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#ae3068ea0a740fc38c62bf56e26974fec">keyReleaseEvent</a>(QKeyEvent *event){
 <a name="l00459"></a>00459         <span class="keywordflow">if</span> (event-&gt;key() == Qt::Key_Control)
 <a name="l00460"></a>00460         {
-<a name="l00461"></a>00461             <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a1c94aab3160a86ad1083413ca831d24a" title="get edit mode flag">getEditMode</a>() == <a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7af623804e3572b6568db8c7537ce1d721">em_Temporary</a>)
-<a name="l00462"></a>00462                 this-&gt;<a class="code" href="classcm_1_1_patch_window.html#a4a64a1d18abbd25d4969e6b3fde13db0">canvas</a>-&gt;<a class="code" href="classcm_1_1_canvas.html#a46331a593d63e1ba3d11de9ee3913a56" title="change edit mode flag">setEditMode</a>(<a class="code" href="namespacecm.html#ac17c67a33a2d42b48c98d1011d5ccab7ae6f93cdd04849ebf6af6952e8127d099">em_Unlocked</a>);
+<a name="l00461"></a>00461             <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a114919833e4fdd434726e8dad524da93" title="get edit mode flag">getEditMode</a>() == <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aa9911e692d63257d7be0dbee257aba9f7">em_Temporary</a>)
+<a name="l00462"></a>00462                 this-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a0c032dbe358e3b444920fe8fa3eac002" title="change edit mode flag">setEditMode</a>(<a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aaa528336eacc29596e8365b88a4f62d82">em_Unlocked</a>);
 <a name="l00463"></a>00463         }
 <a name="l00464"></a>00464     }
 <a name="l00465"></a>00465 
@@ -559,7 +559,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 12 2017 22:43:47 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 13 2017 22:38:45 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
