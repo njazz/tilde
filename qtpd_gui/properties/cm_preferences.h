@@ -51,6 +51,8 @@ public:
     {
         if (this->get(key))
             return this->get(key)->asQString();
+
+        return "";
     }
 
     void init(std::string appVersion)

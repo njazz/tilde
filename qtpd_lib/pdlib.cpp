@@ -185,6 +185,9 @@ t_canvas* cmp_newpatch()
     if (pd_this)
     {
         ret = pd_this->pd_canvaslist->gl_next;
+
+//        canvas_addinlet(ret,0,&s_list);
+//        canvas_addoutlet(ret,0,&s_list);
     }
 
     qDebug("new canvas: %lu", (long)ret);
@@ -413,6 +416,11 @@ int cmp_get_outlet_type(t_object* obj, int idx)
 {
     return obj_issignaloutlet(obj,idx);
 };
+
+//int cmp_get_canvas_inlet_count(t_canvas* canvas)
+//{
+//    return obj_n
+//}
 
 #pragma mark -
 

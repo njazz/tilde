@@ -150,6 +150,7 @@ public:
         connect(new_in, &Port::mousePressed, static_cast<UIWidget*>(this->parent()), &UIWidget::s_InMousePressed);
         connect(new_in, &Port::mouseReleased, static_cast<UIWidget*>(this->parent()), &UIWidget::s_InMouseReleased);
 
+        new_in->show();
 
         this->setInletsPos();
     }
@@ -180,6 +181,8 @@ public:
         outlets_->push_back(new_out);
         connect(new_out, &Port::mousePressed, static_cast<UIWidget*>(this->parent()), &UIWidget::s_OutMousePressed);
         connect(new_out, &Port::mouseReleased, static_cast<UIWidget*>(this->parent()), &UIWidget::s_OutMouseReleased);
+
+        new_out->show();
 
         this->setOutletsPos();
     }
@@ -226,6 +229,13 @@ public:
     }
 
     ////
+    /// \brief inlet count
+    /// \return
+    ///
+    int inletCount()
+    {return inlets_->size();}
+
+    ////
     /// \brief returns 1 if signal~
     /// \param idx
     /// \return
@@ -237,6 +247,13 @@ public:
         else
             return 0;
     }
+
+    ////
+    /// \brief outlet count
+    /// \return
+    ///
+    int outletCount()
+    {return outlets_->size();}
 
     ////////
 

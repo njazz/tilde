@@ -179,39 +179,43 @@ void PatchWindow::objectMakerDone()
 
         //QStringList atoms = QString(obj_name.c_str()).split( " " );
 
-//        if (atoms.at(0) == "pd")
-//        {
-//            //new
+        //        if (atoms.at(0) == "pd")
+        //        {
+        //            //new
 
-//            t_canvas* newPdCanvas = cmp_newpatch();
-//            PatchWindow *subPatch = PatchWindow::newSubpatch((t_canvas*)newPdCanvas);
-
-
-//            UIObject *b = this->canvas->createBoxForCanvas(subPatch->canvas, obj_name, this->canvas->objectMaker()->pos());
-//            ((UIBox*)b)->cmSubcanvas = (QMainWindow*)subPatch;
+        //            t_canvas* newPdCanvas = cmp_newpatch();
+        //            PatchWindow *subPatch = PatchWindow::newSubpatch((t_canvas*)newPdCanvas);
 
 
-//            this->canvas->dragObject = 0;
-//            this->canvas->objectMaker()->close();
+        //            UIObject *b = this->canvas->createBoxForCanvas(subPatch->canvas, obj_name, this->canvas->objectMaker()->pos());
+        //            ((UIBox*)b)->cmSubcanvas = (QMainWindow*)subPatch;
 
 
-//            qDebug("subpatch");
+        //            this->canvas->dragObject = 0;
+        //            this->canvas->objectMaker()->close();
 
 
-//            subPatch->show();
-//        }
-//        else
-        {
-            UIObject *b = this->canvas->createObject("ui.obj", obj_name, this->canvas->objectMaker()->pos());
-
-                        this->canvas->dragObject = 0;
-                        this->canvas->objectMaker()->close();
+        //            qDebug("subpatch");
 
 
-            //subpatch
+        //            subPatch->show();
+        //        }
+        //        else
+        //        {
 
-           // QStringList atoms = QString(obj_name.c_str()).split( " " );
-        }
+
+        //        UIObject *b =
+
+        this->canvas->createObject("ui.obj", obj_name, this->canvas->objectMaker()->pos());
+
+        this->canvas->dragObject = 0;
+        this->canvas->objectMaker()->close();
+
+
+        //subpatch
+
+        // QStringList atoms = QString(obj_name.c_str()).split( " " );
+        //        }
     }
 
 }

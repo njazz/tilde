@@ -113,11 +113,17 @@ public:
 
         //copy here
         ret->setPdObject(srcCanvas->pdObject());
+        ret->pdCanvas = srcCanvas->pdCanvas;
+
         ret->setDrawStyle(dStyle);
 
         ret->setMinimumWidth(40);
 
+        //ret->addInlet();//test
+
         //ret->objectMaker()->hide();
+
+        connect(srcCanvas, &Canvas::updatePortCount, ret, &Canvas::portCountUpdated);
 
         return ret;
 
@@ -810,16 +816,19 @@ public:
     /// \param pos
     /// \return
     ///
-    UIObject* createObject(std::string uiObjectName, std::string objectData, QPoint pos)
+    UIObject* createObject(std::string uiObjectName, std::string objectData1, QPoint pos)
     {
 
-        QStringList atoms = QString(objectData.c_str()).split( " " );
+        qDebug("!!!");
+
+        QStringList atoms = QString(objectData1.c_str()).split( " " );
 
         //this is moved here to have all checks for special objects in one place
         //(later - inlets/outlets)
+
         if (atoms.count())
         {
-            if((atoms.at(0) == "pd"))
+            if(atoms.at(0) == "pd")
             {
                 //lol
                 std::pair<QMainWindow*, UIObject*> newPatch;
@@ -830,37 +839,49 @@ public:
                 Canvas* newCanvas = (Canvas*)newPatch.second;
 
                 // crazy here
-                UIObject *b = this->createBoxForCanvas(newCanvas, objectData, pos);
+                UIObject *b = this->createBoxForCanvas(newCanvas, objectData1, pos);
                 ((UIBox*)b)->setSubpatchWindow ((QMainWindow*)subPatch);
                 ((Canvas*)b)->setSubcanvas(newCanvas);
 
                 //                this->dragObject = 0;
                 //                this->objectMaker()->close();
 
-                qDebug("subpatch");
+                qDebug("subpatch>>");
 
                 subPatch->show();
                 return b;
             }
+
+
+
         }
-        //else
+
+        UIObject *obj = ObjectLoader::inst().createObject(uiObjectName, objectData1, this->pdCanvas, (UIWidget*)this);
+
+        connect(obj,&UIMessage::selectBox, this, &Canvas::s_SelectBox);
+        connect(obj,&UIMessage::moveBox, this, &Canvas::s_MoveBox);
+        obj->setEditModeRef(&this->editMode);
+        obj->move(pos);
+        this->data_.boxes.push_back(obj);
+
+        obj->show();
+
+        qDebug() << "created object: [" << QString(uiObjectName.c_str()) << "]" << objectData1.c_str() << ":" << atoms.count() << "@" << QString(std::to_string((long)this->pdCanvas).c_str());
+
+        if (atoms.count())
         {
-            UIObject *obj = ObjectLoader::inst().createObject(uiObjectName, objectData, this->pdCanvas, (UIWidget*)this);
-
-            connect(obj,&UIMessage::selectBox, this, &Canvas::s_SelectBox);
-            connect(obj,&UIMessage::moveBox, this, &Canvas::s_MoveBox);
-            obj->setEditModeRef(&this->editMode);
-            obj->move(pos);
-            this->data_.boxes.push_back(obj);
-
-            obj->show();
-
-            qDebug() << "create object: " << QString(uiObjectName.c_str()) << "@" << QString(std::to_string((long)this->pdCanvas).c_str());
-            return obj;
+            if(
+                    (atoms.at(0) == "inlet") ||
+                    (atoms.at(0) == "inlet~") ||
+                    (atoms.at(0) == "outlet") ||
+                    (atoms.at(0) == "outlet~") )
+            {
+                qDebug("ports");
+                emit updatePortCount();
+            }
         }
 
-
-
+        return obj;
     }
 
     ////
@@ -892,8 +913,6 @@ public:
         Pal.setColor(QPalette::Background, QColor(240,240,240));
         obj->setAutoFillBackground(true);
         obj->setPalette(Pal);
-
-
 
 
         obj->show();
@@ -1276,7 +1295,7 @@ public:
     ///
     int findObjectIndex(UIObject * obj)
     {
-        UIObject* obj1;
+        //UIObject* obj1;
         std::vector<UIObject*>::iterator iter = std::find(this->data_.boxes.begin(), data_.boxes.end(), obj);
         size_t index = std::distance(this->data_.boxes.begin(), iter);
         if(index != this->data_.boxes.size())
@@ -1344,6 +1363,8 @@ public:
             return ret;
 
         }
+
+        return "";
     }
 
 
@@ -1521,9 +1542,48 @@ private slots:
     void editorDone();
     void editorChanged();
 
+    ////
+    /// \brief slot in Box-style canvas for handling new ins/outs
+    ///
+    void portCountUpdated()
+    {
+        qDebug("port count update");
+
+        if (this->pdCanvas)
+        {
+            qDebug("setting ports");
+
+            int in_c = cmp_get_inlet_count((t_object*)this->pdCanvas);
+            int out_c = cmp_get_outlet_count((t_object*)this->pdCanvas);
+
+            int obj_in = this->inletCount();
+            int obj_out = this->outletCount();
+
+            if (in_c>obj_in)
+            {
+                this->addInlet();
+                qDebug("add inlet");
+            }
+
+            if (out_c>obj_out)
+            {
+                this->addOutlet();
+                qDebug("add outlet");
+            }
+
+            qDebug () << ((drawStyle()==ds_Box)?"this is box canvas":"this is canvas");
+            qDebug () << "size" << this->size();
+
+            this->repaint();
+
+        }
+
+
+    };
+
 signals:
     std::pair<QMainWindow*,qtpd::UIObject*> createSubpatchWindow();
-
+    void updatePortCount();
 
 };
 
