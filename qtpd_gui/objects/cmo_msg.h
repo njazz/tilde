@@ -160,8 +160,6 @@ public:
 
     void mouseReleaseEvent(QMouseEvent *)
     {
-        //this->selected_ = false;
-
         //if (!this->getEditMode())
         {
             this->clicked_ = false;

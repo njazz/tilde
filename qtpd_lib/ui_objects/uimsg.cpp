@@ -69,11 +69,6 @@ static void uimsg_bang(t_ui_msg* x) // t_symbol *s, int argc, t_atom* argv
         outlet_bang(x->out1);
 }
 
-//static void uimsg_update(t_ui_msg* x, t_symbol *s, int argc, t_atom* argv)
-//{
-//    uimsg_set(x,s,argc,argv);
-//    uimsg_bang(x);
-//}
 
 static void* uimsg_new(t_symbol *s, int argc, t_atom* argv)
 {
@@ -117,8 +112,6 @@ extern "C" void setup_ui0x2emsg()
     
     class_addmethod(ui_msg_class, (t_method)uimsg_set, &s_anything, A_GIMME, 0);
     class_addmethod(ui_msg_class, (t_method)uimsg_bang, &s_bang, A_NULL, 0);
-
-//    class_addmethod(ui_msg_class, (t_method)uimsg_update, gensym("_update"), A_NULL, 0);
 
     class_setsavefn(ui_msg_class, uimsg_save);
     

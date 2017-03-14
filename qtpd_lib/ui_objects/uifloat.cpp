@@ -26,7 +26,6 @@ typedef struct _ui_float {
 
     t_symbol* s;
 
-    //AtomList* msg;
     float val;
 
     t_outlet *out1;
@@ -46,7 +45,7 @@ extern "C" void uifloat_set_updateUI(t_pd* x, void* obj, t_updateUI func)
 
 static void uifloat_set(t_ui_float* x, t_symbol *s, int argc, t_atom* argv)
 {
-    post("uifloat set __");
+    //post("uifloat set ");
 
     if (argc)
         x->val = AtomList(argc,argv).at(0).asFloat();
@@ -55,17 +54,12 @@ static void uifloat_set(t_ui_float* x, t_symbol *s, int argc, t_atom* argv)
 
     AtomList msg = AtomList(Atom(x->val));
 
-    if(x->updateUI) x->updateUI(x->uiobj, msg);  //x->msg
+    if(x->updateUI) x->updateUI(x->uiobj, msg);
 
 }
 
-static void uifloat_bang(t_ui_float* x) //, t_symbol *s, int argc, t_atom* argv
+static void uifloat_bang(t_ui_float* x)
 {
-//    if (x->msg->size())
-//        x->msg->output(x->out1);
-//    else
-//        outlet_bang(x->out1);
-
     AtomList(Atom(x->val)).output(x->out1);
 }
 
@@ -81,12 +75,6 @@ static void uifloat_float(t_ui_float* x, t_float f)
 
 }
 
-//static void uifloat_update(t_ui_float* x, t_symbol *s, int argc, t_atom* argv)
-//{
-//    uifloat_set(x,s,argc,argv);
-//    uifloat_bang(x);
-//}
-
 ///////
 
 static void* uifloat_new(t_symbol *s, int argc, t_atom* argv)
@@ -95,7 +83,6 @@ static void* uifloat_new(t_symbol *s, int argc, t_atom* argv)
 
     x->s = s;
 
-    //x->msg = new AtomList(argc,argv);
     x->val = 0;
 
     x->out1 = outlet_new((t_object*)x, &s_anything);
@@ -134,8 +121,6 @@ extern "C" void setup_ui0x2efloat()
     class_addmethod(ui_float_class, (t_method)uifloat_bang, &s_bang, A_NULL, 0);
 
     class_addfloat(ui_float_class, (t_method)uifloat_float);
-
-//    class_addmethod(ui_float_class, (t_method)uifloat_update, gensym("_update"), A_NULL, 0);
 
     class_setsavefn(ui_float_class, uifloat_save);
     

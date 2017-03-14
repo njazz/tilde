@@ -206,7 +206,6 @@ public:
     void setPdObject(void *obj)
     {
         UIObject::setPdObject(obj);
-        //cmp_sendstring((t_pd*)this->pdObject(), ((std::string)"set ").c_str());
 
         cmp_connectUI((t_pd*)this->pdObject(), (void*)this, &UIBang::updateUI);
         qDebug("connectUI");
@@ -218,7 +217,6 @@ public:
 
     void timerStart()
     {
-        //if (!this->timer_)
         {
             this->timer_->start(100);
         }
@@ -230,9 +228,6 @@ private slots:
     {
         this->clicked_ = false;
         this->repaint();
-
-        //        delete this->timer_;
-        //        this->timer_ = 0;
     }
 
 };

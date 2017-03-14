@@ -43,7 +43,7 @@ static void uibang_anything(t_ui_bang* x, t_symbol *s, int argc, t_atom* argv)
 
 }
 
-static void uibang_bang(t_ui_bang* x)   //, t_symbol *s, int argc, t_atom* argv
+static void uibang_bang(t_ui_bang* x)
 {
     outlet_bang(x->out1);
     if(x->updateUI)
@@ -51,11 +51,6 @@ static void uibang_bang(t_ui_bang* x)   //, t_symbol *s, int argc, t_atom* argv
 
 }
 
-//static void uibang_update(t_ui_bang* x, t_symbol *s, int argc, t_atom* argv)
-//{
-//    //uibang_set(x,s,argc,argv);
-//    uibang_bang(x);
-//}
 
 ///////
 
@@ -95,8 +90,6 @@ extern "C" void setup_ui0x2ebang()
     
     class_addmethod(ui_bang_class, (t_method)uibang_anything, &s_anything, A_GIMME, 0);
     class_addmethod(ui_bang_class, (t_method)uibang_bang, &s_bang, A_NULL, 0);
-
-//    class_addmethod(ui_bang_class, (t_method)uibang_update, gensym("_update"), A_NULL, 0);
 
     class_setsavefn(ui_bang_class, uibang_save);
     
