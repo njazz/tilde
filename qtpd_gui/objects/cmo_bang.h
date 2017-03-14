@@ -23,7 +23,7 @@ class UIBang : public UIObject
 private:
     bool clicked_;
 
-    QTimer timer_;
+    QTimer* timer_;
 
 public:
     explicit UIBang(UIObject *parent = 0);
@@ -34,7 +34,7 @@ public:
 
         b->setObjectData("");
 
-        std::string message = "ui.msg";
+        std::string message = "ui.bang";
 
         //temp
         t_object* new_obj = 0 ;
@@ -43,12 +43,13 @@ public:
         else
         {
             QPoint pos = QPoint(0,0);
-            new_obj = cmp_create_message(pdCanvas, message, pos.x(), pos.y());
+            //new_obj = cmp_create_message(pdCanvas, message, pos.x(), pos.y());
+            new_obj = cmp_create_object(pdCanvas, message, pos.x(), pos.y());
         }
 
         if (new_obj)
         {
-            qDebug ("created msgbox %s | ptr %lu\n",  message.c_str(), (long)new_obj);
+            qDebug ("created bang %s | ptr %lu\n",  message.c_str(), (long)new_obj);
             b->setPdObject(new_obj);
         }
         else
@@ -57,7 +58,7 @@ public:
         }
         //b->setFixedSize(20,20);
 
-        b->setPdMessage("");
+        //b->setPdMessage("");
 
         b->addInlet();
         b->addOutlet();
@@ -116,9 +117,9 @@ public:
             this->clicked_ = true;
             this->repaint();
 
-            this->timer_.start(100);
+            this->timerStart();
 
-            //todo timer
+
         }
 
         //temporary
@@ -143,10 +144,10 @@ public:
         //this->selected_ = false;
 
         //if (!this->getEditMode())
-//        {
-//            this->clicked_ = false;
-//            this->repaint();
-//        }
+        //        {
+        //            this->clicked_ = false;
+        //            this->repaint();
+        //        }
 
 
 
@@ -175,25 +176,29 @@ public:
 
     ///////
 
-    void setPdMessage(std::string message)
-    {
-        this->setObjectData(message);
+    //    void setPdMessage(std::string message)
+    //    {
+    //        this->setObjectData(message);
 
-    }
+    //    }
 
-    static void updateUI(void* uiobj, ceammc::AtomList msg)
+    static void updateUI(void* uiobj, ceammc::AtomList )
     {
         qDebug("update ui");
         UIBang *x = (UIBang*)uiobj;
 
-//        std::string obj_data;
-//        for (int i=0; i<msg.size();i++)
-//        {
-//            obj_data += msg.at(i).asString() + " ";
-//        }
-        x->clicked_ = true;
-        x->timer_.start(100);
-        x->repaint();
+        //        std::string obj_data;
+        //        for (int i=0; i<msg.size();i++)
+        //        {
+        //            obj_data += msg.at(i).asString() + " ";
+        //        }
+        if(!x->clicked_)
+        {
+            x->timerStart();
+            x->clicked_ = true;
+            x->repaint();
+        }
+
 
 
     }
@@ -201,20 +206,33 @@ public:
     void setPdObject(void *obj)
     {
         UIObject::setPdObject(obj);
-        cmp_sendstring((t_pd*)this->pdObject(), ((std::string)"set ").c_str());
-        cmp_connectUI((t_pd*)this->pdObject(), (void*)this, &UIBang::updateUI);
+        //cmp_sendstring((t_pd*)this->pdObject(), ((std::string)"set ").c_str());
 
+        cmp_connectUI((t_pd*)this->pdObject(), (void*)this, &UIBang::updateUI);
+        qDebug("connectUI");
     }
 
 
     std::string asPdFileString()
     {return "ui.bang "+ this->objectData();}
 
+    void timerStart()
+    {
+        //if (!this->timer_)
+        {
+            this->timer_->start(100);
+        }
+
+    }
+
 private slots:
     void timerAction()
     {
         this->clicked_ = false;
         this->repaint();
+
+        //        delete this->timer_;
+        //        this->timer_ = 0;
     }
 
 };

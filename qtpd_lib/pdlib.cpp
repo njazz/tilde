@@ -303,48 +303,48 @@ t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int
 
 
 
-t_object* cmp_create_message(t_canvas* canvas, std::string message, int x, int y)
-{
-    t_object* ret2;
-    t_object* ret1;
+//t_object* cmp_create_message(t_canvas* canvas, std::string message, int x, int y)
+//{
+//    t_object* ret2;
+//    t_object* ret1;
 
-    AtomList* list = AtomListFromString(message);
-    //if (list->size()==0) {return 0;}
+//    AtomList* list = AtomListFromString(message);
+//    //if (list->size()==0) {return 0;}
 
-    list->insert(0,Atom((float)x));
-    list->insert(1,Atom((float)y));
-    list->insert(2,gensym("ui.msg"));
+//    list->insert(0,Atom((float)x));
+//    list->insert(1,Atom((float)y));
+//    list->insert(2,gensym("ui.msg"));
 
-    qDebug("list size %i", list->size());
+//    qDebug("list size %i", list->size());
 
-    //    for (int i=0;i<list.size();i++)
-    //    {
-    //        qDebug("*message data: %s", list.at(i).asString().c_str());
-    //    }
+//    //    for (int i=0;i<list.size();i++)
+//    //    {
+//    //        qDebug("*message data: %s", list.at(i).asString().c_str());
+//    //    }
 
-    //pd_typedmess((t_pd*)canvas, gensym("msg"), (int)list->size(), list->toPdData());
+//    //pd_typedmess((t_pd*)canvas, gensym("msg"), (int)list->size(), list->toPdData());
 
-    ret1 = (t_object*)pd_newest();
+//    ret1 = (t_object*)pd_newest();
 
-    pd_typedmess((t_pd*)canvas, gensym("obj"), list->size(), list->toPdData());
+//    pd_typedmess((t_pd*)canvas, gensym("obj"), list->size(), list->toPdData());
 
-    delete list;
+//    delete list;
 
-    ret2 = (t_object*)pd_newest();
-    if (!ret2) return 0;
-    if (ret2 != pd_checkobject((t_pd*)ret2)) return 0;
-    if (ret2==ret1) return 0;
+//    ret2 = (t_object*)pd_newest();
+//    if (!ret2) return 0;
+//    if (ret2 != pd_checkobject((t_pd*)ret2)) return 0;
+//    if (ret2==ret1) return 0;
 
-    char* bufp = new char[1024];
-    int lenp;
-    binbuf_gettext(ret2->te_binbuf,&bufp,&lenp);
-    qDebug("object data: %s", bufp);
+//    char* bufp = new char[1024];
+//    int lenp;
+//    binbuf_gettext(ret2->te_binbuf,&bufp,&lenp);
+//    qDebug("object data: %s", bufp);
 
 
 
-    return ret2;
+//    return ret2;
 
-}
+//}
 
 void cmp_moveobject(t_object* obj, int x, int y)
 {
@@ -458,6 +458,7 @@ void cmp_sendstring(t_pd* obj, std::string msg)
 
 void cmp_connectUI(t_pd* obj, void* uiobj, t_updateUI func)
 {
+    // fix that
     uimsg_set_updateUI(obj, uiobj, func);
 }
 

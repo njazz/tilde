@@ -21,10 +21,13 @@ UIBang::UIBang(UIObject *parent) : UIObject(parent)
 
     this->setMinimumBoxWidth(20);
 
-    this->timer_.setSingleShot(true);
-    this->timer_.setInterval(100);
 
-    connect(&this->timer_, &QTimer::timeout, this, &UIBang::timerAction);
+    this->timer_ = new QTimer;
+    this->timer_->setSingleShot(true);
+    this->timer_->setInterval(100);
+
+    connect(this->timer_, &QTimer::timeout, this, &UIBang::timerAction);
+
 
 
 }

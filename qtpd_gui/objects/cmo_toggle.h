@@ -35,7 +35,7 @@ public:
 
         b->setObjectData("");
 
-        std::string message = "ui.msg";
+        std::string message = "ui.toggle";
 
         //temp
         t_object* new_obj = 0 ;
@@ -44,12 +44,13 @@ public:
         else
         {
             QPoint pos = QPoint(0,0);
-            new_obj = cmp_create_message(pdCanvas, message, pos.x(), pos.y());
+            //new_obj = cmp_create_message(pdCanvas, message, pos.x(), pos.y());
+            new_obj = cmp_create_object(pdCanvas, message, pos.x(), pos.y());
         }
 
         if (new_obj)
         {
-            qDebug ("created msgbox %s | ptr %lu\n",  message.c_str(), (long)new_obj);
+            qDebug ("created toggle %s | ptr %lu\n",  message.c_str(), (long)new_obj);
             b->setPdObject(new_obj);
         }
         else
@@ -128,8 +129,8 @@ public:
 
         if (this->getEditMode() != em_Unlocked)
         {
-            this->value_ = !this->value_;
-            this->repaint();
+//            this->value_ = !this->value_;
+//            this->repaint();
 
             if (!this->pdObject())
             {
@@ -137,8 +138,8 @@ public:
             }
             else
             {
-                //lol
-                cmp_sendstring((t_pd*)this->pdObject(), ((this->value_)?((std::string)"set 1").c_str():((std::string)"set 0").c_str()));
+//                //lol
+//                cmp_sendstring((t_pd*)this->pdObject(), ((this->value_)?((std::string)"set 1").c_str():((std::string)"set 0").c_str()));
 
                 cmp_sendstring((t_pd*)this->pdObject(), ((std::string)"bang").c_str());
             }
@@ -231,9 +232,9 @@ public:
         {
             if (msg.at(0).isFloat())
                 x->value_ = msg.at(0).asFloat()>0;
-            if (msg.at(0).isSymbol())
-                if (msg.at(0).asSymbol() == gensym("bang"))
-                    x->value_ = !x->value_;
+//            if (msg.at(0).isSymbol())
+//                if (msg.at(0).asSymbol() == gensym("bang"))
+//                    x->value_ = !x->value_;
         }
 
         x->repaint();

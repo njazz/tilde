@@ -21,11 +21,12 @@ static t_class* ui_bang_class;
 typedef struct _ui_bang {
     t_object x_obj;
 
-    t_outlet *out1;
-
     t_updateUI updateUI;
     void* uiobj;
-    
+
+    t_outlet *out1;
+
+
 } t_ui_bang;
 
 // special
@@ -42,11 +43,21 @@ static void uibang_anything(t_ui_bang* x, t_symbol *s, int argc, t_atom* argv)
 
 }
 
-static void uibang_bang(t_ui_bang* x, t_symbol *s, int argc, t_atom* argv)
+static void uibang_bang(t_ui_bang* x)   //, t_symbol *s, int argc, t_atom* argv
 {
-        outlet_bang(x->out1);
-        if(x->updateUI) x->updateUI(x->uiobj, AtomList(0.0f));
+    outlet_bang(x->out1);
+    if(x->updateUI)
+        x->updateUI(x->uiobj, AtomList(0.0f));
+
 }
+
+//static void uibang_update(t_ui_bang* x, t_symbol *s, int argc, t_atom* argv)
+//{
+//    //uibang_set(x,s,argc,argv);
+//    uibang_bang(x);
+//}
+
+///////
 
 static void* uibang_new(t_symbol *s, int argc, t_atom* argv)
 {
@@ -78,12 +89,14 @@ static void uibang_free(t_object* obj)
 extern "C" void setup_ui0x2ebang()
 {
     ui_bang_class = class_new(gensym("ui.bang"),
-                             (t_newmethod)(uibang_new),
-                             (t_method)(0),
-                             sizeof(t_ui_bang), 0, A_GIMME, 0);
+                              (t_newmethod)(uibang_new),
+                              (t_method)(0),
+                              sizeof(t_ui_bang), 0, A_GIMME, 0);
     
     class_addmethod(ui_bang_class, (t_method)uibang_anything, &s_anything, A_GIMME, 0);
     class_addmethod(ui_bang_class, (t_method)uibang_bang, &s_bang, A_NULL, 0);
+
+//    class_addmethod(ui_bang_class, (t_method)uibang_update, gensym("_update"), A_NULL, 0);
 
     class_setsavefn(ui_bang_class, uibang_save);
     

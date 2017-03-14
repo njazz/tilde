@@ -20,14 +20,18 @@ static t_class* ui_toggle_class;
 
 typedef struct _ui_toggle {
     t_object x_obj;
-    t_symbol* s;
-
-    AtomList* msg;
-
-    t_outlet *out1;
 
     t_updateUI updateUI;
     void* uiobj;
+
+    t_symbol* s;
+
+    //AtomList* msg;
+    bool value;
+
+    t_outlet *out1;
+
+
     
 } t_ui_toggle;
 
@@ -38,34 +42,56 @@ extern "C" void uitoggle_set_updateUI(t_pd* x, void* obj, t_updateUI func)
     ((t_ui_toggle*)x)->uiobj = obj;
 }
 
+///////
+
 static void uitoggle_set(t_ui_toggle* x, t_symbol *s, int argc, t_atom* argv)
 {
     //post("uimsg set");
     x->s = s;
 
-    if (x->msg)
-        delete x->msg;
+//    if (x->msg)
+//        delete x->msg;
 
-    x->msg = new AtomList(argc,argv);
+    AtomList list =  AtomList(argc,argv);
+    if (list.size())
+    {
+        x->value = list.at(0).asFloat()>0;
+        if(x->updateUI) x->updateUI(x->uiobj, AtomList(float(x->value)));
+    }
 
     //quick fix
-    if (x->msg->size())
-        if (x->msg->at(0).asSymbol() == gensym("bang"))
-        {
-            *x->msg = AtomList(0,0);
-        }
+//    if (x->msg->size())
+//        if (x->msg->at(0).asSymbol() == gensym("bang"))
+//        {
+//            *x->msg = AtomList(0,0);
+//        }
 
-    if(x->updateUI) x->updateUI(x->uiobj, *x->msg);  //x->msg
+      //x->msg
 
 }
 
-static void uitoggle_bang(t_ui_toggle* x, t_symbol *s, int argc, t_atom* argv)
+static void uitoggle_bang(t_ui_toggle* x) // t_symbol *s, int argc, t_atom* argv
 {
-    if (x->msg->size())
-        x->msg->output(x->out1);
-    else
-        outlet_bang(x->out1);
+    x->value = !x->value;
+
+    AtomList(float(x->value)).output(x->out1);
+
+    if(x->updateUI)
+        x->updateUI(x->uiobj, AtomList(float(x->value)));
+
+//    if (x->msg->size())
+//        x->msg->output(x->out1);
+//    else
+//        outlet_bang(x->out1);
 }
+
+//static void uitoggle_update(t_ui_toggle* x, t_symbol *s, int argc, t_atom* argv)
+//{
+//    uitoggle_set(x,s,argc,argv);
+//    uitoggle_bang(x);
+//}
+
+///////
 
 static void* uitoggle_new(t_symbol *s, int argc, t_atom* argv)
 {
@@ -73,7 +99,7 @@ static void* uitoggle_new(t_symbol *s, int argc, t_atom* argv)
 
     x->s = s;
 
-    x->msg = new AtomList(argc,argv);
+    //x->msg = new AtomList(argc,argv);
 
     x->out1 = outlet_new((t_object*)x, &s_anything);
 
@@ -87,7 +113,7 @@ void uitoggle_save(t_gobj *z, t_binbuf *b)
     binbuf_addv(b,"ss", gensym("#X"), gensym("obj"));
     binbuf_addv(b,"ff", (float)x->x_obj.te_xpix, (float)x->x_obj.te_ypix);
     binbuf_addv(b,"s", gensym("ui.msg"));
-    binbuf_add(b, x->msg->size(), x->msg->toPdData() );
+    //binbuf_add(b, x->msg->size(), x->msg->toPdData() );
     binbuf_addv(b, ";");
 
 }
@@ -109,6 +135,8 @@ extern "C" void setup_ui0x2etoggle()
     
     class_addmethod(ui_toggle_class, (t_method)uitoggle_set, &s_anything, A_GIMME, 0);
     class_addmethod(ui_toggle_class, (t_method)uitoggle_bang, &s_bang, A_NULL, 0);
+
+//    class_addmethod(ui_toggle_class, (t_method)uitoggle_update, gensym("_update"), A_NULL, 0);
 
     class_setsavefn(ui_toggle_class, uitoggle_save);
     

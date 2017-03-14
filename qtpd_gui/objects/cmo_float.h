@@ -32,7 +32,7 @@ public:
         b->setObjectData(objectData);
         b->autoResize();
 
-        std::string message = "ui.msg";
+        std::string message = "ui.float";
 
         //temp
         t_object* new_obj = 0 ;
@@ -41,7 +41,8 @@ public:
         else
         {
             QPoint pos = QPoint(0,0);
-            new_obj = cmp_create_message(pdCanvas, message, pos.x(), pos.y());
+            //new_obj = cmp_create_message(pdCanvas, message, pos.x(), pos.y());
+            new_obj = cmp_create_object(pdCanvas, message, pos.x(), pos.y());
         }
 
         if (new_obj)

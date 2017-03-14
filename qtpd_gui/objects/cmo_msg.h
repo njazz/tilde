@@ -43,7 +43,8 @@ public:
         else
         {
             QPoint pos = QPoint(0,0);
-            new_obj = cmp_create_message(pdCanvas, message, pos.x(), pos.y());
+            //new_obj = cmp_create_message(pdCanvas, message, pos.x(), pos.y());
+            new_obj = cmp_create_object(pdCanvas, message, pos.x(), pos.y());
         }
 
         if (new_obj)

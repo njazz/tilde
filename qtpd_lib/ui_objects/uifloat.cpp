@@ -20,14 +20,18 @@ static t_class* ui_float_class;
 
 typedef struct _ui_float {
     t_object x_obj;
-    t_symbol* s;
-
-    AtomList* msg;
-
-    t_outlet *out1;
 
     t_updateUI updateUI;
     void* uiobj;
+
+    t_symbol* s;
+
+    //AtomList* msg;
+    float val;
+
+    t_outlet *out1;
+
+
     
 } t_ui_float;
 
@@ -38,39 +42,52 @@ extern "C" void uifloat_set_updateUI(t_pd* x, void* obj, t_updateUI func)
     ((t_ui_float*)x)->uiobj = obj;
 }
 
+///////
+
 static void uifloat_set(t_ui_float* x, t_symbol *s, int argc, t_atom* argv)
 {
-    //post("uimsg set");
-    x->s = s;
+    post("uifloat set __");
 
-    if (x->msg)
-        delete x->msg;
+    if (argc)
+        x->val = AtomList(argc,argv).at(0).asFloat();
 
-    x->msg = new AtomList(argc,argv);
+    post ("msg");
 
-    //quick fix
-    if (x->msg->size())
-        if (x->msg->at(0).asSymbol() == gensym("bang"))
-        {
-            *x->msg = AtomList(0,0);
-        }
+    AtomList msg = AtomList(Atom(x->val));
 
-    if(x->updateUI) x->updateUI(x->uiobj, *x->msg);  //x->msg
+    if(x->updateUI) x->updateUI(x->uiobj, msg);  //x->msg
 
 }
 
-static void uifloat_bang(t_ui_float* x, t_symbol *s, int argc, t_atom* argv)
+static void uifloat_bang(t_ui_float* x) //, t_symbol *s, int argc, t_atom* argv
 {
-    if (x->msg->size())
-        x->msg->output(x->out1);
-    else
-        outlet_bang(x->out1);
+//    if (x->msg->size())
+//        x->msg->output(x->out1);
+//    else
+//        outlet_bang(x->out1);
+
+    AtomList(Atom(x->val)).output(x->out1);
 }
 
 static void uifloat_float(t_ui_float* x, t_float f)
 {
+    x->val = f;
+
+    AtomList msg = AtomList(Atom(x->val));
+
+    msg.output(x->out1);
+
+    if(x->updateUI) x->updateUI(x->uiobj, msg);
 
 }
+
+//static void uifloat_update(t_ui_float* x, t_symbol *s, int argc, t_atom* argv)
+//{
+//    uifloat_set(x,s,argc,argv);
+//    uifloat_bang(x);
+//}
+
+///////
 
 static void* uifloat_new(t_symbol *s, int argc, t_atom* argv)
 {
@@ -78,7 +95,8 @@ static void* uifloat_new(t_symbol *s, int argc, t_atom* argv)
 
     x->s = s;
 
-    x->msg = new AtomList(argc,argv);
+    //x->msg = new AtomList(argc,argv);
+    x->val = 0;
 
     x->out1 = outlet_new((t_object*)x, &s_anything);
 
@@ -92,7 +110,7 @@ void uifloat_save(t_gobj *z, t_binbuf *b)
     binbuf_addv(b,"ss", gensym("#X"), gensym("obj"));
     binbuf_addv(b,"ff", (float)x->x_obj.te_xpix, (float)x->x_obj.te_ypix);
     binbuf_addv(b,"s", gensym("ui.msg"));
-    binbuf_add(b, x->msg->size(), x->msg->toPdData() );
+    //binbuf_add(b, x->msg->size(), x->msg->toPdData() );
     binbuf_addv(b, ";");
 
 }
@@ -116,6 +134,8 @@ extern "C" void setup_ui0x2efloat()
     class_addmethod(ui_float_class, (t_method)uifloat_bang, &s_bang, A_NULL, 0);
 
     class_addfloat(ui_float_class, (t_method)uifloat_float);
+
+//    class_addmethod(ui_float_class, (t_method)uifloat_update, gensym("_update"), A_NULL, 0);
 
     class_setsavefn(ui_float_class, uifloat_save);
     
