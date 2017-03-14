@@ -28,6 +28,7 @@ private:
     portVec* inlets_;
     portVec*  outlets_;
 
+    std::string pdObjectName_;  //not to be confused with QObject objectName
     std::string objectData_;     //name and arguments etc
 
     bool errorBox_;
@@ -299,7 +300,18 @@ public:
     ///
     virtual std::string asPdFileString()
     {
-        return this->objectData_ + this->properties_.asPdFileString();
+        std::string ret;
+
+        ret = "#X obj ";
+        ret += std::to_string(this->x()) + " " + std::to_string(this->y())+ " ";
+        ret += this->pdObjectName_+ this->objectData_ + this->properties_.asPdFileString();
+
+        return ret;
+    }
+
+    void setPdObjectName(std::string name)
+    {
+        pdObjectName_ = name;
     }
 
 

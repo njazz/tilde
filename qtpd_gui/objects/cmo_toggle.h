@@ -247,8 +247,8 @@ public:
     }
 
 
-    std::string asPdFileString()
-    {return "ui.toggle "+ this->objectData();}
+//    std::string asPdFileString()
+//    {return "ui.toggle "+ this->objectData();}
 
 
 

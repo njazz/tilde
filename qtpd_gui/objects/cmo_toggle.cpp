@@ -5,6 +5,8 @@ namespace qtpd
 
 UIToggle::UIToggle(UIObject *parent) : UIObject(parent)
 {
+    setPdObjectName("ui.toggle");
+
     this->setFixedSize(20,20);
 
     this->setMouseTracking(true);

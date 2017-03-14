@@ -7,6 +7,8 @@ namespace qtpd
 
 UIBang::UIBang(UIObject *parent) : UIObject(parent)
 {
+    setPdObjectName("ui.bang");
+
     this->setFixedSize(20,20);
 
     this->setMouseTracking(true);

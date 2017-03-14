@@ -223,8 +223,8 @@ public:
         }
     }
 
-    std::string asPdFileString()
-    {return "ui.float "+ this->objectData();}
+//    std::string asPdFileString()
+//    {return "ui.float "+ this->objectData();}
 
     void setPdObject(void *obj)
     {

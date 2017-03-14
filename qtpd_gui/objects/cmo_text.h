@@ -177,8 +177,8 @@ public:
     //    }
 
 
-    std::string asPdFileString()
-    {return "ui.text "+ this->objectData();}
+//    std::string asPdFileString()
+//    {return "ui.text "+ this->objectData();}
 
     void* pdObject()
     {

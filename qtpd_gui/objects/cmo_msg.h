@@ -249,8 +249,8 @@ public:
     }
 
 
-    std::string asPdFileString()
-    {return "ui.msg "+ this->objectData();}
+//    std::string asPdFileString()
+//    {return "ui.msg "+ this->objectData();}
 
 
 

@@ -5,6 +5,7 @@ namespace qtpd
 {
 UIBox::UIBox(UIObject *parent) : UIObject(parent)
 {
+    //setPdObjectName("ui.bang");
 
     this->setFixedHeight(20);
     //this->setMinimumWidth(22);

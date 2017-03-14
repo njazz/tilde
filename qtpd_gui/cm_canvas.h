@@ -1393,10 +1393,11 @@ public:
 
         for (it = objects.begin(); it!= objects.end(); ++it)
         {
-            // check for subpatches
-            out1 = "#X obj ";
-            out1 += std::to_string(((UIObject*)*it)->x()) + " " + std::to_string(((UIObject*)*it)->y())+ " ";
-            out1 += ((UIObject*)*it)->asPdFileString();
+            // !check for subpatches
+//            out1 = "#X obj ";
+//            out1 += std::to_string(((UIObject*)*it)->x()) + " " + std::to_string(((UIObject*)*it)->y())+ " ";
+
+            out1 = ((UIObject*)*it)->asPdFileString();
             out1 +=";\r\n" ;
 
             ret.append(out1.c_str());

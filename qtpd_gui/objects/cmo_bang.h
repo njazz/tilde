@@ -188,8 +188,10 @@ public:
     }
 
 
-    std::string asPdFileString()
-    {return "ui.bang "+ this->objectData();}
+//    std::string asPdFileString()
+//    {
+//        return "ui.bang "+ this->objectData();
+//    }
 
     void timerStart()
     {

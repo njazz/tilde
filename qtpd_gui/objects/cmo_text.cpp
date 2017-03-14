@@ -4,6 +4,8 @@ namespace qtpd
 {
 UIText::UIText(UIObject *parent) : UIObject(parent)
 {
+    setPdObjectName("ui.text");
+
     //this->setMinimumWidth(30);
     this->setFixedSize(65,20);
 
