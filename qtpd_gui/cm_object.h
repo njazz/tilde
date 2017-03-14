@@ -9,6 +9,8 @@
 
 #include "cm_pdlink.h"
 
+#include <QMainWindow>
+
 namespace qtpd
 {
 
@@ -41,6 +43,8 @@ private:
     PropertyList properties_;
 
     UIObject();
+
+    QMainWindow *SubpatchWindow_;
 
 
 
@@ -314,6 +318,13 @@ public:
         pdObjectName_ = name;
     }
 
+    ////
+    /// \brief temporary - remove later
+    /// \details nonzero pointer for different drawing
+    ///
+    QMainWindow* subpatchWindow(){return SubpatchWindow_;}
+    void setSubpatchWindow(QMainWindow* cwindow){ SubpatchWindow_ = cwindow;}
+
 
     ////
     /// \brief sets pointer to edit mode flag value in parent canvas
@@ -382,6 +393,14 @@ public:
     }
 
 
+    ~UIObject()
+    {
+        if (this->subpatchWindow())
+        {
+            this->subpatchWindow()->hide();
+            delete this->SubpatchWindow_;
+        }
+    }
 
 public slots:
     void resizeBox(int dx);

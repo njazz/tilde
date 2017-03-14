@@ -79,7 +79,8 @@ private:
     canvasDrawStyle drawStyle_;
     // if the canvas is the box, it can have this. Check this later
     // !Canvas
-    QMainWindow *Subcanvas_;
+    //QMainWindow *SubcanvasWindow_;
+    UIObject *Subcanvas_;
 
     // !Canvas
     QLineEdit* editor_;
@@ -828,11 +829,13 @@ public:
                 QMainWindow* subPatch = newPatch.first;
                 Canvas* newCanvas = (Canvas*)newPatch.second;
 
+                // crazy here
                 UIObject *b = this->createBoxForCanvas(newCanvas, objectData, pos);
-                ((UIBox*)b)->cmSubcanvas = (QMainWindow*)subPatch;
+                ((UIBox*)b)->setSubpatchWindow ((QMainWindow*)subPatch);
+                ((Canvas*)b)->setSubcanvas(newCanvas);
 
-//                this->dragObject = 0;
-//                this->objectMaker()->close();
+                //                this->dragObject = 0;
+                //                this->objectMaker()->close();
 
                 qDebug("subpatch");
 
@@ -1284,14 +1287,66 @@ public:
 
     }
 
+
+    void setSubcanvas(UIObject* obj){Subcanvas_ = obj;}
+    //UIObject* subcanvas(){return Subcanvas_;}
+
+    //lol
+    //QStringList canvasAsPdStrings();
+
     ////
     /// \brief this returns "restore ..." for canvas as box or calls filesaver for canvas
     /// \return
     ///
     virtual std::string asPdFileString()
     {
-        return "#N canvas 0 0 400 300 10;\r\n";     //temporary
+        if (this->drawStyle() == ds_Canvas)
+        {
+
+            // todo cleanup
+
+            std::string ret;
+
+            ret = "#N canvas ";
+            ret += std::to_string(this->x()) + " ";
+            ret += std::to_string(this->y()) + " ";
+            ret += std::to_string(this->width()) + "  ";
+            ret += std::to_string(this->height()) + " ";
+            ret += "10; \r\n";
+
+
+            return ret;
+
+
+        }
+
+        if (this->drawStyle() == ds_Box)
+        {
+            std::string ret;
+
+            if (this->Subcanvas_)
+            {
+                QStringList patchList = ((Canvas*)this->Subcanvas_)->canvasAsPdStrings();
+
+                ret += patchList.join("\r\n").toStdString();
+            }
+            else
+            {
+                qDebug() << "missing subcanvas data";
+            }
+
+
+            ret += "#X restore ";
+            ret += std::to_string(this->x()) + " " + std::to_string(this->y())+ " ";
+            //ret += this->pdObjectName_+ this->objectData_ + this->properties_.asPdFileString();
+            ret += "subpatch_name";
+
+            return ret;
+
+        }
     }
+
+
 
     ///////
     ///
@@ -1394,8 +1449,8 @@ public:
         for (it = objects.begin(); it!= objects.end(); ++it)
         {
             // !check for subpatches
-//            out1 = "#X obj ";
-//            out1 += std::to_string(((UIObject*)*it)->x()) + " " + std::to_string(((UIObject*)*it)->y())+ " ";
+            //            out1 = "#X obj ";
+            //            out1 += std::to_string(((UIObject*)*it)->x()) + " " + std::to_string(((UIObject*)*it)->y())+ " ";
 
             out1 = ((UIObject*)*it)->asPdFileString();
             out1 +=";\r\n" ;

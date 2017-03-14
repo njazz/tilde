@@ -20,7 +20,7 @@ UIBox::UIBox(UIObject *parent) : UIObject(parent)
 
     this->setErrorBox(false);
 
-    this->cmSubcanvas = 0;
+    this->setSubpatchWindow(0);
 
 
     //this->clicked_ = false;
@@ -41,14 +41,7 @@ UIBox::UIBox(UIObject *parent) : UIObject(parent)
 }
 
 
-UIBox::~UIBox()
-{
-    if (this->cmSubcanvas)
-    {
-        this->cmSubcanvas->hide();
-        delete this->cmSubcanvas;
-    }
-}
+
 
 
 

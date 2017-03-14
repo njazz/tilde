@@ -27,7 +27,7 @@ private:
 
 public:
     explicit UIBox(UIObject* parent = 0);
-    ~UIBox();
+    //~UIBox();
 
     static UIObject* createObject(std::string objectData, t_canvas* pd_Canvas, UIWidget *parent=0)
     {
@@ -86,10 +86,7 @@ public:
     };
 
 
-    ////
-    /// \brief temporary - remove later
-    ///
-    QMainWindow *cmSubcanvas;
+
 
     ////
     /// \brief paint event
@@ -100,7 +97,7 @@ public:
         p.setRenderHint(QPainter::HighQualityAntialiasing, true);
 
         //remove this later
-        if (this->cmSubcanvas)
+        if (this->subpatchWindow())
         {
             p.setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
             p.drawRect(0, 2, this->width(), this->height()-4);
@@ -134,9 +131,9 @@ public:
         //open canvas for subpatch
         if (this->getEditMode() != em_Unlocked)
         {
-            if (this->cmSubcanvas)
+            if (this->subpatchWindow())
             {
-                this->cmSubcanvas->show();
+                this->subpatchWindow()->show();
             }
         }
 
@@ -173,7 +170,7 @@ public:
         event->ignore();
 
 
-        if ( (this->getEditMode() != em_Unlocked) && (this->cmSubcanvas) )
+        if ( (this->getEditMode() != em_Unlocked) && (this->subpatchWindow()) )
         {
             this->setCursor(QCursor(Qt::PointingHandCursor));
         }
