@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['s_5fcreatesubpatchwindow',['s_createSubpatchWindow',['../classqtpd_1_1_patch_window.html#acdb1ba3048cfb4e51e88d6fe74ccb4c9',1,'qtpd::PatchWindow']]],
   ['s_5finmousepressed',['s_InMousePressed',['../classqtpd_1_1_canvas.html#a4ec3f2bbffa544c30a0c3b20e0652284',1,'qtpd::Canvas::s_InMousePressed()'],['../classqtpd_1_1_u_i_widget.html#a1dca2509f17e9c27054c28e16d5e8729',1,'qtpd::UIWidget::s_InMousePressed()']]],
   ['s_5finmousereleased',['s_InMouseReleased',['../classqtpd_1_1_canvas.html#a685ab78f4566f8ce1178472118d22e98',1,'qtpd::Canvas::s_InMouseReleased()'],['../classqtpd_1_1_u_i_widget.html#a30f8b78a00d59153211ad38f6c730dbe',1,'qtpd::UIWidget::s_InMouseReleased()']]],
   ['s_5fmovebox',['s_MoveBox',['../classqtpd_1_1_canvas.html#ac2d7ba2003629591b9c93c8d2ab46ef2',1,'qtpd::Canvas']]],
@@ -89,6 +90,7 @@ var searchData=
   ['slice',['slice',['../classceammc_1_1_atom_list.html#ac0ceecb3bbe2862e5b391cd15d38b2f0',1,'ceammc::AtomList::slice(int start) const '],['../classceammc_1_1_atom_list.html#a7b132d94bb93c3c9afb13124ca8eea6a',1,'ceammc::AtomList::slice(int start, int end, size_t step=1) const ']]],
   ['slidercount',['sliderCount',['../structui__sliders.html#a66ff06391a216efab9e24ca84a9b81ec',1,'ui_sliders']]],
   ['sort',['sort',['../classceammc_1_1_atom_list.html#a7ea888d2eac7ea2dc11e7e7939bf2010',1,'ceammc::AtomList::sort()'],['../classceammc_1_1tl_1_1_cue_storage.html#ab2e0d1da063f1b146a63128a1864e71b',1,'ceammc::tl::CueStorage::sort()']]],
+  ['startpoint',['startPoint',['../classqtpd_1_1_patchcord.html#a067732a8c5322c8d32f9d39ab016080c',1,'qtpd::Patchcord']]],
   ['step',['step',['../classceammc_1_1faust_1_1_u_i_element.html#af6179be6590fb7c71ededde858d83472',1,'ceammc::faust::UIElement']]],
   ['stream',['stream',['../classceammc_1_1_error.html#a866e1b2ab812f96fd0ef013dc91dafb2',1,'ceammc::Error::stream()'],['../classceammc_1_1_debug.html#ad372d68feeaf3d51b940d7b946cc49c2',1,'ceammc::Debug::stream()']]],
   ['stringtocanvas',['stringToCanvas',['../classqtpd_1_1_file_parser.html#aae900841ee5ecd47583f72528ab1a289',1,'qtpd::FileParser']]],
