@@ -145,6 +145,7 @@ Public Slots</h2></td></tr>
 Signals</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::pair&lt; QMainWindow <br class="typebreak"/>
 *, <a class="el" href="classqtpd_1_1_u_i_object.html">qtpd::UIObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a0be062988d0eb22128367026a54e55b8">createSubpatchWindow</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a2b682c9355f1eabc4f20ee2a52e01d1a">updatePortCount</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a7a5f30a6659863e1f22cc51e0ced3428">Canvas</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *parent=0)</td></tr>
@@ -188,8 +189,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">deselect all object boxes  <a href="#ae5d178b7962fb039619f2e00c17d89cf"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_u_i_box.html">UIBox</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a6908da78ec75b4e5bd84cfb84b1eeea7">restoreSubcanvas</a> (std::string pdObjectName, QPoint pos, t_canvas *canvas)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">restore "pd" object when loading from file  <a href="#a6908da78ec75b4e5bd84cfb84b1eeea7"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a74125b9039d694a8d191ef438cd15dbd">createObject</a> (std::string uiObjectName, std::string <a class="el" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447">objectData</a>, QPoint pos)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">prototype for universal object 'constructor'  <a href="#a74125b9039d694a8d191ef438cd15dbd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#aa3915ffb984cd2b8fb0d2b0427e1e5e0">createObject</a> (std::string uiObjectName, std::string objectData1, QPoint pos)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">prototype for universal object 'constructor'  <a href="#aa3915ffb984cd2b8fb0d2b0427e1e5e0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#aed3ee862975185c251ffb066d0c8318b">createBoxForCanvas</a> (<a class="el" href="classqtpd_1_1_canvas.html">Canvas</a> *newCanvas, std::string <a class="el" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447">objectData</a>, QPoint pos)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">TODO check. creates object box for subcanvas.  <a href="#aed3ee862975185c251ffb066d0c8318b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a3625736a403310d179fe0738156e572f">patchcord</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *obj1, int outlet, <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *obj2, int inlet)</td></tr>
@@ -239,7 +240,6 @@ Static Public Member Functions</h2></td></tr>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#ae2c013a94a5244db8672c6e0b3cf879f">dragObject</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a16901c08809862b4ba2baacd7229666d">fileName</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">t_canvas *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a6b63d8863dcee011dbd54a2b4de94c00">pdCanvas</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>'t_canvas' counterpart. creates objects </p>
@@ -387,12 +387,12 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a74125b9039d694a8d191ef438cd15dbd"></a><!-- doxytag: member="qtpd::Canvas::createObject" ref="a74125b9039d694a8d191ef438cd15dbd" args="(std::string uiObjectName, std::string objectData, QPoint pos)" -->
+<a class="anchor" id="aa3915ffb984cd2b8fb0d2b0427e1e5e0"></a><!-- doxytag: member="qtpd::Canvas::createObject" ref="aa3915ffb984cd2b8fb0d2b0427e1e5e0" args="(std::string uiObjectName, std::string objectData1, QPoint pos)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a>* <a class="el" href="classqtpd_1_1_canvas.html#a74125b9039d694a8d191ef438cd15dbd">qtpd::Canvas::createObject</a> </td>
+          <td class="memname"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a>* <a class="el" href="classqtpd_1_1_canvas.html#aa3915ffb984cd2b8fb0d2b0427e1e5e0">qtpd::Canvas::createObject</a> </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>uiObjectName</em>, </td>
@@ -401,7 +401,7 @@ Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>objectData</em>, </td>
+          <td class="paramname"><em>objectData1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1605,6 +1605,22 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a2b682c9355f1eabc4f20ee2a52e01d1a"></a><!-- doxytag: member="qtpd::Canvas::updatePortCount" ref="a2b682c9355f1eabc4f20ee2a52e01d1a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas.html#a2b682c9355f1eabc4f20ee2a52e01d1a">qtpd::Canvas::updatePortCount</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [signal]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <hr/><h2>Member Data Documentation</h2>
 <a class="anchor" id="ae2c013a94a5244db8672c6e0b3cf879f"></a><!-- doxytag: member="qtpd::Canvas::dragObject" ref="ae2c013a94a5244db8672c6e0b3cf879f" args="" -->
 <div class="memitem">
@@ -1625,19 +1641,6 @@ Public Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">QString <a class="el" href="classqtpd_1_1_canvas.html#a16901c08809862b4ba2baacd7229666d">qtpd::Canvas::fileName</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a6b63d8863dcee011dbd54a2b4de94c00"></a><!-- doxytag: member="qtpd::Canvas::pdCanvas" ref="a6b63d8863dcee011dbd54a2b4de94c00" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">t_canvas* <a class="el" href="classqtpd_1_1_canvas.html#a6b63d8863dcee011dbd54a2b4de94c00">qtpd::Canvas::pdCanvas</a></td>
         </tr>
       </table>
 </div>
@@ -1667,7 +1670,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 14 2017 20:23:25 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Mar 14 2017 23:03:17 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
