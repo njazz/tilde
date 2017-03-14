@@ -135,6 +135,8 @@ public:
         {
             new_in->portClass = cmp_get_inlet_type((t_object*)this->pdObject_, new_in->portIndex);
         }
+        else
+            new_in->portClass = 0;
 
 
         new_in->setEditModeRef(this->getEditModeRef());
@@ -163,6 +165,8 @@ public:
         {
             new_out->portClass = cmp_get_outlet_type((t_object*)this->pdObject_, new_out->portIndex);
         }
+        else
+            new_out->portClass = 0;
 
 
 
@@ -210,7 +214,10 @@ public:
     ///
     int inletType(int idx)
     {
-        return cmp_get_inlet_type((t_object*)this->pdObject_, idx);
+        if ((t_object*)this->pdObject_)
+            return cmp_get_inlet_type((t_object*)this->pdObject_, idx);
+        else
+            return 0;
     }
 
     ////
@@ -220,7 +227,10 @@ public:
     ///
     int outletType(int idx)
     {
-        return cmp_get_outlet_type((t_object*)this->pdObject_, idx);
+        if ((t_object*)this->pdObject_)
+            return cmp_get_outlet_type((t_object*)this->pdObject_, idx);
+        else
+            return 0;
     }
 
     ////////

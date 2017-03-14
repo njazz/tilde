@@ -6,6 +6,8 @@ UIObject::UIObject(UIWidget *parent) : UIWidget(parent)
 {
     this->errorBox_ = false;
 
+    this->setPdObject(0);
+
     this->inlets_ = new portVec;
     this->outlets_ = new portVec;
 

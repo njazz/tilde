@@ -21,7 +21,6 @@ UIBang::UIBang(UIObject *parent) : UIObject(parent)
 
     this->setMinimumBoxWidth(20);
 
-
     this->timer_ = new QTimer;
     this->timer_->setSingleShot(true);
     this->timer_->setInterval(100);
