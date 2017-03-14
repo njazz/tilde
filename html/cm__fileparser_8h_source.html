@@ -266,145 +266,149 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00196"></a>00196                                         {
 <a name="l00197"></a>00197                                             <span class="keywordflow">if</span> (<a class="code" href="classqtpd_1_1_file_parser.html#ab7f750a51e76c8a60b90d1479796466a">pdParserPrevWindow</a>-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>)
 <a name="l00198"></a>00198                                             {
-<a name="l00199"></a>00199 <span class="comment">//                                                UIBox *b1 = 0;</span>
+<a name="l00199"></a>00199                                                 <span class="comment">//                                                UIBox *b1 = 0;</span>
 <a name="l00200"></a>00200 
-<a name="l00201"></a>00201 <span class="comment">//                                                b1 = pdParserPrevWindow-&gt;canvas-&gt;restoreSubcanvas(objname.toStdString(), pos, pdParserWindow-&gt;canvas-&gt;pdCanvas);</span>
-<a name="l00202"></a>00202 <span class="comment">//                                                b1-&gt;cmSubcanvas = pdParserWindow;</span>
+<a name="l00201"></a>00201                                                 <span class="comment">//                                                b1 = pdParserPrevWindow-&gt;canvas-&gt;restoreSubcanvas(objname.toStdString(), pos, pdParserWindow-&gt;canvas-&gt;pdCanvas);</span>
+<a name="l00202"></a>00202                                                 <span class="comment">//                                                b1-&gt;cmSubcanvas = pdParserWindow;</span>
 <a name="l00203"></a>00203 
 <a name="l00204"></a>00204                                                 qDebug(<span class="stringliteral">&quot;restore&quot;</span>);
 <a name="l00205"></a>00205 
-<a name="l00206"></a>00206                                                 <a class="code" href="classqtpd_1_1_file_parser.html#ab7f750a51e76c8a60b90d1479796466a">pdParserPrevWindow</a>-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#aed3ee862975185c251ffb066d0c8318b" title="TODO check. creates object box for subcanvas.">createBoxForCanvas</a>(<a class="code" href="classqtpd_1_1_file_parser.html#ab7f750a51e76c8a60b90d1479796466a">pdParserPrevWindow</a>-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>,objData, pos);
+<a name="l00206"></a>00206                                                 <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> *b = <a class="code" href="classqtpd_1_1_file_parser.html#ab7f750a51e76c8a60b90d1479796466a">pdParserPrevWindow</a>-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>-&gt;<a class="code" href="classqtpd_1_1_canvas.html#aed3ee862975185c251ffb066d0c8318b" title="TODO check. creates object box for subcanvas.">createBoxForCanvas</a>(<a class="code" href="classqtpd_1_1_file_parser.html#ab7f750a51e76c8a60b90d1479796466a">pdParserPrevWindow</a>-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>, objData, pos);
 <a name="l00207"></a>00207 
-<a name="l00208"></a>00208                                             }
-<a name="l00209"></a>00209                                         }
-<a name="l00210"></a>00210                                     }
-<a name="l00211"></a>00211                                     <span class="keywordflow">else</span>
-<a name="l00212"></a>00212                                     {
-<a name="l00213"></a>00213                                         qDebug(<span class="stringliteral">&quot;pd subpatch error&quot;</span>);
+<a name="l00208"></a>00208                                                 <span class="comment">//IObject *b = this-&gt;createBoxForCanvas(newCanvas, objectData, pos);</span>
+<a name="l00209"></a>00209                                                 ((<a class="code" href="classqtpd_1_1_u_i_box.html" title="gui object: standard object box">UIBox</a>*)b)-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#aab273ef9fd115cb87544b398975ca4c1">setSubpatchWindow</a> ((QMainWindow*)<a class="code" href="classqtpd_1_1_file_parser.html#ab7f750a51e76c8a60b90d1479796466a">pdParserPrevWindow</a>);
+<a name="l00210"></a>00210                                                 ((<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>*)b)-&gt;setSubcanvas(pdParserPrevWindow-&gt;canvas);
+<a name="l00211"></a>00211 
+<a name="l00212"></a>00212                                             }
+<a name="l00213"></a>00213                                         }
 <a name="l00214"></a>00214                                     }
-<a name="l00215"></a>00215 
-<a name="l00216"></a>00216                                     <span class="comment">//draw subpatch</span>
-<a name="l00217"></a>00217                                     <a class="code" href="classqtpd_1_1_file_parser.html#a5dc01b5bbec80d216ce14596ca0bd6c9">pdParserWindow</a> = <a class="code" href="classqtpd_1_1_file_parser.html#ab7f750a51e76c8a60b90d1479796466a">pdParserPrevWindow</a>;
-<a name="l00218"></a>00218 
+<a name="l00215"></a>00215                                     <span class="keywordflow">else</span>
+<a name="l00216"></a>00216                                     {
+<a name="l00217"></a>00217                                         qDebug(<span class="stringliteral">&quot;pd subpatch error&quot;</span>);
+<a name="l00218"></a>00218                                     }
 <a name="l00219"></a>00219 
-<a name="l00220"></a>00220 
-<a name="l00221"></a>00221                                 }
-<a name="l00222"></a>00222                                 <span class="keywordflow">else</span>
-<a name="l00223"></a>00223                                 {
-<a name="l00224"></a>00224                                     qDebug(<span class="stringliteral">&quot;list error&quot;</span>);
+<a name="l00220"></a>00220                                     <span class="comment">//draw subpatch</span>
+<a name="l00221"></a>00221                                     <a class="code" href="classqtpd_1_1_file_parser.html#a5dc01b5bbec80d216ce14596ca0bd6c9">pdParserWindow</a> = <a class="code" href="classqtpd_1_1_file_parser.html#ab7f750a51e76c8a60b90d1479796466a">pdParserPrevWindow</a>;
+<a name="l00222"></a>00222 
+<a name="l00223"></a>00223 
+<a name="l00224"></a>00224 
 <a name="l00225"></a>00225                                 }
-<a name="l00226"></a>00226 
-<a name="l00227"></a>00227 
-<a name="l00228"></a>00228 
-<a name="l00229"></a>00229                             }
-<a name="l00230"></a>00230                             <span class="keywordflow">else</span>
-<a name="l00231"></a>00231                             {
-<a name="l00232"></a>00232                                 <span class="comment">// add dummy object to keep connections</span>
-<a name="l00233"></a>00233 
-<a name="l00234"></a>00234                                 <span class="keywordflow">if</span> (list.size()&gt;2)
-<a name="l00235"></a>00235                                 {
-<a name="l00236"></a>00236                                     QString objname;
-<a name="l00237"></a>00237                                     QString msgname;
-<a name="l00238"></a>00238                                     QPoint pos;
-<a name="l00239"></a>00239 
-<a name="l00240"></a>00240                                     pos.setX(((QString)list.value(1)).toFloat());
-<a name="l00241"></a>00241                                     pos.setY(((QString)list.value(2)).toFloat());
-<a name="l00242"></a>00242 
-<a name="l00243"></a>00243                                     <span class="comment">//lol</span>
-<a name="l00244"></a>00244                                     QStringList objList = list;
-<a name="l00245"></a>00245                                     objList.removeAt(1);
-<a name="l00246"></a>00246                                     objList.removeAt(1);
-<a name="l00247"></a>00247 
-<a name="l00248"></a>00248                                     objname = objList.join(<span class="stringliteral">&quot; &quot;</span>);
-<a name="l00249"></a>00249 
-<a name="l00250"></a>00250                                     qDebug() &lt;&lt; <span class="stringliteral">&quot;objname&quot;</span> &lt;&lt; objname;
-<a name="l00251"></a>00251                                     <span class="comment">//temporary</span>
-<a name="l00252"></a>00252                                     <span class="comment">//cmcanvas-&gt;createBox(objname.toStdString(), pos);</span>
-<a name="l00253"></a>00253                                     cmcanvas-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a74125b9039d694a8d191ef438cd15dbd" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.obj&quot;</span>, objname.toStdString(), pos);
-<a name="l00254"></a>00254 
-<a name="l00255"></a>00255                                 }
-<a name="l00256"></a>00256 
-<a name="l00257"></a>00257                             }
-<a name="l00258"></a>00258     }
-<a name="l00259"></a>00259 
-<a name="l00264"></a><a class="code" href="classqtpd_1_1_file_parser.html#ae09cab80a56d87bc9dabe76e89b8f4ce">00264</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_file_parser.html#ae09cab80a56d87bc9dabe76e89b8f4ce" title="checks first atoms (&quot;#N&quot;, &quot;#X&quot; etc) and sends QStringList">parseString</a>(QString line)
-<a name="l00265"></a>00265     {
-<a name="l00266"></a>00266         QStringList atoms = line.split( <span class="stringliteral">&quot; &quot;</span> );
-<a name="l00267"></a>00267 
-<a name="l00268"></a>00268         atoms.last() = atoms.last().remove(<span class="stringliteral">&quot;;&quot;</span>);
-<a name="l00269"></a>00269         <span class="comment">//switch (atoms.at(0))</span>
-<a name="l00270"></a>00270 
-<a name="l00271"></a>00271         <span class="keywordflow">if</span> (atoms.at(0) == <span class="stringliteral">&quot;#N&quot;</span>)
-<a name="l00272"></a>00272         {
-<a name="l00273"></a>00273             QStringList msg = atoms;
-<a name="l00274"></a>00274             msg.removeFirst();
-<a name="l00275"></a>00275 
-<a name="l00276"></a>00276             <a class="code" href="classqtpd_1_1_file_parser.html#ab7f750a51e76c8a60b90d1479796466a">pdParserPrevWindow</a> = <a class="code" href="classqtpd_1_1_file_parser.html#a5dc01b5bbec80d216ce14596ca0bd6c9">pdParserWindow</a>;
-<a name="l00277"></a>00277 
-<a name="l00278"></a>00278             <a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* newWnd = <a class="code" href="classqtpd_1_1_patch_window.html#a465802c46cfee0432f72284319faf1d3">PatchWindow::newWindow</a>();
-<a name="l00279"></a>00279             <a class="code" href="classqtpd_1_1_file_parser.html#a5dc01b5bbec80d216ce14596ca0bd6c9">pdParserWindow</a> = newWnd;
-<a name="l00280"></a>00280 
-<a name="l00281"></a>00281             <span class="keywordflow">if</span> (<a class="code" href="classqtpd_1_1_file_parser.html#ab7f750a51e76c8a60b90d1479796466a">pdParserPrevWindow</a>)
-<a name="l00282"></a>00282                 newWnd-&gt;setWindowTitle(<span class="stringliteral">&quot;&lt;subpatch&gt;&quot;</span>);
-<a name="l00283"></a>00283             <span class="comment">//            else</span>
-<a name="l00284"></a>00284             <span class="comment">//            {</span>
-<a name="l00285"></a>00285             <span class="comment">//            }</span>
-<a name="l00286"></a>00286             newWnd-&gt;show();   <span class="comment">//move to constructor? check for subcanvases the vis flag</span>
-<a name="l00287"></a>00287 
-<a name="l00288"></a>00288 
-<a name="l00289"></a>00289         }
-<a name="l00290"></a>00290 
-<a name="l00291"></a>00291         <span class="keywordflow">if</span> (atoms.at(0) == <span class="stringliteral">&quot;#X&quot;</span>)
-<a name="l00292"></a>00292         {
-<a name="l00293"></a>00293             QStringList msg = atoms;
-<a name="l00294"></a>00294             msg.removeFirst();
-<a name="l00295"></a>00295 
-<a name="l00296"></a>00296             <span class="keywordflow">if</span> (<a class="code" href="classqtpd_1_1_file_parser.html#a5dc01b5bbec80d216ce14596ca0bd6c9">pdParserWindow</a>)
-<a name="l00297"></a>00297             {
-<a name="l00298"></a>00298                 qDebug(<span class="stringliteral">&quot;X&quot;</span>);
-<a name="l00299"></a>00299                 <a class="code" href="classqtpd_1_1_file_parser.html#aae900841ee5ecd47583f72528ab1a289" title="parses QStringLists of atoms to canvas - creates objects etc">FileParser::stringToCanvas</a>(<a class="code" href="classqtpd_1_1_file_parser.html#a5dc01b5bbec80d216ce14596ca0bd6c9">pdParserWindow</a>-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>, msg);
-<a name="l00300"></a>00300             }
-<a name="l00301"></a>00301             <span class="keywordflow">else</span>
-<a name="l00302"></a>00302             {
-<a name="l00303"></a>00303                 qDebug(<span class="stringliteral">&quot;parser error - no canvas&quot;</span>);
+<a name="l00226"></a>00226                                 <span class="keywordflow">else</span>
+<a name="l00227"></a>00227                                 {
+<a name="l00228"></a>00228                                     qDebug(<span class="stringliteral">&quot;list error&quot;</span>);
+<a name="l00229"></a>00229                                 }
+<a name="l00230"></a>00230 
+<a name="l00231"></a>00231 
+<a name="l00232"></a>00232 
+<a name="l00233"></a>00233                             }
+<a name="l00234"></a>00234                             <span class="keywordflow">else</span>
+<a name="l00235"></a>00235                             {
+<a name="l00236"></a>00236                                 <span class="comment">// add dummy object to keep connections</span>
+<a name="l00237"></a>00237 
+<a name="l00238"></a>00238                                 <span class="keywordflow">if</span> (list.size()&gt;2)
+<a name="l00239"></a>00239                                 {
+<a name="l00240"></a>00240                                     QString objname;
+<a name="l00241"></a>00241                                     QString msgname;
+<a name="l00242"></a>00242                                     QPoint pos;
+<a name="l00243"></a>00243 
+<a name="l00244"></a>00244                                     pos.setX(((QString)list.value(1)).toFloat());
+<a name="l00245"></a>00245                                     pos.setY(((QString)list.value(2)).toFloat());
+<a name="l00246"></a>00246 
+<a name="l00247"></a>00247                                     <span class="comment">//lol</span>
+<a name="l00248"></a>00248                                     QStringList objList = list;
+<a name="l00249"></a>00249                                     objList.removeAt(1);
+<a name="l00250"></a>00250                                     objList.removeAt(1);
+<a name="l00251"></a>00251 
+<a name="l00252"></a>00252                                     objname = objList.join(<span class="stringliteral">&quot; &quot;</span>);
+<a name="l00253"></a>00253 
+<a name="l00254"></a>00254                                     qDebug() &lt;&lt; <span class="stringliteral">&quot;objname&quot;</span> &lt;&lt; objname;
+<a name="l00255"></a>00255                                     <span class="comment">//temporary</span>
+<a name="l00256"></a>00256                                     <span class="comment">//cmcanvas-&gt;createBox(objname.toStdString(), pos);</span>
+<a name="l00257"></a>00257                                     cmcanvas-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a74125b9039d694a8d191ef438cd15dbd" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.obj&quot;</span>, objname.toStdString(), pos);
+<a name="l00258"></a>00258 
+<a name="l00259"></a>00259                                 }
+<a name="l00260"></a>00260 
+<a name="l00261"></a>00261                             }
+<a name="l00262"></a>00262     }
+<a name="l00263"></a>00263 
+<a name="l00268"></a><a class="code" href="classqtpd_1_1_file_parser.html#ae09cab80a56d87bc9dabe76e89b8f4ce">00268</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_file_parser.html#ae09cab80a56d87bc9dabe76e89b8f4ce" title="checks first atoms (&quot;#N&quot;, &quot;#X&quot; etc) and sends QStringList">parseString</a>(QString line)
+<a name="l00269"></a>00269     {
+<a name="l00270"></a>00270         QStringList atoms = line.split( <span class="stringliteral">&quot; &quot;</span> );
+<a name="l00271"></a>00271 
+<a name="l00272"></a>00272         atoms.last() = atoms.last().remove(<span class="stringliteral">&quot;;&quot;</span>);
+<a name="l00273"></a>00273         <span class="comment">//switch (atoms.at(0))</span>
+<a name="l00274"></a>00274 
+<a name="l00275"></a>00275         <span class="keywordflow">if</span> (atoms.at(0) == <span class="stringliteral">&quot;#N&quot;</span>)
+<a name="l00276"></a>00276         {
+<a name="l00277"></a>00277             QStringList msg = atoms;
+<a name="l00278"></a>00278             msg.removeFirst();
+<a name="l00279"></a>00279 
+<a name="l00280"></a>00280             <a class="code" href="classqtpd_1_1_file_parser.html#ab7f750a51e76c8a60b90d1479796466a">pdParserPrevWindow</a> = <a class="code" href="classqtpd_1_1_file_parser.html#a5dc01b5bbec80d216ce14596ca0bd6c9">pdParserWindow</a>;
+<a name="l00281"></a>00281 
+<a name="l00282"></a>00282             <a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* newWnd = <a class="code" href="classqtpd_1_1_patch_window.html#a465802c46cfee0432f72284319faf1d3">PatchWindow::newWindow</a>();
+<a name="l00283"></a>00283             <a class="code" href="classqtpd_1_1_file_parser.html#a5dc01b5bbec80d216ce14596ca0bd6c9">pdParserWindow</a> = newWnd;
+<a name="l00284"></a>00284 
+<a name="l00285"></a>00285             <span class="keywordflow">if</span> (<a class="code" href="classqtpd_1_1_file_parser.html#ab7f750a51e76c8a60b90d1479796466a">pdParserPrevWindow</a>)
+<a name="l00286"></a>00286                 newWnd-&gt;setWindowTitle(<span class="stringliteral">&quot;&lt;subpatch&gt;&quot;</span>);
+<a name="l00287"></a>00287             <span class="comment">//            else</span>
+<a name="l00288"></a>00288             <span class="comment">//            {</span>
+<a name="l00289"></a>00289             <span class="comment">//            }</span>
+<a name="l00290"></a>00290             newWnd-&gt;show();   <span class="comment">//move to constructor? check for subcanvases the vis flag</span>
+<a name="l00291"></a>00291 
+<a name="l00292"></a>00292 
+<a name="l00293"></a>00293         }
+<a name="l00294"></a>00294 
+<a name="l00295"></a>00295         <span class="keywordflow">if</span> (atoms.at(0) == <span class="stringliteral">&quot;#X&quot;</span>)
+<a name="l00296"></a>00296         {
+<a name="l00297"></a>00297             QStringList msg = atoms;
+<a name="l00298"></a>00298             msg.removeFirst();
+<a name="l00299"></a>00299 
+<a name="l00300"></a>00300             <span class="keywordflow">if</span> (<a class="code" href="classqtpd_1_1_file_parser.html#a5dc01b5bbec80d216ce14596ca0bd6c9">pdParserWindow</a>)
+<a name="l00301"></a>00301             {
+<a name="l00302"></a>00302                 qDebug(<span class="stringliteral">&quot;X&quot;</span>);
+<a name="l00303"></a>00303                 <a class="code" href="classqtpd_1_1_file_parser.html#aae900841ee5ecd47583f72528ab1a289" title="parses QStringLists of atoms to canvas - creates objects etc">FileParser::stringToCanvas</a>(<a class="code" href="classqtpd_1_1_file_parser.html#a5dc01b5bbec80d216ce14596ca0bd6c9">pdParserWindow</a>-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>, msg);
 <a name="l00304"></a>00304             }
-<a name="l00305"></a>00305         }
-<a name="l00306"></a>00306         <span class="comment">//TODO</span>
-<a name="l00307"></a>00307     }
-<a name="l00308"></a>00308 
-<a name="l00313"></a><a class="code" href="classqtpd_1_1_file_parser.html#aefb0a28455be5a6bae8a5fdba01f18e6">00313</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_file_parser.html#aefb0a28455be5a6bae8a5fdba01f18e6" title="opens file, converts to QStrings, calls &#39;parseString&#39;">open</a>(QString fname)
-<a name="l00314"></a>00314     {
-<a name="l00315"></a>00315         QFile f(fname);
-<a name="l00316"></a>00316         f.open(QIODevice::ReadOnly);
-<a name="l00317"></a>00317 
-<a name="l00318"></a>00318         QStringList stringList;
-<a name="l00319"></a>00319 
-<a name="l00320"></a>00320         <a class="code" href="classqtpd_1_1_file_parser.html#a5dc01b5bbec80d216ce14596ca0bd6c9">pdParserWindow</a> = 0;
-<a name="l00321"></a>00321         <a class="code" href="classqtpd_1_1_file_parser.html#ab7f750a51e76c8a60b90d1479796466a">pdParserPrevWindow</a> = 0;
-<a name="l00322"></a>00322         <a class="code" href="classqtpd_1_1_file_parser.html#ab7dc8008ff768523c4633c29f8c030d2">pdParserFileName</a> = fname.toStdString();
+<a name="l00305"></a>00305             <span class="keywordflow">else</span>
+<a name="l00306"></a>00306             {
+<a name="l00307"></a>00307                 qDebug(<span class="stringliteral">&quot;parser error - no canvas&quot;</span>);
+<a name="l00308"></a>00308             }
+<a name="l00309"></a>00309         }
+<a name="l00310"></a>00310         <span class="comment">//TODO</span>
+<a name="l00311"></a>00311     }
+<a name="l00312"></a>00312 
+<a name="l00317"></a><a class="code" href="classqtpd_1_1_file_parser.html#aefb0a28455be5a6bae8a5fdba01f18e6">00317</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_file_parser.html#aefb0a28455be5a6bae8a5fdba01f18e6" title="opens file, converts to QStrings, calls &#39;parseString&#39;">open</a>(QString fname)
+<a name="l00318"></a>00318     {
+<a name="l00319"></a>00319         QFile f(fname);
+<a name="l00320"></a>00320         f.open(QIODevice::ReadOnly);
+<a name="l00321"></a>00321 
+<a name="l00322"></a>00322         QStringList stringList;
 <a name="l00323"></a>00323 
-<a name="l00324"></a>00324         QTextStream textStream(&amp;f);
-<a name="l00325"></a>00325         <span class="keywordflow">while</span> (<span class="keyword">true</span>)
-<a name="l00326"></a>00326         {
-<a name="l00327"></a>00327             QString line = textStream.readLine();
-<a name="l00328"></a>00328             <span class="keywordflow">if</span> (line.isNull())
-<a name="l00329"></a>00329                 <span class="keywordflow">break</span>;
-<a name="l00330"></a>00330             <span class="keywordflow">else</span>
-<a name="l00331"></a>00331             {
-<a name="l00332"></a>00332                 stringList.append(line);
-<a name="l00333"></a>00333                 qDebug(<span class="stringliteral">&quot;* %s&quot;</span>, line.toStdString().c_str());
-<a name="l00334"></a>00334                 <span class="comment">//</span>
-<a name="l00335"></a>00335                 <a class="code" href="classqtpd_1_1_file_parser.html#ae09cab80a56d87bc9dabe76e89b8f4ce" title="checks first atoms (&quot;#N&quot;, &quot;#X&quot; etc) and sends QStringList">FileParser::parseString</a>(line);
-<a name="l00336"></a>00336 
-<a name="l00337"></a>00337             }
-<a name="l00338"></a>00338         }
-<a name="l00339"></a>00339         f.close();
+<a name="l00324"></a>00324         <a class="code" href="classqtpd_1_1_file_parser.html#a5dc01b5bbec80d216ce14596ca0bd6c9">pdParserWindow</a> = 0;
+<a name="l00325"></a>00325         <a class="code" href="classqtpd_1_1_file_parser.html#ab7f750a51e76c8a60b90d1479796466a">pdParserPrevWindow</a> = 0;
+<a name="l00326"></a>00326         <a class="code" href="classqtpd_1_1_file_parser.html#ab7dc8008ff768523c4633c29f8c030d2">pdParserFileName</a> = fname.toStdString();
+<a name="l00327"></a>00327 
+<a name="l00328"></a>00328         QTextStream textStream(&amp;f);
+<a name="l00329"></a>00329         <span class="keywordflow">while</span> (<span class="keyword">true</span>)
+<a name="l00330"></a>00330         {
+<a name="l00331"></a>00331             QString line = textStream.readLine();
+<a name="l00332"></a>00332             <span class="keywordflow">if</span> (line.isNull())
+<a name="l00333"></a>00333                 <span class="keywordflow">break</span>;
+<a name="l00334"></a>00334             <span class="keywordflow">else</span>
+<a name="l00335"></a>00335             {
+<a name="l00336"></a>00336                 stringList.append(line);
+<a name="l00337"></a>00337                 qDebug(<span class="stringliteral">&quot;* %s&quot;</span>, line.toStdString().c_str());
+<a name="l00338"></a>00338                 <span class="comment">//</span>
+<a name="l00339"></a>00339                 <a class="code" href="classqtpd_1_1_file_parser.html#ae09cab80a56d87bc9dabe76e89b8f4ce" title="checks first atoms (&quot;#N&quot;, &quot;#X&quot; etc) and sends QStringList">FileParser::parseString</a>(line);
 <a name="l00340"></a>00340 
-<a name="l00341"></a>00341     }
-<a name="l00342"></a>00342 };
-<a name="l00343"></a>00343 }
+<a name="l00341"></a>00341             }
+<a name="l00342"></a>00342         }
+<a name="l00343"></a>00343         f.close();
 <a name="l00344"></a>00344 
-<a name="l00345"></a>00345 <span class="preprocessor">#endif // CM_FILEPARSER_H</span>
+<a name="l00345"></a>00345     }
+<a name="l00346"></a>00346 };
+<a name="l00347"></a>00347 }
+<a name="l00348"></a>00348 
+<a name="l00349"></a>00349 <span class="preprocessor">#endif // CM_FILEPARSER_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -423,7 +427,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 14 2017 19:07:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Mar 14 2017 20:23:24 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -172,6 +172,10 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets object box error flag  <a href="#abc5b87789a2cc65d9d74d0ca2b6b0bdf"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a5eb400ac24c258c7c567cffe7f6addcb">asPdFileString</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns object's text for client-based file saving  <a href="#a5eb400ac24c258c7c567cffe7f6addcb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a36205e7834e8ee65fd86ab3546a4488d">setPdObjectName</a> (std::string name)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QMainWindow *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#aadb86b0313ec0575354e7e0a40ef0ff1">subpatchWindow</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">temporary - remove later  <a href="#aadb86b0313ec0575354e7e0a40ef0ff1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#aab273ef9fd115cb87544b398975ca4c1">setSubpatchWindow</a> (QMainWindow *cwindow)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a0590d2f5ec52a3010373b7f4fc19c610">setEditModeRef</a> (<a class="el" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a">t_editMode</a> *canvasEditMode)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets pointer to edit mode flag value in parent canvas  <a href="#a0590d2f5ec52a3010373b7f4fc19c610"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a3de7a23b299266ae217a9de648be0f69">resizeEvent</a> (QResizeEvent *event)</td></tr>
@@ -181,6 +185,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">set secondary 'minimum width' value - used for object box resize  <a href="#aaf3ec64e20e23bd1a6e98e40e207b9a5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ac1d937fa3ee566a10ae183ab8e40fd79">minimumBoxWidth</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get secondary 'minimum width' value - used for object box resize  <a href="#ac1d937fa3ee566a10ae183ab8e40fd79"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ae171698b1e32bf47865354dcf29ca376">~UIObject</a> ()</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>base class for all object boxes - standard and special </p>
@@ -195,6 +200,22 @@ Public Member Functions</h2></td></tr>
           <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_widget.html">UIWidget</a> *&#160;</td>
           <td class="paramname"><em>parent</em> = <code>0</code></td><td>)</td>
           <td><code> [explicit]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae171698b1e32bf47865354dcf29ca376"></a><!-- doxytag: member="qtpd::UIObject::~UIObject" ref="ae171698b1e32bf47865354dcf29ca376" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqtpd_1_1_u_i_object.html#ae171698b1e32bf47865354dcf29ca376">qtpd::UIObject::~UIObject</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -270,7 +291,7 @@ Public Member Functions</h2></td></tr>
 <p>returns object's text for client-based file saving </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Reimplemented in <a class="el" href="classqtpd_1_1_canvas.html#a717fda819ac6e2fd85b44ac8221b71fb">qtpd::Canvas</a>, <a class="el" href="classqtpd_1_1_u_i_message.html#a57424e0098d84cf1fa667a8451d7f392">qtpd::UIMessage</a>, <a class="el" href="classqtpd_1_1_u_i_toggle.html#a5a1fe78ba27074bee14e46e712ba3c31">qtpd::UIToggle</a>, <a class="el" href="classqtpd_1_1_u_i_float.html#ae4f091c6565095c7fa1418b51e4f574d">qtpd::UIFloat</a>, <a class="el" href="classqtpd_1_1_u_i_bang.html#a049b3995cf06d5f07ba2a168ee64bf86">qtpd::UIBang</a>, and <a class="el" href="classqtpd_1_1_u_i_text.html#a859eeb8404dc3461f16725b1a8c2bdc6">qtpd::UIText</a>.</p>
+<p>Reimplemented in <a class="el" href="classqtpd_1_1_canvas.html#a717fda819ac6e2fd85b44ac8221b71fb">qtpd::Canvas</a>.</p>
 
 </div>
 </div>
@@ -765,6 +786,59 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a36205e7834e8ee65fd86ab3546a4488d"></a><!-- doxytag: member="qtpd::UIObject::setPdObjectName" ref="a36205e7834e8ee65fd86ab3546a4488d" args="(std::string name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_object.html#a36205e7834e8ee65fd86ab3546a4488d">qtpd::UIObject::setPdObjectName</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aab273ef9fd115cb87544b398975ca4c1"></a><!-- doxytag: member="qtpd::UIObject::setSubpatchWindow" ref="aab273ef9fd115cb87544b398975ca4c1" args="(QMainWindow *cwindow)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_object.html#aab273ef9fd115cb87544b398975ca4c1">qtpd::UIObject::setSubpatchWindow</a> </td>
+          <td>(</td>
+          <td class="paramtype">QMainWindow *&#160;</td>
+          <td class="paramname"><em>cwindow</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aadb86b0313ec0575354e7e0a40ef0ff1"></a><!-- doxytag: member="qtpd::UIObject::subpatchWindow" ref="aadb86b0313ec0575354e7e0a40ef0ff1" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMainWindow* <a class="el" href="classqtpd_1_1_u_i_object.html#aadb86b0313ec0575354e7e0a40ef0ff1">qtpd::UIObject::subpatchWindow</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>temporary - remove later </p>
+<p>nonzero pointer for different drawing </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/travis/build/njazz/qtpd/qtpd_gui/<a class="el" href="cm__object_8h_source.html">cm_object.h</a></li>
 <li>/home/travis/build/njazz/qtpd/qtpd_gui/<a class="el" href="cm__object_8cpp.html">cm_object.cpp</a></li>
@@ -787,7 +861,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 14 2017 19:07:43 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Mar 14 2017 20:23:25 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

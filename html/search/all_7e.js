@@ -9,5 +9,5 @@ var searchData=
   ['_7enameddatadict',['~NamedDataDict',['../classceammc_1_1_named_data_dict.html#a93701b3dc7f3c34c68a7e28618835886',1,'ceammc::NamedDataDict']]],
   ['_7epdui',['~PdUI',['../classceammc_1_1faust_1_1_pd_u_i.html#a4cf84384b2b74b9b95b68d25f9d724d6',1,'ceammc::faust::PdUI']]],
   ['_7eproperty',['~Property',['../classceammc_1_1_property.html#aabee32674d11320f09fc085d4892f16a',1,'ceammc::Property']]],
-  ['_7euibox',['~UIBox',['../classqtpd_1_1_u_i_box.html#a70bbd1a7e70b45bad6668a59087ccfce',1,'qtpd::UIBox']]]
+  ['_7euiobject',['~UIObject',['../classqtpd_1_1_u_i_object.html#ae171698b1e32bf47865354dcf29ca376',1,'qtpd::UIObject']]]
 ];
