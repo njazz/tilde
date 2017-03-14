@@ -19,8 +19,8 @@ DEFINES += QT_DEPRECATED_WARNINGS \
     APPLE \
     PD \
     HAVE_UNISTD_H \
-    USEAPI_PORTAUDIO
-#    THREAD_LOCKING
+    USEAPI_PORTAUDIO \
+    THREAD_LOCKING
 
 
 # You can also make your code fail to compile if you use deprecated APIs.

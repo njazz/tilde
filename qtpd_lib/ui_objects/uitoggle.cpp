@@ -26,7 +26,6 @@ typedef struct _ui_toggle {
 
     t_symbol* s;
 
-    //AtomList* msg;
     bool value;
 
     t_outlet *out1;
@@ -79,17 +78,9 @@ static void uitoggle_bang(t_ui_toggle* x) // t_symbol *s, int argc, t_atom* argv
     if(x->updateUI)
         x->updateUI(x->uiobj, AtomList(float(x->value)));
 
-//    if (x->msg->size())
-//        x->msg->output(x->out1);
-//    else
-//        outlet_bang(x->out1);
 }
 
-//static void uitoggle_update(t_ui_toggle* x, t_symbol *s, int argc, t_atom* argv)
-//{
-//    uitoggle_set(x,s,argc,argv);
-//    uitoggle_bang(x);
-//}
+
 
 ///////
 
@@ -135,8 +126,6 @@ extern "C" void setup_ui0x2etoggle()
     
     class_addmethod(ui_toggle_class, (t_method)uitoggle_set, &s_anything, A_GIMME, 0);
     class_addmethod(ui_toggle_class, (t_method)uitoggle_bang, &s_bang, A_NULL, 0);
-
-//    class_addmethod(ui_toggle_class, (t_method)uitoggle_update, gensym("_update"), A_NULL, 0);
 
     class_setsavefn(ui_toggle_class, uitoggle_save);
     

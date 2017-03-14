@@ -50,7 +50,7 @@ static void uifloat_set(t_ui_float* x, t_symbol *s, int argc, t_atom* argv)
     if (argc)
         x->val = AtomList(argc,argv).at(0).asFloat();
 
-    post ("msg");
+    //post ("msg");
 
     AtomList msg = AtomList(Atom(x->val));
 

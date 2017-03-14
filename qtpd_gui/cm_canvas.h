@@ -1244,7 +1244,7 @@ public:
 
     }
 
-signals:
+
 
 public slots:
 

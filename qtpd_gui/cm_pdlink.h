@@ -191,7 +191,7 @@ class pdLib
     /// \brief connects to print hook function
     /// \param h - pointer to function
     ///
-    static void setprinthook(t_printhook h){cmp_setprinthook(h);}
+    static void setPrintHook(t_printhook h){cmp_setprinthook(h);}
 
     #pragma mark -
 

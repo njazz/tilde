@@ -43,7 +43,6 @@ public:
         else
         {
             QPoint pos = QPoint(0,0);
-            //new_obj = cmp_create_message(pdCanvas, message, pos.x(), pos.y());
             new_obj = cmp_create_object(pdCanvas, message, pos.x(), pos.y());
         }
 
@@ -56,9 +55,6 @@ public:
         {
             qDebug("Error: no such object %s",  message.c_str());
         }
-        //b->setFixedSize(20,20);
-
-        //b->setPdMessage("");
 
         b->addInlet();
         b->addOutlet();
@@ -141,16 +137,6 @@ public:
 
     void mouseReleaseEvent(QMouseEvent *)
     {
-        //this->selected_ = false;
-
-        //if (!this->getEditMode())
-        //        {
-        //            this->clicked_ = false;
-        //            this->repaint();
-        //        }
-
-
-
     }
 
     void mouseMoveEvent(QMouseEvent *event)
@@ -176,22 +162,12 @@ public:
 
     ///////
 
-    //    void setPdMessage(std::string message)
-    //    {
-    //        this->setObjectData(message);
-
-    //    }
 
     static void updateUI(void* uiobj, ceammc::AtomList )
     {
         qDebug("update ui");
         UIBang *x = (UIBang*)uiobj;
 
-        //        std::string obj_data;
-        //        for (int i=0; i<msg.size();i++)
-        //        {
-        //            obj_data += msg.at(i).asString() + " ";
-        //        }
         if(!x->clicked_)
         {
             x->timerStart();
@@ -218,10 +194,14 @@ public:
     void timerStart()
     {
         {
-            this->timer_->start(100);
+            //this->timer_->start(100);
+            emit setBangTimer(100);
         }
 
     }
+
+signals:
+    void setBangTimer(int msec);
 
 private slots:
     void timerAction()
@@ -229,6 +209,7 @@ private slots:
         this->clicked_ = false;
         this->repaint();
     }
+
 
 };
 

@@ -72,8 +72,8 @@ public:
     }
 
     void paintEvent(QPaintEvent *)
-    {    QPainter p(this);
-
+    {
+        QPainter p(this);
 
          QPolygon poly;
           poly << QPoint(0,0) <<

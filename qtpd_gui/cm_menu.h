@@ -16,7 +16,7 @@ class BaseMenu : public QObject
 public:
     explicit BaseMenu(QObject *parent = 0);
 
-signals:
+//signals:
 
 public slots:
 

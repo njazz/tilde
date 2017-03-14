@@ -28,9 +28,12 @@ UIBang::UIBang(UIObject *parent) : UIObject(parent)
 
     connect(this->timer_, &QTimer::timeout, this, &UIBang::timerAction);
 
+    connect(this, SIGNAL(setBangTimer(int)), this->timer_, SLOT(start(int)));
 
 
 }
+
+
 
 
 }
