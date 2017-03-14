@@ -86,12 +86,18 @@ public:
 
     int outletIndex()
     {
-        return ((Port*)this->out1_)->portIndex;
+        if ((Port*)this->out1_)
+            return ((Port*)this->out1_)->portIndex;
+        else
+            return -1;
     }
 
     int inletIndex()
     {
-        return ((Port*)this->in2_)->portIndex;
+        if ((Port*)this->in2_)
+            return ((Port*)this->in2_)->portIndex;
+        else
+            return -1;
     }
 
     ////

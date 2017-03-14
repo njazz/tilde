@@ -1144,10 +1144,19 @@ public:
                 t_object* obj1 =(t_object*) p->obj1()->pdObject();
                 t_object* obj2 =(t_object*) p->obj2()->pdObject();
 
-                int out1 = p->outletIndex();
-                int in2 = p->inletIndex();
+                if (obj1 && obj2)
+                {
+                    int out1 = p->outletIndex();
+                    int in2 = p->inletIndex();
 
-                cmp_delete_patchcord(obj1,out1,obj2,in2);
+                    if ( (out1>=0) && (in2>=0) )
+                        cmp_delete_patchcord(obj1,out1,obj2,in2);
+                    else
+                        qDebug("object error. didn't delete pd patchcord");
+                }
+                else
+                    qDebug("object error. didn't delete pd patchcord");
+
                 it = this->data_.patchcords_.erase(it);
             }
             else

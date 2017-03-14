@@ -308,7 +308,7 @@ public:
 
             if (pdParserWindow)
             {
-                qDebug("X");
+                //qDebug("X");
                 FileParser::stringToCanvas(pdParserWindow->canvas, msg);
             }
             else
