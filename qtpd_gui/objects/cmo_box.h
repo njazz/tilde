@@ -142,9 +142,11 @@ public:
 
         if ( (this->getEditMode()==em_Unlocked) && this->isSelected())
         {
-            this->editor_->setText(QString(this->objectData().c_str()));
-            this->editor_->show();
-            this->editor_->setFocus();
+//            this->editor_->setText(QString(this->objectData().c_str()));
+//            this->editor_->show();
+//            this->editor_->setFocus();
+
+            emit editObject();
         }
 
         emit selectBox(this);
@@ -204,6 +206,8 @@ signals:
 
     void mouseMoved();
     void rightClicked();
+
+    void editObject();
 
 
 private slots:

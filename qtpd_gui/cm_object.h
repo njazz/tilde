@@ -369,6 +369,8 @@ public:
         return this->minimumBoxWidth_;
     }
 
+
+
 public slots:
     void resizeBox(int dx);
 

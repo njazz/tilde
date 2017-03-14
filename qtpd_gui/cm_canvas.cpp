@@ -49,6 +49,12 @@ Canvas::Canvas(UIObject *parent) : UIObject(parent)
     connect(this->editor_,&QLineEdit::textEdited, this,&Canvas::editorChanged);
 
 
+    objectMaker_ = new ObjectMaker((QLineEdit*)this);
+    objectMaker_->hide();
+
+    //
+    this->setMinimumBoxWidth(40);
+
 
 
 }

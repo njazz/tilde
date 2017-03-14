@@ -16,7 +16,7 @@ typedef std::vector<Patchcord*> patchcordVec;
 typedef struct structCanvasData
 {
     objectVec boxes;
-    patchcordVec patchcords;
+    patchcordVec patchcords_;
 
 } tCanvasData;
 

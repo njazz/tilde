@@ -75,7 +75,7 @@ private:
 
 
 
-    ObjectMaker* objectMaker;
+    //ObjectMaker* objectMaker;
 
 private slots:
     //void open();
@@ -286,18 +286,26 @@ public:
 
     ///////
 
+
+    void resizeEvent(QResizeEvent *event)
+    {
+        //fix later
+        this->canvas->setMinimumSize(this->size());
+    }
+
+    /////
     void newObjectBox()
     {
 
         if (this->canvas->getEditMode() != em_Locked)
         {
-            this->objectMaker->move(100,50);
-            this->objectMaker->setFixedSize(60,20);
-            this->objectMaker->setFocus();
+            this->canvas->objectMaker()->move(100,50);
+            this->canvas->objectMaker()->setFixedSize(60,20);
+            this->canvas->objectMaker()->setFocus();
 
-            this->canvas->dragObject = this->objectMaker;
-            this->objectMaker->setText(QString(""));
-            this->objectMaker->show();
+            this->canvas->dragObject = this->canvas->objectMaker();
+            this->canvas->objectMaker()->setText(QString(""));
+            this->canvas->objectMaker()->show();
         }
 
     }
@@ -448,7 +456,7 @@ public:
 
         if (event->key() == Qt::Key_Escape)
         {
-            this->objectMaker->setText("");
+            this->canvas->objectMaker()->setText("");
             this->objectMakerDone();
 
             this->canvas->cancelPatchcord();
@@ -463,8 +471,21 @@ public:
         }
     }
 
+public slots:
+    std::pair<QMainWindow*, qtpd::UIObject*> s_createSubpatchWindow()
+    {
+        t_canvas* newPdCanvas = cmp_newpatch();
+
+        PatchWindow *subPatch = PatchWindow::newSubpatch((t_canvas*)newPdCanvas);
+        Canvas *newCanvas = subPatch->canvas;
+
+        return std::pair<QMainWindow*, qtpd::UIObject*>(subPatch,(qtpd::UIObject*)newCanvas);
+
+    };
 
 };
+
+
 }
 
 #endif // CM_PATCHWINDOW_H

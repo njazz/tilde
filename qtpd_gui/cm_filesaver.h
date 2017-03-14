@@ -47,14 +47,14 @@ public:
         }
 
         //patchcords
-        std::vector<Patchcord*> patchcords = canvas->getPatchcords();
+        std::vector<Patchcord*> patchcords = canvas->patchcords();
         std::vector<Patchcord*>::iterator it2;
 
         for (it2 = patchcords.begin(); it2!= patchcords.end(); ++it2)
         {
             // check for subpatches
             out1 = "#X connect ";
-            out1 += canvas->getPatchcordAsString(*it2);
+            out1 += canvas->patchcordAsPdFileString(*it2);
             out1 +=";\r\n";
 
             file->write(out1.c_str(),out1.size());

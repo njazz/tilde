@@ -16,6 +16,8 @@
 
 //#include "cm_canvas_types.h"
 
+
+
 namespace qtpd
 {
 
@@ -82,6 +84,8 @@ private:
     // !Canvas
     QLineEdit* editor_;
 
+    ObjectMaker *objectMaker_;
+
     Q_OBJECT
 
 public:
@@ -111,6 +115,8 @@ public:
         ret->setDrawStyle(dStyle);
 
         ret->setMinimumWidth(40);
+
+        //ret->objectMaker()->hide();
 
         return ret;
 
@@ -222,24 +228,24 @@ public:
     ///
     void paintPatchcords()
     {
-        for (int i=0; i< (int)this->data_.patchcords.size(); i++)
+        for (int i=0; i< (int)this->data_.patchcords_.size(); i++)
         {
             QPainter p(this);
 
-            QColor b_pc_color = (((Patchcord*)this->data_.patchcords.at(i))->patchcordType() == cm_pt_signal) ? QColor(128, 160, 192) : QColor(0, 0, 0);
+            QColor b_pc_color = (((Patchcord*)this->data_.patchcords_.at(i))->patchcordType() == cm_pt_signal) ? QColor(128, 160, 192) : QColor(0, 0, 0);
             // cleanup
-            QColor pc_color = ((Patchcord*)this->data_.patchcords.at(i))->mouseover ? QColor(255, 192, 0) : b_pc_color;
-            if (((Patchcord*)this->data_.patchcords.at(i))->selected) pc_color = QColor(0,192,255);
+            QColor pc_color = ((Patchcord*)this->data_.patchcords_.at(i))->mouseover ? QColor(255, 192, 0) : b_pc_color;
+            if (((Patchcord*)this->data_.patchcords_.at(i))->selected) pc_color = QColor(0,192,255);
 
             p.setRenderHint(QPainter::HighQualityAntialiasing, true);
-            p.setPen(QPen(pc_color, 1 + (((Patchcord*)this->data_.patchcords.at(i))->patchcordType() == cm_pt_signal) , Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p.setPen(QPen(pc_color, 1 + (((Patchcord*)this->data_.patchcords_.at(i))->patchcordType() == cm_pt_signal) , Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
             //todo option
             //p.drawLine(((cm_patchcord*)this->data_.patchcords.at(i))->getStartPoint(), ((cm_patchcord*)this->data_.patchcords.at(i))->getEndPoint());
 
             QPainterPath path;
-            QPoint start = ((Patchcord*)this->data_.patchcords.at(i))->getStartPoint();
-            QPoint end = ((Patchcord*)this->data_.patchcords.at(i))->getEndPoint();
+            QPoint start = ((Patchcord*)this->data_.patchcords_.at(i))->startPoint();
+            QPoint end = ((Patchcord*)this->data_.patchcords_.at(i))->endPoint();
 
             QPoint b1 = QPoint(start.x() + (end.x() - start.x()) * .5, fabs(end.y() - start.y()) * .5 + start.y());
             QPoint b2 = QPoint(end.x() - (end.x() - start.x()) * .5, -fabs(end.y() - start.y()) * .5 + end.y());
@@ -287,10 +293,10 @@ public:
     bool hoverPatchcords(QPoint pos)
     {
         bool ret = false;
-        for (int i=0; i< (int)this->data_.patchcords.size(); i++)
+        for (int i=0; i< (int)this->data_.patchcords_.size(); i++)
         {
-            ((Patchcord*)this->data_.patchcords.at(i))->mouseover = ((Patchcord*)this->data_.patchcords.at(i))->hover(pos);
-            if (((Patchcord*)this->data_.patchcords.at(i))->mouseover) ret=true;
+            ((Patchcord*)this->data_.patchcords_.at(i))->mouseover = ((Patchcord*)this->data_.patchcords_.at(i))->hover(pos);
+            if (((Patchcord*)this->data_.patchcords_.at(i))->mouseover) ret=true;
         }
         return ret;
     }
@@ -302,9 +308,9 @@ public:
     void hoverPatchcordsOff()
     {
         //bool ret = false;
-        for (int i=0; i< (int)this->data_.patchcords.size(); i++)
+        for (int i=0; i< (int)this->data_.patchcords_.size(); i++)
         {
-            ((Patchcord*)this->data_.patchcords.at(i))->mouseover = false;// ((cm_patchcord*)this->data_.patchcords.at(i))->hover(pos);
+            ((Patchcord*)this->data_.patchcords_.at(i))->mouseover = false;// ((cm_patchcord*)this->data_.patchcords.at(i))->hover(pos);
 
         }
 
@@ -318,10 +324,10 @@ public:
     bool clickPatchcords(QPoint pos)
     {
         bool ret = false;
-        for (int i=0; i< (int)this->data_.patchcords.size(); i++)
+        for (int i=0; i< (int)this->data_.patchcords_.size(); i++)
         {
-            ((Patchcord*)this->data_.patchcords.at(i))->selected = ((Patchcord*)this->data_.patchcords.at(i))->hover(pos);
-            if (((Patchcord*)this->data_.patchcords.at(i))->selected) ret=true;
+            ((Patchcord*)this->data_.patchcords_.at(i))->selected = ((Patchcord*)this->data_.patchcords_.at(i))->hover(pos);
+            if (((Patchcord*)this->data_.patchcords_.at(i))->selected) ret=true;
         }
         return ret;
     }
@@ -805,19 +811,52 @@ public:
     ///
     UIObject* createObject(std::string uiObjectName, std::string objectData, QPoint pos)
     {
-        UIObject *obj = ObjectLoader::inst().createObject(uiObjectName, objectData, this->pdCanvas, (UIWidget*)this);
 
-        connect(obj,&UIMessage::selectBox, this, &Canvas::s_SelectBox);
-        connect(obj,&UIMessage::moveBox, this, &Canvas::s_MoveBox);
-        obj->setEditModeRef(&this->editMode);
-        obj->move(pos);
-        this->data_.boxes.push_back(obj);
+        QStringList atoms = QString(objectData.c_str()).split( " " );
 
-        obj->show();
+        //this is moved here to have all checks for special objects in one place
+        //(later - inlets/outlets)
+        if (atoms.count())
+        {
+            if((atoms.at(0) == "pd"))
+            {
+                //lol
+                std::pair<QMainWindow*, UIObject*> newPatch;
 
-        qDebug() << "create object: " << QString(uiObjectName.c_str()) << "@" << QString(std::to_string((long)this->pdCanvas).c_str());
+                newPatch = emit createSubpatchWindow();
 
-        return obj;
+                QMainWindow* subPatch = newPatch.first;
+                Canvas* newCanvas = (Canvas*)newPatch.second;
+
+                UIObject *b = this->createBoxForCanvas(newCanvas, objectData, pos);
+                ((UIBox*)b)->cmSubcanvas = (QMainWindow*)subPatch;
+
+//                this->dragObject = 0;
+//                this->objectMaker()->close();
+
+                qDebug("subpatch");
+
+                subPatch->show();
+                return b;
+            }
+        }
+        //else
+        {
+            UIObject *obj = ObjectLoader::inst().createObject(uiObjectName, objectData, this->pdCanvas, (UIWidget*)this);
+
+            connect(obj,&UIMessage::selectBox, this, &Canvas::s_SelectBox);
+            connect(obj,&UIMessage::moveBox, this, &Canvas::s_MoveBox);
+            obj->setEditModeRef(&this->editMode);
+            obj->move(pos);
+            this->data_.boxes.push_back(obj);
+
+            obj->show();
+
+            qDebug() << "create object: " << QString(uiObjectName.c_str()) << "@" << QString(std::to_string((long)this->pdCanvas).c_str());
+            return obj;
+        }
+
+
 
     }
 
@@ -924,7 +963,7 @@ public:
 
             qDebug("pdlib patchcord");
             cmp_patchcord((t_object*)obj1->pdObject(),outlet,(t_object*)obj2->pdObject(),inlet);
-            this->data_.patchcords.push_back(pc);
+            this->data_.patchcords_.push_back(pc);
         }
         else
             qDebug("canvas patchcord error");
@@ -980,10 +1019,10 @@ public:
     {
         //for //(int i=0;i<this->data_.patchcords.size();i++)
         std::vector<Patchcord*>::iterator it;
-        for (it=this->data_.patchcords.begin(); it!= this->data_.patchcords.end(); )
+        for (it=this->data_.patchcords_.begin(); it!= this->data_.patchcords_.end(); )
         {
             if ((*it)->connectsObject(obj))
-                it =this->data_.patchcords.erase(it);
+                it =this->data_.patchcords_.erase(it);
             else
                 ++it;
 
@@ -992,32 +1031,32 @@ public:
         this->repaint();
     }
 
-//    ////
-//    /// \brief delete object box
-//    /// \param box
-//    ///
-//    void deleteBox(UIObject* box)
-//    {
+    //    ////
+    //    /// \brief delete object box
+    //    /// \param box
+    //    ///
+    //    void deleteBox(UIObject* box)
+    //    {
 
-//        //TODO
-//        qDebug("delete %lu | %lu", (long)box, (long) box->pdObject());
+    //        //TODO
+    //        qDebug("delete %lu | %lu", (long)box, (long) box->pdObject());
 
-//        if (box->pdObject())
-//        {
-//            //NEEDS FIX
-//            if ((t_object*)(box->pdObject()))
-//                if (!box->errorBox())
-//                    cmp_deleteobject(this->pdCanvas, (t_object*)box->pdObject());
-//        }
-//        else
-//        {
-//            qDebug("didn't delete pd object");
-//        }
+    //        if (box->pdObject())
+    //        {
+    //            //NEEDS FIX
+    //            if ((t_object*)(box->pdObject()))
+    //                if (!box->errorBox())
+    //                    cmp_deleteobject(this->pdCanvas, (t_object*)box->pdObject());
+    //        }
+    //        else
+    //        {
+    //            qDebug("didn't delete pd object");
+    //        }
 
-//        this->deletePatchcordsFor(box);
+    //        this->deletePatchcordsFor(box);
 
-//        box->close();
-//    }
+    //        box->close();
+    //    }
 
     ////
     /// \brief delete all selected object boxes
@@ -1039,7 +1078,7 @@ public:
                 {
                     if (!box->errorBox())
                         cmp_deleteobject(this->pdCanvas, (t_object*)box->pdObject());
-                        box->setPdObject(0);
+                    box->setPdObject(0);
                 }
             }
             else
@@ -1068,20 +1107,20 @@ public:
         //cleanup
         //for (int i=0;i<this->data_.patchcords.size(); i++)
         std::vector<Patchcord*>::iterator it;
-        for (it=this->data_.patchcords.begin(); it!= this->data_.patchcords.end(); )
+        for (it=this->data_.patchcords_.begin(); it!= this->data_.patchcords_.end(); )
         {
             if ( (*it) -> selected )
             {
                 Patchcord*p = *it;
 
-                t_object* obj1 =(t_object*) p->getObj1()->pdObject();
-                t_object* obj2 =(t_object*) p->getObj2()->pdObject();
+                t_object* obj1 =(t_object*) p->obj1()->pdObject();
+                t_object* obj2 =(t_object*) p->obj2()->pdObject();
 
-                int out1 = p->getOutIdx();
-                int in2 = p->getInIdx();
+                int out1 = p->outletIndex();
+                int in2 = p->inletIndex();
 
                 cmp_delete_patchcord(obj1,out1,obj2,in2);
-                it = this->data_.patchcords.erase(it);
+                it = this->data_.patchcords_.erase(it);
             }
             else
                 ++it;
@@ -1179,7 +1218,7 @@ public:
     /// \brief returns vector of all object boxes - needed by filesaver
     /// \return
     ///
-    std::vector<UIObject*> getObjectBoxes()
+    objectVec getObjectBoxes()
     {
         return this->data_.boxes;
     }
@@ -1188,12 +1227,37 @@ public:
     /// \brief returns vector of all patchcords - needed by filesaver
     /// \return
     ///
-    std::vector<Patchcord*>getPatchcords()
+    patchcordVec patchcords()
     {
-        return this->data_.patchcords;
+        return this->data_.patchcords_;
     }
 
 
+    ////
+    /// \brief returns patchcords that are connected to specific object
+    /// \param obj
+    /// \return
+    ///
+    patchcordVec patchcordsForObject(UIObject* obj)
+    {
+        patchcordVec ret;
+
+        patchcordVec::iterator it;
+        for (it = data_.patchcords_.begin(); it != data_.patchcords_.end(); ++it)
+        {
+            if (
+                    (((Patchcord*)*it)->obj1() == obj)
+                    ||
+                    (((Patchcord*)*it)->obj2() == obj)
+                    )
+            {
+                ret.push_back(*it);
+            }
+        }
+
+        return ret;
+
+    }
     //    //
     //    / \brief converts object pointers to their numbers in canvas and returns pd string for filesaver
     //    / \param patchcord
@@ -1229,28 +1293,31 @@ public:
         return "#N canvas 0 0 400 300 10;\r\n";     //temporary
     }
 
+    ///////
+    ///
     /////
     /// \brief returns patchcord as pd string
+    /// \details move this later
     /// \param patchcord
     /// \return
     ///
-    std::string getPatchcordAsString(Patchcord* patchcord)
+    std::string patchcordAsPdFileString(Patchcord* pcord)
     {
         //TODO
 
 
-        int obj1i = this->findObjectIndex(patchcord->getObj1());
-        int obj2i = this->findObjectIndex(patchcord->getObj2());
+        int obj1i = this->findObjectIndex(pcord->obj1());
+        int obj2i = this->findObjectIndex(pcord->obj2());
 
         if ((obj1i>=0) && (obj2i>=0))
         {
             std::string ret;
 
             ret += std::to_string(obj1i) + " ";
-            ret += std::to_string(patchcord->getOutIdx()) + " ";
+            ret += std::to_string(pcord->outletIndex()) + " ";
 
             ret += std::to_string(obj2i) + " ";
-            ret += std::to_string(patchcord->getInIdx()) + " ";
+            ret += std::to_string(pcord->inletIndex()) + " ";
 
             return ret;
 
@@ -1258,6 +1325,42 @@ public:
         else qDebug ("patchcord to string error");
 
         return "";
+
+    }
+
+    structPatchcordNumbers patchcordAsNumbers(Patchcord* pcord)
+    {
+        //TODO
+
+        structPatchcordNumbers ret;
+
+        int obj1i = this->findObjectIndex(pcord->obj1());
+        int obj2i = this->findObjectIndex(pcord->obj2());
+
+        if ((obj1i>=0) && (obj2i>=0))
+        {
+            //std::string ret;
+
+            ret.obj1 = (obj1i);
+            ret.out1 =pcord->outletIndex();
+
+            ret.obj2 = (obj2i) ;
+            ret.in2 = pcord->inletIndex();
+
+
+
+        }
+        else
+        {
+            qDebug ("patchcord to string error");
+            ret.obj1 = 0;
+            ret.obj2 = 0;
+            ret.out1 = 0;
+            ret.in2 = 0;
+
+        }
+
+        return ret;
 
     }
 
@@ -1306,12 +1409,16 @@ public slots:
         this->repaint();
     }
 
+    ObjectMaker* objectMaker(){return objectMaker_;}
 
 private:
 
 private slots:
     void editorDone();
     void editorChanged();
+
+signals:
+    std::pair<QMainWindow*,qtpd::UIObject*> createSubpatchWindow();
 
 
 };

@@ -16,6 +16,8 @@ class ObjectMaker : public QLineEdit
 public:
     explicit ObjectMaker(QLineEdit *parent = 0);
 
+
+
 private slots:
     ////
     /// \brief resize to text

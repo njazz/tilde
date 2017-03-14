@@ -16,12 +16,18 @@ PatchWindow::PatchWindow()
     this->setCentralWidget(this->canvas);
 
     //TODO weird
-    this->objectMaker = new ObjectMaker((QLineEdit*)this->canvas);
+    //this->objectMaker = new ObjectMaker((QLineEdit*)this->canvas);
+
+
     //this->objectMaker->setParent(this->canvas);
-    connect(this->objectMaker,&ObjectMaker::returnPressed, this, &PatchWindow::objectMakerDone);
-    this->objectMaker->close();
+    connect(this->canvas->objectMaker(),&ObjectMaker::returnPressed, this, &PatchWindow::objectMakerDone);
+
+    this->canvas->objectMaker()->close();
 
     this->editModeAct->setChecked(true);
+
+    //connect subpatch creation routine
+    connect(this->canvas, &Canvas::createSubpatchWindow, this, &PatchWindow::s_createSubpatchWindow);
 }
 
 PatchWindow* PatchWindow::newWindow()
@@ -165,48 +171,46 @@ void PatchWindow::setFileName(QString fname)
 ///
 void PatchWindow::objectMakerDone()
 {
-    std::string obj_name = this->objectMaker->text().toStdString();
+    std::string obj_name = this->canvas->objectMaker()->text().toStdString();
 
     if (obj_name!="")
     {
         //UIBox* b = this->canvas->createBox(obj_name, this->objectMaker->pos());
 
-        QStringList atoms = QString(obj_name.c_str()).split( " " );
+        //QStringList atoms = QString(obj_name.c_str()).split( " " );
 
-        if (atoms.at(0) == "pd")
+//        if (atoms.at(0) == "pd")
+//        {
+//            //new
+
+//            t_canvas* newPdCanvas = cmp_newpatch();
+//            PatchWindow *subPatch = PatchWindow::newSubpatch((t_canvas*)newPdCanvas);
+
+
+//            UIObject *b = this->canvas->createBoxForCanvas(subPatch->canvas, obj_name, this->canvas->objectMaker()->pos());
+//            ((UIBox*)b)->cmSubcanvas = (QMainWindow*)subPatch;
+
+
+//            this->canvas->dragObject = 0;
+//            this->canvas->objectMaker()->close();
+
+
+//            qDebug("subpatch");
+
+
+//            subPatch->show();
+//        }
+//        else
         {
-            //fix here / replace with new canvas box
-            //UIObject *b = this->canvas->createObject("ui.obj", obj_name, this->objectMaker->pos());
+            UIObject *b = this->canvas->createObject("ui.obj", obj_name, this->canvas->objectMaker()->pos());
 
-            //new
-
-            t_canvas* newPdCanvas = cmp_newpatch();
-            PatchWindow *subPatch = PatchWindow::newSubpatch((t_canvas*)newPdCanvas);
-
-
-            UIObject *b = this->canvas->createBoxForCanvas(subPatch->canvas, obj_name, this->objectMaker->pos());
-            ((UIBox*)b)->cmSubcanvas = (QMainWindow*)subPatch;
-
-
-            this->canvas->dragObject = 0;
-            this->objectMaker->close();
-
-
-            qDebug("subpatch");
-
-
-            subPatch->show();
-        }
-        else
-        {
-            UIObject *b = this->canvas->createObject("ui.obj", obj_name, this->objectMaker->pos());
-            this->canvas->dragObject = 0;
-            this->objectMaker->close();
+                        this->canvas->dragObject = 0;
+                        this->canvas->objectMaker()->close();
 
 
             //subpatch
 
-            QStringList atoms = QString(obj_name.c_str()).split( " " );
+           // QStringList atoms = QString(obj_name.c_str()).split( " " );
         }
     }
 
