@@ -42,10 +42,10 @@ class Canvas : public UIObject
 {
 private:
     //todo move this to data class?
-//    objectVec objectBoxes;
-//    patchcordVec patchcords;
-//    objectVec selectionData_.boxes;
-//    patchcordVec selPatchcords;
+    //    objectVec objectBoxes;
+    //    patchcordVec patchcords;
+    //    objectVec selectionData_.boxes;
+    //    patchcordVec selPatchcords;
 
     //move here. these are global for all draw types (Canvas, Box)
     tCanvasDataPlus data_;
@@ -959,17 +959,17 @@ public:
     }
 
 
-//    ////unused?
-//    void deletePatchcord(Patchcord* pc)
-//    {
-//        // no repaint
+    //    ////unused?
+    //    void deletePatchcord(Patchcord* pc)
+    //    {
+    //        // no repaint
 
-//        //cleanup !!!
-//        patchcordVec::iterator it = std::find(this->data_.patchcords.begin(), this->data_.patchcords.end(), pc);
+    //        //cleanup !!!
+    //        patchcordVec::iterator it = std::find(this->data_.patchcords.begin(), this->data_.patchcords.end(), pc);
 
-//        if (it != this->data_.patchcords.end()) { this->data_.patchcords.erase(it); }
+    //        if (it != this->data_.patchcords.end()) { this->data_.patchcords.erase(it); }
 
-//    }
+    //    }
 
 
     ////
@@ -992,31 +992,32 @@ public:
         this->repaint();
     }
 
-    ////
-    /// \brief delete object box
-    /// \param box
-    ///
-    void deleteBox(UIObject* box)
-    {
+//    ////
+//    /// \brief delete object box
+//    /// \param box
+//    ///
+//    void deleteBox(UIObject* box)
+//    {
 
-        //TODO
+//        //TODO
+//        qDebug("delete %lu | %lu", (long)box, (long) box->pdObject());
 
-        if (box->pdObject())
-        {
-            //NEEDS FIX
-            if ((t_object*)(box->pdObject()))
-                if (!box->errorBox())
-                    cmp_deleteobject(this->pdCanvas, (t_object*)box->pdObject());
-        }
-        else
-        {
-            qDebug("didn't delete pd object");
-        }
+//        if (box->pdObject())
+//        {
+//            //NEEDS FIX
+//            if ((t_object*)(box->pdObject()))
+//                if (!box->errorBox())
+//                    cmp_deleteobject(this->pdCanvas, (t_object*)box->pdObject());
+//        }
+//        else
+//        {
+//            qDebug("didn't delete pd object");
+//        }
 
-        this->deletePatchcordsFor(box);
+//        this->deletePatchcordsFor(box);
 
-        box->close();
-    }
+//        box->close();
+//    }
 
     ////
     /// \brief delete all selected object boxes
@@ -1025,9 +1026,34 @@ public:
     {
         objectVec::iterator it;
         for (it = selectionData_.boxes.begin() ; it != selectionData_.boxes.end(); ++it)
+
         {
-            //((UIObject*) this->selectionData_.boxes.at(i))
-            this->deleteBox( *it  );
+            //
+            UIObject* box = *it;
+            qDebug("delete %lu | %lu", (long)box, (long) box->pdObject());
+
+            if (box->pdObject())
+            {
+                //NEEDS FIX
+                if ((t_object*)(box->pdObject()))
+                {
+                    if (!box->errorBox())
+                        cmp_deleteobject(this->pdCanvas, (t_object*)box->pdObject());
+                        box->setPdObject(0);
+                }
+            }
+            else
+            {
+                qDebug("didn't delete pd object");
+            }
+
+            this->deletePatchcordsFor(box);
+
+            box->close();
+
+            data_.boxes.erase(std::remove(data_.boxes.begin(), data_.boxes.end(), *it), data_.boxes.end());
+            //selectionData_.boxes.erase(std::remove(selectionData_.boxes.begin(), selectionData_.boxes.end(), *it), selectionData_.boxes.end());
+
         }
 
         selectionData_.boxes.clear();;
@@ -1168,11 +1194,11 @@ public:
     }
 
 
-//    //
-//    / \brief converts object pointers to their numbers in canvas and returns pd string for filesaver
-//    / \param patchcord
-//    / \return
-//    /
+    //    //
+    //    / \brief converts object pointers to their numbers in canvas and returns pd string for filesaver
+    //    / \param patchcord
+    //    / \return
+    //    /
 
 
     ////

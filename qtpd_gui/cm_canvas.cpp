@@ -10,6 +10,9 @@ Canvas::Canvas(UIObject *parent) : UIObject(parent)
     this->setAutoFillBackground(true);
     this->setPalette(Pal);
 
+    //test
+    this->setFixedSize(400,300);
+
     this->setMouseTracking(true);
 
     this->selFrame.active = false;
