@@ -631,8 +631,8 @@ Generating docs for compound /home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:
 /home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:556: warning: The following parameters of qtpd::Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas *canvas) are not documented:
   parameter 'pdObjectName'
 /home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:122: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addInlet()
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:150: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addOutlet()
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:353: warning: argument 'w' of command @param is not found in the argument list of qtpd::UIObject::minimumBoxWidth()
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:152: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addOutlet()
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:363: warning: argument 'w' of command @param is not found in the argument list of qtpd::UIObject::minimumBoxWidth()
 /home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:75: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setInletsPos()
 /home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:99: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setOutletsPos()
 ceammc_gui::kRect...
@@ -679,6 +679,6 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-symbol cache used 1846/65536 hits=113921 misses=1846
-lookup cache used 3006/65536 hits=19110 misses=3203
+symbol cache used 1845/65536 hits=113931 misses=1845
+lookup cache used 3006/65536 hits=19131 misses=3203
 finished...

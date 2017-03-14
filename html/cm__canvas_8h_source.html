@@ -119,10 +119,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00042"></a>00042 {
 <a name="l00043"></a>00043 <span class="keyword">private</span>:
 <a name="l00044"></a>00044     <span class="comment">//todo move this to data class?</span>
-<a name="l00045"></a>00045 <span class="comment">//    objectVec objectBoxes;</span>
-<a name="l00046"></a>00046 <span class="comment">//    patchcordVec patchcords;</span>
-<a name="l00047"></a>00047 <span class="comment">//    objectVec selectionData_.boxes;</span>
-<a name="l00048"></a>00048 <span class="comment">//    patchcordVec selPatchcords;</span>
+<a name="l00045"></a>00045     <span class="comment">//    objectVec objectBoxes;</span>
+<a name="l00046"></a>00046     <span class="comment">//    patchcordVec patchcords;</span>
+<a name="l00047"></a>00047     <span class="comment">//    objectVec selectionData_.boxes;</span>
+<a name="l00048"></a>00048     <span class="comment">//    patchcordVec selPatchcords;</span>
 <a name="l00049"></a>00049 
 <a name="l00050"></a>00050     <span class="comment">//move here. these are global for all draw types (Canvas, Box)</span>
 <a name="l00051"></a>00051     <a class="code" href="structqtpd_1_1struct_canvas_data_plus.html" title="shared canvas data -&gt; additional info (window title etc) TODO rename">tCanvasDataPlus</a> data_;
@@ -921,17 +921,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00959"></a>00959     }
 <a name="l00960"></a>00960 
 <a name="l00961"></a>00961 
-<a name="l00962"></a>00962 <span class="comment">//    ////unused?</span>
-<a name="l00963"></a>00963 <span class="comment">//    void deletePatchcord(Patchcord* pc)</span>
-<a name="l00964"></a>00964 <span class="comment">//    {</span>
-<a name="l00965"></a>00965 <span class="comment">//        // no repaint</span>
+<a name="l00962"></a>00962     <span class="comment">//    ////unused?</span>
+<a name="l00963"></a>00963     <span class="comment">//    void deletePatchcord(Patchcord* pc)</span>
+<a name="l00964"></a>00964     <span class="comment">//    {</span>
+<a name="l00965"></a>00965     <span class="comment">//        // no repaint</span>
 <a name="l00966"></a>00966 
-<a name="l00967"></a>00967 <span class="comment">//        //cleanup !!!</span>
-<a name="l00968"></a>00968 <span class="comment">//        patchcordVec::iterator it = std::find(this-&gt;data_.patchcords.begin(), this-&gt;data_.patchcords.end(), pc);</span>
+<a name="l00967"></a>00967     <span class="comment">//        //cleanup !!!</span>
+<a name="l00968"></a>00968     <span class="comment">//        patchcordVec::iterator it = std::find(this-&gt;data_.patchcords.begin(), this-&gt;data_.patchcords.end(), pc);</span>
 <a name="l00969"></a>00969 
-<a name="l00970"></a>00970 <span class="comment">//        if (it != this-&gt;data_.patchcords.end()) { this-&gt;data_.patchcords.erase(it); }</span>
+<a name="l00970"></a>00970     <span class="comment">//        if (it != this-&gt;data_.patchcords.end()) { this-&gt;data_.patchcords.erase(it); }</span>
 <a name="l00971"></a>00971 
-<a name="l00972"></a>00972 <span class="comment">//    }</span>
+<a name="l00972"></a>00972     <span class="comment">//    }</span>
 <a name="l00973"></a>00973 
 <a name="l00974"></a>00974 
 <a name="l00979"></a><a class="code" href="classqtpd_1_1_canvas.html#ac30f0f6774cab9985dbb384ae436ca1a">00979</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#ac30f0f6774cab9985dbb384ae436ca1a" title="delete all patchcords for object">deletePatchcordsFor</a>(<a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* obj)
@@ -950,234 +950,264 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00992"></a>00992         this-&gt;repaint();
 <a name="l00993"></a>00993     }
 <a name="l00994"></a>00994 
-<a name="l00999"></a><a class="code" href="classqtpd_1_1_canvas.html#a54ae5b1d5352bcce723481073db40647">00999</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a54ae5b1d5352bcce723481073db40647" title="delete object box">deleteBox</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* box)
-<a name="l01000"></a>01000     {
+<a name="l00995"></a>00995 <span class="comment">//    ////</span>
+<a name="l00996"></a>00996 <span class="comment">//    /// \brief delete object box</span>
+<a name="l00997"></a>00997 <span class="comment">//    /// \param box</span>
+<a name="l00998"></a>00998 <span class="comment">//    ///</span>
+<a name="l00999"></a>00999 <span class="comment">//    void deleteBox(UIObject* box)</span>
+<a name="l01000"></a>01000 <span class="comment">//    {</span>
 <a name="l01001"></a>01001 
-<a name="l01002"></a>01002         <span class="comment">//TODO</span>
-<a name="l01003"></a>01003 
-<a name="l01004"></a>01004         <span class="keywordflow">if</span> (box-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ab035ff3ca7142e49c07f141666f6b41e" title="returns pointer to pd object.">pdObject</a>())
-<a name="l01005"></a>01005         {
-<a name="l01006"></a>01006             <span class="comment">//NEEDS FIX</span>
-<a name="l01007"></a>01007             <span class="keywordflow">if</span> ((t_object*)(box-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ab035ff3ca7142e49c07f141666f6b41e" title="returns pointer to pd object.">pdObject</a>()))
-<a name="l01008"></a>01008                 <span class="keywordflow">if</span> (!box-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a1a55479c564318cbf31c0f09d02d39bb" title="returns true if object doesn&#39;t exist">errorBox</a>())
-<a name="l01009"></a>01009                     <a class="code" href="cm__pdlink_8h.html#a69094de48546687863d38bc9d3689993" title="delete pd object">cmp_deleteobject</a>(this-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a6b63d8863dcee011dbd54a2b4de94c00">pdCanvas</a>, (t_object*)box-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ab035ff3ca7142e49c07f141666f6b41e" title="returns pointer to pd object.">pdObject</a>());
-<a name="l01010"></a>01010         }
-<a name="l01011"></a>01011         <span class="keywordflow">else</span>
-<a name="l01012"></a>01012         {
-<a name="l01013"></a>01013             qDebug(<span class="stringliteral">&quot;didn&#39;t delete pd object&quot;</span>);
-<a name="l01014"></a>01014         }
-<a name="l01015"></a>01015 
-<a name="l01016"></a>01016         this-&gt;<a class="code" href="classqtpd_1_1_canvas.html#ac30f0f6774cab9985dbb384ae436ca1a" title="delete all patchcords for object">deletePatchcordsFor</a>(box);
-<a name="l01017"></a>01017 
-<a name="l01018"></a>01018         box-&gt;close();
-<a name="l01019"></a>01019     }
-<a name="l01020"></a>01020 
-<a name="l01024"></a><a class="code" href="classqtpd_1_1_canvas.html#a6e1c926dcc12807478e7af475c8276b3">01024</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a6e1c926dcc12807478e7af475c8276b3" title="delete all selected object boxes">delBoxes</a>()
-<a name="l01025"></a>01025     {
-<a name="l01026"></a>01026         objectVec::iterator it;
-<a name="l01027"></a>01027         <span class="keywordflow">for</span> (it = selectionData_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#aea272f4d874595f5bf303a741ac7ef56">boxes</a>.begin() ; it != selectionData_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#aea272f4d874595f5bf303a741ac7ef56">boxes</a>.end(); ++it)
-<a name="l01028"></a>01028         {
-<a name="l01029"></a>01029             <span class="comment">//((UIObject*) this-&gt;selectionData_.boxes.at(i))</span>
-<a name="l01030"></a>01030             this-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a54ae5b1d5352bcce723481073db40647" title="delete object box">deleteBox</a>( *it  );
-<a name="l01031"></a>01031         }
-<a name="l01032"></a>01032 
-<a name="l01033"></a>01033         selectionData_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#aea272f4d874595f5bf303a741ac7ef56">boxes</a>.clear();;
+<a name="l01002"></a>01002 <span class="comment">//        //TODO</span>
+<a name="l01003"></a>01003 <span class="comment">//        qDebug(&quot;delete %lu | %lu&quot;, (long)box, (long) box-&gt;pdObject());</span>
+<a name="l01004"></a>01004 
+<a name="l01005"></a>01005 <span class="comment">//        if (box-&gt;pdObject())</span>
+<a name="l01006"></a>01006 <span class="comment">//        {</span>
+<a name="l01007"></a>01007 <span class="comment">//            //NEEDS FIX</span>
+<a name="l01008"></a>01008 <span class="comment">//            if ((t_object*)(box-&gt;pdObject()))</span>
+<a name="l01009"></a>01009 <span class="comment">//                if (!box-&gt;errorBox())</span>
+<a name="l01010"></a>01010 <span class="comment">//                    cmp_deleteobject(this-&gt;pdCanvas, (t_object*)box-&gt;pdObject());</span>
+<a name="l01011"></a>01011 <span class="comment">//        }</span>
+<a name="l01012"></a>01012 <span class="comment">//        else</span>
+<a name="l01013"></a>01013 <span class="comment">//        {</span>
+<a name="l01014"></a>01014 <span class="comment">//            qDebug(&quot;didn&#39;t delete pd object&quot;);</span>
+<a name="l01015"></a>01015 <span class="comment">//        }</span>
+<a name="l01016"></a>01016 
+<a name="l01017"></a>01017 <span class="comment">//        this-&gt;deletePatchcordsFor(box);</span>
+<a name="l01018"></a>01018 
+<a name="l01019"></a>01019 <span class="comment">//        box-&gt;close();</span>
+<a name="l01020"></a>01020 <span class="comment">//    }</span>
+<a name="l01021"></a>01021 
+<a name="l01025"></a><a class="code" href="classqtpd_1_1_canvas.html#a6e1c926dcc12807478e7af475c8276b3">01025</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a6e1c926dcc12807478e7af475c8276b3" title="delete all selected object boxes">delBoxes</a>()
+<a name="l01026"></a>01026     {
+<a name="l01027"></a>01027         objectVec::iterator it;
+<a name="l01028"></a>01028         <span class="keywordflow">for</span> (it = selectionData_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#aea272f4d874595f5bf303a741ac7ef56">boxes</a>.begin() ; it != selectionData_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#aea272f4d874595f5bf303a741ac7ef56">boxes</a>.end(); ++it)
+<a name="l01029"></a>01029 
+<a name="l01030"></a>01030         {
+<a name="l01031"></a>01031             <span class="comment">//</span>
+<a name="l01032"></a>01032             <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* box = *it;
+<a name="l01033"></a>01033             qDebug(<span class="stringliteral">&quot;delete %lu | %lu&quot;</span>, (<span class="keywordtype">long</span>)box, (<span class="keywordtype">long</span>) box-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ab035ff3ca7142e49c07f141666f6b41e" title="returns pointer to pd object.">pdObject</a>());
 <a name="l01034"></a>01034 
-<a name="l01035"></a>01035     }
-<a name="l01036"></a>01036 
-<a name="l01040"></a><a class="code" href="classqtpd_1_1_canvas.html#af8e0dde6555249f775562b2cd4ab02bd">01040</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#af8e0dde6555249f775562b2cd4ab02bd" title="delete all selected patchcords">delSelectedPatchcords</a>()
-<a name="l01041"></a>01041     {
-<a name="l01042"></a>01042         <span class="comment">//cleanup</span>
-<a name="l01043"></a>01043         <span class="comment">//for (int i=0;i&lt;this-&gt;data_.patchcords.size(); i++)</span>
-<a name="l01044"></a>01044         std::vector&lt;Patchcord*&gt;::iterator it;
-<a name="l01045"></a>01045         <span class="keywordflow">for</span> (it=this-&gt;data_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#a989cb592e2bf9b8063dabc97b3b1b1a8">patchcords</a>.begin(); it!= this-&gt;data_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#a989cb592e2bf9b8063dabc97b3b1b1a8">patchcords</a>.end(); )
-<a name="l01046"></a>01046         {
-<a name="l01047"></a>01047             <span class="keywordflow">if</span> ( (*it) -&gt; selected )
-<a name="l01048"></a>01048             {
-<a name="l01049"></a>01049                 <a class="code" href="classqtpd_1_1_patchcord.html" title="gui patchcord class">Patchcord</a>*p = *it;
-<a name="l01050"></a>01050 
-<a name="l01051"></a>01051                 t_object* obj1 =(t_object*) p-&gt;<a class="code" href="classqtpd_1_1_patchcord.html#a02f7dca887125bae2e0b79ecc74ac679">getObj1</a>()-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ab035ff3ca7142e49c07f141666f6b41e" title="returns pointer to pd object.">pdObject</a>();
-<a name="l01052"></a>01052                 t_object* obj2 =(t_object*) p-&gt;<a class="code" href="classqtpd_1_1_patchcord.html#aaf737089559214b0c382134deec85d07">getObj2</a>()-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ab035ff3ca7142e49c07f141666f6b41e" title="returns pointer to pd object.">pdObject</a>();
+<a name="l01035"></a>01035             <span class="keywordflow">if</span> (box-&gt;pdObject())
+<a name="l01036"></a>01036             {
+<a name="l01037"></a>01037                 <span class="comment">//NEEDS FIX</span>
+<a name="l01038"></a>01038                 <span class="keywordflow">if</span> ((t_object*)(box-&gt;pdObject()))
+<a name="l01039"></a>01039                 {
+<a name="l01040"></a>01040                     <span class="keywordflow">if</span> (!box-&gt;errorBox())
+<a name="l01041"></a>01041                         <a class="code" href="cm__pdlink_8h.html#a69094de48546687863d38bc9d3689993" title="delete pd object">cmp_deleteobject</a>(this-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a6b63d8863dcee011dbd54a2b4de94c00">pdCanvas</a>, (t_object*)box-&gt;pdObject());
+<a name="l01042"></a>01042                         box-&gt;setPdObject(0);
+<a name="l01043"></a>01043                 }
+<a name="l01044"></a>01044             }
+<a name="l01045"></a>01045             <span class="keywordflow">else</span>
+<a name="l01046"></a>01046             {
+<a name="l01047"></a>01047                 qDebug(<span class="stringliteral">&quot;didn&#39;t delete pd object&quot;</span>);
+<a name="l01048"></a>01048             }
+<a name="l01049"></a>01049 
+<a name="l01050"></a>01050             this-&gt;<a class="code" href="classqtpd_1_1_canvas.html#ac30f0f6774cab9985dbb384ae436ca1a" title="delete all patchcords for object">deletePatchcordsFor</a>(box);
+<a name="l01051"></a>01051 
+<a name="l01052"></a>01052             box-&gt;close();
 <a name="l01053"></a>01053 
-<a name="l01054"></a>01054                 <span class="keywordtype">int</span> out1 = p-&gt;<a class="code" href="classqtpd_1_1_patchcord.html#a21446d4f71f64c1fe48eee27ad77b88a">getOutIdx</a>();
-<a name="l01055"></a>01055                 <span class="keywordtype">int</span> in2 = p-&gt;<a class="code" href="classqtpd_1_1_patchcord.html#a5d5d5e3c5d91f9400a55c4d8ef8adbd9">getInIdx</a>();
+<a name="l01054"></a>01054             data_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#aea272f4d874595f5bf303a741ac7ef56">boxes</a>.erase(std::remove(data_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#aea272f4d874595f5bf303a741ac7ef56">boxes</a>.begin(), data_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#aea272f4d874595f5bf303a741ac7ef56">boxes</a>.end(), *it), data_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#aea272f4d874595f5bf303a741ac7ef56">boxes</a>.end());
+<a name="l01055"></a>01055             <span class="comment">//selectionData_.boxes.erase(std::remove(selectionData_.boxes.begin(), selectionData_.boxes.end(), *it), selectionData_.boxes.end());</span>
 <a name="l01056"></a>01056 
-<a name="l01057"></a>01057                 <a class="code" href="cm__pdlink_8h.html#a3b0a14ab77137204a0f68e45f45e92c8" title="delete patchcord">cmp_delete_patchcord</a>(obj1,out1,obj2,in2);
-<a name="l01058"></a>01058                 it = this-&gt;data_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#a989cb592e2bf9b8063dabc97b3b1b1a8">patchcords</a>.erase(it);
-<a name="l01059"></a>01059             }
-<a name="l01060"></a>01060             <span class="keywordflow">else</span>
-<a name="l01061"></a>01061                 ++it;
-<a name="l01062"></a>01062         }
-<a name="l01063"></a>01063 
-<a name="l01064"></a>01064         this-&gt;repaint();
-<a name="l01065"></a>01065     }
-<a name="l01066"></a>01066 
-<a name="l01071"></a>01071 
-<a name="l01072"></a><a class="code" href="classqtpd_1_1_canvas.html#a0c032dbe358e3b444920fe8fa3eac002">01072</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a0c032dbe358e3b444920fe8fa3eac002" title="change edit mode flag">setEditMode</a>(<a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a" title="edit mode types">t_editMode</a> mode)
-<a name="l01073"></a>01073     {
-<a name="l01074"></a>01074         this-&gt;editMode = mode;
-<a name="l01075"></a>01075 
-<a name="l01076"></a>01076         QPalette Pal(palette());
-<a name="l01077"></a>01077         Pal.setColor(QPalette::Background, (mode != <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aac9d3b5321b0a8c731588f74bb4302eb1">em_Locked</a>)?QColor(255,255,255):QColor(245,245,245));
-<a name="l01078"></a>01078         this-&gt;setAutoFillBackground(<span class="keyword">true</span>);
-<a name="l01079"></a>01079         this-&gt;setPalette(Pal);
-<a name="l01080"></a>01080 
-<a name="l01081"></a>01081         this-&gt;<a class="code" href="classqtpd_1_1_canvas.html#ae5d178b7962fb039619f2e00c17d89cf" title="deselect all object boxes">deselectBoxes</a>();
-<a name="l01082"></a>01082         this-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a91fafcf571a215a4cd972d5b20c3bef4" title="resets all patchcords hover color flag">hoverPatchcordsOff</a>();
-<a name="l01083"></a>01083 
-<a name="l01084"></a>01084         this-&gt;repaint();
-<a name="l01085"></a>01085     }
-<a name="l01086"></a>01086 
-<a name="l01087"></a>01087 
-<a name="l01092"></a><a class="code" href="classqtpd_1_1_canvas.html#a114919833e4fdd434726e8dad524da93">01092</a>     <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a" title="edit mode types">t_editMode</a> <a class="code" href="classqtpd_1_1_canvas.html#a114919833e4fdd434726e8dad524da93" title="get edit mode flag">getEditMode</a>(){<span class="keywordflow">return</span> this-&gt;editMode;}
-<a name="l01093"></a>01093 
-<a name="l01099"></a><a class="code" href="classqtpd_1_1_canvas.html#ad52070b113de5af28265adc503653c77">01099</a>     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_canvas.html#ad52070b113de5af28265adc503653c77" title="returns object by index - this is needed by parser">getObjectByIndex</a>(<span class="keywordtype">int</span> idx)
-<a name="l01100"></a>01100     {
-<a name="l01101"></a>01101         <span class="keywordflow">if</span> ((idx&lt; (<span class="keywordtype">int</span>)this-&gt;data_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#aea272f4d874595f5bf303a741ac7ef56">boxes</a>.size()) &amp;&amp; (idx&gt;=0))
-<a name="l01102"></a>01102             <span class="keywordflow">return</span> this-&gt;data_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#aea272f4d874595f5bf303a741ac7ef56">boxes</a>.at(idx);
-<a name="l01103"></a>01103         <span class="keywordflow">else</span>
-<a name="l01104"></a>01104         {
-<a name="l01105"></a>01105             qDebug(<span class="stringliteral">&quot;object not found&quot;</span>);
-<a name="l01106"></a>01106             <span class="keywordflow">return</span> 0;
-<a name="l01107"></a>01107         }
-<a name="l01108"></a>01108     }
+<a name="l01057"></a>01057         }
+<a name="l01058"></a>01058 
+<a name="l01059"></a>01059         selectionData_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#aea272f4d874595f5bf303a741ac7ef56">boxes</a>.clear();;
+<a name="l01060"></a>01060 
+<a name="l01061"></a>01061     }
+<a name="l01062"></a>01062 
+<a name="l01066"></a><a class="code" href="classqtpd_1_1_canvas.html#af8e0dde6555249f775562b2cd4ab02bd">01066</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#af8e0dde6555249f775562b2cd4ab02bd" title="delete all selected patchcords">delSelectedPatchcords</a>()
+<a name="l01067"></a>01067     {
+<a name="l01068"></a>01068         <span class="comment">//cleanup</span>
+<a name="l01069"></a>01069         <span class="comment">//for (int i=0;i&lt;this-&gt;data_.patchcords.size(); i++)</span>
+<a name="l01070"></a>01070         std::vector&lt;Patchcord*&gt;::iterator it;
+<a name="l01071"></a>01071         <span class="keywordflow">for</span> (it=this-&gt;data_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#a989cb592e2bf9b8063dabc97b3b1b1a8">patchcords</a>.begin(); it!= this-&gt;data_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#a989cb592e2bf9b8063dabc97b3b1b1a8">patchcords</a>.end(); )
+<a name="l01072"></a>01072         {
+<a name="l01073"></a>01073             <span class="keywordflow">if</span> ( (*it) -&gt; selected )
+<a name="l01074"></a>01074             {
+<a name="l01075"></a>01075                 <a class="code" href="classqtpd_1_1_patchcord.html" title="gui patchcord class">Patchcord</a>*p = *it;
+<a name="l01076"></a>01076 
+<a name="l01077"></a>01077                 t_object* obj1 =(t_object*) p-&gt;<a class="code" href="classqtpd_1_1_patchcord.html#a02f7dca887125bae2e0b79ecc74ac679">getObj1</a>()-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ab035ff3ca7142e49c07f141666f6b41e" title="returns pointer to pd object.">pdObject</a>();
+<a name="l01078"></a>01078                 t_object* obj2 =(t_object*) p-&gt;<a class="code" href="classqtpd_1_1_patchcord.html#aaf737089559214b0c382134deec85d07">getObj2</a>()-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ab035ff3ca7142e49c07f141666f6b41e" title="returns pointer to pd object.">pdObject</a>();
+<a name="l01079"></a>01079 
+<a name="l01080"></a>01080                 <span class="keywordtype">int</span> out1 = p-&gt;<a class="code" href="classqtpd_1_1_patchcord.html#a21446d4f71f64c1fe48eee27ad77b88a">getOutIdx</a>();
+<a name="l01081"></a>01081                 <span class="keywordtype">int</span> in2 = p-&gt;<a class="code" href="classqtpd_1_1_patchcord.html#a5d5d5e3c5d91f9400a55c4d8ef8adbd9">getInIdx</a>();
+<a name="l01082"></a>01082 
+<a name="l01083"></a>01083                 <a class="code" href="cm__pdlink_8h.html#a3b0a14ab77137204a0f68e45f45e92c8" title="delete patchcord">cmp_delete_patchcord</a>(obj1,out1,obj2,in2);
+<a name="l01084"></a>01084                 it = this-&gt;data_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#a989cb592e2bf9b8063dabc97b3b1b1a8">patchcords</a>.erase(it);
+<a name="l01085"></a>01085             }
+<a name="l01086"></a>01086             <span class="keywordflow">else</span>
+<a name="l01087"></a>01087                 ++it;
+<a name="l01088"></a>01088         }
+<a name="l01089"></a>01089 
+<a name="l01090"></a>01090         this-&gt;repaint();
+<a name="l01091"></a>01091     }
+<a name="l01092"></a>01092 
+<a name="l01097"></a>01097 
+<a name="l01098"></a><a class="code" href="classqtpd_1_1_canvas.html#a0c032dbe358e3b444920fe8fa3eac002">01098</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a0c032dbe358e3b444920fe8fa3eac002" title="change edit mode flag">setEditMode</a>(<a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a" title="edit mode types">t_editMode</a> mode)
+<a name="l01099"></a>01099     {
+<a name="l01100"></a>01100         this-&gt;editMode = mode;
+<a name="l01101"></a>01101 
+<a name="l01102"></a>01102         QPalette Pal(palette());
+<a name="l01103"></a>01103         Pal.setColor(QPalette::Background, (mode != <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aac9d3b5321b0a8c731588f74bb4302eb1">em_Locked</a>)?QColor(255,255,255):QColor(245,245,245));
+<a name="l01104"></a>01104         this-&gt;setAutoFillBackground(<span class="keyword">true</span>);
+<a name="l01105"></a>01105         this-&gt;setPalette(Pal);
+<a name="l01106"></a>01106 
+<a name="l01107"></a>01107         this-&gt;<a class="code" href="classqtpd_1_1_canvas.html#ae5d178b7962fb039619f2e00c17d89cf" title="deselect all object boxes">deselectBoxes</a>();
+<a name="l01108"></a>01108         this-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a91fafcf571a215a4cd972d5b20c3bef4" title="resets all patchcords hover color flag">hoverPatchcordsOff</a>();
 <a name="l01109"></a>01109 
-<a name="l01114"></a><a class="code" href="classqtpd_1_1_canvas.html#adfcac398bb47f15aee737ab9268c66da">01114</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#adfcac398bb47f15aee737ab9268c66da" title="set object value - mostly for canvas as box">setObjectData</a>(std::string objData)
-<a name="l01115"></a>01115     {
-<a name="l01116"></a>01116         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a5b19011ca274ff736aac6f5641379e59" title="get draw style">drawStyle</a>() == <a class="code" href="namespaceqtpd.html#a51dac42fa81d20e97ba8568fe7fae06da6bb806e9390652c88a3e28bd6ae2c12a">ds_Box</a>)
-<a name="l01117"></a>01117         {
-<a name="l01118"></a>01118             <a class="code" href="classqtpd_1_1_canvas.html#adfcac398bb47f15aee737ab9268c66da" title="set object value - mostly for canvas as box">UIObject::setObjectData</a>(objData);
+<a name="l01110"></a>01110         this-&gt;repaint();
+<a name="l01111"></a>01111     }
+<a name="l01112"></a>01112 
+<a name="l01113"></a>01113 
+<a name="l01118"></a><a class="code" href="classqtpd_1_1_canvas.html#a114919833e4fdd434726e8dad524da93">01118</a>     <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a" title="edit mode types">t_editMode</a> <a class="code" href="classqtpd_1_1_canvas.html#a114919833e4fdd434726e8dad524da93" title="get edit mode flag">getEditMode</a>(){<span class="keywordflow">return</span> this-&gt;editMode;}
 <a name="l01119"></a>01119 
-<a name="l01120"></a>01120             QFont myFont(<a class="code" href="cm__preferences_8h.html#a3f95dcdc217e1a88365c8306beaf1c72">PREF_QSTRING</a>(<span class="stringliteral">&quot;Font&quot;</span>), 11);
-<a name="l01121"></a>01121             QFontMetrics fm(myFont);
-<a name="l01122"></a>01122             <span class="keywordtype">int</span> new_w = fm.width(QString(objData.c_str())) + 10;
-<a name="l01123"></a>01123             new_w = (new_w&lt;25) ? 25 : new_w;
-<a name="l01124"></a>01124             this-&gt;setFixedWidth(new_w);
-<a name="l01125"></a>01125             this-&gt;setFixedHeight(20);
-<a name="l01126"></a>01126 
-<a name="l01127"></a>01127             qDebug(<span class="stringliteral">&quot;obj width %i&quot;</span>, new_w);
-<a name="l01128"></a>01128             <span class="comment">//</span>
-<a name="l01129"></a>01129             this-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#abd253cdb46eec3e920bc2e195f24bf84" title="sets inlet position (cm_port)">setInletsPos</a>();
-<a name="l01130"></a>01130             this-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a0f7e507f8949b1a58bf343279a488c44" title="sets outlet position (cm_port)">setOutletsPos</a>();
-<a name="l01131"></a>01131         }
-<a name="l01132"></a>01132     }
-<a name="l01133"></a>01133 
-<a name="l01138"></a><a class="code" href="classqtpd_1_1_canvas.html#ab7a119de1e6406317bbcceca17fee5ed">01138</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#ab7a119de1e6406317bbcceca17fee5ed" title="set the show/hide grid flag">setGridEnabled</a>(<span class="keywordtype">bool</span> val)
-<a name="l01139"></a>01139     {this-&gt;gridEnabled = val;}
-<a name="l01140"></a>01140 
-<a name="l01141"></a>01141 
-<a name="l01146"></a><a class="code" href="classqtpd_1_1_canvas.html#ad6a8a14cfe6188f0cc5f14a675d36708">01146</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#ad6a8a14cfe6188f0cc5f14a675d36708" title="align to grid flag">setGridSnap</a>(<span class="keywordtype">bool</span> val)
-<a name="l01147"></a>01147     {
-<a name="l01148"></a>01148         this-&gt;gridSnap = val;
-<a name="l01149"></a>01149     }
-<a name="l01150"></a>01150 
-<a name="l01151"></a>01151 
-<a name="l01156"></a><a class="code" href="classqtpd_1_1_canvas.html#a8b8a19f58cbcc314116efdfcc94a3aed">01156</a>     std::vector&lt;UIObject*&gt; <a class="code" href="classqtpd_1_1_canvas.html#a8b8a19f58cbcc314116efdfcc94a3aed" title="returns vector of all object boxes - needed by filesaver">getObjectBoxes</a>()
-<a name="l01157"></a>01157     {
-<a name="l01158"></a>01158         <span class="keywordflow">return</span> this-&gt;data_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#aea272f4d874595f5bf303a741ac7ef56">boxes</a>;
-<a name="l01159"></a>01159     }
-<a name="l01160"></a>01160 
-<a name="l01165"></a><a class="code" href="classqtpd_1_1_canvas.html#aa22e0f35211dc1f88a17452cce062ea6">01165</a>     std::vector&lt;Patchcord*&gt;<a class="code" href="classqtpd_1_1_canvas.html#aa22e0f35211dc1f88a17452cce062ea6" title="returns vector of all patchcords - needed by filesaver">getPatchcords</a>()
-<a name="l01166"></a>01166     {
-<a name="l01167"></a>01167         <span class="keywordflow">return</span> this-&gt;data_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#a989cb592e2bf9b8063dabc97b3b1b1a8">patchcords</a>;
-<a name="l01168"></a>01168     }
-<a name="l01169"></a>01169 
-<a name="l01170"></a>01170 
-<a name="l01171"></a>01171 <span class="comment">//    //</span>
-<a name="l01172"></a>01172 <span class="comment">//    / \brief converts object pointers to their numbers in canvas and returns pd string for filesaver</span>
-<a name="l01173"></a>01173 <span class="comment">//    / \param patchcord</span>
-<a name="l01174"></a>01174 <span class="comment">//    / \return</span>
-<a name="l01175"></a>01175 <span class="comment">//    /</span>
+<a name="l01125"></a><a class="code" href="classqtpd_1_1_canvas.html#ad52070b113de5af28265adc503653c77">01125</a>     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_canvas.html#ad52070b113de5af28265adc503653c77" title="returns object by index - this is needed by parser">getObjectByIndex</a>(<span class="keywordtype">int</span> idx)
+<a name="l01126"></a>01126     {
+<a name="l01127"></a>01127         <span class="keywordflow">if</span> ((idx&lt; (<span class="keywordtype">int</span>)this-&gt;data_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#aea272f4d874595f5bf303a741ac7ef56">boxes</a>.size()) &amp;&amp; (idx&gt;=0))
+<a name="l01128"></a>01128             <span class="keywordflow">return</span> this-&gt;data_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#aea272f4d874595f5bf303a741ac7ef56">boxes</a>.at(idx);
+<a name="l01129"></a>01129         <span class="keywordflow">else</span>
+<a name="l01130"></a>01130         {
+<a name="l01131"></a>01131             qDebug(<span class="stringliteral">&quot;object not found&quot;</span>);
+<a name="l01132"></a>01132             <span class="keywordflow">return</span> 0;
+<a name="l01133"></a>01133         }
+<a name="l01134"></a>01134     }
+<a name="l01135"></a>01135 
+<a name="l01140"></a><a class="code" href="classqtpd_1_1_canvas.html#adfcac398bb47f15aee737ab9268c66da">01140</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#adfcac398bb47f15aee737ab9268c66da" title="set object value - mostly for canvas as box">setObjectData</a>(std::string objData)
+<a name="l01141"></a>01141     {
+<a name="l01142"></a>01142         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a5b19011ca274ff736aac6f5641379e59" title="get draw style">drawStyle</a>() == <a class="code" href="namespaceqtpd.html#a51dac42fa81d20e97ba8568fe7fae06da6bb806e9390652c88a3e28bd6ae2c12a">ds_Box</a>)
+<a name="l01143"></a>01143         {
+<a name="l01144"></a>01144             <a class="code" href="classqtpd_1_1_canvas.html#adfcac398bb47f15aee737ab9268c66da" title="set object value - mostly for canvas as box">UIObject::setObjectData</a>(objData);
+<a name="l01145"></a>01145 
+<a name="l01146"></a>01146             QFont myFont(<a class="code" href="cm__preferences_8h.html#a3f95dcdc217e1a88365c8306beaf1c72">PREF_QSTRING</a>(<span class="stringliteral">&quot;Font&quot;</span>), 11);
+<a name="l01147"></a>01147             QFontMetrics fm(myFont);
+<a name="l01148"></a>01148             <span class="keywordtype">int</span> new_w = fm.width(QString(objData.c_str())) + 10;
+<a name="l01149"></a>01149             new_w = (new_w&lt;25) ? 25 : new_w;
+<a name="l01150"></a>01150             this-&gt;setFixedWidth(new_w);
+<a name="l01151"></a>01151             this-&gt;setFixedHeight(20);
+<a name="l01152"></a>01152 
+<a name="l01153"></a>01153             qDebug(<span class="stringliteral">&quot;obj width %i&quot;</span>, new_w);
+<a name="l01154"></a>01154             <span class="comment">//</span>
+<a name="l01155"></a>01155             this-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#abd253cdb46eec3e920bc2e195f24bf84" title="sets inlet position (cm_port)">setInletsPos</a>();
+<a name="l01156"></a>01156             this-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a0f7e507f8949b1a58bf343279a488c44" title="sets outlet position (cm_port)">setOutletsPos</a>();
+<a name="l01157"></a>01157         }
+<a name="l01158"></a>01158     }
+<a name="l01159"></a>01159 
+<a name="l01164"></a><a class="code" href="classqtpd_1_1_canvas.html#ab7a119de1e6406317bbcceca17fee5ed">01164</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#ab7a119de1e6406317bbcceca17fee5ed" title="set the show/hide grid flag">setGridEnabled</a>(<span class="keywordtype">bool</span> val)
+<a name="l01165"></a>01165     {this-&gt;gridEnabled = val;}
+<a name="l01166"></a>01166 
+<a name="l01167"></a>01167 
+<a name="l01172"></a><a class="code" href="classqtpd_1_1_canvas.html#ad6a8a14cfe6188f0cc5f14a675d36708">01172</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#ad6a8a14cfe6188f0cc5f14a675d36708" title="align to grid flag">setGridSnap</a>(<span class="keywordtype">bool</span> val)
+<a name="l01173"></a>01173     {
+<a name="l01174"></a>01174         this-&gt;gridSnap = val;
+<a name="l01175"></a>01175     }
 <a name="l01176"></a>01176 
 <a name="l01177"></a>01177 
-<a name="l01184"></a><a class="code" href="classqtpd_1_1_canvas.html#a2168110e781257d16b176086714a4921">01184</a>     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_canvas.html#a2168110e781257d16b176086714a4921" title="find object index in list">findObjectIndex</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> * obj)
-<a name="l01185"></a>01185     {
-<a name="l01186"></a>01186         <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* obj1;
-<a name="l01187"></a>01187         std::vector&lt;UIObject*&gt;::iterator iter = std::find(this-&gt;data_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#aea272f4d874595f5bf303a741ac7ef56">boxes</a>.begin(), data_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#aea272f4d874595f5bf303a741ac7ef56">boxes</a>.end(), obj);
-<a name="l01188"></a>01188         <span class="keywordtype">size_t</span> index = <a class="code" href="namespaceceammc_1_1vector.html#adc13af67504c1f19857a9604298e7a33">std::distance</a>(this-&gt;data_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#aea272f4d874595f5bf303a741ac7ef56">boxes</a>.begin(), iter);
-<a name="l01189"></a>01189         <span class="keywordflow">if</span>(index != this-&gt;data_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#aea272f4d874595f5bf303a741ac7ef56">boxes</a>.size())
-<a name="l01190"></a>01190         {
-<a name="l01191"></a>01191             <span class="keywordflow">return</span> index;
-<a name="l01192"></a>01192         }
-<a name="l01193"></a>01193         <span class="keywordflow">return</span> -1;
-<a name="l01194"></a>01194 
-<a name="l01195"></a>01195     }
+<a name="l01182"></a><a class="code" href="classqtpd_1_1_canvas.html#a8b8a19f58cbcc314116efdfcc94a3aed">01182</a>     std::vector&lt;UIObject*&gt; <a class="code" href="classqtpd_1_1_canvas.html#a8b8a19f58cbcc314116efdfcc94a3aed" title="returns vector of all object boxes - needed by filesaver">getObjectBoxes</a>()
+<a name="l01183"></a>01183     {
+<a name="l01184"></a>01184         <span class="keywordflow">return</span> this-&gt;data_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#aea272f4d874595f5bf303a741ac7ef56">boxes</a>;
+<a name="l01185"></a>01185     }
+<a name="l01186"></a>01186 
+<a name="l01191"></a><a class="code" href="classqtpd_1_1_canvas.html#aa22e0f35211dc1f88a17452cce062ea6">01191</a>     std::vector&lt;Patchcord*&gt;<a class="code" href="classqtpd_1_1_canvas.html#aa22e0f35211dc1f88a17452cce062ea6" title="returns vector of all patchcords - needed by filesaver">getPatchcords</a>()
+<a name="l01192"></a>01192     {
+<a name="l01193"></a>01193         <span class="keywordflow">return</span> this-&gt;data_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#a989cb592e2bf9b8063dabc97b3b1b1a8">patchcords</a>;
+<a name="l01194"></a>01194     }
+<a name="l01195"></a>01195 
 <a name="l01196"></a>01196 
-<a name="l01201"></a><a class="code" href="classqtpd_1_1_canvas.html#a717fda819ac6e2fd85b44ac8221b71fb">01201</a>     <span class="keyword">virtual</span> std::string <a class="code" href="classqtpd_1_1_canvas.html#a717fda819ac6e2fd85b44ac8221b71fb" title="this returns &quot;restore ...&quot; for canvas as box or calls filesaver for canvas">asPdFileString</a>()
-<a name="l01202"></a>01202     {
-<a name="l01203"></a>01203         <span class="keywordflow">return</span> <span class="stringliteral">&quot;#N canvas 0 0 400 300 10;\r\n&quot;</span>;     <span class="comment">//temporary</span>
-<a name="l01204"></a>01204     }
-<a name="l01205"></a>01205 
-<a name="l01211"></a><a class="code" href="classqtpd_1_1_canvas.html#ac372950a9a0ceadc18579e135b1107c0">01211</a>     std::string <a class="code" href="classqtpd_1_1_canvas.html#ac372950a9a0ceadc18579e135b1107c0" title="returns patchcord as pd string">getPatchcordAsString</a>(<a class="code" href="classqtpd_1_1_patchcord.html" title="gui patchcord class">Patchcord</a>* <a class="code" href="classqtpd_1_1_canvas.html#a3625736a403310d179fe0738156e572f" title="creates patchcord">patchcord</a>)
-<a name="l01212"></a>01212     {
-<a name="l01213"></a>01213         <span class="comment">//TODO</span>
-<a name="l01214"></a>01214 
-<a name="l01215"></a>01215 
-<a name="l01216"></a>01216         <span class="keywordtype">int</span> obj1i = this-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a2168110e781257d16b176086714a4921" title="find object index in list">findObjectIndex</a>(patchcord-&gt;<a class="code" href="classqtpd_1_1_patchcord.html#a02f7dca887125bae2e0b79ecc74ac679">getObj1</a>());
-<a name="l01217"></a>01217         <span class="keywordtype">int</span> obj2i = this-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a2168110e781257d16b176086714a4921" title="find object index in list">findObjectIndex</a>(patchcord-&gt;<a class="code" href="classqtpd_1_1_patchcord.html#aaf737089559214b0c382134deec85d07">getObj2</a>());
-<a name="l01218"></a>01218 
-<a name="l01219"></a>01219         <span class="keywordflow">if</span> ((obj1i&gt;=0) &amp;&amp; (obj2i&gt;=0))
-<a name="l01220"></a>01220         {
-<a name="l01221"></a>01221             std::string ret;
+<a name="l01197"></a>01197     <span class="comment">//    //</span>
+<a name="l01198"></a>01198     <span class="comment">//    / \brief converts object pointers to their numbers in canvas and returns pd string for filesaver</span>
+<a name="l01199"></a>01199     <span class="comment">//    / \param patchcord</span>
+<a name="l01200"></a>01200     <span class="comment">//    / \return</span>
+<a name="l01201"></a>01201     <span class="comment">//    /</span>
+<a name="l01202"></a>01202 
+<a name="l01203"></a>01203 
+<a name="l01210"></a><a class="code" href="classqtpd_1_1_canvas.html#a2168110e781257d16b176086714a4921">01210</a>     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_canvas.html#a2168110e781257d16b176086714a4921" title="find object index in list">findObjectIndex</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> * obj)
+<a name="l01211"></a>01211     {
+<a name="l01212"></a>01212         <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* obj1;
+<a name="l01213"></a>01213         std::vector&lt;UIObject*&gt;::iterator iter = std::find(this-&gt;data_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#aea272f4d874595f5bf303a741ac7ef56">boxes</a>.begin(), data_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#aea272f4d874595f5bf303a741ac7ef56">boxes</a>.end(), obj);
+<a name="l01214"></a>01214         <span class="keywordtype">size_t</span> index = <a class="code" href="namespaceceammc_1_1vector.html#adc13af67504c1f19857a9604298e7a33">std::distance</a>(this-&gt;data_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#aea272f4d874595f5bf303a741ac7ef56">boxes</a>.begin(), iter);
+<a name="l01215"></a>01215         <span class="keywordflow">if</span>(index != this-&gt;data_.<a class="code" href="structqtpd_1_1struct_canvas_data.html#aea272f4d874595f5bf303a741ac7ef56">boxes</a>.size())
+<a name="l01216"></a>01216         {
+<a name="l01217"></a>01217             <span class="keywordflow">return</span> index;
+<a name="l01218"></a>01218         }
+<a name="l01219"></a>01219         <span class="keywordflow">return</span> -1;
+<a name="l01220"></a>01220 
+<a name="l01221"></a>01221     }
 <a name="l01222"></a>01222 
-<a name="l01223"></a>01223             ret += <a class="code" href="ui__bpfunc_8cpp.html#a3a3e9d4cf73114c8e5198225ca65269e">std::to_string</a>(obj1i) + <span class="stringliteral">&quot; &quot;</span>;
-<a name="l01224"></a>01224             ret += <a class="code" href="ui__bpfunc_8cpp.html#a3a3e9d4cf73114c8e5198225ca65269e">std::to_string</a>(patchcord-&gt;<a class="code" href="classqtpd_1_1_patchcord.html#a21446d4f71f64c1fe48eee27ad77b88a">getOutIdx</a>()) + <span class="stringliteral">&quot; &quot;</span>;
-<a name="l01225"></a>01225 
-<a name="l01226"></a>01226             ret += <a class="code" href="ui__bpfunc_8cpp.html#a3a3e9d4cf73114c8e5198225ca65269e">std::to_string</a>(obj2i) + <span class="stringliteral">&quot; &quot;</span>;
-<a name="l01227"></a>01227             ret += <a class="code" href="ui__bpfunc_8cpp.html#a3a3e9d4cf73114c8e5198225ca65269e">std::to_string</a>(patchcord-&gt;<a class="code" href="classqtpd_1_1_patchcord.html#a5d5d5e3c5d91f9400a55c4d8ef8adbd9">getInIdx</a>()) + <span class="stringliteral">&quot; &quot;</span>;
-<a name="l01228"></a>01228 
-<a name="l01229"></a>01229             <span class="keywordflow">return</span> ret;
-<a name="l01230"></a>01230 
-<a name="l01231"></a>01231         }
-<a name="l01232"></a>01232         <span class="keywordflow">else</span> qDebug (<span class="stringliteral">&quot;patchcord to string error&quot;</span>);
-<a name="l01233"></a>01233 
-<a name="l01234"></a>01234         <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;
-<a name="l01235"></a>01235 
-<a name="l01236"></a>01236     }
-<a name="l01237"></a>01237 
-<a name="l01241"></a><a class="code" href="classqtpd_1_1_canvas.html#a53c64b8c89b1efa5ee1bfcd0bb364ca7">01241</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a53c64b8c89b1efa5ee1bfcd0bb364ca7" title="change size to fit all objects">resizeToObjects</a>()
-<a name="l01242"></a>01242     {
-<a name="l01243"></a>01243 
+<a name="l01227"></a><a class="code" href="classqtpd_1_1_canvas.html#a717fda819ac6e2fd85b44ac8221b71fb">01227</a>     <span class="keyword">virtual</span> std::string <a class="code" href="classqtpd_1_1_canvas.html#a717fda819ac6e2fd85b44ac8221b71fb" title="this returns &quot;restore ...&quot; for canvas as box or calls filesaver for canvas">asPdFileString</a>()
+<a name="l01228"></a>01228     {
+<a name="l01229"></a>01229         <span class="keywordflow">return</span> <span class="stringliteral">&quot;#N canvas 0 0 400 300 10;\r\n&quot;</span>;     <span class="comment">//temporary</span>
+<a name="l01230"></a>01230     }
+<a name="l01231"></a>01231 
+<a name="l01237"></a><a class="code" href="classqtpd_1_1_canvas.html#ac372950a9a0ceadc18579e135b1107c0">01237</a>     std::string <a class="code" href="classqtpd_1_1_canvas.html#ac372950a9a0ceadc18579e135b1107c0" title="returns patchcord as pd string">getPatchcordAsString</a>(<a class="code" href="classqtpd_1_1_patchcord.html" title="gui patchcord class">Patchcord</a>* <a class="code" href="classqtpd_1_1_canvas.html#a3625736a403310d179fe0738156e572f" title="creates patchcord">patchcord</a>)
+<a name="l01238"></a>01238     {
+<a name="l01239"></a>01239         <span class="comment">//TODO</span>
+<a name="l01240"></a>01240 
+<a name="l01241"></a>01241 
+<a name="l01242"></a>01242         <span class="keywordtype">int</span> obj1i = this-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a2168110e781257d16b176086714a4921" title="find object index in list">findObjectIndex</a>(patchcord-&gt;<a class="code" href="classqtpd_1_1_patchcord.html#a02f7dca887125bae2e0b79ecc74ac679">getObj1</a>());
+<a name="l01243"></a>01243         <span class="keywordtype">int</span> obj2i = this-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a2168110e781257d16b176086714a4921" title="find object index in list">findObjectIndex</a>(patchcord-&gt;<a class="code" href="classqtpd_1_1_patchcord.html#aaf737089559214b0c382134deec85d07">getObj2</a>());
 <a name="l01244"></a>01244 
-<a name="l01245"></a>01245     }
-<a name="l01246"></a>01246 
-<a name="l01247"></a>01247 
+<a name="l01245"></a>01245         <span class="keywordflow">if</span> ((obj1i&gt;=0) &amp;&amp; (obj2i&gt;=0))
+<a name="l01246"></a>01246         {
+<a name="l01247"></a>01247             std::string ret;
 <a name="l01248"></a>01248 
-<a name="l01249"></a>01249 <span class="keyword">public</span> slots:
-<a name="l01250"></a>01250 
-<a name="l01251"></a>01251     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a4ec3f2bbffa544c30a0c3b20e0652284">s_InMousePressed</a>(<a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* obj, QMouseEvent* ev);
-<a name="l01252"></a>01252     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a685ab78f4566f8ce1178472118d22e98">s_InMouseReleased</a>(<a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>*, QMouseEvent*);
-<a name="l01253"></a>01253     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a2a3aeb782bfb76457f64e1eaf80e1e6d">s_OutMousePressed</a>(<a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a> *obj, QMouseEvent*);
-<a name="l01254"></a>01254     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#aa792daecdf0c65d3b15cab6eb4bd81b3">s_OutMouseReleased</a>(<a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>*, QMouseEvent*);
-<a name="l01255"></a>01255 
-<a name="l01260"></a>01260     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a611a4ce4f9575835a5a09bdaa1c7ce0d" title="slot called by box when it is selected">s_SelectBox</a>(<a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* box);
+<a name="l01249"></a>01249             ret += <a class="code" href="ui__bpfunc_8cpp.html#a3a3e9d4cf73114c8e5198225ca65269e">std::to_string</a>(obj1i) + <span class="stringliteral">&quot; &quot;</span>;
+<a name="l01250"></a>01250             ret += <a class="code" href="ui__bpfunc_8cpp.html#a3a3e9d4cf73114c8e5198225ca65269e">std::to_string</a>(patchcord-&gt;<a class="code" href="classqtpd_1_1_patchcord.html#a21446d4f71f64c1fe48eee27ad77b88a">getOutIdx</a>()) + <span class="stringliteral">&quot; &quot;</span>;
+<a name="l01251"></a>01251 
+<a name="l01252"></a>01252             ret += <a class="code" href="ui__bpfunc_8cpp.html#a3a3e9d4cf73114c8e5198225ca65269e">std::to_string</a>(obj2i) + <span class="stringliteral">&quot; &quot;</span>;
+<a name="l01253"></a>01253             ret += <a class="code" href="ui__bpfunc_8cpp.html#a3a3e9d4cf73114c8e5198225ca65269e">std::to_string</a>(patchcord-&gt;<a class="code" href="classqtpd_1_1_patchcord.html#a5d5d5e3c5d91f9400a55c4d8ef8adbd9">getInIdx</a>()) + <span class="stringliteral">&quot; &quot;</span>;
+<a name="l01254"></a>01254 
+<a name="l01255"></a>01255             <span class="keywordflow">return</span> ret;
+<a name="l01256"></a>01256 
+<a name="l01257"></a>01257         }
+<a name="l01258"></a>01258         <span class="keywordflow">else</span> qDebug (<span class="stringliteral">&quot;patchcord to string error&quot;</span>);
+<a name="l01259"></a>01259 
+<a name="l01260"></a>01260         <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;
 <a name="l01261"></a>01261 
-<a name="l01267"></a>01267     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#ac2d7ba2003629591b9c93c8d2ab46ef2" title="TODO check. slot called by box when it starts moving.">s_MoveBox</a>(<a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* box, QMouseEvent* event);
-<a name="l01268"></a>01268 
-<a name="l01269"></a>01269     <span class="comment">//    void portMouseReleased();</span>
-<a name="l01270"></a>01270     <span class="comment">//    void portMouseEntered();</span>
-<a name="l01271"></a>01271     <span class="comment">//    void portMouseLeaved();</span>
+<a name="l01262"></a>01262     }
+<a name="l01263"></a>01263 
+<a name="l01267"></a><a class="code" href="classqtpd_1_1_canvas.html#a53c64b8c89b1efa5ee1bfcd0bb364ca7">01267</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a53c64b8c89b1efa5ee1bfcd0bb364ca7" title="change size to fit all objects">resizeToObjects</a>()
+<a name="l01268"></a>01268     {
+<a name="l01269"></a>01269 
+<a name="l01270"></a>01270 
+<a name="l01271"></a>01271     }
 <a name="l01272"></a>01272 
 <a name="l01273"></a>01273 
-<a name="l01277"></a><a class="code" href="classqtpd_1_1_canvas.html#a83af5295678ba3687f02189504528cc4">01277</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a83af5295678ba3687f02189504528cc4" title="cancels patchcord creation">cancelPatchcord</a>()
-<a name="l01278"></a>01278     {
-<a name="l01279"></a>01279         this-&gt;newLine.<a class="code" href="structqtpd_1_1t_rect_plus.html#a824c0754184cde8245a3afa098afa213">active</a> = <span class="keyword">false</span>;
-<a name="l01280"></a>01280         this-&gt;repaint();
-<a name="l01281"></a>01281     }
-<a name="l01282"></a>01282 
-<a name="l01283"></a>01283 
-<a name="l01284"></a>01284 <span class="keyword">private</span>:
-<a name="l01285"></a>01285 
-<a name="l01286"></a>01286 <span class="keyword">private</span> slots:
-<a name="l01287"></a>01287     <span class="keywordtype">void</span> editorDone();
-<a name="l01288"></a>01288     <span class="keywordtype">void</span> editorChanged();
-<a name="l01289"></a>01289 
-<a name="l01290"></a>01290 
-<a name="l01291"></a>01291 };
-<a name="l01292"></a>01292 
-<a name="l01293"></a>01293 }
+<a name="l01274"></a>01274 
+<a name="l01275"></a>01275 <span class="keyword">public</span> slots:
+<a name="l01276"></a>01276 
+<a name="l01277"></a>01277     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a4ec3f2bbffa544c30a0c3b20e0652284">s_InMousePressed</a>(<a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* obj, QMouseEvent* ev);
+<a name="l01278"></a>01278     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a685ab78f4566f8ce1178472118d22e98">s_InMouseReleased</a>(<a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>*, QMouseEvent*);
+<a name="l01279"></a>01279     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a2a3aeb782bfb76457f64e1eaf80e1e6d">s_OutMousePressed</a>(<a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a> *obj, QMouseEvent*);
+<a name="l01280"></a>01280     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#aa792daecdf0c65d3b15cab6eb4bd81b3">s_OutMouseReleased</a>(<a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>*, QMouseEvent*);
+<a name="l01281"></a>01281 
+<a name="l01286"></a>01286     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a611a4ce4f9575835a5a09bdaa1c7ce0d" title="slot called by box when it is selected">s_SelectBox</a>(<a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* box);
+<a name="l01287"></a>01287 
+<a name="l01293"></a>01293     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#ac2d7ba2003629591b9c93c8d2ab46ef2" title="TODO check. slot called by box when it starts moving.">s_MoveBox</a>(<a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* box, QMouseEvent* event);
 <a name="l01294"></a>01294 
-<a name="l01295"></a>01295 <span class="preprocessor">#endif // CM_CANVAS_H</span>
+<a name="l01295"></a>01295     <span class="comment">//    void portMouseReleased();</span>
+<a name="l01296"></a>01296     <span class="comment">//    void portMouseEntered();</span>
+<a name="l01297"></a>01297     <span class="comment">//    void portMouseLeaved();</span>
+<a name="l01298"></a>01298 
+<a name="l01299"></a>01299 
+<a name="l01303"></a><a class="code" href="classqtpd_1_1_canvas.html#a83af5295678ba3687f02189504528cc4">01303</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a83af5295678ba3687f02189504528cc4" title="cancels patchcord creation">cancelPatchcord</a>()
+<a name="l01304"></a>01304     {
+<a name="l01305"></a>01305         this-&gt;newLine.<a class="code" href="structqtpd_1_1t_rect_plus.html#a824c0754184cde8245a3afa098afa213">active</a> = <span class="keyword">false</span>;
+<a name="l01306"></a>01306         this-&gt;repaint();
+<a name="l01307"></a>01307     }
+<a name="l01308"></a>01308 
+<a name="l01309"></a>01309 
+<a name="l01310"></a>01310 <span class="keyword">private</span>:
+<a name="l01311"></a>01311 
+<a name="l01312"></a>01312 <span class="keyword">private</span> slots:
+<a name="l01313"></a>01313     <span class="keywordtype">void</span> editorDone();
+<a name="l01314"></a>01314     <span class="keywordtype">void</span> editorChanged();
+<a name="l01315"></a>01315 
+<a name="l01316"></a>01316 
+<a name="l01317"></a>01317 };
+<a name="l01318"></a>01318 
+<a name="l01319"></a>01319 }
+<a name="l01320"></a>01320 
+<a name="l01321"></a>01321 <span class="preprocessor">#endif // CM_CANVAS_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -1196,7 +1226,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 14 2017 09:43:30 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Mar 14 2017 10:33:15 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

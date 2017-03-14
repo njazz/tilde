@@ -4,7 +4,7 @@ var searchData=
   ['paintpatchcords',['paintPatchcords',['../classqtpd_1_1_canvas.html#a6aa23061d920afda29da1bc88009a72f',1,'qtpd::Canvas']]],
   ['parsearguments',['parseArguments',['../classceammc_1_1_base_object.html#abc08eb89206e5485c908c4cb7a819f45',1,'ceammc::BaseObject']]],
   ['parsestring',['parseString',['../classqtpd_1_1_file_parser.html#ae09cab80a56d87bc9dabe76e89b8f4ce',1,'qtpd::FileParser']]],
-  ['patchcord',['patchcord',['../classqtpd_1_1_canvas.html#a3625736a403310d179fe0738156e572f',1,'qtpd::Canvas::patchcord(UIObject *obj1, int outlet, UIObject *obj2, int inlet)'],['../classqtpd_1_1_canvas.html#ad699a19f9fa92dee170f31a1f507bc9c',1,'qtpd::Canvas::patchcord(UIObject *obj1, UIWidget *outport, UIObject *obj2, UIWidget *inport)'],['../classqtpd_1_1_patchcord.html#abba33006749b5e72dd66e9dc7127c4e3',1,'qtpd::Patchcord::Patchcord()']]],
+  ['patchcord',['Patchcord',['../classqtpd_1_1_patchcord.html#abba33006749b5e72dd66e9dc7127c4e3',1,'qtpd::Patchcord::Patchcord()'],['../classqtpd_1_1_canvas.html#a3625736a403310d179fe0738156e572f',1,'qtpd::Canvas::patchcord(UIObject *obj1, int outlet, UIObject *obj2, int inlet)'],['../classqtpd_1_1_canvas.html#ad699a19f9fa92dee170f31a1f507bc9c',1,'qtpd::Canvas::patchcord(UIObject *obj1, UIWidget *outport, UIObject *obj2, UIWidget *inport)']]],
   ['patchcordtype',['patchcordType',['../classqtpd_1_1_patchcord.html#a538831162319dff6ac3d728123424fef',1,'qtpd::Patchcord']]],
   ['path',['path',['../classceammc_1_1faust_1_1_u_i_element.html#acab5990e9f88d8f2ad4b2b91df77ebb2',1,'ceammc::faust::UIElement']]],
   ['pathcmp',['pathcmp',['../classceammc_1_1faust_1_1_u_i_element.html#aab0bb924fd1ed11dabe9c1066a53b09b',1,'ceammc::faust::UIElement']]],

@@ -9,7 +9,6 @@ var searchData=
   ['deinterleaveminlength',['deinterleaveMinLength',['../namespaceceammc_1_1list.html#aa1f7d764d909cd6696e06b4ca9385b09',1,'ceammc::list']]],
   ['deinterleavepadwith',['deinterleavePadWith',['../namespaceceammc_1_1list.html#adcee60cf04e286d5078d1140f1cab7c6',1,'ceammc::list']]],
   ['delboxes',['delBoxes',['../classqtpd_1_1_canvas.html#a6e1c926dcc12807478e7af475c8276b3',1,'qtpd::Canvas']]],
-  ['deletebox',['deleteBox',['../classqtpd_1_1_canvas.html#a54ae5b1d5352bcce723481073db40647',1,'qtpd::Canvas']]],
   ['deletepatchcordsfor',['deletePatchcordsFor',['../classqtpd_1_1_canvas.html#ac30f0f6774cab9985dbb384ae436ca1a',1,'qtpd::Canvas']]],
   ['deletepoint',['deletePoint',['../classceammc_1_1_b_p_f.html#a5f15512a761f25025e44a5cc3ee52e6b',1,'ceammc::BPF']]],
   ['delselected',['delSelected',['../classqtpd_1_1_patch_window.html#a9f2e7fc3b36eccf313302095b33349c6',1,'qtpd::PatchWindow']]],

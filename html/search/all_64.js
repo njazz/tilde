@@ -11,7 +11,6 @@ var searchData=
   ['deinterleavepadwith',['deinterleavePadWith',['../namespaceceammc_1_1list.html#adcee60cf04e286d5078d1140f1cab7c6',1,'ceammc::list']]],
   ['del_5fmod',['del_mod',['../structceammc__gui_1_1ui__bpfunc.html#a4c3cfc47aeebdb38de56a266eb43e965',1,'ceammc_gui::ui_bpfunc']]],
   ['delboxes',['delBoxes',['../classqtpd_1_1_canvas.html#a6e1c926dcc12807478e7af475c8276b3',1,'qtpd::Canvas']]],
-  ['deletebox',['deleteBox',['../classqtpd_1_1_canvas.html#a54ae5b1d5352bcce723481073db40647',1,'qtpd::Canvas']]],
   ['deletepatchcordsfor',['deletePatchcordsFor',['../classqtpd_1_1_canvas.html#ac30f0f6774cab9985dbb384ae436ca1a',1,'qtpd::Canvas']]],
   ['deletepoint',['deletePoint',['../classceammc_1_1_b_p_f.html#a5f15512a761f25025e44a5cc3ee52e6b',1,'ceammc::BPF']]],
   ['delidx',['delidx',['../structceammc__gui_1_1ui__bpfunc.html#a45db4290d117bc2aac76db641dfe94b2',1,'ceammc_gui::ui_bpfunc']]],
