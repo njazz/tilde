@@ -96,6 +96,7 @@ public:
     QString fileName;
 
     //temp
+    // todo replace with pd object!
     t_canvas* pdCanvas;
 
     explicit Canvas(UIObject *parent = 0);
@@ -112,8 +113,9 @@ public:
         Canvas* ret = new Canvas(parentCanvas);
 
         //copy here
-        ret->setPdObject(srcCanvas->pdObject());
+        //ret->setPdObject(srcCanvas->pdObject());
         ret->pdCanvas = srcCanvas->pdCanvas;
+        ret->setPdObject(ret->pdCanvas);
 
         ret->setDrawStyle(dStyle);
 
