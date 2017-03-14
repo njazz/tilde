@@ -30,7 +30,6 @@ var searchData=
   ['cm_5fpost',['cm_post',['../classqtpd_1_1_pd_window.html#a93ab40da7d572e89f2f2114a269b534b',1,'qtpd::PdWindow']]],
   ['cmp_5fclosepatch',['cmp_closepatch',['../cm__pdlink_8h.html#af08cbd72d5b239361a801b4b67247a9c',1,'cm_pdlink.h']]],
   ['cmp_5fconnectui',['cmp_connectUI',['../cm__pdlink_8h.html#a9b4bef98ca39e6d157ee073b5139ae9d',1,'cm_pdlink.h']]],
-  ['cmp_5fcreate_5fmessage',['cmp_create_message',['../cm__pdlink_8h.html#a3bac993f5ef2ae3ddcb123762d3668d0',1,'cm_pdlink.h']]],
   ['cmp_5fcreate_5fobject',['cmp_create_object',['../cm__pdlink_8h.html#a2c0a0d9150791897b85a167998ecf7c2',1,'cm_pdlink.h']]],
   ['cmp_5fdelete_5fpatchcord',['cmp_delete_patchcord',['../cm__pdlink_8h.html#a3b0a14ab77137204a0f68e45f45e92c8',1,'cm_pdlink.h']]],
   ['cmp_5fdeleteobject',['cmp_deleteobject',['../cm__pdlink_8h.html#a69094de48546687863d38bc9d3689993',1,'cm_pdlink.h']]],

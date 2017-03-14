@@ -65,6 +65,6 @@ var searchData=
   ['uiwidget',['UIWidget',['../classqtpd_1_1_u_i_widget.html',1,'qtpd']]],
   ['uiwidget',['UIWidget',['../classqtpd_1_1_u_i_widget.html#a89afbb3b3601a38afe23a461a0ccc2ac',1,'qtpd::UIWidget']]],
   ['unbindreceive',['unbindReceive',['../classceammc_1_1_base_object.html#a8107328beafb53a049ad62b6c9c5cda9',1,'ceammc::BaseObject']]],
-  ['updateui',['updateUI',['../classqtpd_1_1_u_i_bang.html#a25807405af39cc30616f4d682feeac8e',1,'qtpd::UIBang::updateUI()'],['../classqtpd_1_1_u_i_float.html#add097c7c25166226f6a96eb6a16fb3f6',1,'qtpd::UIFloat::updateUI()'],['../classqtpd_1_1_u_i_message.html#a5b6f85f83def25fc402511fbbdfcfcd2',1,'qtpd::UIMessage::updateUI()'],['../classqtpd_1_1_u_i_text.html#a8bf9d3f08b1fa8ceb7c01bfb71ec0e69',1,'qtpd::UIText::updateUI()'],['../classqtpd_1_1_u_i_toggle.html#a3b873c6339f64313fb2d39fac0244a4f',1,'qtpd::UIToggle::updateUI()']]],
+  ['updateui',['updateUI',['../classqtpd_1_1_u_i_bang.html#ab16da51707a8293e607e929a34075c21',1,'qtpd::UIBang::updateUI()'],['../classqtpd_1_1_u_i_float.html#add097c7c25166226f6a96eb6a16fb3f6',1,'qtpd::UIFloat::updateUI()'],['../classqtpd_1_1_u_i_message.html#a5b6f85f83def25fc402511fbbdfcfcd2',1,'qtpd::UIMessage::updateUI()'],['../classqtpd_1_1_u_i_text.html#a8bf9d3f08b1fa8ceb7c01bfb71ec0e69',1,'qtpd::UIText::updateUI()'],['../classqtpd_1_1_u_i_toggle.html#a3b873c6339f64313fb2d39fac0244a4f',1,'qtpd::UIToggle::updateUI()']]],
   ['use_5fpresets',['use_presets',['../classceammc__gui_1_1_gui_factory.html#ad966dc14aa7acf048a75a5ce9eb5150b',1,'ceammc_gui::GuiFactory']]]
 ];

@@ -79,6 +79,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
@@ -90,6 +91,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <p><a href="cm__pdlink_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr><td colspan="2"><h2><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpd_lib.html">pdLib</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Temporary. wrapper for c functions - for future Python API.  <a href="classpd_lib.html#details">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#aef7ba73145c14cf0ffca487d734e38f0">t_updateUI</a> )(void *uiobj, <a class="el" href="classceammc_1_1_atom_list.html">ceammc::AtomList</a> msg)</td></tr>
@@ -111,10 +116,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">closes and frees the canvas  <a href="#af08cbd72d5b239361a801b4b67247a9c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">t_object *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a2c0a0d9150791897b85a167998ecf7c2">cmp_create_object</a> (t_canvas *canvas, std::string class_name, int x, int y)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates pd object  <a href="#a2c0a0d9150791897b85a167998ecf7c2"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">t_object *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a3bac993f5ef2ae3ddcb123762d3668d0">cmp_create_message</a> (t_canvas *canvas, std::string message, int x, int y)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates pd message TODO not working now  <a href="#a3bac993f5ef2ae3ddcb123762d3668d0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a89dd190ed6863563fcecc6c9001a0f1c">cmp_moveobject</a> (t_object *obj, int x, int y)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">move pd object to new location  <a href="#a89dd190ed6863563fcecc6c9001a0f1c"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates pd message TODO not working now  <a href="#a89dd190ed6863563fcecc6c9001a0f1c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a69094de48546687863d38bc9d3689993">cmp_deleteobject</a> (t_canvas *canvas, t_object *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete pd object  <a href="#a69094de48546687863d38bc9d3689993"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a6d06b5d8cde66b3cada1fe52a6e5ac83">cmp_patchcord</a> (t_object *obj1, int outno, t_object *obj2, int inno)</td></tr>
@@ -231,57 +234,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a class="anchor" id="a3bac993f5ef2ae3ddcb123762d3668d0"></a><!-- doxytag: member="cm_pdlink.h::cmp_create_message" ref="a3bac993f5ef2ae3ddcb123762d3668d0" args="(t_canvas *canvas, std::string message, int x, int y)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">t_object* <a class="el" href="cm__pdlink_8h.html#a3bac993f5ef2ae3ddcb123762d3668d0">cmp_create_message</a> </td>
-          <td>(</td>
-          <td class="paramtype">t_canvas *&#160;</td>
-          <td class="paramname"><em>canvas</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>message</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>y</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>creates pd message TODO not working now </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">canvas</td><td></td></tr>
-    <tr><td class="paramname">message</td><td></td></tr>
-    <tr><td class="paramname">x</td><td></td></tr>
-    <tr><td class="paramname">y</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>pointer to object </dd></dl>
 
 </div>
 </div>
@@ -579,6 +531,18 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>creates pd message TODO not working now </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">canvas</td><td></td></tr>
+    <tr><td class="paramname">message</td><td></td></tr>
+    <tr><td class="paramname">x</td><td></td></tr>
+    <tr><td class="paramname">y</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>pointer to object </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000003">Deprecated:</a></b></dt><dd>using only objects now </dd></dl>
 <p>move pd object to new location </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -644,6 +608,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>new canvas or 0 if failed </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd>not used for now - the files are loaded by 'client' </dd></dl>
 
 </div>
 </div>
@@ -755,6 +720,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated:</a></b></dt><dd>not used for now - the files are saved by 'client' </dd></dl>
 
 </div>
 </div>
@@ -862,7 +828,7 @@ Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 13 2017 22:38:45 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Mar 14 2017 08:44:30 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
