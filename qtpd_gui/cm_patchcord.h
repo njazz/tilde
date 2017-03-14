@@ -12,6 +12,17 @@
 namespace qtpd
 {
 
+////
+/// \brief more basic patchcord structure. later merge that
+typedef struct structPatchcordNumbers_
+{
+    int obj1;
+    int obj2;
+    int out1;
+    int in2;
+}
+structPatchcordNumbers;
+
 typedef enum {cm_pt_anything, cm_pt_signal} patchcordTypeEnum;
 ////
 /// \brief gui patchcord class
@@ -20,10 +31,10 @@ class Patchcord
 {
 private:
 
-    UIWidget* obj1;
-    UIWidget* out1;
-    UIWidget* obj2;
-    UIWidget* in2;
+    UIWidget* obj1_;
+    UIWidget* out1_;
+    UIWidget* obj2_;
+    UIWidget* in2_;
 
     patchcordTypeEnum patchcordType_;
 
@@ -33,26 +44,26 @@ public:
     //explicit cm_patchcord(cm_widget *parent = 0);
 
     //cm_patchcord();
-    explicit Patchcord(UIWidget* obj1, UIWidget* out1, UIWidget* obj2, UIWidget* in2);
+    explicit Patchcord(UIWidget* obj1_, UIWidget* out1_, UIWidget* obj2_, UIWidget* in2_);
 
-    QPoint getStartPoint()
+    QPoint startPoint()
     {
 
         QPoint start = QPoint(0,0);
 
-        if (obj1 && out1)
-            start = QPoint( obj1->pos().x() + out1->pos().x() + out1->width()/2,
-                            obj1->pos().y() + out1->pos().y() + out1->height()/2 );
+        if (obj1_ && out1_)
+            start = QPoint( obj1_->pos().x() + out1_->pos().x() + out1_->width()/2,
+                            obj1_->pos().y() + out1_->pos().y() + out1_->height()/2 );
 
         return start;
     }
 
-    QPoint getEndPoint()
+    QPoint endPoint()
     {
         QPoint end = QPoint(0,0);
-        if (obj2 && in2)
-            end = QPoint (obj2->pos().x() + in2->pos().x() + in2->width()/2,
-                          obj2->pos().y() + in2->pos().y() + in2->height()/2);
+        if (obj2_ && in2_)
+            end = QPoint (obj2_->pos().x() + in2_->pos().x() + in2_->width()/2,
+                          obj2_->pos().y() + in2_->pos().y() + in2_->height()/2);
         return end;
 
     }
@@ -63,37 +74,37 @@ public:
 
     ////
 
-    UIObject* getObj1()
+    UIObject* obj1()
     {
-        return (UIObject*)this->obj1;
+        return (UIObject*)this->obj1_;
     }
 
-    UIObject* getObj2()
+    UIObject* obj2()
     {
-        return (UIObject*)this->obj2;
+        return (UIObject*)this->obj2_;
     }
 
-    int getOutIdx()
+    int outletIndex()
     {
-        return ((Port*)this->out1)->portIndex;
+        return ((Port*)this->out1_)->portIndex;
     }
 
-    int getInIdx()
+    int inletIndex()
     {
-        return ((Port*)this->in2)->portIndex;
+        return ((Port*)this->in2_)->portIndex;
     }
 
     ////
 
     bool connectsObject(UIWidget* obj)
     {
-        return ( (obj == this->obj1) || (obj == this->obj2) );
+        return ( (obj == this->obj1_) || (obj == this->obj2_) );
     }
 
     bool hover(QPoint pos)
     {
-        QPoint start = this->getStartPoint();
-        QPoint end = this->getEndPoint();
+        QPoint start = this->startPoint();
+        QPoint end = this->endPoint();
 
         float rx = end.x() - start.x();
         float ry = end.y() - start.y();
@@ -115,6 +126,8 @@ public:
 
 
     }
+
+
 
 
 
