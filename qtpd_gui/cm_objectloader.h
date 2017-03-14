@@ -92,21 +92,25 @@ public:
             return objectConstructors_[objName];
         }
 
-        return 0;
+        return objectConstructors_["ui.obj"];
 
     }
 
     UIObject* createObject(std::string objName, std::string objectData, t_canvas* pdCanvas, UIWidget *parent)
     {
-        if (objName == "ui.obj")
-        {
-            objectData = objName + " " + objectData;
+        //        if (objName == "ui.obj")
+        //        {
+        //            objectData = objName + " " + objectData;
 
-            return UIBox::createObject(objectData, pdCanvas,  parent);
-        }
-        else
+        //            return UIBox::createObject(objectData, pdCanvas,  parent);
+        //        }
+        //        else
         {
             cmObjectConstructor cmc = this->getConstructorFor(objName);
+
+            if (cmc == getConstructorFor("ui.obj"))
+                objectData = objName + " " + objectData;
+
             return cmc(objectData, pdCanvas, parent);
         }
     }
