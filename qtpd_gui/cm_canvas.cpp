@@ -31,7 +31,7 @@ Canvas::Canvas(UIObject *parent) : UIObject(parent)
     this->connObj1 = 0;
     this->connOutlet = 0;
     this->dragObject = 0;
-    this->pdCanvas = 0;
+    this->setPdObject(0);   //extra
 
     //
     this->drawStyle_ = ds_Canvas;

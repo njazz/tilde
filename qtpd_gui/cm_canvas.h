@@ -97,7 +97,7 @@ public:
 
     //temp
     // todo replace with pd object!
-    t_canvas* pdCanvas;
+    // t_canvas* pdCanvas;
 
     explicit Canvas(UIObject *parent = 0);
 
@@ -114,8 +114,8 @@ public:
 
         //copy here
         //ret->setPdObject(srcCanvas->pdObject());
-        ret->pdCanvas = srcCanvas->pdCanvas;
-        ret->setPdObject(ret->pdCanvas);
+        //ret->pdCanvas = srcCanvas->pdCanvas;
+        ret->setPdObject(srcCanvas->pdObject());
 
         ret->setDrawStyle(dStyle);
 
@@ -593,7 +593,7 @@ public:
         int in_c=0, out_c=0;
 
         //temp
-        if (!this->pdCanvas)
+        if (!this->pdObject())
         {
             qDebug("bad pd canvas instance");
             box->setErrorBox(true);
@@ -854,11 +854,15 @@ public:
                 return b;
             }
 
+            if (atoms.at(0) == "restore")
+            {
+                return 0;
+            }
 
 
         }
 
-        UIObject *obj = ObjectLoader::inst().createObject(uiObjectName, objectData1, this->pdCanvas, (UIWidget*)this);
+        UIObject *obj = ObjectLoader::inst().createObject(uiObjectName, objectData1, (t_canvas*)this->pdObject(), (UIWidget*)this);
 
         connect(obj,&UIMessage::selectBox, this, &Canvas::s_SelectBox);
         connect(obj,&UIMessage::moveBox, this, &Canvas::s_MoveBox);
@@ -868,7 +872,7 @@ public:
 
         obj->show();
 
-        qDebug() << "created object: [" << QString(uiObjectName.c_str()) << "]" << objectData1.c_str() << ":" << atoms.count() << "@" << QString(std::to_string((long)this->pdCanvas).c_str());
+        qDebug() << "created object: [" << QString(uiObjectName.c_str()) << "]" << objectData1.c_str() << ":" << atoms.count() << "@" << QString(std::to_string((long)this->pdObject()).c_str());
 
         if (atoms.count())
         {
@@ -919,7 +923,7 @@ public:
 
         obj->show();
 
-        qDebug() << "create subcanvas @" << QString(std::to_string((long)this->pdCanvas).c_str());
+        qDebug() << "create subcanvas @" << QString(std::to_string((long)this->pdObject()).c_str());
 
         return obj;
 
@@ -1101,7 +1105,7 @@ public:
                 if ((t_object*)(box->pdObject()))
                 {
                     if (!box->errorBox())
-                        cmp_deleteobject(this->pdCanvas, (t_object*)box->pdObject());
+                        cmp_deleteobject((t_canvas*)this->pdObject(), (t_object*)box->pdObject());
                     box->setPdObject(0);
                 }
             }
@@ -1551,12 +1555,12 @@ private slots:
     {
         qDebug("port count update");
 
-        if (this->pdCanvas)
+        if (this->pdObject())
         {
             qDebug("setting ports");
 
-            int in_c = cmp_get_inlet_count((t_object*)this->pdCanvas);
-            int out_c = cmp_get_outlet_count((t_object*)this->pdCanvas);
+            int in_c = cmp_get_inlet_count((t_object*)this->pdObject());
+            int out_c = cmp_get_outlet_count((t_object*)this->pdObject());
 
             int obj_in = this->inletCount();
             int obj_out = this->outletCount();

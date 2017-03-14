@@ -56,6 +56,8 @@ public:
 
             qDebug() << "objname" << objname;
 
+            /*
+
             //cleanup this - "checkvalid"
             if (list.at(3) == "ui.msg")
                 //cmcanvas->createMsg(msgname.toStdString(), pos);
@@ -76,6 +78,13 @@ public:
             else
                 //cmcanvas->createBox(objname.toStdString(), pos);
                 cmcanvas->createObject("ui.obj", objname.toStdString(), pos);
+
+            */
+
+//            if (list.at(3) == "ui.obj")
+//                cmcanvas->createObject("ui.obj", objname.toStdString(), pos);
+            //else
+                cmcanvas->createObject(list.at(3).toStdString(), objname.toStdString(), pos);
 
 
         }

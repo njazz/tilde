@@ -37,9 +37,9 @@ PatchWindow* PatchWindow::newWindow()
 
     ((QMainWindow*)this_)->setWindowTitle("Untitled-1");
 
-    this_->canvas->pdCanvas = cmp_newpatch();
+    this_->canvas->setPdObject(  cmp_newpatch() );
 
-    if (!this_->canvas->pdCanvas)
+    if (!this_->canvas->pdObject())
     {qDebug("Failed to create canvas!");}
 
     return this_;
@@ -92,9 +92,9 @@ PatchWindow* PatchWindow::newSubpatch(t_canvas* subpatch)
 
     ((QMainWindow*)this_)->setWindowTitle("<subpatch>");
 
-    this_->canvas->pdCanvas = subpatch;
+    this_->canvas->setPdObject( subpatch );
 
-    if (!this_->canvas->pdCanvas)
+    if (!this_->canvas->pdObject())
     {qDebug("Failed to create canvas!");}
 
     return this_;
