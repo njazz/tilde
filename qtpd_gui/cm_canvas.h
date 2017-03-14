@@ -1373,6 +1373,54 @@ public:
 
     }
 
+    QStringList canvasAsPdStrings()
+    {
+
+        QStringList ret;
+
+        //save canvas
+        //todo canvas is subpatch flag
+        std::string out1;
+
+        out1 = this->asPdFileString(); //"#N canvas 0 0 400 300 10;\r\n";     //temporary
+        //file->write(out1.c_str(),out1.size());
+
+        ret.append(out1.c_str());
+
+        //objects
+        std::vector<UIObject*> objects = this->getObjectBoxes();
+        std::vector<UIObject*>::iterator it;
+
+        for (it = objects.begin(); it!= objects.end(); ++it)
+        {
+            // check for subpatches
+            out1 = "#X obj ";
+            out1 += std::to_string(((UIObject*)*it)->x()) + " " + std::to_string(((UIObject*)*it)->y())+ " ";
+            out1 += ((UIObject*)*it)->asPdFileString();
+            out1 +=";\r\n" ;
+
+            ret.append(out1.c_str());
+
+        }
+
+        //patchcords
+        std::vector<Patchcord*> patchcords = this->patchcords();
+        std::vector<Patchcord*>::iterator it2;
+
+        for (it2 = patchcords.begin(); it2!= patchcords.end(); ++it2)
+        {
+            // check for subpatches
+            out1 = "#X connect ";
+            out1 += this->patchcordAsPdFileString(*it2);
+            out1 +=";\r\n";
+
+            ret.append(out1.c_str());
+
+        }
+
+        return ret;
+    }
+
 
 
 public slots:
