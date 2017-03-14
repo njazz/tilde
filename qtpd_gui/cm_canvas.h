@@ -1339,7 +1339,7 @@ public:
             ret += "#X restore ";
             ret += std::to_string(this->x()) + " " + std::to_string(this->y())+ " ";
             //ret += this->pdObjectName_+ this->objectData_ + this->properties_.asPdFileString();
-            ret += "subpatch_name";
+            ret += objectData();
 
             return ret;
 

@@ -196,14 +196,18 @@ public:
                                         {
                                             if (pdParserPrevWindow->canvas)
                                             {
-//                                                UIBox *b1 = 0;
+                                                //                                                UIBox *b1 = 0;
 
-//                                                b1 = pdParserPrevWindow->canvas->restoreSubcanvas(objname.toStdString(), pos, pdParserWindow->canvas->pdCanvas);
-//                                                b1->cmSubcanvas = pdParserWindow;
+                                                //                                                b1 = pdParserPrevWindow->canvas->restoreSubcanvas(objname.toStdString(), pos, pdParserWindow->canvas->pdCanvas);
+                                                //                                                b1->cmSubcanvas = pdParserWindow;
 
                                                 qDebug("restore");
 
-                                                pdParserPrevWindow->canvas->createBoxForCanvas(pdParserPrevWindow->canvas,objData, pos);
+                                                UIObject *b = pdParserPrevWindow->canvas->createBoxForCanvas(pdParserPrevWindow->canvas, objData, pos);
+
+                                                //IObject *b = this->createBoxForCanvas(newCanvas, objectData, pos);
+                                                ((UIBox*)b)->setSubpatchWindow ((QMainWindow*)pdParserPrevWindow);
+                                                ((Canvas*)b)->setSubcanvas(pdParserPrevWindow->canvas);
 
                                             }
                                         }
