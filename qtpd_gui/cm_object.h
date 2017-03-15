@@ -271,7 +271,7 @@ public:
     ////
     /// \brief call this after setting object data
     ///
-    void autoResize()
+    virtual void autoResize()
     {
         QFont myFont(PREF_QSTRING("Font"), 11);
         QFontMetrics fm(myFont);

@@ -56,6 +56,22 @@ public Q_SLOTS:
         c->patchcord(obj1,out1,obj2,in2);
     }
 
+    ////////////
+    // lower level
+
+    void addInlet(UIObject* obj)
+    {
+        if (obj)
+            obj->addInlet();
+    }
+
+    void addOutlet(UIObject* obj)
+    {
+        if (obj)
+            obj->addOutlet();
+    }
+
+
 };
 
 #endif // PY_QTPD_H

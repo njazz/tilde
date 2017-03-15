@@ -52,6 +52,8 @@ private:
     QAction *putScope;
     QAction *putSpectroscope;
 
+    QAction *putScriptAct;
+
 
 
 
@@ -178,6 +180,10 @@ public:
         putSpectroscope = new QAction(tr("Spectroscope"), this);
         //putArray->setShortcut(tr("Ctrl+Shift+T"));
 
+        putScriptAct = new QAction(tr("Script"), this);
+        putScriptAct->setShortcut(tr("Ctrl+7"));
+        connect(putScriptAct, &QAction::triggered, this, &PatchWindow::newScriptBox);
+
 
         showGridAct = new QAction(tr("Show grid"), this);
         showGridAct->setShortcut(tr("Ctrl+Shift+G"));
@@ -265,6 +271,8 @@ public:
         putMenu->addSeparator();
         putMenu->addAction(putScope);
         putMenu->addAction(putSpectroscope);
+        putMenu->addSeparator();
+        putMenu->addAction(putScriptAct);
 
         arrangeMenu->addAction(showGridAct);
         arrangeMenu->addAction(snapToGridAct);
@@ -380,6 +388,17 @@ public:
         if (this->canvas->getEditMode() != em_Locked)
         {
             UIObject *newBng = this->canvas->createObject("ui.toggle","",QPoint(100,100));
+            this->canvas->dragObject = newBng;
+            newBng->show();
+        }
+
+    }
+
+    void newScriptBox()
+    {
+        if (this->canvas->getEditMode() != em_Locked)
+        {
+            UIObject *newBng = this->canvas->createObject("ui.script","",QPoint(100,100));
             this->canvas->dragObject = newBng;
             newBng->show();
         }

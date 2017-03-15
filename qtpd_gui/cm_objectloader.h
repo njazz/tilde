@@ -16,6 +16,8 @@
 #include "cmo_bang.h"
 #include "cmo_toggle.h"
 
+#include "cmo_script.h"
+
 namespace qtpd
 {
 typedef UIObject* (*cmObjectConstructor)(std::string objectData, t_canvas* pdCanvas, UIWidget *parent);
@@ -56,6 +58,8 @@ public:
 
         this->addUIobject("ui.bang", &UIBang::createObject);
         this->addUIobject("ui.toggle", &UIToggle::createObject);
+
+        this->addUIobject("ui.script", &UIScript::createObject);
 
         //TODO compatibility
         //this->addUIobject("msg", &cmo_msg::createObject);

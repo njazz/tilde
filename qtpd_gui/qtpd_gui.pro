@@ -52,7 +52,8 @@ SOURCES += main.cpp\
     properties/cm_property.cpp \
     properties/cm_propertylist.cpp \
     python/PythonQtScriptingConsole.cpp \
-    python/wrappers/py_testclass.cpp
+    python/wrappers/py_testclass.cpp \
+    objects/cmo_script.cpp
 
 
 HEADERS  += \
@@ -115,7 +116,8 @@ HEADERS  += \
     python/wrappers/py_wrapers.h \
     python/wrappers/py_pdlib.h \
     python/wrappers/py_testclass.h \
-    python/wrappers/py_qtpd.h
+    python/wrappers/py_qtpd.h \
+    objects/cmo_script.h
 
 
 FORMS    += \

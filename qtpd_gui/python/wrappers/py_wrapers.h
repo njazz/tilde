@@ -23,7 +23,6 @@ void pyWrappersInit()
     static pyQtpd _pyQtpd;
     mainContext.addObject("Qtpd", &_pyQtpd);
 
-
 }
 
 
