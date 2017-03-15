@@ -22,6 +22,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
+CONFIG += static
 
 
 SOURCES += main.cpp\
@@ -45,6 +46,7 @@ SOURCES += main.cpp\
     cm_sizebox.cpp \
     properties/cm_property.cpp \
     properties/cm_propertylist.cpp \
+    python/PythonQtScriptingConsole.cpp
 
 
 HEADERS  += \
@@ -74,7 +76,36 @@ HEADERS  += \
     properties/cm_propertylist.h \
     properties/cm_preferences.h \
     cm_headers.h \
-    cm_canvas_types.h
+    cm_canvas_types.h \
+    #
+    python/PythonQtScriptingConsole.h \
+    python/headers/PythonQtStdDecorators.h \
+    python/headers/PythonQtDoc.h \
+    python/headers/PythonQt.h \
+    python/headers/PythonQtClassInfo.h \
+    python/headers/PythonQtClassWrapper.h \
+    python/headers/PythonQtConversion.h \
+    python/headers/PythonQtInstanceWrapper.h \
+    python/headers/PythonQtProperty.h \
+    python/headers/PythonQtSignal.h \
+    python/headers/PythonQtSlotDecorator.h \
+    python/headers/PythonQtImporter.h \
+    python/headers/PythonQtMethodInfo.h \
+    python/headers/PythonQtSlot.h \
+    python/headers/PythonQtBoolResult.h \
+    python/headers/PythonQtUtils.h \
+    python/headers/PythonQtPythonInclude.h \
+    python/headers/PythonQtMisc.h \
+    python/headers/PythonQtObjectPtr.h \
+    python/headers/PythonQtSignalReceiver.h \
+    python/headers/PythonQtImportFileInterface.h \
+    python/headers/PythonQtCppWrapperFactory.h \
+    python/headers/PythonQtStdIn.h \
+    python/headers/PythonQtStdOut.h \
+    python/headers/PythonQt_QtAll.h \
+    python/headers/PythonQtQFileImporter.h \
+    python/headers/PythonQtSystem.h \
+    python/headers/PythonQtVariants.h
 
 
 FORMS    += \
@@ -83,10 +114,22 @@ FORMS    += \
 
 LIBS += "../qtpd_lib/libqtpd.a"
 LIBS += "/usr/local/lib/libportaudio.dylib"
+#LIBS += "$$PWD/python/lib/libPythonQt_QtAll.1.dylib"
+#LIBS += "$$PWD/python/lib/libPythonQt.1.dylib"
 
 DISTFILES += \
     pd_ceammc.ico \
-    pd_ceammc.png
+    pd_ceammc.png \
+#    python/lib/libPythonQt_QtAll.1.dylib \
+#    python/lib/libPythonQt.1.dylib
+
+#    python/lib/libPythonQt_QtAll.1.0.0.dylib \
+#    python/lib/libPythonQt.1.0.0.dylib \
+
+include(python/build/python.prf)
+#include(python/build/common.prf)
+#include(python/build/PythonQt_QtAll.prf)
+#include(python/build/PythonQt.prf)
 
 win32:RC_ICONS += your_icon.ico
 
@@ -94,6 +137,17 @@ INCLUDEPATH += \
     "../qtpd_lib/src/" \
     window/ \
     objects/ \
-    properties/
+    properties/ \
+    python/headers/
 
 PRECOMPILED_HEADER = cm_headers.h
+
+macx: LIBS += -L$$PWD/python/lib/ -lPythonQt_QtAll.1.0.0
+
+INCLUDEPATH += $$PWD/python/headers
+DEPENDPATH += $$PWD/python/headers
+
+macx: LIBS += -L$$PWD/python/lib/ -lPythonQt.1.0.0
+
+INCLUDEPATH += $$PWD/python/headers
+DEPENDPATH += $$PWD/python/headers

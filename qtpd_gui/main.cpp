@@ -10,6 +10,11 @@
 
 #include "cm_preferences.h"
 
+//
+#include <PythonQt.h>
+#include <PythonQt_QtAll.h>
+#include "python/PythonQtScriptingConsole.h"
+
 using namespace qtpd;
 
 void pd_window_printhook(const char* s)
@@ -36,6 +41,15 @@ int main(int argc, char *argv[])
 
     pdw->move(0,100);
     pdw->show();
+
+    //python
+    PythonQt::init(PythonQt::IgnoreSiteModule | PythonQt::RedirectStdOut);
+//    PythonQt_QtAll::init();
+
+    PythonQtObjectPtr  mainContext = PythonQt::self()->getMainModule();
+    PythonQtScriptingConsole console(NULL, mainContext);
+    console.show();
+
 
 
     return a.exec();
