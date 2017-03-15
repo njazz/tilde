@@ -61,6 +61,8 @@ private:
     // local, !Box
     UIObject *connObj1;
     UIObject *connOutlet;
+    //
+    UIObject *replaceObject;
 
     // local, !Box
     QPoint newObjectPos;
@@ -83,7 +85,7 @@ private:
     UIObject *Subcanvas_;
 
     // !Canvas
-    QLineEdit* editor_;
+//    QLineEdit* editor_; //remove that
 
     ObjectMaker *objectMaker_;
 
@@ -510,12 +512,12 @@ public:
             }
         }
 
-        if ( (this->getEditMode()==em_Unlocked) && this->isSelected())
-        {
-            this->editor_->setText(QString(this->objectData().c_str()));
-            this->editor_->show();
-            this->editor_->setFocus();
-        }
+//        if ( (this->getEditMode()==em_Unlocked) && this->isSelected())
+//        {
+//            this->editor_->setText(QString(this->objectData().c_str()));
+//            this->editor_->show();
+//            this->editor_->setFocus();
+//        }
 
         emit selectBox(this);
         this->dragOffset = ev->pos();
@@ -1554,8 +1556,8 @@ public slots:
 private:
 
 private slots:
-    void editorDone();
-    void editorChanged();
+//    void editorDone();
+//    void editorChanged();
 
     ////
     /// \brief slot in Box-style canvas for handling new ins/outs

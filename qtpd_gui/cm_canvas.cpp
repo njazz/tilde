@@ -37,16 +37,16 @@ Canvas::Canvas(UIObject *parent) : UIObject(parent)
     this->drawStyle_ = ds_Canvas;
 
     //
-    this->editor_ = new QLineEdit(this);
-    this->editor_->setFixedSize(65-5,18);
-    this->editor_->move(1,1);
-    this->editor_->setFont(QFont(PREF_QSTRING("Font"),11,0,false));
-    this->editor_->hide();
-    this->editor_->setAttribute(Qt::WA_MacShowFocusRect, 0);
-    this->editor_->setFrame(false);
+//    this->editor_ = new QLineEdit(this);
+//    this->editor_->setFixedSize(65-5,18);
+//    this->editor_->move(1,1);
+//    this->editor_->setFont(QFont(PREF_QSTRING("Font"),11,0,false));
+//    this->editor_->hide();
+//    this->editor_->setAttribute(Qt::WA_MacShowFocusRect, 0);
+//    this->editor_->setFrame(false);
 
-    connect(this->editor_,&QLineEdit::editingFinished,this,&Canvas::editorDone);
-    connect(this->editor_,&QLineEdit::textEdited, this,&Canvas::editorChanged);
+    //connect(this->editor_,&QLineEdit::editingFinished,this,&Canvas::editorDone);
+    //connect(this->editor_,&QLineEdit::textEdited, this,&Canvas::editorChanged);
 
 
     objectMaker_ = new ObjectMaker((QLineEdit*)this);
@@ -54,6 +54,8 @@ Canvas::Canvas(UIObject *parent) : UIObject(parent)
 
     //
     this->setMinimumBoxWidth(40);
+
+    replaceObject = 0;
 
 
 
@@ -155,31 +157,31 @@ void Canvas::s_MoveBox(UIWidget *box, QMouseEvent* event)
 
 }
 
-void  Canvas::editorDone()
-{
-    qDebug("editor done");
+//void  Canvas::editorDone()
+//{
+//    qDebug("editor done");
 
-    this->setObjectData(this->editor_->text().toStdString());
+//    this->setObjectData(this->editor_->text().toStdString());
 
-    //this->setPdMessage();
-    //todo
+//    //this->setPdMessage();
+//    //todo
 
-    this->editor_->hide();
-}
+//    //this->editor_->hide();
+//}
 
-void  Canvas::editorChanged()
-{
-    QFont myFont(PREF_QSTRING("Font"), 11);
-    QFontMetrics fm(myFont);
-    int new_w = fm.width(QString(this->editor_->text())) + 10;
-    new_w = (new_w<25) ? 25 : new_w;
-    this->setFixedWidth(new_w);
-    this->editor_->setFixedWidth(this->width()-5);
+//void  Canvas::editorChanged()
+//{
+//    QFont myFont(PREF_QSTRING("Font"), 11);
+//    QFontMetrics fm(myFont);
+//    int new_w = fm.width(QString(this->editor_->text())) + 10;
+//    new_w = (new_w<25) ? 25 : new_w;
+//    this->setFixedWidth(new_w);
+//    this->editor_->setFixedWidth(this->width()-5);
 
-    //
-    this->setInletsPos();
-    this->setOutletsPos();
+//    //
+//    this->setInletsPos();
+//    this->setOutletsPos();
 
-}
+//}
 
 }
