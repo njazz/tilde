@@ -122,29 +122,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00038"></a>00038     <span class="comment">// create none</span>
 <a name="l00039"></a>00039     <a class="code" href="classceammc_1_1_message.html#a07f4894dfb4f50f83b8065a210dc00f4">Message</a>();
 <a name="l00040"></a>00040     <span class="comment">// create float</span>
-<a name="l00041"></a>00041     <a class="code" href="classceammc_1_1_message.html#a07f4894dfb4f50f83b8065a210dc00f4">Message</a>(t_float v);
+<a name="l00041"></a>00041     <a class="code" href="classceammc_1_1_message.html#a07f4894dfb4f50f83b8065a210dc00f4">Message</a>(t_float <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>);
 <a name="l00042"></a>00042     <span class="comment">// create symbol</span>
-<a name="l00043"></a>00043     <a class="code" href="classceammc_1_1_message.html#a07f4894dfb4f50f83b8065a210dc00f4">Message</a>(t_symbol* s);
+<a name="l00043"></a>00043     <a class="code" href="classceammc_1_1_message.html#a07f4894dfb4f50f83b8065a210dc00f4">Message</a>(t_symbol* <a class="code" href="stringobject_8h.html#ad912d811fca4c9cfee37905bed81eb65">s</a>);
 <a name="l00044"></a>00044     <a class="code" href="classceammc_1_1_message.html#a07f4894dfb4f50f83b8065a210dc00f4">Message</a>(<span class="keyword">const</span> <a class="code" href="classceammc_1_1_atom.html">Atom</a>&amp; a);
 <a name="l00045"></a>00045     <span class="comment">// create list</span>
 <a name="l00046"></a>00046     <a class="code" href="classceammc_1_1_message.html#a07f4894dfb4f50f83b8065a210dc00f4">Message</a>(<span class="keyword">const</span> <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a>&amp; l);
-<a name="l00047"></a>00047     <a class="code" href="classceammc_1_1_message.html#a07f4894dfb4f50f83b8065a210dc00f4">Message</a>(<span class="keywordtype">int</span> argc, t_atom* argv);
+<a name="l00047"></a>00047     <a class="code" href="classceammc_1_1_message.html#a07f4894dfb4f50f83b8065a210dc00f4">Message</a>(<span class="keywordtype">int</span> <a class="code" href="eval_8h.html#a9e4bf27daf5ceabe639e59fd5e9fd3b2">argc</a>, t_atom* <a class="code" href="pygetopt_8h.html#af2efa898e9eed6fe6715279cb1ec35b0">argv</a>);
 <a name="l00048"></a>00048     <span class="comment">// create any</span>
-<a name="l00049"></a>00049     <a class="code" href="classceammc_1_1_message.html#a07f4894dfb4f50f83b8065a210dc00f4">Message</a>(t_symbol* s, <span class="keyword">const</span> <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a>&amp; l);
-<a name="l00050"></a>00050     <a class="code" href="classceammc_1_1_message.html#a07f4894dfb4f50f83b8065a210dc00f4">Message</a>(t_symbol* s, <span class="keywordtype">int</span> argc, t_atom* argv);
+<a name="l00049"></a>00049     <a class="code" href="classceammc_1_1_message.html#a07f4894dfb4f50f83b8065a210dc00f4">Message</a>(t_symbol* <a class="code" href="stringobject_8h.html#ad912d811fca4c9cfee37905bed81eb65">s</a>, <span class="keyword">const</span> <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a>&amp; l);
+<a name="l00050"></a>00050     <a class="code" href="classceammc_1_1_message.html#a07f4894dfb4f50f83b8065a210dc00f4">Message</a>(t_symbol* <a class="code" href="stringobject_8h.html#ad912d811fca4c9cfee37905bed81eb65">s</a>, <span class="keywordtype">int</span> <a class="code" href="eval_8h.html#a9e4bf27daf5ceabe639e59fd5e9fd3b2">argc</a>, t_atom* <a class="code" href="pygetopt_8h.html#af2efa898e9eed6fe6715279cb1ec35b0">argv</a>);
 <a name="l00051"></a>00051 
 <a name="l00052"></a>00052     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_message.html#a55df4dad5eccd715fe582ddd99bd782f">setAtom</a>(<span class="keyword">const</span> <a class="code" href="classceammc_1_1_atom.html">Atom</a>&amp; a);
-<a name="l00053"></a>00053     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_message.html#a6ee49d53181857cc31985940472ffd3a">setFloat</a>(t_float v);
-<a name="l00054"></a>00054     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_message.html#a0a061a13042e4499343dfd921e7a940b">setSymbol</a>(t_symbol* s);
+<a name="l00053"></a>00053     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_message.html#a6ee49d53181857cc31985940472ffd3a">setFloat</a>(t_float <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>);
+<a name="l00054"></a>00054     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_message.html#a0a061a13042e4499343dfd921e7a940b">setSymbol</a>(t_symbol* <a class="code" href="stringobject_8h.html#ad912d811fca4c9cfee37905bed81eb65">s</a>);
 <a name="l00055"></a>00055     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_message.html#af1082764201e053a83becee508f63ed7">setList</a>(<span class="keyword">const</span> <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a>&amp; l);
-<a name="l00056"></a>00056     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_message.html#af1082764201e053a83becee508f63ed7">setList</a>(<span class="keywordtype">int</span> argc, t_atom* argv);
-<a name="l00057"></a>00057     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_message.html#a6f88ae6620cad73e96c199abaf9b9aca">setAny</a>(t_symbol* s, <span class="keyword">const</span> <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a>&amp; l);
-<a name="l00058"></a>00058     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_message.html#a6f88ae6620cad73e96c199abaf9b9aca">setAny</a>(t_symbol* s, <span class="keywordtype">int</span> argc, t_atom* argv);
+<a name="l00056"></a>00056     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_message.html#af1082764201e053a83becee508f63ed7">setList</a>(<span class="keywordtype">int</span> <a class="code" href="eval_8h.html#a9e4bf27daf5ceabe639e59fd5e9fd3b2">argc</a>, t_atom* <a class="code" href="pygetopt_8h.html#af2efa898e9eed6fe6715279cb1ec35b0">argv</a>);
+<a name="l00057"></a>00057     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_message.html#a6f88ae6620cad73e96c199abaf9b9aca">setAny</a>(t_symbol* <a class="code" href="stringobject_8h.html#ad912d811fca4c9cfee37905bed81eb65">s</a>, <span class="keyword">const</span> <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a>&amp; l);
+<a name="l00058"></a>00058     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_message.html#a6f88ae6620cad73e96c199abaf9b9aca">setAny</a>(t_symbol* <a class="code" href="stringobject_8h.html#ad912d811fca4c9cfee37905bed81eb65">s</a>, <span class="keywordtype">int</span> <a class="code" href="eval_8h.html#a9e4bf27daf5ceabe639e59fd5e9fd3b2">argc</a>, t_atom* <a class="code" href="pygetopt_8h.html#af2efa898e9eed6fe6715279cb1ec35b0">argv</a>);
 <a name="l00059"></a>00059 
-<a name="l00060"></a>00060     <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_message.html#aef310eed756693e85149828f53801802">isEqual</a>(<span class="keyword">const</span> <a class="code" href="classceammc_1_1_message.html">Message</a>&amp; v) <span class="keyword">const</span>;
+<a name="l00060"></a>00060     <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_message.html#aef310eed756693e85149828f53801802">isEqual</a>(<span class="keyword">const</span> <a class="code" href="classceammc_1_1_message.html">Message</a>&amp; <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>) <span class="keyword">const</span>;
 <a name="l00061"></a>00061     <a class="code" href="classceammc_1_1_message.html#a42a4c7d7d3e7297197e83b34966a09d5">Type</a> <a class="code" href="classceammc_1_1_message.html#a69dcf94ed77127ebabccf0515c68d6a7">type</a>() <span class="keyword">const</span>;
 <a name="l00062"></a>00062 
-<a name="l00063"></a>00063     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_message.html#ac4eaa67cdbf512f69b9e17f963bcba39">output</a>(t_outlet* x) <span class="keyword">const</span>;
+<a name="l00063"></a>00063     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_message.html#ac4eaa67cdbf512f69b9e17f963bcba39">output</a>(t_outlet* <a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>) <span class="keyword">const</span>;
 <a name="l00064"></a>00064 
 <a name="l00065"></a><a class="code" href="classceammc_1_1_message.html#a3223b0d6a3c967a3f0988d7557dafc72">00065</a>     <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_message.html#a3223b0d6a3c967a3f0988d7557dafc72">isFloat</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> type_ == <a class="code" href="classceammc_1_1_message.html#a42a4c7d7d3e7297197e83b34966a09d5a5a0d97fc53d2750476b344f687e52840">FLOAT</a>; }
 <a name="l00066"></a><a class="code" href="classceammc_1_1_message.html#abcccac20d57d993c4f04549dff9a8e35">00066</a>     <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_message.html#abcccac20d57d993c4f04549dff9a8e35">isSymbol</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> type_ == <a class="code" href="classceammc_1_1_message.html#a42a4c7d7d3e7297197e83b34966a09d5abae4cf80440f0167117196fd38dd26f8">SYMBOL</a>; }
@@ -180,7 +180,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 15 2017 13:05:43 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 15 2017 20:07:53 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

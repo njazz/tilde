@@ -126,17 +126,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00052"></a>00052 
 <a name="l00057"></a>00057 <span class="keywordtype">int</span> <a class="code" href="ceammc_8c.html#a6c573895da9e36c470cf2f39c13b8420" title="checks is floats are equal with using machine epsilon">ceammc_floats_equal</a>(<span class="keywordtype">float</span> a, <span class="keywordtype">float</span> b);
 <a name="l00058"></a>00058 
-<a name="l00059"></a>00059 t_atom* <a class="code" href="ceammc_8c.html#adafaa09c8f83977f435e2a2da577f457">ceammc_atoms_alloc</a>(<span class="keywordtype">size_t</span> n);
-<a name="l00060"></a>00060 <span class="keywordtype">void</span> <a class="code" href="ceammc_8c.html#a60f5ca0a442f6cdf93f5f9af5448445c">ceammc_atoms_free</a>(t_atom* mem, <span class="keywordtype">size_t</span> n);
-<a name="l00061"></a>00061 <span class="keywordtype">void</span> <a class="code" href="ceammc_8c.html#a13345948c05a7fabed1d31edfccaa574">ceammc_atoms_copy</a>(<span class="keywordtype">size_t</span> n, t_atom* from, t_atom* to);
+<a name="l00059"></a>00059 t_atom* <a class="code" href="ceammc_8c.html#adafaa09c8f83977f435e2a2da577f457">ceammc_atoms_alloc</a>(<span class="keywordtype">size_t</span> <a class="code" href="longobject_8h.html#a0a1cb627ccae562872efc91e5b752be1">n</a>);
+<a name="l00060"></a>00060 <span class="keywordtype">void</span> <a class="code" href="ceammc_8c.html#a60f5ca0a442f6cdf93f5f9af5448445c">ceammc_atoms_free</a>(t_atom* mem, <span class="keywordtype">size_t</span> <a class="code" href="longobject_8h.html#a0a1cb627ccae562872efc91e5b752be1">n</a>);
+<a name="l00061"></a>00061 <span class="keywordtype">void</span> <a class="code" href="ceammc_8c.html#a13345948c05a7fabed1d31edfccaa574">ceammc_atoms_copy</a>(<span class="keywordtype">size_t</span> <a class="code" href="longobject_8h.html#a0a1cb627ccae562872efc91e5b752be1">n</a>, t_atom* from, t_atom* to);
 <a name="l00062"></a>00062 t_atom* <a class="code" href="ceammc_8c.html#a3b66147ff026c30e56726c1e9f2b6d20">ceammc_atoms_alloc_copy</a>(<span class="keywordtype">size_t</span>, t_atom* from);
-<a name="l00063"></a>00063 <span class="keywordtype">void</span> <a class="code" href="ceammc_8c.html#a6197d9ac2145bcb6fc055add6d472930">output_atom</a>(t_outlet* out, t_atom* atom);
+<a name="l00063"></a>00063 <span class="keywordtype">void</span> <a class="code" href="ceammc_8c.html#a6197d9ac2145bcb6fc055add6d472930">output_atom</a>(t_outlet* out, t_atom* <a class="code" href="graminit_8h.html#a75e3efd40915bb8d9f555aeb5c8b584c">atom</a>);
 <a name="l00064"></a>00064 
 <a name="l00065"></a><a class="code" href="ceammc_8h.html#a60492cd0fbb256c9bcedc0f5746ce0a6">00065</a> <span class="keyword">typedef</span> t_float (*<a class="code" href="ceammc_8h.html#a60492cd0fbb256c9bcedc0f5746ce0a6">ceammc_float_unary_func</a>)(t_float);
 <a name="l00066"></a><a class="code" href="ceammc_8h.html#abcd38c405989e09b9cb37cf297fc88b4">00066</a> <span class="keyword">typedef</span> t_float (*<a class="code" href="ceammc_8h.html#abcd38c405989e09b9cb37cf297fc88b4">ceammc_float_binary_func</a>)(t_float, t_float);
-<a name="l00067"></a>00067 <span class="keywordtype">void</span> <a class="code" href="ceammc_8c.html#ab28d421cce3813012a065199f6fd9442">ceammc_atoms_map_float</a>(<span class="keywordtype">size_t</span> n, t_atom* a, <a class="code" href="ceammc_8h.html#a60492cd0fbb256c9bcedc0f5746ce0a6">ceammc_float_unary_func</a> func);
-<a name="l00068"></a>00068 <span class="keywordtype">void</span> <a class="code" href="ceammc_8c.html#abbe0a8993a56a759e2ba120456254205">ceammc_atoms_map_float_to_outlet</a>(t_outlet* o, t_symbol* s, <span class="keywordtype">int</span> n, t_atom* a, <a class="code" href="ceammc_8h.html#a60492cd0fbb256c9bcedc0f5746ce0a6">ceammc_float_unary_func</a> func);
-<a name="l00069"></a>00069 t_float <a class="code" href="ceammc_8c.html#a3582808640c7be4e20af8dacfc7aa9bd">ceammc_atoms_reduce_float</a>(<span class="keywordtype">size_t</span> n, t_atom* a, t_float init, <a class="code" href="ceammc_8h.html#abcd38c405989e09b9cb37cf297fc88b4">ceammc_float_binary_func</a> func);
+<a name="l00067"></a>00067 <span class="keywordtype">void</span> <a class="code" href="ceammc_8c.html#ab28d421cce3813012a065199f6fd9442">ceammc_atoms_map_float</a>(<span class="keywordtype">size_t</span> <a class="code" href="longobject_8h.html#a0a1cb627ccae562872efc91e5b752be1">n</a>, t_atom* a, <a class="code" href="ceammc_8h.html#a60492cd0fbb256c9bcedc0f5746ce0a6">ceammc_float_unary_func</a> func);
+<a name="l00068"></a>00068 <span class="keywordtype">void</span> <a class="code" href="ceammc_8c.html#abbe0a8993a56a759e2ba120456254205">ceammc_atoms_map_float_to_outlet</a>(t_outlet* <a class="code" href="abstract_8h.html#a70a0763575096c5545f2232a32ec302a">o</a>, t_symbol* <a class="code" href="stringobject_8h.html#ad912d811fca4c9cfee37905bed81eb65">s</a>, <span class="keywordtype">int</span> <a class="code" href="longobject_8h.html#a0a1cb627ccae562872efc91e5b752be1">n</a>, t_atom* a, <a class="code" href="ceammc_8h.html#a60492cd0fbb256c9bcedc0f5746ce0a6">ceammc_float_unary_func</a> func);
+<a name="l00069"></a>00069 t_float <a class="code" href="ceammc_8c.html#a3582808640c7be4e20af8dacfc7aa9bd">ceammc_atoms_reduce_float</a>(<span class="keywordtype">size_t</span> <a class="code" href="longobject_8h.html#a0a1cb627ccae562872efc91e5b752be1">n</a>, t_atom* a, t_float <a class="code" href="namespace_python_qt___qt_all.html#a2ab1ae5db205d024de26add8942e8591" title="initialize the Qt binding">init</a>, <a class="code" href="ceammc_8h.html#abcd38c405989e09b9cb37cf297fc88b4">ceammc_float_binary_func</a> func);
 <a name="l00070"></a>00070 
 <a name="l00071"></a>00071 <span class="keywordtype">size_t</span> <a class="code" href="ceammc_8c.html#a0f2a9ae0e5892bbcba3e78864c4fc8e8">ceammc_memory_size</a>();
 <a name="l00072"></a>00072 <span class="keywordtype">size_t</span> <a class="code" href="ceammc_8c.html#a5b14da67a45ff2e5e6e4501baa2e1837">ceammc_memory_current_rss</a>();
@@ -165,7 +165,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 15 2017 13:05:43 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 15 2017 20:07:53 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

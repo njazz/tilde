@@ -141,9 +141,9 @@ Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classceammc_1_1_closed_range_property.html">ClosedRangeProperty</a></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef const <a class="el" href="classceammc_1_1_atom.html">Atom</a> *(AtomList::*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#aa519376273ef72cbfdc1b95f534f185e">ElementAccessFn</a> )(int) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef const <a class="el" href="classceammc_1_1_atom.html">Atom</a> *(AtomList::*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#aa519376273ef72cbfdc1b95f534f185e">ElementAccessFn</a> )(<a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>) const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; t_float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#ac9da2dc91c29d7d0d692407b272d5207">FloatList</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a016f3eaa9a029d34a99a0173602d0c67">AtomPredicate</a> )(const <a class="el" href="classceammc_1_1_atom.html">Atom</a> &amp;a)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a016f3eaa9a029d34a99a0173602d0c67">AtomPredicate</a> )(const <a class="el" href="classceammc_1_1_atom.html">Atom</a> &amp;a)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classceammc_1_1_atom.html">Atom</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a026d51cf865a2f5aa980fb949bebcc76">AtomGenerator</a> )()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classceammc_1_1_atom.html">Atom</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a0b74b532895dcb39ef59148ec1f421fa">AtomMapFunction</a> )(const <a class="el" href="classceammc_1_1_atom.html">Atom</a> &amp;a)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structceammc_1_1t__bpt.html">ceammc::t_bpt</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a5576895897b649e6b8408ab3892e4de3">t_bpt</a></td></tr>
@@ -152,35 +152,35 @@ Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a33242ec5cd30f973de58cbb3088172c3">PdBangFunction</a> )(_class *)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a39b3f919f0b22b33d2fa104858c41dd4">PdFloatFunction</a> )(_class *, float)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#ae2df229c461ea88ceb9257722bebde41">PdSymbolFunction</a> )(_class *, _symbol *)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a43d63d803c2af0173a83c23490d54eb8">PdListFunction</a> )(_class *, _symbol *, int argc, _atom *argv)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a9b2d5c7fe69523e07d72d9337a95ede2">PdAnyFunction</a> )(_class *, _symbol *, int argc, _atom *argv)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a43d63d803c2af0173a83c23490d54eb8">PdListFunction</a> )(_class *, _symbol *, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="eval_8h.html#a9e4bf27daf5ceabe639e59fd5e9fd3b2">argc</a>, _atom *<a class="el" href="pythonrun_8h.html#af3cb49c013b6d4b79e7a00fc6807e954">argv</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a9b2d5c7fe69523e07d72d9337a95ede2">PdAnyFunction</a> )(_class *, _symbol *, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="eval_8h.html#a9e4bf27daf5ceabe639e59fd5e9fd3b2">argc</a>, _atom *<a class="el" href="pythonrun_8h.html#af3cb49c013b6d4b79e7a00fc6807e954">argv</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classceammc_1_1_alias_property.html">AliasProperty</a><br class="typebreak"/>
 &lt; <a class="el" href="classceammc_1_1_symbol_enum_property.html">SymbolEnumProperty</a>, t_symbol * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a08cce5e04c1cd1ca66cc08243866c061">SymbolEnumAlias</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classceammc_1_1_enum_property.html">EnumProperty</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a2837b783e3a8b9714f9b3d973a9bbf12">IntEnumProperty</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classceammc_1_1_enum_property.html">EnumProperty</a>&lt; <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a2837b783e3a8b9714f9b3d973a9bbf12">IntEnumProperty</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classceammc_1_1_greater_equal_property.html">GreaterEqualProperty</a><br class="typebreak"/>
-&lt; <a class="el" href="classceammc_1_1_int_property.html">IntProperty</a>, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a7450d6a424792431f54d05a8a585c521">IntPropertyMinEq</a></td></tr>
+&lt; <a class="el" href="classceammc_1_1_int_property.html">IntProperty</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a7450d6a424792431f54d05a8a585c521">IntPropertyMinEq</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classceammc_1_1_greater_then_property.html">GreaterThenProperty</a><br class="typebreak"/>
-&lt; <a class="el" href="classceammc_1_1_int_property.html">IntProperty</a>, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a3775367eff3e4ff0f3c89782ac3be379">IntPropertyMin</a></td></tr>
+&lt; <a class="el" href="classceammc_1_1_int_property.html">IntProperty</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a3775367eff3e4ff0f3c89782ac3be379">IntPropertyMin</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classceammc_1_1_less_equal_property.html">LessEqualProperty</a><br class="typebreak"/>
-&lt; <a class="el" href="classceammc_1_1_int_property.html">IntProperty</a>, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a023011e643c23b27a29672aa7bb81091">IntPropertyMaxEq</a></td></tr>
+&lt; <a class="el" href="classceammc_1_1_int_property.html">IntProperty</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a023011e643c23b27a29672aa7bb81091">IntPropertyMaxEq</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classceammc_1_1_less_then_property.html">LessThenProperty</a><br class="typebreak"/>
-&lt; <a class="el" href="classceammc_1_1_int_property.html">IntProperty</a>, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#aa746139f66ee37de333c0fbd4e2bce0a">IntPropertyMax</a></td></tr>
+&lt; <a class="el" href="classceammc_1_1_int_property.html">IntProperty</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#aa746139f66ee37de333c0fbd4e2bce0a">IntPropertyMax</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classceammc_1_1_open_range_property.html">OpenRangeProperty</a><br class="typebreak"/>
-&lt; <a class="el" href="classceammc_1_1_int_property.html">IntProperty</a>, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a898ada982cfc9c7ece361d8b408faca8">IntPropertyOpenRange</a></td></tr>
+&lt; <a class="el" href="classceammc_1_1_int_property.html">IntProperty</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a898ada982cfc9c7ece361d8b408faca8">IntPropertyOpenRange</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classceammc_1_1_closed_range_property.html">ClosedRangeProperty</a><br class="typebreak"/>
-&lt; <a class="el" href="classceammc_1_1_int_property.html">IntProperty</a>, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a37ee1cd4f44a4d93c9b4dc0d57907437">IntPropertyClosedRange</a></td></tr>
+&lt; <a class="el" href="classceammc_1_1_int_property.html">IntProperty</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a37ee1cd4f44a4d93c9b4dc0d57907437">IntPropertyClosedRange</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classceammc_1_1_greater_equal_property.html">GreaterEqualProperty</a><br class="typebreak"/>
-&lt; <a class="el" href="classceammc_1_1_size_t_property.html">SizeTProperty</a>, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#aa4d862de6970b72c4143c3a81481cf12">SizeTPropertyMinEq</a></td></tr>
+&lt; <a class="el" href="classceammc_1_1_size_t_property.html">SizeTProperty</a>, <a class="el" href="pymem_8h.html#a7b60c5629e55e8ec87a4547dd4abced4">size_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#aa4d862de6970b72c4143c3a81481cf12">SizeTPropertyMinEq</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classceammc_1_1_greater_then_property.html">GreaterThenProperty</a><br class="typebreak"/>
-&lt; <a class="el" href="classceammc_1_1_size_t_property.html">SizeTProperty</a>, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#aa4ff0e1392a55e5d87ce002b655853de">SizeTPropertyMin</a></td></tr>
+&lt; <a class="el" href="classceammc_1_1_size_t_property.html">SizeTProperty</a>, <a class="el" href="pymem_8h.html#a7b60c5629e55e8ec87a4547dd4abced4">size_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#aa4ff0e1392a55e5d87ce002b655853de">SizeTPropertyMin</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classceammc_1_1_less_equal_property.html">LessEqualProperty</a><br class="typebreak"/>
-&lt; <a class="el" href="classceammc_1_1_size_t_property.html">SizeTProperty</a>, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a1b1ac08d6b56c586402627d227a734a0">SizeTPropertyMaxEq</a></td></tr>
+&lt; <a class="el" href="classceammc_1_1_size_t_property.html">SizeTProperty</a>, <a class="el" href="pymem_8h.html#a7b60c5629e55e8ec87a4547dd4abced4">size_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a1b1ac08d6b56c586402627d227a734a0">SizeTPropertyMaxEq</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classceammc_1_1_less_then_property.html">LessThenProperty</a><br class="typebreak"/>
-&lt; <a class="el" href="classceammc_1_1_size_t_property.html">SizeTProperty</a>, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a9eb2a05f064f76b3150a6432f8a3af87">SizeTPropertyMax</a></td></tr>
+&lt; <a class="el" href="classceammc_1_1_size_t_property.html">SizeTProperty</a>, <a class="el" href="pymem_8h.html#a7b60c5629e55e8ec87a4547dd4abced4">size_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a9eb2a05f064f76b3150a6432f8a3af87">SizeTPropertyMax</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classceammc_1_1_open_range_property.html">OpenRangeProperty</a><br class="typebreak"/>
-&lt; <a class="el" href="classceammc_1_1_size_t_property.html">SizeTProperty</a>, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a8dfbedd109bdc25e108bc9cbf0fb1b70">SizeTPropertyOpenRange</a></td></tr>
+&lt; <a class="el" href="classceammc_1_1_size_t_property.html">SizeTProperty</a>, <a class="el" href="pymem_8h.html#a7b60c5629e55e8ec87a4547dd4abced4">size_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a8dfbedd109bdc25e108bc9cbf0fb1b70">SizeTPropertyOpenRange</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classceammc_1_1_closed_range_property.html">ClosedRangeProperty</a><br class="typebreak"/>
-&lt; <a class="el" href="classceammc_1_1_size_t_property.html">SizeTProperty</a>, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a811fcf654fc4feeed905b1db94b52176">SizeTPropertyClosedRange</a></td></tr>
+&lt; <a class="el" href="classceammc_1_1_size_t_property.html">SizeTProperty</a>, <a class="el" href="pymem_8h.html#a7b60c5629e55e8ec87a4547dd4abced4">size_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a811fcf654fc4feeed905b1db94b52176">SizeTPropertyClosedRange</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classceammc_1_1_greater_equal_property.html">GreaterEqualProperty</a><br class="typebreak"/>
 &lt; <a class="el" href="classceammc_1_1_float_property.html">FloatProperty</a>, float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a7039611879b8fcaa3c69818fa182443d">FloatPropertyMinEq</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classceammc_1_1_greater_then_property.html">GreaterThenProperty</a><br class="typebreak"/>
@@ -195,45 +195,45 @@ Typedefs</h2></td></tr>
 &lt; <a class="el" href="classceammc_1_1_float_property.html">FloatProperty</a>, float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a2f925939995500e431610711bd96764b">FloatPropertyClosedRange</a></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#ac111f86fe1f795db52523241b186225a">operator==</a> (const <a class="el" href="classceammc_1_1_atom.html">Atom</a> &amp;a1, const <a class="el" href="classceammc_1_1_atom.html">Atom</a> &amp;a2)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a25cae8de6c442dcc576385d88e0c7c84">operator!=</a> (const <a class="el" href="classceammc_1_1_atom.html">Atom</a> &amp;a1, const <a class="el" href="classceammc_1_1_atom.html">Atom</a> &amp;a2)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a6295c782bd42c995e7f09274529cbf14">to_outlet</a> (t_outlet *x, const <a class="el" href="classceammc_1_1_atom.html">Atom</a> &amp;a)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#ac111f86fe1f795db52523241b186225a">operator==</a> (const <a class="el" href="classceammc_1_1_atom.html">Atom</a> &amp;a1, const <a class="el" href="classceammc_1_1_atom.html">Atom</a> &amp;a2)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a25cae8de6c442dcc576385d88e0c7c84">operator!=</a> (const <a class="el" href="classceammc_1_1_atom.html">Atom</a> &amp;a1, const <a class="el" href="classceammc_1_1_atom.html">Atom</a> &amp;a2)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a6295c782bd42c995e7f09274529cbf14">to_outlet</a> (t_outlet *<a class="el" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>, const <a class="el" href="classceammc_1_1_atom.html">Atom</a> &amp;a)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#acc5cd57751115617ee37de01ba3b4226">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classceammc_1_1_atom.html">Atom</a> &amp;a)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a98d5d0156ef7ff31ef98949df0710453">operator==</a> (const <a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> &amp;l1, const <a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> &amp;l2)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#aa973001c57677ba29a786896cb787640">operator!=</a> (const <a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> &amp;l1, const <a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> &amp;l2)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a9bbb87f0da99e46257db348e15aeda06">to_outlet</a> (t_outlet *x, const <a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> &amp;a)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a98d5d0156ef7ff31ef98949df0710453">operator==</a> (const <a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> &amp;l1, const <a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> &amp;l2)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#aa973001c57677ba29a786896cb787640">operator!=</a> (const <a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> &amp;l1, const <a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> &amp;l2)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a9bbb87f0da99e46257db348e15aeda06">to_outlet</a> (t_outlet *<a class="el" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>, const <a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> &amp;a)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a908bed8196e410f88bb6a04bf6c364aa">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> &amp;l)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classceammc_1_1_atom_list.html">AtomList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a311cab762539c4bbb2ee839e6b80e6c3">listFrom</a> (const std::vector&lt; std::string &gt; &amp;v)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classceammc_1_1_atom_list.html">AtomList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a4a5e55eaba74b6f43ee54be0731b7422">listFrom</a> (const std::string &amp;v)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classceammc_1_1_atom_list.html">AtomList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a0e8d2aa576676cf07cb8fdcc5f2a440e">listFrom</a> (const <a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> &amp;v)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classceammc_1_1_atom_list.html">AtomList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a464c3b8d0f4a94781622384fdfe3e70a">listFrom</a> (bool v)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classceammc_1_1_atom.html">Atom</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#acae428f9d02075715602d79829689ab5">atomFrom</a> (const std::string &amp;v)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classceammc_1_1_atom_list.html">AtomList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a311cab762539c4bbb2ee839e6b80e6c3">listFrom</a> (const std::vector&lt; <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> &gt; &amp;<a class="el" href="floatobject_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classceammc_1_1_atom_list.html">AtomList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a4a5e55eaba74b6f43ee54be0731b7422">listFrom</a> (const <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> &amp;<a class="el" href="floatobject_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classceammc_1_1_atom_list.html">AtomList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a0e8d2aa576676cf07cb8fdcc5f2a440e">listFrom</a> (const <a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> &amp;<a class="el" href="floatobject_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classceammc_1_1_atom_list.html">AtomList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a464c3b8d0f4a94781622384fdfe3e70a">listFrom</a> (<a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a> <a class="el" href="floatobject_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classceammc_1_1_atom.html">Atom</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#acae428f9d02075715602d79829689ab5">atomFrom</a> (const <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> &amp;<a class="el" href="floatobject_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>)</td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
-<tr><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#aa6eee8631abf6b3bea04708b6919d85e">atomlistToValue</a> (const <a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> &amp;l, const bool &amp;def)</td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#aa6eee8631abf6b3bea04708b6919d85e">atomlistToValue</a> (const <a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> &amp;l, const <a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a> &amp;def)</td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
 <tr><td class="memTemplItemLeft" align="right" valign="top">float&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a34774fc0442095f72c5cf4a23ba4af1c">atomlistToValue</a> (const <a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> &amp;l, const float &amp;def)</td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
 <tr><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a0536d5008429ca06f62fe507fd436e7f">atomlistToValue</a> (const <a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> &amp;l, const double &amp;def)</td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
-<tr><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a37d80615fb0ac15ad991d2bb458011c8">atomlistToValue</a> (const <a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> &amp;l, const int &amp;def)</td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a37d80615fb0ac15ad991d2bb458011c8">atomlistToValue</a> (const <a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> &amp;l, const <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> &amp;def)</td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
-<tr><td class="memTemplItemLeft" align="right" valign="top">size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a26a8426981397762be734302bdddfbdc">atomlistToValue</a> (const <a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> &amp;l, const size_t &amp;def)</td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="pymem_8h.html#a7b60c5629e55e8ec87a4547dd4abced4">size_t</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a26a8426981397762be734302bdddfbdc">atomlistToValue</a> (const <a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> &amp;l, const <a class="el" href="pymem_8h.html#a7b60c5629e55e8ec87a4547dd4abced4">size_t</a> &amp;def)</td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
 <tr><td class="memTemplItemLeft" align="right" valign="top">t_symbol *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#aa9afae2cc8def28c6da45c0d8822e5b0">atomlistToValue</a> (const <a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> &amp;l, t_symbol *const &amp;def)</td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
 <tr><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classceammc_1_1_atom.html">Atom</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a449dc1ab7dc640e4f4db3f546fdd24a9">atomlistToValue</a> (const <a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> &amp;l, const <a class="el" href="classceammc_1_1_atom.html">Atom</a> &amp;def)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a8f97ae1f7a5fa2bfb657d5c5a37ad31d">to_string</a> (const <a class="el" href="classceammc_1_1_atom.html">Atom</a> &amp;a)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a60e2737a5f474cf427ea2e26e193696e">to_float_string</a> (const <a class="el" href="classceammc_1_1_atom.html">Atom</a> &amp;a, const std::string &amp;defaultValue)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#acb54651491ef897c8d3fb3b1e06ded21">to_hex_string</a> (const <a class="el" href="classceammc_1_1_atom.html">Atom</a> &amp;a, const std::string &amp;defaultValue)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#abf9b2102ecfd8eb6415e57f0b1a92961">to_float_range_string</a> (const <a class="el" href="classceammc_1_1_atom.html">Atom</a> &amp;a, float min, float max, const std::string &amp;defaultValue)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a486044b6c9a5726ab9433a7ea017a1c2">to_string</a> (const <a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> &amp;a, const std::string &amp;separator)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a7e862840093f77e6eb64228d9e6a1bcf">to_string</a> (const <a class="el" href="classceammc_1_1_message.html">Message</a> &amp;msg, const std::string &amp;separator)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a8f97ae1f7a5fa2bfb657d5c5a37ad31d">to_string</a> (const <a class="el" href="classceammc_1_1_atom.html">Atom</a> &amp;a)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a60e2737a5f474cf427ea2e26e193696e">to_float_string</a> (const <a class="el" href="classceammc_1_1_atom.html">Atom</a> &amp;a, const <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> &amp;defaultValue)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#acb54651491ef897c8d3fb3b1e06ded21">to_hex_string</a> (const <a class="el" href="classceammc_1_1_atom.html">Atom</a> &amp;a, const <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> &amp;defaultValue)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#abf9b2102ecfd8eb6415e57f0b1a92961">to_float_range_string</a> (const <a class="el" href="classceammc_1_1_atom.html">Atom</a> &amp;a, float min, float max, const <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> &amp;defaultValue)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a486044b6c9a5726ab9433a7ea017a1c2">to_string</a> (const <a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> &amp;a, const <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> &amp;separator)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a7e862840093f77e6eb64228d9e6a1bcf">to_string</a> (const <a class="el" href="classceammc_1_1_message.html">Message</a> &amp;msg, const <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> &amp;separator)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceceammc.html#a39b3f919f0b22b33d2fa104858c41dd4">PdFloatFunction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#aed9ecb750f0ac1fd3f9d03c390a6cee9">default_pd_float_fn</a> (t_class *c)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceceammc.html#a33242ec5cd30f973de58cbb3088172c3">PdBangFunction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a8a41d694eaf097bca750227e6c9d6805">default_pd_bang_fn</a> (t_class *c)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceceammc.html#a33242ec5cd30f973de58cbb3088172c3">PdBangFunction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a2835a33e60c81054613d488591bb42d8">default_pd_bang_fn</a> (_class *c)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceceammc.html#a39b3f919f0b22b33d2fa104858c41dd4">PdFloatFunction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#a4a1573ff20b36db1799270d6e6c6ead0">default_pd_float_fn</a> (_class *c)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#ab5cabfa5ed74f99a41da7bb840582ec2">operator==</a> (const <a class="el" href="classceammc_1_1_message.html">Message</a> &amp;c1, const <a class="el" href="classceammc_1_1_message.html">Message</a> &amp;c2)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#ab9f86779e275976a1838b99b0c27c349">operator!=</a> (const <a class="el" href="classceammc_1_1_message.html">Message</a> &amp;c1, const <a class="el" href="classceammc_1_1_message.html">Message</a> &amp;c2)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#ab5cabfa5ed74f99a41da7bb840582ec2">operator==</a> (const <a class="el" href="classceammc_1_1_message.html">Message</a> &amp;c1, const <a class="el" href="classceammc_1_1_message.html">Message</a> &amp;c2)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceceammc.html#ab9f86779e275976a1838b99b0c27c349">operator!=</a> (const <a class="el" href="classceammc_1_1_message.html">Message</a> &amp;c1, const <a class="el" href="classceammc_1_1_message.html">Message</a> &amp;c2)</td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
 <a class="anchor" id="a026d51cf865a2f5aa980fb949bebcc76"></a><!-- doxytag: member="ceammc::AtomGenerator" ref="a026d51cf865a2f5aa980fb949bebcc76" args=")()" -->
@@ -267,7 +267,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef bool(* <a class="el" href="namespaceceammc.html#a016f3eaa9a029d34a99a0173602d0c67">ceammc::AtomPredicate</a>)(const <a class="el" href="classceammc_1_1_atom.html">Atom</a> &amp;a)</td>
+          <td class="memname">typedef <a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>(* <a class="el" href="namespaceceammc.html#a016f3eaa9a029d34a99a0173602d0c67">ceammc::AtomPredicate</a>)(const <a class="el" href="classceammc_1_1_atom.html">Atom</a> &amp;a)</td>
         </tr>
       </table>
 </div>
@@ -280,7 +280,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef const <a class="el" href="classceammc_1_1_atom.html">Atom</a>*(AtomList::* <a class="el" href="namespaceceammc.html#aa519376273ef72cbfdc1b95f534f185e">ceammc::ElementAccessFn</a>)(int) const </td>
+          <td class="memname">typedef const <a class="el" href="classceammc_1_1_atom.html">Atom</a>*(AtomList::* <a class="el" href="namespaceceammc.html#aa519376273ef72cbfdc1b95f534f185e">ceammc::ElementAccessFn</a>)(<a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>) const </td>
         </tr>
       </table>
 </div>
@@ -384,7 +384,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="classceammc_1_1_enum_property.html">EnumProperty</a>&lt;int&gt; <a class="el" href="namespaceceammc.html#a2837b783e3a8b9714f9b3d973a9bbf12">ceammc::IntEnumProperty</a></td>
+          <td class="memname">typedef <a class="el" href="classceammc_1_1_enum_property.html">EnumProperty</a>&lt;<a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&gt; <a class="el" href="namespaceceammc.html#a2837b783e3a8b9714f9b3d973a9bbf12">ceammc::IntEnumProperty</a></td>
         </tr>
       </table>
 </div>
@@ -397,7 +397,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="classceammc_1_1_closed_range_property.html">ClosedRangeProperty</a>&lt;<a class="el" href="classceammc_1_1_int_property.html">IntProperty</a>, int&gt; <a class="el" href="namespaceceammc.html#a37ee1cd4f44a4d93c9b4dc0d57907437">ceammc::IntPropertyClosedRange</a></td>
+          <td class="memname">typedef <a class="el" href="classceammc_1_1_closed_range_property.html">ClosedRangeProperty</a>&lt;<a class="el" href="classceammc_1_1_int_property.html">IntProperty</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&gt; <a class="el" href="namespaceceammc.html#a37ee1cd4f44a4d93c9b4dc0d57907437">ceammc::IntPropertyClosedRange</a></td>
         </tr>
       </table>
 </div>
@@ -410,7 +410,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="classceammc_1_1_less_then_property.html">LessThenProperty</a>&lt;<a class="el" href="classceammc_1_1_int_property.html">IntProperty</a>, int&gt; <a class="el" href="namespaceceammc.html#aa746139f66ee37de333c0fbd4e2bce0a">ceammc::IntPropertyMax</a></td>
+          <td class="memname">typedef <a class="el" href="classceammc_1_1_less_then_property.html">LessThenProperty</a>&lt;<a class="el" href="classceammc_1_1_int_property.html">IntProperty</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&gt; <a class="el" href="namespaceceammc.html#aa746139f66ee37de333c0fbd4e2bce0a">ceammc::IntPropertyMax</a></td>
         </tr>
       </table>
 </div>
@@ -423,7 +423,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="classceammc_1_1_less_equal_property.html">LessEqualProperty</a>&lt;<a class="el" href="classceammc_1_1_int_property.html">IntProperty</a>, int&gt; <a class="el" href="namespaceceammc.html#a023011e643c23b27a29672aa7bb81091">ceammc::IntPropertyMaxEq</a></td>
+          <td class="memname">typedef <a class="el" href="classceammc_1_1_less_equal_property.html">LessEqualProperty</a>&lt;<a class="el" href="classceammc_1_1_int_property.html">IntProperty</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&gt; <a class="el" href="namespaceceammc.html#a023011e643c23b27a29672aa7bb81091">ceammc::IntPropertyMaxEq</a></td>
         </tr>
       </table>
 </div>
@@ -436,7 +436,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="classceammc_1_1_greater_then_property.html">GreaterThenProperty</a>&lt;<a class="el" href="classceammc_1_1_int_property.html">IntProperty</a>, int&gt; <a class="el" href="namespaceceammc.html#a3775367eff3e4ff0f3c89782ac3be379">ceammc::IntPropertyMin</a></td>
+          <td class="memname">typedef <a class="el" href="classceammc_1_1_greater_then_property.html">GreaterThenProperty</a>&lt;<a class="el" href="classceammc_1_1_int_property.html">IntProperty</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&gt; <a class="el" href="namespaceceammc.html#a3775367eff3e4ff0f3c89782ac3be379">ceammc::IntPropertyMin</a></td>
         </tr>
       </table>
 </div>
@@ -449,7 +449,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="classceammc_1_1_greater_equal_property.html">GreaterEqualProperty</a>&lt;<a class="el" href="classceammc_1_1_int_property.html">IntProperty</a>, int&gt; <a class="el" href="namespaceceammc.html#a7450d6a424792431f54d05a8a585c521">ceammc::IntPropertyMinEq</a></td>
+          <td class="memname">typedef <a class="el" href="classceammc_1_1_greater_equal_property.html">GreaterEqualProperty</a>&lt;<a class="el" href="classceammc_1_1_int_property.html">IntProperty</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&gt; <a class="el" href="namespaceceammc.html#a7450d6a424792431f54d05a8a585c521">ceammc::IntPropertyMinEq</a></td>
         </tr>
       </table>
 </div>
@@ -462,7 +462,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="classceammc_1_1_open_range_property.html">OpenRangeProperty</a>&lt;<a class="el" href="classceammc_1_1_int_property.html">IntProperty</a>, int&gt; <a class="el" href="namespaceceammc.html#a898ada982cfc9c7ece361d8b408faca8">ceammc::IntPropertyOpenRange</a></td>
+          <td class="memname">typedef <a class="el" href="classceammc_1_1_open_range_property.html">OpenRangeProperty</a>&lt;<a class="el" href="classceammc_1_1_int_property.html">IntProperty</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&gt; <a class="el" href="namespaceceammc.html#a898ada982cfc9c7ece361d8b408faca8">ceammc::IntPropertyOpenRange</a></td>
         </tr>
       </table>
 </div>
@@ -475,7 +475,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(* <a class="el" href="namespaceceammc.html#a9b2d5c7fe69523e07d72d9337a95ede2">ceammc::PdAnyFunction</a>)(_class *, _symbol *, int argc, _atom *argv)</td>
+          <td class="memname">typedef void(* <a class="el" href="namespaceceammc.html#a9b2d5c7fe69523e07d72d9337a95ede2">ceammc::PdAnyFunction</a>)(_class *, _symbol *, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="eval_8h.html#a9e4bf27daf5ceabe639e59fd5e9fd3b2">argc</a>, _atom *<a class="el" href="pythonrun_8h.html#af3cb49c013b6d4b79e7a00fc6807e954">argv</a>)</td>
         </tr>
       </table>
 </div>
@@ -514,7 +514,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(* <a class="el" href="namespaceceammc.html#a43d63d803c2af0173a83c23490d54eb8">ceammc::PdListFunction</a>)(_class *, _symbol *, int argc, _atom *argv)</td>
+          <td class="memname">typedef void(* <a class="el" href="namespaceceammc.html#a43d63d803c2af0173a83c23490d54eb8">ceammc::PdListFunction</a>)(_class *, _symbol *, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="eval_8h.html#a9e4bf27daf5ceabe639e59fd5e9fd3b2">argc</a>, _atom *<a class="el" href="pythonrun_8h.html#af3cb49c013b6d4b79e7a00fc6807e954">argv</a>)</td>
         </tr>
       </table>
 </div>
@@ -540,7 +540,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="classceammc_1_1_closed_range_property.html">ClosedRangeProperty</a>&lt;<a class="el" href="classceammc_1_1_size_t_property.html">SizeTProperty</a>, size_t&gt; <a class="el" href="namespaceceammc.html#a811fcf654fc4feeed905b1db94b52176">ceammc::SizeTPropertyClosedRange</a></td>
+          <td class="memname">typedef <a class="el" href="classceammc_1_1_closed_range_property.html">ClosedRangeProperty</a>&lt;<a class="el" href="classceammc_1_1_size_t_property.html">SizeTProperty</a>, <a class="el" href="pymem_8h.html#a7b60c5629e55e8ec87a4547dd4abced4">size_t</a>&gt; <a class="el" href="namespaceceammc.html#a811fcf654fc4feeed905b1db94b52176">ceammc::SizeTPropertyClosedRange</a></td>
         </tr>
       </table>
 </div>
@@ -553,7 +553,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="classceammc_1_1_less_then_property.html">LessThenProperty</a>&lt;<a class="el" href="classceammc_1_1_size_t_property.html">SizeTProperty</a>, size_t&gt; <a class="el" href="namespaceceammc.html#a9eb2a05f064f76b3150a6432f8a3af87">ceammc::SizeTPropertyMax</a></td>
+          <td class="memname">typedef <a class="el" href="classceammc_1_1_less_then_property.html">LessThenProperty</a>&lt;<a class="el" href="classceammc_1_1_size_t_property.html">SizeTProperty</a>, <a class="el" href="pymem_8h.html#a7b60c5629e55e8ec87a4547dd4abced4">size_t</a>&gt; <a class="el" href="namespaceceammc.html#a9eb2a05f064f76b3150a6432f8a3af87">ceammc::SizeTPropertyMax</a></td>
         </tr>
       </table>
 </div>
@@ -566,7 +566,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="classceammc_1_1_less_equal_property.html">LessEqualProperty</a>&lt;<a class="el" href="classceammc_1_1_size_t_property.html">SizeTProperty</a>, size_t&gt; <a class="el" href="namespaceceammc.html#a1b1ac08d6b56c586402627d227a734a0">ceammc::SizeTPropertyMaxEq</a></td>
+          <td class="memname">typedef <a class="el" href="classceammc_1_1_less_equal_property.html">LessEqualProperty</a>&lt;<a class="el" href="classceammc_1_1_size_t_property.html">SizeTProperty</a>, <a class="el" href="pymem_8h.html#a7b60c5629e55e8ec87a4547dd4abced4">size_t</a>&gt; <a class="el" href="namespaceceammc.html#a1b1ac08d6b56c586402627d227a734a0">ceammc::SizeTPropertyMaxEq</a></td>
         </tr>
       </table>
 </div>
@@ -579,7 +579,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="classceammc_1_1_greater_then_property.html">GreaterThenProperty</a>&lt;<a class="el" href="classceammc_1_1_size_t_property.html">SizeTProperty</a>, size_t&gt; <a class="el" href="namespaceceammc.html#aa4ff0e1392a55e5d87ce002b655853de">ceammc::SizeTPropertyMin</a></td>
+          <td class="memname">typedef <a class="el" href="classceammc_1_1_greater_then_property.html">GreaterThenProperty</a>&lt;<a class="el" href="classceammc_1_1_size_t_property.html">SizeTProperty</a>, <a class="el" href="pymem_8h.html#a7b60c5629e55e8ec87a4547dd4abced4">size_t</a>&gt; <a class="el" href="namespaceceammc.html#aa4ff0e1392a55e5d87ce002b655853de">ceammc::SizeTPropertyMin</a></td>
         </tr>
       </table>
 </div>
@@ -592,7 +592,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="classceammc_1_1_greater_equal_property.html">GreaterEqualProperty</a>&lt;<a class="el" href="classceammc_1_1_size_t_property.html">SizeTProperty</a>, size_t&gt; <a class="el" href="namespaceceammc.html#aa4d862de6970b72c4143c3a81481cf12">ceammc::SizeTPropertyMinEq</a></td>
+          <td class="memname">typedef <a class="el" href="classceammc_1_1_greater_equal_property.html">GreaterEqualProperty</a>&lt;<a class="el" href="classceammc_1_1_size_t_property.html">SizeTProperty</a>, <a class="el" href="pymem_8h.html#a7b60c5629e55e8ec87a4547dd4abced4">size_t</a>&gt; <a class="el" href="namespaceceammc.html#aa4d862de6970b72c4143c3a81481cf12">ceammc::SizeTPropertyMinEq</a></td>
         </tr>
       </table>
 </div>
@@ -605,7 +605,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="classceammc_1_1_open_range_property.html">OpenRangeProperty</a>&lt;<a class="el" href="classceammc_1_1_size_t_property.html">SizeTProperty</a>, size_t&gt; <a class="el" href="namespaceceammc.html#a8dfbedd109bdc25e108bc9cbf0fb1b70">ceammc::SizeTPropertyOpenRange</a></td>
+          <td class="memname">typedef <a class="el" href="classceammc_1_1_open_range_property.html">OpenRangeProperty</a>&lt;<a class="el" href="classceammc_1_1_size_t_property.html">SizeTProperty</a>, <a class="el" href="pymem_8h.html#a7b60c5629e55e8ec87a4547dd4abced4">size_t</a>&gt; <a class="el" href="namespaceceammc.html#a8dfbedd109bdc25e108bc9cbf0fb1b70">ceammc::SizeTPropertyOpenRange</a></td>
         </tr>
       </table>
 </div>
@@ -662,7 +662,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classceammc_1_1_atom.html">Atom</a> <a class="el" href="namespaceceammc.html#acae428f9d02075715602d79829689ab5">ceammc::atomFrom</a> </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> &amp;&#160;</td>
           <td class="paramname"><em>v</em></td><td>)</td>
           <td></td>
         </tr>
@@ -679,7 +679,7 @@ Functions</h2></td></tr>
 template&lt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">bool ceammc::atomlistToValue </td>
+          <td class="memname"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a> ceammc::atomlistToValue </td>
           <td>(</td>
           <td class="paramtype">const AtomList &amp;&#160;</td>
           <td class="paramname"><em>l</em>, </td>
@@ -687,7 +687,7 @@ template&lt;&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const bool &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a> &amp;&#160;</td>
           <td class="paramname"><em>def</em>&#160;</td>
         </tr>
         <tr>
@@ -766,7 +766,7 @@ template&lt;&gt; </div>
 template&lt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">int ceammc::atomlistToValue </td>
+          <td class="memname"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> ceammc::atomlistToValue </td>
           <td>(</td>
           <td class="paramtype">const AtomList &amp;&#160;</td>
           <td class="paramname"><em>l</em>, </td>
@@ -774,7 +774,7 @@ template&lt;&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> &amp;&#160;</td>
           <td class="paramname"><em>def</em>&#160;</td>
         </tr>
         <tr>
@@ -795,7 +795,7 @@ template&lt;&gt; </div>
 template&lt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">size_t ceammc::atomlistToValue </td>
+          <td class="memname"><a class="el" href="pymem_8h.html#a7b60c5629e55e8ec87a4547dd4abced4">size_t</a> ceammc::atomlistToValue </td>
           <td>(</td>
           <td class="paramtype">const AtomList &amp;&#160;</td>
           <td class="paramname"><em>l</em>, </td>
@@ -803,7 +803,7 @@ template&lt;&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="pymem_8h.html#a7b60c5629e55e8ec87a4547dd4abced4">size_t</a> &amp;&#160;</td>
           <td class="paramname"><em>def</em>&#160;</td>
         </tr>
         <tr>
@@ -950,7 +950,7 @@ template&lt;&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> <a class="el" href="namespaceceammc.html#a311cab762539c4bbb2ee839e6b80e6c3">ceammc::listFrom</a> </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>v</em></td><td>)</td>
           <td></td>
         </tr>
@@ -967,7 +967,7 @@ template&lt;&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> <a class="el" href="namespaceceammc.html#a311cab762539c4bbb2ee839e6b80e6c3">ceammc::listFrom</a> </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> &amp;&#160;</td>
           <td class="paramname"><em>v</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1001,7 +1001,7 @@ template&lt;&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> <a class="el" href="namespaceceammc.html#a311cab762539c4bbb2ee839e6b80e6c3">ceammc::listFrom</a> </td>
           <td>(</td>
-          <td class="paramtype">bool&#160;</td>
+          <td class="paramtype"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td>
           <td class="paramname"><em>v</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1016,7 +1016,7 @@ template&lt;&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool ceammc::operator!= </td>
+          <td class="memname"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a> ceammc::operator!= </td>
           <td>(</td>
           <td class="paramtype">const Message &amp;&#160;</td>
           <td class="paramname"><em>c1</em>, </td>
@@ -1043,7 +1043,7 @@ template&lt;&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool ceammc::operator!= </td>
+          <td class="memname"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a> ceammc::operator!= </td>
           <td>(</td>
           <td class="paramtype">const Atom &amp;&#160;</td>
           <td class="paramname"><em>a1</em>, </td>
@@ -1070,7 +1070,7 @@ template&lt;&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool ceammc::operator!= </td>
+          <td class="memname"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a> ceammc::operator!= </td>
           <td>(</td>
           <td class="paramtype">const AtomList &amp;&#160;</td>
           <td class="paramname"><em>l1</em>, </td>
@@ -1151,7 +1151,7 @@ template&lt;&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool ceammc::operator== </td>
+          <td class="memname"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a> ceammc::operator== </td>
           <td>(</td>
           <td class="paramtype">const Message &amp;&#160;</td>
           <td class="paramname"><em>c1</em>, </td>
@@ -1178,7 +1178,7 @@ template&lt;&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool ceammc::operator== </td>
+          <td class="memname"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a> ceammc::operator== </td>
           <td>(</td>
           <td class="paramtype">const Atom &amp;&#160;</td>
           <td class="paramname"><em>a1</em>, </td>
@@ -1205,7 +1205,7 @@ template&lt;&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool ceammc::operator== </td>
+          <td class="memname"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a> ceammc::operator== </td>
           <td>(</td>
           <td class="paramtype">const AtomList &amp;&#160;</td>
           <td class="paramname"><em>l1</em>, </td>
@@ -1232,7 +1232,7 @@ template&lt;&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string <a class="el" href="namespaceceammc.html#abf9b2102ecfd8eb6415e57f0b1a92961">ceammc::to_float_range_string</a> </td>
+          <td class="memname"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="el" href="namespaceceammc.html#abf9b2102ecfd8eb6415e57f0b1a92961">ceammc::to_float_range_string</a> </td>
           <td>(</td>
           <td class="paramtype">const Atom &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
@@ -1252,7 +1252,7 @@ template&lt;&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> &amp;&#160;</td>
           <td class="paramname"><em>defaultValue</em>&#160;</td>
         </tr>
         <tr>
@@ -1271,7 +1271,7 @@ template&lt;&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string <a class="el" href="namespaceceammc.html#a60e2737a5f474cf427ea2e26e193696e">ceammc::to_float_string</a> </td>
+          <td class="memname"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="el" href="namespaceceammc.html#a60e2737a5f474cf427ea2e26e193696e">ceammc::to_float_string</a> </td>
           <td>(</td>
           <td class="paramtype">const Atom &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
@@ -1279,7 +1279,7 @@ template&lt;&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> &amp;&#160;</td>
           <td class="paramname"><em>defaultValue</em>&#160;</td>
         </tr>
         <tr>
@@ -1298,7 +1298,7 @@ template&lt;&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string <a class="el" href="namespaceceammc.html#acb54651491ef897c8d3fb3b1e06ded21">ceammc::to_hex_string</a> </td>
+          <td class="memname"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="el" href="namespaceceammc.html#acb54651491ef897c8d3fb3b1e06ded21">ceammc::to_hex_string</a> </td>
           <td>(</td>
           <td class="paramtype">const Atom &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
@@ -1306,7 +1306,7 @@ template&lt;&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> &amp;&#160;</td>
           <td class="paramname"><em>defaultValue</em>&#160;</td>
         </tr>
         <tr>
@@ -1325,7 +1325,7 @@ template&lt;&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="namespaceceammc.html#a6295c782bd42c995e7f09274529cbf14">ceammc::to_outlet</a> </td>
+          <td class="memname"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a> <a class="el" href="namespaceceammc.html#a6295c782bd42c995e7f09274529cbf14">ceammc::to_outlet</a> </td>
           <td>(</td>
           <td class="paramtype">t_outlet *&#160;</td>
           <td class="paramname"><em>x</em>, </td>
@@ -1379,7 +1379,7 @@ template&lt;&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string <a class="el" href="namespaceceammc.html#a8f97ae1f7a5fa2bfb657d5c5a37ad31d">ceammc::to_string</a> </td>
+          <td class="memname"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="el" href="namespaceceammc.html#a8f97ae1f7a5fa2bfb657d5c5a37ad31d">ceammc::to_string</a> </td>
           <td>(</td>
           <td class="paramtype">const Atom &amp;&#160;</td>
           <td class="paramname"><em>a</em></td><td>)</td>
@@ -1396,7 +1396,7 @@ template&lt;&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string <a class="el" href="namespaceceammc.html#a8f97ae1f7a5fa2bfb657d5c5a37ad31d">ceammc::to_string</a> </td>
+          <td class="memname"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="el" href="namespaceceammc.html#a8f97ae1f7a5fa2bfb657d5c5a37ad31d">ceammc::to_string</a> </td>
           <td>(</td>
           <td class="paramtype">const AtomList &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
@@ -1404,7 +1404,7 @@ template&lt;&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> &amp;&#160;</td>
           <td class="paramname"><em>separator</em>&#160;</td>
         </tr>
         <tr>
@@ -1423,7 +1423,7 @@ template&lt;&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string <a class="el" href="namespaceceammc.html#a8f97ae1f7a5fa2bfb657d5c5a37ad31d">ceammc::to_string</a> </td>
+          <td class="memname"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="el" href="namespaceceammc.html#a8f97ae1f7a5fa2bfb657d5c5a37ad31d">ceammc::to_string</a> </td>
           <td>(</td>
           <td class="paramtype">const Message &amp;&#160;</td>
           <td class="paramname"><em>msg</em>, </td>
@@ -1431,7 +1431,7 @@ template&lt;&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> &amp;&#160;</td>
           <td class="paramname"><em>separator</em>&#160;</td>
         </tr>
         <tr>
@@ -1463,7 +1463,7 @@ template&lt;&gt; </div>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 15 2017 13:05:43 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 15 2017 20:07:54 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

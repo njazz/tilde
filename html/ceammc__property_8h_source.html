@@ -107,16 +107,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00023"></a>00023 <span class="keyword">namespace </span>ceammc {
 <a name="l00024"></a>00024 
 <a name="l00025"></a><a class="code" href="classceammc_1_1_property.html">00025</a> <span class="keyword">class </span><a class="code" href="classceammc_1_1_property.html">Property</a> {
-<a name="l00026"></a>00026     std::string name_;
+<a name="l00026"></a>00026     <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> name_;
 <a name="l00027"></a>00027     <span class="keywordtype">bool</span> readonly_;
 <a name="l00028"></a>00028     <span class="keywordtype">bool</span> visible_;
 <a name="l00029"></a>00029 
 <a name="l00030"></a>00030 <span class="keyword">public</span>:
-<a name="l00031"></a>00031     <a class="code" href="classceammc_1_1_property.html#a7119e6a81a0792747dabf992d52e3a6b">Property</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_property.html#a9369d5cf6482a9b2c3caf7a2d76a3baa">readonly</a> = <span class="keyword">false</span>);
+<a name="l00031"></a>00031     <a class="code" href="classceammc_1_1_property.html#a7119e6a81a0792747dabf992d52e3a6b">Property</a>(<span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_property.html#a9369d5cf6482a9b2c3caf7a2d76a3baa">readonly</a> = <span class="keyword">false</span>);
 <a name="l00032"></a>00032     <span class="keyword">virtual</span> <a class="code" href="classceammc_1_1_property.html#aabee32674d11320f09fc085d4892f16a">~Property</a>();
 <a name="l00033"></a>00033 
-<a name="l00034"></a><a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">00034</a>     std::string <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> name_; }
-<a name="l00035"></a><a class="code" href="classceammc_1_1_property.html#af4ff94ef97398010a1f2a8d318b3a849">00035</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_property.html#af4ff94ef97398010a1f2a8d318b3a849">setName</a>(<span class="keyword">const</span> std::string&amp; name) { name_ = <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>; }
+<a name="l00034"></a><a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">00034</a>     <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> name_; }
+<a name="l00035"></a><a class="code" href="classceammc_1_1_property.html#af4ff94ef97398010a1f2a8d318b3a849">00035</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_property.html#af4ff94ef97398010a1f2a8d318b3a849">setName</a>(<span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; name) { name_ = <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>; }
 <a name="l00036"></a>00036 
 <a name="l00037"></a><a class="code" href="classceammc_1_1_property.html#a9369d5cf6482a9b2c3caf7a2d76a3baa">00037</a>     <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_property.html#a9369d5cf6482a9b2c3caf7a2d76a3baa">readonly</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> readonly_; }
 <a name="l00038"></a><a class="code" href="classceammc_1_1_property.html#a322fda2241598fbd62264a096b0692b0">00038</a>     <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_property.html#a322fda2241598fbd62264a096b0692b0">visible</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> visible_; }
@@ -126,27 +126,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00042"></a>00042 
 <a name="l00043"></a>00043 <span class="keyword">protected</span>:
 <a name="l00044"></a>00044     <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_property.html#af7abdedebae800707150c6f9505b617e">readonlyCheck</a>() <span class="keyword">const</span>;
-<a name="l00045"></a>00045     <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_property.html#a1211642eb0e1813e00e3d8c4d2803bb0">emptyValueCheck</a>(<span class="keyword">const</span> <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a>&amp; v) <span class="keyword">const</span>;
-<a name="l00046"></a><a class="code" href="classceammc_1_1_property.html#aeca387154bd2de2906853b315d83ff67">00046</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_property.html#aeca387154bd2de2906853b315d83ff67">setVisible</a>(<span class="keywordtype">bool</span> v) { visible_ = v; }
+<a name="l00045"></a>00045     <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_property.html#a1211642eb0e1813e00e3d8c4d2803bb0">emptyValueCheck</a>(<span class="keyword">const</span> <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a>&amp; <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>) <span class="keyword">const</span>;
+<a name="l00046"></a><a class="code" href="classceammc_1_1_property.html#aeca387154bd2de2906853b315d83ff67">00046</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_property.html#aeca387154bd2de2906853b315d83ff67">setVisible</a>(<span class="keywordtype">bool</span> <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>) { visible_ = <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>; }
 <a name="l00047"></a>00047 };
 <a name="l00048"></a>00048 
 <a name="l00049"></a><a class="code" href="classceammc_1_1_atom_property.html">00049</a> <span class="keyword">class </span><a class="code" href="classceammc_1_1_atom_property.html">AtomProperty</a> : <span class="keyword">public</span> <a class="code" href="classceammc_1_1_property.html">Property</a> {
 <a name="l00050"></a>00050     <a class="code" href="classceammc_1_1_atom.html">Atom</a> v_;
 <a name="l00051"></a>00051 
 <a name="l00052"></a>00052 <span class="keyword">public</span>:
-<a name="l00053"></a>00053     <a class="code" href="classceammc_1_1_atom_property.html#a2d6a1899aa5855ab02ad0771d67971e6">AtomProperty</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, <span class="keyword">const</span> <a class="code" href="classceammc_1_1_atom.html">Atom</a>&amp; a, <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_property.html#a9369d5cf6482a9b2c3caf7a2d76a3baa">readonly</a> = <span class="keyword">false</span>);
+<a name="l00053"></a>00053     <a class="code" href="classceammc_1_1_atom_property.html#a2d6a1899aa5855ab02ad0771d67971e6">AtomProperty</a>(<span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, <span class="keyword">const</span> <a class="code" href="classceammc_1_1_atom.html">Atom</a>&amp; a, <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_property.html#a9369d5cf6482a9b2c3caf7a2d76a3baa">readonly</a> = <span class="keyword">false</span>);
 <a name="l00054"></a>00054     <span class="keywordtype">bool</span> <span class="keyword">set</span>(<span class="keyword">const</span> <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a>&amp; lst);
 <a name="l00055"></a>00055     <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> <span class="keyword">get</span>() <span class="keyword">const</span>;
 <a name="l00056"></a>00056 
 <a name="l00057"></a><a class="code" href="classceammc_1_1_atom_property.html#aeb0a0963b5d1b54ba89656c4c7e0e9ce">00057</a>     <a class="code" href="classceammc_1_1_atom.html">Atom</a> <a class="code" href="classceammc_1_1_atom_property.html#aeb0a0963b5d1b54ba89656c4c7e0e9ce">value</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> v_; }
-<a name="l00058"></a><a class="code" href="classceammc_1_1_atom_property.html#a4f7e09faed480a020df227e6b305e173">00058</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_atom_property.html#a4f7e09faed480a020df227e6b305e173">setValue</a>(<span class="keyword">const</span> <a class="code" href="classceammc_1_1_atom.html">Atom</a>&amp; v) { v_ = v; }
+<a name="l00058"></a><a class="code" href="classceammc_1_1_atom_property.html#a4f7e09faed480a020df227e6b305e173">00058</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_atom_property.html#a4f7e09faed480a020df227e6b305e173">setValue</a>(<span class="keyword">const</span> <a class="code" href="classceammc_1_1_atom.html">Atom</a>&amp; <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>) { v_ = <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>; }
 <a name="l00059"></a>00059 };
 <a name="l00060"></a>00060 
 <a name="l00061"></a><a class="code" href="classceammc_1_1_list_property.html">00061</a> <span class="keyword">class </span><a class="code" href="classceammc_1_1_list_property.html">ListProperty</a> : <span class="keyword">public</span> <a class="code" href="classceammc_1_1_property.html">Property</a> {
 <a name="l00062"></a>00062     <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> lst_;
 <a name="l00063"></a>00063 
 <a name="l00064"></a>00064 <span class="keyword">public</span>:
-<a name="l00065"></a>00065     <a class="code" href="classceammc_1_1_list_property.html#af195350669a2e54a09f7b5e9d84d4642">ListProperty</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, <span class="keyword">const</span> <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a>&amp; l = <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a>(), <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_property.html#a9369d5cf6482a9b2c3caf7a2d76a3baa">readonly</a> = <span class="keyword">false</span>);
+<a name="l00065"></a>00065     <a class="code" href="classceammc_1_1_list_property.html#af195350669a2e54a09f7b5e9d84d4642">ListProperty</a>(<span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, <span class="keyword">const</span> <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a>&amp; l = <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a>(), <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_property.html#a9369d5cf6482a9b2c3caf7a2d76a3baa">readonly</a> = <span class="keyword">false</span>);
 <a name="l00066"></a>00066     <span class="keywordtype">bool</span> <span class="keyword">set</span>(<span class="keyword">const</span> <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a>&amp; lst);
 <a name="l00067"></a>00067     <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> <span class="keyword">get</span>() <span class="keyword">const</span>;
 <a name="l00068"></a>00068 };
@@ -155,36 +155,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00071"></a>00071     <span class="keywordtype">float</span> v_;
 <a name="l00072"></a>00072 
 <a name="l00073"></a>00073 <span class="keyword">public</span>:
-<a name="l00074"></a>00074     <a class="code" href="classceammc_1_1_float_property.html#a482b56ffa0f694fa765b8316469bdafb">FloatProperty</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, <span class="keywordtype">float</span> init = 0, <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_property.html#a9369d5cf6482a9b2c3caf7a2d76a3baa">readonly</a> = <span class="keyword">false</span>);
+<a name="l00074"></a>00074     <a class="code" href="classceammc_1_1_float_property.html#a482b56ffa0f694fa765b8316469bdafb">FloatProperty</a>(<span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, <span class="keywordtype">float</span> <a class="code" href="namespace_python_qt___qt_all.html#a2ab1ae5db205d024de26add8942e8591" title="initialize the Qt binding">init</a> = 0, <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_property.html#a9369d5cf6482a9b2c3caf7a2d76a3baa">readonly</a> = <span class="keyword">false</span>);
 <a name="l00075"></a>00075     <span class="keywordtype">bool</span> <span class="keyword">set</span>(<span class="keyword">const</span> <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a>&amp; lst);
 <a name="l00076"></a>00076     <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> <span class="keyword">get</span>() <span class="keyword">const</span>;
 <a name="l00077"></a>00077 
 <a name="l00078"></a><a class="code" href="classceammc_1_1_float_property.html#a22597134959fa2f7205c4303314beda9">00078</a>     <span class="keywordtype">float</span> <a class="code" href="classceammc_1_1_float_property.html#a22597134959fa2f7205c4303314beda9">value</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> v_; }
-<a name="l00079"></a><a class="code" href="classceammc_1_1_float_property.html#abe3c01b783b6e83386d755b9af757037">00079</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_float_property.html#abe3c01b783b6e83386d755b9af757037">setValue</a>(<span class="keywordtype">float</span> v) { v_ = v; }
+<a name="l00079"></a><a class="code" href="classceammc_1_1_float_property.html#abe3c01b783b6e83386d755b9af757037">00079</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_float_property.html#abe3c01b783b6e83386d755b9af757037">setValue</a>(<span class="keywordtype">float</span> <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>) { v_ = <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>; }
 <a name="l00080"></a>00080 };
 <a name="l00081"></a>00081 
 <a name="l00082"></a><a class="code" href="classceammc_1_1_int_property.html">00082</a> <span class="keyword">class </span><a class="code" href="classceammc_1_1_int_property.html">IntProperty</a> : <span class="keyword">public</span> <a class="code" href="classceammc_1_1_property.html">Property</a> {
 <a name="l00083"></a>00083     <span class="keywordtype">int</span> v_;
 <a name="l00084"></a>00084 
 <a name="l00085"></a>00085 <span class="keyword">public</span>:
-<a name="l00086"></a>00086     <a class="code" href="classceammc_1_1_int_property.html#af4d31aabbadc505825a6bffd1e09c33b">IntProperty</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, <span class="keywordtype">int</span> init = 0, <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_property.html#a9369d5cf6482a9b2c3caf7a2d76a3baa">readonly</a> = <span class="keyword">false</span>);
+<a name="l00086"></a>00086     <a class="code" href="classceammc_1_1_int_property.html#af4d31aabbadc505825a6bffd1e09c33b">IntProperty</a>(<span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, <span class="keywordtype">int</span> <a class="code" href="namespace_python_qt___qt_all.html#a2ab1ae5db205d024de26add8942e8591" title="initialize the Qt binding">init</a> = 0, <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_property.html#a9369d5cf6482a9b2c3caf7a2d76a3baa">readonly</a> = <span class="keyword">false</span>);
 <a name="l00087"></a>00087     <span class="keywordtype">bool</span> <span class="keyword">set</span>(<span class="keyword">const</span> <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a>&amp; lst);
 <a name="l00088"></a>00088     <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> <span class="keyword">get</span>() <span class="keyword">const</span>;
 <a name="l00089"></a>00089 
 <a name="l00090"></a><a class="code" href="classceammc_1_1_int_property.html#af35bacf0d88ad5a9585909bbff9f503f">00090</a>     <span class="keywordtype">int</span> <a class="code" href="classceammc_1_1_int_property.html#af35bacf0d88ad5a9585909bbff9f503f">value</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> v_; }
-<a name="l00091"></a><a class="code" href="classceammc_1_1_int_property.html#a1681ca47837d6dace8d6188880f8cbcf">00091</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_int_property.html#a1681ca47837d6dace8d6188880f8cbcf">setValue</a>(<span class="keywordtype">int</span> v) { v_ = v; }
+<a name="l00091"></a><a class="code" href="classceammc_1_1_int_property.html#a1681ca47837d6dace8d6188880f8cbcf">00091</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_int_property.html#a1681ca47837d6dace8d6188880f8cbcf">setValue</a>(<span class="keywordtype">int</span> <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>) { v_ = <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>; }
 <a name="l00092"></a>00092 };
 <a name="l00093"></a>00093 
 <a name="l00094"></a><a class="code" href="classceammc_1_1_size_t_property.html">00094</a> <span class="keyword">class </span><a class="code" href="classceammc_1_1_size_t_property.html">SizeTProperty</a> : <span class="keyword">public</span> <a class="code" href="classceammc_1_1_property.html">Property</a> {
 <a name="l00095"></a>00095     <span class="keywordtype">size_t</span> v_;
 <a name="l00096"></a>00096 
 <a name="l00097"></a>00097 <span class="keyword">public</span>:
-<a name="l00098"></a>00098     <a class="code" href="classceammc_1_1_size_t_property.html#af474588940b978d23253c6cdd04a657a">SizeTProperty</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, <span class="keywordtype">size_t</span> init = 0, <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_property.html#a9369d5cf6482a9b2c3caf7a2d76a3baa">readonly</a> = <span class="keyword">false</span>);
+<a name="l00098"></a>00098     <a class="code" href="classceammc_1_1_size_t_property.html#af474588940b978d23253c6cdd04a657a">SizeTProperty</a>(<span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, <span class="keywordtype">size_t</span> <a class="code" href="namespace_python_qt___qt_all.html#a2ab1ae5db205d024de26add8942e8591" title="initialize the Qt binding">init</a> = 0, <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_property.html#a9369d5cf6482a9b2c3caf7a2d76a3baa">readonly</a> = <span class="keyword">false</span>);
 <a name="l00099"></a>00099     <span class="keywordtype">bool</span> <span class="keyword">set</span>(<span class="keyword">const</span> <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a>&amp; lst);
 <a name="l00100"></a>00100     <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> <span class="keyword">get</span>() <span class="keyword">const</span>;
 <a name="l00101"></a>00101 
 <a name="l00102"></a><a class="code" href="classceammc_1_1_size_t_property.html#a44aa5a101e8cc3075d014fa954f2cc07">00102</a>     <span class="keywordtype">size_t</span> <a class="code" href="classceammc_1_1_size_t_property.html#a44aa5a101e8cc3075d014fa954f2cc07">value</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> v_; }
-<a name="l00103"></a><a class="code" href="classceammc_1_1_size_t_property.html#a488d34ec48e6fb679c5fc85f9dea85a5">00103</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_size_t_property.html#a488d34ec48e6fb679c5fc85f9dea85a5">setValue</a>(<span class="keywordtype">size_t</span> v) { v_ = v; }
+<a name="l00103"></a><a class="code" href="classceammc_1_1_size_t_property.html#a488d34ec48e6fb679c5fc85f9dea85a5">00103</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_size_t_property.html#a488d34ec48e6fb679c5fc85f9dea85a5">setValue</a>(<span class="keywordtype">size_t</span> <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>) { v_ = <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>; }
 <a name="l00104"></a>00104 };
 <a name="l00105"></a>00105 
 <a name="l00106"></a>00106 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;
@@ -193,7 +193,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00109"></a><a class="code" href="classceammc_1_1_enum_property.html#a3265fe6e89b9f8620ad0d55f730deb15">00109</a>     <span class="keyword">typedef</span> std::vector&lt;T&gt; <a class="code" href="classceammc_1_1_enum_property.html#a3265fe6e89b9f8620ad0d55f730deb15">ValueList</a>;
 <a name="l00110"></a>00110 
 <a name="l00111"></a>00111 <span class="keyword">public</span>:
-<a name="l00112"></a><a class="code" href="classceammc_1_1_enum_property.html#a1ed0a8bde91b59b2bc9f0f48bfcf0947">00112</a>     <a class="code" href="classceammc_1_1_enum_property.html#a1ed0a8bde91b59b2bc9f0f48bfcf0947">EnumProperty</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, T def, <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_property.html#a9369d5cf6482a9b2c3caf7a2d76a3baa">readonly</a> = <span class="keyword">false</span>)
+<a name="l00112"></a><a class="code" href="classceammc_1_1_enum_property.html#a1ed0a8bde91b59b2bc9f0f48bfcf0947">00112</a>     <a class="code" href="classceammc_1_1_enum_property.html#a1ed0a8bde91b59b2bc9f0f48bfcf0947">EnumProperty</a>(<span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, T def, <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_property.html#a9369d5cf6482a9b2c3caf7a2d76a3baa">readonly</a> = <span class="keyword">false</span>)
 <a name="l00113"></a>00113         : <a class="code" href="classceammc_1_1_property.html">Property</a>(name, <a class="code" href="classceammc_1_1_property.html#a9369d5cf6482a9b2c3caf7a2d76a3baa">readonly</a>)
 <a name="l00114"></a>00114         , idx_(0)
 <a name="l00115"></a>00115         , def_(def)
@@ -209,7 +209,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00125"></a>00125         <span class="keywordflow">if</span> (!<a class="code" href="classceammc_1_1_property.html#a1211642eb0e1813e00e3d8c4d2803bb0">emptyValueCheck</a>(lst))
 <a name="l00126"></a>00126             <span class="keywordflow">return</span> <span class="keyword">false</span>;
 <a name="l00127"></a>00127 
-<a name="l00128"></a>00128         T v = atomlistToValue&lt;T&gt;(lst, def_);
+<a name="l00128"></a>00128         T <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a> = atomlistToValue&lt;T&gt;(lst, def_);
 <a name="l00129"></a>00129         <span class="keywordtype">long</span> idx = <a class="code" href="classceammc_1_1_enum_property.html#aa9ecec60af4e0434c53ff7abafc594f6">enumIndex</a>(v);
 <a name="l00130"></a>00130         <span class="keywordflow">if</span> (idx &lt; 0) {
 <a name="l00131"></a>00131             <a class="code" href="ceammc__log_8h.html#aae6bd12793ddee2e9d4f6d5849eb0f10">LIB_ERR</a> &lt;&lt; <span class="stringliteral">&quot;invalid property value: &quot;</span> &lt;&lt; v &lt;&lt; <span class="stringliteral">&quot;. valid values are: &quot;</span> &lt;&lt; allowed_;
@@ -234,7 +234,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00150"></a>00150         <span class="keywordflow">return</span> allowed_[idx_];
 <a name="l00151"></a>00151     }
 <a name="l00152"></a>00152 
-<a name="l00153"></a><a class="code" href="classceammc_1_1_enum_property.html#a8e43e8e085129aa650047f024034fd22">00153</a>     <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_enum_property.html#a8e43e8e085129aa650047f024034fd22">setValue</a>(T v)
+<a name="l00153"></a><a class="code" href="classceammc_1_1_enum_property.html#a8e43e8e085129aa650047f024034fd22">00153</a>     <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_enum_property.html#a8e43e8e085129aa650047f024034fd22">setValue</a>(T <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>)
 <a name="l00154"></a>00154     {
 <a name="l00155"></a>00155         <span class="keywordtype">long</span> idx = <a class="code" href="classceammc_1_1_enum_property.html#aa9ecec60af4e0434c53ff7abafc594f6">enumIndex</a>(v);
 <a name="l00156"></a>00156         <span class="keywordflow">if</span> (idx &lt; 0)
@@ -244,13 +244,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00160"></a>00160         <span class="keywordflow">return</span> <span class="keyword">true</span>;
 <a name="l00161"></a>00161     }
 <a name="l00162"></a>00162 
-<a name="l00163"></a><a class="code" href="classceammc_1_1_enum_property.html#aeb792fc8c0baf354413bc0ff45ec5445">00163</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_enum_property.html#aeb792fc8c0baf354413bc0ff45ec5445">appendEnum</a>(T v)
+<a name="l00163"></a><a class="code" href="classceammc_1_1_enum_property.html#aeb792fc8c0baf354413bc0ff45ec5445">00163</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_enum_property.html#aeb792fc8c0baf354413bc0ff45ec5445">appendEnum</a>(T <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>)
 <a name="l00164"></a>00164     {
 <a name="l00165"></a>00165         <span class="keywordflow">if</span> (<a class="code" href="classceammc_1_1_enum_property.html#aa9ecec60af4e0434c53ff7abafc594f6">enumIndex</a>(v) &lt; 0)
 <a name="l00166"></a>00166             allowed_.push_back(v);
 <a name="l00167"></a>00167     }
 <a name="l00168"></a>00168 
-<a name="l00169"></a><a class="code" href="classceammc_1_1_enum_property.html#aa9ecec60af4e0434c53ff7abafc594f6">00169</a>     <span class="keywordtype">long</span> <a class="code" href="classceammc_1_1_enum_property.html#aa9ecec60af4e0434c53ff7abafc594f6">enumIndex</a>(T v)<span class="keyword"> const</span>
+<a name="l00169"></a><a class="code" href="classceammc_1_1_enum_property.html#aa9ecec60af4e0434c53ff7abafc594f6">00169</a>     <span class="keywordtype">long</span> <a class="code" href="classceammc_1_1_enum_property.html#aa9ecec60af4e0434c53ff7abafc594f6">enumIndex</a>(T <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>)<span class="keyword"> const</span>
 <a name="l00170"></a>00170 <span class="keyword">    </span>{
 <a name="l00171"></a>00171         <span class="keyword">typename</span> ValueList::const_iterator it;
 <a name="l00172"></a>00172         <span class="keywordflow">for</span> (it = allowed_.begin(); it != allowed_.end(); ++it) {
@@ -268,17 +268,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00184"></a>00184 
 <a name="l00185"></a><a class="code" href="classceammc_1_1_symbol_enum_property.html">00185</a> <span class="keyword">class </span><a class="code" href="classceammc_1_1_symbol_enum_property.html">SymbolEnumProperty</a> : <span class="keyword">public</span> <a class="code" href="classceammc_1_1_enum_property.html">EnumProperty</a>&lt;t_symbol*&gt; {
 <a name="l00186"></a>00186 <span class="keyword">public</span>:
-<a name="l00187"></a><a class="code" href="classceammc_1_1_symbol_enum_property.html#a82128fe6694d628bdbb0bbe94dff4852">00187</a>     <a class="code" href="classceammc_1_1_symbol_enum_property.html#a82128fe6694d628bdbb0bbe94dff4852">SymbolEnumProperty</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, <span class="keyword">const</span> <span class="keywordtype">char</span>* sym, <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_property.html#a9369d5cf6482a9b2c3caf7a2d76a3baa">readonly</a> = <span class="keyword">false</span>)
+<a name="l00187"></a><a class="code" href="classceammc_1_1_symbol_enum_property.html#a82128fe6694d628bdbb0bbe94dff4852">00187</a>     <a class="code" href="classceammc_1_1_symbol_enum_property.html#a82128fe6694d628bdbb0bbe94dff4852">SymbolEnumProperty</a>(<span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, <span class="keyword">const</span> <span class="keywordtype">char</span>* sym, <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_property.html#a9369d5cf6482a9b2c3caf7a2d76a3baa">readonly</a> = <span class="keyword">false</span>)
 <a name="l00188"></a>00188         : <a class="code" href="classceammc_1_1_enum_property.html">EnumProperty</a>&lt;t_symbol*&gt;(name, gensym(sym), <a class="code" href="classceammc_1_1_property.html#a9369d5cf6482a9b2c3caf7a2d76a3baa">readonly</a>)
 <a name="l00189"></a>00189     {
 <a name="l00190"></a>00190     }
 <a name="l00191"></a>00191 
-<a name="l00192"></a><a class="code" href="classceammc_1_1_symbol_enum_property.html#a38ad8181e6a7b8c81cb2001cc52eb949">00192</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_symbol_enum_property.html#a38ad8181e6a7b8c81cb2001cc52eb949">appendEnum</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* v)
+<a name="l00192"></a><a class="code" href="classceammc_1_1_symbol_enum_property.html#a38ad8181e6a7b8c81cb2001cc52eb949">00192</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_symbol_enum_property.html#a38ad8181e6a7b8c81cb2001cc52eb949">appendEnum</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>)
 <a name="l00193"></a>00193     {
 <a name="l00194"></a>00194         <a class="code" href="classceammc_1_1_symbol_enum_property.html#a38ad8181e6a7b8c81cb2001cc52eb949">EnumProperty&lt;t_symbol*&gt;::appendEnum</a>(gensym(v));
 <a name="l00195"></a>00195     }
 <a name="l00196"></a>00196 
-<a name="l00197"></a><a class="code" href="classceammc_1_1_symbol_enum_property.html#a50842898d81f9d78d8695f0444c0e78f">00197</a>     <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_symbol_enum_property.html#a50842898d81f9d78d8695f0444c0e78f">is</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* v)<span class="keyword"> const</span>
+<a name="l00197"></a><a class="code" href="classceammc_1_1_symbol_enum_property.html#a50842898d81f9d78d8695f0444c0e78f">00197</a>     <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_symbol_enum_property.html#a50842898d81f9d78d8695f0444c0e78f">is</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>)<span class="keyword"> const</span>
 <a name="l00198"></a>00198 <span class="keyword">    </span>{
 <a name="l00199"></a>00199         <span class="keywordflow">return</span> <a class="code" href="classceammc_1_1_enum_property.html#af1c6a906ad0a70f5134585b622236b80">value</a>() == gensym(v);
 <a name="l00200"></a>00200     }
@@ -290,8 +290,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00206"></a>00206     V val_;
 <a name="l00207"></a>00207 
 <a name="l00208"></a>00208 <span class="keyword">public</span>:
-<a name="l00209"></a><a class="code" href="classceammc_1_1_alias_property.html#aaca36992caaff6783c599eb4ff05a9c7">00209</a>     <a class="code" href="classceammc_1_1_alias_property.html#aaca36992caaff6783c599eb4ff05a9c7">AliasProperty</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, T* prop, V v)
-<a name="l00210"></a>00210         : <a class="code" href="classceammc_1_1_property.html">Property</a>(name, false)
+<a name="l00209"></a><a class="code" href="classceammc_1_1_alias_property.html#aaca36992caaff6783c599eb4ff05a9c7">00209</a>     <a class="code" href="classceammc_1_1_alias_property.html#aaca36992caaff6783c599eb4ff05a9c7">AliasProperty</a>(<span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, T* prop, V <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>)
+<a name="l00210"></a>00210         : <a class="code" href="classceammc_1_1_property.html">Property</a>(name, <a class="code" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c">false</a>)
 <a name="l00211"></a>00211         , ptr_(prop)
 <a name="l00212"></a>00212         , val_(v)
 <a name="l00213"></a>00213     {
@@ -313,23 +313,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00229"></a>00229     <span class="keywordtype">bool</span> v_;
 <a name="l00230"></a>00230 
 <a name="l00231"></a>00231 <span class="keyword">public</span>:
-<a name="l00232"></a>00232     <a class="code" href="classceammc_1_1_bool_property.html#a25b921308d4bfea9adb6d3fbd42751c8">BoolProperty</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, <span class="keywordtype">bool</span> init, <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_property.html#a9369d5cf6482a9b2c3caf7a2d76a3baa">readonly</a> = <span class="keyword">false</span>);
+<a name="l00232"></a>00232     <a class="code" href="classceammc_1_1_bool_property.html#a25b921308d4bfea9adb6d3fbd42751c8">BoolProperty</a>(<span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, <span class="keywordtype">bool</span> <a class="code" href="namespace_python_qt___qt_all.html#a2ab1ae5db205d024de26add8942e8591" title="initialize the Qt binding">init</a>, <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_property.html#a9369d5cf6482a9b2c3caf7a2d76a3baa">readonly</a> = <span class="keyword">false</span>);
 <a name="l00233"></a>00233     <span class="keywordtype">bool</span> <span class="keyword">set</span>(<span class="keyword">const</span> <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a>&amp; lst);
 <a name="l00234"></a>00234     <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> <span class="keyword">get</span>() <span class="keyword">const</span>;
 <a name="l00235"></a>00235 
 <a name="l00236"></a><a class="code" href="classceammc_1_1_bool_property.html#a4cc566ea4c0e791cf8b8abef528ba2d8">00236</a>     <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_bool_property.html#a4cc566ea4c0e791cf8b8abef528ba2d8">value</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> v_; }
-<a name="l00237"></a><a class="code" href="classceammc_1_1_bool_property.html#acc32ee1e3559519302d604c2ca7f0ac6">00237</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_bool_property.html#acc32ee1e3559519302d604c2ca7f0ac6">setValue</a>(<span class="keywordtype">bool</span> v) { v_ = v; }
+<a name="l00237"></a><a class="code" href="classceammc_1_1_bool_property.html#acc32ee1e3559519302d604c2ca7f0ac6">00237</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_bool_property.html#acc32ee1e3559519302d604c2ca7f0ac6">setValue</a>(<span class="keywordtype">bool</span> <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>) { v_ = <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>; }
 <a name="l00238"></a>00238 };
 <a name="l00239"></a>00239 
 <a name="l00240"></a>00240 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;
 <a name="l00241"></a><a class="code" href="classceammc_1_1_callback_property.html">00241</a> <span class="keyword">class </span><a class="code" href="classceammc_1_1_callback_property.html">CallbackProperty</a> : <span class="keyword">public</span> <a class="code" href="classceammc_1_1_property.html">Property</a> {
 <a name="l00242"></a>00242 <span class="keyword">public</span>:
 <a name="l00243"></a><a class="code" href="classceammc_1_1_callback_property.html#ae31eb83136b6807895ccd9fa539e8191">00243</a>     <span class="keyword">typedef</span> <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> (T::*<a class="code" href="classceammc_1_1_callback_property.html#ae31eb83136b6807895ccd9fa539e8191">GetterFn</a>)() <span class="keyword">const</span>;
-<a name="l00244"></a><a class="code" href="classceammc_1_1_callback_property.html#a3cb3585a140eefa91042b7d74694d870">00244</a>     <span class="keyword">typedef</span> void (T::*<a class="code" href="classceammc_1_1_callback_property.html#a3cb3585a140eefa91042b7d74694d870">SetterFn</a>)(<span class="keyword">const</span> <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a>&amp; v);
+<a name="l00244"></a><a class="code" href="classceammc_1_1_callback_property.html#a3cb3585a140eefa91042b7d74694d870">00244</a>     <span class="keyword">typedef</span> void (T::*<a class="code" href="classceammc_1_1_callback_property.html#a3cb3585a140eefa91042b7d74694d870">SetterFn</a>)(<span class="keyword">const</span> <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a>&amp; <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>);
 <a name="l00245"></a>00245 
 <a name="l00246"></a>00246 <span class="keyword">public</span>:
-<a name="l00247"></a><a class="code" href="classceammc_1_1_callback_property.html#a70ae29c73b8d557304bdb449533b6bbd">00247</a>     <a class="code" href="classceammc_1_1_callback_property.html#a70ae29c73b8d557304bdb449533b6bbd">CallbackProperty</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, T* obj, <a class="code" href="classceammc_1_1_callback_property.html#ae31eb83136b6807895ccd9fa539e8191">GetterFn</a> gf, <a class="code" href="classceammc_1_1_callback_property.html#a3cb3585a140eefa91042b7d74694d870">SetterFn</a> sf = 0)
-<a name="l00248"></a>00248         : <a class="code" href="classceammc_1_1_property.html">Property</a>(name, sf == 0 ? true : false)
+<a name="l00247"></a><a class="code" href="classceammc_1_1_callback_property.html#a70ae29c73b8d557304bdb449533b6bbd">00247</a>     <a class="code" href="classceammc_1_1_callback_property.html#a70ae29c73b8d557304bdb449533b6bbd">CallbackProperty</a>(<span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, T* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, <a class="code" href="classceammc_1_1_callback_property.html#ae31eb83136b6807895ccd9fa539e8191">GetterFn</a> gf, <a class="code" href="classceammc_1_1_callback_property.html#a3cb3585a140eefa91042b7d74694d870">SetterFn</a> sf = 0)
+<a name="l00248"></a>00248         : <a class="code" href="classceammc_1_1_property.html">Property</a>(name, sf == 0 ? <a class="code" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1a08f175a5505a10b9ed657defeb050e4b">true</a> : <a class="code" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c">false</a>)
 <a name="l00249"></a>00249         , <a class="code" href="classceammc_1_1_callback_property.html#a51406dbe8e68603c1234503675728e92">obj_</a>(obj)
 <a name="l00250"></a>00250         , getter_(gf)
 <a name="l00251"></a>00251         , setter_(sf)
@@ -364,7 +364,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00280"></a>00280     <span class="keyword">typedef</span> void (B::*SGetterFn)(<span class="keyword">const</span> T&amp;);
 <a name="l00281"></a>00281 
 <a name="l00282"></a>00282 <span class="keyword">public</span>:
-<a name="l00283"></a><a class="code" href="classceammc_1_1_typed_cb_property.html#a6dfdc807f8b03222879546b24b937049">00283</a>     <a class="code" href="classceammc_1_1_typed_cb_property.html#a6dfdc807f8b03222879546b24b937049">TypedCbProperty</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, B* obj, TGetterFn gf, SGetterFn sf = 0)
+<a name="l00283"></a><a class="code" href="classceammc_1_1_typed_cb_property.html#a6dfdc807f8b03222879546b24b937049">00283</a>     <a class="code" href="classceammc_1_1_typed_cb_property.html#a6dfdc807f8b03222879546b24b937049">TypedCbProperty</a>(<span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, B* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, TGetterFn gf, SGetterFn sf = 0)
 <a name="l00284"></a>00284         : <a class="code" href="classceammc_1_1_callback_property.html">CallbackProperty</a>&lt;<a class="code" href="classceammc_1_1_typed_cb_property.html">TypedCbProperty</a>&lt;T, B&gt; &gt;(name,
 <a name="l00285"></a>00285               this,
 <a name="l00286"></a>00286               &amp;<a class="code" href="classceammc_1_1_typed_cb_property.html">TypedCbProperty</a>::defGetter, sf == 0 ? 0 : &amp;<a class="code" href="classceammc_1_1_typed_cb_property.html">TypedCbProperty</a>::defSetter)
@@ -378,7 +378,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00294"></a>00294 <span class="keyword">private</span>:
 <a name="l00295"></a>00295     <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> defGetter()<span class="keyword"> const</span>
 <a name="l00296"></a>00296 <span class="keyword">    </span>{
-<a name="l00297"></a>00297         T v = (this-&gt;bobj_-&gt;*tgetter_)();
+<a name="l00297"></a>00297         T <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a> = (this-&gt;bobj_-&gt;*tgetter_)();
 <a name="l00298"></a>00298         <span class="keywordflow">return</span> <a class="code" href="namespaceceammc.html#a311cab762539c4bbb2ee839e6b80e6c3">listFrom</a>(v);
 <a name="l00299"></a>00299     }
 <a name="l00300"></a>00300 
@@ -399,7 +399,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00315"></a>00315     T* vptr_;
 <a name="l00316"></a>00316 
 <a name="l00317"></a>00317 <span class="keyword">public</span>:
-<a name="l00318"></a><a class="code" href="classceammc_1_1_pointer_property.html#adaf5a33662fa14b14147cd4f99d81e32">00318</a>     <a class="code" href="classceammc_1_1_pointer_property.html#adaf5a33662fa14b14147cd4f99d81e32">PointerProperty</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, T* value, <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_property.html#a9369d5cf6482a9b2c3caf7a2d76a3baa">readonly</a> = <span class="keyword">true</span>)
+<a name="l00318"></a><a class="code" href="classceammc_1_1_pointer_property.html#adaf5a33662fa14b14147cd4f99d81e32">00318</a>     <a class="code" href="classceammc_1_1_pointer_property.html#adaf5a33662fa14b14147cd4f99d81e32">PointerProperty</a>(<span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, T* <a class="code" href="abstract_8h.html#a3a0f45a8cd645a6ab8f2c793db266109">value</a>, <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_property.html#a9369d5cf6482a9b2c3caf7a2d76a3baa">readonly</a> = <span class="keyword">true</span>)
 <a name="l00319"></a>00319         : <a class="code" href="classceammc_1_1_property.html">Property</a>(name, <a class="code" href="classceammc_1_1_property.html#a9369d5cf6482a9b2c3caf7a2d76a3baa">readonly</a>)
 <a name="l00320"></a>00320         , vptr_(value)
 <a name="l00321"></a>00321     {
@@ -426,9 +426,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00342"></a>00342 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> P, <span class="keyword">typename</span> V, <span class="keyword">typename</span> CheckFunc&gt;
 <a name="l00343"></a><a class="code" href="classceammc_1_1_checked_property.html">00343</a> <span class="keyword">class </span><a class="code" href="classceammc_1_1_checked_property.html">CheckedProperty</a> : <span class="keyword">public</span> <a class="code" href="classceammc_1_1_property.html">Property</a> {
 <a name="l00344"></a>00344 <span class="keyword">public</span>:
-<a name="l00345"></a><a class="code" href="classceammc_1_1_checked_property.html#a7f1d2d71a2fc74d546b5395bd85ad98c">00345</a>     <a class="code" href="classceammc_1_1_checked_property.html#a7f1d2d71a2fc74d546b5395bd85ad98c">CheckedProperty</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, V <a class="code" href="classceammc_1_1_checked_property.html#a3792423e992b285587d2299286f93c8d">value</a>, CheckFunc fn)
-<a name="l00346"></a>00346         : <a class="code" href="classceammc_1_1_property.html">Property</a>(name, false)
-<a name="l00347"></a>00347         , prop_(new P(name, value, false))
+<a name="l00345"></a><a class="code" href="classceammc_1_1_checked_property.html#a7f1d2d71a2fc74d546b5395bd85ad98c">00345</a>     <a class="code" href="classceammc_1_1_checked_property.html#a7f1d2d71a2fc74d546b5395bd85ad98c">CheckedProperty</a>(<span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, V <a class="code" href="classceammc_1_1_checked_property.html#a3792423e992b285587d2299286f93c8d">value</a>, CheckFunc fn)
+<a name="l00346"></a>00346         : <a class="code" href="classceammc_1_1_property.html">Property</a>(name, <a class="code" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c">false</a>)
+<a name="l00347"></a>00347         , prop_(new P(name, value, <a class="code" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c">false</a>))
 <a name="l00348"></a>00348         , def_(value)
 <a name="l00349"></a>00349         , check_fn_(fn)
 <a name="l00350"></a>00350     {
@@ -458,7 +458,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00374"></a>00374         <span class="keywordflow">return</span> <span class="keyword">true</span>;
 <a name="l00375"></a>00375     }
 <a name="l00376"></a>00376 
-<a name="l00377"></a><a class="code" href="classceammc_1_1_checked_property.html#a8fc6ac60c219f637c54638a31f06b0e2">00377</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_checked_property.html#a8fc6ac60c219f637c54638a31f06b0e2">setValue</a>(V v)
+<a name="l00377"></a><a class="code" href="classceammc_1_1_checked_property.html#a8fc6ac60c219f637c54638a31f06b0e2">00377</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1_checked_property.html#a8fc6ac60c219f637c54638a31f06b0e2">setValue</a>(V <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>)
 <a name="l00378"></a>00378     {
 <a name="l00379"></a>00379         <span class="keywordflow">if</span> (check_fn_(v))
 <a name="l00380"></a>00380             <span class="keyword">reinterpret_cast&lt;</span>P*<span class="keyword">&gt;</span>(prop_)-&gt;<a class="code" href="classceammc_1_1_checked_property.html#a8fc6ac60c219f637c54638a31f06b0e2">setValue</a>(v);
@@ -485,7 +485,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00401"></a>00401     {
 <a name="l00402"></a>00402     }
 <a name="l00403"></a>00403 
-<a name="l00404"></a><a class="code" href="classceammc_1_1_validate_l_t.html#a91f484627e4075fc5e2f8d5af49b788d">00404</a>     <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_validate_l_t.html#a91f484627e4075fc5e2f8d5af49b788d">operator()</a>(T v)<span class="keyword"> const</span>
+<a name="l00404"></a><a class="code" href="classceammc_1_1_validate_l_t.html#a91f484627e4075fc5e2f8d5af49b788d">00404</a>     <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_validate_l_t.html#a91f484627e4075fc5e2f8d5af49b788d">operator()</a>(T <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>)<span class="keyword"> const</span>
 <a name="l00405"></a>00405 <span class="keyword">    </span>{
 <a name="l00406"></a>00406         <span class="keywordflow">return</span> v &lt; upper_;
 <a name="l00407"></a>00407     }
@@ -501,7 +501,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00417"></a>00417     {
 <a name="l00418"></a>00418     }
 <a name="l00419"></a>00419 
-<a name="l00420"></a><a class="code" href="classceammc_1_1_validate_l_e.html#ad8040dd5e5b12371a0f9b0e80fb3ff19">00420</a>     <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_validate_l_e.html#ad8040dd5e5b12371a0f9b0e80fb3ff19">operator()</a>(T v)<span class="keyword"> const</span>
+<a name="l00420"></a><a class="code" href="classceammc_1_1_validate_l_e.html#ad8040dd5e5b12371a0f9b0e80fb3ff19">00420</a>     <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_validate_l_e.html#ad8040dd5e5b12371a0f9b0e80fb3ff19">operator()</a>(T <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>)<span class="keyword"> const</span>
 <a name="l00421"></a>00421 <span class="keyword">    </span>{
 <a name="l00422"></a>00422         <span class="keywordflow">return</span> v &lt;= upper_;
 <a name="l00423"></a>00423     }
@@ -517,9 +517,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00433"></a>00433     {
 <a name="l00434"></a>00434     }
 <a name="l00435"></a>00435 
-<a name="l00436"></a><a class="code" href="classceammc_1_1_validate_g_t.html#ae149974935a2eda354285e0c2701aa94">00436</a>     <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_validate_g_t.html#ae149974935a2eda354285e0c2701aa94">operator()</a>(T v)<span class="keyword"> const</span>
+<a name="l00436"></a><a class="code" href="classceammc_1_1_validate_g_t.html#ae149974935a2eda354285e0c2701aa94">00436</a>     <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_validate_g_t.html#ae149974935a2eda354285e0c2701aa94">operator()</a>(T <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>)<span class="keyword"> const</span>
 <a name="l00437"></a>00437 <span class="keyword">    </span>{
-<a name="l00438"></a>00438         <span class="keywordflow">return</span> lower_ &lt; v;
+<a name="l00438"></a>00438         <span class="keywordflow">return</span> lower_ &lt; <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>;
 <a name="l00439"></a>00439     }
 <a name="l00440"></a>00440 };
 <a name="l00441"></a>00441 
@@ -533,9 +533,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00449"></a>00449     {
 <a name="l00450"></a>00450     }
 <a name="l00451"></a>00451 
-<a name="l00452"></a><a class="code" href="classceammc_1_1_validate_g_e.html#a7583ef13de97c43f2d8c55a2bd264418">00452</a>     <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_validate_g_e.html#a7583ef13de97c43f2d8c55a2bd264418">operator()</a>(T v)<span class="keyword"> const</span>
+<a name="l00452"></a><a class="code" href="classceammc_1_1_validate_g_e.html#a7583ef13de97c43f2d8c55a2bd264418">00452</a>     <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_validate_g_e.html#a7583ef13de97c43f2d8c55a2bd264418">operator()</a>(T <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>)<span class="keyword"> const</span>
 <a name="l00453"></a>00453 <span class="keyword">    </span>{
-<a name="l00454"></a>00454         <span class="keywordflow">return</span> lower_ &lt;= v;
+<a name="l00454"></a>00454         <span class="keywordflow">return</span> lower_ &lt;= <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>;
 <a name="l00455"></a>00455     }
 <a name="l00456"></a>00456 };
 <a name="l00457"></a>00457 
@@ -551,7 +551,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00467"></a>00467     {
 <a name="l00468"></a>00468     }
 <a name="l00469"></a>00469 
-<a name="l00470"></a><a class="code" href="classceammc_1_1_validate_range_open.html#a782c6df7396839c29f79ea7ca3da6058">00470</a>     <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_validate_range_open.html#a782c6df7396839c29f79ea7ca3da6058">operator()</a>(T v)<span class="keyword"> const</span>
+<a name="l00470"></a><a class="code" href="classceammc_1_1_validate_range_open.html#a782c6df7396839c29f79ea7ca3da6058">00470</a>     <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_validate_range_open.html#a782c6df7396839c29f79ea7ca3da6058">operator()</a>(T <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>)<span class="keyword"> const</span>
 <a name="l00471"></a>00471 <span class="keyword">    </span>{
 <a name="l00472"></a>00472         <span class="keywordflow">return</span> lower_ &lt; v &amp;&amp; v &lt; upper_;
 <a name="l00473"></a>00473     }
@@ -569,7 +569,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00485"></a>00485     {
 <a name="l00486"></a>00486     }
 <a name="l00487"></a>00487 
-<a name="l00488"></a><a class="code" href="classceammc_1_1_validate_range_closed.html#a740df29ec49a1297481ae2179eab195c">00488</a>     <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_validate_range_closed.html#a740df29ec49a1297481ae2179eab195c">operator()</a>(T v)<span class="keyword"> const</span>
+<a name="l00488"></a><a class="code" href="classceammc_1_1_validate_range_closed.html#a740df29ec49a1297481ae2179eab195c">00488</a>     <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1_validate_range_closed.html#a740df29ec49a1297481ae2179eab195c">operator()</a>(T <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>)<span class="keyword"> const</span>
 <a name="l00489"></a>00489 <span class="keyword">    </span>{
 <a name="l00490"></a>00490         <span class="keywordflow">return</span> lower_ &lt;= v &amp;&amp; v &lt;= upper_;
 <a name="l00491"></a>00491     }
@@ -578,7 +578,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00494"></a>00494 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> P, <span class="keyword">typename</span> V&gt;
 <a name="l00495"></a><a class="code" href="classceammc_1_1_greater_then_property.html">00495</a> <span class="keyword">class </span><a class="code" href="classceammc_1_1_greater_then_property.html">GreaterThenProperty</a> : <span class="keyword">public</span> <a class="code" href="classceammc_1_1_checked_property.html">CheckedProperty</a>&lt;P, V, ValidateGT&lt;V&gt; &gt; {
 <a name="l00496"></a>00496 <span class="keyword">public</span>:
-<a name="l00497"></a><a class="code" href="classceammc_1_1_greater_then_property.html#a33792029f9f4a4c76d76413a89956de0">00497</a>     <a class="code" href="classceammc_1_1_greater_then_property.html#a33792029f9f4a4c76d76413a89956de0">GreaterThenProperty</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, V initValue, V minValue)
+<a name="l00497"></a><a class="code" href="classceammc_1_1_greater_then_property.html#a33792029f9f4a4c76d76413a89956de0">00497</a>     <a class="code" href="classceammc_1_1_greater_then_property.html#a33792029f9f4a4c76d76413a89956de0">GreaterThenProperty</a>(<span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, V initValue, V minValue)
 <a name="l00498"></a>00498         : <a class="code" href="classceammc_1_1_checked_property.html">CheckedProperty</a>&lt;P, V, <a class="code" href="classceammc_1_1_validate_g_t.html">ValidateGT</a>&lt;V&gt; &gt;(name, initValue, minValue)
 <a name="l00499"></a>00499     {
 <a name="l00500"></a>00500     }
@@ -587,7 +587,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00503"></a>00503 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> P, <span class="keyword">typename</span> V&gt;
 <a name="l00504"></a><a class="code" href="classceammc_1_1_greater_equal_property.html">00504</a> <span class="keyword">class </span><a class="code" href="classceammc_1_1_greater_equal_property.html">GreaterEqualProperty</a> : <span class="keyword">public</span> <a class="code" href="classceammc_1_1_checked_property.html">CheckedProperty</a>&lt;P, V, ValidateGE&lt;V&gt; &gt; {
 <a name="l00505"></a>00505 <span class="keyword">public</span>:
-<a name="l00506"></a><a class="code" href="classceammc_1_1_greater_equal_property.html#a487c5da4f4e50b513217cdcd7efb9ddf">00506</a>     <a class="code" href="classceammc_1_1_greater_equal_property.html#a487c5da4f4e50b513217cdcd7efb9ddf">GreaterEqualProperty</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, V initValue, V minValue)
+<a name="l00506"></a><a class="code" href="classceammc_1_1_greater_equal_property.html#a487c5da4f4e50b513217cdcd7efb9ddf">00506</a>     <a class="code" href="classceammc_1_1_greater_equal_property.html#a487c5da4f4e50b513217cdcd7efb9ddf">GreaterEqualProperty</a>(<span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, V initValue, V minValue)
 <a name="l00507"></a>00507         : <a class="code" href="classceammc_1_1_checked_property.html">CheckedProperty</a>&lt;P, V, <a class="code" href="classceammc_1_1_validate_g_e.html">ValidateGE</a>&lt;V&gt; &gt;(name, initValue, minValue)
 <a name="l00508"></a>00508     {
 <a name="l00509"></a>00509     }
@@ -596,7 +596,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00512"></a>00512 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> P, <span class="keyword">typename</span> V&gt;
 <a name="l00513"></a><a class="code" href="classceammc_1_1_less_then_property.html">00513</a> <span class="keyword">class </span><a class="code" href="classceammc_1_1_less_then_property.html">LessThenProperty</a> : <span class="keyword">public</span> <a class="code" href="classceammc_1_1_checked_property.html">CheckedProperty</a>&lt;P, V, ValidateLT&lt;V&gt; &gt; {
 <a name="l00514"></a>00514 <span class="keyword">public</span>:
-<a name="l00515"></a><a class="code" href="classceammc_1_1_less_then_property.html#a4ae334fbae6ce162a595270beaba6363">00515</a>     <a class="code" href="classceammc_1_1_less_then_property.html#a4ae334fbae6ce162a595270beaba6363">LessThenProperty</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, V initValue, V maxValue)
+<a name="l00515"></a><a class="code" href="classceammc_1_1_less_then_property.html#a4ae334fbae6ce162a595270beaba6363">00515</a>     <a class="code" href="classceammc_1_1_less_then_property.html#a4ae334fbae6ce162a595270beaba6363">LessThenProperty</a>(<span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, V initValue, V maxValue)
 <a name="l00516"></a>00516         : <a class="code" href="classceammc_1_1_checked_property.html">CheckedProperty</a>&lt;P, V, <a class="code" href="classceammc_1_1_validate_l_t.html">ValidateLT</a>&lt;V&gt; &gt;(name, initValue, maxValue)
 <a name="l00517"></a>00517     {
 <a name="l00518"></a>00518     }
@@ -605,7 +605,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00521"></a>00521 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> P, <span class="keyword">typename</span> V&gt;
 <a name="l00522"></a><a class="code" href="classceammc_1_1_less_equal_property.html">00522</a> <span class="keyword">class </span><a class="code" href="classceammc_1_1_less_equal_property.html">LessEqualProperty</a> : <span class="keyword">public</span> <a class="code" href="classceammc_1_1_checked_property.html">CheckedProperty</a>&lt;P, V, ValidateLE&lt;V&gt; &gt; {
 <a name="l00523"></a>00523 <span class="keyword">public</span>:
-<a name="l00524"></a><a class="code" href="classceammc_1_1_less_equal_property.html#ae4b4724144130d86e8f327af49a460e5">00524</a>     <a class="code" href="classceammc_1_1_less_equal_property.html#ae4b4724144130d86e8f327af49a460e5">LessEqualProperty</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, V initValue, V maxValue)
+<a name="l00524"></a><a class="code" href="classceammc_1_1_less_equal_property.html#ae4b4724144130d86e8f327af49a460e5">00524</a>     <a class="code" href="classceammc_1_1_less_equal_property.html#ae4b4724144130d86e8f327af49a460e5">LessEqualProperty</a>(<span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, V initValue, V maxValue)
 <a name="l00525"></a>00525         : <a class="code" href="classceammc_1_1_checked_property.html">CheckedProperty</a>&lt;P, V, <a class="code" href="classceammc_1_1_validate_l_e.html">ValidateLE</a>&lt;V&gt; &gt;(name, initValue, maxValue)
 <a name="l00526"></a>00526     {
 <a name="l00527"></a>00527     }
@@ -614,7 +614,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00530"></a>00530 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> P, <span class="keyword">typename</span> V&gt;
 <a name="l00531"></a><a class="code" href="classceammc_1_1_open_range_property.html">00531</a> <span class="keyword">class </span><a class="code" href="classceammc_1_1_open_range_property.html">OpenRangeProperty</a> : <span class="keyword">public</span> <a class="code" href="classceammc_1_1_checked_property.html">CheckedProperty</a>&lt;P, V, ValidateRangeOpen&lt;V&gt; &gt; {
 <a name="l00532"></a>00532 <span class="keyword">public</span>:
-<a name="l00533"></a><a class="code" href="classceammc_1_1_open_range_property.html#a85e0722d2470e9985ab297afb248c49a">00533</a>     <a class="code" href="classceammc_1_1_open_range_property.html#a85e0722d2470e9985ab297afb248c49a">OpenRangeProperty</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, V initValue, V minValue, V maxValue)
+<a name="l00533"></a><a class="code" href="classceammc_1_1_open_range_property.html#a85e0722d2470e9985ab297afb248c49a">00533</a>     <a class="code" href="classceammc_1_1_open_range_property.html#a85e0722d2470e9985ab297afb248c49a">OpenRangeProperty</a>(<span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, V initValue, V minValue, V maxValue)
 <a name="l00534"></a>00534         : <a class="code" href="classceammc_1_1_checked_property.html">CheckedProperty</a>&lt;P, V, <a class="code" href="classceammc_1_1_validate_range_open.html">ValidateRangeOpen</a>&lt;V&gt; &gt;(name,
 <a name="l00535"></a>00535               initValue,
 <a name="l00536"></a>00536               <a class="code" href="classceammc_1_1_validate_range_open.html">ValidateRangeOpen</a>&lt;V&gt;(minValue, maxValue))
@@ -625,7 +625,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00541"></a>00541 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> P, <span class="keyword">typename</span> V&gt;
 <a name="l00542"></a><a class="code" href="classceammc_1_1_closed_range_property.html">00542</a> <span class="keyword">class </span><a class="code" href="classceammc_1_1_closed_range_property.html">ClosedRangeProperty</a> : <span class="keyword">public</span> <a class="code" href="classceammc_1_1_checked_property.html">CheckedProperty</a>&lt;P, V, ValidateRangeClosed&lt;V&gt; &gt; {
 <a name="l00543"></a>00543 <span class="keyword">public</span>:
-<a name="l00544"></a><a class="code" href="classceammc_1_1_closed_range_property.html#ab507d06aeca6a47539f8602962b2c4f9">00544</a>     <a class="code" href="classceammc_1_1_closed_range_property.html#ab507d06aeca6a47539f8602962b2c4f9">ClosedRangeProperty</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, V initValue, V minValue, V maxValue)
+<a name="l00544"></a><a class="code" href="classceammc_1_1_closed_range_property.html#ab507d06aeca6a47539f8602962b2c4f9">00544</a>     <a class="code" href="classceammc_1_1_closed_range_property.html#ab507d06aeca6a47539f8602962b2c4f9">ClosedRangeProperty</a>(<span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; <a class="code" href="classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d">name</a>, V initValue, V minValue, V maxValue)
 <a name="l00545"></a>00545         : <a class="code" href="classceammc_1_1_checked_property.html">CheckedProperty</a>&lt;P, V, <a class="code" href="classceammc_1_1_validate_range_closed.html">ValidateRangeClosed</a>&lt;V&gt; &gt;(name,
 <a name="l00546"></a>00546               initValue,
 <a name="l00547"></a>00547               <a class="code" href="classceammc_1_1_validate_range_closed.html">ValidateRangeClosed</a>&lt;V&gt;(minValue, maxValue))
@@ -674,7 +674,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 15 2017 13:05:43 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 15 2017 20:07:53 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

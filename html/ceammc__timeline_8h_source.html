@@ -112,19 +112,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00028"></a>00028         t_object* obj_;
 <a name="l00029"></a>00029         <span class="keywordtype">int</span> index_;
 <a name="l00030"></a>00030         <span class="keywordtype">int</span> xpos_;
-<a name="l00031"></a>00031         std::string str_;
+<a name="l00031"></a>00031         <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> str_;
 <a name="l00032"></a>00032 
 <a name="l00033"></a>00033     <span class="keyword">public</span>:
-<a name="l00034"></a>00034         <a class="code" href="classceammc_1_1tl_1_1_cue_data.html#a3114cb1f2b8d239735c2602ae7da6218">CueData</a>(t_canvas* c, t_object* o);
+<a name="l00034"></a>00034         <a class="code" href="classceammc_1_1tl_1_1_cue_data.html#a3114cb1f2b8d239735c2602ae7da6218">CueData</a>(t_canvas* c, t_object* <a class="code" href="abstract_8h.html#a70a0763575096c5545f2232a32ec302a">o</a>);
 <a name="l00035"></a><a class="code" href="classceammc_1_1tl_1_1_cue_data.html#a9d966de28941767b6305505c683e6d3f">00035</a>         t_canvas* <a class="code" href="classceammc_1_1tl_1_1_cue_data.html#a9d966de28941767b6305505c683e6d3f">canvas</a>() { <span class="keywordflow">return</span> c_; }
 <a name="l00036"></a><a class="code" href="classceammc_1_1tl_1_1_cue_data.html#ada560f0c322b5b25eecfe0cde39b4594">00036</a>         <span class="keyword">const</span> t_canvas* <a class="code" href="classceammc_1_1tl_1_1_cue_data.html#ada560f0c322b5b25eecfe0cde39b4594">canvas</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> c_; }
 <a name="l00037"></a><a class="code" href="classceammc_1_1tl_1_1_cue_data.html#add161b1833eea2a86b05c5646b694bed">00037</a>         t_object* <a class="code" href="classceammc_1_1tl_1_1_cue_data.html#add161b1833eea2a86b05c5646b694bed">object</a>() { <span class="keywordflow">return</span> obj_; }
 <a name="l00038"></a><a class="code" href="classceammc_1_1tl_1_1_cue_data.html#a9e06127aab05aca870d664f59dbc5d36">00038</a>         <span class="keyword">const</span> t_object* <a class="code" href="classceammc_1_1tl_1_1_cue_data.html#a9e06127aab05aca870d664f59dbc5d36">object</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> obj_; }
-<a name="l00039"></a>00039         <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1tl_1_1_cue_data.html#ad199d318c76aa97fea149f1f6e0579d7">setXPos</a>(<span class="keywordtype">int</span> x);
+<a name="l00039"></a>00039         <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1tl_1_1_cue_data.html#ad199d318c76aa97fea149f1f6e0579d7">setXPos</a>(<span class="keywordtype">int</span> <a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>);
 <a name="l00040"></a>00040         <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1tl_1_1_cue_data.html#a71792c3b2d9436b26894bc1d01946094">setIndex</a>(<span class="keywordtype">int</span> idx);
 <a name="l00041"></a><a class="code" href="classceammc_1_1tl_1_1_cue_data.html#a1d4759f5b2beafc6e01244d73773d013">00041</a>         <span class="keywordtype">int</span> <a class="code" href="classceammc_1_1tl_1_1_cue_data.html#a1d4759f5b2beafc6e01244d73773d013">xPos</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> xpos_; }
 <a name="l00042"></a><a class="code" href="classceammc_1_1tl_1_1_cue_data.html#a4065535453e8f8c2a723194600065953">00042</a>         <span class="keywordtype">int</span> <a class="code" href="classceammc_1_1tl_1_1_cue_data.html#a4065535453e8f8c2a723194600065953">index</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> index_; }
-<a name="l00043"></a><a class="code" href="classceammc_1_1tl_1_1_cue_data.html#abc0985e300542e4b4b1a6f6066c92dbe">00043</a>         std::string <a class="code" href="classceammc_1_1tl_1_1_cue_data.html#abc0985e300542e4b4b1a6f6066c92dbe">name</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> str_; }
+<a name="l00043"></a><a class="code" href="classceammc_1_1tl_1_1_cue_data.html#abc0985e300542e4b4b1a6f6066c92dbe">00043</a>         <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="code" href="classceammc_1_1tl_1_1_cue_data.html#abc0985e300542e4b4b1a6f6066c92dbe">name</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> str_; }
 <a name="l00044"></a>00044 
 <a name="l00045"></a>00045     <span class="keyword">public</span>:
 <a name="l00046"></a>00046         <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1tl_1_1_cue_data.html#a7c73edffc31bbf3663d834ca04594019">operator==</a>(<span class="keyword">const</span> <a class="code" href="classceammc_1_1tl_1_1_cue_data.html">CueData</a>&amp; c) <span class="keyword">const</span>;
@@ -142,8 +142,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00058"></a>00058         <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1tl_1_1_cue_storage.html#afb94b82fb1f7277ce11e202b23d9e4d0">add</a>(<a class="code" href="classceammc_1_1tl_1_1_cue_data.html">CueData</a>* c);
 <a name="l00059"></a>00059         <span class="keyword">static</span> <span class="keywordtype">bool</span> <span class="keyword">remove</span>(<a class="code" href="classceammc_1_1tl_1_1_cue_data.html">CueData</a>* c);
 <a name="l00060"></a>00060         <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="classceammc_1_1tl_1_1_cue_storage.html#ac77dc1054247e47d542497d08bc166fe">index</a>(<a class="code" href="classceammc_1_1tl_1_1_cue_data.html">CueData</a>* c);
-<a name="l00061"></a>00061         <span class="keyword">static</span> <a class="code" href="classceammc_1_1tl_1_1_cue_data.html">CueData</a>* <a class="code" href="classceammc_1_1tl_1_1_cue_storage.html#a6cbb78f0b5f539760213128d0d85a35c">at</a>(t_canvas* cnv, <span class="keywordtype">size_t</span> pos);
-<a name="l00062"></a>00062         <span class="keyword">static</span> <a class="code" href="classceammc_1_1tl_1_1_cue_data.html">CueData</a>* <a class="code" href="classceammc_1_1tl_1_1_cue_storage.html#ac641b5a3e624b672b81e8e8125c04cd1">find</a>(t_canvas* cnv, t_object* obj);
+<a name="l00061"></a>00061         <span class="keyword">static</span> <a class="code" href="classceammc_1_1tl_1_1_cue_data.html">CueData</a>* <a class="code" href="classceammc_1_1tl_1_1_cue_storage.html#a6cbb78f0b5f539760213128d0d85a35c">at</a>(t_canvas* cnv, <span class="keywordtype">size_t</span> <a class="code" href="dictobject_8h.html#acae77df04bfdd60d1017f4132729ddc6">pos</a>);
+<a name="l00062"></a>00062         <span class="keyword">static</span> <a class="code" href="classceammc_1_1tl_1_1_cue_data.html">CueData</a>* <a class="code" href="classceammc_1_1tl_1_1_cue_storage.html#ac641b5a3e624b672b81e8e8125c04cd1">find</a>(t_canvas* cnv, t_object* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>);
 <a name="l00063"></a>00063         <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1tl_1_1_cue_storage.html#aab28b72cd71306bba5d8644838df57a6">exists</a>(<a class="code" href="classceammc_1_1tl_1_1_cue_data.html">CueData</a>* c);
 <a name="l00064"></a>00064         <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1tl_1_1_cue_storage.html#aab28b72cd71306bba5d8644838df57a6">exists</a>(t_canvas* cnv);
 <a name="l00065"></a>00065         <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1tl_1_1_cue_storage.html#ab2e0d1da063f1b146a63128a1864e71b">sort</a>(t_canvas* cnv);
@@ -164,10 +164,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00080"></a>00080         <a class="code" href="namespaceceammc_1_1tl.html#a13d9bd703e1fed75f860c2e8f037ef67">UIAction</a> cb_;
 <a name="l00081"></a>00081 
 <a name="l00082"></a>00082     <span class="keyword">public</span>:
-<a name="l00083"></a>00083         <a class="code" href="classceammc_1_1tl_1_1_timeline_data.html#a40a6a8ac5a8f24d06a9a4e0458556843">TimelineData</a>(t_canvas* c, t_object* obj);
+<a name="l00083"></a>00083         <a class="code" href="classceammc_1_1tl_1_1_timeline_data.html#a40a6a8ac5a8f24d06a9a4e0458556843">TimelineData</a>(t_canvas* c, t_object* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>);
 <a name="l00084"></a>00084 
 <a name="l00085"></a><a class="code" href="classceammc_1_1tl_1_1_timeline_data.html#a47decd827d6cce125894ae4da0647773">00085</a>         <span class="keywordtype">int</span> <a class="code" href="classceammc_1_1tl_1_1_timeline_data.html#a47decd827d6cce125894ae4da0647773">xPos</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> xpos_; }
-<a name="l00086"></a>00086         <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1tl_1_1_timeline_data.html#a2af61d443eb715bf1ae37b33b536989d">setXPos</a>(<span class="keywordtype">int</span> x);
+<a name="l00086"></a>00086         <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1tl_1_1_timeline_data.html#a2af61d443eb715bf1ae37b33b536989d">setXPos</a>(<span class="keywordtype">int</span> <a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>);
 <a name="l00087"></a>00087 
 <a name="l00088"></a><a class="code" href="classceammc_1_1tl_1_1_timeline_data.html#a2ff3a9bb0c2e69167e76b88d52dee3a4">00088</a>         t_canvas* <a class="code" href="classceammc_1_1tl_1_1_timeline_data.html#a2ff3a9bb0c2e69167e76b88d52dee3a4">canvas</a>() { <span class="keywordflow">return</span> canvas_; }
 <a name="l00089"></a><a class="code" href="classceammc_1_1tl_1_1_timeline_data.html#acba730852166077d22abb69ca42f837e">00089</a>         <span class="keyword">const</span> t_canvas* <a class="code" href="classceammc_1_1tl_1_1_timeline_data.html#acba730852166077d22abb69ca42f837e">canvas</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> canvas_; }
@@ -186,7 +186,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00102"></a>00102 
 <a name="l00103"></a>00103     <span class="keyword">public</span>:
 <a name="l00104"></a>00104         <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1tl_1_1_u_i_storage.html#a9b116554a92fe34866e3b3f595c7beab">add</a>(<a class="code" href="classceammc_1_1tl_1_1_timeline_data.html">TimelineData</a>* data);
-<a name="l00105"></a>00105         <span class="keyword">static</span> <a class="code" href="classceammc_1_1tl_1_1_timeline_data.html">TimelineData</a>* <a class="code" href="classceammc_1_1tl_1_1_u_i_storage.html#aafe2ab8981fb635b7fbb33d906fe4eef">at</a>(<span class="keywordtype">size_t</span> pos);
+<a name="l00105"></a>00105         <span class="keyword">static</span> <a class="code" href="classceammc_1_1tl_1_1_timeline_data.html">TimelineData</a>* <a class="code" href="classceammc_1_1tl_1_1_u_i_storage.html#aafe2ab8981fb635b7fbb33d906fe4eef">at</a>(<span class="keywordtype">size_t</span> <a class="code" href="dictobject_8h.html#acae77df04bfdd60d1017f4132729ddc6">pos</a>);
 <a name="l00106"></a>00106         <span class="keyword">static</span> <span class="keywordtype">void</span> <span class="keyword">remove</span>(<a class="code" href="classceammc_1_1tl_1_1_timeline_data.html">TimelineData</a>* data);
 <a name="l00107"></a>00107         <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1tl_1_1_u_i_storage.html#a9b7da0b538f04b91750e3239cd2a6d6e">exists</a>(<a class="code" href="classceammc_1_1tl_1_1_timeline_data.html">TimelineData</a>* data);
 <a name="l00108"></a>00108         <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code" href="classceammc_1_1tl_1_1_u_i_storage.html#aafbe764ef90dc17ed92ccc24b234190f">size</a>();
@@ -215,7 +215,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 15 2017 13:05:43 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 15 2017 20:07:53 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -109,7 +109,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00025"></a>00025     <span class="keyword">const</span> <a class="code" href="classceammc_1_1_base_object.html">BaseObject</a>* obj_;
 <a name="l00026"></a>00026 
 <a name="l00027"></a>00027 <span class="keyword">public</span>:
-<a name="l00028"></a>00028     <a class="code" href="classceammc_1_1_error.html#acdba5fa476082ed3eac3a5fce40abb10">Error</a>(<span class="keyword">const</span> <a class="code" href="classceammc_1_1_base_object.html">BaseObject</a>* obj = NULL);
+<a name="l00028"></a>00028     <a class="code" href="classceammc_1_1_error.html#acdba5fa476082ed3eac3a5fce40abb10">Error</a>(<span class="keyword">const</span> <a class="code" href="classceammc_1_1_base_object.html">BaseObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a> = NULL);
 <a name="l00029"></a>00029     <a class="code" href="classceammc_1_1_error.html#ad0d291a9bc0be059b5b95ee01a0d504f">~Error</a>();
 <a name="l00030"></a><a class="code" href="classceammc_1_1_error.html#a866e1b2ab812f96fd0ef013dc91dafb2">00030</a>     <a class="code" href="classceammc_1_1_error.html">Error</a>&amp; <a class="code" href="classceammc_1_1_error.html#a866e1b2ab812f96fd0ef013dc91dafb2">stream</a>() { <span class="keywordflow">return</span> *<span class="keyword">this</span>; }
 <a name="l00031"></a>00031 };
@@ -118,7 +118,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00034"></a>00034     <span class="keyword">const</span> <a class="code" href="classceammc_1_1_base_object.html">BaseObject</a>* obj_;
 <a name="l00035"></a>00035 
 <a name="l00036"></a>00036 <span class="keyword">public</span>:
-<a name="l00037"></a>00037     <a class="code" href="classceammc_1_1_debug.html#a9012e05dd78d36cd041480940f961215">Debug</a>(<span class="keyword">const</span> <a class="code" href="classceammc_1_1_base_object.html">BaseObject</a>* obj = NULL);
+<a name="l00037"></a>00037     <a class="code" href="classceammc_1_1_debug.html#a9012e05dd78d36cd041480940f961215">Debug</a>(<span class="keyword">const</span> <a class="code" href="classceammc_1_1_base_object.html">BaseObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a> = NULL);
 <a name="l00038"></a>00038     <a class="code" href="classceammc_1_1_debug.html#af9ef604c9263ce5526b692ab3ca91ac1">~Debug</a>();
 <a name="l00039"></a><a class="code" href="classceammc_1_1_debug.html#ad372d68feeaf3d51b940d7b946cc49c2">00039</a>     <a class="code" href="classceammc_1_1_debug.html">Debug</a>&amp; <a class="code" href="classceammc_1_1_debug.html#ad372d68feeaf3d51b940d7b946cc49c2">stream</a>() { <span class="keywordflow">return</span> *<span class="keyword">this</span>; }
 <a name="l00040"></a>00040 };
@@ -133,16 +133,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00049"></a>00049 <span class="preprocessor"></span>}
 <a name="l00050"></a>00050 
 <a name="l00051"></a>00051 <span class="keyword">struct </span>_symbol;
-<a name="l00052"></a>00052 std::ostream&amp; <a class="code" href="namespaceceammc.html#acc5cd57751115617ee37de01ba3b4226">operator&lt;&lt;</a>(std::ostream&amp; os, _symbol*&amp; s);
-<a name="l00053"></a>00053 std::ostream&amp; <a class="code" href="namespaceceammc.html#acc5cd57751115617ee37de01ba3b4226">operator&lt;&lt;</a>(std::ostream&amp; os, <span class="keyword">const</span> _symbol* <span class="keyword">const</span>&amp; s);
+<a name="l00052"></a>00052 std::ostream&amp; <a class="code" href="namespaceceammc.html#acc5cd57751115617ee37de01ba3b4226">operator&lt;&lt;</a>(std::ostream&amp; os, _symbol*&amp; <a class="code" href="stringobject_8h.html#ad912d811fca4c9cfee37905bed81eb65">s</a>);
+<a name="l00053"></a>00053 std::ostream&amp; <a class="code" href="namespaceceammc.html#acc5cd57751115617ee37de01ba3b4226">operator&lt;&lt;</a>(std::ostream&amp; os, <span class="keyword">const</span> _symbol* <span class="keyword">const</span>&amp; <a class="code" href="stringobject_8h.html#ad912d811fca4c9cfee37905bed81eb65">s</a>);
 <a name="l00054"></a>00054 
 <a name="l00055"></a>00055 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;
-<a name="l00056"></a>00056 <span class="keyword">static</span> std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const std::vector&lt;T&gt;&amp; v)
+<a name="l00056"></a>00056 <span class="keyword">static</span> std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const std::vector&lt;T&gt;&amp; <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>)
 <a name="l00057"></a>00057 {
 <a name="l00058"></a>00058     os &lt;&lt; <span class="charliteral">&#39;[&#39;</span>;
 <a name="l00059"></a>00059     <span class="keyword">typename</span> std::vector&lt;T&gt;::const_iterator it;
-<a name="l00060"></a>00060     <span class="keywordflow">for</span> (it = v.begin(); it != v.end(); ++it) {
-<a name="l00061"></a>00061         <span class="keywordflow">if</span> (it != v.begin())
+<a name="l00060"></a>00060     <span class="keywordflow">for</span> (it = <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>.begin(); it != <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>.end(); ++it) {
+<a name="l00061"></a>00061         <span class="keywordflow">if</span> (it != <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>.begin())
 <a name="l00062"></a>00062             os &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;
 <a name="l00063"></a>00063 
 <a name="l00064"></a>00064         os &lt;&lt; *it;
@@ -152,12 +152,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00068"></a>00068 }
 <a name="l00069"></a>00069 
 <a name="l00070"></a>00070 <span class="keyword">template</span> &lt;&gt;
-<a name="l00071"></a><a class="code" href="ceammc__log_8h.html#a174a6d058384a04de6890ecda7c9770c">00071</a> std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const std::vector&lt;_symbol*&gt;&amp; v)
+<a name="l00071"></a><a class="code" href="ceammc__log_8h.html#a174a6d058384a04de6890ecda7c9770c">00071</a> std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const std::vector&lt;_symbol*&gt;&amp; <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>)
 <a name="l00072"></a>00072 {
 <a name="l00073"></a>00073     os &lt;&lt; <span class="charliteral">&#39;[&#39;</span>;
 <a name="l00074"></a>00074     std::vector&lt;_symbol*&gt;::const_iterator it;
-<a name="l00075"></a>00075     <span class="keywordflow">for</span> (it = v.begin(); it != v.end(); ++it) {
-<a name="l00076"></a>00076         <span class="keywordflow">if</span> (it != v.begin())
+<a name="l00075"></a>00075     <span class="keywordflow">for</span> (it = <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>.begin(); it != <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>.end(); ++it) {
+<a name="l00076"></a>00076         <span class="keywordflow">if</span> (it != <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>.begin())
 <a name="l00077"></a>00077             os &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;
 <a name="l00078"></a>00078 
 <a name="l00079"></a>00079         ::operator&lt;&lt;(os, *it);
@@ -185,7 +185,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 15 2017 13:05:43 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 15 2017 20:07:53 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

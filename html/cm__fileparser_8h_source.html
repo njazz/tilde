@@ -103,7 +103,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00022"></a>00022     <span class="comment">// or t_canvas?</span>
 <a name="l00023"></a>00023     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* <a class="code" href="classqtpd_1_1_file_parser.html#ab7f750a51e76c8a60b90d1479796466a">pdParserPrevWindow</a>;
 <a name="l00024"></a><a class="code" href="classqtpd_1_1_file_parser.html#a5dc01b5bbec80d216ce14596ca0bd6c9">00024</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* <a class="code" href="classqtpd_1_1_file_parser.html#a5dc01b5bbec80d216ce14596ca0bd6c9">pdParserWindow</a>;
-<a name="l00025"></a><a class="code" href="classqtpd_1_1_file_parser.html#ab7dc8008ff768523c4633c29f8c030d2">00025</a>     <span class="keyword">static</span> std::string <a class="code" href="classqtpd_1_1_file_parser.html#ab7dc8008ff768523c4633c29f8c030d2">pdParserFileName</a>;
+<a name="l00025"></a><a class="code" href="classqtpd_1_1_file_parser.html#ab7dc8008ff768523c4633c29f8c030d2">00025</a>     <span class="keyword">static</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="code" href="classqtpd_1_1_file_parser.html#ab7dc8008ff768523c4633c29f8c030d2">pdParserFileName</a>;
 <a name="l00026"></a>00026 
 <a name="l00032"></a><a class="code" href="classqtpd_1_1_file_parser.html#a76dab7b07a8883bfebde3be6098f6b7e">00032</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_file_parser.html#a76dab7b07a8883bfebde3be6098f6b7e" title="converts string from pd file - creates new object">objFromString</a>(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* cmcanvas, QStringList list)
 <a name="l00033"></a>00033     {
@@ -112,7 +112,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00036"></a>00036         {
 <a name="l00037"></a>00037             QString objname;
 <a name="l00038"></a>00038             QString msgname;
-<a name="l00039"></a>00039             QPoint pos;
+<a name="l00039"></a>00039             QPoint <a class="code" href="dictobject_8h.html#acae77df04bfdd60d1017f4132729ddc6">pos</a>;
 <a name="l00040"></a>00040 
 <a name="l00041"></a>00041             pos.setX(((QString)list.value(1)).toFloat());
 <a name="l00042"></a>00042             pos.setY(((QString)list.value(2)).toFloat());
@@ -160,7 +160,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00084"></a>00084 <span class="comment">//            if (list.at(3) == &quot;ui.obj&quot;)</span>
 <a name="l00085"></a>00085 <span class="comment">//                cmcanvas-&gt;createObject(&quot;ui.obj&quot;, objname.toStdString(), pos);</span>
 <a name="l00086"></a>00086             <span class="comment">//else</span>
-<a name="l00087"></a>00087                 cmcanvas-&gt;<a class="code" href="classqtpd_1_1_canvas.html#aa3915ffb984cd2b8fb0d2b0427e1e5e0" title="prototype for universal object &#39;constructor&#39;">createObject</a>(list.at(3).toStdString(), objname.toStdString(), pos);
+<a name="l00087"></a>00087                 cmcanvas-&gt;<a class="code" href="classqtpd_1_1_canvas.html#aa3915ffb984cd2b8fb0d2b0427e1e5e0" title="prototype for universal object &#39;constructor&#39;">createObject</a>(list.at(3).toStdString(), objname.toStdString(), <a class="code" href="dictobject_8h.html#acae77df04bfdd60d1017f4132729ddc6">pos</a>);
 <a name="l00088"></a>00088 
 <a name="l00089"></a>00089 
 <a name="l00090"></a>00090         }
@@ -252,7 +252,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00182"></a>00182                                 <span class="keywordflow">if</span> (list.size()&gt;2)
 <a name="l00183"></a>00183                                 {
 <a name="l00184"></a>00184                                     QString objname;
-<a name="l00185"></a>00185                                     QPoint pos;
+<a name="l00185"></a>00185                                     QPoint <a class="code" href="dictobject_8h.html#acae77df04bfdd60d1017f4132729ddc6">pos</a>;
 <a name="l00186"></a>00186 
 <a name="l00187"></a>00187                                     pos.setX(((QString)list.value(1)).toFloat());
 <a name="l00188"></a>00188                                     pos.setY(((QString)list.value(2)).toFloat());
@@ -267,7 +267,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00197"></a>00197                                     qDebug() &lt;&lt; <span class="stringliteral">&quot;objname&quot;</span> &lt;&lt; objname;
 <a name="l00198"></a>00198                                     <span class="comment">//temporary</span>
 <a name="l00199"></a>00199 
-<a name="l00200"></a>00200                                     std::string objData = objList.join(<span class="stringliteral">&quot; &quot;</span>).toStdString();
+<a name="l00200"></a>00200                                     <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> objData = objList.join(<span class="stringliteral">&quot; &quot;</span>).toStdString();
 <a name="l00201"></a>00201 
 <a name="l00202"></a>00202                                     <span class="keywordflow">if</span> (objList.at(0) == <span class="stringliteral">&quot;pd&quot;</span>)
 <a name="l00203"></a>00203                                     {
@@ -318,7 +318,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00248"></a>00248                                 {
 <a name="l00249"></a>00249                                     QString objname;
 <a name="l00250"></a>00250                                     QString msgname;
-<a name="l00251"></a>00251                                     QPoint pos;
+<a name="l00251"></a>00251                                     QPoint <a class="code" href="dictobject_8h.html#acae77df04bfdd60d1017f4132729ddc6">pos</a>;
 <a name="l00252"></a>00252 
 <a name="l00253"></a>00253                                     pos.setX(((QString)list.value(1)).toFloat());
 <a name="l00254"></a>00254                                     pos.setY(((QString)list.value(2)).toFloat());
@@ -333,7 +333,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00263"></a>00263                                     qDebug() &lt;&lt; <span class="stringliteral">&quot;objname&quot;</span> &lt;&lt; objname;
 <a name="l00264"></a>00264                                     <span class="comment">//temporary</span>
 <a name="l00265"></a>00265                                     <span class="comment">//cmcanvas-&gt;createBox(objname.toStdString(), pos);</span>
-<a name="l00266"></a>00266                                     cmcanvas-&gt;<a class="code" href="classqtpd_1_1_canvas.html#aa3915ffb984cd2b8fb0d2b0427e1e5e0" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.obj&quot;</span>, objname.toStdString(), pos);
+<a name="l00266"></a>00266                                     cmcanvas-&gt;<a class="code" href="classqtpd_1_1_canvas.html#aa3915ffb984cd2b8fb0d2b0427e1e5e0" title="prototype for universal object &#39;constructor&#39;">createObject</a>(<span class="stringliteral">&quot;ui.obj&quot;</span>, objname.toStdString(), <a class="code" href="dictobject_8h.html#acae77df04bfdd60d1017f4132729ddc6">pos</a>);
 <a name="l00267"></a>00267 
 <a name="l00268"></a>00268                                 }
 <a name="l00269"></a>00269 
@@ -436,7 +436,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 15 2017 13:05:43 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 15 2017 20:07:53 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

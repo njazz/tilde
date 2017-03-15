@@ -79,7 +79,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
@@ -91,15 +90,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <p><a href="cm__pdlink_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr><td colspan="2"><h2><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpd_lib.html">pdLib</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Temporary. wrapper for c functions - for future Python API.  <a href="classpd_lib.html#details">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#aef7ba73145c14cf0ffca487d734e38f0">t_updateUI</a> )(void *uiobj, <a class="el" href="classceammc_1_1_atom_list.html">ceammc::AtomList</a> msg)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">callback function when UI needs update  <a href="#aef7ba73145c14cf0ffca487d734e38f0"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a60e4f3209d8f267b0aa06105b0b1a4ff">t_printhook</a> )(const char *s)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a60e4f3209d8f267b0aa06105b0b1a4ff">t_printhook</a> )(const char *<a class="el" href="stringobject_8h.html#ad912d811fca4c9cfee37905bed81eb65">s</a>)</td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a0a5eb98f82b947afc8ae05735839e8f3">cmp_pdinit</a> ()</td></tr>
@@ -114,29 +109,29 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">saves canvas as pd file  <a href="#ab0f0e50abffd603051b47240f7dcd04c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#af08cbd72d5b239361a801b4b67247a9c">cmp_closepatch</a> (t_canvas *canvas)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">closes and frees the canvas  <a href="#af08cbd72d5b239361a801b4b67247a9c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">t_object *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a2c0a0d9150791897b85a167998ecf7c2">cmp_create_object</a> (t_canvas *canvas, std::string class_name, int x, int y)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">t_object *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a2c0a0d9150791897b85a167998ecf7c2">cmp_create_object</a> (t_canvas *canvas, <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> class_name, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> y)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates pd object  <a href="#a2c0a0d9150791897b85a167998ecf7c2"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a89dd190ed6863563fcecc6c9001a0f1c">cmp_moveobject</a> (t_object *obj, int x, int y)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a89dd190ed6863563fcecc6c9001a0f1c">cmp_moveobject</a> (t_object *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> y)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates pd message TODO not working now  <a href="#a89dd190ed6863563fcecc6c9001a0f1c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a69094de48546687863d38bc9d3689993">cmp_deleteobject</a> (t_canvas *canvas, t_object *obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a69094de48546687863d38bc9d3689993">cmp_deleteobject</a> (t_canvas *canvas, t_object *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete pd object  <a href="#a69094de48546687863d38bc9d3689993"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a6d06b5d8cde66b3cada1fe52a6e5ac83">cmp_patchcord</a> (t_object *obj1, int outno, t_object *obj2, int inno)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a6d06b5d8cde66b3cada1fe52a6e5ac83">cmp_patchcord</a> (t_object *obj1, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> outno, t_object *obj2, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> inno)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">new patchcord  <a href="#a6d06b5d8cde66b3cada1fe52a6e5ac83"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a3b0a14ab77137204a0f68e45f45e92c8">cmp_delete_patchcord</a> (t_object *obj1, int outno, t_object *obj2, int inno)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a3b0a14ab77137204a0f68e45f45e92c8">cmp_delete_patchcord</a> (t_object *obj1, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> outno, t_object *obj2, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> inno)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete patchcord  <a href="#a3b0a14ab77137204a0f68e45f45e92c8"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a7fcb3388b050e30e14b731b7288a7f76">cmp_get_inlet_count</a> (t_object *obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a7fcb3388b050e30e14b731b7288a7f76">cmp_get_inlet_count</a> (t_object *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get number of inlets for object  <a href="#a7fcb3388b050e30e14b731b7288a7f76"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a680a1380d6950cd336b5631b3d3a7737">cmp_get_outlet_count</a> (t_object *obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a680a1380d6950cd336b5631b3d3a7737">cmp_get_outlet_count</a> (t_object *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get number of outlets for object  <a href="#a680a1380d6950cd336b5631b3d3a7737"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#afdf250ff92087538d026d24b87d66cec">cmp_get_inlet_type</a> (t_object *obj, int idx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#afdf250ff92087538d026d24b87d66cec">cmp_get_inlet_type</a> (t_object *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> idx)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">check if inlet is signal~  <a href="#afdf250ff92087538d026d24b87d66cec"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a4f45abf6ebba2aeed6853269919dc1c9">cmp_get_outlet_type</a> (t_object *obj, int idx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a4f45abf6ebba2aeed6853269919dc1c9">cmp_get_outlet_type</a> (t_object *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> idx)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">check if outlet is signal~  <a href="#a4f45abf6ebba2aeed6853269919dc1c9"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a0f1f4951cf99dff0634789791dcde1ba">cmp_switch_dsp</a> (bool on)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a0f1f4951cf99dff0634789791dcde1ba">cmp_switch_dsp</a> (<a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a> on)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">switch dsp on or off  <a href="#a0f1f4951cf99dff0634789791dcde1ba"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a9bca4af04ea4fac6b910933e5ba16814">cmp_sendstring</a> (t_pd *obj, std::string msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a9bca4af04ea4fac6b910933e5ba16814">cmp_sendstring</a> (t_pd *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> msg)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">send string as pd message to object  <a href="#a9bca4af04ea4fac6b910933e5ba16814"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a9b4bef98ca39e6d157ee073b5139ae9d">cmp_connectUI</a> (t_pd *obj, void *uiobj, <a class="el" href="cm__pdlink_8h.html#aef7ba73145c14cf0ffca487d734e38f0">t_updateUI</a> func)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a9b4bef98ca39e6d157ee073b5139ae9d">cmp_connectUI</a> (t_pd *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, void *uiobj, <a class="el" href="cm__pdlink_8h.html#aef7ba73145c14cf0ffca487d734e38f0">t_updateUI</a> func)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">set the 'repaint' function of the ui object to be accessible from pd object  <a href="#a9b4bef98ca39e6d157ee073b5139ae9d"></a><br/></td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
@@ -145,7 +140,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(* <a class="el" href="cm__pdlink_8h.html#a60e4f3209d8f267b0aa06105b0b1a4ff">t_printhook</a>)(const char *s)</td>
+          <td class="memname">typedef void(* <a class="el" href="cm__pdlink_8h.html#a60e4f3209d8f267b0aa06105b0b1a4ff">t_printhook</a>)(const char *<a class="el" href="stringobject_8h.html#ad912d811fca4c9cfee37905bed81eb65">s</a>)</td>
         </tr>
       </table>
 </div>
@@ -250,19 +245,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td>
           <td class="paramname"><em>class_name</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
           <td class="paramname"><em>x</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
           <td class="paramname"><em>y</em>&#160;</td>
         </tr>
         <tr>
@@ -301,7 +296,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
           <td class="paramname"><em>outno</em>, </td>
         </tr>
         <tr>
@@ -313,7 +308,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
           <td class="paramname"><em>inno</em>&#160;</td>
         </tr>
         <tr>
@@ -379,7 +374,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="cm__pdlink_8h.html#a7fcb3388b050e30e14b731b7288a7f76">cmp_get_inlet_count</a> </td>
+          <td class="memname"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="cm__pdlink_8h.html#a7fcb3388b050e30e14b731b7288a7f76">cmp_get_inlet_count</a> </td>
           <td>(</td>
           <td class="paramtype">t_object *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
@@ -405,7 +400,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="cm__pdlink_8h.html#afdf250ff92087538d026d24b87d66cec">cmp_get_inlet_type</a> </td>
+          <td class="memname"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="cm__pdlink_8h.html#afdf250ff92087538d026d24b87d66cec">cmp_get_inlet_type</a> </td>
           <td>(</td>
           <td class="paramtype">t_object *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -413,7 +408,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
           <td class="paramname"><em>idx</em>&#160;</td>
         </tr>
         <tr>
@@ -442,7 +437,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="cm__pdlink_8h.html#a680a1380d6950cd336b5631b3d3a7737">cmp_get_outlet_count</a> </td>
+          <td class="memname"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="cm__pdlink_8h.html#a680a1380d6950cd336b5631b3d3a7737">cmp_get_outlet_count</a> </td>
           <td>(</td>
           <td class="paramtype">t_object *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
@@ -468,7 +463,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="cm__pdlink_8h.html#a4f45abf6ebba2aeed6853269919dc1c9">cmp_get_outlet_type</a> </td>
+          <td class="memname"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="cm__pdlink_8h.html#a4f45abf6ebba2aeed6853269919dc1c9">cmp_get_outlet_type</a> </td>
           <td>(</td>
           <td class="paramtype">t_object *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -476,7 +471,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
           <td class="paramname"><em>idx</em>&#160;</td>
         </tr>
         <tr>
@@ -513,13 +508,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
           <td class="paramname"><em>x</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
           <td class="paramname"><em>y</em>&#160;</td>
         </tr>
         <tr>
@@ -625,7 +620,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
           <td class="paramname"><em>outno</em>, </td>
         </tr>
         <tr>
@@ -637,7 +632,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
           <td class="paramname"><em>inno</em>&#160;</td>
         </tr>
         <tr>
@@ -737,7 +732,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td>
           <td class="paramname"><em>msg</em>&#160;</td>
         </tr>
         <tr>
@@ -792,7 +787,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void <a class="el" href="cm__pdlink_8h.html#a0f1f4951cf99dff0634789791dcde1ba">cmp_switch_dsp</a> </td>
           <td>(</td>
-          <td class="paramtype">bool&#160;</td>
+          <td class="paramtype"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td>
           <td class="paramname"><em>on</em></td><td>)</td>
           <td></td>
         </tr>
@@ -828,7 +823,7 @@ Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 15 2017 13:05:43 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 15 2017 20:07:53 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

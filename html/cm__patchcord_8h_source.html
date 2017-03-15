@@ -128,13 +128,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00049"></a><a class="code" href="classqtpd_1_1_patchcord.html#a067732a8c5322c8d32f9d39ab016080c">00049</a>     QPoint <a class="code" href="classqtpd_1_1_patchcord.html#a067732a8c5322c8d32f9d39ab016080c">startPoint</a>()
 <a name="l00050"></a>00050     {
 <a name="l00051"></a>00051 
-<a name="l00052"></a>00052         QPoint start = QPoint(0,0);
+<a name="l00052"></a>00052         QPoint <a class="code" href="sliceobject_8h.html#ab80172fa2f374f0198e6186560ed619e">start</a> = QPoint(0,0);
 <a name="l00053"></a>00053 
 <a name="l00054"></a>00054         <span class="keywordflow">if</span> (obj1_ &amp;&amp; out1_)
 <a name="l00055"></a>00055             start = QPoint( obj1_-&gt;pos().x() + out1_-&gt;pos().x() + out1_-&gt;width()/2,
 <a name="l00056"></a>00056                             obj1_-&gt;pos().y() + out1_-&gt;pos().y() + out1_-&gt;height()/2 );
 <a name="l00057"></a>00057 
-<a name="l00058"></a>00058         <span class="keywordflow">return</span> start;
+<a name="l00058"></a>00058         <span class="keywordflow">return</span> <a class="code" href="sliceobject_8h.html#ab80172fa2f374f0198e6186560ed619e">start</a>;
 <a name="l00059"></a>00059     }
 <a name="l00060"></a>00060 
 <a name="l00061"></a><a class="code" href="classqtpd_1_1_patchcord.html#ab268c90dfe60162baaf3a7792bc26d03">00061</a>     QPoint <a class="code" href="classqtpd_1_1_patchcord.html#ab268c90dfe60162baaf3a7792bc26d03">endPoint</a>()
@@ -148,7 +148,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00069"></a>00069     }
 <a name="l00070"></a>00070 
 <a name="l00072"></a><a class="code" href="classqtpd_1_1_patchcord.html#a538831162319dff6ac3d728123424fef">00072</a>     <a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3a">patchcordTypeEnum</a> <a class="code" href="classqtpd_1_1_patchcord.html#a538831162319dff6ac3d728123424fef">patchcordType</a>(){<span class="keywordflow">return</span> this-&gt;patchcordType_;}
-<a name="l00073"></a><a class="code" href="classqtpd_1_1_patchcord.html#a1b5fb2d27b98da2e715060294b0599d7">00073</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patchcord.html#a1b5fb2d27b98da2e715060294b0599d7">setPatchcordType</a>(<a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3a">patchcordTypeEnum</a> v){this-&gt;patchcordType_=v;}
+<a name="l00073"></a><a class="code" href="classqtpd_1_1_patchcord.html#a1b5fb2d27b98da2e715060294b0599d7">00073</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patchcord.html#a1b5fb2d27b98da2e715060294b0599d7">setPatchcordType</a>(<a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3a">patchcordTypeEnum</a> <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>){this-&gt;patchcordType_=<a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>;}
 <a name="l00074"></a>00074 
 <a name="l00076"></a>00076 
 <a name="l00077"></a><a class="code" href="classqtpd_1_1_patchcord.html#a9a5decac9d1ded5a0b94717b18890169">00077</a>     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_patchcord.html#a9a5decac9d1ded5a0b94717b18890169">obj1</a>()
@@ -178,14 +178,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00101"></a>00101     }
 <a name="l00102"></a>00102 
 <a name="l00104"></a>00104 
-<a name="l00105"></a><a class="code" href="classqtpd_1_1_patchcord.html#a75d24b98ecee7d2f08f9048c536265c2">00105</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_patchcord.html#a75d24b98ecee7d2f08f9048c536265c2">connectsObject</a>(<a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* obj)
+<a name="l00105"></a><a class="code" href="classqtpd_1_1_patchcord.html#a75d24b98ecee7d2f08f9048c536265c2">00105</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_patchcord.html#a75d24b98ecee7d2f08f9048c536265c2">connectsObject</a>(<a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
 <a name="l00106"></a>00106     {
 <a name="l00107"></a>00107         <span class="keywordflow">return</span> ( (obj == this-&gt;obj1_) || (obj == this-&gt;obj2_) );
 <a name="l00108"></a>00108     }
 <a name="l00109"></a>00109 
-<a name="l00110"></a><a class="code" href="classqtpd_1_1_patchcord.html#a1443015ef3c20d0751d7eab57b2f4c32">00110</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_patchcord.html#a1443015ef3c20d0751d7eab57b2f4c32">hover</a>(QPoint pos)
+<a name="l00110"></a><a class="code" href="classqtpd_1_1_patchcord.html#a1443015ef3c20d0751d7eab57b2f4c32">00110</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_patchcord.html#a1443015ef3c20d0751d7eab57b2f4c32">hover</a>(QPoint <a class="code" href="dictobject_8h.html#acae77df04bfdd60d1017f4132729ddc6">pos</a>)
 <a name="l00111"></a>00111     {
-<a name="l00112"></a>00112         QPoint start = this-&gt;<a class="code" href="classqtpd_1_1_patchcord.html#a067732a8c5322c8d32f9d39ab016080c">startPoint</a>();
+<a name="l00112"></a>00112         QPoint <a class="code" href="sliceobject_8h.html#ab80172fa2f374f0198e6186560ed619e">start</a> = this-&gt;<a class="code" href="classqtpd_1_1_patchcord.html#a067732a8c5322c8d32f9d39ab016080c">startPoint</a>();
 <a name="l00113"></a>00113         QPoint end = this-&gt;<a class="code" href="classqtpd_1_1_patchcord.html#ab268c90dfe60162baaf3a7792bc26d03">endPoint</a>();
 <a name="l00114"></a>00114 
 <a name="l00115"></a>00115         <span class="keywordtype">float</span> rx = end.x() - start.x();
@@ -235,7 +235,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 15 2017 13:05:43 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 15 2017 20:07:53 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

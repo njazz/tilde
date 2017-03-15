@@ -106,14 +106,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00025"></a>00025 <span class="keyword">public</span>:
 <a name="l00026"></a>00026     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_u_i_float.html#ae13e2b229f7ed74976fb3d2acdda2612">UIFloat</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> *parent = 0);
 <a name="l00027"></a>00027 
-<a name="l00028"></a><a class="code" href="classqtpd_1_1_u_i_float.html#a0ba469d10848833c102367c605aa91e3">00028</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_float.html#a0ba469d10848833c102367c605aa91e3">createObject</a>(std::string <a class="code" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447" title="gets object text data /usually overriden by ui objects/">objectData</a>, t_canvas* pdCanvas, <a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a> *parent=0)
+<a name="l00028"></a><a class="code" href="classqtpd_1_1_u_i_float.html#a0ba469d10848833c102367c605aa91e3">00028</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_float.html#a0ba469d10848833c102367c605aa91e3">createObject</a>(<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="code" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447" title="gets object text data /usually overriden by ui objects/">objectData</a>, t_canvas* pdCanvas, <a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a> *parent=0)
 <a name="l00029"></a>00029     {
 <a name="l00030"></a>00030         <a class="code" href="classqtpd_1_1_u_i_float.html" title="gui object: float number box (ui.float)">UIFloat</a>* b = <span class="keyword">new</span> <a class="code" href="classqtpd_1_1_u_i_float.html#ae13e2b229f7ed74976fb3d2acdda2612">UIFloat</a>((<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*)parent);
 <a name="l00031"></a>00031 
 <a name="l00032"></a>00032         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a84c139bd000a8cf46f76f25204dbe554" title="sets object text data">setObjectData</a>(objectData);
 <a name="l00033"></a>00033         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a1c7d66be6089715aaf5c03adb64a915b" title="call this after setting object data">autoResize</a>();
 <a name="l00034"></a>00034 
-<a name="l00035"></a>00035         std::string message = <span class="stringliteral">&quot;ui.float&quot;</span>;
+<a name="l00035"></a>00035         <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> message = <span class="stringliteral">&quot;ui.float&quot;</span>;
 <a name="l00036"></a>00036 
 <a name="l00037"></a>00037         <span class="comment">//temp</span>
 <a name="l00038"></a>00038         t_object* new_obj = 0 ;
@@ -121,14 +121,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00040"></a>00040         {qDebug(<span class="stringliteral">&quot;bad pd canvas instance&quot;</span>);}
 <a name="l00041"></a>00041         <span class="keywordflow">else</span>
 <a name="l00042"></a>00042         {
-<a name="l00043"></a>00043             QPoint pos = QPoint(0,0);
+<a name="l00043"></a>00043             QPoint <a class="code" href="dictobject_8h.html#acae77df04bfdd60d1017f4132729ddc6">pos</a> = QPoint(0,0);
 <a name="l00044"></a>00044             <span class="comment">//new_obj = cmp_create_message(pdCanvas, message, pos.x(), pos.y());</span>
 <a name="l00045"></a>00045             new_obj = <a class="code" href="cm__pdlink_8h.html#a2c0a0d9150791897b85a167998ecf7c2" title="creates pd object">cmp_create_object</a>(pdCanvas, message, pos.x(), pos.y());
 <a name="l00046"></a>00046         }
 <a name="l00047"></a>00047 
 <a name="l00048"></a>00048         <span class="keywordflow">if</span> (new_obj)
 <a name="l00049"></a>00049         {
-<a name="l00050"></a>00050             qDebug (<span class="stringliteral">&quot;created msgbox %s | ptr %lu\n&quot;</span>,  message.c_str(), (long)new_obj);
+<a name="l00050"></a>00050             qDebug (<span class="stringliteral">&quot;created msgbox %s | ptr %lu\n&quot;</span>,  message.c_str(), (<a class="code" href="modsupport_8h.html#a0cb68e00fb9fb1260ee2daadd9fe6611">long</a>)new_obj);
 <a name="l00051"></a>00051             b-&gt;<a class="code" href="classqtpd_1_1_u_i_float.html#a5b6cb8517171861520fa799db424dbc2" title="sets pointer to pd object">setPdObject</a>(new_obj);
 <a name="l00052"></a>00052         }
 <a name="l00053"></a>00053         <span class="keywordflow">else</span>
@@ -154,7 +154,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00073"></a>00073 
 <a name="l00074"></a><a class="code" href="classqtpd_1_1_u_i_float.html#abcf8e1104bd9e3a3508279480f316dc9">00074</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_float.html#abcf8e1104bd9e3a3508279480f316dc9">paintEvent</a>(QPaintEvent *)
 <a name="l00075"></a>00075     {
-<a name="l00076"></a>00076         QPainter p(<span class="keyword">this</span>);
+<a name="l00076"></a>00076         QPainter <a class="code" href="floatobject_8h.html#af18a92ce774f4c499544fbcc894db7e8">p</a>(<span class="keyword">this</span>);
 <a name="l00077"></a>00077 
 <a name="l00078"></a>00078          QPolygon poly;
 <a name="l00079"></a>00079           poly &lt;&lt; QPoint(0,0) &lt;&lt;
@@ -232,9 +232,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00152"></a>00152             this-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a1c7d66be6089715aaf5c03adb64a915b" title="call this after setting object data">autoResize</a>();
 <a name="l00153"></a>00153             this-&gt;startY = <span class="keyword">event</span>-&gt;pos().y();
 <a name="l00154"></a>00154 
-<a name="l00155"></a>00155             std::string send = <span class="stringliteral">&quot;set &quot;</span> + this-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447" title="gets object text data /usually overriden by ui objects/">objectData</a>();
+<a name="l00155"></a>00155             <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> send = <span class="stringliteral">&quot;set &quot;</span> + this-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447" title="gets object text data /usually overriden by ui objects/">objectData</a>();
 <a name="l00156"></a>00156             <a class="code" href="cm__pdlink_8h.html#a9bca4af04ea4fac6b910933e5ba16814" title="send string as pd message to object">cmp_sendstring</a>((t_pd*)this-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ab035ff3ca7142e49c07f141666f6b41e" title="returns pointer to pd object.">pdObject</a>(), send.c_str());
-<a name="l00157"></a>00157             <a class="code" href="cm__pdlink_8h.html#a9bca4af04ea4fac6b910933e5ba16814" title="send string as pd message to object">cmp_sendstring</a>((t_pd*)this-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ab035ff3ca7142e49c07f141666f6b41e" title="returns pointer to pd object.">pdObject</a>(), ((std::string)<span class="stringliteral">&quot;bang&quot;</span>).c_str());
+<a name="l00157"></a>00157             <a class="code" href="cm__pdlink_8h.html#a9bca4af04ea4fac6b910933e5ba16814" title="send string as pd message to object">cmp_sendstring</a>((t_pd*)this-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ab035ff3ca7142e49c07f141666f6b41e" title="returns pointer to pd object.">pdObject</a>(), ((<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>)<span class="stringliteral">&quot;bang&quot;</span>).c_str());
 <a name="l00158"></a>00158 
 <a name="l00159"></a>00159             this-&gt;repaint();
 <a name="l00160"></a>00160         }
@@ -255,7 +255,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00175"></a>00175 
 <a name="l00176"></a>00176 
 <a name="l00178"></a>00178 
-<a name="l00179"></a><a class="code" href="classqtpd_1_1_u_i_float.html#a7186d0f54f3fc3bdfa6fa15fc625785a">00179</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_float.html#a7186d0f54f3fc3bdfa6fa15fc625785a">setPdMessage</a>(std::string message)
+<a name="l00179"></a><a class="code" href="classqtpd_1_1_u_i_float.html#a7186d0f54f3fc3bdfa6fa15fc625785a">00179</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_float.html#a7186d0f54f3fc3bdfa6fa15fc625785a">setPdMessage</a>(<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> message)
 <a name="l00180"></a>00180     {
 <a name="l00181"></a>00181         this-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a84c139bd000a8cf46f76f25204dbe554" title="sets object text data">setObjectData</a>(message);
 <a name="l00182"></a>00182         this-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a1c7d66be6089715aaf5c03adb64a915b" title="call this after setting object data">autoResize</a>();
@@ -277,7 +277,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00198"></a>00198             <span class="keywordflow">else</span>
 <a name="l00199"></a>00199             {
 <a name="l00200"></a>00200 
-<a name="l00201"></a>00201                 std::string msg = (<span class="stringliteral">&quot;set &quot;</span>+ this-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447" title="gets object text data /usually overriden by ui objects/">objectData</a>());
+<a name="l00201"></a>00201                 <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> msg = (<span class="stringliteral">&quot;set &quot;</span>+ this-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447" title="gets object text data /usually overriden by ui objects/">objectData</a>());
 <a name="l00202"></a>00202                 <span class="comment">//qDebug(&quot;send msg %s&quot;, msg.c_str());</span>
 <a name="l00203"></a>00203                 <a class="code" href="cm__pdlink_8h.html#a9bca4af04ea4fac6b910933e5ba16814" title="send string as pd message to object">cmp_sendstring</a>((t_pd*)this-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ab035ff3ca7142e49c07f141666f6b41e" title="returns pointer to pd object.">pdObject</a>(), msg);
 <a name="l00204"></a>00204             }
@@ -291,7 +291,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00212"></a><a class="code" href="classqtpd_1_1_u_i_float.html#add097c7c25166226f6a96eb6a16fb3f6">00212</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_float.html#add097c7c25166226f6a96eb6a16fb3f6">updateUI</a>(<span class="keywordtype">void</span>* uiobj, <a class="code" href="classceammc_1_1_atom_list.html">ceammc::AtomList</a> msg)
 <a name="l00213"></a>00213     {
 <a name="l00214"></a>00214         qDebug(<span class="stringliteral">&quot;update ui - float&quot;</span>);
-<a name="l00215"></a>00215         <a class="code" href="classqtpd_1_1_u_i_float.html" title="gui object: float number box (ui.float)">UIFloat</a> *x = (<a class="code" href="classqtpd_1_1_u_i_float.html" title="gui object: float number box (ui.float)">UIFloat</a>*)uiobj;
+<a name="l00215"></a>00215         <a class="code" href="classqtpd_1_1_u_i_float.html" title="gui object: float number box (ui.float)">UIFloat</a> *<a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a> = (<a class="code" href="classqtpd_1_1_u_i_float.html" title="gui object: float number box (ui.float)">UIFloat</a>*)uiobj;
 <a name="l00216"></a>00216 
 <a name="l00217"></a>00217         <span class="keywordflow">if</span> (msg.<a class="code" href="classceammc_1_1_atom_list.html#ad52fdc5b4f54329460495caa1b00d1ac">size</a>()&gt;0)
 <a name="l00218"></a>00218         {
@@ -305,7 +305,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00226"></a>00226 <span class="comment">//    std::string asPdFileString()</span>
 <a name="l00227"></a>00227 <span class="comment">//    {return &quot;ui.float &quot;+ this-&gt;objectData();}</span>
 <a name="l00228"></a>00228 
-<a name="l00229"></a><a class="code" href="classqtpd_1_1_u_i_float.html#a5b6cb8517171861520fa799db424dbc2">00229</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_float.html#a5b6cb8517171861520fa799db424dbc2" title="sets pointer to pd object">setPdObject</a>(<span class="keywordtype">void</span> *obj)
+<a name="l00229"></a><a class="code" href="classqtpd_1_1_u_i_float.html#a5b6cb8517171861520fa799db424dbc2">00229</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_float.html#a5b6cb8517171861520fa799db424dbc2" title="sets pointer to pd object">setPdObject</a>(<span class="keywordtype">void</span> *<a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
 <a name="l00230"></a>00230     {
 <a name="l00231"></a>00231         <a class="code" href="classqtpd_1_1_u_i_float.html#a5b6cb8517171861520fa799db424dbc2" title="sets pointer to pd object">UIObject::setPdObject</a>(obj);
 <a name="l00232"></a>00232         <a class="code" href="cm__pdlink_8h.html#a9b4bef98ca39e6d157ee073b5139ae9d" title="set the &#39;repaint&#39; function of the ui object to be accessible from pd object">cmp_connectUI</a>((t_pd*)this-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ab035ff3ca7142e49c07f141666f6b41e" title="returns pointer to pd object.">pdObject</a>(), (<span class="keywordtype">void</span>*)<span class="keyword">this</span>, &amp;<a class="code" href="classqtpd_1_1_u_i_float.html#add097c7c25166226f6a96eb6a16fb3f6">UIFloat::updateUI</a>);
@@ -338,7 +338,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 15 2017 13:05:43 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 15 2017 20:07:53 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
