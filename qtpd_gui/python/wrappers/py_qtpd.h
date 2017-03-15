@@ -41,6 +41,20 @@ public Q_SLOTS:
         return c->createObject(obj_name.toStdString(),obj_data.toStdString(), QPoint(x,y));
     }
 
+    void moveObject (UIObject* obj, int x, int y)
+    {
+        obj->move(x,y);
+    }
+
+    void deleteObjectInCanvas(Canvas* c, UIObject* obj)
+    {
+        c->deleteBox(obj);
+    }
+
+    void patchcord(Canvas* c, UIObject* obj1, int out1, UIObject* obj2, int in2)
+    {
+        c->patchcord(obj1,out1,obj2,in2);
+    }
 
 };
 

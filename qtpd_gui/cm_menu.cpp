@@ -9,8 +9,12 @@
 #include "cm_fileparser.h"
 
 
+
 namespace qtpd
 {
+
+PythonQtScriptingConsole* BaseMenu::pythonConsole_;
+
 ////
 /// \brief new patch window
 ///
@@ -41,6 +45,17 @@ void BaseMenu::pdWindow()
     //else pdw->show();
 
     //    post("pd window");
+}
+
+
+void BaseMenu::pythonConsole()
+{
+    if (pythonConsole_)
+    {
+        pythonConsole_->show();
+
+    }
+
 }
 
 }

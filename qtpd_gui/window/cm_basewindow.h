@@ -106,6 +106,10 @@ public:
         pdWindowAct->setShortcut(tr("Ctrl+R"));
         connect(pdWindowAct, &QAction::triggered, this, &BaseMenu::pdWindow);
 
+        pythonConsoleAct = new QAction(tr("Python Console"), this);
+        pythonConsoleAct->setShortcut(tr("Ctrl+Alt+R"));
+        connect(pythonConsoleAct, &QAction::triggered, this, &BaseMenu::pythonConsole);
+
         pdAudioSettingsAct = new QAction(tr("Audio settings..."), this);
         //pdAudioSettingsAct->setShortcut(tr("Ctrl+R"));
 
@@ -169,6 +173,7 @@ public:
 
         windowMenu = menuBar()->addMenu(tr("&Window"));
         windowMenu->addAction(pdWindowAct);
+        windowMenu->addAction(pythonConsoleAct);
         windowMenu->addSeparator();
         windowMenu->addAction(pdAudioSettingsAct);
         windowMenu->addAction(pdPreferencesAct);
@@ -209,6 +214,7 @@ private:
     QAction *dspOffAct;
 
     QAction *pdWindowAct;
+    QAction *pythonConsoleAct;
     QAction *pdAudioSettingsAct;
     QAction *pdPreferencesAct;
     QAction *pdKeyBindingsAct;

@@ -1089,6 +1089,16 @@ public:
     //    }
 
     ////
+    /// \brief delete single box
+    ///
+    void deleteBox(UIObject*box)
+    {
+        deselectBoxes();
+        selectionData_.boxes.push_back(box);
+        delBoxes();
+    }
+
+    ////
     /// \brief delete all selected object boxes
     ///
     void delBoxes()

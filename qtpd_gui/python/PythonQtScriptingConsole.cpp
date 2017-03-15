@@ -77,6 +77,15 @@ PythonQtScriptingConsole::PythonQtScriptingConsole(QWidget* parent, const Python
   setWindowTitle("Python console");
   setMinimumSize(300,200);
 
+  QPalette Pal(palette());
+  Pal.setColor(QPalette::Background, QColor(224,240,255));
+  Pal.setColor(QPalette::Base, QColor(240,248,255));
+  setAutoFillBackground(true);
+  setPalette(Pal);
+
+  setBackgroundRole(QPalette::Background);
+  setTextBackgroundColor(QColor(224,240,255));
+
   connect(PythonQt::self(), SIGNAL(pythonStdOut(const QString&)), this, SLOT(stdOut(const QString&)));
   connect(PythonQt::self(), SIGNAL(pythonStdErr(const QString&)), this, SLOT(stdErr(const QString&)));
 }

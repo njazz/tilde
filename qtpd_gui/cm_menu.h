@@ -3,6 +3,7 @@
 
 #include <QObject>
 
+#include "python/PythonQtScriptingConsole.h"
 
 namespace qtpd
 {
@@ -13,8 +14,16 @@ namespace qtpd
 class BaseMenu : public QObject
 {
     Q_OBJECT
+
+    static PythonQtScriptingConsole* pythonConsole_;
 public:
-    explicit BaseMenu(QObject *parent = 0);
+    explicit BaseMenu(QObject *parent = 0)
+    {
+        //TODO! singleton
+        PythonQtObjectPtr  mainContext = PythonQt::self()->getMainModule();
+        pythonConsole_ = new PythonQtScriptingConsole(NULL, mainContext);
+        qDebug("pyConsole %lu", (long) pythonConsole_);
+    };
 
 //signals:
 
@@ -24,6 +33,7 @@ public slots:
     static void open();
 
     static void pdWindow();
+    static void pythonConsole();
 };
 }
 

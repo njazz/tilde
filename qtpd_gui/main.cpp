@@ -6,6 +6,8 @@
 #include "cm_pdwindow.h"
 #include "cm_patchwindow.h"
 
+#include "cm_menu.h"
+
 #include "cm_objectloader.h"
 
 #include "cm_preferences.h"
@@ -36,6 +38,10 @@ int main(int argc, char *argv[])
 
     QTPD_PREF_INIT;
 
+    //python
+    PythonQt::init(PythonQt::IgnoreSiteModule | PythonQt::RedirectStdOut);
+    PythonQt_QtAll::init();
+
     ObjectLoader::inst().loadObjects();
 
     cmp_pdinit();
@@ -46,18 +52,16 @@ int main(int argc, char *argv[])
     pdw->move(0,100);
     pdw->show();
 
-    //python
-    PythonQt::init(PythonQt::IgnoreSiteModule | PythonQt::RedirectStdOut);
-    PythonQt_QtAll::init();
 
-    PythonQtObjectPtr  mainContext = PythonQt::self()->getMainModule();
-    PythonQtScriptingConsole console(NULL, mainContext);
+
+    //temporary
+    BaseMenu* m = new BaseMenu(0);
 
     pyWrappersInit();
 
     //
 
-    console.show();
+    //console.show();
 
 
 
