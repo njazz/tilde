@@ -114,7 +114,8 @@ HEADERS  += \
     python/headers/PythonQtVariants.h \
     python/wrappers/py_wrapers.h \
     python/wrappers/py_pdlib.h \
-    python/wrappers/py_testclass.h
+    python/wrappers/py_testclass.h \
+    python/wrappers/py_qtpd.h
 
 
 FORMS    += \

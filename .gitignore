@@ -29,3 +29,5 @@ qtpd_gui/python/main.cpp
 qtpd_gui/python/examples/example.py
 
 qtpd_gui/python/PyExampleObject.o
+
+qtpd_gui/python/PyExampleObject.o

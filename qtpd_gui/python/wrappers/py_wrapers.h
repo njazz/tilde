@@ -8,6 +8,7 @@
 
 #include "py_testclass.h"
 #include "py_pdlib.h"
+#include "py_qtpd.h"
 
 void pyWrappersInit()
 {
@@ -18,6 +19,9 @@ void pyWrappersInit()
 
     static pyPdLib _pyPdLib;
     mainContext.addObject("pdLib", &_pyPdLib);
+
+    static pyQtpd _pyQtpd;
+    mainContext.addObject("Qtpd", &_pyQtpd);
 
 
 }

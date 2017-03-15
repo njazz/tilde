@@ -9,6 +9,7 @@
 
 ////
 /// \brief Temporary. wrapper for c functions - for future Python API
+/// \details needs changes
 ///
 class pyPdLib : public QObject
 {

@@ -89,6 +89,8 @@ public:
     //    static cm_patchwindow* loadWindow(QStringList); //arguments
     static PatchWindow* newSubpatch(t_canvas *subpatch = 0);
 
+
+    //todo encapsulate!
     Canvas* canvas;
 
 
