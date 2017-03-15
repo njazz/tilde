@@ -10,10 +10,14 @@
 
 #include "cm_preferences.h"
 
-//
+//python
 #include <PythonQt.h>
 #include <PythonQt_QtAll.h>
+
+#include "python/wrappers/py_wrapers.h"
+
 #include "python/PythonQtScriptingConsole.h"
+
 
 using namespace qtpd;
 
@@ -44,10 +48,15 @@ int main(int argc, char *argv[])
 
     //python
     PythonQt::init(PythonQt::IgnoreSiteModule | PythonQt::RedirectStdOut);
-//    PythonQt_QtAll::init();
+    PythonQt_QtAll::init();
 
     PythonQtObjectPtr  mainContext = PythonQt::self()->getMainModule();
     PythonQtScriptingConsole console(NULL, mainContext);
+
+    pyWrappersInit();
+
+    //
+
     console.show();
 
 

@@ -73,6 +73,10 @@ PythonQtScriptingConsole::PythonQtScriptingConsole(QWidget* parent, const Python
 
   clear();
 
+  setFont(QFont("Source Code Pro", 11, 0, false));
+  setWindowTitle("Python console");
+  setMinimumSize(300,200);
+
   connect(PythonQt::self(), SIGNAL(pythonStdOut(const QString&)), this, SLOT(stdOut(const QString&)));
   connect(PythonQt::self(), SIGNAL(pythonStdErr(const QString&)), this, SLOT(stdErr(const QString&)));
 }

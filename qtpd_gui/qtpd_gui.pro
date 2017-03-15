@@ -24,6 +24,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 CONFIG += static
 
+#include(python/build/python.prf)
+  INCLUDEPATH += python/py2.7headers/
+  LIBS += -F/System/Library/Frameworks -framework Python
+
+#DEFINES -= isalnum isalphaislowerisspace isupper tolower toupper
 
 SOURCES += main.cpp\
     cm_port.cpp \
@@ -46,7 +51,8 @@ SOURCES += main.cpp\
     cm_sizebox.cpp \
     properties/cm_property.cpp \
     properties/cm_propertylist.cpp \
-    python/PythonQtScriptingConsole.cpp
+    python/PythonQtScriptingConsole.cpp \
+    python/wrappers/py_testclass.cpp
 
 
 HEADERS  += \
@@ -105,7 +111,10 @@ HEADERS  += \
     python/headers/PythonQt_QtAll.h \
     python/headers/PythonQtQFileImporter.h \
     python/headers/PythonQtSystem.h \
-    python/headers/PythonQtVariants.h
+    python/headers/PythonQtVariants.h \
+    python/wrappers/py_wrapers.h \
+    python/wrappers/py_pdlib.h \
+    python/wrappers/py_testclass.h
 
 
 FORMS    += \
@@ -126,7 +135,7 @@ DISTFILES += \
 #    python/lib/libPythonQt_QtAll.1.0.0.dylib \
 #    python/lib/libPythonQt.1.0.0.dylib \
 
-include(python/build/python.prf)
+
 #include(python/build/common.prf)
 #include(python/build/PythonQt_QtAll.prf)
 #include(python/build/PythonQt.prf)

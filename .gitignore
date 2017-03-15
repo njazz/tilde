@@ -25,3 +25,7 @@ qtpd_gui/python/examples/PyScriptingConsole.pro
 qtpd_gui/python/examples/PyScriptingConsole.qrc
 
 qtpd_gui/python/main.cpp
+
+qtpd_gui/python/examples/example.py
+
+qtpd_gui/python/PyExampleObject.o
