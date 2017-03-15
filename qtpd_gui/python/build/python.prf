@@ -8,6 +8,7 @@ macx {
   # for macx you need to have the Python development kit installed as framework
   INCLUDEPATH += /System/Library/Frameworks/Python.framework/Headers
   LIBS += -F/System/Library/Frameworks -framework Python
+  DEFINES -= _PY_PORT_CTYPE_UTF8_ISSUE
 } else:win32 {
   # for windows install a Python development kit or build Python yourself from the sources
   # Make sure that you set the environment variable PYTHON_PATH to point to your
@@ -38,4 +39,5 @@ macx {
   
   unix:LIBS += $$system(python$${PYTHON_VERSION}-config --libs)
   unix:QMAKE_CXXFLAGS += $$system(python$${PYTHON_VERSION}-config --includes)
+     #isalnum isalphaislowerisspace isupper tolower toupper
 }

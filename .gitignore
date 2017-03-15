@@ -9,3 +9,19 @@ qtpd_main.pro.user
 qtpd_lib/qtpd_lib.pro.user
 
 qtpd_lib/CicmWrapper/
+
+qtpd_gui/python/examples/main.cpp
+
+qtpd_gui/python/examples/PyExampleObject.cpp
+
+qtpd_gui/python/examples/PyExampleObject.h
+
+qtpd_gui/python/PyExampleObject.o
+
+qtpd_gui/python/examples/PyScriptingConsole.bat
+
+qtpd_gui/python/examples/PyScriptingConsole.pro
+
+qtpd_gui/python/examples/PyScriptingConsole.qrc
+
+qtpd_gui/python/main.cpp
