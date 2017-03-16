@@ -91,6 +91,14 @@ public Q_SLOTS:
             obj->addOutlet();
     }
 
+    void pdMessage(UIObject* obj, QString data)
+    {
+        if (obj->pdObject())
+        {
+            cmp_sendstring((t_pd*)obj->pdObject(), data.toStdString());
+        }
+    }
+
     //////////
     // pdLib
 
@@ -118,12 +126,25 @@ public Q_SLOTS:
         return new PropertyList();
     }
 
-    PropertyList properties(UIObject* obj)
+    PropertyList* prop(UIObject* obj)
     {
-        return *obj->properties();
+        return obj->properties();
     }
 
+    QStringList names(PropertyList* list)
+    {
+        return list->names();
+    }
 
+    QString getP(UIObject* obj, QString name)
+    {
+        return obj->properties()->get(name.toStdString())->asQString();
+    }
+
+    void setP(UIObject* obj, QString name, QString data)
+    {
+        obj->properties()->set(name.toStdString(),data);
+    }
 
     QStringList pnames(UIObject* obj)
     {

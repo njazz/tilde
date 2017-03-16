@@ -113,7 +113,7 @@ public:
             if (data_.size()==1)
                 ret = data_.at(0).asString();
 
-        qDebug() << "stdstr " << data_.size() << QString(ret.c_str());
+        //qDebug() << "stdstr " << data_.size() << QString(ret.c_str());
         return ret;
     }
 
@@ -137,7 +137,7 @@ public:
             if (data_.size()==1)
                 ret = data_.at(0).asString();
 
-        qDebug() << "stdstr " << data_.size() << QString(ret.c_str());
+        //qDebug() << "stdstr " << data_.size() << QString(ret.c_str());
         return ret;
     }
 

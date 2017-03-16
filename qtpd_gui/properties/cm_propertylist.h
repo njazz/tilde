@@ -18,8 +18,10 @@ typedef std::map<std::string, Property*>::iterator UIPropertyDataIterator;
 ////
 /// \brief yet another property handling class for ui object. List
 ///
-class PropertyList
+class PropertyList : public QObject
 {
+    Q_OBJECT
+
 private:
     UIPropertyData data_;
     UIPropertyGroups groups_;
