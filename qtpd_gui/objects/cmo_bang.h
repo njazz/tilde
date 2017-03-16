@@ -32,6 +32,7 @@ public:
     {
         UIBang* b = new UIBang((UIObject*)parent);
 
+        std::string data1 = b->properties()->extractFromPdFileString(objectData);
         b->setObjectData("");
 
         std::string message = "ui.bang";

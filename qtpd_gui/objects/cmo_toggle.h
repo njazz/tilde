@@ -33,7 +33,9 @@ public:
 
 
 
+        std::string data1 = b->properties()->extractFromPdFileString(objectData);
         b->setObjectData("");
+
 
         std::string message = "ui.toggle";
 

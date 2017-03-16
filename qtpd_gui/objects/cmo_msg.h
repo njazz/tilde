@@ -31,7 +31,9 @@ public:
         UIMessage* b = new UIMessage((UIObject*)parent);
 
 
-        b->setObjectData(objectData);
+        std::string data1 = b->properties()->extractFromPdFileString(objectData);
+        b->setObjectData(data1);
+
         b->autoResize();
 
         std::string message = "ui.msg";

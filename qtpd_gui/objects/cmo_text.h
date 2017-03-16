@@ -30,7 +30,9 @@ public:
     {
         UIText* b = new UIText((UIObject*)parent);
         //temporary
-        b->setObjectData(objectData);
+        std::string data1 = b->properties()->extractFromPdFileString(objectData);
+        b->setObjectData(data1);
+
         b->autoResize();
         return (UIObject*) b;
     };

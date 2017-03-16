@@ -33,9 +33,10 @@ public:
     static UIObject* createObject(std::string objectData, t_canvas* pdCanvas, UIWidget *parent=0)
     {
         UIScript* b = new UIScript((UIObject*)parent);
-        //temporary
+
         std::string data1 = b->properties()->extractFromPdFileString(objectData);
         b->setObjectData(data1);
+
         b->autoResize();
 
         // the zoo lol

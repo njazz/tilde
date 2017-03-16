@@ -41,7 +41,10 @@ public:
         list.removeAt(0);
         QString list_s = list.join(" ");
         const char * obj_name = list_s.toStdString().c_str();
-        b->setObjectData(obj_name);
+
+        std::string data1 = b->properties()->extractFromPdFileString(obj_name); //test
+        b->setObjectData(data1);
+
         b->autoResize();
 
         t_object* new_obj = 0 ;
