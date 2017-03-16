@@ -22,12 +22,15 @@ UIScript::UIScript(UIObject *parent) : UIObject(parent)
     this->editor_->setFixedSize(150-5,300-27);//setFixedSize(65-5,18);
     this->editor_->move(2,21);
     this->editor_->setFont(font);
-    this->editor_->hide();
+    this->editor_->show();
+    //this->editor_->setFocus();
     this->editor_->setAttribute(Qt::WA_MacShowFocusRect, 0);
 
     connect(this->editor_,&QPlainTextEdit::textChanged, this,&UIScript::editorChanged);
 
-    this->editor_->installEventFilter(this);
+    //this->editor_->installEventFilter(this);
+
+    initProperties();
 
     //this->setMinimumBoxWidth(80);
 
@@ -83,15 +86,15 @@ UIScript::UIScript(UIObject *parent) : UIObject(parent)
 
 ///////
 
-void  UIScript::editorDone()
-{
-    qDebug("editor done");
+//void  UIScript::editorDone()
+//{
+//    qDebug("editor done");
 
-    this->setPdMessage(this->editor_->document()->toPlainText().toStdString());//text().toStdString());
-    //todo
+//    this->setPdMessage(this->editor_->document()->toPlainText().toStdString());//text().toStdString());
+//    //todo
 
-    this->editor_->hide();
-}
+//    this->editor_->hide();
+//}
 
 void  UIScript::editorChanged()
 {
@@ -110,6 +113,10 @@ void  UIScript::editorChanged()
 
     //    this->editor_->setFixedWidth(this->width()-1);
     //    this->editor_->setFixedHeight(this->height()-2);
+
+    QStringList list = getEditorData();
+
+    properties()->set("Script", list);
 }
 
 }

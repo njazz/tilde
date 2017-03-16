@@ -8,6 +8,8 @@
 #include <QStringList>
 #include <QColor>
 
+#include <QDebug>
+
 using namespace ceammc;
 
 namespace qtpd
@@ -20,7 +22,8 @@ typedef enum
     ptList,
     ptString,
     ptVector,
-    ptColor
+    ptColor,
+    ptText      ///< multiline text for comments, script
 
 } UIPropertyType;
 
@@ -78,22 +81,47 @@ public:
 
     QStringList asQStringList()
     {
-        QStringList ret; return ret;
+        QStringList ret;
+
+        for (int i=0; i<data_.size(); i++)
+        {
+
+            ret.push_back(data_.at(i).asString().c_str());
+        }
+
+        return ret;
     }
 
     std::string asStdString()
     {
         std::string ret="";
-        if (data_.size())
-            ret = data_.at(0).asString();
+
+
+
+        if (data_.size()>1)
+        {
+            for (int i=0; i<data_.size(); i++)
+            {
+
+                ret += data_.at(i).asString() + "\\n";
+            }
+
+        }
+        else
+            if (data_.size()==1)
+                ret = data_.at(0).asString();
+
+        qDebug() << "stdstr " << data_.size() << QString(ret.c_str());
         return ret;
     }
 
     QString asQString()
     {
         QString ret = "";
-        if (data_.size())
-            ret = data_.at(0).asString().c_str();
+
+        //temporary
+        ret = QString(asStdString().c_str());
+
         return ret;
     }
 

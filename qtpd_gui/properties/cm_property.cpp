@@ -5,6 +5,8 @@
 
 //}
 
+#include <QDebug>
+
 namespace qtpd{
 
 template<> void Property::set(AtomList list)
@@ -91,8 +93,22 @@ template<> void Property::set(QString string)
     type_ = ptString;
 }
 
-template<> void Property::set(QStringList list)
+template<> void Property::set(QStringList strlist)
 {
+    QStringList::iterator it;
+
+    AtomList list;
+
+    for (it = strlist.begin(); it != strlist.end(); ++it)
+    {
+        QString str = *it;
+        qDebug() << "str" << str;
+        list.append(AtomList(gensym(str.toStdString().c_str())));
+    }
+
+    //check, different type for text files
+    type_ = ptList;
+    data_ = (list);
 
 }
 

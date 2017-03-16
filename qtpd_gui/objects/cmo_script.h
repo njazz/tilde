@@ -39,6 +39,14 @@ public:
         return (UIObject*) b;
     };
 
+    void initProperties()
+    {
+        UIObject::initProperties();
+        QStringList list;// = QString("#empty").split("-");    //lol
+
+        this->properties()->create("Script","Data","0.1",list);
+    };
+
     void paintEvent(QPaintEvent *)
     {    QPainter p(this);
 
@@ -196,28 +204,32 @@ public:
         return 0;
     }
 
-    bool eventFilter(QObject *watched, QEvent *event)
+//    bool eventFilter(QObject *watched, QEvent *event)
+//    {
+//        if (event->type() == QEvent::KeyPress) {
+
+//            QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
+
+//            if  ( (keyEvent->key() == Qt::Key_Return) && (keyEvent->modifiers() == Qt::ShiftModifier) )
+//            {
+//                //this->editorDone();
+//                return true;
+//            }
+//        }
+
+//        return false;
+
+//    }
+
+    QStringList getEditorData()
     {
-        if (event->type() == QEvent::KeyPress) {
-
-            QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
-
-            if  ( (keyEvent->key() == Qt::Key_Return) && (keyEvent->modifiers() == Qt::ShiftModifier) )
-            {
-                this->editorDone();
-                return true;
-            }
-        }
-
-        return false;
-
+        return editor_->document()->toPlainText().split(QRegExp("[\r\n]"),QString::SkipEmptyParts);
     }
-
 
 signals:
 
 private slots:
-    void editorDone();
+//    void editorDone();
     void editorChanged();
 
     void btnRun(){
@@ -235,7 +247,7 @@ private slots:
         }
 
 
-        QStringList list = editor_->document()->toPlainText().split(QRegExp("[\r\n]"),QString::SkipEmptyParts);
+        QStringList list = getEditorData();
 
        // while (true)
         for (QStringList::iterator it = list.begin(); it!= list.end(); ++it)
