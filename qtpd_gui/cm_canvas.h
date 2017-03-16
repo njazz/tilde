@@ -85,7 +85,7 @@ private:
     UIObject *Subcanvas_;
 
     // !Canvas
-//    QLineEdit* editor_; //remove that
+    //    QLineEdit* editor_; //remove that
 
     ObjectMaker *objectMaker_;
 
@@ -117,20 +117,55 @@ public:
         //copy here
         //ret->setPdObject(srcCanvas->pdObject());
         //ret->pdCanvas = srcCanvas->pdCanvas;
+
         ret->setPdObject(srcCanvas->pdObject());
 
         ret->setDrawStyle(dStyle);
 
         ret->setMinimumWidth(40);
 
-        //ret->addInlet();//test
+        qDebug () << " *** src canvas: " << (long)srcCanvas;
+        qDebug(" *** port count: %i %i", srcCanvas->inletCount(), srcCanvas->outletCount());
 
+        int ci = cmp_get_inlet_count((t_object*)srcCanvas->pdObject());
+        int co = cmp_get_outlet_count((t_object*)srcCanvas->pdObject());
+
+        qDebug(" *** port count @pd: %i %i", ci, co);
+
+
+        //copying. later fix that with separate data class etc
+        for (int i =0; i<srcCanvas->inletCount(); i++)
+            ret->addInlet();
+        for (int i =0; i<srcCanvas->outletCount(); i++)
+            ret->addOutlet();
+
+
+        //        ret->setInletRef(srcCanvas->inletRef());
+        //        ret->setOutletRef(srcCanvas->outletRef());
+
+        //ret->addInlet();//test
         //ret->objectMaker()->hide();
 
         connect(srcCanvas, &Canvas::updatePortCount, ret, &Canvas::portCountUpdated);
 
         return ret;
 
+    }
+
+    void addInlet()
+    {
+        UIObject::addInlet();
+        Port*last = inletAt(inletCount()-1);
+        if (this->drawStyle()==ds_Canvas)
+            last->hide();
+    }
+
+    void addOutlet()
+    {
+        UIObject::addOutlet();
+        Port*last = inletAt(inletCount()-1);
+        if (this->drawStyle()==ds_Canvas)
+            last->hide();
     }
 
     ////
@@ -512,12 +547,12 @@ public:
             }
         }
 
-//        if ( (this->getEditMode()==em_Unlocked) && this->isSelected())
-//        {
-//            this->editor_->setText(QString(this->objectData().c_str()));
-//            this->editor_->show();
-//            this->editor_->setFocus();
-//        }
+        //        if ( (this->getEditMode()==em_Unlocked) && this->isSelected())
+        //        {
+        //            this->editor_->setText(QString(this->objectData().c_str()));
+        //            this->editor_->show();
+        //            this->editor_->setFocus();
+        //        }
 
         emit selectBox(this);
         this->dragOffset = ev->pos();
@@ -886,6 +921,9 @@ public:
             {
                 qDebug("ports");
                 emit updatePortCount();
+                //
+
+                portLocalCountUpdated();
             }
         }
 
@@ -1563,11 +1601,59 @@ public slots:
 
     ObjectMaker* objectMaker(){return objectMaker_;}
 
+
+
+    void portLocalCountUpdated()
+    {
+        qDebug("port local count update");
+
+        if (this->pdObject())
+        {
+            qDebug("setting ports");
+
+            int in_c = cmp_get_inlet_count((t_object*)this->pdObject());
+            int out_c = cmp_get_outlet_count((t_object*)this->pdObject());
+
+            int obj_in = this->inletCount();
+            int obj_out = this->outletCount();
+
+            if (in_c>obj_in)
+            {
+                this->addInlet();
+                qDebug("add inlet");
+            }
+
+            if (out_c>obj_out)
+            {
+                this->addOutlet();
+                qDebug("add outlet");
+            }
+
+            qDebug () << " ** canvas: " << (long)this;
+
+            qDebug(" ** port count: %i %i", this->inletCount(), this->outletCount());
+
+            int ci = cmp_get_inlet_count((t_object*)this->pdObject());
+            int co = cmp_get_outlet_count((t_object*)this->pdObject());
+
+            qDebug(" ** port count @pd: %i %i", ci, co);
+
+            //            qDebug () << ((drawStyle()==ds_Box)?"this is box canvas":"this is canvas");
+            //            qDebug () << "size" << this->size();
+
+            //this->repaint();
+
+        }
+
+
+    };
+
+
 private:
 
 private slots:
-//    void editorDone();
-//    void editorChanged();
+    //    void editorDone();
+    //    void editorChanged();
 
     ////
     /// \brief slot in Box-style canvas for handling new ins/outs

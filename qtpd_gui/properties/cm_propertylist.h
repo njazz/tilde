@@ -55,7 +55,7 @@ public:
         //fix
         //groups_[pGroup][pName] = newP;
 
-        qDebug() << "new property" << data_[pName]->asQString();
+        //qDebug() << "new property" << data_[pName]->asQString();
 
     }
 

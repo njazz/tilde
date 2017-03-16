@@ -212,7 +212,7 @@ public:
 
                                                 qDebug("restore");
 
-                                                UIObject *b = pdParserPrevWindow->canvas->createBoxForCanvas(pdParserPrevWindow->canvas, objData, pos);
+                                                UIObject *b = pdParserPrevWindow->canvas->createBoxForCanvas(pdParserWindow->canvas, objData, pos);
 
                                                 //IObject *b = this->createBoxForCanvas(newCanvas, objectData, pos);
                                                 ((UIBox*)b)->setSubpatchWindow ((QMainWindow*)pdParserPrevWindow);

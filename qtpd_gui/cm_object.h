@@ -126,11 +126,12 @@ public:
 
     ////
     /// \brief adds single inlet (cm_port)
+    /// \details overriden by canvas to hide ports in canvas view
     /// \param idx
     /// \return
     ///
     ///
-    void addInlet()
+    virtual void addInlet()
     {
         Port* new_in = new Port(this);
         new_in->portType = Port::portInlet;
@@ -161,7 +162,7 @@ public:
     /// \return
     ///
 
-    void addOutlet()
+    virtual void addOutlet()
     {
         Port* new_out = new Port(this);
         new_out->portType = Port::portOutlet;
@@ -186,6 +187,7 @@ public:
 
         this->setOutletsPos();
     }
+
 
     ////
     /// \brief gets inlet (cm_port) at specified index
@@ -254,6 +256,33 @@ public:
     ///
     int outletCount()
     {return outlets_->size();}
+
+    ///////
+
+//    portVec *inletRef()
+//    {
+//        return inlets_;
+//    }
+
+//    portVec *outletRef()
+//    {
+//        return outlets_;
+//    }
+
+//    void setInletRef(portVec* ins)
+//    {
+//        if (inlets_) delete inlets_;
+//        inlets_ = ins;
+//    }
+
+//    void setOutletRef(portVec* outs)
+//    {
+//        if (outlets_) delete outlets_;
+//        outlets_ = outs;
+//    }
+
+
+
 
     ////////
 
