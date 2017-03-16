@@ -62,6 +62,7 @@ var searchData=
   ['asfloats',['asFloats',['../classceammc_1_1_atom_list.html#a7b5eb4ddac967de139e76a7b5c893668',1,'ceammc::AtomList']]],
   ['asint',['asInt',['../classceammc_1_1_atom.html#a904dbf103333bf1a168c06db959baf25',1,'ceammc::Atom']]],
   ['aspdfilestring',['asPdFileString',['../classqtpd_1_1_canvas.html#a717fda819ac6e2fd85b44ac8221b71fb',1,'qtpd::Canvas::asPdFileString()'],['../classqtpd_1_1_u_i_object.html#a5eb400ac24c258c7c567cffe7f6addcb',1,'qtpd::UIObject::asPdFileString()'],['../classqtpd_1_1_property_list.html#aee86b37d4b28cda7a966d5ea96eed901',1,'qtpd::PropertyList::asPdFileString()']]],
+  ['aspdsavestring',['asPdSaveString',['../classqtpd_1_1_property.html#a0973d3630c8dd53f5ca0e5782b3f9567',1,'qtpd::Property']]],
   ['asqstring',['asQString',['../classqtpd_1_1_property.html#af5289defc1ad42119984e3f6eef55f16',1,'qtpd::Property']]],
   ['asqstringlist',['asQStringList',['../classqtpd_1_1_property.html#a1220309b667fd520757b01d62c265df7',1,'qtpd::Property']]],
   ['assizet',['asSizeT',['../classceammc_1_1_atom.html#aec7cf342488e735cdad561c8045fce29',1,'ceammc::Atom::asSizeT()'],['../classceammc_1_1_atom_list.html#aa54bf25fd6fbf3b0a0bae950dcccb635',1,'ceammc::AtomList::asSizeT()']]],
