@@ -15,7 +15,7 @@ typedef std::vector<Patchcord*> patchcordVec;
 /// \details todo: merge with clipboard class's types
 typedef struct structCanvasData
 {
-    objectVec boxes;
+    objectVec boxes_;
     patchcordVec patchcords_;
 
 } tCanvasData;

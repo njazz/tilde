@@ -108,6 +108,7 @@ public:
 
         selectAllAct = new QAction(tr("Select all"), this);
         selectAllAct->setShortcut(tr("Ctrl+A"));
+        connect(selectAllAct, &QAction::triggered, this, &PatchWindow::selectAll);
 
         selectAgainAct = new QAction(tr("Select again"), this);
         //selectAgainAct->setShortcut(tr("Ctrl+A"));
@@ -410,6 +411,12 @@ public:
         this->canvas->delBoxes();
         this->canvas->delSelectedPatchcords();
 
+    }
+
+    void selectAll()
+    {
+        // todo direct slot connection
+        canvas->selectAll();
     }
 
     void objectMakerDone();

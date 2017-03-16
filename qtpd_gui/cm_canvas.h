@@ -449,25 +449,25 @@ public:
         //selection frame
         if (this->selFrame.active)
         {
-            for (int i=0; i< (int)this->data_.boxes.size();i++)
+            for (int i=0; i< (int)this->data_.boxes_.size();i++)
             {
-                QPoint pos = ((UIBox*)this->data_.boxes.at(i))->pos();
-                QSize size = ((UIBox*)this->data_.boxes.at(i))->size();
+                QPoint pos = ((UIBox*)this->data_.boxes_.at(i))->pos();
+                QSize size = ((UIBox*)this->data_.boxes_.at(i))->size();
                 QRect r = QRect(pos, pos+QPoint(size.width(), size.height()) );
 
                 QRect frame = QRect (this->selFrame.start, this->selFrame.start + this->selFrame.end );
 
                 if (frame.contains(r,false))
                 {
-                    ((UIBox*)this->data_.boxes.at(i))->select();
-                    this->selectionData_.boxes.push_back(this->data_.boxes.at(i));
+                    ((UIBox*)this->data_.boxes_.at(i))->select();
+                    this->selectionData_.boxes_.push_back(this->data_.boxes_.at(i));
                 }
                 else
                 {
-                    ((UIBox*)this->data_.boxes.at(i))->deselect();
+                    ((UIBox*)this->data_.boxes_.at(i))->deselect();
 
-                    auto it = std::find(this->selectionData_.boxes.begin(), this->selectionData_.boxes.end(), this->data_.boxes.at(i));
-                    if (it != this->selectionData_.boxes.end()) { this->selectionData_.boxes.erase(it); }
+                    auto it = std::find(this->selectionData_.boxes_.begin(), this->selectionData_.boxes_.end(), this->data_.boxes_.at(i));
+                    if (it != this->selectionData_.boxes_.end()) { this->selectionData_.boxes_.erase(it); }
 
 
                 }
@@ -498,6 +498,9 @@ public:
 
         //deselect
         this->hoverPatchcordsOff();
+
+        setFocus();
+        objectMaker()->hide();
 
 
         if (this->editMode == em_Unlocked)
@@ -595,14 +598,14 @@ public:
     ///
     void deselectBoxes()
     {
-        for (int i=0;i< (int)this->selectionData_.boxes.size();i++)
+        for (int i=0;i< (int)this->selectionData_.boxes_.size();i++)
         {
-            if (this->selectionData_.boxes.at(i))
-                ((UIBox*)this->selectionData_.boxes.at(i))->deselect();
+            if (this->selectionData_.boxes_.at(i))
+                ((UIBox*)this->selectionData_.boxes_.at(i))->deselect();
 
         }
 
-        this->selectionData_.boxes.clear();
+        this->selectionData_.boxes_.clear();
     }
 
     ////
@@ -669,7 +672,7 @@ public:
 
         box->move(pos);
 
-        this->data_.boxes.push_back(box);
+        this->data_.boxes_.push_back(box);
 
         box->show();
 
@@ -905,7 +908,7 @@ public:
         connect(obj,&UIMessage::moveBox, this, &Canvas::s_MoveBox);
         obj->setEditModeRef(&this->editMode);
         obj->move(pos);
-        this->data_.boxes.push_back(obj);
+        this->data_.boxes_.push_back(obj);
 
         obj->show();
 
@@ -955,7 +958,7 @@ public:
 
         obj->setEditModeRef(&this->editMode);
         obj->move(pos);
-        this->data_.boxes.push_back(obj);
+        this->data_.boxes_.push_back(obj);
 
         QPalette Pal(palette());
         Pal.setColor(QPalette::Background, QColor(240,240,240));
@@ -1134,7 +1137,7 @@ public:
     void deleteBox(UIObject*box)
     {
         deselectBoxes();
-        selectionData_.boxes.push_back(box);
+        selectionData_.boxes_.push_back(box);
         delBoxes();
     }
 
@@ -1144,7 +1147,7 @@ public:
     void delBoxes()
     {
         objectVec::iterator it;
-        for (it = selectionData_.boxes.begin() ; it != selectionData_.boxes.end(); ++it)
+        for (it = selectionData_.boxes_.begin() ; it != selectionData_.boxes_.end(); ++it)
 
         {
             //
@@ -1170,12 +1173,12 @@ public:
 
             box->close();
 
-            data_.boxes.erase(std::remove(data_.boxes.begin(), data_.boxes.end(), *it), data_.boxes.end());
+            data_.boxes_.erase(std::remove(data_.boxes_.begin(), data_.boxes_.end(), *it), data_.boxes_.end());
             //selectionData_.boxes.erase(std::remove(selectionData_.boxes.begin(), selectionData_.boxes.end(), *it), selectionData_.boxes.end());
 
         }
 
-        selectionData_.boxes.clear();;
+        selectionData_.boxes_.clear();;
 
     }
 
@@ -1252,8 +1255,8 @@ public:
     ///
     UIObject* getObjectByIndex(int idx)
     {
-        if ((idx< (int)this->data_.boxes.size()) && (idx>=0))
-            return this->data_.boxes.at(idx);
+        if ((idx< (int)this->data_.boxes_.size()) && (idx>=0))
+            return this->data_.boxes_.at(idx);
         else
         {
             qDebug("object not found");
@@ -1309,7 +1312,7 @@ public:
     ///
     objectVec getObjectBoxes()
     {
-        return this->data_.boxes;
+        return this->data_.boxes_;
     }
 
     ////
@@ -1363,9 +1366,9 @@ public:
     int findObjectIndex(UIObject * obj)
     {
         //UIObject* obj1;
-        std::vector<UIObject*>::iterator iter = std::find(this->data_.boxes.begin(), data_.boxes.end(), obj);
-        size_t index = std::distance(this->data_.boxes.begin(), iter);
-        if(index != this->data_.boxes.size())
+        std::vector<UIObject*>::iterator iter = std::find(this->data_.boxes_.begin(), data_.boxes_.end(), obj);
+        size_t index = std::distance(this->data_.boxes_.begin(), iter);
+        if(index != this->data_.boxes_.size())
         {
             return index;
         }
@@ -1514,7 +1517,23 @@ public:
     ///
     void selectObject(UIObject* obj)
     {
-        selectionData_.boxes.push_back(obj);
+        obj->select();
+        selectionData_.boxes_.push_back(obj);
+    }
+
+    ////
+    /// \brief select all boxes
+    ///
+    void selectAll()
+    {
+        qDebug("select all");
+        objectVec::iterator it;
+        for (it = data_.boxes_.begin(); it != data_.boxes_.end(); ++it)
+        {
+            selectObject(*it);
+        }
+
+        //selectionData_.patchcords_ = data_.patchcords_;
     }
 
     ////
