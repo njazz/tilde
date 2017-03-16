@@ -102,6 +102,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
+<a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">qtpd::UIObject Class Reference</div>  </div>
@@ -135,6 +136,9 @@ Inheritance diagram for qtpd::UIObject:</div>
 <tr><td colspan="2"><h2><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ab8d2e6ae05d2f3521a9a7841dc8c6c59">resizeBox</a> (<a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> dx)</td></tr>
+<tr><td colspan="2"><h2><a name="signals"></a>
+Signals</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#af7d4bc79f4fb46e194a380a7f32b8694">editObject</a> (void *box)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a94ead3f0212c2e0ae0958f852d33978e">UIObject</a> (<a class="el" href="classqtpd_1_1_u_i_widget.html">UIWidget</a> *parent=0)</td></tr>
@@ -190,7 +194,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">set secondary 'minimum width' value - used for object box resize  <a href="#aaf3ec64e20e23bd1a6e98e40e207b9a5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ac1d937fa3ee566a10ae183ab8e40fd79">minimumBoxWidth</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get secondary 'minimum width' value - used for object box resize  <a href="#ac1d937fa3ee566a10ae183ab8e40fd79"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ae171698b1e32bf47865354dcf29ca376">~UIObject</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ad4a986f565df4216f3643053a8e19868">hide</a> ()</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>base class for all object boxes - standard and special </p>
@@ -200,27 +204,11 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">qtpd::UIObject::UIObject </td>
+          <td class="memname"><a class="el" href="classqtpd_1_1_u_i_object.html#a94ead3f0212c2e0ae0958f852d33978e">qtpd::UIObject::UIObject</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_widget.html">UIWidget</a> *&#160;</td>
           <td class="paramname"><em>parent</em> = <code>0</code></td><td>)</td>
           <td><code> [explicit]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ae171698b1e32bf47865354dcf29ca376"></a><!-- doxytag: member="qtpd::UIObject::~UIObject" ref="ae171698b1e32bf47865354dcf29ca376" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classqtpd_1_1_u_i_object.html#ae171698b1e32bf47865354dcf29ca376">qtpd::UIObject::~UIObject</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -323,6 +311,23 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="af7d4bc79f4fb46e194a380a7f32b8694"></a><!-- doxytag: member="qtpd::UIObject::editObject" ref="af7d4bc79f4fb46e194a380a7f32b8694" args="(void *box)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_object.html#af7d4bc79f4fb46e194a380a7f32b8694">qtpd::UIObject::editObject</a> </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>box</em></td><td>)</td>
+          <td><code> [signal]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="aa4198e8f0b0df742b5bd3e871452c7af"></a><!-- doxytag: member="qtpd::UIObject::enterEvent" ref="aa4198e8f0b0df742b5bd3e871452c7af" args="(QEvent *)" -->
 <div class="memitem">
 <div class="memproto">
@@ -356,6 +361,22 @@ Public Member Functions</h2></td></tr>
 
 <p>returns true if object doesn't exist </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad4a986f565df4216f3643053a8e19868"></a><!-- doxytag: member="qtpd::UIObject::hide" ref="ad4a986f565df4216f3643053a8e19868" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_object.html#ad4a986f565df4216f3643053a8e19868">qtpd::UIObject::hide</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
 </div>
 </div>
@@ -909,7 +930,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 16 2017 08:25:54 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 16 2017 10:59:10 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

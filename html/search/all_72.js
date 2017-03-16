@@ -49,6 +49,7 @@ var searchData=
   ['removewrapperpointer',['removeWrapperPointer',['../class_python_qt_private.html#a42ba4addddc857f97be772ba8266f095',1,'PythonQtPrivate']]],
   ['replaceall',['replaceAll',['../classceammc_1_1_atom_list.html#a1096c4f7a09680eefbf355e8e6edec92',1,'ceammc::AtomList::replaceAll(const Atom &amp;old_value, const Atom &amp;new_value)'],['../classceammc_1_1_atom_list.html#a1168817ee92f71a5f2906b88e7ef60bf',1,'ceammc::AtomList::replaceAll(AtomPredicate pred, const Atom &amp;new_value)']]],
   ['replaceextension',['replaceExtension',['../class_python_qt_import.html#a7075e311c5609a1ded0503bbe717608d',1,'PythonQtImport']]],
+  ['replaceobject',['replaceObject',['../classqtpd_1_1_canvas.html#afe38f2f2e0126482db788e4525db79c7',1,'qtpd::Canvas']]],
   ['repr',['Repr',['../struct__expr.html#ad870f24b5ad4c28e48da7eb1ee5c81fc',1,'_expr::Repr()'],['../_python-ast_8h.html#a88bd2651256da6ccebace0dfb90d8b72',1,'Repr():&#160;Python-ast.h']]],
   ['repr_5fkind',['Repr_kind',['../_python-ast_8h.html#a5040779a586bc1f6938f47df869170a5adae03b605e50d2ad74e3b012e9ddca67',1,'Python-ast.h']]],
   ['reprfunc',['reprfunc',['../object_8h.html#a6f922900c385251104a3bfe00aa4c5f6',1,'object.h']]],

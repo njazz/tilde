@@ -20,6 +20,5 @@ var searchData=
   ['_7epythonqtqfileimporter',['~PythonQtQFileImporter',['../class_python_qt_q_file_importer.html#a83002098da1068150a765947d563ccfd',1,'PythonQtQFileImporter']]],
   ['_7epythonqtscriptingconsole',['~PythonQtScriptingConsole',['../class_python_qt_scripting_console.html#a9730b59cefacdf0fe8f43fd25f44e534',1,'PythonQtScriptingConsole']]],
   ['_7epythonqtsignalreceiver',['~PythonQtSignalReceiver',['../class_python_qt_signal_receiver.html#ad107638388035b831c7f632f3905df18',1,'PythonQtSignalReceiver']]],
-  ['_7epythonqtsignaltarget',['~PythonQtSignalTarget',['../class_python_qt_signal_target.html#a82e71a28bc3d315805d35f820b53bfd0',1,'PythonQtSignalTarget']]],
-  ['_7euiobject',['~UIObject',['../classqtpd_1_1_u_i_object.html#ae171698b1e32bf47865354dcf29ca376',1,'qtpd::UIObject']]]
+  ['_7epythonqtsignaltarget',['~PythonQtSignalTarget',['../class_python_qt_signal_target.html#a82e71a28bc3d315805d35f820b53bfd0',1,'PythonQtSignalTarget']]]
 ];

@@ -23,7 +23,7 @@ var searchData=
   ['ecanvas_5fd',['ecanvas_d',['../ui__ecanvas_8cpp.html#ae25b2dd1da0df70114839675d71f2cfe',1,'ui_ecanvas.cpp']]],
   ['ecanvas_5fsetgraph',['ecanvas_setgraph',['../ui__ecanvas_8cpp.html#a2067045fcbee93ea5a8dfc7ce78f1944',1,'ui_ecanvas.cpp']]],
   ['editmenu',['editMenu',['../classqtpd_1_1_base_window.html#a95354b589a86f9a8845c25428baf03b5',1,'qtpd::BaseWindow']]],
-  ['editobject',['editObject',['../classqtpd_1_1_u_i_box.html#a5296a6795a6d64fd808a2b8f76f7f26c',1,'qtpd::UIBox']]],
+  ['editobject',['editObject',['../classqtpd_1_1_u_i_object.html#af7d4bc79f4fb46e194a380a7f32b8694',1,'qtpd::UIObject']]],
   ['elementaccessfn',['ElementAccessFn',['../namespaceceammc.html#aa519376273ef72cbfdc1b95f534f185e',1,'ceammc']]],
   ['elements',['elements',['../structasdl__seq.html#a44dec4611ce8805355073ab64acf4c9c',1,'asdl_seq::elements()'],['../structasdl__int__seq.html#ae8d9dcdc0b90d0f395c650783adb095f',1,'asdl_int_seq::elements()']]],
   ['ellipsis',['Ellipsis',['../_python-ast_8h.html#aca68c3beeed802b96603f6613db5d786',1,'Python-ast.h']]],

@@ -12,6 +12,7 @@ var searchData=
   ['height',['height',['../structceammc__gui_1_1_base_gui_object.html#a924cb7e1f8aff1f320429b39813094e7',1,'ceammc_gui::BaseGuiObject']]],
   ['help',['help',['../class_python_qt_class_info.html#a62fae4f1734593b049980233b82c941a',1,'PythonQtClassInfo']]],
   ['helpcalled',['helpCalled',['../class_python_qt.html#a806550a2b125862159517e166c8250bc',1,'PythonQt']]],
+  ['hide',['hide',['../classqtpd_1_1_u_i_object.html#ad4a986f565df4216f3643053a8e19868',1,'qtpd::UIObject']]],
   ['history',['history',['../class_python_qt_scripting_console.html#a0f1d436b3bf883051f6835b976bae94a',1,'PythonQtScriptingConsole']]],
   ['hover',['hover',['../classqtpd_1_1_patchcord.html#a1443015ef3c20d0751d7eab57b2f4c32',1,'qtpd::Patchcord']]],
   ['hoverpatchcords',['hoverPatchcords',['../classqtpd_1_1_canvas.html#a2d58aabe06c3e7b6a0d31c9b2f406a81',1,'qtpd::Canvas']]],

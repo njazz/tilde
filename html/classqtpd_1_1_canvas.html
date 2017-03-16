@@ -142,6 +142,8 @@ Public Slots</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">cancels patchcord creation  <a href="#a83af5295678ba3687f02189504528cc4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_object_maker.html">ObjectMaker</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a54c7fff0e9d9b68051ed2e4a4fb1d625">objectMaker</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a4d62a7174f8926ab7d1c49834cae52dd">portLocalCountUpdated</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a3687104c5241626dccbc5fbfb776d3ac">setReplaceObject</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#afe38f2f2e0126482db788e4525db79c7">replaceObject</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="signals"></a>
 Signals</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::pair&lt; QMainWindow <br class="typebreak"/>
@@ -236,6 +238,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a057d349fb3b1c6143219a53223baa460">patchcordAsPdFileString</a> (<a class="el" href="classqtpd_1_1_patchcord.html">Patchcord</a> *pcord)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns patchcord as pd string  <a href="#a057d349fb3b1c6143219a53223baa460"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#acaaa6396486755e52ab9bb689ae40f06">structPatchcordNumbers</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a95d57b6df49669c45bd5728c25709ffd">patchcordAsNumbers</a> (<a class="el" href="classqtpd_1_1_patchcord.html">Patchcord</a> *pcord)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a18731398b2b475020f5b3aecb4ae70d5">selectObject</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">selects single box. mostly used by replace object routine in objectmaker  <a href="#a18731398b2b475020f5b3aecb4ae70d5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a53c64b8c89b1efa5ee1bfcd0bb364ca7">resizeToObjects</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">change size to fit all objects  <a href="#a53c64b8c89b1efa5ee1bfcd0bb364ca7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a37ece8d75cc5122ce659a1b08c3dc96a">canvasAsPdStrings</a> ()</td></tr>
@@ -1318,6 +1322,22 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="afe38f2f2e0126482db788e4525db79c7"></a><!-- doxytag: member="qtpd::Canvas::replaceObject" ref="afe38f2f2e0126482db788e4525db79c7" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a>* <a class="el" href="classqtpd_1_1_canvas.html#afe38f2f2e0126482db788e4525db79c7">qtpd::Canvas::replaceObject</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a53c64b8c89b1efa5ee1bfcd0bb364ca7"></a><!-- doxytag: member="qtpd::Canvas::resizeToObjects" ref="a53c64b8c89b1efa5ee1bfcd0bb364ca7" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -1558,6 +1578,31 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a18731398b2b475020f5b3aecb4ae70d5"></a><!-- doxytag: member="qtpd::Canvas::selectObject" ref="a18731398b2b475020f5b3aecb4ae70d5" args="(UIObject *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas.html#a18731398b2b475020f5b3aecb4ae70d5">qtpd::Canvas::selectObject</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>selects single box. mostly used by replace object routine in objectmaker </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a568043530f92b63eabe042a0ed52a464"></a><!-- doxytag: member="qtpd::Canvas::setDrawStyle" ref="a568043530f92b63eabe042a0ed52a464" args="(canvasDrawStyle ds)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1685,6 +1730,23 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a3687104c5241626dccbc5fbfb776d3ac"></a><!-- doxytag: member="qtpd::Canvas::setReplaceObject" ref="a3687104c5241626dccbc5fbfb776d3ac" args="(UIObject *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas.html#a3687104c5241626dccbc5fbfb776d3ac">qtpd::Canvas::setReplaceObject</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td><code> [inline, slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a4a995dde87ee58fb8cac0896053cca9c"></a><!-- doxytag: member="qtpd::Canvas::setSubcanvas" ref="a4a995dde87ee58fb8cac0896053cca9c" args="(UIObject *obj)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1767,7 +1829,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 16 2017 08:25:54 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 16 2017 10:59:10 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -33,6 +33,7 @@ var searchData=
   ['removewrapperpointer',['removeWrapperPointer',['../class_python_qt_private.html#a42ba4addddc857f97be772ba8266f095',1,'PythonQtPrivate']]],
   ['replaceall',['replaceAll',['../classceammc_1_1_atom_list.html#a1096c4f7a09680eefbf355e8e6edec92',1,'ceammc::AtomList::replaceAll(const Atom &amp;old_value, const Atom &amp;new_value)'],['../classceammc_1_1_atom_list.html#a1168817ee92f71a5f2906b88e7ef60bf',1,'ceammc::AtomList::replaceAll(AtomPredicate pred, const Atom &amp;new_value)']]],
   ['replaceextension',['replaceExtension',['../class_python_qt_import.html#a7075e311c5609a1ded0503bbe717608d',1,'PythonQtImport']]],
+  ['replaceobject',['replaceObject',['../classqtpd_1_1_canvas.html#afe38f2f2e0126482db788e4525db79c7',1,'qtpd::Canvas']]],
   ['resizebox',['resizeBox',['../classqtpd_1_1_u_i_object.html#ab8d2e6ae05d2f3521a9a7841dc8c6c59',1,'qtpd::UIObject']]],
   ['resizeboxevent',['resizeBoxEvent',['../classqtpd_1_1_size_box.html#a430703b08f8ae796cfeddf05f83a606b',1,'qtpd::SizeBox']]],
   ['resizeclip',['resizeClip',['../classceammc_1_1_atom_list.html#a71c714e98fc5bf14b289b4b5ba961f66',1,'ceammc::AtomList']]],
