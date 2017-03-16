@@ -17,7 +17,7 @@ var searchData=
   ['nameddatadict',['NamedDataDict',['../classceammc_1_1_named_data_dict.html',1,'ceammc']]],
   ['nameddatadict',['NamedDataDict',['../classceammc_1_1_named_data_dict.html#a5a681add645bc32edae2d4d728d59b23',1,'ceammc::NamedDataDict']]],
   ['nameddatadict_3c_20bpf_20_3e',['NamedDataDict< BPF >',['../classceammc_1_1_named_data_dict.html',1,'ceammc']]],
-  ['names',['names',['../struct__stmt.html#a327c974801f9e0353286c61d1892069f',1,'_stmt::names()'],['../classqtpd_1_1_property_list.html#a74b6f3f764fbdeae91515eb8a44d415e',1,'qtpd::PropertyList::names()'],['../code_8h.html#a6d70b6a7be698d5bd5953a831fc49278',1,'names():&#160;code.h']]],
+  ['names',['names',['../struct__stmt.html#a327c974801f9e0353286c61d1892069f',1,'_stmt::names()'],['../classqtpd_1_1_property_list.html#a74b6f3f764fbdeae91515eb8a44d415e',1,'qtpd::PropertyList::names()'],['../classpy_qtpd.html#a395c6cab1655219424f3379fa0910b39',1,'pyQtpd::names()'],['../code_8h.html#a6d70b6a7be698d5bd5953a831fc49278',1,'names():&#160;code.h']]],
   ['nametotype',['nameToType',['../class_python_qt_method_info.html#ad335951f28db8181cf16e7250d55eb58',1,'PythonQtMethodInfo']]],
   ['nb_5fabsolute',['nb_absolute',['../struct_py_number_methods.html#aacd0b9091af25d0b001c7ae955f01242',1,'PyNumberMethods']]],
   ['nb_5fadd',['nb_add',['../struct_py_number_methods.html#ada624d95704d8ec3491a6e6473b5c6af',1,'PyNumberMethods']]],

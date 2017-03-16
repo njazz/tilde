@@ -35,6 +35,7 @@ var searchData=
   ['getobjectboxes',['getObjectBoxes',['../classqtpd_1_1_canvas.html#afc29b6bc7fa53af813e8fc5a3531215e',1,'qtpd::Canvas']]],
   ['getobjectbyindex',['getObjectByIndex',['../classqtpd_1_1_canvas.html#ad52070b113de5af28265adc503653c77',1,'qtpd::Canvas']]],
   ['getobjects',['getObjects',['../classqtpd_1_1_clipboard.html#a1135b1401321ec1e5e183a4c547cb0c3',1,'qtpd::Clipboard']]],
+  ['getp',['getP',['../classpy_qtpd.html#a8f6268ac3a981a909c75670781d9b1a3',1,'pyQtpd']]],
   ['getparameterinfoformetatype',['getParameterInfoForMetaType',['../class_python_qt_method_info.html#a0c1b1e309d02a23af632d7dc796b66a3',1,'PythonQtMethodInfo']]],
   ['getpatchcords',['getPatchcords',['../classqtpd_1_1_clipboard.html#a4fe94512251a0a645fd1e5325bb309b5',1,'qtpd::Clipboard']]],
   ['getpdnames',['getPDNames',['../classqtpd_1_1_object_loader.html#ac8178b634c3a288d2bca6bbe6f0f7f7b',1,'qtpd::ObjectLoader']]],

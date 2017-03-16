@@ -59,6 +59,7 @@ var searchData=
   ['resizeclip',['resizeClip',['../classceammc_1_1_atom_list.html#a71c714e98fc5bf14b289b4b5ba961f66',1,'ceammc::AtomList']]],
   ['resizeevent',['resizeEvent',['../classqtpd_1_1_u_i_object.html#a3de7a23b299266ae217a9de648be0f69',1,'qtpd::UIObject::resizeEvent()'],['../classqtpd_1_1_u_i_bang.html#a2a4be37f2bd169cc8d45cab495dabf89',1,'qtpd::UIBang::resizeEvent()'],['../classqtpd_1_1_u_i_script.html#a48da7abf987780e65ad484544d509320',1,'qtpd::UIScript::resizeEvent()'],['../classqtpd_1_1_u_i_toggle.html#a455a905280111bead2c59ba14583ee96',1,'qtpd::UIToggle::resizeEvent()'],['../classqtpd_1_1_patch_window.html#a052925707ea4568b1f8459cd28903ced',1,'qtpd::PatchWindow::resizeEvent()']]],
   ['resizefold',['resizeFold',['../classceammc_1_1_atom_list.html#affcd5155d3a62f3dc85ff9a681c950b6',1,'ceammc::AtomList']]],
+  ['resizeobject',['resizeObject',['../classpy_qtpd.html#a55225e4f535e8fbade4682cf78b8cb43',1,'pyQtpd']]],
   ['resizepad',['resizePad',['../classceammc_1_1_atom_list.html#ab91234569833c2bb0fa84a61ed213f6f',1,'ceammc::AtomList']]],
   ['resizetoobjects',['resizeToObjects',['../classqtpd_1_1_canvas.html#a53c64b8c89b1efa5ee1bfcd0bb364ca7',1,'qtpd::Canvas']]],
   ['resizewrap',['resizeWrap',['../classceammc_1_1_atom_list.html#a23545b17ba643821473e4094abc20d52',1,'ceammc::AtomList']]],

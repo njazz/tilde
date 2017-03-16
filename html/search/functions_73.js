@@ -61,6 +61,7 @@ var searchData=
   ['setobject',['setObject',['../class_python_qt_object_ptr.html#a36bac469bd9fd03c3af7f492b67ee35d',1,'PythonQtObjectPtr']]],
   ['setobjectdata',['setObjectData',['../classqtpd_1_1_canvas.html#adfcac398bb47f15aee737ab9268c66da',1,'qtpd::Canvas::setObjectData()'],['../classqtpd_1_1_u_i_object.html#a84c139bd000a8cf46f76f25204dbe554',1,'qtpd::UIObject::setObjectData()']]],
   ['setoutletspos',['setOutletsPos',['../classqtpd_1_1_u_i_object.html#a0f7e507f8949b1a58bf343279a488c44',1,'qtpd::UIObject']]],
+  ['setp',['setP',['../classpy_qtpd.html#a1da9ce1e0b3bd13bfe218488c2b41424',1,'pyQtpd']]],
   ['setparent',['setParent',['../class_python_qt_std_decorators.html#aaebb6b2d89cd3cdd1a13017891debcef',1,'PythonQtStdDecorators']]],
   ['setpatchcordtype',['setPatchcordType',['../classqtpd_1_1_patchcord.html#a1b5fb2d27b98da2e715060294b0599d7',1,'qtpd::Patchcord']]],
   ['setpdmessage',['setPdMessage',['../classqtpd_1_1_u_i_box.html#a16dee99b84a8e287a0514d1cc74aad91',1,'qtpd::UIBox::setPdMessage()'],['../classqtpd_1_1_u_i_float.html#a7186d0f54f3fc3bdfa6fa15fc625785a',1,'qtpd::UIFloat::setPdMessage()'],['../classqtpd_1_1_u_i_message.html#a04d74f123baca95b5c62b6390ef6e2d5',1,'qtpd::UIMessage::setPdMessage()'],['../classqtpd_1_1_u_i_script.html#a442705767a41a4063fb96f4637b99c62',1,'qtpd::UIScript::setPdMessage()'],['../classqtpd_1_1_u_i_text.html#a5ce5e9a1342d499b7702d7ec8cbddfb6',1,'qtpd::UIText::setPdMessage()'],['../classqtpd_1_1_u_i_toggle.html#a1d28fb09ceb4720c50ede4bc10d1bb10',1,'qtpd::UIToggle::setPdMessage()']]],
