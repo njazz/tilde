@@ -354,7 +354,7 @@ public:
 
         ret = "#X obj ";
         ret += std::to_string(this->x()) + " " + std::to_string(this->y())+ " ";
-        ret += this->pdObjectName_+ this->objectData_ + this->properties_.asPdFileString();
+        ret += this->pdObjectName_+ " "+ this->objectData_ + this->properties_.asPdFileString();
 
         return ret;
     }
@@ -450,6 +450,11 @@ public:
             this->subpatchWindow()->hide();
             delete this->SubpatchWindow_;
         }
+    }
+
+    void hideSizeBox()
+    {
+        sizeBox->hide();
     }
 
     //    virtual ~UIObject()

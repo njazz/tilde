@@ -6,6 +6,10 @@
 #include "cm_object.h"
 #include "cm_port.h"
 
+#include "PythonQt.h"
+
+#include <QFileDialog>
+
 //#include "cm_pdlink.h"
 
 namespace qtpd
@@ -70,7 +74,7 @@ public:
     void resizeEvent(QResizeEvent *event)
     {
         editor_->setFixedWidth(width()-5);
-        editor_->setFixedHeight(height()-5);
+        editor_->setFixedHeight(height()-25);
     }
 
     ///////////////////
@@ -137,27 +141,27 @@ public:
     void setPdMessage(std::string message)
     {
         this->setObjectData(message);
-//        this->autoResize();
+        //        this->autoResize();
 
-//        QFont myFont(PREF_QSTRING("Font"), 11);
-//        QFontMetrics fm(myFont);
-//        QString text = QString(this->editor_->document()->toPlainText());
-//        int new_w = fm.width(text) + 20;
-//        new_w = (new_w<25) ? 25 : new_w;
+        //        QFont myFont(PREF_QSTRING("Font"), 11);
+        //        QFontMetrics fm(myFont);
+        //        QString text = QString(this->editor_->document()->toPlainText());
+        //        int new_w = fm.width(text) + 20;
+        //        new_w = (new_w<25) ? 25 : new_w;
 
-//        int new_h = fm.boundingRect(QRect(0,0,new_w,100), 0, text).height() + 7 ;
+        //        int new_h = fm.boundingRect(QRect(0,0,new_w,100), 0, text).height() + 7 ;
 
-//        new_h = (new_h<25) ? 25 : new_h;
+        //        new_h = (new_h<25) ? 25 : new_h;
 
-//        this->setFixedWidth(new_w);
-//        this->setFixedHeight(new_h);
+        //        this->setFixedWidth(new_w);
+        //        this->setFixedHeight(new_h);
 
-//        this->editor_->setFixedWidth(this->width()-1);
-//        this->editor_->setFixedHeight(this->height()-2);
+        //        this->editor_->setFixedWidth(this->width()-1);
+        //        this->editor_->setFixedHeight(this->height()-2);
 
-//        this->editor_->hide();
+        //        this->editor_->hide();
 
-        setFixedSize(200,150);
+        setFixedSize(300,200);
     }
 
     static void updateUI(void* uiobj, ceammc::AtomList msg)
@@ -209,11 +213,99 @@ public:
 
     }
 
+
 signals:
 
 private slots:
     void editorDone();
     void editorChanged();
+
+    void btnRun(){
+        //PythonQt
+
+        PythonQtObjectPtr _context = PythonQt::self()->getMainModule();
+        QString _stdOut = "";
+        QString _stdErr = "";
+        PythonQtObjectPtr p;
+        PyObject* dict = NULL;
+        if (PyModule_Check(_context)) {
+            dict = PyModule_GetDict(_context);
+        } else if (PyDict_Check(_context)) {
+            dict = _context;
+        }
+
+
+        QStringList list = editor_->document()->toPlainText().split(QRegExp("[\r\n]"),QString::SkipEmptyParts);
+
+       // while (true)
+        for (QStringList::iterator it = list.begin(); it!= list.end(); ++it)
+        {
+            QString line = *it;
+            if (line.isNull())
+                break;
+
+
+            if (dict) {
+                p.setNewRef(PyRun_String(line.toLatin1().data(), Py_single_input, dict, dict));
+                //qDebug() << editor_->document()->toPlainText().toLatin1().data();
+            }
+
+            if (!p) {
+                PythonQt::self()->handleError();
+            }
+
+            if (_stdOut!="")
+            {
+
+                cmp_post((std::string)"Python: "+ _stdOut.toStdString());
+            }
+            if (_stdErr!="")
+            {
+                cmp_post((std::string)"Python error: "+ _stdOut.toStdString());
+            }
+
+
+        }
+    }
+
+    void btnLoad()
+    {
+        QString fname = QFileDialog::getOpenFileName(0,QString("Open Python script"), QString("~/"), QString("*.py"), 0, 0);
+        if (fname!="")
+        {
+            QFile file(fname);
+
+            file.open(QFile::ReadOnly | QFile::Text);
+
+            QTextStream ReadFile(&file);
+            editor_->document()->setPlainText(ReadFile.readAll());
+            file.close();
+        }
+
+    }
+
+    void btnSave()
+    {
+        QString fname = QFileDialog::getSaveFileName(0,QString("Save Python script"), QString("~/"), QString("*.py"), 0, 0);
+        if (fname!="")
+        {
+            QFile file(fname);
+
+            file.open(QFile::WriteOnly | QFile::Text);
+
+            //QTextStream ReadFile(&file);
+            //editor_->setText(ReadFile.readAll());
+            QTextStream WriteFile(&file);
+            WriteFile << editor_->document()->toPlainText();
+            file.close();
+        }
+
+    }
+
+    void btnClear()
+    {
+        editor_->clear();
+    }
 
 };
 
