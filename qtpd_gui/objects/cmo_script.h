@@ -34,8 +34,14 @@ public:
     {
         UIScript* b = new UIScript((UIObject*)parent);
         //temporary
-        b->setObjectData(objectData);
+        std::string data1 = b->properties()->extractFromPdFileString(objectData);
+        b->setObjectData(data1);
         b->autoResize();
+
+        // the zoo lol
+        QString data = b->properties()->get("Script")->asQString().split("\\n").join("\n");
+        b->editor_->document()->setPlainText(data);
+
         return (UIObject*) b;
     };
 

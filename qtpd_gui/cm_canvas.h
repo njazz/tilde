@@ -910,7 +910,7 @@ public:
         obj->move(pos);
         this->data_.boxes_.push_back(obj);
 
-        obj->properties()->extractFromPdFileString(objectData1);
+
 
         obj->show();
 

@@ -105,12 +105,16 @@ public:
 
     ////
     /// \brief extract properties from string in pd file
-    /// \details
+    /// \details returns first part of the string before the first property
     /// \return
     ///
-    void extractFromPdFileString(std::string input)
+    std::string extractFromPdFileString(std::string input)
     {
         QStringList propertyList = QString(input.c_str()).split("@");
+
+        QString ret = propertyList.at(0);
+
+        propertyList.removeAt(0);
 
         qDebug() << "plist" << propertyList;
 
@@ -135,6 +139,8 @@ public:
 
             // TODO! property type should be saved
         }
+
+        return ret.toStdString();
 
     }
 

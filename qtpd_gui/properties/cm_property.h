@@ -103,7 +103,9 @@ public:
             for (int i=0; i<data_.size(); i++)
             {
 
-                ret += data_.at(i).asString() + "\\n";
+                // + "\\n" was removed, for multi-line text we need extra fix. whould be rewritten with type system
+                ret += data_.at(i).asString() + " " ;
+
             }
 
         }
