@@ -98,6 +98,11 @@ Public Slots</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_patch_window.html">PatchWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpy_qtpd.html#afd7aa8f27aebd53ff72da455d3034eb3">newPatchWindow</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_canvas.html">Canvas</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpy_qtpd.html#a9a0fc2ae5eadf69a0d741d1862694a89">canvasForWindow</a> (<a class="el" href="classqtpd_1_1_patch_window.html">PatchWindow</a> *w)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpy_qtpd.html#a89bb19f71767f19ece5cc72a01cd7522">createObject</a> (<a class="el" href="classqtpd_1_1_canvas.html">Canvas</a> *c, QString obj_name, QString obj_data, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> y)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpy_qtpd.html#a98433873caf75324211148ee5d21cab7">moveObject</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> y)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpy_qtpd.html#af564fe7475b8e63b0b36afcf676f2851">deleteObjectInCanvas</a> (<a class="el" href="classqtpd_1_1_canvas.html">Canvas</a> *c, <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpy_qtpd.html#af01593610304fc54d0f5669ba197e52f">patchcord</a> (<a class="el" href="classqtpd_1_1_canvas.html">Canvas</a> *c, <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *obj1, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> out1, <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *obj2, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> in2)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpy_qtpd.html#a246aded00da17ed45c2c8663554f2acb">addInlet</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpy_qtpd.html#ab21964936d56c8f5ec4fae91740a3551">addOutlet</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpy_qtpd.html#a7d872f35b122c034666c5e3e6f1f351b">pyQtpd</a> (QObject *parent=0)</td></tr>
@@ -121,6 +126,40 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a246aded00da17ed45c2c8663554f2acb"></a><!-- doxytag: member="pyQtpd::addInlet" ref="a246aded00da17ed45c2c8663554f2acb" args="(UIObject *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classpy_qtpd.html#a246aded00da17ed45c2c8663554f2acb">pyQtpd::addInlet</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td><code> [inline, slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab21964936d56c8f5ec4fae91740a3551"></a><!-- doxytag: member="pyQtpd::addOutlet" ref="ab21964936d56c8f5ec4fae91740a3551" args="(UIObject *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classpy_qtpd.html#ab21964936d56c8f5ec4fae91740a3551">pyQtpd::addOutlet</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td><code> [inline, slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a9a0fc2ae5eadf69a0d741d1862694a89"></a><!-- doxytag: member="pyQtpd::canvasForWindow" ref="a9a0fc2ae5eadf69a0d741d1862694a89" args="(PatchWindow *w)" -->
 <div class="memitem">
 <div class="memproto">
@@ -183,6 +222,33 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="af564fe7475b8e63b0b36afcf676f2851"></a><!-- doxytag: member="pyQtpd::deleteObjectInCanvas" ref="af564fe7475b8e63b0b36afcf676f2851" args="(Canvas *c, UIObject *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classpy_qtpd.html#af564fe7475b8e63b0b36afcf676f2851">pyQtpd::deleteObjectInCanvas</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_canvas.html">Canvas</a> *&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a68e389ac9d8ed3f8fc4e48ac8e44b0cc"></a><!-- doxytag: member="pyQtpd::getMainModule" ref="a68e389ac9d8ed3f8fc4e48ac8e44b0cc" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -199,6 +265,39 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a98433873caf75324211148ee5d21cab7"></a><!-- doxytag: member="pyQtpd::moveObject" ref="a98433873caf75324211148ee5d21cab7" args="(UIObject *obj, int x, int y)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classpy_qtpd.html#a98433873caf75324211148ee5d21cab7">pyQtpd::moveObject</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="afd7aa8f27aebd53ff72da455d3034eb3"></a><!-- doxytag: member="pyQtpd::newPatchWindow" ref="afd7aa8f27aebd53ff72da455d3034eb3" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -208,6 +307,51 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [inline, slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af01593610304fc54d0f5669ba197e52f"></a><!-- doxytag: member="pyQtpd::patchcord" ref="af01593610304fc54d0f5669ba197e52f" args="(Canvas *c, UIObject *obj1, int out1, UIObject *obj2, int in2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classpy_qtpd.html#af01593610304fc54d0f5669ba197e52f">pyQtpd::patchcord</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_canvas.html">Canvas</a> *&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td>
+          <td class="paramname"><em>obj1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramname"><em>out1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td>
+          <td class="paramname"><em>obj2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramname"><em>in2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, slot]</code></td>
         </tr>
       </table>
 </div>
@@ -236,7 +380,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 15 2017 20:07:54 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 16 2017 08:25:54 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

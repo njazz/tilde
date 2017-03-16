@@ -111,7 +111,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00030"></a>00030         <a class="code" href="classqtpd_1_1_u_i_float.html" title="gui object: float number box (ui.float)">UIFloat</a>* b = <span class="keyword">new</span> <a class="code" href="classqtpd_1_1_u_i_float.html#ae13e2b229f7ed74976fb3d2acdda2612">UIFloat</a>((<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*)parent);
 <a name="l00031"></a>00031 
 <a name="l00032"></a>00032         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a84c139bd000a8cf46f76f25204dbe554" title="sets object text data">setObjectData</a>(objectData);
-<a name="l00033"></a>00033         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a1c7d66be6089715aaf5c03adb64a915b" title="call this after setting object data">autoResize</a>();
+<a name="l00033"></a>00033         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a892b786c203b2d73fd9eaafd767a39a1" title="call this after setting object data">autoResize</a>();
 <a name="l00034"></a>00034 
 <a name="l00035"></a>00035         <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> message = <span class="stringliteral">&quot;ui.float&quot;</span>;
 <a name="l00036"></a>00036 
@@ -138,8 +138,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00057"></a>00057 
 <a name="l00058"></a>00058         b-&gt;<a class="code" href="classqtpd_1_1_u_i_float.html#a7186d0f54f3fc3bdfa6fa15fc625785a">setPdMessage</a>(objectData.c_str());
 <a name="l00059"></a>00059 
-<a name="l00060"></a>00060         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a82f2402eac0e1f7e17cf767a658ffa4f" title="adds single inlet (cm_port)">addInlet</a>();
-<a name="l00061"></a>00061         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a935156fec3fd59c05525f046bafb3ebc" title="adds single outlet (cm_port)">addOutlet</a>();
+<a name="l00060"></a>00060         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a0c6902a1971a5cca5c2e414deb01eb79" title="adds single inlet (cm_port)">addInlet</a>();
+<a name="l00061"></a>00061         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#afc6d92ac51f2a6ba19dbba707b1c97cf" title="adds single outlet (cm_port)">addOutlet</a>();
 <a name="l00062"></a>00062 
 <a name="l00063"></a>00063 
 <a name="l00064"></a>00064         <span class="keywordflow">return</span> (<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*) b;
@@ -229,7 +229,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00149"></a>00149         {
 <a name="l00150"></a>00150             <span class="comment">//todo fix</span>
 <a name="l00151"></a>00151             this-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a84c139bd000a8cf46f76f25204dbe554" title="sets object text data">setObjectData</a>( <a class="code" href="ui__bpfunc_8cpp.html#a3a3e9d4cf73114c8e5198225ca65269e">std::to_string</a>( ::atof(this-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447" title="gets object text data /usually overriden by ui objects/">objectData</a>().c_str()) - event-&gt;pos().y() + this-&gt;startY) );  <span class="comment">//- this-&gt;startY</span>
-<a name="l00152"></a>00152             this-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a1c7d66be6089715aaf5c03adb64a915b" title="call this after setting object data">autoResize</a>();
+<a name="l00152"></a>00152             this-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a892b786c203b2d73fd9eaafd767a39a1" title="call this after setting object data">autoResize</a>();
 <a name="l00153"></a>00153             this-&gt;startY = <span class="keyword">event</span>-&gt;pos().y();
 <a name="l00154"></a>00154 
 <a name="l00155"></a>00155             <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> send = <span class="stringliteral">&quot;set &quot;</span> + this-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447" title="gets object text data /usually overriden by ui objects/">objectData</a>();
@@ -258,7 +258,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00179"></a><a class="code" href="classqtpd_1_1_u_i_float.html#a7186d0f54f3fc3bdfa6fa15fc625785a">00179</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_float.html#a7186d0f54f3fc3bdfa6fa15fc625785a">setPdMessage</a>(<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> message)
 <a name="l00180"></a>00180     {
 <a name="l00181"></a>00181         this-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a84c139bd000a8cf46f76f25204dbe554" title="sets object text data">setObjectData</a>(message);
-<a name="l00182"></a>00182         this-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a1c7d66be6089715aaf5c03adb64a915b" title="call this after setting object data">autoResize</a>();
+<a name="l00182"></a>00182         this-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a892b786c203b2d73fd9eaafd767a39a1" title="call this after setting object data">autoResize</a>();
 <a name="l00183"></a>00183 
 <a name="l00184"></a>00184         QFont myFont(<a class="code" href="cm__preferences_8h.html#a3f95dcdc217e1a88365c8306beaf1c72">PREF_QSTRING</a>(<span class="stringliteral">&quot;Font&quot;</span>), 11);
 <a name="l00185"></a>00185         QFontMetrics fm(myFont);
@@ -296,7 +296,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00217"></a>00217         <span class="keywordflow">if</span> (msg.<a class="code" href="classceammc_1_1_atom_list.html#ad52fdc5b4f54329460495caa1b00d1ac">size</a>()&gt;0)
 <a name="l00218"></a>00218         {
 <a name="l00219"></a>00219             x-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a84c139bd000a8cf46f76f25204dbe554" title="sets object text data">setObjectData</a>(msg.<a class="code" href="classceammc_1_1_atom_list.html#aa2d99dac15a5a5fe7afa41a38f2aeece" title="returns reference to element at specified position">at</a>(0).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>());
-<a name="l00220"></a>00220             x-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a1c7d66be6089715aaf5c03adb64a915b" title="call this after setting object data">autoResize</a>();
+<a name="l00220"></a>00220             x-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a892b786c203b2d73fd9eaafd767a39a1" title="call this after setting object data">autoResize</a>();
 <a name="l00221"></a>00221             x-&gt;repaint();
 <a name="l00222"></a>00222 
 <a name="l00223"></a>00223         }
@@ -338,7 +338,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 15 2017 20:07:53 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 16 2017 08:25:53 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

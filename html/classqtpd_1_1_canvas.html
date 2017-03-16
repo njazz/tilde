@@ -141,6 +141,7 @@ Public Slots</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a83af5295678ba3687f02189504528cc4">cancelPatchcord</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">cancels patchcord creation  <a href="#a83af5295678ba3687f02189504528cc4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_object_maker.html">ObjectMaker</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a54c7fff0e9d9b68051ed2e4a4fb1d625">objectMaker</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a4d62a7174f8926ab7d1c49834cae52dd">portLocalCountUpdated</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="signals"></a>
 Signals</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::pair&lt; QMainWindow <br class="typebreak"/>
@@ -149,6 +150,10 @@ Signals</h2></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a7a5f30a6659863e1f22cc51e0ced3428">Canvas</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a776b49f0d9a67375d2129744a8da227a">addInlet</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">adds single inlet (cm_port)  <a href="#a776b49f0d9a67375d2129744a8da227a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a72af9c21137b434e7dc4ce465d565f27">addOutlet</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">adds single outlet (cm_port)  <a href="#a72af9c21137b434e7dc4ce465d565f27"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a568043530f92b63eabe042a0ed52a464">setDrawStyle</a> (<a class="el" href="namespaceqtpd.html#a51dac42fa81d20e97ba8568fe7fae06d">canvasDrawStyle</a> ds)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">set draw style  <a href="#a568043530f92b63eabe042a0ed52a464"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#a51dac42fa81d20e97ba8568fe7fae06d">canvasDrawStyle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a5b19011ca274ff736aac6f5641379e59">drawStyle</a> ()</td></tr>
@@ -199,6 +204,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates patchcord, uses pointers to inlets/outlets. TODO temporary?  <a href="#ad699a19f9fa92dee170f31a1f507bc9c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#ac30f0f6774cab9985dbb384ae436ca1a">deletePatchcordsFor</a> (<a class="el" href="classqtpd_1_1_u_i_widget.html">UIWidget</a> *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete all patchcords for object  <a href="#ac30f0f6774cab9985dbb384ae436ca1a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a54ae5b1d5352bcce723481073db40647">deleteBox</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *box)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete single box  <a href="#a54ae5b1d5352bcce723481073db40647"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a6e1c926dcc12807478e7af475c8276b3">delBoxes</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete all selected object boxes  <a href="#a6e1c926dcc12807478e7af475c8276b3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#af8e0dde6555249f775562b2cd4ab02bd">delSelectedPatchcords</a> ()</td></tr>
@@ -262,6 +269,61 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a776b49f0d9a67375d2129744a8da227a"></a><!-- doxytag: member="qtpd::Canvas::addInlet" ref="a776b49f0d9a67375d2129744a8da227a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas.html#a776b49f0d9a67375d2129744a8da227a">qtpd::Canvas::addInlet</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>adds single inlet (cm_port) </p>
+<p>overriden by canvas to hide ports in canvas view </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idx</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#a0c6902a1971a5cca5c2e414deb01eb79">qtpd::UIObject</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a72af9c21137b434e7dc4ce465d565f27"></a><!-- doxytag: member="qtpd::Canvas::addOutlet" ref="a72af9c21137b434e7dc4ce465d565f27" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas.html#a72af9c21137b434e7dc4ce465d565f27">qtpd::Canvas::addOutlet</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>adds single outlet (cm_port) </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idx</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#afc6d92ac51f2a6ba19dbba707b1c97cf">qtpd::UIObject</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a717fda819ac6e2fd85b44ac8221b71fb"></a><!-- doxytag: member="qtpd::Canvas::asPdFileString" ref="a717fda819ac6e2fd85b44ac8221b71fb" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -461,6 +523,25 @@ Public Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>delete all selected object boxes </p>
+
+</div>
+</div>
+<a class="anchor" id="a54ae5b1d5352bcce723481073db40647"></a><!-- doxytag: member="qtpd::Canvas::deleteBox" ref="a54ae5b1d5352bcce723481073db40647" args="(UIObject *box)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas.html#a54ae5b1d5352bcce723481073db40647">qtpd::Canvas::deleteBox</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td>
+          <td class="paramname"><em>box</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>delete single box </p>
 
 </div>
 </div>
@@ -1221,6 +1302,22 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a4d62a7174f8926ab7d1c49834cae52dd"></a><!-- doxytag: member="qtpd::Canvas::portLocalCountUpdated" ref="a4d62a7174f8926ab7d1c49834cae52dd" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas.html#a4d62a7174f8926ab7d1c49834cae52dd">qtpd::Canvas::portLocalCountUpdated</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a53c64b8c89b1efa5ee1bfcd0bb364ca7"></a><!-- doxytag: member="qtpd::Canvas::resizeToObjects" ref="a53c64b8c89b1efa5ee1bfcd0bb364ca7" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -1670,7 +1767,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 15 2017 20:07:54 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 16 2017 08:25:54 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
