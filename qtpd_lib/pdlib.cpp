@@ -464,6 +464,11 @@ void cmp_sendstring(t_pd* obj, std::string msg)
 
 }
 
+void cmp_post(std::string text)
+{
+    post("%s", text.c_str());
+}
+
 void cmp_connectUI(t_pd* obj, void* uiobj, t_updateUI func)
 {
     // fix that

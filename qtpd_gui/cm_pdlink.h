@@ -173,6 +173,13 @@ void cmp_sendstring(t_pd* obj, std::string msg);
 void cmp_connectUI(t_pd* obj, void* uiobj, t_updateUI func);
 
 
+////
+/// \brief post plain text to Pd window
+/// \param text
+///
+void cmp_post(std::string text);
+
+
 ///////
 
 

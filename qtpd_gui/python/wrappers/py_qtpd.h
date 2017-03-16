@@ -2,6 +2,7 @@
 #define PY_QTPD_H
 
 #include <QObject>
+#include <QString>
 
 #include <PythonQt.h>
 
@@ -41,7 +42,25 @@ public Q_SLOTS:
         return c->createObject(obj_name.toStdString(),obj_data.toStdString(), QPoint(x,y));
     }
 
-    void moveObject (UIObject* obj, int x, int y)
+    //////////
+    // edit
+
+    void selectObject(Canvas* c, UIObject* obj)
+    {
+        c->selectBox(obj);
+    }
+
+    void selectAll(Canvas* c)
+    {
+        c->selectAll();
+    }
+
+    void deselectAll(Canvas* c)
+    {
+        c->deselectBoxes();
+    }
+
+    void moveObject(UIObject* obj, int x, int y)
     {
         obj->move(x,y);
     }
@@ -70,6 +89,26 @@ public Q_SLOTS:
         if (obj)
             obj->addOutlet();
     }
+
+    //////////
+    // pdLib
+
+    void startDsp()
+    {
+        cmp_switch_dsp(true);
+    }
+
+    void stopDsp()
+    {
+        cmp_switch_dsp(false);
+    }
+
+    void post(QString msg)
+    {
+        cmp_post(msg.toStdString());
+    }
+
+
 
 
 };

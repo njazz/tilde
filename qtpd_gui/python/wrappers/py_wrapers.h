@@ -17,8 +17,8 @@ void pyWrappersInit()
     static pyTestClass _pyTestClass;
     mainContext.addObject("testClass", &_pyTestClass);
 
-    static pyPdLib _pyPdLib;
-    mainContext.addObject("pdLib", &_pyPdLib);
+//    static pyPdLib _pyPdLib;
+//    mainContext.addObject("pdLib", &_pyPdLib);
 
     static pyQtpd _pyQtpd;
     mainContext.addObject("Qtpd", &_pyQtpd);

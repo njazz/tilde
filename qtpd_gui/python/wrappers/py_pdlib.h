@@ -10,6 +10,7 @@
 ////
 /// \brief Temporary. wrapper for c functions - for future Python API
 /// \details needs changes
+/// \deprecated all useful stuff will be moved to main 'Qtpd' pythn class
 ///
 class pyPdLib : public QObject
 {

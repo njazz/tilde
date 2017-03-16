@@ -92,8 +92,8 @@ PdWindow::PdWindow() :
 
     ui->log->setColumnWidth(0,70);
 
-    this->cm_post("qtpd started");
-    this->cm_post("---");
+//    this->cm_post("qtpd started");
+//    this->cm_post("---");
 
 
 }

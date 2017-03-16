@@ -52,6 +52,9 @@ int main(int argc, char *argv[])
     pdw->move(0,100);
     pdw->show();
 
+    cmp_post("qtpd started");
+    cmp_post("---");
+
 
 
     //temporary
