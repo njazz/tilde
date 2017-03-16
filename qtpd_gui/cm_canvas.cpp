@@ -55,7 +55,7 @@ Canvas::Canvas(UIObject *parent) : UIObject(parent)
     //
     this->setMinimumBoxWidth(40);
 
-    replaceObject = 0;
+    replaceObject_ = 0;
 
 
 

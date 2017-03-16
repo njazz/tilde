@@ -143,7 +143,8 @@ public:
 //            this->editor_->show();
 //            this->editor_->setFocus();
 
-            emit editObject();
+            emit editObject(this);
+            return;
         }
 
         emit selectBox(this);
@@ -204,7 +205,7 @@ signals:
     void mouseMoved();
     void rightClicked();
 
-    void editObject();
+    //void editObject(UIObject* box);
 
 
 private slots:

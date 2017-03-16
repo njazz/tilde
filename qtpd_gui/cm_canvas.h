@@ -62,7 +62,7 @@ private:
     UIObject *connObj1;
     UIObject *connOutlet;
     //
-    UIObject *replaceObject;
+    UIObject *replaceObject_;
 
     // local, !Box
     QPoint newObjectPos;
@@ -249,8 +249,8 @@ public:
         p.setRenderHint(QPainter::HighQualityAntialiasing, true);
 
         {
-            p.setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-            p.drawRect(0, 2, this->width(), this->height()-4);
+            p.setPen(QPen(QColor(192, 192, 192), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p.drawRect(0, 1, this->width(), this->height()-2);
         }
 
         QColor rectColor = (this->errorBox())? QColor(255, 0, 0) : QColor(128, 128, 128);
@@ -927,6 +927,8 @@ public:
             }
         }
 
+        connect(obj,&UIObject::editObject,this,&Canvas::objectStartsEdit);
+
         return obj;
     }
 
@@ -1505,6 +1507,16 @@ public:
 
     }
 
+
+    ////
+    /// \brief selects single box. mostly used by replace object routine in objectmaker
+    /// \param obj
+    ///
+    void selectObject(UIObject* obj)
+    {
+        selectionData_.boxes.push_back(obj);
+    }
+
     ////
     /// \brief change size to fit all objects
     ///
@@ -1648,6 +1660,9 @@ public slots:
 
     };
 
+    void setReplaceObject(UIObject* obj){replaceObject_ = obj;}
+    UIObject* replaceObject(){return replaceObject_;}
+
 
 private:
 
@@ -1682,6 +1697,7 @@ private slots:
             {
                 this->addOutlet();
                 qDebug("add outlet");
+
             }
 
             qDebug () << ((drawStyle()==ds_Box)?"this is box canvas":"this is canvas");
@@ -1693,6 +1709,28 @@ private slots:
 
 
     };
+
+
+
+    void objectStartsEdit(void* obj)
+    {
+        deselectBoxes();
+
+        qDebug("edit box>>");
+
+        replaceObject_ = (UIObject*)obj;
+
+
+
+        objectMaker()->move(replaceObject_->pos());
+        objectMaker()->setFixedSize(replaceObject_->size());
+        objectMaker()->setText(QString(replaceObject_->objectData().c_str()));
+        objectMaker()->setFocus();
+        //replaceObject_->hide();
+        objectMaker()->show();
+        objectMaker()->raise();
+
+    }
 
 signals:
     std::pair<QMainWindow*,qtpd::UIObject*> createSubpatchWindow();

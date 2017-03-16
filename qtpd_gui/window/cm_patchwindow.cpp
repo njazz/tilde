@@ -175,40 +175,35 @@ void PatchWindow::objectMakerDone()
 
     if (obj_name!="")
     {
-        //UIBox* b = this->canvas->createBox(obj_name, this->objectMaker->pos());
 
-        //QStringList atoms = QString(obj_name.c_str()).split( " " );
+        UIObject* new_obj = this->canvas->createObject("ui.obj", obj_name, this->canvas->objectMaker()->pos());
 
-        //        if (atoms.at(0) == "pd")
-        //        {
-        //            //new
+        if (this->canvas->replaceObject())
+        {
+            UIObject* obj = canvas->replaceObject();
 
-        //            t_canvas* newPdCanvas = cmp_newpatch();
-        //            PatchWindow *subPatch = PatchWindow::newSubpatch((t_canvas*)newPdCanvas);
+            patchcordVec cords = canvas->patchcordsForObject(obj);
 
+            patchcordVec::iterator it;
+            for (it = cords.begin(); it != cords.end(); ++it )
+            {
+                Patchcord* pc = ((Patchcord*)*it);
+                UIObject * obj1 = pc->obj1();
+                UIObject * obj2 = pc->obj2();
+                //replace
+                if (obj1==obj) obj1 = new_obj;
+                if (obj2==obj) obj2 = new_obj;
 
-        //            UIObject *b = this->canvas->createBoxForCanvas(subPatch->canvas, obj_name, this->canvas->objectMaker()->pos());
-        //            ((UIBox*)b)->cmSubcanvas = (QMainWindow*)subPatch;
+                canvas->patchcord(obj1, pc->outletIndex(), obj2, pc->inletIndex());
 
+            }
 
-        //            this->canvas->dragObject = 0;
-        //            this->canvas->objectMaker()->close();
-
-
-        //            qDebug("subpatch");
-
-
-        //            subPatch->show();
-        //        }
-        //        else
-        //        {
-
-
-        //        UIObject *b =
-
-        this->canvas->createObject("ui.obj", obj_name, this->canvas->objectMaker()->pos());
+            //canvas->selectObject(obj);
+            canvas->deleteBox(obj);
+        }
 
         this->canvas->dragObject = 0;
+        this->canvas->setReplaceObject(0);
         this->canvas->objectMaker()->close();
 
 

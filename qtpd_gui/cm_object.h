@@ -10,6 +10,7 @@
 #include "cm_pdlink.h"
 
 #include <QMainWindow>
+#include <QObject>
 
 namespace qtpd
 {
@@ -21,7 +22,8 @@ typedef std::vector<Port*> portVec;
 ///
 class UIObject : public UIWidget
 {
-    //Q_OBJECT
+    //broken, check that
+    Q_OBJECT
 
 private:
     //temporary?
@@ -41,8 +43,6 @@ private:
     SizeBox* sizeBox;
 
     PropertyList properties_;
-
-    UIObject();
 
     QMainWindow *SubpatchWindow_;
 
@@ -259,27 +259,27 @@ public:
 
     ///////
 
-//    portVec *inletRef()
-//    {
-//        return inlets_;
-//    }
+    //    portVec *inletRef()
+    //    {
+    //        return inlets_;
+    //    }
 
-//    portVec *outletRef()
-//    {
-//        return outlets_;
-//    }
+    //    portVec *outletRef()
+    //    {
+    //        return outlets_;
+    //    }
 
-//    void setInletRef(portVec* ins)
-//    {
-//        if (inlets_) delete inlets_;
-//        inlets_ = ins;
-//    }
+    //    void setInletRef(portVec* ins)
+    //    {
+    //        if (inlets_) delete inlets_;
+    //        inlets_ = ins;
+    //    }
 
-//    void setOutletRef(portVec* outs)
-//    {
-//        if (outlets_) delete outlets_;
-//        outlets_ = outs;
-//    }
+    //    void setOutletRef(portVec* outs)
+    //    {
+    //        if (outlets_) delete outlets_;
+    //        outlets_ = outs;
+    //    }
 
 
 
@@ -438,15 +438,31 @@ public:
         return this->minimumBoxWidth_;
     }
 
-
-    ~UIObject()
+    // ??
+    void hide()
     {
+
+
         if (this->subpatchWindow())
         {
+            qDebug("hide subcanvas window");
+
             this->subpatchWindow()->hide();
             delete this->SubpatchWindow_;
         }
     }
+
+    //    virtual ~UIObject()
+    //    {
+    //        if (this->subpatchWindow())
+    //        {
+    //            this->subpatchWindow()->hide();
+    //            delete this->SubpatchWindow_;
+    //        }
+    //    }
+
+signals:
+    void editObject(void* box);
 
 public slots:
     void resizeBox(int dx);
