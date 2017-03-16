@@ -128,6 +128,8 @@ Inheritance diagram for qtpd::UIScript:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script.html#ac8f3b44207c6e77ce7a89f78037a2219">UIScript</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script.html#a04147e35e14968333a9b2f95ec800db5">initProperties</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">init properties for the class - called from constructor  <a href="#a04147e35e14968333a9b2f95ec800db5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script.html#a6898e1263163eccbb4e885ddc0508d50">paintEvent</a> (QPaintEvent *)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script.html#a48da7abf987780e65ad484544d509320">resizeEvent</a> (QResizeEvent *event)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script.html#a1dbdc95d53f3710d6c9d075f37b2fb85">mousePressEvent</a> (QMouseEvent *ev)</td></tr>
@@ -136,7 +138,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script.html#a442705767a41a4063fb96f4637b99c62">setPdMessage</a> (<a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> message)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script.html#a7f505f4baa43aa02e40082517581f7d9">pdObject</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns pointer to pd object.  <a href="#a7f505f4baa43aa02e40082517581f7d9"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script.html#aef686b1ac0fb1d7ed7cd434ee8cbcfbb">eventFilter</a> (QObject *watched, QEvent *event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script.html#a25660f1d0bd3bbd053b2603e147661ce">getEditorData</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script.html#ad4a0292b6ff67e94f68e08d1a06f6616">createObject</a> (<a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="el" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447">objectData</a>, t_canvas *pdCanvas, <a class="el" href="classqtpd_1_1_u_i_widget.html">UIWidget</a> *parent=0)</td></tr>
@@ -196,30 +198,39 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aef686b1ac0fb1d7ed7cd434ee8cbcfbb"></a><!-- doxytag: member="qtpd::UIScript::eventFilter" ref="aef686b1ac0fb1d7ed7cd434ee8cbcfbb" args="(QObject *watched, QEvent *event)" -->
+<a class="anchor" id="a25660f1d0bd3bbd053b2603e147661ce"></a><!-- doxytag: member="qtpd::UIScript::getEditorData" ref="a25660f1d0bd3bbd053b2603e147661ce" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a> <a class="el" href="classqtpd_1_1_u_i_script.html#aef686b1ac0fb1d7ed7cd434ee8cbcfbb">qtpd::UIScript::eventFilter</a> </td>
+          <td class="memname">QStringList <a class="el" href="classqtpd_1_1_u_i_script.html#a25660f1d0bd3bbd053b2603e147661ce">qtpd::UIScript::getEditorData</a> </td>
           <td>(</td>
-          <td class="paramtype">QObject *&#160;</td>
-          <td class="paramname"><em>watched</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">QEvent *&#160;</td>
-          <td class="paramname"><em>event</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [inline]</code></td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a04147e35e14968333a9b2f95ec800db5"></a><!-- doxytag: member="qtpd::UIScript::initProperties" ref="a04147e35e14968333a9b2f95ec800db5" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_script.html#a04147e35e14968333a9b2f95ec800db5">qtpd::UIScript::initProperties</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>init properties for the class - called from constructor </p>
+
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#acff84cd6a31109459f0a137e1b59fb1d">qtpd::UIObject</a>.</p>
 
 </div>
 </div>
@@ -398,7 +409,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 16 2017 14:25:23 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 16 2017 19:57:33 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -135,6 +135,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_property.html">Property</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_property_list.html#a9d1a8f116b7791421fa29dd4fce58cfa">get</a> (<a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> pName)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_property_list.html#aee86b37d4b28cda7a966d5ea96eed901">asPdFileString</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns string for saving in file  <a href="#aee86b37d4b28cda7a966d5ea96eed901"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_property_list.html#a89ada354abe82e104bb9d47b0e80f3b4">extractFromPdFileString</a> (<a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> input)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">extract properties from string in pd file  <a href="#a89ada354abe82e104bb9d47b0e80f3b4"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>yet another property handling class for ui object. List </p>
@@ -213,6 +215,27 @@ template&lt;typename T &gt; </div>
       </table>
 </div>
 <div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a89ada354abe82e104bb9d47b0e80f3b4"></a><!-- doxytag: member="qtpd::PropertyList::extractFromPdFileString" ref="a89ada354abe82e104bb9d47b0e80f3b4" args="(std::string input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="el" href="classqtpd_1_1_property_list.html#a89ada354abe82e104bb9d47b0e80f3b4">qtpd::PropertyList::extractFromPdFileString</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td>
+          <td class="paramname"><em>input</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>extract properties from string in pd file </p>
+<p>returns first part of the string before the first property </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -317,7 +340,7 @@ template&lt;typename U &gt; </div>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 16 2017 14:25:23 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 16 2017 19:57:33 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
