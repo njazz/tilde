@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QString>
+#include <QStringList>
 
 #include <PythonQt.h>
 
@@ -109,6 +110,25 @@ public Q_SLOTS:
     }
 
 
+    ///////
+    // properties
+
+    PropertyList* new_PropertyList()
+    {
+        return new PropertyList();
+    }
+
+    PropertyList properties(UIObject* obj)
+    {
+        return *obj->properties();
+    }
+
+
+
+    QStringList pnames(UIObject* obj)
+    {
+        return obj->properties()->names();
+    }
 
 
 };

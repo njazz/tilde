@@ -94,8 +94,28 @@ public:
             if (it->second->data() != it->second->defaultData())
             {
                 ret += "@" + it->first + " ";
-                ret += it->second->asStdString()+" ";
+                ret += it->second->asPdSaveString()+" ";
             }
+
+        }
+
+        return ret;
+
+    }
+
+    ////
+    /// \brief list of all property names
+    /// \return
+    ///
+    QStringList names()
+    {
+        QStringList ret;
+
+        UIPropertyDataIterator it;
+        for (it = this->data_.begin(); it != this->data_.end(); ++it)
+        {
+            //save only modified values
+            ret.push_back(it->first.c_str());
 
         }
 

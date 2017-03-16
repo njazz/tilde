@@ -117,6 +117,30 @@ public:
         return ret;
     }
 
+    std::string asPdSaveString()
+    {
+        std::string ret="";
+
+
+
+        if (data_.size()>1)
+        {
+            for (int i=0; i<data_.size(); i++)
+            {
+
+                ret += data_.at(i).asString() + "\\n" ;
+
+            }
+
+        }
+        else
+            if (data_.size()==1)
+                ret = data_.at(0).asString();
+
+        qDebug() << "stdstr " << data_.size() << QString(ret.c_str());
+        return ret;
+    }
+
     QString asQString()
     {
         QString ret = "";
