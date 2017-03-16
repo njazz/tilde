@@ -28,7 +28,7 @@ var searchData=
   ['import_5fcurses',['import_curses',['../py__curses_8h.html#a9c6c0726790a7b48357d57eb419b878f',1,'py_curses.h']]],
   ['import_5ffrom',['IMPORT_FROM',['../opcode_8h.html#abf2224c9403a22e81ae365d741ac3204',1,'IMPORT_FROM():&#160;opcode.h'],['../graminit_8h.html#a4203a8a07f595e2dfb6cdaaa270cd183',1,'import_from():&#160;graminit.h']]],
   ['import_5fkind',['Import_kind',['../_python-ast_8h.html#a3f8747ef1343a8899c10bb4911deed50af4917c0258863b110b8eadab84112f99',1,'Python-ast.h']]],
-  ['import_5fname',['import_name',['../graminit_8h.html#a8a8848d608fa076acc8f1345be629c86',1,'import_name():&#160;graminit.h'],['../opcode_8h.html#a187746a30a347e4791ef0bb61deca6f3',1,'IMPORT_NAME():&#160;opcode.h']]],
+  ['import_5fname',['IMPORT_NAME',['../opcode_8h.html#a187746a30a347e4791ef0bb61deca6f3',1,'IMPORT_NAME():&#160;opcode.h'],['../graminit_8h.html#a8a8848d608fa076acc8f1345be629c86',1,'import_name():&#160;graminit.h']]],
   ['import_5fstar',['IMPORT_STAR',['../opcode_8h.html#af5d812efd30a08f10365cfdb0d03d625',1,'opcode.h']]],
   ['import_5fstmt',['import_stmt',['../graminit_8h.html#a31fbe1aeb1343458962971ea8fbb580f',1,'graminit.h']]],
   ['importedmodule',['importedModule',['../class_python_qt_import_file_interface.html#ac95a7ec0b5cbd30488a71d806a0c3e0a',1,'PythonQtImportFileInterface']]],

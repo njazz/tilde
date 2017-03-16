@@ -236,6 +236,7 @@ var searchData=
   ['cmp_5fopenpatch',['cmp_openpatch',['../cm__pdlink_8h.html#a4022f8d97c01f6305e4047b586000bb1',1,'cm_pdlink.h']]],
   ['cmp_5fpatchcord',['cmp_patchcord',['../cm__pdlink_8h.html#a6d06b5d8cde66b3cada1fe52a6e5ac83',1,'cm_pdlink.h']]],
   ['cmp_5fpdinit',['cmp_pdinit',['../cm__pdlink_8h.html#a0a5eb98f82b947afc8ae05735839e8f3',1,'cm_pdlink.h']]],
+  ['cmp_5fpost',['cmp_post',['../cm__pdlink_8h.html#a766e12f26830eee9deae0fe8e9f70535',1,'cm_pdlink.h']]],
   ['cmp_5fsavepatch',['cmp_savepatch',['../cm__pdlink_8h.html#ab0f0e50abffd603051b47240f7dcd04c',1,'cm_pdlink.h']]],
   ['cmp_5fsendstring',['cmp_sendstring',['../cm__pdlink_8h.html#a9bca4af04ea4fac6b910933e5ba16814',1,'cm_pdlink.h']]],
   ['cmp_5fsetprinthook',['cmp_setprinthook',['../cm__pdlink_8h.html#ac9fb723d2c58a1e062720cc19e199e08',1,'cm_pdlink.h']]],

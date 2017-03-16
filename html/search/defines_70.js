@@ -361,7 +361,7 @@ var searchData=
   ['pyobject_5fas_5fgc',['PyObject_AS_GC',['../objimpl_8h.html#ae67b310d4668c63a94bb0d6a78073d7f',1,'objimpl.h']]],
   ['pyobject_5fbytes',['PyObject_Bytes',['../object_8h.html#a8beeca06519ace8cf986962c01c75385',1,'object.h']]],
   ['pyobject_5fcheckbuffer',['PyObject_CheckBuffer',['../abstract_8h.html#af8e7fbbbb462979d88a5ae0c705bf049',1,'abstract.h']]],
-  ['pyobject_5fdel',['PyObject_Del',['../objimpl_8h.html#a448f62cfb51cec5e018778f9ac3f33cb',1,'PyObject_Del():&#160;objimpl.h'],['../objimpl_8h.html#a3e72f1bb4b2af8f115a750f832d421b4',1,'PyObject_DEL():&#160;objimpl.h']]],
+  ['pyobject_5fdel',['PyObject_DEL',['../objimpl_8h.html#a3e72f1bb4b2af8f115a750f832d421b4',1,'PyObject_DEL():&#160;objimpl.h'],['../objimpl_8h.html#a448f62cfb51cec5e018778f9ac3f33cb',1,'PyObject_Del():&#160;objimpl.h']]],
   ['pyobject_5fdelattr',['PyObject_DelAttr',['../abstract_8h.html#a5199728e3f2049f536d3fc4633ca9464',1,'abstract.h']]],
   ['pyobject_5fdelattrstring',['PyObject_DelAttrString',['../abstract_8h.html#a2764054082667528e20e9c6c706e2984',1,'abstract.h']]],
   ['pyobject_5ffree',['PyObject_FREE',['../objimpl_8h.html#a4e2e81bb9430978b81899cb143d3cfeb',1,'objimpl.h']]],

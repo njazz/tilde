@@ -79,6 +79,7 @@ var searchData=
   ['descrobject_2eh',['descrobject.h',['../descrobject_8h.html',1,'']]],
   ['descrsetfunc',['descrsetfunc',['../object_8h.html#a68cf81baeb03d73344b77322251361e6',1,'object.h']]],
   ['deselect',['deselect',['../classqtpd_1_1_u_i_widget.html#a875105a332f8e2d048ba30c007beee75',1,'qtpd::UIWidget']]],
+  ['deselectall',['deselectAll',['../classpy_qtpd.html#a2055b032b1ce20c6a1f72b4e51f9bc54',1,'pyQtpd']]],
   ['deselectboxes',['deselectBoxes',['../classqtpd_1_1_canvas.html#ae5d178b7962fb039619f2e00c17d89cf',1,'qtpd::Canvas']]],
   ['designable',['designable',['../struct_python_qt_property_data.html#aa06e07a23c3ac01c41e70517576bdc31',1,'PythonQtPropertyData']]],
   ['dest',['dest',['../struct__stmt.html#a760c7987187a06e882bfcbab14b7fdb9',1,'_stmt']]],
