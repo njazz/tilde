@@ -12,6 +12,12 @@ Port::Port(UIWidget *parent) : UIWidget(parent)
 
     this->portType = portInlet;
     this->portIndex = 0;
+
+    QPalette Pal(palette());
+    Pal.setColor(QPalette::Background, QColor(250,250,250));
+    this->setAutoFillBackground(true);
+    this->setPalette(Pal);
+
 }
 
 }
