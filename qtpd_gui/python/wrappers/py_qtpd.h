@@ -9,6 +9,8 @@
 
 #include "cm_patchwindow.h"
 
+#include "cm_preferences.h"
+
 using namespace qtpd;
 
 class pyQtpd : public QObject
@@ -43,6 +45,25 @@ public Q_SLOTS:
         return c->createObject(obj_name.toStdString(),obj_data.toStdString(), QPoint(x,y));
     }
 
+    ////
+    // GUI
+
+    //todo templates
+    void moveObject(Canvas* o, int x, int y)
+    {
+        o->move(x,y);
+    }
+
+    void moveObject(UIObject* o, int x, int y)
+    {
+        o->move(x,y);
+    }
+
+    void resizeObject(UIObject* o, int w, int h)
+    {
+        o->setFixedSize(w,h);
+    }
+
     //////////
     // edit
 
@@ -59,11 +80,6 @@ public Q_SLOTS:
     void deselectAll(Canvas* c)
     {
         c->deselectBoxes();
-    }
-
-    void moveObject(UIObject* obj, int x, int y)
-    {
-        obj->move(x,y);
     }
 
     void deleteObjectInCanvas(Canvas* c, UIObject* obj)
@@ -149,6 +165,14 @@ public Q_SLOTS:
     QStringList pnames(UIObject* obj)
     {
         return obj->properties()->names();
+    }
+
+    //////////
+    // app preferences
+
+    PropertyList* pref()
+    {
+        return (PropertyList*)&Preferences::inst();
     }
 
 
