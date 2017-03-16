@@ -69,12 +69,12 @@ public:
              //p.drawPolygon(poly);
          }
 
-         QTextOption *op = new QTextOption;
-          op->setAlignment(Qt::AlignLeft);
-           p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+//         QTextOption *op = new QTextOption;
+//          op->setAlignment(Qt::AlignLeft);
+//           p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
-            p.setFont(QFont(PREF_QSTRING("Font"),11,0,false));
-             p.drawText(2,3,this->width()-2,this->height()-3,0,this->objectData().c_str(),0);
+//            p.setFont(QFont(PREF_QSTRING("Font"),11,0,false));
+//             p.drawText(2,3,this->width()-2,this->height()-3,0,this->objectData().c_str(),0);
 
 
     }

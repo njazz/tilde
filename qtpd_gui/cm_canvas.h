@@ -910,6 +910,8 @@ public:
         obj->move(pos);
         this->data_.boxes_.push_back(obj);
 
+        obj->properties()->extractFromPdFileString(objectData1);
+
         obj->show();
 
         qDebug() << "created object: [" << QString(uiObjectName.c_str()) << "]" << objectData1.c_str() << ":" << atoms.count() << "@" << QString(std::to_string((long)this->pdObject()).c_str());

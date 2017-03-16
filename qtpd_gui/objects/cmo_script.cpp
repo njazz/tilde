@@ -51,6 +51,10 @@ UIScript::UIScript(UIObject *parent) : UIObject(parent)
     //temporary. needs fixing
     hideSizeBox();
 
+    //move to UIObject common constructor
+
+    //editor_->document()->setPlainText(properties()->get("Script")->asQStringList().join("\n"));
+
     //buttons
     QPushButton *b1 = new QPushButton("Run", this);
     b1->setFont(font);

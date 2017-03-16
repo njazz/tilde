@@ -99,11 +99,14 @@ template<> void Property::set(QStringList strlist)
 
     AtomList list;
 
+    qDebug() << "set list" << strlist;
+
     for (it = strlist.begin(); it != strlist.end(); ++it)
     {
         QString str = *it;
         qDebug() << "str" << str;
-        list.append(AtomList(gensym(str.toStdString().c_str())));
+        if (str!="")
+            list.append(AtomList(gensym(str.toStdString().c_str())));
     }
 
     //check, different type for text files

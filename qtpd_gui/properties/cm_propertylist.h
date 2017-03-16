@@ -103,6 +103,41 @@ public:
 
     }
 
+    ////
+    /// \brief extract properties from string in pd file
+    /// \details
+    /// \return
+    ///
+    void extractFromPdFileString(std::string input)
+    {
+        QStringList propertyList = QString(input.c_str()).split("@");
+
+        qDebug() << "plist" << propertyList;
+
+        for (QStringList::iterator it = propertyList.begin(); it != propertyList.end(); ++it)
+        {
+            QString s = *it;
+            QStringList list = s.split(" ", QString::SkipEmptyParts);
+
+
+            if (list.size()>1)
+            {
+                QString pname = list.at(0);
+
+                // lol. fix that later
+                list.removeAt(0);
+
+                qDebug () << "load" << pname << list.join("_");
+
+
+                set(pname.toStdString(), list);
+            }
+
+            // TODO! property type should be saved
+        }
+
+    }
+
 };
 }
 
