@@ -79,6 +79,8 @@ private:
 
     //ObjectMaker* objectMaker;
 
+    void doSave(QString fname);
+
 private slots:
     //void open();
     void save();
@@ -100,7 +102,7 @@ public:
     {
         //        connect(openAct, &QAction::triggered, this, &cm_patchwindow::open);
         connect(saveAsAct, &QAction::triggered, this, &PatchWindow::saveAs);
-        connect(saveAct, &QAction::triggered, this, &PatchWindow::saveAs);
+        connect(saveAct, &QAction::triggered, this, &PatchWindow::save);
 
         delObjectAct = new QAction(tr("Delete object"), this);
         delObjectAct->setShortcut(tr("Backspace"));

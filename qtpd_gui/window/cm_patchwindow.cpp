@@ -46,7 +46,7 @@ PatchWindow* PatchWindow::newWindow()
 }
 
 //////
-///// \brief this constructor is used by pd file parser
+///// \brief this constructor was used by pd file parser - remove later
 /////
 //cm_patchwindow* cm_patchwindow::loadWindow(QStringList)    //
 //{
@@ -108,15 +108,14 @@ PatchWindow* PatchWindow::newSubpatch(t_canvas* subpatch)
 void PatchWindow::save()
 {
 
-    QString fname = this->canvas->fileName;
+    QString fname;
 
-    QString file = fname.section("/",-1,-1);
-    QString dir = fname.section("/",0,-2);
+    if (this->canvas->fileName != "")
+        fname =  this->canvas->fileName;
+    else
+        fname = QFileDialog::getSaveFileName(this,QString("Save patch as..."), QString("~/"), QString("*.pd"), 0, 0);
 
-    qDebug("filename: %s %s", file.toStdString().c_str(), dir.toStdString().c_str());
-
-    //cmp_savepatch(this->canvas->pd_canvas, (char*)file.toStdString().c_str(), (char*)dir.toStdString().c_str());
-    FileSaver::save(fname, this->canvas);
+    doSave(fname);
 }
 
 ////
@@ -124,17 +123,22 @@ void PatchWindow::save()
 ///
 void PatchWindow::saveAs()
 {
+
     QString fname = QFileDialog::getSaveFileName(this,QString("Save patch as..."), QString("~/"), QString("*.pd"), 0, 0);
 
+    doSave(fname);
+
+}
+
+void PatchWindow::doSave(QString fname)
+{
     if (fname != "")
     {
-        //QString path = fname.fileName();
         QString file = fname.section("/",-1,-1);
         QString dir = fname.section("/",0,-2);
 
         qDebug("filename: %s %s", file.toStdString().c_str(), dir.toStdString().c_str());
 
-        //        cmp_savepatch(this->canvas->pd_canvas, (char*)file.toStdString().c_str(), (char*)dir.toStdString().c_str());
         FileSaver::save(fname, this->canvas);
 
         //
@@ -143,9 +147,6 @@ void PatchWindow::saveAs()
         this->setWindowTitle(file);
         this->setWindowFilePath(fname);
 
-        //saveAct->setEnabled(true);
-
-        connect(saveAct, &QAction::triggered, this, &PatchWindow::save);
     }
 
 }
