@@ -133,27 +133,36 @@ public:
     ///
     virtual void addInlet()
     {
-        Port* new_in = new Port(this);
-        new_in->portType = Port::portInlet;
-        new_in->portIndex = inlets_->size();
+        int _portClass_;
 
         if (this->pdObject_)
         {
-            new_in->portClass = cmp_get_inlet_type((t_object*)this->pdObject_, new_in->portIndex);
+            _portClass_ = cmp_get_inlet_type((t_object*)this->pdObject_, inlets_->size());
         }
         else
-            new_in->portClass = 0;
+            _portClass_ = 0;
 
+        addInlet(_portClass_);
 
+    }
+
+    virtual void addInlet(int _portClass_)
+    {
+        Port* new_in = new Port(this);
+        new_in->portType = portInlet;
+        new_in->portIndex = inlets_->size();
+        new_in->portClass = _portClass_;
         new_in->setEditModeRef(this->getEditModeRef());
 
         inlets_->push_back(new_in);
+
         connect(new_in, &Port::mousePressed, static_cast<UIWidget*>(this->parent()), &UIWidget::s_InMousePressed);
         connect(new_in, &Port::mouseReleased, static_cast<UIWidget*>(this->parent()), &UIWidget::s_InMouseReleased);
 
         new_in->show();
 
         this->setInletsPos();
+
     }
 
     ////
@@ -164,20 +173,29 @@ public:
 
     virtual void addOutlet()
     {
-        Port* new_out = new Port(this);
-        new_out->portType = Port::portOutlet;
-        new_out->portIndex = outlets_->size();
+        int _portClass_;
 
         if (this->pdObject_)
         {
-            new_out->portClass = cmp_get_outlet_type((t_object*)this->pdObject_, new_out->portIndex);
+            _portClass_ = cmp_get_outlet_type((t_object*)this->pdObject_, outlets_->size());
         }
         else
-            new_out->portClass = 0;
+           _portClass_ = 0;
 
+        addOutlet(_portClass_);
 
+    }
 
+    virtual void addOutlet(int _portClass_)
+    {
+        Port* new_out = new Port(this);
+        new_out->portType = portOutlet;
+        new_out->portIndex = outlets_->size();
+        new_out->portClass = _portClass_;
         new_out->setEditModeRef(this->getEditModeRef());
+
+
+
 
         outlets_->push_back(new_out);
         connect(new_out, &Port::mousePressed, static_cast<UIWidget*>(this->parent()), &UIWidget::s_OutMousePressed);
@@ -186,6 +204,7 @@ public:
         new_out->show();
 
         this->setOutletsPos();
+
     }
 
 
@@ -222,7 +241,7 @@ public:
     /// \param idx
     /// \return
     ///
-    int inletType(int idx)
+    int pdInletType(int idx)
     {
         if ((t_object*)this->pdObject_)
             return cmp_get_inlet_type((t_object*)this->pdObject_, idx);
@@ -238,11 +257,11 @@ public:
     {return inlets_->size();}
 
     ////
-    /// \brief returns 1 if signal~
+    /// \brief for pd object outlet: returns 1 if signal~
     /// \param idx
     /// \return
     ///
-    int outletType(int idx)
+    int pdOutletType(int idx)
     {
         if ((t_object*)this->pdObject_)
             return cmp_get_outlet_type((t_object*)this->pdObject_, idx);
@@ -256,31 +275,6 @@ public:
     ///
     int outletCount()
     {return outlets_->size();}
-
-    ///////
-
-    //    portVec *inletRef()
-    //    {
-    //        return inlets_;
-    //    }
-
-    //    portVec *outletRef()
-    //    {
-    //        return outlets_;
-    //    }
-
-    //    void setInletRef(portVec* ins)
-    //    {
-    //        if (inlets_) delete inlets_;
-    //        inlets_ = ins;
-    //    }
-
-    //    void setOutletRef(portVec* outs)
-    //    {
-    //        if (outlets_) delete outlets_;
-    //        outlets_ = outs;
-    //    }
-
 
 
 

@@ -1036,7 +1036,7 @@ public:
 
             Patchcord* pc = new Patchcord(obj1,outport,obj2,inport);
 
-            if (obj1->outletType(outlet)) pc->setPatchcordType(cm_pt_signal);
+            if (obj1->pdOutletType(outlet)) pc->setPatchcordType(cm_pt_signal);
 
             qDebug("pdlib patchcord");
             cmp_patchcord((t_object*)obj1->pdObject(),outlet,(t_object*)obj2->pdObject(),inlet);

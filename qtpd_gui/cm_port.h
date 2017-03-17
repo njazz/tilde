@@ -10,6 +10,7 @@
 namespace qtpd
 {
 
+typedef enum {portInlet, portOutlet} UIPortType;
 ////
 /// \brief gui representation of t_inlet / t_outlet
 ///
@@ -22,7 +23,7 @@ private:
 public:
     int portIndex;
 
-    enum {portInlet, portOutlet} portType;
+    UIPortType portType;
     int portClass; //enum {portAnything=0, portSignal=1}
 
     explicit Port(UIWidget *parent = 0);
