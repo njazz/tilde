@@ -166,7 +166,7 @@ public:
 
     static void updateUI(void* uiobj, ceammc::AtomList )
     {
-        qDebug("update ui");
+        //qDebug("update ui");
         UIBang *x = (UIBang*)uiobj;
 
         if(!x->clicked_)

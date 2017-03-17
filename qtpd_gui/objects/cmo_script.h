@@ -181,7 +181,7 @@ public:
 
     static void updateUI(void* uiobj, ceammc::AtomList msg)
     {
-        qDebug("update ui");
+        //qDebug("update ui");
         UIScript *x = (UIScript*)uiobj;
 
         std::string obj_data;

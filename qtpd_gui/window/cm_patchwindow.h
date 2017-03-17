@@ -315,13 +315,7 @@ public:
 
         if (this->canvas->getEditMode() != em_Locked)
         {
-            this->canvas->objectMaker()->move(100,50);
-            this->canvas->objectMaker()->setFixedSize(60,20);
-            this->canvas->objectMaker()->setFocus();
-
-            this->canvas->dragObject = this->canvas->objectMaker();
-            this->canvas->objectMaker()->setText(QString(""));
-            this->canvas->objectMaker()->show();
+            canvas->showNewObjectMaker();
         }
 
     }

@@ -426,6 +426,8 @@ public:
 
         QPoint pos =  ev->pos();
 
+        newObjectPos = pos;
+
         this->selFrame.end = pos - this->selFrame.start;
         this->newLine.end = pos;
 
@@ -1684,6 +1686,22 @@ public slots:
     void setReplaceObject(UIObject* obj){replaceObject_ = obj;}
     UIObject* replaceObject(){return replaceObject_;}
 
+    ////
+    /// \brief shows object maker for 'new object' menu command
+    ///
+    void showNewObjectMaker()
+    {
+
+        objectMaker()->move(newObjectPos);
+        objectMaker()->setFixedSize(60,20);
+        objectMaker()->setFocus();
+
+        dragObject = objectMaker();
+        objectMaker()->setText(QString(""));
+        objectMaker()->show();
+
+    }
+
 
 private:
 
@@ -1752,6 +1770,8 @@ private slots:
         objectMaker()->raise();
 
     }
+
+
 
 signals:
     std::pair<QMainWindow*,qtpd::UIObject*> createSubpatchWindow();

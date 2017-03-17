@@ -157,7 +157,7 @@ public:
 
     static void updateUI(void* uiobj, ceammc::AtomList msg)
     {
-        qDebug("update ui");
+        //qDebug("update ui");
         UIText *x = (UIText*)uiobj;
 
         std::string obj_data;
