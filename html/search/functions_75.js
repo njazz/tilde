@@ -11,6 +11,7 @@ var searchData=
   ['uimessage',['UIMessage',['../classqtpd_1_1_u_i_message.html#acead300b997ec5984eb9e0d9e723a604',1,'qtpd::UIMessage']]],
   ['uiobject',['UIObject',['../classqtpd_1_1_u_i_object.html#a94ead3f0212c2e0ae0958f852d33978e',1,'qtpd::UIObject']]],
   ['uiscript',['UIScript',['../classqtpd_1_1_u_i_script.html#ac8f3b44207c6e77ce7a89f78037a2219',1,'qtpd::UIScript']]],
+  ['uiscripteditor',['UIScriptEditor',['../classqtpd_1_1_u_i_script_editor.html#ae4db8234a965438a26dc048d8113972a',1,'qtpd::UIScriptEditor']]],
   ['uitext',['UIText',['../classqtpd_1_1_u_i_text.html#af915c49ee59fe69a628d51c35ac15a06',1,'qtpd::UIText']]],
   ['uitoggle',['UIToggle',['../classqtpd_1_1_u_i_toggle.html#ada2a485b9b3011f8156b8c08b834e593',1,'qtpd::UIToggle']]],
   ['uivalues',['uiValues',['../classceammc_1_1faust_1_1_pd_u_i.html#ae4a06c4fc9215c7edd827a72b1d3e2e0',1,'ceammc::faust::PdUI']]],
