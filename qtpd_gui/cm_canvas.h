@@ -1380,7 +1380,11 @@ public:
 
     }
 
-
+    ////
+    /// \brief sets pointer to canvas object in subpatch
+    /// \details todo: check/remove that: we have subpatchwindow too
+    /// \param obj
+    ///
     void setSubcanvas(UIObject* obj){Subcanvas_ = obj;}
     //UIObject* subcanvas(){return Subcanvas_;}
 
@@ -1478,6 +1482,12 @@ public:
 
     }
 
+    ////
+    /// \brief converts UI patchcord object with 4 pointers to 4 numbers of objects in canvas
+    /// \details this is mostly for saving file
+    /// \param pcord
+    /// \return
+    ///
     structPatchcordNumbers patchcordAsNumbers(Patchcord* pcord)
     {
         //TODO
@@ -1549,6 +1559,10 @@ public:
 
     }
 
+    ////
+    /// \brief returns canvas data for saving
+    /// \return
+    ///
     QStringList canvasAsPdStrings()
     {
 
@@ -1634,10 +1648,16 @@ public slots:
         this->repaint();
     }
 
+    ////
+    /// \brief pointer to objectMaker widget
+    /// \return
+    ///
     ObjectMaker* objectMaker(){return objectMaker_;}
 
 
-
+    ////
+    /// \brief this is called when 'inlet' etc object is created in subpatch
+    ///
     void portLocalCountUpdated()
     {
         qDebug("port local count update");
@@ -1683,7 +1703,16 @@ public slots:
 
     };
 
+    ////
+    /// \brief sets 'replaceobject' pointer
+    /// \param obj
+    ///
     void setReplaceObject(UIObject* obj){replaceObject_ = obj;}
+
+    ////
+    /// \brief gets replaceObject
+    /// \return
+    ///
     UIObject* replaceObject(){return replaceObject_;}
 
     ////
@@ -1751,6 +1780,11 @@ private slots:
 
 
 
+    ////
+    /// \brief creates objectmaker atop existiong object box
+    /// \details after typing the text in the objectmaker with nonzero 'replaceobject' the old object is deleted, the new object is created and old connections are restored
+    /// \param obj
+    ///
     void objectStartsEdit(void* obj)
     {
         deselectBoxes();
@@ -1758,8 +1792,6 @@ private slots:
         qDebug("edit box>>");
 
         replaceObject_ = (UIObject*)obj;
-
-
 
         objectMaker()->move(replaceObject_->pos());
         objectMaker()->setFixedSize(replaceObject_->size());
