@@ -38,7 +38,9 @@ private:
     bool errorBox_;
 
     t_objectSize objectSizeMode;
+
     int minimumBoxWidth_;
+    int minimumBoxHeight_;
 
     SizeBox* sizeBox;
 
@@ -395,6 +397,7 @@ public:
 
         //todo fixed width
         if (this->width()<this->minimumBoxWidth()) this->setFixedWidth(this->minimumBoxWidth());
+        if (this->height()<this->minimumBoxHeight()) this->setFixedHeight(this->minimumBoxHeight());
 
         this->setInletsPos();
         this->setOutletsPos();
@@ -424,12 +427,30 @@ public:
     }
 
     ////
+    /// \brief set secondary 'minimum height' value - used for object box resize
+    /// \param w
+    ///
+    void setMinimumBoxHeight(int h)
+    {
+        this->minimumBoxHeight_ = h;
+    }
+
+    ////
     /// \brief get secondary 'minimum width' value - used for object box resize
     /// \param w
     ///
     int minimumBoxWidth()
     {
         return this->minimumBoxWidth_;
+    }
+
+    ////
+    /// \brief get secondary 'minimum height' value - used for object box resize
+    /// \param w
+    ///
+    int minimumBoxHeight()
+    {
+        return this->minimumBoxHeight_;
     }
 
     // ??

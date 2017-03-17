@@ -73,21 +73,15 @@ public:
                  }
 
              p.drawRect(0,0,this->width(),this->height());
-             //p.drawPolygon(poly);
+
          }
-
-//         QTextOption *op = new QTextOption;
-//          op->setAlignment(Qt::AlignLeft);
-//           p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-
-//            p.setFont(QFont(PREF_QSTRING("Font"),11,0,false));
-//             p.drawText(2,3,this->width()-2,this->height()-3,0,this->objectData().c_str(),0);
 
 
     }
 
     void resizeEvent(QResizeEvent *event)
     {
+        UIObject::resizeEvent(event);
         editor_->setFixedWidth(width()-5);
         editor_->setFixedHeight(height()-25);
     }
@@ -120,13 +114,9 @@ public:
 
     void mouseReleaseEvent(QMouseEvent *)
     {
-        //this->selected_ = false;
+        this->clicked_ = false;
+        this->repaint();
 
-        //if (!this->getEditMode())
-        {
-            this->clicked_ = false;
-            this->repaint();
-        }
 
     }
 
@@ -156,25 +146,6 @@ public:
     void setPdMessage(std::string message)
     {
         this->setObjectData(message);
-        //        this->autoResize();
-
-        //        QFont myFont(PREF_QSTRING("Font"), 11);
-        //        QFontMetrics fm(myFont);
-        //        QString text = QString(this->editor_->document()->toPlainText());
-        //        int new_w = fm.width(text) + 20;
-        //        new_w = (new_w<25) ? 25 : new_w;
-
-        //        int new_h = fm.boundingRect(QRect(0,0,new_w,100), 0, text).height() + 7 ;
-
-        //        new_h = (new_h<25) ? 25 : new_h;
-
-        //        this->setFixedWidth(new_w);
-        //        this->setFixedHeight(new_h);
-
-        //        this->editor_->setFixedWidth(this->width()-1);
-        //        this->editor_->setFixedHeight(this->height()-2);
-
-        //        this->editor_->hide();
 
         setFixedSize(300,200);
     }
@@ -196,37 +167,11 @@ public:
         x->repaint();
     }
 
-    //    void setPdObject(void *obj)
-    //    {
-    //        cm_object::setPdObject(obj);
-    //        //cmp_connectUI((t_pd*)this->getPdObject(), (void*)this, &cmo_text::updateUI);
-    //    }
-
-
-    //    std::string asPdFileString()
-    //    {return "ui.text "+ this->objectData();}
-
     void* pdObject()
     {
+        //later add 'ui.script' pd object for communication
         return 0;
     }
-
-//    bool eventFilter(QObject *watched, QEvent *event)
-//    {
-//        if (event->type() == QEvent::KeyPress) {
-
-//            QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
-
-//            if  ( (keyEvent->key() == Qt::Key_Return) && (keyEvent->modifiers() == Qt::ShiftModifier) )
-//            {
-//                //this->editorDone();
-//                return true;
-//            }
-//        }
-
-//        return false;
-
-//    }
 
     QStringList getEditorData()
     {
@@ -236,11 +181,11 @@ public:
 signals:
 
 private slots:
-//    void editorDone();
     void editorChanged();
 
     void btnRun(){
-        //PythonQt
+
+        //this code is from PythonQt
 
         PythonQtObjectPtr _context = PythonQt::self()->getMainModule();
         QString _stdOut = "";
@@ -256,7 +201,7 @@ private slots:
 
         QStringList list = getEditorData();
 
-       // while (true)
+        // while (true)
         for (QStringList::iterator it = list.begin(); it!= list.end(); ++it)
         {
             QString line = *it;
@@ -312,8 +257,6 @@ private slots:
 
             file.open(QFile::WriteOnly | QFile::Text);
 
-            //QTextStream ReadFile(&file);
-            //editor_->setText(ReadFile.readAll());
             QTextStream WriteFile(&file);
             WriteFile << editor_->document()->toPlainText();
             file.close();

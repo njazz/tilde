@@ -8,9 +8,6 @@ UIScript::UIScript(UIObject *parent) : UIObject(parent)
 {
     setPdObjectName("ui.script ");
 
-    //this->setMinimumWidth(30);
-
-
     this->setMouseTracking(true);
 
     this->deselect();
@@ -23,20 +20,16 @@ UIScript::UIScript(UIObject *parent) : UIObject(parent)
     this->editor_->move(2,21);
     this->editor_->setFont(font);
     this->editor_->show();
-    //this->editor_->setFocus();
     this->editor_->setAttribute(Qt::WA_MacShowFocusRect, 0);
 
     connect(this->editor_,&QPlainTextEdit::textChanged, this,&UIScript::editorChanged);
 
-    //this->editor_->installEventFilter(this);
-
     initProperties();
-
-    //this->setMinimumBoxWidth(80);
 
     this->setMinimumSize(300,200);
     this->setFixedSize(300,200);
     setMinimumBoxWidth(300);
+    setMinimumBoxHeight(200);
 
     QPalette Pal(palette());
     Pal.setColor(QPalette::Background, QColor(224,240,255));
@@ -46,14 +39,9 @@ UIScript::UIScript(UIObject *parent) : UIObject(parent)
     editor_->setPalette(Pal);
 
     setBackgroundRole(QPalette::Background);
-    //setTextBackgroundColor(QColor(224,240,255));
 
     //temporary. needs fixing
     hideSizeBox();
-
-    //move to UIObject common constructor
-
-    //editor_->document()->setPlainText(properties()->get("Script")->asQStringList().join("\n"));
 
     //buttons
     QPushButton *b1 = new QPushButton("Run", this);
@@ -88,38 +76,13 @@ UIScript::UIScript(UIObject *parent) : UIObject(parent)
 
 
 
-///////
-
-//void  UIScript::editorDone()
-//{
-//    qDebug("editor done");
-
-//    this->setPdMessage(this->editor_->document()->toPlainText().toStdString());//text().toStdString());
-//    //todo
-
-//    this->editor_->hide();
-//}
 
 void  UIScript::editorChanged()
 {
-    //    QFont myFont(PREF_QSTRING("Font"), 11);
-    //    QFontMetrics fm(myFont);
-    //    QString text = QString(this->editor_->document()->toPlainText());
-    //    int new_w = fm.width(text) + 20;
-    //    new_w = (new_w<25) ? 25 : new_w;
-
-    //    int new_h = fm.boundingRect(QRect(0,0,new_w,100), 0, text).height() + 20 ;
-
-    //    new_h = (new_h<25) ? 25 : new_h;
-
-    //    this->setFixedWidth(new_w);
-    //    this->setFixedHeight(new_h);
-
-    //    this->editor_->setFixedWidth(this->width()-1);
-    //    this->editor_->setFixedHeight(this->height()-2);
 
     QStringList list = getEditorData();
 
+    // fix later
     properties()->set("Script", list);
 }
 
