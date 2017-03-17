@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['raise',['Raise',['../struct__stmt.html#a059e00ae61be2d837c2162ee7d05ab2a',1,'_stmt::Raise()'],['../_python-ast_8h.html#a848cb93d9dbab05992a08c7e6b50fc74',1,'Raise():&#160;Python-ast.h']]],
+  ['raise',['Raise',['../struct__stmt.html#a057aaedd3d710e17882b1cce2f710fb5',1,'_stmt::Raise()'],['../_python-ast_8h.html#a848cb93d9dbab05992a08c7e6b50fc74',1,'Raise():&#160;Python-ast.h']]],
   ['raise_5fkind',['Raise_kind',['../_python-ast_8h.html#a3f8747ef1343a8899c10bb4911deed50a3bce7f55bcb5c8dac65e7653467de014',1,'Python-ast.h']]],
   ['raise_5fstmt',['raise_stmt',['../graminit_8h.html#a84f12faf14c6ee34f70f38950f45b558',1,'graminit.h']]],
   ['raise_5fvarargs',['RAISE_VARARGS',['../opcode_8h.html#a583899c3d447f6753fc0588c75aef796',1,'opcode.h']]],
@@ -50,7 +50,7 @@ var searchData=
   ['replaceall',['replaceAll',['../classceammc_1_1_atom_list.html#a1096c4f7a09680eefbf355e8e6edec92',1,'ceammc::AtomList::replaceAll(const Atom &amp;old_value, const Atom &amp;new_value)'],['../classceammc_1_1_atom_list.html#a1168817ee92f71a5f2906b88e7ef60bf',1,'ceammc::AtomList::replaceAll(AtomPredicate pred, const Atom &amp;new_value)']]],
   ['replaceextension',['replaceExtension',['../class_python_qt_import.html#a7075e311c5609a1ded0503bbe717608d',1,'PythonQtImport']]],
   ['replaceobject',['replaceObject',['../classqtpd_1_1_canvas.html#afe38f2f2e0126482db788e4525db79c7',1,'qtpd::Canvas']]],
-  ['repr',['Repr',['../struct__expr.html#ad870f24b5ad4c28e48da7eb1ee5c81fc',1,'_expr::Repr()'],['../_python-ast_8h.html#a88bd2651256da6ccebace0dfb90d8b72',1,'Repr():&#160;Python-ast.h']]],
+  ['repr',['Repr',['../struct__expr.html#ae55835e98c3e876e87310b255309979f',1,'_expr::Repr()'],['../_python-ast_8h.html#a88bd2651256da6ccebace0dfb90d8b72',1,'Repr():&#160;Python-ast.h']]],
   ['repr_5fkind',['Repr_kind',['../_python-ast_8h.html#a5040779a586bc1f6938f47df869170a5adae03b605e50d2ad74e3b012e9ddca67',1,'Python-ast.h']]],
   ['reprfunc',['reprfunc',['../object_8h.html#a6f922900c385251104a3bfe00aa4c5f6',1,'object.h']]],
   ['req',['REQ',['../node_8h.html#af71929eb520068c1cafca386caf66d3d',1,'node.h']]],
@@ -69,7 +69,7 @@ var searchData=
   ['restricted',['RESTRICTED',['../structmember_8h.html#aedb0804dfadf0c8d668cab284168494f',1,'structmember.h']]],
   ['result',['result',['../abstract_8h.html#aa689992a2c3ad3c7231845abcc79f8c9',1,'abstract.h']]],
   ['retsigtype',['RETSIGTYPE',['../pyconfig_8h.html#adbe5dcee9c146b338794974137c55e70',1,'pyconfig.h']]],
-  ['return',['Return',['../struct__stmt.html#a031817aad5728bc32dcab069c093a925',1,'_stmt::Return()'],['../_python-ast_8h.html#abdae7f49d66ce8e500825bb53aa14901',1,'Return():&#160;Python-ast.h']]],
+  ['return',['Return',['../struct__stmt.html#ad4730cf31428697c112b57b769372755',1,'_stmt::Return()'],['../_python-ast_8h.html#abdae7f49d66ce8e500825bb53aa14901',1,'Return():&#160;Python-ast.h']]],
   ['return_5fkind',['Return_kind',['../_python-ast_8h.html#a3f8747ef1343a8899c10bb4911deed50a828b1087744f86659f3c0820b967de93',1,'Python-ast.h']]],
   ['return_5fstmt',['return_stmt',['../graminit_8h.html#ad0048056564847a45fa5daed3a6f60fd',1,'graminit.h']]],
   ['return_5fvalue',['RETURN_VALUE',['../opcode_8h.html#a4624dbb836fe1fc7317421b08e0882a0',1,'opcode.h']]],

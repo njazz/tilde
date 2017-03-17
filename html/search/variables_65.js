@@ -18,10 +18,10 @@ var searchData=
   ['exc_5ftraceback',['exc_traceback',['../struct__ts.html#ae3a9cc8bc03b5715c51c52a677a87552',1,'_ts']]],
   ['exc_5ftype',['exc_type',['../struct__ts.html#aef14d4a75d97d3296136822dd1ef439e',1,'_ts']]],
   ['exc_5fvalue',['exc_value',['../struct__ts.html#a60f5422b5ac39104bf338015fb40900f',1,'_ts']]],
-  ['excepthandler',['ExceptHandler',['../struct__excepthandler.html#a37641c59394e6257d2350ea6b7edd4ad',1,'_excepthandler']]],
-  ['exec',['Exec',['../struct__stmt.html#a766d860e8e91088225fa40cba219d34b',1,'_stmt']]],
+  ['excepthandler',['ExceptHandler',['../struct__excepthandler.html#a05d03688a9b1dc360ed0a0e2f6b398c4',1,'_excepthandler']]],
+  ['exec',['Exec',['../struct__stmt.html#a14a8c6f74f70d34db196f4540dbbb4a3',1,'_stmt']]],
   ['expected',['expected',['../structperrdetail.html#a93f70b9ef5490df737d24e47fb99716e',1,'perrdetail']]],
-  ['expr',['Expr',['../struct__stmt.html#abe64c049d718c60e7b9429eb005fd037',1,'_stmt']]],
-  ['expression',['Expression',['../struct__mod.html#a37bc49d7a4eb415a4e7f9af072f11d3b',1,'_mod']]],
-  ['extslice',['ExtSlice',['../struct__slice.html#a5f68b6e9e4ff8035ffbfa353b6b59d1d',1,'_slice']]]
+  ['expr',['Expr',['../struct__stmt.html#a592f7478a81a2d72b684c6a34a8d4934',1,'_stmt']]],
+  ['expression',['Expression',['../struct__mod.html#a1f40ed99f422015dfcd8c0d8a91627b1',1,'_mod']]],
+  ['extslice',['ExtSlice',['../struct__slice.html#a2dcdc82a517be8875aa75a4205d6060c',1,'_slice']]]
 ];

@@ -105,7 +105,7 @@ var searchData=
   ['mode',['mode',['../dtoa_8h.html#a1ea5d0cb93f22f7d0fdf804bd68c3326',1,'dtoa.h']]],
   ['modf',['modf',['../pymath_8h.html#a660dd661ca1336737739215f835447f8',1,'pymath.h']]],
   ['modsupport_2eh',['modsupport.h',['../modsupport_8h.html',1,'']]],
-  ['module',['Module',['../class_python_qt.html#a339ef2ceeb2b5aaed500a1f4a355fe7ba396b9dc41c5de514b5922773d36c9b1c',1,'PythonQt::Module()'],['../struct__mod.html#ada17e6c56aa32610fbf0abd7d0b5bd18',1,'_mod::Module()'],['../struct__stmt.html#ace6ad861a3d463d6ffefaa028a5239d6',1,'_stmt::module()'],['../_python-ast_8h.html#a050cb8da9f4ab67bed9b2fa2ae362a41',1,'Module():&#160;Python-ast.h']]],
+  ['module',['Module',['../class_python_qt.html#a339ef2ceeb2b5aaed500a1f4a355fe7ba396b9dc41c5de514b5922773d36c9b1c',1,'PythonQt::Module()'],['../struct__mod.html#a0bc55fc6133154fe090c6b10d14303b3',1,'_mod::Module()'],['../struct__stmt.html#ace6ad861a3d463d6ffefaa028a5239d6',1,'_stmt::module()'],['../_python-ast_8h.html#a050cb8da9f4ab67bed9b2fa2ae362a41',1,'Module():&#160;Python-ast.h']]],
   ['module_5fkind',['Module_kind',['../_python-ast_8h.html#a8f50e8590be64db9ce87b40df20e1a30a085e7ed21c9aeb7b9530089bcf5155ac',1,'Python-ast.h']]],
   ['moduleblock',['ModuleBlock',['../symtable_8h.html#a465de2608e3625f9b65501597b49c5fca4f773c6ab1f796b5522e8a77cf45e44c',1,'symtable.h']]],
   ['moduleinfo',['ModuleInfo',['../struct_python_qt_import_1_1_module_info.html#ad198844b3b68e0926ea013f9fd3f5bf7',1,'PythonQtImport::ModuleInfo']]],

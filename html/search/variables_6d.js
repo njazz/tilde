@@ -28,7 +28,7 @@ var searchData=
   ['ml_5fmeth',['ml_meth',['../struct_py_method_def.html#a2e99fd743a714b893d8735951000449e',1,'PyMethodDef']]],
   ['ml_5fname',['ml_name',['../struct_py_method_def.html#a308a3fcf53e3b75685ed2ebf11cf77de',1,'PyMethodDef']]],
   ['mode',['mode',['../dtoa_8h.html#a1ea5d0cb93f22f7d0fdf804bd68c3326',1,'dtoa.h']]],
-  ['module',['Module',['../struct__mod.html#ada17e6c56aa32610fbf0abd7d0b5bd18',1,'_mod::Module()'],['../struct__stmt.html#ace6ad861a3d463d6ffefaa028a5239d6',1,'_stmt::module()']]],
+  ['module',['Module',['../struct__mod.html#a0bc55fc6133154fe090c6b10d14303b3',1,'_mod::Module()'],['../struct__stmt.html#ace6ad861a3d463d6ffefaa028a5239d6',1,'_stmt::module()']]],
   ['modulename',['moduleName',['../struct_python_qt_import_1_1_module_info.html#a21c215c3b2325598a57073ee91d74397',1,'PythonQtImport::ModuleInfo']]],
   ['modules',['modules',['../struct__is.html#a7f06027c7ab7541936413d7d91eac5fb',1,'_is']]],
   ['modules_5freloading',['modules_reloading',['../struct__is.html#a6a0f493b1eaa633105739d733a04412e',1,'_is']]],

@@ -1255,24 +1255,24 @@ Generating docs for /home/travis/build/njazz/qtpd/qtpd_lib/ceammc-lib/ceammc_gui
 /home/travis/build/njazz/qtpd/qtpd_lib/ceammc-lib/ceammc_gui.h:395: warning: The following parameters of ceammc_gui::GuiFactory::wx_paint(U *z, t_object *view) are not documented:
   parameter 'view'
 /home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:156: warning: argument 'idx' of command @param is not found in the argument list of qtpd::Canvas::addInlet() inherited from member addInlet at line 127 in file /home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:164: warning: argument 'idx' of command @param is not found in the argument list of qtpd::Canvas::addOutlet() inherited from member addOutlet at line 159 in file /home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:940: warning: argument 'canvas' of command @param is not found in the argument list of qtpd::Canvas::createBoxForCanvas(Canvas *newCanvas, std::string objectData, QPoint pos)
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:940: warning: The following parameters of qtpd::Canvas::createBoxForCanvas(Canvas *newCanvas, std::string objectData, QPoint pos) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:164: warning: argument 'idx' of command @param is not found in the argument list of qtpd::Canvas::addOutlet() inherited from member addOutlet at line 168 in file /home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:942: warning: argument 'canvas' of command @param is not found in the argument list of qtpd::Canvas::createBoxForCanvas(Canvas *newCanvas, std::string objectData, QPoint pos)
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:942: warning: The following parameters of qtpd::Canvas::createBoxForCanvas(Canvas *newCanvas, std::string objectData, QPoint pos) are not documented:
   parameter 'newCanvas'
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:855: warning: argument 'message' of command @param is not found in the argument list of qtpd::Canvas::createObject(std::string uiObjectName, std::string objectData1, QPoint pos)
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:855: warning: The following parameters of qtpd::Canvas::createObject(std::string uiObjectName, std::string objectData1, QPoint pos) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:857: warning: argument 'message' of command @param is not found in the argument list of qtpd::Canvas::createObject(std::string uiObjectName, std::string objectData1, QPoint pos)
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:857: warning: The following parameters of qtpd::Canvas::createObject(std::string uiObjectName, std::string objectData1, QPoint pos) are not documented:
   parameter 'uiObjectName'
   parameter 'objectData1'
 /home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:180: warning: argument 'ds' of command @param is not found in the argument list of qtpd::Canvas::drawStyle()
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:1444: warning: argument 'patchcord' of command @param is not found in the argument list of qtpd::Canvas::patchcordAsPdFileString(Patchcord *pcord)
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:1444: warning: The following parameters of qtpd::Canvas::patchcordAsPdFileString(Patchcord *pcord) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:1446: warning: argument 'patchcord' of command @param is not found in the argument list of qtpd::Canvas::patchcordAsPdFileString(Patchcord *pcord)
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:1446: warning: The following parameters of qtpd::Canvas::patchcordAsPdFileString(Patchcord *pcord) are not documented:
   parameter 'pcord'
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:611: warning: argument 'pdObjectData' of command @param is not found in the argument list of qtpd::Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas *canvas)
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:611: warning: The following parameters of qtpd::Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas *canvas) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:613: warning: argument 'pdObjectData' of command @param is not found in the argument list of qtpd::Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas *canvas)
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:613: warning: The following parameters of qtpd::Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas *canvas) are not documented:
   parameter 'pdObjectName'
 /home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:127: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addInlet()
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:159: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addOutlet()
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:432: warning: argument 'w' of command @param is not found in the argument list of qtpd::UIObject::minimumBoxWidth()
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:168: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addOutlet()
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:426: warning: argument 'w' of command @param is not found in the argument list of qtpd::UIObject::minimumBoxWidth()
 /home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:80: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setInletsPos()
 /home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:104: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setOutletsPos()
 /home/travis/build/njazz/qtpd/qtpd_gui/python/headers/PythonQtDoc.h:48: warning: image file PythonQt.jpg is not found in IMAGE_PATH: assuming external image.
@@ -1361,6 +1361,6 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-symbol cache used 5716/65536 hits=1020911 misses=5716
-lookup cache used 8974/65536 hits=57862 misses=9643
+symbol cache used 5721/65536 hits=1021384 misses=5721
+lookup cache used 8982/65536 hits=57921 misses=9649
 finished...

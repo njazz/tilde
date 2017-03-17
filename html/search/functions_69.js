@@ -21,7 +21,7 @@ var searchData=
   ['inletat',['inletAt',['../classqtpd_1_1_u_i_object.html#a8c016280f54167ba01d4af64d7d1c11c',1,'qtpd::UIObject']]],
   ['inletcount',['inletCount',['../classqtpd_1_1_u_i_object.html#a64ad65d9eba38d18c6cf475fa0fbdd65',1,'qtpd::UIObject::inletCount()'],['../classpy_pd_lib.html#a58b8dc38b95fc35229db802b3d9721d8',1,'pyPdLib::inletCount()']]],
   ['inletindex',['inletIndex',['../classqtpd_1_1_patchcord.html#a0d933ac877c243182fe02ba4fb6aeb32',1,'qtpd::Patchcord']]],
-  ['inlettype',['inletType',['../classqtpd_1_1_u_i_object.html#aefe986337336ee88a8fe40af761e2614',1,'qtpd::UIObject::inletType()'],['../classpy_pd_lib.html#a5a7d66a3ae705f7901602d478afa3375',1,'pyPdLib::inletType()']]],
+  ['inlettype',['inletType',['../classpy_pd_lib.html#a5a7d66a3ae705f7901602d478afa3375',1,'pyPdLib']]],
   ['insert',['insert',['../classceammc_1_1_atom_list.html#a8fb783701919036bb9c026375626859d',1,'ceammc::AtomList::insert(size_t pos, const Atom &amp;a)'],['../classceammc_1_1_atom_list.html#afcb0933bbdae8cdb4fc4fd6ff9667ad9',1,'ceammc::AtomList::insert(size_t pos, const AtomList &amp;l)']]],
   ['insertcompletion',['insertCompletion',['../class_python_qt_scripting_console.html#a6eea3c653a8df6a1d9740f841da4504f',1,'PythonQtScriptingConsole']]],
   ['inst',['inst',['../classqtpd_1_1_clipboard.html#a39c52345e02fdca597bc6858d8d44e53',1,'qtpd::Clipboard::inst()'],['../classqtpd_1_1_object_loader.html#ab0d2dafc82b31dc7e2e35f8527de3df7',1,'qtpd::ObjectLoader::inst()'],['../classqtpd_1_1_preferences.html#a43710c0b803cec200c7add487aae2c08',1,'qtpd::Preferences::inst()']]],

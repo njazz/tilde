@@ -125,6 +125,7 @@ var searchData=
   ['shellclassdeleted',['shellClassDeleted',['../class_python_qt_private.html#ad353e3d25d38be4fbe1eb057ba539766',1,'PythonQtPrivate']]],
   ['shellsetinstancewrappercb',['shellSetInstanceWrapperCB',['../class_python_qt_class_info.html#a4b8e20596586a00153d282b68d05b732',1,'PythonQtClassInfo']]],
   ['shortestlistsize',['shortestListSize',['../namespaceceammc_1_1list.html#addfbb0c4b23943dee327ee4a6674e41b',1,'ceammc::list']]],
+  ['shownewobjectmaker',['showNewObjectMaker',['../classqtpd_1_1_canvas.html#a719cb6130babc40601422b6504466105',1,'qtpd::Canvas']]],
   ['shuffle',['shuffle',['../classceammc_1_1_atom_list.html#abf80f0b307369920bc7aef849caa7567',1,'ceammc::AtomList']]],
   ['signalid',['signalId',['../class_python_qt_signal_target.html#a4f4abf064af5ebd55ff626fe0306dfd8',1,'PythonQtSignalTarget']]],
   ['signature',['signature',['../class_python_qt_slot_info.html#a5865dfe73a41b6d1a70c18ed5828bcb1',1,'PythonQtSlotInfo::signature()'],['../namespace_python_qt_utils.html#ade9f7b98a609131283047a38c5929258',1,'PythonQtUtils::signature()']]],
