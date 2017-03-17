@@ -28,6 +28,7 @@ UIMessage::UIMessage(UIObject *parent) : UIObject(parent)
     connect(this->editor_,&QLineEdit::textEdited, this,&UIMessage::editorChanged);
 
     this->setMinimumBoxWidth(40);
+    this->setMinimumBoxHeight(20);
 }
 
 ///////

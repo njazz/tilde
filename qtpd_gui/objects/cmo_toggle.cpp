@@ -20,6 +20,7 @@ UIToggle::UIToggle(UIObject *parent) : UIObject(parent)
     this->setPalette(Pal);
 
     this->setMinimumBoxWidth(20);
+    this->setMinimumBoxHeight(20);
 
     this->value_ = false;
 }

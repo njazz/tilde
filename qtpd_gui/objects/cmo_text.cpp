@@ -26,6 +26,7 @@ UIText::UIText(UIObject *parent) : UIObject(parent)
     this->editor_->installEventFilter(this);
 
     this->setMinimumBoxWidth(80);
+    this->setMinimumBoxHeight(20);
 
 }
 

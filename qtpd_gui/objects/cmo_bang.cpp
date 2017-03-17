@@ -22,6 +22,7 @@ UIBang::UIBang(UIObject *parent) : UIObject(parent)
     this->setPalette(Pal);
 
     this->setMinimumBoxWidth(20);
+    this->setMinimumBoxHeight(20);
 
     this->timer_ = new QTimer;
     this->timer_->setSingleShot(true);
