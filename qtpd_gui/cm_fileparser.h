@@ -22,6 +22,7 @@ public:
     // or t_canvas?
     static PatchWindow* pdParserPrevWindow;
     static PatchWindow* pdParserWindow;
+    static PatchWindow* pdParserFirstWindow;
     static std::string pdParserFileName;
 
     ////
@@ -288,8 +289,13 @@ public:
 
             pdParserPrevWindow = pdParserWindow;
 
+
+
             PatchWindow* newWnd = PatchWindow::newWindow();
             pdParserWindow = newWnd;
+
+            //save pointer to first canvas. needed to set file name
+            if (!pdParserPrevWindow) pdParserFirstWindow = pdParserWindow;
 
             if (pdParserPrevWindow)
                 newWnd->setWindowTitle("<subpatch>");
@@ -349,6 +355,12 @@ public:
 
             }
         }
+
+        if (pdParserWindow)
+        {
+            pdParserWindow->setFileName(fname);
+        }
+
         f.close();
 
     }
