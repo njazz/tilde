@@ -142,7 +142,7 @@ private slots:
             }
         }
 
-       // bool        eventHandled = false;
+        // bool        eventHandled = false;
         QTextCursor textCursor   = this->textCursor();
 
         //      int key = event->key();
@@ -241,12 +241,12 @@ private slots:
         //        }
         //      }
 
-//        if (eventHandled) {
+        //        if (eventHandled) {
 
-//            _completer->popup()->hide();
-//            event->accept();
+        //            _completer->popup()->hide();
+        //            event->accept();
 
-//        } else
+        //        } else
         {
 
             QPlainTextEdit::keyPressEvent(event);
@@ -257,7 +257,7 @@ private slots:
             } else {
                 _completer->popup()->hide();
             }
-//            eventHandled = true;
+            //            eventHandled = true;
         }
         //
     }
@@ -452,34 +452,51 @@ private slots:
         QStringList list = getEditorData();
 
         // while (true)
-        for (QStringList::iterator it = list.begin(); it!= list.end(); ++it)
+        //for (QStringList::iterator it = list.begin(); it!= list.end(); ++it)
+        //{
+
+        QString line = list.join("\r\n") ;//*it;
+
+
+        //lol
+        //        if (line.isNull())
+        //        {}
+
+        //for (QStringList::iterator it = list.begin(); it!= list.end(); ++it)
         {
-            QString line = *it;
-            if (line.isNull())
-                break;
+            //QString line = *it;
 
-
-            if (dict) {
-                p.setNewRef(PyRun_String(line.toLatin1().data(), Py_single_input, dict, dict));
-                //qDebug() << editor_->document()->toPlainText().toLatin1().data();
-            }
-
-            if (!p) {
-                PythonQt::self()->handleError();
-            }
-
-            if (_stdOut!="")
+            if (!line.isNull())
             {
 
-                cmp_post((std::string)"Python: "+ _stdOut.toStdString());
-            }
-            if (_stdErr!="")
-            {
-                cmp_post((std::string)"Python error: "+ _stdOut.toStdString());
-            }
 
+                if (dict) {
+                    //p.setNewRef(PyRun_String(line.toLatin1().data(), Py_single_input, dict, dict));
+
+                    _context.evalScript(line);
+
+                    //qDebug() << editor_->document()->toPlainText().toLatin1().data();
+                    qDebug() << "line: " << line;
+                }
+
+                if (!p) {
+                    PythonQt::self()->handleError();
+                }
+
+                if (_stdOut!="")
+                {
+
+                    cmp_post((std::string)"Python: "+ _stdOut.toStdString());
+                }
+                if (_stdErr!="")
+                {
+                    cmp_post((std::string)"Python error: "+ _stdOut.toStdString());
+                }
+            }
 
         }
+
+        // }
     }
 
     void btnLoad()
