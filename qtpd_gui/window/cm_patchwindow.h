@@ -303,7 +303,10 @@ public:
     void resizeEvent(QResizeEvent *event)
     {
         //fix later
-        this->canvas->setMinimumSize(this->size());
+        this->canvas->setMinimumSize(QSize(width()*2 - canvas->x(), height() - canvas->y()));
+//        this->scroll->setMinimumSize(QSize(width() - canvas->x(), height() - canvas->y()));
+
+//        qDebug() << "resize " << canvas->width() << scroll->width();
     }
 
     /////

@@ -9,11 +9,13 @@ PatchWindow::PatchWindow()
 
     this->scroll = new QScrollArea(this);
     this->scroll->setFrameShape(QFrame::NoFrame);
-    this->scroll->setWidgetResizable(true);
+//    this->scroll->setWidgetResizable(true);
 
     this->canvas = new Canvas((UIObject*)this->scroll);
 
-    this->setCentralWidget(this->canvas);
+    scroll->setWidget(canvas);
+
+    this->setCentralWidget(this->scroll);
 
     //TODO weird
     //this->objectMaker = new ObjectMaker((QLineEdit*)this->canvas);
