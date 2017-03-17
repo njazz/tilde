@@ -4,6 +4,19 @@
 
 namespace qtpd
 {
+
+UIScriptEditor::UIScriptEditor(QPlainTextEdit *parent) : QPlainTextEdit(parent)
+{
+    //
+    _completer = new QCompleter(this);
+    _completer->setWidget(this);
+    QObject::connect(_completer, SIGNAL(activated(const QString&)),
+      this, SLOT(insertCompletion(const QString&)));
+
+    PythonQtObjectPtr _context = PythonQt::self()->getMainModule();
+
+}
+
 UIScript::UIScript(UIObject *parent) : UIObject(parent)
 {
     setPdObjectName("ui.script ");
@@ -15,12 +28,14 @@ UIScript::UIScript(UIObject *parent) : UIObject(parent)
 
     QFont font = QFont(PREF_QSTRING("Font"),11,0,false);
 
-    this->editor_ = new QPlainTextEdit(this);
+    this->editor_ = new UIScriptEditor((QPlainTextEdit*)this);  //weird
     this->editor_->setFixedSize(150-5,300-27);//setFixedSize(65-5,18);
     this->editor_->move(2,21);
     this->editor_->setFont(font);
     this->editor_->show();
     this->editor_->setAttribute(Qt::WA_MacShowFocusRect, 0);
+
+    this->setFocus();
 
     connect(this->editor_,&QPlainTextEdit::textChanged, this,&UIScript::editorChanged);
 
@@ -71,6 +86,8 @@ UIScript::UIScript(UIObject *parent) : UIObject(parent)
     b1->setFixedSize(50,20);
     b1->show();
     connect(b1, &QPushButton::clicked, this, &UIScript::btnClear);
+
+
 
 }
 
