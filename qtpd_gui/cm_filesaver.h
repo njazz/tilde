@@ -1,20 +1,21 @@
+// (c) 2017 Alex Nadzharov
+// License: GPL3
+
 #ifndef CM_FILESAVER_H
 #define CM_FILESAVER_H
 
 #include "cm_patchwindow.h"
 
-namespace qtpd
-{
+namespace qtpd {
 
 ////
 /// \brief saves pd files on 'client' (GUI) side
 ///
-class FileSaver
-{
+class FileSaver {
 private:
     FileSaver(){};
-public:
 
+public:
     ////
     /// \brief save canvas TODO move parts to canvas
     /// \param file
@@ -29,14 +30,10 @@ public:
         QStringList fileData = canvas->canvasAsPdStrings();
 
         //todo check
-        for (int i=0; i< fileData.count(); i++)
-        {
+        for (int i = 0; i < fileData.count(); i++) {
             QString str1 = fileData.at(i);
             file->write(str1.toStdString().c_str(), str1.size());
         }
-
-
-
     };
 
     ////
@@ -51,12 +48,9 @@ public:
 
         FileSaver::saveCanvas(canvas, &f);
 
-
         f.close();
-
     }
 };
-
 }
 
 #endif // CM_FILESAVER_H

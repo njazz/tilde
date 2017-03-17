@@ -1,3 +1,6 @@
+// (c) 2017 Alex Nadzharov
+// License: GPL3
+
 #ifndef CM_MENU_H
 #define CM_MENU_H
 
@@ -5,27 +8,26 @@
 
 #include "python/PythonQtScriptingConsole.h"
 
-namespace qtpd
-{
+namespace qtpd {
 ////
 /// \brief Common menu - creates new windows (patch, Pd)
 /// \details this is used only to create new windows. all other items are now in basewindow - probably they should be moved here
 ///
-class BaseMenu : public QObject
-{
+class BaseMenu : public QObject {
     Q_OBJECT
 
     static PythonQtScriptingConsole* pythonConsole_;
+
 public:
-    explicit BaseMenu(QObject *parent = 0)
+    explicit BaseMenu(QObject* parent = 0)
     {
         //TODO! singleton
-        PythonQtObjectPtr  mainContext = PythonQt::self()->getMainModule();
+        PythonQtObjectPtr mainContext = PythonQt::self()->getMainModule();
         pythonConsole_ = new PythonQtScriptingConsole(NULL, mainContext);
-        qDebug("pyConsole %lu", (long) pythonConsole_);
+        qDebug("pyConsole %lu", (long)pythonConsole_);
     };
 
-//signals:
+    //signals:
 
 public slots:
 

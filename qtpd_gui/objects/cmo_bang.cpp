@@ -1,15 +1,16 @@
+// (c) 2017 Alex Nadzharov
+// License: GPL3
+
 #include "cmo_bang.h"
 
+namespace qtpd {
 
-namespace qtpd
-{
-
-
-UIBang::UIBang(UIObject *parent) : UIObject(parent)
+UIBang::UIBang(UIObject* parent)
+    : UIObject(parent)
 {
     setPdObjectName("ui.bang");
 
-    this->setFixedSize(20,20);
+    this->setFixedSize(20, 20);
 
     this->setMouseTracking(true);
 
@@ -17,7 +18,7 @@ UIBang::UIBang(UIObject *parent) : UIObject(parent)
     this->clicked_ = false;
 
     QPalette Pal(palette());
-    Pal.setColor(QPalette::Background, QColor(240,240,240));
+    Pal.setColor(QPalette::Background, QColor(240, 240, 240));
     this->setAutoFillBackground(true);
     this->setPalette(Pal);
 
@@ -31,12 +32,5 @@ UIBang::UIBang(UIObject *parent) : UIObject(parent)
     connect(this->timer_, &QTimer::timeout, this, &UIBang::timerAction);
 
     connect(this, SIGNAL(setBangTimer(int)), this->timer_, SLOT(start(int)));
-
-
 }
-
-
-
-
 }
-

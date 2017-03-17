@@ -1,3 +1,6 @@
+// (c) 2017 Alex Nadzharov
+// License: GPL3
+
 #ifndef PY_QTPD_H
 #define PY_QTPD_H
 
@@ -13,17 +16,17 @@
 
 using namespace qtpd;
 
-class pyQtpd : public QObject
-{
+class pyQtpd : public QObject {
     Q_OBJECT
 
 public:
-    explicit pyQtpd(QObject *parent = 0){};
+    explicit pyQtpd(QObject* parent = 0){};
 
 public Q_SLOTS:
-    PyObject* getMainModule(){
+    PyObject* getMainModule()
+    {
         return PythonQt::self()->getMainModule();
-      }
+    }
 
     //todo separate classes / decorators
 
@@ -42,7 +45,7 @@ public Q_SLOTS:
 
     UIObject* createObject(Canvas* c, QString obj_name, QString obj_data, int x, int y)
     {
-        return c->createObject(obj_name.toStdString(),obj_data.toStdString(), QPoint(x,y));
+        return c->createObject(obj_name.toStdString(), obj_data.toStdString(), QPoint(x, y));
     }
 
     ////
@@ -51,17 +54,17 @@ public Q_SLOTS:
     //todo templates
     void moveObject(Canvas* o, int x, int y)
     {
-        o->move(x,y);
+        o->move(x, y);
     }
 
     void moveObject(UIObject* o, int x, int y)
     {
-        o->move(x,y);
+        o->move(x, y);
     }
 
     void resizeObject(UIObject* o, int w, int h)
     {
-        o->setFixedSize(w,h);
+        o->setFixedSize(w, h);
     }
 
     //////////
@@ -89,7 +92,7 @@ public Q_SLOTS:
 
     void patchcord(Canvas* c, UIObject* obj1, int out1, UIObject* obj2, int in2)
     {
-        c->patchcord(obj1,out1,obj2,in2);
+        c->patchcord(obj1, out1, obj2, in2);
     }
 
     ////////////
@@ -109,8 +112,7 @@ public Q_SLOTS:
 
     void pdMessage(UIObject* obj, QString data)
     {
-        if (obj->pdObject())
-        {
+        if (obj->pdObject()) {
             cmp_sendstring((t_pd*)obj->pdObject(), data.toStdString());
         }
     }
@@ -132,7 +134,6 @@ public Q_SLOTS:
     {
         cmp_post(msg.toStdString());
     }
-
 
     ///////
     // properties
@@ -159,7 +160,7 @@ public Q_SLOTS:
 
     void setP(UIObject* obj, QString name, QString data)
     {
-        obj->properties()->set(name.toStdString(),data);
+        obj->properties()->set(name.toStdString(), data);
     }
 
     QStringList pnames(UIObject* obj)
@@ -174,8 +175,6 @@ public Q_SLOTS:
     {
         return (PropertyList*)&Preferences::inst();
     }
-
-
 };
 
 #endif // PY_QTPD_H

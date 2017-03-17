@@ -1,8 +1,12 @@
+// (c) 2017 Alex Nadzharov
+// License: GPL3
+
 #include "cm_object.h"
 
-namespace qtpd{
+namespace qtpd {
 
-UIObject::UIObject(UIWidget *parent) : UIWidget(parent)
+UIObject::UIObject(UIWidget* parent)
+    : UIWidget(parent)
 {
     this->errorBox_ = false;
 
@@ -16,14 +20,13 @@ UIObject::UIObject(UIWidget *parent) : UIWidget(parent)
 
     this->setAttribute(Qt::WA_Hover, true);
 
-   connect(this->sizeBox, &SizeBox::resizeBoxEvent, this, &UIObject::resizeBox);
+    connect(this->sizeBox, &SizeBox::resizeBoxEvent, this, &UIObject::resizeBox);
 
-   this->initProperties();
+    this->initProperties();
 }
 
 void UIObject::resizeBox(int dx)
 {
     this->setFixedWidth(this->width() + dx);
 };
-
 }

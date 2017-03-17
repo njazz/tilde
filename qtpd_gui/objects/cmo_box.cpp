@@ -1,9 +1,11 @@
+// (c) 2017 Alex Nadzharov
+// License: GPL3
+
 #include "cmo_box.h"
 
-
-namespace qtpd
-{
-UIBox::UIBox(UIObject *parent) : UIObject(parent)
+namespace qtpd {
+UIBox::UIBox(UIObject* parent)
+    : UIObject(parent)
 {
     //setPdObjectName("ui.bang");
 
@@ -11,10 +13,10 @@ UIBox::UIBox(UIObject *parent) : UIObject(parent)
     //this->setMinimumWidth(22);
     this->setMouseTracking(true);
 
-    this->deselect();// = false;
+    this->deselect(); // = false;
 
     QPalette Pal(palette());
-    Pal.setColor(QPalette::Background, QColor(240,240,240));
+    Pal.setColor(QPalette::Background, QColor(240, 240, 240));
     this->setAutoFillBackground(true);
     this->setPalette(Pal);
 
@@ -22,36 +24,26 @@ UIBox::UIBox(UIObject *parent) : UIObject(parent)
 
     this->setSubpatchWindow(0);
 
-
     //this->clicked_ = false;
 
     this->editor_ = new QLineEdit(this);
-    this->editor_->setFixedSize(65-5,18);
-    this->editor_->move(1,1);
-    this->editor_->setFont(QFont(PREF_QSTRING("Font"),11,0,false));
+    this->editor_->setFixedSize(65 - 5, 18);
+    this->editor_->move(1, 1);
+    this->editor_->setFont(QFont(PREF_QSTRING("Font"), 11, 0, false));
     this->editor_->hide();
     this->editor_->setAttribute(Qt::WA_MacShowFocusRect, 0);
     this->editor_->setFrame(false);
 
-
-    connect(this->editor_,&QLineEdit::editingFinished,this,&UIBox::editorDone);
-    connect(this->editor_,&QLineEdit::textEdited, this,&UIBox::editorChanged);
+    connect(this->editor_, &QLineEdit::editingFinished, this, &UIBox::editorDone);
+    connect(this->editor_, &QLineEdit::textEdited, this, &UIBox::editorChanged);
 
     this->setMinimumBoxWidth(40);
     this->setMinimumBoxHeight(20);
 }
 
-
-
-
-
-
-
-
-
 ///////
 
-void  UIBox::editorDone()
+void UIBox::editorDone()
 {
     qDebug("editor done");
 
@@ -61,19 +53,17 @@ void  UIBox::editorDone()
     this->editor_->hide();
 }
 
-void  UIBox::editorChanged()
+void UIBox::editorChanged()
 {
     QFont myFont(PREF_QSTRING("Font"), 11);
     QFontMetrics fm(myFont);
     int new_w = fm.width(QString(this->editor_->text())) + 10;
-    new_w = (new_w<25) ? 25 : new_w;
+    new_w = (new_w < 25) ? 25 : new_w;
     this->setFixedWidth(new_w);
-    this->editor_->setFixedWidth(this->width()-5);
+    this->editor_->setFixedWidth(this->width() - 5);
 
     //
     this->setInletsPos();
     this->setOutletsPos();
-
 }
-
 }

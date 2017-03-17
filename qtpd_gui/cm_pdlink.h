@@ -1,8 +1,11 @@
+// (c) 2017 Alex Nadzharov
+// License: GPL3
+
 #ifndef CM_PDLINK_H
 #define CM_PDLINK_H
 
-#include "../qtpd_lib/src/m_pd.h"
 #include "../qtpd_lib/ceammc-lib/ceammc_atomlist.h"
+#include "../qtpd_lib/src/m_pd.h"
 
 // prototype for Pd 'server' interaction
 
@@ -14,8 +17,7 @@ typedef void (*t_updateUI)(void* uiobj, ceammc::AtomList msg);
 ////
 /// standard pd hook for print function
 ///
-typedef void (*t_printhook)(const char *s);
-
+typedef void (*t_printhook)(const char* s);
 
 ////
 /// \brief initializes pd library
@@ -172,17 +174,12 @@ void cmp_sendstring(t_pd* obj, std::string msg);
 ///
 void cmp_connectUI(t_pd* obj, void* uiobj, t_updateUI func);
 
-
 ////
 /// \brief post plain text to Pd window
 /// \param text
 ///
 void cmp_post(std::string text);
 
-
 ///////
-
-
-
 
 #endif // CM_PDLINK_H

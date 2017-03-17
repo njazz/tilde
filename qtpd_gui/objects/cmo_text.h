@@ -1,3 +1,6 @@
+// (c) 2017 Alex Nadzharov
+// License: GPL3
+
 #ifndef cmo_text_H
 #define cmo_text_H
 
@@ -8,14 +11,12 @@
 
 //#include "cm_pdlink.h"
 
-namespace qtpd
-{
+namespace qtpd {
 
 ////
 /// \brief gui object: comment box (ui.text)
 ///
-class UIText : public UIObject
-{
+class UIText : public UIObject {
     Q_OBJECT
 
 private:
@@ -24,9 +25,9 @@ private:
     QPlainTextEdit* editor_;
 
 public:
-    explicit UIText(UIObject *parent = 0);
+    explicit UIText(UIObject* parent = 0);
 
-    static UIObject* createObject(std::string objectData, t_canvas* pdCanvas, UIWidget *parent=0)
+    static UIObject* createObject(std::string objectData, t_canvas* pdCanvas, UIWidget* parent = 0)
     {
         UIText* b = new UIText((UIObject*)parent);
         //temporary
@@ -34,49 +35,40 @@ public:
         b->setObjectData(data1);
 
         b->autoResize();
-        return (UIObject*) b;
+        return (UIObject*)b;
     };
 
-    void paintEvent(QPaintEvent *)
-    {    QPainter p(this);
+    void paintEvent(QPaintEvent*)
+    {
+        QPainter p(this);
 
-         if (this->getEditMode() == em_Unlocked){
-             if (this->isSelected() )
-             {
-                 p.setPen(QPen(QColor(0, 192, 255), 2, Qt::DotLine, Qt::SquareCap, Qt::BevelJoin));
-             }
-             else
-                 if (this->clicked_)
-                 {
-                     p.setPen(QPen(QColor(0, 192, 255), 4, Qt::DotLine, Qt::RoundCap, Qt::RoundJoin));
-                 }
-                 else
-                 {
-                     p.setPen(QPen(QColor(128, 128, 128), 2, Qt::DotLine, Qt::SquareCap, Qt::BevelJoin));
-                 }
+        if (this->getEditMode() == em_Unlocked) {
+            if (this->isSelected()) {
+                p.setPen(QPen(QColor(0, 192, 255), 2, Qt::DotLine, Qt::SquareCap, Qt::BevelJoin));
+            } else if (this->clicked_) {
+                p.setPen(QPen(QColor(0, 192, 255), 4, Qt::DotLine, Qt::RoundCap, Qt::RoundJoin));
+            } else {
+                p.setPen(QPen(QColor(128, 128, 128), 2, Qt::DotLine, Qt::SquareCap, Qt::BevelJoin));
+            }
 
-             p.drawRect(0,0,this->width(),this->height());
-             //p.drawPolygon(poly);
-         }
+            p.drawRect(0, 0, this->width(), this->height());
+            //p.drawPolygon(poly);
+        }
 
-         QTextOption *op = new QTextOption;
-          op->setAlignment(Qt::AlignLeft);
-           p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        QTextOption* op = new QTextOption;
+        op->setAlignment(Qt::AlignLeft);
+        p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
-            p.setFont(QFont(PREF_QSTRING("Font"),11,0,false));
-             p.drawText(2,3,this->width()-2,this->height()-3,0,this->objectData().c_str(),0);
-
-
+        p.setFont(QFont(PREF_QSTRING("Font"), 11, 0, false));
+        p.drawText(2, 3, this->width() - 2, this->height() - 3, 0, this->objectData().c_str(), 0);
     }
-
 
     ///////////////////
 
-    void mousePressEvent(QMouseEvent *ev)
+    void mousePressEvent(QMouseEvent* ev)
     {
 
-        if ( (this->getEditMode()==em_Unlocked) && this->isSelected())
-        {
+        if ((this->getEditMode() == em_Unlocked) && this->isSelected()) {
 
             this->editor_->document()->setPlainText(QString(this->objectData().c_str()));
             this->editor_->show();
@@ -86,17 +78,15 @@ public:
         emit selectBox(this);
         this->dragOffset = ev->pos();
 
-        if (!(this->getEditMode()==em_Unlocked))
-        {
+        if (!(this->getEditMode() == em_Unlocked)) {
             this->clicked_ = true;
             this->repaint();
 
             //todo timer
         }
-
     }
 
-    void mouseReleaseEvent(QMouseEvent *)
+    void mouseReleaseEvent(QMouseEvent*)
     {
         //this->selected_ = false;
 
@@ -105,29 +95,22 @@ public:
             this->clicked_ = false;
             this->repaint();
         }
-
     }
 
-    void mouseMoveEvent(QMouseEvent *event)
+    void mouseMoveEvent(QMouseEvent* event)
     {
-        if(event->buttons() & Qt::LeftButton)
-        {
+        if (event->buttons() & Qt::LeftButton) {
             emit moveBox(this, event);
         }
         event->ignore();
 
         //todo move!
-        if (this->getEditMode() != em_Unlocked)
-        {
+        if (this->getEditMode() != em_Unlocked) {
             this->setCursor(QCursor(Qt::PointingHandCursor));
-        }
-        else
-        {
+        } else {
             this->setCursor(QCursor(Qt::ArrowCursor));
         }
-
     }
-
 
     ///////
 
@@ -140,17 +123,17 @@ public:
         QFontMetrics fm(myFont);
         QString text = QString(this->editor_->document()->toPlainText());
         int new_w = fm.width(text) + 20;
-        new_w = (new_w<25) ? 25 : new_w;
+        new_w = (new_w < 25) ? 25 : new_w;
 
-        int new_h = fm.boundingRect(QRect(0,0,new_w,100), 0, text).height() + 7 ;
+        int new_h = fm.boundingRect(QRect(0, 0, new_w, 100), 0, text).height() + 7;
 
-        new_h = (new_h<25) ? 25 : new_h;
+        new_h = (new_h < 25) ? 25 : new_h;
 
         this->setFixedWidth(new_w);
         this->setFixedHeight(new_h);
 
-        this->editor_->setFixedWidth(this->width()-1);
-        this->editor_->setFixedHeight(this->height()-2);
+        this->editor_->setFixedWidth(this->width() - 1);
+        this->editor_->setFixedHeight(this->height() - 2);
 
         this->editor_->hide();
     }
@@ -158,11 +141,10 @@ public:
     static void updateUI(void* uiobj, ceammc::AtomList msg)
     {
         //qDebug("update ui");
-        UIText *x = (UIText*)uiobj;
+        UIText* x = (UIText*)uiobj;
 
         std::string obj_data;
-        for (int i=0; i<msg.size();i++)
-        {
+        for (int i = 0; i < msg.size(); i++) {
             obj_data += msg.at(i).asString() + " ";
         }
 
@@ -178,30 +160,27 @@ public:
     //        //cmp_connectUI((t_pd*)this->getPdObject(), (void*)this, &cmo_text::updateUI);
     //    }
 
-
-//    std::string asPdFileString()
-//    {return "ui.text "+ this->objectData();}
+    //    std::string asPdFileString()
+    //    {return "ui.text "+ this->objectData();}
 
     void* pdObject()
     {
         return 0;
     }
 
-    bool eventFilter(QObject *watched, QEvent *event)
+    bool eventFilter(QObject* watched, QEvent* event)
     {
         if (event->type() == QEvent::KeyPress) {
 
-            QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
+            QKeyEvent* keyEvent = static_cast<QKeyEvent*>(event);
 
-            if  ( (keyEvent->key() == Qt::Key_Return) && (keyEvent->modifiers() == Qt::ShiftModifier) )
-            {
+            if ((keyEvent->key() == Qt::Key_Return) && (keyEvent->modifiers() == Qt::ShiftModifier)) {
                 this->editorDone();
                 return true;
             }
         }
 
         return false;
-
     }
 
 signals:
@@ -209,8 +188,6 @@ signals:
 private slots:
     void editorDone();
     void editorChanged();
-
 };
-
 }
 #endif // cmo_text_H

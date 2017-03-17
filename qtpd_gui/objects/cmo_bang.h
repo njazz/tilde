@@ -1,6 +1,8 @@
+// (c) 2017 Alex Nadzharov
+// License: GPL3
+
 #ifndef CMO_BANG_H
 #define CMO_BANG_H
-
 
 #include <QLineEdit>
 #include <QTimer>
@@ -10,14 +12,12 @@
 
 #include "cm_pdlink.h"
 
-namespace qtpd
-{
+namespace qtpd {
 
 ////
 /// \brief gui object: message box (ui.msg)
 ///
-class UIBang : public UIObject
-{
+class UIBang : public UIObject {
     Q_OBJECT
 
 private:
@@ -26,9 +26,9 @@ private:
     QTimer* timer_;
 
 public:
-    explicit UIBang(UIObject *parent = 0);
+    explicit UIBang(UIObject* parent = 0);
 
-    static UIObject* createObject(std::string objectData, t_canvas* pdCanvas,UIWidget *parent=0)
+    static UIObject* createObject(std::string objectData, t_canvas* pdCanvas, UIWidget* parent = 0)
     {
         UIBang* b = new UIBang((UIObject*)parent);
 
@@ -38,149 +38,115 @@ public:
         std::string message = "ui.bang";
 
         //temp
-        t_object* new_obj = 0 ;
-        if (!pdCanvas)
-        {qDebug("bad pd canvas instance");}
-        else
-        {
-            QPoint pos = QPoint(0,0);
+        t_object* new_obj = 0;
+        if (!pdCanvas) {
+            qDebug("bad pd canvas instance");
+        } else {
+            QPoint pos = QPoint(0, 0);
             new_obj = cmp_create_object(pdCanvas, message, pos.x(), pos.y());
         }
 
-        if (new_obj)
-        {
-            qDebug ("created bang %s | ptr %lu\n",  message.c_str(), (long)new_obj);
+        if (new_obj) {
+            qDebug("created bang %s | ptr %lu\n", message.c_str(), (long)new_obj);
             b->setPdObject(new_obj);
-        }
-        else
-        {
-            qDebug("Error: no such object %s",  message.c_str());
+        } else {
+            qDebug("Error: no such object %s", message.c_str());
         }
 
         b->addInlet();
         b->addOutlet();
 
-        return (UIObject*) b;
+        return (UIObject*)b;
     };
 
-    void paintEvent(QPaintEvent *)
-    {    QPainter p(this);
+    void paintEvent(QPaintEvent*)
+    {
+        QPainter p(this);
 
+        if (this->clicked_) {
+            float lw = 2 + this->width() / 20.;
+            p.setPen(QPen(QColor(0, 192, 255), lw, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+            p.drawEllipse(QRect(1 + lw / 2, 1 + lw / 2, this->width() - 2 - lw, this->height() - 2 - lw));
 
-         if (this->clicked_)
-         {
-             float lw = 2+this->width()/20.;
-             p.setPen(QPen(QColor(0, 192, 255), lw, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
-             p.drawEllipse(QRect(1+lw/2, 1+lw/2, this->width()-2-lw,this->height()-2-lw));
+        } else {
+            p.setPen(QPen(QColor(220, 220, 220), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p.drawEllipse(QRect(1, 1, this->width() - 2, this->height() - 2));
+        }
 
-         }
-         else
-         {
-             p.setPen(QPen(QColor(220, 220, 220), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-             p.drawEllipse(QRect(1,1,this->width()-2,this->height()-2));
-         }
+        if (this->isSelected()) {
+            p.setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        } else {
+            p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        }
 
-
-          if (this->isSelected() )
-          {
-              p.setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-          }
-          else
-          {
-              p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-          }
-
-           p.drawRect(0,0,this->width(),this->height());
-
-
+        p.drawRect(0, 0, this->width(), this->height());
     }
 
-
-    void resizeEvent(QResizeEvent *event)
+    void resizeEvent(QResizeEvent* event)
     {
         UIObject::resizeEvent(event);
         this->setFixedHeight(this->width());
     }
     ///////////////////
 
-    void mousePressEvent(QMouseEvent *ev)
+    void mousePressEvent(QMouseEvent* ev)
     {
 
         emit selectBox(this);
         this->dragOffset = ev->pos();
 
-        if (!(this->getEditMode()==em_Unlocked))
-        {
+        if (!(this->getEditMode() == em_Unlocked)) {
             this->clicked_ = true;
             this->repaint();
 
             this->timerStart();
-
-
         }
 
         //temporary
         //move
-        if (this->getEditMode() != em_Unlocked)
-        {
-            if (!this->pdObject())
-            {
+        if (this->getEditMode() != em_Unlocked) {
+            if (!this->pdObject()) {
                 qDebug("msg: bad pd object!");
+            } else {
+                cmp_sendstring((t_pd*)this->pdObject(), ((std::string) "bang").c_str());
             }
-            else
-            {
-                cmp_sendstring((t_pd*)this->pdObject(), ((std::string)"bang").c_str());
-            }
-
         }
-
     }
 
-    void mouseReleaseEvent(QMouseEvent *)
+    void mouseReleaseEvent(QMouseEvent*)
     {
     }
 
-    void mouseMoveEvent(QMouseEvent *event)
+    void mouseMoveEvent(QMouseEvent* event)
     {
-        if(event->buttons() & Qt::LeftButton)
-        {
+        if (event->buttons() & Qt::LeftButton) {
             emit moveBox(this, event);
         }
         event->ignore();
 
         //todo move!
-        if (this->getEditMode() != em_Unlocked)
-        {
+        if (this->getEditMode() != em_Unlocked) {
             this->setCursor(QCursor(Qt::PointingHandCursor));
-        }
-        else
-        {
+        } else {
             this->setCursor(QCursor(Qt::ArrowCursor));
         }
-
     }
-
 
     ///////
 
-
-    static void updateUI(void* uiobj, ceammc::AtomList )
+    static void updateUI(void* uiobj, ceammc::AtomList)
     {
         //qDebug("update ui");
-        UIBang *x = (UIBang*)uiobj;
+        UIBang* x = (UIBang*)uiobj;
 
-        if(!x->clicked_)
-        {
+        if (!x->clicked_) {
             x->timerStart();
             x->clicked_ = true;
             x->repaint();
         }
-
-
-
     }
 
-    void setPdObject(void *obj)
+    void setPdObject(void* obj)
     {
         UIObject::setPdObject(obj);
 
@@ -188,11 +154,10 @@ public:
         qDebug("connectUI");
     }
 
-
-//    std::string asPdFileString()
-//    {
-//        return "ui.bang "+ this->objectData();
-//    }
+    //    std::string asPdFileString()
+    //    {
+    //        return "ui.bang "+ this->objectData();
+    //    }
 
     void timerStart()
     {
@@ -200,7 +165,6 @@ public:
             //this->timer_->start(100);
             emit setBangTimer(100);
         }
-
     }
 
 signals:
@@ -212,10 +176,7 @@ private slots:
         this->clicked_ = false;
         this->repaint();
     }
-
-
 };
-
 }
 
 #endif // CMO_MSG_H

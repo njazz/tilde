@@ -1,3 +1,6 @@
+// (c) 2017 Alex Nadzharov
+// License: GPL3
+
 #ifndef CM_WIDGET_H
 #define CM_WIDGET_H
 
@@ -6,40 +9,34 @@
 // Widget extension
 // check / fix
 
-namespace qtpd
-{
+namespace qtpd {
 
 ////
 /// \brief edit mode types
 ///
-typedef enum
-{
+typedef enum {
     em_Unlocked,
     em_Locked,
     em_Temporary
 } t_editMode;
 
-
-
 ////
 /// \brief parent class for all objects in the canvas
 ///
-class UIWidget : public QWidget
-{
+class UIWidget : public QWidget {
     Q_OBJECT
 
 private:
     bool selected_;
 
-    t_editMode *editMode_;
+    t_editMode* editMode_;
 
     float scale;
 
 public:
-
     QPoint dragOffset;
 
-    explicit UIWidget(QWidget *parent = 0);
+    explicit UIWidget(QWidget* parent = 0);
 
     ////
     /// \brief select object
@@ -63,7 +60,7 @@ public:
     /// \brief get object's selected flag
     /// \return
     ///
-    bool isSelected() {return this->selected_;}
+    bool isSelected() { return this->selected_; }
 
     ////
     /// \brief sets pointer to edit mode flag in parent canvas
@@ -90,7 +87,7 @@ public:
     ///
     t_editMode getEditMode()
     {
-        return (this->editMode_)?(*this->editMode_):em_Unlocked;
+        return (this->editMode_) ? (*this->editMode_) : em_Unlocked;
     }
 
     ////
@@ -101,7 +98,7 @@ public:
     {
         this->scale = scale_;
     }
-    float getScale() {return this->scale;}
+    float getScale() { return this->scale; }
 
 signals:
 
@@ -110,27 +107,26 @@ signals:
     void mouseEntered();
     void mouseLeaved();
 
-    void selectBox(UIWidget*box);
-    void moveBox(UIWidget*box, QMouseEvent* event);
+    void selectBox(UIWidget* box);
+    void moveBox(UIWidget* box, QMouseEvent* event);
 
 public slots:
 
-//    void s_MousePressed();
-//    void s_MouseReleased();
-//    void s_MouseEntered();
-//    void s_MouseLeaved();
+    //    void s_MousePressed();
+    //    void s_MouseReleased();
+    //    void s_MouseEntered();
+    //    void s_MouseLeaved();
 
     virtual void s_InMousePressed(UIWidget* obj, QMouseEvent* ev);
     virtual void s_InMouseReleased(UIWidget* obj, QMouseEvent* ev);
-//    virtual void s_InMouseEntered();
-//    virtual void s_InMouseLeaved();
+    //    virtual void s_InMouseEntered();
+    //    virtual void s_InMouseLeaved();
 
     virtual void s_OutMousePressed(UIWidget* obj, QMouseEvent* ev);
     virtual void s_OutMouseReleased(UIWidget* obj, QMouseEvent* ev);
-//    virtual void s_OutMouseEntered();
-//    virtual void s_OutMouseLeaved();
+    //    virtual void s_OutMouseEntered();
+    //    virtual void s_OutMouseLeaved();
 };
-
 }
 
 #endif // CM_WIDGET_H

@@ -1,8 +1,12 @@
+// (c) 2017 Alex Nadzharov
+// License: GPL3
+
 #include "cm_canvas.h"
 
-namespace qtpd{
+namespace qtpd {
 
-Canvas::Canvas(UIObject *parent) : UIObject(parent)
+Canvas::Canvas(UIObject* parent)
+    : UIObject(parent)
 {
 
     QPalette Pal;
@@ -11,7 +15,7 @@ Canvas::Canvas(UIObject *parent) : UIObject(parent)
     this->setPalette(Pal);
 
     //test
-    this->setFixedSize(400,300);
+    this->setFixedSize(400, 300);
 
     this->setMouseTracking(true);
 
@@ -31,23 +35,22 @@ Canvas::Canvas(UIObject *parent) : UIObject(parent)
     this->connObj1 = 0;
     this->connOutlet = 0;
     this->dragObject = 0;
-    this->setPdObject(0);   //extra
+    this->setPdObject(0); //extra
 
     //
     this->drawStyle_ = ds_Canvas;
 
     //
-//    this->editor_ = new QLineEdit(this);
-//    this->editor_->setFixedSize(65-5,18);
-//    this->editor_->move(1,1);
-//    this->editor_->setFont(QFont(PREF_QSTRING("Font"),11,0,false));
-//    this->editor_->hide();
-//    this->editor_->setAttribute(Qt::WA_MacShowFocusRect, 0);
-//    this->editor_->setFrame(false);
+    //    this->editor_ = new QLineEdit(this);
+    //    this->editor_->setFixedSize(65-5,18);
+    //    this->editor_->move(1,1);
+    //    this->editor_->setFont(QFont(PREF_QSTRING("Font"),11,0,false));
+    //    this->editor_->hide();
+    //    this->editor_->setAttribute(Qt::WA_MacShowFocusRect, 0);
+    //    this->editor_->setFrame(false);
 
     //connect(this->editor_,&QLineEdit::editingFinished,this,&Canvas::editorDone);
     //connect(this->editor_,&QLineEdit::textEdited, this,&Canvas::editorChanged);
-
 
     objectMaker_ = new ObjectMaker((QLineEdit*)this);
     objectMaker_->hide();
@@ -57,9 +60,6 @@ Canvas::Canvas(UIObject *parent) : UIObject(parent)
     this->setMinimumBoxHeight(20);
 
     replaceObject_ = 0;
-
-
-
 }
 
 //cm_canvas::cm_canvas(QWidget *parent) : cm_widget((cm_widget*)parent)
@@ -70,56 +70,46 @@ Canvas::Canvas(UIObject *parent) : UIObject(parent)
 
 ///////
 
-void Canvas::s_InMousePressed(UIWidget* obj, QMouseEvent* )
+void Canvas::s_InMousePressed(UIWidget* obj, QMouseEvent*)
 {
     //    printf("in: mouse pressed\n");
     this->newLine.active = false;
 
-    if ( (this->connObj1) && (this->connOutlet))
-    {
+    if ((this->connObj1) && (this->connOutlet)) {
         this->patchcord(this->connObj1, this->connOutlet, (UIObject*)obj->parent(), obj);
         this->repaint();
     }
 
     this->connObj1 = 0;
     this->connOutlet = 0;
-
-
 }
 
-void Canvas::s_InMouseReleased(UIWidget* , QMouseEvent* )
+void Canvas::s_InMouseReleased(UIWidget*, QMouseEvent*)
 {
     //    printf("in:  mouse released\n");
-
 }
 
-void Canvas::s_OutMousePressed(UIWidget* obj, QMouseEvent* )
+void Canvas::s_OutMousePressed(UIWidget* obj, QMouseEvent*)
 {
     //    printf("out: mouse pressed\n");
 
-    this->newLine.start = ((QWidget*)obj->parent())->pos() + obj->pos() + QPoint(5,1);
+    this->newLine.start = ((QWidget*)obj->parent())->pos() + obj->pos() + QPoint(5, 1);
 
     this->newLine.active = true;
 
     this->connObj1 = (UIObject*)obj->parent();
     this->connOutlet = (UIObject*)obj;
-
 }
 
-void Canvas::s_OutMouseReleased(UIWidget* , QMouseEvent* )
+void Canvas::s_OutMouseReleased(UIWidget*, QMouseEvent*)
 {
     //    printf("out:  mouse released\n");
-
-
-
-
 }
 
-void Canvas::s_SelectBox(UIWidget *box)
+void Canvas::s_SelectBox(UIWidget* box)
 {
 
-    if (this->editMode == em_Unlocked)
-    {
+    if (this->editMode == em_Unlocked) {
         this->selectionData_.boxes_.push_back((UIObject*)box);
         box->select();
         box->repaint();
@@ -131,31 +121,24 @@ void Canvas::s_SelectBox(UIWidget *box)
     //this->dragPrevPos = box->pos();
 }
 
-
-void Canvas::s_MoveBox(UIWidget *box, QMouseEvent* event)
+void Canvas::s_MoveBox(UIWidget* box, QMouseEvent* event)
 {
-    if (! (this->getEditMode() == em_Unlocked) ) return;
-    for (int i=0;i<(int)this->selectionData_.boxes_.size();i++)
-    {
+    if (!(this->getEditMode() == em_Unlocked))
+        return;
+    for (int i = 0; i < (int)this->selectionData_.boxes_.size(); i++) {
         UIObject* w = ((UIObject*)this->selectionData_.boxes_.at(i));
-        QPoint pos = ((UIObject*)this->selectionData_.boxes_.at(i))->pos() +
-                mapToParent((event->pos()-box->dragOffset));
+        QPoint pos = ((UIObject*)this->selectionData_.boxes_.at(i))->pos() + mapToParent((event->pos() - box->dragOffset));
 
-        if (this->gridSnap)
-        {
-            pos.setX(floor(pos.x()/this->gridStep)*this->gridStep);
-            pos.setY(floor(pos.y()/this->gridStep)*this->gridStep);
+        if (this->gridSnap) {
+            pos.setX(floor(pos.x() / this->gridStep) * this->gridStep);
+            pos.setY(floor(pos.y() / this->gridStep) * this->gridStep);
         }
 
-
         w->move(pos);
-        t_object *obj = (t_object*)w->pdObject();
+        t_object* obj = (t_object*)w->pdObject();
         if (obj)
-            cmp_moveobject(obj, (int)pos.x(), (int)pos.y() );
-
+            cmp_moveobject(obj, (int)pos.x(), (int)pos.y());
     }
-
-
 }
 
 //void  Canvas::editorDone()
@@ -184,5 +167,4 @@ void Canvas::s_MoveBox(UIWidget *box, QMouseEvent* event)
 //    this->setOutletsPos();
 
 //}
-
 }

@@ -1,3 +1,6 @@
+// (c) 2017 Alex Nadzharov
+// License: GPL3
+
 #ifndef PY_WRAPERS_H
 #define PY_WRAPERS_H
 
@@ -6,24 +9,22 @@
 #include <PythonQt.h>
 #include <PythonQt_QtAll.h>
 
-#include "py_testclass.h"
 #include "py_pdlib.h"
 #include "py_qtpd.h"
+#include "py_testclass.h"
 
 void pyWrappersInit()
 {
-    PythonQtObjectPtr  mainContext = PythonQt::self()->getMainModule();
+    PythonQtObjectPtr mainContext = PythonQt::self()->getMainModule();
 
     static pyTestClass _pyTestClass;
     mainContext.addObject("testClass", &_pyTestClass);
 
-//    static pyPdLib _pyPdLib;
-//    mainContext.addObject("pdLib", &_pyPdLib);
+    //    static pyPdLib _pyPdLib;
+    //    mainContext.addObject("pdLib", &_pyPdLib);
 
     static pyQtpd _pyQtpd;
     mainContext.addObject("Qtpd", &_pyQtpd);
-
 }
-
 
 #endif // PY_WRAPERS_H

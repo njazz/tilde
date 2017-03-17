@@ -1,3 +1,6 @@
+// (c) 2017 Alex Nadzharov
+// License: GPL3
+
 #ifndef CM_PROPERTYLIST_H
 #define CM_PROPERTYLIST_H
 
@@ -7,8 +10,7 @@
 
 #include <QDebug>
 
-namespace qtpd
-{
+namespace qtpd {
 
 typedef std::map<std::string, Property*> UIPropertyData;
 typedef std::map<std::string, UIPropertyData*> UIPropertyGroups;
@@ -18,8 +20,7 @@ typedef std::map<std::string, Property*>::iterator UIPropertyDataIterator;
 ////
 /// \brief yet another property handling class for ui object. List
 ///
-class PropertyList : public QObject
-{
+class PropertyList : public QObject {
     Q_OBJECT
 
 private:
@@ -46,7 +47,7 @@ public:
     template <typename T>
     void create(std::string pName, std::string pGroup, std::string pVersion, T defaultData)
     {
-        Property *newP = new Property;
+        Property* newP = new Property;
 
         //newP->setGroup(pGroup);
         newP->setVersion(pVersion);
@@ -58,7 +59,6 @@ public:
         //groups_[pGroup][pName] = newP;
 
         //qDebug() << "new property" << data_[pName]->asQString();
-
     }
 
     // todo []
@@ -69,15 +69,14 @@ public:
         this->data_[pName]->set(value);
     };
 
-    Property *get(std::string pName)
+    Property* get(std::string pName)
     {
-        Property *ret = 0;
+        Property* ret = 0;
         std::map<std::string, Property*>::iterator it = data_.find(pName);
-        if ( it != data_.end() )
+        if (it != data_.end())
             ret = this->data_[pName];
         return ret;
     };
-
 
     //////////
 
@@ -90,19 +89,15 @@ public:
         std::string ret;
 
         UIPropertyDataIterator it;
-        for (it = this->data_.begin(); it != this->data_.end(); ++it)
-        {
+        for (it = this->data_.begin(); it != this->data_.end(); ++it) {
             //save only modified values
-            if (it->second->data() != it->second->defaultData())
-            {
+            if (it->second->data() != it->second->defaultData()) {
                 ret += "@" + it->first + " ";
-                ret += it->second->asPdSaveString()+" ";
+                ret += it->second->asPdSaveString() + " ";
             }
-
         }
 
         return ret;
-
     }
 
     ////
@@ -114,15 +109,12 @@ public:
         QStringList ret;
 
         UIPropertyDataIterator it;
-        for (it = this->data_.begin(); it != this->data_.end(); ++it)
-        {
+        for (it = this->data_.begin(); it != this->data_.end(); ++it) {
             //save only modified values
             ret.push_back(it->first.c_str());
-
         }
 
         return ret;
-
     }
 
     ////
@@ -140,21 +132,17 @@ public:
 
         qDebug() << "plist" << propertyList;
 
-        for (QStringList::iterator it = propertyList.begin(); it != propertyList.end(); ++it)
-        {
+        for (QStringList::iterator it = propertyList.begin(); it != propertyList.end(); ++it) {
             QString s = *it;
             QStringList list = s.split(" ", QString::SkipEmptyParts);
 
-
-            if (list.size()>1)
-            {
+            if (list.size() > 1) {
                 QString pname = list.at(0);
 
                 // lol. fix that later
                 list.removeAt(0);
 
-                qDebug () << "load" << pname << list.join("_");
-
+                qDebug() << "load" << pname << list.join("_");
 
                 set(pname.toStdString(), list);
             }
@@ -163,9 +151,7 @@ public:
         }
 
         return ret.toStdString();
-
     }
-
 };
 }
 

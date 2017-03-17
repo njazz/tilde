@@ -1,37 +1,37 @@
+// (c) 2017 Alex Nadzharov
+// License: GPL3
+
 #ifndef CM_PROPERTY_H
 #define CM_PROPERTY_H
 
 #include "../ceammc-lib/ceammc_atomlist.h"
-#include <QRect>
+#include <QColor>
 #include <QPoint>
+#include <QRect>
 #include <QString>
 #include <QStringList>
-#include <QColor>
 
 #include <QDebug>
 
 using namespace ceammc;
 
-namespace qtpd
-{
+namespace qtpd {
 
-typedef enum
-{
+typedef enum {
     ptFloat,
     ptSymbol,
     ptList,
     ptString,
     ptVector,
     ptColor,
-    ptText      ///< multiline text for comments, script
+    ptText ///< multiline text for comments, script
 
 } UIPropertyType;
 
 ////
 /// \brief yet another property handling class for ui object.
 ///
-class Property
-{
+class Property {
 private:
     AtomList data_;
     AtomList defaultData_;
@@ -44,7 +44,6 @@ private:
 
     bool applyToPd; //true if property value should be passed to pd object
 public:
-
     template <typename T>
     void set(T val);
 
@@ -61,12 +60,11 @@ public:
         this->version_ = version;
     }
 
-    std::string version(){return version_;}
+    std::string version() { return version_; }
 
     //////////
 
-    UIPropertyType type() {return this->type_;};
-
+    UIPropertyType type() { return this->type_; };
 
     AtomList data()
     {
@@ -78,13 +76,11 @@ public:
         return defaultData_;
     }
 
-
     QStringList asQStringList()
     {
         QStringList ret;
 
-        for (int i=0; i<data_.size(); i++)
-        {
+        for (int i = 0; i < data_.size(); i++) {
 
             ret.push_back(data_.at(i).asString().c_str());
         }
@@ -94,24 +90,17 @@ public:
 
     std::string asStdString()
     {
-        std::string ret="";
+        std::string ret = "";
 
-
-
-        if (data_.size()>1)
-        {
-            for (int i=0; i<data_.size(); i++)
-            {
+        if (data_.size() > 1) {
+            for (int i = 0; i < data_.size(); i++) {
 
                 // + "\\n" was removed, for multi-line text we need extra fix. whould be rewritten with type system
-                ret += data_.at(i).asString() + " " ;
-
+                ret += data_.at(i).asString() + " ";
             }
 
-        }
-        else
-            if (data_.size()==1)
-                ret = data_.at(0).asString();
+        } else if (data_.size() == 1)
+            ret = data_.at(0).asString();
 
         //qDebug() << "stdstr " << data_.size() << QString(ret.c_str());
         return ret;
@@ -119,23 +108,16 @@ public:
 
     std::string asPdSaveString()
     {
-        std::string ret="";
+        std::string ret = "";
 
+        if (data_.size() > 1) {
+            for (int i = 0; i < data_.size(); i++) {
 
-
-        if (data_.size()>1)
-        {
-            for (int i=0; i<data_.size(); i++)
-            {
-
-                ret += data_.at(i).asString() + "\\n" ;
-
+                ret += data_.at(i).asString() + "\\n";
             }
 
-        }
-        else
-            if (data_.size()==1)
-                ret = data_.at(0).asString();
+        } else if (data_.size() == 1)
+            ret = data_.at(0).asString();
 
         //qDebug() << "stdstr " << data_.size() << QString(ret.c_str());
         return ret;
@@ -150,7 +132,6 @@ public:
 
         return ret;
     }
-
 };
 }
 

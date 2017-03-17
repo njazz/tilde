@@ -1,13 +1,16 @@
+// (c) 2017 Alex Nadzharov
+// License: GPL3
+
 #include "cmo_toggle.h"
 
-namespace qtpd
-{
+namespace qtpd {
 
-UIToggle::UIToggle(UIObject *parent) : UIObject(parent)
+UIToggle::UIToggle(UIObject* parent)
+    : UIObject(parent)
 {
     setPdObjectName("ui.toggle");
 
-    this->setFixedSize(20,20);
+    this->setFixedSize(20, 20);
 
     this->setMouseTracking(true);
 
@@ -15,7 +18,7 @@ UIToggle::UIToggle(UIObject *parent) : UIObject(parent)
     this->clicked_ = false;
 
     QPalette Pal(palette());
-    Pal.setColor(QPalette::Background, QColor(240,240,240));
+    Pal.setColor(QPalette::Background, QColor(240, 240, 240));
     this->setAutoFillBackground(true);
     this->setPalette(Pal);
 
@@ -24,8 +27,4 @@ UIToggle::UIToggle(UIObject *parent) : UIObject(parent)
 
     this->value_ = false;
 }
-
-
-
 }
-

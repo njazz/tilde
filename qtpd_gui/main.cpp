@@ -1,10 +1,12 @@
+// (c) 2017 Alex Nadzharov
+// License: GPL3
 
 #include <QApplication>
 
 #include "cm_pdlink.h"
 
-#include "cm_pdwindow.h"
 #include "cm_patchwindow.h"
+#include "cm_pdwindow.h"
 
 #include "cm_menu.h"
 
@@ -20,7 +22,6 @@
 
 #include "python/PythonQtScriptingConsole.h"
 
-
 using namespace qtpd;
 
 void pd_window_printhook(const char* s)
@@ -30,7 +31,7 @@ void pd_window_printhook(const char* s)
         pdw->cm_log(std::string(s));
 }
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     QApplication a(argc, argv);
     a.setQuitOnLastWindowClosed(false);
@@ -49,13 +50,11 @@ int main(int argc, char *argv[])
 
     pdw = new PdWindow();
 
-    pdw->move(0,100);
+    pdw->move(0, 100);
     pdw->show();
 
     cmp_post("qtpd started");
     cmp_post("---");
-
-
 
     //temporary
     BaseMenu* m = new BaseMenu(0);
@@ -66,9 +65,5 @@ int main(int argc, char *argv[])
 
     //console.show();
 
-
-
     return a.exec();
 }
-
-
