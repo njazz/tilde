@@ -141,9 +141,13 @@ Public Slots</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a83af5295678ba3687f02189504528cc4">cancelPatchcord</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">cancels patchcord creation  <a href="#a83af5295678ba3687f02189504528cc4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_object_maker.html">ObjectMaker</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a54c7fff0e9d9b68051ed2e4a4fb1d625">objectMaker</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to objectMaker widget  <a href="#a54c7fff0e9d9b68051ed2e4a4fb1d625"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a4d62a7174f8926ab7d1c49834cae52dd">portLocalCountUpdated</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">this is called when 'inlet' etc object is created in subpatch  <a href="#a4d62a7174f8926ab7d1c49834cae52dd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a3687104c5241626dccbc5fbfb776d3ac">setReplaceObject</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets 'replaceobject' pointer  <a href="#a3687104c5241626dccbc5fbfb776d3ac"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#afe38f2f2e0126482db788e4525db79c7">replaceObject</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gets replaceObject  <a href="#afe38f2f2e0126482db788e4525db79c7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a719cb6130babc40601422b6504466105">showNewObjectMaker</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">shows object maker for 'new object' menu command  <a href="#a719cb6130babc40601422b6504466105"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="signals"></a>
@@ -235,11 +239,13 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a2168110e781257d16b176086714a4921">findObjectIndex</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">find object index in list  <a href="#a2168110e781257d16b176086714a4921"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a4a995dde87ee58fb8cac0896053cca9c">setSubcanvas</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets pointer to canvas object in subpatch  <a href="#a4a995dde87ee58fb8cac0896053cca9c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a717fda819ac6e2fd85b44ac8221b71fb">asPdFileString</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">this returns "restore ..." for canvas as box or calls filesaver for canvas  <a href="#a717fda819ac6e2fd85b44ac8221b71fb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a057d349fb3b1c6143219a53223baa460">patchcordAsPdFileString</a> (<a class="el" href="classqtpd_1_1_patchcord.html">Patchcord</a> *pcord)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns patchcord as pd string  <a href="#a057d349fb3b1c6143219a53223baa460"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#acaaa6396486755e52ab9bb689ae40f06">structPatchcordNumbers</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a95d57b6df49669c45bd5728c25709ffd">patchcordAsNumbers</a> (<a class="el" href="classqtpd_1_1_patchcord.html">Patchcord</a> *pcord)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">converts UI patchcord object with 4 pointers to 4 numbers of objects in canvas  <a href="#a95d57b6df49669c45bd5728c25709ffd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a18731398b2b475020f5b3aecb4ae70d5">selectObject</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">selects single box. mostly used by replace object routine in objectmaker  <a href="#a18731398b2b475020f5b3aecb4ae70d5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a8e5778d7d39d203aba3ab6886a76b4c8">selectAll</a> ()</td></tr>
@@ -247,6 +253,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a53c64b8c89b1efa5ee1bfcd0bb364ca7">resizeToObjects</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">change size to fit all objects  <a href="#a53c64b8c89b1efa5ee1bfcd0bb364ca7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a37ece8d75cc5122ce659a1b08c3dc96a">canvasAsPdStrings</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns canvas data for saving  <a href="#a37ece8d75cc5122ce659a1b08c3dc96a"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_canvas.html">Canvas</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a563ef905ec4f1ff82ba9061d24c96ac7">newView</a> (<a class="el" href="classqtpd_1_1_canvas.html">Canvas</a> *srcCanvas, <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *parentCanvas, <a class="el" href="namespaceqtpd.html#a51dac42fa81d20e97ba8568fe7fae06d">canvasDrawStyle</a> dStyle)</td></tr>
@@ -384,6 +391,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>returns canvas data for saving </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -1082,6 +1092,9 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>pointer to objectMaker widget </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="ab65dd74e55be9074920cae2b6bd708f6"></a><!-- doxytag: member="qtpd::Canvas::paintEvent" ref="ab65dd74e55be9074920cae2b6bd708f6" args="(QPaintEvent *)" -->
@@ -1236,6 +1249,16 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>converts UI patchcord object with 4 pointers to 4 numbers of objects in canvas </p>
+<p>this is mostly for saving file </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pcord</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="a057d349fb3b1c6143219a53223baa460"></a><!-- doxytag: member="qtpd::Canvas::patchcordAsPdFileString" ref="a057d349fb3b1c6143219a53223baa460" args="(Patchcord *pcord)" -->
@@ -1324,6 +1347,8 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>this is called when 'inlet' etc object is created in subpatch </p>
+
 </div>
 </div>
 <a class="anchor" id="afe38f2f2e0126482db788e4525db79c7"></a><!-- doxytag: member="qtpd::Canvas::replaceObject" ref="afe38f2f2e0126482db788e4525db79c7" args="()" -->
@@ -1339,6 +1364,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>gets replaceObject </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -1767,6 +1795,14 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>sets 'replaceobject' pointer </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="a4a995dde87ee58fb8cac0896053cca9c"></a><!-- doxytag: member="qtpd::Canvas::setSubcanvas" ref="a4a995dde87ee58fb8cac0896053cca9c" args="(UIObject *obj)" -->
@@ -1783,6 +1819,15 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>sets pointer to canvas object in subpatch </p>
+<p>todo: check/remove that: we have subpatchwindow too </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1869,7 +1914,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 17 2017 08:35:37 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 17 2017 09:00:51 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

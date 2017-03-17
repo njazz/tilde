@@ -154,261 +154,204 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00073"></a>00073                  }
 <a name="l00074"></a>00074 
 <a name="l00075"></a>00075              p.drawRect(0,0,this-&gt;width(),this-&gt;height());
-<a name="l00076"></a>00076              <span class="comment">//p.drawPolygon(poly);</span>
+<a name="l00076"></a>00076 
 <a name="l00077"></a>00077          }
 <a name="l00078"></a>00078 
-<a name="l00079"></a>00079 <span class="comment">//         QTextOption *op = new QTextOption;</span>
-<a name="l00080"></a>00080 <span class="comment">//          op-&gt;setAlignment(Qt::AlignLeft);</span>
-<a name="l00081"></a>00081 <span class="comment">//           p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));</span>
-<a name="l00082"></a>00082 
-<a name="l00083"></a>00083 <span class="comment">//            p.setFont(QFont(PREF_QSTRING(&quot;Font&quot;),11,0,false));</span>
-<a name="l00084"></a>00084 <span class="comment">//             p.drawText(2,3,this-&gt;width()-2,this-&gt;height()-3,0,this-&gt;objectData().c_str(),0);</span>
-<a name="l00085"></a>00085 
-<a name="l00086"></a>00086 
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080     }
+<a name="l00081"></a>00081 
+<a name="l00082"></a><a class="code" href="classqtpd_1_1_u_i_script.html#a48da7abf987780e65ad484544d509320">00082</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_script.html#a48da7abf987780e65ad484544d509320">resizeEvent</a>(QResizeEvent *event)
+<a name="l00083"></a>00083     {
+<a name="l00084"></a>00084         <a class="code" href="classqtpd_1_1_u_i_script.html#a48da7abf987780e65ad484544d509320">UIObject::resizeEvent</a>(event);
+<a name="l00085"></a>00085         editor_-&gt;setFixedWidth(width()-5);
+<a name="l00086"></a>00086         editor_-&gt;setFixedHeight(height()-25);
 <a name="l00087"></a>00087     }
 <a name="l00088"></a>00088 
-<a name="l00089"></a><a class="code" href="classqtpd_1_1_u_i_script.html#a48da7abf987780e65ad484544d509320">00089</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_script.html#a48da7abf987780e65ad484544d509320">resizeEvent</a>(QResizeEvent *event)
-<a name="l00090"></a>00090     {
-<a name="l00091"></a>00091         editor_-&gt;setFixedWidth(width()-5);
-<a name="l00092"></a>00092         editor_-&gt;setFixedHeight(height()-25);
-<a name="l00093"></a>00093     }
-<a name="l00094"></a>00094 
+<a name="l00090"></a>00090 
+<a name="l00091"></a><a class="code" href="classqtpd_1_1_u_i_script.html#a1dbdc95d53f3710d6c9d075f37b2fb85">00091</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_script.html#a1dbdc95d53f3710d6c9d075f37b2fb85">mousePressEvent</a>(QMouseEvent *ev)
+<a name="l00092"></a>00092     {
+<a name="l00093"></a>00093 
+<a name="l00094"></a>00094         <span class="keywordflow">if</span> ( (this-&gt;<a class="code" href="classqtpd_1_1_u_i_widget.html#a634ea76429adff2e733353421a414ebc" title="get edit mode flag value">getEditMode</a>()==<a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aaa528336eacc29596e8365b88a4f62d82">em_Unlocked</a>) &amp;&amp; this-&gt;<a class="code" href="classqtpd_1_1_u_i_widget.html#a27ccb385bf3da85c143be7be5f2fe39e" title="get object&#39;s selected flag">isSelected</a>())
+<a name="l00095"></a>00095         {
 <a name="l00096"></a>00096 
-<a name="l00097"></a><a class="code" href="classqtpd_1_1_u_i_script.html#a1dbdc95d53f3710d6c9d075f37b2fb85">00097</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_script.html#a1dbdc95d53f3710d6c9d075f37b2fb85">mousePressEvent</a>(QMouseEvent *ev)
-<a name="l00098"></a>00098     {
-<a name="l00099"></a>00099 
-<a name="l00100"></a>00100         <span class="keywordflow">if</span> ( (this-&gt;<a class="code" href="classqtpd_1_1_u_i_widget.html#a634ea76429adff2e733353421a414ebc" title="get edit mode flag value">getEditMode</a>()==<a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aaa528336eacc29596e8365b88a4f62d82">em_Unlocked</a>) &amp;&amp; this-&gt;<a class="code" href="classqtpd_1_1_u_i_widget.html#a27ccb385bf3da85c143be7be5f2fe39e" title="get object&#39;s selected flag">isSelected</a>())
-<a name="l00101"></a>00101         {
-<a name="l00102"></a>00102 
-<a name="l00103"></a>00103             this-&gt;editor_-&gt;document()-&gt;setPlainText(QString(this-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447" title="gets object text data /usually overriden by ui objects/">objectData</a>().c_str()));
-<a name="l00104"></a>00104             this-&gt;editor_-&gt;show();
-<a name="l00105"></a>00105             this-&gt;editor_-&gt;setFocus();
-<a name="l00106"></a>00106         }
-<a name="l00107"></a>00107 
-<a name="l00108"></a>00108         emit <a class="code" href="classqtpd_1_1_u_i_widget.html#a6317a270f80347d2068fb67dc314a717">selectBox</a>(<span class="keyword">this</span>);
-<a name="l00109"></a>00109         this-&gt;<a class="code" href="classqtpd_1_1_u_i_widget.html#a2d41a6273dedf638982292267e27ff37">dragOffset</a> = ev-&gt;pos();
-<a name="l00110"></a>00110 
-<a name="l00111"></a>00111         <span class="keywordflow">if</span> (!(this-&gt;<a class="code" href="classqtpd_1_1_u_i_widget.html#a634ea76429adff2e733353421a414ebc" title="get edit mode flag value">getEditMode</a>()==<a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aaa528336eacc29596e8365b88a4f62d82">em_Unlocked</a>))
-<a name="l00112"></a>00112         {
-<a name="l00113"></a>00113             this-&gt;clicked_ = <span class="keyword">true</span>;
-<a name="l00114"></a>00114             this-&gt;repaint();
-<a name="l00115"></a>00115 
-<a name="l00116"></a>00116             <span class="comment">//todo timer</span>
-<a name="l00117"></a>00117         }
-<a name="l00118"></a>00118 
-<a name="l00119"></a>00119     }
+<a name="l00097"></a>00097             this-&gt;editor_-&gt;document()-&gt;setPlainText(QString(this-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447" title="gets object text data /usually overriden by ui objects/">objectData</a>().c_str()));
+<a name="l00098"></a>00098             this-&gt;editor_-&gt;show();
+<a name="l00099"></a>00099             this-&gt;editor_-&gt;setFocus();
+<a name="l00100"></a>00100         }
+<a name="l00101"></a>00101 
+<a name="l00102"></a>00102         emit <a class="code" href="classqtpd_1_1_u_i_widget.html#a6317a270f80347d2068fb67dc314a717">selectBox</a>(<span class="keyword">this</span>);
+<a name="l00103"></a>00103         this-&gt;<a class="code" href="classqtpd_1_1_u_i_widget.html#a2d41a6273dedf638982292267e27ff37">dragOffset</a> = ev-&gt;pos();
+<a name="l00104"></a>00104 
+<a name="l00105"></a>00105         <span class="keywordflow">if</span> (!(this-&gt;<a class="code" href="classqtpd_1_1_u_i_widget.html#a634ea76429adff2e733353421a414ebc" title="get edit mode flag value">getEditMode</a>()==<a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aaa528336eacc29596e8365b88a4f62d82">em_Unlocked</a>))
+<a name="l00106"></a>00106         {
+<a name="l00107"></a>00107             this-&gt;clicked_ = <span class="keyword">true</span>;
+<a name="l00108"></a>00108             this-&gt;repaint();
+<a name="l00109"></a>00109 
+<a name="l00110"></a>00110             <span class="comment">//todo timer</span>
+<a name="l00111"></a>00111         }
+<a name="l00112"></a>00112 
+<a name="l00113"></a>00113     }
+<a name="l00114"></a>00114 
+<a name="l00115"></a><a class="code" href="classqtpd_1_1_u_i_script.html#afd07306b4d3486d0fe9137eb80930111">00115</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_script.html#afd07306b4d3486d0fe9137eb80930111">mouseReleaseEvent</a>(QMouseEvent *)
+<a name="l00116"></a>00116     {
+<a name="l00117"></a>00117         this-&gt;clicked_ = <span class="keyword">false</span>;
+<a name="l00118"></a>00118         this-&gt;repaint();
+<a name="l00119"></a>00119 
 <a name="l00120"></a>00120 
-<a name="l00121"></a><a class="code" href="classqtpd_1_1_u_i_script.html#afd07306b4d3486d0fe9137eb80930111">00121</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_script.html#afd07306b4d3486d0fe9137eb80930111">mouseReleaseEvent</a>(QMouseEvent *)
-<a name="l00122"></a>00122     {
-<a name="l00123"></a>00123         <span class="comment">//this-&gt;selected_ = false;</span>
-<a name="l00124"></a>00124 
-<a name="l00125"></a>00125         <span class="comment">//if (!this-&gt;getEditMode())</span>
+<a name="l00121"></a>00121     }
+<a name="l00122"></a>00122 
+<a name="l00123"></a><a class="code" href="classqtpd_1_1_u_i_script.html#a1d27b1cc3c4b68341a507779b5be5a1a">00123</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_script.html#a1d27b1cc3c4b68341a507779b5be5a1a">mouseMoveEvent</a>(QMouseEvent *event)
+<a name="l00124"></a>00124     {
+<a name="l00125"></a>00125         <span class="keywordflow">if</span>(event-&gt;buttons() &amp; Qt::LeftButton)
 <a name="l00126"></a>00126         {
-<a name="l00127"></a>00127             this-&gt;clicked_ = <span class="keyword">false</span>;
-<a name="l00128"></a>00128             this-&gt;repaint();
-<a name="l00129"></a>00129         }
+<a name="l00127"></a>00127             emit <a class="code" href="classqtpd_1_1_u_i_widget.html#a45b98ab27c1e4c98dae661fc805ec20c">moveBox</a>(<span class="keyword">this</span>, event);
+<a name="l00128"></a>00128         }
+<a name="l00129"></a>00129         <span class="keyword">event</span>-&gt;ignore();
 <a name="l00130"></a>00130 
-<a name="l00131"></a>00131     }
-<a name="l00132"></a>00132 
-<a name="l00133"></a><a class="code" href="classqtpd_1_1_u_i_script.html#a1d27b1cc3c4b68341a507779b5be5a1a">00133</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_script.html#a1d27b1cc3c4b68341a507779b5be5a1a">mouseMoveEvent</a>(QMouseEvent *event)
-<a name="l00134"></a>00134     {
-<a name="l00135"></a>00135         <span class="keywordflow">if</span>(event-&gt;buttons() &amp; Qt::LeftButton)
-<a name="l00136"></a>00136         {
-<a name="l00137"></a>00137             emit <a class="code" href="classqtpd_1_1_u_i_widget.html#a45b98ab27c1e4c98dae661fc805ec20c">moveBox</a>(<span class="keyword">this</span>, event);
-<a name="l00138"></a>00138         }
-<a name="l00139"></a>00139         <span class="keyword">event</span>-&gt;ignore();
+<a name="l00131"></a>00131         <span class="comment">//todo move!</span>
+<a name="l00132"></a>00132         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classqtpd_1_1_u_i_widget.html#a634ea76429adff2e733353421a414ebc" title="get edit mode flag value">getEditMode</a>() != <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aaa528336eacc29596e8365b88a4f62d82">em_Unlocked</a>)
+<a name="l00133"></a>00133         {
+<a name="l00134"></a>00134             this-&gt;setCursor(QCursor(Qt::PointingHandCursor));
+<a name="l00135"></a>00135         }
+<a name="l00136"></a>00136         <span class="keywordflow">else</span>
+<a name="l00137"></a>00137         {
+<a name="l00138"></a>00138             this-&gt;setCursor(QCursor(Qt::ArrowCursor));
+<a name="l00139"></a>00139         }
 <a name="l00140"></a>00140 
-<a name="l00141"></a>00141         <span class="comment">//todo move!</span>
-<a name="l00142"></a>00142         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classqtpd_1_1_u_i_widget.html#a634ea76429adff2e733353421a414ebc" title="get edit mode flag value">getEditMode</a>() != <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aaa528336eacc29596e8365b88a4f62d82">em_Unlocked</a>)
-<a name="l00143"></a>00143         {
-<a name="l00144"></a>00144             this-&gt;setCursor(QCursor(Qt::PointingHandCursor));
-<a name="l00145"></a>00145         }
-<a name="l00146"></a>00146         <span class="keywordflow">else</span>
-<a name="l00147"></a>00147         {
-<a name="l00148"></a>00148             this-&gt;setCursor(QCursor(Qt::ArrowCursor));
-<a name="l00149"></a>00149         }
-<a name="l00150"></a>00150 
+<a name="l00141"></a>00141     }
+<a name="l00142"></a>00142 
+<a name="l00143"></a>00143 
+<a name="l00145"></a>00145 
+<a name="l00146"></a><a class="code" href="classqtpd_1_1_u_i_script.html#a442705767a41a4063fb96f4637b99c62">00146</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_script.html#a442705767a41a4063fb96f4637b99c62">setPdMessage</a>(<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> message)
+<a name="l00147"></a>00147     {
+<a name="l00148"></a>00148         this-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a84c139bd000a8cf46f76f25204dbe554" title="sets object text data">setObjectData</a>(message);
+<a name="l00149"></a>00149 
+<a name="l00150"></a>00150         setFixedSize(300,200);
 <a name="l00151"></a>00151     }
 <a name="l00152"></a>00152 
-<a name="l00153"></a>00153 
-<a name="l00155"></a>00155 
-<a name="l00156"></a><a class="code" href="classqtpd_1_1_u_i_script.html#a442705767a41a4063fb96f4637b99c62">00156</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_script.html#a442705767a41a4063fb96f4637b99c62">setPdMessage</a>(<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> message)
-<a name="l00157"></a>00157     {
-<a name="l00158"></a>00158         this-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a84c139bd000a8cf46f76f25204dbe554" title="sets object text data">setObjectData</a>(message);
-<a name="l00159"></a>00159         <span class="comment">//        this-&gt;autoResize();</span>
-<a name="l00160"></a>00160 
-<a name="l00161"></a>00161         <span class="comment">//        QFont myFont(PREF_QSTRING(&quot;Font&quot;), 11);</span>
-<a name="l00162"></a>00162         <span class="comment">//        QFontMetrics fm(myFont);</span>
-<a name="l00163"></a>00163         <span class="comment">//        QString text = QString(this-&gt;editor_-&gt;document()-&gt;toPlainText());</span>
-<a name="l00164"></a>00164         <span class="comment">//        int new_w = fm.width(text) + 20;</span>
-<a name="l00165"></a>00165         <span class="comment">//        new_w = (new_w&lt;25) ? 25 : new_w;</span>
+<a name="l00153"></a><a class="code" href="classqtpd_1_1_u_i_script.html#a603bd9c41cabb2107391c4a8c3b3ba20">00153</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_script.html#a603bd9c41cabb2107391c4a8c3b3ba20">updateUI</a>(<span class="keywordtype">void</span>* uiobj, <a class="code" href="classceammc_1_1_atom_list.html">ceammc::AtomList</a> msg)
+<a name="l00154"></a>00154     {
+<a name="l00155"></a>00155         <span class="comment">//qDebug(&quot;update ui&quot;);</span>
+<a name="l00156"></a>00156         <a class="code" href="classqtpd_1_1_u_i_script.html" title="gui object: comment box (ui.text)">UIScript</a> *<a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a> = (<a class="code" href="classqtpd_1_1_u_i_script.html" title="gui object: comment box (ui.text)">UIScript</a>*)uiobj;
+<a name="l00157"></a>00157 
+<a name="l00158"></a>00158         <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> obj_data;
+<a name="l00159"></a>00159         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a>=0; <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a>&lt;msg.<a class="code" href="classceammc_1_1_atom_list.html#ad52fdc5b4f54329460495caa1b00d1ac">size</a>();<a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a>++)
+<a name="l00160"></a>00160         {
+<a name="l00161"></a>00161             obj_data += msg.<a class="code" href="classceammc_1_1_atom_list.html#aa2d99dac15a5a5fe7afa41a38f2aeece" title="returns reference to element at specified position">at</a>(<a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a>).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>() + <span class="stringliteral">&quot; &quot;</span>;
+<a name="l00162"></a>00162         }
+<a name="l00163"></a>00163 
+<a name="l00164"></a>00164         x-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a84c139bd000a8cf46f76f25204dbe554" title="sets object text data">setObjectData</a>(obj_data);
+<a name="l00165"></a>00165         <span class="comment">//x-&gt;autoResize();</span>
 <a name="l00166"></a>00166 
-<a name="l00167"></a>00167         <span class="comment">//        int new_h = fm.boundingRect(QRect(0,0,new_w,100), 0, text).height() + 7 ;</span>
-<a name="l00168"></a>00168 
-<a name="l00169"></a>00169         <span class="comment">//        new_h = (new_h&lt;25) ? 25 : new_h;</span>
-<a name="l00170"></a>00170 
-<a name="l00171"></a>00171         <span class="comment">//        this-&gt;setFixedWidth(new_w);</span>
-<a name="l00172"></a>00172         <span class="comment">//        this-&gt;setFixedHeight(new_h);</span>
-<a name="l00173"></a>00173 
-<a name="l00174"></a>00174         <span class="comment">//        this-&gt;editor_-&gt;setFixedWidth(this-&gt;width()-1);</span>
-<a name="l00175"></a>00175         <span class="comment">//        this-&gt;editor_-&gt;setFixedHeight(this-&gt;height()-2);</span>
-<a name="l00176"></a>00176 
-<a name="l00177"></a>00177         <span class="comment">//        this-&gt;editor_-&gt;hide();</span>
-<a name="l00178"></a>00178 
-<a name="l00179"></a>00179         setFixedSize(300,200);
-<a name="l00180"></a>00180     }
-<a name="l00181"></a>00181 
-<a name="l00182"></a><a class="code" href="classqtpd_1_1_u_i_script.html#a603bd9c41cabb2107391c4a8c3b3ba20">00182</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_script.html#a603bd9c41cabb2107391c4a8c3b3ba20">updateUI</a>(<span class="keywordtype">void</span>* uiobj, <a class="code" href="classceammc_1_1_atom_list.html">ceammc::AtomList</a> msg)
-<a name="l00183"></a>00183     {
-<a name="l00184"></a>00184         <span class="comment">//qDebug(&quot;update ui&quot;);</span>
-<a name="l00185"></a>00185         <a class="code" href="classqtpd_1_1_u_i_script.html" title="gui object: comment box (ui.text)">UIScript</a> *<a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a> = (<a class="code" href="classqtpd_1_1_u_i_script.html" title="gui object: comment box (ui.text)">UIScript</a>*)uiobj;
-<a name="l00186"></a>00186 
-<a name="l00187"></a>00187         <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> obj_data;
-<a name="l00188"></a>00188         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a>=0; <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a>&lt;msg.<a class="code" href="classceammc_1_1_atom_list.html#ad52fdc5b4f54329460495caa1b00d1ac">size</a>();<a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a>++)
-<a name="l00189"></a>00189         {
-<a name="l00190"></a>00190             obj_data += msg.<a class="code" href="classceammc_1_1_atom_list.html#aa2d99dac15a5a5fe7afa41a38f2aeece" title="returns reference to element at specified position">at</a>(<a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a>).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>() + <span class="stringliteral">&quot; &quot;</span>;
-<a name="l00191"></a>00191         }
-<a name="l00192"></a>00192 
-<a name="l00193"></a>00193         x-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a84c139bd000a8cf46f76f25204dbe554" title="sets object text data">setObjectData</a>(obj_data);
-<a name="l00194"></a>00194         <span class="comment">//x-&gt;autoResize();</span>
-<a name="l00195"></a>00195 
-<a name="l00196"></a>00196         x-&gt;repaint();
-<a name="l00197"></a>00197     }
-<a name="l00198"></a>00198 
-<a name="l00199"></a>00199     <span class="comment">//    void setPdObject(void *obj)</span>
-<a name="l00200"></a>00200     <span class="comment">//    {</span>
-<a name="l00201"></a>00201     <span class="comment">//        cm_object::setPdObject(obj);</span>
-<a name="l00202"></a>00202     <span class="comment">//        //cmp_connectUI((t_pd*)this-&gt;getPdObject(), (void*)this, &amp;cmo_text::updateUI);</span>
-<a name="l00203"></a>00203     <span class="comment">//    }</span>
-<a name="l00204"></a>00204 
-<a name="l00205"></a>00205 
-<a name="l00206"></a>00206     <span class="comment">//    std::string asPdFileString()</span>
-<a name="l00207"></a>00207     <span class="comment">//    {return &quot;ui.text &quot;+ this-&gt;objectData();}</span>
-<a name="l00208"></a>00208 
-<a name="l00209"></a><a class="code" href="classqtpd_1_1_u_i_script.html#a7f505f4baa43aa02e40082517581f7d9">00209</a>     <span class="keywordtype">void</span>* <a class="code" href="classqtpd_1_1_u_i_script.html#a7f505f4baa43aa02e40082517581f7d9" title="returns pointer to pd object.">pdObject</a>()
-<a name="l00210"></a>00210     {
-<a name="l00211"></a>00211         <span class="keywordflow">return</span> 0;
-<a name="l00212"></a>00212     }
-<a name="l00213"></a>00213 
-<a name="l00214"></a>00214 <span class="comment">//    bool eventFilter(QObject *watched, QEvent *event)</span>
-<a name="l00215"></a>00215 <span class="comment">//    {</span>
-<a name="l00216"></a>00216 <span class="comment">//        if (event-&gt;type() == QEvent::KeyPress) {</span>
-<a name="l00217"></a>00217 
-<a name="l00218"></a>00218 <span class="comment">//            QKeyEvent *keyEvent = static_cast&lt;QKeyEvent *&gt;(event);</span>
-<a name="l00219"></a>00219 
-<a name="l00220"></a>00220 <span class="comment">//            if  ( (keyEvent-&gt;key() == Qt::Key_Return) &amp;&amp; (keyEvent-&gt;modifiers() == Qt::ShiftModifier) )</span>
-<a name="l00221"></a>00221 <span class="comment">//            {</span>
-<a name="l00222"></a>00222 <span class="comment">//                //this-&gt;editorDone();</span>
-<a name="l00223"></a>00223 <span class="comment">//                return true;</span>
-<a name="l00224"></a>00224 <span class="comment">//            }</span>
-<a name="l00225"></a>00225 <span class="comment">//        }</span>
-<a name="l00226"></a>00226 
-<a name="l00227"></a>00227 <span class="comment">//        return false;</span>
-<a name="l00228"></a>00228 
-<a name="l00229"></a>00229 <span class="comment">//    }</span>
+<a name="l00167"></a>00167         x-&gt;repaint();
+<a name="l00168"></a>00168     }
+<a name="l00169"></a>00169 
+<a name="l00170"></a><a class="code" href="classqtpd_1_1_u_i_script.html#a7f505f4baa43aa02e40082517581f7d9">00170</a>     <span class="keywordtype">void</span>* <a class="code" href="classqtpd_1_1_u_i_script.html#a7f505f4baa43aa02e40082517581f7d9" title="returns pointer to pd object.">pdObject</a>()
+<a name="l00171"></a>00171     {
+<a name="l00172"></a>00172         <span class="comment">//later add &#39;ui.script&#39; pd object for communication</span>
+<a name="l00173"></a>00173         <span class="keywordflow">return</span> 0;
+<a name="l00174"></a>00174     }
+<a name="l00175"></a>00175 
+<a name="l00176"></a><a class="code" href="classqtpd_1_1_u_i_script.html#a25660f1d0bd3bbd053b2603e147661ce">00176</a>     QStringList <a class="code" href="classqtpd_1_1_u_i_script.html#a25660f1d0bd3bbd053b2603e147661ce">getEditorData</a>()
+<a name="l00177"></a>00177     {
+<a name="l00178"></a>00178         <span class="keywordflow">return</span> editor_-&gt;document()-&gt;toPlainText().split(QRegExp(<span class="stringliteral">&quot;[\r\n]&quot;</span>),QString::SkipEmptyParts);
+<a name="l00179"></a>00179     }
+<a name="l00180"></a>00180 
+<a name="l00181"></a>00181 signals:
+<a name="l00182"></a>00182 
+<a name="l00183"></a>00183 <span class="keyword">private</span> slots:
+<a name="l00184"></a>00184     <span class="keywordtype">void</span> editorChanged();
+<a name="l00185"></a>00185 
+<a name="l00186"></a>00186     <span class="keywordtype">void</span> btnRun(){
+<a name="l00187"></a>00187 
+<a name="l00188"></a>00188         <span class="comment">//this code is from PythonQt</span>
+<a name="l00189"></a>00189 
+<a name="l00190"></a>00190         <a class="code" href="class_python_qt_object_ptr.html" title="a smart pointer that stores a PyObject pointer and that handles reference counting automatically...">PythonQtObjectPtr</a> _context = <a class="code" href="modsupport_8h.html#a0180ca1808366e5da641475e8bf8cca3">PythonQt::self</a>()-&gt;getMainModule();
+<a name="l00191"></a>00191         QString _stdOut = <span class="stringliteral">&quot;&quot;</span>;
+<a name="l00192"></a>00192         QString _stdErr = <span class="stringliteral">&quot;&quot;</span>;
+<a name="l00193"></a>00193         <a class="code" href="class_python_qt_object_ptr.html" title="a smart pointer that stores a PyObject pointer and that handles reference counting automatically...">PythonQtObjectPtr</a> <a class="code" href="floatobject_8h.html#af18a92ce774f4c499544fbcc894db7e8">p</a>;
+<a name="l00194"></a>00194         <a class="code" href="struct__object.html">PyObject</a>* <a class="code" href="pyerrors_8h.html#a9a67a16ee8134b9b5325f6f10bf62b32">dict</a> = NULL;
+<a name="l00195"></a>00195         <span class="keywordflow">if</span> (<a class="code" href="moduleobject_8h.html#a465a66404adf0a355bc57f9443cf2854">PyModule_Check</a>(_context)) {
+<a name="l00196"></a>00196             dict = PyModule_GetDict(_context);
+<a name="l00197"></a>00197         } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="dictobject_8h.html#ad488614c20f5d24435ec7eb738af0d8b">PyDict_Check</a>(_context)) {
+<a name="l00198"></a>00198             dict = _context;
+<a name="l00199"></a>00199         }
+<a name="l00200"></a>00200 
+<a name="l00201"></a>00201 
+<a name="l00202"></a>00202         QStringList list = <a class="code" href="classqtpd_1_1_u_i_script.html#a25660f1d0bd3bbd053b2603e147661ce">getEditorData</a>();
+<a name="l00203"></a>00203 
+<a name="l00204"></a>00204         <span class="comment">// while (true)</span>
+<a name="l00205"></a>00205         <span class="keywordflow">for</span> (QStringList::iterator it = list.begin(); it!= list.end(); ++it)
+<a name="l00206"></a>00206         {
+<a name="l00207"></a>00207             QString line = *it;
+<a name="l00208"></a>00208             <span class="keywordflow">if</span> (line.isNull())
+<a name="l00209"></a>00209                 <span class="keywordflow">break</span>;
+<a name="l00210"></a>00210 
+<a name="l00211"></a>00211 
+<a name="l00212"></a>00212             <span class="keywordflow">if</span> (dict) {
+<a name="l00213"></a>00213                 p.<a class="code" href="class_python_qt_object_ptr.html#afdbaeaeef2876b970efb275863501939" title="sets the object and passes the ownership (stealing the reference, in Python slang)">setNewRef</a>(<a class="code" href="pythonrun_8h.html#a8ce80a6c4e8d7460a55e2f86aae95310">PyRun_String</a>(line.toLatin1().data(), <a class="code" href="_python_8h.html#af2e79bc5489b9fdf10887ccfcea1e203">Py_single_input</a>, <a class="code" href="pyerrors_8h.html#a9a67a16ee8134b9b5325f6f10bf62b32">dict</a>, <a class="code" href="pyerrors_8h.html#a9a67a16ee8134b9b5325f6f10bf62b32">dict</a>));
+<a name="l00214"></a>00214                 <span class="comment">//qDebug() &lt;&lt; editor_-&gt;document()-&gt;toPlainText().toLatin1().data();</span>
+<a name="l00215"></a>00215             }
+<a name="l00216"></a>00216 
+<a name="l00217"></a>00217             <span class="keywordflow">if</span> (!p) {
+<a name="l00218"></a>00218                 <a class="code" href="modsupport_8h.html#a0180ca1808366e5da641475e8bf8cca3">PythonQt::self</a>()-&gt;handleError();
+<a name="l00219"></a>00219             }
+<a name="l00220"></a>00220 
+<a name="l00221"></a>00221             <span class="keywordflow">if</span> (_stdOut!=<span class="stringliteral">&quot;&quot;</span>)
+<a name="l00222"></a>00222             {
+<a name="l00223"></a>00223 
+<a name="l00224"></a>00224                 <a class="code" href="cm__pdlink_8h.html#a766e12f26830eee9deae0fe8e9f70535" title="post plain text to Pd window">cmp_post</a>((<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>)<span class="stringliteral">&quot;Python: &quot;</span>+ _stdOut.toStdString());
+<a name="l00225"></a>00225             }
+<a name="l00226"></a>00226             <span class="keywordflow">if</span> (_stdErr!=<span class="stringliteral">&quot;&quot;</span>)
+<a name="l00227"></a>00227             {
+<a name="l00228"></a>00228                 <a class="code" href="cm__pdlink_8h.html#a766e12f26830eee9deae0fe8e9f70535" title="post plain text to Pd window">cmp_post</a>((<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>)<span class="stringliteral">&quot;Python error: &quot;</span>+ _stdOut.toStdString());
+<a name="l00229"></a>00229             }
 <a name="l00230"></a>00230 
-<a name="l00231"></a><a class="code" href="classqtpd_1_1_u_i_script.html#a25660f1d0bd3bbd053b2603e147661ce">00231</a>     QStringList <a class="code" href="classqtpd_1_1_u_i_script.html#a25660f1d0bd3bbd053b2603e147661ce">getEditorData</a>()
-<a name="l00232"></a>00232     {
-<a name="l00233"></a>00233         <span class="keywordflow">return</span> editor_-&gt;document()-&gt;toPlainText().split(QRegExp(<span class="stringliteral">&quot;[\r\n]&quot;</span>),QString::SkipEmptyParts);
-<a name="l00234"></a>00234     }
-<a name="l00235"></a>00235 
-<a name="l00236"></a>00236 signals:
-<a name="l00237"></a>00237 
-<a name="l00238"></a>00238 <span class="keyword">private</span> slots:
-<a name="l00239"></a>00239 <span class="comment">//    void editorDone();</span>
-<a name="l00240"></a>00240     <span class="keywordtype">void</span> editorChanged();
+<a name="l00231"></a>00231 
+<a name="l00232"></a>00232         }
+<a name="l00233"></a>00233     }
+<a name="l00234"></a>00234 
+<a name="l00235"></a>00235     <span class="keywordtype">void</span> btnLoad()
+<a name="l00236"></a>00236     {
+<a name="l00237"></a>00237         QString fname = QFileDialog::getOpenFileName(0,QString(<span class="stringliteral">&quot;Open Python script&quot;</span>), QString(<span class="stringliteral">&quot;~/&quot;</span>), QString(<span class="stringliteral">&quot;*.py&quot;</span>), 0, 0);
+<a name="l00238"></a>00238         <span class="keywordflow">if</span> (fname!=<span class="stringliteral">&quot;&quot;</span>)
+<a name="l00239"></a>00239         {
+<a name="l00240"></a>00240             QFile file(fname);
 <a name="l00241"></a>00241 
-<a name="l00242"></a>00242     <span class="keywordtype">void</span> btnRun(){
-<a name="l00243"></a>00243         <span class="comment">//PythonQt</span>
-<a name="l00244"></a>00244 
-<a name="l00245"></a>00245         <a class="code" href="class_python_qt_object_ptr.html" title="a smart pointer that stores a PyObject pointer and that handles reference counting automatically...">PythonQtObjectPtr</a> _context = <a class="code" href="modsupport_8h.html#a0180ca1808366e5da641475e8bf8cca3">PythonQt::self</a>()-&gt;getMainModule();
-<a name="l00246"></a>00246         QString _stdOut = <span class="stringliteral">&quot;&quot;</span>;
-<a name="l00247"></a>00247         QString _stdErr = <span class="stringliteral">&quot;&quot;</span>;
-<a name="l00248"></a>00248         <a class="code" href="class_python_qt_object_ptr.html" title="a smart pointer that stores a PyObject pointer and that handles reference counting automatically...">PythonQtObjectPtr</a> <a class="code" href="floatobject_8h.html#af18a92ce774f4c499544fbcc894db7e8">p</a>;
-<a name="l00249"></a>00249         <a class="code" href="struct__object.html">PyObject</a>* <a class="code" href="pyerrors_8h.html#a9a67a16ee8134b9b5325f6f10bf62b32">dict</a> = NULL;
-<a name="l00250"></a>00250         <span class="keywordflow">if</span> (<a class="code" href="moduleobject_8h.html#a465a66404adf0a355bc57f9443cf2854">PyModule_Check</a>(_context)) {
-<a name="l00251"></a>00251             dict = PyModule_GetDict(_context);
-<a name="l00252"></a>00252         } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="dictobject_8h.html#ad488614c20f5d24435ec7eb738af0d8b">PyDict_Check</a>(_context)) {
-<a name="l00253"></a>00253             dict = _context;
-<a name="l00254"></a>00254         }
-<a name="l00255"></a>00255 
-<a name="l00256"></a>00256 
-<a name="l00257"></a>00257         QStringList list = <a class="code" href="classqtpd_1_1_u_i_script.html#a25660f1d0bd3bbd053b2603e147661ce">getEditorData</a>();
-<a name="l00258"></a>00258 
-<a name="l00259"></a>00259        <span class="comment">// while (true)</span>
-<a name="l00260"></a>00260         <span class="keywordflow">for</span> (QStringList::iterator it = list.begin(); it!= list.end(); ++it)
-<a name="l00261"></a>00261         {
-<a name="l00262"></a>00262             QString line = *it;
-<a name="l00263"></a>00263             <span class="keywordflow">if</span> (line.isNull())
-<a name="l00264"></a>00264                 <span class="keywordflow">break</span>;
-<a name="l00265"></a>00265 
+<a name="l00242"></a>00242             file.open(QFile::ReadOnly | QFile::Text);
+<a name="l00243"></a>00243 
+<a name="l00244"></a>00244             QTextStream ReadFile(&amp;file);
+<a name="l00245"></a>00245             editor_-&gt;document()-&gt;setPlainText(ReadFile.readAll());
+<a name="l00246"></a>00246             file.close();
+<a name="l00247"></a>00247         }
+<a name="l00248"></a>00248 
+<a name="l00249"></a>00249     }
+<a name="l00250"></a>00250 
+<a name="l00251"></a>00251     <span class="keywordtype">void</span> btnSave()
+<a name="l00252"></a>00252     {
+<a name="l00253"></a>00253         QString fname = QFileDialog::getSaveFileName(0,QString(<span class="stringliteral">&quot;Save Python script&quot;</span>), QString(<span class="stringliteral">&quot;~/&quot;</span>), QString(<span class="stringliteral">&quot;*.py&quot;</span>), 0, 0);
+<a name="l00254"></a>00254         <span class="keywordflow">if</span> (fname!=<span class="stringliteral">&quot;&quot;</span>)
+<a name="l00255"></a>00255         {
+<a name="l00256"></a>00256             QFile file(fname);
+<a name="l00257"></a>00257 
+<a name="l00258"></a>00258             file.open(QFile::WriteOnly | QFile::Text);
+<a name="l00259"></a>00259 
+<a name="l00260"></a>00260             QTextStream WriteFile(&amp;file);
+<a name="l00261"></a>00261             WriteFile &lt;&lt; editor_-&gt;document()-&gt;toPlainText();
+<a name="l00262"></a>00262             file.close();
+<a name="l00263"></a>00263         }
+<a name="l00264"></a>00264 
+<a name="l00265"></a>00265     }
 <a name="l00266"></a>00266 
-<a name="l00267"></a>00267             <span class="keywordflow">if</span> (dict) {
-<a name="l00268"></a>00268                 p.<a class="code" href="class_python_qt_object_ptr.html#afdbaeaeef2876b970efb275863501939" title="sets the object and passes the ownership (stealing the reference, in Python slang)">setNewRef</a>(<a class="code" href="pythonrun_8h.html#a8ce80a6c4e8d7460a55e2f86aae95310">PyRun_String</a>(line.toLatin1().data(), <a class="code" href="_python_8h.html#af2e79bc5489b9fdf10887ccfcea1e203">Py_single_input</a>, <a class="code" href="pyerrors_8h.html#a9a67a16ee8134b9b5325f6f10bf62b32">dict</a>, <a class="code" href="pyerrors_8h.html#a9a67a16ee8134b9b5325f6f10bf62b32">dict</a>));
-<a name="l00269"></a>00269                 <span class="comment">//qDebug() &lt;&lt; editor_-&gt;document()-&gt;toPlainText().toLatin1().data();</span>
-<a name="l00270"></a>00270             }
+<a name="l00267"></a>00267     <span class="keywordtype">void</span> btnClear()
+<a name="l00268"></a>00268     {
+<a name="l00269"></a>00269         editor_-&gt;clear();
+<a name="l00270"></a>00270     }
 <a name="l00271"></a>00271 
-<a name="l00272"></a>00272             <span class="keywordflow">if</span> (!p) {
-<a name="l00273"></a>00273                 <a class="code" href="modsupport_8h.html#a0180ca1808366e5da641475e8bf8cca3">PythonQt::self</a>()-&gt;handleError();
-<a name="l00274"></a>00274             }
-<a name="l00275"></a>00275 
-<a name="l00276"></a>00276             <span class="keywordflow">if</span> (_stdOut!=<span class="stringliteral">&quot;&quot;</span>)
-<a name="l00277"></a>00277             {
-<a name="l00278"></a>00278 
-<a name="l00279"></a>00279                 <a class="code" href="cm__pdlink_8h.html#a766e12f26830eee9deae0fe8e9f70535" title="post plain text to Pd window">cmp_post</a>((<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>)<span class="stringliteral">&quot;Python: &quot;</span>+ _stdOut.toStdString());
-<a name="l00280"></a>00280             }
-<a name="l00281"></a>00281             <span class="keywordflow">if</span> (_stdErr!=<span class="stringliteral">&quot;&quot;</span>)
-<a name="l00282"></a>00282             {
-<a name="l00283"></a>00283                 <a class="code" href="cm__pdlink_8h.html#a766e12f26830eee9deae0fe8e9f70535" title="post plain text to Pd window">cmp_post</a>((<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>)<span class="stringliteral">&quot;Python error: &quot;</span>+ _stdOut.toStdString());
-<a name="l00284"></a>00284             }
-<a name="l00285"></a>00285 
-<a name="l00286"></a>00286 
-<a name="l00287"></a>00287         }
-<a name="l00288"></a>00288     }
-<a name="l00289"></a>00289 
-<a name="l00290"></a>00290     <span class="keywordtype">void</span> btnLoad()
-<a name="l00291"></a>00291     {
-<a name="l00292"></a>00292         QString fname = QFileDialog::getOpenFileName(0,QString(<span class="stringliteral">&quot;Open Python script&quot;</span>), QString(<span class="stringliteral">&quot;~/&quot;</span>), QString(<span class="stringliteral">&quot;*.py&quot;</span>), 0, 0);
-<a name="l00293"></a>00293         <span class="keywordflow">if</span> (fname!=<span class="stringliteral">&quot;&quot;</span>)
-<a name="l00294"></a>00294         {
-<a name="l00295"></a>00295             QFile file(fname);
-<a name="l00296"></a>00296 
-<a name="l00297"></a>00297             file.open(QFile::ReadOnly | QFile::Text);
-<a name="l00298"></a>00298 
-<a name="l00299"></a>00299             QTextStream ReadFile(&amp;file);
-<a name="l00300"></a>00300             editor_-&gt;document()-&gt;setPlainText(ReadFile.readAll());
-<a name="l00301"></a>00301             file.close();
-<a name="l00302"></a>00302         }
-<a name="l00303"></a>00303 
-<a name="l00304"></a>00304     }
-<a name="l00305"></a>00305 
-<a name="l00306"></a>00306     <span class="keywordtype">void</span> btnSave()
-<a name="l00307"></a>00307     {
-<a name="l00308"></a>00308         QString fname = QFileDialog::getSaveFileName(0,QString(<span class="stringliteral">&quot;Save Python script&quot;</span>), QString(<span class="stringliteral">&quot;~/&quot;</span>), QString(<span class="stringliteral">&quot;*.py&quot;</span>), 0, 0);
-<a name="l00309"></a>00309         <span class="keywordflow">if</span> (fname!=<span class="stringliteral">&quot;&quot;</span>)
-<a name="l00310"></a>00310         {
-<a name="l00311"></a>00311             QFile file(fname);
-<a name="l00312"></a>00312 
-<a name="l00313"></a>00313             file.open(QFile::WriteOnly | QFile::Text);
-<a name="l00314"></a>00314 
-<a name="l00315"></a>00315             <span class="comment">//QTextStream ReadFile(&amp;file);</span>
-<a name="l00316"></a>00316             <span class="comment">//editor_-&gt;setText(ReadFile.readAll());</span>
-<a name="l00317"></a>00317             QTextStream WriteFile(&amp;file);
-<a name="l00318"></a>00318             WriteFile &lt;&lt; editor_-&gt;document()-&gt;toPlainText();
-<a name="l00319"></a>00319             file.close();
-<a name="l00320"></a>00320         }
-<a name="l00321"></a>00321 
-<a name="l00322"></a>00322     }
-<a name="l00323"></a>00323 
-<a name="l00324"></a>00324     <span class="keywordtype">void</span> btnClear()
-<a name="l00325"></a>00325     {
-<a name="l00326"></a>00326         editor_-&gt;clear();
-<a name="l00327"></a>00327     }
-<a name="l00328"></a>00328 
-<a name="l00329"></a>00329 };
-<a name="l00330"></a>00330 
-<a name="l00331"></a>00331 }
-<a name="l00332"></a>00332 <span class="preprocessor">#endif // cmo_text_H</span>
+<a name="l00272"></a>00272 };
+<a name="l00273"></a>00273 
+<a name="l00274"></a>00274 }
+<a name="l00275"></a>00275 <span class="preprocessor">#endif // cmo_text_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -427,7 +370,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 17 2017 08:35:35 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 17 2017 09:00:50 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -182,7 +182,7 @@ var searchData=
   ['typeid',['typeId',['../struct_python_qt_method_info_1_1_parameter_info.html#aebe39ef6022bf047df256215b16527e6',1,'PythonQtMethodInfo::ParameterInfo']]],
   ['typename',['typeName',['../namespace_python_qt_utils.html#a7ab7320f61f25b5e2d2b27ee40f7a277',1,'PythonQtUtils']]],
   ['typeorclass',['typeorclass',['../abstract_8h.html#af5fe3b8666d7e81be8e1dda1700e0b2f',1,'abstract.h']]],
-  ['typeslots',['typeSlots',['../class_python_qt_class_info.html#a367fc0f7bf299770b485dbbb0c4dbc58',1,'PythonQtClassInfo::typeSlots()'],['../class_python_qt.html#a42eb4a4c99cc77167872c0c6666eac7e',1,'PythonQt::TypeSlots()']]],
+  ['typeslots',['TypeSlots',['../class_python_qt.html#a42eb4a4c99cc77167872c0c6666eac7e',1,'PythonQt::TypeSlots()'],['../class_python_qt_class_info.html#a367fc0f7bf299770b485dbbb0c4dbc58',1,'PythonQtClassInfo::typeSlots()']]],
   ['typesymbol',['typeSymbol',['../classceammc_1_1faust_1_1_u_i_element.html#ae66475e8aa1f61db10459b7b742dc413',1,'ceammc::faust::UIElement']]],
   ['tzinfo',['tzinfo',['../struct_py_date_time___time.html#ac61bbd01aee42135152e93a5212bb689',1,'PyDateTime_Time::tzinfo()'],['../struct_py_date_time___date_time.html#a11483552924818dd195700bba9e1f492',1,'PyDateTime_DateTime::tzinfo()']]],
   ['tzinfotype',['TZInfoType',['../struct_py_date_time___c_a_p_i.html#a967e1a42dd00881315101a1f09ee61c8',1,'PyDateTime_CAPI']]]

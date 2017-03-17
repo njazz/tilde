@@ -52,6 +52,7 @@ var searchData=
   ['setlist',['setList',['../classceammc_1_1_message.html#af1082764201e053a83becee508f63ed7',1,'ceammc::Message::setList(const AtomList &amp;l)'],['../classceammc_1_1_message.html#a376c6f29445720f012a0c6f846ffb638',1,'ceammc::Message::setList(int argc, t_atom *argv)']]],
   ['setlistfn',['setListFn',['../classceammc_1_1_object_factory.html#a21432d0d507955eb1678d3e0178f3082',1,'ceammc::ObjectFactory']]],
   ['setmetaobject',['setMetaObject',['../class_python_qt_class_info.html#ab4de4dcc20ada8a9a804e5b598fa0e30',1,'PythonQtClassInfo']]],
+  ['setminimumboxheight',['setMinimumBoxHeight',['../classqtpd_1_1_u_i_object.html#a0e30df8242a108e7534044d0fd2e8c9e',1,'qtpd::UIObject']]],
   ['setminimumboxwidth',['setMinimumBoxWidth',['../classqtpd_1_1_u_i_object.html#aaf3ec64e20e23bd1a6e98e40e207b9a5',1,'qtpd::UIObject']]],
   ['setmoduleimportpath',['setModuleImportPath',['../class_python_qt.html#a9194b96506cb225452025ade60c75e8e',1,'PythonQt']]],
   ['setname',['setName',['../classceammc_1_1_property.html#af4ff94ef97398010a1f2a8d318b3a849',1,'ceammc::Property']]],
