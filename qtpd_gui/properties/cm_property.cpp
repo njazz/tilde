@@ -99,12 +99,12 @@ template<> void Property::set(QStringList strlist)
 
     AtomList list;
 
-    qDebug() << "set list" << strlist;
+    //qDebug() << "set list" << strlist;
 
     for (it = strlist.begin(); it != strlist.end(); ++it)
     {
         QString str = *it;
-        qDebug() << "str" << str;
+        //qDebug() << "str" << str;
         if (str!="")
             list.append(AtomList(gensym(str.toStdString().c_str())));
     }
