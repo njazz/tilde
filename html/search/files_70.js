@@ -36,7 +36,6 @@ var searchData=
   ['pythonqtclasswrapper_2eh',['PythonQtClassWrapper.h',['../_python_qt_class_wrapper_8h.html',1,'']]],
   ['pythonqtconversion_2eh',['PythonQtConversion.h',['../_python_qt_conversion_8h.html',1,'']]],
   ['pythonqtcppwrapperfactory_2eh',['PythonQtCppWrapperFactory.h',['../_python_qt_cpp_wrapper_factory_8h.html',1,'']]],
-  ['pythonqtdoc_2eh',['PythonQtDoc.h',['../_python_qt_doc_8h.html',1,'']]],
   ['pythonqtimporter_2eh',['PythonQtImporter.h',['../_python_qt_importer_8h.html',1,'']]],
   ['pythonqtimportfileinterface_2eh',['PythonQtImportFileInterface.h',['../_python_qt_import_file_interface_8h.html',1,'']]],
   ['pythonqtinstancewrapper_2eh',['PythonQtInstanceWrapper.h',['../_python_qt_instance_wrapper_8h.html',1,'']]],

@@ -746,7 +746,6 @@ var searchData=
   ['pythonqtcppwrapperfactory_2eh',['PythonQtCppWrapperFactory.h',['../_python_qt_cpp_wrapper_factory_8h.html',1,'']]],
   ['pythonqtcreateobject',['PythonQtCreateObject',['../_python_qt_8h.html#a501468608c41ae159a549bb302af9be7',1,'PythonQt.h']]],
   ['pythonqtdebugapi',['PythonQtDebugAPI',['../class_python_qt_debug_a_p_i.html',1,'PythonQtDebugAPI'],['../class_python_qt_debug_a_p_i.html#a61698239e76f3608e8dca87cd6747873',1,'PythonQtDebugAPI::PythonQtDebugAPI()']]],
-  ['pythonqtdoc_2eh',['PythonQtDoc.h',['../_python_qt_doc_8h.html',1,'']]],
   ['pythonqtdynamicclassinfo',['PythonQtDynamicClassInfo',['../struct_python_qt_dynamic_class_info.html',1,'PythonQtDynamicClassInfo'],['../struct_python_qt_dynamic_class_info.html#affa8e049f0fa4c5983c69671b7e429a2',1,'PythonQtDynamicClassInfo::PythonQtDynamicClassInfo()']]],
   ['pythonqtdynamicsignalinfo',['PythonQtDynamicSignalInfo',['../struct_python_qt_dynamic_signal_info.html',1,'']]],
   ['pythonqtforeignwrapperfactory',['PythonQtForeignWrapperFactory',['../class_python_qt_foreign_wrapper_factory.html',1,'PythonQtForeignWrapperFactory'],['../class_python_qt_foreign_wrapper_factory.html#a485ba47f3cbac62d2891b0a7bc469484',1,'PythonQtForeignWrapperFactory::PythonQtForeignWrapperFactory()']]],
