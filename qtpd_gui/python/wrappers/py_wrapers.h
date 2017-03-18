@@ -25,6 +25,11 @@ void pyWrappersInit()
 
     static pyQtpd _pyQtpd;
     mainContext.addObject("Qtpd", &_pyQtpd);
+
+    PythonQt::self()->addDecorators(new pyPatchWindowDecorator());
+    PythonQt::self()->addDecorators(new pyCanvasDecorator());
+    PythonQt::self()->addDecorators(new pyUIObjectDecorator());
+    PythonQt::self()->addDecorators(new pyPropertyListDecorator());
 }
 
 #endif // PY_WRAPERS_H

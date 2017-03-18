@@ -16,40 +16,59 @@
 
 using namespace qtpd;
 
-class pyQtpd : public QObject {
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class pyUIObjectDecorator : public QObject {
     Q_OBJECT
 
-public:
-    explicit pyQtpd(QObject* parent = 0){};
-
 public Q_SLOTS:
-    PyObject* getMainModule()
+
+    void addInlet(UIObject* obj)
     {
-        return PythonQt::self()->getMainModule();
+        if (obj)
+            obj->addInlet();
     }
 
-    //todo separate classes / decorators
-
-    PatchWindow* newPatchWindow()
+    void addOutlet(UIObject* obj)
     {
-        PatchWindow* ret;
-        ret = PatchWindow::newWindow();
-        ret->show();
-        return ret;
-    };
+        if (obj)
+            obj->addOutlet();
+    }
 
-    Canvas* canvasForWindow(PatchWindow* w)
+    void pdMessage(UIObject* obj, QString data)
+    {
+        if (obj->pdObject()) {
+            cmp_sendstring((t_pd*)obj->pdObject(), data.toStdString());
+        }
+    }
+
+};
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class pyPatchWindowDecorator : public QObject {
+    Q_OBJECT
+
+public Q_SLOTS:
+
+    Canvas* canvas(PatchWindow* w)
     {
         return w->canvas;
     }
 
+};
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class pyCanvasDecorator : public QObject {
+    Q_OBJECT
+
+public Q_SLOTS:
+
     UIObject* createObject(Canvas* c, QString obj_name, QString obj_data, int x, int y)
     {
-        return c->createObject(obj_name.toStdString(), obj_data.toStdString(), QPoint(x, y));
+        return c->Canvas::createObject(obj_name.toStdString(), obj_data.toStdString(), QPoint(x, y));
     }
-
-    ////
-    // GUI
 
     //todo templates
     void moveObject(Canvas* o, int x, int y)
@@ -95,27 +114,54 @@ public Q_SLOTS:
         c->patchcord(obj1, out1, obj2, in2);
     }
 
-    ////////////
-    // lower level
 
-    void addInlet(UIObject* obj)
+};
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class pyPropertyListDecorator : public QObject {
+    Q_OBJECT
+
+public Q_SLOTS:
+    QString get(PropertyList* p, QString name)
     {
-        if (obj)
-            obj->addInlet();
+        return p->PropertyList::get(name.toStdString())->asQString();
     }
 
-    void addOutlet(UIObject* obj)
+    void set(PropertyList* p, QString name, QString data)
     {
-        if (obj)
-            obj->addOutlet();
+        p->PropertyList::set(name.toStdString(), data);
     }
 
-    void pdMessage(UIObject* obj, QString data)
+    QStringList names(PropertyList* p)
     {
-        if (obj->pdObject()) {
-            cmp_sendstring((t_pd*)obj->pdObject(), data.toStdString());
-        }
+        return p->PropertyList::names();
     }
+};
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class pyQtpd : public QObject {
+    Q_OBJECT
+
+public:
+    explicit pyQtpd(QObject* parent = 0){};
+
+public Q_SLOTS:
+    PyObject* getMainModule()
+    {
+        return PythonQt::self()->getMainModule();
+    }
+
+    //todo separate classes / decorators
+
+    PatchWindow* newPatchWindow()
+    {
+        PatchWindow* ret;
+        ret = PatchWindow::newWindow();
+        ret->show();
+        return ret;
+    };
 
     //////////
     // pdLib
@@ -136,36 +182,10 @@ public Q_SLOTS:
     }
 
     ///////
-    // properties
-
-    PropertyList* new_PropertyList()
-    {
-        return new PropertyList();
-    }
 
     PropertyList* prop(UIObject* obj)
     {
-        return obj->properties();
-    }
-
-    QStringList names(PropertyList* list)
-    {
-        return list->names();
-    }
-
-    QString getP(UIObject* obj, QString name)
-    {
-        return obj->properties()->get(name.toStdString())->asQString();
-    }
-
-    void setP(UIObject* obj, QString name, QString data)
-    {
-        obj->properties()->set(name.toStdString(), data);
-    }
-
-    QStringList pnames(UIObject* obj)
-    {
-        return obj->properties()->names();
+        return (PropertyList*)obj->properties();
     }
 
     //////////
