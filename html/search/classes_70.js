@@ -69,7 +69,6 @@ var searchData=
   ['pystructsequence_5ffield',['PyStructSequence_Field',['../struct_py_struct_sequence___field.html',1,'']]],
   ['pysyntaxerrorobject',['PySyntaxErrorObject',['../struct_py_syntax_error_object.html',1,'']]],
   ['pysystemexitobject',['PySystemExitObject',['../struct_py_system_exit_object.html',1,'']]],
-  ['pytestclass',['pyTestClass',['../classpy_test_class.html',1,'']]],
   ['pythonqt',['PythonQt',['../class_python_qt.html',1,'']]],
   ['pythonqtboolresultobject',['PythonQtBoolResultObject',['../struct_python_qt_bool_result_object.html',1,'']]],
   ['pythonqtclassinfo',['PythonQtClassInfo',['../class_python_qt_class_info.html',1,'']]],

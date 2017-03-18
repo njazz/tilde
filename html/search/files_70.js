@@ -7,8 +7,6 @@ var searchData=
   ['py_5fcurses_2eh',['py_curses.h',['../py__curses_8h.html',1,'']]],
   ['py_5fpdlib_2eh',['py_pdlib.h',['../py__pdlib_8h.html',1,'']]],
   ['py_5fqtpd_2eh',['py_qtpd.h',['../py__qtpd_8h.html',1,'']]],
-  ['py_5ftestclass_2ecpp',['py_testclass.cpp',['../py__testclass_8cpp.html',1,'']]],
-  ['py_5ftestclass_2eh',['py_testclass.h',['../py__testclass_8h.html',1,'']]],
   ['py_5fwrapers_2eh',['py_wrapers.h',['../py__wrapers_8h.html',1,'']]],
   ['pyarena_2eh',['pyarena.h',['../pyarena_8h.html',1,'']]],
   ['pycapsule_2eh',['pycapsule.h',['../pycapsule_8h.html',1,'']]],
