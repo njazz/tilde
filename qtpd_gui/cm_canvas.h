@@ -1219,7 +1219,7 @@ public:
     /// \brief returns vector of all object boxes - needed by filesaver
     /// \return
     ///
-    objectVec getObjectBoxes()
+    objectVec objectBoxes()
     {
         return this->data_.boxes_;
     }
@@ -1231,6 +1231,24 @@ public:
     patchcordVec patchcords()
     {
         return this->data_.patchcords_;
+    }
+
+    ////
+    /// \brief returns vector of selected object boxes
+    /// \return
+    ///
+    objectVec selectedObjectBoxes()
+    {
+        return this->selectionData_.boxes_;
+    }
+
+    ////
+    /// \brief returns vector of selected patchcords
+    /// \return
+    ///
+    patchcordVec selectedPatchcords()
+    {
+        return this->selectionData_.patchcords_;
     }
 
     ////
@@ -1448,7 +1466,7 @@ public:
         ret.append(out1.c_str());
 
         //objects
-        std::vector<UIObject*> objects = this->getObjectBoxes();
+        std::vector<UIObject*> objects = this->objectBoxes();
         std::vector<UIObject*>::iterator it;
 
         for (it = objects.begin(); it != objects.end(); ++it) {

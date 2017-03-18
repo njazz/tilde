@@ -14,6 +14,8 @@
 
 #include "cm_preferences.h"
 
+#include "cm_filesaver.h"
+
 using namespace qtpd;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -42,6 +44,12 @@ public Q_SLOTS:
         }
     }
 
+    ///////
+
+    PropertyList* prop(UIObject* obj)
+    {
+        return (PropertyList*)obj->properties();
+    }
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -55,7 +63,6 @@ public Q_SLOTS:
     {
         return w->canvas;
     }
-
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -114,7 +121,50 @@ public Q_SLOTS:
         c->patchcord(obj1, out1, obj2, in2);
     }
 
+    //////////
+    // objects
 
+    // TODO
+    objectVec objects(Canvas* c)
+    {
+        return c->objectBoxes();
+    }
+
+    objectVec selectedObjects(Canvas* c)
+    {
+        return c->selectedObjectBoxes();
+    }
+
+    //////////
+    // patchcords
+
+    patchcordVec patchcords(Canvas* c)
+    {
+        return c->patchcords();
+    }
+
+    patchcordVec selectedPatchcords(Canvas* c)
+    {
+        return c->selectedPatchcords();
+    }
+
+    patchcordVec patchcordsFor(Canvas* c, UIObject* obj)
+    {
+        return c->patchcordsForObject(obj);
+    }
+
+    void deletePatchcordsFor(Canvas* c, UIObject* obj)
+    {
+        c->deletePatchcordsFor(obj);
+    }
+
+    //////////
+    // file
+
+    QStringList pdPatch(Canvas* c)
+    {
+        return c->canvasAsPdStrings();
+    }
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -179,13 +229,6 @@ public Q_SLOTS:
     void post(QString msg)
     {
         cmp_post(msg.toStdString());
-    }
-
-    ///////
-
-    PropertyList* prop(UIObject* obj)
-    {
-        return (PropertyList*)obj->properties();
     }
 
     //////////
