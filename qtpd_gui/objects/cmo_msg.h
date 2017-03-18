@@ -196,7 +196,9 @@ public:
         x->setObjectData(obj_data);
         x->autoResize();
 
-        x->repaint();
+        //
+        emit x->callRepaint();
+        //x->repaint();
     }
 
     void setPdObject(void* obj)

@@ -22,6 +22,9 @@ UIObject::UIObject(UIWidget* parent)
 
     connect(this->sizeBox, &SizeBox::resizeBoxEvent, this, &UIObject::resizeBox);
 
+    // repaint, handling for threads
+    connect(this, &UIObject::callRepaint, this, &UIObject::s_repaint);
+
     this->initProperties();
 }
 

@@ -184,7 +184,8 @@ public:
         if (msg.size() > 0) {
             x->setObjectData(msg.at(0).asString());
             x->autoResize();
-            x->repaint();
+            emit x->callRepaint();
+            //x->repaint();
         }
     }
 

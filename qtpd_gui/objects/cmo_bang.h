@@ -174,7 +174,8 @@ private slots:
     void timerAction()
     {
         this->clicked_ = false;
-        this->repaint();
+        //this->repaint();
+        emit callRepaint();
     }
 };
 }

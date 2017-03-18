@@ -204,7 +204,8 @@ public:
             //                    x->value_ = !x->value_;
         }
 
-        x->repaint();
+        emit x->callRepaint();
+        //x->repaint();
     }
 
     void setPdObject(void* obj)

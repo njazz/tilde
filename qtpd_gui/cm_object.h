@@ -468,8 +468,15 @@ public:
 signals:
     void editObject(void* box);
 
+    void callRepaint();     //needed for proper threading
+
 public slots:
     void resizeBox(int dx);
+
+    void s_repaint()        //needed for proper threading
+    {
+        this->repaint();
+    }
 };
 }
 
