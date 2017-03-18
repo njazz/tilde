@@ -362,7 +362,7 @@ var searchData=
   ['createoutlet',['createOutlet',['../classceammc_1_1_base_object.html#a69f948ef732b83a933a4f17b4ad6b078',1,'ceammc::BaseObject']]],
   ['createproperty',['createProperty',['../classceammc_1_1_base_object.html#a437adad8e56d118c2f134c80817e7bed',1,'ceammc::BaseObject']]],
   ['createqtreturnvalue',['CreateQtReturnValue',['../class_python_qt_conv.html#a8ad9b7b81ee74fda5ab79aa0c80f86e5',1,'PythonQtConv']]],
-  ['createsubpatchwindow',['createSubpatchWindow',['../classqtpd_1_1_canvas.html#a0be062988d0eb22128367026a54e55b8',1,'qtpd::Canvas']]],
+  ['createsubpatchwindow',['createSubpatchWindow',['../classqtpd_1_1_canvas.html#a668fd9ec6a0ed858bf2e89bef7928d7b',1,'qtpd::Canvas']]],
   ['createuniquemodule',['createUniqueModule',['../class_python_qt.html#af5f5f5de40cde5dc4d0aa5efcb180aa6',1,'PythonQt']]],
   ['cstringio_2eh',['cStringIO.h',['../c_string_i_o_8h.html',1,'']]],
   ['ctlobj_5fconvert',['CtlObj_Convert',['../pymactoolbox_8h.html#ae3953e804cb149a2d73170bd86945d9e',1,'pymactoolbox.h']]],

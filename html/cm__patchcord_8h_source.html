@@ -82,141 +82,128 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">/home/travis/build/njazz/qtpd/qtpd_gui/cm_patchcord.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="cm__patchcord_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef CM_PATCHCORD_H</span>
-<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define CM_PATCHCORD_H</span>
-<a name="l00003"></a>00003 <span class="preprocessor"></span>
-<a name="l00004"></a>00004 <span class="preprocessor">#include &quot;<a class="code" href="cm__object_8h.html">cm_object.h</a>&quot;</span>
-<a name="l00005"></a>00005 <span class="preprocessor">#include&quot;<a class="code" href="cm__port_8h.html">cm_port.h</a>&quot;</span>
-<a name="l00006"></a>00006 
-<a name="l00007"></a>00007 <span class="preprocessor">#include &lt;math.h&gt;</span>
-<a name="l00008"></a>00008 
-<a name="l00009"></a>00009 <span class="comment">//#include &lt;QWidget&gt;</span>
-<a name="l00010"></a>00010 <span class="comment">//#include &lt;QtGui&gt;</span>
+<a href="cm__patchcord_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// (c) 2017 Alex Nadzharov</span>
+<a name="l00002"></a>00002 <span class="comment">// License: GPL3</span>
+<a name="l00003"></a>00003 
+<a name="l00004"></a>00004 <span class="preprocessor">#ifndef CM_PATCHCORD_H</span>
+<a name="l00005"></a>00005 <span class="preprocessor"></span><span class="preprocessor">#define CM_PATCHCORD_H</span>
+<a name="l00006"></a>00006 <span class="preprocessor"></span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;<a class="code" href="cm__object_8h.html">cm_object.h</a>&quot;</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;<a class="code" href="cm__port_8h.html">cm_port.h</a>&quot;</span>
+<a name="l00009"></a>00009 
+<a name="l00010"></a>00010 <span class="preprocessor">#include &lt;math.h&gt;</span>
 <a name="l00011"></a>00011 
-<a name="l00012"></a>00012 <span class="keyword">namespace </span>qtpd
-<a name="l00013"></a>00013 {
+<a name="l00012"></a>00012 <span class="comment">//#include &lt;QWidget&gt;</span>
+<a name="l00013"></a>00013 <span class="comment">//#include &lt;QtGui&gt;</span>
 <a name="l00014"></a>00014 
-<a name="l00017"></a><a class="code" href="structqtpd_1_1struct_patchcord_numbers__.html">00017</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structqtpd_1_1struct_patchcord_numbers__.html" title="more basic patchcord structure. later merge that">structPatchcordNumbers_</a>
-<a name="l00018"></a>00018 {
-<a name="l00019"></a><a class="code" href="structqtpd_1_1struct_patchcord_numbers__.html#a23fcd00033421f6eec413da51dbca691">00019</a>     <span class="keywordtype">int</span> <a class="code" href="structqtpd_1_1struct_patchcord_numbers__.html#a23fcd00033421f6eec413da51dbca691">obj1</a>;
-<a name="l00020"></a><a class="code" href="structqtpd_1_1struct_patchcord_numbers__.html#a0cb58e579b25e447658dbfdbbf2a1b21">00020</a>     <span class="keywordtype">int</span> <a class="code" href="structqtpd_1_1struct_patchcord_numbers__.html#a0cb58e579b25e447658dbfdbbf2a1b21">obj2</a>;
-<a name="l00021"></a><a class="code" href="structqtpd_1_1struct_patchcord_numbers__.html#a1050126779498614ec7c0e477fb22823">00021</a>     <span class="keywordtype">int</span> <a class="code" href="structqtpd_1_1struct_patchcord_numbers__.html#a1050126779498614ec7c0e477fb22823">out1</a>;
-<a name="l00022"></a><a class="code" href="structqtpd_1_1struct_patchcord_numbers__.html#a28640598eb447e63df6d3fa87af81a9e">00022</a>     <span class="keywordtype">int</span> <a class="code" href="structqtpd_1_1struct_patchcord_numbers__.html#a28640598eb447e63df6d3fa87af81a9e">in2</a>;
-<a name="l00023"></a>00023 }
-<a name="l00024"></a>00024 <a class="code" href="namespaceqtpd.html#acaaa6396486755e52ab9bb689ae40f06" title="more basic patchcord structure. later merge that">structPatchcordNumbers</a>;
+<a name="l00015"></a>00015 <span class="keyword">namespace </span>qtpd {
+<a name="l00016"></a>00016 
+<a name="l00019"></a><a class="code" href="structqtpd_1_1struct_patchcord_numbers__.html">00019</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structqtpd_1_1struct_patchcord_numbers__.html" title="more basic patchcord structure. later merge that">structPatchcordNumbers_</a> {
+<a name="l00020"></a><a class="code" href="structqtpd_1_1struct_patchcord_numbers__.html#a23fcd00033421f6eec413da51dbca691">00020</a>     <span class="keywordtype">int</span> <a class="code" href="structqtpd_1_1struct_patchcord_numbers__.html#a23fcd00033421f6eec413da51dbca691">obj1</a>;
+<a name="l00021"></a><a class="code" href="structqtpd_1_1struct_patchcord_numbers__.html#a0cb58e579b25e447658dbfdbbf2a1b21">00021</a>     <span class="keywordtype">int</span> <a class="code" href="structqtpd_1_1struct_patchcord_numbers__.html#a0cb58e579b25e447658dbfdbbf2a1b21">obj2</a>;
+<a name="l00022"></a><a class="code" href="structqtpd_1_1struct_patchcord_numbers__.html#a1050126779498614ec7c0e477fb22823">00022</a>     <span class="keywordtype">int</span> <a class="code" href="structqtpd_1_1struct_patchcord_numbers__.html#a1050126779498614ec7c0e477fb22823">out1</a>;
+<a name="l00023"></a><a class="code" href="structqtpd_1_1struct_patchcord_numbers__.html#a28640598eb447e63df6d3fa87af81a9e">00023</a>     <span class="keywordtype">int</span> <a class="code" href="structqtpd_1_1struct_patchcord_numbers__.html#a28640598eb447e63df6d3fa87af81a9e">in2</a>;
+<a name="l00024"></a>00024 } <a class="code" href="namespaceqtpd.html#ac7726eb93bb40c830f8f5e1bd891cdbe" title="more basic patchcord structure. later merge that">structPatchcordNumbers</a>;
 <a name="l00025"></a>00025 
-<a name="l00026"></a><a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3a">00026</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> {<a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3aa8ba461362f560cd18d438c3c02fd9e73">cm_pt_anything</a>, <a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3aa26f0769dd61021da2d4af0555b3e3e78">cm_pt_signal</a>} <a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3a">patchcordTypeEnum</a>;
-<a name="l00030"></a><a class="code" href="classqtpd_1_1_patchcord.html">00030</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_patchcord.html" title="gui patchcord class">Patchcord</a>
-<a name="l00031"></a>00031 {
+<a name="l00026"></a><a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3a">00026</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> { <a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3aa8ba461362f560cd18d438c3c02fd9e73">cm_pt_anything</a>,
+<a name="l00027"></a><a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3aa26f0769dd61021da2d4af0555b3e3e78">00027</a>     <a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3aa26f0769dd61021da2d4af0555b3e3e78">cm_pt_signal</a> } <a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3a">patchcordTypeEnum</a>;
+<a name="l00031"></a><a class="code" href="classqtpd_1_1_patchcord.html">00031</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_patchcord.html" title="gui patchcord class">Patchcord</a> {
 <a name="l00032"></a>00032 <span class="keyword">private</span>:
-<a name="l00033"></a>00033 
-<a name="l00034"></a>00034     <a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* obj1_;
-<a name="l00035"></a>00035     <a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* out1_;
-<a name="l00036"></a>00036     <a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* obj2_;
-<a name="l00037"></a>00037     <a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* in2_;
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039     <a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3a">patchcordTypeEnum</a> patchcordType_;
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041 <span class="keyword">public</span>:
-<a name="l00042"></a><a class="code" href="classqtpd_1_1_patchcord.html#aaef6241e627654a5b8c98ade1de1d8b7">00042</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_patchcord.html#aaef6241e627654a5b8c98ade1de1d8b7">mouseover</a>;
-<a name="l00043"></a><a class="code" href="classqtpd_1_1_patchcord.html#ac20c433ed9e634994fab17c14a7911bb">00043</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_patchcord.html#ac20c433ed9e634994fab17c14a7911bb">selected</a>;
-<a name="l00044"></a>00044     <span class="comment">//explicit cm_patchcord(cm_widget *parent = 0);</span>
-<a name="l00045"></a>00045 
-<a name="l00046"></a>00046     <span class="comment">//cm_patchcord();</span>
-<a name="l00047"></a>00047     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_patchcord.html#a21208ae8596f0f60bc3f93dc228a891e">Patchcord</a>(<a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* obj1_, <a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* out1_, <a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* obj2_, <a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* in2_);
-<a name="l00048"></a>00048 
-<a name="l00049"></a><a class="code" href="classqtpd_1_1_patchcord.html#a067732a8c5322c8d32f9d39ab016080c">00049</a>     QPoint <a class="code" href="classqtpd_1_1_patchcord.html#a067732a8c5322c8d32f9d39ab016080c">startPoint</a>()
-<a name="l00050"></a>00050     {
-<a name="l00051"></a>00051 
-<a name="l00052"></a>00052         QPoint <a class="code" href="sliceobject_8h.html#ab80172fa2f374f0198e6186560ed619e">start</a> = QPoint(0,0);
-<a name="l00053"></a>00053 
-<a name="l00054"></a>00054         <span class="keywordflow">if</span> (obj1_ &amp;&amp; out1_)
-<a name="l00055"></a>00055             start = QPoint( obj1_-&gt;pos().x() + out1_-&gt;pos().x() + out1_-&gt;width()/2,
-<a name="l00056"></a>00056                             obj1_-&gt;pos().y() + out1_-&gt;pos().y() + out1_-&gt;height()/2 );
-<a name="l00057"></a>00057 
-<a name="l00058"></a>00058         <span class="keywordflow">return</span> <a class="code" href="sliceobject_8h.html#ab80172fa2f374f0198e6186560ed619e">start</a>;
-<a name="l00059"></a>00059     }
-<a name="l00060"></a>00060 
-<a name="l00061"></a><a class="code" href="classqtpd_1_1_patchcord.html#ab268c90dfe60162baaf3a7792bc26d03">00061</a>     QPoint <a class="code" href="classqtpd_1_1_patchcord.html#ab268c90dfe60162baaf3a7792bc26d03">endPoint</a>()
-<a name="l00062"></a>00062     {
-<a name="l00063"></a>00063         QPoint end = QPoint(0,0);
-<a name="l00064"></a>00064         <span class="keywordflow">if</span> (obj2_ &amp;&amp; in2_)
-<a name="l00065"></a>00065             end = QPoint (obj2_-&gt;pos().x() + in2_-&gt;pos().x() + in2_-&gt;width()/2,
-<a name="l00066"></a>00066                           obj2_-&gt;pos().y() + in2_-&gt;pos().y() + in2_-&gt;height()/2);
-<a name="l00067"></a>00067         <span class="keywordflow">return</span> end;
+<a name="l00033"></a>00033     <a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* obj1_;
+<a name="l00034"></a>00034     <a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* out1_;
+<a name="l00035"></a>00035     <a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* obj2_;
+<a name="l00036"></a>00036     <a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* in2_;
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038     <a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3a">patchcordTypeEnum</a> patchcordType_;
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040 <span class="keyword">public</span>:
+<a name="l00041"></a><a class="code" href="classqtpd_1_1_patchcord.html#aaef6241e627654a5b8c98ade1de1d8b7">00041</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_patchcord.html#aaef6241e627654a5b8c98ade1de1d8b7">mouseover</a>;
+<a name="l00042"></a><a class="code" href="classqtpd_1_1_patchcord.html#ac20c433ed9e634994fab17c14a7911bb">00042</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_patchcord.html#ac20c433ed9e634994fab17c14a7911bb">selected</a>;
+<a name="l00043"></a>00043     <span class="comment">//explicit cm_patchcord(cm_widget *parent = 0);</span>
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045     <span class="comment">//cm_patchcord();</span>
+<a name="l00046"></a>00046     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_patchcord.html#a21208ae8596f0f60bc3f93dc228a891e">Patchcord</a>(<a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* obj1_, <a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* out1_, <a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* obj2_, <a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* in2_);
+<a name="l00047"></a>00047 
+<a name="l00048"></a><a class="code" href="classqtpd_1_1_patchcord.html#a067732a8c5322c8d32f9d39ab016080c">00048</a>     QPoint <a class="code" href="classqtpd_1_1_patchcord.html#a067732a8c5322c8d32f9d39ab016080c">startPoint</a>()
+<a name="l00049"></a>00049     {
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051         QPoint <a class="code" href="sliceobject_8h.html#ab80172fa2f374f0198e6186560ed619e">start</a> = QPoint(0, 0);
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053         <span class="keywordflow">if</span> (obj1_ &amp;&amp; out1_)
+<a name="l00054"></a>00054             start = QPoint(obj1_-&gt;pos().x() + out1_-&gt;pos().x() + out1_-&gt;width() / 2,
+<a name="l00055"></a>00055                 obj1_-&gt;pos().y() + out1_-&gt;pos().y() + out1_-&gt;height() / 2);
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057         <span class="keywordflow">return</span> <a class="code" href="sliceobject_8h.html#ab80172fa2f374f0198e6186560ed619e">start</a>;
+<a name="l00058"></a>00058     }
+<a name="l00059"></a>00059 
+<a name="l00060"></a><a class="code" href="classqtpd_1_1_patchcord.html#ab268c90dfe60162baaf3a7792bc26d03">00060</a>     QPoint <a class="code" href="classqtpd_1_1_patchcord.html#ab268c90dfe60162baaf3a7792bc26d03">endPoint</a>()
+<a name="l00061"></a>00061     {
+<a name="l00062"></a>00062         QPoint end = QPoint(0, 0);
+<a name="l00063"></a>00063         <span class="keywordflow">if</span> (obj2_ &amp;&amp; in2_)
+<a name="l00064"></a>00064             end = QPoint(obj2_-&gt;pos().x() + in2_-&gt;pos().x() + in2_-&gt;width() / 2,
+<a name="l00065"></a>00065                 obj2_-&gt;pos().y() + in2_-&gt;pos().y() + in2_-&gt;height() / 2);
+<a name="l00066"></a>00066         <span class="keywordflow">return</span> end;
+<a name="l00067"></a>00067     }
 <a name="l00068"></a>00068 
-<a name="l00069"></a>00069     }
-<a name="l00070"></a>00070 
-<a name="l00072"></a><a class="code" href="classqtpd_1_1_patchcord.html#a538831162319dff6ac3d728123424fef">00072</a>     <a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3a">patchcordTypeEnum</a> <a class="code" href="classqtpd_1_1_patchcord.html#a538831162319dff6ac3d728123424fef">patchcordType</a>(){<span class="keywordflow">return</span> this-&gt;patchcordType_;}
-<a name="l00073"></a><a class="code" href="classqtpd_1_1_patchcord.html#a1b5fb2d27b98da2e715060294b0599d7">00073</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patchcord.html#a1b5fb2d27b98da2e715060294b0599d7">setPatchcordType</a>(<a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3a">patchcordTypeEnum</a> <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>){this-&gt;patchcordType_=<a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>;}
+<a name="l00070"></a><a class="code" href="classqtpd_1_1_patchcord.html#a538831162319dff6ac3d728123424fef">00070</a>     <a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3a">patchcordTypeEnum</a> <a class="code" href="classqtpd_1_1_patchcord.html#a538831162319dff6ac3d728123424fef">patchcordType</a>() { <span class="keywordflow">return</span> this-&gt;patchcordType_; }
+<a name="l00071"></a><a class="code" href="classqtpd_1_1_patchcord.html#a1b5fb2d27b98da2e715060294b0599d7">00071</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patchcord.html#a1b5fb2d27b98da2e715060294b0599d7">setPatchcordType</a>(<a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3a">patchcordTypeEnum</a> <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>) { this-&gt;patchcordType_ = <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>; }
+<a name="l00072"></a>00072 
 <a name="l00074"></a>00074 
-<a name="l00076"></a>00076 
-<a name="l00077"></a><a class="code" href="classqtpd_1_1_patchcord.html#a9a5decac9d1ded5a0b94717b18890169">00077</a>     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_patchcord.html#a9a5decac9d1ded5a0b94717b18890169">obj1</a>()
-<a name="l00078"></a>00078     {
-<a name="l00079"></a>00079         <span class="keywordflow">return</span> (<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*)this-&gt;obj1_;
-<a name="l00080"></a>00080     }
-<a name="l00081"></a>00081 
-<a name="l00082"></a><a class="code" href="classqtpd_1_1_patchcord.html#afac1fa9dd84063a62137044cf29bd045">00082</a>     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_patchcord.html#afac1fa9dd84063a62137044cf29bd045">obj2</a>()
-<a name="l00083"></a>00083     {
-<a name="l00084"></a>00084         <span class="keywordflow">return</span> (<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*)this-&gt;obj2_;
-<a name="l00085"></a>00085     }
-<a name="l00086"></a>00086 
-<a name="l00087"></a><a class="code" href="classqtpd_1_1_patchcord.html#abf722a2a6cbc46a40aa73af15756e2df">00087</a>     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_patchcord.html#abf722a2a6cbc46a40aa73af15756e2df">outletIndex</a>()
-<a name="l00088"></a>00088     {
-<a name="l00089"></a>00089         <span class="keywordflow">if</span> ((<a class="code" href="classqtpd_1_1_port.html" title="gui representation of t_inlet / t_outlet">Port</a>*)this-&gt;out1_)
-<a name="l00090"></a>00090             <span class="keywordflow">return</span> ((<a class="code" href="classqtpd_1_1_port.html" title="gui representation of t_inlet / t_outlet">Port</a>*)this-&gt;out1_)-&gt;portIndex;
-<a name="l00091"></a>00091         <span class="keywordflow">else</span>
-<a name="l00092"></a>00092             <span class="keywordflow">return</span> -1;
-<a name="l00093"></a>00093     }
-<a name="l00094"></a>00094 
-<a name="l00095"></a><a class="code" href="classqtpd_1_1_patchcord.html#a0d933ac877c243182fe02ba4fb6aeb32">00095</a>     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_patchcord.html#a0d933ac877c243182fe02ba4fb6aeb32">inletIndex</a>()
-<a name="l00096"></a>00096     {
-<a name="l00097"></a>00097         <span class="keywordflow">if</span> ((<a class="code" href="classqtpd_1_1_port.html" title="gui representation of t_inlet / t_outlet">Port</a>*)this-&gt;in2_)
-<a name="l00098"></a>00098             <span class="keywordflow">return</span> ((<a class="code" href="classqtpd_1_1_port.html" title="gui representation of t_inlet / t_outlet">Port</a>*)this-&gt;in2_)-&gt;portIndex;
-<a name="l00099"></a>00099         <span class="keywordflow">else</span>
-<a name="l00100"></a>00100             <span class="keywordflow">return</span> -1;
-<a name="l00101"></a>00101     }
+<a name="l00075"></a><a class="code" href="classqtpd_1_1_patchcord.html#a9a5decac9d1ded5a0b94717b18890169">00075</a>     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_patchcord.html#a9a5decac9d1ded5a0b94717b18890169">obj1</a>()
+<a name="l00076"></a>00076     {
+<a name="l00077"></a>00077         <span class="keywordflow">return</span> (<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*)this-&gt;obj1_;
+<a name="l00078"></a>00078     }
+<a name="l00079"></a>00079 
+<a name="l00080"></a><a class="code" href="classqtpd_1_1_patchcord.html#afac1fa9dd84063a62137044cf29bd045">00080</a>     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_patchcord.html#afac1fa9dd84063a62137044cf29bd045">obj2</a>()
+<a name="l00081"></a>00081     {
+<a name="l00082"></a>00082         <span class="keywordflow">return</span> (<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*)this-&gt;obj2_;
+<a name="l00083"></a>00083     }
+<a name="l00084"></a>00084 
+<a name="l00085"></a><a class="code" href="classqtpd_1_1_patchcord.html#abf722a2a6cbc46a40aa73af15756e2df">00085</a>     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_patchcord.html#abf722a2a6cbc46a40aa73af15756e2df">outletIndex</a>()
+<a name="l00086"></a>00086     {
+<a name="l00087"></a>00087         <span class="keywordflow">if</span> ((<a class="code" href="classqtpd_1_1_port.html" title="gui representation of t_inlet / t_outlet">Port</a>*)this-&gt;out1_)
+<a name="l00088"></a>00088             <span class="keywordflow">return</span> ((<a class="code" href="classqtpd_1_1_port.html" title="gui representation of t_inlet / t_outlet">Port</a>*)this-&gt;out1_)-&gt;portIndex;
+<a name="l00089"></a>00089         <span class="keywordflow">else</span>
+<a name="l00090"></a>00090             <span class="keywordflow">return</span> -1;
+<a name="l00091"></a>00091     }
+<a name="l00092"></a>00092 
+<a name="l00093"></a><a class="code" href="classqtpd_1_1_patchcord.html#a0d933ac877c243182fe02ba4fb6aeb32">00093</a>     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_patchcord.html#a0d933ac877c243182fe02ba4fb6aeb32">inletIndex</a>()
+<a name="l00094"></a>00094     {
+<a name="l00095"></a>00095         <span class="keywordflow">if</span> ((<a class="code" href="classqtpd_1_1_port.html" title="gui representation of t_inlet / t_outlet">Port</a>*)this-&gt;in2_)
+<a name="l00096"></a>00096             <span class="keywordflow">return</span> ((<a class="code" href="classqtpd_1_1_port.html" title="gui representation of t_inlet / t_outlet">Port</a>*)this-&gt;in2_)-&gt;portIndex;
+<a name="l00097"></a>00097         <span class="keywordflow">else</span>
+<a name="l00098"></a>00098             <span class="keywordflow">return</span> -1;
+<a name="l00099"></a>00099     }
+<a name="l00100"></a>00100 
 <a name="l00102"></a>00102 
-<a name="l00104"></a>00104 
-<a name="l00105"></a><a class="code" href="classqtpd_1_1_patchcord.html#a75d24b98ecee7d2f08f9048c536265c2">00105</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_patchcord.html#a75d24b98ecee7d2f08f9048c536265c2">connectsObject</a>(<a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
-<a name="l00106"></a>00106     {
-<a name="l00107"></a>00107         <span class="keywordflow">return</span> ( (obj == this-&gt;obj1_) || (obj == this-&gt;obj2_) );
-<a name="l00108"></a>00108     }
-<a name="l00109"></a>00109 
-<a name="l00110"></a><a class="code" href="classqtpd_1_1_patchcord.html#a1443015ef3c20d0751d7eab57b2f4c32">00110</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_patchcord.html#a1443015ef3c20d0751d7eab57b2f4c32">hover</a>(QPoint <a class="code" href="dictobject_8h.html#acae77df04bfdd60d1017f4132729ddc6">pos</a>)
-<a name="l00111"></a>00111     {
-<a name="l00112"></a>00112         QPoint <a class="code" href="sliceobject_8h.html#ab80172fa2f374f0198e6186560ed619e">start</a> = this-&gt;<a class="code" href="classqtpd_1_1_patchcord.html#a067732a8c5322c8d32f9d39ab016080c">startPoint</a>();
-<a name="l00113"></a>00113         QPoint end = this-&gt;<a class="code" href="classqtpd_1_1_patchcord.html#ab268c90dfe60162baaf3a7792bc26d03">endPoint</a>();
-<a name="l00114"></a>00114 
-<a name="l00115"></a>00115         <span class="keywordtype">float</span> rx = end.x() - start.x();
-<a name="l00116"></a>00116         <span class="keywordtype">float</span> ry = end.y() - start.y();
+<a name="l00103"></a><a class="code" href="classqtpd_1_1_patchcord.html#a75d24b98ecee7d2f08f9048c536265c2">00103</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_patchcord.html#a75d24b98ecee7d2f08f9048c536265c2">connectsObject</a>(<a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
+<a name="l00104"></a>00104     {
+<a name="l00105"></a>00105         <span class="keywordflow">return</span> ((obj == this-&gt;obj1_) || (obj == this-&gt;obj2_));
+<a name="l00106"></a>00106     }
+<a name="l00107"></a>00107 
+<a name="l00108"></a><a class="code" href="classqtpd_1_1_patchcord.html#a1443015ef3c20d0751d7eab57b2f4c32">00108</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_patchcord.html#a1443015ef3c20d0751d7eab57b2f4c32">hover</a>(QPoint <a class="code" href="dictobject_8h.html#acae77df04bfdd60d1017f4132729ddc6">pos</a>)
+<a name="l00109"></a>00109     {
+<a name="l00110"></a>00110         QPoint <a class="code" href="sliceobject_8h.html#ab80172fa2f374f0198e6186560ed619e">start</a> = this-&gt;<a class="code" href="classqtpd_1_1_patchcord.html#a067732a8c5322c8d32f9d39ab016080c">startPoint</a>();
+<a name="l00111"></a>00111         QPoint end = this-&gt;<a class="code" href="classqtpd_1_1_patchcord.html#ab268c90dfe60162baaf3a7792bc26d03">endPoint</a>();
+<a name="l00112"></a>00112 
+<a name="l00113"></a>00113         <span class="keywordtype">float</span> rx = end.x() - start.x();
+<a name="l00114"></a>00114         <span class="keywordtype">float</span> ry = end.y() - start.y();
+<a name="l00115"></a>00115 
+<a name="l00116"></a>00116         <span class="keywordtype">float</span> ty = ry * (pos.x() - start.x()) / rx + start.y();
 <a name="l00117"></a>00117 
-<a name="l00118"></a>00118         <span class="keywordtype">float</span> ty = ry * (pos.x() - start.x()) / rx + start.y()  ;
+<a name="l00118"></a>00118         <span class="keywordtype">bool</span> rx1_res = (fabs((<span class="keywordtype">float</span>)pos.y() - ty) &lt; 7.);
 <a name="l00119"></a>00119 
-<a name="l00120"></a>00120         <span class="keywordtype">bool</span> rx1_res = (fabs((<span class="keywordtype">float</span>)pos.y() - ty)&lt;7.) ;
-<a name="l00121"></a>00121 
-<a name="l00122"></a>00122         <span class="keywordtype">bool</span> rx0_res = ( (
-<a name="l00123"></a>00123                              (pos.y() &gt; start.y())
-<a name="l00124"></a>00124                              &amp;&amp;
-<a name="l00125"></a>00125                              (pos.y() &lt; end.y())
-<a name="l00126"></a>00126                              )
-<a name="l00127"></a>00127                          &amp;&amp;
-<a name="l00128"></a>00128                          (pos.x() == start.x())
-<a name="l00129"></a>00129                          );
-<a name="l00130"></a>00130 
-<a name="l00131"></a>00131         <span class="keywordflow">return</span> (rx&gt;0) ? rx1_res : rx0_res;
-<a name="l00132"></a>00132 
-<a name="l00133"></a>00133 
-<a name="l00134"></a>00134     }
-<a name="l00135"></a>00135 
-<a name="l00136"></a>00136 
-<a name="l00137"></a>00137 
-<a name="l00138"></a>00138 
-<a name="l00139"></a>00139 
-<a name="l00140"></a>00140 };
-<a name="l00141"></a>00141 }
-<a name="l00142"></a>00142 
-<a name="l00143"></a>00143 <span class="preprocessor">#endif // CM_PATCHCORD_H</span>
+<a name="l00120"></a>00120         <span class="keywordtype">bool</span> rx0_res = ((
+<a name="l00121"></a>00121                             (pos.y() &gt; start.y())
+<a name="l00122"></a>00122                             &amp;&amp; (pos.y() &lt; end.y()))
+<a name="l00123"></a>00123             &amp;&amp; (pos.x() == start.x()));
+<a name="l00124"></a>00124 
+<a name="l00125"></a>00125         <span class="keywordflow">return</span> (rx &gt; 0) ? rx1_res : rx0_res;
+<a name="l00126"></a>00126     }
+<a name="l00127"></a>00127 };
+<a name="l00128"></a>00128 }
+<a name="l00129"></a>00129 
+<a name="l00130"></a>00130 <span class="preprocessor">#endif // CM_PATCHCORD_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -235,7 +222,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 17 2017 13:25:21 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 18 2017 07:42:01 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

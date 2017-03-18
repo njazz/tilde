@@ -82,181 +82,180 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">/home/travis/build/njazz/qtpd/qtpd_gui/python/wrappers/py_qtpd.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="py__qtpd_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef PY_QTPD_H</span>
-<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define PY_QTPD_H</span>
-<a name="l00003"></a>00003 <span class="preprocessor"></span>
-<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;QObject&gt;</span>
-<a name="l00005"></a>00005 <span class="preprocessor">#include &lt;QString&gt;</span>
-<a name="l00006"></a>00006 <span class="preprocessor">#include &lt;QStringList&gt;</span>
-<a name="l00007"></a>00007 
-<a name="l00008"></a>00008 <span class="preprocessor">#include &lt;<a class="code" href="_python_qt_8h.html">PythonQt.h</a>&gt;</span>
-<a name="l00009"></a>00009 
-<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="cm__patchwindow_8h.html">cm_patchwindow.h</a>&quot;</span>
-<a name="l00011"></a>00011 
-<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;<a class="code" href="cm__preferences_8h.html">cm_preferences.h</a>&quot;</span>
-<a name="l00013"></a>00013 
-<a name="l00014"></a>00014 <span class="keyword">using namespace </span>qtpd;
-<a name="l00015"></a>00015 
-<a name="l00016"></a><a class="code" href="classpy_qtpd.html">00016</a> <span class="keyword">class </span><a class="code" href="classpy_qtpd.html">pyQtpd</a> : <span class="keyword">public</span> QObject
-<a name="l00017"></a>00017 {
-<a name="l00018"></a>00018     Q_OBJECT
-<a name="l00019"></a>00019 
-<a name="l00020"></a>00020 <span class="keyword">public</span>:
-<a name="l00021"></a><a class="code" href="classpy_qtpd.html#a7d872f35b122c034666c5e3e6f1f351b">00021</a>     <span class="keyword">explicit</span> <a class="code" href="classpy_qtpd.html#a7d872f35b122c034666c5e3e6f1f351b">pyQtpd</a>(QObject *parent = 0){};
-<a name="l00022"></a>00022 
-<a name="l00023"></a>00023 <span class="keyword">public</span> Q_SLOTS:
-<a name="l00024"></a><a class="code" href="classpy_qtpd.html#a68e389ac9d8ed3f8fc4e48ac8e44b0cc">00024</a>     <a class="code" href="struct__object.html">PyObject</a>* <a class="code" href="classpy_qtpd.html#a68e389ac9d8ed3f8fc4e48ac8e44b0cc">getMainModule</a>(){
-<a name="l00025"></a>00025         <span class="keywordflow">return</span> <a class="code" href="modsupport_8h.html#a0180ca1808366e5da641475e8bf8cca3">PythonQt::self</a>()-&gt;getMainModule();
-<a name="l00026"></a>00026       }
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028     <span class="comment">//todo separate classes / decorators</span>
-<a name="l00029"></a>00029 
-<a name="l00030"></a><a class="code" href="classpy_qtpd.html#afd7aa8f27aebd53ff72da455d3034eb3">00030</a>     <a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* newPatchWindow()
-<a name="l00031"></a>00031     {
-<a name="l00032"></a>00032         <a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* ret;
-<a name="l00033"></a>00033         ret = <a class="code" href="classqtpd_1_1_patch_window.html#a465802c46cfee0432f72284319faf1d3">PatchWindow::newWindow</a>();
-<a name="l00034"></a>00034         ret-&gt;show();
-<a name="l00035"></a>00035         <span class="keywordflow">return</span> ret;
-<a name="l00036"></a>00036     };
-<a name="l00037"></a>00037 
-<a name="l00038"></a><a class="code" href="classpy_qtpd.html#a9a0fc2ae5eadf69a0d741d1862694a89">00038</a>     <a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* canvasForWindow(<a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* w)
-<a name="l00039"></a>00039     {
-<a name="l00040"></a>00040         <span class="keywordflow">return</span> w-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>;
-<a name="l00041"></a>00041     }
-<a name="l00042"></a>00042 
-<a name="l00043"></a><a class="code" href="classpy_qtpd.html#a89bb19f71767f19ece5cc72a01cd7522">00043</a>     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* createObject(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c, QString obj_name, QString obj_data, <span class="keywordtype">int</span> <a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>, <span class="keywordtype">int</span> y)
-<a name="l00044"></a>00044     {
-<a name="l00045"></a>00045         <span class="keywordflow">return</span> c-&gt;<a class="code" href="classqtpd_1_1_canvas.html#aa3915ffb984cd2b8fb0d2b0427e1e5e0" title="prototype for universal object &#39;constructor&#39;">createObject</a>(obj_name.toStdString(),obj_data.toStdString(), QPoint(x,y));
-<a name="l00046"></a>00046     }
-<a name="l00047"></a>00047 
-<a name="l00049"></a>00049     <span class="comment">// GUI</span>
+<a href="py__qtpd_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// (c) 2017 Alex Nadzharov</span>
+<a name="l00002"></a>00002 <span class="comment">// License: GPL3</span>
+<a name="l00003"></a>00003 
+<a name="l00004"></a>00004 <span class="preprocessor">#ifndef PY_QTPD_H</span>
+<a name="l00005"></a>00005 <span class="preprocessor"></span><span class="preprocessor">#define PY_QTPD_H</span>
+<a name="l00006"></a>00006 <span class="preprocessor"></span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &lt;QObject&gt;</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &lt;QString&gt;</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include &lt;QStringList&gt;</span>
+<a name="l00010"></a>00010 
+<a name="l00011"></a>00011 <span class="preprocessor">#include &lt;<a class="code" href="_python_qt_8h.html">PythonQt.h</a>&gt;</span>
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013 <span class="preprocessor">#include &quot;<a class="code" href="cm__patchwindow_8h.html">cm_patchwindow.h</a>&quot;</span>
+<a name="l00014"></a>00014 
+<a name="l00015"></a>00015 <span class="preprocessor">#include &quot;<a class="code" href="cm__preferences_8h.html">cm_preferences.h</a>&quot;</span>
+<a name="l00016"></a>00016 
+<a name="l00017"></a>00017 <span class="keyword">using namespace </span>qtpd;
+<a name="l00018"></a>00018 
+<a name="l00019"></a><a class="code" href="classpy_qtpd.html">00019</a> <span class="keyword">class </span><a class="code" href="classpy_qtpd.html">pyQtpd</a> : <span class="keyword">public</span> QObject {
+<a name="l00020"></a>00020     Q_OBJECT
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022 <span class="keyword">public</span>:
+<a name="l00023"></a><a class="code" href="classpy_qtpd.html#a7d872f35b122c034666c5e3e6f1f351b">00023</a>     <span class="keyword">explicit</span> <a class="code" href="classpy_qtpd.html#a7d872f35b122c034666c5e3e6f1f351b">pyQtpd</a>(QObject* parent = 0){};
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="keyword">public</span> Q_SLOTS:
+<a name="l00026"></a><a class="code" href="classpy_qtpd.html#a68e389ac9d8ed3f8fc4e48ac8e44b0cc">00026</a>     <a class="code" href="struct__object.html">PyObject</a>* getMainModule()
+<a name="l00027"></a>00027     {
+<a name="l00028"></a>00028         <span class="keywordflow">return</span> <a class="code" href="modsupport_8h.html#a0180ca1808366e5da641475e8bf8cca3">PythonQt::self</a>()-&gt;getMainModule();
+<a name="l00029"></a>00029     }
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031     <span class="comment">//todo separate classes / decorators</span>
+<a name="l00032"></a>00032 
+<a name="l00033"></a><a class="code" href="classpy_qtpd.html#afd7aa8f27aebd53ff72da455d3034eb3">00033</a>     <a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* newPatchWindow()
+<a name="l00034"></a>00034     {
+<a name="l00035"></a>00035         <a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* ret;
+<a name="l00036"></a>00036         ret = <a class="code" href="classqtpd_1_1_patch_window.html#a465802c46cfee0432f72284319faf1d3">PatchWindow::newWindow</a>();
+<a name="l00037"></a>00037         ret-&gt;show();
+<a name="l00038"></a>00038         <span class="keywordflow">return</span> ret;
+<a name="l00039"></a>00039     };
+<a name="l00040"></a>00040 
+<a name="l00041"></a><a class="code" href="classpy_qtpd.html#a9a0fc2ae5eadf69a0d741d1862694a89">00041</a>     <a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* canvasForWindow(<a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* w)
+<a name="l00042"></a>00042     {
+<a name="l00043"></a>00043         <span class="keywordflow">return</span> w-&gt;<a class="code" href="classqtpd_1_1_patch_window.html#abc720dbaac9d5e470e0612fc1ce448b7">canvas</a>;
+<a name="l00044"></a>00044     }
+<a name="l00045"></a>00045 
+<a name="l00046"></a><a class="code" href="classpy_qtpd.html#a89bb19f71767f19ece5cc72a01cd7522">00046</a>     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* createObject(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c, QString obj_name, QString obj_data, <span class="keywordtype">int</span> <a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>, <span class="keywordtype">int</span> y)
+<a name="l00047"></a>00047     {
+<a name="l00048"></a>00048         <span class="keywordflow">return</span> c-&gt;<a class="code" href="classqtpd_1_1_canvas.html#aa3915ffb984cd2b8fb0d2b0427e1e5e0" title="prototype for universal object &#39;constructor&#39;">createObject</a>(obj_name.toStdString(), obj_data.toStdString(), QPoint(x, y));
+<a name="l00049"></a>00049     }
 <a name="l00050"></a>00050 
-<a name="l00051"></a>00051     <span class="comment">//todo templates</span>
-<a name="l00052"></a><a class="code" href="classpy_qtpd.html#a49079d94acbc6474f2840b5af3737f42">00052</a>     <span class="keywordtype">void</span> moveObject(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* <a class="code" href="abstract_8h.html#a70a0763575096c5545f2232a32ec302a">o</a>, <span class="keywordtype">int</span> <a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>, <span class="keywordtype">int</span> y)
-<a name="l00053"></a>00053     {
-<a name="l00054"></a>00054         o-&gt;move(x,y);
-<a name="l00055"></a>00055     }
-<a name="l00056"></a>00056 
-<a name="l00057"></a><a class="code" href="classpy_qtpd.html#a223068e33057ee9bd0d7603d70fc1938">00057</a>     <span class="keywordtype">void</span> moveObject(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#a70a0763575096c5545f2232a32ec302a">o</a>, <span class="keywordtype">int</span> <a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>, <span class="keywordtype">int</span> y)
-<a name="l00058"></a>00058     {
-<a name="l00059"></a>00059         o-&gt;move(x,y);
-<a name="l00060"></a>00060     }
-<a name="l00061"></a>00061 
-<a name="l00062"></a><a class="code" href="classpy_qtpd.html#a55225e4f535e8fbade4682cf78b8cb43">00062</a>     <span class="keywordtype">void</span> resizeObject(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#a70a0763575096c5545f2232a32ec302a">o</a>, <span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h)
-<a name="l00063"></a>00063     {
-<a name="l00064"></a>00064         o-&gt;setFixedSize(w,h);
-<a name="l00065"></a>00065     }
-<a name="l00066"></a>00066 
-<a name="l00068"></a>00068     <span class="comment">// edit</span>
+<a name="l00052"></a>00052     <span class="comment">// GUI</span>
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054     <span class="comment">//todo templates</span>
+<a name="l00055"></a><a class="code" href="classpy_qtpd.html#a49079d94acbc6474f2840b5af3737f42">00055</a>     <span class="keywordtype">void</span> moveObject(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* <a class="code" href="abstract_8h.html#a70a0763575096c5545f2232a32ec302a">o</a>, <span class="keywordtype">int</span> <a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>, <span class="keywordtype">int</span> y)
+<a name="l00056"></a>00056     {
+<a name="l00057"></a>00057         o-&gt;move(x, y);
+<a name="l00058"></a>00058     }
+<a name="l00059"></a>00059 
+<a name="l00060"></a><a class="code" href="classpy_qtpd.html#a223068e33057ee9bd0d7603d70fc1938">00060</a>     <span class="keywordtype">void</span> moveObject(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#a70a0763575096c5545f2232a32ec302a">o</a>, <span class="keywordtype">int</span> <a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>, <span class="keywordtype">int</span> y)
+<a name="l00061"></a>00061     {
+<a name="l00062"></a>00062         o-&gt;move(x, y);
+<a name="l00063"></a>00063     }
+<a name="l00064"></a>00064 
+<a name="l00065"></a><a class="code" href="classpy_qtpd.html#a55225e4f535e8fbade4682cf78b8cb43">00065</a>     <span class="keywordtype">void</span> resizeObject(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#a70a0763575096c5545f2232a32ec302a">o</a>, <span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h)
+<a name="l00066"></a>00066     {
+<a name="l00067"></a>00067         o-&gt;setFixedSize(w, h);
+<a name="l00068"></a>00068     }
 <a name="l00069"></a>00069 
-<a name="l00070"></a><a class="code" href="classpy_qtpd.html#a365ab317e0c2f0270ec681cd4eedebaf">00070</a>     <span class="keywordtype">void</span> selectObject(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c, <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
-<a name="l00071"></a>00071     {
-<a name="l00072"></a>00072         c-&gt;<a class="code" href="classqtpd_1_1_u_i_widget.html#a6317a270f80347d2068fb67dc314a717">selectBox</a>(obj);
-<a name="l00073"></a>00073     }
-<a name="l00074"></a>00074 
-<a name="l00075"></a><a class="code" href="classpy_qtpd.html#a4a1dcb6ef64227fcb302ce1c3132ce3b">00075</a>     <span class="keywordtype">void</span> selectAll(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c)
-<a name="l00076"></a>00076     {
-<a name="l00077"></a>00077         c-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a8e5778d7d39d203aba3ab6886a76b4c8" title="select all boxes">selectAll</a>();
-<a name="l00078"></a>00078     }
-<a name="l00079"></a>00079 
-<a name="l00080"></a><a class="code" href="classpy_qtpd.html#a2055b032b1ce20c6a1f72b4e51f9bc54">00080</a>     <span class="keywordtype">void</span> deselectAll(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c)
-<a name="l00081"></a>00081     {
-<a name="l00082"></a>00082         c-&gt;<a class="code" href="classqtpd_1_1_canvas.html#ae5d178b7962fb039619f2e00c17d89cf" title="deselect all object boxes">deselectBoxes</a>();
-<a name="l00083"></a>00083     }
-<a name="l00084"></a>00084 
-<a name="l00085"></a><a class="code" href="classpy_qtpd.html#af564fe7475b8e63b0b36afcf676f2851">00085</a>     <span class="keywordtype">void</span> deleteObjectInCanvas(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c, <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
-<a name="l00086"></a>00086     {
-<a name="l00087"></a>00087         c-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a54ae5b1d5352bcce723481073db40647" title="delete single box">deleteBox</a>(obj);
-<a name="l00088"></a>00088     }
-<a name="l00089"></a>00089 
-<a name="l00090"></a><a class="code" href="classpy_qtpd.html#af01593610304fc54d0f5669ba197e52f">00090</a>     <span class="keywordtype">void</span> patchcord(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c, <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* obj1, <span class="keywordtype">int</span> out1, <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* obj2, <span class="keywordtype">int</span> in2)
-<a name="l00091"></a>00091     {
-<a name="l00092"></a>00092         c-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a3625736a403310d179fe0738156e572f" title="creates patchcord">patchcord</a>(obj1,out1,obj2,in2);
-<a name="l00093"></a>00093     }
-<a name="l00094"></a>00094 
-<a name="l00096"></a>00096     <span class="comment">// lower level</span>
+<a name="l00071"></a>00071     <span class="comment">// edit</span>
+<a name="l00072"></a>00072 
+<a name="l00073"></a><a class="code" href="classpy_qtpd.html#a365ab317e0c2f0270ec681cd4eedebaf">00073</a>     <span class="keywordtype">void</span> selectObject(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c, <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
+<a name="l00074"></a>00074     {
+<a name="l00075"></a>00075         c-&gt;<a class="code" href="classqtpd_1_1_u_i_widget.html#a6317a270f80347d2068fb67dc314a717">selectBox</a>(obj);
+<a name="l00076"></a>00076     }
+<a name="l00077"></a>00077 
+<a name="l00078"></a><a class="code" href="classpy_qtpd.html#a4a1dcb6ef64227fcb302ce1c3132ce3b">00078</a>     <span class="keywordtype">void</span> selectAll(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c)
+<a name="l00079"></a>00079     {
+<a name="l00080"></a>00080         c-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a8e5778d7d39d203aba3ab6886a76b4c8" title="select all boxes">selectAll</a>();
+<a name="l00081"></a>00081     }
+<a name="l00082"></a>00082 
+<a name="l00083"></a><a class="code" href="classpy_qtpd.html#a2055b032b1ce20c6a1f72b4e51f9bc54">00083</a>     <span class="keywordtype">void</span> deselectAll(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c)
+<a name="l00084"></a>00084     {
+<a name="l00085"></a>00085         c-&gt;<a class="code" href="classqtpd_1_1_canvas.html#ae5d178b7962fb039619f2e00c17d89cf" title="deselect all object boxes">deselectBoxes</a>();
+<a name="l00086"></a>00086     }
+<a name="l00087"></a>00087 
+<a name="l00088"></a><a class="code" href="classpy_qtpd.html#af564fe7475b8e63b0b36afcf676f2851">00088</a>     <span class="keywordtype">void</span> deleteObjectInCanvas(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c, <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
+<a name="l00089"></a>00089     {
+<a name="l00090"></a>00090         c-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a54ae5b1d5352bcce723481073db40647" title="delete single box">deleteBox</a>(obj);
+<a name="l00091"></a>00091     }
+<a name="l00092"></a>00092 
+<a name="l00093"></a><a class="code" href="classpy_qtpd.html#af01593610304fc54d0f5669ba197e52f">00093</a>     <span class="keywordtype">void</span> patchcord(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c, <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* obj1, <span class="keywordtype">int</span> out1, <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* obj2, <span class="keywordtype">int</span> in2)
+<a name="l00094"></a>00094     {
+<a name="l00095"></a>00095         c-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a3625736a403310d179fe0738156e572f" title="creates patchcord">patchcord</a>(obj1, out1, obj2, in2);
+<a name="l00096"></a>00096     }
 <a name="l00097"></a>00097 
-<a name="l00098"></a><a class="code" href="classpy_qtpd.html#a246aded00da17ed45c2c8663554f2acb">00098</a>     <span class="keywordtype">void</span> addInlet(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
-<a name="l00099"></a>00099     {
-<a name="l00100"></a>00100         <span class="keywordflow">if</span> (obj)
-<a name="l00101"></a>00101             obj-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a0c6902a1971a5cca5c2e414deb01eb79" title="adds single inlet (cm_port)">addInlet</a>();
-<a name="l00102"></a>00102     }
-<a name="l00103"></a>00103 
-<a name="l00104"></a><a class="code" href="classpy_qtpd.html#ab21964936d56c8f5ec4fae91740a3551">00104</a>     <span class="keywordtype">void</span> addOutlet(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
-<a name="l00105"></a>00105     {
-<a name="l00106"></a>00106         <span class="keywordflow">if</span> (obj)
-<a name="l00107"></a>00107             obj-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#afc6d92ac51f2a6ba19dbba707b1c97cf" title="adds single outlet (cm_port)">addOutlet</a>();
-<a name="l00108"></a>00108     }
-<a name="l00109"></a>00109 
-<a name="l00110"></a><a class="code" href="classpy_qtpd.html#a986615af8e6c40ae043d0b484781b65b">00110</a>     <span class="keywordtype">void</span> pdMessage(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, QString data)
-<a name="l00111"></a>00111     {
-<a name="l00112"></a>00112         <span class="keywordflow">if</span> (obj-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ab035ff3ca7142e49c07f141666f6b41e" title="returns pointer to pd object.">pdObject</a>())
-<a name="l00113"></a>00113         {
-<a name="l00114"></a>00114             <a class="code" href="cm__pdlink_8h.html#a9bca4af04ea4fac6b910933e5ba16814" title="send string as pd message to object">cmp_sendstring</a>((t_pd*)obj-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ab035ff3ca7142e49c07f141666f6b41e" title="returns pointer to pd object.">pdObject</a>(), data.toStdString());
-<a name="l00115"></a>00115         }
-<a name="l00116"></a>00116     }
-<a name="l00117"></a>00117 
-<a name="l00119"></a>00119     <span class="comment">// pdLib</span>
-<a name="l00120"></a>00120 
-<a name="l00121"></a><a class="code" href="classpy_qtpd.html#a86e4fb1f84aa63ccb21513fafc321647">00121</a>     <span class="keywordtype">void</span> startDsp()
-<a name="l00122"></a>00122     {
-<a name="l00123"></a>00123         <a class="code" href="cm__pdlink_8h.html#a0f1f4951cf99dff0634789791dcde1ba" title="switch dsp on or off">cmp_switch_dsp</a>(<span class="keyword">true</span>);
-<a name="l00124"></a>00124     }
-<a name="l00125"></a>00125 
-<a name="l00126"></a><a class="code" href="classpy_qtpd.html#aa075a4183756fb81ce11f3a9ce40ea2a">00126</a>     <span class="keywordtype">void</span> stopDsp()
-<a name="l00127"></a>00127     {
-<a name="l00128"></a>00128         <a class="code" href="cm__pdlink_8h.html#a0f1f4951cf99dff0634789791dcde1ba" title="switch dsp on or off">cmp_switch_dsp</a>(<span class="keyword">false</span>);
-<a name="l00129"></a>00129     }
-<a name="l00130"></a>00130 
-<a name="l00131"></a><a class="code" href="classpy_qtpd.html#ade5b04c97d1f8ffe78094e67475a1142">00131</a>     <span class="keywordtype">void</span> post(QString msg)
-<a name="l00132"></a>00132     {
-<a name="l00133"></a>00133         <a class="code" href="cm__pdlink_8h.html#a766e12f26830eee9deae0fe8e9f70535" title="post plain text to Pd window">cmp_post</a>(msg.toStdString());
-<a name="l00134"></a>00134     }
-<a name="l00135"></a>00135 
-<a name="l00136"></a>00136 
-<a name="l00138"></a>00138     <span class="comment">// properties</span>
-<a name="l00139"></a>00139 
-<a name="l00140"></a><a class="code" href="classpy_qtpd.html#a00db70a858e4f3b4e593267f33f581e9">00140</a>     <a class="code" href="classqtpd_1_1_property_list.html" title="yet another property handling class for ui object. List">PropertyList</a>* new_PropertyList()
-<a name="l00141"></a>00141     {
-<a name="l00142"></a>00142         <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classqtpd_1_1_property_list.html" title="yet another property handling class for ui object. List">PropertyList</a>();
-<a name="l00143"></a>00143     }
-<a name="l00144"></a>00144 
-<a name="l00145"></a><a class="code" href="classpy_qtpd.html#a896db5a239ce9fa0e0c2863dff9bdb62">00145</a>     <a class="code" href="classqtpd_1_1_property_list.html" title="yet another property handling class for ui object. List">PropertyList</a>* prop(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
-<a name="l00146"></a>00146     {
-<a name="l00147"></a>00147         <span class="keywordflow">return</span> obj-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a9cc4a52a28c80bdfbb6d2ec874b805e7">properties</a>();
-<a name="l00148"></a>00148     }
-<a name="l00149"></a>00149 
-<a name="l00150"></a><a class="code" href="classpy_qtpd.html#a395c6cab1655219424f3379fa0910b39">00150</a>     QStringList <a class="code" href="code_8h.html#a6d70b6a7be698d5bd5953a831fc49278">names</a>(<a class="code" href="classqtpd_1_1_property_list.html" title="yet another property handling class for ui object. List">PropertyList</a>* list)
-<a name="l00151"></a>00151     {
-<a name="l00152"></a>00152         <span class="keywordflow">return</span> list-&gt;<a class="code" href="classqtpd_1_1_property_list.html#a74b6f3f764fbdeae91515eb8a44d415e" title="list of all property names">names</a>();
-<a name="l00153"></a>00153     }
-<a name="l00154"></a>00154 
-<a name="l00155"></a><a class="code" href="classpy_qtpd.html#a8f6268ac3a981a909c75670781d9b1a3">00155</a>     QString getP(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, QString <a class="code" href="abstract_8h.html#afcd1706c9144e6d6eee6127661ae3be2">name</a>)
-<a name="l00156"></a>00156     {
-<a name="l00157"></a>00157         <span class="keywordflow">return</span> obj-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a9cc4a52a28c80bdfbb6d2ec874b805e7">properties</a>()-&gt;<a class="code" href="classqtpd_1_1_property_list.html#a9d1a8f116b7791421fa29dd4fce58cfa">get</a>(name.toStdString())-&gt;asQString();
-<a name="l00158"></a>00158     }
-<a name="l00159"></a>00159 
-<a name="l00160"></a><a class="code" href="classpy_qtpd.html#a1da9ce1e0b3bd13bfe218488c2b41424">00160</a>     <span class="keywordtype">void</span> setP(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, QString <a class="code" href="abstract_8h.html#afcd1706c9144e6d6eee6127661ae3be2">name</a>, QString data)
-<a name="l00161"></a>00161     {
-<a name="l00162"></a>00162         obj-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a9cc4a52a28c80bdfbb6d2ec874b805e7">properties</a>()-&gt;<a class="code" href="classqtpd_1_1_property_list.html#a29af3e410e9b5fd3fd8a86d295215a44">set</a>(name.toStdString(),data);
-<a name="l00163"></a>00163     }
-<a name="l00164"></a>00164 
-<a name="l00165"></a><a class="code" href="classpy_qtpd.html#ae2d1598fc9ac1a845a8888c6878cb30d">00165</a>     QStringList pnames(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
-<a name="l00166"></a>00166     {
-<a name="l00167"></a>00167         <span class="keywordflow">return</span> obj-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a9cc4a52a28c80bdfbb6d2ec874b805e7">properties</a>()-&gt;<a class="code" href="classqtpd_1_1_property_list.html#a74b6f3f764fbdeae91515eb8a44d415e" title="list of all property names">names</a>();
-<a name="l00168"></a>00168     }
-<a name="l00169"></a>00169 
-<a name="l00171"></a>00171     <span class="comment">// app preferences</span>
-<a name="l00172"></a>00172 
-<a name="l00173"></a><a class="code" href="classpy_qtpd.html#a266b24971209eb6945c3bf7216022b2b">00173</a>     <a class="code" href="classqtpd_1_1_property_list.html" title="yet another property handling class for ui object. List">PropertyList</a>* pref()
-<a name="l00174"></a>00174     {
-<a name="l00175"></a>00175         <span class="keywordflow">return</span> (<a class="code" href="classqtpd_1_1_property_list.html" title="yet another property handling class for ui object. List">PropertyList</a>*)&amp;<a class="code" href="classqtpd_1_1_preferences.html#a43710c0b803cec200c7add487aae2c08">Preferences::inst</a>();
-<a name="l00176"></a>00176     }
-<a name="l00177"></a>00177 
-<a name="l00178"></a>00178 
-<a name="l00179"></a>00179 };
-<a name="l00180"></a>00180 
-<a name="l00181"></a>00181 <span class="preprocessor">#endif // PY_QTPD_H</span>
+<a name="l00099"></a>00099     <span class="comment">// lower level</span>
+<a name="l00100"></a>00100 
+<a name="l00101"></a><a class="code" href="classpy_qtpd.html#a246aded00da17ed45c2c8663554f2acb">00101</a>     <span class="keywordtype">void</span> addInlet(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
+<a name="l00102"></a>00102     {
+<a name="l00103"></a>00103         <span class="keywordflow">if</span> (obj)
+<a name="l00104"></a>00104             obj-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a0c6902a1971a5cca5c2e414deb01eb79" title="adds single inlet (cm_port)">addInlet</a>();
+<a name="l00105"></a>00105     }
+<a name="l00106"></a>00106 
+<a name="l00107"></a><a class="code" href="classpy_qtpd.html#ab21964936d56c8f5ec4fae91740a3551">00107</a>     <span class="keywordtype">void</span> addOutlet(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
+<a name="l00108"></a>00108     {
+<a name="l00109"></a>00109         <span class="keywordflow">if</span> (obj)
+<a name="l00110"></a>00110             obj-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#afc6d92ac51f2a6ba19dbba707b1c97cf" title="adds single outlet (cm_port)">addOutlet</a>();
+<a name="l00111"></a>00111     }
+<a name="l00112"></a>00112 
+<a name="l00113"></a><a class="code" href="classpy_qtpd.html#a986615af8e6c40ae043d0b484781b65b">00113</a>     <span class="keywordtype">void</span> pdMessage(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, QString data)
+<a name="l00114"></a>00114     {
+<a name="l00115"></a>00115         <span class="keywordflow">if</span> (obj-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ab035ff3ca7142e49c07f141666f6b41e" title="returns pointer to pd object.">pdObject</a>()) {
+<a name="l00116"></a>00116             <a class="code" href="cm__pdlink_8h.html#a9bca4af04ea4fac6b910933e5ba16814" title="send string as pd message to object">cmp_sendstring</a>((t_pd*)obj-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ab035ff3ca7142e49c07f141666f6b41e" title="returns pointer to pd object.">pdObject</a>(), data.toStdString());
+<a name="l00117"></a>00117         }
+<a name="l00118"></a>00118     }
+<a name="l00119"></a>00119 
+<a name="l00121"></a>00121     <span class="comment">// pdLib</span>
+<a name="l00122"></a>00122 
+<a name="l00123"></a><a class="code" href="classpy_qtpd.html#a86e4fb1f84aa63ccb21513fafc321647">00123</a>     <span class="keywordtype">void</span> startDsp()
+<a name="l00124"></a>00124     {
+<a name="l00125"></a>00125         <a class="code" href="cm__pdlink_8h.html#a0f1f4951cf99dff0634789791dcde1ba" title="switch dsp on or off">cmp_switch_dsp</a>(<span class="keyword">true</span>);
+<a name="l00126"></a>00126     }
+<a name="l00127"></a>00127 
+<a name="l00128"></a><a class="code" href="classpy_qtpd.html#aa075a4183756fb81ce11f3a9ce40ea2a">00128</a>     <span class="keywordtype">void</span> stopDsp()
+<a name="l00129"></a>00129     {
+<a name="l00130"></a>00130         <a class="code" href="cm__pdlink_8h.html#a0f1f4951cf99dff0634789791dcde1ba" title="switch dsp on or off">cmp_switch_dsp</a>(<span class="keyword">false</span>);
+<a name="l00131"></a>00131     }
+<a name="l00132"></a>00132 
+<a name="l00133"></a><a class="code" href="classpy_qtpd.html#ade5b04c97d1f8ffe78094e67475a1142">00133</a>     <span class="keywordtype">void</span> post(QString msg)
+<a name="l00134"></a>00134     {
+<a name="l00135"></a>00135         <a class="code" href="cm__pdlink_8h.html#a766e12f26830eee9deae0fe8e9f70535" title="post plain text to Pd window">cmp_post</a>(msg.toStdString());
+<a name="l00136"></a>00136     }
+<a name="l00137"></a>00137 
+<a name="l00139"></a>00139     <span class="comment">// properties</span>
+<a name="l00140"></a>00140 
+<a name="l00141"></a><a class="code" href="classpy_qtpd.html#a00db70a858e4f3b4e593267f33f581e9">00141</a>     <a class="code" href="classqtpd_1_1_property_list.html" title="yet another property handling class for ui object. List">PropertyList</a>* new_PropertyList()
+<a name="l00142"></a>00142     {
+<a name="l00143"></a>00143         <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classqtpd_1_1_property_list.html" title="yet another property handling class for ui object. List">PropertyList</a>();
+<a name="l00144"></a>00144     }
+<a name="l00145"></a>00145 
+<a name="l00146"></a><a class="code" href="classpy_qtpd.html#a896db5a239ce9fa0e0c2863dff9bdb62">00146</a>     <a class="code" href="classqtpd_1_1_property_list.html" title="yet another property handling class for ui object. List">PropertyList</a>* prop(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
+<a name="l00147"></a>00147     {
+<a name="l00148"></a>00148         <span class="keywordflow">return</span> obj-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a9cc4a52a28c80bdfbb6d2ec874b805e7">properties</a>();
+<a name="l00149"></a>00149     }
+<a name="l00150"></a>00150 
+<a name="l00151"></a><a class="code" href="classpy_qtpd.html#a395c6cab1655219424f3379fa0910b39">00151</a>     QStringList <a class="code" href="code_8h.html#a6d70b6a7be698d5bd5953a831fc49278">names</a>(<a class="code" href="classqtpd_1_1_property_list.html" title="yet another property handling class for ui object. List">PropertyList</a>* list)
+<a name="l00152"></a>00152     {
+<a name="l00153"></a>00153         <span class="keywordflow">return</span> list-&gt;<a class="code" href="classqtpd_1_1_property_list.html#a74b6f3f764fbdeae91515eb8a44d415e" title="list of all property names">names</a>();
+<a name="l00154"></a>00154     }
+<a name="l00155"></a>00155 
+<a name="l00156"></a><a class="code" href="classpy_qtpd.html#a8f6268ac3a981a909c75670781d9b1a3">00156</a>     QString getP(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, QString <a class="code" href="abstract_8h.html#afcd1706c9144e6d6eee6127661ae3be2">name</a>)
+<a name="l00157"></a>00157     {
+<a name="l00158"></a>00158         <span class="keywordflow">return</span> obj-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a9cc4a52a28c80bdfbb6d2ec874b805e7">properties</a>()-&gt;<a class="code" href="classqtpd_1_1_property_list.html#a9d1a8f116b7791421fa29dd4fce58cfa">get</a>(name.toStdString())-&gt;asQString();
+<a name="l00159"></a>00159     }
+<a name="l00160"></a>00160 
+<a name="l00161"></a><a class="code" href="classpy_qtpd.html#a1da9ce1e0b3bd13bfe218488c2b41424">00161</a>     <span class="keywordtype">void</span> setP(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, QString <a class="code" href="abstract_8h.html#afcd1706c9144e6d6eee6127661ae3be2">name</a>, QString data)
+<a name="l00162"></a>00162     {
+<a name="l00163"></a>00163         obj-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a9cc4a52a28c80bdfbb6d2ec874b805e7">properties</a>()-&gt;<a class="code" href="classqtpd_1_1_property_list.html#a29af3e410e9b5fd3fd8a86d295215a44">set</a>(name.toStdString(), data);
+<a name="l00164"></a>00164     }
+<a name="l00165"></a>00165 
+<a name="l00166"></a><a class="code" href="classpy_qtpd.html#ae2d1598fc9ac1a845a8888c6878cb30d">00166</a>     QStringList pnames(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
+<a name="l00167"></a>00167     {
+<a name="l00168"></a>00168         <span class="keywordflow">return</span> obj-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a9cc4a52a28c80bdfbb6d2ec874b805e7">properties</a>()-&gt;<a class="code" href="classqtpd_1_1_property_list.html#a74b6f3f764fbdeae91515eb8a44d415e" title="list of all property names">names</a>();
+<a name="l00169"></a>00169     }
+<a name="l00170"></a>00170 
+<a name="l00172"></a>00172     <span class="comment">// app preferences</span>
+<a name="l00173"></a>00173 
+<a name="l00174"></a><a class="code" href="classpy_qtpd.html#a266b24971209eb6945c3bf7216022b2b">00174</a>     <a class="code" href="classqtpd_1_1_property_list.html" title="yet another property handling class for ui object. List">PropertyList</a>* pref()
+<a name="l00175"></a>00175     {
+<a name="l00176"></a>00176         <span class="keywordflow">return</span> (<a class="code" href="classqtpd_1_1_property_list.html" title="yet another property handling class for ui object. List">PropertyList</a>*)&amp;<a class="code" href="classqtpd_1_1_preferences.html#a43710c0b803cec200c7add487aae2c08">Preferences::inst</a>();
+<a name="l00177"></a>00177     }
+<a name="l00178"></a>00178 };
+<a name="l00179"></a>00179 
+<a name="l00180"></a>00180 <span class="preprocessor">#endif // PY_QTPD_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -275,7 +274,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 17 2017 13:25:21 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 18 2017 07:42:01 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

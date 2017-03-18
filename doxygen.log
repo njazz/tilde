@@ -724,10 +724,10 @@ Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/cm_objectloader.
 Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/cm_objectmaker.cpp...
 Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/cm_objectmaker.h...
 Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/cm_patchcord.cpp...
-Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/cm_/home/travis/build/njazz/qtpd/qtpd_gui/cm_pdlink.h:168: warning: The following parameters of cmp_connectUI(t_pd *obj, void *uiobj, t_updateUI func) are not documented:
+Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/cm_/home/travis/build/njazz/qtpd/qtpd_gui/cm_pdlink.h:170: warning: The following parameters of cmp_connectUI(t_pd *obj, void *uiobj, t_updateUI func) are not documented:
   parameter 'uiobj'
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_pdlink.h:86: warning: argument 'canvas' of command @param is not found in the argument list of cmp_moveobject(t_object *obj, int x, int y)
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_pdlink.h:86: warning: argument 'message' of command @param is not found in the argument list of cmp_moveobject(t_object *obj, int x, int y)
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_pdlink.h:88: warning: argument 'canvas' of command @param is not found in the argument list of cmp_moveobject(t_object *obj, int x, int y)
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_pdlink.h:88: warning: argument 'message' of command @param is not found in the argument list of cmp_moveobject(t_object *obj, int x, int y)
 patchcord.h...
 Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/cm_pdlink.h...
 Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/cm_port.cpp...
@@ -1252,31 +1252,31 @@ Gen/home/travis/build/njazz/qtpd/qtpd_lib/ceammc-lib/ceammc_gui.h:199: warning: 
   parameter 'newrect'
 /home/travis/build/njazz/qtpd/qtpd_lib/ceammc-lib/ceammc_gui.h:395: warning: The following parameters of ceammc_gui::GuiFactory::wx_paint(U *z, t_object *view) are not documented:
   parameter 'view'
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:156: warning: argument 'idx' of command @param is not found in the argument list of qtpd::Canvas::addInlet() inherited from member addInlet at line 129 in file /home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:164: warning: argument 'idx' of command @param is not found in the argument list of qtpd::Canvas::addOutlet() inherited from member addOutlet at line 170 in file /home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:942: warning: argument 'canvas' of command @param is not found in the argument list of qtpd::Canvas::createBoxForCanvas(Canvas *newCanvas, std::string objectData, QPoint pos)
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:942: warning: The following parameters of qtpd::Canvas::createBoxForCanvas(Canvas *newCanvas, std::string objectData, QPoint pos) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:151: warning: argument 'idx' of command @param is not found in the argument list of qtpd::Canvas::addInlet() inherited from member addInlet at line 127 in file /home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:159: warning: argument 'idx' of command @param is not found in the argument list of qtpd::Canvas::addOutlet() inherited from member addOutlet at line 164 in file /home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:876: warning: argument 'canvas' of command @param is not found in the argument list of qtpd::Canvas::createBoxForCanvas(Canvas *newCanvas, std::string objectData, QPoint pos)
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:876: warning: The following parameters of qtpd::Canvas::createBoxForCanvas(Canvas *newCanvas, std::string objectData, QPoint pos) are not documented:
   parameter 'newCanvas'
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:857: warning: argument 'message' of command @param is not found in the argument list of qtpd::Canvas::createObject(std::string uiObjectName, std::string objectData1, QPoint pos)
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:857: warning: The following parameters of qtpd::Canvas::createObject(std::string uiObjectName, std::string objectData1, QPoint pos) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:803: warning: argument 'message' of command @param is not found in the argument list of qtpd::Canvas::createObject(std::string uiObjectName, std::string objectData1, QPoint pos)
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:803: warning: The following parameters of qtpd::Canvas::createObject(std::string uiObjectName, std::string objectData1, QPoint pos) are not documented:
   parameter 'uiObjectName'
   parameter 'objectData1'
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:180: warning: argument 'ds' of command @param is not found in the argument list of qtpd::Canvas::drawStyle()
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:1450: warning: argument 'patchcord' of command @param is not found in the argument list of qtpd::Canvas::patchcordAsPdFileString(Patchcord *pcord)
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:1450: warning: The following parameters of qtpd::Canvas::patchcordAsPdFileString(Patchcord *pcord) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:175: warning: argument 'ds' of command @param is not found in the argument list of qtpd::Canvas::drawStyle()
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:1334: warning: argument 'patchcord' of command @param is not found in the argument list of qtpd::Canvas::patchcordAsPdFileString(Patchcord *pcord)
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:1334: warning: The following parameters of qtpd::Canvas::patchcordAsPdFileString(Patchcord *pcord) are not documented:
   parameter 'pcord'
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:613: warning: argument 'pdObjectData' of command @param is not found in the argument list of qtpd::Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas *canvas)
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:613: warning: The following parameters of qtpd::Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas *canvas) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:568: warning: argument 'pdObjectData' of command @param is not found in the argument list of qtpd::Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas *canvas)
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:568: warning: The following parameters of qtpd::Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas *canvas) are not documented:
   parameter 'pdObjectName'
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:129: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addInlet()
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:170: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addOutlet()
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:447: warning: argument 'w' of command @param is not found in the argument list of qtpd::UIObject::minimumBoxHeight()
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:438: warning: argument 'w' of command @param is not found in the argument list of qtpd::UIObject::minimumBoxWidth()
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:82: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setInletsPos()
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:429: warning: argument 'w' of command @param is not found in the argument list of qtpd::UIObject::setMinimumBoxHeight(int h)
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:429: warning: The following parameters of qtpd::UIObject::setMinimumBoxHeight(int h) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:127: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addInlet()
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:164: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addOutlet()
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:433: warning: argument 'w' of command @param is not found in the argument list of qtpd::UIObject::minimumBoxHeight()
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:424: warning: argument 'w' of command @param is not found in the argument list of qtpd::UIObject::minimumBoxWidth()
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:80: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setInletsPos()
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:415: warning: argument 'w' of command @param is not found in the argument list of qtpd::UIObject::setMinimumBoxHeight(int h)
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:415: warning: The following parameters of qtpd::UIObject::setMinimumBoxHeight(int h) are not documented:
   parameter 'h'
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:106: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setOutletsPos()
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:104: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setOutletsPos()
 erating docs for compound ceammc::GreaterThenProperty...
 Generating docs for compound ceammc::GreaterEqualProperty...
 Generating docs for compound ceammc::LessThenProperty...
@@ -1352,6 +1352,6 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-symbol cache used 5724/65536 hits=1021981 misses=5724
-lookup cache used 9012/65536 hits=58051 misses=9683
+symbol cache used 5724/65536 hits=1021976 misses=5724
+lookup cache used 9013/65536 hits=58058 misses=9684
 finished...

@@ -18,6 +18,6 @@ var searchData=
   ['ssizessizeobjargproc',['ssizessizeobjargproc',['../object_8h.html#a5e7d463882e66f88579b6312c8595ee6',1,'object.h']]],
   ['stmt_5fty',['stmt_ty',['../_python-ast_8h.html#a39618071027b661bc03e8916e664e1a7',1,'Python-ast.h']]],
   ['string',['string',['../asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853',1,'asdl.h']]],
-  ['structpatchcordnumbers',['structPatchcordNumbers',['../namespaceqtpd.html#acaaa6396486755e52ab9bb689ae40f06',1,'qtpd']]],
+  ['structpatchcordnumbers',['structPatchcordNumbers',['../namespaceqtpd.html#ac7726eb93bb40c830f8f5e1bd891cdbe',1,'qtpd']]],
   ['symbolenumalias',['SymbolEnumAlias',['../namespaceceammc.html#a08cce5e04c1cd1ca66cc08243866c061',1,'ceammc']]]
 ];
