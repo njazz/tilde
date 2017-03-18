@@ -20,7 +20,8 @@ DEFINES += QT_DEPRECATED_WARNINGS \
     PD \
     HAVE_UNISTD_H \
     USEAPI_PORTAUDIO \
-    THREAD_LOCKING
+    THREAD_LOCKING \
+    HAVE_LIBDL
 
 
 # You can also make your code fail to compile if you use deprecated APIs.

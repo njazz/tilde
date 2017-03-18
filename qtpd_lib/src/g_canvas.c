@@ -1704,6 +1704,8 @@ int canvas_path_iterate(t_canvas*x, t_canvas_path_iterator fun, void *user_data)
     /* now iterate through the global paths */
     for (nl = sys_searchpath; nl; nl = nl->nl_next)
     {
+        post("canvas path iterate: %s", nl->nl_string); //Qtpd
+
         if (!fun(nl->nl_string, user_data))
             return count+1;
         count++;
