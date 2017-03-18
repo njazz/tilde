@@ -135,7 +135,7 @@ var searchData=
   ['mousereleaseeventforbox',['mouseReleaseEventForBox',['../classqtpd_1_1_canvas.html#a417e6d5c3c252622ea76077328395961',1,'qtpd::Canvas']]],
   ['mousereleaseeventforcanvas',['mouseReleaseEventForCanvas',['../classqtpd_1_1_canvas.html#ab5e1e283cae8a668e28d14a64521cb84',1,'qtpd::Canvas']]],
   ['movebox',['moveBox',['../classqtpd_1_1_u_i_widget.html#a45b98ab27c1e4c98dae661fc805ec20c',1,'qtpd::UIWidget']]],
-  ['moveobject',['moveObject',['../classpy_pd_lib.html#a3dcfec13ba7144e53554bf8ad6374d7b',1,'pyPdLib::moveObject()'],['../classpy_qtpd.html#a49079d94acbc6474f2840b5af3737f42',1,'pyQtpd::moveObject(Canvas *o, int x, int y)'],['../classpy_qtpd.html#a223068e33057ee9bd0d7603d70fc1938',1,'pyQtpd::moveObject(UIObject *o, int x, int y)']]],
+  ['moveobject',['moveObject',['../classpy_pd_lib.html#a3dcfec13ba7144e53554bf8ad6374d7b',1,'pyPdLib::moveObject()'],['../classpy_canvas_decorator.html#ad841a6d25f8789d1c57558e4b71a9679',1,'pyCanvasDecorator::moveObject(Canvas *o, int x, int y)'],['../classpy_canvas_decorator.html#ad611a79413af39e5b5ae5a7370089d11',1,'pyCanvasDecorator::moveObject(UIObject *o, int x, int y)']]],
   ['moviectlobj_5fconvert',['MovieCtlObj_Convert',['../pymactoolbox_8h.html#a15f836626de45c62b367b860c65d21f6',1,'pymactoolbox.h']]],
   ['moviectlobj_5fnew',['MovieCtlObj_New',['../pymactoolbox_8h.html#a244d8436532a3873e2d6e17d9b8ea098',1,'pymactoolbox.h']]],
   ['movieobj_5fconvert',['MovieObj_Convert',['../pymactoolbox_8h.html#aef12c1d45277ea1b2e8041be1cd9312f',1,'pymactoolbox.h']]],

@@ -19,6 +19,7 @@ var searchData=
   ['pybaseexceptionobject',['PyBaseExceptionObject',['../struct_py_base_exception_object.html',1,'']]],
   ['pybufferprocs',['PyBufferProcs',['../struct_py_buffer_procs.html',1,'']]],
   ['pybytearrayobject',['PyByteArrayObject',['../struct_py_byte_array_object.html',1,'']]],
+  ['pycanvasdecorator',['pyCanvasDecorator',['../classpy_canvas_decorator.html',1,'']]],
   ['pycellobject',['PyCellObject',['../struct_py_cell_object.html',1,'']]],
   ['pycfunctionobject',['PyCFunctionObject',['../struct_py_c_function_object.html',1,'']]],
   ['pyclassobject',['PyClassObject',['../struct_py_class_object.html',1,'']]],
@@ -56,7 +57,9 @@ var searchData=
   ['pymethoddescrobject',['PyMethodDescrObject',['../struct_py_method_descr_object.html',1,'']]],
   ['pymethodobject',['PyMethodObject',['../struct_py_method_object.html',1,'']]],
   ['pynumbermethods',['PyNumberMethods',['../struct_py_number_methods.html',1,'']]],
+  ['pypatchwindowdecorator',['pyPatchWindowDecorator',['../classpy_patch_window_decorator.html',1,'']]],
   ['pypdlib',['pyPdLib',['../classpy_pd_lib.html',1,'']]],
+  ['pypropertylistdecorator',['pyPropertyListDecorator',['../classpy_property_list_decorator.html',1,'']]],
   ['pyqtpd',['pyQtpd',['../classpy_qtpd.html',1,'']]],
   ['pysequencemethods',['PySequenceMethods',['../struct_py_sequence_methods.html',1,'']]],
   ['pysliceobject',['PySliceObject',['../struct_py_slice_object.html',1,'']]],
@@ -112,6 +115,7 @@ var searchData=
   ['pythonqtwrapper_5fqmetaobject',['PythonQtWrapper_QMetaObject',['../class_python_qt_wrapper___q_meta_object.html',1,'']]],
   ['pytryblock',['PyTryBlock',['../struct_py_try_block.html',1,'']]],
   ['pytupleobject',['PyTupleObject',['../struct_py_tuple_object.html',1,'']]],
+  ['pyuiobjectdecorator',['pyUIObjectDecorator',['../classpy_u_i_object_decorator.html',1,'']]],
   ['pyvarobject',['PyVarObject',['../struct_py_var_object.html',1,'']]],
   ['pywrapperdescrobject',['PyWrapperDescrObject',['../struct_py_wrapper_descr_object.html',1,'']]]
 ];

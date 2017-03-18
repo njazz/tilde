@@ -230,10 +230,14 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">set the show/hide grid flag  <a href="#ab7a119de1e6406317bbcceca17fee5ed"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#ad6a8a14cfe6188f0cc5f14a675d36708">setGridSnap</a> (<a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a> val)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">align to grid flag  <a href="#ad6a8a14cfe6188f0cc5f14a675d36708"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#afd559ba823ec75738510eb0b1e9ddba7">objectVec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#afc29b6bc7fa53af813e8fc5a3531215e">getObjectBoxes</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns vector of all object boxes - needed by filesaver  <a href="#afc29b6bc7fa53af813e8fc5a3531215e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#afd559ba823ec75738510eb0b1e9ddba7">objectVec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#aa7e7f15474b1b1cc3564c46a346cf3eb">objectBoxes</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns vector of all object boxes - needed by filesaver  <a href="#aa7e7f15474b1b1cc3564c46a346cf3eb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#a81f1e9d2a3767de39a2b30057b599854">patchcordVec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a8725374b04b10a3a07ce48b013ab9992">patchcords</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns vector of all patchcords - needed by filesaver  <a href="#a8725374b04b10a3a07ce48b013ab9992"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#afd559ba823ec75738510eb0b1e9ddba7">objectVec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a0f81941962e9900ba06288636a1a6f74">selectedObjectBoxes</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns vector of selected object boxes  <a href="#a0f81941962e9900ba06288636a1a6f74"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#a81f1e9d2a3767de39a2b30057b599854">patchcordVec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#ab65347f342876b25cc85bc6652013617">selectedPatchcords</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns vector of selected patchcords  <a href="#ab65347f342876b25cc85bc6652013617"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#a81f1e9d2a3767de39a2b30057b599854">patchcordVec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a7b66a4916b7f6b5bf9c6b3e5ad780976">patchcordsForObject</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns patchcords that are connected to specific object  <a href="#a7b66a4916b7f6b5bf9c6b3e5ad780976"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a2168110e781257d16b176086714a4921">findObjectIndex</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)</td></tr>
@@ -732,25 +736,6 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="afc29b6bc7fa53af813e8fc5a3531215e"></a><!-- doxytag: member="qtpd::Canvas::getObjectBoxes" ref="afc29b6bc7fa53af813e8fc5a3531215e" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="namespaceqtpd.html#afd559ba823ec75738510eb0b1e9ddba7">objectVec</a> <a class="el" href="classqtpd_1_1_canvas.html#afc29b6bc7fa53af813e8fc5a3531215e">qtpd::Canvas::getObjectBoxes</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>returns vector of all object boxes - needed by filesaver </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="ad52070b113de5af28265adc503653c77"></a><!-- doxytag: member="qtpd::Canvas::getObjectByIndex" ref="ad52070b113de5af28265adc503653c77" args="(int idx)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1074,6 +1059,25 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa7e7f15474b1b1cc3564c46a346cf3eb"></a><!-- doxytag: member="qtpd::Canvas::objectBoxes" ref="aa7e7f15474b1b1cc3564c46a346cf3eb" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceqtpd.html#afd559ba823ec75738510eb0b1e9ddba7">objectVec</a> <a class="el" href="classqtpd_1_1_canvas.html#aa7e7f15474b1b1cc3564c46a346cf3eb">qtpd::Canvas::objectBoxes</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>returns vector of all object boxes - needed by filesaver </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
 </div>
@@ -1628,6 +1632,44 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a0f81941962e9900ba06288636a1a6f74"></a><!-- doxytag: member="qtpd::Canvas::selectedObjectBoxes" ref="a0f81941962e9900ba06288636a1a6f74" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceqtpd.html#afd559ba823ec75738510eb0b1e9ddba7">objectVec</a> <a class="el" href="classqtpd_1_1_canvas.html#a0f81941962e9900ba06288636a1a6f74">qtpd::Canvas::selectedObjectBoxes</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>returns vector of selected object boxes </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab65347f342876b25cc85bc6652013617"></a><!-- doxytag: member="qtpd::Canvas::selectedPatchcords" ref="ab65347f342876b25cc85bc6652013617" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceqtpd.html#a81f1e9d2a3767de39a2b30057b599854">patchcordVec</a> <a class="el" href="classqtpd_1_1_canvas.html#ab65347f342876b25cc85bc6652013617">qtpd::Canvas::selectedPatchcords</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>returns vector of selected patchcords </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a18731398b2b475020f5b3aecb4ae70d5"></a><!-- doxytag: member="qtpd::Canvas::selectObject" ref="a18731398b2b475020f5b3aecb4ae70d5" args="(UIObject *obj)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1914,7 +1956,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Mar 18 2017 07:42:03 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 18 2017 09:08:41 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
