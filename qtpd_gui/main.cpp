@@ -59,11 +59,16 @@ int main(int argc, char* argv[])
     //temporary
     BaseMenu* m = new BaseMenu(0);
 
+    //temporary folders properties
+
+    QString docFolder = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).last() ;
+
+    Preferences::inst().create("Externals","Folders","0.1",docFolder+"/Qtpd/Externals");
+    Preferences::inst().create("Scripts","Folders","0.1",docFolder+"/Qtpd/Scripts");
+
     pyWrappersInit();
 
-    //
 
-    //console.show();
 
     return a.exec();
 }
