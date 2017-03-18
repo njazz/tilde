@@ -34,6 +34,10 @@ public:
         std::string data1 = b->properties()->extractFromPdFileString(objectData);
         b->setObjectData(data1);
 
+        // the zoo lol
+        QString data = b->properties()->get("Text")->asQString().split("\\n").join("\n");
+        b->editor_->document()->setPlainText(data);
+
         b->autoResize();
         return (UIObject*)b;
     };
@@ -62,6 +66,16 @@ public:
         p.setFont(QFont(PREF_QSTRING("Font"), 11, 0, false));
         p.drawText(2, 3, this->width() - 2, this->height() - 3, 0, this->objectData().c_str(), 0);
     }
+
+    //////////
+
+    void initProperties()
+    {
+        UIObject::initProperties();
+        QStringList list;
+
+        this->properties()->create("Text", "Data", "0.1", list);
+    };
 
     ///////////////////
 
@@ -116,16 +130,20 @@ public:
 
     void setPdMessage(std::string message)
     {
-        this->setObjectData(message);
+        //TODO temporary fix!
+            properties()->set("Text", message);
+         QString data = properties()->get("Text")->asQString().split("\\n").join("\n");
+
+        this->setObjectData(data.toStdString());
         this->autoResize();
 
         QFont myFont(PREF_QSTRING("Font"), 11);
         QFontMetrics fm(myFont);
-        QString text = QString(this->editor_->document()->toPlainText());
-        int new_w = fm.width(text) + 20;
+        //QString text = QString(this->editor_->document()->toPlainText());
+        int new_w = fm.width(data) + 20;
         new_w = (new_w < 25) ? 25 : new_w;
 
-        int new_h = fm.boundingRect(QRect(0, 0, new_w, 100), 0, text).height() + 7;
+        int new_h = fm.boundingRect(QRect(0, 0, new_w, 100), 0, data).height() + 7;
 
         new_h = (new_h < 25) ? 25 : new_h;
 
@@ -181,6 +199,11 @@ public:
         }
 
         return false;
+    }
+
+    QStringList getEditorData()
+    {
+        return editor_->document()->toPlainText().split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
     }
 
 signals:

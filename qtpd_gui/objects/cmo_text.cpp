@@ -14,6 +14,8 @@ UIText::UIText(UIObject* parent)
 
     this->setMouseTracking(true);
 
+    initProperties();
+
     this->deselect();
     this->clicked_ = false;
 
@@ -61,5 +63,11 @@ void UIText::editorChanged()
 
     this->editor_->setFixedWidth(this->width() - 1);
     this->editor_->setFixedHeight(this->height() - 2);
+
+
+    QStringList list = getEditorData();
+
+    // fix later
+    properties()->set("Text", list);
 }
 }
