@@ -28,8 +28,6 @@ CONFIG += static
   INCLUDEPATH += python/py2.7headers/
   LIBS += -F/System/Library/Frameworks -framework Python
 
-#DEFINES -= isalnum isalphaislowerisspace isupper tolower toupper
-
 SOURCES += main.cpp\
     cm_port.cpp \
     cm_canvas.cpp \
@@ -123,17 +121,12 @@ FORMS    += \
 
 LIBS += "../qtpd_lib/libqtpd.a"
 LIBS += "/usr/local/lib/libportaudio.dylib"
-#LIBS += "$$PWD/python/lib/libPythonQt_QtAll.1.dylib"
-#LIBS += "$$PWD/python/lib/libPythonQt.1.dylib"
+
 
 DISTFILES += \
     pd_ceammc.ico \
     pd_ceammc.png \
-#    python/lib/libPythonQt_QtAll.1.dylib \
-#    python/lib/libPythonQt.1.dylib
 
-#    python/lib/libPythonQt_QtAll.1.0.0.dylib \
-#    python/lib/libPythonQt.1.0.0.dylib \
 
 
 #include(python/build/common.prf)
@@ -151,12 +144,20 @@ INCLUDEPATH += \
 
 PRECOMPILED_HEADER = cm_headers.h
 
-macx: LIBS += -L$$PWD/python/lib/ -lPythonQt_QtAll.1.0.0
+#$$PWD
+
+CONFIG += static
+
+LIBS += -L$$PWD/python/lib/ -lPythonQt_QtAll.1.0.0
+LIBS += -L$$PWD/python/lib/ -lPythonQt.1.0.0
+
+#LIBS += -L../qtpd_lib/python/lib/ -lPythonQt_QtAll.1
+#LIBS += -L../qtpd_lib/python/lib/ -lPythonQt.1
+
+DEPENDPATH += $$PWD/python/lib
 
 INCLUDEPATH += $$PWD/python/headers
 DEPENDPATH += $$PWD/python/headers
 
-macx: LIBS += -L$$PWD/python/lib/ -lPythonQt.1.0.0
 
-INCLUDEPATH += $$PWD/python/headers
-DEPENDPATH += $$PWD/python/headers
+
