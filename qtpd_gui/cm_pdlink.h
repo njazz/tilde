@@ -30,6 +30,30 @@ extern void cmp_pdinit();
 ///
 extern void cmp_setprinthook(t_printhook h);
 
+////
+/// \brief add search path to pd engine
+/// \param s
+///
+extern void cmp_add_searchpath(t_symbol* s);
+
+////
+/// \brief clear search paths
+///
+extern void cmp_clear_searchpath();
+
+////
+/// \brief returns list of loaded externals
+/// \return
+///
+ceammc::AtomList cmp_get_loaded_list();
+
+////
+/// \brief load external
+/// \details probably will be removed later
+/// \return
+///
+void cmp_loadlib(std::string lib);
+
 #pragma mark -
 
 ////

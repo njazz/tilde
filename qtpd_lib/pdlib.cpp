@@ -26,6 +26,15 @@ extern "C" void setup_ui0x2etoggle(void);
 extern "C" void setup_ui0x2emsg(void);
 extern "C" void setup_ui0x2efloat(void);
 
+//todo fix
+//typedef struct _loadedlist
+//{
+//    struct _loadedlist *ll_next;
+//    t_symbol *ll_name;
+//} t_loadlist;
+
+//extern "C" t_loadlist *sys_loaded;
+
 //extern "C" void setup_ui0x2ebang(void);
 //extern "C" void setup_ui0x2etoggle(void);
 //extern "C" void setup_ui0x2enumber_tilde(void);
@@ -159,6 +168,36 @@ void cmp_pdinit()
 void cmp_setprinthook(t_printhook h)
 {
     sys_printhook = h;
+}
+
+void cmp_add_searchpath(t_symbol* s)
+{
+    sys_searchpath = namelist_append_files(sys_searchpath,s->s_name);
+    post("added path: %s" , s->s_name);
+}
+
+
+AtomList cmp_get_loaded_list()
+{
+    AtomList ret;
+
+    while(sys_loaded)
+    {
+        ret.append(Atom(sys_loaded->ll_name));
+        sys_loaded = sys_loaded->ll_next;
+    }
+
+    return ret;
+}
+
+void cmp_loadlib(std::string name)
+{
+    sys_load_lib(canvas_getcurrent(), name.c_str());
+}
+
+void cmp_clear_searchpath()
+{
+    sys_searchpath = NULL;
 }
 
 #pragma mark -

@@ -114,7 +114,6 @@ HEADERS  += \
     python/headers/PythonQtSystem.h \
     python/headers/PythonQtVariants.h \
     python/wrappers/py_wrapers.h \
-    python/wrappers/py_testclass.h \
     python/wrappers/py_qtpd.h \
     objects/cmo_script.h
 

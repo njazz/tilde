@@ -61,13 +61,14 @@ static char sys_dllextent[] = ".so", sys_dllextent2[] = ".so";
 #endif
 
     /* maintain list of loaded modules to avoid repeating loads */
-typedef struct _loadedlist
-{
-    struct _loadedlist *ll_next;
-    t_symbol *ll_name;
-} t_loadlist;
+//typedef struct _loadedlist
+//{
+//    struct _loadedlist *ll_next;
+//    t_symbol *ll_name;
+//} t_loadlist;
+// Qtpd
 
-static t_loadlist *sys_loaded;
+t_loadlist *sys_loaded;  //Qtpd
 int sys_onloadlist(const char *classname) /* return true if already loaded */
 {
     t_symbol *s = gensym(classname);

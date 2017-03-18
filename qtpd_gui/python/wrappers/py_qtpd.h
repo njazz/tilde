@@ -231,6 +231,24 @@ public Q_SLOTS:
         cmp_post(msg.toStdString());
     }
 
+    QStringList externals()
+    {
+        AtomList list = cmp_get_loaded_list();
+        QStringList ret;
+
+        for (int i=0;i<list.size();i++)
+        {
+            ret += list.at(i).asString().c_str();
+        }
+
+        return ret;
+    }
+
+    void loadLib(QString lib)
+    {
+        cmp_loadlib(lib.toStdString());
+    }
+
     //////////
     // app preferences
 

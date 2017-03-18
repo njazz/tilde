@@ -816,5 +816,13 @@ EXTERN int pd_getdspstate(void);
 }
 #endif
 
+// Qtpd
+typedef struct _loadedlist
+{
+    struct _loadedlist *ll_next;
+    t_symbol *ll_name;
+} t_loadlist;
+EXTERN t_loadlist *sys_loaded;
+
 #define __m_pd_h_
 #endif /* __m_pd_h_ */
