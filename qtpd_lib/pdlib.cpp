@@ -103,7 +103,7 @@ void cmp_pdinit()
     sys_printtostderr = 0;
     sys_usestdpath = 0; // don't use pd_extrapath, only sys_searchpath
     sys_debuglevel = 0;
-    sys_verbose = 0;
+    sys_verbose = 4;
     sys_noloadbang = 0;
     sys_nogui = 1;
     sys_hipriority = 0;

@@ -52,7 +52,6 @@ SOURCES += main.cpp\
     properties/cm_property.cpp \
     properties/cm_propertylist.cpp \
     python/PythonQtScriptingConsole.cpp \
-    python/wrappers/py_testclass.cpp \
     objects/cmo_script.cpp
 
 

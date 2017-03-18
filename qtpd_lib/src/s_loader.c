@@ -96,6 +96,8 @@ static int sys_do_load_abs(t_canvas *canvas, const char *objectname,
 static int sys_do_load_lib(t_canvas *canvas, const char *objectname,
     const char *path)
 {
+    post("sys_do_load_lib");    //Qtpd
+
     char symname[MAXPDSTRING], filename[MAXPDSTRING], dirbuf[MAXPDSTRING],
         *nameptr, altsymname[MAXPDSTRING];
     const char *classname, *cnameptr;
@@ -136,6 +138,9 @@ static int sys_do_load_lib(t_canvas *canvas, const char *objectname,
         }
     }
     symname[i] = 0;
+
+    post("symbol name %s", symname);    //Qtpd
+
     if (hexmunge)
     {
         memmove(symname+6, symname, strlen(symname)+1);
@@ -182,6 +187,8 @@ static int sys_do_load_lib(t_canvas *canvas, const char *objectname,
 gotone:
     close(fd);
     class_set_extern_dir(gensym(dirbuf));
+
+    post("got one");    //Qtpd
 
         /* rebuild the absolute pathname */
     strncpy(filename, dirbuf, MAXPDSTRING);
@@ -329,6 +336,8 @@ int sys_load_lib(t_canvas *canvas, const char *classname)
         dirbuf[dirlen] = 0;
         data.classname=classname+(dirlen+1);
         sys_loadlib_iter(dirbuf, &data);
+
+        post("load lib abspath");  //Qtpd
     }
     data.classname = classname;
     if(!data.ok)
@@ -343,6 +352,7 @@ int sys_load_lib(t_canvas *canvas, const char *classname)
     if(data.ok)
       sys_putonloadlist(classname);
 
+    post("load lib (%s): %i",classname, data.ok);  //Qtpd
 
     canvas_resume_dsp(dspstate);
     return data.ok;

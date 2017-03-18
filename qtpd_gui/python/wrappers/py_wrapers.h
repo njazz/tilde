@@ -11,17 +11,10 @@
 
 #include "py_pdlib.h"
 #include "py_qtpd.h"
-#include "py_testclass.h"
 
 void pyWrappersInit()
 {
     PythonQtObjectPtr mainContext = PythonQt::self()->getMainModule();
-
-    static pyTestClass _pyTestClass;
-    mainContext.addObject("testClass", &_pyTestClass);
-
-    //    static pyPdLib _pyPdLib;
-    //    mainContext.addObject("pdLib", &_pyPdLib);
 
     static pyQtpd _pyQtpd;
     mainContext.addObject("Qtpd", &_pyQtpd);
