@@ -66,6 +66,7 @@ public:
     template <typename U>
     void set(std::string pName, U value)
     {
+        if(this->data_[pName])
         this->data_[pName]->set(value);
     };
 

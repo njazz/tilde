@@ -25,6 +25,10 @@ class pyUIObjectDecorator : public QObject {
 
 public Q_SLOTS:
 
+    UIObject* new_UIObject(UIObject* parent) {return new UIObject(parent);}
+    UIObject* new_UIObject() {return new UIObject(0);}
+    void delete_UIObject(UIObject* obj) {delete obj;}
+
     void addInlet(UIObject* obj)
     {
         if (obj)

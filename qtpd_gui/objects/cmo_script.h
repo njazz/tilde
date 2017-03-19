@@ -279,7 +279,8 @@ public:
         UIScript* b = new UIScript((UIObject*)parent);
 
         std::string data1 = b->properties()->extractFromPdFileString(objectData);
-        b->setObjectData(data1);
+        if (data1!="")
+            b->setObjectData(data1);
 
         b->autoResize();
 
