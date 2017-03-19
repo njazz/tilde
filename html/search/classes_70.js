@@ -57,6 +57,7 @@ var searchData=
   ['pymethoddescrobject',['PyMethodDescrObject',['../struct_py_method_descr_object.html',1,'']]],
   ['pymethodobject',['PyMethodObject',['../struct_py_method_object.html',1,'']]],
   ['pynumbermethods',['PyNumberMethods',['../struct_py_number_methods.html',1,'']]],
+  ['pyobjectvecdecorator',['pyObjectVecDecorator',['../classpy_object_vec_decorator.html',1,'']]],
   ['pypatchwindowdecorator',['pyPatchWindowDecorator',['../classpy_patch_window_decorator.html',1,'']]],
   ['pypdlib',['pyPdLib',['../classpy_pd_lib.html',1,'']]],
   ['pypropertylistdecorator',['pyPropertyListDecorator',['../classpy_property_list_decorator.html',1,'']]],

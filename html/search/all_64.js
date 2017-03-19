@@ -58,6 +58,7 @@ var searchData=
   ['delete_5fglobal',['DELETE_GLOBAL',['../opcode_8h.html#a541436616eff54d80d3930b53eea5cef',1,'opcode.h']]],
   ['delete_5fkind',['Delete_kind',['../_python-ast_8h.html#a3f8747ef1343a8899c10bb4911deed50a739bdd27a09d3f7726a10e8e1dce2dc1',1,'Python-ast.h']]],
   ['delete_5fname',['DELETE_NAME',['../opcode_8h.html#aec4e5e2a3468d4ae6796dec13b35db21',1,'opcode.h']]],
+  ['delete_5fobjectvec',['delete_objectVec',['../classpy_object_vec_decorator.html#a41e48ce72a9cdaac8380e2e99224c5e2',1,'pyObjectVecDecorator']]],
   ['delete_5fslice',['DELETE_SLICE',['../opcode_8h.html#ab84ab99105389827632a954c9a212b32',1,'opcode.h']]],
   ['delete_5fsubscr',['DELETE_SUBSCR',['../opcode_8h.html#ab50699a1548c231f58a8585edddbba42',1,'opcode.h']]],
   ['deletebox',['deleteBox',['../classqtpd_1_1_canvas.html#a54ae5b1d5352bcce723481073db40647',1,'qtpd::Canvas']]],
