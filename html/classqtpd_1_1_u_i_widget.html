@@ -159,15 +159,16 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">deselect object  <a href="#a875105a332f8e2d048ba30c007beee75"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_widget.html#a27ccb385bf3da85c143be7be5f2fe39e">isSelected</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get object's selected flag  <a href="#a27ccb385bf3da85c143be7be5f2fe39e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_widget.html#a4c2836d55be879f18f567d46ed821d26">setEditModeRef</a> (<a class="el" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a">t_editMode</a> *canvasEditMode)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets pointer to edit mode flag in parent canvas  <a href="#a4c2836d55be879f18f567d46ed821d26"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a">t_editMode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_widget.html#a3a0256354ce9d9596ca8c60e4d6ed3e7">getEditModeRef</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get edit mode pointer - for inlets/outlets  <a href="#a3a0256354ce9d9596ca8c60e4d6ed3e7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_widget.html#ae3f14d066c1f700383322463be2b6f7f">setEditModeRef</a> (<a class="el" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a">t_editMode</a> *canvasEditMode)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets pointer to edit mode flag in parent canvas  <a href="#ae3f14d066c1f700383322463be2b6f7f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a">t_editMode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_widget.html#aaffc554176725fab43eda0f84d61be29">getEditModeRef</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get edit mode pointer - for inlets/outlets  <a href="#aaffc554176725fab43eda0f84d61be29"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a">t_editMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_widget.html#a634ea76429adff2e733353421a414ebc">getEditMode</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get edit mode flag value  <a href="#a634ea76429adff2e733353421a414ebc"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_widget.html#a8272ef0e8f451db7f13387526643169a">setScale</a> (float scale_)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">temporary. scale value for zoom  <a href="#a8272ef0e8f451db7f13387526643169a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_widget.html#abd4584522e6173f2fb09461f19fd8383">getScale</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_widget.html#adfd63358f8c5eedf7a234e63ab693f1d">setScale</a> (float newScale)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">temporary. scale value for zoom  <a href="#adfd63358f8c5eedf7a234e63ab693f1d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_widget.html#ac7137f5eddb1f155622c6f13e579320a">scale</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">temporary. scale value for zoom  <a href="#ac7137f5eddb1f155622c6f13e579320a"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QPoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_widget.html#a2d41a6273dedf638982292267e27ff37">dragOffset</a></td></tr>
@@ -201,7 +202,7 @@ Public Attributes</h2></td></tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_widget.html#a875105a332f8e2d048ba30c007beee75">qtpd::UIWidget::deselect</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -219,7 +220,7 @@ Public Attributes</h2></td></tr>
           <td class="memname"><a class="el" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a">t_editMode</a> <a class="el" href="classqtpd_1_1_u_i_widget.html#a634ea76429adff2e733353421a414ebc">qtpd::UIWidget::getEditMode</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -232,15 +233,15 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a3a0256354ce9d9596ca8c60e4d6ed3e7"></a><!-- doxytag: member="qtpd::UIWidget::getEditModeRef" ref="a3a0256354ce9d9596ca8c60e4d6ed3e7" args="()" -->
+<a class="anchor" id="aaffc554176725fab43eda0f84d61be29"></a><!-- doxytag: member="qtpd::UIWidget::getEditModeRef" ref="aaffc554176725fab43eda0f84d61be29" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a">t_editMode</a>* <a class="el" href="classqtpd_1_1_u_i_widget.html#a3a0256354ce9d9596ca8c60e4d6ed3e7">qtpd::UIWidget::getEditModeRef</a> </td>
+          <td class="memname"><a class="el" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a">t_editMode</a> * <a class="el" href="classqtpd_1_1_u_i_widget.html#aaffc554176725fab43eda0f84d61be29">qtpd::UIWidget::getEditModeRef</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -248,22 +249,6 @@ Public Attributes</h2></td></tr>
 
 <p>get edit mode pointer - for inlets/outlets </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="abd4584522e6173f2fb09461f19fd8383"></a><!-- doxytag: member="qtpd::UIWidget::getScale" ref="abd4584522e6173f2fb09461f19fd8383" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float <a class="el" href="classqtpd_1_1_u_i_widget.html#abd4584522e6173f2fb09461f19fd8383">qtpd::UIWidget::getScale</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
 
 </div>
 </div>
@@ -275,7 +260,7 @@ Public Attributes</h2></td></tr>
           <td class="memname"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a> <a class="el" href="classqtpd_1_1_u_i_widget.html#a27ccb385bf3da85c143be7be5f2fe39e">qtpd::UIWidget::isSelected</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -515,6 +500,24 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ac7137f5eddb1f155622c6f13e579320a"></a><!-- doxytag: member="qtpd::UIWidget::scale" ref="ac7137f5eddb1f155622c6f13e579320a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float <a class="el" href="classqtpd_1_1_u_i_widget.html#ac7137f5eddb1f155622c6f13e579320a">qtpd::UIWidget::scale</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>temporary. scale value for zoom </p>
+
+</div>
+</div>
 <a class="anchor" id="ac767f79e2d5a0b0ebb48ad1367d5bf1d"></a><!-- doxytag: member="qtpd::UIWidget::select" ref="ac767f79e2d5a0b0ebb48ad1367d5bf1d" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -523,7 +526,7 @@ Public Attributes</h2></td></tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_widget.html#ac767f79e2d5a0b0ebb48ad1367d5bf1d">qtpd::UIWidget::select</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -550,16 +553,16 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a4c2836d55be879f18f567d46ed821d26"></a><!-- doxytag: member="qtpd::UIWidget::setEditModeRef" ref="a4c2836d55be879f18f567d46ed821d26" args="(t_editMode *canvasEditMode)" -->
+<a class="anchor" id="ae3f14d066c1f700383322463be2b6f7f"></a><!-- doxytag: member="qtpd::UIWidget::setEditModeRef" ref="ae3f14d066c1f700383322463be2b6f7f" args="(t_editMode *canvasEditMode)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="classqtpd_1_1_u_i_widget.html#a4c2836d55be879f18f567d46ed821d26">qtpd::UIWidget::setEditModeRef</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_widget.html#ae3f14d066c1f700383322463be2b6f7f">qtpd::UIWidget::setEditModeRef</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a">t_editMode</a> *&#160;</td>
           <td class="paramname"><em>canvasEditMode</em></td><td>)</td>
-          <td><code> [inline, virtual]</code></td>
+          <td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -578,16 +581,16 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a8272ef0e8f451db7f13387526643169a"></a><!-- doxytag: member="qtpd::UIWidget::setScale" ref="a8272ef0e8f451db7f13387526643169a" args="(float scale_)" -->
+<a class="anchor" id="adfd63358f8c5eedf7a234e63ab693f1d"></a><!-- doxytag: member="qtpd::UIWidget::setScale" ref="adfd63358f8c5eedf7a234e63ab693f1d" args="(float newScale)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_widget.html#a8272ef0e8f451db7f13387526643169a">qtpd::UIWidget::setScale</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_widget.html#adfd63358f8c5eedf7a234e63ab693f1d">qtpd::UIWidget::setScale</a> </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>scale_</em></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td class="paramname"><em>newScale</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -639,7 +642,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Mar 18 2017 16:14:02 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 19 2017 12:13:19 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
