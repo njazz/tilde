@@ -12,14 +12,48 @@ UIWidget::UIWidget(QWidget* parent)
     this->editMode_ = 0;
 }
 
-//void UIWidget::s_MousePressed()
-//{}
-//void UIWidget::s_MouseReleased()
-//{}
-//void UIWidget::s_MouseEntered()
-//{}
-//void UIWidget::s_MouseLeaved()
-//{}
+//-------------------------------
+
+void UIWidget::select()
+{
+    this->selected_ = true;
+    this->repaint();
+}
+
+void UIWidget::deselect()
+{
+    this->selected_ = false;
+    this->repaint();
+}
+
+bool UIWidget::isSelected() { return this->selected_; }
+
+void UIWidget::setEditModeRef(t_editMode* canvasEditMode)
+{
+    this->editMode_ = canvasEditMode;
+}
+
+t_editMode* UIWidget::getEditModeRef()
+{
+    return this->editMode_;
+}
+
+t_editMode UIWidget::getEditMode()
+{
+    return (this->editMode_) ? (*this->editMode_) : em_Unlocked;
+}
+
+void UIWidget::setScale(float newScale)
+{
+    this->scale_ = newScale;
+}
+
+float UIWidget::scale()
+{
+    return this->scale_;
+}
+
+//--------------------------------------------
 
 void UIWidget::s_InMousePressed(UIWidget* obj, QMouseEvent* ev)
 {

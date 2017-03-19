@@ -41,64 +41,48 @@ public:
     ////
     /// \brief select object
     ///
-    void select()
-    {
-        this->selected_ = true;
-        this->repaint();
-    }
+    void select();
 
     ////
     /// \brief deselect object
     ///
-    void deselect()
-    {
-        this->selected_ = false;
-        this->repaint();
-    }
+    void deselect();
 
     ////
     /// \brief get object's selected flag
     /// \return
     ///
-    bool isSelected() { return this->selected_; }
+    bool isSelected();
 
     ////
     /// \brief sets pointer to edit mode flag in parent canvas
     /// \details this is set by "constructor" (createObj etc) in canvas
     /// \param canvasEditMode
     ///
-    virtual void setEditModeRef(t_editMode* canvasEditMode)
-    {
-        this->editMode_ = canvasEditMode;
-    }
+    virtual void setEditModeRef(t_editMode* canvasEditMode);
 
     ////
     /// \brief get edit mode pointer - for inlets/outlets
     /// \return
     ///
-    t_editMode* getEditModeRef()
-    {
-        return this->editMode_;
-    }
+    t_editMode* getEditModeRef();
 
     ////
     /// \brief get edit mode flag value
     /// \return
     ///
-    t_editMode getEditMode()
-    {
-        return (this->editMode_) ? (*this->editMode_) : em_Unlocked;
-    }
+    t_editMode getEditMode();
 
     ////
     /// \brief temporary. scale value for zoom
     /// \param scale_
     ///
-    void setScale(float newScale)
-    {
-        this->scale_ = newScale;
-    }
-    float scale() { return this->scale_; }
+    void setScale(float newScale);
+
+    ////
+    /// \brief temporary. scale value for zoom
+    ///
+    float scale();
 
 signals:
 

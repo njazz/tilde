@@ -117,7 +117,8 @@ HEADERS  += \
 
 FORMS    += \
     window/cm_basewindow.ui \
-    window/cm_pdwindow.ui
+    window/cm_pdwindow.ui \
+    canvasmenu.ui
 
 LIBS += "../qtpd_lib/libqtpd.a"
 LIBS += "/usr/local/lib/libportaudio.dylib"

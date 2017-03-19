@@ -14,6 +14,7 @@
 
 #include <QMainWindow>
 #include <QObject>
+#include <QMenu>
 
 namespace qtpd {
 
@@ -38,7 +39,7 @@ private:
 
     bool errorBox_;
 
-    t_objectSize objectSizeMode;
+    t_objectSize objectSizeMode_;
 
     int minimumBoxWidth_;
     int minimumBoxHeight_;
@@ -48,6 +49,8 @@ private:
     PropertyList properties_;
 
     QMainWindow* SubpatchWindow_;
+
+    QMenu popupMenu_;
 
 public:
     //cm_object();
@@ -59,23 +62,9 @@ public:
     ////
     /// \brief init properties for the class - called from constructor
     ///
-    virtual void initProperties()
-    {
-        this->properties()->create("Size", "Box", "0.1", this->size());
-        this->properties()->create("Position", "Box", "0.1", this->pos());
-        this->properties()->create("FontSize", "Box", "0.1", 11.);
+    virtual void initProperties();
 
-        this->properties()->create("PresetName", "Preset", "0.1", gensym(""));
-        this->properties()->create("SendSymbol", "Preset", "0.1", gensym(""));
-        this->properties()->create("ReceiveSymbol", "Preset", "0.1", gensym(""));
-
-        this->properties()->create("BorderColor", "Color", "0.1", QColor(224, 224, 224, 255));
-    }
-
-    PropertyList* properties()
-    {
-        return &this->properties_;
-    }
+    PropertyList* properties();
 
     ////
     /// \brief sets inlet position (cm_port)
@@ -85,21 +74,7 @@ public:
     ///
     ///
 
-    void setInletsPos()
-    {
-        float w = this->width() - 10;
-        //w = (w < 40) ? 40 : w;
-
-        float s = (inlets_->size() < 2) ? inlets_->size() : (inlets_->size() - 1);
-
-        for (int i = 0; i < (int)inlets_->size(); i++) {
-            float x = (w) / s * (float)i;
-            float y = 0;
-
-            inlets_->at(i)->move(x, y);
-            inlets_->at(i)->repaint();
-        }
-    }
+    void setInletsPos();
 
     ////
     /// \brief sets outlet position (cm_port)
@@ -108,21 +83,7 @@ public:
     /// \return
     ///
     ///
-    void setOutletsPos()
-    {
-        float w = this->width() - 10;
-        //w = (w < 40) ? 40 : w;
-
-        float s = (outlets_->size() < 2) ? outlets_->size() : (outlets_->size() - 1);
-
-        for (int i = 0; i < (int)outlets_->size(); i++) {
-            float x = (w) / s * (float)i;
-            float y = this->height() - 3;
-
-            outlets_->at(i)->move(x, y);
-            outlets_->at(i)->repaint();
-        }
-    }
+    void setOutletsPos();
 
     ////
     /// \brief adds single inlet (cm_port)
@@ -131,35 +92,9 @@ public:
     /// \return
     ///
     ///
-    virtual void addInlet()
-    {
-        int _portClass_;
+    virtual void addInlet();
 
-        if (this->pdObject_) {
-            _portClass_ = cmp_get_inlet_type((t_object*)this->pdObject_, inlets_->size());
-        } else
-            _portClass_ = 0;
-
-        addInlet(_portClass_);
-    }
-
-    virtual void addInlet(int _portClass_)
-    {
-        Port* new_in = new Port(this);
-        new_in->portType = portInlet;
-        new_in->portIndex = inlets_->size();
-        new_in->portClass = _portClass_;
-        new_in->setEditModeRef(this->getEditModeRef());
-
-        inlets_->push_back(new_in);
-
-        connect(new_in, &Port::mousePressed, static_cast<UIWidget*>(this->parent()), &UIWidget::s_InMousePressed);
-        connect(new_in, &Port::mouseReleased, static_cast<UIWidget*>(this->parent()), &UIWidget::s_InMouseReleased);
-
-        new_in->show();
-
-        this->setInletsPos();
-    }
+    virtual void addInlet(int _portClass_);
 
     ////
     /// \brief adds single outlet (cm_port)
@@ -167,48 +102,16 @@ public:
     /// \return
     ///
 
-    virtual void addOutlet()
-    {
-        int _portClass_;
+    virtual void addOutlet();
 
-        if (this->pdObject_) {
-            _portClass_ = cmp_get_outlet_type((t_object*)this->pdObject_, outlets_->size());
-        } else
-            _portClass_ = 0;
-
-        addOutlet(_portClass_);
-    }
-
-    virtual void addOutlet(int _portClass_)
-    {
-        Port* new_out = new Port(this);
-        new_out->portType = portOutlet;
-        new_out->portIndex = outlets_->size();
-        new_out->portClass = _portClass_;
-        new_out->setEditModeRef(this->getEditModeRef());
-
-        outlets_->push_back(new_out);
-        connect(new_out, &Port::mousePressed, static_cast<UIWidget*>(this->parent()), &UIWidget::s_OutMousePressed);
-        connect(new_out, &Port::mouseReleased, static_cast<UIWidget*>(this->parent()), &UIWidget::s_OutMouseReleased);
-
-        new_out->show();
-
-        this->setOutletsPos();
-    }
-
+    virtual void addOutlet(int _portClass_);
     ////
     /// \brief gets inlet (cm_port) at specified index
     /// \param idx
     /// \return
     ///
 
-    Port* inletAt(int idx)
-    {
-        if (idx < ((int)this->inlets_->size()))
-            return this->inlets_->at(idx);
-        else
-            return 0;
-    }
+    Port* inletAt(int idx);
 
     ////
     /// \brief gets outlet (cm_port) at specified index
@@ -216,57 +119,33 @@ public:
     /// \return
     ///
 
-    Port* outletAt(int idx)
-    {
-        if (idx < ((int)this->outlets_->size()))
-            return this->outlets_->at(idx);
-        else
-            return 0;
-    }
+    Port* outletAt(int idx);
 
     ////
     /// \brief returns 1 if signal~
     /// \param idx
     /// \return
     ///
-    int pdInletType(int idx)
-    {
-        if ((t_object*)this->pdObject_)
-            return cmp_get_inlet_type((t_object*)this->pdObject_, idx);
-        else
-            return 0;
-    }
+    int pdInletType(int idx);
 
     ////
     /// \brief inlet count
     /// \return
     ///
-    int inletCount()
-    {
-        return inlets_->size();
-    }
+    int inletCount();
 
     ////
     /// \brief for pd object outlet: returns 1 if signal~
     /// \param idx
     /// \return
     ///
-    int pdOutletType(int idx)
-    {
-        if ((t_object*)this->pdObject_)
-            return cmp_get_outlet_type((t_object*)this->pdObject_, idx);
-        else
-            return 0;
-    }
+    int pdOutletType(int idx);
 
     ////
     /// \brief outlet count
     /// \return
     ///
-    int outletCount()
-    {
-        return outlets_->size();
-    }
+    int outletCount();
 
     ////////
 
@@ -275,195 +154,109 @@ public:
     /// \return
     ///
 
-    virtual void setObjectData(std::string objData)
-    {
-        this->objectData_ = objData;
-    }
+    virtual void setObjectData(std::string objData);
 
     ////
     /// \brief call this after setting object data
     ///
-    virtual void autoResize()
-    {
-        QFont myFont(PREF_QSTRING("Font"), 11);
-        QFontMetrics fm(myFont);
-
-        this->setFixedWidth((int)fm.width(QString(this->objectData_.c_str())) + 5);
-        if (this->width() < this->minimumBoxWidth())
-            this->setFixedWidth(this->minimumBoxWidth());
-    }
+    virtual void autoResize();
 
     ////
     /// \brief gets object text data /usually overriden by ui objects/
     /// \return
     ///
-    std::string objectData()
-    {
-        return this->objectData_;
-    }
+    std::string objectData();
 
     ////
     /// \brief returns pointer to pd object.
     /// \details gui-only objects can ovverride it with function that returns 0
     /// \return
     ///
-    virtual void* pdObject() { return this->pdObject_; }
+    virtual void* pdObject() ;
 
     ////
     /// \brief sets pointer to pd object
     /// \details overriden by ui objects to be able to connect to pd objects
     /// \param obj
     ///
-    virtual void setPdObject(void* obj) { this->pdObject_ = obj; }
+    virtual void setPdObject(void* obj) ;
 
     ////
     /// \brief returns true if object doesn't exist
     /// \details
     /// \return
     ///
-    bool errorBox() { return this->errorBox_; }
+    bool errorBox() ;
 
     ////
     /// \brief sets object box error flag
     /// \param val
     ///
-    void setErrorBox(bool val) { this->errorBox_ = val; }
+    void setErrorBox(bool val) ;
 
     ////
     /// \brief returns object's text for client-based file saving
     /// \return
     ///
-    virtual std::string asPdFileString()
-    {
-        std::string ret;
+    virtual std::string asPdFileString();
 
-        ret = "#X obj ";
-        ret += std::to_string(this->x()) + " " + std::to_string(this->y()) + " ";
-        ret += this->pdObjectName_ + " " + this->objectData_ + this->properties_.asPdFileString();
-
-        return ret;
-    }
-
-    void setPdObjectName(std::string name)
-    {
-        pdObjectName_ = name;
-    }
+    void setPdObjectName(std::string name);
 
     ////
     /// \brief temporary - remove later
     /// \details nonzero pointer for different drawing
     ///
-    QMainWindow* subpatchWindow() { return SubpatchWindow_; }
-    void setSubpatchWindow(QMainWindow* cwindow) { SubpatchWindow_ = cwindow; }
+    QMainWindow* subpatchWindow() ;
+    void setSubpatchWindow(QMainWindow* cwindow) ;
 
     ////
     /// \brief sets pointer to edit mode flag value in parent canvas
     /// \param canvasEditMode
     ///
-    void setEditModeRef(t_editMode* canvasEditMode)
-    {
-        UIWidget::setEditModeRef(canvasEditMode);
-
-        // todo
-        for (int i = 0; i < this->inlets_->size(); i++) {
-            this->inletAt(i)->setEditModeRef(canvasEditMode);
-        }
-
-        for (int i = 0; i < this->outlets_->size(); i++) {
-            this->outletAt(i)->setEditModeRef(canvasEditMode);
-        }
-    }
+    void setEditModeRef(t_editMode* canvasEditMode);
 
     //////////
 
-    void resizeEvent(QResizeEvent* event)
-    {
+    void resizeEvent(QResizeEvent* event);
 
-        this->sizeBox->move(this->width() - 7, this->height() - 7);
+    void enterEvent(QEvent*);
 
-        //todo fixed width
-        if (this->width() < this->minimumBoxWidth())
-            this->setFixedWidth(this->minimumBoxWidth());
-        if (this->height() < this->minimumBoxHeight())
-            this->setFixedHeight(this->minimumBoxHeight());
+    void leaveEvent(QEvent*);
 
-        this->setInletsPos();
-        this->setOutletsPos();
-    }
-
-    void enterEvent(QEvent*)
-    {
-        if (this->getEditMode() == em_Unlocked)
-            this->sizeBox->show();
-    }
-
-    void leaveEvent(QEvent*)
-    {
-        if (this->getEditMode() == em_Unlocked)
-            this->sizeBox->hide();
-    };
+    // ------------------------
 
     ////
     /// \brief set secondary 'minimum width' value - used for object box resize
     /// \param w
     ///
-    void setMinimumBoxWidth(int w)
-    {
-        this->minimumBoxWidth_ = w;
-    }
+    void setMinimumBoxWidth(int w);
 
     ////
     /// \brief set secondary 'minimum height' value - used for object box resize
     /// \param w
     ///
-    void setMinimumBoxHeight(int h)
-    {
-        this->minimumBoxHeight_ = h;
-    }
+    void setMinimumBoxHeight(int h);
 
     ////
     /// \brief get secondary 'minimum width' value - used for object box resize
     /// \param w
     ///
-    int minimumBoxWidth()
-    {
-        return this->minimumBoxWidth_;
-    }
+    int minimumBoxWidth();
 
     ////
     /// \brief get secondary 'minimum height' value - used for object box resize
     /// \param w
     ///
-    int minimumBoxHeight()
-    {
-        return this->minimumBoxHeight_;
-    }
+    int minimumBoxHeight();
 
     // ??
-    void hide()
-    {
+    void hide();
 
-        if (this->subpatchWindow()) {
-            qDebug("hide subcanvas window");
+    void hideSizeBox();
 
-            this->subpatchWindow()->hide();
-            delete this->SubpatchWindow_;
-        }
-    }
+    void contextMenuEvent();
 
-    void hideSizeBox()
-    {
-        sizeBox->hide();
-    }
 
-    //    virtual ~UIObject()
-    //    {
-    //        if (this->subpatchWindow())
-    //        {
-    //            this->subpatchWindow()->hide();
-    //            delete this->SubpatchWindow_;
-    //        }
-    //    }
 
 signals:
     void editObject(void* box);
