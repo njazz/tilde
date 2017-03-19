@@ -50,7 +50,8 @@ SOURCES += main.cpp\
     properties/cm_property.cpp \
     properties/cm_propertylist.cpp \
     python/PythonQtScriptingConsole.cpp \
-    objects/cmo_script.cpp
+    objects/cmo_script.cpp \
+    cm_objectloader.cpp
 
 
 HEADERS  += \

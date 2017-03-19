@@ -48,74 +48,20 @@ public:
     ObjectLoader(ObjectLoader const&) = delete;
     void operator=(ObjectLoader const&) = delete;
 
-    void loadObjects()
-    {
-        //temporary
-        this->addUIobject("ui.obj", &UIBox::createObject);
-        this->addUIobject("ui.msg", &UIMessage::createObject);
-        this->addUIobject("ui.float", &UIFloat::createObject);
-        this->addUIobject("ui.text", &UIText::createObject);
+    void loadObjects();
 
-        this->addUIobject("ui.bang", &UIBang::createObject);
-        this->addUIobject("ui.toggle", &UIToggle::createObject);
+    void addUIobject(std::string name, cmObjectConstructor constructor);
 
-        this->addUIobject("ui.script", &UIScript::createObject);
+    std::vector<std::string> getUINames();
 
-        //TODO compatibility
-        //this->addUIobject("msg", &cmo_msg::createObject);
-        //this->addUIobject("floatatom", &cmo_msg::createObject);
-        //this->addUIobject("symbolatom", &cmo_msg::createObject);
-    }
+    std::vector<std::string> getPDNames();
 
-    void addUIobject(std::string name, cmObjectConstructor constructor)
-    {
-        names_.push_back(name);
-        objectConstructors_[name] = constructor;
-    }
-
-    std::vector<std::string> getUINames()
-    {
-        return this->names_;
-    }
-
-    std::vector<std::string> getPDNames()
-    {
-        return this->pdNames_;
-    }
-
-    bool hasUI(std::string objName)
-    {
-        return std::find(names_.begin(), names_.end(), objName) != names_.end();
-    }
+    bool hasUI(std::string objName);
 
     // todo remove?
-    cmObjectConstructor getConstructorFor(std::string objName)
-    {
-        if (this->hasUI(objName)) {
-            return objectConstructors_[objName];
-        }
+    cmObjectConstructor getConstructorFor(std::string objName);
 
-        return objectConstructors_["ui.obj"];
-    }
-
-    UIObject* createObject(std::string objName, std::string objectData, t_canvas* pdCanvas, UIWidget* parent)
-    {
-        //        if (objName == "ui.obj")
-        //        {
-        //            objectData = objName + " " + objectData;
-
-        //            return UIBox::createObject(objectData, pdCanvas,  parent);
-        //        }
-        //        else
-        {
-            cmObjectConstructor cmc = this->getConstructorFor(objName);
-
-            if (cmc == getConstructorFor("ui.obj"))
-                objectData = objName + " " + objectData;
-
-            return cmc(objectData, pdCanvas, parent);
-        }
-    }
+    UIObject* createObject(std::string objName, std::string objectData, t_canvas* pdCanvas, UIWidget* parent);
 };
 }
 
