@@ -73,6 +73,18 @@ public Q_SLOTS:
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
+class pyObjectVecDecorator : public QObject {
+    Q_OBJECT
+
+public Q_SLOTS:
+
+    objectVec* new_objectVec() { return new objectVec; }
+    void delete_objectVec(objectVec *obj) {delete obj;}
+
+};
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
 class pyCanvasDecorator : public QObject {
     Q_OBJECT
 
@@ -172,7 +184,6 @@ public Q_SLOTS:
         return c->canvasAsPdStrings();
     }
 
-
     // test
     void scale(Canvas* c, float scale)
     {
@@ -249,8 +260,7 @@ public Q_SLOTS:
         AtomList list = cmp_get_loaded_list();
         QStringList ret;
 
-        for (int i=0;i<list.size();i++)
-        {
+        for (int i = 0; i < list.size(); i++) {
             ret += list.at(i).asString().c_str();
         }
 

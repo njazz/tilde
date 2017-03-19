@@ -23,6 +23,8 @@ void pyWrappersInit()
     PythonQt::self()->addDecorators(new pyCanvasDecorator());
     PythonQt::self()->addDecorators(new pyUIObjectDecorator());
     PythonQt::self()->addDecorators(new pyPropertyListDecorator());
+    PythonQt::self()->addDecorators(new pyObjectVecDecorator());
+    PythonQt::self()->registerCPPClass("objectVec");
 }
 
 #endif // PY_WRAPERS_H
