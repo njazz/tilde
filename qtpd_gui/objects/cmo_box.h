@@ -90,6 +90,7 @@ public:
     {
         QPainter p(this);
         p.setRenderHint(QPainter::HighQualityAntialiasing, true);
+        p.scale(this->scale(), this->scale());
 
         //remove this later
         if (this->subpatchWindow()) {

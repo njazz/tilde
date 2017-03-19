@@ -31,7 +31,7 @@ private:
 
     t_editMode* editMode_;
 
-    float scale;
+    float scale_;
 
 public:
     QPoint dragOffset;
@@ -94,11 +94,11 @@ public:
     /// \brief temporary. scale value for zoom
     /// \param scale_
     ///
-    void setScale(float scale_)
+    void setScale(float newScale)
     {
-        this->scale = scale_;
+        this->scale_ = newScale;
     }
-    float getScale() { return this->scale; }
+    float scale() { return this->scale_; }
 
 signals:
 

@@ -13,9 +13,18 @@ PatchWindow::PatchWindow()
 
     this->canvas = new Canvas((UIObject*)this->scroll);
 
+//    QGraphicsScene scene;
+//    QGraphicsProxyWidget *proxy = scene.addWidget(canvas);
+
+//    QGraphicsView view(&scene);
+
+//    proxy->setScale(3);
+
     scroll->setWidget(canvas);
 
-    this->setCentralWidget(this->scroll);
+    this->setCentralWidget(scroll);
+
+
 
     //TODO weird
     //this->objectMaker = new ObjectMaker((QLineEdit*)this->canvas);

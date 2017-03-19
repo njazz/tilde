@@ -200,6 +200,7 @@ public:
         //grid
         if (this->gridEnabled && (this->editMode != em_Locked)) {
             QPainter p(this);
+            p.scale(this->scale(), this->scale());
 
             p.setPen(QPen(QColor(224, 224, 224), 1, Qt::DotLine, Qt::SquareCap, Qt::BevelJoin));
             for (int x = 0; x < this->width(); x += this->gridStep) {

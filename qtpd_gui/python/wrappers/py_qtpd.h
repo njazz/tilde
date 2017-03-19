@@ -44,6 +44,12 @@ public Q_SLOTS:
         }
     }
 
+    // test
+    void scale(UIObject* obj, float scale)
+    {
+        obj->setScale(scale);
+    }
+
     ///////
 
     PropertyList* prop(UIObject* obj)
@@ -164,6 +170,13 @@ public Q_SLOTS:
     QStringList pdPatch(Canvas* c)
     {
         return c->canvasAsPdStrings();
+    }
+
+
+    // test
+    void scale(Canvas* c, float scale)
+    {
+        c->setScale(scale);
     }
 };
 
