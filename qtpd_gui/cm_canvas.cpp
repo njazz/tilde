@@ -168,9 +168,6 @@ void Canvas::s_MoveBox(UIWidget* box, QMouseEvent* event)
 
 //}
 
-
-
-
 //-----------------------------------------------------------------------
 
 Canvas* Canvas::newView(Canvas* srcCanvas, UIObject* parentCanvas, canvasDrawStyle dStyle)
@@ -219,18 +216,15 @@ void Canvas::addOutlet()
         last->hide();
 }
 
-
 void Canvas::setDrawStyle(canvasDrawStyle ds)
 {
     this->drawStyle_ = ds;
 }
 
-
 canvasDrawStyle Canvas::drawStyle()
 {
     return this->drawStyle_;
 }
-
 
 void Canvas::paintEvent(QPaintEvent*)
 {
@@ -239,7 +233,6 @@ void Canvas::paintEvent(QPaintEvent*)
     if (this->drawStyle_ == ds_Box)
         this->drawObjectBox();
 }
-
 
 void Canvas::drawCanvas()
 {
@@ -273,7 +266,6 @@ void Canvas::drawCanvas()
     this->paintPatchcords();
 }
 
-
 void Canvas::drawObjectBox()
 {
     QPainter p(this);
@@ -299,7 +291,6 @@ void Canvas::drawObjectBox()
         p.drawRect(0, 0, this->width(), this->height());
     }
 }
-
 
 void Canvas::paintPatchcords()
 {
@@ -356,7 +347,6 @@ void Canvas::paintPatchcords()
     }
 }
 
-
 bool Canvas::hoverPatchcords(QPoint pos)
 {
     bool ret = false;
@@ -368,7 +358,6 @@ bool Canvas::hoverPatchcords(QPoint pos)
     return ret;
 }
 
-
 void Canvas::hoverPatchcordsOff()
 {
     //bool ret = false;
@@ -376,7 +365,6 @@ void Canvas::hoverPatchcordsOff()
         ((Patchcord*)this->data_.patchcords_.at(i))->mouseover = false; // ((cm_patchcord*)this->data_.patchcords.at(i))->hover(pos);
     }
 }
-
 
 bool Canvas::clickPatchcords(QPoint pos)
 {
@@ -389,7 +377,6 @@ bool Canvas::clickPatchcords(QPoint pos)
     return ret;
 }
 
-
 void Canvas::mouseMoveEvent(QMouseEvent* ev)
 {
     if (this->drawStyle() == ds_Canvas)
@@ -398,7 +385,6 @@ void Canvas::mouseMoveEvent(QMouseEvent* ev)
         this->mouseMoveEventForBox(ev);
 }
 
-
 void Canvas::mousePressEvent(QMouseEvent* ev)
 {
     if (this->drawStyle() == ds_Canvas)
@@ -406,7 +392,6 @@ void Canvas::mousePressEvent(QMouseEvent* ev)
     if (this->drawStyle() == ds_Box)
         this->mousePressEventForBox(ev);
 }
-
 
 void Canvas::mouseReleaseEvent(QMouseEvent* ev)
 {
@@ -417,7 +402,6 @@ void Canvas::mouseReleaseEvent(QMouseEvent* ev)
 }
 
 /////////
-
 
 void Canvas::mouseMoveEventForCanvas(QMouseEvent* ev)
 {
@@ -479,7 +463,6 @@ void Canvas::mouseMoveEventForCanvas(QMouseEvent* ev)
         this->clickPatchcords(QPoint(-1, -1));
 }
 
-
 void Canvas::mousePressEventForCanvas(QMouseEvent* ev)
 {
 
@@ -503,7 +486,6 @@ void Canvas::mousePressEventForCanvas(QMouseEvent* ev)
     }
 }
 
-
 void Canvas::mouseReleaseEventForCanvas(QMouseEvent*)
 {
     this->dragObject = 0;
@@ -515,7 +497,6 @@ void Canvas::mouseReleaseEventForCanvas(QMouseEvent*)
 }
 
 /////////
-
 
 void Canvas::mousePressEventForBox(QMouseEvent* ev)
 {
@@ -537,12 +518,10 @@ void Canvas::mousePressEventForBox(QMouseEvent* ev)
     this->dragOffset = ev->pos();
 }
 
-
 void Canvas::mouseReleaseEventForBox(QMouseEvent*)
 {
     this->repaint();
 }
-
 
 void Canvas::mouseMoveEventForBox(QMouseEvent* event)
 {
@@ -559,7 +538,6 @@ void Canvas::mouseMoveEventForBox(QMouseEvent* event)
 }
 
 /////////
-
 
 void Canvas::deselectBoxes()
 {
@@ -628,7 +606,6 @@ UIBox* Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas* 
     return box;
 }
 
-
 UIObject* Canvas::createObject(std::string uiObjectName, std::string objectData1, QPoint pos)
 {
 
@@ -696,7 +673,6 @@ UIObject* Canvas::createObject(std::string uiObjectName, std::string objectData1
     return obj;
 }
 
-
 UIObject* Canvas::createBoxForCanvas(Canvas* newCanvas, std::string objectData, QPoint pos)
 {
 
@@ -727,7 +703,6 @@ UIObject* Canvas::createBoxForCanvas(Canvas* newCanvas, std::string objectData, 
     return obj;
 }
 
-
 void Canvas::patchcord(UIObject* obj1, int outlet, UIObject* obj2, int inlet)
 {
     if (obj1->pdObject() && obj2->pdObject()) {
@@ -753,7 +728,6 @@ void Canvas::patchcord(UIObject* obj1, int outlet, UIObject* obj2, int inlet)
         qDebug("canvas patchcord error");
 }
 
-
 void Canvas::patchcord(UIObject* obj1, UIWidget* outport, UIObject* obj2, UIWidget* inport)
 {
 
@@ -762,7 +736,6 @@ void Canvas::patchcord(UIObject* obj1, UIWidget* outport, UIObject* obj2, UIWidg
     int n1 = ((Port*)outport)->portIndex;
     int n2 = ((Port*)inport)->portIndex;
     this->patchcord(obj1, n1, obj2, n2);
-
 }
 
 //    ////unused?
@@ -777,7 +750,6 @@ void Canvas::patchcord(UIObject* obj1, UIWidget* outport, UIObject* obj2, UIWidg
 
 //    }
 
-
 void Canvas::deletePatchcordsFor(UIWidget* obj)
 {
     //for //(int i=0;i<this->data_.patchcords.size();i++)
@@ -791,8 +763,6 @@ void Canvas::deletePatchcordsFor(UIWidget* obj)
 
     this->repaint();
 }
-
-
 
 ////
 /// \brief delete single box
@@ -874,8 +844,6 @@ void Canvas::delSelectedPatchcords()
     this->repaint();
 }
 
-
-
 void Canvas::setEditMode(t_editMode mode)
 {
     this->editMode = mode;
@@ -891,9 +859,7 @@ void Canvas::setEditMode(t_editMode mode)
     this->repaint();
 }
 
-
 t_editMode Canvas::getEditMode() { return this->editMode; }
-
 
 UIObject* Canvas::getObjectByIndex(int idx)
 {
@@ -904,7 +870,6 @@ UIObject* Canvas::getObjectByIndex(int idx)
         return 0;
     }
 }
-
 
 void Canvas::setObjectData(std::string objData)
 {
@@ -925,42 +890,35 @@ void Canvas::setObjectData(std::string objData)
     }
 }
 
-
 void Canvas::setGridEnabled(bool val)
 {
     this->gridEnabled = val;
 }
-
 
 void Canvas::setGridSnap(bool val)
 {
     this->gridSnap = val;
 }
 
-
 objectVec Canvas::objectBoxes()
 {
     return this->data_.boxes_;
 }
-
 
 patchcordVec Canvas::patchcords()
 {
     return this->data_.patchcords_;
 }
 
-
 objectVec Canvas::selectedObjectBoxes()
 {
     return this->selectionData_.boxes_;
 }
 
-
 patchcordVec Canvas::selectedPatchcords()
 {
     return this->selectionData_.patchcords_;
 }
-
 
 patchcordVec Canvas::patchcordsForObject(UIObject* obj)
 {
@@ -978,8 +936,6 @@ patchcordVec Canvas::patchcordsForObject(UIObject* obj)
     return ret;
 }
 
-
-
 int Canvas::findObjectIndex(UIObject* obj)
 {
     //UIObject* obj1;
@@ -991,13 +947,10 @@ int Canvas::findObjectIndex(UIObject* obj)
     return -1;
 }
 
-
 void Canvas::setSubcanvas(UIObject* obj) { Subcanvas_ = obj; }
-
 
 //lol
 //QStringList canvasAsPdStrings();
-
 
 std::string Canvas::asPdFileString()
 {
@@ -1039,7 +992,6 @@ std::string Canvas::asPdFileString()
     return "";
 }
 
-
 std::string Canvas::patchcordAsPdFileString(Patchcord* pcord)
 {
     //TODO
@@ -1063,7 +1015,6 @@ std::string Canvas::patchcordAsPdFileString(Patchcord* pcord)
 
     return "";
 }
-
 
 structPatchcordNumbers Canvas::patchcordAsNumbers(Patchcord* pcord)
 {
@@ -1094,13 +1045,11 @@ structPatchcordNumbers Canvas::patchcordAsNumbers(Patchcord* pcord)
     return ret;
 }
 
-
 void Canvas::selectObject(UIObject* obj)
 {
     obj->select();
     selectionData_.boxes_.push_back(obj);
 }
-
 
 void Canvas::selectAll()
 {
@@ -1113,11 +1062,9 @@ void Canvas::selectAll()
     //selectionData_.patchcords_ = data_.patchcords_;
 }
 
-
 void Canvas::resizeToObjects()
 {
 }
-
 
 QStringList Canvas::canvasAsPdStrings()
 {
@@ -1164,21 +1111,16 @@ QStringList Canvas::canvasAsPdStrings()
     return ret;
 }
 
-
-
-
 void Canvas::cancelPatchcord()
 {
     this->newLine.active = false;
     this->repaint();
 }
 
-
 ObjectMaker* Canvas::objectMaker()
 {
     return objectMaker_;
 }
-
 
 void Canvas::portLocalCountUpdated()
 {
@@ -1219,12 +1161,10 @@ void Canvas::portLocalCountUpdated()
     }
 };
 
-
 void Canvas::setReplaceObject(UIObject* obj)
 {
     replaceObject_ = obj;
 }
-
 
 UIObject* Canvas::replaceObject()
 {
@@ -1242,7 +1182,6 @@ void Canvas::showNewObjectMaker()
     objectMaker()->setText(QString(""));
     objectMaker()->show();
 }
-
 
 void Canvas::portCountUpdated()
 {
@@ -1274,7 +1213,6 @@ void Canvas::portCountUpdated()
     }
 };
 
-
 void Canvas::objectStartsEdit(void* obj)
 {
     deselectBoxes();
@@ -1291,6 +1229,4 @@ void Canvas::objectStartsEdit(void* obj)
     objectMaker()->show();
     objectMaker()->raise();
 }
-
-
 }

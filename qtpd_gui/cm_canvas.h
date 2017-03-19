@@ -112,89 +112,76 @@ public:
 
     void addInlet();
 
-    void addOutlet()
-    ;
+    void addOutlet();
 
     ////
     /// \brief set draw style
     /// \param ds
     ///
-    void setDrawStyle(canvasDrawStyle ds)
-    ;
+    void setDrawStyle(canvasDrawStyle ds);
 
     ////
     /// \brief get draw style
     /// \param ds
     ///
-    canvasDrawStyle drawStyle()
-    ;
+    canvasDrawStyle drawStyle();
 
     ////
     /// \brief main paint routine
     ///
-    void paintEvent(QPaintEvent*)
-    ;
+    void paintEvent(QPaintEvent*);
 
     ////
     /// \brief draws canvas contents
     ///
-    void drawCanvas()
-    ;
+    void drawCanvas();
 
     ////
     /// \brief draw object box for the canvas
     ///
-    void drawObjectBox()
-    ;
+    void drawObjectBox();
 
     ////
     /// \brief paint patchcords
     ///
-    void paintPatchcords()
-    ;
+    void paintPatchcords();
 
     ////
     /// \brief changes patchcords color when mouse is over
     /// \param pos
     /// \return true if mouse is over any of the patchcords
     ///
-    bool hoverPatchcords(QPoint pos)
-    ;
+    bool hoverPatchcords(QPoint pos);
 
     ////
     /// \brief resets all patchcords hover color flag
     ///
-    void hoverPatchcordsOff()
-    ;
+    void hoverPatchcordsOff();
 
     ////
     /// \brief marks clicked patchcord
     /// \param pos
     /// \return true if there was a patchcord
     ///
-    bool clickPatchcords(QPoint pos)
-    ;
+    bool clickPatchcords(QPoint pos);
 
     ////
     /// \brief route mouse move handling for different vis types
     /// \param ev
     ///
-    void mouseMoveEvent(QMouseEvent* ev)
-    ;
+    void mouseMoveEvent(QMouseEvent* ev);
 
     ////
     /// \brief route mouse press handling for different vis types
     /// \param ev
     ///
-    void mousePressEvent(QMouseEvent* ev)
-    ;
+    void mousePressEvent(QMouseEvent* ev);
 
     ////
     /// \brief route mouse release handling for different vis types
     /// \param ev
     ///
-    void mouseReleaseEvent(QMouseEvent* ev)
-    ;
+    void mouseReleaseEvent(QMouseEvent* ev);
 
     /////////
 
@@ -202,21 +189,18 @@ public:
     /// \brief mouse move handling
     /// \param ev
     ///
-    void mouseMoveEventForCanvas(QMouseEvent* ev)
-    ;
+    void mouseMoveEventForCanvas(QMouseEvent* ev);
 
     ////
     /// \brief mouse down handling for Canvas
     /// \param ev
     ///
-    void mousePressEventForCanvas(QMouseEvent* ev)
-    ;
+    void mousePressEventForCanvas(QMouseEvent* ev);
 
     ////
     /// \brief mouse up handling
     ///
-    void mouseReleaseEventForCanvas(QMouseEvent*)
-    ;
+    void mouseReleaseEventForCanvas(QMouseEvent*);
 
     /////////
 
@@ -224,29 +208,25 @@ public:
     /// \brief mouse down ForBox
     /// \param ev
     ///
-    void mousePressEventForBox(QMouseEvent* ev)
-    ;
+    void mousePressEventForBox(QMouseEvent* ev);
 
     ////
     /// \brief mouse up ForBox
     ///
-    void mouseReleaseEventForBox(QMouseEvent*)
-    ;
+    void mouseReleaseEventForBox(QMouseEvent*);
 
     ////
     /// \brief mouse move ForBox
     /// \param event
     ///
-    void mouseMoveEventForBox(QMouseEvent* event)
-    ;
+    void mouseMoveEventForBox(QMouseEvent* event);
 
     /////////
 
     ////
     /// \brief deselect all object boxes
     ///
-    void deselectBoxes()
-    ;
+    void deselectBoxes();
 
     ////
     /// \brief restore "pd" object when loading from file
@@ -257,10 +237,7 @@ public:
     /// \return
     ///
 
-    UIBox* restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas* canvas)
-    ;
-
-
+    UIBox* restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas* canvas);
 
     ////
     /// \brief prototype for universal object 'constructor'
@@ -268,8 +245,7 @@ public:
     /// \param pos
     /// \return
     ///
-    UIObject* createObject(std::string uiObjectName, std::string objectData1, QPoint pos)
-    ;
+    UIObject* createObject(std::string uiObjectName, std::string objectData1, QPoint pos);
 
     ////
     /// \brief TODO check. creates object box for subcanvas
@@ -278,10 +254,7 @@ public:
     /// \param pos
     /// \return
     ///
-    UIObject* createBoxForCanvas(Canvas* newCanvas, std::string objectData, QPoint pos)
-    ;
-
-
+    UIObject* createBoxForCanvas(Canvas* newCanvas, std::string objectData, QPoint pos);
 
     ////
     /// \brief creates patchcord
@@ -290,8 +263,7 @@ public:
     /// \param obj2
     /// \param inlet
     ///
-    void patchcord(UIObject* obj1, int outlet, UIObject* obj2, int inlet)
-    ;
+    void patchcord(UIObject* obj1, int outlet, UIObject* obj2, int inlet);
 
     ////
     /// \brief creates patchcord, uses pointers to inlets/outlets. TODO temporary?
@@ -300,8 +272,7 @@ public:
     /// \param obj2
     /// \param inport
     ///
-    void patchcord(UIObject* obj1, UIWidget* outport, UIObject* obj2, UIWidget* inport)
-    ;
+    void patchcord(UIObject* obj1, UIWidget* outport, UIObject* obj2, UIWidget* inport);
 
     //    ////unused?
     //    void deletePatchcord(Patchcord* pc)
@@ -319,107 +290,91 @@ public:
     /// \brief delete all patchcords for object
     /// \param obj
     ///
-    void deletePatchcordsFor(UIWidget* obj)
-    ;
-
-
+    void deletePatchcordsFor(UIWidget* obj);
 
     ////
     /// \brief delete single box
     ///
-    void deleteBox(UIObject* box)
-    ;
+    void deleteBox(UIObject* box);
 
     ////
     /// \brief delete all selected object boxes
     ///
-    void delBoxes()
-    ;
+    void delBoxes();
 
     ////
     /// \brief delete all selected patchcords
     ///
-    void delSelectedPatchcords()
-    ;
+    void delSelectedPatchcords();
 
     ////
     /// \brief change edit mode flag
     /// \param mode
     ///
 
-    void setEditMode(t_editMode mode)
-    ;
+    void setEditMode(t_editMode mode);
 
     ////
     /// \brief get edit mode flag
     /// \return
     ///
-    t_editMode getEditMode() ;
+    t_editMode getEditMode();
 
     ////
     /// \brief returns object by index - this is needed by parser
     /// \param idx
     /// \return cm_widget pointer
     ///
-    UIObject* getObjectByIndex(int idx)
-    ;
+    UIObject* getObjectByIndex(int idx);
 
     ////
     /// \brief set object value - mostly for canvas as box
     /// \param objData
     ///
-    void setObjectData(std::string objData)
-    ;
+    void setObjectData(std::string objData);
 
     ////
     /// \brief set the show/hide grid flag
     /// \param val
     ///
-    void setGridEnabled(bool val)
-    ;
+    void setGridEnabled(bool val);
 
     ////
     /// \brief align to grid flag
     /// \param val
     ///
-    void setGridSnap(bool val)
-    ;
+    void setGridSnap(bool val);
 
     ////
     /// \brief returns vector of all object boxes - needed by filesaver
     /// \return
     ///
-    objectVec objectBoxes()
-    ;
+    objectVec objectBoxes();
 
     ////
     /// \brief returns vector of all patchcords - needed by filesaver
     /// \return
     ///
-    patchcordVec patchcords()
-    ;
+    patchcordVec patchcords();
 
     ////
     /// \brief returns vector of selected object boxes
     /// \return
     ///
-    objectVec selectedObjectBoxes()
-    ;
+    objectVec selectedObjectBoxes();
 
     ////
     /// \brief returns vector of selected patchcords
     /// \return
     ///
-    patchcordVec selectedPatchcords()
-    ;
+    patchcordVec selectedPatchcords();
 
     ////
     /// \brief returns patchcords that are connected to specific object
     /// \param obj
     /// \return
     ///
-    patchcordVec patchcordsForObject(UIObject* obj)
-    ;
+    patchcordVec patchcordsForObject(UIObject* obj);
 
     //    //
     //    / \brief converts object pointers to their numbers in canvas and returns pd string for filesaver
@@ -433,15 +388,14 @@ public:
     /// \param obj
     /// \return
     ///
-    int findObjectIndex(UIObject* obj)
-    ;
+    int findObjectIndex(UIObject* obj);
 
     ////
     /// \brief sets pointer to canvas object in subpatch
     /// \details todo: check/remove that: we have subpatchwindow too
     /// \param obj
     ///
-    void setSubcanvas(UIObject* obj) ;
+    void setSubcanvas(UIObject* obj);
     //UIObject* subcanvas(){return Subcanvas_;}
 
     //lol
@@ -451,8 +405,7 @@ public:
     /// \brief this returns "restore ..." for canvas as box or calls filesaver for canvas
     /// \return
     ///
-    virtual std::string asPdFileString()
-    ;
+    virtual std::string asPdFileString();
 
     ///////
     ///
@@ -462,8 +415,7 @@ public:
     /// \param patchcord
     /// \return
     ///
-    std::string patchcordAsPdFileString(Patchcord* pcord)
-    ;
+    std::string patchcordAsPdFileString(Patchcord* pcord);
 
     ////
     /// \brief converts UI patchcord object with 4 pointers to 4 numbers of objects in canvas
@@ -471,34 +423,29 @@ public:
     /// \param pcord
     /// \return
     ///
-    structPatchcordNumbers patchcordAsNumbers(Patchcord* pcord)
-    ;
+    structPatchcordNumbers patchcordAsNumbers(Patchcord* pcord);
 
     ////
     /// \brief selects single box. mostly used by replace object routine in objectmaker
     /// \param obj
     ///
-    void selectObject(UIObject* obj)
-    ;
+    void selectObject(UIObject* obj);
 
     ////
     /// \brief select all boxes
     ///
-    void selectAll()
-    ;
+    void selectAll();
 
     ////
     /// \brief change size to fit all objects
     ///
-    void resizeToObjects()
-    ;
+    void resizeToObjects();
 
     ////
     /// \brief returns canvas data for saving
     /// \return
     ///
-    QStringList canvasAsPdStrings()
-    ;
+    QStringList canvasAsPdStrings();
 
 public slots:
 
@@ -527,38 +474,35 @@ public slots:
     ////
     /// \brief cancels patchcord creation
     ///
-    void cancelPatchcord()
-    ;
+    void cancelPatchcord();
 
     ////
     /// \brief pointer to objectMaker widget
     /// \return
     ///
-    ObjectMaker* objectMaker() ;
+    ObjectMaker* objectMaker();
 
     ////
     /// \brief this is called when 'inlet' etc object is created in subpatch
     ///
-    void portLocalCountUpdated()
-    ;
+    void portLocalCountUpdated();
 
     ////
     /// \brief sets 'replaceobject' pointer
     /// \param obj
     ///
-    void setReplaceObject(UIObject* obj) ;
+    void setReplaceObject(UIObject* obj);
 
     ////
     /// \brief gets replaceObject
     /// \return
     ///
-    UIObject* replaceObject() ;
+    UIObject* replaceObject();
 
     ////
     /// \brief shows object maker for 'new object' menu command
     ///
-    void showNewObjectMaker()
-    ;
+    void showNewObjectMaker();
 
 private:
 private slots:
@@ -568,16 +512,14 @@ private slots:
     ////
     /// \brief slot in Box-style canvas for handling new ins/outs
     ///
-    void portCountUpdated()
-    ;
+    void portCountUpdated();
 
     ////
     /// \brief creates objectmaker atop existiong object box
     /// \details after typing the text in the objectmaker with nonzero 'replaceobject' the old object is deleted, the new object is created and old connections are restored
     /// \param obj
     ///
-    void objectStartsEdit(void* obj)
-    ;
+    void objectStartsEdit(void* obj);
 
 signals:
     std::pair<QMainWindow*, qtpd::UIObject*> createSubpatchWindow();
