@@ -25,28 +25,35 @@ public:
     static std::string pdParserFileName;
 
     ////
-    /// \brief converts string from pd file - creates new object
+    /// \brief [3.2] process legacy pd files
+    /// \param list
+    ///
+    static bool legacyProcess(Canvas* cmcanvas, QStringList list);
+
+    ////
+    /// \brief [3.1] subroutine - formats list and send it to canvas as a string
+    /// \param cmcanvas
+    /// \param list
+    /// \returns uiobject - that may be needed by legacyProcess to add more properties after object is created
+    ///
+    static UIObject* sendStringToCanvas(Canvas* cmcanvas, QStringList list);
+
+    ////
+    /// \brief [3] parses QStringLists of atoms to canvas - creates objects etc
+    /// \details converts list, passes data to 'sendStringToCanvas'
     /// \param cmcanvas
     /// \param list
     ///
-    static void objFromString(Canvas* cmcanvas, QStringList list);
+    static void parseStringList(Canvas* cmcanvas, QStringList list);
 
     ////
-    /// \brief parses QStringLists of atoms to canvas - creates objects etc
-    /// \details converts list, passes data to 'objFromString'
-    /// \param cmcanvas
-    /// \param list
-    ///
-    static void stringToCanvas(Canvas* cmcanvas, QStringList list);
-
-    ////
-    /// \brief checks first atoms ("#N", "#X" etc) and sends QStringList
+    /// \brief [2] checks first atoms ("#N", "#X" etc) and sends QStringList of contents to canvas
     /// \param line
     ///
-    static void parseString(QString line);
+    static void parseFile(QString line);
 
     ////
-    /// \brief opens file, converts to QStrings, calls 'parseString'
+    /// \brief [1] opens file, converts to QStrings, calls 'parseString'
     /// \param fname
     ///
     static void open(QString fname);
