@@ -12,6 +12,11 @@
 
 #include "cm_object.h"
 
+//lazy way
+//todo proper pattern
+#include "cm_openfileproxy.h"
+
+
 //#include "cm_pdlink.h"
 
 namespace qtpd {
@@ -75,6 +80,22 @@ public:
             b->isAbstraction_ = cmp_is_abstraction(new_obj);
             qDebug()<<"*** is abstraction: " << b->isAbstraction_;
 
+            if (b->isAbstraction_)
+            {
+                t_symbol* s = cmp_get_path((t_canvas*)new_obj);
+
+                // todo
+                QStringList l = QString(objectData.c_str()).split(" ");
+                QString pdName = l.at(1);   //assuming there always is a name when abstraction is created
+
+                // todo windows
+                b->abstractionPath_ = QString(s->s_name) + "/" + pdName  + ".pd";
+
+                qDebug() << b->abstractionPath_;
+
+
+            }
+
         } else {
             qDebug("Error: no such object %s", obj_name);
             b->setErrorBox(true);
@@ -133,6 +154,15 @@ public:
         if (this->getEditMode() != em_Unlocked) {
             if (this->subpatchWindow()) {
                 this->subpatchWindow()->show();
+            }
+        }
+
+        //abstraction opening. Fix
+        if (this->getEditMode() != em_Unlocked)
+        {
+            if (isAbstraction_)
+            {
+                OpenFileProxy::openAbstraction(abstractionPath_);
             }
         }
 

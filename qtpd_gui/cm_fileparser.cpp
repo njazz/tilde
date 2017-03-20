@@ -304,8 +304,10 @@ void FileParser::parseFile(QString line)
 
         qDebug() <<"dim" << pos << size;
 
+        newWnd->setBaseSize(size);
         newWnd->move(pos);
-        newWnd->setFixedSize(size);
+
+
 
         newWnd->show(); //move to constructor? check for subcanvases the vis flag
     }
@@ -354,6 +356,7 @@ void FileParser::open(QString fname)
 
     if (pdParserWindow) {
         pdParserWindow->setFileName(fname);
+        pdParserWindow->canvas->setEditMode(em_Locked);
     }
 
     f.close();

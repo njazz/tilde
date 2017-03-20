@@ -51,7 +51,8 @@ SOURCES += main.cpp\
     properties/cm_propertylist.cpp \
     python/PythonQtScriptingConsole.cpp \
     objects/cmo_script.cpp \
-    cm_objectloader.cpp
+    cm_objectloader.cpp \
+    cm_openfileproxy.cpp
 
 
 HEADERS  += \
@@ -113,7 +114,8 @@ HEADERS  += \
     python/headers/PythonQtVariants.h \
     python/wrappers/py_wrapers.h \
     python/wrappers/py_qtpd.h \
-    objects/cmo_script.h
+    objects/cmo_script.h \
+    cm_openfileproxy.h
 
 
 FORMS    += \

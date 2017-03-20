@@ -99,6 +99,10 @@ extern "C" void cmp_closepatch(t_canvas* canvas);
 /// \brief check if canvas is an abstraction
 extern bool cmp_is_abstraction(t_object * x);
 
+////
+/// \brief get canvas dir if it is an abstraction
+extern t_symbol* cmp_get_path(t_canvas* c);
+
 #pragma mark -
 
 ////

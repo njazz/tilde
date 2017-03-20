@@ -175,10 +175,15 @@ void cmp_remove_searchpath(t_symbol* s)
     //todo
 }
 
-bool cmp_is_abstraction(t_object * x)
+bool cmp_is_abstraction(t_object* x)
 {
     // !(pd_class(&x->te_pd) == canvas_class) &&
-     return ( (pd_class(&x->te_pd) == canvas_class) && canvas_isabstraction((t_canvas *)x));
+    return ((pd_class(&x->te_pd) == canvas_class) && canvas_isabstraction((t_canvas*)x));
+}
+
+t_symbol* cmp_get_path(t_canvas* c)
+{
+    return canvas_getdir(c);
 }
 
 AtomList cmp_get_loaded_list()
