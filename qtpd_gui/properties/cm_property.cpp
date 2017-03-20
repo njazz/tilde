@@ -113,16 +113,16 @@ void Property::set(QStringList strlist)
 
     //qDebug() << "set list" << strlist;
 
-    qDebug() << "data size 0" << list->size();
+    //qDebug() << "data size 0" << list->size();
 
     for (it = strlist.begin(); it != strlist.end(); ++it) {
         QString str = *it;
-        qDebug() << "str" << str;
+        //qDebug() << "str" << str;
         if (str != "")
             list->append(Atom(gensym(str.toStdString().c_str())));
     }
 
-    qDebug() << "data size" << list->size();
+    //qDebug() << "data size" << list->size();
 
     //check, different type for text files
     type_ = ptList;

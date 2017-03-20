@@ -268,6 +268,10 @@ void FileParser::parseFile(QString line)
     //switch (atoms.at(0))
 
     if (atoms.at(0) == "#N") {
+
+        // weird here: we construct canvas in fileparser but we construct objects with their special methods
+        // todo fix
+
         QStringList msg = atoms;
         msg.removeFirst();
 
@@ -282,9 +286,23 @@ void FileParser::parseFile(QString line)
 
         if (pdParserPrevWindow)
             newWnd->setWindowTitle("<subpatch>");
-        //            else
-        //            {
-        //            }
+
+        // todo different canvas argumentlists
+
+        msg.removeFirst();
+        QPoint pos = QPoint(((QString)msg.at(0)).toInt(),((QString)msg.at(1)).toInt());
+        QSize size = QSize(((QString)msg.at(2)).toInt(),((QString)msg.at(3)).toInt());
+
+        if (pos.x()>1000) pos.setX(1000);
+        if (pos.y()>500) pos.setY(500);
+        if (size.width()>1000) size.setWidth(1000);
+        if (size.height()>700) size.setHeight(700);
+
+        qDebug() <<"dim" << pos << size;
+
+        newWnd->move(pos);
+        newWnd->setFixedSize(size);
+
         newWnd->show(); //move to constructor? check for subcanvases the vis flag
     }
 

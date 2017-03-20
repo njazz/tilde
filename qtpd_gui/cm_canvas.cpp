@@ -971,7 +971,7 @@ std::string Canvas::asPdFileString()
         ret = "#N canvas ";
         ret += std::to_string(this->x()) + " ";
         ret += std::to_string(this->y()) + " ";
-        ret += std::to_string(this->width()) + "  ";
+        ret += std::to_string(this->width()) + " ";
         ret += std::to_string(this->height()) + " ";
         ret += "10; \r\n";
 
