@@ -675,6 +675,9 @@ UIObject* Canvas::createObject(std::string uiObjectName, std::string objectData1
 
     connect(obj, &UIObject::editObject, this, &Canvas::objectStartsEdit);
 
+    if (drawStyle() == ds_Canvas)
+        setFixedSize(minimumCanvasSize());
+
     return obj;
 }
 
