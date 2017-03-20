@@ -16,6 +16,12 @@ class ObjectMaker : public QLineEdit {
 public:
     explicit ObjectMaker(QLineEdit* parent = 0);
 
+    void focusOutEvent(QFocusEvent *)
+    {
+        //emit textEdited(this->text());
+        emit returnPressed();
+    }
+
 private slots:
     ////
     /// \brief resize to text

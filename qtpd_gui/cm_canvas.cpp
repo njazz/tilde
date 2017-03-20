@@ -477,7 +477,7 @@ void Canvas::mousePressEventForCanvas(QMouseEvent* ev)
     this->hoverPatchcordsOff();
 
     setFocus();
-    objectMaker()->hide();
+    //objectMaker()->hide();
 
     if (this->editMode == em_Unlocked) {
         //sel frame
