@@ -124,6 +124,7 @@ var searchData=
   ['createactions',['createActions',['../classqtpd_1_1_base_window.html#afc02f22a72d2a65105fee61be0e0b42c',1,'qtpd::BaseWindow::createActions()'],['../classqtpd_1_1_patch_window.html#a9e0317548dc5606f8df0fe8085d16bec',1,'qtpd::PatchWindow::createActions()']]],
   ['createboxforcanvas',['createBoxForCanvas',['../classqtpd_1_1_canvas.html#ac6ca45024e1a35619edd1edcac607966',1,'qtpd::Canvas']]],
   ['createcbproperty',['createCbProperty',['../classceammc_1_1_base_object.html#ad1f364ab097d4fd361db045fd391b4e5',1,'ceammc::BaseObject']]],
+  ['createcontextmenu',['createContextMenu',['../classqtpd_1_1_u_i_object.html#abdcdddffb37dedee8cf93da8fb353271',1,'qtpd::UIObject']]],
   ['createcopyfrommetatype',['createCopyFromMetaType',['../class_python_qt_conv.html#a37d8cb4cbd8657156ab4d4610274c7d6',1,'PythonQtConv']]],
   ['createenumvalueinstance',['createEnumValueInstance',['../class_python_qt_private.html#abf46eb1e6b36aef3aff88a85d57691b3',1,'PythonQtPrivate']]],
   ['createinlet',['createInlet',['../classceammc_1_1_base_object.html#acf469533a45f0408f63cf345d043d4b7',1,'ceammc::BaseObject::createInlet()'],['../classceammc_1_1_base_object.html#aae0d3d961971f8dda938bc4670c00e9c',1,'ceammc::BaseObject::createInlet(float *v)'],['../classceammc_1_1_base_object.html#a464fb943c00e691f7c205c8ea24c161a',1,'ceammc::BaseObject::createInlet(t_symbol **s)']]],
