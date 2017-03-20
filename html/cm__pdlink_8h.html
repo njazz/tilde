@@ -103,6 +103,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">connects to print hook function  <a href="#ac9fb723d2c58a1e062720cc19e199e08"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a9c262afca5a4a5dbd071785c5e0e4934">cmp_add_searchpath</a> (t_symbol *<a class="el" href="stringobject_8h.html#ad912d811fca4c9cfee37905bed81eb65">s</a>)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">add search path to pd engine  <a href="#a9c262afca5a4a5dbd071785c5e0e4934"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#aafe79912613d343ac3ccc77d6bfe4cee">cmp_remove_searchpath</a> (t_symbol *<a class="el" href="stringobject_8h.html#ad912d811fca4c9cfee37905bed81eb65">s</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">remove search path from pd engine  <a href="#aafe79912613d343ac3ccc77d6bfe4cee"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#aea508db13aae6fcc69f650483ad167f8">cmp_clear_searchpath</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">clear search paths  <a href="#aea508db13aae6fcc69f650483ad167f8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classceammc_1_1_atom_list.html">ceammc::AtomList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#af6924c7bfc9cdfe2a254ff5cf4107925">cmp_get_loaded_list</a> ()</td></tr>
@@ -117,6 +119,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">saves canvas as pd file  <a href="#ab0f0e50abffd603051b47240f7dcd04c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#af08cbd72d5b239361a801b4b67247a9c">cmp_closepatch</a> (t_canvas *canvas)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">closes and frees the canvas  <a href="#af08cbd72d5b239361a801b4b67247a9c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a07f6ff68bd0cb426f07d1b6a39802d0a">cmp_is_abstraction</a> (t_object *<a class="el" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">check if canvas is an abstraction  <a href="#a07f6ff68bd0cb426f07d1b6a39802d0a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">t_object *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a2c0a0d9150791897b85a167998ecf7c2">cmp_create_object</a> (t_canvas *canvas, <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> class_name, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> y)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates pd object  <a href="#a2c0a0d9150791897b85a167998ecf7c2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a89dd190ed6863563fcecc6c9001a0f1c">cmp_moveobject</a> (t_object *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> y)</td></tr>
@@ -191,6 +195,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>add search path to pd engine </p>
+<p>we do all path handling 'on client' - for canvases we add all the search paths manually </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">s</td><td></td></tr>
@@ -567,6 +572,25 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a07f6ff68bd0cb426f07d1b6a39802d0a"></a><!-- doxytag: member="cm_pdlink.h::cmp_is_abstraction" ref="a07f6ff68bd0cb426f07d1b6a39802d0a" args="(t_object *x)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a> <a class="el" href="cm__pdlink_8h.html#a07f6ff68bd0cb426f07d1b6a39802d0a">cmp_is_abstraction</a> </td>
+          <td>(</td>
+          <td class="paramtype">t_object *&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>check if canvas is an abstraction </p>
+
+</div>
+</div>
 <a class="anchor" id="a8918f6f28b214d15300a46588fa21d78"></a><!-- doxytag: member="cm_pdlink.h::cmp_loadlib" ref="a8918f6f28b214d15300a46588fa21d78" args="(std::string lib)" -->
 <div class="memitem">
 <div class="memproto">
@@ -793,6 +817,32 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aafe79912613d343ac3ccc77d6bfe4cee"></a><!-- doxytag: member="cm_pdlink.h::cmp_remove_searchpath" ref="aafe79912613d343ac3ccc77d6bfe4cee" args="(t_symbol *s)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="cm__pdlink_8h.html#aafe79912613d343ac3ccc77d6bfe4cee">cmp_remove_searchpath</a> </td>
+          <td>(</td>
+          <td class="paramtype">t_symbol *&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>remove search path from pd engine </p>
+<p>this is used when canvas is freed to remove temporary search paths </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="ab0f0e50abffd603051b47240f7dcd04c"></a><!-- doxytag: member="cm_pdlink.h::cmp_savepatch" ref="ab0f0e50abffd603051b47240f7dcd04c" args="(t_canvas *canvas, char *filename, char *path)" -->
 <div class="memitem">
 <div class="memproto">
@@ -941,7 +991,7 @@ Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 20 2017 14:23:14 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 20 2017 15:26:25 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
