@@ -43,6 +43,8 @@ void UIText::editorDone()
     this->setPdMessage(this->editor_->document()->toPlainText().toStdString()); //text().toStdString());
     //todo
 
+    properties()->set("Text", getEditorData());
+
     this->editor_->hide();
 }
 
@@ -64,10 +66,7 @@ void UIText::editorChanged()
     this->editor_->setFixedWidth(this->width() - 1);
     this->editor_->setFixedHeight(this->height() - 2);
 
-
-    QStringList list = getEditorData();
-
     // fix later
-    properties()->set("Text", list);
+    properties()->set("Text", getEditorData());
 }
 }
