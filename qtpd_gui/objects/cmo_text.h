@@ -131,6 +131,28 @@ public:
         }
     }
 
+
+    void autoResize()
+    {
+        QFont myFont(PREF_QSTRING("Font"), 11);
+        QFontMetrics fm(myFont);
+
+        this->setFixedWidth((int)fm.width(objectText_) + 5);
+        if (this->width() < this->minimumBoxWidth())
+            this->setFixedWidth(this->minimumBoxWidth());
+
+        //duplicate?
+        int new_w = fm.width(objectText_) + 20;
+        new_w = (new_w < 25) ? 25 : new_w;
+
+        int new_h = fm.boundingRect(QRect(0, 0, new_w, 100), 0, objectText_).height() + 7;
+
+        new_h = (new_h < 25) ? 25 : new_h;
+
+        this->setFixedWidth(new_w);
+        this->setFixedHeight(new_h);
+    }
+
     ///////
 
     void setPdMessage(std::string message)
@@ -146,24 +168,7 @@ public:
         //this->autoResize();
 
         //auto-resize moved here
-        QFont myFont(PREF_QSTRING("Font"), 11);
-        QFontMetrics fm(myFont);
-
-        this->setFixedWidth((int)fm.width(data) + 5);
-        if (this->width() < this->minimumBoxWidth())
-            this->setFixedWidth(this->minimumBoxWidth());
-
-        //duplicate?
-        //QString text = QString(this->editor_->document()->toPlainText());
-        int new_w = fm.width(data) + 20;
-        new_w = (new_w < 25) ? 25 : new_w;
-
-        int new_h = fm.boundingRect(QRect(0, 0, new_w, 100), 0, data).height() + 7;
-
-        new_h = (new_h < 25) ? 25 : new_h;
-
-        this->setFixedWidth(new_w);
-        this->setFixedHeight(new_h);
+        autoResize();
 
         this->editor_->setFixedWidth(this->width() - 1);
         this->editor_->setFixedHeight(this->height() - 2);

@@ -26,6 +26,10 @@ class UIBox : public UIObject {
 private:
     QLineEdit* editor_;
 
+    // for abstracions
+    bool isAbstraction_;
+    QString abstractionPath_;
+
 public:
     explicit UIBox(UIObject* parent = 0);
     //~UIBox();

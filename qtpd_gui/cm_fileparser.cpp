@@ -11,6 +11,8 @@ std::string FileParser::pdParserFileName = "";
 
 bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
 {
+    qDebug() <<"legacy process:" << list;
+
     // special cases:
     // msg - text - floatatom - symbolatom
 
@@ -26,14 +28,15 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
     } else if (list.at(0) == "text") {
         list[0] = "obj";
         list.insert(3, "ui.text");
+        list.insert(4, "@Text");
         UIObject* obj = FileParser::sendStringToCanvas(cmcanvas, list);
 
-        list.removeAt(0);
-        list.removeAt(0);
-        list.removeAt(0);
-        list.removeAt(0);
-        QString text = list.join(" ");
-        obj->properties()->set("Text", text);
+//        list.removeAt(0);
+//        list.removeAt(0);
+//        list.removeAt(0);
+//        list.removeAt(0);
+//        QString text = list.join(" ");
+//        obj->properties()->set("Text", text);
 
         return true;
 
@@ -78,6 +81,27 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
     } else if ((list.at(0) == "obj") && (list.at(3) == "vradio")) {
 
     } else if ((list.at(0) == "obj") && (list.at(3) == "cnv")) {
+
+        //temporary
+        //check bounds
+        int lBoxWidth = ((QString)list.at(4)).toInt();  //?
+        QString lSend = ((QString)list.at(7));
+        QString lReceive = ((QString)list.at(8));
+        QString lLabel = ((QString)list.at(9));
+        //...
+
+        QStringList list2;
+        list2.push_back("obj");
+        list2.push_back(list.at(1));
+        list2.push_back(list.at(2));
+        list2.push_back("ui.text");
+        list2.push_back("@Text");
+        list2.push_back(lLabel);
+
+        UIObject* obj = FileParser::sendStringToCanvas(cmcanvas, list2);
+
+        return true;
+
     }
 
     return false; // if it is not a special legacy object
@@ -121,7 +145,10 @@ UIObject* FileParser::sendStringToCanvas(Canvas* cmcanvas, QStringList list)
 
 void FileParser::parseStringList(Canvas* cmcanvas, QStringList list) //rename
 {
-    if (!FileParser::legacyProcess(cmcanvas, list) && list.at(0) == "obj") {
+    //legacy parser first
+    if (FileParser::legacyProcess(cmcanvas, list)) return;
+
+    if ( list.at(0) == "obj") {
         FileParser::sendStringToCanvas(cmcanvas, list);
     } else
 
