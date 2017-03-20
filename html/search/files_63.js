@@ -65,6 +65,8 @@ var searchData=
   ['cm_5fport_2ecpp',['cm_port.cpp',['../cm__port_8cpp.html',1,'']]],
   ['cm_5fport_2eh',['cm_port.h',['../cm__port_8h.html',1,'']]],
   ['cm_5fpreferences_2eh',['cm_preferences.h',['../cm__preferences_8h.html',1,'']]],
+  ['cm_5fpropertieswindow_2ecpp',['cm_propertieswindow.cpp',['../cm__propertieswindow_8cpp.html',1,'']]],
+  ['cm_5fpropertieswindow_2eh',['cm_propertieswindow.h',['../cm__propertieswindow_8h.html',1,'']]],
   ['cm_5fproperty_2ecpp',['cm_property.cpp',['../cm__property_8cpp.html',1,'']]],
   ['cm_5fproperty_2eh',['cm_property.h',['../cm__property_8h.html',1,'']]],
   ['cm_5fpropertylist_2ecpp',['cm_propertylist.cpp',['../cm__propertylist_8cpp.html',1,'']]],
