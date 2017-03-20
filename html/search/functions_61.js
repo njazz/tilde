@@ -80,6 +80,6 @@ var searchData=
   ['atoms_5fnormalize',['atoms_normalize',['../namespaceceammc_1_1pd.html#a243d0edcf265bff4f6aea72ba6183961',1,'ceammc::pd']]],
   ['atomto',['atomTo',['../classceammc_1_1_base_object.html#a1fbde369caaef01c4f198d6ea4076043',1,'ceammc::BaseObject']]],
   ['atomvalue',['atomValue',['../classceammc_1_1_message.html#adb2bc32d00590bd14944ec44fc973bdf',1,'ceammc::Message']]],
-  ['autoresize',['autoResize',['../classqtpd_1_1_u_i_object.html#a1c7d66be6089715aaf5c03adb64a915b',1,'qtpd::UIObject']]],
+  ['autoresize',['autoResize',['../classqtpd_1_1_u_i_object.html#a1c7d66be6089715aaf5c03adb64a915b',1,'qtpd::UIObject::autoResize()'],['../classqtpd_1_1_u_i_text.html#abe3b5d63ecd147d71afa4c834f12245c',1,'qtpd::UIText::autoResize()']]],
   ['average',['average',['../namespaceceammc_1_1list.html#a0b7316c386c3652ffbae8380bc6acb8f',1,'ceammc::list']]]
 ];
