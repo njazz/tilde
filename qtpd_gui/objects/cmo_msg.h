@@ -31,8 +31,18 @@ public:
     {
         UIMessage* b = new UIMessage((UIObject*)parent);
 
-        std::string data1 = b->properties()->extractFromPdFileString(objectData);
+        //
+
+        //fix: remove "ui.msg"
+        //do this normal way later
+        QStringList messageDataList = QString(objectData.c_str()).split(" ");
+        messageDataList.removeAt(0);
+        std::string messageData = messageDataList.join(" ").toStdString();
+
+        std::string data1 = b->properties()->extractFromPdFileString(messageData);
         b->setObjectData(data1);
+
+        qDebug() << "msg data:" << messageDataList;
 
         b->autoResize();
 
@@ -55,7 +65,7 @@ public:
             qDebug("Error: no such object %s", message.c_str());
         }
 
-        b->setPdMessage(objectData.c_str());
+        b->setPdMessage(messageData.c_str());
 
         //b->setObjectData(objectData);
 
