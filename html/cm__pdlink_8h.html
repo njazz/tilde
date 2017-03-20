@@ -121,6 +121,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">closes and frees the canvas  <a href="#af08cbd72d5b239361a801b4b67247a9c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a07f6ff68bd0cb426f07d1b6a39802d0a">cmp_is_abstraction</a> (t_object *<a class="el" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">check if canvas is an abstraction  <a href="#a07f6ff68bd0cb426f07d1b6a39802d0a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">t_symbol *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a2d470024af8372a5d62837ec4afff6b6">cmp_get_path</a> (t_canvas *c)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get canvas dir if it is an abstraction  <a href="#a2d470024af8372a5d62837ec4afff6b6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">t_object *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a2c0a0d9150791897b85a167998ecf7c2">cmp_create_object</a> (t_canvas *canvas, <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> class_name, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> y)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates pd object  <a href="#a2c0a0d9150791897b85a167998ecf7c2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a89dd190ed6863563fcecc6c9001a0f1c">cmp_moveobject</a> (t_object *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> y)</td></tr>
@@ -572,6 +574,25 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a2d470024af8372a5d62837ec4afff6b6"></a><!-- doxytag: member="cm_pdlink.h::cmp_get_path" ref="a2d470024af8372a5d62837ec4afff6b6" args="(t_canvas *c)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">t_symbol* <a class="el" href="cm__pdlink_8h.html#a2d470024af8372a5d62837ec4afff6b6">cmp_get_path</a> </td>
+          <td>(</td>
+          <td class="paramtype">t_canvas *&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>get canvas dir if it is an abstraction </p>
+
+</div>
+</div>
 <a class="anchor" id="a07f6ff68bd0cb426f07d1b6a39802d0a"></a><!-- doxytag: member="cm_pdlink.h::cmp_is_abstraction" ref="a07f6ff68bd0cb426f07d1b6a39802d0a" args="(t_object *x)" -->
 <div class="memitem">
 <div class="memproto">
@@ -991,7 +1012,7 @@ Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 20 2017 15:26:25 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 20 2017 22:30:14 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

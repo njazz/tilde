@@ -79,6 +79,7 @@ var searchData=
   ['cmp_5fget_5floaded_5flist',['cmp_get_loaded_list',['../cm__pdlink_8h.html#af6924c7bfc9cdfe2a254ff5cf4107925',1,'cm_pdlink.h']]],
   ['cmp_5fget_5foutlet_5fcount',['cmp_get_outlet_count',['../cm__pdlink_8h.html#a680a1380d6950cd336b5631b3d3a7737',1,'cm_pdlink.h']]],
   ['cmp_5fget_5foutlet_5ftype',['cmp_get_outlet_type',['../cm__pdlink_8h.html#a4f45abf6ebba2aeed6853269919dc1c9',1,'cm_pdlink.h']]],
+  ['cmp_5fget_5fpath',['cmp_get_path',['../cm__pdlink_8h.html#a2d470024af8372a5d62837ec4afff6b6',1,'cm_pdlink.h']]],
   ['cmp_5fis_5fabstraction',['cmp_is_abstraction',['../cm__pdlink_8h.html#a07f6ff68bd0cb426f07d1b6a39802d0a',1,'cm_pdlink.h']]],
   ['cmp_5floadlib',['cmp_loadlib',['../cm__pdlink_8h.html#a8918f6f28b214d15300a46588fa21d78',1,'cm_pdlink.h']]],
   ['cmp_5fmoveobject',['cmp_moveobject',['../cm__pdlink_8h.html#a89dd190ed6863563fcecc6c9001a0f1c',1,'cm_pdlink.h']]],

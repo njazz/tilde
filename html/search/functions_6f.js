@@ -21,6 +21,8 @@ var searchData=
   ['onlist',['onList',['../classceammc_1_1_base_object.html#adfc3dad2d49f8ffc02f1493e29943cfd',1,'ceammc::BaseObject']]],
   ['onsymbol',['onSymbol',['../classceammc_1_1_base_object.html#a49e1e74c28ed1e9763f71ba51299ac32',1,'ceammc::BaseObject']]],
   ['open',['open',['../classqtpd_1_1_file_parser.html#a7a1d4de73d63affb0825b0889a3b94f7',1,'qtpd::FileParser::open()'],['../classqtpd_1_1_base_menu.html#a8c33df1c24139f419b1b500844eb8629',1,'qtpd::BaseMenu::open()']]],
+  ['openabstraction',['openAbstraction',['../classqtpd_1_1_open_file_proxy.html#a23f3421b81894e573b52dde24a9ce3df',1,'qtpd::OpenFileProxy']]],
+  ['openfileproxy',['OpenFileProxy',['../classqtpd_1_1_open_file_proxy.html#a9894168bccd85e953f7524d4c7bea0d7',1,'qtpd::OpenFileProxy']]],
   ['openhorizontalbox',['openHorizontalBox',['../classceammc_1_1faust_1_1_pd_u_i.html#aafa0e2bebc6da274d9ff40dd004b5017',1,'ceammc::faust::PdUI']]],
   ['openpatch',['openPatch',['../classpy_pd_lib.html#a00e2f80842661a9ee5a95b857a9c4b0d',1,'pyPdLib']]],
   ['openrangeproperty',['OpenRangeProperty',['../classceammc_1_1_open_range_property.html#a85e0722d2470e9985ab297afb248c49a',1,'ceammc::OpenRangeProperty']]],
