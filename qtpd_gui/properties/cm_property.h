@@ -42,7 +42,7 @@ private:
 
     UIPropertyType type_;
 
-    bool applyToPd; //true if property value should be passed to pd object
+    bool applyToPd_; //true if property value should be passed to pd object
 public:
     template <typename T>
     void set(T val);

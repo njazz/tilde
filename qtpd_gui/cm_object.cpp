@@ -59,9 +59,11 @@ PropertyList* UIObject::properties()
 
 void UIObject::createContextMenu()
 {
+    setContextMenuPolicy(Qt::DefaultContextMenu);
+
     pmProperties = new QAction(tr("Properties"), this);
     pmProperties->setShortcut(tr("Ctrl+Shift+P"));
-    //connect(pmProperties, &QAction::triggered, this, &UIObject::pmProperties);
+    connect(pmProperties, &QAction::triggered, this, &UIObject::openPropertiesWindow);
 
     pmHelp = new QAction(tr("Help"), this);
     pmHelp->setShortcut(tr("Ctrl+Shift+H"));
@@ -84,7 +86,7 @@ void UIObject::createContextMenu()
 
 }
 
-void UIObject::contextMenuEvent(QContextMenuEvent *event)
+void UIObject::contextMenuEvent(QContextMenuEvent *event) //customContextMenuRequested(const QPoint &pos)
 {
     QPoint pos = mapToGlobal(event->pos());
     popupMenu_.move(pos);
@@ -379,9 +381,5 @@ void UIObject::hideSizeBox()
     sizeBox->hide();
 }
 
-void UIObject::contextMenuEvent()
-{
-    //test
-    //menu.exec(event->globalPos());
-}
+
 }

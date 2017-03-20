@@ -13,8 +13,10 @@
 #include "cm_pdlink.h"
 
 #include <QMainWindow>
-#include <QObject>
 #include <QMenu>
+#include <QObject>
+
+#include "cm_propertieswindow.h"
 
 namespace qtpd {
 
@@ -76,7 +78,7 @@ public:
     ///
     void createContextMenu();
 
-    void contextMenuEvent(QContextMenuEvent *event);
+    //void contextMenuEvent(QContextMenuEvent* event);
 
     ////
     /// \brief sets inlet position (cm_port)
@@ -184,27 +186,27 @@ public:
     /// \details gui-only objects can ovverride it with function that returns 0
     /// \return
     ///
-    virtual void* pdObject() ;
+    virtual void* pdObject();
 
     ////
     /// \brief sets pointer to pd object
     /// \details overriden by ui objects to be able to connect to pd objects
     /// \param obj
     ///
-    virtual void setPdObject(void* obj) ;
+    virtual void setPdObject(void* obj);
 
     ////
     /// \brief returns true if object doesn't exist
     /// \details
     /// \return
     ///
-    bool errorBox() ;
+    bool errorBox();
 
     ////
     /// \brief sets object box error flag
     /// \param val
     ///
-    void setErrorBox(bool val) ;
+    void setErrorBox(bool val);
 
     ////
     /// \brief returns object's text for client-based file saving
@@ -218,8 +220,8 @@ public:
     /// \brief temporary - remove later
     /// \details nonzero pointer for different drawing
     ///
-    QMainWindow* subpatchWindow() ;
-    void setSubpatchWindow(QMainWindow* cwindow) ;
+    QMainWindow* subpatchWindow();
+    void setSubpatchWindow(QMainWindow* cwindow);
 
     ////
     /// \brief sets pointer to edit mode flag value in parent canvas
@@ -266,19 +268,25 @@ public:
 
     void hideSizeBox();
 
-    void contextMenuEvent();
+    void contextMenuEvent(QContextMenuEvent *event);
+    //virtual void customContextMenuRequested(const QPoint &pos);
 
-
+private slots:
+    void openPropertiesWindow()
+    {
+        PropertiesWindow* pw = new PropertiesWindow(this->properties());
+        pw->show();
+    }
 
 signals:
     void editObject(void* box);
 
-    void callRepaint();     //needed for proper threading
+    void callRepaint(); //needed for proper threading
 
 public slots:
     void resizeBox(int dx);
 
-    void s_repaint()        //needed for proper threading
+    void s_repaint() //needed for proper threading
     {
         this->repaint();
     }
