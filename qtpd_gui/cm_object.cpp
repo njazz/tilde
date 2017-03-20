@@ -60,17 +60,35 @@ PropertyList* UIObject::properties()
 void UIObject::createContextMenu()
 {
     pmProperties = new QAction(tr("Properties"), this);
-    pmProperties->setShortcut(tr("Ctrl+R"));
+    pmProperties->setShortcut(tr("Ctrl+Shift+P"));
     //connect(pmProperties, &QAction::triggered, this, &UIObject::pmProperties);
 
-    pmHelp = new QAction(tr("Properties"), this);
-    pmHelp->setShortcut(tr("Ctrl+R"));
+    pmHelp = new QAction(tr("Help"), this);
+    pmHelp->setShortcut(tr("Ctrl+Shift+H"));
     //connect(pmProperties, &QAction::triggered, this, &UIObject::pmProperties);
 
-    pmOpen = new QAction(tr("Properties"), this);
+    pmOpen = new QAction(tr("Open"), this);
     pmOpen->setShortcut(tr("Ctrl+R"));
     pmOpen->setEnabled(false);
     //connect(pmProperties, &QAction::triggered, this, &UIObject::pmProperties);
+
+    //------------
+
+    popupMenu_.addAction(pmProperties);
+    popupMenu_.addAction(pmHelp);
+    popupMenu_.addSeparator();
+    popupMenu_.addAction(pmOpen);
+
+
+
+
+}
+
+void UIObject::contextMenuEvent(QContextMenuEvent *event)
+{
+    QPoint pos = mapToGlobal(event->pos());
+    popupMenu_.move(pos);
+    popupMenu_.show();
 
 }
 

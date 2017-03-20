@@ -76,6 +76,8 @@ public:
     ///
     void createContextMenu();
 
+    void contextMenuEvent(QContextMenuEvent *event);
+
     ////
     /// \brief sets inlet position (cm_port)
     /// \details this is reserved for more versatile UI
