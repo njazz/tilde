@@ -25,7 +25,11 @@ UIObject::UIObject(UIWidget* parent)
     // repaint, handling for threads
     connect(this, &UIObject::callRepaint, this, &UIObject::s_repaint);
 
-    this->initProperties();
+    initProperties();
+
+    createContextMenu();
+
+
 }
 
 //---------------------------------------
@@ -51,6 +55,23 @@ void UIObject::initProperties()
 PropertyList* UIObject::properties()
 {
     return &this->properties_;
+}
+
+void UIObject::createContextMenu()
+{
+    pmProperties = new QAction(tr("Properties"), this);
+    pmProperties->setShortcut(tr("Ctrl+R"));
+    //connect(pmProperties, &QAction::triggered, this, &UIObject::pmProperties);
+
+    pmHelp = new QAction(tr("Properties"), this);
+    pmHelp->setShortcut(tr("Ctrl+R"));
+    //connect(pmProperties, &QAction::triggered, this, &UIObject::pmProperties);
+
+    pmOpen = new QAction(tr("Properties"), this);
+    pmOpen->setShortcut(tr("Ctrl+R"));
+    pmOpen->setEnabled(false);
+    //connect(pmProperties, &QAction::triggered, this, &UIObject::pmProperties);
+
 }
 
 void UIObject::setInletsPos()

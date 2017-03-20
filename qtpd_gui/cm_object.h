@@ -52,6 +52,11 @@ private:
 
     QMenu popupMenu_;
 
+    //
+    QAction* pmProperties;
+    QAction* pmHelp;
+    QAction* pmOpen;
+
 public:
     //cm_object();
     explicit UIObject(UIWidget* parent = 0);
@@ -65,6 +70,11 @@ public:
     virtual void initProperties();
 
     PropertyList* properties();
+
+    ////
+    /// \brief createContextMenu
+    ///
+    void createContextMenu();
 
     ////
     /// \brief sets inlet position (cm_port)
