@@ -124,6 +124,7 @@ var searchData=
   ['setvalueptr',['setValuePtr',['../classceammc_1_1faust_1_1_u_i_element.html#a0e64b120180788cc85254e70c1175619',1,'ceammc::faust::UIElement']]],
   ['setversion',['setVersion',['../classqtpd_1_1_property.html#a269ad1aa54e28640722c2448c870d6cb',1,'qtpd::Property']]],
   ['setvisible',['setVisible',['../classceammc_1_1_property.html#aeca387154bd2de2906853b315d83ff67',1,'ceammc::Property']]],
+  ['setwindowsize',['setWindowSize',['../classqtpd_1_1_canvas.html#a6f214384132cb1974a1145daece8e7da',1,'qtpd::Canvas']]],
   ['setx',['setX',['../structui__slider2d.html#a41516f6ad00ce41fd893ef0be1a370c1',1,'ui_slider2d']]],
   ['setxpos',['setXPos',['../classceammc_1_1tl_1_1_cue_data.html#ad199d318c76aa97fea149f1f6e0579d7',1,'ceammc::tl::CueData::setXPos()'],['../classceammc_1_1tl_1_1_timeline_data.html#a2af61d443eb715bf1ae37b33b536989d',1,'ceammc::tl::TimelineData::setXPos()']]],
   ['sety',['setY',['../structui__slider2d.html#ad43fcaf799b4e9aba95ca47aff23699b',1,'ui_slider2d']]],

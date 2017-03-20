@@ -12,6 +12,7 @@ var searchData=
   ['delbitset',['delbitset',['../bitset_8h.html#aecd68b7fc4e181e56ef77671f84000ef',1,'bitset.h']]],
   ['delboxes',['delBoxes',['../classqtpd_1_1_canvas.html#a6e1c926dcc12807478e7af475c8276b3',1,'qtpd::Canvas']]],
   ['delete_5fobjectvec',['delete_objectVec',['../classpy_object_vec_decorator.html#a41e48ce72a9cdaac8380e2e99224c5e2',1,'pyObjectVecDecorator']]],
+  ['delete_5fuiobject',['delete_UIObject',['../classpy_u_i_object_decorator.html#a30f45f7f0215548070db29e66e4baf8f',1,'pyUIObjectDecorator']]],
   ['deletebox',['deleteBox',['../classqtpd_1_1_canvas.html#a54ae5b1d5352bcce723481073db40647',1,'qtpd::Canvas']]],
   ['deleteobject',['deleteObject',['../classpy_pd_lib.html#acf6a69e5454d8000f81c54830ed73701',1,'pyPdLib']]],
   ['deleteobjectincanvas',['deleteObjectInCanvas',['../classpy_canvas_decorator.html#a55f9a8e2f3f6638e71561413db97c360',1,'pyCanvasDecorator']]],

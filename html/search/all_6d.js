@@ -92,6 +92,7 @@ var searchData=
   ['minequal',['MINEQUAL',['../token_8h.html#a11ababa41ab5e39d361aa014a78441ce',1,'token.h']]],
   ['minimumboxheight',['minimumBoxHeight',['../classqtpd_1_1_u_i_object.html#a59b95a44ccb3c18727d8212a6eb32f56',1,'qtpd::UIObject']]],
   ['minimumboxwidth',['minimumBoxWidth',['../classqtpd_1_1_u_i_object.html#ac1d937fa3ee566a10ae183ab8e40fd79',1,'qtpd::UIObject']]],
+  ['minimumcanvassize',['minimumCanvasSize',['../classqtpd_1_1_canvas.html#a936cbab2236f58a5937cc7702c387d97',1,'qtpd::Canvas']]],
   ['minmaxlistsize',['minmaxListSize',['../namespaceceammc_1_1list.html#a3e718ab497acba7d7f8bb6ed10b077cf',1,'ceammc::list']]],
   ['minor_5fversion',['MINOR_VERSION',['../struct_py_expat___c_a_p_i.html#a4254d96093f733cbed41fded6308b334',1,'PyExpat_CAPI']]],
   ['minsize',['MINSIZE',['../classceammc_1_1_atom_list.html#adcc13ae2c5194b6d83691b56835ed29ea5fa7f29f8f40a534c16e8be795bae07c',1,'ceammc::AtomList']]],
