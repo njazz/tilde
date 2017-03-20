@@ -34,8 +34,12 @@ typedef struct _ui_msg {
 // special
 extern "C" void uimsg_set_updateUI(t_pd* x, void* obj, t_updateUI func)
 {
-    ((t_ui_msg*)x)->updateUI = func;
-    ((t_ui_msg*)x)->uiobj = obj;
+    //weird fix, test that
+    if (x)
+    {
+        ((t_ui_msg*)x)->updateUI = func;
+        ((t_ui_msg*)x)->uiobj = obj;
+    }
 }
 
 static void uimsg_set(t_ui_msg* x, t_symbol* s, int argc, t_atom* argv)
@@ -125,6 +129,12 @@ void uimsg_save(t_gobj* z, t_binbuf* b)
 
 static void uimsg_free(t_object* obj)
 {
+    t_ui_msg* x= (t_ui_msg*)obj;
+
+    if (x->msg)
+        delete x->msg;
+    if (x->s)
+        delete x->s;
 }
 
 //extern "C"

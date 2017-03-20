@@ -192,7 +192,7 @@ HEADERS += \
     ceammc-lib/ceammc.hpp \
     ceammc-lib/ceammc_atom.h \
     ceammc-lib/ceammc_atomlist.h \
-    ceammc-lib/ceammc_autopreset.h \
+    #ceammc-lib/ceammc_autopreset.h \
     ceammc-lib/ceammc_bpf.h \
     ceammc-lib/ceammc_factory.h \
     ceammc-lib/ceammc_faust.h \
