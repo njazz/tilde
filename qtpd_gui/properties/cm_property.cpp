@@ -105,6 +105,13 @@ void Property::set(QString string)
 }
 
 template <>
+void Property::set(int val)
+{
+    data_ = AtomList(val);
+    type_ = ptFloat;
+}
+
+template <>
 void Property::set(QStringList strlist)
 {
     QStringList::iterator it;

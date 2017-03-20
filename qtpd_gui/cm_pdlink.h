@@ -32,9 +32,18 @@ extern void cmp_setprinthook(t_printhook h);
 
 ////
 /// \brief add search path to pd engine
+/// \details we do all path handling 'on client' - for canvases we add all the search paths manually
 /// \param s
 ///
 extern void cmp_add_searchpath(t_symbol* s);
+
+
+////
+/// \brief remove search path from pd engine
+/// \details this is used when canvas is freed to remove temporary search paths
+/// \param s
+///
+extern void cmp_remove_searchpath(t_symbol* s);
 
 ////
 /// \brief clear search paths
@@ -45,14 +54,14 @@ extern void cmp_clear_searchpath();
 /// \brief returns list of loaded externals
 /// \return
 ///
-ceammc::AtomList cmp_get_loaded_list();
+extern ceammc::AtomList cmp_get_loaded_list();
 
 ////
 /// \brief load external
 /// \details probably will be removed later
 /// \return
 ///
-void cmp_loadlib(std::string lib);
+extern void cmp_loadlib(std::string lib);
 
 #pragma mark -
 
@@ -85,6 +94,10 @@ extern void cmp_savepatch(t_canvas* canvas, char* filename, char* path);
 /// \param canvas
 ///
 extern "C" void cmp_closepatch(t_canvas* canvas);
+
+////
+/// \brief check if canvas is an abstraction
+extern bool cmp_is_abstraction(t_object * x);
 
 #pragma mark -
 

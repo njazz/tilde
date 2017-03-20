@@ -43,6 +43,9 @@ public:
 
         b->objectText_ = data;
 
+        int fontSize = b->properties()->get("FontSize")->asQString().toInt();
+        b->editor_->setFont(QFont(PREF_QSTRING("Font"), fontSize, 0, false));
+
         b->autoResize();
         return (UIObject*)b;
     };
@@ -68,7 +71,8 @@ public:
         op->setAlignment(Qt::AlignLeft);
         p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
-        p.setFont(QFont(PREF_QSTRING("Font"), 11, 0, false));
+        int fontSize = properties()->get("FontSize")->asQString().toInt();
+        p.setFont(QFont(PREF_QSTRING("Font"), fontSize, 0, false));
         p.drawText(2, 3, this->width() - 2, this->height() - 3, 0, objectText_, 0);
     }
 
@@ -134,7 +138,9 @@ public:
 
     void autoResize()
     {
-        QFont myFont(PREF_QSTRING("Font"), 11);
+        int fontSize = properties()->get("FontSize")->asQString().toInt();
+
+        QFont myFont(PREF_QSTRING("Font"), fontSize);
         QFontMetrics fm(myFont);
 
         this->setFixedWidth((int)fm.width(objectText_) + 5);

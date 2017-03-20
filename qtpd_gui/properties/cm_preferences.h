@@ -15,6 +15,7 @@
 //#define cmp_font "Source Code Pro"
 
 #define PREF_QSTRING(x) qtpd::Preferences::inst().getQString(x)
+//#define PREF_INT(x) qtpd::Preferences::inst().getInt()
 
 //move
 #define QTPD_APP_VERSION "0.1"

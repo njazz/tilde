@@ -88,7 +88,9 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
         QString lSend = ((QString)list.at(7));
         QString lReceive = ((QString)list.at(8));
         QString lLabel = ((QString)list.at(9));
+        if (lLabel == "empty") lLabel = "";
         //...
+        int lFontSize = ((QString)list.at(4)).toInt() * 8 + 3;
 
         QStringList list2;
         list2.push_back("obj");
@@ -97,6 +99,8 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
         list2.push_back("ui.text");
         list2.push_back("@Text");
         list2.push_back(lLabel);
+        list2.push_back("@FontSize");
+        list2.push_back(QString("32"));
 
         UIObject* obj = FileParser::sendStringToCanvas(cmcanvas, list2);
 

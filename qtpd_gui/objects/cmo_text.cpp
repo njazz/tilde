@@ -44,13 +44,15 @@ void UIText::editorDone()
     //todo
 
     properties()->set("Text", getEditorData());
+    properties()->set("FontSize", 11);
 
     this->editor_->hide();
 }
 
 void UIText::editorChanged()
 {
-    QFont myFont(PREF_QSTRING("Font"), 11);
+    int fontSize = properties()->get("FontSize")->asQString().toInt();
+    QFont myFont(PREF_QSTRING("Font"), fontSize);
     QFontMetrics fm(myFont);
     QString text = QString(this->editor_->document()->toPlainText());
     int new_w = fm.width(text) + 20;

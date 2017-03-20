@@ -4,13 +4,13 @@
 
 extern "C" {
 
-#include <m_pd.h>
-#include <m_imp.h>
 #include <g_canvas.h>
+#include <m_imp.h>
+#include <m_pd.h>
 #include <s_stuff.h>
 
 void pd_init(void);
-int sys_startgui(const char *libdir);
+int sys_startgui(const char* libdir);
 
 //temporary externals setup
 extern void setup_ui0x2emsg();
@@ -59,17 +59,14 @@ extern void uimsg_set_updateUI(t_pd* x, void* uiobj, t_updateUI func);
 //extern "C" void setup_ui0x2epreset(void);
 //extern "C" void setup_ui0x2erslider(void);
 //extern "C" void setup_ui0x2etab(void);
-
-
-
 }
 
 #include <stdbool.h>
 
 #include "ceammc-lib/ceammc_atomlist.h"
 
-#include <string>
 #include <sstream>
+#include <string>
 
 #include <QDebug>
 
@@ -77,16 +74,14 @@ using namespace ceammc;
 
 t_pdinstance* cm_pd;
 
-extern t_pd *newest;    /* OK - this should go into a .h file now :) */
-
+extern t_pd* newest; /* OK - this should go into a .h file now :) */
 
 void cmp_error(std::string msg)
 {
-    qDebug ("## Pd lib error: %s\n",msg.c_str());
+    qDebug("## Pd lib error: %s\n", msg.c_str());
 }
 
 // copied from libpd
-
 
 void cmp_pdinit()
 {
@@ -132,37 +127,36 @@ void cmp_pdinit()
     setup_list0x2eproduct();
 
     //temporary initialisations
-//    setup_ui0x2ebang();
-//    setup_ui0x2ebpfunc();
-//    setup_ui0x2eknob();
-//    setup_ui0x2emsg();
-//    setup_ui0x2enumber();
-//    setup_ui0x2enumber_tilde();
-//    setup_ui0x2eradio();
-//    setup_ui0x2escope_tilde();
-//    setup_ui0x2eslider();
-//    setup_ui0x2espectroscope_tilde();
-//    setup_ui0x2etoggle();
+    //    setup_ui0x2ebang();
+    //    setup_ui0x2ebpfunc();
+    //    setup_ui0x2eknob();
+    //    setup_ui0x2emsg();
+    //    setup_ui0x2enumber();
+    //    setup_ui0x2enumber_tilde();
+    //    setup_ui0x2eradio();
+    //    setup_ui0x2escope_tilde();
+    //    setup_ui0x2eslider();
+    //    setup_ui0x2espectroscope_tilde();
+    //    setup_ui0x2etoggle();
 
     qDebug("pd extras");
 
     // init audio
     int indev[MAXAUDIOINDEV], inch[MAXAUDIOINDEV],
-            outdev[MAXAUDIOOUTDEV], outch[MAXAUDIOOUTDEV];
+        outdev[MAXAUDIOOUTDEV], outch[MAXAUDIOOUTDEV];
 
     indev[0] = outdev[0] = DEFAULTAUDIODEV;
     inch[0] = 1;
     outch[0] = 2;
 
     sys_set_audio_settings(1, indev, 1, inch,
-                           1, outdev, 1, outch, 44100, -1, 1, DEFDACBLKSIZE);
+        1, outdev, 1, outch, 44100, -1, 1, DEFDACBLKSIZE);
     sched_set_using_audio(SCHED_AUDIO_CALLBACK);
 
     sys_reopen_audio();
 
     //hack lol - removes empty canvas with array template
     cmp_closepatch(cmp_newpatch());
-
 }
 
 void cmp_setprinthook(t_printhook h)
@@ -172,17 +166,26 @@ void cmp_setprinthook(t_printhook h)
 
 void cmp_add_searchpath(t_symbol* s)
 {
-    sys_searchpath = namelist_append_files(sys_searchpath,s->s_name);
-    post("added path: %s" , s->s_name);
+    sys_searchpath = namelist_append_files(sys_searchpath, s->s_name);
+    post("added path: %s", s->s_name);
 }
 
+void cmp_remove_searchpath(t_symbol* s)
+{
+    //todo
+}
+
+bool cmp_is_abstraction(t_object * x)
+{
+    // !(pd_class(&x->te_pd) == canvas_class) &&
+     return ( (pd_class(&x->te_pd) == canvas_class) && canvas_isabstraction((t_canvas *)x));
+}
 
 AtomList cmp_get_loaded_list()
 {
     AtomList ret;
 
-    while(sys_loaded)
-    {
+    while (sys_loaded) {
         ret.append(Atom(sys_loaded->ll_name));
         sys_loaded = sys_loaded->ll_next;
     }
@@ -210,8 +213,7 @@ t_canvas* cmp_newpatch()
     list.append(Atom(gensym("~/")));
 
     t_pd* dest = gensym("pd")->s_thing;
-    if (dest==NULL)
-    {
+    if (dest == NULL) {
         cmp_error("Pd object not found");
         return 0;
     };
@@ -219,31 +221,34 @@ t_canvas* cmp_newpatch()
     pd_typedmess(dest, gensym("menunew"), (int)list.size(), list.toPdData());
 
     t_canvas* ret = 0;
-    ret = (t_canvas*)pd_newest();//canvas_getcurrent();
+    ret = (t_canvas*)pd_newest(); //canvas_getcurrent();
 
-    if (pd_this)
-    {
+    if (pd_this) {
         ret = pd_this->pd_canvaslist->gl_next;
 
-//        canvas_addinlet(ret,0,&s_list);
-//        canvas_addoutlet(ret,0,&s_list);
+        //        canvas_addinlet(ret,0,&s_list);
+        //        canvas_addoutlet(ret,0,&s_list);
     }
 
     qDebug("new canvas: %lu", (long)ret);
-    
+
     return ret;
 }
 
 t_canvas* cmp_openpatch(char* filename, char* path)
 {
-    return (t_canvas*) glob_evalfile(0, gensym(filename), gensym(path));
+    t_canvas* ret = (t_canvas*)glob_evalfile(0, gensym(filename), gensym(path));
+
+    //    post("dir");
+    //    post(canvas_getdir(ret)->s_name);
+
+    return ret;
 }
 
 void cmp_savepatch(t_canvas* canvas, char* filename, char* path)
 {
     t_pd* dest = gensym("pd")->s_thing;
-    if (dest==NULL)
-    {
+    if (dest == NULL) {
         cmp_error("Pd object not found");
         return;
     };
@@ -260,10 +265,7 @@ void cmp_closepatch(t_canvas* canvas)
         pd_free((t_pd*)canvas);
 
     qDebug("closed patch");
-
 }
-
-
 
 //#pragma mark -
 
@@ -278,7 +280,6 @@ void cmp_closepatch(t_canvas* canvas)
 //    }
 //}
 
-
 //std::vector<std::string> string_split(const std::string &s, char delim) {
 //    std::vector<std::string> elems;
 //    split(s, delim, std::back_inserter(elems));
@@ -289,23 +290,19 @@ AtomList* AtomListFromString(std::string in_string)
 {
     AtomList* list;
 
-    if (in_string.size())
-    {
-        t_binbuf *nb = binbuf_new();
+    if (in_string.size()) {
+        t_binbuf* nb = binbuf_new();
 
         binbuf_text(nb, (char*)in_string.c_str(), in_string.size());
         int argc = binbuf_getnatom(nb);
         t_atom* argv = binbuf_getvec(nb);
 
-        list = new AtomList(argc,argv);
-    }
-    else
-    {
+        list = new AtomList(argc, argv);
+    } else {
         list = new AtomList;
     }
 
     return list;
-
 }
 
 ////////
@@ -314,36 +311,37 @@ t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int
 {
     t_object* ret2;
     t_object* ret1;
-    
-    AtomList* list = AtomListFromString(class_name);
-    if (list->size()==0) {delete list; return 0;}
 
-    list->insert(0,Atom((float)x));
-    list->insert(1,Atom((float)y));
+    AtomList* list = AtomListFromString(class_name);
+    if (list->size() == 0) {
+        delete list;
+        return 0;
+    }
+
+    list->insert(0, Atom((float)x));
+    list->insert(1, Atom((float)y));
 
     ret1 = (t_object*)pd_newest();
     pd_typedmess((t_pd*)canvas, gensym("obj"), (int)list->size(), list->toPdData());
 
     delete list;
 
-
     ret2 = (t_object*)pd_newest();
-    if (!ret2) return 0;
-    if (ret2 != pd_checkobject((t_pd*)ret2)) return 0;
-    if (ret2==ret1) return 0;
+    if (!ret2)
+        return 0;
+    if (ret2 != pd_checkobject((t_pd*)ret2))
+        return 0;
+    if (ret2 == ret1)
+        return 0;
 
     char* bufp = new char[1024];
     int lenp;
 
-    binbuf_gettext(ret2->te_binbuf,&bufp,&lenp);
+    binbuf_gettext(ret2->te_binbuf, &bufp, &lenp);
     qDebug("object data: %s", bufp);
 
-
     return ret2;
-
 }
-
-
 
 //t_object* cmp_create_message(t_canvas* canvas, std::string message, int x, int y)
 //{
@@ -382,8 +380,6 @@ t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int
 //    binbuf_gettext(ret2->te_binbuf,&bufp,&lenp);
 //    qDebug("object data: %s", bufp);
 
-
-
 //    return ret2;
 
 //}
@@ -392,25 +388,19 @@ void cmp_moveobject(t_object* obj, int x, int y)
 {
     obj->te_xpix = x;
     obj->te_ypix = y;
-
 }
 
 void cmp_deleteobject(t_canvas* canvas, t_object* obj)
 {
 
-
     // one more extra check
-    if (canvas)
-    {
+    if (canvas) {
         glist_delete(canvas, &obj->te_g);
         //canvas_restoreconnections(glist_getcanvas(canvas));
-    }
-    else
-    {
+    } else {
         qDebug("pd canvas not found - not deleted");
     }
     qDebug("deleted obj");
-
 }
 
 ///////
@@ -422,13 +412,12 @@ void cmp_patchcord(t_object* obj1, int outno, t_object* obj2, int inno)
     obj_connect(obj1, outno, obj2, inno);
 }
 
-void cmp_delete_patchcord(t_object* obj1, int outno, t_object* obj2, int inno) {
-    
+void cmp_delete_patchcord(t_object* obj1, int outno, t_object* obj2, int inno)
+{
+
     obj_disconnect(obj1, outno, obj2, inno);
-    
+
 } //?
-
-
 
 #pragma mark -
 
@@ -445,15 +434,14 @@ int cmp_get_inlet_count(t_object* obj)
 
 #pragma mark -
 
-
 int cmp_get_inlet_type(t_object* obj, int idx)
 {
-    return obj_issignalinlet(obj,idx);
+    return obj_issignalinlet(obj, idx);
 };
 
 int cmp_get_outlet_type(t_object* obj, int idx)
 {
-    return obj_issignaloutlet(obj,idx);
+    return obj_issignaloutlet(obj, idx);
 };
 
 //int cmp_get_canvas_inlet_count(t_canvas* canvas)
@@ -465,23 +453,20 @@ int cmp_get_outlet_type(t_object* obj, int idx)
 
 void cmp_switch_dsp(bool on)
 {
-    if (!cm_pd)
-    {
+    if (!cm_pd) {
         cmp_error("library not yet initialized");
         return;
     }
     AtomList list;
-    list.append(Atom(on?1:0));
+    list.append(Atom(on ? 1 : 0));
 
     t_pd* dest = gensym("pd")->s_thing;
-    if (dest==NULL)
-    {
+    if (dest == NULL) {
         cmp_error("Pd object not found");
         return;
     };
     pd_typedmess(dest, gensym("dsp"), (int)list.size(), list.toPdData());
 };
-
 
 void cmp_sendstring(t_pd* obj, std::string msg)
 {
@@ -500,7 +485,6 @@ void cmp_sendstring(t_pd* obj, std::string msg)
     //    }
 
     pd_typedmess(obj, list->at(0).asSymbol(), (int)list2->size(), list2->toPdData());
-
 }
 
 void cmp_post(std::string text)
@@ -513,5 +497,3 @@ void cmp_connectUI(t_pd* obj, void* uiobj, t_updateUI func)
     // fix that
     uimsg_set_updateUI(obj, uiobj, func);
 }
-
-

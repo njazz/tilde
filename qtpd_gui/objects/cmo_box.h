@@ -72,6 +72,9 @@ public:
 
             b->setPdObject(new_obj);
 
+            b->isAbstraction_ = cmp_is_abstraction(new_obj);
+            qDebug()<<"*** is abstraction: " << b->isAbstraction_;
+
         } else {
             qDebug("Error: no such object %s", obj_name);
             b->setErrorBox(true);
@@ -83,6 +86,8 @@ public:
             b->addInlet();
         for (int i = 0; i < out_c; i++)
             b->addOutlet();
+
+
 
         return (UIObject*)b;
     };
@@ -103,7 +108,7 @@ public:
         }
 
         QColor rectColor = (this->errorBox()) ? QColor(255, 0, 0) : QColor(128, 128, 128);
-        p.setPen(QPen(rectColor, 2, (this->errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p.setPen(QPen(rectColor, 2+isAbstraction_, (this->errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         p.drawRect(0, 0, this->width(), this->height());
         QTextOption* op = new QTextOption;
         op->setAlignment(Qt::AlignLeft);
