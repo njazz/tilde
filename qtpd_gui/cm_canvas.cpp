@@ -5,6 +5,8 @@
 
 namespace qtpd {
 
+static const QSize EmptyCanvasSize = QSize(300, 200);
+
 Canvas::Canvas(UIObject* parent)
     : UIObject(parent)
 {
@@ -27,9 +29,9 @@ Canvas::Canvas(UIObject* parent)
     this->fileName = "";
 
     //
-    this->gridEnabled = true;
-    this->gridSnap = true;
-    this->gridStep = 20;
+    this->gridEnabled_ = true;
+    this->gridSnap_ = true;
+    this->gridStep_ = 20;
 
     //
     this->connObj1 = 0;
@@ -129,9 +131,9 @@ void Canvas::s_MoveBox(UIWidget* box, QMouseEvent* event)
         UIObject* w = ((UIObject*)this->selectionData_.boxes_.at(i));
         QPoint pos = ((UIObject*)this->selectionData_.boxes_.at(i))->pos() + mapToParent((event->pos() - box->dragOffset));
 
-        if (this->gridSnap) {
-            pos.setX(floor(pos.x() / this->gridStep) * this->gridStep);
-            pos.setY(floor(pos.y() / this->gridStep) * this->gridStep);
+        if (this->gridSnap_) {
+            pos.setX(floor(pos.x() / this->gridStep_) * this->gridStep_);
+            pos.setY(floor(pos.y() / this->gridStep_) * this->gridStep_);
         }
 
         w->move(pos);
@@ -139,6 +141,9 @@ void Canvas::s_MoveBox(UIWidget* box, QMouseEvent* event)
         if (obj)
             cmp_moveobject(obj, (int)pos.x(), (int)pos.y());
     }
+
+    if (drawStyle() == ds_Canvas)
+        setFixedSize(minimumCanvasSize());
 }
 
 //void  Canvas::editorDone()
@@ -237,15 +242,15 @@ void Canvas::paintEvent(QPaintEvent*)
 void Canvas::drawCanvas()
 {
     //grid
-    if (this->gridEnabled && (this->editMode != em_Locked)) {
+    if (this->gridEnabled_ && (this->editMode != em_Locked)) {
         QPainter p(this);
         p.scale(this->scale(), this->scale());
 
         p.setPen(QPen(QColor(224, 224, 224), 1, Qt::DotLine, Qt::SquareCap, Qt::BevelJoin));
-        for (int x = 0; x < this->width(); x += this->gridStep) {
+        for (int x = 0; x < this->width(); x += this->gridStep_) {
             p.drawLine(x, 0, x, this->height());
         }
-        for (int y = 0; y < this->height(); y += this->gridStep) {
+        for (int y = 0; y < this->height(); y += this->gridStep_) {
             p.drawLine(0, y, this->width(), y);
         }
     }
@@ -422,9 +427,9 @@ void Canvas::mouseMoveEventForCanvas(QMouseEvent* ev)
         QPoint offset = QPoint(10, 10);
 
         QPoint newpos = mapToParent(ev->pos() - offset);
-        if (this->gridSnap) {
-            newpos.setX(floor(newpos.x() / this->gridStep) * this->gridStep);
-            newpos.setY(floor(newpos.y() / this->gridStep) * this->gridStep);
+        if (this->gridSnap_) {
+            newpos.setX(floor(newpos.x() / this->gridStep_) * this->gridStep_);
+            newpos.setY(floor(newpos.y() / this->gridStep_) * this->gridStep_);
         }
 
         this->dragObject->move(newpos);
@@ -892,12 +897,12 @@ void Canvas::setObjectData(std::string objData)
 
 void Canvas::setGridEnabled(bool val)
 {
-    this->gridEnabled = val;
+    this->gridEnabled_ = val;
 }
 
 void Canvas::setGridSnap(bool val)
 {
-    this->gridSnap = val;
+    this->gridSnap_ = val;
 }
 
 objectVec Canvas::objectBoxes()
@@ -1228,5 +1233,34 @@ void Canvas::objectStartsEdit(void* obj)
     //replaceObject_->hide();
     objectMaker()->show();
     objectMaker()->raise();
+}
+
+QSize Canvas::minimumCanvasSize()
+{
+    objectVec::iterator it;
+
+    QSize ret = QSize(300, 200); //EmptyCanvasSize;
+
+    for (it = data_.boxes_.begin(); it != data_.boxes_.end(); ++it) {
+        int obj_x = ((UIObject*)*it)->x() + ((UIObject*)*it)->width() + 80;
+        int obj_y = ((UIObject*)*it)->y() + ((UIObject*)*it)->height() + 80;
+
+        if (obj_x > (ret.width() - 80))
+            ret.setWidth(obj_x);
+        if (obj_y > (ret.height() - 80))
+            ret.setHeight(obj_y);
+    }
+
+    if (ret.width() < windowSize_.width())
+        ret.setWidth(windowSize_.width());
+    if (ret.height() < windowSize_.height())
+        ret.setHeight(windowSize_.height());
+
+    return ret;
+}
+
+void Canvas::setWindowSize(QSize wsize)
+{
+    windowSize_ = wsize;
 }
 }

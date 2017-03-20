@@ -72,10 +72,11 @@ private:
     t_editMode editMode;
 
     // local, !Box
-    bool gridEnabled;
-    bool gridSnap;
-    int gridStep;
+    bool gridEnabled_;
+    bool gridSnap_;
+    int gridStep_;
 
+    QSize windowSize_;
     //
     canvasDrawStyle drawStyle_;
     // if the canvas is the box, it can have this. Check this later
@@ -503,6 +504,14 @@ public slots:
     /// \brief shows object maker for 'new object' menu command
     ///
     void showNewObjectMaker();
+
+    ////
+    /// \brief minimumCanvasSize
+    /// \return
+    ///
+    QSize minimumCanvasSize();
+
+    void setWindowSize(QSize wsize);
 
 private:
 private slots:
