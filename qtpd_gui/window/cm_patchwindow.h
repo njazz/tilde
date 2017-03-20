@@ -2,80 +2,72 @@
 #define CM_PATCHWINDOW_H
 
 #include "cm_basewindow.h"
-#include "cmo_box.h"
 #include "cm_canvas.h"
+#include "cmo_box.h"
 
 #include "cm_pdlink.h"
 
 #include "cm_filesaver.h"
 
-namespace qtpd
-{
+namespace qtpd {
 ////
 /// \brief Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas
 ///
-class PatchWindow : public BaseWindow
-{
+class PatchWindow : public BaseWindow {
 
 private:
-    QScrollArea *scroll;
+    QScrollArea* scroll;
 
     ////
 
-    QAction *selectAllAct;
-    QAction *selectAgainAct;
+    QAction* selectAllAct;
+    QAction* selectAgainAct;
 
+    QAction* delObjectAct;
+    QAction* editModeAct;
 
-    QAction *delObjectAct;
-    QAction *editModeAct;
-
-    QAction *putObjectAct;
-    QAction *putMessageAct;
+    QAction* putObjectAct;
+    QAction* putMessageAct;
 
     //    QAction *putSymbolAct;
-    QAction *putCommentAct;
+    QAction* putCommentAct;
 
-    QAction *putBangAct;
-    QAction *putToggleAct;
-    QAction *putNumberAct;
-    QAction *putSliderAct;
-    QAction *putKnobAct;
-    QAction *putRadioAct;
-    QAction *putDisplay;
+    QAction* putBangAct;
+    QAction* putToggleAct;
+    QAction* putNumberAct;
+    QAction* putSliderAct;
+    QAction* putKnobAct;
+    QAction* putRadioAct;
+    QAction* putDisplay;
 
-    QAction *putArray;
+    QAction* putArray;
 
-    QAction *putKeyboard;
-    QAction *putSlider2D;
-    QAction *putBPF;
+    QAction* putKeyboard;
+    QAction* putSlider2D;
+    QAction* putBPF;
 
-    QAction *putScope;
-    QAction *putSpectroscope;
+    QAction* putScope;
+    QAction* putSpectroscope;
 
-    QAction *putScriptAct;
+    QAction* putScriptAct;
 
+    QAction* showGridAct;
+    QAction* snapToGridAct;
 
+    QAction* alignToGridAct;
 
+    QAction* alignLeftAct;
+    QAction* alignRightAct;
+    QAction* alignTopAct;
+    QAction* alignBottomAct;
 
-    QAction *showGridAct;
-    QAction *snapToGridAct;
+    QAction* distHAct;
+    QAction* distVAct;
 
-    QAction *alignToGridAct;
+    QAction* tidyUpAct;
 
-    QAction *alignLeftAct;
-    QAction *alignRightAct;
-    QAction *alignTopAct;
-    QAction *alignBottomAct;
-
-    QAction *distHAct;
-    QAction *distVAct;
-
-    QAction *tidyUpAct;
-
-    QAction *zoomInAct;
-    QAction *zoomOutAct;
-
-
+    QAction* zoomInAct;
+    QAction* zoomOutAct;
 
     //ObjectMaker* objectMaker;
 
@@ -88,15 +80,14 @@ private slots:
 
     // this is hidden, use "newWindow"
     PatchWindow();
+
 public:
     static PatchWindow* newWindow();
     //    static cm_patchwindow* loadWindow(QStringList); //arguments
-    static PatchWindow* newSubpatch(t_canvas *subpatch = 0);
-
+    static PatchWindow* newSubpatch(t_canvas* subpatch = 0);
 
     //todo encapsulate!
     Canvas* canvas;
-
 
     void createActions()
     {
@@ -128,16 +119,12 @@ public:
         putMessageAct->setShortcut(tr("Ctrl+2"));
         connect(putMessageAct, &QAction::triggered, this, &PatchWindow::newMessageBox);
 
-
-
         //        putSymbolAct = new QAction(tr("Symbol"), this);
         //        putSymbolAct->setShortcut(tr("Ctrl+4"));
 
         putCommentAct = new QAction(tr("Comment"), this);
         putCommentAct->setShortcut(tr("Ctrl+5"));
         connect(putCommentAct, &QAction::triggered, this, &PatchWindow::newCommentBox);
-
-
 
         putBangAct = new QAction(tr("Bang"), this);
         putBangAct->setShortcut(tr("Ctrl+Shift+B"));
@@ -166,7 +153,6 @@ public:
         putArray = new QAction(tr("Array"), this);
         putArray->setShortcut(tr("Ctrl+Shift+A"));
 
-
         putKeyboard = new QAction(tr("Keyboard"), this);
         //putArray->setShortcut(tr("Ctrl+Shift+T"));
 
@@ -175,7 +161,6 @@ public:
 
         putBPF = new QAction(tr("BPF"), this);
         //putArray->setShortcut(tr("Ctrl+Shift+T"));
-
 
         putScope = new QAction(tr("Scope"), this);
         //putArray->setShortcut(tr("Ctrl+Shift+T"));
@@ -187,20 +172,17 @@ public:
         putScriptAct->setShortcut(tr("Ctrl+7"));
         connect(putScriptAct, &QAction::triggered, this, &PatchWindow::newScriptBox);
 
-
         showGridAct = new QAction(tr("Show grid"), this);
         showGridAct->setShortcut(tr("Ctrl+Shift+G"));
         showGridAct->setCheckable(true);
         showGridAct->setChecked(true);
         connect(showGridAct, &QAction::triggered, this, &PatchWindow::setGridVisible);
 
-
         snapToGridAct = new QAction(tr("Snap to grid"), this);
         snapToGridAct->setShortcut(tr("Alt+G"));
         snapToGridAct->setCheckable(true);
         snapToGridAct->setChecked(true);
         connect(snapToGridAct, &QAction::triggered, this, &PatchWindow::setGridSnap);
-
 
         alignToGridAct = new QAction(tr("Align to grid"), this);
         alignToGridAct->setEnabled(false);
@@ -239,7 +221,6 @@ public:
 
         zoomOutAct = new QAction(tr("Zoom out"), this);
         zoomOutAct->setShortcut(tr("Ctrl+-"));
-
     }
 
     void createMenus()
@@ -293,31 +274,25 @@ public:
         arrangeMenu->addSeparator();
         arrangeMenu->addAction(zoomInAct);
         arrangeMenu->addAction(zoomOutAct);
-
-
     }
 
     ///////
 
-
-    void resizeEvent(QResizeEvent *event)
+    void resizeEvent(QResizeEvent* event)
     {
         //fix later
-        this->canvas->setMinimumSize(QSize(width()*2 - canvas->x(), height() - canvas->y()));
-//        this->scroll->setMinimumSize(QSize(width() - canvas->x(), height() - canvas->y()));
+        this->canvas->setMinimumSize(QSize(width() - canvas->x(), height() - canvas->y()));
 
-//        qDebug() << "resize " << canvas->width() << scroll->width();
+        this->canvas->setWindowSize(size());
     }
 
     /////
     void newObjectBox()
     {
 
-        if (this->canvas->getEditMode() != em_Locked)
-        {
+        if (this->canvas->getEditMode() != em_Locked) {
             canvas->showNewObjectMaker();
         }
-
     }
 
     void newMessageBox()
@@ -326,17 +301,14 @@ public:
         //const char * obj_name = this->objectMaker->text().toStdString().c_str();
         //
 
-        if (this->canvas->getEditMode() != em_Locked)
-        {
+        if (this->canvas->getEditMode() != em_Locked) {
             //UIMessage *newMsg = this->canvas->createMsg("",QPoint(100,100));
 
-            UIObject *newMsg = this->canvas->createObject("ui.msg","",QPoint(100,100));
+            UIObject* newMsg = this->canvas->createObject("ui.msg", "", QPoint(100, 100));
             this->canvas->dragObject = newMsg;
             newMsg->show();
         }
-
     }
-
 
     void newFloatBox()
     {
@@ -344,15 +316,13 @@ public:
         //const char * obj_name = this->objectMaker->text().toStdString().c_str();
         //
 
-        if (this->canvas->getEditMode() != em_Locked)
-        {
+        if (this->canvas->getEditMode() != em_Locked) {
             //UIFloat *newFlo = this->canvas->createFloat("0",QPoint(100,100));
 
-            UIObject *newFlo = this->canvas->createObject("ui.float","0",QPoint(100,100));
+            UIObject* newFlo = this->canvas->createObject("ui.float", "0", QPoint(100, 100));
             this->canvas->dragObject = newFlo;
             newFlo->show();
         }
-
     }
 
     void newCommentBox()
@@ -361,55 +331,45 @@ public:
         //const char * obj_name = this->objectMaker->text().toStdString().c_str();
         //
 
-        if (this->canvas->getEditMode() != em_Locked)
-        {
+        if (this->canvas->getEditMode() != em_Locked) {
             //UIText *newTxt = this->canvas->createText("comment",QPoint(100,100));
-            UIObject *newTxt = this->canvas->createObject("ui.text","",QPoint(100,100));
+            UIObject* newTxt = this->canvas->createObject("ui.text", "", QPoint(100, 100));
             this->canvas->dragObject = newTxt;
             newTxt->show();
         }
-
     }
 
     void newBangBox()
     {
-        if (this->canvas->getEditMode() != em_Locked)
-        {
-            UIObject *newBng = this->canvas->createObject("ui.bang","",QPoint(100,100));
+        if (this->canvas->getEditMode() != em_Locked) {
+            UIObject* newBng = this->canvas->createObject("ui.bang", "", QPoint(100, 100));
             this->canvas->dragObject = newBng;
             newBng->show();
         }
-
     }
-
 
     void newToggleBox()
     {
-        if (this->canvas->getEditMode() != em_Locked)
-        {
-            UIObject *newBng = this->canvas->createObject("ui.toggle","",QPoint(100,100));
+        if (this->canvas->getEditMode() != em_Locked) {
+            UIObject* newBng = this->canvas->createObject("ui.toggle", "", QPoint(100, 100));
             this->canvas->dragObject = newBng;
             newBng->show();
         }
-
     }
 
     void newScriptBox()
     {
-        if (this->canvas->getEditMode() != em_Locked)
-        {
-            UIObject *newBng = this->canvas->createObject("ui.script","",QPoint(100,100));
+        if (this->canvas->getEditMode() != em_Locked) {
+            UIObject* newBng = this->canvas->createObject("ui.script", "", QPoint(100, 100));
             this->canvas->dragObject = newBng;
             newBng->show();
         }
-
     }
 
     void delSelected()
     {
         this->canvas->delBoxes();
         this->canvas->delSelectedPatchcords();
-
     }
 
     void selectAll()
@@ -422,7 +382,7 @@ public:
 
     void setEditMode()
     {
-        if (! (( this->canvas->getEditMode()) == em_Locked ))
+        if (!((this->canvas->getEditMode()) == em_Locked))
             this->canvas->setEditMode(em_Locked);
         else
             this->canvas->setEditMode(em_Unlocked);
@@ -443,7 +403,6 @@ public:
         //this->canvas->repaint();
     }
 
-
     /////
 
     //    void keyPressEvent(QKeyEvent *event)
@@ -456,33 +415,29 @@ public:
     //            this->canvas->setEditMode(true);
     //    }
 
-
-    void closeEvent(QCloseEvent *event)
+    void closeEvent(QCloseEvent* event)
     {
         cmp_closepatch((t_canvas*)this->canvas->pdObject());
 
         event->accept();
     }
 
-
     ////
 
     void setFileName(QString fname);
-
 
     ////
     /// \brief keys: ctrl for temporary lock; esc to stop editing actions
     /// \param event
     ///
-    void keyPressEvent(QKeyEvent *event){
-        if (event->modifiers() & Qt::ControlModifier)
-        {
+    void keyPressEvent(QKeyEvent* event)
+    {
+        if (event->modifiers() & Qt::ControlModifier) {
             if (this->canvas->getEditMode() != em_Locked)
                 this->canvas->setEditMode(em_Temporary);
         }
 
-        if (event->key() == Qt::Key_Escape)
-        {
+        if (event->key() == Qt::Key_Escape) {
             this->canvas->objectMaker()->setText("");
             this->objectMakerDone();
 
@@ -490,9 +445,9 @@ public:
         }
     }
 
-    void keyReleaseEvent(QKeyEvent *event){
-        if (event->key() == Qt::Key_Control)
-        {
+    void keyReleaseEvent(QKeyEvent* event)
+    {
+        if (event->key() == Qt::Key_Control) {
             if (this->canvas->getEditMode() == em_Temporary)
                 this->canvas->setEditMode(em_Unlocked);
         }
@@ -503,16 +458,12 @@ public slots:
     {
         t_canvas* newPdCanvas = cmp_newpatch();
 
-        PatchWindow *subPatch = PatchWindow::newSubpatch((t_canvas*)newPdCanvas);
-        Canvas *newCanvas = subPatch->canvas;
+        PatchWindow* subPatch = PatchWindow::newSubpatch((t_canvas*)newPdCanvas);
+        Canvas* newCanvas = subPatch->canvas;
 
-        return std::pair<QMainWindow*, qtpd::UIObject*>(subPatch,(qtpd::UIObject*)newCanvas);
-
+        return std::pair<QMainWindow*, qtpd::UIObject*>(subPatch, (qtpd::UIObject*)newCanvas);
     };
-
 };
-
-
 }
 
 #endif // CM_PATCHWINDOW_H

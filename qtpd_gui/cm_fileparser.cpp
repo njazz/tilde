@@ -21,6 +21,7 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
         FileParser::sendStringToCanvas(cmcanvas, list);
 
         // no special properties
+        return true;
 
     } else if (list.at(0) == "text") {
         list[0] = "obj";
@@ -33,6 +34,8 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
         list.removeAt(0);
         QString text = list.join(" ");
         obj->properties()->set("Text", text);
+
+        return true;
 
     } else if (list.at(0) == "floatatom") {
         list[0] = "obj";
@@ -52,6 +55,8 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
         QString lReceive = ((QString)list.at(10));
 
         //todo set / create
+
+        return true;
     }
     //
     // iemgui objects
@@ -118,9 +123,9 @@ void FileParser::parseStringList(Canvas* cmcanvas, QStringList list) //rename
 {
     if (!FileParser::legacyProcess(cmcanvas, list) && list.at(0) == "obj") {
         FileParser::sendStringToCanvas(cmcanvas, list);
-    }
+    } else
 
-    if (list.at(0) == "connect") {
+        if (list.at(0) == "connect") {
         qDebug("new connect");
 
         if (list.size() > 4) {
