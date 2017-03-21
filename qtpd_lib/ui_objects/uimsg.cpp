@@ -35,8 +35,7 @@ typedef struct _ui_msg {
 extern "C" void uimsg_set_updateUI(t_pd* x, void* obj, t_updateUI func)
 {
     //weird fix, test that
-    if (x)
-    {
+    if (x) {
         ((t_ui_msg*)x)->updateUI = func;
         ((t_ui_msg*)x)->uiobj = obj;
     }
@@ -46,61 +45,57 @@ static void uimsg_set(t_ui_msg* x, t_symbol* s, int argc, t_atom* argv)
 {
     //post("uimsg set");
 
-    if (x->msg)
-        delete x->msg;
-
     AtomList list = AtomList(argc, argv);
 
-    if (list.size() == 0) {
-        //one symbol or bang
-        x->s = s;
-        x->msg = new AtomList(0, 0);
-    } else {
-        if (list.at(0).isFloat()) {
-            if (list.size() > 1) {
-                x->s = &s_list;
+    if (s == gensym("set"))
+        if (list.size() == 0) {
+            if (x->msg)
+                delete x->msg;
+
+            //one symbol or bang
+            x->s = s;
+            x->msg = new AtomList(0, 0);
+        } else {
+            if (x->msg)
+                delete x->msg;
+
+            if (list.at(0).isFloat()) {
+                if (list.size() > 1) {
+                    x->s = &s_list;
+                    //list.remove(0);
+                    x->msg = new AtomList(list);
+                } else {
+                    x->s = &s_float;
+                    x->msg = new AtomList(list);
+                }
+            } else {
+                x->s = list.at(0).asSymbol();
                 //list.remove(0);
                 x->msg = new AtomList(list);
-            } else {
-                x->s = &s_float;
-                x->msg = new AtomList(list);
             }
-        } else {
-            x->s = list.at(0).asSymbol();
-            //list.remove(0);
-            x->msg = new AtomList(list);
+
+            if (x->updateUI)
+                x->updateUI(x->uiobj, *x->msg); //x->msg
+        }
+    else
+    {
+        //variables
+        for (int i=0;i<list.size();i++)
+        {
+
+
         }
     }
-
-    //    if (list.size())
-    //        if (list.at(0).isSymbol()) {
-    //            x->s = list.at(0).asSymbol();
-    //            if (list.size() > 1)
-    //                list.remove(0);
-    //        } else
-    //            x->s = &s_list;
-
-    //    x->msg = new AtomList(list);
-
-    //    x->s = s;
-
-    //quick fix
-    //    if (x->msg->size())
-    //        if (x->msg->at(0).asSymbol() == gensym("bang")) {
-    //            *x->msg = AtomList(0, 0);
-    //        }
-
-    //move this later
-    if (x->updateUI)
-        x->updateUI(x->uiobj, *x->msg); //x->msg
 }
 
 static void uimsg_bang(t_ui_msg* x) // t_symbol *s, int argc, t_atom* argv
 {
     if (x->msg->size())
-        x->msg->output(x->out1);
-    else
-        outlet_bang(x->out1);
+    {
+    //    x->msg->output(x->out1);
+        outlet_anything(x->out1, x->s, x->msg->size(), x->msg->toPdData());
+    }
+
 }
 
 static void* uimsg_new(t_symbol* s, int argc, t_atom* argv)
@@ -129,7 +124,7 @@ void uimsg_save(t_gobj* z, t_binbuf* b)
 
 static void uimsg_free(t_object* obj)
 {
-    t_ui_msg* x= (t_ui_msg*)obj;
+    t_ui_msg* x = (t_ui_msg*)obj;
 
     if (x->msg)
         delete x->msg;

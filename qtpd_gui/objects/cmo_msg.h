@@ -187,7 +187,6 @@ public:
             } else {
 
                 std::string msg = ("set " + this->objectData());
-                //qDebug("send msg %s", msg.c_str());
                 cmp_sendstring((t_pd*)this->pdObject(), msg);
             }
         }

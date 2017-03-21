@@ -475,19 +475,10 @@ void cmp_switch_dsp(bool on)
 
 void cmp_sendstring(t_pd* obj, std::string msg)
 {
-    //std::vector<std::string> atoms_ = string_split(msg, ' ');
-    //AtomList list;
-
     AtomList* list = AtomListFromString(msg);
 
     AtomList* list2 = new AtomList;
     *list2 = list->subList(1, list->size());
-
-    //    if (atoms_.size()<1) return;
-    //    for (int i = 1;i<atoms_.size();i++)
-    //    {
-    //        list.append(Atom(gensym(atoms_.at(i).c_str())));
-    //    }
 
     pd_typedmess(obj, list->at(0).asSymbol(), (int)list2->size(), list2->toPdData());
 }
