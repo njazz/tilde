@@ -77,25 +77,45 @@ static void uimsg_set(t_ui_msg* x, t_symbol* s, int argc, t_atom* argv)
             if (x->updateUI)
                 x->updateUI(x->uiobj, *x->msg); //x->msg
         }
-    else
-    {
+    else {
+
         //variables
-        for (int i=0;i<list.size();i++)
-        {
 
+        //spaghetti time
+        if (x->msg)
+            if (x->msg->size() > 0) {
 
-        }
+                AtomList outList = *x->msg;
+
+                for (int i = 0; i < x->msg->size(); i++) {
+
+                    std::string ch = x->msg->at(i).asString();
+                    if (ch.size() > 1) {
+                        if (ch.at(0) == '$') //first is \ (\$1)
+                        {
+                            //lol
+                            char* vs = &ch.at(1);
+                            int v = Atom(gensym(vs)).asInt();
+                            if ((v > 0) && (v < list.size())) {
+                                // at last
+                                outList.at(i) = list.at(v-1);
+                            }
+                        }
+                    }
+                }
+
+                outlet_anything(x->out1, x->s, outList.size(), outList.toPdData());
+            }
     }
 }
 
 static void uimsg_bang(t_ui_msg* x) // t_symbol *s, int argc, t_atom* argv
 {
-    if (x->msg->size())
-    {
-    //    x->msg->output(x->out1);
+    if (x->msg->size()) {
+
+        //    x->msg->output(x->out1);
         outlet_anything(x->out1, x->s, x->msg->size(), x->msg->toPdData());
     }
-
 }
 
 static void* uimsg_new(t_symbol* s, int argc, t_atom* argv)
