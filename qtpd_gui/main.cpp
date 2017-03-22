@@ -68,14 +68,17 @@ int main(int argc, char* argv[])
     Preferences::inst().create("Scripts","Folders","0.1",docFolder+"/Qtpd/Scripts");
 
     //test
+    //fix
+    Preferences::inst().create("Paths","Folders","0.1",docFolder);
     std::string extPath = Preferences::inst().get("Externals")->asStdString();
     std::string extPath1 = extPath + "/ceammc/";
     std::string extPath2 = extPath + "/fiddle~/";
     //std::string extPath3 = extPath + "/fiddle~/fiddle~.d_fat";
 
-    cmp_add_searchpath(gensym(extPath.c_str()));
-    cmp_add_searchpath(gensym(extPath1.c_str()));
-    cmp_add_searchpath(gensym(extPath2.c_str()));
+    Preferences::inst().addPath(extPath.c_str());
+    Preferences::inst().addPath(extPath1.c_str());
+    Preferences::inst().addPath(extPath2.c_str());
+
     //cmp_add_searchpath(gensym(extPath3.c_str()));
 
     pyWrappersInit();
