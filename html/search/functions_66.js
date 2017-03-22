@@ -25,7 +25,7 @@ var searchData=
   ['free_5fext',['free_ext',['../classceammc__gui_1_1_gui_factory.html#a4db56b63e091037c239548c91e7baa1d',1,'ceammc_gui::GuiFactory']]],
   ['free_5fmethod',['free_method',['../classceammc__gui_1_1_gui_factory.html#aa072d239bc0bc1245bc0a059492f994e',1,'ceammc_gui::GuiFactory']]],
   ['frexp',['frexp',['../pymath_8h.html#a3e2b550e22e6a002262c5a8a339498f0',1,'pymath.h']]],
-  ['fromgroup',['fromGroup',['../classqtpd_1_1_property_list.html#ab992ee90d1f57687cbd9f14993cd1427',1,'qtpd::PropertyList::fromGroup(std::string grpName)'],['../classqtpd_1_1_property_list.html#a3a9698daf247ccbd96d3ada9f2cfbca5',1,'qtpd::PropertyList::fromGroup(QString grpName)']]],
+  ['fromgroup',['fromGroup',['../classqtpd_1_1_property_list.html#a3a9698daf247ccbd96d3ada9f2cfbca5',1,'qtpd::PropertyList']]],
   ['frompddata',['fromPdData',['../classceammc_1_1_atom_list.html#a4a2e9ce3816e03a75a7e26eaac83e6fe',1,'ceammc::AtomList::fromPdData(size_t n, t_atom *lst)'],['../classceammc_1_1_atom_list.html#ac262f1872eb937927b263719979366e9',1,'ceammc::AtomList::fromPdData(int n, t_atom *lst)']]],
   ['fromvariant',['fromVariant',['../class_python_qt_object_ptr.html#ae051cfaafaeeefd1f6940df269cf7ade',1,'PythonQtObjectPtr']]],
   ['fullname',['fullName',['../classceammc_1_1faust_1_1_pd_u_i.html#a13c5ee69aa9e37c4d00189463bd8a22c',1,'ceammc::faust::PdUI']]],

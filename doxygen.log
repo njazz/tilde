@@ -1247,8 +1247,8 @@ Generating docs for compoun/home/travis/build/njazz/qtpd/qtpd_lib/ceammc-lib/cea
   parameter 'newrect'
 /home/travis/build/njazz/qtpd/qtpd_lib/ceammc-lib/ceammc_gui.h:395: warning: The following parameters of ceammc_gui::GuiFactory::wx_paint(U *z, t_object *view) are not documented:
   parameter 'view'
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:114: warning: argument 'idx' of command @param is not found in the argument list of qtpd::Canvas::addInlet() inherited from member addInlet at line 102 in file /home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:116: warning: argument 'idx' of command @param is not found in the argument list of qtpd::Canvas::addOutlet() inherited from member addOutlet at line 113 in file /home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:114: warning: argument 'idx' of command @param is not found in the argument list of qtpd::Canvas::addInlet() inherited from member addInlet at line 120 in file /home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:116: warning: argument 'idx' of command @param is not found in the argument list of qtpd::Canvas::addOutlet() inherited from member addOutlet at line 131 in file /home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h
 /home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:251: warning: argument 'canvas' of command @param is not found in the argument list of qtpd::Canvas::createBoxForCanvas(Canvas *newCanvas, std::string objectData, QPoint pos)
 /home/travis/build/njazz/qtpd/qtpd_gui/cm_canvas.h:251: warning: The following parameters of qtpd::Canvas::createBoxForCanvas(Canvas *newCanvas, std::string objectData, QPoint pos) are not documented:
   parameter 'newCanvas'
@@ -1265,18 +1265,20 @@ Generating docs for compoun/home/travis/build/njazz/qtpd/qtpd_lib/ceammc-lib/cea
   parameter 'pdObjectName'
 /home/travis/build/njazz/qtpd/qtpd_gui/cm_fileparser.h:27: warning: The following parameters of qtpd::FileParser::legacyProcess(Canvas *cmcanvas, QStringList list) are not documented:
   parameter 'cmcanvas'
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:102: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addInlet()
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:113: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addOutlet()
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:260: warning: argument 'w' of command @param is not found in the argument list of qtpd::UIObject::minimumBoxHeight()
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:254: warning: argument 'w' of command @param is not found in the argument list of qtpd::UIObject::minimumBoxWidth()
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:83: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setInletsPos()
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:248: warning: argument 'w' of command @param is not found in the argument list of qtpd::UIObject::setMinimumBoxHeight(int h)
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:248: warning: The following parameters of qtpd::UIObject::setMinimumBoxHeight(int h) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:120: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addInlet()
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:131: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addOutlet()
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:278: warning: argument 'w' of command @param is not found in the argument list of qtpd::UIObject::minimumBoxHeight()
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:272: warning: argument 'w' of command @param is not found in the argument list of qtpd::UIObject::minimumBoxWidth()
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:101: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setInletsPos()
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:266: warning: argument 'w' of command @param is not found in the argument list of qtpd::UIObject::setMinimumBoxHeight(int h)
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:266: warning: The following parameters of qtpd::UIObject::setMinimumBoxHeight(int h) are not documented:
   parameter 'h'
-/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:93: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setOutletsPos()
+/home/travis/build/njazz/qtpd/qtpd_gui/cm_object.h:111: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setOutletsPos()
 /home/travis/build/njazz/qtpd/qtpd_gui/cm_widget.h:76: warning: argument 'scale_' of command @param is not found in the argument list of qtpd::UIWidget::setScale(float newScale)
 /home/travis/build/njazz/qtpd/qtpd_gui/cm_widget.h:76: warning: The following parameters of qtpd::UIWidget::setScale(float newScale) are not documented:
   parameter 'newScale'
+/home/travis/build/njazz/qtpd/qtpd_gui/properties/cm_propertylist.h:130: warning: Found unknown command `\detais'
+/home/travis/build/njazz/qtpd/qtpd_gui/properties/cm_propertylist.h:130: warning: Found unknown command `\detais'
 d ceammc::AtomProperty...
 Generating docs for compound ceammc::ListProperty...
 Generating docs for compound ceammc::FloatProperty...
@@ -1373,6 +1375,6 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-symbol cache used 5769/65536 hits=1021181 misses=5769
-lookup cache used 9010/65536 hits=56355 misses=9687
+symbol cache used 5778/65536 hits=1022192 misses=5778
+lookup cache used 9028/65536 hits=56448 misses=9705
 finished...

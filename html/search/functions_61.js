@@ -29,6 +29,7 @@ var searchData=
   ['addparentclass',['addParentClass',['../class_python_qt.html#a46a7ccb0a93142329d76e06573ff93e6',1,'PythonQt::addParentClass()'],['../class_python_qt_private.html#a63c8d656de8ea86b495d63313f5744df',1,'PythonQtPrivate::addParentClass()'],['../class_python_qt_class_info.html#a50a231ef77ad2931df6b9030acdeb48b',1,'PythonQtClassInfo::addParentClass()']]],
   ['addpatchcord',['addPatchcord',['../classqtpd_1_1_clipboard.html#a9808a8ab113c4e10fc197ce98e3b866c',1,'qtpd::Clipboard']]],
   ['addpatchcords',['addPatchcords',['../classqtpd_1_1_clipboard.html#ae775bcd458421a9a53e9b31c41615830',1,'qtpd::Clipboard']]],
+  ['addpath',['addPath',['../classqtpd_1_1_preferences.html#a4f9c5e5681b1250d3a6b6a05909bc91b',1,'qtpd::Preferences']]],
   ['addpoint',['addPoint',['../classceammc_1_1_b_p_f.html#a1db78cc711b144b16a56b808e5e0770b',1,'ceammc::BPF']]],
   ['addpointraw',['addPointRaw',['../classceammc_1_1_b_p_f.html#ab972ef948ff55d34e942081f894502a5',1,'ceammc::BPF']]],
   ['addpolymorphichandler',['addPolymorphicHandler',['../class_python_qt.html#a885d9cbabd2b0575f8ecd62e79187340',1,'PythonQt::addPolymorphicHandler()'],['../class_python_qt_private.html#a5146dc4a1447b8a8dcfeea51e7631c39',1,'PythonQtPrivate::addPolymorphicHandler()'],['../class_python_qt_class_info.html#a6a0c46c3406ed1ea26c470a7e8f11966',1,'PythonQtClassInfo::addPolymorphicHandler()']]],

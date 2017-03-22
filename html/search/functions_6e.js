@@ -2,7 +2,7 @@ var searchData=
 [
   ['name',['name',['../classceammc_1_1_global_data.html#a4f4625c0c50d33bca1b7035a4c1b1e4f',1,'ceammc::GlobalData::name()'],['../classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d',1,'ceammc::Property::name()'],['../classceammc_1_1tl_1_1_cue_data.html#abc0985e300542e4b4b1a6f6066c92dbe',1,'ceammc::tl::CueData::name()']]],
   ['nameddatadict',['NamedDataDict',['../classceammc_1_1_named_data_dict.html#a5a681add645bc32edae2d4d728d59b23',1,'ceammc::NamedDataDict']]],
-  ['names',['names',['../classqtpd_1_1_property_list.html#a74b6f3f764fbdeae91515eb8a44d415e',1,'qtpd::PropertyList::names()'],['../classpy_property_list_decorator.html#ac2e12ce3337ce3c5629162ff3fafff94',1,'pyPropertyListDecorator::names()']]],
+  ['names',['names',['../classqtpd_1_1_property_list.html#a74b6f3f764fbdeae91515eb8a44d415e',1,'qtpd::PropertyList::names()'],['../classqtpd_1_1_property_list.html#a12d0803546bc2e090476a7e7933425f3',1,'qtpd::PropertyList::names(UIPropertyData *data1)'],['../classpy_property_list_decorator.html#ac2e12ce3337ce3c5629162ff3fafff94',1,'pyPropertyListDecorator::names()']]],
   ['nametotype',['nameToType',['../class_python_qt_method_info.html#ad335951f28db8181cf16e7250d55eb58',1,'PythonQtMethodInfo']]],
   ['nestedclasses',['nestedClasses',['../class_python_qt_class_info.html#ace70eaa522f2c927cdf8789f88046783',1,'PythonQtClassInfo']]],
   ['new_5fext',['new_ext',['../classceammc__gui_1_1_gui_factory.html#a21c7460bb48d34f0dc09ca7e8bdedd3f',1,'ceammc_gui::GuiFactory']]],

@@ -379,7 +379,7 @@ var searchData=
   ['pyobject_5fis_5fgc',['PyObject_IS_GC',['../objimpl_8h.html#a53c6d8213f880b3a05155307f0cee903',1,'objimpl.h']]],
   ['pyobject_5flength',['PyObject_Length',['../abstract_8h.html#adcbcabb9470b473270b3569aa2dfbe57',1,'abstract.h']]],
   ['pyobject_5fmalloc',['PyObject_MALLOC',['../objimpl_8h.html#accb021140245ca1ff56e76247dd4fb6e',1,'objimpl.h']]],
-  ['pyobject_5fnew',['PyObject_NEW',['../objimpl_8h.html#a81bbf406bf80c170965dfa4d35b8a6d1',1,'PyObject_NEW():&#160;objimpl.h'],['../objimpl_8h.html#a7580821f9a98637454fd94a7457f75ad',1,'PyObject_New():&#160;objimpl.h']]],
+  ['pyobject_5fnew',['PyObject_New',['../objimpl_8h.html#a7580821f9a98637454fd94a7457f75ad',1,'PyObject_New():&#160;objimpl.h'],['../objimpl_8h.html#a81bbf406bf80c170965dfa4d35b8a6d1',1,'PyObject_NEW():&#160;objimpl.h']]],
   ['pyobject_5fnew_5fvar',['PyObject_NEW_VAR',['../objimpl_8h.html#a7ce6df4c6b518cc859bc976067c13572',1,'objimpl.h']]],
   ['pyobject_5fnewvar',['PyObject_NewVar',['../objimpl_8h.html#ab83f99632dbd06e1656c99218b7e0a8e',1,'objimpl.h']]],
   ['pyobject_5frealloc',['PyObject_REALLOC',['../objimpl_8h.html#a5a659c84c35d38c127690750a4fe5280',1,'objimpl.h']]],

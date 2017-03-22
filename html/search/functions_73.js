@@ -50,6 +50,7 @@ var searchData=
   ['setgridsnap',['setGridSnap',['../classqtpd_1_1_canvas.html#ad6a8a14cfe6188f0cc5f14a675d36708',1,'qtpd::Canvas::setGridSnap()'],['../classqtpd_1_1_patch_window.html#ac0135abb9a3e8dab5133d50416b19415',1,'qtpd::PatchWindow::setGridSnap()']]],
   ['setgridvisible',['setGridVisible',['../classqtpd_1_1_patch_window.html#a0c7818b279e4fa727102b64f0fab95b5',1,'qtpd::PatchWindow']]],
   ['sethelp',['setHelp',['../classceammc_1_1_object_factory.html#a18e72241d1931d103b0ed0c587152535',1,'ceammc::ObjectFactory']]],
+  ['sethelpname',['setHelpName',['../classqtpd_1_1_u_i_object.html#a055a8f03b9e9a36678cb5804607b6b3e',1,'qtpd::UIObject']]],
   ['sethistory',['setHistory',['../class_python_qt_scripting_console.html#a4283bdcd4aad5d7d4206e2e6ba0e0641',1,'PythonQtScriptingConsole']]],
   ['setimporter',['setImporter',['../class_python_qt.html#a7887ccc0daf281f429123d243085b0fc',1,'PythonQt']]],
   ['setimporterignorepaths',['setImporterIgnorePaths',['../class_python_qt.html#ab6f25dbd63cda513c641cccf9c3d31ec',1,'PythonQt']]],
