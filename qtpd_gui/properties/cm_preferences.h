@@ -12,6 +12,8 @@
 
 #include <QDebug>
 
+#include "cm_pdlink.h"
+
 //#define cmp_font "Source Code Pro"
 
 #define PREF_QSTRING(x) qtpd::Preferences::inst().getQString(x)
@@ -67,6 +69,23 @@ public:
         qDebug() << this->getQString("appVersion");
         qDebug() << this->getQString("Font");
     }
+
+    //------------------------------------------
+    // path handling  - probably move to separate class
+
+    void addPath(QString newPath)
+    {
+        if (!get("Paths"))
+            set("Paths",(QString)"");
+
+        QStringList paths = get("Paths")->asQStringList();
+        cmp_add_searchpath(gensym(newPath.toStdString().c_str()));
+
+
+    }
+
+
+
 };
 }
 

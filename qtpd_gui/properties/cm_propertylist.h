@@ -16,7 +16,7 @@ typedef std::map<std::string, Property*> UIPropertyData;
 typedef std::map<std::string, UIPropertyData*> UIPropertyGroups;
 
 typedef std::map<std::string, Property*>::iterator UIPropertyDataIterator;
-
+typedef std::map<std::string, UIPropertyData*>::iterator UIPropertyGroupIterator;
 ////
 /// \brief yet another property handling class for ui object. List
 ///
@@ -30,10 +30,10 @@ private:
 public:
     PropertyList(){};
 
-    UIPropertyData* fromGroup(std::string grpName)
+    UIPropertyData* group(QString grpName)
     {
         UIPropertyData* ret;
-        ret = this->groups_[grpName];
+        ret = this->groups_[grpName.toStdString()];
         return ret;
     }
 
@@ -43,6 +43,8 @@ public:
         ret = this->groups_[grpName.toStdString()];
         return ret;
     }
+
+
 
     template <typename T>
     void create(std::string pName, std::string pGroup, std::string pVersion, T defaultData)
@@ -56,7 +58,12 @@ public:
 
         data_[pName] = newP;
         //fix
-        //groups_[pGroup][pName] = newP;
+
+        UIPropertyData *grp = groups_[pGroup];
+        if (!grp)
+            grp = new UIPropertyData();
+        (*grp)[pName] = newP;
+        groups_[pGroup] = grp;
 
         //qDebug() << "new property" << data_[pName]->asQString();
     }
@@ -111,6 +118,41 @@ public:
 
         UIPropertyDataIterator it;
         for (it = this->data_.begin(); it != this->data_.end(); ++it) {
+            //save only modified values
+            ret.push_back(it->first.c_str());
+        }
+
+        return ret;
+    }
+
+    ////
+    /// \brief list of all property names for specific propertyData
+    /// \detais todo normal classes
+    /// \return
+    ///
+    QStringList names(UIPropertyData* data1)
+    {
+        QStringList ret;
+
+        UIPropertyDataIterator it;
+        for (it = data1->begin(); it != data1->end(); ++it) {
+            //save only modified values
+            ret.push_back(it->first.c_str());
+        }
+
+        return ret;
+    }
+
+    ////
+    /// \brief list of all group names
+    /// \return
+    ///
+    QStringList groupNames()
+    {
+        QStringList ret;
+
+        UIPropertyGroupIterator it;
+        for (it = this->groups_.begin(); it != this->groups_.end(); ++it) {
             //save only modified values
             ret.push_back(it->first.c_str());
         }

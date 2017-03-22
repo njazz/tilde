@@ -6,47 +6,68 @@
 #include <QLabel>
 #include <QLineEdit>
 
-#include "cm_propertylist.h"
 #include "cm_preferences.h"
+#include "cm_propertylist.h"
 
-namespace qtpd{
-class PropertiesWindow : public QDockWidget
-{
+namespace qtpd {
+class PropertiesWindow : public QDockWidget {
 public:
     PropertiesWindow(PropertyList* plist)
     {
-        QStringList list = plist->names();
-
-        //qDebug() << "properties:" << plist->names();
-
-        setMinimumWidth(240);
-        setBaseSize(200,list.size()*20 + 30);
-        setMinimumHeight(list.size()*20 + 30);
+        QStringList grpList = plist->groupNames();
 
         setWindowTitle("Properties");
 
-        for (int i=0;i<list.size();i++)
-        {
-            int y = i*20;
-            int x1 = 10; int x2 = 100;
+        setMinimumWidth(240);
 
-            QLabel *l1 = new QLabel(this);
+
+        int y0 = 0;
+        int x1 = 10;
+        int x2 = 100;
+        int y = 0;
+
+        for (int j = 0; j < grpList.size(); j++) {
+
+            UIPropertyData* groupData = plist->group(grpList.at(j));
+            QStringList list = plist->names(groupData);
+
+            y = y0;
+
+            QLabel* l1 = new QLabel(this);
             QFont myFont(PREF_QSTRING("Font"), 11);
+            myFont.setBold(true);
             l1->setFont(myFont);
-            l1->setText(list.at(i));
-            l1->setFixedSize(100,20);
-            l1->move(x1,y);
+            l1->setText(grpList.at(j));
+            l1->setFixedSize(100, 20);
+            l1->move(x1/2, y);
             l1->show();
 
-            QLineEdit *le = new QLineEdit(this);
-            le->setFont(myFont);
-            le->setText(plist->get(list.at(i).toStdString())->asQString());
-            le->setFixedSize(140,20);
-            le->move(x2,y);
-            le->show();
+            y0 += 20;
 
+            for (int i = 0; i < list.size(); i++) {
+                y = i * 20 + y0;
 
+                QLabel* l1 = new QLabel(this);
+                QFont myFont(PREF_QSTRING("Font"), 11);
+                l1->setFont(myFont);
+                l1->setText(list.at(i));
+                l1->setFixedSize(100, 20);
+                l1->move(x1, y);
+                l1->show();
+
+                QLineEdit* le = new QLineEdit(this);
+                le->setFont(myFont);
+                le->setText(plist->get(list.at(i).toStdString())->asQString());
+                le->setFixedSize(140, 20);
+                le->move(x2, y);
+                le->show();
+            }
+
+            y0 += list.size() * 20 + 10;
         }
+
+        setBaseSize(200, y0 + 30);
+        setMinimumHeight(y0 + 30);
     }
 };
 }
