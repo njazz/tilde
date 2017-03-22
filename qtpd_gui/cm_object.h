@@ -18,6 +18,10 @@
 
 #include "cm_propertieswindow.h"
 
+//lazy way
+//todo proper pattern
+#include "cm_openfileproxy.h"
+
 namespace qtpd {
 
 typedef std::vector<Port*> portVec;
@@ -58,6 +62,20 @@ private:
     QAction* pmProperties;
     QAction* pmHelp;
     QAction* pmOpen;
+
+    //
+    QString helpName_;
+
+    //
+    QString fullHelpName()
+    {
+        if (helpName() == "")
+            return "";
+
+        QString ret = "";
+
+        return ret;
+    }
 
 public:
     //cm_object();
@@ -268,14 +286,24 @@ public:
 
     void hideSizeBox();
 
-    void contextMenuEvent(QContextMenuEvent *event);
+    void contextMenuEvent(QContextMenuEvent* event);
     //virtual void customContextMenuRequested(const QPoint &pos);
+
+    void setHelpName(QString name) { helpName_ = name; }
+    QString helpName() { return helpName_; }
 
 private slots:
     void openPropertiesWindow()
     {
         PropertiesWindow* pw = new PropertiesWindow(this->properties());
         pw->show();
+    }
+
+    void openHelpWindow()
+    {
+        if (helpName()!="") {
+            OpenFileProxy::openAbstraction(fullHelpName());
+        }
     }
 
 signals:

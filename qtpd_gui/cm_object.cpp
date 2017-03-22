@@ -67,7 +67,7 @@ void UIObject::createContextMenu()
 
     pmHelp = new QAction(tr("Help"), this);
     pmHelp->setShortcut(tr("Ctrl+Shift+H"));
-    //connect(pmProperties, &QAction::triggered, this, &UIObject::pmProperties);
+    connect(pmHelp, &QAction::triggered, this, &UIObject::openHelpWindow);
 
     pmOpen = new QAction(tr("Open"), this);
     pmOpen->setShortcut(tr("Ctrl+R"));
