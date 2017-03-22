@@ -272,6 +272,14 @@ void cmp_closepatch(t_canvas* canvas)
     qDebug("closed patch");
 }
 
+//-------
+
+void cmp_newarray(t_canvas* canvas)
+{
+//    t_template *template = template_findbyname(x->a_templatesym);
+//    array_new(template->t_sym, (t_gpointer*)canvas);
+}
+
 //#pragma mark -
 
 //temporary

@@ -73,11 +73,16 @@ int main(int argc, char* argv[])
     std::string extPath = Preferences::inst().get("Externals")->asStdString();
     std::string extPath1 = extPath + "/ceammc/";
     std::string extPath2 = extPath + "/fiddle~/";
+
+    //std::string extPath3 = extPath + "/pof/";
+
     //std::string extPath3 = extPath + "/fiddle~/fiddle~.d_fat";
 
     Preferences::inst().addPath(extPath.c_str());
     Preferences::inst().addPath(extPath1.c_str());
     Preferences::inst().addPath(extPath2.c_str());
+
+    //Preferences::inst().addPath(extPath3.c_str());
 
     //cmp_add_searchpath(gensym(extPath3.c_str()));
 
