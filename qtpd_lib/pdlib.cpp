@@ -272,14 +272,6 @@ void cmp_closepatch(t_canvas* canvas)
     qDebug("closed patch");
 }
 
-//-------
-
-void cmp_newarray(t_canvas* canvas)
-{
-//    t_template *template = template_findbyname(x->a_templatesym);
-//    array_new(template->t_sym, (t_gpointer*)canvas);
-}
-
 //#pragma mark -
 
 //temporary
@@ -463,6 +455,8 @@ int cmp_get_outlet_type(t_object* obj, int idx)
 //}
 
 #pragma mark -
+// --------------------------------------------
+// dsp
 
 void cmp_switch_dsp(bool on)
 {
@@ -500,4 +494,30 @@ void cmp_connectUI(t_pd* obj, void* uiobj, t_updateUI func)
 {
     // fix that
     uimsg_set_updateUI(obj, uiobj, func);
+}
+
+// ---------------------------------------------
+// arrays
+
+t_garray* cmp_get_array(t_symbol* arrayname)
+{
+    t_garray* a = (t_garray*)pd_findbyclass(arrayname, garray_class);
+    return a;
+}
+
+//todo
+void cmp_get_array_data(t_garray* a, int* size, t_float** vec)
+{
+    garray_getfloatarray(a, size, vec);
+
+}
+
+t_garray* cmp_new_array(t_canvas* c, t_symbol* name, t_floatarg size, t_floatarg save, t_floatarg newgraph)
+{
+    //possibly unused at all
+    t_garray* ret;
+    glist_arraydialog(c, name, size, save, newgraph);
+
+    ret = (t_garray*)pd_newest();
+    return ret;
 }

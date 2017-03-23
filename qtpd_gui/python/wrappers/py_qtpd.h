@@ -193,6 +193,18 @@ public Q_SLOTS:
     {
         c->setScale(scale);
     }
+
+    // arrays: yet here
+    void newArray(Canvas* c, QString name, int size)
+    {
+        if (c->pdObject())
+        {
+            t_canvas* pdCanvas = (t_canvas*)c->pdObject();
+            //yet this way:
+            cmp_new_array(pdCanvas, gensym(name.toStdString().c_str()),(t_floatarg)size,1,1);
+        }
+
+    }
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////

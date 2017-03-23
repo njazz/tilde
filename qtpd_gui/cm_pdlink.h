@@ -37,7 +37,6 @@ extern void cmp_setprinthook(t_printhook h);
 ///
 extern void cmp_add_searchpath(t_symbol* s);
 
-
 ////
 /// \brief remove search path from pd engine
 /// \details this is used when canvas is freed to remove temporary search paths
@@ -97,7 +96,7 @@ extern "C" void cmp_closepatch(t_canvas* canvas);
 
 ////
 /// \brief check if canvas is an abstraction
-extern bool cmp_is_abstraction(t_object * x);
+extern bool cmp_is_abstraction(t_object* x);
 
 ////
 /// \brief get canvas dir if it is an abstraction
@@ -222,5 +221,13 @@ void cmp_connectUI(t_pd* obj, void* uiobj, t_updateUI func);
 void cmp_post(std::string text);
 
 ///////
+
+// arrays
+
+t_garray* cmp_get_array(t_symbol* arrayname);
+
+void cmp_get_array_data(t_array* a, int size, float** vec);
+
+t_garray* cmp_new_array(t_canvas* c, t_symbol* name, t_floatarg size, t_floatarg save, t_floatarg newgraph);
 
 #endif // CM_PDLINK_H
