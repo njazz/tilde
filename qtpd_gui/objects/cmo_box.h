@@ -29,7 +29,7 @@ class UIBox : public UIObject {
     Q_OBJECT
 
 private:
-    QLineEdit* editor_;
+    //QLineEdit* editor_;
 
     // for abstracions
     bool isAbstraction_;
@@ -215,7 +215,7 @@ public:
         int new_w = fm.width(QString(this->objectData().c_str())) + 10;
         new_w = (new_w < 25) ? 25 : new_w;
         this->setFixedWidth(new_w);
-        this->editor_->setFixedWidth(this->width() - 5);
+        //this->editor_->setFixedWidth(this->width() - 5);
 
         //todo: del object and create new + patchcords
 
@@ -232,8 +232,8 @@ signals:
     //void editObject(UIObject* box);
 
 private slots:
-    void editorDone();
-    void editorChanged();
+//    void editorDone();
+//    void editorChanged();
 };
 }
 
