@@ -9,6 +9,7 @@ var searchData=
   ['new_5fmethod',['new_method',['../classceammc__gui_1_1_gui_factory.html#a7f7becdbe5be37f3493ec46f6cbd6c4b',1,'ceammc_gui::GuiFactory']]],
   ['new_5fobjectvec',['new_objectVec',['../classpy_object_vec_decorator.html#a7788386055f1865fd55d51acc3a57e3b',1,'pyObjectVecDecorator']]],
   ['new_5fuiobject',['new_UIObject',['../classpy_u_i_object_decorator.html#af803d92c45f2599b741799e7c73ac2f5',1,'pyUIObjectDecorator::new_UIObject(UIObject *parent)'],['../classpy_u_i_object_decorator.html#af6029148ef8ce10c321eb09d8b29928a',1,'pyUIObjectDecorator::new_UIObject()']]],
+  ['newarray',['newArray',['../classpy_canvas_decorator.html#ab8fe7f0de018a8f70ca37f6c8934ee32',1,'pyCanvasDecorator']]],
   ['newbangbox',['newBangBox',['../classqtpd_1_1_patch_window.html#af4aba12d1c4bc7dc86e23431970c5bcc',1,'qtpd::PatchWindow']]],
   ['newbitset',['newbitset',['../bitset_8h.html#a46e89ffcd529f77e4e138e79278316be',1,'bitset.h']]],
   ['newcommentbox',['newCommentBox',['../classqtpd_1_1_patch_window.html#a403ba665e965bc5e72dc54ef5d9cc5cb',1,'qtpd::PatchWindow']]],

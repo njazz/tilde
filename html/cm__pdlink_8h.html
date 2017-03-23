@@ -149,6 +149,9 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">set the 'repaint' function of the ui object to be accessible from pd object  <a href="#a9b4bef98ca39e6d157ee073b5139ae9d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a766e12f26830eee9deae0fe8e9f70535">cmp_post</a> (<a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> text)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">post plain text to Pd window  <a href="#a766e12f26830eee9deae0fe8e9f70535"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">t_garray *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#ae720f59bd81a99a5fc06fa7d33b1115c">cmp_get_array</a> (t_symbol *arrayname)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#adb4a68fce42ed60d78451b1efd60125f">cmp_get_array_data</a> (t_array *a, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="stringobject_8h.html#a612c27dae5681d14a5d92d0b3d8ab6e5">size</a>, float **vec)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">t_garray *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cm__pdlink_8h.html#a5e3a540ebc4655748e2c87cabd76213c">cmp_new_array</a> (t_canvas *c, t_symbol *<a class="el" href="_python_8h.html#ab3978d96531ad97f1c3139b11f771f98">name</a>, t_floatarg <a class="el" href="stringobject_8h.html#a612c27dae5681d14a5d92d0b3d8ab6e5">size</a>, t_floatarg save, t_floatarg newgraph)</td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
 <a class="anchor" id="a60e4f3209d8f267b0aa06105b0b1a4ff"></a><!-- doxytag: member="cm_pdlink.h::t_printhook" ref="a60e4f3209d8f267b0aa06105b0b1a4ff" args=")(const char *s)" -->
@@ -429,6 +432,56 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ae720f59bd81a99a5fc06fa7d33b1115c"></a><!-- doxytag: member="cm_pdlink.h::cmp_get_array" ref="ae720f59bd81a99a5fc06fa7d33b1115c" args="(t_symbol *arrayname)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">t_garray* <a class="el" href="cm__pdlink_8h.html#ae720f59bd81a99a5fc06fa7d33b1115c">cmp_get_array</a> </td>
+          <td>(</td>
+          <td class="paramtype">t_symbol *&#160;</td>
+          <td class="paramname"><em>arrayname</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adb4a68fce42ed60d78451b1efd60125f"></a><!-- doxytag: member="cm_pdlink.h::cmp_get_array_data" ref="adb4a68fce42ed60d78451b1efd60125f" args="(t_array *a, int size, float **vec)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="cm__pdlink_8h.html#adb4a68fce42ed60d78451b1efd60125f">cmp_get_array_data</a> </td>
+          <td>(</td>
+          <td class="paramtype">t_array *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float **&#160;</td>
+          <td class="paramname"><em>vec</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a7fcb3388b050e30e14b731b7288a7f76"></a><!-- doxytag: member="cm_pdlink.h::cmp_get_inlet_count" ref="a7fcb3388b050e30e14b731b7288a7f76" args="(t_object *obj)" -->
 <div class="memitem">
 <div class="memproto">
@@ -685,6 +738,51 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="a5e3a540ebc4655748e2c87cabd76213c"></a><!-- doxytag: member="cm_pdlink.h::cmp_new_array" ref="a5e3a540ebc4655748e2c87cabd76213c" args="(t_canvas *c, t_symbol *name, t_floatarg size, t_floatarg save, t_floatarg newgraph)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">t_garray* <a class="el" href="cm__pdlink_8h.html#a5e3a540ebc4655748e2c87cabd76213c">cmp_new_array</a> </td>
+          <td>(</td>
+          <td class="paramtype">t_canvas *&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">t_symbol *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">t_floatarg&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">t_floatarg&#160;</td>
+          <td class="paramname"><em>save</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">t_floatarg&#160;</td>
+          <td class="paramname"><em>newgraph</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
 </div>
 </div>
@@ -1012,7 +1110,7 @@ Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 22 2017 08:38:04 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 23 2017 09:23:19 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
