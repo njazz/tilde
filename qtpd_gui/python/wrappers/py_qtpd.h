@@ -25,9 +25,9 @@ class pyUIObjectDecorator : public QObject {
 
 public Q_SLOTS:
 
-    UIObject* new_UIObject(UIObject* parent) {return new UIObject(parent);}
-    UIObject* new_UIObject() {return new UIObject(0);}
-    void delete_UIObject(UIObject* obj) {delete obj;}
+    UIObject* new_UIObject(UIObject* parent) { return new UIObject(parent); }
+    UIObject* new_UIObject() { return new UIObject(0); }
+    void delete_UIObject(UIObject* obj) { delete obj; }
 
     void addInlet(UIObject* obj)
     {
@@ -83,14 +83,19 @@ class pyObjectVecDecorator : public QObject {
 public Q_SLOTS:
 
     objectVec* new_objectVec() { return new objectVec; }
-    void delete_objectVec(objectVec *obj) {delete obj;}
-
+    void delete_objectVec(objectVec* obj) { delete obj; }
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class pyCanvasDecorator : public QObject {
     Q_OBJECT
+    //public:
+
+    //    explicit pyCanvasDecorator(QObject* parent = 0)
+    //    {
+    //         setParent(parent);
+    //    }
 
 public Q_SLOTS:
 
@@ -197,13 +202,11 @@ public Q_SLOTS:
     // arrays: yet here
     void newArray(Canvas* c, QString name, int size)
     {
-        if (c->pdObject())
-        {
+        if (c->pdObject()) {
             t_canvas* pdCanvas = (t_canvas*)c->pdObject();
             //yet this way:
-            cmp_new_array(pdCanvas, gensym(name.toStdString().c_str()),(t_floatarg)size,1,1);
+            cmp_new_array(pdCanvas, gensym(name.toStdString().c_str()), (t_floatarg)size, 1, 1);
         }
-
     }
 };
 
@@ -227,6 +230,30 @@ public Q_SLOTS:
     {
         return p->PropertyList::names();
     }
+};
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class pyLocal : public QObject {
+    Q_OBJECT
+
+private:
+    Canvas* _canvas;
+
+public:
+    explicit pyLocal(QObject* parent = 0){};
+
+    void setCanvas(Canvas* c){
+    _canvas = c;
+    };
+
+public Q_SLOTS:
+    PyObject* getMainModule()
+    {
+        return PythonQt::self()->getMainModule();
+    }
+
+    Canvas* canvas() { return _canvas; }
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////

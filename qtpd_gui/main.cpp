@@ -18,7 +18,7 @@
 #include <PythonQt.h>
 #include <PythonQt_QtAll.h>
 
-#include "python/wrappers/py_wrapers.h"
+#include "python/wrappers/py_wrappers.h"
 
 #include "python/PythonQtScriptingConsole.h"
 
@@ -86,8 +86,9 @@ int main(int argc, char* argv[])
 
     //cmp_add_searchpath(gensym(extPath3.c_str()));
 
-    pyWrappersInit();
+    //pyWrappersInit();
 
+    pyWrapper::inst();
 
 
     return a.exec();

@@ -1,23 +1,22 @@
-// (c) 2017 Alex Nadzharov
-// License: GPL3
-
-#ifndef PY_WRAPERS_H
-#define PY_WRAPERS_H
+#include "py_wrappers.h"
 
 // generic
 
-#include <PythonQt.h>
-#include <PythonQt_QtAll.h>
+
 
 #include "py_pdlib.h"
 #include "py_qtpd.h"
 
-void pyWrappersInit()
+using namespace qtpd;
+
+pyWrapper::pyWrapper()
 {
+    qDebug("pyWrapper constructor");
     PythonQtObjectPtr mainContext = PythonQt::self()->getMainModule();
 
-    static pyQtpd _pyQtpd;
-    mainContext.addObject("Qtpd", &_pyQtpd);
+    //todo fix
+
+    mainContext.addObject("Qtpd", new pyQtpd());
 
     PythonQt::self()->addDecorators(new pyPatchWindowDecorator());
     PythonQt::self()->addDecorators(new pyCanvasDecorator());
@@ -30,4 +29,17 @@ void pyWrappersInit()
 
 }
 
-#endif // PY_WRAPERS_H
+PythonQtObjectPtr pyWrapper::withCanvas(UIObject* canvas)
+{
+    PythonQtObjectPtr ctx;
+    ctx = PythonQt::self()->createUniqueModule();
+    ctx.addObject("Qtpd", new pyQtpd());
+
+    pyLocal * loc = new pyLocal;
+    loc->setCanvas((Canvas*)canvas); // canvas, canvas, canvas, canvas
+    ctx.addObject("local", loc);
+
+    return ctx;
+}
+
+

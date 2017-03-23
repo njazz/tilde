@@ -20,6 +20,8 @@
 
 //#include "cm_pdlink.h"
 
+#include "python/wrappers/py_wrappers.h"
+
 namespace qtpd {
 
 class UIScriptEditor : public QPlainTextEdit {
@@ -32,6 +34,9 @@ private:
 
 public:
     explicit UIScriptEditor(QPlainTextEdit* parent = 0);
+
+    void setContext(PythonQtObjectPtr ctx) { _context = ctx; }
+    PythonQtObjectPtr context() { return _context; }
 
 private slots:
     //-----------------------------------------------------------------------------
@@ -258,6 +263,8 @@ private slots:
         }
         //
     }
+
+
 };
 
 //-------------------------------------------------------------------------------
@@ -281,7 +288,7 @@ public:
         UIScript* b = new UIScript((UIObject*)parent);
 
         std::string data1 = b->properties()->extractFromPdFileString(objectData);
-        if (data1!="")
+        if (data1 != "")
             b->setObjectData(data1);
 
         b->autoResize();
@@ -415,15 +422,15 @@ private slots:
 
         //this code is from PythonQt
 
-        PythonQtObjectPtr _context = PythonQt::self()->getMainModule();
+        PythonQtObjectPtr context = editor_->context();//PythonQt::self()->getMainModule();
         QString _stdOut = "";
         QString _stdErr = "";
         PythonQtObjectPtr p;
         PyObject* dict = NULL;
-        if (PyModule_Check(_context)) {
-            dict = PyModule_GetDict(_context);
-        } else if (PyDict_Check(_context)) {
-            dict = _context;
+        if (PyModule_Check(context)) {
+            dict = PyModule_GetDict(context);
+        } else if (PyDict_Check(context)) {
+            dict = context;
         }
 
         QStringList list = getEditorData();
@@ -447,7 +454,7 @@ private slots:
                 if (dict) {
                     //p.setNewRef(PyRun_String(line.toLatin1().data(), Py_single_input, dict, dict));
 
-                    _context.evalScript(line);
+                    context.evalScript(line);
 
                     //qDebug() << editor_->document()->toPlainText().toLatin1().data();
                     qDebug() << "line: " << line;

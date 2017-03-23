@@ -31,6 +31,8 @@ UIScript::UIScript(UIObject* parent)
 
     QFont font = QFont(PREF_QSTRING("Font"), 11, 0, false);
 
+
+
     this->editor_ = new UIScriptEditor((QPlainTextEdit*)this); //weird
     this->editor_->setFixedSize(150 - 5, 300 - 27); //setFixedSize(65-5,18);
     this->editor_->move(2, 21);
@@ -41,6 +43,11 @@ UIScript::UIScript(UIObject* parent)
     this->setFocus();
 
     connect(this->editor_, &QPlainTextEdit::textChanged, this, &UIScript::editorChanged);
+
+    // new python context
+
+    editor_->setContext(pyWrapper::inst().withCanvas(parent));  //(PythonQt::createUniqueModule());
+
 
     initProperties();
 
@@ -89,6 +96,9 @@ UIScript::UIScript(UIObject* parent)
     b1->setFixedSize(50, 20);
     b1->show();
     connect(b1, &QPushButton::clicked, this, &UIScript::btnClear);
+
+
+
 }
 
 void UIScript::editorChanged()
