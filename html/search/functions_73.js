@@ -70,6 +70,7 @@ var searchData=
   ['setnormvalueat',['setNormValueAt',['../structui__sliders.html#a25cd928ecc31831f0f84b711599e4881',1,'ui_sliders']]],
   ['setobject',['setObject',['../class_python_qt_object_ptr.html#a36bac469bd9fd03c3af7f492b67ee35d',1,'PythonQtObjectPtr']]],
   ['setobjectdata',['setObjectData',['../classqtpd_1_1_canvas.html#adfcac398bb47f15aee737ab9268c66da',1,'qtpd::Canvas::setObjectData()'],['../classqtpd_1_1_u_i_object.html#a65a6c071b7b6f99393652d273e6a0fa7',1,'qtpd::UIObject::setObjectData()']]],
+  ['setobjectsizemode',['setObjectSizeMode',['../classqtpd_1_1_u_i_object.html#a9bd7968c1e875978f700e6615b4c6f53',1,'qtpd::UIObject']]],
   ['setoutletspos',['setOutletsPos',['../classqtpd_1_1_u_i_object.html#a0f7e507f8949b1a58bf343279a488c44',1,'qtpd::UIObject']]],
   ['setparent',['setParent',['../class_python_qt_std_decorators.html#aaebb6b2d89cd3cdd1a13017891debcef',1,'PythonQtStdDecorators']]],
   ['setpatchcordtype',['setPatchcordType',['../classqtpd_1_1_patchcord.html#a1b5fb2d27b98da2e715060294b0599d7',1,'qtpd::Patchcord']]],

@@ -94,21 +94,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00010"></a>00010 
 <a name="l00011"></a>00011 <span class="keyword">namespace </span>qtpd {
 <a name="l00015"></a><a class="code" href="classqtpd_1_1_object_maker.html">00015</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_object_maker.html" title="creates lineedit box for new object">ObjectMaker</a> : <span class="keyword">public</span> QLineEdit {
-<a name="l00016"></a>00016 <span class="keyword">public</span>:
-<a name="l00017"></a>00017     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_object_maker.html#a9302b224a677c13f8a335d33db2bcbb4">ObjectMaker</a>(QLineEdit* parent = 0);
+<a name="l00016"></a>00016 
+<a name="l00017"></a>00017     Q_OBJECT
 <a name="l00018"></a>00018 
-<a name="l00019"></a><a class="code" href="classqtpd_1_1_object_maker.html#a3fc3823d8cd442c2754c898e7eb5da9f">00019</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_object_maker.html#a3fc3823d8cd442c2754c898e7eb5da9f">focusOutEvent</a>(QFocusEvent *)
-<a name="l00020"></a>00020     {
-<a name="l00021"></a>00021         <span class="comment">//emit textEdited(this-&gt;text());</span>
-<a name="l00022"></a>00022         emit returnPressed();
-<a name="l00023"></a>00023     }
-<a name="l00024"></a>00024 
-<a name="l00025"></a>00025 <span class="keyword">private</span> slots:
-<a name="l00029"></a>00029     <span class="keywordtype">void</span> editorChanged();
-<a name="l00030"></a>00030 };
-<a name="l00031"></a>00031 }
+<a name="l00019"></a>00019 <span class="keyword">private</span>:
+<a name="l00020"></a>00020 <span class="keyword">public</span>:
+<a name="l00021"></a>00021     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_object_maker.html#a9302b224a677c13f8a335d33db2bcbb4">ObjectMaker</a>(QLineEdit* parent = 0);
+<a name="l00022"></a>00022 
+<a name="l00023"></a><a class="code" href="classqtpd_1_1_object_maker.html#a3fc3823d8cd442c2754c898e7eb5da9f">00023</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_object_maker.html#a3fc3823d8cd442c2754c898e7eb5da9f">focusOutEvent</a>(QFocusEvent*)
+<a name="l00024"></a>00024     {
+<a name="l00025"></a>00025         emit <a class="code" href="classqtpd_1_1_object_maker.html#adc36d63bedc3740d9c65ce949be5eb87">objectMakerDoneSignal</a>();
+<a name="l00026"></a>00026     }
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 signals:
+<a name="l00029"></a>00029     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_object_maker.html#adc36d63bedc3740d9c65ce949be5eb87">objectMakerDoneSignal</a>();
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031 <span class="keyword">private</span> slots:
 <a name="l00032"></a>00032 
-<a name="l00033"></a>00033 <span class="preprocessor">#endif // CM_OBJECTMAKER_H</span>
+<a name="l00033"></a>00033     <span class="keywordtype">void</span> leaveFocus();
+<a name="l00034"></a>00034 
+<a name="l00038"></a>00038     <span class="keyword">virtual</span> <span class="keywordtype">void</span> editorChanged();
+<a name="l00039"></a>00039 };
+<a name="l00040"></a>00040 }
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042 <span class="preprocessor">#endif // CM_OBJECTMAKER_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -127,7 +136,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 23 2017 17:13:10 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 23 2017 19:32:45 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

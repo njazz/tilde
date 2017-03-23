@@ -136,7 +136,7 @@ Inheritance diagram for qtpd::UIObject:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ab8d2e6ae05d2f3521a9a7841dc8c6c59">resizeBox</a> (<a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> dx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ac5164efbefa045172ec27eaf957a8fb0">resizeBox</a> (<a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> dx, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> dy)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#af907b37e5d5f8b0481d03f89b2ef7b6f">s_repaint</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="signals"></a>
 Signals</h2></td></tr>
@@ -210,6 +210,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ab02bee5e31d6a263cb468f57252870d6">contextMenuEvent</a> (QContextMenuEvent *event)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a055a8f03b9e9a36678cb5804607b6b3e">setHelpName</a> (QString <a class="el" href="_python_8h.html#ab3978d96531ad97f1c3139b11f771f98">name</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ad8b0668e09e587c80bf04a3b2e0a81d5">helpName</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a9bd7968c1e875978f700e6615b4c6f53">setObjectSizeMode</a> (<a class="el" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3">t_objectSize</a> os)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>base class for all object boxes - standard and special </p>
@@ -798,16 +799,26 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab8d2e6ae05d2f3521a9a7841dc8c6c59"></a><!-- doxytag: member="qtpd::UIObject::resizeBox" ref="ab8d2e6ae05d2f3521a9a7841dc8c6c59" args="(int dx)" -->
+<a class="anchor" id="ac5164efbefa045172ec27eaf957a8fb0"></a><!-- doxytag: member="qtpd::UIObject::resizeBox" ref="ac5164efbefa045172ec27eaf957a8fb0" args="(int dx, int dy)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_object.html#ab8d2e6ae05d2f3521a9a7841dc8c6c59">qtpd::UIObject::resizeBox</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_object.html#ac5164efbefa045172ec27eaf957a8fb0">qtpd::UIObject::resizeBox</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
-          <td class="paramname"><em>dx</em></td><td>)</td>
-          <td><code> [slot]</code></td>
+          <td class="paramname"><em>dx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramname"><em>dy</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [slot]</code></td>
         </tr>
       </table>
 </div>
@@ -1017,6 +1028,23 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a9bd7968c1e875978f700e6615b4c6f53"></a><!-- doxytag: member="qtpd::UIObject::setObjectSizeMode" ref="a9bd7968c1e875978f700e6615b4c6f53" args="(t_objectSize os)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_object.html#a9bd7968c1e875978f700e6615b4c6f53">qtpd::UIObject::setObjectSizeMode</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3">t_objectSize</a>&#160;</td>
+          <td class="paramname"><em>os</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a0f7e507f8949b1a58bf343279a488c44"></a><!-- doxytag: member="qtpd::UIObject::setOutletsPos" ref="a0f7e507f8949b1a58bf343279a488c44" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -1146,7 +1174,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 23 2017 17:13:11 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 23 2017 19:32:47 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
