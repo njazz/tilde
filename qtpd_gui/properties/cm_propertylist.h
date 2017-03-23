@@ -74,7 +74,10 @@ public:
     void set(std::string pName, U value)
     {
         if(this->data_[pName])
-        this->data_[pName]->set(value);
+        {
+            this->data_[pName]->set(value);
+            emit propertyChangedSignal(QString(pName.c_str()));
+        }
     };
 
     Property* get(std::string pName)
@@ -195,6 +198,9 @@ public:
 
         return ret.toStdString();
     }
+
+signals:
+    void propertyChangedSignal(QString name);
 };
 }
 

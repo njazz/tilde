@@ -9,17 +9,25 @@
 #include "cm_preferences.h"
 #include "cm_propertylist.h"
 
+#include <map>
+
 namespace qtpd {
 class PropertiesWindow : public QDockWidget {
+
+private:
+    std::map<QLineEdit*, QString> _propertyNames;       //lookup table
+    PropertyList* _propertyList;
+
 public:
     PropertiesWindow(PropertyList* plist)
     {
+        _propertyList = plist;
+
         QStringList grpList = plist->groupNames();
 
         setWindowTitle("Properties");
 
         setMinimumWidth(240);
-
 
         int y0 = 0;
         int x1 = 10;
@@ -39,7 +47,7 @@ public:
             l1->setFont(myFont);
             l1->setText(grpList.at(j));
             l1->setFixedSize(100, 20);
-            l1->move(x1/2, y);
+            l1->move(x1 / 2, y);
             l1->show();
 
             y0 += 20;
@@ -61,6 +69,10 @@ public:
                 le->setFixedSize(140, 20);
                 le->move(x2, y);
                 le->show();
+
+                connect(le, &QLineEdit::returnPressed, this, &PropertiesWindow::editedProperty);
+
+                _propertyNames[le] = list.at(i);
             }
 
             y0 += list.size() * 20 + 10;
@@ -68,6 +80,18 @@ public:
 
         setBaseSize(200, y0 + 30);
         setMinimumHeight(y0 + 30);
+    }
+
+public slots:
+    void editedProperty()
+    {
+        qDebug() << "edited";
+
+        QLineEdit* sender = (QLineEdit*)QObject::sender();
+        QString pname = _propertyNames[sender];
+        _propertyList->set(pname.toStdString(), sender->text().split(" "));
+
+        qDebug() << pname << sender->text();
     }
 };
 }

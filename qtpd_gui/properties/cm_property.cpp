@@ -98,13 +98,6 @@ void Property::set(std::string string)
 }
 
 template <>
-void Property::set(QString string)
-{
-    data_ = AtomList(gensym(string.toStdString().c_str()));
-    type_ = ptString;
-}
-
-template <>
 void Property::set(int val)
 {
     data_ = AtomList(val);
@@ -125,8 +118,14 @@ void Property::set(QStringList strlist)
     for (it = strlist.begin(); it != strlist.end(); ++it) {
         QString str = *it;
         //qDebug() << "str" << str;
-        if (str != "")
-            list->append(Atom(gensym(str.toStdString().c_str())));
+        if (str != "") {
+            //check if it is not float
+            if (str.toFloat() != 0)
+                list->append(Atom(str.toFloat()));
+            else
+
+                list->append(Atom(gensym(str.toStdString().c_str())));
+        }
     }
 
     //qDebug() << "data size" << list->size();
@@ -134,7 +133,13 @@ void Property::set(QStringList strlist)
     //check, different type for text files
     type_ = ptList;
     data_ = (*list);
+}
 
-
+template <>
+void Property::set(QString string)
+{
+    //    data_ = AtomList(gensym(string.toStdString().c_str()));
+    //    type_ = ptString;
+    Property::set(string.split(" "));
 }
 }

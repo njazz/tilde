@@ -76,16 +76,23 @@ public:
     void addPath(QString newPath)
     {
         if (!get("Paths"))
-            set("Paths",(QString)"");
+            set("Paths", (QString) "");
 
         QStringList paths = get("Paths")->asQStringList();
         cmp_add_searchpath(gensym(newPath.toStdString().c_str()));
-
-
+        paths.append(newPath);
+        set("Paths", paths);
     }
 
+    QStringList paths()
+    {
+        QStringList ret;
+        if (!get("Paths"))
+            return ret;
 
-
+        ret = get("Paths")->asQStringList();
+        return ret;
+    }
 };
 }
 

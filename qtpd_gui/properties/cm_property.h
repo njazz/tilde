@@ -76,6 +76,59 @@ public:
         return defaultData_;
     }
 
+    QSize asQSize()
+    {
+        QSize ret = QSize(40, 20);
+
+        if (data_.size() < 2)
+            return ret;
+        if (!(data_.at(0).isFloat()) && !(data_.at(1).isFloat()))
+            return ret;
+
+        ret.setWidth(data_.at(0).asFloat());
+        ret.setHeight(data_.at(1).asFloat());
+
+        if (ret.width() < 40)
+            ret.setWidth(40);
+        if (ret.height() < 20)
+            ret.setHeight(20);
+
+        return ret;
+    }
+
+    float asFloat()
+    {
+
+        if (!data_.size())
+            return 0;
+
+        return data_.at(0).asFloat();
+    }
+
+    float asFontSize()
+    {
+        return (asFloat() < 8) ? 8 : asFloat();
+    }
+
+    QColor asQColor()
+    {
+        QColor ret = QColor(128,128,128,255);   //sefault gray
+
+
+        if (data_.size() < 4)
+            return ret;
+        if (!(data_.at(0).isFloat()) && !(data_.at(1).isFloat()) && !(data_.at(2).isFloat()) && !(data_.at(3).isFloat()))
+            return ret;
+
+        ret = QColor( data_.at(0).asFloat(),
+                      data_.at(1).asFloat(),
+                      data_.at(2).asFloat(),
+                      data_.at(3).asFloat());
+
+        return ret;
+
+    }
+
     QStringList asQStringList()
     {
         QStringList ret;

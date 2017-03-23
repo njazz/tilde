@@ -96,6 +96,8 @@ public:
     ///
     void createContextMenu();
 
+    void showPopupMenu(QPoint pos);
+
     //void contextMenuEvent(QContextMenuEvent* event);
 
     ////
@@ -286,13 +288,47 @@ public:
 
     void hideSizeBox();
 
-    void contextMenuEvent(QContextMenuEvent* event);
+    //void contextMenuEvent(QContextMenuEvent* event);
     //virtual void customContextMenuRequested(const QPoint &pos);
 
-    void setHelpName(QString name) { helpName_ = name; }
+    void setHelpName(QString name)
+    {
+
+        QStringList paths = Preferences::inst().paths();
+
+        if (paths.size() == 0) {
+            helpName_ = "";
+            cmp_post("Help: bad search paths");
+            return;
+        }
+
+        for (int i = 0; i < paths.size(); i++) {
+
+            QString path = paths.at(i);
+            // todo windows
+            QString fullname = path + "/" + name;
+            QFileInfo check_file(fullname);
+
+            qDebug() << fullname;
+
+            if (check_file.exists() && check_file.isFile()) {
+
+                helpName_ = fullname;
+                qDebug() << "FOUND: " << fullname;
+                return;
+            }
+
+
+
+            //todo check if it exists in several folders
+        }
+
+        QString p1 = "Help: not found: " + name;
+        cmp_post(p1.toStdString().c_str());
+    }
     QString helpName() { return helpName_; }
 
-    void setObjectSizeMode(t_objectSize os){ objectSizeMode_ = os;}
+    void setObjectSizeMode(t_objectSize os) { objectSizeMode_ = os; }
 
 private slots:
     void openPropertiesWindow()
@@ -303,8 +339,8 @@ private slots:
 
     void openHelpWindow()
     {
-        if (helpName()!="") {
-            OpenFileProxy::openAbstraction(fullHelpName());
+        if (helpName() != "") {
+            OpenFileProxy::openAbstraction(helpName());
         }
     }
 
@@ -319,6 +355,23 @@ public slots:
     void s_repaint() //needed for proper threading
     {
         this->repaint();
+    }
+
+    ////
+    /// \brief this slot is called by property editor or anything that changes property
+    /// \details fix this later with better property system
+    /// \param pname
+    ///
+    void propertyChanged(QString pname)
+    {
+        // spaghetti again
+
+        if (pname=="Size") setFixedSize(properties()->get("Size")->asQSize());
+
+        //just visuals
+        if (pname=="FontSize") repaint();
+        if (pname=="BorderColor") repaint();
+
     }
 };
 }

@@ -45,6 +45,8 @@ void UIObject::resizeBox(int dx, int dy)
 
 void UIObject::initProperties()
 {
+    connect(this->properties(), &PropertyList::propertyChangedSignal, this, &UIObject::propertyChanged);
+
     this->properties()->create("Size", "Box", "0.1", this->size());
     this->properties()->create("Position", "Box", "0.1", this->pos());
     this->properties()->create("FontSize", "Box", "0.1", 11.);
@@ -63,7 +65,7 @@ PropertyList* UIObject::properties()
 
 void UIObject::createContextMenu()
 {
-    setContextMenuPolicy(Qt::DefaultContextMenu);
+    setContextMenuPolicy(Qt::NoContextMenu);
 
     pmProperties = new QAction(tr("Properties"), this);
     pmProperties->setShortcut(tr("Ctrl+Shift+P"));
@@ -90,9 +92,10 @@ void UIObject::createContextMenu()
 
 }
 
-void UIObject::contextMenuEvent(QContextMenuEvent *event) //customContextMenuRequested(const QPoint &pos)
+//void UIObject::contextMenuEvent(QContextMenuEvent *event) //customContextMenuRequested(const QPoint &pos)
+void UIObject::showPopupMenu (QPoint pos)
 {
-    QPoint pos = mapToGlobal(event->pos());
+
     popupMenu_.move(pos);
     popupMenu_.show();
 

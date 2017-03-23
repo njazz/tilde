@@ -80,6 +80,9 @@ public:
             b->isAbstraction_ = cmp_is_abstraction(new_obj);
             qDebug()<<"*** is abstraction: " << b->isAbstraction_;
 
+            // todo different help symbols
+            b->setHelpName(list.at(0)+"-help.pd");
+
             if (b->isAbstraction_)
             {
                 t_symbol* s = cmp_get_path((t_canvas*)new_obj);
@@ -128,14 +131,14 @@ public:
             p.drawRect(0, 2, this->width(), this->height() - 4);
         }
 
-        QColor rectColor = (this->errorBox()) ? QColor(255, 0, 0) : QColor(128, 128, 128);
+        QColor rectColor = (this->errorBox()) ? QColor(255, 0, 0) :  properties()->get("BorderColor")->asQColor(); //QColor(128, 128, 128);
         p.setPen(QPen(rectColor, 2+isAbstraction_, (this->errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         p.drawRect(0, 0, this->width(), this->height());
         QTextOption* op = new QTextOption;
         op->setAlignment(Qt::AlignLeft);
         p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
-        p.setFont(QFont(PREF_QSTRING("Font"), 11, 0, false));
+        p.setFont(QFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize(), 0, false));
         p.drawText(2, 3, this->width() - 2, this->height() - 3, 0, this->objectData().c_str(), 0);
 
         if (this->isSelected()) {
@@ -150,6 +153,15 @@ public:
     ///
     void mousePressEvent(QMouseEvent* ev)
     {
+        //context menu
+        if (ev->button()==Qt::RightButton)
+        {
+            QPoint pos = mapToGlobal(ev->pos());
+            showPopupMenu(pos);
+            ev->accept();
+            return;
+        }
+
         //open canvas for subpatch
         if (this->getEditMode() != em_Unlocked) {
             if (this->subpatchWindow()) {
@@ -174,6 +186,8 @@ public:
             emit editObject(this);
             return;
         }
+
+
 
         emit selectBox(this);
         this->dragOffset = ev->pos();
