@@ -5,6 +5,7 @@ var searchData=
   ['winobj_5fconvert',['WinObj_Convert',['../pymactoolbox_8h.html#a736bd7fb4a10dbe45cc8bdb26d55a16e',1,'pymactoolbox.h']]],
   ['winobj_5fnew',['WinObj_New',['../pymactoolbox_8h.html#a2513207b46a3f5bdb0c0a3642206191e',1,'pymactoolbox.h']]],
   ['winobj_5fwhichwindow',['WinObj_WhichWindow',['../pymactoolbox_8h.html#afe1c92b6b1186f437ecc4edf6ad36ed6',1,'pymactoolbox.h']]],
+  ['withcanvas',['withCanvas',['../classpy_wrapper.html#aaf7d0765fbb38f4ac18ee24a6f6eece1',1,'pyWrapper']]],
   ['wrap',['wrap',['../class_python_qt_foreign_wrapper_factory.html#a24a1d6725910859fa4e1e154ba1d9791',1,'PythonQtForeignWrapperFactory']]],
   ['wrapat',['wrapAt',['../classceammc_1_1_atom_list.html#aaa890436ba9b929c7d3fa4f240c0ae54',1,'ceammc::AtomList::wrapAt(int pos)'],['../classceammc_1_1_atom_list.html#a218d18f0d9451f8f91b43aa1d04c5d4c',1,'ceammc::AtomList::wrapAt(int pos) const ']]],
   ['wrapmemoryasbuffer',['wrapMemoryAsBuffer',['../class_python_qt_private.html#adc909498a269511752547ad2ba5d015b',1,'PythonQtPrivate::wrapMemoryAsBuffer(const void *data, Py_ssize_t size)'],['../class_python_qt_private.html#a309a71718680f36705bdfb345d7ac0c3',1,'PythonQtPrivate::wrapMemoryAsBuffer(void *data, Py_ssize_t size)']]],

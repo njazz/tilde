@@ -58,7 +58,7 @@ var searchData=
   ['store_5fname',['STORE_NAME',['../opcode_8h.html#a24583012e5ce5844db79b44835254c5a',1,'opcode.h']]],
   ['store_5fslice',['STORE_SLICE',['../opcode_8h.html#a1ab1cf75156ff9f50cbbd11bc8b34e63',1,'opcode.h']]],
   ['store_5fsubscr',['STORE_SUBSCR',['../opcode_8h.html#a6f93980a29fedcbaa9b008977776dfa9',1,'opcode.h']]],
-  ['str',['Str',['../_python-ast_8h.html#a2b805f698f55c2006bea5dfbc0c582bd',1,'Str():&#160;Python-ast.h'],['../node_8h.html#aa039726a60de283dd121a4a761266ac2',1,'STR():&#160;node.h']]],
+  ['str',['STR',['../node_8h.html#aa039726a60de283dd121a4a761266ac2',1,'STR():&#160;node.h'],['../_python-ast_8h.html#a2b805f698f55c2006bea5dfbc0c582bd',1,'Str():&#160;Python-ast.h']]],
   ['string',['STRING',['../token_8h.html#a0f4d394a3ab4e09bff60f714c66dc5ee',1,'token.h']]],
   ['subscript',['Subscript',['../_python-ast_8h.html#a49a0a37e937fc34b38da7b8eef6c6ea9',1,'Subscript():&#160;Python-ast.h'],['../graminit_8h.html#a4b168eba2f746800b94e9d155c370e4e',1,'subscript():&#160;graminit.h']]],
   ['subscriptlist',['subscriptlist',['../graminit_8h.html#abb7990996037db6acfdb805217a4ec92',1,'graminit.h']]],

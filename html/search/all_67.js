@@ -53,7 +53,7 @@ var searchData=
   ['getiterfunc',['getiterfunc',['../object_8h.html#aab8f298c0c6193d7a149de1510b5cf7e',1,'object.h']]],
   ['getjoinnext',['getJoinNext',['../classceammc_1_1_b_p_f.html#ae1c1e3e4a758ae5632ee13e7fdb2695b',1,'ceammc::BPF']]],
   ['getlong',['getLong',['../class_python_qt_import.html#addf780afa75f873b6fd0ea60cd28aecc',1,'PythonQtImport']]],
-  ['getmainmodule',['getMainModule',['../class_python_qt.html#a95f68cbdfb7503b40361c6967e241de4',1,'PythonQt::getMainModule()'],['../classpy_pd_lib.html#a740db3c94df2d838ce8dd8580678095f',1,'pyPdLib::getMainModule()'],['../classpy_qtpd.html#a68e389ac9d8ed3f8fc4e48ac8e44b0cc',1,'pyQtpd::getMainModule()']]],
+  ['getmainmodule',['getMainModule',['../class_python_qt.html#a95f68cbdfb7503b40361c6967e241de4',1,'PythonQt::getMainModule()'],['../classpy_pd_lib.html#a740db3c94df2d838ce8dd8580678095f',1,'pyPdLib::getMainModule()'],['../classpy_local.html#af0205fb3cfce25d4dad3e2b3f9901b7e',1,'pyLocal::getMainModule()'],['../classpy_qtpd.html#a68e389ac9d8ed3f8fc4e48ac8e44b0cc',1,'pyQtpd::getMainModule()']]],
   ['getmemorysize',['getMemorySize',['../memsize_8h.html#a62d6c381522415ec9be81fe30b316a52',1,'memsize.h']]],
   ['getmodulecode',['getModuleCode',['../class_python_qt_import.html#ad00c93fa9fe999d8e66f4822aa298b35',1,'PythonQtImport']]],
   ['getmoduleinfo',['getModuleInfo',['../class_python_qt_import.html#a4ebc8a9a694cdaa33eeabe67fe5415ce',1,'PythonQtImport']]],

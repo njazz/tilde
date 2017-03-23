@@ -24,7 +24,7 @@ var searchData=
   ['inlettype',['inletType',['../classpy_pd_lib.html#a5a7d66a3ae705f7901602d478afa3375',1,'pyPdLib']]],
   ['insert',['insert',['../classceammc_1_1_atom_list.html#a8fb783701919036bb9c026375626859d',1,'ceammc::AtomList::insert(size_t pos, const Atom &amp;a)'],['../classceammc_1_1_atom_list.html#afcb0933bbdae8cdb4fc4fd6ff9667ad9',1,'ceammc::AtomList::insert(size_t pos, const AtomList &amp;l)']]],
   ['insertcompletion',['insertCompletion',['../class_python_qt_scripting_console.html#a6eea3c653a8df6a1d9740f841da4504f',1,'PythonQtScriptingConsole']]],
-  ['inst',['inst',['../classqtpd_1_1_clipboard.html#a39c52345e02fdca597bc6858d8d44e53',1,'qtpd::Clipboard::inst()'],['../classqtpd_1_1_object_loader.html#ab0d2dafc82b31dc7e2e35f8527de3df7',1,'qtpd::ObjectLoader::inst()'],['../classqtpd_1_1_preferences.html#a43710c0b803cec200c7add487aae2c08',1,'qtpd::Preferences::inst()']]],
+  ['inst',['inst',['../classqtpd_1_1_clipboard.html#a39c52345e02fdca597bc6858d8d44e53',1,'qtpd::Clipboard::inst()'],['../classqtpd_1_1_object_loader.html#ab0d2dafc82b31dc7e2e35f8527de3df7',1,'qtpd::ObjectLoader::inst()'],['../classqtpd_1_1_preferences.html#a43710c0b803cec200c7add487aae2c08',1,'qtpd::Preferences::inst()'],['../classpy_wrapper.html#ae44c4d0e1a58f541538873a9150cf85d',1,'pyWrapper::inst()']]],
   ['installdefaultimporter',['installDefaultImporter',['../class_python_qt.html#a842112671ca2427ceaf2d30c815ba382',1,'PythonQt']]],
   ['interleaveclip',['interleaveClip',['../namespaceceammc_1_1list.html#a49d395d50090132fa9d0a27cac9fa4aa',1,'ceammc::list']]],
   ['interleavefold',['interleaveFold',['../namespaceceammc_1_1list.html#aa4b5fbeaccd90d1030126cc49e39613d',1,'ceammc::list']]],

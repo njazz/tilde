@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>qtpd: /home/travis/build/njazz/qtpd/qtpd_gui/python/wrappers/py_wrapers.h Source File</title>
+<title>qtpd: /home/travis/build/njazz/qtpd/qtpd_gui/python/wrappers/py_wrappers.h Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -79,42 +79,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="headertitle">
-<div class="title">/home/travis/build/njazz/qtpd/qtpd_gui/python/wrappers/py_wrapers.h</div>  </div>
+<div class="title">/home/travis/build/njazz/qtpd/qtpd_gui/python/wrappers/py_wrappers.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="py__wrapers_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// (c) 2017 Alex Nadzharov</span>
+<a href="py__wrappers_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// (c) 2017 Alex Nadzharov</span>
 <a name="l00002"></a>00002 <span class="comment">// License: GPL3</span>
 <a name="l00003"></a>00003 
 <a name="l00004"></a>00004 <span class="preprocessor">#ifndef PY_WRAPERS_H</span>
 <a name="l00005"></a>00005 <span class="preprocessor"></span><span class="preprocessor">#define PY_WRAPERS_H</span>
 <a name="l00006"></a>00006 <span class="preprocessor"></span>
-<a name="l00007"></a>00007 <span class="comment">// generic</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;<a class="code" href="cmo__box_8h.html">cmo_box.h</a>&quot;</span>
 <a name="l00008"></a>00008 
 <a name="l00009"></a>00009 <span class="preprocessor">#include &lt;<a class="code" href="_python_qt_8h.html">PythonQt.h</a>&gt;</span>
 <a name="l00010"></a>00010 <span class="preprocessor">#include &lt;<a class="code" href="_python_qt___qt_all_8h.html">PythonQt_QtAll.h</a>&gt;</span>
 <a name="l00011"></a>00011 
-<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;<a class="code" href="py__pdlib_8h.html">py_pdlib.h</a>&quot;</span>
-<a name="l00013"></a>00013 <span class="preprocessor">#include &quot;<a class="code" href="py__qtpd_8h.html">py_qtpd.h</a>&quot;</span>
-<a name="l00014"></a>00014 
-<a name="l00015"></a><a class="code" href="py__wrapers_8h.html#a3f9c4429af0ef49e47932377c113de24">00015</a> <span class="keywordtype">void</span> <a class="code" href="py__wrapers_8h.html#a3f9c4429af0ef49e47932377c113de24">pyWrappersInit</a>()
-<a name="l00016"></a>00016 {
-<a name="l00017"></a>00017     <a class="code" href="class_python_qt_object_ptr.html" title="a smart pointer that stores a PyObject pointer and that handles reference counting automatically...">PythonQtObjectPtr</a> mainContext = <a class="code" href="class_python_qt.html#a55184a6cb954afb65e2d6f9ae56b0b0a" title="get the singleton instance">PythonQt::self</a>()-&gt;<a class="code" href="class_python_qt.html#a95f68cbdfb7503b40361c6967e241de4" title="get the __main__ module of python">getMainModule</a>();
-<a name="l00018"></a>00018 
-<a name="l00019"></a>00019     <span class="keyword">static</span> <a class="code" href="classpy_qtpd.html">pyQtpd</a> _pyQtpd;
-<a name="l00020"></a>00020     mainContext.<a class="code" href="class_python_qt_object_ptr.html#ad426791e132d2c742ccee090cdb42c63" title="add the given object to the module as a variable with name (it can be removed via clearVariable)...">addObject</a>(<span class="stringliteral">&quot;Qtpd&quot;</span>, &amp;_pyQtpd);
+<a name="l00012"></a>00012 <span class="keyword">using namespace </span>qtpd;
+<a name="l00017"></a>00017 
+<a name="l00018"></a><a class="code" href="classpy_wrapper.html">00018</a> <span class="keyword">class </span><a class="code" href="classpy_wrapper.html" title="python wrapper singleton class">pyWrapper</a>
+<a name="l00019"></a>00019 {
+<a name="l00020"></a>00020 <span class="keyword">private</span>:
 <a name="l00021"></a>00021 
-<a name="l00022"></a>00022     <a class="code" href="class_python_qt.html#a55184a6cb954afb65e2d6f9ae56b0b0a" title="get the singleton instance">PythonQt::self</a>()-&gt;<a class="code" href="class_python_qt.html#a9c016ede55ddcb6341cc6d21db682c7a" title="this will add the object both as class and instance decorator (ownership is passed to PythonQt)...">addDecorators</a>(<span class="keyword">new</span> <a class="code" href="classpy_patch_window_decorator.html">pyPatchWindowDecorator</a>());
-<a name="l00023"></a>00023     <a class="code" href="class_python_qt.html#a55184a6cb954afb65e2d6f9ae56b0b0a" title="get the singleton instance">PythonQt::self</a>()-&gt;<a class="code" href="class_python_qt.html#a9c016ede55ddcb6341cc6d21db682c7a" title="this will add the object both as class and instance decorator (ownership is passed to PythonQt)...">addDecorators</a>(<span class="keyword">new</span> <a class="code" href="classpy_canvas_decorator.html">pyCanvasDecorator</a>());
-<a name="l00024"></a>00024     <a class="code" href="class_python_qt.html#a55184a6cb954afb65e2d6f9ae56b0b0a" title="get the singleton instance">PythonQt::self</a>()-&gt;<a class="code" href="class_python_qt.html#a9c016ede55ddcb6341cc6d21db682c7a" title="this will add the object both as class and instance decorator (ownership is passed to PythonQt)...">addDecorators</a>(<span class="keyword">new</span> <a class="code" href="classpy_u_i_object_decorator.html">pyUIObjectDecorator</a>());
-<a name="l00025"></a>00025     <a class="code" href="class_python_qt.html#a55184a6cb954afb65e2d6f9ae56b0b0a" title="get the singleton instance">PythonQt::self</a>()-&gt;<a class="code" href="class_python_qt.html#a9c016ede55ddcb6341cc6d21db682c7a" title="this will add the object both as class and instance decorator (ownership is passed to PythonQt)...">addDecorators</a>(<span class="keyword">new</span> <a class="code" href="classpy_property_list_decorator.html">pyPropertyListDecorator</a>());
-<a name="l00026"></a>00026     <a class="code" href="class_python_qt.html#a55184a6cb954afb65e2d6f9ae56b0b0a" title="get the singleton instance">PythonQt::self</a>()-&gt;<a class="code" href="class_python_qt.html#a9c016ede55ddcb6341cc6d21db682c7a" title="this will add the object both as class and instance decorator (ownership is passed to PythonQt)...">addDecorators</a>(<span class="keyword">new</span> <a class="code" href="classpy_object_vec_decorator.html">pyObjectVecDecorator</a>());
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028     <a class="code" href="class_python_qt.html#a55184a6cb954afb65e2d6f9ae56b0b0a" title="get the singleton instance">PythonQt::self</a>()-&gt;<a class="code" href="class_python_qt.html#a97559c89bfed5f0f5bb47d7fc360a269">registerCPPClass</a>(<span class="stringliteral">&quot;objectVec&quot;</span>);
-<a name="l00029"></a>00029     <a class="code" href="class_python_qt.html#a55184a6cb954afb65e2d6f9ae56b0b0a" title="get the singleton instance">PythonQt::self</a>()-&gt;<a class="code" href="class_python_qt.html#a97559c89bfed5f0f5bb47d7fc360a269">registerCPPClass</a>(<span class="stringliteral">&quot;UIObject&quot;</span>);
-<a name="l00030"></a>00030 
-<a name="l00031"></a>00031 }
-<a name="l00032"></a>00032 
-<a name="l00033"></a>00033 <span class="preprocessor">#endif // PY_WRAPERS_H</span>
+<a name="l00022"></a>00022    <a class="code" href="classpy_wrapper.html" title="python wrapper singleton class">pyWrapper</a>();
+<a name="l00023"></a>00023 <span class="keyword">public</span>:
+<a name="l00024"></a><a class="code" href="classpy_wrapper.html#ae44c4d0e1a58f541538873a9150cf85d">00024</a>     <span class="keyword">static</span> <a class="code" href="classpy_wrapper.html" title="python wrapper singleton class">pyWrapper</a>&amp; inst()
+<a name="l00025"></a>00025     {
+<a name="l00026"></a>00026         <span class="keyword">static</span> <a class="code" href="classpy_wrapper.html" title="python wrapper singleton class">pyWrapper</a> instance;
+<a name="l00027"></a>00027         <span class="keywordflow">return</span> instance;
+<a name="l00028"></a>00028     }
+<a name="l00029"></a>00029 
+<a name="l00035"></a>00035 
+<a name="l00036"></a>00036     <a class="code" href="class_python_qt_object_ptr.html" title="a smart pointer that stores a PyObject pointer and that handles reference counting automatically...">PythonQtObjectPtr</a> withCanvas(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* canvas);
+<a name="l00037"></a>00037 };
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039 <span class="preprocessor">#endif // PY_WRAPERS_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -133,7 +130,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 23 2017 09:33:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 23 2017 17:13:10 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -49,6 +49,7 @@ var searchData=
   ['pyinstanceobject',['PyInstanceObject',['../struct_py_instance_object.html',1,'']]],
   ['pyintobject',['PyIntObject',['../struct_py_int_object.html',1,'']]],
   ['pylistobject',['PyListObject',['../struct_py_list_object.html',1,'']]],
+  ['pylocal',['pyLocal',['../classpy_local.html',1,'']]],
   ['pymappingmethods',['PyMappingMethods',['../struct_py_mapping_methods.html',1,'']]],
   ['pymemberdef',['PyMemberDef',['../struct_py_member_def.html',1,'']]],
   ['pymemberdescrobject',['PyMemberDescrObject',['../struct_py_member_descr_object.html',1,'']]],
@@ -118,5 +119,6 @@ var searchData=
   ['pytupleobject',['PyTupleObject',['../struct_py_tuple_object.html',1,'']]],
   ['pyuiobjectdecorator',['pyUIObjectDecorator',['../classpy_u_i_object_decorator.html',1,'']]],
   ['pyvarobject',['PyVarObject',['../struct_py_var_object.html',1,'']]],
+  ['pywrapper',['pyWrapper',['../classpy_wrapper.html',1,'']]],
   ['pywrapperdescrobject',['PyWrapperDescrObject',['../struct_py_wrapper_descr_object.html',1,'']]]
 ];

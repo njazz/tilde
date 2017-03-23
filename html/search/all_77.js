@@ -24,6 +24,7 @@ var searchData=
   ['with_5fpymalloc',['WITH_PYMALLOC',['../pyconfig_8h.html#a23a62e498d163eef744de0bb54091f83',1,'pyconfig.h']]],
   ['with_5fstmt',['with_stmt',['../graminit_8h.html#a371c3b29d3a3382e67ebc37735a36e34',1,'graminit.h']]],
   ['with_5fthread',['WITH_THREAD',['../pyconfig_8h.html#a004524a19d877e1922dc775384e3c5a2',1,'pyconfig.h']]],
+  ['withcanvas',['withCanvas',['../classpy_wrapper.html#aaf7d0765fbb38f4ac18ee24a6f6eece1',1,'pyWrapper']]],
   ['wr_5fcallback',['wr_callback',['../struct___py_weak_reference.html#a29e417c1f334eae9241f47b20c4749b4',1,'_PyWeakReference']]],
   ['wr_5fnext',['wr_next',['../struct___py_weak_reference.html#ac301935218d7aebcf18f107ca4f1b894',1,'_PyWeakReference']]],
   ['wr_5fobject',['wr_object',['../struct___py_weak_reference.html#a7a8c9bd3258c64957e04f9104268ae88',1,'_PyWeakReference']]],

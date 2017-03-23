@@ -33,6 +33,8 @@ var searchData=
   ['setbangtimer',['setBangTimer',['../classqtpd_1_1_u_i_bang.html#a546cc44345f7210a48fe96c1c099abd6',1,'qtpd::UIBang']]],
   ['setbpflist',['setBPFList',['../classceammc_1_1_b_p_f.html#a9df5d4bc4f43da1838158cbc0145654b',1,'ceammc::BPF']]],
   ['setbpflistraw',['setBPFListRaw',['../classceammc_1_1_b_p_f.html#a60e6b9b26a7439f1b7cbc3cc4576ec9e',1,'ceammc::BPF']]],
+  ['setcanvas',['setCanvas',['../classpy_local.html#ab73065c5353fd10ddfabe56ab75536e8',1,'pyLocal']]],
+  ['setcontext',['setContext',['../classqtpd_1_1_u_i_script_editor.html#a4ea25adb780f19047dd2417a97d6f5f3',1,'qtpd::UIScriptEditor']]],
   ['setcontraints',['setContraints',['../classceammc_1_1faust_1_1_u_i_element.html#acf29f95368204b84d25fe4c21924ccfd',1,'ceammc::faust::UIElement']]],
   ['setcurrentfont',['setCurrentFont',['../class_python_qt_scripting_console.html#a6435d8e8ceb987e2691ff2b7ab93a004',1,'PythonQtScriptingConsole']]],
   ['setdecoratorprovider',['setDecoratorProvider',['../class_python_qt_class_info.html#a3dfdfdb609f37abdf830379b841742eb',1,'PythonQtClassInfo']]],
