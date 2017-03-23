@@ -29,14 +29,18 @@ UIObject::UIObject(UIWidget* parent)
 
     createContextMenu();
 
-
+    //this is default
+    this->objectSizeMode_ = os_FixedHeight;
 }
 
 //---------------------------------------
 
-void UIObject::resizeBox(int dx)
+void UIObject::resizeBox(int dx, int dy)
 {
-    this->setFixedWidth(this->width() + dx);
+    if (objectSizeMode_ != os_Fixed)
+        this->setFixedWidth(this->width() + dx);
+    if (objectSizeMode_ == os_Free)
+        this->setFixedHeight(this->height() + dy);
 };
 
 void UIObject::initProperties()

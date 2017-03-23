@@ -31,7 +31,7 @@ PatchWindow::PatchWindow()
 
 
     //this->objectMaker->setParent(this->canvas);
-    connect(this->canvas->objectMaker(),&ObjectMaker::returnPressed, this, &PatchWindow::objectMakerDone);
+    connect(this->canvas->objectMaker(),&ObjectMaker::objectMakerDoneSignal, this, &PatchWindow::objectMakerDone);
 
     this->canvas->objectMaker()->close();
 

@@ -13,20 +13,29 @@ namespace qtpd {
 /// \brief creates lineedit box for new object
 ///
 class ObjectMaker : public QLineEdit {
+
+    Q_OBJECT
+
+private:
 public:
     explicit ObjectMaker(QLineEdit* parent = 0);
 
-    void focusOutEvent(QFocusEvent *)
+    void focusOutEvent(QFocusEvent*)
     {
-        //emit textEdited(this->text());
-        emit returnPressed();
+        emit objectMakerDoneSignal();
     }
 
+signals:
+    void objectMakerDoneSignal();
+
 private slots:
+
+    void leaveFocus();
+
     ////
     /// \brief resize to text
     ///
-    void editorChanged();
+    virtual void editorChanged();
 };
 }
 

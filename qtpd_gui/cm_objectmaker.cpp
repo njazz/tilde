@@ -5,13 +5,15 @@
 #include "cm_preferences.h"
 
 namespace qtpd {
+
 ObjectMaker::ObjectMaker(QLineEdit* parent)
     : QLineEdit(parent)
 {
     this->setFont(QFont(PREF_QSTRING("Font"), 11, 0, false));
     this->setFixedSize(60, 20);
 
-    connect(this, &QLineEdit::textEdited, this, &ObjectMaker::editorChanged);
+    connect(this, &ObjectMaker::textEdited, this, &ObjectMaker::editorChanged);
+    connect(this, &ObjectMaker::returnPressed, this, &ObjectMaker::leaveFocus);
 }
 
 void ObjectMaker::editorChanged()
@@ -23,4 +25,12 @@ void ObjectMaker::editorChanged()
     this->setFixedWidth(new_w);
     this->setFixedHeight(20);
 }
+
+void ObjectMaker::leaveFocus()
+{
+    //test
+    if (parent())
+        ((QWidget*)parent())->setFocus();
+}
+
 }

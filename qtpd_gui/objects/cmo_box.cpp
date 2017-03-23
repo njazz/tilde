@@ -39,6 +39,8 @@ UIBox::UIBox(UIObject* parent)
 
     this->setMinimumBoxWidth(40);
     this->setMinimumBoxHeight(20);
+
+    this->setObjectSizeMode(os_FixedHeight);
 }
 
 ///////
