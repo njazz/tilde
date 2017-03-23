@@ -292,6 +292,8 @@ public:
     void setHelpName(QString name) { helpName_ = name; }
     QString helpName() { return helpName_; }
 
+    void setObjectSizeMode(t_objectSize os){ objectSizeMode_ = os;}
+
 private slots:
     void openPropertiesWindow()
     {
@@ -312,7 +314,7 @@ signals:
     void callRepaint(); //needed for proper threading
 
 public slots:
-    void resizeBox(int dx);
+    void resizeBox(int dx, int dy);
 
     void s_repaint() //needed for proper threading
     {

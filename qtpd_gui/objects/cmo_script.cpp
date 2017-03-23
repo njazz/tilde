@@ -98,7 +98,7 @@ UIScript::UIScript(UIObject* parent)
     connect(b1, &QPushButton::clicked, this, &UIScript::btnClear);
 
 
-
+    this->setObjectSizeMode(os_Free);
 }
 
 void UIScript::editorChanged()

@@ -31,6 +31,7 @@ class SizeBox : public UIWidget {
 
 private:
     int prevX;
+    int prevY;
 
     t_objectSize* objectSizeType;
 
@@ -53,6 +54,7 @@ public:
         event->accept();
 
         this->prevX = 0;
+        this->prevY = 0;
     };
 
     void mouseReleaseEvent(QMouseEvent* event)
@@ -65,12 +67,12 @@ public:
     void mouseMoveEvent(QMouseEvent* ev)
     {
         //qDebug() << "resize" << (ev->x() - prevX);
-        emit resizeBoxEvent(ev->x() - this->prevX);
+        emit resizeBoxEvent(ev->x() - this->prevX, ev->y() - this->prevY);
     }
 
 signals:
 
-    void resizeBoxEvent(int dx);
+    void resizeBoxEvent(int dx, int dy);
 };
 }
 
