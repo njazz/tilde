@@ -19,6 +19,8 @@ void ObjectLoader::loadObjects()
 
     this->addUIobject("ui.script", &UIScript::createObject);
 
+    this->addUIobject("ui.array", &UIArray::createObject);
+
     //TODO compatibility
     //this->addUIobject("msg", &cmo_msg::createObject);
     //this->addUIobject("floatatom", &cmo_msg::createObject);

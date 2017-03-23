@@ -53,7 +53,8 @@ SOURCES += main.cpp\
     objects/cmo_script.cpp \
     cm_objectloader.cpp \
     cm_openfileproxy.cpp \
-    window/cm_propertieswindow.cpp
+    window/cm_propertieswindow.cpp \
+    objects/cmo_array.cpp
 
 
 HEADERS  += \
@@ -117,7 +118,8 @@ HEADERS  += \
     python/wrappers/py_qtpd.h \
     objects/cmo_script.h \
     cm_openfileproxy.h \
-    window/cm_propertieswindow.h
+    window/cm_propertieswindow.h \
+    objects/cmo_array.h
 
 
 FORMS    += \

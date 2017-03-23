@@ -15,6 +15,8 @@
 #include "cmo_msg.h"
 #include "cmo_text.h"
 
+#include "cmo_array.h"
+
 #include "cmo_bang.h"
 #include "cmo_toggle.h"
 
