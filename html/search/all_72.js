@@ -78,7 +78,7 @@ var searchData=
   ['rhs',['RHS',['../metagrammar_8h.html#afcfa26f7fd6ea292d85613ece7c02ace',1,'metagrammar.h']]],
   ['richcmpfunc',['richcmpfunc',['../object_8h.html#acd7816c8647f86e248b0fbff2c74a073',1,'object.h']]],
   ['right',['right',['../struct__expr.html#a710aaab4ce6f94cd332448a7e895111f',1,'_expr::right()'],['../structui__slider2d.html#a97715f380eecba49d381baae279a9cb0',1,'ui_slider2d::right()']]],
-  ['rightclicked',['rightClicked',['../classqtpd_1_1_u_i_box.html#a77675f4dd6901d7118fc86f2db1b2943',1,'qtpd::UIBox']]],
+  ['rightclicked',['rightClicked',['../classqtpd_1_1_u_i_array.html#a870f0a44d04dc4601aa62760bc34eab0',1,'qtpd::UIArray::rightClicked()'],['../classqtpd_1_1_u_i_box.html#a77675f4dd6901d7118fc86f2db1b2943',1,'qtpd::UIBox::rightClicked()']]],
   ['rightshift',['RIGHTSHIFT',['../token_8h.html#a9cc204da9bdc2eed73ef1ea3dbd375e0',1,'token.h']]],
   ['rightshiftequal',['RIGHTSHIFTEQUAL',['../token_8h.html#af5bfc03a0262d01aed1fd3cec5509aa1',1,'token.h']]],
   ['ro',['RO',['../structmember_8h.html#a628642b04c07236ae1e986c248a79ae5',1,'structmember.h']]],

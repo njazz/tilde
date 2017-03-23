@@ -48,6 +48,6 @@ var searchData=
   ['restoresubcanvas',['restoreSubcanvas',['../classqtpd_1_1_canvas.html#a97d80380c85b0f3785fd6d57e88369a7',1,'qtpd::Canvas']]],
   ['reverse',['reverse',['../classceammc_1_1_atom_list.html#a22b3510a7142b4cce158033036bc9af5',1,'ceammc::AtomList']]],
   ['right',['right',['../structui__slider2d.html#a97715f380eecba49d381baae279a9cb0',1,'ui_slider2d']]],
-  ['rightclicked',['rightClicked',['../classqtpd_1_1_u_i_box.html#a77675f4dd6901d7118fc86f2db1b2943',1,'qtpd::UIBox']]],
+  ['rightclicked',['rightClicked',['../classqtpd_1_1_u_i_array.html#a870f0a44d04dc4601aa62760bc34eab0',1,'qtpd::UIArray::rightClicked()'],['../classqtpd_1_1_u_i_box.html#a77675f4dd6901d7118fc86f2db1b2943',1,'qtpd::UIBox::rightClicked()']]],
   ['run',['run',['../classceammc_1_1faust_1_1_pd_u_i.html#a28c13ceda42695a2422156669c632b56',1,'ceammc::faust::PdUI']]]
 ];
