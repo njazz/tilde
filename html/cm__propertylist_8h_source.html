@@ -155,108 +155,114 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00074"></a><a class="code" href="classqtpd_1_1_property_list.html#a29af3e410e9b5fd3fd8a86d295215a44">00074</a>     <span class="keywordtype">void</span> <span class="keyword">set</span>(<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> pName, U <a class="code" href="abstract_8h.html#a3a0f45a8cd645a6ab8f2c793db266109">value</a>)
 <a name="l00075"></a>00075     {
 <a name="l00076"></a>00076         <span class="keywordflow">if</span>(this-&gt;data_[pName])
-<a name="l00077"></a>00077         this-&gt;data_[pName]-&gt;set(<a class="code" href="abstract_8h.html#a3a0f45a8cd645a6ab8f2c793db266109">value</a>);
-<a name="l00078"></a>00078     };
-<a name="l00079"></a>00079 
-<a name="l00080"></a><a class="code" href="classqtpd_1_1_property_list.html#a9d1a8f116b7791421fa29dd4fce58cfa">00080</a>     <a class="code" href="classqtpd_1_1_property.html" title="yet another property handling class for ui object.">Property</a>* <span class="keyword">get</span>(<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> pName)
-<a name="l00081"></a>00081     {
-<a name="l00082"></a>00082         <a class="code" href="classqtpd_1_1_property.html" title="yet another property handling class for ui object.">Property</a>* ret = 0;
-<a name="l00083"></a>00083         std::map&lt;std::string, Property*&gt;::iterator it = data_.find(pName);
-<a name="l00084"></a>00084         <span class="keywordflow">if</span> (it != data_.end())
-<a name="l00085"></a>00085             ret = this-&gt;data_[pName];
-<a name="l00086"></a>00086         <span class="keywordflow">return</span> ret;
-<a name="l00087"></a>00087     };
-<a name="l00088"></a>00088 
-<a name="l00090"></a>00090 
-<a name="l00095"></a><a class="code" href="classqtpd_1_1_property_list.html#aee86b37d4b28cda7a966d5ea96eed901">00095</a>     <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="code" href="classqtpd_1_1_property_list.html#aee86b37d4b28cda7a966d5ea96eed901" title="returns string for saving in file">asPdFileString</a>()
-<a name="l00096"></a>00096     {
-<a name="l00097"></a>00097         <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> ret;
-<a name="l00098"></a>00098 
-<a name="l00099"></a>00099         <a class="code" href="namespaceqtpd.html#a147788b39dc51afa9d6b2a6d030e8038">UIPropertyDataIterator</a> it;
-<a name="l00100"></a>00100         <span class="keywordflow">for</span> (it = this-&gt;data_.begin(); it != this-&gt;data_.end(); ++it) {
-<a name="l00101"></a>00101             <span class="comment">//save only modified values</span>
-<a name="l00102"></a>00102             <span class="keywordflow">if</span> (it-&gt;second-&gt;data() != it-&gt;second-&gt;defaultData()) {
-<a name="l00103"></a>00103                 ret += <span class="stringliteral">&quot;@&quot;</span> + it-&gt;first + <span class="stringliteral">&quot; &quot;</span>;
-<a name="l00104"></a>00104                 ret += it-&gt;second-&gt;asPdSaveString() + <span class="stringliteral">&quot; &quot;</span>;
-<a name="l00105"></a>00105             }
-<a name="l00106"></a>00106         }
-<a name="l00107"></a>00107 
-<a name="l00108"></a>00108         <span class="keywordflow">return</span> ret;
-<a name="l00109"></a>00109     }
+<a name="l00077"></a>00077         {
+<a name="l00078"></a>00078             this-&gt;data_[pName]-&gt;set(<a class="code" href="abstract_8h.html#a3a0f45a8cd645a6ab8f2c793db266109">value</a>);
+<a name="l00079"></a>00079             emit <a class="code" href="classqtpd_1_1_property_list.html#ad7751eab5dfc4bdf17737556bcfc95f7">propertyChangedSignal</a>(QString(pName.c_str()));
+<a name="l00080"></a>00080         }
+<a name="l00081"></a>00081     };
+<a name="l00082"></a>00082 
+<a name="l00083"></a><a class="code" href="classqtpd_1_1_property_list.html#a9d1a8f116b7791421fa29dd4fce58cfa">00083</a>     <a class="code" href="classqtpd_1_1_property.html" title="yet another property handling class for ui object.">Property</a>* <span class="keyword">get</span>(<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> pName)
+<a name="l00084"></a>00084     {
+<a name="l00085"></a>00085         <a class="code" href="classqtpd_1_1_property.html" title="yet another property handling class for ui object.">Property</a>* ret = 0;
+<a name="l00086"></a>00086         std::map&lt;std::string, Property*&gt;::iterator it = data_.find(pName);
+<a name="l00087"></a>00087         <span class="keywordflow">if</span> (it != data_.end())
+<a name="l00088"></a>00088             ret = this-&gt;data_[pName];
+<a name="l00089"></a>00089         <span class="keywordflow">return</span> ret;
+<a name="l00090"></a>00090     };
+<a name="l00091"></a>00091 
+<a name="l00093"></a>00093 
+<a name="l00098"></a><a class="code" href="classqtpd_1_1_property_list.html#aee86b37d4b28cda7a966d5ea96eed901">00098</a>     <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="code" href="classqtpd_1_1_property_list.html#aee86b37d4b28cda7a966d5ea96eed901" title="returns string for saving in file">asPdFileString</a>()
+<a name="l00099"></a>00099     {
+<a name="l00100"></a>00100         <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> ret;
+<a name="l00101"></a>00101 
+<a name="l00102"></a>00102         <a class="code" href="namespaceqtpd.html#a147788b39dc51afa9d6b2a6d030e8038">UIPropertyDataIterator</a> it;
+<a name="l00103"></a>00103         <span class="keywordflow">for</span> (it = this-&gt;data_.begin(); it != this-&gt;data_.end(); ++it) {
+<a name="l00104"></a>00104             <span class="comment">//save only modified values</span>
+<a name="l00105"></a>00105             <span class="keywordflow">if</span> (it-&gt;second-&gt;data() != it-&gt;second-&gt;defaultData()) {
+<a name="l00106"></a>00106                 ret += <span class="stringliteral">&quot;@&quot;</span> + it-&gt;first + <span class="stringliteral">&quot; &quot;</span>;
+<a name="l00107"></a>00107                 ret += it-&gt;second-&gt;asPdSaveString() + <span class="stringliteral">&quot; &quot;</span>;
+<a name="l00108"></a>00108             }
+<a name="l00109"></a>00109         }
 <a name="l00110"></a>00110 
-<a name="l00115"></a><a class="code" href="classqtpd_1_1_property_list.html#a74b6f3f764fbdeae91515eb8a44d415e">00115</a>     QStringList <a class="code" href="classqtpd_1_1_property_list.html#a74b6f3f764fbdeae91515eb8a44d415e" title="list of all property names">names</a>()
-<a name="l00116"></a>00116     {
-<a name="l00117"></a>00117         QStringList ret;
-<a name="l00118"></a>00118 
-<a name="l00119"></a>00119         <a class="code" href="namespaceqtpd.html#a147788b39dc51afa9d6b2a6d030e8038">UIPropertyDataIterator</a> it;
-<a name="l00120"></a>00120         <span class="keywordflow">for</span> (it = this-&gt;data_.begin(); it != this-&gt;data_.end(); ++it) {
-<a name="l00121"></a>00121             <span class="comment">//save only modified values</span>
-<a name="l00122"></a>00122             ret.push_back(it-&gt;first.c_str());
-<a name="l00123"></a>00123         }
-<a name="l00124"></a>00124 
-<a name="l00125"></a>00125         <span class="keywordflow">return</span> ret;
-<a name="l00126"></a>00126     }
+<a name="l00111"></a>00111         <span class="keywordflow">return</span> ret;
+<a name="l00112"></a>00112     }
+<a name="l00113"></a>00113 
+<a name="l00118"></a><a class="code" href="classqtpd_1_1_property_list.html#a74b6f3f764fbdeae91515eb8a44d415e">00118</a>     QStringList <a class="code" href="classqtpd_1_1_property_list.html#a74b6f3f764fbdeae91515eb8a44d415e" title="list of all property names">names</a>()
+<a name="l00119"></a>00119     {
+<a name="l00120"></a>00120         QStringList ret;
+<a name="l00121"></a>00121 
+<a name="l00122"></a>00122         <a class="code" href="namespaceqtpd.html#a147788b39dc51afa9d6b2a6d030e8038">UIPropertyDataIterator</a> it;
+<a name="l00123"></a>00123         <span class="keywordflow">for</span> (it = this-&gt;data_.begin(); it != this-&gt;data_.end(); ++it) {
+<a name="l00124"></a>00124             <span class="comment">//save only modified values</span>
+<a name="l00125"></a>00125             ret.push_back(it-&gt;first.c_str());
+<a name="l00126"></a>00126         }
 <a name="l00127"></a>00127 
-<a name="l00133"></a><a class="code" href="classqtpd_1_1_property_list.html#a12d0803546bc2e090476a7e7933425f3">00133</a>     QStringList <a class="code" href="classqtpd_1_1_property_list.html#a74b6f3f764fbdeae91515eb8a44d415e" title="list of all property names">names</a>(<a class="code" href="namespaceqtpd.html#a74b68fa0b2ffe25112d5309b0f4bdf8a">UIPropertyData</a>* data1)
-<a name="l00134"></a>00134     {
-<a name="l00135"></a>00135         QStringList ret;
-<a name="l00136"></a>00136 
-<a name="l00137"></a>00137         <a class="code" href="namespaceqtpd.html#a147788b39dc51afa9d6b2a6d030e8038">UIPropertyDataIterator</a> it;
-<a name="l00138"></a>00138         <span class="keywordflow">for</span> (it = data1-&gt;begin(); it != data1-&gt;end(); ++it) {
-<a name="l00139"></a>00139             <span class="comment">//save only modified values</span>
-<a name="l00140"></a>00140             ret.push_back(it-&gt;first.c_str());
-<a name="l00141"></a>00141         }
-<a name="l00142"></a>00142 
-<a name="l00143"></a>00143         <span class="keywordflow">return</span> ret;
-<a name="l00144"></a>00144     }
+<a name="l00128"></a>00128         <span class="keywordflow">return</span> ret;
+<a name="l00129"></a>00129     }
+<a name="l00130"></a>00130 
+<a name="l00136"></a><a class="code" href="classqtpd_1_1_property_list.html#a12d0803546bc2e090476a7e7933425f3">00136</a>     QStringList <a class="code" href="classqtpd_1_1_property_list.html#a74b6f3f764fbdeae91515eb8a44d415e" title="list of all property names">names</a>(<a class="code" href="namespaceqtpd.html#a74b68fa0b2ffe25112d5309b0f4bdf8a">UIPropertyData</a>* data1)
+<a name="l00137"></a>00137     {
+<a name="l00138"></a>00138         QStringList ret;
+<a name="l00139"></a>00139 
+<a name="l00140"></a>00140         <a class="code" href="namespaceqtpd.html#a147788b39dc51afa9d6b2a6d030e8038">UIPropertyDataIterator</a> it;
+<a name="l00141"></a>00141         <span class="keywordflow">for</span> (it = data1-&gt;begin(); it != data1-&gt;end(); ++it) {
+<a name="l00142"></a>00142             <span class="comment">//save only modified values</span>
+<a name="l00143"></a>00143             ret.push_back(it-&gt;first.c_str());
+<a name="l00144"></a>00144         }
 <a name="l00145"></a>00145 
-<a name="l00150"></a><a class="code" href="classqtpd_1_1_property_list.html#a941a95520f1c8c2ed972ce43f2e8e5fd">00150</a>     QStringList <a class="code" href="classqtpd_1_1_property_list.html#a941a95520f1c8c2ed972ce43f2e8e5fd" title="list of all group names">groupNames</a>()
-<a name="l00151"></a>00151     {
-<a name="l00152"></a>00152         QStringList ret;
-<a name="l00153"></a>00153 
-<a name="l00154"></a>00154         <a class="code" href="namespaceqtpd.html#a5de80d70f22f21b977f7595cfa4b714b">UIPropertyGroupIterator</a> it;
-<a name="l00155"></a>00155         <span class="keywordflow">for</span> (it = this-&gt;groups_.begin(); it != this-&gt;groups_.end(); ++it) {
-<a name="l00156"></a>00156             <span class="comment">//save only modified values</span>
-<a name="l00157"></a>00157             ret.push_back(it-&gt;first.c_str());
-<a name="l00158"></a>00158         }
-<a name="l00159"></a>00159 
-<a name="l00160"></a>00160         <span class="keywordflow">return</span> ret;
-<a name="l00161"></a>00161     }
+<a name="l00146"></a>00146         <span class="keywordflow">return</span> ret;
+<a name="l00147"></a>00147     }
+<a name="l00148"></a>00148 
+<a name="l00153"></a><a class="code" href="classqtpd_1_1_property_list.html#a941a95520f1c8c2ed972ce43f2e8e5fd">00153</a>     QStringList <a class="code" href="classqtpd_1_1_property_list.html#a941a95520f1c8c2ed972ce43f2e8e5fd" title="list of all group names">groupNames</a>()
+<a name="l00154"></a>00154     {
+<a name="l00155"></a>00155         QStringList ret;
+<a name="l00156"></a>00156 
+<a name="l00157"></a>00157         <a class="code" href="namespaceqtpd.html#a5de80d70f22f21b977f7595cfa4b714b">UIPropertyGroupIterator</a> it;
+<a name="l00158"></a>00158         <span class="keywordflow">for</span> (it = this-&gt;groups_.begin(); it != this-&gt;groups_.end(); ++it) {
+<a name="l00159"></a>00159             <span class="comment">//save only modified values</span>
+<a name="l00160"></a>00160             ret.push_back(it-&gt;first.c_str());
+<a name="l00161"></a>00161         }
 <a name="l00162"></a>00162 
-<a name="l00168"></a><a class="code" href="classqtpd_1_1_property_list.html#a89ada354abe82e104bb9d47b0e80f3b4">00168</a>     <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="code" href="classqtpd_1_1_property_list.html#a89ada354abe82e104bb9d47b0e80f3b4" title="extract properties from string in pd file">extractFromPdFileString</a>(<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> input)
-<a name="l00169"></a>00169     {
-<a name="l00170"></a>00170         QStringList propertyList = QString(input.c_str()).split(<span class="stringliteral">&quot;@&quot;</span>);
-<a name="l00171"></a>00171 
-<a name="l00172"></a>00172         QString ret = propertyList.at(0);
-<a name="l00173"></a>00173 
-<a name="l00174"></a>00174         propertyList.removeAt(0);
-<a name="l00175"></a>00175 
-<a name="l00176"></a>00176         qDebug() &lt;&lt; <span class="stringliteral">&quot;plist&quot;</span> &lt;&lt; propertyList;
-<a name="l00177"></a>00177 
-<a name="l00178"></a>00178         <span class="keywordflow">for</span> (QStringList::iterator it = propertyList.begin(); it != propertyList.end(); ++it) {
-<a name="l00179"></a>00179             QString <a class="code" href="stringobject_8h.html#ad912d811fca4c9cfee37905bed81eb65">s</a> = *it;
-<a name="l00180"></a>00180             QStringList list = s.split(<span class="stringliteral">&quot; &quot;</span>, QString::SkipEmptyParts);
-<a name="l00181"></a>00181 
-<a name="l00182"></a>00182             <span class="keywordflow">if</span> (list.size() &gt; 1) {
-<a name="l00183"></a>00183                 QString pname = list.at(0);
+<a name="l00163"></a>00163         <span class="keywordflow">return</span> ret;
+<a name="l00164"></a>00164     }
+<a name="l00165"></a>00165 
+<a name="l00171"></a><a class="code" href="classqtpd_1_1_property_list.html#a89ada354abe82e104bb9d47b0e80f3b4">00171</a>     <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="code" href="classqtpd_1_1_property_list.html#a89ada354abe82e104bb9d47b0e80f3b4" title="extract properties from string in pd file">extractFromPdFileString</a>(<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> input)
+<a name="l00172"></a>00172     {
+<a name="l00173"></a>00173         QStringList propertyList = QString(input.c_str()).split(<span class="stringliteral">&quot;@&quot;</span>);
+<a name="l00174"></a>00174 
+<a name="l00175"></a>00175         QString ret = propertyList.at(0);
+<a name="l00176"></a>00176 
+<a name="l00177"></a>00177         propertyList.removeAt(0);
+<a name="l00178"></a>00178 
+<a name="l00179"></a>00179         qDebug() &lt;&lt; <span class="stringliteral">&quot;plist&quot;</span> &lt;&lt; propertyList;
+<a name="l00180"></a>00180 
+<a name="l00181"></a>00181         <span class="keywordflow">for</span> (QStringList::iterator it = propertyList.begin(); it != propertyList.end(); ++it) {
+<a name="l00182"></a>00182             QString <a class="code" href="stringobject_8h.html#ad912d811fca4c9cfee37905bed81eb65">s</a> = *it;
+<a name="l00183"></a>00183             QStringList list = s.split(<span class="stringliteral">&quot; &quot;</span>, QString::SkipEmptyParts);
 <a name="l00184"></a>00184 
-<a name="l00185"></a>00185                 <span class="comment">// lol. fix that later</span>
-<a name="l00186"></a>00186                 list.removeAt(0);
+<a name="l00185"></a>00185             <span class="keywordflow">if</span> (list.size() &gt; 1) {
+<a name="l00186"></a>00186                 QString pname = list.at(0);
 <a name="l00187"></a>00187 
-<a name="l00188"></a>00188                 qDebug() &lt;&lt; <span class="stringliteral">&quot;load&quot;</span> &lt;&lt; pname &lt;&lt; list.join(<span class="stringliteral">&quot;_&quot;</span>);
-<a name="l00189"></a>00189 
-<a name="l00190"></a>00190                 <span class="keyword">set</span>(pname.toStdString(), list);
-<a name="l00191"></a>00191             }
+<a name="l00188"></a>00188                 <span class="comment">// lol. fix that later</span>
+<a name="l00189"></a>00189                 list.removeAt(0);
+<a name="l00190"></a>00190 
+<a name="l00191"></a>00191                 qDebug() &lt;&lt; <span class="stringliteral">&quot;load&quot;</span> &lt;&lt; pname &lt;&lt; list.join(<span class="stringliteral">&quot;_&quot;</span>);
 <a name="l00192"></a>00192 
-<a name="l00193"></a>00193             <span class="comment">// TODO! property type should be saved</span>
-<a name="l00194"></a>00194         }
+<a name="l00193"></a>00193                 <span class="keyword">set</span>(pname.toStdString(), list);
+<a name="l00194"></a>00194             }
 <a name="l00195"></a>00195 
-<a name="l00196"></a>00196         <span class="keywordflow">return</span> ret.toStdString();
-<a name="l00197"></a>00197     }
-<a name="l00198"></a>00198 };
-<a name="l00199"></a>00199 }
-<a name="l00200"></a>00200 
-<a name="l00201"></a>00201 <span class="preprocessor">#endif // CM_PROPERTYLIST_H</span>
+<a name="l00196"></a>00196             <span class="comment">// TODO! property type should be saved</span>
+<a name="l00197"></a>00197         }
+<a name="l00198"></a>00198 
+<a name="l00199"></a>00199         <span class="keywordflow">return</span> ret.toStdString();
+<a name="l00200"></a>00200     }
+<a name="l00201"></a>00201 
+<a name="l00202"></a>00202 signals:
+<a name="l00203"></a>00203     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_property_list.html#ad7751eab5dfc4bdf17737556bcfc95f7">propertyChangedSignal</a>(QString <a class="code" href="abstract_8h.html#afcd1706c9144e6d6eee6127661ae3be2">name</a>);
+<a name="l00204"></a>00204 };
+<a name="l00205"></a>00205 }
+<a name="l00206"></a>00206 
+<a name="l00207"></a>00207 <span class="preprocessor">#endif // CM_PROPERTYLIST_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -275,7 +281,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 23 2017 19:32:45 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 23 2017 21:23:06 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
