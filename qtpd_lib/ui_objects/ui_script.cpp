@@ -2,7 +2,7 @@
 //  ui_script.cpp
 //
 //
-//  Created by Alex Nadzharov on 03/03/17.
+//  Created by Alex Nadzharov on 24/03/17.
 //
 //
 
@@ -31,7 +31,7 @@ typedef struct _ui_script {
 } t_ui_script;
 
 // special
-extern "C" void uimsg_set_updateUI(t_pd* x, void* obj, t_updateUI func)
+extern "C" void uiscript_set_updateUI(t_pd* x, void* obj, t_updateUI func)
 {
     //weird fix, test that
     if (x) {
@@ -40,7 +40,7 @@ extern "C" void uimsg_set_updateUI(t_pd* x, void* obj, t_updateUI func)
     }
 }
 
-static void uimsg_set(t_ui_script* x, t_symbol* s, int argc, t_atom* argv)
+static void uiscript_set(t_ui_script* x, t_symbol* s, int argc, t_atom* argv)
 {
     //post("uimsg set");
 
@@ -108,7 +108,7 @@ static void uimsg_set(t_ui_script* x, t_symbol* s, int argc, t_atom* argv)
     }
 }
 
-static void uimsg_bang(t_ui_script* x) // t_symbol *s, int argc, t_atom* argv
+static void uiscript_bang(t_ui_script* x) // t_symbol *s, int argc, t_atom* argv
 {
     if (x->msg->size()) {
 
@@ -117,7 +117,7 @@ static void uimsg_bang(t_ui_script* x) // t_symbol *s, int argc, t_atom* argv
     }
 }
 
-static void* uimsg_new(t_symbol* s, int argc, t_atom* argv)
+static void* uiscript_new(t_symbol* s, int argc, t_atom* argv)
 {
     t_ui_script* x = (t_ui_script*)pd_new(ui_script_class);
 
@@ -130,18 +130,7 @@ static void* uimsg_new(t_symbol* s, int argc, t_atom* argv)
     return (void*)x;
 }
 
-void uimsg_save(t_gobj* z, t_binbuf* b)
-{
-    t_ui_script* x = (t_ui_script*)z;
-
-    binbuf_addv(b, "ss", gensym("#X"), gensym("obj"));
-    binbuf_addv(b, "ff", (float)x->x_obj.te_xpix, (float)x->x_obj.te_ypix);
-    binbuf_addv(b, "s", gensym("ui.script"));
-    binbuf_add(b, x->msg->size(), x->msg->toPdData());
-    binbuf_addv(b, ";");
-}
-
-static void uimsg_free(t_object* obj)
+static void uiscript_free(t_object* obj)
 {
     t_ui_script* x = (t_ui_script*)obj;
 
@@ -157,12 +146,10 @@ extern "C" void setup_ui0x2escript()
     // printf("ui.script init\n");
     // class_new()
     ui_script_class = class_new(gensym("ui.script"),
-        (t_newmethod)(uimsg_new),
+        (t_newmethod)(uiscript_new),
         (t_method)(0),
         sizeof(t_ui_script), 0, A_GIMME, 0);
 
-    class_addmethod(ui_script_class, (t_method)uimsg_set, &s_anything, A_GIMME, 0);
-    class_addmethod(ui_script_class, (t_method)uimsg_bang, &s_bang, A_NULL, 0);
-
-    class_setsavefn(ui_script_class, uimsg_save);
+    class_addmethod(ui_script_class, (t_method)uiscript_set, &s_anything, A_GIMME, 0);
+    class_addmethod(ui_script_class, (t_method)uiscript_bang, &s_bang, A_NULL, 0);
 }

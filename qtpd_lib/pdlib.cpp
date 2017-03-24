@@ -25,6 +25,7 @@ extern "C" void setup_ui0x2ebang(void);
 extern "C" void setup_ui0x2etoggle(void);
 extern "C" void setup_ui0x2emsg(void);
 extern "C" void setup_ui0x2efloat(void);
+extern "C" void setup_ui0x2escript(void);
 
 //todo fix
 //typedef struct _loadedlist
@@ -119,12 +120,14 @@ void cmp_pdinit()
         qDebug("Pd library initialized: %lu", (long)cm_pd);
 
     //temporary extra objects
+
     setup_ui0x2emsg();
     setup_ui0x2efloat();
     setup_ui0x2ebang();
     setup_ui0x2etoggle();
+    setup_ui0x2escript();
 
-    setup_list0x2eproduct();
+    //setup_list0x2eproduct();
 
     //temporary initialisations
     //    setup_ui0x2ebang();
@@ -509,7 +512,6 @@ t_garray* cmp_get_array(t_symbol* arrayname)
 void cmp_get_array_data(t_garray* a, int* size, t_float** vec)
 {
     garray_getfloatarray(a, size, vec);
-
 }
 
 t_garray* cmp_new_array(t_canvas* c, t_symbol* name, t_floatarg size, t_floatarg save, t_floatarg newgraph)

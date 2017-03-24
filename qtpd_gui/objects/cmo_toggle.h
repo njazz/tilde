@@ -21,7 +21,6 @@ class UIToggle : public UIObject {
 
 private:
     bool clicked_;
-
     bool value_;
 
 public:
@@ -32,7 +31,9 @@ public:
         UIToggle* b = new UIToggle((UIObject*)parent);
 
         std::string data1 = b->properties()->extractFromPdFileString(objectData);
-        b->setObjectData("");
+        b->setObjectData(data1);
+
+        qDebug() << "obj data" << QString(data1.c_str());
 
         std::string message = "ui.toggle";
 
@@ -42,7 +43,6 @@ public:
             qDebug("bad pd canvas instance");
         } else {
             QPoint pos = QPoint(0, 0);
-            //new_obj = cmp_create_message(pdCanvas, message, pos.x(), pos.y());
             new_obj = cmp_create_object(pdCanvas, message, pos.x(), pos.y());
         }
 
@@ -52,9 +52,9 @@ public:
         } else {
             qDebug("Error: no such object %s", message.c_str());
         }
-        //b->setFixedSize(20,20);
 
-        b->setPdMessage("");
+        //b->setFixedSize(20,20);
+        //b->setPdMessage("");
 
         b->addInlet();
         b->addOutlet();

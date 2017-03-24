@@ -22,7 +22,7 @@ UIScriptEditor::UIScriptEditor(QPlainTextEdit* parent)
 UIScript::UIScript(UIObject* parent)
     : UIObject(parent)
 {
-    setPdObjectName("ui.script ");
+    //setPdObjectName("ui.script");
 
     this->setMouseTracking(true);
 

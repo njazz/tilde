@@ -55,7 +55,7 @@ void UIObject::initProperties()
     this->properties()->create("SendSymbol", "Preset", "0.1", gensym(""));
     this->properties()->create("ReceiveSymbol", "Preset", "0.1", gensym(""));
 
-    this->properties()->create("BorderColor", "Color", "0.1", QColor(224, 224, 224, 255));
+    this->properties()->create("BorderColor", "Color", "0.1", QColor(192, 192, 192, 255));
 }
 
 PropertyList* UIObject::properties()
@@ -273,10 +273,10 @@ std::string UIObject::asPdFileString()
     return ret;
 }
 
-void UIObject::setPdObjectName(std::string name)
-{
-    pdObjectName_ = name;
-}
+//void UIObject::setPdObjectName(std::string name)
+//{
+//    pdObjectName_ = name;
+//}
 
 QMainWindow* UIObject::subpatchWindow()
 {

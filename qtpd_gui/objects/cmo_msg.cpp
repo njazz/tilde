@@ -8,7 +8,7 @@ namespace qtpd {
 UIMessage::UIMessage(UIObject* parent)
     : UIObject(parent)
 {
-    setPdObjectName("ui.msg");
+    //setPdObjectName("ui.msg");
 
     //this->setMinimumWidth(30);
     this->setFixedSize(65, 20);

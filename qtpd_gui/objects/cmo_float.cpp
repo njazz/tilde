@@ -8,7 +8,7 @@ namespace qtpd {
 UIFloat::UIFloat(UIObject* parent)
     : UIObject(parent)
 {
-    setPdObjectName("ui.float");
+    //setPdObjectName("ui.float");
 
     //this->setMinimumWidth(30);
     this->setFixedSize(45, 20);

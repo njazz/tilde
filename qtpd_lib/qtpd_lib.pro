@@ -136,35 +136,31 @@ SOURCES += pdlib.cpp \
     src/x_vexp.c \
     src/x_vexp_fun.c \
     src/x_vexp_if.c \
-    extra/list_product.cpp \
-\
-\
-    creamlibrary/Sources/c.bang.cpp \
-    creamlibrary/Sources/c.blackboard.cpp \
-    creamlibrary/Sources/c.breakpoints.cpp \
-    creamlibrary/Sources/c.camomile.cpp \
-    creamlibrary/Sources/c.colorpanel.cpp \
-    creamlibrary/Sources/c.dsp_tilde.cpp \
-    creamlibrary/Sources/c.gain_tilde.cpp \
-    creamlibrary/Sources/c.incdec.cpp \
-    creamlibrary/Sources/c.keyboard.cpp \
-    creamlibrary/Sources/c.knob.cpp \
-    creamlibrary/Sources/c.matrix.cpp \
-    creamlibrary/Sources/c.menu.cpp \
-    creamlibrary/Sources/c.meter_tilde.cpp \
-    creamlibrary/Sources/c.number.cpp \
-    creamlibrary/Sources/c.number_tilde.cpp \
-    creamlibrary/Sources/c.plane.cpp \
-    creamlibrary/Sources/c.preset.cpp \
-    creamlibrary/Sources/c.radio.cpp \
-    creamlibrary/Sources/c.rslider.cpp \
-    creamlibrary/Sources/c.scope_tilde.cpp \
-    creamlibrary/Sources/c.slider.cpp \
-    creamlibrary/Sources/c.tab.cpp \
-    creamlibrary/Sources/c.toggle.cpp \
-    creamlibrary/Sources/c.wavesel.cpp \
-    creamlibrary/c.library.cpp \
-\
+#   just a list of objects. would not be used
+#    creamlibrary/Sources/c.blackboard.cpp \
+#    creamlibrary/Sources/c.breakpoints.cpp \
+#    creamlibrary/Sources/c.camomile.cpp \
+#    creamlibrary/Sources/c.colorpanel.cpp \
+#    creamlibrary/Sources/c.dsp_tilde.cpp \
+#    creamlibrary/Sources/c.gain_tilde.cpp \
+#    creamlibrary/Sources/c.incdec.cpp \
+#    creamlibrary/Sources/c.keyboard.cpp \
+#    creamlibrary/Sources/c.knob.cpp \
+#    creamlibrary/Sources/c.matrix.cpp \
+#    creamlibrary/Sources/c.menu.cpp \
+#    creamlibrary/Sources/c.meter_tilde.cpp \
+#    creamlibrary/Sources/c.number.cpp \
+#    creamlibrary/Sources/c.number_tilde.cpp \
+#    creamlibrary/Sources/c.plane.cpp \
+#    creamlibrary/Sources/c.preset.cpp \
+#    creamlibrary/Sources/c.radio.cpp \
+#    creamlibrary/Sources/c.rslider.cpp \
+#    creamlibrary/Sources/c.scope_tilde.cpp \
+#    creamlibrary/Sources/c.slider.cpp \
+#    creamlibrary/Sources/c.tab.cpp \
+#    creamlibrary/Sources/c.wavesel.cpp \
+#    creamlibrary/c.library.cpp \
+#
     ceammc-ui/ui_display.cpp \
     ceammc-ui/ui_knob.cpp \
 #    ceammc-ui/ui_link.cpp \ # needs fix
@@ -175,13 +171,14 @@ SOURCES += pdlib.cpp \
     ceammc-ui/ui_bpfunc.cpp \
     ceammc-ui/ui_ecanvas.cpp \
     ceammc-ui/ui_scope~.cpp \
-\
+#
     CicmWrapper/Sources/ebox.c \
     CicmWrapper/Sources/eclass.c \
     CicmWrapper/Sources/ecommon.c \
     CicmWrapper/Sources/egraphics.c \
     CicmWrapper/Sources/eobj.c \
     CicmWrapper/Sources/epopup.c \
+#
     ui_objects/ui_bang.cpp \
     ui_objects/ui_float.cpp \
     ui_objects/ui_msg.cpp \
