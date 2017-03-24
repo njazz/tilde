@@ -317,6 +317,8 @@ void UIObject::resizeEvent(QResizeEvent* event)
 
     this->setInletsPos();
     this->setOutletsPos();
+
+    properties()->set("Size", size());
 }
 
 void UIObject::enterEvent(QEvent*)

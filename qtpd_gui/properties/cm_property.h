@@ -88,8 +88,8 @@ public:
         ret.setWidth(data_.at(0).asFloat());
         ret.setHeight(data_.at(1).asFloat());
 
-        if (ret.width() < 40)
-            ret.setWidth(40);
+        if (ret.width() < 20)
+            ret.setWidth(20);
         if (ret.height() < 20)
             ret.setHeight(20);
 

@@ -290,7 +290,7 @@ public:
 
         b->setObjectData("ui.script");
 
-        b->autoResize();
+        //b->autoResize();
 
         // the zoo lol
         QString data = b->properties()->get("Script")->asQString().split("\\n ").join("\n");
@@ -354,6 +354,8 @@ public:
         UIObject::resizeEvent(event);
         editor_->setFixedWidth(width() - 5);
         editor_->setFixedHeight(height() - 25);
+
+        properties()->set("Size", size());
     }
 
     ///////////////////
