@@ -288,13 +288,14 @@ public:
         UIScript* b = new UIScript((UIObject*)parent);
 
         std::string data1 = b->properties()->extractFromPdFileString(objectData);
-        if (data1 != "")
-            b->setObjectData(data1);
+        //if (data1 != "")
+
+        b->setObjectData("ui.script");
 
         b->autoResize();
 
         // the zoo lol
-        QString data = b->properties()->get("Script")->asQString().split("\\n").join("\n");
+        QString data = b->properties()->get("Script")->asQString().split("\\n ").join("\n");
         b->editor_->document()->setPlainText(data);
 
         return (UIObject*)b;

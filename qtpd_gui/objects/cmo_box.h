@@ -16,7 +16,6 @@
 //todo proper pattern
 #include "cm_openfileproxy.h"
 
-
 //#include "cm_pdlink.h"
 
 namespace qtpd {
@@ -46,15 +45,20 @@ public:
 
         UIBox* b = new UIBox((UIObject*)parent);
 
-        //truncate "ui.obj"
+
+
+        //truncate "ui.obj". todo cleanup
         QStringList list = QString(objectData.c_str()).split(" ");
         list.removeAt(0);
         QString list_s = list.join(" ");
         const char* obj_name = list_s.toStdString().c_str();
-
         std::string data1 = b->properties()->extractFromPdFileString(obj_name); //test
-        b->setObjectData(data1);
 
+        // todo cleanup
+        const char* obj_name2 = (QString(data1.c_str()).split(" ").at(0)).toStdString().c_str();
+
+        // fix size changes
+        b->setObjectData(data1);
         b->autoResize();
 
         t_object* new_obj = 0;
@@ -66,7 +70,7 @@ public:
         } else {
             //temp pos = 0;
             QPoint pos = QPoint(0, 0);
-            new_obj = cmp_create_object(pd_Canvas, (char*)obj_name, pos.x(), pos.y());
+            new_obj = cmp_create_object(pd_Canvas, (char*)obj_name2, pos.x(), pos.y());
         }
 
         if (new_obj) {
@@ -78,25 +82,22 @@ public:
             b->setPdObject(new_obj);
 
             b->isAbstraction_ = cmp_is_abstraction(new_obj);
-            qDebug()<<"*** is abstraction: " << b->isAbstraction_;
+            qDebug() << "*** is abstraction: " << b->isAbstraction_;
 
             // todo different help symbols
-            b->setHelpName(list.at(0)+"-help.pd");
+            b->setHelpName(list.at(0) + "-help.pd");
 
-            if (b->isAbstraction_)
-            {
+            if (b->isAbstraction_) {
                 t_symbol* s = cmp_get_path((t_canvas*)new_obj);
 
                 // todo
                 QStringList l = QString(objectData.c_str()).split(" ");
-                QString pdName = l.at(1);   //assuming there always is a name when abstraction is created
+                QString pdName = l.at(1); //assuming there always is a name when abstraction is created
 
                 // todo windows
-                b->abstractionPath_ = QString(s->s_name) + "/" + pdName  + ".pd";
+                b->abstractionPath_ = QString(s->s_name) + "/" + pdName + ".pd";
 
                 qDebug() << b->abstractionPath_;
-
-
             }
 
         } else {
@@ -110,8 +111,6 @@ public:
             b->addInlet();
         for (int i = 0; i < out_c; i++)
             b->addOutlet();
-
-
 
         return (UIObject*)b;
     };
@@ -131,8 +130,8 @@ public:
             p.drawRect(0, 2, this->width(), this->height() - 4);
         }
 
-        QColor rectColor = (this->errorBox()) ? QColor(255, 0, 0) :  properties()->get("BorderColor")->asQColor(); //QColor(128, 128, 128);
-        p.setPen(QPen(rectColor, 2+isAbstraction_, (this->errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        QColor rectColor = (this->errorBox()) ? QColor(255, 0, 0) : properties()->get("BorderColor")->asQColor(); //QColor(128, 128, 128);
+        p.setPen(QPen(rectColor, 2 + isAbstraction_, (this->errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         p.drawRect(0, 0, this->width(), this->height());
         QTextOption* op = new QTextOption;
         op->setAlignment(Qt::AlignLeft);
@@ -154,8 +153,7 @@ public:
     void mousePressEvent(QMouseEvent* ev)
     {
         //context menu
-        if (ev->button()==Qt::RightButton)
-        {
+        if (ev->button() == Qt::RightButton) {
             QPoint pos = mapToGlobal(ev->pos());
             showPopupMenu(pos);
             ev->accept();
@@ -170,10 +168,8 @@ public:
         }
 
         //abstraction opening. Fix
-        if (this->getEditMode() != em_Unlocked)
-        {
-            if (isAbstraction_)
-            {
+        if (this->getEditMode() != em_Unlocked) {
+            if (isAbstraction_) {
                 OpenFileProxy::openAbstraction(abstractionPath_);
             }
         }
@@ -186,8 +182,6 @@ public:
             emit editObject(this);
             return;
         }
-
-
 
         emit selectBox(this);
         this->dragOffset = ev->pos();
@@ -246,8 +240,8 @@ signals:
     //void editObject(UIObject* box);
 
 private slots:
-//    void editorDone();
-//    void editorChanged();
+    //    void editorDone();
+    //    void editorChanged();
 };
 }
 

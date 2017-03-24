@@ -166,7 +166,7 @@ public:
         if (data_.size() > 1) {
             for (int i = 0; i < data_.size(); i++) {
 
-                ret += data_.at(i).asString() + "\\n";
+                ret += data_.at(i).asString() + " ";  //\\n removed
             }
 
         } else if (data_.size() == 1)

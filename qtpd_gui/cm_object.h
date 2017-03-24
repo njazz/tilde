@@ -40,7 +40,7 @@ private:
     portVec* inlets_;
     portVec* outlets_;
 
-    std::string pdObjectName_; //not to be confused with QObject objectName
+    std::string pdObjectName_; //not to be confused with QObject objectName DEPRECATED
     std::string objectData_; //name and arguments etc
 
     bool errorBox_;

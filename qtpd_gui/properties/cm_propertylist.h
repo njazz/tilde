@@ -44,8 +44,6 @@ public:
         return ret;
     }
 
-
-
     template <typename T>
     void create(std::string pName, std::string pGroup, std::string pVersion, T defaultData)
     {
@@ -59,7 +57,7 @@ public:
         data_[pName] = newP;
         //fix
 
-        UIPropertyData *grp = groups_[pGroup];
+        UIPropertyData* grp = groups_[pGroup];
         if (!grp)
             grp = new UIPropertyData();
         (*grp)[pName] = newP;
@@ -73,8 +71,7 @@ public:
     template <typename U>
     void set(std::string pName, U value)
     {
-        if(this->data_[pName])
-        {
+        if (this->data_[pName]) {
             this->data_[pName]->set(value);
             emit propertyChangedSignal(QString(pName.c_str()));
         }
@@ -172,11 +169,28 @@ public:
     {
         QStringList propertyList = QString(input.c_str()).split("@");
 
+        // remove "". todo fix that
+//        int i = 0;
+//        while (i < propertyList.size()) {
+//            if (propertyList.at(i)=="") {
+//                propertyList.removeAt(i);
+//            } else {
+//                i++;
+//            }
+//        }
+
+        qDebug() << "list" <<propertyList;
+
+        if (!propertyList.size()) return "";
+
         QString ret = propertyList.at(0);
+        if (ret.size())
+            if (ret.at(ret.size()-1)==" ") ret = ret.left(ret.size()-1);
+
+        if (propertyList.size()==1)
+            return ret.toStdString();
 
         propertyList.removeAt(0);
-
-        qDebug() << "plist" << propertyList;
 
         for (QStringList::iterator it = propertyList.begin(); it != propertyList.end(); ++it) {
             QString s = *it;

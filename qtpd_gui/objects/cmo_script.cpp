@@ -31,8 +31,6 @@ UIScript::UIScript(UIObject* parent)
 
     QFont font = QFont(PREF_QSTRING("Font"), 11, 0, false);
 
-
-
     this->editor_ = new UIScriptEditor((QPlainTextEdit*)this); //weird
     this->editor_->setFixedSize(150 - 5, 300 - 27); //setFixedSize(65-5,18);
     this->editor_->move(2, 21);
@@ -46,8 +44,7 @@ UIScript::UIScript(UIObject* parent)
 
     // new python context
 
-    editor_->setContext(pyWrapper::inst().withCanvas(parent));  //(PythonQt::createUniqueModule());
-
+    editor_->setContext(pyWrapper::inst().withCanvas(parent)); //(PythonQt::createUniqueModule());
 
     initProperties();
 
@@ -97,16 +94,24 @@ UIScript::UIScript(UIObject* parent)
     b1->show();
     connect(b1, &QPushButton::clicked, this, &UIScript::btnClear);
 
-
     this->setObjectSizeMode(os_Free);
 }
 
 void UIScript::editorChanged()
 {
 
+    // fix later
+
     QStringList list = getEditorData();
 
-    // fix later
-    properties()->set("Script", list);
+    if (!list.isEmpty())
+    {
+        for (int i = 0; i < list.size(); i++) {
+            QString str = list.at(i) + "\\n";
+            list.replace(i, str);
+        }
+
+        properties()->set("Script", list);
+    }
 }
 }

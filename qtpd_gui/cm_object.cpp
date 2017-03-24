@@ -86,19 +86,14 @@ void UIObject::createContextMenu()
     popupMenu_.addAction(pmHelp);
     popupMenu_.addSeparator();
     popupMenu_.addAction(pmOpen);
-
-
-
-
 }
 
 //void UIObject::contextMenuEvent(QContextMenuEvent *event) //customContextMenuRequested(const QPoint &pos)
-void UIObject::showPopupMenu (QPoint pos)
+void UIObject::showPopupMenu(QPoint pos)
 {
 
     popupMenu_.move(pos);
     popupMenu_.show();
-
 }
 
 void UIObject::setInletsPos()
@@ -270,7 +265,10 @@ std::string UIObject::asPdFileString()
 
     ret = "#X obj ";
     ret += std::to_string(this->x()) + " " + std::to_string(this->y()) + " ";
-    ret += this->pdObjectName_ + " " + this->objectData_ + this->properties_.asPdFileString();
+
+    //ret += this->pdObjectName_ + " " ;//
+
+    ret += ((this->objectData_ == "") ? ((std::string) "") : (this->objectData_ + " ")) + this->properties_.asPdFileString();
 
     return ret;
 }
@@ -387,6 +385,4 @@ void UIObject::hideSizeBox()
 {
     sizeBox->hide();
 }
-
-
 }
