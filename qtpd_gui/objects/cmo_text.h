@@ -38,7 +38,7 @@ public:
         b->setObjectData("");
 
         // the zoo lol
-        QString data = b->properties()->get("Text")->asQString().split("\\n").join("\n");
+        QString data = b->properties()->get("Text")->asQString().split("\\n ").join("\n");
         b->editor_->document()->setPlainText(data);
 
         b->objectText_ = data;
@@ -163,14 +163,22 @@ public:
 
     void setPdMessage(std::string message)
     {
-        //TODO temporary fix!
-        properties()->set("Text", message);
+        this->setObjectData("ui.text");
 
-        QString data = properties()->get("Text")->asQString().split("\\n").join("\n");
+        //TODO temporary fix!
+        QString msg = QString(message.c_str());
+        QStringList list = msg.split("\n");
+        for (int i=0;i<list.size();i++)
+        {
+            list[i] = list[i]+"\\n";
+        }
+        properties()->set("Text", list);
+
+        QString data = properties()->get("Text")->asQString().split("\\n ").join("\n");
 
         objectText_ = data;
 
-        this->setObjectData("");
+
         //this->autoResize();
 
         //auto-resize moved here

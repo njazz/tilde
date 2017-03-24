@@ -43,7 +43,7 @@ void UIText::editorDone()
     this->setPdMessage(this->editor_->document()->toPlainText().toStdString()); //text().toStdString());
     //todo
 
-    properties()->set("Text", getEditorData());
+    //properties()->set("Text", getEditorData());
     properties()->set("FontSize", 11);
 
     this->editor_->hide();
