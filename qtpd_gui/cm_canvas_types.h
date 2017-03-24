@@ -7,10 +7,14 @@
 #include "cm_object.h"
 #include "cm_patchcord.h"
 
+#include <set>
+
 namespace qtpd {
 
 typedef std::vector<UIObject*> objectVec;
 typedef std::vector<Patchcord*> patchcordVec;
+
+typedef std::set<UIObject*> objectSet;
 
 ////
 /// \brief shared canvas data - boxes, patchcords TODO rename
