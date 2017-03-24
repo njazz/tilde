@@ -138,10 +138,6 @@ SOURCES += pdlib.cpp \
     src/x_vexp_if.c \
     extra/list_product.cpp \
 \
-    ui_objects/uimsg.cpp \
-    ui_objects/uifloat.cpp \
-    ui_objects/uibang.cpp \
-    ui_objects/uitoggle.cpp \
 \
     creamlibrary/Sources/c.bang.cpp \
     creamlibrary/Sources/c.blackboard.cpp \
@@ -185,7 +181,12 @@ SOURCES += pdlib.cpp \
     CicmWrapper/Sources/ecommon.c \
     CicmWrapper/Sources/egraphics.c \
     CicmWrapper/Sources/eobj.c \
-    CicmWrapper/Sources/epopup.c
+    CicmWrapper/Sources/epopup.c \
+    ui_objects/ui_bang.cpp \
+    ui_objects/ui_float.cpp \
+    ui_objects/ui_msg.cpp \
+    ui_objects/ui_script.cpp \
+    ui_objects/ui_toggle.cpp
 
 HEADERS += \
     ceammc-lib/ceammc.h \
