@@ -46,6 +46,7 @@ var searchData=
   ['addstate',['addstate',['../pgenheaders_8h.html#a3617ea487601da509a42c4f1df722624',1,'addstate():&#160;pgenheaders.h'],['../grammar_8h.html#a841cce30eae5a66f7b64488ebf8ec906',1,'addstate(dfa *d):&#160;grammar.h']]],
   ['addsyspath',['addSysPath',['../class_python_qt.html#a40f9f9972b0ea96810a0c403416f1d95',1,'PythonQt']]],
   ['adduiobject',['addUIobject',['../classqtpd_1_1_object_loader.html#a9fa9ecfce511f15b2b3ccc187f0872df',1,'qtpd::ObjectLoader']]],
+  ['adduniquebox',['addUniqueBox',['../classqtpd_1_1canvas_data.html#ad1e457dbf2d5d8b99fc11d1363b580e5',1,'qtpd::canvasData']]],
   ['addvariable',['addVariable',['../class_python_qt.html#a94942fcfff5f7a151ab159a3a9044014',1,'PythonQt::addVariable()'],['../class_python_qt_object_ptr.html#a374e4afc9d6e68933ac01cacade6cf12',1,'PythonQtObjectPtr::addVariable()']]],
   ['addverticalbargraph',['addVerticalBargraph',['../classceammc_1_1faust_1_1_pd_u_i.html#a794b78fe431adeaf1109cbf3e93cb80d',1,'ceammc::faust::PdUI']]],
   ['addverticalslider',['addVerticalSlider',['../classceammc_1_1faust_1_1_pd_u_i.html#a08f238b4c700a5d0756966b0b6ae4435',1,'ceammc::faust::PdUI']]],

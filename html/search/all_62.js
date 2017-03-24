@@ -66,7 +66,7 @@ var searchData=
   ['boolproperty',['BoolProperty',['../classceammc_1_1_bool_property.html',1,'ceammc']]],
   ['bottom',['bottom',['../structui__slider2d.html#a87eafe72948ba496dbf210f34adb4786',1,'ui_slider2d']]],
   ['bounds',['bounds',['../code_8h.html#a088761a95473f90ef897a790d99d97b2',1,'code.h']]],
-  ['boxes_5f',['boxes_',['../structqtpd_1_1struct_canvas_data.html#a8c8212b514489de69d542fe79bfe61d4',1,'qtpd::structCanvasData']]],
+  ['boxes_5f',['boxes_',['../classqtpd_1_1canvas_data.html#af5fe15153786b0e9b6a41b21e082bcb7',1,'qtpd::canvasData']]],
   ['bpf',['BPF',['../classceammc_1_1_b_p_f.html#af7b625552c75e27fcf401ea5c08fe188',1,'ceammc::BPF']]],
   ['bpf',['BPF',['../classceammc_1_1_b_p_f.html',1,'ceammc']]],
   ['bpf_5fm_5fadd',['bpf_m_add',['../namespaceceammc__gui.html#a31611b780dd00f13a50514f34f3018d8',1,'ceammc_gui']]],
