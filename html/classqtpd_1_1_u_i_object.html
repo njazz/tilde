@@ -191,7 +191,6 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets object box error flag  <a href="#abc5b87789a2cc65d9d74d0ca2b6b0bdf"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a89a9d36ac67cceab237cdc01a1ec2376">asPdFileString</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns object's text for client-based file saving  <a href="#a89a9d36ac67cceab237cdc01a1ec2376"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a36205e7834e8ee65fd86ab3546a4488d">setPdObjectName</a> (<a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="el" href="_python_8h.html#ab3978d96531ad97f1c3139b11f771f98">name</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QMainWindow *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a163437921d348578fbfb8abebee0217c">subpatchWindow</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">temporary - remove later  <a href="#a163437921d348578fbfb8abebee0217c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#aab273ef9fd115cb87544b398975ca4c1">setSubpatchWindow</a> (QMainWindow *cwindow)</td></tr>
@@ -341,7 +340,7 @@ Public Member Functions</h2></td></tr>
 <p>returns object's text for client-based file saving </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Reimplemented in <a class="el" href="classqtpd_1_1_canvas.html#a76e63b8ae387b95094bec26fbc721730">qtpd::Canvas</a>.</p>
+<p>Reimplemented in <a class="el" href="classqtpd_1_1_canvas.html#a76e63b8ae387b95094bec26fbc721730">qtpd::Canvas</a>, <a class="el" href="classqtpd_1_1_u_i_message.html#a57424e0098d84cf1fa667a8451d7f392">qtpd::UIMessage</a>, and <a class="el" href="classqtpd_1_1_u_i_float.html#ae4f091c6565095c7fa1418b51e4f574d">qtpd::UIFloat</a>.</p>
 
 </div>
 </div>
@@ -738,7 +737,7 @@ Public Member Functions</h2></td></tr>
 <p>gui-only objects can ovverride it with function that returns 0 </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_script.html#a7f505f4baa43aa02e40082517581f7d9">qtpd::UIScript</a>, and <a class="el" href="classqtpd_1_1_u_i_text.html#a20a1e21b277ddf6fb89ecce5ffdb0af8">qtpd::UIText</a>.</p>
+<p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_text.html#a20a1e21b277ddf6fb89ecce5ffdb0af8">qtpd::UIText</a>.</p>
 
 </div>
 </div>
@@ -1106,24 +1105,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_message.html#aaf6f192ff6c569daaa7b8ab34e1087b4">qtpd::UIMessage</a>, <a class="el" href="classqtpd_1_1_u_i_toggle.html#a0988331d4bdad4f81534a386b8dc8d4c">qtpd::UIToggle</a>, <a class="el" href="classqtpd_1_1_u_i_float.html#a5b6cb8517171861520fa799db424dbc2">qtpd::UIFloat</a>, and <a class="el" href="classqtpd_1_1_u_i_bang.html#aefedb382e87c7cafd65c1aa5de4c8b52">qtpd::UIBang</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a36205e7834e8ee65fd86ab3546a4488d"></a><!-- doxytag: member="qtpd::UIObject::setPdObjectName" ref="a36205e7834e8ee65fd86ab3546a4488d" args="(std::string name)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_object.html#a36205e7834e8ee65fd86ab3546a4488d">qtpd::UIObject::setPdObjectName</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
+<p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_script.html#a7cee0bd7c694e07f389606acb3ad7048">qtpd::UIScript</a>, <a class="el" href="classqtpd_1_1_u_i_message.html#aaf6f192ff6c569daaa7b8ab34e1087b4">qtpd::UIMessage</a>, <a class="el" href="classqtpd_1_1_u_i_toggle.html#a0988331d4bdad4f81534a386b8dc8d4c">qtpd::UIToggle</a>, <a class="el" href="classqtpd_1_1_u_i_float.html#a5b6cb8517171861520fa799db424dbc2">qtpd::UIFloat</a>, and <a class="el" href="classqtpd_1_1_u_i_bang.html#aefedb382e87c7cafd65c1aa5de4c8b52">qtpd::UIBang</a>.</p>
 
 </div>
 </div>
@@ -1202,7 +1184,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 24 2017 08:08:25 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 24 2017 12:41:49 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

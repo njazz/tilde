@@ -136,7 +136,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00055"></a>00055         <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> data1 = b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a69ed99ca86c7019f489f56b6dc96f8a4">properties</a>()-&gt;<a class="code" href="classqtpd_1_1_property_list.html#a89ada354abe82e104bb9d47b0e80f3b4" title="extract properties from string in pd file">extractFromPdFileString</a>(obj_name); <span class="comment">//test</span>
 <a name="l00056"></a>00056 
 <a name="l00057"></a>00057         <span class="comment">// todo cleanup</span>
-<a name="l00058"></a>00058         <span class="keyword">const</span> <span class="keywordtype">char</span>* obj_name2 = (QString(data1.c_str()).split(<span class="stringliteral">&quot; &quot;</span>).at(0)).toStdString().c_str();
+<a name="l00058"></a>00058         <span class="keyword">const</span> <span class="keywordtype">char</span>* obj_name2 = data1.c_str();<span class="comment">//(QString(data1.c_str()).split(&quot; &quot;).at(0)).toStdString().c_str();</span>
 <a name="l00059"></a>00059 
 <a name="l00060"></a>00060         <span class="comment">// fix size changes</span>
 <a name="l00061"></a>00061         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a65a6c071b7b6f99393652d273e6a0fa7" title="sets object text data">setObjectData</a>(data1);
@@ -331,7 +331,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 24 2017 08:08:23 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 24 2017 12:41:48 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
