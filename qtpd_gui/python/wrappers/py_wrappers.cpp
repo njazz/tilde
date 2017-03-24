@@ -37,9 +37,24 @@ PythonQtObjectPtr pyWrapper::withCanvas(UIObject* canvas)
 
     pyLocal * loc = new pyLocal;
     loc->setCanvas((Canvas*)canvas); // canvas, canvas, canvas, canvas
+    loc->setPdObject(0);
     ctx.addObject("local", loc);
 
     return ctx;
 }
 
+PythonQtObjectPtr pyWrapper::withCanvasAndPdObject(UIObject* canvas, t_object* obj)
+{
+    PythonQtObjectPtr ctx;
+    ctx = PythonQt::self()->createUniqueModule();
+    ctx.addObject("Qtpd", new pyQtpd());
+
+    pyLocal * loc = new pyLocal;
+    loc->setCanvas((Canvas*)canvas); // canvas, canvas, canvas, canvas
+    loc->setPdObject(obj);
+    ctx.addObject("local", loc);
+
+
+    return ctx;
+}
 

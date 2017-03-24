@@ -214,6 +214,8 @@ void cmp_sendstring(t_pd* obj, std::string msg);
 ///
 void cmp_connectUI(t_pd* obj, void* uiobj, t_updateUI func);
 
+//void cmp_connectUI(std::string obj_name, void* uiobj, t_updateUI func);
+
 ////
 /// \brief post plain text to Pd window
 /// \param text

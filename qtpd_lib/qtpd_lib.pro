@@ -161,16 +161,16 @@ SOURCES += pdlib.cpp \
 #    creamlibrary/Sources/c.wavesel.cpp \
 #    creamlibrary/c.library.cpp \
 #
-    ceammc-ui/ui_display.cpp \
-    ceammc-ui/ui_knob.cpp \
+#    ceammc-ui/ui_display.cpp \
+#    ceammc-ui/ui_knob.cpp \
 #    ceammc-ui/ui_link.cpp \ # needs fix
-    ceammc-ui/ui_slider2d.cpp \
-    ceammc-ui/ui_sliders.cpp \
-    ceammc-ui/ui_keyboard.cpp \
-    ceammc-ui/ui_spectroscope~.cpp \
-    ceammc-ui/ui_bpfunc.cpp \
-    ceammc-ui/ui_ecanvas.cpp \
-    ceammc-ui/ui_scope~.cpp \
+#    ceammc-ui/ui_slider2d.cpp \
+#    ceammc-ui/ui_sliders.cpp \
+#    ceammc-ui/ui_keyboard.cpp \
+#    ceammc-ui/ui_spectroscope~.cpp \
+#    ceammc-ui/ui_bpfunc.cpp \
+#    ceammc-ui/ui_ecanvas.cpp \
+#    ceammc-ui/ui_scope~.cpp \
 #
     CicmWrapper/Sources/ebox.c \
     CicmWrapper/Sources/eclass.c \

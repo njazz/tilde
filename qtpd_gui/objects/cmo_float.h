@@ -30,7 +30,7 @@ public:
         UIFloat* b = new UIFloat((UIObject*)parent);
 
         std::string data1 = b->properties()->extractFromPdFileString(objectData);
-        b->setObjectData(data1);
+        b->setObjectData("ui.float");
 
         b->autoResize();
 
@@ -196,6 +196,19 @@ public:
     {
         UIObject::setPdObject(obj);
         cmp_connectUI((t_pd*)this->pdObject(), (void*)this, &UIFloat::updateUI);
+    }
+
+    std::string asPdFileString()
+    {
+        // THE fix
+        std::string ret;
+
+        ret = "#X obj ";
+        ret += std::to_string(this->x()) + " " + std::to_string(this->y()) + " ";
+        ret += "ui.float ";
+        ret += ((this->objectData() == "") ? ((std::string) "") : (this->objectData() + " ")) + this->properties()->asPdFileString();
+
+        return ret;
     }
 
 signals:

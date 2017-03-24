@@ -16,7 +16,7 @@ UIScriptEditor::UIScriptEditor(QPlainTextEdit* parent)
     QObject::connect(_completer, SIGNAL(activated(const QString&)),
         this, SLOT(insertCompletion(const QString&)));
 
-    PythonQtObjectPtr _context = PythonQt::self()->getMainModule();
+    //PythonQtObjectPtr _context = PythonQt::self()->getMainModule();
 }
 
 UIScript::UIScript(UIObject* parent)

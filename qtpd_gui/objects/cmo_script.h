@@ -263,8 +263,6 @@ private slots:
         }
         //
     }
-
-
 };
 
 //-------------------------------------------------------------------------------
@@ -297,6 +295,31 @@ public:
         // the zoo lol
         QString data = b->properties()->get("Script")->asQString().split("\\n ").join("\n");
         b->editor_->document()->setPlainText(data);
+
+        // pd object
+        std::string message = "ui.script";
+
+        //temp
+        t_object* new_obj = 0;
+        if (!pdCanvas) {
+            qDebug("bad pd canvas instance");
+        } else {
+            QPoint pos = QPoint(0, 0);
+            new_obj = cmp_create_object(pdCanvas, message, pos.x(), pos.y());
+        }
+
+        if (new_obj) {
+            qDebug("created toggle %s | ptr %lu\n", message.c_str(), (long)new_obj);
+            b->setPdObject(new_obj);
+
+            b->editor_->setContext(pyWrapper::inst().withCanvasAndPdObject((UIObject*)parent, new_obj));
+
+            b->addInlet();
+            b->addOutlet();
+
+        } else {
+            qDebug("Error: no such object %s", message.c_str());
+        }
 
         return (UIObject*)b;
     };
@@ -388,24 +411,12 @@ public:
 
     static void updateUI(void* uiobj, ceammc::AtomList msg)
     {
-        //qDebug("update ui");
+        qDebug("script << pd message");
+        qDebug() << (long)uiobj << msg.size();
+
         UIScript* x = (UIScript*)uiobj;
-
-        std::string obj_data;
-        for (int i = 0; i < msg.size(); i++) {
-            obj_data += msg.at(i).asString() + " ";
-        }
-
-        x->setObjectData(obj_data);
-        //x->autoResize();
-
-        x->repaint();
-    }
-
-    void* pdObject()
-    {
-        //later add 'ui.script' pd object for communication
-        return 0;
+        if (x)
+            emit x->callRun();
     }
 
     QStringList getEditorData()
@@ -413,17 +424,28 @@ public:
         return editor_->document()->toPlainText().split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
     }
 
+    void setPdObject(void* obj)
+    {
+        UIObject::setPdObject(obj);
+        connect(this, &UIScript::callRun, this, &UIScript::btnRun);
+        cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIScript::updateUI);
+
+        //cmp_connectUI("ui.script", (void*)this, &UIScript::updateUI);
+
+        qDebug() << "connect ui: uiobj " << (long)this << " pdobj " << (long)pdObject();
+
+    }
 signals:
+    void callRun();
 
-private slots:
-    void editorChanged();
-
+public slots:
     void btnRun()
     {
+        qDebug() << "btnRun";
 
         //this code is from PythonQt
 
-        PythonQtObjectPtr context = editor_->context();//PythonQt::self()->getMainModule();
+        PythonQtObjectPtr context = editor_->context(); //PythonQt::self()->getMainModule();
         QString _stdOut = "";
         QString _stdErr = "";
         PythonQtObjectPtr p;
@@ -436,47 +458,35 @@ private slots:
 
         QStringList list = getEditorData();
 
-        // while (true)
-        //for (QStringList::iterator it = list.begin(); it!= list.end(); ++it)
-        //{
-
         QString line = list.join("\r\n"); //*it;
 
-        //lol
-        //        if (line.isNull())
-        //        {}
+        if (!line.isNull()) {
 
-        //for (QStringList::iterator it = list.begin(); it!= list.end(); ++it)
-        {
-            //QString line = *it;
+            if (dict) {
+                context.evalScript(line);
 
-            if (!line.isNull()) {
+                //qDebug() << editor_->document()->toPlainText().toLatin1().data();
+                qDebug() << "line: " << line;
+            }
 
-                if (dict) {
-                    //p.setNewRef(PyRun_String(line.toLatin1().data(), Py_single_input, dict, dict));
+            if (!p) {
+                PythonQt::self()->handleError();
+            }
 
-                    context.evalScript(line);
+            if (_stdOut != "") {
 
-                    //qDebug() << editor_->document()->toPlainText().toLatin1().data();
-                    qDebug() << "line: " << line;
-                }
-
-                if (!p) {
-                    PythonQt::self()->handleError();
-                }
-
-                if (_stdOut != "") {
-
-                    cmp_post((std::string) "Python: " + _stdOut.toStdString());
-                }
-                if (_stdErr != "") {
-                    cmp_post((std::string) "Python error: " + _stdOut.toStdString());
-                }
+                cmp_post((std::string) "Python: " + _stdOut.toStdString());
+            }
+            if (_stdErr != "") {
+                cmp_post((std::string) "Python error: " + _stdOut.toStdString());
             }
         }
-
-        // }
     }
+
+private slots:
+    void editorChanged();
+
+
 
     void btnLoad()
     {

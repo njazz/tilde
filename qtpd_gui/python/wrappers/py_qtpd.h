@@ -234,23 +234,65 @@ public Q_SLOTS:
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
+//class pyPdObj : public QObject {
+//    Q_OBJECT
+
+//    t_object* _pdObject;
+//private:
+
+//public:
+//    explicit pyPdObj(QObject* parent = 0){};
+
+//    void setPdObject(t_object* obj){
+//    _pdObject = obj;
+//    };
+
+//public Q_SLOTS:
+
+//    void message(QStringList msg)
+//    {
+//        cmp_post("message to object stub");
+//    }
+
+//};
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
 class pyLocal : public QObject {
     Q_OBJECT
 
 private:
     Canvas* _canvas;
+    t_object* _pdObject;
 
 public:
     explicit pyLocal(QObject* parent = 0){};
 
-    void setCanvas(Canvas* c){
-    _canvas = c;
+    void setCanvas(Canvas* c)
+    {
+        _canvas = c;
+    };
+
+    void setPdObject(t_object* obj)
+    {
+        _pdObject = obj;
     };
 
 public Q_SLOTS:
     PyObject* getMainModule()
     {
         return PythonQt::self()->getMainModule();
+    }
+
+    void output(QString msg)
+    {
+        if (!_pdObject) {
+            cmp_post("Error: bad pd object");
+            return;
+        }
+
+        std::string msg_ = "__output "+ msg.toStdString();
+        cmp_sendstring((t_pd*)_pdObject, msg_);
     }
 
     Canvas* canvas() { return _canvas; }

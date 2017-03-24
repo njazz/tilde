@@ -13,7 +13,7 @@ static std::string cm_log_string;
 
 void PdWindow::cm_log(std::string text)
 {
-    qDebug("cm_log %s", text.c_str());
+    //qDebug("cm_log %s", text.c_str());
 
     //temporary
     if (!text.length()) return;

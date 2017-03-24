@@ -219,9 +219,14 @@ public:
 
     std::string asPdFileString()
     {
-        // the fix
+        // THE fix
+        std::string ret;
 
-        std::string ret = "ui.msg " + UIObject::asPdFileString();
+        ret = "#X obj ";
+        ret += std::to_string(this->x()) + " " + std::to_string(this->y()) + " ";
+        ret += "ui.msg ";
+        ret += ((this->objectData() == "") ? ((std::string) "") : (this->objectData() + " ")) + this->properties()->asPdFileString();
+
         return ret;
     }
 

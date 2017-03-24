@@ -2,6 +2,9 @@
 
 #include "pdlib.hpp"
 
+//temporary
+std::map<std::string, t_updateUI> *updateUImap;
+
 extern "C" {
 
 #include <g_canvas.h>
@@ -19,6 +22,9 @@ extern void setup_list0x2eproduct();
 //temporary
 t_canvas* cmp_newpatch();
 void cmp_closepatch(t_canvas* canvas);
+
+
+
 
 //temporary
 extern "C" void setup_ui0x2ebang(void);
@@ -495,9 +501,22 @@ void cmp_post(std::string text)
 
 void cmp_connectUI(t_pd* obj, void* uiobj, t_updateUI func)
 {
-    // fix that
+    // fix that !!!
     uimsg_set_updateUI(obj, uiobj, func);
+
+
 }
+
+//void cmp_connectUI(std::string obj_name, void* uiobj, t_updateUI func)
+//{
+//    if (!updateUImap)
+//        updateUImap = new std::map<std::string, t_updateUI>;
+
+//   (*updateUImap)[obj_name] = func;
+
+//   post("updateUI map %s %lu %lu", obj_name.c_str(), (long)func, (*updateUImap)[obj_name]);
+
+//}
 
 // ---------------------------------------------
 // arrays
