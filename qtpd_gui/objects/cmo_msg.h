@@ -216,8 +216,15 @@ public:
         cmp_connectUI((t_pd*)this->pdObject(), (void*)this, &UIMessage::updateUI);
     }
 
-    //    std::string asPdFileString()
-    //    {return "ui.msg "+ this->objectData();}
+
+    std::string asPdFileString()
+    {
+        // the fix
+
+        std::string ret = "ui.msg " + UIObject::asPdFileString();
+        return ret;
+    }
+
 
 signals:
     //void selectBox(cm_widget*box);
