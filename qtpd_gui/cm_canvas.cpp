@@ -112,7 +112,7 @@ void Canvas::s_SelectBox(UIWidget* box)
 {
 
     if (this->editMode == em_Unlocked) {
-        this->selectionData_.boxes_.push_back((UIObject*)box);
+        this->selectionData_.addUniqueBox((UIObject*)box);
         box->select();
         box->repaint();
     }
@@ -446,7 +446,7 @@ void Canvas::mouseMoveEventForCanvas(QMouseEvent* ev)
 
             if (frame.contains(r, false)) {
                 ((UIBox*)this->data_.boxes_.at(i))->select();
-                this->selectionData_.boxes_.push_back(this->data_.boxes_.at(i));
+                this->selectionData_.addUniqueBox(this->data_.boxes_.at(i));
             } else {
                 ((UIBox*)this->data_.boxes_.at(i))->deselect();
 
@@ -613,7 +613,7 @@ UIBox* Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas* 
 
     box->move(pos);
 
-    this->data_.boxes_.push_back(box);
+    data_.addUniqueBox(box);
 
     box->show();
 
@@ -665,7 +665,7 @@ UIObject* Canvas::createObject(std::string uiObjectName, std::string objectData1
     connect(obj, &UIMessage::moveBox, this, &Canvas::s_MoveBox);
     obj->setEditModeRef(&this->editMode);
     obj->move(pos);
-    this->data_.boxes_.push_back(obj);
+    this->data_.addUniqueBox(obj);
 
     obj->show();
 
@@ -706,7 +706,7 @@ UIObject* Canvas::createBoxForCanvas(Canvas* newCanvas, std::string objectData, 
 
     obj->setEditModeRef(&this->editMode);
     obj->move(pos);
-    this->data_.boxes_.push_back(obj);
+    this->data_.addUniqueBox(obj);
 
     QPalette Pal(palette());
     Pal.setColor(QPalette::Background, QColor(240, 240, 240));
@@ -787,7 +787,7 @@ void Canvas::deletePatchcordsFor(UIWidget* obj)
 void Canvas::deleteBox(UIObject* box)
 {
     deselectBoxes();
-    selectionData_.boxes_.push_back(box);
+    selectionData_.addUniqueBox(box);
     delBoxes();
 }
 
@@ -1065,7 +1065,7 @@ structPatchcordNumbers Canvas::patchcordAsNumbers(Patchcord* pcord)
 void Canvas::selectObject(UIObject* obj)
 {
     obj->select();
-    selectionData_.boxes_.push_back(obj);
+    selectionData_.addUniqueBox(obj);
 }
 
 void Canvas::selectAll()

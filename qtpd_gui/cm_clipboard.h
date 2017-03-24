@@ -23,7 +23,7 @@ public:
     }
 
 private:
-    structCanvasData data_;
+    canvasData data_;
 
     Clipboard() {}
     //    cm_clipboard(cm_clipboard const&);

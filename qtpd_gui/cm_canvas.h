@@ -49,8 +49,8 @@ private:
     //    patchcordVec selPatchcords;
 
     //move here. these are global for all draw types (Canvas, Box)
-    tCanvasDataPlus data_;
-    tCanvasData selectionData_;
+    canvasDataPlus data_;
+    canvasData selectionData_;
 
     //
     // local !Box
