@@ -189,8 +189,8 @@ signals:
     //void editObject(UIObject* box);
 
 private slots:
-    void editorDone();
-    void editorChanged();
+//    void editorDone();
+//    void editorChanged();
 };
 }
 

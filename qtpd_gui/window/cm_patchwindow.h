@@ -1,9 +1,9 @@
 #ifndef CM_PATCHWINDOW_H
 #define CM_PATCHWINDOW_H
 
+#include "UIBox.h"
 #include "cm_basewindow.h"
 #include "cm_canvas.h"
-#include "UIBox.h"
 
 #include "cm_pdlink.h"
 
@@ -152,6 +152,7 @@ public:
 
         putArray = new QAction(tr("Array"), this);
         putArray->setShortcut(tr("Ctrl+Shift+A"));
+        connect(putArray, &QAction::triggered, this, &PatchWindow::newArrayBox);
 
         putKeyboard = new QAction(tr("Keyboard"), this);
         //putArray->setShortcut(tr("Ctrl+Shift+T"));
@@ -286,7 +287,10 @@ public:
         this->canvas->setWindowSize(size());
     }
 
-    /////
+    //----------------------------------------------------------------------------------------
+
+    // todo less spaghetti
+
     void newObjectBox()
     {
 
@@ -298,12 +302,7 @@ public:
     void newMessageBox()
     {
 
-        //const char * obj_name = this->objectMaker->text().toStdString().c_str();
-        //
-
         if (this->canvas->getEditMode() != em_Locked) {
-            //UIMessage *newMsg = this->canvas->createMsg("",QPoint(100,100));
-
             UIObject* newMsg = this->canvas->createObject("ui.msg", "", QPoint(100, 100));
             this->canvas->dragObject = newMsg;
             newMsg->show();
@@ -313,12 +312,7 @@ public:
     void newFloatBox()
     {
 
-        //const char * obj_name = this->objectMaker->text().toStdString().c_str();
-        //
-
         if (this->canvas->getEditMode() != em_Locked) {
-            //UIFloat *newFlo = this->canvas->createFloat("0",QPoint(100,100));
-
             UIObject* newFlo = this->canvas->createObject("ui.float", "0", QPoint(100, 100));
             this->canvas->dragObject = newFlo;
             newFlo->show();
@@ -328,11 +322,7 @@ public:
     void newCommentBox()
     {
 
-        //const char * obj_name = this->objectMaker->text().toStdString().c_str();
-        //
-
         if (this->canvas->getEditMode() != em_Locked) {
-            //UIText *newTxt = this->canvas->createText("comment",QPoint(100,100));
             UIObject* newTxt = this->canvas->createObject("ui.text", "", QPoint(100, 100));
             this->canvas->dragObject = newTxt;
             newTxt->show();
@@ -365,6 +355,17 @@ public:
             newBng->show();
         }
     }
+
+    void newArrayBox()
+    {
+        if (this->canvas->getEditMode() != em_Locked) {
+            UIObject* newArr = this->canvas->createObject("ui.array", "", QPoint(100, 100));
+            this->canvas->dragObject = newArr;
+            newArr->show();
+        }
+    }
+
+    // ----------------------------------------------------
 
     void delSelected()
     {
