@@ -278,6 +278,8 @@ private:
 
     UIScriptEditor* editor_;
 
+    QStringList _inputList;
+
 public:
     explicit UIScript(UIObject* parent = 0);
 
@@ -312,7 +314,7 @@ public:
             qDebug("created toggle %s | ptr %lu\n", message.c_str(), (long)new_obj);
             b->setPdObject(new_obj);
 
-            b->editor_->setContext(pyWrapper::inst().withCanvasAndPdObject((UIObject*)parent, new_obj));
+            b->editor_->setContext(pyWrapper::inst().withCanvasPdObjectAndInput((UIObject*)parent, new_obj, &b->_inputList));
 
             b->addInlet();
             b->addOutlet();
@@ -363,28 +365,12 @@ public:
     void mousePressEvent(QMouseEvent* ev)
     {
 
-        if ((this->getEditMode() == em_Unlocked) && this->isSelected()) {
-
-            this->editor_->document()->setPlainText(QString(this->objectData().c_str()));
-            this->editor_->show();
-            this->editor_->setFocus();
-        }
-
         emit selectBox(this);
         this->dragOffset = ev->pos();
-
-        if (!(this->getEditMode() == em_Unlocked)) {
-            this->clicked_ = true;
-            this->repaint();
-
-            //todo timer
-        }
     }
 
     void mouseReleaseEvent(QMouseEvent*)
     {
-        this->clicked_ = false;
-        this->repaint();
     }
 
     void mouseMoveEvent(QMouseEvent* event)
@@ -417,8 +403,16 @@ public:
         qDebug() << (long)uiobj << msg.size();
 
         UIScript* x = (UIScript*)uiobj;
-        if (x)
+        if (x) {
+            //todo atomlist to qstringlist; atom as qstring
+            QStringList list;
+            for (int i = 0; i < msg.size(); i++) {
+                list.push_back(msg.at(i).asString().c_str());
+            }
+
+            x->_inputList = list;
             emit x->callRun();
+        }
     }
 
     QStringList getEditorData()
@@ -435,7 +429,6 @@ public:
         //cmp_connectUI("ui.script", (void*)this, &UIScript::updateUI);
 
         qDebug() << "connect ui: uiobj " << (long)this << " pdobj " << (long)pdObject();
-
     }
 signals:
     void callRun();
@@ -487,8 +480,6 @@ public slots:
 
 private slots:
     void editorChanged();
-
-
 
     void btnLoad()
     {
