@@ -82,7 +82,7 @@ var searchData=
   ['inplace_5fsubtract',['INPLACE_SUBTRACT',['../opcode_8h.html#a053786cd4131415b9b485111fa7de1e2',1,'opcode.h']]],
   ['inplace_5ftrue_5fdivide',['INPLACE_TRUE_DIVIDE',['../opcode_8h.html#a616e26fdbda2f532022f740742fee78f',1,'opcode.h']]],
   ['inplace_5fxor',['INPLACE_XOR',['../opcode_8h.html#af7249aed9e07ad4c33dc59734bee95f5',1,'opcode.h']]],
-  ['input',['input',['../structui__spectroscope.html#a1cc73e1ce10797eb65a5201716e866cd',1,'ui_spectroscope']]],
+  ['input',['input',['../structui__spectroscope.html#a1cc73e1ce10797eb65a5201716e866cd',1,'ui_spectroscope::input()'],['../classpy_local.html#a35571b06ef4502bc8a4b9d9e453ecd8e',1,'pyLocal::input()']]],
   ['inquiry',['inquiry',['../object_8h.html#aca4b9176705bc2188b16d2f2f7737fdc',1,'object.h']]],
   ['insert',['insert',['../classceammc_1_1_atom_list.html#a8fb783701919036bb9c026375626859d',1,'ceammc::AtomList::insert(size_t pos, const Atom &amp;a)'],['../classceammc_1_1_atom_list.html#afcb0933bbdae8cdb4fc4fd6ff9667ad9',1,'ceammc::AtomList::insert(size_t pos, const AtomList &amp;l)']]],
   ['insertcompletion',['insertCompletion',['../class_python_qt_scripting_console.html#a6eea3c653a8df6a1d9740f841da4504f',1,'PythonQtScriptingConsole']]],

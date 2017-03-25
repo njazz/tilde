@@ -307,135 +307,125 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00233"></a>00233 };
 <a name="l00234"></a>00234 
 <a name="l00236"></a>00236 
-<a name="l00237"></a>00237 <span class="comment">//class pyPdObj : public QObject {</span>
-<a name="l00238"></a>00238 <span class="comment">//    Q_OBJECT</span>
-<a name="l00239"></a>00239 
-<a name="l00240"></a>00240 <span class="comment">//    t_object* _pdObject;</span>
-<a name="l00241"></a>00241 <span class="comment">//private:</span>
-<a name="l00242"></a>00242 
-<a name="l00243"></a>00243 <span class="comment">//public:</span>
-<a name="l00244"></a>00244 <span class="comment">//    explicit pyPdObj(QObject* parent = 0){};</span>
-<a name="l00245"></a>00245 
-<a name="l00246"></a>00246 <span class="comment">//    void setPdObject(t_object* obj){</span>
-<a name="l00247"></a>00247 <span class="comment">//    _pdObject = obj;</span>
-<a name="l00248"></a>00248 <span class="comment">//    };</span>
+<a name="l00238"></a>00238 
+<a name="l00239"></a><a class="code" href="classpy_local.html">00239</a> <span class="keyword">class </span><a class="code" href="classpy_local.html">pyLocal</a> : <span class="keyword">public</span> QObject {
+<a name="l00240"></a>00240     Q_OBJECT
+<a name="l00241"></a>00241 
+<a name="l00242"></a>00242 <span class="keyword">private</span>:
+<a name="l00243"></a>00243     <a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* _canvas;
+<a name="l00244"></a>00244     t_object* _pdObject;
+<a name="l00245"></a>00245     QStringList* _list;
+<a name="l00246"></a>00246 
+<a name="l00247"></a>00247 <span class="keyword">public</span>:
+<a name="l00248"></a><a class="code" href="classpy_local.html#abb1562093a4e2901868acafaa9629f81">00248</a>     <span class="keyword">explicit</span> <a class="code" href="classpy_local.html#abb1562093a4e2901868acafaa9629f81">pyLocal</a>(QObject* parent = 0){};
 <a name="l00249"></a>00249 
-<a name="l00250"></a>00250 <span class="comment">//public Q_SLOTS:</span>
-<a name="l00251"></a>00251 
-<a name="l00252"></a>00252 <span class="comment">//    void message(QStringList msg)</span>
-<a name="l00253"></a>00253 <span class="comment">//    {</span>
-<a name="l00254"></a>00254 <span class="comment">//        cmp_post(&quot;message to object stub&quot;);</span>
-<a name="l00255"></a>00255 <span class="comment">//    }</span>
-<a name="l00256"></a>00256 
-<a name="l00257"></a>00257 <span class="comment">//};</span>
-<a name="l00258"></a>00258 
-<a name="l00260"></a>00260 
-<a name="l00261"></a><a class="code" href="classpy_local.html">00261</a> <span class="keyword">class </span><a class="code" href="classpy_local.html">pyLocal</a> : <span class="keyword">public</span> QObject {
-<a name="l00262"></a>00262     Q_OBJECT
-<a name="l00263"></a>00263 
-<a name="l00264"></a>00264 <span class="keyword">private</span>:
-<a name="l00265"></a>00265     <a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* _canvas;
-<a name="l00266"></a>00266     t_object* _pdObject;
-<a name="l00267"></a>00267 
-<a name="l00268"></a>00268 <span class="keyword">public</span>:
-<a name="l00269"></a><a class="code" href="classpy_local.html#abb1562093a4e2901868acafaa9629f81">00269</a>     <span class="keyword">explicit</span> <a class="code" href="classpy_local.html#abb1562093a4e2901868acafaa9629f81">pyLocal</a>(QObject* parent = 0){};
+<a name="l00250"></a><a class="code" href="classpy_local.html#ab73065c5353fd10ddfabe56ab75536e8">00250</a>     <span class="keywordtype">void</span> setCanvas(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c)
+<a name="l00251"></a>00251     {
+<a name="l00252"></a>00252         _canvas = c;
+<a name="l00253"></a>00253     };
+<a name="l00254"></a>00254 
+<a name="l00255"></a><a class="code" href="classpy_local.html#a6747a0564521e4fc566cccc7c4dd02f8">00255</a>     <span class="keywordtype">void</span> setPdObject(t_object* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
+<a name="l00256"></a>00256     {
+<a name="l00257"></a>00257         _pdObject = <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>;
+<a name="l00258"></a>00258     };
+<a name="l00259"></a>00259 
+<a name="l00260"></a><a class="code" href="classpy_local.html#a4baf09ee278082ec52f07a71aab37091">00260</a>     <span class="keywordtype">void</span> setInput(QStringList* list)
+<a name="l00261"></a>00261     {
+<a name="l00262"></a>00262         _list = list;
+<a name="l00263"></a>00263     }
+<a name="l00264"></a>00264 
+<a name="l00265"></a>00265 <span class="keyword">public</span> Q_SLOTS:
+<a name="l00266"></a><a class="code" href="classpy_local.html#af0205fb3cfce25d4dad3e2b3f9901b7e">00266</a>     <a class="code" href="struct__object.html">PyObject</a>* getMainModule()
+<a name="l00267"></a>00267     {
+<a name="l00268"></a>00268         <span class="keywordflow">return</span> <a class="code" href="modsupport_8h.html#a0180ca1808366e5da641475e8bf8cca3">PythonQt::self</a>()-&gt;getMainModule();
+<a name="l00269"></a>00269     }
 <a name="l00270"></a>00270 
-<a name="l00271"></a><a class="code" href="classpy_local.html#ab73065c5353fd10ddfabe56ab75536e8">00271</a>     <span class="keywordtype">void</span> setCanvas(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c)
+<a name="l00271"></a><a class="code" href="classpy_local.html#a1117d622c1428dd1eec91c303edf3d52">00271</a>     <span class="keywordtype">void</span> output(QString msg)
 <a name="l00272"></a>00272     {
-<a name="l00273"></a>00273         _canvas = c;
-<a name="l00274"></a>00274     };
-<a name="l00275"></a>00275 
-<a name="l00276"></a><a class="code" href="classpy_local.html#a6747a0564521e4fc566cccc7c4dd02f8">00276</a>     <span class="keywordtype">void</span> setPdObject(t_object* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
-<a name="l00277"></a>00277     {
-<a name="l00278"></a>00278         _pdObject = <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>;
-<a name="l00279"></a>00279     };
-<a name="l00280"></a>00280 
-<a name="l00281"></a>00281 <span class="keyword">public</span> Q_SLOTS:
-<a name="l00282"></a><a class="code" href="classpy_local.html#af0205fb3cfce25d4dad3e2b3f9901b7e">00282</a>     <a class="code" href="struct__object.html">PyObject</a>* getMainModule()
+<a name="l00273"></a>00273         <span class="keywordflow">if</span> (!_pdObject) {
+<a name="l00274"></a>00274             <a class="code" href="cm__pdlink_8h.html#a766e12f26830eee9deae0fe8e9f70535" title="post plain text to Pd window">cmp_post</a>(<span class="stringliteral">&quot;Error: bad pd object&quot;</span>);
+<a name="l00275"></a>00275             <span class="keywordflow">return</span>;
+<a name="l00276"></a>00276         }
+<a name="l00277"></a>00277 
+<a name="l00278"></a>00278         <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> msg_ = <span class="stringliteral">&quot;__output &quot;</span> + msg.toStdString();
+<a name="l00279"></a>00279         <a class="code" href="cm__pdlink_8h.html#a9bca4af04ea4fac6b910933e5ba16814" title="send string as pd message to object">cmp_sendstring</a>((t_pd*)_pdObject, msg_);
+<a name="l00280"></a>00280     }
+<a name="l00281"></a>00281 
+<a name="l00282"></a><a class="code" href="classpy_local.html#a35571b06ef4502bc8a4b9d9e453ecd8e">00282</a>     QStringList input()
 <a name="l00283"></a>00283     {
-<a name="l00284"></a>00284         <span class="keywordflow">return</span> <a class="code" href="modsupport_8h.html#a0180ca1808366e5da641475e8bf8cca3">PythonQt::self</a>()-&gt;getMainModule();
-<a name="l00285"></a>00285     }
-<a name="l00286"></a>00286 
-<a name="l00287"></a><a class="code" href="classpy_local.html#a1117d622c1428dd1eec91c303edf3d52">00287</a>     <span class="keywordtype">void</span> output(QString msg)
-<a name="l00288"></a>00288     {
-<a name="l00289"></a>00289         <span class="keywordflow">if</span> (!_pdObject) {
-<a name="l00290"></a>00290             <a class="code" href="cm__pdlink_8h.html#a766e12f26830eee9deae0fe8e9f70535" title="post plain text to Pd window">cmp_post</a>(<span class="stringliteral">&quot;Error: bad pd object&quot;</span>);
-<a name="l00291"></a>00291             <span class="keywordflow">return</span>;
-<a name="l00292"></a>00292         }
-<a name="l00293"></a>00293 
-<a name="l00294"></a>00294         <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> msg_ = <span class="stringliteral">&quot;__output &quot;</span>+ msg.toStdString();
-<a name="l00295"></a>00295         <a class="code" href="cm__pdlink_8h.html#a9bca4af04ea4fac6b910933e5ba16814" title="send string as pd message to object">cmp_sendstring</a>((t_pd*)_pdObject, msg_);
-<a name="l00296"></a>00296     }
-<a name="l00297"></a>00297 
-<a name="l00298"></a><a class="code" href="classpy_local.html#a751b651d4ebd84042f499de9233fb497">00298</a>     <a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* <a class="code" href="classpy_local.html#a751b651d4ebd84042f499de9233fb497">canvas</a>() { <span class="keywordflow">return</span> _canvas; }
-<a name="l00299"></a>00299 };
-<a name="l00300"></a>00300 
-<a name="l00302"></a>00302 
-<a name="l00303"></a><a class="code" href="classpy_qtpd.html">00303</a> <span class="keyword">class </span><a class="code" href="classpy_qtpd.html">pyQtpd</a> : <span class="keyword">public</span> QObject {
-<a name="l00304"></a>00304     Q_OBJECT
-<a name="l00305"></a>00305 
-<a name="l00306"></a>00306 <span class="keyword">public</span>:
-<a name="l00307"></a><a class="code" href="classpy_qtpd.html#a7d872f35b122c034666c5e3e6f1f351b">00307</a>     <span class="keyword">explicit</span> <a class="code" href="classpy_qtpd.html#a7d872f35b122c034666c5e3e6f1f351b">pyQtpd</a>(QObject* parent = 0){};
-<a name="l00308"></a>00308 
-<a name="l00309"></a>00309 <span class="keyword">public</span> Q_SLOTS:
-<a name="l00310"></a><a class="code" href="classpy_qtpd.html#a68e389ac9d8ed3f8fc4e48ac8e44b0cc">00310</a>     <a class="code" href="struct__object.html">PyObject</a>* getMainModule()
-<a name="l00311"></a>00311     {
-<a name="l00312"></a>00312         <span class="keywordflow">return</span> <a class="code" href="modsupport_8h.html#a0180ca1808366e5da641475e8bf8cca3">PythonQt::self</a>()-&gt;getMainModule();
-<a name="l00313"></a>00313     }
+<a name="l00284"></a>00284         <span class="keywordflow">if</span> (_list)
+<a name="l00285"></a>00285             <span class="keywordflow">return</span> *_list;
+<a name="l00286"></a>00286     }
+<a name="l00287"></a>00287 
+<a name="l00288"></a><a class="code" href="classpy_local.html#a751b651d4ebd84042f499de9233fb497">00288</a>     <a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* <a class="code" href="classpy_local.html#a751b651d4ebd84042f499de9233fb497">canvas</a>() { <span class="keywordflow">return</span> _canvas; }
+<a name="l00289"></a>00289 };
+<a name="l00290"></a>00290 
+<a name="l00292"></a>00292 
+<a name="l00293"></a><a class="code" href="classpy_qtpd.html">00293</a> <span class="keyword">class </span><a class="code" href="classpy_qtpd.html">pyQtpd</a> : <span class="keyword">public</span> QObject {
+<a name="l00294"></a>00294     Q_OBJECT
+<a name="l00295"></a>00295 
+<a name="l00296"></a>00296 <span class="keyword">public</span>:
+<a name="l00297"></a><a class="code" href="classpy_qtpd.html#a7d872f35b122c034666c5e3e6f1f351b">00297</a>     <span class="keyword">explicit</span> <a class="code" href="classpy_qtpd.html#a7d872f35b122c034666c5e3e6f1f351b">pyQtpd</a>(QObject* parent = 0){};
+<a name="l00298"></a>00298 
+<a name="l00299"></a>00299 <span class="keyword">public</span> Q_SLOTS:
+<a name="l00300"></a><a class="code" href="classpy_qtpd.html#a68e389ac9d8ed3f8fc4e48ac8e44b0cc">00300</a>     <a class="code" href="struct__object.html">PyObject</a>* getMainModule()
+<a name="l00301"></a>00301     {
+<a name="l00302"></a>00302         <span class="keywordflow">return</span> <a class="code" href="modsupport_8h.html#a0180ca1808366e5da641475e8bf8cca3">PythonQt::self</a>()-&gt;getMainModule();
+<a name="l00303"></a>00303     }
+<a name="l00304"></a>00304 
+<a name="l00305"></a>00305     <span class="comment">//todo separate classes / decorators</span>
+<a name="l00306"></a>00306 
+<a name="l00307"></a><a class="code" href="classpy_qtpd.html#afd7aa8f27aebd53ff72da455d3034eb3">00307</a>     <a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* newPatchWindow()
+<a name="l00308"></a>00308     {
+<a name="l00309"></a>00309         <a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* ret;
+<a name="l00310"></a>00310         ret = <a class="code" href="classqtpd_1_1_patch_window.html#a465802c46cfee0432f72284319faf1d3">PatchWindow::newWindow</a>();
+<a name="l00311"></a>00311         ret-&gt;show();
+<a name="l00312"></a>00312         <span class="keywordflow">return</span> ret;
+<a name="l00313"></a>00313     };
 <a name="l00314"></a>00314 
-<a name="l00315"></a>00315     <span class="comment">//todo separate classes / decorators</span>
-<a name="l00316"></a>00316 
-<a name="l00317"></a><a class="code" href="classpy_qtpd.html#afd7aa8f27aebd53ff72da455d3034eb3">00317</a>     <a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* newPatchWindow()
-<a name="l00318"></a>00318     {
-<a name="l00319"></a>00319         <a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* ret;
-<a name="l00320"></a>00320         ret = <a class="code" href="classqtpd_1_1_patch_window.html#a465802c46cfee0432f72284319faf1d3">PatchWindow::newWindow</a>();
-<a name="l00321"></a>00321         ret-&gt;show();
-<a name="l00322"></a>00322         <span class="keywordflow">return</span> ret;
-<a name="l00323"></a>00323     };
-<a name="l00324"></a>00324 
-<a name="l00326"></a>00326     <span class="comment">// pdLib</span>
+<a name="l00316"></a>00316     <span class="comment">// pdLib</span>
+<a name="l00317"></a>00317 
+<a name="l00318"></a><a class="code" href="classpy_qtpd.html#a86e4fb1f84aa63ccb21513fafc321647">00318</a>     <span class="keywordtype">void</span> startDsp()
+<a name="l00319"></a>00319     {
+<a name="l00320"></a>00320         <a class="code" href="cm__pdlink_8h.html#a0f1f4951cf99dff0634789791dcde1ba" title="switch dsp on or off">cmp_switch_dsp</a>(<span class="keyword">true</span>);
+<a name="l00321"></a>00321     }
+<a name="l00322"></a>00322 
+<a name="l00323"></a><a class="code" href="classpy_qtpd.html#aa075a4183756fb81ce11f3a9ce40ea2a">00323</a>     <span class="keywordtype">void</span> stopDsp()
+<a name="l00324"></a>00324     {
+<a name="l00325"></a>00325         <a class="code" href="cm__pdlink_8h.html#a0f1f4951cf99dff0634789791dcde1ba" title="switch dsp on or off">cmp_switch_dsp</a>(<span class="keyword">false</span>);
+<a name="l00326"></a>00326     }
 <a name="l00327"></a>00327 
-<a name="l00328"></a><a class="code" href="classpy_qtpd.html#a86e4fb1f84aa63ccb21513fafc321647">00328</a>     <span class="keywordtype">void</span> startDsp()
+<a name="l00328"></a><a class="code" href="classpy_qtpd.html#ade5b04c97d1f8ffe78094e67475a1142">00328</a>     <span class="keywordtype">void</span> post(QString msg)
 <a name="l00329"></a>00329     {
-<a name="l00330"></a>00330         <a class="code" href="cm__pdlink_8h.html#a0f1f4951cf99dff0634789791dcde1ba" title="switch dsp on or off">cmp_switch_dsp</a>(<span class="keyword">true</span>);
+<a name="l00330"></a>00330         <a class="code" href="cm__pdlink_8h.html#a766e12f26830eee9deae0fe8e9f70535" title="post plain text to Pd window">cmp_post</a>(msg.toStdString());
 <a name="l00331"></a>00331     }
 <a name="l00332"></a>00332 
-<a name="l00333"></a><a class="code" href="classpy_qtpd.html#aa075a4183756fb81ce11f3a9ce40ea2a">00333</a>     <span class="keywordtype">void</span> stopDsp()
+<a name="l00333"></a><a class="code" href="classpy_qtpd.html#a523a684bfd04846cc27c9bb089b0a522">00333</a>     QStringList externals()
 <a name="l00334"></a>00334     {
-<a name="l00335"></a>00335         <a class="code" href="cm__pdlink_8h.html#a0f1f4951cf99dff0634789791dcde1ba" title="switch dsp on or off">cmp_switch_dsp</a>(<span class="keyword">false</span>);
-<a name="l00336"></a>00336     }
+<a name="l00335"></a>00335         <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> list = <a class="code" href="cm__pdlink_8h.html#af6924c7bfc9cdfe2a254ff5cf4107925" title="returns list of loaded externals">cmp_get_loaded_list</a>();
+<a name="l00336"></a>00336         QStringList ret;
 <a name="l00337"></a>00337 
-<a name="l00338"></a><a class="code" href="classpy_qtpd.html#ade5b04c97d1f8ffe78094e67475a1142">00338</a>     <span class="keywordtype">void</span> post(QString msg)
-<a name="l00339"></a>00339     {
-<a name="l00340"></a>00340         <a class="code" href="cm__pdlink_8h.html#a766e12f26830eee9deae0fe8e9f70535" title="post plain text to Pd window">cmp_post</a>(msg.toStdString());
-<a name="l00341"></a>00341     }
-<a name="l00342"></a>00342 
-<a name="l00343"></a><a class="code" href="classpy_qtpd.html#a523a684bfd04846cc27c9bb089b0a522">00343</a>     QStringList externals()
-<a name="l00344"></a>00344     {
-<a name="l00345"></a>00345         <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> list = <a class="code" href="cm__pdlink_8h.html#af6924c7bfc9cdfe2a254ff5cf4107925" title="returns list of loaded externals">cmp_get_loaded_list</a>();
-<a name="l00346"></a>00346         QStringList ret;
-<a name="l00347"></a>00347 
-<a name="l00348"></a>00348         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a> = 0; <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a> &lt; list.<a class="code" href="classceammc_1_1_atom_list.html#ad52fdc5b4f54329460495caa1b00d1ac">size</a>(); <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a>++) {
-<a name="l00349"></a>00349             ret += list.<a class="code" href="classceammc_1_1_atom_list.html#aa2d99dac15a5a5fe7afa41a38f2aeece" title="returns reference to element at specified position">at</a>(<a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a>).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>().c_str();
-<a name="l00350"></a>00350         }
-<a name="l00351"></a>00351 
-<a name="l00352"></a>00352         <span class="keywordflow">return</span> ret;
-<a name="l00353"></a>00353     }
-<a name="l00354"></a>00354 
-<a name="l00355"></a><a class="code" href="classpy_qtpd.html#ac1f712b091a7a38e378419109d859d3c">00355</a>     <span class="keywordtype">void</span> loadLib(QString lib)
-<a name="l00356"></a>00356     {
-<a name="l00357"></a>00357         <a class="code" href="cm__pdlink_8h.html#a8918f6f28b214d15300a46588fa21d78" title="load external">cmp_loadlib</a>(lib.toStdString());
-<a name="l00358"></a>00358     }
-<a name="l00359"></a>00359 
-<a name="l00361"></a>00361     <span class="comment">// app preferences</span>
-<a name="l00362"></a>00362 
-<a name="l00363"></a><a class="code" href="classpy_qtpd.html#a266b24971209eb6945c3bf7216022b2b">00363</a>     <a class="code" href="classqtpd_1_1_property_list.html" title="yet another property handling class for ui object. List">PropertyList</a>* pref()
-<a name="l00364"></a>00364     {
-<a name="l00365"></a>00365         <span class="keywordflow">return</span> (<a class="code" href="classqtpd_1_1_property_list.html" title="yet another property handling class for ui object. List">PropertyList</a>*)&amp;<a class="code" href="classqtpd_1_1_preferences.html#a43710c0b803cec200c7add487aae2c08">Preferences::inst</a>();
-<a name="l00366"></a>00366     }
-<a name="l00367"></a>00367 };
-<a name="l00368"></a>00368 
-<a name="l00369"></a>00369 <span class="preprocessor">#endif // PY_QTPD_H</span>
+<a name="l00338"></a>00338         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a> = 0; <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a> &lt; list.<a class="code" href="classceammc_1_1_atom_list.html#ad52fdc5b4f54329460495caa1b00d1ac">size</a>(); <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a>++) {
+<a name="l00339"></a>00339             ret += list.<a class="code" href="classceammc_1_1_atom_list.html#aa2d99dac15a5a5fe7afa41a38f2aeece" title="returns reference to element at specified position">at</a>(<a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a>).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>().c_str();
+<a name="l00340"></a>00340         }
+<a name="l00341"></a>00341 
+<a name="l00342"></a>00342         <span class="keywordflow">return</span> ret;
+<a name="l00343"></a>00343     }
+<a name="l00344"></a>00344 
+<a name="l00345"></a><a class="code" href="classpy_qtpd.html#ac1f712b091a7a38e378419109d859d3c">00345</a>     <span class="keywordtype">void</span> loadLib(QString lib)
+<a name="l00346"></a>00346     {
+<a name="l00347"></a>00347         <a class="code" href="cm__pdlink_8h.html#a8918f6f28b214d15300a46588fa21d78" title="load external">cmp_loadlib</a>(lib.toStdString());
+<a name="l00348"></a>00348     }
+<a name="l00349"></a>00349 
+<a name="l00351"></a>00351     <span class="comment">// app preferences</span>
+<a name="l00352"></a>00352 
+<a name="l00353"></a><a class="code" href="classpy_qtpd.html#a266b24971209eb6945c3bf7216022b2b">00353</a>     <a class="code" href="classqtpd_1_1_property_list.html" title="yet another property handling class for ui object. List">PropertyList</a>* pref()
+<a name="l00354"></a>00354     {
+<a name="l00355"></a>00355         <span class="keywordflow">return</span> (<a class="code" href="classqtpd_1_1_property_list.html" title="yet another property handling class for ui object. List">PropertyList</a>*)&amp;<a class="code" href="classqtpd_1_1_preferences.html#a43710c0b803cec200c7add487aae2c08">Preferences::inst</a>();
+<a name="l00356"></a>00356     }
+<a name="l00357"></a>00357 };
+<a name="l00358"></a>00358 
+<a name="l00359"></a>00359 <span class="preprocessor">#endif // PY_QTPD_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -454,7 +444,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 24 2017 22:55:51 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 25 2017 14:13:23 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
