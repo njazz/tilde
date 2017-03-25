@@ -120,7 +120,9 @@ HEADERS  += \
     objects/UIScript.h \
     objects/UIFloat.h \
     objects/UIBox.h \
-    objects/UIMessage.h
+    objects/UIMessage.h \
+    #
+    oopd/OOPD.h
 
 
 FORMS    += \
