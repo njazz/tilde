@@ -3,7 +3,7 @@
 
 #include "cm_basewindow.h"
 #include "cm_canvas.h"
-#include "cmo_box.h"
+#include "UIBox.h"
 
 #include "cm_pdlink.h"
 

@@ -4,7 +4,7 @@
 #ifndef PY_WRAPERS_H
 #define PY_WRAPERS_H
 
-#include "cmo_box.h"
+#include "UIBox.h"
 
 #include <PythonQt.h>
 #include <PythonQt_QtAll.h>

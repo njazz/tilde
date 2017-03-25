@@ -3,7 +3,6 @@
 
 #include "cm_objectloader.h"
 
-
 namespace qtpd {
 
 void ObjectLoader::loadObjects()
@@ -20,11 +19,6 @@ void ObjectLoader::loadObjects()
     this->addUIobject("ui.script", &UIScript::createObject);
 
     this->addUIobject("ui.array", &UIArray::createObject);
-
-    //TODO compatibility
-    //this->addUIobject("msg", &cmo_msg::createObject);
-    //this->addUIobject("floatatom", &cmo_msg::createObject);
-    //this->addUIobject("symbolatom", &cmo_msg::createObject);
 }
 
 void ObjectLoader::addUIobject(std::string name, cmObjectConstructor constructor)
@@ -60,24 +54,12 @@ cmObjectConstructor ObjectLoader::getConstructorFor(std::string objName)
 
 UIObject* ObjectLoader::createObject(std::string objName, std::string objectData, t_canvas* pdCanvas, UIWidget* parent)
 {
-    //        if (objName == "ui.obj")
-    //        {
-    //            objectData = objName + " " + objectData;
 
-    //            return UIBox::createObject(objectData, pdCanvas,  parent);
-    //        }
-    //        else
-    {
-        cmObjectConstructor cmc = this->getConstructorFor(objName);
+    cmObjectConstructor cmc = this->getConstructorFor(objName);
 
-        if (cmc == getConstructorFor("ui.obj"))
-            objectData = objName + " " + objectData;
+    if (cmc == getConstructorFor("ui.obj"))
+        objectData = objName + " " + objectData;
 
-        return cmc(objectData, pdCanvas, parent);
-    }
+    return cmc(objectData, pdCanvas, parent);
 }
-
-
-
-
 }
