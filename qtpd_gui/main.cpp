@@ -40,7 +40,7 @@ int main(int argc, char* argv[])
     QTPD_PREF_INIT;
 
     //python
-    PythonQt::init(PythonQt::IgnoreSiteModule | PythonQt::RedirectStdOut);
+    PythonQt::init( PythonQt::RedirectStdOut); //PythonQt::IgnoreSiteModule |
     PythonQt_QtAll::init();
 
     ObjectLoader::inst().loadObjects();
