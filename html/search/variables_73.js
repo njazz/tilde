@@ -41,7 +41,7 @@ var searchData=
   ['signum',['signum',['../floatobject_8h.html#afbaf08088d4180de362997d14b0a43df',1,'floatobject.h']]],
   ['size',['size',['../structasdl__seq.html#a0501c0bedd5291246231fff3237b74d6',1,'asdl_seq::size()'],['../structasdl__int__seq.html#afbb554482e112e8170ad046addf0768b',1,'asdl_int_seq::size()'],['../struct__frozen.html#a133542436cc02e1856dd2108c0dc1efc',1,'_frozen::size()'],['../struct_py_expat___c_a_p_i.html#af92677867a91271e628f211a96c9b5df',1,'PyExpat_CAPI::size()'],['../struct___py_unicode___name___c_a_p_i.html#a9faa2e068f88013c2c25a94a7df9c391',1,'_PyUnicode_Name_CAPI::size()'],['../bufferobject_8h.html#a612c27dae5681d14a5d92d0b3d8ab6e5',1,'size():&#160;bufferobject.h'],['../pyarena_8h.html#a854352f53b148adc24983a58a1866d66',1,'size():&#160;pyarena.h'],['../pyerrors_8h.html#a854352f53b148adc24983a58a1866d66',1,'size():&#160;pyerrors.h'],['../pythonrun_8h.html#a612c27dae5681d14a5d92d0b3d8ab6e5',1,'size():&#160;pythonrun.h'],['../stringobject_8h.html#a612c27dae5681d14a5d92d0b3d8ab6e5',1,'size():&#160;stringobject.h']]],
   ['size_5ft',['size_t',['../import_8h.html#a428a6ebb612444a3d3873a7623efa46b',1,'size_t():&#160;import.h'],['../objimpl_8h.html#a7b60c5629e55e8ec87a4547dd4abced4',1,'size_t():&#160;objimpl.h'],['../pymem_8h.html#a7b60c5629e55e8ec87a4547dd4abced4',1,'size_t():&#160;pymem.h']]],
-  ['slice',['slice',['../struct__expr.html#ad7a0880c385cf09022462c09018e9d71',1,'_expr::slice()'],['../struct__slice.html#a3c29d7e4752face5c3942b4ff0712bfe',1,'_slice::Slice()']]],
+  ['slice',['Slice',['../struct__slice.html#a3c29d7e4752face5c3942b4ff0712bfe',1,'_slice::Slice()'],['../struct__expr.html#ad7a0880c385cf09022462c09018e9d71',1,'_expr::slice()']]],
   ['slicelength',['slicelength',['../sliceobject_8h.html#a7ff52ed17e07dc84149981f59ae21d26',1,'sliceobject.h']]],
   ['slider_5fcolor',['slider_color',['../structui__sliders.html#ae9b76a7cb8a75061044234fbf94982e5',1,'ui_sliders']]],
   ['slider_5fcolor_5fselect',['slider_color_select',['../structui__sliders.html#ab1ce200e1ae2ea015a9c505474747078',1,'ui_sliders']]],
@@ -98,5 +98,6 @@ var searchData=
   ['subscript',['Subscript',['../struct__expr.html#ac27adf2822cb019dc725a7c864a4e831',1,'_expr']]],
   ['suffix',['suffix',['../struct___py___hash_secret__t.html#a461f92166b644173837271b974dd4610',1,'_Py_HashSecret_t']]],
   ['suite',['Suite',['../struct__mod.html#a65a9a59d88679a4d20685ee5f66d9968',1,'_mod']]],
+  ['symbol',['symbol',['../class_o_p_instance.html#a4e00d6bd04f8730574915cc206473257',1,'OPInstance']]],
   ['sysdict',['sysdict',['../struct__is.html#a95556056d8c72409c77f50896b610110',1,'_is']]]
 ];

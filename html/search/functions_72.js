@@ -1,6 +1,7 @@
 var searchData=
 [
   ['range',['range',['../classceammc_1_1_atom_list.html#ab649bc0294769dae826068b40923c8c3',1,'ceammc::AtomList']]],
+  ['readfile',['readFile',['../class_o_p_class.html#a67c83af0c5a567e1f9239d27d9b3977d',1,'OPClass']]],
   ['readfileasbytes',['readFileAsBytes',['../class_python_qt_import_file_interface.html#a9af9b596837ab97779aa1be67080b9b0',1,'PythonQtImportFileInterface::readFileAsBytes()'],['../class_python_qt_q_file_importer.html#a620cfb1a5a9e3db3a2a9f36a2511ad1e',1,'PythonQtQFileImporter::readFileAsBytes()']]],
   ['readonly',['readonly',['../classceammc_1_1_property.html#a9369d5cf6482a9b2c3caf7a2d76a3baa',1,'ceammc::Property']]],
   ['readonlycheck',['readonlyCheck',['../classceammc_1_1_property.html#af7abdedebae800707150c6f9505b617e',1,'ceammc::Property']]],
@@ -22,7 +23,7 @@ var searchData=
   ['registerpythontometatypeconverter',['registerPythonToMetaTypeConverter',['../class_python_qt_conv.html#ae669f7b92cb8d1f17336d93775ca9731',1,'PythonQtConv']]],
   ['registerqobjectclassnames',['registerQObjectClassNames',['../class_python_qt.html#a49f8bcd159744b7914dc21d7602b8daa',1,'PythonQt::registerQObjectClassNames()'],['../class_python_qt_private.html#a376dc4556ff3f872fa2fcce395c04356',1,'PythonQtPrivate::registerQObjectClassNames()']]],
   ['relativeat',['relativeAt',['../classceammc_1_1_atom_list.html#a809cbddcdf03ba6b5eb6395d536c431b',1,'ceammc::AtomList::relativeAt(int pos)'],['../classceammc_1_1_atom_list.html#a191ea02cf2db2e5b0146248724b584af',1,'ceammc::AtomList::relativeAt(int pos) const ']]],
-  ['release',['release',['../classceammc_1_1_named_data_dict.html#a7b22a552e9cf82f0cf01d0da6f7b2a3b',1,'ceammc::NamedDataDict']]],
+  ['release',['release',['../class_o_p_instance.html#ac5545e798f237737b76ce9f0c9c74b5c',1,'OPInstance::release()'],['../classceammc_1_1_named_data_dict.html#a7b22a552e9cf82f0cf01d0da6f7b2a3b',1,'ceammc::NamedDataDict::release()']]],
   ['remove',['remove',['../classceammc_1_1_atom_list.html#a929f479eb5bafe5725ea4ce8298f97e0',1,'ceammc::AtomList::remove()'],['../classceammc_1_1tl_1_1_cue_storage.html#a2ed84cd30bcd523f57dc4cef2f362051',1,'ceammc::tl::CueStorage::remove()'],['../classceammc_1_1tl_1_1_u_i_storage.html#ab06ba851254ae4366dfd4bfee689c3ce',1,'ceammc::tl::UIStorage::remove()']]],
   ['removeall',['removeAll',['../classceammc_1_1_atom_list.html#a5f756117cbb03f6531b0ed1a27a08961',1,'ceammc::AtomList::removeAll(const Atom &amp;a)'],['../classceammc_1_1_atom_list.html#a3e6d3901d56759ca0478a4ad1e324b03',1,'ceammc::AtomList::removeAll(AtomPredicate pred)']]],
   ['removesignalemitter',['removeSignalEmitter',['../class_python_qt_private.html#aef4874956d69c8bc4619fe3f49821ab2',1,'PythonQtPrivate']]],
@@ -46,6 +47,7 @@ var searchData=
   ['resobj_5fconvert',['ResObj_Convert',['../pymactoolbox_8h.html#a4c61e93b9d9fe1bd0a576f67d9e530df',1,'pymactoolbox.h']]],
   ['resobj_5fnew',['ResObj_New',['../pymactoolbox_8h.html#a7e5d367a505ffff002cd1980bb08e014',1,'pymactoolbox.h']]],
   ['restoresubcanvas',['restoreSubcanvas',['../classqtpd_1_1_canvas.html#a97d80380c85b0f3785fd6d57e88369a7',1,'qtpd::Canvas']]],
+  ['retain',['retain',['../class_o_p_instance.html#aab54b175b0c900cdb3de2b72c4cdff90',1,'OPInstance']]],
   ['reverse',['reverse',['../classceammc_1_1_atom_list.html#a22b3510a7142b4cce158033036bc9af5',1,'ceammc::AtomList']]],
   ['right',['right',['../structui__slider2d.html#a97715f380eecba49d381baae279a9cb0',1,'ui_slider2d']]],
   ['rightclicked',['rightClicked',['../classqtpd_1_1_u_i_array.html#a870f0a44d04dc4601aa62760bc34eab0',1,'qtpd::UIArray::rightClicked()'],['../classqtpd_1_1_u_i_box.html#a77675f4dd6901d7118fc86f2db1b2943',1,'qtpd::UIBox::rightClicked()']]],
