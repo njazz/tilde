@@ -35,6 +35,7 @@ public:
 
     PythonQtObjectPtr withCanvas(UIObject* canvas);
     PythonQtObjectPtr withCanvasAndPdObject(UIObject* canvas, t_object* obj);
+    PythonQtObjectPtr withCanvasPdObjectAndInput(UIObject* canvas, t_object* obj, QStringList* list);
 };
 
 #endif // PY_WRAPERS_H

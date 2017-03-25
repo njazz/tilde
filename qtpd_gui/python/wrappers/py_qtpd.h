@@ -234,28 +234,6 @@ public Q_SLOTS:
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//class pyPdObj : public QObject {
-//    Q_OBJECT
-
-//    t_object* _pdObject;
-//private:
-
-//public:
-//    explicit pyPdObj(QObject* parent = 0){};
-
-//    void setPdObject(t_object* obj){
-//    _pdObject = obj;
-//    };
-
-//public Q_SLOTS:
-
-//    void message(QStringList msg)
-//    {
-//        cmp_post("message to object stub");
-//    }
-
-//};
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class pyLocal : public QObject {
@@ -264,6 +242,7 @@ class pyLocal : public QObject {
 private:
     Canvas* _canvas;
     t_object* _pdObject;
+    QStringList* _list;
 
 public:
     explicit pyLocal(QObject* parent = 0){};
@@ -278,6 +257,11 @@ public:
         _pdObject = obj;
     };
 
+    void setInput(QStringList* list)
+    {
+        _list = list;
+    }
+
 public Q_SLOTS:
     PyObject* getMainModule()
     {
@@ -291,8 +275,14 @@ public Q_SLOTS:
             return;
         }
 
-        std::string msg_ = "__output "+ msg.toStdString();
+        std::string msg_ = "__output " + msg.toStdString();
         cmp_sendstring((t_pd*)_pdObject, msg_);
+    }
+
+    QStringList input()
+    {
+        if (_list)
+            return *_list;
     }
 
     Canvas* canvas() { return _canvas; }

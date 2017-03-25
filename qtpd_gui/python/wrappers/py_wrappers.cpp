@@ -58,3 +58,21 @@ PythonQtObjectPtr pyWrapper::withCanvasAndPdObject(UIObject* canvas, t_object* o
     return ctx;
 }
 
+// weird method name competition winner
+
+PythonQtObjectPtr pyWrapper::withCanvasPdObjectAndInput(UIObject* canvas, t_object* obj, QStringList* list)
+{
+    PythonQtObjectPtr ctx;
+    ctx = PythonQt::self()->createUniqueModule();
+    ctx.addObject("Qtpd", new pyQtpd());
+
+    pyLocal * loc = new pyLocal;
+    loc->setCanvas((Canvas*)canvas); // canvas, canvas, canvas, canvas
+    loc->setPdObject(obj);
+    loc->setInput(list);
+    ctx.addObject("local", loc);
+
+
+    return ctx;
+}
+
