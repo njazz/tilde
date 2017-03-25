@@ -24,6 +24,10 @@
 
 namespace qtpd {
 
+////
+/// \brief The editor for UIScript.
+/// \details contains parts of PythonQt
+///
 class UIScriptEditor : public QPlainTextEdit {
     Q_OBJECT
 
@@ -268,7 +272,7 @@ private slots:
 //-------------------------------------------------------------------------------
 
 ////
-/// \brief gui object: comment box (ui.text)
+/// \brief gui object: script editor box (ui.script)
 ///
 class UIScript : public UIObject {
     Q_OBJECT

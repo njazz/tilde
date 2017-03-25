@@ -1,7 +1,7 @@
 // (c) 2017 Alex Nadzharov
 // License: GPL3
 
-#include "cmo_box.h"
+#include "UIBox.h"
 
 namespace qtpd {
 UIBox::UIBox(UIObject* parent)

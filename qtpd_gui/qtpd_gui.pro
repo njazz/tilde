@@ -38,24 +38,24 @@ SOURCES += main.cpp\
     cm_objectmaker.cpp \
     cm_widget.cpp \
     cm_patchcord.cpp \
-    objects/cmo_msg.cpp \
-    objects/cmo_box.cpp \
-    objects/cmo_float.cpp \
-    objects/cmo_text.cpp \
-    objects/cmo_bang.cpp \
-    objects/cmo_toggle.cpp \
     cm_fileparser.cpp \
     cm_object.cpp \
     cm_sizebox.cpp \
     properties/cm_property.cpp \
     properties/cm_propertylist.cpp \
     python/PythonQtScriptingConsole.cpp \
-    objects/cmo_script.cpp \
     cm_objectloader.cpp \
     cm_openfileproxy.cpp \
     window/cm_propertieswindow.cpp \
-    objects/cmo_array.cpp \
-    python/wrappers/py_wrappers.cpp
+    python/wrappers/py_wrappers.cpp \
+    objects/UIArray.cpp \
+    objects/UIBang.cpp \
+    objects/UIBox.cpp \
+    objects/UIFloat.cpp \
+    objects/UIMessage.cpp \
+    objects/UIToggle.cpp \
+    objects/UIText.cpp \
+    objects/UIScript.cpp
 
 
 HEADERS  += \
@@ -68,12 +68,6 @@ HEADERS  += \
     cm_objectmaker.h \
     cm_widget.h \
     cm_patchcord.h \
-    objects/cmo_msg.h \
-    objects/cmo_box.h \
-    objects/cmo_float.h \
-    objects/cmo_text.h \
-    objects/cmo_bang.h \
-    objects/cmo_toggle.h \
     cm_fileparser.h \
     cm_object.h \
     cm_filesaver.h \
@@ -116,11 +110,17 @@ HEADERS  += \
     python/headers/PythonQtSystem.h \
     python/headers/PythonQtVariants.h \
     python/wrappers/py_qtpd.h \
-    objects/cmo_script.h \
     cm_openfileproxy.h \
     window/cm_propertieswindow.h \
-    objects/cmo_array.h \
-    python/wrappers/py_wrappers.h
+    python/wrappers/py_wrappers.h \
+    objects/UIBang.h \
+    objects/UIArray.h \
+    objects/UIToggle.h \
+    objects/UIText.h \
+    objects/UIScript.h \
+    objects/UIFloat.h \
+    objects/UIBox.h \
+    objects/UIMessage.h
 
 
 FORMS    += \

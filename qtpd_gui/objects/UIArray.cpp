@@ -1,7 +1,7 @@
 // (c) 2017 Alex Nadzharov
 // License: GPL3
 
-#include "cmo_array.h"
+#include "UIArray.h"
 
 namespace qtpd {
 UIArray::UIArray(UIObject* parent)

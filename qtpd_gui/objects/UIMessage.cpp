@@ -1,7 +1,7 @@
 // (c) 2017 Alex Nadzharov
 // License: GPL3
 
-#include "cmo_msg.h"
+#include "UIMessage.h"
 
 namespace qtpd {
 

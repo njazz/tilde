@@ -16,34 +16,24 @@
 //todo proper pattern
 #include "cm_openfileproxy.h"
 
-
 //#include "cm_pdlink.h"
 
 namespace qtpd {
 
 ////
-/// \brief gui object: standard object box
+/// \brief gui object: array box (ui.array)
 ///
 class UIArray : public UIObject {
 
     Q_OBJECT
 
 private:
-    QLineEdit* editor_;
-
-    // for abstracions
-    bool isAbstraction_;
-    QString abstractionPath_;
-
 public:
     explicit UIArray(UIObject* parent = 0);
-    //~UIArray();
 
     static UIObject* createObject(std::string objectData, t_canvas* pd_Canvas, UIWidget* parent = 0)
     {
         //TODO fix all constructors
-        //t_canvas* pd_Canvas;
-
         UIArray* b = new UIArray((UIObject*)parent);
 
         //truncate "ui.obj"
@@ -77,25 +67,6 @@ public:
 
             b->setPdObject(new_obj);
 
-            b->isAbstraction_ = cmp_is_abstraction(new_obj);
-            qDebug()<<"*** is abstraction: " << b->isAbstraction_;
-
-            if (b->isAbstraction_)
-            {
-                t_symbol* s = cmp_get_path((t_canvas*)new_obj);
-
-                // todo
-                QStringList l = QString(objectData.c_str()).split(" ");
-                QString pdName = l.at(1);   //assuming there always is a name when abstraction is created
-
-                // todo windows
-                b->abstractionPath_ = QString(s->s_name) + "/" + pdName  + ".pd";
-
-                qDebug() << b->abstractionPath_;
-
-
-            }
-
         } else {
             qDebug("Error: no such object %s", obj_name);
             b->setErrorBox(true);
@@ -107,8 +78,6 @@ public:
             b->addInlet();
         for (int i = 0; i < out_c; i++)
             b->addOutlet();
-
-
 
         return (UIObject*)b;
     };
@@ -129,7 +98,7 @@ public:
         }
 
         QColor rectColor = (this->errorBox()) ? QColor(255, 0, 0) : QColor(128, 128, 128);
-        p.setPen(QPen(rectColor, 2+isAbstraction_, (this->errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p.setPen(QPen(rectColor, 2 , (this->errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         p.drawRect(0, 0, this->width(), this->height());
         QTextOption* op = new QTextOption;
         op->setAlignment(Qt::AlignLeft);
@@ -157,19 +126,7 @@ public:
             }
         }
 
-        //abstraction opening. Fix
-        if (this->getEditMode() != em_Unlocked)
-        {
-            if (isAbstraction_)
-            {
-                OpenFileProxy::openAbstraction(abstractionPath_);
-            }
-        }
-
         if ((this->getEditMode() == em_Unlocked) && this->isSelected()) {
-            //            this->editor_->setText(QString(this->objectData().c_str()));
-            //            this->editor_->show();
-            //            this->editor_->setFocus();
 
             emit editObject(this);
             return;
@@ -184,7 +141,7 @@ public:
     ///
     void mouseReleaseEvent(QMouseEvent*)
     {
-        this->repaint();
+        //this->repaint();
     }
 
     ////
@@ -215,7 +172,7 @@ public:
         int new_w = fm.width(QString(this->objectData().c_str())) + 10;
         new_w = (new_w < 25) ? 25 : new_w;
         this->setFixedWidth(new_w);
-        this->editor_->setFixedWidth(this->width() - 5);
+        //this->editor_->setFixedWidth(this->width() - 5);
 
         //todo: del object and create new + patchcords
 

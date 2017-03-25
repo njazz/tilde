@@ -1,7 +1,7 @@
 // (c) 2017 Alex Nadzharov
 // License: GPL3
 
-#include "cmo_script.h"
+#include "UIScript.h"
 
 #include <QPushButton>
 
