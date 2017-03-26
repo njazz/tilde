@@ -1112,7 +1112,7 @@ QStringList Canvas::canvasAsPdStrings()
     }
 
     //patchcords
-    std::vector<Patchcord*> patchcords = patchcords();
+    std::vector<Patchcord*> patchcords = this->patchcords();
     std::vector<Patchcord*>::iterator it2;
 
     for (it2 = patchcords.begin(); it2 != patchcords.end(); ++it2) {
