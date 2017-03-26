@@ -33,16 +33,15 @@ typedef enum {
 ///
 class Property {
 private:
-    AtomList data_;
-    AtomList defaultData_;
+    AtomList _data;
+    AtomList _defaultData;
 
-    //std::string name_;
-    std::string group_;
-    std::string version_;
+    std::string _group;
+    std::string _version;
 
-    UIPropertyType type_;
+    UIPropertyType _type;
 
-    bool applyToPd_; //true if property value should be passed to pd object
+    bool _applyToPd; ///> true if property value should be passed to pd object
 public:
     template <typename T>
     void set(T val);
@@ -52,41 +51,41 @@ public:
     ///
     void setDefault()
     {
-        this->defaultData_ = this->data_;
+        _defaultData = _data;
     }
 
     void setVersion(std::string version)
     {
-        this->version_ = version;
+        _version = version;
     }
 
-    std::string version() { return version_; }
+    std::string version() { return _version; }
 
     //////////
 
-    UIPropertyType type() { return this->type_; };
+    UIPropertyType type() { return _type; };
 
     AtomList data()
     {
-        return data_;
+        return _data;
     }
 
     AtomList defaultData()
     {
-        return defaultData_;
+        return _defaultData;
     }
 
     QSize asQSize()
     {
         QSize ret = QSize(40, 20);
 
-        if (data_.size() < 2)
+        if (_data.size() < 2)
             return ret;
-        if (!(data_.at(0).isFloat()) && !(data_.at(1).isFloat()))
+        if (!(_data.at(0).isFloat()) && !(_data.at(1).isFloat()))
             return ret;
 
-        ret.setWidth(data_.at(0).asFloat());
-        ret.setHeight(data_.at(1).asFloat());
+        ret.setWidth(_data.at(0).asFloat());
+        ret.setHeight(_data.at(1).asFloat());
 
         if (ret.width() < 20)
             ret.setWidth(20);
@@ -99,10 +98,10 @@ public:
     float asFloat()
     {
 
-        if (!data_.size())
+        if (!_data.size())
             return 0;
 
-        return data_.at(0).asFloat();
+        return _data.at(0).asFloat();
     }
 
     float asFontSize()
@@ -115,15 +114,15 @@ public:
         QColor ret = QColor(128,128,128,255);   //sefault gray
 
 
-        if (data_.size() < 4)
+        if (_data.size() < 4)
             return ret;
-        if (!(data_.at(0).isFloat()) && !(data_.at(1).isFloat()) && !(data_.at(2).isFloat()) && !(data_.at(3).isFloat()))
+        if (!(_data.at(0).isFloat()) && !(_data.at(1).isFloat()) && !(_data.at(2).isFloat()) && !(_data.at(3).isFloat()))
             return ret;
 
-        ret = QColor( data_.at(0).asFloat(),
-                      data_.at(1).asFloat(),
-                      data_.at(2).asFloat(),
-                      data_.at(3).asFloat());
+        ret = QColor( _data.at(0).asFloat(),
+                      _data.at(1).asFloat(),
+                      _data.at(2).asFloat(),
+                      _data.at(3).asFloat());
 
         return ret;
 
@@ -133,9 +132,9 @@ public:
     {
         QStringList ret;
 
-        for (int i = 0; i < data_.size(); i++) {
+        for (int i = 0; i < _data.size(); i++) {
 
-            ret.push_back(data_.at(i).asString().c_str());
+            ret.push_back(_data.at(i).asString().c_str());
         }
 
         return ret;
@@ -145,15 +144,15 @@ public:
     {
         std::string ret = "";
 
-        if (data_.size() > 1) {
-            for (int i = 0; i < data_.size(); i++) {
+        if (_data.size() > 1) {
+            for (int i = 0; i < _data.size(); i++) {
 
                 // + "\\n" was removed, for multi-line text we need extra fix. whould be rewritten with type system
-                ret += data_.at(i).asString() + " ";
+                ret += _data.at(i).asString() + " ";
             }
 
-        } else if (data_.size() == 1)
-            ret = data_.at(0).asString();
+        } else if (_data.size() == 1)
+            ret = _data.at(0).asString();
 
         //qDebug() << "stdstr " << data_.size() << QString(ret.c_str());
         return ret;
@@ -163,14 +162,14 @@ public:
     {
         std::string ret = "";
 
-        if (data_.size() > 1) {
-            for (int i = 0; i < data_.size(); i++) {
+        if (_data.size() > 1) {
+            for (int i = 0; i < _data.size(); i++) {
 
-                ret += data_.at(i).asString() + " ";  //\\n removed
+                ret += _data.at(i).asString() + " ";  //\\n removed
             }
 
-        } else if (data_.size() == 1)
-            ret = data_.at(0).asString();
+        } else if (_data.size() == 1)
+            ret = _data.at(0).asString();
 
         //qDebug() << "stdstr " << data_.size() << QString(ret.c_str());
         return ret;

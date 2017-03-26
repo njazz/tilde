@@ -89,27 +89,27 @@ public:
     {
         QPainter p(this);
         p.setRenderHint(QPainter::HighQualityAntialiasing, true);
-        p.scale(this->scale(), this->scale());
+        p.scale(scale(), scale());
 
         //remove this later
-        if (this->subpatchWindow()) {
+        if (subpatchWindow()) {
             p.setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-            p.drawRect(0, 2, this->width(), this->height() - 4);
+            p.drawRect(0, 2, width(), height() - 4);
         }
 
-        QColor rectColor = (this->errorBox()) ? QColor(255, 0, 0) : QColor(128, 128, 128);
-        p.setPen(QPen(rectColor, 2 , (this->errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-        p.drawRect(0, 0, this->width(), this->height());
+        QColor rectColor = (errorBox()) ? QColor(255, 0, 0) : QColor(128, 128, 128);
+        p.setPen(QPen(rectColor, 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p.drawRect(0, 0, width(), height());
         QTextOption* op = new QTextOption;
         op->setAlignment(Qt::AlignLeft);
         p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
         p.setFont(QFont(PREF_QSTRING("Font"), 11, 0, false));
-        p.drawText(2, 3, this->width() - 2, this->height() - 3, 0, this->objectData().c_str(), 0);
+        p.drawText(2, 3, width() - 2, height() - 3, 0, objectData().c_str(), 0);
 
-        if (this->isSelected()) {
-            p.setPen(QPen(QColor(0, 192, 255), 2, (this->errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-            p.drawRect(0, 0, this->width(), this->height());
+        if (isSelected()) {
+            p.setPen(QPen(QColor(0, 192, 255), 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p.drawRect(0, 0, width(), height());
         }
     }
 
@@ -120,20 +120,20 @@ public:
     void mousePressEvent(QMouseEvent* ev)
     {
         //open canvas for subpatch
-        if (this->getEditMode() != em_Unlocked) {
-            if (this->subpatchWindow()) {
-                this->subpatchWindow()->show();
+        if (getEditMode() != em_Unlocked) {
+            if (subpatchWindow()) {
+                subpatchWindow()->show();
             }
         }
 
-        if ((this->getEditMode() == em_Unlocked) && this->isSelected()) {
+        if ((getEditMode() == em_Unlocked) && isSelected()) {
 
             emit editObject(this);
             return;
         }
 
         emit selectBox(this);
-        this->dragOffset = ev->pos();
+        dragOffset = ev->pos();
     }
 
     ////
@@ -141,7 +141,6 @@ public:
     ///
     void mouseReleaseEvent(QMouseEvent*)
     {
-        //this->repaint();
     }
 
     ////
@@ -155,42 +154,36 @@ public:
         }
         event->ignore();
 
-        if ((this->getEditMode() != em_Unlocked) && (this->subpatchWindow())) {
-            this->setCursor(QCursor(Qt::PointingHandCursor));
+        if ((getEditMode() != em_Unlocked) && (subpatchWindow())) {
+            setCursor(QCursor(Qt::PointingHandCursor));
         } else {
-            this->setCursor(QCursor(Qt::ArrowCursor));
+            setCursor(QCursor(Qt::ArrowCursor));
         }
     }
 
     void setPdMessage(std::string message)
     {
-        this->setObjectData(message);
-        this->autoResize();
+        setObjectData(message);
+        autoResize();
 
         QFont myFont(PREF_QSTRING("Font"), 11);
         QFontMetrics fm(myFont);
-        int new_w = fm.width(QString(this->objectData().c_str())) + 10;
+        int new_w = fm.width(QString(objectData().c_str())) + 10;
         new_w = (new_w < 25) ? 25 : new_w;
-        this->setFixedWidth(new_w);
-        //this->editor_->setFixedWidth(this->width() - 5);
+        setFixedWidth(new_w);
+        //editor_->setFixedWidth(width() - 5);
 
         //todo: del object and create new + patchcords
 
         //
-        this->setInletsPos();
-        this->setOutletsPos();
+        setInletsPos();
+        setOutletsPos();
     }
 
 signals:
 
     void mouseMoved();
     void rightClicked();
-
-    //void editObject(UIObject* box);
-
-private slots:
-//    void editorDone();
-//    void editorChanged();
 };
 }
 

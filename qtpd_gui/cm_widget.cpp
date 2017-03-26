@@ -7,50 +7,50 @@ namespace qtpd {
 UIWidget::UIWidget(QWidget* parent)
     : QWidget(parent)
 {
-    this->selected_ = false;
-    this->setScale(1.);
-    this->editMode_ = 0;
+    _selected = false;
+    setScale(1.);
+    _editMode = 0;
 }
 
 //-------------------------------
 
 void UIWidget::select()
 {
-    this->selected_ = true;
-    this->repaint();
+    _selected = true;
+    repaint();
 }
 
 void UIWidget::deselect()
 {
-    this->selected_ = false;
-    this->repaint();
+    _selected = false;
+    repaint();
 }
 
-bool UIWidget::isSelected() { return this->selected_; }
+bool UIWidget::isSelected() { return _selected; }
 
 void UIWidget::setEditModeRef(t_editMode* canvasEditMode)
 {
-    this->editMode_ = canvasEditMode;
+    _editMode = canvasEditMode;
 }
 
 t_editMode* UIWidget::getEditModeRef()
 {
-    return this->editMode_;
+    return _editMode;
 }
 
 t_editMode UIWidget::getEditMode()
 {
-    return (this->editMode_) ? (*this->editMode_) : em_Unlocked;
+    return (_editMode) ? (*_editMode) : em_Unlocked;
 }
 
 void UIWidget::setScale(float newScale)
 {
-    this->scale_ = newScale;
+    _scale = newScale;
 }
 
 float UIWidget::scale()
 {
-    return this->scale_;
+    return _scale;
 }
 
 //--------------------------------------------

@@ -176,6 +176,7 @@ public:
     {
         //TODO
     }
+
     void writeFile()
     {
         //TODO
@@ -338,7 +339,6 @@ private:
     map<t_symbol*, t_outlet*> _methodPointerOutputs; // todo OPOutputs
 
 public:
-
     //
     OPInstance* _parent;
 

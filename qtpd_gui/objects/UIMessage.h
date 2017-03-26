@@ -20,9 +20,8 @@ class UIMessage : public UIObject {
     Q_OBJECT
 
 private:
-    bool clicked_;
-
-    QLineEdit* editor_;
+    bool _clicked;
+    QLineEdit* _editor;
 
 public:
     explicit UIMessage(UIObject* parent = 0);
@@ -30,8 +29,6 @@ public:
     static UIObject* createObject(std::string objectData, t_canvas* pdCanvas, UIWidget* parent = 0)
     {
         UIMessage* b = new UIMessage((UIObject*)parent);
-
-        //
 
         //fix: remove "ui.msg"
         //do this normal way later
@@ -80,9 +77,9 @@ public:
         QPainter p(this);
 
         QPolygon poly;
-        poly << QPoint(0, 0) << QPoint(this->width(), 0) << QPoint(this->width() - 4, 4) << QPoint(this->width() - 4, this->height() - 4) << QPoint(this->width(), this->height()) << QPoint(0, this->height());
+        poly << QPoint(0, 0) << QPoint(width(), 0) << QPoint(width() - 4, 4) << QPoint(width() - 4, height() - 4) << QPoint(width(), height()) << QPoint(0, height());
 
-        //p.drawRect(0,0,this->width(),this->height());
+        //p.drawRect(0,0,width(),height());
 
         p.setPen(QPen(QColor(220, 220, 220), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         QPainterPath tmpPath;
@@ -90,9 +87,9 @@ public:
         QBrush br = QBrush(QColor(220, 220, 220), Qt::SolidPattern);
         p.fillPath(tmpPath, br);
 
-        if (this->isSelected()) {
+        if (isSelected()) {
             p.setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-        } else if (this->clicked_) {
+        } else if (_clicked) {
             p.setPen(QPen(QColor(0, 192, 255), 4, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
         } else {
             p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
@@ -105,7 +102,7 @@ public:
         p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
         p.setFont(QFont(PREF_QSTRING("Font"), 11, 0, false));
-        p.drawText(2, 3, this->width() - 2, this->height() - 3, 0, this->objectData().c_str(), 0);
+        p.drawText(2, 3, width() - 2, height() - 3, 0, objectData().c_str(), 0);
     }
 
     ///////////////////
@@ -113,40 +110,40 @@ public:
     void mousePressEvent(QMouseEvent* ev)
     {
 
-        if ((this->getEditMode() == em_Unlocked) && this->isSelected()) {
-            this->editor_->setText(QString(this->objectData().c_str()));
-            this->editor_->show();
-            this->editor_->setFocus();
+        if ((getEditMode() == em_Unlocked) && isSelected()) {
+            _editor->setText(QString(objectData().c_str()));
+            _editor->show();
+            _editor->setFocus();
         }
 
         emit selectBox(this);
-        this->dragOffset = ev->pos();
+        dragOffset = ev->pos();
 
-        if (!(this->getEditMode() == em_Unlocked)) {
-            this->clicked_ = true;
-            this->repaint();
+        if (!(getEditMode() == em_Unlocked)) {
+            _clicked = true;
+            repaint();
 
             //todo timer
         }
 
         //temporary
         //move
-        if (this->getEditMode() != em_Unlocked) {
-            if (!this->pdObject()) {
+        if (getEditMode() != em_Unlocked) {
+            if (!pdObject()) {
                 qDebug("msg: bad pd object!");
             } else {
 
-                cmp_sendstring((t_pd*)this->pdObject(), ((std::string) "bang").c_str());
+                cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
             }
         }
     }
 
     void mouseReleaseEvent(QMouseEvent*)
     {
-        //if (!this->getEditMode())
+        //if (!getEditMode())
         {
-            this->clicked_ = false;
-            this->repaint();
+            _clicked = false;
+            repaint();
         }
     }
 
@@ -158,10 +155,10 @@ public:
         event->ignore();
 
         //todo move!
-        if (this->getEditMode() != em_Unlocked) {
-            this->setCursor(QCursor(Qt::PointingHandCursor));
+        if (getEditMode() != em_Unlocked) {
+            setCursor(QCursor(Qt::PointingHandCursor));
         } else {
-            this->setCursor(QCursor(Qt::ArrowCursor));
+            setCursor(QCursor(Qt::ArrowCursor));
         }
     }
 
@@ -169,25 +166,25 @@ public:
 
     void setPdMessage(std::string message)
     {
-        this->setObjectData(message);
-        this->autoResize();
+        setObjectData(message);
+        autoResize();
 
         QFont myFont(PREF_QSTRING("Font"), 11);
         QFontMetrics fm(myFont);
-        int new_w = fm.width(QString(this->objectData().c_str())) + 10;
+        int new_w = fm.width(QString(objectData().c_str())) + 10;
         new_w = (new_w < 25) ? 25 : new_w;
-        this->setFixedWidth(new_w);
-        this->editor_->setFixedWidth(this->width() - 5);
+        setFixedWidth(new_w);
+        _editor->setFixedWidth(width() - 5);
 
         //temporary
         //move
-        if (this->getEditMode() == em_Unlocked) {
-            if (!this->pdObject()) {
+        if (getEditMode() == em_Unlocked) {
+            if (!pdObject()) {
                 qDebug("msg: bad pd object!");
             } else {
 
-                std::string msg = ("set " + this->objectData());
-                cmp_sendstring((t_pd*)this->pdObject(), msg);
+                std::string msg = ("set " + objectData());
+                cmp_sendstring((t_pd*)pdObject(), msg);
             }
         }
     }
@@ -213,9 +210,8 @@ public:
     void setPdObject(void* obj)
     {
         UIObject::setPdObject(obj);
-        cmp_connectUI((t_pd*)this->pdObject(), (void*)this, &UIMessage::updateUI);
+        cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIMessage::updateUI);
     }
-
 
     std::string asPdFileString()
     {
@@ -223,16 +219,13 @@ public:
         std::string ret;
 
         ret = "#X obj ";
-        ret += std::to_string(this->x()) + " " + std::to_string(this->y()) + " ";
+        ret += std::to_string(x()) + " " + std::to_string(y()) + " ";
         ret += "ui.msg ";
-        ret += ((this->objectData() == "") ? ((std::string) "") : (this->objectData() + " ")) + this->properties()->asPdFileString();
+        ret += ((objectData() == "") ? ((std::string) "") : (objectData() + " ")) + properties()->asPdFileString();
 
         return ret;
     }
 
-
-signals:
-    //void selectBox(cm_widget*box);
 private slots:
     void editorDone();
     void editorChanged();

@@ -23,26 +23,26 @@ typedef std::set<UIObject*> objectSet;
 class canvasData {
 
 public:
-    objectVec boxes_;
-    patchcordVec patchcords_;
+    objectVec boxes;
+    patchcordVec patchcords;
 
     void addUniqueBox(UIObject* box)
     {
         int p = findBox(box);
 
-        if (boxes_.size())
+        if (boxes.size())
             if (p >= 0) {
-                boxes_.erase(boxes_.begin() + p);
+                boxes.erase(boxes.begin() + p);
             }
 
-        boxes_.push_back(box);
+        boxes.push_back(box);
     }
 
     int findBox(UIObject* box)
     {
         //todo
-        for (int i = 0; i < boxes_.size(); i++) {
-            if (boxes_.at(i) == box)
+        for (int i = 0; i < boxes.size(); i++) {
+            if (boxes.at(i) == box)
                 return i;
         }
 
@@ -56,8 +56,8 @@ public:
 class canvasDataPlus : public canvasData {
 
 public:
-    portVec* inlets_;
-    portVec* outlets_;
+    portVec* inlets;
+    portVec* outlets;
 };
 }
 

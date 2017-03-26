@@ -15,7 +15,7 @@ namespace qtpd {
 class PropertiesWindow : public QDockWidget {
 
 private:
-    std::map<QLineEdit*, QString> _propertyNames;       //lookup table
+    std::map<QLineEdit*, QString> _propertyNames; //lookup table
     PropertyList* _propertyList;
 
 public:

@@ -20,7 +20,7 @@ class UIFloat : public UIObject {
     Q_OBJECT
 
 private:
-    float startY;
+    float _startY;
 
 public:
     explicit UIFloat(UIObject* parent = 0);
@@ -65,7 +65,7 @@ public:
     {
         UIObject::initProperties();
 
-        this->properties()->create("Value", "Preset", "0.1", 0.);
+        properties()->create("Value", "Preset", "0.1", 0.);
     }
 
     void paintEvent(QPaintEvent*)
@@ -73,11 +73,11 @@ public:
         QPainter p(this);
 
         QPolygon poly;
-        poly << QPoint(0, 0) << QPoint(this->width() - 5, 0) <<
-            //QPoint(this->width()-4,4) <<
-            QPoint(this->width(), 5) << QPoint(this->width(), this->height()) << QPoint(0, this->height());
+        poly << QPoint(0, 0) << QPoint(width() - 5, 0) <<
+            //QPoint(width()-4,4) <<
+            QPoint(width(), 5) << QPoint(width(), height()) << QPoint(0, height());
 
-        //p.drawRect(0,0,this->width(),this->height());
+        //p.drawRect(0,0,width(),height());
 
         p.setPen(QPen(QColor(220, 220, 220), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         QPainterPath tmpPath;
@@ -85,7 +85,7 @@ public:
         QBrush br = QBrush(QColor(220, 220, 220), Qt::SolidPattern);
         p.fillPath(tmpPath, br);
 
-        if (this->isSelected()) {
+        if (isSelected()) {
             p.setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         }
 
@@ -100,7 +100,7 @@ public:
         p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
         p.setFont(QFont(PREF_QSTRING("Font"), 11, 0, false));
-        p.drawText(2, 3, this->width() - 2, this->height() - 3, 0, this->objectData().c_str(), 0);
+        p.drawText(2, 3, width() - 2, height() - 3, 0, objectData().c_str(), 0);
     }
 
     ///////////////////
@@ -108,11 +108,11 @@ public:
     void mousePressEvent(QMouseEvent* ev)
     {
 
-        this->startY = ev->pos().y();
+        _startY = ev->pos().y();
 
-        if ((this->getEditMode() == em_Unlocked)) {
+        if ((getEditMode() == em_Unlocked)) {
             emit selectBox(this);
-            this->dragOffset = ev->pos();
+            dragOffset = ev->pos();
         }
     }
 
@@ -122,30 +122,30 @@ public:
 
     void mouseMoveEvent(QMouseEvent* event)
     {
-        if ((event->buttons() & Qt::LeftButton) && (this->getEditMode() == em_Unlocked)) {
+        if ((event->buttons() & Qt::LeftButton) && (getEditMode() == em_Unlocked)) {
             emit moveBox(this, event);
         }
 
-        if ((event->buttons() & Qt::LeftButton) && (this->getEditMode() != em_Unlocked)) {
+        if ((event->buttons() & Qt::LeftButton) && (getEditMode() != em_Unlocked)) {
             //todo fix
-            this->setObjectData(std::to_string(::atof(this->objectData().c_str()) - event->pos().y() + this->startY)); //- this->startY
-            this->autoResize();
-            this->startY = event->pos().y();
+            setObjectData(std::to_string(::atof(objectData().c_str()) - event->pos().y() + _startY)); //- startY
+            autoResize();
+            _startY = event->pos().y();
 
-            std::string send = "set " + this->objectData();
-            cmp_sendstring((t_pd*)this->pdObject(), send.c_str());
-            cmp_sendstring((t_pd*)this->pdObject(), ((std::string) "bang").c_str());
+            std::string send = "set " + objectData();
+            cmp_sendstring((t_pd*)pdObject(), send.c_str());
+            cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
 
-            this->repaint();
+            repaint();
         }
 
         event->ignore();
 
         //todo move!
-        if (this->getEditMode() != em_Unlocked) {
-            this->setCursor(QCursor(Qt::UpArrowCursor));
+        if (getEditMode() != em_Unlocked) {
+            setCursor(QCursor(Qt::UpArrowCursor));
         } else {
-            this->setCursor(QCursor(Qt::ArrowCursor));
+            setCursor(QCursor(Qt::ArrowCursor));
         }
     }
 
@@ -153,25 +153,25 @@ public:
 
     void setPdMessage(std::string message)
     {
-        this->setObjectData(message);
-        this->autoResize();
+        setObjectData(message);
+        autoResize();
 
         QFont myFont(PREF_QSTRING("Font"), 11);
         QFontMetrics fm(myFont);
-        int new_w = fm.width(QString(this->objectData().c_str())) + 10;
+        int new_w = fm.width(QString(objectData().c_str())) + 10;
         new_w = (new_w < 25) ? 25 : new_w;
-        this->setFixedWidth(new_w);
+        setFixedWidth(new_w);
 
         //temporary
         //move
-        if (this->getEditMode() == em_Unlocked) {
-            if (!this->pdObject()) {
+        if (getEditMode() == em_Unlocked) {
+            if (!pdObject()) {
                 qDebug("msg: bad pd object!");
             } else {
 
-                std::string msg = ("set " + this->objectData());
+                std::string msg = ("set " + objectData());
                 //qDebug("send msg %s", msg.c_str());
-                cmp_sendstring((t_pd*)this->pdObject(), msg);
+                cmp_sendstring((t_pd*)pdObject(), msg);
             }
         }
     }
@@ -190,12 +190,12 @@ public:
     }
 
     //    std::string asPdFileString()
-    //    {return "ui.float "+ this->objectData();}
+    //    {return "ui.float "+ objectData();}
 
     void setPdObject(void* obj)
     {
         UIObject::setPdObject(obj);
-        cmp_connectUI((t_pd*)this->pdObject(), (void*)this, &UIFloat::updateUI);
+        cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIFloat::updateUI);
     }
 
     std::string asPdFileString()
@@ -204,16 +204,12 @@ public:
         std::string ret;
 
         ret = "#X obj ";
-        ret += std::to_string(this->x()) + " " + std::to_string(this->y()) + " ";
+        ret += std::to_string(x()) + " " + std::to_string(y()) + " ";
         ret += "ui.float ";
-        ret += ((this->objectData() == "") ? ((std::string) "") : (this->objectData() + " ")) + this->properties()->asPdFileString();
+        ret += ((objectData() == "") ? ((std::string) "") : (objectData() + " ")) + properties()->asPdFileString();
 
         return ret;
     }
-
-signals:
-
-private slots:
 };
 }
 

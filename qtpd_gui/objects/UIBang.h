@@ -21,9 +21,8 @@ class UIBang : public UIObject {
     Q_OBJECT
 
 private:
-    bool clicked_;
-
-    QTimer* timer_;
+    bool _clicked;
+    QTimer* _timer;
 
 public:
     explicit UIBang(UIObject* parent = 0);
@@ -63,29 +62,29 @@ public:
     {
         QPainter p(this);
 
-        if (this->clicked_) {
-            float lw = 2 + this->width() / 20.;
+        if (_clicked) {
+            float lw = 2 + width() / 20.;
             p.setPen(QPen(QColor(0, 192, 255), lw, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
-            p.drawEllipse(QRect(1 + lw / 2, 1 + lw / 2, this->width() - 2 - lw, this->height() - 2 - lw));
+            p.drawEllipse(QRect(1 + lw / 2, 1 + lw / 2, width() - 2 - lw, height() - 2 - lw));
 
         } else {
             p.setPen(QPen(QColor(220, 220, 220), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-            p.drawEllipse(QRect(1, 1, this->width() - 2, this->height() - 2));
+            p.drawEllipse(QRect(1, 1, width() - 2, height() - 2));
         }
 
-        if (this->isSelected()) {
+        if (isSelected()) {
             p.setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         } else {
             p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         }
 
-        p.drawRect(0, 0, this->width(), this->height());
+        p.drawRect(0, 0, width(), height());
     }
 
     void resizeEvent(QResizeEvent* event)
     {
         UIObject::resizeEvent(event);
-        this->setFixedHeight(this->width());
+        setFixedHeight(width());
     }
     ///////////////////
 
@@ -93,22 +92,22 @@ public:
     {
 
         emit selectBox(this);
-        this->dragOffset = ev->pos();
+        dragOffset = ev->pos();
 
-        if (!(this->getEditMode() == em_Unlocked)) {
-            this->clicked_ = true;
-            this->repaint();
+        if (!(getEditMode() == em_Unlocked)) {
+            _clicked = true;
+            repaint();
 
-            this->timerStart();
+            timerStart();
         }
 
         //temporary
         //move
-        if (this->getEditMode() != em_Unlocked) {
-            if (!this->pdObject()) {
+        if (getEditMode() != em_Unlocked) {
+            if (!pdObject()) {
                 qDebug("msg: bad pd object!");
             } else {
-                cmp_sendstring((t_pd*)this->pdObject(), ((std::string) "bang").c_str());
+                cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
             }
         }
     }
@@ -125,10 +124,10 @@ public:
         event->ignore();
 
         //todo move!
-        if (this->getEditMode() != em_Unlocked) {
-            this->setCursor(QCursor(Qt::PointingHandCursor));
+        if (getEditMode() != em_Unlocked) {
+            setCursor(QCursor(Qt::PointingHandCursor));
         } else {
-            this->setCursor(QCursor(Qt::ArrowCursor));
+            setCursor(QCursor(Qt::ArrowCursor));
         }
     }
 
@@ -139,9 +138,9 @@ public:
         //qDebug("update ui");
         UIBang* x = (UIBang*)uiobj;
 
-        if (!x->clicked_) {
+        if (!x->_clicked) {
             x->timerStart();
-            x->clicked_ = true;
+            x->_clicked = true;
             x->repaint();
         }
     }
@@ -150,19 +149,18 @@ public:
     {
         UIObject::setPdObject(obj);
 
-        cmp_connectUI((t_pd*)this->pdObject(), (void*)this, &UIBang::updateUI);
+        cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIBang::updateUI);
         qDebug("connectUI");
     }
 
     //    std::string asPdFileString()
     //    {
-    //        return "ui.bang "+ this->objectData();
+    //        return "ui.bang "+ objectData();
     //    }
 
     void timerStart()
     {
         {
-            //this->timer_->start(100);
             emit setBangTimer(100);
         }
     }
@@ -173,8 +171,8 @@ signals:
 private slots:
     void timerAction()
     {
-        this->clicked_ = false;
-        //this->repaint();
+        _clicked = false;
+        //repaint();
         emit callRepaint();
     }
 };

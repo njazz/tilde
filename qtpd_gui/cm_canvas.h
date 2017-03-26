@@ -42,63 +42,54 @@ typedef enum { ds_Canvas,
 ///
 class Canvas : public UIObject {
 private:
-    //todo move this to data class?
-    //    objectVec objectBoxes;
-    //    patchcordVec patchcords;
-    //    objectVec selectionData_.boxes;
-    //    patchcordVec selPatchcords;
-
     //move here. these are global for all draw types (Canvas, Box)
-    canvasDataPlus data_;
-    canvasData selectionData_;
+    canvasDataPlus _data;
+    canvasData _selectionData;
 
     //
     // local !Box
-    tRectPlus selFrame;
-    tRectPlus newLine;
+    tRectPlus _selFrame;
+    tRectPlus _newLine;
 
     // local, !Box
-    UIObject* connObj1;
-    UIObject* connOutlet;
+    UIObject* _connectionStartObject;
+    UIObject* _connectionStartOutlet;
     //
-    UIObject* replaceObject_;
+    UIObject* _replaceObject;
 
     // local, !Box
-    QPoint newObjectPos;
-    QPoint dragPrevPos;
+    QPoint _newObjectPos;
+    QPoint _dragPrevPos;
 
     // TODO use widget's standard and create in constructor
     // local, !Box
-    t_editMode editMode;
+    t_editMode _editMode;
 
     // local, !Box
-    bool gridEnabled_;
-    bool gridSnap_;
-    int gridStep_;
+    // TODO separate grid layer
+    bool _gridEnabled;
+    bool _gridSnap;
+    int _gridStep;
 
-    QSize windowSize_;
+    QSize _windowSize;
     //
-    canvasDrawStyle drawStyle_;
+    canvasDrawStyle _drawStyle;
     // if the canvas is the box, it can have this. Check this later
     // !Canvas
     //QMainWindow *SubcanvasWindow_;
-    UIObject* Subcanvas_;
+    UIObject* _Subcanvas;
 
     // !Canvas
     //    QLineEdit* editor_; //remove that
 
-    ObjectMaker* objectMaker_;
+    ObjectMaker* _objectMaker;
 
     Q_OBJECT
 
 public:
-    //encapsulate
+    // TODO encapsulate
     QWidget* dragObject;
     QString fileName;
-
-    //temp
-    // todo replace with pd object!
-    // t_canvas* pdCanvas;
 
     explicit Canvas(UIObject* parent = 0);
 
@@ -281,9 +272,9 @@ public:
     //        // no repaint
 
     //        //cleanup !!!
-    //        patchcordVec::iterator it = std::find(this->data_.patchcords.begin(), this->data_.patchcords.end(), pc);
+    //        patchcordVec::iterator it = std::find(data_.patchcords.begin(), data_.patchcords.end(), pc);
 
-    //        if (it != this->data_.patchcords.end()) { this->data_.patchcords.erase(it); }
+    //        if (it != data_.patchcords.end()) { data_.patchcords.erase(it); }
 
     //    }
 
@@ -515,8 +506,6 @@ public slots:
 
 private:
 private slots:
-    //    void editorDone();
-    //    void editorChanged();
 
     ////
     /// \brief slot in Box-style canvas for handling new ins/outs

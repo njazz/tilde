@@ -30,10 +30,10 @@ class SizeBox : public UIWidget {
     Q_OBJECT
 
 private:
-    int prevX;
-    int prevY;
+    int _prevX;
+    int _prevY;
 
-    t_objectSize* objectSizeType;
+    t_objectSize* _objectSizeType;
 
 public:
     explicit SizeBox(UIWidget* parent = 0);
@@ -44,22 +44,22 @@ public:
 
         //p.setRenderHint(QPainter::SmoothPixmapTransform,true);
         p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-        p.drawRect(0, 0, this->width(), this->height());
+        p.drawRect(0, 0, width(), height());
     };
 
     void mousePressEvent(QMouseEvent* event)
     {
-        this->setCursor(QCursor(Qt::SizeHorCursor));
+        setCursor(QCursor(Qt::SizeHorCursor));
 
         event->accept();
 
-        this->prevX = 0;
-        this->prevY = 0;
+        _prevX = 0;
+        _prevY = 0;
     };
 
     void mouseReleaseEvent(QMouseEvent* event)
     {
-        this->setCursor(QCursor(Qt::ArrowCursor));
+        setCursor(QCursor(Qt::ArrowCursor));
 
         event->accept();
     };
@@ -67,7 +67,7 @@ public:
     void mouseMoveEvent(QMouseEvent* ev)
     {
         //qDebug() << "resize" << (ev->x() - prevX);
-        emit resizeBoxEvent(ev->x() - this->prevX, ev->y() - this->prevY);
+        emit resizeBoxEvent(ev->x() - _prevX, ev->y() - _prevY);
     }
 
 signals:

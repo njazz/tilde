@@ -8,19 +8,19 @@ namespace qtpd {
 UIObject::UIObject(UIWidget* parent)
     : UIWidget(parent)
 {
-    this->errorBox_ = false;
+    _errorBox = false;
 
-    this->setPdObject(0);
+    setPdObject(0);
 
-    this->inlets_ = new portVec;
-    this->outlets_ = new portVec;
+    _inlets = new portVec;
+    _outlets = new portVec;
 
-    this->sizeBox = new SizeBox(this);
-    this->sizeBox->hide();
+    _sizeBox = new SizeBox(this);
+    _sizeBox->hide();
 
-    this->setAttribute(Qt::WA_Hover, true);
+    setAttribute(Qt::WA_Hover, true);
 
-    connect(this->sizeBox, &SizeBox::resizeBoxEvent, this, &UIObject::resizeBox);
+    connect(_sizeBox, &SizeBox::resizeBoxEvent, this, &UIObject::resizeBox);
 
     // repaint, handling for threads
     connect(this, &UIObject::callRepaint, this, &UIObject::s_repaint);
@@ -30,37 +30,37 @@ UIObject::UIObject(UIWidget* parent)
     createContextMenu();
 
     //this is default
-    this->objectSizeMode_ = os_FixedHeight;
+    _objectSizeMode = os_FixedHeight;
 }
 
 //---------------------------------------
 
 void UIObject::resizeBox(int dx, int dy)
 {
-    if (objectSizeMode_ != os_Fixed)
-        this->setFixedWidth(this->width() + dx);
-    if (objectSizeMode_ == os_Free)
-        this->setFixedHeight(this->height() + dy);
+    if (_objectSizeMode != os_Fixed)
+        setFixedWidth(width() + dx);
+    if (_objectSizeMode == os_Free)
+        setFixedHeight(height() + dy);
 };
 
 void UIObject::initProperties()
 {
-    connect(this->properties(), &PropertyList::propertyChangedSignal, this, &UIObject::propertyChanged);
+    connect(properties(), &PropertyList::propertyChangedSignal, this, &UIObject::propertyChanged);
 
-    this->properties()->create("Size", "Box", "0.1", this->size());
-    this->properties()->create("Position", "Box", "0.1", this->pos());
-    this->properties()->create("FontSize", "Box", "0.1", 11.);
+    properties()->create("Size", "Box", "0.1", size());
+    properties()->create("Position", "Box", "0.1", pos());
+    properties()->create("FontSize", "Box", "0.1", 11.);
 
-    this->properties()->create("PresetName", "Preset", "0.1", gensym(""));
-    this->properties()->create("SendSymbol", "Preset", "0.1", gensym(""));
-    this->properties()->create("ReceiveSymbol", "Preset", "0.1", gensym(""));
+    properties()->create("PresetName", "Preset", "0.1", gensym(""));
+    properties()->create("SendSymbol", "Preset", "0.1", gensym(""));
+    properties()->create("ReceiveSymbol", "Preset", "0.1", gensym(""));
 
-    this->properties()->create("BorderColor", "Color", "0.1", QColor(192, 192, 192, 255));
+    properties()->create("BorderColor", "Color", "0.1", QColor(192, 192, 192, 255));
 }
 
 PropertyList* UIObject::properties()
 {
-    return &this->properties_;
+    return &_properties;
 }
 
 void UIObject::createContextMenu()
@@ -82,49 +82,49 @@ void UIObject::createContextMenu()
 
     //------------
 
-    popupMenu_.addAction(pmProperties);
-    popupMenu_.addAction(pmHelp);
-    popupMenu_.addSeparator();
-    popupMenu_.addAction(pmOpen);
+    _popupMenu.addAction(pmProperties);
+    _popupMenu.addAction(pmHelp);
+    _popupMenu.addSeparator();
+    _popupMenu.addAction(pmOpen);
 }
 
 //void UIObject::contextMenuEvent(QContextMenuEvent *event) //customContextMenuRequested(const QPoint &pos)
 void UIObject::showPopupMenu(QPoint pos)
 {
 
-    popupMenu_.move(pos);
-    popupMenu_.show();
+    _popupMenu.move(pos);
+    _popupMenu.show();
 }
 
 void UIObject::setInletsPos()
 {
-    float w = this->width() - 10;
+    float w = width() - 10;
     //w = (w < 40) ? 40 : w;
 
-    float s = (inlets_->size() < 2) ? inlets_->size() : (inlets_->size() - 1);
+    float s = (_inlets->size() < 2) ? _inlets->size() : (_inlets->size() - 1);
 
-    for (int i = 0; i < (int)inlets_->size(); i++) {
+    for (int i = 0; i < (int)_inlets->size(); i++) {
         float x = (w) / s * (float)i;
         float y = 0;
 
-        inlets_->at(i)->move(x, y);
-        inlets_->at(i)->repaint();
+        _inlets->at(i)->move(x, y);
+        _inlets->at(i)->repaint();
     }
 }
 
 void UIObject::setOutletsPos()
 {
-    float w = this->width() - 10;
+    float w = width() - 10;
     //w = (w < 40) ? 40 : w;
 
-    float s = (outlets_->size() < 2) ? outlets_->size() : (outlets_->size() - 1);
+    float s = (_outlets->size() < 2) ? _outlets->size() : (_outlets->size() - 1);
 
-    for (int i = 0; i < (int)outlets_->size(); i++) {
+    for (int i = 0; i < (int)_outlets->size(); i++) {
         float x = (w) / s * (float)i;
-        float y = this->height() - 3;
+        float y = height() - 3;
 
-        outlets_->at(i)->move(x, y);
-        outlets_->at(i)->repaint();
+        _outlets->at(i)->move(x, y);
+        _outlets->at(i)->repaint();
     }
 }
 
@@ -132,8 +132,8 @@ void UIObject::addInlet()
 {
     int _portClass_;
 
-    if (this->pdObject_) {
-        _portClass_ = cmp_get_inlet_type((t_object*)this->pdObject_, inlets_->size());
+    if (_pdObject) {
+        _portClass_ = cmp_get_inlet_type((t_object*)_pdObject, _inlets->size());
     } else
         _portClass_ = 0;
 
@@ -144,26 +144,26 @@ void UIObject::addInlet(int _portClass_)
 {
     Port* new_in = new Port(this);
     new_in->portType = portInlet;
-    new_in->portIndex = inlets_->size();
+    new_in->portIndex = _inlets->size();
     new_in->portClass = _portClass_;
-    new_in->setEditModeRef(this->getEditModeRef());
+    new_in->setEditModeRef(getEditModeRef());
 
-    inlets_->push_back(new_in);
+    _inlets->push_back(new_in);
 
-    connect(new_in, &Port::mousePressed, static_cast<UIWidget*>(this->parent()), &UIWidget::s_InMousePressed);
-    connect(new_in, &Port::mouseReleased, static_cast<UIWidget*>(this->parent()), &UIWidget::s_InMouseReleased);
+    connect(new_in, &Port::mousePressed, static_cast<UIWidget*>(parent()), &UIWidget::s_InMousePressed);
+    connect(new_in, &Port::mouseReleased, static_cast<UIWidget*>(parent()), &UIWidget::s_InMouseReleased);
 
     new_in->show();
 
-    this->setInletsPos();
+    setInletsPos();
 }
 
 void UIObject::addOutlet()
 {
     int _portClass_;
 
-    if (this->pdObject_) {
-        _portClass_ = cmp_get_outlet_type((t_object*)this->pdObject_, outlets_->size());
+    if (_pdObject) {
+        _portClass_ = cmp_get_outlet_type((t_object*)_pdObject, _outlets->size());
     } else
         _portClass_ = 0;
 
@@ -174,66 +174,66 @@ void UIObject::addOutlet(int _portClass_)
 {
     Port* new_out = new Port(this);
     new_out->portType = portOutlet;
-    new_out->portIndex = outlets_->size();
+    new_out->portIndex = _outlets->size();
     new_out->portClass = _portClass_;
-    new_out->setEditModeRef(this->getEditModeRef());
+    new_out->setEditModeRef(getEditModeRef());
 
-    outlets_->push_back(new_out);
-    connect(new_out, &Port::mousePressed, static_cast<UIWidget*>(this->parent()), &UIWidget::s_OutMousePressed);
-    connect(new_out, &Port::mouseReleased, static_cast<UIWidget*>(this->parent()), &UIWidget::s_OutMouseReleased);
+    _outlets->push_back(new_out);
+    connect(new_out, &Port::mousePressed, static_cast<UIWidget*>(parent()), &UIWidget::s_OutMousePressed);
+    connect(new_out, &Port::mouseReleased, static_cast<UIWidget*>(parent()), &UIWidget::s_OutMouseReleased);
 
     new_out->show();
 
-    this->setOutletsPos();
+    setOutletsPos();
 }
 
 Port* UIObject::inletAt(int idx)
 {
-    if (idx < ((int)this->inlets_->size()))
-        return this->inlets_->at(idx);
+    if (idx < ((int)_inlets->size()))
+        return _inlets->at(idx);
     else
         return 0;
 }
 
 Port* UIObject::outletAt(int idx)
 {
-    if (idx < ((int)this->outlets_->size()))
-        return this->outlets_->at(idx);
+    if (idx < ((int)_outlets->size()))
+        return _outlets->at(idx);
     else
         return 0;
 }
 
 int UIObject::pdInletType(int idx)
 {
-    if ((t_object*)this->pdObject_)
-        return cmp_get_inlet_type((t_object*)this->pdObject_, idx);
+    if ((t_object*)_pdObject)
+        return cmp_get_inlet_type((t_object*)_pdObject, idx);
     else
         return 0;
 }
 
 int UIObject::inletCount()
 {
-    return inlets_->size();
+    return _inlets->size();
 }
 
 int UIObject::pdOutletType(int idx)
 {
-    if ((t_object*)this->pdObject_)
-        return cmp_get_outlet_type((t_object*)this->pdObject_, idx);
+    if ((t_object*)_pdObject)
+        return cmp_get_outlet_type((t_object*)_pdObject, idx);
     else
         return 0;
 }
 
 int UIObject::outletCount()
 {
-    return outlets_->size();
+    return _outlets->size();
 }
 
 ////////
 
 void UIObject::setObjectData(std::string objData)
 {
-    this->objectData_ = objData;
+    _objectData = objData;
 }
 
 void UIObject::autoResize()
@@ -241,34 +241,34 @@ void UIObject::autoResize()
     QFont myFont(PREF_QSTRING("Font"), 11);
     QFontMetrics fm(myFont);
 
-    this->setFixedWidth((int)fm.width(QString(this->objectData_.c_str())) + 5);
-    if (this->width() < this->minimumBoxWidth())
-        this->setFixedWidth(this->minimumBoxWidth());
+    setFixedWidth((int)fm.width(QString(_objectData.c_str())) + 5);
+    if (width() < minimumBoxWidth())
+        setFixedWidth(minimumBoxWidth());
 }
 
 std::string UIObject::objectData()
 {
-    return this->objectData_;
+    return _objectData;
 }
 
-void* UIObject::pdObject() { return this->pdObject_; }
+void* UIObject::pdObject() { return _pdObject; }
 
-void UIObject::setPdObject(void* obj) { this->pdObject_ = obj; }
+void UIObject::setPdObject(void* obj) { _pdObject = obj; }
 
-bool UIObject::errorBox() { return this->errorBox_; }
+bool UIObject::errorBox() { return _errorBox; }
 
-void UIObject::setErrorBox(bool val) { this->errorBox_ = val; }
+void UIObject::setErrorBox(bool val) { _errorBox = val; }
 
 std::string UIObject::asPdFileString()
 {
     std::string ret;
 
     ret = "#X obj ";
-    ret += std::to_string(this->x()) + " " + std::to_string(this->y()) + " ";
+    ret += std::to_string(x()) + " " + std::to_string(y()) + " ";
 
-    //ret += this->pdObjectName_ + " " ;//
+    //ret += pdObjectName_ + " " ;//
 
-    ret += ((this->objectData_ == "") ? ((std::string) "") : (this->objectData_ + " ")) + this->properties_.asPdFileString();
+    ret += ((_objectData == "") ? ((std::string) "") : (_objectData + " ")) + _properties.asPdFileString();
 
     return ret;
 }
@@ -280,12 +280,12 @@ std::string UIObject::asPdFileString()
 
 QMainWindow* UIObject::subpatchWindow()
 {
-    return SubpatchWindow_;
+    return _SubpatchWindow;
 }
 
 void UIObject::setSubpatchWindow(QMainWindow* cwindow)
 {
-    SubpatchWindow_ = cwindow;
+    _SubpatchWindow = cwindow;
 }
 
 void UIObject::setEditModeRef(t_editMode* canvasEditMode)
@@ -293,12 +293,12 @@ void UIObject::setEditModeRef(t_editMode* canvasEditMode)
     UIWidget::setEditModeRef(canvasEditMode);
 
     // todo
-    for (int i = 0; i < this->inlets_->size(); i++) {
-        this->inletAt(i)->setEditModeRef(canvasEditMode);
+    for (int i = 0; i < _inlets->size(); i++) {
+        inletAt(i)->setEditModeRef(canvasEditMode);
     }
 
-    for (int i = 0; i < this->outlets_->size(); i++) {
-        this->outletAt(i)->setEditModeRef(canvasEditMode);
+    for (int i = 0; i < _outlets->size(); i++) {
+        outletAt(i)->setEditModeRef(canvasEditMode);
     }
 }
 
@@ -307,30 +307,30 @@ void UIObject::setEditModeRef(t_editMode* canvasEditMode)
 void UIObject::resizeEvent(QResizeEvent* event)
 {
 
-    this->sizeBox->move(this->width() - 7, this->height() - 7);
+    _sizeBox->move(width() - 7, height() - 7);
 
     //todo fixed width
-    if (this->width() < this->minimumBoxWidth())
-        this->setFixedWidth(this->minimumBoxWidth());
-    if (this->height() < this->minimumBoxHeight())
-        this->setFixedHeight(this->minimumBoxHeight());
+    if (width() < minimumBoxWidth())
+        setFixedWidth(minimumBoxWidth());
+    if (height() < minimumBoxHeight())
+        setFixedHeight(minimumBoxHeight());
 
-    this->setInletsPos();
-    this->setOutletsPos();
+    setInletsPos();
+    setOutletsPos();
 
     properties()->set("Size", size());
 }
 
 void UIObject::enterEvent(QEvent*)
 {
-    if (this->getEditMode() == em_Unlocked)
-        this->sizeBox->show();
+    if (getEditMode() == em_Unlocked)
+        _sizeBox->show();
 }
 
 void UIObject::leaveEvent(QEvent*)
 {
-    if (this->getEditMode() == em_Unlocked)
-        this->sizeBox->hide();
+    if (getEditMode() == em_Unlocked)
+        _sizeBox->hide();
 };
 
 //---------------------------------
@@ -341,7 +341,7 @@ void UIObject::leaveEvent(QEvent*)
 ///
 void UIObject::setMinimumBoxWidth(int w)
 {
-    this->minimumBoxWidth_ = w;
+    _minimumBoxWidth = w;
 }
 
 ////
@@ -350,7 +350,7 @@ void UIObject::setMinimumBoxWidth(int w)
 ///
 void UIObject::setMinimumBoxHeight(int h)
 {
-    this->minimumBoxHeight_ = h;
+    _minimumBoxHeight = h;
 }
 
 ////
@@ -359,7 +359,7 @@ void UIObject::setMinimumBoxHeight(int h)
 ///
 int UIObject::minimumBoxWidth()
 {
-    return this->minimumBoxWidth_;
+    return _minimumBoxWidth;
 }
 
 ////
@@ -368,23 +368,23 @@ int UIObject::minimumBoxWidth()
 ///
 int UIObject::minimumBoxHeight()
 {
-    return this->minimumBoxHeight_;
+    return _minimumBoxHeight;
 }
 
 // ??
 void UIObject::hide()
 {
 
-    if (this->subpatchWindow()) {
+    if (subpatchWindow()) {
         qDebug("hide subcanvas window");
 
-        this->subpatchWindow()->hide();
-        delete this->SubpatchWindow_;
+        subpatchWindow()->hide();
+        delete _SubpatchWindow;
     }
 }
 
 void UIObject::hideSizeBox()
 {
-    sizeBox->hide();
+    _sizeBox->hide();
 }
 }

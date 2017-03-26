@@ -9,8 +9,8 @@ namespace qtpd {
 ObjectMaker::ObjectMaker(QLineEdit* parent)
     : QLineEdit(parent)
 {
-    this->setFont(QFont(PREF_QSTRING("Font"), 11, 0, false));
-    this->setFixedSize(60, 20);
+    setFont(QFont(PREF_QSTRING("Font"), 11, 0, false));
+    setFixedSize(60, 20);
 
     connect(this, &ObjectMaker::textEdited, this, &ObjectMaker::editorChanged);
     connect(this, &ObjectMaker::returnPressed, this, &ObjectMaker::leaveFocus);
@@ -20,10 +20,10 @@ void ObjectMaker::editorChanged()
 {
     QFont myFont(PREF_QSTRING("Font"), 11);
     QFontMetrics fm(myFont);
-    int new_w = fm.width(QString(this->text())) + 10;
+    int new_w = fm.width(QString(text())) + 10;
     new_w = (new_w < 65) ? 65 : new_w;
-    this->setFixedWidth(new_w);
-    this->setFixedHeight(20);
+    setFixedWidth(new_w);
+    setFixedHeight(20);
 }
 
 void ObjectMaker::leaveFocus()
@@ -32,5 +32,4 @@ void ObjectMaker::leaveFocus()
     if (parent())
         ((QWidget*)parent())->setFocus();
 }
-
 }

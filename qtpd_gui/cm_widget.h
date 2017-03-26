@@ -17,7 +17,7 @@ namespace qtpd {
 typedef enum {
     em_Unlocked,
     em_Locked,
-    em_Temporary
+    em_Temporary    ///> control-click on an object
 } t_editMode;
 
 ////
@@ -27,11 +27,9 @@ class UIWidget : public QWidget {
     Q_OBJECT
 
 private:
-    bool selected_;
-
-    t_editMode* editMode_;
-
-    float scale_;
+    bool _selected;
+    t_editMode* _editMode;
+    float _scale;
 
 public:
     QPoint dragOffset;

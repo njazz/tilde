@@ -15,8 +15,8 @@ namespace qtpd {
 template <>
 void Property::set(AtomList list)
 {
-    data_ = list;
-    type_ = ptList;
+    _data = list;
+    _type = ptList;
 }
 
 template <>
@@ -27,8 +27,8 @@ void Property::set(QPoint point)
     list.append(point.x());
     list.append(point.y());
 
-    data_ = list;
-    type_ = ptVector;
+    _data = list;
+    _type = ptVector;
 }
 template <>
 void Property::set(QRect rect)
@@ -40,8 +40,8 @@ void Property::set(QRect rect)
     list.append(rect.width());
     list.append(rect.height());
 
-    data_ = list;
-    type_ = ptVector;
+    _data = list;
+    _type = ptVector;
 }
 template <>
 void Property::set(QSize size)
@@ -51,8 +51,8 @@ void Property::set(QSize size)
     list.append(size.width());
     list.append(size.height());
 
-    data_ = list;
-    type_ = ptVector;
+    _data = list;
+    _type = ptVector;
 }
 
 template <>
@@ -65,43 +65,43 @@ void Property::set(QColor color)
     list.append(color.blue());
     list.append(color.alpha());
 
-    data_ = list;
-    type_ = ptColor;
+    _data = list;
+    _type = ptColor;
 }
 
 template <>
 void Property::set(float val)
 {
-    data_ = AtomList(val);
-    type_ = ptFloat;
+    _data = AtomList(val);
+    _type = ptFloat;
 }
 
 template <>
 void Property::set(double val)
 {
-    data_ = AtomList(val);
-    type_ = ptFloat;
+    _data = AtomList(val);
+    _type = ptFloat;
 }
 
 template <>
 void Property::set(t_symbol* s)
 {
-    data_ = AtomList(s);
-    type_ = ptSymbol;
+    _data = AtomList(s);
+    _type = ptSymbol;
 }
 
 template <>
 void Property::set(std::string string)
 {
-    data_ = AtomList(gensym(string.c_str()));
-    type_ = ptList;
+    _data = AtomList(gensym(string.c_str()));
+    _type = ptList;
 }
 
 template <>
 void Property::set(int val)
 {
-    data_ = AtomList(val);
-    type_ = ptFloat;
+    _data = AtomList(val);
+    _type = ptFloat;
 }
 
 template <>
@@ -131,8 +131,8 @@ void Property::set(QStringList strlist)
     //qDebug() << "data size" << list->size();
 
     //check, different type for text files
-    type_ = ptList;
-    data_ = (*list);
+    _type = ptList;
+    _data = (*list);
 }
 
 template <>

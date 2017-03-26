@@ -33,7 +33,6 @@ class UIScriptEditor : public QPlainTextEdit {
 
 private:
     QCompleter* _completer;
-
     PythonQtObjectPtr _context;
 
 public:
@@ -237,7 +236,7 @@ private slots:
         //            // behind the last command prompt, else inserting the
         //            // character is not allowed.
 
-        //            int commandPromptPosition = this->commandPromptPosition();
+        //            int commandPromptPosition = commandPromptPosition();
         //            if (textCursor.position() < commandPromptPosition) {
 
         //              textCursor.setPosition(commandPromptPosition);
@@ -278,10 +277,8 @@ class UIScript : public UIObject {
     Q_OBJECT
 
 private:
-    bool clicked_;
-
-    UIScriptEditor* editor_;
-
+    bool _clicked;
+    UIScriptEditor* _editor;
     QStringList _inputList;
 
 public:
@@ -300,7 +297,7 @@ public:
 
         // the zoo lol
         QString data = b->properties()->get("Script")->asQString().split("\\n ").join("\n");
-        b->editor_->document()->setPlainText(data);
+        b->_editor->document()->setPlainText(data);
 
         // pd object
         std::string message = "ui.script";
@@ -318,7 +315,7 @@ public:
             qDebug("created toggle %s | ptr %lu\n", message.c_str(), (long)new_obj);
             b->setPdObject(new_obj);
 
-            b->editor_->setContext(pyWrapper::inst().withCanvasPdObjectAndInput((UIObject*)parent, new_obj, &b->_inputList));
+            b->_editor->setContext(pyWrapper::inst().withCanvasPdObjectAndInput((UIObject*)parent, new_obj, &b->_inputList));
 
             b->addInlet();
             b->addOutlet();
@@ -335,31 +332,31 @@ public:
         UIObject::initProperties();
         QStringList list; // = QString("#empty").split("-");    //lol
 
-        this->properties()->create("Script", "Data", "0.1", list);
+        properties()->create("Script", "Data", "0.1", list);
     };
 
     void paintEvent(QPaintEvent*)
     {
         QPainter p(this);
 
-        if (this->getEditMode() == em_Unlocked) {
-            if (this->isSelected()) {
+        if (getEditMode() == em_Unlocked) {
+            if (isSelected()) {
                 p.setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-            } else if (this->clicked_) {
+            } else if (_clicked) {
                 p.setPen(QPen(QColor(0, 192, 255), 4, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
             } else {
                 p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
             }
 
-            p.drawRect(0, 0, this->width(), this->height());
+            p.drawRect(0, 0, width(), height());
         }
     }
 
     void resizeEvent(QResizeEvent* event)
     {
         UIObject::resizeEvent(event);
-        editor_->setFixedWidth(width() - 5);
-        editor_->setFixedHeight(height() - 25);
+        _editor->setFixedWidth(width() - 5);
+        _editor->setFixedHeight(height() - 25);
 
         properties()->set("Size", size());
     }
@@ -370,7 +367,7 @@ public:
     {
 
         emit selectBox(this);
-        this->dragOffset = ev->pos();
+        dragOffset = ev->pos();
     }
 
     void mouseReleaseEvent(QMouseEvent*)
@@ -385,10 +382,10 @@ public:
         event->ignore();
 
         //todo move!
-        if (this->getEditMode() != em_Unlocked) {
-            this->setCursor(QCursor(Qt::PointingHandCursor));
+        if (getEditMode() != em_Unlocked) {
+            setCursor(QCursor(Qt::PointingHandCursor));
         } else {
-            this->setCursor(QCursor(Qt::ArrowCursor));
+            setCursor(QCursor(Qt::ArrowCursor));
         }
     }
 
@@ -396,7 +393,7 @@ public:
 
     void setPdMessage(std::string message)
     {
-        this->setObjectData(message);
+        setObjectData(message);
 
         setFixedSize(300, 200);
     }
@@ -421,7 +418,7 @@ public:
 
     QStringList getEditorData()
     {
-        return editor_->document()->toPlainText().split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
+        return _editor->document()->toPlainText().split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
     }
 
     void setPdObject(void* obj)
@@ -444,7 +441,7 @@ public slots:
 
         //this code is from PythonQt
 
-        PythonQtObjectPtr context = editor_->context(); //PythonQt::self()->getMainModule();
+        PythonQtObjectPtr context = _editor->context(); //PythonQt::self()->getMainModule();
         QString _stdOut = "";
         QString _stdErr = "";
         PythonQtObjectPtr p;
@@ -494,7 +491,7 @@ private slots:
             file.open(QFile::ReadOnly | QFile::Text);
 
             QTextStream ReadFile(&file);
-            editor_->document()->setPlainText(ReadFile.readAll());
+            _editor->document()->setPlainText(ReadFile.readAll());
             file.close();
         }
     }
@@ -508,14 +505,14 @@ private slots:
             file.open(QFile::WriteOnly | QFile::Text);
 
             QTextStream WriteFile(&file);
-            WriteFile << editor_->document()->toPlainText();
+            WriteFile << _editor->document()->toPlainText();
             file.close();
         }
     }
 
     void btnClear()
     {
-        editor_->clear();
+        _editor->clear();
     }
 };
 }

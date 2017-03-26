@@ -41,7 +41,7 @@ public:
     }
 
 private:
-    std::map<std::string, QString> data_;
+    std::map<std::string, QString> _data;
 
     Preferences()
     {

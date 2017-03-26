@@ -11,7 +11,7 @@ std::string FileParser::pdParserFileName = "";
 
 bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
 {
-    qDebug() <<"legacy process:" << list;
+    qDebug() << "legacy process:" << list;
 
     // special cases:
     // msg - text - floatatom - symbolatom
@@ -31,12 +31,12 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
         list.insert(4, "@Text");
         UIObject* obj = FileParser::sendStringToCanvas(cmcanvas, list);
 
-//        list.removeAt(0);
-//        list.removeAt(0);
-//        list.removeAt(0);
-//        list.removeAt(0);
-//        QString text = list.join(" ");
-//        obj->properties()->set("Text", text);
+        //        list.removeAt(0);
+        //        list.removeAt(0);
+        //        list.removeAt(0);
+        //        list.removeAt(0);
+        //        QString text = list.join(" ");
+        //        obj->properties()->set("Text", text);
 
         return true;
 
@@ -84,11 +84,12 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
 
         //temporary
         //check bounds
-        int lBoxWidth = ((QString)list.at(4)).toInt();  //?
+        int lBoxWidth = ((QString)list.at(4)).toInt(); //?
         QString lSend = ((QString)list.at(7));
         QString lReceive = ((QString)list.at(8));
         QString lLabel = ((QString)list.at(9));
-        if (lLabel == "empty") lLabel = "";
+        if (lLabel == "empty")
+            lLabel = "";
         //...
         int lFontSize = ((QString)list.at(4)).toInt() * 8 + 3;
 
@@ -105,7 +106,6 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
         UIObject* obj = FileParser::sendStringToCanvas(cmcanvas, list2);
 
         return true;
-
     }
 
     return false; // if it is not a special legacy object
@@ -150,9 +150,10 @@ UIObject* FileParser::sendStringToCanvas(Canvas* cmcanvas, QStringList list)
 void FileParser::parseStringList(Canvas* cmcanvas, QStringList list) //rename
 {
     //legacy parser first
-    if (FileParser::legacyProcess(cmcanvas, list)) return;
+    if (FileParser::legacyProcess(cmcanvas, list))
+        return;
 
-    if ( list.at(0) == "obj") {
+    if (list.at(0) == "obj") {
         FileParser::sendStringToCanvas(cmcanvas, list);
     } else
 
@@ -223,7 +224,7 @@ void FileParser::parseStringList(Canvas* cmcanvas, QStringList list) //rename
 
                         UIObject* b = pdParserPrevWindow->canvas->createBoxForCanvas(pdParserWindow->canvas, objData, pos);
 
-                        //IObject *b = this->createBoxForCanvas(newCanvas, objectData, pos);
+                        //IObject *b = createBoxForCanvas(newCanvas, objectData, pos);
                         ((UIBox*)b)->setSubpatchWindow((QMainWindow*)pdParserPrevWindow);
                         ((Canvas*)b)->setSubcanvas(pdParserPrevWindow->canvas);
                     }
@@ -294,20 +295,22 @@ void FileParser::parseFile(QString line)
         // todo different canvas argumentlists
 
         msg.removeFirst();
-        QPoint pos = QPoint(((QString)msg.at(0)).toInt(),((QString)msg.at(1)).toInt());
-        QSize size = QSize(((QString)msg.at(2)).toInt(),((QString)msg.at(3)).toInt());
+        QPoint pos = QPoint(((QString)msg.at(0)).toInt(), ((QString)msg.at(1)).toInt());
+        QSize size = QSize(((QString)msg.at(2)).toInt(), ((QString)msg.at(3)).toInt());
 
-        if (pos.x()>1000) pos.setX(1000);
-        if (pos.y()>500) pos.setY(500);
-        if (size.width()>1000) size.setWidth(1000);
-        if (size.height()>700) size.setHeight(700);
+        if (pos.x() > 1000)
+            pos.setX(1000);
+        if (pos.y() > 500)
+            pos.setY(500);
+        if (size.width() > 1000)
+            size.setWidth(1000);
+        if (size.height() > 700)
+            size.setHeight(700);
 
-        qDebug() <<"dim" << pos << size;
+        qDebug() << "dim" << pos << size;
 
         newWnd->setBaseSize(size);
         newWnd->move(pos);
-
-
 
         newWnd->show(); //move to constructor? check for subcanvases the vis flag
     }

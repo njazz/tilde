@@ -42,10 +42,10 @@ public:
     }
 
 private:
-    std::vector<std::string> names_; ///> ui object names
-    std::vector<std::string> pdNames_; ///> pd object names - for auto-completion
+    std::vector<std::string> _names; ///> ui object names
+    std::vector<std::string> _pdNames; ///> pd object names - for auto-completion
 
-    std::map<std::string, cmObjectConstructor> objectConstructors_;
+    std::map<std::string, cmObjectConstructor> _objectConstructors;
 
     ObjectLoader()
     {

@@ -27,24 +27,24 @@ UIScript::UIScript(UIObject* parent)
     this->setMouseTracking(true);
 
     this->deselect();
-    this->clicked_ = false;
+    this->_clicked = false;
 
     QFont font = QFont(PREF_QSTRING("Font"), 11, 0, false);
 
-    this->editor_ = new UIScriptEditor((QPlainTextEdit*)this); //weird
-    this->editor_->setFixedSize(150 - 5, 300 - 27); //setFixedSize(65-5,18);
-    this->editor_->move(2, 21);
-    this->editor_->setFont(font);
-    this->editor_->show();
-    this->editor_->setAttribute(Qt::WA_MacShowFocusRect, 0);
+    this->_editor = new UIScriptEditor((QPlainTextEdit*)this); //weird
+    this->_editor->setFixedSize(150 - 5, 300 - 27); //setFixedSize(65-5,18);
+    this->_editor->move(2, 21);
+    this->_editor->setFont(font);
+    this->_editor->show();
+    this->_editor->setAttribute(Qt::WA_MacShowFocusRect, 0);
 
     this->setFocus();
 
-    connect(this->editor_, &QPlainTextEdit::textChanged, this, &UIScript::editorChanged);
+    connect(this->_editor, &QPlainTextEdit::textChanged, this, &UIScript::editorChanged);
 
     // new python context
 
-    editor_->setContext(pyWrapper::inst().withCanvas(parent)); //(PythonQt::createUniqueModule());
+    _editor->setContext(pyWrapper::inst().withCanvas(parent)); //(PythonQt::createUniqueModule());
 
     initProperties();
 
@@ -58,7 +58,7 @@ UIScript::UIScript(UIObject* parent)
     Pal.setColor(QPalette::Base, QColor(240, 248, 255));
     setAutoFillBackground(true);
     setPalette(Pal);
-    editor_->setPalette(Pal);
+    _editor->setPalette(Pal);
 
     setBackgroundRole(QPalette::Background);
 

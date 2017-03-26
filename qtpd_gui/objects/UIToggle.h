@@ -66,34 +66,34 @@ public:
     {
         UIObject::initProperties();
 
-        this->properties()->create("Value", "Preset", "0.1", 0.);
+        properties()->create("Value", "Preset", "0.1", 0.);
     }
 
     void paintEvent(QPaintEvent*)
     {
         QPainter p(this);
 
-        if (this->value_) {
-            float lw = 2; //+this->width()/20.;
+        if (value_) {
+            float lw = 2; //+width()/20.;
             p.setPen(QPen(QColor(0, 192, 255), lw, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
-            //p.drawEllipse(QRect(1+lw/2, 1+lw/2, this->width()-2-lw,this->height()-2-lw));
-            p.drawLine(2, 2, this->width() - 2, this->height() - 2);
-            p.drawLine(this->width() - 2, 2, 2, this->height() - 2);
+            //p.drawEllipse(QRect(1+lw/2, 1+lw/2, width()-2-lw,height()-2-lw));
+            p.drawLine(2, 2, width() - 2, height() - 2);
+            p.drawLine(width() - 2, 2, 2, height() - 2);
         }
 
-        if (this->isSelected()) {
+        if (isSelected()) {
             p.setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         } else {
             p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         }
 
-        p.drawRect(0, 0, this->width(), this->height());
+        p.drawRect(0, 0, width(), height());
     }
 
     void resizeEvent(QResizeEvent* event)
     {
         UIObject::resizeEvent(event);
-        this->setFixedHeight(this->width());
+        setFixedHeight(width());
     }
 
     ///////////////////
@@ -101,40 +101,40 @@ public:
     void mousePressEvent(QMouseEvent* ev)
     {
 
-        //        if ( (this->getEditMode()==em_Unlocked) && this->isSelected())
+        //        if ( (getEditMode()==em_Unlocked) && isSelected())
         //        {
-        //            this->editor_->setText(QString(this->getObjectData().c_str()));
-        //            this->editor_->show();
-        //            this->editor_->setFocus();
+        //            editor_->setText(QString(getObjectData().c_str()));
+        //            editor_->show();
+        //            editor_->setFocus();
         //        }
-        if (this->getEditMode() == em_Unlocked)
+        if (getEditMode() == em_Unlocked)
             emit selectBox(this);
 
-        this->dragOffset = ev->pos();
+        dragOffset = ev->pos();
 
-        if (this->getEditMode() != em_Unlocked) {
-            //            this->value_ = !this->value_;
-            //            this->repaint();
+        if (getEditMode() != em_Unlocked) {
+            //            value_ = !value_;
+            //            repaint();
 
-            if (!this->pdObject()) {
+            if (!pdObject()) {
                 qDebug("msg: bad pd object!");
             } else {
                 //                //lol
-                //                cmp_sendstring((t_pd*)this->pdObject(), ((this->value_)?((std::string)"set 1").c_str():((std::string)"set 0").c_str()));
+                //                cmp_sendstring((t_pd*)pdObject(), ((value_)?((std::string)"set 1").c_str():((std::string)"set 0").c_str()));
 
-                cmp_sendstring((t_pd*)this->pdObject(), ((std::string) "bang").c_str());
+                cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
             }
         }
     }
 
     void mouseReleaseEvent(QMouseEvent*)
     {
-        //this->selected_ = false;
+        //selected_ = false;
 
-        //if (!this->getEditMode())
+        //if (!getEditMode())
         //        {
-        //            //this->clicked_ = false;
-        //            this->repaint();
+        //            //clicked_ = false;
+        //            repaint();
         //        }
     }
 
@@ -146,10 +146,10 @@ public:
         event->ignore();
 
         //todo move!
-        if (this->getEditMode() != em_Unlocked) {
-            this->setCursor(QCursor(Qt::PointingHandCursor));
+        if (getEditMode() != em_Unlocked) {
+            setCursor(QCursor(Qt::PointingHandCursor));
         } else {
-            this->setCursor(QCursor(Qt::ArrowCursor));
+            setCursor(QCursor(Qt::ArrowCursor));
         }
     }
 
@@ -157,28 +157,28 @@ public:
 
     void setPdMessage(std::string message)
     {
-        this->setObjectData(message);
+        setObjectData(message);
 
         //        QFont myFont(PREF_QSTRING("Font"), 11);
         //        QFontMetrics fm(myFont);
-        //        int new_w = fm.width(QString(this->getObjectData().c_str())) + 10;
+        //        int new_w = fm.width(QString(getObjectData().c_str())) + 10;
         //        new_w = (new_w<25) ? 25 : new_w;
-        //        this->setFixedWidth(new_w);
-        //        this->editor_->setFixedWidth(this->width()-5);
+        //        setFixedWidth(new_w);
+        //        editor_->setFixedWidth(width()-5);
 
         //        //temporary
         //        //move
-        //        if (this->getEditMode() == em_Unlocked)
+        //        if (getEditMode() == em_Unlocked)
         //        {
-        //            if (!this->getPdObject())
+        //            if (!getPdObject())
         //            {
         //                qDebug("msg: bad pd object!");
         //            }
         //            else
         //            {
 
-        //                //std::string msg = ("set "+ this->getObjectData());
-        //                //cmp_sendstring((t_pd*)this->getPdObject(), msg);
+        //                //std::string msg = ("set "+ getObjectData());
+        //                //cmp_sendstring((t_pd*)getPdObject(), msg);
         //            }
         //        }
     }
@@ -211,11 +211,11 @@ public:
     void setPdObject(void* obj)
     {
         UIObject::setPdObject(obj);
-        cmp_connectUI((t_pd*)this->pdObject(), (void*)this, &UIToggle::updateUI);
+        cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIToggle::updateUI);
     }
 
     //    std::string asPdFileString()
-    //    {return "ui.toggle "+ this->objectData();}
+    //    {return "ui.toggle "+ objectData();}
 };
 }
 

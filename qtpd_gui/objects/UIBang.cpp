@@ -15,7 +15,7 @@ UIBang::UIBang(UIObject* parent)
     this->setMouseTracking(true);
 
     this->deselect();
-    this->clicked_ = false;
+    this->_clicked = false;
 
     QPalette Pal(palette());
     Pal.setColor(QPalette::Background, QColor(240, 240, 240));
@@ -25,12 +25,12 @@ UIBang::UIBang(UIObject* parent)
     this->setMinimumBoxWidth(20);
     this->setMinimumBoxHeight(20);
 
-    this->timer_ = new QTimer;
-    this->timer_->setSingleShot(true);
-    this->timer_->setInterval(100);
+    this->_timer = new QTimer;
+    this->_timer->setSingleShot(true);
+    this->_timer->setInterval(100);
 
-    connect(this->timer_, &QTimer::timeout, this, &UIBang::timerAction);
+    connect(this->_timer, &QTimer::timeout, this, &UIBang::timerAction);
 
-    connect(this, SIGNAL(setBangTimer(int)), this->timer_, SLOT(start(int)));
+    connect(this, SIGNAL(setBangTimer(int)), this->_timer, SLOT(start(int)));
 }
 }

@@ -23,7 +23,7 @@ public:
     }
 
 private:
-    canvasData data_;
+    canvasData _data;
 
     Clipboard() {}
     //    cm_clipboard(cm_clipboard const&);

@@ -24,8 +24,8 @@ class PropertyList : public QObject {
     Q_OBJECT
 
 private:
-    UIPropertyData data_;
-    UIPropertyGroups groups_;
+    UIPropertyData _data;
+    UIPropertyGroups _groups;
 
 public:
     PropertyList(){};
@@ -33,14 +33,14 @@ public:
     UIPropertyData* group(QString grpName)
     {
         UIPropertyData* ret;
-        ret = this->groups_[grpName.toStdString()];
+        ret = this->_groups[grpName.toStdString()];
         return ret;
     }
 
     UIPropertyData* fromGroup(QString grpName)
     {
         UIPropertyData* ret;
-        ret = this->groups_[grpName.toStdString()];
+        ret = this->_groups[grpName.toStdString()];
         return ret;
     }
 
@@ -54,14 +54,14 @@ public:
         newP->set(defaultData);
         newP->setDefault();
 
-        data_[pName] = newP;
+        _data[pName] = newP;
         //fix
 
-        UIPropertyData* grp = groups_[pGroup];
+        UIPropertyData* grp = _groups[pGroup];
         if (!grp)
             grp = new UIPropertyData();
         (*grp)[pName] = newP;
-        groups_[pGroup] = grp;
+        _groups[pGroup] = grp;
 
         //qDebug() << "new property" << data_[pName]->asQString();
     }
@@ -71,8 +71,8 @@ public:
     template <typename U>
     void set(std::string pName, U value)
     {
-        if (this->data_[pName]) {
-            this->data_[pName]->set(value);
+        if (this->_data[pName]) {
+            this->_data[pName]->set(value);
             emit propertyChangedSignal(QString(pName.c_str()));
         }
     };
@@ -80,9 +80,9 @@ public:
     Property* get(std::string pName)
     {
         Property* ret = 0;
-        std::map<std::string, Property*>::iterator it = data_.find(pName);
-        if (it != data_.end())
-            ret = this->data_[pName];
+        std::map<std::string, Property*>::iterator it = _data.find(pName);
+        if (it != _data.end())
+            ret = this->_data[pName];
         return ret;
     };
 
@@ -97,7 +97,7 @@ public:
         std::string ret;
 
         UIPropertyDataIterator it;
-        for (it = this->data_.begin(); it != this->data_.end(); ++it) {
+        for (it = this->_data.begin(); it != this->_data.end(); ++it) {
             //save only modified values
             if (it->second->data() != it->second->defaultData()) {
                 ret += "@" + it->first + " ";
@@ -117,7 +117,7 @@ public:
         QStringList ret;
 
         UIPropertyDataIterator it;
-        for (it = this->data_.begin(); it != this->data_.end(); ++it) {
+        for (it = this->_data.begin(); it != this->_data.end(); ++it) {
             //save only modified values
             ret.push_back(it->first.c_str());
         }
@@ -152,7 +152,7 @@ public:
         QStringList ret;
 
         UIPropertyGroupIterator it;
-        for (it = this->groups_.begin(); it != this->groups_.end(); ++it) {
+        for (it = this->_groups.begin(); it != this->_groups.end(); ++it) {
             //save only modified values
             ret.push_back(it->first.c_str());
         }

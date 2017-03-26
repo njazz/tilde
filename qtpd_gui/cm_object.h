@@ -35,28 +35,28 @@ class UIObject : public UIWidget {
 
 private:
     //temporary?
-    void* pdObject_;
+    void* _pdObject;
 
-    portVec* inlets_;
-    portVec* outlets_;
+    portVec* _inlets;
+    portVec* _outlets;
 
-    //std::string pdObjectName_; //not to be confused with QObject objectName DEPRECATED
-    std::string objectData_; //name and arguments etc
+    // todo replace with QString in GUI part
+    std::string _objectData; //name and arguments etc
 
-    bool errorBox_;
+    bool _errorBox;
 
-    t_objectSize objectSizeMode_;
+    t_objectSize _objectSizeMode;
 
-    int minimumBoxWidth_;
-    int minimumBoxHeight_;
+    int _minimumBoxWidth;
+    int _minimumBoxHeight;
 
-    SizeBox* sizeBox;
+    SizeBox* _sizeBox;
 
-    PropertyList properties_;
+    PropertyList _properties;
 
-    QMainWindow* SubpatchWindow_;
+    QMainWindow* _SubpatchWindow;
 
-    QMenu popupMenu_;
+    QMenu _popupMenu;
 
     //
     QAction* pmProperties;
@@ -64,7 +64,7 @@ private:
     QAction* pmOpen;
 
     //
-    QString helpName_;
+    QString _helpName;
 
     //
     QString fullHelpName()
@@ -80,9 +80,6 @@ private:
 public:
     //cm_object();
     explicit UIObject(UIWidget* parent = 0);
-
-    //cm_object(std::string objectData, cm_widget *parent=0) {};
-    // static cm_object* createObject(std::string objectData, cm_widget *parent=0) {};
 
     ////
     /// \brief init properties for the class - called from constructor
@@ -297,7 +294,7 @@ public:
         QStringList paths = Preferences::inst().paths();
 
         if (paths.size() == 0) {
-            helpName_ = "";
+            _helpName = "";
             cmp_post("Help: bad search paths");
             return;
         }
@@ -313,12 +310,10 @@ public:
 
             if (check_file.exists() && check_file.isFile()) {
 
-                helpName_ = fullname;
+                _helpName = fullname;
                 qDebug() << "FOUND: " << fullname;
                 return;
             }
-
-
 
             //todo check if it exists in several folders
         }
@@ -326,14 +321,14 @@ public:
         QString p1 = "Help: not found: " + name;
         cmp_post(p1.toStdString().c_str());
     }
-    QString helpName() { return helpName_; }
+    QString helpName() { return _helpName; }
 
-    void setObjectSizeMode(t_objectSize os) { objectSizeMode_ = os; }
+    void setObjectSizeMode(t_objectSize os) { _objectSizeMode = os; }
 
 private slots:
     void openPropertiesWindow()
     {
-        PropertiesWindow* pw = new PropertiesWindow(this->properties());
+        PropertiesWindow* pw = new PropertiesWindow(properties());
         pw->show();
     }
 
@@ -354,7 +349,7 @@ public slots:
 
     void s_repaint() //needed for proper threading
     {
-        this->repaint();
+        repaint();
     }
 
     ////
@@ -366,12 +361,14 @@ public slots:
     {
         // spaghetti again
 
-        if (pname=="Size") setFixedSize(properties()->get("Size")->asQSize());
+        if (pname == "Size")
+            setFixedSize(properties()->get("Size")->asQSize());
 
         //just visuals
-        if (pname=="FontSize") repaint();
-        if (pname=="BorderColor") repaint();
-
+        if (pname == "FontSize")
+            repaint();
+        if (pname == "BorderColor")
+            repaint();
     }
 };
 }

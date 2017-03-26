@@ -8,54 +8,54 @@ namespace qtpd {
 void ObjectLoader::loadObjects()
 {
     //temporary
-    this->addUIobject("ui.obj", &UIBox::createObject);
-    this->addUIobject("ui.msg", &UIMessage::createObject);
-    this->addUIobject("ui.float", &UIFloat::createObject);
-    this->addUIobject("ui.text", &UIText::createObject);
+    addUIobject("ui.obj", &UIBox::createObject);
+    addUIobject("ui.msg", &UIMessage::createObject);
+    addUIobject("ui.float", &UIFloat::createObject);
+    addUIobject("ui.text", &UIText::createObject);
 
-    this->addUIobject("ui.bang", &UIBang::createObject);
-    this->addUIobject("ui.toggle", &UIToggle::createObject);
+    addUIobject("ui.bang", &UIBang::createObject);
+    addUIobject("ui.toggle", &UIToggle::createObject);
 
-    this->addUIobject("ui.script", &UIScript::createObject);
+    addUIobject("ui.script", &UIScript::createObject);
 
-    this->addUIobject("ui.array", &UIArray::createObject);
+    addUIobject("ui.array", &UIArray::createObject);
 }
 
 void ObjectLoader::addUIobject(std::string name, cmObjectConstructor constructor)
 {
-    names_.push_back(name);
-    objectConstructors_[name] = constructor;
+    _names.push_back(name);
+    _objectConstructors[name] = constructor;
 }
 
 std::vector<std::string> ObjectLoader::getUINames()
 {
-    return this->names_;
+    return _names;
 }
 
 std::vector<std::string> ObjectLoader::getPDNames()
 {
-    return this->pdNames_;
+    return _pdNames;
 }
 
 bool ObjectLoader::hasUI(std::string objName)
 {
-    return std::find(names_.begin(), names_.end(), objName) != names_.end();
+    return std::find(_names.begin(), _names.end(), objName) != _names.end();
 }
 
 // todo remove?
 cmObjectConstructor ObjectLoader::getConstructorFor(std::string objName)
 {
-    if (this->hasUI(objName)) {
-        return objectConstructors_[objName];
+    if (hasUI(objName)) {
+        return _objectConstructors[objName];
     }
 
-    return objectConstructors_["ui.obj"];
+    return _objectConstructors["ui.obj"];
 }
 
 UIObject* ObjectLoader::createObject(std::string objName, std::string objectData, t_canvas* pdCanvas, UIWidget* parent)
 {
 
-    cmObjectConstructor cmc = this->getConstructorFor(objName);
+    cmObjectConstructor cmc = getConstructorFor(objName);
 
     if (cmc == getConstructorFor("ui.obj"))
         objectData = objName + " " + objectData;

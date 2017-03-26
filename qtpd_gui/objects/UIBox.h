@@ -28,11 +28,9 @@ class UIBox : public UIObject {
     Q_OBJECT
 
 private:
-    //QLineEdit* editor_;
-
     // for abstracions
-    bool isAbstraction_;
-    QString abstractionPath_;
+    bool _isAbstraction;
+    QString _abstractionPath;
 
 public:
     explicit UIBox(UIObject* parent = 0);
@@ -45,8 +43,6 @@ public:
 
         UIBox* b = new UIBox((UIObject*)parent);
 
-
-
         //truncate "ui.obj". todo cleanup
         QStringList list = QString(objectData.c_str()).split(" ");
         list.removeAt(0);
@@ -55,7 +51,7 @@ public:
         std::string data1 = b->properties()->extractFromPdFileString(obj_name); //test
 
         // todo cleanup
-        const char* obj_name2 = data1.c_str();//(QString(data1.c_str()).split(" ").at(0)).toStdString().c_str();
+        const char* obj_name2 = data1.c_str(); //(QString(data1.c_str()).split(" ").at(0)).toStdString().c_str();
 
         // fix size changes
         b->setObjectData(data1);
@@ -81,13 +77,13 @@ public:
 
             b->setPdObject(new_obj);
 
-            b->isAbstraction_ = cmp_is_abstraction(new_obj);
-            qDebug() << "*** is abstraction: " << b->isAbstraction_;
+            b->_isAbstraction = cmp_is_abstraction(new_obj);
+            qDebug() << "*** is abstraction: " << b->_isAbstraction;
 
             // todo different help symbols
             b->setHelpName(list.at(0) + "-help.pd");
 
-            if (b->isAbstraction_) {
+            if (b->_isAbstraction) {
                 t_symbol* s = cmp_get_path((t_canvas*)new_obj);
 
                 // todo
@@ -95,9 +91,9 @@ public:
                 QString pdName = l.at(1); //assuming there always is a name when abstraction is created
 
                 // todo windows
-                b->abstractionPath_ = QString(s->s_name) + "/" + pdName + ".pd";
+                b->_abstractionPath = QString(s->s_name) + "/" + pdName + ".pd";
 
-                qDebug() << b->abstractionPath_;
+                qDebug() << b->_abstractionPath;
             }
 
         } else {
@@ -122,27 +118,27 @@ public:
     {
         QPainter p(this);
         p.setRenderHint(QPainter::HighQualityAntialiasing, true);
-        p.scale(this->scale(), this->scale());
+        p.scale(scale(), scale());
 
         //remove this later
-        if (this->subpatchWindow()) {
+        if (subpatchWindow()) {
             p.setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-            p.drawRect(0, 2, this->width(), this->height() - 4);
+            p.drawRect(0, 2, width(), height() - 4);
         }
 
-        QColor rectColor = (this->errorBox()) ? QColor(255, 0, 0) : properties()->get("BorderColor")->asQColor(); //QColor(128, 128, 128);
-        p.setPen(QPen(rectColor, 2 + isAbstraction_, (this->errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-        p.drawRect(0, 0, this->width(), this->height());
+        QColor rectColor = (errorBox()) ? QColor(255, 0, 0) : properties()->get("BorderColor")->asQColor(); //QColor(128, 128, 128);
+        p.setPen(QPen(rectColor, 2 + _isAbstraction, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p.drawRect(0, 0, width(), height());
         QTextOption* op = new QTextOption;
         op->setAlignment(Qt::AlignLeft);
         p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
         p.setFont(QFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize(), 0, false));
-        p.drawText(2, 3, this->width() - 2, this->height() - 3, 0, this->objectData().c_str(), 0);
+        p.drawText(2, 3, width() - 2, height() - 3, 0, objectData().c_str(), 0);
 
-        if (this->isSelected()) {
-            p.setPen(QPen(QColor(0, 192, 255), 2, (this->errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-            p.drawRect(0, 0, this->width(), this->height());
+        if (isSelected()) {
+            p.setPen(QPen(QColor(0, 192, 255), 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p.drawRect(0, 0, width(), height());
         }
     }
 
@@ -161,30 +157,30 @@ public:
         }
 
         //open canvas for subpatch
-        if (this->getEditMode() != em_Unlocked) {
-            if (this->subpatchWindow()) {
-                this->subpatchWindow()->show();
+        if (getEditMode() != em_Unlocked) {
+            if (subpatchWindow()) {
+                subpatchWindow()->show();
             }
         }
 
         //abstraction opening. Fix
-        if (this->getEditMode() != em_Unlocked) {
-            if (isAbstraction_) {
-                OpenFileProxy::openAbstraction(abstractionPath_);
+        if (getEditMode() != em_Unlocked) {
+            if (_isAbstraction) {
+                OpenFileProxy::openAbstraction(_abstractionPath);
             }
         }
 
-        if ((this->getEditMode() == em_Unlocked) && this->isSelected()) {
-            //            this->editor_->setText(QString(this->objectData().c_str()));
-            //            this->editor_->show();
-            //            this->editor_->setFocus();
+        if ((getEditMode() == em_Unlocked) && isSelected()) {
+            //            editor_->setText(QString(objectData().c_str()));
+            //            editor_->show();
+            //            editor_->setFocus();
 
             emit editObject(this);
             return;
         }
 
         emit selectBox(this);
-        this->dragOffset = ev->pos();
+        dragOffset = ev->pos();
     }
 
     ////
@@ -192,7 +188,7 @@ public:
     ///
     void mouseReleaseEvent(QMouseEvent*)
     {
-        this->repaint();
+        repaint();
     }
 
     ////
@@ -206,42 +202,36 @@ public:
         }
         event->ignore();
 
-        if ((this->getEditMode() != em_Unlocked) && (this->subpatchWindow())) {
-            this->setCursor(QCursor(Qt::PointingHandCursor));
+        if ((getEditMode() != em_Unlocked) && (subpatchWindow())) {
+            setCursor(QCursor(Qt::PointingHandCursor));
         } else {
-            this->setCursor(QCursor(Qt::ArrowCursor));
+            setCursor(QCursor(Qt::ArrowCursor));
         }
     }
 
     void setPdMessage(std::string message)
     {
-        this->setObjectData(message);
-        this->autoResize();
+        setObjectData(message);
+        autoResize();
 
         QFont myFont(PREF_QSTRING("Font"), 11);
         QFontMetrics fm(myFont);
-        int new_w = fm.width(QString(this->objectData().c_str())) + 10;
+        int new_w = fm.width(QString(objectData().c_str())) + 10;
         new_w = (new_w < 25) ? 25 : new_w;
-        this->setFixedWidth(new_w);
-        //this->editor_->setFixedWidth(this->width() - 5);
+        setFixedWidth(new_w);
+        //editor_->setFixedWidth(width() - 5);
 
         //todo: del object and create new + patchcords
 
         //
-        this->setInletsPos();
-        this->setOutletsPos();
+        setInletsPos();
+        setOutletsPos();
     }
 
 signals:
 
     void mouseMoved();
     void rightClicked();
-
-    //void editObject(UIObject* box);
-
-private slots:
-    //    void editorDone();
-    //    void editorChanged();
 };
 }
 

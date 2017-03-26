@@ -20,11 +20,9 @@ class UIText : public UIObject {
     Q_OBJECT
 
 private:
-    bool clicked_;
-
-    QPlainTextEdit* editor_;
-
-    QString objectText_;
+    bool _clicked;
+    QPlainTextEdit* _editor;
+    QString _objectText;
 
 public:
     explicit UIText(UIObject* parent = 0);
@@ -39,12 +37,12 @@ public:
 
         // the zoo lol
         QString data = b->properties()->get("Text")->asQString().split("\\n ").join("\n");
-        b->editor_->document()->setPlainText(data);
+        b->_editor->document()->setPlainText(data);
 
-        b->objectText_ = data;
+        b->_objectText = data;
 
         int fontSize = b->properties()->get("FontSize")->asQString().toInt();
-        b->editor_->setFont(QFont(PREF_QSTRING("Font"), fontSize, 0, false));
+        b->_editor->setFont(QFont(PREF_QSTRING("Font"), fontSize, 0, false));
 
         b->autoResize();
         return (UIObject*)b;
@@ -54,16 +52,16 @@ public:
     {
         QPainter p(this);
 
-        if (this->getEditMode() == em_Unlocked) {
-            if (this->isSelected()) {
+        if (getEditMode() == em_Unlocked) {
+            if (isSelected()) {
                 p.setPen(QPen(QColor(0, 192, 255), 2, Qt::DotLine, Qt::SquareCap, Qt::BevelJoin));
-            } else if (this->clicked_) {
+            } else if (_clicked) {
                 p.setPen(QPen(QColor(0, 192, 255), 4, Qt::DotLine, Qt::RoundCap, Qt::RoundJoin));
             } else {
                 p.setPen(QPen(QColor(128, 128, 128), 2, Qt::DotLine, Qt::SquareCap, Qt::BevelJoin));
             }
 
-            p.drawRect(0, 0, this->width(), this->height());
+            p.drawRect(0, 0, width(), height());
             //p.drawPolygon(poly);
         }
 
@@ -73,7 +71,7 @@ public:
 
         int fontSize = properties()->get("FontSize")->asQString().toInt();
         p.setFont(QFont(PREF_QSTRING("Font"), fontSize, 0, false));
-        p.drawText(2, 3, this->width() - 2, this->height() - 3, 0, objectText_, 0);
+        p.drawText(2, 3, width() - 2, height() - 3, 0, _objectText, 0);
     }
 
     //////////
@@ -83,7 +81,7 @@ public:
         UIObject::initProperties();
         QStringList list;
 
-        this->properties()->create("Text", "Data", "0.1", list);
+        properties()->create("Text", "Data", "0.1", list);
     };
 
     ///////////////////
@@ -91,19 +89,19 @@ public:
     void mousePressEvent(QMouseEvent* ev)
     {
 
-        if ((this->getEditMode() == em_Unlocked) && this->isSelected()) {
+        if ((getEditMode() == em_Unlocked) && isSelected()) {
 
-            this->editor_->document()->setPlainText(QString(this->objectData().c_str()));
-            this->editor_->show();
-            this->editor_->setFocus();
+            _editor->document()->setPlainText(QString(objectData().c_str()));
+            _editor->show();
+            _editor->setFocus();
         }
 
         emit selectBox(this);
-        this->dragOffset = ev->pos();
+        dragOffset = ev->pos();
 
-        if (!(this->getEditMode() == em_Unlocked)) {
-            this->clicked_ = true;
-            this->repaint();
+        if (!(getEditMode() == em_Unlocked)) {
+            _clicked = true;
+            repaint();
 
             //todo timer
         }
@@ -111,12 +109,12 @@ public:
 
     void mouseReleaseEvent(QMouseEvent*)
     {
-        //this->selected_ = false;
+        //selected_ = false;
 
-        //if (!this->getEditMode())
+        //if (!getEditMode())
         //{
-        this->clicked_ = false;
-        this->repaint();
+        _clicked = false;
+        repaint();
         //}
     }
 
@@ -128,13 +126,12 @@ public:
         event->ignore();
 
         //todo move!
-        if (this->getEditMode() != em_Unlocked) {
-            this->setCursor(QCursor(Qt::PointingHandCursor));
+        if (getEditMode() != em_Unlocked) {
+            setCursor(QCursor(Qt::PointingHandCursor));
         } else {
-            this->setCursor(QCursor(Qt::ArrowCursor));
+            setCursor(QCursor(Qt::ArrowCursor));
         }
     }
-
 
     void autoResize()
     {
@@ -143,51 +140,49 @@ public:
         QFont myFont(PREF_QSTRING("Font"), fontSize);
         QFontMetrics fm(myFont);
 
-        this->setFixedWidth((int)fm.width(objectText_) + 5);
-        if (this->width() < this->minimumBoxWidth())
-            this->setFixedWidth(this->minimumBoxWidth());
+        setFixedWidth((int)fm.width(_objectText) + 5);
+        if (width() < minimumBoxWidth())
+            setFixedWidth(minimumBoxWidth());
 
         //duplicate?
-        int new_w = fm.width(objectText_) + 20;
+        int new_w = fm.width(_objectText) + 20;
         new_w = (new_w < 25) ? 25 : new_w;
 
-        int new_h = fm.boundingRect(QRect(0, 0, new_w, 100), 0, objectText_).height() + 7;
+        int new_h = fm.boundingRect(QRect(0, 0, new_w, 100), 0, _objectText).height() + 7;
 
         new_h = (new_h < 25) ? 25 : new_h;
 
-        this->setFixedWidth(new_w);
-        this->setFixedHeight(new_h);
+        setFixedWidth(new_w);
+        setFixedHeight(new_h);
     }
 
     ///////
 
     void setPdMessage(std::string message)
     {
-        this->setObjectData("ui.text");
+        setObjectData("ui.text");
 
         //TODO temporary fix!
         QString msg = QString(message.c_str());
         QStringList list = msg.split("\n");
-        for (int i=0;i<list.size();i++)
-        {
-            list[i] = list[i]+"\\n";
+        for (int i = 0; i < list.size(); i++) {
+            list[i] = list[i] + "\\n";
         }
         properties()->set("Text", list);
 
         QString data = properties()->get("Text")->asQString().split("\\n ").join("\n");
 
-        objectText_ = data;
+        _objectText = data;
 
-
-        //this->autoResize();
+        //autoResize();
 
         //auto-resize moved here
         autoResize();
 
-        this->editor_->setFixedWidth(this->width() - 1);
-        this->editor_->setFixedHeight(this->height() - 2);
+        _editor->setFixedWidth(width() - 1);
+        _editor->setFixedHeight(height() - 2);
 
-        this->editor_->hide();
+        _editor->hide();
     }
 
     static void updateUI(void* uiobj, ceammc::AtomList msg)
@@ -210,11 +205,11 @@ public:
     //    void setPdObject(void *obj)
     //    {
     //        cm_object::setPdObject(obj);
-    //        //cmp_connectUI((t_pd*)this->getPdObject(), (void*)this, &cmo_text::updateUI);
+    //        //cmp_connectUI((t_pd*)getPdObject(), (void*)this, &cmo_text::updateUI);
     //    }
 
     //    std::string asPdFileString()
-    //    {return "ui.text "+ this->objectData();}
+    //    {return "ui.text "+ objectData();}
 
     void* pdObject()
     {
@@ -228,7 +223,7 @@ public:
             QKeyEvent* keyEvent = static_cast<QKeyEvent*>(event);
 
             if ((keyEvent->key() == Qt::Key_Return) && (keyEvent->modifiers() == Qt::ShiftModifier)) {
-                this->editorDone();
+                editorDone();
                 return true;
             }
         }
@@ -238,7 +233,7 @@ public:
 
     QStringList getEditorData()
     {
-        return editor_->document()->toPlainText().split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
+        return _editor->document()->toPlainText().split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
     }
 
 signals:

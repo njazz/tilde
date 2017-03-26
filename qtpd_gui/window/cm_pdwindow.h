@@ -16,30 +16,25 @@ namespace Ui {
 class cm_pdwindow;
 }
 
-namespace qtpd
-{
+namespace qtpd {
 ////
 /// \brief Pd console window
 ///
-class PdWindow : public BaseWindow
-{
+class PdWindow : public BaseWindow {
     Q_OBJECT
 
 private:
-    Ui::cm_pdwindow *ui;
+    Ui::cm_pdwindow* ui;
 
 public:
     PdWindow();
 
     void cm_log(std::string text);
     void cm_post(std::string text);
-
-
 };
 
 //fix - normal singleton here
 static PdWindow* pdw;
-
 }
 
 #endif // CM_PDWINDOW_H

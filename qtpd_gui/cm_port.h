@@ -21,7 +21,7 @@ class Port : public UIWidget {
     Q_OBJECT
 
 private:
-    bool hover;
+    bool _hover;
 
 public:
     int portIndex;
@@ -36,35 +36,35 @@ public:
         QPainter p(this);
 
         //p.setRenderHint(QPainter::SmoothPixmapTransform,true);
-        if (this->portClass)
-            p.fillRect(0, 0, this->width(), this->height(), QColor(128, 160, 192));
+        if (portClass)
+            p.fillRect(0, 0, width(), height(), QColor(128, 160, 192));
         //    else
         //{
         p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
-        p.drawRect(0, 0, this->width(), this->height());
+        p.drawRect(0, 0, width(), height());
         //}
 
-        if (this->hover) {
+        if (_hover) {
             p.setPen(QPen(QColor(255, 128, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-            p.drawRect(0, 0, this->width(), this->height());
+            p.drawRect(0, 0, width(), height());
         }
     }
 
     void enterEvent(QEvent*)
     {
-        if (this->getEditMode() == em_Unlocked) {
-            this->hover = true;
-            this->repaint();
+        if (getEditMode() == em_Unlocked) {
+            _hover = true;
+            repaint();
 
             emit mouseEntered();
         }
     }
     void leaveEvent(QEvent*)
     {
-        if (this->getEditMode() == em_Unlocked) {
-            this->hover = false;
-            this->repaint();
+        if (getEditMode() == em_Unlocked) {
+            _hover = false;
+            repaint();
 
             emit mouseLeaved();
         }
@@ -72,7 +72,7 @@ public:
 
     void mousePressEvent(QMouseEvent* ev)
     {
-        if (this->getEditMode() == em_Unlocked) {
+        if (getEditMode() == em_Unlocked) {
 
             emit mousePressed(this, ev);
         }
@@ -80,7 +80,7 @@ public:
 
     void mouseReleaseEvent(QMouseEvent* ev)
     {
-        if (this->getEditMode() == em_Unlocked) {
+        if (getEditMode() == em_Unlocked) {
             emit mouseReleased(this, ev);
         }
     }

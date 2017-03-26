@@ -40,7 +40,7 @@ int main(int argc, char* argv[])
     QTPD_PREF_INIT;
 
     //python
-    PythonQt::init( PythonQt::RedirectStdOut); //PythonQt::IgnoreSiteModule |
+    PythonQt::init(PythonQt::RedirectStdOut); //PythonQt::IgnoreSiteModule |
     PythonQt_QtAll::init();
 
     ObjectLoader::inst().loadObjects();
@@ -61,15 +61,15 @@ int main(int argc, char* argv[])
 
     //temporary folders properties
 
-    QString docFolder = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).last() ;
+    QString docFolder = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).last();
 
     // load from file later
-    Preferences::inst().create("Externals","Folders","0.1",docFolder+"/Qtpd/Externals");
-    Preferences::inst().create("Scripts","Folders","0.1",docFolder+"/Qtpd/Scripts");
+    Preferences::inst().create("Externals", "Folders", "0.1", docFolder + "/Qtpd/Externals");
+    Preferences::inst().create("Scripts", "Folders", "0.1", docFolder + "/Qtpd/Scripts");
 
     //test
     //fix
-    Preferences::inst().create("Paths","Folders","0.1",docFolder);
+    Preferences::inst().create("Paths", "Folders", "0.1", docFolder);
 
     std::string extPath = Preferences::inst().get("Externals")->asStdString();
     std::string extPath1 = extPath + "/ceammc";
@@ -86,7 +86,6 @@ int main(int argc, char* argv[])
 
     //init python
     pyWrapper::inst();
-
 
     return a.exec();
 }
