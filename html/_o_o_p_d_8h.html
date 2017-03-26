@@ -80,6 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
 <a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">/home/travis/build/njazz/qtpd/qtpd_gui/oopd/OOPD.h File Reference</div>  </div>
@@ -87,77 +88,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><code>#include &quot;m_pd.h&quot;</code><br/>
 <code>#include &lt;map&gt;</code><br/>
+<code>#include &quot;../qtpd_lib/ceammc-lib/ceammc_atomlist.h&quot;</code><br/>
 </div>
 <p><a href="_o_o_p_d_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_p_class.html">OPClass</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_p_instance.html">OPInstance</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_o_p_d_class_base.html">qtpd::OOPDClassBase</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">base data structure for class and instance: name, canvas, symbol  <a href="classqtpd_1_1_o_o_p_d_class_base.html#details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_o_p_d.html">qtpd::OOPD</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">stores global information about <a class="el" href="classqtpd_1_1_o_o_p_d.html" title="stores global information about OOPD classes / instances">OOPD</a> classes / instances  <a href="classqtpd_1_1_o_o_p_d.html#details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_p_class.html">qtpd::OPClass</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classqtpd_1_1_o_o_p_d.html" title="stores global information about OOPD classes / instances">OOPD</a> class structure.  <a href="classqtpd_1_1_o_p_class.html#details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_p_instance.html">qtpd::OPInstance</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classqtpd_1_1_o_o_p_d.html" title="stores global information about OOPD classes / instances">OOPD</a> class instance.  <a href="classqtpd_1_1_o_p_instance.html#details">More...</a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html">qtpd</a></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef map&lt; t_canvas <br class="typebreak"/>
-*, <a class="el" href="class_o_p_class.html">OPClass</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_o_p_d_8h.html#a2b50754a21067f1156b602178944b389">t_OPClassByCanvas</a></td></tr>
+*, OPClass * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#ae1bb6144c86ba121974062498a819dff">qtpd::t_OPClassByCanvas</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef map&lt; t_symbol <br class="typebreak"/>
-*, <a class="el" href="class_o_p_class.html">OPClass</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_o_p_d_8h.html#a650b78e925f1a2576ec1328ec42f4743">t_OPClassBySymbol</a></td></tr>
+*, OPClass * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#ae655d4b5a6074ae9e445388fc6475cb4">qtpd::t_OPClassBySymbol</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef map&lt; t_canvas <br class="typebreak"/>
-*, <a class="el" href="class_o_p_instance.html">OPInstance</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_o_p_d_8h.html#ab8dddb75e59e5548f009bf1419a98f03">t_OPInstanceByCanvas</a></td></tr>
+*, OPInstance * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a025e76387ae74b63edc7ea6817bac812">qtpd::t_OPInstanceByCanvas</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef map&lt; t_symbol <br class="typebreak"/>
-*, <a class="el" href="class_o_p_instance.html">OPInstance</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_o_p_d_8h.html#aa05b7d0bd83314f2a54bbd073e6b742a">t_OPInstanceBySymbol</a></td></tr>
+*, OPInstance * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a8b096c75321d4dbbfe8fd1047ec14989">qtpd::t_OPInstanceBySymbol</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef vector&lt; t_outlet * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a5d2e61cbafa4bdbe8f66e8d68e0c6fd5">qtpd::OPOutputs</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">vector of method boxes outputs  <a href="#a5d2e61cbafa4bdbe8f66e8d68e0c6fd5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef vector&lt; t_object * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#aa9aca465cf2384a299548554a5ae3c6d">qtpd::OPProperties</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">vector of property boxes  <a href="#aa9aca465cf2384a299548554a5ae3c6d"></a><br/></td></tr>
 </table>
-<hr/><h2>Typedef Documentation</h2>
-<a class="anchor" id="a2b50754a21067f1156b602178944b389"></a><!-- doxytag: member="OOPD.h::t_OPClassByCanvas" ref="a2b50754a21067f1156b602178944b389" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef map&lt;t_canvas*, <a class="el" href="class_o_p_class.html">OPClass</a>*&gt; <a class="el" href="_o_o_p_d_8h.html#a2b50754a21067f1156b602178944b389">t_OPClassByCanvas</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a650b78e925f1a2576ec1328ec42f4743"></a><!-- doxytag: member="OOPD.h::t_OPClassBySymbol" ref="a650b78e925f1a2576ec1328ec42f4743" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef map&lt;t_symbol*, <a class="el" href="class_o_p_class.html">OPClass</a>*&gt; <a class="el" href="_o_o_p_d_8h.html#a650b78e925f1a2576ec1328ec42f4743">t_OPClassBySymbol</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ab8dddb75e59e5548f009bf1419a98f03"></a><!-- doxytag: member="OOPD.h::t_OPInstanceByCanvas" ref="ab8dddb75e59e5548f009bf1419a98f03" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef map&lt;t_canvas*, <a class="el" href="class_o_p_instance.html">OPInstance</a>*&gt; <a class="el" href="_o_o_p_d_8h.html#ab8dddb75e59e5548f009bf1419a98f03">t_OPInstanceByCanvas</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="aa05b7d0bd83314f2a54bbd073e6b742a"></a><!-- doxytag: member="OOPD.h::t_OPInstanceBySymbol" ref="aa05b7d0bd83314f2a54bbd073e6b742a" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef map&lt;t_symbol*, <a class="el" href="class_o_p_instance.html">OPInstance</a>*&gt; <a class="el" href="_o_o_p_d_8h.html#aa05b7d0bd83314f2a54bbd073e6b742a">t_OPInstanceBySymbol</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -176,7 +138,7 @@ Typedefs</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Mar 25 2017 22:01:33 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 26 2017 08:42:53 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

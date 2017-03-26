@@ -12,6 +12,7 @@ var searchData=
   ['uiarray',['UIArray',['../classqtpd_1_1_u_i_array.html',1,'qtpd']]],
   ['uibang',['UIBang',['../classqtpd_1_1_u_i_bang.html',1,'qtpd']]],
   ['uibox',['UIBox',['../classqtpd_1_1_u_i_box.html',1,'qtpd']]],
+  ['uiclass',['UIClass',['../classqtpd_1_1_u_i_class.html',1,'qtpd']]],
   ['uielement',['UIElement',['../classceammc_1_1faust_1_1_u_i_element.html',1,'ceammc::faust']]],
   ['uifloat',['UIFloat',['../classqtpd_1_1_u_i_float.html',1,'qtpd']]],
   ['uimessage',['UIMessage',['../classqtpd_1_1_u_i_message.html',1,'qtpd']]],

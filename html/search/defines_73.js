@@ -58,10 +58,10 @@ var searchData=
   ['store_5fname',['STORE_NAME',['../opcode_8h.html#a24583012e5ce5844db79b44835254c5a',1,'opcode.h']]],
   ['store_5fslice',['STORE_SLICE',['../opcode_8h.html#a1ab1cf75156ff9f50cbbd11bc8b34e63',1,'opcode.h']]],
   ['store_5fsubscr',['STORE_SUBSCR',['../opcode_8h.html#a6f93980a29fedcbaa9b008977776dfa9',1,'opcode.h']]],
-  ['str',['STR',['../node_8h.html#aa039726a60de283dd121a4a761266ac2',1,'STR():&#160;node.h'],['../_python-ast_8h.html#a2b805f698f55c2006bea5dfbc0c582bd',1,'Str():&#160;Python-ast.h']]],
+  ['str',['Str',['../_python-ast_8h.html#a2b805f698f55c2006bea5dfbc0c582bd',1,'Str():&#160;Python-ast.h'],['../node_8h.html#aa039726a60de283dd121a4a761266ac2',1,'STR():&#160;node.h']]],
   ['string',['STRING',['../token_8h.html#a0f4d394a3ab4e09bff60f714c66dc5ee',1,'token.h']]],
   ['subscript',['subscript',['../graminit_8h.html#a4b168eba2f746800b94e9d155c370e4e',1,'subscript():&#160;graminit.h'],['../_python-ast_8h.html#a49a0a37e937fc34b38da7b8eef6c6ea9',1,'Subscript():&#160;Python-ast.h']]],
   ['subscriptlist',['subscriptlist',['../graminit_8h.html#abb7990996037db6acfdb805217a4ec92',1,'graminit.h']]],
-  ['suite',['Suite',['../_python-ast_8h.html#a0463d5ea08f733cdcfa44c9dcaa9b3ed',1,'Suite():&#160;Python-ast.h'],['../graminit_8h.html#ad7554b67e5386dc7dca5948e5a6a983a',1,'suite():&#160;graminit.h']]],
+  ['suite',['suite',['../graminit_8h.html#ad7554b67e5386dc7dca5948e5a6a983a',1,'suite():&#160;graminit.h'],['../_python-ast_8h.html#a0463d5ea08f733cdcfa44c9dcaa9b3ed',1,'Suite():&#160;Python-ast.h']]],
   ['sys_5fselect_5fwith_5fsys_5ftime',['SYS_SELECT_WITH_SYS_TIME',['../pyconfig_8h.html#a34294c82944fd63b3dc782a5f7f7fe78',1,'pyconfig.h']]]
 ];

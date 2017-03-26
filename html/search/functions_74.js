@@ -13,6 +13,7 @@ var searchData=
   ['to_5fstring',['to_string',['../namespaceceammc.html#a8f97ae1f7a5fa2bfb657d5c5a37ad31d',1,'ceammc::to_string(const Atom &amp;a)'],['../namespaceceammc.html#a486044b6c9a5726ab9433a7ea017a1c2',1,'ceammc::to_string(const AtomList &amp;a, const std::string &amp;separator)'],['../namespaceceammc.html#a7e862840093f77e6eb64228d9e6a1bcf',1,'ceammc::to_string(const Message &amp;msg, const std::string &amp;separator)'],['../ui__bpfunc_8cpp.html#a3a3e9d4cf73114c8e5198225ca65269e',1,'to_string():&#160;ui_bpfunc.cpp']]],
   ['top',['top',['../structui__slider2d.html#a34f90c01d2a0eb2ecf3e5f771fddd76c',1,'ui_slider2d']]],
   ['topddata',['toPdData',['../classceammc_1_1_atom_list.html#ac7c328692c6caab66d1320207e8a1cfb',1,'ceammc::AtomList']]],
+  ['tosymbol',['toSymbol',['../classqtpd_1_1_o_p_instance.html#a791108546e906618f7054e479db5afc0',1,'qtpd::OPInstance']]],
   ['tr',['tr',['../class_python_qt_std_decorators.html#a49aedf38c6db60af2138b09acae00c9d',1,'PythonQtStdDecorators']]],
   ['trackobj_5fconvert',['TrackObj_Convert',['../pymactoolbox_8h.html#a413b5b30ac946c4fca8e53c0f0703a4f',1,'pymactoolbox.h']]],
   ['trackobj_5fnew',['TrackObj_New',['../pymactoolbox_8h.html#a72b2ac9d90e871b729427cd3c03c716a',1,'pymactoolbox.h']]],

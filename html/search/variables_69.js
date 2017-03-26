@@ -24,7 +24,7 @@ var searchData=
   ['index',['Index',['../struct__slice.html#a9fe8f78ccae30cd4575987c43761034f',1,'_slice::Index()'],['../abstract_8h.html#aed9361a6a6957b25e08992d6392020a4',1,'index():&#160;abstract.h']]],
   ['indices',['indices',['../abstract_8h.html#afd3ad3f4c7aa3c20632acd51cb8b32f4',1,'abstract.h']]],
   ['initfunc',['initfunc',['../struct__inittab.html#ac3d068d6f51708f6aec1e6c5f7765087',1,'_inittab::initfunc()'],['../import_8h.html#a33b8d41a91294059026f01ffa33c5be3',1,'initfunc():&#160;import.h']]],
-  ['inlets_5f',['inlets_',['../classqtpd_1_1canvas_data_plus.html#a6001a58b9310bd4ae764dfc5349b2fde',1,'qtpd::canvasDataPlus']]],
+  ['inlets',['inlets',['../classqtpd_1_1canvas_data_plus.html#aabcdf92ae0a2662dd7db2ed9ba2c74e5',1,'qtpd::canvasDataPlus']]],
   ['innername',['innerName',['../struct_python_qt_method_info_1_1_parameter_info.html#aa7d0fb259723abf060789207639f67b8',1,'PythonQtMethodInfo::ParameterInfo']]],
   ['innernamepointercount',['innerNamePointerCount',['../struct_python_qt_method_info_1_1_parameter_info.html#a59b54cc4929958d7957b3c86401352a2',1,'PythonQtMethodInfo::ParameterInfo']]],
   ['input',['input',['../structui__spectroscope.html#a1cc73e1ce10797eb65a5201716e866cd',1,'ui_spectroscope']]],

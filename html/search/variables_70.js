@@ -1,13 +1,12 @@
 var searchData=
 [
   ['p',['p',['../floatobject_8h.html#af18a92ce774f4c499544fbcc894db7e8',1,'floatobject.h']]],
-  ['parent',['parent',['../class_o_p_instance.html#ae19e91b4fdfcb60735547cdd625419a9',1,'OPInstance']]],
   ['parse',['Parse',['../struct_py_expat___c_a_p_i.html#ac793a7d5e10cac68e717f3eede09ba3f',1,'PyExpat_CAPI']]],
   ['parsercreate_5fmm',['ParserCreate_MM',['../struct_py_expat___c_a_p_i.html#a99869c8f81a47e674e5eb78238d3db46',1,'PyExpat_CAPI']]],
   ['parserfree',['ParserFree',['../struct_py_expat___c_a_p_i.html#ab68dfc7c9eb26d77d8a084f47057f97d',1,'PyExpat_CAPI']]],
   ['passownershiptocpp',['passOwnershipToCPP',['../struct_python_qt_method_info_1_1_parameter_info.html#a04a4c224f50440782f1d2e68c6339455',1,'PythonQtMethodInfo::ParameterInfo']]],
   ['passownershiptopython',['passOwnershipToPython',['../struct_python_qt_method_info_1_1_parameter_info.html#a2ad8c1715768c8ef2e415c03b110296b',1,'PythonQtMethodInfo::ParameterInfo']]],
-  ['patchcords_5f',['patchcords_',['../classqtpd_1_1canvas_data.html#a8929b48b64e4389ccdb4549c12d25a67',1,'qtpd::canvasData']]],
+  ['patchcords',['patchcords',['../classqtpd_1_1canvas_data.html#a8a7cfc7fde43042ed04c777626c390ea',1,'qtpd::canvasData']]],
   ['pathname',['pathname',['../import_8h.html#af4edaaa7b37b1645803b034c0a30481d',1,'import.h']]],
   ['pd_5fclass',['pd_class',['../classceammc__gui_1_1_gui_factory.html#ad6f0cf75dbc36cd3edb2b155f1735561',1,'ceammc_gui::GuiFactory']]],
   ['pd_5fobj',['pd_obj',['../structceammc_1_1_pd_object.html#ab610959fee0c869d889ec5600b852193',1,'ceammc::PdObject']]],
