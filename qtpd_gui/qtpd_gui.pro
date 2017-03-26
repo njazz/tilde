@@ -55,7 +55,8 @@ SOURCES += main.cpp\
     objects/UIMessage.cpp \
     objects/UIToggle.cpp \
     objects/UIText.cpp \
-    objects/UIScript.cpp
+    objects/UIScript.cpp \
+    oopd/UIClass.cpp
 
 
 HEADERS  += \
@@ -122,7 +123,8 @@ HEADERS  += \
     objects/UIBox.h \
     objects/UIMessage.h \
     #
-    oopd/OOPD.h
+    oopd/OOPD.h \
+    oopd/UIClass.h
 
 
 FORMS    += \
