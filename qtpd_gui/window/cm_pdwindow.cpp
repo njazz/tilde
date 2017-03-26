@@ -2,74 +2,61 @@
 #include "ui_cm_pdwindow.h"
 
 #include <QApplication>
-#include <QtGui>
 #include <QGridLayout>
 #include <QLabel>
+#include <QtGui>
 
-namespace qtpd
-{
+namespace qtpd {
 static std::string cm_log_string;
-
 
 void PdWindow::cm_log(std::string text)
 {
     //qDebug("cm_log %s", text.c_str());
 
     //temporary
-    if (!text.length()) return;
+    if (!text.length())
+        return;
 
+    std::string last_c = &text.at(text.length() - 1);
 
-    //if (text.length()>0)
-    {
+    if ((last_c == "\n")) {
+        cm_log_string += text;
+    }
+    if ((text == "\n") || (last_c == "\n")) {
 
-        std::string last_c = &text.at(text.length()-1);
+        ui->log->insertRow(0);
+        QTableWidgetItem* item = new QTableWidgetItem;
+        item->setFlags(item->flags() & ~Qt::ItemIsEditable);
+        item->setText(QDateTime().currentDateTime().toString((QString("hh:mm:ss"))));
+        item->setTextAlignment(Qt::AlignTop & Qt::AlignCenter);
+        ui->log->setItem(0, 0, item);
 
-        if((last_c == "\n"))
-        {
-             cm_log_string += text;
+        item = new QTableWidgetItem;
+        QString txt = QString(cm_log_string.c_str());
 
-        }
-        if ( (text == "\n") || (last_c == "\n") )
-        {
+        //remove last \n
+        if (txt.length() > 0)
+            txt.remove(txt.length() - 1, 1);
 
+        item->setText(txt);
+        ui->log->setItem(0, 1, item);
 
-            ui->log->insertRow(0);
-            QTableWidgetItem *item = new QTableWidgetItem;
-            item->setFlags(item->flags() &  ~Qt::ItemIsEditable);
-            item->setText(QDateTime().currentDateTime().toString((QString("hh:mm:ss"))));
-            ui->log->setItem(0,0,item);
-
-            item = new QTableWidgetItem;
-            item->setText(QString(cm_log_string.c_str()));
-            ui->log->setItem(0,1,item);
-
-            cm_log_string = "";
-        }
-        else
-        {
-            cm_log_string += text;
-        }
+        cm_log_string = "";
+    } else {
+        cm_log_string += text;
     }
 
-    //todo move
-
-
-    fileMenu->removeAction(saveAct);
-    fileMenu->removeAction(saveAsAct);
-
-//    else
-//        item->setText(QString(""));
-
-
+    ui->log->resizeRowsToContents();
 }
 
 void PdWindow::cm_post(std::string text)
 {
     PdWindow::cm_log(text);
     PdWindow::cm_log("\n");
-
 }
-PdWindow::PdWindow() :
+
+PdWindow::PdWindow()
+    :
 
     ui(new Ui::cm_pdwindow)
 {
@@ -78,10 +65,9 @@ PdWindow::PdWindow() :
     ((BaseWindow*)this)->createActions();
     ((BaseWindow*)this)->createMenus();
 
-
     ((QMainWindow*)this)->setWindowTitle("Pd");
 
-    QHeaderView *verticalHeader = ui->log->verticalHeader();
+    QHeaderView* verticalHeader = ui->log->verticalHeader();
     verticalHeader->setSectionResizeMode(QHeaderView::Fixed);
     verticalHeader->setDefaultSectionSize(18);
     ui->log->horizontalHeader()->setStretchLastSection(true);
@@ -90,11 +76,16 @@ PdWindow::PdWindow() :
 
     ui->log->setFont(QFont(PREF_QSTRING("Font"), 12, 0, false));
 
-    ui->log->setColumnWidth(0,70);
+    ui->log->setColumnWidth(0, 70);
 
-//    this->cm_post("qtpd started");
-//    this->cm_post("---");
-
-
+    fileMenu->removeAction(saveAct);
+    fileMenu->removeAction(saveAsAct);
 }
+
+void PdWindow::resizeEvent()
+{
+    // todo check
+    ui->log->resizeRowsToContents();
+};
+
 }

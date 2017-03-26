@@ -1,35 +1,32 @@
 #include "cm_basewindow.h"
 #include "ui_cm_basewindow.h"
 #include <QApplication>
-#include <QtGui>
 #include <QGridLayout>
 #include <QLabel>
+#include <QtGui>
 
-#include <UIBox.h>
 #include "cm_canvas.h"
+#include <UIBox.h>
 
 #include "cm_menu.h"
 
-namespace qtpd
-{
-BaseWindow::BaseWindow(QWidget *parent) :
+namespace qtpd {
+BaseWindow::BaseWindow(QWidget* parent)
+    :
 
-    QMainWindow(parent),
-
-    ui(new Ui::cm_basewindow)
+    QMainWindow(parent)
+    , ui(new Ui::cm_basewindow)
 {
     ui->setupUi(this);
 
     createActions();
     createMenus();
-
 }
 
 BaseWindow::~BaseWindow()
 {
     delete ui;
 }
-
 
 //////////////////////////////////////
 
@@ -47,7 +44,6 @@ void BaseWindow::dspOn()
 {
     cmp_switch_dsp(true);
     dspOnAct->setChecked(true);
-
 }
 
 void BaseWindow::dspOff()
@@ -60,5 +56,4 @@ void BaseWindow::pdWindow()
 {
     //if (pdw->isVisible()) pdw->hide(); else pdw->show();
 }
-
 }
