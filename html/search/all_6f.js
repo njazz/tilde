@@ -32,7 +32,7 @@ var searchData=
   ['objectfactory',['ObjectFactory',['../classceammc_1_1_object_factory.html',1,'ceammc']]],
   ['objectloader',['ObjectLoader',['../classqtpd_1_1_object_loader.html',1,'qtpd']]],
   ['objectloader',['ObjectLoader',['../classqtpd_1_1_object_loader.html#a07f146c235f7edf606366fa76b68355c',1,'qtpd::ObjectLoader']]],
-  ['objectmaker',['objectMaker',['../classqtpd_1_1_canvas.html#ad5581c5b76479c848c82a729fa2bbe43',1,'qtpd::Canvas::objectMaker()'],['../classqtpd_1_1_object_maker.html#a9302b224a677c13f8a335d33db2bcbb4',1,'qtpd::ObjectMaker::ObjectMaker()']]],
+  ['objectmaker',['ObjectMaker',['../classqtpd_1_1_object_maker.html#a9302b224a677c13f8a335d33db2bcbb4',1,'qtpd::ObjectMaker::ObjectMaker()'],['../classqtpd_1_1_canvas.html#ad5581c5b76479c848c82a729fa2bbe43',1,'qtpd::Canvas::objectMaker()']]],
   ['objectmaker',['ObjectMaker',['../classqtpd_1_1_object_maker.html',1,'qtpd']]],
   ['objectmakerdone',['objectMakerDone',['../classqtpd_1_1_patch_window.html#a65452a0d74483f4351d2703898ed22eb',1,'qtpd::PatchWindow']]],
   ['objectmakerdonesignal',['objectMakerDoneSignal',['../classqtpd_1_1_object_maker.html#adc36d63bedc3740d9c65ce949be5eb87',1,'qtpd::ObjectMaker']]],
