@@ -46,10 +46,18 @@ private:
     QAction* putSlider2D;
     QAction* putBPF;
 
+    QAction* putRangeSliderAct;
+    QAction* putSlidersAct;
+    QAction* putIncDecAct;
+    QAction* putMatrixAct;
+
     QAction* putScope;
     QAction* putSpectroscope;
 
     QAction* putScriptAct;
+
+    QAction* putPdClass;
+    QAction* putPdInstance;
 
     QAction* showGridAct;
     QAction* snapToGridAct;
@@ -138,13 +146,25 @@ public:
         putNumberAct->setShortcut(tr("Ctrl+3"));
         connect(putNumberAct, &QAction::triggered, this, &PatchWindow::newFloatBox);
 
-        putSliderAct = new QAction(tr("Slider(s)..."), this);
+        //
+
+        putSliderAct = new QAction(tr("Slider"), this);
         putSliderAct->setShortcut(tr("Ctrl+Shift+V"));
+
+        putRangeSliderAct = new QAction(tr("Range Slider"), this);
+
+        putSlider2D = new QAction(tr("Slider2D"), this);
+
+        putSlidersAct = new QAction(tr("Sliders"), this);
+
+        putIncDecAct = new QAction(tr("Inc/Dec"), this);
 
         putKnobAct = new QAction(tr("Knob"), this);
         putKnobAct->setShortcut(tr("Ctrl+Shift+K"));
 
-        putRadioAct = new QAction(tr("Radio buttons..."), this);
+        putMatrixAct = new QAction(tr("Matrix buttons"), this);
+
+        putRadioAct = new QAction(tr("Radio buttons"), this);
         putRadioAct->setShortcut(tr("Ctrl+Shift+D"));
 
         putDisplay = new QAction(tr("Display"), this);
@@ -155,9 +175,6 @@ public:
         connect(putArray, &QAction::triggered, this, &PatchWindow::newArrayBox);
 
         putKeyboard = new QAction(tr("Keyboard"), this);
-        //putArray->setShortcut(tr("Ctrl+Shift+T"));
-
-        putSlider2D = new QAction(tr("Slider2D"), this);
         //putArray->setShortcut(tr("Ctrl+Shift+T"));
 
         putBPF = new QAction(tr("BPF"), this);
@@ -172,6 +189,12 @@ public:
         putScriptAct = new QAction(tr("Script"), this);
         putScriptAct->setShortcut(tr("Ctrl+7"));
         connect(putScriptAct, &QAction::triggered, this, &PatchWindow::newScriptBox);
+
+        putPdClass = new QAction(tr("Pd Class"), this);
+        putPdClass->setShortcut(tr("Ctrl+8"));
+
+        putPdInstance = new QAction(tr("Pd Instance"), this);
+        putPdInstance->setShortcut(tr("Ctrl+9"));
 
         showGridAct = new QAction(tr("Show grid"), this);
         showGridAct->setShortcut(tr("Ctrl+Shift+G"));
@@ -243,21 +266,30 @@ public:
         putMenu->addAction(putBangAct);
         putMenu->addAction(putToggleAct);
         putMenu->addAction(putNumberAct);
+        putMenu->addSeparator();
         putMenu->addAction(putSliderAct);
         putMenu->addAction(putKnobAct);
+        putMenu->addAction(putSlider2D);
+        putMenu->addAction(putRangeSliderAct);
+        putMenu->addAction(putSlidersAct);
+        putMenu->addAction(putMatrixAct);
         putMenu->addAction(putRadioAct);
-        putMenu->addAction(putDisplay);
         putMenu->addSeparator();
         putMenu->addAction(putArray);
         putMenu->addSeparator();
         putMenu->addAction(putKeyboard);
-        putMenu->addAction(putSlider2D);
         putMenu->addAction(putBPF);
+        putMenu->addAction(putDisplay);
         putMenu->addSeparator();
         putMenu->addAction(putScope);
         putMenu->addAction(putSpectroscope);
         putMenu->addSeparator();
         putMenu->addAction(putScriptAct);
+        putMenu->addSeparator();
+        putMenu->addAction(putPdClass);
+        putMenu->addAction(putPdInstance);
+        putMenu->addSeparator();
+
 
         arrangeMenu->addAction(showGridAct);
         arrangeMenu->addAction(snapToGridAct);
