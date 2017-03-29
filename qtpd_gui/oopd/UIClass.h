@@ -44,23 +44,27 @@ public:
         //TODO fix all constructors
         //t_canvas* pd_Canvas;
 
+        //temporary fix
+        if (objectData=="") objectData = "pdclass";
+
+        //qDebug() << "*objData " << QString(objectData.c_str());
+
         UIClass* b = new UIClass((UIObject*)parent);
-
-
 
         //truncate "ui.obj". todo cleanup
         QStringList list = QString(objectData.c_str()).split(" ");
-        list.removeAt(0);
-        QString list_s = list.join(" ");
-        const char* obj_name = list_s.toStdString().c_str();
+
+        const char* obj_name = objectData.c_str();
         std::string data1 = b->properties()->extractFromPdFileString(obj_name); //test
 
         // todo cleanup
-        const char* obj_name2 = data1.c_str();//(QString(data1.c_str()).split(" ").at(0)).toStdString().c_str();
+        const char* obj_name2 = data1.c_str();
 
         // fix size changes
         b->setObjectData(data1);
         b->autoResize();
+
+        qDebug() << QString(data1.c_str()) << "data1";
 
         t_object* new_obj = 0;
         int in_c = 0, out_c = 0;
@@ -103,9 +107,9 @@ public:
 
         } else {
             qDebug("Error: no such object %s", obj_name);
-            b->setErrorBox(true);
-            in_c = 1;
-            out_c = 1;
+            //b->setErrorBox(true);
+            in_c = 0;
+            out_c = 0;
         }
 
         for (int i = 0; i < in_c; i++)
@@ -124,6 +128,9 @@ public:
         QPainter p(this);
         p.setRenderHint(QPainter::HighQualityAntialiasing, true);
         p.scale(this->scale(), this->scale());
+
+        p.setPen(QPen(QColor(255, 192, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p.drawRect(0, 1, width(), height() - 2);
 
         //remove this later
         if (this->subpatchWindow()) {
