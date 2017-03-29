@@ -44,7 +44,6 @@ public:
         std::string data1 = b->properties()->extractFromPdFileString(objectData); //test
 
         // todo cleanup
-//        const char* obj_name2 = data1.c_str();
 
         b->setObjectData(data1);
 
@@ -57,30 +56,46 @@ public:
             qDebug("bad pd canvas instance");
             b->setErrorBox(true);
         } else {
-            //temp pos = 0;
-            QPoint pos = QPoint(0, 0);
-            new_obj = cmp_create_object(pd_Canvas, (char*)obj_name, pos.x(), pos.y());
+            if (list.size() < 3) {
+                b->setErrorBox(true);
+            } else {
+
+                t_symbol * name = gensym(list.at(1).toStdString().c_str());
+                t_floatarg size = list.at(2).toFloat();
+
+                cmp_new_array(pd_Canvas, name, size, 1, 1);
+            }
         }
 
-        if (new_obj) {
-            in_c = cmp_get_inlet_count(new_obj);
-            out_c = cmp_get_outlet_count(new_obj);
 
-            qDebug("created object %s ins %i outs %i ptr %lu", obj_name, in_c, out_c, (long)new_obj);
+//        if (!pd_Canvas) {
+//            qDebug("bad pd canvas instance");
+//            b->setErrorBox(true);
+//        } else {
+//            //temp pos = 0;
+//            QPoint pos = QPoint(0, 0);
+//            new_obj = cmp_create_object(pd_Canvas, (char*)obj_name, pos.x(), pos.y());
+//        }
 
-            b->setPdObject(new_obj);
+        //        if (new_obj) {
+        //            in_c = cmp_get_inlet_count(new_obj);
+        //            out_c = cmp_get_outlet_count(new_obj);
 
-        } else {
-            qDebug("Error: no such object %s", obj_name);
-            //b->setErrorBox(true);
-            in_c = 0;
-            out_c = 0;
-        }
+        //            qDebug("created object %s ins %i outs %i ptr %lu", obj_name, in_c, out_c, (long)new_obj);
 
-        for (int i = 0; i < in_c; i++)
-            b->addInlet();
-        for (int i = 0; i < out_c; i++)
-            b->addOutlet();
+        //            b->setPdObject(new_obj);
+
+        //        } else {
+        //            qDebug("Error: no such object %s", obj_name);
+        //            //b->setErrorBox(true);
+        //            in_c = 0;
+        //            out_c = 0;
+        //        }
+
+        //        for (int i = 0; i < in_c; i++)
+        //            b->addInlet();
+        //        for (int i = 0; i < out_c; i++)
+        //            b->addOutlet();
 
         return (UIObject*)b;
     };
