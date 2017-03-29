@@ -22,6 +22,8 @@
 
 #include "UIScript.h"
 
+#include "oopd/UIClass.h"
+
 namespace qtpd {
 
 ////
@@ -69,9 +71,9 @@ public:
     bool hasUI(std::string objName);
 
     // todo remove?
-    cmObjectConstructor getConstructorFor(std::string objName);
+    cmObjectConstructor getConstructorFor(QString objName);
 
-    UIObject* createObject(std::string objName, std::string objectData, t_canvas* pdCanvas, UIWidget* parent);
+    UIObject* createObject(QString objectData, t_canvas* pdCanvas, UIWidget* parent);
 };
 }
 

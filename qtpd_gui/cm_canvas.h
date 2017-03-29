@@ -237,7 +237,7 @@ public:
     /// \param pos
     /// \return
     ///
-    UIObject* createObject(std::string uiObjectName, std::string objectData1, QPoint pos);
+    UIObject* createObject(QString objectData1, QPoint pos);
 
     ////
     /// \brief TODO check. creates object box for subcanvas

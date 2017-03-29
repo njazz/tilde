@@ -99,9 +99,9 @@ class pyCanvasDecorator : public QObject {
 
 public Q_SLOTS:
 
-    UIObject* createObject(Canvas* c, QString obj_name, QString obj_data, int x, int y)
+    UIObject* createObject(Canvas* c, QString obj_data, int x, int y)
     {
-        return c->Canvas::createObject(obj_name.toStdString(), obj_data.toStdString(), QPoint(x, y));
+        return c->Canvas::createObject(obj_data, QPoint(x, y));
     }
 
     //todo templates

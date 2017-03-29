@@ -619,18 +619,18 @@ UIBox* Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas* 
     return box;
 }
 
-UIObject* Canvas::createObject(std::string uiObjectName, std::string objectData1, QPoint pos)
+UIObject* Canvas::createObject(QString objectData1, QPoint pos)    //std::string uiObjectName,
 {
 
     qDebug("!!!");
 
-    QStringList atoms = QString(objectData1.c_str()).split(" ");
+    QStringList list = QString(objectData1).split(" ");
 
     //this is moved here to have all checks for special objects in one place
     //(later - inlets/outlets)
 
-    if (atoms.count()) {
-        if (atoms.at(0) == "pd") {
+    if (list.count()) {
+        if (list.at(0) == "pd") {
             //lol
             std::pair<QMainWindow*, UIObject*> newPatch;
 
@@ -640,7 +640,7 @@ UIObject* Canvas::createObject(std::string uiObjectName, std::string objectData1
             Canvas* newCanvas = (Canvas*)newPatch.second;
 
             // crazy here
-            UIObject* b = createBoxForCanvas(newCanvas, objectData1, pos);
+            UIObject* b = createBoxForCanvas(newCanvas, objectData1.toStdString(), pos);
             ((UIBox*)b)->setSubpatchWindow((QMainWindow*)subPatch);
             ((Canvas*)b)->setSubcanvas(newCanvas);
 
@@ -653,12 +653,12 @@ UIObject* Canvas::createObject(std::string uiObjectName, std::string objectData1
             return b;
         }
 
-        if (atoms.at(0) == "restore") {
+        if (list.at(0) == "restore") {
             return 0;
         }
     }
 
-    UIObject* obj = ObjectLoader::inst().createObject(uiObjectName, objectData1, (t_canvas*)pdObject(), (UIWidget*)this);
+    UIObject* obj = ObjectLoader::inst().createObject(objectData1, (t_canvas*)pdObject(), (UIWidget*)this);
 
     connect(obj, &UIMessage::selectBox, this, &Canvas::s_SelectBox);
     connect(obj, &UIMessage::moveBox, this, &Canvas::s_MoveBox);
@@ -668,11 +668,11 @@ UIObject* Canvas::createObject(std::string uiObjectName, std::string objectData1
 
     obj->show();
 
-    qDebug() << "created object: [" << QString(uiObjectName.c_str()) << "]" << objectData1.c_str() << ":" << atoms.count() << "@" << QString(std::to_string((long)pdObject()).c_str());
+    qDebug() << "created object: ["<< objectData1 << "] :" << list.count() << "@" << QString(std::to_string((long)pdObject()).c_str());
 
-    if (atoms.count()) {
+    if (list.count()) {
         if (
-            (atoms.at(0) == "inlet") || (atoms.at(0) == "inlet~") || (atoms.at(0) == "outlet") || (atoms.at(0) == "outlet~")) {
+            (list.at(0) == "inlet") || (list.at(0) == "inlet~") || (list.at(0) == "outlet") || (list.at(0) == "outlet~")) {
             qDebug("ports");
             emit updatePortCount();
             //

@@ -192,6 +192,7 @@ public:
 
         putPdClass = new QAction(tr("Pd Class"), this);
         putPdClass->setShortcut(tr("Ctrl+8"));
+        connect(putPdClass, &QAction::triggered, this, &PatchWindow::newPdClassBox);
 
         putPdInstance = new QAction(tr("Pd Instance"), this);
         putPdInstance->setShortcut(tr("Ctrl+9"));
@@ -335,7 +336,7 @@ public:
     {
 
         if (canvas->getEditMode() != em_Locked) {
-            UIObject* newMsg = canvas->createObject("ui.msg", "", QPoint(100, 100));
+            UIObject* newMsg = canvas->createObject("ui.msg", QPoint(100, 100));
             canvas->dragObject = newMsg;
             newMsg->show();
         }
@@ -345,7 +346,7 @@ public:
     {
 
         if (canvas->getEditMode() != em_Locked) {
-            UIObject* newFlo = canvas->createObject("ui.float", "0", QPoint(100, 100));
+            UIObject* newFlo = canvas->createObject("ui.float 0", QPoint(100, 100));
             canvas->dragObject = newFlo;
             newFlo->show();
         }
@@ -355,7 +356,7 @@ public:
     {
 
         if (canvas->getEditMode() != em_Locked) {
-            UIObject* newTxt = canvas->createObject("ui.text", "", QPoint(100, 100));
+            UIObject* newTxt = canvas->createObject("ui.text", QPoint(100, 100));
             canvas->dragObject = newTxt;
             newTxt->show();
         }
@@ -364,7 +365,7 @@ public:
     void newBangBox()
     {
         if (canvas->getEditMode() != em_Locked) {
-            UIObject* newBng = canvas->createObject("ui.bang", "", QPoint(100, 100));
+            UIObject* newBng = canvas->createObject("ui.bang", QPoint(100, 100));
             canvas->dragObject = newBng;
             newBng->show();
         }
@@ -373,7 +374,7 @@ public:
     void newToggleBox()
     {
         if (canvas->getEditMode() != em_Locked) {
-            UIObject* newBng = canvas->createObject("ui.toggle", "", QPoint(100, 100));
+            UIObject* newBng = canvas->createObject("ui.toggle", QPoint(100, 100));
             canvas->dragObject = newBng;
             newBng->show();
         }
@@ -382,7 +383,7 @@ public:
     void newScriptBox()
     {
         if (canvas->getEditMode() != em_Locked) {
-            UIObject* newBng = canvas->createObject("ui.script", "", QPoint(100, 100));
+            UIObject* newBng = canvas->createObject("ui.script", QPoint(100, 100));
             canvas->dragObject = newBng;
             newBng->show();
         }
@@ -391,7 +392,16 @@ public:
     void newArrayBox()
     {
         if (canvas->getEditMode() != em_Locked) {
-            UIObject* newArr = canvas->createObject("ui.array", "", QPoint(100, 100));
+            UIObject* newArr = canvas->createObject("ui.array", QPoint(100, 100));
+            canvas->dragObject = newArr;
+            newArr->show();
+        }
+    }
+
+    void newPdClassBox()
+    {
+        if (canvas->getEditMode() != em_Locked) {
+            UIObject* newArr = canvas->createObject("pdclass", QPoint(100, 100));
             canvas->dragObject = newArr;
             newArr->show();
         }

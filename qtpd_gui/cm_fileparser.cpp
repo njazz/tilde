@@ -138,7 +138,7 @@ UIObject* FileParser::sendStringToCanvas(Canvas* cmcanvas, QStringList list)
         // check property handling
         // probably should be moved here?
 
-        return cmcanvas->createObject(list.at(3).toStdString(), objname.toStdString(), pos);
+        return cmcanvas->createObject(list.at(3) + " " + msgname, pos);
 
     } else {
         qDebug("list error");
@@ -260,7 +260,7 @@ void FileParser::parseStringList(Canvas* cmcanvas, QStringList list) //rename
             qDebug() << "objname" << objname;
             //temporary
             //cmcanvas->createBox(objname.toStdString(), pos);
-            cmcanvas->createObject("ui.obj", objname.toStdString(), pos);
+            cmcanvas->createObject( objname, pos);
         }
     }
 }

@@ -130,11 +130,11 @@ void PatchWindow::setFileName(QString fname)
 ///
 void PatchWindow::objectMakerDone()
 {
-    std::string obj_name = this->canvas->objectMaker()->text().toStdString();
+    QString obj_name = this->canvas->objectMaker()->text();//.toStdString();
 
     if (obj_name != "") {
 
-        UIObject* new_obj = this->canvas->createObject("ui.obj", obj_name, this->canvas->objectMaker()->pos());
+        UIObject* new_obj = this->canvas->createObject(obj_name, this->canvas->objectMaker()->pos());    //"ui.obj",
 
         if (this->canvas->replaceObject()) {
             UIObject* obj = canvas->replaceObject();

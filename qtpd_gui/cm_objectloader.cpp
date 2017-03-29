@@ -19,6 +19,8 @@ void ObjectLoader::loadObjects()
     addUIobject("ui.script", &UIScript::createObject);
 
     addUIobject("ui.array", &UIArray::createObject);
+
+    addUIobject("pdclass", &UIClass::createObject);
 }
 
 void ObjectLoader::addUIobject(std::string name, cmObjectConstructor constructor)
@@ -43,23 +45,37 @@ bool ObjectLoader::hasUI(std::string objName)
 }
 
 // todo remove?
-cmObjectConstructor ObjectLoader::getConstructorFor(std::string objName)
+cmObjectConstructor ObjectLoader::getConstructorFor(QString objName)
 {
-    if (hasUI(objName)) {
-        return _objectConstructors[objName];
+    // extra
+    if (hasUI(objName.toStdString())) {
+        return _objectConstructors[objName.toStdString()];
     }
 
+    // now this is dummy
     return _objectConstructors["ui.obj"];
 }
 
-UIObject* ObjectLoader::createObject(std::string objName, std::string objectData, t_canvas* pdCanvas, UIWidget* parent)
+UIObject* ObjectLoader::createObject(QString objectData, t_canvas* pdCanvas, UIWidget* parent)
 {
 
-    cmObjectConstructor cmc = getConstructorFor(objName);
+    QString objectName = "";
+    if (objectData != "")
+        objectName = objectData.split(" ").at(0);
 
-    if (cmc == getConstructorFor("ui.obj"))
-        objectData = objName + " " + objectData;
+    if (hasUI(objectName.toStdString())) {
 
-    return cmc(objectData, pdCanvas, parent);
+        cmObjectConstructor cmc = getConstructorFor(objectName);
+
+        //        if (cmc == getConstructorFor("ui.obj"))
+        //            objectData = objName + " " + objectData;
+
+        return cmc(objectData.toStdString(), pdCanvas, parent);
+    } else {
+        cmObjectConstructor cmc = getConstructorFor("ui.obj");
+        objectData = "ui.obj " + objectData; //+ objectName + " "
+
+        return cmc(objectData.toStdString(), pdCanvas, parent);
+    }
 }
 }
