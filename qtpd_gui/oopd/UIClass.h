@@ -108,7 +108,7 @@ public:
         } else {
             qDebug("Error: no such object %s", obj_name);
             //b->setErrorBox(true);
-            in_c = 0;
+            in_c = 1;
             out_c = 0;
         }
 
