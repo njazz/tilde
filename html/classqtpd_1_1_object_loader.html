@@ -125,8 +125,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_object_loader.html#a41b6b563c0b98f5d6016865e842e42a5">getUINames</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_object_loader.html#aebb2f6718c148be957c61824963ce9a1">getPDNames</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_object_loader.html#af239c0e007aed45a838eeca575f4e22b">hasUI</a> (<a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> objName)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#ac3f9500ed88e58abf682bbc072d74647">cmObjectConstructor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_object_loader.html#a11212c6c0cdc8f01a905264c15db322f">getConstructorFor</a> (<a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> objName)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_object_loader.html#ac83b00e03aedeb29a0fffd72cc17f3d6">createObject</a> (<a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> objName, <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> objectData, t_canvas *pdCanvas, <a class="el" href="classqtpd_1_1_u_i_widget.html">UIWidget</a> *parent)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#ac3f9500ed88e58abf682bbc072d74647">cmObjectConstructor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_object_loader.html#ae910122005209fc55fbc947fe5339c06">getConstructorFor</a> (QString objName)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_object_loader.html#a28f5d36e543808de95052d8bd028d6c6">createObject</a> (QString objectData, t_canvas *pdCanvas, <a class="el" href="classqtpd_1_1_u_i_widget.html">UIWidget</a> *parent)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_object_loader.html">ObjectLoader</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_object_loader.html#ab0d2dafc82b31dc7e2e35f8527de3df7">inst</a> ()</td></tr>
@@ -179,20 +179,14 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ac83b00e03aedeb29a0fffd72cc17f3d6"></a><!-- doxytag: member="qtpd::ObjectLoader::createObject" ref="ac83b00e03aedeb29a0fffd72cc17f3d6" args="(std::string objName, std::string objectData, t_canvas *pdCanvas, UIWidget *parent)" -->
+<a class="anchor" id="a28f5d36e543808de95052d8bd028d6c6"></a><!-- doxytag: member="qtpd::ObjectLoader::createObject" ref="a28f5d36e543808de95052d8bd028d6c6" args="(QString objectData, t_canvas *pdCanvas, UIWidget *parent)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> * <a class="el" href="classqtpd_1_1_object_loader.html#ac83b00e03aedeb29a0fffd72cc17f3d6">qtpd::ObjectLoader::createObject</a> </td>
+          <td class="memname"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> * <a class="el" href="classqtpd_1_1_object_loader.html#a28f5d36e543808de95052d8bd028d6c6">qtpd::ObjectLoader::createObject</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td>
-          <td class="paramname"><em>objName</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td>
+          <td class="paramtype">QString&#160;</td>
           <td class="paramname"><em>objectData</em>, </td>
         </tr>
         <tr>
@@ -218,14 +212,14 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a11212c6c0cdc8f01a905264c15db322f"></a><!-- doxytag: member="qtpd::ObjectLoader::getConstructorFor" ref="a11212c6c0cdc8f01a905264c15db322f" args="(std::string objName)" -->
+<a class="anchor" id="ae910122005209fc55fbc947fe5339c06"></a><!-- doxytag: member="qtpd::ObjectLoader::getConstructorFor" ref="ae910122005209fc55fbc947fe5339c06" args="(QString objName)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceqtpd.html#ac3f9500ed88e58abf682bbc072d74647">cmObjectConstructor</a> <a class="el" href="classqtpd_1_1_object_loader.html#a11212c6c0cdc8f01a905264c15db322f">qtpd::ObjectLoader::getConstructorFor</a> </td>
+          <td class="memname"><a class="el" href="namespaceqtpd.html#ac3f9500ed88e58abf682bbc072d74647">cmObjectConstructor</a> <a class="el" href="classqtpd_1_1_object_loader.html#ae910122005209fc55fbc947fe5339c06">qtpd::ObjectLoader::getConstructorFor</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td>
+          <td class="paramtype">QString&#160;</td>
           <td class="paramname"><em>objName</em></td><td>)</td>
           <td></td>
         </tr>
@@ -357,7 +351,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 28 2017 18:55:18 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 29 2017 22:41:28 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

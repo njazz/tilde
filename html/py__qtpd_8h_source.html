@@ -178,9 +178,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00099"></a>00099 
 <a name="l00100"></a>00100 <span class="keyword">public</span> Q_SLOTS:
 <a name="l00101"></a>00101 
-<a name="l00102"></a><a class="code" href="classpy_canvas_decorator.html#a2fd821f1fe124b33262eb6f4b3afc6b0">00102</a>     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* createObject(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c, QString obj_name, QString obj_data, <span class="keywordtype">int</span> <a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>, <span class="keywordtype">int</span> y)
+<a name="l00102"></a><a class="code" href="classpy_canvas_decorator.html#af75ee56b0c957b717007c270668cfe4f">00102</a>     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* createObject(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c, QString obj_data, <span class="keywordtype">int</span> <a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>, <span class="keywordtype">int</span> y)
 <a name="l00103"></a>00103     {
-<a name="l00104"></a>00104         <span class="keywordflow">return</span> c-&gt;Canvas::createObject(obj_name.toStdString(), obj_data.toStdString(), QPoint(x, y));
+<a name="l00104"></a>00104         <span class="keywordflow">return</span> c-&gt;Canvas::createObject(obj_data, QPoint(x, y));
 <a name="l00105"></a>00105     }
 <a name="l00106"></a>00106 
 <a name="l00107"></a>00107     <span class="comment">//todo templates</span>
@@ -444,7 +444,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 28 2017 18:55:17 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 29 2017 22:41:27 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

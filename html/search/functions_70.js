@@ -29,7 +29,7 @@ var searchData=
   ['pdoutlettype',['pdOutletType',['../classqtpd_1_1_u_i_object.html#a765ab43f6b07c8f94c06d3ffa4da4996',1,'qtpd::UIObject']]],
   ['pdpatch',['pdPatch',['../classpy_canvas_decorator.html#a9ffff8d0afdaada00372e717fe9f9199',1,'pyCanvasDecorator']]],
   ['pdui',['PdUI',['../classceammc_1_1faust_1_1_pd_u_i.html#a1161619d7c4fa333e93b1e0c041fbe76',1,'ceammc::faust::PdUI']]],
-  ['pdwindow',['PdWindow',['../classqtpd_1_1_pd_window.html#a916bc5d8c3d803b541ab325d8e9d0d1c',1,'qtpd::PdWindow::PdWindow()'],['../classqtpd_1_1_base_menu.html#a437ab1ab423a88820eea682aa6db86f8',1,'qtpd::BaseMenu::pdWindow()']]],
+  ['pdwindow',['pdWindow',['../classqtpd_1_1_base_menu.html#a437ab1ab423a88820eea682aa6db86f8',1,'qtpd::BaseMenu::pdWindow()'],['../classqtpd_1_1_pd_window.html#a916bc5d8c3d803b541ab325d8e9d0d1c',1,'qtpd::PdWindow::PdWindow()']]],
   ['pgen',['pgen',['../pgen_8h.html#ae26f7ce05e854f5effb10cee720900f2',1,'pgen.h']]],
   ['pointerproperty',['PointerProperty',['../classceammc_1_1_pointer_property.html#adaf5a33662fa14b14147cd4f99d81e32',1,'ceammc::PointerProperty']]],
   ['port',['Port',['../classqtpd_1_1_port.html#a9d12ba5cc9d281f13b2af650725753f0',1,'qtpd::Port']]],
