@@ -36,13 +36,16 @@ public:
         //TODO fix all constructors
         UIArray* b = new UIArray((UIObject*)parent);
 
-        //truncate "ui.obj"
+        //truncate "ui.obj". todo cleanup
         QStringList list = QString(objectData.c_str()).split(" ");
-        list.removeAt(0);
-        QString list_s = list.join(" ");
-        const char* obj_name = list_s.toStdString().c_str();
 
-        std::string data1 = b->properties()->extractFromPdFileString(obj_name); //test
+        const char* obj_name = objectData.c_str();
+
+        std::string data1 = b->properties()->extractFromPdFileString(objectData); //test
+
+        // todo cleanup
+//        const char* obj_name2 = data1.c_str();
+
         b->setObjectData(data1);
 
         b->autoResize();
@@ -69,9 +72,9 @@ public:
 
         } else {
             qDebug("Error: no such object %s", obj_name);
-            b->setErrorBox(true);
-            in_c = 1;
-            out_c = 1;
+            //b->setErrorBox(true);
+            in_c = 0;
+            out_c = 0;
         }
 
         for (int i = 0; i < in_c; i++)
@@ -90,6 +93,9 @@ public:
         QPainter p(this);
         p.setRenderHint(QPainter::HighQualityAntialiasing, true);
         p.scale(scale(), scale());
+
+        p.setPen(QPen(QColor(192, 255, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p.drawRect(0, 1, width(), height() - 2);
 
         //remove this later
         if (subpatchWindow()) {

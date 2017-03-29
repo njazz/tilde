@@ -21,6 +21,8 @@ void ObjectLoader::loadObjects()
     addUIobject("ui.array", &UIArray::createObject);
 
     addUIobject("pdclass", &UIClass::createObject);
+
+
 }
 
 void ObjectLoader::addUIobject(std::string name, cmObjectConstructor constructor)
