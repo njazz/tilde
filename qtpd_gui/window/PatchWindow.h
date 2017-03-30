@@ -3,11 +3,11 @@
 
 #include "UIBox.h"
 #include "BaseWindow.h"
-#include "cm_canvas.h"
+#include "Canvas.h"
 
 #include "cm_pdlink.h"
 
-#include "cm_filesaver.h"
+#include "FileSaver.h"
 
 namespace qtpd {
 ////
@@ -494,6 +494,23 @@ public:
             if (canvas->getEditMode() == em_Temporary)
                 canvas->setEditMode(em_Unlocked);
         }
+    }
+
+    // ==============================
+
+    void cut()
+    {
+        canvas->dataCut();
+    }
+
+    void copy()
+    {
+        canvas->dataCopy();
+    }
+
+    void paste()
+    {
+        canvas->dataPaste();
     }
 
 public slots:

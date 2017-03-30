@@ -29,23 +29,12 @@ CONFIG += static
   LIBS += -F/System/Library/Frameworks -framework Python
 
 SOURCES += main.cpp\
-    cm_port.cpp \
-    cm_canvas.cpp \
     window/cm_basewindow.cpp \
     window/cm_pdwindow.cpp \
     window/cm_patchwindow.cpp \
-    cm_menu.cpp \
-    cm_objectmaker.cpp \
-    cm_widget.cpp \
-    cm_patchcord.cpp \
-    cm_fileparser.cpp \
-    cm_object.cpp \
-    cm_sizebox.cpp \
     properties/cm_property.cpp \
     properties/cm_propertylist.cpp \
     python/PythonQtScriptingConsole.cpp \
-    cm_objectloader.cpp \
-    cm_openfileproxy.cpp \
     window/cm_propertieswindow.cpp \
     python/wrappers/py_wrappers.cpp \
     objects/UIArray.cpp \
@@ -59,28 +48,25 @@ SOURCES += main.cpp\
     oopd/OOPD.cpp \
     oopd/UIClass.cpp \
     oopd/UIInstance.cpp \
-    objects/UIArrayEditor.cpp
+    objects/UIArrayEditor.cpp \
+    Canvas.cpp \
+    UIObject.cpp \
+    UIWidget.cpp \
+    Patchcord.cpp \
+    Port.cpp \
+    SizeBox.cpp \
+    FileParser.cpp \
+    ObjectLoader.cpp \
+    ObjectMaker.cpp \
+    BaseMenu.cpp \
+    OpenFileProxy.cpp
 
 
 HEADERS  += \
-    cm_port.h \
-    cm_canvas.h \
-    cm_menu.h \
-    cm_objectmaker.h \
-    cm_widget.h \
-    cm_patchcord.h \
-    cm_fileparser.h \
-    cm_object.h \
-    cm_filesaver.h \
-    cm_pdlink.h \
-    cm_clipboard.h \
-    cm_objectloader.h \
-    cm_sizebox.h \
+    #cm_clipboard.h \
     properties/cm_property.h \
     properties/cm_propertylist.h \
     properties/cm_preferences.h \
-    cm_headers.h \
-    cm_canvas_types.h \
     #
     python/PythonQtScriptingConsole.h \
     python/headers/PythonQtStdDecorators.h \
@@ -111,7 +97,6 @@ HEADERS  += \
     python/headers/PythonQtSystem.h \
     python/headers/PythonQtVariants.h \
     python/wrappers/py_qtpd.h \
-    cm_openfileproxy.h \
     python/wrappers/py_wrappers.h \
     objects/UIBang.h \
     objects/UIArray.h \
@@ -130,13 +115,28 @@ HEADERS  += \
     window/BaseWindow.h \
     window/PatchWindow.h \
     window/PdWindow.h \
-    window/PropertiesWindow.h
+    window/PropertiesWindow.h \
+    Canvas.h \
+    CanvasDatas.h \
+    UIObject.h \
+    UIWidget.h \
+    Patchcord.h \
+    Port.h \
+    SizeBox.h \
+    FileParser.h \
+    FileSaver.h \
+    ObjectLoader.h \
+    ObjectMaker.h \
+    PdLink.h \
+    OpenFileProxy.h \
+    _headers.h \
+    BaseMenu.h
 
 
 FORMS    += \
-    window/cm_basewindow.ui \
     window/cm_pdwindow.ui \
-    canvasmenu.ui
+    canvasmenu.ui \
+    window/cm_basewindow.ui
 
 LIBS += "../qtpd_lib/libqtpd.a"
 LIBS += "/usr/local/lib/libportaudio.dylib"
@@ -161,7 +161,7 @@ INCLUDEPATH += \
     properties/ \
     python/headers/
 
-PRECOMPILED_HEADER = cm_headers.h
+PRECOMPILED_HEADER =
 
 #$$PWD
 
