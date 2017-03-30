@@ -30,7 +30,7 @@ class UIInstance : public UIObject {
     Q_OBJECT
 
 private:
-    OPClass* _opClass;
+    OPInstance* _opInstance;
 
 public:
     explicit UIInstance(UIObject* parent = 0);
@@ -70,15 +70,15 @@ public:
             qDebug("bad pd canvas instance");
             b->setErrorBox(true);
         } else {
-            new_obj = cmp_create_object(pd_Canvas, "oopdclass", 0, 0);
+            new_obj = cmp_create_object(pd_Canvas, "pdclass", 0, 0);
         }
 
         // new class w/canvas
-        if (list.size() > 1) {
-            b->_opClass = new OPClass(list.at(1).toStdString());
-        } else {
-            b->_opClass = new OPClass();
-        }
+//        if (list.size() > 1) {
+//            b->_opClass = new OPClass(list.at(1).toStdString());
+//        } else {
+//            b->_opClass = new OPClass();
+//        }
 
         if (new_obj) {
             in_c = cmp_get_inlet_count(new_obj);
@@ -162,7 +162,7 @@ public:
 
         //window opening. Fix
         if (this->getEditMode() != em_Unlocked) {
-            _opClass->showWindow();
+            //_opInstance->showWindow();
         }
 
         if ((this->getEditMode() == em_Unlocked) && this->isSelected()) {
@@ -232,20 +232,22 @@ public:
         if (!msg.at(0).isSymbol())
             return;
 
-        if (msg.at(0).asString() == "newclass") {
+        if (msg.at(0).asString() == "new") {
+
+            qDebug() << "new instance";
         }
 
-        if (msg.at(0).asString() == "addproperty") {
-        }
+//        if (msg.at(0).asString() == "addproperty") {
+//        }
 
-        if (msg.at(0).asString() == "delproperty") {
-        }
+//        if (msg.at(0).asString() == "delproperty") {
+//        }
 
-        if (msg.at(0).asString() == "addmethod") {
-        }
+//        if (msg.at(0).asString() == "addmethod") {
+//        }
 
-        if (msg.at(0).asString() == "delmethod") {
-        }
+//        if (msg.at(0).asString() == "delmethod") {
+//        }
 
         emit((UIInstance*)uiobj)->updateUISignal();
     }

@@ -66,9 +66,9 @@ static void oopdclass_free(t_object* obj)
 }
 
 //extern "C"
-extern "C" void setup_oopdclass()
+extern "C" void setup_pdclass()
 {
-    oopdclass_class = class_new(gensym("oopdclass"),
+    oopdclass_class = class_new(gensym("pdclass"),
         (t_newmethod)(oopdclass_new),
         (t_method)(0),
         sizeof(t_oopdclass), 0, A_GIMME, 0);

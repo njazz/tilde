@@ -71,7 +71,7 @@ public:
             b->setErrorBox(true);
         } else
         {
-            new_obj = cmp_create_object(pd_Canvas, "oopdclass", 0,0);
+            new_obj = cmp_create_object(pd_Canvas, "pdclass", 0,0);
         }
 
         // new class w/canvas

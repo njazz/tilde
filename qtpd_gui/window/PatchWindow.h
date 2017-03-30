@@ -196,6 +196,7 @@ public:
 
         putPdInstance = new QAction(tr("Pd Instance"), this);
         putPdInstance->setShortcut(tr("Ctrl+9"));
+        connect(putPdInstance, &QAction::triggered, this, &PatchWindow::newPdInstanceBox);
 
         showGridAct = new QAction(tr("Show grid"), this);
         showGridAct->setShortcut(tr("Ctrl+Shift+G"));
@@ -401,6 +402,15 @@ public:
     {
         if (canvas->getEditMode() != em_Locked) {
             UIObject* newArr = canvas->createObject("pdclass", QPoint(100, 100));
+            canvas->dragObject = newArr;
+            newArr->show();
+        }
+    }
+
+    void newPdInstanceBox()
+    {
+        if (canvas->getEditMode() != em_Locked) {
+            UIObject* newArr = canvas->createObject("pdinstance", QPoint(100, 100));
             canvas->dragObject = newArr;
             newArr->show();
         }

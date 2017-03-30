@@ -23,6 +23,7 @@
 #include "UIScript.h"
 
 #include "oopd/UIClass.h"
+#include "oopd/UIInstance.h"
 
 namespace qtpd {
 

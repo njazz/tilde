@@ -33,7 +33,7 @@ extern "C" void setup_ui0x2emsg(void);
 extern "C" void setup_ui0x2efloat(void);
 extern "C" void setup_ui0x2escript(void);
 
-extern "C" void setup_oopdclass(void);
+extern "C" void setup_pdclass(void);
 
 //todo fix
 //typedef struct _loadedlist
@@ -134,6 +134,8 @@ void cmp_pdinit()
     setup_ui0x2ebang();
     setup_ui0x2etoggle();
     setup_ui0x2escript();
+
+    setup_pdclass();
 
     //setup_list0x2eproduct();
 

@@ -21,6 +21,7 @@ void ObjectLoader::loadObjects()
     addUIobject("ui.array", &UIArray::createObject);
 
     addUIobject("pdclass", &UIClass::createObject);
+    addUIobject("pdinstance", &UIInstance::createObject);
 
 
 }

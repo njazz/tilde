@@ -1325,6 +1325,7 @@ void Canvas::dataPaste()
 
         QStringList subList = str.split(" ");
 
+        // offset copied objects
         if (subList.size() > 4) {
             if (subList.at(1) == "obj") {
                 int x = ((QString)subList.at(2)).toInt();
@@ -1335,8 +1336,6 @@ void Canvas::dataPaste()
             }
 
             _clipboard[i] = subList.join(" ");
-            //subList.removeAt(0); // we have only #X obj in our clipboard
-            //FileParser::parseStringListAtoms(this, subList);
             FileParser::parseQString(_clipboard[i]);
         }
 
