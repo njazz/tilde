@@ -59,10 +59,12 @@ OPInstance::OPInstance(OPClass* opClass)
         _patchWindow =  PatchWindow::newWindow();
         FileParser::setParserWindow(_patchWindow);
         _patchWindow->canvas->canvasFromPdStrings(canvasStrings);
-        QString windowTitle = QString("instance: ") + QString(_className.c_str());
+        QString windowTitle = QString("(read only) instance: ") + QString(_className.c_str());
         _patchWindow->setWindowTitle(windowTitle);
         _patchWindow->canvas->setKeepPdObject(true);
         _patchWindow->hide();
+
+        _patchWindow->canvas->setReadOnly(true);
 
         _canvas = (t_canvas*)_patchWindow->canvas->pdObject();
 

@@ -234,6 +234,8 @@ public:
         if (!msg.at(0).isSymbol())
             return;
 
+        // ===========
+
         if ( (msg.at(0).asString() == "new") && (msg.size() > 1) ) {
 
             qDebug() << "new instance";
@@ -251,14 +253,22 @@ public:
 
             x->_opInstance = new OPInstance(x->_opClass);
             cmp_post("new instance");
+
+            //cmp_get_inlet/outlet
+            x->_opInstance->addInstanceOut(0);
         }
+
+        // ===========
 
         if (msg.at(0).asString() == "free")
         {
 
             UIInstance *x = ((UIInstance*)uiobj);
             if (x->_opInstance)
+            {
+                x->_opInstance->freeInstanceOut(0);
                 delete x->_opInstance;
+            }
             x->_opInstance = 0;
             cmp_post("free instance");
 
