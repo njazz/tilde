@@ -1,5 +1,7 @@
 #include "PatchWindow.h"
 
+#include "FileParser.h"
+
 namespace qtpd {
 PatchWindow::PatchWindow()
 {
@@ -136,11 +138,11 @@ void PatchWindow::setFileName(QString fname)
 ///
 void PatchWindow::objectMakerDone()
 {
-    QString obj_name = canvas->objectMaker()->text();//.toStdString();
+    QString obj_name = canvas->objectMaker()->text(); //.toStdString();
 
     if (obj_name != "") {
 
-        UIObject* new_obj = canvas->createObject(obj_name, canvas->objectMaker()->pos());    //"ui.obj",
+        UIObject* new_obj = canvas->createObject(obj_name, canvas->objectMaker()->pos()); //"ui.obj",
 
         if (canvas->replaceObject()) {
             UIObject* obj = canvas->replaceObject();
@@ -168,5 +170,23 @@ void PatchWindow::objectMakerDone()
         canvas->setReplaceObject(0);
         canvas->objectMaker()->close();
     }
+}
+
+// ==============================
+
+void PatchWindow::cut()
+{
+    canvas->dataCut();
+}
+
+void PatchWindow::copy()
+{
+    canvas->dataCopy();
+}
+
+void PatchWindow::paste()
+{
+    FileParser::setParserWindow(this);
+    canvas->dataPaste();
 }
 }
