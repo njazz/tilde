@@ -58,6 +58,7 @@ SOURCES += main.cpp\
     objects/UIScript.cpp \
     oopd/OOPD.cpp \
     oopd/UIClass.cpp \
+    oopd/UIInstance.cpp \
     objects/UIArrayEditor.cpp
 
 
@@ -123,6 +124,8 @@ HEADERS  += \
     #
     oopd/OOPD.h \
     oopd/UIClass.h \
+    oopd/UIInstance.h \
+    #
     objects/UIArrayEditor.h \
     window/BaseWindow.h \
     window/PatchWindow.h \
