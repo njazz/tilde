@@ -8,7 +8,7 @@
 
 #include "PdLink.h"
 
-#include "Prefe"
+#include "Preferences.h"
 
 //temporary
 

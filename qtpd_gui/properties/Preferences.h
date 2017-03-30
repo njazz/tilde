@@ -8,7 +8,7 @@
 #include <map>
 #include <string.h>
 
-#include "cm_propertylist.h"
+#include "PropertyList.h"
 
 #include <QDebug>
 

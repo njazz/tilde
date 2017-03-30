@@ -12,7 +12,7 @@
 
 #include "ObjectLoader.h"
 
-#include "Prefe"
+#include "Preferences.h"
 
 //python
 #include <PythonQt.h>

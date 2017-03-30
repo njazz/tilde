@@ -156,6 +156,11 @@ public:
             return;
         }
 
+        if ( (getEditMode() != em_Unlocked) ) {
+
+            _editor.show();
+        }
+
         emit selectBox(this);
         dragOffset = ev->pos();
     }
