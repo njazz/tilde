@@ -4,9 +4,9 @@
 #include <QMainWindow>
 #include <QtWidgets>
 
-#include "cm_menu.h"
+#include "BaseMenu.h"
 
-#include "cm_pdlink.h"
+#include "PdLink.h"
 
 namespace Ui {
 class cm_basewindow;

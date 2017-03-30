@@ -44,13 +44,13 @@ public:
     /// \param cmcanvas
     /// \param list
     ///
-    static void parseStringList(Canvas* cmcanvas, QStringList list);
+    static void parseStringListAtoms(Canvas* cmcanvas, QStringList list);
 
     ////
     /// \brief [2] checks first atoms ("#N", "#X" etc) and sends QStringList of contents to canvas
     /// \param line
     ///
-    static void parseFile(QString line);
+    static void parseQStringList(QStringList atoms);
 
     ////
     /// \brief [1] opens file, converts to QStrings, calls 'parseString'

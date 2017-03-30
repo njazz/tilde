@@ -5,7 +5,7 @@
 #include "BaseWindow.h"
 #include "Canvas.h"
 
-#include "cm_pdlink.h"
+#include "PdLink.h"
 
 #include "FileSaver.h"
 
@@ -411,7 +411,7 @@ public:
 
     void delSelected()
     {
-        canvas->delBoxes();
+        canvas->deleteSelectedBoxes();
         canvas->delSelectedPatchcords();
     }
 

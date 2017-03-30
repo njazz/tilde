@@ -3,6 +3,8 @@
 
 #include "Canvas.h"
 
+#include "FileParser.h"
+
 namespace qtpd {
 
 static const QSize EmptyCanvasSize = QSize(300, 200);
@@ -619,7 +621,7 @@ UIBox* Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas* 
     return box;
 }
 
-UIObject* Canvas::createObject(QString objectData1, QPoint pos)    //std::string uiObjectName,
+UIObject* Canvas::createObject(QString objectData1, QPoint pos) //std::string uiObjectName,
 {
 
     qDebug("!!!");
@@ -668,7 +670,7 @@ UIObject* Canvas::createObject(QString objectData1, QPoint pos)    //std::string
 
     obj->show();
 
-    qDebug() << "created object: ["<< objectData1 << "] :" << list.count() << "@" << QString(std::to_string((long)pdObject()).c_str());
+    qDebug() << "created object: [" << objectData1 << "] :" << list.count() << "@" << QString(std::to_string((long)pdObject()).c_str());
 
     if (list.count()) {
         if (
@@ -739,7 +741,7 @@ void Canvas::patchcord(UIObject* obj1, int outlet, UIObject* obj2, int inlet)
 
         qDebug("pdlib patchcord");
         cmp_patchcord((t_object*)obj1->pdObject(), outlet, (t_object*)obj2->pdObject(), inlet);
-        _data.addPatchcord(pc);//patchcords()->push_back(pc);
+        _data.addPatchcord(pc); //patchcords()->push_back(pc);
     } else
         qDebug("canvas patchcord error");
 }
@@ -787,13 +789,13 @@ void Canvas::deleteBox(UIObject* box)
 {
     deselectBoxes();
     _selectionData.addUniqueBox(box);
-    delBoxes();
+    deleteSelectedBoxes();
 }
 
 ////
 /// \brief delete all selected object boxes()
 ///
-void Canvas::delBoxes()
+void Canvas::deleteSelectedBoxes()
 {
     objectVec::iterator it;
     for (it = _selectionData.boxes()->begin(); it != _selectionData.boxes()->end(); ++it)
@@ -869,8 +871,10 @@ void Canvas::setEditMode(t_editMode mode)
     setAutoFillBackground(true);
     setPalette(Pal);
 
-    deselectBoxes();
-    hoverPatchcordsOff();
+    if (mode == em_Unlocked) {
+        deselectBoxes();
+        hoverPatchcordsOff();
+    }
 
     repaint();
 }
@@ -955,12 +959,12 @@ patchcordVec Canvas::patchcordsForObject(UIObject* obj)
 int Canvas::findObjectIndex(UIObject* obj)
 {
     //UIObject* obj1;
-//    std::vector<UIObject*>::iterator iter = std::find(_data.boxes()->begin(), _data.boxes()->end(), obj);
-//    size_t index = std::distance(_data.boxes()->begin(), iter);
-//    if (index != _data.boxes()->size()) {
-//        return index;
-//    }
-//    return -1;
+    //    std::vector<UIObject*>::iterator iter = std::find(_data.boxes()->begin(), _data.boxes()->end(), obj);
+    //    size_t index = std::distance(_data.boxes()->begin(), iter);
+    //    if (index != _data.boxes()->size()) {
+    //        return index;
+    //    }
+    //    return -1;
 
     return _data.findObjectIndex(obj);
 }
@@ -1100,34 +1104,33 @@ QStringList Canvas::canvasAsPdStrings()
     ret += _data.boxesAsPdFileStrings();
     ret += _data.patchcordsAsPdFileStrings();
 
-
     //objects
-//    std::vector<UIObject*> objects = objectboxes()();
-//    std::vector<UIObject*>::iterator it;
+    //    std::vector<UIObject*> objects = objectboxes()();
+    //    std::vector<UIObject*>::iterator it;
 
-//    for (it = objects.begin(); it != objects.end(); ++it) {
-//        // !check for subpatches
-//        //            out1 = "#X obj ";
-//        //            out1 += std::to_string(((UIObject*)*it)->x()) + " " + std::to_string(((UIObject*)*it)->y())+ " ";
+    //    for (it = objects.begin(); it != objects.end(); ++it) {
+    //        // !check for subpatches
+    //        //            out1 = "#X obj ";
+    //        //            out1 += std::to_string(((UIObject*)*it)->x()) + " " + std::to_string(((UIObject*)*it)->y())+ " ";
 
-//        out1 = ((UIObject*)*it)->asPdFileString();
-//        out1 += ";\r\n";
+    //        out1 = ((UIObject*)*it)->asPdFileString();
+    //        out1 += ";\r\n";
 
-//        ret.append(out1.c_str());
-//    }
+    //        ret.append(out1.c_str());
+    //    }
 
     //patchcords()
-//    std::vector<Patchcord*> patchcords() = this->patchcords()();
-//    std::vector<Patchcord*>::iterator it2;
+    //    std::vector<Patchcord*> patchcords() = this->patchcords()();
+    //    std::vector<Patchcord*>::iterator it2;
 
-//    for (it2 = patchcords()->begin(); it2 != patchcords()->end(); ++it2) {
-//        // check for subpatches
-//        out1 = "#X connect ";
-//        out1 += patchcordAsPdFileString(*it2);
-//        out1 += ";\r\n";
+    //    for (it2 = patchcords()->begin(); it2 != patchcords()->end(); ++it2) {
+    //        // check for subpatches
+    //        out1 = "#X connect ";
+    //        out1 += patchcordAsPdFileString(*it2);
+    //        out1 += ";\r\n";
 
-//        ret.append(out1.c_str());
-//    }
+    //        ret.append(out1.c_str());
+    //    }
 
     return ret;
 }
@@ -1280,22 +1283,62 @@ void Canvas::setWindowSize(QSize wsize)
     _windowSize = wsize;
 }
 
-
 // ==========================================
 
 void Canvas::dataCut()
 {
-    if (_selectionData.hasObjects()) return;
-}
 
+    if (!_selectionData.hasObjects())
+        return;
+
+    _clipboard = _data.boxesAsPdFileStrings();
+    _clipboard += _data.patchcordsAsPdFileStrings();
+
+    deleteSelectedBoxes();
+}
 }
 
 void Canvas::dataCopy()
 {
-    if (_selectionData.hasObjects()) return;
+    if (!_selectionData.hasObjects())
+        return;
 
+    _clipboard = _data.boxesAsPdFileStrings();
+    _clipboard += _data.patchcordsAsPdFileStrings();
+
+    qDebug() << "***copy\n"
+             << _clipboard;
 }
 void Canvas::dataPaste()
 {
 
+    qDebug() << "***paste:\n"
+             << _clipboard;
+
+    if (_clipboard.size() < 1)
+        return;
+
+    QStringList list1;
+
+    for (int i = 0; i < _clipboard.size(); i++) {
+        QString str = _clipboard.at(i);
+
+        QStringList subList = str.split(" ");
+
+        if (subList.size() > 4) {
+            if (subList.at(1) == "obj") {
+                int x = ((QString)subList.at(2)).toInt();
+                int y = ((QString)subList.at(3)).toInt();
+
+                subList[2] = QString::number(x + 20);
+                subList[3] = QString::number(y + 20);
+            }
+
+            _clipboard[i] = subList.join(" ");
+            subList.removeAt(0); // we have only #X obj in our clipboard
+            FileParser::parseStringListAtoms(this, subList);
+        }
+
+        //list1.push_back(str);
+    }
 }

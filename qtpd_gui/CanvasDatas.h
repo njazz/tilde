@@ -32,7 +32,7 @@ public:
 
     bool hasObjects()
     {
-        return ( (_boxes.size()>0)  && (_patchcords.size()>0) );
+        return ( (_boxes.size()>0)  || (_patchcords.size()>0) );
     }
 
     objectVec* boxes()

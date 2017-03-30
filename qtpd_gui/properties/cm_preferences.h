@@ -12,7 +12,7 @@
 
 #include <QDebug>
 
-#include "cm_pdlink.h"
+#include "PdLink.h"
 
 //#define cmp_font "Source Code Pro"
 

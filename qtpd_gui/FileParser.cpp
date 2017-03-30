@@ -147,11 +147,13 @@ UIObject* FileParser::sendStringToCanvas(Canvas* cmcanvas, QStringList list)
     }
 }
 
-void FileParser::parseStringList(Canvas* cmcanvas, QStringList list) //rename
+void FileParser::parseStringListAtoms(Canvas* cmcanvas, QStringList list) //rename
 {
     //legacy parser first
     if (FileParser::legacyProcess(cmcanvas, list))
         return;
+
+    qDebug() << "list at 0" << list.at(0);
 
     if (list.at(0) == "obj") {
         FileParser::sendStringToCanvas(cmcanvas, list);
@@ -265,9 +267,9 @@ void FileParser::parseStringList(Canvas* cmcanvas, QStringList list) //rename
     }
 }
 
-void FileParser::parseFile(QString line)
+void FileParser::parseQStringList(QStringList atoms)
 {
-    QStringList atoms = line.split(" ");
+
 
     atoms.last() = atoms.last().remove(";");
     //switch (atoms.at(0))
@@ -321,7 +323,7 @@ void FileParser::parseFile(QString line)
 
         if (pdParserWindow) {
             //qDebug("X");
-            FileParser::parseStringList(pdParserWindow->canvas, msg);
+            FileParser::parseStringListAtoms(pdParserWindow->canvas, msg);
         } else {
             qDebug("parser error - no canvas");
         }
@@ -353,7 +355,8 @@ void FileParser::open(QString fname)
             stringList.append(line);
             qDebug("* %s", line.toStdString().c_str());
             //
-            FileParser::parseFile(line);
+            QStringList atoms = line.split(" ");
+            FileParser::parseQStringList(atoms);
         }
     }
 

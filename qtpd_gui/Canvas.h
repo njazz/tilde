@@ -84,6 +84,8 @@ private:
 
     ObjectMaker* _objectMaker;
 
+    QStringList _clipboard;
+
     Q_OBJECT
 
 public:
@@ -292,7 +294,7 @@ public:
     ////
     /// \brief delete all selected object boxes
     ///
-    void delBoxes();
+    void deleteSelectedBoxes();
 
     ////
     /// \brief delete all selected patchcords
