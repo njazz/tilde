@@ -62,7 +62,7 @@ public:
             qDebug("Error: no such object %s", message.c_str());
         }
 
-        b->setPdMessage(messageData.c_str());
+        b->setPdMessage(data1.c_str());
 
         //b->setObjectData(objectData);
 
