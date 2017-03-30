@@ -301,70 +301,80 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00234"></a>00234         <span class="keywordflow">if</span> (!msg.<a class="code" href="classceammc_1_1_atom_list.html#aa2d99dac15a5a5fe7afa41a38f2aeece" title="returns reference to element at specified position">at</a>(0).<a class="code" href="classceammc_1_1_atom.html#a2c4bb5cf0db422ac820ffb70f20c4d42">isSymbol</a>())
 <a name="l00235"></a>00235             <span class="keywordflow">return</span>;
 <a name="l00236"></a>00236 
-<a name="l00237"></a>00237         <span class="keywordflow">if</span> ( (msg.<a class="code" href="classceammc_1_1_atom_list.html#aa2d99dac15a5a5fe7afa41a38f2aeece" title="returns reference to element at specified position">at</a>(0).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>() == <span class="stringliteral">&quot;new&quot;</span>) &amp;&amp; (msg.<a class="code" href="classceammc_1_1_atom_list.html#ad52fdc5b4f54329460495caa1b00d1ac">size</a>() &gt; 1) ) {
+<a name="l00237"></a>00237         <span class="comment">// ===========</span>
 <a name="l00238"></a>00238 
-<a name="l00239"></a>00239             qDebug() &lt;&lt; <span class="stringliteral">&quot;new instance&quot;</span>;
+<a name="l00239"></a>00239         <span class="keywordflow">if</span> ( (msg.<a class="code" href="classceammc_1_1_atom_list.html#aa2d99dac15a5a5fe7afa41a38f2aeece" title="returns reference to element at specified position">at</a>(0).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>() == <span class="stringliteral">&quot;new&quot;</span>) &amp;&amp; (msg.<a class="code" href="classceammc_1_1_atom_list.html#ad52fdc5b4f54329460495caa1b00d1ac">size</a>() &gt; 1) ) {
 <a name="l00240"></a>00240 
-<a name="l00241"></a>00241             <a class="code" href="classqtpd_1_1_u_i_instance.html" title="gui object: oopd class">UIInstance</a> *<a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a> = ((<a class="code" href="classqtpd_1_1_u_i_instance.html" title="gui object: oopd class">UIInstance</a>*)uiobj);
+<a name="l00241"></a>00241             qDebug() &lt;&lt; <span class="stringliteral">&quot;new instance&quot;</span>;
 <a name="l00242"></a>00242 
-<a name="l00243"></a>00243             x-&gt;_opClass = <a class="code" href="classqtpd_1_1_o_o_p_d.html#af1a1f9378eecdf37fd53e251c0d729ba">OOPD::inst</a>().<a class="code" href="classqtpd_1_1_o_o_p_d.html#af933fed68618c8a5a655216295bfb4d1">classByName</a>(msg.<a class="code" href="classceammc_1_1_atom_list.html#aa2d99dac15a5a5fe7afa41a38f2aeece" title="returns reference to element at specified position">at</a>(1).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>());
+<a name="l00243"></a>00243             <a class="code" href="classqtpd_1_1_u_i_instance.html" title="gui object: oopd class">UIInstance</a> *<a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a> = ((<a class="code" href="classqtpd_1_1_u_i_instance.html" title="gui object: oopd class">UIInstance</a>*)uiobj);
 <a name="l00244"></a>00244 
-<a name="l00245"></a>00245             <span class="keywordflow">if</span> (!x-&gt;_opClass)
-<a name="l00246"></a>00246             {
-<a name="l00247"></a>00247                 <a class="code" href="_pd_link_8h.html#a766e12f26830eee9deae0fe8e9f70535" title="post plain text to Pd window">cmp_post</a>(<span class="stringliteral">&quot;class not found: &quot;</span>);
-<a name="l00248"></a>00248                 <a class="code" href="_pd_link_8h.html#a766e12f26830eee9deae0fe8e9f70535" title="post plain text to Pd window">cmp_post</a>(msg.<a class="code" href="classceammc_1_1_atom_list.html#aa2d99dac15a5a5fe7afa41a38f2aeece" title="returns reference to element at specified position">at</a>(1).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>());
-<a name="l00249"></a>00249                 <span class="keywordflow">return</span>;
-<a name="l00250"></a>00250             }
-<a name="l00251"></a>00251 
-<a name="l00252"></a>00252             x-&gt;_opInstance = <span class="keyword">new</span> <a class="code" href="classqtpd_1_1_o_p_instance.html" title="The OOPD class instance.">OPInstance</a>(x-&gt;_opClass);
-<a name="l00253"></a>00253             <a class="code" href="_pd_link_8h.html#a766e12f26830eee9deae0fe8e9f70535" title="post plain text to Pd window">cmp_post</a>(<span class="stringliteral">&quot;new instance&quot;</span>);
-<a name="l00254"></a>00254         }
-<a name="l00255"></a>00255 
-<a name="l00256"></a>00256         <span class="keywordflow">if</span> (msg.<a class="code" href="classceammc_1_1_atom_list.html#aa2d99dac15a5a5fe7afa41a38f2aeece" title="returns reference to element at specified position">at</a>(0).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>() == <span class="stringliteral">&quot;free&quot;</span>)
-<a name="l00257"></a>00257         {
-<a name="l00258"></a>00258 
-<a name="l00259"></a>00259             <a class="code" href="classqtpd_1_1_u_i_instance.html" title="gui object: oopd class">UIInstance</a> *<a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a> = ((<a class="code" href="classqtpd_1_1_u_i_instance.html" title="gui object: oopd class">UIInstance</a>*)uiobj);
-<a name="l00260"></a>00260             <span class="keywordflow">if</span> (x-&gt;_opInstance)
-<a name="l00261"></a>00261                 <span class="keyword">delete</span> x-&gt;_opInstance;
-<a name="l00262"></a>00262             x-&gt;_opInstance = 0;
-<a name="l00263"></a>00263             <a class="code" href="_pd_link_8h.html#a766e12f26830eee9deae0fe8e9f70535" title="post plain text to Pd window">cmp_post</a>(<span class="stringliteral">&quot;free instance&quot;</span>);
-<a name="l00264"></a>00264 
-<a name="l00265"></a>00265         }
-<a name="l00266"></a>00266 
-<a name="l00267"></a>00267 
-<a name="l00268"></a>00268 <span class="comment">//        if (msg.at(0).asString() == &quot;addproperty&quot;) {</span>
-<a name="l00269"></a>00269 <span class="comment">//        }</span>
-<a name="l00270"></a>00270 
-<a name="l00271"></a>00271 <span class="comment">//        if (msg.at(0).asString() == &quot;delproperty&quot;) {</span>
-<a name="l00272"></a>00272 <span class="comment">//        }</span>
-<a name="l00273"></a>00273 
-<a name="l00274"></a>00274 <span class="comment">//        if (msg.at(0).asString() == &quot;addmethod&quot;) {</span>
-<a name="l00275"></a>00275 <span class="comment">//        }</span>
+<a name="l00245"></a>00245             x-&gt;_opClass = <a class="code" href="classqtpd_1_1_o_o_p_d.html#af1a1f9378eecdf37fd53e251c0d729ba">OOPD::inst</a>().<a class="code" href="classqtpd_1_1_o_o_p_d.html#af933fed68618c8a5a655216295bfb4d1">classByName</a>(msg.<a class="code" href="classceammc_1_1_atom_list.html#aa2d99dac15a5a5fe7afa41a38f2aeece" title="returns reference to element at specified position">at</a>(1).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>());
+<a name="l00246"></a>00246 
+<a name="l00247"></a>00247             <span class="keywordflow">if</span> (!x-&gt;_opClass)
+<a name="l00248"></a>00248             {
+<a name="l00249"></a>00249                 <a class="code" href="_pd_link_8h.html#a766e12f26830eee9deae0fe8e9f70535" title="post plain text to Pd window">cmp_post</a>(<span class="stringliteral">&quot;class not found: &quot;</span>);
+<a name="l00250"></a>00250                 <a class="code" href="_pd_link_8h.html#a766e12f26830eee9deae0fe8e9f70535" title="post plain text to Pd window">cmp_post</a>(msg.<a class="code" href="classceammc_1_1_atom_list.html#aa2d99dac15a5a5fe7afa41a38f2aeece" title="returns reference to element at specified position">at</a>(1).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>());
+<a name="l00251"></a>00251                 <span class="keywordflow">return</span>;
+<a name="l00252"></a>00252             }
+<a name="l00253"></a>00253 
+<a name="l00254"></a>00254             x-&gt;_opInstance = <span class="keyword">new</span> <a class="code" href="classqtpd_1_1_o_p_instance.html" title="The OOPD class instance.">OPInstance</a>(x-&gt;_opClass);
+<a name="l00255"></a>00255             <a class="code" href="_pd_link_8h.html#a766e12f26830eee9deae0fe8e9f70535" title="post plain text to Pd window">cmp_post</a>(<span class="stringliteral">&quot;new instance&quot;</span>);
+<a name="l00256"></a>00256 
+<a name="l00257"></a>00257             <span class="comment">//cmp_get_inlet/outlet</span>
+<a name="l00258"></a>00258             x-&gt;_opInstance-&gt;<a class="code" href="classqtpd_1_1_o_p_instance.html#afd511fdd1fcaa2094b055bc892bf13a5">addInstanceOut</a>(0);
+<a name="l00259"></a>00259         }
+<a name="l00260"></a>00260 
+<a name="l00261"></a>00261         <span class="comment">// ===========</span>
+<a name="l00262"></a>00262 
+<a name="l00263"></a>00263         <span class="keywordflow">if</span> (msg.<a class="code" href="classceammc_1_1_atom_list.html#aa2d99dac15a5a5fe7afa41a38f2aeece" title="returns reference to element at specified position">at</a>(0).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>() == <span class="stringliteral">&quot;free&quot;</span>)
+<a name="l00264"></a>00264         {
+<a name="l00265"></a>00265 
+<a name="l00266"></a>00266             <a class="code" href="classqtpd_1_1_u_i_instance.html" title="gui object: oopd class">UIInstance</a> *<a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a> = ((<a class="code" href="classqtpd_1_1_u_i_instance.html" title="gui object: oopd class">UIInstance</a>*)uiobj);
+<a name="l00267"></a>00267             <span class="keywordflow">if</span> (x-&gt;_opInstance)
+<a name="l00268"></a>00268             {
+<a name="l00269"></a>00269                 x-&gt;_opInstance-&gt;<a class="code" href="classqtpd_1_1_o_p_instance.html#a9c6ee1553e7f7a4fe8517ee9da019a7c">freeInstanceOut</a>(0);
+<a name="l00270"></a>00270                 <span class="keyword">delete</span> x-&gt;_opInstance;
+<a name="l00271"></a>00271             }
+<a name="l00272"></a>00272             x-&gt;_opInstance = 0;
+<a name="l00273"></a>00273             <a class="code" href="_pd_link_8h.html#a766e12f26830eee9deae0fe8e9f70535" title="post plain text to Pd window">cmp_post</a>(<span class="stringliteral">&quot;free instance&quot;</span>);
+<a name="l00274"></a>00274 
+<a name="l00275"></a>00275         }
 <a name="l00276"></a>00276 
-<a name="l00277"></a>00277 <span class="comment">//        if (msg.at(0).asString() == &quot;delmethod&quot;) {</span>
-<a name="l00278"></a>00278 <span class="comment">//        }</span>
-<a name="l00279"></a>00279 
-<a name="l00280"></a>00280         emit((<a class="code" href="classqtpd_1_1_u_i_instance.html" title="gui object: oopd class">UIInstance</a>*)uiobj)-&gt;updateUISignal();
-<a name="l00281"></a>00281     }
-<a name="l00282"></a>00282 
-<a name="l00283"></a>00283 signals:
-<a name="l00284"></a>00284 
-<a name="l00285"></a>00285     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_instance.html#a6d2f769756a4c026ba95c1574ff01063">mouseMoved</a>();
-<a name="l00286"></a>00286     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_instance.html#a7ffb2acb46f63fafa7f5b175492f3cc0">rightClicked</a>();
-<a name="l00287"></a>00287 
-<a name="l00288"></a>00288     <span class="comment">//void editObject(UIObject* box);</span>
-<a name="l00289"></a>00289 signals:
-<a name="l00290"></a>00290     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_instance.html#a6a69f2beb90669f186586ac5e8225dda">updateUISignal</a>();
-<a name="l00291"></a>00291 
-<a name="l00292"></a>00292 <span class="keyword">private</span> slots:
-<a name="l00293"></a>00293     <span class="keywordtype">void</span> updateUISlot()
-<a name="l00294"></a>00294     {
-<a name="l00295"></a>00295         repaint();
-<a name="l00296"></a>00296     }
-<a name="l00297"></a>00297 };
-<a name="l00298"></a>00298 }
-<a name="l00299"></a>00299 
-<a name="l00300"></a>00300 <span class="preprocessor">#endif // CM_UIInstance_H</span>
+<a name="l00277"></a>00277 
+<a name="l00278"></a>00278 <span class="comment">//        if (msg.at(0).asString() == &quot;addproperty&quot;) {</span>
+<a name="l00279"></a>00279 <span class="comment">//        }</span>
+<a name="l00280"></a>00280 
+<a name="l00281"></a>00281 <span class="comment">//        if (msg.at(0).asString() == &quot;delproperty&quot;) {</span>
+<a name="l00282"></a>00282 <span class="comment">//        }</span>
+<a name="l00283"></a>00283 
+<a name="l00284"></a>00284 <span class="comment">//        if (msg.at(0).asString() == &quot;addmethod&quot;) {</span>
+<a name="l00285"></a>00285 <span class="comment">//        }</span>
+<a name="l00286"></a>00286 
+<a name="l00287"></a>00287 <span class="comment">//        if (msg.at(0).asString() == &quot;delmethod&quot;) {</span>
+<a name="l00288"></a>00288 <span class="comment">//        }</span>
+<a name="l00289"></a>00289 
+<a name="l00290"></a>00290         emit((<a class="code" href="classqtpd_1_1_u_i_instance.html" title="gui object: oopd class">UIInstance</a>*)uiobj)-&gt;updateUISignal();
+<a name="l00291"></a>00291     }
+<a name="l00292"></a>00292 
+<a name="l00293"></a>00293 signals:
+<a name="l00294"></a>00294 
+<a name="l00295"></a>00295     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_instance.html#a6d2f769756a4c026ba95c1574ff01063">mouseMoved</a>();
+<a name="l00296"></a>00296     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_instance.html#a7ffb2acb46f63fafa7f5b175492f3cc0">rightClicked</a>();
+<a name="l00297"></a>00297 
+<a name="l00298"></a>00298     <span class="comment">//void editObject(UIObject* box);</span>
+<a name="l00299"></a>00299 signals:
+<a name="l00300"></a>00300     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_instance.html#a6a69f2beb90669f186586ac5e8225dda">updateUISignal</a>();
+<a name="l00301"></a>00301 
+<a name="l00302"></a>00302 <span class="keyword">private</span> slots:
+<a name="l00303"></a>00303     <span class="keywordtype">void</span> updateUISlot()
+<a name="l00304"></a>00304     {
+<a name="l00305"></a>00305         repaint();
+<a name="l00306"></a>00306     }
+<a name="l00307"></a>00307 };
+<a name="l00308"></a>00308 }
+<a name="l00309"></a>00309 
+<a name="l00310"></a>00310 <span class="preprocessor">#endif // CM_UIInstance_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -383,7 +393,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 30 2017 16:33:41 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 30 2017 17:13:06 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

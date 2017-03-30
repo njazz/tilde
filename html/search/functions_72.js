@@ -3,7 +3,7 @@ var searchData=
   ['range',['range',['../classceammc_1_1_atom_list.html#ab649bc0294769dae826068b40923c8c3',1,'ceammc::AtomList']]],
   ['readfile',['readFile',['../classqtpd_1_1_o_p_class.html#a29e29ae0ee6fe71da77304f11e3c2073',1,'qtpd::OPClass']]],
   ['readfileasbytes',['readFileAsBytes',['../class_python_qt_import_file_interface.html#a9af9b596837ab97779aa1be67080b9b0',1,'PythonQtImportFileInterface::readFileAsBytes()'],['../class_python_qt_q_file_importer.html#a620cfb1a5a9e3db3a2a9f36a2511ad1e',1,'PythonQtQFileImporter::readFileAsBytes()']]],
-  ['readonly',['readonly',['../classceammc_1_1_property.html#a9369d5cf6482a9b2c3caf7a2d76a3baa',1,'ceammc::Property']]],
+  ['readonly',['readOnly',['../classqtpd_1_1_canvas.html#a5bb622c3199a50373378f230841709cc',1,'qtpd::Canvas::readOnly()'],['../classceammc_1_1_property.html#a9369d5cf6482a9b2c3caf7a2d76a3baa',1,'ceammc::Property::readonly()']]],
   ['readonlycheck',['readonlyCheck',['../classceammc_1_1_property.html#af7abdedebae800707150c6f9505b617e',1,'ceammc::Property']]],
   ['readsourcefile',['readSourceFile',['../class_python_qt_import_file_interface.html#a5b1305a61905ad3903506ef9dccbec60',1,'PythonQtImportFileInterface::readSourceFile()'],['../class_python_qt_q_file_importer.html#a8e036f00e8498b4cdca0936d1083afe0',1,'PythonQtQFileImporter::readSourceFile()']]],
   ['realpitch',['realPitch',['../structui__keyboard.html#ae05ed3dcced07aeea8843f1f62f5a532',1,'ui_keyboard']]],

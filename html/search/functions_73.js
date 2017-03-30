@@ -96,6 +96,7 @@ var searchData=
   ['setqobject',['setQObject',['../struct_python_qt_instance_wrapper_struct.html#ade1c123d93528947f54779420cec712f',1,'PythonQtInstanceWrapperStruct']]],
   ['setqobjectnolongerwrappedcallback',['setQObjectNoLongerWrappedCallback',['../class_python_qt.html#ac78f2ac0891db90490cb098a5ab1a354',1,'PythonQt']]],
   ['setqobjectwrappedcallback',['setQObjectWrappedCallback',['../class_python_qt.html#a9c5f93840b7446a748d4c60405d20f68',1,'PythonQt']]],
+  ['setreadonly',['setReadOnly',['../classqtpd_1_1_canvas.html#af5533a4b8089cbab1df4479bf822300f',1,'qtpd::Canvas']]],
   ['setredirectstdincallback',['setRedirectStdInCallback',['../class_python_qt.html#a4d48f7d1640f279f74efa3b598f96568',1,'PythonQt']]],
   ['setredirectstdincallbackenabled',['setRedirectStdInCallbackEnabled',['../class_python_qt.html#a531b249881ff4b3b8b3ed8b6781a3e04',1,'PythonQt']]],
   ['setreferencecounting',['setReferenceCounting',['../class_python_qt_class_info.html#a10ef1fd968c5ae3018a90daa4fc20f9d',1,'PythonQtClassInfo']]],
