@@ -124,6 +124,30 @@ public:
 
         return (rx > 0) ? rx1_res : rx0_res;
     }
+
+//    std::string asPdFileString(Patchcord* pcord)
+//    {
+//        //TODO
+
+//        int obj1i = findObjectIndex(pcord->obj1());
+//        int obj2i = findObjectIndex(pcord->obj2());
+
+//        if ((obj1i >= 0) && (obj2i >= 0)) {
+//            std::string ret;
+
+//            ret += std::to_string(obj1i) + " ";
+//            ret += std::to_string(pcord->outletIndex()) + " ";
+
+//            ret += std::to_string(obj2i) + " ";
+//            ret += std::to_string(pcord->inletIndex()) + " ";
+
+//            return ret;
+
+//        } else
+//            qDebug("patchcord to string error");
+
+//        return "";
+//    }
 };
 }
 
