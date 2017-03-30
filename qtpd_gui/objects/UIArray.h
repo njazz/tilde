@@ -103,6 +103,13 @@ public:
         return (UIObject*)b;
     };
 
+    void initProperties()
+    {
+        UIObject::initProperties();
+
+        properties()->create("ArraySize", "Array", "0.1", 100);
+    }
+
     ////
     /// \brief paint event
     ///
@@ -143,6 +150,14 @@ public:
     ///
     void mousePressEvent(QMouseEvent* ev)
     {
+        //context menu
+        if (ev->button() == Qt::RightButton) {
+            QPoint pos = mapToGlobal(ev->pos());
+            showPopupMenu(pos);
+            ev->accept();
+            return;
+        }
+
         //open canvas for subpatch
         if (getEditMode() != em_Unlocked) {
             if (subpatchWindow()) {

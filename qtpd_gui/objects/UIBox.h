@@ -73,17 +73,18 @@ public:
             in_c = cmp_get_inlet_count(new_obj);
             out_c = cmp_get_outlet_count(new_obj);
 
-            qDebug("created object %s ins %i outs %i ptr %lu", obj_name, in_c, out_c, (long)new_obj);
+            //qDebug("created object %s ins %i outs %i ptr %lu", obj_name, in_c, out_c, (long)new_obj);
 
             b->setPdObject(new_obj);
 
             b->_isAbstraction = cmp_is_abstraction(new_obj);
-            qDebug() << "*** is abstraction: " << b->_isAbstraction;
+            //qDebug() << "*** is abstraction: " << b->_isAbstraction;
 
             // todo different help symbols
             b->setHelpName(list.at(0) + "-help.pd");
 
             if (b->_isAbstraction) {
+
                 t_symbol* s = cmp_get_path((t_canvas*)new_obj);
 
                 // todo
@@ -93,7 +94,7 @@ public:
                 // todo windows
                 b->_abstractionPath = QString(s->s_name) + "/" + pdName + ".pd";
 
-                qDebug() << b->_abstractionPath;
+                //qDebug() << b->_abstractionPath;
             }
 
         } else {

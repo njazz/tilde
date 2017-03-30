@@ -74,6 +74,9 @@ private:
 
     QAction* tidyUpAct;
 
+    QAction* groupObjAct;
+    QAction* ungroupObjAct;
+
     QAction* zoomInAct;
     QAction* zoomOutAct;
 
@@ -242,6 +245,11 @@ public:
         tidyUpAct->setEnabled(false);
         //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
 
+        groupObjAct = new QAction(tr("Group objects"), this);
+
+        ungroupObjAct = new QAction(tr("Ungroup objects"), this);
+        ungroupObjAct->setEnabled(false);
+
         zoomInAct = new QAction(tr("Zoom in"), this);
         zoomInAct->setShortcut(tr("Ctrl++"));
 
@@ -305,6 +313,9 @@ public:
         arrangeMenu->addAction(distVAct);
         arrangeMenu->addSeparator();
         arrangeMenu->addAction(tidyUpAct);
+        arrangeMenu->addSeparator();
+        arrangeMenu->addAction(groupObjAct);
+        arrangeMenu->addAction(ungroupObjAct);
         arrangeMenu->addSeparator();
         arrangeMenu->addAction(zoomInAct);
         arrangeMenu->addAction(zoomOutAct);

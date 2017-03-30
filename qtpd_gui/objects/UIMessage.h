@@ -109,6 +109,13 @@ public:
 
     void mousePressEvent(QMouseEvent* ev)
     {
+        //context menu
+        if (ev->button() == Qt::RightButton) {
+            QPoint pos = mapToGlobal(ev->pos());
+            showPopupMenu(pos);
+            ev->accept();
+            return;
+        }
 
         if ((getEditMode() == em_Unlocked) && isSelected()) {
             _editor->setText(QString(objectData().c_str()));
