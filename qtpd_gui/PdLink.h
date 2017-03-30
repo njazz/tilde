@@ -228,7 +228,9 @@ void cmp_post(std::string text);
 
 t_garray* cmp_get_array(t_symbol* arrayname);
 
-void cmp_get_array_data(t_array* a, int size, float** vec);
+void cmp_get_array_data(t_garray* a, int* size, t_word** vec);
+
+int cmp_get_array_size(t_garray* a);
 
 t_garray* cmp_new_array(t_canvas* c, t_symbol* name, t_floatarg size, t_floatarg save, t_floatarg newgraph);
 

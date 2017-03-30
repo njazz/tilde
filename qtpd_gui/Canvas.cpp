@@ -44,6 +44,8 @@ Canvas::Canvas(UIObject* parent)
     //
     _drawStyle = ds_Canvas;
 
+    _readOnly = false;
+
     //
     //    editor_ = new QLineEdit(this);
     //    editor_->setFixedSize(65-5,18);

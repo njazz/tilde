@@ -532,9 +532,14 @@ t_garray* cmp_get_array(t_symbol* arrayname)
 }
 
 //todo
-void cmp_get_array_data(t_garray* a, int* size, t_float** vec)
+void cmp_get_array_data(t_garray* a, int* size, t_word** vec)
 {
-    garray_getfloatarray(a, size, vec);
+    garray_getfloatwords(a, size, vec);
+}
+
+int cmp_get_array_size(t_garray* a)
+{
+    return garray_npoints(a);
 }
 
 
@@ -545,6 +550,6 @@ t_garray* cmp_new_array(t_canvas* c, t_symbol* name, t_floatarg size, t_floatarg
     t_garray* ret;
     glist_arraydialog(c, name, size, save, newgraph);
 
-    ret = (t_garray*)pd_newest();
+    ret = cmp_get_array(name);//(t_garray*)pd_newest();
     return ret;
 }

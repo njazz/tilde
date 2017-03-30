@@ -21,7 +21,7 @@ class BaseWindow : public QMainWindow {
 
 public:
     explicit BaseWindow(QWidget* parent = 0);
-    ~BaseWindow();
+    //~BaseWindow();
 
     ////
     /// \brief create menu actions (File, Edit)

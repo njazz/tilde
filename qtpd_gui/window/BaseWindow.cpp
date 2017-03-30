@@ -23,10 +23,10 @@ BaseWindow::BaseWindow(QWidget* parent)
     createMenus();
 }
 
-BaseWindow::~BaseWindow()
-{
-    delete ui;
-}
+//BaseWindow::~BaseWindow()
+//{
+//    delete ui;
+//}
 
 //////////////////////////////////////
 

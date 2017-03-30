@@ -28,12 +28,13 @@ private:
 
     PdWindow();
 
+    ~PdWindow(){};
+
 public:
-
-
     static PdWindow& inst()
     {
         static PdWindow instance;
+        instance.setParent(0);
         return instance;
     }
 
@@ -45,7 +46,6 @@ public:
 
 //fix - normal singleton here
 //static PdWindow* pdw;
-
 }
 
 #endif // CM_PDWINDOW_H

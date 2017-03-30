@@ -27,6 +27,8 @@ PatchWindow::PatchWindow()
 
     editModeAct->setChecked(true);
 
+
+
     //connect subpatch creation routine
     connect(canvas, &Canvas::createSubpatchWindow, this, &PatchWindow::s_createSubpatchWindow);
 
