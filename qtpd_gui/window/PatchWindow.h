@@ -469,7 +469,8 @@ public:
 
     void closeEvent(QCloseEvent* event)
     {
-        cmp_closepatch((t_canvas*)canvas->pdObject());
+        if (!canvas->keepPdObject())
+            cmp_closepatch((t_canvas*)canvas->pdObject());
 
         event->accept();
     }

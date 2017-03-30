@@ -15,6 +15,9 @@
 //todo
 #include "../qtpd_lib/ceammc-lib/ceammc_atomlist.h"
 
+//
+#include <QStringList>
+
 using namespace std;
 using namespace ceammc;
 
@@ -30,6 +33,7 @@ class PatchWindow;
 //todo class or move to find section
 typedef map<t_canvas*, OPClass*> t_OPClassByCanvas;
 typedef map<t_symbol*, OPClass*> t_OPClassBySymbol;
+typedef map<string, OPClass*> t_OPClassByName;
 typedef map<t_canvas*, OPInstance*> t_OPInstanceByCanvas;
 typedef map<t_symbol*, OPInstance*> t_OPInstanceBySymbol;
 
@@ -47,6 +51,7 @@ public:
     string _className;
     t_canvas* _canvas;
     t_symbol* _symbol;
+    PatchWindow* _patchWindow;
 };
 
 ////
@@ -57,6 +62,7 @@ class OOPD {
 private:
     t_OPClassByCanvas _classByCanvas;
     t_OPClassBySymbol _classBySymbol;
+    t_OPClassByName _classByName;
     t_OPInstanceByCanvas _instanceByCanvas;
     t_OPInstanceBySymbol _instanceBySymbol;
 
@@ -69,54 +75,60 @@ public:
         return instance;
     }
 
-    void registerClass(string className, t_canvas* canvas, t_symbol* symbol){};
-    void registerInstance(string className, t_canvas* canvas, t_symbol* symbol){};
+    void registerClass(OPClass* opClass, string className, t_canvas* canvas, t_symbol* symbol)
+    {
+        _classByCanvas[canvas] = opClass;
+        _classBySymbol[symbol] = opClass;
+        _classByName[className] = opClass;
+    };
+
+    void registerInstance(OPInstance* opInstance, string className, t_canvas* canvas, t_symbol* symbol)
+    {
+        _instanceByCanvas[canvas] = opInstance;
+        _instanceBySymbol[symbol] = opInstance;
+    };
 
     void unregisterClass(string className, t_canvas* canvas, t_symbol* symbol){};
     void unregisterInstance(string className, t_canvas* canvas, t_symbol* symbol){};
 
     OPClass* classByCanvas(t_canvas* canvas)
     {
-        // TODO
-
-        //        OPClassByCanvas* ret = new OPClassByCanvas(to_string((long)canvas), "OOP.common");
-        //        if (ret)
-        //            return ret->ref();
-        //        else
-        return 0;
+        if (_classByCanvas[canvas])
+            return _classByCanvas[canvas];
+        else
+            return 0;
     }
 
     OPClass* classBySymbol(t_symbol* symbol)
     {
-        // TODO
-
-        //        OPClassBySymbol* ret = new OPClassBySymbol(symbol->s_name, "OOP.common");
-        //        if (ret)
-        //            return ret->ref();
-        //        else
-        return 0;
+        if (_classBySymbol[symbol])
+            return _classBySymbol[symbol];
+        else
+            return 0;
     }
 
-    OPClass* instanceByCanvas(t_canvas* canvas)
+    OPClass* classByName(string className)
     {
-        // TODO
-
-        //        OPClassByCanvas* ret = new OPClassByCanvas(to_string((long)canvas), "OOP.common");
-        //        if (ret)
-        //            return ret->ref();
-        //        else
-        return 0;
+        if (_classByName[className])
+            return _classByName[className];
+        else
+            return 0;
     }
 
-    OPClass* instanceBySymbol(t_symbol* symbol)
+    OPInstance* instanceByCanvas(t_canvas* canvas)
     {
-        // TODO
+        if (_instanceByCanvas[canvas])
+            return _instanceByCanvas[canvas];
+        else
+            return 0;
+    }
 
-        //        OPClassBySymbol* ret = new OPClassBySymbol(symbol->s_name, "OOP.common");
-        //        if (ret)
-        //            return ret->ref();
-        //        else
-        return 0;
+    OPInstance* instanceBySymbol(t_symbol* symbol)
+    {
+        if (_instanceBySymbol[symbol])
+            return _instanceBySymbol[symbol];
+        else
+            return 0;
     }
 };
 
@@ -133,7 +145,7 @@ private:
     map<string, t_outlet*> _methodOutlets; //todo OPOutputs
     map<string, t_outlet*> methodPointerOutlets; //todo OPOutputs
 
-    PatchWindow *_patchWindow;
+    //PatchWindow* _patchWindow;
     OPClass* _parent;
 
 public:
@@ -166,7 +178,6 @@ public:
 #pragma mark window
 
     void showWindow();
-
 
 // ------------------------------------------------
 #pragma mark file io
@@ -341,63 +352,13 @@ public:
     //
     OPInstance* _parent;
 
-    OPInstance(OPClass* opClass)
-    {
-
-        printf("new instance\n");
-
-        _className = opClass->_className;
-        _symbol = OPInstance::toSymbol(this); //gensym(to_string((long)this).c_str());
-
-        // new canvas. only for canvas-based classes
-        if (opClass->_canvas) {
-
-            // TODO
-            // copy canvas here
-
-            // temporary. can't be 0 in this class
-            _canvas = 0;
-
-            // register instance
-            OOPD::inst().registerInstance(_className, _canvas, _symbol);
-
-            _refCount = 1;
-        }
-
-        //generate properties
-        _propertyNames = opClass->getPropertyNames();
-
-        //TODO
-
-        //generate methods
-        //TODO normal class / singleton
-        //        OPClasses* dyn_class = new OPClasses("__dynamicStub", "exp.method");
-        //        if (!dyn_class->ref()) {
-        //            dyn_class->ref() = new OPClass();
-        //            dyn_class->ref()->class_name = "__dynamicStub";
-        //        }
-
-        //_methodNames = _opclass->getMethodNames();
-
-        // temporary
-        //        map<string, string>::iterator it;
-        //        for (it = _methodNames.begin(); it != _methodNames.end(); ++it) {
-        //            t_outlet* dyn_out = dyn_class->ref()->getMethodOutletForReferenceName(it->second);
-
-        //            if (dyn_out)
-        //                addMethod(gensym(it->first.c_str()), dyn_out);
-
-        //            t_outlet* dyn_pointer_out = dyn_class->ref()->getMethodPointerOutletForReferenceName(it->second);
-
-        //            if (dyn_pointer_out)
-        //                addMethodPointerOut(gensym(it->first.c_str()), dyn_pointer_out);
-        //        }
-    }
+    OPInstance(OPClass* opClass);
 
     ~OPInstance()
     {
         // delete canvas
         // TODO
+        delete _patchWindow;
 
         // unregister
         OOPD::inst().unregisterInstance(_className, _canvas, _symbol);
@@ -616,6 +577,10 @@ public:
 
         return ret;
     }
+    // ------------------------------------------------
+    #pragma mark window
+
+        void showWindow();
 
 #pragma mark reference counting
     // names?

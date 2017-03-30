@@ -10,25 +10,25 @@ UIClass::UIClass(UIObject* parent)
 {
     //setPdObjectName("ui.bang");
 
-    this->setFixedHeight(20);
-    //this->setMinimumWidth(22);
-    this->setMouseTracking(true);
+    setFixedHeight(20);
+    //setMinimumWidth(22);
+    setMouseTracking(true);
 
-    this->deselect(); // = false;
+    deselect(); // = false;
 
     QPalette Pal(palette());
     Pal.setColor(QPalette::Background, QColor(255, 240, 220));
-    this->setAutoFillBackground(true);
-    this->setPalette(Pal);
+    setAutoFillBackground(true);
+    setPalette(Pal);
 
-    this->setErrorBox(false);
+    setErrorBox(false);
 
-    this->setSubpatchWindow(0);
+    setSubpatchWindow(0);
 
-    this->setMinimumBoxWidth(40);
-    this->setMinimumBoxHeight(20);
+    setMinimumBoxWidth(40);
+    setMinimumBoxHeight(20);
 
-    this->setObjectSizeMode(os_FixedHeight);
+    setObjectSizeMode(os_FixedHeight);
 }
 
 

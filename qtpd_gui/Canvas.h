@@ -17,8 +17,6 @@
 //todo - move to window?
 #include "cm_clipboard.h"
 
-
-
 namespace qtpd {
 
 ////
@@ -85,6 +83,8 @@ private:
     ObjectMaker* _objectMaker;
 
     QStringList _clipboard;
+
+    bool _keepPdObject;
 
     Q_OBJECT
 
@@ -441,6 +441,12 @@ public:
     ///
     QStringList canvasAsPdStrings();
 
+    ////
+    /// \brief this is for loading or copying canvases. not yet used in fileparser
+    ///
+    void canvasFromPdStrings(QStringList strings);
+
+
 public slots:
 
     void s_InMousePressed(UIWidget* obj, QMouseEvent* ev);
@@ -509,6 +515,16 @@ public slots:
     void dataCut();
     void dataCopy();
     void dataPaste();
+
+    void setKeepPdObject(bool v)
+    {
+        _keepPdObject = v;
+    }
+
+    bool keepPdObject()
+    {
+        return _keepPdObject;
+    }
 
 private:
 private slots:

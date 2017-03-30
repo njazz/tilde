@@ -1135,6 +1135,28 @@ QStringList Canvas::canvasAsPdStrings()
     return ret;
 }
 
+void Canvas::canvasFromPdStrings(QStringList strings)
+{
+
+
+
+    if (strings.size() < 1)
+        return;
+
+    // todo
+    // now skipping first line (#N canvas)
+    strings.removeAt(0);
+
+    QStringList list1;
+
+    for (int i = 0; i < strings.size(); i++) {
+
+        FileParser::parseQString(strings[i]);
+
+        //list1.push_back(str);
+    }
+}
+
 void Canvas::cancelPatchcord()
 {
     _newLine.active = false;

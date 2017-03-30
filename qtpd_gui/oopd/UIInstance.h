@@ -31,6 +31,7 @@ class UIInstance : public UIObject {
 
 private:
     OPInstance* _opInstance;
+    OPClass* _opClass;
 
 public:
     explicit UIInstance(UIObject* parent = 0);
@@ -112,30 +113,31 @@ public:
     {
         QPainter p(this);
         p.setRenderHint(QPainter::HighQualityAntialiasing, true);
-        p.scale(this->scale(), this->scale());
+        p.scale(scale(), scale());
 
-        p.setPen(QPen(QColor(255, 192, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        QColor c1 = (_opInstance) ? QColor(0, 192, 255) : QColor(255, 0, 0);
+        p.setPen(QPen(c1, 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         p.drawRect(0, 1, width(), height() - 2);
 
         //remove this later
-        if (this->subpatchWindow()) {
+        if (subpatchWindow()) {
             p.setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-            p.drawRect(0, 2, this->width(), this->height() - 4);
+            p.drawRect(0, 2, width(), height() - 4);
         }
 
-        QColor rectColor = (this->errorBox()) ? QColor(255, 0, 0) : properties()->get("BorderColor")->asQColor(); //QColor(128, 128, 128);
-        p.setPen(QPen(rectColor, 2, (this->errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-        p.drawRect(0, 0, this->width(), this->height());
+        QColor rectColor = (errorBox()) ? QColor(255, 0, 0) : properties()->get("BorderColor")->asQColor(); //QColor(128, 128, 128);
+        p.setPen(QPen(rectColor, 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p.drawRect(0, 0, width(), height());
         QTextOption* op = new QTextOption;
         op->setAlignment(Qt::AlignLeft);
         p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
         p.setFont(QFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize(), 0, false));
-        p.drawText(2, 3, this->width() - 2, this->height() - 3, 0, this->objectData().c_str(), 0);
+        p.drawText(2, 3, width() - 2, height() - 3, 0, objectData().c_str(), 0);
 
-        if (this->isSelected()) {
-            p.setPen(QPen(QColor(0, 192, 255), 2, (this->errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-            p.drawRect(0, 0, this->width(), this->height());
+        if (isSelected()) {
+            p.setPen(QPen(QColor(0, 192, 255), 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p.drawRect(0, 0, width(), height());
         }
     }
 
@@ -154,28 +156,28 @@ public:
         }
 
         //open canvas for subpatch
-        if (this->getEditMode() != em_Unlocked) {
-            if (this->subpatchWindow()) {
-                this->subpatchWindow()->show();
+        if (getEditMode() != em_Unlocked) {
+            if (subpatchWindow()) {
+                subpatchWindow()->show();
             }
         }
 
         //window opening. Fix
-        if (this->getEditMode() != em_Unlocked) {
-            //_opInstance->showWindow();
+        if (getEditMode() != em_Unlocked) {
+            _opInstance->showWindow();
         }
 
-        if ((this->getEditMode() == em_Unlocked) && this->isSelected()) {
-            //            this->editor_->setText(QString(this->objectData().c_str()));
-            //            this->editor_->show();
-            //            this->editor_->setFocus();
+        if ((getEditMode() == em_Unlocked) && isSelected()) {
+            //            editor_->setText(QString(objectData().c_str()));
+            //            editor_->show();
+            //            editor_->setFocus();
 
             emit editObject(this);
             return;
         }
 
         emit selectBox(this);
-        this->dragOffset = ev->pos();
+        dragOffset = ev->pos();
     }
 
     ////
@@ -183,7 +185,7 @@ public:
     ///
     void mouseReleaseEvent(QMouseEvent*)
     {
-        this->repaint();
+        repaint();
     }
 
     ////
@@ -197,45 +199,71 @@ public:
         }
         event->ignore();
 
-        if ((this->getEditMode() != em_Unlocked) && (this->subpatchWindow())) {
-            this->setCursor(QCursor(Qt::PointingHandCursor));
+        if ((getEditMode() != em_Unlocked) && (subpatchWindow())) {
+            setCursor(QCursor(Qt::PointingHandCursor));
         } else {
-            this->setCursor(QCursor(Qt::ArrowCursor));
+            setCursor(QCursor(Qt::ArrowCursor));
         }
     }
 
     void setPdMessage(std::string message)
     {
-        this->setObjectData(message);
-        this->autoResize();
+        setObjectData(message);
+        autoResize();
 
         QFont myFont(PREF_QSTRING("Font"), 11);
         QFontMetrics fm(myFont);
-        int new_w = fm.width(QString(this->objectData().c_str())) + 10;
+        int new_w = fm.width(QString(objectData().c_str())) + 10;
         new_w = (new_w < 25) ? 25 : new_w;
-        this->setFixedWidth(new_w);
-        //this->editor_->setFixedWidth(this->width() - 5);
+        setFixedWidth(new_w);
+        //editor_->setFixedWidth(width() - 5);
 
         //todo: del object and create new + patchcords
 
         //
-        this->setInletsPos();
-        this->setOutletsPos();
+        setInletsPos();
+        setOutletsPos();
     }
 
     static void updateUI(void* uiobj, ceammc::AtomList msg)
     {
         // message handling here - probably move somewhere else?
 
-        if (msg.size() < 2)
+        if (msg.size() < 1)
             return;
         if (!msg.at(0).isSymbol())
             return;
 
-        if (msg.at(0).asString() == "new") {
+        if ( (msg.at(0).asString() == "new") && (msg.size() > 1) ) {
 
             qDebug() << "new instance";
+
+            UIInstance *x = ((UIInstance*)uiobj);
+
+            x->_opClass = OOPD::inst().classByName(msg.at(1).asString());
+
+            if (!x->_opClass)
+            {
+                cmp_post("class not found: ");
+                cmp_post(msg.at(1).asString());
+                return;
+            }
+
+            x->_opInstance = new OPInstance(x->_opClass);
+            cmp_post("new instance");
         }
+
+        if (msg.at(0).asString() == "free")
+        {
+
+            UIInstance *x = ((UIInstance*)uiobj);
+            if (x->_opInstance)
+                delete x->_opInstance;
+            x->_opInstance = 0;
+            cmp_post("free instance");
+
+        }
+
 
 //        if (msg.at(0).asString() == "addproperty") {
 //        }
@@ -264,7 +292,7 @@ signals:
 private slots:
     void updateUISlot()
     {
-        this->repaint();
+        repaint();
     }
 };
 }
