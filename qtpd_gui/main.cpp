@@ -65,6 +65,7 @@ int main(int argc, char* argv[])
     // load from file later
     Preferences::inst().create("Externals", "Folders", "0.1", docFolder + "/Qtpd/Externals");
     Preferences::inst().create("Scripts", "Folders", "0.1", docFolder + "/Qtpd/Scripts");
+    Preferences::inst().create("Help", "Folders", "0.1", docFolder + "/Qtpd/Help");
 
     //test
     //fix
@@ -73,6 +74,7 @@ int main(int argc, char* argv[])
     std::string extPath = Preferences::inst().get("Externals")->asStdString();
     std::string extPath1 = extPath + "/ceammc";
     std::string extPath2 = extPath + "/fiddle~";
+    std::string extPath3 = Preferences::inst().get("Help")->asStdString();
     //bug - no '/' in the end
 
     //std::string extPath3 = extPath + "/pof";
@@ -80,8 +82,7 @@ int main(int argc, char* argv[])
     Preferences::inst().addPath(extPath.c_str());
     Preferences::inst().addPath(extPath1.c_str());
     Preferences::inst().addPath(extPath2.c_str());
-
-    //Preferences::inst().addPath(extPath3.c_str());
+    Preferences::inst().addPath(extPath3.c_str());
 
     //init python
     pyWrapper::inst();

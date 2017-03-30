@@ -11,7 +11,7 @@ std::string FileParser::pdParserFileName = "";
 
 bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
 {
-    qDebug() << "legacy process:" << list;
+    //qDebug() << "legacy process:" << list;
 
     // special cases:
     // msg - text - floatatom - symbolatom
@@ -133,7 +133,7 @@ UIObject* FileParser::sendStringToCanvas(Canvas* cmcanvas, QStringList list)
         objList.removeAt(0);
         msgname = objList.join(" ");
 
-        qDebug() << "objname" << objname;
+        //qDebug() << "objname" << objname;
 
         // check property handling
         // probably should be moved here?
@@ -153,14 +153,14 @@ void FileParser::parseStringListAtoms(Canvas* cmcanvas, QStringList list) //rena
     if (FileParser::legacyProcess(cmcanvas, list))
         return;
 
-    qDebug() << "list at 0" << list.at(0);
+    //qDebug() << "list at 0" << list.at(0);
 
     if (list.at(0) == "obj") {
         FileParser::sendStringToCanvas(cmcanvas, list);
     } else
 
         if (list.at(0) == "connect") {
-        qDebug("new connect");
+        //qDebug("new connect");
 
         if (list.size() > 4) {
             //if (cmcanvas)
