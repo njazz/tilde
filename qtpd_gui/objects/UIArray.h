@@ -16,6 +16,8 @@
 //todo proper pattern
 #include "cm_openfileproxy.h"
 
+#include "UIArrayEditor.h"
+
 //#include "cm_pdlink.h"
 
 namespace qtpd {
@@ -28,6 +30,8 @@ class UIArray : public UIObject {
     Q_OBJECT
 
 private:
+    UIArrayEditor _editor;
+
 public:
     explicit UIArray(UIObject* parent = 0);
 
@@ -60,22 +64,21 @@ public:
                 b->setErrorBox(true);
             } else {
 
-                t_symbol * name = gensym(list.at(1).toStdString().c_str());
+                t_symbol* name = gensym(list.at(1).toStdString().c_str());
                 t_floatarg size = list.at(2).toFloat();
 
-                cmp_new_array(pd_Canvas, name, size, 1, 1);
+                b->_editor.setPdArray( cmp_new_array(pd_Canvas, name, size, 1, 1) );
             }
         }
 
-
-//        if (!pd_Canvas) {
-//            qDebug("bad pd canvas instance");
-//            b->setErrorBox(true);
-//        } else {
-//            //temp pos = 0;
-//            QPoint pos = QPoint(0, 0);
-//            new_obj = cmp_create_object(pd_Canvas, (char*)obj_name, pos.x(), pos.y());
-//        }
+        //        if (!pd_Canvas) {
+        //            qDebug("bad pd canvas instance");
+        //            b->setErrorBox(true);
+        //        } else {
+        //            //temp pos = 0;
+        //            QPoint pos = QPoint(0, 0);
+        //            new_obj = cmp_create_object(pd_Canvas, (char*)obj_name, pos.x(), pos.y());
+        //        }
 
         //        if (new_obj) {
         //            in_c = cmp_get_inlet_count(new_obj);

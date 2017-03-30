@@ -25,6 +25,7 @@ namespace qtpd {
 
 class OPClass;
 class OPInstance;
+class PatchWindow;
 
 //todo class or move to find section
 typedef map<t_canvas*, OPClass*> t_OPClassByCanvas;
@@ -132,6 +133,7 @@ private:
     map<string, t_outlet*> _methodOutlets; //todo OPOutputs
     map<string, t_outlet*> methodPointerOutlets; //todo OPOutputs
 
+    PatchWindow *_patchWindow;
     OPClass* _parent;
 
 public:
@@ -143,16 +145,7 @@ public:
     }
 
     // for canvas-based (change arguments?)
-    OPClass(string className)
-    {
-
-        //TODO
-        // create canvas here
-
-        _className = className;
-        // register
-        OOPD::inst().registerClass(className, _canvas, _symbol);
-    }
+    OPClass(string className);
 
 // ------------------------------------------------
 #pragma mark getters
@@ -168,6 +161,12 @@ public:
     {
         return _methodOutlets;
     }
+
+// ------------------------------------------------
+#pragma mark window
+
+    void showWindow();
+
 
 // ------------------------------------------------
 #pragma mark file io

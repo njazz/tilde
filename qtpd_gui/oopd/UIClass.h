@@ -31,9 +31,7 @@ class UIClass : public UIObject {
     Q_OBJECT
 
 private:
-    // for abstracions
-    bool isAbstraction_;
-    QString abstractionPath_;
+    OPClass *_opClass;
 
 public:
     explicit UIClass(UIObject* parent = 0);
@@ -47,11 +45,8 @@ public:
         //temporary fix
         if (objectData=="") objectData = "pdclass";
 
-        //qDebug() << "*objData " << QString(objectData.c_str());
-
         UIClass* b = new UIClass((UIObject*)parent);
 
-        //truncate "ui.obj". todo cleanup
         QStringList list = QString(objectData.c_str()).split(" ");
 
         const char* obj_name = objectData.c_str();
@@ -67,47 +62,39 @@ public:
         qDebug() << QString(data1.c_str()) << "data1";
 
         t_object* new_obj = 0;
-        int in_c = 0, out_c = 0;
+        int in_c = 1, out_c = 0;
+
+        b->setHelpName("pdclass-help.pd");
 
         if (!pd_Canvas) {
             qDebug("bad pd canvas instance");
             b->setErrorBox(true);
-        } else {
-            //temp pos = 0;
-            QPoint pos = QPoint(0, 0);
-            new_obj = cmp_create_object(pd_Canvas, (char*)obj_name2, pos.x(), pos.y());
+        } else
+        {
+            new_obj = cmp_create_object(pd_Canvas, "oopdclass", 0,0);
+        }
+
+        // new class w/canvas
+        if (list.size()>1)
+        {
+            b->_opClass = new OPClass(list.at(1).toStdString());
+        }
+        else
+        {
+            b->_opClass = new OPClass();
         }
 
         if (new_obj) {
             in_c = cmp_get_inlet_count(new_obj);
             out_c = cmp_get_outlet_count(new_obj);
 
-            qDebug("created object %s ins %i outs %i ptr %lu", obj_name, in_c, out_c, (long)new_obj);
-
             b->setPdObject(new_obj);
 
-            b->isAbstraction_ = cmp_is_abstraction(new_obj);
-            qDebug() << "*** is abstraction: " << b->isAbstraction_;
-
-            // todo different help symbols
-            b->setHelpName(list.at(0) + "-help.pd");
-
-            if (b->isAbstraction_) {
-                t_symbol* s = cmp_get_path((t_canvas*)new_obj);
-
-                // todo
-                QStringList l = QString(objectData.c_str()).split(" ");
-                QString pdName = l.at(1); //assuming there always is a name when abstraction is created
-
-                // todo windows
-                b->abstractionPath_ = QString(s->s_name) + "/" + pdName + ".pd";
-
-                qDebug() << b->abstractionPath_;
-            }
+            cmp_connectUI((t_pd*)new_obj,(void*)b,&UIClass::updateUI);
 
         } else {
-            qDebug("Error: no such object %s", obj_name);
-            //b->setErrorBox(true);
+            qDebug("Error: no pd object");
+            b->setErrorBox(true);
             in_c = 1;
             out_c = 0;
         }
@@ -116,6 +103,8 @@ public:
             b->addInlet();
         for (int i = 0; i < out_c; i++)
             b->addOutlet();
+
+        connect(b, &UIClass::updateUISignal, b, &UIClass::updateUISlot);
 
         return (UIObject*)b;
     };
@@ -139,7 +128,7 @@ public:
         }
 
         QColor rectColor = (this->errorBox()) ? QColor(255, 0, 0) : properties()->get("BorderColor")->asQColor(); //QColor(128, 128, 128);
-        p.setPen(QPen(rectColor, 2 + isAbstraction_, (this->errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p.setPen(QPen(rectColor, 2 , (this->errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         p.drawRect(0, 0, this->width(), this->height());
         QTextOption* op = new QTextOption;
         op->setAlignment(Qt::AlignLeft);
@@ -175,11 +164,9 @@ public:
             }
         }
 
-        //abstraction opening. Fix
+        //window opening. Fix
         if (this->getEditMode() != em_Unlocked) {
-            if (isAbstraction_) {
-                OpenFileProxy::openAbstraction(abstractionPath_);
-            }
+            _opClass->showWindow();
         }
 
         if ((this->getEditMode() == em_Unlocked) && this->isSelected()) {
@@ -240,16 +227,46 @@ public:
         this->setOutletsPos();
     }
 
+    static void updateUI(void* uiobj, ceammc::AtomList msg)
+    {
+        // message handling here - probably move somewhere else?
+
+        if (msg.size() <2) return;
+        if (!msg.at(0).isSymbol()) return;
+
+        if (msg.at(0).asString() == "newclass")
+        {}
+
+        if (msg.at(0).asString() == "addproperty")
+        {}
+
+        if (msg.at(0).asString() == "delproperty")
+        {}
+
+        if (msg.at(0).asString() == "addmethod")
+        {}
+
+        if (msg.at(0).asString() == "delmethod")
+        {}
+
+        emit ((UIClass*)uiobj)->updateUISignal();
+    }
+
 signals:
 
     void mouseMoved();
     void rightClicked();
 
     //void editObject(UIObject* box);
+signals:
+    void updateUISignal();
 
 private slots:
-    //    void editorDone();
-    //    void editorChanged();
+    void updateUISlot()
+    {
+        this->repaint();
+    }
+
 };
 }
 

@@ -56,15 +56,14 @@ SOURCES += main.cpp\
     objects/UIToggle.cpp \
     objects/UIText.cpp \
     objects/UIScript.cpp \
-    oopd/UIClass.cpp
+    oopd/OOPD.cpp \
+    oopd/UIClass.cpp \
+    objects/UIArrayEditor.cpp
 
 
 HEADERS  += \
     cm_port.h \
     cm_canvas.h \
-    window/cm_basewindow.h \
-    window/cm_pdwindow.h \
-    window/cm_patchwindow.h \
     cm_menu.h \
     cm_objectmaker.h \
     cm_widget.h \
@@ -112,7 +111,6 @@ HEADERS  += \
     python/headers/PythonQtVariants.h \
     python/wrappers/py_qtpd.h \
     cm_openfileproxy.h \
-    window/cm_propertieswindow.h \
     python/wrappers/py_wrappers.h \
     objects/UIBang.h \
     objects/UIArray.h \
@@ -124,7 +122,12 @@ HEADERS  += \
     objects/UIMessage.h \
     #
     oopd/OOPD.h \
-    oopd/UIClass.h
+    oopd/UIClass.h \
+    objects/UIArrayEditor.h \
+    window/BaseWindow.h \
+    window/PatchWindow.h \
+    window/PdWindow.h \
+    window/PropertiesWindow.h
 
 
 FORMS    += \

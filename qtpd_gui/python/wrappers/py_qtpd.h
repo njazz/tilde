@@ -10,7 +10,7 @@
 
 #include <PythonQt.h>
 
-#include "cm_patchwindow.h"
+#include "PatchWindow.h"
 
 #include "cm_preferences.h"
 

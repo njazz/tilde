@@ -183,7 +183,9 @@ SOURCES += pdlib.cpp \
     ui_objects/ui_float.cpp \
     ui_objects/ui_msg.cpp \
     ui_objects/ui_script.cpp \
-    ui_objects/ui_toggle.cpp
+    ui_objects/ui_toggle.cpp \
+#
+    ui_objects/pdclass.cpp
 
 HEADERS += \
     ceammc-lib/ceammc.h \

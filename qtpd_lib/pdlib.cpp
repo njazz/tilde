@@ -33,6 +33,8 @@ extern "C" void setup_ui0x2emsg(void);
 extern "C" void setup_ui0x2efloat(void);
 extern "C" void setup_ui0x2escript(void);
 
+extern "C" void setup_oopdclass(void);
+
 //todo fix
 //typedef struct _loadedlist
 //{
@@ -532,6 +534,8 @@ void cmp_get_array_data(t_garray* a, int* size, t_float** vec)
 {
     garray_getfloatarray(a, size, vec);
 }
+
+
 
 t_garray* cmp_new_array(t_canvas* c, t_symbol* name, t_floatarg size, t_floatarg save, t_floatarg newgraph)
 {

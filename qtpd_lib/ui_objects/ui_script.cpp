@@ -44,14 +44,6 @@ static void uiscript_anything(t_ui_script* x, t_symbol* s, int argc, t_atom* arg
         l.output(x->out1);
     } else {
 
-//        post("updateUIMap @obj %lu", (long)updateUImap);
-
-//        if (updateUImap)
-//            if ((*updateUImap)["ui.script"]) {
-//                post("update ui >>");
-//                t_updateUI Fn = (*updateUImap)["ui.script"];
-//                Fn(x->uiobj, AtomList(argc, argv));
-//            }
         if (x->updateUI)
             x->updateUI (x->uiobj, AtomList(argc, argv));
 
