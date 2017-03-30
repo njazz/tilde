@@ -12,16 +12,15 @@ namespace Ui {
 class cm_basewindow;
 }
 
-namespace qtpd{
+namespace qtpd {
 ////
 /// \brief Base class for windows (patch, pd)
 ///
-class BaseWindow : public QMainWindow
-{
+class BaseWindow : public QMainWindow {
     Q_OBJECT
 
 public:
-    explicit BaseWindow(QWidget *parent = 0);
+    explicit BaseWindow(QWidget* parent = 0);
     ~BaseWindow();
 
     ////
@@ -43,13 +42,9 @@ public:
         saveAsAct = new QAction(tr("&Save As..."), this);
         saveAsAct->setShortcuts(QKeySequence::SaveAs);
 
-
-
-
         closeAct = new QAction(tr("Close"), this);
         closeAct->setShortcut(tr("Ctrl+W"));
         connect(closeAct, &QAction::triggered, this, &BaseWindow::close);
-
 
         messageAct = new QAction(tr("Message..."), this);
         messageAct->setShortcut(tr("Ctrl+Shift+M"));
@@ -125,9 +120,7 @@ public:
         //        QAction *pdKeyBindingsAct;
 
         pdHelpAct = new QAction(tr("Pd help"), this);
-
     }
-
 
     ////
     /// \brief create all menus
@@ -147,8 +140,6 @@ public:
         fileMenu->addSeparator();
         fileMenu->addAction(exitAct);
 
-
-
         editMenu = menuBar()->addMenu(tr("&Edit"));
         editMenu->addAction(undoAct);
         editMenu->addAction(redoAct);
@@ -161,7 +152,6 @@ public:
         putMenu = menuBar()->addMenu(tr("&Put"));
 
         arrangeMenu = menuBar()->addMenu(tr("&Arrange"));
-
 
         findMenu = menuBar()->addMenu(tr("&Find"));
         findMenu->addSeparator();
@@ -182,60 +172,52 @@ public:
 
         helpMenu = menuBar()->addMenu(tr("&Help"));
         helpMenu->addAction(pdHelpAct);
-
     }
 
 private:
-    Ui::cm_basewindow *ui;
+    Ui::cm_basewindow* ui;
 
+    QMenu* findMenu;
+    QMenu* mediaMenu;
+    QMenu* windowMenu;
 
+    QAction* newAct;
 
+    QAction* closeAct;
+    QAction* messageAct;
 
-    QMenu *findMenu;
-    QMenu *mediaMenu;
-    QMenu *windowMenu;
+    QAction* exitAct;
 
-    QAction *newAct;
+    QAction* undoAct;
+    QAction* redoAct;
 
-    QAction *closeAct;
-    QAction *messageAct;
+    QAction* dspOnAct;
+    QAction* dspOffAct;
 
-    QAction *exitAct;
+    QAction* pdWindowAct;
+    QAction* pythonConsoleAct;
+    QAction* pdAudioSettingsAct;
+    QAction* pdPreferencesAct;
+    QAction* pdKeyBindingsAct;
 
-    QAction *undoAct;
-    QAction *redoAct;
-    QAction *cutAct;
-    QAction *copyAct;
-    QAction *pasteAct;
-
-
-
-    QAction *dspOnAct;
-    QAction *dspOffAct;
-
-    QAction *pdWindowAct;
-    QAction *pythonConsoleAct;
-    QAction *pdAudioSettingsAct;
-    QAction *pdPreferencesAct;
-    QAction *pdKeyBindingsAct;
-
-    QAction *pdHelpAct;
+    QAction* pdHelpAct;
 
 public:
+    QAction* openAct;
 
-    QAction *openAct;
+    QAction* saveAct;
+    QAction* saveAsAct;
 
-    QAction *saveAct;
-    QAction *saveAsAct;
+    QAction* cutAct;
+    QAction* copyAct;
+    QAction* pasteAct;
 
+    QMenu* fileMenu;
+    QMenu* editMenu;
+    QMenu* putMenu;
+    QMenu* arrangeMenu;
 
-    QMenu *fileMenu;
-    QMenu *editMenu;
-    QMenu *putMenu;
-    QMenu *arrangeMenu;
-
-    QMenu *helpMenu;
-
+    QMenu* helpMenu;
 
 private slots:
 
@@ -245,8 +227,6 @@ private slots:
     void dspOff();
 
     void pdWindow();
-
-
 };
 }
 

@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QWidget>
 
-#include "cm_pdlink.h"
+#include "PdLink.h"
 
 class UIArrayEditor : public QWidget {
     Q_OBJECT

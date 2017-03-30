@@ -14,7 +14,7 @@
 
 #include "cm_preferences.h"
 
-#include "cm_filesaver.h"
+#include "FileSaver.h"
 
 using namespace qtpd;
 

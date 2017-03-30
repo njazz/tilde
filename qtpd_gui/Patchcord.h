@@ -4,8 +4,8 @@
 #ifndef CM_PATCHCORD_H
 #define CM_PATCHCORD_H
 
-#include "cm_object.h"
-#include "cm_port.h"
+#include "UIObject.h"
+#include "Port.h"
 
 #include <math.h>
 

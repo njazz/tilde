@@ -6,8 +6,8 @@
 
 #include <QPlainTextEdit>
 
-#include "cm_object.h"
-#include "cm_port.h"
+#include "UIObject.h"
+#include "Port.h"
 
 #include "PythonQt.h"
 

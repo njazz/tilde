@@ -1,7 +1,7 @@
 // (c) 2017 Alex Nadzharov
 // License: GPL3
 
-#include "cm_objectloader.h"
+#include "ObjectLoader.h"
 
 namespace qtpd {
 

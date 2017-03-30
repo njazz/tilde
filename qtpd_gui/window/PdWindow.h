@@ -6,7 +6,7 @@
 #include <QMainWindow>
 #include <QtWidgets>
 
-#include "cm_pdlink.h"
+#include "PdLink.h"
 
 #include "cm_preferences.h"
 

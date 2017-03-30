@@ -1,7 +1,7 @@
 // (c) 2017 Alex Nadzharov
 // License: GPL3
 
-#include "cm_fileparser.h"
+#include "FileParser.h"
 
 namespace qtpd {
 PatchWindow* FileParser::pdParserPrevWindow = 0;

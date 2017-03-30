@@ -6,10 +6,10 @@
 
 #include <qlineedit.h>
 
-#include "cm_object.h"
-#include "cm_port.h"
+#include "UIObject.h"
+#include "Port.h"
 
-#include "cm_pdlink.h"
+#include "PdLink.h"
 
 namespace qtpd {
 

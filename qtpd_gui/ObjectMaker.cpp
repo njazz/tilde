@@ -1,7 +1,7 @@
 // (c) 2017 Alex Nadzharov
 // License: GPL3
 
-#include "cm_objectmaker.h"
+#include "ObjectMaker.h"
 #include "cm_preferences.h"
 
 namespace qtpd {

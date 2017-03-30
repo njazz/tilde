@@ -3,14 +3,14 @@
 
 #include <QApplication>
 
-#include "cm_pdlink.h"
+#include "PdLink.h"
 
 #include "PatchWindow.h"
 #include "PdWindow.h"
 
-#include "cm_menu.h"
+#include "BaseMenu.h"
 
-#include "cm_objectloader.h"
+#include "ObjectLoader.h"
 
 #include "cm_preferences.h"
 

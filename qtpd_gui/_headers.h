@@ -5,16 +5,16 @@
 #define CM_HEADERS_H
 
 #include "BaseWindow.h"
-#include "cm_object.h"
+#include "UIObject.h"
 #include "cm_preferences.h"
 
-#include "cm_fileparser.h"
-#include "cm_filesaver.h"
+#include "FileParser.h"
+#include "FileSaver.h"
 
-#include "cm_canvas_types.h"
+#include "CanvasDatas.h"
 
 #include "../qtpd_lib/ceammc-lib/ceammc_atomlist.h"
 #include "../qtpd_lib/src/m_pd.h"
-#include "cm_pdlink.h"
+#include "PdLink.h"
 
 #endif // CM_HEADERS_H

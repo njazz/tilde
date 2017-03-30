@@ -1,7 +1,7 @@
 // (c) 2017 Alex Nadzharov
 // License: GPL3
 
-#include "cm_canvas.h"
+#include "Canvas.h"
 
 namespace qtpd {
 
@@ -1279,4 +1279,23 @@ void Canvas::setWindowSize(QSize wsize)
 {
     _windowSize = wsize;
 }
+
+
+// ==========================================
+
+void Canvas::dataCut()
+{
+    if (_selectionData.hasObjects()) return;
+}
+
+}
+
+void Canvas::dataCopy()
+{
+    if (_selectionData.hasObjects()) return;
+
+}
+void Canvas::dataPaste()
+{
+
 }

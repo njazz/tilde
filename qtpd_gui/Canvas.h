@@ -8,11 +8,11 @@
 #include <QtGui>
 #include <QtWidgets>
 
-#include "cm_patchcord.h"
+#include "Patchcord.h"
 
-#include "cm_objectmaker.h"
+#include "ObjectMaker.h"
 
-#include "cm_objectloader.h"
+#include "ObjectLoader.h"
 
 //todo - move to window?
 #include "cm_clipboard.h"
@@ -503,6 +503,10 @@ public slots:
     QSize minimumCanvasSize();
 
     void setWindowSize(QSize wsize);
+
+    void dataCut();
+    void dataCopy();
+    void dataPaste();
 
 private:
 private slots:

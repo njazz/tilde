@@ -5,10 +5,10 @@
 #include <QLabel>
 #include <QtGui>
 
-#include "cm_canvas.h"
+#include "Canvas.h"
 #include <UIBox.h>
 
-#include "cm_menu.h"
+#include "BaseMenu.h"
 
 namespace qtpd {
 BaseWindow::BaseWindow(QWidget* parent)

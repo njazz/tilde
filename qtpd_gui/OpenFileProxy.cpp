@@ -1,6 +1,6 @@
-#include "cm_openfileproxy.h"
+#include "OpenFileProxy.h"
 
-#include "cm_fileparser.h"
+#include "FileParser.h"
 
 namespace qtpd {
 OpenFileProxy::OpenFileProxy(QObject* parent)

@@ -4,13 +4,13 @@
 #ifndef CM_OBJECT_H
 #define CM_OBJECT_H
 
-#include "cm_port.h"
-#include "cm_sizebox.h"
-#include "cm_widget.h"
+#include "Port.h"
+#include "SizeBox.h"
+#include "UIWidget.h"
 
 #include "cm_preferences.h"
 
-#include "cm_pdlink.h"
+#include "PdLink.h"
 
 #include <QMainWindow>
 #include <QMenu>
@@ -20,7 +20,7 @@
 
 //lazy way
 //todo proper pattern
-#include "cm_openfileproxy.h"
+#include "OpenFileProxy.h"
 
 namespace qtpd {
 

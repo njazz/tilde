@@ -8,13 +8,13 @@
 #include <QMainWindow>
 #include <QtGui>
 
-#include "cm_port.h"
+#include "Port.h"
 
-#include "cm_object.h"
+#include "UIObject.h"
 
 //lazy way
 //todo proper pattern
-#include "cm_openfileproxy.h"
+#include "OpenFileProxy.h"
 
 //#include "cm_pdlink.h"
 

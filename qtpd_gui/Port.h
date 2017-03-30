@@ -8,7 +8,7 @@
 
 #include <QtGui>
 
-#include "cm_widget.h"
+#include "UIWidget.h"
 
 namespace qtpd {
 

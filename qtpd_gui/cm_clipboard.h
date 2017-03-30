@@ -7,7 +7,7 @@
 //#include "cm_object.h"
 //#include "cm_patchcord.h"
 
-#include "cm_canvas_types.h"
+#include "CanvasDatas.h"
 
 namespace qtpd {
 

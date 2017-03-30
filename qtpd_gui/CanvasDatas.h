@@ -4,8 +4,8 @@
 #ifndef CM_CANVAS_TYPES_H
 #define CM_CANVAS_TYPES_H
 
-#include "cm_object.h"
-#include "cm_patchcord.h"
+#include "UIObject.h"
+#include "Patchcord.h"
 
 #include <set>
 
@@ -28,6 +28,12 @@ class canvasData {
 public:
 //    objectVec boxes;
 //    patchcordVec patchcords;
+
+
+    bool hasObjects()
+    {
+        return ( (_boxes.size()>0)  && (_patchcords.size()>0) );
+    }
 
     objectVec* boxes()
     {

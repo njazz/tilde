@@ -5,7 +5,7 @@
 
 #include <PythonQt.h>
 
-#include "../cm_pdlink.h"
+#include "../PdLink.h"
 
 ////
 /// \brief Temporary. wrapper for c functions - for future Python API

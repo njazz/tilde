@@ -4,7 +4,7 @@
 #ifndef CM_SIZEBOX_H
 #define CM_SIZEBOX_H
 
-#include "cm_widget.h"
+#include "UIWidget.h"
 
 #include <QDebug>
 #include <QMouseEvent>
