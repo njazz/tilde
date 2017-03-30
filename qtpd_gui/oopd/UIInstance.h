@@ -164,7 +164,8 @@ public:
 
         //window opening. Fix
         if (getEditMode() != em_Unlocked) {
-            _opInstance->showWindow();
+            if (_opInstance)
+                _opInstance->showWindow();
         }
 
         if ((getEditMode() == em_Unlocked) && isSelected()) {

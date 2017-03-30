@@ -88,8 +88,16 @@ public:
         _instanceBySymbol[symbol] = opInstance;
     };
 
-    void unregisterClass(string className, t_canvas* canvas, t_symbol* symbol){};
-    void unregisterInstance(string className, t_canvas* canvas, t_symbol* symbol){};
+    void unregisterClass(string className, t_canvas* canvas, t_symbol* symbol)
+    {
+
+    };
+    void unregisterInstance(string className, t_canvas* canvas, t_symbol* symbol)
+    {
+        _instanceByCanvas[canvas] = 0;
+        _instanceBySymbol[symbol] = 0;
+
+    };
 
     OPClass* classByCanvas(t_canvas* canvas)
     {
@@ -357,8 +365,8 @@ public:
     ~OPInstance()
     {
         // delete canvas
-        // TODO
-        delete _patchWindow;
+        // TODO yet disabled
+        // delete _patchWindow;
 
         // unregister
         OOPD::inst().unregisterInstance(_className, _canvas, _symbol);
