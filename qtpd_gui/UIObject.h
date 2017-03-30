@@ -290,13 +290,20 @@ public:
 
     void setHelpName(QString name)
     {
+        _helpName = name;
+
+    }
+
+    QString helpName() {
+
+        QString name;
 
         QStringList paths = Preferences::inst().paths();
 
         if (paths.size() == 0) {
             _helpName = "";
             cmp_post("Help: bad search paths");
-            return;
+            return "";
         }
 
         for (int i = 0; i < paths.size(); i++) {
@@ -310,9 +317,9 @@ public:
 
             if (check_file.exists() && check_file.isFile()) {
 
-                _helpName = fullname;
+                //_helpName = fullname;
                 qDebug() << "FOUND: " << fullname;
-                return;
+                return "";
             }
 
             //todo check if it exists in several folders
@@ -320,8 +327,10 @@ public:
 
         QString p1 = "Help: not found: " + name;
         cmp_post(p1.toStdString().c_str());
+
+        return name;
+
     }
-    QString helpName() { return _helpName; }
 
     void setObjectSizeMode(t_objectSize os) { _objectSizeMode = os; }
 
@@ -334,8 +343,9 @@ private slots:
 
     void openHelpWindow()
     {
-        if (helpName() != "") {
-            OpenFileProxy::openAbstraction(helpName());
+        QString helpName_ = helpName();
+        if (helpName_ != "") {
+            OpenFileProxy::openAbstraction(helpName_);
         }
     }
 
