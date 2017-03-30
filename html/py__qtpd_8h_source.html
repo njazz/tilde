@@ -98,7 +98,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00014"></a>00014 
 <a name="l00015"></a>00015 <span class="preprocessor">#include &quot;<a class="code" href="cm__preferences_8h.html">cm_preferences.h</a>&quot;</span>
 <a name="l00016"></a>00016 
-<a name="l00017"></a>00017 <span class="preprocessor">#include &quot;<a class="code" href="cm__filesaver_8h.html">cm_filesaver.h</a>&quot;</span>
+<a name="l00017"></a>00017 <span class="preprocessor">#include &quot;<a class="code" href="_file_saver_8h.html">FileSaver.h</a>&quot;</span>
 <a name="l00018"></a>00018 
 <a name="l00019"></a>00019 <span class="keyword">using namespace </span>qtpd;
 <a name="l00020"></a>00020 
@@ -127,7 +127,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00044"></a><a class="code" href="classpy_u_i_object_decorator.html#ad931674fe14868eef92235910c2b57ef">00044</a>     <span class="keywordtype">void</span> pdMessage(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, QString data)
 <a name="l00045"></a>00045     {
 <a name="l00046"></a>00046         <span class="keywordflow">if</span> (obj-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ad41f2f9ff8447ea8dc061c3e8fc6528b" title="returns pointer to pd object.">pdObject</a>()) {
-<a name="l00047"></a>00047             <a class="code" href="cm__pdlink_8h.html#a9bca4af04ea4fac6b910933e5ba16814" title="send string as pd message to object">cmp_sendstring</a>((t_pd*)obj-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ad41f2f9ff8447ea8dc061c3e8fc6528b" title="returns pointer to pd object.">pdObject</a>(), data.toStdString());
+<a name="l00047"></a>00047             <a class="code" href="_pd_link_8h.html#a9bca4af04ea4fac6b910933e5ba16814" title="send string as pd message to object">cmp_sendstring</a>((t_pd*)obj-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ad41f2f9ff8447ea8dc061c3e8fc6528b" title="returns pointer to pd object.">pdObject</a>(), data.toStdString());
 <a name="l00048"></a>00048         }
 <a name="l00049"></a>00049     }
 <a name="l00050"></a>00050 
@@ -280,7 +280,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00205"></a>00205         <span class="keywordflow">if</span> (c-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ad41f2f9ff8447ea8dc061c3e8fc6528b" title="returns pointer to pd object.">pdObject</a>()) {
 <a name="l00206"></a>00206             t_canvas* pdCanvas = (t_canvas*)c-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ad41f2f9ff8447ea8dc061c3e8fc6528b" title="returns pointer to pd object.">pdObject</a>();
 <a name="l00207"></a>00207             <span class="comment">//yet this way:</span>
-<a name="l00208"></a>00208             <a class="code" href="cm__pdlink_8h.html#a5e3a540ebc4655748e2c87cabd76213c">cmp_new_array</a>(pdCanvas, gensym(name.toStdString().c_str()), (t_floatarg)<a class="code" href="bufferobject_8h.html#a612c27dae5681d14a5d92d0b3d8ab6e5">size</a>, 1, 1);
+<a name="l00208"></a>00208             <a class="code" href="_pd_link_8h.html#a5e3a540ebc4655748e2c87cabd76213c">cmp_new_array</a>(pdCanvas, gensym(name.toStdString().c_str()), (t_floatarg)<a class="code" href="bufferobject_8h.html#a612c27dae5681d14a5d92d0b3d8ab6e5">size</a>, 1, 1);
 <a name="l00209"></a>00209         }
 <a name="l00210"></a>00210     }
 <a name="l00211"></a>00211 };
@@ -343,12 +343,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00271"></a><a class="code" href="classpy_local.html#a1117d622c1428dd1eec91c303edf3d52">00271</a>     <span class="keywordtype">void</span> output(QString msg)
 <a name="l00272"></a>00272     {
 <a name="l00273"></a>00273         <span class="keywordflow">if</span> (!_pdObject) {
-<a name="l00274"></a>00274             <a class="code" href="cm__pdlink_8h.html#a766e12f26830eee9deae0fe8e9f70535" title="post plain text to Pd window">cmp_post</a>(<span class="stringliteral">&quot;Error: bad pd object&quot;</span>);
+<a name="l00274"></a>00274             <a class="code" href="_pd_link_8h.html#a766e12f26830eee9deae0fe8e9f70535" title="post plain text to Pd window">cmp_post</a>(<span class="stringliteral">&quot;Error: bad pd object&quot;</span>);
 <a name="l00275"></a>00275             <span class="keywordflow">return</span>;
 <a name="l00276"></a>00276         }
 <a name="l00277"></a>00277 
 <a name="l00278"></a>00278         <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> msg_ = <span class="stringliteral">&quot;__output &quot;</span> + msg.toStdString();
-<a name="l00279"></a>00279         <a class="code" href="cm__pdlink_8h.html#a9bca4af04ea4fac6b910933e5ba16814" title="send string as pd message to object">cmp_sendstring</a>((t_pd*)_pdObject, msg_);
+<a name="l00279"></a>00279         <a class="code" href="_pd_link_8h.html#a9bca4af04ea4fac6b910933e5ba16814" title="send string as pd message to object">cmp_sendstring</a>((t_pd*)_pdObject, msg_);
 <a name="l00280"></a>00280     }
 <a name="l00281"></a>00281 
 <a name="l00282"></a><a class="code" href="classpy_local.html#a35571b06ef4502bc8a4b9d9e453ecd8e">00282</a>     QStringList input()
@@ -387,22 +387,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00317"></a>00317 
 <a name="l00318"></a><a class="code" href="classpy_qtpd.html#a86e4fb1f84aa63ccb21513fafc321647">00318</a>     <span class="keywordtype">void</span> startDsp()
 <a name="l00319"></a>00319     {
-<a name="l00320"></a>00320         <a class="code" href="cm__pdlink_8h.html#a0f1f4951cf99dff0634789791dcde1ba" title="switch dsp on or off">cmp_switch_dsp</a>(<span class="keyword">true</span>);
+<a name="l00320"></a>00320         <a class="code" href="_pd_link_8h.html#a0f1f4951cf99dff0634789791dcde1ba" title="switch dsp on or off">cmp_switch_dsp</a>(<span class="keyword">true</span>);
 <a name="l00321"></a>00321     }
 <a name="l00322"></a>00322 
 <a name="l00323"></a><a class="code" href="classpy_qtpd.html#aa075a4183756fb81ce11f3a9ce40ea2a">00323</a>     <span class="keywordtype">void</span> stopDsp()
 <a name="l00324"></a>00324     {
-<a name="l00325"></a>00325         <a class="code" href="cm__pdlink_8h.html#a0f1f4951cf99dff0634789791dcde1ba" title="switch dsp on or off">cmp_switch_dsp</a>(<span class="keyword">false</span>);
+<a name="l00325"></a>00325         <a class="code" href="_pd_link_8h.html#a0f1f4951cf99dff0634789791dcde1ba" title="switch dsp on or off">cmp_switch_dsp</a>(<span class="keyword">false</span>);
 <a name="l00326"></a>00326     }
 <a name="l00327"></a>00327 
 <a name="l00328"></a><a class="code" href="classpy_qtpd.html#ade5b04c97d1f8ffe78094e67475a1142">00328</a>     <span class="keywordtype">void</span> post(QString msg)
 <a name="l00329"></a>00329     {
-<a name="l00330"></a>00330         <a class="code" href="cm__pdlink_8h.html#a766e12f26830eee9deae0fe8e9f70535" title="post plain text to Pd window">cmp_post</a>(msg.toStdString());
+<a name="l00330"></a>00330         <a class="code" href="_pd_link_8h.html#a766e12f26830eee9deae0fe8e9f70535" title="post plain text to Pd window">cmp_post</a>(msg.toStdString());
 <a name="l00331"></a>00331     }
 <a name="l00332"></a>00332 
 <a name="l00333"></a><a class="code" href="classpy_qtpd.html#a523a684bfd04846cc27c9bb089b0a522">00333</a>     QStringList externals()
 <a name="l00334"></a>00334     {
-<a name="l00335"></a>00335         <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> list = <a class="code" href="cm__pdlink_8h.html#af6924c7bfc9cdfe2a254ff5cf4107925" title="returns list of loaded externals">cmp_get_loaded_list</a>();
+<a name="l00335"></a>00335         <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> list = <a class="code" href="_pd_link_8h.html#af6924c7bfc9cdfe2a254ff5cf4107925" title="returns list of loaded externals">cmp_get_loaded_list</a>();
 <a name="l00336"></a>00336         QStringList ret;
 <a name="l00337"></a>00337 
 <a name="l00338"></a>00338         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a> = 0; <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a> &lt; list.<a class="code" href="classceammc_1_1_atom_list.html#ad52fdc5b4f54329460495caa1b00d1ac">size</a>(); <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a>++) {
@@ -414,7 +414,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00344"></a>00344 
 <a name="l00345"></a><a class="code" href="classpy_qtpd.html#ac1f712b091a7a38e378419109d859d3c">00345</a>     <span class="keywordtype">void</span> loadLib(QString lib)
 <a name="l00346"></a>00346     {
-<a name="l00347"></a>00347         <a class="code" href="cm__pdlink_8h.html#a8918f6f28b214d15300a46588fa21d78" title="load external">cmp_loadlib</a>(lib.toStdString());
+<a name="l00347"></a>00347         <a class="code" href="_pd_link_8h.html#a8918f6f28b214d15300a46588fa21d78" title="load external">cmp_loadlib</a>(lib.toStdString());
 <a name="l00348"></a>00348     }
 <a name="l00349"></a>00349 
 <a name="l00351"></a>00351     <span class="comment">// app preferences</span>
@@ -444,7 +444,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 30 2017 07:36:30 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 30 2017 14:23:53 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

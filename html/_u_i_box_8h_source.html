@@ -92,13 +92,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00008"></a>00008 <span class="preprocessor">#include &lt;QMainWindow&gt;</span>
 <a name="l00009"></a>00009 <span class="preprocessor">#include &lt;QtGui&gt;</span>
 <a name="l00010"></a>00010 
-<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="cm__port_8h.html">cm_port.h</a>&quot;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="_port_8h.html">Port.h</a>&quot;</span>
 <a name="l00012"></a>00012 
-<a name="l00013"></a>00013 <span class="preprocessor">#include &quot;<a class="code" href="cm__object_8h.html">cm_object.h</a>&quot;</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#include &quot;<a class="code" href="_u_i_object_8h.html">UIObject.h</a>&quot;</span>
 <a name="l00014"></a>00014 
 <a name="l00015"></a>00015 <span class="comment">//lazy way</span>
 <a name="l00016"></a>00016 <span class="comment">//todo proper pattern</span>
-<a name="l00017"></a>00017 <span class="preprocessor">#include &quot;<a class="code" href="cm__openfileproxy_8h.html">cm_openfileproxy.h</a>&quot;</span>
+<a name="l00017"></a>00017 <span class="preprocessor">#include &quot;<a class="code" href="_open_file_proxy_8h.html">OpenFileProxy.h</a>&quot;</span>
 <a name="l00018"></a>00018 
 <a name="l00019"></a>00019 <span class="comment">//#include &quot;cm_pdlink.h&quot;</span>
 <a name="l00020"></a>00020 
@@ -147,25 +147,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00066"></a>00066         } <span class="keywordflow">else</span> {
 <a name="l00067"></a>00067             <span class="comment">//temp pos = 0;</span>
 <a name="l00068"></a>00068             QPoint <a class="code" href="dictobject_8h.html#acae77df04bfdd60d1017f4132729ddc6">pos</a> = QPoint(0, 0);
-<a name="l00069"></a>00069             new_obj = <a class="code" href="cm__pdlink_8h.html#a2c0a0d9150791897b85a167998ecf7c2" title="creates pd object">cmp_create_object</a>(pd_Canvas, (<span class="keywordtype">char</span>*)obj_name2, pos.x(), pos.y());
+<a name="l00069"></a>00069             new_obj = <a class="code" href="_pd_link_8h.html#a2c0a0d9150791897b85a167998ecf7c2" title="creates pd object">cmp_create_object</a>(pd_Canvas, (<span class="keywordtype">char</span>*)obj_name2, pos.x(), pos.y());
 <a name="l00070"></a>00070         }
 <a name="l00071"></a>00071 
 <a name="l00072"></a>00072         <span class="keywordflow">if</span> (new_obj) {
-<a name="l00073"></a>00073             in_c = <a class="code" href="cm__pdlink_8h.html#a7fcb3388b050e30e14b731b7288a7f76" title="get number of inlets for object">cmp_get_inlet_count</a>(new_obj);
-<a name="l00074"></a>00074             out_c = <a class="code" href="cm__pdlink_8h.html#a680a1380d6950cd336b5631b3d3a7737" title="get number of outlets for object">cmp_get_outlet_count</a>(new_obj);
+<a name="l00073"></a>00073             in_c = <a class="code" href="_pd_link_8h.html#a7fcb3388b050e30e14b731b7288a7f76" title="get number of inlets for object">cmp_get_inlet_count</a>(new_obj);
+<a name="l00074"></a>00074             out_c = <a class="code" href="_pd_link_8h.html#a680a1380d6950cd336b5631b3d3a7737" title="get number of outlets for object">cmp_get_outlet_count</a>(new_obj);
 <a name="l00075"></a>00075 
 <a name="l00076"></a>00076             qDebug(<span class="stringliteral">&quot;created object %s ins %i outs %i ptr %lu&quot;</span>, obj_name, in_c, out_c, (<span class="keywordtype">long</span>)new_obj);
 <a name="l00077"></a>00077 
 <a name="l00078"></a>00078             b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a8d514a69e4a316b43095faaeea415dad" title="sets pointer to pd object">setPdObject</a>(new_obj);
 <a name="l00079"></a>00079 
-<a name="l00080"></a>00080             b-&gt;_isAbstraction = <a class="code" href="cm__pdlink_8h.html#a07f6ff68bd0cb426f07d1b6a39802d0a" title="check if canvas is an abstraction">cmp_is_abstraction</a>(new_obj);
+<a name="l00080"></a>00080             b-&gt;_isAbstraction = <a class="code" href="_pd_link_8h.html#a07f6ff68bd0cb426f07d1b6a39802d0a" title="check if canvas is an abstraction">cmp_is_abstraction</a>(new_obj);
 <a name="l00081"></a>00081             qDebug() &lt;&lt; <span class="stringliteral">&quot;*** is abstraction: &quot;</span> &lt;&lt; b-&gt;_isAbstraction;
 <a name="l00082"></a>00082 
 <a name="l00083"></a>00083             <span class="comment">// todo different help symbols</span>
 <a name="l00084"></a>00084             b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a055a8f03b9e9a36678cb5804607b6b3e">setHelpName</a>(list.at(0) + <span class="stringliteral">&quot;-help.pd&quot;</span>);
 <a name="l00085"></a>00085 
 <a name="l00086"></a>00086             <span class="keywordflow">if</span> (b-&gt;_isAbstraction) {
-<a name="l00087"></a>00087                 t_symbol* <a class="code" href="stringobject_8h.html#ad912d811fca4c9cfee37905bed81eb65">s</a> = <a class="code" href="cm__pdlink_8h.html#a2d470024af8372a5d62837ec4afff6b6" title="get canvas dir if it is an abstraction">cmp_get_path</a>((t_canvas*)new_obj);
+<a name="l00087"></a>00087                 t_symbol* <a class="code" href="stringobject_8h.html#ad912d811fca4c9cfee37905bed81eb65">s</a> = <a class="code" href="_pd_link_8h.html#a2d470024af8372a5d62837ec4afff6b6" title="get canvas dir if it is an abstraction">cmp_get_path</a>((t_canvas*)new_obj);
 <a name="l00088"></a>00088 
 <a name="l00089"></a>00089                 <span class="comment">// todo</span>
 <a name="l00090"></a>00090                 QStringList l = QString(objectData.c_str()).split(<span class="stringliteral">&quot; &quot;</span>);
@@ -321,7 +321,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 30 2017 07:36:29 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 30 2017 14:23:53 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -1,6 +1,9 @@
 var searchData=
 [
   ['data',['data',['../classqtpd_1_1_property.html#a9d55f5422aed6f74981dc7e5130399d4',1,'qtpd::Property']]],
+  ['datacopy',['dataCopy',['../classqtpd_1_1_canvas.html#a561b418210d059c176d51dc2a7ed2276',1,'qtpd::Canvas']]],
+  ['datacut',['dataCut',['../classqtpd_1_1_canvas.html#ac2d57fa919e556258ccf254894894699',1,'qtpd::Canvas']]],
+  ['datapaste',['dataPaste',['../classqtpd_1_1_canvas.html#a7347b29304570ae42796e343142da9b1',1,'qtpd::Canvas']]],
   ['debug',['Debug',['../classceammc_1_1_debug.html#a9012e05dd78d36cd041480940f961215',1,'ceammc::Debug']]],
   ['decorator',['decorator',['../class_python_qt_class_info.html#adae2f612f80f3e0fc4447a84c628c684',1,'PythonQtClassInfo::decorator()'],['../class_python_qt_slot_info.html#a7c34e25922c0275941f507382b787b12',1,'PythonQtSlotInfo::decorator()']]],
   ['default_5fpd_5fbang_5ffn',['default_pd_bang_fn',['../namespaceceammc.html#a8a41d694eaf097bca750227e6c9d6805',1,'ceammc::default_pd_bang_fn(t_class *c)'],['../namespaceceammc.html#a2835a33e60c81054613d488591bb42d8',1,'ceammc::default_pd_bang_fn(_class *c)']]],
@@ -10,7 +13,6 @@ var searchData=
   ['deinterleaveminlength',['deinterleaveMinLength',['../namespaceceammc_1_1list.html#aa1f7d764d909cd6696e06b4ca9385b09',1,'ceammc::list']]],
   ['deinterleavepadwith',['deinterleavePadWith',['../namespaceceammc_1_1list.html#adcee60cf04e286d5078d1140f1cab7c6',1,'ceammc::list']]],
   ['delbitset',['delbitset',['../bitset_8h.html#aecd68b7fc4e181e56ef77671f84000ef',1,'bitset.h']]],
-  ['delboxes',['delBoxes',['../classqtpd_1_1_canvas.html#a6e1c926dcc12807478e7af475c8276b3',1,'qtpd::Canvas']]],
   ['delete_5fobjectvec',['delete_objectVec',['../classpy_object_vec_decorator.html#a41e48ce72a9cdaac8380e2e99224c5e2',1,'pyObjectVecDecorator']]],
   ['delete_5fuiobject',['delete_UIObject',['../classpy_u_i_object_decorator.html#a30f45f7f0215548070db29e66e4baf8f',1,'pyUIObjectDecorator']]],
   ['deletebox',['deleteBox',['../classqtpd_1_1_canvas.html#a54ae5b1d5352bcce723481073db40647',1,'qtpd::Canvas']]],
@@ -20,6 +22,7 @@ var searchData=
   ['deletepatchcord',['deletePatchcord',['../classpy_pd_lib.html#a0d0e2279c775f66187a6c9be381900a3',1,'pyPdLib']]],
   ['deletepatchcordsfor',['deletePatchcordsFor',['../classqtpd_1_1_canvas.html#ac30f0f6774cab9985dbb384ae436ca1a',1,'qtpd::Canvas::deletePatchcordsFor()'],['../classpy_canvas_decorator.html#ab8a6d2ef6701c62f5349eeb231347cfe',1,'pyCanvasDecorator::deletePatchcordsFor()']]],
   ['deletepoint',['deletePoint',['../classceammc_1_1_b_p_f.html#a5f15512a761f25025e44a5cc3ee52e6b',1,'ceammc::BPF']]],
+  ['deleteselectedboxes',['deleteSelectedBoxes',['../classqtpd_1_1_canvas.html#a5df34a2d1f5b8fe34713fafc67bf1b78',1,'qtpd::Canvas']]],
   ['delselected',['delSelected',['../classqtpd_1_1_patch_window.html#a9f2e7fc3b36eccf313302095b33349c6',1,'qtpd::PatchWindow']]],
   ['delselectedpatchcords',['delSelectedPatchcords',['../classqtpd_1_1_canvas.html#af8e0dde6555249f775562b2cd4ab02bd',1,'qtpd::Canvas']]],
   ['description',['description',['../classceammc_1_1_global_data.html#a41da0537785ebe5c84adb9ccbb1a5cbd',1,'ceammc::GlobalData']]],

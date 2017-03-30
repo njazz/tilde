@@ -111,7 +111,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Parses pd files on 'client' (GUI) side.  
  <a href="classqtpd_1_1_file_parser.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="cm__fileparser_8h_source.html">cm_fileparser.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_file_parser_8h_source.html">FileParser.h</a>&gt;</code></p>
 
 <p><a href="classqtpd_1_1_file_parser-members.html">List of all members.</a></p>
 <table class="memberdecls">
@@ -121,10 +121,10 @@ Static Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">[3.2] process legacy pd files  <a href="#a1368c5ecfcbda70864f620275d402b31"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#a46d5b7fa6823417f24a697f8771bd8b7">sendStringToCanvas</a> (<a class="el" href="classqtpd_1_1_canvas.html">Canvas</a> *cmcanvas, QStringList list)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">[3.1] subroutine - formats list and send it to canvas as a string  <a href="#a46d5b7fa6823417f24a697f8771bd8b7"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#a9a5932ab07139de47a84d0bae3ce9c29">parseStringList</a> (<a class="el" href="classqtpd_1_1_canvas.html">Canvas</a> *cmcanvas, QStringList list)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">[3] parses QStringLists of atoms to canvas - creates objects etc  <a href="#a9a5932ab07139de47a84d0bae3ce9c29"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#a92221a61f6a6feb3d5f5f75ff2b5ef64">parseFile</a> (QString line)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">[2] checks first atoms ("#N", "#X" etc) and sends QStringList of contents to canvas  <a href="#a92221a61f6a6feb3d5f5f75ff2b5ef64"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#a9ae0ca9c20d5e2e29573eed775b04a2d">parseStringListAtoms</a> (<a class="el" href="classqtpd_1_1_canvas.html">Canvas</a> *cmcanvas, QStringList list)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">[3] parses QStringLists of atoms to canvas - creates objects etc  <a href="#a9ae0ca9c20d5e2e29573eed775b04a2d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#ab117812483ec8e1f97046211b3495e39">parseQStringList</a> (QStringList atoms)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">[2] checks first atoms ("#N", "#X" etc) and sends QStringList of contents to canvas  <a href="#ab117812483ec8e1f97046211b3495e39"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#a7a1d4de73d63affb0825b0889a3b94f7">open</a> (QString fname)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">[1] opens file, converts to QStrings, calls 'parseString'  <a href="#a7a1d4de73d63affb0825b0889a3b94f7"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-attribs"></a>
@@ -197,15 +197,15 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a92221a61f6a6feb3d5f5f75ff2b5ef64"></a><!-- doxytag: member="qtpd::FileParser::parseFile" ref="a92221a61f6a6feb3d5f5f75ff2b5ef64" args="(QString line)" -->
+<a class="anchor" id="ab117812483ec8e1f97046211b3495e39"></a><!-- doxytag: member="qtpd::FileParser::parseQStringList" ref="ab117812483ec8e1f97046211b3495e39" args="(QStringList atoms)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_file_parser.html#a92221a61f6a6feb3d5f5f75ff2b5ef64">qtpd::FileParser::parseFile</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_file_parser.html#ab117812483ec8e1f97046211b3495e39">qtpd::FileParser::parseQStringList</a> </td>
           <td>(</td>
-          <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>line</em></td><td>)</td>
+          <td class="paramtype">QStringList&#160;</td>
+          <td class="paramname"><em>atoms</em></td><td>)</td>
           <td><code> [static]</code></td>
         </tr>
       </table>
@@ -222,12 +222,12 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a9a5932ab07139de47a84d0bae3ce9c29"></a><!-- doxytag: member="qtpd::FileParser::parseStringList" ref="a9a5932ab07139de47a84d0bae3ce9c29" args="(Canvas *cmcanvas, QStringList list)" -->
+<a class="anchor" id="a9ae0ca9c20d5e2e29573eed775b04a2d"></a><!-- doxytag: member="qtpd::FileParser::parseStringListAtoms" ref="a9ae0ca9c20d5e2e29573eed775b04a2d" args="(Canvas *cmcanvas, QStringList list)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_file_parser.html#a9a5932ab07139de47a84d0bae3ce9c29">qtpd::FileParser::parseStringList</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_file_parser.html#a9ae0ca9c20d5e2e29573eed775b04a2d">qtpd::FileParser::parseStringListAtoms</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classqtpd_1_1_canvas.html">Canvas</a> *&#160;</td>
           <td class="paramname"><em>cmcanvas</em>, </td>
@@ -350,8 +350,8 @@ Static Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/travis/build/njazz/qtpd/qtpd_gui/<a class="el" href="cm__fileparser_8h_source.html">cm_fileparser.h</a></li>
-<li>/home/travis/build/njazz/qtpd/qtpd_gui/<a class="el" href="cm__fileparser_8cpp.html">cm_fileparser.cpp</a></li>
+<li>/home/travis/build/njazz/qtpd/qtpd_gui/<a class="el" href="_file_parser_8h_source.html">FileParser.h</a></li>
+<li>/home/travis/build/njazz/qtpd/qtpd_gui/<a class="el" href="_file_parser_8cpp.html">FileParser.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- window showing the filter options -->
@@ -371,7 +371,7 @@ Static Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 30 2017 07:36:32 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 30 2017 14:23:54 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

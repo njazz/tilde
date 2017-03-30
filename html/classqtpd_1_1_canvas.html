@@ -114,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>'t_canvas' counterpart. creates objects  
  <a href="classqtpd_1_1_canvas.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="cm__canvas_8h_source.html">cm_canvas.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_canvas_8h_source.html">Canvas.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for qtpd::Canvas:</div>
 <div class="dyncontent">
@@ -153,6 +153,9 @@ Public Slots</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QSize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a936cbab2236f58a5937cc7702c387d97">minimumCanvasSize</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">minimumCanvasSize  <a href="#a936cbab2236f58a5937cc7702c387d97"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a6f214384132cb1974a1145daece8e7da">setWindowSize</a> (QSize wsize)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#ac2d57fa919e556258ccf254894894699">dataCut</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a561b418210d059c176d51dc2a7ed2276">dataCopy</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a7347b29304570ae42796e343142da9b1">dataPaste</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="signals"></a>
 Signals</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::pair&lt; QMainWindow <br class="typebreak"/>
@@ -217,8 +220,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete all patchcords for object  <a href="#ac30f0f6774cab9985dbb384ae436ca1a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a54ae5b1d5352bcce723481073db40647">deleteBox</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *box)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete single box  <a href="#a54ae5b1d5352bcce723481073db40647"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a6e1c926dcc12807478e7af475c8276b3">delBoxes</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete all selected object boxes  <a href="#a6e1c926dcc12807478e7af475c8276b3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a5df34a2d1f5b8fe34713fafc67bf1b78">deleteSelectedBoxes</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete all selected object boxes  <a href="#a5df34a2d1f5b8fe34713fafc67bf1b78"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#af8e0dde6555249f775562b2cd4ab02bd">delSelectedPatchcords</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete all selected patchcords  <a href="#af8e0dde6555249f775562b2cd4ab02bd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a0c032dbe358e3b444920fe8fa3eac002">setEditMode</a> (<a class="el" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a">t_editMode</a> <a class="el" href="dtoa_8h.html#a1ea5d0cb93f22f7d0fdf804bd68c3326">mode</a>)</td></tr>
@@ -527,21 +530,51 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a6e1c926dcc12807478e7af475c8276b3"></a><!-- doxytag: member="qtpd::Canvas::delBoxes" ref="a6e1c926dcc12807478e7af475c8276b3" args="()" -->
+<a class="anchor" id="a561b418210d059c176d51dc2a7ed2276"></a><!-- doxytag: member="qtpd::Canvas::dataCopy" ref="a561b418210d059c176d51dc2a7ed2276" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas.html#a6e1c926dcc12807478e7af475c8276b3">qtpd::Canvas::delBoxes</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas.html#a561b418210d059c176d51dc2a7ed2276">Canvas::dataCopy</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td><code> [slot]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>delete all selected object boxes </p>
+</div>
+</div>
+<a class="anchor" id="ac2d57fa919e556258ccf254894894699"></a><!-- doxytag: member="qtpd::Canvas::dataCut" ref="ac2d57fa919e556258ccf254894894699" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas.html#ac2d57fa919e556258ccf254894894699">qtpd::Canvas::dataCut</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7347b29304570ae42796e343142da9b1"></a><!-- doxytag: member="qtpd::Canvas::dataPaste" ref="a7347b29304570ae42796e343142da9b1" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas.html#a7347b29304570ae42796e343142da9b1">Canvas::dataPaste</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
 </div>
 </div>
@@ -589,6 +622,25 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a5df34a2d1f5b8fe34713fafc67bf1b78"></a><!-- doxytag: member="qtpd::Canvas::deleteSelectedBoxes" ref="a5df34a2d1f5b8fe34713fafc67bf1b78" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas.html#a5df34a2d1f5b8fe34713fafc67bf1b78">qtpd::Canvas::deleteSelectedBoxes</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>delete all selected object boxes </p>
+<p>delete all selected object boxes() </p>
+
+</div>
+</div>
 <a class="anchor" id="af8e0dde6555249f775562b2cd4ab02bd"></a><!-- doxytag: member="qtpd::Canvas::delSelectedPatchcords" ref="af8e0dde6555249f775562b2cd4ab02bd" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -604,6 +656,7 @@ Public Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>delete all selected patchcords </p>
+<p>delete all selected <a class="el" href="classqtpd_1_1_canvas.html#a8725374b04b10a3a07ce48b013ab9992" title="returns vector of all patchcords - needed by filesaver">patchcords()</a> </p>
 
 </div>
 </div>
@@ -1968,8 +2021,8 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/travis/build/njazz/qtpd/qtpd_gui/<a class="el" href="cm__canvas_8h_source.html">cm_canvas.h</a></li>
-<li>/home/travis/build/njazz/qtpd/qtpd_gui/<a class="el" href="cm__canvas_8cpp.html">cm_canvas.cpp</a></li>
+<li>/home/travis/build/njazz/qtpd/qtpd_gui/<a class="el" href="_canvas_8h_source.html">Canvas.h</a></li>
+<li>/home/travis/build/njazz/qtpd/qtpd_gui/<a class="el" href="_canvas_8cpp.html">Canvas.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- window showing the filter options -->
@@ -1989,7 +2042,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 30 2017 07:36:32 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 30 2017 14:23:54 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

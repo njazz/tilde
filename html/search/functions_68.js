@@ -7,6 +7,7 @@ var searchData=
   ['handletabcompletion',['handleTabCompletion',['../class_python_qt_scripting_console.html#ae2ba8f7e0d02ab88039951425e077d89',1,'PythonQtScriptingConsole']]],
   ['handlevirtualoverloadreturnerror',['handleVirtualOverloadReturnError',['../class_python_qt_private.html#a144948058a6b0ed4ed1193099bef7200',1,'PythonQtPrivate']]],
   ['hasextrashellrefcount',['hasExtraShellRefCount',['../class_python_qt_debug_a_p_i.html#ac4ac2a776e5f4d376ae71f9b7a5555bc',1,'PythonQtDebugAPI']]],
+  ['hasobjects',['hasObjects',['../classqtpd_1_1canvas_data.html#a305166078a86754479e7903367be1a59',1,'qtpd::canvasData']]],
   ['hasproperty',['hasProperty',['../classceammc_1_1_atom_list.html#ae7857e5cca7d55ff167bbf4b52927dc4',1,'ceammc::AtomList::hasProperty()'],['../classceammc_1_1_base_object.html#a7243f8db4a0b0b5c203623f9a2e1a9d5',1,'ceammc::BaseObject::hasProperty()']]],
   ['hasui',['hasUI',['../classqtpd_1_1_object_loader.html#af239c0e007aed45a838eeca575f4e22b',1,'qtpd::ObjectLoader']]],
   ['height',['height',['../structceammc__gui_1_1_base_gui_object.html#a924cb7e1f8aff1f320429b39813094e7',1,'ceammc_gui::BaseGuiObject']]],

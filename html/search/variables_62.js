@@ -21,7 +21,6 @@ var searchData=
   ['body',['body',['../struct__mod.html#acde99fa73078202021e0f0260f5c9e9f',1,'_mod::body()'],['../struct__mod.html#ac5a021a8e168c2a2939813068a4fd5c0',1,'_mod::body()'],['../struct__stmt.html#a3af2e247c98c7a600aa988467119d0da',1,'_stmt::body()'],['../struct__stmt.html#ac66b2dfd0e674ec45a9cc1221e68cdc1',1,'_stmt::body()'],['../struct__expr.html#a615d836f0f8ca5f284023f2683efdeb2',1,'_expr::body()'],['../struct__excepthandler.html#aa83f83cb180be8878f41a9b9765a77d8',1,'_excepthandler::body()']]],
   ['boolop',['BoolOp',['../struct__expr.html#abb2f63ba202dcc8703cdfcbbb08cab61',1,'_expr']]],
   ['bounds',['bounds',['../code_8h.html#a088761a95473f90ef897a790d99d97b2',1,'code.h']]],
-  ['boxes',['boxes',['../classqtpd_1_1canvas_data.html#a1aa382a4b8a8506947b08c002e6b3593',1,'qtpd::canvasData']]],
   ['buf',['buf',['../structbufferinfo.html#aa1612327c7d07341a8e7977268414928',1,'bufferinfo::buf()'],['../structui__scope.html#a5df3b6a39ba275d94d50ba0c46f13af7',1,'ui_scope::buf()'],['../structui__spectroscope.html#ad42c5ef43561fbf48f9f3c99046f1283',1,'ui_spectroscope::buf()'],['../abstract_8h.html#aa7a8493db7fccef356c882deb1fa932c',1,'buf():&#160;abstract.h']]],
   ['buf_5flen',['buf_len',['../pystrtod_8h.html#ab3e45d7a98b5e813764d22620593d39d',1,'pystrtod.h']]],
   ['buffer',['buffer',['../abstract_8h.html#a3f79da6abd31dafc8b523730e07a6b86',1,'abstract.h']]],

@@ -16,6 +16,7 @@ var searchData=
   ['uiclass',['UIClass',['../classqtpd_1_1_u_i_class.html',1,'qtpd']]],
   ['uielement',['UIElement',['../classceammc_1_1faust_1_1_u_i_element.html',1,'ceammc::faust']]],
   ['uifloat',['UIFloat',['../classqtpd_1_1_u_i_float.html',1,'qtpd']]],
+  ['uiinstance',['UIInstance',['../classqtpd_1_1_u_i_instance.html',1,'qtpd']]],
   ['uimessage',['UIMessage',['../classqtpd_1_1_u_i_message.html',1,'qtpd']]],
   ['uiobject',['UIObject',['../classqtpd_1_1_u_i_object.html',1,'qtpd']]],
   ['uiscript',['UIScript',['../classqtpd_1_1_u_i_script.html',1,'qtpd']]],

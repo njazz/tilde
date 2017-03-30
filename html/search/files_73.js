@@ -1,6 +1,8 @@
 var searchData=
 [
   ['setobject_2eh',['setobject.h',['../setobject_8h.html',1,'']]],
+  ['sizebox_2ecpp',['SizeBox.cpp',['../_size_box_8cpp.html',1,'']]],
+  ['sizebox_2eh',['SizeBox.h',['../_size_box_8h.html',1,'']]],
   ['sliceobject_2eh',['sliceobject.h',['../sliceobject_8h.html',1,'']]],
   ['stringobject_2eh',['stringobject.h',['../stringobject_8h.html',1,'']]],
   ['structmember_2eh',['structmember.h',['../structmember_8h.html',1,'']]],

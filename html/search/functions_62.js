@@ -9,6 +9,8 @@ var searchData=
   ['bmobj_5fnew',['BMObj_New',['../pymactoolbox_8h.html#aaef98b94460929b046c1e3ffa3727508',1,'pymactoolbox.h']]],
   ['boolproperty',['BoolProperty',['../classceammc_1_1_bool_property.html#a25b921308d4bfea9adb6d3fbd42751c8',1,'ceammc::BoolProperty']]],
   ['bottom',['bottom',['../structui__slider2d.html#a87eafe72948ba496dbf210f34adb4786',1,'ui_slider2d']]],
+  ['boxes',['boxes',['../classqtpd_1_1canvas_data.html#af51df2db77a9f420a6997ef3088765ca',1,'qtpd::canvasData']]],
+  ['boxesaspdfilestrings',['boxesAsPdFileStrings',['../classqtpd_1_1canvas_data.html#ae80916db03a799047af95d74ea55eaff',1,'qtpd::canvasData']]],
   ['bpf',['BPF',['../classceammc_1_1_b_p_f.html#af7b625552c75e27fcf401ea5c08fe188',1,'ceammc::BPF']]],
   ['bpf_5fm_5fadd',['bpf_m_add',['../namespaceceammc__gui.html#a31611b780dd00f13a50514f34f3018d8',1,'ceammc_gui']]],
   ['bpf_5fm_5fadd_5fraw',['bpf_m_add_raw',['../namespaceceammc__gui.html#a7dc47f811503fc780466dc97c89a4ece',1,'ceammc_gui']]],

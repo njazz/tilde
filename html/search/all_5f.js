@@ -38,6 +38,7 @@ var searchData=
   ['_5ffrozen',['_frozen',['../struct__frozen.html',1,'']]],
   ['_5fgc_5fhead',['_gc_head',['../union__gc__head.html',1,'']]],
   ['_5fgnu_5fsource',['_GNU_SOURCE',['../pyconfig_8h.html#a369266c24eacffb87046522897a570d5',1,'pyconfig.h']]],
+  ['_5fheaders_2eh',['_headers.h',['../__headers_8h.html',1,'']]],
   ['_5fheaptypeobject',['_heaptypeobject',['../struct__heaptypeobject.html',1,'']]],
   ['_5finittab',['_inittab',['../struct__inittab.html',1,'']]],
   ['_5fis',['_is',['../struct__is.html',1,'']]],

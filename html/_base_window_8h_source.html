@@ -88,244 +88,224 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00004"></a>00004 <span class="preprocessor">#include &lt;QMainWindow&gt;</span>
 <a name="l00005"></a>00005 <span class="preprocessor">#include &lt;QtWidgets&gt;</span>
 <a name="l00006"></a>00006 
-<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;<a class="code" href="cm__menu_8h.html">cm_menu.h</a>&quot;</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;<a class="code" href="_base_menu_8h.html">BaseMenu.h</a>&quot;</span>
 <a name="l00008"></a>00008 
-<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;<a class="code" href="cm__pdlink_8h.html">cm_pdlink.h</a>&quot;</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;<a class="code" href="_pd_link_8h.html">PdLink.h</a>&quot;</span>
 <a name="l00010"></a>00010 
 <a name="l00011"></a><a class="code" href="namespace_ui.html">00011</a> <span class="keyword">namespace </span>Ui {
 <a name="l00012"></a>00012 <span class="keyword">class </span>cm_basewindow;
 <a name="l00013"></a>00013 }
 <a name="l00014"></a>00014 
-<a name="l00015"></a>00015 <span class="keyword">namespace </span>qtpd{
-<a name="l00019"></a><a class="code" href="classqtpd_1_1_base_window.html">00019</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_base_window.html" title="Base class for windows (patch, pd)">BaseWindow</a> : <span class="keyword">public</span> QMainWindow
-<a name="l00020"></a>00020 {
-<a name="l00021"></a>00021     Q_OBJECT
-<a name="l00022"></a>00022 
-<a name="l00023"></a>00023 <span class="keyword">public</span>:
-<a name="l00024"></a>00024     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_base_window.html#ae2a076d8f8a489795f2b7fbf26fadd5d">BaseWindow</a>(QWidget *parent = 0);
-<a name="l00025"></a>00025     <a class="code" href="classqtpd_1_1_base_window.html#af1f0ff88e30b5e40d356d2dd769e88b5">~BaseWindow</a>();
-<a name="l00026"></a>00026 
-<a name="l00030"></a><a class="code" href="classqtpd_1_1_base_window.html#afc02f22a72d2a65105fee61be0e0b42c">00030</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_base_window.html#afc02f22a72d2a65105fee61be0e0b42c" title="create menu actions (File, Edit)">createActions</a>()
-<a name="l00031"></a>00031     {
-<a name="l00032"></a>00032         newAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;&amp;New&quot;</span>), <span class="keyword">this</span>);
-<a name="l00033"></a>00033         newAct-&gt;setShortcuts(QKeySequence::New);
-<a name="l00034"></a>00034         connect(newAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;<a class="code" href="classqtpd_1_1_base_menu.html#a29152c88a54cf26a565abcccaf145fe7" title="new patch window">BaseMenu::newFile</a>);
-<a name="l00035"></a>00035 
-<a name="l00036"></a>00036         <a class="code" href="classqtpd_1_1_base_window.html#acd1a6b4c403dde7abb3da259a382fcbd">openAct</a> = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;&amp;Open...&quot;</span>), <span class="keyword">this</span>);
-<a name="l00037"></a>00037         <a class="code" href="classqtpd_1_1_base_window.html#acd1a6b4c403dde7abb3da259a382fcbd">openAct</a>-&gt;setShortcuts(QKeySequence::Open);
-<a name="l00038"></a>00038         connect(<a class="code" href="classqtpd_1_1_base_window.html#acd1a6b4c403dde7abb3da259a382fcbd">openAct</a>, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;<a class="code" href="classqtpd_1_1_base_menu.html#a8c33df1c24139f419b1b500844eb8629" title="new patch window from file">BaseMenu::open</a>);
-<a name="l00039"></a>00039 
-<a name="l00040"></a>00040         <a class="code" href="classqtpd_1_1_base_window.html#aaa3a2ed7429dc62b3ea6d25a4c397de2">saveAct</a> = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;&amp;Save&quot;</span>), <span class="keyword">this</span>);
-<a name="l00041"></a>00041         <a class="code" href="classqtpd_1_1_base_window.html#aaa3a2ed7429dc62b3ea6d25a4c397de2">saveAct</a>-&gt;setShortcuts(QKeySequence::Save);
-<a name="l00042"></a>00042 
-<a name="l00043"></a>00043         <a class="code" href="classqtpd_1_1_base_window.html#a4aac4f28cf7b733653ad465297bc2038">saveAsAct</a> = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;&amp;Save As...&quot;</span>), <span class="keyword">this</span>);
-<a name="l00044"></a>00044         <a class="code" href="classqtpd_1_1_base_window.html#a4aac4f28cf7b733653ad465297bc2038">saveAsAct</a>-&gt;setShortcuts(QKeySequence::SaveAs);
-<a name="l00045"></a>00045 
-<a name="l00046"></a>00046 
-<a name="l00047"></a>00047 
+<a name="l00015"></a>00015 <span class="keyword">namespace </span>qtpd {
+<a name="l00019"></a><a class="code" href="classqtpd_1_1_base_window.html">00019</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_base_window.html" title="Base class for windows (patch, pd)">BaseWindow</a> : <span class="keyword">public</span> QMainWindow {
+<a name="l00020"></a>00020     Q_OBJECT
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022 <span class="keyword">public</span>:
+<a name="l00023"></a>00023     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_base_window.html#ae2a076d8f8a489795f2b7fbf26fadd5d">BaseWindow</a>(QWidget* parent = 0);
+<a name="l00024"></a>00024     <a class="code" href="classqtpd_1_1_base_window.html#af1f0ff88e30b5e40d356d2dd769e88b5">~BaseWindow</a>();
+<a name="l00025"></a>00025 
+<a name="l00029"></a><a class="code" href="classqtpd_1_1_base_window.html#afc02f22a72d2a65105fee61be0e0b42c">00029</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_base_window.html#afc02f22a72d2a65105fee61be0e0b42c" title="create menu actions (File, Edit)">createActions</a>()
+<a name="l00030"></a>00030     {
+<a name="l00031"></a>00031         newAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;&amp;New&quot;</span>), <span class="keyword">this</span>);
+<a name="l00032"></a>00032         newAct-&gt;setShortcuts(QKeySequence::New);
+<a name="l00033"></a>00033         connect(newAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;<a class="code" href="classqtpd_1_1_base_menu.html#a29152c88a54cf26a565abcccaf145fe7" title="new patch window">BaseMenu::newFile</a>);
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035         <a class="code" href="classqtpd_1_1_base_window.html#acd1a6b4c403dde7abb3da259a382fcbd">openAct</a> = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;&amp;Open...&quot;</span>), <span class="keyword">this</span>);
+<a name="l00036"></a>00036         <a class="code" href="classqtpd_1_1_base_window.html#acd1a6b4c403dde7abb3da259a382fcbd">openAct</a>-&gt;setShortcuts(QKeySequence::Open);
+<a name="l00037"></a>00037         connect(<a class="code" href="classqtpd_1_1_base_window.html#acd1a6b4c403dde7abb3da259a382fcbd">openAct</a>, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;<a class="code" href="classqtpd_1_1_base_menu.html#a8c33df1c24139f419b1b500844eb8629" title="new patch window from file">BaseMenu::open</a>);
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039         <a class="code" href="classqtpd_1_1_base_window.html#aaa3a2ed7429dc62b3ea6d25a4c397de2">saveAct</a> = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;&amp;Save&quot;</span>), <span class="keyword">this</span>);
+<a name="l00040"></a>00040         <a class="code" href="classqtpd_1_1_base_window.html#aaa3a2ed7429dc62b3ea6d25a4c397de2">saveAct</a>-&gt;setShortcuts(QKeySequence::Save);
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042         <a class="code" href="classqtpd_1_1_base_window.html#a4aac4f28cf7b733653ad465297bc2038">saveAsAct</a> = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;&amp;Save As...&quot;</span>), <span class="keyword">this</span>);
+<a name="l00043"></a>00043         <a class="code" href="classqtpd_1_1_base_window.html#a4aac4f28cf7b733653ad465297bc2038">saveAsAct</a>-&gt;setShortcuts(QKeySequence::SaveAs);
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045         closeAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;Close&quot;</span>), <span class="keyword">this</span>);
+<a name="l00046"></a>00046         closeAct-&gt;setShortcut(tr(<span class="stringliteral">&quot;Ctrl+W&quot;</span>));
+<a name="l00047"></a>00047         connect(closeAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;BaseWindow::close);
 <a name="l00048"></a>00048 
-<a name="l00049"></a>00049         closeAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;Close&quot;</span>), <span class="keyword">this</span>);
-<a name="l00050"></a>00050         closeAct-&gt;setShortcut(tr(<span class="stringliteral">&quot;Ctrl+W&quot;</span>));
-<a name="l00051"></a>00051         connect(closeAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;BaseWindow::close);
-<a name="l00052"></a>00052 
-<a name="l00053"></a>00053 
-<a name="l00054"></a>00054         messageAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;Message...&quot;</span>), <span class="keyword">this</span>);
-<a name="l00055"></a>00055         messageAct-&gt;setShortcut(tr(<span class="stringliteral">&quot;Ctrl+Shift+M&quot;</span>));
+<a name="l00049"></a>00049         messageAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;Message...&quot;</span>), <span class="keyword">this</span>);
+<a name="l00050"></a>00050         messageAct-&gt;setShortcut(tr(<span class="stringliteral">&quot;Ctrl+Shift+M&quot;</span>));
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052         <span class="comment">//printAct = new QAction(tr(&quot;&amp;Print...&quot;), this);</span>
+<a name="l00053"></a>00053         <span class="comment">//printAct-&gt;setShortcuts(QKeySequence::Print);</span>
+<a name="l00054"></a>00054         <span class="comment">//printAct-&gt;setStatusTip(tr(&quot;Print the document&quot;));</span>
+<a name="l00055"></a>00055         <span class="comment">//connect(printAct, &amp;QAction::triggered, this, &amp;cm_basewindow::print);</span>
 <a name="l00056"></a>00056 
-<a name="l00057"></a>00057         <span class="comment">//printAct = new QAction(tr(&quot;&amp;Print...&quot;), this);</span>
-<a name="l00058"></a>00058         <span class="comment">//printAct-&gt;setShortcuts(QKeySequence::Print);</span>
-<a name="l00059"></a>00059         <span class="comment">//printAct-&gt;setStatusTip(tr(&quot;Print the document&quot;));</span>
-<a name="l00060"></a>00060         <span class="comment">//connect(printAct, &amp;QAction::triggered, this, &amp;cm_basewindow::print);</span>
-<a name="l00061"></a>00061 
-<a name="l00062"></a>00062         exitAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;E&amp;xit&quot;</span>), <span class="keyword">this</span>);
-<a name="l00063"></a>00063         exitAct-&gt;setShortcuts(QKeySequence::Quit);
-<a name="l00064"></a>00064         connect(exitAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;QApplication::quit);
+<a name="l00057"></a>00057         exitAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;E&amp;xit&quot;</span>), <span class="keyword">this</span>);
+<a name="l00058"></a>00058         exitAct-&gt;setShortcuts(QKeySequence::Quit);
+<a name="l00059"></a>00059         connect(exitAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;QApplication::quit);
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061         undoAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;&amp;Undo&quot;</span>), <span class="keyword">this</span>);
+<a name="l00062"></a>00062         undoAct-&gt;setShortcuts(QKeySequence::Undo);
+<a name="l00063"></a>00063         <span class="comment">//undoAct-&gt;setStatusTip(tr(&quot;Undo the last operation&quot;));</span>
+<a name="l00064"></a>00064         <span class="comment">//connect(undoAct, &amp;QAction::triggered, this, &amp;cm_basewindow::undo);</span>
 <a name="l00065"></a>00065 
-<a name="l00066"></a>00066         undoAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;&amp;Undo&quot;</span>), <span class="keyword">this</span>);
-<a name="l00067"></a>00067         undoAct-&gt;setShortcuts(QKeySequence::Undo);
-<a name="l00068"></a>00068         <span class="comment">//undoAct-&gt;setStatusTip(tr(&quot;Undo the last operation&quot;));</span>
-<a name="l00069"></a>00069         <span class="comment">//connect(undoAct, &amp;QAction::triggered, this, &amp;cm_basewindow::undo);</span>
+<a name="l00066"></a>00066         redoAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;&amp;Redo&quot;</span>), <span class="keyword">this</span>);
+<a name="l00067"></a>00067         redoAct-&gt;setShortcuts(QKeySequence::Redo);
+<a name="l00068"></a>00068         <span class="comment">//redoAct-&gt;setStatusTip(tr(&quot;Redo the last operation&quot;));</span>
+<a name="l00069"></a>00069         <span class="comment">//connect(redoAct, &amp;QAction::triggered, this, &amp;cm_basewindow::redo);</span>
 <a name="l00070"></a>00070 
-<a name="l00071"></a>00071         redoAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;&amp;Redo&quot;</span>), <span class="keyword">this</span>);
-<a name="l00072"></a>00072         redoAct-&gt;setShortcuts(QKeySequence::Redo);
-<a name="l00073"></a>00073         <span class="comment">//redoAct-&gt;setStatusTip(tr(&quot;Redo the last operation&quot;));</span>
-<a name="l00074"></a>00074         <span class="comment">//connect(redoAct, &amp;QAction::triggered, this, &amp;cm_basewindow::redo);</span>
-<a name="l00075"></a>00075 
-<a name="l00076"></a>00076         cutAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;Cu&amp;t&quot;</span>), <span class="keyword">this</span>);
-<a name="l00077"></a>00077         cutAct-&gt;setShortcuts(QKeySequence::Cut);
-<a name="l00078"></a>00078         <span class="comment">//cutAct-&gt;setStatusTip(tr(&quot;Cut the current selection&#39;s contents to the &quot;</span>
-<a name="l00079"></a>00079         <span class="comment">//                        &quot;clipboard&quot;));</span>
-<a name="l00080"></a>00080         <span class="comment">//connect(cutAct, &amp;QAction::triggered, this, &amp;cm_basewindow::cut);</span>
-<a name="l00081"></a>00081 
-<a name="l00082"></a>00082         copyAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;&amp;Copy&quot;</span>), <span class="keyword">this</span>);
-<a name="l00083"></a>00083         copyAct-&gt;setShortcuts(QKeySequence::Copy);
-<a name="l00084"></a>00084         <span class="comment">//copyAct-&gt;setStatusTip(tr(&quot;Copy the current selection&#39;s contents to the &quot;</span>
-<a name="l00085"></a>00085         <span class="comment">//                        &quot;clipboard&quot;));</span>
-<a name="l00086"></a>00086         <span class="comment">//connect(copyAct, &amp;QAction::triggered, this, &amp;cm_basewindow::copy);</span>
-<a name="l00087"></a>00087 
-<a name="l00088"></a>00088         pasteAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;&amp;Paste&quot;</span>), <span class="keyword">this</span>);
-<a name="l00089"></a>00089         pasteAct-&gt;setShortcuts(QKeySequence::Paste);
-<a name="l00090"></a>00090         <span class="comment">//pasteAct-&gt;setStatusTip(tr(&quot;Paste the clipboard&#39;s contents into the current &quot;</span>
-<a name="l00091"></a>00091         <span class="comment">//                         &quot;selection&quot;));</span>
-<a name="l00092"></a>00092         <span class="comment">//connect(pasteAct, &amp;QAction::triggered, this, &amp;cm_basewindow::paste);</span>
-<a name="l00093"></a>00093 
-<a name="l00094"></a>00094         pasteAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;&amp;Paste&quot;</span>), <span class="keyword">this</span>);
-<a name="l00095"></a>00095         pasteAct-&gt;setShortcuts(QKeySequence::Paste);
-<a name="l00096"></a>00096 
-<a name="l00097"></a>00097         dspOnAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;DSP On&quot;</span>), <span class="keyword">this</span>);
-<a name="l00098"></a>00098         dspOnAct-&gt;setShortcut(tr(<span class="stringliteral">&quot;Ctrl+/&quot;</span>));
-<a name="l00099"></a>00099         connect(dspOnAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;BaseWindow::dspOn);
-<a name="l00100"></a>00100 
-<a name="l00101"></a>00101         dspOffAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;DSP Off&quot;</span>), <span class="keyword">this</span>);
-<a name="l00102"></a>00102         dspOffAct-&gt;setShortcut(tr(<span class="stringliteral">&quot;Ctrl+.&quot;</span>));
-<a name="l00103"></a>00103         connect(dspOffAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;BaseWindow::dspOff);
-<a name="l00104"></a>00104 
-<a name="l00105"></a>00105         pdWindowAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;Pd Window&quot;</span>), <span class="keyword">this</span>);
-<a name="l00106"></a>00106         pdWindowAct-&gt;setShortcut(tr(<span class="stringliteral">&quot;Ctrl+R&quot;</span>));
-<a name="l00107"></a>00107         connect(pdWindowAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;<a class="code" href="classqtpd_1_1_base_menu.html#a437ab1ab423a88820eea682aa6db86f8" title="show/hide Pd console">BaseMenu::pdWindow</a>);
-<a name="l00108"></a>00108 
-<a name="l00109"></a>00109         pythonConsoleAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;Python Console&quot;</span>), <span class="keyword">this</span>);
-<a name="l00110"></a>00110         pythonConsoleAct-&gt;setShortcut(tr(<span class="stringliteral">&quot;Ctrl+Alt+R&quot;</span>));
-<a name="l00111"></a>00111         connect(pythonConsoleAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;<a class="code" href="classqtpd_1_1_base_menu.html#addccdba62098a7840e675f695637fc31">BaseMenu::pythonConsole</a>);
-<a name="l00112"></a>00112 
-<a name="l00113"></a>00113         pdAudioSettingsAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;Audio settings...&quot;</span>), <span class="keyword">this</span>);
-<a name="l00114"></a>00114         <span class="comment">//pdAudioSettingsAct-&gt;setShortcut(tr(&quot;Ctrl+R&quot;));</span>
-<a name="l00115"></a>00115 
-<a name="l00116"></a>00116         <span class="comment">//moves to app menu on mac</span>
-<a name="l00117"></a>00117         pdPreferencesAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;Preferences...&quot;</span>), <span class="keyword">this</span>);
-<a name="l00118"></a>00118         pdPreferencesAct-&gt;setShortcut(tr(<span class="stringliteral">&quot;Ctrl+,&quot;</span>));
-<a name="l00119"></a>00119 
-<a name="l00120"></a>00120         pdKeyBindingsAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;Key bindings...&quot;</span>), <span class="keyword">this</span>);
-<a name="l00121"></a>00121         <span class="comment">//pdKeyBindingsAct-&gt;setShortcut(tr(&quot;Ctrl+R&quot;));</span>
-<a name="l00122"></a>00122 
-<a name="l00123"></a>00123         <span class="comment">//        QAction *pdAudioSettingsAct;</span>
-<a name="l00124"></a>00124         <span class="comment">//        QAction *pdPreferencesAct;</span>
-<a name="l00125"></a>00125         <span class="comment">//        QAction *pdKeyBindingsAct;</span>
-<a name="l00126"></a>00126 
-<a name="l00127"></a>00127         pdHelpAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;Pd help&quot;</span>), <span class="keyword">this</span>);
-<a name="l00128"></a>00128 
-<a name="l00129"></a>00129     }
-<a name="l00130"></a>00130 
-<a name="l00131"></a>00131 
-<a name="l00135"></a><a class="code" href="classqtpd_1_1_base_window.html#ab3647cf8d926f317e898d719798b88d8">00135</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_base_window.html#ab3647cf8d926f317e898d719798b88d8" title="create all menus">createMenus</a>()
-<a name="l00136"></a>00136     {
-<a name="l00137"></a>00137         <a class="code" href="classqtpd_1_1_base_window.html#acb9acbec8b1f96ee11765b84d716882c">fileMenu</a> = menuBar()-&gt;addMenu(tr(<span class="stringliteral">&quot;&amp;File&quot;</span>));
-<a name="l00138"></a>00138         <a class="code" href="classqtpd_1_1_base_window.html#acb9acbec8b1f96ee11765b84d716882c">fileMenu</a>-&gt;addAction(newAct);
-<a name="l00139"></a>00139         <a class="code" href="classqtpd_1_1_base_window.html#acb9acbec8b1f96ee11765b84d716882c">fileMenu</a>-&gt;addAction(<a class="code" href="classqtpd_1_1_base_window.html#acd1a6b4c403dde7abb3da259a382fcbd">openAct</a>);
-<a name="l00140"></a>00140         <span class="comment">//QMenu *recent =</span>
-<a name="l00141"></a>00141         <a class="code" href="classqtpd_1_1_base_window.html#acb9acbec8b1f96ee11765b84d716882c">fileMenu</a>-&gt;addMenu(tr(<span class="stringliteral">&quot;Open Recent&quot;</span>));
-<a name="l00142"></a>00142         <a class="code" href="classqtpd_1_1_base_window.html#acb9acbec8b1f96ee11765b84d716882c">fileMenu</a>-&gt;addSeparator();
-<a name="l00143"></a>00143         <a class="code" href="classqtpd_1_1_base_window.html#acb9acbec8b1f96ee11765b84d716882c">fileMenu</a>-&gt;addAction(closeAct);
-<a name="l00144"></a>00144         <a class="code" href="classqtpd_1_1_base_window.html#acb9acbec8b1f96ee11765b84d716882c">fileMenu</a>-&gt;addSeparator();
-<a name="l00145"></a>00145         <a class="code" href="classqtpd_1_1_base_window.html#acb9acbec8b1f96ee11765b84d716882c">fileMenu</a>-&gt;addAction(<a class="code" href="classqtpd_1_1_base_window.html#aaa3a2ed7429dc62b3ea6d25a4c397de2">saveAct</a>);
-<a name="l00146"></a>00146         <a class="code" href="classqtpd_1_1_base_window.html#acb9acbec8b1f96ee11765b84d716882c">fileMenu</a>-&gt;addAction(<a class="code" href="classqtpd_1_1_base_window.html#a4aac4f28cf7b733653ad465297bc2038">saveAsAct</a>);
-<a name="l00147"></a>00147         <a class="code" href="classqtpd_1_1_base_window.html#acb9acbec8b1f96ee11765b84d716882c">fileMenu</a>-&gt;addSeparator();
-<a name="l00148"></a>00148         <a class="code" href="classqtpd_1_1_base_window.html#acb9acbec8b1f96ee11765b84d716882c">fileMenu</a>-&gt;addAction(exitAct);
-<a name="l00149"></a>00149 
-<a name="l00150"></a>00150 
+<a name="l00071"></a>00071         <a class="code" href="classqtpd_1_1_base_window.html#a417a2dd9f40ea7afd14c5edff9246c68">cutAct</a> = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;Cu&amp;t&quot;</span>), <span class="keyword">this</span>);
+<a name="l00072"></a>00072         <a class="code" href="classqtpd_1_1_base_window.html#a417a2dd9f40ea7afd14c5edff9246c68">cutAct</a>-&gt;setShortcuts(QKeySequence::Cut);
+<a name="l00073"></a>00073         <span class="comment">//cutAct-&gt;setStatusTip(tr(&quot;Cut the current selection&#39;s contents to the &quot;</span>
+<a name="l00074"></a>00074         <span class="comment">//                        &quot;clipboard&quot;));</span>
+<a name="l00075"></a>00075         <span class="comment">//connect(cutAct, &amp;QAction::triggered, this, &amp;cm_basewindow::cut);</span>
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077         <a class="code" href="classqtpd_1_1_base_window.html#a3123d84d5d55f7e61093243986f60f4e">copyAct</a> = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;&amp;Copy&quot;</span>), <span class="keyword">this</span>);
+<a name="l00078"></a>00078         <a class="code" href="classqtpd_1_1_base_window.html#a3123d84d5d55f7e61093243986f60f4e">copyAct</a>-&gt;setShortcuts(QKeySequence::Copy);
+<a name="l00079"></a>00079         <span class="comment">//copyAct-&gt;setStatusTip(tr(&quot;Copy the current selection&#39;s contents to the &quot;</span>
+<a name="l00080"></a>00080         <span class="comment">//                        &quot;clipboard&quot;));</span>
+<a name="l00081"></a>00081         <span class="comment">//connect(copyAct, &amp;QAction::triggered, this, &amp;cm_basewindow::copy);</span>
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083         <a class="code" href="classqtpd_1_1_base_window.html#a6c7d8d3dab6a64173e29f46bceecbbfd">pasteAct</a> = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;&amp;Paste&quot;</span>), <span class="keyword">this</span>);
+<a name="l00084"></a>00084         <a class="code" href="classqtpd_1_1_base_window.html#a6c7d8d3dab6a64173e29f46bceecbbfd">pasteAct</a>-&gt;setShortcuts(QKeySequence::Paste);
+<a name="l00085"></a>00085         <span class="comment">//pasteAct-&gt;setStatusTip(tr(&quot;Paste the clipboard&#39;s contents into the current &quot;</span>
+<a name="l00086"></a>00086         <span class="comment">//                         &quot;selection&quot;));</span>
+<a name="l00087"></a>00087         <span class="comment">//connect(pasteAct, &amp;QAction::triggered, this, &amp;cm_basewindow::paste);</span>
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089         <a class="code" href="classqtpd_1_1_base_window.html#a6c7d8d3dab6a64173e29f46bceecbbfd">pasteAct</a> = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;&amp;Paste&quot;</span>), <span class="keyword">this</span>);
+<a name="l00090"></a>00090         <a class="code" href="classqtpd_1_1_base_window.html#a6c7d8d3dab6a64173e29f46bceecbbfd">pasteAct</a>-&gt;setShortcuts(QKeySequence::Paste);
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092         dspOnAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;DSP On&quot;</span>), <span class="keyword">this</span>);
+<a name="l00093"></a>00093         dspOnAct-&gt;setShortcut(tr(<span class="stringliteral">&quot;Ctrl+/&quot;</span>));
+<a name="l00094"></a>00094         connect(dspOnAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;BaseWindow::dspOn);
+<a name="l00095"></a>00095 
+<a name="l00096"></a>00096         dspOffAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;DSP Off&quot;</span>), <span class="keyword">this</span>);
+<a name="l00097"></a>00097         dspOffAct-&gt;setShortcut(tr(<span class="stringliteral">&quot;Ctrl+.&quot;</span>));
+<a name="l00098"></a>00098         connect(dspOffAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;BaseWindow::dspOff);
+<a name="l00099"></a>00099 
+<a name="l00100"></a>00100         pdWindowAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;Pd Window&quot;</span>), <span class="keyword">this</span>);
+<a name="l00101"></a>00101         pdWindowAct-&gt;setShortcut(tr(<span class="stringliteral">&quot;Ctrl+R&quot;</span>));
+<a name="l00102"></a>00102         connect(pdWindowAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;<a class="code" href="classqtpd_1_1_base_menu.html#a437ab1ab423a88820eea682aa6db86f8" title="show/hide Pd console">BaseMenu::pdWindow</a>);
+<a name="l00103"></a>00103 
+<a name="l00104"></a>00104         pythonConsoleAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;Python Console&quot;</span>), <span class="keyword">this</span>);
+<a name="l00105"></a>00105         pythonConsoleAct-&gt;setShortcut(tr(<span class="stringliteral">&quot;Ctrl+Alt+R&quot;</span>));
+<a name="l00106"></a>00106         connect(pythonConsoleAct, &amp;QAction::triggered, <span class="keyword">this</span>, &amp;<a class="code" href="classqtpd_1_1_base_menu.html#addccdba62098a7840e675f695637fc31">BaseMenu::pythonConsole</a>);
+<a name="l00107"></a>00107 
+<a name="l00108"></a>00108         pdAudioSettingsAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;Audio settings...&quot;</span>), <span class="keyword">this</span>);
+<a name="l00109"></a>00109         <span class="comment">//pdAudioSettingsAct-&gt;setShortcut(tr(&quot;Ctrl+R&quot;));</span>
+<a name="l00110"></a>00110 
+<a name="l00111"></a>00111         <span class="comment">//moves to app menu on mac</span>
+<a name="l00112"></a>00112         pdPreferencesAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;Preferences...&quot;</span>), <span class="keyword">this</span>);
+<a name="l00113"></a>00113         pdPreferencesAct-&gt;setShortcut(tr(<span class="stringliteral">&quot;Ctrl+,&quot;</span>));
+<a name="l00114"></a>00114 
+<a name="l00115"></a>00115         pdKeyBindingsAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;Key bindings...&quot;</span>), <span class="keyword">this</span>);
+<a name="l00116"></a>00116         <span class="comment">//pdKeyBindingsAct-&gt;setShortcut(tr(&quot;Ctrl+R&quot;));</span>
+<a name="l00117"></a>00117 
+<a name="l00118"></a>00118         <span class="comment">//        QAction *pdAudioSettingsAct;</span>
+<a name="l00119"></a>00119         <span class="comment">//        QAction *pdPreferencesAct;</span>
+<a name="l00120"></a>00120         <span class="comment">//        QAction *pdKeyBindingsAct;</span>
+<a name="l00121"></a>00121 
+<a name="l00122"></a>00122         pdHelpAct = <span class="keyword">new</span> QAction(tr(<span class="stringliteral">&quot;Pd help&quot;</span>), <span class="keyword">this</span>);
+<a name="l00123"></a>00123     }
+<a name="l00124"></a>00124 
+<a name="l00128"></a><a class="code" href="classqtpd_1_1_base_window.html#ab3647cf8d926f317e898d719798b88d8">00128</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_base_window.html#ab3647cf8d926f317e898d719798b88d8" title="create all menus">createMenus</a>()
+<a name="l00129"></a>00129     {
+<a name="l00130"></a>00130         <a class="code" href="classqtpd_1_1_base_window.html#acb9acbec8b1f96ee11765b84d716882c">fileMenu</a> = menuBar()-&gt;addMenu(tr(<span class="stringliteral">&quot;&amp;File&quot;</span>));
+<a name="l00131"></a>00131         <a class="code" href="classqtpd_1_1_base_window.html#acb9acbec8b1f96ee11765b84d716882c">fileMenu</a>-&gt;addAction(newAct);
+<a name="l00132"></a>00132         <a class="code" href="classqtpd_1_1_base_window.html#acb9acbec8b1f96ee11765b84d716882c">fileMenu</a>-&gt;addAction(<a class="code" href="classqtpd_1_1_base_window.html#acd1a6b4c403dde7abb3da259a382fcbd">openAct</a>);
+<a name="l00133"></a>00133         <span class="comment">//QMenu *recent =</span>
+<a name="l00134"></a>00134         <a class="code" href="classqtpd_1_1_base_window.html#acb9acbec8b1f96ee11765b84d716882c">fileMenu</a>-&gt;addMenu(tr(<span class="stringliteral">&quot;Open Recent&quot;</span>));
+<a name="l00135"></a>00135         <a class="code" href="classqtpd_1_1_base_window.html#acb9acbec8b1f96ee11765b84d716882c">fileMenu</a>-&gt;addSeparator();
+<a name="l00136"></a>00136         <a class="code" href="classqtpd_1_1_base_window.html#acb9acbec8b1f96ee11765b84d716882c">fileMenu</a>-&gt;addAction(closeAct);
+<a name="l00137"></a>00137         <a class="code" href="classqtpd_1_1_base_window.html#acb9acbec8b1f96ee11765b84d716882c">fileMenu</a>-&gt;addSeparator();
+<a name="l00138"></a>00138         <a class="code" href="classqtpd_1_1_base_window.html#acb9acbec8b1f96ee11765b84d716882c">fileMenu</a>-&gt;addAction(<a class="code" href="classqtpd_1_1_base_window.html#aaa3a2ed7429dc62b3ea6d25a4c397de2">saveAct</a>);
+<a name="l00139"></a>00139         <a class="code" href="classqtpd_1_1_base_window.html#acb9acbec8b1f96ee11765b84d716882c">fileMenu</a>-&gt;addAction(<a class="code" href="classqtpd_1_1_base_window.html#a4aac4f28cf7b733653ad465297bc2038">saveAsAct</a>);
+<a name="l00140"></a>00140         <a class="code" href="classqtpd_1_1_base_window.html#acb9acbec8b1f96ee11765b84d716882c">fileMenu</a>-&gt;addSeparator();
+<a name="l00141"></a>00141         <a class="code" href="classqtpd_1_1_base_window.html#acb9acbec8b1f96ee11765b84d716882c">fileMenu</a>-&gt;addAction(exitAct);
+<a name="l00142"></a>00142 
+<a name="l00143"></a>00143         <a class="code" href="classqtpd_1_1_base_window.html#a95354b589a86f9a8845c25428baf03b5">editMenu</a> = menuBar()-&gt;addMenu(tr(<span class="stringliteral">&quot;&amp;Edit&quot;</span>));
+<a name="l00144"></a>00144         <a class="code" href="classqtpd_1_1_base_window.html#a95354b589a86f9a8845c25428baf03b5">editMenu</a>-&gt;addAction(undoAct);
+<a name="l00145"></a>00145         <a class="code" href="classqtpd_1_1_base_window.html#a95354b589a86f9a8845c25428baf03b5">editMenu</a>-&gt;addAction(redoAct);
+<a name="l00146"></a>00146         <a class="code" href="classqtpd_1_1_base_window.html#a95354b589a86f9a8845c25428baf03b5">editMenu</a>-&gt;addSeparator();
+<a name="l00147"></a>00147         <a class="code" href="classqtpd_1_1_base_window.html#a95354b589a86f9a8845c25428baf03b5">editMenu</a>-&gt;addAction(<a class="code" href="classqtpd_1_1_base_window.html#a417a2dd9f40ea7afd14c5edff9246c68">cutAct</a>);
+<a name="l00148"></a>00148         <a class="code" href="classqtpd_1_1_base_window.html#a95354b589a86f9a8845c25428baf03b5">editMenu</a>-&gt;addAction(<a class="code" href="classqtpd_1_1_base_window.html#a3123d84d5d55f7e61093243986f60f4e">copyAct</a>);
+<a name="l00149"></a>00149         <a class="code" href="classqtpd_1_1_base_window.html#a95354b589a86f9a8845c25428baf03b5">editMenu</a>-&gt;addAction(<a class="code" href="classqtpd_1_1_base_window.html#a6c7d8d3dab6a64173e29f46bceecbbfd">pasteAct</a>);
+<a name="l00150"></a>00150         <a class="code" href="classqtpd_1_1_base_window.html#a95354b589a86f9a8845c25428baf03b5">editMenu</a>-&gt;addSeparator();
 <a name="l00151"></a>00151 
-<a name="l00152"></a>00152         <a class="code" href="classqtpd_1_1_base_window.html#a95354b589a86f9a8845c25428baf03b5">editMenu</a> = menuBar()-&gt;addMenu(tr(<span class="stringliteral">&quot;&amp;Edit&quot;</span>));
-<a name="l00153"></a>00153         <a class="code" href="classqtpd_1_1_base_window.html#a95354b589a86f9a8845c25428baf03b5">editMenu</a>-&gt;addAction(undoAct);
-<a name="l00154"></a>00154         <a class="code" href="classqtpd_1_1_base_window.html#a95354b589a86f9a8845c25428baf03b5">editMenu</a>-&gt;addAction(redoAct);
-<a name="l00155"></a>00155         <a class="code" href="classqtpd_1_1_base_window.html#a95354b589a86f9a8845c25428baf03b5">editMenu</a>-&gt;addSeparator();
-<a name="l00156"></a>00156         <a class="code" href="classqtpd_1_1_base_window.html#a95354b589a86f9a8845c25428baf03b5">editMenu</a>-&gt;addAction(cutAct);
-<a name="l00157"></a>00157         <a class="code" href="classqtpd_1_1_base_window.html#a95354b589a86f9a8845c25428baf03b5">editMenu</a>-&gt;addAction(copyAct);
-<a name="l00158"></a>00158         <a class="code" href="classqtpd_1_1_base_window.html#a95354b589a86f9a8845c25428baf03b5">editMenu</a>-&gt;addAction(pasteAct);
-<a name="l00159"></a>00159         <a class="code" href="classqtpd_1_1_base_window.html#a95354b589a86f9a8845c25428baf03b5">editMenu</a>-&gt;addSeparator();
-<a name="l00160"></a>00160 
-<a name="l00161"></a>00161         <a class="code" href="classqtpd_1_1_base_window.html#a0173ffc9eceb29b6c95bb5601ea7d6d7">putMenu</a> = menuBar()-&gt;addMenu(tr(<span class="stringliteral">&quot;&amp;Put&quot;</span>));
-<a name="l00162"></a>00162 
-<a name="l00163"></a>00163         <a class="code" href="classqtpd_1_1_base_window.html#a4765b54e6384d48b901951f5853f6401">arrangeMenu</a> = menuBar()-&gt;addMenu(tr(<span class="stringliteral">&quot;&amp;Arrange&quot;</span>));
-<a name="l00164"></a>00164 
-<a name="l00165"></a>00165 
-<a name="l00166"></a>00166         findMenu = menuBar()-&gt;addMenu(tr(<span class="stringliteral">&quot;&amp;Find&quot;</span>));
-<a name="l00167"></a>00167         findMenu-&gt;addSeparator();
-<a name="l00168"></a>00168 
-<a name="l00169"></a>00169         mediaMenu = menuBar()-&gt;addMenu(tr(<span class="stringliteral">&quot;&amp;Media&quot;</span>));
-<a name="l00170"></a>00170         mediaMenu-&gt;addAction(dspOnAct);
-<a name="l00171"></a>00171         mediaMenu-&gt;addAction(dspOffAct);
-<a name="l00172"></a>00172         <span class="comment">//mediaMenu-&gt;addSeparator();</span>
-<a name="l00173"></a>00173 
-<a name="l00174"></a>00174         windowMenu = menuBar()-&gt;addMenu(tr(<span class="stringliteral">&quot;&amp;Window&quot;</span>));
-<a name="l00175"></a>00175         windowMenu-&gt;addAction(pdWindowAct);
-<a name="l00176"></a>00176         windowMenu-&gt;addAction(pythonConsoleAct);
-<a name="l00177"></a>00177         windowMenu-&gt;addSeparator();
-<a name="l00178"></a>00178         windowMenu-&gt;addAction(pdAudioSettingsAct);
-<a name="l00179"></a>00179         windowMenu-&gt;addAction(pdPreferencesAct);
-<a name="l00180"></a>00180         windowMenu-&gt;addAction(pdKeyBindingsAct);
-<a name="l00181"></a>00181         windowMenu-&gt;addSeparator();
-<a name="l00182"></a>00182 
-<a name="l00183"></a>00183         <a class="code" href="classqtpd_1_1_base_window.html#a0e973c545dc57ac03f2e0dbe4aa6f69e">helpMenu</a> = menuBar()-&gt;addMenu(tr(<span class="stringliteral">&quot;&amp;Help&quot;</span>));
-<a name="l00184"></a>00184         <a class="code" href="classqtpd_1_1_base_window.html#a0e973c545dc57ac03f2e0dbe4aa6f69e">helpMenu</a>-&gt;addAction(pdHelpAct);
+<a name="l00152"></a>00152         <a class="code" href="classqtpd_1_1_base_window.html#a0173ffc9eceb29b6c95bb5601ea7d6d7">putMenu</a> = menuBar()-&gt;addMenu(tr(<span class="stringliteral">&quot;&amp;Put&quot;</span>));
+<a name="l00153"></a>00153 
+<a name="l00154"></a>00154         <a class="code" href="classqtpd_1_1_base_window.html#a4765b54e6384d48b901951f5853f6401">arrangeMenu</a> = menuBar()-&gt;addMenu(tr(<span class="stringliteral">&quot;&amp;Arrange&quot;</span>));
+<a name="l00155"></a>00155 
+<a name="l00156"></a>00156         findMenu = menuBar()-&gt;addMenu(tr(<span class="stringliteral">&quot;&amp;Find&quot;</span>));
+<a name="l00157"></a>00157         findMenu-&gt;addSeparator();
+<a name="l00158"></a>00158 
+<a name="l00159"></a>00159         mediaMenu = menuBar()-&gt;addMenu(tr(<span class="stringliteral">&quot;&amp;Media&quot;</span>));
+<a name="l00160"></a>00160         mediaMenu-&gt;addAction(dspOnAct);
+<a name="l00161"></a>00161         mediaMenu-&gt;addAction(dspOffAct);
+<a name="l00162"></a>00162         <span class="comment">//mediaMenu-&gt;addSeparator();</span>
+<a name="l00163"></a>00163 
+<a name="l00164"></a>00164         windowMenu = menuBar()-&gt;addMenu(tr(<span class="stringliteral">&quot;&amp;Window&quot;</span>));
+<a name="l00165"></a>00165         windowMenu-&gt;addAction(pdWindowAct);
+<a name="l00166"></a>00166         windowMenu-&gt;addAction(pythonConsoleAct);
+<a name="l00167"></a>00167         windowMenu-&gt;addSeparator();
+<a name="l00168"></a>00168         windowMenu-&gt;addAction(pdAudioSettingsAct);
+<a name="l00169"></a>00169         windowMenu-&gt;addAction(pdPreferencesAct);
+<a name="l00170"></a>00170         windowMenu-&gt;addAction(pdKeyBindingsAct);
+<a name="l00171"></a>00171         windowMenu-&gt;addSeparator();
+<a name="l00172"></a>00172 
+<a name="l00173"></a>00173         <a class="code" href="classqtpd_1_1_base_window.html#a0e973c545dc57ac03f2e0dbe4aa6f69e">helpMenu</a> = menuBar()-&gt;addMenu(tr(<span class="stringliteral">&quot;&amp;Help&quot;</span>));
+<a name="l00174"></a>00174         <a class="code" href="classqtpd_1_1_base_window.html#a0e973c545dc57ac03f2e0dbe4aa6f69e">helpMenu</a>-&gt;addAction(pdHelpAct);
+<a name="l00175"></a>00175     }
+<a name="l00176"></a>00176 
+<a name="l00177"></a>00177 <span class="keyword">private</span>:
+<a name="l00178"></a>00178     Ui::cm_basewindow* ui;
+<a name="l00179"></a>00179 
+<a name="l00180"></a>00180     QMenu* findMenu;
+<a name="l00181"></a>00181     QMenu* mediaMenu;
+<a name="l00182"></a>00182     QMenu* windowMenu;
+<a name="l00183"></a>00183 
+<a name="l00184"></a>00184     QAction* newAct;
 <a name="l00185"></a>00185 
-<a name="l00186"></a>00186     }
-<a name="l00187"></a>00187 
-<a name="l00188"></a>00188 <span class="keyword">private</span>:
-<a name="l00189"></a>00189     Ui::cm_basewindow *ui;
+<a name="l00186"></a>00186     QAction* closeAct;
+<a name="l00187"></a>00187     QAction* messageAct;
+<a name="l00188"></a>00188 
+<a name="l00189"></a>00189     QAction* exitAct;
 <a name="l00190"></a>00190 
-<a name="l00191"></a>00191 
-<a name="l00192"></a>00192 
+<a name="l00191"></a>00191     QAction* undoAct;
+<a name="l00192"></a>00192     QAction* redoAct;
 <a name="l00193"></a>00193 
-<a name="l00194"></a>00194     QMenu *findMenu;
-<a name="l00195"></a>00195     QMenu *mediaMenu;
-<a name="l00196"></a>00196     QMenu *windowMenu;
-<a name="l00197"></a>00197 
-<a name="l00198"></a>00198     QAction *newAct;
-<a name="l00199"></a>00199 
-<a name="l00200"></a>00200     QAction *closeAct;
-<a name="l00201"></a>00201     QAction *messageAct;
+<a name="l00194"></a>00194     QAction* dspOnAct;
+<a name="l00195"></a>00195     QAction* dspOffAct;
+<a name="l00196"></a>00196 
+<a name="l00197"></a>00197     QAction* pdWindowAct;
+<a name="l00198"></a>00198     QAction* pythonConsoleAct;
+<a name="l00199"></a>00199     QAction* pdAudioSettingsAct;
+<a name="l00200"></a>00200     QAction* pdPreferencesAct;
+<a name="l00201"></a>00201     QAction* pdKeyBindingsAct;
 <a name="l00202"></a>00202 
-<a name="l00203"></a>00203     QAction *exitAct;
+<a name="l00203"></a>00203     QAction* pdHelpAct;
 <a name="l00204"></a>00204 
-<a name="l00205"></a>00205     QAction *undoAct;
-<a name="l00206"></a>00206     QAction *redoAct;
-<a name="l00207"></a>00207     QAction *cutAct;
-<a name="l00208"></a>00208     QAction *copyAct;
-<a name="l00209"></a>00209     QAction *pasteAct;
+<a name="l00205"></a>00205 <span class="keyword">public</span>:
+<a name="l00206"></a><a class="code" href="classqtpd_1_1_base_window.html#acd1a6b4c403dde7abb3da259a382fcbd">00206</a>     QAction* <a class="code" href="classqtpd_1_1_base_window.html#acd1a6b4c403dde7abb3da259a382fcbd">openAct</a>;
+<a name="l00207"></a>00207 
+<a name="l00208"></a><a class="code" href="classqtpd_1_1_base_window.html#aaa3a2ed7429dc62b3ea6d25a4c397de2">00208</a>     QAction* <a class="code" href="classqtpd_1_1_base_window.html#aaa3a2ed7429dc62b3ea6d25a4c397de2">saveAct</a>;
+<a name="l00209"></a><a class="code" href="classqtpd_1_1_base_window.html#a4aac4f28cf7b733653ad465297bc2038">00209</a>     QAction* <a class="code" href="classqtpd_1_1_base_window.html#a4aac4f28cf7b733653ad465297bc2038">saveAsAct</a>;
 <a name="l00210"></a>00210 
-<a name="l00211"></a>00211 
-<a name="l00212"></a>00212 
-<a name="l00213"></a>00213     QAction *dspOnAct;
-<a name="l00214"></a>00214     QAction *dspOffAct;
-<a name="l00215"></a>00215 
-<a name="l00216"></a>00216     QAction *pdWindowAct;
-<a name="l00217"></a>00217     QAction *pythonConsoleAct;
-<a name="l00218"></a>00218     QAction *pdAudioSettingsAct;
-<a name="l00219"></a>00219     QAction *pdPreferencesAct;
-<a name="l00220"></a>00220     QAction *pdKeyBindingsAct;
+<a name="l00211"></a><a class="code" href="classqtpd_1_1_base_window.html#a417a2dd9f40ea7afd14c5edff9246c68">00211</a>     QAction* <a class="code" href="classqtpd_1_1_base_window.html#a417a2dd9f40ea7afd14c5edff9246c68">cutAct</a>;
+<a name="l00212"></a><a class="code" href="classqtpd_1_1_base_window.html#a3123d84d5d55f7e61093243986f60f4e">00212</a>     QAction* <a class="code" href="classqtpd_1_1_base_window.html#a3123d84d5d55f7e61093243986f60f4e">copyAct</a>;
+<a name="l00213"></a><a class="code" href="classqtpd_1_1_base_window.html#a6c7d8d3dab6a64173e29f46bceecbbfd">00213</a>     QAction* <a class="code" href="classqtpd_1_1_base_window.html#a6c7d8d3dab6a64173e29f46bceecbbfd">pasteAct</a>;
+<a name="l00214"></a>00214 
+<a name="l00215"></a><a class="code" href="classqtpd_1_1_base_window.html#acb9acbec8b1f96ee11765b84d716882c">00215</a>     QMenu* <a class="code" href="classqtpd_1_1_base_window.html#acb9acbec8b1f96ee11765b84d716882c">fileMenu</a>;
+<a name="l00216"></a><a class="code" href="classqtpd_1_1_base_window.html#a95354b589a86f9a8845c25428baf03b5">00216</a>     QMenu* <a class="code" href="classqtpd_1_1_base_window.html#a95354b589a86f9a8845c25428baf03b5">editMenu</a>;
+<a name="l00217"></a><a class="code" href="classqtpd_1_1_base_window.html#a0173ffc9eceb29b6c95bb5601ea7d6d7">00217</a>     QMenu* <a class="code" href="classqtpd_1_1_base_window.html#a0173ffc9eceb29b6c95bb5601ea7d6d7">putMenu</a>;
+<a name="l00218"></a><a class="code" href="classqtpd_1_1_base_window.html#a4765b54e6384d48b901951f5853f6401">00218</a>     QMenu* <a class="code" href="classqtpd_1_1_base_window.html#a4765b54e6384d48b901951f5853f6401">arrangeMenu</a>;
+<a name="l00219"></a>00219 
+<a name="l00220"></a><a class="code" href="classqtpd_1_1_base_window.html#a0e973c545dc57ac03f2e0dbe4aa6f69e">00220</a>     QMenu* <a class="code" href="classqtpd_1_1_base_window.html#a0e973c545dc57ac03f2e0dbe4aa6f69e">helpMenu</a>;
 <a name="l00221"></a>00221 
-<a name="l00222"></a>00222     QAction *pdHelpAct;
+<a name="l00222"></a>00222 <span class="keyword">private</span> slots:
 <a name="l00223"></a>00223 
-<a name="l00224"></a>00224 <span class="keyword">public</span>:
+<a name="l00224"></a>00224     <span class="keywordtype">void</span> close();
 <a name="l00225"></a>00225 
-<a name="l00226"></a><a class="code" href="classqtpd_1_1_base_window.html#acd1a6b4c403dde7abb3da259a382fcbd">00226</a>     QAction *<a class="code" href="classqtpd_1_1_base_window.html#acd1a6b4c403dde7abb3da259a382fcbd">openAct</a>;
-<a name="l00227"></a>00227 
-<a name="l00228"></a><a class="code" href="classqtpd_1_1_base_window.html#aaa3a2ed7429dc62b3ea6d25a4c397de2">00228</a>     QAction *<a class="code" href="classqtpd_1_1_base_window.html#aaa3a2ed7429dc62b3ea6d25a4c397de2">saveAct</a>;
-<a name="l00229"></a><a class="code" href="classqtpd_1_1_base_window.html#a4aac4f28cf7b733653ad465297bc2038">00229</a>     QAction *<a class="code" href="classqtpd_1_1_base_window.html#a4aac4f28cf7b733653ad465297bc2038">saveAsAct</a>;
-<a name="l00230"></a>00230 
-<a name="l00231"></a>00231 
-<a name="l00232"></a><a class="code" href="classqtpd_1_1_base_window.html#acb9acbec8b1f96ee11765b84d716882c">00232</a>     QMenu *<a class="code" href="classqtpd_1_1_base_window.html#acb9acbec8b1f96ee11765b84d716882c">fileMenu</a>;
-<a name="l00233"></a><a class="code" href="classqtpd_1_1_base_window.html#a95354b589a86f9a8845c25428baf03b5">00233</a>     QMenu *<a class="code" href="classqtpd_1_1_base_window.html#a95354b589a86f9a8845c25428baf03b5">editMenu</a>;
-<a name="l00234"></a><a class="code" href="classqtpd_1_1_base_window.html#a0173ffc9eceb29b6c95bb5601ea7d6d7">00234</a>     QMenu *<a class="code" href="classqtpd_1_1_base_window.html#a0173ffc9eceb29b6c95bb5601ea7d6d7">putMenu</a>;
-<a name="l00235"></a><a class="code" href="classqtpd_1_1_base_window.html#a4765b54e6384d48b901951f5853f6401">00235</a>     QMenu *<a class="code" href="classqtpd_1_1_base_window.html#a4765b54e6384d48b901951f5853f6401">arrangeMenu</a>;
-<a name="l00236"></a>00236 
-<a name="l00237"></a><a class="code" href="classqtpd_1_1_base_window.html#a0e973c545dc57ac03f2e0dbe4aa6f69e">00237</a>     QMenu *<a class="code" href="classqtpd_1_1_base_window.html#a0e973c545dc57ac03f2e0dbe4aa6f69e">helpMenu</a>;
-<a name="l00238"></a>00238 
-<a name="l00239"></a>00239 
-<a name="l00240"></a>00240 <span class="keyword">private</span> slots:
-<a name="l00241"></a>00241 
-<a name="l00242"></a>00242     <span class="keywordtype">void</span> close();
-<a name="l00243"></a>00243 
-<a name="l00244"></a>00244     <span class="keywordtype">void</span> dspOn();
-<a name="l00245"></a>00245     <span class="keywordtype">void</span> dspOff();
-<a name="l00246"></a>00246 
-<a name="l00247"></a>00247     <span class="keywordtype">void</span> pdWindow();
-<a name="l00248"></a>00248 
-<a name="l00249"></a>00249 
-<a name="l00250"></a>00250 };
-<a name="l00251"></a>00251 }
-<a name="l00252"></a>00252 
-<a name="l00253"></a>00253 <span class="preprocessor">#endif // MAINWINDOW_H</span>
+<a name="l00226"></a>00226     <span class="keywordtype">void</span> dspOn();
+<a name="l00227"></a>00227     <span class="keywordtype">void</span> dspOff();
+<a name="l00228"></a>00228 
+<a name="l00229"></a>00229     <span class="keywordtype">void</span> pdWindow();
+<a name="l00230"></a>00230 };
+<a name="l00231"></a>00231 }
+<a name="l00232"></a>00232 
+<a name="l00233"></a>00233 <span class="preprocessor">#endif // MAINWINDOW_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -344,7 +324,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 30 2017 07:36:30 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 30 2017 14:23:53 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -346,7 +346,7 @@ var searchData=
   ['pymem_5fmalloc',['PyMem_MALLOC',['../pymem_8h.html#ae8de012416d8167e311872a1d6710121',1,'pymem.h']]],
   ['pymem_5fnew',['PyMem_New',['../pymem_8h.html#a72e60fdd5b400f2083d71ed01f382ee3',1,'PyMem_New():&#160;pymem.h'],['../pymem_8h.html#a0b75e31b46d1959321e376d813d9dc58',1,'PyMem_NEW():&#160;pymem.h']]],
   ['pymem_5frealloc',['PyMem_REALLOC',['../pymem_8h.html#abf2214e1ddf9ee451b2baf84692e0110',1,'pymem.h']]],
-  ['pymem_5fresize',['PyMem_RESIZE',['../pymem_8h.html#a9c3d0e79d90b74b630f9d9f1096efa28',1,'PyMem_RESIZE():&#160;pymem.h'],['../pymem_8h.html#afb22d91b2530d4885af927f392a3717b',1,'PyMem_Resize():&#160;pymem.h']]],
+  ['pymem_5fresize',['PyMem_Resize',['../pymem_8h.html#afb22d91b2530d4885af927f392a3717b',1,'PyMem_Resize():&#160;pymem.h'],['../pymem_8h.html#a9c3d0e79d90b74b630f9d9f1096efa28',1,'PyMem_RESIZE():&#160;pymem.h']]],
   ['pymemoryview_5fcheck',['PyMemoryView_Check',['../memoryobject_8h.html#a814f92273e85147a616731bafb843bf0',1,'memoryobject.h']]],
   ['pymemoryview_5fget_5fbase',['PyMemoryView_GET_BASE',['../memoryobject_8h.html#a875665e8bbb49fb4306ec5085b620055',1,'memoryobject.h']]],
   ['pymemoryview_5fget_5fbuffer',['PyMemoryView_GET_BUFFER',['../memoryobject_8h.html#a35d739b4ee838043d41bf35306b49f9b',1,'memoryobject.h']]],

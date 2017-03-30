@@ -53,6 +53,7 @@ var searchData=
   ['consts',['consts',['../code_8h.html#a73c3fe2be6e8c3350b99f79669896ee9',1,'code.h']]],
   ['context',['context',['../pycapsule_8h.html#ae376f130b17d169ee51be68077a89ed0',1,'pycapsule.h']]],
   ['context_5fexpr',['context_expr',['../struct__stmt.html#a2df3be632234b161842c0cc1646819eb',1,'_stmt']]],
+  ['copyact',['copyAct',['../classqtpd_1_1_base_window.html#a3123d84d5d55f7e61093243986f60f4e',1,'qtpd::BaseWindow']]],
   ['count',['count',['../structui__sliders.html#a84df953dfa23b56b514fcd9c72165013',1,'ui_sliders::count()'],['../abstract_8h.html#a8f9bd2e8322b1ca9128fbfca71322230',1,'count():&#160;abstract.h']]],
   ['counter',['counter',['../structui__scope.html#a73e2eca7fd28802fd15b70f3de6e2bea',1,'ui_scope::counter()'],['../structui__spectroscope.html#ad5198182c43761de6108b7edd2d2f185',1,'ui_spectroscope::counter()']]],
   ['cpptype',['cppType',['../struct_python_qt_property_data.html#ab2e212d1704f707f1e9bea1b5b58367a',1,'PythonQtPropertyData']]],
@@ -60,5 +61,6 @@ var searchData=
   ['curexc_5ftraceback',['curexc_traceback',['../struct__ts.html#aeabab7a3345fe7f60a4c82ea81a1c81d',1,'_ts']]],
   ['curexc_5ftype',['curexc_type',['../struct__ts.html#acc500baaee5daf1e51115b8799d91918',1,'_ts']]],
   ['curexc_5fvalue',['curexc_value',['../struct__ts.html#a49b753b1c8ed314bf3ca1cbd37cb5fc9',1,'_ts']]],
+  ['cutact',['cutAct',['../classqtpd_1_1_base_window.html#a417a2dd9f40ea7afd14c5edff9246c68',1,'qtpd::BaseWindow']]],
   ['cval',['cval',['../struct_py_complex_object.html#ae369afecae8b5bda8a358a8de2826648',1,'PyComplexObject']]]
 ];
