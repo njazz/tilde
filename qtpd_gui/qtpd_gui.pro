@@ -29,13 +29,9 @@ CONFIG += static
   LIBS += -F/System/Library/Frameworks -framework Python
 
 SOURCES += main.cpp\
-    window/cm_basewindow.cpp \
-    window/cm_pdwindow.cpp \
-    window/cm_patchwindow.cpp \
     properties/cm_property.cpp \
     properties/cm_propertylist.cpp \
     python/PythonQtScriptingConsole.cpp \
-    window/cm_propertieswindow.cpp \
     python/wrappers/py_wrappers.cpp \
     objects/UIArray.cpp \
     objects/UIBang.cpp \
@@ -59,7 +55,11 @@ SOURCES += main.cpp\
     ObjectLoader.cpp \
     ObjectMaker.cpp \
     BaseMenu.cpp \
-    OpenFileProxy.cpp
+    OpenFileProxy.cpp \
+    window/PatchWindow.cpp \
+    window/PdWindow.cpp \
+    window/BaseWindow.cpp \
+    window/PropertiesWindow.cpp
 
 
 HEADERS  += \

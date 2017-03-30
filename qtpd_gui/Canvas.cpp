@@ -1291,8 +1291,8 @@ void Canvas::dataCut()
     if (!_selectionData.hasObjects())
         return;
 
-    _clipboard = _data.boxesAsPdFileStrings();
-    _clipboard += _data.patchcordsAsPdFileStrings();
+    _clipboard = _selectionData.boxesAsPdFileStrings();
+    _clipboard += _selectionData.patchcordsAsPdFileStrings();
 
     deleteSelectedBoxes();
 }
@@ -1303,8 +1303,8 @@ void Canvas::dataCopy()
     if (!_selectionData.hasObjects())
         return;
 
-    _clipboard = _data.boxesAsPdFileStrings();
-    _clipboard += _data.patchcordsAsPdFileStrings();
+    _clipboard = _selectionData.boxesAsPdFileStrings();
+    _clipboard += _selectionData.patchcordsAsPdFileStrings();
 
     qDebug() << "***copy\n"
              << _clipboard;
@@ -1335,8 +1335,9 @@ void Canvas::dataPaste()
             }
 
             _clipboard[i] = subList.join(" ");
-            subList.removeAt(0); // we have only #X obj in our clipboard
-            FileParser::parseStringListAtoms(this, subList);
+            //subList.removeAt(0); // we have only #X obj in our clipboard
+            //FileParser::parseStringListAtoms(this, subList);
+            FileParser::parseQString(_clipboard[i]);
         }
 
         //list1.push_back(str);

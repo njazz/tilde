@@ -1,9 +1,9 @@
 #ifndef CM_PATCHWINDOW_H
 #define CM_PATCHWINDOW_H
 
-#include "UIBox.h"
 #include "BaseWindow.h"
 #include "Canvas.h"
+#include "UIBox.h"
 
 #include "PdLink.h"
 
@@ -291,7 +291,6 @@ public:
         putMenu->addAction(putPdInstance);
         putMenu->addSeparator();
 
-
         arrangeMenu->addAction(showGridAct);
         arrangeMenu->addAction(snapToGridAct);
         arrangeMenu->addSeparator();
@@ -498,20 +497,9 @@ public:
 
     // ==============================
 
-    void cut()
-    {
-        canvas->dataCut();
-    }
-
-    void copy()
-    {
-        canvas->dataCopy();
-    }
-
-    void paste()
-    {
-        canvas->dataPaste();
-    }
+    void cut();
+    void copy();
+    void paste();
 
 public slots:
     std::pair<QMainWindow*, qtpd::UIObject*> s_createSubpatchWindow()

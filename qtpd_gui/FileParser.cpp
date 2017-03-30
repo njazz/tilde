@@ -4,9 +4,9 @@
 #include "FileParser.h"
 
 namespace qtpd {
-PatchWindow* FileParser::pdParserPrevWindow = 0;
-PatchWindow* FileParser::pdParserWindow = 0;
-PatchWindow* FileParser::pdParserFirstWindow = 0;
+PatchWindow* FileParser::_pdParserPrevWindow = 0;
+PatchWindow* FileParser::_pdParserWindow = 0;
+PatchWindow* FileParser::_pdParserFirstWindow = 0;
 std::string FileParser::pdParserFileName = "";
 
 bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
@@ -189,7 +189,7 @@ void FileParser::parseStringListAtoms(Canvas* cmcanvas, QStringList list) //rena
         }
     } else if (list.at(0) == "restore") {
 
-        qDebug("restore canvas: %lu | previous %lu", pdParserWindow, pdParserPrevWindow);
+        qDebug("restore canvas: %lu | previous %lu", _pdParserWindow, _pdParserPrevWindow);
 
         //parserwindow - subpatch
         //prev window - parent patch
@@ -215,8 +215,8 @@ void FileParser::parseStringListAtoms(Canvas* cmcanvas, QStringList list) //rena
             std::string objData = objList.join(" ").toStdString();
 
             if (objList.at(0) == "pd") {
-                if (pdParserPrevWindow) {
-                    if (pdParserPrevWindow->canvas) {
+                if (_pdParserPrevWindow) {
+                    if (_pdParserPrevWindow->canvas) {
                         //                                                UIBox *b1 = 0;
 
                         //                                                b1 = pdParserPrevWindow->canvas->restoreSubcanvas(objname.toStdString(), pos, pdParserWindow->canvas->pdCanvas);
@@ -224,11 +224,11 @@ void FileParser::parseStringListAtoms(Canvas* cmcanvas, QStringList list) //rena
 
                         qDebug("restore");
 
-                        UIObject* b = pdParserPrevWindow->canvas->createBoxForCanvas(pdParserWindow->canvas, objData, pos);
+                        UIObject* b = _pdParserPrevWindow->canvas->createBoxForCanvas(_pdParserWindow->canvas, objData, pos);
 
                         //IObject *b = createBoxForCanvas(newCanvas, objectData, pos);
-                        ((UIBox*)b)->setSubpatchWindow((QMainWindow*)pdParserPrevWindow);
-                        ((Canvas*)b)->setSubcanvas(pdParserPrevWindow->canvas);
+                        ((UIBox*)b)->setSubpatchWindow((QMainWindow*)_pdParserPrevWindow);
+                        ((Canvas*)b)->setSubcanvas(_pdParserPrevWindow->canvas);
                     }
                 }
             } else {
@@ -236,7 +236,7 @@ void FileParser::parseStringListAtoms(Canvas* cmcanvas, QStringList list) //rena
             }
 
             //draw subpatch
-            pdParserWindow = pdParserPrevWindow;
+            _pdParserWindow = _pdParserPrevWindow;
 
         } else {
             qDebug("list error");
@@ -267,9 +267,10 @@ void FileParser::parseStringListAtoms(Canvas* cmcanvas, QStringList list) //rena
     }
 }
 
-void FileParser::parseQStringList(QStringList atoms)
+void FileParser::parseQString(QString line)
 {
 
+    QStringList atoms = line.split(" ");
 
     atoms.last() = atoms.last().remove(";");
     //switch (atoms.at(0))
@@ -282,16 +283,16 @@ void FileParser::parseQStringList(QStringList atoms)
         QStringList msg = atoms;
         msg.removeFirst();
 
-        pdParserPrevWindow = pdParserWindow;
+        _pdParserPrevWindow = _pdParserWindow;
 
         PatchWindow* newWnd = PatchWindow::newWindow();
-        pdParserWindow = newWnd;
+        _pdParserWindow = newWnd;
 
         //save pointer to first canvas. needed to set file name
-        if (!pdParserPrevWindow)
-            pdParserFirstWindow = pdParserWindow;
+        if (!_pdParserPrevWindow)
+            _pdParserFirstWindow = _pdParserWindow;
 
-        if (pdParserPrevWindow)
+        if (_pdParserPrevWindow)
             newWnd->setWindowTitle("<subpatch>");
 
         // todo different canvas argumentlists
@@ -321,9 +322,9 @@ void FileParser::parseQStringList(QStringList atoms)
         QStringList msg = atoms;
         msg.removeFirst();
 
-        if (pdParserWindow) {
+        if (_pdParserWindow) {
             //qDebug("X");
-            FileParser::parseStringListAtoms(pdParserWindow->canvas, msg);
+            FileParser::parseStringListAtoms(_pdParserWindow->canvas, msg);
         } else {
             qDebug("parser error - no canvas");
         }
@@ -342,8 +343,8 @@ void FileParser::open(QString fname)
 
     QStringList stringList;
 
-    pdParserWindow = 0;
-    pdParserPrevWindow = 0;
+    setParserWindow(0);
+
     pdParserFileName = fname.toStdString();
 
     QTextStream textStream(&f);
@@ -355,14 +356,14 @@ void FileParser::open(QString fname)
             stringList.append(line);
             qDebug("* %s", line.toStdString().c_str());
             //
-            QStringList atoms = line.split(" ");
-            FileParser::parseQStringList(atoms);
+
+            FileParser::parseQString(line);
         }
     }
 
-    if (pdParserWindow) {
-        pdParserWindow->setFileName(fname);
-        pdParserWindow->canvas->setEditMode(em_Locked);
+    if (_pdParserWindow) {
+        _pdParserWindow->setFileName(fname);
+        _pdParserWindow->canvas->setEditMode(em_Locked);
     }
 
     f.close();

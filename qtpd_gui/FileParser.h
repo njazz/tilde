@@ -17,13 +17,20 @@ class FileParser {
 private:
     FileParser(){};
 
+    static PatchWindow* _pdParserPrevWindow;
+    static PatchWindow* _pdParserWindow;
+    static PatchWindow* _pdParserFirstWindow;
+
 public:
     // or t_canvas?
-    static PatchWindow* pdParserPrevWindow;
-    static PatchWindow* pdParserWindow;
-    static PatchWindow* pdParserFirstWindow;
+
     static std::string pdParserFileName;
 
+    static void setParserWindow(PatchWindow* wnd)
+    {
+        _pdParserPrevWindow = wnd;
+        _pdParserWindow = wnd;
+    }
     ////
     /// \brief [3.2] process legacy pd files
     /// \param list
@@ -50,7 +57,7 @@ public:
     /// \brief [2] checks first atoms ("#N", "#X" etc) and sends QStringList of contents to canvas
     /// \param line
     ///
-    static void parseQStringList(QStringList atoms);
+    static void parseQString(QString line);
 
     ////
     /// \brief [1] opens file, converts to QStrings, calls 'parseString'

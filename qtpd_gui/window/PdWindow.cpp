@@ -87,5 +87,4 @@ void PdWindow::resizeEvent()
     // todo check
     ui->log->resizeRowsToContents();
 };
-
 }
