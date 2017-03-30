@@ -1,7 +1,6 @@
 var searchData=
 [
   ['_7ebaseobject',['~BaseObject',['../classceammc_1_1_base_object.html#a544234b70eb8a4c5ca79ee676852131e',1,'ceammc::BaseObject']]],
-  ['_7ebasewindow',['~BaseWindow',['../classqtpd_1_1_base_window.html#af1f0ff88e30b5e40d356d2dd769e88b5',1,'qtpd::BaseWindow']]],
   ['_7echeckedproperty',['~CheckedProperty',['../classceammc_1_1_checked_property.html#a3132460594e5a3981657c155adc169e2',1,'ceammc::CheckedProperty']]],
   ['_7edebug',['~Debug',['../classceammc_1_1_debug.html#af9ef604c9263ce5526b692ab3ca91ac1',1,'ceammc::Debug']]],
   ['_7eerror',['~Error',['../classceammc_1_1_error.html#ad0d291a9bc0be059b5b95ee01a0d504f',1,'ceammc::Error']]],

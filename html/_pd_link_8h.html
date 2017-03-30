@@ -150,7 +150,8 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a766e12f26830eee9deae0fe8e9f70535">cmp_post</a> (<a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> text)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">post plain text to Pd window  <a href="#a766e12f26830eee9deae0fe8e9f70535"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">t_garray *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#ae720f59bd81a99a5fc06fa7d33b1115c">cmp_get_array</a> (t_symbol *arrayname)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#adb4a68fce42ed60d78451b1efd60125f">cmp_get_array_data</a> (t_array *a, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="stringobject_8h.html#a612c27dae5681d14a5d92d0b3d8ab6e5">size</a>, float **vec)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a57415e8e6074a693dd767aae59b97c40">cmp_get_array_data</a> (t_garray *a, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> *<a class="el" href="stringobject_8h.html#a612c27dae5681d14a5d92d0b3d8ab6e5">size</a>, t_word **vec)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a35a55a7ec4f3ad40cb34a78dd447b7fc">cmp_get_array_size</a> (t_garray *a)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">t_garray *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a5e3a540ebc4655748e2c87cabd76213c">cmp_new_array</a> (t_canvas *c, t_symbol *<a class="el" href="_python_8h.html#ab3978d96531ad97f1c3139b11f771f98">name</a>, t_floatarg <a class="el" href="stringobject_8h.html#a612c27dae5681d14a5d92d0b3d8ab6e5">size</a>, t_floatarg save, t_floatarg newgraph)</td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
@@ -449,32 +450,49 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="adb4a68fce42ed60d78451b1efd60125f"></a><!-- doxytag: member="PdLink.h::cmp_get_array_data" ref="adb4a68fce42ed60d78451b1efd60125f" args="(t_array *a, int size, float **vec)" -->
+<a class="anchor" id="a57415e8e6074a693dd767aae59b97c40"></a><!-- doxytag: member="PdLink.h::cmp_get_array_data" ref="a57415e8e6074a693dd767aae59b97c40" args="(t_garray *a, int *size, t_word **vec)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="_pd_link_8h.html#adb4a68fce42ed60d78451b1efd60125f">cmp_get_array_data</a> </td>
+          <td class="memname">void <a class="el" href="_pd_link_8h.html#a57415e8e6074a693dd767aae59b97c40">cmp_get_array_data</a> </td>
           <td>(</td>
-          <td class="paramtype">t_array *&#160;</td>
+          <td class="paramtype">t_garray *&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> *&#160;</td>
           <td class="paramname"><em>size</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float **&#160;</td>
+          <td class="paramtype">t_word **&#160;</td>
           <td class="paramname"><em>vec</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
           <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a35a55a7ec4f3ad40cb34a78dd447b7fc"></a><!-- doxytag: member="PdLink.h::cmp_get_array_size" ref="a35a55a7ec4f3ad40cb34a78dd447b7fc" args="(t_garray *a)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="_pd_link_8h.html#a35a55a7ec4f3ad40cb34a78dd447b7fc">cmp_get_array_size</a> </td>
+          <td>(</td>
+          <td class="paramtype">t_garray *&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -1110,7 +1128,7 @@ Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 30 2017 17:35:48 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 30 2017 21:15:03 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
