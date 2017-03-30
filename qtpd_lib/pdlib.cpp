@@ -107,7 +107,7 @@ void cmp_pdinit()
     sys_printtostderr = 0;
     sys_usestdpath = 0; // don't use pd_extrapath, only sys_searchpath
     sys_debuglevel = 0;
-    sys_verbose = 4;
+    sys_verbose = 1;
     sys_noloadbang = 0;
     sys_nogui = 1;
     sys_hipriority = 0;
@@ -552,4 +552,9 @@ t_garray* cmp_new_array(t_canvas* c, t_symbol* name, t_floatarg size, t_floatarg
 
     ret = cmp_get_array(name);//(t_garray*)pd_newest();
     return ret;
+}
+
+void cmp_set_verbose(int v)
+{
+    sys_verbose = v;
 }

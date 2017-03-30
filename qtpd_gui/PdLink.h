@@ -222,6 +222,13 @@ void cmp_connectUI(t_pd* obj, void* uiobj, t_updateUI func);
 ///
 void cmp_post(std::string text);
 
+
+////
+/// \brief set verbose level (1..5)
+/// \param v
+///
+void cmp_set_verbose(int v);
+
 ///////
 
 // arrays
