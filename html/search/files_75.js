@@ -13,6 +13,8 @@ var searchData=
   ['ui_5fspectroscope_7e_2ecpp',['ui_spectroscope~.cpp',['../ui__spectroscope~_8cpp.html',1,'']]],
   ['uiarray_2ecpp',['UIArray.cpp',['../_u_i_array_8cpp.html',1,'']]],
   ['uiarray_2eh',['UIArray.h',['../_u_i_array_8h.html',1,'']]],
+  ['uiarrayeditor_2ecpp',['UIArrayEditor.cpp',['../_u_i_array_editor_8cpp.html',1,'']]],
+  ['uiarrayeditor_2eh',['UIArrayEditor.h',['../_u_i_array_editor_8h.html',1,'']]],
   ['uibang_2ecpp',['UIBang.cpp',['../_u_i_bang_8cpp.html',1,'']]],
   ['uibang_2eh',['UIBang.h',['../_u_i_bang_8h.html',1,'']]],
   ['uibox_2ecpp',['UIBox.cpp',['../_u_i_box_8cpp.html',1,'']]],

@@ -10,6 +10,7 @@ var searchData=
   ['ui_5fsliders',['ui_sliders',['../structui__sliders.html',1,'']]],
   ['ui_5fspectroscope',['ui_spectroscope',['../structui__spectroscope.html',1,'']]],
   ['uiarray',['UIArray',['../classqtpd_1_1_u_i_array.html',1,'qtpd']]],
+  ['uiarrayeditor',['UIArrayEditor',['../class_u_i_array_editor.html',1,'']]],
   ['uibang',['UIBang',['../classqtpd_1_1_u_i_bang.html',1,'qtpd']]],
   ['uibox',['UIBox',['../classqtpd_1_1_u_i_box.html',1,'qtpd']]],
   ['uiclass',['UIClass',['../classqtpd_1_1_u_i_class.html',1,'qtpd']]],
