@@ -7,6 +7,8 @@
 
 #include "PdLink.h"
 
+#include "math.h"
+
 class UIArrayEditor : public QWidget {
     Q_OBJECT
 private:
@@ -38,7 +40,8 @@ public:
 
                 for (int x = 0; x < (width() - 1); x++) {
 
-                    int y = ((_arrData[x / (width()) * _arrSize].w_float * .5) + .5) * height();
+                    int index = floor(float(x) / width() * _arrSize);
+                    float y = ((_arrData[index].w_float * .5) + .5) * height();
                     p.drawLine(x, y0, x + 1, y);
                     y0 = y;
                 }

@@ -46,18 +46,6 @@ Canvas::Canvas(UIObject* parent)
 
     _readOnly = false;
 
-    //
-    //    editor_ = new QLineEdit(this);
-    //    editor_->setFixedSize(65-5,18);
-    //    editor_->move(1,1);
-    //    editor_->setFont(QFont(PREF_QSTRING("Font"),11,0,false));
-    //    editor_->hide();
-    //    editor_->setAttribute(Qt::WA_MacShowFocusRect, 0);
-    //    editor_->setFrame(false);
-
-    //connect(editor_,&QLineEdit::editingFinished,this,&Canvas::editorDone);
-    //connect(editor_,&QLineEdit::textEdited, this,&Canvas::editorChanged);
-
     _objectMaker = new ObjectMaker((QLineEdit*)this);
     _objectMaker->hide();
 
