@@ -84,6 +84,7 @@ var searchData=
   ['newpatch',['newPatch',['../classpy_pd_lib.html#aa0a66936a2b24ef44db413f67a59dac5',1,'pyPdLib']]],
   ['newpatchwindow',['newPatchWindow',['../classpy_qtpd.html#afd7aa8f27aebd53ff72da455d3034eb3',1,'pyQtpd']]],
   ['newpdclassbox',['newPdClassBox',['../classqtpd_1_1_patch_window.html#af2d98ca815c2232bd2e20cd3e6a80d6f',1,'qtpd::PatchWindow']]],
+  ['newpdinstancebox',['newPdInstanceBox',['../classqtpd_1_1_patch_window.html#a56ba3f87fe9d52e6b9e0160a6f399082',1,'qtpd::PatchWindow']]],
   ['newscriptbox',['newScriptBox',['../classqtpd_1_1_patch_window.html#aba7ab9ebe3416a454d82864899296264',1,'qtpd::PatchWindow']]],
   ['newstyle',['newstyle',['../intobject_8h.html#ab7cd93743c18a967711c2418c0b92007',1,'newstyle():&#160;intobject.h'],['../longobject_8h.html#a5453e2895befc3f9accf8be3c746fe59',1,'newstyle():&#160;longobject.h']]],
   ['newsubpatch',['newSubpatch',['../classqtpd_1_1_patch_window.html#a0a56073dafc551b0c5c1b7031f9ead66',1,'qtpd::PatchWindow']]],

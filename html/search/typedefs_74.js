@@ -3,6 +3,7 @@ var searchData=
   ['t_5fbpf_5fpoints',['t_bpf_points',['../namespaceceammc.html#ac278362a44f5023bbdd6648cc51a113c',1,'ceammc']]],
   ['t_5fbpt',['t_bpt',['../namespaceceammc.html#a5576895897b649e6b8408ab3892e4de3',1,'ceammc']]],
   ['t_5fopclassbycanvas',['t_OPClassByCanvas',['../namespaceqtpd.html#ae1bb6144c86ba121974062498a819dff',1,'qtpd']]],
+  ['t_5fopclassbyname',['t_OPClassByName',['../namespaceqtpd.html#aba6a259fdea417d0b3b35f24f7702d7d',1,'qtpd']]],
   ['t_5fopclassbysymbol',['t_OPClassBySymbol',['../namespaceqtpd.html#ae655d4b5a6074ae9e445388fc6475cb4',1,'qtpd']]],
   ['t_5fopinstancebycanvas',['t_OPInstanceByCanvas',['../namespaceqtpd.html#a025e76387ae74b63edc7ea6817bac812',1,'qtpd']]],
   ['t_5fopinstancebysymbol',['t_OPInstanceBySymbol',['../namespaceqtpd.html#a8b096c75321d4dbbfe8fd1047ec14989',1,'qtpd']]],

@@ -26,6 +26,7 @@ var searchData=
   ['_5fparameters',['_parameters',['../class_python_qt_method_info.html#a9ccca0b11f8fbe37820d8cd22d257370',1,'PythonQtMethodInfo']]],
   ['_5fparametertypedict',['_parameterTypeDict',['../class_python_qt_method_info.html#a6db83661a69c677a13622a22b918f73e',1,'PythonQtMethodInfo']]],
   ['_5fparent',['_parent',['../classqtpd_1_1_o_p_instance.html#aca34361b179cf26aad9dfe263464a6e8',1,'qtpd::OPInstance::_parent()'],['../struct_python_qt_class_info_1_1_parent_class_info.html#afae2c53347578195f8d2964c80ddfa57',1,'PythonQtClassInfo::ParentClassInfo::_parent()']]],
+  ['_5fpatchwindow',['_patchWindow',['../classqtpd_1_1_o_o_p_d_class_base.html#ab0b21c4d9f3b19c7b13f20b8cd224d65',1,'qtpd::OOPDClassBase']]],
   ['_5fpath',['_path',['../struct___python_qt_importer.html#a6251f0588e90e024ef0a1e98ead7bb06',1,'_PythonQtImporter']]],
   ['_5fpitch',['_pitch',['../structui__keyboard.html#a5baf0dc515b876667320a3c57f93ee47',1,'ui_keyboard']]],
   ['_5fposx',['_posx',['../structui__slider2d.html#a79e7c213d78e360e249594c90bdeec4d',1,'ui_slider2d']]],

@@ -156,6 +156,8 @@ Public Slots</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#ac2d57fa919e556258ccf254894894699">dataCut</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a561b418210d059c176d51dc2a7ed2276">dataCopy</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a7347b29304570ae42796e343142da9b1">dataPaste</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#aeb58d4bf39cdaad87ec7731d53b76232">setKeepPdObject</a> (<a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a> <a class="el" href="floatobject_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#aee47f4a858edcbed48d43b04e635cbfa">keepPdObject</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="signals"></a>
 Signals</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::pair&lt; QMainWindow <br class="typebreak"/>
@@ -264,6 +266,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">change size to fit all objects  <a href="#a53c64b8c89b1efa5ee1bfcd0bb364ca7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a37ece8d75cc5122ce659a1b08c3dc96a">canvasAsPdStrings</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns canvas data for saving  <a href="#a37ece8d75cc5122ce659a1b08c3dc96a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a2b189b998887b5615146b8e64666cde7">canvasFromPdStrings</a> (QStringList strings)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">this is for loading or copying canvases. not yet used in fileparser  <a href="#a2b189b998887b5615146b8e64666cde7"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_canvas.html">Canvas</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#aa19a2c103ad05b60422a793591cb3bae">newView</a> (<a class="el" href="classqtpd_1_1_canvas.html">Canvas</a> *srcCanvas, <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *parentCanvas, <a class="el" href="namespaceqtpd.html#a51dac42fa81d20e97ba8568fe7fae06d">canvasDrawStyle</a> dStyle)</td></tr>
@@ -404,6 +408,25 @@ Public Attributes</h2></td></tr>
 
 <p>returns canvas data for saving </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2b189b998887b5615146b8e64666cde7"></a><!-- doxytag: member="qtpd::Canvas::canvasFromPdStrings" ref="a2b189b998887b5615146b8e64666cde7" args="(QStringList strings)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas.html#a2b189b998887b5615146b8e64666cde7">qtpd::Canvas::canvasFromPdStrings</a> </td>
+          <td>(</td>
+          <td class="paramtype">QStringList&#160;</td>
+          <td class="paramname"><em>strings</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>this is for loading or copying canvases. not yet used in fileparser </p>
 
 </div>
 </div>
@@ -853,6 +876,22 @@ Public Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>resets all patchcords hover color flag </p>
+
+</div>
+</div>
+<a class="anchor" id="aee47f4a858edcbed48d43b04e635cbfa"></a><!-- doxytag: member="qtpd::Canvas::keepPdObject" ref="aee47f4a858edcbed48d43b04e635cbfa" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a> <a class="el" href="classqtpd_1_1_canvas.html#aee47f4a858edcbed48d43b04e635cbfa">qtpd::Canvas::keepPdObject</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
 </div>
 </div>
@@ -1864,6 +1903,23 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aeb58d4bf39cdaad87ec7731d53b76232"></a><!-- doxytag: member="qtpd::Canvas::setKeepPdObject" ref="aeb58d4bf39cdaad87ec7731d53b76232" args="(bool v)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas.html#aeb58d4bf39cdaad87ec7731d53b76232">qtpd::Canvas::setKeepPdObject</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td><code> [inline, slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="adfcac398bb47f15aee737ab9268c66da"></a><!-- doxytag: member="qtpd::Canvas::setObjectData" ref="adfcac398bb47f15aee737ab9268c66da" args="(std::string objData)" -->
 <div class="memitem">
 <div class="memproto">
@@ -2042,7 +2098,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 30 2017 14:23:54 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 30 2017 16:33:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
