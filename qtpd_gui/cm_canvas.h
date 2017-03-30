@@ -17,7 +17,7 @@
 //todo - move to window?
 #include "cm_clipboard.h"
 
-//#include "cm_canvas_types.h"
+
 
 namespace qtpd {
 

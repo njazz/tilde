@@ -16,7 +16,7 @@
 #include <QMenu>
 #include <QObject>
 
-#include "cm_propertieswindow.h"
+#include "PropertiesWindow.h"
 
 //lazy way
 //todo proper pattern

@@ -1,4 +1,4 @@
-#include "cm_patchwindow.h"
+#include "PatchWindow.h"
 
 namespace qtpd {
 PatchWindow::PatchWindow()
@@ -34,6 +34,7 @@ PatchWindow* PatchWindow::newWindow()
     PatchWindow* this_;
     this_ = new PatchWindow;
 
+    //todo
     ((QMainWindow*)this_)->setWindowTitle("Untitled-1");
 
     this_->canvas->setPdObject(cmp_newpatch());

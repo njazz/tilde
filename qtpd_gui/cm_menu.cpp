@@ -3,9 +3,9 @@
 
 #include "cm_menu.h"
 
-#include "cm_basewindow.h"
-#include "cm_patchwindow.h"
-#include "cm_pdwindow.h"
+#include "BaseWindow.h"
+#include "PatchWindow.h"
+#include "PdWindow.h"
 
 #include "cm_pdlink.h"
 

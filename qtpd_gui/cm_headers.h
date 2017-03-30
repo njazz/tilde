@@ -4,7 +4,7 @@
 #ifndef CM_HEADERS_H
 #define CM_HEADERS_H
 
-#include "cm_basewindow.h"
+#include "BaseWindow.h"
 #include "cm_object.h"
 #include "cm_preferences.h"
 

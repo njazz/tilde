@@ -5,8 +5,8 @@
 
 #include "cm_pdlink.h"
 
-#include "cm_patchwindow.h"
-#include "cm_pdwindow.h"
+#include "PatchWindow.h"
+#include "PdWindow.h"
 
 #include "cm_menu.h"
 

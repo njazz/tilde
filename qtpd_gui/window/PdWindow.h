@@ -1,7 +1,7 @@
 #ifndef CM_PDWINDOW_H
 #define CM_PDWINDOW_H
 
-#include "cm_basewindow.h"
+#include "BaseWindow.h"
 
 #include <QMainWindow>
 #include <QtWidgets>

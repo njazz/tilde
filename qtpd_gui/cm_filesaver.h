@@ -4,7 +4,7 @@
 #ifndef CM_FILESAVER_H
 #define CM_FILESAVER_H
 
-#include "cm_patchwindow.h"
+#include "PatchWindow.h"
 
 namespace qtpd {
 

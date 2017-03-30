@@ -2,7 +2,7 @@
 #define CM_PATCHWINDOW_H
 
 #include "UIBox.h"
-#include "cm_basewindow.h"
+#include "BaseWindow.h"
 #include "cm_canvas.h"
 
 #include "cm_pdlink.h"

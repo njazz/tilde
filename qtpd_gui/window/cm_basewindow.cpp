@@ -1,4 +1,4 @@
-#include "cm_basewindow.h"
+#include "BaseWindow.h"
 #include "ui_cm_basewindow.h"
 #include <QApplication>
 #include <QGridLayout>

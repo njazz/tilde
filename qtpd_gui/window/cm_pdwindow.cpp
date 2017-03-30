@@ -1,4 +1,4 @@
-#include "cm_pdwindow.h"
+#include "PdWindow.h"
 #include "ui_cm_pdwindow.h"
 
 #include <QApplication>

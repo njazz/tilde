@@ -1,4 +1,4 @@
-#include "cm_propertieswindow.h"
+#include "PropertiesWindow.h"
 
 //move here later
 

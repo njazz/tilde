@@ -7,7 +7,7 @@
 #include <QFile>
 #include <QTextStream>
 
-#include "cm_patchwindow.h"
+#include "PatchWindow.h"
 
 namespace qtpd {
 ////
