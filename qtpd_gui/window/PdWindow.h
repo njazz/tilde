@@ -31,10 +31,14 @@ private:
     ~PdWindow(){};
 
 public:
-    static PdWindow& inst()
+    static PdWindow* inst()
     {
-        static PdWindow instance;
-        instance.setParent(0);
+        static PdWindow* instance;
+        //instance.setParent(0);
+
+        if (!instance)
+            instance = new PdWindow();
+
         return instance;
     }
 

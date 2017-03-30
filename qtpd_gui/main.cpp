@@ -28,7 +28,7 @@ void pd_window_printhook(const char* s)
 {
     //qDebug("print hook %s",s);
     //if (pdw)
-        PdWindow::inst().cm_log(std::string(s));
+        PdWindow::inst()->cm_log(std::string(s));
 }
 
 int main(int argc, char* argv[])
@@ -49,8 +49,8 @@ int main(int argc, char* argv[])
     cmp_setprinthook(&pd_window_printhook);
 
 
-    PdWindow::inst().move(0, 100);
-    PdWindow::inst().show();
+    PdWindow::inst()->move(0, 100);
+    PdWindow::inst()->show();
 
     cmp_post("qtpd started");
     cmp_post("---");
