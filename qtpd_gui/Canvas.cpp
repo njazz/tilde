@@ -866,8 +866,12 @@ void Canvas::setEditMode(t_editMode mode)
 {
     _editMode = mode;
 
+    if (_readOnly)
+        _editMode = em_Locked;
+
     QPalette Pal(palette());
-    Pal.setColor(QPalette::Background, (mode != em_Locked) ? QColor(255, 255, 255) : QColor(245, 245, 245));
+    QColor lockedColor = (_readOnly) ? QColor(245, 245, 255) : QColor(245, 245, 245);
+    Pal.setColor(QPalette::Background, (mode != em_Locked) ? QColor(255, 255, 255) : lockedColor);
     setAutoFillBackground(true);
     setPalette(Pal);
 

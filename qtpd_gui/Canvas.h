@@ -86,6 +86,8 @@ private:
 
     bool _keepPdObject;
 
+    bool _readOnly;
+
     Q_OBJECT
 
 public:
@@ -524,6 +526,19 @@ public slots:
     bool keepPdObject()
     {
         return _keepPdObject;
+    }
+
+    void setReadOnly(bool val)
+    {
+        _readOnly = val;
+
+        if (_readOnly)
+            setEditMode(em_Locked);
+    }
+
+    bool readOnly()
+    {
+        return _readOnly;
     }
 
 private:
