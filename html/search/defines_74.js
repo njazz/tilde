@@ -28,7 +28,7 @@ var searchData=
   ['tilde',['TILDE',['../token_8h.html#af8fcc20bc3c07231ed32dd372a78b78e',1,'token.h']]],
   ['time_5fwith_5fsys_5ftime',['TIME_WITH_SYS_TIME',['../pyconfig_8h.html#a2b44ef64cf38e064ef11e11f35271380',1,'pyconfig.h']]],
   ['tok_5fdump',['tok_dump',['../pgenheaders_8h.html#a27532228903995116477a098c4a2b900',1,'pgenheaders.h']]],
-  ['tolower',['tolower',['../bytes__methods_8h.html#a422175620f52b1ca4dbc39d627296d83',1,'tolower():&#160;bytes_methods.h'],['../bytes__methods_8h.html#ad4771ad2e5dd6a87c83ecf879b7985de',1,'TOLOWER():&#160;bytes_methods.h']]],
+  ['tolower',['TOLOWER',['../bytes__methods_8h.html#ad4771ad2e5dd6a87c83ecf879b7985de',1,'TOLOWER():&#160;bytes_methods.h'],['../bytes__methods_8h.html#a422175620f52b1ca4dbc39d627296d83',1,'tolower():&#160;bytes_methods.h']]],
   ['toupper',['toupper',['../bytes__methods_8h.html#adda03014c30b02d7b496fce96f37951b',1,'toupper():&#160;bytes_methods.h'],['../bytes__methods_8h.html#ab54417c7c018570043920af66ba7457f',1,'TOUPPER():&#160;bytes_methods.h']]],
   ['trailer',['trailer',['../graminit_8h.html#a8749ec842c41c25d2482030dba7592b6',1,'graminit.h']]],
   ['translatelabels',['translatelabels',['../pgenheaders_8h.html#aa762185ff079a6b5b694110545e6ef03',1,'pgenheaders.h']]],

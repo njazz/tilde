@@ -101,6 +101,7 @@ var searchData=
   ['cmp_5fremove_5fsearchpath',['cmp_remove_searchpath',['../_pd_link_8h.html#aafe79912613d343ac3ccc77d6bfe4cee',1,'PdLink.h']]],
   ['cmp_5fsavepatch',['cmp_savepatch',['../_pd_link_8h.html#ab0f0e50abffd603051b47240f7dcd04c',1,'PdLink.h']]],
   ['cmp_5fsendstring',['cmp_sendstring',['../_pd_link_8h.html#a9bca4af04ea4fac6b910933e5ba16814',1,'PdLink.h']]],
+  ['cmp_5fset_5fverbose',['cmp_set_verbose',['../_pd_link_8h.html#a1d2cd6f5f314f952bd32974edefd0962',1,'PdLink.h']]],
   ['cmp_5fsetprinthook',['cmp_setprinthook',['../_pd_link_8h.html#ac9fb723d2c58a1e062720cc19e199e08',1,'PdLink.h']]],
   ['cmp_5fswitch_5fdsp',['cmp_switch_dsp',['../_pd_link_8h.html#a0f1f4951cf99dff0634789791dcde1ba',1,'PdLink.h']]],
   ['cmpinstobj_5fconvert',['CmpInstObj_Convert',['../pymactoolbox_8h.html#a813db6978835148205ed77f3ac195101',1,'pymactoolbox.h']]],

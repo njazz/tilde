@@ -37,7 +37,7 @@ var searchData=
   ['sizeof_5fwchar_5ft',['SIZEOF_WCHAR_T',['../pyconfig_8h.html#a4ab7aafe170715cce87d8ec569903a80',1,'pyconfig.h']]],
   ['slash',['SLASH',['../token_8h.html#a69eb17477fd6f6af2c9ca2d5f4c7df3c',1,'token.h']]],
   ['slashequal',['SLASHEQUAL',['../token_8h.html#a2cebe86970aedab023317a3b6517b294',1,'token.h']]],
-  ['slice',['Slice',['../_python-ast_8h.html#a239ffcf8a951a4a683fd09c8355fc888',1,'Slice():&#160;Python-ast.h'],['../opcode_8h.html#a5e0c97d623f43addf2a902d499dc3c81',1,'SLICE():&#160;opcode.h']]],
+  ['slice',['SLICE',['../opcode_8h.html#a5e0c97d623f43addf2a902d499dc3c81',1,'SLICE():&#160;opcode.h'],['../_python-ast_8h.html#a239ffcf8a951a4a683fd09c8355fc888',1,'Slice():&#160;Python-ast.h']]],
   ['sliceop',['sliceop',['../graminit_8h.html#a6409a76b64d15ffba41b115a0bfc564e',1,'graminit.h']]],
   ['small_5fstmt',['small_stmt',['../graminit_8h.html#ac22f4140ffa501f53abd021c17ea51b1',1,'graminit.h']]],
   ['sstate_5finterned_5fimmortal',['SSTATE_INTERNED_IMMORTAL',['../stringobject_8h.html#afc133994b2174c47bcf545c4368defe5',1,'stringobject.h']]],
@@ -60,7 +60,7 @@ var searchData=
   ['store_5fsubscr',['STORE_SUBSCR',['../opcode_8h.html#a6f93980a29fedcbaa9b008977776dfa9',1,'opcode.h']]],
   ['str',['Str',['../_python-ast_8h.html#a2b805f698f55c2006bea5dfbc0c582bd',1,'Str():&#160;Python-ast.h'],['../node_8h.html#aa039726a60de283dd121a4a761266ac2',1,'STR():&#160;node.h']]],
   ['string',['STRING',['../token_8h.html#a0f4d394a3ab4e09bff60f714c66dc5ee',1,'token.h']]],
-  ['subscript',['subscript',['../graminit_8h.html#a4b168eba2f746800b94e9d155c370e4e',1,'subscript():&#160;graminit.h'],['../_python-ast_8h.html#a49a0a37e937fc34b38da7b8eef6c6ea9',1,'Subscript():&#160;Python-ast.h']]],
+  ['subscript',['Subscript',['../_python-ast_8h.html#a49a0a37e937fc34b38da7b8eef6c6ea9',1,'Subscript():&#160;Python-ast.h'],['../graminit_8h.html#a4b168eba2f746800b94e9d155c370e4e',1,'subscript():&#160;graminit.h']]],
   ['subscriptlist',['subscriptlist',['../graminit_8h.html#abb7990996037db6acfdb805217a4ec92',1,'graminit.h']]],
   ['suite',['Suite',['../_python-ast_8h.html#a0463d5ea08f733cdcfa44c9dcaa9b3ed',1,'Suite():&#160;Python-ast.h'],['../graminit_8h.html#ad7554b67e5386dc7dca5948e5a6a983a',1,'suite():&#160;graminit.h']]],
   ['sys_5fselect_5fwith_5fsys_5ftime',['SYS_SELECT_WITH_SYS_TIME',['../pyconfig_8h.html#a34294c82944fd63b3dc782a5f7f7fe78',1,'pyconfig.h']]]
