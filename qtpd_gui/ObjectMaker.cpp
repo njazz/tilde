@@ -2,7 +2,7 @@
 // License: GPL3
 
 #include "ObjectMaker.h"
-#include "cm_preferences.h"
+#include "Preferences.h"
 
 namespace qtpd {
 

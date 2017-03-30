@@ -6,8 +6,8 @@
 #include <QLabel>
 #include <QLineEdit>
 
-#include "cm_preferences.h"
-#include "cm_propertylist.h"
+#include "Preferences.h"
+#include "PropertyList.h"
 
 #include <map>
 

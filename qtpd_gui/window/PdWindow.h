@@ -8,7 +8,7 @@
 
 #include "PdLink.h"
 
-#include "cm_preferences.h"
+#include "Prefe"
 
 //temporary
 
@@ -26,8 +26,16 @@ class PdWindow : public BaseWindow {
 private:
     Ui::cm_pdwindow* ui;
 
-public:
     PdWindow();
+
+public:
+
+
+    static PdWindow& inst()
+    {
+        static PdWindow instance;
+        return instance;
+    }
 
     void cm_log(std::string text);
     void cm_post(std::string text);
@@ -36,7 +44,8 @@ public:
 };
 
 //fix - normal singleton here
-static PdWindow* pdw;
+//static PdWindow* pdw;
+
 }
 
 #endif // CM_PDWINDOW_H

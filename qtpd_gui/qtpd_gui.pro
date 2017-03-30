@@ -29,8 +29,6 @@ CONFIG += static
   LIBS += -F/System/Library/Frameworks -framework Python
 
 SOURCES += main.cpp\
-    properties/cm_property.cpp \
-    properties/cm_propertylist.cpp \
     python/PythonQtScriptingConsole.cpp \
     python/wrappers/py_wrappers.cpp \
     objects/UIArray.cpp \
@@ -59,14 +57,13 @@ SOURCES += main.cpp\
     window/PatchWindow.cpp \
     window/PdWindow.cpp \
     window/BaseWindow.cpp \
-    window/PropertiesWindow.cpp
+    window/PropertiesWindow.cpp \
+    properties/Property.cpp \
+    properties/PropertyList.cpp
 
 
 HEADERS  += \
     #cm_clipboard.h \
-    properties/cm_property.h \
-    properties/cm_propertylist.h \
-    properties/cm_preferences.h \
     #
     python/PythonQtScriptingConsole.h \
     python/headers/PythonQtStdDecorators.h \
@@ -130,7 +127,10 @@ HEADERS  += \
     PdLink.h \
     OpenFileProxy.h \
     _headers.h \
-    BaseMenu.h
+    BaseMenu.h \
+    properties/Preferences.h \
+    properties/Property.h \
+    properties/PropertyList.h
 
 
 FORMS    += \

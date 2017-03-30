@@ -6,7 +6,7 @@
 
 #include "BaseWindow.h"
 #include "UIObject.h"
-#include "cm_preferences.h"
+#include "Preferences.h"
 
 #include "FileParser.h"
 #include "FileSaver.h"

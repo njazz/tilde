@@ -1,7 +1,7 @@
 // (c) 2017 Alex Nadzharov
 // License: GPL3
 
-#include "cm_property.h"
+#include "Property.h"
 
 //cm_property::cm_property()
 //{

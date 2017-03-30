@@ -12,7 +12,7 @@
 
 #include "PatchWindow.h"
 
-#include "cm_preferences.h"
+#include "Preferences.h"
 
 #include "FileSaver.h"
 

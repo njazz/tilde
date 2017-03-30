@@ -4,7 +4,7 @@
 #ifndef CM_PROPERTYLIST_H
 #define CM_PROPERTYLIST_H
 
-#include "cm_property.h"
+#include "Property.h"
 
 #include <map>
 

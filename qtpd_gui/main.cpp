@@ -12,7 +12,7 @@
 
 #include "ObjectLoader.h"
 
-#include "cm_preferences.h"
+#include "Prefe"
 
 //python
 #include <PythonQt.h>
@@ -27,8 +27,8 @@ using namespace qtpd;
 void pd_window_printhook(const char* s)
 {
     //qDebug("print hook %s",s);
-    if (pdw)
-        pdw->cm_log(std::string(s));
+    //if (pdw)
+        PdWindow::inst().cm_log(std::string(s));
 }
 
 int main(int argc, char* argv[])
@@ -48,10 +48,9 @@ int main(int argc, char* argv[])
     cmp_pdinit();
     cmp_setprinthook(&pd_window_printhook);
 
-    pdw = new PdWindow();
 
-    pdw->move(0, 100);
-    pdw->show();
+    PdWindow::inst().move(0, 100);
+    PdWindow::inst().show();
 
     cmp_post("qtpd started");
     cmp_post("---");
