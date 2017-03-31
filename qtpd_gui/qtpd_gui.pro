@@ -167,13 +167,23 @@ PRECOMPILED_HEADER =
 
 CONFIG += static
 
-LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt_QtAll.1.0.0
-LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt.1.0.0
+# check if debug or release
+CONFIG(debug, debug|release) {
+  DEBUG_EXT = _d
+} else {
+  DEBUG_EXT =
+}
 
-#LIBS += -L../qtpd_lib/python/lib/ -lPythonQt_QtAll.1
-#LIBS += -L../qtpd_lib/python/lib/ -lPythonQt.1
+LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt_QtAll$${DEBUG_EXT}.1.0.0
+LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt$${DEBUG_EXT}.1.0.0
 
-DEPENDPATH += $$PWD/../PythonQt/lib
+LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt_QtAll$${DEBUG_EXT}.1
+LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt$${DEBUG_EXT}.1
+
+DISTFILES += $$PWD/../PythonQt/lib/*
+
+
+DEPENDPATH += $$PWD/../PythonQt/lib/
 
 INCLUDEPATH += $$PWD/python/headers
 DEPENDPATH += $$PWD/python/headers
