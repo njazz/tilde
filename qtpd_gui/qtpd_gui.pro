@@ -167,13 +167,13 @@ PRECOMPILED_HEADER =
 
 CONFIG += static
 
-LIBS += -L$$PWD/python/lib/ -lPythonQt_QtAll.1.0.0
-LIBS += -L$$PWD/python/lib/ -lPythonQt.1.0.0
+LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt_QtAll.1.0.0
+LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt.1.0.0
 
 #LIBS += -L../qtpd_lib/python/lib/ -lPythonQt_QtAll.1
 #LIBS += -L../qtpd_lib/python/lib/ -lPythonQt.1
 
-DEPENDPATH += $$PWD/python/lib
+DEPENDPATH += $$PWD/../PythonQt/lib
 
 INCLUDEPATH += $$PWD/python/headers
 DEPENDPATH += $$PWD/python/headers
