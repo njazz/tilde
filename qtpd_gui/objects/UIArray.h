@@ -68,6 +68,7 @@ public:
                 t_floatarg size = list.at(2).toFloat();
 
                 b->_editor.setPdArray( cmp_new_array(pd_Canvas, name, size, 1, 1) );
+                b->_editor.setWindowTitle("array: "+list.at(1));
             }
         }
 
