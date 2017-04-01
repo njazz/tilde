@@ -71,7 +71,7 @@ public:
             qDebug("bad pd canvas instance");
             b->setErrorBox(true);
         } else {
-            new_obj = cmp_create_object(pd_Canvas, "pdclass", 0, 0);
+            new_obj = cmp_create_object(pd_Canvas, "pdinstance", 0, 0);
         }
 
         // new class w/canvas
@@ -274,16 +274,17 @@ public:
 
             UIInstance* x = ((UIInstance*)uiobj);
             if (x->_opInstance) {
+                if (x->pdObject()) {
+                    t_outlet* out1 = cmp_get_outlet((t_object*)x->pdObject(), 0);
+                    if (out1)
+
+                        x->_opInstance->freeInstanceOut(out1);
+                    else
+                        cmp_post("instance pd object outlet error");
+                }
+
                 x->_opInstance->freeInstanceOut(0);
                 delete x->_opInstance;
-            }
-
-            if (x->pdObject()) {
-                t_outlet* out1 = cmp_get_outlet((t_object*)x->pdObject(), 0);
-                if (out1)
-                    x->_opInstance->freeInstanceOut(out1);
-                else
-                    cmp_post("instance pd object outlet error");
             }
 
             x->_opInstance = 0;
@@ -295,6 +296,12 @@ public:
         UIInstance* x = ((UIInstance*)uiobj);
         if (x->_opInstance) {
             x->_opInstance->callMethod(msg);
+        }
+
+        if (msg.at(0).asString() == "setobject") {
+        }
+
+        if (msg.at(0).asString() == "getobject") {
         }
 
         //        if (msg.at(0).asString() == "addproperty") {

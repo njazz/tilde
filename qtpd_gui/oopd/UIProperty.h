@@ -80,7 +80,7 @@ public:
         } else {
             //temp pos = 0;
             QPoint pos = QPoint(0, 0);
-            new_obj = cmp_create_object(pd_Canvas, "pdmethod", pos.x(), pos.y());
+            new_obj = cmp_create_object(pd_Canvas, "pdproperty", pos.x(), pos.y());
         }
 
         if (new_obj) {
@@ -94,7 +94,7 @@ public:
             b->setHelpName("method-help.pd");
 
         } else {
-            qDebug("Error: no such object 'pdmethod'");
+            qDebug("Error: no such object 'pdproperty'");
             b->setErrorBox(true);
             in_c = 1;
             out_c = 1;
@@ -109,7 +109,7 @@ public:
         t_canvas* cnv = (t_canvas*)((UIObject*)parent)->pdObject();
 
         if (OOPD::inst()->canvasIsPatch(cnv)) {
-            cmp_post("cannot create method in basic patch!");
+            cmp_post("cannot create property in basic patch!");
             b->setErrorBox(true);
         }
 
@@ -121,19 +121,19 @@ public:
 
         if (b->_opClass) {
 
-            qDebug("method in class");
+            qDebug("property in class");
 
             b->_opClass->addMethod(b->_methodName, "");
         }
 
         if (b->_opInstance) {
-            qDebug("method in instance");
+            qDebug("property in instance");
 
             t_outlet* out1 = cmp_get_outlet((t_object*)b->pdObject(), 0);
             if (out1)
                 b->_opInstance->addMethodOutlet(gensym(b->_methodName.c_str()), out1);
             else
-                cmp_post("method pd object outlet error");
+                cmp_post("property pd object outlet error");
         }
 
         connect(b, &UIProperty::updateUISignal, b, &UIProperty::updateUISlot);
