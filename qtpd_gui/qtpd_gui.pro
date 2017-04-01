@@ -180,7 +180,8 @@ LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt$${DEBUG_EXT}.1.0.0
 LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt_QtAll$${DEBUG_EXT}.1
 LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt$${DEBUG_EXT}.1
 
-DISTFILES += $$PWD/../PythonQt/lib/*
+#DISTFILES += $$PWD/../PythonQt/lib/libPythonQt_QtAll$${DEBUG_EXT}.1.0.0.dylib
+#DISTFILES += $$PWD/../PythonQt/lib/libPythonQt$${DEBUG_EXT}.1.0.0.dylib
 
 DEPENDPATH += $$PWD/../PythonQt/lib/
 
