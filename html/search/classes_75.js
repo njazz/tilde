@@ -14,6 +14,7 @@ var searchData=
   ['uibang',['UIBang',['../classqtpd_1_1_u_i_bang.html',1,'qtpd']]],
   ['uibox',['UIBox',['../classqtpd_1_1_u_i_box.html',1,'qtpd']]],
   ['uiclass',['UIClass',['../classqtpd_1_1_u_i_class.html',1,'qtpd']]],
+  ['uidsp',['UIDSP',['../classqtpd_1_1_u_i_d_s_p.html',1,'qtpd']]],
   ['uielement',['UIElement',['../classceammc_1_1faust_1_1_u_i_element.html',1,'ceammc::faust']]],
   ['uifloat',['UIFloat',['../classqtpd_1_1_u_i_float.html',1,'qtpd']]],
   ['uiinstance',['UIInstance',['../classqtpd_1_1_u_i_instance.html',1,'qtpd']]],
