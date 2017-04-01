@@ -1,7 +1,7 @@
 var searchData=
 [
   ['range',['range',['../classceammc_1_1_atom_list.html#ab649bc0294769dae826068b40923c8c3',1,'ceammc::AtomList']]],
-  ['readfile',['readFile',['../classqtpd_1_1_o_p_class.html#a29e29ae0ee6fe71da77304f11e3c2073',1,'qtpd::OPClass']]],
+  ['readfile',['readFile',['../classqtpd_1_1_o_p_class.html#a67c83af0c5a567e1f9239d27d9b3977d',1,'qtpd::OPClass']]],
   ['readfileasbytes',['readFileAsBytes',['../class_python_qt_import_file_interface.html#a9af9b596837ab97779aa1be67080b9b0',1,'PythonQtImportFileInterface::readFileAsBytes()'],['../class_python_qt_q_file_importer.html#a620cfb1a5a9e3db3a2a9f36a2511ad1e',1,'PythonQtQFileImporter::readFileAsBytes()']]],
   ['readonly',['readonly',['../classceammc_1_1_property.html#a9369d5cf6482a9b2c3caf7a2d76a3baa',1,'ceammc::Property::readonly()'],['../classqtpd_1_1_canvas.html#a5bb622c3199a50373378f230841709cc',1,'qtpd::Canvas::readOnly()']]],
   ['readonlycheck',['readonlyCheck',['../classceammc_1_1_property.html#af7abdedebae800707150c6f9505b617e',1,'ceammc::Property']]],
@@ -51,6 +51,6 @@ var searchData=
   ['retain',['retain',['../classqtpd_1_1_o_p_instance.html#a23f65669959957604f3f59e930fa482b',1,'qtpd::OPInstance']]],
   ['reverse',['reverse',['../classceammc_1_1_atom_list.html#a22b3510a7142b4cce158033036bc9af5',1,'ceammc::AtomList']]],
   ['right',['right',['../structui__slider2d.html#a97715f380eecba49d381baae279a9cb0',1,'ui_slider2d']]],
-  ['rightclicked',['rightClicked',['../classqtpd_1_1_u_i_array.html#a870f0a44d04dc4601aa62760bc34eab0',1,'qtpd::UIArray::rightClicked()'],['../classqtpd_1_1_u_i_box.html#a77675f4dd6901d7118fc86f2db1b2943',1,'qtpd::UIBox::rightClicked()'],['../classqtpd_1_1_u_i_class.html#aa9ac8b711b1b8657c4e404de926105a8',1,'qtpd::UIClass::rightClicked()'],['../classqtpd_1_1_u_i_instance.html#a7ffb2acb46f63fafa7f5b175492f3cc0',1,'qtpd::UIInstance::rightClicked()']]],
+  ['rightclicked',['rightClicked',['../classqtpd_1_1_u_i_array.html#a870f0a44d04dc4601aa62760bc34eab0',1,'qtpd::UIArray::rightClicked()'],['../classqtpd_1_1_u_i_box.html#a77675f4dd6901d7118fc86f2db1b2943',1,'qtpd::UIBox::rightClicked()'],['../classqtpd_1_1_u_i_class.html#aa9ac8b711b1b8657c4e404de926105a8',1,'qtpd::UIClass::rightClicked()'],['../classqtpd_1_1_u_i_instance.html#a7ffb2acb46f63fafa7f5b175492f3cc0',1,'qtpd::UIInstance::rightClicked()'],['../classqtpd_1_1_u_i_method.html#a7fb75a196f69708aff74a2d819379d5c',1,'qtpd::UIMethod::rightClicked()'],['../classqtpd_1_1_u_i_property.html#afd7e8b324ea61bfe270e6294191cbb2b',1,'qtpd::UIProperty::rightClicked()']]],
   ['run',['run',['../classceammc_1_1faust_1_1_pd_u_i.html#a28c13ceda42695a2422156669c632b56',1,'ceammc::faust::PdUI']]]
 ];

@@ -126,14 +126,32 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_o_p_class.html">OPClass</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_o_p_d.html#af933fed68618c8a5a655216295bfb4d1">classByName</a> (<a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">string</a> className)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_o_p_instance.html">OPInstance</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_o_p_d.html#aa53de61e37e520c0415260fdfb7368ba">instanceByCanvas</a> (t_canvas *canvas)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_o_p_instance.html">OPInstance</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_o_p_d.html#a023004f0f199c7915d91773faed2390c">instanceBySymbol</a> (t_symbol *symbol)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_o_p_d.html#abb8789fde690d6e92c92ac5a84630590">canvasIsPatch</a> (t_canvas *canvas)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_o_o_p_d.html">OOPD</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_o_p_d.html#af1a1f9378eecdf37fd53e251c0d729ba">inst</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_o_o_p_d.html">OOPD</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_o_p_d.html#afe32b67551b6003bfdf4c36db51b7f40">inst</a> ()</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>stores global information about <a class="el" href="classqtpd_1_1_o_o_p_d.html" title="stores global information about OOPD classes / instances">OOPD</a> classes / instances </p>
 <p>provides search by canvas and by class symbol </p>
 </div><hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="abb8789fde690d6e92c92ac5a84630590"></a><!-- doxytag: member="qtpd::OOPD::canvasIsPatch" ref="abb8789fde690d6e92c92ac5a84630590" args="(t_canvas *canvas)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a> <a class="el" href="classqtpd_1_1_o_o_p_d.html#abb8789fde690d6e92c92ac5a84630590">qtpd::OOPD::canvasIsPatch</a> </td>
+          <td>(</td>
+          <td class="paramtype">t_canvas *&#160;</td>
+          <td class="paramname"><em>canvas</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a576c568565520226713ad38c788765a4"></a><!-- doxytag: member="qtpd::OOPD::classByCanvas" ref="a576c568565520226713ad38c788765a4" args="(t_canvas *canvas)" -->
 <div class="memitem">
 <div class="memproto">
@@ -185,12 +203,12 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="af1a1f9378eecdf37fd53e251c0d729ba"></a><!-- doxytag: member="qtpd::OOPD::inst" ref="af1a1f9378eecdf37fd53e251c0d729ba" args="()" -->
+<a class="anchor" id="afe32b67551b6003bfdf4c36db51b7f40"></a><!-- doxytag: member="qtpd::OOPD::inst" ref="afe32b67551b6003bfdf4c36db51b7f40" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classqtpd_1_1_o_o_p_d.html">OOPD</a>&amp; <a class="el" href="classqtpd_1_1_o_o_p_d.html#af1a1f9378eecdf37fd53e251c0d729ba">qtpd::OOPD::inst</a> </td>
+          <td class="memname">static <a class="el" href="classqtpd_1_1_o_o_p_d.html">OOPD</a>* <a class="el" href="classqtpd_1_1_o_o_p_d.html#afe32b67551b6003bfdf4c36db51b7f40">qtpd::OOPD::inst</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [inline, static]</code></td>
@@ -400,7 +418,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 1 2017 10:14:22 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 1 2017 23:33:47 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

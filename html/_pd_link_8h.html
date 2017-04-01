@@ -137,6 +137,10 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get number of inlets for object  <a href="#a7fcb3388b050e30e14b731b7288a7f76"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a680a1380d6950cd336b5631b3d3a7737">cmp_get_outlet_count</a> (t_object *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get number of outlets for object  <a href="#a680a1380d6950cd336b5631b3d3a7737"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">t_inlet *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a6addb68a89aff1b8fc456512c3c16ad6">cmp_get_inlet</a> (t_inlet *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> idx)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns inlet at specified index for the object  <a href="#a6addb68a89aff1b8fc456512c3c16ad6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">t_outlet *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a1ff80e9a26929bd3d128af0d3f19773c">cmp_get_outlet</a> (t_object *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> idx)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns outlet at specified index for the object  <a href="#a1ff80e9a26929bd3d128af0d3f19773c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#afdf250ff92087538d026d24b87d66cec">cmp_get_inlet_type</a> (t_object *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> idx)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">check if inlet is signal~  <a href="#afdf250ff92087538d026d24b87d66cec"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a4f45abf6ebba2aeed6853269919dc1c9">cmp_get_outlet_type</a> (t_object *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> idx)</td></tr>
@@ -502,6 +506,43 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a6addb68a89aff1b8fc456512c3c16ad6"></a><!-- doxytag: member="PdLink.h::cmp_get_inlet" ref="a6addb68a89aff1b8fc456512c3c16ad6" args="(t_inlet *obj, int idx)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">t_inlet* <a class="el" href="_pd_link_8h.html#a6addb68a89aff1b8fc456512c3c16ad6">cmp_get_inlet</a> </td>
+          <td>(</td>
+          <td class="paramtype">t_inlet *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramname"><em>idx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>returns inlet at specified index for the object </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td></td></tr>
+    <tr><td class="paramname">idx</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a7fcb3388b050e30e14b731b7288a7f76"></a><!-- doxytag: member="PdLink.h::cmp_get_inlet_count" ref="a7fcb3388b050e30e14b731b7288a7f76" args="(t_object *obj)" -->
 <div class="memitem">
 <div class="memproto">
@@ -580,6 +621,43 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>returns list of loaded externals </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1ff80e9a26929bd3d128af0d3f19773c"></a><!-- doxytag: member="PdLink.h::cmp_get_outlet" ref="a1ff80e9a26929bd3d128af0d3f19773c" args="(t_object *obj, int idx)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">t_outlet* <a class="el" href="_pd_link_8h.html#a1ff80e9a26929bd3d128af0d3f19773c">cmp_get_outlet</a> </td>
+          <td>(</td>
+          <td class="paramtype">t_object *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramname"><em>idx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>returns outlet at specified index for the object </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td></td></tr>
+    <tr><td class="paramname">idx</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
 </div>
@@ -1155,7 +1233,7 @@ Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 1 2017 10:14:21 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 1 2017 23:33:46 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

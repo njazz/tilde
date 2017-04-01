@@ -108,53 +108,55 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00024"></a>00024 
 <a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="_u_i_class_8h.html">oopd/UIClass.h</a>&quot;</span>
 <a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="_u_i_instance_8h.html">oopd/UIInstance.h</a>&quot;</span>
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="_u_i_d_s_p_8h.html">UIDSP.h</a>&quot;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="_u_i_method_8h.html">oopd/UIMethod.h</a>&quot;</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="_u_i_property_8h.html">oopd/UIProperty.h</a>&quot;</span>
 <a name="l00029"></a>00029 
-<a name="l00030"></a>00030 <span class="keyword">namespace </span>qtpd {
+<a name="l00030"></a>00030 <span class="preprocessor">#include &quot;<a class="code" href="_u_i_d_s_p_8h.html">UIDSP.h</a>&quot;</span>
 <a name="l00031"></a>00031 
-<a name="l00036"></a><a class="code" href="namespaceqtpd.html#ac3f9500ed88e58abf682bbc072d74647">00036</a> <span class="keyword">typedef</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* (*cmObjectConstructor)(<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> objectData, t_canvas* pdCanvas, <a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* parent);
-<a name="l00037"></a>00037 
-<a name="l00041"></a><a class="code" href="classqtpd_1_1_object_loader.html">00041</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_object_loader.html" title="prototype for ui externals handling. stub">ObjectLoader</a> {
-<a name="l00042"></a>00042 <span class="keyword">public</span>:
-<a name="l00043"></a><a class="code" href="classqtpd_1_1_object_loader.html#ab0d2dafc82b31dc7e2e35f8527de3df7">00043</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_object_loader.html" title="prototype for ui externals handling. stub">ObjectLoader</a>&amp; <a class="code" href="classqtpd_1_1_object_loader.html#ab0d2dafc82b31dc7e2e35f8527de3df7">inst</a>()
-<a name="l00044"></a>00044     {
-<a name="l00045"></a>00045         <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_object_loader.html" title="prototype for ui externals handling. stub">ObjectLoader</a> instance;
-<a name="l00046"></a>00046         <span class="keywordflow">return</span> instance;
-<a name="l00047"></a>00047     }
-<a name="l00048"></a>00048 
-<a name="l00049"></a>00049 <span class="keyword">private</span>:
-<a name="l00050"></a>00050     std::vector&lt;std::string&gt; _names; 
-<a name="l00051"></a>00051     std::vector&lt;std::string&gt; _pdNames; 
-<a name="l00052"></a>00052 
-<a name="l00053"></a>00053     std::map&lt;std::string, cmObjectConstructor&gt; _objectConstructors;
+<a name="l00032"></a>00032 <span class="keyword">namespace </span>qtpd {
+<a name="l00033"></a>00033 
+<a name="l00038"></a><a class="code" href="namespaceqtpd.html#ac3f9500ed88e58abf682bbc072d74647">00038</a> <span class="keyword">typedef</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* (*cmObjectConstructor)(<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> objectData, t_canvas* pdCanvas, <a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* parent);
+<a name="l00039"></a>00039 
+<a name="l00043"></a><a class="code" href="classqtpd_1_1_object_loader.html">00043</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_object_loader.html" title="prototype for ui externals handling. stub">ObjectLoader</a> {
+<a name="l00044"></a>00044 <span class="keyword">public</span>:
+<a name="l00045"></a><a class="code" href="classqtpd_1_1_object_loader.html#ab0d2dafc82b31dc7e2e35f8527de3df7">00045</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_object_loader.html" title="prototype for ui externals handling. stub">ObjectLoader</a>&amp; <a class="code" href="classqtpd_1_1_object_loader.html#ab0d2dafc82b31dc7e2e35f8527de3df7">inst</a>()
+<a name="l00046"></a>00046     {
+<a name="l00047"></a>00047         <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_object_loader.html" title="prototype for ui externals handling. stub">ObjectLoader</a> <a class="code" href="namespaceqtpd.html#a3dde6489d34303c66ea710aa2116b426">instance</a>;
+<a name="l00048"></a>00048         <span class="keywordflow">return</span> <a class="code" href="namespaceqtpd.html#a3dde6489d34303c66ea710aa2116b426">instance</a>;
+<a name="l00049"></a>00049     }
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051 <span class="keyword">private</span>:
+<a name="l00052"></a>00052     std::vector&lt;std::string&gt; _names; 
+<a name="l00053"></a>00053     std::vector&lt;std::string&gt; _pdNames; 
 <a name="l00054"></a>00054 
-<a name="l00055"></a>00055     <a class="code" href="classqtpd_1_1_object_loader.html" title="prototype for ui externals handling. stub">ObjectLoader</a>()
-<a name="l00056"></a>00056     {
-<a name="l00057"></a>00057     }
-<a name="l00058"></a>00058 
-<a name="l00059"></a>00059 <span class="keyword">public</span>:
-<a name="l00060"></a>00060     <a class="code" href="classqtpd_1_1_object_loader.html" title="prototype for ui externals handling. stub">ObjectLoader</a>(<a class="code" href="classqtpd_1_1_object_loader.html" title="prototype for ui externals handling. stub">ObjectLoader</a> <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;
-<a name="l00061"></a>00061     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_object_loader.html#a8ac4f79cbad3c85732667e33da9e6d5b">operator=</a>(<a class="code" href="classqtpd_1_1_object_loader.html" title="prototype for ui externals handling. stub">ObjectLoader</a> <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;
-<a name="l00062"></a>00062 
-<a name="l00066"></a>00066     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_object_loader.html#a411e5881f56306dc5e7b666a20e0af01" title="hardcoded internal UIObjects are loaded here">loadObjects</a>();
-<a name="l00067"></a>00067 
-<a name="l00068"></a>00068     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_object_loader.html#a9fa9ecfce511f15b2b3ccc187f0872df">addUIobject</a>(<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="code" href="abstract_8h.html#afcd1706c9144e6d6eee6127661ae3be2">name</a>, <a class="code" href="namespaceqtpd.html#ac3f9500ed88e58abf682bbc072d74647" title="&#39;constructor&#39; method for each ui object derived from UIObject">cmObjectConstructor</a> constructor);
+<a name="l00055"></a>00055     std::map&lt;std::string, cmObjectConstructor&gt; _objectConstructors;
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057     <a class="code" href="classqtpd_1_1_object_loader.html" title="prototype for ui externals handling. stub">ObjectLoader</a>()
+<a name="l00058"></a>00058     {
+<a name="l00059"></a>00059     }
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061 <span class="keyword">public</span>:
+<a name="l00062"></a>00062     <a class="code" href="classqtpd_1_1_object_loader.html" title="prototype for ui externals handling. stub">ObjectLoader</a>(<a class="code" href="classqtpd_1_1_object_loader.html" title="prototype for ui externals handling. stub">ObjectLoader</a> <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;
+<a name="l00063"></a>00063     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_object_loader.html#a8ac4f79cbad3c85732667e33da9e6d5b">operator=</a>(<a class="code" href="classqtpd_1_1_object_loader.html" title="prototype for ui externals handling. stub">ObjectLoader</a> <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;
+<a name="l00064"></a>00064 
+<a name="l00068"></a>00068     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_object_loader.html#a411e5881f56306dc5e7b666a20e0af01" title="hardcoded internal UIObjects are loaded here">loadObjects</a>();
 <a name="l00069"></a>00069 
-<a name="l00070"></a>00070     std::vector&lt;std::string&gt; <a class="code" href="classqtpd_1_1_object_loader.html#a41b6b563c0b98f5d6016865e842e42a5">getUINames</a>();
+<a name="l00070"></a>00070     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_object_loader.html#a9fa9ecfce511f15b2b3ccc187f0872df">addUIobject</a>(<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="code" href="abstract_8h.html#afcd1706c9144e6d6eee6127661ae3be2">name</a>, <a class="code" href="namespaceqtpd.html#ac3f9500ed88e58abf682bbc072d74647" title="&#39;constructor&#39; method for each ui object derived from UIObject">cmObjectConstructor</a> constructor);
 <a name="l00071"></a>00071 
-<a name="l00072"></a>00072     std::vector&lt;std::string&gt; <a class="code" href="classqtpd_1_1_object_loader.html#aebb2f6718c148be957c61824963ce9a1">getPDNames</a>();
+<a name="l00072"></a>00072     std::vector&lt;std::string&gt; <a class="code" href="classqtpd_1_1_object_loader.html#a41b6b563c0b98f5d6016865e842e42a5">getUINames</a>();
 <a name="l00073"></a>00073 
-<a name="l00074"></a>00074     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_object_loader.html#af239c0e007aed45a838eeca575f4e22b">hasUI</a>(<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> objName);
+<a name="l00074"></a>00074     std::vector&lt;std::string&gt; <a class="code" href="classqtpd_1_1_object_loader.html#aebb2f6718c148be957c61824963ce9a1">getPDNames</a>();
 <a name="l00075"></a>00075 
-<a name="l00076"></a>00076     <span class="comment">// todo remove?</span>
-<a name="l00077"></a>00077     <a class="code" href="namespaceqtpd.html#ac3f9500ed88e58abf682bbc072d74647" title="&#39;constructor&#39; method for each ui object derived from UIObject">cmObjectConstructor</a> <a class="code" href="classqtpd_1_1_object_loader.html#ae910122005209fc55fbc947fe5339c06">getConstructorFor</a>(QString objName);
-<a name="l00078"></a>00078 
-<a name="l00079"></a>00079     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_object_loader.html#a28f5d36e543808de95052d8bd028d6c6">createObject</a>(QString objectData, t_canvas* pdCanvas, <a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* parent);
-<a name="l00080"></a>00080 };
-<a name="l00081"></a>00081 }
-<a name="l00082"></a>00082 
-<a name="l00083"></a>00083 <span class="preprocessor">#endif // CM_OBJECTLOADER_H</span>
+<a name="l00076"></a>00076     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_object_loader.html#af239c0e007aed45a838eeca575f4e22b">hasUI</a>(<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> objName);
+<a name="l00077"></a>00077 
+<a name="l00078"></a>00078     <span class="comment">// todo remove?</span>
+<a name="l00079"></a>00079     <a class="code" href="namespaceqtpd.html#ac3f9500ed88e58abf682bbc072d74647" title="&#39;constructor&#39; method for each ui object derived from UIObject">cmObjectConstructor</a> <a class="code" href="classqtpd_1_1_object_loader.html#ae910122005209fc55fbc947fe5339c06">getConstructorFor</a>(QString objName);
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_object_loader.html#a28f5d36e543808de95052d8bd028d6c6">createObject</a>(QString objectData, t_canvas* pdCanvas, <a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* parent);
+<a name="l00082"></a>00082 };
+<a name="l00083"></a>00083 }
+<a name="l00084"></a>00084 
+<a name="l00085"></a>00085 <span class="preprocessor">#endif // CM_OBJECTLOADER_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -173,7 +175,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 1 2017 10:14:20 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 1 2017 23:33:46 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
