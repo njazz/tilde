@@ -175,6 +175,22 @@ extern int cmp_get_inlet_count(t_object* obj);
 extern int cmp_get_outlet_count(t_object* obj);
 
 ////
+/// \brief returns inlet at specified index for the object
+/// \param obj
+/// \param idx
+/// \return
+///
+extern t_inlet* cmp_get_inlet(t_inlet* obj, int idx);
+
+////
+/// \brief returns outlet at specified index for the object
+/// \param obj
+/// \param idx
+/// \return
+///
+extern t_outlet* cmp_get_outlet(t_object* obj, int idx);
+
+////
 /// \brief check if inlet is signal~
 /// \param obj
 /// \param idx
@@ -221,7 +237,6 @@ void cmp_connectUI(t_pd* obj, void* uiobj, t_updateUI func);
 /// \param text
 ///
 void cmp_post(std::string text);
-
 
 ////
 /// \brief set verbose level (1..5)

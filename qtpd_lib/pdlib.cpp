@@ -3,7 +3,7 @@
 #include "pdlib.hpp"
 
 //temporary
-std::map<std::string, t_updateUI> *updateUImap;
+std::map<std::string, t_updateUI>* updateUImap;
 
 extern "C" {
 
@@ -23,9 +23,6 @@ extern void setup_list0x2eproduct();
 t_canvas* cmp_newpatch();
 void cmp_closepatch(t_canvas* canvas);
 
-
-
-
 //temporary
 extern "C" void setup_ui0x2ebang(void);
 extern "C" void setup_ui0x2etoggle(void);
@@ -34,6 +31,8 @@ extern "C" void setup_ui0x2efloat(void);
 extern "C" void setup_ui0x2escript(void);
 
 extern "C" void setup_pdclass(void);
+extern "C" void setup_pdinstance(void);
+extern "C" void setup_pdmethod(void);
 
 //todo fix
 //typedef struct _loadedlist
@@ -136,6 +135,8 @@ void cmp_pdinit()
     setup_ui0x2escript();
 
     setup_pdclass();
+    setup_pdinstance();
+    setup_pdmethod();
 
     //setup_list0x2eproduct();
 
@@ -462,6 +463,60 @@ int cmp_get_outlet_type(t_object* obj, int idx)
     return obj_issignaloutlet(obj, idx);
 };
 
+//temporary here
+union inletunion
+{
+    t_symbol *iu_symto;
+    t_gpointer *iu_pointerslot;
+    t_float *iu_floatslot;
+    t_symbol **iu_symslot;
+    t_float iu_floatsignalvalue;
+};
+
+
+struct _outlet
+{
+    t_object *o_owner;
+    struct _outlet *o_next;
+    t_outconnect *o_connections;
+    t_symbol *o_sym;
+};
+
+struct _inlet
+{
+    t_pd i_pd;
+    struct _inlet *i_next;
+    t_object *i_owner;
+    t_pd *i_dest;
+    t_symbol *i_symfrom;
+
+    union inletunion i_un;
+};
+
+t_outlet* cmp_get_outlet(t_object* x, int idx)
+{
+    int n;
+    t_outlet* o;
+    for (o = x->te_outlet, n = 0; o; o = o->o_next) {
+        n++;
+        if (n == idx)
+            return o;
+    }
+    return 0;
+}
+
+t_inlet* cmp_get_inlet(t_object* x, int idx)
+{
+    int n;
+    t_inlet* o;
+    for (o = x->te_inlet, n = 0; o; o = o->i_next) {
+        n++;
+        if (n == idx)
+            return o;
+    }
+    return 0;
+}
+
 //int cmp_get_canvas_inlet_count(t_canvas* canvas)
 //{
 //    return obj_n
@@ -507,8 +562,6 @@ void cmp_connectUI(t_pd* obj, void* uiobj, t_updateUI func)
 {
     // fix that !!!
     uimsg_set_updateUI(obj, uiobj, func);
-
-
 }
 
 //void cmp_connectUI(std::string obj_name, void* uiobj, t_updateUI func)
@@ -542,15 +595,13 @@ int cmp_get_array_size(t_garray* a)
     return garray_npoints(a);
 }
 
-
-
 t_garray* cmp_new_array(t_canvas* c, t_symbol* name, t_floatarg size, t_floatarg save, t_floatarg newgraph)
 {
     //possibly unused at all
     t_garray* ret;
     glist_arraydialog(c, name, size, save, newgraph);
 
-    ret = cmp_get_array(name);//(t_garray*)pd_newest();
+    ret = cmp_get_array(name); //(t_garray*)pd_newest();
     return ret;
 }
 
