@@ -10,14 +10,14 @@ UIFloat::UIFloat(UIObject* parent)
 {
     //setPdObjectName("ui.float");
 
-    //this->setMinimumWidth(30);
-    this->setFixedSize(45, 20);
+    //setMinimumWidth(30);
+    setFixedSize(45, 20);
 
-    this->setMouseTracking(true);
+    setMouseTracking(true);
 
-    this->deselect();
+    deselect();
 
-    this->setMinimumBoxWidth(45);
-    this->setMinimumBoxHeight(20);
+    setMinimumBoxWidth(45);
+    setMinimumBoxHeight(20);
 }
 }

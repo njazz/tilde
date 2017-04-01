@@ -24,23 +24,23 @@ UIScript::UIScript(UIObject* parent)
 {
     //setPdObjectName("ui.script");
 
-    this->setMouseTracking(true);
+    setMouseTracking(true);
 
-    this->deselect();
-    this->_clicked = false;
+    deselect();
+    _clicked = false;
 
     QFont font = QFont(PREF_QSTRING("Font"), 11, 0, false);
 
-    this->_editor = new UIScriptEditor((QPlainTextEdit*)this); //weird
-    this->_editor->setFixedSize(150 - 5, 300 - 27); //setFixedSize(65-5,18);
-    this->_editor->move(2, 21);
-    this->_editor->setFont(font);
-    this->_editor->show();
-    this->_editor->setAttribute(Qt::WA_MacShowFocusRect, 0);
+    _editor = new UIScriptEditor((QPlainTextEdit*)this); //weird
+    _editor->setFixedSize(150 - 5, 300 - 27); //setFixedSize(65-5,18);
+    _editor->move(2, 21);
+    _editor->setFont(font);
+    _editor->show();
+    _editor->setAttribute(Qt::WA_MacShowFocusRect, 0);
 
-    this->setFocus();
+    setFocus();
 
-    connect(this->_editor, &QPlainTextEdit::textChanged, this, &UIScript::editorChanged);
+    connect(_editor, &QPlainTextEdit::textChanged, this, &UIScript::editorChanged);
 
     // new python context
 
@@ -48,8 +48,8 @@ UIScript::UIScript(UIObject* parent)
 
     initProperties();
 
-    this->setMinimumSize(300, 200);
-    this->setFixedSize(300, 200);
+    setMinimumSize(300, 200);
+    setFixedSize(300, 200);
     setMinimumBoxWidth(300);
     setMinimumBoxHeight(200);
 
@@ -94,7 +94,7 @@ UIScript::UIScript(UIObject* parent)
     b1->show();
     connect(b1, &QPushButton::clicked, this, &UIScript::btnClear);
 
-    this->setObjectSizeMode(os_Free);
+    setObjectSizeMode(os_Free);
 }
 
 void UIScript::editorChanged()
