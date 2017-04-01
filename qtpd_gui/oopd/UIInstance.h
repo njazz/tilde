@@ -75,11 +75,11 @@ public:
         }
 
         // new class w/canvas
-//        if (list.size() > 1) {
-//            b->_opClass = new OPClass(list.at(1).toStdString());
-//        } else {
-//            b->_opClass = new OPClass();
-//        }
+        //        if (list.size() > 1) {
+        //            b->_opClass = new OPClass(list.at(1).toStdString());
+        //        } else {
+        //            b->_opClass = new OPClass();
+        //        }
 
         if (new_obj) {
             in_c = cmp_get_inlet_count(new_obj);
@@ -100,6 +100,8 @@ public:
             b->addInlet();
         for (int i = 0; i < out_c; i++)
             b->addOutlet();
+
+        //
 
         connect(b, &UIInstance::updateUISignal, b, &UIInstance::updateUISlot);
 
@@ -237,16 +239,15 @@ public:
 
         // ===========
 
-        if ( (msg.at(0).asString() == "new") && (msg.size() > 1) ) {
+        if ((msg.at(0).asString() == "new") && (msg.size() > 1)) {
 
             qDebug() << "new instance";
 
-            UIInstance *x = ((UIInstance*)uiobj);
+            UIInstance* x = ((UIInstance*)uiobj);
 
             x->_opClass = OOPD::inst()->classByName(msg.at(1).asString());
 
-            if (!x->_opClass)
-            {
+            if (!x->_opClass) {
                 cmp_post("class not found: ");
                 cmp_post(msg.at(1).asString());
                 return;
@@ -255,47 +256,58 @@ public:
             x->_opInstance = new OPInstance(x->_opClass);
             cmp_post("new instance");
 
+            if (x->pdObject()) {
+                t_outlet* out1 = cmp_get_outlet((t_object*)x->pdObject(), 0);
+                if (out1)
+                    x->_opInstance->addInstanceOut(out1);
+                else
+                    cmp_post("instance pd object outlet error");
+            }
+
             //cmp_get_inlet/outlet
             x->_opInstance->addInstanceOut(0);
         }
 
         // ===========
 
-        if (msg.at(0).asString() == "free")
-        {
+        if (msg.at(0).asString() == "free") {
 
-            UIInstance *x = ((UIInstance*)uiobj);
-            if (x->_opInstance)
-            {
+            UIInstance* x = ((UIInstance*)uiobj);
+            if (x->_opInstance) {
                 x->_opInstance->freeInstanceOut(0);
                 delete x->_opInstance;
             }
+
+            if (x->pdObject()) {
+                t_outlet* out1 = cmp_get_outlet((t_object*)x->pdObject(), 0);
+                if (out1)
+                    x->_opInstance->freeInstanceOut(out1);
+                else
+                    cmp_post("instance pd object outlet error");
+            }
+
             x->_opInstance = 0;
             cmp_post("free instance");
-
         }
 
         // =========
         // methods
-        UIInstance *x = ((UIInstance*)uiobj);
-        if (x->_opInstance)
-        {
+        UIInstance* x = ((UIInstance*)uiobj);
+        if (x->_opInstance) {
             x->_opInstance->callMethod(msg);
         }
 
+        //        if (msg.at(0).asString() == "addproperty") {
+        //        }
 
+        //        if (msg.at(0).asString() == "delproperty") {
+        //        }
 
-//        if (msg.at(0).asString() == "addproperty") {
-//        }
+        //        if (msg.at(0).asString() == "addmethod") {
+        //        }
 
-//        if (msg.at(0).asString() == "delproperty") {
-//        }
-
-//        if (msg.at(0).asString() == "addmethod") {
-//        }
-
-//        if (msg.at(0).asString() == "delmethod") {
-//        }
+        //        if (msg.at(0).asString() == "delmethod") {
+        //        }
 
         emit((UIInstance*)uiobj)->updateUISignal();
     }

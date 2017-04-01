@@ -471,11 +471,13 @@ public:
         return ret;
     }
 
+// ---------------
 #pragma mark methods
 
     void addInstanceOut(t_outlet* outlet)
     {
-        _instanceOutputs.push_back(outlet);
+        if (outlet)
+            _instanceOutputs.push_back(outlet);
     }
     void freeInstanceOut(t_outlet* outlet)
     {

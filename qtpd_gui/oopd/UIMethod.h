@@ -34,6 +34,11 @@ private:
     bool _isAbstraction;
     QString _abstractionPath;
 
+    OPClass* _opClass;
+    OPInstance* _opInstance;
+
+    std::string _methodName;
+
 public:
     explicit UIMethod(UIObject* parent = 0);
     //~UIMethod();
@@ -55,11 +60,11 @@ public:
         std::string data1 = b->properties()->extractFromPdFileString(obj_name); //test
         const char* obj_name2 = data1.c_str();
 
-        std::string methodName;
+        //std::string methodName;
         if (list.size() < 2) {
             cmp_post("missing argument: method name");
         } else {
-            methodName = ((QString)list.at(1)).toStdString();
+            b->_methodName = ((QString)list.at(1)).toStdString();
         }
 
         // fix size changes
@@ -84,6 +89,8 @@ public:
 
             b->setPdObject(new_obj);
 
+            cmp_connectUI((t_pd*)new_obj, (void*)b, &UIMethod::updateUI);
+
             b->setHelpName("method-help.pd");
 
         } else {
@@ -93,8 +100,8 @@ public:
             out_c = 1;
         }
 
-            b->addInlet();
-            b->addOutlet();
+        b->addInlet();
+        b->addOutlet();
 
         // OOPD
 
@@ -106,29 +113,30 @@ public:
             b->setErrorBox(true);
         }
 
-        OPClass* class1 = OOPD::inst()->classByCanvas(cnv);
-        OPInstance* instance1 = OOPD::inst()->instanceByCanvas(cnv);
+        b->_opClass = OOPD::inst()->classByCanvas(cnv);
+        b->_opInstance = OOPD::inst()->instanceByCanvas(cnv);
 
         qDebug() << "this canvas: " << (long)cnv;
-        qDebug () << "class: " << (long)class1 << "inst:" << (long)instance1;
+        qDebug() << "class: " << (long)b->_opClass << "inst:" << (long)b->_opInstance;
 
-        if (class1) {
+        if (b->_opClass) {
 
             qDebug("method in class");
 
-            class1->addMethod(methodName, "");
+            b->_opClass->addMethod(b->_methodName, "");
         }
 
-
-        if (instance1) {
+        if (b->_opInstance) {
             qDebug("method in instance");
 
             t_outlet* out1 = cmp_get_outlet((t_object*)b->pdObject(), 0);
             if (out1)
-                instance1->addMethodOutlet(gensym(methodName.c_str()), out1);
+                b->_opInstance->addMethodOutlet(gensym(b->_methodName.c_str()), out1);
             else
                 cmp_post("method pd object outlet error");
         }
+
+        connect(b, &UIMethod::updateUISignal, b, &UIMethod::updateUISlot);
 
         return (UIObject*)b;
     };
@@ -250,10 +258,33 @@ public:
         setOutletsPos();
     }
 
+    static void updateUI(void* uiobj, ceammc::AtomList msg)
+    {
+        UIMethod* b = (UIMethod*)uiobj;
+
+        //qDebug() << "method out";
+
+        if (b->_opInstance) {
+            AtomList fullMsg(gensym(b->_methodName.c_str()));
+            fullMsg.append(msg);
+            b->_opInstance->multipleOutput(fullMsg);
+        }
+
+        emit b->updateUISignal();
+    }
+
 signals:
 
     void mouseMoved();
     void rightClicked();
+
+    void updateUISignal();
+
+private slots:
+    void updateUISlot()
+    {
+        repaint();
+    }
 };
 }
 
