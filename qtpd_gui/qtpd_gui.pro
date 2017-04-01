@@ -61,7 +61,8 @@ SOURCES += main.cpp\
     properties/Property.cpp \
     properties/PropertyList.cpp \
     objects/UIDSP.cpp \
-    oopd/UIMethod.cpp
+    oopd/UIMethod.cpp \
+    oopd/UIProperty.cpp
 
 
 HEADERS  += \
@@ -134,7 +135,8 @@ HEADERS  += \
     properties/Property.h \
     properties/PropertyList.h \
     objects/UIDSP.h \
-    oopd/UIMethod.h
+    oopd/UIMethod.h \
+    oopd/UIProperty.h
 
 
 FORMS    += \

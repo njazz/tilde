@@ -23,7 +23,7 @@ void ObjectLoader::loadObjects()
     addUIobject("pdclass", &UIClass::createObject);
     addUIobject("pdinstance", &UIInstance::createObject);
     addUIobject("method", &UIMethod::createObject);
-    addUIobject("method", &UIProperty::createObject);
+    addUIobject("property", &UIProperty::createObject);
 
     addUIobject("ui.dsp", &UIDSP::createObject);
 

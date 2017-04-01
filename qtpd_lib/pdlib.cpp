@@ -33,6 +33,7 @@ extern "C" void setup_ui0x2escript(void);
 extern "C" void setup_pdclass(void);
 extern "C" void setup_pdinstance(void);
 extern "C" void setup_pdmethod(void);
+extern "C" void setup_pdproperty(void);
 
 //todo fix
 //typedef struct _loadedlist
@@ -137,6 +138,7 @@ void cmp_pdinit()
     setup_pdclass();
     setup_pdinstance();
     setup_pdmethod();
+    setup_pdproperty();
 
     //setup_list0x2eproduct();
 

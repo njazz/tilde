@@ -201,15 +201,10 @@ public:
 // ------------------------------------------------
 #pragma mark file io
 
-    void readFile()
-    {
-        //TODO
-    }
+    void readFile();
 
-    void writeFile()
-    {
-        //TODO
-    }
+    void writeFile();
+
 
 // ------------------------------------------------
 

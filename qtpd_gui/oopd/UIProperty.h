@@ -100,8 +100,10 @@ public:
             out_c = 1;
         }
 
-        b->addInlet();
-        b->addOutlet();
+        for (int i = 0; i < in_c; i++)
+            b->addInlet();
+        for (int i = 0; i < out_c; i++)
+            b->addOutlet();
 
         // OOPD
 

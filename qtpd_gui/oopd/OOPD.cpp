@@ -12,6 +12,7 @@
 
 //temp
 #include "FileParser.h"
+#include "FileSaver.h"
 
 namespace qtpd {
 
@@ -117,4 +118,17 @@ void OPInstance::showWindow()
 {
     if (_patchWindow)
         _patchWindow->show();
+}
+
+
+// ===========================
+
+void OPClass::readFile()
+{
+
+}
+
+void OPClass::writeFile()
+{
+
 }

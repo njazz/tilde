@@ -186,7 +186,8 @@ SOURCES += pdlib.cpp \
     ui_objects/ui_toggle.cpp \
     ui_objects/pdclass.cpp \
     ui_objects/pdinstance.cpp \
-    ui_objects/pdmethod.cpp
+    ui_objects/pdmethod.cpp \
+    ui_objects/pdproperty.cpp
 #
 
 HEADERS += \
