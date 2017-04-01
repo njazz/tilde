@@ -20,8 +20,8 @@ class UIDSP : public UIObject {
     Q_OBJECT
 
 private:
-    bool clicked_;
-    bool value_;
+    bool _clicked;
+    bool _value;
 
 public:
     explicit UIDSP(UIObject* parent = 0);
@@ -39,7 +39,7 @@ public:
         setMinimumBoxWidth(40);
         setMinimumBoxHeight(40);
 
-        value_ = false;
+        _value = false;
     };
 
     static UIObject* createObject(std::string objectData, t_canvas* pdCanvas, UIWidget* parent = 0)
@@ -88,7 +88,7 @@ public:
 
         p.setRenderHint(QPainter::HighQualityAntialiasing, true);
 
-        if (value_) {
+        if (_value) {
 
             p.setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
             //p.drawEllipse(QRect(1+lw/2, 1+lw/2, width()-2-lw,height()-2-lw));
@@ -153,9 +153,9 @@ public:
             //                cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
             //            }
 
-            value_ = !value_;
+            _value = !_value;
 
-            cmp_switch_dsp(value_);
+            cmp_switch_dsp(_value);
 
             repaint();
         }

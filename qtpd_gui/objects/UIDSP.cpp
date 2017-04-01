@@ -15,7 +15,7 @@ UIDSP::UIDSP(UIObject* parent)
     setMouseTracking(true);
 
     deselect();
-    clicked_ = false;
+    _clicked = false;
 
     QPalette Pal(palette());
     Pal.setColor(QPalette::Background, QColor(240, 240, 240));
@@ -25,6 +25,6 @@ UIDSP::UIDSP(UIObject* parent)
     setMinimumBoxWidth(20);
     setMinimumBoxHeight(20);
 
-    value_ = false;
+    _value = false;
 }
 }

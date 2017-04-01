@@ -20,8 +20,8 @@ class UIToggle : public UIObject {
     Q_OBJECT
 
 private:
-    bool clicked_;
-    bool value_;
+    bool _clicked;
+    bool _value;
 
 public:
     explicit UIToggle(UIObject* parent = 0);
@@ -73,7 +73,7 @@ public:
     {
         QPainter p(this);
 
-        if (value_) {
+        if (_value) {
             float lw = 2; //+width()/20.;
             p.setPen(QPen(QColor(0, 192, 255), lw, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
             //p.drawEllipse(QRect(1+lw/2, 1+lw/2, width()-2-lw,height()-2-lw));
@@ -198,7 +198,7 @@ public:
 
         if (msg.size() > 0) {
             if (msg.at(0).isFloat())
-                x->value_ = msg.at(0).asFloat() > 0;
+                x->_value = msg.at(0).asFloat() > 0;
             //            if (msg.at(0).isSymbol())
             //                if (msg.at(0).asSymbol() == gensym("bang"))
             //                    x->value_ = !x->value_;
