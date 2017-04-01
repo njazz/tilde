@@ -1,30 +1,30 @@
 // (c) 2017 Alex Nadzharov
 // License: GPL3
 
-#include "UIToggle.h"
+#include "UIDSP.h"
 
 namespace qtpd {
 
-UIToggle::UIToggle(UIObject* parent)
+UIDSP::UIDSP(UIObject* parent)
     : UIObject(parent)
 {
     //setPdObjectName("ui.toggle");
 
-    this->setFixedSize(20, 20);
+    setFixedSize(20, 20);
 
-    this->setMouseTracking(true);
+    setMouseTracking(true);
 
-    this->deselect();
-    this->clicked_ = false;
+    deselect();
+    clicked_ = false;
 
     QPalette Pal(palette());
     Pal.setColor(QPalette::Background, QColor(240, 240, 240));
-    this->setAutoFillBackground(true);
-    this->setPalette(Pal);
+    setAutoFillBackground(true);
+    setPalette(Pal);
 
-    this->setMinimumBoxWidth(20);
-    this->setMinimumBoxHeight(20);
+    setMinimumBoxWidth(20);
+    setMinimumBoxHeight(20);
 
-    this->value_ = false;
+    value_ = false;
 }
 }

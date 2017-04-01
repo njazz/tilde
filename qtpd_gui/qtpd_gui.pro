@@ -59,7 +59,8 @@ SOURCES += main.cpp\
     window/BaseWindow.cpp \
     window/PropertiesWindow.cpp \
     properties/Property.cpp \
-    properties/PropertyList.cpp
+    properties/PropertyList.cpp \
+    objects/UIDSP.cpp
 
 
 HEADERS  += \
@@ -130,7 +131,8 @@ HEADERS  += \
     BaseMenu.h \
     properties/Preferences.h \
     properties/Property.h \
-    properties/PropertyList.h
+    properties/PropertyList.h \
+    objects/UIDSP.h
 
 
 FORMS    += \
