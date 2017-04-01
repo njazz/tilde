@@ -15,6 +15,8 @@
 
 namespace qtpd {
 
+OOPD* instance;
+
 OPClass::OPClass(string className)
 {
 
@@ -32,7 +34,7 @@ OPClass::OPClass(string className)
 
     _className = className;
     // register
-    OOPD::inst().registerClass(this, _className, _canvas, _symbol);
+    OOPD::inst()->registerClass(this, _className, _canvas, _symbol);
 }
 
 void OPClass::showWindow()
@@ -58,6 +60,11 @@ OPInstance::OPInstance(OPClass* opClass)
 
         _patchWindow =  PatchWindow::newWindow();
         FileParser::setParserWindow(_patchWindow);
+
+        _canvas = (t_canvas*)_patchWindow->canvas->pdObject();
+        // register instance before copying objects
+        OOPD::inst()->registerInstance(this, _className, _canvas, _symbol);
+
         _patchWindow->canvas->canvasFromPdStrings(canvasStrings);
         QString windowTitle = QString("(read only) instance: ") + QString(_className.c_str());
         _patchWindow->setWindowTitle(windowTitle);
@@ -66,16 +73,17 @@ OPInstance::OPInstance(OPClass* opClass)
 
         _patchWindow->canvas->setReadOnly(true);
 
-        _canvas = (t_canvas*)_patchWindow->canvas->pdObject();
 
-        // register instance
-        OOPD::inst().registerInstance(this, _className, _canvas, _symbol);
+
+
 
         _refCount = 1;
     }
 
     //generate properties
     _propertyNames = opClass->getPropertyNames();
+
+
 
     //TODO
 

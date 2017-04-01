@@ -51,8 +51,6 @@ public:
 
         const char* obj_name = objectData.c_str();
         std::string data1 = b->properties()->extractFromPdFileString(obj_name); //test
-
-        // todo cleanup
         const char* obj_name2 = data1.c_str();
 
         // fix size changes

@@ -24,6 +24,7 @@
 
 #include "oopd/UIClass.h"
 #include "oopd/UIInstance.h"
+#include "oopd/UIMethod.h"
 
 #include "UIDSP.h"
 

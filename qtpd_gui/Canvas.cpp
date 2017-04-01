@@ -1132,8 +1132,6 @@ QStringList Canvas::canvasAsPdStrings()
 void Canvas::canvasFromPdStrings(QStringList strings)
 {
 
-
-
     if (strings.size() < 1)
         return;
 

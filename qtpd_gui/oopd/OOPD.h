@@ -18,6 +18,8 @@
 //
 #include <QStringList>
 
+#include <QDebug>
+
 using namespace std;
 using namespace ceammc;
 
@@ -69,14 +71,19 @@ private:
     OOPD(){};
 
 public:
-    static OOPD& inst()
+    static OOPD* inst()
     {
-        static OOPD instance;
+        static OOPD* instance;
+
+        if (!instance)
+            instance = new OOPD;
+
         return instance;
     }
 
     void registerClass(OPClass* opClass, string className, t_canvas* canvas, t_symbol* symbol)
     {
+        qDebug() << "class : OOPD" << (long)this << (long)canvas;
         _classByCanvas[canvas] = opClass;
         _classBySymbol[symbol] = opClass;
         _classByName[className] = opClass;
@@ -84,19 +91,18 @@ public:
 
     void registerInstance(OPInstance* opInstance, string className, t_canvas* canvas, t_symbol* symbol)
     {
+        qDebug() << "inst : OOPD" << (long)this << (long)canvas;
         _instanceByCanvas[canvas] = opInstance;
         _instanceBySymbol[symbol] = opInstance;
     };
 
-    void unregisterClass(string className, t_canvas* canvas, t_symbol* symbol)
-    {
+    void unregisterClass(string className, t_canvas* canvas, t_symbol* symbol){
 
     };
     void unregisterInstance(string className, t_canvas* canvas, t_symbol* symbol)
     {
         _instanceByCanvas[canvas] = 0;
         _instanceBySymbol[symbol] = 0;
-
     };
 
     OPClass* classByCanvas(t_canvas* canvas)
@@ -138,6 +144,11 @@ public:
         else
             return 0;
     }
+
+    bool canvasIsPatch(t_canvas* canvas)
+    {
+        return !(classByCanvas(canvas) || instanceByCanvas(canvas));
+    }
 };
 
 ////
@@ -151,7 +162,7 @@ private:
     map<string, string> _signalNames;
 
     map<string, t_outlet*> _methodOutlets; //todo OPOutputs
-    map<string, t_outlet*> methodPointerOutlets; //todo OPOutputs
+    map<string, t_outlet*> _methodPointerOutlets; //todo OPOutputs
 
     //PatchWindow* _patchWindow;
     OPClass* _parent;
@@ -218,7 +229,7 @@ public:
     void addMethodPointerOutlet(string referenceName, t_outlet* outlet)
     {
         //todo multiple
-        methodPointerOutlets[referenceName] = outlet;
+        _methodPointerOutlets[referenceName] = outlet;
     }
 
     t_outlet* getMethodOutletForReferenceName(string referenceName)
@@ -235,9 +246,9 @@ public:
     t_outlet* getMethodPointerOutletForReferenceName(string referenceName)
     {
         t_outlet* ret;
-        if (methodPointerOutlets.count(referenceName)) {
+        if (_methodPointerOutlets.count(referenceName)) {
             //todo multiple
-            ret = methodPointerOutlets[referenceName];
+            ret = _methodPointerOutlets[referenceName];
         }
 
         return ret;
@@ -255,7 +266,7 @@ public:
 
     void freeMethodPointerOutlet(string referenceName)
     {
-        methodPointerOutlets.erase(referenceName);
+        _methodPointerOutlets.erase(referenceName);
     }
 
     void addProperty(string propertyName, string referenceName)
@@ -369,7 +380,7 @@ public:
         // delete _patchWindow;
 
         // unregister
-        OOPD::inst().unregisterInstance(_className, _canvas, _symbol);
+        OOPD::inst()->unregisterInstance(_className, _canvas, _symbol);
 
         printf("~OPInstance\n");
         printf("canvas: %lu\n", (long)_canvas);
@@ -377,7 +388,7 @@ public:
 
 #pragma mark methods
 
-    void addMethod(t_symbol* methodName, t_outlet* outlet)
+    void addMethodOutlet(t_symbol* methodName, t_outlet* outlet)
     {
         _methodOutputs[methodName].push_back(outlet);
     }
@@ -387,12 +398,12 @@ public:
         _methodOutputs.erase(methodName);
     }
 
-    void addMethodPointerOut(t_symbol* methodName, t_outlet* outlet)
+    void addMethodPointerOutlet(t_symbol* methodName, t_outlet* outlet)
     {
         _methodPointerOutputs[methodName] = outlet; //.push_back(outlet);  TODO
     }
 
-    void freeMethodPointerOut(t_symbol* methodName)
+    void freeMethodPointerOutlet(t_symbol* methodName)
     {
         _methodPointerOutputs.erase(methodName);
     }
@@ -585,10 +596,10 @@ public:
 
         return ret;
     }
-    // ------------------------------------------------
-    #pragma mark window
+// ------------------------------------------------
+#pragma mark window
 
-        void showWindow();
+    void showWindow();
 
 #pragma mark reference counting
     // names?

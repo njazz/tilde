@@ -464,43 +464,41 @@ int cmp_get_outlet_type(t_object* obj, int idx)
 };
 
 //temporary here
-union inletunion
-{
-    t_symbol *iu_symto;
-    t_gpointer *iu_pointerslot;
-    t_float *iu_floatslot;
-    t_symbol **iu_symslot;
+union inletunion {
+    t_symbol* iu_symto;
+    t_gpointer* iu_pointerslot;
+    t_float* iu_floatslot;
+    t_symbol** iu_symslot;
     t_float iu_floatsignalvalue;
 };
 
-
-struct _outlet
-{
-    t_object *o_owner;
-    struct _outlet *o_next;
-    t_outconnect *o_connections;
-    t_symbol *o_sym;
+struct _outlet {
+    t_object* o_owner;
+    struct _outlet* o_next;
+    t_outconnect* o_connections;
+    t_symbol* o_sym;
 };
 
-struct _inlet
-{
+struct _inlet {
     t_pd i_pd;
-    struct _inlet *i_next;
-    t_object *i_owner;
-    t_pd *i_dest;
-    t_symbol *i_symfrom;
+    struct _inlet* i_next;
+    t_object* i_owner;
+    t_pd* i_dest;
+    t_symbol* i_symfrom;
 
     union inletunion i_un;
 };
 
 t_outlet* cmp_get_outlet(t_object* x, int idx)
 {
+    printf("get outlet\n");
     int n;
     t_outlet* o;
     for (o = x->te_outlet, n = 0; o; o = o->o_next) {
-        n++;
+
         if (n == idx)
             return o;
+        n++;
     }
     return 0;
 }
@@ -510,9 +508,10 @@ t_inlet* cmp_get_inlet(t_object* x, int idx)
     int n;
     t_inlet* o;
     for (o = x->te_inlet, n = 0; o; o = o->i_next) {
-        n++;
+
         if (n == idx)
             return o;
+        n++;
     }
     return 0;
 }

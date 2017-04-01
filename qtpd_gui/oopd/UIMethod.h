@@ -1,8 +1,8 @@
 // (c) 2017 Alex Nadzharov
 // License: GPL3
 
-#ifndef CM_UIInstance_H
-#define CM_UIInstance_H
+#ifndef UI_METHOD_H
+#define UI_METHOD_H
 
 #include <QLineEdit>
 #include <QMainWindow>
@@ -23,63 +23,60 @@
 namespace qtpd {
 
 ////
-/// \brief gui object: oopd class
+/// \brief gui object: oop method box
 ///
-class UIInstance : public UIObject {
+class UIMethod : public UIObject {
 
     Q_OBJECT
 
 private:
-    OPInstance* _opInstance;
-    OPClass* _opClass;
+    // for abstracions
+    bool _isAbstraction;
+    QString _abstractionPath;
 
 public:
-    explicit UIInstance(UIObject* parent = 0);
-    //~UIInstance();
+    explicit UIMethod(UIObject* parent = 0);
+    //~UIMethod();
 
     static UIObject* createObject(std::string objectData, t_canvas* pd_Canvas, UIWidget* parent = 0)
     {
         //TODO fix all constructors
         //t_canvas* pd_Canvas;
 
-        //temporary fix
         if (objectData == "")
-            objectData = "pdclass";
+            objectData = "method";
 
-        UIInstance* b = new UIInstance((UIObject*)parent);
+        UIMethod* b = new UIMethod((UIObject*)parent);
 
+        //truncate "ui.obj". todo cleanup
         QStringList list = QString(objectData.c_str()).split(" ");
 
         const char* obj_name = objectData.c_str();
         std::string data1 = b->properties()->extractFromPdFileString(obj_name); //test
-
-        // todo cleanup
         const char* obj_name2 = data1.c_str();
+
+        std::string methodName;
+        if (list.size() < 2) {
+            cmp_post("missing argument: method name");
+        } else {
+            methodName = ((QString)list.at(1)).toStdString();
+        }
 
         // fix size changes
         b->setObjectData(data1);
         b->autoResize();
 
-        qDebug() << QString(data1.c_str()) << "data1";
-
         t_object* new_obj = 0;
-        int in_c = 1, out_c = 0;
-
-        b->setHelpName("pdclass-help.pd");
+        int in_c = 0, out_c = 0;
 
         if (!pd_Canvas) {
             qDebug("bad pd canvas instance");
             b->setErrorBox(true);
         } else {
-            new_obj = cmp_create_object(pd_Canvas, "pdclass", 0, 0);
+            //temp pos = 0;
+            QPoint pos = QPoint(0, 0);
+            new_obj = cmp_create_object(pd_Canvas, "pdmethod", pos.x(), pos.y());
         }
-
-        // new class w/canvas
-//        if (list.size() > 1) {
-//            b->_opClass = new OPClass(list.at(1).toStdString());
-//        } else {
-//            b->_opClass = new OPClass();
-//        }
 
         if (new_obj) {
             in_c = cmp_get_inlet_count(new_obj);
@@ -87,21 +84,51 @@ public:
 
             b->setPdObject(new_obj);
 
-            cmp_connectUI((t_pd*)new_obj, (void*)b, &UIInstance::updateUI);
+            b->setHelpName("method-help.pd");
 
         } else {
-            qDebug("Error: no pd object");
+            qDebug("Error: no such object 'pdmethod'");
             b->setErrorBox(true);
             in_c = 1;
-            out_c = 0;
+            out_c = 1;
         }
 
-        for (int i = 0; i < in_c; i++)
             b->addInlet();
-        for (int i = 0; i < out_c; i++)
             b->addOutlet();
 
-        connect(b, &UIInstance::updateUISignal, b, &UIInstance::updateUISlot);
+        // OOPD
+
+        // not very clean
+        t_canvas* cnv = (t_canvas*)((UIObject*)parent)->pdObject();
+
+        if (OOPD::inst()->canvasIsPatch(cnv)) {
+            cmp_post("cannot create method in basic patch!");
+            b->setErrorBox(true);
+        }
+
+        OPClass* class1 = OOPD::inst()->classByCanvas(cnv);
+        OPInstance* instance1 = OOPD::inst()->instanceByCanvas(cnv);
+
+        qDebug() << "this canvas: " << (long)cnv;
+        qDebug () << "class: " << (long)class1 << "inst:" << (long)instance1;
+
+        if (class1) {
+
+            qDebug("method in class");
+
+            class1->addMethod(methodName, "");
+        }
+
+
+        if (instance1) {
+            qDebug("method in instance");
+
+            t_outlet* out1 = cmp_get_outlet((t_object*)b->pdObject(), 0);
+            if (out1)
+                instance1->addMethodOutlet(gensym(methodName.c_str()), out1);
+            else
+                cmp_post("method pd object outlet error");
+        }
 
         return (UIObject*)b;
     };
@@ -115,10 +142,6 @@ public:
         p.setRenderHint(QPainter::HighQualityAntialiasing, true);
         p.scale(scale(), scale());
 
-        QColor c1 = (_opInstance) ? QColor(0, 192, 255) : QColor(255, 0, 0);
-        p.setPen(QPen(c1, 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-        p.drawRect(0, 1, width(), height() - 2);
-
         //remove this later
         if (subpatchWindow()) {
             p.setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
@@ -126,7 +149,7 @@ public:
         }
 
         QColor rectColor = (errorBox()) ? QColor(255, 0, 0) : properties()->get("BorderColor")->asQColor(); //QColor(128, 128, 128);
-        p.setPen(QPen(rectColor, 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p.setPen(QPen(rectColor, 2 + _isAbstraction, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         p.drawRect(0, 0, width(), height());
         QTextOption* op = new QTextOption;
         op->setAlignment(Qt::AlignLeft);
@@ -162,10 +185,11 @@ public:
             }
         }
 
-        //window opening. Fix
+        //abstraction opening. Fix
         if (getEditMode() != em_Unlocked) {
-            if (_opInstance)
-                _opInstance->showWindow();
+            if (_isAbstraction) {
+                OpenFileProxy::openAbstraction(_abstractionPath);
+            }
         }
 
         if ((getEditMode() == em_Unlocked) && isSelected()) {
@@ -226,95 +250,11 @@ public:
         setOutletsPos();
     }
 
-    static void updateUI(void* uiobj, ceammc::AtomList msg)
-    {
-        // message handling here - probably move somewhere else?
-
-        if (msg.size() < 1)
-            return;
-        if (!msg.at(0).isSymbol())
-            return;
-
-        // ===========
-
-        if ( (msg.at(0).asString() == "new") && (msg.size() > 1) ) {
-
-            qDebug() << "new instance";
-
-            UIInstance *x = ((UIInstance*)uiobj);
-
-            x->_opClass = OOPD::inst()->classByName(msg.at(1).asString());
-
-            if (!x->_opClass)
-            {
-                cmp_post("class not found: ");
-                cmp_post(msg.at(1).asString());
-                return;
-            }
-
-            x->_opInstance = new OPInstance(x->_opClass);
-            cmp_post("new instance");
-
-            //cmp_get_inlet/outlet
-            x->_opInstance->addInstanceOut(0);
-        }
-
-        // ===========
-
-        if (msg.at(0).asString() == "free")
-        {
-
-            UIInstance *x = ((UIInstance*)uiobj);
-            if (x->_opInstance)
-            {
-                x->_opInstance->freeInstanceOut(0);
-                delete x->_opInstance;
-            }
-            x->_opInstance = 0;
-            cmp_post("free instance");
-
-        }
-
-        // =========
-        // methods
-        UIInstance *x = ((UIInstance*)uiobj);
-        if (x->_opInstance)
-        {
-            x->_opInstance->callMethod(msg);
-        }
-
-
-
-//        if (msg.at(0).asString() == "addproperty") {
-//        }
-
-//        if (msg.at(0).asString() == "delproperty") {
-//        }
-
-//        if (msg.at(0).asString() == "addmethod") {
-//        }
-
-//        if (msg.at(0).asString() == "delmethod") {
-//        }
-
-        emit((UIInstance*)uiobj)->updateUISignal();
-    }
-
 signals:
 
     void mouseMoved();
     void rightClicked();
-
-    //void editObject(UIObject* box);
-signals:
-    void updateUISignal();
-
-private slots:
-    void updateUISlot()
-    {
-        repaint();
-    }
 };
 }
 
-#endif // CM_UIInstance_H
+#endif // CM_BOX_H
