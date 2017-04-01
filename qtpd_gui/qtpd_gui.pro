@@ -182,7 +182,6 @@ LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt$${DEBUG_EXT}.1
 
 DISTFILES += $$PWD/../PythonQt/lib/*
 
-
 DEPENDPATH += $$PWD/../PythonQt/lib/
 
 INCLUDEPATH += $$PWD/python/headers
