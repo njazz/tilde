@@ -97,7 +97,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00013"></a>00013 
 <a name="l00014"></a>00014 <span class="keyword">namespace </span>qtpd {
 <a name="l00015"></a>00015 
-<a name="l00019"></a><a class="code" href="classqtpd_1_1_u_i_toggle.html">00019</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_u_i_toggle.html" title="gui object: message box (ui.msg)">UIToggle</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> {
+<a name="l00019"></a>00019 <span class="keyword">class </span>UIToggle : <span class="keyword">public</span> UIObject {
 <a name="l00020"></a>00020     Q_OBJECT
 <a name="l00021"></a>00021 
 <a name="l00022"></a>00022 <span class="keyword">private</span>:
@@ -105,14 +105,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00024"></a>00024     <span class="keywordtype">bool</span> value_;
 <a name="l00025"></a>00025 
 <a name="l00026"></a>00026 <span class="keyword">public</span>:
-<a name="l00027"></a>00027     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_u_i_toggle.html#ada2a485b9b3011f8156b8c08b834e593">UIToggle</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* parent = 0);
+<a name="l00027"></a>00027     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_u_i_toggle.html#ada2a485b9b3011f8156b8c08b834e593">UIToggle</a>(<a class="code" href="classqtpd_1_1_u_i_object.html#a94ead3f0212c2e0ae0958f852d33978e">UIObject</a>* parent = 0);
 <a name="l00028"></a>00028 
 <a name="l00029"></a><a class="code" href="classqtpd_1_1_u_i_toggle.html#a99e5c79cecfc7b9b7fc75620b3a5e925">00029</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_toggle.html#a99e5c79cecfc7b9b7fc75620b3a5e925">createObject</a>(<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="code" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447" title="gets object text data /usually overriden by ui objects/">objectData</a>, t_canvas* pdCanvas, <a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* parent = 0)
 <a name="l00030"></a>00030     {
 <a name="l00031"></a>00031         <a class="code" href="classqtpd_1_1_u_i_toggle.html" title="gui object: message box (ui.msg)">UIToggle</a>* b = <span class="keyword">new</span> <a class="code" href="classqtpd_1_1_u_i_toggle.html#ada2a485b9b3011f8156b8c08b834e593">UIToggle</a>((<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*)parent);
 <a name="l00032"></a>00032 
-<a name="l00033"></a>00033         <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> data1 = b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a69ed99ca86c7019f489f56b6dc96f8a4">properties</a>()-&gt;<a class="code" href="classqtpd_1_1_property_list.html#a89ada354abe82e104bb9d47b0e80f3b4" title="extract properties from string in pd file">extractFromPdFileString</a>(objectData);
-<a name="l00034"></a>00034         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a65a6c071b7b6f99393652d273e6a0fa7" title="sets object text data">setObjectData</a>(<span class="stringliteral">&quot;ui.toggle&quot;</span>);
+<a name="l00033"></a>00033         <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> data1 = b-&gt;properties()-&gt;extractFromPdFileString(objectData);
+<a name="l00034"></a>00034         b-&gt;setObjectData(<span class="stringliteral">&quot;ui.toggle&quot;</span>);
 <a name="l00035"></a>00035 
 <a name="l00036"></a>00036         qDebug() &lt;&lt; <span class="stringliteral">&quot;obj data&quot;</span> &lt;&lt; QString(data1.c_str());
 <a name="l00037"></a>00037 
@@ -129,7 +129,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00048"></a>00048 
 <a name="l00049"></a>00049         <span class="keywordflow">if</span> (new_obj) {
 <a name="l00050"></a>00050             qDebug(<span class="stringliteral">&quot;created toggle %s | ptr %lu\n&quot;</span>, message.c_str(), (<a class="code" href="modsupport_8h.html#a0cb68e00fb9fb1260ee2daadd9fe6611">long</a>)new_obj);
-<a name="l00051"></a>00051             b-&gt;<a class="code" href="classqtpd_1_1_u_i_toggle.html#a0988331d4bdad4f81534a386b8dc8d4c" title="sets pointer to pd object">setPdObject</a>(new_obj);
+<a name="l00051"></a>00051             b-&gt;setPdObject(new_obj);
 <a name="l00052"></a>00052         } <span class="keywordflow">else</span> {
 <a name="l00053"></a>00053             qDebug(<span class="stringliteral">&quot;Error: no such object %s&quot;</span>, message.c_str());
 <a name="l00054"></a>00054         }
@@ -137,8 +137,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00056"></a>00056         <span class="comment">//b-&gt;setFixedSize(20,20);</span>
 <a name="l00057"></a>00057         <span class="comment">//b-&gt;setPdMessage(&quot;&quot;);</span>
 <a name="l00058"></a>00058 
-<a name="l00059"></a>00059         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a82f2402eac0e1f7e17cf767a658ffa4f" title="adds single inlet (cm_port)">addInlet</a>();
-<a name="l00060"></a>00060         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a935156fec3fd59c05525f046bafb3ebc" title="adds single outlet (cm_port)">addOutlet</a>();
+<a name="l00059"></a>00059         b-&gt;addInlet();
+<a name="l00060"></a>00060         b-&gt;addOutlet();
 <a name="l00061"></a>00061 
 <a name="l00062"></a>00062         <span class="keywordflow">return</span> (<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*)b;
 <a name="l00063"></a>00063     };
@@ -283,7 +283,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00204"></a>00204             <span class="comment">//                    x-&gt;value_ = !x-&gt;value_;</span>
 <a name="l00205"></a>00205         }
 <a name="l00206"></a>00206 
-<a name="l00207"></a>00207         emit x-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a7cd66a9ac05bd493a0f17a61513cc5ae">callRepaint</a>();
+<a name="l00207"></a>00207         emit x-&gt;callRepaint();
 <a name="l00208"></a>00208         <span class="comment">//x-&gt;repaint();</span>
 <a name="l00209"></a>00209     }
 <a name="l00210"></a>00210 
@@ -317,7 +317,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 30 2017 22:54:19 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 1 2017 07:55:02 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

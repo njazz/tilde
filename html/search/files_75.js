@@ -21,6 +21,8 @@ var searchData=
   ['uibox_2eh',['UIBox.h',['../_u_i_box_8h.html',1,'']]],
   ['uiclass_2ecpp',['UIClass.cpp',['../_u_i_class_8cpp.html',1,'']]],
   ['uiclass_2eh',['UIClass.h',['../_u_i_class_8h.html',1,'']]],
+  ['uidsp_2ecpp',['UIDSP.cpp',['../_u_i_d_s_p_8cpp.html',1,'']]],
+  ['uidsp_2eh',['UIDSP.h',['../_u_i_d_s_p_8h.html',1,'']]],
   ['uifloat_2ecpp',['UIFloat.cpp',['../_u_i_float_8cpp.html',1,'']]],
   ['uifloat_2eh',['UIFloat.h',['../_u_i_float_8h.html',1,'']]],
   ['uiinstance_2ecpp',['UIInstance.cpp',['../_u_i_instance_8cpp.html',1,'']]],
