@@ -23,7 +23,10 @@ typedef struct _oopdinstance {
     t_updateUI updateUI;
     void* uiobj;
 
+    t_inlet* in2;
+
     t_outlet* out1;
+    t_outlet* out2;
 
 } t_oopdinstance;
 
@@ -45,8 +48,7 @@ static void oopdinstance_anything(t_oopdinstance* x, t_symbol* s, int argc, t_at
     } else {
 
         if (x->updateUI)
-            x->updateUI (x->uiobj, AtomList(argc, argv));
-
+            x->updateUI(x->uiobj, AtomList(argc, argv));
     }
 }
 
@@ -54,7 +56,10 @@ static void* oopdinstance_new(t_symbol* s, int argc, t_atom* argv)
 {
     t_oopdinstance* x = (t_oopdinstance*)pd_new(oopdinstance_class);
 
+    t_object* xx = (t_object*)x;
+    x->in2 = inlet_new(xx, &xx->ob_pd, &s_signal, &s_signal);
     x->out1 = outlet_new((t_object*)x, &s_anything);
+    x->out2 = outlet_new((t_object*)x, &s_signal);
 
     return (void*)x;
 }
