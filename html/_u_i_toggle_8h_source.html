@@ -101,8 +101,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00020"></a>00020     Q_OBJECT
 <a name="l00021"></a>00021 
 <a name="l00022"></a>00022 <span class="keyword">private</span>:
-<a name="l00023"></a>00023     <span class="keywordtype">bool</span> clicked_;
-<a name="l00024"></a>00024     <span class="keywordtype">bool</span> value_;
+<a name="l00023"></a>00023     <span class="keywordtype">bool</span> _clicked;
+<a name="l00024"></a>00024     <span class="keywordtype">bool</span> _value;
 <a name="l00025"></a>00025 
 <a name="l00026"></a>00026 <span class="keyword">public</span>:
 <a name="l00027"></a>00027     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_u_i_toggle.html#ada2a485b9b3011f8156b8c08b834e593">UIToggle</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* parent = 0);
@@ -154,7 +154,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00073"></a>00073     {
 <a name="l00074"></a>00074         QPainter <a class="code" href="floatobject_8h.html#af18a92ce774f4c499544fbcc894db7e8">p</a>(<span class="keyword">this</span>);
 <a name="l00075"></a>00075 
-<a name="l00076"></a>00076         <span class="keywordflow">if</span> (value_) {
+<a name="l00076"></a>00076         <span class="keywordflow">if</span> (_value) {
 <a name="l00077"></a>00077             <span class="keywordtype">float</span> lw = 2; <span class="comment">//+width()/20.;</span>
 <a name="l00078"></a>00078             p.setPen(QPen(QColor(0, 192, 255), lw, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
 <a name="l00079"></a>00079             <span class="comment">//p.drawEllipse(QRect(1+lw/2, 1+lw/2, width()-2-lw,height()-2-lw));</span>
@@ -277,7 +277,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00198"></a>00198 
 <a name="l00199"></a>00199         <span class="keywordflow">if</span> (msg.<a class="code" href="classceammc_1_1_atom_list.html#ad52fdc5b4f54329460495caa1b00d1ac">size</a>() &gt; 0) {
 <a name="l00200"></a>00200             <span class="keywordflow">if</span> (msg.<a class="code" href="classceammc_1_1_atom_list.html#aa2d99dac15a5a5fe7afa41a38f2aeece" title="returns reference to element at specified position">at</a>(0).<a class="code" href="classceammc_1_1_atom.html#a0f1cf78bc426ca9563ef73112e1f01ba">isFloat</a>())
-<a name="l00201"></a>00201                 x-&gt;value_ = msg.<a class="code" href="classceammc_1_1_atom_list.html#aa2d99dac15a5a5fe7afa41a38f2aeece" title="returns reference to element at specified position">at</a>(0).<a class="code" href="classceammc_1_1_atom.html#abcd5af8080b2b969a6227ceb7135c51c">asFloat</a>() &gt; 0;
+<a name="l00201"></a>00201                 x-&gt;_value = msg.<a class="code" href="classceammc_1_1_atom_list.html#aa2d99dac15a5a5fe7afa41a38f2aeece" title="returns reference to element at specified position">at</a>(0).<a class="code" href="classceammc_1_1_atom.html#abcd5af8080b2b969a6227ceb7135c51c">asFloat</a>() &gt; 0;
 <a name="l00202"></a>00202             <span class="comment">//            if (msg.at(0).isSymbol())</span>
 <a name="l00203"></a>00203             <span class="comment">//                if (msg.at(0).asSymbol() == gensym(&quot;bang&quot;))</span>
 <a name="l00204"></a>00204             <span class="comment">//                    x-&gt;value_ = !x-&gt;value_;</span>
@@ -317,7 +317,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 1 2017 08:31:47 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 1 2017 10:14:20 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

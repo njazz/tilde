@@ -101,8 +101,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00020"></a>00020     Q_OBJECT
 <a name="l00021"></a>00021 
 <a name="l00022"></a>00022 <span class="keyword">private</span>:
-<a name="l00023"></a>00023     <span class="keywordtype">bool</span> clicked_;
-<a name="l00024"></a>00024     <span class="keywordtype">bool</span> value_;
+<a name="l00023"></a>00023     <span class="keywordtype">bool</span> _clicked;
+<a name="l00024"></a>00024     <span class="keywordtype">bool</span> _value;
 <a name="l00025"></a>00025 
 <a name="l00026"></a>00026 <span class="keyword">public</span>:
 <a name="l00027"></a>00027     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_u_i_d_s_p.html#a1fc2d710e07ad61997e7cb0777ad40ba">UIDSP</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* parent = 0);
@@ -120,7 +120,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00039"></a>00039         <a class="code" href="classqtpd_1_1_u_i_object.html#aaf3ec64e20e23bd1a6e98e40e207b9a5" title="set secondary &#39;minimum width&#39; value - used for object box resize">setMinimumBoxWidth</a>(40);
 <a name="l00040"></a>00040         <a class="code" href="classqtpd_1_1_u_i_object.html#a0e30df8242a108e7534044d0fd2e8c9e" title="set secondary &#39;minimum height&#39; value - used for object box resize">setMinimumBoxHeight</a>(40);
 <a name="l00041"></a>00041 
-<a name="l00042"></a>00042         value_ = <span class="keyword">false</span>;
+<a name="l00042"></a>00042         _value = <span class="keyword">false</span>;
 <a name="l00043"></a>00043     };
 <a name="l00044"></a>00044 
 <a name="l00045"></a><a class="code" href="classqtpd_1_1_u_i_d_s_p.html#acdeb653499dbb5c949c0d53c205edce8">00045</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_d_s_p.html#acdeb653499dbb5c949c0d53c205edce8">createObject</a>(<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="code" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447" title="gets object text data /usually overriden by ui objects/">objectData</a>, t_canvas* pdCanvas, <a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* parent = 0)
@@ -169,7 +169,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00088"></a>00088 
 <a name="l00089"></a>00089         p.setRenderHint(QPainter::HighQualityAntialiasing, <span class="keyword">true</span>);
 <a name="l00090"></a>00090 
-<a name="l00091"></a>00091         <span class="keywordflow">if</span> (value_) {
+<a name="l00091"></a>00091         <span class="keywordflow">if</span> (_value) {
 <a name="l00092"></a>00092 
 <a name="l00093"></a>00093             p.setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
 <a name="l00094"></a>00094             <span class="comment">//p.drawEllipse(QRect(1+lw/2, 1+lw/2, width()-2-lw,height()-2-lw));</span>
@@ -233,9 +233,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00153"></a>00153             <span class="comment">//                cmp_sendstring((t_pd*)pdObject(), ((std::string) &quot;bang&quot;).c_str());</span>
 <a name="l00154"></a>00154             <span class="comment">//            }</span>
 <a name="l00155"></a>00155 
-<a name="l00156"></a>00156             value_ = !value_;
+<a name="l00156"></a>00156             _value = !_value;
 <a name="l00157"></a>00157 
-<a name="l00158"></a>00158             <a class="code" href="_pd_link_8h.html#a0f1f4951cf99dff0634789791dcde1ba" title="switch dsp on or off">cmp_switch_dsp</a>(value_);
+<a name="l00158"></a>00158             <a class="code" href="_pd_link_8h.html#a0f1f4951cf99dff0634789791dcde1ba" title="switch dsp on or off">cmp_switch_dsp</a>(_value);
 <a name="l00159"></a>00159 
 <a name="l00160"></a>00160             repaint();
 <a name="l00161"></a>00161         }
@@ -347,7 +347,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 1 2017 08:31:47 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 1 2017 10:14:20 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
