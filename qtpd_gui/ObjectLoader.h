@@ -25,6 +25,8 @@
 #include "oopd/UIClass.h"
 #include "oopd/UIInstance.h"
 
+#include "UIDSP.h"
+
 namespace qtpd {
 
 ////

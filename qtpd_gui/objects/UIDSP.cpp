@@ -10,7 +10,7 @@ UIDSP::UIDSP(UIObject* parent)
 {
     //setPdObjectName("ui.toggle");
 
-    setFixedSize(20, 20);
+    setFixedSize(40, 40);
 
     setMouseTracking(true);
 
@@ -22,8 +22,8 @@ UIDSP::UIDSP(UIObject* parent)
     setAutoFillBackground(true);
     setPalette(Pal);
 
-    setMinimumBoxWidth(20);
-    setMinimumBoxHeight(20);
+    setMinimumBoxWidth(40);
+    setMinimumBoxHeight(40);
 
     _value = false;
 }
