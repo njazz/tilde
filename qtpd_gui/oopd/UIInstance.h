@@ -34,7 +34,7 @@ private:
     OPClass* _opClass;
 
     // todo move?
-    t_outlet* out1;
+    t_outlet* _out1;
 
 public:
     explicit UIInstance(UIObject* parent = 0);
@@ -260,10 +260,10 @@ public:
             cmp_post("new instance");
 
             if (x->pdObject()) {
-                x->out1 = cmp_get_outlet((t_object*)x->pdObject(), 0);
+                x->_out1 = cmp_get_outlet((t_object*)x->pdObject(), 0);
 
-                if (x->out1)
-                    x->_opInstance->addInstanceOut(x->out1);
+                if (x->_out1)
+                    x->_opInstance->addInstanceOut(x->_out1);
                 else
                     cmp_post("instance pd object outlet error");
             }
@@ -325,16 +325,55 @@ public:
 
             t_symbol* s = x->_opInstance->getObjectSymbol();
 
-            if (x->out1) {
+            if (x->_out1) {
                 AtomList list1;
                 list1.append(gensym("pdobject"));
                 list1.append(s);
 
-                list1.output(x->out1);
+                list1.output(x->_out1);
 
             } else {
                 cmp_post("instance outlet error!");
             }
+        }
+
+        // properties
+
+        QString qmsg = msg.at(0).asString().c_str();
+
+        if ( qmsg.at(0) ==  "@" )
+        {
+            qmsg.remove(0,1);
+
+            if ( qmsg.at(qmsg.size()-1) == "?")
+            {
+                qmsg.remove(qmsg.size()-1,1);
+                t_symbol* propertyName = gensym(qmsg.toStdString().c_str());
+                // getter
+                AtomList list = x->_opInstance->getAtomListProperty(propertyName);
+
+                if (x->_out1)
+                {
+                    list.output(x->_out1);
+                }
+                else
+                {
+                    cmp_post("bad pdobject outlet pointer");
+                }
+            }
+            else
+            {
+                // setter
+
+                AtomList list1 = msg;
+                list1.remove(0);
+                t_symbol* propertyName = gensym(qmsg.toStdString().c_str());
+
+
+                qDebug() << "Property name: " << propertyName->s_name;
+                x->_opInstance->setAtomListProperty(propertyName, list1);
+            }
+
         }
 
         //        if (msg.at(0).asString() == "addproperty") {
