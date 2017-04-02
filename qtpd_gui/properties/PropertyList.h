@@ -99,10 +99,11 @@ public:
         UIPropertyDataIterator it;
         for (it = this->_data.begin(); it != this->_data.end(); ++it) {
             //save only modified values
-            if (it->second->data() != it->second->defaultData()) {
-                ret += "@" + it->first + " ";
-                ret += it->second->asPdSaveString() + " ";
-            }
+            if (it->second) //?
+                if (it->second->data() != it->second->defaultData()) {
+                    ret += "@" + it->first + " ";
+                    ret += it->second->asPdSaveString() + " ";
+                }
         }
 
         return ret;
