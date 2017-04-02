@@ -30,19 +30,9 @@ private:
 public:
     PropertyList(){};
 
-    UIPropertyData* group(QString grpName)
-    {
-        UIPropertyData* ret;
-        ret = this->_groups[grpName.toStdString()];
-        return ret;
-    }
+    UIPropertyData* group(QString grpName);
 
-    UIPropertyData* fromGroup(QString grpName)
-    {
-        UIPropertyData* ret;
-        ret = this->_groups[grpName.toStdString()];
-        return ret;
-    }
+    UIPropertyData* fromGroup(QString grpName);
 
     template <typename T>
     void create(std::string pName, std::string pGroup, std::string pVersion, T defaultData)
@@ -77,14 +67,7 @@ public:
         }
     };
 
-    Property* get(std::string pName)
-    {
-        Property* ret = 0;
-        std::map<std::string, Property*>::iterator it = _data.find(pName);
-        if (it != _data.end())
-            ret = this->_data[pName];
-        return ret;
-    };
+    Property* get(std::string pName);
 
     //////////
 
@@ -92,123 +75,33 @@ public:
     /// \brief returns string for saving in file
     /// \return
     ///
-    std::string asPdFileString()
-    {
-        std::string ret;
-
-        UIPropertyDataIterator it;
-        for (it = this->_data.begin(); it != this->_data.end(); ++it) {
-            //save only modified values
-            if (it->second) //?
-                if (it->second->data() != it->second->defaultData()) {
-                    ret += " @" + it->first + " ";
-                    ret += it->second->asPdSaveString() + " ";
-                }
-        }
-
-        return ret;
-    }
+    std::string asPdFileString();
 
     ////
     /// \brief list of all property names
     /// \return
     ///
-    QStringList names()
-    {
-        QStringList ret;
-
-        UIPropertyDataIterator it;
-        for (it = this->_data.begin(); it != this->_data.end(); ++it) {
-            //save only modified values
-            ret.push_back(it->first.c_str());
-        }
-
-        return ret;
-    }
+    QStringList names();
 
     ////
     /// \brief list of all property names for specific propertyData
     /// \detais todo normal classes
     /// \return
     ///
-    QStringList names(UIPropertyData* data1)
-    {
-        QStringList ret;
-
-        UIPropertyDataIterator it;
-        for (it = data1->begin(); it != data1->end(); ++it) {
-            //save only modified values
-            ret.push_back(it->first.c_str());
-        }
-
-        return ret;
-    }
+    QStringList names(UIPropertyData* data1);
 
     ////
     /// \brief list of all group names
     /// \return
     ///
-    QStringList groupNames()
-    {
-        QStringList ret;
-
-        UIPropertyGroupIterator it;
-        for (it = this->_groups.begin(); it != this->_groups.end(); ++it) {
-            //save only modified values
-            ret.push_back(it->first.c_str());
-        }
-
-        return ret;
-    }
+    QStringList groupNames();
 
     ////
     /// \brief extract properties from string in pd file
     /// \details returns first part of the string before the first property
     /// \return
     ///
-    std::string extractFromPdFileString(std::string input)
-    {
-        QStringList propertyList = QString(input.c_str()).split("@");
-
-        qDebug() << "list" << propertyList;
-
-        if (!propertyList.size())
-            return "";
-
-        QString ret = propertyList.at(0);
-        if (ret.size())
-            if (ret.at(ret.size() - 1) == " ")
-                ret = ret.left(ret.size() - 1);
-
-        if (propertyList.size() == 1)
-            return ret.toStdString();
-
-        propertyList.removeAt(0);
-
-        for (QStringList::iterator it = propertyList.begin(); it != propertyList.end(); ++it) {
-            QString s = *it;
-            QStringList list = s.split(" ", QString::SkipEmptyParts);
-
-            //if (list.size() > 1)
-            //{
-            QString pname = list.at(0);
-
-            // lol. fix that later
-
-            qDebug() << "load" << pname << list.join("_");
-
-            if (_data[pname.toStdString()]) {
-                list.removeAt(0);
-                set(pname.toStdString(), list);
-            } else
-                ret.append("@" + s);
-            //}
-
-            // TODO! property type should be saved
-        }
-
-        return ret.toStdString();
-    }
+    std::string extractFromPdFileString(std::string input);
 
 signals:
     void propertyChangedSignal(QString name);

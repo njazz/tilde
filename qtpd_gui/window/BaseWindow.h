@@ -80,14 +80,16 @@ public:
         //                        "clipboard"));
         //connect(copyAct, &QAction::triggered, this, &cm_basewindow::copy);
 
+        duplicateAct = new QAction(tr("Duplicate"), this);
+        duplicateAct->setShortcut(tr("Ctrl+D"));
+
         pasteAct = new QAction(tr("&Paste"), this);
         pasteAct->setShortcuts(QKeySequence::Paste);
         //pasteAct->setStatusTip(tr("Paste the clipboard's contents into the current "
         //                         "selection"));
         //connect(pasteAct, &QAction::triggered, this, &cm_basewindow::paste);
 
-        pasteAct = new QAction(tr("&Paste"), this);
-        pasteAct->setShortcuts(QKeySequence::Paste);
+
 
         dspOnAct = new QAction(tr("DSP On"), this);
         dspOnAct->setShortcut(tr("Ctrl+/"));
@@ -146,6 +148,7 @@ public:
         editMenu->addSeparator();
         editMenu->addAction(cutAct);
         editMenu->addAction(copyAct);
+        editMenu->addAction(duplicateAct);
         editMenu->addAction(pasteAct);
         editMenu->addSeparator();
 
@@ -210,6 +213,7 @@ public:
 
     QAction* cutAct;
     QAction* copyAct;
+    QAction* duplicateAct;
     QAction* pasteAct;
 
     QMenu* fileMenu;
