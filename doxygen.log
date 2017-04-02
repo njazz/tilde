@@ -1388,8 +1388,8 @@ Genera/home/travis/build/njazz/qtpd/qtpd_lib/ceammc-lib/ceammc_gui.h:199: warnin
   parameter 'pdObjectName'
 /home/travis/build/njazz/qtpd/qtpd_gui/FileParser.h:34: warning: The following parameters of qtpd::FileParser::legacyProcess(Canvas *cmcanvas, QStringList list) are not documented:
   parameter 'cmcanvas'
-/home/travis/build/njazz/qtpd/qtpd_gui/properties/PropertyList.h:131: warning: Found unknown command `\detais'
-/home/travis/build/njazz/qtpd/qtpd_gui/properties/PropertyList.h:131: warning: Found unknown command `\detais'
+/home/travis/build/njazz/qtpd/qtpd_gui/properties/PropertyList.h:88: warning: Found unknown command `\detais'
+/home/travis/build/njazz/qtpd/qtpd_gui/properties/PropertyList.h:88: warning: Found unknown command `\detais'
 /home/travis/build/njazz/qtpd/qtpd_gui/UIObject.h:119: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addInlet()
 /home/travis/build/njazz/qtpd/qtpd_gui/UIObject.h:130: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addOutlet()
 /home/travis/build/njazz/qtpd/qtpd_gui/UIObject.h:277: warning: argument 'w' of command @param is not found in the argument list of qtpd::UIObject::minimumBoxHeight()
@@ -1468,6 +1468,6 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-symbol cache used 6049/65536 hits=1051607 misses=6049
-lookup cache used 9998/65536 hits=62420 misses=10717
+symbol cache used 6054/65536 hits=1051723 misses=6054
+lookup cache used 9993/65536 hits=62407 misses=10712
 finished...

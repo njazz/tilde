@@ -141,5 +141,6 @@ var searchData=
   ['dumpui',['dumpUI',['../classceammc_1_1faust_1_1_pd_u_i.html#a4c8693df3b967ca49770652079e21be7',1,'ceammc::faust::PdUI']]],
   ['dup_5ftop',['DUP_TOP',['../opcode_8h.html#a088b123f85cd20b0501c32efb5f38af5',1,'opcode.h']]],
   ['dup_5ftopx',['DUP_TOPX',['../opcode_8h.html#ae944c5c7db31d16a5dcda3e235ff9fb7',1,'opcode.h']]],
+  ['duplicateact',['duplicateAct',['../classqtpd_1_1_base_window.html#a027d61a098ee10d447b38d78cb565f49',1,'qtpd::BaseWindow']]],
   ['dynamicclassinfo',['dynamicClassInfo',['../struct_python_qt_instance_wrapper_struct.html#ab51540bb6336f4b2fd0ffe264fd623d0',1,'PythonQtInstanceWrapperStruct']]]
 ];

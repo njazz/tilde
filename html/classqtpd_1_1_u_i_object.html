@@ -144,7 +144,7 @@ Public Slots</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ac5164efbefa045172ec27eaf957a8fb0">resizeBox</a> (<a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> dx, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> dy)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#af907b37e5d5f8b0481d03f89b2ef7b6f">s_repaint</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#aa75e37df9af2518a6f01c284b0bbaf58">propertyChanged</a> (QString pname)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">this slot is called by property editor or anything that changes property  <a href="#aa75e37df9af2518a6f01c284b0bbaf58"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt;needed for proper threading  <a href="#aa75e37df9af2518a6f01c284b0bbaf58"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="signals"></a>
 Signals</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#af7d4bc79f4fb46e194a380a7f32b8694">editObject</a> (void *box)</td></tr>
@@ -215,8 +215,11 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ad4a986f565df4216f3643053a8e19868">hide</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a67dc3600d5357c9befab0af91cb8b5f9">hideSizeBox</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a055a8f03b9e9a36678cb5804607b6b3e">setHelpName</a> (QString <a class="el" href="_python_8h.html#ab3978d96531ad97f1c3139b11f771f98">name</a>)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ad8b0668e09e587c80bf04a3b2e0a81d5">helpName</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">set short name for help patch (without path)  <a href="#a055a8f03b9e9a36678cb5804607b6b3e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a89f2ee50238101d3900ba3f2ff2146fd">fullHelpName</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns help patch name with path if the file is found  <a href="#a89f2ee50238101d3900ba3f2ff2146fd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a9bd7968c1e875978f700e6615b4c6f53">setObjectSizeMode</a> (<a class="el" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3">t_objectSize</a> os)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">set object resize mode - fixed or sizeable  <a href="#a9bd7968c1e875978f700e6615b4c6f53"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>base class for all object boxes - standard and special </p>
@@ -456,19 +459,22 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad8b0668e09e587c80bf04a3b2e0a81d5"></a><!-- doxytag: member="qtpd::UIObject::helpName" ref="ad8b0668e09e587c80bf04a3b2e0a81d5" args="()" -->
+<a class="anchor" id="a89f2ee50238101d3900ba3f2ff2146fd"></a><!-- doxytag: member="qtpd::UIObject::fullHelpName" ref="a89f2ee50238101d3900ba3f2ff2146fd" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">QString <a class="el" href="classqtpd_1_1_u_i_object.html#ad8b0668e09e587c80bf04a3b2e0a81d5">qtpd::UIObject::helpName</a> </td>
+          <td class="memname">QString <a class="el" href="classqtpd_1_1_u_i_object.html#a89f2ee50238101d3900ba3f2ff2146fd">qtpd::UIObject::fullHelpName</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>returns help patch name with path if the file is found </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -797,13 +803,14 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">QString&#160;</td>
           <td class="paramname"><em>pname</em></td><td>)</td>
-          <td><code> [inline, slot]</code></td>
+          <td><code> [slot]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>this slot is called by property editor or anything that changes property </p>
+<p>&gt;needed for proper threading </p>
+<p>this slot is called by property editor or anything that changes property</p>
 <p>fix this later with better property system </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -868,7 +875,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_object.html#af907b37e5d5f8b0481d03f89b2ef7b6f">qtpd::UIObject::s_repaint</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline, slot]</code></td>
+          <td><code> [slot]</code></td>
         </tr>
       </table>
 </div>
@@ -937,11 +944,19 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">QString&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>set short name for help patch (without path) </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1057,6 +1072,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>set object resize mode - fixed or sizeable </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1189,7 +1212,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 2 2017 20:13:37 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 2 2017 21:21:12 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

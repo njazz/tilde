@@ -60,5 +60,9 @@ var searchData=
   ['moviectlobj_5fnew',['MovieCtlObj_New',['../pymactoolbox_8h.html#a244d8436532a3873e2d6e17d9b8ea098',1,'pymactoolbox.h']]],
   ['movieobj_5fconvert',['MovieObj_Convert',['../pymactoolbox_8h.html#aef12c1d45277ea1b2e8041be1cd9312f',1,'pymactoolbox.h']]],
   ['movieobj_5fnew',['MovieObj_New',['../pymactoolbox_8h.html#a44a1ff57de5ec2513236dad555d541a9',1,'pymactoolbox.h']]],
+  ['msgfree',['msgFree',['../classqtpd_1_1_u_i_instance.html#a01f37e59fc397c2abeefbc2a5ed7a855',1,'qtpd::UIInstance']]],
+  ['msggetobject',['msgGetObject',['../classqtpd_1_1_u_i_instance.html#a6350f275f201fd6e52e2364cb0e52f78',1,'qtpd::UIInstance']]],
+  ['msgnew',['msgNew',['../classqtpd_1_1_u_i_instance.html#ab5a32239a8182a087747c41339391714',1,'qtpd::UIInstance']]],
+  ['msgsetobject',['msgSetObject',['../classqtpd_1_1_u_i_instance.html#a87264a285762fbf71c3ec485fd888750',1,'qtpd::UIInstance']]],
   ['multipleoutput',['multipleOutput',['../classqtpd_1_1_o_p_instance.html#a9e2addc8b1f9f6964b0eea7b79ecd603',1,'qtpd::OPInstance']]]
 ];

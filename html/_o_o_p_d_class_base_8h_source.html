@@ -83,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <a href="_o_o_p_d_class_base_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
-<a name="l00002"></a>00002 <span class="comment">//  OOPD.h</span>
+<a name="l00002"></a>00002 <span class="comment">//  OOPDClassBase.h</span>
 <a name="l00003"></a>00003 <span class="comment">//</span>
 <a name="l00004"></a>00004 <span class="comment">//</span>
 <a name="l00005"></a>00005 <span class="comment">//  Created by Alex Nadzharov on 26/03/17.</span>
@@ -98,34 +98,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00014"></a>00014 <span class="comment">//todo</span>
 <a name="l00015"></a>00015 <span class="preprocessor">#include &quot;../qtpd_lib/ceammc-lib/ceammc_atomlist.h&quot;</span>
 <a name="l00016"></a>00016 
-<a name="l00017"></a>00017 <span class="comment">//#include &lt;QDebug&gt;</span>
-<a name="l00018"></a>00018 
-<a name="l00019"></a>00019 <span class="comment">//class PatchWindow;</span>
-<a name="l00020"></a>00020 
-<a name="l00021"></a>00021 <span class="comment">//check that</span>
-<a name="l00022"></a>00022 <span class="comment">//#include &quot;PatchWindow.h&quot;</span>
-<a name="l00023"></a>00023 
-<a name="l00024"></a>00024 
-<a name="l00025"></a>00025 <span class="keyword">using namespace </span>std;
-<a name="l00026"></a>00026 <span class="keyword">using namespace </span>ceammc;
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028 <span class="keyword">namespace </span>qtpd {
-<a name="l00029"></a>00029 
-<a name="l00030"></a>00030 <span class="comment">//class OPClass;</span>
-<a name="l00031"></a>00031 <span class="comment">//class OPInstance;</span>
-<a name="l00032"></a>00032 <span class="keyword">class </span>PatchWindow;
-<a name="l00033"></a>00033 
-<a name="l00037"></a><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html">00037</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html" title="base data structure for class and instance: name, canvas, symbol">OOPDClassBase</a> {
-<a name="l00038"></a>00038 <span class="keyword">public</span>:
-<a name="l00039"></a>00039     <span class="comment">//todo</span>
-<a name="l00040"></a><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#af49aba2510e177e17ffb43fd18bb1b4e">00040</a>     <span class="keywordtype">string</span> <a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#af49aba2510e177e17ffb43fd18bb1b4e">_className</a>;
-<a name="l00041"></a><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#ab36067930bef9e8daa886150e517ef63">00041</a>     t_canvas* <a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#ab36067930bef9e8daa886150e517ef63">_canvas</a>;
-<a name="l00042"></a><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#a330f2b1a7b90d671e11141bd1f9ddb48">00042</a>     t_symbol* <a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#a330f2b1a7b90d671e11141bd1f9ddb48">_symbol</a>;
-<a name="l00043"></a><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#ab0b21c4d9f3b19c7b13f20b8cd224d65">00043</a>     <a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* <a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#ab0b21c4d9f3b19c7b13f20b8cd224d65">_patchWindow</a>;
-<a name="l00044"></a>00044 };
-<a name="l00045"></a>00045 }
-<a name="l00046"></a>00046 
-<a name="l00047"></a>00047 <span class="preprocessor">#endif </span><span class="comment">/* OOPD_h */</span>
+<a name="l00017"></a>00017 <span class="keyword">using namespace </span>std;
+<a name="l00018"></a>00018 <span class="keyword">using namespace </span>ceammc;
+<a name="l00019"></a>00019 
+<a name="l00020"></a>00020 <span class="keyword">namespace </span>qtpd {
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022 <span class="comment">//class OPClass;</span>
+<a name="l00023"></a>00023 <span class="comment">//class OPInstance;</span>
+<a name="l00024"></a>00024 <span class="keyword">class </span>PatchWindow;
+<a name="l00025"></a>00025 
+<a name="l00029"></a><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html">00029</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html" title="base data structure for class and instance: name, canvas, symbol">OOPDClassBase</a> {
+<a name="l00030"></a>00030 <span class="keyword">public</span>:
+<a name="l00031"></a>00031     <span class="comment">//todo</span>
+<a name="l00032"></a><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#af49aba2510e177e17ffb43fd18bb1b4e">00032</a>     <span class="keywordtype">string</span> <a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#af49aba2510e177e17ffb43fd18bb1b4e">_className</a>;
+<a name="l00033"></a><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#ab36067930bef9e8daa886150e517ef63">00033</a>     t_canvas* <a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#ab36067930bef9e8daa886150e517ef63">_canvas</a>;
+<a name="l00034"></a><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#a330f2b1a7b90d671e11141bd1f9ddb48">00034</a>     t_symbol* <a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#a330f2b1a7b90d671e11141bd1f9ddb48">_symbol</a>;
+<a name="l00035"></a><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#ab0b21c4d9f3b19c7b13f20b8cd224d65">00035</a>     <a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* <a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#ab0b21c4d9f3b19c7b13f20b8cd224d65">_patchWindow</a>;
+<a name="l00036"></a>00036 };
+<a name="l00037"></a>00037 }
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039 <span class="preprocessor">#endif </span><span class="comment">/* OOPD_h */</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -144,7 +136,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 2 2017 20:13:35 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 2 2017 21:21:10 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

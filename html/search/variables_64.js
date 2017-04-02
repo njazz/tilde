@@ -45,5 +45,6 @@ var searchData=
   ['dragobject',['dragObject',['../classqtpd_1_1_canvas.html#ae2c013a94a5244db8672c6e0b3cf879f',1,'qtpd::Canvas']]],
   ['dragoffset',['dragOffset',['../classqtpd_1_1_u_i_widget.html#a2d41a6273dedf638982292267e27ff37',1,'qtpd::UIWidget']]],
   ['draw_5factive',['draw_active',['../structui__knob.html#aca41c545e52c3081fc40cf26084ee442',1,'ui_knob']]],
-  ['dummy',['dummy',['../union__gc__head.html#ac3dd0fc3bbc73d3dffd5df3589c00939',1,'_gc_head']]]
+  ['dummy',['dummy',['../union__gc__head.html#ac3dd0fc3bbc73d3dffd5df3589c00939',1,'_gc_head']]],
+  ['duplicateact',['duplicateAct',['../classqtpd_1_1_base_window.html#a027d61a098ee10d447b38d78cb565f49',1,'qtpd::BaseWindow']]]
 ];
