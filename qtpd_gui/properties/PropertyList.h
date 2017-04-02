@@ -101,7 +101,7 @@ public:
             //save only modified values
             if (it->second) //?
                 if (it->second->data() != it->second->defaultData()) {
-                    ret += "@" + it->first + " ";
+                    ret += " @" + it->first + " ";
                     ret += it->second->asPdSaveString() + " ";
                 }
         }
