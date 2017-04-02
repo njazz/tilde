@@ -16,10 +16,7 @@
 //todo proper pattern
 #include "OpenFileProxy.h"
 
-//#include "cm_pdlink.h"
-
 #include "OOPDHeaders.h"
-
 
 namespace qtpd {
 
@@ -31,7 +28,7 @@ class UIClass : public UIObject {
     Q_OBJECT
 
 private:
-    OPClass *_opClass;
+    OPClass* _opClass;
 
 public:
     explicit UIClass(UIObject* parent = 0);
@@ -43,7 +40,8 @@ public:
         //t_canvas* pd_Canvas;
 
         //temporary fix
-        if (objectData=="") objectData = "pdclass";
+        if (objectData == "")
+            objectData = "pdclass";
 
         UIClass* b = new UIClass((UIObject*)parent);
 
@@ -67,18 +65,14 @@ public:
         if (!pd_Canvas) {
             qDebug("bad pd canvas instance");
             b->setErrorBox(true);
-        } else
-        {
-            new_obj = cmp_create_object(pd_Canvas, "pdclass", 0,0);
+        } else {
+            new_obj = cmp_create_object(pd_Canvas, "pdclass", 0, 0);
         }
 
         // new class w/canvas
-        if (list.size()>1)
-        {
+        if (list.size() > 1) {
             b->_opClass = new OPClass(list.at(1).toStdString());
-        }
-        else
-        {
+        } else {
             b->_opClass = new OPClass();
         }
 
@@ -88,7 +82,7 @@ public:
 
             b->setPdObject(new_obj);
 
-            cmp_connectUI((t_pd*)new_obj,(void*)b,&UIClass::updateUI);
+            cmp_connectUI((t_pd*)new_obj, (void*)b, &UIClass::updateUI);
 
         } else {
             qDebug("Error: no pd object");
@@ -126,7 +120,7 @@ public:
         }
 
         QColor rectColor = (errorBox()) ? QColor(255, 0, 0) : properties()->get("BorderColor")->asQColor(); //QColor(128, 128, 128);
-        p.setPen(QPen(rectColor, 2 , (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p.setPen(QPen(rectColor, 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         p.drawRect(0, 0, width(), height());
         QTextOption* op = new QTextOption;
         op->setAlignment(Qt::AlignLeft);
@@ -229,34 +223,32 @@ public:
     {
         // message handling here - probably move somewhere else?
 
-        UIClass *x = (UIClass*)uiobj;
+        UIClass* x = (UIClass*)uiobj;
 
-        if (msg.size() <1) return;
-        if (!msg.at(0).isSymbol()) return;
+        if (msg.size() < 1)
+            return;
+        if (!msg.at(0).isSymbol())
+            return;
 
-        if ( (msg.at(0).asString() == "newclass") && (msg.size()>2) )
-        {
-
+        if ((msg.at(0).asString() == "newclass") && (msg.size() > 2)) {
         }
 
-        if ( (msg.at(0).asString() == "addproperty") && (msg.size()>2) )            //addproperty pname sendsymbol
+        if ((msg.at(0).asString() == "addproperty") && (msg.size() > 2)) //addproperty pname sendsymbol
         {
             x->_opClass->addProperty(msg.at(1).asString(), msg.at(2).asString());
         }
 
-        if (msg.at(0).asString() == "delproperty")
-        {}
-
-        if ( (msg.at(0).asString() == "addmethod") && (msg.size()>2) )
-        {
-           x->_opClass->addMethod(msg.at(1).asString(), msg.at(2).asString());      //addmethod pname sendsymbol
+        if (msg.at(0).asString() == "delproperty") {
         }
 
-        if (msg.at(0).asString() == "delmethod")
-        {}
+        if ((msg.at(0).asString() == "addmethod") && (msg.size() > 2)) {
+            x->_opClass->addMethod(msg.at(1).asString(), msg.at(2).asString()); //addmethod pname sendsymbol
+        }
 
-        if (msg.at(0).asString() == "info")
-        {
+        if (msg.at(0).asString() == "delmethod") {
+        }
+
+        if (msg.at(0).asString() == "info") {
             AtomList l1 = x->_opClass->getPropertyList();
             AtomList l2 = x->_opClass->getMethodList();
 
@@ -265,22 +257,19 @@ public:
             output += "class info: ";
 
             output += "properties:";
-            for (int i=0;i<l1.size();i++)
-            {
+            for (int i = 0; i < l1.size(); i++) {
                 output += (l1.at(i).asString().c_str());
             }
 
             output += "methods:";
-            for (int i=0;i<l2.size();i++)
-            {
+            for (int i = 0; i < l2.size(); i++) {
                 output += (l2.at(i).asString().c_str());
             }
 
             cmp_post(output.join("\n").toStdString().c_str());
-
         }
 
-        emit ((UIClass*)uiobj)->updateUISignal();
+        emit((UIClass*)uiobj)->updateUISignal();
     }
 
 signals:
@@ -297,7 +286,6 @@ private slots:
     {
         repaint();
     }
-
 };
 }
 

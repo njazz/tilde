@@ -17,14 +17,11 @@
 #include "../qtpd_lib/ceammc-lib/ceammc_atomlist.h"
 
 //
-#include <QStringList>
 #include <QDebug>
+#include <QStringList>
 
 using namespace std;
 using namespace ceammc;
-
-//#include "OPClass.h"
-//#include "OPInstance.h"
 
 namespace qtpd {
 
@@ -47,7 +44,6 @@ typedef vector<t_outlet*> OPOutputs; ///< vector of method boxes outputs
 typedef vector<t_object*> OPProperties; ///< vector of property boxes
 
 // ------------------------------------------------------------
-
 
 ////
 /// \brief stores global information about OOPD classes / instances
@@ -154,7 +150,6 @@ public:
         return !(classByCanvas(canvas) || instanceByCanvas(canvas));
     }
 };
-
 }
 
 #endif /* OOPD_h */

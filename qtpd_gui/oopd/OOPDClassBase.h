@@ -1,5 +1,5 @@
 //
-//  OOPD.h
+//  OOPDClassBase.h
 //
 //
 //  Created by Alex Nadzharov on 26/03/17.
@@ -13,14 +13,6 @@
 
 //todo
 #include "../qtpd_lib/ceammc-lib/ceammc_atomlist.h"
-
-//#include <QDebug>
-
-//class PatchWindow;
-
-//check that
-//#include "PatchWindow.h"
-
 
 using namespace std;
 using namespace ceammc;

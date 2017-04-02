@@ -16,8 +16,6 @@
 //todo proper pattern
 #include "OpenFileProxy.h"
 
-//#include "cm_pdlink.h"
-
 #include "OOPDHeaders.h"
 
 namespace qtpd {
@@ -382,7 +380,6 @@ signals:
     mouseMoved();
     void rightClicked();
 
-    //void editObject(UIObject* box);
 signals:
     void updateUISignal();
 

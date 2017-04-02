@@ -1,5 +1,5 @@
 //
-//  OOPD.cpp
+//  OPClass.cpp
 //
 //
 //  Created by Alex Nadzharov on 26/03/17.
@@ -7,10 +7,7 @@
 //
 
 #include "OOPD.h"
-
 #include "OPClass.h"
-
-//#include "PatchWindow.h"
 
 //temp
 #include "FileParser.h"

@@ -1,21 +1,17 @@
 //
-//  OOPD.cpp
+//  OPInstance.cpp
 //
 //
 //  Created by Alex Nadzharov on 26/03/17.
 //
 //
 
-
-#include "OOPD.h"
 #include "OPInstance.h"
+#include "OPClass.h"
+#include "OOPD.h"
 
-//#include "PatchWindow.h"
-
-//temp
+#include "PatchWindow.h"
 #include "FileParser.h"
-#include "FileSaver.h"
-
 
 namespace qtpd {
 
