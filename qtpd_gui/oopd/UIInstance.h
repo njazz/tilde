@@ -229,6 +229,94 @@ public:
         setOutletsPos();
     }
 
+    // ---------------------------------------------
+
+    void msgNew(ceammc::AtomList msg)
+    {
+        qDebug() << "new instance";
+
+        _opClass = OOPD::inst()->classByName(msg.at(1).asString());
+
+        if (!_opClass) {
+            cmp_post("class not found: ");
+            cmp_post(msg.at(1).asString());
+            return;
+        }
+
+        _opInstance = new OPInstance(_opClass);
+        cmp_post("new instance");
+
+        if (pdObject()) {
+            _out1 = cmp_get_outlet((t_object*)pdObject(), 0);
+
+            if (_out1)
+                _opInstance->addInstanceOut(_out1);
+            else
+                cmp_post("instance pd object outlet error");
+        }
+
+        //cmp_get_inlet/outlet
+        _opInstance->addInstanceOut(0);
+    }
+
+    void msgFree(AtomList msg)
+    {
+
+        if (_opInstance) {
+            if (pdObject()) {
+                t_outlet* out1 = cmp_get_outlet((t_object*)pdObject(), 0);
+                if (out1)
+
+                    _opInstance->freeInstanceOut(out1);
+                else
+                    cmp_post("instance pd object outlet error");
+            }
+
+            _opInstance->freeInstanceOut(0);
+            delete _opInstance;
+        }
+
+        _opInstance = 0;
+        cmp_post("free instance");
+    }
+
+    void msgSetObject(AtomList msg)
+    {
+        cmp_post("pdobject");
+
+        if (msg.size() < 2) {
+            cmp_post("setobject: needs pdobject pointer");
+            return;
+        }
+
+        qDebug() << "symbol: " << msg.at(1).asSymbol()->s_name;
+
+        _opInstance = OPInstance::fromObjectSymbol(msg.at(1).asSymbol());
+
+        qDebug() << "instance: " << _opInstance;
+
+        repaint();
+    }
+
+    void msgGetObject(AtomList msg)
+    {
+
+        t_symbol* s = _opInstance->getObjectSymbol();
+
+        if (_out1) {
+            AtomList list1;
+            list1.append(gensym("pdobject"));
+            list1.append(s);
+
+            list1.output(_out1);
+
+        } else {
+            cmp_post("instance outlet error!");
+        }
+    }
+
+    // ---------------------------------------------
+
     static void updateUI(void* uiobj, ceammc::AtomList msg)
     {
         // message handling here - probably move somewhere else?
@@ -238,104 +326,33 @@ public:
         if (!msg.at(0).isSymbol())
             return;
 
+        UIInstance* x = ((UIInstance*)uiobj);
+        // =========
+        // methods
+        if (x->_opInstance) {
+            x->_opInstance->callMethod(msg);
+            //return;
+        }
+
         // ===========
 
         if ((msg.at(0).asString() == "new") && (msg.size() > 1)) {
-
-            qDebug() << "new instance";
-
-            UIInstance* x = ((UIInstance*)uiobj);
-
-            x->_opClass = OOPD::inst()->classByName(msg.at(1).asString());
-
-            if (!x->_opClass) {
-                cmp_post("class not found: ");
-                cmp_post(msg.at(1).asString());
-                return;
-            }
-
-            x->_opInstance = new OPInstance(x->_opClass);
-            cmp_post("new instance");
-
-            if (x->pdObject()) {
-                x->_out1 = cmp_get_outlet((t_object*)x->pdObject(), 0);
-
-                if (x->_out1)
-                    x->_opInstance->addInstanceOut(x->_out1);
-                else
-                    cmp_post("instance pd object outlet error");
-            }
-
-            //cmp_get_inlet/outlet
-            x->_opInstance->addInstanceOut(0);
+            x->msgNew(msg);
         }
-
-        // ===========
 
         if (msg.at(0).asString() == "free") {
-
-            UIInstance* x = ((UIInstance*)uiobj);
-            if (x->_opInstance) {
-                if (x->pdObject()) {
-                    t_outlet* out1 = cmp_get_outlet((t_object*)x->pdObject(), 0);
-                    if (out1)
-
-                        x->_opInstance->freeInstanceOut(out1);
-                    else
-                        cmp_post("instance pd object outlet error");
-                }
-
-                x->_opInstance->freeInstanceOut(0);
-                delete x->_opInstance;
-            }
-
-            x->_opInstance = 0;
-            cmp_post("free instance");
-        }
-
-        // =========
-        // methods
-        UIInstance* x = ((UIInstance*)uiobj);
-        if (x->_opInstance) {
-            x->_opInstance->callMethod(msg);
+            x->msgFree(msg);
         }
 
         if (msg.at(0).asString() == "pdobject") {
-
-            cmp_post("pdobject");
-
-            if (msg.size() < 2) {
-                cmp_post("setobject: needs pdobject pointer");
-                return;
-            }
-
-            qDebug() << "symbol: " << msg.at(1).asSymbol()->s_name;
-
-            x->_opInstance = OPInstance::fromObjectSymbol(msg.at(1).asSymbol());
-
-            qDebug() << "instance: " << x->_opInstance;
-
-            x->repaint();
+            x->msgSetObject(msg);
         }
 
         if (msg.at(0).asString() == "getobject") {
-
-            t_symbol* s = x->_opInstance->getObjectSymbol();
-
-            if (x->_out1) {
-                AtomList list1;
-                list1.append(gensym("pdobject"));
-                list1.append(s);
-
-                list1.output(x->_out1);
-
-            } else {
-                cmp_post("instance outlet error!");
-            }
+            x->msgGetObject(msg);
         }
 
         // properties
-
         QString qmsg = msg.at(0).asString().c_str();
 
         if (qmsg.at(0) == "@") {
