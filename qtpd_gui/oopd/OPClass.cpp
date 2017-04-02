@@ -6,8 +6,8 @@
 //
 //
 
-#include "OOPD.h"
 #include "OPClass.h"
+#include "OOPD.h"
 
 //temp
 #include "FileParser.h"
@@ -45,10 +45,19 @@ void OPClass::showWindow()
 
 void OPClass::readFile()
 {
+    QString fileName = _className.c_str();
+    fileName = fileName + ".class.pd";
+
+    FileParser::open(fileName);
+    //delete previous patchWindow
+    _patchWindow = FileParser::parserFirstWinfow();
 }
 
 void OPClass::writeFile()
 {
-}
+    QString fileName = _className.c_str();
+    fileName = fileName + ".class.pd";
 
+    FileSaver::save(fileName, _patchWindow->canvas);
+}
 }

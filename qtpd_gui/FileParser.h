@@ -31,6 +31,16 @@ public:
         _pdParserPrevWindow = wnd;
         _pdParserWindow = wnd;
     }
+
+    ////
+    /// \brief returns first created window
+    /// \details mostly used by OOP loader
+    /// \return
+    ///
+    static PatchWindow* parserFirstWinfow()
+    {
+        return _pdParserFirstWindow;
+    }
     ////
     /// \brief [3.2] process legacy pd files
     /// \param list

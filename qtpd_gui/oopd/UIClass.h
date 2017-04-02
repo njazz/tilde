@@ -269,6 +269,18 @@ public:
             cmp_post(output.join("\n").toStdString().c_str());
         }
 
+        if ( (msg.at(0).asString() == "read") ){
+            //QString fname =QString( _opClass->  ) + ".class.pd";
+            x->_opClass->readFile();
+
+        }
+
+        if ( (msg.at(0).asString() == "write")  ){
+            //QString fname = QString(msg.at(0).asString().c_str()) + ".class.pd";
+            x->_opClass->writeFile();
+
+        }
+
         emit((UIClass*)uiobj)->updateUISignal();
     }
 
