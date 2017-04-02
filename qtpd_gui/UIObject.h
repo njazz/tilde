@@ -64,12 +64,12 @@ private:
     QAction* pmOpen;
 
     //
-    QString _helpName;
+    QString _fullHelpName;
 
     //
-    QString fullHelpName()
+    QString fullfullHelpName()
     {
-        if (helpName() == "")
+        if (fullHelpName() == "")
             return "";
 
         QString ret = "";
@@ -285,101 +285,42 @@ public:
 
     void hideSizeBox();
 
-    //void contextMenuEvent(QContextMenuEvent* event);
-    //virtual void customContextMenuRequested(const QPoint &pos);
+    ////
+    /// \brief set short name for help patch (without path)
+    /// \param name
+    ///
+    void setHelpName(QString name);
 
-    void setHelpName(QString name)
-    {
-        _helpName = name;
+    ////
+    /// \brief returns help patch name with path if the file is found
+    /// \return
+    ///
+    QString fullHelpName();
 
-    }
-
-    QString helpName() {
-
-        QString name;
-
-        QStringList paths = Preferences::inst().paths();
-
-        if (paths.size() == 0) {
-            _helpName = "";
-            cmp_post("Help: bad search paths");
-            return "";
-        }
-
-        for (int i = 0; i < paths.size(); i++) {
-
-            QString path = paths.at(i);
-            // todo windows
-            QString fullname = path + "/" + name;
-            QFileInfo check_file(fullname);
-
-            qDebug() << fullname;
-
-            if (check_file.exists() && check_file.isFile()) {
-
-                //_helpName = fullname;
-                qDebug() << "FOUND: " << fullname;
-                return "";
-            }
-
-            //todo check if it exists in several folders
-        }
-
-        QString p1 = "Help: not found: " + name;
-        cmp_post(p1.toStdString().c_str());
-
-        return name;
-
-    }
-
+    ////
+    /// \brief set object resize mode - fixed or sizeable
+    /// \param os
+    ///
     void setObjectSizeMode(t_objectSize os) { _objectSizeMode = os; }
 
 private slots:
-    void openPropertiesWindow()
-    {
-        PropertiesWindow* pw = new PropertiesWindow(properties());
-        pw->show();
-    }
-
-    void openHelpWindow()
-    {
-        QString helpName_ = helpName();
-        if (helpName_ != "") {
-            OpenFileProxy::openAbstraction(helpName_);
-        }
-    }
+    void openPropertiesWindow();
+    void openHelpWindow();
 
 signals:
     void editObject(void* box);
-
     void callRepaint(); //needed for proper threading
 
 public slots:
     void resizeBox(int dx, int dy);
-
-    void s_repaint() //needed for proper threading
-    {
-        repaint();
-    }
+    void s_repaint(); ///>needed for proper threading
 
     ////
     /// \brief this slot is called by property editor or anything that changes property
     /// \details fix this later with better property system
     /// \param pname
     ///
-    void propertyChanged(QString pname)
-    {
-        // spaghetti again
-
-        if (pname == "Size")
-            setFixedSize(properties()->get("Size")->asQSize());
-
-        //just visuals
-        if (pname == "FontSize")
-            repaint();
-        if (pname == "BorderColor")
-            repaint();
-    }
+    void propertyChanged(QString pname);
 };
 }
 

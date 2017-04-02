@@ -387,4 +387,92 @@ void UIObject::hideSizeBox()
 {
     _sizeBox->hide();
 }
+
+
+void UIObject::setHelpName(QString name)
+{
+    _fullHelpName = name;
+
+}
+
+QString UIObject::fullHelpName() {
+
+    QString name = _fullHelpName;
+
+    QStringList paths = Preferences::inst().paths();
+
+    if (paths.size() == 0) {
+        _fullHelpName = "";
+        cmp_post("Help: bad search paths");
+        return "";
+    }
+
+    for (int i = 0; i < paths.size(); i++) {
+
+        QString path = paths.at(i);
+        // todo windows
+        QString fullname = path + "/" + name;
+        QFileInfo check_file(fullname);
+
+        qDebug() << fullname;
+
+        if (check_file.exists() && check_file.isFile()) {
+
+            //_fullHelpName = fullname;
+            qDebug() << "FOUND: " << fullname;
+            return fullname;
+        }
+
+        //todo check if it exists in several folders
+    }
+
+    QString p1 = "Help: not found: " + name;
+    cmp_post(p1.toStdString().c_str());
+
+    return name;
+
+}
+
+
+// -------
+
+void UIObject::openPropertiesWindow()
+{
+    PropertiesWindow* pw = new PropertiesWindow(properties());
+    pw->show();
+}
+
+void UIObject::openHelpWindow()
+{
+    QString fullHelpName_ = fullHelpName();
+    if (fullHelpName_ != "") {
+        OpenFileProxy::openAbstraction(fullHelpName_);
+    }
+}
+
+
+
+
+
+void UIObject::s_repaint() //needed for proper threading
+{
+    repaint();
+}
+
+
+void UIObject::propertyChanged(QString pname)
+{
+    // spaghetti again
+
+    if (pname == "Size")
+        setFixedSize(properties()->get("Size")->asQSize());
+
+    //just visuals
+    if (pname == "FontSize")
+        repaint();
+    if (pname == "BorderColor")
+        repaint();
+}
+
+
 }
