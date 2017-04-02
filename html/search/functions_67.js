@@ -42,6 +42,7 @@ var searchData=
   ['getmtimeofsource',['getMTimeOfSource',['../class_python_qt_import.html#a2e8f87cf521d23e134e6f87f5bb01842',1,'PythonQtImport']]],
   ['getobjectbyindex',['getObjectByIndex',['../classqtpd_1_1_canvas.html#ade23498305afccb07fe53e532a9d76cc',1,'qtpd::Canvas']]],
   ['getobjects',['getObjects',['../classqtpd_1_1_clipboard.html#a1135b1401321ec1e5e183a4c547cb0c3',1,'qtpd::Clipboard']]],
+  ['getobjectsymbol',['getObjectSymbol',['../classqtpd_1_1_o_p_instance.html#ad55a70a4df6bfd1762c75540c76cc171',1,'qtpd::OPInstance']]],
   ['getparameterinfoformetatype',['getParameterInfoForMetaType',['../class_python_qt_method_info.html#a0c1b1e309d02a23af632d7dc796b66a3',1,'PythonQtMethodInfo']]],
   ['getparentclass',['getParentClass',['../classqtpd_1_1_o_p_class.html#a06508c49bb1be8fca9f5accdfd57f9b0',1,'qtpd::OPClass']]],
   ['getpatchcords',['getPatchcords',['../classqtpd_1_1_clipboard.html#a4fe94512251a0a645fd1e5325bb309b5',1,'qtpd::Clipboard']]],

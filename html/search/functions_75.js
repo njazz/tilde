@@ -26,7 +26,7 @@ var searchData=
   ['unbindreceive',['unbindReceive',['../classceammc_1_1_base_object.html#a8107328beafb53a049ad62b6c9c5cda9',1,'ceammc::BaseObject']]],
   ['unmarshalcode',['unmarshalCode',['../class_python_qt_import.html#a5f08cf976f329e68013601fe1d50c2d1',1,'PythonQtImport']]],
   ['unregisterclass',['unregisterClass',['../classqtpd_1_1_o_o_p_d.html#a2adccd41d37014bdec882d3219d61b8c',1,'qtpd::OOPD']]],
-  ['unregisterinstance',['unregisterInstance',['../classqtpd_1_1_o_o_p_d.html#ac4e7a43d93df300fb3b6bebdec4e91cd',1,'qtpd::OOPD']]],
+  ['unregisterinstance',['unregisterInstance',['../classqtpd_1_1_o_o_p_d.html#abf01b52ccb580a6c4edfa3c7b87cbf32',1,'qtpd::OOPD']]],
   ['unscopedclassname',['unscopedClassName',['../class_python_qt_class_info.html#aae71c13100b20a511136337194787984',1,'PythonQtClassInfo']]],
   ['unwrap',['unwrap',['../class_python_qt_foreign_wrapper_factory.html#a3e64ca45f5eec1a6101a49d7b9827b88',1,'PythonQtForeignWrapperFactory']]],
   ['unwrapforeignwrapper',['unwrapForeignWrapper',['../class_python_qt_private.html#a55ff1e5d9e0bc93cf594c14cd2d8d236',1,'PythonQtPrivate']]],

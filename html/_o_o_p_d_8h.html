@@ -88,6 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><code>#include &quot;m_pd.h&quot;</code><br/>
 <code>#include &lt;map&gt;</code><br/>
+<code>#include &lt;set&gt;</code><br/>
 <code>#include &quot;../qtpd_lib/ceammc-lib/ceammc_atomlist.h&quot;</code><br/>
 <code>#include &lt;QStringList&gt;</code><br/>
 <code>#include &lt;QDebug&gt;</code><br/>
@@ -96,14 +97,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_o_p_d_class_base.html">qtpd::OOPDClassBase</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">base data structure for class and instance: name, canvas, symbol  <a href="classqtpd_1_1_o_o_p_d_class_base.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_o_p_d.html">qtpd::OOPD</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">stores global information about <a class="el" href="classqtpd_1_1_o_o_p_d.html" title="stores global information about OOPD classes / instances">OOPD</a> classes / instances  <a href="classqtpd_1_1_o_o_p_d.html#details">More...</a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_p_class.html">qtpd::OPClass</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classqtpd_1_1_o_o_p_d.html" title="stores global information about OOPD classes / instances">OOPD</a> class structure.  <a href="classqtpd_1_1_o_p_class.html#details">More...</a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_p_instance.html">qtpd::OPInstance</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classqtpd_1_1_o_o_p_d.html" title="stores global information about OOPD classes / instances">OOPD</a> class instance.  <a href="classqtpd_1_1_o_p_instance.html#details">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html">qtpd</a></td></tr>
@@ -118,10 +113,11 @@ Typedefs</h2></td></tr>
 *, OPInstance * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a025e76387ae74b63edc7ea6817bac812">qtpd::t_OPInstanceByCanvas</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef map&lt; t_symbol <br class="typebreak"/>
 *, OPInstance * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a8b096c75321d4dbbfe8fd1047ec14989">qtpd::t_OPInstanceBySymbol</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef vector&lt; t_outlet * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a5d2e61cbafa4bdbe8f66e8d68e0c6fd5">qtpd::OPOutputs</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">vector of method boxes outputs  <a href="#a5d2e61cbafa4bdbe8f66e8d68e0c6fd5"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef vector&lt; t_object * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#aa9aca465cf2384a299548554a5ae3c6d">qtpd::OPProperties</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">vector of property boxes  <a href="#aa9aca465cf2384a299548554a5ae3c6d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef set&lt; OPInstance * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a9ab76f3031aa5e393411be42a9978ae5">qtpd::t_existingInstances</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef vector&lt; t_outlet * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a8a2ab10220c811c82f880bb28c70dc9f">qtpd::OPOutputs</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">vector of method boxes outputs  <a href="#a8a2ab10220c811c82f880bb28c70dc9f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef vector&lt; t_object * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#aa647b940a3756e6f714b00f44e983dcb">qtpd::OPProperties</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">vector of property boxes  <a href="#aa647b940a3756e6f714b00f44e983dcb"></a><br/></td></tr>
 </table>
 </div><!-- contents -->
 <!-- window showing the filter options -->
@@ -141,7 +137,7 @@ Typedefs</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 1 2017 23:33:46 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 2 2017 20:13:35 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -33,6 +33,7 @@ var searchData=
   ['freesignal',['freeSignal',['../classqtpd_1_1_o_p_class.html#a7d7059bd1b9024364eec17018878d796',1,'qtpd::OPClass::freeSignal()'],['../classqtpd_1_1_o_p_instance.html#a6a4fc8931745a555ce41b9312334bdb6',1,'qtpd::OPInstance::freeSignal()']]],
   ['frexp',['frexp',['../pymath_8h.html#a3e2b550e22e6a002262c5a8a339498f0',1,'pymath.h']]],
   ['fromgroup',['fromGroup',['../classqtpd_1_1_property_list.html#a3a9698daf247ccbd96d3ada9f2cfbca5',1,'qtpd::PropertyList']]],
+  ['fromobjectsymbol',['fromObjectSymbol',['../classqtpd_1_1_o_p_instance.html#aab02df64a3a71d3d23582b56363beb60',1,'qtpd::OPInstance']]],
   ['frompddata',['fromPdData',['../classceammc_1_1_atom_list.html#a4a2e9ce3816e03a75a7e26eaac83e6fe',1,'ceammc::AtomList::fromPdData(size_t n, t_atom *lst)'],['../classceammc_1_1_atom_list.html#ac262f1872eb937927b263719979366e9',1,'ceammc::AtomList::fromPdData(int n, t_atom *lst)']]],
   ['fromvariant',['fromVariant',['../class_python_qt_object_ptr.html#ae051cfaafaeeefd1f6940df269cf7ade',1,'PythonQtObjectPtr']]],
   ['fullname',['fullName',['../classceammc_1_1faust_1_1_pd_u_i.html#a13c5ee69aa9e37c4d00189463bd8a22c',1,'ceammc::faust::PdUI']]],

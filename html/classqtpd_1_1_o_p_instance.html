@@ -112,7 +112,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The <a class="el" href="classqtpd_1_1_o_o_p_d.html" title="stores global information about OOPD classes / instances">OOPD</a> class instance.  
  <a href="classqtpd_1_1_o_p_instance.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_o_o_p_d_8h_source.html">OOPD.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_o_p_instance_8h_source.html">OPInstance.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for qtpd::OPInstance:</div>
 <div class="dyncontent">
@@ -128,7 +128,7 @@ Inheritance diagram for qtpd::OPInstance:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_p_instance.html#a8b6ed0b0389b200c2d14265f3350a73f">OPInstance</a> (<a class="el" href="classqtpd_1_1_o_p_class.html">OPClass</a> *opClass)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_p_instance.html#aee78dcf9232ad9ef9bc0ddb1733a8054">~OPInstance</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_p_instance.html#a0b45a49443b5ba417818525b34de1ce8">~OPInstance</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_p_instance.html#a38381f449f98c5b5c6e4a34f077440eb">addMethodOutlet</a> (t_symbol *methodName, t_outlet *outlet)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_p_instance.html#af5c238bc93d5cc5a1ca81398d38a750e">freeMethod</a> (t_symbol *methodName)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_p_instance.html#a62983a3a0638c9190f9fc61cfc5aeb39">addMethodPointerOutlet</a> (t_symbol *methodName, t_outlet *outlet)</td></tr>
@@ -145,16 +145,20 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_p_instance.html#a9e2addc8b1f9f6964b0eea7b79ecd603">multipleOutput</a> (<a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> list)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_p_instance.html#ad72aa5914beafca47cf4ef78a245c073">callMethod</a> (<a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> list)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_p_instance.html#aad6f8ffb305d100701ee244efbf8d7fa">callSetter</a> (<a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> list)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_p_instance.html#a63eb7d4e85ea527fb37f284a083acf2c">callSetter</a> (t_symbol *propertyName, <a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> list)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_p_instance.html#a7a8710617ef1c9d559516a7c3dbfb1b2">callGetter</a> (<a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> list)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_p_instance.html#a455a8dd82365ba002e37d0572f939449">callGetter</a> (t_symbol *propertyName)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classceammc_1_1_atom_list.html">AtomList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_p_instance.html#a9b34085137979897a81203f4559c739a">getMethodList</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classceammc_1_1_atom_list.html">AtomList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_p_instance.html#ac43b12d340e7580501bfedb4b011148f">getDynamicMethodList</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_p_instance.html#a025129aecee2e12df2b1d18ae3118cf1">showWindow</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">t_symbol *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_p_instance.html#ad55a70a4df6bfd1762c75540c76cc171">getObjectSymbol</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_p_instance.html#a23f65669959957604f3f59e930fa482b">retain</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_p_instance.html#a16996332ae6b9e7b720584625e4f8604">release</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_p_instance.html#a2f29b3ca2c0073dcb0f00479cb0478d9">getRefCount</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static t_symbol *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_p_instance.html#a791108546e906618f7054e479db5afc0">toSymbol</a> (<a class="el" href="classqtpd_1_1_o_p_instance.html">OPInstance</a> *inst)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_o_p_instance.html">OPInstance</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_p_instance.html#aab02df64a3a71d3d23582b56363beb60">fromObjectSymbol</a> (t_symbol *objSymbol)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_o_p_instance.html">OPInstance</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_p_instance.html#aca34361b179cf26aad9dfe263464a6e8">_parent</a></td></tr>
@@ -179,15 +183,15 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aee78dcf9232ad9ef9bc0ddb1733a8054"></a><!-- doxytag: member="qtpd::OPInstance::~OPInstance" ref="aee78dcf9232ad9ef9bc0ddb1733a8054" args="()" -->
+<a class="anchor" id="a0b45a49443b5ba417818525b34de1ce8"></a><!-- doxytag: member="qtpd::OPInstance::~OPInstance" ref="a0b45a49443b5ba417818525b34de1ce8" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classqtpd_1_1_o_p_instance.html#aee78dcf9232ad9ef9bc0ddb1733a8054">qtpd::OPInstance::~OPInstance</a> </td>
+          <td class="memname"><a class="el" href="classqtpd_1_1_o_p_instance.html#a0b45a49443b5ba417818525b34de1ce8">OPInstance::~OPInstance</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -317,6 +321,23 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a455a8dd82365ba002e37d0572f939449"></a><!-- doxytag: member="qtpd::OPInstance::callGetter" ref="a455a8dd82365ba002e37d0572f939449" args="(t_symbol *propertyName)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_o_p_instance.html#a7a8710617ef1c9d559516a7c3dbfb1b2">qtpd::OPInstance::callGetter</a> </td>
+          <td>(</td>
+          <td class="paramtype">t_symbol *&#160;</td>
+          <td class="paramname"><em>propertyName</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ad72aa5914beafca47cf4ef78a245c073"></a><!-- doxytag: member="qtpd::OPInstance::callMethod" ref="ad72aa5914beafca47cf4ef78a245c073" args="(AtomList list)" -->
 <div class="memitem">
 <div class="memproto">
@@ -344,6 +365,33 @@ Public Attributes</h2></td></tr>
           <td class="paramtype"><a class="el" href="classceammc_1_1_atom_list.html">AtomList</a>&#160;</td>
           <td class="paramname"><em>list</em></td><td>)</td>
           <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a63eb7d4e85ea527fb37f284a083acf2c"></a><!-- doxytag: member="qtpd::OPInstance::callSetter" ref="a63eb7d4e85ea527fb37f284a083acf2c" args="(t_symbol *propertyName, AtomList list)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_o_p_instance.html#aad6f8ffb305d100701ee244efbf8d7fa">qtpd::OPInstance::callSetter</a> </td>
+          <td>(</td>
+          <td class="paramtype">t_symbol *&#160;</td>
+          <td class="paramname"><em>propertyName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classceammc_1_1_atom_list.html">AtomList</a>&#160;</td>
+          <td class="paramname"><em>list</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -436,6 +484,23 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aab02df64a3a71d3d23582b56363beb60"></a><!-- doxytag: member="qtpd::OPInstance::fromObjectSymbol" ref="aab02df64a3a71d3d23582b56363beb60" args="(t_symbol *objSymbol)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqtpd_1_1_o_p_instance.html">OPInstance</a> * <a class="el" href="classqtpd_1_1_o_p_instance.html#aab02df64a3a71d3d23582b56363beb60">OPInstance::fromObjectSymbol</a> </td>
+          <td>(</td>
+          <td class="paramtype">t_symbol *&#160;</td>
+          <td class="paramname"><em>objSymbol</em></td><td>)</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a353a170964f54f1a83bb69892565d30b"></a><!-- doxytag: member="qtpd::OPInstance::getAtomListProperty" ref="a353a170964f54f1a83bb69892565d30b" args="(t_symbol *propertyName)" -->
 <div class="memitem">
 <div class="memproto">
@@ -502,6 +567,22 @@ Public Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> <a class="el" href="classqtpd_1_1_o_p_instance.html#a9b34085137979897a81203f4559c739a">qtpd::OPInstance::getMethodList</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad55a70a4df6bfd1762c75540c76cc171"></a><!-- doxytag: member="qtpd::OPInstance::getObjectSymbol" ref="ad55a70a4df6bfd1762c75540c76cc171" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">t_symbol* <a class="el" href="classqtpd_1_1_o_p_instance.html#ad55a70a4df6bfd1762c75540c76cc171">qtpd::OPInstance::getObjectSymbol</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [inline]</code></td>
@@ -668,8 +749,8 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/travis/build/njazz/qtpd/qtpd_gui/oopd/<a class="el" href="_o_o_p_d_8h_source.html">OOPD.h</a></li>
-<li>/home/travis/build/njazz/qtpd/qtpd_gui/oopd/<a class="el" href="_o_o_p_d_8cpp.html">OOPD.cpp</a></li>
+<li>/home/travis/build/njazz/qtpd/qtpd_gui/oopd/<a class="el" href="_o_p_instance_8h_source.html">OPInstance.h</a></li>
+<li>/home/travis/build/njazz/qtpd/qtpd_gui/oopd/<a class="el" href="_o_p_instance_8cpp.html">OPInstance.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- window showing the filter options -->
@@ -689,7 +770,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 1 2017 23:33:47 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 2 2017 20:13:37 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -7,6 +7,6 @@ var searchData=
   ['objobjargproc',['objobjargproc',['../object_8h.html#a6bb952e627e9e464e8d7b10c9c1015d7',1,'object.h']]],
   ['objobjproc',['objobjproc',['../object_8h.html#a20541f714fcd7dcce7e7c583bece859e',1,'object.h']]],
   ['operator_5fty',['operator_ty',['../_python-ast_8h.html#a64ffe6085a53816a513038b9f1a04a9d',1,'Python-ast.h']]],
-  ['opoutputs',['OPOutputs',['../namespaceqtpd.html#a5d2e61cbafa4bdbe8f66e8d68e0c6fd5',1,'qtpd']]],
-  ['opproperties',['OPProperties',['../namespaceqtpd.html#aa9aca465cf2384a299548554a5ae3c6d',1,'qtpd']]]
+  ['opoutputs',['OPOutputs',['../namespaceqtpd.html#a8a2ab10220c811c82f880bb28c70dc9f',1,'qtpd']]],
+  ['opproperties',['OPProperties',['../namespaceqtpd.html#aa647b940a3756e6f714b00f44e983dcb',1,'qtpd']]]
 ];
