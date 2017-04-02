@@ -33,6 +33,9 @@ private:
     OPInstance* _opInstance;
     OPClass* _opClass;
 
+    // todo move?
+    t_outlet* out1;
+
 public:
     explicit UIInstance(UIObject* parent = 0);
     //~UIInstance();
@@ -257,9 +260,10 @@ public:
             cmp_post("new instance");
 
             if (x->pdObject()) {
-                t_outlet* out1 = cmp_get_outlet((t_object*)x->pdObject(), 0);
-                if (out1)
-                    x->_opInstance->addInstanceOut(out1);
+                x->out1 = cmp_get_outlet((t_object*)x->pdObject(), 0);
+
+                if (x->out1)
+                    x->_opInstance->addInstanceOut(x->out1);
                 else
                     cmp_post("instance pd object outlet error");
             }
@@ -298,10 +302,39 @@ public:
             x->_opInstance->callMethod(msg);
         }
 
-        if (msg.at(0).asString() == "setobject") {
+        if (msg.at(0).asString() == "pdobject") {
+
+            cmp_post("pdobject");
+
+
+            if (msg.size() < 2) {
+                cmp_post("setobject: needs pdobject pointer");
+                return;
+            }
+
+            qDebug() << "symbol: " << msg.at(1).asSymbol()->s_name;
+
+            x->_opInstance = OPInstance::fromObjectSymbol(msg.at(1).asSymbol());
+
+            qDebug() << "instance: " << x->_opInstance;
+
+            x->repaint();
         }
 
         if (msg.at(0).asString() == "getobject") {
+
+            t_symbol* s = x->_opInstance->getObjectSymbol();
+
+            if (x->out1) {
+                AtomList list1;
+                list1.append(gensym("pdobject"));
+                list1.append(s);
+
+                list1.output(x->out1);
+
+            } else {
+                cmp_post("instance outlet error!");
+            }
         }
 
         //        if (msg.at(0).asString() == "addproperty") {

@@ -11,6 +11,7 @@
 
 #include "m_pd.h"
 #include <map>
+#include <set>
 
 //todo
 #include "../qtpd_lib/ceammc-lib/ceammc_atomlist.h"
@@ -38,6 +39,8 @@ typedef map<t_symbol*, OPClass*> t_OPClassBySymbol;
 typedef map<string, OPClass*> t_OPClassByName;
 typedef map<t_canvas*, OPInstance*> t_OPInstanceByCanvas;
 typedef map<t_symbol*, OPInstance*> t_OPInstanceBySymbol;
+
+typedef set<OPInstance*> t_existingInstances;
 
 typedef vector<t_outlet*> OPOutputs; ///< vector of method boxes outputs
 typedef vector<t_object*> OPProperties; ///< vector of property boxes
@@ -67,6 +70,7 @@ private:
     t_OPClassByName _classByName;
     t_OPInstanceByCanvas _instanceByCanvas;
     t_OPInstanceBySymbol _instanceBySymbol;
+    t_existingInstances _existingInstances;
 
     OOPD(){};
 
@@ -94,15 +98,20 @@ public:
         qDebug() << "inst : OOPD" << (long)this << (long)canvas;
         _instanceByCanvas[canvas] = opInstance;
         _instanceBySymbol[symbol] = opInstance;
+
+        _existingInstances.insert(opInstance);
     };
 
     void unregisterClass(string className, t_canvas* canvas, t_symbol* symbol){
 
     };
-    void unregisterInstance(string className, t_canvas* canvas, t_symbol* symbol)
+    void unregisterInstance(OPInstance* opInstance, string className, t_canvas* canvas, t_symbol* symbol)
     {
         _instanceByCanvas[canvas] = 0;
         _instanceBySymbol[symbol] = 0;
+
+        // todo remove
+        //_existingInstances.find()
     };
 
     OPClass* classByCanvas(t_canvas* canvas)
@@ -143,6 +152,11 @@ public:
             return _instanceBySymbol[symbol];
         else
             return 0;
+    }
+
+    bool instanceExists(OPInstance* inst)
+    {
+        return (_existingInstances.find(inst) != _existingInstances.end());
     }
 
     bool canvasIsPatch(t_canvas* canvas)
@@ -204,7 +218,6 @@ public:
     void readFile();
 
     void writeFile();
-
 
 // ------------------------------------------------
 
@@ -375,7 +388,7 @@ public:
         // delete _patchWindow;
 
         // unregister
-        OOPD::inst()->unregisterInstance(_className, _canvas, _symbol);
+        OOPD::inst()->unregisterInstance(this, _className, _canvas, _symbol);
 
         printf("~OPInstance\n");
         printf("canvas: %lu\n", (long)_canvas);
@@ -598,6 +611,30 @@ public:
 
     void showWindow();
 
+// ---------------------------
+#pragma mark object pointer
+
+    static t_symbol* toSymbol(OPInstance* inst)
+    {
+        return gensym(to_string((long)inst).c_str());
+    }
+
+    t_symbol* getObjectSymbol()
+    {
+        return gensym(to_string((long)this).c_str());
+    }
+
+    static OPInstance* fromObjectSymbol(t_symbol* objSymbol)
+    {
+        //string str = objSymbol->s_name;
+
+        // todo
+        QString qstr = objSymbol->s_name;//str.c_str();
+        OPInstance* inst_ = (OPInstance*)(qstr.toLong());
+
+        return (OOPD::inst()->instanceExists(inst_)) ? inst_ : 0;
+    }
+
 #pragma mark reference counting
     // names?
     void retain()
@@ -619,12 +656,6 @@ public:
     int getRefCount()
     {
         return _refCount;
-    }
-
-    // ----------------------------------------------------------------
-    static t_symbol* toSymbol(OPInstance* inst)
-    {
-        return gensym(to_string((long)inst).c_str());
     }
 };
 }

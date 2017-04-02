@@ -109,6 +109,7 @@ public:
         t_canvas* cnv = (t_canvas*)((UIObject*)parent)->pdObject();
 
         if (OOPD::inst()->canvasIsPatch(cnv)) {
+            //fix that
             cmp_post("cannot create method in basic patch!");
             b->setErrorBox(true);
         }

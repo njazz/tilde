@@ -37,7 +37,7 @@ private:
     OPClass* _opClass;
     OPInstance* _opInstance;
 
-    std::string _methodName;
+    std::string _propertyName;
 
 public:
     explicit UIProperty(UIObject* parent = 0);
@@ -49,7 +49,7 @@ public:
         //t_canvas* pd_Canvas;
 
         if (objectData == "")
-            objectData = "method";
+            objectData = "property";
 
         UIProperty* b = new UIProperty((UIObject*)parent);
 
@@ -64,7 +64,7 @@ public:
         if (list.size() < 2) {
             cmp_post("missing argument: method name");
         } else {
-            b->_methodName = ((QString)list.at(1)).toStdString();
+            b->_propertyName = ((QString)list.at(1)).toStdString();
         }
 
         // fix size changes
@@ -91,7 +91,7 @@ public:
 
             cmp_connectUI((t_pd*)new_obj, (void*)b, &UIProperty::updateUI);
 
-            b->setHelpName("method-help.pd");
+            b->setHelpName("property-help.pd");
 
         } else {
             qDebug("Error: no such object 'pdproperty'");
@@ -99,6 +99,8 @@ public:
             in_c = 1;
             out_c = 1;
         }
+
+        qDebug() << "inc outc" << in_c << out_c;
 
         for (int i = 0; i < in_c; i++)
             b->addInlet();
@@ -111,6 +113,7 @@ public:
         t_canvas* cnv = (t_canvas*)((UIObject*)parent)->pdObject();
 
         if (OOPD::inst()->canvasIsPatch(cnv)) {
+            //fix that
             cmp_post("cannot create property in basic patch!");
             b->setErrorBox(true);
         }
@@ -125,15 +128,21 @@ public:
 
             qDebug("property in class");
 
-            b->_opClass->addMethod(b->_methodName, "");
+            //b->_opClass->addMethod(b->_methodName, "");
+            b->_opClass->addProperty(b->_propertyName, "");
         }
 
         if (b->_opInstance) {
             qDebug("property in instance");
 
-            t_outlet* out1 = cmp_get_outlet((t_object*)b->pdObject(), 0);
-            if (out1)
-                b->_opInstance->addMethodOutlet(gensym(b->_methodName.c_str()), out1);
+            t_outlet* out1 = cmp_get_outlet((t_object*)b->pdObject(), 1);
+            t_outlet* out2 = cmp_get_outlet((t_object*)b->pdObject(), 2);
+            if (out1 && out2)
+            {
+                //b->_opInstance->addMethodOutlet(gensym(b->_propertyName.c_str()), out1)
+                ;
+                b->_opInstance->addProperty(gensym(b->_propertyName.c_str()), out1, out2);
+            }
             else
                 cmp_post("property pd object outlet error");
         }
@@ -267,7 +276,7 @@ public:
         //qDebug() << "method out";
 
         if (b->_opInstance) {
-            AtomList fullMsg(gensym(b->_methodName.c_str()));
+            AtomList fullMsg(gensym(b->_propertyName.c_str()));
             fullMsg.append(msg);
             b->_opInstance->multipleOutput(fullMsg);
         }
