@@ -306,7 +306,6 @@ public:
 
             cmp_post("pdobject");
 
-
             if (msg.size() < 2) {
                 cmp_post("setobject: needs pdobject pointer");
                 return;
@@ -341,59 +340,46 @@ public:
 
         QString qmsg = msg.at(0).asString().c_str();
 
-        if ( qmsg.at(0) ==  "@" )
-        {
-            qmsg.remove(0,1);
+        if (qmsg.at(0) == "@") {
+            qmsg.remove(0, 1);
 
-            if ( qmsg.at(qmsg.size()-1) == "?")
-            {
-                qmsg.remove(qmsg.size()-1,1);
-                t_symbol* propertyName = gensym(qmsg.toStdString().c_str());
-                // getter
-                AtomList list = x->_opInstance->getAtomListProperty(propertyName);
+            if (qmsg.at(qmsg.size() - 1) == "?") {
+                if (x->_opInstance) {
+                    qmsg.remove(qmsg.size() - 1, 1);
+                    t_symbol* propertyName = gensym(qmsg.toStdString().c_str());
+                    // getter
+                    //AtomList list = x->_opInstance->getAtomListProperty(propertyName);
 
-                if (x->_out1)
-                {
-                    list.output(x->_out1);
+                    x->_opInstance->callGetter(propertyName);
+
+                    //                    if (x->_out1) {
+                    //                        list.output(x->_out1);
+                    //                    } else {
+                    //                        cmp_post("bad pdobject outlet pointer");
+                    //}
                 }
-                else
-                {
-                    cmp_post("bad pdobject outlet pointer");
+            } else {
+                if (x->_opInstance) {
+                    // setter
+
+                    AtomList list1 = msg;
+                    list1.remove(0);
+                    t_symbol* propertyName = gensym(qmsg.toStdString().c_str());
+
+                    qDebug() << "Property name: " << propertyName->s_name;
+                    //x->_opInstance->setAtomListProperty(propertyName, list1);
+                    x->_opInstance->callSetter(propertyName, list1);
                 }
             }
-            else
-            {
-                // setter
-
-                AtomList list1 = msg;
-                list1.remove(0);
-                t_symbol* propertyName = gensym(qmsg.toStdString().c_str());
-
-
-                qDebug() << "Property name: " << propertyName->s_name;
-                x->_opInstance->setAtomListProperty(propertyName, list1);
-            }
-
         }
-
-        //        if (msg.at(0).asString() == "addproperty") {
-        //        }
-
-        //        if (msg.at(0).asString() == "delproperty") {
-        //        }
-
-        //        if (msg.at(0).asString() == "addmethod") {
-        //        }
-
-        //        if (msg.at(0).asString() == "delmethod") {
-        //        }
 
         emit((UIInstance*)uiobj)->updateUISignal();
     }
 
 signals:
 
-    void mouseMoved();
+    void
+    mouseMoved();
     void rightClicked();
 
     //void editObject(UIObject* box);
