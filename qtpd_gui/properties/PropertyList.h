@@ -169,25 +169,17 @@ public:
     {
         QStringList propertyList = QString(input.c_str()).split("@");
 
-        // remove "". todo fix that
-//        int i = 0;
-//        while (i < propertyList.size()) {
-//            if (propertyList.at(i)=="") {
-//                propertyList.removeAt(i);
-//            } else {
-//                i++;
-//            }
-//        }
+        qDebug() << "list" << propertyList;
 
-        qDebug() << "list" <<propertyList;
-
-        if (!propertyList.size()) return "";
+        if (!propertyList.size())
+            return "";
 
         QString ret = propertyList.at(0);
         if (ret.size())
-            if (ret.at(ret.size()-1)==" ") ret = ret.left(ret.size()-1);
+            if (ret.at(ret.size() - 1) == " ")
+                ret = ret.left(ret.size() - 1);
 
-        if (propertyList.size()==1)
+        if (propertyList.size() == 1)
             return ret.toStdString();
 
         propertyList.removeAt(0);
@@ -196,16 +188,20 @@ public:
             QString s = *it;
             QStringList list = s.split(" ", QString::SkipEmptyParts);
 
-            if (list.size() > 1) {
-                QString pname = list.at(0);
+            //if (list.size() > 1)
+            //{
+            QString pname = list.at(0);
 
-                // lol. fix that later
+            // lol. fix that later
+
+            qDebug() << "load" << pname << list.join("_");
+
+            if (_data[pname.toStdString()]) {
                 list.removeAt(0);
-
-                qDebug() << "load" << pname << list.join("_");
-
                 set(pname.toStdString(), list);
-            }
+            } else
+                ret.append("@" + s);
+            //}
 
             // TODO! property type should be saved
         }
