@@ -28,23 +28,7 @@ using namespace ceammc;
 
 namespace qtpd {
 
-// ------------------------------------------------------------
-// typedefs
-
-//class OPClass;
-//class OPInstance;
-//class PatchWindow;
-
-//todo class or move to find section
-//typedef map<t_canvas*, OPClass*> t_OPClassByCanvas;
-//typedef map<t_symbol*, OPClass*> t_OPClassBySymbol;
-//typedef map<string, OPClass*> t_OPClassByName;
-//typedef map<t_canvas*, OPInstance*> t_OPInstanceByCanvas;
-//typedef map<t_symbol*, OPInstance*> t_OPInstanceBySymbol;
-
-//typedef set<OPInstance*> t_existingInstances;
-
-typedef vector<t_outlet*> OPOutputs; ///< vector of method boxes outputs
+//typedef vector<t_outlet*> OPOutputs; ///< vector of method boxes outputs
 typedef vector<t_object*> OPProperties; ///< vector of property boxes
 
 // ------------------------------------------------------------
@@ -55,14 +39,9 @@ typedef vector<t_object*> OPProperties; ///< vector of property boxes
 class OPClass : public OOPDClassBase {
 
 private:
-    map<string, string> _methodNames;
-    map<string, string> _propertyNames;
-    map<string, string> _signalNames;
-
     map<string, t_outlet*> _methodOutlets; //todo OPOutputs
     map<string, t_outlet*> _methodPointerOutlets; //todo OPOutputs
 
-    //PatchWindow* _patchWindow;
     OPClass* _parent;
 
 public:
@@ -77,21 +56,6 @@ public:
     OPClass(string className);
 
 // ------------------------------------------------
-#pragma mark getters
-    map<string, string> getMethodNames()
-    {
-        return _methodNames;
-    }
-    map<string, string> getPropertyNames()
-    {
-        return _propertyNames;
-    }
-    map<string, t_outlet*> getMethodOutlets()
-    {
-        return _methodOutlets;
-    }
-
-// ------------------------------------------------
 #pragma mark window
 
     void showWindow();
@@ -100,17 +64,12 @@ public:
 #pragma mark file io
 
     void readFile();
-
     void writeFile();
 
 // ------------------------------------------------
 
 #pragma mark dynamic: methods
-    // dynamic stub:
-    void addMethod(string methodName, string referenceName)
-    {
-        _methodNames[methodName] = referenceName;
-    }
+    // addMethod in base
 
     void addMethodOutlet(string referenceName, t_outlet* outlet)
     {
@@ -146,10 +105,7 @@ public:
         return ret;
     }
 
-    void freeMethod(string methodName)
-    {
-        _methodNames.erase(methodName);
-    }
+    // properties
 
     void freeMethodOutlet(string referenceName)
     {
@@ -161,14 +117,9 @@ public:
         _methodPointerOutlets.erase(referenceName);
     }
 
-    void addProperty(string propertyName, string referenceName)
+    map<string, t_outlet*> getMethodOutlets()
     {
-        _propertyNames[propertyName] = referenceName;
-    }
-
-    void freeProperty(string propertyName)
-    {
-        _propertyNames.erase(propertyName);
+        return _methodOutlets;
     }
 
 // ------------------------------------------------
@@ -183,53 +134,7 @@ public:
     {
         return _parent;
     }
-// ------------------------------------------------
-#pragma mark signal
 
-    void addSignal(string signalName, string referenceName)
-    {
-        _signalNames[signalName] = referenceName;
-    }
-
-    void freeSignal(string signalName)
-    {
-        _signalNames.erase(signalName);
-    }
-
-// ------------------------------------------------
-#pragma mark info
-    AtomList getPropertyList()
-    {
-        AtomList ret;
-
-        for (map<string, string>::iterator it = _propertyNames.begin(); it != _propertyNames.end(); ++it) {
-            ret.append(Atom(gensym(it->first.c_str())));
-        }
-
-        return ret;
-    }
-
-    AtomList getMethodList()
-    {
-        AtomList ret;
-
-        for (map<string, string>::iterator it = _methodNames.begin(); it != _methodNames.end(); ++it) {
-            ret.append(Atom(gensym(it->first.c_str())));
-        }
-
-        return ret;
-    }
-
-    AtomList getSignalList()
-    {
-        AtomList ret;
-
-        for (map<string, string>::iterator it = _signalNames.begin(); it != _signalNames.end(); ++it) {
-            ret.append(Atom(gensym(it->first.c_str())));
-        }
-
-        return ret;
-    }
 };
 
 // -----------------------------------

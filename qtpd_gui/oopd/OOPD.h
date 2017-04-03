@@ -40,7 +40,7 @@ typedef map<t_symbol*, OPInstance*> t_OPInstanceBySymbol;
 
 typedef set<OPInstance*> t_existingInstances;
 
-typedef vector<t_outlet*> OPOutputs; ///< vector of method boxes outputs
+//typedef vector<t_outlet*> OPOutputs; ///< vector of method boxes outputs
 typedef vector<t_object*> OPProperties; ///< vector of property boxes
 
 // ------------------------------------------------------------

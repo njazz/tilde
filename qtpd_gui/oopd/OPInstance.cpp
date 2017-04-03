@@ -49,7 +49,7 @@ OPInstance::OPInstance(OPClass* opClass)
     }
 
     //generate properties
-    _propertyNames = opClass->getPropertyNames();
+    setPropertyNames( opClass->getPropertyNames() );
 
     //TODO
 
@@ -87,8 +87,6 @@ void OPInstance::showWindow()
 
 OPInstance* OPInstance::fromObjectSymbol(t_symbol* objSymbol)
 {
-    //string str = objSymbol->s_name;
-
     // todo
     QString qstr = objSymbol->s_name; //str.c_str();
     OPInstance* inst_ = (OPInstance*)(qstr.toLong());

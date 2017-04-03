@@ -32,19 +32,8 @@ namespace qtpd {
 // typedefs
 
 class OPClass;
-//class OPInstance;
-//class PatchWindow;
 
-//todo class or move to find section
-//typedef map<t_canvas*, OPClass*> t_OPClassByCanvas;
-//typedef map<t_symbol*, OPClass*> t_OPClassBySymbol;
-//typedef map<string, OPClass*> t_OPClassByName;
-//typedef map<t_canvas*, OPInstance*> t_OPInstanceByCanvas;
-//typedef map<t_symbol*, OPInstance*> t_OPInstanceBySymbol;
-
-//typedef set<OPInstance*> t_existingInstances;
-
-typedef vector<t_outlet*> OPOutputs; ///< vector of method boxes outputs
+//typedef vector<t_outlet*> OPOutputs; ///< vector of method boxes outputs
 typedef vector<t_object*> OPProperties; ///< vector of property boxes
 
 // ------------------------------------------------------------
@@ -62,11 +51,8 @@ private:
 
     //new
     map<t_symbol*, AtomList> _propertyValues;
-    int _refCount;
 
-    // dynamic.
-    map<string, string> _methodNames;
-    map<string, string> _propertyNames;
+    int _refCount;
 
     //signal
     map<t_symbol*, t_sample*> _signalBuffers; ///< vector of signal buffers
@@ -74,19 +60,19 @@ private:
     //
     map<t_symbol*, t_outlet*> _methodPointerOutputs; // todo OPOutputs
 
+    ~OPInstance();
+
 public:
     //
     OPInstance* _parent;
 
     OPInstance(OPClass* opClass);
 
-    ~OPInstance();
-
 #pragma mark methods
 
     void addMethodOutlet(t_symbol* methodName, t_outlet* outlet)
     {
-        _methodOutputs[methodName].push_back(outlet);
+        _methodOutputs[methodName].addOutlet(outlet); //.push_back(outlet);
     }
 
     void freeMethod(t_symbol* methodName)
@@ -131,17 +117,17 @@ public:
 
     void addProperty(t_symbol* propertyName, t_outlet* getter_out, t_outlet* setter_out)
     {
-        _getterOutputs[propertyName].push_back(getter_out);
-        _setterOutputs[propertyName].push_back(setter_out);
+        _getterOutputs[propertyName].addOutlet(getter_out);//.push_back(getter_out);
+        _setterOutputs[propertyName].addOutlet(setter_out);//.push_back(setter_out);
 
-        _propertyNames[propertyName->s_name] = "<none>"; //don't link by name as we link outlets.
+        OOPDClassBase::addProperty(propertyName->s_name, "");
     }
     void freeProperty(t_symbol* propertyName)
     {
         _getterOutputs.erase(propertyName);
         _setterOutputs.erase(propertyName);
 
-        _propertyNames.erase(propertyName->s_name);
+        OOPDClassBase::freeProperty(propertyName->s_name);
     }
 
     void setAtomListProperty(t_symbol* propertyName, AtomList list)
@@ -152,19 +138,7 @@ public:
     AtomList getAtomListProperty(t_symbol* propertyName)
     {
         AtomList list = _propertyValues[propertyName];
-
         return list;
-    }
-
-    AtomList getPropertyList()
-    {
-        AtomList ret;
-
-        for (map<string, string>::iterator it = _propertyNames.begin(); it != _propertyNames.end(); ++it) {
-            ret.append(Atom(gensym(it->first.c_str())));
-        }
-
-        return ret;
     }
 
 // ---------------
@@ -173,19 +147,23 @@ public:
     void addInstanceOut(t_outlet* outlet)
     {
         if (outlet)
-            _instanceOutputs.push_back(outlet);
+            _instanceOutputs.addOutlet(outlet);//.push_back(outlet);
     }
     void freeInstanceOut(t_outlet* outlet)
     {
-        _instanceOutputs.erase(remove(_instanceOutputs.begin(), _instanceOutputs.end(), outlet), _instanceOutputs.end());
+        _instanceOutputs.freeOutlet(outlet);
     }
 
     void multipleOutput(AtomList list)
     {
-        for (OPOutputs::iterator it = _instanceOutputs.begin(); it != _instanceOutputs.end(); ++it) {
-            list.output(*it);
-        }
+//        for (OPOutputs::iterator it = _instanceOutputs.begin(); it != _instanceOutputs.end(); ++it) {
+//            list.output(*it);
+//        }
+        _instanceOutputs.outList(list);
     }
+
+// -----------------
+#pragma mark method calls
 
     void callMethod(AtomList list)
     {
@@ -196,9 +174,10 @@ public:
         OPOutputs* out1 = &_methodOutputs[method_name];
 
         if (out1) {
-            for (OPOutputs::iterator it = out1->begin(); it != out1->end(); ++it) {
-                subList.output(*it);
-            }
+//            for (OPOutputs::iterator it = out1->begin(); it != out1->end(); ++it) {
+//                subList.output(*it);
+//            }
+            out1->outList(subList);
         }
 
         //dynamic. todo
@@ -215,6 +194,9 @@ public:
 
     void callSetter(AtomList list)
     {
+        if (!hasProperty(list[0].asString()))
+            return;
+
         t_symbol* property_name = list[0].asSymbol();
 
         AtomList list2((size_t)list.size() - 1, (t_atom*)list.toPdData() + 1); //TODO
@@ -222,27 +204,32 @@ public:
 
         OPOutputs* out1 = &_setterOutputs[property_name];
 
-        for (OPOutputs::iterator it = out1->begin(); it != out1->end(); ++it) {
-            outlet_bang(*it);
-        }
+//        for (OPOutputs::iterator it = out1->begin(); it != out1->end(); ++it) {
+//            outlet_bang(*it);
+//        }
+        out1->outBang();
     }
 
     void callSetter(t_symbol* propertyName, AtomList list)
     {
-        //t_symbol* property_name = list[0].asSymbol();
+        if (!hasProperty(propertyName->s_name))
+            return;
 
-        //AtomList list2((size_t)list.size() - 1, (t_atom*)list.toPdData() + 1); //TODO
         setAtomListProperty(propertyName, list);
 
         OPOutputs* out1 = &_setterOutputs[propertyName];
 
-        for (OPOutputs::iterator it = out1->begin(); it != out1->end(); ++it) {
-            outlet_bang(*it);
-        }
+//        for (OPOutputs::iterator it = out1->begin(); it != out1->end(); ++it) {
+//            outlet_bang(*it);
+//        }
+        out1->outBang();
     }
 
     void callGetter(AtomList list)
     {
+        if (!hasProperty(list[0].asString()))
+            return;
+
         t_symbol* property_name = list[0].asSymbol();
 
         AtomList list2(list[0]);
@@ -252,50 +239,34 @@ public:
 
         OPOutputs* out1 = &_getterOutputs[property_name];
 
-        for (OPOutputs::iterator it = out1->begin(); it != out1->end(); ++it) {
-            outlet_bang(*it);
-        }
+//        for (OPOutputs::iterator it = out1->begin(); it != out1->end(); ++it) {
+//            outlet_bang(*it);
+//        }
+        out1->outBang();
     }
 
     void callGetter(t_symbol* propertyName)
     {
-        //t_symbol* property_name = list[0].asSymbol();
+
+        if (!hasProperty(propertyName->s_name))
+            return;
 
         AtomList list2 = AtomList(Atom(propertyName));
+
         list2.append(getAtomListProperty(propertyName));
 
         multipleOutput(list2);
 
         OPOutputs* out1 = &_getterOutputs[propertyName];
 
-        for (OPOutputs::iterator it = out1->begin(); it != out1->end(); ++it) {
-            outlet_bang(*it);
-        }
+//        for (OPOutputs::iterator it = out1->begin(); it != out1->end(); ++it) {
+//            outlet_bang(*it);
+//        }
+        out1->outBang();
 
         //return list2;
     }
 
-    AtomList getMethodList()
-    {
-        AtomList ret;
-
-        for (map<t_symbol*, OPOutputs>::iterator it = _methodOutputs.begin(); it != _methodOutputs.end(); ++it) {
-            ret.append(Atom(it->first));
-        }
-
-        return ret;
-    }
-
-    AtomList getDynamicMethodList()
-    {
-        AtomList ret;
-
-        for (map<string, string>::iterator it = _methodNames.begin(); it != _methodNames.end(); ++it) {
-            ret.append(Atom(gensym(it->first.c_str())));
-        }
-
-        return ret;
-    }
 // ------------------------------------------------
 #pragma mark window
 
