@@ -134,8 +134,8 @@ Public Slots</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a685ab78f4566f8ce1178472118d22e98">s_InMouseReleased</a> (<a class="el" href="classqtpd_1_1_u_i_widget.html">UIWidget</a> *, QMouseEvent *)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a2a3aeb782bfb76457f64e1eaf80e1e6d">s_OutMousePressed</a> (<a class="el" href="classqtpd_1_1_u_i_widget.html">UIWidget</a> *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, QMouseEvent *)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#aa792daecdf0c65d3b15cab6eb4bd81b3">s_OutMouseReleased</a> (<a class="el" href="classqtpd_1_1_u_i_widget.html">UIWidget</a> *, QMouseEvent *)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a611a4ce4f9575835a5a09bdaa1c7ce0d">s_SelectBox</a> (<a class="el" href="classqtpd_1_1_u_i_widget.html">UIWidget</a> *box)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">slot called by box when it is selected  <a href="#a611a4ce4f9575835a5a09bdaa1c7ce0d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#aa61c6c972683063d1c2fdf7300211e0c">s_SelectBox</a> (<a class="el" href="classqtpd_1_1_u_i_widget.html">UIWidget</a> *box, QMouseEvent *ev)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">slot called by box when it is selected  <a href="#aa61c6c972683063d1c2fdf7300211e0c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#ac2d7ba2003629591b9c93c8d2ab46ef2">s_MoveBox</a> (<a class="el" href="classqtpd_1_1_u_i_widget.html">UIWidget</a> *box, QMouseEvent *event)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">TODO check. slot called by box when it starts moving.  <a href="#ac2d7ba2003629591b9c93c8d2ab46ef2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a83af5295678ba3687f02189504528cc4">cancelPatchcord</a> ()</td></tr>
@@ -273,6 +273,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns canvas data for saving  <a href="#a37ece8d75cc5122ce659a1b08c3dc96a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a2b189b998887b5615146b8e64666cde7">canvasFromPdStrings</a> (QStringList strings)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">this is for loading or copying canvases. not yet used in fileparser  <a href="#a2b189b998887b5615146b8e64666cde7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a5c5d80db818a932accd7d543bd60d2c7">selectBox</a> (<a class="el" href="classqtpd_1_1_u_i_widget.html">UIWidget</a> *box)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_canvas.html">Canvas</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#aa19a2c103ad05b60422a793591cb3bae">newView</a> (<a class="el" href="classqtpd_1_1_canvas.html">Canvas</a> *srcCanvas, <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *parentCanvas, <a class="el" href="namespaceqtpd.html#a3122dc9331556e1ca5ddad5fa6c9e7b7">canvasDrawStyle</a> dStyle)</td></tr>
@@ -1750,16 +1751,26 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a611a4ce4f9575835a5a09bdaa1c7ce0d"></a><!-- doxytag: member="qtpd::Canvas::s_SelectBox" ref="a611a4ce4f9575835a5a09bdaa1c7ce0d" args="(UIWidget *box)" -->
+<a class="anchor" id="aa61c6c972683063d1c2fdf7300211e0c"></a><!-- doxytag: member="qtpd::Canvas::s_SelectBox" ref="aa61c6c972683063d1c2fdf7300211e0c" args="(UIWidget *box, QMouseEvent *ev)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas.html#a611a4ce4f9575835a5a09bdaa1c7ce0d">qtpd::Canvas::s_SelectBox</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas.html#aa61c6c972683063d1c2fdf7300211e0c">qtpd::Canvas::s_SelectBox</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_widget.html">UIWidget</a> *&#160;</td>
-          <td class="paramname"><em>box</em></td><td>)</td>
-          <td><code> [slot]</code></td>
+          <td class="paramname"><em>box</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QMouseEvent *&#160;</td>
+          <td class="paramname"><em>ev</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [slot]</code></td>
         </tr>
       </table>
 </div>
@@ -1790,6 +1801,23 @@ Public Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>select all boxes </p>
+
+</div>
+</div>
+<a class="anchor" id="a5c5d80db818a932accd7d543bd60d2c7"></a><!-- doxytag: member="qtpd::Canvas::selectBox" ref="a5c5d80db818a932accd7d543bd60d2c7" args="(UIWidget *box)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas.html#a5c5d80db818a932accd7d543bd60d2c7">qtpd::Canvas::selectBox</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_widget.html">UIWidget</a> *&#160;</td>
+          <td class="paramname"><em>box</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
 </div>
 </div>
@@ -2185,7 +2213,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 3 2017 13:45:19 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Apr 3 2017 21:17:34 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
