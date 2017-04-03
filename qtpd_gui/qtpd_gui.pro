@@ -26,7 +26,7 @@ CONFIG += static
 
 #include(python/build/python.prf)
   INCLUDEPATH += python/py2.7headers/
-  LIBS += -F/System/Library/Frameworks -framework Python
+  macx: LIBS += -F/System/Library/Frameworks -framework Python
 
 SOURCES += main.cpp\
     python/PythonQtScriptingConsole.cpp \
@@ -150,8 +150,8 @@ FORMS    += \
     canvasmenu.ui \
     window/cm_basewindow.ui
 
-LIBS += "../qtpd_lib/libqtpd.a"
-LIBS += "/usr/local/lib/libportaudio.dylib"
+macx: LIBS += "../qtpd_lib/libqtpd.a"
+macx: LIBS += "/usr/local/lib/libportaudio.dylib"
 
 
 DISTFILES += \

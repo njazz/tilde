@@ -15,6 +15,7 @@ CONFIG += staticlib
 # any feature of Qt which as been marked as deprecated (the exact warnings
 # depend on your compiler). Please consult the documentation of the
 # deprecated API in order to know how to port your code away from it.
+macx {
 DEFINES += QT_DEPRECATED_WARNINGS \
     APPLE \
     PD \
@@ -22,6 +23,14 @@ DEFINES += QT_DEPRECATED_WARNINGS \
     USEAPI_PORTAUDIO \
     THREAD_LOCKING \
     HAVE_LIBDL
+}
+
+win32{
+DEFINES += PD \
+    USEAPI_PORTAUDIO \
+    THREAD_LOCKING \
+
+}
 
 
 # You can also make your code fail to compile if you use deprecated APIs.
