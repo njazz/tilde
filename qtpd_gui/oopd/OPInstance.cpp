@@ -18,7 +18,7 @@ namespace qtpd {
 OPInstance::OPInstance(OPClass* opClass)
 {
 
-    printf("new instance\n");
+    //printf("new instance\n");
 
     _className = opClass->_className;
     _symbol = OPInstance::toSymbol(this); //gensym(to_string((long)this).c_str());

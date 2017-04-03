@@ -69,7 +69,7 @@ public:
         t_object* new_obj = 0;
         int in_c = 1, out_c = 0;
 
-        b->setHelpName("pdclass-help.pd");
+        b->setHelpName("pdinstance-help.pd");
 
         if (!pd_Canvas) {
             qDebug("bad pd canvas instance");
@@ -77,6 +77,7 @@ public:
         } else {
             new_obj = cmp_create_object(pd_Canvas, "pdinstance", 0, 0);
         }
+
 
         // new class w/canvas
         //        if (list.size() > 1) {
@@ -106,6 +107,17 @@ public:
             b->addOutlet();
 
         //
+
+        if (list.size()>1)
+        {
+            //cmp_post("loading type");
+            std::string typeName = list.at(1).toStdString();
+            //weird
+            AtomList msg(gensym("settype"));
+            msg.append(gensym(typeName.c_str()));
+
+            b->msgSetType(msg);
+        }
 
         connect(b, &UIInstance::updateUISignal, b, &UIInstance::updateUISlot);
 
