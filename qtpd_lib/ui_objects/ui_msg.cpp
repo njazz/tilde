@@ -120,15 +120,14 @@ static void uimsg_bang(t_ui_msg* x) // t_symbol *s, int argc, t_atom* argv
 
         for (int i = 0; i < x->msg->size(); i++) {
             // send line if found ","
-            if ( (AtomList(x->msg->at(i)).toPdData()->a_type == A_COMMA)
-            ||
-                (i==(x->msg->size()-1)) )
-            {
-                end = i + (i==(x->msg->size()-1));
+            if ((AtomList(x->msg->at(i)).toPdData()->a_type == A_COMMA)
+                || (x->msg->at(start).asSymbol()==gensym(";"))//(AtomList(x->msg->at(start)).toPdData()->a_type == A_SEMI)
+                || (i == (x->msg->size() - 1))) {
+                end = i + (i == (x->msg->size() - 1));
 
                 //post("comma");
 
-                if (AtomList(x->msg->at(start)).toPdData()->a_type == A_SEMI) {
+                if (x->msg->at(start).asSymbol()==gensym(";")){//(AtomList(x->msg->at(start)).toPdData()->a_type == A_SEMI) {
 
                     start += 1;
                     t_symbol* sym = x->msg->at(start).asSymbol();
@@ -136,10 +135,10 @@ static void uimsg_bang(t_ui_msg* x) // t_symbol *s, int argc, t_atom* argv
 
                     if (sym->s_thing) {
                         AtomList l1 = x->msg->subList(start, end);
-                        pd_typedmess((t_pd*)sym->s_thing,x->s,l1.size(),l1.toPdData());
+                        pd_typedmess((t_pd*)sym->s_thing, x->s, l1.size(), l1.toPdData());
                         post("sent");
-                    }
-                    //else post("not sent");
+                    } else
+                        post("not sent");
 
                 } else {
                     AtomList l1 = x->msg->subList(start, end);
@@ -147,7 +146,7 @@ static void uimsg_bang(t_ui_msg* x) // t_symbol *s, int argc, t_atom* argv
                     //post("output");
                     outlet_anything(x->out1, x->s, l1.size(), l1.toPdData());
 
-                    post("start end %i %i", start,end);
+                    //post("start end %i %i", start,end);
                 }
 
                 start = i + 1;

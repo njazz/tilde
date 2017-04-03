@@ -27,7 +27,7 @@ UIBang::UIBang(UIObject* parent)
 
     this->_timer = new QTimer;
     this->_timer->setSingleShot(true);
-    this->_timer->setInterval(100);
+    this->_timer->setInterval(50);  //default 100
 
     connect(this->_timer, &QTimer::timeout, this, &UIBang::timerAction);
 
