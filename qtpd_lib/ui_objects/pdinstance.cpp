@@ -23,10 +23,10 @@ typedef struct _oopdinstance {
     t_updateUI updateUI;
     void* uiobj;
 
-    t_inlet* in2;
+    //t_inlet* in2;
 
     t_outlet* out1;
-    t_outlet* out2;
+    //t_outlet* out2;
 
 } t_oopdinstance;
 
@@ -45,6 +45,13 @@ static void oopdinstance_anything(t_oopdinstance* x, t_symbol* s, int argc, t_at
     if (s == gensym("__output")) {
         AtomList l = AtomList(argc, argv);
         l.output(x->out1);
+    } else if (s == gensym("__newin")) {
+        inlet_new(&x->x_obj, &x->x_obj.ob_pd, &s_anything, &s_anything);
+
+
+    } else if (s == gensym("__newout")) {
+        outlet_new((t_object*)x, &s_anything);
+
     } else {
 
         if (x->updateUI)
@@ -57,9 +64,9 @@ static void* oopdinstance_new(t_symbol* s, int argc, t_atom* argv)
     t_oopdinstance* x = (t_oopdinstance*)pd_new(oopdinstance_class);
 
     t_object* xx = (t_object*)x;
-    x->in2 = inlet_new(xx, &xx->ob_pd, &s_signal, &s_signal);
+    //x->in2 = inlet_new(xx, &xx->ob_pd, &s_signal, &s_signal);
     x->out1 = outlet_new((t_object*)x, &s_anything);
-    x->out2 = outlet_new((t_object*)x, &s_signal);
+    //x->out2 = outlet_new((t_object*)x, &s_signal);
 
     return (void*)x;
 }

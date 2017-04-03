@@ -153,16 +153,23 @@ public:
             p.drawText(2, 3, width() - 2, 20 - 3, Qt::AlignCenter, "<"+_className  +">", 0);
 
             int y=20;
+            p.setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p.drawLine(0,y,width(),y);
 
             for (int i=0;i<_opClass->getPropertyList().size();i++)
             {
+                p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
                 p.drawText(2, 3 + y, width() - 2, 20 - 3, Qt::AlignCenter, "•"+QString(_opClass->getPropertyList().at(i).asString().c_str()), 0);
 
                 y += 20;
             }
 
+            p.setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p.drawLine(0,y,width(),y);
+
             for (int i=0;i<_opClass->getMethodList().size();i++)
             {
+                p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
                 p.drawText(2, 3 + y, width() - 2, 20 - 3, Qt::AlignCenter, QString(_opClass->getMethodList().at(i).asString().c_str()), 0);
 
                 y += 20;
@@ -292,6 +299,10 @@ public:
 
     //
 
+    void setInletsPos();
+    void setOutletsPos();
+
+    //
     void typedInlets()
     {
         addInlet();
@@ -378,7 +389,32 @@ public:
 
                 setFixedHeight(20 * (list.size() + 1));
 
+
+
+                // inlets and outlets
+                for (int i=0;i<_opClass->getPropertyList().size();i++)
+                {
+                    cmp_sendstring((t_pd*)pdObject(), "__newin");
+                    cmp_sendstring((t_pd*)pdObject(), "__newout");
+                    addInlet();
+                    addOutlet();
+                }
+
+                for (int i=0;i<_opClass->getMethodList().size();i++)
+                {
+                    cmp_sendstring((t_pd*)pdObject(), "__newin");
+                    cmp_sendstring((t_pd*)pdObject(), "__newout");
+                    addInlet();
+                    addOutlet();
+                }
+
                 _hasType = true;
+
+                // ports position
+                setInletsPos();
+                setOutletsPos();
+
+
                 _className = msg.at(1).asString().c_str();
 
             } else {

@@ -34,4 +34,43 @@ UIInstance::UIInstance(UIObject* parent)
 
     _hasType = false;
 }
+
+void UIInstance::setInletsPos()
+{
+    if (_hasType) {
+        float h = height();
+
+
+        float s = (inletCount() < 2) ? inletCount() : (inletCount() - 1);
+
+        for (int i = 0; i < (int)inletCount(); i++) {
+            float x = 0;
+            float y = (float(i)/s)*h + 10;
+
+            //inletAt(i)
+
+            inletAt(i)->move(x, y);
+            inletAt(i)->repaint();
+        }
+    } else
+        UIObject::setInletsPos();
+}
+
+void UIInstance::setOutletsPos()
+{
+    if (_hasType) {
+        float h = height();
+
+        float s = (outletCount() < 2) ? outletCount() : (outletCount() - 1);
+
+        for (int i = 0; i < (int)outletCount(); i++) {
+            float x = width()-7;
+            float y = (float(i)/s)*h + 10;
+
+            outletAt(i)->move(x, y);
+            outletAt(i)->repaint();
+        }
+    } else
+        UIObject::setOutletsPos();
+}
 }
