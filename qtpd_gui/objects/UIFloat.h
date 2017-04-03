@@ -178,14 +178,13 @@ public:
 
     static void updateUI(void* uiobj, ceammc::AtomList msg)
     {
-        qDebug("update ui - float");
+        //qDebug("update ui - float");
         UIFloat* x = (UIFloat*)uiobj;
 
         if (msg.size() > 0) {
             x->setObjectData(msg.at(0).asString());
-            x->autoResize();
             emit x->callRepaint();
-            //x->repaint();
+
         }
     }
 
