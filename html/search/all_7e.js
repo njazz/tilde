@@ -6,7 +6,6 @@ var searchData=
   ['_7eerror',['~Error',['../classceammc_1_1_error.html#ad0d291a9bc0be059b5b95ee01a0d504f',1,'ceammc::Error']]],
   ['_7eglobaldata',['~GlobalData',['../classceammc_1_1_global_data.html#a27ce95f7c182bc5077ccb884fbfab37d',1,'ceammc::GlobalData']]],
   ['_7enameddatadict',['~NamedDataDict',['../classceammc_1_1_named_data_dict.html#a93701b3dc7f3c34c68a7e28618835886',1,'ceammc::NamedDataDict']]],
-  ['_7eopinstance',['~OPInstance',['../classqtpd_1_1_o_p_instance.html#a0b45a49443b5ba417818525b34de1ce8',1,'qtpd::OPInstance']]],
   ['_7epdui',['~PdUI',['../classceammc_1_1faust_1_1_pd_u_i.html#a4cf84384b2b74b9b95b68d25f9d724d6',1,'ceammc::faust::PdUI']]],
   ['_7eproperty',['~Property',['../classceammc_1_1_property.html#aabee32674d11320f09fc085d4892f16a',1,'ceammc::Property']]],
   ['_7epythonqtclassinfo',['~PythonQtClassInfo',['../class_python_qt_class_info.html#a060f05dab7995625fe62092a76661ac9',1,'PythonQtClassInfo']]],
@@ -20,5 +19,6 @@ var searchData=
   ['_7epythonqtqfileimporter',['~PythonQtQFileImporter',['../class_python_qt_q_file_importer.html#a83002098da1068150a765947d563ccfd',1,'PythonQtQFileImporter']]],
   ['_7epythonqtscriptingconsole',['~PythonQtScriptingConsole',['../class_python_qt_scripting_console.html#a9730b59cefacdf0fe8f43fd25f44e534',1,'PythonQtScriptingConsole']]],
   ['_7epythonqtsignalreceiver',['~PythonQtSignalReceiver',['../class_python_qt_signal_receiver.html#ad107638388035b831c7f632f3905df18',1,'PythonQtSignalReceiver']]],
-  ['_7epythonqtsignaltarget',['~PythonQtSignalTarget',['../class_python_qt_signal_target.html#a82e71a28bc3d315805d35f820b53bfd0',1,'PythonQtSignalTarget']]]
+  ['_7epythonqtsignaltarget',['~PythonQtSignalTarget',['../class_python_qt_signal_target.html#a82e71a28bc3d315805d35f820b53bfd0',1,'PythonQtSignalTarget']]],
+  ['_7euiclass',['~UIClass',['../classqtpd_1_1_u_i_class.html#a5e670d74f25eb10be0ba1b17cb69ec75',1,'qtpd::UIClass']]]
 ];

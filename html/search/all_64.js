@@ -15,6 +15,7 @@ var searchData=
   ['data',['data',['../struct_python_qt_property.html#a4ef13d1ef99d841b377a8b3ff1fc6ecf',1,'PythonQtProperty::data()'],['../struct_py_date_time___date.html#ab9c69c1645e8c6db8fd199110bb95b66',1,'PyDateTime_Date::data()'],['../classqtpd_1_1_property.html#a9d55f5422aed6f74981dc7e5130399d4',1,'qtpd::Property::data()']]],
   ['datacopy',['dataCopy',['../classqtpd_1_1_canvas.html#a561b418210d059c176d51dc2a7ed2276',1,'qtpd::Canvas']]],
   ['datacut',['dataCut',['../classqtpd_1_1_canvas.html#ac2d57fa919e556258ccf254894894699',1,'qtpd::Canvas']]],
+  ['dataduplicate',['dataDuplicate',['../classqtpd_1_1_canvas.html#af89f81d9217fab9490059afd8bc84859',1,'qtpd::Canvas']]],
   ['datapaste',['dataPaste',['../classqtpd_1_1_canvas.html#a7347b29304570ae42796e343142da9b1',1,'qtpd::Canvas']]],
   ['date_5ffromdate',['Date_FromDate',['../struct_py_date_time___c_a_p_i.html#aabf95eac556dedd26b2542f9159c1143',1,'PyDateTime_CAPI']]],
   ['date_5ffromtimestamp',['Date_FromTimestamp',['../struct_py_date_time___c_a_p_i.html#a7e8c1c02de4d9294ce3e5ef600f42377',1,'PyDateTime_CAPI']]],
@@ -129,9 +130,9 @@ var searchData=
   ['drawcanvas',['drawCanvas',['../classqtpd_1_1_canvas.html#a46e9c53204fb1f069271673c170d0749',1,'qtpd::Canvas']]],
   ['drawobjectbox',['drawObjectBox',['../classqtpd_1_1_canvas.html#a43b9337adb4eeb159797d7a654c3fbeb',1,'qtpd::Canvas']]],
   ['drawstyle',['drawStyle',['../classqtpd_1_1_canvas.html#a5b19011ca274ff736aac6f5641379e59',1,'qtpd::Canvas']]],
-  ['ds_5fbox',['ds_Box',['../namespaceqtpd.html#a51dac42fa81d20e97ba8568fe7fae06da6bb806e9390652c88a3e28bd6ae2c12a',1,'qtpd']]],
-  ['ds_5fcanvas',['ds_Canvas',['../namespaceqtpd.html#a51dac42fa81d20e97ba8568fe7fae06da3456dc40b692464c0696e209987b3e15',1,'qtpd']]],
-  ['ds_5fcanvasinbox',['ds_CanvasInBox',['../namespaceqtpd.html#a51dac42fa81d20e97ba8568fe7fae06da69d5e10baa90ad7357e1d981968b0863',1,'qtpd']]],
+  ['ds_5fbox',['ds_Box',['../namespaceqtpd.html#a0384ba087089722ae1a2fa312df7e7b9a6bb806e9390652c88a3e28bd6ae2c12a',1,'qtpd']]],
+  ['ds_5fcanvas',['ds_Canvas',['../namespaceqtpd.html#a0384ba087089722ae1a2fa312df7e7b9a3456dc40b692464c0696e209987b3e15',1,'qtpd']]],
+  ['ds_5fcanvasinbox',['ds_CanvasInBox',['../namespaceqtpd.html#a0384ba087089722ae1a2fa312df7e7b9a69d5e10baa90ad7357e1d981968b0863',1,'qtpd']]],
   ['dtoa_2eh',['dtoa.h',['../dtoa_8h.html',1,'']]],
   ['dummy',['dummy',['../union__gc__head.html#ac3dd0fc3bbc73d3dffd5df3589c00939',1,'_gc_head']]],
   ['dummytuple',['dummyTuple',['../class_python_qt_private.html#ad99944f1f32f7401dab700ca30afc554',1,'PythonQtPrivate']]],
@@ -141,6 +142,7 @@ var searchData=
   ['dumpui',['dumpUI',['../classceammc_1_1faust_1_1_pd_u_i.html#a4c8693df3b967ca49770652079e21be7',1,'ceammc::faust::PdUI']]],
   ['dup_5ftop',['DUP_TOP',['../opcode_8h.html#a088b123f85cd20b0501c32efb5f38af5',1,'opcode.h']]],
   ['dup_5ftopx',['DUP_TOPX',['../opcode_8h.html#ae944c5c7db31d16a5dcda3e235ff9fb7',1,'opcode.h']]],
+  ['duplicate',['duplicate',['../classqtpd_1_1_patch_window.html#af2f7c9692b92c406247a5b9edf14d421',1,'qtpd::PatchWindow']]],
   ['duplicateact',['duplicateAct',['../classqtpd_1_1_base_window.html#a027d61a098ee10d447b38d78cb565f49',1,'qtpd::BaseWindow']]],
   ['dynamicclassinfo',['dynamicClassInfo',['../struct_python_qt_instance_wrapper_struct.html#ab51540bb6336f4b2fd0ffe264fd623d0',1,'PythonQtInstanceWrapperStruct']]]
 ];

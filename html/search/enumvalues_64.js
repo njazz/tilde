@@ -6,7 +6,7 @@ var searchData=
   ['dict_5fkind',['Dict_kind',['../_python-ast_8h.html#a5040779a586bc1f6938f47df869170a5a667caba6ace97ddb7fbf95e4d4472b09',1,'Python-ast.h']]],
   ['dictcomp_5fkind',['DictComp_kind',['../_python-ast_8h.html#a5040779a586bc1f6938f47df869170a5a6e4ef5e3e5f8c51a16759e3c88d3fffa',1,'Python-ast.h']]],
   ['div',['Div',['../_python-ast_8h.html#ab9d92a0f505af42d2049e62ae49ef932ae6fac012a9b23f2f87d8094e349e4418',1,'Python-ast.h']]],
-  ['ds_5fbox',['ds_Box',['../namespaceqtpd.html#a51dac42fa81d20e97ba8568fe7fae06da6bb806e9390652c88a3e28bd6ae2c12a',1,'qtpd']]],
-  ['ds_5fcanvas',['ds_Canvas',['../namespaceqtpd.html#a51dac42fa81d20e97ba8568fe7fae06da3456dc40b692464c0696e209987b3e15',1,'qtpd']]],
-  ['ds_5fcanvasinbox',['ds_CanvasInBox',['../namespaceqtpd.html#a51dac42fa81d20e97ba8568fe7fae06da69d5e10baa90ad7357e1d981968b0863',1,'qtpd']]]
+  ['ds_5fbox',['ds_Box',['../namespaceqtpd.html#a0384ba087089722ae1a2fa312df7e7b9a6bb806e9390652c88a3e28bd6ae2c12a',1,'qtpd']]],
+  ['ds_5fcanvas',['ds_Canvas',['../namespaceqtpd.html#a0384ba087089722ae1a2fa312df7e7b9a3456dc40b692464c0696e209987b3e15',1,'qtpd']]],
+  ['ds_5fcanvasinbox',['ds_CanvasInBox',['../namespaceqtpd.html#a0384ba087089722ae1a2fa312df7e7b9a69d5e10baa90ad7357e1d981968b0863',1,'qtpd']]]
 ];

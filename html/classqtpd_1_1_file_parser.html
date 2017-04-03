@@ -118,6 +118,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#a635ba8164c801509c205bb1ab24787a9">setParserWindow</a> (<a class="el" href="classqtpd_1_1_patch_window.html">PatchWindow</a> *wnd)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#af36576b1a6f7cc5062c19b4755b0c48e">setParserWindows</a> (<a class="el" href="classqtpd_1_1_patch_window.html">PatchWindow</a> *wnd, <a class="el" href="classqtpd_1_1_patch_window.html">PatchWindow</a> *prev, <a class="el" href="classqtpd_1_1_patch_window.html">PatchWindow</a> *first)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_patch_window.html">PatchWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#ae55d821e20852e98617ff5a93057f5d5">parserFirstWindow</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns first created window  <a href="#ae55d821e20852e98617ff5a93057f5d5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_patch_window.html">PatchWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#aee0f14a3d05554a9020d4eaed943622b">parserWindow</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_patch_window.html">PatchWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#ab2609a2131b6ac36dc6f8519c1cc7710">parserPrevWindow</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#a1368c5ecfcbda70864f620275d402b31">legacyProcess</a> (<a class="el" href="classqtpd_1_1_canvas.html">Canvas</a> *cmcanvas, QStringList list)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">[3.2] process legacy pd files  <a href="#a1368c5ecfcbda70864f620275d402b31"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#a46d5b7fa6823417f24a697f8771bd8b7">sendStringToCanvas</a> (<a class="el" href="classqtpd_1_1_canvas.html">Canvas</a> *cmcanvas, QStringList list)</td></tr>
@@ -220,6 +225,58 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ae55d821e20852e98617ff5a93057f5d5"></a><!-- doxytag: member="qtpd::FileParser::parserFirstWindow" ref="ae55d821e20852e98617ff5a93057f5d5" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqtpd_1_1_patch_window.html">PatchWindow</a>* <a class="el" href="classqtpd_1_1_file_parser.html#ae55d821e20852e98617ff5a93057f5d5">qtpd::FileParser::parserFirstWindow</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>returns first created window </p>
+<p>mostly used by OOP loader </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab2609a2131b6ac36dc6f8519c1cc7710"></a><!-- doxytag: member="qtpd::FileParser::parserPrevWindow" ref="ab2609a2131b6ac36dc6f8519c1cc7710" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqtpd_1_1_patch_window.html">PatchWindow</a>* <a class="el" href="classqtpd_1_1_file_parser.html#ab2609a2131b6ac36dc6f8519c1cc7710">qtpd::FileParser::parserPrevWindow</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aee0f14a3d05554a9020d4eaed943622b"></a><!-- doxytag: member="qtpd::FileParser::parserWindow" ref="aee0f14a3d05554a9020d4eaed943622b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqtpd_1_1_patch_window.html">PatchWindow</a>* <a class="el" href="classqtpd_1_1_file_parser.html#aee0f14a3d05554a9020d4eaed943622b">qtpd::FileParser::parserWindow</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a9ae0ca9c20d5e2e29573eed775b04a2d"></a><!-- doxytag: member="qtpd::FileParser::parseStringListAtoms" ref="a9ae0ca9c20d5e2e29573eed775b04a2d" args="(Canvas *cmcanvas, QStringList list)" -->
 <div class="memitem">
 <div class="memproto">
@@ -311,6 +368,39 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="af36576b1a6f7cc5062c19b4755b0c48e"></a><!-- doxytag: member="qtpd::FileParser::setParserWindows" ref="af36576b1a6f7cc5062c19b4755b0c48e" args="(PatchWindow *wnd, PatchWindow *prev, PatchWindow *first)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="classqtpd_1_1_file_parser.html#af36576b1a6f7cc5062c19b4755b0c48e">qtpd::FileParser::setParserWindows</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_patch_window.html">PatchWindow</a> *&#160;</td>
+          <td class="paramname"><em>wnd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_patch_window.html">PatchWindow</a> *&#160;</td>
+          <td class="paramname"><em>prev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_patch_window.html">PatchWindow</a> *&#160;</td>
+          <td class="paramname"><em>first</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <hr/><h2>Member Data Documentation</h2>
 <a class="anchor" id="ab7dc8008ff768523c4633c29f8c030d2"></a><!-- doxytag: member="qtpd::FileParser::pdParserFileName" ref="ab7dc8008ff768523c4633c29f8c030d2" args="" -->
 <div class="memitem">
@@ -347,7 +437,7 @@ Static Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 2 2017 21:21:12 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Apr 3 2017 10:06:17 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

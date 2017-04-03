@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['canvasdrawstyle',['canvasDrawStyle',['../namespaceqtpd.html#a3122dc9331556e1ca5ddad5fa6c9e7b7',1,'qtpd']]],
   ['ceammc_5ffloat_5fbinary_5ffunc',['ceammc_float_binary_func',['../ceammc_8h.html#abcd38c405989e09b9cb37cf297fc88b4',1,'ceammc.h']]],
   ['ceammc_5ffloat_5funary_5ffunc',['ceammc_float_unary_func',['../ceammc_8h.html#a60492cd0fbb256c9bcedc0f5746ce0a6',1,'ceammc.h']]],
   ['charbufferproc',['charbufferproc',['../object_8h.html#a2e0b5e547dd1db605b655bc8ffc9466f',1,'object.h']]],

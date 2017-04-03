@@ -124,7 +124,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00040"></a>00040 
 <a name="l00041"></a><a class="code" href="namespaceqtpd.html#a9ab76f3031aa5e393411be42a9978ae5">00041</a> <span class="keyword">typedef</span> set&lt;OPInstance*&gt; <a class="code" href="namespaceqtpd.html#a9ab76f3031aa5e393411be42a9978ae5">t_existingInstances</a>;
 <a name="l00042"></a>00042 
-<a name="l00043"></a><a class="code" href="namespaceqtpd.html#a8a2ab10220c811c82f880bb28c70dc9f">00043</a> <span class="keyword">typedef</span> vector&lt;t_outlet*&gt; <a class="code" href="namespaceqtpd.html#a8a2ab10220c811c82f880bb28c70dc9f" title="vector of method boxes outputs">OPOutputs</a>; 
+<a name="l00043"></a>00043 <span class="comment">//typedef vector&lt;t_outlet*&gt; OPOutputs; ///&lt; vector of method boxes outputs</span>
 <a name="l00044"></a><a class="code" href="namespaceqtpd.html#aa647b940a3756e6f714b00f44e983dcb">00044</a> <span class="keyword">typedef</span> vector&lt;t_object*&gt; <a class="code" href="namespaceqtpd.html#aa647b940a3756e6f714b00f44e983dcb" title="vector of property boxes">OPProperties</a>; 
 <a name="l00045"></a>00045 
 <a name="l00046"></a>00046 <span class="comment">// ------------------------------------------------------------</span>
@@ -168,7 +168,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00088"></a>00088         _existingInstances.insert(opInstance);
 <a name="l00089"></a>00089     };
 <a name="l00090"></a>00090 
-<a name="l00091"></a><a class="code" href="classqtpd_1_1_o_o_p_d.html#a2adccd41d37014bdec882d3219d61b8c">00091</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_o_o_p_d.html#a2adccd41d37014bdec882d3219d61b8c">unregisterClass</a>(<span class="keywordtype">string</span> className, t_canvas* canvas, t_symbol* symbol){
+<a name="l00091"></a><a class="code" href="classqtpd_1_1_o_o_p_d.html#a345e1c4fe7de65214d0303aba74d9b85">00091</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_o_o_p_d.html#a345e1c4fe7de65214d0303aba74d9b85">unregisterClass</a>(<a class="code" href="classqtpd_1_1_o_p_class.html" title="OOPD class structure.">OPClass</a>* opClass, <span class="keywordtype">string</span> className, t_canvas* canvas, t_symbol* symbol){
 <a name="l00092"></a>00092 
 <a name="l00093"></a>00093     };
 <a name="l00094"></a><a class="code" href="classqtpd_1_1_o_o_p_d.html#abf01b52ccb580a6c4edfa3c7b87cbf32">00094</a>     <span class="keywordtype">void</span> unregisterInstance(<a class="code" href="classqtpd_1_1_o_p_instance.html" title="The OOPD class instance.">OPInstance</a>* opInstance, <span class="keywordtype">string</span> className, t_canvas* canvas, t_symbol* symbol)
@@ -251,7 +251,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 2 2017 21:21:10 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Apr 3 2017 10:06:16 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

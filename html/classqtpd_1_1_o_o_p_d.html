@@ -119,7 +119,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_o_p_d.html#a69dca97d16f5d497d2c6480831fbee00">registerClass</a> (<a class="el" href="classqtpd_1_1_o_p_class.html">OPClass</a> *opClass, <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">string</a> className, t_canvas *canvas, t_symbol *symbol)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_o_p_d.html#ab87578d701d09d6495e2f39b9c6df7dd">registerInstance</a> (<a class="el" href="classqtpd_1_1_o_p_instance.html">OPInstance</a> *opInstance, <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">string</a> className, t_canvas *canvas, t_symbol *symbol)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_o_p_d.html#a2adccd41d37014bdec882d3219d61b8c">unregisterClass</a> (<a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">string</a> className, t_canvas *canvas, t_symbol *symbol)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_o_p_d.html#a345e1c4fe7de65214d0303aba74d9b85">unregisterClass</a> (<a class="el" href="classqtpd_1_1_o_p_class.html">OPClass</a> *opClass, <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">string</a> className, t_canvas *canvas, t_symbol *symbol)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_o_p_d.html#abf01b52ccb580a6c4edfa3c7b87cbf32">unregisterInstance</a> (<a class="el" href="classqtpd_1_1_o_p_instance.html">OPInstance</a> *opInstance, <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">string</a> className, t_canvas *canvas, t_symbol *symbol)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_o_p_class.html">OPClass</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_o_p_d.html#a576c568565520226713ad38c788765a4">classByCanvas</a> (t_canvas *canvas)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_o_p_class.html">OPClass</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_o_o_p_d.html#a201d90ff46c9e93c62b949d592e717b1">classBySymbol</a> (t_symbol *symbol)</td></tr>
@@ -349,13 +349,19 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a2adccd41d37014bdec882d3219d61b8c"></a><!-- doxytag: member="qtpd::OOPD::unregisterClass" ref="a2adccd41d37014bdec882d3219d61b8c" args="(string className, t_canvas *canvas, t_symbol *symbol)" -->
+<a class="anchor" id="a345e1c4fe7de65214d0303aba74d9b85"></a><!-- doxytag: member="qtpd::OOPD::unregisterClass" ref="a345e1c4fe7de65214d0303aba74d9b85" args="(OPClass *opClass, string className, t_canvas *canvas, t_symbol *symbol)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_o_o_p_d.html#a2adccd41d37014bdec882d3219d61b8c">qtpd::OOPD::unregisterClass</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_o_o_p_d.html#a345e1c4fe7de65214d0303aba74d9b85">qtpd::OOPD::unregisterClass</a> </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_o_p_class.html">OPClass</a> *&#160;</td>
+          <td class="paramname"><em>opClass</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">string</a>&#160;</td>
           <td class="paramname"><em>className</em>, </td>
         </tr>
@@ -442,7 +448,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 2 2017 21:21:12 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Apr 3 2017 10:06:17 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

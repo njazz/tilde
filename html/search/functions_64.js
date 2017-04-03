@@ -3,6 +3,7 @@ var searchData=
   ['data',['data',['../classqtpd_1_1_property.html#a9d55f5422aed6f74981dc7e5130399d4',1,'qtpd::Property']]],
   ['datacopy',['dataCopy',['../classqtpd_1_1_canvas.html#a561b418210d059c176d51dc2a7ed2276',1,'qtpd::Canvas']]],
   ['datacut',['dataCut',['../classqtpd_1_1_canvas.html#ac2d57fa919e556258ccf254894894699',1,'qtpd::Canvas']]],
+  ['dataduplicate',['dataDuplicate',['../classqtpd_1_1_canvas.html#af89f81d9217fab9490059afd8bc84859',1,'qtpd::Canvas']]],
   ['datapaste',['dataPaste',['../classqtpd_1_1_canvas.html#a7347b29304570ae42796e343142da9b1',1,'qtpd::Canvas']]],
   ['debug',['Debug',['../classceammc_1_1_debug.html#a9012e05dd78d36cd041480940f961215',1,'ceammc::Debug']]],
   ['decorator',['decorator',['../class_python_qt_class_info.html#adae2f612f80f3e0fc4447a84c628c684',1,'PythonQtClassInfo::decorator()'],['../class_python_qt_slot_info.html#a7c34e25922c0275941f507382b787b12',1,'PythonQtSlotInfo::decorator()']]],
@@ -47,5 +48,6 @@ var searchData=
   ['dump',['dump',['../classceammc_1_1faust_1_1_u_i_element.html#a8f0c800623e3c4ceabdce3eac43fad33',1,'ceammc::faust::UIElement::dump()'],['../classceammc_1_1_base_object.html#a3008183689fc18249c342ba400a55972',1,'ceammc::BaseObject::dump()']]],
   ['dumpmethodlist',['dumpMethodList',['../classceammc_1_1_object_factory.html#a2e4c478d58333c6ce7ab278046daee40',1,'ceammc::ObjectFactory']]],
   ['dumpui',['dumpUI',['../classceammc_1_1faust_1_1_pd_u_i.html#a4c8693df3b967ca49770652079e21be7',1,'ceammc::faust::PdUI']]],
+  ['duplicate',['duplicate',['../classqtpd_1_1_patch_window.html#af2f7c9692b92c406247a5b9edf14d421',1,'qtpd::PatchWindow']]],
   ['dynamicclassinfo',['dynamicClassInfo',['../struct_python_qt_instance_wrapper_struct.html#ab51540bb6336f4b2fd0ffe264fd623d0',1,'PythonQtInstanceWrapperStruct']]]
 ];

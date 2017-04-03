@@ -60,9 +60,16 @@ var searchData=
   ['moviectlobj_5fnew',['MovieCtlObj_New',['../pymactoolbox_8h.html#a244d8436532a3873e2d6e17d9b8ea098',1,'pymactoolbox.h']]],
   ['movieobj_5fconvert',['MovieObj_Convert',['../pymactoolbox_8h.html#aef12c1d45277ea1b2e8041be1cd9312f',1,'pymactoolbox.h']]],
   ['movieobj_5fnew',['MovieObj_New',['../pymactoolbox_8h.html#a44a1ff57de5ec2513236dad555d541a9',1,'pymactoolbox.h']]],
+  ['msgaddmethod',['msgAddMethod',['../classqtpd_1_1_u_i_class.html#a6dc446343f744754f77b7c18778a40b5',1,'qtpd::UIClass']]],
+  ['msgaddproperty',['msgAddProperty',['../classqtpd_1_1_u_i_class.html#a37207481599873f0c052dc3044fde80e',1,'qtpd::UIClass']]],
+  ['msgdelmethod',['msgDelMethod',['../classqtpd_1_1_u_i_class.html#a2b1ef4416692de217954c99b9de24cb0',1,'qtpd::UIClass']]],
+  ['msgdelproperty',['msgDelProperty',['../classqtpd_1_1_u_i_class.html#ae24a7148f97fa87f9ca3c16a2a9e4bc6',1,'qtpd::UIClass']]],
   ['msgfree',['msgFree',['../classqtpd_1_1_u_i_instance.html#a01f37e59fc397c2abeefbc2a5ed7a855',1,'qtpd::UIInstance']]],
   ['msggetobject',['msgGetObject',['../classqtpd_1_1_u_i_instance.html#a6350f275f201fd6e52e2364cb0e52f78',1,'qtpd::UIInstance']]],
+  ['msginfo',['msgInfo',['../classqtpd_1_1_u_i_class.html#ab5e8585393fa4dff6d210715b6aeb973',1,'qtpd::UIClass']]],
   ['msgnew',['msgNew',['../classqtpd_1_1_u_i_instance.html#ab5a32239a8182a087747c41339391714',1,'qtpd::UIInstance']]],
+  ['msgnewclass',['msgNewClass',['../classqtpd_1_1_u_i_class.html#ab82467a6a120df31bf7f9ac7ff1df539',1,'qtpd::UIClass']]],
   ['msgsetobject',['msgSetObject',['../classqtpd_1_1_u_i_instance.html#a87264a285762fbf71c3ec485fd888750',1,'qtpd::UIInstance']]],
+  ['msgsettype',['msgSetType',['../classqtpd_1_1_u_i_instance.html#a901beeea5d5f67a49f0d0a7cd6f9f51c',1,'qtpd::UIInstance']]],
   ['multipleoutput',['multipleOutput',['../classqtpd_1_1_o_p_instance.html#a9e2addc8b1f9f6964b0eea7b79ecd603',1,'qtpd::OPInstance']]]
 ];
