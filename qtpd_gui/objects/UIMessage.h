@@ -105,6 +105,12 @@ public:
         p.drawText(2, 3, width() - 2, height() - 3, 0, objectData().c_str(), 0);
     }
 
+    void resizeEvent(QResizeEvent *ev)
+    {
+        UIObject::resizeEvent(ev);
+        _editor->setFixedWidth(width() - 5);
+    }
+
     ///////////////////
 
     void mousePressEvent(QMouseEvent* ev)
@@ -181,7 +187,7 @@ public:
         int new_w = fm.width(QString(objectData().c_str())) + 10;
         new_w = (new_w < 25) ? 25 : new_w;
         setFixedWidth(new_w);
-        _editor->setFixedWidth(width() - 5);
+        //_editor->setFixedWidth(width() - 5);
 
         //temporary
         //move

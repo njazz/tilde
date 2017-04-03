@@ -10,8 +10,7 @@ UIMessage::UIMessage(UIObject* parent)
 {
     //setPdObjectName("ui.msg");
 
-    //setMinimumWidth(30);
-    setFixedSize(65, 20);
+
 
     setMouseTracking(true);
 
@@ -31,6 +30,9 @@ UIMessage::UIMessage(UIObject* parent)
 
     setMinimumBoxWidth(40);
     setMinimumBoxHeight(20);
+
+    setFixedSize(65, 20);
+
 }
 
 ///////
