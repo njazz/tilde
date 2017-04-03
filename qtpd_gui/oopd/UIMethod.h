@@ -16,7 +16,6 @@
 //todo proper pattern
 #include "OpenFileProxy.h"
 
-
 #include "OOPDHeaders.h"
 
 namespace qtpd {

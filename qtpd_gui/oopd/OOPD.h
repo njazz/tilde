@@ -88,7 +88,7 @@ public:
         _existingInstances.insert(opInstance);
     };
 
-    void unregisterClass(string className, t_canvas* canvas, t_symbol* symbol){
+    void unregisterClass(OPClass* opClass, string className, t_canvas* canvas, t_symbol* symbol){
 
     };
     void unregisterInstance(OPInstance* opInstance, string className, t_canvas* canvas, t_symbol* symbol)

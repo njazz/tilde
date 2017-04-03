@@ -31,5 +31,7 @@ UIInstance::UIInstance(UIObject* parent)
     setObjectSizeMode(os_FixedHeight);
 
     _opInstance = 0;
+
+    _hasType = false;
 }
 }

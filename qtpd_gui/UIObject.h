@@ -67,15 +67,15 @@ private:
     QString _fullHelpName;
 
     //
-    QString fullfullHelpName()
-    {
-        if (fullHelpName() == "")
-            return "";
+//    QString fullHelpName()
+//    {
+//        if (fullHelpName() == "")
+//            return "";
 
-        QString ret = "";
+//        QString ret = "";
 
-        return ret;
-    }
+//        return ret;
+//    }
 
 public:
     //cm_object();
@@ -105,7 +105,7 @@ public:
     ///
     ///
 
-    void setInletsPos();
+    virtual void setInletsPos();
 
     ////
     /// \brief sets outlet position (cm_port)
@@ -114,7 +114,7 @@ public:
     /// \return
     ///
     ///
-    void setOutletsPos();
+    virtual void setOutletsPos();
 
     ////
     /// \brief adds single inlet (cm_port)
@@ -136,6 +136,7 @@ public:
     virtual void addOutlet();
 
     virtual void addOutlet(int _portClass_);
+
     ////
     /// \brief gets inlet (cm_port) at specified index
     /// \param idx

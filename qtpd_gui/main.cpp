@@ -28,7 +28,7 @@ void pd_window_printhook(const char* s)
 {
     //qDebug("print hook %s",s);
     //if (pdw)
-        PdWindow::inst()->cm_log(std::string(s));
+    PdWindow::inst()->cm_log(std::string(s));
 }
 
 int main(int argc, char* argv[])
@@ -48,7 +48,6 @@ int main(int argc, char* argv[])
     cmp_pdinit();
     cmp_setprinthook(&pd_window_printhook);
 
-
     PdWindow::inst()->move(0, 100);
     PdWindow::inst()->show();
 
@@ -56,7 +55,7 @@ int main(int argc, char* argv[])
     cmp_post("---");
 
     //temporary
-    BaseMenu* m = new BaseMenu(0);
+    new BaseMenu(0);
 
     //temporary folders properties
 
@@ -66,6 +65,8 @@ int main(int argc, char* argv[])
     Preferences::inst().create("Externals", "Folders", "0.1", docFolder + "/Qtpd/Externals");
     Preferences::inst().create("Scripts", "Folders", "0.1", docFolder + "/Qtpd/Scripts");
     Preferences::inst().create("Help", "Folders", "0.1", docFolder + "/Qtpd/Help");
+    Preferences::inst().create("Patches", "Folders", "0.1", docFolder + "/Qtpd/Patches");
+    Preferences::inst().create("Classes", "Folders", "0.1", docFolder + "/Qtpd/Classes");
 
     //test
     //fix

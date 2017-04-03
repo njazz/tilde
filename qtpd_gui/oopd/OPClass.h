@@ -134,8 +134,14 @@ public:
     {
         return _parent;
     }
-
+// -------
+    string getClassName()
+    {
+        return _className;
+    }
 };
+
+
 
 // -----------------------------------
 }

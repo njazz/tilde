@@ -262,7 +262,7 @@ void FileParser::parseStringListAtoms(Canvas* cmcanvas, QStringList list) //rena
             qDebug() << "objname" << objname;
             //temporary
             //cmcanvas->createBox(objname.toStdString(), pos);
-            cmcanvas->createObject( objname, pos);
+            cmcanvas->createObject(objname, pos);
         }
     }
 }
@@ -338,34 +338,36 @@ void FileParser::parseQString(QString line)
 
 void FileParser::open(QString fname)
 {
+
     QFile f(fname);
-    f.open(QIODevice::ReadOnly);
+    if (f.open(QIODevice::ReadOnly)) {
+        QStringList stringList;
 
-    QStringList stringList;
+        setParserWindow(0);
 
-    setParserWindow(0);
+        pdParserFileName = fname.toStdString();
 
-    pdParserFileName = fname.toStdString();
+        QTextStream textStream(&f);
+        while (true) {
+            QString line = textStream.readLine();
+            if (line.isNull())
+                break;
+            else {
+                stringList.append(line);
+                qDebug("* %s", line.toStdString().c_str());
+                //
 
-    QTextStream textStream(&f);
-    while (true) {
-        QString line = textStream.readLine();
-        if (line.isNull())
-            break;
-        else {
-            stringList.append(line);
-            qDebug("* %s", line.toStdString().c_str());
-            //
-
-            FileParser::parseQString(line);
+                FileParser::parseQString(line);
+            }
         }
-    }
 
-    if (_pdParserWindow) {
-        _pdParserWindow->setFileName(fname);
-        _pdParserWindow->canvas->setEditMode(em_Locked);
-    }
+        if (_pdParserWindow) {
+            _pdParserWindow->setFileName(fname);
+            _pdParserWindow->canvas->setEditMode(em_Locked);
+        }
 
-    f.close();
+        f.close();
+
+    }
 }
 }

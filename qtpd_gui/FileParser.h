@@ -9,6 +9,8 @@
 
 #include "PatchWindow.h"
 
+// todo non-static class
+
 namespace qtpd {
 ////
 /// \brief Parses pd files on 'client' (GUI) side
@@ -32,14 +34,31 @@ public:
         _pdParserWindow = wnd;
     }
 
+    static void setParserWindows(PatchWindow* wnd, PatchWindow* prev, PatchWindow* first)
+    {
+        _pdParserWindow = wnd;
+        _pdParserPrevWindow = prev;
+        _pdParserFirstWindow = first;
+    }
+
     ////
     /// \brief returns first created window
     /// \details mostly used by OOP loader
     /// \return
     ///
-    static PatchWindow* parserFirstWinfow()
+    static PatchWindow* parserFirstWindow()
     {
         return _pdParserFirstWindow;
+    }
+
+    static PatchWindow* parserWindow()
+    {
+        return _pdParserWindow;
+    }
+
+    static PatchWindow* parserPrevWindow()
+    {
+        return _pdParserPrevWindow;
     }
     ////
     /// \brief [3.2] process legacy pd files

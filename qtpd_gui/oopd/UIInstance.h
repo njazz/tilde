@@ -34,6 +34,9 @@ private:
     // todo move?
     t_outlet* _out1;
 
+    bool _hasType; //temp
+    QString _className;
+
 public:
     explicit UIInstance(UIObject* parent = 0);
     //~UIInstance();
@@ -135,12 +138,40 @@ public:
         op->setAlignment(Qt::AlignLeft);
         p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
-        p.setFont(QFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize(), 0, false));
-        p.drawText(2, 3, width() - 2, height() - 3, 0, objectData().c_str(), 0);
+
 
         if (isSelected()) {
             p.setPen(QPen(QColor(0, 192, 255), 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
             p.drawRect(0, 0, width(), height());
+        }
+
+        // -----------
+
+        if (_hasType) {
+
+            p.setFont(QFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize(), 0, false));
+            p.drawText(2, 3, width() - 2, 20 - 3, Qt::AlignCenter, "<"+_className  +">", 0);
+
+            int y=20;
+
+            for (int i=0;i<_opClass->getPropertyList().size();i++)
+            {
+                p.drawText(2, 3 + y, width() - 2, 20 - 3, Qt::AlignCenter, "•"+QString(_opClass->getPropertyList().at(i).asString().c_str()), 0);
+
+                y += 20;
+            }
+
+            for (int i=0;i<_opClass->getMethodList().size();i++)
+            {
+                p.drawText(2, 3 + y, width() - 2, 20 - 3, Qt::AlignCenter, QString(_opClass->getMethodList().at(i).asString().c_str()), 0);
+
+                y += 20;
+            }
+
+        } else {
+
+            p.setFont(QFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize(), 0, false));
+            p.drawText(2, 3, width() - 2, height() - 3, 0, objectData().c_str(), 0);
         }
     }
 
@@ -259,6 +290,13 @@ public:
         _opInstance->addInstanceOut(0);
     }
 
+    //
+
+    void typedInlets()
+    {
+        addInlet();
+    }
+
     void msgFree(AtomList msg)
     {
 
@@ -273,7 +311,8 @@ public:
             }
 
             _opInstance->freeInstanceOut(0);
-            delete _opInstance;
+            //delete _opInstance;
+            _opInstance->release();
         }
 
         _opInstance = 0;
@@ -292,6 +331,8 @@ public:
         qDebug() << "symbol: " << msg.at(1).asSymbol()->s_name;
 
         _opInstance = OPInstance::fromObjectSymbol(msg.at(1).asSymbol());
+
+        _opInstance->retain();
 
         qDebug() << "instance: " << _opInstance;
 
@@ -312,6 +353,41 @@ public:
 
         } else {
             cmp_post("instance outlet error!");
+        }
+    }
+
+    void msgSetType(AtomList msg)
+    {
+        if (msg.size() < 2) {
+            _hasType = false;
+            _opInstance = 0;
+            _opClass = 0;
+            setFixedHeight(20);
+            repaint();
+            return;
+        } else {
+            _opClass = OOPD::inst()->classByName(msg.at(1).asString());
+            // not working:
+            //_opClass = OOPD::inst()->classBySymbol(msg.at(1).asSymbol());
+
+            //resize
+            if (_opClass) {
+                AtomList list;
+                list = _opClass->getMethodList();
+                list.append(_opClass->getPropertyList());
+
+                setFixedHeight(20 * (list.size() + 1));
+
+                _hasType = true;
+                _className = msg.at(1).asString().c_str();
+
+            } else {
+                cmp_post("class not found!");
+                cmp_post(msg.at(1).asString().c_str());
+                setFixedHeight(20);
+            }
+
+            repaint();
         }
     }
 
@@ -350,6 +426,10 @@ public:
 
         if (msg.at(0).asString() == "getobject") {
             x->msgGetObject(msg);
+        }
+
+        if (msg.at(0).asString() == "settype") {
+            x->msgSetType(msg);
         }
 
         // properties

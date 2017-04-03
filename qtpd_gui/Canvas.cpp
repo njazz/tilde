@@ -54,6 +54,8 @@ Canvas::Canvas(UIObject* parent)
     setMinimumBoxHeight(20);
 
     _replaceObject = 0;
+
+    _filePath = Preferences::inst().get("Patches")->asQString();
 }
 
 //cm_canvas::cm_canvas(QWidget *parent) : cm_widget((cm_widget*)parent)

@@ -21,8 +21,7 @@ namespace qtpd {
 
 ////
 /// \brief structure for selection rectangle
-typedef struct
-{
+typedef struct _tRectPlus {
     bool active;
     QPoint start;
     QPoint end;
@@ -31,7 +30,7 @@ typedef struct
 
 ////
 /// \brief draw canvas as patch, box or pd "G-O-P" / patch in patch
-typedef enum { ds_Canvas,
+typedef enum _canvasDrawStyle { ds_Canvas,
     ds_Box,
     ds_CanvasInBox } canvasDrawStyle;
 
@@ -87,6 +86,8 @@ private:
     bool _keepPdObject;
 
     bool _readOnly;
+
+    QString _filePath;
 
     Q_OBJECT
 
@@ -448,7 +449,6 @@ public:
     ///
     void canvasFromPdStrings(QStringList strings);
 
-
 public slots:
 
     void s_InMousePressed(UIWidget* obj, QMouseEvent* ev);
@@ -541,6 +541,13 @@ public slots:
     {
         return _readOnly;
     }
+
+    void setFilePath(QString filePath)
+    {
+        _filePath = filePath;
+    }
+
+    QString filePath() { return _filePath; };
 
 private:
 private slots:

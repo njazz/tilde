@@ -30,9 +30,17 @@ class UIClass : public UIObject {
 private:
     OPClass* _opClass;
 
+    bool _dynamicClass;
+
 public:
     explicit UIClass(UIObject* parent = 0);
-    //~UIClass();
+    ~UIClass()
+    {
+        if (_opClass)
+        {
+            _opClass->writeFile();
+        }
+    };
 
     static UIObject* createObject(std::string objectData, t_canvas* pd_Canvas, UIWidget* parent = 0)
     {
@@ -71,9 +79,20 @@ public:
 
         // new class w/canvas
         if (list.size() > 1) {
+
             b->_opClass = new OPClass(list.at(1).toStdString());
+            // TODO FIX
+            //
+
+            //attempt to load
+            b->_opClass->readFile();
+
+            b->_dynamicClass = false;
+
+
         } else {
-            b->_opClass = new OPClass();
+            b->_opClass = 0; //new OPClass();
+            b->_dynamicClass = true;
         }
 
         if (new_obj) {
@@ -150,11 +169,11 @@ public:
         }
 
         //open canvas for subpatch
-        if (getEditMode() != em_Unlocked) {
-            if (subpatchWindow()) {
-                subpatchWindow()->show();
-            }
-        }
+//        if (getEditMode() != em_Unlocked) {
+//            if (subpatchWindow()) {
+//                subpatchWindow()->show();
+//            }
+//        }
 
         //window opening. Fix
         if (getEditMode() != em_Unlocked) {
@@ -219,42 +238,49 @@ public:
         setOutletsPos();
     }
 
-    static void updateUI(void* uiobj, ceammc::AtomList msg)
+    // ---------------------------------------------------------------
+
+    void msgNewClass(AtomList msg)
     {
-        // message handling here - probably move somewhere else?
+        if (_dynamicClass) {
+            _opClass = new OPClass(msg.at(1).asString());
 
-        UIClass* x = (UIClass*)uiobj;
-
-        if (msg.size() < 1)
-            return;
-        if (!msg.at(0).isSymbol())
-            return;
-
-        if ((msg.at(0).asString() == "newclass") && (msg.size() > 2)) {
+        } else {
+            cmp_post("cannot create new class - use empty 'pdclass' box for dynamic class creation");
         }
+    }
 
-        if ((msg.at(0).asString() == "addproperty") && (msg.size() > 2)) //addproperty pname sendsymbol
-        {
-            x->_opClass->addProperty(msg.at(1).asString(), msg.at(2).asString());
-        }
+    void msgAddProperty(AtomList msg)
+    {
+        _opClass->addProperty(msg.at(1).asString(), msg.at(2).asString());
+    }
 
-        if (msg.at(0).asString() == "delproperty") {
-        }
+    void msgDelProperty(AtomList msg)
+    {
+        _opClass->freeProperty(msg.at(1).asString());
+    }
 
-        if ((msg.at(0).asString() == "addmethod") && (msg.size() > 2)) {
-            x->_opClass->addMethod(msg.at(1).asString(), msg.at(2).asString()); //addmethod pname sendsymbol
-        }
+    void msgAddMethod(AtomList msg)
+    {
+        _opClass->addMethod(msg.at(1).asString(), msg.at(2).asString()); //addmethod pname sendsymbol
+    }
 
-        if (msg.at(0).asString() == "delmethod") {
-        }
+    void msgDelMethod(AtomList msg)
+    {
+        _opClass->freeMethod(msg.at(1).asString());
+    }
 
-        if (msg.at(0).asString() == "info") {
-            AtomList l1 = x->_opClass->getPropertyList();
-            AtomList l2 = x->_opClass->getMethodList();
+    void msgInfo(AtomList msg)
+    {
+
+        if (_opClass) {
+            AtomList l1 = _opClass->getPropertyList();
+            AtomList l2 = _opClass->getMethodList();
 
             QStringList output;
 
             output += "class info: ";
+            output += _opClass->getClassName().c_str();
 
             output += "properties:";
             for (int i = 0; i < l1.size(); i++) {
@@ -268,18 +294,51 @@ public:
 
             cmp_post(output.join("\n").toStdString().c_str());
         }
+        else
+        {
+            cmp_post("no class");
+        }
+    }
 
-        if ( (msg.at(0).asString() == "read") ){
-            //QString fname =QString( _opClass->  ) + ".class.pd";
+    // ---------------------------------------------------------------
+
+    static void updateUI(void* uiobj, AtomList msg)
+    {
+        // message handling here - probably move somewhere else?
+
+        UIClass* x = (UIClass*)uiobj;
+
+        if (msg.size() < 1)
+            return;
+        if (!msg.at(0).isSymbol())
+            return;
+
+        if ((msg.at(0).asString() == "newclass") && (msg.size() > 1)) {
+            x->msgNewClass(msg);
+        }
+
+        if ((msg.at(0).asString() == "addproperty") && (msg.size() > 2)) //addproperty pname sendsymbol
+            x->msgAddProperty(msg);
+
+        if ((msg.at(0).asString() == "delproperty") && (msg.size() > 1))
+            x->msgDelProperty(msg);
+
+        if ((msg.at(0).asString() == "addmethod") && (msg.size() > 2))
+            x->msgAddMethod(msg);
+
+        if ((msg.at(0).asString() == "delmethod") && (msg.size() > 1))
+            x->msgDelMethod(msg);
+
+        if (msg.at(0).asString() == "info")
+            x->msgInfo(msg);
+
+        // -----------
+
+        if ((msg.at(0).asString() == "read"))
             x->_opClass->readFile();
 
-        }
-
-        if ( (msg.at(0).asString() == "write")  ){
-            //QString fname = QString(msg.at(0).asString().c_str()) + ".class.pd";
+        if ((msg.at(0).asString() == "write"))
             x->_opClass->writeFile();
-
-        }
 
         emit((UIClass*)uiobj)->updateUISignal();
     }

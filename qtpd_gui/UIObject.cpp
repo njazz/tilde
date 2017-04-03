@@ -31,6 +31,8 @@ UIObject::UIObject(UIWidget* parent)
 
     //this is default
     _objectSizeMode = os_FixedHeight;
+
+
 }
 
 //---------------------------------------

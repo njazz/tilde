@@ -493,7 +493,7 @@ struct _inlet {
 
 t_outlet* cmp_get_outlet(t_object* x, int idx)
 {
-    printf("get outlet\n");
+    //printf("get outlet\n");
     int n;
     t_outlet* o;
     for (o = x->te_outlet, n = 0; o; o = o->o_next) {
