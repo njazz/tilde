@@ -126,8 +126,8 @@ void Canvas::s_MoveBox(UIWidget* box, QMouseEvent* event)
         QPoint pos = ((UIObject*)_selectionData.boxes()->at(i))->pos() + mapToParent((event->pos() - box->dragOffset));
 
         if (_gridSnap) {
-            pos.setX(floor(pos.x() / _gridStep) * _gridStep);
-            pos.setY(floor(pos.y() / _gridStep) * _gridStep);
+            pos.setX(ceil(pos.x() / _gridStep) * _gridStep);
+            pos.setY(ceil(pos.y() / _gridStep) * _gridStep);
         }
 
         w->move(pos);
@@ -422,8 +422,8 @@ void Canvas::mouseMoveEventForCanvas(QMouseEvent* ev)
 
         QPoint newpos = mapToParent(ev->pos() - offset);
         if (_gridSnap) {
-            newpos.setX(floor(newpos.x() / _gridStep) * _gridStep);
-            newpos.setY(floor(newpos.y() / _gridStep) * _gridStep);
+            newpos.setX(ceil(newpos.x() / _gridStep) * _gridStep);
+            newpos.setY(ceil(newpos.y() / _gridStep) * _gridStep);
         }
 
         dragObject->move(newpos);
