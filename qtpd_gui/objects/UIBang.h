@@ -91,7 +91,7 @@ public:
     void mousePressEvent(QMouseEvent* ev)
     {
 
-        emit selectBox(this);
+        emit selectBox(this, ev);
         dragOffset = ev->pos();
 
         if (!(getEditMode() == em_Unlocked)) {

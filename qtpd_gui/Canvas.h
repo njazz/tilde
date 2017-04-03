@@ -449,6 +449,8 @@ public:
     ///
     void canvasFromPdStrings(QStringList strings);
 
+    void selectBox(UIWidget* box);
+
 public slots:
 
     void s_InMousePressed(UIWidget* obj, QMouseEvent* ev);
@@ -460,7 +462,7 @@ public slots:
     /// \brief slot called by box when it is selected
     /// \param box
     ///
-    void s_SelectBox(UIWidget* box);
+    void s_SelectBox(UIWidget* box, QMouseEvent *ev);
 
     ////
     /// \brief TODO check. slot called by box when it starts moving

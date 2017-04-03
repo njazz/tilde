@@ -102,13 +102,21 @@ void Canvas::s_OutMouseReleased(UIWidget*, QMouseEvent*)
     //    printf("out:  mouse released\n");
 }
 
-void Canvas::s_SelectBox(UIWidget* box)
+void Canvas:: selectBox(UIWidget * box)
+{
+    _selectionData.addUniqueBox((UIObject*)box);
+    box->select();
+    box->repaint();
+
+}
+void Canvas::s_SelectBox(UIWidget* box, QMouseEvent* ev)
 {
 
+    if (!(ev->modifiers() & Qt::ShiftModifier))// && !(ev->modifiers() & Qt::ControlModifier))
+        deselectBoxes();
+
     if (_editMode == em_Unlocked) {
-        _selectionData.addUniqueBox((UIObject*)box);
-        box->select();
-        box->repaint();
+        selectBox(box);
     }
 
     //temporary
@@ -521,7 +529,7 @@ void Canvas::mousePressEventForBox(QMouseEvent* ev)
     //            editor_->setFocus();
     //        }
 
-    emit selectBox(this);
+    emit UIObject::selectBox(this, ev);
     dragOffset = ev->pos();
 }
 
@@ -867,7 +875,7 @@ void Canvas::setEditMode(t_editMode mode)
     setAutoFillBackground(true);
     setPalette(Pal);
 
-    if (mode == em_Unlocked) {
+    if (mode == em_Locked) {
         deselectBoxes();
         hoverPatchcordsOff();
     }

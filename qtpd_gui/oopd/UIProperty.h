@@ -220,7 +220,7 @@ public:
             return;
         }
 
-        emit selectBox(this);
+        emit selectBox(this, ev);
         dragOffset = ev->pos();
     }
 

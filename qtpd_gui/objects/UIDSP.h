@@ -136,7 +136,7 @@ public:
         //            editor_->setFocus();
         //        }
         if (getEditMode() == em_Unlocked)
-            emit selectBox(this);
+            emit selectBox(this, ev);
 
         dragOffset = ev->pos();
 

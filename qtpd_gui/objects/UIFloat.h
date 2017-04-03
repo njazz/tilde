@@ -111,7 +111,7 @@ public:
         _startY = ev->pos().y();
 
         if ((getEditMode() == em_Unlocked)) {
-            emit selectBox(this);
+            emit selectBox(this, ev);
             dragOffset = ev->pos();
         }
     }

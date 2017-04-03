@@ -177,7 +177,7 @@ public:
             _editor.show();
         }
 
-        emit selectBox(this);
+        emit selectBox(this, ev);
         dragOffset = ev->pos();
     }
 

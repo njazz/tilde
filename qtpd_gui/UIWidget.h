@@ -89,7 +89,7 @@ signals:
     void mouseEntered();
     void mouseLeaved();
 
-    void selectBox(UIWidget* box);
+    void selectBox(UIWidget* box, QMouseEvent* event );
     void moveBox(UIWidget* box, QMouseEvent* event);
 
 public slots:
