@@ -6,8 +6,8 @@
 
 #include <qlineedit.h>
 
-#include "UIObject.h"
 #include "Port.h"
+#include "UIObject.h"
 
 //#include "cm_pdlink.h"
 
@@ -203,7 +203,13 @@ public:
 
         std::string obj_data;
         for (int i = 0; i < msg.size(); i++) {
-            obj_data += msg.at(i).asString() + " ";
+            // workaround
+            if (AtomList(msg.at(i)).toPdData()->a_type == A_COMMA)
+                obj_data += ", ";
+            else if (AtomList(msg.at(i)).toPdData()->a_type == A_SEMI)
+                obj_data += "; ";
+            else
+                obj_data += msg.at(i).asString() + " ";
         }
 
         x->setObjectData(obj_data);
