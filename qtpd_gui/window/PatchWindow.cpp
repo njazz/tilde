@@ -35,6 +35,7 @@ PatchWindow::PatchWindow()
     //
     connect(cutAct, &QAction::triggered, this, &PatchWindow::cut);
     connect(copyAct, &QAction::triggered, this, &PatchWindow::copy);
+    connect(duplicateAct, &QAction::triggered, this, &PatchWindow::duplicate);
     connect(pasteAct, &QAction::triggered, this, &PatchWindow::paste);
 }
 
@@ -184,6 +185,11 @@ void PatchWindow::cut()
 void PatchWindow::copy()
 {
     canvas->dataCopy();
+}
+
+void PatchWindow::duplicate()
+{
+    canvas->dataDuplicate();
 }
 
 void PatchWindow::paste()

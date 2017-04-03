@@ -521,6 +521,7 @@ public:
 
     void cut();
     void copy();
+    void duplicate();
     void paste();
 
 public slots:

@@ -516,6 +516,7 @@ public slots:
 
     void dataCut();
     void dataCopy();
+    void dataDuplicate();
     void dataPaste();
 
     void setKeepPdObject(bool v)

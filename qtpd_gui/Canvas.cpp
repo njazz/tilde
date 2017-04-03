@@ -1323,6 +1323,12 @@ void Canvas::dataCopy()
     qDebug() << "***copy\n"
              << _clipboard;
 }
+
+void Canvas::dataDuplicate()
+{
+    Canvas::dataCopy();
+    Canvas::dataPaste();
+}
 void Canvas::dataPaste()
 {
 
