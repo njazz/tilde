@@ -39,18 +39,20 @@ void BaseMenu::open()
 ///
 void BaseMenu::pdWindow()
 {
-    //if (pdw)
-        if (PdWindow::inst()->isVisible())
+    if (PdWindow::inst()->isVisible())
         PdWindow::inst()->hide();
-    else PdWindow::inst()->show();
-
-    //    post("pd window");
+    else
+        PdWindow::inst()->show();
 }
 
 void BaseMenu::pythonConsole()
 {
     if (pythonConsole_) {
-        pythonConsole_->show();
+        if (pythonConsole_->isVisible())
+            pythonConsole_->hide();
+        else {
+            pythonConsole_->show();
+        }
     }
 }
 }
