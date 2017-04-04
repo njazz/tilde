@@ -68,6 +68,8 @@ private:
     //
     QString _fullHelpName;
 
+    void * _canvas;
+
     //
 //    QString fullHelpName()
 //    {
@@ -80,6 +82,9 @@ private:
 //    }
 
 public:
+
+    void setCanvas(void* canvas){_canvas = canvas;}
+
     //cm_object();
     explicit UIObjectItem(UIItem* parent = 0);
 

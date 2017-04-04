@@ -43,6 +43,8 @@ public:
 
         UIBox* b = new UIBox();//(UIObjectItem*)parent);
 
+        b->setCanvas((void*)parent);
+
         //truncate "ui.obj". todo cleanup
         QStringList list = QString(objectData.c_str()).split(" ");
         list.removeAt(0);

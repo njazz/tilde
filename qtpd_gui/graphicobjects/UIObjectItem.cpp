@@ -3,6 +3,8 @@
 
 #include "UIObjectItem.h"
 
+#include "Canvas.h"
+
 namespace qtpd {
 
 UIObjectItem::UIObjectItem(UIItem* parent)
@@ -154,8 +156,8 @@ void UIObjectItem::addInlet(int _portClass_)
 
     _inlets->push_back(new_in);
 
-//    connect(new_in, &PortItem::mousePressed, static_cast<UIItem*>(parent()), &UIItem::s_InMousePressed);
-//    connect(new_in, &PortItem::mouseReleased, static_cast<UIItem*>(parent()), &UIItem::s_InMouseReleased);
+    connect(new_in, &Port::mousePressed, static_cast<Canvas*>(_canvas), &Canvas::s_InMousePressed);
+    connect(new_in, &Port::mouseReleased, static_cast<Canvas*>(_canvas), &Canvas::s_InMouseReleased);
 
     new_in->show();
 
@@ -183,8 +185,9 @@ void UIObjectItem::addOutlet(int _portClass_)
     new_out->setEditModeRef(this->getEditModeRef());
 
     _outlets->push_back(new_out);
-//    connect(new_out, &Port::mousePressed, static_cast<UIItem*>(parent()), &UIItem::s_OutMousePressed);
-//    connect(new_out, &Port::mouseReleased, static_cast<UIItem*>(parent()), &UIItem::s_OutMouseReleased);
+
+    connect(new_out, &Port::mousePressed, static_cast<Canvas*>(_canvas), &Canvas::s_OutMousePressed);
+    connect(new_out, &Port::mouseReleased, static_cast<Canvas*>(_canvas), &Canvas::s_OutMouseReleased);
 
     new_out->show();
 

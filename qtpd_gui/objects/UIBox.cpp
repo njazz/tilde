@@ -23,6 +23,7 @@ UIBox::UIBox()//UIObjectItem* parent)
     setMinimumBoxHeight(20);
 
     setObjectSizeMode(os_FixedHeight);
+    setAcceptHoverEvents(true);
 }
 
 

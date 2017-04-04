@@ -46,6 +46,7 @@ Canvas::Canvas(QGraphicsView* parent)
     _grid = new Grid;
     setScene(new QGraphicsScene(0, 0, 400, 300, this));
     scene()->addItem(_grid);
+    scene()->addItem(_newLine);
 
     _grid->setSize(300, 300);
     _gridSnap = true;
@@ -90,9 +91,9 @@ Canvas::Canvas(QGraphicsView* parent)
 
 ///////
 
-void Canvas::s_InMousePressed(UIItem* obj, QMouseEvent*)
+void Canvas::s_InMousePressed(UIItem* obj, QGraphicsSceneMouseEvent*)
 {
-    //    printf("in: mouse pressed\n");
+    //printf("in: mouse pressed\n");
     _newLine->setActive(false);
 
     if ((_connectionStartObject) && (_connectionStartOutlet)) {
@@ -105,16 +106,16 @@ void Canvas::s_InMousePressed(UIItem* obj, QMouseEvent*)
     _connectionStartOutlet = 0;
 }
 
-void Canvas::s_InMouseReleased(UIItem*, QMouseEvent*)
+void Canvas::s_InMouseReleased(UIItem*, QGraphicsSceneMouseEvent*)
 {
     //    printf("in:  mouse released\n");
 }
 
-void Canvas::s_OutMousePressed(UIItem* obj, QMouseEvent*)
+void Canvas::s_OutMousePressed(UIItem* obj, QGraphicsSceneMouseEvent*)
 {
-    //    printf("out: mouse pressed\n");
+    //printf("out: mouse pressed\n");
 
-    //_newLine->start = ((QWidget*)obj->parent())->pos() + obj->pos() + QPoint(5, 1);
+    _newLine->setStart(((QWidget*)obj->parent())->pos() + obj->pos().toPoint() + QPoint(5, 1));
 
     _newLine->setActive(true);
 
@@ -122,7 +123,7 @@ void Canvas::s_OutMousePressed(UIItem* obj, QMouseEvent*)
     _connectionStartOutlet = (UIObjectItem*)obj;
 }
 
-void Canvas::s_OutMouseReleased(UIItem*, QMouseEvent*)
+void Canvas::s_OutMouseReleased(UIItem*, QGraphicsSceneMouseEvent*)
 {
     //    printf("out:  mouse released\n");
 }

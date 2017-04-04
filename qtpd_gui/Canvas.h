@@ -461,10 +461,10 @@ public:
 
 public slots:
 
-    void s_InMousePressed(UIItem* obj, QMouseEvent* ev);
-    void s_InMouseReleased(UIItem*, QMouseEvent*);
-    void s_OutMousePressed(UIItem* obj, QMouseEvent*);
-    void s_OutMouseReleased(UIItem*, QMouseEvent*);
+    void s_InMousePressed(UIItem* obj, QGraphicsSceneMouseEvent* ev);
+    void s_InMouseReleased(UIItem*, QGraphicsSceneMouseEvent*);
+    void s_OutMousePressed(UIItem* obj, QGraphicsSceneMouseEvent*);
+    void s_OutMouseReleased(UIItem*, QGraphicsSceneMouseEvent*);
 
     ////
     /// \brief slot called by box when it is selected
