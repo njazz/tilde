@@ -29,7 +29,7 @@ pyWrapper::pyWrapper()
 
 }
 
-PythonQtObjectPtr pyWrapper::withCanvas(UIObject* canvas)
+PythonQtObjectPtr pyWrapper::withCanvas(QObject *canvas)
 {
     PythonQtObjectPtr ctx;
     ctx = PythonQt::self()->createUniqueModule();

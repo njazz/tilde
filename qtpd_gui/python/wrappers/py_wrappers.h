@@ -5,7 +5,7 @@
 #define PY_WRAPERS_H
 
 #include "UIBox.h"
-#include "UIObject.h"
+#include "UIObjectItem.h"
 
 #include <PythonQt.h>
 #include <PythonQt_QtAll.h>
@@ -34,9 +34,11 @@ public:
     /// \return
     ///
 
-    PythonQtObjectPtr withCanvas(UIObject* canvas);
-    PythonQtObjectPtr withCanvasAndPdObject(UIObject* canvas, t_object* obj);
-    PythonQtObjectPtr withCanvasPdObjectAndInput(UIObject* canvas, t_object* obj, QStringList* list);
+    // FIX
+
+    PythonQtObjectPtr withCanvas(QObject* canvas);
+    PythonQtObjectPtr withCanvasAndPdObject(QObject* canvas, t_object* obj);
+    PythonQtObjectPtr withCanvasPdObjectAndInput(QObject* canvas, t_object* obj, QStringList* list);
 };
 
 #endif // PY_WRAPERS_H

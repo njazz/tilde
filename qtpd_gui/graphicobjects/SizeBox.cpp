@@ -1,11 +1,11 @@
 // (c) 2017 Alex Nadzharov
 // License: GPL3
 
-#include "SizeBox_g.h"
+#include "SizeBox.h"
 
 namespace qtpd {
 
-SizeBoxItem::SizeBoxItem(UIItem *parent)
+SizeBox::SizeBox(UIItem *parent)
     : UIItem(parent)
 {
     setSize(QSize(7,7));

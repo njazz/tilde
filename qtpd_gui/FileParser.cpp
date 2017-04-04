@@ -29,7 +29,7 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
         list[0] = "obj";
         list.insert(3, "ui.text");
         list.insert(4, "@Text");
-        UIObject* obj = FileParser::sendStringToCanvas(cmcanvas, list);
+        UIObjectItem* obj = FileParser::sendStringToCanvas(cmcanvas, list);
 
         //        list.removeAt(0);
         //        list.removeAt(0);
@@ -43,7 +43,7 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
     } else if (list.at(0) == "floatatom") {
         list[0] = "obj";
         list.insert(3, "ui.float");
-        UIObject* obj = FileParser::sendStringToCanvas(cmcanvas, list);
+        UIObjectItem* obj = FileParser::sendStringToCanvas(cmcanvas, list);
 
         //temporary - to have readable list at some point
         //box_width lower upper 1 label send receive
@@ -103,7 +103,7 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
         list2.push_back("@FontSize");
         list2.push_back(QString("32"));
 
-        UIObject* obj = FileParser::sendStringToCanvas(cmcanvas, list2);
+        UIObjectItem* obj = FileParser::sendStringToCanvas(cmcanvas, list2);
 
         return true;
     }
@@ -111,7 +111,7 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
     return false; // if it is not a special legacy object
 }
 
-UIObject* FileParser::sendStringToCanvas(Canvas* cmcanvas, QStringList list)
+UIObjectItem* FileParser::sendStringToCanvas(Canvas* cmcanvas, QStringList list)
 {
     qDebug("new obj");
     if (list.size() > 3) {
@@ -165,8 +165,8 @@ void FileParser::parseStringListAtoms(Canvas* cmcanvas, QStringList list) //rena
         if (list.size() > 4) {
             //if (cmcanvas)
             {
-                UIObject* obj1 = cmcanvas->getObjectByIndex(((QString)list.value(1)).toInt());
-                UIObject* obj2 = cmcanvas->getObjectByIndex(((QString)list.value(3)).toInt());
+                UIObjectItem* obj1 = cmcanvas->getObjectByIndex(((QString)list.value(1)).toInt());
+                UIObjectItem* obj2 = cmcanvas->getObjectByIndex(((QString)list.value(3)).toInt());
 
                 if (!obj1 || !obj2) {
                     qDebug("object not found - could not connect");
@@ -224,11 +224,11 @@ void FileParser::parseStringListAtoms(Canvas* cmcanvas, QStringList list) //rena
 
                         qDebug("restore");
 
-                        UIObject* b = _pdParserPrevWindow->canvas->createBoxForCanvas(_pdParserWindow->canvas, objData, pos);
+                        UIObjectItem* b = _pdParserPrevWindow->canvas->createBoxForCanvas(_pdParserWindow->canvas, objData, pos);
 
                         //IObject *b = createBoxForCanvas(newCanvas, objectData, pos);
                         ((UIBox*)b)->setSubpatchWindow((QMainWindow*)_pdParserPrevWindow);
-                        ((Canvas*)b)->setSubcanvas(_pdParserPrevWindow->canvas);
+                        //((Canvas*)b)->setSubcanvas(_pdParserPrevWindow->canvas);
                     }
                 }
             } else {

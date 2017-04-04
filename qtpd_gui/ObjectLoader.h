@@ -11,23 +11,23 @@
 
 //temporary
 #include "UIBox.h"
-#include "UIFloat.h"
-#include "UIMessage.h"
-#include "UIText.h"
+//#include "UIFloat.h"
+//#include "UIMessage.h"
+//#include "UIText.h"
 
-#include "UIArray.h"
+//#include "UIArray.h"
 
-#include "UIBang.h"
-#include "UIToggle.h"
+//#include "UIBang.h"
+//#include "UIToggle.h"
 
-#include "UIScript.h"
+//#include "UIScript.h"
 
-#include "oopd/UIClass.h"
-#include "oopd/UIInstance.h"
-#include "oopd/UIMethod.h"
-#include "oopd/UIProperty.h"
+//#include "oopd/UIClass.h"
+//#include "oopd/UIInstance.h"
+//#include "oopd/UIMethod.h"
+//#include "oopd/UIProperty.h"
 
-#include "UIDSP.h"
+//#include "UIDSP.h"
 
 namespace qtpd {
 

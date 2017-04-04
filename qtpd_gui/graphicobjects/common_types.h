@@ -3,6 +3,8 @@
 
 // todo move that
 
+#include <QPoint>
+
 namespace qtpd {
 
 ////
@@ -18,7 +20,6 @@ typedef enum {
 /// \brief  port type - in or out
 typedef enum { portInlet,
     portOutlet } UIPortType;
-}
 
 ////
 /// \brief object box size constraints
@@ -28,5 +29,16 @@ typedef enum {
     os_FixedHeight,
     os_Free
 } t_objectSize;
+
+////
+/// \brief structure for selection rectangle
+typedef struct _tRectPlus {
+    bool active;
+    QPoint start;
+    QPoint end;
+
+} tRectPlus;
+
+}
 
 #endif // COMMON_TYPES_H

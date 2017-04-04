@@ -21,10 +21,12 @@ class BaseMenu : public QObject {
 public:
     explicit BaseMenu(QObject* parent = 0)
     {
-        //TODO! singleton
+//TODO! singleton
+#ifdef WITH_PYTHON
         PythonQtObjectPtr mainContext = PythonQt::self()->getMainModule();
         pythonConsole_ = new PythonQtScriptingConsole(NULL, mainContext);
         qDebug("pyConsole %lu", (long)pythonConsole_);
+#endif
     };
 
     //signals:

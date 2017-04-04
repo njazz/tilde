@@ -7,7 +7,7 @@
 #include <qlineedit.h>
 
 #include "Port.h"
-#include "UIObject.h"
+//#include "UIObject.h"
 
 #include "PdLink.h"
 

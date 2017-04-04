@@ -1,10 +1,10 @@
 // (c) 2017 Alex Nadzharov
 // License: GPL3
 
-#ifndef CM_SIZEBOX_H
-#define CM_SIZEBOX_H
+#ifndef CM_SIZEBOXG_H
+#define CM_SIZEBOXG_H
 
-#include "UIWidget.h"
+#include "UIItem.h"
 
 #include <QDebug>
 #include <QMouseEvent>
@@ -12,23 +12,14 @@
 
 #include <QObject>
 
-#include "common_types.h"
-
 namespace qtpd {
 
-/*////
-/// \brief object box size constraints
-///*/
-//typedef enum {
-//    os_Fixed,
-//    os_FixedHeight,
-//    os_Free
-//} t_objectSize;
+
 
 ////
 /// \brief resize widget for all object boxes in patch
 ///
-class SizeBox : public UIWidget {
+class SizeBox : public UIItem {
     Q_OBJECT
 
 private:
@@ -38,15 +29,12 @@ private:
     t_objectSize* _objectSizeType;
 
 public:
-    explicit SizeBox(UIWidget* parent = 0);
+    explicit SizeBox(UIItem* parent = 0);
 
-    void paintEvent(QPaintEvent*) //QPaintEvent *pe
+    void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget* widget)
     {
-        QPainter p(viewport());
-
-        //p.setRenderHint(QPainter::SmoothPixmapTransform,true);
-        p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-        p.drawRect(0, 0, width(), height());
+        p->setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p->drawRect(0, 0, boundingRect().width(), boundingRect().height());
     };
 
     void mousePressEvent(QMouseEvent* event)

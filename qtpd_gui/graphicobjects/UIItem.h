@@ -107,6 +107,10 @@ public:
     void move(QPoint pos) { _pos = QPoint(pos.x(), pos.y()); }
     void move(QPointF pos) { _pos = QPoint(pos.x(), pos.y()); }
 
+    float width() {return _size.width();}
+    float height() {return _size.height();}
+
+
 signals:
 
     void mousePressed(UIItem* obj, QMouseEvent* ev);

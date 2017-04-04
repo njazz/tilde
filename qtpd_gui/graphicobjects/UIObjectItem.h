@@ -1,12 +1,12 @@
 // (c) 2017 Alex Nadzharov
 // License: GPL3
 
-#ifndef CM_OBJECT_H
-#define CM_OBJECT_H
+#ifndef CM_OBJECTITEM_H
+#define CM_OBJECTITEM_H
 
 #include "Port.h"
 #include "SizeBox.h"
-#include "UIWidget.h"
+#include "UIItem.h"
 
 #include "Preferences.h"
 
@@ -22,23 +22,25 @@
 //todo proper pattern
 #include "OpenFileProxy.h"
 
+
+
 namespace qtpd {
 
-typedef std::vector<Port*> portVec;
+typedef std::vector<Port*> portItemVec;
 
 ////
 /// \brief base class for all object boxes - standard and special
 ///
-class UIObject : public UIWidget {
-    //broken, check that
+class UIObjectItem : public UIItem {
+
     Q_OBJECT
 
 private:
     //temporary?
     void* _pdObject;
 
-    portVec* _inlets;
-    portVec* _outlets;
+    portItemVec* _inlets;
+    portItemVec* _outlets;
 
     // todo replace with QString in GUI part
     std::string _objectData; //name and arguments etc
@@ -79,7 +81,7 @@ private:
 
 public:
     //cm_object();
-    explicit UIObject(UIWidget* parent = 0);
+    explicit UIObjectItem(UIItem* parent = 0);
 
     ////
     /// \brief init properties for the class - called from constructor

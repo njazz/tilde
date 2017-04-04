@@ -14,19 +14,16 @@
 
 #include "ObjectLoader.h"
 
+//
+#include "Grid.h"
+#include "SelectionRect.h"
+#include "NewLine.h"
+
 //todo - move to window?
-#include "cm_clipboard.h"
+//#include "cm_clipboard.h"
+#include "CanvasDatas.h"
 
 namespace qtpd {
-
-////
-/// \brief structure for selection rectangle
-typedef struct _tRectPlus {
-    bool active;
-    QPoint start;
-    QPoint end;
-
-} tRectPlus;
 
 ////
 /// \brief draw canvas as patch, box or pd "G-O-P" / patch in patch
@@ -37,7 +34,7 @@ typedef enum _canvasDrawStyle { ds_Canvas,
 ////
 /// \brief 't_canvas' counterpart. creates objects
 ///
-class Canvas : public UIObject {
+class Canvas : public QGraphicsView {
 private:
     //move here. these are global for all draw types (Canvas, Box)
     canvasDataPlus _data;
@@ -46,21 +43,17 @@ private:
     //
     // local !Box
     tRectPlus _selFrame;
-    tRectPlus _newLine;
+    //tRectPlus _newLine;
 
     // local, !Box
-    UIObject* _connectionStartObject;
-    UIObject* _connectionStartOutlet;
+    UIObjectItem* _connectionStartObject;
+    UIObjectItem* _connectionStartOutlet;
     //
-    UIObject* _replaceObject;
+    UIObjectItem* _replaceObject;
 
     // local, !Box
     QPoint _newObjectPos;
     QPoint _dragPrevPos;
-
-    // TODO use widget's standard and create in constructor
-    // local, !Box
-    //t_editMode _editMode;
 
     // local, !Box
     // TODO separate grid layer
@@ -74,10 +67,7 @@ private:
     // if the canvas is the box, it can have this. Check this later
     // !Canvas
     //QMainWindow *SubcanvasWindow_;
-    UIObject* _Subcanvas;
-
-    // !Canvas
-    //    QLineEdit* editor_; //remove that
+    UIObjectItem* _Subcanvas;
 
     ObjectMaker* _objectMaker;
 
@@ -91,14 +81,19 @@ private:
 
     t_editMode _canvasEditMode;
 
+    // ----- NEW
+    Grid _grid;
+    SelectionRect _selectionRect;
+    NewLine _newLine;
+
     Q_OBJECT
 
 public:
     // TODO encapsulate
-    QGraphicsView* dragObject;
+    UIObjectItem* dragObject;
     QString fileName;
 
-    explicit Canvas(UIObject* parent = 0);
+    explicit Canvas(QGraphicsView* parent = 0);
 
     ////
     /// \brief creates new view of existing canvas. check this
@@ -107,7 +102,7 @@ public:
     /// \param dStyle draw style - Canvas, Box, CanvasInBox
     /// \return
     ///
-    static Canvas* newView(Canvas* srcCanvas, UIObject* parentCanvas, canvasDrawStyle dStyle);
+    static Canvas* newView(Canvas* srcCanvas, UIObjectItem* parentCanvas, canvasDrawStyle dStyle);
 
     void addInlet();
 
@@ -244,7 +239,7 @@ public:
     /// \param pos
     /// \return
     ///
-    UIObject* createObject(QString objectData1, QPoint pos);
+    UIObjectItem* createObject(QString objectData1, QPoint pos);
 
     ////
     /// \brief TODO check. creates object box for subcanvas
@@ -253,7 +248,7 @@ public:
     /// \param pos
     /// \return
     ///
-    UIObject* createBoxForCanvas(Canvas* newCanvas, std::string objectData, QPoint pos);
+    UIObjectItem* createBoxForCanvas(Canvas* newCanvas, std::string objectData, QPoint pos);
 
     ////
     /// \brief creates patchcord
@@ -262,7 +257,7 @@ public:
     /// \param obj2
     /// \param inlet
     ///
-    void patchcord(UIObject* obj1, int outlet, UIObject* obj2, int inlet);
+    void patchcord(UIObjectItem* obj1, int outlet, UIObjectItem* obj2, int inlet);
 
     ////
     /// \brief creates patchcord, uses pointers to inlets/outlets. TODO temporary?
@@ -271,7 +266,7 @@ public:
     /// \param obj2
     /// \param inport
     ///
-    void patchcord(UIObject* obj1, UIWidget* outport, UIObject* obj2, UIWidget* inport);
+    void patchcord(UIObjectItem* obj1, UIItem* outport, UIObjectItem* obj2, UIItem* inport);
 
     //    ////unused?
     //    void deletePatchcord(Patchcord* pc)
@@ -289,12 +284,12 @@ public:
     /// \brief delete all patchcords for object
     /// \param obj
     ///
-    void deletePatchcordsFor(UIWidget* obj);
+    void deletePatchcordsFor(UIItem* obj);
 
     ////
     /// \brief delete single box
     ///
-    void deleteBox(UIObject* box);
+    void deleteBox(UIObjectItem* box);
 
     ////
     /// \brief delete all selected object boxes
@@ -327,7 +322,7 @@ public:
     /// \param idx
     /// \return cm_widget pointer
     ///
-    UIObject* getObjectByIndex(int idx);
+    UIObjectItem* getObjectByIndex(int idx);
 
     ////
     /// \brief set object value - mostly for canvas as box
@@ -376,7 +371,7 @@ public:
     /// \param obj
     /// \return
     ///
-    patchcordVec patchcordsForObject(UIObject* obj);
+    patchcordVec patchcordsForObject(UIObjectItem* obj);
 
     //    //
     //    / \brief converts object pointers to their numbers in canvas and returns pd string for filesaver
@@ -390,15 +385,15 @@ public:
     /// \param obj
     /// \return
     ///
-    int findObjectIndex(UIObject* obj);
+    int findObjectIndex(UIObjectItem* obj);
 
     ////
     /// \brief sets pointer to canvas object in subpatch
     /// \details todo: check/remove that: we have subpatchwindow too
     /// \param obj
     ///
-    void setSubcanvas(UIObject* obj);
-    //UIObject* subcanvas(){return Subcanvas_;}
+    void setSubcanvas(UIObjectItem* obj);
+    //UIObjectItem* subcanvas(){return Subcanvas_;}
 
     //lol
     //QStringList canvasAsPdStrings();
@@ -431,7 +426,7 @@ public:
     /// \brief selects single box. mostly used by replace object routine in objectmaker
     /// \param obj
     ///
-    void selectObject(UIObject* obj);
+    void selectObject(UIObjectItem* obj);
 
     ////
     /// \brief select all boxes
@@ -454,20 +449,20 @@ public:
     ///
     void canvasFromPdStrings(QStringList strings);
 
-    void selectBox(UIWidget* box);
+    void selectBox(UIItem* box);
 
 public slots:
 
-    void s_InMousePressed(UIWidget* obj, QMouseEvent* ev);
-    void s_InMouseReleased(UIWidget*, QMouseEvent*);
-    void s_OutMousePressed(UIWidget* obj, QMouseEvent*);
-    void s_OutMouseReleased(UIWidget*, QMouseEvent*);
+    void s_InMousePressed(UIItem* obj, QMouseEvent* ev);
+    void s_InMouseReleased(UIItem*, QMouseEvent*);
+    void s_OutMousePressed(UIItem* obj, QMouseEvent*);
+    void s_OutMouseReleased(UIItem*, QMouseEvent*);
 
     ////
     /// \brief slot called by box when it is selected
     /// \param box
     ///
-    void s_SelectBox(UIWidget* box, QMouseEvent* ev);
+    void s_SelectBox(UIItem* box, QMouseEvent* ev);
 
     void s_SelectBoxItem(UIItem* box, QMouseEvent* ev);
 
@@ -476,9 +471,9 @@ public slots:
     /// \param box
     /// \param event
     ///
-    void s_MoveBox(UIWidget* box, QMouseEvent* event);
+    void s_MoveBox(UIItem* box, QMouseEvent* event);
 
-    void s_MoveBoxItem(UIItem *box, QMouseEvent* event);
+    void s_MoveBoxItem(UIItem* box, QMouseEvent* event);
 
     //    void portMouseReleased();
     //    void portMouseEntered();
@@ -504,13 +499,13 @@ public slots:
     /// \brief sets 'replaceobject' pointer
     /// \param obj
     ///
-    void setReplaceObject(UIObject* obj);
+    void setReplaceObject(UIObjectItem* obj);
 
     ////
     /// \brief gets replaceObject
     /// \return
     ///
-    UIObject* replaceObject();
+    UIObjectItem* replaceObject();
 
     ////
     /// \brief shows object maker for 'new object' menu command
@@ -576,7 +571,7 @@ private slots:
     void objectStartsEdit(void* obj);
 
 signals:
-    std::pair<QMainWindow*, qtpd::UIObject*> createSubpatchWindow();
+    std::pair<QMainWindow*, qtpd::UIObjectItem*> createSubpatchWindow();
     void updatePortCount();
 };
 }

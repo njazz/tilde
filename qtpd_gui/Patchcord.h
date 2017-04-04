@@ -4,7 +4,7 @@
 #ifndef CM_PATCHCORD_H
 #define CM_PATCHCORD_H
 
-#include "UIObject.h"
+#include "UIObjectItem.h"
 #include "Port.h"
 
 #include <math.h>
@@ -30,10 +30,10 @@ typedef enum { cm_pt_anything,
 ///
 class Patchcord {
 private:
-    UIWidget* _obj1;
-    UIWidget* _out1;
-    UIWidget* _obj2;
-    UIWidget* _in2;
+    UIItem* _obj1;
+    UIItem* _out1;
+    UIItem* _obj2;
+    UIItem* _in2;
 
     patchcordTypeEnum patchcordType_;
 
@@ -43,7 +43,7 @@ public:
     //explicit cm_patchcord(cm_widget *parent = 0);
 
     //cm_patchcord();
-    explicit Patchcord(UIWidget* _obj1, UIWidget* _out1, UIWidget* _obj2, UIWidget* _in2);
+    explicit Patchcord(UIItem* _obj1, UIItem* _out1, UIItem* _obj2, UIItem* _in2);
 
     QPoint startPoint()
     {
@@ -72,20 +72,20 @@ public:
 
     ////
 
-    UIObject* obj1()
+    UIObjectItem* obj1()
     {
-        return (UIObject*)_obj1;
+        return (UIObjectItem*)_obj1;
     }
 
-    UIObject* obj2()
+    UIObjectItem* obj2()
     {
-        return (UIObject*)_obj2;
+        return (UIObjectItem*)_obj2;
     }
 
     int outletIndex()
     {
         if ((Port*)_out1)
-            return ((Port*)_out1)->portIndex;
+            return ((Port*)_out1)->portIndex();
         else
             return -1;
     }
@@ -93,14 +93,14 @@ public:
     int inletIndex()
     {
         if ((Port*)_in2)
-            return ((Port*)_in2)->portIndex;
+            return ((Port*)_in2)->portIndex();
         else
             return -1;
     }
 
     ////
 
-    bool connectsObject(UIWidget* obj)
+    bool connectsObject(UIItem* obj)
     {
         return ((obj == _obj1) || (obj == _obj2));
     }

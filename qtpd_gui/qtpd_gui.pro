@@ -29,26 +29,28 @@ CONFIG += static
   macx: LIBS += -F/System/Library/Frameworks -framework Python
 
 SOURCES += main.cpp\
-    python/PythonQtScriptingConsole.cpp \
-    python/wrappers/py_wrappers.cpp \
-    objects/UIArray.cpp \
-    objects/UIBang.cpp \
+#
+#    python/PythonQtScriptingConsole.cpp \
+#    python/wrappers/py_wrappers.cpp \
+#
+#    objects/UIArray.cpp \
+#    objects/UIBang.cpp \
     objects/UIBox.cpp \
-    objects/UIFloat.cpp \
-    objects/UIMessage.cpp \
-    objects/UIToggle.cpp \
-    objects/UIText.cpp \
-    objects/UIScript.cpp \
-    oopd/OOPD.cpp \
-    oopd/UIClass.cpp \
-    oopd/UIInstance.cpp \
-    objects/UIArrayEditor.cpp \
+#    objects/UIFloat.cpp \
+#    objects/UIMessage.cpp \
+#    objects/UIToggle.cpp \
+#    objects/UIText.cpp \
+#    objects/UIScript.cpp \
+#    oopd/OOPD.cpp \
+#    oopd/UIClass.cpp \
+#    oopd/UIInstance.cpp \
+#    objects/UIArrayEditor.cpp \
     Canvas.cpp \
-    UIObject.cpp \
-    UIWidget.cpp \
+    #UIObject.cpp \
+    #UIWidget.cpp \
     Patchcord.cpp \
-    Port.cpp \
-    SizeBox.cpp \
+    #Port.cpp \
+    #SizeBox.cpp \
     FileParser.cpp \
     ObjectLoader.cpp \
     ObjectMaker.cpp \
@@ -60,75 +62,79 @@ SOURCES += main.cpp\
     window/PropertiesWindow.cpp \
     properties/Property.cpp \
     properties/PropertyList.cpp \
-    objects/UIDSP.cpp \
-    oopd/UIMethod.cpp \
-    oopd/UIProperty.cpp \
-    oopd/OPInstance.cpp \
-    oopd/OPClass.cpp \
-    Port_g.cpp \
-    UIItem_g.cpp \
-    SizeBox_g.cpp \
-    UIObject_g.cpp
+#    objects/UIDSP.cpp \
+#    oopd/UIMethod.cpp \
+#    oopd/UIProperty.cpp \
+#    oopd/OPInstance.cpp \
+#    oopd/OPClass.cpp \
+    graphicobjects/Port.cpp \
+    graphicobjects/SizeBox.cpp \
+    graphicobjects/UIItem.cpp \
+    graphicobjects/UIObjectItem.cpp \
+    graphicobjects/Grid.cpp \
+    graphicobjects/SelectionRect.cpp \
+    graphicobjects/NewLine.cpp
 
 
 HEADERS  += \
     #cm_clipboard.h \
     #
-    python/PythonQtScriptingConsole.h \
-    python/headers/PythonQtStdDecorators.h \
-    python/headers/PythonQtDoc.h \
-    python/headers/PythonQt.h \
-    python/headers/PythonQtClassInfo.h \
-    python/headers/PythonQtClassWrapper.h \
-    python/headers/PythonQtConversion.h \
-    python/headers/PythonQtInstanceWrapper.h \
-    python/headers/PythonQtProperty.h \
-    python/headers/PythonQtSignal.h \
-    python/headers/PythonQtSlotDecorator.h \
-    python/headers/PythonQtImporter.h \
-    python/headers/PythonQtMethodInfo.h \
-    python/headers/PythonQtSlot.h \
-    python/headers/PythonQtBoolResult.h \
-    python/headers/PythonQtUtils.h \
-    python/headers/PythonQtPythonInclude.h \
-    python/headers/PythonQtMisc.h \
-    python/headers/PythonQtObjectPtr.h \
-    python/headers/PythonQtSignalReceiver.h \
-    python/headers/PythonQtImportFileInterface.h \
-    python/headers/PythonQtCppWrapperFactory.h \
-    python/headers/PythonQtStdIn.h \
-    python/headers/PythonQtStdOut.h \
-    python/headers/PythonQt_QtAll.h \
-    python/headers/PythonQtQFileImporter.h \
-    python/headers/PythonQtSystem.h \
-    python/headers/PythonQtVariants.h \
-    python/wrappers/py_qtpd.h \
-    python/wrappers/py_wrappers.h \
-    objects/UIBang.h \
-    objects/UIArray.h \
-    objects/UIToggle.h \
-    objects/UIText.h \
-    objects/UIScript.h \
-    objects/UIFloat.h \
+#    python/PythonQtScriptingConsole.h \
+#    python/headers/PythonQtStdDecorators.h \
+#    python/headers/PythonQtDoc.h \
+#    python/headers/PythonQt.h \
+#    python/headers/PythonQtClassInfo.h \
+#    python/headers/PythonQtClassWrapper.h \
+#    python/headers/PythonQtConversion.h \
+#    python/headers/PythonQtInstanceWrapper.h \
+#    python/headers/PythonQtProperty.h \
+#    python/headers/PythonQtSignal.h \
+#    python/headers/PythonQtSlotDecorator.h \
+#    python/headers/PythonQtImporter.h \
+#    python/headers/PythonQtMethodInfo.h \
+#    python/headers/PythonQtSlot.h \
+#    python/headers/PythonQtBoolResult.h \
+#    python/headers/PythonQtUtils.h \
+#    python/headers/PythonQtPythonInclude.h \
+#    python/headers/PythonQtMisc.h \
+#    python/headers/PythonQtObjectPtr.h \
+#    python/headers/PythonQtSignalReceiver.h \
+#    python/headers/PythonQtImportFileInterface.h \
+#    python/headers/PythonQtCppWrapperFactory.h \
+#    python/headers/PythonQtStdIn.h \
+#    python/headers/PythonQtStdOut.h \
+#    python/headers/PythonQt_QtAll.h \
+#    python/headers/PythonQtQFileImporter.h \
+#    python/headers/PythonQtSystem.h \
+#    python/headers/PythonQtVariants.h \
+    #python/wrappers/py_qtpd.h \
+    #python/wrappers/py_wrappers.h \
+#    objects/UIBang.h \
+#    objects/UIArray.h \
+#    objects/UIToggle.h \
+#    objects/UIText.h \
+#    objects/UIScript.h \
+#    objects/UIFloat.h \
     objects/UIBox.h \
-    objects/UIMessage.h \
+#    objects/UIMessage.h \
     #
-    oopd/OOPD.h \
-    oopd/UIClass.h \
-    oopd/UIInstance.h \
+#    oopd/OOPD.h \
+#    oopd/UIClass.h \
+#    oopd/UIInstance.h \
     #
-    objects/UIArrayEditor.h \
+#    objects/UIArrayEditor.h \
     window/BaseWindow.h \
     window/PatchWindow.h \
     window/PdWindow.h \
     window/PropertiesWindow.h \
     Canvas.h \
     CanvasDatas.h \
-    UIObject.h \
-    UIWidget.h \
+    #UIObject.h \
+    #UIWidget.h \
     Patchcord.h \
-    Port.h \
-    SizeBox.h \
+    #Port.h \
+    #SizeBox.h \
+#
     FileParser.h \
     FileSaver.h \
     ObjectLoader.h \
@@ -140,18 +146,21 @@ HEADERS  += \
     properties/Preferences.h \
     properties/Property.h \
     properties/PropertyList.h \
-    objects/UIDSP.h \
-    oopd/UIMethod.h \
-    oopd/UIProperty.h \
-    oopd/OPClass.h \
-    oopd/OPInstance.h \
-    oopd/OOPDClassBase.h \
-    oopd/OOPDHeaders.h \
-    Port_g.h \
-    UIItem_g.h \
-    SizeBox_g.h \
-    UIObject_g.h \
-    common_types.h
+#    objects/UIDSP.h \
+#    oopd/UIMethod.h \
+#    oopd/UIProperty.h \
+#    oopd/OPClass.h \
+#    oopd/OPInstance.h \
+#    oopd/OOPDClassBase.h \
+#    oopd/OOPDHeaders.h \
+    graphicobjects/common_types.h \
+    graphicobjects/Port.h \
+    graphicobjects/SizeBox.h \
+    graphicobjects/UIItem.h \
+    graphicobjects/UIObjectItem.h \
+    graphicobjects/Grid.h \
+    graphicobjects/SelectionRect.h \
+    graphicobjects/NewLine.h
 
 
 FORMS    += \
@@ -180,7 +189,8 @@ INCLUDEPATH += \
     window/ \
     objects/ \
     properties/ \
-    python/headers/
+    python/headers/ \
+    graphicobjects/
 
 PRECOMPILED_HEADER =
 

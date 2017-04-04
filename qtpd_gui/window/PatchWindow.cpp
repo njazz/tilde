@@ -11,7 +11,7 @@ PatchWindow::PatchWindow()
     scroll = new QScrollArea(this);
     scroll->setFrameShape(QFrame::NoFrame);
 
-    canvas = new Canvas((UIObject*)scroll);
+    canvas = new Canvas((QGraphicsView*)scroll);
 
     scroll->setWidget(canvas);
 
@@ -47,11 +47,11 @@ PatchWindow* PatchWindow::newWindow()
     //todo
     ((QMainWindow*)this_)->setWindowTitle("Untitled-1");
 
-    this_->canvas->setPdObject(cmp_newpatch());
+    //this_->canvas->setPdObject(cmp_newpatch());
 
-    if (!this_->canvas->pdObject()) {
-        qDebug("Failed to create canvas!");
-    }
+//    if (!this_->canvas->pdObject()) {
+//        qDebug("Failed to create canvas!");
+//    }
 
     return this_;
 }
@@ -67,11 +67,11 @@ PatchWindow* PatchWindow::newSubpatch(t_canvas* subpatch)
 
     ((QMainWindow*)this_)->setWindowTitle("<subpatch>");
 
-    this_->canvas->setPdObject(subpatch);
+//    this_->canvas->setPdObject(subpatch);
 
-    if (!this_->canvas->pdObject()) {
-        qDebug("Failed to create canvas!");
-    }
+//    if (!this_->canvas->pdObject()) {
+//        qDebug("Failed to create canvas!");
+//    }
 
     return this_;
 }
@@ -145,18 +145,18 @@ void PatchWindow::objectMakerDone()
 
     if (obj_name != "") {
 
-        UIObject* new_obj = canvas->createObject(obj_name, canvas->objectMaker()->pos()); //"ui.obj",
+        UIObjectItem* new_obj = canvas->createObject(obj_name, canvas->objectMaker()->pos()); //"ui.obj",
 
         if (canvas->replaceObject()) {
-            UIObject* obj = canvas->replaceObject();
+            UIObjectItem* obj = canvas->replaceObject();
 
             patchcordVec cords = canvas->patchcordsForObject(obj);
 
             patchcordVec::iterator it;
             for (it = cords.begin(); it != cords.end(); ++it) {
                 Patchcord* pc = ((Patchcord*)*it);
-                UIObject* obj1 = pc->obj1();
-                UIObject* obj2 = pc->obj2();
+                UIObjectItem* obj1 = pc->obj1();
+                UIObjectItem* obj2 = pc->obj2();
                 //replace
                 if (obj1 == obj)
                     obj1 = new_obj;

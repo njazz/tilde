@@ -4,17 +4,17 @@
 #ifndef CM_CANVAS_TYPES_H
 #define CM_CANVAS_TYPES_H
 
-#include "UIObject.h"
+//#include "UIObjectItem.h"
 #include "Patchcord.h"
 
 #include <set>
 
 namespace qtpd {
 
-typedef std::vector<UIObject*> objectVec;
+typedef std::vector<UIObjectItem*> objectVec;
 typedef std::vector<Patchcord*> patchcordVec;
 
-typedef std::set<UIObject*> objectSet;
+typedef std::set<UIObjectItem*> objectSet;
 //patchcord set?
 
 ////
@@ -45,7 +45,7 @@ public:
         return &_patchcords;
     }
 
-    void addUniqueBox(UIObject* box)
+    void addUniqueBox(UIObjectItem* box)
     {
         int p = findBox(box);
 
@@ -62,7 +62,7 @@ public:
         _patchcords.push_back(pc);
     }
 
-    int findBox(UIObject* box)
+    int findBox(UIObjectItem* box)
     {
         //todo
         for (int i = 0; i < _boxes.size(); i++) {
@@ -77,12 +77,12 @@ public:
     {
         QStringList ret;
 
-        std::vector<UIObject*> objects = _boxes;
-        std::vector<UIObject*>::iterator it;
+        std::vector<UIObjectItem*> objects = _boxes;
+        std::vector<UIObjectItem*>::iterator it;
 
         for (it = objects.begin(); it != objects.end(); ++it) {
 
-            std::string out1 = ((UIObject*)*it)->asPdFileString();
+            std::string out1 = ((UIObjectItem*)*it)->asPdFileString();
             out1 += ";\r\n";
 
             ret.append(out1.c_str());
@@ -91,10 +91,10 @@ public:
         return ret;
     }
 
-    int findObjectIndex(UIObject* obj)
+    int findObjectIndex(UIObjectItem* obj)
     {
         //UIObject* obj1;
-        std::vector<UIObject*>::iterator iter = std::find(_boxes.begin(), _boxes.end(), obj);
+        std::vector<UIObjectItem*>::iterator iter = std::find(_boxes.begin(), _boxes.end(), obj);
         size_t index = std::distance(_boxes.begin(), iter);
         if (index != _boxes.size()) {
             return index;
@@ -155,8 +155,8 @@ public:
 class canvasDataPlus : public canvasData {
 
 public:
-    portVec* inlets;
-    portVec* outlets;
+    portItemVec* inlets;
+    portItemVec* outlets;
 };
 }
 

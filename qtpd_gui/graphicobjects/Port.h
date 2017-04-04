@@ -8,27 +8,23 @@
 
 #include <QtGui>
 
-#include "UIItem_g.h"
+#include "UIItem.h"
 
 namespace qtpd {
-
 
 ////
 /// \brief gui representation of t_inlet / t_outlet
 ///
-class PortItem : public UIItem {
+class Port : public UIItem {
     Q_OBJECT
 
 private:
-
     UIPortType _portType;
     int _portClass;
     int _portIndex;
 
 public:
-
-
-    explicit PortItem(UIItem* parent = 0);
+    explicit Port(UIItem* parent = 0);
 
     // -----
     UIPortType portType() { return _portType; }

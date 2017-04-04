@@ -4,7 +4,7 @@
 #include "Patchcord.h"
 
 namespace qtpd {
-Patchcord::Patchcord(UIWidget* obj1, UIWidget* out1, UIWidget* obj2, UIWidget* in2)
+Patchcord::Patchcord(UIItem *obj1, UIItem *out1, UIItem *obj2, UIItem *in2)
 {
     _obj1 = obj1;
     _out1 = out1;

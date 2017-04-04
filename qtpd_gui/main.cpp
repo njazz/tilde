@@ -15,12 +15,15 @@
 #include "Preferences.h"
 
 //python
+
+#ifdef WITH_PYTHON
 #include <PythonQt.h>
 #include <PythonQt_QtAll.h>
 
 #include "python/wrappers/py_wrappers.h"
 
 #include "python/PythonQtScriptingConsole.h"
+#endif
 
 using namespace qtpd;
 
@@ -39,9 +42,16 @@ int main(int argc, char* argv[])
 
     QTPD_PREF_INIT;
 
+#ifdef WITH_PYTHON
     //python
     PythonQt::init(PythonQt::RedirectStdOut); //PythonQt::IgnoreSiteModule |
     PythonQt_QtAll::init();
+
+    //temporary
+    new BaseMenu(0);
+    //init python
+    pyWrapper::inst();
+#endif
 
     ObjectLoader::inst().loadObjects();
 
@@ -54,8 +64,7 @@ int main(int argc, char* argv[])
     cmp_post("qtpd started");
     cmp_post("---");
 
-    //temporary
-    new BaseMenu(0);
+
 
     //temporary folders properties
 
@@ -85,8 +94,8 @@ int main(int argc, char* argv[])
     Preferences::inst().addPath(extPath2.c_str());
     Preferences::inst().addPath(extPath3.c_str());
 
-    //init python
-    pyWrapper::inst();
+
+
 
     return a.exec();
 }
