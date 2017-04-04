@@ -13,7 +13,8 @@ Patchcord::Patchcord(UIItem *obj1, UIItem *out1, UIItem *obj2, UIItem *in2)
 
     patchcordType_ = cm_pt_anything;
 
-    mouseover = false;
-    selected = false;
+
+    //mouseover = false;
+    //selected = false;
 }
 }

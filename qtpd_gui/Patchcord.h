@@ -28,7 +28,7 @@ typedef enum { cm_pt_anything,
 ////
 /// \brief gui patchcord class
 ///
-class Patchcord {
+class Patchcord : public UIItem {
 private:
     UIItem* _obj1;
     UIItem* _out1;
@@ -38,8 +38,8 @@ private:
     patchcordTypeEnum patchcordType_;
 
 public:
-    bool mouseover;
-    bool selected;
+//    bool mouseover;
+//    bool selected;
     //explicit cm_patchcord(cm_widget *parent = 0);
 
     //cm_patchcord();
@@ -105,7 +105,8 @@ public:
         return ((obj == _obj1) || (obj == _obj2));
     }
 
-    bool hover(QPoint pos)
+    // replace
+    bool isHover(QPoint pos)
     {
         QPoint start = startPoint();
         QPoint end = endPoint();
@@ -122,32 +123,12 @@ public:
                             && (pos.y() < end.y()))
             && (pos.x() == start.x()));
 
+        setHover((rx > 0) ? rx1_res : rx0_res);
+
         return (rx > 0) ? rx1_res : rx0_res;
     }
 
-//    std::string asPdFileString(Patchcord* pcord)
-//    {
-//        //TODO
 
-//        int obj1i = findObjectIndex(pcord->obj1());
-//        int obj2i = findObjectIndex(pcord->obj2());
-
-//        if ((obj1i >= 0) && (obj2i >= 0)) {
-//            std::string ret;
-
-//            ret += std::to_string(obj1i) + " ";
-//            ret += std::to_string(pcord->outletIndex()) + " ";
-
-//            ret += std::to_string(obj2i) + " ";
-//            ret += std::to_string(pcord->inletIndex()) + " ";
-
-//            return ret;
-
-//        } else
-//            qDebug("patchcord to string error");
-
-//        return "";
-//    }
 };
 }
 

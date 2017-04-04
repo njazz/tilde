@@ -28,7 +28,7 @@ Canvas::Canvas(QGraphicsView* parent)
     setMouseTracking(true);
 
     _selFrame.active = false;
-    _newLine.setActive(false);// = false;
+    _newLine.setActive(false); // = false;
 
     //_editMode = em_Unlocked;
 
@@ -72,7 +72,6 @@ Canvas::Canvas(QGraphicsView* parent)
 
     // --------
     setStyleSheet("QGraphicsView { border-style: none; }");
-
 }
 
 //cm_canvas::cm_canvas(QWidget *parent) : cm_widget((cm_widget*)parent)
@@ -124,8 +123,8 @@ void Canvas::selectBox(UIItem* box)
 {
     _selectionData.addUniqueBox((UIObjectItem*)box);
     box->select();
-//    if (box->scene())
-//        box->viewport()->update();
+    //    if (box->scene())
+    //        box->viewport()->update();
 }
 void Canvas::s_SelectBox(UIItem* box, QMouseEvent* ev)
 {
@@ -166,7 +165,7 @@ void Canvas::s_MoveBox(UIItem* box, QMouseEvent* event)
         return;
     for (int i = 0; i < (int)_selectionData.boxes()->size(); i++) {
         UIObjectItem* w = ((UIObjectItem*)_selectionData.boxes()->at(i));
-        QPoint pos;// = ((UIObjectItem*)_selectionData.boxes()->at(i))->pos() + mapToParent((event->pos() - box->dragOffset));
+        QPoint pos; // = ((UIObjectItem*)_selectionData.boxes()->at(i))->pos() + mapToParent((event->pos() - box->dragOffset));
 
         if (_gridSnap) {
             pos.setX(ceil(pos.x() / _gridStep) * _gridStep);
@@ -186,14 +185,13 @@ void Canvas::s_MoveBox(UIItem* box, QMouseEvent* event)
         setFixedSize(minimumCanvasSize());
 }
 
-
 void Canvas::s_MoveBoxItem(UIItem* box, QMouseEvent* event)
 {
     if (!(Canvas::getEditMode() == em_Unlocked))
         return;
     for (int i = 0; i < (int)_selectionData.boxes()->size(); i++) {
         UIObjectItem* w = ((UIObjectItem*)_selectionData.boxes()->at(i));
-        QPoint pos;// = ((UIObjectItem*)_selectionData.boxes()->at(i))->pos() + mapToParent((event->pos() - box->dragOffset));
+        QPoint pos; // = ((UIObjectItem*)_selectionData.boxes()->at(i))->pos() + mapToParent((event->pos() - box->dragOffset));
 
         if (_gridSnap) {
             pos.setX(ceil(pos.x() / _gridStep) * _gridStep);
@@ -261,10 +259,10 @@ Canvas* Canvas::newView(Canvas* srcCanvas, UIObjectItem* parentCanvas, canvasDra
     //qDebug(" *** port count @pd: %i %i", ci, co);
 
     //copying. later fix that with separate data class etc
-//    for (int i = 0; i < srcCanvas->inletCount(); i++)
-//        ret->addInlet();
-//    for (int i = 0; i < srcCanvas->outletCount(); i++)
-//        ret->addOutlet();
+    //    for (int i = 0; i < srcCanvas->inletCount(); i++)
+    //        ret->addInlet();
+    //    for (int i = 0; i < srcCanvas->outletCount(); i++)
+    //        ret->addOutlet();
 
     connect(srcCanvas, &Canvas::updatePortCount, ret, &Canvas::portCountUpdated);
 
@@ -274,17 +272,17 @@ Canvas* Canvas::newView(Canvas* srcCanvas, UIObjectItem* parentCanvas, canvasDra
 void Canvas::addInlet()
 {
     //UIObjectItem::addInlet();
-//    Port* last = inletAt(inletCount() - 1);
-//    if (drawStyle() == ds_Canvas)
-//        last->hide();
+    //    Port* last = inletAt(inletCount() - 1);
+    //    if (drawStyle() == ds_Canvas)
+    //        last->hide();
 }
 
 void Canvas::addOutlet()
 {
-//    UIObjectItem::addOutlet();
-//    Port* last = inletAt(inletCount() - 1);
-//    if (drawStyle() == ds_Canvas)
-//        last->hide();
+    //    UIObjectItem::addOutlet();
+    //    Port* last = inletAt(inletCount() - 1);
+    //    if (drawStyle() == ds_Canvas)
+    //        last->hide();
 }
 
 void Canvas::setDrawStyle(canvasDrawStyle ds)
@@ -309,58 +307,58 @@ void Canvas::drawCanvas()
 {
     //cmp_post("paintevent");
 
-//    if (_selFrame.active) {
-//        QPainter p(0);//viewport());
+    //    if (_selFrame.active) {
+    //        QPainter p(0);//viewport());
 
-//        p.setPen(QPen(QColor(128, 128, 128), 1, Qt::DashLine, Qt::SquareCap, Qt::BevelJoin));
-//        p.drawRect(_selFrame.start.x(), _selFrame.start.y(), _selFrame.end.x(), _selFrame.end.y());
-//    }
+    //        p.setPen(QPen(QColor(128, 128, 128), 1, Qt::DashLine, Qt::SquareCap, Qt::BevelJoin));
+    //        p.drawRect(_selFrame.start.x(), _selFrame.start.y(), _selFrame.end.x(), _selFrame.end.y());
+    //    }
 
-//    if (_newLine.active) {
-//        QPainter p(0);//viewport());
+    //    if (_newLine.active) {
+    //        QPainter p(0);//viewport());
 
-//        p.setPen(QPen(QColor(128, 128, 128), 1, Qt::DashLine, Qt::SquareCap, Qt::BevelJoin));
-//        p.drawLine(_newLine.start, _newLine.end);
-//    }
+    //        p.setPen(QPen(QColor(128, 128, 128), 1, Qt::DashLine, Qt::SquareCap, Qt::BevelJoin));
+    //        p.drawLine(_newLine.start, _newLine.end);
+    //    }
 
-//    paintPatchcords();
+    //    paintPatchcords();
 }
 
 void Canvas::drawObjectBox()
 {
-//    QPainter p(0);//viewport());
-//    p.setRenderHint(QPainter::HighQualityAntialiasing, true);
+    //    QPainter p(0);//viewport());
+    //    p.setRenderHint(QPainter::HighQualityAntialiasing, true);
 
-//    {
-//        p.setPen(QPen(QColor(192, 192, 192), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-//        p.drawRect(0, 1, width(), height() - 2);
-//    }
+    //    {
+    //        p.setPen(QPen(QColor(192, 192, 192), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+    //        p.drawRect(0, 1, width(), height() - 2);
+    //    }
 
-//    QColor rectColor = (errorBox()) ? QColor(255, 0, 0) : QColor(128, 128, 128);
-//    p.setPen(QPen(rectColor, 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-//    p.drawRect(0, 0, width(), height());
-//    QTextOption* op = new QTextOption;
-//    op->setAlignment(Qt::AlignLeft);
-//    p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+    //    QColor rectColor = (errorBox()) ? QColor(255, 0, 0) : QColor(128, 128, 128);
+    //    p.setPen(QPen(rectColor, 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+    //    p.drawRect(0, 0, width(), height());
+    //    QTextOption* op = new QTextOption;
+    //    op->setAlignment(Qt::AlignLeft);
+    //    p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
-//    p.setFont(QFont(PREF_QSTRING("Font"), 11, 0, false));
-//    p.drawText(2, 3, width() - 2, height() - 3, 0, objectData().c_str(), 0);
+    //    p.setFont(QFont(PREF_QSTRING("Font"), 11, 0, false));
+    //    p.drawText(2, 3, width() - 2, height() - 3, 0, objectData().c_str(), 0);
 
-//    if (isSelected()) {
-//        p.setPen(QPen(QColor(0, 192, 255), 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-//        p.drawRect(0, 0, width(), height());
-//    }
+    //    if (isselected()()) {
+    //        p.setPen(QPen(QColor(0, 192, 255), 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+    //        p.drawRect(0, 0, width(), height());
+    //    }
 }
 
 void Canvas::paintPatchcords()
 {
     for (int i = 0; i < (int)_data.patchcords()->size(); i++) {
-        QPainter p(0);//viewport());
+        QPainter p(0); //viewport());
 
         QColor b_pc_color = (((Patchcord*)_data.patchcords()->at(i))->patchcordType() == cm_pt_signal) ? QColor(128, 160, 192) : QColor(0, 0, 0);
         // cleanup
-        QColor pc_color = ((Patchcord*)_data.patchcords()->at(i))->mouseover ? QColor(255, 192, 0) : b_pc_color;
-        if (((Patchcord*)_data.patchcords()->at(i))->selected)
+        QColor pc_color = ((Patchcord*)_data.patchcords()->at(i))->hover() ? QColor(255, 192, 0) : b_pc_color;
+        if (((Patchcord*)_data.patchcords()->at(i))->isSelected())
             pc_color = QColor(0, 192, 255);
 
         p.setRenderHint(QPainter::HighQualityAntialiasing, true);
@@ -411,8 +409,9 @@ bool Canvas::hoverPatchcords(QPoint pos)
 {
     bool ret = false;
     for (int i = 0; i < (int)_data.patchcords()->size(); i++) {
-        ((Patchcord*)_data.patchcords()->at(i))->mouseover = ((Patchcord*)_data.patchcords()->at(i))->hover(pos);
-        if (((Patchcord*)_data.patchcords()->at(i))->mouseover)
+        //((Patchcord*)_data.patchcords()->at(i))->hover() =
+        ((Patchcord*)_data.patchcords()->at(i))->isHover(pos);
+        if (((Patchcord*)_data.patchcords()->at(i))->hover())
             ret = true;
     }
     return ret;
@@ -422,7 +421,8 @@ void Canvas::hoverPatchcordsOff()
 {
     //bool ret = false;
     for (int i = 0; i < (int)_data.patchcords()->size(); i++) {
-        ((Patchcord*)_data.patchcords()->at(i))->mouseover = false; // ((cm_patchcord*)data_.patchcords()->at(i))->hover(pos);
+        //((Patchcord*)_data.patchcords()->at(i))->hover() = false; // ((cm_patchcord*)data_.patchcords()->at(i))->hover(pos);
+        ((Patchcord*)_data.patchcords()->at(i))->setHover(false);
     }
 }
 
@@ -430,8 +430,9 @@ bool Canvas::clickPatchcords(QPoint pos)
 {
     bool ret = false;
     for (int i = 0; i < (int)_data.patchcords()->size(); i++) {
-        ((Patchcord*)_data.patchcords()->at(i))->selected = ((Patchcord*)_data.patchcords()->at(i))->hover(pos);
-        if (((Patchcord*)_data.patchcords()->at(i))->selected)
+        //((Patchcord*)_data.patchcords()->at(i))->selected() =
+        ((Patchcord*)_data.patchcords()->at(i))->isHover(pos);
+        if (((Patchcord*)_data.patchcords()->at(i))->isSelected())
             ret = true;
     }
     return ret;
@@ -476,7 +477,7 @@ void Canvas::mouseMoveEventForCanvas(QMouseEvent* ev)
     _newObjectPos = pos;
 
     _selFrame.end = pos - _selFrame.start;
-    _newLine.setEnd (pos);
+    _newLine.setEnd(pos);
 
     // move new object
     if (dragObject) {
@@ -490,8 +491,8 @@ void Canvas::mouseMoveEventForCanvas(QMouseEvent* ev)
 
         dragObject->move(newpos);
 
-//        if (dragObject->scene())
-//            dragObject->viewport()->update();
+        //        if (dragObject->scene())
+        //            dragObject->viewport()->update();
 
         //fix that
         //        if (dragObject->scene())
@@ -504,7 +505,7 @@ void Canvas::mouseMoveEventForCanvas(QMouseEvent* ev)
 
         for (int i = 0; i < (int)_data.boxes()->size(); i++) {
             QPointF pos = ((UIBox*)_data.boxes()->at(i))->pos();
-            QPoint pos_ = QPoint(pos.x(),pos.y());
+            QPoint pos_ = QPoint(pos.x(), pos.y());
             QSizeF size = ((UIBox*)_data.boxes()->at(i))->size();
             QRect r = QRect(pos_, pos_ + QPoint(size.width(), size.height()));
 
@@ -536,7 +537,7 @@ void Canvas::mouseMoveEventForCanvas(QMouseEvent* ev)
     //patchcords()
     //if (Canvas::getEditMode() == em_Unlocked)
     //    if (hoverPatchcords(pos))
-            //viewport()->update();
+    //viewport()->update();
 
     //remove patchcord selection if making frame
     if (_selFrame.active)
@@ -580,7 +581,8 @@ void Canvas::mouseReleaseEventForCanvas(QMouseEvent*)
     dragObject = 0;
 
     _selFrame.active = false;
-    _newLine.setActive(false);;
+    _newLine.setActive(false);
+    ;
 
     //viewport()->update();
 }
@@ -590,21 +592,21 @@ void Canvas::mouseReleaseEventForCanvas(QMouseEvent*)
 void Canvas::mousePressEventForBox(QMouseEvent* ev)
 {
     //open canvas for subpatch
-//    if (Canvas::getEditMode() != em_Unlocked) {
-//        if (_Subcanvas) {
-//            _Subcanvas->show();
-//        }
-//    }
+    //    if (Canvas::getEditMode() != em_Unlocked) {
+    //        if (_Subcanvas) {
+    //            _Subcanvas->show();
+    //        }
+    //    }
 
-//    //        if ( (getEditMode()==em_Unlocked) && isSelected())
-//    //        {
-//    //            editor_->setText(QString(objectData().c_str()));
-//    //            editor_->show();
-//    //            editor_->setFocus();
-//    //        }
+    //    //        if ( (getEditMode()==em_Unlocked) && isselected()())
+    //    //        {
+    //    //            editor_->setText(QString(objectData().c_str()));
+    //    //            editor_->show();
+    //    //            editor_->setFocus();
+    //    //        }
 
-//    emit UIObjectItem::selectBox(this, ev);
-//    dragOffset = ev->pos();
+    //    emit UIObjectItem::selectBox(this, ev);
+    //    dragOffset = ev->pos();
 }
 
 void Canvas::mouseReleaseEventForBox(QMouseEvent*)
@@ -615,16 +617,16 @@ void Canvas::mouseReleaseEventForBox(QMouseEvent*)
 
 void Canvas::mouseMoveEventForBox(QMouseEvent* event)
 {
-//    if (event->buttons() & Qt::LeftButton) {
-//        emit moveBox(this, event);
-//    }
-//    event->ignore();
+    //    if (event->buttons() & Qt::LeftButton) {
+    //        emit moveBox(this, event);
+    //    }
+    //    event->ignore();
 
-//    if ((Canvas::getEditMode() != em_Unlocked) && (_Subcanvas)) {
-//        setCursor(QCursor(Qt::PointingHandCursor));
-//    } else {
-//        setCursor(QCursor(Qt::ArrowCursor));
-//    }
+    //    if ((Canvas::getEditMode() != em_Unlocked) && (_Subcanvas)) {
+    //        setCursor(QCursor(Qt::PointingHandCursor));
+    //    } else {
+    //        setCursor(QCursor(Qt::ArrowCursor));
+    //    }
 }
 
 /////////
@@ -641,60 +643,60 @@ void Canvas::deselectBoxes()
 
 UIBox* Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas* canvas)
 {
-//    UIBox* box = new UIBox((UIObjectItemItem*)this); //test?
-//    box->setObjectData(pdObjectName);
+    //    UIBox* box = new UIBox((UIObjectItemItem*)this); //test?
+    //    box->setObjectData(pdObjectName);
 
-//    connect(box, &UIBox::selectBox, this, &Canvas::s_SelectBoxItem);
-//    connect(box, &UIBox::moveBox, this, &Canvas::s_MoveBoxItem);
+    //    connect(box, &UIBox::selectBox, this, &Canvas::s_SelectBoxItem);
+    //    connect(box, &UIBox::moveBox, this, &Canvas::s_MoveBoxItem);
 
-//    box->setEditModeRef(Canvas::getEditModeRef());
+    //    box->setEditModeRef(Canvas::getEditModeRef());
 
-//    const char* obj_name = pdObjectName.c_str();
+    //    const char* obj_name = pdObjectName.c_str();
 
-//    t_object* new_obj = 0;
-//    int in_c = 0, out_c = 0;
+    //    t_object* new_obj = 0;
+    //    int in_c = 0, out_c = 0;
 
-//    //temp
-//    if (!pdObject()) {
-//        qDebug("bad pd canvas instance");
-//        box->setErrorBox(true);
-//    } else {
-//        new_obj = (t_object*)canvas; //cmp_create_object(pd_canvas,(char*)obj_name,pos.x(), pos.y());
-//    }
+    //    //temp
+    //    if (!pdObject()) {
+    //        qDebug("bad pd canvas instance");
+    //        box->setErrorBox(true);
+    //    } else {
+    //        new_obj = (t_object*)canvas; //cmp_create_object(pd_canvas,(char*)obj_name,pos.x(), pos.y());
+    //    }
 
-//    if (new_obj) {
+    //    if (new_obj) {
 
-//        // qDebug ("created object %lu, new_obj");
+    //        // qDebug ("created object %lu, new_obj");
 
-//        in_c = cmp_get_inlet_count(new_obj);
-//        out_c = cmp_get_outlet_count(new_obj);
+    //        in_c = cmp_get_inlet_count(new_obj);
+    //        out_c = cmp_get_outlet_count(new_obj);
 
-//        qDebug("created object %s ins %i outs %i ptr %lu", obj_name, in_c, out_c, (long)new_obj);
+    //        qDebug("created object %s ins %i outs %i ptr %lu", obj_name, in_c, out_c, (long)new_obj);
 
-//        //cm_box* newBox = canvas->createBox(objectMaker->text().toStdString(),objectMaker->pos(),in_c,out_c);
-//        box->setPdObject(new_obj);
+    //        //cm_box* newBox = canvas->createBox(objectMaker->text().toStdString(),objectMaker->pos(),in_c,out_c);
+    //        box->setPdObject(new_obj);
 
-//    } else {
-//        qDebug("Error: no such object %s", obj_name);
-//        box->setErrorBox(true);
-//        in_c = 0;
-//        out_c = 0;
-//        //return 0;
-//    }
+    //    } else {
+    //        qDebug("Error: no such object %s", obj_name);
+    //        box->setErrorBox(true);
+    //        in_c = 0;
+    //        out_c = 0;
+    //        //return 0;
+    //    }
 
-//    for (int i = 0; i < in_c; i++)
-//        box->addInlet();
-//    for (int i = 0; i < out_c; i++)
-//        box->addOutlet();
+    //    for (int i = 0; i < in_c; i++)
+    //        box->addInlet();
+    //    for (int i = 0; i < out_c; i++)
+    //        box->addOutlet();
 
-//    box->move(pos);
+    //    box->move(pos);
 
-//    // FIX
-//    _data.addUniqueBox((UIObjectItem*)box);
+    //    // FIX
+    //    _data.addUniqueBox((UIObjectItem*)box);
 
-//    box->show();
+    //    box->show();
 
-//    return box;
+    //    return box;
 }
 
 UIObjectItem* Canvas::createObject(QString objectData1, QPoint pos) //std::string UIObjectItemName,
@@ -722,7 +724,6 @@ UIObjectItem* Canvas::createObject(QString objectData1, QPoint pos) //std::strin
             ((UIBox*)b)->setSubpatchWindow((QMainWindow*)subPatch);
             //((Canvas*)b)->setSubcanvas(newCanvas);
 
-
             qDebug("subpatch>>");
 
             subPatch->show();
@@ -739,13 +740,11 @@ UIObjectItem* Canvas::createObject(QString objectData1, QPoint pos) //std::strin
     ////connect(obj, &UIMessage::selectBox, this, &Canvas::s_SelectBox);
     ////connect(obj, &UIMessage::moveBox, this, &Canvas::s_MoveBox);
 
-//    obj->setEditModeRef(&_canvasEditMode);//Canvas::getEditModeRef());
-//    obj->move(pos);
-//    _data.addUniqueBox((UIObjectItem*)obj);
+    //    obj->setEditModeRef(&_canvasEditMode);//Canvas::getEditModeRef());
+    //    obj->move(pos);
+    //    _data.addUniqueBox((UIObjectItem*)obj);
 
-//    obj->show();
-
-
+    //    obj->show();
 
     //qDebug() << "created object: [" << objectData1 << "] :" << list.count() << "@" << QString(std::to_string((long)pdObject()).c_str());
 
@@ -765,7 +764,7 @@ UIObjectItem* Canvas::createObject(QString objectData1, QPoint pos) //std::strin
     if (drawStyle() == ds_Canvas)
         setFixedSize(minimumCanvasSize());
 
-    return (UIObjectItem*)0;//obj;
+    return (UIObjectItem*)0; //obj;
 }
 
 UIObjectItem* Canvas::createBoxForCanvas(Canvas* newCanvas, std::string objectData, QPoint pos)
@@ -779,8 +778,8 @@ UIObjectItem* Canvas::createBoxForCanvas(Canvas* newCanvas, std::string objectDa
 
     obj->setObjectData(objectData);
 
-//    connect(obj, &UIMessage::selectBox, this, &Canvas::s_SelectBox);
-//    connect(obj, &UIMessage::moveBox, this, &Canvas::s_MoveBox);
+    //    connect(obj, &UIMessage::selectBox, this, &Canvas::s_SelectBox);
+    //    connect(obj, &UIMessage::moveBox, this, &Canvas::s_MoveBox);
 
     obj->setEditModeRef(Canvas::getEditModeRef());
     obj->move(pos);
@@ -788,12 +787,12 @@ UIObjectItem* Canvas::createBoxForCanvas(Canvas* newCanvas, std::string objectDa
 
     QPalette Pal(palette());
     Pal.setColor(QPalette::Background, QColor(240, 240, 240));
-//    obj->setAutoFillBackground(true);
-//    obj->setPalette(Pal);
+    //    obj->setAutoFillBackground(true);
+    //    obj->setPalette(Pal);
 
-   // obj->show();
+    // obj->show();
 
-   // qDebug() << "create subcanvas @" << QString(std::to_string((long)pdObject()).c_str());
+    // qDebug() << "create subcanvas @" << QString(std::to_string((long)pdObject()).c_str());
 
     return obj;
 }
@@ -828,9 +827,9 @@ void Canvas::patchcord(UIObjectItem* obj1, UIItem* outport, UIObjectItem* obj2, 
 
     //todo
 
-//    int n1 = ((Port*)outport)->portIndex;
-//    int n2 = ((Port*)inport)->portIndex;
-//    patchcord(obj1, n1, obj2, n2);
+    //    int n1 = ((Port*)outport)->portIndex;
+    //    int n2 = ((Port*)inport)->portIndex;
+    //    patchcord(obj1, n1, obj2, n2);
 }
 
 //    ////unused?
@@ -882,16 +881,16 @@ void Canvas::deleteSelectedBoxes()
         UIObjectItem* box = *it;
         qDebug("delete %lu | %lu", (long)box, (long)box->pdObject());
 
-//        if (box->pdObject()) {
-//            //NEEDS FIX
-//            if ((t_object*)(box->pdObject())) {
-//                if (!box->errorBox())
-//                    cmp_deleteobject((t_canvas*)pdObject(), (t_object*)box->pdObject());
-//                box->setPdObject(0);
-//            }
-//        } else {
-//            qDebug("didn't delete pd object");
-//        }
+        //        if (box->pdObject()) {
+        //            //NEEDS FIX
+        //            if ((t_object*)(box->pdObject())) {
+        //                if (!box->errorBox())
+        //                    cmp_deleteobject((t_canvas*)pdObject(), (t_object*)box->pdObject());
+        //                box->setPdObject(0);
+        //            }
+        //        } else {
+        //            qDebug("didn't delete pd object");
+        //        }
 
         deletePatchcordsFor(box);
 
@@ -914,7 +913,7 @@ void Canvas::delSelectedPatchcords()
     //for (int i=0;i<data_.patchcords()->size(); i++)
     std::vector<Patchcord*>::iterator it;
     for (it = _data.patchcords()->begin(); it != _data.patchcords()->end();) {
-        if ((*it)->selected) {
+        if ((*it)->isSelected()) {
             Patchcord* p = *it;
 
             t_object* obj1 = (t_object*)p->obj1()->pdObject();
@@ -961,8 +960,6 @@ void Canvas::setEditMode(t_editMode mode)
     //viewport()->update();
 }
 
-
-
 UIObjectItem* Canvas::getObjectByIndex(int idx)
 {
     if ((idx < (int)_data.boxes()->size()) && (idx >= 0))
@@ -975,21 +972,21 @@ UIObjectItem* Canvas::getObjectByIndex(int idx)
 
 void Canvas::setObjectData(std::string objData)
 {
-//    if (drawStyle() == ds_Box) {
-//        UIObjectItem::setObjectData(objData);
+    //    if (drawStyle() == ds_Box) {
+    //        UIObjectItem::setObjectData(objData);
 
-//        QFont myFont(PREF_QSTRING("Font"), 11);
-//        QFontMetrics fm(myFont);
-//        int new_w = fm.width(QString(objData.c_str())) + 10;
-//        new_w = (new_w < 25) ? 25 : new_w;
-//        setFixedWidth(new_w);
-//        setFixedHeight(20);
+    //        QFont myFont(PREF_QSTRING("Font"), 11);
+    //        QFontMetrics fm(myFont);
+    //        int new_w = fm.width(QString(objData.c_str())) + 10;
+    //        new_w = (new_w < 25) ? 25 : new_w;
+    //        setFixedWidth(new_w);
+    //        setFixedHeight(20);
 
-//        qDebug("obj width %i", new_w);
-//        //
-//        setInletsPos();
-//        setOutletsPos();
-//    }
+    //        qDebug("obj width %i", new_w);
+    //        //
+    //        setInletsPos();
+    //        setOutletsPos();
+    //    }
 }
 
 void Canvas::setGridEnabled(bool val)
@@ -1239,7 +1236,8 @@ void Canvas::canvasFromPdStrings(QStringList strings)
 
 void Canvas::cancelPatchcord()
 {
-    _newLine.setActive(false);;
+    _newLine.setActive(false);
+    ;
 
     //viewport()->update();
 }
@@ -1253,39 +1251,39 @@ void Canvas::portLocalCountUpdated()
 {
     qDebug("port local count update");
 
-//    if (pdObject()) {
-//        qDebug("setting ports");
+    //    if (pdObject()) {
+    //        qDebug("setting ports");
 
-//        int in_c = cmp_get_inlet_count((t_object*)pdObject());
-//        int out_c = cmp_get_outlet_count((t_object*)pdObject());
+    //        int in_c = cmp_get_inlet_count((t_object*)pdObject());
+    //        int out_c = cmp_get_outlet_count((t_object*)pdObject());
 
-//        int obj_in = inletCount();
-//        int obj_out = outletCount();
+    //        int obj_in = inletCount();
+    //        int obj_out = outletCount();
 
-//        if (in_c > obj_in) {
-//            addInlet();
-//            qDebug("add inlet");
-//        }
+    //        if (in_c > obj_in) {
+    //            addInlet();
+    //            qDebug("add inlet");
+    //        }
 
-//        if (out_c > obj_out) {
-//            addOutlet();
-//            qDebug("add outlet");
-//        }
+    //        if (out_c > obj_out) {
+    //            addOutlet();
+    //            qDebug("add outlet");
+    //        }
 
-        qDebug() << " ** canvas: " << (long)this;
+    qDebug() << " ** canvas: " << (long)this;
 
-        //qDebug(" ** port count: %i %i", inletCount(), outletCount());
+    //qDebug(" ** port count: %i %i", inletCount(), outletCount());
 
-//        int ci = cmp_get_inlet_count((t_object*)pdObject());
-//        int co = cmp_get_outlet_count((t_object*)pdObject());
+    //        int ci = cmp_get_inlet_count((t_object*)pdObject());
+    //        int co = cmp_get_outlet_count((t_object*)pdObject());
 
-        //qDebug(" ** port count @pd: %i %i", ci, co);
+    //qDebug(" ** port count @pd: %i %i", ci, co);
 
-        //            qDebug () << ((drawStyle()==ds_Box)?"this is box canvas":"this is canvas");
-        //            qDebug () << "size" << size();
+    //            qDebug () << ((drawStyle()==ds_Box)?"this is box canvas":"this is canvas");
+    //            qDebug () << "size" << size();
 
-        // viewport()->update();
-   //}
+    // viewport()->update();
+    //}
 };
 
 void Canvas::setReplaceObject(UIObjectItem* obj)
@@ -1314,47 +1312,47 @@ void Canvas::portCountUpdated()
 {
     qDebug("port count update");
 
-//    if (pdObject()) {
-//        qDebug("setting ports");
+    //    if (pdObject()) {
+    //        qDebug("setting ports");
 
-//        int in_c = cmp_get_inlet_count((t_object*)pdObject());
-//        int out_c = cmp_get_outlet_count((t_object*)pdObject());
+    //        int in_c = cmp_get_inlet_count((t_object*)pdObject());
+    //        int out_c = cmp_get_outlet_count((t_object*)pdObject());
 
-//        int obj_in = inletCount();
-//        int obj_out = outletCount();
+    //        int obj_in = inletCount();
+    //        int obj_out = outletCount();
 
-//        if (in_c > obj_in) {
-//            addInlet();
-//            qDebug("add inlet");
-//        }
+    //        if (in_c > obj_in) {
+    //            addInlet();
+    //            qDebug("add inlet");
+    //        }
 
-//        if (out_c > obj_out) {
-//            addOutlet();
-//            qDebug("add outlet");
-//        }
+    //        if (out_c > obj_out) {
+    //            addOutlet();
+    //            qDebug("add outlet");
+    //        }
 
-        qDebug() << ((drawStyle() == ds_Box) ? "this is box canvas" : "this is canvas");
-        qDebug() << "size" << size();
+    qDebug() << ((drawStyle() == ds_Box) ? "this is box canvas" : "this is canvas");
+    qDebug() << "size" << size();
 
-        //viewport()->update();
+    //viewport()->update();
     //}
 };
 
 void Canvas::objectStartsEdit(void* obj)
 {
-//    deselectBoxes();
+    //    deselectBoxes();
 
-//    qDebug("edit box>>");
+    //    qDebug("edit box>>");
 
-//    _replaceObject = (UIObjectItem*)obj;
+    //    _replaceObject = (UIObjectItem*)obj;
 
-//    objectMaker()->move(_replaceObject->pos());
-//    objectMaker()->setFixedSize(_replaceObject->size());
-//    objectMaker()->setText(QString(_replaceObject->objectData().c_str()));
-//    objectMaker()->setFocus();
-//    //replaceObject_->hide();
-//    objectMaker()->show();
-//    objectMaker()->raise();
+    //    objectMaker()->move(_replaceObject->pos());
+    //    objectMaker()->setFixedSize(_replaceObject->size());
+    //    objectMaker()->setText(QString(_replaceObject->objectData().c_str()));
+    //    objectMaker()->setFocus();
+    //    //replaceObject_->hide();
+    //    objectMaker()->show();
+    //    objectMaker()->raise();
 }
 
 QSize Canvas::minimumCanvasSize()

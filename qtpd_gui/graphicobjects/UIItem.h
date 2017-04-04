@@ -22,6 +22,8 @@ class UIItem : public QGraphicsObject {
 
 private:
     bool _selected;
+    bool _hover;
+
     t_editMode* _editMode;
     float _scale;
 
@@ -29,7 +31,7 @@ private:
     QSize _size;
     QPoint _pos; //?
     QColor _bgColor;
-    bool _hover;
+
 
 public:
     QPoint dragOffset;
