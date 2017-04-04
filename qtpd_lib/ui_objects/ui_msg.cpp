@@ -121,13 +121,13 @@ static void uimsg_bang(t_ui_msg* x) // t_symbol *s, int argc, t_atom* argv
         for (int i = 0; i < x->msg->size(); i++) {
             // send line if found ","
             if ((AtomList(x->msg->at(i)).toPdData()->a_type == A_COMMA)
-                || (x->msg->at(start).asSymbol()==gensym(";"))//(AtomList(x->msg->at(start)).toPdData()->a_type == A_SEMI)
+                //|| (x->msg->at(start).asSymbol() == gensym(";")) //(AtomList(x->msg->at(start)).toPdData()->a_type == A_SEMI)
                 || (i == (x->msg->size() - 1))) {
                 end = i + (i == (x->msg->size() - 1));
 
                 //post("comma");
 
-                if (x->msg->at(start).asSymbol()==gensym(";")){//(AtomList(x->msg->at(start)).toPdData()->a_type == A_SEMI) {
+                if ( (x->msg->at(start).asSymbol() == gensym(";")) || (AtomList(x->msg->at(start)).toPdData()->a_type == A_SEMI) ) {
 
                     start += 1;
                     t_symbol* sym = x->msg->at(start).asSymbol();
@@ -135,7 +135,24 @@ static void uimsg_bang(t_ui_msg* x) // t_symbol *s, int argc, t_atom* argv
 
                     if (sym->s_thing) {
                         AtomList l1 = x->msg->subList(start, end);
-                        pd_typedmess((t_pd*)sym->s_thing, x->s, l1.size(), l1.toPdData());
+                        //l1 = AtomList(gensym("msg"));
+
+                        t_object* obj = pd_checkobject(sym->s_thing);
+                        if (obj)
+                        {
+//                            if (l1.at(0).isSymbol())
+//                            {
+//                                l1.remove(0);
+//                                pd_anything((t_pd*)obj, l1.at(0).asSymbol(), l1.size(), l1.toPdData());
+//                            }
+//                            else
+//                            {
+//                                pd_typedmess((t_pd*)obj, gensym("list"), l1.size(), l1.toPdData());
+//                            }
+                            pd_forwardmess((t_pd*)obj, l1.size(), l1.toPdData());
+                        }
+                        else
+                            post("send error");
                         post("sent");
                     } else
                         post("not sent");
