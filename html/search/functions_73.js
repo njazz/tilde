@@ -43,7 +43,7 @@ var searchData=
   ['setdestructor',['setDestructor',['../class_python_qt_class_info.html#aad2acf99ddd31c8a301cb7f3e7cf3a42',1,'PythonQtClassInfo']]],
   ['setdrawstyle',['setDrawStyle',['../classqtpd_1_1_canvas.html#a568043530f92b63eabe042a0ed52a464',1,'qtpd::Canvas']]],
   ['seteditmode',['setEditMode',['../classqtpd_1_1_canvas.html#a0c032dbe358e3b444920fe8fa3eac002',1,'qtpd::Canvas::setEditMode()'],['../classqtpd_1_1_patch_window.html#af36a7d056eb78261cd495cda1c40e8b9',1,'qtpd::PatchWindow::setEditMode()']]],
-  ['seteditmoderef',['setEditModeRef',['../classqtpd_1_1_u_i_object.html#a0590d2f5ec52a3010373b7f4fc19c610',1,'qtpd::UIObject::setEditModeRef()'],['../classqtpd_1_1_u_i_widget.html#ae3f14d066c1f700383322463be2b6f7f',1,'qtpd::UIWidget::setEditModeRef()']]],
+  ['seteditmoderef',['setEditModeRef',['../classqtpd_1_1_u_i_object.html#a0590d2f5ec52a3010373b7f4fc19c610',1,'qtpd::UIObject::setEditModeRef()'],['../classqtpd_1_1_u_i_widget.html#ab83c48871c62497a3f47f6af91a7b081',1,'qtpd::UIWidget::setEditModeRef()']]],
   ['setelementvalue',['setElementValue',['../classceammc_1_1faust_1_1_pd_u_i.html#a38b751519e06cc4541944c14eba9d8fa',1,'ceammc::faust::PdUI']]],
   ['seterrorbox',['setErrorBox',['../classqtpd_1_1_u_i_object.html#abc5b87789a2cc65d9d74d0ca2b6b0bdf',1,'qtpd::UIObject']]],
   ['setfilename',['setFileName',['../classqtpd_1_1_patch_window.html#a30e20cd05bcbd200b0d00cb258eb7dfe',1,'qtpd::PatchWindow']]],

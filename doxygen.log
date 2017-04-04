@@ -1371,22 +1371,22 @@ Genera/home/travis/build/njazz/qtpd/qtpd_lib/ceammc-lib/ceammc_gui.h:199: warnin
   parameter 'newrect'
 /home/travis/build/njazz/qtpd/qtpd_lib/ceammc-lib/ceammc_gui.h:395: warning: The following parameters of ceammc_gui::GuiFactory::wx_paint(U *z, t_object *view) are not documented:
   parameter 'view'
-/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:110: warning: argument 'idx' of command @param is not found in the argument list of qtpd::Canvas::addInlet() inherited from member addInlet at line 119 in file /home/travis/build/njazz/qtpd/qtpd_gui/UIObject.h
-/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:112: warning: argument 'idx' of command @param is not found in the argument list of qtpd::Canvas::addOutlet() inherited from member addOutlet at line 130 in file /home/travis/build/njazz/qtpd/qtpd_gui/UIObject.h
-/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:247: warning: argument 'canvas' of command @param is not found in the argument list of qtpd::Canvas::createBoxForCanvas(Canvas *newCanvas, std::string objectData, QPoint pos)
-/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:247: warning: The following parameters of qtpd::Canvas::createBoxForCanvas(Canvas *newCanvas, std::string objectData, QPoint pos) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:112: warning: argument 'idx' of command @param is not found in the argument list of qtpd::Canvas::addInlet() inherited from member addInlet at line 119 in file /home/travis/build/njazz/qtpd/qtpd_gui/UIObject.h
+/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:114: warning: argument 'idx' of command @param is not found in the argument list of qtpd::Canvas::addOutlet() inherited from member addOutlet at line 130 in file /home/travis/build/njazz/qtpd/qtpd_gui/UIObject.h
+/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:249: warning: argument 'canvas' of command @param is not found in the argument list of qtpd::Canvas::createBoxForCanvas(Canvas *newCanvas, std::string objectData, QPoint pos)
+/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:249: warning: The following parameters of qtpd::Canvas::createBoxForCanvas(Canvas *newCanvas, std::string objectData, QPoint pos) are not documented:
   parameter 'newCanvas'
-/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:239: warning: argument 'message' of command @param is not found in the argument list of qtpd::Canvas::createObject(QString objectData1, QPoint pos)
-/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:239: warning: The following parameters of qtpd::Canvas::createObject(QString objectData1, QPoint pos) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:241: warning: argument 'message' of command @param is not found in the argument list of qtpd::Canvas::createObject(QString objectData1, QPoint pos)
+/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:241: warning: The following parameters of qtpd::Canvas::createObject(QString objectData1, QPoint pos) are not documented:
   parameter 'objectData1'
-/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:120: warning: argument 'ds' of command @param is not found in the argument list of qtpd::Canvas::drawStyle()
-/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:407: warning: argument 'patchcord' of command @param is not found in the argument list of qtpd::Canvas::patchcordAsPdFileString(Patchcord *pcord)
-/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:407: warning: The following parameters of qtpd::Canvas::patchcordAsPdFileString(Patchcord *pcord) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:122: warning: argument 'ds' of command @param is not found in the argument list of qtpd::Canvas::drawStyle()
+/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:415: warning: argument 'patchcord' of command @param is not found in the argument list of qtpd::Canvas::patchcordAsPdFileString(Patchcord *pcord)
+/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:415: warning: The following parameters of qtpd::Canvas::patchcordAsPdFileString(Patchcord *pcord) are not documented:
   parameter 'pcord'
-/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:228: warning: argument 'pdObjectData' of command @param is not found in the argument list of qtpd::Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas *canvas)
-/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:228: warning: The following parameters of qtpd::Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas *canvas) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:230: warning: argument 'pdObjectData' of command @param is not found in the argument list of qtpd::Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas *canvas)
+/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:230: warning: The following parameters of qtpd::Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas *canvas) are not documented:
   parameter 'pdObjectName'
-/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:461: warning: The following parameters of qtpd::Canvas::s_SelectBox(UIWidget *box, QMouseEvent *ev) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:469: warning: The following parameters of qtpd::Canvas::s_SelectBox(UIWidget *box, QMouseEvent *ev) are not documented:
   parameter 'ev'
 /home/travis/build/njazz/qtpd/qtpd_gui/FileParser.h:63: warning: The following parameters of qtpd::FileParser::legacyProcess(Canvas *cmcanvas, QStringList list) are not documented:
   parameter 'cmcanvas'
@@ -1403,6 +1403,9 @@ Genera/home/travis/build/njazz/qtpd/qtpd_lib/ceammc-lib/ceammc_gui.h:199: warnin
 /home/travis/build/njazz/qtpd/qtpd_gui/UIObject.h:266: warning: The following parameters of qtpd::UIObject::setMinimumBoxHeight(int h) are not documented:
   parameter 'h'
 /home/travis/build/njazz/qtpd/qtpd_gui/UIObject.h:110: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setOutletsPos()
+/home/travis/build/njazz/qtpd/qtpd_gui/UIWidget.h:56: warning: argument 'canvasEditMode' of command @param is not found in the argument list of qtpd::UIWidget::setEditModeRef(t_editMode *canvasEditModeRef)
+/home/travis/build/njazz/qtpd/qtpd_gui/UIWidget.h:56: warning: The following parameters of qtpd::UIWidget::setEditModeRef(t_editMode *canvasEditModeRef) are not documented:
+  parameter 'canvasEditModeRef'
 /home/travis/build/njazz/qtpd/qtpd_gui/UIWidget.h:75: warning: argument 'scale_' of command @param is not found in the argument list of qtpd::UIWidget::setScale(float newScale)
 /home/travis/build/njazz/qtpd/qtpd_gui/UIWidget.h:75: warning: The following parameters of qtpd::UIWidget::setScale(float newScale) are not documented:
   parameter 'newScale'
@@ -1473,6 +1476,6 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-symbol cache used 6084/65536 hits=1055142 misses=6084
-lookup cache used 10075/65536 hits=63202 misses=10800
+symbol cache used 6085/65536 hits=1055171 misses=6085
+lookup cache used 10085/65536 hits=63220 misses=10810
 finished...

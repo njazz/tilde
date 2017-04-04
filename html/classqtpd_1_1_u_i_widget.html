@@ -165,9 +165,9 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">deselect object  <a href="#a875105a332f8e2d048ba30c007beee75"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_widget.html#a27ccb385bf3da85c143be7be5f2fe39e">isSelected</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get object's selected flag  <a href="#a27ccb385bf3da85c143be7be5f2fe39e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_widget.html#ae3f14d066c1f700383322463be2b6f7f">setEditModeRef</a> (<a class="el" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a">t_editMode</a> *canvasEditMode)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets pointer to edit mode flag in parent canvas  <a href="#ae3f14d066c1f700383322463be2b6f7f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a">t_editMode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_widget.html#aaffc554176725fab43eda0f84d61be29">getEditModeRef</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_widget.html#ab83c48871c62497a3f47f6af91a7b081">setEditModeRef</a> (<a class="el" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a">t_editMode</a> *canvasEditModeRef)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets pointer to edit mode flag in parent canvas  <a href="#ab83c48871c62497a3f47f6af91a7b081"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a">t_editMode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_widget.html#aaffc554176725fab43eda0f84d61be29">getEditModeRef</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get edit mode pointer - for inlets/outlets  <a href="#aaffc554176725fab43eda0f84d61be29"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a">t_editMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_widget.html#a634ea76429adff2e733353421a414ebc">getEditMode</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get edit mode flag value  <a href="#a634ea76429adff2e733353421a414ebc"></a><br/></td></tr>
@@ -235,7 +235,7 @@ Public Attributes</h2></td></tr>
 <p>get edit mode flag value </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Reimplemented in <a class="el" href="classqtpd_1_1_canvas.html#a114919833e4fdd434726e8dad524da93">qtpd::Canvas</a>.</p>
+<p>Reimplemented in <a class="el" href="classqtpd_1_1_canvas.html#a6c79bf2245f121689f057b611e756e66">qtpd::Canvas</a>.</p>
 
 </div>
 </div>
@@ -247,7 +247,7 @@ Public Attributes</h2></td></tr>
           <td class="memname"><a class="el" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a">t_editMode</a> * <a class="el" href="classqtpd_1_1_u_i_widget.html#aaffc554176725fab43eda0f84d61be29">qtpd::UIWidget::getEditModeRef</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -255,6 +255,8 @@ Public Attributes</h2></td></tr>
 
 <p>get edit mode pointer - for inlets/outlets </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Reimplemented in <a class="el" href="classqtpd_1_1_canvas.html#a41b33207796bdff56a44dd904d533541">qtpd::Canvas</a>.</p>
 
 </div>
 </div>
@@ -569,15 +571,15 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae3f14d066c1f700383322463be2b6f7f"></a><!-- doxytag: member="qtpd::UIWidget::setEditModeRef" ref="ae3f14d066c1f700383322463be2b6f7f" args="(t_editMode *canvasEditMode)" -->
+<a class="anchor" id="ab83c48871c62497a3f47f6af91a7b081"></a><!-- doxytag: member="qtpd::UIWidget::setEditModeRef" ref="ab83c48871c62497a3f47f6af91a7b081" args="(t_editMode *canvasEditModeRef)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_widget.html#ae3f14d066c1f700383322463be2b6f7f">qtpd::UIWidget::setEditModeRef</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_widget.html#ab83c48871c62497a3f47f6af91a7b081">qtpd::UIWidget::setEditModeRef</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a">t_editMode</a> *&#160;</td>
-          <td class="paramname"><em>canvasEditMode</em></td><td>)</td>
+          <td class="paramname"><em>canvasEditModeRef</em></td><td>)</td>
           <td><code> [virtual]</code></td>
         </tr>
       </table>
@@ -658,7 +660,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 4 2017 15:57:26 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Apr 4 2017 16:06:43 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

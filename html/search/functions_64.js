@@ -1,10 +1,10 @@
 var searchData=
 [
   ['data',['data',['../classqtpd_1_1_property.html#a9d55f5422aed6f74981dc7e5130399d4',1,'qtpd::Property']]],
-  ['datacopy',['dataCopy',['../classqtpd_1_1_canvas.html#a561b418210d059c176d51dc2a7ed2276',1,'qtpd::Canvas']]],
+  ['datacopy',['dataCopy',['../classqtpd_1_1_canvas.html#ac33ab7f43fd6ceb69c84590231646726',1,'qtpd::Canvas']]],
   ['datacut',['dataCut',['../classqtpd_1_1_canvas.html#ac2d57fa919e556258ccf254894894699',1,'qtpd::Canvas']]],
-  ['dataduplicate',['dataDuplicate',['../classqtpd_1_1_canvas.html#af89f81d9217fab9490059afd8bc84859',1,'qtpd::Canvas']]],
-  ['datapaste',['dataPaste',['../classqtpd_1_1_canvas.html#a7347b29304570ae42796e343142da9b1',1,'qtpd::Canvas']]],
+  ['dataduplicate',['dataDuplicate',['../classqtpd_1_1_canvas.html#a96a7ccf6c22f92fae5aacf5d735d700d',1,'qtpd::Canvas']]],
+  ['datapaste',['dataPaste',['../classqtpd_1_1_canvas.html#ab98811f5c4587d37cf43395be9f7647a',1,'qtpd::Canvas']]],
   ['debug',['Debug',['../classceammc_1_1_debug.html#a9012e05dd78d36cd041480940f961215',1,'ceammc::Debug']]],
   ['decorator',['decorator',['../class_python_qt_class_info.html#adae2f612f80f3e0fc4447a84c628c684',1,'PythonQtClassInfo::decorator()'],['../class_python_qt_slot_info.html#a7c34e25922c0275941f507382b787b12',1,'PythonQtSlotInfo::decorator()']]],
   ['default_5fpd_5fbang_5ffn',['default_pd_bang_fn',['../namespaceceammc.html#a8a41d694eaf097bca750227e6c9d6805',1,'ceammc::default_pd_bang_fn(t_class *c)'],['../namespaceceammc.html#a2835a33e60c81054613d488591bb42d8',1,'ceammc::default_pd_bang_fn(_class *c)']]],
