@@ -58,16 +58,20 @@ public:
         std::string data1 = b->properties()->extractFromPdFileString(obj_name); //test
         const char* obj_name2 = data1.c_str();
 
+        // fix size changes
+        b->setObjectData(data1);
+        b->autoResize();
+
         //std::string methodName;
         if (list.size() < 2) {
             cmp_post("missing argument: method name");
+            b->setErrorBox(true);
+            return (UIObject*)b;
         } else {
             b->_methodName = ((QString)list.at(1)).toStdString();
         }
 
-        // fix size changes
-        b->setObjectData(data1);
-        b->autoResize();
+
 
         t_object* new_obj = 0;
         int in_c = 0, out_c = 0;
