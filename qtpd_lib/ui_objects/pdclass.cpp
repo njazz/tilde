@@ -45,7 +45,12 @@ static void oopdclass_anything(t_oopdclass* x, t_symbol* s, int argc, t_atom* ar
     } else {
 
         if (x->updateUI)
-            x->updateUI (x->uiobj, AtomList(argc, argv));
+        {
+            AtomList out = AtomList(s);
+            out.append(AtomList(argc, argv));
+
+            x->updateUI (x->uiobj, out);
+        }
 
     }
 }

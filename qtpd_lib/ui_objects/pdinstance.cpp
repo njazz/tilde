@@ -48,14 +48,17 @@ static void oopdinstance_anything(t_oopdinstance* x, t_symbol* s, int argc, t_at
     } else if (s == gensym("__newin")) {
         inlet_new(&x->x_obj, &x->x_obj.ob_pd, &s_anything, &s_anything);
 
-
     } else if (s == gensym("__newout")) {
         outlet_new((t_object*)x, &s_anything);
 
     } else {
 
-        if (x->updateUI)
-            x->updateUI(x->uiobj, AtomList(argc, argv));
+        if (x->updateUI) {
+            AtomList out = AtomList(s);
+            out.append(AtomList(argc, argv));
+
+            x->updateUI(x->uiobj, out);
+        }
     }
 }
 

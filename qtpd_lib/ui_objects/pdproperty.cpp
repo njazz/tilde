@@ -46,9 +46,12 @@ static void oopdproperty_anything(t_oopdproperty* x, t_symbol* s, int argc, t_at
         l.output(x->out1);
     } else {
 
-        if (x->updateUI)
-            x->updateUI (x->uiobj, AtomList(argc, argv));
+        if (x->updateUI) {
+            AtomList out = AtomList(s);
+            out.append(AtomList(argc, argv));
 
+            x->updateUI(x->uiobj, out);
+        }
     }
 }
 
