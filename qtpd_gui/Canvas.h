@@ -82,9 +82,9 @@ private:
     t_editMode _canvasEditMode;
 
     // ----- NEW
-    Grid _grid;
-    SelectionRect _selectionRect;
-    NewLine _newLine;
+    Grid* _grid;
+    SelectionRect* _selectionRect;
+    NewLine* _newLine;
 
     Q_OBJECT
 
@@ -123,7 +123,7 @@ public:
     ////
     /// \brief main paint routine
     ///
-    void paintEvent(QPaintEvent*);
+    //void paintEvent(QPaintEvent*);
 
     ////
     /// \brief draws canvas contents

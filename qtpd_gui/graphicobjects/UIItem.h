@@ -87,6 +87,7 @@ public:
     // ---------
 
     void setSize(QSize size) { _size = size; }
+    void setSize(float w, float h) { _size = QSize(w,h); }
     void setWidth(float w) { _size.setWidth(w); }
     void setHeight(float h) { _size.setHeight(h); }
 

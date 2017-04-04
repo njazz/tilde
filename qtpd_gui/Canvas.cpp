@@ -17,10 +17,12 @@ Canvas::Canvas(QGraphicsView* parent)
     //    setScene(sc);
     //    setSceneRect(frameRect());
 
-    QPalette Pal;
-    Pal.setColor(QPalette::Background, Qt::white);
-    setAutoFillBackground(true);
-    setPalette(Pal);
+//    QPalette Pal;
+//    Pal.setColor(QPalette::Background, Qt::white);
+//    setAutoFillBackground(true);
+//    setPalette(Pal);
+
+    _newLine = new NewLine;
 
     //test
     setFixedSize(400, 300);
@@ -28,7 +30,7 @@ Canvas::Canvas(QGraphicsView* parent)
     setMouseTracking(true);
 
     _selFrame.active = false;
-    _newLine.setActive(false); // = false;
+    _newLine->setActive(false); // = false;
 
     //_editMode = em_Unlocked;
 
@@ -70,8 +72,18 @@ Canvas::Canvas(QGraphicsView* parent)
 
     //_canvasEditMode = em_Unlocked;
 
-    // --------
+
+    // ------NEW
     setStyleSheet("QGraphicsView { border-style: none; }");
+
+    setScene(new QGraphicsScene(0,0,400,300, this));
+
+    _grid = new Grid;
+    scene()->addItem(_grid);
+
+    _grid->setSize(300,300);
+
+
 }
 
 //cm_canvas::cm_canvas(QWidget *parent) : cm_widget((cm_widget*)parent)
@@ -85,7 +97,7 @@ Canvas::Canvas(QGraphicsView* parent)
 void Canvas::s_InMousePressed(UIItem* obj, QMouseEvent*)
 {
     //    printf("in: mouse pressed\n");
-    _newLine.setActive(false);
+    _newLine->setActive(false);
 
     if ((_connectionStartObject) && (_connectionStartOutlet)) {
         patchcord(_connectionStartObject, _connectionStartOutlet, (UIObjectItem*)obj->parent(), obj);
@@ -106,9 +118,9 @@ void Canvas::s_OutMousePressed(UIItem* obj, QMouseEvent*)
 {
     //    printf("out: mouse pressed\n");
 
-    //_newLine.start = ((QWidget*)obj->parent())->pos() + obj->pos() + QPoint(5, 1);
+    //_newLine->start = ((QWidget*)obj->parent())->pos() + obj->pos() + QPoint(5, 1);
 
-    _newLine.setActive(true);
+    _newLine->setActive(true);
 
     _connectionStartObject = (UIObjectItem*)obj->parent();
     _connectionStartOutlet = (UIObjectItem*)obj;
@@ -295,13 +307,13 @@ canvasDrawStyle Canvas::drawStyle()
     return _drawStyle;
 }
 
-void Canvas::paintEvent(QPaintEvent*)
-{
-    if (_drawStyle == ds_Canvas)
-        drawCanvas();
-    if (_drawStyle == ds_Box)
-        drawObjectBox();
-}
+//void Canvas::paintEvent(QPaintEvent*)
+//{
+//    if (_drawStyle == ds_Canvas)
+//        drawCanvas();
+//    if (_drawStyle == ds_Box)
+//        drawObjectBox();
+//}
 
 void Canvas::drawCanvas()
 {
@@ -314,11 +326,11 @@ void Canvas::drawCanvas()
     //        p.drawRect(_selFrame.start.x(), _selFrame.start.y(), _selFrame.end.x(), _selFrame.end.y());
     //    }
 
-    //    if (_newLine.active) {
+    //    if (_newLine->active) {
     //        QPainter p(0);//viewport());
 
     //        p.setPen(QPen(QColor(128, 128, 128), 1, Qt::DashLine, Qt::SquareCap, Qt::BevelJoin));
-    //        p.drawLine(_newLine.start, _newLine.end);
+    //        p.drawLine(_newLine->start, _newLine->end);
     //    }
 
     //    paintPatchcords();
@@ -477,7 +489,7 @@ void Canvas::mouseMoveEventForCanvas(QMouseEvent* ev)
     _newObjectPos = pos;
 
     _selFrame.end = pos - _selFrame.start;
-    _newLine.setEnd(pos);
+    _newLine->setEnd(pos);
 
     // move new object
     if (dragObject) {
@@ -531,7 +543,7 @@ void Canvas::mouseMoveEventForCanvas(QMouseEvent* ev)
     }
 
     //todo
-    //if (_newLine.active)
+    //if (_newLine->active)
     //    viewport()->update();
 
     //patchcords()
@@ -581,7 +593,7 @@ void Canvas::mouseReleaseEventForCanvas(QMouseEvent*)
     dragObject = 0;
 
     _selFrame.active = false;
-    _newLine.setActive(false);
+    _newLine->setActive(false);
     ;
 
     //viewport()->update();
@@ -1236,7 +1248,7 @@ void Canvas::canvasFromPdStrings(QStringList strings)
 
 void Canvas::cancelPatchcord()
 {
-    _newLine.setActive(false);
+    _newLine->setActive(false);
     ;
 
     //viewport()->update();
