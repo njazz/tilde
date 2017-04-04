@@ -113,7 +113,7 @@ var searchData=
   ['uitoggle_2ecpp',['UIToggle.cpp',['../_u_i_toggle_8cpp.html',1,'']]],
   ['uitoggle_2eh',['UIToggle.h',['../_u_i_toggle_8h.html',1,'']]],
   ['uivalues',['uiValues',['../classceammc_1_1faust_1_1_pd_u_i.html#ae4a06c4fc9215c7edd827a72b1d3e2e0',1,'ceammc::faust::PdUI']]],
-  ['uiwidget',['UIWidget',['../classqtpd_1_1_u_i_widget.html#a89afbb3b3601a38afe23a461a0ccc2ac',1,'qtpd::UIWidget']]],
+  ['uiwidget',['UIWidget',['../classqtpd_1_1_u_i_widget.html#a79b8ecf3ed5174f6dd9e9da69d41f3a3',1,'qtpd::UIWidget']]],
   ['uiwidget',['UIWidget',['../classqtpd_1_1_u_i_widget.html',1,'qtpd']]],
   ['uiwidget_2ecpp',['UIWidget.cpp',['../_u_i_widget_8cpp.html',1,'']]],
   ['uiwidget_2eh',['UIWidget.h',['../_u_i_widget_8h.html',1,'']]],

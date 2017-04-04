@@ -42,7 +42,7 @@ var searchData=
   ['dist',['dist',['../structceammc_1_1t__bpt.html#a25f6169e50b30d12a65ab751bfc6eea2',1,'ceammc::t_bpt']]],
   ['doc',['doc',['../struct_python_qt_property_data.html#a907aa1a0a7e3ffbb7915db4d4e9dbf6a',1,'PythonQtPropertyData::doc()'],['../struct_py_get_set_def.html#ab3ac0bcf9fada67b8a33854192c23226',1,'PyGetSetDef::doc()'],['../structwrapperbase.html#a827bda21121a05de0996818cd83c5767',1,'wrapperbase::doc()'],['../struct_py_member_def.html#a52eba722acb02c6745ea662056a1479c',1,'PyMemberDef::doc()'],['../struct_py_struct_sequence___field.html#a6ba9e53c3ef3bb4b92a1a2ff70f71f64',1,'PyStructSequence_Field::doc()'],['../struct_py_struct_sequence___desc.html#a96a9c56395cf81931030bbb69a1ce504',1,'PyStructSequence_Desc::doc()'],['../modsupport_8h.html#a3aa6ba658002997a8d23f68b0cbfc96a',1,'doc():&#160;modsupport.h'],['../pyerrors_8h.html#a7ea52c0c994d7e75db8c3dc0c33dcbec',1,'doc():&#160;pyerrors.h']]],
   ['drag_5flimit',['drag_limit',['../classceammc_1_1_b_p_f.html#a0593f6e71f5f265d6c159d3995995d0c',1,'ceammc::BPF']]],
-  ['dragobject',['dragObject',['../classqtpd_1_1_canvas.html#ae2c013a94a5244db8672c6e0b3cf879f',1,'qtpd::Canvas']]],
+  ['dragobject',['dragObject',['../classqtpd_1_1_canvas.html#a57a862b93a7c1ebc81ebb424407beeef',1,'qtpd::Canvas']]],
   ['dragoffset',['dragOffset',['../classqtpd_1_1_u_i_widget.html#a2d41a6273dedf638982292267e27ff37',1,'qtpd::UIWidget']]],
   ['draw_5factive',['draw_active',['../structui__knob.html#aca41c545e52c3081fc40cf26084ee442',1,'ui_knob']]],
   ['dummy',['dummy',['../union__gc__head.html#ac3dd0fc3bbc73d3dffd5df3589c00939',1,'_gc_head']]],

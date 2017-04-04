@@ -22,7 +22,7 @@ var searchData=
   ['uitext',['UIText',['../classqtpd_1_1_u_i_text.html#af915c49ee59fe69a628d51c35ac15a06',1,'qtpd::UIText']]],
   ['uitoggle',['UIToggle',['../classqtpd_1_1_u_i_toggle.html#ada2a485b9b3011f8156b8c08b834e593',1,'qtpd::UIToggle']]],
   ['uivalues',['uiValues',['../classceammc_1_1faust_1_1_pd_u_i.html#ae4a06c4fc9215c7edd827a72b1d3e2e0',1,'ceammc::faust::PdUI']]],
-  ['uiwidget',['UIWidget',['../classqtpd_1_1_u_i_widget.html#a89afbb3b3601a38afe23a461a0ccc2ac',1,'qtpd::UIWidget']]],
+  ['uiwidget',['UIWidget',['../classqtpd_1_1_u_i_widget.html#a79b8ecf3ed5174f6dd9e9da69d41f3a3',1,'qtpd::UIWidget']]],
   ['unbindreceive',['unbindReceive',['../classceammc_1_1_base_object.html#a8107328beafb53a049ad62b6c9c5cda9',1,'ceammc::BaseObject']]],
   ['unmarshalcode',['unmarshalCode',['../class_python_qt_import.html#a5f08cf976f329e68013601fe1d50c2d1',1,'PythonQtImport']]],
   ['unregisterclass',['unregisterClass',['../classqtpd_1_1_o_o_p_d.html#a345e1c4fe7de65214d0303aba74d9b85',1,'qtpd::OOPD']]],

@@ -123,7 +123,7 @@ var searchData=
   ['drag_5flimit',['drag_limit',['../classceammc_1_1_b_p_f.html#a0593f6e71f5f265d6c159d3995995d0c',1,'ceammc::BPF']]],
   ['dragobj_5fconvert',['DragObj_Convert',['../pymactoolbox_8h.html#a697b18a91709aebd0b2742eeb7b16322',1,'pymactoolbox.h']]],
   ['dragobj_5fnew',['DragObj_New',['../pymactoolbox_8h.html#a987b355c5a9b2bb65b57f05adbcdac34',1,'pymactoolbox.h']]],
-  ['dragobject',['dragObject',['../classqtpd_1_1_canvas.html#ae2c013a94a5244db8672c6e0b3cf879f',1,'qtpd::Canvas']]],
+  ['dragobject',['dragObject',['../classqtpd_1_1_canvas.html#a57a862b93a7c1ebc81ebb424407beeef',1,'qtpd::Canvas']]],
   ['dragoffset',['dragOffset',['../classqtpd_1_1_u_i_widget.html#a2d41a6273dedf638982292267e27ff37',1,'qtpd::UIWidget']]],
   ['draw_5factive',['draw_active',['../structui__knob.html#aca41c545e52c3081fc40cf26084ee442',1,'ui_knob']]],
   ['draw_5fknob_5fline',['draw_knob_line',['../namespaceceammc__gui.html#aeb00730c5dac2b43169d1bfa8ada3762',1,'ceammc_gui']]],

@@ -195,7 +195,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00114"></a>00114 
 <a name="l00118"></a><a class="code" href="classqtpd_1_1_u_i_box.html#a30bd1e9a898ae7074029830bd2025317">00118</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_box.html#a30bd1e9a898ae7074029830bd2025317" title="paint event">paintEvent</a>(QPaintEvent*)
 <a name="l00119"></a>00119     {
-<a name="l00120"></a>00120         QPainter <a class="code" href="floatobject_8h.html#af18a92ce774f4c499544fbcc894db7e8">p</a>(<span class="keyword">this</span>);
+<a name="l00120"></a>00120         QPainter <a class="code" href="floatobject_8h.html#af18a92ce774f4c499544fbcc894db7e8">p</a>(viewport());
 <a name="l00121"></a>00121         p.setRenderHint(QPainter::HighQualityAntialiasing, <span class="keyword">true</span>);
 <a name="l00122"></a>00122         p.scale(<a class="code" href="classqtpd_1_1_u_i_widget.html#ac7137f5eddb1f155622c6f13e579320a" title="temporary. scale value for zoom">scale</a>(), <a class="code" href="classqtpd_1_1_u_i_widget.html#ac7137f5eddb1f155622c6f13e579320a" title="temporary. scale value for zoom">scale</a>());
 <a name="l00123"></a>00123 
@@ -260,7 +260,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00186"></a>00186 
 <a name="l00190"></a><a class="code" href="classqtpd_1_1_u_i_box.html#adbab8d09b088ef33ae47336d5c56919d">00190</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_box.html#adbab8d09b088ef33ae47336d5c56919d" title="mouse up">mouseReleaseEvent</a>(QMouseEvent*)
 <a name="l00191"></a>00191     {
-<a name="l00192"></a>00192         repaint();
+<a name="l00192"></a>00192          viewport()-&gt;update();
 <a name="l00193"></a>00193     }
 <a name="l00194"></a>00194 
 <a name="l00199"></a><a class="code" href="classqtpd_1_1_u_i_box.html#ab28929cc7e40bfd05900757e0acfd542">00199</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_box.html#ab28929cc7e40bfd05900757e0acfd542" title="mouse move">mouseMoveEvent</a>(QMouseEvent* event)
@@ -322,7 +322,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 4 2017 13:15:23 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Apr 4 2017 15:57:24 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
