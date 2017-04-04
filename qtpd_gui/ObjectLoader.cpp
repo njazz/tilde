@@ -9,23 +9,23 @@ void ObjectLoader::loadObjects()
 {
     //temporary
     addUIobject("ui.obj", &UIBox::createObject);
-    addUIobject("ui.msg", &UIMessage::createObject);
-    addUIobject("ui.float", &UIFloat::createObject);
-    addUIobject("ui.text", &UIText::createObject);
+//    addUIobject("ui.msg", &UIMessage::createObject);
+//    addUIobject("ui.float", &UIFloat::createObject);
+//    addUIobject("ui.text", &UIText::createObject);
 
-    addUIobject("ui.bang", &UIBang::createObject);
-    addUIobject("ui.toggle", &UIToggle::createObject);
+//    addUIobject("ui.bang", &UIBang::createObject);
+//    addUIobject("ui.toggle", &UIToggle::createObject);
 
-    addUIobject("ui.script", &UIScript::createObject);
+//    addUIobject("ui.script", &UIScript::createObject);
 
-    addUIobject("ui.array", &UIArray::createObject);
+//    addUIobject("ui.array", &UIArray::createObject);
 
-    addUIobject("pdclass", &UIClass::createObject);
-    addUIobject("pdinstance", &UIInstance::createObject);
-    addUIobject("method", &UIMethod::createObject);
-    addUIobject("property", &UIProperty::createObject);
+//    addUIobject("pdclass", &UIClass::createObject);
+//    addUIobject("pdinstance", &UIInstance::createObject);
+//    addUIobject("method", &UIMethod::createObject);
+//    addUIobject("property", &UIProperty::createObject);
 
-    addUIobject("ui.dsp", &UIDSP::createObject);
+//    addUIobject("ui.dsp", &UIDSP::createObject);
 
 
 }
@@ -63,7 +63,7 @@ cmObjectConstructor ObjectLoader::getConstructorFor(QString objName)
     return _objectConstructors["ui.obj"];
 }
 
-UIObject* ObjectLoader::createObject(QString objectData, t_canvas* pdCanvas, UIWidget* parent)
+UIObjectItem* ObjectLoader::createObject(QString objectData, t_canvas* pdCanvas, UIObjectItem* parent)
 {
 
     QString objectName = "";

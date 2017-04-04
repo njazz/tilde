@@ -64,7 +64,11 @@ SOURCES += main.cpp\
     oopd/UIMethod.cpp \
     oopd/UIProperty.cpp \
     oopd/OPInstance.cpp \
-    oopd/OPClass.cpp
+    oopd/OPClass.cpp \
+    Port_g.cpp \
+    UIItem_g.cpp \
+    SizeBox_g.cpp \
+    UIObject_g.cpp
 
 
 HEADERS  += \
@@ -142,7 +146,12 @@ HEADERS  += \
     oopd/OPClass.h \
     oopd/OPInstance.h \
     oopd/OOPDClassBase.h \
-    oopd/OOPDHeaders.h
+    oopd/OOPDHeaders.h \
+    Port_g.h \
+    UIItem_g.h \
+    SizeBox_g.h \
+    UIObject_g.h \
+    common_types.h
 
 
 FORMS    += \

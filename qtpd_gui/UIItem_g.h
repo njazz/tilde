@@ -1,33 +1,23 @@
 // (c) 2017 Alex Nadzharov
 // License: GPL3
 
-#ifndef CM_WIDGET_H
-#define CM_WIDGET_H
+#ifndef UIITEM_H
+#define UIITEM_H
 
+#include <QGraphicsObject>
 #include <QWidget>
-#include <QGraphicsView>
-
-
-#include "common_types.h"
 
 // Widget extension
 // check / fix
 
-namespace qtpd {
+#include "common_types.h"
 
-/*/////
-///// \brief edit mode types
-////*/
-//typedef enum {
-//    em_Unlocked,
-//    em_Locked,
-//    em_Temporary    ///> control-click on an object
-//} t_editMode;
+namespace qtpd {
 
 ////
 /// \brief parent class for all objects in the canvas
 ///
-class UIWidget : public QGraphicsView {
+class UIItem : public QGraphicsObject {
     Q_OBJECT
 
 private:
@@ -35,10 +25,16 @@ private:
     t_editMode* _editMode;
     float _scale;
 
+    // ---
+    QSize _size;
+    QPoint _pos; //?
+    QColor _bgColor;
+    bool _hover;
+
 public:
     QPoint dragOffset;
 
-    explicit UIWidget(QGraphicsView* parent = 0);
+    explicit UIItem(QGraphicsObject* parent = 0);
 
     ////
     /// \brief select object
@@ -86,15 +82,40 @@ public:
     ///
     float scale();
 
+    // ---------
+
+    void setSize(QSize size) { _size = size; }
+    void setWidth(float w) { _size.setWidth(w); }
+    void setHeight(float h) { _size.setHeight(h); }
+
+    QSize size(){return _size;}
+
+    QRectF boundingRect() const
+    {
+        return QRectF(0, 0, _size.width(), _size.height());
+    }
+
+    void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget){};
+
+    QColor bgColor() { return _bgColor; }
+    void setBgColor(QColor bgc) { _bgColor = bgc; }
+
+    bool hover() { return _hover; }
+    void setHover(bool h) { _hover = h; }
+
+    void move(float x, float y) { _pos = QPoint(x, y); }
+    void move(QPoint pos) { _pos = QPoint(pos.x(), pos.y()); }
+    void move(QPointF pos) { _pos = QPoint(pos.x(), pos.y()); }
+
 signals:
 
-    void mousePressed(UIWidget* obj, QMouseEvent* ev);
-    void mouseReleased(UIWidget* obj, QMouseEvent* ev);
+    void mousePressed(UIItem* obj, QMouseEvent* ev);
+    void mouseReleased(UIItem* obj, QMouseEvent* ev);
     void mouseEntered();
     void mouseLeaved();
 
-    void selectBox(UIWidget* box, QMouseEvent* event );
-    void moveBox(UIWidget* box, QMouseEvent* event);
+    void selectBox(UIItem* box, QMouseEvent* event);
+    void moveBox(UIItem* box, QMouseEvent* event);
 
 public slots:
 
@@ -103,13 +124,13 @@ public slots:
     //    void s_MouseEntered();
     //    void s_MouseLeaved();
 
-    virtual void s_InMousePressed(UIWidget* obj, QMouseEvent* ev);
-    virtual void s_InMouseReleased(UIWidget* obj, QMouseEvent* ev);
+    //    virtual void s_InMousePressed(UIItem* obj, QMouseEvent* ev);
+    //    virtual void s_InMouseReleased(UIItem* obj, QMouseEvent* ev);
     //    virtual void s_InMouseEntered();
     //    virtual void s_InMouseLeaved();
 
-    virtual void s_OutMousePressed(UIWidget* obj, QMouseEvent* ev);
-    virtual void s_OutMouseReleased(UIWidget* obj, QMouseEvent* ev);
+    //    virtual void s_OutMousePressed(UIItem* obj, QMouseEvent* ev);
+    //    virtual void s_OutMouseReleased(UIItem* obj, QMouseEvent* ev);
     //    virtual void s_OutMouseEntered();
     //    virtual void s_OutMouseLeaved();
 };

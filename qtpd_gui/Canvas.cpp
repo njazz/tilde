@@ -66,6 +66,8 @@ Canvas::Canvas(UIObject* parent)
 
     _filePath = Preferences::inst().get("Patches")->asQString();
 
+    //setScale(.5);
+
     //_canvasEditMode = em_Unlocked;
 }
 
@@ -137,6 +139,23 @@ void Canvas::s_SelectBox(UIWidget* box, QMouseEvent* ev)
     //dragPrevPos = box->pos();
 }
 
+void Canvas::s_SelectBoxItem(UIItem* box, QMouseEvent* ev)
+{
+
+    if (!(ev->modifiers() & Qt::ShiftModifier)) // && !(ev->modifiers() & Qt::ControlModifier))
+        deselectBoxes();
+
+    if (Canvas::getEditMode() == em_Unlocked) {
+        // FIX
+        selectBox((UIWidget*)box);
+    }
+
+    //temporary
+    dragObject = 0;
+
+    //dragPrevPos = box->pos();
+}
+
 void Canvas::s_MoveBox(UIWidget* box, QMouseEvent* event)
 {
     if (!(Canvas::getEditMode() == em_Unlocked))
@@ -163,6 +182,32 @@ void Canvas::s_MoveBox(UIWidget* box, QMouseEvent* event)
         setFixedSize(minimumCanvasSize());
 }
 
+
+void Canvas::s_MoveBoxItem(UIItem* box, QMouseEvent* event)
+{
+    if (!(Canvas::getEditMode() == em_Unlocked))
+        return;
+    for (int i = 0; i < (int)_selectionData.boxes()->size(); i++) {
+        UIObject* w = ((UIObject*)_selectionData.boxes()->at(i));
+        QPoint pos = ((UIObject*)_selectionData.boxes()->at(i))->pos() + mapToParent((event->pos() - box->dragOffset));
+
+        if (_gridSnap) {
+            pos.setX(ceil(pos.x() / _gridStep) * _gridStep);
+            pos.setY(ceil(pos.y() / _gridStep) * _gridStep);
+        }
+
+        w->move(pos);
+        t_object* obj = (t_object*)w->pdObject();
+        if (obj)
+            cmp_moveobject(obj, (int)pos.x(), (int)pos.y());
+
+        //todo
+        viewport()->update();
+    }
+
+    if (drawStyle() == ds_Canvas)
+        setFixedSize(minimumCanvasSize());
+}
 //void  Canvas::editorDone()
 //{
 //    qDebug("editor done");
@@ -467,9 +512,10 @@ void Canvas::mouseMoveEventForCanvas(QMouseEvent* ev)
     if (_selFrame.active) {
 
         for (int i = 0; i < (int)_data.boxes()->size(); i++) {
-            QPoint pos = ((UIBox*)_data.boxes()->at(i))->pos();
-            QSize size = ((UIBox*)_data.boxes()->at(i))->size();
-            QRect r = QRect(pos, pos + QPoint(size.width(), size.height()));
+            QPointF pos = ((UIBox*)_data.boxes()->at(i))->pos();
+            QPoint pos_ = QPoint(pos.x(),pos.y());
+            QSizeF size = ((UIBox*)_data.boxes()->at(i))->size();
+            QRect r = QRect(pos_, pos_ + QPoint(size.width(), size.height()));
 
             QRect frame = QRect(_selFrame.start, _selFrame.start + _selFrame.end);
 
@@ -604,11 +650,11 @@ void Canvas::deselectBoxes()
 
 UIBox* Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas* canvas)
 {
-    UIBox* box = new UIBox((UIObject*)this); //test?
+    UIBox* box = new UIBox((UIObjectItem*)this); //test?
     box->setObjectData(pdObjectName);
 
-    connect(box, &UIBox::selectBox, this, &Canvas::s_SelectBox);
-    connect(box, &UIBox::moveBox, this, &Canvas::s_MoveBox);
+    connect(box, &UIBox::selectBox, this, &Canvas::s_SelectBoxItem);
+    connect(box, &UIBox::moveBox, this, &Canvas::s_MoveBoxItem);
 
     box->setEditModeRef(Canvas::getEditModeRef());
 
@@ -652,7 +698,8 @@ UIBox* Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas* 
 
     box->move(pos);
 
-    _data.addUniqueBox(box);
+    // FIX
+    _data.addUniqueBox((UIObject*)box);
 
     box->show();
 
@@ -698,13 +745,13 @@ UIObject* Canvas::createObject(QString objectData1, QPoint pos) //std::string ui
         }
     }
 
-    UIObject* obj = ObjectLoader::inst().createObject(objectData1, (t_canvas*)pdObject(), (UIWidget*)this);
+    UIObjectItem* obj = ObjectLoader::inst().createObject(objectData1, (t_canvas*)pdObject(), (UIObjectItem*)this);
 
-    connect(obj, &UIMessage::selectBox, this, &Canvas::s_SelectBox);
-    connect(obj, &UIMessage::moveBox, this, &Canvas::s_MoveBox);
+    //connect(obj, &UIMessage::selectBox, this, &Canvas::s_SelectBox);
+    //connect(obj, &UIMessage::moveBox, this, &Canvas::s_MoveBox);
     obj->setEditModeRef(&_canvasEditMode);//Canvas::getEditModeRef());
     obj->move(pos);
-    _data.addUniqueBox(obj);
+    _data.addUniqueBox((UIObject*)obj);
 
     obj->show();
 
@@ -723,12 +770,12 @@ UIObject* Canvas::createObject(QString objectData1, QPoint pos) //std::string ui
         }
     }
 
-    connect(obj, &UIObject::editObject, this, &Canvas::objectStartsEdit);
+    //connect(obj, &UIObject::editObject, this, &Canvas::objectStartsEdit);
 
     if (drawStyle() == ds_Canvas)
         setFixedSize(minimumCanvasSize());
 
-    return obj;
+    return (UIObject*)obj;
 }
 
 UIObject* Canvas::createBoxForCanvas(Canvas* newCanvas, std::string objectData, QPoint pos)

@@ -8,22 +8,19 @@
 #include <QMainWindow>
 #include <QtGui>
 
-#include "Port.h"
-
-#include "UIObject.h"
+#include "UIObject_g.h"
 
 //lazy way
 //todo proper pattern
 #include "OpenFileProxy.h"
 
-//#include "cm_pdlink.h"
 
 namespace qtpd {
 
 ////
 /// \brief gui object: standard object box
 ///
-class UIBox : public UIObject {
+class UIBox : public UIObjectItem {
 
     Q_OBJECT
 
@@ -33,15 +30,15 @@ private:
     QString _abstractionPath;
 
 public:
-    explicit UIBox(UIObject* parent = 0);
+    explicit UIBox(UIObjectItem* parent = 0);
     //~UIBox();
 
-    static UIObject* createObject(std::string objectData, t_canvas* pd_Canvas, UIWidget* parent = 0)
+    static UIObjectItem* createObject(std::string objectData, t_canvas* pd_Canvas, UIObjectItem* parent = 0)
     {
         //TODO fix all constructors
         //t_canvas* pd_Canvas;
 
-        UIBox* b = new UIBox((UIObject*)parent);
+        UIBox* b = new UIBox((UIObjectItem*)parent);
 
         //truncate "ui.obj". todo cleanup
         QStringList list = QString(objectData.c_str()).split(" ");
@@ -81,7 +78,7 @@ public:
             //qDebug() << "*** is abstraction: " << b->_isAbstraction;
 
             // todo different help symbols
-            b->setHelpName(list.at(0) + "-help.pd");
+            b->setHelpName(list.at(0) + "-help->pd");
 
             if (b->_isAbstraction) {
 
@@ -109,37 +106,37 @@ public:
         for (int i = 0; i < out_c; i++)
             b->addOutlet();
 
-        return (UIObject*)b;
+        return (UIObjectItem*)b;
     };
 
     ////
     /// \brief paint event
     ///
-    void paintEvent(QPaintEvent*)
+   void paint(QPainter *p, const QStyleOptionGraphicsItem *option, QWidget *widget)
     {
-        QPainter p(viewport());
-        p.setRenderHint(QPainter::HighQualityAntialiasing, true);
-        p.scale(scale(), scale());
+        //QPainter p(viewport());
+        p->setRenderHint(QPainter::HighQualityAntialiasing, true);
+        p->scale(scale(), scale());
 
         //remove this later
         if (subpatchWindow()) {
-            p.setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-            p.drawRect(0, 2, width(), height() - 4);
+            p->setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p->drawRect(0, 2, boundingRect().width(), boundingRect().height() - 4);
         }
 
         QColor rectColor = (errorBox()) ? QColor(255, 0, 0) : properties()->get("BorderColor")->asQColor(); //QColor(128, 128, 128);
-        p.setPen(QPen(rectColor, 2 + _isAbstraction, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-        p.drawRect(0, 0, width(), height());
+        p->setPen(QPen(rectColor, 2 + _isAbstraction, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p->drawRect(0, 0, boundingRect().width(), boundingRect().height());
         QTextOption* op = new QTextOption;
         op->setAlignment(Qt::AlignLeft);
-        p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p->setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
-        p.setFont(QFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize(), 0, false));
-        p.drawText(2, 3, width() - 2, height() - 3, 0, objectData().c_str(), 0);
+        p->setFont(QFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize(), 0, false));
+        p->drawText(2, 3, boundingRect().width() - 2, boundingRect().height() - 3, 0, objectData().c_str(), 0);
 
         if (isSelected()) {
-            p.setPen(QPen(QColor(0, 192, 255), 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-            p.drawRect(0, 0, width(), height());
+            p->setPen(QPen(QColor(0, 192, 255), 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p->drawRect(0, 0, boundingRect().width(), boundingRect().height());
         }
     }
 
@@ -151,7 +148,9 @@ public:
     {
         //context menu
         if (ev->button() == Qt::RightButton) {
-            QPoint pos = mapToGlobal(ev->pos());
+            //
+            QPoint pos = ev->pos();
+            //QPoint pos = mapToGlobal(ev->pos());
             showPopupMenu(pos);
             ev->accept();
             return;
@@ -189,7 +188,7 @@ public:
     ///
     void mouseReleaseEvent(QMouseEvent*)
     {
-         viewport()->update();
+         //viewport()->update();
     }
 
     ////
@@ -219,7 +218,7 @@ public:
         QFontMetrics fm(myFont);
         int new_w = fm.width(QString(objectData().c_str())) + 10;
         new_w = (new_w < 25) ? 25 : new_w;
-        setFixedWidth(new_w);
+        setWidth(new_w);
         //editor_->setFixedWidth(width() - 5);
 
         //todo: del object and create new + patchcords

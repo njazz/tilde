@@ -89,7 +89,7 @@ private:
 
     QString _filePath;
 
-     t_editMode _canvasEditMode;
+    t_editMode _canvasEditMode;
 
     Q_OBJECT
 
@@ -306,7 +306,6 @@ public:
     ///
     void delSelectedPatchcords();
 
-
     virtual t_editMode getEditMode()
     {
         return _canvasEditMode;
@@ -322,8 +321,6 @@ public:
     /// \param mode
     ///
     void setEditMode(t_editMode mode);
-
-
 
     ////
     /// \brief returns object by index - this is needed by parser
@@ -470,7 +467,9 @@ public slots:
     /// \brief slot called by box when it is selected
     /// \param box
     ///
-    void s_SelectBox(UIWidget* box, QMouseEvent *ev);
+    void s_SelectBox(UIWidget* box, QMouseEvent* ev);
+
+    void s_SelectBoxItem(UIItem* box, QMouseEvent* ev);
 
     ////
     /// \brief TODO check. slot called by box when it starts moving
@@ -478,6 +477,8 @@ public slots:
     /// \param event
     ///
     void s_MoveBox(UIWidget* box, QMouseEvent* event);
+
+    void s_MoveBoxItem(UIItem *box, QMouseEvent* event);
 
     //    void portMouseReleased();
     //    void portMouseEntered();

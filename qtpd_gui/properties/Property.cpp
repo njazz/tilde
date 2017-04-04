@@ -30,6 +30,19 @@ void Property::set(QPoint point)
     _data = list;
     _type = ptVector;
 }
+
+template <>
+void Property::set(QPointF point)
+{
+    AtomList list;
+
+    list.append(point.x());
+    list.append(point.y());
+
+    _data = list;
+    _type = ptVector;
+}
+
 template <>
 void Property::set(QRect rect)
 {
@@ -45,6 +58,18 @@ void Property::set(QRect rect)
 }
 template <>
 void Property::set(QSize size)
+{
+    AtomList list;
+
+    list.append(size.width());
+    list.append(size.height());
+
+    _data = list;
+    _type = ptVector;
+}
+
+template <>
+void Property::set(QSizeF size)
 {
     AtomList list;
 

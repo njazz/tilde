@@ -4,20 +4,22 @@
 #include "UIBox.h"
 
 namespace qtpd {
-UIBox::UIBox(UIObject* parent)
-    : UIObject(parent)
+UIBox::UIBox(UIObjectItem* parent)
+    : UIObjectItem(parent)
 {
     //setPdObjectName("ui.bang");
 
-    setFixedHeight(20);
-    setMouseTracking(true);
+    setHeight(20);
+    //setMouseTracking(true);
 
     deselect(); // = false;
 
-    QPalette Pal(palette());
-    Pal.setColor(QPalette::Background, QColor(240, 240, 240));
-    setAutoFillBackground(true);
-    setPalette(Pal);
+    setBgColor(QColor(240, 240, 240));
+
+//    QPalette Pal(palette());
+//    Pal.setColor(QPalette::Background, QColor(240, 240, 240));
+//    setAutoFillBackground(true);
+//    setPalette(Pal);
 
 
     setErrorBox(false);

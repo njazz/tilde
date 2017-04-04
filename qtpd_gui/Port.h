@@ -10,10 +10,12 @@
 
 #include "UIWidget.h"
 
+#include "common_types.h"
+
 namespace qtpd {
 
-typedef enum { portInlet,
-    portOutlet } UIPortType;
+//typedef enum { portInlet,
+//    portOutlet } UIPortType;
 ////
 /// \brief gui representation of t_inlet / t_outlet
 ///
