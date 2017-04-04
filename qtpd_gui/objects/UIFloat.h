@@ -30,7 +30,7 @@ public:
         UIFloat* b = new UIFloat((UIObject*)parent);
 
         std::string data1 = b->properties()->extractFromPdFileString(objectData);
-        b->setObjectData("ui.float");
+        b->setObjectData("ui.float"); //todo
 
         b->autoResize();
 
@@ -57,6 +57,8 @@ public:
 
         b->addInlet();
         b->addOutlet();
+
+        b->autoResize();
 
         return (UIObject*)b;
     };
@@ -101,6 +103,16 @@ public:
 
         p.setFont(QFont(PREF_QSTRING("Font"), 11, 0, false));
         p.drawText(2, 3, width() - 2, height() - 3, 0, objectData().c_str(), 0);
+    }
+
+    void autoResize()
+    {
+        QFont myFont(PREF_QSTRING("Font"), 11);
+        QFontMetrics fm(myFont);
+
+        setFixedWidth((int)fm.width(QString("00.00")) + 5);  //todo
+        if (width() < minimumBoxWidth())
+            setFixedWidth(minimumBoxWidth());
     }
 
     ///////////////////

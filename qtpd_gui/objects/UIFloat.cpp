@@ -11,13 +11,13 @@ UIFloat::UIFloat(UIObject* parent)
     //setPdObjectName("ui.float");
 
     //setMinimumWidth(30);
-    setFixedSize(45, 20);
+    setFixedSize(35, 20);
 
     setMouseTracking(true);
 
     deselect();
 
-    setMinimumBoxWidth(45);
+    setMinimumBoxWidth(35);
     setMinimumBoxHeight(20);
 }
 }
