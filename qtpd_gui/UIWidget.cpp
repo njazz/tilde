@@ -3,6 +3,8 @@
 
 #include "UIWidget.h"
 
+#include <QDebug>
+
 namespace qtpd {
 UIWidget::UIWidget(QGraphicsView* parent)
     : QGraphicsView(parent)
@@ -32,9 +34,12 @@ void UIWidget::deselect()
 
 bool UIWidget::isSelected() { return _selected; }
 
-void UIWidget::setEditModeRef(t_editMode* canvasEditMode)
+void UIWidget::setEditModeRef(t_editMode* canvasEditModeRef)
 {
-    _editMode = canvasEditMode;
+
+    _editMode = canvasEditModeRef;
+
+    qDebug() << "em ref" << (long) _editMode;
 }
 
 t_editMode* UIWidget::getEditModeRef()
@@ -44,6 +49,7 @@ t_editMode* UIWidget::getEditModeRef()
 
 t_editMode UIWidget::getEditMode()
 {
+
     return (_editMode) ? (*_editMode) : em_Unlocked;
 }
 

@@ -150,7 +150,7 @@ void UIObject::addInlet(int _portClass_)
     new_in->portType = portInlet;
     new_in->portIndex = _inlets->size();
     new_in->portClass = _portClass_;
-    new_in->setEditModeRef(getEditModeRef());
+    new_in->setEditModeRef(this->getEditModeRef());
 
     _inlets->push_back(new_in);
 
@@ -180,7 +180,7 @@ void UIObject::addOutlet(int _portClass_)
     new_out->portType = portOutlet;
     new_out->portIndex = _outlets->size();
     new_out->portClass = _portClass_;
-    new_out->setEditModeRef(getEditModeRef());
+    new_out->setEditModeRef(this->getEditModeRef());
 
     _outlets->push_back(new_out);
     connect(new_out, &Port::mousePressed, static_cast<UIWidget*>(parent()), &UIWidget::s_OutMousePressed);

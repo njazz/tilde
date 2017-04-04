@@ -58,13 +58,13 @@ public:
     /// \details this is set by "constructor" (createObj etc) in canvas
     /// \param canvasEditMode
     ///
-    virtual void setEditModeRef(t_editMode* canvasEditMode);
+    virtual void setEditModeRef(t_editMode* canvasEditModeRef);
 
     ////
     /// \brief get edit mode pointer - for inlets/outlets
     /// \return
     ///
-    t_editMode* getEditModeRef();
+    virtual t_editMode* getEditModeRef();
 
     ////
     /// \brief get edit mode flag value

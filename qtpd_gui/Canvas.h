@@ -60,7 +60,7 @@ private:
 
     // TODO use widget's standard and create in constructor
     // local, !Box
-    t_editMode _editMode;
+    //t_editMode _editMode;
 
     // local, !Box
     // TODO separate grid layer
@@ -88,6 +88,8 @@ private:
     bool _readOnly;
 
     QString _filePath;
+
+     t_editMode _canvasEditMode;
 
     Q_OBJECT
 
@@ -304,18 +306,24 @@ public:
     ///
     void delSelectedPatchcords();
 
+
+    virtual t_editMode getEditMode()
+    {
+        return _canvasEditMode;
+    }
+
+    virtual t_editMode* getEditModeRef()
+    {
+        return &_canvasEditMode;
+    }
+
     ////
     /// \brief change edit mode flag
     /// \param mode
     ///
-
     void setEditMode(t_editMode mode);
 
-    ////
-    /// \brief get edit mode flag
-    /// \return
-    ///
-    t_editMode getEditMode();
+
 
     ////
     /// \brief returns object by index - this is needed by parser

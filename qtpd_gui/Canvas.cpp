@@ -30,9 +30,14 @@ Canvas::Canvas(UIObject* parent)
     _selFrame.active = false;
     _newLine.active = false;
 
-    _editMode = em_Unlocked;
+    //_editMode = em_Unlocked;
 
     fileName = "";
+
+    //t_editMode* em = new t_editMode;
+    //UIWidget::setEditModeRef(em);
+
+    Canvas::setEditMode(em_Unlocked);
 
     //
     _gridEnabled = true;
@@ -60,6 +65,8 @@ Canvas::Canvas(UIObject* parent)
     _replaceObject = 0;
 
     _filePath = Preferences::inst().get("Patches")->asQString();
+
+    //_canvasEditMode = em_Unlocked;
 }
 
 //cm_canvas::cm_canvas(QWidget *parent) : cm_widget((cm_widget*)parent)
@@ -78,7 +85,7 @@ void Canvas::s_InMousePressed(UIWidget* obj, QMouseEvent*)
     if ((_connectionStartObject) && (_connectionStartOutlet)) {
         patchcord(_connectionStartObject, _connectionStartOutlet, (UIObject*)obj->parent(), obj);
 
-            viewport()->update();
+        viewport()->update();
     }
 
     _connectionStartObject = 0;
@@ -120,7 +127,7 @@ void Canvas::s_SelectBox(UIWidget* box, QMouseEvent* ev)
     if (!(ev->modifiers() & Qt::ShiftModifier)) // && !(ev->modifiers() & Qt::ControlModifier))
         deselectBoxes();
 
-    if (_editMode == em_Unlocked) {
+    if (Canvas::getEditMode() == em_Unlocked) {
         selectBox(box);
     }
 
@@ -132,7 +139,7 @@ void Canvas::s_SelectBox(UIWidget* box, QMouseEvent* ev)
 
 void Canvas::s_MoveBox(UIWidget* box, QMouseEvent* event)
 {
-    if (!(getEditMode() == em_Unlocked))
+    if (!(Canvas::getEditMode() == em_Unlocked))
         return;
     for (int i = 0; i < (int)_selectionData.boxes()->size(); i++) {
         UIObject* w = ((UIObject*)_selectionData.boxes()->at(i));
@@ -147,6 +154,9 @@ void Canvas::s_MoveBox(UIWidget* box, QMouseEvent* event)
         t_object* obj = (t_object*)w->pdObject();
         if (obj)
             cmp_moveobject(obj, (int)pos.x(), (int)pos.y());
+
+        //todo
+        viewport()->update();
     }
 
     if (drawStyle() == ds_Canvas)
@@ -251,7 +261,7 @@ void Canvas::drawCanvas()
     //cmp_post("paintevent");
 
     //grid
-    if (_gridEnabled && (_editMode != em_Locked)) {
+    if (_gridEnabled && (Canvas::getEditMode() != em_Locked)) {
         QPainter p(viewport());
         p.scale(scale(), scale());
 
@@ -445,7 +455,12 @@ void Canvas::mouseMoveEventForCanvas(QMouseEvent* ev)
         dragObject->move(newpos);
 
         if (dragObject->scene())
-            dragObject->viewport()->update();//dragObject->sceneRect());
+            dragObject->viewport()->update();
+
+        //fix that
+        //        if (dragObject->scene())
+        //            dragObject->viewport()->update();
+        viewport()->update();
     }
 
     //selection frame
@@ -477,11 +492,14 @@ void Canvas::mouseMoveEventForCanvas(QMouseEvent* ev)
         //viewport()->update();
     }
 
-    //patchcords()
-    if (_editMode == em_Unlocked)
-        if (hoverPatchcords(pos))
+    //todo
+    if (_newLine.active)
+        viewport()->update();
 
-                viewport()->update();
+    //patchcords()
+    if (Canvas::getEditMode() == em_Unlocked)
+        if (hoverPatchcords(pos))
+            viewport()->update();
 
     //remove patchcord selection if making frame
     if (_selFrame.active)
@@ -507,7 +525,7 @@ void Canvas::mousePressEventForCanvas(QMouseEvent* ev)
     setFocus();
     //objectMaker()->hide();
 
-    if (_editMode == em_Unlocked) {
+    if (Canvas::getEditMode() == em_Unlocked) {
         //sel frame
         _selFrame.active = true;
         _selFrame.start = ev->pos();
@@ -516,7 +534,7 @@ void Canvas::mousePressEventForCanvas(QMouseEvent* ev)
         //click patchcords()
         clickPatchcords(ev->pos());
 
-            viewport()->update();
+        viewport()->update();
     }
 }
 
@@ -527,8 +545,7 @@ void Canvas::mouseReleaseEventForCanvas(QMouseEvent*)
     _selFrame.active = false;
     _newLine.active = false;
 
-
-        viewport()->update();
+    viewport()->update();
 }
 
 /////////
@@ -536,7 +553,7 @@ void Canvas::mouseReleaseEventForCanvas(QMouseEvent*)
 void Canvas::mousePressEventForBox(QMouseEvent* ev)
 {
     //open canvas for subpatch
-    if (getEditMode() != em_Unlocked) {
+    if (Canvas::getEditMode() != em_Unlocked) {
         if (_Subcanvas) {
             _Subcanvas->show();
         }
@@ -556,7 +573,7 @@ void Canvas::mousePressEventForBox(QMouseEvent* ev)
 void Canvas::mouseReleaseEventForBox(QMouseEvent*)
 {
 
-        viewport()->update();
+    viewport()->update();
 }
 
 void Canvas::mouseMoveEventForBox(QMouseEvent* event)
@@ -566,7 +583,7 @@ void Canvas::mouseMoveEventForBox(QMouseEvent* event)
     }
     event->ignore();
 
-    if ((getEditMode() != em_Unlocked) && (_Subcanvas)) {
+    if ((Canvas::getEditMode() != em_Unlocked) && (_Subcanvas)) {
         setCursor(QCursor(Qt::PointingHandCursor));
     } else {
         setCursor(QCursor(Qt::ArrowCursor));
@@ -593,7 +610,7 @@ UIBox* Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas* 
     connect(box, &UIBox::selectBox, this, &Canvas::s_SelectBox);
     connect(box, &UIBox::moveBox, this, &Canvas::s_MoveBox);
 
-    box->setEditModeRef(&_editMode);
+    box->setEditModeRef(Canvas::getEditModeRef());
 
     const char* obj_name = pdObjectName.c_str();
 
@@ -685,18 +702,20 @@ UIObject* Canvas::createObject(QString objectData1, QPoint pos) //std::string ui
 
     connect(obj, &UIMessage::selectBox, this, &Canvas::s_SelectBox);
     connect(obj, &UIMessage::moveBox, this, &Canvas::s_MoveBox);
-    obj->setEditModeRef(&_editMode);
+    obj->setEditModeRef(&_canvasEditMode);//Canvas::getEditModeRef());
     obj->move(pos);
     _data.addUniqueBox(obj);
 
     obj->show();
 
-    qDebug() << "created object: [" << objectData1 << "] :" << list.count() << "@" << QString(std::to_string((long)pdObject()).c_str());
+
+
+    //qDebug() << "created object: [" << objectData1 << "] :" << list.count() << "@" << QString(std::to_string((long)pdObject()).c_str());
 
     if (list.count()) {
         if (
             (list.at(0) == "inlet") || (list.at(0) == "inlet~") || (list.at(0) == "outlet") || (list.at(0) == "outlet~")) {
-            qDebug("ports");
+            //qDebug("ports");
             emit updatePortCount();
             //
 
@@ -726,7 +745,7 @@ UIObject* Canvas::createBoxForCanvas(Canvas* newCanvas, std::string objectData, 
     connect(obj, &UIMessage::selectBox, this, &Canvas::s_SelectBox);
     connect(obj, &UIMessage::moveBox, this, &Canvas::s_MoveBox);
 
-    obj->setEditModeRef(&_editMode);
+    obj->setEditModeRef(Canvas::getEditModeRef());
     obj->move(pos);
     _data.addUniqueBox(obj);
 
@@ -800,8 +819,7 @@ void Canvas::deletePatchcordsFor(UIWidget* obj)
             ++it;
     }
 
-
-        viewport()->update();
+    viewport()->update();
 }
 
 ////
@@ -881,16 +899,16 @@ void Canvas::delSelectedPatchcords()
             ++it;
     }
 
-
-        viewport()->update();
+    viewport()->update();
 }
 
 void Canvas::setEditMode(t_editMode mode)
 {
-    _editMode = mode;
 
     if (_readOnly)
-        _editMode = em_Locked;
+        _canvasEditMode = em_Locked;
+    else
+        _canvasEditMode = mode;
 
     QPalette Pal(palette());
     QColor lockedColor = (_readOnly) ? QColor(245, 245, 255) : QColor(245, 245, 245);
@@ -903,11 +921,10 @@ void Canvas::setEditMode(t_editMode mode)
         hoverPatchcordsOff();
     }
 
-
-        viewport()->update();
+    viewport()->update();
 }
 
-t_editMode Canvas::getEditMode() { return _editMode; }
+
 
 UIObject* Canvas::getObjectByIndex(int idx)
 {
@@ -1187,7 +1204,7 @@ void Canvas::cancelPatchcord()
 {
     _newLine.active = false;
 
-        viewport()->update();
+    viewport()->update();
 }
 
 ObjectMaker* Canvas::objectMaker()
@@ -1282,8 +1299,7 @@ void Canvas::portCountUpdated()
         qDebug() << ((drawStyle() == ds_Box) ? "this is box canvas" : "this is canvas");
         qDebug() << "size" << size();
 
-
-            viewport()->update();
+        viewport()->update();
     }
 };
 
@@ -1346,7 +1362,6 @@ void Canvas::dataCut()
 
     deleteSelectedBoxes();
 }
-}
 
 void Canvas::dataCopy()
 {
@@ -1397,4 +1412,7 @@ void Canvas::dataPaste()
 
         //list1.push_back(str);
     }
+}
+
+// end namespace
 }
