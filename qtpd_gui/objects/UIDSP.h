@@ -84,7 +84,7 @@ public:
 
     void paintEvent(QPaintEvent*)
     {
-        QPainter p(this);
+        QPainter p(viewport());
 
         p.setRenderHint(QPainter::HighQualityAntialiasing, true);
 
@@ -104,7 +104,7 @@ public:
         //p.drawEllipse(QPoint(posx, posy), 3, 3);
 
         p.setFont(QFont(PREF_QSTRING("Font"), 8, 0, false));
-        p.drawText(posx * .4, posy-4, width() - 2, height()/2 - 10, 0, "DSP", 0);
+        p.drawText(posx * .4, posy - 4, width() - 2, height() / 2 - 10, 0, "DSP", 0);
 
         p.drawArc(posx - 10, posy - 10, 20, 20, -60 * 16, 120 * 16);
         p.drawArc(posx - 17, posy - 17, 34, 34, -60 * 16, 120 * 16);
@@ -142,7 +142,7 @@ public:
 
         if (getEditMode() != em_Unlocked) {
             //            value_ = !value_;
-            //            repaint();
+            //            if (scene()) scene()->update(sceneRect());
 
             //            if (!pdObject()) {
             //                qDebug("msg: bad pd object!");
@@ -157,7 +157,9 @@ public:
 
             cmp_switch_dsp(_value);
 
-            repaint();
+            //if (scene())
+            if (scene())
+                scene()->update(sceneRect());
         }
     }
 
@@ -168,7 +170,7 @@ public:
         //if (!getEditMode())
         //        {
         //            //clicked_ = false;
-        //            repaint();
+        //            if (scene()) scene()->update(sceneRect());
         //        }
     }
 
@@ -238,7 +240,7 @@ public:
         //            //                    x->value_ = !x->value_;
         //        }
 
-        //emit x->callRepaint();
+        //emit x->callif (scene()) scene()->update(sceneRect());
     }
 
     void setPdObject(void* obj)

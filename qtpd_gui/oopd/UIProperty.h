@@ -157,7 +157,7 @@ public:
     ///
     void paintEvent(QPaintEvent*)
     {
-        QPainter p(this);
+        QPainter p(viewport());
         p.setRenderHint(QPainter::HighQualityAntialiasing, true);
         p.scale(scale(), scale());
 
@@ -226,7 +226,7 @@ public:
     ///
     void mouseReleaseEvent(QMouseEvent*)
     {
-        repaint();
+        if (scene()) scene()->update(sceneRect());
     }
 
     ////
@@ -310,7 +310,7 @@ signals:
 private slots:
     void updateUISlot()
     {
-        repaint();
+        if (scene()) scene()->update(sceneRect());
     }
 };
 }

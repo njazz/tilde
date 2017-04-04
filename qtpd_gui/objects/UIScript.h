@@ -337,7 +337,7 @@ public:
 
     void paintEvent(QPaintEvent*)
     {
-        QPainter p(this);
+        QPainter p(viewport());
 
         if (getEditMode() == em_Unlocked) {
             if (isSelected()) {

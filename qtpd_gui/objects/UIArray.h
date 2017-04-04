@@ -116,7 +116,7 @@ public:
     ///
     void paintEvent(QPaintEvent*)
     {
-        QPainter p(this);
+        QPainter p(viewport());
         p.setRenderHint(QPainter::HighQualityAntialiasing, true);
         p.scale(scale(), scale());
 

@@ -73,7 +73,7 @@ void Canvas::s_InMousePressed(UIWidget* obj, QMouseEvent*)
 
     if ((_connectionStartObject) && (_connectionStartOutlet)) {
         patchcord(_connectionStartObject, _connectionStartOutlet, (UIObject*)obj->parent(), obj);
-        repaint();
+        if (scene()) scene()->update(sceneRect());
     }
 
     _connectionStartObject = 0;
@@ -106,7 +106,8 @@ void Canvas:: selectBox(UIWidget * box)
 {
     _selectionData.addUniqueBox((UIObject*)box);
     box->select();
-    box->repaint();
+    if (box->scene())
+    box->scene()->update(sceneRect());
 
 }
 void Canvas::s_SelectBox(UIWidget* box, QMouseEvent* ev)
@@ -245,7 +246,7 @@ void Canvas::drawCanvas()
 {
     //grid
     if (_gridEnabled && (_editMode != em_Locked)) {
-        QPainter p(this);
+        QPainter p(viewport());
         p.scale(scale(), scale());
 
         p.setPen(QPen(QColor(224, 224, 224), 1, Qt::DotLine, Qt::SquareCap, Qt::BevelJoin));
@@ -257,14 +258,14 @@ void Canvas::drawCanvas()
         }
     }
     if (_selFrame.active) {
-        QPainter p(this);
+        QPainter p(viewport());
 
         p.setPen(QPen(QColor(128, 128, 128), 1, Qt::DashLine, Qt::SquareCap, Qt::BevelJoin));
         p.drawRect(_selFrame.start.x(), _selFrame.start.y(), _selFrame.end.x(), _selFrame.end.y());
     }
 
     if (_newLine.active) {
-        QPainter p(this);
+        QPainter p(viewport());
 
         p.setPen(QPen(QColor(128, 128, 128), 1, Qt::DashLine, Qt::SquareCap, Qt::BevelJoin));
         p.drawLine(_newLine.start, _newLine.end);
@@ -275,7 +276,7 @@ void Canvas::drawCanvas()
 
 void Canvas::drawObjectBox()
 {
-    QPainter p(this);
+    QPainter p(viewport());
     p.setRenderHint(QPainter::HighQualityAntialiasing, true);
 
     {
@@ -302,7 +303,7 @@ void Canvas::drawObjectBox()
 void Canvas::paintPatchcords()
 {
     for (int i = 0; i < (int)_data.patchcords()->size(); i++) {
-        QPainter p(this);
+        QPainter p(viewport());
 
         QColor b_pc_color = (((Patchcord*)_data.patchcords()->at(i))->patchcordType() == cm_pt_signal) ? QColor(128, 160, 192) : QColor(0, 0, 0);
         // cleanup
@@ -422,7 +423,7 @@ void Canvas::mouseMoveEventForCanvas(QMouseEvent* ev)
     _selFrame.end = pos - _selFrame.start;
     _newLine.end = pos;
 
-    repaint();
+    if (scene()) scene()->update(sceneRect());
 
     // move new object
     if (dragObject) {
@@ -463,7 +464,7 @@ void Canvas::mouseMoveEventForCanvas(QMouseEvent* ev)
     //patchcords()
     if (_editMode == em_Unlocked)
         if (hoverPatchcords(pos))
-            repaint();
+            if (scene()) scene()->update(sceneRect());
 
     //remove patchcord selection if making frame
     if (_selFrame.active)
@@ -497,7 +498,7 @@ void Canvas::mousePressEventForCanvas(QMouseEvent* ev)
 
         //click patchcords()
         clickPatchcords(ev->pos());
-        repaint();
+        if (scene()) scene()->update(sceneRect());
     }
 }
 
@@ -508,7 +509,7 @@ void Canvas::mouseReleaseEventForCanvas(QMouseEvent*)
     _selFrame.active = false;
     _newLine.active = false;
 
-    repaint();
+    if (scene()) scene()->update(sceneRect());
 }
 
 /////////
@@ -535,7 +536,7 @@ void Canvas::mousePressEventForBox(QMouseEvent* ev)
 
 void Canvas::mouseReleaseEventForBox(QMouseEvent*)
 {
-    repaint();
+    if (scene()) scene()->update(sceneRect());
 }
 
 void Canvas::mouseMoveEventForBox(QMouseEvent* event)
@@ -779,7 +780,7 @@ void Canvas::deletePatchcordsFor(UIWidget* obj)
             ++it;
     }
 
-    repaint();
+    if (scene()) scene()->update(sceneRect());
 }
 
 ////
@@ -859,7 +860,7 @@ void Canvas::delSelectedPatchcords()
             ++it;
     }
 
-    repaint();
+    if (scene()) scene()->update(sceneRect());
 }
 
 void Canvas::setEditMode(t_editMode mode)
@@ -880,7 +881,7 @@ void Canvas::setEditMode(t_editMode mode)
         hoverPatchcordsOff();
     }
 
-    repaint();
+    if (scene()) scene()->update(sceneRect());
 }
 
 t_editMode Canvas::getEditMode() { return _editMode; }
@@ -1162,7 +1163,7 @@ void Canvas::canvasFromPdStrings(QStringList strings)
 void Canvas::cancelPatchcord()
 {
     _newLine.active = false;
-    repaint();
+    if (scene()) scene()->update(sceneRect());
 }
 
 ObjectMaker* Canvas::objectMaker()
@@ -1205,7 +1206,7 @@ void Canvas::portLocalCountUpdated()
         //            qDebug () << ((drawStyle()==ds_Box)?"this is box canvas":"this is canvas");
         //            qDebug () << "size" << size();
 
-        //repaint();
+        //if (scene()) scene()->update(sceneRect());
     }
 };
 
@@ -1257,7 +1258,7 @@ void Canvas::portCountUpdated()
         qDebug() << ((drawStyle() == ds_Box) ? "this is box canvas" : "this is canvas");
         qDebug() << "size" << size();
 
-        repaint();
+        if (scene()) scene()->update(sceneRect());
     }
 };
 

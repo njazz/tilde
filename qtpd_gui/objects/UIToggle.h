@@ -71,7 +71,7 @@ public:
 
     void paintEvent(QPaintEvent*)
     {
-        QPainter p(this);
+        QPainter p(viewport());
 
         if (_value) {
             float lw = 2; //+width()/20.;
@@ -114,7 +114,7 @@ public:
 
         if (getEditMode() != em_Unlocked) {
             //            value_ = !value_;
-            //            repaint();
+            //            if (scene()) scene()->update(sceneRect());
 
             if (!pdObject()) {
                 qDebug("msg: bad pd object!");
@@ -134,7 +134,7 @@ public:
         //if (!getEditMode())
         //        {
         //            //clicked_ = false;
-        //            repaint();
+        //            if (scene()) scene()->update(sceneRect());
         //        }
     }
 
@@ -205,7 +205,7 @@ public:
         }
 
         emit x->callRepaint();
-        //x->repaint();
+        //x->if (scene()) scene()->update(sceneRect());
     }
 
     void setPdObject(void* obj)

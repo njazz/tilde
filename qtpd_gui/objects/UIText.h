@@ -50,7 +50,7 @@ public:
 
     void paintEvent(QPaintEvent*)
     {
-        QPainter p(this);
+        QPainter p(viewport());
 
         if (getEditMode() == em_Unlocked) {
             if (isSelected()) {
@@ -101,7 +101,7 @@ public:
 
         if (!(getEditMode() == em_Unlocked)) {
             _clicked = true;
-            repaint();
+            if (scene()) scene()->update(sceneRect());
 
             //todo timer
         }
@@ -114,7 +114,7 @@ public:
         //if (!getEditMode())
         //{
         _clicked = false;
-        repaint();
+        if (scene()) scene()->update(sceneRect());
         //}
     }
 
@@ -199,7 +199,7 @@ public:
         x->setObjectData(obj_data);
         x->autoResize();
 
-        x->repaint();
+        x->repaint();//if (scene()) scene()->update(sceneRect());
     }
 
     //    void setPdObject(void *obj)

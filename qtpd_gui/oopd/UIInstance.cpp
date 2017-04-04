@@ -38,19 +38,19 @@ UIInstance::UIInstance(UIObject* parent)
 void UIInstance::setInletsPos()
 {
     if (_hasType) {
-        float h = height()-20;
-
+        float h = height() - 20;
 
         float s = (inletCount() < 2) ? inletCount() : (inletCount() - 1);
 
         for (int i = 0; i < (int)inletCount(); i++) {
             float x = 0;
-            float y = (float(i)/s)*h + 10;
+            float y = (float(i) / s) * h + 10;
 
             //inletAt(i)
 
             inletAt(i)->move(x, y);
-            inletAt(i)->repaint();
+            if (inletAt(i)->scene())
+                inletAt(i)->scene()->update(sceneRect());
         }
     } else
         UIObject::setInletsPos();
@@ -59,16 +59,17 @@ void UIInstance::setInletsPos()
 void UIInstance::setOutletsPos()
 {
     if (_hasType) {
-        float h = height()-20;
+        float h = height() - 20;
 
         float s = (outletCount() < 2) ? outletCount() : (outletCount() - 1);
 
         for (int i = 0; i < (int)outletCount(); i++) {
-            float x = width()-7;
-            float y = (float(i)/s)*h + 10;
+            float x = width() - 7;
+            float y = (float(i) / s) * h + 10;
 
             outletAt(i)->move(x, y);
-            outletAt(i)->repaint();
+            if (outletAt(i)->scene())
+                outletAt(i)->scene()->update(sceneRect());
         }
     } else
         UIObject::setOutletsPos();

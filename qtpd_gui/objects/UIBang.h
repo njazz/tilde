@@ -60,7 +60,7 @@ public:
 
     void paintEvent(QPaintEvent*)
     {
-        QPainter p(this);
+        QPainter p(viewport());
 
         if (_clicked) {
             float lw = 2 + width() / 20.;
@@ -96,7 +96,7 @@ public:
 
         if (!(getEditMode() == em_Unlocked)) {
             _clicked = true;
-            repaint();
+            if (scene()) scene()->update(sceneRect());
 
             timerStart();
         }
@@ -141,7 +141,7 @@ public:
         if (!x->_clicked) {
             x->timerStart();
             x->_clicked = true;
-            x->repaint();
+            x->scene()->update(x->sceneRect());
         }
     }
 
@@ -172,7 +172,7 @@ private slots:
     void timerAction()
     {
         _clicked = false;
-        //repaint();
+        //if (scene()) scene()->update(sceneRect());
         emit callRepaint();
     }
 };

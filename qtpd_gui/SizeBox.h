@@ -40,7 +40,7 @@ public:
 
     void paintEvent(QPaintEvent*) //QPaintEvent *pe
     {
-        QPainter p(this);
+        QPainter p(viewport());
 
         //p.setRenderHint(QPainter::SmoothPixmapTransform,true);
         p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));

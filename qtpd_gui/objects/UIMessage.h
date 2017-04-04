@@ -74,7 +74,7 @@ public:
 
     void paintEvent(QPaintEvent*)
     {
-        QPainter p(this);
+        QPainter p(viewport());
 
         QPolygon poly;
         poly << QPoint(0, 0) << QPoint(width(), 0) << QPoint(width() - 4, 4) << QPoint(width() - 4, height() - 4) << QPoint(width(), height()) << QPoint(0, height());
@@ -134,7 +134,7 @@ public:
 
         if (!(getEditMode() == em_Unlocked)) {
             _clicked = true;
-            repaint();
+            if (scene()) scene()->update(sceneRect());
 
             //todo timer
         }
@@ -156,7 +156,7 @@ public:
         //if (!getEditMode())
         {
             _clicked = false;
-            repaint();
+            if (scene()) scene()->update(sceneRect());
         }
     }
 
@@ -225,7 +225,7 @@ public:
 
         //
         emit x->callRepaint();
-        //x->repaint();
+        //x->if (scene()) scene()->update(sceneRect());
     }
 
     void setPdObject(void* obj)

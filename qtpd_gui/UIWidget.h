@@ -5,6 +5,7 @@
 #define CM_WIDGET_H
 
 #include <QWidget>
+#include <QGraphicsView>
 
 // Widget extension
 // check / fix
@@ -23,7 +24,7 @@ typedef enum {
 ////
 /// \brief parent class for all objects in the canvas
 ///
-class UIWidget : public QWidget {
+class UIWidget : public QGraphicsView {
     Q_OBJECT
 
 private:
@@ -34,7 +35,7 @@ private:
 public:
     QPoint dragOffset;
 
-    explicit UIWidget(QWidget* parent = 0);
+    explicit UIWidget(QGraphicsView* parent = 0);
 
     ////
     /// \brief select object

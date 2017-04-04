@@ -121,7 +121,7 @@ public:
     ///
     void paintEvent(QPaintEvent*)
     {
-        QPainter p(this);
+        QPainter p(viewport());
         p.setRenderHint(QPainter::HighQualityAntialiasing, true);
         p.scale(scale(), scale());
 
@@ -231,7 +231,7 @@ public:
     ///
     void mouseReleaseEvent(QMouseEvent*)
     {
-        repaint();
+        if (scene()) scene()->update(sceneRect());
     }
 
     ////
@@ -351,7 +351,7 @@ public:
 
         qDebug() << "instance: " << _opInstance;
 
-        repaint();
+        if (scene()) scene()->update(sceneRect());
     }
 
     void msgGetObject(AtomList msg)
@@ -378,7 +378,7 @@ public:
             _opInstance = 0;
             _opClass = 0;
             setFixedHeight(20);
-            repaint();
+            if (scene()) scene()->update(sceneRect());
             return;
         } else {
             _opClass = OOPD::inst()->classByName(msg.at(1).asString());
@@ -424,7 +424,7 @@ public:
                 setFixedHeight(20);
             }
 
-            repaint();
+            if (scene()) scene()->update(sceneRect());
         }
     }
 
@@ -520,7 +520,7 @@ signals:
 private slots:
     void updateUISlot()
     {
-        repaint();
+        if (scene()) scene()->update(sceneRect());
     }
 };
 }

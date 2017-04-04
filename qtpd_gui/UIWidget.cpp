@@ -4,12 +4,14 @@
 #include "UIWidget.h"
 
 namespace qtpd {
-UIWidget::UIWidget(QWidget* parent)
-    : QWidget(parent)
+UIWidget::UIWidget(QGraphicsView* parent)
+    : QGraphicsView(parent)
 {
     _selected = false;
     setScale(1.);
     _editMode = 0;
+
+    setStyleSheet( "QGraphicsView { border-style: none; }" );
 }
 
 //-------------------------------
@@ -17,13 +19,13 @@ UIWidget::UIWidget(QWidget* parent)
 void UIWidget::select()
 {
     _selected = true;
-    repaint();
+    if (scene()) scene()->update(sceneRect());
 }
 
 void UIWidget::deselect()
 {
     _selected = false;
-    repaint();
+    if (scene()) scene()->update(sceneRect());
 }
 
 bool UIWidget::isSelected() { return _selected; }

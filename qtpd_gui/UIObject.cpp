@@ -110,7 +110,8 @@ void UIObject::setInletsPos()
         float y = 0;
 
         _inlets->at(i)->move(x, y);
-        _inlets->at(i)->repaint();
+        if (_inlets->at(i)->scene())
+        _inlets->at(i)->scene()->update(sceneRect());
     }
 }
 
@@ -126,7 +127,8 @@ void UIObject::setOutletsPos()
         float y = height() - 3;
 
         _outlets->at(i)->move(x, y);
-        _outlets->at(i)->repaint();
+        if (_outlets->at(i)->scene())
+        _outlets->at(i)->scene()->update(sceneRect());
     }
 }
 
@@ -458,7 +460,7 @@ void UIObject::openHelpWindow()
 
 void UIObject::s_repaint() //needed for proper threading
 {
-    repaint();
+    if (scene()) scene()->update(sceneRect());
 }
 
 
@@ -471,9 +473,9 @@ void UIObject::propertyChanged(QString pname)
 
     //just visuals
     if (pname == "FontSize")
-        repaint();
+        if (scene()) scene()->update(sceneRect());
     if (pname == "BorderColor")
-        repaint();
+        if (scene()) scene()->update(sceneRect());
 }
 
 

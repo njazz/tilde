@@ -72,7 +72,7 @@ public:
 
     void paintEvent(QPaintEvent*)
     {
-        QPainter p(this);
+        QPainter p(viewport());
 
         QPolygon poly;
         poly << QPoint(0, 0) << QPoint(width() - 5, 0) <<
@@ -148,7 +148,7 @@ public:
             cmp_sendstring((t_pd*)pdObject(), send.c_str());
             cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
 
-            repaint();
+            if (scene()) scene()->update(sceneRect());
         }
 
         event->ignore();

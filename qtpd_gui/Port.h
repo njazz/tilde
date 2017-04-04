@@ -33,7 +33,7 @@ public:
 
     void paintEvent(QPaintEvent*) //QPaintEvent *pe
     {
-        QPainter p(this);
+        QPainter p(viewport());
 
         //p.setRenderHint(QPainter::SmoothPixmapTransform,true);
         if (portClass)
@@ -55,7 +55,7 @@ public:
     {
         if (getEditMode() == em_Unlocked) {
             _hover = true;
-            repaint();
+            if (scene()) scene()->update(sceneRect());
 
             emit mouseEntered();
         }
@@ -64,7 +64,7 @@ public:
     {
         if (getEditMode() == em_Unlocked) {
             _hover = false;
-            repaint();
+            if (scene()) scene()->update(sceneRect());
 
             emit mouseLeaved();
         }
