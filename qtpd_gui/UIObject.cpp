@@ -111,7 +111,7 @@ void UIObject::setInletsPos()
 
         _inlets->at(i)->move(x, y);
         if (_inlets->at(i)->scene())
-        _inlets->at(i)->scene()->update(sceneRect());
+        _inlets->at(i)->viewport()->update();
     }
 }
 
@@ -128,7 +128,7 @@ void UIObject::setOutletsPos()
 
         _outlets->at(i)->move(x, y);
         if (_outlets->at(i)->scene())
-        _outlets->at(i)->scene()->update(sceneRect());
+        _outlets->at(i)->viewport()->update();
     }
 }
 
@@ -460,7 +460,7 @@ void UIObject::openHelpWindow()
 
 void UIObject::s_repaint() //needed for proper threading
 {
-    if (scene()) scene()->update(sceneRect());
+     viewport()->update();
 }
 
 
@@ -473,9 +473,9 @@ void UIObject::propertyChanged(QString pname)
 
     //just visuals
     if (pname == "FontSize")
-        if (scene()) scene()->update(sceneRect());
+         viewport()->update();
     if (pname == "BorderColor")
-        if (scene()) scene()->update(sceneRect());
+         viewport()->update();
 }
 
 

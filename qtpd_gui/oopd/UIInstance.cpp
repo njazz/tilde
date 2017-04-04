@@ -50,7 +50,7 @@ void UIInstance::setInletsPos()
 
             inletAt(i)->move(x, y);
             if (inletAt(i)->scene())
-                inletAt(i)->scene()->update(sceneRect());
+                inletAt(i)->viewport()->update();
         }
     } else
         UIObject::setInletsPos();
@@ -69,7 +69,7 @@ void UIInstance::setOutletsPos()
 
             outletAt(i)->move(x, y);
             if (outletAt(i)->scene())
-                outletAt(i)->scene()->update(sceneRect());
+                outletAt(i)->viewport()->update();
         }
     } else
         UIObject::setOutletsPos();

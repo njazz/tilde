@@ -13,6 +13,10 @@ Canvas::Canvas(UIObject* parent)
     : UIObject(parent)
 {
 
+    //    QGraphicsScene* sc = new QGraphicsScene;
+    //    setScene(sc);
+    //    setSceneRect(frameRect());
+
     QPalette Pal;
     Pal.setColor(QPalette::Background, Qt::white);
     setAutoFillBackground(true);
@@ -73,7 +77,8 @@ void Canvas::s_InMousePressed(UIWidget* obj, QMouseEvent*)
 
     if ((_connectionStartObject) && (_connectionStartOutlet)) {
         patchcord(_connectionStartObject, _connectionStartOutlet, (UIObject*)obj->parent(), obj);
-        if (scene()) scene()->update(sceneRect());
+
+            viewport()->update();
     }
 
     _connectionStartObject = 0;
@@ -102,18 +107,17 @@ void Canvas::s_OutMouseReleased(UIWidget*, QMouseEvent*)
     //    printf("out:  mouse released\n");
 }
 
-void Canvas:: selectBox(UIWidget * box)
+void Canvas::selectBox(UIWidget* box)
 {
     _selectionData.addUniqueBox((UIObject*)box);
     box->select();
     if (box->scene())
-    box->scene()->update(sceneRect());
-
+        box->viewport()->update();
 }
 void Canvas::s_SelectBox(UIWidget* box, QMouseEvent* ev)
 {
 
-    if (!(ev->modifiers() & Qt::ShiftModifier))// && !(ev->modifiers() & Qt::ControlModifier))
+    if (!(ev->modifiers() & Qt::ShiftModifier)) // && !(ev->modifiers() & Qt::ControlModifier))
         deselectBoxes();
 
     if (_editMode == em_Unlocked) {
@@ -244,6 +248,8 @@ void Canvas::paintEvent(QPaintEvent*)
 
 void Canvas::drawCanvas()
 {
+    //cmp_post("paintevent");
+
     //grid
     if (_gridEnabled && (_editMode != em_Locked)) {
         QPainter p(viewport());
@@ -413,8 +419,11 @@ void Canvas::mouseReleaseEvent(QMouseEvent* ev)
 
 void Canvas::mouseMoveEventForCanvas(QMouseEvent* ev)
 {
+
     if (!ev)
         return;
+
+    //cmp_post("move");
 
     QPoint pos = ev->pos();
 
@@ -422,8 +431,6 @@ void Canvas::mouseMoveEventForCanvas(QMouseEvent* ev)
 
     _selFrame.end = pos - _selFrame.start;
     _newLine.end = pos;
-
-    if (scene()) scene()->update(sceneRect());
 
     // move new object
     if (dragObject) {
@@ -436,10 +443,14 @@ void Canvas::mouseMoveEventForCanvas(QMouseEvent* ev)
         }
 
         dragObject->move(newpos);
+
+        if (dragObject->scene())
+            dragObject->viewport()->update();//dragObject->sceneRect());
     }
 
     //selection frame
     if (_selFrame.active) {
+
         for (int i = 0; i < (int)_data.boxes()->size(); i++) {
             QPoint pos = ((UIBox*)_data.boxes()->at(i))->pos();
             QSize size = ((UIBox*)_data.boxes()->at(i))->size();
@@ -459,12 +470,18 @@ void Canvas::mouseMoveEventForCanvas(QMouseEvent* ev)
                 }
             }
         }
+
+        viewport()->update();
+
+        //
+        //viewport()->update();
     }
 
     //patchcords()
     if (_editMode == em_Unlocked)
         if (hoverPatchcords(pos))
-            if (scene()) scene()->update(sceneRect());
+
+                viewport()->update();
 
     //remove patchcord selection if making frame
     if (_selFrame.active)
@@ -498,7 +515,8 @@ void Canvas::mousePressEventForCanvas(QMouseEvent* ev)
 
         //click patchcords()
         clickPatchcords(ev->pos());
-        if (scene()) scene()->update(sceneRect());
+
+            viewport()->update();
     }
 }
 
@@ -509,7 +527,8 @@ void Canvas::mouseReleaseEventForCanvas(QMouseEvent*)
     _selFrame.active = false;
     _newLine.active = false;
 
-    if (scene()) scene()->update(sceneRect());
+
+        viewport()->update();
 }
 
 /////////
@@ -536,7 +555,8 @@ void Canvas::mousePressEventForBox(QMouseEvent* ev)
 
 void Canvas::mouseReleaseEventForBox(QMouseEvent*)
 {
-    if (scene()) scene()->update(sceneRect());
+
+        viewport()->update();
 }
 
 void Canvas::mouseMoveEventForBox(QMouseEvent* event)
@@ -780,7 +800,8 @@ void Canvas::deletePatchcordsFor(UIWidget* obj)
             ++it;
     }
 
-    if (scene()) scene()->update(sceneRect());
+
+        viewport()->update();
 }
 
 ////
@@ -860,7 +881,8 @@ void Canvas::delSelectedPatchcords()
             ++it;
     }
 
-    if (scene()) scene()->update(sceneRect());
+
+        viewport()->update();
 }
 
 void Canvas::setEditMode(t_editMode mode)
@@ -881,7 +903,8 @@ void Canvas::setEditMode(t_editMode mode)
         hoverPatchcordsOff();
     }
 
-    if (scene()) scene()->update(sceneRect());
+
+        viewport()->update();
 }
 
 t_editMode Canvas::getEditMode() { return _editMode; }
@@ -1163,7 +1186,8 @@ void Canvas::canvasFromPdStrings(QStringList strings)
 void Canvas::cancelPatchcord()
 {
     _newLine.active = false;
-    if (scene()) scene()->update(sceneRect());
+
+        viewport()->update();
 }
 
 ObjectMaker* Canvas::objectMaker()
@@ -1206,7 +1230,7 @@ void Canvas::portLocalCountUpdated()
         //            qDebug () << ((drawStyle()==ds_Box)?"this is box canvas":"this is canvas");
         //            qDebug () << "size" << size();
 
-        //if (scene()) scene()->update(sceneRect());
+        // viewport()->update();
     }
 };
 
@@ -1227,7 +1251,7 @@ void Canvas::showNewObjectMaker()
     objectMaker()->setFixedSize(60, 20);
     objectMaker()->setFocus();
 
-    dragObject = objectMaker();
+    dragObject = (QGraphicsView*)objectMaker();
     objectMaker()->setText(QString(""));
     objectMaker()->show();
 }
@@ -1258,7 +1282,8 @@ void Canvas::portCountUpdated()
         qDebug() << ((drawStyle() == ds_Box) ? "this is box canvas" : "this is canvas");
         qDebug() << "size" << size();
 
-        if (scene()) scene()->update(sceneRect());
+
+            viewport()->update();
     }
 };
 

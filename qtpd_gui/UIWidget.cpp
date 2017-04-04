@@ -11,7 +11,7 @@ UIWidget::UIWidget(QGraphicsView* parent)
     setScale(1.);
     _editMode = 0;
 
-    setStyleSheet( "QGraphicsView { border-style: none; }" );
+    setStyleSheet("QGraphicsView { border-style: none; }");
 }
 
 //-------------------------------
@@ -19,13 +19,15 @@ UIWidget::UIWidget(QGraphicsView* parent)
 void UIWidget::select()
 {
     _selected = true;
-    if (scene()) scene()->update(sceneRect());
+
+        viewport()->update();
 }
 
 void UIWidget::deselect()
 {
     _selected = false;
-    if (scene()) scene()->update(sceneRect());
+
+        viewport()->update();
 }
 
 bool UIWidget::isSelected() { return _selected; }

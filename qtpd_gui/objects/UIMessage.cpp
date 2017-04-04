@@ -25,6 +25,9 @@ UIMessage::UIMessage(UIObject* parent)
     _editor->setAttribute(Qt::WA_MacShowFocusRect, 0);
     _editor->setFrame(false);
 
+    if (scene())
+    scene()->addWidget(_editor);
+
     connect(_editor, &QLineEdit::editingFinished, this, &UIMessage::editorDone);
     connect(_editor, &QLineEdit::textEdited, this, &UIMessage::editorChanged);
 

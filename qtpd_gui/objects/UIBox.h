@@ -189,7 +189,7 @@ public:
     ///
     void mouseReleaseEvent(QMouseEvent*)
     {
-        if (scene()) scene()->update(sceneRect());
+         viewport()->update();
     }
 
     ////

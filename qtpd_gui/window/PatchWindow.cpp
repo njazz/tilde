@@ -15,7 +15,7 @@ PatchWindow::PatchWindow()
 
     scroll->setWidget(canvas);
 
-    setCentralWidget(scroll);
+    setCentralWidget(canvas);
 
     //TODO weird
     //objectMaker = new ObjectMaker((QLineEdit*)canvas);

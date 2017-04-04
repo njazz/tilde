@@ -96,7 +96,7 @@ public:
 
         if (!(getEditMode() == em_Unlocked)) {
             _clicked = true;
-            if (scene()) scene()->update(sceneRect());
+             viewport()->update();
 
             timerStart();
         }
@@ -141,7 +141,7 @@ public:
         if (!x->_clicked) {
             x->timerStart();
             x->_clicked = true;
-            x->scene()->update(x->sceneRect());
+            x->viewport()->update();//x->sceneRect());
         }
     }
 
@@ -172,7 +172,7 @@ private slots:
     void timerAction()
     {
         _clicked = false;
-        //if (scene()) scene()->update(sceneRect());
+        // viewport()->update();
         emit callRepaint();
     }
 };

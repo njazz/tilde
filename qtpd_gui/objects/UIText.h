@@ -101,7 +101,7 @@ public:
 
         if (!(getEditMode() == em_Unlocked)) {
             _clicked = true;
-            if (scene()) scene()->update(sceneRect());
+             viewport()->update();
 
             //todo timer
         }
@@ -114,7 +114,7 @@ public:
         //if (!getEditMode())
         //{
         _clicked = false;
-        if (scene()) scene()->update(sceneRect());
+         viewport()->update();
         //}
     }
 
@@ -199,7 +199,7 @@ public:
         x->setObjectData(obj_data);
         x->autoResize();
 
-        x->repaint();//if (scene()) scene()->update(sceneRect());
+        x->repaint();// viewport()->update();
     }
 
     //    void setPdObject(void *obj)

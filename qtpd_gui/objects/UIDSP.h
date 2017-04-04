@@ -142,7 +142,7 @@ public:
 
         if (getEditMode() != em_Unlocked) {
             //            value_ = !value_;
-            //            if (scene()) scene()->update(sceneRect());
+            //             viewport()->update();
 
             //            if (!pdObject()) {
             //                qDebug("msg: bad pd object!");
@@ -157,9 +157,9 @@ public:
 
             cmp_switch_dsp(_value);
 
-            //if (scene())
-            if (scene())
-                scene()->update(sceneRect());
+            //
+
+                viewport()->update();
         }
     }
 
@@ -170,7 +170,7 @@ public:
         //if (!getEditMode())
         //        {
         //            //clicked_ = false;
-        //            if (scene()) scene()->update(sceneRect());
+        //             viewport()->update();
         //        }
     }
 
@@ -240,7 +240,7 @@ public:
         //            //                    x->value_ = !x->value_;
         //        }
 
-        //emit x->callif (scene()) scene()->update(sceneRect());
+        //emit x->call viewport()->update();
     }
 
     void setPdObject(void* obj)

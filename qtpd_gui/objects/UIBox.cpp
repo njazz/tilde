@@ -19,6 +19,7 @@ UIBox::UIBox(UIObject* parent)
     setAutoFillBackground(true);
     setPalette(Pal);
 
+
     setErrorBox(false);
 
     setSubpatchWindow(0);

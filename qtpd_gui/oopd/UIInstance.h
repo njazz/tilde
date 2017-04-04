@@ -231,7 +231,7 @@ public:
     ///
     void mouseReleaseEvent(QMouseEvent*)
     {
-        if (scene()) scene()->update(sceneRect());
+         viewport()->update();
     }
 
     ////
@@ -351,7 +351,7 @@ public:
 
         qDebug() << "instance: " << _opInstance;
 
-        if (scene()) scene()->update(sceneRect());
+         viewport()->update();
     }
 
     void msgGetObject(AtomList msg)
@@ -378,7 +378,7 @@ public:
             _opInstance = 0;
             _opClass = 0;
             setFixedHeight(20);
-            if (scene()) scene()->update(sceneRect());
+             viewport()->update();
             return;
         } else {
             _opClass = OOPD::inst()->classByName(msg.at(1).asString());
@@ -424,7 +424,7 @@ public:
                 setFixedHeight(20);
             }
 
-            if (scene()) scene()->update(sceneRect());
+             viewport()->update();
         }
     }
 
@@ -520,7 +520,7 @@ signals:
 private slots:
     void updateUISlot()
     {
-        if (scene()) scene()->update(sceneRect());
+         viewport()->update();
     }
 };
 }

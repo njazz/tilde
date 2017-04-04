@@ -148,7 +148,7 @@ public:
             cmp_sendstring((t_pd*)pdObject(), send.c_str());
             cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
 
-            if (scene()) scene()->update(sceneRect());
+             viewport()->update();
         }
 
         event->ignore();

@@ -93,7 +93,7 @@ private:
 
 public:
     // TODO encapsulate
-    QWidget* dragObject;
+    QGraphicsView* dragObject;
     QString fileName;
 
     explicit Canvas(UIObject* parent = 0);

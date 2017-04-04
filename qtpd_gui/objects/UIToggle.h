@@ -114,7 +114,7 @@ public:
 
         if (getEditMode() != em_Unlocked) {
             //            value_ = !value_;
-            //            if (scene()) scene()->update(sceneRect());
+            //             viewport()->update();
 
             if (!pdObject()) {
                 qDebug("msg: bad pd object!");
@@ -134,7 +134,7 @@ public:
         //if (!getEditMode())
         //        {
         //            //clicked_ = false;
-        //            if (scene()) scene()->update(sceneRect());
+        //             viewport()->update();
         //        }
     }
 
@@ -205,7 +205,7 @@ public:
         }
 
         emit x->callRepaint();
-        //x->if (scene()) scene()->update(sceneRect());
+        //x-> viewport()->update();
     }
 
     void setPdObject(void* obj)

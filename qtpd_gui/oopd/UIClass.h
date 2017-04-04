@@ -198,7 +198,7 @@ public:
     ///
     void mouseReleaseEvent(QMouseEvent*)
     {
-        if (scene()) scene()->update(sceneRect());
+         viewport()->update();
     }
 
     ////
@@ -355,7 +355,7 @@ signals:
 private slots:
     void updateUISlot()
     {
-        if (scene()) scene()->update(sceneRect());
+         viewport()->update();
     }
 };
 }

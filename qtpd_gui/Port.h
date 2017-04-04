@@ -55,7 +55,7 @@ public:
     {
         if (getEditMode() == em_Unlocked) {
             _hover = true;
-            if (scene()) scene()->update(sceneRect());
+             viewport()->update();
 
             emit mouseEntered();
         }
@@ -64,7 +64,7 @@ public:
     {
         if (getEditMode() == em_Unlocked) {
             _hover = false;
-            if (scene()) scene()->update(sceneRect());
+             viewport()->update();
 
             emit mouseLeaved();
         }

@@ -456,14 +456,14 @@ public:
     {
         showGridAct->setChecked(showGridAct->isChecked());
         canvas->setGridEnabled(showGridAct->isChecked());
-        canvas->scene()->update(canvas->sceneRect());
+        canvas->viewport()->update();//canvas->sceneRect());
     }
 
     void setGridSnap()
     {
         snapToGridAct->setChecked(snapToGridAct->isChecked());
         canvas->setGridSnap(snapToGridAct->isChecked());
-        //canvas->if (scene()) scene()->update(sceneRect());
+        //canvas-> viewport()->update();
     }
 
     /////
