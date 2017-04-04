@@ -214,6 +214,8 @@ public:
                 obj_data += ", ";
             else if (AtomList(msg.at(i)).toPdData()->a_type == A_SEMI)
                 obj_data += "; ";
+            else if (AtomList(msg.at(i)).toPdData()->a_type == A_DOLLAR)
+                obj_data += "$"+QString::number(AtomList(msg.at(i)).toPdData()->a_w.w_index).toStdString()+" ";
             else
                 obj_data += msg.at(i).asString() + " ";
         }
