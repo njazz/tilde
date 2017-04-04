@@ -108,8 +108,8 @@ public:
 
         if (OOPD::inst()->canvasIsPatch(cnv)) {
             //fix that
-            cmp_post("cannot create method in basic patch!");
-            b->setErrorBox(true);
+            cmp_post("method in basic patch");
+            //b->setErrorBox(true);
         }
 
         b->_opClass = OOPD::inst()->classByCanvas(cnv);
