@@ -161,6 +161,6 @@ var searchData=
   ['auto_5frange',['auto_range',['../structui__sliders.html#a24f92a8e57a1bbd6c214f99f5f04f256',1,'ui_sliders']]],
   ['auto_5fsend',['auto_send',['../structceammc__gui_1_1ui__bpfunc.html#adc7628202933a13682962ce487e75c7b',1,'ceammc_gui::ui_bpfunc']]],
   ['auto_5fsize',['auto_size',['../structui__display.html#a06f7660d8e1c877232840e650df63af8',1,'ui_display']]],
-  ['autoresize',['autoResize',['../classqtpd_1_1_u_i_text.html#abe3b5d63ecd147d71afa4c834f12245c',1,'qtpd::UIText::autoResize()'],['../classqtpd_1_1_u_i_object.html#a1c7d66be6089715aaf5c03adb64a915b',1,'qtpd::UIObject::autoResize()']]],
+  ['autoresize',['autoResize',['../classqtpd_1_1_u_i_float.html#afd7a834215767a9a9f87163ac94e26d5',1,'qtpd::UIFloat::autoResize()'],['../classqtpd_1_1_u_i_text.html#abe3b5d63ecd147d71afa4c834f12245c',1,'qtpd::UIText::autoResize()'],['../classqtpd_1_1_u_i_object.html#a1c7d66be6089715aaf5c03adb64a915b',1,'qtpd::UIObject::autoResize()']]],
   ['average',['average',['../namespaceceammc_1_1list.html#a0b7316c386c3652ffbae8380bc6acb8f',1,'ceammc::list']]]
 ];

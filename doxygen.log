@@ -1390,8 +1390,8 @@ Genera/home/travis/build/njazz/qtpd/qtpd_lib/ceammc-lib/ceammc_gui.h:199: warnin
   parameter 'ev'
 /home/travis/build/njazz/qtpd/qtpd_gui/FileParser.h:63: warning: The following parameters of qtpd::FileParser::legacyProcess(Canvas *cmcanvas, QStringList list) are not documented:
   parameter 'cmcanvas'
-/home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIInstance.h:314: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIInstance::setInletsPos() inherited from member setInletsPos at line 100 in file /home/travis/build/njazz/qtpd/qtpd_gui/UIObject.h
-/home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIInstance.h:315: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIInstance::setOutletsPos() inherited from member setOutletsPos at line 110 in file /home/travis/build/njazz/qtpd/qtpd_gui/UIObject.h
+/home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIInstance.h:306: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIInstance::setInletsPos() inherited from member setInletsPos at line 100 in file /home/travis/build/njazz/qtpd/qtpd_gui/UIObject.h
+/home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIInstance.h:307: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIInstance::setOutletsPos() inherited from member setOutletsPos at line 110 in file /home/travis/build/njazz/qtpd/qtpd_gui/UIObject.h
 /home/travis/build/njazz/qtpd/qtpd_gui/properties/PropertyList.h:88: warning: Found unknown command `\detais'
 /home/travis/build/njazz/qtpd/qtpd_gui/properties/PropertyList.h:88: warning: Found unknown command `\detais'
 /home/travis/build/njazz/qtpd/qtpd_gui/UIObject.h:119: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addInlet()
@@ -1473,6 +1473,6 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-symbol cache used 6083/65536 hits=1054891 misses=6083
-lookup cache used 10064/65536 hits=63149 misses=10789
+symbol cache used 6084/65536 hits=1055138 misses=6084
+lookup cache used 10075/65536 hits=63202 misses=10800
 finished...
