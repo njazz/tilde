@@ -196,7 +196,8 @@ SOURCES += pdlib.cpp \
     ui_objects/pdclass.cpp \
     ui_objects/pdinstance.cpp \
     ui_objects/pdmethod.cpp \
-    ui_objects/pdproperty.cpp
+    ui_objects/pdproperty.cpp \
+    RtMidi/RtMidi.cpp
 #
 
 HEADERS += \
@@ -245,7 +246,8 @@ HEADERS += \
     CicmWrapper/Sources/eobj.h \
     CicmWrapper/Sources/epdmax.h \
     CicmWrapper/Sources/epopup.h \
-    pdlib.hpp
+    pdlib.hpp \
+    RtMidi/RtMidi.h
 
 INCLUDEPATH += src/ \
     extra/ \
