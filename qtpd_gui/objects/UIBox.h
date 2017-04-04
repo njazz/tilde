@@ -13,6 +13,7 @@
 //lazy way
 //todo proper pattern
 #include "OpenFileProxy.h"
+#include <QGraphicsView>
 
 
 namespace qtpd {
@@ -30,15 +31,16 @@ private:
     QString _abstractionPath;
 
 public:
-    explicit UIBox(UIObjectItem* parent = 0);
+    explicit UIBox();//(UIObjectItem* parent = 0);
     //~UIBox();
 
-    static UIObjectItem* createObject(std::string objectData, t_canvas* pd_Canvas, UIObjectItem* parent = 0)
+    static UIObjectItem* createObject(std::string objectData, t_canvas* pd_Canvas, QGraphicsView* parent = 0)
     {
         //TODO fix all constructors
-        //t_canvas* pd_Canvas;
 
-        UIBox* b = new UIBox((UIObjectItem*)parent);
+        qDebug("uibox");
+
+        UIBox* b = new UIBox();//(UIObjectItem*)parent);
 
         //truncate "ui.obj". todo cleanup
         QStringList list = QString(objectData.c_str()).split(" ");
@@ -70,7 +72,7 @@ public:
             in_c = cmp_get_inlet_count(new_obj);
             out_c = cmp_get_outlet_count(new_obj);
 
-            //qDebug("created object %s ins %i outs %i ptr %lu", obj_name, in_c, out_c, (long)new_obj);
+            qDebug("created object %s ins %i outs %i ptr %lu", obj_name, in_c, out_c, (long)new_obj);
 
             b->setPdObject(new_obj);
 
@@ -116,16 +118,17 @@ public:
     {
         //QPainter p(viewport());
         p->setRenderHint(QPainter::HighQualityAntialiasing, true);
-        p->scale(scale(), scale());
+        //p->scale(scale(), scale());
 
         //remove this later
+
         if (subpatchWindow()) {
             p->setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
             p->drawRect(0, 2, boundingRect().width(), boundingRect().height() - 4);
         }
 
         QColor rectColor = (errorBox()) ? QColor(255, 0, 0) : properties()->get("BorderColor")->asQColor(); //QColor(128, 128, 128);
-        p->setPen(QPen(rectColor, 2 + _isAbstraction, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p->setPen(QPen(rectColor, 1 + _isAbstraction, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         p->drawRect(0, 0, boundingRect().width(), boundingRect().height());
         QTextOption* op = new QTextOption;
         op->setAlignment(Qt::AlignLeft);

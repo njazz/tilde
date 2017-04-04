@@ -45,7 +45,7 @@ void UIItem::setEditModeRef(t_editMode* canvasEditModeRef)
 
     _editMode = canvasEditModeRef;
 
-    qDebug() << "em ref" << (long) _editMode;
+    qDebug() << "editmode ref" << (long) _editMode;
 }
 
 t_editMode* UIItem::getEditModeRef()

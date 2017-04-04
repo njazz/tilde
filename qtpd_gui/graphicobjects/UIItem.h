@@ -106,9 +106,9 @@ public:
     bool hover() { return _hover; }
     void setHover(bool h) { _hover = h; }
 
-    void move(float x, float y) { _pos = QPoint(x, y); }
-    void move(QPoint pos) { _pos = QPoint(pos.x(), pos.y()); }
-    void move(QPointF pos) { _pos = QPoint(pos.x(), pos.y()); }
+    void move(float x, float y) { _pos = QPoint(x, y); setPos(_pos.x(), _pos.y()); }
+    void move(QPoint pos) {  _pos = QPoint(_pos.x(), _pos.y()); setPos(_pos.x(), _pos.y()); }
+    void move(QPointF pos) { _pos = QPoint(_pos.x(), _pos.y()); setPos(_pos.x(), _pos.y()); }
 
     float width() {return _size.width();}
     float height() {return _size.height();}

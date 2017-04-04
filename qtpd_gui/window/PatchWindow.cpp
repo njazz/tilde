@@ -44,14 +44,16 @@ PatchWindow* PatchWindow::newWindow()
     PatchWindow* this_;
     this_ = new PatchWindow;
 
+    // move to canvas
+
     //todo
     ((QMainWindow*)this_)->setWindowTitle("Untitled-1");
 
-    //this_->canvas->setPdObject(cmp_newpatch());
+    this_->canvas->setPdObject(cmp_newpatch());
 
-//    if (!this_->canvas->pdObject()) {
-//        qDebug("Failed to create canvas!");
-//    }
+    if (!this_->canvas->pdObject()) {
+        qDebug("Failed to create canvas!");
+    }
 
     return this_;
 }

@@ -57,9 +57,9 @@ private:
 
     // local, !Box
     // TODO separate grid layer
-    bool _gridEnabled;
+    //bool _gridEnabled;
     bool _gridSnap;
-    int _gridStep;
+    //int _gridStep;
 
     QSize _windowSize;
     //
@@ -86,6 +86,8 @@ private:
     SelectionRect* _selectionRect;
     NewLine* _newLine;
 
+    t_canvas* _pdObject;
+
     Q_OBJECT
 
 public:
@@ -94,6 +96,11 @@ public:
     QString fileName;
 
     explicit Canvas(QGraphicsView* parent = 0);
+
+    // new
+
+    t_canvas* pdObject(){return _pdObject;}
+    void setPdObject(t_canvas*c){_pdObject = c;}
 
     ////
     /// \brief creates new view of existing canvas. check this
@@ -120,9 +127,9 @@ public:
     ///
     canvasDrawStyle drawStyle();
 
-    ////
-    /// \brief main paint routine
-    ///
+//    //
+//    / \brief main paint routine
+//    /
     //void paintEvent(QPaintEvent*);
 
     ////

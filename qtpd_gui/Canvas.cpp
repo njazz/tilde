@@ -17,10 +17,10 @@ Canvas::Canvas(QGraphicsView* parent)
     //    setScene(sc);
     //    setSceneRect(frameRect());
 
-//    QPalette Pal;
-//    Pal.setColor(QPalette::Background, Qt::white);
-//    setAutoFillBackground(true);
-//    setPalette(Pal);
+    //    QPalette Pal;
+    //    Pal.setColor(QPalette::Background, Qt::white);
+    //    setAutoFillBackground(true);
+    //    setPalette(Pal);
 
     _newLine = new NewLine;
 
@@ -42,15 +42,20 @@ Canvas::Canvas(QGraphicsView* parent)
     Canvas::setEditMode(em_Unlocked);
 
     //
-    _gridEnabled = true;
+    //_gridEnabled = true;
+    _grid = new Grid;
+    setScene(new QGraphicsScene(0, 0, 400, 300, this));
+    scene()->addItem(_grid);
+
+    _grid->setSize(300, 300);
     _gridSnap = true;
-    _gridStep = 20;
+    _grid->setGridStep(20);
 
     //
     _connectionStartObject = 0;
     _connectionStartOutlet = 0;
     dragObject = 0;
-    //setPdObject(0); //extra
+    setPdObject(0); //extra
 
     //
     _drawStyle = ds_Canvas;
@@ -72,18 +77,8 @@ Canvas::Canvas(QGraphicsView* parent)
 
     //_canvasEditMode = em_Unlocked;
 
-
     // ------NEW
     setStyleSheet("QGraphicsView { border-style: none; }");
-
-    setScene(new QGraphicsScene(0,0,400,300, this));
-
-    _grid = new Grid;
-    scene()->addItem(_grid);
-
-    _grid->setSize(300,300);
-
-
 }
 
 //cm_canvas::cm_canvas(QWidget *parent) : cm_widget((cm_widget*)parent)
@@ -180,8 +175,8 @@ void Canvas::s_MoveBox(UIItem* box, QMouseEvent* event)
         QPoint pos; // = ((UIObjectItem*)_selectionData.boxes()->at(i))->pos() + mapToParent((event->pos() - box->dragOffset));
 
         if (_gridSnap) {
-            pos.setX(ceil(pos.x() / _gridStep) * _gridStep);
-            pos.setY(ceil(pos.y() / _gridStep) * _gridStep);
+            pos.setX(ceil(pos.x() / _grid->gridStep()) * _grid->gridStep());
+            pos.setY(ceil(pos.y() / _grid->gridStep()) * _grid->gridStep());
         }
 
         w->move(pos);
@@ -206,8 +201,8 @@ void Canvas::s_MoveBoxItem(UIItem* box, QMouseEvent* event)
         QPoint pos; // = ((UIObjectItem*)_selectionData.boxes()->at(i))->pos() + mapToParent((event->pos() - box->dragOffset));
 
         if (_gridSnap) {
-            pos.setX(ceil(pos.x() / _gridStep) * _gridStep);
-            pos.setY(ceil(pos.y() / _gridStep) * _gridStep);
+            pos.setX(ceil(pos.x() / _grid->gridStep()) * _grid->gridStep());
+            pos.setY(ceil(pos.y() / _grid->gridStep()) * _grid->gridStep());
         }
 
         w->move(pos);
@@ -497,8 +492,8 @@ void Canvas::mouseMoveEventForCanvas(QMouseEvent* ev)
 
         QPoint newpos = mapToParent(ev->pos() - offset);
         if (_gridSnap) {
-            newpos.setX(ceil(newpos.x() / _gridStep) * _gridStep);
-            newpos.setY(ceil(newpos.y() / _gridStep) * _gridStep);
+            newpos.setX(ceil(newpos.x() / _grid->gridStep()) * _grid->gridStep());
+            newpos.setY(ceil(newpos.y() / _grid->gridStep()) * _grid->gridStep());
         }
 
         dragObject->move(newpos);
@@ -716,6 +711,8 @@ UIObjectItem* Canvas::createObject(QString objectData1, QPoint pos) //std::strin
 
     qDebug("!!!");
 
+    //pos = objectMaker()->pos();
+
     QStringList list = QString(objectData1).split(" ");
 
     //this is moved here to have all checks for special objects in one place
@@ -747,14 +744,16 @@ UIObjectItem* Canvas::createObject(QString objectData1, QPoint pos) //std::strin
         }
     }
 
-    //UIObjectItem* obj = ObjectLoader::inst().createObject(objectData1, (t_canvas*)pdObject(), (UIObjectItem*)this);
+    UIObjectItem* obj = ObjectLoader::inst().createObject(objectData1, (t_canvas*)pdObject(), this);
 
-    ////connect(obj, &UIMessage::selectBox, this, &Canvas::s_SelectBox);
-    ////connect(obj, &UIMessage::moveBox, this, &Canvas::s_MoveBox);
+    //connect(obj, &UIMessage::selectBox, this, &Canvas::s_SelectBox);
+    //connect(obj, &UIMessage::moveBox, this, &Canvas::s_MoveBox);
 
-    //    obj->setEditModeRef(&_canvasEditMode);//Canvas::getEditModeRef());
-    //    obj->move(pos);
-    //    _data.addUniqueBox((UIObjectItem*)obj);
+    obj->setEditModeRef(&_canvasEditMode); //Canvas::getEditModeRef());
+    obj->move(pos.x(), pos.y());
+    _data.addUniqueBox(obj);
+
+    scene()->addItem(obj);
 
     //    obj->show();
 
@@ -1003,7 +1002,8 @@ void Canvas::setObjectData(std::string objData)
 
 void Canvas::setGridEnabled(bool val)
 {
-    _gridEnabled = val;
+    _grid->setVisible(val);
+    //_gridEnabled = val;
 }
 
 void Canvas::setGridSnap(bool val)

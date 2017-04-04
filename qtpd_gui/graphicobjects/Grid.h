@@ -13,6 +13,9 @@ class Grid : public UIItem {
 public:
     Grid();
 
+    void setGridStep(int gs){_gridStep = gs;}
+    int gridStep(){return _gridStep;}
+
     void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget* widget)
     {
 

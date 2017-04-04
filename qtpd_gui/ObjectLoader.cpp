@@ -63,7 +63,7 @@ cmObjectConstructor ObjectLoader::getConstructorFor(QString objName)
     return _objectConstructors["ui.obj"];
 }
 
-UIObjectItem* ObjectLoader::createObject(QString objectData, t_canvas* pdCanvas, UIObjectItem* parent)
+UIObjectItem* ObjectLoader::createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent)
 {
 
     QString objectName = "";
