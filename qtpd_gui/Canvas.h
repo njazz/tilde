@@ -555,6 +555,13 @@ public slots:
 
     QString filePath() { return _filePath; };
 
+    // -- NEW
+
+    void resizeEvent(QResizeEvent*ev)
+    {
+        _grid->setSize(size());
+    }
+
 private:
 private slots:
 

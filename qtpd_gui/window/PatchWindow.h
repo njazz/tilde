@@ -326,9 +326,9 @@ public:
     void resizeEvent(QResizeEvent* event)
     {
         //fix later
-        //canvas->setMinimumSize(QSize(width() - canvas->x(), height() - canvas->y()));
+        canvas->setMinimumSize(QSize(width() - canvas->x(), height() - canvas->y()));
 
-        //canvas->setWindowSize(size());
+        canvas->setWindowSize(size());
     }
 
     //----------------------------------------------------------------------------------------
