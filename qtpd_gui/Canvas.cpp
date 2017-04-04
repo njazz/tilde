@@ -892,6 +892,8 @@ void Canvas::deleteBox(UIObjectItem* box)
 ///
 void Canvas::deleteSelectedBoxes()
 {
+    qDebug("del selected");
+
     objectVec::iterator it;
     for (it = _selectionData.boxes()->begin(); it != _selectionData.boxes()->end(); ++it)
 
@@ -900,19 +902,21 @@ void Canvas::deleteSelectedBoxes()
         UIObjectItem* box = *it;
         qDebug("delete %lu | %lu", (long)box, (long)box->pdObject());
 
-        //        if (box->pdObject()) {
-        //            //NEEDS FIX
-        //            if ((t_object*)(box->pdObject())) {
-        //                if (!box->errorBox())
-        //                    cmp_deleteobject((t_canvas*)pdObject(), (t_object*)box->pdObject());
-        //                box->setPdObject(0);
-        //            }
-        //        } else {
-        //            qDebug("didn't delete pd object");
-        //        }
+        if (box->pdObject()) {
+            //NEEDS FIX
+            if ((t_object*)(box->pdObject())) {
+                if (!box->errorBox())
+                    cmp_deleteobject((t_canvas*)pdObject(), (t_object*)box->pdObject());
+                box->setPdObject(0);
+            }
+        } else {
+            qDebug("didn't delete pd object");
+        }
 
         deletePatchcordsFor(box);
 
+        scene()->removeItem(box);
+        viewport()->update();
         //box->close();
 
         _data.boxes()->erase(std::remove(_data.boxes()->begin(), _data.boxes()->end(), *it), _data.boxes()->end());
