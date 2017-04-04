@@ -253,9 +253,9 @@ public:
 
     void resizeEvent(QResizeEvent* event);
 
-    void enterEvent(QEvent*);
+    void hoverEnterEvent(QEvent*);
 
-    void leaveEvent(QEvent*);
+    void hoverLeaveEvent(QEvent*);
 
     // ------------------------
 

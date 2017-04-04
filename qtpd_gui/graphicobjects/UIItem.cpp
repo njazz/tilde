@@ -19,6 +19,7 @@ UIItem::UIItem(QGraphicsObject *parent)
 
     _bgColor = QColor(250, 250, 250);
 
+    setAcceptHoverEvents(true);
     //setStyleSheet("QGraphicsView { border-style: none; }");
 }
 

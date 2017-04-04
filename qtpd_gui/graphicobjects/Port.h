@@ -53,15 +53,17 @@ public:
         }
     }
 
-    void enterEvent(QEvent*)
+    void hoverEnterEvent(QEvent*)
     {
+        qDebug("hover");
         if (getEditMode() == em_Unlocked) {
             setHover(true);
 
             emit mouseEntered();
         }
     }
-    void leaveEvent(QEvent*)
+
+    void hoverLeaveEvent(QEvent*)
     {
         if (getEditMode() == em_Unlocked) {
             setHover(false);
@@ -70,15 +72,16 @@ public:
         }
     }
 
-    void mousePressEvent(QMouseEvent* ev)
+    void mousePressEvent(QGraphicsSceneMouseEvent* ev)
     {
+        qDebug("click port");
         if (getEditMode() == em_Unlocked) {
 
             emit mousePressed(this, ev);
         }
     }
 
-    void mouseReleaseEvent(QMouseEvent* ev)
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev)
     {
         if (getEditMode() == em_Unlocked) {
             emit mouseReleased(this, ev);

@@ -23,6 +23,7 @@
 //#include "cm_clipboard.h"
 #include "CanvasDatas.h"
 
+
 namespace qtpd {
 
 ////
@@ -469,7 +470,7 @@ public slots:
     /// \brief slot called by box when it is selected
     /// \param box
     ///
-    void s_SelectBox(UIItem* box, QMouseEvent* ev);
+    void s_SelectBox(UIItem* box, QGraphicsSceneMouseEvent *ev);
 
     void s_SelectBoxItem(UIItem* box, QMouseEvent* ev);
 
@@ -478,7 +479,7 @@ public slots:
     /// \param box
     /// \param event
     ///
-    void s_MoveBox(UIItem* box, QMouseEvent* event);
+    void s_MoveBox(UIItem* box, QGraphicsSceneMouseEvent *event);
 
     void s_MoveBoxItem(UIItem* box, QMouseEvent* event);
 

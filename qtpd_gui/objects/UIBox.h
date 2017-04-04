@@ -14,6 +14,7 @@
 //todo proper pattern
 #include "OpenFileProxy.h"
 #include <QGraphicsView>
+#include <QGraphicsSceneMouseEvent>
 
 
 namespace qtpd {
@@ -147,14 +148,16 @@ public:
     /// \brief mouse down
     /// \param ev
     ///
-    void mousePressEvent(QMouseEvent* ev)
+    void mousePressEvent(QGraphicsSceneMouseEvent* ev)
     {
+        qDebug("click");
+
         //context menu
         if (ev->button() == Qt::RightButton) {
             //
-            QPoint pos = ev->pos();
-            //QPoint pos = mapToGlobal(ev->pos());
-            showPopupMenu(pos);
+            //QPointF pos = ev->pos();
+//            QPoint pos = mapToGlobal(ev->pos().toPoint());
+//            showPopupMenu(pos);
             ev->accept();
             return;
         }
@@ -183,33 +186,38 @@ public:
         }
 
         emit selectBox(this, ev);
-        dragOffset = ev->pos();
+        dragOffset = QPoint(ev->pos().x(),ev->pos().y() );
+
+        QGraphicsItem::mousePressEvent(ev);
     }
 
     ////
     /// \brief mouse up
     ///
-    void mouseReleaseEvent(QMouseEvent*)
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent*ev)
     {
          //viewport()->update();
+        QGraphicsItem::mouseReleaseEvent(ev);
     }
 
     ////
     /// \brief mouse move
     /// \param event
     ///
-    void mouseMoveEvent(QMouseEvent* event)
+    void mouseMoveEvent(QGraphicsSceneMouseEvent* event)
     {
         if (event->buttons() & Qt::LeftButton) {
             emit moveBox(this, event);
         }
-        event->ignore();
+        //event->ignore();
 
         if ((getEditMode() != em_Unlocked) && (subpatchWindow())) {
             setCursor(QCursor(Qt::PointingHandCursor));
         } else {
             setCursor(QCursor(Qt::ArrowCursor));
         }
+
+        QGraphicsItem::mouseMoveEvent(event);
     }
 
     void setPdMessage(std::string message)

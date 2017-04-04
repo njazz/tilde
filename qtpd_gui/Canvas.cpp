@@ -79,6 +79,7 @@ Canvas::Canvas(QGraphicsView* parent)
 
     // ------NEW
     setStyleSheet("QGraphicsView { border-style: none; }");
+    //setAcceptHoverEvents(true);
 }
 
 //cm_canvas::cm_canvas(QWidget *parent) : cm_widget((cm_widget*)parent)
@@ -130,10 +131,9 @@ void Canvas::selectBox(UIItem* box)
 {
     _selectionData.addUniqueBox((UIObjectItem*)box);
     box->select();
-    //    if (box->scene())
-    //        box->viewport()->update();
+    viewport()->update(box->boundingRect().toRect());
 }
-void Canvas::s_SelectBox(UIItem* box, QMouseEvent* ev)
+void Canvas::s_SelectBox(UIItem* box, QGraphicsSceneMouseEvent* ev)
 {
 
     if (!(ev->modifiers() & Qt::ShiftModifier)) // && !(ev->modifiers() & Qt::ControlModifier))
@@ -166,13 +166,13 @@ void Canvas::s_SelectBoxItem(UIItem* box, QMouseEvent* ev)
     //dragPrevPos = box->pos();
 }
 
-void Canvas::s_MoveBox(UIItem* box, QMouseEvent* event)
+void Canvas::s_MoveBox(UIItem* box, QGraphicsSceneMouseEvent* event)
 {
     if (!(Canvas::getEditMode() == em_Unlocked))
         return;
     for (int i = 0; i < (int)_selectionData.boxes()->size(); i++) {
         UIObjectItem* w = ((UIObjectItem*)_selectionData.boxes()->at(i));
-        QPoint pos; // = ((UIObjectItem*)_selectionData.boxes()->at(i))->pos() + mapToParent((event->pos() - box->dragOffset));
+        QPoint pos = (((UIObjectItem*)_selectionData.boxes()->at(i))->pos().toPoint()) + mapToParent((event->pos().toPoint() - box->dragOffset));
 
         if (_gridSnap) {
             pos.setX(ceil(pos.x() / _grid->gridStep()) * _grid->gridStep());
@@ -185,7 +185,7 @@ void Canvas::s_MoveBox(UIItem* box, QMouseEvent* event)
             cmp_moveobject(obj, (int)pos.x(), (int)pos.y());
 
         //todo
-        //viewport()->update();
+        viewport()->update();
     }
 
     if (drawStyle() == ds_Canvas)
@@ -455,10 +455,14 @@ void Canvas::mouseMoveEvent(QMouseEvent* ev)
 
 void Canvas::mousePressEvent(QMouseEvent* ev)
 {
+    qDebug("click canvas");
+
     if (drawStyle() == ds_Canvas)
         mousePressEventForCanvas(ev);
     if (drawStyle() == ds_Box)
         mousePressEventForBox(ev);
+
+    QGraphicsView::mousePressEvent(ev);
 }
 
 void Canvas::mouseReleaseEvent(QMouseEvent* ev)
@@ -642,10 +646,13 @@ void Canvas::deselectBoxes()
 {
     for (int i = 0; i < (int)_selectionData.boxes()->size(); i++) {
         if (_selectionData.boxes()->at(i))
+
             ((UIBox*)_selectionData.boxes()->at(i))->deselect();
     }
 
     _selectionData.boxes()->clear();
+
+    viewport()->update();
 }
 
 UIBox* Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas* canvas)
@@ -746,8 +753,8 @@ UIObjectItem* Canvas::createObject(QString objectData1, QPoint pos) //std::strin
 
     UIObjectItem* obj = ObjectLoader::inst().createObject(objectData1, (t_canvas*)pdObject(), this);
 
-    //connect(obj, &UIMessage::selectBox, this, &Canvas::s_SelectBox);
-    //connect(obj, &UIMessage::moveBox, this, &Canvas::s_MoveBox);
+    connect(obj, &UIObjectItem::selectBox, this, &Canvas::s_SelectBox);
+    connect(obj, &UIObjectItem::moveBox, this, &Canvas::s_MoveBox);
 
     obj->setEditModeRef(&_canvasEditMode); //Canvas::getEditModeRef());
     obj->move(pos.x(), pos.y());

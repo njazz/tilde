@@ -116,13 +116,13 @@ public:
 
 signals:
 
-    void mousePressed(UIItem* obj, QMouseEvent* ev);
-    void mouseReleased(UIItem* obj, QMouseEvent* ev);
+    void mousePressed(UIItem* obj, QGraphicsSceneMouseEvent* ev);
+    void mouseReleased(UIItem* obj, QGraphicsSceneMouseEvent* ev);
     void mouseEntered();
     void mouseLeaved();
 
-    void selectBox(UIItem* box, QMouseEvent* event);
-    void moveBox(UIItem* box, QMouseEvent* event);
+    void selectBox(UIItem* box, QGraphicsSceneMouseEvent* event);
+    void moveBox(UIItem* box, QGraphicsSceneMouseEvent* event);
 
 public slots:
 
