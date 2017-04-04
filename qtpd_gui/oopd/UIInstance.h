@@ -79,12 +79,6 @@ public:
         }
 
 
-        // new class w/canvas
-        //        if (list.size() > 1) {
-        //            b->_opClass = new OPClass(list.at(1).toStdString());
-        //        } else {
-        //            b->_opClass = new OPClass();
-        //        }
 
         if (new_obj) {
             in_c = cmp_get_inlet_count(new_obj);
@@ -106,11 +100,9 @@ public:
         for (int i = 0; i < out_c; i++)
             b->addOutlet();
 
-        //
-
+        // typed
         if (list.size()>1)
         {
-            //cmp_post("loading type");
             std::string typeName = list.at(1).toStdString();
             //weird
             AtomList msg(gensym("settype"));
@@ -401,8 +393,6 @@ public:
 
                 setFixedHeight(20 * (list.size() + 1));
 
-
-
                 // inlets and outlets
                 for (int i=0;i<_opClass->getPropertyList().size();i++)
                 {
@@ -425,7 +415,6 @@ public:
                 // ports position
                 setInletsPos();
                 setOutletsPos();
-
 
                 _className = msg.at(1).asString().c_str();
 

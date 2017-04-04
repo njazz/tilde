@@ -38,7 +38,7 @@ UIInstance::UIInstance(UIObject* parent)
 void UIInstance::setInletsPos()
 {
     if (_hasType) {
-        float h = height();
+        float h = height()-20;
 
 
         float s = (inletCount() < 2) ? inletCount() : (inletCount() - 1);
@@ -59,7 +59,7 @@ void UIInstance::setInletsPos()
 void UIInstance::setOutletsPos()
 {
     if (_hasType) {
-        float h = height();
+        float h = height()-20;
 
         float s = (outletCount() < 2) ? outletCount() : (outletCount() - 1);
 
