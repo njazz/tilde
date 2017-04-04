@@ -74,8 +74,6 @@ public:
             b->_propertyName = ((QString)list.at(1)).toStdString();
         }
 
-
-
         t_object* new_obj = 0;
         int in_c = 0, out_c = 0;
 
@@ -142,13 +140,10 @@ public:
 
             t_outlet* out1 = cmp_get_outlet((t_object*)b->pdObject(), 1);
             t_outlet* out2 = cmp_get_outlet((t_object*)b->pdObject(), 2);
-            if (out1 && out2)
-            {
-                //b->_opInstance->addMethodOutlet(gensym(b->_propertyName.c_str()), out1)
-                ;
+            if (out1 && out2) {
+
                 b->_opInstance->addProperty(gensym(b->_propertyName.c_str()), out1, out2);
-            }
-            else
+            } else
                 cmp_post("property pd object outlet error");
         }
 
@@ -217,9 +212,6 @@ public:
         }
 
         if ((getEditMode() == em_Unlocked) && isSelected()) {
-            //            editor_->setText(QString(objectData().c_str()));
-            //            editor_->show();
-            //            editor_->setFocus();
 
             emit editObject(this);
             return;
@@ -281,9 +273,28 @@ public:
         //qDebug() << "method out";
 
         if (b->_opInstance) {
-            AtomList fullMsg(gensym(b->_propertyName.c_str()));
-            fullMsg.append(msg);
-            b->_opInstance->multipleOutput(fullMsg);
+            if (msg.at(0).asSymbol() == gensym("bang")) {
+                //cmp_post("bang!");
+
+                AtomList _prop = b->_opInstance->getAtomListProperty(gensym(b->_propertyName.c_str()));
+                QStringList list1;
+                for (int i = 0; i < _prop.size(); i++) {
+                    list1.append(_prop.at(i).asString().c_str());
+                }
+
+                cmp_sendstring((t_pd*)b->pdObject(), (std::string) "__output " + list1.join(" ").toStdString());
+            } else if (msg.at(0).asSymbol() == gensym("set")) {
+                cmp_post("set!");
+                //AtomList msg2 = msg;
+                //msg2.at(0) = gensym(b->_propertyName.c_str());
+                b->_opInstance->setAtomListProperty(gensym(b->_propertyName.c_str()), msg);//.subList(1,msg.size()-1));
+                //b->_opInstance->callSetter(msg2);
+
+            } else {
+                AtomList fullMsg(gensym(b->_propertyName.c_str()));
+                fullMsg.append(msg);
+                b->_opInstance->multipleOutput(fullMsg);
+            }
         }
 
         emit b->updateUISignal();
