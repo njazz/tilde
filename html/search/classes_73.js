@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['selectionrect',['SelectionRect',['../classqtpd_1_1_selection_rect.html',1,'qtpd']]],
   ['setentry',['setentry',['../structsetentry.html',1,'']]],
   ['sizebox',['SizeBox',['../classqtpd_1_1_size_box.html',1,'qtpd']]],
   ['sizetproperty',['SizeTProperty',['../classceammc_1_1_size_t_property.html',1,'ceammc']]],

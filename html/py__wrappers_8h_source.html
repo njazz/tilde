@@ -89,31 +89,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00005"></a>00005 <span class="preprocessor"></span><span class="preprocessor">#define PY_WRAPERS_H</span>
 <a name="l00006"></a>00006 <span class="preprocessor"></span>
 <a name="l00007"></a>00007 <span class="preprocessor">#include &quot;<a class="code" href="_u_i_box_8h.html">UIBox.h</a>&quot;</span>
-<a name="l00008"></a>00008 
-<a name="l00009"></a>00009 <span class="preprocessor">#include &lt;<a class="code" href="_python_qt_8h.html">PythonQt.h</a>&gt;</span>
-<a name="l00010"></a>00010 <span class="preprocessor">#include &lt;<a class="code" href="_python_qt___qt_all_8h.html">PythonQt_QtAll.h</a>&gt;</span>
-<a name="l00011"></a>00011 
-<a name="l00012"></a>00012 <span class="keyword">using namespace </span>qtpd;
-<a name="l00017"></a>00017 
-<a name="l00018"></a><a class="code" href="classpy_wrapper.html">00018</a> <span class="keyword">class </span><a class="code" href="classpy_wrapper.html" title="python wrapper singleton class">pyWrapper</a>
-<a name="l00019"></a>00019 {
-<a name="l00020"></a>00020 <span class="keyword">private</span>:
-<a name="l00021"></a>00021 
-<a name="l00022"></a>00022    <a class="code" href="classpy_wrapper.html" title="python wrapper singleton class">pyWrapper</a>();
-<a name="l00023"></a>00023 <span class="keyword">public</span>:
-<a name="l00024"></a><a class="code" href="classpy_wrapper.html#ae44c4d0e1a58f541538873a9150cf85d">00024</a>     <span class="keyword">static</span> <a class="code" href="classpy_wrapper.html" title="python wrapper singleton class">pyWrapper</a>&amp; inst()
-<a name="l00025"></a>00025     {
-<a name="l00026"></a>00026         <span class="keyword">static</span> <a class="code" href="classpy_wrapper.html" title="python wrapper singleton class">pyWrapper</a> <a class="code" href="namespaceqtpd.html#a3dde6489d34303c66ea710aa2116b426">instance</a>;
-<a name="l00027"></a>00027         <span class="keywordflow">return</span> <a class="code" href="namespaceqtpd.html#a3dde6489d34303c66ea710aa2116b426">instance</a>;
-<a name="l00028"></a>00028     }
-<a name="l00029"></a>00029 
-<a name="l00035"></a>00035 
-<a name="l00036"></a>00036     <a class="code" href="class_python_qt_object_ptr.html" title="a smart pointer that stores a PyObject pointer and that handles reference counting automatically...">PythonQtObjectPtr</a> withCanvas(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* canvas);
-<a name="l00037"></a>00037     <a class="code" href="class_python_qt_object_ptr.html" title="a smart pointer that stores a PyObject pointer and that handles reference counting automatically...">PythonQtObjectPtr</a> withCanvasAndPdObject(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* canvas, t_object* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>);
-<a name="l00038"></a>00038     <a class="code" href="class_python_qt_object_ptr.html" title="a smart pointer that stores a PyObject pointer and that handles reference counting automatically...">PythonQtObjectPtr</a> withCanvasPdObjectAndInput(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* canvas, t_object* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, QStringList* list);
-<a name="l00039"></a>00039 };
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041 <span class="preprocessor">#endif // PY_WRAPERS_H</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;<a class="code" href="_u_i_object_item_8h.html">UIObjectItem.h</a>&quot;</span>
+<a name="l00009"></a>00009 
+<a name="l00010"></a>00010 <span class="preprocessor">#include &lt;<a class="code" href="_python_qt_8h.html">PythonQt.h</a>&gt;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &lt;<a class="code" href="_python_qt___qt_all_8h.html">PythonQt_QtAll.h</a>&gt;</span>
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013 <span class="keyword">using namespace </span>qtpd;
+<a name="l00018"></a>00018 
+<a name="l00019"></a><a class="code" href="classpy_wrapper.html">00019</a> <span class="keyword">class </span><a class="code" href="classpy_wrapper.html" title="python wrapper singleton class">pyWrapper</a>
+<a name="l00020"></a>00020 {
+<a name="l00021"></a>00021 <span class="keyword">private</span>:
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023    <a class="code" href="classpy_wrapper.html" title="python wrapper singleton class">pyWrapper</a>();
+<a name="l00024"></a>00024 <span class="keyword">public</span>:
+<a name="l00025"></a><a class="code" href="classpy_wrapper.html#ae44c4d0e1a58f541538873a9150cf85d">00025</a>     <span class="keyword">static</span> <a class="code" href="classpy_wrapper.html" title="python wrapper singleton class">pyWrapper</a>&amp; inst()
+<a name="l00026"></a>00026     {
+<a name="l00027"></a>00027         <span class="keyword">static</span> <a class="code" href="classpy_wrapper.html" title="python wrapper singleton class">pyWrapper</a> <a class="code" href="namespaceqtpd.html#a3dde6489d34303c66ea710aa2116b426">instance</a>;
+<a name="l00028"></a>00028         <span class="keywordflow">return</span> <a class="code" href="namespaceqtpd.html#a3dde6489d34303c66ea710aa2116b426">instance</a>;
+<a name="l00029"></a>00029     }
+<a name="l00030"></a>00030 
+<a name="l00036"></a>00036 
+<a name="l00037"></a>00037     <span class="comment">// FIX</span>
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039     <a class="code" href="class_python_qt_object_ptr.html" title="a smart pointer that stores a PyObject pointer and that handles reference counting automatically...">PythonQtObjectPtr</a> withCanvas(QObject* canvas);
+<a name="l00040"></a>00040     <a class="code" href="class_python_qt_object_ptr.html" title="a smart pointer that stores a PyObject pointer and that handles reference counting automatically...">PythonQtObjectPtr</a> withCanvasAndPdObject(QObject* canvas, t_object* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>);
+<a name="l00041"></a>00041     <a class="code" href="class_python_qt_object_ptr.html" title="a smart pointer that stores a PyObject pointer and that handles reference counting automatically...">PythonQtObjectPtr</a> withCanvasPdObjectAndInput(QObject* canvas, t_object* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, QStringList* list);
+<a name="l00042"></a>00042 };
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044 <span class="preprocessor">#endif // PY_WRAPERS_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -132,7 +135,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 4 2017 16:06:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Apr 4 2017 22:53:23 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

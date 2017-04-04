@@ -1,13 +1,13 @@
 var searchData=
 [
   ['w_5fselect',['w_select',['../classceammc__gui_1_1_gui_factory.html#a59b143e1c84bdc7f7dc01585adcd2b52',1,'ceammc_gui::GuiFactory']]],
-  ['width',['width',['../structceammc__gui_1_1_base_gui_object.html#a94819a233ff648ddc40d4bca96810d26',1,'ceammc_gui::BaseGuiObject']]],
+  ['width',['width',['../classqtpd_1_1_u_i_item.html#a89b7d0bcdcb226800c37d95305a1f441',1,'qtpd::UIItem::width()'],['../structceammc__gui_1_1_base_gui_object.html#a94819a233ff648ddc40d4bca96810d26',1,'ceammc_gui::BaseGuiObject::width()']]],
   ['winobj_5fconvert',['WinObj_Convert',['../pymactoolbox_8h.html#a736bd7fb4a10dbe45cc8bdb26d55a16e',1,'pymactoolbox.h']]],
   ['winobj_5fnew',['WinObj_New',['../pymactoolbox_8h.html#a2513207b46a3f5bdb0c0a3642206191e',1,'pymactoolbox.h']]],
   ['winobj_5fwhichwindow',['WinObj_WhichWindow',['../pymactoolbox_8h.html#afe1c92b6b1186f437ecc4edf6ad36ed6',1,'pymactoolbox.h']]],
-  ['withcanvas',['withCanvas',['../classpy_wrapper.html#aaf7d0765fbb38f4ac18ee24a6f6eece1',1,'pyWrapper']]],
-  ['withcanvasandpdobject',['withCanvasAndPdObject',['../classpy_wrapper.html#ab43d5c053218b1e3f143c3cc300dd71f',1,'pyWrapper']]],
-  ['withcanvaspdobjectandinput',['withCanvasPdObjectAndInput',['../classpy_wrapper.html#a3337936761bd42793237b4a15464364a',1,'pyWrapper']]],
+  ['withcanvas',['withCanvas',['../classpy_wrapper.html#aa56d7fef3ec3d4026680e7b355113147',1,'pyWrapper']]],
+  ['withcanvasandpdobject',['withCanvasAndPdObject',['../classpy_wrapper.html#a6d0386846d929e9d78073bd8c12358cc',1,'pyWrapper']]],
+  ['withcanvaspdobjectandinput',['withCanvasPdObjectAndInput',['../classpy_wrapper.html#a4f46edd81924f3adcc8b472a6ebf85d4',1,'pyWrapper']]],
   ['wrap',['wrap',['../class_python_qt_foreign_wrapper_factory.html#a24a1d6725910859fa4e1e154ba1d9791',1,'PythonQtForeignWrapperFactory']]],
   ['wrapat',['wrapAt',['../classceammc_1_1_atom_list.html#aaa890436ba9b929c7d3fa4f240c0ae54',1,'ceammc::AtomList::wrapAt(int pos)'],['../classceammc_1_1_atom_list.html#a218d18f0d9451f8f91b43aa1d04c5d4c',1,'ceammc::AtomList::wrapAt(int pos) const ']]],
   ['wrapmemoryasbuffer',['wrapMemoryAsBuffer',['../class_python_qt_private.html#adc909498a269511752547ad2ba5d015b',1,'PythonQtPrivate::wrapMemoryAsBuffer(const void *data, Py_ssize_t size)'],['../class_python_qt_private.html#a309a71718680f36705bdfb345d7ac0c3',1,'PythonQtPrivate::wrapMemoryAsBuffer(void *data, Py_ssize_t size)']]],

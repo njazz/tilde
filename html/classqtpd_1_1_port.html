@@ -101,13 +101,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a>  </div>
+<a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">qtpd::Port Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="qtpd::Port" --><!-- doxytag: inherits="qtpd::UIWidget" -->
+<!-- doxytag: class="qtpd::Port" --><!-- doxytag: inherits="qtpd::UIItem" -->
 <p>gui representation of t_inlet / t_outlet  
  <a href="classqtpd_1_1_port.html#details">More...</a></p>
 
@@ -118,7 +117,7 @@ Inheritance diagram for qtpd::Port:</div>
  <div class="center">
   <img src="classqtpd_1_1_port.png" usemap="#qtpd::Port_map" alt=""/>
   <map id="qtpd::Port_map" name="qtpd::Port_map">
-<area href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas" alt="qtpd::UIWidget" shape="rect" coords="0,0,90,24"/>
+<area href="classqtpd_1_1_u_i_item.html" title="parent class for all objects in the canvas" alt="qtpd::UIItem" shape="rect" coords="0,0,74,24"/>
 </map>
  </div></div>
 
@@ -126,29 +125,30 @@ Inheritance diagram for qtpd::Port:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_port.html#a9d12ba5cc9d281f13b2af650725753f0">Port</a> (<a class="el" href="classqtpd_1_1_u_i_widget.html">UIWidget</a> *parent=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_port.html#a2f55d5424e707c2be0db1d0e31159a23">paintEvent</a> (QPaintEvent *)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_port.html#ab6c8f8c576ab5db836179a944e235b3b">enterEvent</a> (QEvent *)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_port.html#a5c742a5c46341c514e92362a183742d1">leaveEvent</a> (QEvent *)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_port.html#a5a3556a06c7fae8d8d9e6e24a74f6a01">mousePressEvent</a> (QMouseEvent *ev)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_port.html#af9ade8f06990f0871bb336893daee591">mouseReleaseEvent</a> (QMouseEvent *ev)</td></tr>
-<tr><td colspan="2"><h2><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_port.html#a85960e443b110fd362055844b41e8279">portIndex</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#a2378a83cd6f032332dd14c885bc24bb8">UIPortType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_port.html#ae0ac720bf32ebd7bc574ac85126c34bc">portType</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_port.html#a9d254988d59bc95c802224465f3ea9c7">portClass</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_port.html#ad995d08ebf05486c0e102c7147294d2e">Port</a> (<a class="el" href="classqtpd_1_1_u_i_item.html">UIItem</a> *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#a2378a83cd6f032332dd14c885bc24bb8">UIPortType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_port.html#aca62a570537dd20667f3401c11297c07">portType</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_port.html#ac967a49a51df8bf3b3849c364b649721">setPortType</a> (<a class="el" href="namespaceqtpd.html#a2378a83cd6f032332dd14c885bc24bb8">UIPortType</a> pt)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_port.html#a0069bf51bb11bfbb9b996ea87f549c46">portClass</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_port.html#a74eff975ec57e97c8553cd70c6bd25c0">setPortClass</a> (<a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> pc)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_port.html#a009237b01a33c51bec489383174737e2">portIndex</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_port.html#a66bb5ddd424af43a1d5634298c313fac">setPortIndex</a> (<a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> pi)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_port.html#a69bf038b10902d40208798682acc7467">paint</a> (QPainter *<a class="el" href="floatobject_8h.html#af18a92ce774f4c499544fbcc894db7e8">p</a>, const QStyleOptionGraphicsItem *option, QWidget *widget)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_port.html#a4ed05f3cf69cdba2f28418c54dcab116">hoverEnterEvent</a> (QEvent *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_port.html#a42bf2f4774d2a8837eb10181746dded6">hoverLeaveEvent</a> (QEvent *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_port.html#a26156c74b5d036694dc3cdc65eaaee2b">mousePressEvent</a> (QGraphicsSceneMouseEvent *ev)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_port.html#a48974dfafb38e5dd183612075b2aa993">mouseReleaseEvent</a> (QGraphicsSceneMouseEvent *ev)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>gui representation of t_inlet / t_outlet </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a9d12ba5cc9d281f13b2af650725753f0"></a><!-- doxytag: member="qtpd::Port::Port" ref="a9d12ba5cc9d281f13b2af650725753f0" args="(UIWidget *parent=0)" -->
+<a class="anchor" id="ad995d08ebf05486c0e102c7147294d2e"></a><!-- doxytag: member="qtpd::Port::Port" ref="ad995d08ebf05486c0e102c7147294d2e" args="(UIItem *parent=0)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classqtpd_1_1_port.html#a9d12ba5cc9d281f13b2af650725753f0">qtpd::Port::Port</a> </td>
+          <td class="memname"><a class="el" href="classqtpd_1_1_port.html#ad995d08ebf05486c0e102c7147294d2e">qtpd::Port::Port</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_widget.html">UIWidget</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_item.html">UIItem</a> *&#160;</td>
           <td class="paramname"><em>parent</em> = <code>0</code></td><td>)</td>
           <td><code> [explicit]</code></td>
         </tr>
@@ -159,12 +159,12 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="ab6c8f8c576ab5db836179a944e235b3b"></a><!-- doxytag: member="qtpd::Port::enterEvent" ref="ab6c8f8c576ab5db836179a944e235b3b" args="(QEvent *)" -->
+<a class="anchor" id="a4ed05f3cf69cdba2f28418c54dcab116"></a><!-- doxytag: member="qtpd::Port::hoverEnterEvent" ref="a4ed05f3cf69cdba2f28418c54dcab116" args="(QEvent *)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_port.html#ab6c8f8c576ab5db836179a944e235b3b">qtpd::Port::enterEvent</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_port.html#a4ed05f3cf69cdba2f28418c54dcab116">qtpd::Port::hoverEnterEvent</a> </td>
           <td>(</td>
           <td class="paramtype">QEvent *&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -176,12 +176,12 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a5c742a5c46341c514e92362a183742d1"></a><!-- doxytag: member="qtpd::Port::leaveEvent" ref="a5c742a5c46341c514e92362a183742d1" args="(QEvent *)" -->
+<a class="anchor" id="a42bf2f4774d2a8837eb10181746dded6"></a><!-- doxytag: member="qtpd::Port::hoverLeaveEvent" ref="a42bf2f4774d2a8837eb10181746dded6" args="(QEvent *)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_port.html#a5c742a5c46341c514e92362a183742d1">qtpd::Port::leaveEvent</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_port.html#a42bf2f4774d2a8837eb10181746dded6">qtpd::Port::hoverLeaveEvent</a> </td>
           <td>(</td>
           <td class="paramtype">QEvent *&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -193,14 +193,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a5a3556a06c7fae8d8d9e6e24a74f6a01"></a><!-- doxytag: member="qtpd::Port::mousePressEvent" ref="a5a3556a06c7fae8d8d9e6e24a74f6a01" args="(QMouseEvent *ev)" -->
+<a class="anchor" id="a26156c74b5d036694dc3cdc65eaaee2b"></a><!-- doxytag: member="qtpd::Port::mousePressEvent" ref="a26156c74b5d036694dc3cdc65eaaee2b" args="(QGraphicsSceneMouseEvent *ev)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_port.html#a5a3556a06c7fae8d8d9e6e24a74f6a01">qtpd::Port::mousePressEvent</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_port.html#a26156c74b5d036694dc3cdc65eaaee2b">qtpd::Port::mousePressEvent</a> </td>
           <td>(</td>
-          <td class="paramtype">QMouseEvent *&#160;</td>
+          <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
           <td class="paramname"><em>ev</em></td><td>)</td>
           <td><code> [inline]</code></td>
         </tr>
@@ -210,14 +210,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="af9ade8f06990f0871bb336893daee591"></a><!-- doxytag: member="qtpd::Port::mouseReleaseEvent" ref="af9ade8f06990f0871bb336893daee591" args="(QMouseEvent *ev)" -->
+<a class="anchor" id="a48974dfafb38e5dd183612075b2aa993"></a><!-- doxytag: member="qtpd::Port::mouseReleaseEvent" ref="a48974dfafb38e5dd183612075b2aa993" args="(QGraphicsSceneMouseEvent *ev)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_port.html#af9ade8f06990f0871bb336893daee591">qtpd::Port::mouseReleaseEvent</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_port.html#a48974dfafb38e5dd183612075b2aa993">qtpd::Port::mouseReleaseEvent</a> </td>
           <td>(</td>
-          <td class="paramtype">QMouseEvent *&#160;</td>
+          <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
           <td class="paramname"><em>ev</em></td><td>)</td>
           <td><code> [inline]</code></td>
         </tr>
@@ -227,14 +227,48 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a2f55d5424e707c2be0db1d0e31159a23"></a><!-- doxytag: member="qtpd::Port::paintEvent" ref="a2f55d5424e707c2be0db1d0e31159a23" args="(QPaintEvent *)" -->
+<a class="anchor" id="a69bf038b10902d40208798682acc7467"></a><!-- doxytag: member="qtpd::Port::paint" ref="a69bf038b10902d40208798682acc7467" args="(QPainter *p, const QStyleOptionGraphicsItem *option, QWidget *widget)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_port.html#a2f55d5424e707c2be0db1d0e31159a23">qtpd::Port::paintEvent</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_port.html#a69bf038b10902d40208798682acc7467">qtpd::Port::paint</a> </td>
           <td>(</td>
-          <td class="paramtype">QPaintEvent *&#160;</td>
+          <td class="paramtype">QPainter *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QStyleOptionGraphicsItem *&#160;</td>
+          <td class="paramname"><em>option</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>widget</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_item.html#a12e5dcf388b6fe5db809ff7f2f45a4d9">qtpd::UIItem</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0069bf51bb11bfbb9b996ea87f549c46"></a><!-- doxytag: member="qtpd::Port::portClass" ref="a0069bf51bb11bfbb9b996ea87f549c46" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="classqtpd_1_1_port.html#a0069bf51bb11bfbb9b996ea87f549c46">qtpd::Port::portClass</a> </td>
+          <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [inline]</code></td>
         </tr>
@@ -244,13 +278,15 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="a9d254988d59bc95c802224465f3ea9c7"></a><!-- doxytag: member="qtpd::Port::portClass" ref="a9d254988d59bc95c802224465f3ea9c7" args="" -->
+<a class="anchor" id="a009237b01a33c51bec489383174737e2"></a><!-- doxytag: member="qtpd::Port::portIndex" ref="a009237b01a33c51bec489383174737e2" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="classqtpd_1_1_port.html#a9d254988d59bc95c802224465f3ea9c7">qtpd::Port::portClass</a></td>
+          <td class="memname"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="classqtpd_1_1_port.html#a009237b01a33c51bec489383174737e2">qtpd::Port::portIndex</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -258,12 +294,15 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a85960e443b110fd362055844b41e8279"></a><!-- doxytag: member="qtpd::Port::portIndex" ref="a85960e443b110fd362055844b41e8279" args="" -->
+<a class="anchor" id="aca62a570537dd20667f3401c11297c07"></a><!-- doxytag: member="qtpd::Port::portType" ref="aca62a570537dd20667f3401c11297c07" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="classqtpd_1_1_port.html#a85960e443b110fd362055844b41e8279">qtpd::Port::portIndex</a></td>
+          <td class="memname"><a class="el" href="namespaceqtpd.html#a2378a83cd6f032332dd14c885bc24bb8">UIPortType</a> <a class="el" href="classqtpd_1_1_port.html#aca62a570537dd20667f3401c11297c07">qtpd::Port::portType</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -271,12 +310,50 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae0ac720bf32ebd7bc574ac85126c34bc"></a><!-- doxytag: member="qtpd::Port::portType" ref="ae0ac720bf32ebd7bc574ac85126c34bc" args="" -->
+<a class="anchor" id="a74eff975ec57e97c8553cd70c6bd25c0"></a><!-- doxytag: member="qtpd::Port::setPortClass" ref="a74eff975ec57e97c8553cd70c6bd25c0" args="(int pc)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceqtpd.html#a2378a83cd6f032332dd14c885bc24bb8">UIPortType</a> <a class="el" href="classqtpd_1_1_port.html#ae0ac720bf32ebd7bc574ac85126c34bc">qtpd::Port::portType</a></td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_port.html#a74eff975ec57e97c8553cd70c6bd25c0">qtpd::Port::setPortClass</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramname"><em>pc</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a66bb5ddd424af43a1d5634298c313fac"></a><!-- doxytag: member="qtpd::Port::setPortIndex" ref="a66bb5ddd424af43a1d5634298c313fac" args="(int pi)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_port.html#a66bb5ddd424af43a1d5634298c313fac">qtpd::Port::setPortIndex</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramname"><em>pi</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac967a49a51df8bf3b3849c364b649721"></a><!-- doxytag: member="qtpd::Port::setPortType" ref="ac967a49a51df8bf3b3849c364b649721" args="(UIPortType pt)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_port.html#ac967a49a51df8bf3b3849c364b649721">qtpd::Port::setPortType</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceqtpd.html#a2378a83cd6f032332dd14c885bc24bb8">UIPortType</a>&#160;</td>
+          <td class="paramname"><em>pt</em></td><td>)</td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -285,8 +362,8 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/travis/build/njazz/qtpd/qtpd_gui/<a class="el" href="_port_8h_source.html">Port.h</a></li>
-<li>/home/travis/build/njazz/qtpd/qtpd_gui/<a class="el" href="_port_8cpp.html">Port.cpp</a></li>
+<li>/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/<a class="el" href="_port_8h_source.html">Port.h</a></li>
+<li>/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/<a class="el" href="_port_8cpp.html">Port.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- window showing the filter options -->
@@ -306,7 +383,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 4 2017 16:06:43 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Apr 4 2017 22:53:24 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>qtpd: /home/travis/build/njazz/qtpd/qtpd_gui/SizeBox.h Source File</title>
+<title>qtpd: /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/SizeBox.h Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -79,16 +79,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="headertitle">
-<div class="title">/home/travis/build/njazz/qtpd/qtpd_gui/SizeBox.h</div>  </div>
+<div class="title">/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/SizeBox.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="_size_box_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// (c) 2017 Alex Nadzharov</span>
 <a name="l00002"></a>00002 <span class="comment">// License: GPL3</span>
 <a name="l00003"></a>00003 
-<a name="l00004"></a>00004 <span class="preprocessor">#ifndef CM_SIZEBOX_H</span>
-<a name="l00005"></a>00005 <span class="preprocessor"></span><span class="preprocessor">#define CM_SIZEBOX_H</span>
+<a name="l00004"></a>00004 <span class="preprocessor">#ifndef CM_SIZEBOXG_H</span>
+<a name="l00005"></a>00005 <span class="preprocessor"></span><span class="preprocessor">#define CM_SIZEBOXG_H</span>
 <a name="l00006"></a>00006 <span class="preprocessor"></span>
-<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;<a class="code" href="_u_i_widget_8h.html">UIWidget.h</a>&quot;</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;<a class="code" href="_u_i_item_8h.html">UIItem.h</a>&quot;</span>
 <a name="l00008"></a>00008 
 <a name="l00009"></a>00009 <span class="preprocessor">#include &lt;QDebug&gt;</span>
 <a name="l00010"></a>00010 <span class="preprocessor">#include &lt;QMouseEvent&gt;</span>
@@ -98,63 +98,56 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00014"></a>00014 
 <a name="l00015"></a>00015 <span class="keyword">namespace </span>qtpd {
 <a name="l00016"></a>00016 
-<a name="l00020"></a><a class="code" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3">00020</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> {
-<a name="l00021"></a><a class="code" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3a0af9814af3758d6fd8a9c5de202f937e">00021</a>     <a class="code" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3a0af9814af3758d6fd8a9c5de202f937e">os_Fixed</a>,
-<a name="l00022"></a><a class="code" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3a71f8acecda7a72aa0247ed121da53c1e">00022</a>     <a class="code" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3a71f8acecda7a72aa0247ed121da53c1e">os_FixedHeight</a>,
-<a name="l00023"></a><a class="code" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3a57b863bd243ae8d733c28c3ac9b6c631">00023</a>     <a class="code" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3a57b863bd243ae8d733c28c3ac9b6c631">os_Free</a>
-<a name="l00024"></a>00024 } <a class="code" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3" title="object box size constraints">t_objectSize</a>;
-<a name="l00025"></a>00025 
-<a name="l00029"></a><a class="code" href="classqtpd_1_1_size_box.html">00029</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_size_box.html" title="resize widget for all object boxes in patch">SizeBox</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a> {
-<a name="l00030"></a>00030     Q_OBJECT
-<a name="l00031"></a>00031 
-<a name="l00032"></a>00032 <span class="keyword">private</span>:
-<a name="l00033"></a>00033     <span class="keywordtype">int</span> _prevX;
-<a name="l00034"></a>00034     <span class="keywordtype">int</span> _prevY;
-<a name="l00035"></a>00035 
-<a name="l00036"></a>00036     <a class="code" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3" title="object box size constraints">t_objectSize</a>* _objectSizeType;
-<a name="l00037"></a>00037 
-<a name="l00038"></a>00038 <span class="keyword">public</span>:
-<a name="l00039"></a>00039     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_size_box.html#a7eb6db1db936af8e770b85f527f26bb0">SizeBox</a>(<a class="code" href="classqtpd_1_1_u_i_widget.html" title="parent class for all objects in the canvas">UIWidget</a>* parent = 0);
-<a name="l00040"></a>00040 
-<a name="l00041"></a><a class="code" href="classqtpd_1_1_size_box.html#aa15cc695003a7740ac6d561732a6ffc4">00041</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_size_box.html#aa15cc695003a7740ac6d561732a6ffc4">paintEvent</a>(QPaintEvent*) <span class="comment">//QPaintEvent *pe</span>
-<a name="l00042"></a>00042     {
-<a name="l00043"></a>00043         QPainter <a class="code" href="floatobject_8h.html#af18a92ce774f4c499544fbcc894db7e8">p</a>(viewport());
-<a name="l00044"></a>00044 
-<a name="l00045"></a>00045         <span class="comment">//p.setRenderHint(QPainter::SmoothPixmapTransform,true);</span>
-<a name="l00046"></a>00046         p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-<a name="l00047"></a>00047         p.drawRect(0, 0, width(), height());
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 
+<a name="l00022"></a><a class="code" href="classqtpd_1_1_size_box.html">00022</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_size_box.html" title="resize widget for all object boxes in patch">SizeBox</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1_u_i_item.html" title="parent class for all objects in the canvas">UIItem</a> {
+<a name="l00023"></a>00023     Q_OBJECT
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="keyword">private</span>:
+<a name="l00026"></a>00026     <span class="keywordtype">int</span> _prevX;
+<a name="l00027"></a>00027     <span class="keywordtype">int</span> _prevY;
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029     <a class="code" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3" title="object box size constraints">t_objectSize</a>* _objectSizeType;
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031 <span class="keyword">public</span>:
+<a name="l00032"></a>00032     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_size_box.html#adf64d0032ffe2544e78020599192da82">SizeBox</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="parent class for all objects in the canvas">UIItem</a>* parent = 0);
+<a name="l00033"></a>00033 
+<a name="l00034"></a><a class="code" href="classqtpd_1_1_size_box.html#ae581e383e4cd95150b1994268cdb2dae">00034</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_size_box.html#ae581e383e4cd95150b1994268cdb2dae">paint</a>(QPainter* <a class="code" href="floatobject_8h.html#af18a92ce774f4c499544fbcc894db7e8">p</a>, <span class="keyword">const</span> QStyleOptionGraphicsItem* option, QWidget* widget)
+<a name="l00035"></a>00035     {
+<a name="l00036"></a>00036         p-&gt;setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+<a name="l00037"></a>00037         p-&gt;drawRect(0, 0, <a class="code" href="classqtpd_1_1_u_i_item.html#a0a8d5299d5a0a2ebcef2135913bc97da">boundingRect</a>().<a class="code" href="classqtpd_1_1_u_i_item.html#a89b7d0bcdcb226800c37d95305a1f441">width</a>(), <a class="code" href="classqtpd_1_1_u_i_item.html#a0a8d5299d5a0a2ebcef2135913bc97da">boundingRect</a>().<a class="code" href="classqtpd_1_1_u_i_item.html#a5bbd8fe0417078d386176ace5a01f261">height</a>());
+<a name="l00038"></a>00038     };
+<a name="l00039"></a>00039 
+<a name="l00040"></a><a class="code" href="classqtpd_1_1_size_box.html#acdbf235000c9e7789f418026aca3dacc">00040</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_size_box.html#acdbf235000c9e7789f418026aca3dacc">mousePressEvent</a>(QMouseEvent* event)
+<a name="l00041"></a>00041     {
+<a name="l00042"></a>00042         setCursor(QCursor(Qt::SizeHorCursor));
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044         <span class="keyword">event</span>-&gt;accept();
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046         _prevX = 0;
+<a name="l00047"></a>00047         _prevY = 0;
 <a name="l00048"></a>00048     };
 <a name="l00049"></a>00049 
-<a name="l00050"></a><a class="code" href="classqtpd_1_1_size_box.html#acdbf235000c9e7789f418026aca3dacc">00050</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_size_box.html#acdbf235000c9e7789f418026aca3dacc">mousePressEvent</a>(QMouseEvent* event)
+<a name="l00050"></a><a class="code" href="classqtpd_1_1_size_box.html#afd27b8071dc940e941a674d67451c69c">00050</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_size_box.html#afd27b8071dc940e941a674d67451c69c">mouseReleaseEvent</a>(QMouseEvent* event)
 <a name="l00051"></a>00051     {
-<a name="l00052"></a>00052         setCursor(QCursor(Qt::SizeHorCursor));
+<a name="l00052"></a>00052         setCursor(QCursor(Qt::ArrowCursor));
 <a name="l00053"></a>00053 
 <a name="l00054"></a>00054         <span class="keyword">event</span>-&gt;accept();
-<a name="l00055"></a>00055 
-<a name="l00056"></a>00056         _prevX = 0;
-<a name="l00057"></a>00057         _prevY = 0;
-<a name="l00058"></a>00058     };
-<a name="l00059"></a>00059 
-<a name="l00060"></a><a class="code" href="classqtpd_1_1_size_box.html#afd27b8071dc940e941a674d67451c69c">00060</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_size_box.html#afd27b8071dc940e941a674d67451c69c">mouseReleaseEvent</a>(QMouseEvent* event)
-<a name="l00061"></a>00061     {
-<a name="l00062"></a>00062         setCursor(QCursor(Qt::ArrowCursor));
-<a name="l00063"></a>00063 
-<a name="l00064"></a>00064         <span class="keyword">event</span>-&gt;accept();
-<a name="l00065"></a>00065     };
-<a name="l00066"></a>00066 
-<a name="l00067"></a><a class="code" href="classqtpd_1_1_size_box.html#ac424a70e44d8f70cc832f32f7f0b027f">00067</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_size_box.html#ac424a70e44d8f70cc832f32f7f0b027f">mouseMoveEvent</a>(QMouseEvent* ev)
-<a name="l00068"></a>00068     {
-<a name="l00069"></a>00069         <span class="comment">//qDebug() &lt;&lt; &quot;resize&quot; &lt;&lt; (ev-&gt;x() - prevX);</span>
-<a name="l00070"></a>00070         emit <a class="code" href="classqtpd_1_1_size_box.html#a75140b9a1a4c99eb147050a22f0a134e">resizeBoxEvent</a>(ev-&gt;x() - _prevX, ev-&gt;y() - _prevY);
-<a name="l00071"></a>00071     }
-<a name="l00072"></a>00072 
-<a name="l00073"></a>00073 signals:
-<a name="l00074"></a>00074 
-<a name="l00075"></a>00075     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_size_box.html#a75140b9a1a4c99eb147050a22f0a134e">resizeBoxEvent</a>(<span class="keywordtype">int</span> dx, <span class="keywordtype">int</span> dy);
-<a name="l00076"></a>00076 };
-<a name="l00077"></a>00077 }
-<a name="l00078"></a>00078 
-<a name="l00079"></a>00079 <span class="preprocessor">#endif // CM_SIZEBOX_H</span>
+<a name="l00055"></a>00055     };
+<a name="l00056"></a>00056 
+<a name="l00057"></a><a class="code" href="classqtpd_1_1_size_box.html#ac424a70e44d8f70cc832f32f7f0b027f">00057</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_size_box.html#ac424a70e44d8f70cc832f32f7f0b027f">mouseMoveEvent</a>(QMouseEvent* ev)
+<a name="l00058"></a>00058     {
+<a name="l00059"></a>00059         <span class="comment">//qDebug() &lt;&lt; &quot;resize&quot; &lt;&lt; (ev-&gt;x() - prevX);</span>
+<a name="l00060"></a>00060         emit <a class="code" href="classqtpd_1_1_size_box.html#a75140b9a1a4c99eb147050a22f0a134e">resizeBoxEvent</a>(ev-&gt;x() - _prevX, ev-&gt;y() - _prevY);
+<a name="l00061"></a>00061     }
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063 signals:
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_size_box.html#a75140b9a1a4c99eb147050a22f0a134e">resizeBoxEvent</a>(<span class="keywordtype">int</span> dx, <span class="keywordtype">int</span> dy);
+<a name="l00066"></a>00066 };
+<a name="l00067"></a>00067 }
+<a name="l00068"></a>00068 
+<a name="l00069"></a>00069 <span class="preprocessor">#endif // CM_SIZEBOX_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -173,7 +166,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 4 2017 16:06:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Apr 4 2017 22:53:23 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
