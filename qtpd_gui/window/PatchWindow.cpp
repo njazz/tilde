@@ -152,21 +152,27 @@ void PatchWindow::objectMakerDone()
 
         if (canvas->replaceObject()) {
             UIObject* obj = canvas->replaceObject();
-
             patchcordVec cords = canvas->patchcordsForObject(obj);
+
+
 
             patchcordVec::iterator it;
             for (it = cords.begin(); it != cords.end(); ++it) {
                 Patchcord* pc = ((Patchcord*)*it);
                 UIObject* obj1 = pc->obj1();
                 UIObject* obj2 = pc->obj2();
+
+                qDebug()<<"o1 o2 n"<<obj1<<obj2<<new_obj;
                 //replace
                 if (obj1 == obj)
                     obj1 = new_obj;
                 if (obj2 == obj)
                     obj2 = new_obj;
 
+                if (obj1 && obj2)
                 canvas->patchcord(obj1, pc->outletIndex(), obj2, pc->inletIndex());
+                else
+                    qDebug("replace object - patchcord error");
             }
 
             canvas->deleteBox(obj);

@@ -793,7 +793,7 @@ UIObject* Canvas::createObject(QString objectData1, QPoint pos) //std::string UI
     //if (drawStyle() == ds_Canvas)
     setFixedSize(minimumCanvasSize());
 
-    return (UIObject*)0; //obj;
+    return (UIObject*)obj;
 }
 
 UIObject* Canvas::createBoxForCanvas(Canvas* newCanvas, std::string objectData, QPoint pos)
@@ -831,9 +831,11 @@ void Canvas::patchcord(UIObject* obj1, int outlet, UIObject* obj2, int inlet)
     if (obj1->pdObject() && obj2->pdObject()) {
         if (((UIBox*)obj1)->errorBox()) {
             //create dummy inlets / outlets
+            qDebug()<<"errorbox";
         };
         if (((UIBox*)obj2)->errorBox()) {
             //create dummy inlets / outlets
+            qDebug()<<"errorbox";
         };
 
         Port* outport = obj1->outletAt(outlet);
