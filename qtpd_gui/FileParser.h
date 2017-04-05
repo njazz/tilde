@@ -72,7 +72,7 @@ public:
     /// \param list
     /// \returns uiobject - that may be needed by legacyProcess to add more properties after object is created
     ///
-    static UIObjectItem* sendStringToCanvas(Canvas* cmcanvas, QStringList list);
+    static UIObject* sendStringToCanvas(Canvas* cmcanvas, QStringList list);
 
     ////
     /// \brief [3] parses QStringLists of atoms to canvas - creates objects etc

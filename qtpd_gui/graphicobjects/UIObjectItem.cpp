@@ -7,7 +7,7 @@
 
 namespace qtpd {
 
-UIObjectItem::UIObjectItem(UIItem* parent)
+UIObject::UIObject(UIItem* parent)
     : UIItem(parent)
 {
     _errorBox = false;
@@ -24,10 +24,10 @@ UIObjectItem::UIObjectItem(UIItem* parent)
 
 //    setAttribute(Qt::WA_Hover, true);
 
-    connect(_sizeBox, &SizeBox::resizeBoxEvent, this, &UIObjectItem::resizeBox);
+    connect(_sizeBox, &SizeBox::resizeBoxEvent, this, &UIObject::resizeBox);
 
     // repaint, handling for threads
-    connect(this, &UIObjectItem::callRepaint, this, &UIObjectItem::s_repaint);
+    connect(this, &UIObject::callRepaint, this, &UIObject::s_repaint);
 
     initProperties();
 
@@ -43,7 +43,7 @@ UIObjectItem::UIObjectItem(UIItem* parent)
 
 //---------------------------------------
 
-void UIObjectItem::resizeBox(int dx, int dy)
+void UIObject::resizeBox(int dx, int dy)
 {
     if (_objectSizeMode != os_Fixed)
         setWidth(boundingRect().width() + dx);
@@ -51,9 +51,9 @@ void UIObjectItem::resizeBox(int dx, int dy)
         setHeight(boundingRect().height() + dy);
 };
 
-void UIObjectItem::initProperties()
+void UIObject::initProperties()
 {
-    connect(properties(), &PropertyList::propertyChangedSignal, this, &UIObjectItem::propertyChanged);
+    connect(properties(), &PropertyList::propertyChangedSignal, this, &UIObject::propertyChanged);
 
     properties()->create("Size", "Box", "0.1", boundingRect().size());
     properties()->create("Position", "Box", "0.1", pos());
@@ -66,22 +66,22 @@ void UIObjectItem::initProperties()
     properties()->create("BorderColor", "Color", "0.1", QColor(192, 192, 192, 255));
 }
 
-PropertyList* UIObjectItem::properties()
+PropertyList* UIObject::properties()
 {
     return &_properties;
 }
 
-void UIObjectItem::createContextMenu()
+void UIObject::createContextMenu()
 {
 //    setContextMenuPolicy(Qt::NoContextMenu);
 
     pmProperties = new QAction(tr("Properties"), this);
     pmProperties->setShortcut(tr("Ctrl+Shift+P"));
-    connect(pmProperties, &QAction::triggered, this, &UIObjectItem::openPropertiesWindow);
+    connect(pmProperties, &QAction::triggered, this, &UIObject::openPropertiesWindow);
 
     pmHelp = new QAction(tr("Help"), this);
     pmHelp->setShortcut(tr("Ctrl+Shift+H"));
-    connect(pmHelp, &QAction::triggered, this, &UIObjectItem::openHelpWindow);
+    connect(pmHelp, &QAction::triggered, this, &UIObject::openHelpWindow);
 
     pmOpen = new QAction(tr("Open"), this);
     pmOpen->setShortcut(tr("Ctrl+R"));
@@ -97,14 +97,14 @@ void UIObjectItem::createContextMenu()
 }
 
 //void UIObjectItem::contextMenuEvent(QContextMenuEvent *event) //customContextMenuRequested(const QPoint &pos)
-void UIObjectItem::showPopupMenu(QPoint pos)
+void UIObject::showPopupMenu(QPoint pos)
 {
 
     _popupMenu.move(pos);
     _popupMenu.show();
 }
 
-void UIObjectItem::setInletsPos()
+void UIObject::setInletsPos()
 {
     float w = boundingRect().width() - 10;
     //w = (w < 40) ? 40 : w;
@@ -121,7 +121,7 @@ void UIObjectItem::setInletsPos()
     }
 }
 
-void UIObjectItem::setOutletsPos()
+void UIObject::setOutletsPos()
 {
     float w = boundingRect().width() - 10;
     //w = (w < 40) ? 40 : w;
@@ -138,7 +138,7 @@ void UIObjectItem::setOutletsPos()
     }
 }
 
-void UIObjectItem::addInlet()
+void UIObject::addInlet()
 {
     int _portClass_;
 
@@ -150,7 +150,7 @@ void UIObjectItem::addInlet()
     addInlet(_portClass_);
 }
 
-void UIObjectItem::addInlet(int _portClass_)
+void UIObject::addInlet(int _portClass_)
 {
     Port* new_in = new Port(this);
     new_in->setPortType (portInlet);
@@ -168,7 +168,7 @@ void UIObjectItem::addInlet(int _portClass_)
     setInletsPos();
 }
 
-void UIObjectItem::addOutlet()
+void UIObject::addOutlet()
 {
     int _portClass_;
 
@@ -180,7 +180,7 @@ void UIObjectItem::addOutlet()
     addOutlet(_portClass_);
 }
 
-void UIObjectItem::addOutlet(int _portClass_)
+void UIObject::addOutlet(int _portClass_)
 {
     Port* new_out = new Port(this);
     new_out->setPortType (portOutlet);
@@ -198,7 +198,7 @@ void UIObjectItem::addOutlet(int _portClass_)
     setOutletsPos();
 }
 
-Port *UIObjectItem::inletAt(int idx)
+Port *UIObject::inletAt(int idx)
 {
     if (idx < ((int)_inlets->size()))
         return _inlets->at(idx);
@@ -206,7 +206,7 @@ Port *UIObjectItem::inletAt(int idx)
         return 0;
 }
 
-Port* UIObjectItem::outletAt(int idx)
+Port* UIObject::outletAt(int idx)
 {
     if (idx < ((int)_outlets->size()))
         return _outlets->at(idx);
@@ -214,7 +214,7 @@ Port* UIObjectItem::outletAt(int idx)
         return 0;
 }
 
-int UIObjectItem::pdInletType(int idx)
+int UIObject::pdInletType(int idx)
 {
     if ((t_object*)_pdObject)
         return cmp_get_inlet_type((t_object*)_pdObject, idx);
@@ -222,12 +222,12 @@ int UIObjectItem::pdInletType(int idx)
         return 0;
 }
 
-int UIObjectItem::inletCount()
+int UIObject::inletCount()
 {
     return _inlets->size();
 }
 
-int UIObjectItem::pdOutletType(int idx)
+int UIObject::pdOutletType(int idx)
 {
     if ((t_object*)_pdObject)
         return cmp_get_outlet_type((t_object*)_pdObject, idx);
@@ -235,19 +235,19 @@ int UIObjectItem::pdOutletType(int idx)
         return 0;
 }
 
-int UIObjectItem::outletCount()
+int UIObject::outletCount()
 {
     return _outlets->size();
 }
 
 ////////
 
-void UIObjectItem::setObjectData(std::string objData)
+void UIObject::setObjectData(std::string objData)
 {
     _objectData = objData;
 }
 
-void UIObjectItem::autoResize()
+void UIObject::autoResize()
 {
     QFont myFont(PREF_QSTRING("Font"), 11);
     QFontMetrics fm(myFont);
@@ -257,20 +257,20 @@ void UIObjectItem::autoResize()
         setWidth(minimumBoxWidth());
 }
 
-std::string UIObjectItem::objectData()
+std::string UIObject::objectData()
 {
     return _objectData;
 }
 
-void* UIObjectItem::pdObject() { return _pdObject; }
+void* UIObject::pdObject() { return _pdObject; }
 
-void UIObjectItem::setPdObject(void* obj) { _pdObject = obj; }
+void UIObject::setPdObject(void* obj) { _pdObject = obj; }
 
-bool UIObjectItem::errorBox() { return _errorBox; }
+bool UIObject::errorBox() { return _errorBox; }
 
-void UIObjectItem::setErrorBox(bool val) { _errorBox = val; }
+void UIObject::setErrorBox(bool val) { _errorBox = val; }
 
-std::string UIObjectItem::asPdFileString()
+std::string UIObject::asPdFileString()
 {
     std::string ret;
 
@@ -289,17 +289,17 @@ std::string UIObjectItem::asPdFileString()
 //    pdObjectName_ = name;
 //}
 
-QMainWindow* UIObjectItem::subpatchWindow()
+QMainWindow* UIObject::subpatchWindow()
 {
     return _SubpatchWindow;
 }
 
-void UIObjectItem::setSubpatchWindow(QMainWindow* cwindow)
+void UIObject::setSubpatchWindow(QMainWindow* cwindow)
 {
     _SubpatchWindow = cwindow;
 }
 
-void UIObjectItem::setEditModeRef(t_editMode* canvasEditMode)
+void UIObject::setEditModeRef(t_editMode* canvasEditMode)
 {
     UIItem::setEditModeRef(canvasEditMode);
 
@@ -315,7 +315,7 @@ void UIObjectItem::setEditModeRef(t_editMode* canvasEditMode)
 
 //----------------------------------------
 
-void UIObjectItem::resizeEvent(QResizeEvent* event)
+void UIObject::resizeEvent(QResizeEvent* event)
 {
 
     _sizeBox->move(boundingRect().width() - 7, boundingRect().height() - 7);
@@ -332,13 +332,13 @@ void UIObjectItem::resizeEvent(QResizeEvent* event)
     properties()->set("Size", boundingRect().size());
 }
 
-void UIObjectItem::hoverEnterEvent(QGraphicsSceneHoverEvent*)
+void UIObject::hoverEnterEvent(QGraphicsSceneHoverEvent*)
 {
     if (getEditMode() == em_Unlocked)
         _sizeBox->show();
 }
 
-void UIObjectItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *)
+void UIObject::hoverLeaveEvent(QGraphicsSceneHoverEvent *)
 {
     if (getEditMode() == em_Unlocked)
         _sizeBox->hide();
@@ -350,7 +350,7 @@ void UIObjectItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *)
 /// \brief set secondary 'minimum width' value - used for object box resize
 /// \param w
 ///
-void UIObjectItem::setMinimumBoxWidth(int w)
+void UIObject::setMinimumBoxWidth(int w)
 {
     _minimumBoxWidth = w;
 }
@@ -359,7 +359,7 @@ void UIObjectItem::setMinimumBoxWidth(int w)
 /// \brief set secondary 'minimum height' value - used for object box resize
 /// \param w
 ///
-void UIObjectItem::setMinimumBoxHeight(int h)
+void UIObject::setMinimumBoxHeight(int h)
 {
     _minimumBoxHeight = h;
 }
@@ -368,7 +368,7 @@ void UIObjectItem::setMinimumBoxHeight(int h)
 /// \brief get secondary 'minimum width' value - used for object box resize
 /// \param w
 ///
-int UIObjectItem::minimumBoxWidth()
+int UIObject::minimumBoxWidth()
 {
     return _minimumBoxWidth;
 }
@@ -377,13 +377,13 @@ int UIObjectItem::minimumBoxWidth()
 /// \brief get secondary 'minimum height' value - used for object box resize
 /// \param w
 ///
-int UIObjectItem::minimumBoxHeight()
+int UIObject::minimumBoxHeight()
 {
     return _minimumBoxHeight;
 }
 
 // ??
-void UIObjectItem::hide()
+void UIObject::hide()
 {
 
     if (subpatchWindow()) {
@@ -394,19 +394,19 @@ void UIObjectItem::hide()
     }
 }
 
-void UIObjectItem::hideSizeBox()
+void UIObject::hideSizeBox()
 {
     _sizeBox->hide();
 }
 
 
-void UIObjectItem::setHelpName(QString name)
+void UIObject::setHelpName(QString name)
 {
     _fullHelpName = name;
 
 }
 
-QString UIObjectItem::fullHelpName() {
+QString UIObject::fullHelpName() {
 
     QString name = _fullHelpName;
 
@@ -447,13 +447,13 @@ QString UIObjectItem::fullHelpName() {
 
 // -------
 
-void UIObjectItem::openPropertiesWindow()
+void UIObject::openPropertiesWindow()
 {
     PropertiesWindow* pw = new PropertiesWindow(properties());
     pw->show();
 }
 
-void UIObjectItem::openHelpWindow()
+void UIObject::openHelpWindow()
 {
     QString fullHelpName_ = fullHelpName();
     if (fullHelpName_ != "") {
@@ -465,13 +465,13 @@ void UIObjectItem::openHelpWindow()
 
 
 
-void UIObjectItem::s_repaint() //needed for proper threading
+void UIObject::s_repaint() //needed for proper threading
 {
      //viewport()->update();
 }
 
 
-void UIObjectItem::propertyChanged(QString pname)
+void UIObject::propertyChanged(QString pname)
 {
     // spaghetti again
 

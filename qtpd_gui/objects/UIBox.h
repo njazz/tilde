@@ -21,7 +21,7 @@ namespace qtpd {
 ////
 /// \brief gui object: standard object box
 ///
-class UIBox : public UIObjectItem {
+class UIBox : public UIObject {
 
     Q_OBJECT
 
@@ -34,7 +34,7 @@ public:
     explicit UIBox(); //(UIObjectItem* parent = 0);
     //~UIBox();
 
-    static UIObjectItem* createObject(std::string objectData, t_canvas* pd_Canvas, QGraphicsView* parent = 0)
+    static UIObject* createObject(std::string objectData, t_canvas* pd_Canvas, QGraphicsView* parent = 0)
     {
         //TODO fix all constructors
 
@@ -110,7 +110,7 @@ public:
         for (int i = 0; i < out_c; i++)
             b->addOutlet();
 
-        return (UIObjectItem*)b;
+        return (UIObject*)b;
     };
 
     ////
@@ -123,6 +123,7 @@ public:
         QBrush brush(bgColor());
         p->setBrush(brush);
         p->drawRect(boundingRect());
+        p->setBrush(QBrush());
 
         //remove this later
 

@@ -147,18 +147,18 @@ void PatchWindow::objectMakerDone()
 
     if (obj_name != "") {
 
-        UIObjectItem* new_obj = canvas->createObject(obj_name, canvas->objectMaker()->pos()); //"ui.obj",
+        UIObject* new_obj = canvas->createObject(obj_name, canvas->objectMaker()->pos()); //"ui.obj",
 
         if (canvas->replaceObject()) {
-            UIObjectItem* obj = canvas->replaceObject();
+            UIObject* obj = canvas->replaceObject();
 
             patchcordVec cords = canvas->patchcordsForObject(obj);
 
             patchcordVec::iterator it;
             for (it = cords.begin(); it != cords.end(); ++it) {
                 Patchcord* pc = ((Patchcord*)*it);
-                UIObjectItem* obj1 = pc->obj1();
-                UIObjectItem* obj2 = pc->obj2();
+                UIObject* obj1 = pc->obj1();
+                UIObject* obj2 = pc->obj2();
                 //replace
                 if (obj1 == obj)
                     obj1 = new_obj;

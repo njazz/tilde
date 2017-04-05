@@ -123,14 +123,14 @@ public:
 
     ////
 
-    UIObjectItem* obj1()
+    UIObject* obj1()
     {
-        return (UIObjectItem*)_obj1;
+        return (UIObject*)_obj1;
     }
 
-    UIObjectItem* obj2()
+    UIObject* obj2()
     {
-        return (UIObjectItem*)_obj2;
+        return (UIObject*)_obj2;
     }
 
     int outletIndex()

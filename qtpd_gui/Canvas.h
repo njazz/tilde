@@ -47,10 +47,10 @@ private:
     //tRectPlus _newLine;
 
     // local, !Box
-    UIObjectItem* _connectionStartObject;
-    UIObjectItem* _connectionStartOutlet;
+    UIObject* _connectionStartObject;
+    UIObject* _connectionStartOutlet;
     //
-    UIObjectItem* _replaceObject;
+    UIObject* _replaceObject;
 
     // local, !Box
     QPoint _newObjectPos;
@@ -94,7 +94,7 @@ private:
 
 public:
     // TODO encapsulate
-    UIObjectItem* dragObject;
+    UIObject* dragObject;
     QString fileName;
 
     explicit Canvas(QGraphicsView* parent = 0);
@@ -111,7 +111,7 @@ public:
     /// \param dStyle draw style - Canvas, Box, CanvasInBox
     /// \return
     ///
-    static Canvas* newView(Canvas* srcCanvas, UIObjectItem* parentCanvas, canvasDrawStyle dStyle);
+    static Canvas* newView(Canvas* srcCanvas, UIObject* parentCanvas, canvasDrawStyle dStyle);
 
     void addInlet();
 
@@ -249,7 +249,7 @@ public:
     /// \param pos
     /// \return
     ///
-    UIObjectItem* createObject(QString objectData1, QPoint pos);
+    UIObject* createObject(QString objectData1, QPoint pos);
 
     ////
     /// \brief TODO check. creates object box for subcanvas
@@ -258,7 +258,7 @@ public:
     /// \param pos
     /// \return
     ///
-    UIObjectItem* createBoxForCanvas(Canvas* newCanvas, std::string objectData, QPoint pos);
+    UIObject* createBoxForCanvas(Canvas* newCanvas, std::string objectData, QPoint pos);
 
     ////
     /// \brief creates patchcord
@@ -267,7 +267,7 @@ public:
     /// \param obj2
     /// \param inlet
     ///
-    void patchcord(UIObjectItem* obj1, int outlet, UIObjectItem* obj2, int inlet);
+    void patchcord(UIObject* obj1, int outlet, UIObject* obj2, int inlet);
 
     ////
     /// \brief creates patchcord, uses pointers to inlets/outlets. TODO temporary?
@@ -276,7 +276,7 @@ public:
     /// \param obj2
     /// \param inport
     ///
-    void patchcord(UIObjectItem* obj1, UIItem* outport, UIObjectItem* obj2, UIItem* inport);
+    void patchcord(UIObject* obj1, UIItem* outport, UIObject* obj2, UIItem* inport);
 
     //    ////unused?
     //    void deletePatchcord(Patchcord* pc)
@@ -299,7 +299,7 @@ public:
     ////
     /// \brief delete single box
     ///
-    void deleteBox(UIObjectItem* box);
+    void deleteBox(UIObject* box);
 
     ////
     /// \brief delete all selected object boxes
@@ -332,7 +332,7 @@ public:
     /// \param idx
     /// \return cm_widget pointer
     ///
-    UIObjectItem* getObjectByIndex(int idx);
+    UIObject* getObjectByIndex(int idx);
 
     ////
     /// \brief set object value - mostly for canvas as box
@@ -381,7 +381,7 @@ public:
     /// \param obj
     /// \return
     ///
-    patchcordVec patchcordsForObject(UIObjectItem* obj);
+    patchcordVec patchcordsForObject(UIObject* obj);
 
     //    //
     //    / \brief converts object pointers to their numbers in canvas and returns pd string for filesaver
@@ -395,7 +395,7 @@ public:
     /// \param obj
     /// \return
     ///
-    int findObjectIndex(UIObjectItem* obj);
+    int findObjectIndex(UIObject* obj);
 
 //    ////
 //    /// \brief sets pointer to canvas object in subpatch
@@ -436,7 +436,7 @@ public:
     /// \brief selects single box. mostly used by replace object routine in objectmaker
     /// \param obj
     ///
-    void selectObject(UIObjectItem* obj);
+    void selectObject(UIObject* obj);
 
     ////
     /// \brief select all boxes
@@ -509,13 +509,13 @@ public slots:
     /// \brief sets 'replaceobject' pointer
     /// \param obj
     ///
-    void setReplaceObject(UIObjectItem* obj);
+    void setReplaceObject(UIObject* obj);
 
     ////
     /// \brief gets replaceObject
     /// \return
     ///
-    UIObjectItem* replaceObject();
+    UIObject* replaceObject();
 
     ////
     /// \brief shows object maker for 'new object' menu command
@@ -589,7 +589,7 @@ private slots:
     void objectStartsEdit(void* obj);
 
 signals:
-    std::pair<QMainWindow*, qtpd::UIObjectItem*> createSubpatchWindow();
+    std::pair<QMainWindow*, qtpd::UIObject*> createSubpatchWindow();
     void updatePortCount();
 };
 }

@@ -29,7 +29,7 @@ typedef std::vector<Port*> portItemVec;
 ////
 /// \brief base class for all object boxes - standard and special
 ///
-class UIObjectItem : public UIItem {
+class UIObject : public UIItem {
 
     Q_OBJECT
 
@@ -88,7 +88,7 @@ public:
     void setCanvas(void* canvas) { _canvas = canvas; }
 
     //cm_object();
-    explicit UIObjectItem(UIItem* parent = 0);
+    explicit UIObject(UIItem* parent = 0);
 
     ////
     /// \brief init properties for the class - called from constructor

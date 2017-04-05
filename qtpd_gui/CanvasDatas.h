@@ -11,10 +11,10 @@
 
 namespace qtpd {
 
-typedef std::vector<UIObjectItem*> objectVec;
+typedef std::vector<UIObject*> objectVec;
 typedef std::vector<Patchcord*> patchcordVec;
 
-typedef std::set<UIObjectItem*> objectSet;
+typedef std::set<UIObject*> objectSet;
 //patchcord set?
 
 ////
@@ -45,7 +45,7 @@ public:
         return &_patchcords;
     }
 
-    void addUniqueBox(UIObjectItem* box)
+    void addUniqueBox(UIObject* box)
     {
         int p = findBox(box);
 
@@ -62,7 +62,7 @@ public:
         _patchcords.push_back(pc);
     }
 
-    int findBox(UIObjectItem* box)
+    int findBox(UIObject* box)
     {
         //todo
         for (int i = 0; i < _boxes.size(); i++) {
@@ -77,12 +77,12 @@ public:
     {
         QStringList ret;
 
-        std::vector<UIObjectItem*> objects = _boxes;
-        std::vector<UIObjectItem*>::iterator it;
+        std::vector<UIObject*> objects = _boxes;
+        std::vector<UIObject*>::iterator it;
 
         for (it = objects.begin(); it != objects.end(); ++it) {
 
-            std::string out1 = ((UIObjectItem*)*it)->asPdFileString();
+            std::string out1 = ((UIObject*)*it)->asPdFileString();
             out1 += ";\r\n";
 
             ret.append(out1.c_str());
@@ -91,10 +91,10 @@ public:
         return ret;
     }
 
-    int findObjectIndex(UIObjectItem* obj)
+    int findObjectIndex(UIObject* obj)
     {
         //UIObject* obj1;
-        std::vector<UIObjectItem*>::iterator iter = std::find(_boxes.begin(), _boxes.end(), obj);
+        std::vector<UIObject*>::iterator iter = std::find(_boxes.begin(), _boxes.end(), obj);
         size_t index = std::distance(_boxes.begin(), iter);
         if (index != _boxes.size()) {
             return index;

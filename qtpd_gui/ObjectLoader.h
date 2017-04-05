@@ -35,7 +35,7 @@ namespace qtpd {
 /// \brief 'constructor' method for each ui object derived from UIObject
 /// \details todo: proper way for constructors in UI* objects
 ///
-typedef UIObjectItem* (*cmObjectConstructor)(std::string objectData, t_canvas* pdCanvas, QGraphicsView* parent);
+typedef UIObject* (*cmObjectConstructor)(std::string objectData, t_canvas* pdCanvas, QGraphicsView* parent);
 
 ////
 /// \brief prototype for ui externals handling. stub
@@ -78,7 +78,7 @@ public:
     // todo remove?
     cmObjectConstructor getConstructorFor(QString objName);
 
-    UIObjectItem* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView *parent);
+    UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView *parent);
 };
 }
 
