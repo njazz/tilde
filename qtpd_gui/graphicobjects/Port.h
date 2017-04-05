@@ -19,6 +19,25 @@ namespace qtpd {
 ///
 class Port : public UIItem {
     Q_OBJECT
+protected:
+    virtual void hoverEnterEvent(QGraphicsSceneHoverEvent*)
+    {
+        qDebug("hover");
+        if (getEditMode() == em_Unlocked) {
+            setHover(true);
+
+//            emit mouseEntered();
+        }
+    }
+
+    virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent*)
+    {
+        if (getEditMode() == em_Unlocked) {
+            setHover(false);
+
+//            emit mouseLeaved();
+        }
+    }
 
 private:
     UIPortType _portType;
@@ -59,24 +78,8 @@ public:
         }
     }
 
-    void hoverEnterEvent(QEvent*)
-    {
-        qDebug("hover");
-        if (getEditMode() == em_Unlocked) {
-            setHover(true);
 
-            emit mouseEntered();
-        }
-    }
 
-    void hoverLeaveEvent(QEvent*)
-    {
-        if (getEditMode() == em_Unlocked) {
-            setHover(false);
-
-            emit mouseLeaved();
-        }
-    }
 
     void mousePressEvent(QGraphicsSceneMouseEvent* ev)
     {

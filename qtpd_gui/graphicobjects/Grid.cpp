@@ -6,5 +6,4 @@ Grid::Grid()
 {
     _gridStep = 20;
 }
-
 }

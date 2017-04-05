@@ -7,6 +7,8 @@
 #include <QGraphicsObject>
 #include <QWidget>
 
+#include <QDebug>
+
 // Widget extension
 // check / fix
 
@@ -31,7 +33,6 @@ private:
     QSize _size;
     QPoint _pos; //?
     QColor _bgColor;
-
 
 public:
     QPoint dragOffset;
@@ -87,15 +88,42 @@ public:
     // ---------
 
     void setSize(QSize size) { _size = size; }
-    void setSize(float w, float h) { _size = QSize(w,h); }
+    void setSize(float w, float h) { _size = QSize(w, h); }
     void setWidth(float w) { _size.setWidth(w); }
     void setHeight(float h) { _size.setHeight(h); }
 
-    QSize size(){return _size;}
+    void move(float x, float y)
+    {
+        _pos = QPoint(x, y);
+        setPos(_pos.x(), _pos.y());
+    }
+    void move(QPoint pos)
+    {
+        _pos = QPoint(pos.x(), pos.y());
+        setPos(_pos.x(), _pos.y());
+    }
+    void move(QPointF pos)
+    {
+        _pos = QPoint(pos.x(), pos.y());
+        setPos(_pos.x(), _pos.y());
+    }
+
+    float width() { return _size.width(); }
+    float height() { return _size.height(); }
+
+    QSize size() { return _size; }
 
     QRectF boundingRect() const
     {
+        //qDebug() <<QRectF(0, 0, _size.width(), _size.height());
         return QRectF(0, 0, _size.width(), _size.height());
+    }
+
+    QPainterPath shape() const
+    {
+        QPainterPath path;
+        path.addRect(boundingRect().toRect());
+        return path;
     }
 
     void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget){};
@@ -106,20 +134,12 @@ public:
     bool hover() { return _hover; }
     void setHover(bool h) { _hover = h; }
 
-    void move(float x, float y) { _pos = QPoint(x, y); setPos(_pos.x(), _pos.y()); }
-    void move(QPoint pos) {  _pos = QPoint(_pos.x(), _pos.y()); setPos(_pos.x(), _pos.y()); }
-    void move(QPointF pos) { _pos = QPoint(_pos.x(), _pos.y()); setPos(_pos.x(), _pos.y()); }
-
-    float width() {return _size.width();}
-    float height() {return _size.height();}
-
-
 signals:
 
     void mousePressed(UIItem* obj, QGraphicsSceneMouseEvent* ev);
     void mouseReleased(UIItem* obj, QGraphicsSceneMouseEvent* ev);
-    void mouseEntered();
-    void mouseLeaved();
+//    void mouseEntered();
+//    void mouseLeaved();
 
     void selectBox(UIItem* box, QGraphicsSceneMouseEvent* event);
     void moveBox(UIItem* box, QGraphicsSceneMouseEvent* event);

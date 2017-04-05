@@ -13,6 +13,8 @@ Port::Port(UIItem* parent)
 
     _portType = portInlet;
     _portIndex = 0;
+
+
 }
 }
 

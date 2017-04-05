@@ -22,8 +22,6 @@
 //todo proper pattern
 #include "OpenFileProxy.h"
 
-
-
 namespace qtpd {
 
 typedef std::vector<Port*> portItemVec;
@@ -68,22 +66,26 @@ private:
     //
     QString _fullHelpName;
 
-    void * _canvas;
+    void* _canvas;
 
     //
-//    QString fullHelpName()
-//    {
-//        if (fullHelpName() == "")
-//            return "";
+    //    QString fullHelpName()
+    //    {
+    //        if (fullHelpName() == "")
+    //            return "";
 
-//        QString ret = "";
+    //        QString ret = "";
 
-//        return ret;
-//    }
+    //        return ret;
+    //    }
+
+protected:
+    virtual void hoverEnterEvent(QGraphicsSceneHoverEvent*);
+
+    virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent*);
 
 public:
-
-    void setCanvas(void* canvas){_canvas = canvas;}
+    void setCanvas(void* canvas) { _canvas = canvas; }
 
     //cm_object();
     explicit UIObjectItem(UIItem* parent = 0);
@@ -257,10 +259,6 @@ public:
     //////////
 
     void resizeEvent(QResizeEvent* event);
-
-    void hoverEnterEvent(QEvent*);
-
-    void hoverLeaveEvent(QEvent*);
 
     // ------------------------
 

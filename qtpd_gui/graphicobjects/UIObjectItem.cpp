@@ -332,13 +332,13 @@ void UIObjectItem::resizeEvent(QResizeEvent* event)
     properties()->set("Size", boundingRect().size());
 }
 
-void UIObjectItem::hoverEnterEvent(QEvent*)
+void UIObjectItem::hoverEnterEvent(QGraphicsSceneHoverEvent*)
 {
     if (getEditMode() == em_Unlocked)
         _sizeBox->show();
 }
 
-void UIObjectItem::hoverLeaveEvent(QEvent*)
+void UIObjectItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *)
 {
     if (getEditMode() == em_Unlocked)
         _sizeBox->hide();

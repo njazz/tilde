@@ -44,8 +44,6 @@ Canvas::Canvas(QGraphicsView* parent)
 
     Canvas::setEditMode(em_Unlocked);
 
-    //
-    //_gridEnabled = true;
     _grid = new Grid;
     setScene(new QGraphicsScene(0, 0, 400, 300, this));
     scene()->addItem(_grid);
@@ -71,20 +69,15 @@ Canvas::Canvas(QGraphicsView* parent)
     _objectMaker = new ObjectMaker((QLineEdit*)this);
     _objectMaker->hide();
 
-    //
-    //setMinimumBoxWidth(40);
-    //setMinimumBoxHeight(20);
-
     _replaceObject = 0;
 
     _filePath = Preferences::inst().get("Patches")->asQString();
-
-    //setScale(.5);
 
     //_canvasEditMode = em_Unlocked;
 
     // ------NEW
     setStyleSheet("QGraphicsView { border-style: none; }");
+    setMouseTracking(true);
     //setAcceptHoverEvents(true);
 }
 
@@ -462,12 +455,15 @@ bool Canvas::clickPatchcords(QPoint pos)
 void Canvas::mouseMoveEvent(QMouseEvent* ev)
 {
     QGraphicsView::mouseMoveEvent(ev);
+
     // if (drawStyle() == ds_Canvas)
 
     //if (ev->isAccepted())
     mouseMoveEventForCanvas(ev);
     //    if (drawStyle() == ds_Box)
     //        mouseMoveEventForBox(ev);
+
+
 }
 
 void Canvas::mousePressEvent(QMouseEvent* ev)
@@ -1273,9 +1269,9 @@ void Canvas::canvasFromPdStrings(QStringList strings)
 void Canvas::cancelPatchcord()
 {
     _newLine->setActive(false);
-    ;
 
-    //viewport()->update();
+    // TODO
+    viewport()->update();
 }
 
 ObjectMaker* Canvas::objectMaker()
