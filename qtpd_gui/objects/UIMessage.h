@@ -108,11 +108,11 @@ public:
         p->drawText(2, 3, width() - 2, height() - 3, 0, objectData().c_str(), 0);
     }
 
-//    void resizeEvent(QResizeEvent* )
-//    {
-//        UIObject::resizeEvent(ev);
-//        _editor->setFixedWidth(width() - 5);
-//    }
+    void resizeEvent()//QResizeEvent* )
+    {
+        UIObject::resizeEvent();
+        _editor->setFixedWidth(width() - 5);
+    }
 
 
 

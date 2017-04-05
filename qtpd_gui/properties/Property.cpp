@@ -36,8 +36,8 @@ void Property::set(QPointF point)
 {
     AtomList list;
 
-    list.append(point.x());
-    list.append(point.y());
+    list.append(point.toPoint().x());
+    list.append(point.toPoint().y());
 
     _data = list;
     _type = ptVector;
@@ -73,8 +73,8 @@ void Property::set(QSizeF size)
 {
     AtomList list;
 
-    list.append(size.width());
-    list.append(size.height());
+    list.append(size.toSize().width());
+    list.append(size.toSize().height());
 
     _data = list;
     _type = ptVector;

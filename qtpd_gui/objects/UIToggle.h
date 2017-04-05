@@ -94,7 +94,7 @@ public:
         p->drawRect(0, 0, width(), height());
     }
 
-    void resizeEvent(QResizeEvent* event)
+    void resizeEvent()//QResizeEvent* event)
     {
         //UIObject::resizeEvent(event);
         setHeight(width());

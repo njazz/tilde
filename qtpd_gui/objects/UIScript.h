@@ -357,13 +357,13 @@ public:
         }
     }
 
-    void resizeEvent(QResizeEvent* event)
+    void resizeEvent()//QResizeEvent* event)
     {
-        //UIObject::resizeEvent(event);
+        UIObject::resizeEvent();
         _editor->setFixedWidth(width() - 5);
         _editor->setFixedHeight(height() - 25);
 
-        properties()->set("Size", size());
+        //properties()->set("Size", size());
     }
 
     ///////////////////

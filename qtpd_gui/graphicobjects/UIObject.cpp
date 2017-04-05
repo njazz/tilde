@@ -332,22 +332,23 @@ void UIObject::setEditModeRef(t_editMode* canvasEditMode)
 
 //----------------------------------------
 
-//void UIObject::resizeEvent(QGraphicsSceneResizeEvent *event)
-//{
+void UIObject::resizeEvent()//QGraphicsSceneResizeEvent *event)
+{
 
-////    _sizeBox->move(boundingRect().width() - 7, boundingRect().height() - 7);
+    _sizeBox->move(boundingRect().width() - 7, boundingRect().height() - 7);
 
-////    //todo fixed width
-////    if (boundingRect().width() < minimumBoxWidth())
-////        setWidth(minimumBoxWidth());
-////    if (boundingRect().height() < minimumBoxHeight())
-////        setHeight(minimumBoxHeight());
+    //todo fixed width
+    if (boundingRect().width() < minimumBoxWidth())
+        setWidth(minimumBoxWidth());
+    if (boundingRect().height() < minimumBoxHeight())
+        setHeight(minimumBoxHeight());
 
-////    setInletsPos();
-////    setOutletsPos();
+    setInletsPos();
+    setOutletsPos();
 
-////    properties()->set("Size", boundingRect().size());
-//}
+    // needs fix
+    //properties()->set("Size", boundingRect().size());
+}
 
 void UIObject::hoverEnterEvent(QGraphicsSceneHoverEvent*)
 {

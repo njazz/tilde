@@ -85,10 +85,11 @@ public:
         p->drawRect(0, 0, width(), height());
     }
 
-    void resizeEvent(QResizeEvent* event)
+    virtual void resizeEvent() //QResizeEvent* event)
     {
-        //UIObject::resizeEvent(event);
+
         setHeight(width());
+        // this will call resize event
     }
     ///////////////////
 
