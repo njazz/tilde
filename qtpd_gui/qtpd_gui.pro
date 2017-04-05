@@ -75,7 +75,8 @@ SOURCES += main.cpp\
     graphicobjects/Patchcord.cpp \
 #
     objects/UISubpatch.cpp \
-    graphicobjects/UIObject.cpp
+    graphicobjects/UIObject.cpp \
+    Clipboard.cpp
 
 
 HEADERS  += \
@@ -130,7 +131,6 @@ HEADERS  += \
     window/PdWindow.h \
     window/PropertiesWindow.h \
     Canvas.h \
-    CanvasDatas.h \
     #UIObject.h \
     #UIWidget.h \
     #Port.h \
@@ -164,7 +164,9 @@ HEADERS  += \
     objects/UISubpatch.h \
     graphicobjects/Patchcord.h \
 #
-    graphicobjects/UIObject.h
+    graphicobjects/UIObject.h \
+    Clipboard.h \
+    CanvasData.h
 
 
 FORMS    += \

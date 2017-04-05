@@ -11,7 +11,7 @@
 #include "FileParser.h"
 #include "FileSaver.h"
 
-#include "CanvasDatas.h"
+#include "CanvasData.h"
 
 #include "../qtpd_lib/ceammc-lib/ceammc_atomlist.h"
 #include "../qtpd_lib/src/m_pd.h"

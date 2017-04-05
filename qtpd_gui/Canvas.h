@@ -21,7 +21,9 @@
 
 //todo - move to window?
 //#include "cm_clipboard.h"
-#include "CanvasDatas.h"
+#include "CanvasData.h"
+
+#include "Clipboard.h"
 
 namespace qtpd {
 
@@ -36,8 +38,8 @@ namespace qtpd {
 ///
 class Canvas : public QGraphicsView {
 private:
-    canvasDataPlus _data;
-    canvasData _selectionData;
+    canvasDataPlus _canvasData;
+    //canvasData _selectionData;
 
     UIObject* _connectionStartObject;
     UIObject* _connectionStartOutlet;
@@ -53,7 +55,7 @@ private:
     //
 
     ObjectMaker* _objectMaker;
-    QStringList _clipboard;
+    //QStringList _clipboard;
 
     bool _keepPdObject;
 
@@ -71,11 +73,16 @@ private:
     t_canvas* _pdObject;
     UIObject* _dragObject;
 
+
+
     Q_OBJECT
 
 public:
     // TODO encapsulate
     //UIObject* dragObject;
+
+    // todo fix
+    canvasDataPlus* canvasData(){return &_canvasData;}
 
     UIObject * dragObject(){return _dragObject;}
     void setDragObject(UIObject* object){_dragObject = object;}
