@@ -260,7 +260,7 @@ public:
 
     //////////
 
-    void resizeEvent(QResizeEvent* event);
+//    void resizeEvent(QGraphicsSceneResizeEvent* event);
 
     // ------------------------
 

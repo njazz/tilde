@@ -8,7 +8,7 @@
 #include <QMainWindow>
 #include <QtGui>
 
-#include "UIObjectItem.h"
+#include "UIObject.h"
 
 //lazy way
 //todo proper pattern
@@ -228,10 +228,10 @@ public:
     }
 
     //
-    virtual void hoverEnterEvent(QGraphicsSceneHoverEvent *)
-    {
-     //   qDebug("box hover");
-    }
+//    virtual void hoverEnterEvent(QGraphicsSceneHoverEvent *)
+//    {
+//        qDebug("box hover");
+//    }
 
     void setPdMessage(std::string message)
     {

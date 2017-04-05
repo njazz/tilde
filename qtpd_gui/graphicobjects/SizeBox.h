@@ -12,6 +12,8 @@
 
 #include <QObject>
 
+#include <QGraphicsSceneMouseEvent>
+
 namespace qtpd {
 
 
@@ -41,7 +43,7 @@ public:
         p->drawRect(0, 0, boundingRect().width(), boundingRect().height());
     };
 
-    void mousePressEvent(QMouseEvent* event)
+    void mousePressEvent(QGraphicsSceneMouseEvent* event)
     {
         setCursor(QCursor(Qt::SizeHorCursor));
 
@@ -51,17 +53,19 @@ public:
         _prevY = 0;
     };
 
-    void mouseReleaseEvent(QMouseEvent* event)
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
     {
         setCursor(QCursor(Qt::ArrowCursor));
 
         event->accept();
     };
 
-    void mouseMoveEvent(QMouseEvent* ev)
+    void mouseMoveEvent(QGraphicsSceneMouseEvent* ev)
     {
         //qDebug() << "resize" << (ev->x() - prevX);
-        emit resizeBoxEvent(ev->x() - _prevX, ev->y() - _prevY);
+        emit resizeBoxEvent(ev->pos().toPoint().x() - _prevX, ev->pos().toPoint().y() - _prevY);
+        _prevX = ev->pos().toPoint().x();
+        _prevY = ev->pos().toPoint().y();
     }
 
 signals:

@@ -70,11 +70,11 @@ SOURCES += main.cpp\
     graphicobjects/Port.cpp \
     graphicobjects/SizeBox.cpp \
     graphicobjects/UIItem.cpp \
-    graphicobjects/UIObjectItem.cpp \
     graphicobjects/Grid.cpp \
     graphicobjects/SelectionRect.cpp \
     graphicobjects/NewLine.cpp \
-    objects/UISubpatch.cpp
+    objects/UISubpatch.cpp \
+    graphicobjects/UIObject.cpp
 
 
 HEADERS  += \
@@ -158,11 +158,11 @@ HEADERS  += \
     graphicobjects/Port.h \
     graphicobjects/SizeBox.h \
     graphicobjects/UIItem.h \
-    graphicobjects/UIObjectItem.h \
     graphicobjects/Grid.h \
     graphicobjects/SelectionRect.h \
     graphicobjects/NewLine.h \
-    objects/UISubpatch.h
+    objects/UISubpatch.h \
+    graphicobjects/UIObject.h
 
 
 FORMS    += \

@@ -1,7 +1,7 @@
 // (c) 2017 Alex Nadzharov
 // License: GPL3
 
-#include "UIObjectItem.h"
+#include "UIObject.h"
 
 #include "Canvas.h"
 
@@ -49,6 +49,23 @@ void UIObject::resizeBox(int dx, int dy)
         setWidth(boundingRect().width() + dx);
     if (_objectSizeMode == os_Free)
         setHeight(boundingRect().height() + dy);
+
+    // moved
+
+    _sizeBox->move(boundingRect().width() - 7, boundingRect().height() - 7);
+
+    //todo fixed width
+    if (boundingRect().width() < minimumBoxWidth())
+        setWidth(minimumBoxWidth());
+    if (boundingRect().height() < minimumBoxHeight())
+        setHeight(minimumBoxHeight());
+
+    setInletsPos();
+    setOutletsPos();
+
+    properties()->set("Size", boundingRect().size());
+
+    update();
 };
 
 void UIObject::initProperties()
@@ -315,22 +332,22 @@ void UIObject::setEditModeRef(t_editMode* canvasEditMode)
 
 //----------------------------------------
 
-void UIObject::resizeEvent(QResizeEvent* event)
-{
+//void UIObject::resizeEvent(QGraphicsSceneResizeEvent *event)
+//{
 
-    _sizeBox->move(boundingRect().width() - 7, boundingRect().height() - 7);
+////    _sizeBox->move(boundingRect().width() - 7, boundingRect().height() - 7);
 
-    //todo fixed width
-    if (boundingRect().width() < minimumBoxWidth())
-        setWidth(minimumBoxWidth());
-    if (boundingRect().height() < minimumBoxHeight())
-        setHeight(minimumBoxHeight());
+////    //todo fixed width
+////    if (boundingRect().width() < minimumBoxWidth())
+////        setWidth(minimumBoxWidth());
+////    if (boundingRect().height() < minimumBoxHeight())
+////        setHeight(minimumBoxHeight());
 
-    setInletsPos();
-    setOutletsPos();
+////    setInletsPos();
+////    setOutletsPos();
 
-    properties()->set("Size", boundingRect().size());
-}
+////    properties()->set("Size", boundingRect().size());
+//}
 
 void UIObject::hoverEnterEvent(QGraphicsSceneHoverEvent*)
 {

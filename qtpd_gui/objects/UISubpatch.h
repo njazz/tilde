@@ -8,7 +8,7 @@
 #include <QMainWindow>
 #include <QtGui>
 
-#include "UIObjectItem.h"
+#include "UIObject.h"
 
 //lazy way
 //todo proper pattern
