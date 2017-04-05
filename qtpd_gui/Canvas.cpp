@@ -756,7 +756,7 @@ UIObject* Canvas::createObject(QString objectData1, QPoint pos) //std::string UI
 
     UIObject* obj = ObjectLoader::inst().createObject(objectData1, (t_canvas*)pdObject(), this);
 
-    obj->setCanvas((void*)this);
+    //obj->setCanvas((void*)this);
 
     connect(obj, &UIObject::selectBox, this, &Canvas::s_SelectBox);
     connect(obj, &UIObject::moveBox, this, &Canvas::s_MoveBox);

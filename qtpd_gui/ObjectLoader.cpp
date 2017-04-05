@@ -16,14 +16,14 @@ void ObjectLoader::loadObjects()
     addUIobject("ui.bang", &UIBang::createObject);
     addUIobject("ui.toggle", &UIToggle::createObject);
 
-//    addUIobject("ui.script", &UIScript::createObject);
+    addUIobject("ui.script", &UIScript::createObject);
 
     addUIobject("ui.array", &UIArray::createObject);
 
     addUIobject("pdclass", &UIClass::createObject);
     addUIobject("pdinstance", &UIInstance::createObject);
-//    addUIobject("method", &UIMethod::createObject);
-//    addUIobject("property", &UIProperty::createObject);
+    addUIobject("method", &UIMethod::createObject);
+    addUIobject("property", &UIProperty::createObject);
 
 //    addUIobject("ui.dsp", &UIDSP::createObject);
 

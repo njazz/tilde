@@ -28,10 +28,12 @@ CONFIG += static
   INCLUDEPATH += python/py2.7headers/
   macx: LIBS += -F/System/Library/Frameworks -framework Python
 
+DEFINES += WITH_PYTHON
+
 SOURCES += main.cpp\
 #
-#    python/PythonQtScriptingConsole.cpp \
-#    python/wrappers/py_wrappers.cpp \
+    python/PythonQtScriptingConsole.cpp \
+    python/wrappers/py_wrappers.cpp \
 #
     objects/UIArray.cpp \
     objects/UIBox.cpp \
@@ -40,10 +42,12 @@ SOURCES += main.cpp\
     objects/UIToggle.cpp \
     objects/UIBang.cpp \
     objects/UIText.cpp \
-#    objects/UIScript.cpp \
+    objects/UIScript.cpp \
     oopd/OOPD.cpp \
     oopd/UIClass.cpp \
     oopd/UIInstance.cpp \
+    oopd/UIMethod.cpp \
+    oopd/UIProperty.cpp \
     oopd/OPInstance.cpp \
     oopd/OPClass.cpp \
 #
@@ -63,8 +67,6 @@ SOURCES += main.cpp\
     properties/Property.cpp \
     properties/PropertyList.cpp \
 #    objects/UIDSP.cpp \
-#    oopd/UIMethod.cpp \
-#    oopd/UIProperty.cpp \
     graphicobjects/Port.cpp \
     graphicobjects/SizeBox.cpp \
     graphicobjects/UIItem.cpp \
@@ -79,52 +81,55 @@ SOURCES += main.cpp\
 
 
 HEADERS  += \
-    #cm_clipboard.h \
     #
-#    python/PythonQtScriptingConsole.h \
-#    python/headers/PythonQtStdDecorators.h \
-#    python/headers/PythonQtDoc.h \
-#    python/headers/PythonQt.h \
-#    python/headers/PythonQtClassInfo.h \
-#    python/headers/PythonQtClassWrapper.h \
-#    python/headers/PythonQtConversion.h \
-#    python/headers/PythonQtInstanceWrapper.h \
-#    python/headers/PythonQtProperty.h \
-#    python/headers/PythonQtSignal.h \
-#    python/headers/PythonQtSlotDecorator.h \
-#    python/headers/PythonQtImporter.h \
-#    python/headers/PythonQtMethodInfo.h \
-#    python/headers/PythonQtSlot.h \
-#    python/headers/PythonQtBoolResult.h \
-#    python/headers/PythonQtUtils.h \
-#    python/headers/PythonQtPythonInclude.h \
-#    python/headers/PythonQtMisc.h \
-#    python/headers/PythonQtObjectPtr.h \
-#    python/headers/PythonQtSignalReceiver.h \
-#    python/headers/PythonQtImportFileInterface.h \
-#    python/headers/PythonQtCppWrapperFactory.h \
-#    python/headers/PythonQtStdIn.h \
-#    python/headers/PythonQtStdOut.h \
-#    python/headers/PythonQt_QtAll.h \
-#    python/headers/PythonQtQFileImporter.h \
-#    python/headers/PythonQtSystem.h \
-#    python/headers/PythonQtVariants.h \
-    #python/wrappers/py_qtpd.h \
-    #python/wrappers/py_wrappers.h \
+    python/PythonQtScriptingConsole.h \
+    python/headers/PythonQtStdDecorators.h \
+    python/headers/PythonQtDoc.h \
+    python/headers/PythonQt.h \
+    python/headers/PythonQtClassInfo.h \
+    python/headers/PythonQtClassWrapper.h \
+    python/headers/PythonQtConversion.h \
+    python/headers/PythonQtInstanceWrapper.h \
+    python/headers/PythonQtProperty.h \
+    python/headers/PythonQtSignal.h \
+    python/headers/PythonQtSlotDecorator.h \
+    python/headers/PythonQtImporter.h \
+    python/headers/PythonQtMethodInfo.h \
+    python/headers/PythonQtSlot.h \
+    python/headers/PythonQtBoolResult.h \
+    python/headers/PythonQtUtils.h \
+    python/headers/PythonQtPythonInclude.h \
+    python/headers/PythonQtMisc.h \
+    python/headers/PythonQtObjectPtr.h \
+    python/headers/PythonQtSignalReceiver.h \
+    python/headers/PythonQtImportFileInterface.h \
+    python/headers/PythonQtCppWrapperFactory.h \
+    python/headers/PythonQtStdIn.h \
+    python/headers/PythonQtStdOut.h \
+    python/headers/PythonQt_QtAll.h \
+    python/headers/PythonQtQFileImporter.h \
+    python/headers/PythonQtSystem.h \
+    python/headers/PythonQtVariants.h \
+    python/wrappers/py_qtpd.h \
+    python/wrappers/py_wrappers.h \
     objects/UIBang.h \
     objects/UIArray.h \
     objects/UIToggle.h \
     objects/UIText.h \
-#    objects/UIScript.h \
+    objects/UIScript.h \
     objects/UIFloat.h \
     objects/UIBox.h \
     objects/UIMessage.h \
     #
     oopd/OOPD.h \
+    oopd/OOPDClassBase.h \
+    oopd/OOPDHeaders.h \
     oopd/UIClass.h \
     oopd/UIInstance.h \
     oopd/OPClass.h \
     oopd/OPInstance.h \
+    oopd/UIMethod.h \
+    oopd/UIProperty.h \
     #
     objects/UIArrayEditor.h \
     window/BaseWindow.h \
@@ -132,8 +137,6 @@ HEADERS  += \
     window/PdWindow.h \
     window/PropertiesWindow.h \
     Canvas.h \
-    #Port.h \
-    #SizeBox.h \
 #
     FileParser.h \
     FileSaver.h \
@@ -147,10 +150,6 @@ HEADERS  += \
     properties/Property.h \
     properties/PropertyList.h \
 #    objects/UIDSP.h \
-#    oopd/UIMethod.h \
-#    oopd/UIProperty.h \
-#    oopd/OOPDClassBase.h \
-#    oopd/OOPDHeaders.h \
     graphicobjects/common_types.h \
     graphicobjects/Port.h \
     graphicobjects/SizeBox.h \

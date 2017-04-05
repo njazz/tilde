@@ -20,12 +20,12 @@
 
 #include "UIArray.h"
 
-//#include "UIScript.h"
+#include "UIScript.h"
 
 #include "oopd/UIClass.h"
 #include "oopd/UIInstance.h"
-//#include "oopd/UIMethod.h"
-//#include "oopd/UIProperty.h"
+#include "oopd/UIMethod.h"
+#include "oopd/UIProperty.h"
 
 //#include "UIDSP.h"
 

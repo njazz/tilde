@@ -5,7 +5,7 @@
 #define PY_WRAPERS_H
 
 #include "UIBox.h"
-#include "UIObjectItem.h"
+#include "UIObject.h"
 
 #include <PythonQt.h>
 #include <PythonQt_QtAll.h>

@@ -282,11 +282,16 @@ private:
     QStringList _inputList;
 
 public:
-    explicit UIScript(UIObject* parent = 0);
+    explicit UIScript();//UIObject* parent = 0);
 
-    static UIObject* createObject(std::string objectData, t_canvas* pdCanvas, UIWidget* parent = 0)
+    static UIObject* createObject(std::string objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
     {
-        UIScript* b = new UIScript((UIObject*)parent);
+        qDebug() << "ui.script";
+
+        UIScript* b = new UIScript();//(UIObject*)parent);
+        b->setCanvas((void*)parent);
+
+        b->_editor->setContext(pyWrapper::inst().withCanvas((QObject*)parent));
 
         std::string data1 = b->properties()->extractFromPdFileString(objectData);
         //if (data1 != "")
@@ -335,26 +340,26 @@ public:
         properties()->create("Script", "Data", "0.1", list);
     };
 
-    void paintEvent(QPaintEvent*)
+    virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* , QWidget* )
     {
-        QPainter p(viewport());
+        //QPainter p(viewport());
 
         if (getEditMode() == em_Unlocked) {
             if (isSelected()) {
-                p.setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+                p->setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
             } else if (_clicked) {
-                p.setPen(QPen(QColor(0, 192, 255), 4, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+                p->setPen(QPen(QColor(0, 192, 255), 4, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
             } else {
-                p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+                p->setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
             }
 
-            p.drawRect(0, 0, width(), height());
+            p->drawRect(0, 0, width(), height());
         }
     }
 
     void resizeEvent(QResizeEvent* event)
     {
-        UIObject::resizeEvent(event);
+        //UIObject::resizeEvent(event);
         _editor->setFixedWidth(width() - 5);
         _editor->setFixedHeight(height() - 25);
 
@@ -363,18 +368,18 @@ public:
 
     ///////////////////
 
-    void mousePressEvent(QMouseEvent* ev)
+    void mousePressEvent(QGraphicsSceneMouseEvent* ev)
     {
 
         emit selectBox(this, ev);
-        dragOffset = ev->pos();
+        dragOffset = ev->pos().toPoint();
     }
 
-    void mouseReleaseEvent(QMouseEvent*)
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent*)
     {
     }
 
-    void mouseMoveEvent(QMouseEvent* event)
+    void mouseMoveEvent(QGraphicsSceneMouseEvent* event)
     {
         if (event->buttons() & Qt::LeftButton) {
             emit moveBox(this, event);
@@ -395,7 +400,7 @@ public:
     {
         setObjectData(message);
 
-        setFixedSize(300, 200);
+        setSize(300, 200);
     }
 
     static void updateUI(void* uiobj, ceammc::AtomList msg)
