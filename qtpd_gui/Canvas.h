@@ -194,6 +194,7 @@ public:
     ///
     void mouseMoveEventForCanvas(QMouseEvent* ev);
 
+
     ////
     /// \brief mouse down handling for Canvas
     /// \param ev
@@ -569,6 +570,7 @@ public slots:
     void resizeEvent(QResizeEvent*ev)
     {
         _grid->setSize(size());
+        _grid->move(0,0);
     }
 
 private:

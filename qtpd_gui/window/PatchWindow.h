@@ -329,6 +329,9 @@ public:
         canvas->setMinimumSize(QSize(width() - canvas->x(), height() - canvas->y()));
 
         canvas->setWindowSize(size());
+
+        //FIX
+        canvas->move(0,0);
     }
 
     //----------------------------------------------------------------------------------------

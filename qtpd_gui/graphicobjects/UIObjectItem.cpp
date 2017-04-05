@@ -36,6 +36,8 @@ UIObjectItem::UIObjectItem(UIItem* parent)
     //this is default
     _objectSizeMode = os_FixedHeight;
 
+    setAcceptHoverEvents(true);
+
 
 }
 

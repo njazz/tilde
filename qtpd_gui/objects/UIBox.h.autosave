@@ -13,9 +13,8 @@
 //lazy way
 //todo proper pattern
 #include "OpenFileProxy.h"
-#include <QGraphicsView>
 #include <QGraphicsSceneMouseEvent>
-
+#include <QGraphicsView>
 
 namespace qtpd {
 
@@ -32,7 +31,7 @@ private:
     QString _abstractionPath;
 
 public:
-    explicit UIBox();//(UIObjectItem* parent = 0);
+    explicit UIBox(); //(UIObjectItem* parent = 0);
     //~UIBox();
 
     static UIObjectItem* createObject(std::string objectData, t_canvas* pd_Canvas, QGraphicsView* parent = 0)
@@ -41,7 +40,7 @@ public:
 
         qDebug("uibox");
 
-        UIBox* b = new UIBox();//(UIObjectItem*)parent);
+        UIBox* b = new UIBox(); //(UIObjectItem*)parent);
 
         b->setCanvas((void*)parent);
 
@@ -117,14 +116,13 @@ public:
     ////
     /// \brief paint event
     ///
-   void paint(QPainter *p, const QStyleOptionGraphicsItem *option, QWidget *widget)
+    void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget* widget)
     {
         p->setRenderHint(QPainter::HighQualityAntialiasing, true);
 
         QBrush brush(bgColor());
         p->setBrush(brush);
         p->drawRect(boundingRect());
-
 
         //remove this later
 
@@ -162,8 +160,8 @@ public:
         if (ev->button() == Qt::RightButton) {
             //
             //QPointF pos = ev->pos();
-//            QPoint pos = mapToGlobal(ev->pos().toPoint());
-//            showPopupMenu(pos);
+            //            QPoint pos = mapToGlobal(ev->pos().toPoint());
+            //            showPopupMenu(pos);
             ev->accept();
             return;
         }
@@ -192,17 +190,15 @@ public:
         }
 
         emit selectBox(this, ev);
-        dragOffset = QPoint(ev->pos().x(),ev->pos().y() );
-
-
+        dragOffset = QPoint(ev->pos().x(), ev->pos().y());
     }
 
     ////
     /// \brief mouse up
     ///
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent*ev)
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev)
     {
-         //viewport()->update();
+        //viewport()->update();
         QGraphicsItem::mouseReleaseEvent(ev);
     }
 

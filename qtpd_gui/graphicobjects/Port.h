@@ -43,6 +43,10 @@ public:
 
         p->setRenderHint(QPainter::HighQualityAntialiasing, true);
 
+        QBrush brush(bgColor());
+        p->setBrush(brush);
+        p->drawRect(boundingRect());
+
         if (_portClass)
             p->fillRect(0, 0, boundingRect().width(), boundingRect().height(), QColor(128, 160, 192));
 

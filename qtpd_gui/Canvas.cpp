@@ -53,6 +53,7 @@ Canvas::Canvas(QGraphicsView* parent)
     scene()->addItem(_selectionRect);
 
     _grid->setSize(300, 300);
+    _grid->move(0,0);
     _gridSnap = true;
     _grid->setGridStep(20);
 
@@ -613,7 +614,6 @@ void Canvas::mouseReleaseEventForCanvas(QMouseEvent*)
     dragObject = 0;
 
     _selectionRect->setActive(false);
-//    _newLine->setActive(false);
 
     //todo
     viewport()->update();
