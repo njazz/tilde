@@ -10,6 +10,8 @@
 
 #include "UIItem.h"
 
+#include <QGraphicsSceneMouseEvent>
+
 namespace qtpd {
 
 ////
@@ -77,6 +79,8 @@ public:
         qDebug("click port");
         if (getEditMode() == em_Unlocked) {
 
+            ev->accept();
+
             emit mousePressed(this, ev);
         }
     }
@@ -84,6 +88,9 @@ public:
     void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev)
     {
         if (getEditMode() == em_Unlocked) {
+
+            ev->accept();
+
             emit mouseReleased(this, ev);
         }
     }

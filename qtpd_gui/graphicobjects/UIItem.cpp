@@ -31,14 +31,12 @@ void UIItem::select()
 {
     _selected = true;
 
-     //   viewport()->update();
 }
 
 void UIItem::deselect()
 {
     _selected = false;
 
-     //   viewport()->update();
 }
 
 bool UIItem::isSelected() { return _selected; }

@@ -153,6 +153,7 @@ public:
     void mousePressEvent(QGraphicsSceneMouseEvent* ev)
     {
         qDebug("click");
+        QGraphicsItem::mousePressEvent(ev);
 
         //context menu
         if (ev->button() == Qt::RightButton) {
@@ -190,7 +191,7 @@ public:
         emit selectBox(this, ev);
         dragOffset = QPoint(ev->pos().x(),ev->pos().y() );
 
-        QGraphicsItem::mousePressEvent(ev);
+
     }
 
     ////

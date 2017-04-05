@@ -473,7 +473,7 @@ public slots:
     ///
     void s_SelectBox(UIItem* box, QGraphicsSceneMouseEvent *ev);
 
-    void s_SelectBoxItem(UIItem* box, QMouseEvent* ev);
+//    void s_SelectBoxItem(UIItem* box, QMouseEvent* ev);
 
     ////
     /// \brief TODO check. slot called by box when it starts moving
@@ -482,7 +482,7 @@ public slots:
     ///
     void s_MoveBox(UIItem* box, QGraphicsSceneMouseEvent *event);
 
-    void s_MoveBoxItem(UIItem* box, QMouseEvent* event);
+//    void s_MoveBoxItem(UIItem* box, QMouseEvent* event);
 
     //    void portMouseReleased();
     //    void portMouseEntered();
