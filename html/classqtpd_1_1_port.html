@@ -101,7 +101,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">qtpd::Port Class Reference</div>  </div>
 </div><!--header-->
@@ -133,10 +134,12 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_port.html#a009237b01a33c51bec489383174737e2">portIndex</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_port.html#a66bb5ddd424af43a1d5634298c313fac">setPortIndex</a> (<a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> pi)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_port.html#a69bf038b10902d40208798682acc7467">paint</a> (QPainter *<a class="el" href="floatobject_8h.html#af18a92ce774f4c499544fbcc894db7e8">p</a>, const QStyleOptionGraphicsItem *option, QWidget *widget)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_port.html#a4ed05f3cf69cdba2f28418c54dcab116">hoverEnterEvent</a> (QEvent *)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_port.html#a42bf2f4774d2a8837eb10181746dded6">hoverLeaveEvent</a> (QEvent *)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_port.html#a26156c74b5d036694dc3cdc65eaaee2b">mousePressEvent</a> (QGraphicsSceneMouseEvent *ev)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_port.html#a48974dfafb38e5dd183612075b2aa993">mouseReleaseEvent</a> (QGraphicsSceneMouseEvent *ev)</td></tr>
+<tr><td colspan="2"><h2><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_port.html#a9e65d318284c73f34ccb85eb28d32844">hoverEnterEvent</a> (QGraphicsSceneHoverEvent *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_port.html#a93264e4fd7a721b1c0a711bf90ebd363">hoverLeaveEvent</a> (QGraphicsSceneHoverEvent *)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>gui representation of t_inlet / t_outlet </p>
@@ -159,16 +162,16 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a4ed05f3cf69cdba2f28418c54dcab116"></a><!-- doxytag: member="qtpd::Port::hoverEnterEvent" ref="a4ed05f3cf69cdba2f28418c54dcab116" args="(QEvent *)" -->
+<a class="anchor" id="a9e65d318284c73f34ccb85eb28d32844"></a><!-- doxytag: member="qtpd::Port::hoverEnterEvent" ref="a9e65d318284c73f34ccb85eb28d32844" args="(QGraphicsSceneHoverEvent *)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_port.html#a4ed05f3cf69cdba2f28418c54dcab116">qtpd::Port::hoverEnterEvent</a> </td>
+          <td class="memname">virtual void <a class="el" href="classqtpd_1_1_port.html#a9e65d318284c73f34ccb85eb28d32844">qtpd::Port::hoverEnterEvent</a> </td>
           <td>(</td>
-          <td class="paramtype">QEvent *&#160;</td>
+          <td class="paramtype">QGraphicsSceneHoverEvent *&#160;</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td><code> [inline, protected, virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -176,16 +179,16 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a42bf2f4774d2a8837eb10181746dded6"></a><!-- doxytag: member="qtpd::Port::hoverLeaveEvent" ref="a42bf2f4774d2a8837eb10181746dded6" args="(QEvent *)" -->
+<a class="anchor" id="a93264e4fd7a721b1c0a711bf90ebd363"></a><!-- doxytag: member="qtpd::Port::hoverLeaveEvent" ref="a93264e4fd7a721b1c0a711bf90ebd363" args="(QGraphicsSceneHoverEvent *)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_port.html#a42bf2f4774d2a8837eb10181746dded6">qtpd::Port::hoverLeaveEvent</a> </td>
+          <td class="memname">virtual void <a class="el" href="classqtpd_1_1_port.html#a93264e4fd7a721b1c0a711bf90ebd363">qtpd::Port::hoverLeaveEvent</a> </td>
           <td>(</td>
-          <td class="paramtype">QEvent *&#160;</td>
+          <td class="paramtype">QGraphicsSceneHoverEvent *&#160;</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td><code> [inline, protected, virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -383,7 +386,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 4 2017 22:53:24 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Apr 5 2017 10:10:17 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

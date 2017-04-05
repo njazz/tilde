@@ -115,8 +115,8 @@ Classes</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">resize widget for all object boxes in patch  <a href="classqtpd_1_1_size_box.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_item.html">UIItem</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">parent class for all objects in the canvas  <a href="classqtpd_1_1_u_i_item.html#details">More...</a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object_item.html">UIObjectItem</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">base class for all object boxes - standard and special  <a href="classqtpd_1_1_u_i_object_item.html#details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">base class for all object boxes - standard and special  <a href="classqtpd_1_1_u_i_object.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_object_loader.html">ObjectLoader</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">prototype for ui externals handling. stub  <a href="classqtpd_1_1_object_loader.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_object_maker.html">ObjectMaker</a></td></tr>
@@ -137,6 +137,8 @@ Classes</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The editor for <a class="el" href="classqtpd_1_1_u_i_script.html" title="gui object: script editor box (ui.script)">UIScript</a>.  <a href="classqtpd_1_1_u_i_script_editor.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script.html">UIScript</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gui object: script editor box (ui.script)  <a href="classqtpd_1_1_u_i_script.html#details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_subpatch.html">UISubpatch</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gui object: standard object box  <a href="classqtpd_1_1_u_i_subpatch.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_text.html">UIText</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gui object: comment box (ui.text)  <a href="classqtpd_1_1_u_i_text.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_toggle.html">UIToggle</a></td></tr>
@@ -181,15 +183,14 @@ Classes</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="namespaceqtpd.html#a0384ba087089722ae1a2fa312df7e7b9">qtpd::_canvasDrawStyle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a3122dc9331556e1ca5ddad5fa6c9e7b7">canvasDrawStyle</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">draw canvas as patch, box or pd "G-O-P" / patch in patch  <a href="#a3122dc9331556e1ca5ddad5fa6c9e7b7"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef std::vector<br class="typebreak"/>
-&lt; <a class="el" href="classqtpd_1_1_u_i_object_item.html">UIObjectItem</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a310d3227a0919040c152c779257d7d28">objectVec</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#afd559ba823ec75738510eb0b1e9ddba7">objectVec</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="classqtpd_1_1_patchcord.html">Patchcord</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a81f1e9d2a3767de39a2b30057b599854">patchcordVec</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef std::set&lt; <a class="el" href="classqtpd_1_1_u_i_object_item.html">UIObjectItem</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a76bda1bf86eebdeda45fbd619530ce7f">objectSet</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef std::set&lt; <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#aa84b43c55cc2d7bd544fba8bddd2af2d">objectSet</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structqtpd_1_1__t_rect_plus.html">qtpd::_tRectPlus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#acc7022e996d4f1f97e4eefcb3482c8a5">tRectPlus</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">structure for selection rectangle  <a href="#acc7022e996d4f1f97e4eefcb3482c8a5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="classqtpd_1_1_port.html">Port</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a1c4f7beebd681561848cefcd8ea74412">portItemVec</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classqtpd_1_1_u_i_object_item.html">UIObjectItem</a> *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a46a3e19ea3add06b541141f54a564ba4">cmObjectConstructor</a> )(<a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> objectData, t_canvas *pdCanvas, QGraphicsView *parent)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">'constructor' method for each ui object derived from UIObject  <a href="#a46a3e19ea3add06b541141f54a564ba4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a1e70310df6a0f84e6f464d5c03ba2545">cmObjectConstructor</a> )(<a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> objectData, t_canvas *pdCanvas, QGraphicsView *parent)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">'constructor' method for each ui object derived from <a class="el" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>  <a href="#a1e70310df6a0f84e6f464d5c03ba2545"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef map&lt; t_canvas <br class="typebreak"/>
 *, <a class="el" href="classqtpd_1_1_o_p_class.html">OPClass</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#ae1bb6144c86ba121974062498a819dff">t_OPClassByCanvas</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef map&lt; t_symbol <br class="typebreak"/>
@@ -268,28 +269,28 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a46a3e19ea3add06b541141f54a564ba4"></a><!-- doxytag: member="qtpd::cmObjectConstructor" ref="a46a3e19ea3add06b541141f54a564ba4" args=")(std::string objectData, t_canvas *pdCanvas, QGraphicsView *parent)" -->
+<a class="anchor" id="a1e70310df6a0f84e6f464d5c03ba2545"></a><!-- doxytag: member="qtpd::cmObjectConstructor" ref="a1e70310df6a0f84e6f464d5c03ba2545" args=")(std::string objectData, t_canvas *pdCanvas, QGraphicsView *parent)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="classqtpd_1_1_u_i_object_item.html">UIObjectItem</a>*(* <a class="el" href="namespaceqtpd.html#a46a3e19ea3add06b541141f54a564ba4">qtpd::cmObjectConstructor</a>)(<a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> objectData, t_canvas *pdCanvas, QGraphicsView *parent)</td>
+          <td class="memname">typedef <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a>*(* <a class="el" href="namespaceqtpd.html#a1e70310df6a0f84e6f464d5c03ba2545">qtpd::cmObjectConstructor</a>)(<a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> objectData, t_canvas *pdCanvas, QGraphicsView *parent)</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>'constructor' method for each ui object derived from UIObject </p>
+<p>'constructor' method for each ui object derived from <a class="el" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> </p>
 <p>todo: proper way for constructors in UI* objects </p>
 
 </div>
 </div>
-<a class="anchor" id="a76bda1bf86eebdeda45fbd619530ce7f"></a><!-- doxytag: member="qtpd::objectSet" ref="a76bda1bf86eebdeda45fbd619530ce7f" args="" -->
+<a class="anchor" id="aa84b43c55cc2d7bd544fba8bddd2af2d"></a><!-- doxytag: member="qtpd::objectSet" ref="aa84b43c55cc2d7bd544fba8bddd2af2d" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::set&lt;<a class="el" href="classqtpd_1_1_u_i_object_item.html">UIObjectItem</a>*&gt; <a class="el" href="namespaceqtpd.html#a76bda1bf86eebdeda45fbd619530ce7f">qtpd::objectSet</a></td>
+          <td class="memname">typedef std::set&lt;<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a>*&gt; <a class="el" href="namespaceqtpd.html#aa84b43c55cc2d7bd544fba8bddd2af2d">qtpd::objectSet</a></td>
         </tr>
       </table>
 </div>
@@ -297,12 +298,12 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a310d3227a0919040c152c779257d7d28"></a><!-- doxytag: member="qtpd::objectVec" ref="a310d3227a0919040c152c779257d7d28" args="" -->
+<a class="anchor" id="afd559ba823ec75738510eb0b1e9ddba7"></a><!-- doxytag: member="qtpd::objectVec" ref="afd559ba823ec75738510eb0b1e9ddba7" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::vector&lt;<a class="el" href="classqtpd_1_1_u_i_object_item.html">UIObjectItem</a>*&gt; <a class="el" href="namespaceqtpd.html#a310d3227a0919040c152c779257d7d28">qtpd::objectVec</a></td>
+          <td class="memname">typedef std::vector&lt;<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a>*&gt; <a class="el" href="namespaceqtpd.html#afd559ba823ec75738510eb0b1e9ddba7">qtpd::objectVec</a></td>
         </tr>
       </table>
 </div>
@@ -696,7 +697,7 @@ Variables</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 4 2017 22:53:24 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Apr 5 2017 10:10:17 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

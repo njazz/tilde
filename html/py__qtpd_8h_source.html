@@ -108,39 +108,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00025"></a>00025 
 <a name="l00026"></a>00026 <span class="keyword">public</span> Q_SLOTS:
 <a name="l00027"></a>00027 
-<a name="l00028"></a><a class="code" href="classpy_u_i_object_decorator.html#af803d92c45f2599b741799e7c73ac2f5">00028</a>     UIObject* <a class="code" href="classpy_u_i_object_decorator.html#af803d92c45f2599b741799e7c73ac2f5">new_UIObject</a>(UIObject* parent) { <span class="keywordflow">return</span> <span class="keyword">new</span> UIObject(parent); }
-<a name="l00029"></a><a class="code" href="classpy_u_i_object_decorator.html#af6029148ef8ce10c321eb09d8b29928a">00029</a>     UIObject* <a class="code" href="classpy_u_i_object_decorator.html#af6029148ef8ce10c321eb09d8b29928a">new_UIObject</a>() { <span class="keywordflow">return</span> <span class="keyword">new</span> UIObject(0); }
-<a name="l00030"></a><a class="code" href="classpy_u_i_object_decorator.html#a30f45f7f0215548070db29e66e4baf8f">00030</a>     <span class="keywordtype">void</span> <a class="code" href="classpy_u_i_object_decorator.html#a30f45f7f0215548070db29e66e4baf8f">delete_UIObject</a>(UIObject* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>) { <span class="keyword">delete</span> <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>; }
+<a name="l00028"></a><a class="code" href="classpy_u_i_object_decorator.html#af803d92c45f2599b741799e7c73ac2f5">00028</a>     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classpy_u_i_object_decorator.html#af803d92c45f2599b741799e7c73ac2f5">new_UIObject</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* parent) { <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>(parent); }
+<a name="l00029"></a><a class="code" href="classpy_u_i_object_decorator.html#af6029148ef8ce10c321eb09d8b29928a">00029</a>     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classpy_u_i_object_decorator.html#af6029148ef8ce10c321eb09d8b29928a">new_UIObject</a>() { <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>(0); }
+<a name="l00030"></a><a class="code" href="classpy_u_i_object_decorator.html#a30f45f7f0215548070db29e66e4baf8f">00030</a>     <span class="keywordtype">void</span> <a class="code" href="classpy_u_i_object_decorator.html#a30f45f7f0215548070db29e66e4baf8f">delete_UIObject</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>) { <span class="keyword">delete</span> <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>; }
 <a name="l00031"></a>00031 
-<a name="l00032"></a><a class="code" href="classpy_u_i_object_decorator.html#a87fa6a23c9f44dbdb232b62bd0d25446">00032</a>     <span class="keywordtype">void</span> addInlet(UIObject* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
+<a name="l00032"></a><a class="code" href="classpy_u_i_object_decorator.html#a87fa6a23c9f44dbdb232b62bd0d25446">00032</a>     <span class="keywordtype">void</span> addInlet(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
 <a name="l00033"></a>00033     {
 <a name="l00034"></a>00034         <span class="keywordflow">if</span> (obj)
-<a name="l00035"></a>00035             obj-&gt;addInlet();
+<a name="l00035"></a>00035             obj-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a82f2402eac0e1f7e17cf767a658ffa4f" title="adds single inlet (cm_port)">addInlet</a>();
 <a name="l00036"></a>00036     }
 <a name="l00037"></a>00037 
-<a name="l00038"></a><a class="code" href="classpy_u_i_object_decorator.html#a903799dc56bb598835a99375d8595e2d">00038</a>     <span class="keywordtype">void</span> addOutlet(UIObject* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
+<a name="l00038"></a><a class="code" href="classpy_u_i_object_decorator.html#a903799dc56bb598835a99375d8595e2d">00038</a>     <span class="keywordtype">void</span> addOutlet(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
 <a name="l00039"></a>00039     {
 <a name="l00040"></a>00040         <span class="keywordflow">if</span> (obj)
-<a name="l00041"></a>00041             obj-&gt;addOutlet();
+<a name="l00041"></a>00041             obj-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a935156fec3fd59c05525f046bafb3ebc" title="adds single outlet (cm_port)">addOutlet</a>();
 <a name="l00042"></a>00042     }
 <a name="l00043"></a>00043 
-<a name="l00044"></a><a class="code" href="classpy_u_i_object_decorator.html#ad931674fe14868eef92235910c2b57ef">00044</a>     <span class="keywordtype">void</span> pdMessage(UIObject* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, QString data)
+<a name="l00044"></a><a class="code" href="classpy_u_i_object_decorator.html#ad931674fe14868eef92235910c2b57ef">00044</a>     <span class="keywordtype">void</span> pdMessage(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, QString data)
 <a name="l00045"></a>00045     {
-<a name="l00046"></a>00046         <span class="keywordflow">if</span> (obj-&gt;pdObject()) {
-<a name="l00047"></a>00047             <a class="code" href="_pd_link_8h.html#a9bca4af04ea4fac6b910933e5ba16814" title="send string as pd message to object">cmp_sendstring</a>((t_pd*)obj-&gt;pdObject(), data.toStdString());
+<a name="l00046"></a>00046         <span class="keywordflow">if</span> (obj-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ad41f2f9ff8447ea8dc061c3e8fc6528b" title="returns pointer to pd object.">pdObject</a>()) {
+<a name="l00047"></a>00047             <a class="code" href="_pd_link_8h.html#a9bca4af04ea4fac6b910933e5ba16814" title="send string as pd message to object">cmp_sendstring</a>((t_pd*)obj-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ad41f2f9ff8447ea8dc061c3e8fc6528b" title="returns pointer to pd object.">pdObject</a>(), data.toStdString());
 <a name="l00048"></a>00048         }
 <a name="l00049"></a>00049     }
 <a name="l00050"></a>00050 
 <a name="l00051"></a>00051     <span class="comment">// test</span>
-<a name="l00052"></a><a class="code" href="classpy_u_i_object_decorator.html#ab4c5b71b1e85a17d60a9e5fc2908a71a">00052</a>     <span class="keywordtype">void</span> scale(UIObject* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, <span class="keywordtype">float</span> scale)
+<a name="l00052"></a><a class="code" href="classpy_u_i_object_decorator.html#ab4c5b71b1e85a17d60a9e5fc2908a71a">00052</a>     <span class="keywordtype">void</span> scale(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, <span class="keywordtype">float</span> scale)
 <a name="l00053"></a>00053     {
-<a name="l00054"></a>00054         obj-&gt;setScale(scale);
+<a name="l00054"></a>00054         obj-&gt;<a class="code" href="classqtpd_1_1_u_i_item.html#a696734ab2ddc0f2a97b66a776388739c" title="temporary. scale value for zoom">setScale</a>(scale);
 <a name="l00055"></a>00055     }
 <a name="l00056"></a>00056 
 <a name="l00058"></a>00058 
-<a name="l00059"></a><a class="code" href="classpy_u_i_object_decorator.html#a3f1a895dde2e8ba92cdd8ff62cef192a">00059</a>     <a class="code" href="classqtpd_1_1_property_list.html" title="yet another property handling class for ui object. List">PropertyList</a>* prop(UIObject* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
+<a name="l00059"></a><a class="code" href="classpy_u_i_object_decorator.html#a3f1a895dde2e8ba92cdd8ff62cef192a">00059</a>     <a class="code" href="classqtpd_1_1_property_list.html" title="yet another property handling class for ui object. List">PropertyList</a>* prop(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
 <a name="l00060"></a>00060     {
-<a name="l00061"></a>00061         <span class="keywordflow">return</span> (<a class="code" href="classqtpd_1_1_property_list.html" title="yet another property handling class for ui object. List">PropertyList</a>*)obj-&gt;properties();
+<a name="l00061"></a>00061         <span class="keywordflow">return</span> (<a class="code" href="classqtpd_1_1_property_list.html" title="yet another property handling class for ui object. List">PropertyList</a>*)obj-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a69ed99ca86c7019f489f56b6dc96f8a4">properties</a>();
 <a name="l00062"></a>00062     }
 <a name="l00063"></a>00063 };
 <a name="l00064"></a>00064 
@@ -162,8 +162,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00082"></a>00082 
 <a name="l00083"></a>00083 <span class="keyword">public</span> Q_SLOTS:
 <a name="l00084"></a>00084 
-<a name="l00085"></a><a class="code" href="classpy_object_vec_decorator.html#a7788386055f1865fd55d51acc3a57e3b">00085</a>     <a class="code" href="namespaceqtpd.html#a310d3227a0919040c152c779257d7d28">objectVec</a>* <a class="code" href="classpy_object_vec_decorator.html#a7788386055f1865fd55d51acc3a57e3b">new_objectVec</a>() { <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="namespaceqtpd.html#a310d3227a0919040c152c779257d7d28">objectVec</a>; }
-<a name="l00086"></a><a class="code" href="classpy_object_vec_decorator.html#a41e48ce72a9cdaac8380e2e99224c5e2">00086</a>     <span class="keywordtype">void</span> <a class="code" href="classpy_object_vec_decorator.html#a41e48ce72a9cdaac8380e2e99224c5e2">delete_objectVec</a>(<a class="code" href="namespaceqtpd.html#a310d3227a0919040c152c779257d7d28">objectVec</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>) { <span class="keyword">delete</span> <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>; }
+<a name="l00085"></a><a class="code" href="classpy_object_vec_decorator.html#a7788386055f1865fd55d51acc3a57e3b">00085</a>     <a class="code" href="namespaceqtpd.html#afd559ba823ec75738510eb0b1e9ddba7">objectVec</a>* <a class="code" href="classpy_object_vec_decorator.html#a7788386055f1865fd55d51acc3a57e3b">new_objectVec</a>() { <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="namespaceqtpd.html#afd559ba823ec75738510eb0b1e9ddba7">objectVec</a>; }
+<a name="l00086"></a><a class="code" href="classpy_object_vec_decorator.html#a41e48ce72a9cdaac8380e2e99224c5e2">00086</a>     <span class="keywordtype">void</span> <a class="code" href="classpy_object_vec_decorator.html#a41e48ce72a9cdaac8380e2e99224c5e2">delete_objectVec</a>(<a class="code" href="namespaceqtpd.html#afd559ba823ec75738510eb0b1e9ddba7">objectVec</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>) { <span class="keyword">delete</span> <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>; }
 <a name="l00087"></a>00087 };
 <a name="l00088"></a>00088 
 <a name="l00090"></a>00090 
@@ -178,7 +178,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00099"></a>00099 
 <a name="l00100"></a>00100 <span class="keyword">public</span> Q_SLOTS:
 <a name="l00101"></a>00101 
-<a name="l00102"></a><a class="code" href="classpy_canvas_decorator.html#af75ee56b0c957b717007c270668cfe4f">00102</a>     UIObject* createObject(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c, QString obj_data, <span class="keywordtype">int</span> <a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>, <span class="keywordtype">int</span> y)
+<a name="l00102"></a><a class="code" href="classpy_canvas_decorator.html#af75ee56b0c957b717007c270668cfe4f">00102</a>     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* createObject(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c, QString obj_data, <span class="keywordtype">int</span> <a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>, <span class="keywordtype">int</span> y)
 <a name="l00103"></a>00103     {
 <a name="l00104"></a>00104         <span class="keywordflow">return</span> c-&gt;Canvas::createObject(obj_data, QPoint(x, y));
 <a name="l00105"></a>00105     }
@@ -189,19 +189,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00110"></a>00110         o-&gt;move(x, y);
 <a name="l00111"></a>00111     }
 <a name="l00112"></a>00112 
-<a name="l00113"></a><a class="code" href="classpy_canvas_decorator.html#ad611a79413af39e5b5ae5a7370089d11">00113</a>     <span class="keywordtype">void</span> moveObject(UIObject* <a class="code" href="abstract_8h.html#a70a0763575096c5545f2232a32ec302a">o</a>, <span class="keywordtype">int</span> <a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>, <span class="keywordtype">int</span> y)
+<a name="l00113"></a><a class="code" href="classpy_canvas_decorator.html#ad611a79413af39e5b5ae5a7370089d11">00113</a>     <span class="keywordtype">void</span> moveObject(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#a70a0763575096c5545f2232a32ec302a">o</a>, <span class="keywordtype">int</span> <a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>, <span class="keywordtype">int</span> y)
 <a name="l00114"></a>00114     {
-<a name="l00115"></a>00115         o-&gt;move(x, y);
+<a name="l00115"></a>00115         o-&gt;<a class="code" href="classqtpd_1_1_u_i_item.html#a5a7a2c46ce27ed5cde4d56f027b60d9a">move</a>(x, y);
 <a name="l00116"></a>00116     }
 <a name="l00117"></a>00117 
-<a name="l00118"></a><a class="code" href="classpy_canvas_decorator.html#a9483788ede31be8095c0a4810b81a8df">00118</a>     <span class="keywordtype">void</span> resizeObject(UIObject* <a class="code" href="abstract_8h.html#a70a0763575096c5545f2232a32ec302a">o</a>, <span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h)
+<a name="l00118"></a><a class="code" href="classpy_canvas_decorator.html#a9483788ede31be8095c0a4810b81a8df">00118</a>     <span class="keywordtype">void</span> resizeObject(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#a70a0763575096c5545f2232a32ec302a">o</a>, <span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h)
 <a name="l00119"></a>00119     {
 <a name="l00120"></a>00120         o-&gt;setFixedSize(w, h);
 <a name="l00121"></a>00121     }
 <a name="l00122"></a>00122 
 <a name="l00124"></a>00124     <span class="comment">// edit</span>
 <a name="l00125"></a>00125 
-<a name="l00126"></a><a class="code" href="classpy_canvas_decorator.html#a3ce18f9128af9a4baf6009daffe43e6f">00126</a>     <span class="keywordtype">void</span> selectObject(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c, UIObject* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
+<a name="l00126"></a><a class="code" href="classpy_canvas_decorator.html#a3ce18f9128af9a4baf6009daffe43e6f">00126</a>     <span class="keywordtype">void</span> selectObject(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c, <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
 <a name="l00127"></a>00127     {
 <a name="l00128"></a>00128         c-&gt;<a class="code" href="classqtpd_1_1_canvas.html#ab076136df83599356a5ba7ba891c7207">selectBox</a>(obj);
 <a name="l00129"></a>00129     }
@@ -216,25 +216,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00138"></a>00138         c-&gt;<a class="code" href="classqtpd_1_1_canvas.html#ae5d178b7962fb039619f2e00c17d89cf" title="deselect all object boxes">deselectBoxes</a>();
 <a name="l00139"></a>00139     }
 <a name="l00140"></a>00140 
-<a name="l00141"></a><a class="code" href="classpy_canvas_decorator.html#a55f9a8e2f3f6638e71561413db97c360">00141</a>     <span class="keywordtype">void</span> deleteObjectInCanvas(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c, UIObject* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
+<a name="l00141"></a><a class="code" href="classpy_canvas_decorator.html#a55f9a8e2f3f6638e71561413db97c360">00141</a>     <span class="keywordtype">void</span> deleteObjectInCanvas(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c, <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
 <a name="l00142"></a>00142     {
-<a name="l00143"></a>00143         c-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a3bb07de06b4bcbea1c32c9a39185bced" title="delete single box">deleteBox</a>(obj);
+<a name="l00143"></a>00143         c-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a54ae5b1d5352bcce723481073db40647" title="delete single box">deleteBox</a>(obj);
 <a name="l00144"></a>00144     }
 <a name="l00145"></a>00145 
-<a name="l00146"></a><a class="code" href="classpy_canvas_decorator.html#a7b6b4cb8ede8321244f4c9a96d7c506b">00146</a>     <span class="keywordtype">void</span> patchcord(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c, UIObject* obj1, <span class="keywordtype">int</span> out1, UIObject* obj2, <span class="keywordtype">int</span> in2)
+<a name="l00146"></a><a class="code" href="classpy_canvas_decorator.html#a7b6b4cb8ede8321244f4c9a96d7c506b">00146</a>     <span class="keywordtype">void</span> patchcord(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c, <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* obj1, <span class="keywordtype">int</span> out1, <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* obj2, <span class="keywordtype">int</span> in2)
 <a name="l00147"></a>00147     {
-<a name="l00148"></a>00148         c-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a38e8a274d645df0d89c01b2af4b5746a" title="creates patchcord">patchcord</a>(obj1, out1, obj2, in2);
+<a name="l00148"></a>00148         c-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a3625736a403310d179fe0738156e572f" title="creates patchcord">patchcord</a>(obj1, out1, obj2, in2);
 <a name="l00149"></a>00149     }
 <a name="l00150"></a>00150 
 <a name="l00152"></a>00152     <span class="comment">// objects</span>
 <a name="l00153"></a>00153 
 <a name="l00154"></a>00154     <span class="comment">// TODO</span>
-<a name="l00155"></a><a class="code" href="classpy_canvas_decorator.html#a111018b135f3e4cb372488ca01f2b920">00155</a>     <a class="code" href="namespaceqtpd.html#a310d3227a0919040c152c779257d7d28">objectVec</a> objects(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c)
+<a name="l00155"></a><a class="code" href="classpy_canvas_decorator.html#a111018b135f3e4cb372488ca01f2b920">00155</a>     <a class="code" href="namespaceqtpd.html#afd559ba823ec75738510eb0b1e9ddba7">objectVec</a> objects(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c)
 <a name="l00156"></a>00156     {
 <a name="l00157"></a>00157         <span class="keywordflow">return</span> c-&gt;<a class="code" href="classqtpd_1_1_canvas.html#aa7e7f15474b1b1cc3564c46a346cf3eb" title="returns vector of all object boxes - needed by filesaver">objectBoxes</a>();
 <a name="l00158"></a>00158     }
 <a name="l00159"></a>00159 
-<a name="l00160"></a><a class="code" href="classpy_canvas_decorator.html#aca2bd550ee6a3a66a170ca23d5ad691f">00160</a>     <a class="code" href="namespaceqtpd.html#a310d3227a0919040c152c779257d7d28">objectVec</a> selectedObjects(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c)
+<a name="l00160"></a><a class="code" href="classpy_canvas_decorator.html#aca2bd550ee6a3a66a170ca23d5ad691f">00160</a>     <a class="code" href="namespaceqtpd.html#afd559ba823ec75738510eb0b1e9ddba7">objectVec</a> selectedObjects(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c)
 <a name="l00161"></a>00161     {
 <a name="l00162"></a>00162         <span class="keywordflow">return</span> c-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a0f81941962e9900ba06288636a1a6f74" title="returns vector of selected object boxes">selectedObjectBoxes</a>();
 <a name="l00163"></a>00163     }
@@ -251,12 +251,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00175"></a>00175         <span class="keywordflow">return</span> c-&gt;<a class="code" href="classqtpd_1_1_canvas.html#ab65347f342876b25cc85bc6652013617" title="returns vector of selected patchcords">selectedPatchcords</a>();
 <a name="l00176"></a>00176     }
 <a name="l00177"></a>00177 
-<a name="l00178"></a><a class="code" href="classpy_canvas_decorator.html#a2d2616362ef0005aae981655b27285ac">00178</a>     <a class="code" href="namespaceqtpd.html#a81f1e9d2a3767de39a2b30057b599854">patchcordVec</a> patchcordsFor(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c, UIObject* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
+<a name="l00178"></a><a class="code" href="classpy_canvas_decorator.html#a2d2616362ef0005aae981655b27285ac">00178</a>     <a class="code" href="namespaceqtpd.html#a81f1e9d2a3767de39a2b30057b599854">patchcordVec</a> patchcordsFor(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c, <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
 <a name="l00179"></a>00179     {
-<a name="l00180"></a>00180         <span class="keywordflow">return</span> c-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a98801128687ccbfecc7a31aa806774bf" title="returns patchcords that are connected to specific object">patchcordsForObject</a>(obj);
+<a name="l00180"></a>00180         <span class="keywordflow">return</span> c-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a7b66a4916b7f6b5bf9c6b3e5ad780976" title="returns patchcords that are connected to specific object">patchcordsForObject</a>(obj);
 <a name="l00181"></a>00181     }
 <a name="l00182"></a>00182 
-<a name="l00183"></a><a class="code" href="classpy_canvas_decorator.html#ab8a6d2ef6701c62f5349eeb231347cfe">00183</a>     <span class="keywordtype">void</span> deletePatchcordsFor(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c, UIObject* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
+<a name="l00183"></a><a class="code" href="classpy_canvas_decorator.html#ab8a6d2ef6701c62f5349eeb231347cfe">00183</a>     <span class="keywordtype">void</span> deletePatchcordsFor(<a class="code" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>* c, <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
 <a name="l00184"></a>00184     {
 <a name="l00185"></a>00185         c-&gt;<a class="code" href="classqtpd_1_1_canvas.html#a3acb20ed7949140e54e4055ba7dd3213" title="delete all patchcords for object">deletePatchcordsFor</a>(obj);
 <a name="l00186"></a>00186     }
@@ -444,7 +444,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 4 2017 22:53:23 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Apr 5 2017 10:10:16 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
