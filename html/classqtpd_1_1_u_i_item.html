@@ -187,6 +187,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_item.html#a36b3d359ef904a9f6b56b040314cb16d">setBgColor</a> (QColor bgc)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_item.html#a2ca6449c88dc277945266ad0413402a7">hover</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_item.html#a049c5b6ff7a83ae3716e7b828d9da67a">setHover</a> (<a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a> h)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_item.html#acba2e2b595964278ce9ebef09996f597">resizeEvent</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QPoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_item.html#afa31f6c6b2497b60610ad8325325b843">dragOffset</a></td></tr>
@@ -524,7 +525,25 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_script.html#ab0153b528f4b68976735379902c88df2">qtpd::UIScript</a>, <a class="el" href="classqtpd_1_1_u_i_property.html#a3e3b3216710dc9bc7035c4f53ba09383">qtpd::UIProperty</a>, <a class="el" href="classqtpd_1_1_u_i_method.html#abae471a843ae506b04bcb861ca6931bd">qtpd::UIMethod</a>, <a class="el" href="classqtpd_1_1_u_i_class.html#ae427b4c6a023b208756197f74df3b22d">qtpd::UIClass</a>, <a class="el" href="classqtpd_1_1_u_i_subpatch.html#a380193cdd5fdfb0cd438bf07882d1714">qtpd::UISubpatch</a>, <a class="el" href="classqtpd_1_1_u_i_instance.html#a06544d7a57d46436810862faca89cefd">qtpd::UIInstance</a>, <a class="el" href="classqtpd_1_1_u_i_array.html#a29b021ac5c4601c62c359e6da5be66ff">qtpd::UIArray</a>, <a class="el" href="classqtpd_1_1_u_i_box.html#aab3092fa42ca63f1f8ff236d50479cb6">qtpd::UIBox</a>, <a class="el" href="classqtpd_1_1_u_i_object.html#ae771bee506666ac01557f470b633091d">qtpd::UIObject</a>, <a class="el" href="classqtpd_1_1_u_i_message.html#a65412b0cbb3d0c5afff028b610df9ae9">qtpd::UIMessage</a>, <a class="el" href="classqtpd_1_1_u_i_float.html#a005f7f68707bda1c4af116e94588427c">qtpd::UIFloat</a>, <a class="el" href="classqtpd_1_1_u_i_toggle.html#aa89b72d2a43aacb8a487fb2ab22970a2">qtpd::UIToggle</a>, <a class="el" href="classqtpd_1_1_u_i_bang.html#ada7ab57467bf5e2ebafacdc4002b8437">qtpd::UIBang</a>, <a class="el" href="classqtpd_1_1_port.html#a69bf038b10902d40208798682acc7467">qtpd::Port</a>, <a class="el" href="classqtpd_1_1_u_i_text.html#ae4fd79dfe69c60bbbda202bdfc1327b0">qtpd::UIText</a>, <a class="el" href="classqtpd_1_1_patchcord.html#a6a6a637f235890b7d3badbf42ec7f343">qtpd::Patchcord</a>, <a class="el" href="classqtpd_1_1_size_box.html#ae581e383e4cd95150b1994268cdb2dae">qtpd::SizeBox</a>, <a class="el" href="classqtpd_1_1_selection_rect.html#a66909b4800fc05bd127522eb239fe65e">qtpd::SelectionRect</a>, <a class="el" href="classqtpd_1_1_new_line.html#a4f6bf4f4ee12701d39e6296dff4406a5">qtpd::NewLine</a>, and <a class="el" href="classqtpd_1_1_grid.html#ad7a0f965a7f71dc7e0c1bab2710aace8">qtpd::Grid</a>.</p>
+<p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_script.html#ab0153b528f4b68976735379902c88df2">qtpd::UIScript</a>, <a class="el" href="classqtpd_1_1_u_i_property.html#a3e3b3216710dc9bc7035c4f53ba09383">qtpd::UIProperty</a>, <a class="el" href="classqtpd_1_1_u_i_method.html#abae471a843ae506b04bcb861ca6931bd">qtpd::UIMethod</a>, <a class="el" href="classqtpd_1_1_u_i_subpatch.html#a380193cdd5fdfb0cd438bf07882d1714">qtpd::UISubpatch</a>, <a class="el" href="classqtpd_1_1_u_i_class.html#ae427b4c6a023b208756197f74df3b22d">qtpd::UIClass</a>, <a class="el" href="classqtpd_1_1_u_i_instance.html#a06544d7a57d46436810862faca89cefd">qtpd::UIInstance</a>, <a class="el" href="classqtpd_1_1_u_i_array.html#a29b021ac5c4601c62c359e6da5be66ff">qtpd::UIArray</a>, <a class="el" href="classqtpd_1_1_u_i_box.html#aab3092fa42ca63f1f8ff236d50479cb6">qtpd::UIBox</a>, <a class="el" href="classqtpd_1_1_u_i_object.html#ae771bee506666ac01557f470b633091d">qtpd::UIObject</a>, <a class="el" href="classqtpd_1_1_u_i_message.html#a65412b0cbb3d0c5afff028b610df9ae9">qtpd::UIMessage</a>, <a class="el" href="classqtpd_1_1_u_i_float.html#a005f7f68707bda1c4af116e94588427c">qtpd::UIFloat</a>, <a class="el" href="classqtpd_1_1_u_i_toggle.html#aa89b72d2a43aacb8a487fb2ab22970a2">qtpd::UIToggle</a>, <a class="el" href="classqtpd_1_1_u_i_bang.html#ada7ab57467bf5e2ebafacdc4002b8437">qtpd::UIBang</a>, <a class="el" href="classqtpd_1_1_port.html#a69bf038b10902d40208798682acc7467">qtpd::Port</a>, <a class="el" href="classqtpd_1_1_u_i_text.html#ae4fd79dfe69c60bbbda202bdfc1327b0">qtpd::UIText</a>, <a class="el" href="classqtpd_1_1_patchcord.html#a6a6a637f235890b7d3badbf42ec7f343">qtpd::Patchcord</a>, <a class="el" href="classqtpd_1_1_size_box.html#ae581e383e4cd95150b1994268cdb2dae">qtpd::SizeBox</a>, <a class="el" href="classqtpd_1_1_selection_rect.html#a66909b4800fc05bd127522eb239fe65e">qtpd::SelectionRect</a>, <a class="el" href="classqtpd_1_1_new_line.html#a4f6bf4f4ee12701d39e6296dff4406a5">qtpd::NewLine</a>, and <a class="el" href="classqtpd_1_1_grid.html#ad7a0f965a7f71dc7e0c1bab2710aace8">qtpd::Grid</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acba2e2b595964278ce9ebef09996f597"></a><!-- doxytag: member="qtpd::UIItem::resizeEvent" ref="acba2e2b595964278ce9ebef09996f597" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classqtpd_1_1_u_i_item.html#acba2e2b595964278ce9ebef09996f597">qtpd::UIItem::resizeEvent</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_script.html#a7b66e6fa4f2f78b251333098778b3ade">qtpd::UIScript</a>, <a class="el" href="classqtpd_1_1_u_i_object.html#ae10cb3996474a7c1ba94d5e48c740106">qtpd::UIObject</a>, <a class="el" href="classqtpd_1_1_u_i_message.html#a43f5631496ca6b14ab418aa1171a37f7">qtpd::UIMessage</a>, <a class="el" href="classqtpd_1_1_u_i_toggle.html#ad08a617056c61e9b1c25b51ef37f69e1">qtpd::UIToggle</a>, and <a class="el" href="classqtpd_1_1_u_i_bang.html#a2cb03fc80a2f7edb276a69cdef63d8d8">qtpd::UIBang</a>.</p>
 
 </div>
 </div>
@@ -842,7 +861,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 5 2017 15:17:33 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Apr 5 2017 17:30:14 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
