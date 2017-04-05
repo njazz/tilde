@@ -43,14 +43,17 @@ public:
         p->drawRect(0, 0, boundingRect().width(), boundingRect().height());
     };
 
-    void mousePressEvent(QGraphicsSceneMouseEvent* event)
+    void mousePressEvent(QGraphicsSceneMouseEvent* ev)
     {
         setCursor(QCursor(Qt::SizeHorCursor));
 
-        event->accept();
+        ev->accept();
 
-        _prevX = 0;
-        _prevY = 0;
+//        _prevX = 0;
+//        _prevY = 0;
+
+        _prevX = ev->pos().toPoint().x();
+        _prevY = ev->pos().toPoint().y();
     };
 
     void mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
@@ -64,8 +67,8 @@ public:
     {
         //qDebug() << "resize" << (ev->x() - prevX);
         emit resizeBoxEvent(ev->pos().toPoint().x() - _prevX, ev->pos().toPoint().y() - _prevY);
-        _prevX = ev->pos().toPoint().x();
-        _prevY = ev->pos().toPoint().y();
+//        _prevX = ev->pos().toPoint().x();
+//        _prevY = ev->pos().toPoint().y();
     }
 
 signals:
