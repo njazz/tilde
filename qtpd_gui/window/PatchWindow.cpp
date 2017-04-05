@@ -70,11 +70,11 @@ PatchWindow* PatchWindow::newSubpatch(t_canvas* subpatch)
 
     ((QMainWindow*)this_)->setWindowTitle("<subpatch>");
 
-//    this_->canvas->setPdObject(subpatch);
+    this_->canvas->setPdObject(subpatch);
 
-//    if (!this_->canvas->pdObject()) {
-//        qDebug("Failed to create canvas!");
-//    }
+    if (!this_->canvas->pdObject()) {
+        qDebug("Failed to create canvas!");
+    }
 
     return this_;
 }

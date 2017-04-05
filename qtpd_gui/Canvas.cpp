@@ -134,8 +134,8 @@ void Canvas::selectBox(UIItem* box)
 {
     qDebug() << "canvas selectbox";
 
-//    _selectionData.addUniqueBox((UIObject*)box);
-//    box->select();
+    //    _selectionData.addUniqueBox((UIObject*)box);
+    //    box->select();
 
     _canvasData.selectBox((UIObject*)box);
 
@@ -155,7 +155,7 @@ void Canvas::s_SelectBox(UIItem* box, QGraphicsSceneMouseEvent* ev)
     }
 
     //temporary
-    setDragObject( 0);
+    setDragObject(0);
 
     viewport()->update();
 }
@@ -302,8 +302,6 @@ void Canvas::addOutlet()
     //    if (drawStyle() == ds_Canvas)
     //        last->hide();
 }
-
-
 
 //void Canvas::drawCanvas()
 //{
@@ -554,8 +552,8 @@ void Canvas::mouseMoveEventForCanvas(QMouseEvent* ev)
     //viewport()->update();
 
     //remove patchcord selection if making frame
-//    if (_selectionRect->active())
-//        clickPatchcords(QPoint(-1, -1));
+    //    if (_selectionRect->active())
+    //        clickPatchcords(QPoint(-1, -1));
 }
 
 void Canvas::mousePressEventForCanvas(QMouseEvent* ev)
@@ -573,7 +571,7 @@ void Canvas::mousePressEventForCanvas(QMouseEvent* ev)
 
     //deselect
     // TODO
-//    hoverPatchcordsOff();
+    //    hoverPatchcordsOff();
 
     setFocus();
     //objectMaker()->hide();
@@ -585,7 +583,7 @@ void Canvas::mousePressEventForCanvas(QMouseEvent* ev)
         _selectionRect->setEnd(QPoint(0, 0));
 
         //click patchcords()
-//        clickPatchcords(ev->pos());
+        //        clickPatchcords(ev->pos());
 
         //viewport()->update();
     }
@@ -593,7 +591,7 @@ void Canvas::mousePressEventForCanvas(QMouseEvent* ev)
 
 void Canvas::mouseReleaseEventForCanvas(QMouseEvent*)
 {
-    setDragObject (0);
+    setDragObject(0);
 
     _selectionRect->setActive(false);
 
@@ -728,10 +726,8 @@ UIObject* Canvas::createObject(QString objectData1, QPoint pos) //std::string UI
     //this is moved here to have all checks for special objects in one place
     //(later - inlets/outlets)
 
-
-
     if (list.count()) {
-        if (list.at(0) == "pd")  ){
+        if (list.at(0) == "pd") {
             //lol
             std::pair<QMainWindow*, UIObject*> newPatch;
 
@@ -739,10 +735,6 @@ UIObject* Canvas::createObject(QString objectData1, QPoint pos) //std::string UI
 
             QMainWindow* subPatch = newPatch.first;
             Canvas* newCanvas = (Canvas*)newPatch.second;
-
-            // crazy here
-            //UIObject* b = createBoxForCanvas(newCanvas, objectData1.toStdString(), pos);
-            //((UIBox*)b)->setSubpatchWindow((QMainWindow*)subPatch);
 
             UIObject* obj = UISubpatch::createObject(objectData1.toStdString(), 0, this);
 
@@ -761,15 +753,13 @@ UIObject* Canvas::createObject(QString objectData1, QPoint pos) //std::string UI
             _canvasData.addUniqueBox(_canvasData.boxes(), obj);
             scene()->addItem(obj);
 
-
             return obj;
         }
 
-//        if (list.at(0) == "restore") {
-//            return 0;
-//        }
+        if (list.at(0) == "restore") {
+            return 0;
+        }
     }
-
 
     UIObject* obj = ObjectLoader::inst().createObject(objectData1, (t_canvas*)pdObject(), this);
 
@@ -822,7 +812,7 @@ UIObject* Canvas::createBoxForCanvas(Canvas* newCanvas, std::string objectData, 
 
     obj->setEditModeRef(Canvas::getEditModeRef());
     obj->move(pos);
-     _canvasData.addUniqueBox(_canvasData.boxes(), obj);
+    _canvasData.addUniqueBox(_canvasData.boxes(), obj);
 
     QPalette Pal(palette());
     Pal.setColor(QPalette::Background, QColor(240, 240, 240));
@@ -994,17 +984,23 @@ void Canvas::setEditMode(t_editMode mode)
         _canvasEditMode = mode;
 
     //    QPalette Pal(palette());
-    //    QColor lockedColor = (_readOnly) ? QColor(245, 245, 255) : QColor(245, 245, 245);
+
     //    Pal.setColor(QPalette::Background, (mode != em_Locked) ? QColor(255, 255, 255) : lockedColor);
     //    setAutoFillBackground(true);
     //    setPalette(Pal);
 
-    //    if (_grid)
-    //    _grid->setVisible(_canvasEditMode);
+    QColor lockedColor = (_readOnly) ? QColor(245, 245, 255) : QColor(245, 245, 245);
+    QColor bgColor = (mode != em_Locked) ? QColor(255, 255, 255) : lockedColor;
+    if (scene())
+        setBackgroundBrush(QBrush(bgColor));
+
+    if (_grid)
+        if (scene())
+            _grid->setVisible(_canvasEditMode != em_Locked);
 
     if (mode == em_Locked) {
         deselectBoxes();
-//        hoverPatchcordsOff();
+        //        hoverPatchcordsOff();
     }
 
     //viewport()->update();
@@ -1214,7 +1210,7 @@ QStringList Canvas::canvasAsPdStrings()
 
     ret.append(out1.c_str());
 
-    ret += _canvasData.objectsAsPdFileStrings();//boxesAsPdFileStrings();
+    ret += _canvasData.objectsAsPdFileStrings(); //boxesAsPdFileStrings();
     //ret += _canvasData.patchcordsAsPdFileStrings();
 
     //objects
@@ -1479,7 +1475,6 @@ void Canvas::dataPaste()
             Clipboard::inst()->setStringAt(i, subList.join(" "));
             FileParser::parseQString(Clipboard::inst()->at(i));
         }
-
     }
 }
 
