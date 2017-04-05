@@ -73,7 +73,7 @@ var searchData=
   ['boundingrect',['boundingRect',['../classqtpd_1_1_u_i_item.html#a0a8d5299d5a0a2ebcef2135913bc97da',1,'qtpd::UIItem']]],
   ['bounds',['bounds',['../code_8h.html#a088761a95473f90ef897a790d99d97b2',1,'code.h']]],
   ['boxes',['boxes',['../classqtpd_1_1canvas_data.html#af51df2db77a9f420a6997ef3088765ca',1,'qtpd::canvasData']]],
-  ['boxesaspdfilestrings',['boxesAsPdFileStrings',['../classqtpd_1_1canvas_data.html#ae80916db03a799047af95d74ea55eaff',1,'qtpd::canvasData']]],
+  ['boxesaspdfilestrings',['boxesAsPdFileStrings',['../classqtpd_1_1canvas_data.html#a6c1895ba4137131baf314f8384cd269f',1,'qtpd::canvasData']]],
   ['bpf',['BPF',['../classceammc_1_1_b_p_f.html#af7b625552c75e27fcf401ea5c08fe188',1,'ceammc::BPF']]],
   ['bpf',['BPF',['../classceammc_1_1_b_p_f.html',1,'ceammc']]],
   ['bpf_5fm_5fadd',['bpf_m_add',['../namespaceceammc__gui.html#a31611b780dd00f13a50514f34f3018d8',1,'ceammc_gui']]],

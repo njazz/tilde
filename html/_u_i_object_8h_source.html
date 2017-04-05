@@ -166,117 +166,123 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00085"></a>00085     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a3b05e154739411d1eed522f7dbf1d9c7">hoverLeaveEvent</a>(QGraphicsSceneHoverEvent*);
 <a name="l00086"></a>00086 
 <a name="l00087"></a>00087 <span class="keyword">public</span>:
-<a name="l00088"></a><a class="code" href="classqtpd_1_1_u_i_object.html#a2e6fec1e7e23c49c16330281d84f099f">00088</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a2e6fec1e7e23c49c16330281d84f099f">setCanvas</a>(<span class="keywordtype">void</span>* canvas) { _canvas = canvas; }
-<a name="l00089"></a>00089 
-<a name="l00090"></a>00090     <span class="comment">//cm_object();</span>
-<a name="l00091"></a>00091     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a7fcf552df3978236b474406118df604c">UIObject</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="parent class for all objects in the canvas">UIItem</a>* parent = 0);
-<a name="l00092"></a>00092 
-<a name="l00096"></a>00096     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a07fc14ec32a45e628bece60f892500b8" title="init properties for the class - called from constructor">initProperties</a>();
-<a name="l00097"></a>00097 
-<a name="l00098"></a>00098     <a class="code" href="classqtpd_1_1_property_list.html" title="yet another property handling class for ui object. List">PropertyList</a>* <a class="code" href="classqtpd_1_1_u_i_object.html#a69ed99ca86c7019f489f56b6dc96f8a4">properties</a>();
-<a name="l00099"></a>00099 
-<a name="l00103"></a>00103     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#abdcdddffb37dedee8cf93da8fb353271" title="createContextMenu">createContextMenu</a>();
-<a name="l00104"></a>00104 
-<a name="l00105"></a>00105     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#ac910dc268c5457c9ce9149378794eb9a">showPopupMenu</a>(QPoint <a class="code" href="dictobject_8h.html#acae77df04bfdd60d1017f4132729ddc6">pos</a>);
-<a name="l00106"></a>00106 
-<a name="l00107"></a><a class="code" href="classqtpd_1_1_u_i_object.html#a2a5596386429c363e6f45085b7ef47e6">00107</a>     <a class="code" href="classqtpd_1_1_size_box.html" title="resize widget for all object boxes in patch">SizeBox</a>* <a class="code" href="classqtpd_1_1_u_i_object.html#a2a5596386429c363e6f45085b7ef47e6">sizeBox</a>(){<span class="keywordflow">return</span> _sizeBox;}
-<a name="l00108"></a>00108 
-<a name="l00109"></a>00109     <span class="comment">//void contextMenuEvent(QContextMenuEvent* event);</span>
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089     <span class="comment">// template, copy from here</span>
+<a name="l00090"></a><a class="code" href="classqtpd_1_1_u_i_object.html#ae771bee506666ac01557f470b633091d">00090</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#ae771bee506666ac01557f470b633091d">paint</a>(QPainter *<a class="code" href="floatobject_8h.html#af18a92ce774f4c499544fbcc894db7e8">p</a>, <span class="keyword">const</span> QStyleOptionGraphicsItem *option, QWidget *widget){
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092     };
+<a name="l00093"></a>00093 
+<a name="l00094"></a><a class="code" href="classqtpd_1_1_u_i_object.html#a2e6fec1e7e23c49c16330281d84f099f">00094</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a2e6fec1e7e23c49c16330281d84f099f">setCanvas</a>(<span class="keywordtype">void</span>* canvas) { _canvas = canvas; }
+<a name="l00095"></a>00095 
+<a name="l00096"></a>00096     <span class="comment">//cm_object();</span>
+<a name="l00097"></a>00097     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a7fcf552df3978236b474406118df604c">UIObject</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="parent class for all objects in the canvas">UIItem</a>* parent = 0);
+<a name="l00098"></a>00098 
+<a name="l00102"></a>00102     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a07fc14ec32a45e628bece60f892500b8" title="init properties for the class - called from constructor">initProperties</a>();
+<a name="l00103"></a>00103 
+<a name="l00104"></a>00104     <a class="code" href="classqtpd_1_1_property_list.html" title="yet another property handling class for ui object. List">PropertyList</a>* <a class="code" href="classqtpd_1_1_u_i_object.html#a69ed99ca86c7019f489f56b6dc96f8a4">properties</a>();
+<a name="l00105"></a>00105 
+<a name="l00109"></a>00109     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#abdcdddffb37dedee8cf93da8fb353271" title="createContextMenu">createContextMenu</a>();
 <a name="l00110"></a>00110 
-<a name="l00118"></a>00118 
-<a name="l00119"></a>00119     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#abd253cdb46eec3e920bc2e195f24bf84" title="sets inlet position (cm_port)">setInletsPos</a>();
-<a name="l00120"></a>00120 
-<a name="l00128"></a>00128     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a0f7e507f8949b1a58bf343279a488c44" title="sets outlet position (cm_port)">setOutletsPos</a>();
-<a name="l00129"></a>00129 
-<a name="l00137"></a>00137     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a82f2402eac0e1f7e17cf767a658ffa4f" title="adds single inlet (cm_port)">addInlet</a>();
-<a name="l00138"></a>00138 
-<a name="l00139"></a>00139     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a82f2402eac0e1f7e17cf767a658ffa4f" title="adds single inlet (cm_port)">addInlet</a>(<span class="keywordtype">int</span> _portClass_);
-<a name="l00140"></a>00140 
+<a name="l00111"></a>00111     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#ac910dc268c5457c9ce9149378794eb9a">showPopupMenu</a>(QPoint <a class="code" href="dictobject_8h.html#acae77df04bfdd60d1017f4132729ddc6">pos</a>);
+<a name="l00112"></a>00112 
+<a name="l00113"></a><a class="code" href="classqtpd_1_1_u_i_object.html#a2a5596386429c363e6f45085b7ef47e6">00113</a>     <a class="code" href="classqtpd_1_1_size_box.html" title="resize widget for all object boxes in patch">SizeBox</a>* <a class="code" href="classqtpd_1_1_u_i_object.html#a2a5596386429c363e6f45085b7ef47e6">sizeBox</a>(){<span class="keywordflow">return</span> _sizeBox;}
+<a name="l00114"></a>00114 
+<a name="l00115"></a>00115     <span class="comment">//void contextMenuEvent(QContextMenuEvent* event);</span>
+<a name="l00116"></a>00116 
+<a name="l00124"></a>00124 
+<a name="l00125"></a>00125     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#abd253cdb46eec3e920bc2e195f24bf84" title="sets inlet position (cm_port)">setInletsPos</a>();
+<a name="l00126"></a>00126 
+<a name="l00134"></a>00134     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a0f7e507f8949b1a58bf343279a488c44" title="sets outlet position (cm_port)">setOutletsPos</a>();
+<a name="l00135"></a>00135 
+<a name="l00143"></a>00143     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a82f2402eac0e1f7e17cf767a658ffa4f" title="adds single inlet (cm_port)">addInlet</a>();
+<a name="l00144"></a>00144 
+<a name="l00145"></a>00145     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a82f2402eac0e1f7e17cf767a658ffa4f" title="adds single inlet (cm_port)">addInlet</a>(<span class="keywordtype">int</span> _portClass_);
 <a name="l00146"></a>00146 
-<a name="l00147"></a>00147     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a935156fec3fd59c05525f046bafb3ebc" title="adds single outlet (cm_port)">addOutlet</a>();
-<a name="l00148"></a>00148 
-<a name="l00149"></a>00149     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a935156fec3fd59c05525f046bafb3ebc" title="adds single outlet (cm_port)">addOutlet</a>(<span class="keywordtype">int</span> _portClass_);
-<a name="l00150"></a>00150 
+<a name="l00152"></a>00152 
+<a name="l00153"></a>00153     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a935156fec3fd59c05525f046bafb3ebc" title="adds single outlet (cm_port)">addOutlet</a>();
+<a name="l00154"></a>00154 
+<a name="l00155"></a>00155     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a935156fec3fd59c05525f046bafb3ebc" title="adds single outlet (cm_port)">addOutlet</a>(<span class="keywordtype">int</span> _portClass_);
 <a name="l00156"></a>00156 
-<a name="l00157"></a>00157     <a class="code" href="classqtpd_1_1_port.html" title="gui representation of t_inlet / t_outlet">Port</a>* <a class="code" href="classqtpd_1_1_u_i_object.html#affed6bc718dcfa37071c856895d70230" title="gets inlet (cm_port) at specified index">inletAt</a>(<span class="keywordtype">int</span> idx);
-<a name="l00158"></a>00158 
+<a name="l00162"></a>00162 
+<a name="l00163"></a>00163     <a class="code" href="classqtpd_1_1_port.html" title="gui representation of t_inlet / t_outlet">Port</a>* <a class="code" href="classqtpd_1_1_u_i_object.html#affed6bc718dcfa37071c856895d70230" title="gets inlet (cm_port) at specified index">inletAt</a>(<span class="keywordtype">int</span> idx);
 <a name="l00164"></a>00164 
-<a name="l00165"></a>00165     <a class="code" href="classqtpd_1_1_port.html" title="gui representation of t_inlet / t_outlet">Port</a>* <a class="code" href="classqtpd_1_1_u_i_object.html#a5c8f235bdc4571fdf1a5c125fbcde2b2" title="gets outlet (cm_port) at specified index">outletAt</a>(<span class="keywordtype">int</span> idx);
-<a name="l00166"></a>00166 
-<a name="l00172"></a>00172     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a77f34c6557cd08be98617e6768672da5" title="returns 1 if signal~">pdInletType</a>(<span class="keywordtype">int</span> idx);
-<a name="l00173"></a>00173 
-<a name="l00178"></a>00178     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a64ad65d9eba38d18c6cf475fa0fbdd65" title="inlet count">inletCount</a>();
+<a name="l00170"></a>00170 
+<a name="l00171"></a>00171     <a class="code" href="classqtpd_1_1_port.html" title="gui representation of t_inlet / t_outlet">Port</a>* <a class="code" href="classqtpd_1_1_u_i_object.html#a5c8f235bdc4571fdf1a5c125fbcde2b2" title="gets outlet (cm_port) at specified index">outletAt</a>(<span class="keywordtype">int</span> idx);
+<a name="l00172"></a>00172 
+<a name="l00178"></a>00178     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a77f34c6557cd08be98617e6768672da5" title="returns 1 if signal~">pdInletType</a>(<span class="keywordtype">int</span> idx);
 <a name="l00179"></a>00179 
-<a name="l00185"></a>00185     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a765ab43f6b07c8f94c06d3ffa4da4996" title="for pd object outlet: returns 1 if signal~">pdOutletType</a>(<span class="keywordtype">int</span> idx);
-<a name="l00186"></a>00186 
-<a name="l00191"></a>00191     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_u_i_object.html#aea2322187b24bf09a4769fba5104f886" title="outlet count">outletCount</a>();
+<a name="l00184"></a>00184     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a64ad65d9eba38d18c6cf475fa0fbdd65" title="inlet count">inletCount</a>();
+<a name="l00185"></a>00185 
+<a name="l00191"></a>00191     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a765ab43f6b07c8f94c06d3ffa4da4996" title="for pd object outlet: returns 1 if signal~">pdOutletType</a>(<span class="keywordtype">int</span> idx);
 <a name="l00192"></a>00192 
-<a name="l00194"></a>00194 
-<a name="l00199"></a>00199 
-<a name="l00200"></a>00200     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a65a6c071b7b6f99393652d273e6a0fa7" title="sets object text data">setObjectData</a>(<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> objData);
-<a name="l00201"></a>00201 
-<a name="l00205"></a>00205     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a1c7d66be6089715aaf5c03adb64a915b" title="call this after setting object data">autoResize</a>();
-<a name="l00206"></a>00206 
-<a name="l00211"></a>00211     <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="code" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447" title="gets object text data /usually overriden by ui objects/">objectData</a>();
+<a name="l00197"></a>00197     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_u_i_object.html#aea2322187b24bf09a4769fba5104f886" title="outlet count">outletCount</a>();
+<a name="l00198"></a>00198 
+<a name="l00200"></a>00200 
+<a name="l00205"></a>00205 
+<a name="l00206"></a>00206     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a65a6c071b7b6f99393652d273e6a0fa7" title="sets object text data">setObjectData</a>(<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> objData);
+<a name="l00207"></a>00207 
+<a name="l00211"></a>00211     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a1c7d66be6089715aaf5c03adb64a915b" title="call this after setting object data">autoResize</a>();
 <a name="l00212"></a>00212 
-<a name="l00218"></a>00218     <span class="keyword">virtual</span> <span class="keywordtype">void</span>* <a class="code" href="classqtpd_1_1_u_i_object.html#ad41f2f9ff8447ea8dc061c3e8fc6528b" title="returns pointer to pd object.">pdObject</a>();
-<a name="l00219"></a>00219 
-<a name="l00225"></a>00225     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a8d514a69e4a316b43095faaeea415dad" title="sets pointer to pd object">setPdObject</a>(<span class="keywordtype">void</span>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>);
-<a name="l00226"></a>00226 
-<a name="l00232"></a>00232     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a1a55479c564318cbf31c0f09d02d39bb" title="returns true if object doesn&#39;t exist">errorBox</a>();
-<a name="l00233"></a>00233 
-<a name="l00238"></a>00238     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#abc5b87789a2cc65d9d74d0ca2b6b0bdf" title="sets object box error flag">setErrorBox</a>(<span class="keywordtype">bool</span> val);
+<a name="l00217"></a>00217     <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="code" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447" title="gets object text data /usually overriden by ui objects/">objectData</a>();
+<a name="l00218"></a>00218 
+<a name="l00224"></a>00224     <span class="keyword">virtual</span> <span class="keywordtype">void</span>* <a class="code" href="classqtpd_1_1_u_i_object.html#ad41f2f9ff8447ea8dc061c3e8fc6528b" title="returns pointer to pd object.">pdObject</a>();
+<a name="l00225"></a>00225 
+<a name="l00231"></a>00231     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a8d514a69e4a316b43095faaeea415dad" title="sets pointer to pd object">setPdObject</a>(<span class="keywordtype">void</span>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>);
+<a name="l00232"></a>00232 
+<a name="l00238"></a>00238     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a1a55479c564318cbf31c0f09d02d39bb" title="returns true if object doesn&#39;t exist">errorBox</a>();
 <a name="l00239"></a>00239 
-<a name="l00244"></a>00244     <span class="keyword">virtual</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="code" href="classqtpd_1_1_u_i_object.html#a89a9d36ac67cceab237cdc01a1ec2376" title="returns object&#39;s text for client-based file saving">asPdFileString</a>();
+<a name="l00244"></a>00244     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#abc5b87789a2cc65d9d74d0ca2b6b0bdf" title="sets object box error flag">setErrorBox</a>(<span class="keywordtype">bool</span> val);
 <a name="l00245"></a>00245 
-<a name="l00246"></a>00246     <span class="comment">//void setPdObjectName(std::string name);</span>
-<a name="l00247"></a>00247 
-<a name="l00252"></a>00252     QMainWindow* <a class="code" href="classqtpd_1_1_u_i_object.html#a163437921d348578fbfb8abebee0217c" title="temporary - remove later">subpatchWindow</a>();
-<a name="l00253"></a>00253     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#aab273ef9fd115cb87544b398975ca4c1">setSubpatchWindow</a>(QMainWindow* cwindow);
-<a name="l00254"></a>00254 
-<a name="l00259"></a>00259     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a0590d2f5ec52a3010373b7f4fc19c610" title="sets pointer to edit mode flag value in parent canvas">setEditModeRef</a>(<a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a" title="edit mode types">t_editMode</a>* canvasEditMode);
+<a name="l00250"></a>00250     <span class="keyword">virtual</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="code" href="classqtpd_1_1_u_i_object.html#a89a9d36ac67cceab237cdc01a1ec2376" title="returns object&#39;s text for client-based file saving">asPdFileString</a>();
+<a name="l00251"></a>00251 
+<a name="l00252"></a>00252     <span class="comment">//void setPdObjectName(std::string name);</span>
+<a name="l00253"></a>00253 
+<a name="l00258"></a>00258     QMainWindow* <a class="code" href="classqtpd_1_1_u_i_object.html#a163437921d348578fbfb8abebee0217c" title="temporary - remove later">subpatchWindow</a>();
+<a name="l00259"></a>00259     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#aab273ef9fd115cb87544b398975ca4c1">setSubpatchWindow</a>(QMainWindow* cwindow);
 <a name="l00260"></a>00260 
-<a name="l00262"></a>00262 
-<a name="l00263"></a>00263 <span class="comment">//    void resizeEvent(QGraphicsSceneResizeEvent* event);</span>
-<a name="l00264"></a>00264 
-<a name="l00265"></a>00265     <span class="comment">// ------------------------</span>
+<a name="l00265"></a>00265     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a0590d2f5ec52a3010373b7f4fc19c610" title="sets pointer to edit mode flag value in parent canvas">setEditModeRef</a>(<a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a" title="edit mode types">t_editMode</a>* canvasEditMode);
 <a name="l00266"></a>00266 
-<a name="l00271"></a>00271     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#aaf3ec64e20e23bd1a6e98e40e207b9a5" title="set secondary &#39;minimum width&#39; value - used for object box resize">setMinimumBoxWidth</a>(<span class="keywordtype">int</span> w);
+<a name="l00268"></a>00268 
+<a name="l00269"></a>00269 <span class="comment">//    void resizeEvent(QGraphicsSceneResizeEvent* event);</span>
+<a name="l00270"></a>00270 
+<a name="l00271"></a>00271     <span class="comment">// ------------------------</span>
 <a name="l00272"></a>00272 
-<a name="l00277"></a>00277     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a0e30df8242a108e7534044d0fd2e8c9e" title="set secondary &#39;minimum height&#39; value - used for object box resize">setMinimumBoxHeight</a>(<span class="keywordtype">int</span> h);
+<a name="l00277"></a>00277     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#aaf3ec64e20e23bd1a6e98e40e207b9a5" title="set secondary &#39;minimum width&#39; value - used for object box resize">setMinimumBoxWidth</a>(<span class="keywordtype">int</span> w);
 <a name="l00278"></a>00278 
-<a name="l00283"></a>00283     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_u_i_object.html#ac1d937fa3ee566a10ae183ab8e40fd79" title="get secondary &#39;minimum width&#39; value - used for object box resize">minimumBoxWidth</a>();
+<a name="l00283"></a>00283     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a0e30df8242a108e7534044d0fd2e8c9e" title="set secondary &#39;minimum height&#39; value - used for object box resize">setMinimumBoxHeight</a>(<span class="keywordtype">int</span> h);
 <a name="l00284"></a>00284 
-<a name="l00289"></a>00289     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a59b95a44ccb3c18727d8212a6eb32f56" title="get secondary &#39;minimum height&#39; value - used for object box resize">minimumBoxHeight</a>();
+<a name="l00289"></a>00289     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_u_i_object.html#ac1d937fa3ee566a10ae183ab8e40fd79" title="get secondary &#39;minimum width&#39; value - used for object box resize">minimumBoxWidth</a>();
 <a name="l00290"></a>00290 
-<a name="l00291"></a>00291     <span class="comment">// ??</span>
-<a name="l00292"></a>00292     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#ad4a986f565df4216f3643053a8e19868">hide</a>();
-<a name="l00293"></a>00293 
-<a name="l00294"></a>00294     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a67dc3600d5357c9befab0af91cb8b5f9">hideSizeBox</a>();
-<a name="l00295"></a>00295 
-<a name="l00300"></a>00300     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a055a8f03b9e9a36678cb5804607b6b3e" title="set short name for help patch (without path)">setHelpName</a>(QString <a class="code" href="abstract_8h.html#afcd1706c9144e6d6eee6127661ae3be2">name</a>);
+<a name="l00295"></a>00295     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a59b95a44ccb3c18727d8212a6eb32f56" title="get secondary &#39;minimum height&#39; value - used for object box resize">minimumBoxHeight</a>();
+<a name="l00296"></a>00296 
+<a name="l00297"></a>00297     <span class="comment">// ??</span>
+<a name="l00298"></a>00298     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#ad4a986f565df4216f3643053a8e19868">hide</a>();
+<a name="l00299"></a>00299 
+<a name="l00300"></a>00300     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a67dc3600d5357c9befab0af91cb8b5f9">hideSizeBox</a>();
 <a name="l00301"></a>00301 
-<a name="l00306"></a>00306     QString <a class="code" href="classqtpd_1_1_u_i_object.html#a89f2ee50238101d3900ba3f2ff2146fd" title="returns help patch name with path if the file is found">fullHelpName</a>();
+<a name="l00306"></a>00306     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a055a8f03b9e9a36678cb5804607b6b3e" title="set short name for help patch (without path)">setHelpName</a>(QString <a class="code" href="abstract_8h.html#afcd1706c9144e6d6eee6127661ae3be2">name</a>);
 <a name="l00307"></a>00307 
-<a name="l00312"></a><a class="code" href="classqtpd_1_1_u_i_object.html#a9bd7968c1e875978f700e6615b4c6f53">00312</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a9bd7968c1e875978f700e6615b4c6f53" title="set object resize mode - fixed or sizeable">setObjectSizeMode</a>(<a class="code" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3" title="object box size constraints">t_objectSize</a> os) { _objectSizeMode = os; }
+<a name="l00312"></a>00312     QString <a class="code" href="classqtpd_1_1_u_i_object.html#a89f2ee50238101d3900ba3f2ff2146fd" title="returns help patch name with path if the file is found">fullHelpName</a>();
 <a name="l00313"></a>00313 
-<a name="l00314"></a>00314 <span class="keyword">private</span> slots:
-<a name="l00315"></a>00315     <span class="keywordtype">void</span> openPropertiesWindow();
-<a name="l00316"></a>00316     <span class="keywordtype">void</span> openHelpWindow();
-<a name="l00317"></a>00317 
-<a name="l00318"></a>00318 signals:
-<a name="l00319"></a>00319     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#af7d4bc79f4fb46e194a380a7f32b8694">editObject</a>(<span class="keywordtype">void</span>* box);
-<a name="l00320"></a>00320     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a7cd66a9ac05bd493a0f17a61513cc5ae">callRepaint</a>(); <span class="comment">//needed for proper threading</span>
-<a name="l00321"></a>00321 
-<a name="l00322"></a>00322 <span class="keyword">public</span> slots:
-<a name="l00323"></a>00323     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#ac5164efbefa045172ec27eaf957a8fb0">resizeBox</a>(<span class="keywordtype">int</span> dx, <span class="keywordtype">int</span> dy);
-<a name="l00324"></a>00324     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#af907b37e5d5f8b0481d03f89b2ef7b6f">s_repaint</a>(); 
-<a name="l00325"></a>00325 
-<a name="l00331"></a>00331     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#aa75e37df9af2518a6f01c284b0bbaf58" title="&gt;needed for proper threading">propertyChanged</a>(QString pname);
-<a name="l00332"></a>00332 };
-<a name="l00333"></a>00333 }
-<a name="l00334"></a>00334 
-<a name="l00335"></a>00335 <span class="preprocessor">#endif // CM_OBJECT_H</span>
+<a name="l00318"></a><a class="code" href="classqtpd_1_1_u_i_object.html#a9bd7968c1e875978f700e6615b4c6f53">00318</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a9bd7968c1e875978f700e6615b4c6f53" title="set object resize mode - fixed or sizeable">setObjectSizeMode</a>(<a class="code" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3" title="object box size constraints">t_objectSize</a> os) { _objectSizeMode = os; }
+<a name="l00319"></a>00319 
+<a name="l00320"></a>00320 <span class="keyword">private</span> slots:
+<a name="l00321"></a>00321     <span class="keywordtype">void</span> openPropertiesWindow();
+<a name="l00322"></a>00322     <span class="keywordtype">void</span> openHelpWindow();
+<a name="l00323"></a>00323 
+<a name="l00324"></a>00324 signals:
+<a name="l00325"></a>00325     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#af7d4bc79f4fb46e194a380a7f32b8694">editObject</a>(<span class="keywordtype">void</span>* box);
+<a name="l00326"></a>00326     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#a7cd66a9ac05bd493a0f17a61513cc5ae">callRepaint</a>(); <span class="comment">//needed for proper threading</span>
+<a name="l00327"></a>00327 
+<a name="l00328"></a>00328 <span class="keyword">public</span> slots:
+<a name="l00329"></a>00329     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#ac5164efbefa045172ec27eaf957a8fb0">resizeBox</a>(<span class="keywordtype">int</span> dx, <span class="keywordtype">int</span> dy);
+<a name="l00330"></a>00330     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#af907b37e5d5f8b0481d03f89b2ef7b6f">s_repaint</a>(); 
+<a name="l00331"></a>00331 
+<a name="l00337"></a>00337     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object.html#aa75e37df9af2518a6f01c284b0bbaf58" title="&gt;needed for proper threading">propertyChanged</a>(QString pname);
+<a name="l00338"></a>00338 };
+<a name="l00339"></a>00339 }
+<a name="l00340"></a>00340 
+<a name="l00341"></a>00341 <span class="preprocessor">#endif // CM_OBJECT_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -295,7 +301,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 5 2017 11:12:15 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Apr 5 2017 14:20:12 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

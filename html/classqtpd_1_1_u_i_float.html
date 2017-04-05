@@ -127,15 +127,15 @@ Inheritance diagram for qtpd::UIFloat:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_float.html#ae13e2b229f7ed74976fb3d2acdda2612">UIFloat</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_float.html#a8b112b3017a48079f96d2c307e44523b">UIFloat</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_float.html#a4e5922d37567b6c609a861a7f848ed57">initProperties</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">init properties for the class - called from constructor  <a href="#a4e5922d37567b6c609a861a7f848ed57"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_float.html#abcf8e1104bd9e3a3508279480f316dc9">paintEvent</a> (QPaintEvent *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_float.html#a005f7f68707bda1c4af116e94588427c">paint</a> (QPainter *<a class="el" href="floatobject_8h.html#af18a92ce774f4c499544fbcc894db7e8">p</a>, const QStyleOptionGraphicsItem *, QWidget *)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_float.html#afd7a834215767a9a9f87163ac94e26d5">autoResize</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">call this after setting object data  <a href="#afd7a834215767a9a9f87163ac94e26d5"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_float.html#a7fcb85622a3e810cf18d95bf6728774d">mousePressEvent</a> (QMouseEvent *ev)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_float.html#af1270dccb23a6923dc815da25ce5664d">mouseReleaseEvent</a> (QMouseEvent *)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_float.html#a4e81727ffd53158afb7bd4bdc218f7e1">mouseMoveEvent</a> (QMouseEvent *event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_float.html#aaa39a4f331e21f3c1e458a89fe1613cb">mousePressEvent</a> (QGraphicsSceneMouseEvent *ev)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_float.html#a458b8643e53e41728eff85581043fb52">mouseReleaseEvent</a> (QGraphicsSceneMouseEvent *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_float.html#a9ba9ee4ddd188879dd644540a6bbe735">mouseMoveEvent</a> (QGraphicsSceneMouseEvent *event)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_float.html#a7186d0f54f3fc3bdfa6fa15fc625785a">setPdMessage</a> (<a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> message)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_float.html#a5b6cb8517171861520fa799db424dbc2">setPdObject</a> (void *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets pointer to pd object  <a href="#a5b6cb8517171861520fa799db424dbc2"></a><br/></td></tr>
@@ -143,21 +143,20 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns object's text for client-based file saving  <a href="#ae4f091c6565095c7fa1418b51e4f574d"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_float.html#a0ba469d10848833c102367c605aa91e3">createObject</a> (<a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="el" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447">objectData</a>, t_canvas *pdCanvas, UIWidget *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_float.html#a9826aa66a6f996c6b0ab80d95889387a">createObject</a> (<a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="el" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447">objectData</a>, t_canvas *pdCanvas, QGraphicsView *parent=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_float.html#add097c7c25166226f6a96eb6a16fb3f6">updateUI</a> (void *uiobj, <a class="el" href="classceammc_1_1_atom_list.html">ceammc::AtomList</a> msg)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>gui object: float number box (ui.float) </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ae13e2b229f7ed74976fb3d2acdda2612"></a><!-- doxytag: member="qtpd::UIFloat::UIFloat" ref="ae13e2b229f7ed74976fb3d2acdda2612" args="(UIObject *parent=0)" -->
+<a class="anchor" id="a8b112b3017a48079f96d2c307e44523b"></a><!-- doxytag: member="qtpd::UIFloat::UIFloat" ref="a8b112b3017a48079f96d2c307e44523b" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classqtpd_1_1_u_i_float.html#ae13e2b229f7ed74976fb3d2acdda2612">qtpd::UIFloat::UIFloat</a> </td>
+          <td class="memname"><a class="el" href="classqtpd_1_1_u_i_float.html#a8b112b3017a48079f96d2c307e44523b">qtpd::UIFloat::UIFloat</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td>
-          <td class="paramname"><em>parent</em> = <code>0</code></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td><code> [explicit]</code></td>
         </tr>
       </table>
@@ -208,12 +207,12 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a0ba469d10848833c102367c605aa91e3"></a><!-- doxytag: member="qtpd::UIFloat::createObject" ref="a0ba469d10848833c102367c605aa91e3" args="(std::string objectData, t_canvas *pdCanvas, UIWidget *parent=0)" -->
+<a class="anchor" id="a9826aa66a6f996c6b0ab80d95889387a"></a><!-- doxytag: member="qtpd::UIFloat::createObject" ref="a9826aa66a6f996c6b0ab80d95889387a" args="(std::string objectData, t_canvas *pdCanvas, QGraphicsView *parent=0)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a>* <a class="el" href="classqtpd_1_1_u_i_float.html#a0ba469d10848833c102367c605aa91e3">qtpd::UIFloat::createObject</a> </td>
+          <td class="memname">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a>* <a class="el" href="classqtpd_1_1_u_i_float.html#a9826aa66a6f996c6b0ab80d95889387a">qtpd::UIFloat::createObject</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td>
           <td class="paramname"><em>objectData</em>, </td>
@@ -227,7 +226,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">UIWidget *&#160;</td>
+          <td class="paramtype">QGraphicsView *&#160;</td>
           <td class="paramname"><em>parent</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
@@ -261,14 +260,14 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a4e81727ffd53158afb7bd4bdc218f7e1"></a><!-- doxytag: member="qtpd::UIFloat::mouseMoveEvent" ref="a4e81727ffd53158afb7bd4bdc218f7e1" args="(QMouseEvent *event)" -->
+<a class="anchor" id="a9ba9ee4ddd188879dd644540a6bbe735"></a><!-- doxytag: member="qtpd::UIFloat::mouseMoveEvent" ref="a9ba9ee4ddd188879dd644540a6bbe735" args="(QGraphicsSceneMouseEvent *event)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_float.html#a4e81727ffd53158afb7bd4bdc218f7e1">qtpd::UIFloat::mouseMoveEvent</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_float.html#a9ba9ee4ddd188879dd644540a6bbe735">qtpd::UIFloat::mouseMoveEvent</a> </td>
           <td>(</td>
-          <td class="paramtype">QMouseEvent *&#160;</td>
+          <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
           <td class="paramname"><em>event</em></td><td>)</td>
           <td><code> [inline]</code></td>
         </tr>
@@ -278,14 +277,14 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a7fcb85622a3e810cf18d95bf6728774d"></a><!-- doxytag: member="qtpd::UIFloat::mousePressEvent" ref="a7fcb85622a3e810cf18d95bf6728774d" args="(QMouseEvent *ev)" -->
+<a class="anchor" id="aaa39a4f331e21f3c1e458a89fe1613cb"></a><!-- doxytag: member="qtpd::UIFloat::mousePressEvent" ref="aaa39a4f331e21f3c1e458a89fe1613cb" args="(QGraphicsSceneMouseEvent *ev)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_float.html#a7fcb85622a3e810cf18d95bf6728774d">qtpd::UIFloat::mousePressEvent</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_float.html#aaa39a4f331e21f3c1e458a89fe1613cb">qtpd::UIFloat::mousePressEvent</a> </td>
           <td>(</td>
-          <td class="paramtype">QMouseEvent *&#160;</td>
+          <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
           <td class="paramname"><em>ev</em></td><td>)</td>
           <td><code> [inline]</code></td>
         </tr>
@@ -295,14 +294,14 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="af1270dccb23a6923dc815da25ce5664d"></a><!-- doxytag: member="qtpd::UIFloat::mouseReleaseEvent" ref="af1270dccb23a6923dc815da25ce5664d" args="(QMouseEvent *)" -->
+<a class="anchor" id="a458b8643e53e41728eff85581043fb52"></a><!-- doxytag: member="qtpd::UIFloat::mouseReleaseEvent" ref="a458b8643e53e41728eff85581043fb52" args="(QGraphicsSceneMouseEvent *)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_float.html#af1270dccb23a6923dc815da25ce5664d">qtpd::UIFloat::mouseReleaseEvent</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_float.html#a458b8643e53e41728eff85581043fb52">qtpd::UIFloat::mouseReleaseEvent</a> </td>
           <td>(</td>
-          <td class="paramtype">QMouseEvent *&#160;</td>
+          <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [inline]</code></td>
         </tr>
@@ -312,20 +311,38 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="abcf8e1104bd9e3a3508279480f316dc9"></a><!-- doxytag: member="qtpd::UIFloat::paintEvent" ref="abcf8e1104bd9e3a3508279480f316dc9" args="(QPaintEvent *)" -->
+<a class="anchor" id="a005f7f68707bda1c4af116e94588427c"></a><!-- doxytag: member="qtpd::UIFloat::paint" ref="a005f7f68707bda1c4af116e94588427c" args="(QPainter *p, const QStyleOptionGraphicsItem *, QWidget *)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_float.html#abcf8e1104bd9e3a3508279480f316dc9">qtpd::UIFloat::paintEvent</a> </td>
+          <td class="memname">virtual void <a class="el" href="classqtpd_1_1_u_i_float.html#a005f7f68707bda1c4af116e94588427c">qtpd::UIFloat::paint</a> </td>
           <td>(</td>
-          <td class="paramtype">QPaintEvent *&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td class="paramtype">QPainter *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QStyleOptionGraphicsItem *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#ae771bee506666ac01557f470b633091d">qtpd::UIObject</a>.</p>
 
 </div>
 </div>
@@ -423,7 +440,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 5 2017 11:12:16 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Apr 5 2017 14:20:14 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

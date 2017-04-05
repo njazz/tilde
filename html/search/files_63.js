@@ -2,7 +2,7 @@ var searchData=
 [
   ['canvas_2ecpp',['Canvas.cpp',['../_canvas_8cpp.html',1,'']]],
   ['canvas_2eh',['Canvas.h',['../_canvas_8h.html',1,'']]],
-  ['canvasdatas_2eh',['CanvasDatas.h',['../_canvas_datas_8h.html',1,'']]],
+  ['canvasdata_2eh',['CanvasData.h',['../_canvas_data_8h.html',1,'']]],
   ['ceammc_2ec',['ceammc.c',['../ceammc_8c.html',1,'']]],
   ['ceammc_2ecpp',['ceammc.cpp',['../ceammc_8cpp.html',1,'']]],
   ['ceammc_2eh',['ceammc.h',['../ceammc_8h.html',1,'']]],
@@ -38,6 +38,8 @@ var searchData=
   ['cellobject_2eh',['cellobject.h',['../cellobject_8h.html',1,'']]],
   ['ceval_2eh',['ceval.h',['../ceval_8h.html',1,'']]],
   ['classobject_2eh',['classobject.h',['../classobject_8h.html',1,'']]],
+  ['clipboard_2ecpp',['Clipboard.cpp',['../_clipboard_8cpp.html',1,'']]],
+  ['clipboard_2eh',['Clipboard.h',['../_clipboard_8h.html',1,'']]],
   ['cm_5fclipboard_2eh',['cm_clipboard.h',['../cm__clipboard_8h.html',1,'']]],
   ['cobject_2eh',['cobject.h',['../cobject_8h.html',1,'']]],
   ['code_2eh',['code.h',['../code_8h.html',1,'']]],

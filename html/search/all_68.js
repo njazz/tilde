@@ -15,6 +15,7 @@ var searchData=
   ['hashfunc',['hashfunc',['../object_8h.html#aa3e83a8c518aa347f2291341ad2aa561',1,'object.h']]],
   ['hasobjects',['hasObjects',['../classqtpd_1_1canvas_data.html#a305166078a86754479e7903367be1a59',1,'qtpd::canvasData']]],
   ['hasproperty',['hasProperty',['../classqtpd_1_1_o_o_p_d_class_base.html#ab90a64531308986d0d960e1f86c3a97a',1,'qtpd::OOPDClassBase::hasProperty()'],['../classceammc_1_1_atom_list.html#ae7857e5cca7d55ff167bbf4b52927dc4',1,'ceammc::AtomList::hasProperty()'],['../classceammc_1_1_base_object.html#a7243f8db4a0b0b5c203623f9a2e1a9d5',1,'ceammc::BaseObject::hasProperty()']]],
+  ['hasselectedobjects',['hasSelectedObjects',['../classqtpd_1_1canvas_data.html#a307cbe85cd9d94b02b7643f8f2567eb4',1,'qtpd::canvasData']]],
   ['hasui',['hasUI',['../classqtpd_1_1_object_loader.html#af239c0e007aed45a838eeca575f4e22b',1,'qtpd::ObjectLoader']]],
   ['have_5facosh',['HAVE_ACOSH',['../pyconfig_8h.html#a1e5652cd81c491ccb63bcf5414dfada6',1,'pyconfig.h']]],
   ['have_5faddrinfo',['HAVE_ADDRINFO',['../pyconfig_8h.html#a3c8d9f5ed3a254cfbd75def483a740ec',1,'pyconfig.h']]],

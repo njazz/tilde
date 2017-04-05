@@ -9,6 +9,7 @@ var searchData=
   ['hasextrashellrefcount',['hasExtraShellRefCount',['../class_python_qt_debug_a_p_i.html#ac4ac2a776e5f4d376ae71f9b7a5555bc',1,'PythonQtDebugAPI']]],
   ['hasobjects',['hasObjects',['../classqtpd_1_1canvas_data.html#a305166078a86754479e7903367be1a59',1,'qtpd::canvasData']]],
   ['hasproperty',['hasProperty',['../classqtpd_1_1_o_o_p_d_class_base.html#ab90a64531308986d0d960e1f86c3a97a',1,'qtpd::OOPDClassBase::hasProperty()'],['../classceammc_1_1_atom_list.html#ae7857e5cca7d55ff167bbf4b52927dc4',1,'ceammc::AtomList::hasProperty()'],['../classceammc_1_1_base_object.html#a7243f8db4a0b0b5c203623f9a2e1a9d5',1,'ceammc::BaseObject::hasProperty()']]],
+  ['hasselectedobjects',['hasSelectedObjects',['../classqtpd_1_1canvas_data.html#a307cbe85cd9d94b02b7643f8f2567eb4',1,'qtpd::canvasData']]],
   ['hasui',['hasUI',['../classqtpd_1_1_object_loader.html#af239c0e007aed45a838eeca575f4e22b',1,'qtpd::ObjectLoader']]],
   ['height',['height',['../classqtpd_1_1_u_i_item.html#a5bbd8fe0417078d386176ace5a01f261',1,'qtpd::UIItem::height()'],['../structceammc__gui_1_1_base_gui_object.html#a924cb7e1f8aff1f320429b39813094e7',1,'ceammc_gui::BaseGuiObject::height()']]],
   ['help',['help',['../class_python_qt_class_info.html#a62fae4f1734593b049980233b82c941a',1,'PythonQtClassInfo']]],

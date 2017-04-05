@@ -13,6 +13,7 @@ var searchData=
   ['checkedproperty_3c_20p_2c_20v_2c_20validaterangeclosed_3c_20v_20_3e_20_3e',['CheckedProperty< P, V, ValidateRangeClosed< V > >',['../classceammc_1_1_checked_property.html',1,'ceammc']]],
   ['checkedproperty_3c_20p_2c_20v_2c_20validaterangeopen_3c_20v_20_3e_20_3e',['CheckedProperty< P, V, ValidateRangeOpen< V > >',['../classceammc_1_1_checked_property.html',1,'ceammc']]],
   ['clipboard',['Clipboard',['../classqtpd_1_1_clipboard.html',1,'qtpd']]],
+  ['clipboard',['Clipboard',['../class_clipboard.html',1,'']]],
   ['closedrangeproperty',['ClosedRangeProperty',['../classceammc_1_1_closed_range_property.html',1,'ceammc']]],
   ['cuedata',['CueData',['../classceammc_1_1tl_1_1_cue_data.html',1,'ceammc::tl']]],
   ['cuestorage',['CueStorage',['../classceammc_1_1tl_1_1_cue_storage.html',1,'ceammc::tl']]]

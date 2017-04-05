@@ -152,6 +152,7 @@ Signals</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a7cd66a9ac05bd493a0f17a61513cc5ae">callRepaint</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ae771bee506666ac01557f470b633091d">paint</a> (QPainter *<a class="el" href="floatobject_8h.html#af18a92ce774f4c499544fbcc894db7e8">p</a>, const QStyleOptionGraphicsItem *option, QWidget *widget)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a2e6fec1e7e23c49c16330281d84f099f">setCanvas</a> (void *canvas)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a7fcf552df3978236b474406118df604c">UIObject</a> (<a class="el" href="classqtpd_1_1_u_i_item.html">UIItem</a> *parent=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a07fc14ec32a45e628bece60f892500b8">initProperties</a> ()</td></tr>
@@ -704,6 +705,43 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ae771bee506666ac01557f470b633091d"></a><!-- doxytag: member="qtpd::UIObject::paint" ref="ae771bee506666ac01557f470b633091d" args="(QPainter *p, const QStyleOptionGraphicsItem *option, QWidget *widget)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classqtpd_1_1_u_i_object.html#ae771bee506666ac01557f470b633091d">qtpd::UIObject::paint</a> </td>
+          <td>(</td>
+          <td class="paramtype">QPainter *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QStyleOptionGraphicsItem *&#160;</td>
+          <td class="paramname"><em>option</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>widget</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_item.html#a12e5dcf388b6fe5db809ff7f2f45a4d9">qtpd::UIItem</a>.</p>
+
+<p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_subpatch.html#a380193cdd5fdfb0cd438bf07882d1714">qtpd::UISubpatch</a>, <a class="el" href="classqtpd_1_1_u_i_box.html#aab3092fa42ca63f1f8ff236d50479cb6">qtpd::UIBox</a>, <a class="el" href="classqtpd_1_1_u_i_message.html#a65412b0cbb3d0c5afff028b610df9ae9">qtpd::UIMessage</a>, <a class="el" href="classqtpd_1_1_u_i_float.html#a005f7f68707bda1c4af116e94588427c">qtpd::UIFloat</a>, <a class="el" href="classqtpd_1_1_u_i_toggle.html#aa89b72d2a43aacb8a487fb2ab22970a2">qtpd::UIToggle</a>, <a class="el" href="classqtpd_1_1_u_i_bang.html#ada7ab57467bf5e2ebafacdc4002b8437">qtpd::UIBang</a>, and <a class="el" href="classqtpd_1_1_u_i_text.html#ae4fd79dfe69c60bbbda202bdfc1327b0">qtpd::UIText</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a77f34c6557cd08be98617e6768672da5"></a><!-- doxytag: member="qtpd::UIObject::pdInletType" ref="a77f34c6557cd08be98617e6768672da5" args="(int idx)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1228,7 +1266,7 @@ Protected Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 5 2017 11:12:16 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Apr 5 2017 14:20:14 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

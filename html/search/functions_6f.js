@@ -13,6 +13,7 @@ var searchData=
   ['objectmakerdone',['objectMakerDone',['../classqtpd_1_1_patch_window.html#a65452a0d74483f4351d2703898ed22eb',1,'qtpd::PatchWindow']]],
   ['objectmakerdonesignal',['objectMakerDoneSignal',['../classqtpd_1_1_object_maker.html#adc36d63bedc3740d9c65ce949be5eb87',1,'qtpd::ObjectMaker']]],
   ['objects',['objects',['../classpy_canvas_decorator.html#a111018b135f3e4cb372488ca01f2b920',1,'pyCanvasDecorator']]],
+  ['objectsaspdfilestrings',['objectsAsPdFileStrings',['../classqtpd_1_1canvas_data.html#aebb06462581cf113b26afa8d60298f88',1,'qtpd::canvasData']]],
   ['objpred',['ObjPred',['../structceammc_1_1tl_1_1_obj_pred.html#ac59599038c4b505080ff2c3aeda1db5a',1,'ceammc::tl::ObjPred']]],
   ['onany',['onAny',['../classceammc_1_1_base_object.html#a076e6b03e973850dc51505de3e978e67',1,'ceammc::BaseObject']]],
   ['onbang',['onBang',['../classceammc_1_1_base_object.html#a94155063c1f3b7469e60ca439b6e8384',1,'ceammc::BaseObject']]],
