@@ -55,8 +55,8 @@ public:
 
         b->autoResize();
 
-        t_object* new_obj = 0;
-        int in_c = 0, out_c = 0;
+        //t_object* new_obj = 0;
+        //int in_c = 0, out_c = 0;
 
         if (!pdCanvas) {
             qDebug("bad pd canvas instance");
@@ -128,7 +128,7 @@ public:
         p->setRenderHint(QPainter::HighQualityAntialiasing, true);
         p->scale(scale(), scale());
 
-        p->setPen(QPen(QColor(192, 255, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p->setPen(QPen(QColor(192, 255, 0), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         p->drawRect(0, 1, width(), height() - 2);
 
         //remove this later
@@ -138,7 +138,7 @@ public:
         }
 
         QColor rectColor = (errorBox()) ? QColor(255, 0, 0) : QColor(128, 128, 128);
-        p->setPen(QPen(rectColor, 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p->setPen(QPen(rectColor, 1, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         p->drawRect(0, 0, width(), height());
         QTextOption* op = new QTextOption;
         op->setAlignment(Qt::AlignLeft);
@@ -168,11 +168,11 @@ public:
         }
 
         //open canvas for subpatch
-        if (getEditMode() != em_Unlocked) {
-            if (subpatchWindow()) {
-                subpatchWindow()->show();
-            }
-        }
+//        if (getEditMode() != em_Unlocked) {
+//            if (subpatchWindow()) {
+//                subpatchWindow()->show();
+//            }
+//        }
 
         if ((getEditMode() == em_Unlocked) && isSelected()) {
 
@@ -181,7 +181,7 @@ public:
         }
 
         if ( (getEditMode() != em_Unlocked) ) {
-
+    if(!errorBox())
             _editor.show();
         }
 
