@@ -152,7 +152,7 @@ var searchData=
   ['setx',['setX',['../structui__slider2d.html#a41516f6ad00ce41fd893ef0be1a370c1',1,'ui_slider2d']]],
   ['setxpos',['setXPos',['../classceammc_1_1tl_1_1_cue_data.html#ad199d318c76aa97fea149f1f6e0579d7',1,'ceammc::tl::CueData::setXPos()'],['../classceammc_1_1tl_1_1_timeline_data.html#a2af61d443eb715bf1ae37b33b536989d',1,'ceammc::tl::TimelineData::setXPos()']]],
   ['sety',['setY',['../structui__slider2d.html#ad43fcaf799b4e9aba95ca47aff23699b',1,'ui_slider2d']]],
-  ['shape',['shape',['../classqtpd_1_1_u_i_item.html#ab43146d2c78f8912b609a84fe1d5d9e0',1,'qtpd::UIItem']]],
+  ['shape',['shape',['../classqtpd_1_1_patchcord.html#aee154302b18479c1e897716e7d385847',1,'qtpd::Patchcord::shape()'],['../classqtpd_1_1_u_i_item.html#ab43146d2c78f8912b609a84fe1d5d9e0',1,'qtpd::UIItem::shape()']]],
   ['sharedlibrarysuffixes',['sharedLibrarySuffixes',['../class_python_qt_private.html#ad71d47fc126798c2648f984ad50b043c',1,'PythonQtPrivate']]],
   ['shellclassdeleted',['shellClassDeleted',['../class_python_qt_private.html#ad353e3d25d38be4fbe1eb057ba539766',1,'PythonQtPrivate']]],
   ['shellsetinstancewrappercb',['shellSetInstanceWrapperCB',['../class_python_qt_class_info.html#a4b8e20596586a00153d282b68d05b732',1,'PythonQtClassInfo']]],

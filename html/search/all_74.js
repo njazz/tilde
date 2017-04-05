@@ -79,7 +79,7 @@ var searchData=
   ['top',['top',['../structui__slider2d.html#a34f90c01d2a0eb2ecf3e5f771fddd76c',1,'ui_slider2d']]],
   ['topddata',['toPdData',['../classceammc_1_1_atom_list.html#ac7c328692c6caab66d1320207e8a1cfb',1,'ceammc::AtomList']]],
   ['tosymbol',['toSymbol',['../classqtpd_1_1_o_p_instance.html#a791108546e906618f7054e479db5afc0',1,'qtpd::OPInstance']]],
-  ['toupper',['toupper',['../bytes__methods_8h.html#adda03014c30b02d7b496fce96f37951b',1,'toupper():&#160;bytes_methods.h'],['../bytes__methods_8h.html#ab54417c7c018570043920af66ba7457f',1,'TOUPPER():&#160;bytes_methods.h']]],
+  ['toupper',['TOUPPER',['../bytes__methods_8h.html#ab54417c7c018570043920af66ba7457f',1,'TOUPPER():&#160;bytes_methods.h'],['../bytes__methods_8h.html#adda03014c30b02d7b496fce96f37951b',1,'toupper():&#160;bytes_methods.h']]],
   ['tp_5falloc',['tp_alloc',['../struct__typeobject.html#a8458b295e2e10393595dc8714bb3c7f6',1,'_typeobject']]],
   ['tp_5fas_5fbuffer',['tp_as_buffer',['../struct__typeobject.html#a9a413fe33d7a2e14d13197f84cd26cc9',1,'_typeobject']]],
   ['tp_5fas_5fmapping',['tp_as_mapping',['../struct__typeobject.html#a994cf6915913e523db5c29a5c78d4b24',1,'_typeobject']]],

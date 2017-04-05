@@ -17,8 +17,6 @@ var searchData=
   ['hidesizebox',['hideSizeBox',['../classqtpd_1_1_u_i_object.html#a67dc3600d5357c9befab0af91cb8b5f9',1,'qtpd::UIObject']]],
   ['history',['history',['../class_python_qt_scripting_console.html#a0f1d436b3bf883051f6835b976bae94a',1,'PythonQtScriptingConsole']]],
   ['hover',['hover',['../classqtpd_1_1_u_i_item.html#a2ca6449c88dc277945266ad0413402a7',1,'qtpd::UIItem']]],
-  ['hoverenterevent',['hoverEnterEvent',['../classqtpd_1_1_port.html#a9e65d318284c73f34ccb85eb28d32844',1,'qtpd::Port::hoverEnterEvent()'],['../classqtpd_1_1_u_i_object.html#ae3b8ec06c4aa92e121faf2810c2babf5',1,'qtpd::UIObject::hoverEnterEvent()']]],
-  ['hoverleaveevent',['hoverLeaveEvent',['../classqtpd_1_1_port.html#a93264e4fd7a721b1c0a711bf90ebd363',1,'qtpd::Port::hoverLeaveEvent()'],['../classqtpd_1_1_u_i_object.html#a3b05e154739411d1eed522f7dbf1d9c7',1,'qtpd::UIObject::hoverLeaveEvent()']]],
-  ['hoverpatchcords',['hoverPatchcords',['../classqtpd_1_1_canvas.html#a2d58aabe06c3e7b6a0d31c9b2f406a81',1,'qtpd::Canvas']]],
-  ['hoverpatchcordsoff',['hoverPatchcordsOff',['../classqtpd_1_1_canvas.html#a91fafcf571a215a4cd972d5b20c3bef4',1,'qtpd::Canvas']]]
+  ['hoverenterevent',['hoverEnterEvent',['../classqtpd_1_1_patchcord.html#a710419475e1b5e421e6683b96e905d6f',1,'qtpd::Patchcord::hoverEnterEvent()'],['../classqtpd_1_1_port.html#a9e65d318284c73f34ccb85eb28d32844',1,'qtpd::Port::hoverEnterEvent()'],['../classqtpd_1_1_u_i_object.html#ae3b8ec06c4aa92e121faf2810c2babf5',1,'qtpd::UIObject::hoverEnterEvent()']]],
+  ['hoverleaveevent',['hoverLeaveEvent',['../classqtpd_1_1_patchcord.html#a261798ec91cdb11d52684b02c2b2b168',1,'qtpd::Patchcord::hoverLeaveEvent()'],['../classqtpd_1_1_port.html#a93264e4fd7a721b1c0a711bf90ebd363',1,'qtpd::Port::hoverLeaveEvent()'],['../classqtpd_1_1_u_i_object.html#a3b05e154739411d1eed522f7dbf1d9c7',1,'qtpd::UIObject::hoverLeaveEvent()']]]
 ];

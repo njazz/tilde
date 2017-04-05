@@ -168,14 +168,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a72af9c21137b434e7dc4ce465d565f27">addOutlet</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a46e9c53204fb1f069271673c170d0749">drawCanvas</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">draws canvas contents  <a href="#a46e9c53204fb1f069271673c170d0749"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a2d58aabe06c3e7b6a0d31c9b2f406a81">hoverPatchcords</a> (QPoint <a class="el" href="setobject_8h.html#a0cdb1b70380fd629358aa8be81bb89b6">pos</a>)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">paint patchcords  <a href="#a2d58aabe06c3e7b6a0d31c9b2f406a81"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a91fafcf571a215a4cd972d5b20c3bef4">hoverPatchcordsOff</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">resets all patchcords hover color flag  <a href="#a91fafcf571a215a4cd972d5b20c3bef4"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a1035ee0af82f6503b9f35ffa91d7cf77">clickPatchcords</a> (QPoint <a class="el" href="setobject_8h.html#a0cdb1b70380fd629358aa8be81bb89b6">pos</a>)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">marks clicked patchcord  <a href="#a1035ee0af82f6503b9f35ffa91d7cf77"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#ae404165ecf83dfbc0327c46b5e759640">mouseMoveEvent</a> (QMouseEvent *ev)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">route mouse move handling for different vis types  <a href="#ae404165ecf83dfbc0327c46b5e759640"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">paint patchcords  <a href="#ae404165ecf83dfbc0327c46b5e759640"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#ae9b735f221c154661f64179b796548b9">mousePressEvent</a> (QMouseEvent *ev)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">route mouse press handling for different vis types  <a href="#ae9b735f221c154661f64179b796548b9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a986d4344290abb2b87f942d4c8683569">mouseReleaseEvent</a> (QMouseEvent *ev)</td></tr>
@@ -381,32 +375,6 @@ Public Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>this is for loading or copying canvases. not yet used in fileparser </p>
-
-</div>
-</div>
-<a class="anchor" id="a1035ee0af82f6503b9f35ffa91d7cf77"></a><!-- doxytag: member="qtpd::Canvas::clickPatchcords" ref="a1035ee0af82f6503b9f35ffa91d7cf77" args="(QPoint pos)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a> <a class="el" href="classqtpd_1_1_canvas.html#a1035ee0af82f6503b9f35ffa91d7cf77">qtpd::Canvas::clickPatchcords</a> </td>
-          <td>(</td>
-          <td class="paramtype">QPoint&#160;</td>
-          <td class="paramname"><em>pos</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>marks clicked patchcord </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pos</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>true if there was a patchcord </dd></dl>
 
 </div>
 </div>
@@ -790,51 +758,6 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a2d58aabe06c3e7b6a0d31c9b2f406a81"></a><!-- doxytag: member="qtpd::Canvas::hoverPatchcords" ref="a2d58aabe06c3e7b6a0d31c9b2f406a81" args="(QPoint pos)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a> <a class="el" href="classqtpd_1_1_canvas.html#a2d58aabe06c3e7b6a0d31c9b2f406a81">qtpd::Canvas::hoverPatchcords</a> </td>
-          <td>(</td>
-          <td class="paramtype">QPoint&#160;</td>
-          <td class="paramname"><em>pos</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>paint patchcords </p>
-<p>changes patchcords color when mouse is over </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pos</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>true if mouse is over any of the patchcords </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a91fafcf571a215a4cd972d5b20c3bef4"></a><!-- doxytag: member="qtpd::Canvas::hoverPatchcordsOff" ref="a91fafcf571a215a4cd972d5b20c3bef4" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas.html#a91fafcf571a215a4cd972d5b20c3bef4">qtpd::Canvas::hoverPatchcordsOff</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>resets all patchcords hover color flag </p>
-
-</div>
-</div>
 <a class="anchor" id="aee47f4a858edcbed48d43b04e635cbfa"></a><!-- doxytag: member="qtpd::Canvas::keepPdObject" ref="aee47f4a858edcbed48d43b04e635cbfa" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -885,6 +808,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>paint patchcords </p>
 <p>route mouse move handling for different vis types </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -2014,7 +1938,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 5 2017 10:10:17 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Apr 5 2017 10:48:57 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
