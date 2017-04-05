@@ -13,7 +13,6 @@ var searchData=
   ['_5fcachedsignatures',['_cachedSignatures',['../class_python_qt_method_info.html#aeb33b05d79a488571385845ac4d3d35a',1,'PythonQtMethodInfo']]],
   ['_5fcalldata',['_callData',['../struct_python_qt_std_in_redirect.html#a1d076de6cc99dc098fb7a6ef8dca66e6',1,'PythonQtStdInRedirect']]],
   ['_5fcanvas',['_canvas',['../classqtpd_1_1_o_o_p_d_class_base.html#ab36067930bef9e8daa886150e517ef63',1,'qtpd::OOPDClassBase']]],
-  ['_5fcanvasdrawstyle',['_canvasDrawStyle',['../namespaceqtpd.html#a0384ba087089722ae1a2fa312df7e7b9',1,'qtpd']]],
   ['_5fcb',['_cb',['../struct_python_qt_std_in_redirect.html#a100dec38c3055571fd1dcabed2f9f4f2',1,'PythonQtStdInRedirect::_cb()'],['../struct_python_qt_std_out_redirect.html#a697824d32d168d2deb24d4c3eabebbce',1,'PythonQtStdOutRedirect::_cb()']]],
   ['_5fchunkidx',['_chunkIdx',['../class_python_qt_value_storage.html#ac2dba8e4422051775d78b739c18d1bc1',1,'PythonQtValueStorage']]],
   ['_5fchunkoffset',['_chunkOffset',['../class_python_qt_value_storage.html#a6e802ecb32ef33d2e4c778d1159847c6',1,'PythonQtValueStorage']]],

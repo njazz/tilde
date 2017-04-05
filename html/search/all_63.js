@@ -39,7 +39,6 @@ var searchData=
   ['canvasdata',['canvasData',['../classqtpd_1_1canvas_data.html',1,'qtpd']]],
   ['canvasdataplus',['canvasDataPlus',['../classqtpd_1_1canvas_data_plus.html',1,'qtpd']]],
   ['canvasdatas_2eh',['CanvasDatas.h',['../_canvas_datas_8h.html',1,'']]],
-  ['canvasdrawstyle',['canvasDrawStyle',['../namespaceqtpd.html#a3122dc9331556e1ca5ddad5fa6c9e7b7',1,'qtpd']]],
   ['canvasfrompdstrings',['canvasFromPdStrings',['../classqtpd_1_1_canvas.html#a2b189b998887b5615146b8e64666cde7',1,'qtpd::Canvas']]],
   ['canvasispatch',['canvasIsPatch',['../classqtpd_1_1_o_o_p_d.html#abb8789fde690d6e92c92ac5a84630590',1,'qtpd::OOPD']]],
   ['castdownifpossible',['castDownIfPossible',['../class_python_qt_class_info.html#af8d1aff92e81fe2714efb50feac93080',1,'PythonQtClassInfo']]],

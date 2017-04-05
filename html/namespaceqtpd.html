@@ -93,7 +93,7 @@ Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_base_menu.html">BaseMenu</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Common menu - creates new windows (patch, Pd)  <a href="classqtpd_1_1_base_menu.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html">Canvas</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">'t_canvas' counterpart. creates objects  <a href="classqtpd_1_1_canvas.html#details">More...</a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">draw canvas as patch, box or pd "G-O-P" / patch in patch  <a href="classqtpd_1_1_canvas.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1canvas_data.html">canvasData</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">shared canvas data - boxes, patchcords TODO rename  <a href="classqtpd_1_1canvas_data.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1canvas_data_plus.html">canvasDataPlus</a></td></tr>
@@ -181,8 +181,6 @@ Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_properties_window.html">PropertiesWindow</a></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="namespaceqtpd.html#a0384ba087089722ae1a2fa312df7e7b9">qtpd::_canvasDrawStyle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a3122dc9331556e1ca5ddad5fa6c9e7b7">canvasDrawStyle</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">draw canvas as patch, box or pd "G-O-P" / patch in patch  <a href="#a3122dc9331556e1ca5ddad5fa6c9e7b7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#afd559ba823ec75738510eb0b1e9ddba7">objectVec</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="classqtpd_1_1_patchcord.html">Patchcord</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a81f1e9d2a3767de39a2b30057b599854">patchcordVec</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef std::set&lt; <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#aa84b43c55cc2d7bd544fba8bddd2af2d">objectSet</a></td></tr>
@@ -216,11 +214,6 @@ Typedefs</h2></td></tr>
 <a class="el" href="namespaceqtpd.html#a74b68fa0b2ffe25112d5309b0f4bdf8a">UIPropertyData</a> * &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a5de80d70f22f21b977f7595cfa4b714b">UIPropertyGroupIterator</a></td></tr>
 <tr><td colspan="2"><h2><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a0384ba087089722ae1a2fa312df7e7b9">_canvasDrawStyle</a> { <a class="el" href="namespaceqtpd.html#a0384ba087089722ae1a2fa312df7e7b9a3456dc40b692464c0696e209987b3e15">ds_Canvas</a>, 
-<a class="el" href="namespaceqtpd.html#a0384ba087089722ae1a2fa312df7e7b9a6bb806e9390652c88a3e28bd6ae2c12a">ds_Box</a>, 
-<a class="el" href="namespaceqtpd.html#a0384ba087089722ae1a2fa312df7e7b9a69d5e10baa90ad7357e1d981968b0863">ds_CanvasInBox</a>
- }</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">draw canvas as patch, box or pd "G-O-P" / patch in patch  <a href="namespaceqtpd.html#a0384ba087089722ae1a2fa312df7e7b9">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a">t_editMode</a> { <a class="el" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aaa528336eacc29596e8365b88a4f62d82">em_Unlocked</a>, 
 <a class="el" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aac9d3b5321b0a8c731588f74bb4302eb1">em_Locked</a>, 
 <a class="el" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aa9911e692d63257d7be0dbee257aba9f7">em_Temporary</a>
@@ -254,21 +247,6 @@ Variables</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_o_o_p_d.html">OOPD</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a3dde6489d34303c66ea710aa2116b426">instance</a></td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
-<a class="anchor" id="a3122dc9331556e1ca5ddad5fa6c9e7b7"></a><!-- doxytag: member="qtpd::canvasDrawStyle" ref="a3122dc9331556e1ca5ddad5fa6c9e7b7" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef enum <a class="el" href="namespaceqtpd.html#a0384ba087089722ae1a2fa312df7e7b9">qtpd::_canvasDrawStyle</a>  <a class="el" href="namespaceqtpd.html#a3122dc9331556e1ca5ddad5fa6c9e7b7">qtpd::canvasDrawStyle</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>draw canvas as patch, box or pd "G-O-P" / patch in patch </p>
-
-</div>
-</div>
 <a class="anchor" id="a1e70310df6a0f84e6f464d5c03ba2545"></a><!-- doxytag: member="qtpd::cmObjectConstructor" ref="a1e70310df6a0f84e6f464d5c03ba2545" args=")(std::string objectData, t_canvas *pdCanvas, QGraphicsView *parent)" -->
 <div class="memitem">
 <div class="memproto">
@@ -513,31 +491,6 @@ Variables</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Enumeration Type Documentation</h2>
-<a class="anchor" id="a0384ba087089722ae1a2fa312df7e7b9"></a><!-- doxytag: member="qtpd::_canvasDrawStyle" ref="a0384ba087089722ae1a2fa312df7e7b9" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="namespaceqtpd.html#a0384ba087089722ae1a2fa312df7e7b9">qtpd::_canvasDrawStyle</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>draw canvas as patch, box or pd "G-O-P" / patch in patch </p>
-<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="a0384ba087089722ae1a2fa312df7e7b9a3456dc40b692464c0696e209987b3e15"></a><!-- doxytag: member="ds_Canvas" ref="a0384ba087089722ae1a2fa312df7e7b9a3456dc40b692464c0696e209987b3e15" args="" -->ds_Canvas</em>&nbsp;</td><td>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="a0384ba087089722ae1a2fa312df7e7b9a6bb806e9390652c88a3e28bd6ae2c12a"></a><!-- doxytag: member="ds_Box" ref="a0384ba087089722ae1a2fa312df7e7b9a6bb806e9390652c88a3e28bd6ae2c12a" args="" -->ds_Box</em>&nbsp;</td><td>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="a0384ba087089722ae1a2fa312df7e7b9a69d5e10baa90ad7357e1d981968b0863"></a><!-- doxytag: member="ds_CanvasInBox" ref="a0384ba087089722ae1a2fa312df7e7b9a69d5e10baa90ad7357e1d981968b0863" args="" -->ds_CanvasInBox</em>&nbsp;</td><td>
-</td></tr>
-</table>
-</dd>
-</dl>
-
-</div>
-</div>
 <a class="anchor" id="aeb90db8c4429db4c0e2875b083534a3a"></a><!-- doxytag: member="qtpd::patchcordTypeEnum" ref="aeb90db8c4429db4c0e2875b083534a3a" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -697,7 +650,7 @@ Variables</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 5 2017 10:48:57 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Apr 5 2017 11:12:16 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -1417,19 +1417,20 @@ Generating docs for namespace PythonQt_QtAll
 Generating docs for namespace PythonQtUtils
 Generating docs for namespace qtpd
 Generating docs for compound qtpd::BaseMenu...
-Generating do/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:242: warning: argument 'canvas' of command @param is not found in the argument list of qtpd::Canvas::createBoxForCanvas(Canvas *newCanvas, std::string objectData, QPoint pos)
-/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:242: warning: The following parameters of qtpd::Canvas::createBoxForCanvas(Canvas *newCanvas, std::string objectData, QPoint pos) are not documented:
+Generating do/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:176: warning: argument 'canvas' of command @param is not found in the argument list of qtpd::Canvas::createBoxForCanvas(Canvas *newCanvas, std::string objectData, QPoint pos)
+/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:176: warning: The following parameters of qtpd::Canvas::createBoxForCanvas(Canvas *newCanvas, std::string objectData, QPoint pos) are not documented:
   parameter 'newCanvas'
-/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:234: warning: argument 'message' of command @param is not found in the argument list of qtpd::Canvas::createObject(QString objectData1, QPoint pos)
-/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:234: warning: The following parameters of qtpd::Canvas::createObject(QString objectData1, QPoint pos) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:168: warning: argument 'message' of command @param is not found in the argument list of qtpd::Canvas::createObject(QString objectData1, QPoint pos)
+/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:168: warning: The following parameters of qtpd::Canvas::createObject(QString objectData1, QPoint pos) are not documented:
   parameter 'objectData1'
-/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:405: warning: argument 'patchcord' of command @param is not found in the argument list of qtpd::Canvas::patchcordAsPdFileString(Patchcord *pcord)
-/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:405: warning: The following parameters of qtpd::Canvas::patchcordAsPdFileString(Patchcord *pcord) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:92: warning: argument 'dStyle' of command @param is not found in the argument list of qtpd::Canvas::newView(Canvas *srcCanvas, UIObject *parentCanvas)
+/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:339: warning: argument 'patchcord' of command @param is not found in the argument list of qtpd::Canvas::patchcordAsPdFileString(Patchcord *pcord)
+/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:339: warning: The following parameters of qtpd::Canvas::patchcordAsPdFileString(Patchcord *pcord) are not documented:
   parameter 'pcord'
-/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:223: warning: argument 'pdObjectData' of command @param is not found in the argument list of qtpd::Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas *canvas)
-/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:223: warning: The following parameters of qtpd::Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas *canvas) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:157: warning: argument 'pdObjectData' of command @param is not found in the argument list of qtpd::Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas *canvas)
+/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:157: warning: The following parameters of qtpd::Canvas::restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas *canvas) are not documented:
   parameter 'pdObjectName'
-/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:459: warning: The following parameters of qtpd::Canvas::s_SelectBox(UIItem *box, QGraphicsSceneMouseEvent *ev) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/Canvas.h:393: warning: The following parameters of qtpd::Canvas::s_SelectBox(UIItem *box, QGraphicsSceneMouseEvent *ev) are not documented:
   parameter 'ev'
 /home/travis/build/njazz/qtpd/qtpd_gui/FileParser.h:63: warning: The following parameters of qtpd::FileParser::legacyProcess(Canvas *cmcanvas, QStringList list) are not documented:
   parameter 'cmcanvas'
@@ -1513,6 +1514,6 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-symbol cache used 6141/65536 hits=1061321 misses=6141
-lookup cache used 10189/65536 hits=63336 misses=10918
+symbol cache used 6137/65536 hits=1061115 misses=6137
+lookup cache used 10176/65536 hits=63322 misses=10903
 finished...

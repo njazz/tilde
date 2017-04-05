@@ -40,6 +40,7 @@ var searchData=
   ['dotproduct',['dotProduct',['../namespaceceammc_1_1vector.html#a9ffacf0a240a68917cc187e90c66d674',1,'ceammc::vector']]],
   ['dragobj_5fconvert',['DragObj_Convert',['../pymactoolbox_8h.html#a697b18a91709aebd0b2742eeb7b16322',1,'pymactoolbox.h']]],
   ['dragobj_5fnew',['DragObj_New',['../pymactoolbox_8h.html#a987b355c5a9b2bb65b57f05adbcdac34',1,'pymactoolbox.h']]],
+  ['dragobject',['dragObject',['../classqtpd_1_1_canvas.html#aa6b4a032d370f6ca85319752ad9fd0ab',1,'qtpd::Canvas']]],
   ['draw_5fknob_5fline',['draw_knob_line',['../namespaceceammc__gui.html#aeb00730c5dac2b43169d1bfa8ada3762',1,'ceammc_gui']]],
   ['drawcanvas',['drawCanvas',['../classqtpd_1_1_canvas.html#a46e9c53204fb1f069271673c170d0749',1,'qtpd::Canvas']]],
   ['dummytuple',['dummyTuple',['../class_python_qt_private.html#ad99944f1f32f7401dab700ca30afc554',1,'PythonQtPrivate']]],

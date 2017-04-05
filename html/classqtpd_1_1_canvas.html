@@ -111,7 +111,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="qtpd::Canvas" -->
-<p>'t_canvas' counterpart. creates objects  
+<p>draw canvas as patch, box or pd "G-O-P" / patch in patch  
  <a href="classqtpd_1_1_canvas.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_canvas_8h_source.html">Canvas.h</a>&gt;</code></p>
@@ -161,6 +161,8 @@ Signals</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a2b682c9355f1eabc4f20ee2a52e01d1a">updatePortCount</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#aa6b4a032d370f6ca85319752ad9fd0ab">dragObject</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#ab3219773f492389a433441a8471f112a">setDragObject</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *<a class="el" href="asdl_8h.html#a904fdf014f8cdbefe8320ca2bfd6daf6">object</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#ad2ad6a6f41eda5fd0f3c21ffeeeadb0d">Canvas</a> (QGraphicsView *parent=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">t_canvas *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#af0bf63bc7c808029a27c49e5f1872672">pdObject</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#aa814e0dde3c68cc8d4518c0de4a18682">setPdObject</a> (t_canvas *c)</td></tr>
@@ -169,7 +171,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a46e9c53204fb1f069271673c170d0749">drawCanvas</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">draws canvas contents  <a href="#a46e9c53204fb1f069271673c170d0749"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#ae404165ecf83dfbc0327c46b5e759640">mouseMoveEvent</a> (QMouseEvent *ev)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">paint patchcords  <a href="#ae404165ecf83dfbc0327c46b5e759640"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">route mouse move handling for different vis types  <a href="#ae404165ecf83dfbc0327c46b5e759640"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#ae9b735f221c154661f64179b796548b9">mousePressEvent</a> (QMouseEvent *ev)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">route mouse press handling for different vis types  <a href="#ae9b735f221c154661f64179b796548b9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a986d4344290abb2b87f942d4c8683569">mouseReleaseEvent</a> (QMouseEvent *ev)</td></tr>
@@ -177,7 +179,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a22f4d2b1d0099d7fb784a6453e83f798">mouseMoveEventForCanvas</a> (QMouseEvent *ev)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">mouse move handling  <a href="#a22f4d2b1d0099d7fb784a6453e83f798"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#ae93d38d741ca01e8591ab21cbc9f9d3e">mousePressEventForCanvas</a> (QMouseEvent *ev)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">mouse down handling for <a class="el" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>  <a href="#ae93d38d741ca01e8591ab21cbc9f9d3e"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">mouse down handling for <a class="el" href="classqtpd_1_1_canvas.html" title="draw canvas as patch, box or pd &quot;G-O-P&quot; / patch in patch">Canvas</a>  <a href="#ae93d38d741ca01e8591ab21cbc9f9d3e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#ab5e1e283cae8a668e28d14a64521cb84">mouseReleaseEventForCanvas</a> (QMouseEvent *)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">mouse up handling  <a href="#ab5e1e283cae8a668e28d14a64521cb84"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#ae5d178b7962fb039619f2e00c17d89cf">deselectBoxes</a> ()</td></tr>
@@ -243,15 +245,15 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#ab076136df83599356a5ba7ba891c7207">selectBox</a> (<a class="el" href="classqtpd_1_1_u_i_item.html">UIItem</a> *box)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_canvas.html">Canvas</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#aa19a2c103ad05b60422a793591cb3bae">newView</a> (<a class="el" href="classqtpd_1_1_canvas.html">Canvas</a> *srcCanvas, <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *parentCanvas, <a class="el" href="namespaceqtpd.html#a3122dc9331556e1ca5ddad5fa6c9e7b7">canvasDrawStyle</a> dStyle)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates new view of existing canvas. check this  <a href="#aa19a2c103ad05b60422a793591cb3bae"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_canvas.html">Canvas</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a93388dd59d3745c5bc17633bbaa78103">newView</a> (<a class="el" href="classqtpd_1_1_canvas.html">Canvas</a> *srcCanvas, <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *parentCanvas)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates new view of existing canvas. check this  <a href="#a93388dd59d3745c5bc17633bbaa78103"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#ac34b9608f2db9f3529942a91a73e4250">dragObject</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a16901c08809862b4ba2baacd7229666d">fileName</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>'t_canvas' counterpart. creates objects </p>
+<div class="textblock"><p>draw canvas as patch, box or pd "G-O-P" / patch in patch </p>
+<p>'t_canvas' counterpart. creates objects </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ad2ad6a6f41eda5fd0f3c21ffeeeadb0d"></a><!-- doxytag: member="qtpd::Canvas::Canvas" ref="ad2ad6a6f41eda5fd0f3c21ffeeeadb0d" args="(QGraphicsView *parent=0)" -->
 <div class="memitem">
@@ -639,6 +641,22 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aa6b4a032d370f6ca85319752ad9fd0ab"></a><!-- doxytag: member="qtpd::Canvas::dragObject" ref="aa6b4a032d370f6ca85319752ad9fd0ab" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a>* <a class="el" href="classqtpd_1_1_canvas.html#aa6b4a032d370f6ca85319752ad9fd0ab">qtpd::Canvas::dragObject</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a46e9c53204fb1f069271673c170d0749"></a><!-- doxytag: member="qtpd::Canvas::drawCanvas" ref="a46e9c53204fb1f069271673c170d0749" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -808,7 +826,6 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>paint patchcords </p>
 <p>route mouse move handling for different vis types </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -884,7 +901,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>mouse down handling for <a class="el" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a> </p>
+<p>mouse down handling for <a class="el" href="classqtpd_1_1_canvas.html" title="draw canvas as patch, box or pd &quot;G-O-P&quot; / patch in patch">Canvas</a> </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">ev</td><td></td></tr>
@@ -938,12 +955,12 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aa19a2c103ad05b60422a793591cb3bae"></a><!-- doxytag: member="qtpd::Canvas::newView" ref="aa19a2c103ad05b60422a793591cb3bae" args="(Canvas *srcCanvas, UIObject *parentCanvas, canvasDrawStyle dStyle)" -->
+<a class="anchor" id="a93388dd59d3745c5bc17633bbaa78103"></a><!-- doxytag: member="qtpd::Canvas::newView" ref="a93388dd59d3745c5bc17633bbaa78103" args="(Canvas *srcCanvas, UIObject *parentCanvas)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classqtpd_1_1_canvas.html">Canvas</a> * <a class="el" href="classqtpd_1_1_canvas.html#aa19a2c103ad05b60422a793591cb3bae">qtpd::Canvas::newView</a> </td>
+          <td class="memname"><a class="el" href="classqtpd_1_1_canvas.html">Canvas</a> * <a class="el" href="classqtpd_1_1_canvas.html#a93388dd59d3745c5bc17633bbaa78103">qtpd::Canvas::newView</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classqtpd_1_1_canvas.html">Canvas</a> *&#160;</td>
           <td class="paramname"><em>srcCanvas</em>, </td>
@@ -952,13 +969,7 @@ Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td>
-          <td class="paramname"><em>parentCanvas</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceqtpd.html#a3122dc9331556e1ca5ddad5fa6c9e7b7">canvasDrawStyle</a>&#160;</td>
-          <td class="paramname"><em>dStyle</em>&#160;</td>
+          <td class="paramname"><em>parentCanvas</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -974,7 +985,7 @@ Public Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">srcCanvas</td><td></td></tr>
     <tr><td class="paramname">parentCanvas</td><td></td></tr>
-    <tr><td class="paramname">dStyle</td><td>draw style - <a class="el" href="classqtpd_1_1_canvas.html" title="&#39;t_canvas&#39; counterpart. creates objects">Canvas</a>, Box, CanvasInBox </td></tr>
+    <tr><td class="paramname">dStyle</td><td>draw style - <a class="el" href="classqtpd_1_1_canvas.html" title="draw canvas as patch, box or pd &quot;G-O-P&quot; / patch in patch">Canvas</a>, Box, CanvasInBox </td></tr>
   </table>
   </dd>
 </dl>
@@ -1645,6 +1656,23 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ab3219773f492389a433441a8471f112a"></a><!-- doxytag: member="qtpd::Canvas::setDragObject" ref="ab3219773f492389a433441a8471f112a" args="(UIObject *object)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas.html#ab3219773f492389a433441a8471f112a">qtpd::Canvas::setDragObject</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td>
+          <td class="paramname"><em>object</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a0c032dbe358e3b444920fe8fa3eac002"></a><!-- doxytag: member="qtpd::Canvas::setEditMode" ref="a0c032dbe358e3b444920fe8fa3eac002" args="(t_editMode mode)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1890,19 +1918,6 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="ac34b9608f2db9f3529942a91a73e4250"></a><!-- doxytag: member="qtpd::Canvas::dragObject" ref="ac34b9608f2db9f3529942a91a73e4250" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a>* <a class="el" href="classqtpd_1_1_canvas.html#ac34b9608f2db9f3529942a91a73e4250">qtpd::Canvas::dragObject</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a16901c08809862b4ba2baacd7229666d"></a><!-- doxytag: member="qtpd::Canvas::fileName" ref="a16901c08809862b4ba2baacd7229666d" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -1938,7 +1953,7 @@ Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 5 2017 10:48:57 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Apr 5 2017 11:12:16 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
