@@ -22,12 +22,9 @@ class Port : public UIItem {
 protected:
     virtual void hoverEnterEvent(QGraphicsSceneHoverEvent*)
     {
-        qDebug("hover");
         if (getEditMode() == em_Unlocked) {
             setHover(true);
             update();
-
-//            emit mouseEntered();
         }
     }
 
@@ -36,8 +33,6 @@ protected:
         if (getEditMode() == em_Unlocked) {
             setHover(false);
             update();
-
-//            emit mouseLeaved();
         }
     }
 
@@ -79,9 +74,6 @@ public:
             p->drawRect(0, 0, boundingRect().width(), boundingRect().height());
         }
     }
-
-
-
 
     void mousePressEvent(QGraphicsSceneMouseEvent* ev)
     {

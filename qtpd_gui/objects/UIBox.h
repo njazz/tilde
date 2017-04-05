@@ -191,6 +191,8 @@ public:
 
         emit selectBox(this, ev);
         dragOffset = QPoint(ev->pos().x(), ev->pos().y());
+
+        ev->accept();
     }
 
     ////
@@ -225,9 +227,9 @@ public:
     }
 
     //
-    virtual void hoverEnterEvent(QEvent *)
+    virtual void hoverEnterEvent(QGraphicsSceneHoverEvent *)
     {
-        qDebug("box hover");
+     //   qDebug("box hover");
     }
 
     void setPdMessage(std::string message)

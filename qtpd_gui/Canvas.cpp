@@ -474,7 +474,7 @@ void Canvas::mousePressEvent(QMouseEvent* ev)
 
     //if (drawStyle() == ds_Canvas)
 
-    //if (ev->isAccepted())
+    if (!ev->isAccepted())
     mousePressEventForCanvas(ev);
     //    if (drawStyle() == ds_Box)
     //        mousePressEventForBox(ev);
