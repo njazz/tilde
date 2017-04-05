@@ -1446,8 +1446,8 @@ Genera/home/travis/build/njazz/qtpd/qtpd_lib/ceammc-lib/ceammc_gui.h:199: warnin
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:279: warning: The following parameters of qtpd::UIObject::setMinimumBoxHeight(int h) are not documented:
   parameter 'h'
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:127: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setOutletsPos()
-/home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIInstance.h:304: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIInstance::setInletsPos() inherited from member setInletsPos at line 117 in file /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h
-/home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIInstance.h:305: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIInstance::setOutletsPos() inherited from member setOutletsPos at line 127 in file /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h
+/home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIInstance.h:309: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIInstance::setInletsPos() inherited from member setInletsPos at line 117 in file /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h
+/home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIInstance.h:310: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIInstance::setOutletsPos() inherited from member setOutletsPos at line 127 in file /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h
 /home/travis/build/njazz/qtpd/qtpd_gui/properties/PropertyList.h:88: warning: Found unknown command `\detais'
 /home/travis/build/njazz/qtpd/qtpd_gui/properties/PropertyList.h:88: warning: Found unknown command `\detais'
 ting docs for namespace ceammc_gui
@@ -1522,6 +1522,6 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-symbol cache used 6160/65536 hits=1064871 misses=6160
-lookup cache used 10182/65536 hits=63430 misses=10914
+symbol cache used 6160/65536 hits=1064929 misses=6160
+lookup cache used 10182/65536 hits=63444 misses=10914
 finished...
