@@ -4,8 +4,8 @@
 #ifndef CM_PATCHCORD_H
 #define CM_PATCHCORD_H
 
-#include "UIObject.h"
 #include "Port.h"
+#include "UIObject.h"
 
 #include <math.h>
 
@@ -37,15 +37,17 @@ private:
 
     patchcordTypeEnum patchcordType_;
 
+    QPainterPath _path;
+
 public:
-//    bool mouseover;
-//    bool selected;
+    //    bool mouseover;
+    //    bool selected;
     //explicit cm_patchcord(cm_widget *parent = 0);
 
     //cm_patchcord();
     explicit Patchcord(UIItem* _obj1, UIItem* _out1, UIItem* _obj2, UIItem* _in2);
 
-    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+    void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget)
     {
         QColor b_pc_color = (patchcordType() == cm_pt_signal) ? QColor(128, 160, 192) : QColor(0, 0, 0);
         // cleanup
@@ -90,10 +92,12 @@ public:
 
         //            }
 
+
         path.moveTo(start);
         path.cubicTo(b1, b2, end);
 
         painter->drawPath(path);
+        _path = path;
     }
 
     QPoint startPoint()
@@ -114,6 +118,7 @@ public:
         if (_obj2 && _in2)
             end = QPoint(_obj2->pos().x() + _in2->pos().x() + _in2->width() / 2,
                 _obj2->pos().y() + _in2->pos().y() + _in2->height() / 2);
+        setSize(end.x(),end.y());
         return end;
     }
 
@@ -149,6 +154,35 @@ public:
             return -1;
     }
 
+    // -----
+
+    void hoverEnterEvent(QGraphicsSceneHoverEvent* event)
+    {
+        qDebug()<<"hover patchcord";
+        setHover(true);
+        update();
+    }
+
+    void hoverLeaveEvent(QGraphicsSceneHoverEvent* event)
+    {
+        setHover(false);
+        update();
+    }
+
+    void mousePressEvent(QGraphicsSceneMouseEvent *event)
+    {
+        qDebug()<<"click patchcord";
+        setSelected(true);
+        update();
+    }
+
+    QPainterPath shape() const
+    {
+        return _path;
+    }
+
+     // -------
+
     ////
 
     bool connectsObject(UIItem* obj)
@@ -157,28 +191,27 @@ public:
     }
 
     // replace
-    bool isHover(QPoint pos)
-    {
-        QPoint start = startPoint();
-        QPoint end = endPoint();
+//    bool isHover(QPoint pos)
+//    {
+//        QPoint start = startPoint();
+//        QPoint end = endPoint();
 
-        float rx = end.x() - start.x();
-        float ry = end.y() - start.y();
+//        float rx = end.x() - start.x();
+//        float ry = end.y() - start.y();
 
-        float ty = ry * (pos.x() - start.x()) / rx + start.y();
+//        float ty = ry * (pos.x() - start.x()) / rx + start.y();
 
-        bool rx1_res = (fabs((float)pos.y() - ty) < 7.);
+//        bool rx1_res = (fabs((float)pos.y() - ty) < 7.);
 
-        bool rx0_res = ((
-                            (pos.y() > start.y())
-                            && (pos.y() < end.y()))
-            && (pos.x() == start.x()));
+//        bool rx0_res = ((
+//                            (pos.y() > start.y())
+//                            && (pos.y() < end.y()))
+//            && (pos.x() == start.x()));
 
-        setHover((rx > 0) ? rx1_res : rx0_res);
+//        setHover((rx > 0) ? rx1_res : rx0_res);
 
-        return (rx > 0) ? rx1_res : rx0_res;
-    }
-
+//        return (rx > 0) ? rx1_res : rx0_res;
+//    }
 
 };
 }

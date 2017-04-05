@@ -12,5 +12,7 @@ Patchcord::Patchcord(UIItem* obj1, UIItem* out1, UIItem* obj2, UIItem* in2)
     _in2 = in2;
 
     patchcordType_ = cm_pt_anything;
+
+    setAcceptHoverEvents(true);
 }
 }
