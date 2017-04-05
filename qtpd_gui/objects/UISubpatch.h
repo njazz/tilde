@@ -34,11 +34,16 @@ private:
     bool _isAbstraction;
     QString _abstractionPath;
 
-    QMainWindow *_Subcanvas;
+    //QMainWindow *_Subcanvas;
 
 public:
     explicit UISubpatch();//(UIObjectItem* parent = 0);
     //~UISubpatch();
+
+//    void setSubcanvas(QMainWindow* w)
+//    {
+//        _Subcanvas = w;
+//    }
 
     static UIObject* createObject(std::string objectData, t_canvas* pd_Canvas, QGraphicsView* parent = 0)
     {
@@ -50,71 +55,73 @@ public:
 
         b->setCanvas((void*)parent);
 
-        //truncate "ui.obj". todo cleanup
         QStringList list = QString(objectData.c_str()).split(" ");
-        list.removeAt(0);
+        // list.removeAt(0);
         QString list_s = list.join(" ");
+
+        // fix that
         const char* obj_name = list_s.toStdString().c_str();
         std::string data1 = b->properties()->extractFromPdFileString(obj_name); //test
 
         // todo cleanup
         const char* obj_name2 = data1.c_str(); //(QString(data1.c_str()).split(" ").at(0)).toStdString().c_str();
 
+
         // fix size changes
         b->setObjectData(data1);
         b->autoResize();
 
-        t_object* new_obj = 0;
-        int in_c = 0, out_c = 0;
+//        t_object* new_obj = 0;
+//        int in_c = 0, out_c = 0;
 
-        if (!pd_Canvas) {
-            qDebug("bad pd canvas instance");
-            b->setErrorBox(true);
-        } else {
-            //temp pos = 0;
-            QPoint pos = QPoint(0, 0);
-            new_obj = cmp_create_object(pd_Canvas, (char*)obj_name2, pos.x(), pos.y());
-        }
+//        if (!pd_Canvas) {
+//            qDebug("bad pd canvas instance");
+//            b->setErrorBox(true);
+//        } else {
+//            //temp pos = 0;
+//            QPoint pos = QPoint(0, 0);
+//            new_obj = cmp_create_object(pd_Canvas, (char*)obj_name2, pos.x(), pos.y());
+//        }
 
-        if (new_obj) {
-            in_c = cmp_get_inlet_count(new_obj);
-            out_c = cmp_get_outlet_count(new_obj);
+//        if (new_obj) {
+//            in_c = cmp_get_inlet_count(new_obj);
+//            out_c = cmp_get_outlet_count(new_obj);
 
-            qDebug("created object %s ins %i outs %i ptr %lu", obj_name, in_c, out_c, (long)new_obj);
+//            qDebug("created object %s ins %i outs %i ptr %lu", obj_name, in_c, out_c, (long)new_obj);
 
-            b->setPdObject(new_obj);
+//            b->setPdObject(new_obj);
 
-            b->_isAbstraction = cmp_is_abstraction(new_obj);
-            //qDebug() << "*** is abstraction: " << b->_isAbstraction;
+//            b->_isAbstraction = cmp_is_abstraction(new_obj);
+//            //qDebug() << "*** is abstraction: " << b->_isAbstraction;
 
-            // todo different help symbols
-            b->setHelpName(list.at(0) + "-help->pd");
+//            // todo different help symbols
+//            b->setHelpName(list.at(0) + "-help->pd");
 
-            if (b->_isAbstraction) {
+//            if (b->_isAbstraction) {
 
-                t_symbol* s = cmp_get_path((t_canvas*)new_obj);
+//                t_symbol* s = cmp_get_path((t_canvas*)new_obj);
 
-                // todo
-                QStringList l = QString(objectData.c_str()).split(" ");
-                QString pdName = l.at(1); //assuming there always is a name when abstraction is created
+//                // todo
+//                QStringList l = QString(objectData.c_str()).split(" ");
+//                QString pdName = l.at(1); //assuming there always is a name when abstraction is created
 
-                // todo windows
-                b->_abstractionPath = QString(s->s_name) + "/" + pdName + ".pd";
+//                // todo windows
+//                b->_abstractionPath = QString(s->s_name) + "/" + pdName + ".pd";
 
-                //qDebug() << b->_abstractionPath;
-            }
+//                //qDebug() << b->_abstractionPath;
+//            }
 
-        } else {
-            qDebug("Error: no such object %s", obj_name);
-            b->setErrorBox(true);
-            in_c = 1;
-            out_c = 1;
-        }
+//        } else {
+//            qDebug("Error: no such object %s", obj_name);
+//            b->setErrorBox(true);
+//            in_c = 1;
+//            out_c = 1;
+//        }
 
-        for (int i = 0; i < in_c; i++)
-            b->addInlet();
-        for (int i = 0; i < out_c; i++)
-            b->addOutlet();
+//        for (int i = 0; i < in_c; i++)
+//            b->addInlet();
+//        for (int i = 0; i < out_c; i++)
+//            b->addOutlet();
 
         return (UIObject*)b;
     };
@@ -157,8 +164,8 @@ public:
 
         //open canvas for subpatch
             if (getEditMode() != em_Unlocked) {
-                if (_Subcanvas) {
-                    _Subcanvas->show();
+                if (subpatchWindow()) {
+                    subpatchWindow()->show();
                 }
             }
 
@@ -189,7 +196,7 @@ public:
             }
             event->ignore();
 
-            if ((getEditMode() != em_Unlocked) && (_Subcanvas)) {
+            if ((getEditMode() != em_Unlocked) && (subpatchWindow())) {
                 setCursor(QCursor(Qt::PointingHandCursor));
             } else {
                 setCursor(QCursor(Qt::ArrowCursor));
@@ -217,29 +224,7 @@ public:
         setOutletsPos();
     }
 
-    std::string asPdFileString()
-    {
-        //if (drawStyle() == ds_Box)
-        {
-            std::string ret;
-
-            if (_Subcanvas) {
-                QStringList patchList = ((Canvas*)_Subcanvas)->canvasAsPdStrings();
-
-                ret += patchList.join("\r\n").toStdString();
-            } else {
-                qDebug() << "missing subcanvas data";
-            }
-
-            ret += "#X restore ";
-            ret += std::to_string(x()) + " " + std::to_string(y()) + " ";
-
-            //ret += pdObjectName_+ objectData_ + properties_.asPdFileString();
-            //ret += objectData();
-
-            return ret;
-        }
-    }
+    std::string asPdFileString();
 
 signals:
 

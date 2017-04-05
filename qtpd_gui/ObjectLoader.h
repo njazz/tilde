@@ -15,6 +15,8 @@
 #include "UIMessage.h"
 #include "UIText.h"
 
+#include "UISubpatch.h"
+
 #include "UIBang.h"
 #include "UIToggle.h"
 

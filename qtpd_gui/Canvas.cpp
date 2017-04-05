@@ -728,8 +728,10 @@ UIObject* Canvas::createObject(QString objectData1, QPoint pos) //std::string UI
     //this is moved here to have all checks for special objects in one place
     //(later - inlets/outlets)
 
+
+
     if (list.count()) {
-        if (list.at(0) == "pd") {
+        if (list.at(0) == "pd")  ){
             //lol
             std::pair<QMainWindow*, UIObject*> newPatch;
 
@@ -739,20 +741,35 @@ UIObject* Canvas::createObject(QString objectData1, QPoint pos) //std::string UI
             Canvas* newCanvas = (Canvas*)newPatch.second;
 
             // crazy here
-            UIObject* b = createBoxForCanvas(newCanvas, objectData1.toStdString(), pos);
-            ((UIBox*)b)->setSubpatchWindow((QMainWindow*)subPatch);
-            //((Canvas*)b)->setSubcanvas(newCanvas);
+            //UIObject* b = createBoxForCanvas(newCanvas, objectData1.toStdString(), pos);
+            //((UIBox*)b)->setSubpatchWindow((QMainWindow*)subPatch);
 
+            UIObject* obj = UISubpatch::createObject(objectData1.toStdString(), 0, this);
+
+            ((UISubpatch*)obj)->setSubpatchWindow(subPatch);
+
+            //qDebug()<<"objdata1" << objectData1;
             qDebug("subpatch>>");
 
             subPatch->show();
-            return b;
+
+            connect(obj, &UIObject::selectBox, this, &Canvas::s_SelectBox);
+            connect(obj, &UIObject::moveBox, this, &Canvas::s_MoveBox);
+
+            obj->setEditModeRef(&_canvasEditMode); //Canvas::getEditModeRef());
+            obj->move(pos.x(), pos.y());
+            _canvasData.addUniqueBox(_canvasData.boxes(), obj);
+            scene()->addItem(obj);
+
+
+            return obj;
         }
 
-        if (list.at(0) == "restore") {
-            return 0;
-        }
+//        if (list.at(0) == "restore") {
+//            return 0;
+//        }
     }
+
 
     UIObject* obj = ObjectLoader::inst().createObject(objectData1, (t_canvas*)pdObject(), this);
 
@@ -764,7 +781,6 @@ UIObject* Canvas::createObject(QString objectData1, QPoint pos) //std::string UI
     obj->setEditModeRef(&_canvasEditMode); //Canvas::getEditModeRef());
     obj->move(pos.x(), pos.y());
     _canvasData.addUniqueBox(_canvasData.boxes(), obj);
-
     scene()->addItem(obj);
 
     //    obj->show();

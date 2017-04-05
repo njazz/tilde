@@ -15,7 +15,7 @@ UIBang::UIBang() //UIObject* parent)
     setMinimumBoxWidth(20);
     setMinimumBoxHeight(20);
 
-    setObjectSizeMode(os_Fixed);
+    setObjectSizeMode(os_Square);
 
     //setMouseTracking(true);
 

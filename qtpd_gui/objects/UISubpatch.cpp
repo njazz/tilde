@@ -3,6 +3,8 @@
 
 #include "UISubpatch.h"
 
+#include "PatchWindow.h"
+
 namespace qtpd {
 UISubpatch::UISubpatch()//UIObjectItem* parent)
     //: UIObjectItem(parent)
@@ -24,6 +26,30 @@ UISubpatch::UISubpatch()//UIObjectItem* parent)
 
     setObjectSizeMode(os_FixedHeight);
     setAcceptHoverEvents(true);
+}
+
+std::string UISubpatch::asPdFileString()
+{
+    //if (drawStyle() == ds_Box)
+    {
+        std::string ret;
+
+        if (subpatchWindow()) {
+            QStringList patchList = ((PatchWindow*)subpatchWindow())->canvas->canvasAsPdStrings();
+
+            ret += patchList.join("\r\n").toStdString();
+        } else {
+            qDebug() << "missing subcanvas data";
+        }
+
+        ret += "#X restore ";
+        ret += std::to_string(pos().x()) + " " + std::to_string(pos().y()) + " ";
+
+        //ret += pdObjectName_+ objectData_ + properties_.asPdFileString();
+        //ret += objectData();
+
+        return ret;
+    }
 }
 
 
