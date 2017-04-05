@@ -3,6 +3,8 @@
 
 #include "UIMessage.h"
 
+#include <QGraphicsProxyWidget>
+
 namespace qtpd {
 UIMessage::UIMessage() //UIObject* parent)
 //: UIObject(parent)
@@ -16,6 +18,8 @@ UIMessage::UIMessage() //UIObject* parent)
 
     _editor = new QLineEdit(); //this
 
+
+
     //qDebug() << "editor" << _editor;
 
     _editor->setFixedSize(65 - 5, 18);
@@ -25,8 +29,12 @@ UIMessage::UIMessage() //UIObject* parent)
     _editor->setAttribute(Qt::WA_MacShowFocusRect, 0);
     _editor->setFrame(false);
 
-    if (scene())
-        scene()->addWidget(_editor);
+    QGraphicsProxyWidget* proxy = new QGraphicsProxyWidget(this);
+    proxy->setWidget(_editor);
+    //scene()->addWidget(_editor);
+
+//    if (scene())
+//        scene()->addWidget(_editor);
 
     connect(_editor, &QLineEdit::editingFinished, this, &UIMessage::editorDone);
     connect(_editor, &QLineEdit::textEdited, this, &UIMessage::editorChanged);

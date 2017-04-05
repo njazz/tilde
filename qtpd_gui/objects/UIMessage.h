@@ -84,18 +84,18 @@ public:
 
         //p->drawRect(0,0,width(),height());
 
-        p->setPen(QPen(QColor(220, 220, 220), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p->setPen(QPen(QColor(220, 220, 220), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         QPainterPath tmpPath;
         tmpPath.addPolygon(poly);
         QBrush br = QBrush(QColor(220, 220, 220), Qt::SolidPattern);
         p->fillPath(tmpPath, br);
 
         if (isSelected()) {
-            p->setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p->setPen(QPen(QColor(0, 192, 255), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         } else if (_clicked) {
-            p->setPen(QPen(QColor(0, 192, 255), 4, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+            p->setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
         } else {
-            p->setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p->setPen(QPen(QColor(128, 128, 128), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         }
 
         p->drawPolygon(poly);
@@ -113,6 +113,8 @@ public:
 //        UIObject::resizeEvent(ev);
 //        _editor->setFixedWidth(width() - 5);
 //    }
+
+
 
     // ------------------------------------------------------
 
