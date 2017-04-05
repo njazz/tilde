@@ -36,7 +36,7 @@ UIScript::UIScript() //UIObject* parent)
 
     _editor = new UIScriptEditor(); //weird
     _editor->setFixedSize(150 - 5, 300 - 27); //setFixedSize(65-5,18);
-    _editor->move(2, 21);
+//    _editor->move(2, 0);
     _editor->setFont(font);
     _editor->show();
     _editor->setAttribute(Qt::WA_MacShowFocusRect, 0);
@@ -65,8 +65,10 @@ UIScript::UIScript() //UIObject* parent)
     //setPalette(Pal);
     _editor->setPalette(Pal);
 
+
     QGraphicsProxyWidget* proxy = new QGraphicsProxyWidget(this);
     proxy->setWidget(_editor);
+    proxy->setPos(2,20);
 
 
     //setBackgroundRole(QPalette::Background);
@@ -77,41 +79,48 @@ UIScript::UIScript() //UIObject* parent)
     //buttons
     QPushButton* b1 = new QPushButton("Run");
     b1->setFont(font);
-    b1->move(40, 1);
+//    b1->move(40, 1);
     b1->setFixedSize(40, 20);
     b1->show();
     connect(b1, &QPushButton::clicked, this, &UIScript::btnRun);
     proxy = new QGraphicsProxyWidget(this);
     proxy->setWidget(b1);
+    proxy->setPos(40,1);
 
     b1 = new QPushButton("Load");
     b1->setFont(font);
-    b1->move(100, 1);
+
     b1->setFixedSize(50, 20);
+//    b1->move(100, 1);
     b1->show();
     connect(b1, &QPushButton::clicked, this, &UIScript::btnLoad);
     proxy = new QGraphicsProxyWidget(this);
     proxy->setWidget(b1);
+    proxy->setPos(100,1);
 
     b1 = new QPushButton("Save");
     b1->setFont(font);
-    b1->move(150, 1);
+    //b1->move(150, 1);
     b1->setFixedSize(50, 20);
     b1->show();
     connect(b1, &QPushButton::clicked, this, &UIScript::btnSave);
     proxy = new QGraphicsProxyWidget(this);
     proxy->setWidget(b1);
+    proxy->setPos(150,1);
 
     b1 = new QPushButton("Clear");
     b1->setFont(font);
-    b1->move(220, 1);
+    //b1->move(220, 1);
     b1->setFixedSize(50, 20);
     b1->show();
     connect(b1, &QPushButton::clicked, this, &UIScript::btnClear);
     proxy = new QGraphicsProxyWidget(this);
     proxy->setWidget(b1);
+    proxy->setPos(220,1);
 
     setObjectSizeMode(os_Free);
+
+    resizeEvent();
 }
 
 void UIScript::editorChanged()

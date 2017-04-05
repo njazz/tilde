@@ -56,6 +56,11 @@ public:
     {
         //QPainter p(viewport());
 
+//        QBrush brush(bgColor());
+//        p->setBrush(brush);
+//        p->drawRect(boundingRect());
+//        p->setBrush(QBrush());
+
         if (getEditMode() == em_Unlocked) {
             if (isSelected()) {
                 p->setPen(QPen(QColor(0, 192, 255), 2, Qt::DotLine, Qt::SquareCap, Qt::BevelJoin));

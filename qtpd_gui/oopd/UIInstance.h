@@ -143,14 +143,14 @@ public:
         }
 
         QColor rectColor = (errorBox()) ? QColor(255, 0, 0) : properties()->get("BorderColor")->asQColor(); //QColor(128, 128, 128);
-        p->setPen(QPen(rectColor, 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p->setPen(QPen(rectColor, 1, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         p->drawRect(0, 0, width(), height());
         QTextOption* op = new QTextOption;
         op->setAlignment(Qt::AlignLeft);
         p->setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
         if (isSelected()) {
-            p->setPen(QPen(QColor(0, 192, 255), 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p->setPen(QPen(QColor(0, 192, 255), 1, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
             p->drawRect(0, 0, width(), height());
         }
 
@@ -388,6 +388,8 @@ public:
             // not working:
             //_opClass = OOPD::inst()->classBySymbol(msg.at(1).asSymbol());
 
+            setObjectSizeMode(os_Free);
+
             //resize
             if (_opClass) {
                 AtomList list;
@@ -397,14 +399,14 @@ public:
                 setHeight(20 * (list.size() + 1));
 
                 // inlets and outlets
-                for (int i = 0; i < _opClass->getPropertyList().size(); i++) {
+                for (size_t i = 0; i < _opClass->getPropertyList().size(); i++) {
                     cmp_sendstring((t_pd*)pdObject(), "__newin");
                     cmp_sendstring((t_pd*)pdObject(), "__newout");
                     addInlet();
                     addOutlet();
                 }
 
-                for (int i = 0; i < _opClass->getMethodList().size(); i++) {
+                for (size_t i = 0; i < _opClass->getMethodList().size(); i++) {
                     cmp_sendstring((t_pd*)pdObject(), "__newin");
                     cmp_sendstring((t_pd*)pdObject(), "__newout");
                     addInlet();
