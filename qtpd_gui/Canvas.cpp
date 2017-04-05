@@ -58,7 +58,7 @@ Canvas::Canvas(QGraphicsView* parent)
     //
     _connectionStartObject = 0;
     _connectionStartOutlet = 0;
-    dragObject = 0;
+    setDragObject(0);
     setPdObject(0); //extra
 
     //
@@ -152,7 +152,7 @@ void Canvas::s_SelectBox(UIItem* box, QGraphicsSceneMouseEvent* ev)
     }
 
     //temporary
-    dragObject = 0;
+    setDragObject( 0);
 
     viewport()->update();
 }
@@ -254,7 +254,7 @@ void Canvas::s_MoveBox(UIItem* box, QGraphicsSceneMouseEvent* event)
 
 //-----------------------------------------------------------------------
 
-Canvas* Canvas::newView(Canvas* srcCanvas, UIObject* parentCanvas, canvasDrawStyle dStyle)
+Canvas* Canvas::newView(Canvas* srcCanvas, UIObject* parentCanvas)
 {
     Canvas* ret = new Canvas((QGraphicsView*)parentCanvas);
 
@@ -494,7 +494,7 @@ void Canvas::mouseMoveEventForCanvas(QMouseEvent* ev)
     _newLine->setEnd(pos);
 
     // move new object
-    if (dragObject) {
+    if (dragObject()) {
         QPoint offset = QPoint(10, 10);
 
         QPoint newpos = mapToParent(ev->pos() - offset);
@@ -503,7 +503,7 @@ void Canvas::mouseMoveEventForCanvas(QMouseEvent* ev)
             newpos.setY(ceil(newpos.y() / _grid->gridStep()) * _grid->gridStep());
         }
 
-        dragObject->move(newpos);
+        dragObject()->move(newpos);
 
         viewport()->update();
     }
@@ -589,7 +589,7 @@ void Canvas::mousePressEventForCanvas(QMouseEvent* ev)
 
 void Canvas::mouseReleaseEventForCanvas(QMouseEvent*)
 {
-    dragObject = 0;
+    setDragObject (0);
 
     _selectionRect->setActive(false);
 
@@ -790,7 +790,7 @@ UIObject* Canvas::createBoxForCanvas(Canvas* newCanvas, std::string objectData, 
 {
 
     //cleanup
-    UIObject* obj = (UIObject*)Canvas::newView(newCanvas, (UIObject*)this, ds_Box);
+    UIObject* obj = (UIObject*)Canvas::newView(newCanvas, (UIObject*)this);
 
     //test
     //obj->setFixedWidth(40);

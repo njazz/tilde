@@ -171,7 +171,7 @@ void PatchWindow::objectMakerDone()
             canvas->deleteBox(obj);
         }
 
-        canvas->dragObject = 0;
+        canvas->setDragObject(0);
         canvas->setReplaceObject(0);
         canvas->objectMaker()->close();
     }

@@ -37,7 +37,7 @@ namespace qtpd {
 class Canvas : public QGraphicsView {
 private:
     canvasDataPlus _data;
-    //canvasData _selectionData;
+    canvasData _selectionData;
 
     UIObject* _connectionStartObject;
     UIObject* _connectionStartOutlet;
