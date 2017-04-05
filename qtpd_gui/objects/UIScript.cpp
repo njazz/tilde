@@ -66,6 +66,7 @@ UIScript::UIScript() //UIObject* parent)
     QGraphicsProxyWidget* proxy = new QGraphicsProxyWidget(this);
     proxy->setWidget(_editor);
 
+
     //setBackgroundRole(QPalette::Background);
 
     //temporary. needs fixing
