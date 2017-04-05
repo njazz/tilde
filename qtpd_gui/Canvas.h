@@ -16,13 +16,12 @@
 
 //
 #include "Grid.h"
-#include "SelectionRect.h"
 #include "NewLine.h"
+#include "SelectionRect.h"
 
 //todo - move to window?
 //#include "cm_clipboard.h"
 #include "CanvasDatas.h"
-
 
 namespace qtpd {
 
@@ -37,22 +36,14 @@ typedef enum _canvasDrawStyle { ds_Canvas,
 ///
 class Canvas : public QGraphicsView {
 private:
-    //move here. these are global for all draw types (Canvas, Box)
     canvasDataPlus _data;
     canvasData _selectionData;
 
-    //
-    // local !Box
-    //tRectPlus _selFrame;
-    //tRectPlus _newLine;
-
-    // local, !Box
     UIObject* _connectionStartObject;
     UIObject* _connectionStartOutlet;
     //
     UIObject* _replaceObject;
 
-    // local, !Box
     QPoint _newObjectPos;
     QPoint _dragPrevPos;
 
@@ -69,10 +60,9 @@ private:
     // if the canvas is the box, it can have this. Check this later
     // !Canvas
     //QMainWindow *SubcanvasWindow_;
-   // UIObjectItem* _Subcanvas;
+    // UIObjectItem* _Subcanvas;
 
     ObjectMaker* _objectMaker;
-
     QStringList _clipboard;
 
     bool _keepPdObject;
@@ -101,8 +91,8 @@ public:
 
     // new
 
-    t_canvas* pdObject(){return _pdObject;}
-    void setPdObject(t_canvas*c){_pdObject = c;}
+    t_canvas* pdObject() { return _pdObject; }
+    void setPdObject(t_canvas* c) { _pdObject = c; }
 
     ////
     /// \brief creates new view of existing canvas. check this
@@ -114,24 +104,23 @@ public:
     static Canvas* newView(Canvas* srcCanvas, UIObject* parentCanvas, canvasDrawStyle dStyle);
 
     void addInlet();
-
     void addOutlet();
 
-//    ////
-//    /// \brief set draw style
-//    /// \param ds
-//    ///
-//    void setDrawStyle(canvasDrawStyle ds);
+    //    ////
+    //    /// \brief set draw style
+    //    /// \param ds
+    //    ///
+    //    void setDrawStyle(canvasDrawStyle ds);
 
-//    ////
-//    /// \brief get draw style
-//    /// \param ds
-//    ///
-//    canvasDrawStyle drawStyle();
+    //    ////
+    //    /// \brief get draw style
+    //    /// \param ds
+    //    ///
+    //    canvasDrawStyle drawStyle();
 
-//    //
-//    / \brief main paint routine
-//    /
+    //    //
+    //    / \brief main paint routine
+    //    /
     //void paintEvent(QPaintEvent*);
 
     ////
@@ -139,34 +128,34 @@ public:
     ///
     void drawCanvas();
 
-//    ////
-//    /// \brief draw object box for the canvas
-//    ///
-//    void drawObjectBox();
+    //    ////
+    //    /// \brief draw object box for the canvas
+    //    ///
+    //    void drawObjectBox();
 
     ////
     /// \brief paint patchcords
     ///
     //void paintPatchcords();
 
-    ////
-    /// \brief changes patchcords color when mouse is over
-    /// \param pos
-    /// \return true if mouse is over any of the patchcords
-    ///
-    bool hoverPatchcords(QPoint pos);
+    //    ////
+    //    /// \brief changes patchcords color when mouse is over
+    //    /// \param pos
+    //    /// \return true if mouse is over any of the patchcords
+    //    ///
+    //    bool hoverPatchcords(QPoint pos);
 
-    ////
-    /// \brief resets all patchcords hover color flag
-    ///
-    void hoverPatchcordsOff();
+    //    ////
+    //    /// \brief resets all patchcords hover color flag
+    //    ///
+    //    void hoverPatchcordsOff();
 
-    ////
-    /// \brief marks clicked patchcord
-    /// \param pos
-    /// \return true if there was a patchcord
-    ///
-    bool clickPatchcords(QPoint pos);
+    //    ////
+    //    /// \brief marks clicked patchcord
+    //    /// \param pos
+    //    /// \return true if there was a patchcord
+    //    ///
+    //    bool clickPatchcords(QPoint pos);
 
     ////
     /// \brief route mouse move handling for different vis types
@@ -194,7 +183,6 @@ public:
     ///
     void mouseMoveEventForCanvas(QMouseEvent* ev);
 
-
     ////
     /// \brief mouse down handling for Canvas
     /// \param ev
@@ -208,22 +196,22 @@ public:
 
     /////////
 
-//    ////
-//    /// \brief mouse down ForBox
-//    /// \param ev
-//    ///
-//    void mousePressEventForBox(QMouseEvent* ev);
+    //    ////
+    //    /// \brief mouse down ForBox
+    //    /// \param ev
+    //    ///
+    //    void mousePressEventForBox(QMouseEvent* ev);
 
-//    ////
-//    /// \brief mouse up ForBox
-//    ///
-//    void mouseReleaseEventForBox(QMouseEvent*);
+    //    ////
+    //    /// \brief mouse up ForBox
+    //    ///
+    //    void mouseReleaseEventForBox(QMouseEvent*);
 
-//    ////
-//    /// \brief mouse move ForBox
-//    /// \param event
-//    ///
-//    void mouseMoveEventForBox(QMouseEvent* event);
+    //    ////
+    //    /// \brief mouse move ForBox
+    //    /// \param event
+    //    ///
+    //    void mouseMoveEventForBox(QMouseEvent* event);
 
     /////////
 
@@ -397,12 +385,12 @@ public:
     ///
     int findObjectIndex(UIObject* obj);
 
-//    ////
-//    /// \brief sets pointer to canvas object in subpatch
-//    /// \details todo: check/remove that: we have subpatchwindow too
-//    /// \param obj
-//    ///
-//    void setSubcanvas(UIObjectItem* obj);
+    //    ////
+    //    /// \brief sets pointer to canvas object in subpatch
+    //    /// \details todo: check/remove that: we have subpatchwindow too
+    //    /// \param obj
+    //    ///
+    //    void setSubcanvas(UIObjectItem* obj);
     //UIObjectItem* subcanvas(){return Subcanvas_;}
 
     //lol
@@ -472,18 +460,18 @@ public slots:
     /// \brief slot called by box when it is selected
     /// \param box
     ///
-    void s_SelectBox(UIItem* box, QGraphicsSceneMouseEvent *ev);
+    void s_SelectBox(UIItem* box, QGraphicsSceneMouseEvent* ev);
 
-//    void s_SelectBoxItem(UIItem* box, QMouseEvent* ev);
+    //    void s_SelectBoxItem(UIItem* box, QMouseEvent* ev);
 
     ////
     /// \brief TODO check. slot called by box when it starts moving
     /// \param box
     /// \param event
     ///
-    void s_MoveBox(UIItem* box, QGraphicsSceneMouseEvent *event);
+    void s_MoveBox(UIItem* box, QGraphicsSceneMouseEvent* event);
 
-//    void s_MoveBoxItem(UIItem* box, QMouseEvent* event);
+    //    void s_MoveBoxItem(UIItem* box, QMouseEvent* event);
 
     //    void portMouseReleased();
     //    void portMouseEntered();
@@ -567,10 +555,10 @@ public slots:
 
     // -- NEW
 
-    void resizeEvent(QResizeEvent*ev)
+    void resizeEvent(QResizeEvent* ev)
     {
         _grid->setSize(size());
-        _grid->move(0,0);
+        _grid->move(0, 0);
     }
 
 private:

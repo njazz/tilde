@@ -48,7 +48,6 @@ SOURCES += main.cpp\
     Canvas.cpp \
     #UIObject.cpp \
     #UIWidget.cpp \
-    Patchcord.cpp \
     #Port.cpp \
     #SizeBox.cpp \
     FileParser.cpp \
@@ -73,6 +72,8 @@ SOURCES += main.cpp\
     graphicobjects/Grid.cpp \
     graphicobjects/SelectionRect.cpp \
     graphicobjects/NewLine.cpp \
+    graphicobjects/Patchcord.cpp \
+#
     objects/UISubpatch.cpp \
     graphicobjects/UIObject.cpp
 
@@ -132,7 +133,6 @@ HEADERS  += \
     CanvasDatas.h \
     #UIObject.h \
     #UIWidget.h \
-    Patchcord.h \
     #Port.h \
     #SizeBox.h \
 #
@@ -162,6 +162,8 @@ HEADERS  += \
     graphicobjects/SelectionRect.h \
     graphicobjects/NewLine.h \
     objects/UISubpatch.h \
+    graphicobjects/Patchcord.h \
+#
     graphicobjects/UIObject.h
 
 

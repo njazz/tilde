@@ -25,6 +25,9 @@ class canvasData {
     objectVec _boxes;
     patchcordVec _patchcords;
 
+    objectVec _selectedBoxes;
+    patchcordVec _selectedPatchcords;
+
 public:
 //    objectVec boxes;
 //    patchcordVec patchcords;
