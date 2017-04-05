@@ -315,6 +315,8 @@ void FileParser::parseQString(QString line)
         newWnd->setBaseSize(size);
         newWnd->move(pos);
 
+        //newWnd->canvas->move(0,0);
+
         newWnd->show(); //move to constructor? check for subcanvases the vis flag
     }
 

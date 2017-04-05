@@ -321,14 +321,18 @@ public:
         arrangeMenu->addAction(zoomOutAct);
     }
 
-    ///////
+    // ----------
 
     void resizeEvent(QResizeEvent* event)
     {
-        //fix later
-        canvas->setMinimumSize(QSize(width() - canvas->x(), height() - canvas->y()));
+        canvas->move(0,0);
 
-        canvas->setWindowSize(size());
+        //fix later
+        //canvas->setMinimumSize(QSize(width() - canvas->x(), height() - canvas->y()));
+
+        //temporary
+        //event->size()
+        canvas->setWindowSize(event->size());
 
         //FIX
         canvas->move(0,0);
