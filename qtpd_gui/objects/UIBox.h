@@ -187,10 +187,12 @@ public:
             //            editor_->setFocus();
 
             emit editObject(this);
+            qDebug("edit box");
             return;
         }
 
         emit selectBox(this, ev);
+
         dragOffset = QPoint(ev->pos().x(), ev->pos().y());
 
         ev->accept();
@@ -226,12 +228,6 @@ public:
 
         QGraphicsItem::mouseMoveEvent(event);
     }
-
-    //
-//    virtual void hoverEnterEvent(QGraphicsSceneHoverEvent *)
-//    {
-//        qDebug("box hover");
-//    }
 
     void setPdMessage(std::string message)
     {

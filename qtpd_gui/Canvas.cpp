@@ -798,7 +798,7 @@ UIObject* Canvas::createObject(QString objectData1, QPoint pos) //std::string UI
         }
     }
 
-    //connect(obj, &UIObjectItem::editObject, this, &Canvas::objectStartsEdit);
+    connect(obj, &UIObject::editObject, this, &Canvas::objectStartsEdit);
 
     //if (drawStyle() == ds_Canvas)
     setFixedSize(minimumCanvasSize());
@@ -1375,19 +1375,19 @@ void Canvas::portCountUpdated()
 
 void Canvas::objectStartsEdit(void* obj)
 {
-    //    deselectBoxes();
+        deselectBoxes();
 
-    //    qDebug("edit box>>");
+        qDebug("edit box>>");
 
-    //    _replaceObject = (UIObjectItem*)obj;
+        _replaceObject = (UIObject*)obj;
 
-    //    objectMaker()->move(_replaceObject->pos());
-    //    objectMaker()->setFixedSize(_replaceObject->size());
-    //    objectMaker()->setText(QString(_replaceObject->objectData().c_str()));
-    //    objectMaker()->setFocus();
-    //    //replaceObject_->hide();
-    //    objectMaker()->show();
-    //    objectMaker()->raise();
+        objectMaker()->move(_replaceObject->pos().toPoint());
+        objectMaker()->setFixedSize(_replaceObject->size());
+        objectMaker()->setText(QString(_replaceObject->objectData().c_str()));
+        objectMaker()->setFocus();
+        //replaceObject_->hide();
+        objectMaker()->show();
+        objectMaker()->raise();
 }
 
 QSize Canvas::minimumCanvasSize()
