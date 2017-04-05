@@ -13,6 +13,9 @@ UIFloat::UIFloat()//UIObject* parent)
     //setMinimumWidth(30);
     setSize(35, 20);
 
+    setMinimumBoxWidth(30);
+    setMinimumBoxHeight(20);
+
     //setMouseTracking(true);
 
     deselect();

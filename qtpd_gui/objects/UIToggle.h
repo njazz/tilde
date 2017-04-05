@@ -97,6 +97,7 @@ public:
     void resizeEvent()//QResizeEvent* event)
     {
         //UIObject::resizeEvent(event);
+
         setHeight(width());
     }
 

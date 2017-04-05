@@ -5,32 +5,37 @@
 
 namespace qtpd {
 
-UIBang::UIBang()//UIObject* parent)
-    //: UIObject(parent)
+UIBang::UIBang() //UIObject* parent)
+//: UIObject(parent)
 {
     //setPdObjectName("ui.bang");
 
-    this->setSize(20, 20);
+    setSize(20, 20);
 
-    //this->setMouseTracking(true);
+    setMinimumBoxWidth(20);
+    setMinimumBoxHeight(20);
 
-    this->deselect();
-    this->_clicked = false;
+    setObjectSizeMode(os_Fixed);
 
-//    QPalette Pal(palette());
-//    Pal.setColor(QPalette::Background, QColor(240, 240, 240));
-//    this->setAutoFillBackground(true);
-//    this->setPalette(Pal);
+    //setMouseTracking(true);
 
-    this->setWidth(20);
-    this->setHeight(20);
+    deselect();
+    _clicked = false;
 
-    this->_timer = new QTimer;
-    this->_timer->setSingleShot(true);
-    this->_timer->setInterval(33);  //default 100
+    //    QPalette Pal(palette());
+    //    Pal.setColor(QPalette::Background, QColor(240, 240, 240));
+    //    setAutoFillBackground(true);
+    //    setPalette(Pal);
 
-    connect(this->_timer, &QTimer::timeout, this, &UIBang::timerAction);
+    setWidth(20);
+    setHeight(20);
 
-    connect(this, SIGNAL(setBangTimer(int)), this->_timer, SLOT(start(int)));
+    _timer = new QTimer;
+    _timer->setSingleShot(true);
+    _timer->setInterval(33); //default 100
+
+    connect(_timer, &QTimer::timeout, this, &UIBang::timerAction);
+
+    connect(this, SIGNAL(setBangTimer(int)), _timer, SLOT(start(int)));
 }
 }

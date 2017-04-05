@@ -12,6 +12,9 @@ UIToggle::UIToggle()//UIObject* parent)
 
     setSize(20, 20);
 
+    setMinimumBoxWidth(20);
+    setMinimumBoxHeight(20);
+
     //setMouseTracking(true);
 
     deselect();
@@ -22,8 +25,9 @@ UIToggle::UIToggle()//UIObject* parent)
 //    setAutoFillBackground(true);
 //    setPalette(Pal);
 
-    setWidth(20);
-    setHeight(20);
+
+
+    setObjectSizeMode(os_Square);
 
     _value = false;
 }

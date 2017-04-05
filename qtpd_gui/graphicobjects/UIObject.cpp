@@ -50,6 +50,11 @@ void UIObject::resizeBox(int dx, int dy)
     if (_objectSizeMode == os_Free)
         setHeight(boundingRect().height() + dy);
 
+    if (_objectSizeMode == os_Square)
+    {
+        setHeight(boundingRect().width());
+    }
+
     // moved
 
     _sizeBox->move(boundingRect().width() - 7, boundingRect().height() - 7);
@@ -64,6 +69,8 @@ void UIObject::resizeBox(int dx, int dy)
     setOutletsPos();
 
     properties()->set("Size", boundingRect().size());
+
+    resizeEvent();
 
     update();
 };

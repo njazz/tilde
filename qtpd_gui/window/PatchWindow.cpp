@@ -21,6 +21,7 @@ PatchWindow::PatchWindow()
     //objectMaker = new ObjectMaker((QLineEdit*)canvas);
 
     //objectMaker->setParent(canvas);
+
     connect(canvas->objectMaker(), &ObjectMaker::objectMakerDoneSignal, this, &PatchWindow::objectMakerDone);
 
     canvas->objectMaker()->close();

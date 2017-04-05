@@ -87,10 +87,10 @@ public:
 
     // ---------
 
-    void setSize(QSize size) { _size = size; resizeEvent();}
-    void setSize(float w, float h) { _size = QSize(w, h); resizeEvent();}
-    void setWidth(float w) { _size.setWidth(w); resizeEvent();}
-    void setHeight(float h) { _size.setHeight(h); resizeEvent();}
+    void setSize(QSize size) { _size = size; }
+    void setSize(float w, float h) { _size = QSize(w, h); }
+    void setWidth(float w) { _size.setWidth(w); }
+    void setHeight(float h) { _size.setHeight(h); }
 
     void move(float x, float y)
     {

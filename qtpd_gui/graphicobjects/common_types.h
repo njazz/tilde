@@ -27,7 +27,8 @@ typedef enum { portInlet,
 typedef enum {
     os_Fixed,
     os_FixedHeight,
-    os_Free
+    os_Free,
+    os_Square
 } t_objectSize;
 
 ////

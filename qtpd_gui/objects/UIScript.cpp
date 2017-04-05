@@ -53,6 +53,8 @@ UIScript::UIScript() //UIObject* parent)
 
     //    setMinimumSize(300, 200);
     setSize(300, 200);
+    setMinimumBoxWidth(300);
+    setMinimumBoxHeight(200);
     //    setWidth(300);
     //    setHeight(200);
 
