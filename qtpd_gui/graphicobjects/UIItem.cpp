@@ -9,6 +9,8 @@ namespace qtpd {
 UIItem::UIItem(QGraphicsObject *parent)
     : QGraphicsObject(parent)
 {
+    setParent(parent);
+
     _selected = false;
     setScale(1.);
     _editMode = 0;

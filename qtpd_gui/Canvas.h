@@ -43,7 +43,7 @@ private:
 
     //
     // local !Box
-    tRectPlus _selFrame;
+    //tRectPlus _selFrame;
     //tRectPlus _newLine;
 
     // local, !Box
@@ -64,11 +64,12 @@ private:
 
     QSize _windowSize;
     //
-    canvasDrawStyle _drawStyle;
+    //canvasDrawStyle _drawStyle;
+
     // if the canvas is the box, it can have this. Check this later
     // !Canvas
     //QMainWindow *SubcanvasWindow_;
-    UIObjectItem* _Subcanvas;
+   // UIObjectItem* _Subcanvas;
 
     ObjectMaker* _objectMaker;
 
@@ -116,17 +117,17 @@ public:
 
     void addOutlet();
 
-    ////
-    /// \brief set draw style
-    /// \param ds
-    ///
-    void setDrawStyle(canvasDrawStyle ds);
+//    ////
+//    /// \brief set draw style
+//    /// \param ds
+//    ///
+//    void setDrawStyle(canvasDrawStyle ds);
 
-    ////
-    /// \brief get draw style
-    /// \param ds
-    ///
-    canvasDrawStyle drawStyle();
+//    ////
+//    /// \brief get draw style
+//    /// \param ds
+//    ///
+//    canvasDrawStyle drawStyle();
 
 //    //
 //    / \brief main paint routine
@@ -138,15 +139,15 @@ public:
     ///
     void drawCanvas();
 
-    ////
-    /// \brief draw object box for the canvas
-    ///
-    void drawObjectBox();
+//    ////
+//    /// \brief draw object box for the canvas
+//    ///
+//    void drawObjectBox();
 
     ////
     /// \brief paint patchcords
     ///
-    void paintPatchcords();
+    //void paintPatchcords();
 
     ////
     /// \brief changes patchcords color when mouse is over
@@ -206,22 +207,22 @@ public:
 
     /////////
 
-    ////
-    /// \brief mouse down ForBox
-    /// \param ev
-    ///
-    void mousePressEventForBox(QMouseEvent* ev);
+//    ////
+//    /// \brief mouse down ForBox
+//    /// \param ev
+//    ///
+//    void mousePressEventForBox(QMouseEvent* ev);
 
-    ////
-    /// \brief mouse up ForBox
-    ///
-    void mouseReleaseEventForBox(QMouseEvent*);
+//    ////
+//    /// \brief mouse up ForBox
+//    ///
+//    void mouseReleaseEventForBox(QMouseEvent*);
 
-    ////
-    /// \brief mouse move ForBox
-    /// \param event
-    ///
-    void mouseMoveEventForBox(QMouseEvent* event);
+//    ////
+//    /// \brief mouse move ForBox
+//    /// \param event
+//    ///
+//    void mouseMoveEventForBox(QMouseEvent* event);
 
     /////////
 
@@ -395,12 +396,12 @@ public:
     ///
     int findObjectIndex(UIObjectItem* obj);
 
-    ////
-    /// \brief sets pointer to canvas object in subpatch
-    /// \details todo: check/remove that: we have subpatchwindow too
-    /// \param obj
-    ///
-    void setSubcanvas(UIObjectItem* obj);
+//    ////
+//    /// \brief sets pointer to canvas object in subpatch
+//    /// \details todo: check/remove that: we have subpatchwindow too
+//    /// \param obj
+//    ///
+//    void setSubcanvas(UIObjectItem* obj);
     //UIObjectItem* subcanvas(){return Subcanvas_;}
 
     //lol

@@ -16,6 +16,7 @@ public:
     NewLine();
 
     void setActive(bool active) { _active = active; }
+    bool active(){return _active;}
     void setStart(QPoint start) { _start = start; }
     void setEnd(QPoint end) { _end = end; }
 

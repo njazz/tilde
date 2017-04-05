@@ -12,6 +12,8 @@ UIObjectItem::UIObjectItem(UIItem* parent)
 {
     _errorBox = false;
 
+    setParent(parent);
+
     setPdObject(0);
 
     _inlets = new portItemVec;

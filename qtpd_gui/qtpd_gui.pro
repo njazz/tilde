@@ -73,7 +73,8 @@ SOURCES += main.cpp\
     graphicobjects/UIObjectItem.cpp \
     graphicobjects/Grid.cpp \
     graphicobjects/SelectionRect.cpp \
-    graphicobjects/NewLine.cpp
+    graphicobjects/NewLine.cpp \
+    objects/UISubpatch.cpp
 
 
 HEADERS  += \
@@ -160,7 +161,8 @@ HEADERS  += \
     graphicobjects/UIObjectItem.h \
     graphicobjects/Grid.h \
     graphicobjects/SelectionRect.h \
-    graphicobjects/NewLine.h
+    graphicobjects/NewLine.h \
+    objects/UISubpatch.h
 
 
 FORMS    += \

@@ -18,6 +18,9 @@ public:
     void setActive(bool active) { _active = active; }
     void setStart(QPoint start) { _start = start; }
     void setEnd(QPoint end) { _end = end; }
+    QPoint end() {return _end;}
+    QPoint start() {return _start;}
+    bool active(){return _active;}
 
     void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget)
     {
