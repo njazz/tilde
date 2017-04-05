@@ -613,7 +613,7 @@ void Canvas::mouseReleaseEventForCanvas(QMouseEvent*)
     dragObject = 0;
 
     _selectionRect->setActive(false);
-    _newLine->setActive(false);
+//    _newLine->setActive(false);
 
     //todo
     viewport()->update();
