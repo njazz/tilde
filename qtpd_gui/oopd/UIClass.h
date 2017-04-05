@@ -35,11 +35,10 @@ private:
     bool _dynamicClass;
 
 public:
-    explicit UIClass();//UIObject* parent = 0);
+    explicit UIClass(); //UIObject* parent = 0);
     ~UIClass()
     {
-        if (_opClass)
-        {
+        if (_opClass) {
             _opClass->writeFile();
         }
     };
@@ -53,7 +52,7 @@ public:
         if (objectData == "")
             objectData = "pdclass";
 
-        UIClass* b = new UIClass();//(UIObject*)parent);
+        UIClass* b = new UIClass(); //(UIObject*)parent);
         b->setCanvas((void*)parent);
 
         QStringList list = QString(objectData.c_str()).split(" ");
@@ -92,7 +91,6 @@ public:
 
             b->_dynamicClass = false;
 
-
         } else {
             b->_opClass = 0; //new OPClass();
             b->_dynamicClass = true;
@@ -130,6 +128,11 @@ public:
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)
 
     {
+        QBrush brush(bgColor());
+        p->setBrush(brush);
+        p->drawRect(boundingRect());
+        p->setBrush(QBrush());
+
         //QPainter p(viewport());
         p->setRenderHint(QPainter::HighQualityAntialiasing, true);
         p->scale(scale(), scale());
@@ -174,11 +177,11 @@ public:
         }
 
         //open canvas for subpatch
-//        if (getEditMode() != em_Unlocked) {
-//            if (subpatchWindow()) {
-//                subpatchWindow()->show();
-//            }
-//        }
+        //        if (getEditMode() != em_Unlocked) {
+        //            if (subpatchWindow()) {
+        //                subpatchWindow()->show();
+        //            }
+        //        }
 
         //window opening. Fix
         if (getEditMode() != em_Unlocked) {
@@ -203,7 +206,7 @@ public:
     ///
     void mouseReleaseEvent(QGraphicsSceneMouseEvent*)
     {
-         update();
+        update();
     }
 
     ////
@@ -298,9 +301,7 @@ public:
             }
 
             cmp_post(output.join("\n").toStdString().c_str());
-        }
-        else
-        {
+        } else {
             cmp_post("no class");
         }
     }
@@ -360,7 +361,7 @@ signals:
 private slots:
     void updateUISlot()
     {
-         update();
+        update();
     }
 };
 }

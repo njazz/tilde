@@ -86,25 +86,25 @@ public:
 
         //p->drawRect(0,0,width(),height());
 
-        p->setPen(QPen(QColor(220, 220, 220), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p->setPen(QPen(QColor(220, 220, 220), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         QPainterPath tmpPath;
         tmpPath.addPolygon(poly);
         QBrush br = QBrush(QColor(220, 220, 220), Qt::SolidPattern);
         p->fillPath(tmpPath, br);
 
         if (isSelected()) {
-            p->setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p->setPen(QPen(QColor(0, 192, 255), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         }
 
         else {
-            p->setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p->setPen(QPen(QColor(128, 128, 128), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         }
 
         p->drawPolygon(poly);
 
         QTextOption* op = new QTextOption;
         op->setAlignment(Qt::AlignLeft);
-        p->setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p->setPen(QPen(QColor(0, 0, 0), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
         p->setFont(QFont(PREF_QSTRING("Font"), 11, 0, false));
         p->drawText(2, 3, width() - 2, height() - 3, 0, objectData().c_str(), 0);

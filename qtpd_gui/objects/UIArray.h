@@ -119,6 +119,11 @@ public:
     //void paintEvent(QPaintEvent*)
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)
     {
+        QBrush brush(bgColor());
+        p->setBrush(brush);
+        p->drawRect(boundingRect());
+        p->setBrush(QBrush());
+
         //QPainter p(viewport());
         p->setRenderHint(QPainter::HighQualityAntialiasing, true);
         p->scale(scale(), scale());
@@ -143,7 +148,7 @@ public:
         p->drawText(2, 3, width() - 2, height() - 3, 0, objectData().c_str(), 0);
 
         if (isSelected()) {
-            p->setPen(QPen(QColor(0, 192, 255), 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p->setPen(QPen(QColor(0, 192, 255), 1, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
             p->drawRect(0, 0, width(), height());
         }
     }

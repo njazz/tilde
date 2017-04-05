@@ -77,6 +77,11 @@ public:
     {
         //QPainter p(viewport());
 
+        QBrush brush(bgColor());
+        p->setBrush(brush);
+        p->drawRect(boundingRect());
+        p->setBrush(QBrush());
+
         if (_value) {
             float lw = 2; //+width()/20.;
             p->setPen(QPen(QColor(0, 192, 255), lw, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
@@ -86,9 +91,9 @@ public:
         }
 
         if (isSelected()) {
-            p->setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p->setPen(QPen(QColor(0, 192, 255), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         } else {
-            p->setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p->setPen(QPen(QColor(128, 128, 128), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         }
 
         p->drawRect(0, 0, width(), height());

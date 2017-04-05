@@ -152,6 +152,11 @@ public:
     ///
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)
     {
+        QBrush brush(bgColor());
+        p->setBrush(brush);
+        p->drawRect(boundingRect());
+        p->setBrush(QBrush());
+
         //QPainter p(viewport());
         p->setRenderHint(QPainter::HighQualityAntialiasing, true);
         p->scale(scale(), scale());

@@ -123,12 +123,17 @@ public:
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)
 
     {
+        QBrush brush(bgColor());
+        p->setBrush(brush);
+        p->drawRect(boundingRect());
+        p->setBrush(QBrush());
+
         //QPainter p(viewport());
         p->setRenderHint(QPainter::HighQualityAntialiasing, true);
         p->scale(scale(), scale());
 
         QColor c1 = (_opInstance) ? QColor(0, 192, 255) : QColor(255, 0, 0);
-        p->setPen(QPen(c1, 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p->setPen(QPen(c1, 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         p->drawRect(0, 1, width(), height() - 2);
 
         //remove this later
