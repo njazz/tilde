@@ -27,9 +27,9 @@ namespace qtpd {
 
 ////
 /// \brief draw canvas as patch, box or pd "G-O-P" / patch in patch
-typedef enum _canvasDrawStyle { ds_Canvas,
-    ds_Box,
-    ds_CanvasInBox } canvasDrawStyle;
+//typedef enum _canvasDrawStyle { ds_Canvas,
+    //ds_Box,
+    //ds_CanvasInBox } canvasDrawStyle;
 
 ////
 /// \brief 't_canvas' counterpart. creates objects
@@ -37,30 +37,20 @@ typedef enum _canvasDrawStyle { ds_Canvas,
 class Canvas : public QGraphicsView {
 private:
     canvasDataPlus _data;
-    canvasData _selectionData;
+    //canvasData _selectionData;
 
     UIObject* _connectionStartObject;
     UIObject* _connectionStartOutlet;
-    //
     UIObject* _replaceObject;
 
     QPoint _newObjectPos;
     QPoint _dragPrevPos;
 
-    // local, !Box
-    // TODO separate grid layer
-    //bool _gridEnabled;
     bool _gridSnap;
-    //int _gridStep;
 
     QSize _windowSize;
     //
-    //canvasDrawStyle _drawStyle;
-
-    // if the canvas is the box, it can have this. Check this later
-    // !Canvas
-    //QMainWindow *SubcanvasWindow_;
-    // UIObjectItem* _Subcanvas;
+    //
 
     ObjectMaker* _objectMaker;
     QStringList _clipboard;
@@ -79,12 +69,17 @@ private:
     NewLine* _newLine;
 
     t_canvas* _pdObject;
+    UIObject* _dragObject;
 
     Q_OBJECT
 
 public:
     // TODO encapsulate
-    UIObject* dragObject;
+    //UIObject* dragObject;
+
+    UIObject * dragObject(){return _dragObject;}
+    void setDragObject(UIObject* object){_dragObject = object;}
+
     QString fileName;
 
     explicit Canvas(QGraphicsView* parent = 0);
@@ -101,61 +96,17 @@ public:
     /// \param dStyle draw style - Canvas, Box, CanvasInBox
     /// \return
     ///
-    static Canvas* newView(Canvas* srcCanvas, UIObject* parentCanvas, canvasDrawStyle dStyle);
+    static Canvas* newView(Canvas* srcCanvas, UIObject* parentCanvas);
 
     void addInlet();
     void addOutlet();
 
-    //    ////
-    //    /// \brief set draw style
-    //    /// \param ds
-    //    ///
-    //    void setDrawStyle(canvasDrawStyle ds);
-
-    //    ////
-    //    /// \brief get draw style
-    //    /// \param ds
-    //    ///
-    //    canvasDrawStyle drawStyle();
-
-    //    //
-    //    / \brief main paint routine
-    //    /
-    //void paintEvent(QPaintEvent*);
+    //   
 
     ////
     /// \brief draws canvas contents
     ///
     void drawCanvas();
-
-    //    ////
-    //    /// \brief draw object box for the canvas
-    //    ///
-    //    void drawObjectBox();
-
-    ////
-    /// \brief paint patchcords
-    ///
-    //void paintPatchcords();
-
-    //    ////
-    //    /// \brief changes patchcords color when mouse is over
-    //    /// \param pos
-    //    /// \return true if mouse is over any of the patchcords
-    //    ///
-    //    bool hoverPatchcords(QPoint pos);
-
-    //    ////
-    //    /// \brief resets all patchcords hover color flag
-    //    ///
-    //    void hoverPatchcordsOff();
-
-    //    ////
-    //    /// \brief marks clicked patchcord
-    //    /// \param pos
-    //    /// \return true if there was a patchcord
-    //    ///
-    //    bool clickPatchcords(QPoint pos);
 
     ////
     /// \brief route mouse move handling for different vis types
@@ -196,23 +147,6 @@ public:
 
     /////////
 
-    //    ////
-    //    /// \brief mouse down ForBox
-    //    /// \param ev
-    //    ///
-    //    void mousePressEventForBox(QMouseEvent* ev);
-
-    //    ////
-    //    /// \brief mouse up ForBox
-    //    ///
-    //    void mouseReleaseEventForBox(QMouseEvent*);
-
-    //    ////
-    //    /// \brief mouse move ForBox
-    //    /// \param event
-    //    ///
-    //    void mouseMoveEventForBox(QMouseEvent* event);
-
     /////////
 
     ////
@@ -228,7 +162,7 @@ public:
     /// \param canvas
     /// \return
     ///
-
+    // MOVE THAT TO BOX
     UIBox* restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas* canvas);
 
     ////
