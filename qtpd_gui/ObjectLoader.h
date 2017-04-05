@@ -11,14 +11,14 @@
 
 //temporary
 #include "UIBox.h"
-//#include "UIFloat.h"
+#include "UIFloat.h"
 #include "UIMessage.h"
-//#include "UIText.h"
+#include "UIText.h"
+
+#include "UIBang.h"
+#include "UIToggle.h"
 
 //#include "UIArray.h"
-
-//#include "UIBang.h"
-//#include "UIToggle.h"
 
 //#include "UIScript.h"
 

@@ -10,11 +10,11 @@ void ObjectLoader::loadObjects()
     //temporary
     addUIobject("ui.obj", &UIBox::createObject);
     addUIobject("ui.msg", &UIMessage::createObject);
-//    addUIobject("ui.float", &UIFloat::createObject);
-//    addUIobject("ui.text", &UIText::createObject);
+    addUIobject("ui.float", &UIFloat::createObject);
+    addUIobject("ui.text", &UIText::createObject);
 
-//    addUIobject("ui.bang", &UIBang::createObject);
-//    addUIobject("ui.toggle", &UIToggle::createObject);
+    addUIobject("ui.bang", &UIBang::createObject);
+    addUIobject("ui.toggle", &UIToggle::createObject);
 
 //    addUIobject("ui.script", &UIScript::createObject);
 

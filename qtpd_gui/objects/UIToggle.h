@@ -11,6 +11,8 @@
 
 #include "PdLink.h"
 
+#include <QGraphicsView>
+
 namespace qtpd {
 
 ////
@@ -24,11 +26,12 @@ private:
     bool _value;
 
 public:
-    explicit UIToggle(UIObject* parent = 0);
+    explicit UIToggle();//UIObject* parent = 0);
 
-    static UIObject* createObject(std::string objectData, t_canvas* pdCanvas, UIWidget* parent = 0)
+    static UIObject* createObject(std::string objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
     {
-        UIToggle* b = new UIToggle((UIObject*)parent);
+        UIToggle* b = new UIToggle();//(UIObject*)parent);
+        b->setCanvas((void*)parent);
 
         std::string data1 = b->properties()->extractFromPdFileString(objectData);
         b->setObjectData("ui.toggle");
@@ -53,7 +56,7 @@ public:
             qDebug("Error: no such object %s", message.c_str());
         }
 
-        //b->setFixedSize(20,20);
+        //b->setSize(20,20);
         //b->setPdMessage("");
 
         b->addInlet();
@@ -69,36 +72,37 @@ public:
         properties()->create("Value", "Preset", "0.1", 0.);
     }
 
-    void paintEvent(QPaintEvent*)
+    //void paintEvent(QPaintEvent*)
+    virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* , QWidget* )
     {
-        QPainter p(viewport());
+        //QPainter p(viewport());
 
         if (_value) {
             float lw = 2; //+width()/20.;
-            p.setPen(QPen(QColor(0, 192, 255), lw, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
-            //p.drawEllipse(QRect(1+lw/2, 1+lw/2, width()-2-lw,height()-2-lw));
-            p.drawLine(2, 2, width() - 2, height() - 2);
-            p.drawLine(width() - 2, 2, 2, height() - 2);
+            p->setPen(QPen(QColor(0, 192, 255), lw, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+            //p->drawEllipse(QRect(1+lw/2, 1+lw/2, width()-2-lw,height()-2-lw));
+            p->drawLine(2, 2, width() - 2, height() - 2);
+            p->drawLine(width() - 2, 2, 2, height() - 2);
         }
 
         if (isSelected()) {
-            p.setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p->setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         } else {
-            p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p->setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         }
 
-        p.drawRect(0, 0, width(), height());
+        p->drawRect(0, 0, width(), height());
     }
 
     void resizeEvent(QResizeEvent* event)
     {
-        UIObject::resizeEvent(event);
-        setFixedHeight(width());
+        //UIObject::resizeEvent(event);
+        setHeight(width());
     }
 
     ///////////////////
 
-    void mousePressEvent(QMouseEvent* ev)
+    void mousePressEvent(QGraphicsSceneMouseEvent* ev)
     {
 
         //        if ( (getEditMode()==em_Unlocked) && isSelected())
@@ -110,7 +114,7 @@ public:
         if (getEditMode() == em_Unlocked)
             emit selectBox(this, ev);
 
-        dragOffset = ev->pos();
+        dragOffset = ev->pos().toPoint();
 
         if (getEditMode() != em_Unlocked) {
             //            value_ = !value_;
@@ -127,7 +131,7 @@ public:
         }
     }
 
-    void mouseReleaseEvent(QMouseEvent*)
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent*)
     {
         //selected_ = false;
 
@@ -138,7 +142,7 @@ public:
         //        }
     }
 
-    void mouseMoveEvent(QMouseEvent* event)
+    void mouseMoveEvent(QGraphicsSceneMouseEvent* event)
     {
         if (event->buttons() & Qt::LeftButton) {
             emit moveBox(this, event);
@@ -163,8 +167,8 @@ public:
         //        QFontMetrics fm(myFont);
         //        int new_w = fm.width(QString(getObjectData().c_str())) + 10;
         //        new_w = (new_w<25) ? 25 : new_w;
-        //        setFixedWidth(new_w);
-        //        editor_->setFixedWidth(width()-5);
+        //        setWidth(new_w);
+        //        editor_->setWidth(width()-5);
 
         //        //temporary
         //        //move

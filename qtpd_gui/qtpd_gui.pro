@@ -34,12 +34,12 @@ SOURCES += main.cpp\
 #    python/wrappers/py_wrappers.cpp \
 #
 #    objects/UIArray.cpp \
-#    objects/UIBang.cpp \
     objects/UIBox.cpp \
-#    objects/UIFloat.cpp \
     objects/UIMessage.cpp \
-#    objects/UIToggle.cpp \
-#    objects/UIText.cpp \
+    objects/UIFloat.cpp \
+    objects/UIToggle.cpp \
+    objects/UIBang.cpp \
+    objects/UIText.cpp \
 #    objects/UIScript.cpp \
 #    oopd/OOPD.cpp \
 #    oopd/UIClass.cpp \
@@ -112,12 +112,12 @@ HEADERS  += \
 #    python/headers/PythonQtVariants.h \
     #python/wrappers/py_qtpd.h \
     #python/wrappers/py_wrappers.h \
-#    objects/UIBang.h \
+    objects/UIBang.h \
 #    objects/UIArray.h \
-#    objects/UIToggle.h \
-#    objects/UIText.h \
+    objects/UIToggle.h \
+    objects/UIText.h \
 #    objects/UIScript.h \
-#    objects/UIFloat.h \
+    objects/UIFloat.h \
     objects/UIBox.h \
     objects/UIMessage.h \
     #

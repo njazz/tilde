@@ -6,8 +6,10 @@
 
 #include <QPlainTextEdit>
 
-#include "UIObject.h"
 #include "Port.h"
+#include "UIObject.h"
+
+#include <QGraphicsView>
 
 //#include "cm_pdlink.h"
 
@@ -25,11 +27,12 @@ private:
     QString _objectText;
 
 public:
-    explicit UIText(UIObject* parent = 0);
+    explicit UIText(); //UIObject* parent = 0);
 
-    static UIObject* createObject(std::string objectData, t_canvas* pdCanvas, UIWidget* parent = 0)
+    static UIObject* createObject(std::string objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
     {
-        UIText* b = new UIText((UIObject*)parent);
+        UIText* b = new UIText();
+        b->setCanvas((void*)parent);
 
         //temporary
         std::string data1 = b->properties()->extractFromPdFileString(objectData);
@@ -48,30 +51,31 @@ public:
         return (UIObject*)b;
     };
 
-    void paintEvent(QPaintEvent*)
+    //void paintEvent(QPaintEvent*)
+    virtual void paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)
     {
-        QPainter p(viewport());
+        //QPainter p(viewport());
 
         if (getEditMode() == em_Unlocked) {
             if (isSelected()) {
-                p.setPen(QPen(QColor(0, 192, 255), 2, Qt::DotLine, Qt::SquareCap, Qt::BevelJoin));
+                p->setPen(QPen(QColor(0, 192, 255), 2, Qt::DotLine, Qt::SquareCap, Qt::BevelJoin));
             } else if (_clicked) {
-                p.setPen(QPen(QColor(0, 192, 255), 4, Qt::DotLine, Qt::RoundCap, Qt::RoundJoin));
+                p->setPen(QPen(QColor(0, 192, 255), 4, Qt::DotLine, Qt::RoundCap, Qt::RoundJoin));
             } else {
-                p.setPen(QPen(QColor(128, 128, 128), 2, Qt::DotLine, Qt::SquareCap, Qt::BevelJoin));
+                p->setPen(QPen(QColor(128, 128, 128), 2, Qt::DotLine, Qt::SquareCap, Qt::BevelJoin));
             }
 
-            p.drawRect(0, 0, width(), height());
-            //p.drawPolygon(poly);
+            p->drawRect(0, 0, width(), height());
+            //p->drawPolygon(poly);
         }
 
         QTextOption* op = new QTextOption;
         op->setAlignment(Qt::AlignLeft);
-        p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p->setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
         int fontSize = properties()->get("FontSize")->asQString().toInt();
-        p.setFont(QFont(PREF_QSTRING("Font"), fontSize, 0, false));
-        p.drawText(2, 3, width() - 2, height() - 3, 0, _objectText, 0);
+        p->setFont(QFont(PREF_QSTRING("Font"), fontSize, 0, false));
+        p->drawText(2, 3, width() - 2, height() - 3, 0, _objectText, 0);
     }
 
     //////////
@@ -86,7 +90,7 @@ public:
 
     ///////////////////
 
-    void mousePressEvent(QMouseEvent* ev)
+    void mousePressEvent(QGraphicsSceneMouseEvent* ev)
     {
 
         if ((getEditMode() == em_Unlocked) && isSelected()) {
@@ -97,28 +101,28 @@ public:
         }
 
         emit selectBox(this, ev);
-        dragOffset = ev->pos();
+        dragOffset = ev->pos().toPoint();
 
         if (!(getEditMode() == em_Unlocked)) {
             _clicked = true;
-             viewport()->update();
+            update();
 
             //todo timer
         }
     }
 
-    void mouseReleaseEvent(QMouseEvent*)
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent*)
     {
         //selected_ = false;
 
         //if (!getEditMode())
         //{
         _clicked = false;
-         viewport()->update();
+        update();
         //}
     }
 
-    void mouseMoveEvent(QMouseEvent* event)
+    void mouseMoveEvent(QGraphicsSceneMouseEvent* event)
     {
         if (event->buttons() & Qt::LeftButton) {
             emit moveBox(this, event);
@@ -140,9 +144,9 @@ public:
         QFont myFont(PREF_QSTRING("Font"), fontSize);
         QFontMetrics fm(myFont);
 
-        setFixedWidth((int)fm.width(_objectText) + 5);
+        setWidth((int)fm.width(_objectText) + 5);
         if (width() < minimumBoxWidth())
-            setFixedWidth(minimumBoxWidth());
+            setWidth(minimumBoxWidth());
 
         //duplicate?
         int new_w = fm.width(_objectText) + 20;
@@ -152,8 +156,8 @@ public:
 
         new_h = (new_h < 25) ? 25 : new_h;
 
-        setFixedWidth(new_w);
-        setFixedHeight(new_h);
+        setWidth(new_w);
+        setHeight(new_h);
     }
 
     ///////
@@ -199,7 +203,7 @@ public:
         x->setObjectData(obj_data);
         x->autoResize();
 
-        x->repaint();// viewport()->update();
+        x->update(); // viewport()->update();
     }
 
     //    void setPdObject(void *obj)
