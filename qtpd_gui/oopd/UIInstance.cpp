@@ -5,21 +5,21 @@
 
 namespace qtpd {
 
-UIInstance::UIInstance(UIObject* parent)
-    : UIObject(parent)
+UIInstance::UIInstance()//UIObject* parent)
+    //: UIObject(parent)
 {
     //setPdObjectName("ui.bang");
 
-    setFixedHeight(20);
+    setHeight(20);
     //setMinimumWidth(22);
-    setMouseTracking(true);
+    //setMouseTracking(true);
 
     deselect(); // = false;
 
-    QPalette Pal(palette());
-    Pal.setColor(QPalette::Background, QColor(240, 240, 240));
-    setAutoFillBackground(true);
-    setPalette(Pal);
+//    QPalette Pal(palette());
+//    Pal.setColor(QPalette::Background, QColor(240, 240, 240));
+//    setAutoFillBackground(true);
+//    setPalette(Pal);
 
     setErrorBox(false);
 
@@ -50,7 +50,7 @@ void UIInstance::setInletsPos()
 
             inletAt(i)->move(x, y);
             if (inletAt(i)->scene())
-                inletAt(i)->viewport()->update();
+                inletAt(i)->update();
         }
     } else
         UIObject::setInletsPos();
@@ -69,7 +69,7 @@ void UIInstance::setOutletsPos()
 
             outletAt(i)->move(x, y);
             if (outletAt(i)->scene())
-                outletAt(i)->viewport()->update();
+                outletAt(i)->update();
         }
     } else
         UIObject::setOutletsPos();

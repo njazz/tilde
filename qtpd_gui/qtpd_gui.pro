@@ -33,7 +33,7 @@ SOURCES += main.cpp\
 #    python/PythonQtScriptingConsole.cpp \
 #    python/wrappers/py_wrappers.cpp \
 #
-#    objects/UIArray.cpp \
+    objects/UIArray.cpp \
     objects/UIBox.cpp \
     objects/UIMessage.cpp \
     objects/UIFloat.cpp \
@@ -41,13 +41,14 @@ SOURCES += main.cpp\
     objects/UIBang.cpp \
     objects/UIText.cpp \
 #    objects/UIScript.cpp \
-#    oopd/OOPD.cpp \
-#    oopd/UIClass.cpp \
-#    oopd/UIInstance.cpp \
-#    objects/UIArrayEditor.cpp \
+    oopd/OOPD.cpp \
+    oopd/UIClass.cpp \
+    oopd/UIInstance.cpp \
+    oopd/OPInstance.cpp \
+    oopd/OPClass.cpp \
+#
+    objects/UIArrayEditor.cpp \
     Canvas.cpp \
-    #UIObject.cpp \
-    #UIWidget.cpp \
     #Port.cpp \
     #SizeBox.cpp \
     FileParser.cpp \
@@ -64,8 +65,6 @@ SOURCES += main.cpp\
 #    objects/UIDSP.cpp \
 #    oopd/UIMethod.cpp \
 #    oopd/UIProperty.cpp \
-#    oopd/OPInstance.cpp \
-#    oopd/OPClass.cpp \
     graphicobjects/Port.cpp \
     graphicobjects/SizeBox.cpp \
     graphicobjects/UIItem.cpp \
@@ -113,7 +112,7 @@ HEADERS  += \
     #python/wrappers/py_qtpd.h \
     #python/wrappers/py_wrappers.h \
     objects/UIBang.h \
-#    objects/UIArray.h \
+    objects/UIArray.h \
     objects/UIToggle.h \
     objects/UIText.h \
 #    objects/UIScript.h \
@@ -121,18 +120,18 @@ HEADERS  += \
     objects/UIBox.h \
     objects/UIMessage.h \
     #
-#    oopd/OOPD.h \
-#    oopd/UIClass.h \
-#    oopd/UIInstance.h \
+    oopd/OOPD.h \
+    oopd/UIClass.h \
+    oopd/UIInstance.h \
+    oopd/OPClass.h \
+    oopd/OPInstance.h \
     #
-#    objects/UIArrayEditor.h \
+    objects/UIArrayEditor.h \
     window/BaseWindow.h \
     window/PatchWindow.h \
     window/PdWindow.h \
     window/PropertiesWindow.h \
     Canvas.h \
-    #UIObject.h \
-    #UIWidget.h \
     #Port.h \
     #SizeBox.h \
 #
@@ -150,8 +149,6 @@ HEADERS  += \
 #    objects/UIDSP.h \
 #    oopd/UIMethod.h \
 #    oopd/UIProperty.h \
-#    oopd/OPClass.h \
-#    oopd/OPInstance.h \
 #    oopd/OOPDClassBase.h \
 #    oopd/OOPDHeaders.h \
     graphicobjects/common_types.h \

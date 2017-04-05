@@ -18,10 +18,10 @@ void ObjectLoader::loadObjects()
 
 //    addUIobject("ui.script", &UIScript::createObject);
 
-//    addUIobject("ui.array", &UIArray::createObject);
+    addUIobject("ui.array", &UIArray::createObject);
 
-//    addUIobject("pdclass", &UIClass::createObject);
-//    addUIobject("pdinstance", &UIInstance::createObject);
+    addUIobject("pdclass", &UIClass::createObject);
+    addUIobject("pdinstance", &UIInstance::createObject);
 //    addUIobject("method", &UIMethod::createObject);
 //    addUIobject("property", &UIProperty::createObject);
 

@@ -18,12 +18,12 @@
 #include "UIBang.h"
 #include "UIToggle.h"
 
-//#include "UIArray.h"
+#include "UIArray.h"
 
 //#include "UIScript.h"
 
-//#include "oopd/UIClass.h"
-//#include "oopd/UIInstance.h"
+#include "oopd/UIClass.h"
+#include "oopd/UIInstance.h"
 //#include "oopd/UIMethod.h"
 //#include "oopd/UIProperty.h"
 

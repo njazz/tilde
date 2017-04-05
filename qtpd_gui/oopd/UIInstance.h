@@ -18,6 +18,8 @@
 
 #include "OOPDHeaders.h"
 
+#include <QGraphicsView>
+
 namespace qtpd {
 
 ////
@@ -38,10 +40,10 @@ private:
     QString _className;
 
 public:
-    explicit UIInstance(UIObject* parent = 0);
+    explicit UIInstance(); //UIObject* parent = 0);
     //~UIInstance();
 
-    static UIObject* createObject(std::string objectData, t_canvas* pd_Canvas, UIWidget* parent = 0)
+    static UIObject* createObject(std::string objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
     {
         //TODO fix all constructors
         //t_canvas* pd_Canvas;
@@ -50,7 +52,8 @@ public:
         if (objectData == "")
             objectData = "pdclass";
 
-        UIInstance* b = new UIInstance((UIObject*)parent);
+        UIInstance* b = new UIInstance(); //(UIObject*)parent);
+        b->setCanvas((void*)parent);
 
         QStringList list = QString(objectData.c_str()).split(" ");
 
@@ -69,16 +72,14 @@ public:
         t_object* new_obj = 0;
         int in_c = 1, out_c = 0;
 
-        b->setHelpName("pdinstance-help.pd");
+        b->setHelpName("pdinstance-help->pd");
 
-        if (!pd_Canvas) {
+        if (!pdCanvas) {
             qDebug("bad pd canvas instance");
             b->setErrorBox(true);
         } else {
-            new_obj = cmp_create_object(pd_Canvas, "pdinstance", 0, 0);
+            new_obj = cmp_create_object(pdCanvas, "pdinstance", 0, 0);
         }
-
-
 
         if (new_obj) {
             in_c = cmp_get_inlet_count(new_obj);
@@ -101,8 +102,7 @@ public:
             b->addOutlet();
 
         // typed
-        if (list.size()>1)
-        {
+        if (list.size() > 1) {
             std::string typeName = list.at(1).toStdString();
             //weird
             AtomList msg(gensym("settype"));
@@ -119,70 +119,68 @@ public:
     ////
     /// \brief paint event
     ///
-    void paintEvent(QPaintEvent*)
+    //void paintEvent(QPaintEvent*)
+    virtual void paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)
+
     {
-        QPainter p(viewport());
-        p.setRenderHint(QPainter::HighQualityAntialiasing, true);
-        p.scale(scale(), scale());
+        //QPainter p(viewport());
+        p->setRenderHint(QPainter::HighQualityAntialiasing, true);
+        p->scale(scale(), scale());
 
         QColor c1 = (_opInstance) ? QColor(0, 192, 255) : QColor(255, 0, 0);
-        p.setPen(QPen(c1, 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-        p.drawRect(0, 1, width(), height() - 2);
+        p->setPen(QPen(c1, 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p->drawRect(0, 1, width(), height() - 2);
 
         //remove this later
         if (subpatchWindow()) {
-            p.setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-            p.drawRect(0, 2, width(), height() - 4);
+            p->setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p->drawRect(0, 2, width(), height() - 4);
         }
 
         QColor rectColor = (errorBox()) ? QColor(255, 0, 0) : properties()->get("BorderColor")->asQColor(); //QColor(128, 128, 128);
-        p.setPen(QPen(rectColor, 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-        p.drawRect(0, 0, width(), height());
+        p->setPen(QPen(rectColor, 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p->drawRect(0, 0, width(), height());
         QTextOption* op = new QTextOption;
         op->setAlignment(Qt::AlignLeft);
-        p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-
-
+        p->setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
         if (isSelected()) {
-            p.setPen(QPen(QColor(0, 192, 255), 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-            p.drawRect(0, 0, width(), height());
+            p->setPen(QPen(QColor(0, 192, 255), 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p->drawRect(0, 0, width(), height());
         }
 
         // -----------
 
         if (_hasType) {
 
-            p.setFont(QFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize(), 0, false));
-            p.drawText(2, 3, width() - 2, 20 - 3, Qt::AlignCenter, "<"+_className  +">", 0);
+            p->setFont(QFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize(), 0, false));
+            p->drawText(2, 3, width() - 2, 20 - 3, Qt::AlignCenter, "<" + _className + ">", 0);
 
-            int y=20;
-            p.setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-            p.drawLine(0,y,width(),y);
+            int y = 20;
+            p->setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p->drawLine(0, y, width(), y);
 
-            for (int i=0;i<_opClass->getPropertyList().size();i++)
-            {
-                p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-                p.drawText(2, 3 + y, width() - 2, 20 - 3, Qt::AlignCenter, "•"+QString(_opClass->getPropertyList().at(i).asString().c_str()), 0);
+            for (int i = 0; i < _opClass->getPropertyList().size(); i++) {
+                p->setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+                p->drawText(2, 3 + y, width() - 2, 20 - 3, Qt::AlignCenter, "•" + QString(_opClass->getPropertyList().at(i).asString().c_str()), 0);
 
                 y += 20;
             }
 
-            p.setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-            p.drawLine(0,y,width(),y);
+            p->setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p->drawLine(0, y, width(), y);
 
-            for (int i=0;i<_opClass->getMethodList().size();i++)
-            {
-                p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-                p.drawText(2, 3 + y, width() - 2, 20 - 3, Qt::AlignCenter, QString(_opClass->getMethodList().at(i).asString().c_str()), 0);
+            for (int i = 0; i < _opClass->getMethodList().size(); i++) {
+                p->setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+                p->drawText(2, 3 + y, width() - 2, 20 - 3, Qt::AlignCenter, QString(_opClass->getMethodList().at(i).asString().c_str()), 0);
 
                 y += 20;
             }
 
         } else {
 
-            p.setFont(QFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize(), 0, false));
-            p.drawText(2, 3, width() - 2, height() - 3, 0, objectData().c_str(), 0);
+            p->setFont(QFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize(), 0, false));
+            p->drawText(2, 3, width() - 2, height() - 3, 0, objectData().c_str(), 0);
         }
     }
 
@@ -190,12 +188,12 @@ public:
     /// \brief mouse down
     /// \param ev
     ///
-    void mousePressEvent(QMouseEvent* ev)
+    void mousePressEvent(QGraphicsSceneMouseEvent* ev)
     {
         //context menu
         if (ev->button() == Qt::RightButton) {
-            QPoint pos = mapToGlobal(ev->pos());
-            showPopupMenu(pos);
+            //QPoint pos = mapToGlobal(ev->pos());
+            //showPopupMenu(pos);
             ev->accept();
             return;
         }
@@ -223,22 +221,22 @@ public:
         }
 
         emit selectBox(this, ev);
-        dragOffset = ev->pos();
+        dragOffset = ev->pos().toPoint();
     }
 
     ////
     /// \brief mouse up
     ///
-    void mouseReleaseEvent(QMouseEvent*)
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent*)
     {
-         viewport()->update();
+        update();
     }
 
     ////
     /// \brief mouse move
     /// \param event
     ///
-    void mouseMoveEvent(QMouseEvent* event)
+    void mouseMoveEvent(QGraphicsSceneMouseEvent* event)
     {
         if (event->buttons() & Qt::LeftButton) {
             emit moveBox(this, event);
@@ -261,7 +259,7 @@ public:
         QFontMetrics fm(myFont);
         int new_w = fm.width(QString(objectData().c_str())) + 10;
         new_w = (new_w < 25) ? 25 : new_w;
-        setFixedWidth(new_w);
+        setWidth(new_w);
         //editor_->setFixedWidth(width() - 5);
 
         //todo: del object and create new + patchcords
@@ -351,7 +349,7 @@ public:
 
         qDebug() << "instance: " << _opInstance;
 
-         viewport()->update();
+        update();
     }
 
     void msgGetObject(AtomList msg)
@@ -377,8 +375,8 @@ public:
             _hasType = false;
             _opInstance = 0;
             _opClass = 0;
-            setFixedHeight(20);
-             viewport()->update();
+            setHeight(20);
+            update();
             return;
         } else {
             _opClass = OOPD::inst()->classByName(msg.at(1).asString());
@@ -391,19 +389,17 @@ public:
                 list = _opClass->getMethodList();
                 list.append(_opClass->getPropertyList());
 
-                setFixedHeight(20 * (list.size() + 1));
+                setHeight(20 * (list.size() + 1));
 
                 // inlets and outlets
-                for (int i=0;i<_opClass->getPropertyList().size();i++)
-                {
+                for (int i = 0; i < _opClass->getPropertyList().size(); i++) {
                     cmp_sendstring((t_pd*)pdObject(), "__newin");
                     cmp_sendstring((t_pd*)pdObject(), "__newout");
                     addInlet();
                     addOutlet();
                 }
 
-                for (int i=0;i<_opClass->getMethodList().size();i++)
-                {
+                for (int i = 0; i < _opClass->getMethodList().size(); i++) {
                     cmp_sendstring((t_pd*)pdObject(), "__newin");
                     cmp_sendstring((t_pd*)pdObject(), "__newout");
                     addInlet();
@@ -421,10 +417,10 @@ public:
             } else {
                 cmp_post("class not found!");
                 cmp_post(msg.at(1).asString().c_str());
-                setFixedHeight(20);
+                setHeight(20);
             }
 
-             viewport()->update();
+            update();
         }
     }
 
@@ -520,7 +516,7 @@ signals:
 private slots:
     void updateUISlot()
     {
-         viewport()->update();
+        update();
     }
 };
 }

@@ -77,7 +77,6 @@ OPInstance::OPInstance(OPClass* opClass)
     //                addMethodPointerOut(gensym(it->first.c_str()), dyn_pointer_out);
     //        }
 }
-}
 
 void OPInstance::showWindow()
 {
@@ -105,4 +104,6 @@ OPInstance::~OPInstance()
 
     printf("~OPInstance\n");
     printf("canvas: %lu\n", (long)_canvas);
+}
+
 }
