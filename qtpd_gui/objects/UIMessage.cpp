@@ -4,20 +4,20 @@
 #include "UIMessage.h"
 
 namespace qtpd {
-
-UIMessage::UIMessage(UIObject* parent)
-    : UIObject(parent)
+UIMessage::UIMessage() //UIObject* parent)
+//: UIObject(parent)
 {
     //setPdObjectName("ui.msg");
 
-
-
-    setMouseTracking(true);
+    //setMouseTracking(true);
 
     deselect();
     _clicked = false;
 
-    _editor = new QLineEdit(this);
+    _editor = new QLineEdit(); //this
+
+    //qDebug() << "editor" << _editor;
+
     _editor->setFixedSize(65 - 5, 18);
     _editor->move(1, 1);
     _editor->setFont(QFont(PREF_QSTRING("Font"), 11, 0, false));
@@ -26,7 +26,7 @@ UIMessage::UIMessage(UIObject* parent)
     _editor->setFrame(false);
 
     if (scene())
-    scene()->addWidget(_editor);
+        scene()->addWidget(_editor);
 
     connect(_editor, &QLineEdit::editingFinished, this, &UIMessage::editorDone);
     connect(_editor, &QLineEdit::textEdited, this, &UIMessage::editorChanged);
@@ -34,8 +34,7 @@ UIMessage::UIMessage(UIObject* parent)
     setMinimumBoxWidth(40);
     setMinimumBoxHeight(20);
 
-    setFixedSize(65, 20);
-
+    setSize(65, 20);
 }
 
 ///////
@@ -56,7 +55,7 @@ void UIMessage::editorChanged()
     QFontMetrics fm(myFont);
     int new_w = fm.width(QString(_editor->text())) + 10;
     new_w = (new_w < 25) ? 25 : new_w;
-    setFixedWidth(new_w);
+    setWidth(new_w);
     _editor->setFixedWidth(width() - 5);
 }
 }

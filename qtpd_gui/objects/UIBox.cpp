@@ -4,8 +4,8 @@
 #include "UIBox.h"
 
 namespace qtpd {
-UIBox::UIBox()//UIObjectItem* parent)
-    //: UIObjectItem(parent)
+UIBox::UIBox() //UIObjectItem* parent)
+//: UIObjectItem(parent)
 {
     qDebug("constructor");
 
@@ -25,9 +25,6 @@ UIBox::UIBox()//UIObjectItem* parent)
     setObjectSizeMode(os_FixedHeight);
     setAcceptHoverEvents(true);
 
-    sizeBox()->move(33,13);
-
+    sizeBox()->move(33, 13);
 }
-
-
 }

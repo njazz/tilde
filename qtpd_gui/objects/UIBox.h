@@ -38,7 +38,7 @@ public:
     {
         //TODO fix all constructors
 
-        qDebug("uibox");
+        qDebug() << "<< ui.box";
 
         UIBox* b = new UIBox(); //(UIObjectItem*)parent);
 

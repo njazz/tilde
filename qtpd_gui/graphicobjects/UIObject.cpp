@@ -484,7 +484,7 @@ void UIObject::openHelpWindow()
 
 void UIObject::s_repaint() //needed for proper threading
 {
-     //viewport()->update();
+     update();
 }
 
 

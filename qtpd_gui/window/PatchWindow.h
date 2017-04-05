@@ -352,7 +352,9 @@ public:
         if (canvas->getEditMode() != em_Locked) {
             UIObject* newMsg = canvas->createObject("ui.msg", QPoint(100, 100));
             canvas->setDragObject ( newMsg );
-            newMsg->show();
+            //todo
+            canvas->update();
+            //newMsg->show();
         }
     }
 
@@ -362,7 +364,11 @@ public:
         if (canvas->getEditMode() != em_Locked) {
             UIObject* newFlo = canvas->createObject("ui.float 0", QPoint(100, 100));
             canvas->setDragObject ( newFlo );
-            newFlo->show();
+
+            //todo
+            canvas->update();
+
+            //newFlo->show();
         }
     }
 
@@ -372,7 +378,10 @@ public:
         if (canvas->getEditMode() != em_Locked) {
             UIObject* newTxt = canvas->createObject("ui.text", QPoint(100, 100));
            canvas->setDragObject ( newTxt );
-            newTxt->show();
+
+           //todo
+           canvas->update();
+           // newTxt->show();
         }
     }
 
@@ -381,7 +390,10 @@ public:
         if (canvas->getEditMode() != em_Locked) {
             UIObject* newBng = canvas->createObject("ui.bang", QPoint(100, 100));
             canvas->setDragObject ( newBng );
-            newBng->show();
+
+            //todo
+            canvas->update();
+            //newBng->show();
         }
     }
 
@@ -390,7 +402,10 @@ public:
         if (canvas->getEditMode() != em_Locked) {
             UIObject* newBng = canvas->createObject("ui.toggle", QPoint(100, 100));
             canvas->setDragObject ( newBng);
-            newBng->show();
+
+            //todo
+            canvas->update();
+            //newBng->show();
         }
     }
 
@@ -399,7 +414,10 @@ public:
         if (canvas->getEditMode() != em_Locked) {
             UIObject* newBng = canvas->createObject("ui.script", QPoint(100, 100));
             canvas->setDragObject (newBng);
-            newBng->show();
+
+            //todo
+            canvas->update();
+            //newBng->show();
         }
     }
 
@@ -408,7 +426,10 @@ public:
         if (canvas->getEditMode() != em_Locked) {
             UIObject* newArr = canvas->createObject("ui.array", QPoint(100, 100));
             canvas->setDragObject (newArr);
-            newArr->show();
+
+            //todo
+            canvas->update();
+            //newArr->show();
         }
     }
 
@@ -417,7 +438,10 @@ public:
         if (canvas->getEditMode() != em_Locked) {
             UIObject* newArr = canvas->createObject("pdclass", QPoint(100, 100));
             canvas->setDragObject (newArr);
-            newArr->show();
+
+            //todo
+            canvas->update();
+            //newArr->show();
         }
     }
 
@@ -426,7 +450,10 @@ public:
         if (canvas->getEditMode() != em_Locked) {
             UIObject* newArr = canvas->createObject("pdinstance", QPoint(100, 100));
             canvas->setDragObject (newArr);
-            newArr->show();
+
+            //todo
+            canvas->update();
+            //newArr->show();
         }
     }
 

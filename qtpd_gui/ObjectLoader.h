@@ -12,7 +12,7 @@
 //temporary
 #include "UIBox.h"
 //#include "UIFloat.h"
-//#include "UIMessage.h"
+#include "UIMessage.h"
 //#include "UIText.h"
 
 //#include "UIArray.h"

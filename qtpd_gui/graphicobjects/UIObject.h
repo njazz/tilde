@@ -85,6 +85,12 @@ protected:
     virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent*);
 
 public:
+
+    // template, copy from here
+    virtual void paint(QPainter *p, const QStyleOptionGraphicsItem *option, QWidget *widget){
+
+    };
+
     void setCanvas(void* canvas) { _canvas = canvas; }
 
     //cm_object();

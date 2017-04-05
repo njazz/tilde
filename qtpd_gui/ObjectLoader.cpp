@@ -9,7 +9,7 @@ void ObjectLoader::loadObjects()
 {
     //temporary
     addUIobject("ui.obj", &UIBox::createObject);
-//    addUIobject("ui.msg", &UIMessage::createObject);
+    addUIobject("ui.msg", &UIMessage::createObject);
 //    addUIobject("ui.float", &UIFloat::createObject);
 //    addUIobject("ui.text", &UIText::createObject);
 

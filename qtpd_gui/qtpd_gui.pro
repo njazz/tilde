@@ -37,7 +37,7 @@ SOURCES += main.cpp\
 #    objects/UIBang.cpp \
     objects/UIBox.cpp \
 #    objects/UIFloat.cpp \
-#    objects/UIMessage.cpp \
+    objects/UIMessage.cpp \
 #    objects/UIToggle.cpp \
 #    objects/UIText.cpp \
 #    objects/UIScript.cpp \
@@ -119,7 +119,7 @@ HEADERS  += \
 #    objects/UIScript.h \
 #    objects/UIFloat.h \
     objects/UIBox.h \
-#    objects/UIMessage.h \
+    objects/UIMessage.h \
     #
 #    oopd/OOPD.h \
 #    oopd/UIClass.h \

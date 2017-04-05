@@ -9,6 +9,8 @@
 #include "Port.h"
 #include "UIObject.h"
 
+#include <QGraphicsView>
+
 //#include "cm_pdlink.h"
 
 namespace qtpd {
@@ -24,11 +26,14 @@ private:
     QLineEdit* _editor;
 
 public:
-    explicit UIMessage(UIObject* parent = 0);
+    explicit UIMessage();//UIObject* parent = 0);
 
-    static UIObject* createObject(std::string objectData, t_canvas* pdCanvas, UIWidget* parent = 0)
+    static UIObject* createObject(std::string objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
     {
-        UIMessage* b = new UIMessage((UIObject*)parent);
+        qDebug() << "<< ui.msg";
+
+        UIMessage* b = new UIMessage();
+        b->setCanvas((void*)parent);
 
         //fix: remove "ui.msg"
         //do this normal way later
@@ -64,61 +69,59 @@ public:
 
         b->setPdMessage(data1.c_str());
 
-        //b->setObjectData(objectData);
-
         b->addInlet();
         b->addOutlet();
 
         return (UIObject*)b;
     };
 
-    void paintEvent(QPaintEvent*)
+    //void paintEvent(QPaintEvent*)
+    virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* , QWidget* )
     {
-        QPainter p(viewport());
 
         QPolygon poly;
         poly << QPoint(0, 0) << QPoint(width(), 0) << QPoint(width() - 4, 4) << QPoint(width() - 4, height() - 4) << QPoint(width(), height()) << QPoint(0, height());
 
-        //p.drawRect(0,0,width(),height());
+        //p->drawRect(0,0,width(),height());
 
-        p.setPen(QPen(QColor(220, 220, 220), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p->setPen(QPen(QColor(220, 220, 220), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         QPainterPath tmpPath;
         tmpPath.addPolygon(poly);
         QBrush br = QBrush(QColor(220, 220, 220), Qt::SolidPattern);
-        p.fillPath(tmpPath, br);
+        p->fillPath(tmpPath, br);
 
         if (isSelected()) {
-            p.setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p->setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         } else if (_clicked) {
-            p.setPen(QPen(QColor(0, 192, 255), 4, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+            p->setPen(QPen(QColor(0, 192, 255), 4, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
         } else {
-            p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p->setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         }
 
-        p.drawPolygon(poly);
+        p->drawPolygon(poly);
 
         QTextOption* op = new QTextOption;
         op->setAlignment(Qt::AlignLeft);
-        p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p->setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
-        p.setFont(QFont(PREF_QSTRING("Font"), 11, 0, false));
-        p.drawText(2, 3, width() - 2, height() - 3, 0, objectData().c_str(), 0);
+        p->setFont(QFont(PREF_QSTRING("Font"), 11, 0, false));
+        p->drawText(2, 3, width() - 2, height() - 3, 0, objectData().c_str(), 0);
     }
 
-    void resizeEvent(QResizeEvent *ev)
-    {
-        UIObject::resizeEvent(ev);
-        _editor->setFixedWidth(width() - 5);
-    }
+//    void resizeEvent(QResizeEvent* )
+//    {
+//        UIObject::resizeEvent(ev);
+//        _editor->setFixedWidth(width() - 5);
+//    }
 
-    ///////////////////
+    // ------------------------------------------------------
 
-    void mousePressEvent(QMouseEvent* ev)
+    void mousePressEvent(QGraphicsSceneMouseEvent* ev)
     {
         //context menu
         if (ev->button() == Qt::RightButton) {
-            QPoint pos = mapToGlobal(ev->pos());
-            showPopupMenu(pos);
+//            QPoint pos = mapToGlobal(ev->pos());
+//            showPopupMenu(pos);
             ev->accept();
             return;
         }
@@ -130,11 +133,11 @@ public:
         }
 
         emit selectBox(this, ev);
-        dragOffset = ev->pos();
+        dragOffset = ev->pos().toPoint();
 
         if (!(getEditMode() == em_Unlocked)) {
             _clicked = true;
-             viewport()->update();
+            update();
 
             //todo timer
         }
@@ -151,16 +154,16 @@ public:
         }
     }
 
-    void mouseReleaseEvent(QMouseEvent*)
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent*)
     {
         //if (!getEditMode())
         {
             _clicked = false;
-             viewport()->update();
+            update();
         }
     }
 
-    void mouseMoveEvent(QMouseEvent* event)
+    void mouseMoveEvent(QGraphicsSceneMouseEvent* event)
     {
         if (event->buttons() & Qt::LeftButton) {
             emit moveBox(this, event);
@@ -175,7 +178,7 @@ public:
         }
     }
 
-    ///////
+    // ------------------------------------
 
     void setPdMessage(std::string message)
     {
@@ -186,7 +189,7 @@ public:
         QFontMetrics fm(myFont);
         int new_w = fm.width(QString(objectData().c_str())) + 10;
         new_w = (new_w < 25) ? 25 : new_w;
-        setFixedWidth(new_w);
+        setWidth(new_w);
         //_editor->setFixedWidth(width() - 5);
 
         //temporary
@@ -215,7 +218,7 @@ public:
             else if (AtomList(msg.at(i)).toPdData()->a_type == A_SEMI)
                 obj_data += "; ";
             else if (AtomList(msg.at(i)).toPdData()->a_type == A_DOLLAR)
-                obj_data += "$"+QString::number(AtomList(msg.at(i)).toPdData()->a_w.w_index).toStdString()+" ";
+                obj_data += "$" + QString::number(AtomList(msg.at(i)).toPdData()->a_w.w_index).toStdString() + " ";
             else
                 obj_data += msg.at(i).asString() + " ";
         }
@@ -225,7 +228,7 @@ public:
 
         //
         emit x->callRepaint();
-        //x-> viewport()->update();
+        //update();
     }
 
     void setPdObject(void* obj)
