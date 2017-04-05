@@ -104,6 +104,8 @@ public:
 
     void showPopupMenu(QPoint pos);
 
+    SizeBox* sizeBox(){return _sizeBox;}
+
     //void contextMenuEvent(QContextMenuEvent* event);
 
     ////

@@ -33,7 +33,11 @@ public:
 
     void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget* widget)
     {
-        p->setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        QBrush brush(bgColor());
+        p->setBrush(brush);
+        p->drawRect(boundingRect());
+
+        p->setPen(QPen(QColor(128, 128, 128), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         p->drawRect(0, 0, boundingRect().width(), boundingRect().height());
     };
 

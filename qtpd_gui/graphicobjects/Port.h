@@ -25,6 +25,7 @@ protected:
         qDebug("hover");
         if (getEditMode() == em_Unlocked) {
             setHover(true);
+            update();
 
 //            emit mouseEntered();
         }
@@ -34,6 +35,7 @@ protected:
     {
         if (getEditMode() == em_Unlocked) {
             setHover(false);
+            update();
 
 //            emit mouseLeaved();
         }
