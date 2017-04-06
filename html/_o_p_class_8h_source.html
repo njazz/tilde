@@ -177,7 +177,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00096"></a>00096 
 <a name="l00097"></a><a class="code" href="classqtpd_1_1_o_p_class.html#a9ec1f1cea0a11cb284f9cd7d2901eb90">00097</a>     t_outlet* getMethodPointerOutletForReferenceName(<span class="keywordtype">string</span> referenceName)
 <a name="l00098"></a>00098     {
-<a name="l00099"></a>00099         t_outlet* ret;
+<a name="l00099"></a>00099         t_outlet* ret=0;
 <a name="l00100"></a>00100         <span class="keywordflow">if</span> (_methodPointerOutlets.count(referenceName)) {
 <a name="l00101"></a>00101             <span class="comment">//todo multiple</span>
 <a name="l00102"></a>00102             ret = _methodPointerOutlets[referenceName];
@@ -246,7 +246,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 5 2017 23:44:31 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 6 2017 16:01:28 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

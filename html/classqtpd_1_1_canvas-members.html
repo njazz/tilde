@@ -99,7 +99,7 @@ This is the complete list of members for <a class="el" href="classqtpd_1_1_canva
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#a37ece8d75cc5122ce659a1b08c3dc96a">canvasAsPdStrings</a>()</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#a917916d146f667b731b26c67cfd410be">canvasData</a>()</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#a2b189b998887b5615146b8e64666cde7">canvasFromPdStrings</a>(QStringList strings)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#ac6ca45024e1a35619edd1edcac607966">createBoxForCanvas</a>(Canvas *newCanvas, std::string objectData, QPoint pos)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#a3f892cfa35860f7c752751fb85ab87b0">createBoxForPatchWindow</a>(QMainWindow *patchWindow, QString objectData, QPoint pos)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#a79a95c8206119def155047a35253fa9c">createObject</a>(QString objectData1, QPoint pos)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#a668fd9ec6a0ed858bf2e89bef7928d7b">createSubpatchWindow</a>()</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td><code> [signal]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#ac33ab7f43fd6ceb69c84590231646726">dataCopy</a>()</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td><code> [slot]</code></td></tr>
@@ -127,7 +127,6 @@ This is the complete list of members for <a class="el" href="classqtpd_1_1_canva
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#ae93d38d741ca01e8591ab21cbc9f9d3e">mousePressEventForCanvas</a>(QMouseEvent *ev)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#a986d4344290abb2b87f942d4c8683569">mouseReleaseEvent</a>(QMouseEvent *ev)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#ab5e1e283cae8a668e28d14a64521cb84">mouseReleaseEventForCanvas</a>(QMouseEvent *)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#a93388dd59d3745c5bc17633bbaa78103">newView</a>(Canvas *srcCanvas, UIObject *parentCanvas)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td><code> [static]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#aa7e7f15474b1b1cc3564c46a346cf3eb">objectBoxes</a>()</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#ad5581c5b76479c848c82a729fa2bbe43">objectMaker</a>()</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td><code> [slot]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#a3625736a403310d179fe0738156e572f">patchcord</a>(UIObject *obj1, int outlet, UIObject *obj2, int inlet)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td></td></tr>
@@ -140,9 +139,8 @@ This is the complete list of members for <a class="el" href="classqtpd_1_1_canva
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#a4d62a7174f8926ab7d1c49834cae52dd">portLocalCountUpdated</a>()</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td><code> [slot]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#a5bb622c3199a50373378f230841709cc">readOnly</a>()</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td><code> [inline, slot]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#afea3dc7e1059147e6a4ad6e49e5664c0">replaceObject</a>()</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td><code> [slot]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#aac81f78a06fb86d269fd9702517def5b">resizeEvent</a>(QResizeEvent *ev)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td><code> [inline, slot]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#a95fa81d1acd6e124ec4b4a026ae61d4e">resizeEvent</a>(QResizeEvent *)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td><code> [inline, slot]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#a53c64b8c89b1efa5ee1bfcd0bb364ca7">resizeToObjects</a>()</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#a97d80380c85b0f3785fd6d57e88369a7">restoreSubcanvas</a>(std::string pdObjectName, QPoint pos, t_canvas *canvas)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#ac04c9b64019e81a07796ca8ffa5bb0d8">s_InMousePressed</a>(UIItem *obj, QGraphicsSceneMouseEvent *ev)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td><code> [slot]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#a835ac5fd0255970942d87a9b817b0e19">s_InMouseReleased</a>(UIItem *, QGraphicsSceneMouseEvent *)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td><code> [slot]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#a9f43be392284fbed0841c6b8af375b44">s_MoveBox</a>(UIItem *box, QGraphicsSceneMouseEvent *event)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td><code> [slot]</code></td></tr>
@@ -160,7 +158,6 @@ This is the complete list of members for <a class="el" href="classqtpd_1_1_canva
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#ab7a119de1e6406317bbcceca17fee5ed">setGridEnabled</a>(bool val)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#ad6a8a14cfe6188f0cc5f14a675d36708">setGridSnap</a>(bool val)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#aeb58d4bf39cdaad87ec7731d53b76232">setKeepPdObject</a>(bool v)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td><code> [inline, slot]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#adfcac398bb47f15aee737ab9268c66da">setObjectData</a>(std::string objData)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#aa814e0dde3c68cc8d4518c0de4a18682">setPdObject</a>(t_canvas *c)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#af5533a4b8089cbab1df4479bf822300f">setReadOnly</a>(bool val)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td><code> [inline, slot]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#a3687104c5241626dccbc5fbfb776d3ac">setReplaceObject</a>(UIObject *obj)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td><code> [slot]</code></td></tr>
@@ -185,7 +182,7 @@ This is the complete list of members for <a class="el" href="classqtpd_1_1_canva
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 5 2017 23:44:33 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 6 2017 16:01:30 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -149,10 +149,10 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_class.html#ae24a7148f97fa87f9ca3c16a2a9e4bc6">msgDelProperty</a> (<a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> msg)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_class.html#a6dc446343f744754f77b7c18778a40b5">msgAddMethod</a> (<a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> msg)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_class.html#a2b1ef4416692de217954c99b9de24cb0">msgDelMethod</a> (<a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_class.html#ab5e8585393fa4dff6d210715b6aeb973">msgInfo</a> (<a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_class.html#a77807967b5714c950971f9edcfe27719">msgInfo</a> (<a class="el" href="classceammc_1_1_atom_list.html">AtomList</a>)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_class.html#a2ad111d3711a5448af6cad21d9e9a386">createObject</a> (<a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="el" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447">objectData</a>, t_canvas *pdCanvas, QGraphicsView *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_class.html#a54cec74530b0e8c27c32a859f074bf91">createObject</a> (QString <a class="el" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447">objectData</a>, t_canvas *pdCanvas, QGraphicsView *parent=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_class.html#a8f2402a3465732485ecf103ce40e8e34">updateUI</a> (void *uiobj, <a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> msg)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
@@ -191,14 +191,14 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a2ad111d3711a5448af6cad21d9e9a386"></a><!-- doxytag: member="qtpd::UIClass::createObject" ref="a2ad111d3711a5448af6cad21d9e9a386" args="(std::string objectData, t_canvas *pdCanvas, QGraphicsView *parent=0)" -->
+<a class="anchor" id="a54cec74530b0e8c27c32a859f074bf91"></a><!-- doxytag: member="qtpd::UIClass::createObject" ref="a54cec74530b0e8c27c32a859f074bf91" args="(QString objectData, t_canvas *pdCanvas, QGraphicsView *parent=0)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a>* <a class="el" href="classqtpd_1_1_u_i_class.html#a2ad111d3711a5448af6cad21d9e9a386">qtpd::UIClass::createObject</a> </td>
+          <td class="memname">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a>* <a class="el" href="classqtpd_1_1_u_i_class.html#a54cec74530b0e8c27c32a859f074bf91">qtpd::UIClass::createObject</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td>
+          <td class="paramtype">QString&#160;</td>
           <td class="paramname"><em>objectData</em>, </td>
         </tr>
         <tr>
@@ -377,15 +377,15 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab5e8585393fa4dff6d210715b6aeb973"></a><!-- doxytag: member="qtpd::UIClass::msgInfo" ref="ab5e8585393fa4dff6d210715b6aeb973" args="(AtomList msg)" -->
+<a class="anchor" id="a77807967b5714c950971f9edcfe27719"></a><!-- doxytag: member="qtpd::UIClass::msgInfo" ref="a77807967b5714c950971f9edcfe27719" args="(AtomList)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_class.html#ab5e8585393fa4dff6d210715b6aeb973">qtpd::UIClass::msgInfo</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_class.html#a77807967b5714c950971f9edcfe27719">qtpd::UIClass::msgInfo</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classceammc_1_1_atom_list.html">AtomList</a>&#160;</td>
-          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td><code> [inline]</code></td>
         </tr>
       </table>
@@ -444,7 +444,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>paint event </p>
 
-<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#ae771bee506666ac01557f470b633091d">qtpd::UIObject</a>.</p>
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#ae6c38741873376fda63405d73f2697cd">qtpd::UIObject</a>.</p>
 
 </div>
 </div>
@@ -546,7 +546,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 5 2017 23:44:33 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 6 2017 16:01:30 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

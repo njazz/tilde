@@ -119,180 +119,147 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00040"></a>00040     QPainterPath _path;
 <a name="l00041"></a>00041 
 <a name="l00042"></a>00042 <span class="keyword">public</span>:
-<a name="l00043"></a>00043     <span class="comment">//    bool mouseover;</span>
-<a name="l00044"></a>00044     <span class="comment">//    bool selected;</span>
-<a name="l00045"></a>00045     <span class="comment">//explicit cm_patchcord(cm_widget *parent = 0);</span>
-<a name="l00046"></a>00046 
-<a name="l00047"></a>00047     <span class="comment">//cm_patchcord();</span>
-<a name="l00048"></a>00048     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_patchcord.html#acf03de814e1b49b4de6a99353461df70">Patchcord</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="parent class for all objects in the canvas">UIItem</a>* _obj1, <a class="code" href="classqtpd_1_1_u_i_item.html" title="parent class for all objects in the canvas">UIItem</a>* _out1, <a class="code" href="classqtpd_1_1_u_i_item.html" title="parent class for all objects in the canvas">UIItem</a>* _obj2, <a class="code" href="classqtpd_1_1_u_i_item.html" title="parent class for all objects in the canvas">UIItem</a>* _in2);
-<a name="l00049"></a>00049 
-<a name="l00050"></a><a class="code" href="classqtpd_1_1_patchcord.html#a6a6a637f235890b7d3badbf42ec7f343">00050</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patchcord.html#a6a6a637f235890b7d3badbf42ec7f343">paint</a>(QPainter* painter, <span class="keyword">const</span> QStyleOptionGraphicsItem* option, QWidget* widget)
-<a name="l00051"></a>00051     {
-<a name="l00052"></a>00052         QColor b_pc_color = (<a class="code" href="classqtpd_1_1_patchcord.html#a538831162319dff6ac3d728123424fef">patchcordType</a>() == <a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3aa26f0769dd61021da2d4af0555b3e3e78">cm_pt_signal</a>) ? QColor(128, 160, 192) : QColor(0, 0, 0);
-<a name="l00053"></a>00053         <span class="comment">// cleanup</span>
-<a name="l00054"></a>00054         QColor pc_color = (<a class="code" href="classqtpd_1_1_u_i_item.html#a2ca6449c88dc277945266ad0413402a7">hover</a>()) ? QColor(255, 192, 0) : b_pc_color;
-<a name="l00055"></a>00055         <span class="keywordflow">if</span> (<a class="code" href="classqtpd_1_1_u_i_item.html#ab3ac9bcca4d6c092b1d10fe506ba48c6" title="get object&#39;s selected flag">isSelected</a>())
-<a name="l00056"></a>00056             pc_color = QColor(0, 192, 255);
+<a name="l00043"></a>00043     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_patchcord.html#acf03de814e1b49b4de6a99353461df70">Patchcord</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="parent class for all objects in the canvas">UIItem</a>* _obj1, <a class="code" href="classqtpd_1_1_u_i_item.html" title="parent class for all objects in the canvas">UIItem</a>* _out1, <a class="code" href="classqtpd_1_1_u_i_item.html" title="parent class for all objects in the canvas">UIItem</a>* _obj2, <a class="code" href="classqtpd_1_1_u_i_item.html" title="parent class for all objects in the canvas">UIItem</a>* _in2);
+<a name="l00044"></a>00044 
+<a name="l00045"></a><a class="code" href="classqtpd_1_1_patchcord.html#a7eab926c56b6c04290040eec0108c122">00045</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patchcord.html#a7eab926c56b6c04290040eec0108c122">paint</a>(QPainter* painter, <span class="keyword">const</span> QStyleOptionGraphicsItem*, QWidget*)
+<a name="l00046"></a>00046     {
+<a name="l00047"></a>00047         QColor b_pc_color = (<a class="code" href="classqtpd_1_1_patchcord.html#a538831162319dff6ac3d728123424fef">patchcordType</a>() == <a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3aa26f0769dd61021da2d4af0555b3e3e78">cm_pt_signal</a>) ? QColor(128, 160, 192) : QColor(0, 0, 0);
+<a name="l00048"></a>00048         <span class="comment">// cleanup</span>
+<a name="l00049"></a>00049         QColor pc_color = (<a class="code" href="classqtpd_1_1_u_i_item.html#a2ca6449c88dc277945266ad0413402a7">hover</a>()) ? QColor(255, 192, 0) : b_pc_color;
+<a name="l00050"></a>00050         <span class="keywordflow">if</span> (<a class="code" href="classqtpd_1_1_u_i_item.html#ab3ac9bcca4d6c092b1d10fe506ba48c6" title="get object&#39;s selected flag">isSelected</a>())
+<a name="l00051"></a>00051             pc_color = QColor(0, 192, 255);
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053         painter-&gt;setRenderHint(QPainter::HighQualityAntialiasing, <span class="keyword">true</span>);
+<a name="l00054"></a>00054         painter-&gt;setPen(QPen(pc_color, 1 + (<a class="code" href="classqtpd_1_1_patchcord.html#a538831162319dff6ac3d728123424fef">patchcordType</a>() == <a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3aa26f0769dd61021da2d4af0555b3e3e78">cm_pt_signal</a>), Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056         <span class="comment">//todo option</span>
 <a name="l00057"></a>00057 
-<a name="l00058"></a>00058         painter-&gt;setRenderHint(QPainter::HighQualityAntialiasing, <span class="keyword">true</span>);
-<a name="l00059"></a>00059         painter-&gt;setPen(QPen(pc_color, 1 + (<a class="code" href="classqtpd_1_1_patchcord.html#a538831162319dff6ac3d728123424fef">patchcordType</a>() == <a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3aa26f0769dd61021da2d4af0555b3e3e78">cm_pt_signal</a>), Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061         <span class="comment">//todo option</span>
-<a name="l00062"></a>00062         <span class="comment">//painter-&gt;drawLine(((cm_patchcord*)data_.patchcords()-&gt;at(i))-&gt;getStartPoint(), ((cm_patchcord*)data_.patchcords()-&gt;at(i))-&gt;getEndPoint());</span>
-<a name="l00063"></a>00063 
-<a name="l00064"></a>00064         QPainterPath path;
-<a name="l00065"></a>00065         QPoint <a class="code" href="sliceobject_8h.html#ab80172fa2f374f0198e6186560ed619e">start</a> = <a class="code" href="classqtpd_1_1_patchcord.html#a067732a8c5322c8d32f9d39ab016080c">startPoint</a>();
-<a name="l00066"></a>00066         QPoint end = <a class="code" href="classqtpd_1_1_patchcord.html#ab268c90dfe60162baaf3a7792bc26d03">endPoint</a>();
-<a name="l00067"></a>00067 
-<a name="l00068"></a>00068         QPoint b1 = QPoint(start.x() + (end.x() - start.x()) * .5, fabs(end.y() - start.y()) * .5 + start.y());
-<a name="l00069"></a>00069         QPoint b2 = QPoint(end.x() - (end.x() - start.x()) * .5, -fabs(end.y() - start.y()) * .5 + end.y());
-<a name="l00070"></a>00070 
-<a name="l00071"></a>00071         <span class="comment">//TODO</span>
-<a name="l00072"></a>00072         <span class="comment">//spaghetti lol</span>
-<a name="l00073"></a>00073         <span class="keywordflow">if</span> (start.y() &gt; end.y()) {
-<a name="l00074"></a>00074             <span class="keywordflow">if</span> (b1.y() - start.y() &gt; 80) {
-<a name="l00075"></a>00075                 b1.setY(start.y() + 80);
-<a name="l00076"></a>00076             }
-<a name="l00077"></a>00077 
-<a name="l00078"></a>00078             <span class="keywordflow">if</span> (b2.y() - end.y() &lt; -80) {
-<a name="l00079"></a>00079                 b2.setY(end.y() - 80);
-<a name="l00080"></a>00080             }
-<a name="l00081"></a>00081         }
-<a name="l00082"></a>00082 
-<a name="l00083"></a>00083         <span class="comment">//               if (b1.x() - start.x() &lt; 20)</span>
-<a name="l00084"></a>00084         <span class="comment">//                {</span>
-<a name="l00085"></a>00085         <span class="comment">//                    b1.setX(start.x() + 20);</span>
-<a name="l00086"></a>00086         <span class="comment">//                }</span>
-<a name="l00087"></a>00087 
-<a name="l00088"></a>00088         <span class="comment">//                if (b2.x() - end.x() &lt; -20)</span>
-<a name="l00089"></a>00089         <span class="comment">//                {</span>
-<a name="l00090"></a>00090         <span class="comment">//                    b2.setX(end.x() - 20);</span>
-<a name="l00091"></a>00091         <span class="comment">//                }</span>
-<a name="l00092"></a>00092 
-<a name="l00093"></a>00093         <span class="comment">//            }</span>
-<a name="l00094"></a>00094 
-<a name="l00095"></a>00095 
-<a name="l00096"></a>00096         path.moveTo(start);
-<a name="l00097"></a>00097         path.cubicTo(b1, b2, end);
+<a name="l00058"></a>00058         QPainterPath path;
+<a name="l00059"></a>00059         QPoint <a class="code" href="sliceobject_8h.html#ab80172fa2f374f0198e6186560ed619e">start</a> = <a class="code" href="classqtpd_1_1_patchcord.html#a067732a8c5322c8d32f9d39ab016080c">startPoint</a>();
+<a name="l00060"></a>00060         QPoint end = <a class="code" href="classqtpd_1_1_patchcord.html#ab268c90dfe60162baaf3a7792bc26d03">endPoint</a>();
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062         QPoint b1 = QPoint(start.x() + (end.x() - start.x()) * .5, fabs(end.y() - start.y()) * .5 + start.y());
+<a name="l00063"></a>00063         QPoint b2 = QPoint(end.x() - (end.x() - start.x()) * .5, -fabs(end.y() - start.y()) * .5 + end.y());
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065         <span class="comment">//TODO</span>
+<a name="l00066"></a>00066         <span class="comment">//spaghetti lol</span>
+<a name="l00067"></a>00067         <span class="keywordflow">if</span> (start.y() &gt; end.y()) {
+<a name="l00068"></a>00068             <span class="keywordflow">if</span> (b1.y() - start.y() &gt; 80) {
+<a name="l00069"></a>00069                 b1.setY(start.y() + 80);
+<a name="l00070"></a>00070             }
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072             <span class="keywordflow">if</span> (b2.y() - end.y() &lt; -80) {
+<a name="l00073"></a>00073                 b2.setY(end.y() - 80);
+<a name="l00074"></a>00074             }
+<a name="l00075"></a>00075         }
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077         <span class="comment">//               if (b1.x() - start.x() &lt; 20)</span>
+<a name="l00078"></a>00078         <span class="comment">//                {</span>
+<a name="l00079"></a>00079         <span class="comment">//                    b1.setX(start.x() + 20);</span>
+<a name="l00080"></a>00080         <span class="comment">//                }</span>
+<a name="l00081"></a>00081 
+<a name="l00082"></a>00082         <span class="comment">//                if (b2.x() - end.x() &lt; -20)</span>
+<a name="l00083"></a>00083         <span class="comment">//                {</span>
+<a name="l00084"></a>00084         <span class="comment">//                    b2.setX(end.x() - 20);</span>
+<a name="l00085"></a>00085         <span class="comment">//                }</span>
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087         path.moveTo(start);
+<a name="l00088"></a>00088         path.cubicTo(b1, b2, end);
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090         painter-&gt;drawPath(path);
+<a name="l00091"></a>00091         _path = path;
+<a name="l00092"></a>00092     }
+<a name="l00093"></a>00093 
+<a name="l00094"></a><a class="code" href="classqtpd_1_1_patchcord.html#a067732a8c5322c8d32f9d39ab016080c">00094</a>     QPoint <a class="code" href="classqtpd_1_1_patchcord.html#a067732a8c5322c8d32f9d39ab016080c">startPoint</a>()
+<a name="l00095"></a>00095     {
+<a name="l00096"></a>00096 
+<a name="l00097"></a>00097         QPoint <a class="code" href="sliceobject_8h.html#ab80172fa2f374f0198e6186560ed619e">start</a> = QPoint(0, 0);
 <a name="l00098"></a>00098 
-<a name="l00099"></a>00099         painter-&gt;drawPath(path);
-<a name="l00100"></a>00100         _path = path;
-<a name="l00101"></a>00101     }
+<a name="l00099"></a>00099         <span class="keywordflow">if</span> (_obj1 &amp;&amp; _out1)
+<a name="l00100"></a>00100             start = QPoint(_obj1-&gt;pos().x() + _out1-&gt;pos().x() + _out1-&gt;<a class="code" href="classqtpd_1_1_u_i_item.html#a89b7d0bcdcb226800c37d95305a1f441">width</a>() / 2,
+<a name="l00101"></a>00101                 _obj1-&gt;pos().y() + _out1-&gt;pos().y() + _out1-&gt;<a class="code" href="classqtpd_1_1_u_i_item.html#a5bbd8fe0417078d386176ace5a01f261">height</a>() / 2);
 <a name="l00102"></a>00102 
-<a name="l00103"></a><a class="code" href="classqtpd_1_1_patchcord.html#a067732a8c5322c8d32f9d39ab016080c">00103</a>     QPoint <a class="code" href="classqtpd_1_1_patchcord.html#a067732a8c5322c8d32f9d39ab016080c">startPoint</a>()
-<a name="l00104"></a>00104     {
+<a name="l00103"></a>00103         <span class="keywordflow">return</span> <a class="code" href="sliceobject_8h.html#ab80172fa2f374f0198e6186560ed619e">start</a>;
+<a name="l00104"></a>00104     }
 <a name="l00105"></a>00105 
-<a name="l00106"></a>00106         QPoint <a class="code" href="sliceobject_8h.html#ab80172fa2f374f0198e6186560ed619e">start</a> = QPoint(0, 0);
-<a name="l00107"></a>00107 
-<a name="l00108"></a>00108         <span class="keywordflow">if</span> (_obj1 &amp;&amp; _out1)
-<a name="l00109"></a>00109             start = QPoint(_obj1-&gt;pos().x() + _out1-&gt;pos().x() + _out1-&gt;<a class="code" href="classqtpd_1_1_u_i_item.html#a89b7d0bcdcb226800c37d95305a1f441">width</a>() / 2,
-<a name="l00110"></a>00110                 _obj1-&gt;pos().y() + _out1-&gt;pos().y() + _out1-&gt;<a class="code" href="classqtpd_1_1_u_i_item.html#a5bbd8fe0417078d386176ace5a01f261">height</a>() / 2);
-<a name="l00111"></a>00111 
-<a name="l00112"></a>00112         <span class="keywordflow">return</span> <a class="code" href="sliceobject_8h.html#ab80172fa2f374f0198e6186560ed619e">start</a>;
-<a name="l00113"></a>00113     }
-<a name="l00114"></a>00114 
-<a name="l00115"></a><a class="code" href="classqtpd_1_1_patchcord.html#ab268c90dfe60162baaf3a7792bc26d03">00115</a>     QPoint <a class="code" href="classqtpd_1_1_patchcord.html#ab268c90dfe60162baaf3a7792bc26d03">endPoint</a>()
-<a name="l00116"></a>00116     {
-<a name="l00117"></a>00117         QPoint end = QPoint(0, 0);
-<a name="l00118"></a>00118         <span class="keywordflow">if</span> (_obj2 &amp;&amp; _in2)
-<a name="l00119"></a>00119             end = QPoint(_obj2-&gt;pos().x() + _in2-&gt;pos().x() + _in2-&gt;<a class="code" href="classqtpd_1_1_u_i_item.html#a89b7d0bcdcb226800c37d95305a1f441">width</a>() / 2,
-<a name="l00120"></a>00120                 _obj2-&gt;pos().y() + _in2-&gt;pos().y() + _in2-&gt;<a class="code" href="classqtpd_1_1_u_i_item.html#a5bbd8fe0417078d386176ace5a01f261">height</a>() / 2);
-<a name="l00121"></a>00121         <a class="code" href="classqtpd_1_1_u_i_item.html#ad04bc59adbae89c02f35f69685e15662">setSize</a>(end.x(),end.y());
-<a name="l00122"></a>00122         <span class="keywordflow">return</span> end;
-<a name="l00123"></a>00123     }
-<a name="l00124"></a>00124 
-<a name="l00126"></a><a class="code" href="classqtpd_1_1_patchcord.html#a538831162319dff6ac3d728123424fef">00126</a>     <a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3a">patchcordTypeEnum</a> <a class="code" href="classqtpd_1_1_patchcord.html#a538831162319dff6ac3d728123424fef">patchcordType</a>() { <span class="keywordflow">return</span> patchcordType_; }
-<a name="l00127"></a><a class="code" href="classqtpd_1_1_patchcord.html#a1b5fb2d27b98da2e715060294b0599d7">00127</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patchcord.html#a1b5fb2d27b98da2e715060294b0599d7">setPatchcordType</a>(<a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3a">patchcordTypeEnum</a> <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>) { patchcordType_ = <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>; }
-<a name="l00128"></a>00128 
-<a name="l00130"></a>00130 
-<a name="l00131"></a><a class="code" href="classqtpd_1_1_patchcord.html#a9a5decac9d1ded5a0b94717b18890169">00131</a>     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_patchcord.html#a9a5decac9d1ded5a0b94717b18890169">obj1</a>()
-<a name="l00132"></a>00132     {
-<a name="l00133"></a>00133         <span class="keywordflow">return</span> (<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*)_obj1;
-<a name="l00134"></a>00134     }
-<a name="l00135"></a>00135 
-<a name="l00136"></a><a class="code" href="classqtpd_1_1_patchcord.html#afac1fa9dd84063a62137044cf29bd045">00136</a>     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_patchcord.html#afac1fa9dd84063a62137044cf29bd045">obj2</a>()
-<a name="l00137"></a>00137     {
-<a name="l00138"></a>00138         <span class="keywordflow">return</span> (<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*)_obj2;
-<a name="l00139"></a>00139     }
-<a name="l00140"></a>00140 
-<a name="l00141"></a><a class="code" href="classqtpd_1_1_patchcord.html#abf722a2a6cbc46a40aa73af15756e2df">00141</a>     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_patchcord.html#abf722a2a6cbc46a40aa73af15756e2df">outletIndex</a>()
-<a name="l00142"></a>00142     {
-<a name="l00143"></a>00143         <span class="keywordflow">if</span> ((<a class="code" href="classqtpd_1_1_port.html" title="gui representation of t_inlet / t_outlet">Port</a>*)_out1)
-<a name="l00144"></a>00144             <span class="keywordflow">return</span> ((<a class="code" href="classqtpd_1_1_port.html" title="gui representation of t_inlet / t_outlet">Port</a>*)_out1)-&gt;portIndex();
-<a name="l00145"></a>00145         <span class="keywordflow">else</span>
-<a name="l00146"></a>00146             <span class="keywordflow">return</span> -1;
-<a name="l00147"></a>00147     }
-<a name="l00148"></a>00148 
-<a name="l00149"></a><a class="code" href="classqtpd_1_1_patchcord.html#a0d933ac877c243182fe02ba4fb6aeb32">00149</a>     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_patchcord.html#a0d933ac877c243182fe02ba4fb6aeb32">inletIndex</a>()
-<a name="l00150"></a>00150     {
-<a name="l00151"></a>00151         <span class="keywordflow">if</span> ((<a class="code" href="classqtpd_1_1_port.html" title="gui representation of t_inlet / t_outlet">Port</a>*)_in2)
-<a name="l00152"></a>00152             <span class="keywordflow">return</span> ((<a class="code" href="classqtpd_1_1_port.html" title="gui representation of t_inlet / t_outlet">Port</a>*)_in2)-&gt;portIndex();
-<a name="l00153"></a>00153         <span class="keywordflow">else</span>
-<a name="l00154"></a>00154             <span class="keywordflow">return</span> -1;
+<a name="l00106"></a><a class="code" href="classqtpd_1_1_patchcord.html#ab268c90dfe60162baaf3a7792bc26d03">00106</a>     QPoint <a class="code" href="classqtpd_1_1_patchcord.html#ab268c90dfe60162baaf3a7792bc26d03">endPoint</a>()
+<a name="l00107"></a>00107     {
+<a name="l00108"></a>00108         QPoint end = QPoint(0, 0);
+<a name="l00109"></a>00109         <span class="keywordflow">if</span> (_obj2 &amp;&amp; _in2)
+<a name="l00110"></a>00110             end = QPoint(_obj2-&gt;pos().x() + _in2-&gt;pos().x() + _in2-&gt;<a class="code" href="classqtpd_1_1_u_i_item.html#a89b7d0bcdcb226800c37d95305a1f441">width</a>() / 2,
+<a name="l00111"></a>00111                 _obj2-&gt;pos().y() + _in2-&gt;pos().y() + _in2-&gt;<a class="code" href="classqtpd_1_1_u_i_item.html#a5bbd8fe0417078d386176ace5a01f261">height</a>() / 2);
+<a name="l00112"></a>00112         <a class="code" href="classqtpd_1_1_u_i_item.html#ad04bc59adbae89c02f35f69685e15662">setSize</a>(end.x(), end.y());
+<a name="l00113"></a>00113         <span class="keywordflow">return</span> end;
+<a name="l00114"></a>00114     }
+<a name="l00115"></a>00115 
+<a name="l00117"></a><a class="code" href="classqtpd_1_1_patchcord.html#a538831162319dff6ac3d728123424fef">00117</a>     <a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3a">patchcordTypeEnum</a> <a class="code" href="classqtpd_1_1_patchcord.html#a538831162319dff6ac3d728123424fef">patchcordType</a>() { <span class="keywordflow">return</span> patchcordType_; }
+<a name="l00118"></a><a class="code" href="classqtpd_1_1_patchcord.html#a1b5fb2d27b98da2e715060294b0599d7">00118</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patchcord.html#a1b5fb2d27b98da2e715060294b0599d7">setPatchcordType</a>(<a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3a">patchcordTypeEnum</a> <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>) { patchcordType_ = <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>; }
+<a name="l00119"></a>00119 
+<a name="l00121"></a>00121 
+<a name="l00122"></a><a class="code" href="classqtpd_1_1_patchcord.html#a9a5decac9d1ded5a0b94717b18890169">00122</a>     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_patchcord.html#a9a5decac9d1ded5a0b94717b18890169">obj1</a>()
+<a name="l00123"></a>00123     {
+<a name="l00124"></a>00124         <span class="keywordflow">return</span> (<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*)_obj1;
+<a name="l00125"></a>00125     }
+<a name="l00126"></a>00126 
+<a name="l00127"></a><a class="code" href="classqtpd_1_1_patchcord.html#afac1fa9dd84063a62137044cf29bd045">00127</a>     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_patchcord.html#afac1fa9dd84063a62137044cf29bd045">obj2</a>()
+<a name="l00128"></a>00128     {
+<a name="l00129"></a>00129         <span class="keywordflow">return</span> (<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*)_obj2;
+<a name="l00130"></a>00130     }
+<a name="l00131"></a>00131 
+<a name="l00132"></a><a class="code" href="classqtpd_1_1_patchcord.html#abf722a2a6cbc46a40aa73af15756e2df">00132</a>     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_patchcord.html#abf722a2a6cbc46a40aa73af15756e2df">outletIndex</a>()
+<a name="l00133"></a>00133     {
+<a name="l00134"></a>00134         <span class="keywordflow">if</span> ((<a class="code" href="classqtpd_1_1_port.html" title="gui representation of t_inlet / t_outlet">Port</a>*)_out1)
+<a name="l00135"></a>00135             <span class="keywordflow">return</span> ((<a class="code" href="classqtpd_1_1_port.html" title="gui representation of t_inlet / t_outlet">Port</a>*)_out1)-&gt;portIndex();
+<a name="l00136"></a>00136         <span class="keywordflow">else</span>
+<a name="l00137"></a>00137             <span class="keywordflow">return</span> -1;
+<a name="l00138"></a>00138     }
+<a name="l00139"></a>00139 
+<a name="l00140"></a><a class="code" href="classqtpd_1_1_patchcord.html#a0d933ac877c243182fe02ba4fb6aeb32">00140</a>     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_patchcord.html#a0d933ac877c243182fe02ba4fb6aeb32">inletIndex</a>()
+<a name="l00141"></a>00141     {
+<a name="l00142"></a>00142         <span class="keywordflow">if</span> ((<a class="code" href="classqtpd_1_1_port.html" title="gui representation of t_inlet / t_outlet">Port</a>*)_in2)
+<a name="l00143"></a>00143             <span class="keywordflow">return</span> ((<a class="code" href="classqtpd_1_1_port.html" title="gui representation of t_inlet / t_outlet">Port</a>*)_in2)-&gt;portIndex();
+<a name="l00144"></a>00144         <span class="keywordflow">else</span>
+<a name="l00145"></a>00145             <span class="keywordflow">return</span> -1;
+<a name="l00146"></a>00146     }
+<a name="l00147"></a>00147 
+<a name="l00148"></a>00148     <span class="comment">// -----</span>
+<a name="l00149"></a>00149 
+<a name="l00150"></a><a class="code" href="classqtpd_1_1_patchcord.html#a81a35090adb920272611fb821549af55">00150</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patchcord.html#a81a35090adb920272611fb821549af55">hoverEnterEvent</a>(QGraphicsSceneHoverEvent*)
+<a name="l00151"></a>00151     {
+<a name="l00152"></a>00152         qDebug() &lt;&lt; <span class="stringliteral">&quot;hover patchcord&quot;</span>;
+<a name="l00153"></a>00153         <a class="code" href="classqtpd_1_1_u_i_item.html#a049c5b6ff7a83ae3716e7b828d9da67a">setHover</a>(<span class="keyword">true</span>);
+<a name="l00154"></a>00154         update();
 <a name="l00155"></a>00155     }
 <a name="l00156"></a>00156 
-<a name="l00157"></a>00157     <span class="comment">// -----</span>
-<a name="l00158"></a>00158 
-<a name="l00159"></a><a class="code" href="classqtpd_1_1_patchcord.html#a710419475e1b5e421e6683b96e905d6f">00159</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patchcord.html#a710419475e1b5e421e6683b96e905d6f">hoverEnterEvent</a>(QGraphicsSceneHoverEvent* event)
-<a name="l00160"></a>00160     {
-<a name="l00161"></a>00161         qDebug()&lt;&lt;<span class="stringliteral">&quot;hover patchcord&quot;</span>;
-<a name="l00162"></a>00162         <a class="code" href="classqtpd_1_1_u_i_item.html#a049c5b6ff7a83ae3716e7b828d9da67a">setHover</a>(<span class="keyword">true</span>);
-<a name="l00163"></a>00163         update();
-<a name="l00164"></a>00164     }
-<a name="l00165"></a>00165 
-<a name="l00166"></a><a class="code" href="classqtpd_1_1_patchcord.html#a261798ec91cdb11d52684b02c2b2b168">00166</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patchcord.html#a261798ec91cdb11d52684b02c2b2b168">hoverLeaveEvent</a>(QGraphicsSceneHoverEvent* event)
-<a name="l00167"></a>00167     {
-<a name="l00168"></a>00168         <a class="code" href="classqtpd_1_1_u_i_item.html#a049c5b6ff7a83ae3716e7b828d9da67a">setHover</a>(<span class="keyword">false</span>);
-<a name="l00169"></a>00169         update();
-<a name="l00170"></a>00170     }
-<a name="l00171"></a>00171 
-<a name="l00172"></a><a class="code" href="classqtpd_1_1_patchcord.html#adb359403438893b38770799fb1f2710d">00172</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patchcord.html#adb359403438893b38770799fb1f2710d">mousePressEvent</a>(QGraphicsSceneMouseEvent *event)
-<a name="l00173"></a>00173     {
-<a name="l00174"></a>00174         qDebug()&lt;&lt;<span class="stringliteral">&quot;click patchcord&quot;</span>;
-<a name="l00175"></a>00175         setSelected(<span class="keyword">true</span>);
-<a name="l00176"></a>00176         update();
-<a name="l00177"></a>00177     }
+<a name="l00157"></a><a class="code" href="classqtpd_1_1_patchcord.html#ae30f949b451e0f239aa29dacb30fbabf">00157</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patchcord.html#ae30f949b451e0f239aa29dacb30fbabf">hoverLeaveEvent</a>(QGraphicsSceneHoverEvent*)
+<a name="l00158"></a>00158     {
+<a name="l00159"></a>00159         <a class="code" href="classqtpd_1_1_u_i_item.html#a049c5b6ff7a83ae3716e7b828d9da67a">setHover</a>(<span class="keyword">false</span>);
+<a name="l00160"></a>00160         update();
+<a name="l00161"></a>00161     }
+<a name="l00162"></a>00162 
+<a name="l00163"></a><a class="code" href="classqtpd_1_1_patchcord.html#ab10ac2907d2e9ed08c7721e746cf55da">00163</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patchcord.html#ab10ac2907d2e9ed08c7721e746cf55da">mousePressEvent</a>(QGraphicsSceneMouseEvent*)
+<a name="l00164"></a>00164     {
+<a name="l00165"></a>00165         qDebug() &lt;&lt; <span class="stringliteral">&quot;click patchcord&quot;</span>;
+<a name="l00166"></a>00166         setSelected(<span class="keyword">true</span>);
+<a name="l00167"></a>00167         update();
+<a name="l00168"></a>00168     }
+<a name="l00169"></a>00169 
+<a name="l00170"></a><a class="code" href="classqtpd_1_1_patchcord.html#aee154302b18479c1e897716e7d385847">00170</a>     QPainterPath <a class="code" href="classqtpd_1_1_patchcord.html#aee154302b18479c1e897716e7d385847">shape</a>()<span class="keyword"> const</span>
+<a name="l00171"></a>00171 <span class="keyword">    </span>{
+<a name="l00172"></a>00172         <span class="keywordflow">return</span> _path;
+<a name="l00173"></a>00173     }
+<a name="l00174"></a>00174 
+<a name="l00175"></a>00175     <span class="comment">// -------</span>
+<a name="l00176"></a>00176 
 <a name="l00178"></a>00178 
-<a name="l00179"></a><a class="code" href="classqtpd_1_1_patchcord.html#aee154302b18479c1e897716e7d385847">00179</a>     QPainterPath <a class="code" href="classqtpd_1_1_patchcord.html#aee154302b18479c1e897716e7d385847">shape</a>()<span class="keyword"> const</span>
-<a name="l00180"></a>00180 <span class="keyword">    </span>{
-<a name="l00181"></a>00181         <span class="keywordflow">return</span> _path;
+<a name="l00179"></a><a class="code" href="classqtpd_1_1_patchcord.html#a4d7ccd0a656e7f066e678eaf204b3d82">00179</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_patchcord.html#a4d7ccd0a656e7f066e678eaf204b3d82">connectsObject</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="parent class for all objects in the canvas">UIItem</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
+<a name="l00180"></a>00180     {
+<a name="l00181"></a>00181         <span class="keywordflow">return</span> ((obj == _obj1) || (obj == _obj2));
 <a name="l00182"></a>00182     }
-<a name="l00183"></a>00183 
-<a name="l00184"></a>00184      <span class="comment">// -------</span>
+<a name="l00183"></a>00183 };
+<a name="l00184"></a>00184 }
 <a name="l00185"></a>00185 
-<a name="l00187"></a>00187 
-<a name="l00188"></a><a class="code" href="classqtpd_1_1_patchcord.html#a4d7ccd0a656e7f066e678eaf204b3d82">00188</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_patchcord.html#a4d7ccd0a656e7f066e678eaf204b3d82">connectsObject</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="parent class for all objects in the canvas">UIItem</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
-<a name="l00189"></a>00189     {
-<a name="l00190"></a>00190         <span class="keywordflow">return</span> ((obj == _obj1) || (obj == _obj2));
-<a name="l00191"></a>00191     }
-<a name="l00192"></a>00192 
-<a name="l00193"></a>00193     <span class="comment">// replace</span>
-<a name="l00194"></a>00194 <span class="comment">//    bool isHover(QPoint pos)</span>
-<a name="l00195"></a>00195 <span class="comment">//    {</span>
-<a name="l00196"></a>00196 <span class="comment">//        QPoint start = startPoint();</span>
-<a name="l00197"></a>00197 <span class="comment">//        QPoint end = endPoint();</span>
-<a name="l00198"></a>00198 
-<a name="l00199"></a>00199 <span class="comment">//        float rx = end.x() - start.x();</span>
-<a name="l00200"></a>00200 <span class="comment">//        float ry = end.y() - start.y();</span>
-<a name="l00201"></a>00201 
-<a name="l00202"></a>00202 <span class="comment">//        float ty = ry * (pos.x() - start.x()) / rx + start.y();</span>
-<a name="l00203"></a>00203 
-<a name="l00204"></a>00204 <span class="comment">//        bool rx1_res = (fabs((float)pos.y() - ty) &lt; 7.);</span>
-<a name="l00205"></a>00205 
-<a name="l00206"></a>00206 <span class="comment">//        bool rx0_res = ((</span>
-<a name="l00207"></a>00207 <span class="comment">//                            (pos.y() &gt; start.y())</span>
-<a name="l00208"></a>00208 <span class="comment">//                            &amp;&amp; (pos.y() &lt; end.y()))</span>
-<a name="l00209"></a>00209 <span class="comment">//            &amp;&amp; (pos.x() == start.x()));</span>
-<a name="l00210"></a>00210 
-<a name="l00211"></a>00211 <span class="comment">//        setHover((rx &gt; 0) ? rx1_res : rx0_res);</span>
-<a name="l00212"></a>00212 
-<a name="l00213"></a>00213 <span class="comment">//        return (rx &gt; 0) ? rx1_res : rx0_res;</span>
-<a name="l00214"></a>00214 <span class="comment">//    }</span>
-<a name="l00215"></a>00215 
-<a name="l00216"></a>00216 };
-<a name="l00217"></a>00217 }
-<a name="l00218"></a>00218 
-<a name="l00219"></a>00219 <span class="preprocessor">#endif // CM_PATCHCORD_H</span>
+<a name="l00186"></a>00186 <span class="preprocessor">#endif // CM_PATCHCORD_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -311,7 +278,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 5 2017 23:44:31 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 6 2017 16:01:28 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

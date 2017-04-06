@@ -68,7 +68,7 @@ var searchData=
   ['st_5fsymbols',['st_symbols',['../structsymtable.html#a13d41c4216ea44b4fe898b4e25410e6b',1,'symtable']]],
   ['st_5ftop',['st_top',['../structsymtable.html#a1e660bc90af2b75c54cf04c639dd6d29',1,'symtable']]],
   ['starargs',['starargs',['../struct__expr.html#ade11f9a516daf704b27148648b599663',1,'_expr']]],
-  ['start',['start',['../structqtpd_1_1__t_rect_plus.html#a60f277d793dd15a3100e0b67a8a76613',1,'qtpd::_tRectPlus::start()'],['../struct_py_slice_object.html#a0fb36c5bd889b5ba588454d6f3dfef0d',1,'PySliceObject::start()'],['../sliceobject_8h.html#ab80172fa2f374f0198e6186560ed619e',1,'start():&#160;sliceobject.h']]],
+  ['start',['start',['../struct_py_slice_object.html#a0fb36c5bd889b5ba588454d6f3dfef0d',1,'PySliceObject::start()'],['../sliceobject_8h.html#ab80172fa2f374f0198e6186560ed619e',1,'start():&#160;sliceobject.h']]],
   ['ste_5fchild_5ffree',['ste_child_free',['../struct__symtable__entry.html#a702e638b28c6cb34b4995d5ba9239cb3',1,'_symtable_entry']]],
   ['ste_5fchildren',['ste_children',['../struct__symtable__entry.html#a95a1b4f65170d448fe57a66fd73924f5',1,'_symtable_entry']]],
   ['ste_5ffree',['ste_free',['../struct__symtable__entry.html#ad9adb48b9bbb65e0978e7bbbc0ab28f4',1,'_symtable_entry']]],

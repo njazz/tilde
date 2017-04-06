@@ -126,7 +126,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00045"></a>00045     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_u_i_property.html#a9ac8e78cc927a9f21c0ced7541ea71dd">UIProperty</a>(); <span class="comment">//UIObject* parent = 0);</span>
 <a name="l00046"></a>00046     <span class="comment">//~UIProperty();</span>
 <a name="l00047"></a>00047 
-<a name="l00048"></a><a class="code" href="classqtpd_1_1_u_i_property.html#a50cb43e4334de029f436511167844d93">00048</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_property.html#a50cb43e4334de029f436511167844d93">createObject</a>(<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="code" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447" title="gets object text data /usually overriden by ui objects/">objectData</a>, t_canvas* pdCanvas, QGraphicsView* parent = 0)
+<a name="l00048"></a><a class="code" href="classqtpd_1_1_u_i_property.html#af5a393ec08e7fbac7dcf6dea3b5f5252">00048</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_property.html#af5a393ec08e7fbac7dcf6dea3b5f5252">createObject</a>(QString <a class="code" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447" title="gets object text data /usually overriden by ui objects/">objectData</a>, t_canvas* pdCanvas, QGraphicsView* parent = 0)
 <a name="l00049"></a>00049     {
 <a name="l00050"></a>00050         <span class="comment">//TODO fix all constructors</span>
 <a name="l00051"></a>00051         <span class="comment">//t_canvas* pd_Canvas;</span>
@@ -138,11 +138,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00057"></a>00057         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a2e6fec1e7e23c49c16330281d84f099f">setCanvas</a>((<span class="keywordtype">void</span>*)parent);
 <a name="l00058"></a>00058 
 <a name="l00059"></a>00059         <span class="comment">//truncate &quot;ui.obj&quot;. todo cleanup</span>
-<a name="l00060"></a>00060         QStringList list = QString(objectData.c_str()).split(<span class="stringliteral">&quot; &quot;</span>);
+<a name="l00060"></a>00060         QStringList list = QString(objectData).split(<span class="stringliteral">&quot; &quot;</span>);
 <a name="l00061"></a>00061 
-<a name="l00062"></a>00062         <span class="keyword">const</span> <span class="keywordtype">char</span>* obj_name = objectData.c_str();
+<a name="l00062"></a>00062         <span class="keyword">const</span> <span class="keywordtype">char</span>* obj_name = objectData.toStdString().c_str();
 <a name="l00063"></a>00063         <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> data1 = b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a69ed99ca86c7019f489f56b6dc96f8a4">properties</a>()-&gt;<a class="code" href="classqtpd_1_1_property_list.html#a89ada354abe82e104bb9d47b0e80f3b4" title="extract properties from string in pd file">extractFromPdFileString</a>(obj_name); <span class="comment">//test</span>
-<a name="l00064"></a>00064         <span class="keyword">const</span> <span class="keywordtype">char</span>* obj_name2 = data1.c_str();
+<a name="l00064"></a>00064         <span class="comment">//const char* obj_name2 = data1.c_str();</span>
 <a name="l00065"></a>00065 
 <a name="l00066"></a>00066         <span class="comment">// fix size changes</span>
 <a name="l00067"></a>00067         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a65a6c071b7b6f99393652d273e6a0fa7" title="sets object text data">setObjectData</a>(data1);
@@ -353,7 +353,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00286"></a>00286 
 <a name="l00287"></a>00287                 <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> _prop = b-&gt;_opInstance-&gt;<a class="code" href="classqtpd_1_1_o_p_instance.html#a353a170964f54f1a83bb69892565d30b">getAtomListProperty</a>(gensym(b-&gt;_propertyName.c_str()));
 <a name="l00288"></a>00288                 QStringList list1;
-<a name="l00289"></a>00289                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a> = 0; <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a> &lt; _prop.<a class="code" href="classceammc_1_1_atom_list.html#ad52fdc5b4f54329460495caa1b00d1ac">size</a>(); <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a>++) {
+<a name="l00289"></a>00289                 <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a> = 0; <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a> &lt; _prop.<a class="code" href="classceammc_1_1_atom_list.html#ad52fdc5b4f54329460495caa1b00d1ac">size</a>(); <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a>++) {
 <a name="l00290"></a>00290                     list1.<a class="code" href="classceammc_1_1_atom_list.html#af9d70f5330ecc54ef2158a7207292fc0">append</a>(_prop.<a class="code" href="classceammc_1_1_atom_list.html#aa2d99dac15a5a5fe7afa41a38f2aeece" title="returns reference to element at specified position">at</a>(<a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a>).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>().c_str());
 <a name="l00291"></a>00291                 }
 <a name="l00292"></a>00292 
@@ -409,7 +409,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 5 2017 23:44:31 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 6 2017 16:01:28 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

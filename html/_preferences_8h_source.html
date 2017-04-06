@@ -105,7 +105,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00021"></a>00021 
 <a name="l00022"></a>00022 <span class="comment">//move</span>
 <a name="l00023"></a><a class="code" href="_preferences_8h.html#ae09bed4115d5e989b65c733ad8ace663">00023</a> <span class="preprocessor">#define QTPD_APP_VERSION &quot;0.1&quot;</span>
-<a name="l00024"></a><a class="code" href="_preferences_8h.html#af42a0a9b47f8f22242068968ab03be94">00024</a> <span class="preprocessor"></span><span class="preprocessor">#define QTPD_PREF_INIT qtpd::Preferences::inst().init(QTPD_APP_VERSION)</span>
+<a name="l00024"></a><a class="code" href="_preferences_8h.html#af42a0a9b47f8f22242068968ab03be94">00024</a> <span class="preprocessor"></span><span class="preprocessor">#define QTPD_PREF_INIT qtpd::Preferences::inst().init()</span>
 <a name="l00025"></a>00025 <span class="preprocessor"></span>
 <a name="l00026"></a>00026 <span class="comment">//move</span>
 <a name="l00027"></a>00027 <span class="comment">//#define QTPD_PREF_STR(x) AtomList(gensym(x))</span>
@@ -141,7 +141,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00060"></a>00060         <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;
 <a name="l00061"></a>00061     }
 <a name="l00062"></a>00062 
-<a name="l00063"></a><a class="code" href="classqtpd_1_1_preferences.html#a7b4e13c9428e47ebbb68de6d750e7856">00063</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_preferences.html#a7b4e13c9428e47ebbb68de6d750e7856">init</a>(<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> appVersion)
+<a name="l00063"></a><a class="code" href="classqtpd_1_1_preferences.html#a87f84d312be88fb243bc4e1ad1563706">00063</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_preferences.html#a87f84d312be88fb243bc4e1ad1563706">init</a>()
 <a name="l00064"></a>00064     {
 <a name="l00065"></a>00065         this-&gt;<a class="code" href="classqtpd_1_1_property_list.html#a86311122846e75d0cb0e7e775abddae6">create</a>(<span class="stringliteral">&quot;appVersion&quot;</span>, <span class="stringliteral">&quot;System&quot;</span>, <a class="code" href="_preferences_8h.html#ae09bed4115d5e989b65c733ad8ace663">QTPD_APP_VERSION</a>, (<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>)(<a class="code" href="_preferences_8h.html#ae09bed4115d5e989b65c733ad8ace663">QTPD_APP_VERSION</a>));
 <a name="l00066"></a>00066         this-&gt;<a class="code" href="classqtpd_1_1_property_list.html#a86311122846e75d0cb0e7e775abddae6">create</a>(<span class="stringliteral">&quot;Font&quot;</span>, <span class="stringliteral">&quot;UI&quot;</span>, <a class="code" href="_preferences_8h.html#ae09bed4115d5e989b65c733ad8ace663">QTPD_APP_VERSION</a>, (<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>)(<span class="stringliteral">&quot;Source Code Pro&quot;</span>)); <span class="comment">//</span>
@@ -199,7 +199,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 5 2017 23:44:31 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 6 2017 16:01:28 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

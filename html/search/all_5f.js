@@ -229,7 +229,6 @@ var searchData=
   ['_5fsymtable_5fentry',['_symtable_entry',['../struct__symtable__entry.html',1,'']]],
   ['_5ft',['_t',['../class_python_qt_pass_ownership_to_c_p_p.html#a735ed674a1ec72f9a909dc68de50065e',1,'PythonQtPassOwnershipToCPP::_t()'],['../class_python_qt_pass_ownership_to_python.html#a2b1813bc1f3d2b540ddcd22b43563a8f',1,'PythonQtPassOwnershipToPython::_t()'],['../class_python_qt_new_owner_of_this.html#a4ec84728fe2c22e87833754543c0d619',1,'PythonQtNewOwnerOfThis::_t()']]],
   ['_5ftraceback',['_traceback',['../struct__traceback.html',1,'']]],
-  ['_5ftrectplus',['_tRectPlus',['../structqtpd_1_1__t_rect_plus.html',1,'qtpd']]],
   ['_5fts',['_ts',['../struct__ts.html',1,'']]],
   ['_5ftype',['_type',['../struct_python_qt_member_info.html#a2a7dd7f38dd1e849bb09c5b99312a851',1,'PythonQtMemberInfo']]],
   ['_5ftypeobject',['_typeobject',['../struct__typeobject.html',1,'']]],

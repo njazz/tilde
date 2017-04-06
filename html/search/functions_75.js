@@ -9,7 +9,7 @@ var searchData=
   ['uibox',['UIBox',['../classqtpd_1_1_u_i_box.html#af09bcd0063ebcc43076fbc7715fd5eeb',1,'qtpd::UIBox']]],
   ['uiclass',['UIClass',['../classqtpd_1_1_u_i_class.html#a967500c3fd7cefecfce0bfed38e42799',1,'qtpd::UIClass']]],
   ['uicount',['uiCount',['../classceammc_1_1faust_1_1_pd_u_i.html#af4c056e38f9b5e83227e1d174f9a7172',1,'ceammc::faust::PdUI']]],
-  ['uidsp',['UIDSP',['../classqtpd_1_1_u_i_d_s_p.html#a1fc2d710e07ad61997e7cb0777ad40ba',1,'qtpd::UIDSP::UIDSP(UIObject *parent=0)'],['../classqtpd_1_1_u_i_d_s_p.html#acc79d47c95325ccda21511621ec5fd27',1,'qtpd::UIDSP::UIDSP(QWidget *parent=0)']]],
+  ['uidsp',['UIDSP',['../classqtpd_1_1_u_i_d_s_p.html#a3e492bb9470b2d650ed2f58a55dcf2c2',1,'qtpd::UIDSP']]],
   ['uielement',['UIElement',['../classceammc_1_1faust_1_1_u_i_element.html#ae9cdb8abd0b3ac782fb3c4d5ea6caa8c',1,'ceammc::faust::UIElement']]],
   ['uifloat',['UIFloat',['../classqtpd_1_1_u_i_float.html#a8b112b3017a48079f96d2c307e44523b',1,'qtpd::UIFloat']]],
   ['uiinstance',['UIInstance',['../classqtpd_1_1_u_i_instance.html#adcabda125fdcd217b9fc6be936473def',1,'qtpd::UIInstance']]],

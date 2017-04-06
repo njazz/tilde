@@ -11,6 +11,5 @@ var searchData=
   ['t_5fprinthook',['t_printhook',['../_pd_link_8h.html#a60e4f3209d8f267b0aa06105b0b1a4ff',1,'PdLink.h']]],
   ['t_5fupdateui',['t_updateUI',['../_pd_link_8h.html#aef7ba73145c14cf0ffca487d734e38f0',1,'PdLink.h']]],
   ['ternaryfunc',['ternaryfunc',['../object_8h.html#a9da053ed69bc1840b5ea2652bd2e9b2d',1,'object.h']]],
-  ['traverseproc',['traverseproc',['../object_8h.html#a7c3d337f4ea7c5c4f05271334592455a',1,'object.h']]],
-  ['trectplus',['tRectPlus',['../namespaceqtpd.html#acc7022e996d4f1f97e4eefcb3482c8a5',1,'qtpd']]]
+  ['traverseproc',['traverseproc',['../object_8h.html#a7c3d337f4ea7c5c4f05271334592455a',1,'object.h']]]
 ];

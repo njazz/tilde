@@ -104,52 +104,49 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00020"></a><a class="code" href="class_u_i_array_editor.html#a0a654fc4a39eeb65d8392a5c81f4cf96">00020</a>     <span class="keywordtype">void</span> <a class="code" href="class_u_i_array_editor.html#a0a654fc4a39eeb65d8392a5c81f4cf96">paintEvent</a>(QPaintEvent*)
 <a name="l00021"></a>00021     {
 <a name="l00022"></a>00022         <span class="keywordflow">if</span> (_pdArray) {
-<a name="l00023"></a>00023             <span class="comment">//_arrSize = cmp_get_array_size(_pdArray);</span>
-<a name="l00024"></a>00024 
-<a name="l00025"></a>00025             <span class="comment">// todo more tests here</span>
-<a name="l00026"></a>00026 
-<a name="l00027"></a>00027             <a class="code" href="_pd_link_8h.html#a57415e8e6074a693dd767aae59b97c40">cmp_get_array_data</a>(_pdArray, &amp;_arrSize, &amp;_arrData);
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024             <a class="code" href="_pd_link_8h.html#a57415e8e6074a693dd767aae59b97c40">cmp_get_array_data</a>(_pdArray, &amp;_arrSize, &amp;_arrData);
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026             <span class="keywordflow">if</span> (_arrSize &lt; 67108864) <span class="comment">// temporary 64M samples limit</span>
+<a name="l00027"></a>00027             {
 <a name="l00028"></a>00028 
-<a name="l00029"></a>00029             <span class="keywordflow">if</span> (_arrSize &lt; 67108864) {
-<a name="l00030"></a>00030                 <span class="comment">//_arrData = new t_float[_arrSize];</span>
-<a name="l00031"></a>00031 
-<a name="l00032"></a>00032                 QPainter <a class="code" href="floatobject_8h.html#af18a92ce774f4c499544fbcc894db7e8">p</a>(<span class="keyword">this</span>);
+<a name="l00029"></a>00029                 QPainter <a class="code" href="floatobject_8h.html#af18a92ce774f4c499544fbcc894db7e8">p</a>(<span class="keyword">this</span>);
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031                 <span class="keywordtype">int</span> y = height() / 2;
+<a name="l00032"></a>00032                 <span class="keywordtype">int</span> y0 = y;
 <a name="l00033"></a>00033 
-<a name="l00034"></a>00034                 <span class="keywordtype">int</span> y = height() / 2;
-<a name="l00035"></a>00035                 <span class="keywordtype">int</span> y0 = y;
-<a name="l00036"></a>00036 
-<a name="l00037"></a>00037                 p.setPen(QPen(QColor(0, 0, 0), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039                 p.drawLine(0, y0, width(), y0);
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a> = 0; <a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a> &lt; (width() - 1); <a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>++) {
-<a name="l00042"></a>00042 
-<a name="l00043"></a>00043                     <span class="keywordtype">int</span> <a class="code" href="abstract_8h.html#aed9361a6a6957b25e08992d6392020a4">index</a> = floor(<span class="keywordtype">float</span>(<a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>) / width() * _arrSize);
-<a name="l00044"></a>00044                     <span class="keywordtype">float</span> y = ((_arrData[<a class="code" href="abstract_8h.html#aed9361a6a6957b25e08992d6392020a4">index</a>].w_float * .5) + .5) * height();
-<a name="l00045"></a>00045                     p.drawLine(<a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>, y0, <a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a> + 1, y);
-<a name="l00046"></a>00046                     y0 = y;
-<a name="l00047"></a>00047                 }
-<a name="l00048"></a>00048             } <span class="keywordflow">else</span> {
-<a name="l00049"></a>00049                 <a class="code" href="_pd_link_8h.html#a766e12f26830eee9deae0fe8e9f70535" title="post plain text to Pd window">cmp_post</a>(<span class="stringliteral">&quot;bad array size!&quot;</span>);
-<a name="l00050"></a>00050             }
-<a name="l00051"></a>00051         } <span class="keywordflow">else</span> {
-<a name="l00052"></a>00052             <a class="code" href="_pd_link_8h.html#a766e12f26830eee9deae0fe8e9f70535" title="post plain text to Pd window">cmp_post</a>(<span class="stringliteral">&quot;bad pd array!&quot;</span>);
-<a name="l00053"></a>00053         }
-<a name="l00054"></a>00054     }
-<a name="l00055"></a>00055 
-<a name="l00056"></a><a class="code" href="class_u_i_array_editor.html#a1d030f04e2a02f7b3ff14ed36d2d48b3">00056</a>     <span class="keywordtype">void</span> <a class="code" href="class_u_i_array_editor.html#a1d030f04e2a02f7b3ff14ed36d2d48b3">setPdArray</a>(t_garray* arr)
-<a name="l00057"></a>00057     {
-<a name="l00058"></a>00058         _pdArray = arr;
-<a name="l00059"></a>00059     }
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061     <span class="keyword">explicit</span> <a class="code" href="class_u_i_array_editor.html#a188840374e11a35ff6ffb48341d29e5a">UIArrayEditor</a>(QWidget* parent = 0);
-<a name="l00062"></a>00062 
-<a name="l00063"></a>00063 signals:
+<a name="l00034"></a>00034                 p.setPen(QPen(QColor(0, 0, 0), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+<a name="l00035"></a>00035 
+<a name="l00036"></a>00036                 p.drawLine(0, y0, width(), y0);
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a> = 0; <a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a> &lt; (width() - 1); <a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>++) {
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040                     <span class="keywordtype">int</span> <a class="code" href="abstract_8h.html#aed9361a6a6957b25e08992d6392020a4">index</a> = floor(<span class="keywordtype">float</span>(<a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>) / width() * _arrSize);
+<a name="l00041"></a>00041                     <span class="keywordtype">float</span> y = ((_arrData[<a class="code" href="abstract_8h.html#aed9361a6a6957b25e08992d6392020a4">index</a>].w_float * .5) + .5) * height();
+<a name="l00042"></a>00042                     p.drawLine(<a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>, y0, <a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a> + 1, y);
+<a name="l00043"></a>00043                     y0 = y;
+<a name="l00044"></a>00044                 }
+<a name="l00045"></a>00045             } <span class="keywordflow">else</span> {
+<a name="l00046"></a>00046                 <a class="code" href="_pd_link_8h.html#a766e12f26830eee9deae0fe8e9f70535" title="post plain text to Pd window">cmp_post</a>(<span class="stringliteral">&quot;bad array size!&quot;</span>);
+<a name="l00047"></a>00047             }
+<a name="l00048"></a>00048         } <span class="keywordflow">else</span> {
+<a name="l00049"></a>00049             <a class="code" href="_pd_link_8h.html#a766e12f26830eee9deae0fe8e9f70535" title="post plain text to Pd window">cmp_post</a>(<span class="stringliteral">&quot;bad pd array!&quot;</span>);
+<a name="l00050"></a>00050         }
+<a name="l00051"></a>00051     }
+<a name="l00052"></a>00052 
+<a name="l00053"></a><a class="code" href="class_u_i_array_editor.html#a1d030f04e2a02f7b3ff14ed36d2d48b3">00053</a>     <span class="keywordtype">void</span> <a class="code" href="class_u_i_array_editor.html#a1d030f04e2a02f7b3ff14ed36d2d48b3">setPdArray</a>(t_garray* arr)
+<a name="l00054"></a>00054     {
+<a name="l00055"></a>00055         _pdArray = arr;
+<a name="l00056"></a>00056     }
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058     <span class="keyword">explicit</span> <a class="code" href="class_u_i_array_editor.html#a188840374e11a35ff6ffb48341d29e5a">UIArrayEditor</a>(QWidget* parent = 0);
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060 signals:
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062 <span class="keyword">public</span> slots:
+<a name="l00063"></a>00063 };
 <a name="l00064"></a>00064 
-<a name="l00065"></a>00065 <span class="keyword">public</span> slots:
-<a name="l00066"></a>00066 };
-<a name="l00067"></a>00067 
-<a name="l00068"></a>00068 <span class="preprocessor">#endif // UIARRAYEDITOR_H</span>
+<a name="l00065"></a>00065 <span class="preprocessor">#endif // UIARRAYEDITOR_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -168,7 +165,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 5 2017 23:44:31 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 6 2017 16:01:28 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

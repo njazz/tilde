@@ -124,7 +124,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00043"></a>00043     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_u_i_instance.html#adcabda125fdcd217b9fc6be936473def">UIInstance</a>(); <span class="comment">//UIObject* parent = 0);</span>
 <a name="l00044"></a>00044     <span class="comment">//~UIInstance();</span>
 <a name="l00045"></a>00045 
-<a name="l00046"></a><a class="code" href="classqtpd_1_1_u_i_instance.html#a92e750576e1e481edf5e7878d6896df8">00046</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_instance.html#a92e750576e1e481edf5e7878d6896df8">createObject</a>(<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="code" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447" title="gets object text data /usually overriden by ui objects/">objectData</a>, t_canvas* pdCanvas, QGraphicsView* parent = 0)
+<a name="l00046"></a><a class="code" href="classqtpd_1_1_u_i_instance.html#a120f11635c5b3c45d9c0a89c0cd1332d">00046</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_instance.html#a120f11635c5b3c45d9c0a89c0cd1332d">createObject</a>(QString <a class="code" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447" title="gets object text data /usually overriden by ui objects/">objectData</a>, t_canvas* pdCanvas, QGraphicsView* parent = 0)
 <a name="l00047"></a>00047     {
 <a name="l00048"></a>00048         <span class="comment">//TODO fix all constructors</span>
 <a name="l00049"></a>00049         <span class="comment">//t_canvas* pd_Canvas;</span>
@@ -136,13 +136,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00055"></a>00055         <a class="code" href="classqtpd_1_1_u_i_instance.html" title="gui object: oopd class">UIInstance</a>* b = <span class="keyword">new</span> <a class="code" href="classqtpd_1_1_u_i_instance.html#adcabda125fdcd217b9fc6be936473def">UIInstance</a>(); <span class="comment">//(UIObject*)parent);</span>
 <a name="l00056"></a>00056         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a2e6fec1e7e23c49c16330281d84f099f">setCanvas</a>((<span class="keywordtype">void</span>*)parent);
 <a name="l00057"></a>00057 
-<a name="l00058"></a>00058         QStringList list = QString(objectData.c_str()).split(<span class="stringliteral">&quot; &quot;</span>);
+<a name="l00058"></a>00058         QStringList list = QString(objectData).split(<span class="stringliteral">&quot; &quot;</span>);
 <a name="l00059"></a>00059 
-<a name="l00060"></a>00060         <span class="keyword">const</span> <span class="keywordtype">char</span>* obj_name = objectData.c_str();
+<a name="l00060"></a>00060         <span class="keyword">const</span> <span class="keywordtype">char</span>* obj_name = objectData.toStdString().c_str();
 <a name="l00061"></a>00061         <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> data1 = b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a69ed99ca86c7019f489f56b6dc96f8a4">properties</a>()-&gt;<a class="code" href="classqtpd_1_1_property_list.html#a89ada354abe82e104bb9d47b0e80f3b4" title="extract properties from string in pd file">extractFromPdFileString</a>(obj_name); <span class="comment">//test</span>
 <a name="l00062"></a>00062 
 <a name="l00063"></a>00063         <span class="comment">// todo cleanup</span>
-<a name="l00064"></a>00064         <span class="keyword">const</span> <span class="keywordtype">char</span>* obj_name2 = data1.c_str();
+<a name="l00064"></a>00064         <span class="comment">//const char* obj_name2 = data1.c_str();</span>
 <a name="l00065"></a>00065 
 <a name="l00066"></a>00066         <span class="comment">// fix size changes</span>
 <a name="l00067"></a>00067         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a65a6c071b7b6f99393652d273e6a0fa7" title="sets object text data">setObjectData</a>(data1);
@@ -243,7 +243,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00165"></a>00165             p-&gt;setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 <a name="l00166"></a>00166             p-&gt;drawLine(0, y, <a class="code" href="classqtpd_1_1_u_i_item.html#a89b7d0bcdcb226800c37d95305a1f441">width</a>(), y);
 <a name="l00167"></a>00167 
-<a name="l00168"></a>00168             <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a> = 0; <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a> &lt; _opClass-&gt;<a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#a7cc7d6943d461049c88bf4d8e2807443">getPropertyList</a>().<a class="code" href="classceammc_1_1_atom_list.html#ad52fdc5b4f54329460495caa1b00d1ac">size</a>(); <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a>++) {
+<a name="l00168"></a>00168             <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a> = 0; <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a> &lt; _opClass-&gt;<a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#a7cc7d6943d461049c88bf4d8e2807443">getPropertyList</a>().<a class="code" href="classceammc_1_1_atom_list.html#ad52fdc5b4f54329460495caa1b00d1ac">size</a>(); <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a>++) {
 <a name="l00169"></a>00169                 p-&gt;setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 <a name="l00170"></a>00170                 p-&gt;drawText(2, 3 + y, <a class="code" href="classqtpd_1_1_u_i_item.html#a89b7d0bcdcb226800c37d95305a1f441">width</a>() - 2, 20 - 3, Qt::AlignCenter, <span class="stringliteral">&quot;•&quot;</span> + QString(_opClass-&gt;<a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#a7cc7d6943d461049c88bf4d8e2807443">getPropertyList</a>().<a class="code" href="classceammc_1_1_atom_list.html#aa2d99dac15a5a5fe7afa41a38f2aeece" title="returns reference to element at specified position">at</a>(<a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a>).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>().c_str()), 0);
 <a name="l00171"></a>00171 
@@ -253,7 +253,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00175"></a>00175             p-&gt;setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 <a name="l00176"></a>00176             p-&gt;drawLine(0, y, <a class="code" href="classqtpd_1_1_u_i_item.html#a89b7d0bcdcb226800c37d95305a1f441">width</a>(), y);
 <a name="l00177"></a>00177 
-<a name="l00178"></a>00178             <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a> = 0; <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a> &lt; _opClass-&gt;<a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#a1fc8eeace45da7bd34b5991664bfab55">getMethodList</a>().<a class="code" href="classceammc_1_1_atom_list.html#ad52fdc5b4f54329460495caa1b00d1ac">size</a>(); <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a>++) {
+<a name="l00178"></a>00178             <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a> = 0; <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a> &lt; _opClass-&gt;<a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#a1fc8eeace45da7bd34b5991664bfab55">getMethodList</a>().<a class="code" href="classceammc_1_1_atom_list.html#ad52fdc5b4f54329460495caa1b00d1ac">size</a>(); <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a>++) {
 <a name="l00179"></a>00179                 p-&gt;setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 <a name="l00180"></a>00180                 p-&gt;drawText(2, 3 + y, <a class="code" href="classqtpd_1_1_u_i_item.html#a89b7d0bcdcb226800c37d95305a1f441">width</a>() - 2, 20 - 3, Qt::AlignCenter, QString(_opClass-&gt;<a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#a1fc8eeace45da7bd34b5991664bfab55">getMethodList</a>().<a class="code" href="classceammc_1_1_atom_list.html#aa2d99dac15a5a5fe7afa41a38f2aeece" title="returns reference to element at specified position">at</a>(<a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a>).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>().c_str()), 0);
 <a name="l00181"></a>00181 
@@ -382,7 +382,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00315"></a>00315         <a class="code" href="classqtpd_1_1_u_i_object.html#a82f2402eac0e1f7e17cf767a658ffa4f" title="adds single inlet (cm_port)">addInlet</a>();
 <a name="l00316"></a>00316     }
 <a name="l00317"></a>00317 
-<a name="l00318"></a><a class="code" href="classqtpd_1_1_u_i_instance.html#a01f37e59fc397c2abeefbc2a5ed7a855">00318</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_instance.html#a01f37e59fc397c2abeefbc2a5ed7a855">msgFree</a>(<a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> msg)
+<a name="l00318"></a><a class="code" href="classqtpd_1_1_u_i_instance.html#a29295e1f1f9287445909ca1bff384547">00318</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_instance.html#a29295e1f1f9287445909ca1bff384547">msgFree</a>(<a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> )
 <a name="l00319"></a>00319     {
 <a name="l00320"></a>00320 
 <a name="l00321"></a>00321         <span class="keywordflow">if</span> (_opInstance) {
@@ -424,7 +424,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00357"></a>00357         update();
 <a name="l00358"></a>00358     }
 <a name="l00359"></a>00359 
-<a name="l00360"></a><a class="code" href="classqtpd_1_1_u_i_instance.html#a6350f275f201fd6e52e2364cb0e52f78">00360</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_instance.html#a6350f275f201fd6e52e2364cb0e52f78">msgGetObject</a>(<a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> msg)
+<a name="l00360"></a><a class="code" href="classqtpd_1_1_u_i_instance.html#adf8080cd4982c64331f2dc63348de3f6">00360</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_instance.html#adf8080cd4982c64331f2dc63348de3f6">msgGetObject</a>(<a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> )
 <a name="l00361"></a>00361     {
 <a name="l00362"></a>00362 
 <a name="l00363"></a>00363         t_symbol* <a class="code" href="stringobject_8h.html#ad912d811fca4c9cfee37905bed81eb65">s</a> = _opInstance-&gt;<a class="code" href="classqtpd_1_1_o_p_instance.html#ad55a70a4df6bfd1762c75540c76cc171">getObjectSymbol</a>();
@@ -524,7 +524,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00457"></a>00457         }
 <a name="l00458"></a>00458 
 <a name="l00459"></a>00459         <span class="keywordflow">if</span> (msg.<a class="code" href="classceammc_1_1_atom_list.html#aa2d99dac15a5a5fe7afa41a38f2aeece" title="returns reference to element at specified position">at</a>(0).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>() == <span class="stringliteral">&quot;free&quot;</span>) {
-<a name="l00460"></a>00460             x-&gt;<a class="code" href="classqtpd_1_1_u_i_instance.html#a01f37e59fc397c2abeefbc2a5ed7a855">msgFree</a>(msg);
+<a name="l00460"></a>00460             x-&gt;<a class="code" href="classqtpd_1_1_u_i_instance.html#a29295e1f1f9287445909ca1bff384547">msgFree</a>(msg);
 <a name="l00461"></a>00461         }
 <a name="l00462"></a>00462 
 <a name="l00463"></a>00463         <span class="keywordflow">if</span> (msg.<a class="code" href="classceammc_1_1_atom_list.html#aa2d99dac15a5a5fe7afa41a38f2aeece" title="returns reference to element at specified position">at</a>(0).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>() == <span class="stringliteral">&quot;pdobject&quot;</span>) {
@@ -532,7 +532,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00465"></a>00465         }
 <a name="l00466"></a>00466 
 <a name="l00467"></a>00467         <span class="keywordflow">if</span> (msg.<a class="code" href="classceammc_1_1_atom_list.html#aa2d99dac15a5a5fe7afa41a38f2aeece" title="returns reference to element at specified position">at</a>(0).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>() == <span class="stringliteral">&quot;getobject&quot;</span>) {
-<a name="l00468"></a>00468             x-&gt;<a class="code" href="classqtpd_1_1_u_i_instance.html#a6350f275f201fd6e52e2364cb0e52f78">msgGetObject</a>(msg);
+<a name="l00468"></a>00468             x-&gt;<a class="code" href="classqtpd_1_1_u_i_instance.html#adf8080cd4982c64331f2dc63348de3f6">msgGetObject</a>(msg);
 <a name="l00469"></a>00469         }
 <a name="l00470"></a>00470 
 <a name="l00471"></a>00471         <span class="keywordflow">if</span> (msg.<a class="code" href="classceammc_1_1_atom_list.html#aa2d99dac15a5a5fe7afa41a38f2aeece" title="returns reference to element at specified position">at</a>(0).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>() == <span class="stringliteral">&quot;settype&quot;</span>) {
@@ -614,7 +614,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 5 2017 23:44:31 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 6 2017 16:01:28 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

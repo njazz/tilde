@@ -30,7 +30,6 @@ var searchData=
   ['_5fstmt',['_stmt',['../struct__stmt.html',1,'']]],
   ['_5fsymtable_5fentry',['_symtable_entry',['../struct__symtable__entry.html',1,'']]],
   ['_5ftraceback',['_traceback',['../struct__traceback.html',1,'']]],
-  ['_5ftrectplus',['_tRectPlus',['../structqtpd_1_1__t_rect_plus.html',1,'qtpd']]],
   ['_5fts',['_ts',['../struct__ts.html',1,'']]],
   ['_5ftypeobject',['_typeobject',['../struct__typeobject.html',1,'']]]
 ];

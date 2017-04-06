@@ -27,7 +27,6 @@ var searchData=
   ['newscriptbox',['newScriptBox',['../classqtpd_1_1_patch_window.html#aba7ab9ebe3416a454d82864899296264',1,'qtpd::PatchWindow']]],
   ['newsubpatch',['newSubpatch',['../classqtpd_1_1_patch_window.html#a0a56073dafc551b0c5c1b7031f9ead66',1,'qtpd::PatchWindow']]],
   ['newtogglebox',['newToggleBox',['../classqtpd_1_1_patch_window.html#a44d1c60e80fdef22f4c4fdbb72b62389',1,'qtpd::PatchWindow']]],
-  ['newview',['newView',['../classqtpd_1_1_canvas.html#a93388dd59d3745c5bc17633bbaa78103',1,'qtpd::Canvas']]],
   ['newwindow',['newWindow',['../classqtpd_1_1_patch_window.html#a465802c46cfee0432f72284319faf1d3',1,'qtpd::PatchWindow']]],
   ['nextinfo',['nextInfo',['../class_python_qt_slot_info.html#a9bb0c772f8d71971ebb3f65886dd1c48',1,'PythonQtSlotInfo']]],
   ['nextvalueptr',['nextValuePtr',['../class_python_qt_value_storage.html#a51a8d2c67a4f99e3d038872e86121e33',1,'PythonQtValueStorage']]],

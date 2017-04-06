@@ -130,6 +130,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_message.html#adfe079449e4e5f6ed3f3c789d1cdb6ea">UIMessage</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_message.html#a65412b0cbb3d0c5afff028b610df9ae9">paint</a> (QPainter *<a class="el" href="floatobject_8h.html#af18a92ce774f4c499544fbcc894db7e8">p</a>, const QStyleOptionGraphicsItem *, QWidget *)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_message.html#a43f5631496ca6b14ab418aa1171a37f7">resizeEvent</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">custom resize event  <a href="#a43f5631496ca6b14ab418aa1171a37f7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_message.html#a26d9dea3aac260ab3726bc99a3bda832">mousePressEvent</a> (QGraphicsSceneMouseEvent *ev)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_message.html#af0dab275956434b21146c3cb4a67e8b5">mouseReleaseEvent</a> (QGraphicsSceneMouseEvent *)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_message.html#aeef3da11868e346d816fd1e191d0bbac">mouseMoveEvent</a> (QGraphicsSceneMouseEvent *event)</td></tr>
@@ -140,7 +141,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns object's text for client-based file saving  <a href="#a57424e0098d84cf1fa667a8451d7f392"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_message.html#a7b0b5bb905004e2697f179305cbd5ee3">createObject</a> (<a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="el" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447">objectData</a>, t_canvas *pdCanvas, QGraphicsView *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_message.html#aa5d92f2fb11d39ab3f8b5a8323b0d3f4">createObject</a> (QString <a class="el" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447">objectData</a>, t_canvas *pdCanvas, QGraphicsView *parent=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_message.html#a5b6f85f83def25fc402511fbbdfcfcd2">updateUI</a> (void *uiobj, <a class="el" href="classceammc_1_1_atom_list.html">ceammc::AtomList</a> msg)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
@@ -184,14 +185,14 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a7b0b5bb905004e2697f179305cbd5ee3"></a><!-- doxytag: member="qtpd::UIMessage::createObject" ref="a7b0b5bb905004e2697f179305cbd5ee3" args="(std::string objectData, t_canvas *pdCanvas, QGraphicsView *parent=0)" -->
+<a class="anchor" id="aa5d92f2fb11d39ab3f8b5a8323b0d3f4"></a><!-- doxytag: member="qtpd::UIMessage::createObject" ref="aa5d92f2fb11d39ab3f8b5a8323b0d3f4" args="(QString objectData, t_canvas *pdCanvas, QGraphicsView *parent=0)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a>* <a class="el" href="classqtpd_1_1_u_i_message.html#a7b0b5bb905004e2697f179305cbd5ee3">qtpd::UIMessage::createObject</a> </td>
+          <td class="memname">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a>* <a class="el" href="classqtpd_1_1_u_i_message.html#aa5d92f2fb11d39ab3f8b5a8323b0d3f4">qtpd::UIMessage::createObject</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td>
+          <td class="paramtype">QString&#160;</td>
           <td class="paramname"><em>objectData</em>, </td>
         </tr>
         <tr>
@@ -299,7 +300,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#ae771bee506666ac01557f470b633091d">qtpd::UIObject</a>.</p>
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#ae6c38741873376fda63405d73f2697cd">qtpd::UIObject</a>.</p>
 
 </div>
 </div>
@@ -316,6 +317,8 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>custom resize event </p>
 
 <p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#ae10cb3996474a7c1ba94d5e48c740106">qtpd::UIObject</a>.</p>
 
@@ -415,7 +418,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 5 2017 23:44:33 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 6 2017 16:01:30 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
