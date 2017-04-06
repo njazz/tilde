@@ -59,7 +59,7 @@ public:
 
         const char* obj_name = objectData.toStdString().c_str();
         std::string data1 = b->properties()->extractFromPdFileString(obj_name); //test
-        const char* obj_name2 = data1.c_str();
+        //const char* obj_name2 = data1.c_str();
 
         // fix size changes
         b->setObjectData(data1);
@@ -278,7 +278,7 @@ public:
         _opClass->freeMethod(msg.at(1).asString());
     }
 
-    void msgInfo(AtomList msg)
+    void msgInfo(AtomList )
     {
 
         if (_opClass) {
@@ -291,12 +291,12 @@ public:
             output += _opClass->getClassName().c_str();
 
             output += "properties:";
-            for (int i = 0; i < l1.size(); i++) {
+            for (size_t i = 0; i < l1.size(); i++) {
                 output += (l1.at(i).asString().c_str());
             }
 
             output += "methods:";
-            for (int i = 0; i < l2.size(); i++) {
+            for (size_t i = 0; i < l2.size(); i++) {
                 output += (l2.at(i).asString().c_str());
             }
 

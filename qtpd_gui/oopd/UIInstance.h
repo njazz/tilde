@@ -61,7 +61,7 @@ public:
         std::string data1 = b->properties()->extractFromPdFileString(obj_name); //test
 
         // todo cleanup
-        const char* obj_name2 = data1.c_str();
+        //const char* obj_name2 = data1.c_str();
 
         // fix size changes
         b->setObjectData(data1);
@@ -165,7 +165,7 @@ public:
             p->setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
             p->drawLine(0, y, width(), y);
 
-            for (int i = 0; i < _opClass->getPropertyList().size(); i++) {
+            for (size_t i = 0; i < _opClass->getPropertyList().size(); i++) {
                 p->setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
                 p->drawText(2, 3 + y, width() - 2, 20 - 3, Qt::AlignCenter, "•" + QString(_opClass->getPropertyList().at(i).asString().c_str()), 0);
 
@@ -175,7 +175,7 @@ public:
             p->setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
             p->drawLine(0, y, width(), y);
 
-            for (int i = 0; i < _opClass->getMethodList().size(); i++) {
+            for (size_t i = 0; i < _opClass->getMethodList().size(); i++) {
                 p->setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
                 p->drawText(2, 3 + y, width() - 2, 20 - 3, Qt::AlignCenter, QString(_opClass->getMethodList().at(i).asString().c_str()), 0);
 
@@ -315,7 +315,7 @@ public:
         addInlet();
     }
 
-    void msgFree(AtomList msg)
+    void msgFree(AtomList )
     {
 
         if (_opInstance) {
@@ -357,7 +357,7 @@ public:
         update();
     }
 
-    void msgGetObject(AtomList msg)
+    void msgGetObject(AtomList )
     {
 
         t_symbol* s = _opInstance->getObjectSymbol();

@@ -19,7 +19,7 @@ class BaseMenu : public QObject {
     static PythonQtScriptingConsole* pythonConsole_;
 
 public:
-    explicit BaseMenu(QObject* parent = 0)
+    explicit BaseMenu()
     {
 //TODO! singleton
 #ifdef WITH_PYTHON

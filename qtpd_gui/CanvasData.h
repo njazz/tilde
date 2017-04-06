@@ -83,7 +83,7 @@ public:
     int findBox(objectVec* boxes, UIObject* box)
     {
         //todo
-        for (int i = 0; i < boxes->size(); i++) {
+        for (size_t i = 0; i < boxes->size(); i++) {
             if (boxes->at(i) == box)
                 return i;
         }
@@ -103,7 +103,7 @@ public:
         box->select();
     }
 
-    void selectPatchcord(Patchcord* pcord)
+    void selectPatchcord(Patchcord* )//pcord
     {
     }
 

@@ -45,7 +45,7 @@ public:
     void cm_log(std::string text);
     void cm_post(std::string text);
 
-    void resizeEvent();
+//    void resizeEvent();
 };
 
 //fix - normal singleton here

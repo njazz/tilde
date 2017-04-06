@@ -33,7 +33,7 @@ private:
 public:
     explicit SizeBox(UIItem* parent = 0);
 
-    void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget* widget)
+    void paint(QPainter* p, const QStyleOptionGraphicsItem* , QWidget* )
     {
         QBrush brush(bgColor());
         p->setBrush(brush);

@@ -21,7 +21,7 @@
 
 //move
 #define QTPD_APP_VERSION "0.1"
-#define QTPD_PREF_INIT qtpd::Preferences::inst().init(QTPD_APP_VERSION)
+#define QTPD_PREF_INIT qtpd::Preferences::inst().init()
 
 //move
 //#define QTPD_PREF_STR(x) AtomList(gensym(x))
@@ -60,7 +60,7 @@ public:
         return "";
     }
 
-    void init(std::string appVersion)
+    void init()
     {
         this->create("appVersion", "System", QTPD_APP_VERSION, (std::string)(QTPD_APP_VERSION));
         this->create("Font", "UI", QTPD_APP_VERSION, (std::string)("Source Code Pro")); //

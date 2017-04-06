@@ -82,9 +82,10 @@ PdWindow::PdWindow()
     fileMenu->removeAction(saveAsAct);
 }
 
-void PdWindow::resizeEvent()
-{
-    // todo check
-    ui->log->resizeRowsToContents();
-};
+//void PdWindow::resizeEvent()
+//{
+//    // todo check
+//    ui->log->resizeRowsToContents();
+//};
+
 }

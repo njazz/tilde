@@ -160,7 +160,7 @@ public:
         if (x) {
             //todo atomlist to qstringlist; atom as qstring
             QStringList list;
-            for (int i = 0; i < msg.size(); i++) {
+            for (size_t i = 0; i < msg.size(); i++) {
                 list.push_back(msg.at(i).asString().c_str());
             }
 

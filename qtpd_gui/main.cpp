@@ -48,7 +48,7 @@ int main(int argc, char* argv[])
     PythonQt_QtAll::init();
 
     //temporary
-    new BaseMenu(0);
+    new BaseMenu();
     //init python
     pyWrapper::inst();
 #endif

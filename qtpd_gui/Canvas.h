@@ -28,18 +28,11 @@
 namespace qtpd {
 
 ////
-/// \brief draw canvas as patch, box or pd "G-O-P" / patch in patch
-//typedef enum _canvasDrawStyle { ds_Canvas,
-    //ds_Box,
-    //ds_CanvasInBox } canvasDrawStyle;
-
-////
 /// \brief 't_canvas' counterpart. creates objects
 ///
 class Canvas : public QGraphicsView {
 private:
     canvasDataPlus _canvasData;
-    //canvasData _selectionData;
 
     UIObject* _connectionStartObject;
     UIObject* _connectionStartOutlet;
@@ -51,14 +44,10 @@ private:
     bool _gridSnap;
 
     QSize _windowSize;
-    //
-    //
 
     ObjectMaker* _objectMaker;
-    //QStringList _clipboard;
 
     bool _keepPdObject;
-
     bool _readOnly;
 
     QString _filePath;
@@ -73,47 +62,37 @@ private:
     t_canvas* _pdObject;
     UIObject* _dragObject;
 
-
-
     Q_OBJECT
 
 public:
-    // TODO encapsulate
-    //UIObject* dragObject;
-
     // todo fix
-    canvasDataPlus* canvasData(){return &_canvasData;}
+    canvasDataPlus* canvasData() { return &_canvasData; }
 
-    UIObject * dragObject(){return _dragObject;}
-    void setDragObject(UIObject* object){_dragObject = object;}
+    UIObject* dragObject() { return _dragObject; }
+    void setDragObject(UIObject* object) { _dragObject = object; }
 
     QString fileName;
 
     explicit Canvas(QGraphicsView* parent = 0);
 
     // new
-
     t_canvas* pdObject() { return _pdObject; }
     void setPdObject(t_canvas* c) { _pdObject = c; }
 
-    ////
-    /// \brief creates new view of existing canvas. check this
-    /// \param srcCanvas
-    /// \param parentCanvas
-    /// \param dStyle draw style - Canvas, Box, CanvasInBox
-    /// \return
-    ///
-    static Canvas* newView(Canvas* srcCanvas, UIObject* parentCanvas);
 
+
+    //todo
     void addInlet();
     void addOutlet();
 
-    //   
+    //
 
     ////
     /// \brief draws canvas contents
     ///
     void drawCanvas();
+
+    // -------------------------------------------------------
 
     ////
     /// \brief route mouse move handling for different vis types
@@ -152,25 +131,12 @@ public:
     ///
     void mouseReleaseEventForCanvas(QMouseEvent*);
 
-    /////////
-
-    /////////
+    // -------------------------------------------------------
 
     ////
     /// \brief deselect all object boxes
     ///
     void deselectBoxes();
-
-    ////
-    /// \brief restore "pd" object when loading from file
-    /// \details this is probably useless -
-    /// \param pdObjectData
-    /// \param pos
-    /// \param canvas
-    /// \return
-    ///
-    // MOVE THAT TO BOX
-    UIBox* restoreSubcanvas(std::string pdObjectName, QPoint pos, t_canvas* canvas);
 
     ////
     /// \brief prototype for universal object 'constructor'
@@ -180,15 +146,14 @@ public:
     ///
     UIObject* createObject(QString objectData1, QPoint pos);
 
-    UIObject* createBoxForPatchWindow(QMainWindow* patchWindow, QString objectData, QPoint pos);
     ////
-    /// \brief TODO check. creates object box for subcanvas
-    /// \param canvas
+    /// \brief create object box for subpatch (when loaded from file)
+    /// \param patchWindow
     /// \param objectData
     /// \param pos
     /// \return
     ///
-    UIObject* createBoxForCanvas(Canvas* newCanvas, std::string objectData, QPoint pos);
+    UIObject* createBoxForPatchWindow(QMainWindow* patchWindow, QString objectData, QPoint pos);
 
     ////
     /// \brief creates patchcord
@@ -207,18 +172,6 @@ public:
     /// \param inport
     ///
     void patchcord(UIObject* obj1, UIItem* outport, UIObject* obj2, UIItem* inport);
-
-    //    ////unused?
-    //    void deletePatchcord(Patchcord* pc)
-    //    {
-    //        // no repaint
-
-    //        //cleanup !!!
-    //        patchcordVec::iterator it = std::find(data_.patchcords.begin(), data_.patchcords.end(), pc);
-
-    //        if (it != data_.patchcords.end()) { data_.patchcords.erase(it); }
-
-    //    }
 
     ////
     /// \brief delete all patchcords for object
@@ -241,6 +194,8 @@ public:
     ///
     void delSelectedPatchcords();
 
+    // -------------------------------------------------------
+
     virtual t_editMode getEditMode()
     {
         return _canvasEditMode;
@@ -258,19 +213,6 @@ public:
     void setEditMode(t_editMode mode);
 
     ////
-    /// \brief returns object by index - this is needed by parser
-    /// \param idx
-    /// \return cm_widget pointer
-    ///
-    UIObject* getObjectByIndex(int idx);
-
-    ////
-    /// \brief set object value - mostly for canvas as box
-    /// \param objData
-    ///
-    void setObjectData(std::string objData);
-
-    ////
     /// \brief set the show/hide grid flag
     /// \param val
     ///
@@ -281,6 +223,15 @@ public:
     /// \param val
     ///
     void setGridSnap(bool val);
+
+    // -------------------------------------------------------
+
+    ////
+    /// \brief returns object by index - this is needed by parser
+    /// \param idx
+    /// \return cm_widget pointer
+    ///
+    UIObject* getObjectByIndex(int idx);
 
     ////
     /// \brief returns vector of all object boxes - needed by filesaver
@@ -313,12 +264,6 @@ public:
     ///
     patchcordVec patchcordsForObject(UIObject* obj);
 
-    //    //
-    //    / \brief converts object pointers to their numbers in canvas and returns pd string for filesaver
-    //    / \param patchcord
-    //    / \return
-    //    /
-
     ////
     /// \brief find object index in list
     /// \details this may be different from object index inside pd canvas
@@ -326,17 +271,6 @@ public:
     /// \return
     ///
     int findObjectIndex(UIObject* obj);
-
-    //    ////
-    //    /// \brief sets pointer to canvas object in subpatch
-    //    /// \details todo: check/remove that: we have subpatchwindow too
-    //    /// \param obj
-    //    ///
-    //    void setSubcanvas(UIObjectItem* obj);
-    //UIObjectItem* subcanvas(){return Subcanvas_;}
-
-    //lol
-    //QStringList canvasAsPdStrings();
 
     ////
     /// \brief this returns "restore ..." for canvas as box or calls filesaver for canvas
@@ -404,20 +338,12 @@ public slots:
     ///
     void s_SelectBox(UIItem* box, QGraphicsSceneMouseEvent* ev);
 
-    //    void s_SelectBoxItem(UIItem* box, QMouseEvent* ev);
-
     ////
     /// \brief TODO check. slot called by box when it starts moving
     /// \param box
     /// \param event
     ///
     void s_MoveBox(UIItem* box, QGraphicsSceneMouseEvent* event);
-
-    //    void s_MoveBoxItem(UIItem* box, QMouseEvent* event);
-
-    //    void portMouseReleased();
-    //    void portMouseEntered();
-    //    void portMouseLeaved();
 
     ////
     /// \brief cancels patchcord creation
@@ -497,7 +423,7 @@ public slots:
 
     // -- NEW
 
-    void resizeEvent(QResizeEvent* ev)
+    void resizeEvent(QResizeEvent* )
     {
         _grid->setSize(size());
         _grid->move(0, 0);

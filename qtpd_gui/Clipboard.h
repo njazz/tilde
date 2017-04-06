@@ -59,6 +59,7 @@ public:
             return _data[idx];
         else
             qDebug() << "clipboard: out of range";
+        return "";
     }
 
 signals:

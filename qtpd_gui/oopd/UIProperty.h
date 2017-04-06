@@ -61,7 +61,7 @@ public:
 
         const char* obj_name = objectData.toStdString().c_str();
         std::string data1 = b->properties()->extractFromPdFileString(obj_name); //test
-        const char* obj_name2 = data1.c_str();
+        //const char* obj_name2 = data1.c_str();
 
         // fix size changes
         b->setObjectData(data1);
@@ -286,7 +286,7 @@ public:
 
                 AtomList _prop = b->_opInstance->getAtomListProperty(gensym(b->_propertyName.c_str()));
                 QStringList list1;
-                for (int i = 0; i < _prop.size(); i++) {
+                for (size_t i = 0; i < _prop.size(); i++) {
                     list1.append(_prop.at(i).asString().c_str());
                 }
 
