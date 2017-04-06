@@ -28,12 +28,57 @@ CONFIG += static
   INCLUDEPATH += python/py2.7headers/
   macx: LIBS += -F/System/Library/Frameworks -framework Python
 
-DEFINES += WITH_PYTHON
+defined(WITH_PYTHON)
+{
+SOURCES += python/PythonQtScriptingConsole.cpp \
+    python/wrappers/py_wrappers.cpp \
+
+HEADERS += \
+    python/PythonQtScriptingConsole.h \
+    python/headers/PythonQtStdDecorators.h \
+    python/headers/PythonQtDoc.h \
+    python/headers/PythonQt.h \
+    python/headers/PythonQtClassInfo.h \
+    python/headers/PythonQtClassWrapper.h \
+    python/headers/PythonQtConversion.h \
+    python/headers/PythonQtInstanceWrapper.h \
+    python/headers/PythonQtProperty.h \
+    python/headers/PythonQtSignal.h \
+    python/headers/PythonQtSlotDecorator.h \
+    python/headers/PythonQtImporter.h \
+    python/headers/PythonQtMethodInfo.h \
+    python/headers/PythonQtSlot.h \
+    python/headers/PythonQtBoolResult.h \
+    python/headers/PythonQtUtils.h \
+    python/headers/PythonQtPythonInclude.h \
+    python/headers/PythonQtMisc.h \
+    python/headers/PythonQtObjectPtr.h \
+    python/headers/PythonQtSignalReceiver.h \
+    python/headers/PythonQtImportFileInterface.h \
+    python/headers/PythonQtCppWrapperFactory.h \
+    python/headers/PythonQtStdIn.h \
+    python/headers/PythonQtStdOut.h \
+    python/headers/PythonQt_QtAll.h \
+    python/headers/PythonQtQFileImporter.h \
+    python/headers/PythonQtSystem.h \
+    python/headers/PythonQtVariants.h \
+    python/wrappers/py_qtpd.h \
+    python/wrappers/py_wrappers.h \
+
+LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt_QtAll$${DEBUG_EXT}.1.0.0
+LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt$${DEBUG_EXT}.1.0.0
+
+LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt_QtAll$${DEBUG_EXT}.1
+LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt$${DEBUG_EXT}.1
+
+DEPENDPATH += $$PWD/../PythonQt/lib/
+
+INCLUDEPATH += $$PWD/python/headers
+DEPENDPATH += $$PWD/python/headers
+}
 
 SOURCES += main.cpp\
 #
-    python/PythonQtScriptingConsole.cpp \
-    python/wrappers/py_wrappers.cpp \
 #
     objects/UIArray.cpp \
     objects/UIBox.cpp \
@@ -81,36 +126,6 @@ SOURCES += main.cpp\
 
 HEADERS  += \
     #
-    python/PythonQtScriptingConsole.h \
-    python/headers/PythonQtStdDecorators.h \
-    python/headers/PythonQtDoc.h \
-    python/headers/PythonQt.h \
-    python/headers/PythonQtClassInfo.h \
-    python/headers/PythonQtClassWrapper.h \
-    python/headers/PythonQtConversion.h \
-    python/headers/PythonQtInstanceWrapper.h \
-    python/headers/PythonQtProperty.h \
-    python/headers/PythonQtSignal.h \
-    python/headers/PythonQtSlotDecorator.h \
-    python/headers/PythonQtImporter.h \
-    python/headers/PythonQtMethodInfo.h \
-    python/headers/PythonQtSlot.h \
-    python/headers/PythonQtBoolResult.h \
-    python/headers/PythonQtUtils.h \
-    python/headers/PythonQtPythonInclude.h \
-    python/headers/PythonQtMisc.h \
-    python/headers/PythonQtObjectPtr.h \
-    python/headers/PythonQtSignalReceiver.h \
-    python/headers/PythonQtImportFileInterface.h \
-    python/headers/PythonQtCppWrapperFactory.h \
-    python/headers/PythonQtStdIn.h \
-    python/headers/PythonQtStdOut.h \
-    python/headers/PythonQt_QtAll.h \
-    python/headers/PythonQtQFileImporter.h \
-    python/headers/PythonQtSystem.h \
-    python/headers/PythonQtVariants.h \
-    python/wrappers/py_qtpd.h \
-    python/wrappers/py_wrappers.h \
     objects/UIBang.h \
     objects/UIArray.h \
     objects/UIToggle.h \
@@ -207,19 +222,7 @@ CONFIG(debug, debug|release) {
   DEBUG_EXT =
 }
 
-LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt_QtAll$${DEBUG_EXT}.1.0.0
-LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt$${DEBUG_EXT}.1.0.0
 
-LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt_QtAll$${DEBUG_EXT}.1
-LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt$${DEBUG_EXT}.1
-
-#DISTFILES += $$PWD/../PythonQt/lib/libPythonQt_QtAll$${DEBUG_EXT}.1.0.0.dylib
-#DISTFILES += $$PWD/../PythonQt/lib/libPythonQt$${DEBUG_EXT}.1.0.0.dylib
-
-DEPENDPATH += $$PWD/../PythonQt/lib/
-
-INCLUDEPATH += $$PWD/python/headers
-DEPENDPATH += $$PWD/python/headers
 
 
 
