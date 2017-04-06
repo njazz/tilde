@@ -29,7 +29,7 @@ private:
 public:
     explicit UIText(); //UIObject* parent = 0);
 
-    static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
+    static UIObject* createObject(QString objectData, t_canvas*, QGraphicsView* parent = 0)
     {
         UIText* b = new UIText();
         b->setCanvas((void*)parent);
@@ -51,15 +51,14 @@ public:
         return (UIObject*)b;
     };
 
-    //void paintEvent(QPaintEvent*)
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)
     {
-        //QPainter p(viewport());
+        // does it need a background?
 
-//        QBrush brush(bgColor());
-//        p->setBrush(brush);
-//        p->drawRect(boundingRect());
-//        p->setBrush(QBrush());
+        //        QBrush brush(bgColor());
+        //        p->setBrush(brush);
+        //        p->drawRect(boundingRect());
+        //        p->setBrush(QBrush());
 
         if (getEditMode() == em_Unlocked) {
             if (isSelected()) {
@@ -71,7 +70,6 @@ public:
             }
 
             p->drawRect(0, 0, width(), height());
-            //p->drawPolygon(poly);
         }
 
         QTextOption* op = new QTextOption;
@@ -118,13 +116,8 @@ public:
 
     void mouseReleaseEvent(QGraphicsSceneMouseEvent*)
     {
-        //selected_ = false;
-
-        //if (!getEditMode())
-        //{
         _clicked = false;
         update();
-        //}
     }
 
     void mouseMoveEvent(QGraphicsSceneMouseEvent* event)
@@ -183,9 +176,6 @@ public:
 
         _objectText = data;
 
-        //autoResize();
-
-        //auto-resize moved here
         autoResize();
 
         _editor->setFixedWidth(width() - 1);
@@ -201,31 +191,22 @@ public:
         UIText* x = (UIText*)uiobj;
 
         std::string obj_data;
-        for (int i = 0; i < msg.size(); i++) {
+        for (size_t i = 0; i < msg.size(); i++) {
             obj_data += msg.at(i).asString() + " ";
         }
 
         x->setObjectData(obj_data);
         x->autoResize();
 
-        x->update(); // viewport()->update();
+        x->update();
     }
-
-    //    void setPdObject(void *obj)
-    //    {
-    //        cm_object::setPdObject(obj);
-    //        //cmp_connectUI((t_pd*)getPdObject(), (void*)this, &cmo_text::updateUI);
-    //    }
-
-    //    std::string asPdFileString()
-    //    {return "ui.text "+ objectData();}
 
     void* pdObject()
     {
         return 0;
     }
 
-    bool eventFilter(QObject* watched, QEvent* event)
+    bool eventFilter(QObject* , QEvent* event)
     {
         if (event->type() == QEvent::KeyPress) {
 

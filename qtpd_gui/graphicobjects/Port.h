@@ -54,9 +54,8 @@ public:
 
     // -----
 
-    void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget* widget)
+    void paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)
     {
-
         p->setRenderHint(QPainter::HighQualityAntialiasing, true);
 
         QBrush brush(bgColor());

@@ -180,7 +180,7 @@ public:
     ///
     UIObject* createObject(QString objectData1, QPoint pos);
 
-    UIObject* createBoxForPatchWindow(QMainWindow* patchWindow, std::string objectData, QPoint pos);
+    UIObject* createBoxForPatchWindow(QMainWindow* patchWindow, QString objectData, QPoint pos);
     ////
     /// \brief TODO check. creates object box for subcanvas
     /// \param canvas

@@ -27,11 +27,11 @@ private:
     QTimer* _timer;
 
 public:
-    explicit UIBang(); //UIObject* parent = 0);
+    explicit UIBang();
 
     static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
     {
-        UIBang* b = new UIBang(); //(UIObject*)parent);
+        UIBang* b = new UIBang();
         b->setCanvas((void*)parent);
 
         std::string data1 = b->properties()->extractFromPdFileString(objectData.toStdString());
@@ -61,11 +61,8 @@ public:
         return (UIObject*)b;
     };
 
-    //void paintEvent(QPaintEvent*)
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)
     {
-        //QPainter p(viewport());
-
         QBrush brush(bgColor());
         p->setBrush(brush);
         p->drawRect(boundingRect());
@@ -90,9 +87,8 @@ public:
         p->drawRect(0, 0, width(), height());
     }
 
-    virtual void resizeEvent() //QResizeEvent* event)
+    virtual void resizeEvent()
     {
-
         setHeight(width());
         // this will call resize event
     }
@@ -163,16 +159,10 @@ public:
         qDebug("connectUI");
     }
 
-    //    std::string asPdFileString()
-    //    {
-    //        return "ui.bang "+ objectData();
-    //    }
-
     void timerStart()
     {
-        {
-            emit setBangTimer(100);
-        }
+
+        emit setBangTimer(100);
     }
 
 signals:
@@ -182,7 +172,6 @@ private slots:
     void timerAction()
     {
         _clicked = false;
-        // viewport()->update();
         emit callRepaint();
     }
 };

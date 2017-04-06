@@ -4,13 +4,11 @@
 #ifndef cmo_float_H
 #define cmo_float_H
 
-
-
 #include "Port.h"
 #include "UIObject.h"
 
-#include <QLineEdit>
 #include <QGraphicsView>
+#include <QLineEdit>
 
 //#include "cm_pdlink.h"
 
@@ -46,7 +44,6 @@ public:
             qDebug("bad pd canvas instance");
         } else {
             QPoint pos = QPoint(0, 0);
-            //new_obj = cmp_create_message(pdCanvas, message, pos.x(), pos.y());
             new_obj = cmp_create_object(pdCanvas, message, pos.x(), pos.y());
         }
 
@@ -74,17 +71,10 @@ public:
         properties()->create("Value", "Preset", "0.1", 0.);
     }
 
-    //void paintEvent(QPaintEvent*)
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)
     {
-        //QPainter p(viewport());
-
         QPolygon poly;
-        poly << QPoint(0, 0) << QPoint(width() - 5, 0) <<
-            //QPoint(width()-4,4) <<
-            QPoint(width(), 5) << QPoint(width(), height()) << QPoint(0, height());
-
-        //p->drawRect(0,0,width(),height());
+        poly << QPoint(0, 0) << QPoint(width() - 5, 0) << QPoint(width(), 5) << QPoint(width(), height()) << QPoint(0, height());
 
         p->setPen(QPen(QColor(220, 220, 220), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         QPainterPath tmpPath;
@@ -187,7 +177,6 @@ public:
             } else {
 
                 std::string msg = ("set " + objectData());
-                //qDebug("send msg %s", msg.c_str());
                 cmp_sendstring((t_pd*)pdObject(), msg);
             }
         }
@@ -195,7 +184,6 @@ public:
 
     static void updateUI(void* uiobj, ceammc::AtomList msg)
     {
-        //qDebug("update ui - float");
         UIFloat* x = (UIFloat*)uiobj;
 
         if (msg.size() > 0) {
@@ -203,9 +191,6 @@ public:
             emit x->callRepaint();
         }
     }
-
-    //    std::string asPdFileString()
-    //    {return "ui.float "+ objectData();}
 
     void setPdObject(void* obj)
     {

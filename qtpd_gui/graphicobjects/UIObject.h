@@ -68,32 +68,16 @@ private:
 
     void* _canvas;
 
-    //
-    //    QString fullHelpName()
-    //    {
-    //        if (fullHelpName() == "")
-    //            return "";
-
-    //        QString ret = "";
-
-    //        return ret;
-    //    }
-
 protected:
     virtual void hoverEnterEvent(QGraphicsSceneHoverEvent*);
-
     virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent*);
 
 public:
-
-    // template, copy from here
-    virtual void paint(QPainter *p, const QStyleOptionGraphicsItem *option, QWidget *widget){
-
-    };
+    // just a template, copy from here
+    virtual void paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*){};
 
     void setCanvas(void* canvas) { _canvas = canvas; }
 
-    //cm_object();
     explicit UIObject(UIItem* parent = 0);
 
     ////
@@ -110,9 +94,7 @@ public:
 
     void showPopupMenu(QPoint pos);
 
-    SizeBox* sizeBox(){return _sizeBox;}
-
-    //void contextMenuEvent(QContextMenuEvent* event);
+    SizeBox* sizeBox() { return _sizeBox; }
 
     ////
     /// \brief sets inlet position (cm_port)
@@ -249,8 +231,6 @@ public:
     ///
     virtual std::string asPdFileString();
 
-    //void setPdObjectName(std::string name);
-
     ////
     /// \brief temporary - remove later
     /// \details nonzero pointer for different drawing
@@ -265,8 +245,9 @@ public:
     void setEditModeRef(t_editMode* canvasEditMode);
 
     //////////
-
-    void resizeEvent();//QGraphicsSceneResizeEvent* event);
+    ////
+    /// \brief custom resize event
+    void resizeEvent();
 
     // ------------------------
 
@@ -323,7 +304,9 @@ private slots:
 
 signals:
     void editObject(void* box);
-    void callRepaint(); //needed for proper threading
+    //// \brief this is needed for proper threading
+    /// \details pd calls UIUpdate(...) -> it emits 's_repaint()' that is connected to 'callRepaint()'
+    void callRepaint();
 
 public slots:
     void resizeBox(int dx, int dy);

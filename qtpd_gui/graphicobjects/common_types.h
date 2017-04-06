@@ -1,7 +1,7 @@
 #ifndef COMMON_TYPES_H
 #define COMMON_TYPES_H
 
-// todo move that
+// todo move that ?
 
 #include <QPoint>
 
@@ -33,13 +33,12 @@ typedef enum {
 
 ////
 /// \brief structure for selection rectangle
-typedef struct _tRectPlus {
-    bool active;
-    QPoint start;
-    QPoint end;
+//typedef struct _tRectPlus {
+//    bool active;
+//    QPoint start;
+//    QPoint end;
 
-} tRectPlus;
-
+//} tRectPlus;
 }
 
 #endif // COMMON_TYPES_H

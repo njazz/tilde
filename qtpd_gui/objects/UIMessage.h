@@ -26,7 +26,7 @@ private:
     QLineEdit* _editor;
 
 public:
-    explicit UIMessage();//UIObject* parent = 0);
+    explicit UIMessage();
 
     static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
     {
@@ -56,7 +56,6 @@ public:
             qDebug("bad pd canvas instance");
         } else {
             QPoint pos = QPoint(0, 0);
-            //new_obj = cmp_create_message(pdCanvas, message, pos.x(), pos.y());
             new_obj = cmp_create_object(pdCanvas, message, pos.x(), pos.y());
         }
 
@@ -75,14 +74,10 @@ public:
         return (UIObject*)b;
     };
 
-    //void paintEvent(QPaintEvent*)
-    virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* , QWidget* )
+    virtual void paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)
     {
-
         QPolygon poly;
         poly << QPoint(0, 0) << QPoint(width(), 0) << QPoint(width() - 4, 4) << QPoint(width() - 4, height() - 4) << QPoint(width(), height()) << QPoint(0, height());
-
-        //p->drawRect(0,0,width(),height());
 
         p->setPen(QPen(QColor(220, 220, 220), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         QPainterPath tmpPath;
@@ -108,13 +103,11 @@ public:
         p->drawText(2, 3, width() - 2, height() - 3, 0, objectData().c_str(), 0);
     }
 
-    void resizeEvent()//QResizeEvent* )
+    void resizeEvent()
     {
         UIObject::resizeEvent();
         _editor->setFixedWidth(width() - 5);
     }
-
-
 
     // ------------------------------------------------------
 
@@ -122,8 +115,8 @@ public:
     {
         //context menu
         if (ev->button() == Qt::RightButton) {
-//            QPoint pos = mapToGlobal(ev->pos());
-//            showPopupMenu(pos);
+            //            QPoint pos = mapToGlobal(ev->pos());
+            //            showPopupMenu(pos);
             ev->accept();
             return;
         }
@@ -192,7 +185,6 @@ public:
         int new_w = fm.width(QString(objectData().c_str())) + 10;
         new_w = (new_w < 25) ? 25 : new_w;
         setWidth(new_w);
-        //_editor->setFixedWidth(width() - 5);
 
         //temporary
         //move
@@ -209,11 +201,10 @@ public:
 
     static void updateUI(void* uiobj, ceammc::AtomList msg)
     {
-        //qDebug("update ui");
         UIMessage* x = (UIMessage*)uiobj;
 
         std::string obj_data;
-        for (int i = 0; i < msg.size(); i++) {
+        for (size_t i = 0; i < msg.size(); i++) {
             // workaround
             if (AtomList(msg.at(i)).toPdData()->a_type == A_COMMA)
                 obj_data += ", ";
@@ -230,7 +221,6 @@ public:
 
         //
         emit x->callRepaint();
-        //update();
     }
 
     void setPdObject(void* obj)

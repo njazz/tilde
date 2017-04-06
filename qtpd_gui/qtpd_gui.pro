@@ -77,7 +77,8 @@ SOURCES += main.cpp\
 #
     objects/UISubpatch.cpp \
     graphicobjects/UIObject.cpp \
-    Clipboard.cpp
+    Clipboard.cpp \
+    objects/UIScriptEditor.cpp
 
 
 HEADERS  += \
@@ -162,7 +163,8 @@ HEADERS  += \
 #
     graphicobjects/UIObject.h \
     Clipboard.h \
-    CanvasData.h
+    CanvasData.h \
+    objects/UIScriptEditor.h
 
 
 FORMS    += \

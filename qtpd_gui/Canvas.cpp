@@ -543,7 +543,7 @@ void Canvas::mouseMoveEventForCanvas(QMouseEvent* ev)
     //todo
     if (_newLine->active()) {
         viewport()->update();
-        qDebug("new line");
+        //qDebug("new line");
     }
 
     //patchcords()
@@ -721,7 +721,7 @@ UIObject* Canvas::createObject(QString objectData1, QPoint pos) //std::string UI
 
     //pos = objectMaker()->pos();
 
-    QStringList list = QString(objectData1).split(" ");
+    QStringList list = objectData1.split(" ");
 
     //this is moved here to have all checks for special objects in one place
     //(later - inlets/outlets)
@@ -736,7 +736,7 @@ UIObject* Canvas::createObject(QString objectData1, QPoint pos) //std::string UI
             QMainWindow* subPatch = newPatch.first;
             Canvas* newCanvas = (Canvas*)newPatch.second;
 
-            UIObject* obj = UISubpatch::createObject(objectData1.toStdString(), 0, this);
+            UIObject* obj = UISubpatch::createObject(objectData1, 0, this);
 
             ((UISubpatch*)obj)->setSubpatchWindow(subPatch);
 
@@ -797,7 +797,7 @@ UIObject* Canvas::createObject(QString objectData1, QPoint pos) //std::string UI
     return (UIObject*)obj;
 }
 
-UIObject* Canvas::createBoxForPatchWindow(QMainWindow* patchWindow, std::string objectData, QPoint pos)
+UIObject* Canvas::createBoxForPatchWindow(QMainWindow* patchWindow, QString objectData, QPoint pos)
 {
     //UIObject *obj = Canvas::createObject(QString(objectData.c_str()),pos);
     std::pair<QMainWindow*, UIObject*> newPatch;

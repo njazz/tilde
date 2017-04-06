@@ -115,7 +115,6 @@ public:
 
     QRectF boundingRect() const
     {
-        //qDebug() <<QRectF(0, 0, _size.width(), _size.height());
         return QRectF(0, 0, _size.width(), _size.height());
     }
 
@@ -126,7 +125,7 @@ public:
         return path;
     }
 
-    void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget){};
+    void paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*){};
 
     QColor bgColor() { return _bgColor; }
     void setBgColor(QColor bgc) { _bgColor = bgc; }
@@ -134,34 +133,19 @@ public:
     bool hover() { return _hover; }
     void setHover(bool h) { _hover = h; }
 
-    virtual void resizeEvent(){}
+    virtual void resizeEvent() {}
 
 signals:
 
     void mousePressed(UIItem* obj, QGraphicsSceneMouseEvent* ev);
     void mouseReleased(UIItem* obj, QGraphicsSceneMouseEvent* ev);
-//    void mouseEntered();
-//    void mouseLeaved();
+    //    void mouseEntered();
+    //    void mouseLeaved();
 
     void selectBox(UIItem* box, QGraphicsSceneMouseEvent* event);
     void moveBox(UIItem* box, QGraphicsSceneMouseEvent* event);
 
 public slots:
-
-    //    void s_MousePressed();
-    //    void s_MouseReleased();
-    //    void s_MouseEntered();
-    //    void s_MouseLeaved();
-
-    //    virtual void s_InMousePressed(UIItem* obj, QMouseEvent* ev);
-    //    virtual void s_InMouseReleased(UIItem* obj, QMouseEvent* ev);
-    //    virtual void s_InMouseEntered();
-    //    virtual void s_InMouseLeaved();
-
-    //    virtual void s_OutMousePressed(UIItem* obj, QMouseEvent* ev);
-    //    virtual void s_OutMouseReleased(UIItem* obj, QMouseEvent* ev);
-    //    virtual void s_OutMouseEntered();
-    //    virtual void s_OutMouseLeaved();
 };
 }
 

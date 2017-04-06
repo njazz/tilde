@@ -6,21 +6,14 @@
 #include <QGraphicsProxyWidget>
 
 namespace qtpd {
-UIMessage::UIMessage() //UIObject* parent)
-//: UIObject(parent)
-{
-    //setPdObjectName("ui.msg");
+UIMessage::UIMessage()
 
-    //setMouseTracking(true);
+{
 
     deselect();
     _clicked = false;
 
     _editor = new QLineEdit(); //this
-
-
-
-    //qDebug() << "editor" << _editor;
 
     _editor->setFixedSize(65 - 5, 18);
     _editor->move(1, 1);
@@ -31,10 +24,6 @@ UIMessage::UIMessage() //UIObject* parent)
 
     QGraphicsProxyWidget* proxy = new QGraphicsProxyWidget(this);
     proxy->setWidget(_editor);
-    //scene()->addWidget(_editor);
-
-//    if (scene())
-//        scene()->addWidget(_editor);
 
     connect(_editor, &QLineEdit::editingFinished, this, &UIMessage::editorDone);
     connect(_editor, &QLineEdit::textEdited, this, &UIMessage::editorChanged);

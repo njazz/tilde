@@ -4,8 +4,7 @@
 #include "UIBox.h"
 
 namespace qtpd {
-UIBox::UIBox() //UIObjectItem* parent)
-//: UIObjectItem(parent)
+UIBox::UIBox()
 {
     qDebug("constructor");
 

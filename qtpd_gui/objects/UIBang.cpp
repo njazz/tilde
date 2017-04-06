@@ -5,11 +5,8 @@
 
 namespace qtpd {
 
-UIBang::UIBang() //UIObject* parent)
-//: UIObject(parent)
+UIBang::UIBang()
 {
-    //setPdObjectName("ui.bang");
-
     setSize(20, 20);
 
     setMinimumBoxWidth(20);
@@ -17,15 +14,8 @@ UIBang::UIBang() //UIObject* parent)
 
     setObjectSizeMode(os_Square);
 
-    //setMouseTracking(true);
-
     deselect();
     _clicked = false;
-
-    //    QPalette Pal(palette());
-    //    Pal.setColor(QPalette::Background, QColor(240, 240, 240));
-    //    setAutoFillBackground(true);
-    //    setPalette(Pal);
 
     setWidth(20);
     setHeight(20);

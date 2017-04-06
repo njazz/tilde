@@ -9,12 +9,8 @@ Port::Port(UIItem* parent)
 {
     setSize(QSize(10, 3));
 
-    //    setAttribute(Qt::WA_NoMousePropagation);
-
     _portType = portInlet;
     _portIndex = 0;
-
-
 }
 }
 

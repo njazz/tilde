@@ -212,7 +212,7 @@ void FileParser::parseStringListAtoms(Canvas* cmcanvas, QStringList list) //rena
             qDebug() << "objname" << objname;
             //temporary
 
-            std::string objData = objList.join(" ").toStdString();
+            QString objData = objList.join(" ");
 
             if (objList.at(0) == "pd") {
                 if (_pdParserPrevWindow) {

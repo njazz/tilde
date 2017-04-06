@@ -5,18 +5,13 @@
 
 namespace qtpd {
 
-UIFloat::UIFloat()//UIObject* parent)
-    //: UIObject(parent)
+UIFloat::UIFloat()
 {
-    //setPdObjectName("ui.float");
 
-    //setMinimumWidth(30);
     setSize(35, 20);
 
     setMinimumBoxWidth(30);
     setMinimumBoxHeight(20);
-
-    //setMouseTracking(true);
 
     deselect();
 

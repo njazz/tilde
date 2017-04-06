@@ -10,24 +10,9 @@
 
 namespace qtpd {
 
-UIScriptEditor::UIScriptEditor(QPlainTextEdit* parent)
-    : QPlainTextEdit(parent)
+UIScript::UIScript()
+
 {
-    //
-    _completer = new QCompleter(this);
-    _completer->setWidget(this);
-    QObject::connect(_completer, SIGNAL(activated(const QString&)),
-        this, SLOT(insertCompletion(const QString&)));
-
-    //PythonQtObjectPtr _context = PythonQt::self()->getMainModule();
-}
-
-UIScript::UIScript() //UIObject* parent)
-//: UIObject(parent)
-{
-    //setPdObjectName("ui.script");
-
-    //setMouseTracking(true);
 
     deselect();
     _clicked = false;
@@ -36,7 +21,7 @@ UIScript::UIScript() //UIObject* parent)
 
     _editor = new UIScriptEditor(); //weird
     _editor->setFixedSize(150 - 5, 300 - 27); //setFixedSize(65-5,18);
-//    _editor->move(2, 0);
+
     _editor->setFont(font);
     _editor->show();
     _editor->setAttribute(Qt::WA_MacShowFocusRect, 0);
@@ -55,23 +40,15 @@ UIScript::UIScript() //UIObject* parent)
     setSize(300, 200);
     setMinimumBoxWidth(300);
     setMinimumBoxHeight(200);
-    //    setWidth(300);
-    //    setHeight(200);
 
     QPalette Pal; //palette());
     Pal.setColor(QPalette::Background, QColor(224, 240, 255));
     Pal.setColor(QPalette::Base, QColor(240, 248, 255));
-    //setAutoFillBackground(true);
-    //setPalette(Pal);
     _editor->setPalette(Pal);
-
 
     QGraphicsProxyWidget* proxy = new QGraphicsProxyWidget(this);
     proxy->setWidget(_editor);
-    proxy->setPos(2,20);
-
-
-    //setBackgroundRole(QPalette::Background);
+    proxy->setPos(2, 20);
 
     //temporary. needs fixing
     hideSizeBox();
@@ -79,24 +56,24 @@ UIScript::UIScript() //UIObject* parent)
     //buttons
     QPushButton* b1 = new QPushButton("Run");
     b1->setFont(font);
-//    b1->move(40, 1);
+    //    b1->move(40, 1);
     b1->setFixedSize(40, 20);
     b1->show();
     connect(b1, &QPushButton::clicked, this, &UIScript::btnRun);
     proxy = new QGraphicsProxyWidget(this);
     proxy->setWidget(b1);
-    proxy->setPos(40,1);
+    proxy->setPos(40, 1);
 
     b1 = new QPushButton("Load");
     b1->setFont(font);
 
     b1->setFixedSize(50, 20);
-//    b1->move(100, 1);
+    //    b1->move(100, 1);
     b1->show();
     connect(b1, &QPushButton::clicked, this, &UIScript::btnLoad);
     proxy = new QGraphicsProxyWidget(this);
     proxy->setWidget(b1);
-    proxy->setPos(100,1);
+    proxy->setPos(100, 1);
 
     b1 = new QPushButton("Save");
     b1->setFont(font);
@@ -106,7 +83,7 @@ UIScript::UIScript() //UIObject* parent)
     connect(b1, &QPushButton::clicked, this, &UIScript::btnSave);
     proxy = new QGraphicsProxyWidget(this);
     proxy->setWidget(b1);
-    proxy->setPos(150,1);
+    proxy->setPos(150, 1);
 
     b1 = new QPushButton("Clear");
     b1->setFont(font);
@@ -116,7 +93,7 @@ UIScript::UIScript() //UIObject* parent)
     connect(b1, &QPushButton::clicked, this, &UIScript::btnClear);
     proxy = new QGraphicsProxyWidget(this);
     proxy->setWidget(b1);
-    proxy->setPos(220,1);
+    proxy->setPos(220, 1);
 
     setObjectSizeMode(os_Free);
 

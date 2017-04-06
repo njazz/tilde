@@ -1,3 +1,6 @@
+// (c) 2017 Alex Nadzharov
+// License: GPL3
+
 #ifndef SELECTIONRECT_H
 #define SELECTIONRECT_H
 
@@ -22,7 +25,7 @@ public:
     QPoint start() {return _start;}
     bool active(){return _active;}
 
-    void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget)
+    void paint(QPainter* painter, const QStyleOptionGraphicsItem* , QWidget* )
     {
 
         if (_active) {

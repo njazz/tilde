@@ -6,8 +6,8 @@
 #include "PatchWindow.h"
 
 namespace qtpd {
-UISubpatch::UISubpatch()//UIObjectItem* parent)
-    //: UIObjectItem(parent)
+UISubpatch::UISubpatch()
+
 {
     qDebug("constructor");
 
@@ -30,27 +30,22 @@ UISubpatch::UISubpatch()//UIObjectItem* parent)
 
 std::string UISubpatch::asPdFileString()
 {
-    //if (drawStyle() == ds_Box)
-    {
-        std::string ret;
+    std::string ret;
 
-        if (subpatchWindow()) {
-            QStringList patchList = ((PatchWindow*)subpatchWindow())->canvas->canvasAsPdStrings();
+    if (subpatchWindow()) {
+        QStringList patchList = ((PatchWindow*)subpatchWindow())->canvas->canvasAsPdStrings();
 
-            ret += patchList.join("\r\n").toStdString();
-        } else {
-            qDebug() << "missing subcanvas data";
-        }
-
-        ret += "#X restore ";
-        ret += std::to_string(pos().x()) + " " + std::to_string(pos().y()) + " ";
-
-        ret += objectData() + properties()->asPdFileString();
-        //ret += objectData();
-
-        return ret;
+        ret += patchList.join("\r\n").toStdString();
+    } else {
+        qDebug() << "missing subcanvas data";
     }
+
+    ret += "#X restore ";
+    ret += std::to_string(pos().x()) + " " + std::to_string(pos().y()) + " ";
+
+    ret += objectData() + properties()->asPdFileString();
+    //ret += objectData();
+
+    return ret;
 }
-
-
 }

@@ -52,7 +52,7 @@ public:
         std::string data1 = b->properties()->extractFromPdFileString(obj_name); //test
 
         // todo cleanup
-        const char* obj_name2 = data1.c_str(); //(QString(data1.c_str()).split(" ").at(0)).toStdString().c_str();
+        const char* obj_name2 = data1.c_str();
 
         // fix size changes
         b->setObjectData(data1);
@@ -116,7 +116,7 @@ public:
     ////
     /// \brief paint event
     ///
-    void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget* widget)
+    void paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)
     {
         p->setRenderHint(QPainter::HighQualityAntialiasing, true);
 
@@ -182,12 +182,8 @@ public:
         }
 
         if ((getEditMode() == em_Unlocked) && isSelected()) {
-            //            editor_->setText(QString(objectData().c_str()));
-            //            editor_->show();
-            //            editor_->setFocus();
-
             emit editObject(this);
-            qDebug("edit box");
+            //            qDebug("edit box");
             return;
         }
 
@@ -203,7 +199,6 @@ public:
     ///
     void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev)
     {
-        //viewport()->update();
         QGraphicsItem::mouseReleaseEvent(ev);
     }
 
@@ -239,9 +234,6 @@ public:
         int new_w = fm.width(QString(objectData().c_str())) + 10;
         new_w = (new_w < 25) ? 25 : new_w;
         setWidth(new_w);
-        //editor_->setFixedWidth(width() - 5);
-
-        //todo: del object and create new + patchcords
 
         //
         setInletsPos();

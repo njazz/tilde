@@ -1,8 +1,5 @@
 #include "NewLine.h"
 
-namespace qtpd{
-NewLine::NewLine()
-{
-
-}
+namespace qtpd {
+NewLine::NewLine() {}
 }

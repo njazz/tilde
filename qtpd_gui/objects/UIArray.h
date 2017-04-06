@@ -35,25 +35,19 @@ public:
 
     static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
     {
-        //TODO fix all constructors
-        UIArray* b = new UIArray(); //(UIObject*)parent);
+        UIArray* b = new UIArray();
         b->setCanvas((void*)parent);
 
         //truncate "ui.obj". todo cleanup
         QStringList list = QString(objectData).split(" ");
 
-        const char* obj_name = objectData.toStdString().c_str();
+        //const char* obj_name = objectData.toStdString().c_str();
 
         std::string data1 = b->properties()->extractFromPdFileString(objectData.toStdString()); //test
 
         // todo cleanup
-
         b->setObjectData(data1);
-
         b->autoResize();
-
-        //t_object* new_obj = 0;
-        //int in_c = 0, out_c = 0;
 
         if (!pdCanvas) {
             qDebug("bad pd canvas instance");
@@ -71,49 +65,18 @@ public:
             }
         }
 
-        //        if (!pd_Canvas) {
-        //            qDebug("bad pd canvas instance");
-        //            b->setErrorBox(true);
-        //        } else {
-        //            //temp pos = 0;
-        //            QPoint pos = QPoint(0, 0);
-        //            new_obj = cmp_create_object(pd_Canvas, (char*)obj_name, pos.x(), pos.y());
-        //        }
-
-        //        if (new_obj) {
-        //            in_c = cmp_get_inlet_count(new_obj);
-        //            out_c = cmp_get_outlet_count(new_obj);
-
-        //            qDebug("created object %s ins %i outs %i ptr %lu", obj_name, in_c, out_c, (long)new_obj);
-
-        //            b->setPdObject(new_obj);
-
-        //        } else {
-        //            qDebug("Error: no such object %s", obj_name);
-        //            //b->setErrorBox(true);
-        //            in_c = 0;
-        //            out_c = 0;
-        //        }
-
-        //        for (int i = 0; i < in_c; i++)
-        //            b->addInlet();
-        //        for (int i = 0; i < out_c; i++)
-        //            b->addOutlet();
-
         return (UIObject*)b;
     };
 
     void initProperties()
     {
         UIObject::initProperties();
-
         properties()->create("ArraySize", "Array", "0.1", 100);
     }
 
     ////
     /// \brief paint event
     ///
-    //void paintEvent(QPaintEvent*)
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)
     {
         QBrush brush(bgColor());
@@ -121,7 +84,6 @@ public:
         p->drawRect(boundingRect());
         p->setBrush(QBrush());
 
-        //QPainter p(viewport());
         p->setRenderHint(QPainter::HighQualityAntialiasing, true);
         p->scale(scale(), scale());
 
@@ -164,13 +126,6 @@ public:
             return;
         }
 
-        //open canvas for subpatch
-        //        if (getEditMode() != em_Unlocked) {
-        //            if (subpatchWindow()) {
-        //                subpatchWindow()->show();
-        //            }
-        //        }
-
         if ((getEditMode() == em_Unlocked) && isSelected()) {
 
             emit editObject(this);
@@ -189,9 +144,7 @@ public:
     ////
     /// \brief mouse up
     ///
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent*)
-    {
-    }
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent*) {}
 
     ////
     /// \brief mouse move
@@ -221,10 +174,6 @@ public:
         int new_w = fm.width(QString(objectData().c_str())) + 10;
         new_w = (new_w < 25) ? 25 : new_w;
         setWidth(new_w);
-        //editor_->setFixedWidth(width() - 5);
-
-        //todo: del object and create new + patchcords
-
         //
         setInletsPos();
         setOutletsPos();

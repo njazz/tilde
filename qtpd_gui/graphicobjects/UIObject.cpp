@@ -22,8 +22,6 @@ UIObject::UIObject(UIItem* parent)
     _sizeBox = new SizeBox(this);
     _sizeBox->hide();
 
-//    setAttribute(Qt::WA_Hover, true);
-
     connect(_sizeBox, &SizeBox::resizeBoxEvent, this, &UIObject::resizeBox);
 
     // repaint, handling for threads
@@ -37,8 +35,6 @@ UIObject::UIObject(UIItem* parent)
     _objectSizeMode = os_FixedHeight;
 
     setAcceptHoverEvents(true);
-
-
 }
 
 //---------------------------------------
@@ -50,8 +46,7 @@ void UIObject::resizeBox(int dx, int dy)
     if (_objectSizeMode == os_Free)
         setHeight(boundingRect().height() + dy);
 
-    if (_objectSizeMode == os_Square)
-    {
+    if (_objectSizeMode == os_Square) {
         setHeight(boundingRect().width());
     }
 
@@ -97,8 +92,6 @@ PropertyList* UIObject::properties()
 
 void UIObject::createContextMenu()
 {
-//    setContextMenuPolicy(Qt::NoContextMenu);
-
     pmProperties = new QAction(tr("Properties"), this);
     pmProperties->setShortcut(tr("Ctrl+Shift+P"));
     connect(pmProperties, &QAction::triggered, this, &UIObject::openPropertiesWindow);
@@ -120,7 +113,6 @@ void UIObject::createContextMenu()
     _popupMenu.addAction(pmOpen);
 }
 
-//void UIObjectItem::contextMenuEvent(QContextMenuEvent *event) //customContextMenuRequested(const QPoint &pos)
 void UIObject::showPopupMenu(QPoint pos)
 {
 
@@ -177,9 +169,9 @@ void UIObject::addInlet()
 void UIObject::addInlet(int _portClass_)
 {
     Port* new_in = new Port(this);
-    new_in->setPortType (portInlet);
-    new_in->setPortIndex (_inlets->size());
-    new_in->setPortClass (_portClass_);
+    new_in->setPortType(portInlet);
+    new_in->setPortIndex(_inlets->size());
+    new_in->setPortClass(_portClass_);
     new_in->setEditModeRef(this->getEditModeRef());
 
     _inlets->push_back(new_in);
@@ -207,9 +199,9 @@ void UIObject::addOutlet()
 void UIObject::addOutlet(int _portClass_)
 {
     Port* new_out = new Port(this);
-    new_out->setPortType (portOutlet);
-    new_out->setPortIndex (_outlets->size());
-    new_out->setPortClass (_portClass_);
+    new_out->setPortType(portOutlet);
+    new_out->setPortIndex(_outlets->size());
+    new_out->setPortClass(_portClass_);
     new_out->setEditModeRef(this->getEditModeRef());
 
     _outlets->push_back(new_out);
@@ -222,7 +214,7 @@ void UIObject::addOutlet(int _portClass_)
     setOutletsPos();
 }
 
-Port *UIObject::inletAt(int idx)
+Port* UIObject::inletAt(int idx)
 {
     if (idx < ((int)_inlets->size()))
         return _inlets->at(idx);
@@ -308,11 +300,6 @@ std::string UIObject::asPdFileString()
     return ret;
 }
 
-//void UIObjectItem::setPdObjectName(std::string name)
-//{
-//    pdObjectName_ = name;
-//}
-
 QMainWindow* UIObject::subpatchWindow()
 {
     return _SubpatchWindow;
@@ -339,7 +326,7 @@ void UIObject::setEditModeRef(t_editMode* canvasEditMode)
 
 //----------------------------------------
 
-void UIObject::resizeEvent()//QGraphicsSceneResizeEvent *event)
+void UIObject::resizeEvent() //QGraphicsSceneResizeEvent *event)
 {
 
     _sizeBox->move(boundingRect().width() - 7, boundingRect().height() - 7);
@@ -363,7 +350,7 @@ void UIObject::hoverEnterEvent(QGraphicsSceneHoverEvent*)
         _sizeBox->show();
 }
 
-void UIObject::hoverLeaveEvent(QGraphicsSceneHoverEvent *)
+void UIObject::hoverLeaveEvent(QGraphicsSceneHoverEvent*)
 {
     if (getEditMode() == em_Unlocked)
         _sizeBox->hide();
@@ -424,14 +411,13 @@ void UIObject::hideSizeBox()
     _sizeBox->hide();
 }
 
-
 void UIObject::setHelpName(QString name)
 {
     _fullHelpName = name;
-
 }
 
-QString UIObject::fullHelpName() {
+QString UIObject::fullHelpName()
+{
 
     QString name = _fullHelpName;
 
@@ -466,9 +452,7 @@ QString UIObject::fullHelpName() {
     cmp_post(p1.toStdString().c_str());
 
     return name;
-
 }
-
 
 // -------
 
@@ -486,29 +470,21 @@ void UIObject::openHelpWindow()
     }
 }
 
-
-
-
-
 void UIObject::s_repaint() //needed for proper threading
 {
-     update();
+    update();
 }
-
 
 void UIObject::propertyChanged(QString pname)
 {
-    // spaghetti again
 
     if (pname == "Size")
         setSize(properties()->get("Size")->asQSize());
 
     //just visuals
-//    if (pname == "FontSize")
-//         viewport()->update();
-//    if (pname == "BorderColor")
-//         viewport()->update();
+    //    if (pname == "FontSize")
+    //         viewport()->update();
+    //    if (pname == "BorderColor")
+    //         viewport()->update();
 }
-
-
 }

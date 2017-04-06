@@ -1,3 +1,6 @@
+// (c) 2017 Alex Nadzharov
+// License: GPL3
+
 #ifndef NewLine_H
 #define NewLine_H
 
@@ -16,13 +19,12 @@ public:
     NewLine();
 
     void setActive(bool active) { _active = active; }
-    bool active(){return _active;}
+    bool active() { return _active; }
     void setStart(QPoint start) { _start = start; }
     void setEnd(QPoint end) { _end = end; }
 
-    void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget)
+    void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*)
     {
-
         if (_active) {
 
             painter->setPen(QPen(QColor(128, 128, 128), 1, Qt::DashLine, Qt::SquareCap, Qt::BevelJoin));
