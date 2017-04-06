@@ -22,16 +22,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-CONFIG += static
+#CONFIG += static
 
+win32: CONFIG -= WithPython
+
+WithPython {
 #include(python/build/python.prf)
   INCLUDEPATH += python/py2.7headers/
   macx: LIBS += -F/System/Library/Frameworks -framework Python
 
-defined(WITH_PYTHON)
-{
 SOURCES += python/PythonQtScriptingConsole.cpp \
     python/wrappers/py_wrappers.cpp \
+    objects/UIScriptEditor.cpp \
+    objects/UIScript.cpp \
+
 
 HEADERS += \
     python/PythonQtScriptingConsole.h \
@@ -64,17 +68,22 @@ HEADERS += \
     python/headers/PythonQtVariants.h \
     python/wrappers/py_qtpd.h \
     python/wrappers/py_wrappers.h \
+    objects/UIScriptEditor.h
+    objects/UIScript.h \
 
-LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt_QtAll$${DEBUG_EXT}.1.0.0
-LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt$${DEBUG_EXT}.1.0.0
+    LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt_QtAll$${DEBUG_EXT}.1.0.0
+    LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt$${DEBUG_EXT}.1.0.0
 
-LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt_QtAll$${DEBUG_EXT}.1
-LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt$${DEBUG_EXT}.1
+    LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt_QtAll$${DEBUG_EXT}.1
+    LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt$${DEBUG_EXT}.1
 
-DEPENDPATH += $$PWD/../PythonQt/lib/
+    DEPENDPATH += $$PWD/../PythonQt/lib/
 
-INCLUDEPATH += $$PWD/python/headers
-DEPENDPATH += $$PWD/python/headers
+    INCLUDEPATH += $$PWD/python/headers
+    DEPENDPATH += $$PWD/python/headers
+
+    INCLUDEPATH +=     python/headers/
+
 }
 
 SOURCES += main.cpp\
@@ -87,7 +96,6 @@ SOURCES += main.cpp\
     objects/UIToggle.cpp \
     objects/UIBang.cpp \
     objects/UIText.cpp \
-    objects/UIScript.cpp \
     oopd/OOPD.cpp \
     oopd/UIClass.cpp \
     oopd/UIInstance.cpp \
@@ -121,7 +129,7 @@ SOURCES += main.cpp\
     objects/UISubpatch.cpp \
     graphicobjects/UIObject.cpp \
     Clipboard.cpp \
-    objects/UIScriptEditor.cpp
+
 
 
 HEADERS  += \
@@ -130,7 +138,6 @@ HEADERS  += \
     objects/UIArray.h \
     objects/UIToggle.h \
     objects/UIText.h \
-    objects/UIScript.h \
     objects/UIFloat.h \
     objects/UIBox.h \
     objects/UIMessage.h \
@@ -177,7 +184,11 @@ HEADERS  += \
     graphicobjects/UIObject.h \
     Clipboard.h \
     CanvasData.h \
-    objects/UIScriptEditor.h
+    lib_headers/g_canvas.h \
+    lib_headers/m_pd.h \
+    lib_headers/ceammc_atomlist.h \
+    lib_headers/ceammc_atom.h
+
 
 
 FORMS    += \
@@ -185,8 +196,18 @@ FORMS    += \
     canvasmenu.ui \
     window/cm_basewindow.ui
 
+CONFIG += static
+
+win32:DEFINES += PD_INTERNAL WINVER=0x502
+win32:DEFINES -= _WIN32
+
+#win32: LIBS += $$OUT_PWD/../ceammc_lib/ceammc_lib/debug/libqtpd_ceammc_lib.a
+win32: LIBS += $$OUT_PWD/../qtpd_lib/debug/libqtpd.a
+
 macx: LIBS += "../qtpd_lib/libqtpd.a"
 macx: LIBS += "/usr/local/lib/libportaudio.dylib"
+
+
 
 
 DISTFILES += \
@@ -199,21 +220,20 @@ DISTFILES += \
 #include(python/build/PythonQt_QtAll.prf)
 #include(python/build/PythonQt.prf)
 
-win32:RC_ICONS += your_icon.ico
+win32:RC_ICONS += pd_ceammc.ico
 
 INCLUDEPATH += \
-    "../qtpd_lib/src/" \
+    lib_headers/ \
     window/ \
     objects/ \
     properties/ \
-    python/headers/ \
     graphicobjects/
 
-PRECOMPILED_HEADER =
+#PRECOMPILED_HEADER =
 
 #$$PWD
 
-CONFIG += static
+
 
 # check if debug or release
 CONFIG(debug, debug|release) {

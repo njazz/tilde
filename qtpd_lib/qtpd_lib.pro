@@ -8,8 +8,12 @@
 QT       -= gui
 
 TARGET = qtpd
+
 TEMPLATE = lib
-CONFIG += staticlib
+
+#win32:CONFIG += staticlib
+
+macx:CONFIG += staticlib
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked as deprecated (the exact warnings
@@ -25,10 +29,24 @@ DEFINES += QT_DEPRECATED_WARNINGS \
     HAVE_LIBDL
 }
 
-win32{
-DEFINES += PD \
-    USEAPI_PORTAUDIO \
+win32 {
+DEFINES += \
+    QT_DEPRECATED_WARNINGS \
+    PD \
+    WINDOWS \
+    MINGW \
+
+#    USEAPI_PORTAUDIO \
     THREAD_LOCKING \
+
+    QMAKE_CXXFLAGS += -std=c++11 -fpermissive
+    QMAKE_CFLAGS += -std=gnu99 -DWINVER=0x502 -DWIN32 -DPD_INTERNAL
+
+    QMAKE_LFLAGS =  -Wl,--export-all-symbols  -lws2_32 -lkernel32 -shared
+
+    QMAKE_CC = gcc
+
+    #CONFIG += ordered
 
 }
 
@@ -38,20 +56,10 @@ DEFINES += PD \
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-SOURCES += pdlib.cpp \
-    ceammc-lib/ceammc.cpp \
-    ceammc-lib/ceammc_atom.cpp \
-    ceammc-lib/ceammc_atomlist.cpp \
-#    ceammc-lib/ceammc_fn_list.cpp \
-#    ceammc-lib/ceammc_fn_vector.cpp \
-    ceammc-lib/ceammc_format.cpp \
-    ceammc-lib/ceammc_impl.cpp \
-    ceammc-lib/ceammc_log.cpp \
-    ceammc-lib/ceammc_message.cpp \
-    ceammc-lib/ceammc_object.cpp \
-#    ceammc-lib/ceammc_property.cpp \
-#    ceammc-lib/ceammc_timeline.cpp \
-    ceammc-lib/ceammc.c \
+
+
+SOURCES += \
+    src/m_pd.c \
     src/d_arithmetic.c \
     src/d_array.c \
     src/d_ctl.c \
@@ -68,6 +76,56 @@ SOURCES += pdlib.cpp \
     src/d_resample.c \
     src/d_soundfile.c \
     src/d_ugen.c \
+    src/m_atom.c \
+    src/m_binbuf.c \
+    src/m_conf.c \
+    src/m_glob.c \
+    src/m_memory.c \
+    src/m_obj.c \
+    src/m_sched.c \
+    src/m_class.c \
+    src/s_audio.c \
+#    src/s_audio_alsa.c \
+#    src/s_audio_alsamm.c \
+#    src/s_audio_audiounit.c \
+    src/s_audio_dummy.c \
+#    src/s_audio_esd.c \
+#    src/s_audio_jack.c \
+#    src/s_audio_mmio.c \
+#    src/s_audio_oss.c \
+    src/s_audio_paring.c \
+    src/s_entry.c \
+    src/s_file.c \
+    src/s_inter.c \
+    src/s_loader.c \
+    src/s_main.c \
+    src/s_midi.c \
+#    src/s_midi_alsa.c \
+    src/s_midi_dummy.c \
+#    src/s_midi_oss.c \
+#    src/s_midi_pm.c \
+    src/s_path.c \
+    src/s_print.c \
+    src/s_utf8.c \
+#    src/s_watchdog.c \
+#    src/u_pdreceive.c \
+#    src/u_pdsend.c \
+    src/x_acoustics.c \
+    src/x_arithmetic.c \
+    src/x_array.c \
+    src/x_connective.c \
+    src/x_gui.c \
+    src/x_interface.c \
+    src/x_list.c \
+    src/x_midi.c \
+    src/x_misc.c \
+    src/x_net.c \
+    src/x_scalar.c \
+    src/x_text.c \
+    src/x_time.c \
+    src/x_vexp.c \
+    src/x_vexp_fun.c \
+    src/x_vexp_if.c \
     src/g_all_guis.c \
     src/g_array.c \
     src/g_bang.c \
@@ -93,58 +151,6 @@ SOURCES += pdlib.cpp \
     src/g_vdial.c \
     src/g_vslider.c \
     src/g_vumeter.c \
-    src/m_atom.c \
-    src/m_binbuf.c \
-    src/m_class.c \
-    src/m_conf.c \
-    src/m_glob.c \
-    src/m_memory.c \
-    src/m_obj.c \
-    src/m_pd.c \
-    src/m_sched.c \
-    src/s_audio.c \
-#    src/s_audio_alsa.c \
-#    src/s_audio_alsamm.c \
-#    src/s_audio_audiounit.c \
-#    src/s_audio_dummy.c \
-#    src/s_audio_esd.c \
-#    src/s_audio_jack.c \
-#    src/s_audio_mmio.c \
-#    src/s_audio_oss.c \
-    src/s_audio_pa.c \
-    src/s_audio_paring.c \
-    src/s_entry.c \
-    src/s_file.c \
-    src/s_inter.c \
-    src/s_loader.c \
-    src/s_main.c \
-    src/s_midi.c \
-#    src/s_midi_alsa.c \
-    src/s_midi_dummy.c \
-#    src/s_midi_oss.c \
-#    src/s_midi_pm.c \
-    src/s_path.c \
-    src/s_print.c \
-    src/s_utf8.c \
-    src/s_watchdog.c \
-    src/u_pdreceive.c \
-    src/u_pdsend.c \
-    src/x_acoustics.c \
-    src/x_arithmetic.c \
-    src/x_array.c \
-    src/x_connective.c \
-    src/x_gui.c \
-    src/x_interface.c \
-    src/x_list.c \
-    src/x_midi.c \
-    src/x_misc.c \
-    src/x_net.c \
-    src/x_scalar.c \
-    src/x_text.c \
-    src/x_time.c \
-    src/x_vexp.c \
-    src/x_vexp_fun.c \
-    src/x_vexp_if.c \
 #   just a list of objects. would not be used
 #    creamlibrary/Sources/c.blackboard.cpp \
 #    creamlibrary/Sources/c.breakpoints.cpp \
@@ -181,12 +187,12 @@ SOURCES += pdlib.cpp \
 #    ceammc-ui/ui_ecanvas.cpp \
 #    ceammc-ui/ui_scope~.cpp \
 #
-    CicmWrapper/Sources/ebox.c \
-    CicmWrapper/Sources/eclass.c \
-    CicmWrapper/Sources/ecommon.c \
-    CicmWrapper/Sources/egraphics.c \
-    CicmWrapper/Sources/eobj.c \
-    CicmWrapper/Sources/epopup.c \
+#    CicmWrapper/Sources/ebox.c \
+#    CicmWrapper/Sources/eclass.c \
+#    CicmWrapper/Sources/ecommon.c \
+#    CicmWrapper/Sources/egraphics.c \
+#    CicmWrapper/Sources/eobj.c \
+#    CicmWrapper/Sources/epopup.c \
 #
     ui_objects/ui_bang.cpp \
     ui_objects/ui_float.cpp \
@@ -197,57 +203,73 @@ SOURCES += pdlib.cpp \
     ui_objects/pdinstance.cpp \
     ui_objects/pdmethod.cpp \
     ui_objects/pdproperty.cpp \
-    RtMidi/RtMidi.cpp
+    RtMidi/RtMidi.cpp \
+    pdlib.cpp \
+#    ceammc-lib/ceammc.cpp \
+#    ceammc-lib/ceammc_atom.cpp \
+#    ceammc-lib/ceammc_atomlist.cpp \
+##    ceammc-lib/ceammc_fn_list.cpp \
+##    ceammc-lib/ceammc_fn_vector.cpp \
+#    ceammc-lib/ceammc_format.cpp \
+#    ceammc-lib/ceammc_impl.cpp \
+#    ceammc-lib/ceammc_log.cpp \
+#    ceammc-lib/ceammc_message.cpp \
+#    ceammc-lib/ceammc_object.cpp \
+##    ceammc-lib/ceammc_property.cpp \
+##    ceammc-lib/ceammc_timeline.cpp \
+#    ceammc-lib/ceammc.c \
 #
 
+defined(USEAPI_PORTAUDIO) SOURCES += src/s_audio_pa.c
+
 HEADERS += \
-    ceammc-lib/ceammc.h \
-    ceammc-lib/ceammc.hpp \
-    ceammc-lib/ceammc_atom.h \
-    ceammc-lib/ceammc_atomlist.h \
-    #ceammc-lib/ceammc_autopreset.h \
-    ceammc-lib/ceammc_bpf.h \
-    ceammc-lib/ceammc_factory.h \
-    ceammc-lib/ceammc_faust.h \
-    ceammc-lib/ceammc_fn_list.h \
-    ceammc-lib/ceammc_fn_vector.h \
-    ceammc-lib/ceammc_format.h \
-    ceammc-lib/ceammc_globaldata.h \
-    ceammc-lib/ceammc_gui.h \
-    ceammc-lib/ceammc_impl.h \
-    ceammc-lib/ceammc_log.h \
-    ceammc-lib/ceammc_message.h \
-    ceammc-lib/ceammc_object.h \
-    ceammc-lib/ceammc_property.h \
-    ceammc-lib/ceammc_timeline.h \
-    ceammc-lib/memrss.h \
-    ceammc-lib/memsize.h \
-    src/g_all_guis.h \
-    src/g_canvas.h \
-    src/g_draw.h \
-    src/g_draw_tcl.h \
-    src/g_style.h \
-    src/m_imp.h \
     src/m_pd.h \
+    src/m_imp.h \
     src/s_audio_alsa.h \
     src/s_audio_paring.h \
     src/s_stuff.h \
     src/s_utf8.h \
     src/x_vexp.h \
+    src/g_all_guis.h \
+    src/g_canvas.h \
+    src/g_draw.h \
+    src/g_draw_tcl.h \
+    src/g_style.h \
     portaudio/include/portaudio.h \
-    creamlibrary/c.library.hpp \
-    CicmWrapper/Sources/cicm_wrapper.h \
-    CicmWrapper/Sources/ebox.h \
-    CicmWrapper/Sources/eclass.h \
-    CicmWrapper/Sources/ecommon.h \
-    CicmWrapper/Sources/edefine.h \
-    CicmWrapper/Sources/egraphics.h \
-    CicmWrapper/Sources/enative.h \
-    CicmWrapper/Sources/eobj.h \
-    CicmWrapper/Sources/epdmax.h \
-    CicmWrapper/Sources/epopup.h \
+#    creamlibrary/c.library.hpp \
+#    CicmWrapper/Sources/cicm_wrapper.h \
+#    CicmWrapper/Sources/ebox.h \
+#    CicmWrapper/Sources/eclass.h \
+#    CicmWrapper/Sources/ecommon.h \
+#    CicmWrapper/Sources/edefine.h \
+#    CicmWrapper/Sources/egraphics.h \
+#    CicmWrapper/Sources/enative.h \
+#    CicmWrapper/Sources/eobj.h \
+#    CicmWrapper/Sources/epdmax.h \
+#    CicmWrapper/Sources/epopup.h \
     pdlib.hpp \
-    RtMidi/RtMidi.h
+    RtMidi/RtMidi.h \
+#    ceammc-lib/ceammc.h \
+#    ceammc-lib/ceammc.hpp \
+    ceammc-lib/ceammc_atom.h \
+    ceammc-lib/ceammc_atomlist.h \
+    #ceammc-lib/ceammc_autopreset.h \
+#    ceammc-lib/ceammc_bpf.h \
+#    ceammc-lib/ceammc_factory.h \
+#    ceammc-lib/ceammc_faust.h \
+#    ceammc-lib/ceammc_fn_list.h \
+#    ceammc-lib/ceammc_fn_vector.h \
+#    ceammc-lib/ceammc_format.h \
+#    ceammc-lib/ceammc_globaldata.h \
+#    ceammc-lib/ceammc_gui.h \
+#    ceammc-lib/ceammc_impl.h \
+#    ceammc-lib/ceammc_log.h \
+#    ceammc-lib/ceammc_message.h \
+#    ceammc-lib/ceammc_object.h \
+#    ceammc-lib/ceammc_property.h \
+#    ceammc-lib/ceammc_timeline.h \
+#    ceammc-lib/memrss.h \
+#    ceammc-lib/memsize.h \
 
 INCLUDEPATH += src/ \
     extra/ \
@@ -264,7 +286,10 @@ unix {
     INSTALLS += target
 }
 
-PRECOMPILED_HEADER = src/m_pd.h
+win32: LIBS += -lws2_32
+win32: LIBS += $$OUT_PWD/../ceammc_lib/ceammc_lib/debug/libqtpd_ceammc_lib.a
+
+#PRECOMPILED_HEADER = src/m_pd.h
 
 #DISTFILES += \
 #    src/pd.ico \

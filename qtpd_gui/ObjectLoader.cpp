@@ -16,7 +16,9 @@ void ObjectLoader::loadObjects()
     addUIobject("ui.bang", &UIBang::createObject);
     addUIobject("ui.toggle", &UIToggle::createObject);
 
+    #ifdef WITH_PYTHON
     addUIobject("ui.script", &UIScript::createObject);
+    #endif
 
     addUIobject("ui.array", &UIArray::createObject);
 

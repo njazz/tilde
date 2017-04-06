@@ -6,7 +6,11 @@
 
 #include <QObject>
 
+#ifdef WITH_PYTHON
+
 #include "python/PythonQtScriptingConsole.h"
+
+#endif
 
 namespace qtpd {
 ////
@@ -16,7 +20,9 @@ namespace qtpd {
 class BaseMenu : public QObject {
     Q_OBJECT
 
+    #ifdef WITH_PYTHON
     static PythonQtScriptingConsole* pythonConsole_;
+#endif
 
 public:
     explicit BaseMenu()

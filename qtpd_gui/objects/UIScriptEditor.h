@@ -1,6 +1,7 @@
 #ifndef UISCRIPTEDITOR_H
 #define UISCRIPTEDITOR_H
 
+
 #include "PythonQt.h"
 
 #include <QPlainTextEdit>

@@ -21,7 +21,6 @@
 #include <PythonQt_QtAll.h>
 
 #include "python/wrappers/py_wrappers.h"
-
 #include "python/PythonQtScriptingConsole.h"
 #endif
 

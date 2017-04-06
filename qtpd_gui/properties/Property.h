@@ -4,7 +4,7 @@
 #ifndef CM_PROPERTY_H
 #define CM_PROPERTY_H
 
-#include "../ceammc-lib/ceammc_atomlist.h"
+#include "ceammc_atomlist.h"
 #include <QColor>
 #include <QPoint>
 #include <QRect>

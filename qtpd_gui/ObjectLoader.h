@@ -22,7 +22,9 @@
 
 #include "UIArray.h"
 
+#ifdef WITH_PYTHON
 #include "UIScript.h"
+#endif
 
 #include "oopd/UIClass.h"
 #include "oopd/UIInstance.h"

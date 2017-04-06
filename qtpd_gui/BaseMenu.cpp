@@ -13,7 +13,11 @@
 
 namespace qtpd {
 
+#ifdef WITH_PYTHON
+
 PythonQtScriptingConsole* BaseMenu::pythonConsole_;
+
+#endif
 
 ////
 /// \brief new patch window
@@ -47,6 +51,7 @@ void BaseMenu::pdWindow()
 
 void BaseMenu::pythonConsole()
 {
+    #ifdef WITH_PYTHON
     if (pythonConsole_) {
         if (pythonConsole_->isVisible())
             pythonConsole_->hide();
@@ -54,5 +59,9 @@ void BaseMenu::pythonConsole()
             pythonConsole_->show();
         }
     }
+
+    #else
+    cmp_post("This build is compiled without Python!");
+    #endif
 }
 }
