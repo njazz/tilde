@@ -321,14 +321,21 @@ public:
         arrangeMenu->addAction(zoomOutAct);
     }
 
-    ///////
+    // ----------
 
     void resizeEvent(QResizeEvent* event)
     {
-        //fix later
-        canvas->setMinimumSize(QSize(width() - canvas->x(), height() - canvas->y()));
+        canvas->move(0,0);
 
-        canvas->setWindowSize(size());
+        //fix later
+        //canvas->setMinimumSize(QSize(width() - canvas->x(), height() - canvas->y()));
+
+        //temporary
+        //event->size()
+        canvas->setWindowSize(event->size());
+
+        //FIX
+        canvas->move(0,0);
     }
 
     //----------------------------------------------------------------------------------------
@@ -348,8 +355,10 @@ public:
 
         if (canvas->getEditMode() != em_Locked) {
             UIObject* newMsg = canvas->createObject("ui.msg", QPoint(100, 100));
-            canvas->dragObject = newMsg;
-            newMsg->show();
+            canvas->setDragObject ( newMsg );
+            //todo
+            canvas->update();
+            //newMsg->show();
         }
     }
 
@@ -358,8 +367,12 @@ public:
 
         if (canvas->getEditMode() != em_Locked) {
             UIObject* newFlo = canvas->createObject("ui.float 0", QPoint(100, 100));
-            canvas->dragObject = newFlo;
-            newFlo->show();
+            canvas->setDragObject ( newFlo );
+
+            //todo
+            canvas->update();
+
+            //newFlo->show();
         }
     }
 
@@ -368,8 +381,11 @@ public:
 
         if (canvas->getEditMode() != em_Locked) {
             UIObject* newTxt = canvas->createObject("ui.text", QPoint(100, 100));
-            canvas->dragObject = newTxt;
-            newTxt->show();
+           canvas->setDragObject ( newTxt );
+
+           //todo
+           canvas->update();
+           // newTxt->show();
         }
     }
 
@@ -377,8 +393,11 @@ public:
     {
         if (canvas->getEditMode() != em_Locked) {
             UIObject* newBng = canvas->createObject("ui.bang", QPoint(100, 100));
-            canvas->dragObject = newBng;
-            newBng->show();
+            canvas->setDragObject ( newBng );
+
+            //todo
+            canvas->update();
+            //newBng->show();
         }
     }
 
@@ -386,8 +405,11 @@ public:
     {
         if (canvas->getEditMode() != em_Locked) {
             UIObject* newBng = canvas->createObject("ui.toggle", QPoint(100, 100));
-            canvas->dragObject = newBng;
-            newBng->show();
+            canvas->setDragObject ( newBng);
+
+            //todo
+            canvas->update();
+            //newBng->show();
         }
     }
 
@@ -395,8 +417,11 @@ public:
     {
         if (canvas->getEditMode() != em_Locked) {
             UIObject* newBng = canvas->createObject("ui.script", QPoint(100, 100));
-            canvas->dragObject = newBng;
-            newBng->show();
+            canvas->setDragObject (newBng);
+
+            //todo
+            canvas->update();
+            //newBng->show();
         }
     }
 
@@ -404,8 +429,11 @@ public:
     {
         if (canvas->getEditMode() != em_Locked) {
             UIObject* newArr = canvas->createObject("ui.array", QPoint(100, 100));
-            canvas->dragObject = newArr;
-            newArr->show();
+            canvas->setDragObject (newArr);
+
+            //todo
+            canvas->update();
+            //newArr->show();
         }
     }
 
@@ -413,8 +441,11 @@ public:
     {
         if (canvas->getEditMode() != em_Locked) {
             UIObject* newArr = canvas->createObject("pdclass", QPoint(100, 100));
-            canvas->dragObject = newArr;
-            newArr->show();
+            canvas->setDragObject (newArr);
+
+            //todo
+            canvas->update();
+            //newArr->show();
         }
     }
 
@@ -422,8 +453,11 @@ public:
     {
         if (canvas->getEditMode() != em_Locked) {
             UIObject* newArr = canvas->createObject("pdinstance", QPoint(100, 100));
-            canvas->dragObject = newArr;
-            newArr->show();
+            canvas->setDragObject (newArr);
+
+            //todo
+            canvas->update();
+            //newArr->show();
         }
     }
 
@@ -456,14 +490,14 @@ public:
     {
         showGridAct->setChecked(showGridAct->isChecked());
         canvas->setGridEnabled(showGridAct->isChecked());
-        canvas->repaint();
+        //canvas->viewport()->update();//canvas->sceneRect());
     }
 
     void setGridSnap()
     {
         snapToGridAct->setChecked(snapToGridAct->isChecked());
         canvas->setGridSnap(snapToGridAct->isChecked());
-        //canvas->repaint();
+        //canvas-> viewport()->update();
     }
 
     /////
@@ -480,8 +514,10 @@ public:
 
     void closeEvent(QCloseEvent* event)
     {
-        if (!canvas->keepPdObject())
-            cmp_closepatch((t_canvas*)canvas->pdObject());
+        // FIX
+
+        //if (!canvas->keepPdObject())
+            //cmp_closepatch((t_canvas*)canvas->pdObject());
 
         event->accept();
     }

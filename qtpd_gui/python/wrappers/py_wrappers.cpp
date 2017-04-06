@@ -29,7 +29,7 @@ pyWrapper::pyWrapper()
 
 }
 
-PythonQtObjectPtr pyWrapper::withCanvas(UIObject* canvas)
+PythonQtObjectPtr pyWrapper::withCanvas(QObject *canvas)
 {
     PythonQtObjectPtr ctx;
     ctx = PythonQt::self()->createUniqueModule();
@@ -43,7 +43,7 @@ PythonQtObjectPtr pyWrapper::withCanvas(UIObject* canvas)
     return ctx;
 }
 
-PythonQtObjectPtr pyWrapper::withCanvasAndPdObject(UIObject* canvas, t_object* obj)
+PythonQtObjectPtr pyWrapper::withCanvasAndPdObject(QObject* canvas, t_object* obj)
 {
     PythonQtObjectPtr ctx;
     ctx = PythonQt::self()->createUniqueModule();
@@ -60,7 +60,7 @@ PythonQtObjectPtr pyWrapper::withCanvasAndPdObject(UIObject* canvas, t_object* o
 
 // weird method name competition winner
 
-PythonQtObjectPtr pyWrapper::withCanvasPdObjectAndInput(UIObject* canvas, t_object* obj, QStringList* list)
+PythonQtObjectPtr pyWrapper::withCanvasPdObjectAndInput(QObject *canvas, t_object* obj, QStringList* list)
 {
     PythonQtObjectPtr ctx;
     ctx = PythonQt::self()->createUniqueModule();

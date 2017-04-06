@@ -18,6 +18,8 @@
 
 #include "OOPDHeaders.h"
 
+#include <QGraphicsView>
+
 namespace qtpd {
 
 ////
@@ -38,10 +40,10 @@ private:
     std::string _methodName;
 
 public:
-    explicit UIMethod(UIObject* parent = 0);
+    explicit UIMethod();//UIObject* parent = 0);
     //~UIMethod();
 
-    static UIObject* createObject(std::string objectData, t_canvas* pd_Canvas, UIWidget* parent = 0)
+    static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
     {
         //TODO fix all constructors
         //t_canvas* pd_Canvas;
@@ -49,14 +51,15 @@ public:
         if (objectData == "")
             objectData = "method";
 
-        UIMethod* b = new UIMethod((UIObject*)parent);
+        UIMethod* b = new UIMethod();//(UIObject*)parent);
+        b->setCanvas((void*)parent);
 
         //truncate "ui.obj". todo cleanup
-        QStringList list = QString(objectData.c_str()).split(" ");
+        QStringList list = QString(objectData).split(" ");
 
-        const char* obj_name = objectData.c_str();
+        const char* obj_name = objectData.toStdString().c_str();
         std::string data1 = b->properties()->extractFromPdFileString(obj_name); //test
-        const char* obj_name2 = data1.c_str();
+        //const char* obj_name2 = data1.c_str();
 
         // fix size changes
         b->setObjectData(data1);
@@ -76,13 +79,13 @@ public:
         t_object* new_obj = 0;
         int in_c = 0, out_c = 0;
 
-        if (!pd_Canvas) {
+        if (!pdCanvas) {
             qDebug("bad pd canvas instance");
             b->setErrorBox(true);
         } else {
             //temp pos = 0;
             QPoint pos = QPoint(0, 0);
-            new_obj = cmp_create_object(pd_Canvas, "pdmethod", pos.x(), pos.y());
+            new_obj = cmp_create_object(pdCanvas, "pdmethod", pos.x(), pos.y());
         }
 
         if (new_obj) {
@@ -93,7 +96,7 @@ public:
 
             cmp_connectUI((t_pd*)new_obj, (void*)b, &UIMethod::updateUI);
 
-            b->setHelpName("method-help.pd");
+            b->setHelpName("method-help->pd");
 
         } else {
             qDebug("Error: no such object 'pdmethod'");
@@ -147,31 +150,36 @@ public:
     ////
     /// \brief paint event
     ///
-    void paintEvent(QPaintEvent*)
+    virtual void paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)
     {
-        QPainter p(this);
-        p.setRenderHint(QPainter::HighQualityAntialiasing, true);
-        p.scale(scale(), scale());
+        QBrush brush(bgColor());
+        p->setBrush(brush);
+        p->drawRect(boundingRect());
+        p->setBrush(QBrush());
+
+        //QPainter p(viewport());
+        p->setRenderHint(QPainter::HighQualityAntialiasing, true);
+        p->scale(scale(), scale());
 
         //remove this later
         if (subpatchWindow()) {
-            p.setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-            p.drawRect(0, 2, width(), height() - 4);
+            p->setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p->drawRect(0, 2, width(), height() - 4);
         }
 
         QColor rectColor = (errorBox()) ? QColor(255, 0, 0) : properties()->get("BorderColor")->asQColor(); //QColor(128, 128, 128);
-        p.setPen(QPen(rectColor, 2 + _isAbstraction, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-        p.drawRect(0, 0, width(), height());
+        p->setPen(QPen(rectColor, 1 + _isAbstraction, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p->drawRect(0, 0, width(), height());
         QTextOption* op = new QTextOption;
         op->setAlignment(Qt::AlignLeft);
-        p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p->setPen(QPen(QColor(0, 0, 0), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
-        p.setFont(QFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize(), 0, false));
-        p.drawText(2, 3, width() - 2, height() - 3, 0, objectData().c_str(), 0);
+        p->setFont(QFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize(), 0, false));
+        p->drawText(2, 3, width() - 2, height() - 3, 0, objectData().c_str(), 0);
 
         if (isSelected()) {
-            p.setPen(QPen(QColor(0, 192, 255), 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-            p.drawRect(0, 0, width(), height());
+            p->setPen(QPen(QColor(0, 192, 255), 1, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p->drawRect(0, 0, width(), height());
         }
     }
 
@@ -179,12 +187,12 @@ public:
     /// \brief mouse down
     /// \param ev
     ///
-    void mousePressEvent(QMouseEvent* ev)
+    void mousePressEvent(QGraphicsSceneMouseEvent* ev)
     {
         //context menu
         if (ev->button() == Qt::RightButton) {
-            QPoint pos = mapToGlobal(ev->pos());
-            showPopupMenu(pos);
+            //QPoint pos = mapToGlobal(ev->pos());
+            //showPopupMenu(pos);
             ev->accept();
             return;
         }
@@ -213,22 +221,22 @@ public:
         }
 
         emit selectBox(this, ev);
-        dragOffset = ev->pos();
+        dragOffset = ev->pos().toPoint();
     }
 
     ////
     /// \brief mouse up
     ///
-    void mouseReleaseEvent(QMouseEvent*)
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent*)
     {
-        repaint();
+         update();
     }
 
     ////
     /// \brief mouse move
     /// \param event
     ///
-    void mouseMoveEvent(QMouseEvent* event)
+    void mouseMoveEvent(QGraphicsSceneMouseEvent* event)
     {
         if (event->buttons() & Qt::LeftButton) {
             emit moveBox(this, event);
@@ -251,7 +259,7 @@ public:
         QFontMetrics fm(myFont);
         int new_w = fm.width(QString(objectData().c_str())) + 10;
         new_w = (new_w < 25) ? 25 : new_w;
-        setFixedWidth(new_w);
+        setWidth(new_w);
         //editor_->setFixedWidth(width() - 5);
 
         //todo: del object and create new + patchcords
@@ -286,7 +294,7 @@ signals:
 private slots:
     void updateUISlot()
     {
-        repaint();
+         update();
     }
 };
 }

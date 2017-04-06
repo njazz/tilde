@@ -132,7 +132,7 @@ public:
     {
         QStringList ret;
 
-        for (int i = 0; i < _data.size(); i++) {
+        for (size_t i = 0; i < _data.size(); i++) {
 
             ret.push_back(_data.at(i).asString().c_str());
         }
@@ -145,7 +145,7 @@ public:
         std::string ret = "";
 
         if (_data.size() > 1) {
-            for (int i = 0; i < _data.size(); i++) {
+            for (size_t i = 0; i < _data.size(); i++) {
 
                 // + "\\n" was removed, for multi-line text we need extra fix. whould be rewritten with type system
                 ret += _data.at(i).asString() + " ";
@@ -163,7 +163,7 @@ public:
         std::string ret = "";
 
         if (_data.size() > 1) {
-            for (int i = 0; i < _data.size(); i++) {
+            for (size_t i = 0; i < _data.size(); i++) {
 
                 ret += _data.at(i).asString() + " ";  //\\n removed
             }

@@ -28,48 +28,12 @@ CONFIG += static
   INCLUDEPATH += python/py2.7headers/
   macx: LIBS += -F/System/Library/Frameworks -framework Python
 
-SOURCES += main.cpp\
-    python/PythonQtScriptingConsole.cpp \
+defined(WITH_PYTHON)
+{
+SOURCES += python/PythonQtScriptingConsole.cpp \
     python/wrappers/py_wrappers.cpp \
-    objects/UIArray.cpp \
-    objects/UIBang.cpp \
-    objects/UIBox.cpp \
-    objects/UIFloat.cpp \
-    objects/UIMessage.cpp \
-    objects/UIToggle.cpp \
-    objects/UIText.cpp \
-    objects/UIScript.cpp \
-    oopd/OOPD.cpp \
-    oopd/UIClass.cpp \
-    oopd/UIInstance.cpp \
-    objects/UIArrayEditor.cpp \
-    Canvas.cpp \
-    UIObject.cpp \
-    UIWidget.cpp \
-    Patchcord.cpp \
-    Port.cpp \
-    SizeBox.cpp \
-    FileParser.cpp \
-    ObjectLoader.cpp \
-    ObjectMaker.cpp \
-    BaseMenu.cpp \
-    OpenFileProxy.cpp \
-    window/PatchWindow.cpp \
-    window/PdWindow.cpp \
-    window/BaseWindow.cpp \
-    window/PropertiesWindow.cpp \
-    properties/Property.cpp \
-    properties/PropertyList.cpp \
-    objects/UIDSP.cpp \
-    oopd/UIMethod.cpp \
-    oopd/UIProperty.cpp \
-    oopd/OPInstance.cpp \
-    oopd/OPClass.cpp
 
-
-HEADERS  += \
-    #cm_clipboard.h \
-    #
+HEADERS += \
     python/PythonQtScriptingConsole.h \
     python/headers/PythonQtStdDecorators.h \
     python/headers/PythonQtDoc.h \
@@ -100,6 +64,68 @@ HEADERS  += \
     python/headers/PythonQtVariants.h \
     python/wrappers/py_qtpd.h \
     python/wrappers/py_wrappers.h \
+
+LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt_QtAll$${DEBUG_EXT}.1.0.0
+LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt$${DEBUG_EXT}.1.0.0
+
+LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt_QtAll$${DEBUG_EXT}.1
+LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt$${DEBUG_EXT}.1
+
+DEPENDPATH += $$PWD/../PythonQt/lib/
+
+INCLUDEPATH += $$PWD/python/headers
+DEPENDPATH += $$PWD/python/headers
+}
+
+SOURCES += main.cpp\
+#
+#
+    objects/UIArray.cpp \
+    objects/UIBox.cpp \
+    objects/UIMessage.cpp \
+    objects/UIFloat.cpp \
+    objects/UIToggle.cpp \
+    objects/UIBang.cpp \
+    objects/UIText.cpp \
+    objects/UIScript.cpp \
+    oopd/OOPD.cpp \
+    oopd/UIClass.cpp \
+    oopd/UIInstance.cpp \
+    oopd/UIMethod.cpp \
+    oopd/UIProperty.cpp \
+    oopd/OPInstance.cpp \
+    oopd/OPClass.cpp \
+#
+    objects/UIArrayEditor.cpp \
+    Canvas.cpp \
+    FileParser.cpp \
+    ObjectLoader.cpp \
+    ObjectMaker.cpp \
+    BaseMenu.cpp \
+    OpenFileProxy.cpp \
+    window/PatchWindow.cpp \
+    window/PdWindow.cpp \
+    window/BaseWindow.cpp \
+    window/PropertiesWindow.cpp \
+    properties/Property.cpp \
+    properties/PropertyList.cpp \
+    objects/UIDSP.cpp \
+    graphicobjects/Port.cpp \
+    graphicobjects/SizeBox.cpp \
+    graphicobjects/UIItem.cpp \
+    graphicobjects/Grid.cpp \
+    graphicobjects/SelectionRect.cpp \
+    graphicobjects/NewLine.cpp \
+    graphicobjects/Patchcord.cpp \
+#
+    objects/UISubpatch.cpp \
+    graphicobjects/UIObject.cpp \
+    Clipboard.cpp \
+    objects/UIScriptEditor.cpp
+
+
+HEADERS  += \
+    #
     objects/UIBang.h \
     objects/UIArray.h \
     objects/UIToggle.h \
@@ -110,8 +136,14 @@ HEADERS  += \
     objects/UIMessage.h \
     #
     oopd/OOPD.h \
+    oopd/OOPDClassBase.h \
+    oopd/OOPDHeaders.h \
     oopd/UIClass.h \
     oopd/UIInstance.h \
+    oopd/OPClass.h \
+    oopd/OPInstance.h \
+    oopd/UIMethod.h \
+    oopd/UIProperty.h \
     #
     objects/UIArrayEditor.h \
     window/BaseWindow.h \
@@ -119,12 +151,7 @@ HEADERS  += \
     window/PdWindow.h \
     window/PropertiesWindow.h \
     Canvas.h \
-    CanvasDatas.h \
-    UIObject.h \
-    UIWidget.h \
-    Patchcord.h \
-    Port.h \
-    SizeBox.h \
+#
     FileParser.h \
     FileSaver.h \
     ObjectLoader.h \
@@ -137,12 +164,20 @@ HEADERS  += \
     properties/Property.h \
     properties/PropertyList.h \
     objects/UIDSP.h \
-    oopd/UIMethod.h \
-    oopd/UIProperty.h \
-    oopd/OPClass.h \
-    oopd/OPInstance.h \
-    oopd/OOPDClassBase.h \
-    oopd/OOPDHeaders.h
+    graphicobjects/common_types.h \
+    graphicobjects/Port.h \
+    graphicobjects/SizeBox.h \
+    graphicobjects/UIItem.h \
+    graphicobjects/Grid.h \
+    graphicobjects/SelectionRect.h \
+    graphicobjects/NewLine.h \
+    objects/UISubpatch.h \
+    graphicobjects/Patchcord.h \
+#
+    graphicobjects/UIObject.h \
+    Clipboard.h \
+    CanvasData.h \
+    objects/UIScriptEditor.h
 
 
 FORMS    += \
@@ -171,7 +206,8 @@ INCLUDEPATH += \
     window/ \
     objects/ \
     properties/ \
-    python/headers/
+    python/headers/ \
+    graphicobjects/
 
 PRECOMPILED_HEADER =
 
@@ -186,19 +222,7 @@ CONFIG(debug, debug|release) {
   DEBUG_EXT =
 }
 
-LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt_QtAll$${DEBUG_EXT}.1.0.0
-LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt$${DEBUG_EXT}.1.0.0
 
-LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt_QtAll$${DEBUG_EXT}.1
-LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt$${DEBUG_EXT}.1
-
-#DISTFILES += $$PWD/../PythonQt/lib/libPythonQt_QtAll$${DEBUG_EXT}.1.0.0.dylib
-#DISTFILES += $$PWD/../PythonQt/lib/libPythonQt$${DEBUG_EXT}.1.0.0.dylib
-
-DEPENDPATH += $$PWD/../PythonQt/lib/
-
-INCLUDEPATH += $$PWD/python/headers
-DEPENDPATH += $$PWD/python/headers
 
 
 

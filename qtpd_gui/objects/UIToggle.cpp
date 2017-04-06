@@ -5,25 +5,29 @@
 
 namespace qtpd {
 
-UIToggle::UIToggle(UIObject* parent)
-    : UIObject(parent)
+UIToggle::UIToggle()//UIObject* parent)
+    //: UIObject(parent)
 {
     //setPdObjectName("ui.toggle");
 
-    setFixedSize(20, 20);
+    setSize(20, 20);
 
-    setMouseTracking(true);
+    setMinimumBoxWidth(20);
+    setMinimumBoxHeight(20);
+
+    //setMouseTracking(true);
 
     deselect();
     _clicked = false;
 
-    QPalette Pal(palette());
-    Pal.setColor(QPalette::Background, QColor(240, 240, 240));
-    setAutoFillBackground(true);
-    setPalette(Pal);
+//    QPalette Pal(palette());
+//    Pal.setColor(QPalette::Background, QColor(240, 240, 240));
+//    setAutoFillBackground(true);
+//    setPalette(Pal);
 
-    setMinimumBoxWidth(20);
-    setMinimumBoxHeight(20);
+
+
+    setObjectSizeMode(os_Square);
 
     _value = false;
 }

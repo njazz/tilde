@@ -3,28 +3,33 @@
 
 #include "UIText.h"
 
+#include <QGraphicsProxyWidget>
+
 namespace qtpd {
-UIText::UIText(UIObject* parent)
-    : UIObject(parent)
+UIText::UIText() //UIObject* parent)
+//: UIObject(parent)
 {
     //setPdObjectName("ui.text");
 
     //setMinimumWidth(30);
-    setFixedSize(65, 20);
+    setSize(65, 20);
 
-    setMouseTracking(true);
+    //setMouseTracking(true);
 
     initProperties();
 
     deselect();
     _clicked = false;
 
-    _editor = new QPlainTextEdit(this);
+    _editor = new QPlainTextEdit();
     _editor->setFixedSize(65 - 5, 18);
     _editor->move(1, 1);
     _editor->setFont(QFont(PREF_QSTRING("Font"), 11, 0, false));
     _editor->hide();
     _editor->setAttribute(Qt::WA_MacShowFocusRect, 0);
+
+    QGraphicsProxyWidget* proxy = new QGraphicsProxyWidget(this);
+    proxy->setWidget(_editor);
 
     connect(_editor, &QPlainTextEdit::textChanged, this, &UIText::editorChanged);
 
@@ -62,8 +67,8 @@ void UIText::editorChanged()
 
     new_h = (new_h < 25) ? 25 : new_h;
 
-    setFixedWidth(new_w);
-    setFixedHeight(new_h);
+    setWidth(new_w);
+    setHeight(new_h);
 
     _editor->setFixedWidth(width() - 1);
     _editor->setFixedHeight(height() - 2);

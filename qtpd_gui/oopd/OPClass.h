@@ -85,7 +85,7 @@ public:
 
     t_outlet* getMethodOutletForReferenceName(string referenceName)
     {
-        t_outlet* ret;
+        t_outlet* ret = 0;
         if (_methodOutlets.count(referenceName)) {
             //todo multiple
             ret = _methodOutlets[referenceName];
@@ -96,7 +96,7 @@ public:
 
     t_outlet* getMethodPointerOutletForReferenceName(string referenceName)
     {
-        t_outlet* ret;
+        t_outlet* ret=0;
         if (_methodPointerOutlets.count(referenceName)) {
             //todo multiple
             ret = _methodPointerOutlets[referenceName];

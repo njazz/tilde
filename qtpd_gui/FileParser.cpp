@@ -212,7 +212,7 @@ void FileParser::parseStringListAtoms(Canvas* cmcanvas, QStringList list) //rena
             qDebug() << "objname" << objname;
             //temporary
 
-            std::string objData = objList.join(" ").toStdString();
+            QString objData = objList.join(" ");
 
             if (objList.at(0) == "pd") {
                 if (_pdParserPrevWindow) {
@@ -224,11 +224,12 @@ void FileParser::parseStringListAtoms(Canvas* cmcanvas, QStringList list) //rena
 
                         qDebug("restore");
 
-                        UIObject* b = _pdParserPrevWindow->canvas->createBoxForCanvas(_pdParserWindow->canvas, objData, pos);
+                        UIObject* b = _pdParserPrevWindow->canvas->createBoxForPatchWindow(_pdParserWindow, objData, pos);
+                        //UIObject* b = _pdParserPrevWindow->canvas->createObject(QString(objData.c_str()), pos);
 
                         //IObject *b = createBoxForCanvas(newCanvas, objectData, pos);
-                        ((UIBox*)b)->setSubpatchWindow((QMainWindow*)_pdParserPrevWindow);
-                        ((Canvas*)b)->setSubcanvas(_pdParserPrevWindow->canvas);
+                        //((UIBox*)b)->setSubpatchWindow((QMainWindow*)_pdParserPrevWindow);
+                        //((Canvas*)b)->setSubcanvas(_pdParserPrevWindow->canvas);
                     }
                 }
             } else {
@@ -314,6 +315,8 @@ void FileParser::parseQString(QString line)
 
         newWnd->setBaseSize(size);
         newWnd->move(pos);
+
+        //newWnd->canvas->move(0,0);
 
         newWnd->show(); //move to constructor? check for subcanvases the vis flag
     }

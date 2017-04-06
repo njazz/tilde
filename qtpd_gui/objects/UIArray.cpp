@@ -4,21 +4,13 @@
 #include "UIArray.h"
 
 namespace qtpd {
-UIArray::UIArray(UIObject* parent)
-    : UIObject(parent)
+UIArray::UIArray()
 {
-    //setPdObjectName("ui.bang");
+    setHeight(20);
 
-    setFixedHeight(20);
-    //setMinimumWidth(22);
-    setMouseTracking(true);
+    deselect();
 
-    deselect(); // = false;
-
-    QPalette Pal(palette());
-    Pal.setColor(QPalette::Background, QColor(240, 240, 240));
-    setAutoFillBackground(true);
-    setPalette(Pal);
+//    setBgColor(QColor(240, 240, 240));
 
     setErrorBox(false);
 
@@ -29,6 +21,4 @@ UIArray::UIArray(UIObject* parent)
 
     initProperties();
 }
-
-
 }

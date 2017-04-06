@@ -20,14 +20,11 @@ public:
     void paintEvent(QPaintEvent*)
     {
         if (_pdArray) {
-            //_arrSize = cmp_get_array_size(_pdArray);
-
-            // todo more tests here
 
             cmp_get_array_data(_pdArray, &_arrSize, &_arrData);
 
-            if (_arrSize < 67108864) {
-                //_arrData = new t_float[_arrSize];
+            if (_arrSize < 67108864) // temporary 64M samples limit
+            {
 
                 QPainter p(this);
 

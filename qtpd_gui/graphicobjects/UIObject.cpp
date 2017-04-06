@@ -3,22 +3,24 @@
 
 #include "UIObject.h"
 
+#include "Canvas.h"
+
 namespace qtpd {
 
-UIObject::UIObject(UIWidget* parent)
-    : UIWidget(parent)
+UIObject::UIObject(UIItem* parent)
+    : UIItem(parent)
 {
     _errorBox = false;
 
+    setParent(parent);
+
     setPdObject(0);
 
-    _inlets = new portVec;
-    _outlets = new portVec;
+    _inlets = new portItemVec;
+    _outlets = new portItemVec;
 
     _sizeBox = new SizeBox(this);
     _sizeBox->hide();
-
-    setAttribute(Qt::WA_Hover, true);
 
     connect(_sizeBox, &SizeBox::resizeBoxEvent, this, &UIObject::resizeBox);
 
@@ -32,7 +34,7 @@ UIObject::UIObject(UIWidget* parent)
     //this is default
     _objectSizeMode = os_FixedHeight;
 
-
+    setAcceptHoverEvents(true);
 }
 
 //---------------------------------------
@@ -40,16 +42,39 @@ UIObject::UIObject(UIWidget* parent)
 void UIObject::resizeBox(int dx, int dy)
 {
     if (_objectSizeMode != os_Fixed)
-        setFixedWidth(width() + dx);
+        setWidth(boundingRect().width() + dx);
     if (_objectSizeMode == os_Free)
-        setFixedHeight(height() + dy);
+        setHeight(boundingRect().height() + dy);
+
+    if (_objectSizeMode == os_Square) {
+        setHeight(boundingRect().width());
+    }
+
+    // moved
+
+    _sizeBox->move(boundingRect().width() - 7, boundingRect().height() - 7);
+
+    //todo fixed width
+    if (boundingRect().width() < minimumBoxWidth())
+        setWidth(minimumBoxWidth());
+    if (boundingRect().height() < minimumBoxHeight())
+        setHeight(minimumBoxHeight());
+
+    setInletsPos();
+    setOutletsPos();
+
+    properties()->set("Size", boundingRect().size());
+
+    resizeEvent();
+
+    update();
 };
 
 void UIObject::initProperties()
 {
     connect(properties(), &PropertyList::propertyChangedSignal, this, &UIObject::propertyChanged);
 
-    properties()->create("Size", "Box", "0.1", size());
+    properties()->create("Size", "Box", "0.1", boundingRect().size());
     properties()->create("Position", "Box", "0.1", pos());
     properties()->create("FontSize", "Box", "0.1", 11.);
 
@@ -67,8 +92,6 @@ PropertyList* UIObject::properties()
 
 void UIObject::createContextMenu()
 {
-    setContextMenuPolicy(Qt::NoContextMenu);
-
     pmProperties = new QAction(tr("Properties"), this);
     pmProperties->setShortcut(tr("Ctrl+Shift+P"));
     connect(pmProperties, &QAction::triggered, this, &UIObject::openPropertiesWindow);
@@ -80,7 +103,7 @@ void UIObject::createContextMenu()
     pmOpen = new QAction(tr("Open"), this);
     pmOpen->setShortcut(tr("Ctrl+R"));
     pmOpen->setEnabled(false);
-    //connect(pmProperties, &QAction::triggered, this, &UIObject::pmProperties);
+    //connect(pmProperties, &QAction::triggered, this, &UIObjectItem::pmProperties);
 
     //------------
 
@@ -90,7 +113,6 @@ void UIObject::createContextMenu()
     _popupMenu.addAction(pmOpen);
 }
 
-//void UIObject::contextMenuEvent(QContextMenuEvent *event) //customContextMenuRequested(const QPoint &pos)
 void UIObject::showPopupMenu(QPoint pos)
 {
 
@@ -100,7 +122,7 @@ void UIObject::showPopupMenu(QPoint pos)
 
 void UIObject::setInletsPos()
 {
-    float w = width() - 10;
+    float w = boundingRect().width() - 10;
     //w = (w < 40) ? 40 : w;
 
     float s = (_inlets->size() < 2) ? _inlets->size() : (_inlets->size() - 1);
@@ -110,23 +132,25 @@ void UIObject::setInletsPos()
         float y = 0;
 
         _inlets->at(i)->move(x, y);
-        _inlets->at(i)->repaint();
+        //if (_inlets->at(i)->scene())
+        //_inlets->at(i)->viewport()->update();
     }
 }
 
 void UIObject::setOutletsPos()
 {
-    float w = width() - 10;
+    float w = boundingRect().width() - 10;
     //w = (w < 40) ? 40 : w;
 
     float s = (_outlets->size() < 2) ? _outlets->size() : (_outlets->size() - 1);
 
     for (int i = 0; i < (int)_outlets->size(); i++) {
         float x = (w) / s * (float)i;
-        float y = height() - 3;
+        float y = boundingRect().height() - 3;
 
         _outlets->at(i)->move(x, y);
-        _outlets->at(i)->repaint();
+        //if (_outlets->at(i)->scene())
+        //_outlets->at(i)->viewport()->update();
     }
 }
 
@@ -145,15 +169,15 @@ void UIObject::addInlet()
 void UIObject::addInlet(int _portClass_)
 {
     Port* new_in = new Port(this);
-    new_in->portType = portInlet;
-    new_in->portIndex = _inlets->size();
-    new_in->portClass = _portClass_;
-    new_in->setEditModeRef(getEditModeRef());
+    new_in->setPortType(portInlet);
+    new_in->setPortIndex(_inlets->size());
+    new_in->setPortClass(_portClass_);
+    new_in->setEditModeRef(this->getEditModeRef());
 
     _inlets->push_back(new_in);
 
-    connect(new_in, &Port::mousePressed, static_cast<UIWidget*>(parent()), &UIWidget::s_InMousePressed);
-    connect(new_in, &Port::mouseReleased, static_cast<UIWidget*>(parent()), &UIWidget::s_InMouseReleased);
+    connect(new_in, &Port::mousePressed, static_cast<Canvas*>(_canvas), &Canvas::s_InMousePressed);
+    connect(new_in, &Port::mouseReleased, static_cast<Canvas*>(_canvas), &Canvas::s_InMouseReleased);
 
     new_in->show();
 
@@ -175,14 +199,15 @@ void UIObject::addOutlet()
 void UIObject::addOutlet(int _portClass_)
 {
     Port* new_out = new Port(this);
-    new_out->portType = portOutlet;
-    new_out->portIndex = _outlets->size();
-    new_out->portClass = _portClass_;
-    new_out->setEditModeRef(getEditModeRef());
+    new_out->setPortType(portOutlet);
+    new_out->setPortIndex(_outlets->size());
+    new_out->setPortClass(_portClass_);
+    new_out->setEditModeRef(this->getEditModeRef());
 
     _outlets->push_back(new_out);
-    connect(new_out, &Port::mousePressed, static_cast<UIWidget*>(parent()), &UIWidget::s_OutMousePressed);
-    connect(new_out, &Port::mouseReleased, static_cast<UIWidget*>(parent()), &UIWidget::s_OutMouseReleased);
+
+    connect(new_out, &Port::mousePressed, static_cast<Canvas*>(_canvas), &Canvas::s_OutMousePressed);
+    connect(new_out, &Port::mouseReleased, static_cast<Canvas*>(_canvas), &Canvas::s_OutMouseReleased);
 
     new_out->show();
 
@@ -243,9 +268,9 @@ void UIObject::autoResize()
     QFont myFont(PREF_QSTRING("Font"), 11);
     QFontMetrics fm(myFont);
 
-    setFixedWidth((int)fm.width(QString(_objectData.c_str())) + 5);
-    if (width() < minimumBoxWidth())
-        setFixedWidth(minimumBoxWidth());
+    setWidth((int)fm.width(QString(_objectData.c_str())) + 5);
+    if (boundingRect().width() < minimumBoxWidth())
+        setWidth(minimumBoxWidth());
 }
 
 std::string UIObject::objectData()
@@ -275,11 +300,6 @@ std::string UIObject::asPdFileString()
     return ret;
 }
 
-//void UIObject::setPdObjectName(std::string name)
-//{
-//    pdObjectName_ = name;
-//}
-
 QMainWindow* UIObject::subpatchWindow()
 {
     return _SubpatchWindow;
@@ -292,7 +312,7 @@ void UIObject::setSubpatchWindow(QMainWindow* cwindow)
 
 void UIObject::setEditModeRef(t_editMode* canvasEditMode)
 {
-    UIWidget::setEditModeRef(canvasEditMode);
+    UIItem::setEditModeRef(canvasEditMode);
 
     // todo
     for (int i = 0; i < _inlets->size(); i++) {
@@ -306,30 +326,31 @@ void UIObject::setEditModeRef(t_editMode* canvasEditMode)
 
 //----------------------------------------
 
-void UIObject::resizeEvent(QResizeEvent* event)
+void UIObject::resizeEvent() //QGraphicsSceneResizeEvent *event)
 {
 
-    _sizeBox->move(width() - 7, height() - 7);
+    _sizeBox->move(boundingRect().width() - 7, boundingRect().height() - 7);
 
     //todo fixed width
-    if (width() < minimumBoxWidth())
-        setFixedWidth(minimumBoxWidth());
-    if (height() < minimumBoxHeight())
-        setFixedHeight(minimumBoxHeight());
+    if (boundingRect().width() < minimumBoxWidth())
+        setWidth(minimumBoxWidth());
+    if (boundingRect().height() < minimumBoxHeight())
+        setHeight(minimumBoxHeight());
 
     setInletsPos();
     setOutletsPos();
 
-    properties()->set("Size", size());
+    // needs fix
+    //properties()->set("Size", boundingRect().size());
 }
 
-void UIObject::enterEvent(QEvent*)
+void UIObject::hoverEnterEvent(QGraphicsSceneHoverEvent*)
 {
     if (getEditMode() == em_Unlocked)
         _sizeBox->show();
 }
 
-void UIObject::leaveEvent(QEvent*)
+void UIObject::hoverLeaveEvent(QGraphicsSceneHoverEvent*)
 {
     if (getEditMode() == em_Unlocked)
         _sizeBox->hide();
@@ -390,14 +411,13 @@ void UIObject::hideSizeBox()
     _sizeBox->hide();
 }
 
-
 void UIObject::setHelpName(QString name)
 {
     _fullHelpName = name;
-
 }
 
-QString UIObject::fullHelpName() {
+QString UIObject::fullHelpName()
+{
 
     QString name = _fullHelpName;
 
@@ -432,9 +452,7 @@ QString UIObject::fullHelpName() {
     cmp_post(p1.toStdString().c_str());
 
     return name;
-
 }
-
 
 // -------
 
@@ -452,29 +470,21 @@ void UIObject::openHelpWindow()
     }
 }
 
-
-
-
-
 void UIObject::s_repaint() //needed for proper threading
 {
-    repaint();
+    update();
 }
-
 
 void UIObject::propertyChanged(QString pname)
 {
-    // spaghetti again
 
     if (pname == "Size")
-        setFixedSize(properties()->get("Size")->asQSize());
+        setSize(properties()->get("Size")->asQSize());
 
     //just visuals
-    if (pname == "FontSize")
-        repaint();
-    if (pname == "BorderColor")
-        repaint();
+    //    if (pname == "FontSize")
+    //         viewport()->update();
+    //    if (pname == "BorderColor")
+    //         viewport()->update();
 }
-
-
 }

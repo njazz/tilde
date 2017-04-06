@@ -63,7 +63,7 @@ cmObjectConstructor ObjectLoader::getConstructorFor(QString objName)
     return _objectConstructors["ui.obj"];
 }
 
-UIObject* ObjectLoader::createObject(QString objectData, t_canvas* pdCanvas, UIWidget* parent)
+UIObject* ObjectLoader::createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent)
 {
 
     QString objectName = "";
@@ -77,12 +77,12 @@ UIObject* ObjectLoader::createObject(QString objectData, t_canvas* pdCanvas, UIW
         //        if (cmc == getConstructorFor("ui.obj"))
         //            objectData = objName + " " + objectData;
 
-        return cmc(objectData.toStdString(), pdCanvas, parent);
+        return cmc(objectData, pdCanvas, parent);
     } else {
         cmObjectConstructor cmc = getConstructorFor("ui.obj");
         objectData = "ui.obj " + objectData; //+ objectName + " "
 
-        return cmc(objectData.toStdString(), pdCanvas, parent);
+        return cmc(objectData, pdCanvas, parent);
     }
 }
 }

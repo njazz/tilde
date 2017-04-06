@@ -117,7 +117,7 @@ public Q_SLOTS:
 
     void resizeObject(UIObject* o, int w, int h)
     {
-        o->setFixedSize(w, h);
+        o->setSize(w, h);
     }
 
     //////////
@@ -196,7 +196,7 @@ public Q_SLOTS:
     // test
     void scale(Canvas* c, float scale)
     {
-        c->setScale(scale);
+        c->scale(scale,scale);
     }
 
     // arrays: yet here

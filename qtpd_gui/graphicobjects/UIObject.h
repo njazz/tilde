@@ -1,12 +1,12 @@
 // (c) 2017 Alex Nadzharov
 // License: GPL3
 
-#ifndef CM_OBJECT_H
-#define CM_OBJECT_H
+#ifndef CM_OBJECTITEM_H
+#define CM_OBJECTITEM_H
 
 #include "Port.h"
 #include "SizeBox.h"
-#include "UIWidget.h"
+#include "UIItem.h"
 
 #include "Preferences.h"
 
@@ -24,21 +24,21 @@
 
 namespace qtpd {
 
-typedef std::vector<Port*> portVec;
+typedef std::vector<Port*> portItemVec;
 
 ////
 /// \brief base class for all object boxes - standard and special
 ///
-class UIObject : public UIWidget {
-    //broken, check that
+class UIObject : public UIItem {
+
     Q_OBJECT
 
 private:
     //temporary?
     void* _pdObject;
 
-    portVec* _inlets;
-    portVec* _outlets;
+    portItemVec* _inlets;
+    portItemVec* _outlets;
 
     // todo replace with QString in GUI part
     std::string _objectData; //name and arguments etc
@@ -66,20 +66,19 @@ private:
     //
     QString _fullHelpName;
 
-    //
-//    QString fullHelpName()
-//    {
-//        if (fullHelpName() == "")
-//            return "";
+    void* _canvas;
 
-//        QString ret = "";
-
-//        return ret;
-//    }
+protected:
+    virtual void hoverEnterEvent(QGraphicsSceneHoverEvent*);
+    virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent*);
 
 public:
-    //cm_object();
-    explicit UIObject(UIWidget* parent = 0);
+    // just a template, copy from here
+    virtual void paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*){};
+
+    void setCanvas(void* canvas) { _canvas = canvas; }
+
+    explicit UIObject(UIItem* parent = 0);
 
     ////
     /// \brief init properties for the class - called from constructor
@@ -95,7 +94,7 @@ public:
 
     void showPopupMenu(QPoint pos);
 
-    //void contextMenuEvent(QContextMenuEvent* event);
+    SizeBox* sizeBox() { return _sizeBox; }
 
     ////
     /// \brief sets inlet position (cm_port)
@@ -232,8 +231,6 @@ public:
     ///
     virtual std::string asPdFileString();
 
-    //void setPdObjectName(std::string name);
-
     ////
     /// \brief temporary - remove later
     /// \details nonzero pointer for different drawing
@@ -248,12 +245,9 @@ public:
     void setEditModeRef(t_editMode* canvasEditMode);
 
     //////////
-
-    void resizeEvent(QResizeEvent* event);
-
-    void enterEvent(QEvent*);
-
-    void leaveEvent(QEvent*);
+    ////
+    /// \brief custom resize event
+    void resizeEvent();
 
     // ------------------------
 
@@ -310,7 +304,9 @@ private slots:
 
 signals:
     void editObject(void* box);
-    void callRepaint(); //needed for proper threading
+    //// \brief this is needed for proper threading
+    /// \details pd calls UIUpdate(...) -> it emits 's_repaint()' that is connected to 'callRepaint()'
+    void callRepaint();
 
 public slots:
     void resizeBox(int dx, int dy);

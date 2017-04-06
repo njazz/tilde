@@ -560,7 +560,7 @@
      </widget>
     </item>
     <item row="0" column="0">
-     <widget class="qtpd::UIDSP" name="widget" native="true">
+     <widget class="QWidget" name="widget" native="true">
       <property name="minimumSize">
        <size>
         <width>0</width>
@@ -588,14 +588,6 @@
    </property>
   </widget>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>qtpd::UIDSP</class>
-   <extends>QWidget</extends>
-   <header location="global">uidsp.h</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

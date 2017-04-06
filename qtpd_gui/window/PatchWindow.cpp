@@ -11,7 +11,7 @@ PatchWindow::PatchWindow()
     scroll = new QScrollArea(this);
     scroll->setFrameShape(QFrame::NoFrame);
 
-    canvas = new Canvas((UIObject*)scroll);
+    canvas = new Canvas((QGraphicsView*)scroll);
 
     scroll->setWidget(canvas);
 
@@ -21,6 +21,7 @@ PatchWindow::PatchWindow()
     //objectMaker = new ObjectMaker((QLineEdit*)canvas);
 
     //objectMaker->setParent(canvas);
+
     connect(canvas->objectMaker(), &ObjectMaker::objectMakerDoneSignal, this, &PatchWindow::objectMakerDone);
 
     canvas->objectMaker()->close();
@@ -43,6 +44,8 @@ PatchWindow* PatchWindow::newWindow()
 {
     PatchWindow* this_;
     this_ = new PatchWindow;
+
+    // move to canvas
 
     //todo
     ((QMainWindow*)this_)->setWindowTitle("Untitled-1");
@@ -149,27 +152,33 @@ void PatchWindow::objectMakerDone()
 
         if (canvas->replaceObject()) {
             UIObject* obj = canvas->replaceObject();
-
             patchcordVec cords = canvas->patchcordsForObject(obj);
+
+
 
             patchcordVec::iterator it;
             for (it = cords.begin(); it != cords.end(); ++it) {
                 Patchcord* pc = ((Patchcord*)*it);
                 UIObject* obj1 = pc->obj1();
                 UIObject* obj2 = pc->obj2();
+
+                qDebug()<<"o1 o2 n"<<obj1<<obj2<<new_obj;
                 //replace
                 if (obj1 == obj)
                     obj1 = new_obj;
                 if (obj2 == obj)
                     obj2 = new_obj;
 
+                if (obj1 && obj2)
                 canvas->patchcord(obj1, pc->outletIndex(), obj2, pc->inletIndex());
+                else
+                    qDebug("replace object - patchcord error");
             }
 
             canvas->deleteBox(obj);
         }
 
-        canvas->dragObject = 0;
+        canvas->setDragObject(0);
         canvas->setReplaceObject(0);
         canvas->objectMaker()->close();
     }

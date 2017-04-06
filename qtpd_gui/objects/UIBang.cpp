@@ -5,32 +5,27 @@
 
 namespace qtpd {
 
-UIBang::UIBang(UIObject* parent)
-    : UIObject(parent)
+UIBang::UIBang()
 {
-    //setPdObjectName("ui.bang");
+    setSize(20, 20);
 
-    this->setFixedSize(20, 20);
+    setMinimumBoxWidth(20);
+    setMinimumBoxHeight(20);
 
-    this->setMouseTracking(true);
+    setObjectSizeMode(os_Square);
 
-    this->deselect();
-    this->_clicked = false;
+    deselect();
+    _clicked = false;
 
-    QPalette Pal(palette());
-    Pal.setColor(QPalette::Background, QColor(240, 240, 240));
-    this->setAutoFillBackground(true);
-    this->setPalette(Pal);
+    setWidth(20);
+    setHeight(20);
 
-    this->setMinimumBoxWidth(20);
-    this->setMinimumBoxHeight(20);
+    _timer = new QTimer;
+    _timer->setSingleShot(true);
+    _timer->setInterval(33); //default 100
 
-    this->_timer = new QTimer;
-    this->_timer->setSingleShot(true);
-    this->_timer->setInterval(50);  //default 100
+    connect(_timer, &QTimer::timeout, this, &UIBang::timerAction);
 
-    connect(this->_timer, &QTimer::timeout, this, &UIBang::timerAction);
-
-    connect(this, SIGNAL(setBangTimer(int)), this->_timer, SLOT(start(int)));
+    connect(this, SIGNAL(setBangTimer(int)), _timer, SLOT(start(int)));
 }
 }

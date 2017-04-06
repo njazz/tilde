@@ -8,15 +8,13 @@
 #include <QMainWindow>
 #include <QtGui>
 
-#include "Port.h"
-
 #include "UIObject.h"
 
 //lazy way
 //todo proper pattern
 #include "OpenFileProxy.h"
-
-//#include "cm_pdlink.h"
+#include <QGraphicsSceneMouseEvent>
+#include <QGraphicsView>
 
 namespace qtpd {
 
@@ -33,25 +31,28 @@ private:
     QString _abstractionPath;
 
 public:
-    explicit UIBox(UIObject* parent = 0);
+    explicit UIBox(); //(UIObjectItem* parent = 0);
     //~UIBox();
 
-    static UIObject* createObject(std::string objectData, t_canvas* pd_Canvas, UIWidget* parent = 0)
+    static UIObject* createObject(QString objectData, t_canvas* pd_Canvas, QGraphicsView* parent = 0)
     {
         //TODO fix all constructors
-        //t_canvas* pd_Canvas;
 
-        UIBox* b = new UIBox((UIObject*)parent);
+        qDebug() << "<< ui.box";
+
+        UIBox* b = new UIBox(); //(UIObjectItem*)parent);
+
+        b->setCanvas((void*)parent);
 
         //truncate "ui.obj". todo cleanup
-        QStringList list = QString(objectData.c_str()).split(" ");
+        QStringList list = QString(objectData).split(" ");
         list.removeAt(0);
         QString list_s = list.join(" ");
         const char* obj_name = list_s.toStdString().c_str();
         std::string data1 = b->properties()->extractFromPdFileString(obj_name); //test
 
         // todo cleanup
-        const char* obj_name2 = data1.c_str(); //(QString(data1.c_str()).split(" ").at(0)).toStdString().c_str();
+        const char* obj_name2 = data1.c_str();
 
         // fix size changes
         b->setObjectData(data1);
@@ -73,7 +74,7 @@ public:
             in_c = cmp_get_inlet_count(new_obj);
             out_c = cmp_get_outlet_count(new_obj);
 
-            //qDebug("created object %s ins %i outs %i ptr %lu", obj_name, in_c, out_c, (long)new_obj);
+            qDebug("created object %s ins %i outs %i ptr %lu", obj_name, in_c, out_c, (long)new_obj);
 
             b->setPdObject(new_obj);
 
@@ -81,14 +82,14 @@ public:
             //qDebug() << "*** is abstraction: " << b->_isAbstraction;
 
             // todo different help symbols
-            b->setHelpName(list.at(0) + "-help.pd");
+            b->setHelpName(list.at(0) + "-help->pd");
 
             if (b->_isAbstraction) {
 
                 t_symbol* s = cmp_get_path((t_canvas*)new_obj);
 
                 // todo
-                QStringList l = QString(objectData.c_str()).split(" ");
+                QStringList l = QString(objectData).split(" ");
                 QString pdName = l.at(1); //assuming there always is a name when abstraction is created
 
                 // todo windows
@@ -115,31 +116,35 @@ public:
     ////
     /// \brief paint event
     ///
-    void paintEvent(QPaintEvent*)
+    void paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)
     {
-        QPainter p(this);
-        p.setRenderHint(QPainter::HighQualityAntialiasing, true);
-        p.scale(scale(), scale());
+        p->setRenderHint(QPainter::HighQualityAntialiasing, true);
+
+        QBrush brush(bgColor());
+        p->setBrush(brush);
+        p->drawRect(boundingRect());
+        p->setBrush(QBrush());
 
         //remove this later
+
         if (subpatchWindow()) {
-            p.setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-            p.drawRect(0, 2, width(), height() - 4);
+            p->setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p->drawRect(0, 2, boundingRect().width(), boundingRect().height() - 4);
         }
 
         QColor rectColor = (errorBox()) ? QColor(255, 0, 0) : properties()->get("BorderColor")->asQColor(); //QColor(128, 128, 128);
-        p.setPen(QPen(rectColor, 2 + _isAbstraction, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-        p.drawRect(0, 0, width(), height());
+        p->setPen(QPen(rectColor, 1 + _isAbstraction, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p->drawRect(0, 0, boundingRect().width(), boundingRect().height());
         QTextOption* op = new QTextOption;
         op->setAlignment(Qt::AlignLeft);
-        p.setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p->setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
-        p.setFont(QFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize(), 0, false));
-        p.drawText(2, 3, width() - 2, height() - 3, 0, objectData().c_str(), 0);
+        p->setFont(QFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize(), 0, false));
+        p->drawText(2, 3, boundingRect().width() - 2, boundingRect().height() - 3, 0, objectData().c_str(), 0);
 
         if (isSelected()) {
-            p.setPen(QPen(QColor(0, 192, 255), 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-            p.drawRect(0, 0, width(), height());
+            p->setPen(QPen(QColor(0, 192, 255), 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p->drawRect(0, 0, boundingRect().width(), boundingRect().height());
         }
     }
 
@@ -147,12 +152,17 @@ public:
     /// \brief mouse down
     /// \param ev
     ///
-    void mousePressEvent(QMouseEvent* ev)
+    void mousePressEvent(QGraphicsSceneMouseEvent* ev)
     {
+        qDebug("click");
+        QGraphicsItem::mousePressEvent(ev);
+
         //context menu
         if (ev->button() == Qt::RightButton) {
-            QPoint pos = mapToGlobal(ev->pos());
-            showPopupMenu(pos);
+            //
+            //QPointF pos = ev->pos();
+            //            QPoint pos = mapToGlobal(ev->pos().toPoint());
+            //            showPopupMenu(pos);
             ev->accept();
             return;
         }
@@ -172,42 +182,46 @@ public:
         }
 
         if ((getEditMode() == em_Unlocked) && isSelected()) {
-            //            editor_->setText(QString(objectData().c_str()));
-            //            editor_->show();
-            //            editor_->setFocus();
-
             emit editObject(this);
+            //            qDebug("edit box");
             return;
         }
 
         emit selectBox(this, ev);
-        dragOffset = ev->pos();
+
+        dragOffset = QPoint(ev->pos().x(), ev->pos().y());
+
+        ev->accept();
     }
 
     ////
     /// \brief mouse up
     ///
-    void mouseReleaseEvent(QMouseEvent*)
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev)
     {
-        repaint();
+        QGraphicsItem::mouseReleaseEvent(ev);
     }
 
     ////
     /// \brief mouse move
     /// \param event
     ///
-    void mouseMoveEvent(QMouseEvent* event)
+    void mouseMoveEvent(QGraphicsSceneMouseEvent* event)
     {
+        qDebug("box move");
+
         if (event->buttons() & Qt::LeftButton) {
             emit moveBox(this, event);
         }
-        event->ignore();
+        //event->ignore();
 
         if ((getEditMode() != em_Unlocked) && (subpatchWindow())) {
             setCursor(QCursor(Qt::PointingHandCursor));
         } else {
             setCursor(QCursor(Qt::ArrowCursor));
         }
+
+        QGraphicsItem::mouseMoveEvent(event);
     }
 
     void setPdMessage(std::string message)
@@ -219,10 +233,7 @@ public:
         QFontMetrics fm(myFont);
         int new_w = fm.width(QString(objectData().c_str())) + 10;
         new_w = (new_w < 25) ? 25 : new_w;
-        setFixedWidth(new_w);
-        //editor_->setFixedWidth(width() - 5);
-
-        //todo: del object and create new + patchcords
+        setWidth(new_w);
 
         //
         setInletsPos();

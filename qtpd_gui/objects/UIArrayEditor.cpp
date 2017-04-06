@@ -1,6 +1,6 @@
 #include "UIArrayEditor.h"
 
-UIArrayEditor::UIArrayEditor(QWidget *parent) : QWidget(parent)
+UIArrayEditor::UIArrayEditor(QWidget* parent)
+    : QWidget(parent)
 {
-
 }
