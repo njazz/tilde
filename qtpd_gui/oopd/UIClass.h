@@ -43,7 +43,7 @@ public:
         }
     };
 
-    static UIObject* createObject(std::string objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
+    static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
     {
         //TODO fix all constructors
         //t_canvas* pd_Canvas;
@@ -55,9 +55,9 @@ public:
         UIClass* b = new UIClass(); //(UIObject*)parent);
         b->setCanvas((void*)parent);
 
-        QStringList list = QString(objectData.c_str()).split(" ");
+        QStringList list = QString(objectData).split(" ");
 
-        const char* obj_name = objectData.c_str();
+        const char* obj_name = objectData.toStdString().c_str();
         std::string data1 = b->properties()->extractFromPdFileString(obj_name); //test
         const char* obj_name2 = data1.c_str();
 

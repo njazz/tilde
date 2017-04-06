@@ -28,12 +28,12 @@ private:
 public:
     explicit UIFloat(); //UIObject* parent = 0);
 
-    static UIObject* createObject(std::string objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
+    static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
     {
         UIFloat* b = new UIFloat(); //(UIObject*)parent);
         b->setCanvas((void*)parent);
 
-        std::string data1 = b->properties()->extractFromPdFileString(objectData);
+        std::string data1 = b->properties()->extractFromPdFileString(objectData.toStdString());
         b->setObjectData("ui.float"); //todo
 
         b->autoResize();
@@ -57,7 +57,7 @@ public:
             qDebug("Error: no such object %s", message.c_str());
         }
 
-        b->setPdMessage(objectData.c_str());
+        b->setPdMessage(objectData.toStdString());
 
         b->addInlet();
         b->addOutlet();

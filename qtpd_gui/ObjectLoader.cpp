@@ -77,12 +77,12 @@ UIObject* ObjectLoader::createObject(QString objectData, t_canvas* pdCanvas, QGr
         //        if (cmc == getConstructorFor("ui.obj"))
         //            objectData = objName + " " + objectData;
 
-        return cmc(objectData.toStdString(), pdCanvas, parent);
+        return cmc(objectData, pdCanvas, parent);
     } else {
         cmObjectConstructor cmc = getConstructorFor("ui.obj");
         objectData = "ui.obj " + objectData; //+ objectName + " "
 
-        return cmc(objectData.toStdString(), pdCanvas, parent);
+        return cmc(objectData, pdCanvas, parent);
     }
 }
 }

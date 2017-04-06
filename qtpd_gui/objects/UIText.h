@@ -29,13 +29,13 @@ private:
 public:
     explicit UIText(); //UIObject* parent = 0);
 
-    static UIObject* createObject(std::string objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
+    static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
     {
         UIText* b = new UIText();
         b->setCanvas((void*)parent);
 
         //temporary
-        std::string data1 = b->properties()->extractFromPdFileString(objectData);
+        std::string data1 = b->properties()->extractFromPdFileString(objectData.toStdString());
         b->setObjectData("");
 
         // the zoo lol

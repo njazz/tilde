@@ -29,12 +29,12 @@ private:
 public:
     explicit UIBang(); //UIObject* parent = 0);
 
-    static UIObject* createObject(std::string objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
+    static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
     {
         UIBang* b = new UIBang(); //(UIObject*)parent);
         b->setCanvas((void*)parent);
 
-        std::string data1 = b->properties()->extractFromPdFileString(objectData);
+        std::string data1 = b->properties()->extractFromPdFileString(objectData.toStdString());
         b->setObjectData("ui.bang");
 
         std::string message = "ui.bang";

@@ -4,12 +4,12 @@
 #ifndef CM_ARRAY_H
 #define CM_ARRAY_H
 
+#include <QGraphicsView>
 #include <QLineEdit>
 #include <QMainWindow>
 #include <QtGui>
 
 #include "Port.h"
-
 #include "UIObject.h"
 
 //lazy way
@@ -17,9 +17,6 @@
 #include "OpenFileProxy.h"
 
 #include "UIArrayEditor.h"
-
-#include <QGraphicsView>
-//#include "cm_pdlink.h"
 
 namespace qtpd {
 
@@ -34,20 +31,20 @@ private:
     UIArrayEditor _editor;
 
 public:
-    explicit UIArray();//UIObject* parent = 0);
+    explicit UIArray(); //UIObject* parent = 0);
 
-    static UIObject* createObject(std::string objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
+    static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
     {
         //TODO fix all constructors
-        UIArray* b = new UIArray();//(UIObject*)parent);
+        UIArray* b = new UIArray(); //(UIObject*)parent);
         b->setCanvas((void*)parent);
 
         //truncate "ui.obj". todo cleanup
-        QStringList list = QString(objectData.c_str()).split(" ");
+        QStringList list = QString(objectData).split(" ");
 
-        const char* obj_name = objectData.c_str();
+        const char* obj_name = objectData.toStdString().c_str();
 
-        std::string data1 = b->properties()->extractFromPdFileString(objectData); //test
+        std::string data1 = b->properties()->extractFromPdFileString(objectData.toStdString()); //test
 
         // todo cleanup
 
@@ -69,8 +66,8 @@ public:
                 t_symbol* name = gensym(list.at(1).toStdString().c_str());
                 t_floatarg size = list.at(2).toFloat();
 
-                b->_editor.setPdArray( cmp_new_array(pdCanvas, name, size, 1, 1) );
-                b->_editor.setWindowTitle("array: "+list.at(1));
+                b->_editor.setPdArray(cmp_new_array(pdCanvas, name, size, 1, 1));
+                b->_editor.setWindowTitle("array: " + list.at(1));
             }
         }
 
@@ -168,11 +165,11 @@ public:
         }
 
         //open canvas for subpatch
-//        if (getEditMode() != em_Unlocked) {
-//            if (subpatchWindow()) {
-//                subpatchWindow()->show();
-//            }
-//        }
+        //        if (getEditMode() != em_Unlocked) {
+        //            if (subpatchWindow()) {
+        //                subpatchWindow()->show();
+        //            }
+        //        }
 
         if ((getEditMode() == em_Unlocked) && isSelected()) {
 
@@ -180,9 +177,9 @@ public:
             return;
         }
 
-        if ( (getEditMode() != em_Unlocked) ) {
-    if(!errorBox())
-            _editor.show();
+        if ((getEditMode() != em_Unlocked)) {
+            if (!errorBox())
+                _editor.show();
         }
 
         emit selectBox(this, ev);

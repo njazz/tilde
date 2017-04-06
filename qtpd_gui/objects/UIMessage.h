@@ -28,7 +28,7 @@ private:
 public:
     explicit UIMessage();//UIObject* parent = 0);
 
-    static UIObject* createObject(std::string objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
+    static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
     {
         qDebug() << "<< ui.msg";
 
@@ -37,7 +37,7 @@ public:
 
         //fix: remove "ui.msg"
         //do this normal way later
-        QStringList messageDataList = QString(objectData.c_str()).split(" ");
+        QStringList messageDataList = QString(objectData).split(" ");
         messageDataList.removeAt(0);
         std::string messageData = messageDataList.join(" ").toStdString();
 

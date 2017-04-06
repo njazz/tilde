@@ -34,7 +34,7 @@ public:
     explicit UIBox(); //(UIObjectItem* parent = 0);
     //~UIBox();
 
-    static UIObject* createObject(std::string objectData, t_canvas* pd_Canvas, QGraphicsView* parent = 0)
+    static UIObject* createObject(QString objectData, t_canvas* pd_Canvas, QGraphicsView* parent = 0)
     {
         //TODO fix all constructors
 
@@ -45,7 +45,7 @@ public:
         b->setCanvas((void*)parent);
 
         //truncate "ui.obj". todo cleanup
-        QStringList list = QString(objectData.c_str()).split(" ");
+        QStringList list = QString(objectData).split(" ");
         list.removeAt(0);
         QString list_s = list.join(" ");
         const char* obj_name = list_s.toStdString().c_str();
@@ -89,7 +89,7 @@ public:
                 t_symbol* s = cmp_get_path((t_canvas*)new_obj);
 
                 // todo
-                QStringList l = QString(objectData.c_str()).split(" ");
+                QStringList l = QString(objectData).split(" ");
                 QString pdName = l.at(1); //assuming there always is a name when abstraction is created
 
                 // todo windows
