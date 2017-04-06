@@ -757,6 +757,7 @@ UIObject* Canvas::createObject(QString objectData1, QPoint pos) //std::string UI
         }
 
         if (list.at(0) == "restore") {
+            // unused?
             return 0;
         }
     }
@@ -794,6 +795,43 @@ UIObject* Canvas::createObject(QString objectData1, QPoint pos) //std::string UI
     setFixedSize(minimumCanvasSize());
 
     return (UIObject*)obj;
+}
+
+UIObject* Canvas::createBoxForPatchWindow(QMainWindow* patchWindow, std::string objectData, QPoint pos)
+{
+    //UIObject *obj = Canvas::createObject(QString(objectData.c_str()),pos);
+    std::pair<QMainWindow*, UIObject*> newPatch;
+
+    //newPatch = emit createSubpatchWindow();
+
+
+
+//    QMainWindow* subPatch = newPatch.first;
+//    Canvas* newCanvas = (Canvas*)newPatch.second;
+
+    UIObject* obj = UISubpatch::createObject(objectData, 0, this);
+    ((UIBox*)obj)->setSubpatchWindow((QMainWindow*)patchWindow);
+
+//    ((UISubpatch*)obj)->setSubpatchWindow(subPatch);
+
+    //qDebug()<<"objdata1" << objectData1;
+    qDebug("subpatch restored>>");
+
+    patchWindow->show();
+
+    connect(obj, &UIObject::selectBox, this, &Canvas::s_SelectBox);
+    connect(obj, &UIObject::moveBox, this, &Canvas::s_MoveBox);
+
+    obj->setEditModeRef(&_canvasEditMode); //Canvas::getEditModeRef());
+    obj->move(pos.x(), pos.y());
+    _canvasData.addUniqueBox(_canvasData.boxes(), obj);
+    scene()->addItem(obj);
+
+
+
+
+
+    return obj;
 }
 
 UIObject* Canvas::createBoxForCanvas(Canvas* newCanvas, std::string objectData, QPoint pos)

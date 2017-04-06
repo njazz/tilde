@@ -224,10 +224,11 @@ void FileParser::parseStringListAtoms(Canvas* cmcanvas, QStringList list) //rena
 
                         qDebug("restore");
 
-                        UIObject* b = _pdParserPrevWindow->canvas->createBoxForCanvas(_pdParserWindow->canvas, objData, pos);
+                        UIObject* b = _pdParserPrevWindow->canvas->createBoxForPatchWindow(_pdParserWindow, objData, pos);
+                        //UIObject* b = _pdParserPrevWindow->canvas->createObject(QString(objData.c_str()), pos);
 
                         //IObject *b = createBoxForCanvas(newCanvas, objectData, pos);
-                        ((UIBox*)b)->setSubpatchWindow((QMainWindow*)_pdParserPrevWindow);
+                        //((UIBox*)b)->setSubpatchWindow((QMainWindow*)_pdParserPrevWindow);
                         //((Canvas*)b)->setSubcanvas(_pdParserPrevWindow->canvas);
                     }
                 }
