@@ -6,7 +6,10 @@
 //
 //
 
+extern "C"{
 #include "m_pd.h"
+}
+
 
 #include "pdlib.hpp"
 
