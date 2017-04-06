@@ -25,7 +25,7 @@ void ObjectLoader::loadObjects()
     addUIobject("method", &UIMethod::createObject);
     addUIobject("property", &UIProperty::createObject);
 
-//    addUIobject("ui.dsp", &UIDSP::createObject);
+    addUIobject("ui.dsp", &UIDSP::createObject);
 
 
 }

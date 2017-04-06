@@ -29,7 +29,7 @@
 #include "oopd/UIMethod.h"
 #include "oopd/UIProperty.h"
 
-//#include "UIDSP.h"
+#include "UIDSP.h"
 
 namespace qtpd {
 

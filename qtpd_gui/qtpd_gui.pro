@@ -53,8 +53,6 @@ SOURCES += main.cpp\
 #
     objects/UIArrayEditor.cpp \
     Canvas.cpp \
-    #Port.cpp \
-    #SizeBox.cpp \
     FileParser.cpp \
     ObjectLoader.cpp \
     ObjectMaker.cpp \
@@ -66,7 +64,7 @@ SOURCES += main.cpp\
     window/PropertiesWindow.cpp \
     properties/Property.cpp \
     properties/PropertyList.cpp \
-#    objects/UIDSP.cpp \
+    objects/UIDSP.cpp \
     graphicobjects/Port.cpp \
     graphicobjects/SizeBox.cpp \
     graphicobjects/UIItem.cpp \
@@ -150,7 +148,7 @@ HEADERS  += \
     properties/Preferences.h \
     properties/Property.h \
     properties/PropertyList.h \
-#    objects/UIDSP.h \
+    objects/UIDSP.h \
     graphicobjects/common_types.h \
     graphicobjects/Port.h \
     graphicobjects/SizeBox.h \

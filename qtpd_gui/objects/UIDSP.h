@@ -7,9 +7,11 @@
 #include <qlineedit.h>
 
 #include "Port.h"
-//#include "UIObject.h"
+#include "UIObject.h"
 
 #include "PdLink.h"
+
+#include <QGraphicsView>
 
 namespace qtpd {
 
@@ -24,53 +26,39 @@ private:
     bool _value;
 
 public:
-    explicit UIDSP(UIObject* parent = 0);
-    UIDSP(QWidget* parent = 0)
+    explicit UIDSP()
     {
-        UIDSP::UIDSP((UIObject*)parent);
+        deselect();
+        _clicked = false;
+
+        _value = false;
 
         t_editMode* em = new t_editMode;
         *em = em_Locked;
         setEditModeRef(em);
 
-        setFixedWidth(40);
-        setFixedHeight(40);
+        setWidth(40);
+        setHeight(40);
 
         setMinimumBoxWidth(40);
         setMinimumBoxHeight(40);
 
+        setObjectSizeMode(os_Square);
+
         _value = false;
     };
 
-    static UIObject* createObject(std::string objectData, t_canvas* pdCanvas, UIWidget* parent = 0)
+    static UIObject* createObject(QString objectData, t_canvas* , QGraphicsView* parent = 0)
     {
-        UIDSP* b = new UIDSP((UIObject*)parent);
+        UIDSP* b = new UIDSP();
+        b->setCanvas((void*)parent);
 
-        std::string data1 = b->properties()->extractFromPdFileString(objectData);
-        b->setObjectData("ui.toggle");
+        std::string data1 = b->properties()->extractFromPdFileString(objectData.toStdString());
+        b->setObjectData("ui.dsp");
 
         qDebug() << "obj data" << QString(data1.c_str());
 
         std::string message = "ui.dsp";
-
-        //temp
-        //        t_object* new_obj = 0;
-        //        if (!pdCanvas) {
-        //            qDebug("bad pd canvas instance");
-        //        } else {
-        //            QPoint pos = QPoint(0, 0);
-        //            new_obj = cmp_create_object(pdCanvas, message, pos.x(), pos.y());
-        //        }
-
-        //        if (new_obj) {
-        //            qDebug("created toggle %s | ptr %lu\n", message.c_str(), (long)new_obj);
-        //            b->setPdObject(new_obj);
-        //        } else {
-        //            qDebug("Error: no such object %s", message.c_str());
-        //        }
-
-        //        b->addInlet();
-        //        b->addOutlet();
 
         return (UIObject*)b;
     };
@@ -82,99 +70,64 @@ public:
         properties()->create("Value", "Preset", "0.1", 0.);
     }
 
-    void paintEvent(QPaintEvent*)
-    {
-        QPainter p(viewport());
+    // ---------------
 
-        p.setRenderHint(QPainter::HighQualityAntialiasing, true);
+    virtual void paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)
+    {
+        p->setRenderHint(QPainter::HighQualityAntialiasing, true);
 
         if (_value) {
 
-            p.setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
-            //p.drawEllipse(QRect(1+lw/2, 1+lw/2, width()-2-lw,height()-2-lw));
-            //            p.drawLine(2, 2, width() - 2, height() - 2);
-            //            p.drawLine(width() - 2, 2, 2, height() - 2);
+            p->setPen(QPen(QColor(0, 192, 255), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+
         } else {
-            p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+            p->setPen(QPen(QColor(128, 128, 128), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
         }
 
         float posx = width() * .4;
         float posy = height() / 2;
 
-        //p.drawEllipse(QPoint(posx, posy), 3, 3);
+        p->setFont(QFont(PREF_QSTRING("Font"), 8, 0, false));
+        p->drawText(posx * .4, posy - 4, width() - 2, height() / 2 - 10, 0, "DSP", 0);
 
-        p.setFont(QFont(PREF_QSTRING("Font"), 8, 0, false));
-        p.drawText(posx * .4, posy - 4, width() - 2, height() / 2 - 10, 0, "DSP", 0);
-
-        p.drawArc(posx - 10, posy - 10, 20, 20, -60 * 16, 120 * 16);
-        p.drawArc(posx - 17, posy - 17, 34, 34, -60 * 16, 120 * 16);
+        p->drawArc(posx - 10, posy - 10, 20, 20, -60 * 16, 120 * 16);
+        p->drawArc(posx - 17, posy - 17, 34, 34, -60 * 16, 120 * 16);
 
         if (isSelected()) {
-            p.setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p->setPen(QPen(QColor(0, 192, 255), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         } else {
-            p.setPen(QPen(QColor(128, 128, 128), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p->setPen(QPen(QColor(128, 128, 128), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         }
 
-        p.drawRect(0, 0, width(), height());
+        p->drawRect(0, 0, width(), height());
     }
 
-    void resizeEvent(QResizeEvent* event)
-    {
-        UIObject::resizeEvent(event);
-        setFixedHeight(width());
-    }
 
-    ///////////////////
+    // ------------------------------------------------
 
-    void mousePressEvent(QMouseEvent* ev)
+    void mousePressEvent(QGraphicsSceneMouseEvent* ev)
     {
 
-        //        if ( (getEditMode()==em_Unlocked) && isSelected())
-        //        {
-        //            editor_->setText(QString(getObjectData().c_str()));
-        //            editor_->show();
-        //            editor_->setFocus();
-        //        }
         if (getEditMode() == em_Unlocked)
             emit selectBox(this, ev);
 
-        dragOffset = ev->pos();
+        dragOffset = ev->pos().toPoint();
 
         if (getEditMode() != em_Unlocked) {
-            //            value_ = !value_;
-            //             viewport()->update();
-
-            //            if (!pdObject()) {
-            //                qDebug("msg: bad pd object!");
-            //            } else {
-            //                //                //lol
-            //                //                cmp_sendstring((t_pd*)pdObject(), ((value_)?((std::string)"set 1").c_str():((std::string)"set 0").c_str()));
-
-            //                cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
-            //            }
 
             _value = !_value;
 
             cmp_switch_dsp(_value);
 
-            //
-
-                viewport()->update();
+            update();
         }
     }
 
-    void mouseReleaseEvent(QMouseEvent*)
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent*)
     {
-        //selected_ = false;
-
-        //if (!getEditMode())
-        //        {
-        //            //clicked_ = false;
-        //             viewport()->update();
-        //        }
     }
 
-    void mouseMoveEvent(QMouseEvent* event)
+    void mouseMoveEvent(QGraphicsSceneMouseEvent* event)
     {
         if (event->buttons() & Qt::LeftButton) {
             emit moveBox(this, event);
@@ -189,58 +142,15 @@ public:
         }
     }
 
-    ///////
+    // ------------------------------------------------
 
     void setPdMessage(std::string message)
     {
         setObjectData(message);
-
-        //        QFont myFont(PREF_QSTRING("Font"), 11);
-        //        QFontMetrics fm(myFont);
-        //        int new_w = fm.width(QString(getObjectData().c_str())) + 10;
-        //        new_w = (new_w<25) ? 25 : new_w;
-        //        setFixedWidth(new_w);
-        //        editor_->setFixedWidth(width()-5);
-
-        //        //temporary
-        //        //move
-        //        if (getEditMode() == em_Unlocked)
-        //        {
-        //            if (!getPdObject())
-        //            {
-        //                qDebug("msg: bad pd object!");
-        //            }
-        //            else
-        //            {
-
-        //                //std::string msg = ("set "+ getObjectData());
-        //                //cmp_sendstring((t_pd*)getPdObject(), msg);
-        //            }
-        //        }
     }
 
     static void updateUI(void* uiobj, ceammc::AtomList msg)
     {
-        //qDebug("update ui");
-        //        UIDSP* x = (UIDSP*)uiobj;
-
-        //        //        std::string obj_data;
-        //        //        for (int i=0; i<msg.size();i++)
-        //        //        {
-        //        //            obj_data += msg.at(i).asString() + " ";
-        //        //        }
-
-        //        //x->setObjectData(obj_data);
-
-        //        if (msg.size() > 0) {
-        //            if (msg.at(0).isFloat())
-        //                x->value_ = msg.at(0).asFloat() > 0;
-        //            //            if (msg.at(0).isSymbol())
-        //            //                if (msg.at(0).asSymbol() == gensym("bang"))
-        //            //                    x->value_ = !x->value_;
-        //        }
-
-        //emit x->call viewport()->update();
     }
 
     void setPdObject(void* obj)
