@@ -23,5 +23,9 @@ var searchData=
   ['rot_5ftwo',['ROT_TWO',['../opcode_8h.html#a52e89ed3e39985fc09bcf5ba601cde1c',1,'opcode.h']]],
   ['rpar',['RPAR',['../token_8h.html#a5e78e592b96d384fb9f910870af69cb0',1,'token.h']]],
   ['rsqb',['RSQB',['../token_8h.html#ae4b905b76e3306cb3be37144c3cbde38',1,'token.h']]],
+  ['rtext_5fdbl',['RTEXT_DBL',['../g__canvas_8h.html#a15785dee89f5c53dfae0583de75adda6',1,'g_canvas.h']]],
+  ['rtext_5fdown',['RTEXT_DOWN',['../g__canvas_8h.html#a5be19ec3a8644534517d0b9cca6d3a4e',1,'g_canvas.h']]],
+  ['rtext_5fdrag',['RTEXT_DRAG',['../g__canvas_8h.html#a9d8cdcb68b002ff33e56792369c62a5f',1,'g_canvas.h']]],
+  ['rtext_5fshift',['RTEXT_SHIFT',['../g__canvas_8h.html#adb7ec2ad61bdfdb7b2281e62bc1954ae',1,'g_canvas.h']]],
   ['rule',['RULE',['../metagrammar_8h.html#ac2f06b3729559aefeb2c260309ccdb30',1,'metagrammar.h']]]
 ];

@@ -104,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00020"></a>00020 <span class="preprocessor">#include &lt;utility&gt;</span>
 <a name="l00021"></a>00021 <span class="preprocessor">#include &lt;vector&gt;</span>
 <a name="l00022"></a>00022 
-<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;m_pd.h&gt;</span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;<a class="code" href="m__pd_8h.html">m_pd.h</a>&gt;</span>
 <a name="l00024"></a>00024 
 <a name="l00025"></a>00025 <span class="keyword">namespace </span>ceammc {
 <a name="l00026"></a>00026 
@@ -237,19 +237,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00191"></a>00191             data_.create(name, <span class="keyword">new</span> T());
 <a name="l00192"></a>00192             ptr_ = data_.acquire(name);
 <a name="l00193"></a>00193 
-<a name="l00194"></a>00194             verbose(log_level, <span class="stringliteral">&quot;[%s %s] created&quot;</span>, descr_.c_str(), name_.c_str());
+<a name="l00194"></a>00194             <a class="code" href="m__pd_8h.html#a9332d435cf9d1c62d9c940c912931920">verbose</a>(log_level, <span class="stringliteral">&quot;[%s %s] created&quot;</span>, descr_.c_str(), name_.c_str());
 <a name="l00195"></a>00195         }
 <a name="l00196"></a>00196 
-<a name="l00197"></a>00197         verbose(log_level, <span class="stringliteral">&quot;[%s %s] +1&quot;</span>, descr_.c_str(), name_.c_str());
+<a name="l00197"></a>00197         <a class="code" href="m__pd_8h.html#a9332d435cf9d1c62d9c940c912931920">verbose</a>(log_level, <span class="stringliteral">&quot;[%s %s] +1&quot;</span>, descr_.c_str(), name_.c_str());
 <a name="l00198"></a>00198     }
 <a name="l00199"></a>00199 
 <a name="l00200"></a><a class="code" href="classceammc_1_1_global_data.html#a27ce95f7c182bc5077ccb884fbfab37d">00200</a>     <a class="code" href="classceammc_1_1_global_data.html#a27ce95f7c182bc5077ccb884fbfab37d">~GlobalData</a>()
 <a name="l00201"></a>00201     {
-<a name="l00202"></a>00202         verbose(log_level, <span class="stringliteral">&quot;[%s %s] -1&quot;</span>, descr_.c_str(), name_.c_str());
+<a name="l00202"></a>00202         <a class="code" href="m__pd_8h.html#a9332d435cf9d1c62d9c940c912931920">verbose</a>(log_level, <span class="stringliteral">&quot;[%s %s] -1&quot;</span>, descr_.c_str(), name_.c_str());
 <a name="l00203"></a>00203         data_.release(name_);
 <a name="l00204"></a>00204 
 <a name="l00205"></a>00205         <span class="keywordflow">if</span> (!data_.contains(name_))
-<a name="l00206"></a>00206             verbose(log_level, <span class="stringliteral">&quot;[%s %s] destroyed&quot;</span>, descr_.c_str(), name_.c_str());
+<a name="l00206"></a>00206             <a class="code" href="m__pd_8h.html#a9332d435cf9d1c62d9c940c912931920">verbose</a>(log_level, <span class="stringliteral">&quot;[%s %s] destroyed&quot;</span>, descr_.c_str(), name_.c_str());
 <a name="l00207"></a>00207     }
 <a name="l00208"></a>00208 
 <a name="l00212"></a><a class="code" href="classceammc_1_1_global_data.html#acea2a14e6c21615ee005c1eab31f6235">00212</a>     T* <a class="code" href="classceammc_1_1_global_data.html#acea2a14e6c21615ee005c1eab31f6235">operator-&gt;</a>() { <span class="keywordflow">return</span> ptr_; }
@@ -293,7 +293,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 6 2017 16:10:23 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 6 2017 19:40:55 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

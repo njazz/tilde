@@ -2,6 +2,9 @@ var searchData=
 [
   ['lambda',['Lambda',['../_python-ast_8h.html#af3d84783a7fe3a1241ff0794313d29b9',1,'Python-ast.h']]],
   ['lambdef',['lambdef',['../graminit_8h.html#a2e2a9afdc5a04a7471809169a4592301',1,'graminit.h']]],
+  ['lb_5fclose',['LB_CLOSE',['../g__canvas_8h.html#a27eb5af7880c6f9407adf4754e902600',1,'g_canvas.h']]],
+  ['lb_5finit',['LB_INIT',['../g__canvas_8h.html#a40a220ebc6c22ed57e64881bf2952459',1,'g_canvas.h']]],
+  ['lb_5fload',['LB_LOAD',['../g__canvas_8h.html#ad7f7a8be722d79a02efd815dbac650b9',1,'g_canvas.h']]],
   ['lbrace',['LBRACE',['../token_8h.html#af078bec81516d407fe17fc7cb8b355ac',1,'token.h']]],
   ['leftshift',['LEFTSHIFT',['../token_8h.html#a29870f655cade0ad3f14779c8112618c',1,'token.h']]],
   ['leftshiftequal',['LEFTSHIFTEQUAL',['../token_8h.html#a88572dbfd08e69f3470b563ef9e4fe0b',1,'token.h']]],
@@ -25,6 +28,7 @@ var searchData=
   ['load_5flocals',['LOAD_LOCALS',['../opcode_8h.html#a6748122f53f133a25af0b315000d9b44',1,'opcode.h']]],
   ['load_5fname',['LOAD_NAME',['../opcode_8h.html#a9146e9e93f9f4d5dcf976a780aa3d209',1,'opcode.h']]],
   ['local',['LOCAL',['../symtable_8h.html#a3758dd5d300a594312c95bc393378df0',1,'symtable.h']]],
+  ['logcostabsize',['LOGCOSTABSIZE',['../m__pd_8h.html#a55b874e6c3ed33b08644277c3c02ce77',1,'m_pd.h']]],
   ['lpar',['LPAR',['../token_8h.html#a48ea1fc2fe2e898c390f7f425b280ea8',1,'token.h']]],
   ['lsqb',['LSQB',['../token_8h.html#a05d57e1be332c20aa70fbe3891d282d1',1,'token.h']]]
 ];

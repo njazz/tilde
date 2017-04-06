@@ -129,7 +129,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00048"></a>00048         _value = <span class="keyword">false</span>;
 <a name="l00049"></a>00049     };
 <a name="l00050"></a>00050 
-<a name="l00051"></a><a class="code" href="classqtpd_1_1_u_i_d_s_p.html#a4e65ae80e10ee5009169ff84d133fdf4">00051</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_d_s_p.html#a4e65ae80e10ee5009169ff84d133fdf4">createObject</a>(QString <a class="code" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447" title="gets object text data /usually overriden by ui objects/">objectData</a>, t_canvas* , QGraphicsView* parent = 0)
+<a name="l00051"></a><a class="code" href="classqtpd_1_1_u_i_d_s_p.html#a4e65ae80e10ee5009169ff84d133fdf4">00051</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_d_s_p.html#a4e65ae80e10ee5009169ff84d133fdf4">createObject</a>(QString <a class="code" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447" title="gets object text data /usually overriden by ui objects/">objectData</a>, <a class="code" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a>* , QGraphicsView* parent = 0)
 <a name="l00052"></a>00052     {
 <a name="l00053"></a>00053         <a class="code" href="classqtpd_1_1_u_i_d_s_p.html" title="gui object: message box (ui.msg)">UIDSP</a>* b = <span class="keyword">new</span> <a class="code" href="classqtpd_1_1_u_i_d_s_p.html#a3e492bb9470b2d650ed2f58a55dcf2c2">UIDSP</a>();
 <a name="l00054"></a>00054         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a2e6fec1e7e23c49c16330281d84f099f">setCanvas</a>((<span class="keywordtype">void</span>*)parent);
@@ -237,7 +237,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00156"></a><a class="code" href="classqtpd_1_1_u_i_d_s_p.html#af73541eb81ec93b2af0e4c0ab05593a5">00156</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_d_s_p.html#af73541eb81ec93b2af0e4c0ab05593a5" title="sets pointer to pd object">setPdObject</a>(<span class="keywordtype">void</span>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
 <a name="l00157"></a>00157     {
 <a name="l00158"></a>00158         <a class="code" href="classqtpd_1_1_u_i_d_s_p.html#af73541eb81ec93b2af0e4c0ab05593a5" title="sets pointer to pd object">UIObject::setPdObject</a>(obj);
-<a name="l00159"></a>00159         <a class="code" href="_pd_link_8h.html#a9b4bef98ca39e6d157ee073b5139ae9d" title="set the &#39;repaint&#39; function of the ui object to be accessible from pd object">cmp_connectUI</a>((t_pd*)<a class="code" href="classqtpd_1_1_u_i_object.html#ad41f2f9ff8447ea8dc061c3e8fc6528b" title="returns pointer to pd object.">pdObject</a>(), (<span class="keywordtype">void</span>*)<span class="keyword">this</span>, &amp;<a class="code" href="classqtpd_1_1_u_i_d_s_p.html#a019a2a87638b260e26114b3544e51d0d">UIDSP::updateUI</a>);
+<a name="l00159"></a>00159         <a class="code" href="_pd_link_8h.html#a9b4bef98ca39e6d157ee073b5139ae9d" title="set the &#39;repaint&#39; function of the ui object to be accessible from pd object">cmp_connectUI</a>((<a class="code" href="m__pd_8h.html#ac085bef486c0e262349075ffce8a9752">t_pd</a>*)<a class="code" href="classqtpd_1_1_u_i_object.html#ad41f2f9ff8447ea8dc061c3e8fc6528b" title="returns pointer to pd object.">pdObject</a>(), (<span class="keywordtype">void</span>*)<span class="keyword">this</span>, &amp;<a class="code" href="classqtpd_1_1_u_i_d_s_p.html#a019a2a87638b260e26114b3544e51d0d">UIDSP::updateUI</a>);
 <a name="l00160"></a>00160     }
 <a name="l00161"></a>00161 };
 <a name="l00162"></a>00162 }
@@ -261,7 +261,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 6 2017 16:10:23 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 6 2017 19:40:54 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -104,9 +104,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00020"></a>00020 <span class="preprocessor">#include &lt;string&gt;</span>
 <a name="l00021"></a>00021 <span class="preprocessor">#include &lt;vector&gt;</span>
 <a name="l00022"></a>00022 
-<a name="l00023"></a>00023 <span class="preprocessor">#include &quot;<a class="code" href="ceammc__atom_8h.html">ceammc_atom.h</a>&quot;</span>
-<a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="ceammc__atomlist_8h.html">ceammc_atomlist.h</a>&quot;</span>
-<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;m_pd.h&quot;</span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include &quot;<a class="code" href="qtpd__lib_2ceammc-lib_2ceammc__atom_8h.html">ceammc_atom.h</a>&quot;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="qtpd__lib_2ceammc-lib_2ceammc__atomlist_8h.html">ceammc_atomlist.h</a>&quot;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="m__pd_8h.html">m_pd.h</a>&quot;</span>
 <a name="l00026"></a>00026 
 <a name="l00027"></a>00027 <span class="preprocessor">#ifndef FAUSTFLOAT</span>
 <a name="l00028"></a><a class="code" href="ceammc__faust_8h.html#aff8d1306e22d8dab1fbd5d24477139f5">00028</a> <span class="preprocessor"></span><span class="preprocessor">#define FAUSTFLOAT float</span>
@@ -137,14 +137,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00053"></a>00053         <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> label_;
 <a name="l00054"></a>00054         <a class="code" href="ceammc__faust_8h.html#aff8d1306e22d8dab1fbd5d24477139f5">FAUSTFLOAT</a> init_, min_, max_, step_;
 <a name="l00055"></a>00055         <a class="code" href="ceammc__faust_8h.html#aff8d1306e22d8dab1fbd5d24477139f5">FAUSTFLOAT</a>* zone_;
-<a name="l00056"></a>00056         t_symbol* set_prop_symbol_;
-<a name="l00057"></a>00057         t_symbol* get_prop_symbol_;
+<a name="l00056"></a>00056         <a class="code" href="struct__symbol.html">t_symbol</a>* set_prop_symbol_;
+<a name="l00057"></a>00057         <a class="code" href="struct__symbol.html">t_symbol</a>* get_prop_symbol_;
 <a name="l00058"></a>00058 
 <a name="l00059"></a>00059     <span class="keyword">public</span>:
 <a name="l00060"></a>00060         <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#ae9cdb8abd0b3ac782fb3c4d5ea6caa8c">UIElement</a>(<a class="code" href="namespaceceammc_1_1faust.html#a3f52bf55f37e4483629bcb94a65367e6">UIElementType</a> t, <span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#acab5990e9f88d8f2ad4b2b91df77ebb2">path</a>, <span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; <a class="code" href="structlabel.html">label</a>);
 <a name="l00061"></a>00061         <span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a0381cb315017d103733c01e57c4bda1f">label</a>() <span class="keyword">const</span>;
 <a name="l00062"></a>00062         <span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#acab5990e9f88d8f2ad4b2b91df77ebb2">path</a>() <span class="keyword">const</span>;
-<a name="l00063"></a>00063         t_symbol* <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#ae66475e8aa1f61db10459b7b742dc413">typeSymbol</a>() <span class="keyword">const</span>;
+<a name="l00063"></a>00063         <a class="code" href="struct__symbol.html">t_symbol</a>* <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#ae66475e8aa1f61db10459b7b742dc413">typeSymbol</a>() <span class="keyword">const</span>;
 <a name="l00064"></a>00064         <a class="code" href="namespaceceammc_1_1faust.html#a3f52bf55f37e4483629bcb94a65367e6">UIElementType</a> <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#afbfd80362243082581bb0dcbc9c99b99">type</a>() <span class="keyword">const</span>;
 <a name="l00065"></a><a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a445cf26cd264001bf254b3a9b2450a52">00065</a>         <a class="code" href="ceammc__faust_8h.html#aff8d1306e22d8dab1fbd5d24477139f5">FAUSTFLOAT</a> <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a445cf26cd264001bf254b3a9b2450a52">init</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> init_; }
 <a name="l00066"></a><a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a52457870b842500d12c0336142024c9d">00066</a>         <a class="code" href="ceammc__faust_8h.html#aff8d1306e22d8dab1fbd5d24477139f5">FAUSTFLOAT</a> <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a52457870b842500d12c0336142024c9d">min</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> min_; }
@@ -152,10 +152,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00068"></a><a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#af6179be6590fb7c71ededde858d83472">00068</a>         <a class="code" href="ceammc__faust_8h.html#aff8d1306e22d8dab1fbd5d24477139f5">FAUSTFLOAT</a> <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#af6179be6590fb7c71ededde858d83472">step</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> step_; }
 <a name="l00069"></a>00069 
 <a name="l00070"></a>00070         <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a2f838ac414a7dadba2da94a9d1bae521">initProperty</a>(<span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; <a class="code" href="abstract_8h.html#afcd1706c9144e6d6eee6127661ae3be2">name</a>);
-<a name="l00071"></a>00071         t_symbol* <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#ac2d8f9d089ce8a63d6eba260bbcfbcea">getPropertySym</a>();
-<a name="l00072"></a>00072         t_symbol* <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a44a5e9d49666c3cebac06f64215bd2a1">setPropertySym</a>();
-<a name="l00073"></a>00073         <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a09ab4cc8dd599eda5f753af6275c5538">outputProperty</a>(t_outlet* out);
-<a name="l00074"></a>00074         <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a925351c44a1de151caf5383d2f7f45db">outputValue</a>(t_outlet* out);
+<a name="l00071"></a>00071         <a class="code" href="struct__symbol.html">t_symbol</a>* <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#ac2d8f9d089ce8a63d6eba260bbcfbcea">getPropertySym</a>();
+<a name="l00072"></a>00072         <a class="code" href="struct__symbol.html">t_symbol</a>* <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a44a5e9d49666c3cebac06f64215bd2a1">setPropertySym</a>();
+<a name="l00073"></a>00073         <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a09ab4cc8dd599eda5f753af6275c5538">outputProperty</a>(<a class="code" href="m__pd_8h.html#a46dc692dc9e70ff60679462933409d90">t_outlet</a>* out);
+<a name="l00074"></a>00074         <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a925351c44a1de151caf5383d2f7f45db">outputValue</a>(<a class="code" href="m__pd_8h.html#a46dc692dc9e70ff60679462933409d90">t_outlet</a>* out);
 <a name="l00075"></a>00075 
 <a name="l00076"></a>00076         <a class="code" href="ceammc__faust_8h.html#aff8d1306e22d8dab1fbd5d24477139f5">FAUSTFLOAT</a> <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a0f10118b7824099720674dd722b84897">value</a>(<a class="code" href="ceammc__faust_8h.html#aff8d1306e22d8dab1fbd5d24477139f5">FAUSTFLOAT</a> def = 0.f) <span class="keyword">const</span>;
 <a name="l00077"></a>00077         <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a52d7b71993c587428c28ced70268645e">setValue</a>(<a class="code" href="ceammc__faust_8h.html#aff8d1306e22d8dab1fbd5d24477139f5">FAUSTFLOAT</a> <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>, <span class="keywordtype">bool</span> clip = <span class="keyword">false</span>);
@@ -166,19 +166,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00082"></a>00082 
 <a name="l00083"></a>00083         <span class="keywordtype">bool</span> <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#aab0bb924fd1ed11dabe9c1066a53b09b">pathcmp</a>(<span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; path) <span class="keyword">const</span>;
 <a name="l00084"></a>00084 
-<a name="l00085"></a>00085         <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a8f0c800623e3c4ceabdce3eac43fad33">dump</a>(t_outlet* out);
+<a name="l00085"></a>00085         <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a8f0c800623e3c4ceabdce3eac43fad33">dump</a>(<a class="code" href="m__pd_8h.html#a46dc692dc9e70ff60679462933409d90">t_outlet</a>* out);
 <a name="l00086"></a>00086 
 <a name="l00087"></a>00087     <span class="keyword">private</span>:
-<a name="l00088"></a>00088         <span class="keyword">static</span> t_symbol *s_button, *s_checkbox, *s_vslider, *s_hslider, *s_nentry, *s_vbargraph, *s_hbargraph;
+<a name="l00088"></a>00088         <span class="keyword">static</span> <a class="code" href="struct__symbol.html">t_symbol</a> *s_button, *s_checkbox, *s_vslider, *s_hslider, *s_nentry, *s_vbargraph, *s_hbargraph;
 <a name="l00089"></a>00089     };
 <a name="l00090"></a>00090 
-<a name="l00091"></a>00091     t_symbol* UIElement::s_button = gensym(<span class="stringliteral">&quot;button&quot;</span>);
-<a name="l00092"></a>00092     t_symbol* UIElement::s_checkbox = gensym(<span class="stringliteral">&quot;checkbox&quot;</span>);
-<a name="l00093"></a>00093     t_symbol* UIElement::s_vslider = gensym(<span class="stringliteral">&quot;vslider&quot;</span>);
-<a name="l00094"></a>00094     t_symbol* UIElement::s_hslider = gensym(<span class="stringliteral">&quot;hslider&quot;</span>);
-<a name="l00095"></a>00095     t_symbol* UIElement::s_nentry = gensym(<span class="stringliteral">&quot;nentry&quot;</span>);
-<a name="l00096"></a>00096     t_symbol* UIElement::s_vbargraph = gensym(<span class="stringliteral">&quot;vbargraph&quot;</span>);
-<a name="l00097"></a>00097     t_symbol* UIElement::s_hbargraph = gensym(<span class="stringliteral">&quot;hbargraph&quot;</span>);
+<a name="l00091"></a>00091     <a class="code" href="struct__symbol.html">t_symbol</a>* UIElement::s_button = <a class="code" href="m__pd_8h.html#a4449f71b80468e7d6e79a67193e65e0b">gensym</a>(<span class="stringliteral">&quot;button&quot;</span>);
+<a name="l00092"></a>00092     <a class="code" href="struct__symbol.html">t_symbol</a>* UIElement::s_checkbox = <a class="code" href="m__pd_8h.html#a4449f71b80468e7d6e79a67193e65e0b">gensym</a>(<span class="stringliteral">&quot;checkbox&quot;</span>);
+<a name="l00093"></a>00093     <a class="code" href="struct__symbol.html">t_symbol</a>* UIElement::s_vslider = <a class="code" href="m__pd_8h.html#a4449f71b80468e7d6e79a67193e65e0b">gensym</a>(<span class="stringliteral">&quot;vslider&quot;</span>);
+<a name="l00094"></a>00094     <a class="code" href="struct__symbol.html">t_symbol</a>* UIElement::s_hslider = <a class="code" href="m__pd_8h.html#a4449f71b80468e7d6e79a67193e65e0b">gensym</a>(<span class="stringliteral">&quot;hslider&quot;</span>);
+<a name="l00095"></a>00095     <a class="code" href="struct__symbol.html">t_symbol</a>* UIElement::s_nentry = <a class="code" href="m__pd_8h.html#a4449f71b80468e7d6e79a67193e65e0b">gensym</a>(<span class="stringliteral">&quot;nentry&quot;</span>);
+<a name="l00096"></a>00096     <a class="code" href="struct__symbol.html">t_symbol</a>* UIElement::s_vbargraph = <a class="code" href="m__pd_8h.html#a4449f71b80468e7d6e79a67193e65e0b">gensym</a>(<span class="stringliteral">&quot;vbargraph&quot;</span>);
+<a name="l00097"></a>00097     <a class="code" href="struct__symbol.html">t_symbol</a>* UIElement::s_hbargraph = <a class="code" href="m__pd_8h.html#a4449f71b80468e7d6e79a67193e65e0b">gensym</a>(<span class="stringliteral">&quot;hbargraph&quot;</span>);
 <a name="l00098"></a>00098 
 <a name="l00099"></a><a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#ae9cdb8abd0b3ac782fb3c4d5ea6caa8c">00099</a>     <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#ae9cdb8abd0b3ac782fb3c4d5ea6caa8c">UIElement::UIElement</a>(<a class="code" href="namespaceceammc_1_1faust.html#a3f52bf55f37e4483629bcb94a65367e6">UIElementType</a> t, <span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; path, <span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; <a class="code" href="structlabel.html">label</a>)
 <a name="l00100"></a>00100         : type_(t)
@@ -205,7 +205,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00121"></a>00121         <span class="keywordflow">return</span> path_;
 <a name="l00122"></a>00122     }
 <a name="l00123"></a>00123 
-<a name="l00124"></a><a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#ae66475e8aa1f61db10459b7b742dc413">00124</a>     t_symbol* <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#ae66475e8aa1f61db10459b7b742dc413">UIElement::typeSymbol</a>()<span class="keyword"> const</span>
+<a name="l00124"></a><a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#ae66475e8aa1f61db10459b7b742dc413">00124</a>     <a class="code" href="struct__symbol.html">t_symbol</a>* <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#ae66475e8aa1f61db10459b7b742dc413">UIElement::typeSymbol</a>()<span class="keyword"> const</span>
 <a name="l00125"></a>00125 <span class="keyword">    </span>{
 <a name="l00126"></a>00126         <span class="keywordflow">switch</span> (type_) {
 <a name="l00127"></a>00127         <span class="keywordflow">case</span> <a class="code" href="namespaceceammc_1_1faust.html#a3f52bf55f37e4483629bcb94a65367e6aebf5b36145cfc676a49c3037b16cde54">UI_BUTTON</a>:
@@ -234,24 +234,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00150"></a>00150 
 <a name="l00151"></a><a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a2f838ac414a7dadba2da94a9d1bae521">00151</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a2f838ac414a7dadba2da94a9d1bae521">UIElement::initProperty</a>(<span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; <a class="code" href="abstract_8h.html#afcd1706c9144e6d6eee6127661ae3be2">name</a>)
 <a name="l00152"></a>00152     {
-<a name="l00153"></a>00153         <span class="keywordtype">char</span> <a class="code" href="abstract_8h.html#aa7a8493db7fccef356c882deb1fa932c">buf</a>[MAXPDSTRING];
+<a name="l00153"></a>00153         <span class="keywordtype">char</span> <a class="code" href="abstract_8h.html#aa7a8493db7fccef356c882deb1fa932c">buf</a>[<a class="code" href="m__pd_8h.html#af8e9b6fca30a21ee8e9577021892263a">MAXPDSTRING</a>];
 <a name="l00154"></a>00154         sprintf(buf, <span class="stringliteral">&quot;@%s&quot;</span>, name.c_str());
-<a name="l00155"></a>00155         set_prop_symbol_ = gensym(buf);
+<a name="l00155"></a>00155         set_prop_symbol_ = <a class="code" href="m__pd_8h.html#a4449f71b80468e7d6e79a67193e65e0b">gensym</a>(buf);
 <a name="l00156"></a>00156         sprintf(buf, <span class="stringliteral">&quot;@%s?&quot;</span>, name.c_str());
-<a name="l00157"></a>00157         get_prop_symbol_ = gensym(buf);
+<a name="l00157"></a>00157         get_prop_symbol_ = <a class="code" href="m__pd_8h.html#a4449f71b80468e7d6e79a67193e65e0b">gensym</a>(buf);
 <a name="l00158"></a>00158     }
 <a name="l00159"></a>00159 
-<a name="l00160"></a><a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#ac2d8f9d089ce8a63d6eba260bbcfbcea">00160</a>     t_symbol* <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#ac2d8f9d089ce8a63d6eba260bbcfbcea">UIElement::getPropertySym</a>()
+<a name="l00160"></a><a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#ac2d8f9d089ce8a63d6eba260bbcfbcea">00160</a>     <a class="code" href="struct__symbol.html">t_symbol</a>* <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#ac2d8f9d089ce8a63d6eba260bbcfbcea">UIElement::getPropertySym</a>()
 <a name="l00161"></a>00161     {
 <a name="l00162"></a>00162         <span class="keywordflow">return</span> get_prop_symbol_;
 <a name="l00163"></a>00163     }
 <a name="l00164"></a>00164 
-<a name="l00165"></a><a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a44a5e9d49666c3cebac06f64215bd2a1">00165</a>     t_symbol* <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a44a5e9d49666c3cebac06f64215bd2a1">UIElement::setPropertySym</a>()
+<a name="l00165"></a><a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a44a5e9d49666c3cebac06f64215bd2a1">00165</a>     <a class="code" href="struct__symbol.html">t_symbol</a>* <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a44a5e9d49666c3cebac06f64215bd2a1">UIElement::setPropertySym</a>()
 <a name="l00166"></a>00166     {
 <a name="l00167"></a>00167         <span class="keywordflow">return</span> set_prop_symbol_;
 <a name="l00168"></a>00168     }
 <a name="l00169"></a>00169 
-<a name="l00170"></a><a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a09ab4cc8dd599eda5f753af6275c5538">00170</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a09ab4cc8dd599eda5f753af6275c5538">UIElement::outputProperty</a>(t_outlet* out)
+<a name="l00170"></a><a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a09ab4cc8dd599eda5f753af6275c5538">00170</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a09ab4cc8dd599eda5f753af6275c5538">UIElement::outputProperty</a>(<a class="code" href="m__pd_8h.html#a46dc692dc9e70ff60679462933409d90">t_outlet</a>* out)
 <a name="l00171"></a>00171     {
 <a name="l00172"></a>00172         <span class="keywordflow">if</span> (!out)
 <a name="l00173"></a>00173             <span class="keywordflow">return</span>;
@@ -261,18 +261,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00177"></a>00177         <span class="keywordflow">if</span> (zone_)
 <a name="l00178"></a>00178             a.<a class="code" href="classceammc_1_1_atom.html#a36306bc59c43a106a637faaadae6a2ed">setFloat</a>(*zone_, <span class="keyword">true</span>);
 <a name="l00179"></a>00179         <span class="keywordflow">else</span>
-<a name="l00180"></a>00180             a.<a class="code" href="classceammc_1_1_atom.html#a7719cdc16fad0c5d7b0200af54ac86b2">setSymbol</a>(gensym(<span class="stringliteral">&quot;?&quot;</span>), <span class="keyword">true</span>);
+<a name="l00180"></a>00180             a.<a class="code" href="classceammc_1_1_atom.html#a7719cdc16fad0c5d7b0200af54ac86b2">setSymbol</a>(<a class="code" href="m__pd_8h.html#a4449f71b80468e7d6e79a67193e65e0b">gensym</a>(<span class="stringliteral">&quot;?&quot;</span>), <span class="keyword">true</span>);
 <a name="l00181"></a>00181 
 <a name="l00182"></a>00182         a.<a class="code" href="classceammc_1_1_atom.html#a3689c5a34f24485896fec83a5f41593c">outputAsAny</a>(out, set_prop_symbol_);
 <a name="l00183"></a>00183     }
 <a name="l00184"></a>00184 
-<a name="l00185"></a><a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a925351c44a1de151caf5383d2f7f45db">00185</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a925351c44a1de151caf5383d2f7f45db">UIElement::outputValue</a>(t_outlet* out)
+<a name="l00185"></a><a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a925351c44a1de151caf5383d2f7f45db">00185</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a925351c44a1de151caf5383d2f7f45db">UIElement::outputValue</a>(<a class="code" href="m__pd_8h.html#a46dc692dc9e70ff60679462933409d90">t_outlet</a>* out)
 <a name="l00186"></a>00186     {
 <a name="l00187"></a>00187         <span class="keywordflow">if</span> (!out || !zone_)
 <a name="l00188"></a>00188             <span class="keywordflow">return</span>;
 <a name="l00189"></a>00189 
 <a name="l00190"></a>00190         <a class="code" href="classceammc_1_1_atom.html">Atom</a> a(<a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a0f10118b7824099720674dd722b84897">value</a>());
-<a name="l00191"></a>00191         a.<a class="code" href="classceammc_1_1_atom.html#a3689c5a34f24485896fec83a5f41593c">outputAsAny</a>(out, gensym(path_.c_str()));
+<a name="l00191"></a>00191         a.<a class="code" href="classceammc_1_1_atom.html#a3689c5a34f24485896fec83a5f41593c">outputAsAny</a>(out, <a class="code" href="m__pd_8h.html#a4449f71b80468e7d6e79a67193e65e0b">gensym</a>(path_.c_str()));
 <a name="l00192"></a>00192     }
 <a name="l00193"></a>00193 
 <a name="l00194"></a><a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a0f10118b7824099720674dd722b84897">00194</a>     <a class="code" href="ceammc__faust_8h.html#aff8d1306e22d8dab1fbd5d24477139f5">FAUSTFLOAT</a> <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a0f10118b7824099720674dd722b84897">UIElement::value</a>(<a class="code" href="ceammc__faust_8h.html#aff8d1306e22d8dab1fbd5d24477139f5">FAUSTFLOAT</a> def)<span class="keyword"> const</span>
@@ -339,7 +339,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00255"></a>00255         <span class="keywordflow">return</span> path_.compare(n - m, std::string::npos, path) == 0;
 <a name="l00256"></a>00256     }
 <a name="l00257"></a>00257 
-<a name="l00258"></a><a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a8f0c800623e3c4ceabdce3eac43fad33">00258</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a8f0c800623e3c4ceabdce3eac43fad33">UIElement::dump</a>(t_outlet* out)
+<a name="l00258"></a><a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a8f0c800623e3c4ceabdce3eac43fad33">00258</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#a8f0c800623e3c4ceabdce3eac43fad33">UIElement::dump</a>(<a class="code" href="m__pd_8h.html#a46dc692dc9e70ff60679462933409d90">t_outlet</a>* out)
 <a name="l00259"></a>00259     {
 <a name="l00260"></a>00260         <span class="keywordflow">if</span> (!out)
 <a name="l00261"></a>00261             <span class="keywordflow">return</span>;
@@ -347,7 +347,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00263"></a>00263         <span class="keywordflow">if</span> (!zone_)
 <a name="l00264"></a>00264             <span class="keywordflow">return</span>;
 <a name="l00265"></a>00265 
-<a name="l00266"></a>00266         t_symbol* sel = <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#ae66475e8aa1f61db10459b7b742dc413">typeSymbol</a>();
+<a name="l00266"></a>00266         <a class="code" href="struct__symbol.html">t_symbol</a>* sel = <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html#ae66475e8aa1f61db10459b7b742dc413">typeSymbol</a>();
 <a name="l00267"></a>00267         <span class="keywordflow">if</span> (!sel)
 <a name="l00268"></a>00268             <span class="keywordflow">return</span>;
 <a name="l00269"></a>00269 
@@ -362,25 +362,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00278"></a>00278         lst.<a class="code" href="classceammc_1_1_atom_list.html#a47a3313ad11915f5d2bf5a1bb20e3bb1">outputAsAny</a>(out, sel);
 <a name="l00279"></a>00279     }
 <a name="l00280"></a>00280 
-<a name="l00281"></a>00281     <span class="keyword">static</span> <span class="keywordtype">bool</span> isGetAllProperties(t_symbol* s)
+<a name="l00281"></a>00281     <span class="keyword">static</span> <span class="keywordtype">bool</span> isGetAllProperties(<a class="code" href="struct__symbol.html">t_symbol</a>* s)
 <a name="l00282"></a>00282     {
-<a name="l00283"></a>00283         <span class="keywordtype">size_t</span> <a class="code" href="abstract_8h.html#abc8b352d6723c361fc39710e5b10b502">len</a> = strlen(s-&gt;s_name);
+<a name="l00283"></a>00283         <span class="keywordtype">size_t</span> <a class="code" href="abstract_8h.html#abc8b352d6723c361fc39710e5b10b502">len</a> = strlen(s-&gt;<a class="code" href="struct__symbol.html#aa0b38e13adc3db2729774f033ec09942">s_name</a>);
 <a name="l00284"></a>00284         <span class="keywordflow">if</span> (len &lt; 2)
 <a name="l00285"></a>00285             <span class="keywordflow">return</span> <span class="keyword">false</span>;
 <a name="l00286"></a>00286 
-<a name="l00287"></a>00287         <span class="keywordflow">return</span> s-&gt;s_name[0] == <span class="charliteral">&#39;@&#39;</span> &amp;&amp; s-&gt;s_name[1] == <span class="charliteral">&#39;*&#39;</span>;
+<a name="l00287"></a>00287         <span class="keywordflow">return</span> s-&gt;<a class="code" href="struct__symbol.html#aa0b38e13adc3db2729774f033ec09942">s_name</a>[0] == <span class="charliteral">&#39;@&#39;</span> &amp;&amp; s-&gt;<a class="code" href="struct__symbol.html#aa0b38e13adc3db2729774f033ec09942">s_name</a>[1] == <span class="charliteral">&#39;*&#39;</span>;
 <a name="l00288"></a>00288     }
 <a name="l00289"></a>00289 
-<a name="l00290"></a>00290     <span class="keyword">static</span> <span class="keywordtype">bool</span> isGetProperty(t_symbol* s)
+<a name="l00290"></a>00290     <span class="keyword">static</span> <span class="keywordtype">bool</span> isGetProperty(<a class="code" href="struct__symbol.html">t_symbol</a>* s)
 <a name="l00291"></a>00291     {
-<a name="l00292"></a>00292         <span class="keywordtype">size_t</span> len = strlen(s-&gt;s_name);
+<a name="l00292"></a>00292         <span class="keywordtype">size_t</span> len = strlen(s-&gt;<a class="code" href="struct__symbol.html#aa0b38e13adc3db2729774f033ec09942">s_name</a>);
 <a name="l00293"></a>00293         <span class="keywordflow">if</span> (len &lt; 1)
 <a name="l00294"></a>00294             <span class="keywordflow">return</span> <span class="keyword">false</span>;
 <a name="l00295"></a>00295 
-<a name="l00296"></a>00296         <span class="keywordflow">if</span> (s-&gt;s_name[0] != <span class="charliteral">&#39;@&#39;</span>)
+<a name="l00296"></a>00296         <span class="keywordflow">if</span> (s-&gt;<a class="code" href="struct__symbol.html#aa0b38e13adc3db2729774f033ec09942">s_name</a>[0] != <span class="charliteral">&#39;@&#39;</span>)
 <a name="l00297"></a>00297             <span class="keywordflow">return</span> <span class="keyword">false</span>;
 <a name="l00298"></a>00298 
-<a name="l00299"></a>00299         <span class="keywordflow">return</span> s-&gt;s_name[len - 1] == <span class="charliteral">&#39;?&#39;</span>;
+<a name="l00299"></a>00299         <span class="keywordflow">return</span> s-&gt;<a class="code" href="struct__symbol.html#aa0b38e13adc3db2729774f033ec09942">s_name</a>[len - 1] == <span class="charliteral">&#39;?&#39;</span>;
 <a name="l00300"></a>00300     }
 <a name="l00301"></a>00301 
 <a name="l00302"></a>00302     <span class="keyword">static</span> <span class="keywordtype">bool</span> skipOscSegment(<span class="keyword">const</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&amp; s)
@@ -457,9 +457,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00373"></a>00373     <span class="keyword">public</span>:
 <a name="l00374"></a>00374         <a class="code" href="classceammc_1_1faust_1_1_u_i_element.html">UIElement</a>* <a class="code" href="classceammc_1_1faust_1_1_pd_u_i.html#a8b9efe99f799b85e390abf7bfb31c90c">findElementByLabel</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="structlabel.html">label</a>);
 <a name="l00375"></a>00375         <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1faust_1_1_pd_u_i.html#a38b751519e06cc4541944c14eba9d8fa">setElementValue</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="structlabel.html">label</a>, <a class="code" href="ceammc__faust_8h.html#aff8d1306e22d8dab1fbd5d24477139f5">FAUSTFLOAT</a> <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>);
-<a name="l00376"></a>00376         <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1faust_1_1_pd_u_i.html#a4c8693df3b967ca49770652079e21be7">dumpUI</a>(t_outlet* out);
-<a name="l00377"></a>00377         <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1faust_1_1_pd_u_i.html#aaebaacb06d53ee5e81c2831bc4c170ed">outputAllProperties</a>(t_outlet* out);
-<a name="l00378"></a>00378         <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1faust_1_1_pd_u_i.html#aadb7a808e9f0ffc5798d1fde0bf1047f">outputProperty</a>(t_symbol* s, t_outlet* out);
+<a name="l00376"></a>00376         <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1faust_1_1_pd_u_i.html#a4c8693df3b967ca49770652079e21be7">dumpUI</a>(<a class="code" href="m__pd_8h.html#a46dc692dc9e70ff60679462933409d90">t_outlet</a>* out);
+<a name="l00377"></a>00377         <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1faust_1_1_pd_u_i.html#aaebaacb06d53ee5e81c2831bc4c170ed">outputAllProperties</a>(<a class="code" href="m__pd_8h.html#a46dc692dc9e70ff60679462933409d90">t_outlet</a>* out);
+<a name="l00378"></a>00378         <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1faust_1_1_pd_u_i.html#aadb7a808e9f0ffc5798d1fde0bf1047f">outputProperty</a>(<a class="code" href="struct__symbol.html">t_symbol</a>* s, <a class="code" href="m__pd_8h.html#a46dc692dc9e70ff60679462933409d90">t_outlet</a>* out);
 <a name="l00379"></a>00379 
 <a name="l00380"></a>00380         std::vector&lt;FAUSTFLOAT&gt; <a class="code" href="classceammc_1_1faust_1_1_pd_u_i.html#ae4a06c4fc9215c7edd827a72b1d3e2e0">uiValues</a>() <span class="keyword">const</span>;
 <a name="l00381"></a>00381         <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1faust_1_1_pd_u_i.html#afb6cf5c0ce9f33cbafc01d6985259aa9">setUIValues</a>(<span class="keyword">const</span> std::vector&lt;FAUSTFLOAT&gt;&amp; <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>);
@@ -622,14 +622,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00538"></a>00538     }
 <a name="l00539"></a>00539 
 <a name="l00540"></a>00540     <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;
-<a name="l00541"></a><a class="code" href="classceammc_1_1faust_1_1_pd_u_i.html#a4c8693df3b967ca49770652079e21be7">00541</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1faust_1_1_pd_u_i.html#a4c8693df3b967ca49770652079e21be7">PdUI&lt;T&gt;::dumpUI</a>(t_outlet* out)
+<a name="l00541"></a><a class="code" href="classceammc_1_1faust_1_1_pd_u_i.html#a4c8693df3b967ca49770652079e21be7">00541</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1faust_1_1_pd_u_i.html#a4c8693df3b967ca49770652079e21be7">PdUI&lt;T&gt;::dumpUI</a>(<a class="code" href="m__pd_8h.html#a46dc692dc9e70ff60679462933409d90">t_outlet</a>* out)
 <a name="l00542"></a>00542     {
 <a name="l00543"></a>00543         <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; uiCount(); i++)
 <a name="l00544"></a>00544             ui_elements_[i]-&gt;dump(out);
 <a name="l00545"></a>00545     }
 <a name="l00546"></a>00546 
 <a name="l00547"></a>00547     <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;
-<a name="l00548"></a><a class="code" href="classceammc_1_1faust_1_1_pd_u_i.html#aaebaacb06d53ee5e81c2831bc4c170ed">00548</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1faust_1_1_pd_u_i.html#aaebaacb06d53ee5e81c2831bc4c170ed">PdUI&lt;T&gt;::outputAllProperties</a>(t_outlet* out)
+<a name="l00548"></a><a class="code" href="classceammc_1_1faust_1_1_pd_u_i.html#aaebaacb06d53ee5e81c2831bc4c170ed">00548</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1faust_1_1_pd_u_i.html#aaebaacb06d53ee5e81c2831bc4c170ed">PdUI&lt;T&gt;::outputAllProperties</a>(<a class="code" href="m__pd_8h.html#a46dc692dc9e70ff60679462933409d90">t_outlet</a>* out)
 <a name="l00549"></a>00549     {
 <a name="l00550"></a>00550         <a class="code" href="classceammc_1_1_atom_list.html">ceammc::AtomList</a> l;
 <a name="l00551"></a>00551         <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; uiCount(); i++)
@@ -639,7 +639,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00555"></a>00555     }
 <a name="l00556"></a>00556 
 <a name="l00557"></a>00557     <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;
-<a name="l00558"></a><a class="code" href="classceammc_1_1faust_1_1_pd_u_i.html#aadb7a808e9f0ffc5798d1fde0bf1047f">00558</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1faust_1_1_pd_u_i.html#aadb7a808e9f0ffc5798d1fde0bf1047f">PdUI&lt;T&gt;::outputProperty</a>(t_symbol* s, t_outlet* out)
+<a name="l00558"></a><a class="code" href="classceammc_1_1faust_1_1_pd_u_i.html#aadb7a808e9f0ffc5798d1fde0bf1047f">00558</a>     <span class="keywordtype">void</span> <a class="code" href="classceammc_1_1faust_1_1_pd_u_i.html#aadb7a808e9f0ffc5798d1fde0bf1047f">PdUI&lt;T&gt;::outputProperty</a>(<a class="code" href="struct__symbol.html">t_symbol</a>* s, <a class="code" href="m__pd_8h.html#a46dc692dc9e70ff60679462933409d90">t_outlet</a>* out)
 <a name="l00559"></a>00559     {
 <a name="l00560"></a>00560         <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; uiCount(); i++) {
 <a name="l00561"></a>00561             <span class="keywordflow">if</span> (ui_elements_[i]-&gt;getPropertySym() == <a class="code" href="stringobject_8h.html#ad912d811fca4c9cfee37905bed81eb65">s</a>)
@@ -715,7 +715,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 6 2017 16:10:23 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 6 2017 19:40:54 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -30,9 +30,10 @@ var searchData=
   ['newwindow',['newWindow',['../classqtpd_1_1_patch_window.html#a465802c46cfee0432f72284319faf1d3',1,'qtpd::PatchWindow']]],
   ['nextinfo',['nextInfo',['../class_python_qt_slot_info.html#a9bb0c772f8d71971ebb3f65886dd1c48',1,'PythonQtSlotInfo']]],
   ['nextvalueptr',['nextValuePtr',['../class_python_qt_value_storage.html#a51a8d2c67a4f99e3d038872e86121e33',1,'PythonQtValueStorage']]],
-  ['noneoff',['noneOff',['../classceammc_1_1_atom_list.html#a6ed911c35a83b24c3216f1697735771e',1,'ceammc::AtomList']]],
-  ['normalizefloats',['normalizeFloats',['../classceammc_1_1_atom_list.html#aaec92e339b35846963cb66fbcb7ba0e7',1,'ceammc::AtomList']]],
+  ['noneoff',['noneOff',['../classceammc_1_1_atom_list.html#a6ed911c35a83b24c3216f1697735771e',1,'ceammc::AtomList::noneOff(AtomPredicate pred) const '],['../classceammc_1_1_atom_list.html#a6ed911c35a83b24c3216f1697735771e',1,'ceammc::AtomList::noneOff(AtomPredicate pred) const ']]],
+  ['normalizefloats',['normalizeFloats',['../classceammc_1_1_atom_list.html#aaec92e339b35846963cb66fbcb7ba0e7',1,'ceammc::AtomList::normalizeFloats()'],['../classceammc_1_1_atom_list.html#aaec92e339b35846963cb66fbcb7ba0e7',1,'ceammc::AtomList::normalizeFloats()']]],
   ['normvalueat',['normValueAt',['../structui__sliders.html#ab2d3f8a4c2586d097b966e3088e2cbcf',1,'ui_sliders']]],
+  ['nullfn',['nullfn',['../m__pd_8h.html#a67de44598e77c806ba60602e89329186',1,'m_pd.h']]],
   ['numenums',['numEnums',['../classceammc_1_1_enum_property.html#ae80d226bb2af6e20b0a5cf4f11cf3d35',1,'ceammc::EnumProperty']]],
   ['numinlets',['numInlets',['../classceammc_1_1_base_object.html#abae3dc33d5b4fa26740e10164d9819f2',1,'ceammc::BaseObject']]],
   ['numoutlets',['numOutlets',['../classceammc_1_1_base_object.html#a9247c64e6ff4e67bb552025dacd28170',1,'ceammc::BaseObject']]]

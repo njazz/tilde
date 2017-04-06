@@ -1,7 +1,7 @@
 var searchData=
 [
   ['n_5ftokens',['N_TOKENS',['../token_8h.html#a4b1171313644b305fb7c5496c3e6fd07',1,'token.h']]],
-  ['name',['NAME',['../token_8h.html#a47f2e62c0dbebc787052c165afcada0e',1,'NAME():&#160;token.h'],['../_python-ast_8h.html#a3e9f22c154a65956ebd413d2d8dafc0f',1,'Name():&#160;Python-ast.h']]],
+  ['name',['Name',['../_python-ast_8h.html#a3e9f22c154a65956ebd413d2d8dafc0f',1,'Name():&#160;Python-ast.h'],['../token_8h.html#a47f2e62c0dbebc787052c165afcada0e',1,'NAME():&#160;token.h']]],
   ['nbytes',['NBYTES',['../bitset_8h.html#a9eef04c2ef5eb0085b01c7d0d5d35360',1,'bitset.h']]],
   ['nch',['NCH',['../node_8h.html#aa48e3121238ad7f5a038d00ce32f3aeb',1,'node.h']]],
   ['newbitset',['newbitset',['../pgenheaders_8h.html#acce3c2d898fd16bb5f0f92aabc4d554b',1,'pgenheaders.h']]],

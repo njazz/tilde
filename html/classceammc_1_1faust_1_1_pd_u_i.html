@@ -134,9 +134,9 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classceammc_1_1faust_1_1_pd_u_i.html#a28c13ceda42695a2422156669c632b56">run</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classceammc_1_1faust_1_1_u_i_element.html">UIElement</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classceammc_1_1faust_1_1_pd_u_i.html#a8b9efe99f799b85e390abf7bfb31c90c">findElementByLabel</a> (const char *<a class="el" href="structlabel.html">label</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classceammc_1_1faust_1_1_pd_u_i.html#a38b751519e06cc4541944c14eba9d8fa">setElementValue</a> (const char *<a class="el" href="structlabel.html">label</a>, <a class="el" href="ceammc__faust_8h.html#aff8d1306e22d8dab1fbd5d24477139f5">FAUSTFLOAT</a> <a class="el" href="floatobject_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classceammc_1_1faust_1_1_pd_u_i.html#a4c8693df3b967ca49770652079e21be7">dumpUI</a> (t_outlet *out)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classceammc_1_1faust_1_1_pd_u_i.html#aaebaacb06d53ee5e81c2831bc4c170ed">outputAllProperties</a> (t_outlet *out)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classceammc_1_1faust_1_1_pd_u_i.html#aadb7a808e9f0ffc5798d1fde0bf1047f">outputProperty</a> (t_symbol *<a class="el" href="stringobject_8h.html#ad912d811fca4c9cfee37905bed81eb65">s</a>, t_outlet *out)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classceammc_1_1faust_1_1_pd_u_i.html#a4c8693df3b967ca49770652079e21be7">dumpUI</a> (<a class="el" href="m__pd_8h.html#a46dc692dc9e70ff60679462933409d90">t_outlet</a> *out)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classceammc_1_1faust_1_1_pd_u_i.html#aaebaacb06d53ee5e81c2831bc4c170ed">outputAllProperties</a> (<a class="el" href="m__pd_8h.html#a46dc692dc9e70ff60679462933409d90">t_outlet</a> *out)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classceammc_1_1faust_1_1_pd_u_i.html#aadb7a808e9f0ffc5798d1fde0bf1047f">outputProperty</a> (<a class="el" href="m__pd_8h.html#a2db18d99dc6ea00736f0a356270160ba">t_symbol</a> *<a class="el" href="stringobject_8h.html#ad912d811fca4c9cfee37905bed81eb65">s</a>, <a class="el" href="m__pd_8h.html#a46dc692dc9e70ff60679462933409d90">t_outlet</a> *out)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="ceammc__faust_8h.html#aff8d1306e22d8dab1fbd5d24477139f5">FAUSTFLOAT</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classceammc_1_1faust_1_1_pd_u_i.html#ae4a06c4fc9215c7edd827a72b1d3e2e0">uiValues</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classceammc_1_1faust_1_1_pd_u_i.html#afb6cf5c0ce9f33cbafc01d6985259aa9">setUIValues</a> (const std::vector&lt; <a class="el" href="ceammc__faust_8h.html#aff8d1306e22d8dab1fbd5d24477139f5">FAUSTFLOAT</a> &gt; &amp;<a class="el" href="floatobject_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classceammc_1_1faust_1_1_pd_u_i.html#a13c5ee69aa9e37c4d00189463bd8a22c">fullName</a> () const </td></tr>
@@ -666,7 +666,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classceammc_1_1faust_1_1_pd_u_i.html">ceammc::faust::PdUI</a>&lt; T &gt;::<a class="el" href="classceammc_1_1faust_1_1_pd_u_i.html#a4c8693df3b967ca49770652079e21be7">dumpUI</a> </td>
           <td>(</td>
-          <td class="paramtype">t_outlet *&#160;</td>
+          <td class="paramtype"><a class="el" href="m__pd_8h.html#a46dc692dc9e70ff60679462933409d90">t_outlet</a> *&#160;</td>
           <td class="paramname"><em>out</em></td><td>)</td>
           <td></td>
         </tr>
@@ -798,7 +798,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classceammc_1_1faust_1_1_pd_u_i.html">ceammc::faust::PdUI</a>&lt; T &gt;::<a class="el" href="classceammc_1_1faust_1_1_pd_u_i.html#aaebaacb06d53ee5e81c2831bc4c170ed">outputAllProperties</a> </td>
           <td>(</td>
-          <td class="paramtype">t_outlet *&#160;</td>
+          <td class="paramtype"><a class="el" href="m__pd_8h.html#a46dc692dc9e70ff60679462933409d90">t_outlet</a> *&#160;</td>
           <td class="paramname"><em>out</em></td><td>)</td>
           <td></td>
         </tr>
@@ -817,13 +817,13 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classceammc_1_1faust_1_1_pd_u_i.html">ceammc::faust::PdUI</a>&lt; T &gt;::<a class="el" href="classceammc_1_1faust_1_1_pd_u_i.html#aadb7a808e9f0ffc5798d1fde0bf1047f">outputProperty</a> </td>
           <td>(</td>
-          <td class="paramtype">t_symbol *&#160;</td>
+          <td class="paramtype"><a class="el" href="m__pd_8h.html#a2db18d99dc6ea00736f0a356270160ba">t_symbol</a> *&#160;</td>
           <td class="paramname"><em>s</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">t_outlet *&#160;</td>
+          <td class="paramtype"><a class="el" href="m__pd_8h.html#a46dc692dc9e70ff60679462933409d90">t_outlet</a> *&#160;</td>
           <td class="paramname"><em>out</em>&#160;</td>
         </tr>
         <tr>
@@ -998,7 +998,7 @@ template&lt;typename T &gt; </div>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 6 2017 16:10:24 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 6 2017 19:40:56 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

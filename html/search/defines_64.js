@@ -34,6 +34,10 @@ var searchData=
   ['doubleslashequal',['DOUBLESLASHEQUAL',['../token_8h.html#a90c2230d7594642633ed73dbfc6ee76e',1,'token.h']]],
   ['doublestar',['DOUBLESTAR',['../token_8h.html#a0a8f6a6080806250a04758e3bcb964a3',1,'token.h']]],
   ['doublestarequal',['DOUBLESTAREQUAL',['../token_8h.html#a6441e269be626994a8c3a17f81b8903c',1,'token.h']]],
+  ['dt_5farray',['DT_ARRAY',['../g__canvas_8h.html#a4486087f245f8745fabcd48a4cf61b40',1,'g_canvas.h']]],
+  ['dt_5ffloat',['DT_FLOAT',['../g__canvas_8h.html#af1b7782f3dbb8e4b80a33f0d8cc4dd23',1,'g_canvas.h']]],
+  ['dt_5fsymbol',['DT_SYMBOL',['../g__canvas_8h.html#a5326d4a0a38fd4224cfafb51c8e17516',1,'g_canvas.h']]],
+  ['dt_5ftext',['DT_TEXT',['../g__canvas_8h.html#afe87258a3a25192482a20b5566aaf856',1,'g_canvas.h']]],
   ['dumptree',['dumptree',['../pgenheaders_8h.html#af98a89e1190f0f1d6b47ced4d4500148',1,'pgenheaders.h']]],
   ['dup_5ftop',['DUP_TOP',['../opcode_8h.html#a088b123f85cd20b0501c32efb5f38af5',1,'opcode.h']]],
   ['dup_5ftopx',['DUP_TOPX',['../opcode_8h.html#ae944c5c7db31d16a5dcda3e235ff9fb7',1,'opcode.h']]]

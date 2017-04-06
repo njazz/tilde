@@ -1,5 +1,10 @@
 var searchData=
 [
+  ['ob_5fbinbuf',['ob_binbuf',['../m__pd_8h.html#aca5ee70e707cb783de615a33cf46f6e9',1,'m_pd.h']]],
+  ['ob_5fg',['ob_g',['../m__pd_8h.html#aae2615877c3469d4e436f22fc9c5a80a',1,'m_pd.h']]],
+  ['ob_5finlet',['ob_inlet',['../m__pd_8h.html#a4d257c037c8343b66ed634585810bbd0',1,'m_pd.h']]],
+  ['ob_5foutlet',['ob_outlet',['../m__pd_8h.html#aa01d82e24c6e61c4a0753c31c94acd6f',1,'m_pd.h']]],
+  ['ob_5fpd',['ob_pd',['../m__pd_8h.html#a943492bf90072fe3a1e75694b863b710',1,'m_pd.h']]],
   ['obj_5fdbg',['OBJ_DBG',['../ceammc__log_8h.html#ad12bf2181a13aa8391f89e7b9d1a40cc',1,'ceammc_log.h']]],
   ['obj_5ferr',['OBJ_ERR',['../ceammc__log_8h.html#a6018cc7b3d99011141859dfdf996afcd',1,'ceammc_log.h']]],
   ['offsetof',['offsetof',['../structmember_8h.html#afd049f7ad59dbe455f460807475c2841',1,'structmember.h']]],

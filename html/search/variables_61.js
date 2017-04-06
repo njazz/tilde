@@ -1,7 +1,16 @@
 var searchData=
 [
   ['a_5farrow',['a_arrow',['../structarc.html#afbb7259f5917c22500ffce95ed89f644',1,'arc']]],
+  ['a_5felemsize',['a_elemsize',['../struct__array.html#a3b646631f8ef2f95f7232cc1d6fb7300',1,'_array']]],
+  ['a_5fgp',['a_gp',['../struct__array.html#a952bfaa14918b8398831dd68601803c2',1,'_array']]],
   ['a_5flbl',['a_lbl',['../structarc.html#a2febdfa7daf772d89eaa0951933dbf74',1,'arc']]],
+  ['a_5fn',['a_n',['../struct__array.html#a4bd535d6c80072ba1e183cf0bd32393a',1,'_array']]],
+  ['a_5fstub',['a_stub',['../struct__array.html#abf73a105a83563a285b6afe8c5b8d473',1,'_array']]],
+  ['a_5ftemplatesym',['a_templatesym',['../struct__array.html#ae0ce9ece2180be786aeaa7c7bba148f9',1,'_array']]],
+  ['a_5ftype',['a_type',['../struct__atom.html#a3c037c0beca6c0e67830e27598b420c4',1,'_atom']]],
+  ['a_5fvalid',['a_valid',['../struct__array.html#ad3b74384a509b0732cbe18ba5e86e022',1,'_array']]],
+  ['a_5fvec',['a_vec',['../struct__array.html#a64715f91167ad9f91885a098d2d90fd1',1,'_array']]],
+  ['a_5fw',['a_w',['../struct__atom.html#aa555b14371e4e988208cd1f0839a10ca',1,'_atom']]],
   ['addidx',['addidx',['../structceammc__gui_1_1ui__bpfunc.html#a770fee7300ebafc1cc63837ffc361502',1,'ceammc_gui::ui_bpfunc']]],
   ['addl',['addL',['../longobject_8h.html#ad09de40e66def0b2a6c3a5db589f01a4',1,'longobject.h']]],
   ['addpos',['addpos',['../structceammc__gui_1_1ui__bpfunc.html#a8b1b538e10bb0ed251eafedcf10576a2',1,'ceammc_gui::ui_bpfunc']]],
@@ -20,13 +29,15 @@ var searchData=
   ['as_5fnumber',['as_number',['../struct__heaptypeobject.html#aaf1b8eff89b976c353ce3c4d949248e2',1,'_heaptypeobject']]],
   ['as_5fsequence',['as_sequence',['../struct__heaptypeobject.html#a5ee56648a9f528df46c03946f99fc4bc',1,'_heaptypeobject']]],
   ['asname',['asname',['../struct__alias.html#af2fcbe1eeb356bd031f49869bdcd8a7e',1,'_alias']]],
-  ['assert',['Assert',['../struct__stmt.html#a9f604e6434e5132b03b93d41bf70a071',1,'_stmt']]],
-  ['assign',['Assign',['../struct__stmt.html#a9508c6e46ff18c9e1e3c2b1c83ddd9e6',1,'_stmt']]],
+  ['assert',['Assert',['../struct__stmt.html#ab5c09398a752a8ac59930618ba9be391',1,'_stmt']]],
+  ['assign',['Assign',['../struct__stmt.html#a5fcf55679384013eec842da4e000715b',1,'_stmt']]],
   ['async_5fexc',['async_exc',['../struct__ts.html#a5049998e3860dc12b7104a382cf404c0',1,'_ts']]],
   ['attr',['attr',['../struct__expr.html#a4ec9e1c3971aa7ab34c5da29455342b4',1,'_expr']]],
-  ['attribute',['Attribute',['../struct__expr.html#a0ec88e9395ac3181f6bc11707c8066df',1,'_expr']]],
-  ['augassign',['AugAssign',['../struct__stmt.html#a9e8d48f5baee156c9459a541f54db889',1,'_stmt']]],
+  ['attribute',['Attribute',['../struct__expr.html#afc56cc8032b5740cb68600934bb40e23',1,'_expr']]],
+  ['augassign',['AugAssign',['../struct__stmt.html#af8be45c87c66ff5a560a898e85890f71',1,'_stmt']]],
   ['auto_5frange',['auto_range',['../structui__sliders.html#a24f92a8e57a1bbd6c214f99f5f04f256',1,'ui_sliders']]],
   ['auto_5fsend',['auto_send',['../structceammc__gui_1_1ui__bpfunc.html#adc7628202933a13682962ce487e75c7b',1,'ceammc_gui::ui_bpfunc']]],
-  ['auto_5fsize',['auto_size',['../structui__display.html#a06f7660d8e1c877232840e650df63af8',1,'ui_display']]]
+  ['auto_5fsize',['auto_size',['../structui__display.html#a06f7660d8e1c877232840e650df63af8',1,'ui_display']]],
+  ['av_5fgarray',['av_garray',['../struct__arrayvis.html#abb410872a2fc37a0ffdd5961dc44bfef',1,'_arrayvis']]],
+  ['av_5fupd',['av_upd',['../struct__arrayvis.html#a20cb8f5e2b4fd44860e746e7e893a3ad',1,'_arrayvis']]]
 ];
