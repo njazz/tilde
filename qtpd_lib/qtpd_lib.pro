@@ -220,7 +220,7 @@ SOURCES += \
 #    ceammc-lib/ceammc.c \
 #
 
-defined(USEAPI_PORTAUDIO) SOURCES += src/s_audio_pa.c
+macx:SOURCES += src/s_audio_pa.c
 
 HEADERS += \
     src/m_pd.h \
@@ -279,15 +279,22 @@ INCLUDEPATH += src/ \
     CicmWrapper/Sources/
 
 
-#LIBS += -L/usr/local/lib -lportaudio
 
-unix {
-    target.path = /usr/lib
-    INSTALLS += target
+#unix {
+#    target.path = /usr/lib
+#    INSTALLS += target
+#}
+
+unix{
+    LIBS += -L/usr/local/lib -lportaudio
+
 }
 
-win32: LIBS += -lws2_32
-win32: LIBS += $$OUT_PWD/../ceammc_lib/ceammc_lib/debug/libqtpd_ceammc_lib.a
+win32:
+{
+    LIBS += -lws2_32
+    #LIBS += $$OUT_PWD/../ceammc_lib/ceammc_lib/debug/libqtpd_ceammc_lib.a
+}
 
 #PRECOMPILED_HEADER = src/m_pd.h
 

@@ -37,7 +37,7 @@ int main(int argc, char* argv[])
 {
     QApplication a(argc, argv);
     a.setQuitOnLastWindowClosed(false);
-    a.setWindowIcon(QIcon("./pd_ceammc.png"));
+    //a.setWindowIcon(QIcon("./pd_ceammc.icns"));
 
     QTPD_PREF_INIT;
 

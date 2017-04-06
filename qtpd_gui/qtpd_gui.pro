@@ -17,6 +17,13 @@ TEMPLATE = app
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
 
+# check if debug or release
+CONFIG(debug, debug|release) {
+  DEBUG_EXT = _d
+} else {
+  DEBUG_EXT =
+}
+
 # You can also make your code fail to compile if you use deprecated APIs.
 # In order to do so, uncomment the following line.
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
@@ -25,6 +32,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #CONFIG += static
 
 win32: CONFIG -= WithPython
+macx: CONFIG += WithPython
 
 WithPython {
 #include(python/build/python.prf)
@@ -68,7 +76,7 @@ HEADERS += \
     python/headers/PythonQtVariants.h \
     python/wrappers/py_qtpd.h \
     python/wrappers/py_wrappers.h \
-    objects/UIScriptEditor.h
+    objects/UIScriptEditor.h \
     objects/UIScript.h \
 
     LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt_QtAll$${DEBUG_EXT}.1.0.0
@@ -198,29 +206,32 @@ FORMS    += \
 
 CONFIG += static
 
-win32:DEFINES += PD_INTERNAL WINVER=0x502
-win32:DEFINES -= _WIN32
+#linking
 
-#win32: LIBS += $$OUT_PWD/../ceammc_lib/ceammc_lib/debug/libqtpd_ceammc_lib.a
-win32: LIBS += $$OUT_PWD/../qtpd_lib/debug/libqtpd.a
+win32: {
+    DEFINES += PD_INTERNAL WINVER=0x502
+    LIBS += $$OUT_PWD/../qtpd_lib/debug/libqtpd.a
+}
 
-macx: LIBS += "../qtpd_lib/libqtpd.a"
-macx: LIBS += "/usr/local/lib/libportaudio.dylib"
-
+macx: {
+    LIBS += -L"../qtpd_lib/" -lqtpd
+    LIBS += -L"/usr/local/lib/" -lportaudio
+    LIBS += -L$$OUT_PWD/../qtpd_ceammc_lib/ -lqtpd_ceammc_lib
+}
 
 
 
 DISTFILES += \
     pd_ceammc.ico \
     pd_ceammc.png \
-
-
+    qtpd.icns
 
 #include(python/build/common.prf)
 #include(python/build/PythonQt_QtAll.prf)
 #include(python/build/PythonQt.prf)
 
 win32:RC_ICONS += pd_ceammc.ico
+macx:ICON = qtpd.icns
 
 INCLUDEPATH += \
     lib_headers/ \
@@ -235,12 +246,7 @@ INCLUDEPATH += \
 
 
 
-# check if debug or release
-CONFIG(debug, debug|release) {
-  DEBUG_EXT = _d
-} else {
-  DEBUG_EXT =
-}
+
 
 
 

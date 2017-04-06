@@ -3,18 +3,19 @@ TEMPLATE = subdirs
 CONFIG += static
 CONFIG += ordered
 macx: CONFIG += withPython
+
 win32: CONFIG -= WithPython
 
 
 SUBDIRS = \
     $$PWD/qtpd_lib \
+    $$PWD/qtpd_ceammc_lib \
     $$PWD/qtpd_gui \
-    ceammc_lib/ceammc_lib
 
 
 WithPython {
     DEFINES += WITH_PYTHON
-    PYTHONQT_STATIC = true
+
     SUBDIRS = $$PWD/PythonQt \
 }
 
