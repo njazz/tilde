@@ -15,7 +15,17 @@ PatchWindow::PatchWindow()
 
     scroll->setWidget(canvas);
 
-    setCentralWidget(scroll);
+    QGridLayout* layout1 = new QGridLayout();
+    layout1->setMargin(0);
+    layout1->addWidget(canvas);
+    scroll->setLayout(layout1);
+
+    //setCentralWidget(scroll);
+
+    QGridLayout* layout2 = new QGridLayout();
+    layout2->addWidget(scroll);
+    layout2->setMargin(0);
+    centralWidget()->setLayout(layout2);
 
     //TODO weird
     //objectMaker = new ObjectMaker((QLineEdit*)canvas);

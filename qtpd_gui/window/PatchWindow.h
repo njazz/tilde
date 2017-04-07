@@ -94,7 +94,6 @@ private slots:
 
 public:
     static PatchWindow* newWindow();
-    //    static cm_patchwindow* loadWindow(QStringList); //arguments
     static PatchWindow* newSubpatch(t_canvas* subpatch = 0);
 
     //todo encapsulate!
@@ -335,6 +334,14 @@ public:
         //temporary
         //event->size()
         canvas->setWindowSize(event->size());
+
+        // todo move to canvas
+        QSize newSize = canvas->minimumCanvasSize();
+        if (newSize.width()< event->size().width())
+            newSize.setWidth(event->size().width());
+        if (newSize.height()< event->size().height())
+            newSize.setHeight(event->size().height());
+        canvas->setFixedSize(newSize);//canvas->minimumCanvasSize());
         //canvas->resizeEvent(event);
 
         //FIX
@@ -573,6 +580,11 @@ public:
     {
         canvas->setZoom(canvas->getZoom()-.25);
     }
+
+//    void resizeEvent(QResizeEvent*)
+//    {
+
+//    }
 
 public slots:
     std::pair<QMainWindow*, qtpd::UIObject*> s_createSubpatchWindow()

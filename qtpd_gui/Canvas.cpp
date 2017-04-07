@@ -715,6 +715,7 @@ void Canvas::selectAll()
 
 void Canvas::resizeToObjects()
 {
+
 }
 
 QStringList Canvas::canvasAsPdStrings()

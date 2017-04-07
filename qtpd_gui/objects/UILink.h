@@ -23,7 +23,7 @@ class UILink : public UIObject {
 
 private:
     bool _clicked;
-//    QPlainTextEdit* _editor;
+    //    QPlainTextEdit* _editor;
     QString _objectText;
 
 public:
@@ -34,15 +34,11 @@ public:
         UILink* b = new UILink();
         b->setCanvas((void*)parent);
 
-        //temporary
-        //std::string data1 =
-
         b->properties()->extractFromPdFileString(objectData.toStdString());
         b->setObjectData("");
 
         // the zoo lol
         QString data = b->properties()->get("title")->asQString(); //.split("\\n ").join("\n");
-        //b->_editor->document()->setPlainText(data);
 
         b->_objectText = data;
 
@@ -50,7 +46,6 @@ public:
             b->initProperties();
 
         int fontSize = b->properties()->get("FontSize")->asQString().toInt();
-        //b->_editor->setFont(QFont(PREF_QSTRING("Font"), fontSize, 0, false));
 
         b->autoResize();
         return (UIObject*)b;
@@ -68,7 +63,7 @@ public:
         if (getEditMode() == em_Unlocked) {
             if (isSelected()) {
                 p->setPen(QPen(QColor(0, 192, 255), 1, Qt::DotLine, Qt::SquareCap, Qt::BevelJoin));
-            } else if (hover()) {
+            } else if (_clicked) {
                 p->setPen(QPen(QColor(0, 192, 255), 2, Qt::DotLine, Qt::RoundCap, Qt::RoundJoin));
             } else {
                 p->setPen(QPen(QColor(128, 128, 128), 1, Qt::DotLine, Qt::SquareCap, Qt::BevelJoin));
@@ -79,10 +74,13 @@ public:
 
         QTextOption* op = new QTextOption;
         op->setAlignment(Qt::AlignLeft);
-        p->setPen(QPen(QColor(0, 0, 0), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        QColor textColor = (hover()) ? QColor(0, 192, 255) : QColor(0, 0, 0);
+        p->setPen(QPen(textColor, 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
         int fontSize = properties()->get("FontSize")->asQString().toInt();
-        p->setFont(QFont(PREF_QSTRING("Font"), fontSize, 0, false));
+        QFont font = QFont(PREF_QSTRING("Font"), fontSize, 0, false);
+        font.setItalic(true);
+        p->setFont(font);
 
         QString text = properties()->get("title")->asQString();
         p->drawText(2, 3, width() - 2, height() - 3, 0, text, 0);
@@ -100,17 +98,30 @@ public:
         properties()->create("url", "Data", "0.1", list);
     };
 
+    virtual void hoverEnterEvent(QGraphicsSceneHoverEvent*)
+    {
+        if (getEditMode() == em_Unlocked) {
+            setHover(true);
+            update();
+        }
+    }
+
+    virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent*)
+    {
+        if (getEditMode() == em_Unlocked) {
+            setHover(false);
+            update();
+        }
+    }
+
     ///////////////////
+    /// \brief mousePressEvent
+    /// \param ev
+    ///
+    ///
 
     void mousePressEvent(QGraphicsSceneMouseEvent* ev)
     {
-
-        //        if ((getEditMode() == em_Unlocked) && isSelected()) {
-
-        //            _editor->document()->setPlainText(QString(objectData().c_str()));
-        //            _editor->show();
-        //            _editor->setFocus();
-        //        }
 
         dragOffset = ev->pos().toPoint();
 
@@ -119,7 +130,8 @@ public:
             _clicked = true;
             update();
 
-            //todo timer
+        } else {
+            // action
         }
     }
 
@@ -186,11 +198,6 @@ public:
         _objectText = data;
 
         autoResize();
-
-        //_editor->setFixedWidth(width() - 1);
-        //_editor->setFixedHeight(height() - 2);
-
-        //_editor->hide();
     }
 
     static void updateUI(void* uiobj, ceammc::AtomList msg)
@@ -215,31 +222,7 @@ public:
         return 0;
     }
 
-//    bool eventFilter(QObject*, QEvent* event)
-//    {
-//        if (event->type() == QEvent::KeyPress) {
-
-//            QKeyEvent* keyEvent = static_cast<QKeyEvent*>(event);
-
-//            if ((keyEvent->key() == Qt::Key_Return) && (keyEvent->modifiers() == Qt::ShiftModifier)) {
-//                //editorDone();
-//                return true;
-//            }
-//        }
-
-//        return false;
-//    }
-
-//    QStringList getEditorData()
-//    {
-//        return _editor->document()->toPlainText().split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
-//    }
-
 signals:
-
-//private slots:
-//    void editorDone();
-//    void editorChanged();
 };
 }
 #endif // cmo_text_H
