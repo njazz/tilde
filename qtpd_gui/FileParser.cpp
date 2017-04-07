@@ -275,6 +275,8 @@ void FileParser::parseStringListAtoms(Canvas* cmcanvas, QStringList list) //rena
 void FileParser::parseQString(QString line)
 {
 
+    line = FileParser::unescapeString(line);
+
     QStringList atoms = line.split(" ");
 
     atoms.last() = atoms.last().remove(";");
@@ -317,10 +319,12 @@ void FileParser::parseQString(QString line)
 
         qDebug() << "dim" << pos << size;
 
-        newWnd->setBaseSize(size);
-        newWnd->move(pos);
+//        newWnd->setMinimumSize(size);
+//        newWnd->canvas->setWindowSize(size);
+//        newWnd->setBaseSize(size);
+        //newWnd->move(pos);
 
-        //newWnd->canvas->move(0,0);
+//        newWnd->canvas->move(0,0);
 
         newWnd->show(); //move to constructor? check for subcanvases the vis flag
     }

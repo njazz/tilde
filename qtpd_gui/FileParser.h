@@ -93,6 +93,23 @@ public:
     /// \param fname
     ///
     static void open(QString fname);
+
+    static QString unescapeString(QString input)
+    {
+        // todo regexp
+
+        QString ret;
+
+        ret = input.split("\\ ").join(" ");
+        ret = ret.split("\\n").join("\n");
+        ret = ret.split("\\,").join(",");
+        ret = ret.split("\\.").join(".");
+        //ret = ret.split("\;").join(";");
+        return ret;
+
+
+
+    }
 };
 }
 
