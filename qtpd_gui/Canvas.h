@@ -62,6 +62,8 @@ private:
     t_canvas* _pdObject;
     UIObject* _dragObject;
 
+    float _zoom;
+
     Q_OBJECT
 
 public:
@@ -78,6 +80,21 @@ public:
     // new
     t_canvas* pdObject() { return _pdObject; }
     void setPdObject(t_canvas* c) { _pdObject = c; }
+
+    // zoom
+    void setZoom(float zoom)
+    {
+        if (zoom<.5) zoom=.5;
+        if (zoom>2) zoom = 2;
+
+        _zoom = zoom;
+
+        scale(zoom,zoom);
+        viewport()->update();
+
+    }
+
+    float getZoom(){return _zoom;}
 
     //todo
     void addInlet();

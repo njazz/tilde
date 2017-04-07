@@ -20,6 +20,8 @@
 #include "UIBang.h"
 #include "UIToggle.h"
 
+#include "UILink.h"
+
 #include "UIArray.h"
 
 #ifdef WITH_PYTHON

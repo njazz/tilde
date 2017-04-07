@@ -252,9 +252,11 @@ public:
 
         zoomInAct = new QAction(tr("Zoom in"), this);
         zoomInAct->setShortcut(tr("Ctrl++"));
+        connect(zoomInAct, &QAction::triggered, this, &PatchWindow::zoomIn);
 
         zoomOutAct = new QAction(tr("Zoom out"), this);
         zoomOutAct->setShortcut(tr("Ctrl+-"));
+        connect(zoomOutAct, &QAction::triggered, this, &PatchWindow::zoomOut);
     }
 
     void createMenus()
@@ -560,6 +562,17 @@ public:
     void copy();
     void duplicate();
     void paste();
+
+    //
+    void zoomIn()
+    {
+        canvas->setZoom(canvas->getZoom()+.25);
+    }
+
+    void zoomOut()
+    {
+        canvas->setZoom(canvas->getZoom()-.25);
+    }
 
 public slots:
     std::pair<QMainWindow*, qtpd::UIObject*> s_createSubpatchWindow()

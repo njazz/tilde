@@ -137,6 +137,7 @@ SOURCES += main.cpp\
     objects/UISubpatch.cpp \
     graphicobjects/UIObject.cpp \
     Clipboard.cpp \
+    objects/UILink.cpp
 
 
 
@@ -195,7 +196,8 @@ HEADERS  += \
     lib_headers/g_canvas.h \
     lib_headers/m_pd.h \
     lib_headers/ceammc_atomlist.h \
-    lib_headers/ceammc_atom.h
+    lib_headers/ceammc_atom.h \
+    objects/UILink.h
 
 
 

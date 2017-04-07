@@ -59,6 +59,7 @@ Canvas::Canvas(QGraphicsView* parent)
     setMouseTracking(true);
 
     scale(1, 1);
+    _zoom = 1;
 }
 
 // ---------------------------------------------
