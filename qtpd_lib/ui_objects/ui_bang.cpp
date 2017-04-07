@@ -31,7 +31,7 @@ typedef struct _ui_bang {
 } t_ui_bang;
 
 // special
-extern "C" void uibang_set_updateUI(t_pd* x, void* obj, t_updateUI func)
+extern void uibang_set_updateUI(t_pd* x, void* obj, t_updateUI func)
 {
     ((t_ui_bang*)x)->updateUI = func;
     ((t_ui_bang*)x)->uiobj = obj;

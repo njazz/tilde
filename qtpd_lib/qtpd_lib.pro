@@ -35,12 +35,12 @@ DEFINES += \
     PD \
     WINDOWS \
     MINGW \
+    USEAPI_DUMMY \
 #    USEAPI_PORTAUDIO \
     THREAD_LOCKING \
 
     QMAKE_CXXFLAGS += -std=c++11 -fpermissive
     QMAKE_CFLAGS += -std=gnu99 -DWINVER=0x502 -DWIN32 -DPD_INTERNAL
-
     QMAKE_LFLAGS =  -Wl,--export-all-symbols  -lws2_32 -lkernel32 -shared
 
     QMAKE_CC = gcc
@@ -232,7 +232,7 @@ unix{
 win32:
 {
     LIBS += -lws2_32
-    #LIBS += $$OUT_PWD/../ceammc_lib/ceammc_lib/debug/libqtpd_ceammc_lib.a
+    LIBS += $$OUT_PWD/../ceammc_lib/ceammc_lib/debug/libqtpd_ceammc_lib.a
 }
 
 #PRECOMPILED_HEADER = src/m_pd.h

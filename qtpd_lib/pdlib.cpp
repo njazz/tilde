@@ -15,9 +15,9 @@ extern "C" {
 void pd_init(void);
 int sys_startgui(const char* libdir);
 
-//temporary externals setup
-extern void setup_ui0x2emsg();
-extern void setup_list0x2eproduct();
+//temporary EXTERNals setup
+EXTERN void setup_ui0x2emsg();
+EXTERN void setup_list0x2eproduct();
 
 //temporary
 t_canvas* cmp_newpatch();
@@ -42,32 +42,32 @@ extern "C" void setup_pdproperty(void);
 //    t_symbol *ll_name;
 //} t_loadlist;
 
-//extern "C" t_loadlist *sys_loaded;
+//EXTERN "C" t_loadlist *sys_loaded;
 
-//extern "C" void setup_ui0x2ebang(void);
-//extern "C" void setup_ui0x2etoggle(void);
-//extern "C" void setup_ui0x2enumber_tilde(void);
-//extern "C" void setup_ui0x2enumber(void);
-//extern "C" void setup_ui0x2eslider(void);
-//extern "C" void setup_ui0x2eradio(void);
+//EXTERN "C" void setup_ui0x2ebang(void);
+//EXTERN "C" void setup_ui0x2etoggle(void);
+//EXTERN "C" void setup_ui0x2enumber_tilde(void);
+//EXTERN "C" void setup_ui0x2enumber(void);
+//EXTERN "C" void setup_ui0x2eslider(void);
+//EXTERN "C" void setup_ui0x2eradio(void);
 
-//extern "C" void setup_ui0x2ebpfunc(void);
-//extern "C" void setup_ui0x2eknob(void);
-//extern "C" void setup_ui0x2escope_tilde(void);
-//extern "C" void setup_ui0x2espectroscope_tilde(void);
+//EXTERN "C" void setup_ui0x2ebpfunc(void);
+//EXTERN "C" void setup_ui0x2eknob(void);
+//EXTERN "C" void setup_ui0x2escope_tilde(void);
+//EXTERN "C" void setup_ui0x2espectroscope_tilde(void);
 
 //temporary
-extern void uimsg_set_updateUI(t_pd* x, void* uiobj, t_updateUI func);
+EXTERN void uimsg_set_updateUI(t_pd* x, void* uiobj, t_updateUI func);
 
-//extern "C" void setup_ui0x2ecolorpanel(void);
-//extern "C" void setup_ui0x2edsp_tilde(void);
-//extern "C" void setup_ui0x2eincdec(void);
-//extern "C" void setup_ui0x2ematrix(void);
-//extern "C" void setup_ui0x2emenu(void);
-//extern "C" void setup_ui0x2emeter_tilde(void);
-//extern "C" void setup_ui0x2epreset(void);
-//extern "C" void setup_ui0x2erslider(void);
-//extern "C" void setup_ui0x2etab(void);
+//EXTERN "C" void setup_ui0x2ecolorpanel(void);
+//EXTERN "C" void setup_ui0x2edsp_tilde(void);
+//EXTERN "C" void setup_ui0x2eincdec(void);
+//EXTERN "C" void setup_ui0x2ematrix(void);
+//EXTERN "C" void setup_ui0x2emenu(void);
+//EXTERN "C" void setup_ui0x2emeter_tilde(void);
+//EXTERN "C" void setup_ui0x2epreset(void);
+//EXTERN "C" void setup_ui0x2erslider(void);
+//EXTERN "C" void setup_ui0x2etab(void);
 }
 
 #include <stdbool.h>
@@ -83,7 +83,7 @@ using namespace ceammc;
 
 t_pdinstance* cm_pd;
 
-extern t_pd* newest; /* OK - this should go into a .h file now :) */
+EXTERN t_pd* newest; /* OK - this should go into a .h file now :) */
 
 void cmp_error(std::string msg)
 {
