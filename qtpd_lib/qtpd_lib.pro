@@ -35,7 +35,6 @@ DEFINES += \
     PD \
     WINDOWS \
     MINGW \
-
 #    USEAPI_PORTAUDIO \
     THREAD_LOCKING \
 
@@ -55,8 +54,6 @@ DEFINES += \
 # In order to do so, uncomment the following line.
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
-
-
 
 SOURCES += \
     src/m_pd.c \
@@ -107,9 +104,6 @@ SOURCES += \
     src/s_path.c \
     src/s_print.c \
     src/s_utf8.c \
-#    src/s_watchdog.c \
-#    src/u_pdreceive.c \
-#    src/u_pdsend.c \
     src/x_acoustics.c \
     src/x_arithmetic.c \
     src/x_array.c \
@@ -151,48 +145,6 @@ SOURCES += \
     src/g_vdial.c \
     src/g_vslider.c \
     src/g_vumeter.c \
-#   just a list of objects. would not be used
-#    creamlibrary/Sources/c.blackboard.cpp \
-#    creamlibrary/Sources/c.breakpoints.cpp \
-#    creamlibrary/Sources/c.camomile.cpp \
-#    creamlibrary/Sources/c.colorpanel.cpp \
-#    creamlibrary/Sources/c.dsp_tilde.cpp \
-#    creamlibrary/Sources/c.gain_tilde.cpp \
-#    creamlibrary/Sources/c.incdec.cpp \
-#    creamlibrary/Sources/c.keyboard.cpp \
-#    creamlibrary/Sources/c.knob.cpp \
-#    creamlibrary/Sources/c.matrix.cpp \
-#    creamlibrary/Sources/c.menu.cpp \
-#    creamlibrary/Sources/c.meter_tilde.cpp \
-#    creamlibrary/Sources/c.number.cpp \
-#    creamlibrary/Sources/c.number_tilde.cpp \
-#    creamlibrary/Sources/c.plane.cpp \
-#    creamlibrary/Sources/c.preset.cpp \
-#    creamlibrary/Sources/c.radio.cpp \
-#    creamlibrary/Sources/c.rslider.cpp \
-#    creamlibrary/Sources/c.scope_tilde.cpp \
-#    creamlibrary/Sources/c.slider.cpp \
-#    creamlibrary/Sources/c.tab.cpp \
-#    creamlibrary/Sources/c.wavesel.cpp \
-#    creamlibrary/c.library.cpp \
-#
-#    ceammc-ui/ui_display.cpp \
-#    ceammc-ui/ui_knob.cpp \
-#    ceammc-ui/ui_link.cpp \ # needs fix
-#    ceammc-ui/ui_slider2d.cpp \
-#    ceammc-ui/ui_sliders.cpp \
-#    ceammc-ui/ui_keyboard.cpp \
-#    ceammc-ui/ui_spectroscope~.cpp \
-#    ceammc-ui/ui_bpfunc.cpp \
-#    ceammc-ui/ui_ecanvas.cpp \
-#    ceammc-ui/ui_scope~.cpp \
-#
-#    CicmWrapper/Sources/ebox.c \
-#    CicmWrapper/Sources/eclass.c \
-#    CicmWrapper/Sources/ecommon.c \
-#    CicmWrapper/Sources/egraphics.c \
-#    CicmWrapper/Sources/eobj.c \
-#    CicmWrapper/Sources/epopup.c \
 #
     ui_objects/ui_bang.cpp \
     ui_objects/ui_float.cpp \
@@ -205,19 +157,6 @@ SOURCES += \
     ui_objects/pdproperty.cpp \
     RtMidi/RtMidi.cpp \
     pdlib.cpp \
-#    ceammc-lib/ceammc.cpp \
-#    ceammc-lib/ceammc_atom.cpp \
-#    ceammc-lib/ceammc_atomlist.cpp \
-##    ceammc-lib/ceammc_fn_list.cpp \
-##    ceammc-lib/ceammc_fn_vector.cpp \
-#    ceammc-lib/ceammc_format.cpp \
-#    ceammc-lib/ceammc_impl.cpp \
-#    ceammc-lib/ceammc_log.cpp \
-#    ceammc-lib/ceammc_message.cpp \
-#    ceammc-lib/ceammc_object.cpp \
-##    ceammc-lib/ceammc_property.cpp \
-##    ceammc-lib/ceammc_timeline.cpp \
-#    ceammc-lib/ceammc.c \
 #
 
 macx:SOURCES += src/s_audio_pa.c
