@@ -110,40 +110,42 @@ static void _uimsg_output(t_ui_msg* x) // t_symbol *s, int argc, t_atom* argv
                 if ((x->msg->at(start).asSymbol() == gensym(";")) || (AtomList(x->msg->at(start)).toPdData()->a_type == A_SEMI)) {
 
                     start += 1;
-                    t_symbol* sym = x->msg->at(start).asSymbol();
-                    start += 1;
+                    if (!x->msg->at(start).isSymbol()) {
+                        post("bad destination");
 
-                    if (sym->s_thing) {
-                        AtomList l1 = x->msg->subList(start, end);
-                        _uimsg_processdollars(x, &l1);
+                    } else {
+                        t_symbol* sym = x->msg->at(start).asSymbol();
+                        start += 1;
 
-                        t_object* obj = pd_checkobject(sym->s_thing);
-                        if (obj) {
-                            pd_forwardmess((t_pd*)obj, l1.size(), l1.toPdData());
+                        if (sym->s_thing) {
+                            AtomList l1 = x->msg->subList(start, end);
+                            _uimsg_processdollars(x, &l1);
+
+                            t_object* obj = pd_checkobject(sym->s_thing);
+                            if (obj) {
+                                pd_forwardmess((t_pd*)obj, l1.size(), l1.toPdData());
+                            } //else
+                            //post("send error");
+                            //post("sent");
                         } //else
-                        //post("send error");
-                        //post("sent");
-                    } //else
-                    //post("not sent");
+                        //post("not sent");
+                    }
 
                 } else {
                     AtomList l1 = x->msg->subList(start, end);
                     _uimsg_processdollars(x, &l1);
 
                     //
-                    if (l1[0].isSymbol())
-                    {
-                        if (l1.size()>1)
+                    if (l1[0].isSymbol()) {
+                        if (l1.size() > 1)
                             outlet_anything(x->out1, l1[0].asSymbol(), static_cast<int>(l1.size() - 1), l1.toPdData() + 1);
                         else
                             outlet_anything(x->out1, l1[0].asSymbol(), 0, 0);
-                    }
-                    else
-                    {
+                    } else {
                         outlet_anything(x->out1, &s_list, l1.size(), l1.toPdData());
                     }
-//                    l1.outputAsAny(x->out1);
-//                    outlet_anything(x->out1, &s_list, l1.size(), l1.toPdData());
+                    //                    l1.outputAsAny(x->out1);
+                    //                    outlet_anything(x->out1, &s_list, l1.size(), l1.toPdData());
                 }
 
                 start = i + 1;
