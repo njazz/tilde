@@ -94,6 +94,7 @@ var searchData=
   ['getvline',['getVline',['../classceammc_1_1_b_p_f.html#a1ca1a9f83a33e412a5dc3793b26c4d36',1,'ceammc::BPF']]],
   ['getvlinesegment',['getVlineSegment',['../classceammc_1_1_b_p_f.html#aca25f13b840804c2ab1ce6b89325da4a',1,'ceammc::BPF']]],
   ['getzbytes',['getzbytes',['../m__pd_8h.html#a2430dc8c949f4ba60c70049480ed0353',1,'m_pd.h']]],
+  ['getzoom',['getZoom',['../classqtpd_1_1_canvas.html#a85472e91322a14a65f8c42b654ba37ba',1,'qtpd::Canvas']]],
   ['gfxstub_5fdeleteforkey',['gfxstub_deleteforkey',['../m__pd_8h.html#ac42a08dc2bb8c544f2289c8cb264e02e',1,'m_pd.h']]],
   ['gfxstub_5fnew',['gfxstub_new',['../m__pd_8h.html#acac5c3608548b51929c1449204dc9276',1,'m_pd.h']]],
   ['glist_5fadd',['glist_add',['../g__canvas_8h.html#ad9b34c791d06d5f669d296eefd686f95',1,'g_canvas.h']]],
