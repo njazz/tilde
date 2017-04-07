@@ -28,5 +28,6 @@ var searchData=
   ['atom',['atom',['../graminit_8h.html#a75e3efd40915bb8d9f555aeb5c8b584c',1,'atom():&#160;graminit.h'],['../metagrammar_8h.html#a4f7c573e075cedbaf2e6107fa1a7ef21',1,'ATOM():&#160;metagrammar.h']]],
   ['attribute',['Attribute',['../_python-ast_8h.html#ac5330959be327b277dd98b3b793b8b12',1,'Python-ast.h']]],
   ['attribute_5fformat_5fprintf',['ATTRIBUTE_FORMAT_PRINTF',['../m__pd_8h.html#a2efa44dddebde1e31caa1fddfd67d88f',1,'m_pd.h']]],
+  ['audiosettings_5fqstring',['AUDIOSETTINGS_QSTRING',['../_audio_settings_8h.html#a6b1401e3ca4767d09919b9fbb9d8e478',1,'AudioSettings.h']]],
   ['augassign',['AugAssign',['../_python-ast_8h.html#aab09467214841c326f3c20477e9c31af',1,'AugAssign():&#160;Python-ast.h'],['../graminit_8h.html#a053a65bf76f00d5abb063921ad084d62',1,'augassign():&#160;graminit.h']]]
 ];

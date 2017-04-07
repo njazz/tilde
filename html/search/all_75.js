@@ -140,7 +140,7 @@ var searchData=
   ['undo_5ffree',['UNDO_FREE',['../g__canvas_8h.html#a56857de2f78d7f0612992dbf7956258a',1,'g_canvas.h']]],
   ['undo_5fredo',['UNDO_REDO',['../g__canvas_8h.html#ab6ebb3c23f3264e26d177c94fb2336e8',1,'g_canvas.h']]],
   ['undo_5fundo',['UNDO_UNDO',['../g__canvas_8h.html#ac6c4bcd9aae7ca0e6d735b153f949f8b',1,'g_canvas.h']]],
-  ['unescapestring',['unescapeString',['../classqtpd_1_1_file_parser.html#a913f7dec69523e9fb2ef3054e8904b65',1,'qtpd::FileParser']]],
+  ['unescapestring',['unescapeString',['../classqtpd_1_1_file_parser.html#a913f7dec69523e9fb2ef3054e8904b65',1,'qtpd::FileParser::unescapeString()'],['../classqtpd_1_1_property.html#a29144b681f142100e87eb128b052ed74',1,'qtpd::Property::unescapeString()']]],
   ['unicodeobject_2eh',['unicodeobject.h',['../unicodeobject_8h.html',1,'']]],
   ['unknown',['Unknown',['../class_python_qt_method_info.html#a2a06bf933604fc5c73b4144155d8d415ac072065e9a3e9ab9ad3923e7e7cdbeac',1,'PythonQtMethodInfo']]],
   ['unlocked_5fcount',['unlocked_count',['../struct_py_file_object.html#aaf9159048694b3756653630194aca045',1,'PyFileObject']]],

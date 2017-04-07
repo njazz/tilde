@@ -108,7 +108,7 @@ var searchData=
   ['getpropertysym',['getPropertySym',['../classceammc_1_1faust_1_1_u_i_element.html#ac2d8f9d089ce8a63d6eba260bbcfbcea',1,'ceammc::faust::UIElement']]],
   ['getpybool',['GetPyBool',['../class_python_qt_conv.html#abbfea880861ca474cc2effb987df9ce8',1,'PythonQtConv']]],
   ['getpythontypeforproperty',['getPythonTypeForProperty',['../class_python_qt_class_info.html#af324a94c0a5ad3e02572388ecd6c5563',1,'PythonQtClassInfo']]],
-  ['getqstring',['getQString',['../classqtpd_1_1_preferences.html#ac3d62ad2f3b4cfd190d4e5f87c154c9d',1,'qtpd::Preferences']]],
+  ['getqstring',['getQString',['../classqtpd_1_1_audio_settings.html#a176dd3a69d2372fbb66fab82bab1072a',1,'qtpd::AudioSettings::getQString()'],['../classqtpd_1_1_preferences.html#ac3d62ad2f3b4cfd190d4e5f87c154c9d',1,'qtpd::Preferences::getQString()']]],
   ['getreadbufferproc',['getreadbufferproc',['../object_8h.html#ab5c79a1da802e62b8bdb82ea51111de3',1,'object.h']]],
   ['getrect',['getRect',['../structceammc__gui_1_1_base_gui_object.html#a2863cad29ad19721dedab9bee983bf4d',1,'ceammc_gui::BaseGuiObject::getRect()'],['../structceammc__gui_1_1_base_sound_gui_struct.html#abfd5ab019c25e4d62c53fd27abe618a7',1,'ceammc_gui::BaseSoundGuiStruct::getRect()']]],
   ['getrefcount',['getRefCount',['../classqtpd_1_1_o_p_instance.html#a2f29b3ca2c0073dcb0f00479cb0478d9',1,'qtpd::OPInstance']]],
