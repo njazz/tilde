@@ -610,3 +610,10 @@ void cmp_set_verbose(int v)
 {
     sys_verbose = v;
 }
+
+// -----
+
+//EXTERN void sys_get_audio_devs(char *indevlist, int *nindevs,
+//                          char *outdevlist, int *noutdevs, int *canmulti, int *cancallback,
+//                          int maxndev, int devdescsize);
+//EXTERN void sys_get_audio_apis(char *buf);

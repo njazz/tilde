@@ -12,6 +12,7 @@
 
 #include "PropertiesWindow.h"
 #include "Preferences.h"
+#include "AudioSettings.h"
 
 namespace qtpd {
 BaseWindow::BaseWindow(QWidget* parent)
@@ -65,7 +66,18 @@ void BaseWindow::preferencesWindow()
     qDebug()<<"preferences";
     PropertyList* l1 = &Preferences::inst();
     PropertiesWindow* p1 = new PropertiesWindow(l1);
-    p1->setWindowTitle("qtpd preferences");
+    p1->setWindowTitle("Qtpd preferences");
+    p1->move(30,30);
+    p1->show();
+
+}
+
+void BaseWindow::audioSettingsWindow()
+{
+    qDebug()<<"audio settings";
+    PropertyList* l1 = &AudioSettings::inst();
+    PropertiesWindow* p1 = new PropertiesWindow(l1);
+    p1->setWindowTitle("Audio settings");
     p1->move(30,30);
     p1->show();
 

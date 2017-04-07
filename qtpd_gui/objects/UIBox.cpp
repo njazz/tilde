@@ -24,6 +24,7 @@ UIBox::UIBox()
     setObjectSizeMode(os_FixedHeight);
     setAcceptHoverEvents(true);
 
-    sizeBox()->move(33, 13);
+    //sizeBox()->move(33, 13);
+    resizeEvent();
 }
 }

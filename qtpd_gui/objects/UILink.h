@@ -48,6 +48,9 @@ public:
         int fontSize = b->properties()->get("FontSize")->asQString().toInt();
 
         b->autoResize();
+
+        b->resizeEvent();
+
         return (UIObject*)b;
     };
 

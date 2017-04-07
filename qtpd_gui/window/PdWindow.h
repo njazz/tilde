@@ -10,6 +10,8 @@
 
 #include "Preferences.h"
 
+#include "UIDSP.h"
+
 //temporary
 
 namespace Ui {

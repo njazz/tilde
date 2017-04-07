@@ -65,6 +65,8 @@ public:
             }
         }
 
+        b->resizeEvent();
+
         return (UIObject*)b;
     };
 

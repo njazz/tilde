@@ -58,6 +58,8 @@ public:
         b->addInlet();
         b->addOutlet();
 
+        b->resizeEvent();
+
         return (UIObject*)b;
     };
 
@@ -90,9 +92,11 @@ public:
     virtual void resizeEvent()
     {
         setHeight(width());
-        // this will call resize event
+        UIObject::resizeEvent();
+
     }
-    ///////////////////
+
+    // -------------------
 
     void mousePressEvent(QGraphicsSceneMouseEvent* ev)
     {
@@ -137,7 +141,7 @@ public:
         }
     }
 
-    ///////
+    // -------------------------
 
     static void updateUI(void* uiobj, ceammc::AtomList)
     {
@@ -161,8 +165,7 @@ public:
 
     void timerStart()
     {
-
-        emit setBangTimer(100);
+        emit setBangTimer(50);
     }
 
 signals:

@@ -100,7 +100,9 @@ public:
             start = QPoint(_obj1->pos().x() + _out1->pos().x() + _out1->width() / 2,
                 _obj1->pos().y() + _out1->pos().y() + _out1->height() / 2);
 
-        return start;
+        //setPos(start);
+
+        return start;//QPoint(0,0);
     }
 
     QPoint endPoint()
@@ -109,8 +111,10 @@ public:
         if (_obj2 && _in2)
             end = QPoint(_obj2->pos().x() + _in2->pos().x() + _in2->width() / 2,
                 _obj2->pos().y() + _in2->pos().y() + _in2->height() / 2);
-        setSize(end.x(), end.y());
-        return end;
+        //todo fix!
+        //setSize(end.x()-pos().x(), end.y()-pos().y());
+
+        return end;//QPoint(size().width(),size().height());
     }
 
     //// will not be unused if drawed by the class itself

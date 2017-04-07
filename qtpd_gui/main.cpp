@@ -13,6 +13,7 @@
 #include "ObjectLoader.h"
 
 #include "Preferences.h"
+#include "AudioSettings.h"
 
 //python
 
@@ -40,6 +41,7 @@ int main(int argc, char* argv[])
     //a.setWindowIcon(QIcon("./pd_ceammc.icns"));
 
     QTPD_PREF_INIT;
+    QTPD_AUDIOSETTINGS_INIT;
 
 #ifdef WITH_PYTHON
     //python

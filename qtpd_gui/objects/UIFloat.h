@@ -61,6 +61,8 @@ public:
 
         b->autoResize();
 
+        b->resizeEvent();
+
         return (UIObject*)b;
     };
 

@@ -32,6 +32,8 @@ UIMessage::UIMessage()
     setMinimumBoxHeight(20);
 
     setSize(65, 20);
+
+    resizeEvent();
 }
 
 ///////

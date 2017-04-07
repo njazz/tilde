@@ -159,7 +159,7 @@ public:
     }
 
     // todo move?
-    QString escapeString(QString input)
+    static QString escapeString(QString input)
     {
         // todo regexp
 
@@ -169,7 +169,23 @@ public:
         ret = ret.split("\n").join("\\n");
         ret = ret.split(",").join("\\,");
         ret = ret.split(".").join("\\.");
-        //ret = ret.split(";").join("\\;");
+        ret = ret.split("@").join("\\@");
+        ret = ret.split(";").join("\\;");
+        return ret;
+    }
+
+    static QString unescapeString(QString input)
+    {
+        // todo regexp
+
+        QString ret;
+
+        ret = input.split("\\ ").join(" ");
+        ret = ret.split("\\n").join("\n");
+        ret = ret.split("\\,").join(",");
+        ret = ret.split("\\.").join(".");
+        ret = ret.split("\\@").join("@");
+        ret = ret.split("\\;").join(";");
         return ret;
     }
 

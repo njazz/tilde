@@ -27,5 +27,7 @@ UIBang::UIBang()
     connect(_timer, &QTimer::timeout, this, &UIBang::timerAction);
 
     connect(this, SIGNAL(setBangTimer(int)), _timer, SLOT(start(int)));
+
+    resizeEvent();
 }
 }

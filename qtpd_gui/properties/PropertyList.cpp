@@ -107,7 +107,8 @@ std::string PropertyList::extractFromPdFileString(std::string input)
 
     for (QStringList::iterator it = propertyList.begin(); it != propertyList.end(); ++it) {
         QString s = *it;
-        QStringList list = s.split(" ", QString::SkipEmptyParts);
+        s = Property::unescapeString(s);
+        QStringList list = s.split(" ");
 
         //if (list.size() > 1)
         //{

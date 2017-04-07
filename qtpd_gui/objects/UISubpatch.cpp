@@ -26,6 +26,8 @@ UISubpatch::UISubpatch()
 
     setObjectSizeMode(os_FixedHeight);
     setAcceptHoverEvents(true);
+
+    resizeEvent();
 }
 
 std::string UISubpatch::asPdFileString()

@@ -133,16 +133,11 @@ template <>
 void Property::set(QStringList strlist)
 {
     QStringList::iterator it;
-
     AtomList* list = new AtomList();
-
-    //qDebug() << "set list" << strlist;
-
-    //qDebug() << "data size 0" << list->size();
 
     for (it = strlist.begin(); it != strlist.end(); ++it) {
         QString str = *it;
-        //qDebug() << "str" << str;
+        qDebug() << "str" << str;
         if (str != "") {
             //check if it is not float
             if (str.toFloat() != 0)
@@ -150,6 +145,11 @@ void Property::set(QStringList strlist)
             else
 
                 list->append(Atom(gensym(str.toStdString().c_str())));
+        }
+        else
+        {
+            //fix missing spaces
+            list->append(Atom(gensym("")));
         }
     }
 

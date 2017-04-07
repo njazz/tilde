@@ -37,6 +37,8 @@ UIText::UIText() //UIObject* parent)
 
     setMinimumBoxWidth(80);
     setMinimumBoxHeight(20);
+
+    resizeEvent();
 }
 
 ///////

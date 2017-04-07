@@ -198,7 +198,8 @@ HEADERS  += \
     lib_headers/m_pd.h \
     lib_headers/ceammc_atomlist.h \
     lib_headers/ceammc_atom.h \
-    objects/UILink.h
+    objects/UILink.h \
+    properties/AudioSettings.h
 
 
 

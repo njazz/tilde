@@ -63,6 +63,8 @@ public:
         b->setObjectData(data1);
         b->autoResize();
 
+        b->resizeEvent();
+
         return (UIObject*)b;
     };
 

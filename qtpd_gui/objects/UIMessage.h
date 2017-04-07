@@ -48,6 +48,8 @@ public:
 
         b->autoResize();
 
+
+
         std::string message = "ui.msg";
 
         //temp
@@ -70,6 +72,8 @@ public:
 
         b->addInlet();
         b->addOutlet();
+
+        b->resizeEvent();
 
         return (UIObject*)b;
     };
@@ -207,6 +211,8 @@ public:
                 cmp_sendstring((t_pd*)pdObject(), msg);
             }
         }
+
+        resizeEvent();
     }
 
     static void updateUI(void* uiobj, ceammc::AtomList msg)

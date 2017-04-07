@@ -20,5 +20,7 @@ UIArray::UIArray()
     setMinimumBoxHeight(20);
 
     initProperties();
+
+    resizeEvent();
 }
 }

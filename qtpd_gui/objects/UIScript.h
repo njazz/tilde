@@ -76,6 +76,8 @@ public:
             qDebug("Error: no such object %s", message.c_str());
         }
 
+        b->resizeEvent();
+
         return (UIObject*)b;
     };
 

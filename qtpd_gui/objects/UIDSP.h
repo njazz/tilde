@@ -25,6 +25,8 @@ private:
     bool _clicked;
     bool _value;
 
+    QGraphicsView *_widget;
+
 public:
     explicit UIDSP()
     {
@@ -43,7 +45,11 @@ public:
         setMinimumBoxWidth(40);
         setMinimumBoxHeight(40);
 
-        setObjectSizeMode(os_Square);
+        setObjectSizeMode(os_Fixed);
+
+        _widget = new QGraphicsView();
+        _widget->setScene(new QGraphicsScene(0, 0, 40, 40, _widget));
+        _widget->scene()->addItem(this);
 
         _value = false;
     };
@@ -63,6 +69,11 @@ public:
         return (UIObject*)b;
     };
 
+    QGraphicsView *widget()
+    {
+        return _widget;
+    }
+
     void initProperties()
     {
         UIObject::initProperties();
@@ -74,6 +85,11 @@ public:
 
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)
     {
+        QBrush brush(bgColor());
+        p->setBrush(brush);
+        p->drawRect(boundingRect());
+        p->setBrush(QBrush());
+
         p->setRenderHint(QPainter::HighQualityAntialiasing, true);
 
         if (_value) {

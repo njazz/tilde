@@ -105,7 +105,8 @@ public:
         pythonConsoleAct->setShortcut(tr("Ctrl+Alt+R"));
         connect(pythonConsoleAct, &QAction::triggered, this, &BaseMenu::pythonConsole);
 
-        pdAudioSettingsAct = new QAction(tr("Audio settings..."), this);
+        pdAudioSettingsAct = new QAction(tr("Audio / MIDI Settings..."), this);
+        connect(pdAudioSettingsAct, &QAction::triggered, this, &BaseWindow::audioSettingsWindow);
         //pdAudioSettingsAct->setShortcut(tr("Ctrl+R"));
 
         //moves to app menu on mac
@@ -177,7 +178,7 @@ public:
         helpMenu->addAction(pdHelpAct);
     }
 
-    void preferencesWindow();
+
 
 private:
     Ui::cm_basewindow* ui;
@@ -233,6 +234,10 @@ private slots:
     void dspOff();
 
     void pdWindow();
+
+    void preferencesWindow();
+    void audioSettingsWindow();
+
 };
 }
 

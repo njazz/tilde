@@ -47,6 +47,14 @@ void PdWindow::cm_log(std::string text)
     }
 
     ui->log->resizeRowsToContents();
+
+    UIDSP* uidsp = new UIDSP();
+    QGraphicsView *dsp = uidsp->widget();
+    dsp->move(0,0);
+    dsp->setFixedSize(40,40);
+    dsp->setParent(ui->toolbar);
+    dsp->show();
+
 }
 
 void PdWindow::cm_post(std::string text)

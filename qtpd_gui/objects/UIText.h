@@ -48,6 +48,9 @@ public:
         b->_editor->setFont(QFont(PREF_QSTRING("Font"), fontSize, 0, false));
 
         b->autoResize();
+
+        b->resizeEvent();
+
         return (UIObject*)b;
     };
 

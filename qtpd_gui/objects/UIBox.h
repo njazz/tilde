@@ -110,6 +110,8 @@ public:
         for (int i = 0; i < out_c; i++)
             b->addOutlet();
 
+        b->resizeEvent();
+
         return (UIObject*)b;
     };
 

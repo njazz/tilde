@@ -59,6 +59,8 @@ public:
         b->addInlet();
         b->addOutlet();
 
+        b->resizeEvent();
+
         return (UIObject*)b;
     };
 
@@ -95,7 +97,9 @@ public:
 
     void resizeEvent()
     {
+
         setHeight(width());
+        UIObject::resizeEvent();
     }
 
     ///////////////////

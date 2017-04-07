@@ -19,5 +19,7 @@ UILink::UILink()
 
     setMinimumBoxWidth(80);
     setMinimumBoxHeight(20);
+
+    resizeEvent();
 }
 }
