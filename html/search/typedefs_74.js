@@ -8,6 +8,7 @@ var searchData=
   ['t_5fcanvas_5fpath_5fiterator',['t_canvas_path_iterator',['../g__canvas_8h.html#ab7e4a798b9f397339e211b6a587af328',1,'g_canvas.h']]],
   ['t_5fcanvasapply',['t_canvasapply',['../g__canvas_8h.html#a06648af1a50b6c09199b6cb352d9c023',1,'g_canvas.h']]],
   ['t_5fclickfn',['t_clickfn',['../g__canvas_8h.html#a7db8880ebebaa760a83642fa04a67df5',1,'g_canvas.h']]],
+  ['t_5fcmp_5faudio_5finfo',['t_cmp_audio_info',['../_pd_link_8h.html#a6dfb84d0c4c74fc07153deac0b400570',1,'PdLink.h']]],
   ['t_5fdataslot',['t_dataslot',['../g__canvas_8h.html#a3942145737110151cfc2d719cda68a47',1,'g_canvas.h']]],
   ['t_5fdeletefn',['t_deletefn',['../g__canvas_8h.html#aa75cd1c6db3db22e0ff24c785bb5c001',1,'g_canvas.h']]],
   ['t_5fdisplacefn',['t_displacefn',['../g__canvas_8h.html#a194105f4ad66c842e3b06fe82a2017d5',1,'g_canvas.h']]],

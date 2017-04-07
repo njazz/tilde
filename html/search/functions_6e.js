@@ -20,6 +20,7 @@ var searchData=
   ['newline',['NewLine',['../classqtpd_1_1_new_line.html#a96d1a0bfb0ef9ed220ffd06e2b6e3f8d',1,'qtpd::NewLine']]],
   ['newmessagebox',['newMessageBox',['../classqtpd_1_1_patch_window.html#a83e7f93159893bdaa0082fd6d8c140dc',1,'qtpd::PatchWindow']]],
   ['newobjectbox',['newObjectBox',['../classqtpd_1_1_patch_window.html#a9dea55bcdf6c35f6394784cfa273cdf1',1,'qtpd::PatchWindow']]],
+  ['newobjectpos',['newObjectPos',['../classqtpd_1_1_canvas.html#a7263ec60b33eb52bbf3a4896dcf8a4ae',1,'qtpd::Canvas']]],
   ['newpatch',['newPatch',['../classpy_pd_lib.html#aa0a66936a2b24ef44db413f67a59dac5',1,'pyPdLib']]],
   ['newpatchwindow',['newPatchWindow',['../classpy_qtpd.html#afd7aa8f27aebd53ff72da455d3034eb3',1,'pyQtpd']]],
   ['newpdclassbox',['newPdClassBox',['../classqtpd_1_1_patch_window.html#af2d98ca815c2232bd2e20cd3e6a80d6f',1,'qtpd::PatchWindow']]],

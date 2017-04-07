@@ -155,7 +155,8 @@ Signals</h2></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ae6c38741873376fda63405d73f2697cd">paint</a> (QPainter *, const QStyleOptionGraphicsItem *, QWidget *)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a2e6fec1e7e23c49c16330281d84f099f">setCanvas</a> (void *canvas)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a2e6fec1e7e23c49c16330281d84f099f">setCanvas</a> (void *<a class="el" href="classqtpd_1_1_u_i_object.html#ae5912261870c7eec5231419acd4ca7e1">canvas</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ae5912261870c7eec5231419acd4ca7e1">canvas</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a7fcf552df3978236b474406118df604c">UIObject</a> (<a class="el" href="classqtpd_1_1_u_i_item.html">UIItem</a> *parent=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a07fc14ec32a45e628bece60f892500b8">initProperties</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">init properties for the class - called from constructor  <a href="#a07fc14ec32a45e628bece60f892500b8"></a><br/></td></tr>
@@ -204,7 +205,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns object's text for client-based file saving  <a href="#a89a9d36ac67cceab237cdc01a1ec2376"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QMainWindow *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a163437921d348578fbfb8abebee0217c">subpatchWindow</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">temporary - remove later  <a href="#a163437921d348578fbfb8abebee0217c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#aab273ef9fd115cb87544b398975ca4c1">setSubpatchWindow</a> (QMainWindow *cwindow)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#aab273ef9fd115cb87544b398975ca4c1">setSubpatchWindow</a> (QMainWindow *cwindow)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a0590d2f5ec52a3010373b7f4fc19c610">setEditModeRef</a> (<a class="el" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a">t_editMode</a> *canvasEditMode)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets pointer to edit mode flag value in parent canvas  <a href="#a0590d2f5ec52a3010373b7f4fc19c610"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ae10cb3996474a7c1ba94d5e48c740106">resizeEvent</a> ()</td></tr>
@@ -393,6 +394,22 @@ Protected Member Functions</h2></td></tr>
 
 <p>this is needed for proper threading </p>
 <p>pd calls UIUpdate(...) -&gt; it emits '<a class="el" href="classqtpd_1_1_u_i_object.html#af907b37e5d5f8b0481d03f89b2ef7b6f">s_repaint()</a>' that is connected to '<a class="el" href="classqtpd_1_1_u_i_object.html#a7cd66a9ac05bd493a0f17a61513cc5ae" title="this is needed for proper threading">callRepaint()</a>' </p>
+
+</div>
+</div>
+<a class="anchor" id="ae5912261870c7eec5231419acd4ca7e1"></a><!-- doxytag: member="qtpd::UIObject::canvas" ref="ae5912261870c7eec5231419acd4ca7e1" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* <a class="el" href="classqtpd_1_1_u_i_object.html#ae5912261870c7eec5231419acd4ca7e1">qtpd::UIObject::canvas</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
 </div>
 </div>
@@ -749,7 +766,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_item.html#a7d35cc78930b523be25a55b0167e5a13">qtpd::UIItem</a>.</p>
 
-<p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_property.html#a3e3b3216710dc9bc7035c4f53ba09383">qtpd::UIProperty</a>, <a class="el" href="classqtpd_1_1_u_i_method.html#abae471a843ae506b04bcb861ca6931bd">qtpd::UIMethod</a>, <a class="el" href="classqtpd_1_1_u_i_class.html#ae427b4c6a023b208756197f74df3b22d">qtpd::UIClass</a>, <a class="el" href="classqtpd_1_1_u_i_instance.html#a06544d7a57d46436810862faca89cefd">qtpd::UIInstance</a>, <a class="el" href="classqtpd_1_1_u_i_box.html#a607ee149146b0864ae34f4c61916fc70">qtpd::UIBox</a>, <a class="el" href="classqtpd_1_1_u_i_script.html#ab0153b528f4b68976735379902c88df2">qtpd::UIScript</a>, <a class="el" href="classqtpd_1_1_u_i_d_s_p.html#a13cc3d52bde970b6a5cd9ce4e4f5ecc6">qtpd::UIDSP</a>, <a class="el" href="classqtpd_1_1_u_i_array.html#a29b021ac5c4601c62c359e6da5be66ff">qtpd::UIArray</a>, <a class="el" href="classqtpd_1_1_u_i_message.html#a65412b0cbb3d0c5afff028b610df9ae9">qtpd::UIMessage</a>, <a class="el" href="classqtpd_1_1_u_i_float.html#a005f7f68707bda1c4af116e94588427c">qtpd::UIFloat</a>, <a class="el" href="classqtpd_1_1_u_i_subpatch.html#a6c480db1481baab00f4f074a3c540c5e">qtpd::UISubpatch</a>, <a class="el" href="classqtpd_1_1_u_i_toggle.html#aa89b72d2a43aacb8a487fb2ab22970a2">qtpd::UIToggle</a>, <a class="el" href="classqtpd_1_1_u_i_bang.html#ada7ab57467bf5e2ebafacdc4002b8437">qtpd::UIBang</a>, <a class="el" href="classqtpd_1_1_u_i_link.html#a8f111e8360f434de6c6bd91a6cb40d66">qtpd::UILink</a>, and <a class="el" href="classqtpd_1_1_u_i_text.html#ae4fd79dfe69c60bbbda202bdfc1327b0">qtpd::UIText</a>.</p>
+<p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_property.html#a3e3b3216710dc9bc7035c4f53ba09383">qtpd::UIProperty</a>, <a class="el" href="classqtpd_1_1_u_i_method.html#abae471a843ae506b04bcb861ca6931bd">qtpd::UIMethod</a>, <a class="el" href="classqtpd_1_1_u_i_class.html#ae427b4c6a023b208756197f74df3b22d">qtpd::UIClass</a>, <a class="el" href="classqtpd_1_1_u_i_instance.html#a06544d7a57d46436810862faca89cefd">qtpd::UIInstance</a>, <a class="el" href="classqtpd_1_1_u_i_box.html#a607ee149146b0864ae34f4c61916fc70">qtpd::UIBox</a>, <a class="el" href="classqtpd_1_1_u_i_script.html#ab0153b528f4b68976735379902c88df2">qtpd::UIScript</a>, <a class="el" href="classqtpd_1_1_u_i_d_s_p.html#a13cc3d52bde970b6a5cd9ce4e4f5ecc6">qtpd::UIDSP</a>, <a class="el" href="classqtpd_1_1_u_i_array.html#a29b021ac5c4601c62c359e6da5be66ff">qtpd::UIArray</a>, <a class="el" href="classqtpd_1_1_u_i_message.html#a65412b0cbb3d0c5afff028b610df9ae9">qtpd::UIMessage</a>, <a class="el" href="classqtpd_1_1_u_i_subpatch.html#a6c480db1481baab00f4f074a3c540c5e">qtpd::UISubpatch</a>, <a class="el" href="classqtpd_1_1_u_i_float.html#a005f7f68707bda1c4af116e94588427c">qtpd::UIFloat</a>, <a class="el" href="classqtpd_1_1_u_i_toggle.html#aa89b72d2a43aacb8a487fb2ab22970a2">qtpd::UIToggle</a>, <a class="el" href="classqtpd_1_1_u_i_bang.html#ada7ab57467bf5e2ebafacdc4002b8437">qtpd::UIBang</a>, <a class="el" href="classqtpd_1_1_u_i_link.html#a8f111e8360f434de6c6bd91a6cb40d66">qtpd::UILink</a>, and <a class="el" href="classqtpd_1_1_u_i_text.html#ae4fd79dfe69c60bbbda202bdfc1327b0">qtpd::UIText</a>.</p>
 
 </div>
 </div>
@@ -1217,11 +1234,13 @@ Protected Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">QMainWindow *&#160;</td>
           <td class="paramname"><em>cwindow</em></td><td>)</td>
-          <td></td>
+          <td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_subpatch.html#a55eee1e1bcedde736c14a2a53eec898a">qtpd::UISubpatch</a>.</p>
 
 </div>
 </div>
@@ -1299,7 +1318,7 @@ Protected Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 7 2017 19:44:36 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 7 2017 22:27:31 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

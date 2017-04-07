@@ -35,6 +35,8 @@ var searchData=
   ['out_5flist',['out_list',['../structceammc__gui_1_1ui__bpfunc.html#ad6692899e9043b6e029330e7eed8a50b',1,'ceammc_gui::ui_bpfunc::out_list()'],['../structui__keyboard.html#a8bde380aeded9aa62f53edc75ac716d5',1,'ui_keyboard::out_list()'],['../structui__slider2d.html#abb3ce3aa6359dcfa6cfdfcf163a75dca',1,'ui_slider2d::out_list()']]],
   ['out_5flist_5fcount',['out_list_count',['../structceammc__gui_1_1ui__bpfunc.html#a7cedf55df065fa7767e0ef7e0f5b46d7',1,'ceammc_gui::ui_bpfunc']]],
   ['outlets',['outlets',['../classqtpd_1_1canvas_data_plus.html#ac52550ee21dba78d4df012b37b349774',1,'qtpd::canvasDataPlus']]],
+  ['outputdevicecount',['outputDeviceCount',['../struct__cmp__audio__info.html#a2efceb3552277858fb2b4fc3a0326bf8',1,'_cmp_audio_info']]],
+  ['outputdevicelist',['outputDeviceList',['../struct__cmp__audio__info.html#a7bc24c3c68e1040f736d1fe2bf06c892',1,'_cmp_audio_info']]],
   ['overflow_5fexception',['overflow_exception',['../pystrtod_8h.html#a300deff4c4d06e95839b5368695eafc9',1,'pystrtod.h']]],
   ['override',['override',['../dictobject_8h.html#a055cf4fd16bde9bce026127362cee1a3',1,'dictobject.h']]],
   ['owner',['owner',['../classceammc_1_1_pd_args.html#a9a9cf2bc22830d7345e54db24724ca72',1,'ceammc::PdArgs']]]

@@ -27,6 +27,7 @@ var searchData=
   ['_5fclassinfo',['_classInfo',['../struct_python_qt_dynamic_class_info.html#ab5b4798615a7d31e9ed53880840a4719',1,'PythonQtDynamicClassInfo::_classInfo()'],['../struct_python_qt_class_wrapper.html#a9bc5cb521b68365016b88a7d200d3d8a',1,'PythonQtClassWrapper::_classInfo()']]],
   ['_5fclassname',['_className',['../classqtpd_1_1_o_o_p_d_class_base.html#af49aba2510e177e17ffb43fd18bb1b4e',1,'qtpd::OOPDClassBase']]],
   ['_5fclock',['_clock',['../m__pd_8h.html#a5295ba0b52ba13b2ae9726479297b103',1,'m_pd.h']]],
+  ['_5fcmp_5faudio_5finfo',['_cmp_audio_info',['../struct__cmp__audio__info.html',1,'']]],
   ['_5fcmpop',['_cmpop',['../_python-ast_8h.html#aeae2807c86997ffad2fa6d972a29ee1f',1,'Python-ast.h']]],
   ['_5fcomprehension',['_comprehension',['../struct__comprehension.html',1,'']]],
   ['_5fcurrentchunk',['_currentChunk',['../class_python_qt_value_storage.html#a947868a0923839dfb45f97f048fda9c2',1,'PythonQtValueStorage']]],

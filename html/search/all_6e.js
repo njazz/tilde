@@ -83,6 +83,7 @@ var searchData=
   ['newline_2eh',['NewLine.h',['../_new_line_8h.html',1,'']]],
   ['newmessagebox',['newMessageBox',['../classqtpd_1_1_patch_window.html#a83e7f93159893bdaa0082fd6d8c140dc',1,'qtpd::PatchWindow']]],
   ['newobjectbox',['newObjectBox',['../classqtpd_1_1_patch_window.html#a9dea55bcdf6c35f6394784cfa273cdf1',1,'qtpd::PatchWindow']]],
+  ['newobjectpos',['newObjectPos',['../classqtpd_1_1_canvas.html#a7263ec60b33eb52bbf3a4896dcf8a4ae',1,'qtpd::Canvas']]],
   ['newownerofthis',['newOwnerOfThis',['../struct_python_qt_method_info_1_1_parameter_info.html#a31eed30edd5fb74ae888c9a0d9cd5c28',1,'PythonQtMethodInfo::ParameterInfo']]],
   ['newpatch',['newPatch',['../classpy_pd_lib.html#aa0a66936a2b24ef44db413f67a59dac5',1,'pyPdLib']]],
   ['newpatchwindow',['newPatchWindow',['../classpy_qtpd.html#afd7aa8f27aebd53ff72da455d3034eb3',1,'pyQtpd']]],
