@@ -77,6 +77,7 @@ public:
     virtual void paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*){};
 
     void setCanvas(void* canvas) { _canvas = canvas; }
+    void* canvas(){return _canvas;} //?
 
     explicit UIObject(UIItem* parent = 0);
 
@@ -236,7 +237,7 @@ public:
     /// \details nonzero pointer for different drawing
     ///
     QMainWindow* subpatchWindow();
-    void setSubpatchWindow(QMainWindow* cwindow);
+    virtual void setSubpatchWindow(QMainWindow* cwindow);
 
     ////
     /// \brief sets pointer to edit mode flag value in parent canvas

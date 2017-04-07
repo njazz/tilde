@@ -163,7 +163,7 @@ void PatchWindow::objectMakerDone()
 
     if (obj_name != "") {
 
-        UIObject* new_obj = canvas->createObject(obj_name, canvas->objectMaker()->pos()); //"ui.obj",
+        UIObject* new_obj = canvas->createObject(obj_name, canvas->newObjectPos()); //"ui.obj",
 
         if (canvas->replaceObject()) {
             UIObject* obj = canvas->replaceObject();

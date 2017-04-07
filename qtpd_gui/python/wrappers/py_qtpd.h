@@ -325,6 +325,12 @@ public Q_SLOTS:
         cmp_switch_dsp(false);
     }
 
+    QStringList getAudioAPIs()
+    {
+        std::string apis = cmp_get_audio_apis();
+        return QString(apis.c_str()).split(" ");
+    }
+
     void post(QString msg)
     {
         cmp_post(msg.toStdString());

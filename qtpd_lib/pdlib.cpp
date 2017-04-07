@@ -35,19 +35,12 @@ extern "C" void setup_pdinstance(void);
 extern "C" void setup_pdmethod(void);
 extern "C" void setup_pdproperty(void);
 
-//todo fix
-//typedef struct _loadedlist
-//{
-//    struct _loadedlist *ll_next;
-//    t_symbol *ll_name;
-//} t_loadlist;
+// just a list of objects to implement
 
 //EXTERN "C" t_loadlist *sys_loaded;
 
-//EXTERN "C" void setup_ui0x2ebang(void);
-//EXTERN "C" void setup_ui0x2etoggle(void);
 //EXTERN "C" void setup_ui0x2enumber_tilde(void);
-//EXTERN "C" void setup_ui0x2enumber(void);
+
 //EXTERN "C" void setup_ui0x2eslider(void);
 //EXTERN "C" void setup_ui0x2eradio(void);
 
@@ -60,7 +53,6 @@ extern "C" void setup_pdproperty(void);
 EXTERN void uimsg_set_updateUI(t_pd* x, void* uiobj, t_updateUI func);
 
 //EXTERN "C" void setup_ui0x2ecolorpanel(void);
-//EXTERN "C" void setup_ui0x2edsp_tilde(void);
 //EXTERN "C" void setup_ui0x2eincdec(void);
 //EXTERN "C" void setup_ui0x2ematrix(void);
 //EXTERN "C" void setup_ui0x2emenu(void);
@@ -83,7 +75,7 @@ using namespace ceammc;
 
 t_pdinstance* cm_pd;
 
-EXTERN t_pd* newest; /* OK - this should go into a .h file now :) */
+//EXTERN t_pd* newest; /* OK - this should go into a .h file now :) */
 
 void cmp_error(std::string msg)
 {
@@ -127,7 +119,8 @@ void cmp_pdinit()
     else
         qDebug("Pd library initialized: %lu", (long)cm_pd);
 
-    //temporary extra objects
+    // temporary extra objects
+    // should be compiled as externals
 
     setup_ui0x2emsg();
     setup_ui0x2efloat();
@@ -140,20 +133,15 @@ void cmp_pdinit()
     setup_pdmethod();
     setup_pdproperty();
 
-    //setup_list0x2eproduct();
-
     //temporary initialisations
-    //    setup_ui0x2ebang();
     //    setup_ui0x2ebpfunc();
     //    setup_ui0x2eknob();
     //    setup_ui0x2emsg();
-    //    setup_ui0x2enumber();
     //    setup_ui0x2enumber_tilde();
     //    setup_ui0x2eradio();
     //    setup_ui0x2escope_tilde();
     //    setup_ui0x2eslider();
     //    setup_ui0x2espectroscope_tilde();
-    //    setup_ui0x2etoggle();
 
     qDebug("pd extras");
 
@@ -171,7 +159,7 @@ void cmp_pdinit()
 
     sys_reopen_audio();
 
-    //hack lol - removes empty canvas with array template
+    //hack lol - removes empty canvas with array template and creates an empty new one
     cmp_closepatch(cmp_newpatch());
 }
 
@@ -193,7 +181,6 @@ void cmp_remove_searchpath(t_symbol* s)
 
 bool cmp_is_abstraction(t_object* x)
 {
-    // !(pd_class(&x->te_pd) == canvas_class) &&
     return ((pd_class(&x->te_pd) == canvas_class) && canvas_isabstraction((t_canvas*)x));
 }
 
@@ -246,9 +233,6 @@ t_canvas* cmp_newpatch()
 
     if (pd_this) {
         ret = pd_this->pd_canvaslist->gl_next;
-
-        //        canvas_addinlet(ret,0,&s_list);
-        //        canvas_addoutlet(ret,0,&s_list);
     }
 
     qDebug("new canvas: %lu", (long)ret);
@@ -259,9 +243,6 @@ t_canvas* cmp_newpatch()
 t_canvas* cmp_openpatch(char* filename, char* path)
 {
     t_canvas* ret = (t_canvas*)glob_evalfile(0, gensym(filename), gensym(path));
-
-    //    post("dir");
-    //    post(canvas_getdir(ret)->s_name);
 
     return ret;
 }
@@ -287,25 +268,6 @@ void cmp_closepatch(t_canvas* canvas)
 
     qDebug("closed patch");
 }
-
-//#pragma mark -
-
-//temporary
-//template<typename Out>
-//void split(const std::string &s, char delim, Out result) {
-//    std::stringstream ss;
-//    ss.str(s);
-//    std::string item;
-//    while (std::getline(ss, item, delim)) {
-//        *(result++) = item;
-//    }
-//}
-
-//std::vector<std::string> string_split(const std::string &s, char delim) {
-//    std::vector<std::string> elems;
-//    split(s, delim, std::back_inserter(elems));
-//    return elems;
-//}
 
 AtomList* AtomListFromString(std::string in_string)
 {
@@ -363,47 +325,6 @@ t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int
 
     return ret2;
 }
-
-//t_object* cmp_create_message(t_canvas* canvas, std::string message, int x, int y)
-//{
-//    t_object* ret2;
-//    t_object* ret1;
-
-//    AtomList* list = AtomListFromString(message);
-//    //if (list->size()==0) {return 0;}
-
-//    list->insert(0,Atom((float)x));
-//    list->insert(1,Atom((float)y));
-//    list->insert(2,gensym("ui.msg"));
-
-//    qDebug("list size %i", list->size());
-
-//    //    for (int i=0;i<list.size();i++)
-//    //    {
-//    //        qDebug("*message data: %s", list.at(i).asString().c_str());
-//    //    }
-
-//    //pd_typedmess((t_pd*)canvas, gensym("msg"), (int)list->size(), list->toPdData());
-
-//    ret1 = (t_object*)pd_newest();
-
-//    pd_typedmess((t_pd*)canvas, gensym("obj"), list->size(), list->toPdData());
-
-//    delete list;
-
-//    ret2 = (t_object*)pd_newest();
-//    if (!ret2) return 0;
-//    if (ret2 != pd_checkobject((t_pd*)ret2)) return 0;
-//    if (ret2==ret1) return 0;
-
-//    char* bufp = new char[1024];
-//    int lenp;
-//    binbuf_gettext(ret2->te_binbuf,&bufp,&lenp);
-//    qDebug("object data: %s", bufp);
-
-//    return ret2;
-
-//}
 
 void cmp_moveobject(t_object* obj, int x, int y)
 {
@@ -518,11 +439,6 @@ t_inlet* cmp_get_inlet(t_object* x, int idx)
     return 0;
 }
 
-//int cmp_get_canvas_inlet_count(t_canvas* canvas)
-//{
-//    return obj_n
-//}
-
 #pragma mark -
 // --------------------------------------------
 // dsp
@@ -565,17 +481,6 @@ void cmp_connectUI(t_pd* obj, void* uiobj, t_updateUI func)
     uimsg_set_updateUI(obj, uiobj, func);
 }
 
-//void cmp_connectUI(std::string obj_name, void* uiobj, t_updateUI func)
-//{
-//    if (!updateUImap)
-//        updateUImap = new std::map<std::string, t_updateUI>;
-
-//   (*updateUImap)[obj_name] = func;
-
-//   post("updateUI map %s %lu %lu", obj_name.c_str(), (long)func, (*updateUImap)[obj_name]);
-
-//}
-
 // ---------------------------------------------
 // arrays
 
@@ -613,7 +518,30 @@ void cmp_set_verbose(int v)
 
 // -----
 
-//EXTERN void sys_get_audio_devs(char *indevlist, int *nindevs,
-//                          char *outdevlist, int *noutdevs, int *canmulti, int *cancallback,
-//                          int maxndev, int devdescsize);
-//EXTERN void sys_get_audio_apis(char *buf);
+EXTERN t_cmp_audio_info cmp_get_audio_device_info()
+{
+    t_cmp_audio_info ret;
+
+    char* indevlist= new char;
+    char* outdevlist = new char;
+
+    const int maxndev = 16;
+    const int devdescsize = 1024;
+//    sys_get_audio_devs(indevlist, &ret.inputDeviceCount,
+//                              outdevlist, &ret.outputDeviceCount, &ret.hasMulti, &ret.hasCallback,
+//                              maxndev, devdescsize);
+
+    ret.inputDeviceList = indevlist;
+    ret.outputDeviceList = outdevlist;
+
+    return ret;
+}
+
+EXTERN std::string cmp_get_audio_apis()
+{
+    char * buf = new char;
+//    sys_get_audio_apis(buf);
+
+    return buf;
+}
+

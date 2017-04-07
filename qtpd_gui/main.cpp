@@ -41,7 +41,7 @@ int main(int argc, char* argv[])
     //a.setWindowIcon(QIcon("./pd_ceammc.icns"));
 
     QTPD_PREF_INIT;
-    QTPD_AUDIOSETTINGS_INIT;
+
 
 #ifdef WITH_PYTHON
     //python
@@ -58,6 +58,8 @@ int main(int argc, char* argv[])
 
     cmp_pdinit();
     cmp_setprinthook(&pd_window_printhook);
+
+    QTPD_AUDIOSETTINGS_INIT;
 
     PdWindow::inst()->move(0, 100);
     PdWindow::inst()->show();

@@ -175,17 +175,6 @@ HEADERS += \
     src/g_draw_tcl.h \
     src/g_style.h \
     portaudio/include/portaudio.h \
-#    creamlibrary/c.library.hpp \
-#    CicmWrapper/Sources/cicm_wrapper.h \
-#    CicmWrapper/Sources/ebox.h \
-#    CicmWrapper/Sources/eclass.h \
-#    CicmWrapper/Sources/ecommon.h \
-#    CicmWrapper/Sources/edefine.h \
-#    CicmWrapper/Sources/egraphics.h \
-#    CicmWrapper/Sources/enative.h \
-#    CicmWrapper/Sources/eobj.h \
-#    CicmWrapper/Sources/epdmax.h \
-#    CicmWrapper/Sources/epopup.h \
     pdlib.hpp \
     RtMidi/RtMidi.h \
 #    ceammc-lib/ceammc.h \

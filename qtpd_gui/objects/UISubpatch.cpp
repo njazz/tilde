@@ -5,6 +5,7 @@
 
 #include "PatchWindow.h"
 
+
 namespace qtpd {
 UISubpatch::UISubpatch()
 
@@ -19,7 +20,7 @@ UISubpatch::UISubpatch()
 
     setErrorBox(false);
 
-    setSubpatchWindow(0);
+    //setSubpatchWindow(0);
 
     setMinimumBoxWidth(40);
     setMinimumBoxHeight(20);
@@ -49,5 +50,40 @@ std::string UISubpatch::asPdFileString()
     //ret += objectData();
 
     return ret;
+}
+
+void UISubpatch::setSubpatchWindow(QMainWindow* cwindow)
+{
+    UIObject::setSubpatchWindow(cwindow);
+    PatchWindow* p = (PatchWindow*)cwindow;
+
+    Canvas* _subCanvas;
+    //if (p)
+        _subCanvas = p->canvas;
+
+    QWidget *test = new QWidget();
+//    //_subCanvas->show();
+    //_subCanvas->setParent(test);
+
+    QGraphicsScene *sc = new QGraphicsScene();
+    sc = _subCanvas->scene();
+
+    QGraphicsView *v = new QGraphicsView;
+    v->setScene(sc);
+   // v->setParent(test);
+
+    QGraphicsProxyWidget* proxy = new QGraphicsProxyWidget(this);
+    proxy->setWidget(v);
+
+//            if (((Canvas*)canvas())->scene())
+//                ((Canvas*)canvas())->scene()->addWidget(_subCanvas);
+
+    scene()->addItem(proxy);
+
+    proxy->setPos(0, 20);
+    proxy->show();
+
+    setWidth(400);
+    setHeight(300);
 }
 }

@@ -1068,8 +1068,9 @@ void sys_get_audio_apis(char *buf)
 #endif
     strcat(buf, "}");
         /* then again, if only one API (or none) we don't offer any choice. */
-    if (n < 2)
-        strcpy(buf, "{}");
+// QTPD
+//    if (n < 2)
+//        strcpy(buf, "{}");
 }
 
 #ifdef USEAPI_ALSA

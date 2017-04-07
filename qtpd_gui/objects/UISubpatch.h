@@ -16,6 +16,7 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QGraphicsView>
 #include <QMainWindow>
+#include <QGraphicsProxyWidget>
 
 #include "Canvas.h"
 
@@ -38,7 +39,7 @@ private:
 public:
     explicit UISubpatch();
 
-    static UIObject* createObject(QString objectData, t_canvas* , QGraphicsView* parent = 0)
+    static UIObject* createObject(QString objectData, t_canvas*, QGraphicsView* parent = 0)
     {
         //TODO fix all constructors
 
@@ -65,23 +66,31 @@ public:
 
         b->resizeEvent();
 
+
+
+
         return (UIObject*)b;
     };
+
+    void setSubpatchWindow(QMainWindow *cwindow);
 
     ////
     /// \brief paint event
     ///
-    void paint(QPainter* p, const QStyleOptionGraphicsItem* , QWidget* )
+    void paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)
     {
+        QBrush brush(bgColor());
+        p->setBrush(brush);
+        p->drawRect(boundingRect());
+        p->setBrush(QBrush());
+
         p->setRenderHint(QPainter::HighQualityAntialiasing, true);
 
-        {
-            p->setPen(QPen(QColor(192, 192, 192), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-            p->drawRect(0, 1, width(), height() - 2);
-        }
+        p->setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p->drawRect(0, 1, width(), height() - 2);
 
         QColor rectColor = (errorBox()) ? QColor(255, 0, 0) : QColor(128, 128, 128);
-        p->setPen(QPen(rectColor, 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p->setPen(QPen(rectColor, 1, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         p->drawRect(0, 0, width(), height());
         QTextOption* op = new QTextOption;
         op->setAlignment(Qt::AlignLeft);
@@ -91,7 +100,7 @@ public:
         p->drawText(2, 3, width() - 2, height() - 3, 0, objectData().c_str(), 0);
 
         if (isSelected()) {
-            p->setPen(QPen(QColor(0, 192, 255), 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            p->setPen(QPen(QColor(0, 192, 255), 1, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
             p->drawRect(0, 0, width(), height());
         }
     }

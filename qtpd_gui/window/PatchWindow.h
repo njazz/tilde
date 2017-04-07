@@ -16,7 +16,7 @@ namespace qtpd {
 class PatchWindow : public BaseWindow {
 
 private:
-    QScrollArea* scroll;
+    //QScrollArea* scroll;
 
     ////
 
@@ -552,12 +552,14 @@ public:
     //
     void zoomIn()
     {
-        canvas->setZoom(canvas->getZoom()+.25);
+        canvas->setZoom(1.1);
+        qDebug()<<"zoom"<<canvas->getZoom();
     }
 
     void zoomOut()
     {
-        canvas->setZoom(canvas->getZoom()-.25);
+        canvas->setZoom(1/1.1);
+        qDebug()<<"zoom"<<canvas->getZoom();
     }
 
 //    void resizeEvent(QResizeEvent*)

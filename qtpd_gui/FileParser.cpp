@@ -320,9 +320,9 @@ void FileParser::parseQString(QString line)
         qDebug() << "dim" << pos << size;
 
 //        newWnd->setMinimumSize(size);
-//        newWnd->canvas->setWindowSize(size);
+        newWnd->canvas->setWindowSize(size);
 //        newWnd->setBaseSize(size);
-        //newWnd->move(pos);
+        newWnd->move(pos);
 
 //        newWnd->canvas->move(0,0);
 

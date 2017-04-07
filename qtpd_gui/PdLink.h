@@ -256,4 +256,22 @@ int cmp_get_array_size(t_garray* a);
 
 t_garray* cmp_new_array(t_canvas* c, t_symbol* name, t_floatarg size, t_floatarg save, t_floatarg newgraph);
 
+
+////
+
+// audio info
+
+typedef struct _cmp_audio_info
+{
+    std::string inputDeviceList;
+    std::string outputDeviceList;
+    int inputDeviceCount;
+    int outputDeviceCount;
+    bool hasMulti;
+    bool hasCallback;
+} t_cmp_audio_info;
+
+t_cmp_audio_info cmp_get_audio_device_info();
+std::string cmp_get_audio_apis();
+
 #endif // CM_PDLINK_H

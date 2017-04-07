@@ -68,6 +68,8 @@ private:
 
 public:
     // todo fix
+    QPoint newObjectPos(){return _newObjectPos;}
+
     canvasDataPlus* canvasData() { return &_canvasData; }
 
     UIObject* dragObject() { return _dragObject; }
@@ -84,10 +86,10 @@ public:
     // zoom
     void setZoom(float zoom)
     {
-        if (zoom<.5) zoom=.5;
-        if (zoom>2) zoom = 2;
+        if ( (_zoom<=.5) && (zoom<1) ) {zoom = .5; return;}
+        if ( (_zoom>2) && (zoom>1)) {zoom = 2.; return;}
 
-        _zoom = zoom;
+        _zoom *= zoom;
 
         scale(zoom,zoom);
         viewport()->update();
