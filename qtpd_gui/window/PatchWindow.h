@@ -333,6 +333,7 @@ public:
         //temporary
         //event->size()
         canvas->setWindowSize(event->size());
+        //canvas->resizeEvent(event);
 
         //FIX
         canvas->move(0,0);

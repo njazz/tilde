@@ -208,7 +208,7 @@ public:
     ///
     void mouseMoveEvent(QGraphicsSceneMouseEvent* event)
     {
-        qDebug("box move");
+        //qDebug("box move");
 
         if (event->buttons() & Qt::LeftButton) {
             emit moveBox(this, event);

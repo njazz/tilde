@@ -79,8 +79,6 @@ public:
     t_canvas* pdObject() { return _pdObject; }
     void setPdObject(t_canvas* c) { _pdObject = c; }
 
-
-
     //todo
     void addInlet();
     void addOutlet();

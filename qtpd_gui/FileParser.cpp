@@ -29,7 +29,8 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
         list[0] = "obj";
         list.insert(3, "ui.text");
         list.insert(4, "@Text");
-        UIObject* obj = FileParser::sendStringToCanvas(cmcanvas, list);
+        //UIObject* obj =
+                FileParser::sendStringToCanvas(cmcanvas, list);
 
         //        list.removeAt(0);
         //        list.removeAt(0);
@@ -43,7 +44,8 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
     } else if (list.at(0) == "floatatom") {
         list[0] = "obj";
         list.insert(3, "ui.float");
-        UIObject* obj = FileParser::sendStringToCanvas(cmcanvas, list);
+        //UIObject* obj =
+                FileParser::sendStringToCanvas(cmcanvas, list);
 
         //temporary - to have readable list at some point
         //box_width lower upper 1 label send receive
@@ -88,10 +90,11 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
         QString lSend = ((QString)list.at(7));
         QString lReceive = ((QString)list.at(8));
         QString lLabel = ((QString)list.at(9));
+        QString fontSize = ((QString)list.at(13));
         if (lLabel == "empty")
             lLabel = "";
         //...
-        int lFontSize = ((QString)list.at(4)).toInt() * 8 + 3;
+        //int lFontSize = ((QString)list.at(4)).toInt() * 8 + 3;
 
         QStringList list2;
         list2.push_back("obj");
@@ -101,9 +104,10 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
         list2.push_back("@Text");
         list2.push_back(lLabel);
         list2.push_back("@FontSize");
-        list2.push_back(QString("32"));
+        list2.push_back(fontSize);
 
-        UIObject* obj = FileParser::sendStringToCanvas(cmcanvas, list2);
+        //UIObject* obj =
+                FileParser::sendStringToCanvas(cmcanvas, list2);
 
         return true;
     }
