@@ -14,7 +14,7 @@ Canvas::Canvas(QGraphicsView* parent)
 {
 
     //test
-    setFixedSize(400, 300);
+    //setFixedSize(400, 300);
 
     setMouseTracking(true);
 
@@ -142,7 +142,7 @@ void Canvas::s_MoveBox(UIItem* box, QGraphicsSceneMouseEvent* event)
         viewport()->update();
     }
 
-    setFixedSize(minimumCanvasSize());
+    //setFixedSize(minimumCanvasSize());
 }
 
 // -----------------------------------------------------------------------
@@ -375,7 +375,7 @@ UIObject* Canvas::createObject(QString objectData1, QPoint pos) //std::string UI
 
     //if (drawStyle() == ds_Canvas)
 
-    setFixedSize(minimumCanvasSize());
+    //setFixedSize(minimumCanvasSize());
 
     return (UIObject*)obj;
 }

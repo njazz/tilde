@@ -8,24 +8,29 @@ PatchWindow::PatchWindow()
     createActions();
     createMenus();
 
-    scroll = new QScrollArea(this);
-    scroll->setFrameShape(QFrame::NoFrame);
+    //scroll = new QScrollArea(this);
+    //scroll->setFrameShape(QFrame::NoFrame);
 
-    canvas = new Canvas((QGraphicsView*)scroll);
+    canvas = new Canvas((QGraphicsView*)this);
 
-    scroll->setWidget(canvas);
+    //scroll->setWidget(canvas);
 
     QGridLayout* layout1 = new QGridLayout();
-    layout1->setMargin(0);
+    layout1->setMargin(10);
     layout1->addWidget(canvas);
-    scroll->setLayout(layout1);
+    //scroll->setLayout(layout1);
 
-    //setCentralWidget(scroll);
+    canvas->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+    canvas->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 
-    QGridLayout* layout2 = new QGridLayout();
-    layout2->addWidget(scroll);
-    layout2->setMargin(0);
-    centralWidget()->setLayout(layout2);
+    setCentralWidget(canvas);
+    //canvas->setParent(centralWidget());
+    //scroll->setParent(this);
+
+//    QGridLayout* layout2 = new QGridLayout();
+//    layout2->addWidget(scroll);
+//    layout2->setMargin(0);
+    setLayout(layout1);
 
     //TODO weird
     //objectMaker = new ObjectMaker((QLineEdit*)canvas);
@@ -215,5 +220,28 @@ void PatchWindow::paste()
 {
     FileParser::setParserWindow(this);
     canvas->dataPaste();
+}
+
+// ----------
+
+void PatchWindow::resizeEvent(QResizeEvent* event)
+{
+//        canvas->move(0,0);
+
+
+
+//        // todo move to canvas
+        QSize newSize = canvas->minimumCanvasSize();
+        if (newSize.width()< event->size().width())
+            newSize.setWidth(event->size().width());
+        if (newSize.height()< event->size().height())
+            newSize.setHeight(event->size().height());
+        //canvas->setMinimumSize(newSize);
+        canvas->viewport()->setMinimumSize(newSize);
+        //canvas->setWindowSize(newSize);
+
+
+//        //FIX
+//        canvas->move(0,0);
 }
 }

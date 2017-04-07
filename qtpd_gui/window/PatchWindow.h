@@ -324,30 +324,8 @@ public:
 
     // ----------
 
-    void resizeEvent(QResizeEvent* event)
-    {
-        canvas->move(0,0);
+    void resizeEvent(QResizeEvent* event);
 
-        //fix later
-        //canvas->setMinimumSize(QSize(width() - canvas->x(), height() - canvas->y()));
-
-        //temporary
-        //event->size()
-
-
-        // todo move to canvas
-        QSize newSize = canvas->minimumCanvasSize();
-        if (newSize.width()< event->size().width())
-            newSize.setWidth(event->size().width());
-        if (newSize.height()< event->size().height())
-            newSize.setHeight(event->size().height());
-        canvas->setFixedSize(newSize);//canvas->minimumCanvasSize());
-        canvas->setWindowSize(newSize);
-        //canvas->resizeEvent(event);
-
-        //FIX
-        canvas->move(0,0);
-    }
 
     //----------------------------------------------------------------------------------------
 
