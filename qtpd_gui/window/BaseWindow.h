@@ -89,8 +89,6 @@ public:
         //                         "selection"));
         //connect(pasteAct, &QAction::triggered, this, &cm_basewindow::paste);
 
-
-
         dspOnAct = new QAction(tr("DSP On"), this);
         dspOnAct->setShortcut(tr("Ctrl+/"));
         connect(dspOnAct, &QAction::triggered, this, &BaseWindow::dspOn);
@@ -113,6 +111,8 @@ public:
         //moves to app menu on mac
         pdPreferencesAct = new QAction(tr("Preferences..."), this);
         pdPreferencesAct->setShortcut(tr("Ctrl+,"));
+        connect(pdPreferencesAct, &QAction::triggered, this, &BaseWindow::preferencesWindow);
+
 
         pdKeyBindingsAct = new QAction(tr("Key bindings..."), this);
         //pdKeyBindingsAct->setShortcut(tr("Ctrl+R"));
@@ -176,6 +176,8 @@ public:
         helpMenu = menuBar()->addMenu(tr("&Help"));
         helpMenu->addAction(pdHelpAct);
     }
+
+    void preferencesWindow();
 
 private:
     Ui::cm_basewindow* ui;

@@ -158,20 +158,38 @@ public:
         return ret;
     }
 
-    std::string asPdSaveString()
+    // todo move?
+    QString escapeString(QString input)
     {
-        std::string ret = "";
+        // todo regexp
+
+        QString ret;
+
+        ret = input.split("\ ").join("\\ ");
+        ret = ret.split("\n").join("\\n");
+        ret = ret.split(",").join("\\,");
+        ret = ret.split(".").join("\\.");
+        //ret = ret.split(";").join("\\;");
+        return ret;
+    }
+
+    QString asPdSaveString()
+    {
+        QString ret = "";
 
         if (_data.size() > 1) {
             for (size_t i = 0; i < _data.size(); i++) {
 
-                ret += _data.at(i).asString() + " ";  //\\n removed
+                ret += QString(_data.at(i).asString().c_str()) + " ";  //\\n removed
             }
 
         } else if (_data.size() == 1)
-            ret = _data.at(0).asString();
+            ret = QString(_data.at(0).asString().c_str());
 
         //qDebug() << "stdstr " << data_.size() << QString(ret.c_str());
+
+        ret = escapeString(ret);
+
         return ret;
     }
 

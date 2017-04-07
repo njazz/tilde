@@ -374,6 +374,7 @@ UIObject* Canvas::createObject(QString objectData1, QPoint pos) //std::string UI
     connect(obj, &UIObject::editObject, this, &Canvas::objectStartsEdit);
 
     //if (drawStyle() == ds_Canvas)
+
     setFixedSize(minimumCanvasSize());
 
     return (UIObject*)obj;

@@ -10,6 +10,9 @@
 
 #include "BaseMenu.h"
 
+#include "PropertiesWindow.h"
+#include "Preferences.h"
+
 namespace qtpd {
 BaseWindow::BaseWindow(QWidget* parent)
     :
@@ -56,4 +59,15 @@ void BaseWindow::pdWindow()
 {
     //if (pdw->isVisible()) pdw->hide(); else pdw->show();
 }
+
+void BaseWindow::preferencesWindow()
+{
+    qDebug()<<"preferences";
+    PropertyList* l1 = &Preferences::inst();
+    PropertiesWindow*p1 = new PropertiesWindow(l1);
+    p1->move(30,30);
+    p1->show();
+
+}
+
 }

@@ -54,20 +54,20 @@ public:
     //temporary
     QString getQString(std::string key)
     {
-        if (this->get(key))
-            return this->get(key)->asQString();
+        if (get(key))
+            return get(key)->asQString();
 
         return "";
     }
 
     void init()
     {
-        this->create("appVersion", "System", QTPD_APP_VERSION, (std::string)(QTPD_APP_VERSION));
-        this->create("Font", "UI", QTPD_APP_VERSION, (std::string)("Source Code Pro")); //
+        create("appVersion", "System", QTPD_APP_VERSION, (std::string)(QTPD_APP_VERSION));
+        create("Font", "UI", QTPD_APP_VERSION, (std::string)("Source Code Pro")); //
 
         qDebug("pref init");
-        qDebug() << this->getQString("appVersion");
-        qDebug() << this->getQString("Font");
+        qDebug() << getQString("appVersion");
+        qDebug() << getQString("Font");
     }
 
     //------------------------------------------
