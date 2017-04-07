@@ -53,7 +53,7 @@ PatchWindow::PatchWindow()
 PatchWindow* PatchWindow::newWindow()
 {
     PatchWindow* this_;
-    this_ = new PatchWindow;
+    this_ = new PatchWindow();
 
     // move to canvas
 

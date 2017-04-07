@@ -333,7 +333,7 @@ public:
 
         //temporary
         //event->size()
-        canvas->setWindowSize(event->size());
+
 
         // todo move to canvas
         QSize newSize = canvas->minimumCanvasSize();
@@ -342,6 +342,7 @@ public:
         if (newSize.height()< event->size().height())
             newSize.setHeight(event->size().height());
         canvas->setFixedSize(newSize);//canvas->minimumCanvasSize());
+        canvas->setWindowSize(newSize);
         //canvas->resizeEvent(event);
 
         //FIX
