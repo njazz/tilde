@@ -235,36 +235,54 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00158"></a>00158         <span class="keywordflow">return</span> ret;
 <a name="l00159"></a>00159     }
 <a name="l00160"></a>00160 
-<a name="l00161"></a><a class="code" href="classqtpd_1_1_property.html#a0973d3630c8dd53f5ca0e5782b3f9567">00161</a>     <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> asPdSaveString()
-<a name="l00162"></a>00162     {
-<a name="l00163"></a>00163         <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> ret = <span class="stringliteral">&quot;&quot;</span>;
-<a name="l00164"></a>00164 
-<a name="l00165"></a>00165         <span class="keywordflow">if</span> (_data.size() &gt; 1) {
-<a name="l00166"></a>00166             <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a> = 0; <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a> &lt; _data.size(); <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a>++) {
+<a name="l00161"></a>00161     <span class="comment">// todo move?</span>
+<a name="l00162"></a><a class="code" href="classqtpd_1_1_property.html#a29609c6282f98fe403cf2a74551516ed">00162</a>     QString escapeString(QString input)
+<a name="l00163"></a>00163     {
+<a name="l00164"></a>00164         <span class="comment">// todo regexp</span>
+<a name="l00165"></a>00165 
+<a name="l00166"></a>00166         QString ret;
 <a name="l00167"></a>00167 
-<a name="l00168"></a>00168                 ret += _data.at(<a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a>).asString() + <span class="stringliteral">&quot; &quot;</span>;  <span class="comment">//\\n removed</span>
-<a name="l00169"></a>00169             }
-<a name="l00170"></a>00170 
-<a name="l00171"></a>00171         } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_data.size() == 1)
-<a name="l00172"></a>00172             ret = _data.at(0).asString();
-<a name="l00173"></a>00173 
-<a name="l00174"></a>00174         <span class="comment">//qDebug() &lt;&lt; &quot;stdstr &quot; &lt;&lt; data_.size() &lt;&lt; QString(ret.c_str());</span>
-<a name="l00175"></a>00175         <span class="keywordflow">return</span> ret;
-<a name="l00176"></a>00176     }
-<a name="l00177"></a>00177 
-<a name="l00178"></a><a class="code" href="classqtpd_1_1_property.html#af5289defc1ad42119984e3f6eef55f16">00178</a>     QString asQString()
-<a name="l00179"></a>00179     {
-<a name="l00180"></a>00180         QString ret = <span class="stringliteral">&quot;&quot;</span>;
-<a name="l00181"></a>00181 
-<a name="l00182"></a>00182         <span class="comment">//temporary</span>
-<a name="l00183"></a>00183         ret = QString(asStdString().c_str());
-<a name="l00184"></a>00184 
-<a name="l00185"></a>00185         <span class="keywordflow">return</span> ret;
-<a name="l00186"></a>00186     }
-<a name="l00187"></a>00187 };
-<a name="l00188"></a>00188 }
-<a name="l00189"></a>00189 
-<a name="l00190"></a>00190 <span class="preprocessor">#endif // CM_PROPERTY_H</span>
+<a name="l00168"></a>00168         ret = input.split(<span class="stringliteral">&quot;\ &quot;</span>).join(<span class="stringliteral">&quot;\\ &quot;</span>);
+<a name="l00169"></a>00169         ret = ret.split(<span class="stringliteral">&quot;\n&quot;</span>).join(<span class="stringliteral">&quot;\\n&quot;</span>);
+<a name="l00170"></a>00170         ret = ret.split(<span class="stringliteral">&quot;,&quot;</span>).join(<span class="stringliteral">&quot;\\,&quot;</span>);
+<a name="l00171"></a>00171         ret = ret.split(<span class="stringliteral">&quot;.&quot;</span>).join(<span class="stringliteral">&quot;\\.&quot;</span>);
+<a name="l00172"></a>00172         <span class="comment">//ret = ret.split(&quot;;&quot;).join(&quot;\\;&quot;);</span>
+<a name="l00173"></a>00173         <span class="keywordflow">return</span> ret;
+<a name="l00174"></a>00174     }
+<a name="l00175"></a>00175 
+<a name="l00176"></a><a class="code" href="classqtpd_1_1_property.html#ab2a906c56ee655fb583ceed666f268b2">00176</a>     QString asPdSaveString()
+<a name="l00177"></a>00177     {
+<a name="l00178"></a>00178         QString ret = <span class="stringliteral">&quot;&quot;</span>;
+<a name="l00179"></a>00179 
+<a name="l00180"></a>00180         <span class="keywordflow">if</span> (_data.size() &gt; 1) {
+<a name="l00181"></a>00181             <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a> = 0; <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a> &lt; _data.size(); <a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a>++) {
+<a name="l00182"></a>00182 
+<a name="l00183"></a>00183                 ret += QString(_data.at(<a class="code" href="abstract_8h.html#a13235ab5ddf5c2ccd5ca35ab01d91328">i</a>).asString().c_str()) + <span class="stringliteral">&quot; &quot;</span>;  <span class="comment">//\\n removed</span>
+<a name="l00184"></a>00184             }
+<a name="l00185"></a>00185 
+<a name="l00186"></a>00186         } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_data.size() == 1)
+<a name="l00187"></a>00187             ret = QString(_data.at(0).asString().c_str());
+<a name="l00188"></a>00188 
+<a name="l00189"></a>00189         <span class="comment">//qDebug() &lt;&lt; &quot;stdstr &quot; &lt;&lt; data_.size() &lt;&lt; QString(ret.c_str());</span>
+<a name="l00190"></a>00190 
+<a name="l00191"></a>00191         ret = escapeString(ret);
+<a name="l00192"></a>00192 
+<a name="l00193"></a>00193         <span class="keywordflow">return</span> ret;
+<a name="l00194"></a>00194     }
+<a name="l00195"></a>00195 
+<a name="l00196"></a><a class="code" href="classqtpd_1_1_property.html#af5289defc1ad42119984e3f6eef55f16">00196</a>     QString asQString()
+<a name="l00197"></a>00197     {
+<a name="l00198"></a>00198         QString ret = <span class="stringliteral">&quot;&quot;</span>;
+<a name="l00199"></a>00199 
+<a name="l00200"></a>00200         <span class="comment">//temporary</span>
+<a name="l00201"></a>00201         ret = QString(asStdString().c_str());
+<a name="l00202"></a>00202 
+<a name="l00203"></a>00203         <span class="keywordflow">return</span> ret;
+<a name="l00204"></a>00204     }
+<a name="l00205"></a>00205 };
+<a name="l00206"></a>00206 }
+<a name="l00207"></a>00207 
+<a name="l00208"></a>00208 <span class="preprocessor">#endif // CM_PROPERTY_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -283,7 +301,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 7 2017 12:44:19 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 7 2017 13:52:35 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

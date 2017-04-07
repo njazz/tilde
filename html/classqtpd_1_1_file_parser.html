@@ -133,6 +133,8 @@ Static Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">[2] checks first atoms ("#N", "#X" etc) and sends QStringList of contents to canvas  <a href="#a5a17d655a501583acbc54ce76d8140d4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#a7a1d4de73d63affb0825b0889a3b94f7">open</a> (QString fname)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">[1] opens file, converts to QStrings, calls 'parseString'  <a href="#a7a1d4de73d63affb0825b0889a3b94f7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#a913f7dec69523e9fb2ef3054e8904b65">unescapeString</a> (QString input)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#ababb5fcbce9370ddeffe2049c774ac2e">escapeString</a> (QString input)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#ab7dc8008ff768523c4633c29f8c030d2">pdParserFileName</a> = &quot;&quot;</td></tr>
@@ -140,6 +142,23 @@ Static Public Attributes</h2></td></tr>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Parses pd files on 'client' (GUI) side. </p>
 </div><hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ababb5fcbce9370ddeffe2049c774ac2e"></a><!-- doxytag: member="qtpd::FileParser::escapeString" ref="ababb5fcbce9370ddeffe2049c774ac2e" args="(QString input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static QString <a class="el" href="classqtpd_1_1_file_parser.html#ababb5fcbce9370ddeffe2049c774ac2e">qtpd::FileParser::escapeString</a> </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>input</em></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a1368c5ecfcbda70864f620275d402b31"></a><!-- doxytag: member="qtpd::FileParser::legacyProcess" ref="a1368c5ecfcbda70864f620275d402b31" args="(Canvas *cmcanvas, QStringList list)" -->
 <div class="memitem">
 <div class="memproto">
@@ -401,6 +420,23 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a913f7dec69523e9fb2ef3054e8904b65"></a><!-- doxytag: member="qtpd::FileParser::unescapeString" ref="a913f7dec69523e9fb2ef3054e8904b65" args="(QString input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static QString <a class="el" href="classqtpd_1_1_file_parser.html#a913f7dec69523e9fb2ef3054e8904b65">qtpd::FileParser::unescapeString</a> </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>input</em></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <hr/><h2>Member Data Documentation</h2>
 <a class="anchor" id="ab7dc8008ff768523c4633c29f8c030d2"></a><!-- doxytag: member="qtpd::FileParser::pdParserFileName" ref="ab7dc8008ff768523c4633c29f8c030d2" args="" -->
 <div class="memitem">
@@ -437,7 +473,7 @@ Static Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 7 2017 12:44:22 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 7 2017 13:52:37 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

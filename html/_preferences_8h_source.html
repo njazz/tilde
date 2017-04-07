@@ -135,20 +135,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00054"></a>00054     <span class="comment">//temporary</span>
 <a name="l00055"></a><a class="code" href="classqtpd_1_1_preferences.html#ac3d62ad2f3b4cfd190d4e5f87c154c9d">00055</a>     QString <a class="code" href="classqtpd_1_1_preferences.html#ac3d62ad2f3b4cfd190d4e5f87c154c9d">getQString</a>(<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="code" href="abstract_8h.html#ada6705808cbd8c921df38387db9a6aee">key</a>)
 <a name="l00056"></a>00056     {
-<a name="l00057"></a>00057         <span class="keywordflow">if</span> (this-&gt;<span class="keyword">get</span>(key))
-<a name="l00058"></a>00058             <span class="keywordflow">return</span> this-&gt;<span class="keyword">get</span>(<a class="code" href="abstract_8h.html#ada6705808cbd8c921df38387db9a6aee">key</a>)-&gt;asQString();
+<a name="l00057"></a>00057         <span class="keywordflow">if</span> (<span class="keyword">get</span>(key))
+<a name="l00058"></a>00058             <span class="keywordflow">return</span> <span class="keyword">get</span>(<a class="code" href="abstract_8h.html#ada6705808cbd8c921df38387db9a6aee">key</a>)-&gt;asQString();
 <a name="l00059"></a>00059 
 <a name="l00060"></a>00060         <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;
 <a name="l00061"></a>00061     }
 <a name="l00062"></a>00062 
 <a name="l00063"></a><a class="code" href="classqtpd_1_1_preferences.html#a87f84d312be88fb243bc4e1ad1563706">00063</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_preferences.html#a87f84d312be88fb243bc4e1ad1563706">init</a>()
 <a name="l00064"></a>00064     {
-<a name="l00065"></a>00065         this-&gt;<a class="code" href="classqtpd_1_1_property_list.html#a86311122846e75d0cb0e7e775abddae6">create</a>(<span class="stringliteral">&quot;appVersion&quot;</span>, <span class="stringliteral">&quot;System&quot;</span>, <a class="code" href="_preferences_8h.html#ae09bed4115d5e989b65c733ad8ace663">QTPD_APP_VERSION</a>, (<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>)(<a class="code" href="_preferences_8h.html#ae09bed4115d5e989b65c733ad8ace663">QTPD_APP_VERSION</a>));
-<a name="l00066"></a>00066         this-&gt;<a class="code" href="classqtpd_1_1_property_list.html#a86311122846e75d0cb0e7e775abddae6">create</a>(<span class="stringliteral">&quot;Font&quot;</span>, <span class="stringliteral">&quot;UI&quot;</span>, <a class="code" href="_preferences_8h.html#ae09bed4115d5e989b65c733ad8ace663">QTPD_APP_VERSION</a>, (<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>)(<span class="stringliteral">&quot;Source Code Pro&quot;</span>)); <span class="comment">//</span>
+<a name="l00065"></a>00065         <a class="code" href="classqtpd_1_1_property_list.html#a86311122846e75d0cb0e7e775abddae6">create</a>(<span class="stringliteral">&quot;appVersion&quot;</span>, <span class="stringliteral">&quot;System&quot;</span>, <a class="code" href="_preferences_8h.html#ae09bed4115d5e989b65c733ad8ace663">QTPD_APP_VERSION</a>, (<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>)(<a class="code" href="_preferences_8h.html#ae09bed4115d5e989b65c733ad8ace663">QTPD_APP_VERSION</a>));
+<a name="l00066"></a>00066         <a class="code" href="classqtpd_1_1_property_list.html#a86311122846e75d0cb0e7e775abddae6">create</a>(<span class="stringliteral">&quot;Font&quot;</span>, <span class="stringliteral">&quot;UI&quot;</span>, <a class="code" href="_preferences_8h.html#ae09bed4115d5e989b65c733ad8ace663">QTPD_APP_VERSION</a>, (<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>)(<span class="stringliteral">&quot;Source Code Pro&quot;</span>)); <span class="comment">//</span>
 <a name="l00067"></a>00067 
 <a name="l00068"></a>00068         qDebug(<span class="stringliteral">&quot;pref init&quot;</span>);
-<a name="l00069"></a>00069         qDebug() &lt;&lt; this-&gt;<a class="code" href="classqtpd_1_1_preferences.html#ac3d62ad2f3b4cfd190d4e5f87c154c9d">getQString</a>(<span class="stringliteral">&quot;appVersion&quot;</span>);
-<a name="l00070"></a>00070         qDebug() &lt;&lt; this-&gt;<a class="code" href="classqtpd_1_1_preferences.html#ac3d62ad2f3b4cfd190d4e5f87c154c9d">getQString</a>(<span class="stringliteral">&quot;Font&quot;</span>);
+<a name="l00069"></a>00069         qDebug() &lt;&lt; <a class="code" href="classqtpd_1_1_preferences.html#ac3d62ad2f3b4cfd190d4e5f87c154c9d">getQString</a>(<span class="stringliteral">&quot;appVersion&quot;</span>);
+<a name="l00070"></a>00070         qDebug() &lt;&lt; <a class="code" href="classqtpd_1_1_preferences.html#ac3d62ad2f3b4cfd190d4e5f87c154c9d">getQString</a>(<span class="stringliteral">&quot;Font&quot;</span>);
 <a name="l00071"></a>00071     }
 <a name="l00072"></a>00072 
 <a name="l00073"></a>00073     <span class="comment">//------------------------------------------</span>
@@ -199,7 +199,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 7 2017 12:44:19 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 7 2017 13:52:35 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
