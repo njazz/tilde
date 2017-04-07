@@ -82,7 +82,7 @@ public:
             //qDebug() << "*** is abstraction: " << b->_isAbstraction;
 
             // todo different help symbols
-            b->setHelpName(list.at(0) + "-help->pd");
+            b->setHelpName(list.at(0) + "-help.pd");
 
             if (b->_isAbstraction) {
 
@@ -159,11 +159,22 @@ public:
 
         //context menu
         if (ev->button() == Qt::RightButton) {
-            //
-            //QPointF pos = ev->pos();
-            //            QPoint pos = mapToGlobal(ev->pos().toPoint());
-            //            showPopupMenu(pos);
-            ev->accept();
+
+            QPoint pos;
+
+            if (scene()
+                && !scene()->views().isEmpty()
+                && scene()->views().first()
+                && scene()->views().first()->viewport()) {
+
+                QGraphicsView* v = scene()->views().first();
+                pos = v->viewport()->mapToGlobal(ev->pos().toPoint() );
+
+                // TODO
+                showPopupMenu(pos + this->pos().toPoint());
+                ev->accept();
+            }
+
             return;
         }
 

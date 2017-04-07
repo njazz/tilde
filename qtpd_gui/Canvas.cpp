@@ -249,7 +249,7 @@ void Canvas::mousePressEventForCanvas(QMouseEvent* ev)
 
     //context menu
     if (ev->button() == Qt::RightButton) {
-        //QPoint pos = mapToGlobal(ev->pos());
+        QPoint pos = mapToGlobal(ev->pos());
         //showPopupMenu(pos);
         ev->accept();
         return;

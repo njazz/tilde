@@ -72,7 +72,7 @@ public:
         t_object* new_obj = 0;
         int in_c = 1, out_c = 0;
 
-        b->setHelpName("pdinstance-help->pd");
+        b->setHelpName("pdinstance-help.pd");
 
         if (!pdCanvas) {
             qDebug("bad pd canvas instance");
@@ -197,9 +197,20 @@ public:
     {
         //context menu
         if (ev->button() == Qt::RightButton) {
-            //QPoint pos = mapToGlobal(ev->pos());
-            //showPopupMenu(pos);
-            ev->accept();
+
+            if (scene()
+                && !scene()->views().isEmpty()
+                && scene()->views().first()
+                && scene()->views().first()->viewport()) {
+
+                QGraphicsView* v = scene()->views().first();
+                QPoint pos = v->viewport()->mapToGlobal(ev->pos().toPoint() );
+
+                // TODO
+                showPopupMenu(pos + this->pos().toPoint());
+                ev->accept();
+            }
+
             return;
         }
 
