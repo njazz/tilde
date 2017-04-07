@@ -218,6 +218,10 @@ public:
 
         return ret;
     }
+
+signals:
+    void changed();
+
 };
 }
 

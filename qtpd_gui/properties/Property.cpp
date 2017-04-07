@@ -137,7 +137,7 @@ void Property::set(QStringList strlist)
 
     for (it = strlist.begin(); it != strlist.end(); ++it) {
         QString str = *it;
-        qDebug() << "str" << str;
+        //qDebug() << "str" << str;
         if (str != "") {
             //check if it is not float
             if (str.toFloat() != 0)
