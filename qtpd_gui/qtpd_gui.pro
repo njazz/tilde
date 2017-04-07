@@ -36,6 +36,7 @@ macx: CONFIG += WithPython
 
 WithPython {
 #include(python/build/python.prf)
+    DEFINES += WITH_PYTHON
   INCLUDEPATH += python/py2.7headers/
   macx: LIBS += -F/System/Library/Frameworks -framework Python
 
