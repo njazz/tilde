@@ -50,7 +50,10 @@ public:
         _widget = new QGraphicsView();
         _widget->setScene(new QGraphicsScene(0, 0, 40, 40, _widget));
         _widget->scene()->addItem(this);
-
+        _widget->setFixedSize(40,40);
+        _widget->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        _widget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        _widget->setStyleSheet("QGraphicsView { border-style: none; }");
         _value = false;
     };
 
