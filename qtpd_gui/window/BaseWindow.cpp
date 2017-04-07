@@ -64,7 +64,8 @@ void BaseWindow::preferencesWindow()
 {
     qDebug()<<"preferences";
     PropertyList* l1 = &Preferences::inst();
-    PropertiesWindow*p1 = new PropertiesWindow(l1);
+    PropertiesWindow* p1 = new PropertiesWindow(l1);
+    p1->setWindowTitle("qtpd preferences");
     p1->move(30,30);
     p1->show();
 
