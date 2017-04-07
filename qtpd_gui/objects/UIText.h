@@ -62,11 +62,11 @@ public:
 
         if (getEditMode() == em_Unlocked) {
             if (isSelected()) {
-                p->setPen(QPen(QColor(0, 192, 255), 2, Qt::DotLine, Qt::SquareCap, Qt::BevelJoin));
+                p->setPen(QPen(QColor(0, 192, 255), 1, Qt::DotLine, Qt::SquareCap, Qt::BevelJoin));
             } else if (_clicked) {
-                p->setPen(QPen(QColor(0, 192, 255), 4, Qt::DotLine, Qt::RoundCap, Qt::RoundJoin));
+                p->setPen(QPen(QColor(0, 192, 255), 2, Qt::DotLine, Qt::RoundCap, Qt::RoundJoin));
             } else {
-                p->setPen(QPen(QColor(128, 128, 128), 2, Qt::DotLine, Qt::SquareCap, Qt::BevelJoin));
+                p->setPen(QPen(QColor(128, 128, 128), 1, Qt::DotLine, Qt::SquareCap, Qt::BevelJoin));
             }
 
             p->drawRect(0, 0, width(), height());
@@ -74,7 +74,7 @@ public:
 
         QTextOption* op = new QTextOption;
         op->setAlignment(Qt::AlignLeft);
-        p->setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p->setPen(QPen(QColor(0, 0, 0), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
         int fontSize = properties()->get("FontSize")->asQString().toInt();
         p->setFont(QFont(PREF_QSTRING("Font"), fontSize, 0, false));
