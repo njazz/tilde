@@ -196,6 +196,7 @@ public:
 
         ret = input.split(" ").join("\\ ");
         ret = ret.split("\n").join("\\n");
+        ret = ret.split("\r").join("");
         ret = ret.split(",").join("\\,");
         ret = ret.split(".").join("\\.");
         ret = ret.split("@").join("\\@");

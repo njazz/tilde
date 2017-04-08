@@ -1,8 +1,8 @@
 // (c) 2017 Alex Nadzharov
 // License: GPL3
 
-#ifndef cmo_script_H
-#define cmo_script_H
+#ifndef cmo_scriptbox_H
+#define cmo_scriptbox_H
 
 #include <QPlainTextEdit>
 
@@ -13,8 +13,6 @@
 
 //#include "cm_pdlink.h"
 
-
-
 #include "UIScriptEditor.h"
 
 namespace qtpd {
@@ -22,7 +20,7 @@ namespace qtpd {
 ////
 /// \brief gui object: script editor box (ui.script)
 ///
-class UIScript : public UIObject {
+class UIScriptBox : public UIObject {
     Q_OBJECT
 
 private:
@@ -31,13 +29,13 @@ private:
     QStringList _inputList;
 
 public:
-    explicit UIScript();
+    explicit UIScriptBox();
 
     static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
     {
-        qDebug() << "ui.script";
+        qDebug() << "ui.scriptbox";
 
-        UIScript* b = new UIScript();
+        UIScriptBox* b = new UIScriptBox();
         b->setCanvas((void*)parent);
 
         b->_editor->setContext(pyWrapper::inst().withCanvas((QObject*)parent));
@@ -45,10 +43,11 @@ public:
         std::string data1 = b->properties()->extractFromPdFileString(objectData);
         //if (data1 != "")
 
-        b->setObjectData("ui.script");
+        b->setObjectData("ui.scriptbox");
 
         // the zoo lol
-        QString data = b->properties()->get("Script")->asQString().split("\\n ").join("\n");
+        //QString data = b->properties()->get("Script")->asQString().split("\\n ").join("\n");
+        QString data = "";
         b->_editor->document()->setPlainText(data);
 
         // pd object
@@ -64,7 +63,7 @@ public:
         }
 
         if (new_obj) {
-            qDebug("created ui.script %s | ptr %lu\n", message.c_str(), (long)new_obj);
+            qDebug("created toggle %s | ptr %lu\n", message.c_str(), (long)new_obj);
             b->setPdObject(new_obj);
 
             b->_editor->setContext(pyWrapper::inst().withCanvasPdObjectAndInput((UIObject*)parent, new_obj, &b->_inputList));
@@ -126,7 +125,7 @@ public:
         ev->accept();
     }
 
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent*ev)
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev)
     {
         ev->accept();
     }
@@ -160,7 +159,7 @@ public:
         qDebug("script << pd message");
         qDebug() << (long)uiobj << msg.size();
 
-        UIScript* x = (UIScript*)uiobj;
+        UIScriptBox* x = (UIScriptBox*)uiobj;
         if (x) {
             //todo atomlist to qstringlist; atom as qstring
             QStringList list;
@@ -181,12 +180,8 @@ public:
     void setPdObject(void* obj)
     {
         UIObject::setPdObject(obj);
-        connect(this, &UIScript::callRun, this, &UIScript::btnRun);
-        cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIScript::updateUI);
-
-        //cmp_connectUI("ui.script", (void*)this, &UIScript::updateUI);
-
-        qDebug() << "connect ui: uiobj " << (long)this << " pdobj " << (long)pdObject();
+        connect(this, &UIScriptBox::callRun, this, &UIScriptBox::btnRun);
+        cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIScriptBox::updateUI);
     }
 signals:
     void callRun();

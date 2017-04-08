@@ -20,6 +20,8 @@ void ObjectLoader::loadObjects()
 
     #ifdef WITH_PYTHON
     addUIobject("ui.script", &UIScript::createObject);
+    addUIobject("ui.scriptbox", &UIScriptBox::createObject);
+    addUIobject("py", &UIScriptBox::createObject);
     #endif
 
     addUIobject("ui.array", &UIArray::createObject);

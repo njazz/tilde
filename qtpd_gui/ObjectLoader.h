@@ -26,6 +26,7 @@
 
 #ifdef WITH_PYTHON
 #include "UIScript.h"
+#include "UIScriptBox.h"
 #endif
 
 #include "oopd/UIClass.h"
