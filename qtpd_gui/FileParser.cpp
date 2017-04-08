@@ -30,7 +30,7 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
         list.insert(3, "ui.text");
         list.insert(4, "@Text");
         //UIObject* obj =
-                FileParser::sendStringToCanvas(cmcanvas, list);
+        FileParser::sendStringToCanvas(cmcanvas, list);
 
         //        list.removeAt(0);
         //        list.removeAt(0);
@@ -45,7 +45,7 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
         list[0] = "obj";
         list.insert(3, "ui.float");
         //UIObject* obj =
-                FileParser::sendStringToCanvas(cmcanvas, list);
+        FileParser::sendStringToCanvas(cmcanvas, list);
 
         //temporary - to have readable list at some point
         //box_width lower upper 1 label send receive
@@ -62,7 +62,32 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
         //todo set / create
 
         return true;
+    } else if (list.at(0) == "symbolatom") {
+
+        QStringList list2 = QString("obj 0 0 ui.msg <symbol>").split(" ");
+
+        list2[1] = list[1];
+        list2[2] = list[2];
+
+        FileParser::sendStringToCanvas(cmcanvas, list2);
+
+        //temporary - to have readable list at some point
+        //box_width lower upper 1 label send receive
+
+        //check bounds
+//        int lBoxWidth = ((QString)list.at(4)).toInt();
+//        float lMinimum = ((QString)list.at(5)).toFloat();
+//        float lMaximum = ((QString)list.at(6)).toFloat();
+//        int lInit = ((QString)list.at(7)).toInt();
+//        QString lLabel = ((QString)list.at(8));
+//        QString lSend = ((QString)list.at(9));
+//        QString lReceive = ((QString)list.at(10));
+
+        //todo set / create
+
+        return true;
     }
+
     //
     // iemgui objects
     //
@@ -107,7 +132,7 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
         list2.push_back(fontSize);
 
         //UIObject* obj =
-                FileParser::sendStringToCanvas(cmcanvas, list2);
+        FileParser::sendStringToCanvas(cmcanvas, list2);
 
         return true;
     }
@@ -319,12 +344,12 @@ void FileParser::parseQString(QString line)
 
         qDebug() << "dim" << pos << size;
 
-//        newWnd->setMinimumSize(size);
+        //        newWnd->setMinimumSize(size);
         newWnd->canvas->setWindowSize(size);
-//        newWnd->setBaseSize(size);
+        //        newWnd->setBaseSize(size);
         newWnd->move(pos);
 
-//        newWnd->canvas->move(0,0);
+        //        newWnd->canvas->move(0,0);
 
         newWnd->show(); //move to constructor? check for subcanvases the vis flag
     }
@@ -378,7 +403,6 @@ void FileParser::open(QString fname)
         }
 
         f.close();
-
     }
 }
 }
