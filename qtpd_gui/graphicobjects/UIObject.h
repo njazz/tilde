@@ -73,6 +73,9 @@ protected:
     virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent*);
 
 public:
+    //TODO
+    bool disableObjectMaker;
+
     // just a template, copy from here
     virtual void paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*){};
 

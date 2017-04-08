@@ -139,6 +139,8 @@ public:
             _editor->setText(QString(objectData().c_str()));
             _editor->show();
             _editor->setFocus();
+            ev->accept();
+            return;
         }
 
         emit selectBox(this, ev);

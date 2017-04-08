@@ -104,6 +104,8 @@ public:
             _editor->document()->setPlainText(QString(objectData().c_str()));
             _editor->show();
             _editor->setFocus();
+            ev->accept();
+            return;
         }
 
         emit selectBox(this, ev);
