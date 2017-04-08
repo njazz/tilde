@@ -227,6 +227,7 @@ var searchData=
   ['commandpromptposition',['commandPromptPosition',['../class_python_qt_scripting_console.html#a91bb4403ee32568d4bd0e709be94859c',1,'PythonQtScriptingConsole']]],
   ['compilesource',['compileSource',['../class_python_qt_import.html#aa083763e7e4f532e558b4d884cb940d9',1,'PythonQtImport']]],
   ['connect',['connect',['../class_python_qt_std_decorators.html#a2e66022231a4c57da6bb77525720f573',1,'PythonQtStdDecorators::connect(QObject *sender, const QString &amp;signal, PyObject *callable)'],['../class_python_qt_std_decorators.html#a3b70020c39ecdc6e1edc33e9590ef668',1,'PythonQtStdDecorators::connect(QObject *sender, const QString &amp;signal, QObject *receiver, const QString &amp;slot, Qt::ConnectionType type=Qt::AutoConnection)'],['../class_python_qt_std_decorators.html#a397fc520cb9cc86972ce15ce5dda63e9',1,'PythonQtStdDecorators::connect(QObject *receiver, QObject *sender, const QString &amp;signal, const QString &amp;slot, Qt::ConnectionType type=Qt::AutoConnection)']]],
+  ['connectsobject',['connectsObject',['../classqtpd_1_1_patchcord.html#a4d7ccd0a656e7f066e678eaf204b3d82',1,'qtpd::Patchcord']]],
   ['connectui',['connectUI',['../classpy_pd_lib.html#a417564501e352fd34b876e163ed38b00',1,'pyPdLib']]],
   ['consolemessage',['consoleMessage',['../class_python_qt_scripting_console.html#a7ae5e98ee7a60d7fc600beb647a35c83',1,'PythonQtScriptingConsole']]],
   ['constructor',['constructor',['../class_python_qt_wrapper___q_meta_object.html#a34770b14e7f6621bf970d634304ff440',1,'PythonQtWrapper_QMetaObject']]],
