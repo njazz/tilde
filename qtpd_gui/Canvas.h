@@ -68,7 +68,7 @@ private:
 
 public:
     // todo fix
-    QPoint newObjectPos(){return _newObjectPos;}
+    QPoint newObjectPos() { return _newObjectPos; }
 
     canvasDataPlus* canvasData() { return &_canvasData; }
 
@@ -86,17 +86,22 @@ public:
     // zoom
     void setZoom(float zoom)
     {
-        if ( (_zoom<=.5) && (zoom<1) ) {zoom = .5; return;}
-        if ( (_zoom>2) && (zoom>1)) {zoom = 2.; return;}
+        if ((_zoom <= .5) && (zoom < 1)) {
+            zoom = .5;
+            return;
+        }
+        if ((_zoom > 2) && (zoom > 1)) {
+            zoom = 2.;
+            return;
+        }
 
         _zoom *= zoom;
 
-        scale(zoom,zoom);
+        scale(zoom, zoom);
         viewport()->update();
-
     }
 
-    float getZoom(){return _zoom;}
+    float getZoom() { return _zoom; }
 
     //todo
     void addInlet();
@@ -128,25 +133,6 @@ public:
     /// \param ev
     ///
     void mouseReleaseEvent(QMouseEvent* ev);
-
-    /////////
-
-    ////
-    /// \brief mouse move handling
-    /// \param ev
-    ///
-    void mouseMoveEventForCanvas(QMouseEvent* ev);
-
-    ////
-    /// \brief mouse down handling for Canvas
-    /// \param ev
-    ///
-    void mousePressEventForCanvas(QMouseEvent* ev);
-
-    ////
-    /// \brief mouse up handling
-    ///
-    void mouseReleaseEventForCanvas(QMouseEvent*);
 
     // -------------------------------------------------------
 
@@ -440,7 +426,7 @@ public slots:
 
     // -- NEW
 
-    void resizeEvent(QResizeEvent* )
+    void resizeEvent(QResizeEvent*)
     {
         _grid->setSize(size());
         _grid->move(0, 0);

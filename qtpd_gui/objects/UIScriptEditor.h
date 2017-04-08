@@ -241,7 +241,7 @@ private slots:
         //            event->accept();
 
         //        } else
-        {
+        //{
 
             QPlainTextEdit::keyPressEvent(event);
             QString text = event->text();
@@ -252,8 +252,13 @@ private slots:
                 _completer->popup()->hide();
             }
             //            eventHandled = true;
-        }
+        //}
         //
+    }
+
+    void mousePressEvent(QMouseEvent *e)
+    {
+        e->accept();
     }
 };
 }

@@ -25,6 +25,11 @@ public:
         emit objectMakerDoneSignal();
     }
 
+    void cancel()
+    {
+        hide();
+    }
+
 signals:
     void objectMakerDoneSignal();
 

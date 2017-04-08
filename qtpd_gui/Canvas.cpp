@@ -106,11 +106,12 @@ void Canvas::selectBox(UIItem* box)
 void Canvas::s_SelectBox(UIItem* box, QGraphicsSceneMouseEvent* ev)
 {
 
+    qDebug() << "select box";
+
     if (!(ev->modifiers() & Qt::ShiftModifier))
         deselectBoxes();
 
     if (Canvas::getEditMode() == em_Unlocked) {
-
         selectBox(box);
     }
 
@@ -161,37 +162,18 @@ void Canvas::mouseMoveEvent(QMouseEvent* ev)
 {
     QGraphicsView::mouseMoveEvent(ev);
 
-    mouseMoveEventForCanvas(ev);
-}
-
-void Canvas::mousePressEvent(QMouseEvent* ev)
-{
-    QGraphicsView::mousePressEvent(ev);
-
-    qDebug("click canvas");
-
-    if (!ev->isAccepted())
-        mousePressEventForCanvas(ev);
-}
-
-void Canvas::mouseReleaseEvent(QMouseEvent* ev)
-{
-    QGraphicsView::mouseReleaseEvent(ev);
-
-    mouseReleaseEventForCanvas(ev);
-}
-
-/////////
-
-void Canvas::mouseMoveEventForCanvas(QMouseEvent* ev)
-{
-
     if (!ev)
         return;
 
+    //    if (ev->isAccepted())
+    //        return;
+
+    //qDebug() << "canvas mouse move";
+
     QPoint pos = ev->pos();
 
-    _newObjectPos = pos;
+    if (!_objectMaker->isVisible())
+        _newObjectPos = pos;
 
     _selectionRect->setEnd(pos - _selectionRect->start());
     _newLine->setEnd(pos);
@@ -245,12 +227,21 @@ void Canvas::mouseMoveEventForCanvas(QMouseEvent* ev)
     }
 }
 
-void Canvas::mousePressEventForCanvas(QMouseEvent* ev)
+void Canvas::mousePressEvent(QMouseEvent* ev)
 {
+    QGraphicsView::mousePressEvent(ev);
+
+    if (!ev)
+        return;
+
+    if (ev->isAccepted())
+        return;
+
+    qDebug("click canvas");
 
     //context menu
     if (ev->button() == Qt::RightButton) {
-        QPoint pos = mapToGlobal(ev->pos());
+        //QPoint pos = mapToGlobal(ev->pos());
         //showPopupMenu(pos);
         ev->accept();
         return;
@@ -262,7 +253,7 @@ void Canvas::mousePressEventForCanvas(QMouseEvent* ev)
     // TODO
     //    hoverPatchcordsOff();
 
-    setFocus();
+    //setFocus();
 
     if (Canvas::getEditMode() == em_Unlocked) {
         //sel frame
@@ -270,10 +261,21 @@ void Canvas::mousePressEventForCanvas(QMouseEvent* ev)
         _selectionRect->setStart(ev->pos());
         _selectionRect->setEnd(QPoint(0, 0));
     }
+
+    if _objectMaker->isVisible()
+    {
+        _objectMaker->cancel();
+    }
 }
 
-void Canvas::mouseReleaseEventForCanvas(QMouseEvent*)
+void Canvas::mouseReleaseEvent(QMouseEvent* ev)
 {
+
+    QGraphicsView::mouseReleaseEvent(ev);
+
+    //    if (ev->isAccepted())
+    //        return;
+
     setDragObject(0);
 
     _selectionRect->setActive(false);
@@ -716,7 +718,6 @@ void Canvas::selectAll()
 
 void Canvas::resizeToObjects()
 {
-
 }
 
 QStringList Canvas::canvasAsPdStrings()

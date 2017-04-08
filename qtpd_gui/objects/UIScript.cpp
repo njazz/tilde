@@ -50,6 +50,8 @@ UIScript::UIScript()
     proxy->setWidget(_editor);
     proxy->setPos(2, 20);
 
+    _editor->setCursorWidth(2);
+
     //temporary. needs fixing
     hideSizeBox();
 
@@ -115,5 +117,7 @@ void UIScript::editorChanged()
 
         properties()->set("Script", list);
     }
+
+    //update();
 }
 }

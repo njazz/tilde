@@ -123,10 +123,12 @@ public:
 
         emit selectBox(this, ev);
         dragOffset = ev->pos().toPoint();
+        ev->accept();
     }
 
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent*)
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent*ev)
     {
+        ev->accept();
     }
 
     void mouseMoveEvent(QGraphicsSceneMouseEvent* event)
@@ -134,7 +136,7 @@ public:
         if (event->buttons() & Qt::LeftButton) {
             emit moveBox(this, event);
         }
-        event->ignore();
+        event->accept();
 
         //todo move!
         if (getEditMode() != em_Unlocked) {

@@ -27,9 +27,9 @@ PatchWindow::PatchWindow()
     //canvas->setParent(centralWidget());
     //scroll->setParent(this);
 
-//    QGridLayout* layout2 = new QGridLayout();
-//    layout2->addWidget(scroll);
-//    layout2->setMargin(0);
+    //    QGridLayout* layout2 = new QGridLayout();
+    //    layout2->addWidget(scroll);
+    //    layout2->setMargin(0);
     setLayout(layout1);
 
     //TODO weird
@@ -42,8 +42,6 @@ PatchWindow::PatchWindow()
     canvas->objectMaker()->close();
 
     editModeAct->setChecked(true);
-
-
 
     //connect subpatch creation routine
     connect(canvas, &Canvas::createSubpatchWindow, this, &PatchWindow::s_createSubpatchWindow);
@@ -155,7 +153,7 @@ void PatchWindow::setFileName(QString fname)
 }
 
 ////
-/// \brief creates object
+/// \brief creates object TODO move to canvas
 ///
 void PatchWindow::objectMakerDone()
 {
@@ -163,13 +161,14 @@ void PatchWindow::objectMakerDone()
 
     if (obj_name != "") {
 
-        UIObject* new_obj = canvas->createObject(obj_name, canvas->newObjectPos()); //"ui.obj",
+        //"ui.obj",
 
         if (canvas->replaceObject()) {
+
+            UIObject* new_obj = canvas->createObject(obj_name, canvas->replaceObject()->pos().toPoint());
+
             UIObject* obj = canvas->replaceObject();
             patchcordVec cords = canvas->patchcordsForObject(obj);
-
-
 
             patchcordVec::iterator it;
             for (it = cords.begin(); it != cords.end(); ++it) {
@@ -177,7 +176,7 @@ void PatchWindow::objectMakerDone()
                 UIObject* obj1 = pc->obj1();
                 UIObject* obj2 = pc->obj2();
 
-                qDebug()<<"o1 o2 n"<<obj1<<obj2<<new_obj;
+                qDebug() << "o1 o2 n" << obj1 << obj2 << new_obj;
                 //replace
                 if (obj1 == obj)
                     obj1 = new_obj;
@@ -185,12 +184,16 @@ void PatchWindow::objectMakerDone()
                     obj2 = new_obj;
 
                 if (obj1 && obj2)
-                canvas->patchcord(obj1, pc->outletIndex(), obj2, pc->inletIndex());
+                    canvas->patchcord(obj1, pc->outletIndex(), obj2, pc->inletIndex());
                 else
                     qDebug("replace object - patchcord error");
             }
 
             canvas->deleteBox(obj);
+        }
+        else
+        {
+            UIObject* new_obj = canvas->createObject(obj_name, canvas->newObjectPos());
         }
 
         canvas->setDragObject(0);
@@ -226,22 +229,19 @@ void PatchWindow::paste()
 
 void PatchWindow::resizeEvent(QResizeEvent* event)
 {
-//        canvas->move(0,0);
+    //        canvas->move(0,0);
 
+    //        // todo move to canvas
+    QSize newSize = canvas->minimumCanvasSize();
+    if (newSize.width() < event->size().width())
+        newSize.setWidth(event->size().width());
+    if (newSize.height() < event->size().height())
+        newSize.setHeight(event->size().height());
+    //canvas->setMinimumSize(newSize);
+    canvas->viewport()->setMinimumSize(newSize);
+    //canvas->setWindowSize(newSize);
 
-
-//        // todo move to canvas
-        QSize newSize = canvas->minimumCanvasSize();
-        if (newSize.width()< event->size().width())
-            newSize.setWidth(event->size().width());
-        if (newSize.height()< event->size().height())
-            newSize.setHeight(event->size().height());
-        //canvas->setMinimumSize(newSize);
-        canvas->viewport()->setMinimumSize(newSize);
-        //canvas->setWindowSize(newSize);
-
-
-//        //FIX
-//        canvas->move(0,0);
+    //        //FIX
+    //        canvas->move(0,0);
 }
 }

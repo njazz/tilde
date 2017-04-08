@@ -67,6 +67,7 @@ int main(int argc, char* argv[])
     cmp_post("qtpd started");
     cmp_post("---");
 
+    a.setCursorFlashTime(0);
 
 
     //temporary folders properties
