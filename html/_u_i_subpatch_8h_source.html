@@ -97,66 +97,66 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00013"></a>00013 <span class="comment">//lazy way</span>
 <a name="l00014"></a>00014 <span class="comment">//todo proper pattern</span>
 <a name="l00015"></a>00015 <span class="preprocessor">#include &quot;<a class="code" href="_open_file_proxy_8h.html">OpenFileProxy.h</a>&quot;</span>
-<a name="l00016"></a>00016 <span class="preprocessor">#include &lt;QGraphicsSceneMouseEvent&gt;</span>
-<a name="l00017"></a>00017 <span class="preprocessor">#include &lt;QGraphicsView&gt;</span>
-<a name="l00018"></a>00018 <span class="preprocessor">#include &lt;QMainWindow&gt;</span>
-<a name="l00019"></a>00019 <span class="preprocessor">#include &lt;QGraphicsProxyWidget&gt;</span>
-<a name="l00020"></a>00020 
-<a name="l00021"></a>00021 <span class="preprocessor">#include &quot;<a class="code" href="_canvas_8h.html">Canvas.h</a>&quot;</span>
-<a name="l00022"></a>00022 
-<a name="l00023"></a>00023 <span class="keyword">namespace </span>qtpd {
-<a name="l00024"></a>00024 
-<a name="l00028"></a><a class="code" href="classqtpd_1_1_u_i_subpatch.html">00028</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_u_i_subpatch.html" title="gui object: standard object box">UISubpatch</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> {
-<a name="l00029"></a>00029 
-<a name="l00030"></a>00030     Q_OBJECT
-<a name="l00031"></a>00031 
-<a name="l00032"></a>00032 <span class="keyword">private</span>:
-<a name="l00033"></a>00033     <span class="comment">// for abstracions</span>
-<a name="l00034"></a>00034     <span class="keywordtype">bool</span> _isAbstraction;
-<a name="l00035"></a>00035     QString _abstractionPath;
-<a name="l00036"></a>00036 
-<a name="l00037"></a>00037     <span class="comment">//QMainWindow *_Subcanvas;</span>
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039 <span class="keyword">public</span>:
-<a name="l00040"></a>00040     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_u_i_subpatch.html#adf6e2b1064c7380bd82f1065ffee5a02">UISubpatch</a>();
-<a name="l00041"></a>00041 
-<a name="l00042"></a><a class="code" href="classqtpd_1_1_u_i_subpatch.html#a846fd352f05a360bfbb4480ef432bb0b">00042</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_subpatch.html#a846fd352f05a360bfbb4480ef432bb0b">createObject</a>(QString <a class="code" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447" title="gets object text data /usually overriden by ui objects/">objectData</a>, <a class="code" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a>*, QGraphicsView* parent = 0)
-<a name="l00043"></a>00043     {
-<a name="l00044"></a>00044         <span class="comment">//TODO fix all constructors</span>
-<a name="l00045"></a>00045 
-<a name="l00046"></a>00046         qDebug(<span class="stringliteral">&quot;UISubpatch&quot;</span>);
-<a name="l00047"></a>00047 
-<a name="l00048"></a>00048         <a class="code" href="classqtpd_1_1_u_i_subpatch.html" title="gui object: standard object box">UISubpatch</a>* b = <span class="keyword">new</span> <a class="code" href="classqtpd_1_1_u_i_subpatch.html#adf6e2b1064c7380bd82f1065ffee5a02">UISubpatch</a>(); <span class="comment">//(UIObjectItem*)parent);</span>
-<a name="l00049"></a>00049 
-<a name="l00050"></a>00050         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a2e6fec1e7e23c49c16330281d84f099f">setCanvas</a>((<span class="keywordtype">void</span>*)parent);
-<a name="l00051"></a>00051 
-<a name="l00052"></a>00052         QStringList list = QString(objectData).split(<span class="stringliteral">&quot; &quot;</span>);
-<a name="l00053"></a>00053         <span class="comment">// list.removeAt(0);</span>
-<a name="l00054"></a>00054         QString list_s = list.join(<span class="stringliteral">&quot; &quot;</span>);
-<a name="l00055"></a>00055 
-<a name="l00056"></a>00056         <span class="comment">// fix that</span>
-<a name="l00057"></a>00057         <span class="keyword">const</span> <span class="keywordtype">char</span>* obj_name = list_s.toStdString().c_str();
-<a name="l00058"></a>00058         <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> data1 = b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a69ed99ca86c7019f489f56b6dc96f8a4">properties</a>()-&gt;<a class="code" href="classqtpd_1_1_property_list.html#afe045d9c65b8b51e12fb81c1eb5585b5" title="extract properties from string in pd file">extractFromPdFileString</a>(obj_name); <span class="comment">//test</span>
-<a name="l00059"></a>00059 
-<a name="l00060"></a>00060         <span class="comment">// todo cleanup</span>
-<a name="l00061"></a>00061         <span class="comment">//const char* obj_name2 = data1.c_str(); //(QString(data1.c_str()).split(&quot; &quot;).at(0)).toStdString().c_str();</span>
-<a name="l00062"></a>00062 
-<a name="l00063"></a>00063         <span class="comment">// fix size changes</span>
-<a name="l00064"></a>00064         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a65a6c071b7b6f99393652d273e6a0fa7" title="sets object text data">setObjectData</a>(data1);
-<a name="l00065"></a>00065         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a1c7d66be6089715aaf5c03adb64a915b" title="call this after setting object data">autoResize</a>();
-<a name="l00066"></a>00066 
-<a name="l00067"></a>00067         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ae10cb3996474a7c1ba94d5e48c740106" title="custom resize event">resizeEvent</a>();
-<a name="l00068"></a>00068 
+<a name="l00016"></a>00016 <span class="preprocessor">#include &lt;QGraphicsProxyWidget&gt;</span>
+<a name="l00017"></a>00017 <span class="preprocessor">#include &lt;QGraphicsSceneMouseEvent&gt;</span>
+<a name="l00018"></a>00018 <span class="preprocessor">#include &lt;QGraphicsView&gt;</span>
+<a name="l00019"></a>00019 <span class="preprocessor">#include &lt;QMainWindow&gt;</span>
+<a name="l00020"></a>00020 <span class="preprocessor">#include &lt;QStyleOptionGraphicsItem&gt;</span>
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022 <span class="preprocessor">#include &quot;<a class="code" href="_canvas_8h.html">Canvas.h</a>&quot;</span>
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024 <span class="keyword">namespace </span>qtpd {
+<a name="l00025"></a>00025 
+<a name="l00029"></a><a class="code" href="classqtpd_1_1_u_i_subpatch.html">00029</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_u_i_subpatch.html" title="gui object: standard object box">UISubpatch</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> {
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031     Q_OBJECT
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033 <span class="keyword">private</span>:
+<a name="l00034"></a>00034     <span class="comment">// for abstracions</span>
+<a name="l00035"></a>00035     <span class="keywordtype">bool</span> _isAbstraction;
+<a name="l00036"></a>00036     QString _abstractionPath;
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038     <span class="comment">//QMainWindow *_Subcanvas;</span>
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040 <span class="keyword">public</span>:
+<a name="l00041"></a>00041     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_u_i_subpatch.html#adf6e2b1064c7380bd82f1065ffee5a02">UISubpatch</a>();
+<a name="l00042"></a>00042 
+<a name="l00043"></a><a class="code" href="classqtpd_1_1_u_i_subpatch.html#a846fd352f05a360bfbb4480ef432bb0b">00043</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_subpatch.html#a846fd352f05a360bfbb4480ef432bb0b">createObject</a>(QString <a class="code" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447" title="gets object text data /usually overriden by ui objects/">objectData</a>, <a class="code" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a>*, QGraphicsView* parent = 0)
+<a name="l00044"></a>00044     {
+<a name="l00045"></a>00045         <span class="comment">//TODO fix all constructors</span>
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047         qDebug(<span class="stringliteral">&quot;UISubpatch&quot;</span>);
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049         <a class="code" href="classqtpd_1_1_u_i_subpatch.html" title="gui object: standard object box">UISubpatch</a>* b = <span class="keyword">new</span> <a class="code" href="classqtpd_1_1_u_i_subpatch.html#adf6e2b1064c7380bd82f1065ffee5a02">UISubpatch</a>(); <span class="comment">//(UIObjectItem*)parent);</span>
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a2e6fec1e7e23c49c16330281d84f099f">setCanvas</a>((<span class="keywordtype">void</span>*)parent);
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053         QStringList list = QString(objectData).split(<span class="stringliteral">&quot; &quot;</span>);
+<a name="l00054"></a>00054         <span class="comment">// list.removeAt(0);</span>
+<a name="l00055"></a>00055         QString list_s = list.join(<span class="stringliteral">&quot; &quot;</span>);
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057         <span class="comment">// fix that</span>
+<a name="l00058"></a>00058         <span class="keyword">const</span> <span class="keywordtype">char</span>* obj_name = list_s.toStdString().c_str();
+<a name="l00059"></a>00059         <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> data1 = b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a69ed99ca86c7019f489f56b6dc96f8a4">properties</a>()-&gt;<a class="code" href="classqtpd_1_1_property_list.html#afe045d9c65b8b51e12fb81c1eb5585b5" title="extract properties from string in pd file">extractFromPdFileString</a>(obj_name); <span class="comment">//test</span>
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061         <span class="comment">// todo cleanup</span>
+<a name="l00062"></a>00062         <span class="comment">//const char* obj_name2 = data1.c_str(); //(QString(data1.c_str()).split(&quot; &quot;).at(0)).toStdString().c_str();</span>
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064         <span class="comment">// fix size changes</span>
+<a name="l00065"></a>00065         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a65a6c071b7b6f99393652d273e6a0fa7" title="sets object text data">setObjectData</a>(data1);
+<a name="l00066"></a>00066         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a1c7d66be6089715aaf5c03adb64a915b" title="call this after setting object data">autoResize</a>();
+<a name="l00067"></a>00067 
+<a name="l00068"></a>00068         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ae10cb3996474a7c1ba94d5e48c740106" title="custom resize event">resizeEvent</a>();
 <a name="l00069"></a>00069 
-<a name="l00070"></a>00070 
-<a name="l00071"></a>00071 
-<a name="l00072"></a>00072         <span class="keywordflow">return</span> (<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*)b;
-<a name="l00073"></a>00073     };
+<a name="l00070"></a>00070         <span class="keywordflow">return</span> (<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*)b;
+<a name="l00071"></a>00071     };
+<a name="l00072"></a>00072 
+<a name="l00073"></a>00073     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_subpatch.html#a55eee1e1bcedde736c14a2a53eec898a">setSubpatchWindow</a>(QMainWindow* cwindow);
 <a name="l00074"></a>00074 
-<a name="l00075"></a>00075     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_subpatch.html#a55eee1e1bcedde736c14a2a53eec898a">setSubpatchWindow</a>(QMainWindow *cwindow);
-<a name="l00076"></a>00076 
-<a name="l00080"></a><a class="code" href="classqtpd_1_1_u_i_subpatch.html#a6c480db1481baab00f4f074a3c540c5e">00080</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_subpatch.html#a6c480db1481baab00f4f074a3c540c5e" title="paint event">paint</a>(QPainter* <a class="code" href="floatobject_8h.html#af18a92ce774f4c499544fbcc894db7e8">p</a>, <span class="keyword">const</span> QStyleOptionGraphicsItem*, QWidget*)
-<a name="l00081"></a>00081     {
+<a name="l00078"></a><a class="code" href="classqtpd_1_1_u_i_subpatch.html#af6486cf315deb6af7775bd4cca4f0c30">00078</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_subpatch.html#af6486cf315deb6af7775bd4cca4f0c30" title="paint event">paint</a>(QPainter* <a class="code" href="floatobject_8h.html#af18a92ce774f4c499544fbcc894db7e8">p</a>, <span class="keyword">const</span> QStyleOptionGraphicsItem* option, QWidget*)
+<a name="l00079"></a>00079     {
+<a name="l00080"></a>00080         p-&gt;setClipRect(option-&gt;exposedRect);
+<a name="l00081"></a>00081 
 <a name="l00082"></a>00082         QBrush brush(<a class="code" href="classqtpd_1_1_u_i_item.html#a15c57968966de733a09cf02973b63696">bgColor</a>());
 <a name="l00083"></a>00083         p-&gt;setBrush(brush);
 <a name="l00084"></a>00084         p-&gt;drawRect(<a class="code" href="classqtpd_1_1_u_i_item.html#a0a8d5299d5a0a2ebcef2135913bc97da">boundingRect</a>());
@@ -265,7 +265,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 8 2017 12:23:05 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 8 2017 12:25:50 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -184,7 +184,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00103"></a>00103         box-&gt;<a class="code" href="classqtpd_1_1_u_i_item.html#a73739a4c2f2883ac10ab7087deaf57af" title="select object">select</a>();
 <a name="l00104"></a>00104     }
 <a name="l00105"></a>00105 
-<a name="l00106"></a><a class="code" href="classqtpd_1_1canvas_data.html#a8cb0338d65608b5a26b9472f73e5bb82">00106</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1canvas_data.html#a8cb0338d65608b5a26b9472f73e5bb82">selectPatchcord</a>(<a class="code" href="classqtpd_1_1_patchcord.html" title="gui patchcord class">Patchcord</a>* )<span class="comment">//pcord</span>
+<a name="l00106"></a><a class="code" href="classqtpd_1_1canvas_data.html#a8cb0338d65608b5a26b9472f73e5bb82">00106</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1canvas_data.html#a8cb0338d65608b5a26b9472f73e5bb82">selectPatchcord</a>(<a class="code" href="classqtpd_1_1_patchcord.html" title="gui patchcord class">Patchcord</a>*) <span class="comment">//pcord</span>
 <a name="l00107"></a>00107     {
 <a name="l00108"></a>00108     }
 <a name="l00109"></a>00109 
@@ -307,31 +307,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00226"></a>00226         }
 <a name="l00227"></a>00227 
 <a name="l00228"></a>00228         _selectedBoxes.clear();
-<a name="l00229"></a>00229 
-<a name="l00230"></a>00230 
-<a name="l00231"></a>00231     }
-<a name="l00232"></a><a class="code" href="classqtpd_1_1canvas_data.html#a1a523e4168224ee5b47aba56cea754c1">00232</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1canvas_data.html#a1a523e4168224ee5b47aba56cea754c1">deselectPatchcords</a>()
-<a name="l00233"></a>00233     {
-<a name="l00234"></a>00234         patchcordVec::iterator it2;
+<a name="l00229"></a>00229     }
+<a name="l00230"></a><a class="code" href="classqtpd_1_1canvas_data.html#a1a523e4168224ee5b47aba56cea754c1">00230</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1canvas_data.html#a1a523e4168224ee5b47aba56cea754c1">deselectPatchcords</a>()
+<a name="l00231"></a>00231     {
+<a name="l00232"></a>00232         patchcordVec::iterator it2;
+<a name="l00233"></a>00233 
+<a name="l00234"></a>00234         <span class="keywordflow">for</span> (it2 = _patchcords.begin(); it2 != _patchcords.end(); ++it2) {
 <a name="l00235"></a>00235 
-<a name="l00236"></a>00236         <span class="keywordflow">for</span> (it2 = _patchcords.begin(); it2 != _patchcords.end(); ++it2) {
-<a name="l00237"></a>00237 
-<a name="l00238"></a>00238             ((<a class="code" href="classqtpd_1_1_patchcord.html" title="gui patchcord class">Patchcord</a>*)*it2)-&gt;deselect();
-<a name="l00239"></a>00239             ((<a class="code" href="classqtpd_1_1_patchcord.html" title="gui patchcord class">Patchcord</a>*)*it2)-&gt;setHover(<span class="keyword">false</span>);
-<a name="l00240"></a>00240         }
-<a name="l00241"></a>00241 
-<a name="l00242"></a>00242     }
-<a name="l00243"></a>00243 };
-<a name="l00244"></a>00244 
-<a name="l00248"></a><a class="code" href="classqtpd_1_1canvas_data_plus.html">00248</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1canvas_data_plus.html" title="shared canvas data -&gt; additional info (window title etc) TODO rename">canvasDataPlus</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1canvas_data.html" title="shared canvas data - boxes, patchcords TODO rename">canvasData</a> {
-<a name="l00249"></a>00249 
-<a name="l00250"></a>00250 <span class="keyword">public</span>:
-<a name="l00251"></a><a class="code" href="classqtpd_1_1canvas_data_plus.html#a21630a6d657648629818d2576200c044">00251</a>     <a class="code" href="namespaceqtpd.html#a1c4f7beebd681561848cefcd8ea74412">portItemVec</a>* <a class="code" href="classqtpd_1_1canvas_data_plus.html#a21630a6d657648629818d2576200c044">inlets</a>;
-<a name="l00252"></a><a class="code" href="classqtpd_1_1canvas_data_plus.html#ac52550ee21dba78d4df012b37b349774">00252</a>     <a class="code" href="namespaceqtpd.html#a1c4f7beebd681561848cefcd8ea74412">portItemVec</a>* <a class="code" href="classqtpd_1_1canvas_data_plus.html#ac52550ee21dba78d4df012b37b349774">outlets</a>;
-<a name="l00253"></a>00253 };
-<a name="l00254"></a>00254 }
-<a name="l00255"></a>00255 
-<a name="l00256"></a>00256 <span class="preprocessor">#endif // CM_CANVAS_TYPES_H</span>
+<a name="l00236"></a>00236             ((<a class="code" href="classqtpd_1_1_patchcord.html" title="gui patchcord class">Patchcord</a>*)*it2)-&gt;deselect();
+<a name="l00237"></a>00237             ((<a class="code" href="classqtpd_1_1_patchcord.html" title="gui patchcord class">Patchcord</a>*)*it2)-&gt;setHover(<span class="keyword">false</span>);
+<a name="l00238"></a>00238         }
+<a name="l00239"></a>00239     }
+<a name="l00240"></a>00240 
+<a name="l00241"></a><a class="code" href="classqtpd_1_1canvas_data.html#a4ffd3bee8f0732225d007ff863da9897">00241</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1canvas_data.html#a4ffd3bee8f0732225d007ff863da9897">updatePatchcordsFor</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="parent class for all objects in the canvas">UIItem</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)
+<a name="l00242"></a>00242     {
+<a name="l00243"></a>00243         std::vector&lt;Patchcord*&gt;::iterator it;
+<a name="l00244"></a>00244         <span class="keywordflow">for</span> (it = _patchcords.begin(); it != _patchcords.end();) {
+<a name="l00245"></a>00245             <span class="keywordflow">if</span> (*it) <span class="comment">// ??</span>
+<a name="l00246"></a>00246             {
+<a name="l00247"></a>00247                 <span class="keywordflow">if</span> ((*it)-&gt;isConnectedTo(obj)) {
+<a name="l00248"></a>00248                     ((<a class="code" href="classqtpd_1_1_patchcord.html" title="gui patchcord class">Patchcord</a>*)(*it))-&gt;deselect();
+<a name="l00249"></a>00249                 }
+<a name="l00250"></a>00250                 ++it;
+<a name="l00251"></a>00251             }
+<a name="l00252"></a>00252         }
+<a name="l00253"></a>00253 
+<a name="l00254"></a>00254         <span class="comment">//viewport()-&gt;update();</span>
+<a name="l00255"></a>00255     }
+<a name="l00256"></a>00256 };
+<a name="l00257"></a>00257 
+<a name="l00261"></a><a class="code" href="classqtpd_1_1canvas_data_plus.html">00261</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1canvas_data_plus.html" title="shared canvas data -&gt; additional info (window title etc) TODO rename">canvasDataPlus</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1canvas_data.html" title="shared canvas data - boxes, patchcords TODO rename">canvasData</a> {
+<a name="l00262"></a>00262 
+<a name="l00263"></a>00263 <span class="keyword">public</span>:
+<a name="l00264"></a><a class="code" href="classqtpd_1_1canvas_data_plus.html#a21630a6d657648629818d2576200c044">00264</a>     <a class="code" href="namespaceqtpd.html#a1c4f7beebd681561848cefcd8ea74412">portItemVec</a>* <a class="code" href="classqtpd_1_1canvas_data_plus.html#a21630a6d657648629818d2576200c044">inlets</a>;
+<a name="l00265"></a><a class="code" href="classqtpd_1_1canvas_data_plus.html#ac52550ee21dba78d4df012b37b349774">00265</a>     <a class="code" href="namespaceqtpd.html#a1c4f7beebd681561848cefcd8ea74412">portItemVec</a>* <a class="code" href="classqtpd_1_1canvas_data_plus.html#ac52550ee21dba78d4df012b37b349774">outlets</a>;
+<a name="l00266"></a>00266 };
+<a name="l00267"></a>00267 }
+<a name="l00268"></a>00268 
+<a name="l00269"></a>00269 <span class="preprocessor">#endif // CM_CANVAS_TYPES_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -350,7 +363,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 8 2017 12:23:05 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 8 2017 12:25:50 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -6,7 +6,7 @@ var searchData=
   ['s_5fmovebox',['s_MoveBox',['../classqtpd_1_1_canvas.html#a9f43be392284fbed0841c6b8af375b44',1,'qtpd::Canvas']]],
   ['s_5foutmousepressed',['s_OutMousePressed',['../classqtpd_1_1_canvas.html#ac989e6a21f501ac78bac254a977bd424',1,'qtpd::Canvas']]],
   ['s_5foutmousereleased',['s_OutMouseReleased',['../classqtpd_1_1_canvas.html#a2956abcf442bae7e5b54642c6929aba1',1,'qtpd::Canvas']]],
-  ['s_5frepaint',['s_repaint',['../classqtpd_1_1_u_i_object.html#af907b37e5d5f8b0481d03f89b2ef7b6f',1,'qtpd::UIObject']]],
+  ['s_5frepaint',['s_repaint',['../classqtpd_1_1_u_i_object.html#af907b37e5d5f8b0481d03f89b2ef7b6f',1,'qtpd::UIObject::s_repaint()'],['../classqtpd_1_1_u_i_bang.html#a494fd8201061ebb65216e189611fd0dc',1,'qtpd::UIBang::s_repaint()']]],
   ['s_5fselectbox',['s_SelectBox',['../classqtpd_1_1_canvas.html#ada8bf731d4d259b3595c89b7f0a7006c',1,'qtpd::Canvas']]],
   ['samebitset',['samebitset',['../bitset_8h.html#a810e4fca4216f712e31a31eb75914acb',1,'bitset.h']]],
   ['save',['save',['../classqtpd_1_1_file_saver.html#a3b8cd7c71623be3a95c952a638abbc8b',1,'qtpd::FileSaver']]],
