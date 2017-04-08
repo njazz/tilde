@@ -195,6 +195,7 @@ public:
         }
 
         if ((getEditMode() == em_Unlocked) && isSelected()) {
+            ev->accept();
             emit editObject(this);
             //            qDebug("edit box");
             return;

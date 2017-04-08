@@ -109,7 +109,13 @@ void Canvas::s_SelectBox(UIItem* box, QGraphicsSceneMouseEvent* ev)
     qDebug() << "select box";
 
     if (!(ev->modifiers() & Qt::ShiftModifier))
-        _canvasData.deselectBoxes();
+        if (!_canvasData.selectedBoxes()->size() == 0)
+            if (!_canvasData.selectedBoxes()->size() == 1)
+                if (!_canvasData.findBox(_canvasData.selectedBoxes(),(UIObject*)box))  //fix
+                {
+                    qDebug()<<"deselect";
+                    _canvasData.deselectBoxes();
+                }
 
     if (Canvas::getEditMode() == em_Unlocked) {
         selectBox(box);
@@ -160,15 +166,13 @@ void Canvas::addOutlet()
 
 void Canvas::mouseMoveEvent(QMouseEvent* ev)
 {
-//    qDebug() << "canvas mouse move";
-
-
+    //    qDebug() << "canvas mouse move";
 
     //workaround
-    if (_objectMaker->isVisible())
-    {
+    if (_objectMaker->isVisible()) {
         _objectMaker->setFocus();
-        return;}
+        return;
+    }
 
     QGraphicsView::mouseMoveEvent(ev);
 
@@ -178,9 +182,7 @@ void Canvas::mouseMoveEvent(QMouseEvent* ev)
     //    if (ev->isAccepted())
     //        return;
 
-
-
-//    qDebug() << "canvas mouse move accepted";
+    //    qDebug() << "canvas mouse move accepted";
 
     QPoint pos = ev->pos();
 
