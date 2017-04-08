@@ -138,7 +138,8 @@ SOURCES += main.cpp\
     objects/UISubpatch.cpp \
     graphicobjects/UIObject.cpp \
     Clipboard.cpp \
-    objects/UILink.cpp
+    objects/UILink.cpp \
+    graphicobjects/LinkLine.cpp
 
 
 
@@ -199,7 +200,8 @@ HEADERS  += \
     lib_headers/ceammc_atomlist.h \
     lib_headers/ceammc_atom.h \
     objects/UILink.h \
-    properties/AudioSettings.h
+    properties/AudioSettings.h \
+    graphicobjects/LinkLine.h
 
 
 
