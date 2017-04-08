@@ -1,12 +1,14 @@
 #ifndef LINKLINE_H
 #define LINKLINE_H
 
-#include "Patchcord.h"
+#include "UIItem.h"
 
-class LinkLine : public Patchcord
+namespace qtpd{
+class LinkLine : public UIItem
 {
 public:
     LinkLine();
 };
+}
 
 #endif // LINKLINE_H
