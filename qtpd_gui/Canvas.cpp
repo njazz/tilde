@@ -262,7 +262,7 @@ void Canvas::mousePressEvent(QMouseEvent* ev)
         _selectionRect->setEnd(QPoint(0, 0));
     }
 
-    if _objectMaker->isVisible()
+    if (_objectMaker->isVisible())
     {
         _objectMaker->cancel();
     }
