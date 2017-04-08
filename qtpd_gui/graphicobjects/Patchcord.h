@@ -149,7 +149,7 @@ public:
     void mousePressEvent(QGraphicsSceneMouseEvent*)
     {
         qDebug() << "click patchcord";
-        setSelected(true);
+        select();//(true);
         update();
     }
 
