@@ -981,14 +981,16 @@ void Canvas::dataPaste()
         QStringList subList = str.split(" ");
 
         // offset copied objects
-        if (subList.size() > 4) {
+        if (subList.size() >= 3) {
             if (subList.at(1) == "obj") {
-                int x = ((QString)subList.at(2)).toInt();
-                int y = ((QString)subList.at(3)).toInt();
+                int x = ((QString)subList.at(2)).toFloat();
+                int y = ((QString)subList.at(3)).toFloat();
 
                 subList[2] = QString::number(x + 20);
                 subList[3] = QString::number(y + 20);
             }
+
+            qDebug() <<"paste"<< subList;
 
             Clipboard::inst()->setStringAt(i, subList.join(" "));
             FileParser::parseQString(Clipboard::inst()->at(i));

@@ -68,6 +68,8 @@ PatchWindow* PatchWindow::newWindow()
     if (!this_->canvas->pdObject()) {
         qDebug("Failed to create canvas!");
     }
+    else
+        cmp_loadbang(this_->canvas->pdObject());
 
     return this_;
 }
@@ -88,6 +90,8 @@ PatchWindow* PatchWindow::newSubpatch(t_canvas* subpatch)
     if (!this_->canvas->pdObject()) {
         qDebug("Failed to create canvas!");
     }
+    else
+        cmp_loadbang(this_->canvas->pdObject());
 
     return this_;
 }

@@ -256,15 +256,12 @@ int cmp_get_array_size(t_garray* a);
 
 t_garray* cmp_new_array(t_canvas* c, t_symbol* name, t_floatarg size, t_floatarg save, t_floatarg newgraph);
 
-
 //
-
 EXTERN void cmp_loadbang(t_canvas* canvas);
 
 // audio info
 
-typedef struct _cmp_audio_info
-{
+typedef struct _cmp_audio_info {
     std::string inputDeviceList;
     std::string outputDeviceList;
     int inputDeviceCount;

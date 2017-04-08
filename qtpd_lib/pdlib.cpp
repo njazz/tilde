@@ -523,6 +523,7 @@ void cmp_set_verbose(int v)
 
 EXTERN void cmp_loadbang(t_canvas* canvas)
 {
+    qDebug()<<"cmp_loadbang";
     canvas_loadbang(canvas);
 }
 
@@ -532,14 +533,14 @@ EXTERN t_cmp_audio_info cmp_get_audio_device_info()
 {
     t_cmp_audio_info ret;
 
-    char* indevlist= new char;
+    char* indevlist = new char;
     char* outdevlist = new char;
 
     const int maxndev = 16;
     const int devdescsize = 1024;
-//    sys_get_audio_devs(indevlist, &ret.inputDeviceCount,
-//                              outdevlist, &ret.outputDeviceCount, &ret.hasMulti, &ret.hasCallback,
-//                              maxndev, devdescsize);
+    //    sys_get_audio_devs(indevlist, &ret.inputDeviceCount,
+    //                              outdevlist, &ret.outputDeviceCount, &ret.hasMulti, &ret.hasCallback,
+    //                              maxndev, devdescsize);
 
     ret.inputDeviceList = indevlist;
     ret.outputDeviceList = outdevlist;
@@ -549,9 +550,8 @@ EXTERN t_cmp_audio_info cmp_get_audio_device_info()
 
 EXTERN std::string cmp_get_audio_apis()
 {
-    char * buf = new char;
-//    sys_get_audio_apis(buf);
+    char* buf = new char;
+    //    sys_get_audio_apis(buf);
 
     return buf;
 }
-
