@@ -29,6 +29,16 @@ DEFINES += QT_DEPRECATED_WARNINGS \
     HAVE_LIBDL
 }
 
+unix {
+DEFINES += QT_DEPRECATED_WARNINGS \
+    UNIX \
+    PD \
+    HAVE_UNISTD_H \
+    USEAPI_PORTAUDIO \
+    THREAD_LOCKING \
+    HAVE_LIBDL
+}
+
 win32 {
 DEFINES += \
     QT_DEPRECATED_WARNINGS \
@@ -160,6 +170,7 @@ SOURCES += \
 #
 
 macx:SOURCES += src/s_audio_pa.c
+unix:SOURCES += src/s_audio_pa.c
 
 HEADERS += \
     src/m_pd.h \
@@ -218,10 +229,13 @@ unix{
 
 }
 
-win32:
-{
+win32:{
     LIBS += -lws2_32
-    LIBS += $$OUT_PWD/../ceammc_lib/ceammc_lib/debug/libqtpd_ceammc_lib.a
+    LIBS += $$OUT_PWD/../qtpd_ceammc_lib/debug/libqtpd_ceammc_lib.a
+}
+
+unix:{
+    LIBS += $$OUT_PWD/../qtpd_ceammc_lib/libqtpd_ceammc_lib.a
 }
 
 #PRECOMPILED_HEADER = src/m_pd.h

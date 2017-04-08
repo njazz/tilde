@@ -218,7 +218,7 @@ FORMS    += \
     canvasmenu.ui \
     window/cm_basewindow.ui
 
-CONFIG += static
+#CONFIG += static
 
 #linking
 
@@ -228,6 +228,12 @@ win32: {
 }
 
 macx: {
+    LIBS += -L"../qtpd_lib/" -lqtpd
+    LIBS += -L"/usr/local/lib/" -lportaudio
+    LIBS += -L$$OUT_PWD/../qtpd_ceammc_lib/ -lqtpd_ceammc_lib
+}
+
+unix: {
     LIBS += -L"../qtpd_lib/" -lqtpd
     LIBS += -L"/usr/local/lib/" -lportaudio
     LIBS += -L$$OUT_PWD/../qtpd_ceammc_lib/ -lqtpd_ceammc_lib

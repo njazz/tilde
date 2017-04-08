@@ -4,6 +4,9 @@
 
 //temporary
 std::map<std::string, t_updateUI>* updateUImap;
+#ifdef UNIX
+#include <signal.h>
+#endif
 
 extern "C" {
 
