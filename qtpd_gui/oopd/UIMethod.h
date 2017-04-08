@@ -225,7 +225,7 @@ public:
         if ((getEditMode() == em_Unlocked) && isSelected()) {
             //            editor_->setText(QString(objectData().c_str()));
             //            editor_->show();
-            //            editor_->setFocus();
+            
 
             emit editObject(this);
             return;

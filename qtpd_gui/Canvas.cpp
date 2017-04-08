@@ -160,6 +160,16 @@ void Canvas::addOutlet()
 
 void Canvas::mouseMoveEvent(QMouseEvent* ev)
 {
+//    qDebug() << "canvas mouse move";
+
+
+
+    //workaround
+    if (_objectMaker->isVisible())
+    {
+        _objectMaker->setFocus();
+        return;}
+
     QGraphicsView::mouseMoveEvent(ev);
 
     if (!ev)
@@ -168,7 +178,9 @@ void Canvas::mouseMoveEvent(QMouseEvent* ev)
     //    if (ev->isAccepted())
     //        return;
 
-    //qDebug() << "canvas mouse move";
+
+
+//    qDebug() << "canvas mouse move accepted";
 
     QPoint pos = ev->pos();
 
@@ -229,6 +241,7 @@ void Canvas::mouseMoveEvent(QMouseEvent* ev)
 
 void Canvas::mousePressEvent(QMouseEvent* ev)
 {
+    qDebug("click canvas");
     QGraphicsView::mousePressEvent(ev);
 
     if (!ev)
@@ -237,7 +250,7 @@ void Canvas::mousePressEvent(QMouseEvent* ev)
     if (ev->isAccepted())
         return;
 
-    qDebug("click canvas");
+    qDebug("click canvas accepted");
 
     //context menu
     if (ev->button() == Qt::RightButton) {
@@ -262,8 +275,7 @@ void Canvas::mousePressEvent(QMouseEvent* ev)
         _selectionRect->setEnd(QPoint(0, 0));
     }
 
-    if (_objectMaker->isVisible())
-    {
+    if (_objectMaker->isVisible()) {
         _objectMaker->cancel();
     }
 }
@@ -271,10 +283,14 @@ void Canvas::mousePressEvent(QMouseEvent* ev)
 void Canvas::mouseReleaseEvent(QMouseEvent* ev)
 {
 
+    qDebug("canvas mouseup");
+
     QGraphicsView::mouseReleaseEvent(ev);
 
     //    if (ev->isAccepted())
     //        return;
+
+    qDebug("canvas mouseup accepted");
 
     setDragObject(0);
 

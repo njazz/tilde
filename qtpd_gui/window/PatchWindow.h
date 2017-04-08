@@ -528,7 +528,8 @@ public:
 
         if (event->key() == Qt::Key_Escape) {
             canvas->objectMaker()->setText("");
-            objectMakerDone();
+            //objectMakerDone();
+            canvas->objectMaker()->cancel();
 
             canvas->cancelPatchcord();
         }

@@ -32,4 +32,5 @@ void ObjectMaker::leaveFocus()
     if (parent())
         ((QWidget*)parent())->setFocus();
 }
+
 }

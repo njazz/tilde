@@ -177,7 +177,7 @@ public:
                 && scene()->views().first()->viewport()) {
 
                 QGraphicsView* v = scene()->views().first();
-                QPoint pos = v->viewport()->mapToGlobal(ev->pos().toPoint() );
+                QPoint pos = v->viewport()->mapToGlobal(ev->pos().toPoint());
 
                 // TODO
                 showPopupMenu(pos + this->pos().toPoint());
@@ -202,7 +202,6 @@ public:
         if ((getEditMode() == em_Unlocked) && isSelected()) {
             //            editor_->setText(QString(objectData().c_str()));
             //            editor_->show();
-            //            editor_->setFocus();
 
             emit editObject(this);
             return;
@@ -289,7 +288,7 @@ public:
         _opClass->freeMethod(msg.at(1).asString());
     }
 
-    void msgInfo(AtomList )
+    void msgInfo(AtomList)
     {
 
         if (_opClass) {
