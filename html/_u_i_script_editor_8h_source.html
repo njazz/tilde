@@ -321,7 +321,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00241"></a>00241         <span class="comment">//            event-&gt;accept();</span>
 <a name="l00242"></a>00242 
 <a name="l00243"></a>00243         <span class="comment">//        } else</span>
-<a name="l00244"></a>00244         {
+<a name="l00244"></a>00244         <span class="comment">//{</span>
 <a name="l00245"></a>00245 
 <a name="l00246"></a>00246             QPlainTextEdit::keyPressEvent(event);
 <a name="l00247"></a>00247             QString text = <span class="keyword">event</span>-&gt;text();
@@ -332,13 +332,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00252"></a>00252                 _completer-&gt;popup()-&gt;hide();
 <a name="l00253"></a>00253             }
 <a name="l00254"></a>00254             <span class="comment">//            eventHandled = true;</span>
-<a name="l00255"></a>00255         }
+<a name="l00255"></a>00255         <span class="comment">//}</span>
 <a name="l00256"></a>00256         <span class="comment">//</span>
 <a name="l00257"></a>00257     }
-<a name="l00258"></a>00258 };
-<a name="l00259"></a>00259 }
-<a name="l00260"></a>00260 
-<a name="l00261"></a>00261 <span class="preprocessor">#endif // UISCRIPTEDITOR_H</span>
+<a name="l00258"></a>00258 
+<a name="l00259"></a>00259     <span class="keywordtype">void</span> mousePressEvent(QMouseEvent *<a class="code" href="longobject_8h.html#a28cf183ea1588229c01af441267bc98c">e</a>)
+<a name="l00260"></a>00260     {
+<a name="l00261"></a>00261         e-&gt;accept();
+<a name="l00262"></a>00262     }
+<a name="l00263"></a>00263 };
+<a name="l00264"></a>00264 }
+<a name="l00265"></a>00265 
+<a name="l00266"></a>00266 <span class="preprocessor">#endif // UISCRIPTEDITOR_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -357,7 +362,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 7 2017 22:27:29 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 8 2017 09:09:51 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

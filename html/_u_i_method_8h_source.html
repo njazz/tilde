@@ -139,7 +139,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00058"></a>00058         QStringList list = QString(objectData).split(<span class="stringliteral">&quot; &quot;</span>);
 <a name="l00059"></a>00059 
 <a name="l00060"></a>00060         <span class="keyword">const</span> <span class="keywordtype">char</span>* obj_name = objectData.toStdString().c_str();
-<a name="l00061"></a>00061         <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> data1 = b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a69ed99ca86c7019f489f56b6dc96f8a4">properties</a>()-&gt;<a class="code" href="classqtpd_1_1_property_list.html#a89ada354abe82e104bb9d47b0e80f3b4" title="extract properties from string in pd file">extractFromPdFileString</a>(obj_name); <span class="comment">//test</span>
+<a name="l00061"></a>00061         <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> data1 = b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a69ed99ca86c7019f489f56b6dc96f8a4">properties</a>()-&gt;<a class="code" href="classqtpd_1_1_property_list.html#afe045d9c65b8b51e12fb81c1eb5585b5" title="extract properties from string in pd file">extractFromPdFileString</a>(obj_name); <span class="comment">//test</span>
 <a name="l00062"></a>00062         <span class="comment">//const char* obj_name2 = data1.c_str();</span>
 <a name="l00063"></a>00063 
 <a name="l00064"></a>00064         <span class="comment">// fix size changes</span>
@@ -245,7 +245,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00167"></a>00167             p-&gt;drawRect(0, 2, <a class="code" href="classqtpd_1_1_u_i_item.html#a89b7d0bcdcb226800c37d95305a1f441">width</a>(), <a class="code" href="classqtpd_1_1_u_i_item.html#a5bbd8fe0417078d386176ace5a01f261">height</a>() - 4);
 <a name="l00168"></a>00168         }
 <a name="l00169"></a>00169 
-<a name="l00170"></a>00170         QColor rectColor = (<a class="code" href="classqtpd_1_1_u_i_object.html#a1a55479c564318cbf31c0f09d02d39bb" title="returns true if object doesn&#39;t exist">errorBox</a>()) ? QColor(255, 0, 0) : <a class="code" href="classqtpd_1_1_u_i_object.html#a69ed99ca86c7019f489f56b6dc96f8a4">properties</a>()-&gt;<a class="code" href="classqtpd_1_1_property_list.html#a6203d1a474c06ad6b732e00f7c1698ee">get</a>(<span class="stringliteral">&quot;BorderColor&quot;</span>)-&gt;<a class="code" href="classqtpd_1_1_property.html#afddea0cd73e01ae6b769b0a5d25a213e">asQColor</a>(); <span class="comment">//QColor(128, 128, 128);</span>
+<a name="l00170"></a>00170         QColor rectColor = (<a class="code" href="classqtpd_1_1_u_i_object.html#a1a55479c564318cbf31c0f09d02d39bb" title="returns true if object doesn&#39;t exist">errorBox</a>()) ? QColor(255, 0, 0) : <a class="code" href="classqtpd_1_1_u_i_object.html#a69ed99ca86c7019f489f56b6dc96f8a4">properties</a>()-&gt;<a class="code" href="classqtpd_1_1_property_list.html#a56b8961ff1380c565c7d616166be18d4">get</a>(<span class="stringliteral">&quot;BorderColor&quot;</span>)-&gt;<a class="code" href="classqtpd_1_1_property.html#afddea0cd73e01ae6b769b0a5d25a213e">asQColor</a>(); <span class="comment">//QColor(128, 128, 128);</span>
 <a name="l00171"></a>00171         p-&gt;setPen(QPen(rectColor, 1 + _isAbstraction, (<a class="code" href="classqtpd_1_1_u_i_object.html#a1a55479c564318cbf31c0f09d02d39bb" title="returns true if object doesn&#39;t exist">errorBox</a>()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 <a name="l00172"></a>00172         p-&gt;drawRect(0, 0, <a class="code" href="classqtpd_1_1_u_i_item.html#a89b7d0bcdcb226800c37d95305a1f441">width</a>(), <a class="code" href="classqtpd_1_1_u_i_item.html#a5bbd8fe0417078d386176ace5a01f261">height</a>());
 <a name="l00173"></a>00173         QTextOption* op = <span class="keyword">new</span> QTextOption;
@@ -299,7 +299,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00225"></a>00225         <span class="keywordflow">if</span> ((<a class="code" href="classqtpd_1_1_u_i_item.html#a2e13bcc5d691a5505200843d80b71e6d" title="get edit mode flag value">getEditMode</a>() == <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aaa528336eacc29596e8365b88a4f62d82">em_Unlocked</a>) &amp;&amp; <a class="code" href="classqtpd_1_1_u_i_item.html#ab3ac9bcca4d6c092b1d10fe506ba48c6" title="get object&#39;s selected flag">isSelected</a>()) {
 <a name="l00226"></a>00226             <span class="comment">//            editor_-&gt;setText(QString(objectData().c_str()));</span>
 <a name="l00227"></a>00227             <span class="comment">//            editor_-&gt;show();</span>
-<a name="l00228"></a>00228             <span class="comment">//            editor_-&gt;setFocus();</span>
+<a name="l00228"></a>00228             
 <a name="l00229"></a>00229 
 <a name="l00230"></a>00230             emit <a class="code" href="classqtpd_1_1_u_i_object.html#af7d4bc79f4fb46e194a380a7f32b8694">editObject</a>(<span class="keyword">this</span>);
 <a name="l00231"></a>00231             <span class="keywordflow">return</span>;
@@ -396,7 +396,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 7 2017 22:27:29 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 8 2017 09:09:52 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
