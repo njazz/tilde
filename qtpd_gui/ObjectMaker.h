@@ -22,7 +22,7 @@ public:
 
     void focusOutEvent(QFocusEvent*)
     {
-        emit objectMakerDoneSignal();
+        //emit objectMakerDoneSignal();
     }
 
     void cancel()
@@ -30,12 +30,15 @@ public:
         hide();
     }
 
+public slots:
+    void done();
+
 signals:
     void objectMakerDoneSignal();
 
 private slots:
 
-    void leaveFocus();
+
 
     ////
     /// \brief resize to text

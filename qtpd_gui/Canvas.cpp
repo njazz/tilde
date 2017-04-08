@@ -276,7 +276,8 @@ void Canvas::mousePressEvent(QMouseEvent* ev)
     }
 
     if (_objectMaker->isVisible()) {
-        _objectMaker->cancel();
+        //_objectMaker->cancel();
+        _objectMaker->done();
     }
 }
 

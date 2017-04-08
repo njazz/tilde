@@ -13,7 +13,7 @@ ObjectMaker::ObjectMaker(QLineEdit* parent)
     setFixedSize(60, 20);
 
     connect(this, &ObjectMaker::textEdited, this, &ObjectMaker::editorChanged);
-    connect(this, &ObjectMaker::returnPressed, this, &ObjectMaker::leaveFocus);
+    connect(this, &ObjectMaker::returnPressed, this, &ObjectMaker::done);
 }
 
 void ObjectMaker::editorChanged()
@@ -26,11 +26,14 @@ void ObjectMaker::editorChanged()
     setFixedHeight(20);
 }
 
-void ObjectMaker::leaveFocus()
+void ObjectMaker::done()
 {
     //test
-    if (parent())
-        ((QWidget*)parent())->setFocus();
+//    if (parent())
+//        ((QWidget*)parent())->setFocus();
+
+    emit objectMakerDoneSignal();
+
 }
 
 }
