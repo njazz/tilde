@@ -35,7 +35,7 @@ private:
     UIItem* _obj2;
     UIItem* _in2;
 
-    patchcordTypeEnum patchcordType_;
+    patchcordTypeEnum _patchcordType;
 
     QPainterPath _path;
 
@@ -44,20 +44,24 @@ public:
 
     void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*)
     {
-        QColor b_pc_color = (patchcordType() == cm_pt_signal) ? QColor(128, 160, 192) : QColor(0, 0, 0);
+        QColor b_pc_color = (_patchcordType == cm_pt_signal) ? QColor(128, 160, 192) : QColor(0, 0, 0);
         // cleanup
         QColor pc_color = (hover()) ? QColor(255, 192, 0) : b_pc_color;
         if (isSelected())
             pc_color = QColor(0, 192, 255);
 
         painter->setRenderHint(QPainter::HighQualityAntialiasing, true);
-        painter->setPen(QPen(pc_color, 1 + (patchcordType() == cm_pt_signal), Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        painter->setPen(QPen(pc_color, 1 + (_patchcordType == cm_pt_signal), Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
         //todo option
 
         QPainterPath path;
-        QPoint start = startPoint();
+        // todo fix
         QPoint end = endPoint();
+        QPoint start = startPoint();
+
+
+        qDebug() << "pc points" << start << end;
 
         QPoint b1 = QPoint(start.x() + (end.x() - start.x()) * .5, fabs(end.y() - start.y()) * .5 + start.y());
         QPoint b2 = QPoint(end.x() - (end.x() - start.x()) * .5, -fabs(end.y() - start.y()) * .5 + end.y());
@@ -91,35 +95,14 @@ public:
         _path = path;
     }
 
-    QPoint startPoint()
-    {
+    QPoint startPoint();
 
-        QPoint start = QPoint(0, 0);
+    QPoint endPoint();
 
-        if (_obj1 && _out1)
-            start = QPoint(_obj1->pos().x() + _out1->pos().x() + _out1->width() / 2,
-                _obj1->pos().y() + _out1->pos().y() + _out1->height() / 2);
+    // will not be unused if drawed by the class itself
+//    patchcordTypeEnum patchcordType() { return _patchcordType; }
 
-        //setPos(start);
-
-        return start;//QPoint(0,0);
-    }
-
-    QPoint endPoint()
-    {
-        QPoint end = QPoint(0, 0);
-        if (_obj2 && _in2)
-            end = QPoint(_obj2->pos().x() + _in2->pos().x() + _in2->width() / 2,
-                _obj2->pos().y() + _in2->pos().y() + _in2->height() / 2);
-        //todo fix!
-        //setSize(end.x()-pos().x(), end.y()-pos().y());
-
-        return end;//QPoint(size().width(),size().height());
-    }
-
-    //// will not be unused if drawed by the class itself
-    patchcordTypeEnum patchcordType() { return patchcordType_; }
-    void setPatchcordType(patchcordTypeEnum v) { patchcordType_ = v; }
+    void setPatchcordType(patchcordTypeEnum v) { _patchcordType = v; }
 
     ////
 
@@ -185,6 +168,11 @@ public:
         return ((obj == _obj1) || (obj == _obj2));
     }
 };
+
+signals:
+    void selected();
+    void shiftClicked();    // delete and make new line from obj2 out 'new line'
+    void altClicked();      // convert to send-receive
 }
 
 #endif // CM_PATCHCORD_H
