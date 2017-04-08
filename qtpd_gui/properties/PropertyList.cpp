@@ -88,7 +88,7 @@ QStringList PropertyList::groupNames()
 
 std::string PropertyList::extractFromPdFileString(QString input)
 {
-    QStringList propertyList = input.split("@");
+    QStringList propertyList = input.split(" @");
 
     qDebug() << "list" << propertyList;
 
