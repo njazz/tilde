@@ -518,6 +518,13 @@ void cmp_set_verbose(int v)
 
 // -----
 
+EXTERN void cmp_loadbang(t_canvas* canvas)
+{
+    canvas_loadbang(canvas);
+}
+
+// -----
+
 EXTERN t_cmp_audio_info cmp_get_audio_device_info()
 {
     t_cmp_audio_info ret;
