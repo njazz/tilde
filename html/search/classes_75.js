@@ -25,9 +25,11 @@ var searchData=
   ['uiobject',['UIObject',['../classqtpd_1_1_u_i_object.html',1,'qtpd']]],
   ['uiproperty',['UIProperty',['../classqtpd_1_1_u_i_property.html',1,'qtpd']]],
   ['uiscript',['UIScript',['../classqtpd_1_1_u_i_script.html',1,'qtpd']]],
+  ['uiscriptbox',['UIScriptBox',['../classqtpd_1_1_u_i_script_box.html',1,'qtpd']]],
   ['uiscripteditor',['UIScriptEditor',['../classqtpd_1_1_u_i_script_editor.html',1,'qtpd']]],
   ['uistorage',['UIStorage',['../classceammc_1_1tl_1_1_u_i_storage.html',1,'ceammc::tl']]],
   ['uisubpatch',['UISubpatch',['../classqtpd_1_1_u_i_subpatch.html',1,'qtpd']]],
   ['uitext',['UIText',['../classqtpd_1_1_u_i_text.html',1,'qtpd']]],
+  ['uitexteditor',['UITextEditor',['../class_u_i_text_editor.html',1,'']]],
   ['uitoggle',['UIToggle',['../classqtpd_1_1_u_i_toggle.html',1,'qtpd']]]
 ];

@@ -54,6 +54,7 @@ var searchData=
   ['aedesc_5fnewborrowed',['AEDesc_NewBorrowed',['../pymactoolbox_8h.html#a7efc7d5d5002836c1fe5fbd6554c13a5',1,'pymactoolbox.h']]],
   ['aliasproperty',['AliasProperty',['../classceammc_1_1_alias_property.html#aaca36992caaff6783c599eb4ff05a9c7',1,'ceammc::AliasProperty']]],
   ['alloff',['allOff',['../classceammc_1_1_atom_list.html#ab7beef0d45f83b2213b1408b5702e5f8',1,'ceammc::AtomList::allOff(AtomPredicate pred) const '],['../classceammc_1_1_atom_list.html#ab7beef0d45f83b2213b1408b5702e5f8',1,'ceammc::AtomList::allOff(AtomPredicate pred) const ']]],
+  ['altclicked',['altClicked',['../classqtpd_1_1_patchcord.html#a04670e604f557e832fe80279ad353540',1,'qtpd::Patchcord']]],
   ['anydispatch',['anyDispatch',['../classceammc_1_1_base_object.html#a8937c936d4dd2b1a16bff4a2ac7e4566',1,'ceammc::BaseObject']]],
   ['anyoff',['anyOff',['../classceammc_1_1_atom_list.html#a6bc97f1e25bda4e6fc05cde22bbe01d5',1,'ceammc::AtomList::anyOff(AtomPredicate pred) const '],['../classceammc_1_1_atom_list.html#a6bc97f1e25bda4e6fc05cde22bbe01d5',1,'ceammc::AtomList::anyOff(AtomPredicate pred) const ']]],
   ['anyto',['anyTo',['../classceammc_1_1_base_object.html#a879e9bd7b0d39e7135ce80a514578ee6',1,'ceammc::BaseObject::anyTo(size_t n, t_symbol *s, const Atom &amp;a)'],['../classceammc_1_1_base_object.html#a5c40f7881d0be335828010599d8cbf73',1,'ceammc::BaseObject::anyTo(size_t n, t_symbol *s, const AtomList &amp;l)']]],

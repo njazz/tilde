@@ -129,7 +129,7 @@ var searchData=
   ['break_5fkind',['Break_kind',['../_python-ast_8h.html#a3f8747ef1343a8899c10bb4911deed50af022f4f0dbcc13fa7484033cf48f64c4',1,'Python-ast.h']]],
   ['break_5floop',['BREAK_LOOP',['../opcode_8h.html#aeb65a3a8f7335c07ca15bf40c96a049e',1,'opcode.h']]],
   ['break_5fstmt',['break_stmt',['../graminit_8h.html#aafd3948a7d55e8b88c9e3ccf3e3bd650',1,'graminit.h']]],
-  ['btnrun',['btnRun',['../classqtpd_1_1_u_i_script.html#a707172a196120191b1d3fff972e2d040',1,'qtpd::UIScript']]],
+  ['btnrun',['btnRun',['../classqtpd_1_1_u_i_script.html#a707172a196120191b1d3fff972e2d040',1,'qtpd::UIScript::btnRun()'],['../classqtpd_1_1_u_i_script_box.html#a17b91d2630014bacdd87db4b6064eb65',1,'qtpd::UIScriptBox::btnRun()']]],
   ['buf',['buf',['../structbufferinfo.html#aa1612327c7d07341a8e7977268414928',1,'bufferinfo::buf()'],['../structui__scope.html#a5df3b6a39ba275d94d50ba0c46f13af7',1,'ui_scope::buf()'],['../structui__spectroscope.html#ad42c5ef43561fbf48f9f3c99046f1283',1,'ui_spectroscope::buf()'],['../abstract_8h.html#aa7a8493db7fccef356c882deb1fa932c',1,'buf():&#160;abstract.h']]],
   ['buf_5flen',['buf_len',['../pystrtod_8h.html#ab3e45d7a98b5e813764d22620593d39d',1,'pystrtod.h']]],
   ['buffer',['buffer',['../struct__resample.html#a8fe41b983e1710c3d71afb4fb85f8042',1,'_resample::buffer()'],['../abstract_8h.html#a3f79da6abd31dafc8b523730e07a6b86',1,'buffer():&#160;abstract.h']]],

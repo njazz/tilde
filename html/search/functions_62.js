@@ -62,7 +62,7 @@ var searchData=
   ['bpf_5fm_5fvline',['bpf_m_vline',['../namespaceceammc__gui.html#a4266820ebfb7da4299b9b49716bd1543',1,'ceammc_gui']]],
   ['bpf_5fm_5fvline_5fseg',['bpf_m_vline_seg',['../namespaceceammc__gui.html#acd4f03778c62c1a5f96a5ea329b677ba',1,'ceammc_gui']]],
   ['bpf_5fm_5fvline_5ftgl',['bpf_m_vline_tgl',['../namespaceceammc__gui.html#aa3e6936e8bcf45a3d17eb12bd916a850',1,'ceammc_gui']]],
-  ['btnrun',['btnRun',['../classqtpd_1_1_u_i_script.html#a707172a196120191b1d3fff972e2d040',1,'qtpd::UIScript']]],
+  ['btnrun',['btnRun',['../classqtpd_1_1_u_i_script.html#a707172a196120191b1d3fff972e2d040',1,'qtpd::UIScript::btnRun()'],['../classqtpd_1_1_u_i_script_box.html#a17b91d2630014bacdd87db4b6064eb65',1,'qtpd::UIScriptBox::btnRun()']]],
   ['bug',['bug',['../m__pd_8h.html#a3e4d99cc272e4a5cb21332f8bda27ec8',1,'m_pd.h']]],
   ['builddynamicmetaobject',['buildDynamicMetaObject',['../class_python_qt_private.html#a994e5a1ab2208a03fd499143a66127f2',1,'PythonQtPrivate']]]
 ];
