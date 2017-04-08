@@ -63,7 +63,7 @@ public:
         }
 
         if (new_obj) {
-            qDebug("created toggle %s | ptr %lu\n", message.c_str(), (long)new_obj);
+            qDebug("created ui.script %s | ptr %lu\n", message.c_str(), (long)new_obj);
             b->setPdObject(new_obj);
 
             b->_editor->setContext(pyWrapper::inst().withCanvasPdObjectAndInput((UIObject*)parent, new_obj, &b->_inputList));

@@ -44,6 +44,7 @@ SOURCES += python/PythonQtScriptingConsole.cpp \
     python/wrappers/py_wrappers.cpp \
     objects/UIScriptEditor.cpp \
     objects/UIScript.cpp \
+    objects/UIScriptBox.cpp
 
 
 HEADERS += \
@@ -79,6 +80,8 @@ HEADERS += \
     python/wrappers/py_wrappers.h \
     objects/UIScriptEditor.h \
     objects/UIScript.h \
+    objects/UIScriptBox.h
+
 
     LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt_QtAll$${DEBUG_EXT}.1.0.0
     LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt$${DEBUG_EXT}.1.0.0
@@ -97,7 +100,6 @@ HEADERS += \
 
 SOURCES += main.cpp\
 #
-#
     objects/UIArray.cpp \
     objects/UIBox.cpp \
     objects/UIMessage.cpp \
@@ -113,7 +115,8 @@ SOURCES += main.cpp\
     oopd/OPInstance.cpp \
     oopd/OPClass.cpp \
 #
-    objects/UIArrayEditor.cpp \
+    widgets/UIArrayEditor.cpp \
+#
     Canvas.cpp \
     FileParser.cpp \
     ObjectLoader.cpp \
@@ -140,7 +143,8 @@ SOURCES += main.cpp\
     Clipboard.cpp \
     objects/UILink.cpp \
     graphicobjects/LinkLine.cpp \
-    objects/UIScriptBox.cpp
+    widgets/UITextEditor.cpp
+
 
 
 
@@ -164,7 +168,8 @@ HEADERS  += \
     oopd/UIMethod.h \
     oopd/UIProperty.h \
     #
-    objects/UIArrayEditor.h \
+    widgets/UIArrayEditor.h \
+    #
     window/BaseWindow.h \
     window/PatchWindow.h \
     window/PdWindow.h \
@@ -203,7 +208,8 @@ HEADERS  += \
     objects/UILink.h \
     properties/AudioSettings.h \
     graphicobjects/LinkLine.h \
-    objects/UIScriptBox.h
+    widgets/UITextEditor.h
+
 
 
 
@@ -245,6 +251,7 @@ INCLUDEPATH += \
     lib_headers/ \
     window/ \
     objects/ \
+    widgets/ \
     properties/ \
     graphicobjects/
 
