@@ -214,6 +214,32 @@ public:
 
         return ret;
     }
+
+    // -------
+
+    void deselectBoxes()
+    {
+        for (int i = 0; i < (int)_boxes.size(); i++) {
+            if (_boxes.at(i))
+
+                ((UIBox*)_boxes.at(i))->deselect();
+        }
+
+        _selectedBoxes.clear();
+
+
+    }
+    void deselectPatchcords()
+    {
+        patchcordVec::iterator it2;
+
+        for (it2 = _patchcords.begin(); it2 != _patchcords.end(); ++it2) {
+
+            ((Patchcord*)*it2)->deselect();
+            ((Patchcord*)*it2)->setHover(false);
+        }
+
+    }
 };
 
 ////

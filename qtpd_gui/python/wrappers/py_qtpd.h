@@ -135,7 +135,8 @@ public Q_SLOTS:
 
     void deselectAll(Canvas* c)
     {
-        c->deselectBoxes();
+        c->canvasData()->deselectBoxes();
+        c->update();
     }
 
     void deleteObjectInCanvas(Canvas* c, UIObject* obj)

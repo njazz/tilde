@@ -139,7 +139,7 @@ public:
     ////
     /// \brief deselect all object boxes
     ///
-    void deselectBoxes();
+    //void deselectBoxes();
 
     ////
     /// \brief prototype for universal object 'constructor'

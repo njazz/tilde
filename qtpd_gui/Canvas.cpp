@@ -109,7 +109,7 @@ void Canvas::s_SelectBox(UIItem* box, QGraphicsSceneMouseEvent* ev)
     qDebug() << "select box";
 
     if (!(ev->modifiers() & Qt::ShiftModifier))
-        deselectBoxes();
+        _canvasData.deselectBoxes();
 
     if (Canvas::getEditMode() == em_Unlocked) {
         selectBox(box);
@@ -260,7 +260,8 @@ void Canvas::mousePressEvent(QMouseEvent* ev)
         return;
     }
 
-    deselectBoxes();
+    _canvasData.deselectBoxes();
+    _canvasData.deselectPatchcords();
 
     //deselect
     // TODO
@@ -303,18 +304,18 @@ void Canvas::mouseReleaseEvent(QMouseEvent* ev)
 
 // ---------------------------------------------------------------------------
 
-void Canvas::deselectBoxes()
-{
-    for (int i = 0; i < (int)_canvasData.selectedBoxes()->size(); i++) {
-        if (_canvasData.selectedBoxes()->at(i))
+//void Canvas::deselectBoxes()
+//{
+//    for (int i = 0; i < (int)_canvasData.selectedBoxes()->size(); i++) {
+//        if (_canvasData.selectedBoxes()->at(i))
 
-            ((UIBox*)_canvasData.selectedBoxes()->at(i))->deselect();
-    }
+//            ((UIBox*)_canvasData.selectedBoxes()->at(i))->deselect();
+//    }
 
-    _canvasData.selectedBoxes()->clear();
+//    _canvasData.selectedBoxes()->clear();
 
-    viewport()->update();
-}
+//    viewport()->update();
+//}
 
 UIObject* Canvas::createObject(QString objectData1, QPoint pos) //std::string UIObjectItemName,
 {
@@ -480,7 +481,7 @@ void Canvas::deletePatchcordsFor(UIItem* obj)
 ///
 void Canvas::deleteBox(UIObject* box)
 {
-    deselectBoxes();
+    _canvasData.deselectBoxes();
     //_selectionData.addUniqueBox(box);
     _canvasData.selectBox(box);
     deleteSelectedBoxes();
@@ -578,7 +579,8 @@ void Canvas::setEditMode(t_editMode mode)
             _grid->setVisible(_canvasEditMode != em_Locked);
 
     if (mode == em_Locked) {
-        deselectBoxes();
+        _canvasData.deselectBoxes();
+        _canvasData.deselectPatchcords();
         //        hoverPatchcordsOff();
     }
 }
@@ -880,7 +882,7 @@ void Canvas::portCountUpdated()
 
 void Canvas::objectStartsEdit(void* obj)
 {
-    deselectBoxes();
+    _canvasData.deselectBoxes();
 
     qDebug("edit box>>");
 
