@@ -60,7 +60,6 @@ public:
         QPoint end = endPoint();
         QPoint start = startPoint();
 
-
         qDebug() << "pc points" << start << end;
 
         QPoint b1 = QPoint(start.x() + (end.x() - start.x()) * .5, fabs(end.y() - start.y()) * .5 + start.y());
@@ -100,7 +99,7 @@ public:
     QPoint endPoint();
 
     // will not be unused if drawed by the class itself
-//    patchcordTypeEnum patchcordType() { return _patchcordType; }
+    //    patchcordTypeEnum patchcordType() { return _patchcordType; }
 
     void setPatchcordType(patchcordTypeEnum v) { _patchcordType = v; }
 
@@ -167,12 +166,12 @@ public:
     {
         return ((obj == _obj1) || (obj == _obj2));
     }
-};
 
 signals:
     void selected();
-    void shiftClicked();    // delete and make new line from obj2 out 'new line'
-    void altClicked();      // convert to send-receive
+    void shiftClicked(); // delete and make new line from obj2 out 'new line'
+    void altClicked(); // convert to send-receive
+};
 }
 
 #endif // CM_PATCHCORD_H
