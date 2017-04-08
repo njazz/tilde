@@ -108,16 +108,22 @@ void Canvas::s_SelectBox(UIItem* box, QGraphicsSceneMouseEvent* ev)
 
     qDebug() << "select box";
 
-    if (!(ev->modifiers() & Qt::ShiftModifier))
-        if (!_canvasData.selectedBoxes()->size() == 0)
-            if (!_canvasData.selectedBoxes()->size() == 1)
-                if (!_canvasData.findBox(_canvasData.selectedBoxes(),(UIObject*)box))  //fix
-                {
-                    qDebug()<<"deselect";
-                    _canvasData.deselectBoxes();
-                }
-
     if (Canvas::getEditMode() == em_Unlocked) {
+        if (!(ev->modifiers() & Qt::ShiftModifier))
+            if (_canvasData.selectedBoxes()->size() < 2)
+                if (_canvasData.selectedBoxes()->size() == 1)
+                    if (_canvasData.findBox(_canvasData.selectedBoxes(), (UIObject*)box) == -1) //fix
+                    {
+                        qDebug() << "deselect";
+                        _canvasData.deselectBoxes();
+
+                    } else {
+                        qDebug() << "edit";
+                        objectStartsEdit((void*)box);
+                    }
+                else
+                    qDebug() << "size" << _canvasData.selectedBoxes()->size();
+
         selectBox(box);
     }
 

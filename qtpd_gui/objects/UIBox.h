@@ -191,15 +191,16 @@ public:
         if (getEditMode() != em_Unlocked) {
             if (_isAbstraction) {
                 OpenFileProxy::openAbstraction(_abstractionPath);
+                return;
             }
         }
 
-        if ((getEditMode() == em_Unlocked) && isSelected()) {
-            ev->accept();
-            emit editObject(this);
-            //            qDebug("edit box");
-            return;
-        }
+//        if ((getEditMode() == em_Unlocked) && isSelected()) {
+//            //ev->accept();
+//            //emit editObject(this);
+//            //            qDebug("edit box");
+//            return;
+//        }
 
         emit selectBox(this, ev);
 
