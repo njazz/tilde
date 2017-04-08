@@ -218,7 +218,7 @@ class pyPropertyListDecorator : public QObject {
 public Q_SLOTS:
     QString get(PropertyList* p, QString name)
     {
-        return p->PropertyList::get(name.toStdString())->asQString();
+        return p->PropertyList::get(name)->asQString();
     }
 
     void set(PropertyList* p, QString name, QString data)

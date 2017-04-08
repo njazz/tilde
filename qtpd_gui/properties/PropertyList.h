@@ -17,6 +17,7 @@ typedef std::map<std::string, UIPropertyData*> UIPropertyGroups;
 
 typedef std::map<std::string, Property*>::iterator UIPropertyDataIterator;
 typedef std::map<std::string, UIPropertyData*>::iterator UIPropertyGroupIterator;
+
 ////
 /// \brief yet another property handling class for ui object. List
 ///
@@ -31,7 +32,6 @@ public:
     PropertyList(){};
 
     UIPropertyData* group(QString grpName);
-
     UIPropertyData* fromGroup(QString grpName);
 
     template <typename T>
@@ -52,11 +52,9 @@ public:
             grp = new UIPropertyData();
         (*grp)[pName] = newP;
         _groups[pGroup] = grp;
-
-        //qDebug() << "new property" << data_[pName]->asQString();
     }
 
-    // todo []
+    // ----------
 
     template <typename U>
     void set(std::string pName, U value)
@@ -67,9 +65,21 @@ public:
         }
     };
 
-    Property* get(std::string pName);
+    Property* get(QString pName);
 
-    //////////
+    //todo
+
+//    Property* operator[](QString pName)
+//    {
+//        return get(pName);
+//    }
+
+//    Property* operator[](QString pName) const
+//    {
+//        return get(pName);
+//    }
+
+    // ------------
 
     ////
     /// \brief returns string for saving in file
@@ -101,7 +111,7 @@ public:
     /// \details returns first part of the string before the first property
     /// \return
     ///
-    std::string extractFromPdFileString(std::string input);
+    std::string extractFromPdFileString(QString input);
 
 signals:
     void propertyChangedSignal(QString name);

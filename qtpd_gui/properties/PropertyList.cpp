@@ -19,12 +19,12 @@ UIPropertyData* PropertyList::fromGroup(QString grpName)
     return ret;
 }
 
-Property* PropertyList::get(std::string pName)
+Property* PropertyList::get(QString pName)
 {
     Property* ret = 0;
-    std::map<std::string, Property*>::iterator it = _data.find(pName);
+    std::map<std::string, Property*>::iterator it = _data.find(pName.toStdString());
     if (it != _data.end())
-        ret = this->_data[pName];
+        ret = this->_data[pName.toStdString()];
     return ret;
 };
 
@@ -86,9 +86,9 @@ QStringList PropertyList::groupNames()
     return ret;
 }
 
-std::string PropertyList::extractFromPdFileString(std::string input)
+std::string PropertyList::extractFromPdFileString(QString input)
 {
-    QStringList propertyList = QString(input.c_str()).split("@");
+    QStringList propertyList = input.split("@");
 
     qDebug() << "list" << propertyList;
 

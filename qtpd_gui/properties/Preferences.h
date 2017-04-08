@@ -52,7 +52,7 @@ public:
     void operator=(Preferences const&) = delete;
 
     //temporary
-    QString getQString(std::string key)
+    QString getQString(QString key)
     {
         if (get(key))
             return get(key)->asQString();

@@ -33,7 +33,7 @@ public:
         UIToggle* b = new UIToggle();
         b->setCanvas((void*)parent);
 
-        std::string data1 = b->properties()->extractFromPdFileString(objectData.toStdString());
+        std::string data1 = b->properties()->extractFromPdFileString(objectData);
         b->setObjectData("ui.toggle");
 
         qDebug() << "obj data" << QString(data1.c_str());

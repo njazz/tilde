@@ -69,7 +69,7 @@ PropertiesWindow::PropertiesWindow(PropertyList* plist)
 
             QLineEdit* le = new QLineEdit(this);
             le->setFont(myFont);
-            le->setText(plist->get(list.at(i).toStdString())->asQString());
+            le->setText(plist->get(list.at(i))->asQString());
             le->setMinimumSize(140, 20);
             le->setFixedHeight(20);
             le->move(x2, y);

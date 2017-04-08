@@ -35,7 +35,7 @@ public:
         b->setCanvas((void*)parent);
 
         //temporary
-        std::string data1 = b->properties()->extractFromPdFileString(objectData.toStdString());
+        std::string data1 = b->properties()->extractFromPdFileString(objectData);
         b->setObjectData("");
 
         // the zoo lol

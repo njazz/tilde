@@ -34,7 +34,7 @@ public:
         UIBang* b = new UIBang();
         b->setCanvas((void*)parent);
 
-        std::string data1 = b->properties()->extractFromPdFileString(objectData.toStdString());
+        std::string data1 = b->properties()->extractFromPdFileString(objectData);
         b->setObjectData("ui.bang");
 
         std::string message = "ui.bang";

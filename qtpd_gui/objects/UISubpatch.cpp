@@ -5,7 +5,6 @@
 
 #include "PatchWindow.h"
 
-
 namespace qtpd {
 UISubpatch::UISubpatch()
 
@@ -55,35 +54,38 @@ std::string UISubpatch::asPdFileString()
 void UISubpatch::setSubpatchWindow(QMainWindow* cwindow)
 {
     UIObject::setSubpatchWindow(cwindow);
-    PatchWindow* p = (PatchWindow*)cwindow;
 
-    Canvas* _subCanvas;
-    //if (p)
+    if (0) {
+        PatchWindow* p = (PatchWindow*)cwindow;
+
+        Canvas* _subCanvas;
+        //if (p)
         _subCanvas = p->canvas;
 
-    QWidget *test = new QWidget();
-//    //_subCanvas->show();
-    //_subCanvas->setParent(test);
+        QWidget* test = new QWidget();
+        //    //_subCanvas->show();
+        //_subCanvas->setParent(test);
 
-    QGraphicsScene *sc = new QGraphicsScene();
-    sc = _subCanvas->scene();
+        QGraphicsScene* sc = new QGraphicsScene();
+        sc = _subCanvas->scene();
 
-    QGraphicsView *v = new QGraphicsView;
-    v->setScene(sc);
-   // v->setParent(test);
+        QGraphicsView* v = new QGraphicsView;
+        v->setScene(sc);
+        // v->setParent(test);
 
-    QGraphicsProxyWidget* proxy = new QGraphicsProxyWidget(this);
-    proxy->setWidget(v);
+        QGraphicsProxyWidget* proxy = new QGraphicsProxyWidget(this);
+        proxy->setWidget(v);
 
-//            if (((Canvas*)canvas())->scene())
-//                ((Canvas*)canvas())->scene()->addWidget(_subCanvas);
+        //            if (((Canvas*)canvas())->scene())
+        //                ((Canvas*)canvas())->scene()->addWidget(_subCanvas);
 
-    scene()->addItem(proxy);
+        scene()->addItem(proxy);
 
-    proxy->setPos(0, 20);
-    proxy->show();
+        proxy->setPos(0, 20);
+        proxy->show();
 
-    setWidth(400);
-    setHeight(300);
+        setWidth(400);
+        setHeight(300);
+    }
 }
 }

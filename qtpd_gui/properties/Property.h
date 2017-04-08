@@ -75,6 +75,8 @@ public:
         return _defaultData;
     }
 
+    // -------
+
     QSize asQSize()
     {
         QSize ret = QSize(40, 20);
@@ -111,21 +113,19 @@ public:
 
     QColor asQColor()
     {
-        QColor ret = QColor(128,128,128,255);   //sefault gray
-
+        QColor ret = QColor(128, 128, 128, 255); //default gray
 
         if (_data.size() < 4)
             return ret;
         if (!(_data.at(0).isFloat()) && !(_data.at(1).isFloat()) && !(_data.at(2).isFloat()) && !(_data.at(3).isFloat()))
             return ret;
 
-        ret = QColor( _data.at(0).asFloat(),
-                      _data.at(1).asFloat(),
-                      _data.at(2).asFloat(),
-                      _data.at(3).asFloat());
+        ret = QColor(_data.at(0).asFloat(),
+            _data.at(1).asFloat(),
+            _data.at(2).asFloat(),
+            _data.at(3).asFloat());
 
         return ret;
-
     }
 
     QStringList asQStringList()
@@ -154,9 +154,38 @@ public:
         } else if (_data.size() == 1)
             ret = _data.at(0).asString();
 
-        //qDebug() << "stdstr " << data_.size() << QString(ret.c_str());
         return ret;
     }
+
+    QString asPdSaveString()
+    {
+        QString ret = "";
+
+        if (_data.size() > 1) {
+            for (size_t i = 0; i < _data.size(); i++) {
+
+                ret += QString(_data.at(i).asString().c_str()) + " "; //\\n removed
+            }
+
+        } else if (_data.size() == 1)
+            ret = QString(_data.at(0).asString().c_str());
+
+        ret = escapeString(ret);
+
+        return ret;
+    }
+
+    QString asQString()
+    {
+        QString ret = "";
+
+        //temporary
+        ret = QString(asStdString().c_str());
+
+        return ret;
+    }
+
+    // ----------
 
     // todo move?
     static QString escapeString(QString input)
@@ -165,7 +194,7 @@ public:
 
         QString ret;
 
-        ret = input.split("\ ").join("\\ ");
+        ret = input.split(" ").join("\\ ");
         ret = ret.split("\n").join("\\n");
         ret = ret.split(",").join("\\,");
         ret = ret.split(".").join("\\.");
@@ -188,40 +217,8 @@ public:
         ret = ret.split("\\;").join(";");
         return ret;
     }
-
-    QString asPdSaveString()
-    {
-        QString ret = "";
-
-        if (_data.size() > 1) {
-            for (size_t i = 0; i < _data.size(); i++) {
-
-                ret += QString(_data.at(i).asString().c_str()) + " ";  //\\n removed
-            }
-
-        } else if (_data.size() == 1)
-            ret = QString(_data.at(0).asString().c_str());
-
-        //qDebug() << "stdstr " << data_.size() << QString(ret.c_str());
-
-        ret = escapeString(ret);
-
-        return ret;
-    }
-
-    QString asQString()
-    {
-        QString ret = "";
-
-        //temporary
-        ret = QString(asStdString().c_str());
-
-        return ret;
-    }
-
 signals:
-    void changed();
-
+    void changed(QString propertyName);
 };
 }
 

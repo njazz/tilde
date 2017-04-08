@@ -34,7 +34,7 @@ public:
         UILink* b = new UILink();
         b->setCanvas((void*)parent);
 
-        b->properties()->extractFromPdFileString(objectData.toStdString());
+        b->properties()->extractFromPdFileString(objectData);
         b->setObjectData("");
 
         // the zoo lol
@@ -45,7 +45,7 @@ public:
         if (!b->properties())
             b->initProperties();
 
-        int fontSize = b->properties()->get("FontSize")->asQString().toInt();
+        //int fontSize = b->properties()->get("FontSize")->asQString().toInt();
 
         b->autoResize();
 

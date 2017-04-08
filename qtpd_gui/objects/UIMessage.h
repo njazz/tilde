@@ -39,7 +39,7 @@ public:
         //do this normal way later
         QStringList messageDataList = QString(objectData).split(" ");
         messageDataList.removeAt(0);
-        std::string messageData = messageDataList.join(" ").toStdString();
+        QString messageData = messageDataList.join(" ");
 
         std::string data1 = b->properties()->extractFromPdFileString(messageData);
         b->setObjectData(data1);
