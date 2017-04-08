@@ -180,27 +180,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00256"></a>00256 
 <a name="l00257"></a>00257 <a class="code" href="m__pd_8h.html#ac071d0f7a80e8bdaf1a3e9dc977d03b8">t_garray</a>* <a class="code" href="_pd_link_8h.html#a5e3a540ebc4655748e2c87cabd76213c">cmp_new_array</a>(<a class="code" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a>* c, <a class="code" href="struct__symbol.html">t_symbol</a>* <a class="code" href="abstract_8h.html#afcd1706c9144e6d6eee6127661ae3be2">name</a>, <a class="code" href="m__pd_8h.html#ab66b7dff3a7346586dc6f918e9a594af">t_floatarg</a> <a class="code" href="bufferobject_8h.html#a612c27dae5681d14a5d92d0b3d8ab6e5">size</a>, <a class="code" href="m__pd_8h.html#ab66b7dff3a7346586dc6f918e9a594af">t_floatarg</a> save, <a class="code" href="m__pd_8h.html#ab66b7dff3a7346586dc6f918e9a594af">t_floatarg</a> newgraph);
 <a name="l00258"></a>00258 
-<a name="l00259"></a>00259 
-<a name="l00260"></a>00260 <span class="comment">//</span>
+<a name="l00259"></a>00259 <span class="comment">//</span>
+<a name="l00260"></a>00260 <a class="code" href="m__pd_8h.html#a77366c1bd428629dc898e188bfd182a3">EXTERN</a> <span class="keywordtype">void</span> <a class="code" href="_pd_link_8h.html#a8a20b999b802c71b229de8a524283645">cmp_loadbang</a>(<a class="code" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a>* canvas);
 <a name="l00261"></a>00261 
-<a name="l00262"></a>00262 <a class="code" href="m__pd_8h.html#a77366c1bd428629dc898e188bfd182a3">EXTERN</a> <span class="keywordtype">void</span> <a class="code" href="_pd_link_8h.html#a8a20b999b802c71b229de8a524283645">cmp_loadbang</a>(<a class="code" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a>* canvas);
+<a name="l00262"></a>00262 <span class="comment">// audio info</span>
 <a name="l00263"></a>00263 
-<a name="l00264"></a>00264 <span class="comment">// audio info</span>
-<a name="l00265"></a>00265 
-<a name="l00266"></a><a class="code" href="struct__cmp__audio__info.html">00266</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct__cmp__audio__info.html">_cmp_audio_info</a>
-<a name="l00267"></a>00267 {
-<a name="l00268"></a><a class="code" href="struct__cmp__audio__info.html#aaa14da2783c9d73cb8985b085e4aef2c">00268</a>     <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="code" href="struct__cmp__audio__info.html#aaa14da2783c9d73cb8985b085e4aef2c">inputDeviceList</a>;
-<a name="l00269"></a><a class="code" href="struct__cmp__audio__info.html#a7bc24c3c68e1040f736d1fe2bf06c892">00269</a>     <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="code" href="struct__cmp__audio__info.html#a7bc24c3c68e1040f736d1fe2bf06c892">outputDeviceList</a>;
-<a name="l00270"></a><a class="code" href="struct__cmp__audio__info.html#abb46e4a7caa397873793617c0816945c">00270</a>     <span class="keywordtype">int</span> <a class="code" href="struct__cmp__audio__info.html#abb46e4a7caa397873793617c0816945c">inputDeviceCount</a>;
-<a name="l00271"></a><a class="code" href="struct__cmp__audio__info.html#a2efceb3552277858fb2b4fc3a0326bf8">00271</a>     <span class="keywordtype">int</span> <a class="code" href="struct__cmp__audio__info.html#a2efceb3552277858fb2b4fc3a0326bf8">outputDeviceCount</a>;
-<a name="l00272"></a><a class="code" href="struct__cmp__audio__info.html#a3a4b5eb592c6801dcb24813f3f21e23c">00272</a>     <span class="keywordtype">bool</span> <a class="code" href="struct__cmp__audio__info.html#a3a4b5eb592c6801dcb24813f3f21e23c">hasMulti</a>;
-<a name="l00273"></a><a class="code" href="struct__cmp__audio__info.html#a41b8d9c720c5b7850d09167a188834f6">00273</a>     <span class="keywordtype">bool</span> <a class="code" href="struct__cmp__audio__info.html#a41b8d9c720c5b7850d09167a188834f6">hasCallback</a>;
-<a name="l00274"></a>00274 } <a class="code" href="_pd_link_8h.html#a6dfb84d0c4c74fc07153deac0b400570">t_cmp_audio_info</a>;
+<a name="l00264"></a><a class="code" href="struct__cmp__audio__info.html">00264</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct__cmp__audio__info.html">_cmp_audio_info</a> {
+<a name="l00265"></a><a class="code" href="struct__cmp__audio__info.html#aaa14da2783c9d73cb8985b085e4aef2c">00265</a>     <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="code" href="struct__cmp__audio__info.html#aaa14da2783c9d73cb8985b085e4aef2c">inputDeviceList</a>;
+<a name="l00266"></a><a class="code" href="struct__cmp__audio__info.html#a7bc24c3c68e1040f736d1fe2bf06c892">00266</a>     <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="code" href="struct__cmp__audio__info.html#a7bc24c3c68e1040f736d1fe2bf06c892">outputDeviceList</a>;
+<a name="l00267"></a><a class="code" href="struct__cmp__audio__info.html#abb46e4a7caa397873793617c0816945c">00267</a>     <span class="keywordtype">int</span> <a class="code" href="struct__cmp__audio__info.html#abb46e4a7caa397873793617c0816945c">inputDeviceCount</a>;
+<a name="l00268"></a><a class="code" href="struct__cmp__audio__info.html#a2efceb3552277858fb2b4fc3a0326bf8">00268</a>     <span class="keywordtype">int</span> <a class="code" href="struct__cmp__audio__info.html#a2efceb3552277858fb2b4fc3a0326bf8">outputDeviceCount</a>;
+<a name="l00269"></a><a class="code" href="struct__cmp__audio__info.html#a3a4b5eb592c6801dcb24813f3f21e23c">00269</a>     <span class="keywordtype">bool</span> <a class="code" href="struct__cmp__audio__info.html#a3a4b5eb592c6801dcb24813f3f21e23c">hasMulti</a>;
+<a name="l00270"></a><a class="code" href="struct__cmp__audio__info.html#a41b8d9c720c5b7850d09167a188834f6">00270</a>     <span class="keywordtype">bool</span> <a class="code" href="struct__cmp__audio__info.html#a41b8d9c720c5b7850d09167a188834f6">hasCallback</a>;
+<a name="l00271"></a>00271 } <a class="code" href="_pd_link_8h.html#a6dfb84d0c4c74fc07153deac0b400570">t_cmp_audio_info</a>;
+<a name="l00272"></a>00272 
+<a name="l00273"></a>00273 <a class="code" href="struct__cmp__audio__info.html">t_cmp_audio_info</a> <a class="code" href="_pd_link_8h.html#a43ae3195ceb778e536547297dd13a5a7">cmp_get_audio_device_info</a>();
+<a name="l00274"></a>00274 <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="code" href="_pd_link_8h.html#a1c1f679912fa18aaed166b3e863408c0">cmp_get_audio_apis</a>();
 <a name="l00275"></a>00275 
-<a name="l00276"></a>00276 <a class="code" href="struct__cmp__audio__info.html">t_cmp_audio_info</a> <a class="code" href="_pd_link_8h.html#a43ae3195ceb778e536547297dd13a5a7">cmp_get_audio_device_info</a>();
-<a name="l00277"></a>00277 <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="code" href="_pd_link_8h.html#a1c1f679912fa18aaed166b3e863408c0">cmp_get_audio_apis</a>();
-<a name="l00278"></a>00278 
-<a name="l00279"></a>00279 <span class="preprocessor">#endif // CM_PDLINK_H</span>
+<a name="l00276"></a>00276 <span class="preprocessor">#endif // CM_PDLINK_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -219,7 +216,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 8 2017 22:32:14 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 8 2017 22:56:51 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
