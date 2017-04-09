@@ -98,7 +98,7 @@ Classes</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#aef7ba73145c14cf0ffca487d734e38f0">t_updateUI</a> )(void *uiobj, <a class="el" href="classceammc_1_1_atom_list.html">ceammc::AtomList</a> msg)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">callback function when UI needs update  <a href="#aef7ba73145c14cf0ffca487d734e38f0"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a60e4f3209d8f267b0aa06105b0b1a4ff">t_printhook</a> )(const char *<a class="el" href="stringobject_8h.html#ad912d811fca4c9cfee37905bed81eb65">s</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a60e4f3209d8f267b0aa06105b0b1a4ff">t_printhook</a> )(const char *s)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__cmp__audio__info.html">_cmp_audio_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a6dfb84d0c4c74fc07153deac0b400570">t_cmp_audio_info</a></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -106,15 +106,15 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">initializes pd library  <a href="#a0a5eb98f82b947afc8ae05735839e8f3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#ac9fb723d2c58a1e062720cc19e199e08">cmp_setprinthook</a> (<a class="el" href="_pd_link_8h.html#a60e4f3209d8f267b0aa06105b0b1a4ff">t_printhook</a> h)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">connects to print hook function  <a href="#ac9fb723d2c58a1e062720cc19e199e08"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a9c262afca5a4a5dbd071785c5e0e4934">cmp_add_searchpath</a> (<a class="el" href="m__pd_8h.html#a2db18d99dc6ea00736f0a356270160ba">t_symbol</a> *<a class="el" href="stringobject_8h.html#ad912d811fca4c9cfee37905bed81eb65">s</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a9c262afca5a4a5dbd071785c5e0e4934">cmp_add_searchpath</a> (<a class="el" href="m__pd_8h.html#a2db18d99dc6ea00736f0a356270160ba">t_symbol</a> *s)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">add search path to pd engine  <a href="#a9c262afca5a4a5dbd071785c5e0e4934"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#aafe79912613d343ac3ccc77d6bfe4cee">cmp_remove_searchpath</a> (<a class="el" href="m__pd_8h.html#a2db18d99dc6ea00736f0a356270160ba">t_symbol</a> *<a class="el" href="stringobject_8h.html#ad912d811fca4c9cfee37905bed81eb65">s</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#aafe79912613d343ac3ccc77d6bfe4cee">cmp_remove_searchpath</a> (<a class="el" href="m__pd_8h.html#a2db18d99dc6ea00736f0a356270160ba">t_symbol</a> *s)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">remove search path from pd engine  <a href="#aafe79912613d343ac3ccc77d6bfe4cee"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#aea508db13aae6fcc69f650483ad167f8">cmp_clear_searchpath</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">clear search paths  <a href="#aea508db13aae6fcc69f650483ad167f8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classceammc_1_1_atom_list.html">ceammc::AtomList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#af6924c7bfc9cdfe2a254ff5cf4107925">cmp_get_loaded_list</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns list of loaded externals  <a href="#af6924c7bfc9cdfe2a254ff5cf4107925"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a8918f6f28b214d15300a46588fa21d78">cmp_loadlib</a> (<a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> lib)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a8918f6f28b214d15300a46588fa21d78">cmp_loadlib</a> (std::string lib)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">load external  <a href="#a8918f6f28b214d15300a46588fa21d78"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#aaa3daab402dd07f9fd7633395859df01">cmp_newpatch</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates new t_canvas  <a href="#aaa3daab402dd07f9fd7633395859df01"></a><br/></td></tr>
@@ -124,49 +124,49 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">saves canvas as pd file  <a href="#ab0f0e50abffd603051b47240f7dcd04c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#af08cbd72d5b239361a801b4b67247a9c">cmp_closepatch</a> (<a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *canvas)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">closes and frees the canvas  <a href="#af08cbd72d5b239361a801b4b67247a9c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a07f6ff68bd0cb426f07d1b6a39802d0a">cmp_is_abstraction</a> (<a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *<a class="el" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a07f6ff68bd0cb426f07d1b6a39802d0a">cmp_is_abstraction</a> (<a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *x)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">check if canvas is an abstraction  <a href="#a07f6ff68bd0cb426f07d1b6a39802d0a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="m__pd_8h.html#a2db18d99dc6ea00736f0a356270160ba">t_symbol</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a2d470024af8372a5d62837ec4afff6b6">cmp_get_path</a> (<a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *c)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get canvas dir if it is an abstraction  <a href="#a2d470024af8372a5d62837ec4afff6b6"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a2c0a0d9150791897b85a167998ecf7c2">cmp_create_object</a> (<a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *canvas, <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> class_name, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> y)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a2c0a0d9150791897b85a167998ecf7c2">cmp_create_object</a> (<a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *canvas, std::string class_name, int x, int y)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates pd object  <a href="#a2c0a0d9150791897b85a167998ecf7c2"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a89dd190ed6863563fcecc6c9001a0f1c">cmp_moveobject</a> (<a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> y)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a89dd190ed6863563fcecc6c9001a0f1c">cmp_moveobject</a> (<a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *obj, int x, int y)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates pd message TODO not working now  <a href="#a89dd190ed6863563fcecc6c9001a0f1c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a69094de48546687863d38bc9d3689993">cmp_deleteobject</a> (<a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *canvas, <a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a69094de48546687863d38bc9d3689993">cmp_deleteobject</a> (<a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *canvas, <a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete pd object  <a href="#a69094de48546687863d38bc9d3689993"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a6d06b5d8cde66b3cada1fe52a6e5ac83">cmp_patchcord</a> (<a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *obj1, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> outno, <a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *obj2, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> inno)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a6d06b5d8cde66b3cada1fe52a6e5ac83">cmp_patchcord</a> (<a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *obj1, int outno, <a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *obj2, int inno)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">new patchcord  <a href="#a6d06b5d8cde66b3cada1fe52a6e5ac83"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a3b0a14ab77137204a0f68e45f45e92c8">cmp_delete_patchcord</a> (<a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *obj1, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> outno, <a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *obj2, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> inno)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a3b0a14ab77137204a0f68e45f45e92c8">cmp_delete_patchcord</a> (<a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *obj1, int outno, <a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *obj2, int inno)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete patchcord  <a href="#a3b0a14ab77137204a0f68e45f45e92c8"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a7fcb3388b050e30e14b731b7288a7f76">cmp_get_inlet_count</a> (<a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a7fcb3388b050e30e14b731b7288a7f76">cmp_get_inlet_count</a> (<a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get number of inlets for object  <a href="#a7fcb3388b050e30e14b731b7288a7f76"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a680a1380d6950cd336b5631b3d3a7737">cmp_get_outlet_count</a> (<a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a680a1380d6950cd336b5631b3d3a7737">cmp_get_outlet_count</a> (<a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get number of outlets for object  <a href="#a680a1380d6950cd336b5631b3d3a7737"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="m__pd_8h.html#a9cce84dada7a58c1b60ee4b8964445fe">t_inlet</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a6addb68a89aff1b8fc456512c3c16ad6">cmp_get_inlet</a> (<a class="el" href="m__pd_8h.html#a9cce84dada7a58c1b60ee4b8964445fe">t_inlet</a> *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> idx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="m__pd_8h.html#a9cce84dada7a58c1b60ee4b8964445fe">t_inlet</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a6addb68a89aff1b8fc456512c3c16ad6">cmp_get_inlet</a> (<a class="el" href="m__pd_8h.html#a9cce84dada7a58c1b60ee4b8964445fe">t_inlet</a> *obj, int idx)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns inlet at specified index for the object  <a href="#a6addb68a89aff1b8fc456512c3c16ad6"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="m__pd_8h.html#a46dc692dc9e70ff60679462933409d90">t_outlet</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a1ff80e9a26929bd3d128af0d3f19773c">cmp_get_outlet</a> (<a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> idx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="m__pd_8h.html#a46dc692dc9e70ff60679462933409d90">t_outlet</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a1ff80e9a26929bd3d128af0d3f19773c">cmp_get_outlet</a> (<a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *obj, int idx)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns outlet at specified index for the object  <a href="#a1ff80e9a26929bd3d128af0d3f19773c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#afdf250ff92087538d026d24b87d66cec">cmp_get_inlet_type</a> (<a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> idx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#afdf250ff92087538d026d24b87d66cec">cmp_get_inlet_type</a> (<a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *obj, int idx)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">check if inlet is signal~  <a href="#afdf250ff92087538d026d24b87d66cec"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a4f45abf6ebba2aeed6853269919dc1c9">cmp_get_outlet_type</a> (<a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> idx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a4f45abf6ebba2aeed6853269919dc1c9">cmp_get_outlet_type</a> (<a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *obj, int idx)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">check if outlet is signal~  <a href="#a4f45abf6ebba2aeed6853269919dc1c9"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a0f1f4951cf99dff0634789791dcde1ba">cmp_switch_dsp</a> (<a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a> on)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a0f1f4951cf99dff0634789791dcde1ba">cmp_switch_dsp</a> (bool on)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">switch dsp on or off  <a href="#a0f1f4951cf99dff0634789791dcde1ba"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a9bca4af04ea4fac6b910933e5ba16814">cmp_sendstring</a> (<a class="el" href="m__pd_8h.html#ac085bef486c0e262349075ffce8a9752">t_pd</a> *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a9bca4af04ea4fac6b910933e5ba16814">cmp_sendstring</a> (<a class="el" href="m__pd_8h.html#ac085bef486c0e262349075ffce8a9752">t_pd</a> *obj, std::string msg)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">send string as pd message to object  <a href="#a9bca4af04ea4fac6b910933e5ba16814"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a9b4bef98ca39e6d157ee073b5139ae9d">cmp_connectUI</a> (<a class="el" href="m__pd_8h.html#ac085bef486c0e262349075ffce8a9752">t_pd</a> *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, void *uiobj, <a class="el" href="_pd_link_8h.html#aef7ba73145c14cf0ffca487d734e38f0">t_updateUI</a> func)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a9b4bef98ca39e6d157ee073b5139ae9d">cmp_connectUI</a> (<a class="el" href="m__pd_8h.html#ac085bef486c0e262349075ffce8a9752">t_pd</a> *obj, void *uiobj, <a class="el" href="_pd_link_8h.html#aef7ba73145c14cf0ffca487d734e38f0">t_updateUI</a> func)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">set the 'repaint' function of the ui object to be accessible from pd object  <a href="#a9b4bef98ca39e6d157ee073b5139ae9d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a766e12f26830eee9deae0fe8e9f70535">cmp_post</a> (<a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> text)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a766e12f26830eee9deae0fe8e9f70535">cmp_post</a> (std::string text)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">post plain text to Pd window  <a href="#a766e12f26830eee9deae0fe8e9f70535"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a1d2cd6f5f314f952bd32974edefd0962">cmp_set_verbose</a> (<a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="floatobject_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a1d2cd6f5f314f952bd32974edefd0962">cmp_set_verbose</a> (int v)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">set verbose level (1..5)  <a href="#a1d2cd6f5f314f952bd32974edefd0962"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="m__pd_8h.html#ac071d0f7a80e8bdaf1a3e9dc977d03b8">t_garray</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#ae720f59bd81a99a5fc06fa7d33b1115c">cmp_get_array</a> (<a class="el" href="m__pd_8h.html#a2db18d99dc6ea00736f0a356270160ba">t_symbol</a> *arrayname)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a57415e8e6074a693dd767aae59b97c40">cmp_get_array_data</a> (<a class="el" href="m__pd_8h.html#ac071d0f7a80e8bdaf1a3e9dc977d03b8">t_garray</a> *a, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> *<a class="el" href="stringobject_8h.html#a612c27dae5681d14a5d92d0b3d8ab6e5">size</a>, <a class="el" href="m__pd_8h.html#a8967c5ba87b9455fd29726f7794235d2">t_word</a> **vec)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a35a55a7ec4f3ad40cb34a78dd447b7fc">cmp_get_array_size</a> (<a class="el" href="m__pd_8h.html#ac071d0f7a80e8bdaf1a3e9dc977d03b8">t_garray</a> *a)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="m__pd_8h.html#ac071d0f7a80e8bdaf1a3e9dc977d03b8">t_garray</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a5e3a540ebc4655748e2c87cabd76213c">cmp_new_array</a> (<a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *c, <a class="el" href="m__pd_8h.html#a2db18d99dc6ea00736f0a356270160ba">t_symbol</a> *<a class="el" href="_python_8h.html#ab3978d96531ad97f1c3139b11f771f98">name</a>, <a class="el" href="m__pd_8h.html#ab66b7dff3a7346586dc6f918e9a594af">t_floatarg</a> <a class="el" href="stringobject_8h.html#a612c27dae5681d14a5d92d0b3d8ab6e5">size</a>, <a class="el" href="m__pd_8h.html#ab66b7dff3a7346586dc6f918e9a594af">t_floatarg</a> save, <a class="el" href="m__pd_8h.html#ab66b7dff3a7346586dc6f918e9a594af">t_floatarg</a> newgraph)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a57415e8e6074a693dd767aae59b97c40">cmp_get_array_data</a> (<a class="el" href="m__pd_8h.html#ac071d0f7a80e8bdaf1a3e9dc977d03b8">t_garray</a> *a, int *size, <a class="el" href="m__pd_8h.html#a8967c5ba87b9455fd29726f7794235d2">t_word</a> **vec)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a35a55a7ec4f3ad40cb34a78dd447b7fc">cmp_get_array_size</a> (<a class="el" href="m__pd_8h.html#ac071d0f7a80e8bdaf1a3e9dc977d03b8">t_garray</a> *a)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="m__pd_8h.html#ac071d0f7a80e8bdaf1a3e9dc977d03b8">t_garray</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a5e3a540ebc4655748e2c87cabd76213c">cmp_new_array</a> (<a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *c, <a class="el" href="m__pd_8h.html#a2db18d99dc6ea00736f0a356270160ba">t_symbol</a> *name, <a class="el" href="m__pd_8h.html#ab66b7dff3a7346586dc6f918e9a594af">t_floatarg</a> size, <a class="el" href="m__pd_8h.html#ab66b7dff3a7346586dc6f918e9a594af">t_floatarg</a> save, <a class="el" href="m__pd_8h.html#ab66b7dff3a7346586dc6f918e9a594af">t_floatarg</a> newgraph)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="m__pd_8h.html#a77366c1bd428629dc898e188bfd182a3">EXTERN</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a8a20b999b802c71b229de8a524283645">cmp_loadbang</a> (<a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *canvas)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_pd_link_8h.html#a6dfb84d0c4c74fc07153deac0b400570">t_cmp_audio_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a43ae3195ceb778e536547297dd13a5a7">cmp_get_audio_device_info</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a1c1f679912fa18aaed166b3e863408c0">cmp_get_audio_apis</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a1c1f679912fa18aaed166b3e863408c0">cmp_get_audio_apis</a> ()</td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
 <a class="anchor" id="a6dfb84d0c4c74fc07153deac0b400570"></a><!-- doxytag: member="PdLink.h::t_cmp_audio_info" ref="a6dfb84d0c4c74fc07153deac0b400570" args="" -->
@@ -187,7 +187,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(* <a class="el" href="_pd_link_8h.html#a60e4f3209d8f267b0aa06105b0b1a4ff">t_printhook</a>)(const char *<a class="el" href="stringobject_8h.html#ad912d811fca4c9cfee37905bed81eb65">s</a>)</td>
+          <td class="memname">typedef void(* <a class="el" href="_pd_link_8h.html#a60e4f3209d8f267b0aa06105b0b1a4ff">t_printhook</a>)(const char *s)</td>
         </tr>
       </table>
 </div>
@@ -336,19 +336,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td>
+          <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>class_name</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>x</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>y</em>&#160;</td>
         </tr>
         <tr>
@@ -387,7 +387,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>outno</em>, </td>
         </tr>
         <tr>
@@ -399,7 +399,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>inno</em>&#160;</td>
         </tr>
         <tr>
@@ -490,7 +490,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> *&#160;</td>
+          <td class="paramtype">int *&#160;</td>
           <td class="paramname"><em>size</em>, </td>
         </tr>
         <tr>
@@ -515,7 +515,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="_pd_link_8h.html#a35a55a7ec4f3ad40cb34a78dd447b7fc">cmp_get_array_size</a> </td>
+          <td class="memname">int <a class="el" href="_pd_link_8h.html#a35a55a7ec4f3ad40cb34a78dd447b7fc">cmp_get_array_size</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="m__pd_8h.html#ac071d0f7a80e8bdaf1a3e9dc977d03b8">t_garray</a> *&#160;</td>
           <td class="paramname"><em>a</em></td><td>)</td>
@@ -532,7 +532,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="el" href="_pd_link_8h.html#a1c1f679912fa18aaed166b3e863408c0">cmp_get_audio_apis</a> </td>
+          <td class="memname">std::string <a class="el" href="_pd_link_8h.html#a1c1f679912fa18aaed166b3e863408c0">cmp_get_audio_apis</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -572,7 +572,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>idx</em>&#160;</td>
         </tr>
         <tr>
@@ -601,7 +601,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="_pd_link_8h.html#a7fcb3388b050e30e14b731b7288a7f76">cmp_get_inlet_count</a> </td>
+          <td class="memname">int <a class="el" href="_pd_link_8h.html#a7fcb3388b050e30e14b731b7288a7f76">cmp_get_inlet_count</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
@@ -627,7 +627,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="_pd_link_8h.html#afdf250ff92087538d026d24b87d66cec">cmp_get_inlet_type</a> </td>
+          <td class="memname">int <a class="el" href="_pd_link_8h.html#afdf250ff92087538d026d24b87d66cec">cmp_get_inlet_type</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -635,7 +635,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>idx</em>&#160;</td>
         </tr>
         <tr>
@@ -691,7 +691,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>idx</em>&#160;</td>
         </tr>
         <tr>
@@ -720,7 +720,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="_pd_link_8h.html#a680a1380d6950cd336b5631b3d3a7737">cmp_get_outlet_count</a> </td>
+          <td class="memname">int <a class="el" href="_pd_link_8h.html#a680a1380d6950cd336b5631b3d3a7737">cmp_get_outlet_count</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
@@ -746,7 +746,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="_pd_link_8h.html#a4f45abf6ebba2aeed6853269919dc1c9">cmp_get_outlet_type</a> </td>
+          <td class="memname">int <a class="el" href="_pd_link_8h.html#a4f45abf6ebba2aeed6853269919dc1c9">cmp_get_outlet_type</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -754,7 +754,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>idx</em>&#160;</td>
         </tr>
         <tr>
@@ -802,7 +802,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a> <a class="el" href="_pd_link_8h.html#a07f6ff68bd0cb426f07d1b6a39802d0a">cmp_is_abstraction</a> </td>
+          <td class="memname">bool <a class="el" href="_pd_link_8h.html#a07f6ff68bd0cb426f07d1b6a39802d0a">cmp_is_abstraction</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="m__pd_8h.html#ad7f403f6e266b9c78b530883e1d0d60e">t_object</a> *&#160;</td>
           <td class="paramname"><em>x</em></td><td>)</td>
@@ -840,7 +840,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void <a class="el" href="_pd_link_8h.html#a8918f6f28b214d15300a46588fa21d78">cmp_loadlib</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td>
+          <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>lib</em></td><td>)</td>
           <td></td>
         </tr>
@@ -867,13 +867,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>x</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>y</em>&#160;</td>
         </tr>
         <tr>
@@ -1024,7 +1024,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>outno</em>, </td>
         </tr>
         <tr>
@@ -1036,7 +1036,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>inno</em>&#160;</td>
         </tr>
         <tr>
@@ -1086,7 +1086,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void <a class="el" href="_pd_link_8h.html#a766e12f26830eee9deae0fe8e9f70535">cmp_post</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td>
+          <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>text</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1187,7 +1187,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td>
+          <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>msg</em>&#160;</td>
         </tr>
         <tr>
@@ -1217,7 +1217,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void <a class="el" href="_pd_link_8h.html#a1d2cd6f5f314f952bd32974edefd0962">cmp_set_verbose</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>v</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1267,7 +1267,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void <a class="el" href="_pd_link_8h.html#a0f1f4951cf99dff0634789791dcde1ba">cmp_switch_dsp</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>on</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1303,7 +1303,7 @@ Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 9 2017 10:15:14 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 9 2017 10:18:03 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

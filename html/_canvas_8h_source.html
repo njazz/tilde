@@ -156,10 +156,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00078"></a><a class="code" href="classqtpd_1_1_canvas.html#a917916d146f667b731b26c67cfd410be">00078</a>     <a class="code" href="classqtpd_1_1canvas_data_plus.html" title="shared canvas data -&gt; additional info (window title etc) TODO rename">canvasDataPlus</a>* <a class="code" href="classqtpd_1_1_canvas.html#a917916d146f667b731b26c67cfd410be">canvasData</a>() { <span class="keywordflow">return</span> &amp;_canvasData; }
 <a name="l00079"></a>00079 
 <a name="l00080"></a><a class="code" href="classqtpd_1_1_canvas.html#aa6b4a032d370f6ca85319752ad9fd0ab">00080</a>     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_canvas.html#aa6b4a032d370f6ca85319752ad9fd0ab">dragObject</a>() { <span class="keywordflow">return</span> _dragObject; }
-<a name="l00081"></a><a class="code" href="classqtpd_1_1_canvas.html#ab3219773f492389a433441a8471f112a">00081</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#ab3219773f492389a433441a8471f112a">setDragObject</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <span class="keywordtype">object</span>) { _dragObject = <a class="code" href="asdl_8h.html#a904fdf014f8cdbefe8320ca2bfd6daf6">object</a>; }
+<a name="l00081"></a><a class="code" href="classqtpd_1_1_canvas.html#ab3219773f492389a433441a8471f112a">00081</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#ab3219773f492389a433441a8471f112a">setDragObject</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <span class="keywordtype">object</span>) { _dragObject = object; }
 <a name="l00082"></a>00082 
 <a name="l00083"></a><a class="code" href="classqtpd_1_1_canvas.html#a43f3a275c9b0352360cfe1b0a3da7a07">00083</a>     QString <a class="code" href="classqtpd_1_1_canvas.html#a43f3a275c9b0352360cfe1b0a3da7a07">fileName</a>() { <span class="keywordflow">return</span> _fileName; }
-<a name="l00084"></a><a class="code" href="classqtpd_1_1_canvas.html#a941a81e4f7edd410f00356a0d1d11545">00084</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a941a81e4f7edd410f00356a0d1d11545">setFileName</a>(QString <span class="keywordtype">object</span>) { _fileName = <a class="code" href="asdl_8h.html#a904fdf014f8cdbefe8320ca2bfd6daf6">object</a>; }
+<a name="l00084"></a><a class="code" href="classqtpd_1_1_canvas.html#a941a81e4f7edd410f00356a0d1d11545">00084</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a941a81e4f7edd410f00356a0d1d11545">setFileName</a>(QString <span class="keywordtype">object</span>) { _fileName = object; }
 <a name="l00085"></a>00085 
 <a name="l00086"></a><a class="code" href="classqtpd_1_1_canvas.html#af0bf63bc7c808029a27c49e5f1872672">00086</a>     <a class="code" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a>* <a class="code" href="classqtpd_1_1_canvas.html#af0bf63bc7c808029a27c49e5f1872672">pdObject</a>() { <span class="keywordflow">return</span> _pdObject; }
 <a name="l00087"></a><a class="code" href="classqtpd_1_1_canvas.html#aa814e0dde3c68cc8d4518c0de4a18682">00087</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#aa814e0dde3c68cc8d4518c0de4a18682">setPdObject</a>(<a class="code" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a>* c) { _pdObject = c; }
@@ -170,11 +170,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00092"></a><a class="code" href="classqtpd_1_1_canvas.html#a6c79bf2245f121689f057b611e756e66">00092</a>     <span class="keyword">virtual</span> <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a" title="edit mode types">t_editMode</a> <a class="code" href="classqtpd_1_1_canvas.html#a6c79bf2245f121689f057b611e756e66">getEditMode</a>() { <span class="keywordflow">return</span> _canvasEditMode; }
 <a name="l00093"></a><a class="code" href="classqtpd_1_1_canvas.html#a41b33207796bdff56a44dd904d533541">00093</a>     <span class="keyword">virtual</span> <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a" title="edit mode types">t_editMode</a>* <a class="code" href="classqtpd_1_1_canvas.html#a41b33207796bdff56a44dd904d533541">getEditModeRef</a>() { <span class="keywordflow">return</span> &amp;_canvasEditMode; }
 <a name="l00094"></a>00094 
-<a name="l00095"></a>00095     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a0c032dbe358e3b444920fe8fa3eac002">setEditMode</a>(<a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a" title="edit mode types">t_editMode</a> <a class="code" href="dtoa_8h.html#a1ea5d0cb93f22f7d0fdf804bd68c3326">mode</a>);
+<a name="l00095"></a>00095     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a0c032dbe358e3b444920fe8fa3eac002">setEditMode</a>(<a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a" title="edit mode types">t_editMode</a> mode);
 <a name="l00096"></a>00096     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#ab7a119de1e6406317bbcceca17fee5ed">setGridEnabled</a>(<span class="keywordtype">bool</span> val);
 <a name="l00097"></a>00097     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#ad6a8a14cfe6188f0cc5f14a675d36708">setGridSnap</a>(<span class="keywordtype">bool</span> val);
 <a name="l00098"></a>00098 
-<a name="l00099"></a><a class="code" href="classqtpd_1_1_canvas.html#aeb58d4bf39cdaad87ec7731d53b76232">00099</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#aeb58d4bf39cdaad87ec7731d53b76232">setKeepPdObject</a>(<span class="keywordtype">bool</span> <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>) { _keepPdObject = <a class="code" href="abstract_8h.html#a3b90d5a73541ab9402511d87bed076ef">v</a>; }
+<a name="l00099"></a><a class="code" href="classqtpd_1_1_canvas.html#aeb58d4bf39cdaad87ec7731d53b76232">00099</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#aeb58d4bf39cdaad87ec7731d53b76232">setKeepPdObject</a>(<span class="keywordtype">bool</span> v) { _keepPdObject = v; }
 <a name="l00100"></a><a class="code" href="classqtpd_1_1_canvas.html#aee47f4a858edcbed48d43b04e635cbfa">00100</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_canvas.html#aee47f4a858edcbed48d43b04e635cbfa">keepPdObject</a>() { <span class="keywordflow">return</span> _keepPdObject; }
 <a name="l00101"></a>00101 
 <a name="l00102"></a><a class="code" href="classqtpd_1_1_canvas.html#af5533a4b8089cbab1df4479bf822300f">00102</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#af5533a4b8089cbab1df4479bf822300f">setReadOnly</a>(<span class="keywordtype">bool</span> val)
@@ -200,7 +200,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00126"></a>00126 
 <a name="l00127"></a>00127     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a6f214384132cb1974a1145daece8e7da">setWindowSize</a>(QSize wsize);
 <a name="l00128"></a>00128 
-<a name="l00129"></a>00129     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a3687104c5241626dccbc5fbfb776d3ac">setReplaceObject</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>); 
+<a name="l00129"></a>00129     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a3687104c5241626dccbc5fbfb776d3ac">setReplaceObject</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* obj); 
 <a name="l00130"></a>00130     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_canvas.html#afea3dc7e1059147e6a4ad6e49e5664c0" title="&gt;sets &#39;replaceobject&#39; pointer">replaceObject</a>();
 <a name="l00131"></a>00131 
 <a name="l00134"></a>00134     <span class="comment">// -------------------------------------------------------</span>
@@ -221,15 +221,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00154"></a>00154     <span class="comment">// -------------------------------------------------------</span>
 <a name="l00155"></a>00155 
 <a name="l00159"></a>00159 
-<a name="l00166"></a>00166     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_canvas.html#a79a95c8206119def155047a35253fa9c" title="prototype for universal object &#39;constructor&#39;">createObject</a>(QString objectData1, QPoint <a class="code" href="dictobject_8h.html#acae77df04bfdd60d1017f4132729ddc6">pos</a>);
+<a name="l00166"></a>00166     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_canvas.html#a79a95c8206119def155047a35253fa9c" title="prototype for universal object &#39;constructor&#39;">createObject</a>(QString objectData1, QPoint pos);
 <a name="l00167"></a>00167 
-<a name="l00175"></a>00175     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_canvas.html#a3f892cfa35860f7c752751fb85ab87b0" title="create object box for subpatch (when loaded from file)">createBoxForPatchWindow</a>(QMainWindow* patchWindow, QString objectData, QPoint <a class="code" href="dictobject_8h.html#acae77df04bfdd60d1017f4132729ddc6">pos</a>);
+<a name="l00175"></a>00175     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_canvas.html#a3f892cfa35860f7c752751fb85ab87b0" title="create object box for subpatch (when loaded from file)">createBoxForPatchWindow</a>(QMainWindow* patchWindow, QString objectData, QPoint pos);
 <a name="l00176"></a>00176 
 <a name="l00184"></a>00184     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a3625736a403310d179fe0738156e572f" title="creates patchcord">patchcord</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* obj1, <span class="keywordtype">int</span> outlet, <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* obj2, <span class="keywordtype">int</span> inlet);
 <a name="l00185"></a>00185 
 <a name="l00193"></a>00193     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a3625736a403310d179fe0738156e572f" title="creates patchcord">patchcord</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* obj1, <a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* outport, <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* obj2, <a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* inport);
 <a name="l00194"></a>00194 
-<a name="l00199"></a>00199     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a3acb20ed7949140e54e4055ba7dd3213" title="delete all patchcords for object">deletePatchcordsFor</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>);
+<a name="l00199"></a>00199     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a3acb20ed7949140e54e4055ba7dd3213" title="delete all patchcords for object">deletePatchcordsFor</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* obj);
 <a name="l00200"></a>00200 
 <a name="l00204"></a>00204     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a54ae5b1d5352bcce723481073db40647" title="delete single box">deleteBox</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* box);
 <a name="l00205"></a>00205 
@@ -249,17 +249,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00244"></a>00244 
 <a name="l00249"></a>00249     <a class="code" href="namespaceqtpd.html#a81f1e9d2a3767de39a2b30057b599854">patchcordVec</a> <a class="code" href="classqtpd_1_1_canvas.html#ab65347f342876b25cc85bc6652013617" title="returns vector of selected patchcords">selectedPatchcords</a>();
 <a name="l00250"></a>00250 
-<a name="l00256"></a>00256     <a class="code" href="namespaceqtpd.html#a81f1e9d2a3767de39a2b30057b599854">patchcordVec</a> <a class="code" href="classqtpd_1_1_canvas.html#a7b66a4916b7f6b5bf9c6b3e5ad780976" title="returns patchcords that are connected to specific object">patchcordsForObject</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>);
+<a name="l00256"></a>00256     <a class="code" href="namespaceqtpd.html#a81f1e9d2a3767de39a2b30057b599854">patchcordVec</a> <a class="code" href="classqtpd_1_1_canvas.html#a7b66a4916b7f6b5bf9c6b3e5ad780976" title="returns patchcords that are connected to specific object">patchcordsForObject</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* obj);
 <a name="l00257"></a>00257 
-<a name="l00264"></a>00264     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_canvas.html#a2168110e781257d16b176086714a4921" title="find object index in list">findObjectIndex</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>);
+<a name="l00264"></a>00264     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_canvas.html#a2168110e781257d16b176086714a4921" title="find object index in list">findObjectIndex</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* obj);
 <a name="l00265"></a>00265 
-<a name="l00270"></a>00270     <span class="keyword">virtual</span> <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="code" href="classqtpd_1_1_canvas.html#a76e63b8ae387b95094bec26fbc721730" title="this returns &quot;restore ...&quot; for canvas as box or calls filesaver for canvas">asPdFileString</a>();
+<a name="l00270"></a>00270     <span class="keyword">virtual</span> std::string <a class="code" href="classqtpd_1_1_canvas.html#a76e63b8ae387b95094bec26fbc721730" title="this returns &quot;restore ...&quot; for canvas as box or calls filesaver for canvas">asPdFileString</a>();
 <a name="l00271"></a>00271 
-<a name="l00280"></a>00280     <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="code" href="classqtpd_1_1_canvas.html#a057d349fb3b1c6143219a53223baa460" title="returns patchcord as pd string">patchcordAsPdFileString</a>(<a class="code" href="classqtpd_1_1_patchcord.html" title="Patchcord QGraphicsObject class.">Patchcord</a>* pcord);
+<a name="l00280"></a>00280     std::string <a class="code" href="classqtpd_1_1_canvas.html#a057d349fb3b1c6143219a53223baa460" title="returns patchcord as pd string">patchcordAsPdFileString</a>(<a class="code" href="classqtpd_1_1_patchcord.html" title="Patchcord QGraphicsObject class.">Patchcord</a>* pcord);
 <a name="l00281"></a>00281 
 <a name="l00288"></a>00288     <a class="code" href="structqtpd_1_1struct_patchcord_numbers__.html" title="patchcord as numbers">structPatchcordNumbers</a> <a class="code" href="classqtpd_1_1_canvas.html#a95d57b6df49669c45bd5728c25709ffd" title="converts UI patchcord object with 4 pointers to 4 numbers of objects in canvas">patchcordAsNumbers</a>(<a class="code" href="classqtpd_1_1_patchcord.html" title="Patchcord QGraphicsObject class.">Patchcord</a>* pcord);
 <a name="l00289"></a>00289 
-<a name="l00294"></a>00294     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a18731398b2b475020f5b3aecb4ae70d5" title="selects single box. mostly used by replace object routine in objectmaker">selectObject</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>);
+<a name="l00294"></a>00294     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a18731398b2b475020f5b3aecb4ae70d5" title="selects single box. mostly used by replace object routine in objectmaker">selectObject</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* obj);
 <a name="l00295"></a>00295 
 <a name="l00299"></a>00299     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a8e5778d7d39d203aba3ab6886a76b4c8" title="select all boxes">selectAll</a>();
 <a name="l00300"></a>00300 
@@ -292,15 +292,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00359"></a>00359 
 <a name="l00360"></a><a class="code" href="classqtpd_1_1_canvas.html#a95fa81d1acd6e124ec4b4a026ae61d4e">00360</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a95fa81d1acd6e124ec4b4a026ae61d4e">resizeEvent</a>(QResizeEvent*)
 <a name="l00361"></a>00361     {
-<a name="l00362"></a>00362         _grid-&gt;<a class="code" href="classqtpd_1_1_u_i_item.html#ad04bc59adbae89c02f35f69685e15662">setSize</a>(<a class="code" href="bufferobject_8h.html#a612c27dae5681d14a5d92d0b3d8ab6e5">size</a>());
+<a name="l00362"></a>00362         _grid-&gt;<a class="code" href="classqtpd_1_1_u_i_item.html#ad04bc59adbae89c02f35f69685e15662">setSize</a>(size());
 <a name="l00363"></a>00363         _grid-&gt;<a class="code" href="classqtpd_1_1_u_i_item.html#a5a7a2c46ce27ed5cde4d56f027b60d9a">move</a>(0, 0);
 <a name="l00364"></a>00364     }
 <a name="l00365"></a>00365 
 <a name="l00366"></a>00366 <span class="keyword">public</span> slots:
 <a name="l00367"></a>00367 
-<a name="l00368"></a>00368     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#ac04c9b64019e81a07796ca8ffa5bb0d8">s_InMousePressed</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, QGraphicsSceneMouseEvent* ev);
+<a name="l00368"></a>00368     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#ac04c9b64019e81a07796ca8ffa5bb0d8">s_InMousePressed</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* obj, QGraphicsSceneMouseEvent* ev);
 <a name="l00369"></a>00369     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a835ac5fd0255970942d87a9b817b0e19">s_InMouseReleased</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>*, QGraphicsSceneMouseEvent*);
-<a name="l00370"></a>00370     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#ac989e6a21f501ac78bac254a977bd424">s_OutMousePressed</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, QGraphicsSceneMouseEvent*);
+<a name="l00370"></a>00370     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#ac989e6a21f501ac78bac254a977bd424">s_OutMousePressed</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* obj, QGraphicsSceneMouseEvent*);
 <a name="l00371"></a>00371     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas.html#a2956abcf442bae7e5b54642c6929aba1">s_OutMouseReleased</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>*, QGraphicsSceneMouseEvent*);
 <a name="l00372"></a>00372 
 <a name="l00373"></a>00373 <span class="keyword">private</span>:
@@ -308,7 +308,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00375"></a>00375 
 <a name="l00379"></a>00379     <span class="keywordtype">void</span> portCountUpdated();
 <a name="l00380"></a>00380 
-<a name="l00386"></a>00386     <span class="keywordtype">void</span> objectStartsEdit(<span class="keywordtype">void</span>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>);
+<a name="l00386"></a>00386     <span class="keywordtype">void</span> objectStartsEdit(<span class="keywordtype">void</span>* obj);
 <a name="l00387"></a>00387 
 <a name="l00388"></a>00388 signals:
 <a name="l00389"></a>00389     std::pair&lt;QMainWindow*, qtpd::UIObject*&gt; <a class="code" href="classqtpd_1_1_canvas.html#a668fd9ec6a0ed858bf2e89bef7928d7b">createSubpatchWindow</a>();
@@ -335,7 +335,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 9 2017 10:15:14 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 9 2017 10:18:03 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

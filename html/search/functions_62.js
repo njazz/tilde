@@ -25,12 +25,9 @@ var searchData=
   ['binbuf_5frestore',['binbuf_restore',['../m__pd_8h.html#a237d44b667cf26ec0909eb54bf8f3ab9',1,'m_pd.h']]],
   ['binbuf_5ftext',['binbuf_text',['../m__pd_8h.html#aef348b4a593ebd7d02e6bda61dbb0604',1,'m_pd.h']]],
   ['binbuf_5fwrite',['binbuf_write',['../m__pd_8h.html#aacb6016dcafbb9b7c5547dd0f13bf6b2',1,'m_pd.h']]],
-  ['bmobj_5fconvert',['BMObj_Convert',['../pymactoolbox_8h.html#affb5717b6287839ccb16b86ad09ab5d4',1,'pymactoolbox.h']]],
-  ['bmobj_5fnew',['BMObj_New',['../pymactoolbox_8h.html#aaef98b94460929b046c1e3ffa3727508',1,'pymactoolbox.h']]],
   ['boundingrect',['boundingRect',['../classqtpd_1_1_u_i_item.html#a0a8d5299d5a0a2ebcef2135913bc97da',1,'qtpd::UIItem']]],
   ['boxes',['boxes',['../classqtpd_1_1canvas_data.html#af51df2db77a9f420a6997ef3088765ca',1,'qtpd::canvasData']]],
   ['boxesaspdfilestrings',['boxesAsPdFileStrings',['../classqtpd_1_1canvas_data.html#a6c1895ba4137131baf314f8384cd269f',1,'qtpd::canvasData']]],
   ['btnrun',['btnRun',['../classqtpd_1_1_u_i_script.html#a707172a196120191b1d3fff972e2d040',1,'qtpd::UIScript::btnRun()'],['../classqtpd_1_1_u_i_script_box.html#a17b91d2630014bacdd87db4b6064eb65',1,'qtpd::UIScriptBox::btnRun()']]],
-  ['bug',['bug',['../m__pd_8h.html#a3e4d99cc272e4a5cb21332f8bda27ec8',1,'m_pd.h']]],
-  ['builddynamicmetaobject',['buildDynamicMetaObject',['../class_python_qt_private.html#a994e5a1ab2208a03fd499143a66127f2',1,'PythonQtPrivate']]]
+  ['bug',['bug',['../m__pd_8h.html#a3e4d99cc272e4a5cb21332f8bda27ec8',1,'m_pd.h']]]
 ];

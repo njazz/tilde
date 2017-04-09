@@ -147,9 +147,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00084"></a><a class="code" href="classqtpd_1_1_u_i_item.html#a0a8d5299d5a0a2ebcef2135913bc97da">00084</a>     QRectF <a class="code" href="classqtpd_1_1_u_i_item.html#a0a8d5299d5a0a2ebcef2135913bc97da">boundingRect</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> QRectF(0, 0, _size.width(), _size.height()); }
 <a name="l00085"></a>00085     QPainterPath <a class="code" href="classqtpd_1_1_u_i_item.html#ab43146d2c78f8912b609a84fe1d5d9e0">shape</a>() <span class="keyword">const</span>;
 <a name="l00086"></a>00086 
-<a name="l00089"></a>00089     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#a5a7a2c46ce27ed5cde4d56f027b60d9a">move</a>(<span class="keywordtype">float</span> <a class="code" href="stringobject_8h.html#a280f2393c503127fff91ecbc558e288d">x</a>, <span class="keywordtype">float</span> y);
-<a name="l00090"></a>00090     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#a5a7a2c46ce27ed5cde4d56f027b60d9a">move</a>(QPoint <a class="code" href="dictobject_8h.html#acae77df04bfdd60d1017f4132729ddc6">pos</a>);
-<a name="l00091"></a>00091     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#a5a7a2c46ce27ed5cde4d56f027b60d9a">move</a>(QPointF <a class="code" href="dictobject_8h.html#acae77df04bfdd60d1017f4132729ddc6">pos</a>);
+<a name="l00089"></a>00089     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#a5a7a2c46ce27ed5cde4d56f027b60d9a">move</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y);
+<a name="l00090"></a>00090     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#a5a7a2c46ce27ed5cde4d56f027b60d9a">move</a>(QPoint pos);
+<a name="l00091"></a>00091     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#a5a7a2c46ce27ed5cde4d56f027b60d9a">move</a>(QPointF pos);
 <a name="l00092"></a>00092 
 <a name="l00093"></a><a class="code" href="classqtpd_1_1_u_i_item.html#a7d35cc78930b523be25a55b0167e5a13">00093</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#a7d35cc78930b523be25a55b0167e5a13">paint</a>(QPainter*, <span class="keyword">const</span> QStyleOptionGraphicsItem*, QWidget*){};
 <a name="l00094"></a>00094 
@@ -157,8 +157,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00096"></a>00096 
 <a name="l00097"></a>00097 signals:
 <a name="l00098"></a>00098 
-<a name="l00099"></a>00099     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#adcaa90c907268dec3ad006b8815269a4">mousePressed</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, QGraphicsSceneMouseEvent* ev);
-<a name="l00100"></a>00100     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#a4ef86e08c77326eb7f1ce41bca3ca823">mouseReleased</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* <a class="code" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>, QGraphicsSceneMouseEvent* ev);
+<a name="l00099"></a>00099     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#adcaa90c907268dec3ad006b8815269a4">mousePressed</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* obj, QGraphicsSceneMouseEvent* ev);
+<a name="l00100"></a>00100     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#a4ef86e08c77326eb7f1ce41bca3ca823">mouseReleased</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* obj, QGraphicsSceneMouseEvent* ev);
 <a name="l00101"></a>00101 
 <a name="l00102"></a>00102     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#ad8f51ce2a929d36c866cb16e884f7a28">selectBox</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* box, QGraphicsSceneMouseEvent* event);
 <a name="l00103"></a>00103     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#a72e28d805ae5dc2f30e9774cdf5c4be6">moveBox</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* box, QGraphicsSceneMouseEvent* event);
@@ -186,7 +186,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 9 2017 10:15:14 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 9 2017 10:18:03 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

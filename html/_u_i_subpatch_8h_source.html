@@ -136,7 +136,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00055"></a>00055 
 <a name="l00056"></a>00056         <span class="comment">// fix that</span>
 <a name="l00057"></a>00057         <span class="keyword">const</span> <span class="keywordtype">char</span>* obj_name = list_s.toStdString().c_str();
-<a name="l00058"></a>00058         <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> data1 = b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a69ed99ca86c7019f489f56b6dc96f8a4" title="&gt;init properties for the class - called from constructor">properties</a>()-&gt;<a class="code" href="classqtpd_1_1_property_list.html#afe045d9c65b8b51e12fb81c1eb5585b5" title="extract properties from string in pd file">extractFromPdFileString</a>(obj_name); <span class="comment">//test</span>
+<a name="l00058"></a>00058         std::string data1 = b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a69ed99ca86c7019f489f56b6dc96f8a4" title="&gt;init properties for the class - called from constructor">properties</a>()-&gt;<a class="code" href="classqtpd_1_1_property_list.html#afe045d9c65b8b51e12fb81c1eb5585b5" title="extract properties from string in pd file">extractFromPdFileString</a>(obj_name); <span class="comment">//test</span>
 <a name="l00059"></a>00059 
 <a name="l00060"></a>00060         <span class="comment">// todo cleanup</span>
 <a name="l00061"></a>00061         <span class="comment">//const char* obj_name2 = data1.c_str(); //(QString(data1.c_str()).split(&quot; &quot;).at(0)).toStdString().c_str();</span>
@@ -155,7 +155,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00074"></a>00074 
 <a name="l00075"></a>00075     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_subpatch.html#a55eee1e1bcedde736c14a2a53eec898a">setSubpatchWindow</a>(QMainWindow *cwindow);
 <a name="l00076"></a>00076 
-<a name="l00080"></a><a class="code" href="classqtpd_1_1_u_i_subpatch.html#a6c480db1481baab00f4f074a3c540c5e">00080</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_subpatch.html#a6c480db1481baab00f4f074a3c540c5e" title="paint event">paint</a>(QPainter* <a class="code" href="floatobject_8h.html#af18a92ce774f4c499544fbcc894db7e8">p</a>, <span class="keyword">const</span> QStyleOptionGraphicsItem*, QWidget*)
+<a name="l00080"></a><a class="code" href="classqtpd_1_1_u_i_subpatch.html#a6c480db1481baab00f4f074a3c540c5e">00080</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_subpatch.html#a6c480db1481baab00f4f074a3c540c5e" title="paint event">paint</a>(QPainter* p, <span class="keyword">const</span> QStyleOptionGraphicsItem*, QWidget*)
 <a name="l00081"></a>00081     {
 <a name="l00082"></a>00082         QBrush brush(<a class="code" href="classqtpd_1_1_u_i_item.html#a15c57968966de733a09cf02973b63696">bgColor</a>());
 <a name="l00083"></a>00083         p-&gt;setBrush(brush);
@@ -221,7 +221,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00154"></a>00154         <a class="code" href="classqtpd_1_1_u_i_subpatch.html#a330ad0e0aced74b289a07d67afb0aee9" title="mouse move">QGraphicsItem::mouseMoveEvent</a>(event);
 <a name="l00155"></a>00155     }
 <a name="l00156"></a>00156 
-<a name="l00157"></a><a class="code" href="classqtpd_1_1_u_i_subpatch.html#a2eb3aa585b7aadc01ab6b7cdb35920ca">00157</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_subpatch.html#a2eb3aa585b7aadc01ab6b7cdb35920ca">setPdMessage</a>(<a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> message)
+<a name="l00157"></a><a class="code" href="classqtpd_1_1_u_i_subpatch.html#a2eb3aa585b7aadc01ab6b7cdb35920ca">00157</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_subpatch.html#a2eb3aa585b7aadc01ab6b7cdb35920ca">setPdMessage</a>(std::string message)
 <a name="l00158"></a>00158     {
 <a name="l00159"></a>00159         <a class="code" href="classqtpd_1_1_u_i_object.html#a65a6c071b7b6f99393652d273e6a0fa7" title="sets object text data">setObjectData</a>(message);
 <a name="l00160"></a>00160         <a class="code" href="classqtpd_1_1_u_i_object.html#a1c7d66be6089715aaf5c03adb64a915b">autoResize</a>();
@@ -237,7 +237,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00170"></a>00170         <a class="code" href="classqtpd_1_1_u_i_object.html#a0f7e507f8949b1a58bf343279a488c44" title="sets outlet position (cm_port)">setOutletsPos</a>();
 <a name="l00171"></a>00171     }
 <a name="l00172"></a>00172 
-<a name="l00173"></a>00173     <a class="code" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="code" href="classqtpd_1_1_u_i_subpatch.html#aea50465f383a50517e2810bf0727b46d" title="&gt; custom resize event">asPdFileString</a>();
+<a name="l00173"></a>00173     std::string <a class="code" href="classqtpd_1_1_u_i_subpatch.html#aea50465f383a50517e2810bf0727b46d" title="&gt; custom resize event">asPdFileString</a>();
 <a name="l00174"></a>00174 
 <a name="l00175"></a>00175 signals:
 <a name="l00176"></a>00176 
@@ -265,7 +265,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 9 2017 10:15:14 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 9 2017 10:18:03 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

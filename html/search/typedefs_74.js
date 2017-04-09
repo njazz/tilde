@@ -65,7 +65,5 @@ var searchData=
   ['t_5fupdateheader',['t_updateheader',['../g__canvas_8h.html#a11e7e88f07d1666adbe673daefff52ba',1,'g_canvas.h']]],
   ['t_5fupdateui',['t_updateUI',['../_pd_link_8h.html#aef7ba73145c14cf0ffca487d734e38f0',1,'PdLink.h']]],
   ['t_5fvisfn',['t_visfn',['../g__canvas_8h.html#a03abaae15a31911f83186c8e221d2956',1,'g_canvas.h']]],
-  ['t_5fword',['t_word',['../m__pd_8h.html#a8967c5ba87b9455fd29726f7794235d2',1,'m_pd.h']]],
-  ['ternaryfunc',['ternaryfunc',['../object_8h.html#a9da053ed69bc1840b5ea2652bd2e9b2d',1,'object.h']]],
-  ['traverseproc',['traverseproc',['../object_8h.html#a7c3d337f4ea7c5c4f05271334592455a',1,'object.h']]]
+  ['t_5fword',['t_word',['../m__pd_8h.html#a8967c5ba87b9455fd29726f7794235d2',1,'m_pd.h']]]
 ];

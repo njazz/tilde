@@ -1,32 +1,7 @@
 var searchData=
 [
-  ['lambda',['Lambda',['../_python-ast_8h.html#af3d84783a7fe3a1241ff0794313d29b9',1,'Python-ast.h']]],
-  ['lambdef',['lambdef',['../graminit_8h.html#a2e2a9afdc5a04a7471809169a4592301',1,'graminit.h']]],
   ['lb_5fclose',['LB_CLOSE',['../g__canvas_8h.html#a27eb5af7880c6f9407adf4754e902600',1,'g_canvas.h']]],
   ['lb_5finit',['LB_INIT',['../g__canvas_8h.html#a40a220ebc6c22ed57e64881bf2952459',1,'g_canvas.h']]],
   ['lb_5fload',['LB_LOAD',['../g__canvas_8h.html#ad7f7a8be722d79a02efd815dbac650b9',1,'g_canvas.h']]],
-  ['lbrace',['LBRACE',['../token_8h.html#af078bec81516d407fe17fc7cb8b355ac',1,'token.h']]],
-  ['leftshift',['LEFTSHIFT',['../token_8h.html#a29870f655cade0ad3f14779c8112618c',1,'token.h']]],
-  ['leftshiftequal',['LEFTSHIFTEQUAL',['../token_8h.html#a88572dbfd08e69f3470b563ef9e4fe0b',1,'token.h']]],
-  ['less',['LESS',['../token_8h.html#a16bcdd65ecdd3313af9e393538fa7fa8',1,'token.h']]],
-  ['lessequal',['LESSEQUAL',['../token_8h.html#ac3cb64b515631fe5f3e430db76c9978a',1,'token.h']]],
-  ['list',['List',['../_python-ast_8h.html#a201830357d214aabbdb46b4163c792cf',1,'Python-ast.h']]],
-  ['list_5fappend',['LIST_APPEND',['../opcode_8h.html#a8e2d5aa6499254e415525f352c41498f',1,'opcode.h']]],
-  ['list_5ffor',['list_for',['../graminit_8h.html#af60f8444884b9f99ab7b980cd51624cc',1,'graminit.h']]],
-  ['list_5fif',['list_if',['../graminit_8h.html#a028eb99a90c66bba7a733b31b29eb1e8',1,'graminit.h']]],
-  ['list_5fiter',['list_iter',['../graminit_8h.html#ade39aebadcc742350fcc14b215702c15',1,'graminit.h']]],
-  ['listcomp',['ListComp',['../_python-ast_8h.html#a436d129c9cca91b65e07a852cd5f61da',1,'Python-ast.h']]],
-  ['listmaker',['listmaker',['../graminit_8h.html#a9ab396d3faecc1577d9daf51059aeb1f',1,'graminit.h']]],
-  ['load_5fattr',['LOAD_ATTR',['../opcode_8h.html#aad0cb728c9102fe8389a0225455808f1',1,'opcode.h']]],
-  ['load_5fclosure',['LOAD_CLOSURE',['../opcode_8h.html#a18dfb0ce4d633de84548fb3524679efc',1,'opcode.h']]],
-  ['load_5fconst',['LOAD_CONST',['../opcode_8h.html#ab40643b210c56ea611cab87de66b0b64',1,'opcode.h']]],
-  ['load_5fderef',['LOAD_DEREF',['../opcode_8h.html#a9c2dc7db84ce7fed8869ba1ed9283c55',1,'opcode.h']]],
-  ['load_5ffast',['LOAD_FAST',['../opcode_8h.html#af76434208265fb183f32134744be49ab',1,'opcode.h']]],
-  ['load_5fglobal',['LOAD_GLOBAL',['../opcode_8h.html#a7aa844bb902c8667202d8c6286e5e8af',1,'opcode.h']]],
-  ['load_5flocals',['LOAD_LOCALS',['../opcode_8h.html#a6748122f53f133a25af0b315000d9b44',1,'opcode.h']]],
-  ['load_5fname',['LOAD_NAME',['../opcode_8h.html#a9146e9e93f9f4d5dcf976a780aa3d209',1,'opcode.h']]],
-  ['local',['LOCAL',['../symtable_8h.html#a3758dd5d300a594312c95bc393378df0',1,'symtable.h']]],
-  ['logcostabsize',['LOGCOSTABSIZE',['../m__pd_8h.html#a55b874e6c3ed33b08644277c3c02ce77',1,'m_pd.h']]],
-  ['lpar',['LPAR',['../token_8h.html#a48ea1fc2fe2e898c390f7f425b280ea8',1,'token.h']]],
-  ['lsqb',['LSQB',['../token_8h.html#a05d57e1be332c20aa70fbe3891d282d1',1,'token.h']]]
+  ['logcostabsize',['LOGCOSTABSIZE',['../m__pd_8h.html#a55b874e6c3ed33b08644277c3c02ce77',1,'m_pd.h']]]
 ];

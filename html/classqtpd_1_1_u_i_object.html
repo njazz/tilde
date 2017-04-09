@@ -145,7 +145,7 @@ Inheritance diagram for qtpd::UIObject:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ac5164efbefa045172ec27eaf957a8fb0">resizeBox</a> (<a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> dx, <a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> dy)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ac5164efbefa045172ec27eaf957a8fb0">resizeBox</a> (int dx, int dy)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#af907b37e5d5f8b0481d03f89b2ef7b6f">s_repaint</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#aa75e37df9af2518a6f01c284b0bbaf58">propertyChanged</a> (QString pname)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt;needed for proper threading  <a href="#aa75e37df9af2518a6f01c284b0bbaf58"></a><br/></td></tr>
@@ -163,12 +163,12 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt;init properties for the class - called from constructor  <a href="#a69ed99ca86c7019f489f56b6dc96f8a4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#abdcdddffb37dedee8cf93da8fb353271">createContextMenu</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; <a class="el" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> properties  <a href="#abdcdddffb37dedee8cf93da8fb353271"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ac910dc268c5457c9ce9149378794eb9a">showPopupMenu</a> (QPoint <a class="el" href="setobject_8h.html#a0cdb1b70380fd629358aa8be81bb89b6">pos</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ac910dc268c5457c9ce9149378794eb9a">showPopupMenu</a> (QPoint pos)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; createContextMenu  <a href="#ac910dc268c5457c9ce9149378794eb9a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a1c7d66be6089715aaf5c03adb64a915b">autoResize</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ae10cb3996474a7c1ba94d5e48c740106">resizeEvent</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; call this after setting object data  <a href="#ae10cb3996474a7c1ba94d5e48c740106"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a89a9d36ac67cceab237cdc01a1ec2376">asPdFileString</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a89a9d36ac67cceab237cdc01a1ec2376">asPdFileString</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; custom resize event  <a href="#a89a9d36ac67cceab237cdc01a1ec2376"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a0590d2f5ec52a3010373b7f4fc19c610">setEditModeRef</a> (<a class="el" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a">t_editMode</a> *canvasEditMode)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt;returns object's text for client-based file saving  <a href="#a0590d2f5ec52a3010373b7f4fc19c610"></a><br/></td></tr>
@@ -178,30 +178,30 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a2e6fec1e7e23c49c16330281d84f099f">setCanvas</a> (void *<a class="el" href="classqtpd_1_1_u_i_object.html#ae5912261870c7eec5231419acd4ca7e1">canvas</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ae5912261870c7eec5231419acd4ca7e1">canvas</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_size_box.html">SizeBox</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a2a5596386429c363e6f45085b7ef47e6">sizeBox</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447">objectData</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447">objectData</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gets object text data /usually overriden by ui objects/  <a href="#ab898f6da7aadb3223e25f13eb937c447"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a65a6c071b7b6f99393652d273e6a0fa7">setObjectData</a> (<a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> objData)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a65a6c071b7b6f99393652d273e6a0fa7">setObjectData</a> (std::string objData)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets object text data  <a href="#a65a6c071b7b6f99393652d273e6a0fa7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ad41f2f9ff8447ea8dc061c3e8fc6528b">pdObject</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns pointer to pd object.  <a href="#ad41f2f9ff8447ea8dc061c3e8fc6528b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a8d514a69e4a316b43095faaeea415dad">setPdObject</a> (void *<a class="el" href="abstract_8h.html#aaa12580403a2cc24c96324b4c5715889">obj</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a8d514a69e4a316b43095faaeea415dad">setPdObject</a> (void *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets pointer to pd object  <a href="#a8d514a69e4a316b43095faaeea415dad"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a1a55479c564318cbf31c0f09d02d39bb">errorBox</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a1a55479c564318cbf31c0f09d02d39bb">errorBox</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns true if object doesn't exist  <a href="#a1a55479c564318cbf31c0f09d02d39bb"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#abc5b87789a2cc65d9d74d0ca2b6b0bdf">setErrorBox</a> (<a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a> val)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#abc5b87789a2cc65d9d74d0ca2b6b0bdf">setErrorBox</a> (bool val)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets object box error flag  <a href="#abc5b87789a2cc65d9d74d0ca2b6b0bdf"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#aaf3ec64e20e23bd1a6e98e40e207b9a5">setMinimumBoxWidth</a> (<a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> w)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#aaf3ec64e20e23bd1a6e98e40e207b9a5">setMinimumBoxWidth</a> (int w)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">set secondary 'minimum width' value - used for object box resize  <a href="#aaf3ec64e20e23bd1a6e98e40e207b9a5"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a0e30df8242a108e7534044d0fd2e8c9e">setMinimumBoxHeight</a> (<a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> h)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a0e30df8242a108e7534044d0fd2e8c9e">setMinimumBoxHeight</a> (int h)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">set secondary 'minimum height' value - used for object box resize  <a href="#a0e30df8242a108e7534044d0fd2e8c9e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ac1d937fa3ee566a10ae183ab8e40fd79">minimumBoxWidth</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ac1d937fa3ee566a10ae183ab8e40fd79">minimumBoxWidth</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get secondary 'minimum width' value - used for object box resize  <a href="#ac1d937fa3ee566a10ae183ab8e40fd79"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a59b95a44ccb3c18727d8212a6eb32f56">minimumBoxHeight</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a59b95a44ccb3c18727d8212a6eb32f56">minimumBoxHeight</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get secondary 'minimum height' value - used for object box resize  <a href="#a59b95a44ccb3c18727d8212a6eb32f56"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QMainWindow *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a163437921d348578fbfb8abebee0217c">subpatchWindow</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">temporary - remove later  <a href="#a163437921d348578fbfb8abebee0217c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#aab273ef9fd115cb87544b398975ca4c1">setSubpatchWindow</a> (QMainWindow *cwindow)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a055a8f03b9e9a36678cb5804607b6b3e">setHelpName</a> (QString <a class="el" href="_python_8h.html#ab3978d96531ad97f1c3139b11f771f98">name</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a055a8f03b9e9a36678cb5804607b6b3e">setHelpName</a> (QString name)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">set short name for help patch (without path)  <a href="#a055a8f03b9e9a36678cb5804607b6b3e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a89f2ee50238101d3900ba3f2ff2146fd">fullHelpName</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns help patch name with path if the file is found  <a href="#a89f2ee50238101d3900ba3f2ff2146fd"></a><br/></td></tr>
@@ -214,25 +214,25 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets outlet position (cm_port)  <a href="#a0f7e507f8949b1a58bf343279a488c44"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a82f2402eac0e1f7e17cf767a658ffa4f">addInlet</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">adds single inlet (cm_port)  <a href="#a82f2402eac0e1f7e17cf767a658ffa4f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a9b784234b2904b4a5d31a0d62d567c4d">addInlet</a> (<a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> _portClass_)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a9b784234b2904b4a5d31a0d62d567c4d">addInlet</a> (int _portClass_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a935156fec3fd59c05525f046bafb3ebc">addOutlet</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">adds single outlet (cm_port)  <a href="#a935156fec3fd59c05525f046bafb3ebc"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a46b6b9393b4c8ce758a1d4370bbea3c7">addOutlet</a> (<a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> _portClass_)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_port.html">Port</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#affed6bc718dcfa37071c856895d70230">inletAt</a> (<a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> idx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a46b6b9393b4c8ce758a1d4370bbea3c7">addOutlet</a> (int _portClass_)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_port.html">Port</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#affed6bc718dcfa37071c856895d70230">inletAt</a> (int idx)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gets inlet (cm_port) at specified index  <a href="#affed6bc718dcfa37071c856895d70230"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_port.html">Port</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a5c8f235bdc4571fdf1a5c125fbcde2b2">outletAt</a> (<a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> idx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_port.html">Port</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a5c8f235bdc4571fdf1a5c125fbcde2b2">outletAt</a> (int idx)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gets outlet (cm_port) at specified index  <a href="#a5c8f235bdc4571fdf1a5c125fbcde2b2"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a77f34c6557cd08be98617e6768672da5">pdInletType</a> (<a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> idx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a77f34c6557cd08be98617e6768672da5">pdInletType</a> (int idx)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns 1 if signal~  <a href="#a77f34c6557cd08be98617e6768672da5"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a64ad65d9eba38d18c6cf475fa0fbdd65">inletCount</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a64ad65d9eba38d18c6cf475fa0fbdd65">inletCount</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">inlet count  <a href="#a64ad65d9eba38d18c6cf475fa0fbdd65"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a765ab43f6b07c8f94c06d3ffa4da4996">pdOutletType</a> (<a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> idx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a765ab43f6b07c8f94c06d3ffa4da4996">pdOutletType</a> (int idx)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">for pd object outlet: returns 1 if signal~  <a href="#a765ab43f6b07c8f94c06d3ffa4da4996"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#aea2322187b24bf09a4769fba5104f886">outletCount</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#aea2322187b24bf09a4769fba5104f886">outletCount</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">outlet count  <a href="#aea2322187b24bf09a4769fba5104f886"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#aca50a3b8c69080fe8276ceab276079f4">disableObjectMaker</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#aca50a3b8c69080fe8276ceab276079f4">disableObjectMaker</a></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ae3b8ec06c4aa92e121faf2810c2babf5">hoverEnterEvent</a> (QGraphicsSceneHoverEvent *)</td></tr>
@@ -292,7 +292,7 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_object.html#a82f2402eac0e1f7e17cf767a658ffa4f">qtpd::UIObject::addInlet</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>_portClass_</em></td><td>)</td>
           <td><code> [virtual]</code></td>
         </tr>
@@ -334,7 +334,7 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_object.html#a935156fec3fd59c05525f046bafb3ebc">qtpd::UIObject::addOutlet</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>_portClass_</em></td><td>)</td>
           <td><code> [virtual]</code></td>
         </tr>
@@ -349,7 +349,7 @@ Protected Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="el" href="classqtpd_1_1_u_i_object.html#a89a9d36ac67cceab237cdc01a1ec2376">qtpd::UIObject::asPdFileString</a> </td>
+          <td class="memname">std::string <a class="el" href="classqtpd_1_1_u_i_object.html#a89a9d36ac67cceab237cdc01a1ec2376">qtpd::UIObject::asPdFileString</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [virtual]</code></td>
@@ -457,7 +457,7 @@ Protected Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a> <a class="el" href="classqtpd_1_1_u_i_object.html#a1a55479c564318cbf31c0f09d02d39bb">qtpd::UIObject::errorBox</a> </td>
+          <td class="memname">bool <a class="el" href="classqtpd_1_1_u_i_object.html#a1a55479c564318cbf31c0f09d02d39bb">qtpd::UIObject::errorBox</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -585,7 +585,7 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classqtpd_1_1_port.html">Port</a> * <a class="el" href="classqtpd_1_1_u_i_object.html#affed6bc718dcfa37071c856895d70230">qtpd::UIObject::inletAt</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>idx</em></td><td>)</td>
           <td></td>
         </tr>
@@ -609,7 +609,7 @@ Protected Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="classqtpd_1_1_u_i_object.html#a64ad65d9eba38d18c6cf475fa0fbdd65">qtpd::UIObject::inletCount</a> </td>
+          <td class="memname">int <a class="el" href="classqtpd_1_1_u_i_object.html#a64ad65d9eba38d18c6cf475fa0fbdd65">qtpd::UIObject::inletCount</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -628,7 +628,7 @@ Protected Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="classqtpd_1_1_u_i_object.html#a59b95a44ccb3c18727d8212a6eb32f56">qtpd::UIObject::minimumBoxHeight</a> </td>
+          <td class="memname">int <a class="el" href="classqtpd_1_1_u_i_object.html#a59b95a44ccb3c18727d8212a6eb32f56">qtpd::UIObject::minimumBoxHeight</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -652,7 +652,7 @@ Protected Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="classqtpd_1_1_u_i_object.html#ac1d937fa3ee566a10ae183ab8e40fd79">qtpd::UIObject::minimumBoxWidth</a> </td>
+          <td class="memname">int <a class="el" href="classqtpd_1_1_u_i_object.html#ac1d937fa3ee566a10ae183ab8e40fd79">qtpd::UIObject::minimumBoxWidth</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -676,7 +676,7 @@ Protected Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> <a class="el" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447">qtpd::UIObject::objectData</a> </td>
+          <td class="memname">std::string <a class="el" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447">qtpd::UIObject::objectData</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -697,7 +697,7 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classqtpd_1_1_port.html">Port</a> * <a class="el" href="classqtpd_1_1_u_i_object.html#a5c8f235bdc4571fdf1a5c125fbcde2b2">qtpd::UIObject::outletAt</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>idx</em></td><td>)</td>
           <td></td>
         </tr>
@@ -721,7 +721,7 @@ Protected Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="classqtpd_1_1_u_i_object.html#aea2322187b24bf09a4769fba5104f886">qtpd::UIObject::outletCount</a> </td>
+          <td class="memname">int <a class="el" href="classqtpd_1_1_u_i_object.html#aea2322187b24bf09a4769fba5104f886">qtpd::UIObject::outletCount</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -777,9 +777,9 @@ Protected Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="classqtpd_1_1_u_i_object.html#a77f34c6557cd08be98617e6768672da5">qtpd::UIObject::pdInletType</a> </td>
+          <td class="memname">int <a class="el" href="classqtpd_1_1_u_i_object.html#a77f34c6557cd08be98617e6768672da5">qtpd::UIObject::pdInletType</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>idx</em></td><td>)</td>
           <td></td>
         </tr>
@@ -825,9 +825,9 @@ Protected Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a> <a class="el" href="classqtpd_1_1_u_i_object.html#a765ab43f6b07c8f94c06d3ffa4da4996">qtpd::UIObject::pdOutletType</a> </td>
+          <td class="memname">int <a class="el" href="classqtpd_1_1_u_i_object.html#a765ab43f6b07c8f94c06d3ffa4da4996">qtpd::UIObject::pdOutletType</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>idx</em></td><td>)</td>
           <td></td>
         </tr>
@@ -898,13 +898,13 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_object.html#ac5164efbefa045172ec27eaf957a8fb0">qtpd::UIObject::resizeBox</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>dx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>dy</em>&#160;</td>
         </tr>
         <tr>
@@ -1002,7 +1002,7 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_object.html#abc5b87789a2cc65d9d74d0ca2b6b0bdf">qtpd::UIObject::setErrorBox</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>val</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1081,7 +1081,7 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_object.html#a0e30df8242a108e7534044d0fd2e8c9e">qtpd::UIObject::setMinimumBoxHeight</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>h</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1106,7 +1106,7 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_object.html#aaf3ec64e20e23bd1a6e98e40e207b9a5">qtpd::UIObject::setMinimumBoxWidth</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="warnings_8h.html#a74f207b5aa4ba51c3a2ad59b219a423b">int</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>w</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1131,7 +1131,7 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_object.html#a65a6c071b7b6f99393652d273e6a0fa7">qtpd::UIObject::setObjectData</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a>&#160;</td>
+          <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>objData</em></td><td>)</td>
           <td><code> [virtual]</code></td>
         </tr>
@@ -1304,7 +1304,7 @@ Protected Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="asdl_8h.html#af6a258d8f3ee5206d682d799316314b1">bool</a> <a class="el" href="classqtpd_1_1_u_i_object.html#aca50a3b8c69080fe8276ceab276079f4">qtpd::UIObject::disableObjectMaker</a></td>
+          <td class="memname">bool <a class="el" href="classqtpd_1_1_u_i_object.html#aca50a3b8c69080fe8276ceab276079f4">qtpd::UIObject::disableObjectMaker</a></td>
         </tr>
       </table>
 </div>
@@ -1334,7 +1334,7 @@ Protected Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 9 2017 10:15:15 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 9 2017 10:18:04 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

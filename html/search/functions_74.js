@@ -11,8 +11,6 @@ var searchData=
   ['template_5fnotify',['template_notify',['../g__canvas_8h.html#a3ad2c2ab2a16a34220587612571ca08e',1,'g_canvas.h']]],
   ['template_5fsetfloat',['template_setfloat',['../g__canvas_8h.html#a8035ce6e250a3c3438e703bae02d2a4c',1,'g_canvas.h']]],
   ['template_5fsetsymbol',['template_setsymbol',['../g__canvas_8h.html#af095516e69b0b4237bad572e44fd6483',1,'g_canvas.h']]],
-  ['teobj_5fconvert',['TEObj_Convert',['../pymactoolbox_8h.html#aa131f97fb689855cc373b92bfa2a470f',1,'pymactoolbox.h']]],
-  ['teobj_5fnew',['TEObj_New',['../pymactoolbox_8h.html#aec6dcbff71d1516ddf907a1ace4842a2',1,'pymactoolbox.h']]],
   ['text_5fdrawborder',['text_drawborder',['../g__canvas_8h.html#a8549bd725de18ba82c6deb7dc28421ba',1,'g_canvas.h']]],
   ['text_5feraseborder',['text_eraseborder',['../g__canvas_8h.html#af15509645e57329b9385d258850068ff',1,'g_canvas.h']]],
   ['text_5fsetto',['text_setto',['../g__canvas_8h.html#a06f4a76534477edd04072dfc05a2b515',1,'g_canvas.h']]],
@@ -20,18 +18,10 @@ var searchData=
   ['text_5fxpix',['text_xpix',['../g__canvas_8h.html#aa1f42caa5289294bbf2c969d9364aa93',1,'g_canvas.h']]],
   ['text_5fycoord',['text_ycoord',['../g__canvas_8h.html#a253f1508df5b952ab555a2419149edd4',1,'g_canvas.h']]],
   ['text_5fypix',['text_ypix',['../g__canvas_8h.html#a98825fb8f7a5cdf7205a26b6bc837a21',1,'g_canvas.h']]],
-  ['timebaseobj_5fconvert',['TimeBaseObj_Convert',['../pymactoolbox_8h.html#a6a43c94063682f019d3087618cf7934a',1,'pymactoolbox.h']]],
-  ['timebaseobj_5fnew',['TimeBaseObj_New',['../pymactoolbox_8h.html#a03b286e53297aab6d8e4f7ca8985408e',1,'pymactoolbox.h']]],
   ['timerstart',['timerStart',['../classqtpd_1_1_u_i_bang.html#ab1179e2f8376188024891806317c6289',1,'qtpd::UIBang']]],
   ['to_5foutlet',['to_outlet',['../namespaceceammc.html#a6295c782bd42c995e7f09274529cbf14',1,'ceammc::to_outlet(t_outlet *x, const Atom &amp;a)'],['../namespaceceammc.html#a9bbb87f0da99e46257db348e15aeda06',1,'ceammc::to_outlet(t_outlet *x, const AtomList &amp;a)']]],
   ['topddata',['toPdData',['../classceammc_1_1_atom_list.html#ad03d847e65574621731dc432df39931f',1,'ceammc::AtomList']]],
   ['tosymbol',['toSymbol',['../classqtpd_1_1_o_p_instance.html#a791108546e906618f7054e479db5afc0',1,'qtpd::OPInstance']]],
-  ['tr',['tr',['../class_python_qt_std_decorators.html#a49aedf38c6db60af2138b09acae00c9d',1,'PythonQtStdDecorators']]],
-  ['trackobj_5fconvert',['TrackObj_Convert',['../pymactoolbox_8h.html#a413b5b30ac946c4fca8e53c0f0703a4f',1,'pymactoolbox.h']]],
-  ['trackobj_5fnew',['TrackObj_New',['../pymactoolbox_8h.html#a72b2ac9d90e871b729427cd3c03c716a',1,'pymactoolbox.h']]],
-  ['translatelabels',['translatelabels',['../grammar_8h.html#a16bbb2f7f5a9a44a0cd8b638f2d9eb78',1,'grammar.h']]],
   ['type',['type',['../classceammc_1_1_atom.html#a50766d3e9ba18be84057457daa38ee22',1,'ceammc::Atom::type()'],['../classqtpd_1_1_property.html#a746afe2ff35078677bca335a3f797899',1,'qtpd::Property::type()']]],
-  ['typedinlets',['typedInlets',['../classqtpd_1_1_u_i_instance.html#a41a026602f3541805fc0e95219ab84e9',1,'qtpd::UIInstance']]],
-  ['typename',['typeName',['../namespace_python_qt_utils.html#a7ab7320f61f25b5e2d2b27ee40f7a277',1,'PythonQtUtils']]],
-  ['typeslots',['typeSlots',['../class_python_qt_class_info.html#a367fc0f7bf299770b485dbbb0c4dbc58',1,'PythonQtClassInfo']]]
+  ['typedinlets',['typedInlets',['../classqtpd_1_1_u_i_instance.html#a41a026602f3541805fc0e95219ab84e9',1,'qtpd::UIInstance']]]
 ];

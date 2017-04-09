@@ -151,22 +151,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00070"></a>00070 
 <a name="l00071"></a>00071 <span class="preprocessor">#pragma mark methods</span>
 <a name="l00072"></a>00072 <span class="preprocessor"></span>
-<a name="l00073"></a><a class="code" href="classqtpd_1_1_o_p_instance.html#a38381f449f98c5b5c6e4a34f077440eb">00073</a>     <span class="keywordtype">void</span> addMethodOutlet(<a class="code" href="struct__symbol.html">t_symbol</a>* <a class="code" href="namespace_python_qt_utils.html#a51e029e70d77ef8514018cb481faa36f">methodName</a>, <a class="code" href="m__pd_8h.html#a46dc692dc9e70ff60679462933409d90">t_outlet</a>* outlet)
+<a name="l00073"></a><a class="code" href="classqtpd_1_1_o_p_instance.html#a38381f449f98c5b5c6e4a34f077440eb">00073</a>     <span class="keywordtype">void</span> addMethodOutlet(<a class="code" href="struct__symbol.html">t_symbol</a>* methodName, <a class="code" href="m__pd_8h.html#a46dc692dc9e70ff60679462933409d90">t_outlet</a>* outlet)
 <a name="l00074"></a>00074     {
-<a name="l00075"></a>00075         _methodOutputs[<a class="code" href="namespace_python_qt_utils.html#a51e029e70d77ef8514018cb481faa36f">methodName</a>].addOutlet(outlet); <span class="comment">//.push_back(outlet);</span>
+<a name="l00075"></a>00075         _methodOutputs[methodName].addOutlet(outlet); <span class="comment">//.push_back(outlet);</span>
 <a name="l00076"></a>00076     }
 <a name="l00077"></a>00077 
-<a name="l00078"></a><a class="code" href="classqtpd_1_1_o_p_instance.html#af5c238bc93d5cc5a1ca81398d38a750e">00078</a>     <span class="keywordtype">void</span> freeMethod(<a class="code" href="struct__symbol.html">t_symbol</a>* <a class="code" href="namespace_python_qt_utils.html#a51e029e70d77ef8514018cb481faa36f">methodName</a>)
+<a name="l00078"></a><a class="code" href="classqtpd_1_1_o_p_instance.html#af5c238bc93d5cc5a1ca81398d38a750e">00078</a>     <span class="keywordtype">void</span> freeMethod(<a class="code" href="struct__symbol.html">t_symbol</a>* methodName)
 <a name="l00079"></a>00079     {
 <a name="l00080"></a>00080         _methodOutputs.erase(methodName);
 <a name="l00081"></a>00081     }
 <a name="l00082"></a>00082 
-<a name="l00083"></a><a class="code" href="classqtpd_1_1_o_p_instance.html#a62983a3a0638c9190f9fc61cfc5aeb39">00083</a>     <span class="keywordtype">void</span> addMethodPointerOutlet(<a class="code" href="struct__symbol.html">t_symbol</a>* <a class="code" href="namespace_python_qt_utils.html#a51e029e70d77ef8514018cb481faa36f">methodName</a>, <a class="code" href="m__pd_8h.html#a46dc692dc9e70ff60679462933409d90">t_outlet</a>* outlet)
+<a name="l00083"></a><a class="code" href="classqtpd_1_1_o_p_instance.html#a62983a3a0638c9190f9fc61cfc5aeb39">00083</a>     <span class="keywordtype">void</span> addMethodPointerOutlet(<a class="code" href="struct__symbol.html">t_symbol</a>* methodName, <a class="code" href="m__pd_8h.html#a46dc692dc9e70ff60679462933409d90">t_outlet</a>* outlet)
 <a name="l00084"></a>00084     {
-<a name="l00085"></a>00085         _methodPointerOutputs[<a class="code" href="namespace_python_qt_utils.html#a51e029e70d77ef8514018cb481faa36f">methodName</a>] = outlet; <span class="comment">//.push_back(outlet);  TODO</span>
+<a name="l00085"></a>00085         _methodPointerOutputs[methodName] = outlet; <span class="comment">//.push_back(outlet);  TODO</span>
 <a name="l00086"></a>00086     }
 <a name="l00087"></a>00087 
-<a name="l00088"></a><a class="code" href="classqtpd_1_1_o_p_instance.html#a6b8d8eb636cf19070e4ebefc490a57b9">00088</a>     <span class="keywordtype">void</span> freeMethodPointerOutlet(<a class="code" href="struct__symbol.html">t_symbol</a>* <a class="code" href="namespace_python_qt_utils.html#a51e029e70d77ef8514018cb481faa36f">methodName</a>)
+<a name="l00088"></a><a class="code" href="classqtpd_1_1_o_p_instance.html#a6b8d8eb636cf19070e4ebefc490a57b9">00088</a>     <span class="keywordtype">void</span> freeMethodPointerOutlet(<a class="code" href="struct__symbol.html">t_symbol</a>* methodName)
 <a name="l00089"></a>00089     {
 <a name="l00090"></a>00090         _methodPointerOutputs.erase(methodName);
 <a name="l00091"></a>00091     }
@@ -412,7 +412,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 9 2017 10:15:14 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 9 2017 10:18:03 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

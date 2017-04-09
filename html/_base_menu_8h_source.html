@@ -92,7 +92,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00008"></a>00008 
 <a name="l00009"></a>00009 <span class="preprocessor">#ifdef WITH_PYTHON</span>
 <a name="l00010"></a>00010 <span class="preprocessor"></span>
-<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="_python_qt_scripting_console_8h.html">python/PythonQtScriptingConsole.h</a>&quot;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;python/PythonQtScriptingConsole.h&quot;</span>
 <a name="l00012"></a>00012 
 <a name="l00013"></a>00013 <span class="preprocessor">#endif</span>
 <a name="l00014"></a>00014 <span class="preprocessor"></span>
@@ -101,7 +101,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00021"></a>00021     Q_OBJECT
 <a name="l00022"></a>00022 
 <a name="l00023"></a>00023 <span class="preprocessor">    #ifdef WITH_PYTHON</span>
-<a name="l00024"></a>00024 <span class="preprocessor"></span>    <span class="keyword">static</span> <a class="code" href="class_python_qt_scripting_console.html" title="A simple console for python scripting.">PythonQtScriptingConsole</a>* pythonConsole_;
+<a name="l00024"></a>00024 <span class="preprocessor"></span>    <span class="keyword">static</span> PythonQtScriptingConsole* pythonConsole_;
 <a name="l00025"></a>00025 <span class="preprocessor">#endif</span>
 <a name="l00026"></a>00026 <span class="preprocessor"></span>
 <a name="l00027"></a>00027 <span class="keyword">public</span>:
@@ -109,8 +109,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00029"></a>00029     {
 <a name="l00030"></a>00030 <span class="comment">//TODO! singleton</span>
 <a name="l00031"></a>00031 <span class="preprocessor">#ifdef WITH_PYTHON</span>
-<a name="l00032"></a>00032 <span class="preprocessor"></span>        <a class="code" href="class_python_qt_object_ptr.html" title="a smart pointer that stores a PyObject pointer and that handles reference counting automatically...">PythonQtObjectPtr</a> mainContext = <a class="code" href="modsupport_8h.html#a0180ca1808366e5da641475e8bf8cca3">PythonQt::self</a>()-&gt;getMainModule();
-<a name="l00033"></a>00033         pythonConsole_ = <span class="keyword">new</span> <a class="code" href="class_python_qt_scripting_console.html" title="A simple console for python scripting.">PythonQtScriptingConsole</a>(NULL, mainContext);
+<a name="l00032"></a>00032 <span class="preprocessor"></span>        PythonQtObjectPtr mainContext = PythonQt::self()-&gt;getMainModule();
+<a name="l00033"></a>00033         pythonConsole_ = <span class="keyword">new</span> PythonQtScriptingConsole(NULL, mainContext);
 <a name="l00034"></a>00034         qDebug(<span class="stringliteral">&quot;pyConsole %lu&quot;</span>, (<span class="keywordtype">long</span>)pythonConsole_);
 <a name="l00035"></a>00035 <span class="preprocessor">#endif</span>
 <a name="l00036"></a>00036 <span class="preprocessor"></span>    };
@@ -146,7 +146,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 9 2017 10:15:14 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 9 2017 10:18:03 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
