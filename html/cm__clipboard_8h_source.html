@@ -95,9 +95,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00011"></a>00011 
 <a name="l00012"></a>00012 <span class="keyword">namespace </span>qtpd {
 <a name="l00013"></a>00013 
-<a name="l00017"></a><a class="code" href="classqtpd_1_1_clipboard.html">00017</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_clipboard.html" title="clipboard singleton">Clipboard</a> {
+<a name="l00017"></a>00017 <span class="keyword">class </span>Clipboard {
 <a name="l00018"></a>00018 <span class="keyword">public</span>:
-<a name="l00019"></a><a class="code" href="classqtpd_1_1_clipboard.html#a39c52345e02fdca597bc6858d8d44e53">00019</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_clipboard.html" title="clipboard singleton">Clipboard</a>&amp; <a class="code" href="classqtpd_1_1_clipboard.html#a39c52345e02fdca597bc6858d8d44e53">inst</a>()
+<a name="l00019"></a><a class="code" href="classqtpd_1_1_clipboard.html#a39c52345e02fdca597bc6858d8d44e53">00019</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_clipboard.html" title="clipboard singleton">Clipboard</a>&amp; <a class="code" href="classqtpd_1_1_clipboard.html#a2cf7bfee528574dbbf5bcd7801076037">inst</a>()
 <a name="l00020"></a>00020     {
 <a name="l00021"></a>00021         <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_clipboard.html" title="clipboard singleton">Clipboard</a> <a class="code" href="namespaceqtpd.html#a3dde6489d34303c66ea710aa2116b426">instance</a>;
 <a name="l00022"></a>00022         <span class="keywordflow">return</span> <a class="code" href="namespaceqtpd.html#a3dde6489d34303c66ea710aa2116b426">instance</a>;
@@ -111,8 +111,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00030"></a>00030     <span class="comment">//    void operator=(cm_clipboard const&amp;);</span>
 <a name="l00031"></a>00031 
 <a name="l00032"></a>00032 <span class="keyword">public</span>:
-<a name="l00033"></a>00033     <a class="code" href="class_clipboard.html">Clipboard</a>(<a class="code" href="class_clipboard.html">Clipboard</a> <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;
-<a name="l00034"></a>00034     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_clipboard.html#aaf2af0f96a8afede7307ecd8e1514b8c">operator=</a>(<a class="code" href="class_clipboard.html">Clipboard</a> <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;
+<a name="l00033"></a>00033     Clipboard(Clipboard <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;
+<a name="l00034"></a>00034     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_clipboard.html#aaf2af0f96a8afede7307ecd8e1514b8c">operator=</a>(Clipboard <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;
 <a name="l00035"></a>00035 
 <a name="l00036"></a><a class="code" href="classqtpd_1_1_clipboard.html#ac8a67a5e7402908924ee6df2109dfbb3">00036</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_clipboard.html#ac8a67a5e7402908924ee6df2109dfbb3">addObject</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* obj)
 <a name="l00037"></a>00037     {
@@ -162,7 +162,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 9 2017 10:18:03 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 9 2017 10:21:31 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

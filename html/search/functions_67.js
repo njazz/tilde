@@ -13,7 +13,7 @@ var searchData=
   ['garray_5fusedindsp',['garray_usedindsp',['../m__pd_8h.html#a3f6579ef6469843fa5da91c1f65a5e1e',1,'m_pd.h']]],
   ['garray_5fvec',['garray_vec',['../m__pd_8h.html#a0e6c0198c6929736f4eb7ef9b40673a7',1,'m_pd.h']]],
   ['gensym',['gensym',['../m__pd_8h.html#a4449f71b80468e7d6e79a67193e65e0b',1,'m_pd.h']]],
-  ['get',['get',['../class_clipboard.html#ac8c4c4fa7291a01df609409cd9abd8f4',1,'Clipboard::get()'],['../classqtpd_1_1_property_list.html#a56b8961ff1380c565c7d616166be18d4',1,'qtpd::PropertyList::get()']]],
+  ['get',['get',['../classqtpd_1_1_clipboard.html#af4aa2264dc3a824b620c84d42849db6a',1,'qtpd::Clipboard::get()'],['../classqtpd_1_1_property_list.html#a56b8961ff1380c565c7d616166be18d4',1,'qtpd::PropertyList::get()']]],
   ['getatomlistproperty',['getAtomListProperty',['../classqtpd_1_1_o_p_instance.html#a353a170964f54f1a83bb69892565d30b',1,'qtpd::OPInstance']]],
   ['getbufferfor',['getBufferFor',['../classqtpd_1_1_o_p_instance.html#a570f8ce8a49087c7a2c0991dafc7befe',1,'qtpd::OPInstance']]],
   ['getbytes',['getbytes',['../m__pd_8h.html#aded8e8587270b7460ded4c5202bca113',1,'m_pd.h']]],

@@ -111,12 +111,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>clipboard singleton  
  <a href="classqtpd_1_1_clipboard.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="cm__clipboard_8h_source.html">cm_clipboard.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_clipboard_8h_source.html">Clipboard.h</a>&gt;</code></p>
 
 <p><a href="classqtpd_1_1_clipboard-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_clipboard.html#a210bddb869e01f68a20ada2d1bda4694">append</a> (QStringList data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_clipboard.html#a0cf14bccba6ef82e1e0f4a922cab07c4">clear</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_clipboard.html#a3c2d1d7df865c4505827e8eadc7074af">size</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_clipboard.html#af4aa2264dc3a824b620c84d42849db6a">get</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_clipboard.html#a3ff243566636b0b2f7802fda4791b77a">setStringAt</a> (int idx, QString str)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_clipboard.html#a0d23142f152c3d0cb2c544959e29bb32">at</a> (int idx)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_clipboard.html#a30005c931b35ea16ed15da041863f7fa">Clipboard</a> (<a class="el" href="classqtpd_1_1_clipboard.html">Clipboard</a> const &amp;)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_clipboard.html#aaf2af0f96a8afede7307ecd8e1514b8c">operator=</a> (<a class="el" href="classqtpd_1_1_clipboard.html">Clipboard</a> const &amp;)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_clipboard.html#ac8a67a5e7402908924ee6df2109dfbb3">addObject</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *obj)</td></tr>
@@ -128,6 +134,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_clipboard.html#a0cf14bccba6ef82e1e0f4a922cab07c4">clear</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_clipboard.html">Clipboard</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_clipboard.html#a2cf7bfee528574dbbf5bcd7801076037">inst</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_clipboard.html">Clipboard</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_clipboard.html#a39c52345e02fdca597bc6858d8d44e53">inst</a> ()</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
@@ -219,6 +226,56 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a210bddb869e01f68a20ada2d1bda4694"></a><!-- doxytag: member="qtpd::Clipboard::append" ref="a210bddb869e01f68a20ada2d1bda4694" args="(QStringList data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_clipboard.html#a210bddb869e01f68a20ada2d1bda4694">qtpd::Clipboard::append</a> </td>
+          <td>(</td>
+          <td class="paramtype">QStringList&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0d23142f152c3d0cb2c544959e29bb32"></a><!-- doxytag: member="qtpd::Clipboard::at" ref="a0d23142f152c3d0cb2c544959e29bb32" args="(int idx)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString <a class="el" href="classqtpd_1_1_clipboard.html#a0d23142f152c3d0cb2c544959e29bb32">qtpd::Clipboard::at</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>idx</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0cf14bccba6ef82e1e0f4a922cab07c4"></a><!-- doxytag: member="qtpd::Clipboard::clear" ref="a0cf14bccba6ef82e1e0f4a922cab07c4" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_clipboard.html#a0cf14bccba6ef82e1e0f4a922cab07c4">qtpd::Clipboard::clear</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a0cf14bccba6ef82e1e0f4a922cab07c4"></a><!-- doxytag: member="qtpd::Clipboard::clear" ref="a0cf14bccba6ef82e1e0f4a922cab07c4" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -228,6 +285,22 @@ Static Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af4aa2264dc3a824b620c84d42849db6a"></a><!-- doxytag: member="qtpd::Clipboard::get" ref="af4aa2264dc3a824b620c84d42849db6a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList <a class="el" href="classqtpd_1_1_clipboard.html#af4aa2264dc3a824b620c84d42849db6a">qtpd::Clipboard::get</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -272,7 +345,23 @@ Static Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classqtpd_1_1_clipboard.html">Clipboard</a>&amp; <a class="el" href="classqtpd_1_1_clipboard.html#a39c52345e02fdca597bc6858d8d44e53">qtpd::Clipboard::inst</a> </td>
+          <td class="memname">static <a class="el" href="classqtpd_1_1_clipboard.html">Clipboard</a>&amp; <a class="el" href="classqtpd_1_1_clipboard.html#a2cf7bfee528574dbbf5bcd7801076037">qtpd::Clipboard::inst</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2cf7bfee528574dbbf5bcd7801076037"></a><!-- doxytag: member="qtpd::Clipboard::inst" ref="a2cf7bfee528574dbbf5bcd7801076037" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqtpd_1_1_clipboard.html">Clipboard</a>* <a class="el" href="classqtpd_1_1_clipboard.html#a2cf7bfee528574dbbf5bcd7801076037">qtpd::Clipboard::inst</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [inline, static]</code></td>
@@ -300,8 +389,53 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a class="anchor" id="a3ff243566636b0b2f7802fda4791b77a"></a><!-- doxytag: member="qtpd::Clipboard::setStringAt" ref="a3ff243566636b0b2f7802fda4791b77a" args="(int idx, QString str)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_clipboard.html#a3ff243566636b0b2f7802fda4791b77a">qtpd::Clipboard::setStringAt</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>idx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>str</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3c2d1d7df865c4505827e8eadc7074af"></a><!-- doxytag: member="qtpd::Clipboard::size" ref="a3c2d1d7df865c4505827e8eadc7074af" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classqtpd_1_1_clipboard.html#a3c2d1d7df865c4505827e8eadc7074af">qtpd::Clipboard::size</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>/home/travis/build/njazz/qtpd/qtpd_gui/<a class="el" href="_clipboard_8h_source.html">Clipboard.h</a></li>
 <li>/home/travis/build/njazz/qtpd/qtpd_gui/<a class="el" href="cm__clipboard_8h_source.html">cm_clipboard.h</a></li>
+<li>/home/travis/build/njazz/qtpd/qtpd_gui/<a class="el" href="_clipboard_8cpp.html">Clipboard.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- window showing the filter options -->
@@ -321,7 +455,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 9 2017 10:18:03 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 9 2017 10:21:31 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
