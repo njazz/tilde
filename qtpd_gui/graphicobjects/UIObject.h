@@ -18,9 +18,7 @@
 
 #include "PropertiesWindow.h"
 
-//lazy way
-//todo proper pattern
-#include "OpenFileProxy.h"
+
 
 namespace qtpd {
 

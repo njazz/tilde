@@ -5,6 +5,8 @@
 
 #include "Canvas.h"
 
+#include "FileParser.h"
+
 namespace qtpd {
 
 UIObject::UIObject(UIItem* parent)
@@ -466,7 +468,7 @@ void UIObject::openHelpWindow()
 {
     QString fullHelpName_ = fullHelpName();
     if (fullHelpName_ != "") {
-        OpenFileProxy::openAbstraction(fullHelpName_);
+        FileParser::open(fullHelpName_);
     }
 }
 

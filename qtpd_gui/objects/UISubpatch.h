@@ -10,13 +10,10 @@
 
 #include "UIObject.h"
 
-//lazy way
-//todo proper pattern
-#include "OpenFileProxy.h"
+#include <QGraphicsProxyWidget>
 #include <QGraphicsSceneMouseEvent>
 #include <QGraphicsView>
 #include <QMainWindow>
-#include <QGraphicsProxyWidget>
 
 #include "Canvas.h"
 
@@ -66,13 +63,10 @@ public:
 
         b->resizeEvent();
 
-
-
-
         return (UIObject*)b;
     };
 
-    void setSubpatchWindow(QMainWindow *cwindow);
+    void setSubpatchWindow(QMainWindow* cwindow);
 
     ////
     /// \brief paint event

@@ -8,7 +8,7 @@
 #include "PatchWindow.h"
 #include "PdWindow.h"
 
-#include "BaseMenu.h"
+//#include "BaseMenu.h"
 
 #include "ObjectLoader.h"
 
@@ -49,7 +49,7 @@ int main(int argc, char* argv[])
     PythonQt_QtAll::init();
 
     //temporary
-    new BaseMenu();
+    //new BaseMenu();
     //init python
     pyWrapper::inst();
 #endif

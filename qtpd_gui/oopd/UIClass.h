@@ -12,10 +12,6 @@
 
 #include "UIObject.h"
 
-//lazy way
-//todo proper pattern
-#include "OpenFileProxy.h"
-
 #include "OOPDHeaders.h"
 
 #include <QGraphicsView>

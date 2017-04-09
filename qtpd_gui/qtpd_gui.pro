@@ -121,7 +121,6 @@ SOURCES += main.cpp\
     FileParser.cpp \
     ObjectLoader.cpp \
     widgets/ObjectMaker.cpp \
-    OpenFileProxy.cpp \
     window/PatchWindow.cpp \
     window/PdWindow.cpp \
     window/BaseWindow.cpp \
@@ -180,7 +179,6 @@ HEADERS  += \
     ObjectLoader.h \
     widgets/ObjectMaker.h \
     PdLink.h \
-    OpenFileProxy.h \
     _headers.h \
     properties/Preferences.h \
     properties/Property.h \

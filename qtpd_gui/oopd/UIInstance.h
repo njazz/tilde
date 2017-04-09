@@ -12,10 +12,6 @@
 
 #include "UIObject.h"
 
-//lazy way
-//todo proper pattern
-#include "OpenFileProxy.h"
-
 #include "OOPDHeaders.h"
 
 #include <QGraphicsView>
@@ -204,7 +200,7 @@ public:
                 && scene()->views().first()->viewport()) {
 
                 QGraphicsView* v = scene()->views().first();
-                QPoint pos = v->viewport()->mapToGlobal(ev->pos().toPoint() );
+                QPoint pos = v->viewport()->mapToGlobal(ev->pos().toPoint());
 
                 // TODO
                 showPopupMenu(pos + this->pos().toPoint());
@@ -230,7 +226,6 @@ public:
         if ((getEditMode() == em_Unlocked) && isSelected()) {
             //            editor_->setText(QString(objectData().c_str()));
             //            editor_->show();
-            
 
             emit editObject(this);
             return;
@@ -326,7 +321,7 @@ public:
         addInlet();
     }
 
-    void msgFree(AtomList )
+    void msgFree(AtomList)
     {
 
         if (_opInstance) {
@@ -368,7 +363,7 @@ public:
         update();
     }
 
-    void msgGetObject(AtomList )
+    void msgGetObject(AtomList)
     {
 
         t_symbol* s = _opInstance->getObjectSymbol();

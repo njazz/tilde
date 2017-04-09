@@ -12,10 +12,6 @@
 
 #include "UIObject.h"
 
-//lazy way
-//todo proper pattern
-#include "OpenFileProxy.h"
-
 #include "OOPDHeaders.h"
 
 #include <QGraphicsView>
@@ -40,7 +36,7 @@ private:
     std::string _methodName;
 
 public:
-    explicit UIMethod();//UIObject* parent = 0);
+    explicit UIMethod(); //UIObject* parent = 0);
     //~UIMethod();
 
     static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
@@ -51,7 +47,7 @@ public:
         if (objectData == "")
             objectData = "method";
 
-        UIMethod* b = new UIMethod();//(UIObject*)parent);
+        UIMethod* b = new UIMethod(); //(UIObject*)parent);
         b->setCanvas((void*)parent);
 
         //truncate "ui.obj". todo cleanup
@@ -73,8 +69,6 @@ public:
         } else {
             b->_methodName = ((QString)list.at(1)).toStdString();
         }
-
-
 
         t_object* new_obj = 0;
         int in_c = 0, out_c = 0;
@@ -198,7 +192,7 @@ public:
                 && scene()->views().first()->viewport()) {
 
                 QGraphicsView* v = scene()->views().first();
-                QPoint pos = v->viewport()->mapToGlobal(ev->pos().toPoint() );
+                QPoint pos = v->viewport()->mapToGlobal(ev->pos().toPoint());
 
                 // TODO
                 showPopupMenu(pos + this->pos().toPoint());
@@ -216,16 +210,15 @@ public:
         }
 
         //abstraction opening. Fix
-        if (getEditMode() != em_Unlocked) {
-            if (_isAbstraction) {
-                OpenFileProxy::openAbstraction(_abstractionPath);
-            }
-        }
+        //        if (getEditMode() != em_Unlocked) {
+        //            if (_isAbstraction) {
+        //                OpenFileProxy::openAbstraction(_abstractionPath);
+        //            }
+        //        }
 
         if ((getEditMode() == em_Unlocked) && isSelected()) {
             //            editor_->setText(QString(objectData().c_str()));
             //            editor_->show();
-            
 
             emit editObject(this);
             return;
@@ -240,7 +233,7 @@ public:
     ///
     void mouseReleaseEvent(QGraphicsSceneMouseEvent*)
     {
-         update();
+        update();
     }
 
     ////
@@ -305,7 +298,7 @@ signals:
 private slots:
     void updateUISlot()
     {
-         update();
+        update();
     }
 };
 }

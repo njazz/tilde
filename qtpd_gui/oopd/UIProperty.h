@@ -12,10 +12,6 @@
 
 #include "UIObject.h"
 
-//lazy way
-//todo proper pattern
-#include "OpenFileProxy.h"
-
 //#include "cm_pdlink.h"
 
 #include "OOPDHeaders.h"
@@ -206,7 +202,7 @@ public:
                 && scene()->views().first()->viewport()) {
 
                 QGraphicsView* v = scene()->views().first();
-                QPoint pos = v->viewport()->mapToGlobal(ev->pos().toPoint() );
+                QPoint pos = v->viewport()->mapToGlobal(ev->pos().toPoint());
 
                 // TODO
                 showPopupMenu(pos + this->pos().toPoint());
@@ -224,11 +220,11 @@ public:
         }
 
         //abstraction opening. Fix
-        if (getEditMode() != em_Unlocked) {
-            if (_isAbstraction) {
-                OpenFileProxy::openAbstraction(_abstractionPath);
-            }
-        }
+        //        if (getEditMode() != em_Unlocked) {
+        //            if (_isAbstraction) {
+        //                OpenFileProxy::openAbstraction(_abstractionPath);
+        //            }
+        //        }
 
         if ((getEditMode() == em_Unlocked) && isSelected()) {
 
