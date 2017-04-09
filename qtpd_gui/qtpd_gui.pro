@@ -120,7 +120,7 @@ SOURCES += main.cpp\
     Canvas.cpp \
     FileParser.cpp \
     ObjectLoader.cpp \
-    ObjectMaker.cpp \
+    widgets/ObjectMaker.cpp \
     BaseMenu.cpp \
     OpenFileProxy.cpp \
     window/PatchWindow.cpp \
@@ -179,7 +179,7 @@ HEADERS  += \
     FileParser.h \
     FileSaver.h \
     ObjectLoader.h \
-    ObjectMaker.h \
+    widgets/ObjectMaker.h \
     PdLink.h \
     OpenFileProxy.h \
     _headers.h \

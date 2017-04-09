@@ -246,21 +246,49 @@ void cmp_set_verbose(int v);
 
 ///////
 
-// arrays
 
+////
+/// \brief get Pd array pointer by array symbol
+/// \param arrayname
+/// \return
+///
 t_garray* cmp_get_array(t_symbol* arrayname);
 
+////
+/// \brief get Pd array data
+/// \param a
+/// \param size
+/// \param vec
+///
 void cmp_get_array_data(t_garray* a, int* size, t_word** vec);
 
+////
+/// \brief get Pd array size
+/// \param a
+/// \return
+///
 int cmp_get_array_size(t_garray* a);
 
+////
+/// \brief new Pd array
+/// \param c - Pd canvas
+/// \param name - array name symbol
+/// \param size - minimum size
+/// \param save - save within patch - this is unused while we have FileSaver in qtpd_gui
+/// \param newgraph - unused
+/// \return
+///
 t_garray* cmp_new_array(t_canvas* c, t_symbol* name, t_floatarg size, t_floatarg save, t_floatarg newgraph);
 
 //
+////
+/// \brief send loadbang
+/// \param canvas
+///
 EXTERN void cmp_loadbang(t_canvas* canvas);
 
-// audio info
-
+////
+/// \brief Pd audio info structure
 typedef struct _cmp_audio_info {
     std::string inputDeviceList;
     std::string outputDeviceList;
@@ -270,7 +298,16 @@ typedef struct _cmp_audio_info {
     bool hasCallback;
 } t_cmp_audio_info;
 
+////
+/// \brief get audio info structure
+/// \return
+///
 t_cmp_audio_info cmp_get_audio_device_info();
+
+////
+/// \brief get list of audio api names as Tcl string {{api name} {api name 2} ...}
+/// \return
+///
 std::string cmp_get_audio_apis();
 
 #endif // CM_PDLINK_H

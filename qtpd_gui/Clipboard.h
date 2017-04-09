@@ -6,6 +6,9 @@
 #include <QDebug>
 
 namespace qtpd{
+////
+/// \brief The Clipboard class - just a QStringList with Pd strings for objects
+///
 class Clipboard : public QObject {
     Q_OBJECT
 
@@ -25,6 +28,8 @@ public:
 
         return _instance;
     }
+
+    // -----------------------------
 
     void append(QStringList data)
     {

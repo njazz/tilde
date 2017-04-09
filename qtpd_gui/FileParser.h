@@ -94,6 +94,11 @@ public:
     ///
     static void open(QString fname);
 
+    ////
+    /// \brief unescapeString
+    /// \param input
+    /// \return
+    /// \deprecated needs cleanup - duplicate in PropertyList class
     static QString unescapeString(QString input)
     {
         // todo regexp
@@ -108,6 +113,11 @@ public:
         return ret;
     }
 
+    ////
+    /// \brief escapeString
+    /// \param input
+    /// \return
+    /// \deprecated needs cleanup - duplicate in PropertyList class
     static QString escapeString(QString input)
     {
         // todo regexp
@@ -121,7 +131,6 @@ public:
         //ret = ret.split(";").join("\\;");
         return ret;
     }
-
 };
 }
 

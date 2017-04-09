@@ -563,10 +563,7 @@ public:
         qDebug()<<"zoom"<<canvas->getZoom();
     }
 
-//    void resizeEvent(QResizeEvent*)
-//    {
 
-//    }
 
 public slots:
     std::pair<QMainWindow*, qtpd::UIObject*> s_createSubpatchWindow()

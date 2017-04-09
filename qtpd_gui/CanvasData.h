@@ -16,12 +16,13 @@ namespace qtpd {
 typedef std::vector<UIObject*> objectVec;
 typedef std::vector<Patchcord*> patchcordVec;
 
-typedef std::set<UIObject*> objectSet;
+// TODO move to sets?
+//typedef std::set<UIObject*> objectSet;
 //patchcord set?
 
 ////
-/// \brief shared canvas data - boxes, patchcords TODO rename
-/// \details todo: merge with clipboard class's types. todo: should be replaced by proper container
+/// \brief shared canvas data - boxes, patchcords
+///
 class canvasData {
 
     objectVec _boxes;
@@ -33,8 +34,8 @@ class canvasData {
     Clipboard* _clipboard;
 
 public:
-    //    objectVec boxes;
-    //    patchcordVec patchcords;
+    portItemVec* inlets;
+    portItemVec* outlets;
 
     bool hasObjects()
     {
@@ -80,6 +81,18 @@ public:
         boxes->push_back(box);
     }
 
+    void addUniquePatchcord(patchcordVec* patchcords, Patchcord* pcord)
+    {
+        int p = findPatchcord(patchcords, pcord);
+
+        if (patchcords->size())
+            if (p >= 0) {
+                patchcords->erase(patchcords->begin() + p);
+            }
+
+        patchcords->push_back(pcord);
+    }
+
     int findBox(objectVec* boxes, UIObject* box)
     {
         //todo
@@ -91,20 +104,56 @@ public:
         return -1;
     }
 
-    void addPatchcord(Patchcord* pc)
+    int findPatchcord(patchcordVec* patchcords, Patchcord* pcord)
     {
-        _patchcords.push_back(pc);
+        //todo
+        for (size_t i = 0; i < patchcords->size(); i++) {
+            if (patchcords->at(i) == pcord)
+                return i;
+        }
+
+        return -1;
     }
 
     // ------------------------------
+
+    void addPatchcord(Patchcord* pc)
+    {
+        addUniquePatchcord(&_patchcords, pc);
+    }
+
+    void selectPatchcord(Patchcord* pc) //pcord
+    {
+        addUniquePatchcord(&_selectedPatchcords, pc);
+        pc->select();
+    }
+
     void selectBox(UIObject* box)
     {
         addUniqueBox(&_selectedBoxes, box);
         box->select();
     }
 
-    void selectPatchcord(Patchcord* )//pcord
+    void deselectBoxes()
     {
+        for (int i = 0; i < (int)_boxes.size(); i++) {
+            if (_boxes.at(i))
+
+                ((UIBox*)_boxes.at(i))->deselect();
+        }
+
+        _selectedBoxes.clear();
+    }
+
+    void deselectPatchcords()
+    {
+        patchcordVec::iterator it2;
+
+        for (it2 = _patchcords.begin(); it2 != _patchcords.end(); ++it2) {
+
+            ((Patchcord*)*it2)->deselect();
+            ((Patchcord*)*it2)->setHover(false);
+        }
     }
 
     // ----------
@@ -130,6 +179,18 @@ public:
         // todo move here
     }
 
+    // -------
+    int findObjectIndex(UIObject* obj)
+    {
+        //UIObject* obj1;
+        std::vector<UIObject*>::iterator iter = std::find(_boxes.begin(), _boxes.end(), obj);
+        size_t index = std::distance(_boxes.begin(), iter);
+        if (index != _boxes.size()) {
+            return index;
+        }
+        return -1;
+    }
+
     // ------------------------------
     QStringList boxesAsPdFileStrings(objectVec* boxes)
     {
@@ -148,19 +209,6 @@ public:
 
         return ret;
     }
-
-    int findObjectIndex(UIObject* obj)
-    {
-        //UIObject* obj1;
-        std::vector<UIObject*>::iterator iter = std::find(_boxes.begin(), _boxes.end(), obj);
-        size_t index = std::distance(_boxes.begin(), iter);
-        if (index != _boxes.size()) {
-            return index;
-        }
-        return -1;
-    }
-
-    // -------
 
     std::string patchcordAsPdFileString(Patchcord* pcord)
     {
@@ -216,41 +264,9 @@ public:
     }
 
     // -------
-
-    void deselectBoxes()
-    {
-        for (int i = 0; i < (int)_boxes.size(); i++) {
-            if (_boxes.at(i))
-
-                ((UIBox*)_boxes.at(i))->deselect();
-        }
-
-        _selectedBoxes.clear();
-
-
-    }
-    void deselectPatchcords()
-    {
-        patchcordVec::iterator it2;
-
-        for (it2 = _patchcords.begin(); it2 != _patchcords.end(); ++it2) {
-
-            ((Patchcord*)*it2)->deselect();
-            ((Patchcord*)*it2)->setHover(false);
-        }
-
-    }
 };
 
-////
-/// \brief shared canvas data -> additional info (window title etc) TODO rename
-/// \details todo: merge with clipboard class's types
-class canvasDataPlus : public canvasData {
 
-public:
-    portItemVec* inlets;
-    portItemVec* outlets;
-};
 }
 
 #endif // CM_CANVAS_TYPES_H

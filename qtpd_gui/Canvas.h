@@ -32,7 +32,7 @@ namespace qtpd {
 ///
 class Canvas : public QGraphicsView {
 private:
-    canvasDataPlus _canvasData;
+    canvasData _canvasData;
 
     UIObject* _connectionStartObject;
     UIObject* _connectionStartOutlet;
@@ -75,7 +75,7 @@ public:
     // todo fix
     QPoint newObjectPos() { return _newObjectPos; }
 
-    canvasDataPlus* canvasData() { return &_canvasData; }
+    canvasData* canvasData() { return &_canvasData; }
 
     UIObject* dragObject() { return _dragObject; }
     void setDragObject(UIObject* object) { _dragObject = object; }
