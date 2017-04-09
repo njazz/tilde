@@ -30,7 +30,7 @@ public:
     explicit Port(UIItem* parent = 0);
 
     ////
-    /// \defgroup prop Properties
+    /// \group prop Properties
     /// @{
     UIPortType portType() { return _portType; }
     void setPortType(UIPortType pt) { _portType = pt; }
@@ -44,7 +44,7 @@ public:
     void paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*);
 
     ////
-    /// \defgroup mouse Mouse
+    /// \group mouse Mouse
     /// @{
     virtual void hoverEnterEvent(QGraphicsSceneHoverEvent*)
     {

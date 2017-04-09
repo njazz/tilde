@@ -104,8 +104,8 @@ void PatchWindow::save()
 
     QString fname;
 
-    if (canvas->fileName != "")
-        fname = canvas->fileName;
+    if (canvas->fileName() != "")
+        fname = canvas->fileName();
     else
         fname = QFileDialog::getSaveFileName(this, QString("Save patch as..."), QString("~/"), QString("*.pd"), 0, 0);
 
@@ -134,7 +134,7 @@ void PatchWindow::doSave(QString fname)
         FileSaver::save(fname, canvas);
 
         //
-        canvas->fileName = fname;
+        canvas->setFileName (fname);
 
         setWindowTitle(file);
         setWindowFilePath(fname);
@@ -148,7 +148,7 @@ void PatchWindow::doSave(QString fname)
 void PatchWindow::setFileName(QString fname)
 {
 
-    canvas->fileName = fname;
+    canvas->setFileName (fname);
 
     QString file = fname.section("/", -1, -1);
 

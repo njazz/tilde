@@ -24,7 +24,7 @@ Canvas::Canvas(QGraphicsView* parent)
     _selectionRect = new SelectionRect;
     _selectionRect->setActive(false);
 
-    fileName = "";
+    _fileName = "";
 
     Canvas::setEditMode(em_Unlocked);
 
@@ -996,6 +996,23 @@ void Canvas::dataPaste()
             FileParser::parseQString(Clipboard::inst()->at(i));
         }
     }
+}
+
+void Canvas::setZoom(float zoom)
+{
+    if ((_zoom <= .5) && (zoom < 1)) {
+        zoom = .5;
+        return;
+    }
+    if ((_zoom > 2) && (zoom > 1)) {
+        zoom = 2.;
+        return;
+    }
+
+    _zoom *= zoom;
+
+    scale(zoom, zoom);
+    viewport()->update();
 }
 
 // end namespace

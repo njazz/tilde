@@ -48,7 +48,7 @@ public:
     void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*);
 
     ////
-    /// \defgroup prop Properties
+    /// \group prop Properties
     /// @{
 
     QPoint startPoint();
@@ -69,7 +69,7 @@ public:
     /** @}*/
 
     ////
-    /// \defgroup mouse Mouse
+    /// \group mouse Mouse
     /// @{
 
     void hoverEnterEvent(QGraphicsSceneHoverEvent*)

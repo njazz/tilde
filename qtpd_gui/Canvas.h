@@ -64,9 +64,14 @@ private:
 
     float _zoom;
 
+    QString _fileName;
+
     Q_OBJECT
 
 public:
+    ////
+    /// \group prop Properties
+    /// @{
     // todo fix
     QPoint newObjectPos() { return _newObjectPos; }
 
@@ -75,71 +80,82 @@ public:
     UIObject* dragObject() { return _dragObject; }
     void setDragObject(UIObject* object) { _dragObject = object; }
 
-    QString fileName;
+    QString fileName() { return _fileName; }
+    void setFileName(QString object) { _fileName = object; }
 
-    explicit Canvas(QGraphicsView* parent = 0);
-
-    // new
     t_canvas* pdObject() { return _pdObject; }
     void setPdObject(t_canvas* c) { _pdObject = c; }
 
-    // zoom
-    void setZoom(float zoom)
+    void setZoom(float zoom);
+    float getZoom() { return _zoom; }
+
+    virtual t_editMode getEditMode() { return _canvasEditMode; }
+    virtual t_editMode* getEditModeRef() { return &_canvasEditMode; }
+
+    void setEditMode(t_editMode mode);
+    void setGridEnabled(bool val);
+    void setGridSnap(bool val);
+
+    void setKeepPdObject(bool v) { _keepPdObject = v; }
+    bool keepPdObject() { return _keepPdObject; }
+
+    void setReadOnly(bool val)
     {
-        if ((_zoom <= .5) && (zoom < 1)) {
-            zoom = .5;
-            return;
-        }
-        if ((_zoom > 2) && (zoom > 1)) {
-            zoom = 2.;
-            return;
-        }
+        _readOnly = val;
 
-        _zoom *= zoom;
-
-        scale(zoom, zoom);
-        viewport()->update();
+        if (_readOnly)
+            setEditMode(em_Locked);
     }
 
-    float getZoom() { return _zoom; }
+    bool readOnly()
+    {
+        return _readOnly;
+    }
+
+    void setFilePath(QString filePath)
+    {
+        _filePath = filePath;
+    }
+    QString filePath() { return _filePath; };
+
+    ////
+    /// \brief minimumCanvasSize
+    /// \return
+    ///
+    QSize minimumCanvasSize();
+
+    void setWindowSize(QSize wsize);
+
+    void setReplaceObject(UIObject* obj); ///>sets 'replaceobject' pointer
+    UIObject* replaceObject();
+
+    /** @}*/
+
+    // -------------------------------------------------------
+
+    explicit Canvas(QGraphicsView* parent = 0);
 
     //todo
     void addInlet();
     void addOutlet();
 
-    //
-
-    ////
-    /// \brief draws canvas contents
-    ///
-    void drawCanvas();
-
     // -------------------------------------------------------
 
     ////
-    /// \brief route mouse move handling for different vis types
-    /// \param ev
-    ///
+    /// \group mouse Mouse
+    /// @{
+
     void mouseMoveEvent(QMouseEvent* ev);
-
-    ////
-    /// \brief route mouse press handling for different vis types
-    /// \param ev
-    ///
     void mousePressEvent(QMouseEvent* ev);
-
-    ////
-    /// \brief route mouse release handling for different vis types
-    /// \param ev
-    ///
     void mouseReleaseEvent(QMouseEvent* ev);
 
+    /** @}*/
+
     // -------------------------------------------------------
 
     ////
-    /// \brief deselect all object boxes
-    ///
-    //void deselectBoxes();
+    /// \group createdelete Create / delete objects and patchcords
+    /// @{
 
     ////
     /// \brief prototype for universal object 'constructor'
@@ -197,35 +213,7 @@ public:
     ///
     void delSelectedPatchcords();
 
-    // -------------------------------------------------------
-
-    virtual t_editMode getEditMode()
-    {
-        return _canvasEditMode;
-    }
-
-    virtual t_editMode* getEditModeRef()
-    {
-        return &_canvasEditMode;
-    }
-
-    ////
-    /// \brief change edit mode flag
-    /// \param mode
-    ///
-    void setEditMode(t_editMode mode);
-
-    ////
-    /// \brief set the show/hide grid flag
-    /// \param val
-    ///
-    void setGridEnabled(bool val);
-
-    ////
-    /// \brief align to grid flag
-    /// \param val
-    ///
-    void setGridSnap(bool val);
+    /** @}*/
 
     // -------------------------------------------------------
 
@@ -328,13 +316,6 @@ public:
 
     void selectBox(UIItem* box);
 
-public slots:
-
-    void s_InMousePressed(UIItem* obj, QGraphicsSceneMouseEvent* ev);
-    void s_InMouseReleased(UIItem*, QGraphicsSceneMouseEvent*);
-    void s_OutMousePressed(UIItem* obj, QGraphicsSceneMouseEvent*);
-    void s_OutMouseReleased(UIItem*, QGraphicsSceneMouseEvent*);
-
     ////
     /// \brief slot called by box when it is selected
     /// \param box
@@ -365,64 +346,14 @@ public slots:
     void portLocalCountUpdated();
 
     ////
-    /// \brief sets 'replaceobject' pointer
-    /// \param obj
-    ///
-    void setReplaceObject(UIObject* obj);
-
-    ////
-    /// \brief gets replaceObject
-    /// \return
-    ///
-    UIObject* replaceObject();
-
-    ////
     /// \brief shows object maker for 'new object' menu command
     ///
     void showNewObjectMaker();
-
-    ////
-    /// \brief minimumCanvasSize
-    /// \return
-    ///
-    QSize minimumCanvasSize();
-
-    void setWindowSize(QSize wsize);
 
     void dataCut();
     void dataCopy();
     void dataDuplicate();
     void dataPaste();
-
-    void setKeepPdObject(bool v)
-    {
-        _keepPdObject = v;
-    }
-
-    bool keepPdObject()
-    {
-        return _keepPdObject;
-    }
-
-    void setReadOnly(bool val)
-    {
-        _readOnly = val;
-
-        if (_readOnly)
-            setEditMode(em_Locked);
-    }
-
-    bool readOnly()
-    {
-        return _readOnly;
-    }
-
-    void setFilePath(QString filePath)
-    {
-        _filePath = filePath;
-    }
-
-    QString filePath() { return _filePath; };
 
     // -- NEW
 
@@ -431,6 +362,13 @@ public slots:
         _grid->setSize(size());
         _grid->move(0, 0);
     }
+
+public slots:
+
+    void s_InMousePressed(UIItem* obj, QGraphicsSceneMouseEvent* ev);
+    void s_InMouseReleased(UIItem*, QGraphicsSceneMouseEvent*);
+    void s_OutMousePressed(UIItem* obj, QGraphicsSceneMouseEvent*);
+    void s_OutMouseReleased(UIItem*, QGraphicsSceneMouseEvent*);
 
 private:
 private slots:

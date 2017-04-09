@@ -481,7 +481,7 @@ void UIObject::propertyChanged(QString pname)
     if (pname == "Size")
         setSize(properties()->get("Size")->asQSize());
 
-    just visuals
+    //just visuals
         if (pname == "FontSize")
              update();
         if (pname == "BorderColor")

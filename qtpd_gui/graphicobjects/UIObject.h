@@ -97,7 +97,7 @@ public:
     void hideSizeBox();
 
     ////
-    /// \defgroup prop Properties
+    /// \group prop Properties
     /// @{
     void setCanvas(void* canvas) { _canvas = canvas; }
     void* canvas() { return _canvas; } //?
@@ -188,8 +188,10 @@ public:
 
     /** @}*/
 
+    // -----------------------------------------------------------------
+
     ////
-    /// \defgroup iolets Inlets and outlets
+    /// \group iolets Inlets and outlets
     /// @{
 
     ////

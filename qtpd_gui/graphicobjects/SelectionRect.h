@@ -19,7 +19,7 @@ public:
     SelectionRect();
 
     ////
-    /// \defgroup prop Properties
+    /// \group prop Properties
     /// @{
     void setActive(bool active) { _active = active; }
     void setStart(QPoint start) { _start = start; }

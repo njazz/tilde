@@ -22,7 +22,7 @@ public:
     NewPatchcord();
 
     ////
-    /// \defgroup prop Properties
+    /// \group prop Properties
     /// @{
 
     void setActive(bool active) { _active = active; }

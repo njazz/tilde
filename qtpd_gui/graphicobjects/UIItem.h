@@ -38,7 +38,7 @@ public:
     explicit UIItem(QGraphicsObject* parent = 0);
 
     ////
-    /// \defgroup prop Properties
+    /// \group prop Properties
     /// @{
     ///
     void setSize(QSize size) { _size = size; }

@@ -43,7 +43,7 @@ public:
     };
 
     ////
-    /// \defgroup mouse Mouse
+    /// \group mouse Mouse
     /// @{
     void mousePressEvent(QGraphicsSceneMouseEvent* ev)
     {
