@@ -1,20 +1,18 @@
 // (c) 2017 Alex Nadzharov
 // License: GPL3
 
-#ifndef CM_HEADERS_H
-#define CM_HEADERS_H
+// testing precompiled headers
 
 #include "BaseWindow.h"
-#include "UIObject.h"
 #include "Preferences.h"
+#include "UIObject.h"
+#include "UIBox.h"
+#include "Port.h"
 
 #include "FileParser.h"
 #include "FileSaver.h"
 
 #include "CanvasData.h"
 
-#include "../qtpd_lib/ceammc-lib/ceammc_atomlist.h"
 #include "../qtpd_lib/src/m_pd.h"
 #include "PdLink.h"
-
-#endif // CM_HEADERS_H

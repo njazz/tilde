@@ -121,7 +121,6 @@ SOURCES += main.cpp\
     FileParser.cpp \
     ObjectLoader.cpp \
     widgets/ObjectMaker.cpp \
-    BaseMenu.cpp \
     OpenFileProxy.cpp \
     window/PatchWindow.cpp \
     window/PdWindow.cpp \
@@ -183,7 +182,6 @@ HEADERS  += \
     PdLink.h \
     OpenFileProxy.h \
     _headers.h \
-    BaseMenu.h \
     properties/Preferences.h \
     properties/Property.h \
     properties/PropertyList.h \
@@ -261,7 +259,7 @@ INCLUDEPATH += \
     properties/ \
     graphicobjects/
 
-#PRECOMPILED_HEADER =
+macx:PRECOMPILED_HEADER = _headers.h
 
 #$$PWD
 
