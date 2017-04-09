@@ -12,13 +12,13 @@
 // Widget extension
 // check / fix
 
-#include "common_types.h"
+#include "CommonTypes.h"
 
 namespace qtpd {
 
 ////
-/// \brief parent class for all objects in the canvas
-///
+/// \brief UIItem QGraphicsObject class
+/// \details parent class for all objects in the canvas
 class UIItem : public QGraphicsObject {
     Q_OBJECT
 
@@ -27,9 +27,7 @@ private:
     bool _hover;
 
     t_editMode* _editMode;
-    float _scale;
 
-    // ---
     QSize _size;
     QPoint _pos; //?
     QColor _bgColor;
@@ -40,24 +38,33 @@ public:
     explicit UIItem(QGraphicsObject* parent = 0);
 
     ////
-    /// \brief select object
+    /// \defgroup prop Properties
+    /// @{
     ///
-    void select();
+    void setSize(QSize size) { _size = size; }
+    void setSize(float w, float h) { _size = QSize(w, h); }
+    void setWidth(float w) { _size.setWidth(w); }
+    void setHeight(float h) { _size.setHeight(h); }
 
-    ////
-    /// \brief deselect object
-    ///
-    void deselect();
+    float width() { return _size.width(); }
+    float height() { return _size.height(); }
 
-    ////
-    /// \brief get object's selected flag
-    /// \return
-    ///
-    bool isSelected();
+    QSize size() { return _size; }
+
+    QColor bgColor() { return _bgColor; }
+    void setBgColor(QColor bgc) { _bgColor = bgc; }
+
+    bool hover() { return _hover; }
+    void setHover(bool h) { _hover = h; }
+
+    void select(); ///> select object
+    void deselect(); ///> deselect object
+    bool isSelected(); ///> get object's selected flag
 
     ////
     /// \brief sets pointer to edit mode flag in parent canvas
     /// \details this is set by "constructor" (createObj etc) in canvas
+    /// \deprecated needs fix
     /// \param canvasEditMode
     ///
     virtual void setEditModeRef(t_editMode* canvasEditModeRef);
@@ -74,64 +81,16 @@ public:
     ///
     t_editMode getEditMode();
 
-    ////
-    /// \brief temporary. scale value for zoom
-    /// \param scale_
-    ///
-    void setScale(float newScale);
+    QRectF boundingRect() const { return QRectF(0, 0, _size.width(), _size.height()); }
+    QPainterPath shape() const;
 
-    ////
-    /// \brief temporary. scale value for zoom
-    ///
-    float scale();
+    /** @}*/
 
-    // ---------
-
-    void setSize(QSize size) { _size = size; }
-    void setSize(float w, float h) { _size = QSize(w, h); }
-    void setWidth(float w) { _size.setWidth(w); }
-    void setHeight(float h) { _size.setHeight(h); }
-
-    void move(float x, float y)
-    {
-        _pos = QPoint(x, y);
-        setPos(_pos.x(), _pos.y());
-    }
-    void move(QPoint pos)
-    {
-        _pos = QPoint(pos.x(), pos.y());
-        setPos(_pos.x(), _pos.y());
-    }
-    void move(QPointF pos)
-    {
-        _pos = QPoint(pos.x(), pos.y());
-        setPos(_pos.x(), _pos.y());
-    }
-
-    float width() { return _size.width(); }
-    float height() { return _size.height(); }
-
-    QSize size() { return _size; }
-
-    QRectF boundingRect() const
-    {
-        return QRectF(0, 0, _size.width(), _size.height());
-    }
-
-    QPainterPath shape() const
-    {
-        QPainterPath path;
-        path.addRect(boundingRect().toRect());
-        return path;
-    }
+    void move(float x, float y);
+    void move(QPoint pos);
+    void move(QPointF pos);
 
     void paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*){};
-
-    QColor bgColor() { return _bgColor; }
-    void setBgColor(QColor bgc) { _bgColor = bgc; }
-
-    bool hover() { return _hover; }
-    void setHover(bool h) { _hover = h; }
 
     virtual void resizeEvent() {}
 
@@ -139,8 +98,6 @@ signals:
 
     void mousePressed(UIItem* obj, QGraphicsSceneMouseEvent* ev);
     void mouseReleased(UIItem* obj, QGraphicsSceneMouseEvent* ev);
-    //    void mouseEntered();
-    //    void mouseLeaved();
 
     void selectBox(UIItem* box, QGraphicsSceneMouseEvent* event);
     void moveBox(UIItem* box, QGraphicsSceneMouseEvent* event);

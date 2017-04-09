@@ -57,7 +57,7 @@ private:
     // ----- NEW
     Grid* _grid;
     SelectionRect* _selectionRect;
-    NewLine* _newLine;
+    NewPatchcord* _newLine;
 
     t_canvas* _pdObject;
     UIObject* _dragObject;

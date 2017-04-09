@@ -188,7 +188,6 @@ HEADERS  += \
     properties/Property.h \
     properties/PropertyList.h \
     objects/UIDSP.h \
-    graphicobjects/common_types.h \
     graphicobjects/Port.h \
     graphicobjects/SizeBox.h \
     graphicobjects/UIItem.h \
@@ -208,7 +207,8 @@ HEADERS  += \
     objects/UILink.h \
     properties/AudioSettings.h \
     graphicobjects/LinkLine.h \
-    widgets/UITextEditor.h
+    widgets/UITextEditor.h \
+    graphicobjects/CommonTypes.h
 
 
 

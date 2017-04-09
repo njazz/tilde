@@ -57,13 +57,30 @@ t_editMode UIItem::getEditMode()
     return (_editMode) ? (*_editMode) : em_Unlocked;
 }
 
-void UIItem::setScale(float newScale)
+QPainterPath UIItem::shape() const
 {
-    _scale = newScale;
+    QPainterPath path;
+    path.addRect(boundingRect().toRect());
+    return path;
 }
 
-float UIItem::scale()
+
+void UIItem::move(float x, float y)
 {
-    return _scale;
+    _pos = QPoint(x, y);
+    setPos(_pos.x(), _pos.y());
 }
+void UIItem::move(QPoint pos)
+{
+    _pos = QPoint(pos.x(), pos.y());
+    setPos(_pos.x(), _pos.y());
+}
+void UIItem::move(QPointF pos)
+{
+    _pos = QPoint(pos.x(), pos.y());
+    setPos(_pos.x(), _pos.y());
+}
+
+
+
 }

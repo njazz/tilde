@@ -16,10 +16,9 @@
 
 namespace qtpd {
 
-
-
 ////
-/// \brief resize widget for all object boxes in patch
+/// \brief SizeBox QGraphicsObject class
+/// \details resize widget for all object boxes in the patch
 ///
 class SizeBox : public UIItem {
     Q_OBJECT
@@ -33,7 +32,7 @@ private:
 public:
     explicit SizeBox(UIItem* parent = 0);
 
-    void paint(QPainter* p, const QStyleOptionGraphicsItem* , QWidget* )
+    void paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)
     {
         QBrush brush(bgColor());
         p->setBrush(brush);
@@ -43,14 +42,14 @@ public:
         p->drawRect(0, 0, boundingRect().width(), boundingRect().height());
     };
 
+    ////
+    /// \defgroup mouse Mouse
+    /// @{
     void mousePressEvent(QGraphicsSceneMouseEvent* ev)
     {
         setCursor(QCursor(Qt::SizeHorCursor));
 
         ev->accept();
-
-//        _prevX = 0;
-//        _prevY = 0;
 
         _prevX = ev->pos().toPoint().x();
         _prevY = ev->pos().toPoint().y();
@@ -65,11 +64,9 @@ public:
 
     void mouseMoveEvent(QGraphicsSceneMouseEvent* ev)
     {
-        //qDebug() << "resize" << (ev->x() - prevX);
         emit resizeBoxEvent(ev->pos().toPoint().x() - _prevX, ev->pos().toPoint().y() - _prevY);
-//        _prevX = ev->pos().toPoint().x();
-//        _prevY = ev->pos().toPoint().y();
     }
+    /** @}*/
 
 signals:
 

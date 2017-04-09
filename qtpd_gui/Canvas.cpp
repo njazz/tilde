@@ -18,7 +18,7 @@ Canvas::Canvas(QGraphicsView* parent)
 
     setMouseTracking(true);
 
-    _newLine = new NewLine;
+    _newLine = new NewPatchcord;
     _newLine->setActive(false);
 
     _selectionRect = new SelectionRect;
@@ -474,7 +474,7 @@ void Canvas::deletePatchcordsFor(UIItem* obj)
     //for //(int i=0;i<data_.patchcords()->size();i++)
     std::vector<Patchcord*>::iterator it;
     for (it = _canvasData.patchcords()->begin(); it != _canvasData.patchcords()->end();) {
-        if ((*it)->connectsObject(obj)) {
+        if ((*it)->isConnectedToObject(obj)) {
             scene()->removeItem(*it);
             it = _canvasData.patchcords()->erase(it);
         } else

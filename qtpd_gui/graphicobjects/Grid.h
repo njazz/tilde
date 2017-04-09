@@ -10,6 +10,10 @@
 
 namespace qtpd {
 
+////
+/// \brief Grid for the canvas.
+/// \deprecated this should be replaced with background paint style in Canvas for better performance
+///
 class Grid : public UIItem {
     int _gridStep;
 
@@ -19,16 +23,7 @@ public:
     void setGridStep(int gs) { _gridStep = gs; }
     int gridStep() { return _gridStep; }
 
-    void paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)
-    {
-        p->setPen(QPen(QColor(224, 224, 224), 1, Qt::DotLine, Qt::SquareCap, Qt::BevelJoin));
-        for (int x = 0; x < width(); x += _gridStep) {
-            p->drawLine(x, 0, x, height());
-        }
-        for (int y = 0; y < height(); y += _gridStep) {
-            p->drawLine(0, y, width(), y);
-        }
-    };
+    void paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*);
 };
 }
 

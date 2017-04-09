@@ -1,8 +1,6 @@
 #ifndef COMMON_TYPES_H
 #define COMMON_TYPES_H
 
-// todo move that ?
-
 #include <QPoint>
 
 namespace qtpd {
@@ -30,15 +28,6 @@ typedef enum {
     os_Free,
     os_Square
 } t_objectSize;
-
-////
-/// \brief structure for selection rectangle
-//typedef struct _tRectPlus {
-//    bool active;
-//    QPoint start;
-//    QPoint end;
-
-//} tRectPlus;
 }
 
 #endif // COMMON_TYPES_H

@@ -79,128 +79,40 @@ public:
     // just a template, copy from here
     virtual void paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*){};
 
-    void setCanvas(void* canvas) { _canvas = canvas; }
-    void* canvas(){return _canvas;} //?
-
     explicit UIObject(UIItem* parent = 0);
 
-    ////
-    /// \brief init properties for the class - called from constructor
-    ///
-    virtual void initProperties();
-
-    PropertyList* properties();
-
-    ////
-    /// \brief createContextMenu
-    ///
-    void createContextMenu();
-
+    virtual void initProperties(); ///>init properties for the class - called from constructor
+    PropertyList* properties(); ///> UIObject properties
+    void createContextMenu(); ///> createContextMenu
     void showPopupMenu(QPoint pos);
+
+    virtual void autoResize(); ///> call this after setting object data
+    void resizeEvent(); ///> custom resize event
+
+    virtual std::string asPdFileString(); ///>returns object's text for client-based file saving
+
+    void setEditModeRef(t_editMode* canvasEditMode); ////>sets pointer to edit mode flag value in parent canvas
+
+    void hide(); // ??
+    void hideSizeBox();
+
+    ////
+    /// \defgroup prop Properties
+    /// @{
+    void setCanvas(void* canvas) { _canvas = canvas; }
+    void* canvas() { return _canvas; } //?
 
     SizeBox* sizeBox() { return _sizeBox; }
 
     ////
-    /// \brief sets inlet position (cm_port)
-    /// \details this is reserved for more versatile UI
-    /// \param idx
+    /// \brief gets object text data /usually overriden by ui objects/
     /// \return
-    ///
-    ///
-
-    virtual void setInletsPos();
-
-    ////
-    /// \brief sets outlet position (cm_port)
-    /// \details this is reserved for more versatile UI
-    /// \param idx
-    /// \return
-    ///
-    ///
-    virtual void setOutletsPos();
-
-    ////
-    /// \brief adds single inlet (cm_port)
-    /// \details overriden by canvas to hide ports in canvas view
-    /// \param idx
-    /// \return
-    ///
-    ///
-    virtual void addInlet();
-
-    virtual void addInlet(int _portClass_);
-
-    ////
-    /// \brief adds single outlet (cm_port)
-    /// \param idx
-    /// \return
-    ///
-
-    virtual void addOutlet();
-
-    virtual void addOutlet(int _portClass_);
-
-    ////
-    /// \brief gets inlet (cm_port) at specified index
-    /// \param idx
-    /// \return
-    ///
-
-    Port* inletAt(int idx);
-
-    ////
-    /// \brief gets outlet (cm_port) at specified index
-    /// \param idx
-    /// \return
-    ///
-
-    Port* outletAt(int idx);
-
-    ////
-    /// \brief returns 1 if signal~
-    /// \param idx
-    /// \return
-    ///
-    int pdInletType(int idx);
-
-    ////
-    /// \brief inlet count
-    /// \return
-    ///
-    int inletCount();
-
-    ////
-    /// \brief for pd object outlet: returns 1 if signal~
-    /// \param idx
-    /// \return
-    ///
-    int pdOutletType(int idx);
-
-    ////
-    /// \brief outlet count
-    /// \return
-    ///
-    int outletCount();
-
-    ////////
+    std::string objectData();
 
     ////
     /// \brief sets object text data
     /// \return
-    ///
-
     virtual void setObjectData(std::string objData);
-
-    ////
-    /// \brief call this after setting object data
-    ///
-    virtual void autoResize();
-
-    ////
-    /// \brief gets object text data /usually overriden by ui objects/
-    /// \return
-    ///
-    std::string objectData();
 
     ////
     /// \brief returns pointer to pd object.
@@ -230,32 +142,6 @@ public:
     void setErrorBox(bool val);
 
     ////
-    /// \brief returns object's text for client-based file saving
-    /// \return
-    ///
-    virtual std::string asPdFileString();
-
-    ////
-    /// \brief temporary - remove later
-    /// \details nonzero pointer for different drawing
-    ///
-    QMainWindow* subpatchWindow();
-    virtual void setSubpatchWindow(QMainWindow* cwindow);
-
-    ////
-    /// \brief sets pointer to edit mode flag value in parent canvas
-    /// \param canvasEditMode
-    ///
-    void setEditModeRef(t_editMode* canvasEditMode);
-
-    //////////
-    ////
-    /// \brief custom resize event
-    void resizeEvent();
-
-    // ------------------------
-
-    ////
     /// \brief set secondary 'minimum width' value - used for object box resize
     /// \param w
     ///
@@ -279,28 +165,103 @@ public:
     ///
     int minimumBoxHeight();
 
-    // ??
-    void hide();
-
-    void hideSizeBox();
+    ////
+    /// \brief temporary - remove later
+    /// \details nonzero pointer for different drawing
+    QMainWindow* subpatchWindow();
+    virtual void setSubpatchWindow(QMainWindow* cwindow);
 
     ////
     /// \brief set short name for help patch (without path)
     /// \param name
-    ///
     void setHelpName(QString name);
 
     ////
     /// \brief returns help patch name with path if the file is found
     /// \return
-    ///
     QString fullHelpName();
 
     ////
     /// \brief set object resize mode - fixed or sizeable
     /// \param os
-    ///
     void setObjectSizeMode(t_objectSize os) { _objectSizeMode = os; }
+
+    /** @}*/
+
+    ////
+    /// \defgroup iolets Inlets and outlets
+    /// @{
+
+    ////
+    /// \brief sets inlet position (cm_port)
+    /// \details this is reserved for more versatile UI
+    /// \param idx
+    /// \return
+    virtual void setInletsPos();
+
+    ////
+    /// \brief sets outlet position (cm_port)
+    /// \details this is reserved for more versatile UI
+    /// \param idx
+    /// \return
+    ///
+    ///
+    virtual void setOutletsPos();
+
+    ////
+    /// \brief adds single inlet (cm_port)
+    /// \details overriden by canvas to hide ports in canvas view
+    /// \param idx
+    /// \return
+    ///
+    ///
+    virtual void addInlet();
+
+    virtual void addInlet(int _portClass_);
+
+    ////
+    /// \brief adds single outlet (cm_port)
+    /// \param idx
+    /// \return
+    virtual void addOutlet();
+
+    virtual void addOutlet(int _portClass_);
+
+    ////
+    /// \brief gets inlet (cm_port) at specified index
+    /// \param idx
+    /// \return
+    Port* inletAt(int idx);
+
+    ////
+    /// \brief gets outlet (cm_port) at specified index
+    /// \param idx
+    /// \return
+    Port* outletAt(int idx);
+
+    ////
+    /// \brief returns 1 if signal~
+    /// \param idx
+    /// \return
+    int pdInletType(int idx);
+
+    ////
+    /// \brief inlet count
+    /// \return
+    int inletCount();
+
+    ////
+    /// \brief for pd object outlet: returns 1 if signal~
+    /// \param idx
+    /// \return
+    int pdOutletType(int idx);
+
+    ////
+    /// \brief outlet count
+    /// \return
+    int outletCount();
+
+    /** @}*/
 
 private slots:
     void openPropertiesWindow();
@@ -320,7 +281,6 @@ public slots:
     /// \brief this slot is called by property editor or anything that changes property
     /// \details fix this later with better property system
     /// \param pname
-    ///
     void propertyChanged(QString pname);
 };
 }
