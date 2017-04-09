@@ -14,7 +14,7 @@ var searchData=
   ['inletat',['inletAt',['../classqtpd_1_1_u_i_object.html#affed6bc718dcfa37071c856895d70230',1,'qtpd::UIObject']]],
   ['inletcount',['inletCount',['../classqtpd_1_1_u_i_object.html#a64ad65d9eba38d18c6cf475fa0fbdd65',1,'qtpd::UIObject']]],
   ['inletindex',['inletIndex',['../classqtpd_1_1_patchcord.html#a0d933ac877c243182fe02ba4fb6aeb32',1,'qtpd::Patchcord']]],
-  ['inlets',['inlets',['../classqtpd_1_1canvas_data_plus.html#a21630a6d657648629818d2576200c044',1,'qtpd::canvasDataPlus']]],
+  ['inlets',['inlets',['../classqtpd_1_1canvas_data.html#a7966aa4a4af8d3a30900d0a4cf1645dd',1,'qtpd::canvasData']]],
   ['inputdevicecount',['inputDeviceCount',['../struct__cmp__audio__info.html#abb46e4a7caa397873793617c0816945c',1,'_cmp_audio_info']]],
   ['inputdevicelist',['inputDeviceList',['../struct__cmp__audio__info.html#aaa14da2783c9d73cb8985b085e4aef2c',1,'_cmp_audio_info']]],
   ['insert',['insert',['../classceammc_1_1_atom_list.html#a8fb783701919036bb9c026375626859d',1,'ceammc::AtomList::insert(size_t pos, const Atom &amp;a)'],['../classceammc_1_1_atom_list.html#afcb0933bbdae8cdb4fc4fd6ff9667ad9',1,'ceammc::AtomList::insert(size_t pos, const AtomList &amp;l)']]],

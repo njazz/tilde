@@ -94,12 +94,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__cmp__audio__info.html">_cmp_audio_info</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Pd audio info structure.  <a href="struct__cmp__audio__info.html#details">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#aef7ba73145c14cf0ffca487d734e38f0">t_updateUI</a> )(void *uiobj, <a class="el" href="classceammc_1_1_atom_list.html">ceammc::AtomList</a> msg)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">callback function when UI needs update  <a href="#aef7ba73145c14cf0ffca487d734e38f0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a60e4f3209d8f267b0aa06105b0b1a4ff">t_printhook</a> )(const char *s)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__cmp__audio__info.html">_cmp_audio_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a6dfb84d0c4c74fc07153deac0b400570">t_cmp_audio_info</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Pd audio info structure.  <a href="#a6dfb84d0c4c74fc07153deac0b400570"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a0a5eb98f82b947afc8ae05735839e8f3">cmp_pdinit</a> ()</td></tr>
@@ -161,12 +163,19 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a1d2cd6f5f314f952bd32974edefd0962">cmp_set_verbose</a> (int v)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">set verbose level (1..5)  <a href="#a1d2cd6f5f314f952bd32974edefd0962"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="m__pd_8h.html#ac071d0f7a80e8bdaf1a3e9dc977d03b8">t_garray</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#ae720f59bd81a99a5fc06fa7d33b1115c">cmp_get_array</a> (<a class="el" href="m__pd_8h.html#a2db18d99dc6ea00736f0a356270160ba">t_symbol</a> *arrayname)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get Pd array pointer by array symbol  <a href="#ae720f59bd81a99a5fc06fa7d33b1115c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a57415e8e6074a693dd767aae59b97c40">cmp_get_array_data</a> (<a class="el" href="m__pd_8h.html#ac071d0f7a80e8bdaf1a3e9dc977d03b8">t_garray</a> *a, int *size, <a class="el" href="m__pd_8h.html#a8967c5ba87b9455fd29726f7794235d2">t_word</a> **vec)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get Pd array data  <a href="#a57415e8e6074a693dd767aae59b97c40"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a35a55a7ec4f3ad40cb34a78dd447b7fc">cmp_get_array_size</a> (<a class="el" href="m__pd_8h.html#ac071d0f7a80e8bdaf1a3e9dc977d03b8">t_garray</a> *a)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get Pd array size  <a href="#a35a55a7ec4f3ad40cb34a78dd447b7fc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="m__pd_8h.html#ac071d0f7a80e8bdaf1a3e9dc977d03b8">t_garray</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a5e3a540ebc4655748e2c87cabd76213c">cmp_new_array</a> (<a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *c, <a class="el" href="m__pd_8h.html#a2db18d99dc6ea00736f0a356270160ba">t_symbol</a> *name, <a class="el" href="m__pd_8h.html#ab66b7dff3a7346586dc6f918e9a594af">t_floatarg</a> size, <a class="el" href="m__pd_8h.html#ab66b7dff3a7346586dc6f918e9a594af">t_floatarg</a> save, <a class="el" href="m__pd_8h.html#ab66b7dff3a7346586dc6f918e9a594af">t_floatarg</a> newgraph)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">new Pd array  <a href="#a5e3a540ebc4655748e2c87cabd76213c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="m__pd_8h.html#a77366c1bd428629dc898e188bfd182a3">EXTERN</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a8a20b999b802c71b229de8a524283645">cmp_loadbang</a> (<a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *canvas)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">send loadbang  <a href="#a8a20b999b802c71b229de8a524283645"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_pd_link_8h.html#a6dfb84d0c4c74fc07153deac0b400570">t_cmp_audio_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a43ae3195ceb778e536547297dd13a5a7">cmp_get_audio_device_info</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get audio info structure  <a href="#a43ae3195ceb778e536547297dd13a5a7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a1c1f679912fa18aaed166b3e863408c0">cmp_get_audio_apis</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get list of audio api names as Tcl string {{api name} {api name 2} ...}  <a href="#a1c1f679912fa18aaed166b3e863408c0"></a><br/></td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
 <a class="anchor" id="a6dfb84d0c4c74fc07153deac0b400570"></a><!-- doxytag: member="PdLink.h::t_cmp_audio_info" ref="a6dfb84d0c4c74fc07153deac0b400570" args="" -->
@@ -179,6 +188,8 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Pd audio info structure. </p>
 
 </div>
 </div>
@@ -475,6 +486,15 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>get Pd array pointer by array symbol </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arrayname</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="a57415e8e6074a693dd767aae59b97c40"></a><!-- doxytag: member="PdLink.h::cmp_get_array_data" ref="a57415e8e6074a693dd767aae59b97c40" args="(t_garray *a, int *size, t_word **vec)" -->
@@ -508,6 +528,16 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>get Pd array data </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td></td></tr>
+    <tr><td class="paramname">size</td><td></td></tr>
+    <tr><td class="paramname">vec</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="a35a55a7ec4f3ad40cb34a78dd447b7fc"></a><!-- doxytag: member="PdLink.h::cmp_get_array_size" ref="a35a55a7ec4f3ad40cb34a78dd447b7fc" args="(t_garray *a)" -->
@@ -525,6 +555,15 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>get Pd array size </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="a1c1f679912fa18aaed166b3e863408c0"></a><!-- doxytag: member="PdLink.h::cmp_get_audio_apis" ref="a1c1f679912fa18aaed166b3e863408c0" args="()" -->
@@ -541,6 +580,9 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>get list of audio api names as Tcl string {{api name} {api name 2} ...} </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="a43ae3195ceb778e536547297dd13a5a7"></a><!-- doxytag: member="PdLink.h::cmp_get_audio_device_info" ref="a43ae3195ceb778e536547297dd13a5a7" args="()" -->
@@ -556,6 +598,9 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>get audio info structure </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -831,6 +876,14 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>send loadbang </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">canvas</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="a8918f6f28b214d15300a46588fa21d78"></a><!-- doxytag: member="PdLink.h::cmp_loadlib" ref="a8918f6f28b214d15300a46588fa21d78" args="(std::string lib)" -->
@@ -896,7 +949,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>pointer to object </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000006">Deprecated:</a></b></dt><dd>using only objects now </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000008">Deprecated:</a></b></dt><dd>using only objects now </dd></dl>
 <p>move pd object to new location </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -951,6 +1004,19 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>new Pd array </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>- Pd canvas </td></tr>
+    <tr><td class="paramname">name</td><td>- array name symbol </td></tr>
+    <tr><td class="paramname">size</td><td>- minimum size </td></tr>
+    <tr><td class="paramname">save</td><td>- save within patch - this is unused while we have FileSaver in qtpd_gui </td></tr>
+    <tr><td class="paramname">newgraph</td><td>- unused </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -1007,7 +1073,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>new canvas or 0 if failed </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000004">Deprecated:</a></b></dt><dd>not used for now - the files are loaded by 'client' </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000006">Deprecated:</a></b></dt><dd>not used for now - the files are loaded by 'client' </dd></dl>
 
 </div>
 </div>
@@ -1170,7 +1236,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000005">Deprecated:</a></b></dt><dd>not used for now - the files are saved by 'client' </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000007">Deprecated:</a></b></dt><dd>not used for now - the files are saved by 'client' </dd></dl>
 
 </div>
 </div>
@@ -1303,7 +1369,7 @@ Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 9 2017 10:21:31 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 9 2017 23:27:32 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

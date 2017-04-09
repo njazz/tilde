@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['basemenu',['BaseMenu',['../classqtpd_1_1_base_menu.html',1,'qtpd']]],
-  ['basemenu',['BaseMenu',['../classqtpd_1_1_base_menu.html#abd7a919c43f0aca0c1e5126ad3620d0b',1,'qtpd::BaseMenu']]],
-  ['basemenu_2ecpp',['BaseMenu.cpp',['../_base_menu_8cpp.html',1,'']]],
-  ['basemenu_2eh',['BaseMenu.h',['../_base_menu_8h.html',1,'']]],
   ['basewindow',['BaseWindow',['../classqtpd_1_1_base_window.html',1,'qtpd']]],
   ['basewindow',['BaseWindow',['../classqtpd_1_1_base_window.html#ae2a076d8f8a489795f2b7fbf26fadd5d',1,'qtpd::BaseWindow']]],
   ['basewindow_2ecpp',['BaseWindow.cpp',['../_base_window_8cpp.html',1,'']]],

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['basemenu',['BaseMenu',['../classqtpd_1_1_base_menu.html#abd7a919c43f0aca0c1e5126ad3620d0b',1,'qtpd::BaseMenu']]],
   ['basewindow',['BaseWindow',['../classqtpd_1_1_base_window.html#ae2a076d8f8a489795f2b7fbf26fadd5d',1,'qtpd::BaseWindow']]],
   ['bgcolor',['bgColor',['../classqtpd_1_1_u_i_item.html#a15c57968966de733a09cf02973b63696',1,'qtpd::UIItem']]],
   ['binbuf_5fadd',['binbuf_add',['../m__pd_8h.html#a35695fba26e38a1fdc55509906e6cd91',1,'m_pd.h']]],

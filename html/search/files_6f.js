@@ -10,8 +10,6 @@ var searchData=
   ['oopdheaders_2eh',['OOPDHeaders.h',['../_o_o_p_d_headers_8h.html',1,'']]],
   ['opclass_2ecpp',['OPClass.cpp',['../_o_p_class_8cpp.html',1,'']]],
   ['opclass_2eh',['OPClass.h',['../_o_p_class_8h.html',1,'']]],
-  ['openfileproxy_2ecpp',['OpenFileProxy.cpp',['../_open_file_proxy_8cpp.html',1,'']]],
-  ['openfileproxy_2eh',['OpenFileProxy.h',['../_open_file_proxy_8h.html',1,'']]],
   ['opinstance_2ecpp',['OPInstance.cpp',['../_o_p_instance_8cpp.html',1,'']]],
   ['opinstance_2eh',['OPInstance.h',['../_o_p_instance_8h.html',1,'']]]
 ];
