@@ -48,6 +48,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -119,7 +120,7 @@ Inheritance diagram for qtpd::UIText:</div>
   <img src="classqtpd_1_1_u_i_text.png" usemap="#qtpd::UIText_map" alt=""/>
   <map id="qtpd::UIText_map" name="qtpd::UIText_map">
 <area href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special" alt="qtpd::UIObject" shape="rect" coords="0,56,89,80"/>
-<area href="classqtpd_1_1_u_i_item.html" title="parent class for all objects in the canvas" alt="qtpd::UIItem" shape="rect" coords="0,0,89,24"/>
+<area href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class." alt="qtpd::UIItem" shape="rect" coords="0,0,89,24"/>
 </map>
  </div></div>
 
@@ -130,12 +131,10 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_text.html#a63c32d16e0b759e74452444b9a7590e7">UIText</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_text.html#ae4fd79dfe69c60bbbda202bdfc1327b0">paint</a> (QPainter *<a class="el" href="floatobject_8h.html#af18a92ce774f4c499544fbcc894db7e8">p</a>, const QStyleOptionGraphicsItem *, QWidget *)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_text.html#a56d8f9ba20c632198216ba5d8daac247">initProperties</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">init properties for the class - called from constructor  <a href="#a56d8f9ba20c632198216ba5d8daac247"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_text.html#ac1bb24aec75f28dab43b4d353f122abd">mousePressEvent</a> (QGraphicsSceneMouseEvent *ev)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_text.html#ad3f5302b60a5b39824fd1f215b6a07c6">mouseReleaseEvent</a> (QGraphicsSceneMouseEvent *)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_text.html#a6739494ae2a56b0073988779a71c3768">mouseMoveEvent</a> (QGraphicsSceneMouseEvent *event)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_text.html#abe3b5d63ecd147d71afa4c834f12245c">autoResize</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">call this after setting object data  <a href="#abe3b5d63ecd147d71afa4c834f12245c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_text.html#a5ce5e9a1342d499b7702d7ec8cbddfb6">setPdMessage</a> (<a class="el" href="asdl_8h.html#aafa21ae74f7a3e4ac0c645f0f30ee853">std::string</a> message)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_text.html#a20a1e21b277ddf6fb89ecce5ffdb0af8">pdObject</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns pointer to pd object.  <a href="#a20a1e21b277ddf6fb89ecce5ffdb0af8"></a><br/></td></tr>
@@ -143,7 +142,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_text.html#a717276407aeca410161b2e664b85efed">getEditorData</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_text.html#ab876cf8cdfd8a44c3dee7afe466edcd9">createObject</a> (QString <a class="el" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447">objectData</a>, <a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *, QGraphicsView *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_text.html#ab876cf8cdfd8a44c3dee7afe466edcd9">createObject</a> (QString <a class="el" href="group__prop.html#gab898f6da7aadb3223e25f13eb937c447">objectData</a>, <a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *, QGraphicsView *parent=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_text.html#a8bf9d3f08b1fa8ceb7c01bfb71ec0e69">updateUI</a> (void *uiobj, <a class="el" href="classceammc_1_1_atom_list.html">ceammc::AtomList</a> msg)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
@@ -179,8 +178,6 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>call this after setting object data </p>
 
 <p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#a1c7d66be6089715aaf5c03adb64a915b">qtpd::UIObject</a>.</p>
 
@@ -275,8 +272,6 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>init properties for the class - called from constructor </p>
 
 <p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#a07fc14ec32a45e628bece60f892500b8">qtpd::UIObject</a>.</p>
 
@@ -386,7 +381,7 @@ Static Public Member Functions</h2></td></tr>
 <p>gui-only objects can ovverride it with function that returns 0 </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#ad41f2f9ff8447ea8dc061c3e8fc6528b">qtpd::UIObject</a>.</p>
+<p>Reimplemented from <a class="el" href="group__prop.html#gad41f2f9ff8447ea8dc061c3e8fc6528b">qtpd::UIObject</a>.</p>
 
 </div>
 </div>
@@ -456,7 +451,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 8 2017 22:56:53 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 9 2017 09:45:55 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -48,6 +48,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -94,30 +95,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00010"></a>00010 
 <a name="l00011"></a>00011 <span class="keyword">namespace </span>qtpd {
 <a name="l00012"></a>00012 
-<a name="l00013"></a><a class="code" href="classqtpd_1_1_new_line.html">00013</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_new_line.html">NewLine</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1_u_i_item.html" title="parent class for all objects in the canvas">UIItem</a> {
-<a name="l00014"></a>00014     <span class="keywordtype">bool</span> _active;
-<a name="l00015"></a>00015     QPoint _start;
-<a name="l00016"></a>00016     QPoint _end;
-<a name="l00017"></a>00017 
-<a name="l00018"></a>00018 <span class="keyword">public</span>:
-<a name="l00019"></a>00019     <a class="code" href="classqtpd_1_1_new_line.html#a96d1a0bfb0ef9ed220ffd06e2b6e3f8d">NewLine</a>();
+<a name="l00016"></a><a class="code" href="classqtpd_1_1_new_patchcord.html">00016</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_new_patchcord.html" title="New patchcord dashed line.">NewPatchcord</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a> {
+<a name="l00017"></a>00017     <span class="keywordtype">bool</span> _active;
+<a name="l00018"></a>00018     QPoint _start;
+<a name="l00019"></a>00019     QPoint _end;
 <a name="l00020"></a>00020 
-<a name="l00021"></a><a class="code" href="classqtpd_1_1_new_line.html#a3768a8d121feef51671f37c52535c286">00021</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_new_line.html#a3768a8d121feef51671f37c52535c286">setActive</a>(<span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_new_line.html#adc2001121d1514270562ef25310081d6">active</a>) { _active = <a class="code" href="classqtpd_1_1_new_line.html#adc2001121d1514270562ef25310081d6">active</a>; }
-<a name="l00022"></a><a class="code" href="classqtpd_1_1_new_line.html#adc2001121d1514270562ef25310081d6">00022</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_new_line.html#adc2001121d1514270562ef25310081d6">active</a>() { <span class="keywordflow">return</span> _active; }
-<a name="l00023"></a><a class="code" href="classqtpd_1_1_new_line.html#a0dd5f85d00b5beee4f6ff7e6ef561552">00023</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_new_line.html#a0dd5f85d00b5beee4f6ff7e6ef561552">setStart</a>(QPoint <a class="code" href="sliceobject_8h.html#ab80172fa2f374f0198e6186560ed619e">start</a>) { _start = <a class="code" href="sliceobject_8h.html#ab80172fa2f374f0198e6186560ed619e">start</a>; }
-<a name="l00024"></a><a class="code" href="classqtpd_1_1_new_line.html#abad9acb7a79e3e0ed2625d4d9cab5fa5">00024</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_new_line.html#abad9acb7a79e3e0ed2625d4d9cab5fa5">setEnd</a>(QPoint end) { _end = end; }
-<a name="l00025"></a>00025 
-<a name="l00026"></a><a class="code" href="classqtpd_1_1_new_line.html#a71d8cd3c3947771242d68e7d9bd59d85">00026</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_new_line.html#a71d8cd3c3947771242d68e7d9bd59d85">paint</a>(QPainter* painter, <span class="keyword">const</span> QStyleOptionGraphicsItem*, QWidget*)
-<a name="l00027"></a>00027     {
-<a name="l00028"></a>00028         <span class="keywordflow">if</span> (_active) {
-<a name="l00029"></a>00029 
-<a name="l00030"></a>00030             painter-&gt;setPen(QPen(QColor(128, 128, 128), 1, Qt::DashLine, Qt::SquareCap, Qt::BevelJoin));
-<a name="l00031"></a>00031             painter-&gt;drawLine(_start.x(), _start.y(), _end.x(), _end.y());
-<a name="l00032"></a>00032         }
-<a name="l00033"></a>00033     }
-<a name="l00034"></a>00034 };
-<a name="l00035"></a>00035 }
-<a name="l00036"></a>00036 <span class="preprocessor">#endif // NewLine_H</span>
+<a name="l00021"></a>00021 <span class="keyword">public</span>:
+<a name="l00022"></a>00022     <a class="code" href="classqtpd_1_1_new_patchcord.html#a42f8aa1d32bd2efeec424a3a9ab8a302">NewPatchcord</a>();
+<a name="l00023"></a>00023 
+<a name="l00027"></a>00027 
+<a name="l00028"></a><a class="code" href="group__prop.html#ga3848546427931ad6e75bc673b2772b90">00028</a>     <span class="keywordtype">void</span> <a class="code" href="group__prop.html#ga3848546427931ad6e75bc673b2772b90">setActive</a>(<span class="keywordtype">bool</span> <a class="code" href="group__prop.html#ga1ced6b922c2fd6c4ee08d356ae1efcf9">active</a>) { _active = <a class="code" href="group__prop.html#ga1ced6b922c2fd6c4ee08d356ae1efcf9">active</a>; }
+<a name="l00029"></a><a class="code" href="group__prop.html#ga1ced6b922c2fd6c4ee08d356ae1efcf9">00029</a>     <span class="keywordtype">bool</span> <a class="code" href="group__prop.html#ga1ced6b922c2fd6c4ee08d356ae1efcf9">active</a>() { <span class="keywordflow">return</span> _active; }
+<a name="l00030"></a><a class="code" href="group__prop.html#gaad215fe6b10a7b497e99e4f5a68fd521">00030</a>     <span class="keywordtype">void</span> <a class="code" href="group__prop.html#gaad215fe6b10a7b497e99e4f5a68fd521">setStart</a>(QPoint <a class="code" href="sliceobject_8h.html#ab80172fa2f374f0198e6186560ed619e">start</a>) { _start = <a class="code" href="sliceobject_8h.html#ab80172fa2f374f0198e6186560ed619e">start</a>; }
+<a name="l00031"></a><a class="code" href="group__prop.html#gae0cac4aeb71811f09f03eae4269b5898">00031</a>     <span class="keywordtype">void</span> <a class="code" href="group__prop.html#gae0cac4aeb71811f09f03eae4269b5898">setEnd</a>(QPoint end) { _end = end; }
+<a name="l00032"></a>00032 
+<a name="l00035"></a>00035     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_new_patchcord.html#acdf7b2fde6e094c4b345e43f2199b7ff">paint</a>(QPainter* painter, <span class="keyword">const</span> QStyleOptionGraphicsItem*, QWidget*);
+<a name="l00036"></a>00036 };
+<a name="l00037"></a>00037 }
+<a name="l00038"></a>00038 <span class="preprocessor">#endif // NewLine_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -136,7 +131,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 8 2017 22:56:51 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 9 2017 09:45:53 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

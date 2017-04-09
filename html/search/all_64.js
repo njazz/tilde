@@ -86,7 +86,7 @@ var searchData=
   ['description',['description',['../classceammc_1_1_global_data.html#a41da0537785ebe5c84adb9ccbb1a5cbd',1,'ceammc::GlobalData']]],
   ['descrobject_2eh',['descrobject.h',['../descrobject_8h.html',1,'']]],
   ['descrsetfunc',['descrsetfunc',['../object_8h.html#a68cf81baeb03d73344b77322251361e6',1,'object.h']]],
-  ['deselect',['deselect',['../classqtpd_1_1_u_i_item.html#ac247c4809958f915f53a2a76a9436176',1,'qtpd::UIItem']]],
+  ['deselect',['deselect',['../group__prop.html#gac247c4809958f915f53a2a76a9436176',1,'qtpd::UIItem']]],
   ['deselectall',['deselectAll',['../classpy_canvas_decorator.html#a72f7ef5534389c411341ea2128740ebe',1,'pyCanvasDecorator']]],
   ['deselectboxes',['deselectBoxes',['../classqtpd_1_1canvas_data.html#a1156d23d46886f57b51b543c79bbcaf3',1,'qtpd::canvasData']]],
   ['deselectpatchcords',['deselectPatchcords',['../classqtpd_1_1canvas_data.html#a1a523e4168224ee5b47aba56cea754c1',1,'qtpd::canvasData']]],

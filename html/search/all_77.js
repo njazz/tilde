@@ -29,7 +29,7 @@ var searchData=
   ['while_5fkind',['While_kind',['../_python-ast_8h.html#a3f8747ef1343a8899c10bb4911deed50afc4199fcac0eeced7c1c57753fb78f38',1,'Python-ast.h']]],
   ['while_5fstmt',['while_stmt',['../graminit_8h.html#a2c5edf0c9a0deed0cb9a10d94295c46b',1,'graminit.h']]],
   ['widget',['widget',['../classqtpd_1_1_u_i_d_s_p.html#a5e52c52310c35718295ee7b72844859f',1,'qtpd::UIDSP']]],
-  ['width',['width',['../classqtpd_1_1_u_i_item.html#a89b7d0bcdcb226800c37d95305a1f441',1,'qtpd::UIItem::width()'],['../structceammc__gui_1_1_base_gui_object.html#a94819a233ff648ddc40d4bca96810d26',1,'ceammc_gui::BaseGuiObject::width()']]],
+  ['width',['width',['../group__prop.html#ga89b7d0bcdcb226800c37d95305a1f441',1,'qtpd::UIItem::width()'],['../structceammc__gui_1_1_base_gui_object.html#a94819a233ff648ddc40d4bca96810d26',1,'ceammc_gui::BaseGuiObject::width()']]],
   ['win',['win',['../struct_py_curses_window_object.html#ad963a38c3738dce76f378c668a3254ba',1,'PyCursesWindowObject']]],
   ['winobj_5fconvert',['WinObj_Convert',['../pymactoolbox_8h.html#a736bd7fb4a10dbe45cc8bdb26d55a16e',1,'pymactoolbox.h']]],
   ['winobj_5fnew',['WinObj_New',['../pymactoolbox_8h.html#a2513207b46a3f5bdb0c0a3642206191e',1,'pymactoolbox.h']]],

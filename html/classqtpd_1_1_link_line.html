@@ -48,6 +48,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -107,6 +108,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="qtpd::LinkLine" --><!-- doxytag: inherits="qtpd::UIItem" -->
+<p>Line that indicates the link between objects: first it should be used with [s] [r] and [s~] [r~].  
+ <a href="classqtpd_1_1_link_line.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_link_line_8h_source.html">LinkLine.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for qtpd::LinkLine:</div>
@@ -114,7 +118,7 @@ Inheritance diagram for qtpd::LinkLine:</div>
  <div class="center">
   <img src="classqtpd_1_1_link_line.png" usemap="#qtpd::LinkLine_map" alt=""/>
   <map id="qtpd::LinkLine_map" name="qtpd::LinkLine_map">
-<area href="classqtpd_1_1_u_i_item.html" title="parent class for all objects in the canvas" alt="qtpd::UIItem" shape="rect" coords="0,0,88,24"/>
+<area href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class." alt="qtpd::UIItem" shape="rect" coords="0,0,88,24"/>
 </map>
  </div></div>
 
@@ -123,8 +127,11 @@ Inheritance diagram for qtpd::LinkLine:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_link_line.html#a7b7fdc2cd5d37fb8e175d438b981eef0">LinkLine</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_link_line.html#ad94632d4100263535caf458bb50f4f70">paint</a> (QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)</td></tr>
 </table>
-<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Line that indicates the link between objects: first it should be used with [s] [r] and [s~] [r~]. </p>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a7b7fdc2cd5d37fb8e175d438b981eef0"></a><!-- doxytag: member="qtpd::LinkLine::LinkLine" ref="a7b7fdc2cd5d37fb8e175d438b981eef0" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -133,11 +140,47 @@ Public Member Functions</h2></td></tr>
           <td class="memname"><a class="el" href="classqtpd_1_1_link_line.html#a7b7fdc2cd5d37fb8e175d438b981eef0">qtpd::LinkLine::LinkLine</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ad94632d4100263535caf458bb50f4f70"></a><!-- doxytag: member="qtpd::LinkLine::paint" ref="ad94632d4100263535caf458bb50f4f70" args="(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_link_line.html#ad94632d4100263535caf458bb50f4f70">qtpd::LinkLine::paint</a> </td>
+          <td>(</td>
+          <td class="paramtype">QPainter *&#160;</td>
+          <td class="paramname"><em>painter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QStyleOptionGraphicsItem *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_item.html#a7d35cc78930b523be25a55b0167e5a13">qtpd::UIItem</a>.</p>
 
 </div>
 </div>
@@ -163,7 +206,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 8 2017 22:56:53 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 9 2017 09:45:55 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
