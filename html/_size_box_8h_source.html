@@ -48,7 +48,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
-      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -115,15 +114,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00034"></a>00034 
 <a name="l00035"></a><a class="code" href="classqtpd_1_1_size_box.html#a623ef420675047fde89cab6452ed875c">00035</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_size_box.html#a623ef420675047fde89cab6452ed875c">paint</a>(QPainter* <a class="code" href="floatobject_8h.html#af18a92ce774f4c499544fbcc894db7e8">p</a>, <span class="keyword">const</span> QStyleOptionGraphicsItem*, QWidget*)
 <a name="l00036"></a>00036     {
-<a name="l00037"></a>00037         QBrush brush(<a class="code" href="group__prop.html#ga15c57968966de733a09cf02973b63696">bgColor</a>());
+<a name="l00037"></a>00037         QBrush brush(<a class="code" href="classqtpd_1_1_u_i_item.html#a15c57968966de733a09cf02973b63696">bgColor</a>());
 <a name="l00038"></a>00038         p-&gt;setBrush(brush);
-<a name="l00039"></a>00039         p-&gt;drawRect(<a class="code" href="group__prop.html#ga0a8d5299d5a0a2ebcef2135913bc97da">boundingRect</a>());
+<a name="l00039"></a>00039         p-&gt;drawRect(<a class="code" href="classqtpd_1_1_u_i_item.html#a0a8d5299d5a0a2ebcef2135913bc97da">boundingRect</a>());
 <a name="l00040"></a>00040 
 <a name="l00041"></a>00041         p-&gt;setPen(QPen(QColor(128, 128, 128), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-<a name="l00042"></a>00042         p-&gt;drawRect(0, 0, <a class="code" href="group__prop.html#ga0a8d5299d5a0a2ebcef2135913bc97da">boundingRect</a>().<a class="code" href="group__prop.html#ga89b7d0bcdcb226800c37d95305a1f441">width</a>(), <a class="code" href="group__prop.html#ga0a8d5299d5a0a2ebcef2135913bc97da">boundingRect</a>().<a class="code" href="group__prop.html#ga5bbd8fe0417078d386176ace5a01f261">height</a>());
+<a name="l00042"></a>00042         p-&gt;drawRect(0, 0, <a class="code" href="classqtpd_1_1_u_i_item.html#a0a8d5299d5a0a2ebcef2135913bc97da">boundingRect</a>().<a class="code" href="classqtpd_1_1_u_i_item.html#a89b7d0bcdcb226800c37d95305a1f441">width</a>(), <a class="code" href="classqtpd_1_1_u_i_item.html#a0a8d5299d5a0a2ebcef2135913bc97da">boundingRect</a>().<a class="code" href="classqtpd_1_1_u_i_item.html#a5bbd8fe0417078d386176ace5a01f261">height</a>());
 <a name="l00043"></a>00043     };
 <a name="l00044"></a>00044 
-<a name="l00048"></a><a class="code" href="group__mouse.html#ga81757d3957628c40c2e00ae273d618f3">00048</a>     <span class="keywordtype">void</span> <a class="code" href="group__mouse.html#ga81757d3957628c40c2e00ae273d618f3">mousePressEvent</a>(QGraphicsSceneMouseEvent* ev)
+<a name="l00048"></a><a class="code" href="classqtpd_1_1_size_box.html#a81757d3957628c40c2e00ae273d618f3">00048</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_size_box.html#a81757d3957628c40c2e00ae273d618f3">mousePressEvent</a>(QGraphicsSceneMouseEvent* ev)
 <a name="l00049"></a>00049     {
 <a name="l00050"></a>00050         setCursor(QCursor(Qt::SizeHorCursor));
 <a name="l00051"></a>00051 
@@ -133,14 +132,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00055"></a>00055         _prevY = ev-&gt;pos().toPoint().y();
 <a name="l00056"></a>00056     };
 <a name="l00057"></a>00057 
-<a name="l00058"></a><a class="code" href="group__mouse.html#ga77503363cb5af54dcbda924e3d6efe68">00058</a>     <span class="keywordtype">void</span> <a class="code" href="group__mouse.html#ga77503363cb5af54dcbda924e3d6efe68">mouseReleaseEvent</a>(QGraphicsSceneMouseEvent* event)
+<a name="l00058"></a><a class="code" href="classqtpd_1_1_size_box.html#a77503363cb5af54dcbda924e3d6efe68">00058</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_size_box.html#a77503363cb5af54dcbda924e3d6efe68">mouseReleaseEvent</a>(QGraphicsSceneMouseEvent* event)
 <a name="l00059"></a>00059     {
 <a name="l00060"></a>00060         setCursor(QCursor(Qt::ArrowCursor));
 <a name="l00061"></a>00061 
 <a name="l00062"></a>00062         <span class="keyword">event</span>-&gt;accept();
 <a name="l00063"></a>00063     };
 <a name="l00064"></a>00064 
-<a name="l00065"></a><a class="code" href="group__mouse.html#gaab12e83c20548a01b6740eabb17be76f">00065</a>     <span class="keywordtype">void</span> <a class="code" href="group__mouse.html#gaab12e83c20548a01b6740eabb17be76f">mouseMoveEvent</a>(QGraphicsSceneMouseEvent* ev)
+<a name="l00065"></a><a class="code" href="classqtpd_1_1_size_box.html#aab12e83c20548a01b6740eabb17be76f">00065</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_size_box.html#aab12e83c20548a01b6740eabb17be76f">mouseMoveEvent</a>(QGraphicsSceneMouseEvent* ev)
 <a name="l00066"></a>00066     {
 <a name="l00067"></a>00067         emit <a class="code" href="classqtpd_1_1_size_box.html#a75140b9a1a4c99eb147050a22f0a134e">resizeBoxEvent</a>(ev-&gt;pos().toPoint().x() - _prevX, ev-&gt;pos().toPoint().y() - _prevY);
 <a name="l00068"></a>00068     }
@@ -169,7 +168,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 9 2017 09:45:53 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 9 2017 10:04:58 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
