@@ -3,8 +3,6 @@ var searchData=
   ['t_5factivatefn',['t_activatefn',['../g__canvas_8h.html#a9663e40666bd081530ba3a3f31ad9103',1,'g_canvas.h']]],
   ['t_5farrayvis',['t_arrayvis',['../g__canvas_8h.html#a297e55da7c1629b5b9b13bf9a62f9ba1',1,'g_canvas.h']]],
   ['t_5fatom',['t_atom',['../m__pd_8h.html#a551a350aa0901b990791fd13ae62ad01',1,'m_pd.h']]],
-  ['t_5fbpf_5fpoints',['t_bpf_points',['../namespaceceammc.html#ac278362a44f5023bbdd6648cc51a113c',1,'ceammc']]],
-  ['t_5fbpt',['t_bpt',['../namespaceceammc.html#a5576895897b649e6b8408ab3892e4de3',1,'ceammc']]],
   ['t_5fcanvas_5fpath_5fiterator',['t_canvas_path_iterator',['../g__canvas_8h.html#ab7e4a798b9f397339e211b6a587af328',1,'g_canvas.h']]],
   ['t_5fcanvasapply',['t_canvasapply',['../g__canvas_8h.html#a06648af1a50b6c09199b6cb352d9c023',1,'g_canvas.h']]],
   ['t_5fclickfn',['t_clickfn',['../g__canvas_8h.html#a7db8880ebebaa760a83642fa04a67df5',1,'g_canvas.h']]],

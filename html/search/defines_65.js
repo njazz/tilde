@@ -9,8 +9,6 @@ var searchData=
   ['e_5ferror',['E_ERROR',['../errcode_8h.html#a5f7b2f58f5a663a6bdd51f197ae21993',1,'errcode.h']]],
   ['e_5fintr',['E_INTR',['../errcode_8h.html#a566beb2d1147f264a6c0e99ba5b65162',1,'errcode.h']]],
   ['e_5flinecont',['E_LINECONT',['../errcode_8h.html#a4bc935c1ff6c14f568bdecbf6d600e89',1,'errcode.h']]],
-  ['e_5flist_5faddf',['e_list_addf',['../ui__bpfunc_8cpp.html#ac1af9f9d410fbdc42f23279dffd6702e',1,'ui_bpfunc.cpp']]],
-  ['e_5flist_5fclear',['e_list_clear',['../ui__bpfunc_8cpp.html#a524dd3510073c4fb30230aa9acbd760f',1,'ui_bpfunc.cpp']]],
   ['e_5fnomem',['E_NOMEM',['../errcode_8h.html#a2c08bce13e2f5280d96f8d8e39a5ff35',1,'errcode.h']]],
   ['e_5fok',['E_OK',['../errcode_8h.html#a1e7cc741c56207a8872ea58373276925',1,'errcode.h']]],
   ['e_5foverflow',['E_OVERFLOW',['../errcode_8h.html#a2ae9bebfa7ace670d4d2718bd17142b1',1,'errcode.h']]],

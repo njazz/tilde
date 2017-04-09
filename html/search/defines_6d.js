@@ -32,8 +32,6 @@ var searchData=
   ['meth_5foldargs',['METH_OLDARGS',['../methodobject_8h.html#ae67db9ac129710e1eadda3e6e7217e00',1,'methodobject.h']]],
   ['meth_5fstatic',['METH_STATIC',['../methodobject_8h.html#a15971999e8cecb2b3169d485908bf78f',1,'methodobject.h']]],
   ['meth_5fvarargs',['METH_VARARGS',['../methodobject_8h.html#afaf9b6eff112ee295a578d2aaa72b3dc',1,'methodobject.h']]],
-  ['method_5fdbg',['METHOD_DBG',['../ceammc__log_8h.html#ab8039e1bce1a5b380a0563fa31764625',1,'ceammc_log.h']]],
-  ['method_5ferr',['METHOD_ERR',['../ceammc__log_8h.html#a6a0be7ea03b025e9affe05cc762f5a63',1,'ceammc_log.h']]],
   ['minequal',['MINEQUAL',['../token_8h.html#a11ababa41ab5e39d361aa014a78441ce',1,'token.h']]],
   ['minus',['MINUS',['../token_8h.html#a5381a445a1e4bdc36460151d82eed95a',1,'token.h']]],
   ['module',['Module',['../_python-ast_8h.html#a050cb8da9f4ab67bed9b2fa2ae362a41',1,'Python-ast.h']]],

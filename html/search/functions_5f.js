@@ -71,6 +71,5 @@ var searchData=
   ['_5fpy_5fwith',['_Py_With',['../_python-ast_8h.html#abd123e9dd4c50b67b73c8f676ff74315',1,'Python-ast.h']]],
   ['_5fpy_5fyield',['_Py_Yield',['../_python-ast_8h.html#aef15cd5d48730f2c5f4215d2cfc170df',1,'Python-ast.h']]],
   ['_5fpyfile_5fsanitizemode',['_PyFile_SanitizeMode',['../fileobject_8h.html#ae79a24200ceb8eced2511a1c357f704a',1,'fileobject.h']]],
-  ['_5fpyobject_5fslotcompare',['_PyObject_SlotCompare',['../object_8h.html#ad47644326f42ca2f1b759c7d72f75f48',1,'object.h']]],
-  ['_5fsort',['_Sort',['../classceammc_1_1_b_p_f.html#a640638dad95b26ff45df02ab7406aded',1,'ceammc::BPF']]]
+  ['_5fpyobject_5fslotcompare',['_PyObject_SlotCompare',['../object_8h.html#ad47644326f42ca2f1b759c7d72f75f48',1,'object.h']]]
 ];

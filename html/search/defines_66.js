@@ -1,7 +1,6 @@
 var searchData=
 [
   ['factor',['factor',['../graminit_8h.html#aaf26f7275025fed522a348f1071445c7',1,'graminit.h']]],
-  ['faustfloat',['FAUSTFLOAT',['../ceammc__faust_8h.html#aff8d1306e22d8dab1fbd5d24477139f5',1,'ceammc_faust.h']]],
   ['file_5finput',['file_input',['../graminit_8h.html#a89eba6671c04c32eb4f8980ecebd1b27',1,'graminit.h']]],
   ['findlabel',['findlabel',['../pgenheaders_8h.html#a4454cad1565cccc0b00b877be3dbc0e5',1,'pgenheaders.h']]],
   ['flow_5fstmt',['flow_stmt',['../graminit_8h.html#a458bb17feeab0b1ede50e740a0ba91d6',1,'graminit.h']]],

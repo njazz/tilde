@@ -8,6 +8,5 @@ var searchData=
   ['getreadbufferproc',['getreadbufferproc',['../object_8h.html#ab5c79a1da802e62b8bdb82ea51111de3',1,'object.h']]],
   ['getsegcountproc',['getsegcountproc',['../object_8h.html#a754f45597290834c3c0597e6c3449016',1,'object.h']]],
   ['getter',['getter',['../descrobject_8h.html#a11eabbfb29710b41c370bdfdc0bb3e80',1,'descrobject.h']]],
-  ['getterfn',['GetterFn',['../classceammc_1_1_base_object.html#a4818cbd527119fef5d6d20b77b6b4604',1,'ceammc::BaseObject::GetterFn()'],['../classceammc_1_1_callback_property.html#ae31eb83136b6807895ccd9fa539e8191',1,'ceammc::CallbackProperty::GetterFn()']]],
   ['getwritebufferproc',['getwritebufferproc',['../object_8h.html#ac05570aff5dd6720b26afba87c9490fd',1,'object.h']]]
 ];

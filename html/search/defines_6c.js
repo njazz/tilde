@@ -10,8 +10,6 @@ var searchData=
   ['leftshiftequal',['LEFTSHIFTEQUAL',['../token_8h.html#a88572dbfd08e69f3470b563ef9e4fe0b',1,'token.h']]],
   ['less',['LESS',['../token_8h.html#a16bcdd65ecdd3313af9e393538fa7fa8',1,'token.h']]],
   ['lessequal',['LESSEQUAL',['../token_8h.html#ac3cb64b515631fe5f3e430db76c9978a',1,'token.h']]],
-  ['lib_5fdbg',['LIB_DBG',['../ceammc__log_8h.html#a27d258d09ff838f81dc6ee10315f8097',1,'ceammc_log.h']]],
-  ['lib_5ferr',['LIB_ERR',['../ceammc__log_8h.html#aae6bd12793ddee2e9d4f6d5849eb0f10',1,'ceammc_log.h']]],
   ['list',['List',['../_python-ast_8h.html#a201830357d214aabbdb46b4163c792cf',1,'Python-ast.h']]],
   ['list_5fappend',['LIST_APPEND',['../opcode_8h.html#a8e2d5aa6499254e415525f352c41498f',1,'opcode.h']]],
   ['list_5ffor',['list_for',['../graminit_8h.html#af60f8444884b9f99ab7b980cd51624cc',1,'graminit.h']]],

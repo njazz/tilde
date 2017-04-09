@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['ui_5ffun',['UI_fun',['../ceammc__gui_8h.html#a23602fe90f01f4eb14296e675f5a12ec',1,'ceammc_gui.h']]],
-  ['ui_5ffunp',['UI_funp',['../ceammc__gui_8h.html#a20e2ca03bc1a19da56074c97c4a670b0',1,'ceammc_gui.h']]],
-  ['ui_5fmethod_5fptr',['UI_METHOD_PTR',['../ceammc__gui_8h.html#a71cee5f291e6c8a6f5153b8a3ea0787f',1,'ceammc_gui.h']]],
   ['unary_5fconvert',['UNARY_CONVERT',['../opcode_8h.html#ae72c4569ee7eccaa043ce02766cf3fd1',1,'opcode.h']]],
   ['unary_5finvert',['UNARY_INVERT',['../opcode_8h.html#a1ed78f71ce2bbc287277a6ffa367da7f',1,'opcode.h']]],
   ['unary_5fnegative',['UNARY_NEGATIVE',['../opcode_8h.html#abe2c85157b3c67112c9da1f5c9e0e13d',1,'opcode.h']]],

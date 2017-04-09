@@ -267,7 +267,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00186"></a>00186         <span class="keywordflow">if</span> (out2) {
 <a name="l00187"></a>00187             <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> objList = <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a>(<a class="code" href="classceammc_1_1_atom.html">Atom</a>(<a class="code" href="m__pd_8h.html#a4449f71b80468e7d6e79a67193e65e0b">gensym</a>(<span class="stringliteral">&quot;setobject&quot;</span>)));
 <a name="l00188"></a>00188 
-<a name="l00189"></a>00189             objList.<a class="code" href="classceammc_1_1_atom_list.html#af9d70f5330ecc54ef2158a7207292fc0">append</a>(<a class="code" href="classceammc_1_1_atom.html">Atom</a>(<a class="code" href="m__pd_8h.html#a4449f71b80468e7d6e79a67193e65e0b">gensym</a>(<a class="code" href="ui__bpfunc_8cpp.html#a3a3e9d4cf73114c8e5198225ca65269e">to_string</a>((<span class="keywordtype">long</span>)<span class="keyword">this</span>).c_str())));
+<a name="l00189"></a>00189             objList.<a class="code" href="classceammc_1_1_atom_list.html#af9d70f5330ecc54ef2158a7207292fc0">append</a>(<a class="code" href="classceammc_1_1_atom.html">Atom</a>(<a class="code" href="m__pd_8h.html#a4449f71b80468e7d6e79a67193e65e0b">gensym</a>(to_string((<span class="keywordtype">long</span>)<span class="keyword">this</span>).c_str())));
 <a name="l00190"></a>00190 
 <a name="l00191"></a>00191             objList.<a class="code" href="classceammc_1_1_atom_list.html#a0c9b1478f4d137abaea403b33cff6c2c">output</a>(out2);
 <a name="l00192"></a>00192         }
@@ -280,7 +280,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00199"></a>00199 
 <a name="l00200"></a>00200         <a class="code" href="struct__symbol.html">t_symbol</a>* property_name = list[0].asSymbol();
 <a name="l00201"></a>00201 
-<a name="l00202"></a>00202         <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> list2((<span class="keywordtype">size_t</span>)list.<a class="code" href="classceammc_1_1_atom_list.html#ad52fdc5b4f54329460495caa1b00d1ac">size</a>() - 1, (<a class="code" href="struct__atom.html">t_atom</a>*)list.<a class="code" href="classceammc_1_1_atom_list.html#ac7c328692c6caab66d1320207e8a1cfb">toPdData</a>() + 1); <span class="comment">//TODO</span>
+<a name="l00202"></a>00202         <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> list2((<span class="keywordtype">size_t</span>)list.<a class="code" href="classceammc_1_1_atom_list.html#ad52fdc5b4f54329460495caa1b00d1ac">size</a>() - 1, (<a class="code" href="struct__atom.html">t_atom</a>*)list.<a class="code" href="classceammc_1_1_atom_list.html#ad03d847e65574621731dc432df39931f">toPdData</a>() + 1); <span class="comment">//TODO</span>
 <a name="l00203"></a>00203         setAtomListProperty(property_name, list2);
 <a name="l00204"></a>00204 
 <a name="l00205"></a>00205         <a class="code" href="classqtpd_1_1_o_p_outputs.html">OPOutputs</a>* out1 = &amp;_setterOutputs[property_name];
@@ -358,12 +358,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00277"></a>00277 <span class="preprocessor"></span>
 <a name="l00278"></a><a class="code" href="classqtpd_1_1_o_p_instance.html#a791108546e906618f7054e479db5afc0">00278</a>     <span class="keyword">static</span> <a class="code" href="struct__symbol.html">t_symbol</a>* toSymbol(<a class="code" href="classqtpd_1_1_o_p_instance.html" title="The OOPD class instance.">OPInstance</a>* inst)
 <a name="l00279"></a>00279     {
-<a name="l00280"></a>00280         <span class="keywordflow">return</span> <a class="code" href="m__pd_8h.html#a4449f71b80468e7d6e79a67193e65e0b">gensym</a>(<a class="code" href="ui__bpfunc_8cpp.html#a3a3e9d4cf73114c8e5198225ca65269e">to_string</a>((<span class="keywordtype">long</span>)inst).c_str());
+<a name="l00280"></a>00280         <span class="keywordflow">return</span> <a class="code" href="m__pd_8h.html#a4449f71b80468e7d6e79a67193e65e0b">gensym</a>(to_string((<span class="keywordtype">long</span>)inst).c_str());
 <a name="l00281"></a>00281     }
 <a name="l00282"></a>00282 
 <a name="l00283"></a><a class="code" href="classqtpd_1_1_o_p_instance.html#ad55a70a4df6bfd1762c75540c76cc171">00283</a>     <a class="code" href="struct__symbol.html">t_symbol</a>* getObjectSymbol()
 <a name="l00284"></a>00284     {
-<a name="l00285"></a>00285         <span class="keywordflow">return</span> <a class="code" href="m__pd_8h.html#a4449f71b80468e7d6e79a67193e65e0b">gensym</a>(<a class="code" href="ui__bpfunc_8cpp.html#a3a3e9d4cf73114c8e5198225ca65269e">to_string</a>((<span class="keywordtype">long</span>)<span class="keyword">this</span>).c_str());
+<a name="l00285"></a>00285         <span class="keywordflow">return</span> <a class="code" href="m__pd_8h.html#a4449f71b80468e7d6e79a67193e65e0b">gensym</a>(to_string((<span class="keywordtype">long</span>)<span class="keyword">this</span>).c_str());
 <a name="l00286"></a>00286     }
 <a name="l00287"></a>00287 
 <a name="l00288"></a>00288     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_o_p_instance.html" title="The OOPD class instance.">OPInstance</a>* fromObjectSymbol(<a class="code" href="struct__symbol.html">t_symbol</a>* objSymbol);
@@ -412,7 +412,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 9 2017 10:04:58 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 9 2017 10:11:11 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

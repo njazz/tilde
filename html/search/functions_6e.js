@@ -1,12 +1,8 @@
 var searchData=
 [
-  ['name',['name',['../classceammc_1_1_global_data.html#a4f4625c0c50d33bca1b7035a4c1b1e4f',1,'ceammc::GlobalData::name()'],['../classceammc_1_1_property.html#acbbd0922ca2b4b149dbb95b38012a08d',1,'ceammc::Property::name()'],['../classceammc_1_1tl_1_1_cue_data.html#abc0985e300542e4b4b1a6f6066c92dbe',1,'ceammc::tl::CueData::name()']]],
-  ['nameddatadict',['NamedDataDict',['../classceammc_1_1_named_data_dict.html#a5a681add645bc32edae2d4d728d59b23',1,'ceammc::NamedDataDict']]],
   ['names',['names',['../classqtpd_1_1_property_list.html#a74b6f3f764fbdeae91515eb8a44d415e',1,'qtpd::PropertyList::names()'],['../classqtpd_1_1_property_list.html#a12d0803546bc2e090476a7e7933425f3',1,'qtpd::PropertyList::names(UIPropertyData *data1)'],['../classpy_property_list_decorator.html#ac2e12ce3337ce3c5629162ff3fafff94',1,'pyPropertyListDecorator::names()']]],
   ['nametotype',['nameToType',['../class_python_qt_method_info.html#ad335951f28db8181cf16e7250d55eb58',1,'PythonQtMethodInfo']]],
   ['nestedclasses',['nestedClasses',['../class_python_qt_class_info.html#ace70eaa522f2c927cdf8789f88046783',1,'PythonQtClassInfo']]],
-  ['new_5fext',['new_ext',['../classceammc__gui_1_1_gui_factory.html#a21c7460bb48d34f0dc09ca7e8bdedd3f',1,'ceammc_gui::GuiFactory']]],
-  ['new_5fmethod',['new_method',['../classceammc__gui_1_1_gui_factory.html#a7f7becdbe5be37f3493ec46f6cbd6c4b',1,'ceammc_gui::GuiFactory']]],
   ['new_5fobjectvec',['new_objectVec',['../classpy_object_vec_decorator.html#a7788386055f1865fd55d51acc3a57e3b',1,'pyObjectVecDecorator']]],
   ['new_5fuiobject',['new_UIObject',['../classpy_u_i_object_decorator.html#af803d92c45f2599b741799e7c73ac2f5',1,'pyUIObjectDecorator::new_UIObject(UIObject *parent)'],['../classpy_u_i_object_decorator.html#af6029148ef8ce10c321eb09d8b29928a',1,'pyUIObjectDecorator::new_UIObject()']]],
   ['newarray',['newArray',['../classpy_canvas_decorator.html#ab8fe7f0de018a8f70ca37f6c8934ee32',1,'pyCanvasDecorator']]],
@@ -31,11 +27,7 @@ var searchData=
   ['newwindow',['newWindow',['../classqtpd_1_1_patch_window.html#a465802c46cfee0432f72284319faf1d3',1,'qtpd::PatchWindow']]],
   ['nextinfo',['nextInfo',['../class_python_qt_slot_info.html#a9bb0c772f8d71971ebb3f65886dd1c48',1,'PythonQtSlotInfo']]],
   ['nextvalueptr',['nextValuePtr',['../class_python_qt_value_storage.html#a51a8d2c67a4f99e3d038872e86121e33',1,'PythonQtValueStorage']]],
-  ['noneoff',['noneOff',['../classceammc_1_1_atom_list.html#a6ed911c35a83b24c3216f1697735771e',1,'ceammc::AtomList::noneOff(AtomPredicate pred) const '],['../classceammc_1_1_atom_list.html#a6ed911c35a83b24c3216f1697735771e',1,'ceammc::AtomList::noneOff(AtomPredicate pred) const ']]],
-  ['normalizefloats',['normalizeFloats',['../classceammc_1_1_atom_list.html#aaec92e339b35846963cb66fbcb7ba0e7',1,'ceammc::AtomList::normalizeFloats()'],['../classceammc_1_1_atom_list.html#aaec92e339b35846963cb66fbcb7ba0e7',1,'ceammc::AtomList::normalizeFloats()']]],
-  ['normvalueat',['normValueAt',['../structui__sliders.html#ab2d3f8a4c2586d097b966e3088e2cbcf',1,'ui_sliders']]],
-  ['nullfn',['nullfn',['../m__pd_8h.html#a67de44598e77c806ba60602e89329186',1,'m_pd.h']]],
-  ['numenums',['numEnums',['../classceammc_1_1_enum_property.html#ae80d226bb2af6e20b0a5cf4f11cf3d35',1,'ceammc::EnumProperty']]],
-  ['numinlets',['numInlets',['../classceammc_1_1_base_object.html#abae3dc33d5b4fa26740e10164d9819f2',1,'ceammc::BaseObject']]],
-  ['numoutlets',['numOutlets',['../classceammc_1_1_base_object.html#a9247c64e6ff4e67bb552025dacd28170',1,'ceammc::BaseObject']]]
+  ['noneoff',['noneOff',['../classceammc_1_1_atom_list.html#a6ed911c35a83b24c3216f1697735771e',1,'ceammc::AtomList']]],
+  ['normalizefloats',['normalizeFloats',['../classceammc_1_1_atom_list.html#aaec92e339b35846963cb66fbcb7ba0e7',1,'ceammc::AtomList']]],
+  ['nullfn',['nullfn',['../m__pd_8h.html#a67de44598e77c806ba60602e89329186',1,'m_pd.h']]]
 ];

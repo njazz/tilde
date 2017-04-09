@@ -5,8 +5,6 @@ var searchData=
   ['ob_5finlet',['ob_inlet',['../m__pd_8h.html#a4d257c037c8343b66ed634585810bbd0',1,'m_pd.h']]],
   ['ob_5foutlet',['ob_outlet',['../m__pd_8h.html#aa01d82e24c6e61c4a0753c31c94acd6f',1,'m_pd.h']]],
   ['ob_5fpd',['ob_pd',['../m__pd_8h.html#a943492bf90072fe3a1e75694b863b710',1,'m_pd.h']]],
-  ['obj_5fdbg',['OBJ_DBG',['../ceammc__log_8h.html#ad12bf2181a13aa8391f89e7b9d1a40cc',1,'ceammc_log.h']]],
-  ['obj_5ferr',['OBJ_ERR',['../ceammc__log_8h.html#a6018cc7b3d99011141859dfdf996afcd',1,'ceammc_log.h']]],
   ['offsetof',['offsetof',['../structmember_8h.html#afd049f7ad59dbe455f460807475c2841',1,'structmember.h']]],
   ['old_5flambdef',['old_lambdef',['../graminit_8h.html#a3e025e011d0e5b9d32ad9212f988673f',1,'graminit.h']]],
   ['old_5ftest',['old_test',['../graminit_8h.html#a62b3cbf1d80414ffa833514000ac88eb',1,'graminit.h']]],
