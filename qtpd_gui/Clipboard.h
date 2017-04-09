@@ -5,6 +5,7 @@
 
 #include <QDebug>
 
+namespace qtpd{
 class Clipboard : public QObject {
     Q_OBJECT
 
@@ -66,5 +67,6 @@ signals:
 
 public slots:
 };
+}
 
 #endif // CLIPBOARD_H
