@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/njazz/qtpd.svg?branch=master)](https://travis-ci.org/njazz/qtpd)
+
 # qtpd
 Qt-based GUI for Puredata.  
   
