@@ -521,6 +521,7 @@ public:
     ///
     void keyPressEvent(QKeyEvent* event)
     {
+
         if (event->modifiers() & Qt::ControlModifier) {
             if (canvas->getEditMode() != em_Locked)
                 canvas->setEditMode(em_Temporary);
