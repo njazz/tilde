@@ -996,6 +996,8 @@ void Canvas::dataPaste()
             FileParser::parseQString(Clipboard::inst()->at(i));
         }
     }
+
+    // TODO copy patchcords
 }
 
 void Canvas::setZoom(float zoom)
