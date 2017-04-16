@@ -39,18 +39,21 @@ public:
         //instance.setParent(0);
 
         if (!instance)
+        {
             instance = new PdWindow();
+            qDebug() << "singleton lol";
+        }
 
         return instance;
     }
 
 
-    void cm_post(std::string text);
+    void cm_post(QString text);
 
 signals:
-    void cm_log_signal(std::string text);
+    void cm_log_signal(QString text);
 public slots:
-    void cm_log(std::string text);
+    void cm_log(QString text);
 
 //    void resizeEvent();
 };

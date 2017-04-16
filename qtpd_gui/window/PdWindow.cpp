@@ -7,9 +7,9 @@
 #include <QtGui>
 
 namespace qtpd {
-static std::string cm_log_string;
+static QString cm_log_string;
 
-void PdWindow::cm_log(std::string text)
+void PdWindow::cm_log(QString text)
 {
     //qDebug("cm_log %s", text.c_str());
 
@@ -17,7 +17,7 @@ void PdWindow::cm_log(std::string text)
     if (!text.length())
         return;
 
-    std::string last_c = &text.at(text.length() - 1);
+    QString last_c = text.at(text.length() - 1);
 
     if ((last_c == "\n")) {
         cm_log_string += text;
@@ -32,7 +32,7 @@ void PdWindow::cm_log(std::string text)
         ui->log->setItem(0, 0, item);
 
         item = new QTableWidgetItem;
-        QString txt = QString(cm_log_string.c_str());
+        QString txt = cm_log_string;
 
         //remove last \n
         if (txt.length() > 0)
@@ -57,7 +57,7 @@ void PdWindow::cm_log(std::string text)
 
 }
 
-void PdWindow::cm_post(std::string text)
+void PdWindow::cm_post(QString text)
 {
     PdWindow::cm_log(text);
     PdWindow::cm_log("\n");
