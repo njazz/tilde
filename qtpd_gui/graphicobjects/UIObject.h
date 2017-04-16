@@ -263,9 +263,14 @@ public:
 
     /** @}*/
 
+    static void updateUI(void* uiobj, ceammc::AtomList) {}
+
 private slots:
     void openPropertiesWindow();
     void openHelpWindow();
+
+
+
 
 signals:
     void editObject(void* box);

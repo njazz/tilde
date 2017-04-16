@@ -168,6 +168,7 @@ SOURCES += \
     RtMidi/RtMidi.cpp \
     pdlib.cpp \
 #
+    ui_objects/ui_sliders.cpp
 
 macx:SOURCES += src/s_audio_pa.c
 unix:SOURCES += src/s_audio_pa.c

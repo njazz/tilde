@@ -63,6 +63,8 @@ static void* oopdproperty_new(t_symbol* s, int argc, t_atom* argv)
     x->out2 = outlet_new((t_object*)x, &s_anything);
     x->out3 = outlet_new((t_object*)x, &s_anything);
 
+    x->uiobj = 0;
+
     return (void*)x;
 }
 

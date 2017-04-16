@@ -149,13 +149,16 @@ void Canvas::s_MoveBox(UIItem* box, QGraphicsSceneMouseEvent* event)
         w->move(pos);
         t_object* obj = (t_object*)w->pdObject();
         if (obj)
-            cmp_moveobject(obj, (int)pos.x(), (int)pos.y());
+            cmp_moveobject(obj, (int)pos.x(), (int)pos.y()); //possibly useless
 
         //todo
         viewport()->update();
     }
 
-    //setFixedSize(minimumCanvasSize());
+    //setMinimumSize(minimumCanvasSize());
+
+    // TODO scene size
+    //scene()->setSceneRect(0, 0, minimumCanvasSize().width(), minimumCanvasSize().height());
 }
 
 // -----------------------------------------------------------------------
@@ -990,7 +993,7 @@ void Canvas::dataPaste()
                 subList[3] = QString::number(y + 20);
             }
 
-            qDebug() <<"paste"<< subList;
+            qDebug() << "paste" << subList;
 
             Clipboard::inst()->setStringAt(i, subList.join(" "));
             FileParser::parseQString(Clipboard::inst()->at(i));

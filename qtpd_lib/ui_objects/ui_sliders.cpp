@@ -1,5 +1,5 @@
 //
-//  ui_float.cpp
+//  ui_sliders.cpp
 //
 //
 //  Created by Alex Nadzharov on 13/03/17.
@@ -15,9 +15,9 @@
 
 using namespace ceammc;
 
-static t_class* ui_float_class;
+static t_class* ui_sliders_class;
 
-typedef struct _ui_float {
+typedef struct _ui_sliders {
     t_object x_obj;
 
     t_updateUI updateUI;
@@ -27,18 +27,18 @@ typedef struct _ui_float {
 
     t_outlet* out1;
 
-} t_ui_float;
+} t_ui_sliders;
 
 // special
 extern "C" void uifloat_set_updateUI(t_pd* x, void* obj, t_updateUI func)
 {
-    ((t_ui_float*)x)->updateUI = func;
-    ((t_ui_float*)x)->uiobj = obj;
+    ((t_ui_sliders*)x)->updateUI = func;
+    ((t_ui_sliders*)x)->uiobj = obj;
 }
 
 ///////
 
-static void uifloat_set(t_ui_float* x, t_symbol* s, int argc, t_atom* argv)
+static void uifloat_set(t_ui_sliders* x, t_symbol* s, int argc, t_atom* argv)
 {
     if (argc)
         x->val = AtomList(argc, argv).at(0).asFloat();
@@ -49,12 +49,12 @@ static void uifloat_set(t_ui_float* x, t_symbol* s, int argc, t_atom* argv)
         x->updateUI(x->uiobj, msg);
 }
 
-static void uifloat_bang(t_ui_float* x)
+static void uifloat_bang(t_ui_sliders* x)
 {
     AtomList(Atom(x->val)).output(x->out1);
 }
 
-static void uifloat_float(t_ui_float* x, t_float f)
+static void uifloat_float(t_ui_sliders* x, t_float f)
 {
     x->val = f;
 
@@ -70,13 +70,12 @@ static void uifloat_float(t_ui_float* x, t_float f)
 
 static void* uifloat_new(t_symbol* s, int argc, t_atom* argv)
 {
-    t_ui_float* x = (t_ui_float*)pd_new(ui_float_class);
+    t_ui_sliders* x = (t_ui_sliders*)pd_new(ui_sliders_class);
 
     x->val = 0;
+    x->uiobj = 0;
 
     x->out1 = outlet_new((t_object*)x, &s_anything);
-
-    x->uiobj = 0;
 
     return (void*)x;
 }
@@ -86,15 +85,15 @@ static void uifloat_free(t_object* obj)
 }
 
 //extern "C"
-extern "C" void setup_ui0x2efloat()
+extern "C" void setup_ui0x2esliders()
 {
-    ui_float_class = class_new(gensym("ui.float"),
+    ui_sliders_class = class_new(gensym("ui.sliders"),
         (t_newmethod)(uifloat_new),
         (t_method)(0),
-        sizeof(t_ui_float), 0, A_GIMME, 0);
+        sizeof(t_ui_sliders), 0, A_GIMME, 0);
 
-    class_addmethod(ui_float_class, (t_method)uifloat_set, &s_anything, A_GIMME, 0);
-    class_addmethod(ui_float_class, (t_method)uifloat_bang, &s_bang, A_NULL, 0);
+    class_addmethod(ui_sliders_class, (t_method)uifloat_set, &s_anything, A_GIMME, 0);
+    class_addmethod(ui_sliders_class, (t_method)uifloat_bang, &s_bang, A_NULL, 0);
 
-    class_addfloat(ui_float_class, (t_method)uifloat_float);
+    class_addfloat(ui_sliders_class, (t_method)uifloat_float);
 }

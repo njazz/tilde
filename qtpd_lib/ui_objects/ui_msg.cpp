@@ -188,6 +188,8 @@ static void* uimsg_new(t_symbol* s, int argc, t_atom* argv)
 
     x->msg = new AtomList(argc, argv);
 
+    x->uiobj = 0;
+
     x->out1 = outlet_new((t_object*)x, &s_anything);
 
     return (void*)x;

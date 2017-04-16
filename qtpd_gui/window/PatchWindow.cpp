@@ -16,13 +16,14 @@ PatchWindow::PatchWindow()
     //scroll->setWidget(canvas);
 
     QGridLayout* layout1 = new QGridLayout();
-    layout1->setMargin(10);
+    layout1->setMargin(20);
     layout1->addWidget(canvas);
     //scroll->setLayout(layout1);
 
     canvas->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
     canvas->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 
+    //canvas->setMinimumSize(400,300);
     setCentralWidget(canvas);
     //canvas->setParent(centralWidget());
     //scroll->setParent(this);

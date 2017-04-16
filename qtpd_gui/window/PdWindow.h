@@ -44,8 +44,13 @@ public:
         return instance;
     }
 
-    void cm_log(std::string text);
+
     void cm_post(std::string text);
+
+signals:
+    void cm_log_signal(std::string text);
+public slots:
+    void cm_log(std::string text);
 
 //    void resizeEvent();
 };

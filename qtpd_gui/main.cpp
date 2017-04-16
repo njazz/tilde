@@ -31,7 +31,7 @@ void pd_window_printhook(const char* s)
 {
     //qDebug("print hook %s",s);
     //if (pdw)
-    PdWindow::inst()->cm_log(std::string(s));
+    emit PdWindow::inst()->cm_log_signal(std::string(s));
 }
 
 int main(int argc, char* argv[])

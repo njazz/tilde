@@ -88,6 +88,9 @@ PdWindow::PdWindow()
 
     fileMenu->removeAction(saveAct);
     fileMenu->removeAction(saveAsAct);
+
+    connect(this,&PdWindow::cm_log_signal, this, &PdWindow::cm_log);
+
 }
 
 //void PdWindow::resizeEvent()
