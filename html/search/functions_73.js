@@ -85,7 +85,7 @@ var searchData=
   ['shuffle',['shuffle',['../classceammc_1_1_atom_list.html#abf80f0b307369920bc7aef849caa7567',1,'ceammc::AtomList']]],
   ['signalinlet_5fnew',['signalinlet_new',['../m__pd_8h.html#ac613524f7af3047e851649baec2eb2b7',1,'m_pd.h']]],
   ['size',['size',['../classqtpd_1_1_clipboard.html#a3c2d1d7df865c4505827e8eadc7074af',1,'qtpd::Clipboard::size()'],['../classqtpd_1_1_u_i_item.html#a5459c088d2279385386e14fff826f12f',1,'qtpd::UIItem::size()'],['../classceammc_1_1_atom_list.html#ad52fdc5b4f54329460495caa1b00d1ac',1,'ceammc::AtomList::size()']]],
-  ['sizebox',['sizeBox',['../classqtpd_1_1_u_i_object.html#a2a5596386429c363e6f45085b7ef47e6',1,'qtpd::UIObject::sizeBox()'],['../classqtpd_1_1_size_box.html#adf64d0032ffe2544e78020599192da82',1,'qtpd::SizeBox::SizeBox()']]],
+  ['sizebox',['SizeBox',['../classqtpd_1_1_size_box.html#adf64d0032ffe2544e78020599192da82',1,'qtpd::SizeBox::SizeBox()'],['../classqtpd_1_1_u_i_object.html#a2a5596386429c363e6f45085b7ef47e6',1,'qtpd::UIObject::sizeBox()']]],
   ['slice',['slice',['../classceammc_1_1_atom_list.html#ac0ceecb3bbe2862e5b391cd15d38b2f0',1,'ceammc::AtomList::slice(int start) const '],['../classceammc_1_1_atom_list.html#a7b132d94bb93c3c9afb13124ca8eea6a',1,'ceammc::AtomList::slice(int start, int end, size_t step=1) const ']]],
   ['sort',['sort',['../classceammc_1_1_atom_list.html#a7ea888d2eac7ea2dc11e7e7939bf2010',1,'ceammc::AtomList']]],
   ['start',['start',['../classqtpd_1_1_selection_rect.html#a1607ca09db785ccdf4a6cf31f5cf9980',1,'qtpd::SelectionRect']]],

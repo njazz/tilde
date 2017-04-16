@@ -129,6 +129,7 @@ var searchData=
   ['clock_5funset',['clock_unset',['../m__pd_8h.html#a795caa1ce29a8d422363efdc9f83bb94',1,'m_pd.h']]],
   ['closeevent',['closeEvent',['../classqtpd_1_1_patch_window.html#a9cf14c7e3179165fb9569516e5879879',1,'qtpd::PatchWindow']]],
   ['cm_5flog',['cm_log',['../classqtpd_1_1_pd_window.html#a61ab3fa851e57648df1b3898e17eb655',1,'qtpd::PdWindow']]],
+  ['cm_5flog_5fsignal',['cm_log_signal',['../classqtpd_1_1_pd_window.html#aa343685766da9015b72574ed93927093',1,'qtpd::PdWindow']]],
   ['cm_5fpost',['cm_post',['../classqtpd_1_1_pd_window.html#a93ab40da7d572e89f2f2114a269b534b',1,'qtpd::PdWindow']]],
   ['cmp_5fadd_5fsearchpath',['cmp_add_searchpath',['../_pd_link_8h.html#a9c262afca5a4a5dbd071785c5e0e4934',1,'PdLink.h']]],
   ['cmp_5fclear_5fsearchpath',['cmp_clear_searchpath',['../_pd_link_8h.html#aea508db13aae6fcc69f650483ad167f8',1,'PdLink.h']]],
