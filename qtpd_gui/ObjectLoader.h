@@ -20,6 +20,8 @@
 #include "UIBang.h"
 #include "UIToggle.h"
 
+#include "UISlider.h"
+
 #include "UILink.h"
 
 #include "UIArray.h"

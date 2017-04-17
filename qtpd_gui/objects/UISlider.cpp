@@ -1,15 +1,15 @@
 // (c) 2017 Alex Nadzharov
 // License: GPL3
 
-#include "UIToggle.h"
+#include "UISlider.h"
 
 namespace qtpd {
 
-UIToggle::UIToggle()
+UISlider::UISlider()
 {
-    //setPdObjectName("ui.toggle");
+    //setPdObjectName("ui.slider");
 
-    setSize(20, 20);
+    setSize(20, 100);
 
     setMinimumBoxWidth(20);
     setMinimumBoxHeight(20);
@@ -17,7 +17,7 @@ UIToggle::UIToggle()
     deselect();
     _clicked = false;
 
-    setObjectSizeMode(os_Square);
+    setObjectSizeMode(os_Free);
 
     _value = false;
 

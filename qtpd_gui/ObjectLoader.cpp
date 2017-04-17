@@ -16,6 +16,8 @@ void ObjectLoader::loadObjects()
     addUIobject("ui.bang", &UIBang::createObject);
     addUIobject("ui.toggle", &UIToggle::createObject);
 
+    addUIobject("ui.slider", &UISlider::createObject);
+
     addUIobject("ui.link", &UILink::createObject);
 
     #ifdef WITH_PYTHON

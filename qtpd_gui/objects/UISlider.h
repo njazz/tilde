@@ -18,7 +18,7 @@ namespace qtpd {
 ////
 /// \brief gui object: message box (ui.msg)
 ///
-class UIToggle : public UIObject {
+class UISlider : public UIObject {
     Q_OBJECT
 
 private:
@@ -26,11 +26,11 @@ private:
     bool _value;
 
 public:
-    explicit UIToggle();
+    explicit UISlider();
 
     static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
     {
-        UIToggle* b = new UIToggle();
+        UISlider* b = new UISlider();
         b->setCanvas((void*)parent);
 
         std::string data1 = b->properties()->extractFromPdFileString(objectData);
@@ -38,7 +38,7 @@ public:
 
         qDebug() << "obj data" << QString(data1.c_str());
 
-        std::string message = "ui.toggle";
+        std::string message = "ui.sliders";
 
         //temp
         t_object* new_obj = 0;
@@ -50,7 +50,7 @@ public:
         }
 
         if (new_obj) {
-            qDebug("created toggle %s | ptr %lu\n", message.c_str(), (long)new_obj);
+            qDebug("created slider %s | ptr %lu\n", message.c_str(), (long)new_obj);
             b->setPdObject(new_obj);
         } else {
             qDebug("Error: no such object %s", message.c_str());
@@ -96,12 +96,7 @@ public:
         p->drawRect(0, 0, width(), height());
     }
 
-    void resizeEvent()
-    {
 
-        setHeight(width());
-        UIObject::resizeEvent();
-    }
 
     // ---------------------------------------------------------------
 
@@ -150,7 +145,7 @@ public:
     static void updateUI(void* uiobj, ceammc::AtomList msg)
     {
         //qDebug("update ui");
-        UIToggle* x = (UIToggle*)uiobj;
+        UISlider* x = (UISlider*)uiobj;
 
         if (msg.size() > 0) {
             if (msg.at(0).isFloat())
@@ -163,7 +158,7 @@ public:
     void setPdObject(void* obj)
     {
         UIObject::setPdObject(obj);
-        cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIToggle::updateUI);
+        cmp_connectUI((t_pd*)pdObject(), (void*)this, &UISlider::updateUI);
     }
 };
 }

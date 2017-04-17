@@ -119,5 +119,7 @@ void UIScriptBox::editorChanged()
     }
 
     //update();
+
+
 }
 }

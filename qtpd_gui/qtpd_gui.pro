@@ -141,7 +141,8 @@ SOURCES += main.cpp\
     Clipboard.cpp \
     objects/UILink.cpp \
     graphicobjects/LinkLine.cpp \
-    widgets/UITextEditor.cpp
+    widgets/UITextEditor.cpp \
+    objects/UISlider.cpp
 
 
 
@@ -204,7 +205,8 @@ HEADERS  += \
     properties/AudioSettings.h \
     graphicobjects/LinkLine.h \
     widgets/UITextEditor.h \
-    graphicobjects/CommonTypes.h
+    graphicobjects/CommonTypes.h \
+    objects/UISlider.h
 
 
 
