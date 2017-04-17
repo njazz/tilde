@@ -1,8 +1,8 @@
 // (c) 2017 Alex Nadzharov
 // License: GPL3
 
-#ifndef CMO_TOGGLE_H
-#define CMO_TOGGLE_H
+#ifndef CMO_SLIDER_H
+#define CMO_SLIDER_H
 
 #include <qlineedit.h>
 
