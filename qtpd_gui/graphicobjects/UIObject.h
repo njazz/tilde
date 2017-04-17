@@ -15,6 +15,7 @@
 #include <QMainWindow>
 #include <QMenu>
 #include <QObject>
+#include <QStyleOption>
 
 #include "PropertiesWindow.h"
 

@@ -73,8 +73,10 @@ public:
         properties()->create("Value", "Preset", "0.1", 0.);
     }
 
-    virtual void paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)
+    virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
     {
+        p->setClipRect(option->exposedRect);
+
         QPolygon poly;
         poly << QPoint(0, 0) << QPoint(width() - 5, 0) << QPoint(width(), 5) << QPoint(width(), height()) << QPoint(0, height());
 

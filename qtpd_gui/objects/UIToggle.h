@@ -71,8 +71,9 @@ public:
         properties()->create("Value", "Preset", "0.1", 0.);
     }
 
-    virtual void paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)
+    virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
     {
+        p->setClipRect(option->exposedRect);
 
         QBrush brush(bgColor());
         p->setBrush(brush);

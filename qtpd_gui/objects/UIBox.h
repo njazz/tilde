@@ -13,6 +13,7 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QGraphicsView>
 
+
 namespace qtpd {
 
 ////
@@ -115,8 +116,10 @@ public:
     ////
     /// \brief paint event
     ///
-    void paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)
+    virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
     {
+        p->setClipRect(option->exposedRect);
+
         p->setRenderHint(QPainter::HighQualityAntialiasing, true);
 
         QBrush brush(bgColor());

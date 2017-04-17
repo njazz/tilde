@@ -78,8 +78,10 @@ public:
         return (UIObject*)b;
     };
 
-    virtual void paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)
+    virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
     {
+        p->setClipRect(option->exposedRect);
+
         QPolygon poly;
         poly << QPoint(0, 0) << QPoint(width(), 0) << QPoint(width() - 4, 4) << QPoint(width() - 4, height() - 4) << QPoint(width(), height()) << QPoint(0, height());
 

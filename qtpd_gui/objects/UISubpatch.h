@@ -71,8 +71,10 @@ public:
     ////
     /// \brief paint event
     ///
-    void paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)
+    virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
     {
+        p->setClipRect(option->exposedRect);
+
         QBrush brush(bgColor());
         p->setBrush(brush);
         p->drawRect(boundingRect());
