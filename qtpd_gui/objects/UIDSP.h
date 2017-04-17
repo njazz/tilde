@@ -35,6 +35,8 @@ public:
 
         _value = false;
 
+        qDebug()<<"uidsp";
+
         t_editMode* em = new t_editMode;
         *em = em_Locked;
         setEditModeRef(em);

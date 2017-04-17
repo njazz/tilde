@@ -40,7 +40,6 @@ bool UIItem::isSelected() { return _selected; }
 
 void UIItem::setEditModeRef(t_editMode* canvasEditModeRef)
 {
-
     _editMode = canvasEditModeRef;
 
     qDebug() << "editmode ref" << (long)_editMode;

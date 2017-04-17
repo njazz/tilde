@@ -26,6 +26,9 @@ Canvas::Canvas(QGraphicsView* parent)
 
     _fileName = "";
 
+    _canvasEditMode = new t_editMode;
+//    qDebug() << "new em ref";
+
     Canvas::setEditMode(em_Unlocked);
 
     _grid = new Grid;
@@ -155,8 +158,7 @@ void Canvas::s_MoveBox(UIItem* box, QGraphicsSceneMouseEvent* event)
         viewport()->update();
     }
 
-   resizeToObjects();
-
+    resizeToObjects();
 }
 
 // -----------------------------------------------------------------------
@@ -361,7 +363,7 @@ UIObject* Canvas::createObject(QString objectData1, QPoint pos) //std::string UI
             connect(obj, &UIObject::selectBox, this, &Canvas::s_SelectBox);
             connect(obj, &UIObject::moveBox, this, &Canvas::s_MoveBox);
 
-            obj->setEditModeRef(&_canvasEditMode); //Canvas::getEditModeRef());
+            obj->setEditModeRef(_canvasEditMode); //Canvas::getEditModeRef());
             obj->move(pos.x(), pos.y());
             _canvasData.addUniqueBox(_canvasData.boxes(), obj);
             scene()->addItem(obj);
@@ -382,7 +384,7 @@ UIObject* Canvas::createObject(QString objectData1, QPoint pos) //std::string UI
     connect(obj, &UIObject::selectBox, this, &Canvas::s_SelectBox);
     connect(obj, &UIObject::moveBox, this, &Canvas::s_MoveBox);
 
-    obj->setEditModeRef(&_canvasEditMode); //Canvas::getEditModeRef());
+    obj->setEditModeRef(_canvasEditMode); //Canvas::getEditModeRef());
     obj->move(pos.x(), pos.y());
     _canvasData.addUniqueBox(_canvasData.boxes(), obj);
     scene()->addItem(obj);
@@ -425,7 +427,7 @@ UIObject* Canvas::createBoxForPatchWindow(QMainWindow* patchWindow, QString obje
     connect(obj, &UIObject::selectBox, this, &Canvas::s_SelectBox);
     connect(obj, &UIObject::moveBox, this, &Canvas::s_MoveBox);
 
-    obj->setEditModeRef(&_canvasEditMode); //Canvas::getEditModeRef());
+    obj->setEditModeRef(_canvasEditMode); //Canvas::getEditModeRef());
     obj->move(pos.x(), pos.y());
     _canvasData.addUniqueBox(_canvasData.boxes(), obj);
     scene()->addItem(obj);
@@ -578,9 +580,9 @@ void Canvas::setEditMode(t_editMode mode)
 {
 
     if (_readOnly)
-        _canvasEditMode = em_Locked;
+        *_canvasEditMode = em_Locked;
     else
-        _canvasEditMode = mode;
+        *_canvasEditMode = mode;
 
     QColor lockedColor = (_readOnly) ? QColor(245, 245, 255) : QColor(245, 245, 245);
     QColor bgColor = (mode != em_Locked) ? QColor(255, 255, 255) : lockedColor;
@@ -589,7 +591,7 @@ void Canvas::setEditMode(t_editMode mode)
 
     if (_grid)
         if (scene())
-            _grid->setVisible(_canvasEditMode != em_Locked);
+            _grid->setVisible(*_canvasEditMode != em_Locked);
 
     if (mode == em_Locked) {
         _canvasData.deselectBoxes();

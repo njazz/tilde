@@ -64,6 +64,7 @@ int main(int argc, char* argv[])
     PdWindow::inst()->move(0, 100);
     PdWindow::inst()->show();
 
+    qDebug()<<"started";
     cmp_post("qtpd started");
     cmp_post("---");
 

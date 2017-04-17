@@ -48,12 +48,7 @@ void PdWindow::cm_log(QString text)
 
     ui->log->resizeRowsToContents();
 
-    UIDSP* uidsp = new UIDSP();
-    QGraphicsView *dsp = uidsp->widget();
-    dsp->move(0,0);
-    dsp->setFixedSize(40,40);
-    dsp->setParent(ui->toolbar);
-    dsp->show();
+
 
 }
 
@@ -90,6 +85,13 @@ PdWindow::PdWindow()
     fileMenu->removeAction(saveAsAct);
 
     connect(this,&PdWindow::cm_log_signal, this, &PdWindow::cm_log);
+
+    UIDSP* uidsp = new UIDSP();
+    QGraphicsView *dsp = uidsp->widget();
+    dsp->move(0,0);
+    dsp->setFixedSize(40,40);
+    dsp->setParent(ui->toolbar);
+    dsp->show();
 
 }
 

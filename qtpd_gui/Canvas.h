@@ -52,7 +52,7 @@ private:
 
     QString _filePath;
 
-    t_editMode _canvasEditMode;
+    t_editMode* _canvasEditMode;
 
     // ----- NEW
     Grid* _grid;
@@ -89,8 +89,8 @@ public:
     void setZoom(float zoom);
     float getZoom() { return _zoom; }
 
-    virtual t_editMode getEditMode() { return _canvasEditMode; }
-    virtual t_editMode* getEditModeRef() { return &_canvasEditMode; }
+    virtual t_editMode getEditMode() { return *_canvasEditMode; }
+    virtual t_editMode* getEditModeRef() { return _canvasEditMode; }
 
     void setEditMode(t_editMode mode);
     void setGridEnabled(bool val);
