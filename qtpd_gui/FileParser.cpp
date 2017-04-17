@@ -75,13 +75,13 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
         //box_width lower upper 1 label send receive
 
         //check bounds
-//        int lBoxWidth = ((QString)list.at(4)).toInt();
-//        float lMinimum = ((QString)list.at(5)).toFloat();
-//        float lMaximum = ((QString)list.at(6)).toFloat();
-//        int lInit = ((QString)list.at(7)).toInt();
-//        QString lLabel = ((QString)list.at(8));
-//        QString lSend = ((QString)list.at(9));
-//        QString lReceive = ((QString)list.at(10));
+        //        int lBoxWidth = ((QString)list.at(4)).toInt();
+        //        float lMinimum = ((QString)list.at(5)).toFloat();
+        //        float lMaximum = ((QString)list.at(6)).toFloat();
+        //        int lInit = ((QString)list.at(7)).toInt();
+        //        QString lLabel = ((QString)list.at(8));
+        //        QString lSend = ((QString)list.at(9));
+        //        QString lReceive = ((QString)list.at(10));
 
         //todo set / create
 
@@ -324,12 +324,13 @@ void FileParser::parseQString(QString line)
         if (!_pdParserPrevWindow)
             _pdParserFirstWindow = _pdParserWindow;
 
+        msg.removeFirst();
+
         if (_pdParserPrevWindow)
-            newWnd->setWindowTitle("<subpatch>");
+            newWnd->setWindowTitle(msg.at(4));
 
         // todo different canvas argumentlists
 
-        msg.removeFirst();
         QPoint pos = QPoint(((QString)msg.at(0)).toInt(), ((QString)msg.at(1)).toInt());
         QSize size = QSize(((QString)msg.at(2)).toInt(), ((QString)msg.at(3)).toInt());
 
@@ -344,14 +345,19 @@ void FileParser::parseQString(QString line)
 
         qDebug() << "dim" << pos << size;
 
-        //        newWnd->setMinimumSize(size);
         newWnd->canvas->setWindowSize(size);
-        //        newWnd->setBaseSize(size);
         newWnd->move(pos);
 
-        //        newWnd->canvas->move(0,0);
+        // TODO
 
-        newWnd->show(); //move to constructor? check for subcanvases the vis flag
+        if (msg.size() > 5) {
+
+            if (msg.at(5).toInt())
+                newWnd->show();
+            else
+                newWnd->hide();
+        } else
+            newWnd->show();
     }
 
     if (atoms.at(0) == "#X") {
@@ -400,6 +406,8 @@ void FileParser::open(QString fname)
         if (_pdParserWindow) {
             _pdParserWindow->setFileName(fname);
             _pdParserWindow->canvas->setEditMode(em_Locked);
+
+            cmp_loadbang(_pdParserWindow->canvas->pdObject());
         }
 
         f.close();

@@ -422,7 +422,7 @@ UIObject* Canvas::createBoxForPatchWindow(QMainWindow* patchWindow, QString obje
 
     qDebug("subpatch restored>>");
 
-    patchWindow->show();
+    //patchWindow->show();
 
     connect(obj, &UIObject::selectBox, this, &Canvas::s_SelectBox);
     connect(obj, &UIObject::moveBox, this, &Canvas::s_MoveBox);
