@@ -96,7 +96,7 @@ static int sys_do_load_abs(t_canvas *canvas, const char *objectname,
 static int sys_do_load_lib(t_canvas *canvas, const char *objectname,
     const char *path)
 {
-    post("*** sys_do_load_lib");    //Qtpd
+    // post("*** sys_do_load_lib");    //Qtpd
 
     char symname[MAXPDSTRING], filename[MAXPDSTRING], dirbuf[MAXPDSTRING],
         *nameptr, altsymname[MAXPDSTRING];
