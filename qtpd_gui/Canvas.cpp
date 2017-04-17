@@ -155,10 +155,8 @@ void Canvas::s_MoveBox(UIItem* box, QGraphicsSceneMouseEvent* event)
         viewport()->update();
     }
 
-    //setMinimumSize(minimumCanvasSize());
+   resizeToObjects();
 
-    // TODO scene size
-    //scene()->setSceneRect(0, 0, minimumCanvasSize().width(), minimumCanvasSize().height());
 }
 
 // -----------------------------------------------------------------------
@@ -408,6 +406,8 @@ UIObject* Canvas::createObject(QString objectData1, QPoint pos) //std::string UI
 
     //setFixedSize(minimumCanvasSize());
 
+    resizeToObjects();
+
     return (UIObject*)obj;
 }
 
@@ -429,6 +429,8 @@ UIObject* Canvas::createBoxForPatchWindow(QMainWindow* patchWindow, QString obje
     obj->move(pos.x(), pos.y());
     _canvasData.addUniqueBox(_canvasData.boxes(), obj);
     scene()->addItem(obj);
+
+    resizeToObjects();
 
     return obj;
 }
@@ -748,6 +750,8 @@ void Canvas::selectAll()
 
 void Canvas::resizeToObjects()
 {
+    scene()->setSceneRect(scene()->itemsBoundingRect());
+    _grid->setSize(scene()->itemsBoundingRect().size().toSize());
 }
 
 QStringList Canvas::canvasAsPdStrings()

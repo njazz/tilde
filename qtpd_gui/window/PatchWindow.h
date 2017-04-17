@@ -16,7 +16,7 @@ namespace qtpd {
 class PatchWindow : public BaseWindow {
 
 private:
-    //QScrollArea* scroll;
+    QScrollArea* scroll;
 
     ////
 

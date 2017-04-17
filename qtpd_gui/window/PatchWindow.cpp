@@ -8,30 +8,35 @@ PatchWindow::PatchWindow()
     createActions();
     createMenus();
 
-    //scroll = new QScrollArea(this);
+    scroll = new QScrollArea(this);
     //scroll->setFrameShape(QFrame::NoFrame);
 
     canvas = new Canvas((QGraphicsView*)this);
 
     //scroll->setWidget(canvas);
 
-    QGridLayout* layout1 = new QGridLayout();
-    layout1->setMargin(20);
-    layout1->addWidget(canvas);
-    //scroll->setLayout(layout1);
+//    QGridLayout* layout1 = new QGridLayout();
+//    layout1->setMargin(20);
+//    layout1->addWidget(canvas);
+//    scroll->setLayout(layout1);
+
+//    scroll->setWidget(canvas);
 
     canvas->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
     canvas->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 
     //canvas->setMinimumSize(400,300);
+//    setCentralWidget(scroll);
+
     setCentralWidget(canvas);
+
     //canvas->setParent(centralWidget());
     //scroll->setParent(this);
 
     //    QGridLayout* layout2 = new QGridLayout();
     //    layout2->addWidget(scroll);
     //    layout2->setMargin(0);
-    setLayout(layout1);
+    //setLayout(layout1);
 
     //TODO weird
     //objectMaker = new ObjectMaker((QLineEdit*)canvas);
@@ -243,7 +248,8 @@ void PatchWindow::resizeEvent(QResizeEvent* event)
     if (newSize.height() < event->size().height())
         newSize.setHeight(event->size().height());
     //canvas->setMinimumSize(newSize);
-    canvas->viewport()->setMinimumSize(newSize);
+
+    //canvas->viewport()->setMinimumSize(newSize);
     //canvas->setWindowSize(newSize);
 
     //        //FIX
