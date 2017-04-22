@@ -92,14 +92,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html">Canvas</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">'t_canvas' counterpart. creates objects  <a href="classqtpd_1_1_canvas.html#details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_clipboard.html">Clipboard</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">clipboard singleton  <a href="classqtpd_1_1_clipboard.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1canvas_data.html">canvasData</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">shared canvas data - boxes, patchcords  <a href="classqtpd_1_1canvas_data.html#details">More...</a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_clipboard.html">Clipboard</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classqtpd_1_1_clipboard.html" title="The Clipboard class - just a QStringList with Pd strings for objects.">Clipboard</a> class - just a QStringList with Pd strings for objects.  <a href="classqtpd_1_1_clipboard.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html">FileParser</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses pd files on 'client' (GUI) side.  <a href="classqtpd_1_1_file_parser.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_saver.html">FileSaver</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">saves pd files on 'client' (GUI) side  <a href="classqtpd_1_1_file_saver.html#details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object_data.html">UIObjectData</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_grid.html">Grid</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classqtpd_1_1_grid.html" title="Grid for the canvas.">Grid</a> for the canvas.  <a href="classqtpd_1_1_grid.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_link_line.html">LinkLine</a></td></tr>
@@ -119,7 +120,6 @@ Classes</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a> QGraphicsObject class.  <a href="classqtpd_1_1_u_i_item.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">base class for all object boxes - standard and special  <a href="classqtpd_1_1_u_i_object.html#details">More...</a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object_data.html">UIObjectData</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_object_loader.html">ObjectLoader</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">prototype for ui externals handling. stub  <a href="classqtpd_1_1_object_loader.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_array.html">UIArray</a></td></tr>
@@ -188,10 +188,10 @@ Classes</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#afd559ba823ec75738510eb0b1e9ddba7">objectVec</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="classqtpd_1_1_patchcord.html">Patchcord</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a81f1e9d2a3767de39a2b30057b599854">patchcordVec</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="classqtpd_1_1_port.html">Port</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a629f357522e6dd21f0708fdb23b9cd5b">portItemVec</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <br class="typebreak"/>
 <a class="el" href="structqtpd_1_1struct_patchcord_numbers__.html">qtpd::structPatchcordNumbers_</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#ac7726eb93bb40c830f8f5e1bd891cdbe">structPatchcordNumbers</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">patchcord as numbers  <a href="#ac7726eb93bb40c830f8f5e1bd891cdbe"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="classqtpd_1_1_port.html">Port</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a629f357522e6dd21f0708fdb23b9cd5b">portItemVec</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a0f0a223d81282147b7515e7ba25c1922">cmObjectConstructor</a> )(QString objectData, <a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *pdCanvas, QGraphicsView *parent)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">'constructor' method for each ui object derived from <a class="el" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>  <a href="#a0f0a223d81282147b7515e7ba25c1922"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef map&lt; <a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> <br class="typebreak"/>
@@ -642,7 +642,7 @@ Variables</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 22 2017 21:06:52 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 22 2017 22:48:47 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
