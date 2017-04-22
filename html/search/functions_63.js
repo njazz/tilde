@@ -85,7 +85,7 @@ var searchData=
   ['canvasdata',['canvasData',['../classqtpd_1_1_canvas.html#aaf2dc157bff5d770a23f7aaef486a610',1,'qtpd::Canvas']]],
   ['canvasfrompdstrings',['canvasFromPdStrings',['../classqtpd_1_1_canvas.html#a2b189b998887b5615146b8e64666cde7',1,'qtpd::Canvas']]],
   ['canvasispatch',['canvasIsPatch',['../classqtpd_1_1_o_o_p_d.html#abb8789fde690d6e92c92ac5a84630590',1,'qtpd::OOPD']]],
-  ['changed',['changed',['../classqtpd_1_1_property.html#ad95deef3c08f6c943afc9b022d9860ad',1,'qtpd::Property']]],
+  ['changed',['changed',['../classqtpd_1_1_property.html#a3d3e519149c11b6f6779d833148b8964',1,'qtpd::Property']]],
   ['class_5faddanything',['class_addanything',['../m__pd_8h.html#a840453962b1071896a57fb2230984852',1,'m_pd.h']]],
   ['class_5faddbang',['class_addbang',['../m__pd_8h.html#a6fb3702ffdcd2340994b4575ab0d11e0',1,'m_pd.h']]],
   ['class_5faddcreator',['class_addcreator',['../m__pd_8h.html#a543787597a328f0138633c9ef447d632',1,'m_pd.h']]],
