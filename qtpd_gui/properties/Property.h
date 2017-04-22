@@ -5,7 +5,9 @@
 #define CM_PROPERTY_H
 
 #include "ceammc_atomlist.h"
+
 #include <QColor>
+#include <QObject>
 #include <QPoint>
 #include <QRect>
 #include <QString>
@@ -24,14 +26,17 @@ typedef enum {
     ptString,
     ptVector,
     ptColor,
-    ptText          ///< multiline text for comments, script
+    ptText ///< multiline text for comments, script
 
 } UIPropertyType;
 
 ////
 /// \brief yet another property handling class for ui object.
 ///
-class Property {
+class Property : public QObject {
+
+    Q_OBJECT
+
 private:
     AtomList _data;
     AtomList _defaultData;
@@ -42,9 +47,12 @@ private:
     UIPropertyType _type;
 
     bool _applyToPd; ///> true if property value should be passed to pd object
+
 public:
     template <typename T>
     void set(T val);
+
+    explicit Property(){};
 
     ////
     /// \brief copy current value to default value
@@ -219,7 +227,7 @@ public:
         return ret;
     }
 signals:
-    void changed(QString propertyName);
+    void changed(); //QString propertyName);
 };
 }
 

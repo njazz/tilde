@@ -18,6 +18,8 @@ typedef std::map<std::string, UIPropertyData*> UIPropertyGroups;
 typedef std::map<std::string, Property*>::iterator UIPropertyDataIterator;
 typedef std::map<std::string, UIPropertyData*>::iterator UIPropertyGroupIterator;
 
+typedef void (*t_PropertyListener)(void) ;
+
 ////
 /// \brief yet another property handling class for ui object. List
 ///
@@ -113,6 +115,17 @@ public:
     ///
     QString extractFromPdFileString(QString input);
 
+    void addListener(QString name, QObject *obj, t_PropertyListener func)
+    {
+        Property *prop = get(name);
+
+        if (prop)
+        {
+            connect(prop, &Property::changed, obj, func);
+
+        }
+
+    }
 signals:
     void propertyChangedSignal(QString name);
 };
