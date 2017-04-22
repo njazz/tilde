@@ -124,32 +124,6 @@ public:
     ///
     void setErrorBox(bool val);
 
-    /*
-    ////
-    /// \brief set secondary 'minimum width' value - used for object box resize
-    /// \param w
-    ///
-//    void setMinimumBoxWidth(int w);
-
-    ////
-    /// \brief set secondary 'minimum height' value - used for object box resize
-    /// \param w
-    ///
-//    void setMinimumBoxHeight(int h);
-
-    ////
-    /// \brief get secondary 'minimum width' value - used for object box resize
-    /// \param w
-    ///
-//    int minimumBoxWidth();
-
-    ////
-    /// \brief get secondary 'minimum height' value - used for object box resize
-    /// \param w
-    ///
-//    int minimumBoxHeight();
-*/
-
     ////
     /// \brief temporary - remove later
     /// \details nonzero pointer for different drawing
@@ -165,13 +139,6 @@ public:
     /// \brief returns help patch name with path if the file is found
     /// \return
     QString fullHelpName();
-
-    /*
-    ////
-    /// \brief set object resize mode - fixed or sizeable
-    /// \param os
-//    void setObjectSizeMode(t_objectSize os) { _objectSizeMode = os; }
-*/
 
     /** @}*/
 

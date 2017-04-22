@@ -61,7 +61,7 @@ public:
     void init()
     {
 
-        // todo fix: these values are tcl {} lists
+        // TODO fix: these values are tcl {} lists
         t_cmp_audio_info info = cmp_get_audio_device_info();
         create("Driver", "Audio", QTPD_APP_VERSION, cmp_get_audio_apis());
         create("Input", "Audio", QTPD_APP_VERSION, info.inputDeviceList);
@@ -71,11 +71,6 @@ public:
         create("BlockSize", "Settings", QTPD_APP_VERSION, 64);
         create("InputCount", "Settings", QTPD_APP_VERSION, 2);
         create("OutputCount", "Settings", QTPD_APP_VERSION, 2);
-
-
-
-
-
     }
 };
 }
