@@ -907,7 +907,7 @@ void Canvas::objectStartsEdit(void* obj)
 
     objectMaker()->move(_replaceObject->pos().toPoint());
     objectMaker()->setFixedSize(_replaceObject->size());
-    objectMaker()->setText(QString(_replaceObject->objectData().c_str()));
+    objectMaker()->setText(QString(_replaceObject->_objectDataModel.objectData()));
     objectMaker()->setFocus();
     //replaceObject_->hide();
     objectMaker()->show();

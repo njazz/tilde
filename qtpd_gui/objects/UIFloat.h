@@ -54,7 +54,7 @@ public:
             qDebug("Error: no such object %s", message.c_str());
         }
 
-        b->setPdMessage(objectData.toStdString());
+        b->setPdMessage(b->_objectDataModel.objectData());
 
         b->addInlet();
         b->addOutlet();
@@ -101,7 +101,7 @@ public:
         p->setPen(QPen(QColor(0, 0, 0), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
         p->setFont(QFont(PREF_QSTRING("Font"), 11, 0, false));
-        p->drawText(2, 3, width() - 2, height() - 3, 0, objectData().c_str(), 0);
+        p->drawText(2, 3, width() - 2, height() - 3, 0, _objectDataModel.objectData(), 0);
     }
 
     void autoResize()
@@ -139,11 +139,13 @@ public:
 
         if ((event->buttons() & Qt::LeftButton) && (getEditMode() != em_Unlocked)) {
             //todo fix
-            setObjectData(std::to_string(::atof(objectData().c_str()) - event->pos().y() + _startY)); //- startY
+            //
+            std::string str = std::to_string(::atof(objectData().toStdString().c_str()) - event->pos().y() + _startY);
+            setObjectData(str.c_str()); //- startY
             autoResize();
             _startY = event->pos().y();
 
-            std::string send = "set " + objectData();
+            std::string send = "set " + _objectDataModel.objectData().toStdString();
             cmp_sendstring((t_pd*)pdObject(), send.c_str());
             cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
 
@@ -162,14 +164,14 @@ public:
 
     ///////
 
-    void setPdMessage(std::string message)
+    void setPdMessage(QString message)
     {
         setObjectData(message);
         autoResize();
 
         QFont myFont(PREF_QSTRING("Font"), 11);
         QFontMetrics fm(myFont);
-        int new_w = fm.width(QString(objectData().c_str())) + 10;
+        int new_w = fm.width(objectData()) + 10;
         new_w = (new_w < 25) ? 25 : new_w;
         setWidth(new_w);
 
@@ -180,7 +182,7 @@ public:
                 qDebug("msg: bad pd object!");
             } else {
 
-                std::string msg = ("set " + objectData());
+                std::string msg = ("set " + _objectDataModel.objectData().toStdString());
                 cmp_sendstring((t_pd*)pdObject(), msg);
             }
         }
@@ -191,7 +193,7 @@ public:
         UIFloat* x = (UIFloat*)uiobj;
 
         if (msg.size() > 0) {
-            x->setObjectData(msg.at(0).asString());
+            x->setObjectData(msg.at(0).asString().c_str());
             emit x->callRepaint();
         }
     }
@@ -210,7 +212,7 @@ public:
         ret = "#X obj ";
         ret += std::to_string(x()) + " " + std::to_string(y()) + " ";
         ret += "ui.float ";
-        ret += ((objectData() == "") ? ((std::string) "") : (objectData() + " ")) + properties()->asPdFileString();
+        ret += ((objectData() == "") ? ((std::string) "") : (_objectDataModel.objectData().toStdString() + " ")) + properties()->asPdFileString();
 
         return ret;
     }

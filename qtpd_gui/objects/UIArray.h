@@ -42,7 +42,7 @@ public:
         QString data1 = b->properties()->extractFromPdFileString(objectData); //test
 
         // todo cleanup
-        b->setObjectData(data1.toStdString());
+        b->setObjectData(data1);
         b->autoResize();
 
         if (!pdCanvas) {
@@ -104,7 +104,7 @@ public:
         p->setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
         p->setFont(QFont(PREF_QSTRING("Font"), 11, 0, false));
-        p->drawText(2, 3, width() - 2, height() - 3, 0, objectData().c_str(), 0);
+        p->drawText(2, 3, width() - 2, height() - 3, 0, _objectDataModel.objectData(), 0);
 
         if (isSelected()) {
             p->setPen(QPen(QColor(0, 192, 255), 1, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
@@ -176,12 +176,12 @@ public:
 
     void setPdMessage(std::string message)
     {
-        setObjectData(message);
+        setObjectData(message.c_str());
         autoResize();
 
         QFont myFont(PREF_QSTRING("Font"), 11);
         QFontMetrics fm(myFont);
-        int new_w = fm.width(QString(objectData().c_str())) + 10;
+        int new_w = fm.width(QString(_objectDataModel.objectData())) + 10;
         new_w = (new_w < 25) ? 25 : new_w;
         setWidth(new_w);
         //

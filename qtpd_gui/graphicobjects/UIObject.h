@@ -33,17 +33,15 @@ class UIObject : public UIItem {
     Q_OBJECT
 
 private:
-    //temporary?
 
-    UIObjectData _objectDataModel;
 
-    //void* _pdObject;
+
 
     portItemVec* _inlets;
     portItemVec* _outlets;
 
     // todo replace with QString in GUI part
-    std::string _objectData; //name and arguments etc
+    //std::string _objectData; //name and arguments etc
 
     bool _errorBox;
 
@@ -78,6 +76,9 @@ public:
     //TODO
     bool disableObjectMaker;
 
+    //TODO
+    UIObjectData _objectDataModel;
+
     // just a template, copy from here
     virtual void paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*){};
 
@@ -109,12 +110,14 @@ public:
     ////
     /// \brief gets object text data /usually overriden by ui objects/
     /// \return
-    std::string objectData();
+    QString objectData();
 
     ////
     /// \brief sets object text data
     /// \return
-    virtual void setObjectData(std::string objData);
+    virtual void setObjectData(QString objData);
+
+
 
     ////
     /// \brief returns pointer to pd object.

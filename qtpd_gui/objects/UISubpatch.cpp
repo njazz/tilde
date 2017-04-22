@@ -45,7 +45,7 @@ std::string UISubpatch::asPdFileString()
     ret += "#X restore ";
     ret += std::to_string(pos().x()) + " " + std::to_string(pos().y()) + " ";
 
-    ret += objectData() + properties()->asPdFileString();
+    ret += _objectDataModel.objectData().toStdString() + properties()->asPdFileString();
     //ret += objectData();
 
     return ret;

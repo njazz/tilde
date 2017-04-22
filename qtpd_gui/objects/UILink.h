@@ -216,7 +216,7 @@ public:
             obj_data += msg.at(i).asString() + " ";
         }
 
-        x->setObjectData(obj_data);
+        x->setObjectData(obj_data.c_str());
         x->autoResize();
 
         x->update();

@@ -149,7 +149,7 @@ public:
 
     // ----------------------
 
-    void setPdMessage(std::string message)
+    void setPdMessage(QString message)
     {
         setObjectData(message);
 

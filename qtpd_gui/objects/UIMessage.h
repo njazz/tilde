@@ -42,7 +42,7 @@ public:
         QString messageData = messageDataList.join(" ");
 
         QString data1 = b->properties()->extractFromPdFileString(messageData);
-        b->setObjectData(data1.toStdString());
+        b->setObjectData(data1);
 
         qDebug() << "msg data:" << messageDataList;
 
@@ -106,7 +106,7 @@ public:
         p->setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
         p->setFont(QFont(PREF_QSTRING("Font"), 11, 0, false));
-        p->drawText(2, 3, width() - 2, height() - 3, 0, objectData().c_str(), 0);
+        p->drawText(2, 3, width() - 2, height() - 3, 0, _objectDataModel.objectData(), 0);
     }
 
     void resizeEvent()
@@ -138,7 +138,7 @@ public:
         }
 
         if ((getEditMode() == em_Unlocked) && isSelected()) {
-            _editor->setText(QString(objectData().c_str()));
+            _editor->setText(QString(_objectDataModel.objectData()));
             _editor->show();
             _editor->setFocus();
             ev->accept();
@@ -193,14 +193,14 @@ public:
 
     // ------------------------------------
 
-    void setPdMessage(std::string message)
+    void setPdMessage(QString message)
     {
         setObjectData(message);
         autoResize();
 
         QFont myFont(PREF_QSTRING("Font"), 11);
         QFontMetrics fm(myFont);
-        int new_w = fm.width(QString(objectData().c_str())) + 10;
+        int new_w = fm.width(QString(_objectDataModel.objectData())) + 10;
         new_w = (new_w < 25) ? 25 : new_w;
         setWidth(new_w);
 
@@ -211,7 +211,7 @@ public:
                 qDebug("msg: bad pd object!");
             } else {
 
-                std::string msg = ("set " + objectData());
+                std::string msg = ("set " + _objectDataModel.objectData().toStdString());
                 cmp_sendstring((t_pd*)pdObject(), msg);
             }
         }
@@ -236,7 +236,7 @@ public:
                 obj_data += msg.at(i).asString() + " ";
         }
 
-        x->setObjectData(obj_data);
+        x->setObjectData(obj_data.c_str());
         x->autoResize();
 
         //
@@ -257,7 +257,7 @@ public:
         ret = "#X obj ";
         ret += std::to_string(x()) + " " + std::to_string(y()) + " ";
         ret += "ui.msg ";
-        ret += ((objectData() == "") ? ((std::string) "") : (objectData() + " ")) + properties()->asPdFileString();
+        ret += ((objectData() == "") ? ((std::string) "") : (_objectDataModel.objectData().toStdString() + " ")) + properties()->asPdFileString();
 
         return ret;
     }

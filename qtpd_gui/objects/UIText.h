@@ -103,7 +103,7 @@ public:
 
         if ((getEditMode() == em_Unlocked) && isSelected()) {
 
-            _editor->document()->setPlainText(QString(objectData().c_str()));
+            _editor->document()->setPlainText(QString(_objectDataModel.objectData()));
             _editor->show();
             _editor->setFocus();
             ev->accept();
@@ -202,7 +202,7 @@ public:
             obj_data += msg.at(i).asString() + " ";
         }
 
-        x->setObjectData(obj_data);
+        x->setObjectData(obj_data.c_str());
         x->autoResize();
 
         x->update();

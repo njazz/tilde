@@ -42,7 +42,7 @@ void UIMessage::editorDone()
 {
     qDebug("editor done");
 
-    setPdMessage(_editor->text().toStdString());
+    setPdMessage(_editor->text());
     //todo
 
     _editor->hide();

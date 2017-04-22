@@ -50,7 +50,7 @@ UIObject* UIMethod::createObject(QString objectData, t_canvas* pdCanvas, QGraphi
     //const char* obj_name2 = data1.c_str();
 
     // fix size changes
-    b->setObjectData(data1.toStdString());
+    b->setObjectData(data1);
     b->autoResize();
 
     //std::string methodName;

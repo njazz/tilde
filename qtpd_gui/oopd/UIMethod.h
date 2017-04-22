@@ -69,7 +69,7 @@ public:
         p->setPen(QPen(QColor(0, 0, 0), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
         p->setFont(QFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize(), 0, false));
-        p->drawText(2, 3, width() - 2, height() - 3, 0, objectData().c_str(), 0);
+        p->drawText(2, 3, width() - 2, height() - 3, 0, _objectDataModel.objectData(), 0);
 
         if (isSelected()) {
             p->setPen(QPen(QColor(0, 192, 255), 1, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
@@ -117,7 +117,7 @@ public:
         //        }
 
         if ((getEditMode() == em_Unlocked) && isSelected()) {
-            //            editor_->setText(QString(objectData().c_str()));
+            //            editor_->setText(QString(_objectDataModel.objectData()));
             //            editor_->show();
 
             emit editObject(this);
@@ -154,14 +154,14 @@ public:
         }
     }
 
-    void setPdMessage(std::string message)
+    void setPdMessage(QString message)
     {
         setObjectData(message);
         autoResize();
 
         QFont myFont(PREF_QSTRING("Font"), 11);
         QFontMetrics fm(myFont);
-        int new_w = fm.width(QString(objectData().c_str())) + 10;
+        int new_w = fm.width(QString(_objectDataModel.objectData())) + 10;
         new_w = (new_w < 25) ? 25 : new_w;
         setWidth(new_w);
         //editor_->setFixedWidth(width() - 5);

@@ -260,9 +260,10 @@ int UIObject::outletCount()
 
 ////////
 
-void UIObject::setObjectData(std::string objData)
+void UIObject::setObjectData(QString objData)
 {
-    _objectData = objData;
+    //_objectData = objData;
+    _objectDataModel.setData(objData);
 }
 
 void UIObject::autoResize()
@@ -270,14 +271,14 @@ void UIObject::autoResize()
     QFont myFont(PREF_QSTRING("Font"), 11);
     QFontMetrics fm(myFont);
 
-    setWidth((int)fm.width(QString(_objectData.c_str())) + 5);
+    setWidth((int)fm.width(_objectDataModel.objectData()) + 5);
     if (boundingRect().width() < minimumBoxWidth())
         setWidth(minimumBoxWidth());
 }
 
-std::string UIObject::objectData()
+QString UIObject::objectData()
 {
-    return _objectData;
+    return _objectDataModel.objectData();//_objectData;
 }
 
 void* UIObject::pdObject() { return _objectDataModel.pdObject(); }
@@ -297,7 +298,7 @@ std::string UIObject::asPdFileString()
 
     //ret += pdObjectName_ + " " ;//
 
-    ret += ((_objectData == "") ? ((std::string) "") : (_objectData + " ")) + _properties.asPdFileString();
+    ret += ((_objectDataModel.objectData() == "") ? ((std::string) "") : (_objectDataModel.objectData().toStdString() + " ")) + _properties.asPdFileString();
 
     return ret;
 }
