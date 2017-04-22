@@ -38,7 +38,7 @@ public:
         UIScriptBox* b = new UIScriptBox();
         b->setCanvas((void*)parent);
 
-        //b->_editor->setContext(pyWrapper::inst().withCanvas((QObject*)parent));
+        b->_editor->setContext(pyWrapper::inst().withCanvas((QObject*)parent));
 
         QString data1 = b->properties()->extractFromPdFileString(objectData);
         if (data1 != "") {
@@ -54,7 +54,7 @@ public:
         // the zoo lol
         //QString data = b->properties()->get("Script")->asQString().split("\\n ").join("\n");
         QString data = "";
-        //b->_editor->document()->setPlainText(data);
+        b->_editor->document()->setPlainText(data);
 
         // pd object
         std::string message = "ui.script";
@@ -72,7 +72,7 @@ public:
             qDebug("created ui.script %s | ptr %lu\n", message.c_str(), (long)new_obj);
             b->setPdObject(new_obj);
 
-            //b->_editor->setContext(pyWrapper::inst().withCanvasPdObjectAndInput((UIObject*)parent, new_obj, &b->_inputList));
+            b->_editor->setContext(pyWrapper::inst().withCanvasPdObjectAndInput((UIObject*)parent, new_obj, &b->_inputList));
 
             b->addInlet();
             b->addOutlet();
@@ -114,7 +114,7 @@ public:
             p->drawRect(0, 0, width(), height());
         }
 
-        p->setPen(QPen(QColor(128, 128, 128), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p->setPen(QPen(QColor(0, 0, 0), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         p->setFont(QFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize(), 0, false));
         p->drawText(2, 3, boundingRect().width() - 2, boundingRect().height() - 3, 0, "py "+ properties()->get("ScriptFile")->asQString(), 0);
 
@@ -132,9 +132,19 @@ public:
     void mousePressEvent(QGraphicsSceneMouseEvent* ev)
     {
 
-        emit selectBox(this, ev);
-        dragOffset = ev->pos().toPoint();
-        ev->accept();
+        if (getEditMode() == em_Locked)
+        {
+            _editor->show();
+
+        }
+        if (getEditMode() == em_Unlocked)
+        {
+            emit selectBox(this, ev);
+            dragOffset = ev->pos().toPoint();
+            ev->accept();
+
+        }
+
 
         //context menu
         if (ev->button() == Qt::RightButton) {

@@ -118,7 +118,8 @@ SOURCES += main.cpp\
     widgets/UIArrayEditor.cpp \
 #
     Canvas.cpp \
-    FileParser.cpp \
+    datamodels/FileParser.cpp \
+#
     ObjectLoader.cpp \
     widgets/ObjectMaker.cpp \
     window/PatchWindow.cpp \
@@ -143,7 +144,8 @@ SOURCES += main.cpp\
     graphicobjects/LinkLine.cpp \
     widgets/UITextEditor.cpp \
     objects/UISlider.cpp \
-    graphicobjects/UIObjectData.cpp
+#
+    datamodels/UIObjectData.cpp
 
 
 
@@ -176,8 +178,9 @@ HEADERS  += \
     window/PropertiesWindow.h \
     Canvas.h \
 #
-    FileParser.h \
-    FileSaver.h \
+    datamodels/FileParser.h \
+    datamodels/FileSaver.h \
+#
     ObjectLoader.h \
     widgets/ObjectMaker.h \
     PdLink.h \
@@ -196,8 +199,8 @@ HEADERS  += \
     graphicobjects/Patchcord.h \
 #
     graphicobjects/UIObject.h \
-    Clipboard.h \
-    CanvasData.h \
+    datamodels/Clipboard.h \
+    datamodels/CanvasData.h \
     lib_headers/g_canvas.h \
     lib_headers/m_pd.h \
     lib_headers/ceammc_atomlist.h \
@@ -208,7 +211,7 @@ HEADERS  += \
     widgets/UITextEditor.h \
     graphicobjects/CommonTypes.h \
     objects/UISlider.h \
-    graphicobjects/UIObjectData.h
+    datamodels/UIObjectData.h
 
 
 

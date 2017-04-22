@@ -19,12 +19,14 @@ UIScriptBox::UIScriptBox()
 
     QFont font = QFont(PREF_QSTRING("Font"), 11, 0, false);
 
-//    _editor = new UIScriptEditor(); //weird
-//    _editor->setFixedSize(150 - 5, 300 - 27); //setFixedSize(65-5,18);
+    _editor = new UIScriptEditor(); //weird
+    _editor->setFixedSize(150 - 5, 300 - 27); //setFixedSize(65-5,18);
 
-//    _editor->setFont(font);
-//    _editor->show();
-//    _editor->setAttribute(Qt::WA_MacShowFocusRect, 0);
+    _editor->setFont(font);
+    //_editor->show();
+    _editor->setAttribute(Qt::WA_MacShowFocusRect, 0);
+
+    _editor->setParent(0);
 
 //    setFocus();
 
@@ -45,16 +47,16 @@ UIScriptBox::UIScriptBox()
 
 //    _objectDataModel.setObjectSize(os_FixedHeight,40,20);
 
-//    QPalette Pal; //palette());
-//    Pal.setColor(QPalette::Background, QColor(224, 240, 255));
-//    Pal.setColor(QPalette::Base, QColor(240, 248, 255));
-//    _editor->setPalette(Pal);
+    QPalette Pal; //palette());
+    Pal.setColor(QPalette::Background, QColor(224, 240, 255));
+    Pal.setColor(QPalette::Base, QColor(240, 248, 255));
+    _editor->setPalette(Pal);
 
 //    QGraphicsProxyWidget* proxy = new QGraphicsProxyWidget(this);
 //    proxy->setWidget(_editor);
 //    proxy->setPos(2, 20);
 
-//    _editor->setCursorWidth(2);
+    _editor->setCursorWidth(2);
 
 //    //temporary. needs fixing
 //    hideSizeBox();

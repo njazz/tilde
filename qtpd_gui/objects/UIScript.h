@@ -13,8 +13,6 @@
 
 //#include "cm_pdlink.h"
 
-
-
 #include "UIScriptEditor.h"
 
 namespace qtpd {
