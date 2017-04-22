@@ -37,7 +37,7 @@ private:
 
     UIObjectData _objectDataModel;
 
-    void* _pdObject;
+    //void* _pdObject;
 
     portItemVec* _inlets;
     portItemVec* _outlets;

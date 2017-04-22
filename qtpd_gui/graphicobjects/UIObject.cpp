@@ -160,8 +160,8 @@ void UIObject::addInlet()
 {
     int _portClass_;
 
-    if (_pdObject) {
-        _portClass_ = cmp_get_inlet_type((t_object*)_pdObject, _inlets->size());
+    if (pdObject()) {
+        _portClass_ = cmp_get_inlet_type((t_object*)pdObject(), _inlets->size());
     } else
         _portClass_ = 0;
 
@@ -190,8 +190,8 @@ void UIObject::addOutlet()
 {
     int _portClass_;
 
-    if (_pdObject) {
-        _portClass_ = cmp_get_outlet_type((t_object*)_pdObject, _outlets->size());
+    if (pdObject()) {
+        _portClass_ = cmp_get_outlet_type((t_object*)pdObject(), _outlets->size());
     } else
         _portClass_ = 0;
 
@@ -234,8 +234,8 @@ Port* UIObject::outletAt(int idx)
 
 int UIObject::pdInletType(int idx)
 {
-    if ((t_object*)_pdObject)
-        return cmp_get_inlet_type((t_object*)_pdObject, idx);
+    if ((t_object*)pdObject())
+        return cmp_get_inlet_type((t_object*)pdObject(), idx);
     else
         return 0;
 }
@@ -247,8 +247,8 @@ int UIObject::inletCount()
 
 int UIObject::pdOutletType(int idx)
 {
-    if ((t_object*)_pdObject)
-        return cmp_get_outlet_type((t_object*)_pdObject, idx);
+    if ((t_object*)pdObject())
+        return cmp_get_outlet_type((t_object*)pdObject(), idx);
     else
         return 0;
 }
@@ -280,9 +280,9 @@ std::string UIObject::objectData()
     return _objectData;
 }
 
-void* UIObject::pdObject() { return _pdObject; }
+void* UIObject::pdObject() { return _objectDataModel.pdObject(); }
 
-void UIObject::setPdObject(void* obj) { _pdObject = obj; }
+void UIObject::setPdObject(void* obj) { _objectDataModel.setPdObject(obj); }
 
 bool UIObject::errorBox() { return _errorBox; }
 
