@@ -24,7 +24,7 @@ typedef enum {
     ptString,
     ptVector,
     ptColor,
-    ptText ///< multiline text for comments, script
+    ptText          ///< multiline text for comments, script
 
 } UIPropertyType;
 
@@ -36,8 +36,8 @@ private:
     AtomList _data;
     AtomList _defaultData;
 
-    std::string _group;
-    std::string _version;
+    QString _group;
+    QString _version;
 
     UIPropertyType _type;
 
@@ -54,12 +54,12 @@ public:
         _defaultData = _data;
     }
 
-    void setVersion(std::string version)
+    void setVersion(QString version)
     {
         _version = version;
     }
 
-    std::string version() { return _version; }
+    QString version() { return _version; }
 
     //////////
 

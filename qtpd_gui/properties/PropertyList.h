@@ -35,7 +35,7 @@ public:
     UIPropertyData* fromGroup(QString grpName);
 
     template <typename T>
-    void create(std::string pName, std::string pGroup, std::string pVersion, T defaultData)
+    void create(std::string pName, std::string pGroup, QString pVersion, T defaultData)
     {
         Property* newP = new Property;
 
