@@ -12,7 +12,7 @@ namespace qtpd {
 UIObject::UIObject(UIItem* parent)
     : UIItem(parent)
 {
-    _errorBox = false;
+    //_objectDataModel.setErrorBox(false);
 
     setParent(parent);
 
@@ -34,7 +34,9 @@ UIObject::UIObject(UIItem* parent)
     createContextMenu();
 
     //this is default
-    _objectSizeMode = os_FixedHeight;
+    //_objectSizeMode = os_FixedHeight;
+
+    _objectDataModel.setObjectSize(os_FixedHeight, 40,20);
 
     setAcceptHoverEvents(true);
 }
@@ -43,12 +45,12 @@ UIObject::UIObject(UIItem* parent)
 
 void UIObject::resizeBox(int dx, int dy)
 {
-    if (_objectSizeMode != os_Fixed)
+    if (_objectDataModel.objectSizeMode() != os_Fixed)
         setWidth(boundingRect().width() + dx);
-    if (_objectSizeMode == os_Free)
+    if (_objectDataModel.objectSizeMode() == os_Free)
         setHeight(boundingRect().height() + dy);
 
-    if (_objectSizeMode == os_Square) {
+    if (_objectDataModel.objectSizeMode() == os_Square) {
         setHeight(boundingRect().width());
     }
 
@@ -57,10 +59,10 @@ void UIObject::resizeBox(int dx, int dy)
     _sizeBox->move(boundingRect().width() - 7, boundingRect().height() - 7);
 
     //todo fixed width
-    if (boundingRect().width() < minimumBoxWidth())
-        setWidth(minimumBoxWidth());
-    if (boundingRect().height() < minimumBoxHeight())
-        setHeight(minimumBoxHeight());
+    if (boundingRect().width() < _objectDataModel.minimumBoxWidth())
+        setWidth(_objectDataModel.minimumBoxWidth());
+    if (boundingRect().height() < _objectDataModel.minimumBoxHeight())
+        setHeight(_objectDataModel.minimumBoxHeight());
 
     setInletsPos();
     setOutletsPos();
@@ -74,22 +76,22 @@ void UIObject::resizeBox(int dx, int dy)
 
 void UIObject::initProperties()
 {
-    connect(properties(), &PropertyList::propertyChangedSignal, this, &UIObject::propertyChanged);
+    connect(_objectDataModel.properties(), &PropertyList::propertyChangedSignal, this, &UIObject::propertyChanged);
 
-    properties()->create("Size", "Box", "0.1", boundingRect().size());
-    properties()->create("Position", "Box", "0.1", pos());
-    properties()->create("FontSize", "Box", "0.1", 11.);
+    _objectDataModel.properties()->create("Size", "Box", "0.1", boundingRect().size());
+    _objectDataModel.properties()->create("Position", "Box", "0.1", pos());
+    _objectDataModel.properties()->create("FontSize", "Box", "0.1", 11.);
 
-    properties()->create("PresetName", "Preset", "0.1", gensym(""));
-    properties()->create("SendSymbol", "Preset", "0.1", gensym(""));
-    properties()->create("ReceiveSymbol", "Preset", "0.1", gensym(""));
+    _objectDataModel.properties()->create("PresetName", "Preset", "0.1", gensym(""));
+    _objectDataModel.properties()->create("SendSymbol", "Preset", "0.1", gensym(""));
+    _objectDataModel.properties()->create("ReceiveSymbol", "Preset", "0.1", gensym(""));
 
-    properties()->create("BorderColor", "Color", "0.1", QColor(192, 192, 192, 255));
+    _objectDataModel.properties()->create("BorderColor", "Color", "0.1", QColor(192, 192, 192, 255));
 }
 
 PropertyList* UIObject::properties()
 {
-    return &_properties;
+    return _objectDataModel.properties(); //&_properties;
 }
 
 void UIObject::createContextMenu()
@@ -272,22 +274,20 @@ void UIObject::autoResize()
     QFontMetrics fm(myFont);
 
     setWidth((int)fm.width(_objectDataModel.objectData()) + 5);
-    if (boundingRect().width() < minimumBoxWidth())
-        setWidth(minimumBoxWidth());
+    if (boundingRect().width() < _objectDataModel.minimumBoxWidth())
+        setWidth(_objectDataModel.minimumBoxWidth());
 }
 
 QString UIObject::objectData()
 {
-    return _objectDataModel.objectData();//_objectData;
+    return _objectDataModel.objectData(); //_objectData;
 }
 
 void* UIObject::pdObject() { return _objectDataModel.pdObject(); }
-
 void UIObject::setPdObject(void* obj) { _objectDataModel.setPdObject(obj); }
 
-bool UIObject::errorBox() { return _errorBox; }
-
-void UIObject::setErrorBox(bool val) { _errorBox = val; }
+bool UIObject::errorBox() { return _objectDataModel.errorBox(); }
+void UIObject::setErrorBox(bool val) { _objectDataModel.setErrorBox(val); }
 
 std::string UIObject::asPdFileString()
 {
@@ -298,7 +298,7 @@ std::string UIObject::asPdFileString()
 
     //ret += pdObjectName_ + " " ;//
 
-    ret += ((_objectDataModel.objectData() == "") ? ((std::string) "") : (_objectDataModel.objectData().toStdString() + " ")) + _properties.asPdFileString();
+    ret += ((_objectDataModel.objectData() == "") ? ((std::string) "") : (_objectDataModel.objectData().toStdString() + " ")) + _objectDataModel.properties()->asPdFileString();
 
     return ret;
 }
@@ -335,10 +335,10 @@ void UIObject::resizeEvent() //QGraphicsSceneResizeEvent *event)
     _sizeBox->move(boundingRect().width() - 7, boundingRect().height() - 7);
 
     //todo fixed width
-    if (boundingRect().width() < minimumBoxWidth())
-        setWidth(minimumBoxWidth());
-    if (boundingRect().height() < minimumBoxHeight())
-        setHeight(minimumBoxHeight());
+    if (boundingRect().width() < _objectDataModel.minimumBoxWidth())
+        setWidth(_objectDataModel.minimumBoxWidth());
+    if (boundingRect().height() < _objectDataModel.minimumBoxHeight())
+        setHeight(_objectDataModel.minimumBoxHeight());
 
     setInletsPos();
     setOutletsPos();
@@ -361,6 +361,7 @@ void UIObject::hoverLeaveEvent(QGraphicsSceneHoverEvent*)
 
 //---------------------------------
 
+/*
 ////
 /// \brief set secondary 'minimum width' value - used for object box resize
 /// \param w
@@ -396,6 +397,7 @@ int UIObject::minimumBoxHeight()
 {
     return _minimumBoxHeight;
 }
+*/
 
 // ??
 void UIObject::hide()
@@ -416,18 +418,18 @@ void UIObject::hideSizeBox()
 
 void UIObject::setHelpName(QString name)
 {
-    _fullHelpName = name;
+   _objectDataModel.setFullHelpName(name);
 }
 
 QString UIObject::fullHelpName()
 {
 
-    QString name = _fullHelpName;
+    QString name = _objectDataModel.fullHelpName();
 
     QStringList paths = Preferences::inst().paths();
 
     if (paths.size() == 0) {
-        _fullHelpName = "";
+        _objectDataModel.setFullHelpName("");
         cmp_post("Help: bad search paths");
         return "";
     }
@@ -475,7 +477,7 @@ void UIObject::openHelpWindow()
 
 void UIObject::s_repaint() //needed for proper threading
 {
-    qDebug()<<"s_repaint";
+    qDebug() << "s_repaint";
     update();
 }
 
@@ -486,9 +488,9 @@ void UIObject::propertyChanged(QString pname)
         setSize(properties()->get("Size")->asQSize());
 
     //just visuals
-        if (pname == "FontSize")
-             update();
-        if (pname == "BorderColor")
-             update();
+    if (pname == "FontSize")
+        update();
+    if (pname == "BorderColor")
+        update();
 }
 }

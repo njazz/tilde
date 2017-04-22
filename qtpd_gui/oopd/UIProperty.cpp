@@ -24,10 +24,12 @@ UIProperty::UIProperty() //UIObject* parent)
 
     setSubpatchWindow(0);
 
-    setMinimumBoxWidth(40);
-    setMinimumBoxHeight(20);
+//    setMinimumBoxWidth(40);
+//    setMinimumBoxHeight(20);
 
-    setObjectSizeMode(os_FixedHeight);
+//    setObjectSizeMode(os_FixedHeight);
+
+    _objectDataModel.setObjectSize(os_FixedHeight, 40,20);
 }
 
 UIObject* UIProperty::createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent)

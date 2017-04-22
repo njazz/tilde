@@ -38,8 +38,10 @@ UIScript::UIScript()
 
     //    setMinimumSize(300, 200);
     setSize(300, 200);
-    setMinimumBoxWidth(300);
-    setMinimumBoxHeight(200);
+    //setMinimumBoxWidth(300);
+    //setMinimumBoxHeight(200);
+
+    _objectDataModel.setObjectSize(os_Free,300,200);
 
     QPalette Pal; //palette());
     Pal.setColor(QPalette::Background, QColor(224, 240, 255));
@@ -97,7 +99,7 @@ UIScript::UIScript()
     proxy->setWidget(b1);
     proxy->setPos(220, 1);
 
-    setObjectSizeMode(os_Free);
+    //setObjectSizeMode(os_Free);
 
     resizeEvent();
 }

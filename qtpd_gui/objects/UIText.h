@@ -150,8 +150,8 @@ public:
         QFontMetrics fm(myFont);
 
         setWidth((int)fm.width(_objectText) + 5);
-        if (width() < minimumBoxWidth())
-            setWidth(minimumBoxWidth());
+        if (width() < _objectDataModel.minimumBoxWidth())
+            setWidth(_objectDataModel.minimumBoxWidth());
 
         //duplicate?
         int new_w = fm.width(_objectText) + 20;

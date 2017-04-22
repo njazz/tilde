@@ -33,40 +33,20 @@ class UIObject : public UIItem {
     Q_OBJECT
 
 private:
-
-
-
-
     portItemVec* _inlets;
     portItemVec* _outlets;
 
-    // todo replace with QString in GUI part
-    //std::string _objectData; //name and arguments etc
-
-    bool _errorBox;
-
-    t_objectSize _objectSizeMode;
-
-    int _minimumBoxWidth;
-    int _minimumBoxHeight;
-
     SizeBox* _sizeBox;
-
-    PropertyList _properties;
 
     QMainWindow* _SubpatchWindow;
 
     QMenu _popupMenu;
 
-    //
     QAction* pmProperties;
     QAction* pmHelp;
     QAction* pmOpen;
 
-    //
-    QString _fullHelpName;
-
-    void* _canvas;      ///> QGraphicsView
+    void* _canvas; ///> QGraphicsView
 
 protected:
     virtual void hoverEnterEvent(QGraphicsSceneHoverEvent*);
@@ -117,8 +97,6 @@ public:
     /// \return
     virtual void setObjectData(QString objData);
 
-
-
     ////
     /// \brief returns pointer to pd object.
     /// \details gui-only objects can ovverride it with function that returns 0
@@ -146,29 +124,31 @@ public:
     ///
     void setErrorBox(bool val);
 
+    /*
     ////
     /// \brief set secondary 'minimum width' value - used for object box resize
     /// \param w
     ///
-    void setMinimumBoxWidth(int w);
+//    void setMinimumBoxWidth(int w);
 
     ////
     /// \brief set secondary 'minimum height' value - used for object box resize
     /// \param w
     ///
-    void setMinimumBoxHeight(int h);
+//    void setMinimumBoxHeight(int h);
 
     ////
     /// \brief get secondary 'minimum width' value - used for object box resize
     /// \param w
     ///
-    int minimumBoxWidth();
+//    int minimumBoxWidth();
 
     ////
     /// \brief get secondary 'minimum height' value - used for object box resize
     /// \param w
     ///
-    int minimumBoxHeight();
+//    int minimumBoxHeight();
+*/
 
     ////
     /// \brief temporary - remove later
@@ -186,10 +166,12 @@ public:
     /// \return
     QString fullHelpName();
 
+    /*
     ////
     /// \brief set object resize mode - fixed or sizeable
     /// \param os
-    void setObjectSizeMode(t_objectSize os) { _objectSizeMode = os; }
+//    void setObjectSizeMode(t_objectSize os) { _objectSizeMode = os; }
+*/
 
     /** @}*/
 
@@ -275,9 +257,6 @@ public:
 private slots:
     void openPropertiesWindow();
     void openHelpWindow();
-
-
-
 
 signals:
     void editObject(void* box);

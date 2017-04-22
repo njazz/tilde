@@ -32,9 +32,6 @@ public:
 
     void setData(QString inputData) ///> set both properties and Pd object string
     {
-        if (_properties)
-            delete _properties;
-        _properties = new PropertyList();
 
         _objectData = _properties->extractFromPdFileString(inputData);
     }
@@ -46,12 +43,16 @@ public:
     void setFullHelpName(QString fullHelpName) { _fullHelpName = fullHelpName; }
     void setErrorBox(bool errorBox) { _errorBox = errorBox; }
 
-    void setObjectSize(t_objectSize sizeMode, int minW, int minH)   ///> sets all size constraints
+    void setObjectSize(t_objectSize sizeMode, int minW, int minH) ///> sets all size constraints
     {
         _objectSizeMode = sizeMode;
         _minimumBoxWidth = minW;
         _minimumBoxHeight = minH;
     }
+
+    int minimumBoxWidth() { return _minimumBoxWidth; }
+    int minimumBoxHeight() { return _minimumBoxHeight; }
+    t_objectSize objectSizeMode() { return _objectSizeMode; }
 
     explicit UIObjectData(QObject* parent = 0);
 

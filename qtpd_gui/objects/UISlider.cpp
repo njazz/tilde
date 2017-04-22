@@ -11,13 +11,15 @@ UISlider::UISlider()
 
     setSize(20, 100);
 
-    setMinimumBoxWidth(20);
-    setMinimumBoxHeight(20);
+    //setMinimumBoxWidth(20);
+    //setMinimumBoxHeight(20);
 
     deselect();
     _clicked = false;
 
-    setObjectSizeMode(os_Free);
+    //setObjectSizeMode(os_Free);
+
+    _objectDataModel.setObjectSize(os_Free, 20, 20);
 
     _value = false;
 

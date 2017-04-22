@@ -5,7 +5,9 @@ UIObjectData::UIObjectData(QObject* parent)
     : QObject(parent)
 {
     _pdObject = 0;
-    _properties = 0;
+    _properties = new PropertyList();
+
+    _errorBox = false;
 
 }
 }

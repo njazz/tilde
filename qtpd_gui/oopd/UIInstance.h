@@ -394,7 +394,9 @@ public:
             // not working:
             //_opClass = OOPD::inst()->classBySymbol(msg.at(1).asSymbol());
 
-            setObjectSizeMode(os_Free);
+            //setObjectSizeMode(os_Free);
+
+            _objectDataModel.setObjectSize(os_Free,40,20);
 
             //resize
             if (_opClass) {

@@ -25,7 +25,7 @@ private:
     bool _clicked;
     bool _value;
 
-    QGraphicsView *_widget;
+    QGraphicsView* _widget;
 
 public:
     explicit UIDSP()
@@ -35,7 +35,7 @@ public:
 
         _value = false;
 
-        qDebug()<<"uidsp";
+        qDebug() << "uidsp";
 
         t_editMode* em = new t_editMode;
         *em = em_Locked;
@@ -44,22 +44,24 @@ public:
         setWidth(40);
         setHeight(40);
 
-        setMinimumBoxWidth(40);
-        setMinimumBoxHeight(40);
+        //setMinimumBoxWidth(40);
+        //setMinimumBoxHeight(40);
 
-        setObjectSizeMode(os_Fixed);
+        //setObjectSizeMode(os_Fixed);
+
+        _objectDataModel.setObjectSize(os_Fixed, 40, 40);
 
         _widget = new QGraphicsView();
         _widget->setScene(new QGraphicsScene(0, 0, 40, 40, _widget));
         _widget->scene()->addItem(this);
-        _widget->setFixedSize(40,40);
+        _widget->setFixedSize(40, 40);
         _widget->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         _widget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         _widget->setStyleSheet("QGraphicsView { border-style: none; }");
         _value = false;
     };
 
-    static UIObject* createObject(QString objectData, t_canvas* , QGraphicsView* parent = 0)
+    static UIObject* createObject(QString objectData, t_canvas*, QGraphicsView* parent = 0)
     {
         UIDSP* b = new UIDSP();
         b->setCanvas((void*)parent);
@@ -74,7 +76,7 @@ public:
         return (UIObject*)b;
     };
 
-    QGraphicsView *widget()
+    QGraphicsView* widget()
     {
         return _widget;
     }
@@ -125,7 +127,6 @@ public:
         p->drawRect(0, 0, width(), height());
     }
 
-
     // ------------------------------------------------
 
     void mousePressEvent(QGraphicsSceneMouseEvent* ev)
@@ -172,9 +173,9 @@ public:
         setObjectData(message);
     }
 
-//    static void updateUI(void* , ceammc::AtomList )
-//    {
-//    }
+    //    static void updateUI(void* , ceammc::AtomList )
+    //    {
+    //    }
 
     void setPdObject(void* obj)
     {

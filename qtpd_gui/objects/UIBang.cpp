@@ -9,10 +9,12 @@ UIBang::UIBang()
 {
     setSize(20, 20);
 
-    setMinimumBoxWidth(20);
-    setMinimumBoxHeight(20);
+    //setMinimumBoxWidth(20);
+    //setMinimumBoxHeight(20);
 
-    setObjectSizeMode(os_Square);
+    //setObjectSizeMode(os_Square);
+
+    _objectDataModel.setObjectSize(os_Square, 20,20);
 
     deselect();
     _clicked = false;

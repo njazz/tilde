@@ -24,10 +24,12 @@ UIMethod::UIMethod()//UIObject* parent)
 
     setSubpatchWindow(0);
 
-    setMinimumBoxWidth(40);
-    setMinimumBoxHeight(20);
+//    setMinimumBoxWidth(40);
+//    setMinimumBoxHeight(20);
 
-    setObjectSizeMode(os_FixedHeight);
+//    setObjectSizeMode(os_FixedHeight);
+
+    _objectDataModel.setObjectSize(os_FixedHeight, 40,20);
 }
 
 

@@ -38,7 +38,7 @@ void Patchcord::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidge
     QPoint end = endPoint();
     QPoint start = startPoint();
 
-    qDebug() << "pc points" << start << end;
+    //qDebug() << "pc points" << start << end;
 
     QPoint b1 = QPoint(start.x() + (end.x() - start.x()) * .5, fabs(end.y() - start.y()) * .5 + start.y());
     QPoint b2 = QPoint(end.x() - (end.x() - start.x()) * .5, -fabs(end.y() - start.y()) * .5 + end.y());
@@ -87,7 +87,7 @@ QPoint Patchcord::endPoint()
         end = QPoint(_obj2->pos().x() + _in2->pos().x() + _in2->width() / 2,
             _obj2->pos().y() + _in2->pos().y() + _in2->height() / 2);
 
-    qDebug() << "set end" << end;
+    //qDebug() << "set end" << end;
 
     //todo fix!
     setSize(end.x() - pos().x(), end.y() - pos().y());

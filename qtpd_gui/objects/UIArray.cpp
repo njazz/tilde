@@ -16,8 +16,10 @@ UIArray::UIArray()
 
     setSubpatchWindow(0);
 
-    setMinimumBoxWidth(40);
-    setMinimumBoxHeight(20);
+    //setMinimumBoxWidth(40);
+    //setMinimumBoxHeight(20);
+
+    _objectDataModel.setObjectSize(os_FixedHeight, 40,20);
 
     initProperties();
 

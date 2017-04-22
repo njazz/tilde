@@ -35,8 +35,10 @@ UIText::UIText() //UIObject* parent)
 
     _editor->installEventFilter(this);
 
-    setMinimumBoxWidth(80);
-    setMinimumBoxHeight(20);
+    //setMinimumBoxWidth(80);
+    //setMinimumBoxHeight(20);
+
+    _objectDataModel.setObjectSize(os_Free, 80,20);
 
     resizeEvent();
 }

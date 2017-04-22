@@ -110,8 +110,8 @@ public:
         QFontMetrics fm(myFont);
 
         setWidth((int)fm.width(QString("00.00")) + 5); //todo
-        if (width() < minimumBoxWidth())
-            setWidth(minimumBoxWidth());
+        if (width() < _objectDataModel.minimumBoxWidth())
+            setWidth(_objectDataModel.minimumBoxWidth());
     }
 
     ///////////////////

@@ -17,8 +17,10 @@ UILink::UILink()
     deselect();
     _clicked = false;
 
-    setMinimumBoxWidth(80);
-    setMinimumBoxHeight(20);
+//    setMinimumBoxWidth(80);
+//    setMinimumBoxHeight(20);
+
+    _objectDataModel.setObjectSize(os_FixedHeight,80,20);
 
     resizeEvent();
 }
