@@ -134,7 +134,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#a74b68fa0b2ffe25112d5309b0f4bdf8a">UIPropertyData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_property_list.html#a2a63cdb21615991daf98e4af47be4c73">group</a> (QString grpName)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#a74b68fa0b2ffe25112d5309b0f4bdf8a">UIPropertyData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_property_list.html#ad9e2fa98cd6f11033cdeef30804ca5e0">fromGroup</a> (QString grpName)</td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_property_list.html#a86311122846e75d0cb0e7e775abddae6">create</a> (std::string pName, std::string pGroup, std::string pVersion, T defaultData)</td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_property_list.html#afbe5c3673f39e28c8327b99749925379">create</a> (std::string pName, std::string pGroup, QString pVersion, T defaultData)</td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
 <tr><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_property_list.html#a29af3e410e9b5fd3fd8a86d295215a44">set</a> (std::string pName, U value)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_property.html">Property</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_property_list.html#a56b8961ff1380c565c7d616166be18d4">get</a> (QString pName)</td></tr>
@@ -146,8 +146,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">list of all property names for specific propertyData  todo normal classes  <a href="#a12d0803546bc2e090476a7e7933425f3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_property_list.html#a941a95520f1c8c2ed972ce43f2e8e5fd">groupNames</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">list of all group names  <a href="#a941a95520f1c8c2ed972ce43f2e8e5fd"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_property_list.html#afe045d9c65b8b51e12fb81c1eb5585b5">extractFromPdFileString</a> (QString input)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">extract properties from string in pd file  <a href="#afe045d9c65b8b51e12fb81c1eb5585b5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_property_list.html#a89f4403a97b8d32d4d655c94b8ff1f3f">extractFromPdFileString</a> (QString input)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">extract properties from string in pd file  <a href="#a89f4403a97b8d32d4d655c94b8ff1f3f"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>yet another property handling class for ui object. List </p>
@@ -188,14 +188,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a86311122846e75d0cb0e7e775abddae6"></a><!-- doxytag: member="qtpd::PropertyList::create" ref="a86311122846e75d0cb0e7e775abddae6" args="(std::string pName, std::string pGroup, std::string pVersion, T defaultData)" -->
+<a class="anchor" id="afbe5c3673f39e28c8327b99749925379"></a><!-- doxytag: member="qtpd::PropertyList::create" ref="afbe5c3673f39e28c8327b99749925379" args="(std::string pName, std::string pGroup, QString pVersion, T defaultData)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_property_list.html#a86311122846e75d0cb0e7e775abddae6">qtpd::PropertyList::create</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_property_list.html#afbe5c3673f39e28c8327b99749925379">qtpd::PropertyList::create</a> </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>pName</em>, </td>
@@ -209,7 +209,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">QString&#160;</td>
           <td class="paramname"><em>pVersion</em>, </td>
         </tr>
         <tr>
@@ -229,12 +229,12 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="afe045d9c65b8b51e12fb81c1eb5585b5"></a><!-- doxytag: member="qtpd::PropertyList::extractFromPdFileString" ref="afe045d9c65b8b51e12fb81c1eb5585b5" args="(QString input)" -->
+<a class="anchor" id="a89f4403a97b8d32d4d655c94b8ff1f3f"></a><!-- doxytag: member="qtpd::PropertyList::extractFromPdFileString" ref="a89f4403a97b8d32d4d655c94b8ff1f3f" args="(QString input)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string <a class="el" href="classqtpd_1_1_property_list.html#afe045d9c65b8b51e12fb81c1eb5585b5">qtpd::PropertyList::extractFromPdFileString</a> </td>
+          <td class="memname">QString <a class="el" href="classqtpd_1_1_property_list.html#a89f4403a97b8d32d4d655c94b8ff1f3f">qtpd::PropertyList::extractFromPdFileString</a> </td>
           <td>(</td>
           <td class="paramtype">QString&#160;</td>
           <td class="paramname"><em>input</em></td><td>)</td>
@@ -427,7 +427,7 @@ template&lt;typename U &gt; </div>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 17 2017 10:06:25 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 22 2017 20:53:23 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

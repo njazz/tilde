@@ -180,10 +180,10 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a2e6fec1e7e23c49c16330281d84f099f">setCanvas</a> (void *<a class="el" href="classqtpd_1_1_u_i_object.html#ae5912261870c7eec5231419acd4ca7e1">canvas</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ae5912261870c7eec5231419acd4ca7e1">canvas</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_size_box.html">SizeBox</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a2a5596386429c363e6f45085b7ef47e6">sizeBox</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447">objectData</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gets object text data /usually overriden by ui objects/  <a href="#ab898f6da7aadb3223e25f13eb937c447"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a65a6c071b7b6f99393652d273e6a0fa7">setObjectData</a> (std::string objData)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets object text data  <a href="#a65a6c071b7b6f99393652d273e6a0fa7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a36456ea5fb11ff6b752bc56de2ce5584">objectData</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gets object text data /usually overriden by ui objects/  <a href="#a36456ea5fb11ff6b752bc56de2ce5584"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a79408701823ecce79ece7cdf5a10103f">setObjectData</a> (QString objData)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets object text data  <a href="#a79408701823ecce79ece7cdf5a10103f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ad41f2f9ff8447ea8dc061c3e8fc6528b">pdObject</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns pointer to pd object.  <a href="#ad41f2f9ff8447ea8dc061c3e8fc6528b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a8d514a69e4a316b43095faaeea415dad">setPdObject</a> (void *obj)</td></tr>
@@ -192,14 +192,6 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns true if object doesn't exist  <a href="#a1a55479c564318cbf31c0f09d02d39bb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#abc5b87789a2cc65d9d74d0ca2b6b0bdf">setErrorBox</a> (bool val)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets object box error flag  <a href="#abc5b87789a2cc65d9d74d0ca2b6b0bdf"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#aaf3ec64e20e23bd1a6e98e40e207b9a5">setMinimumBoxWidth</a> (int w)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">set secondary 'minimum width' value - used for object box resize  <a href="#aaf3ec64e20e23bd1a6e98e40e207b9a5"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a0e30df8242a108e7534044d0fd2e8c9e">setMinimumBoxHeight</a> (int h)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">set secondary 'minimum height' value - used for object box resize  <a href="#a0e30df8242a108e7534044d0fd2e8c9e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ac1d937fa3ee566a10ae183ab8e40fd79">minimumBoxWidth</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get secondary 'minimum width' value - used for object box resize  <a href="#ac1d937fa3ee566a10ae183ab8e40fd79"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a59b95a44ccb3c18727d8212a6eb32f56">minimumBoxHeight</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get secondary 'minimum height' value - used for object box resize  <a href="#a59b95a44ccb3c18727d8212a6eb32f56"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QMainWindow *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a163437921d348578fbfb8abebee0217c">subpatchWindow</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">temporary - remove later  <a href="#a163437921d348578fbfb8abebee0217c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#aab273ef9fd115cb87544b398975ca4c1">setSubpatchWindow</a> (QMainWindow *cwindow)</td></tr>
@@ -207,8 +199,6 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">set short name for help patch (without path)  <a href="#a055a8f03b9e9a36678cb5804607b6b3e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a89f2ee50238101d3900ba3f2ff2146fd">fullHelpName</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns help patch name with path if the file is found  <a href="#a89f2ee50238101d3900ba3f2ff2146fd"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a9bd7968c1e875978f700e6615b4c6f53">setObjectSizeMode</a> (<a class="el" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3">t_objectSize</a> os)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">set object resize mode - fixed or sizeable  <a href="#a9bd7968c1e875978f700e6615b4c6f53"></a><br/></td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#abd253cdb46eec3e920bc2e195f24bf84">setInletsPos</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets inlet position (cm_port)  <a href="#abd253cdb46eec3e920bc2e195f24bf84"></a><br/></td></tr>
@@ -238,9 +228,11 @@ Static Public Member Functions</h2></td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#aca50a3b8c69080fe8276ceab276079f4">disableObjectMaker</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_u_i_object_data.html">UIObjectData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a5039d9d6c10909333a30af566ee2800c">_objectDataModel</a></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ae3b8ec06c4aa92e121faf2810c2babf5">hoverEnterEvent</a> (QGraphicsSceneHoverEvent *)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; QGraphicsView  <a href="#ae3b8ec06c4aa92e121faf2810c2babf5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a3b05e154739411d1eed522f7dbf1d9c7">hoverLeaveEvent</a> (QGraphicsSceneHoverEvent *)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
@@ -542,6 +534,8 @@ Protected Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>&gt; QGraphicsView </p>
+
 <p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_link.html#a5a51a715dc1f037e128677948a3d95fc">qtpd::UILink</a>.</p>
 
 </div>
@@ -579,7 +573,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_link.html#a0a4a253092687ac1f6a1be9ac38ae765">qtpd::UILink</a>, <a class="el" href="classqtpd_1_1_u_i_text.html#a56d8f9ba20c632198216ba5d8daac247">qtpd::UIText</a>, <a class="el" href="classqtpd_1_1_u_i_script.html#a04147e35e14968333a9b2f95ec800db5">qtpd::UIScript</a>, <a class="el" href="classqtpd_1_1_u_i_script_box.html#a842c65678324437bd8b4ee2e4ed43960">qtpd::UIScriptBox</a>, <a class="el" href="classqtpd_1_1_u_i_d_s_p.html#ac8f79bc98ea8a9484ae324e9080db2d9">qtpd::UIDSP</a>, <a class="el" href="classqtpd_1_1_u_i_array.html#a8e34e35ae25c3e0bc965e7b1c54ca6af">qtpd::UIArray</a>, <a class="el" href="classqtpd_1_1_u_i_float.html#a4e5922d37567b6c609a861a7f848ed57">qtpd::UIFloat</a>, <a class="el" href="classqtpd_1_1_u_i_slider.html#a1f9f687b3b5e7fbbdc54c467ac84b503">qtpd::UISlider</a>, and <a class="el" href="classqtpd_1_1_u_i_toggle.html#a4f8854faeb9c3592371f37da6a9a190b">qtpd::UIToggle</a>.</p>
+<p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_link.html#a0a4a253092687ac1f6a1be9ac38ae765">qtpd::UILink</a>, <a class="el" href="classqtpd_1_1_u_i_text.html#a56d8f9ba20c632198216ba5d8daac247">qtpd::UIText</a>, <a class="el" href="classqtpd_1_1_u_i_d_s_p.html#ac8f79bc98ea8a9484ae324e9080db2d9">qtpd::UIDSP</a>, <a class="el" href="classqtpd_1_1_u_i_script.html#a04147e35e14968333a9b2f95ec800db5">qtpd::UIScript</a>, <a class="el" href="classqtpd_1_1_u_i_script_box.html#a842c65678324437bd8b4ee2e4ed43960">qtpd::UIScriptBox</a>, <a class="el" href="classqtpd_1_1_u_i_array.html#a8e34e35ae25c3e0bc965e7b1c54ca6af">qtpd::UIArray</a>, <a class="el" href="classqtpd_1_1_u_i_float.html#a4e5922d37567b6c609a861a7f848ed57">qtpd::UIFloat</a>, <a class="el" href="classqtpd_1_1_u_i_slider.html#a1f9f687b3b5e7fbbdc54c467ac84b503">qtpd::UISlider</a>, and <a class="el" href="classqtpd_1_1_u_i_toggle.html#a4f8854faeb9c3592371f37da6a9a190b">qtpd::UIToggle</a>.</p>
 
 </div>
 </div>
@@ -628,60 +622,12 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a59b95a44ccb3c18727d8212a6eb32f56"></a><!-- doxytag: member="qtpd::UIObject::minimumBoxHeight" ref="a59b95a44ccb3c18727d8212a6eb32f56" args="()" -->
+<a class="anchor" id="a36456ea5fb11ff6b752bc56de2ce5584"></a><!-- doxytag: member="qtpd::UIObject::objectData" ref="a36456ea5fb11ff6b752bc56de2ce5584" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="classqtpd_1_1_u_i_object.html#a59b95a44ccb3c18727d8212a6eb32f56">qtpd::UIObject::minimumBoxHeight</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>get secondary 'minimum height' value - used for object box resize </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">w</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ac1d937fa3ee566a10ae183ab8e40fd79"></a><!-- doxytag: member="qtpd::UIObject::minimumBoxWidth" ref="ac1d937fa3ee566a10ae183ab8e40fd79" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="classqtpd_1_1_u_i_object.html#ac1d937fa3ee566a10ae183ab8e40fd79">qtpd::UIObject::minimumBoxWidth</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>get secondary 'minimum width' value - used for object box resize </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">w</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ab898f6da7aadb3223e25f13eb937c447"></a><!-- doxytag: member="qtpd::UIObject::objectData" ref="ab898f6da7aadb3223e25f13eb937c447" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string <a class="el" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447">qtpd::UIObject::objectData</a> </td>
+          <td class="memname">QString <a class="el" href="classqtpd_1_1_u_i_object.html#a36456ea5fb11ff6b752bc56de2ce5584">qtpd::UIObject::objectData</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -773,7 +719,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_item.html#a7d35cc78930b523be25a55b0167e5a13">qtpd::UIItem</a>.</p>
 
-<p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_class.html#ae427b4c6a023b208756197f74df3b22d">qtpd::UIClass</a>, <a class="el" href="classqtpd_1_1_u_i_instance.html#a06544d7a57d46436810862faca89cefd">qtpd::UIInstance</a>, <a class="el" href="classqtpd_1_1_u_i_box.html#acd4ca1967d1fc9f1c817042106e6efce">qtpd::UIBox</a>, <a class="el" href="classqtpd_1_1_u_i_script.html#ac6d061f4e341a36afdf1cad6b48cb46b">qtpd::UIScript</a>, <a class="el" href="classqtpd_1_1_u_i_d_s_p.html#a777a938bdb238edc1b66f1bd5db6a0f8">qtpd::UIDSP</a>, <a class="el" href="classqtpd_1_1_u_i_script_box.html#a72e9e1c0461c6289fb257b6a6a368423">qtpd::UIScriptBox</a>, <a class="el" href="classqtpd_1_1_u_i_message.html#a910d63196d1d73dba88f410ca305b998">qtpd::UIMessage</a>, <a class="el" href="classqtpd_1_1_u_i_array.html#a3db83618b13a36622e95c68377506d17">qtpd::UIArray</a>, <a class="el" href="classqtpd_1_1_u_i_float.html#af62ba38900be2685a43345cf594ba437">qtpd::UIFloat</a>, <a class="el" href="classqtpd_1_1_u_i_slider.html#a753e0f47512cb22a91bb7b5e230a1409">qtpd::UISlider</a>, <a class="el" href="classqtpd_1_1_u_i_subpatch.html#a3a13b2f81960325b828f8b4d54b90d34">qtpd::UISubpatch</a>, <a class="el" href="classqtpd_1_1_u_i_toggle.html#a15b3386bfcc334de0b87aa8a175cfff5">qtpd::UIToggle</a>, <a class="el" href="classqtpd_1_1_u_i_bang.html#a6eed703b689989e3048d03899876ce34">qtpd::UIBang</a>, <a class="el" href="classqtpd_1_1_u_i_link.html#a715807931b535b825f61f22db6a72b2d">qtpd::UILink</a>, <a class="el" href="classqtpd_1_1_u_i_text.html#a92513639a1428416f87cc712e246a5ab">qtpd::UIText</a>, <a class="el" href="classqtpd_1_1_u_i_property.html#a3e3b3216710dc9bc7035c4f53ba09383">qtpd::UIProperty</a>, and <a class="el" href="classqtpd_1_1_u_i_method.html#abae471a843ae506b04bcb861ca6931bd">qtpd::UIMethod</a>.</p>
+<p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_class.html#ae427b4c6a023b208756197f74df3b22d">qtpd::UIClass</a>, <a class="el" href="classqtpd_1_1_u_i_instance.html#a06544d7a57d46436810862faca89cefd">qtpd::UIInstance</a>, <a class="el" href="classqtpd_1_1_u_i_box.html#acd4ca1967d1fc9f1c817042106e6efce">qtpd::UIBox</a>, <a class="el" href="classqtpd_1_1_u_i_d_s_p.html#a777a938bdb238edc1b66f1bd5db6a0f8">qtpd::UIDSP</a>, <a class="el" href="classqtpd_1_1_u_i_script.html#ac6d061f4e341a36afdf1cad6b48cb46b">qtpd::UIScript</a>, <a class="el" href="classqtpd_1_1_u_i_script_box.html#a72e9e1c0461c6289fb257b6a6a368423">qtpd::UIScriptBox</a>, <a class="el" href="classqtpd_1_1_u_i_message.html#a910d63196d1d73dba88f410ca305b998">qtpd::UIMessage</a>, <a class="el" href="classqtpd_1_1_u_i_array.html#a3db83618b13a36622e95c68377506d17">qtpd::UIArray</a>, <a class="el" href="classqtpd_1_1_u_i_float.html#af62ba38900be2685a43345cf594ba437">qtpd::UIFloat</a>, <a class="el" href="classqtpd_1_1_u_i_slider.html#a753e0f47512cb22a91bb7b5e230a1409">qtpd::UISlider</a>, <a class="el" href="classqtpd_1_1_u_i_subpatch.html#a3a13b2f81960325b828f8b4d54b90d34">qtpd::UISubpatch</a>, <a class="el" href="classqtpd_1_1_u_i_toggle.html#a15b3386bfcc334de0b87aa8a175cfff5">qtpd::UIToggle</a>, <a class="el" href="classqtpd_1_1_u_i_bang.html#a6eed703b689989e3048d03899876ce34">qtpd::UIBang</a>, <a class="el" href="classqtpd_1_1_u_i_link.html#a715807931b535b825f61f22db6a72b2d">qtpd::UILink</a>, <a class="el" href="classqtpd_1_1_u_i_text.html#a92513639a1428416f87cc712e246a5ab">qtpd::UIText</a>, <a class="el" href="classqtpd_1_1_u_i_property.html#a3e3b3216710dc9bc7035c4f53ba09383">qtpd::UIProperty</a>, and <a class="el" href="classqtpd_1_1_u_i_method.html#abae471a843ae506b04bcb861ca6931bd">qtpd::UIMethod</a>.</p>
 
 </div>
 </div>
@@ -1079,64 +1025,14 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a0e30df8242a108e7534044d0fd2e8c9e"></a><!-- doxytag: member="qtpd::UIObject::setMinimumBoxHeight" ref="a0e30df8242a108e7534044d0fd2e8c9e" args="(int h)" -->
+<a class="anchor" id="a79408701823ecce79ece7cdf5a10103f"></a><!-- doxytag: member="qtpd::UIObject::setObjectData" ref="a79408701823ecce79ece7cdf5a10103f" args="(QString objData)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_object.html#a0e30df8242a108e7534044d0fd2e8c9e">qtpd::UIObject::setMinimumBoxHeight</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_object.html#a79408701823ecce79ece7cdf5a10103f">qtpd::UIObject::setObjectData</a> </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>h</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>set secondary 'minimum height' value - used for object box resize </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">w</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="aaf3ec64e20e23bd1a6e98e40e207b9a5"></a><!-- doxytag: member="qtpd::UIObject::setMinimumBoxWidth" ref="aaf3ec64e20e23bd1a6e98e40e207b9a5" args="(int w)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_object.html#aaf3ec64e20e23bd1a6e98e40e207b9a5">qtpd::UIObject::setMinimumBoxWidth</a> </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>w</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>set secondary 'minimum width' value - used for object box resize </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">w</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="a65a6c071b7b6f99393652d273e6a0fa7"></a><!-- doxytag: member="qtpd::UIObject::setObjectData" ref="a65a6c071b7b6f99393652d273e6a0fa7" args="(std::string objData)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_object.html#a65a6c071b7b6f99393652d273e6a0fa7">qtpd::UIObject::setObjectData</a> </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">QString&#160;</td>
           <td class="paramname"><em>objData</em></td><td>)</td>
           <td><code> [virtual]</code></td>
         </tr>
@@ -1146,31 +1042,6 @@ Protected Member Functions</h2></td></tr>
 
 <p>sets object text data </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a9bd7968c1e875978f700e6615b4c6f53"></a><!-- doxytag: member="qtpd::UIObject::setObjectSizeMode" ref="a9bd7968c1e875978f700e6615b4c6f53" args="(t_objectSize os)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_object.html#a9bd7968c1e875978f700e6615b4c6f53">qtpd::UIObject::setObjectSizeMode</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3">t_objectSize</a>&#160;</td>
-          <td class="paramname"><em>os</em></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>set object resize mode - fixed or sizeable </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">os</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -1333,6 +1204,19 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a5039d9d6c10909333a30af566ee2800c"></a><!-- doxytag: member="qtpd::UIObject::_objectDataModel" ref="a5039d9d6c10909333a30af566ee2800c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqtpd_1_1_u_i_object_data.html">UIObjectData</a> <a class="el" href="classqtpd_1_1_u_i_object.html#a5039d9d6c10909333a30af566ee2800c">qtpd::UIObject::_objectDataModel</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="aca50a3b8c69080fe8276ceab276079f4"></a><!-- doxytag: member="qtpd::UIObject::disableObjectMaker" ref="aca50a3b8c69080fe8276ceab276079f4" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -1368,7 +1252,7 @@ Protected Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 17 2017 10:06:25 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 22 2017 20:53:23 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

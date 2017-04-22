@@ -31,5 +31,5 @@ var searchData=
   ['fromobjectsymbol',['fromObjectSymbol',['../classqtpd_1_1_o_p_instance.html#aaf7ce41035f05886f61dde98c2e0fe14',1,'qtpd::OPInstance']]],
   ['frompddata',['fromPdData',['../classceammc_1_1_atom_list.html#a4a2e9ce3816e03a75a7e26eaac83e6fe',1,'ceammc::AtomList::fromPdData(size_t n, t_atom *lst)'],['../classceammc_1_1_atom_list.html#ac262f1872eb937927b263719979366e9',1,'ceammc::AtomList::fromPdData(int n, t_atom *lst)']]],
   ['ftom',['ftom',['../m__pd_8h.html#aeddfc6868560f916b7dce7e3fde54024',1,'m_pd.h']]],
-  ['fullhelpname',['fullHelpName',['../classqtpd_1_1_u_i_object.html#a89f2ee50238101d3900ba3f2ff2146fd',1,'qtpd::UIObject']]]
+  ['fullhelpname',['fullHelpName',['../classqtpd_1_1_u_i_object.html#a89f2ee50238101d3900ba3f2ff2146fd',1,'qtpd::UIObject::fullHelpName()'],['../classqtpd_1_1_u_i_object_data.html#a2d07e7acf35281b56c907e4ae3cb4341',1,'qtpd::UIObjectData::fullHelpName()']]]
 ];

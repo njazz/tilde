@@ -110,14 +110,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00029"></a>00029 <span class="keyword">public</span>:
 <a name="l00030"></a>00030     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_u_i_text.html#a63c32d16e0b759e74452444b9a7590e7">UIText</a>(); <span class="comment">//UIObject* parent = 0);</span>
 <a name="l00031"></a>00031 
-<a name="l00032"></a><a class="code" href="classqtpd_1_1_u_i_text.html#ab876cf8cdfd8a44c3dee7afe466edcd9">00032</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_text.html#ab876cf8cdfd8a44c3dee7afe466edcd9">createObject</a>(QString <a class="code" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447" title="gets object text data /usually overriden by ui objects/">objectData</a>, <a class="code" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a>*, QGraphicsView* parent = 0)
+<a name="l00032"></a><a class="code" href="classqtpd_1_1_u_i_text.html#ab876cf8cdfd8a44c3dee7afe466edcd9">00032</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_text.html#ab876cf8cdfd8a44c3dee7afe466edcd9">createObject</a>(QString <a class="code" href="classqtpd_1_1_u_i_object.html#a36456ea5fb11ff6b752bc56de2ce5584" title="gets object text data /usually overriden by ui objects/">objectData</a>, <a class="code" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a>*, QGraphicsView* parent = 0)
 <a name="l00033"></a>00033     {
 <a name="l00034"></a>00034         <a class="code" href="classqtpd_1_1_u_i_text.html" title="gui object: comment box (ui.text)">UIText</a>* b = <span class="keyword">new</span> <a class="code" href="classqtpd_1_1_u_i_text.html#a63c32d16e0b759e74452444b9a7590e7">UIText</a>();
 <a name="l00035"></a>00035         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a2e6fec1e7e23c49c16330281d84f099f">setCanvas</a>((<span class="keywordtype">void</span>*)parent);
 <a name="l00036"></a>00036 
 <a name="l00037"></a>00037         <span class="comment">//temporary</span>
-<a name="l00038"></a>00038         std::string data1 = b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a69ed99ca86c7019f489f56b6dc96f8a4" title="&gt;init properties for the class - called from constructor">properties</a>()-&gt;<a class="code" href="classqtpd_1_1_property_list.html#afe045d9c65b8b51e12fb81c1eb5585b5" title="extract properties from string in pd file">extractFromPdFileString</a>(objectData);
-<a name="l00039"></a>00039         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a65a6c071b7b6f99393652d273e6a0fa7" title="sets object text data">setObjectData</a>(<span class="stringliteral">&quot;&quot;</span>);
+<a name="l00038"></a>00038         QString data1 = b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a69ed99ca86c7019f489f56b6dc96f8a4" title="&gt;init properties for the class - called from constructor">properties</a>()-&gt;<a class="code" href="classqtpd_1_1_property_list.html#a89f4403a97b8d32d4d655c94b8ff1f3f" title="extract properties from string in pd file">extractFromPdFileString</a>(objectData);
+<a name="l00039"></a>00039         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a79408701823ecce79ece7cdf5a10103f" title="sets object text data">setObjectData</a>(<span class="stringliteral">&quot;&quot;</span>);
 <a name="l00040"></a>00040 
 <a name="l00041"></a>00041         <span class="comment">// the zoo lol</span>
 <a name="l00042"></a>00042         QString data = b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a69ed99ca86c7019f489f56b6dc96f8a4" title="&gt;init properties for the class - called from constructor">properties</a>()-&gt;<a class="code" href="classqtpd_1_1_property_list.html#a56b8961ff1380c565c7d616166be18d4">get</a>(<span class="stringliteral">&quot;Text&quot;</span>)-&gt;<a class="code" href="classqtpd_1_1_property.html#af5289defc1ad42119984e3f6eef55f16">asQString</a>().split(<span class="stringliteral">&quot;\\n &quot;</span>).join(<span class="stringliteral">&quot;\n&quot;</span>);
@@ -173,7 +173,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00093"></a>00093         <a class="code" href="classqtpd_1_1_u_i_text.html#a56d8f9ba20c632198216ba5d8daac247">UIObject::initProperties</a>();
 <a name="l00094"></a>00094         QStringList list;
 <a name="l00095"></a>00095 
-<a name="l00096"></a>00096         <a class="code" href="classqtpd_1_1_u_i_object.html#a69ed99ca86c7019f489f56b6dc96f8a4" title="&gt;init properties for the class - called from constructor">properties</a>()-&gt;<a class="code" href="classqtpd_1_1_property_list.html#a86311122846e75d0cb0e7e775abddae6">create</a>(<span class="stringliteral">&quot;Text&quot;</span>, <span class="stringliteral">&quot;Data&quot;</span>, <span class="stringliteral">&quot;0.1&quot;</span>, list);
+<a name="l00096"></a>00096         <a class="code" href="classqtpd_1_1_u_i_object.html#a69ed99ca86c7019f489f56b6dc96f8a4" title="&gt;init properties for the class - called from constructor">properties</a>()-&gt;<a class="code" href="classqtpd_1_1_property_list.html#afbe5c3673f39e28c8327b99749925379">create</a>(<span class="stringliteral">&quot;Text&quot;</span>, <span class="stringliteral">&quot;Data&quot;</span>, <span class="stringliteral">&quot;0.1&quot;</span>, list);
 <a name="l00097"></a>00097     };
 <a name="l00098"></a>00098 
 <a name="l00100"></a>00100 
@@ -182,7 +182,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00103"></a>00103 
 <a name="l00104"></a>00104         <span class="keywordflow">if</span> ((<a class="code" href="classqtpd_1_1_u_i_item.html#a2e13bcc5d691a5505200843d80b71e6d" title="get edit mode flag value">getEditMode</a>() == <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aaa528336eacc29596e8365b88a4f62d82">em_Unlocked</a>) &amp;&amp; <a class="code" href="classqtpd_1_1_u_i_item.html#ab3ac9bcca4d6c092b1d10fe506ba48c6" title="&gt; deselect object">isSelected</a>()) {
 <a name="l00105"></a>00105 
-<a name="l00106"></a>00106             <a class="code" href="struct__editor.html">_editor</a>-&gt;document()-&gt;setPlainText(QString(<a class="code" href="classqtpd_1_1_u_i_object.html#ab898f6da7aadb3223e25f13eb937c447" title="gets object text data /usually overriden by ui objects/">objectData</a>().c_str()));
+<a name="l00106"></a>00106             <a class="code" href="struct__editor.html">_editor</a>-&gt;document()-&gt;setPlainText(QString(<a class="code" href="classqtpd_1_1_u_i_object.html#a5039d9d6c10909333a30af566ee2800c">_objectDataModel</a>.<a class="code" href="classqtpd_1_1_u_i_object_data.html#a0b3265574c39fe9494b7555358d7b1b0">objectData</a>()));
 <a name="l00107"></a>00107             <a class="code" href="struct__editor.html">_editor</a>-&gt;show();
 <a name="l00108"></a>00108             <a class="code" href="struct__editor.html">_editor</a>-&gt;setFocus();
 <a name="l00109"></a>00109             ev-&gt;accept();
@@ -229,8 +229,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00150"></a>00150         QFontMetrics fm(myFont);
 <a name="l00151"></a>00151 
 <a name="l00152"></a>00152         <a class="code" href="classqtpd_1_1_u_i_item.html#a8eeca95be6c277797b9e1588f9a6397c">setWidth</a>((<span class="keywordtype">int</span>)fm.width(_objectText) + 5);
-<a name="l00153"></a>00153         <span class="keywordflow">if</span> (<a class="code" href="classqtpd_1_1_u_i_item.html#a89b7d0bcdcb226800c37d95305a1f441">width</a>() &lt; <a class="code" href="classqtpd_1_1_u_i_object.html#ac1d937fa3ee566a10ae183ab8e40fd79" title="get secondary &#39;minimum width&#39; value - used for object box resize">minimumBoxWidth</a>())
-<a name="l00154"></a>00154             <a class="code" href="classqtpd_1_1_u_i_item.html#a8eeca95be6c277797b9e1588f9a6397c">setWidth</a>(<a class="code" href="classqtpd_1_1_u_i_object.html#ac1d937fa3ee566a10ae183ab8e40fd79" title="get secondary &#39;minimum width&#39; value - used for object box resize">minimumBoxWidth</a>());
+<a name="l00153"></a>00153         <span class="keywordflow">if</span> (<a class="code" href="classqtpd_1_1_u_i_item.html#a89b7d0bcdcb226800c37d95305a1f441">width</a>() &lt; <a class="code" href="classqtpd_1_1_u_i_object.html#a5039d9d6c10909333a30af566ee2800c">_objectDataModel</a>.<a class="code" href="classqtpd_1_1_u_i_object_data.html#a7dc9a6fd177a6f2a8d24abbbf2c8a14d">minimumBoxWidth</a>())
+<a name="l00154"></a>00154             <a class="code" href="classqtpd_1_1_u_i_item.html#a8eeca95be6c277797b9e1588f9a6397c">setWidth</a>(<a class="code" href="classqtpd_1_1_u_i_object.html#a5039d9d6c10909333a30af566ee2800c">_objectDataModel</a>.<a class="code" href="classqtpd_1_1_u_i_object_data.html#a7dc9a6fd177a6f2a8d24abbbf2c8a14d">minimumBoxWidth</a>());
 <a name="l00155"></a>00155 
 <a name="l00156"></a>00156         <span class="comment">//duplicate?</span>
 <a name="l00157"></a>00157         <span class="keywordtype">int</span> new_w = fm.width(_objectText) + 20;
@@ -247,7 +247,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00169"></a>00169 
 <a name="l00170"></a><a class="code" href="classqtpd_1_1_u_i_text.html#a5ce5e9a1342d499b7702d7ec8cbddfb6">00170</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_text.html#a5ce5e9a1342d499b7702d7ec8cbddfb6">setPdMessage</a>(std::string message)
 <a name="l00171"></a>00171     {
-<a name="l00172"></a>00172         <a class="code" href="classqtpd_1_1_u_i_object.html#a65a6c071b7b6f99393652d273e6a0fa7" title="sets object text data">setObjectData</a>(<span class="stringliteral">&quot;ui.text&quot;</span>);
+<a name="l00172"></a>00172         <a class="code" href="classqtpd_1_1_u_i_object.html#a79408701823ecce79ece7cdf5a10103f" title="sets object text data">setObjectData</a>(<span class="stringliteral">&quot;ui.text&quot;</span>);
 <a name="l00173"></a>00173 
 <a name="l00174"></a>00174         <span class="comment">//TODO temporary fix!</span>
 <a name="l00175"></a>00175         QString msg = QString(message.c_str());
@@ -280,7 +280,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00202"></a>00202             obj_data += msg.<a class="code" href="classceammc_1_1_atom_list.html#ad8682c33d61365c0f715fbfee1b122b2" title="returns reference to element at specified position">at</a>(i).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>() + <span class="stringliteral">&quot; &quot;</span>;
 <a name="l00203"></a>00203         }
 <a name="l00204"></a>00204 
-<a name="l00205"></a>00205         x-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a65a6c071b7b6f99393652d273e6a0fa7" title="sets object text data">setObjectData</a>(obj_data);
+<a name="l00205"></a>00205         x-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a79408701823ecce79ece7cdf5a10103f" title="sets object text data">setObjectData</a>(obj_data.c_str());
 <a name="l00206"></a>00206         x-&gt;<a class="code" href="classqtpd_1_1_u_i_text.html#abe3b5d63ecd147d71afa4c834f12245c">autoResize</a>();
 <a name="l00207"></a>00207 
 <a name="l00208"></a>00208         x-&gt;update();
@@ -337,7 +337,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 17 2017 10:06:25 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 22 2017 20:53:22 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
