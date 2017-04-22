@@ -142,7 +142,8 @@ SOURCES += main.cpp\
     objects/UILink.cpp \
     graphicobjects/LinkLine.cpp \
     widgets/UITextEditor.cpp \
-    objects/UISlider.cpp
+    objects/UISlider.cpp \
+    graphicobjects/UIObjectData.cpp
 
 
 
@@ -206,7 +207,8 @@ HEADERS  += \
     graphicobjects/LinkLine.h \
     widgets/UITextEditor.h \
     graphicobjects/CommonTypes.h \
-    objects/UISlider.h
+    objects/UISlider.h \
+    graphicobjects/UIObjectData.h
 
 
 

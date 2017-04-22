@@ -31,7 +31,7 @@ public:
         UIFloat* b = new UIFloat(); //(UIObject*)parent);
         b->setCanvas((void*)parent);
 
-        std::string data1 = b->properties()->extractFromPdFileString(objectData);
+        QString data1 = b->properties()->extractFromPdFileString(objectData);
         b->setObjectData("ui.float"); //todo
 
         b->autoResize();

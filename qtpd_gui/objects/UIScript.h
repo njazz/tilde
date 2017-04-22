@@ -42,7 +42,7 @@ public:
 
         b->_editor->setContext(pyWrapper::inst().withCanvas((QObject*)parent));
 
-        std::string data1 = b->properties()->extractFromPdFileString(objectData);
+        QString data1 = b->properties()->extractFromPdFileString(objectData);
         //if (data1 != "")
 
         b->setObjectData("ui.script");

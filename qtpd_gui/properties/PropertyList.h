@@ -111,7 +111,7 @@ public:
     /// \details returns first part of the string before the first property
     /// \return
     ///
-    std::string extractFromPdFileString(QString input);
+    QString extractFromPdFileString(QString input);
 
 signals:
     void propertyChangedSignal(QString name);

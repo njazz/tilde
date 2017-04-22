@@ -23,7 +23,7 @@ class UISlider : public UIObject {
 
 private:
     bool _clicked;
-    bool _value;
+    float _value;
 
 public:
     explicit UISlider();
@@ -33,10 +33,10 @@ public:
         UISlider* b = new UISlider();
         b->setCanvas((void*)parent);
 
-        std::string data1 = b->properties()->extractFromPdFileString(objectData);
+        QString data1 = b->properties()->extractFromPdFileString(objectData);
         b->setObjectData("ui.toggle");
 
-        qDebug() << "obj data" << QString(data1.c_str());
+        qDebug() << "obj data" << QString(data1);
 
         std::string message = "ui.sliders";
 

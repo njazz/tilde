@@ -41,8 +41,8 @@ public:
         messageDataList.removeAt(0);
         QString messageData = messageDataList.join(" ");
 
-        std::string data1 = b->properties()->extractFromPdFileString(messageData);
-        b->setObjectData(data1);
+        QString data1 = b->properties()->extractFromPdFileString(messageData);
+        b->setObjectData(data1.toStdString());
 
         qDebug() << "msg data:" << messageDataList;
 
@@ -68,7 +68,7 @@ public:
             qDebug("Error: no such object %s", message.c_str());
         }
 
-        b->setPdMessage(data1.c_str());
+        b->setPdMessage(data1.toStdString().c_str());
 
         b->addInlet();
         b->addOutlet();

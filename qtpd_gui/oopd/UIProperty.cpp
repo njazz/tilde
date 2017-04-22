@@ -45,11 +45,11 @@ UIObject* UIProperty::createObject(QString objectData, t_canvas* pdCanvas, QGrap
     QStringList list = QString(objectData).split(" ");
 
     const char* obj_name = objectData.toStdString().c_str();
-    std::string data1 = b->properties()->extractFromPdFileString(obj_name); //test
+    QString data1 = b->properties()->extractFromPdFileString(obj_name); //test
     //const char* obj_name2 = data1.c_str();
 
     // fix size changes
-    b->setObjectData(data1);
+    b->setObjectData(data1.toStdString());
     b->autoResize();
 
     //std::string methodName;

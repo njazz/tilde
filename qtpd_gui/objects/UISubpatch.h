@@ -52,13 +52,13 @@ public:
 
         // fix that
         const char* obj_name = list_s.toStdString().c_str();
-        std::string data1 = b->properties()->extractFromPdFileString(obj_name); //test
+        QString data1 = b->properties()->extractFromPdFileString(obj_name); //test
 
         // todo cleanup
         //const char* obj_name2 = data1.c_str(); //(QString(data1.c_str()).split(" ").at(0)).toStdString().c_str();
 
         // fix size changes
-        b->setObjectData(data1);
+        b->setObjectData(data1.toStdString());
         b->autoResize();
 
         b->resizeEvent();

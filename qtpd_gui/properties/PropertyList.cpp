@@ -86,7 +86,7 @@ QStringList PropertyList::groupNames()
     return ret;
 }
 
-std::string PropertyList::extractFromPdFileString(QString input)
+QString PropertyList::extractFromPdFileString(QString input)
 {
     QStringList propertyList = input.split(" @");
 
@@ -101,7 +101,7 @@ std::string PropertyList::extractFromPdFileString(QString input)
             ret = ret.left(ret.size() - 1);
 
     if (propertyList.size() == 1)
-        return ret.toStdString();
+        return ret;//.toStdString();
 
     propertyList.removeAt(0);
 
@@ -128,6 +128,6 @@ std::string PropertyList::extractFromPdFileString(QString input)
         // TODO! property type should be saved
     }
 
-    return ret.toStdString();
+    return ret;
 }
 }

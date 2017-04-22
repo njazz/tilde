@@ -33,9 +33,15 @@ class canvasData {
 
     Clipboard* _clipboard;
 
+    portItemVec* _inlets;
+    portItemVec* _outlets;
+
 public:
-    portItemVec* inlets;
-    portItemVec* outlets;
+    portItemVec* inlets() { return _inlets; }
+    portItemVec* outlets() { return _outlets; }
+
+    void setInlets(portItemVec* inlets) {_inlets = inlets;}
+    void setOutlets(portItemVec* outlets) {_outlets = outlets;}
 
     bool hasObjects()
     {
@@ -265,8 +271,6 @@ public:
 
     // -------
 };
-
-
 }
 
 #endif // CM_CANVAS_TYPES_H

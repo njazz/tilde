@@ -64,10 +64,10 @@ public:
         UIDSP* b = new UIDSP();
         b->setCanvas((void*)parent);
 
-        std::string data1 = b->properties()->extractFromPdFileString(objectData);
+        QString data1 = b->properties()->extractFromPdFileString(objectData);
         b->setObjectData("ui.dsp");
 
-        qDebug() << "obj data" << QString(data1.c_str());
+        qDebug() << "obj data" << QString(data1);
 
         std::string message = "ui.dsp";
 

@@ -39,10 +39,10 @@ public:
 
         //const char* obj_name = objectData.toStdString().c_str();
 
-        std::string data1 = b->properties()->extractFromPdFileString(objectData); //test
+        QString data1 = b->properties()->extractFromPdFileString(objectData); //test
 
         // todo cleanup
-        b->setObjectData(data1);
+        b->setObjectData(data1.toStdString());
         b->autoResize();
 
         if (!pdCanvas) {

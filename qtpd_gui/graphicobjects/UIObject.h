@@ -19,7 +19,7 @@
 
 #include "PropertiesWindow.h"
 
-
+#include "UIObjectData.h"
 
 namespace qtpd {
 
@@ -34,6 +34,9 @@ class UIObject : public UIItem {
 
 private:
     //temporary?
+
+    UIObjectData _objectDataModel;
+
     void* _pdObject;
 
     portItemVec* _inlets;
@@ -65,7 +68,7 @@ private:
     //
     QString _fullHelpName;
 
-    void* _canvas;
+    void* _canvas;      ///> QGraphicsView
 
 protected:
     virtual void hoverEnterEvent(QGraphicsSceneHoverEvent*);
