@@ -38,17 +38,23 @@ public:
         UIScriptBox* b = new UIScriptBox();
         b->setCanvas((void*)parent);
 
-        b->_editor->setContext(pyWrapper::inst().withCanvas((QObject*)parent));
+        //b->_editor->setContext(pyWrapper::inst().withCanvas((QObject*)parent));
 
         QString data1 = b->properties()->extractFromPdFileString(objectData);
-        //if (data1 != "")
+        if (data1 != "") {
+            QStringList l = data1.split(" ");
+            if (l.size() > 1) {
+                l.removeAt(0);
+                b->properties()->get("ScriptFile")->set(l.at(0));
+            }
+        }
 
         b->setObjectData("ui.scriptbox");
 
         // the zoo lol
         //QString data = b->properties()->get("Script")->asQString().split("\\n ").join("\n");
         QString data = "";
-        b->_editor->document()->setPlainText(data);
+        //b->_editor->document()->setPlainText(data);
 
         // pd object
         std::string message = "ui.script";
@@ -66,7 +72,7 @@ public:
             qDebug("created ui.script %s | ptr %lu\n", message.c_str(), (long)new_obj);
             b->setPdObject(new_obj);
 
-            b->_editor->setContext(pyWrapper::inst().withCanvasPdObjectAndInput((UIObject*)parent, new_obj, &b->_inputList));
+            //b->_editor->setContext(pyWrapper::inst().withCanvasPdObjectAndInput((UIObject*)parent, new_obj, &b->_inputList));
 
             b->addInlet();
             b->addOutlet();
@@ -83,9 +89,8 @@ public:
     void initProperties()
     {
         UIObject::initProperties();
-        QStringList list; // = QString("#empty").split("-");    //lol
 
-        properties()->create("Script", "Data", "0.1", list);
+        properties()->create("ScriptFile", "Data", "0.1", QString(""));
     };
 
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
@@ -108,14 +113,19 @@ public:
 
             p->drawRect(0, 0, width(), height());
         }
+
+        p->setPen(QPen(QColor(128, 128, 128), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+        p->setFont(QFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize(), 0, false));
+        p->drawText(2, 3, boundingRect().width() - 2, boundingRect().height() - 3, 0, "py "+ properties()->get("ScriptFile")->asQString(), 0);
+
     }
 
-    void resizeEvent()
-    {
-        UIObject::resizeEvent();
-        _editor->setFixedWidth(width() - 5);
-        _editor->setFixedHeight(height() - 25);
-    }
+    //    void resizeEvent()
+    //    {
+    //        UIObject::resizeEvent();
+    ////        _editor->setFixedWidth(width() - 5);
+    ////        _editor->setFixedHeight(height() - 25);
+    //    }
 
     // ------------------------
 
@@ -125,6 +135,27 @@ public:
         emit selectBox(this, ev);
         dragOffset = ev->pos().toPoint();
         ev->accept();
+
+        //context menu
+        if (ev->button() == Qt::RightButton) {
+
+            QPoint pos;
+
+            if (scene()
+                && !scene()->views().isEmpty()
+                && scene()->views().first()
+                && scene()->views().first()->viewport()) {
+
+                QGraphicsView* v = scene()->views().first();
+                pos = v->viewport()->mapToGlobal(ev->pos().toPoint());
+
+                // TODO
+                showPopupMenu(pos + this->pos().toPoint());
+                ev->accept();
+            }
+
+            return;
+        }
     }
 
     void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev)

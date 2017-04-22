@@ -14,9 +14,9 @@
 #include "Preferences.h"
 #include "PropertiesWindow.h"
 
-#include "PatchWindow.h"    //weird
-#include "PdWindow.h"
 #include "FileParser.h"
+#include "PatchWindow.h" //weird
+#include "PdWindow.h"
 
 namespace qtpd {
 BaseWindow::BaseWindow(QWidget* parent)
@@ -124,6 +124,7 @@ void BaseWindow::createActions()
     connect(pythonConsoleAct, &QAction::triggered, this, &BaseWindow::pythonConsole);
 
     pdAudioSettingsAct = new QAction(tr("Audio / MIDI Settings..."), this);
+    pdAudioSettingsAct->setShortcut(tr("Ctrl+Shift+,"));
     connect(pdAudioSettingsAct, &QAction::triggered, this, &BaseWindow::audioSettingsWindow);
     //pdAudioSettingsAct->setShortcut(tr("Ctrl+R"));
 
@@ -131,7 +132,6 @@ void BaseWindow::createActions()
     pdPreferencesAct = new QAction(tr("Preferences..."), this);
     pdPreferencesAct->setShortcut(tr("Ctrl+,"));
     connect(pdPreferencesAct, &QAction::triggered, this, &BaseWindow::preferencesWindow);
-
 
     pdKeyBindingsAct = new QAction(tr("Key bindings..."), this);
     //pdKeyBindingsAct->setShortcut(tr("Ctrl+R"));
@@ -224,8 +224,6 @@ void BaseWindow::dspOff()
 //{
 //    //if (pdw->isVisible()) pdw->hide(); else pdw->show();
 //}
-
-
 
 void BaseWindow::preferencesWindow()
 {
