@@ -262,7 +262,8 @@ INCLUDEPATH += \
     objects/ \
     widgets/ \
     properties/ \
-    graphicobjects/
+    graphicobjects/ \
+    datamodels/
 
 macx:PRECOMPILED_HEADER = _headers.h
 
