@@ -16,6 +16,9 @@
 //#include "UIScriptTextEdit.h"
 #include "UIScriptEditor.h"
 
+#include "UIScriptCommon.h"
+
+
 namespace qtpd {
 
 ////
@@ -27,7 +30,13 @@ class UIScriptBox : public UIObject {
 private:
     bool _clicked;
     UIScriptEditor* _editor;
-    QStringList _inputList;
+
+    //UIScriptData* _data;
+
+    //temporary
+    UIScriptCommon* _scriptCommon;
+
+    //    QStringList _inputList;
 
 public:
     explicit UIScriptBox();
@@ -74,7 +83,7 @@ public:
             qDebug("created ui.script %s | ptr %lu\n", message.c_str(), (long)new_obj);
             b->setPdObject(new_obj);
 
-            b->_editor->textEdit()->setContext(pyWrapper::inst().withCanvasPdObjectAndInput((UIObject*)parent, new_obj, &b->_inputList));
+            b->_editor->textEdit()->setContext(pyWrapper::inst().withCanvasPdObjectAndInput((UIObject*)parent, new_obj, &b->_scriptCommon->scriptData()->inputList));
 
             b->addInlet();
             b->addOutlet();
@@ -118,35 +127,22 @@ public:
 
         p->setPen(QPen(QColor(0, 0, 0), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         p->setFont(QFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize(), 0, false));
-        p->drawText(2, 3, boundingRect().width() - 2, boundingRect().height() - 3, 0, "py "+ properties()->get("ScriptFile")->asQString(), 0);
-
+        p->drawText(2, 3, boundingRect().width() - 2, boundingRect().height() - 3, 0, "py " + properties()->get("ScriptFile")->asQString(), 0);
     }
-
-    //    void resizeEvent()
-    //    {
-    //        UIObject::resizeEvent();
-    ////        _editor->setFixedWidth(width() - 5);
-    ////        _editor->setFixedHeight(height() - 25);
-    //    }
 
     // ------------------------
 
     void mousePressEvent(QGraphicsSceneMouseEvent* ev)
     {
 
-        if (getEditMode() != em_Unlocked)
-        {
+        if (getEditMode() != em_Unlocked) {
             _editor->show();
-
         }
-        if (getEditMode() == em_Unlocked)
-        {
+        if (getEditMode() == em_Unlocked) {
             emit selectBox(this, ev);
             dragOffset = ev->pos().toPoint();
             ev->accept();
-
         }
-
 
         //context menu
         if (ev->button() == Qt::RightButton) {
@@ -199,115 +195,15 @@ public:
         setSize(300, 200);
     }
 
-    static void updateUI(void* uiobj, ceammc::AtomList msg)
-    {
-        qDebug("script << pd message");
-        qDebug() << (long)uiobj << msg.size();
-
-        UIScriptBox* x = (UIScriptBox*)uiobj;
-        if (x) {
-            //todo atomlist to qstringlist; atom as qstring
-            QStringList list;
-            for (size_t i = 0; i < msg.size(); i++) {
-                list.push_back(msg.at(i).asString().c_str());
-            }
-
-            x->_inputList = list;
-            emit x->callRun();
-        }
-    }
-
-    QStringList getEditorData()
-    {
-        return _editor->textEdit()->document()->toPlainText().split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
-    }
-
     void setPdObject(void* obj)
     {
         UIObject::setPdObject(obj);
-        connect(this, &UIScriptBox::callRun, this, &UIScriptBox::btnRun);
-        cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIScriptBox::updateUI);
-    }
-signals:
-    void callRun();
-
-public slots:
-    void btnRun()
-    {
-        qDebug() << "btnRun";
-
-        //this code is from PythonQt
-        PythonQtObjectPtr context = _editor->textEdit()->context(); //PythonQt::self()->getMainModule();
-        QString _stdOut = "";
-        QString _stdErr = "";
-        PythonQtObjectPtr p;
-        PyObject* dict = NULL;
-        if (PyModule_Check(context)) {
-            dict = PyModule_GetDict(context);
-        } else if (PyDict_Check(context)) {
-            dict = context;
-        }
-
-        QStringList list = getEditorData();
-
-        QString line = list.join("\r\n"); //*it;
-
-        if (!line.isNull()) {
-
-            if (dict) {
-                context.evalScript(line);
-
-                qDebug() << "line: " << line;
-            }
-
-            if (!p) {
-                PythonQt::self()->handleError();
-            }
-
-            if (_stdOut != "") {
-                cmp_post((std::string) "Python: " + _stdOut.toStdString());
-            }
-            if (_stdErr != "") {
-                cmp_post((std::string) "Python error: " + _stdOut.toStdString());
-            }
-        }
+        //connect(this, &UIScriptBox::callRun, this, &UIScriptBox::btnRun);
+        cmp_connectUI((t_pd*)pdObject(), (void*)this->_scriptCommon, &UIScriptCommon::updateUI);
     }
 
 private slots:
     void editorChanged();
-
-    void btnLoad()
-    {
-        QString fname = QFileDialog::getOpenFileName(0, QString("Open Python script"), QString("~/"), QString("*.py"), 0, 0);
-        if (fname != "") {
-            QFile file(fname);
-
-            file.open(QFile::ReadOnly | QFile::Text);
-
-            QTextStream ReadFile(&file);
-            _editor->textEdit()->document()->setPlainText(ReadFile.readAll());
-            file.close();
-        }
-    }
-
-    void btnSave()
-    {
-        QString fname = QFileDialog::getSaveFileName(0, QString("Save Python script"), QString("~/"), QString("*.py"), 0, 0);
-        if (fname != "") {
-            QFile file(fname);
-
-            file.open(QFile::WriteOnly | QFile::Text);
-
-            QTextStream WriteFile(&file);
-            WriteFile << _editor->textEdit()->document()->toPlainText();
-            file.close();
-        }
-    }
-
-    void btnClear()
-    {
-        _editor->textEdit()->clear();
-    }
 };
 }
 #endif // cmo_text_H
