@@ -109,11 +109,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">qtpd::UIScript Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="qtpd::UIScript" --><!-- doxytag: inherits="qtpd::UIObject" -->
+<!-- doxytag: class="qtpd::UIScript" --><!-- doxytag: inherits="qtpd::UIObject,qtpd::UIObject" -->
 <p>gui object: script editor box (ui.script)  
  <a href="classqtpd_1_1_u_i_script.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_u_i_script_8h_source.html">UIScript.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_u_i_script_01copy_8h_source.html">UIScript copy.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for qtpd::UIScript:</div>
 <div class="dyncontent">
@@ -121,7 +121,9 @@ Inheritance diagram for qtpd::UIScript:</div>
   <img src="classqtpd_1_1_u_i_script.png" usemap="#qtpd::UIScript_map" alt=""/>
   <map id="qtpd::UIScript_map" name="qtpd::UIScript_map">
 <area href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special" alt="qtpd::UIObject" shape="rect" coords="0,56,89,80"/>
+<area href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special" alt="qtpd::UIObject" shape="rect" coords="99,56,188,80"/>
 <area href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class." alt="qtpd::UIItem" shape="rect" coords="0,0,89,24"/>
+<area href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class." alt="qtpd::UIItem" shape="rect" coords="99,0,188,24"/>
 </map>
  </div></div>
 
@@ -147,14 +149,42 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script.html#a25660f1d0bd3bbd053b2603e147661ce">getEditorData</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script.html#a7cee0bd7c694e07f389606acb3ad7048">setPdObject</a> (void *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets pointer to pd object  <a href="#a7cee0bd7c694e07f389606acb3ad7048"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script.html#a48576a5dd3b2639a6dedb3066e033b68">UIScript</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script.html#a04147e35e14968333a9b2f95ec800db5">initProperties</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script.html#a7b66e6fa4f2f78b251333098778b3ade">resizeEvent</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; call this after setting object data  <a href="#a7b66e6fa4f2f78b251333098778b3ade"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script.html#ac6d061f4e341a36afdf1cad6b48cb46b">paint</a> (QPainter *p, const QStyleOptionGraphicsItem *option, QWidget *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script.html#ae47032b3f00cc5f267a0420a1f75bc0a">mousePressEvent</a> (QGraphicsSceneMouseEvent *ev)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script.html#a3e5b054456b58251d8dfdd940841dbf3">mouseReleaseEvent</a> (QGraphicsSceneMouseEvent *ev)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script.html#a623eb6544741d102dcbbb099e3655981">mouseMoveEvent</a> (QGraphicsSceneMouseEvent *event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script.html#ad89ab2bb2eed2d0236a6ae90c681c48b">setPdMessage</a> (QString message)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script.html#a7cee0bd7c694e07f389606acb3ad7048">setPdObject</a> (void *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets pointer to pd object  <a href="#a7cee0bd7c694e07f389606acb3ad7048"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script.html#a9042143a89d43f8adbd74e05e78a6941">createObject</a> (QString <a class="el" href="classqtpd_1_1_u_i_object.html#a36456ea5fb11ff6b752bc56de2ce5584">objectData</a>, <a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *pdCanvas, QGraphicsView *parent=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script.html#a603bd9c41cabb2107391c4a8c3b3ba20">updateUI</a> (void *uiobj, <a class="el" href="classceammc_1_1_atom_list.html">ceammc::AtomList</a> msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script.html#a9042143a89d43f8adbd74e05e78a6941">createObject</a> (QString <a class="el" href="classqtpd_1_1_u_i_object.html#a36456ea5fb11ff6b752bc56de2ce5584">objectData</a>, <a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *pdCanvas, QGraphicsView *parent=0)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>gui object: script editor box (ui.script) </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a48576a5dd3b2639a6dedb3066e033b68"></a><!-- doxytag: member="qtpd::UIScript::UIScript" ref="a48576a5dd3b2639a6dedb3066e033b68" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqtpd_1_1_u_i_script.html#a48576a5dd3b2639a6dedb3066e033b68">qtpd::UIScript::UIScript</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [explicit]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a48576a5dd3b2639a6dedb3066e033b68"></a><!-- doxytag: member="qtpd::UIScript::UIScript" ref="a48576a5dd3b2639a6dedb3066e033b68" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -237,6 +267,39 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a9042143a89d43f8adbd74e05e78a6941"></a><!-- doxytag: member="qtpd::UIScript::createObject" ref="a9042143a89d43f8adbd74e05e78a6941" args="(QString objectData, t_canvas *pdCanvas, QGraphicsView *parent=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a>* <a class="el" href="classqtpd_1_1_u_i_script.html#a9042143a89d43f8adbd74e05e78a6941">qtpd::UIScript::createObject</a> </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>objectData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *&#160;</td>
+          <td class="paramname"><em>pdCanvas</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QGraphicsView *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a25660f1d0bd3bbd053b2603e147661ce"></a><!-- doxytag: member="qtpd::UIScript::getEditorData" ref="a25660f1d0bd3bbd053b2603e147661ce" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -250,6 +313,24 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a04147e35e14968333a9b2f95ec800db5"></a><!-- doxytag: member="qtpd::UIScript::initProperties" ref="a04147e35e14968333a9b2f95ec800db5" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_script.html#a04147e35e14968333a9b2f95ec800db5">qtpd::UIScript::initProperties</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#a07fc14ec32a45e628bece60f892500b8">qtpd::UIObject</a>.</p>
 
 </div>
 </div>
@@ -288,12 +369,63 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a623eb6544741d102dcbbb099e3655981"></a><!-- doxytag: member="qtpd::UIScript::mouseMoveEvent" ref="a623eb6544741d102dcbbb099e3655981" args="(QGraphicsSceneMouseEvent *event)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_script.html#a623eb6544741d102dcbbb099e3655981">qtpd::UIScript::mouseMoveEvent</a> </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ae47032b3f00cc5f267a0420a1f75bc0a"></a><!-- doxytag: member="qtpd::UIScript::mousePressEvent" ref="ae47032b3f00cc5f267a0420a1f75bc0a" args="(QGraphicsSceneMouseEvent *ev)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_script.html#ae47032b3f00cc5f267a0420a1f75bc0a">qtpd::UIScript::mousePressEvent</a> </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
+          <td class="paramname"><em>ev</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae47032b3f00cc5f267a0420a1f75bc0a"></a><!-- doxytag: member="qtpd::UIScript::mousePressEvent" ref="ae47032b3f00cc5f267a0420a1f75bc0a" args="(QGraphicsSceneMouseEvent *ev)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_script.html#ae47032b3f00cc5f267a0420a1f75bc0a">qtpd::UIScript::mousePressEvent</a> </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
+          <td class="paramname"><em>ev</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3e5b054456b58251d8dfdd940841dbf3"></a><!-- doxytag: member="qtpd::UIScript::mouseReleaseEvent" ref="a3e5b054456b58251d8dfdd940841dbf3" args="(QGraphicsSceneMouseEvent *ev)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_script.html#a3e5b054456b58251d8dfdd940841dbf3">qtpd::UIScript::mouseReleaseEvent</a> </td>
           <td>(</td>
           <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
           <td class="paramname"><em>ev</em></td><td>)</td>
@@ -357,6 +489,61 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ac6d061f4e341a36afdf1cad6b48cb46b"></a><!-- doxytag: member="qtpd::UIScript::paint" ref="ac6d061f4e341a36afdf1cad6b48cb46b" args="(QPainter *p, const QStyleOptionGraphicsItem *option, QWidget *)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classqtpd_1_1_u_i_script.html#ac6d061f4e341a36afdf1cad6b48cb46b">qtpd::UIScript::paint</a> </td>
+          <td>(</td>
+          <td class="paramtype">QPainter *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QStyleOptionGraphicsItem *&#160;</td>
+          <td class="paramname"><em>option</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#ae6c38741873376fda63405d73f2697cd">qtpd::UIObject</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7b66e6fa4f2f78b251333098778b3ade"></a><!-- doxytag: member="qtpd::UIScript::resizeEvent" ref="a7b66e6fa4f2f78b251333098778b3ade" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_script.html#a7b66e6fa4f2f78b251333098778b3ade">qtpd::UIScript::resizeEvent</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>&gt; call this after setting object data </p>
+
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#ae10cb3996474a7c1ba94d5e48c740106">qtpd::UIObject</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a7b66e6fa4f2f78b251333098778b3ade"></a><!-- doxytag: member="qtpd::UIScript::resizeEvent" ref="a7b66e6fa4f2f78b251333098778b3ade" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -391,6 +578,51 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad89ab2bb2eed2d0236a6ae90c681c48b"></a><!-- doxytag: member="qtpd::UIScript::setPdMessage" ref="ad89ab2bb2eed2d0236a6ae90c681c48b" args="(QString message)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_script.html#ad89ab2bb2eed2d0236a6ae90c681c48b">qtpd::UIScript::setPdMessage</a> </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7cee0bd7c694e07f389606acb3ad7048"></a><!-- doxytag: member="qtpd::UIScript::setPdObject" ref="a7cee0bd7c694e07f389606acb3ad7048" args="(void *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_script.html#a7cee0bd7c694e07f389606acb3ad7048">qtpd::UIScript::setPdObject</a> </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>sets pointer to pd object </p>
+<p>overriden by ui objects to be able to connect to pd objects </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#a8d514a69e4a316b43095faaeea415dad">qtpd::UIObject</a>.</p>
 
 </div>
 </div>
@@ -452,7 +684,9 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
+<li>/home/travis/build/njazz/qtpd/qtpd_gui/objects/<a class="el" href="_u_i_script_01copy_8h_source.html">UIScript copy.h</a></li>
 <li>/home/travis/build/njazz/qtpd/qtpd_gui/objects/<a class="el" href="_u_i_script_8h_source.html">UIScript.h</a></li>
+<li>/home/travis/build/njazz/qtpd/qtpd_gui/objects/<a class="el" href="_u_i_script_01copy_8cpp.html">UIScript copy.cpp</a></li>
 <li>/home/travis/build/njazz/qtpd/qtpd_gui/objects/<a class="el" href="_u_i_script_8cpp.html">UIScript.cpp</a></li>
 </ul>
 </div><!-- contents -->
@@ -473,7 +707,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 23 2017 11:41:21 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 23 2017 14:28:20 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
