@@ -11,22 +11,26 @@ class UIScriptEditor : public QWidget {
     Q_OBJECT
 
 private:
-    UIScriptTextEdit* _editor;
+    UIScriptTextEdit* _textEdit;
 
 public:
     explicit UIScriptEditor(QWidget* parent = 0);
 
     void resizeEvent(QResizeEvent*)
     {
-        _editor->move(2, 22);
-        _editor->setFixedSize(width() - 5, height() - 25);
+        _textEdit->move(2, 22);
+        _textEdit->setFixedSize(width() - 5, height() - 25);
     }
+
+    UIScriptTextEdit* textEdit() { return _textEdit; }
+    void setTextEdit(UIScriptTextEdit* textEdit) { _textEdit = textEdit; }
 
 signals:
     void btnRunSignal();
     void btnLoadSignal();
     void btnSaveSignal();
     void btnClearSignal();
+    void textChangedSignal();
 
 public slots:
 

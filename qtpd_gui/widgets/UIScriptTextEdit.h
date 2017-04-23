@@ -20,7 +20,6 @@ class UIScriptTextEdit : public QPlainTextEdit {
     Q_OBJECT
 
 private:
-    //QPlainTextEdit* _editor;
     QCompleter* _completer;
     PythonQtObjectPtr _context;
 

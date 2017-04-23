@@ -9,18 +9,18 @@ UIScriptEditor::UIScriptEditor(QWidget* parent)
 
     QFont font = QFont(PREF_QSTRING("Font"), 11, 0, false);
 
-    _editor = new UIScriptTextEdit();
-    _editor->setFont(font);
-    _editor->setAttribute(Qt::WA_MacShowFocusRect, 0);
-    _editor->setCursorWidth(2);
-    _editor->setParent(this);
+    _textEdit = new UIScriptTextEdit();
+    _textEdit->setFont(font);
+    _textEdit->setAttribute(Qt::WA_MacShowFocusRect, 0);
+    _textEdit->setCursorWidth(2);
+    _textEdit->setParent(this);
 
     setBaseSize(300, 200);
 
     QPalette Pal; //palette());
     Pal.setColor(QPalette::Background, QColor(224, 240, 255));
     Pal.setColor(QPalette::Base, QColor(240, 248, 255));
-    _editor->setPalette(Pal);
+    _textEdit->setPalette(Pal);
 
     //buttons
     QPushButton* b1 = new QPushButton("Run");

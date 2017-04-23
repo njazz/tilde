@@ -39,8 +39,7 @@ public:
         UIScriptBox* b = new UIScriptBox();
         b->setCanvas((void*)parent);
 
-        //TODO
-        //b->_editor->setContext(pyWrapper::inst().withCanvas((QObject*)parent));
+        b->_editor->textEdit()->setContext(pyWrapper::inst().withCanvas((QObject*)parent));
 
         QString data1 = b->properties()->extractFromPdFileString(objectData);
         if (data1 != "") {
@@ -57,8 +56,7 @@ public:
         //QString data = b->properties()->get("Script")->asQString().split("\\n ").join("\n");
         QString data = "";
 
-        //TODO
-        //b->_editor->document()->setPlainText(data);
+        b->_editor->textEdit()->document()->setPlainText(data);
 
         // pd object
         std::string message = "ui.script";
@@ -76,8 +74,7 @@ public:
             qDebug("created ui.script %s | ptr %lu\n", message.c_str(), (long)new_obj);
             b->setPdObject(new_obj);
 
-            //TODO
-            //b->_editor->setContext(pyWrapper::inst().withCanvasPdObjectAndInput((UIObject*)parent, new_obj, &b->_inputList));
+            b->_editor->textEdit()->setContext(pyWrapper::inst().withCanvasPdObjectAndInput((UIObject*)parent, new_obj, &b->_inputList));
 
             b->addInlet();
             b->addOutlet();
@@ -222,9 +219,7 @@ public:
 
     QStringList getEditorData()
     {
-        QStringList ret;
-        //TODO
-        return ret;//_editor->document()->toPlainText().split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
+        return _editor->textEdit()->document()->toPlainText().split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
     }
 
     void setPdObject(void* obj)
@@ -242,9 +237,7 @@ public slots:
         qDebug() << "btnRun";
 
         //this code is from PythonQt
-
-        //TODO
-        PythonQtObjectPtr context = 0;//_editor->context(); //PythonQt::self()->getMainModule();
+        PythonQtObjectPtr context = _editor->textEdit()->context(); //PythonQt::self()->getMainModule();
         QString _stdOut = "";
         QString _stdErr = "";
         PythonQtObjectPtr p;
@@ -272,7 +265,6 @@ public slots:
             }
 
             if (_stdOut != "") {
-
                 cmp_post((std::string) "Python: " + _stdOut.toStdString());
             }
             if (_stdErr != "") {
@@ -293,8 +285,7 @@ private slots:
             file.open(QFile::ReadOnly | QFile::Text);
 
             QTextStream ReadFile(&file);
-            //TODO
-            //_editor->document()->setPlainText(ReadFile.readAll());
+            _editor->textEdit()->document()->setPlainText(ReadFile.readAll());
             file.close();
         }
     }
@@ -308,16 +299,14 @@ private slots:
             file.open(QFile::WriteOnly | QFile::Text);
 
             QTextStream WriteFile(&file);
-            // TODO
-            //WriteFile << _editor->document()->toPlainText();
+            WriteFile << _editor->textEdit()->document()->toPlainText();
             file.close();
         }
     }
 
     void btnClear()
     {
-        //TODO
-        //_editor->clear();
+        _editor->textEdit()->clear();
     }
 };
 }
