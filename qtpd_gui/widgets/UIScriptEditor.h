@@ -26,6 +26,7 @@ public:
     void setTextEdit(UIScriptTextEdit* textEdit) { _textEdit = textEdit; }
 
 signals:
+
     void btnRunSignal();
     void btnLoadSignal();
     void btnSaveSignal();

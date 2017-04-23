@@ -146,7 +146,8 @@ SOURCES += main.cpp\
     datamodels/UIObjectData.cpp \
 #
     widgets/UIScriptTextEdit.cpp \
-    widgets/UIScriptEditor.cpp
+    widgets/UIScriptEditor.cpp \
+    widgets/UIScriptCommon.cpp
 
 
 
@@ -215,7 +216,8 @@ HEADERS  += \
     datamodels/UIObjectData.h \
 #
     widgets/UIScriptTextEdit.h \
-    widgets/UIScriptEditor.h
+    widgets/UIScriptEditor.h \
+    widgets/UIScriptCommon.h
 
 
 
