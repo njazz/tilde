@@ -54,7 +54,7 @@ UIObject* UISignal::createObject(QString objectData, t_canvas* pdCanvas, QGraphi
     t_object* new_obj = 0;
     int in_c = 0, out_c = 0;
 
-    b->setPdObject(0);
+
     b->setHelpName("pdsignal~-help.pd");
 
     b->addInlet(1);
@@ -107,8 +107,12 @@ UIObject* UISignal::createObject(QString objectData, t_canvas* pdCanvas, QGraphi
         b->setErrorBox(true);
     } else {
 
-        b->_pdsend_object = cmp_create_object(pdCanvas, "send~ " + b->_signalSendName, 0, 0);
-        b->_pdreceive_object = cmp_create_object(pdCanvas, "send~ " + b->_signalReceiveName, 0, 0);
+//        b->_pdsend_object = cmp_create_object(pdCanvas, "send~ " + b->_signalSendName, 0, 0);
+//        b->_pdreceive_object = cmp_create_object(pdCanvas, "send~ " + b->_signalReceiveName, 0, 0);
+
+        t_object* pd_obj = cmp_create_object(pdCanvas, "pdsignal~ " + b->_signalSendName, 0, 0);
+
+        b->setPdObject(pd_obj);
     }
 
     connect(b, &UISignal::updateUISignal, b, &UISignal::updateUISlot);

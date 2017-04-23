@@ -290,6 +290,7 @@ public:
         if (_opClass) {
             AtomList l1 = _opClass->getPropertyList();
             AtomList l2 = _opClass->getMethodList();
+            AtomList l3 = _opClass->getSignalList();
 
             QStringList output;
 
@@ -304,6 +305,11 @@ public:
             output += "methods:";
             for (size_t i = 0; i < l2.size(); i++) {
                 output += (l2.at(i).asString().c_str());
+            }
+
+            output += "signals:";
+            for (size_t i = 0; i < l3.size(); i++) {
+                output += (l3.at(i).asString().c_str());
             }
 
             cmp_post(output.join("\n").toStdString().c_str());
