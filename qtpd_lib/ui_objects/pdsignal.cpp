@@ -54,7 +54,7 @@ static t_int* pdsignal_perform(t_int* w)
     }
 
     //receive
-/*
+
     t_pdsignal* x = (t_pdsignal*)(w[4]);
     //t_sample* out = (t_sample*)(w[1]);
     //int n = (int)(w[3]);
@@ -68,7 +68,7 @@ static t_int* pdsignal_perform(t_int* w)
         while (n--)
             *out++ = 0;
     }
-    */
+
 
     return (w + 5);
 }
