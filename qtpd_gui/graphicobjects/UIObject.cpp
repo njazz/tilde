@@ -294,7 +294,7 @@ std::string UIObject::asPdFileString()
     std::string ret;
 
     ret = "#X obj ";
-    ret += std::to_string(x()) + " " + std::to_string(y()) + " ";
+    ret += std::to_string(int(x())) + " " + std::to_string(int(y())) + " ";
 
     //ret += pdObjectName_ + " " ;//
 
