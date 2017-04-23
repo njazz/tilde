@@ -21,6 +21,7 @@ var searchData=
   ['uiscriptdata',['UIScriptData',['../class_u_i_script_data.html',1,'']]],
   ['uiscripteditor',['UIScriptEditor',['../classqtpd_1_1_u_i_script_editor.html',1,'qtpd']]],
   ['uiscripttextedit',['UIScriptTextEdit',['../classqtpd_1_1_u_i_script_text_edit.html',1,'qtpd']]],
+  ['uisignal',['UISignal',['../classqtpd_1_1_u_i_signal.html',1,'qtpd']]],
   ['uislider',['UISlider',['../classqtpd_1_1_u_i_slider.html',1,'qtpd']]],
   ['uisubpatch',['UISubpatch',['../classqtpd_1_1_u_i_subpatch.html',1,'qtpd']]],
   ['uitext',['UIText',['../classqtpd_1_1_u_i_text.html',1,'qtpd']]],
