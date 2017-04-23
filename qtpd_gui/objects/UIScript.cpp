@@ -19,7 +19,7 @@ UIScript::UIScript()
 
     QFont font = QFont(PREF_QSTRING("Font"), 11, 0, false);
 
-    _editor = new UIScriptEditor(); //weird
+    _editor = new UIScriptTextEdit(); //weird
     _editor->setFixedSize(150 - 5, 300 - 27); //setFixedSize(65-5,18);
 
     _editor->setFont(font);

@@ -13,7 +13,7 @@
 
 //#include "cm_pdlink.h"
 
-#include "UIScriptEditor.h"
+#include "UIScriptTextEdit.h"
 
 namespace qtpd {
 
@@ -25,7 +25,7 @@ class UIScript : public UIObject {
 
 private:
     bool _clicked;
-    UIScriptEditor* _editor;
+    UIScriptTextEdit* _editor;
     QStringList _inputList;
 
 public:

@@ -13,6 +13,7 @@
 
 //#include "cm_pdlink.h"
 
+//#include "UIScriptTextEdit.h"
 #include "UIScriptEditor.h"
 
 namespace qtpd {
@@ -38,7 +39,8 @@ public:
         UIScriptBox* b = new UIScriptBox();
         b->setCanvas((void*)parent);
 
-        b->_editor->setContext(pyWrapper::inst().withCanvas((QObject*)parent));
+        //TODO
+        //b->_editor->setContext(pyWrapper::inst().withCanvas((QObject*)parent));
 
         QString data1 = b->properties()->extractFromPdFileString(objectData);
         if (data1 != "") {
@@ -54,7 +56,9 @@ public:
         // the zoo lol
         //QString data = b->properties()->get("Script")->asQString().split("\\n ").join("\n");
         QString data = "";
-        b->_editor->document()->setPlainText(data);
+
+        //TODO
+        //b->_editor->document()->setPlainText(data);
 
         // pd object
         std::string message = "ui.script";
@@ -72,7 +76,8 @@ public:
             qDebug("created ui.script %s | ptr %lu\n", message.c_str(), (long)new_obj);
             b->setPdObject(new_obj);
 
-            b->_editor->setContext(pyWrapper::inst().withCanvasPdObjectAndInput((UIObject*)parent, new_obj, &b->_inputList));
+            //TODO
+            //b->_editor->setContext(pyWrapper::inst().withCanvasPdObjectAndInput((UIObject*)parent, new_obj, &b->_inputList));
 
             b->addInlet();
             b->addOutlet();
@@ -132,7 +137,7 @@ public:
     void mousePressEvent(QGraphicsSceneMouseEvent* ev)
     {
 
-        if (getEditMode() == em_Locked)
+        if (getEditMode() != em_Unlocked)
         {
             _editor->show();
 
@@ -217,7 +222,9 @@ public:
 
     QStringList getEditorData()
     {
-        return _editor->document()->toPlainText().split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
+        QStringList ret;
+        //TODO
+        return ret;//_editor->document()->toPlainText().split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
     }
 
     void setPdObject(void* obj)
@@ -236,7 +243,8 @@ public slots:
 
         //this code is from PythonQt
 
-        PythonQtObjectPtr context = _editor->context(); //PythonQt::self()->getMainModule();
+        //TODO
+        PythonQtObjectPtr context = 0;//_editor->context(); //PythonQt::self()->getMainModule();
         QString _stdOut = "";
         QString _stdErr = "";
         PythonQtObjectPtr p;
@@ -285,7 +293,8 @@ private slots:
             file.open(QFile::ReadOnly | QFile::Text);
 
             QTextStream ReadFile(&file);
-            _editor->document()->setPlainText(ReadFile.readAll());
+            //TODO
+            //_editor->document()->setPlainText(ReadFile.readAll());
             file.close();
         }
     }
@@ -299,14 +308,16 @@ private slots:
             file.open(QFile::WriteOnly | QFile::Text);
 
             QTextStream WriteFile(&file);
-            WriteFile << _editor->document()->toPlainText();
+            // TODO
+            //WriteFile << _editor->document()->toPlainText();
             file.close();
         }
     }
 
     void btnClear()
     {
-        _editor->clear();
+        //TODO
+        //_editor->clear();
     }
 };
 }

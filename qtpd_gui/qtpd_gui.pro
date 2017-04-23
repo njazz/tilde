@@ -42,7 +42,6 @@ WithPython {
 
 SOURCES += python/PythonQtScriptingConsole.cpp \
     python/wrappers/py_wrappers.cpp \
-    objects/UIScriptEditor.cpp \
     objects/UIScript.cpp \
     objects/UIScriptBox.cpp
 
@@ -78,7 +77,6 @@ HEADERS += \
     python/headers/PythonQtVariants.h \
     python/wrappers/py_qtpd.h \
     python/wrappers/py_wrappers.h \
-    objects/UIScriptEditor.h \
     objects/UIScript.h \
     objects/UIScriptBox.h
 
@@ -145,7 +143,10 @@ SOURCES += main.cpp\
     widgets/UITextEditor.cpp \
     objects/UISlider.cpp \
 #
-    datamodels/UIObjectData.cpp
+    datamodels/UIObjectData.cpp \
+#
+    widgets/UIScriptTextEdit.cpp \
+    widgets/UIScriptEditor.cpp
 
 
 
@@ -211,7 +212,10 @@ HEADERS  += \
     widgets/UITextEditor.h \
     graphicobjects/CommonTypes.h \
     objects/UISlider.h \
-    datamodels/UIObjectData.h
+    datamodels/UIObjectData.h \
+#
+    widgets/UIScriptTextEdit.h \
+    widgets/UIScriptEditor.h
 
 
 
