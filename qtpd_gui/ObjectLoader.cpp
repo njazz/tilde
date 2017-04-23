@@ -32,6 +32,7 @@ void ObjectLoader::loadObjects()
     addUIobject("pdinstance", &UIInstance::createObject);
     addUIobject("method", &UIMethod::createObject);
     addUIobject("property", &UIProperty::createObject);
+    addUIobject("pdsignal~", &UISignal::createObject);
 
     addUIobject("ui.dsp", &UIDSP::createObject);
 

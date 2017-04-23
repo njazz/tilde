@@ -16,7 +16,7 @@
 namespace qtpd {
 
 ////
-/// \brief gui object: message box (ui.msg)
+/// \brief gui object: slider (ui.slider)
 ///
 class UISlider : public UIObject {
     Q_OBJECT
@@ -34,7 +34,7 @@ public:
         b->setCanvas((void*)parent);
 
         QString data1 = b->properties()->extractFromPdFileString(objectData);
-        b->setObjectData("ui.toggle");
+        b->setObjectData("ui.slider");
 
         qDebug() << "obj data" << QString(data1);
 
@@ -160,6 +160,7 @@ public:
         UIObject::setPdObject(obj);
         cmp_connectUI((t_pd*)pdObject(), (void*)this, &UISlider::updateUI);
     }
+
 };
 }
 

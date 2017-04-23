@@ -20,16 +20,10 @@ UIBox::UIBox()
 
     setSubpatchWindow(0);
 
-    //setMinimumBoxWidth(40);
-    //setMinimumBoxHeight(20);
-
-    //setObjectSizeMode(os_FixedHeight);
-
-    _objectDataModel.setObjectSize(os_FixedHeight, 40,20);
+    _objectDataModel.setObjectSize(os_FixedHeight, 40, 20);
 
     setAcceptHoverEvents(true);
 
-    //sizeBox()->move(33, 13);
     resizeEvent();
 }
 
@@ -53,7 +47,7 @@ void UIBox::mousePressEvent(QGraphicsSceneMouseEvent* ev)
             && scene()->views().first()->viewport()) {
 
             QGraphicsView* v = scene()->views().first();
-            pos = v->viewport()->mapToGlobal(ev->pos().toPoint() );
+            pos = v->viewport()->mapToGlobal(ev->pos().toPoint());
 
             // TODO
             showPopupMenu(pos + this->pos().toPoint());
@@ -78,12 +72,12 @@ void UIBox::mousePressEvent(QGraphicsSceneMouseEvent* ev)
         }
     }
 
-//        if ((getEditMode() == em_Unlocked) && isSelected()) {
-//            //ev->accept();
-//            //emit editObject(this);
-//            //            qDebug("edit box");
-//            return;
-//        }
+    //        if ((getEditMode() == em_Unlocked) && isSelected()) {
+    //            //ev->accept();
+    //            //emit editObject(this);
+    //            //            qDebug("edit box");
+    //            return;
+    //        }
 
     emit selectBox(this, ev);
 
@@ -91,5 +85,4 @@ void UIBox::mousePressEvent(QGraphicsSceneMouseEvent* ev)
 
     ev->accept();
 }
-
 }

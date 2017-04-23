@@ -35,6 +35,7 @@
 #include "oopd/UIInstance.h"
 #include "oopd/UIMethod.h"
 #include "oopd/UIProperty.h"
+#include "oopd/UISignal.h"
 
 #include "UIDSP.h"
 

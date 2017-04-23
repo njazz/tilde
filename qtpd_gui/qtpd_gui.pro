@@ -147,7 +147,8 @@ SOURCES += main.cpp\
 #
     widgets/UIScriptTextEdit.cpp \
     widgets/UIScriptEditor.cpp \
-    widgets/UIScriptCommon.cpp
+    widgets/UIScriptCommon.cpp \
+    oopd/UISignal.cpp
 
 
 
@@ -217,7 +218,8 @@ HEADERS  += \
 #
     widgets/UIScriptTextEdit.h \
     widgets/UIScriptEditor.h \
-    widgets/UIScriptCommon.h
+    widgets/UIScriptCommon.h \
+    oopd/UISignal.h
 
 
 
