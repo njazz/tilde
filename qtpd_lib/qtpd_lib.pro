@@ -168,7 +168,8 @@ SOURCES += \
     RtMidi/RtMidi.cpp \
     pdlib.cpp \
 #
-    ui_objects/ui_sliders.cpp
+    ui_objects/ui_sliders.cpp \
+    ui_objects/pdsignal.cpp
 
 macx:SOURCES += src/s_audio_pa.c
 unix:SOURCES += src/s_audio_pa.c
@@ -210,6 +211,7 @@ HEADERS += \
 #    ceammc-lib/ceammc_timeline.h \
 #    ceammc-lib/memrss.h \
 #    ceammc-lib/memsize.h \
+
 
 INCLUDEPATH += src/ \
     extra/ \

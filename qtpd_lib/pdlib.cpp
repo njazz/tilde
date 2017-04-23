@@ -37,6 +37,7 @@ extern "C" void setup_pdclass(void);
 extern "C" void setup_pdinstance(void);
 extern "C" void setup_pdmethod(void);
 extern "C" void setup_pdproperty(void);
+extern "C" void setup_pdsignal(void);
 
 // just a list of objects to implement
 
@@ -135,6 +136,7 @@ void cmp_pdinit()
     setup_pdinstance();
     setup_pdmethod();
     setup_pdproperty();
+    setup_pdsignal();
 
     //temporary initialisations
     //    setup_ui0x2ebpfunc();
