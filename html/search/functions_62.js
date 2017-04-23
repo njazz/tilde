@@ -27,6 +27,10 @@ var searchData=
   ['boundingrect',['boundingRect',['../classqtpd_1_1_u_i_item.html#a0a8d5299d5a0a2ebcef2135913bc97da',1,'qtpd::UIItem']]],
   ['boxes',['boxes',['../classqtpd_1_1canvas_data.html#af51df2db77a9f420a6997ef3088765ca',1,'qtpd::canvasData']]],
   ['boxesaspdfilestrings',['boxesAsPdFileStrings',['../classqtpd_1_1canvas_data.html#a6c1895ba4137131baf314f8384cd269f',1,'qtpd::canvasData']]],
+  ['btnclearsignal',['btnClearSignal',['../classqtpd_1_1_u_i_script_editor.html#aa55181a25a88d0eb45f558710f3678d4',1,'qtpd::UIScriptEditor']]],
+  ['btnloadsignal',['btnLoadSignal',['../classqtpd_1_1_u_i_script_editor.html#a309d49e859bf4ddfcd3f3b461895faef',1,'qtpd::UIScriptEditor']]],
   ['btnrun',['btnRun',['../classqtpd_1_1_u_i_script.html#a707172a196120191b1d3fff972e2d040',1,'qtpd::UIScript::btnRun()'],['../classqtpd_1_1_u_i_script_box.html#a17b91d2630014bacdd87db4b6064eb65',1,'qtpd::UIScriptBox::btnRun()']]],
+  ['btnrunsignal',['btnRunSignal',['../classqtpd_1_1_u_i_script_editor.html#aa625ac6d0865ac25b2f2bf7c770c4284',1,'qtpd::UIScriptEditor']]],
+  ['btnsavesignal',['btnSaveSignal',['../classqtpd_1_1_u_i_script_editor.html#acccfaed92e82138faacbeec8279a862f',1,'qtpd::UIScriptEditor']]],
   ['bug',['bug',['../m__pd_8h.html#a3e4d99cc272e4a5cb21332f8bda27ec8',1,'m_pd.h']]]
 ];

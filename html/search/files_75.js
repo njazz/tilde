@@ -36,6 +36,8 @@ var searchData=
   ['uiscriptbox_2eh',['UIScriptBox.h',['../_u_i_script_box_8h.html',1,'']]],
   ['uiscripteditor_2ecpp',['UIScriptEditor.cpp',['../_u_i_script_editor_8cpp.html',1,'']]],
   ['uiscripteditor_2eh',['UIScriptEditor.h',['../_u_i_script_editor_8h.html',1,'']]],
+  ['uiscripttextedit_2ecpp',['UIScriptTextEdit.cpp',['../_u_i_script_text_edit_8cpp.html',1,'']]],
+  ['uiscripttextedit_2eh',['UIScriptTextEdit.h',['../_u_i_script_text_edit_8h.html',1,'']]],
   ['uislider_2ecpp',['UISlider.cpp',['../_u_i_slider_8cpp.html',1,'']]],
   ['uislider_2eh',['UISlider.h',['../_u_i_slider_8h.html',1,'']]],
   ['uisubpatch_2ecpp',['UISubpatch.cpp',['../_u_i_subpatch_8cpp.html',1,'']]],

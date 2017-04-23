@@ -18,6 +18,7 @@ var searchData=
   ['uiscript',['UIScript',['../classqtpd_1_1_u_i_script.html',1,'qtpd']]],
   ['uiscriptbox',['UIScriptBox',['../classqtpd_1_1_u_i_script_box.html',1,'qtpd']]],
   ['uiscripteditor',['UIScriptEditor',['../classqtpd_1_1_u_i_script_editor.html',1,'qtpd']]],
+  ['uiscripttextedit',['UIScriptTextEdit',['../classqtpd_1_1_u_i_script_text_edit.html',1,'qtpd']]],
   ['uislider',['UISlider',['../classqtpd_1_1_u_i_slider.html',1,'qtpd']]],
   ['uisubpatch',['UISubpatch',['../classqtpd_1_1_u_i_subpatch.html',1,'qtpd']]],
   ['uitext',['UIText',['../classqtpd_1_1_u_i_text.html',1,'qtpd']]],

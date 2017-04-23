@@ -199,7 +199,7 @@ var searchData=
   ['coefsize',['coefsize',['../struct__resample.html#a2916ee76dceb405a1773c0f590d3a716',1,'_resample']]],
   ['commontypes_2eh',['CommonTypes.h',['../_common_types_8h.html',1,'']]],
   ['contains',['contains',['../classceammc_1_1_atom_list.html#a64fec50cf58275a65472a2dc9a706455',1,'ceammc::AtomList']]],
-  ['context',['context',['../classqtpd_1_1_u_i_script_editor.html#a78c6d7dcaea185b65d223b201cdfafd6',1,'qtpd::UIScriptEditor']]],
+  ['context',['context',['../classqtpd_1_1_u_i_script_text_edit.html#ac8c44e94e6d826790065a04cf462e787',1,'qtpd::UIScriptTextEdit']]],
   ['copy',['copy',['../classqtpd_1_1canvas_data.html#a2a419b17ee10a54fcc0c7ed1aaf6e37b',1,'qtpd::canvasData::copy()'],['../classqtpd_1_1_patch_window.html#aa4f03a7f7cb369309a81385e6279768d',1,'qtpd::PatchWindow::copy()']]],
   ['copy_5fperform',['copy_perform',['../m__pd_8h.html#a5590104c00e3168793fb43a7357fc5b7',1,'m_pd.h']]],
   ['copyact',['copyAct',['../classqtpd_1_1_base_window.html#a3123d84d5d55f7e61093243986f60f4e',1,'qtpd::BaseWindow']]],

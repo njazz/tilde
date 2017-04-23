@@ -168,7 +168,7 @@ var searchData=
   ['cmp_5fsetprinthook',['cmp_setprinthook',['../_pd_link_8h.html#ac9fb723d2c58a1e062720cc19e199e08',1,'PdLink.h']]],
   ['cmp_5fswitch_5fdsp',['cmp_switch_dsp',['../_pd_link_8h.html#a0f1f4951cf99dff0634789791dcde1ba',1,'PdLink.h']]],
   ['contains',['contains',['../classceammc_1_1_atom_list.html#a64fec50cf58275a65472a2dc9a706455',1,'ceammc::AtomList']]],
-  ['context',['context',['../classqtpd_1_1_u_i_script_editor.html#a78c6d7dcaea185b65d223b201cdfafd6',1,'qtpd::UIScriptEditor']]],
+  ['context',['context',['../classqtpd_1_1_u_i_script_text_edit.html#ac8c44e94e6d826790065a04cf462e787',1,'qtpd::UIScriptTextEdit']]],
   ['copy',['copy',['../classqtpd_1_1canvas_data.html#a2a419b17ee10a54fcc0c7ed1aaf6e37b',1,'qtpd::canvasData::copy()'],['../classqtpd_1_1_patch_window.html#aa4f03a7f7cb369309a81385e6279768d',1,'qtpd::PatchWindow::copy()']]],
   ['copy_5fperform',['copy_perform',['../m__pd_8h.html#a5590104c00e3168793fb43a7357fc5b7',1,'m_pd.h']]],
   ['copybytes',['copybytes',['../m__pd_8h.html#af80e667284f408ae3981923da47abc06',1,'m_pd.h']]],
