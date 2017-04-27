@@ -350,7 +350,7 @@ void FileParser::parseQString(QString line)
 
         // TODO
 
-        if (msg.size() > 5) {
+        if (msg.size() >= 5) {
 
             if (msg.at(5).toInt())
                 newWnd->show();
@@ -408,7 +408,11 @@ void FileParser::open(QString fname)
             _pdParserWindow->canvas->setEditMode(em_Locked);
 
             cmp_loadbang(_pdParserWindow->canvas->pdObject());
+
+            _pdParserWindow->show();
         }
+
+
 
         f.close();
     }
