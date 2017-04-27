@@ -80,12 +80,11 @@ public:
         p->drawRect(boundingRect());
         p->setBrush(QBrush());
 
-        if (_value) {
-            float lw = 2; //+width()/20.;
-            p->setPen(QPen(QColor(0, 192, 255), lw, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
-            p->drawLine(2, 2, width() - 2, height() - 2);
-            p->drawLine(width() - 2, 2, 2, height() - 2);
-        }
+        //if (_value)
+        float y = _value * height();
+        float lw = 3;
+        p->setPen(QPen(QColor(0, 192, 255), lw, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+        p->drawLine(1, y, width() - 2, y);
 
         if (isSelected()) {
             p->setPen(QPen(QColor(0, 192, 255), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
@@ -95,8 +94,6 @@ public:
 
         p->drawRect(0, 0, width(), height());
     }
-
-
 
     // ---------------------------------------------------------------
 
@@ -108,12 +105,16 @@ public:
 
         dragOffset = ev->pos().toPoint();
 
+        float val = ev->pos().toPoint().y() / height();
+        std::string val_str =  std::to_string(val);
+
         if (getEditMode() != em_Unlocked) {
 
             if (!pdObject()) {
                 qDebug("msg: bad pd object!");
             } else {
-                cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
+                cmp_sendstring((t_pd*)pdObject(), ((std::string) "set " + val_str).c_str());
+                cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang " ).c_str());
             }
         }
     }
@@ -133,6 +134,14 @@ public:
         } else {
             setCursor(QCursor(Qt::ArrowCursor));
         }
+
+        float val = event->pos().toPoint().y() / height();
+        std::string val_str =  std::to_string(val);
+
+        if (pdObject()) {
+            cmp_sendstring((t_pd*)pdObject(), ((std::string) "set " + val_str).c_str());
+            cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang " ).c_str());
+        }
     }
 
     ///////
@@ -149,7 +158,12 @@ public:
 
         if (msg.size() > 0) {
             if (msg.at(0).isFloat())
-                x->_value = msg.at(0).asFloat() > 0;
+                x->_value = msg.at(0).asFloat();
+
+            if (x->_value < 0)
+                x->_value = 0;
+            if (x->_value > 1)
+                x->_value = 1;
         }
 
         emit x->callRepaint();
@@ -160,7 +174,6 @@ public:
         UIObject::setPdObject(obj);
         cmp_connectUI((t_pd*)pdObject(), (void*)this, &UISlider::updateUI);
     }
-
 };
 }
 
