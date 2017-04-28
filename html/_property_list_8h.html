@@ -81,6 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Defines</a> &#124;
 <a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">/home/travis/build/njazz/qtpd/qtpd_gui/properties/PropertyList.h File Reference</div>  </div>
@@ -89,6 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><code>#include &quot;<a class="el" href="_property_8h_source.html">Property.h</a>&quot;</code><br/>
 <code>#include &lt;map&gt;</code><br/>
 <code>#include &lt;QDebug&gt;</code><br/>
+<code>#include &lt;QObject&gt;</code><br/>
 </div>
 <p><a href="_property_list_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -99,6 +101,9 @@ Classes</h2></td></tr>
 <tr><td colspan="2"><h2><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html">qtpd</a></td></tr>
+<tr><td colspan="2"><h2><a name="define-members"></a>
+Defines</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_property_list_8h.html#ac912e7907abcb03f00d5011566dd2bba">PROPERTY_LISTENER</a>(x, y)&#160;&#160;&#160;connect(_objectDataModel.properties()-&gt;get(x), &amp;Property::changed, this, y)</td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; std::string, <br class="typebreak"/>
@@ -109,8 +114,35 @@ UIPropertyData * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a clas
 Property * &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a147788b39dc51afa9d6b2a6d030e8038">qtpd::UIPropertyDataIterator</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; std::string, <br class="typebreak"/>
 UIPropertyData * &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a5de80d70f22f21b977f7595cfa4b714b">qtpd::UIPropertyGroupIterator</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a41a76d67a2ea9e4dd28420bbb9ca72af">qtpd::t_PropertyListener</a> )(void)</td></tr>
 </table>
+<hr/><h2>Define Documentation</h2>
+<a class="anchor" id="ac912e7907abcb03f00d5011566dd2bba"></a><!-- doxytag: member="PropertyList.h::PROPERTY_LISTENER" ref="ac912e7907abcb03f00d5011566dd2bba" args="(x, y)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="_property_list_8h.html#ac912e7907abcb03f00d5011566dd2bba">PROPERTY_LISTENER</a></td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">y&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;connect(_objectDataModel.properties()-&gt;get(x), &amp;Property::changed, this, y)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -129,7 +161,7 @@ UIPropertyData * &gt;::iterator&#160;</td><td class="memItemRight" valign="botto
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 28 2017 16:13:28 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 28 2017 23:51:17 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

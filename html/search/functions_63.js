@@ -9,7 +9,7 @@ var searchData=
   ['callsetter',['callSetter',['../classqtpd_1_1_o_p_instance.html#aad6f8ffb305d100701ee244efbf8d7fa',1,'qtpd::OPInstance::callSetter(AtomList list)'],['../classqtpd_1_1_o_p_instance.html#a63eb7d4e85ea527fb37f284a083acf2c',1,'qtpd::OPInstance::callSetter(t_symbol *propertyName, AtomList list)']]],
   ['cancel',['cancel',['../classqtpd_1_1_object_maker.html#ace3e2f217478e776f4f167eb26f31ca9',1,'qtpd::ObjectMaker']]],
   ['cancelpatchcord',['cancelPatchcord',['../classqtpd_1_1_canvas.html#a83af5295678ba3687f02189504528cc4',1,'qtpd::Canvas']]],
-  ['canvas',['Canvas',['../classqtpd_1_1_canvas.html#ad2ad6a6f41eda5fd0f3c21ffeeeadb0d',1,'qtpd::Canvas::Canvas()'],['../classqtpd_1_1_u_i_object.html#ae5912261870c7eec5231419acd4ca7e1',1,'qtpd::UIObject::canvas()']]],
+  ['canvas',['canvas',['../classqtpd_1_1_u_i_object.html#ae5912261870c7eec5231419acd4ca7e1',1,'qtpd::UIObject::canvas()'],['../classqtpd_1_1_canvas.html#ad2ad6a6f41eda5fd0f3c21ffeeeadb0d',1,'qtpd::Canvas::Canvas()']]],
   ['canvas_5faddinlet',['canvas_addinlet',['../g__canvas_8h.html#a715a459b8a9f133641d3f8134296ad13',1,'g_canvas.h']]],
   ['canvas_5faddoutlet',['canvas_addoutlet',['../g__canvas_8h.html#a62d30d5fae71d84f88426b038d57bbc2',1,'g_canvas.h']]],
   ['canvas_5fclicksub',['canvas_clicksub',['../g__canvas_8h.html#a19e9347cd1db37dfe8093a895a3dfecd',1,'g_canvas.h']]],

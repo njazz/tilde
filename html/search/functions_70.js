@@ -12,7 +12,7 @@ var searchData=
   ['parserwindow',['parserWindow',['../classqtpd_1_1_file_parser.html#aee0f14a3d05554a9020d4eaed943622b',1,'qtpd::FileParser']]],
   ['parsestringlistatoms',['parseStringListAtoms',['../classqtpd_1_1_file_parser.html#a9ae0ca9c20d5e2e29573eed775b04a2d',1,'qtpd::FileParser']]],
   ['paste',['paste',['../classqtpd_1_1canvas_data.html#a435ab7b990dae3c9190d5b2af7670211',1,'qtpd::canvasData::paste()'],['../classqtpd_1_1_patch_window.html#a26d4a590a6dee53117a7e86160d75eb0',1,'qtpd::PatchWindow::paste()']]],
-  ['patchcord',['Patchcord',['../classqtpd_1_1_patchcord.html#acf03de814e1b49b4de6a99353461df70',1,'qtpd::Patchcord::Patchcord()'],['../classqtpd_1_1_canvas.html#a3625736a403310d179fe0738156e572f',1,'qtpd::Canvas::patchcord(UIObject *obj1, int outlet, UIObject *obj2, int inlet)'],['../classqtpd_1_1_canvas.html#a2623978c611a4871f19f5da0ca5631d2',1,'qtpd::Canvas::patchcord(UIObject *obj1, UIItem *outport, UIObject *obj2, UIItem *inport)']]],
+  ['patchcord',['patchcord',['../classqtpd_1_1_canvas.html#a3625736a403310d179fe0738156e572f',1,'qtpd::Canvas::patchcord(UIObject *obj1, int outlet, UIObject *obj2, int inlet)'],['../classqtpd_1_1_canvas.html#a2623978c611a4871f19f5da0ca5631d2',1,'qtpd::Canvas::patchcord(UIObject *obj1, UIItem *outport, UIObject *obj2, UIItem *inport)'],['../classqtpd_1_1_patchcord.html#acf03de814e1b49b4de6a99353461df70',1,'qtpd::Patchcord::Patchcord()']]],
   ['patchcordasnumbers',['patchcordAsNumbers',['../classqtpd_1_1_canvas.html#a95d57b6df49669c45bd5728c25709ffd',1,'qtpd::Canvas']]],
   ['patchcordaspdfilestring',['patchcordAsPdFileString',['../classqtpd_1_1_canvas.html#a057d349fb3b1c6143219a53223baa460',1,'qtpd::Canvas::patchcordAsPdFileString()'],['../classqtpd_1_1canvas_data.html#ab815ec36066312a522940fdb1e72af9c',1,'qtpd::canvasData::patchcordAsPdFileString()']]],
   ['patchcords',['patchcords',['../classqtpd_1_1_canvas.html#a8725374b04b10a3a07ce48b013ab9992',1,'qtpd::Canvas::patchcords()'],['../classqtpd_1_1canvas_data.html#a525ed63c2d47f27d17114607f635fb3e',1,'qtpd::canvasData::patchcords()']]],
@@ -70,6 +70,8 @@ var searchData=
   ['propertieswindow',['PropertiesWindow',['../classqtpd_1_1_properties_window.html#a00963af1db4eec6663d1c54e58c2c05a',1,'qtpd::PropertiesWindow']]],
   ['property',['property',['../classceammc_1_1_atom_list.html#aa358bda48f6f306d78265c277532425d',1,'ceammc::AtomList::property()'],['../classqtpd_1_1_property.html#a5bb7501b62515636741db369dde1749f',1,'qtpd::Property::Property()']]],
   ['propertychanged',['propertyChanged',['../classqtpd_1_1_u_i_object.html#aa75e37df9af2518a6f01c284b0bbaf58',1,'qtpd::UIObject']]],
-  ['propertychangedsignal',['propertyChangedSignal',['../classqtpd_1_1_property_list.html#ad7751eab5dfc4bdf17737556bcfc95f7',1,'qtpd::PropertyList']]],
-  ['propertylist',['PropertyList',['../classqtpd_1_1_property_list.html#a66afd40f65771ed469a3a74d1446d4f5',1,'qtpd::PropertyList']]]
+  ['propertychangedsignal',['propertyChangedSignal',['../classqtpd_1_1_property_list.html#a14dca92ec761ba024e24299a0f717da5',1,'qtpd::PropertyList']]],
+  ['propertylist',['PropertyList',['../classqtpd_1_1_property_list.html#a66afd40f65771ed469a3a74d1446d4f5',1,'qtpd::PropertyList']]],
+  ['propertymatrixsize',['propertyMatrixSize',['../classqtpd_1_1_u_i_matrix.html#a8f4b2d0e49aec13bc008ef96e57c84bc',1,'qtpd::UIMatrix']]],
+  ['propertyupdate',['propertyUpdate',['../classqtpd_1_1_u_i_matrix.html#aa1dbab768f17342179bfa2cb347ac8a7',1,'qtpd::UIMatrix']]]
 ];
