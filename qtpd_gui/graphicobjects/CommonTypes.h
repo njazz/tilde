@@ -25,6 +25,7 @@ typedef enum { portInlet,
 typedef enum {
     os_Fixed,
     os_FixedHeight,
+    os_FixedWidth,          ///> this is used only in vertical radio (ui.matrix)
     os_Free,
     os_Square
 } t_objectSize;
