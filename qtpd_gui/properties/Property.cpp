@@ -32,6 +32,17 @@ void Property::set(QPoint point)
 }
 
 template <>
+void Property::set(bool value)
+{
+    AtomList list;
+
+    list.append(int(value));
+
+    _data = list;
+    _type = ptBool;
+}
+
+template <>
 void Property::set(QPointF point)
 {
     AtomList list;

@@ -20,7 +20,9 @@ using namespace ceammc;
 namespace qtpd {
 
 typedef enum {
+    ptBool,
     ptFloat,
+    ptInt,
     ptSymbol,
     ptList,
     ptString,
@@ -112,6 +114,15 @@ public:
             return 0;
 
         return _data.at(0).asFloat();
+    }
+
+    int asInt()
+    {
+
+        if (!_data.size())
+            return 0;
+
+        return int(_data.at(0).asFloat());
     }
 
     float asFontSize()
