@@ -36,7 +36,7 @@ UIObject::UIObject(UIItem* parent)
     //this is default
     //_objectSizeMode = os_FixedHeight;
 
-    _objectDataModel.setObjectSize(os_FixedHeight, 40,20);
+    _objectDataModel.setObjectSize(os_FixedHeight, 40, 20);
 
     setAcceptHoverEvents(true);
 }
@@ -53,8 +53,6 @@ void UIObject::resizeBox(int dx, int dy)
     if (_objectDataModel.objectSizeMode() == os_Square) {
         setHeight(boundingRect().width());
     }
-
-    // moved
 
     _sizeBox->move(boundingRect().width() - 7, boundingRect().height() - 7);
 
@@ -418,7 +416,7 @@ void UIObject::hideSizeBox()
 
 void UIObject::setHelpName(QString name)
 {
-   _objectDataModel.setFullHelpName(name);
+    _objectDataModel.setFullHelpName(name);
 }
 
 QString UIObject::fullHelpName()
