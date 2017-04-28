@@ -90,18 +90,27 @@ void UIObject::initProperties()
 
     //connect(_objectDataModel.properties()->get("Size"), &Property::changed, this, &UIObject::propertySize);
 
-    PROPERTY_LISTENER("Size",&UIObject::propertySize);
-    PROPERTY_LISTENER("Font",&UIObject::propertyUpdate);
-    PROPERTY_LISTENER("BorderColor",&UIObject::propertyUpdate);
+    PROPERTY_LISTENER("Size", &UIObject::propertySize);
+    PROPERTY_LISTENER("FontSize", &UIObject::propertySize);
+    PROPERTY_LISTENER("BorderColor", &UIObject::propertyUpdate);
 }
 
 void UIObject::propertySize()
 {
-    Property* o = (Property*) QObject::sender();
+    Property* o = (Property*)QObject::sender();
     QSize size = o->asQSize();
 
-    if (size.width()<20) {size.setWidth(20);}
-    if (size.height()<20) {size.setHeight(20);}
+    if (size.width() < 20) {
+        size.setWidth(20);
+    }
+    if (size.height() < 20) {
+        size.setHeight(20);
+    }
+
+    float fs = properties()->get("FontSize")->asFloat();
+    if (size.height() < (fs + 9)) {
+        size.setHeight(fs + 9);
+    }
 
     setSize(size);
     resizeEvent();
@@ -111,14 +120,17 @@ void UIObject::propertySize()
     //cmp_post("property size updated");
 }
 
+void UIObject::propertyFontSize()
+{
+    //remove
+}
+
 void UIObject::propertyUpdate()
 {
     update();
 
-    cmp_post("property updated");
+    //cmp_post("property updated");
 }
-
-
 
 PropertyList* UIObject::properties()
 {

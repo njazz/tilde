@@ -87,8 +87,14 @@ public:
         properties()->create("SolidButtons", "Matrix", "0.1", false);
 
         properties()->create("Value", "Matrix", "0.1", QString("3")); ///> value property works depending on other settings
+
+        PROPERTY_LISTENER("Value", &UIMatrix::propertyUpdate);
     }
 
+    Q_SLOT void propertyUpdate()
+    {
+        update();
+    }
     // ------------------------------------------
 
     void drawCross(QPainter* p, QPoint matrixPos)
@@ -291,12 +297,24 @@ public:
 
         dragOffset = ev->pos().toPoint();
 
+        // main mouse action
         if (getEditMode() != em_Unlocked) {
+            if (matrixType() == mt_HRadio) {
+                int count = properties()->get("Columns")->asInt();
+                if (count < 1)
+                    count = 1;
+                int v = floor(ev->pos().x() / width() * count);
 
-            if (!pdObject()) {
-                qDebug("msg: bad pd object!");
-            } else {
-                cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
+                properties()->set("Value", v);
+            }
+
+            if (getEditMode() != em_Unlocked) {
+
+                if (!pdObject()) {
+                    qDebug("msg: bad pd object!");
+                } else {
+                    cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
+                }
             }
         }
     }

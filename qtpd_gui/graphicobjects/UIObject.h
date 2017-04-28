@@ -227,6 +227,7 @@ private slots:
     void openHelpWindow();
 
     void propertySize(); ///> called when size property is changed
+    void propertyFontSize();
     void propertyUpdate();   ///> basic update - calls update() probably remove later
 
 signals:
