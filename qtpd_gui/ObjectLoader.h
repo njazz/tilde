@@ -21,10 +21,12 @@
 #include "UIToggle.h"
 
 #include "UISlider.h"
+#include "UIMatrix.h"
 
 #include "UILink.h"
 
 #include "UIArray.h"
+
 
 #ifdef WITH_PYTHON
 #include "UIScript.h"

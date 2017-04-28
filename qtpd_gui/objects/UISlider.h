@@ -133,6 +133,9 @@ public:
     void mousePressEvent(QGraphicsSceneMouseEvent* ev)
     {
 
+        if (getEditMode() == em_Unlocked)
+            emit selectBox(this, ev);
+
         if (ev->button() == Qt::RightButton) {
 
             QPoint pos;
@@ -153,8 +156,7 @@ public:
             return;
         }
 
-        if (getEditMode() == em_Unlocked)
-            emit selectBox(this, ev);
+
 
         dragOffset = ev->pos().toPoint();
 
