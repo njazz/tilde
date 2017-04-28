@@ -60,7 +60,7 @@ public:
         }
 
         if (new_obj) {
-            qDebug("created toggle %s | ptr %lu\n", message.c_str(), (long)new_obj);
+            qDebug("created ui.matrix %s | ptr %lu\n", message.c_str(), (long)new_obj);
             b->setPdObject(new_obj);
         } else {
             qDebug("Error: no such object %s", message.c_str());
@@ -86,7 +86,7 @@ public:
         properties()->create("Momentary", "Matrix", "0.1", false);
         properties()->create("SolidButtons", "Matrix", "0.1", false);
 
-        properties()->create("Value", "Matrix", "0.1", "0"); ///> value property works depending on other settings
+        properties()->create("Value", "Matrix", "0.1", QString("0")); ///> value property works depending on other settings
     }
 
     // ------------------------------------------
@@ -160,10 +160,26 @@ public:
 
     void paintHRadio(QPainter* p)
     {
+        //check
+        int value = QString(properties()->get("Value")->asQStringList().at(0)).toInt();
+        int columns = properties()->get("Columns")->asInt();
+
+        if (value<0) value = 0;
+        if (value>columns) value = columns;
+
+        drawBox(p,QPoint(value,0));
     }
 
     void paintVRadio(QPainter* p)
     {
+        //check
+        int value = QString(properties()->get("Value")->asQStringList().at(0)).toInt();
+        int rows = properties()->get("Rows")->asInt();
+
+        if (value<0) value = 0;
+        if (value>rows) value = rows;
+
+        drawBox(p,QPoint(0,value));
     }
 
     void paintToggleMatrix(QPainter* p) ///> draws buttons as ui.toggle
@@ -196,6 +212,11 @@ public:
         // draw button borders
 
         // draw buttons
+
+        if (matrixType() == mt_HRadio) paintHRadio(p);
+        if (matrixType() == mt_VRadio) paintVRadio(p);
+        if ((matrixType() == mt_MatrixButton) || (matrixType() == mt_MatrixButtonMomentary)) paintButtonMatrix(p);
+        if ((matrixType() == mt_MatrixToggle) || (matrixType() == mt_MatrixToggleMomentary)) paintButtonMatrix(p);
 
         p->drawRect(0, 0, width(), height());
     }
