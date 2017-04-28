@@ -23,7 +23,7 @@ class UISlider : public UIObject {
 
 private:
     bool _clicked;
-    float _value;           ///> 0..1 here
+    float _value; ///> 0..1 here
     float _isHorizontal;
 
 public:
@@ -73,7 +73,7 @@ public:
         properties()->create("Value", "Preset", "0.1", 0.);
 
         properties()->create("Offset", "Slider", "0.1", 0.);
-        properties()->create("Range", "Slider", "0.1", 1.);
+        properties()->create("Range", "Slider", "0.1", 127.);
     }
 
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
@@ -94,7 +94,7 @@ public:
             p->drawLine(x, 1, x, height() - 2);
 
         } else {
-            float y = (1-raw_value) * height();
+            float y = (1 - raw_value) * height();
             float lw = 3;
             p->setPen(QPen(QColor(0, 192, 255), lw, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
             p->drawLine(1, y, width() - 2, y);
@@ -215,10 +215,10 @@ public:
             if (msg.at(0).isFloat())
                 x->_value = msg.at(0).asFloat();
 
-//            if (x->_value < 0)
-//                x->_value = 0;
-//            if (x->_value > 1)
-//                x->_value = 1;
+            //            if (x->_value < 0)
+            //                x->_value = 0;
+            //            if (x->_value > 1)
+            //                x->_value = 1;
         }
 
         emit x->callRepaint();
