@@ -331,7 +331,7 @@ void Canvas::mouseReleaseEvent(QMouseEvent* ev)
 UIObject* Canvas::createObject(QString objectData1, QPoint pos) //std::string UIObjectItemName,
 {
 
-    qDebug("!!!");
+    qDebug("* create object *");
 
     //pos = objectMaker()->pos();
 

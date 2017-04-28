@@ -44,7 +44,7 @@ public:
         b->setCanvas((void*)parent);
 
         QString data1 = b->properties()->extractFromPdFileString(objectData);
-        b->setObjectData("ui.toggle");
+        b->setObjectData("ui.matrix");
 
         qDebug() << "obj data" << QString(data1);
 
@@ -86,7 +86,7 @@ public:
         properties()->create("Momentary", "Matrix", "0.1", false);
         properties()->create("SolidButtons", "Matrix", "0.1", false);
 
-        properties()->create("Value", "Matrix", "0.1", QString("0")); ///> value property works depending on other settings
+        properties()->create("Value", "Matrix", "0.1", QString("3")); ///> value property works depending on other settings
     }
 
     // ------------------------------------------
@@ -103,14 +103,17 @@ public:
 
     void drawBox(QPainter* p, QPoint matrixPos)
     {
-        QRect rect = rectFromMatrixPos(matrixPos);
-        rect.setX(rect.x() + 3);
-        rect.setY(rect.y() + 3);
-        rect.setWidth(rect.width() - 6);
-        rect.setHeight(rect.height() - 6);
+        QRect boxRect = rectFromMatrixPos(matrixPos);
+        boxRect.setX(boxRect.x() + 3);
+        boxRect.setY(boxRect.y() + 3);
+        boxRect.setWidth(boxRect.width() - 3);
+        boxRect.setHeight(boxRect.height() - 3);
 
+        QBrush oldBrush = p->brush();
         p->setBrush(QColor(0, 192, 255));
-        p->drawRect(rect);
+        p->setPen(QPen(QColor(0, 192, 255), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+        p->drawRect(boxRect);
+        p->setBrush(oldBrush);
     }
 
     // ---- move to private
@@ -148,12 +151,23 @@ public:
             else
                 return mt_MatrixToggle;
         }
-#undef MTP(x)
+#undef MTP
     }
 
     QRect rectFromMatrixPos(QPoint matrixPos)
     {
+        int btnCount = properties()->get("Columns")->asInt();
+        if (btnCount < 1)
+            btnCount = 1;
+        float btnSize = width() / btnCount;
+        if (btnSize < 20)
+            btnSize = 20;
         QRect ret;
+
+        ret.setX(matrixPos.x() * btnSize);
+        ret.setY(matrixPos.y() * btnSize);
+        ret.setWidth(btnSize);
+        ret.setHeight(btnSize);
 
         return ret;
     }
@@ -164,10 +178,12 @@ public:
         int value = QString(properties()->get("Value")->asQStringList().at(0)).toInt();
         int columns = properties()->get("Columns")->asInt();
 
-        if (value<0) value = 0;
-        if (value>columns) value = columns;
+        if (value < 0)
+            value = 0;
+        if (value > columns)
+            value = columns;
 
-        drawBox(p,QPoint(value,0));
+        drawBox(p, QPoint(value, 0));
     }
 
     void paintVRadio(QPainter* p)
@@ -176,10 +192,12 @@ public:
         int value = QString(properties()->get("Value")->asQStringList().at(0)).toInt();
         int rows = properties()->get("Rows")->asInt();
 
-        if (value<0) value = 0;
-        if (value>rows) value = rows;
+        if (value < 0)
+            value = 0;
+        if (value > rows)
+            value = rows;
 
-        drawBox(p,QPoint(0,value));
+        drawBox(p, QPoint(0, value));
     }
 
     void paintToggleMatrix(QPainter* p) ///> draws buttons as ui.toggle
@@ -211,20 +229,35 @@ public:
 
         // draw button borders
 
+        p->setPen(QPen(QColor(208, 208, 208), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+
+        for (int x = 0; x < properties()->get("Columns")->asInt(); x++) {
+            float posX = rectFromMatrixPos(QPoint(x, 0)).x();
+            p->drawLine(posX, 0, posX, height());
+        }
+        for (int y = 0; y < properties()->get("Rows")->asInt(); y++) {
+            float posY = rectFromMatrixPos(QPoint(0, y)).y();
+            p->drawLine(0, posY, width(), posY);
+        }
+
         // draw buttons
 
-        if (matrixType() == mt_HRadio) paintHRadio(p);
-        if (matrixType() == mt_VRadio) paintVRadio(p);
-        if ((matrixType() == mt_MatrixButton) || (matrixType() == mt_MatrixButtonMomentary)) paintButtonMatrix(p);
-        if ((matrixType() == mt_MatrixToggle) || (matrixType() == mt_MatrixToggleMomentary)) paintButtonMatrix(p);
+        if (matrixType() == mt_HRadio)
+            paintHRadio(p);
+        if (matrixType() == mt_VRadio)
+            paintVRadio(p);
+        if ((matrixType() == mt_MatrixButton) || (matrixType() == mt_MatrixButtonMomentary))
+            paintButtonMatrix(p);
+        if ((matrixType() == mt_MatrixToggle) || (matrixType() == mt_MatrixToggleMomentary))
+            paintButtonMatrix(p);
 
         p->drawRect(0, 0, width(), height());
     }
 
     void resizeEvent()
     {
+        // TODO
 
-        setHeight(width());
         UIObject::resizeEvent();
     }
 
