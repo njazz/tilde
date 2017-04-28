@@ -37,6 +37,7 @@ void UIBox::mousePressEvent(QGraphicsSceneMouseEvent* ev)
     QGraphicsItem::mousePressEvent(ev);
 
     //context menu
+    //TODO MOVE
     if (ev->button() == Qt::RightButton) {
 
         QPoint pos;

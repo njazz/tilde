@@ -23,6 +23,8 @@ UISlider::UISlider()
 
     _value = false;
 
+    initProperties();
+
     resizeEvent();
 }
 }

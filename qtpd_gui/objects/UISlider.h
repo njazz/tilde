@@ -23,7 +23,7 @@ class UISlider : public UIObject {
 
 private:
     bool _clicked;
-    float _value;
+    float _value;           ///> 0..1 here
     float _isHorizontal;
 
 public:
@@ -67,9 +67,13 @@ public:
 
     void initProperties()
     {
+        //cmp_post("init slider prop");
         UIObject::initProperties();
 
         properties()->create("Value", "Preset", "0.1", 0.);
+
+        properties()->create("Offset", "Slider", "0.1", 0.);
+        properties()->create("Range", "Slider", "0.1", 1.);
     }
 
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
@@ -81,14 +85,16 @@ public:
         p->drawRect(boundingRect());
         p->setBrush(QBrush());
 
+        float raw_value = (_value - properties()->get("Offset")->asFloat()) / properties()->get("Range")->asFloat();
+
         if (_isHorizontal) {
-            float x = _value * width();
+            float x = raw_value * width();
             float lw = 3;
             p->setPen(QPen(QColor(0, 192, 255), lw, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
             p->drawLine(x, 1, x, height() - 2);
 
         } else {
-            float y = _value * height();
+            float y = (1-raw_value) * height();
             float lw = 3;
             p->setPen(QPen(QColor(0, 192, 255), lw, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
             p->drawLine(1, y, width() - 2, y);
@@ -112,22 +118,50 @@ public:
         if (_isHorizontal)
             ret = pos.x() / width();
         else
-            ret = pos.y() / height();
+            ret = 1 - pos.y() / height();
+
+        if (ret < 0)
+            ret = 0;
+        if (ret > 1)
+            ret = 1;
+
+        ret = ret * properties()->get("Range")->asFloat() + properties()->get("Offset")->asFloat();
 
         return ret;
     }
+
     void mousePressEvent(QGraphicsSceneMouseEvent* ev)
     {
+
+        if (ev->button() == Qt::RightButton) {
+
+            QPoint pos;
+
+            if (scene()
+                && !scene()->views().isEmpty()
+                && scene()->views().first()
+                && scene()->views().first()->viewport()) {
+
+                QGraphicsView* v = scene()->views().first();
+                pos = v->viewport()->mapToGlobal(ev->pos().toPoint());
+
+                // TODO
+                showPopupMenu(pos + this->pos().toPoint());
+                ev->accept();
+            }
+
+            return;
+        }
 
         if (getEditMode() == em_Unlocked)
             emit selectBox(this, ev);
 
         dragOffset = ev->pos().toPoint();
 
-        float val = valueFromPoint(ev->pos().toPoint());
-        std::string val_str = std::to_string(val);
-
         if (getEditMode() != em_Unlocked) {
+
+            float val = valueFromPoint(ev->pos().toPoint());
+            std::string val_str = std::to_string(val);
 
             if (!pdObject()) {
                 qDebug("msg: bad pd object!");
@@ -147,15 +181,17 @@ public:
         }
         event->ignore();
 
+        std::string val_str;
         //todo move!
         if (getEditMode() != em_Unlocked) {
+
+            float val = valueFromPoint(event->pos().toPoint());
+            val_str = std::to_string(val);
+
             setCursor(QCursor(Qt::PointingHandCursor));
         } else {
             setCursor(QCursor(Qt::ArrowCursor));
         }
-
-        float val = valueFromPoint(event->pos().toPoint());
-        std::string val_str = std::to_string(val);
 
         if (pdObject()) {
             cmp_sendstring((t_pd*)pdObject(), ((std::string) "set " + val_str).c_str());
@@ -179,10 +215,10 @@ public:
             if (msg.at(0).isFloat())
                 x->_value = msg.at(0).asFloat();
 
-            if (x->_value < 0)
-                x->_value = 0;
-            if (x->_value > 1)
-                x->_value = 1;
+//            if (x->_value < 0)
+//                x->_value = 0;
+//            if (x->_value > 1)
+//                x->_value = 1;
         }
 
         emit x->callRepaint();
