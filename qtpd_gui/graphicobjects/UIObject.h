@@ -64,9 +64,10 @@ public:
 
     explicit UIObject(UIItem* parent = 0);
 
-    virtual void initProperties(); ///>init properties for the class - called from constructor
-    PropertyList* properties(); ///> UIObject properties
-    void createContextMenu(); ///> createContextMenu
+    virtual void initProperties();  ///>init properties for the class - called from constructor
+    PropertyList* properties();     ///> UIObject properties
+
+    void createContextMenu();       ///> createContextMenu
     void showPopupMenu(QPoint pos);
 
     virtual void autoResize(); ///> call this after setting object data
@@ -224,6 +225,9 @@ public:
 private slots:
     void openPropertiesWindow();
     void openHelpWindow();
+
+    void propertySize(); ///> called when size property is changed
+    void propertyUpdate();   ///> basic update - calls update() probably remove later
 
 signals:
     void editObject(void* box);

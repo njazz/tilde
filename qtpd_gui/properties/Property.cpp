@@ -29,6 +29,8 @@ void Property::set(QPoint point)
 
     _data = list;
     _type = ptVector;
+
+    emit changed();
 }
 
 template <>
@@ -40,6 +42,8 @@ void Property::set(bool value)
 
     _data = list;
     _type = ptBool;
+
+    emit changed();
 }
 
 template <>
@@ -52,6 +56,8 @@ void Property::set(QPointF point)
 
     _data = list;
     _type = ptVector;
+
+    emit changed();
 }
 
 template <>
@@ -66,6 +72,8 @@ void Property::set(QRect rect)
 
     _data = list;
     _type = ptVector;
+
+    emit changed();
 }
 template <>
 void Property::set(QSize size)
@@ -77,6 +85,8 @@ void Property::set(QSize size)
 
     _data = list;
     _type = ptVector;
+
+    emit changed();
 }
 
 template <>
@@ -89,6 +99,8 @@ void Property::set(QSizeF size)
 
     _data = list;
     _type = ptVector;
+
+    emit changed();
 }
 
 template <>
@@ -103,6 +115,8 @@ void Property::set(QColor color)
 
     _data = list;
     _type = ptColor;
+
+    emit changed();
 }
 
 template <>
@@ -110,6 +124,8 @@ void Property::set(float val)
 {
     _data = AtomList(val);
     _type = ptFloat;
+
+    emit changed();
 }
 
 template <>
@@ -117,6 +133,8 @@ void Property::set(double val)
 {
     _data = AtomList(val);
     _type = ptFloat;
+
+    emit changed();
 }
 
 template <>
@@ -124,6 +142,8 @@ void Property::set(t_symbol* s)
 {
     _data = AtomList(s);
     _type = ptSymbol;
+
+    emit changed();
 }
 
 template <>
@@ -131,6 +151,8 @@ void Property::set(std::string string)
 {
     _data = AtomList(gensym(string.c_str()));
     _type = ptList;
+
+    emit changed();
 }
 
 template <>
@@ -138,6 +160,8 @@ void Property::set(int val)
 {
     _data = AtomList(val);
     _type = ptFloat;
+
+    emit changed();
 }
 
 template <>
@@ -156,9 +180,7 @@ void Property::set(QStringList strlist)
             else
 
                 list->append(Atom(gensym(str.toStdString().c_str())));
-        }
-        else
-        {
+        } else {
             //fix missing spaces
             list->append(Atom(gensym("")));
         }
@@ -169,6 +191,8 @@ void Property::set(QStringList strlist)
     //check, different type for text files
     _type = ptList;
     _data = (*list);
+
+    emit changed();
 }
 
 template <>
@@ -177,5 +201,7 @@ void Property::set(QString string)
     //    data_ = AtomList(gensym(string.toStdString().c_str()));
     //    type_ = ptString;
     Property::set(string.split(" "));
+
+    emit changed();
 }
 }

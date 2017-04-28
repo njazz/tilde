@@ -9,8 +9,13 @@
 #include <map>
 
 #include <QDebug>
+#include <QObject>
+
+
 
 namespace qtpd {
+
+class UIObject;
 
 typedef std::map<std::string, Property*> UIPropertyData;
 typedef std::map<std::string, UIPropertyData*> UIPropertyGroups;
@@ -18,7 +23,9 @@ typedef std::map<std::string, UIPropertyData*> UIPropertyGroups;
 typedef std::map<std::string, Property*>::iterator UIPropertyDataIterator;
 typedef std::map<std::string, UIPropertyData*>::iterator UIPropertyGroupIterator;
 
-typedef void (*t_PropertyListener)(void) ;
+#define PROPERTY_LISTENER(x, y) connect(_objectDataModel.properties()->get(x), &Property::changed, this, y)
+
+//typedef void (UIObject:: * t_PropertyListener)() ;
 
 ////
 /// \brief yet another property handling class for ui object. List
@@ -61,10 +68,13 @@ public:
     template <typename U>
     void set(std::string pName, U value)
     {
-        if (this->_data[pName]) {
-            this->_data[pName]->set(value);
-            emit propertyChangedSignal(QString(pName.c_str()));
+        if (_data[pName]) {
+            _data[pName]->set(value);
+//            emit propertyChangedSignal(QString(pName.c_str()));
+
+            emit get(pName.c_str())->changed();
         }
+
     };
 
     Property* get(QString pName);
@@ -115,19 +125,20 @@ public:
     ///
     QString extractFromPdFileString(QString input);
 
-    void addListener(QString name, QObject *obj, t_PropertyListener func)
-    {
-        Property *prop = get(name);
+//    void addListener(QString name, QObject *obj, t_PropertyListener func)
+//    {
+//        Property *prop = get(name);
 
-        if (prop)
-        {
-            connect(prop, &Property::changed, obj, func);
+//        if (prop)
+//        {
+//            connect(prop, &Property::changed, (UIObject*)obj, func);
 
-        }
+//        }
 
-    }
+//    }
+
 signals:
-    void propertyChangedSignal(QString name);
+    void propertyChangedSignal();
 };
 }
 

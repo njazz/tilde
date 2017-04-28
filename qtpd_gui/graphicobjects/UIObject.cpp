@@ -74,7 +74,7 @@ void UIObject::resizeBox(int dx, int dy)
 
 void UIObject::initProperties()
 {
-    connect(_objectDataModel.properties(), &PropertyList::propertyChangedSignal, this, &UIObject::propertyChanged);
+    //connect(_objectDataModel.properties(), &PropertyList::propertyChangedSignal, this, &UIObject::propertyChanged);
 
     _objectDataModel.properties()->create("Size", "Box", "0.1", boundingRect().size());
     _objectDataModel.properties()->create("Position", "Box", "0.1", pos());
@@ -85,7 +85,40 @@ void UIObject::initProperties()
     _objectDataModel.properties()->create("ReceiveSymbol", "Preset", "0.1", gensym(""));
 
     _objectDataModel.properties()->create("BorderColor", "Color", "0.1", QColor(192, 192, 192, 255));
+
+    //_objectDataModel.properties()->addListener("Size", this, &UIObject::propertySize);
+
+    //connect(_objectDataModel.properties()->get("Size"), &Property::changed, this, &UIObject::propertySize);
+
+    PROPERTY_LISTENER("Size",&UIObject::propertySize);
+    PROPERTY_LISTENER("Font",&UIObject::propertyUpdate);
+    PROPERTY_LISTENER("BorderColor",&UIObject::propertyUpdate);
 }
+
+void UIObject::propertySize()
+{
+    Property* o = (Property*) QObject::sender();
+    QSize size = o->asQSize();
+
+    if (size.width()<20) {size.setWidth(20);}
+    if (size.height()<20) {size.setHeight(20);}
+
+    setSize(size);
+    resizeEvent();
+
+    update();
+
+    //cmp_post("property size updated");
+}
+
+void UIObject::propertyUpdate()
+{
+    update();
+
+    cmp_post("property updated");
+}
+
+
 
 PropertyList* UIObject::properties()
 {
@@ -481,6 +514,8 @@ void UIObject::s_repaint() //needed for proper threading
 
 void UIObject::propertyChanged(QString pname)
 {
+
+    // DEPRECATED
 
     if (pname == "Size")
         setSize(properties()->get("Size")->asQSize());

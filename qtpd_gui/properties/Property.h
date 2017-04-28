@@ -238,7 +238,7 @@ public:
         return ret;
     }
 signals:
-    void changed(); //QString propertyName);
+    void changed();
 };
 }
 
