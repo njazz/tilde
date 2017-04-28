@@ -89,11 +89,38 @@ public:
         properties()->create("Value", "Matrix", "0.1", QString("3")); ///> value property works depending on other settings
 
         PROPERTY_LISTENER("Value", &UIMatrix::propertyUpdate);
+        PROPERTY_LISTENER("Rows", &UIMatrix::propertyMatrixSize);
+        PROPERTY_LISTENER("Columns", &UIMatrix::propertyMatrixSize);
     }
 
     Q_SLOT void propertyUpdate()
     {
         update();
+    }
+
+    Q_SLOT void propertyMatrixSize()
+    {
+        if (matrixType() == mt_HRadio) {
+            int count = properties()->get("Columns")->asInt();
+            if (count < 1)
+                count = 1;
+            int bwidth = width() / count;
+            if (bwidth < 20)
+                bwidth = 20;
+
+            _objectDataModel.setObjectSize(os_FixedHeight, bwidth * count, bwidth);
+        }
+
+        if (matrixType() == mt_VRadio) {
+            int count = properties()->get("Rows")->asInt();
+            if (count < 1)
+                count = 1;
+            int bheight = height() / count;
+            if (bheight < 20)
+                bheight = 20;
+
+            _objectDataModel.setObjectSize(os_FixedWidth, bheight, bheight * count);
+        }
     }
     // ------------------------------------------
 
@@ -306,15 +333,30 @@ public:
                 int v = floor(ev->pos().x() / width() * count);
 
                 properties()->set("Value", v);
+
+                std::string val_str = "set "+std::to_string(v);
+                cmp_sendstring((t_pd*)pdObject(), val_str);
+                cmp_sendstring((t_pd*)pdObject(), "bang");
+
             }
 
-            if (getEditMode() != em_Unlocked) {
+            if (matrixType() == mt_VRadio) {
+                int count = properties()->get("Rows")->asInt();
+                if (count < 1)
+                    count = 1;
+                int v = floor(ev->pos().y() / height() * count);
 
-                if (!pdObject()) {
-                    qDebug("msg: bad pd object!");
-                } else {
-                    cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
-                }
+                properties()->set("Value", v);
+
+                std::string val_str = "set "+std::to_string(v);
+                cmp_sendstring((t_pd*)pdObject(), val_str);
+                cmp_sendstring((t_pd*)pdObject(), "bang");
+            }
+
+            if (!pdObject()) {
+                qDebug("msg: bad pd object!");
+            } else {
+                cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
             }
         }
     }

@@ -169,7 +169,8 @@ SOURCES += \
     pdlib.cpp \
 #
     ui_objects/ui_sliders.cpp \
-    ui_objects/pdsignal.cpp
+    ui_objects/pdsignal.cpp \
+    ui_objects/ui_matrix.cpp
 
 macx:SOURCES += src/s_audio_pa.c
 unix:SOURCES += src/s_audio_pa.c

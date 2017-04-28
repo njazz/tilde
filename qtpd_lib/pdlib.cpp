@@ -33,6 +33,7 @@ extern "C" void setup_ui0x2emsg(void);
 extern "C" void setup_ui0x2efloat(void);
 extern "C" void setup_ui0x2escript(void);
 extern "C" void setup_ui0x2esliders(void);
+extern "C" void setup_ui0x2ematrix(void);
 
 extern "C" void setup_pdclass(void);
 extern "C" void setup_pdinstance(void);
@@ -133,6 +134,7 @@ void cmp_pdinit()
     setup_ui0x2etoggle();
     setup_ui0x2escript();
     setup_ui0x2esliders();
+    setup_ui0x2ematrix();
 
     setup_pdclass();
     setup_pdinstance();
