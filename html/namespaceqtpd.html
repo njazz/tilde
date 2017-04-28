@@ -134,6 +134,8 @@ Classes</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gui object: float number box (ui.float)  <a href="classqtpd_1_1_u_i_float.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_link.html">UILink</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gui object: comment box (ui.text)  <a href="classqtpd_1_1_u_i_link.html#details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_matrix.html">UIMatrix</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gui object: ui.matrix - substitute all objects with multiple buttons (hradio, vradio, ui.matrix)  <a href="classqtpd_1_1_u_i_matrix.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_message.html">UIMessage</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gui object: message box (ui.msg)  <a href="classqtpd_1_1_u_i_message.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script.html">UIScript</a></td></tr>
@@ -229,24 +231,41 @@ Enumerations</h2></td></tr>
 <a class="el" href="namespaceqtpd.html#a2378a83cd6f032332dd14c885bc24bb8a4d09c9cd5c8635082657b2a0af52f305">portOutlet</a>
  }</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">port type - in or out  <a href="namespaceqtpd.html#a2378a83cd6f032332dd14c885bc24bb8">More...</a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3">t_objectSize</a> { <a class="el" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3a0af9814af3758d6fd8a9c5de202f937e">os_Fixed</a>, 
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3">t_objectSize</a> { <br/>
+&#160;&#160;<a class="el" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3a0af9814af3758d6fd8a9c5de202f937e">os_Fixed</a>, 
 <a class="el" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3a71f8acecda7a72aa0247ed121da53c1e">os_FixedHeight</a>, 
+<a class="el" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3aa94bc22d356bbb877198efa9c84c2217">os_FixedWidth</a>, 
 <a class="el" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3a57b863bd243ae8d733c28c3ac9b6c631">os_Free</a>, 
-<a class="el" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3a6f0eb67fd8384b3f74a50f6f8b1950b1">os_Square</a>
+<br/>
+&#160;&#160;<a class="el" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3a6f0eb67fd8384b3f74a50f6f8b1950b1">os_Square</a>
+<br/>
  }</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">object box size constraints  <a href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3a">patchcordTypeEnum</a> { <a class="el" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3aa8ba461362f560cd18d438c3c02fd9e73">cm_pt_anything</a>, 
 <a class="el" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3aa26f0769dd61021da2d4af0555b3e3e78">cm_pt_signal</a>
  }</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a4755ed0e035538f41ccaa52507907924">UIPropertyType</a> { <br/>
-&#160;&#160;<a class="el" href="namespaceqtpd.html#a4755ed0e035538f41ccaa52507907924a9204cf477b075838a006d92db47f8bad">ptFloat</a>, 
-<a class="el" href="namespaceqtpd.html#a4755ed0e035538f41ccaa52507907924a7cd5271f33aa825c86ae6c1dc61d8eb9">ptSymbol</a>, 
-<a class="el" href="namespaceqtpd.html#a4755ed0e035538f41ccaa52507907924a1b4e6389dfeee2281578375adf1a3ade">ptList</a>, 
-<a class="el" href="namespaceqtpd.html#a4755ed0e035538f41ccaa52507907924a05802582f676470e5c0fc990afc5acd1">ptString</a>, 
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a40c698b26106feb24ba7172b4fdefecf">uiMatrixType</a> { <br/>
+&#160;&#160;<a class="el" href="namespaceqtpd.html#a40c698b26106feb24ba7172b4fdefecfa12d85727b14fe7792867c399c0672f1d">mt_HRadio</a>, 
+<a class="el" href="namespaceqtpd.html#a40c698b26106feb24ba7172b4fdefecfa761b2a8d723a21636c177bc7258bd0eb">mt_VRadio</a>, 
+<a class="el" href="namespaceqtpd.html#a40c698b26106feb24ba7172b4fdefecfa9649e94813daa5573cdb73f024146bf8">mt_MatrixToggle</a>, 
+<a class="el" href="namespaceqtpd.html#a40c698b26106feb24ba7172b4fdefecfa095f9eee389878c3e71ddd5ce6d87339">mt_MatrixButton</a>, 
 <br/>
-&#160;&#160;<a class="el" href="namespaceqtpd.html#a4755ed0e035538f41ccaa52507907924a5faea4b77705a2f874318f9043952138">ptVector</a>, 
+&#160;&#160;<a class="el" href="namespaceqtpd.html#a40c698b26106feb24ba7172b4fdefecfa1f72ec30f46d0af9acf53f436aa7fcbe">mt_MatrixToggleMomentary</a>, 
+<a class="el" href="namespaceqtpd.html#a40c698b26106feb24ba7172b4fdefecfaa1eebcf74848562a23f4ac55d347a731">mt_MatrixButtonMomentary</a>
+<br/>
+ }</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a4755ed0e035538f41ccaa52507907924">UIPropertyType</a> { <br/>
+&#160;&#160;<a class="el" href="namespaceqtpd.html#a4755ed0e035538f41ccaa52507907924afb16cb6509d09a5789c9ce4e003d49e2">ptBool</a>, 
+<a class="el" href="namespaceqtpd.html#a4755ed0e035538f41ccaa52507907924a9204cf477b075838a006d92db47f8bad">ptFloat</a>, 
+<a class="el" href="namespaceqtpd.html#a4755ed0e035538f41ccaa52507907924a01a782ded89c23e0bfca52ba7cf03ef2">ptInt</a>, 
+<a class="el" href="namespaceqtpd.html#a4755ed0e035538f41ccaa52507907924a7cd5271f33aa825c86ae6c1dc61d8eb9">ptSymbol</a>, 
+<br/>
+&#160;&#160;<a class="el" href="namespaceqtpd.html#a4755ed0e035538f41ccaa52507907924a1b4e6389dfeee2281578375adf1a3ade">ptList</a>, 
+<a class="el" href="namespaceqtpd.html#a4755ed0e035538f41ccaa52507907924a05802582f676470e5c0fc990afc5acd1">ptString</a>, 
+<a class="el" href="namespaceqtpd.html#a4755ed0e035538f41ccaa52507907924a5faea4b77705a2f874318f9043952138">ptVector</a>, 
 <a class="el" href="namespaceqtpd.html#a4755ed0e035538f41ccaa52507907924ab2633ff49aac6a1bdb7db00881f42ce9">ptColor</a>, 
-<a class="el" href="namespaceqtpd.html#a4755ed0e035538f41ccaa52507907924a7de8822cb2b80ce6d38d57ba34692194">ptText</a>
+<br/>
+&#160;&#160;<a class="el" href="namespaceqtpd.html#a4755ed0e035538f41ccaa52507907924a7de8822cb2b80ce6d38d57ba34692194">ptText</a>
 <br/>
  }</td></tr>
 <tr><td colspan="2"><h2><a name="var-members"></a>
@@ -548,9 +567,41 @@ Variables</h2></td></tr>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="a86591890dbdc21ee6f482edc5b5726d3a71f8acecda7a72aa0247ed121da53c1e"></a><!-- doxytag: member="os_FixedHeight" ref="a86591890dbdc21ee6f482edc5b5726d3a71f8acecda7a72aa0247ed121da53c1e" args="" -->os_FixedHeight</em>&nbsp;</td><td>
 </td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a86591890dbdc21ee6f482edc5b5726d3aa94bc22d356bbb877198efa9c84c2217"></a><!-- doxytag: member="os_FixedWidth" ref="a86591890dbdc21ee6f482edc5b5726d3aa94bc22d356bbb877198efa9c84c2217" args="" -->os_FixedWidth</em>&nbsp;</td><td>
+</td></tr>
 <tr><td valign="top"><em><a class="anchor" id="a86591890dbdc21ee6f482edc5b5726d3a57b863bd243ae8d733c28c3ac9b6c631"></a><!-- doxytag: member="os_Free" ref="a86591890dbdc21ee6f482edc5b5726d3a57b863bd243ae8d733c28c3ac9b6c631" args="" -->os_Free</em>&nbsp;</td><td>
+<p>&gt; this is used only in vertical radio (ui.matrix) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="a86591890dbdc21ee6f482edc5b5726d3a6f0eb67fd8384b3f74a50f6f8b1950b1"></a><!-- doxytag: member="os_Square" ref="a86591890dbdc21ee6f482edc5b5726d3a6f0eb67fd8384b3f74a50f6f8b1950b1" args="" -->os_Square</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a40c698b26106feb24ba7172b4fdefecf"></a><!-- doxytag: member="qtpd::uiMatrixType" ref="a40c698b26106feb24ba7172b4fdefecf" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespaceqtpd.html#a40c698b26106feb24ba7172b4fdefecf">qtpd::uiMatrixType</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a40c698b26106feb24ba7172b4fdefecfa12d85727b14fe7792867c399c0672f1d"></a><!-- doxytag: member="mt_HRadio" ref="a40c698b26106feb24ba7172b4fdefecfa12d85727b14fe7792867c399c0672f1d" args="" -->mt_HRadio</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a40c698b26106feb24ba7172b4fdefecfa761b2a8d723a21636c177bc7258bd0eb"></a><!-- doxytag: member="mt_VRadio" ref="a40c698b26106feb24ba7172b4fdefecfa761b2a8d723a21636c177bc7258bd0eb" args="" -->mt_VRadio</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a40c698b26106feb24ba7172b4fdefecfa9649e94813daa5573cdb73f024146bf8"></a><!-- doxytag: member="mt_MatrixToggle" ref="a40c698b26106feb24ba7172b4fdefecfa9649e94813daa5573cdb73f024146bf8" args="" -->mt_MatrixToggle</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a40c698b26106feb24ba7172b4fdefecfa095f9eee389878c3e71ddd5ce6d87339"></a><!-- doxytag: member="mt_MatrixButton" ref="a40c698b26106feb24ba7172b4fdefecfa095f9eee389878c3e71ddd5ce6d87339" args="" -->mt_MatrixButton</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a40c698b26106feb24ba7172b4fdefecfa1f72ec30f46d0af9acf53f436aa7fcbe"></a><!-- doxytag: member="mt_MatrixToggleMomentary" ref="a40c698b26106feb24ba7172b4fdefecfa1f72ec30f46d0af9acf53f436aa7fcbe" args="" -->mt_MatrixToggleMomentary</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a40c698b26106feb24ba7172b4fdefecfaa1eebcf74848562a23f4ac55d347a731"></a><!-- doxytag: member="mt_MatrixButtonMomentary" ref="a40c698b26106feb24ba7172b4fdefecfaa1eebcf74848562a23f4ac55d347a731" args="" -->mt_MatrixButtonMomentary</em>&nbsp;</td><td>
 </td></tr>
 </table>
 </dd>
@@ -592,7 +643,11 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a4755ed0e035538f41ccaa52507907924afb16cb6509d09a5789c9ce4e003d49e2"></a><!-- doxytag: member="ptBool" ref="a4755ed0e035538f41ccaa52507907924afb16cb6509d09a5789c9ce4e003d49e2" args="" -->ptBool</em>&nbsp;</td><td>
+</td></tr>
 <tr><td valign="top"><em><a class="anchor" id="a4755ed0e035538f41ccaa52507907924a9204cf477b075838a006d92db47f8bad"></a><!-- doxytag: member="ptFloat" ref="a4755ed0e035538f41ccaa52507907924a9204cf477b075838a006d92db47f8bad" args="" -->ptFloat</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a4755ed0e035538f41ccaa52507907924a01a782ded89c23e0bfca52ba7cf03ef2"></a><!-- doxytag: member="ptInt" ref="a4755ed0e035538f41ccaa52507907924a01a782ded89c23e0bfca52ba7cf03ef2" args="" -->ptInt</em>&nbsp;</td><td>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="a4755ed0e035538f41ccaa52507907924a7cd5271f33aa825c86ae6c1dc61d8eb9"></a><!-- doxytag: member="ptSymbol" ref="a4755ed0e035538f41ccaa52507907924a7cd5271f33aa825c86ae6c1dc61d8eb9" args="" -->ptSymbol</em>&nbsp;</td><td>
 </td></tr>
@@ -645,7 +700,7 @@ Variables</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 27 2017 16:11:24 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 28 2017 15:33:22 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

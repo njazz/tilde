@@ -20,6 +20,8 @@ var searchData=
   ['uiitem_2eh',['UIItem.h',['../_u_i_item_8h.html',1,'']]],
   ['uilink_2ecpp',['UILink.cpp',['../_u_i_link_8cpp.html',1,'']]],
   ['uilink_2eh',['UILink.h',['../_u_i_link_8h.html',1,'']]],
+  ['uimatrix_2ecpp',['UIMatrix.cpp',['../_u_i_matrix_8cpp.html',1,'']]],
+  ['uimatrix_2eh',['UIMatrix.h',['../_u_i_matrix_8h.html',1,'']]],
   ['uimessage_2ecpp',['UIMessage.cpp',['../_u_i_message_8cpp.html',1,'']]],
   ['uimessage_2eh',['UIMessage.h',['../_u_i_message_8h.html',1,'']]],
   ['uimethod_2ecpp',['UIMethod.cpp',['../_u_i_method_8cpp.html',1,'']]],

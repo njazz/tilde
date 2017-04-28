@@ -21,6 +21,8 @@ var searchData=
   ['downsample',['downsample',['../struct__resample.html#ab1119ec2c6c5a9ec40365bb624494a94',1,'_resample']]],
   ['dragobject',['dragObject',['../classqtpd_1_1_canvas.html#aa6b4a032d370f6ca85319752ad9fd0ab',1,'qtpd::Canvas']]],
   ['dragoffset',['dragOffset',['../classqtpd_1_1_u_i_item.html#afa31f6c6b2497b60610ad8325325b843',1,'qtpd::UIItem']]],
+  ['drawbox',['drawBox',['../classqtpd_1_1_u_i_matrix.html#ae21b172aaf057ccdc30f082e5e1ace2d',1,'qtpd::UIMatrix']]],
+  ['drawcross',['drawCross',['../classqtpd_1_1_u_i_matrix.html#a6db855111d2205f1a12d05f56bb5e1ce',1,'qtpd::UIMatrix']]],
   ['ds_5farraytemplate',['ds_arraytemplate',['../struct__dataslot.html#ad44a0706ec009dbd36c60f139335a3ca',1,'_dataslot']]],
   ['ds_5fname',['ds_name',['../struct__dataslot.html#a0f550635cc0f956a40ba027ca27b0ba4',1,'_dataslot']]],
   ['ds_5ftype',['ds_type',['../struct__dataslot.html#a29e25f81e9e7b6ba7901b9da6eb49dfd',1,'_dataslot']]],
