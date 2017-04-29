@@ -18,7 +18,6 @@ var searchData=
   ['deselectpatchcords',['deselectPatchcords',['../classqtpd_1_1canvas_data.html#a1a523e4168224ee5b47aba56cea754c1',1,'qtpd::canvasData']]],
   ['done',['done',['../classqtpd_1_1_object_maker.html#ab8daa1f2d71f2d580b515ad430686ea8',1,'qtpd::ObjectMaker']]],
   ['dragobject',['dragObject',['../classqtpd_1_1_canvas.html#aa6b4a032d370f6ca85319752ad9fd0ab',1,'qtpd::Canvas']]],
-  ['drawbackground',['drawBackground',['../classqtpd_1_1_canvas.html#ad3413ead809bac21a510553fe4ce8269',1,'qtpd::Canvas']]],
   ['drawbox',['drawBox',['../classqtpd_1_1_u_i_matrix.html#ae21b172aaf057ccdc30f082e5e1ace2d',1,'qtpd::UIMatrix']]],
   ['drawcross',['drawCross',['../classqtpd_1_1_u_i_matrix.html#a6db855111d2205f1a12d05f56bb5e1ce',1,'qtpd::UIMatrix']]],
   ['dsp_5fadd',['dsp_add',['../m__pd_8h.html#aa3a5b35ded678e2743e3a17458af0df6',1,'m_pd.h']]],

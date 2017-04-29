@@ -45,7 +45,6 @@ var searchData=
   ['scalar_5fredraw',['scalar_redraw',['../g__canvas_8h.html#a8d49cd2ec1062bb584b8631710e071e4',1,'g_canvas.h']]],
   ['sched_5fgeteventno',['sched_geteventno',['../m__pd_8h.html#a91e87fbff0731002ec50573c97b52e77',1,'m_pd.h']]],
   ['scriptdata',['scriptData',['../class_u_i_script_common.html#aab22109c007651adea2e34d0a65acbb7',1,'UIScriptCommon']]],
-  ['scrollcontentsby',['scrollContentsBy',['../classqtpd_1_1_canvas.html#a5f6d5c4aaf6ec6e3e4e54347d30a3da4',1,'qtpd::Canvas']]],
   ['sel_5fnext',['sel_next',['../struct__selection.html#a7755b96133489ff250c49bb3e03ef113',1,'_selection']]],
   ['sel_5fwhat',['sel_what',['../struct__selection.html#a6e9a7ca0c21e0a08244a6584a27b888b',1,'_selection']]],
   ['select',['select',['../classqtpd_1_1_u_i_item.html#a73739a4c2f2883ac10ab7087deaf57af',1,'qtpd::UIItem']]],
