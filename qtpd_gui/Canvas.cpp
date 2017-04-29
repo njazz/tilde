@@ -27,7 +27,7 @@ Canvas::Canvas(QGraphicsView* parent)
     _fileName = "";
 
     _canvasEditMode = new t_editMode;
-//    qDebug() << "new em ref";
+    //    qDebug() << "new em ref";
 
     Canvas::setEditMode(em_Unlocked);
 
@@ -488,7 +488,7 @@ void Canvas::deletePatchcordsFor(UIItem* obj)
             ++it;
     }
 
-    //viewport()->update();
+    viewport()->update();
 }
 
 ////
@@ -545,14 +545,17 @@ void Canvas::deleteSelectedBoxes()
 ////
 /// \brief delete all selected patchcords()
 ///
-void Canvas::delSelectedPatchcords()
+void Canvas::deleteSelectedPatchcords()
 {
+    qDebug() << "del selected patchcords";
+
     //cleanup
     //for (int i=0;i<data_.patchcords()->size(); i++)
     std::vector<Patchcord*>::iterator it;
     for (it = _canvasData.patchcords()->begin(); it != _canvasData.patchcords()->end();) {
-        if ((*it)->isSelected()) {
-            Patchcord* p = *it;
+        Patchcord* p = *it;
+
+        if (p->isSelected()) {
 
             t_object* obj1 = (t_object*)p->obj1()->pdObject();
             t_object* obj2 = (t_object*)p->obj2()->pdObject();
@@ -568,12 +571,18 @@ void Canvas::delSelectedPatchcords()
             } else
                 qDebug("object error. didn't delete pd patchcord");
 
+            scene()->removeItem(p);
+            //qDebug() << "remove item";
+
             it = _canvasData.patchcords()->erase(it);
+
+
         } else
             ++it;
     }
 
-    //viewport()->update();
+    _canvasData.selectedPatchcords()->clear();
+    update();
 }
 
 void Canvas::setEditMode(t_editMode mode)
@@ -942,8 +951,6 @@ void Canvas::setWindowSize(QSize wsize)
 {
     _windowSize = wsize;
 }
-
-
 
 // ==========================================
 

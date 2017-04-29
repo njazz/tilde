@@ -213,7 +213,7 @@ public:
     ////
     /// \brief delete all selected patchcords
     ///
-    void delSelectedPatchcords();
+    void deleteSelectedPatchcords();
 
     /** @}*/
 
