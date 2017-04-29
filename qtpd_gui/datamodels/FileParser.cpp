@@ -51,10 +51,10 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
         //box_width lower upper 1 label send receive
 
         //check bounds
-        int lBoxWidth = ((QString)list.at(4)).toInt();
-        float lMinimum = ((QString)list.at(5)).toFloat();
-        float lMaximum = ((QString)list.at(6)).toFloat();
-        int lInit = ((QString)list.at(7)).toInt();
+        //int lBoxWidth = ((QString)list.at(4)).toInt();
+        //float lMinimum = ((QString)list.at(5)).toFloat();
+        //float lMaximum = ((QString)list.at(6)).toFloat();
+        //int lInit = ((QString)list.at(7)).toInt();
         QString lLabel = ((QString)list.at(8));
         QString lSend = ((QString)list.at(9));
         QString lReceive = ((QString)list.at(10));
@@ -191,7 +191,7 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
 
         //temporary
         //check bounds
-        int lBoxWidth = ((QString)list.at(4)).toInt(); //?
+        //int lBoxWidth = ((QString)list.at(4)).toInt(); //?
         QString lSend = ((QString)list.at(7));
         QString lReceive = ((QString)list.at(8));
         QString lLabel = ((QString)list.at(9));

@@ -7,6 +7,7 @@ namespace qtpd {
 
 UIFloat::UIFloat()
 {
+
     setSize(35, 20);
     _objectDataModel.setObjectSize(os_FixedHeight, 30, 20);
 

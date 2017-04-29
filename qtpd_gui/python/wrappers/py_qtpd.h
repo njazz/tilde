@@ -246,7 +246,11 @@ private:
     QStringList* _list;
 
 public:
-    explicit pyLocal(QObject* parent = 0){};
+    explicit pyLocal(QObject* parent = 0){
+        _canvas = 0;
+        _pdObject = 0;
+        _list = 0;
+    };
 
     void setCanvas(Canvas* c)
     {

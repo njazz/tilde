@@ -59,7 +59,7 @@ void UISubpatch::setSubpatchWindow(QMainWindow* cwindow)
         //    //_subCanvas->show();
         //_subCanvas->setParent(test);
 
-        QGraphicsScene* sc = new QGraphicsScene();
+        QGraphicsScene* sc;// = new QGraphicsScene();
         sc = _subCanvas->scene();
 
         QGraphicsView* v = new QGraphicsView;

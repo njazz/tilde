@@ -8,6 +8,8 @@
 namespace qtpd {
 UIMethod::UIMethod()
 {
+    _opInstance = 0;
+    _opClass = 0;
 
     setHeight(20);
     deselect(); // = false;

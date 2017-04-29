@@ -8,6 +8,11 @@
 namespace qtpd {
 UISignal::UISignal()
 {
+    _pdreceive_object = 0;
+    _pdsend_object = 0;
+    _opClass = 0;
+    _opInstance = 0;
+
     setHeight(20);
     deselect();
     setSubpatchWindow(0);
@@ -47,7 +52,7 @@ UIObject* UISignal::createObject(QString objectData, t_canvas* pdCanvas, QGraphi
     }
 
     t_object* new_obj = 0;
-    int in_c = 0, out_c = 0;
+    //int in_c = 0, out_c = 0;
 
     b->setHelpName("pdsignal~-help.pd");
 

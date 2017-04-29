@@ -8,6 +8,7 @@ namespace qtpd {
 UIClass::UIClass()
 {
     //setPdObjectName("pdclass");
+    _dynamicClass = 0;
 
     setHeight(20);
     deselect();

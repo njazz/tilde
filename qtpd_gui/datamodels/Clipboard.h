@@ -62,13 +62,16 @@ public:
             qDebug() << "clipboard: out of range";
     }
 
+    // change to pointer?
     QString at(int idx)
     {
+        QString ret = "";
+
         if (idx < _data.size())
             return _data[idx];
         else
             qDebug() << "clipboard: out of range";
-        return "";
+        return ret;
     }
 
 signals:

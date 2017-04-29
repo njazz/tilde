@@ -8,6 +8,7 @@ namespace qtpd {
 UIInstance::UIInstance()
 {
     //setPdObjectName("pdinstance");
+    _out1 = 0;
 
     setHeight(20);
     deselect(); // = false;

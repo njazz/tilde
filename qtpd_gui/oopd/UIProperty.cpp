@@ -8,6 +8,9 @@
 namespace qtpd {
 UIProperty::UIProperty()
 {
+    _opInstance = 0;
+    _opClass = 0;
+
     setHeight(20);
     deselect(); // = false;
     setErrorBox(false);
