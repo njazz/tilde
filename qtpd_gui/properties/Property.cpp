@@ -190,7 +190,7 @@ void Property::set(QStringList strlist)
     emit changed();
 }
 
-template <>
+//template <>
 void Property::set(QString string)
 {
     //    data_ = AtomList(gensym(string.toStdString().c_str()));

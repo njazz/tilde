@@ -55,6 +55,9 @@ public:
     template <typename T>
     void set(T val);
 
+    //should be here for precompiled headers
+    void set(QString string);
+
     explicit Property(){};
 
     ////

@@ -49,7 +49,7 @@ SOURCES += python/PythonQtScriptingConsole.cpp \
 HEADERS += \
     python/PythonQtScriptingConsole.h \
     python/headers/PythonQtStdDecorators.h \
-    python/headers/PythonQtDoc.h \
+    #python/headers/PythonQtDoc.h \ #??
     python/headers/PythonQt.h \
     python/headers/PythonQtClassInfo.h \
     python/headers/PythonQtClassWrapper.h \
@@ -95,6 +95,9 @@ HEADERS += \
     INCLUDEPATH +=     python/headers/
 
 }
+
+macx:PRECOMPILED_HEADER = _headers.h
+macx:CONFIG += precompile_header
 
 SOURCES += main.cpp\
 #
@@ -275,7 +278,7 @@ INCLUDEPATH += \
     graphicobjects/ \
     datamodels/
 
-macx:PRECOMPILED_HEADER = _headers.h
+
 
 #$$PWD
 

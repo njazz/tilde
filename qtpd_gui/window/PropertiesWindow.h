@@ -16,6 +16,10 @@
 #include <map>
 
 namespace qtpd {
+
+////
+/// \brief Properties window class
+///
 class PropertiesWindow : public QWidget {
 
 private:

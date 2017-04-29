@@ -6,14 +6,17 @@
 
 #include <QWidget>
 
+namespace qtpd{
 ////
 /// \brief Stub for generic text editor
 /// \deprecated TODO: merge / unify with uiscripteditor
+///
 ///
 class UITextEditor
 {
 public:
     UITextEditor();
 };
+}
 
 #endif // UITEXTEDITOR_H
