@@ -187,6 +187,17 @@ public:
 #undef MTP
     }
 
+    int radioSize()
+    {
+        if (matrixType() == mt_HRadio) {
+            return properties()->get("Columns")->asInt();
+        }
+        if (matrixType() == mt_VRadio) {
+            return properties()->get("Rows")->asInt();
+        }
+        return -1;
+    }
+
     QRect rectFromMatrixPos(QPoint matrixPos)
     {
         int btnCount = properties()->get("Columns")->asInt();
@@ -391,9 +402,13 @@ public:
 
         if ((x->matrixType() == mt_HRadio) || (x->matrixType() == mt_VRadio))
             if (msg.size() > 0) {
-                if (msg.at(0).isFloat())
-                    //x->_value = msg.at(0).asFloat() ;
-                    x->properties()->set("Value", msg.at(0).asFloat());
+                if (msg.at(0).isFloat()) {
+                    int v = msg.at(0).asInt();
+                    if (v > (x->radioSize() - 1))
+                        v = x->radioSize() - 1;
+
+                    x->properties()->set("Value", v);
+                }
             }
 
         emit x->callRepaint();

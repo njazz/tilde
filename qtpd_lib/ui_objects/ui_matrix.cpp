@@ -13,6 +13,8 @@
 #include "../ceammc-lib/ceammc_atomlist.h"
 #include <stdlib.h>
 
+#include "math.h"
+
 using namespace ceammc;
 
 static t_class* ui_matrix_class;
@@ -41,9 +43,10 @@ extern "C" void uimatrix_set_updateUI(t_pd* x, void* obj, t_updateUI func)
 static void uimatrix_set(t_ui_matrix* x, t_symbol* s, int argc, t_atom* argv)
 {
     if (argc)
-        x->val = int(AtomList(argc, argv).at(0).asFloat());
+        x->val = floor(AtomList(argc, argv).at(0).asFloat());
 
-    AtomList msg = AtomList(Atom(x->val));
+    //cautionary
+    AtomList msg = AtomList(Atom(floor(x->val)));
 
     if (x->updateUI)
         x->updateUI(x->uiobj, msg);
@@ -56,7 +59,7 @@ static void uimatrix_bang(t_ui_matrix* x)
 
 static void uimatrix_float(t_ui_matrix* x, t_float f)
 {
-    x->val = f;
+    x->val = floor(f);
 
     AtomList msg = AtomList(Atom(x->val));
 
