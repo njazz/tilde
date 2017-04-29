@@ -45,6 +45,7 @@ var searchData=
   ['t_5fparentgetrectfn',['t_parentgetrectfn',['../g__canvas_8h.html#a37274af273b0db38821e70c3495b0de6',1,'g_canvas.h']]],
   ['t_5fparentselectfn',['t_parentselectfn',['../g__canvas_8h.html#a4d0fce8e455949abfd2115786c8aa2fe',1,'g_canvas.h']]],
   ['t_5fparentvisfn',['t_parentvisfn',['../g__canvas_8h.html#a1abb78e2359c7fba8fa38498b8c22fed',1,'g_canvas.h']]],
+  ['t_5fpatchcordasnumbers',['t_patchcordAsNumbers',['../namespaceqtpd.html#a4d975c32d29ce6a398847118e1826bd5',1,'qtpd']]],
   ['t_5fpd',['t_pd',['../m__pd_8h.html#ac085bef486c0e262349075ffce8a9752',1,'m_pd.h']]],
   ['t_5fperfroutine',['t_perfroutine',['../m__pd_8h.html#ad1bc58df327774373ee9e10ad9026564',1,'m_pd.h']]],
   ['t_5fprinthook',['t_printhook',['../_pd_link_8h.html#a60e4f3209d8f267b0aa06105b0b1a4ff',1,'PdLink.h']]],

@@ -103,7 +103,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00019"></a>00019 
 <a name="l00020"></a>00020 <span class="keyword">namespace </span>qtpd {
 <a name="l00021"></a>00021 
-<a name="l00025"></a><a class="code" href="classqtpd_1_1_u_i_subpatch.html">00025</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_u_i_subpatch.html" title="gui object: standard object box">UISubpatch</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> {
+<a name="l00025"></a><a class="code" href="classqtpd_1_1_u_i_subpatch.html">00025</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_u_i_subpatch.html" title="gui object: standard object box for subpatch">UISubpatch</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a> {
 <a name="l00026"></a>00026 
 <a name="l00027"></a>00027     Q_OBJECT
 <a name="l00028"></a>00028 
@@ -117,13 +117,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00036"></a>00036 <span class="keyword">public</span>:
 <a name="l00037"></a>00037     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_u_i_subpatch.html#adf6e2b1064c7380bd82f1065ffee5a02">UISubpatch</a>();
 <a name="l00038"></a>00038 
-<a name="l00039"></a><a class="code" href="classqtpd_1_1_u_i_subpatch.html#a846fd352f05a360bfbb4480ef432bb0b">00039</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_subpatch.html#a846fd352f05a360bfbb4480ef432bb0b">createObject</a>(QString <a class="code" href="classqtpd_1_1_u_i_object.html#a36456ea5fb11ff6b752bc56de2ce5584" title="gets object text data /usually overriden by ui objects/">objectData</a>, <a class="code" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a>*, QGraphicsView* parent = 0)
+<a name="l00039"></a><a class="code" href="classqtpd_1_1_u_i_subpatch.html#a846fd352f05a360bfbb4480ef432bb0b">00039</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_subpatch.html#a846fd352f05a360bfbb4480ef432bb0b">createObject</a>(QString <a class="code" href="classqtpd_1_1_u_i_object.html#a36456ea5fb11ff6b752bc56de2ce5584" title="gets object text data /usually overriden by ui objects/">objectData</a>, <a class="code" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a>*, QGraphicsView* parent = 0)
 <a name="l00040"></a>00040     {
 <a name="l00041"></a>00041         <span class="comment">//TODO fix all constructors</span>
 <a name="l00042"></a>00042 
 <a name="l00043"></a>00043         qDebug(<span class="stringliteral">&quot;UISubpatch&quot;</span>);
 <a name="l00044"></a>00044 
-<a name="l00045"></a>00045         <a class="code" href="classqtpd_1_1_u_i_subpatch.html" title="gui object: standard object box">UISubpatch</a>* b = <span class="keyword">new</span> <a class="code" href="classqtpd_1_1_u_i_subpatch.html#adf6e2b1064c7380bd82f1065ffee5a02">UISubpatch</a>(); <span class="comment">//(UIObjectItem*)parent);</span>
+<a name="l00045"></a>00045         <a class="code" href="classqtpd_1_1_u_i_subpatch.html" title="gui object: standard object box for subpatch">UISubpatch</a>* b = <span class="keyword">new</span> <a class="code" href="classqtpd_1_1_u_i_subpatch.html#adf6e2b1064c7380bd82f1065ffee5a02">UISubpatch</a>(); <span class="comment">//(UIObjectItem*)parent);</span>
 <a name="l00046"></a>00046 
 <a name="l00047"></a>00047         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a2e6fec1e7e23c49c16330281d84f099f">setCanvas</a>((<span class="keywordtype">void</span>*)parent);
 <a name="l00048"></a>00048 
@@ -144,7 +144,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00063"></a>00063 
 <a name="l00064"></a>00064         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ae10cb3996474a7c1ba94d5e48c740106" title="&gt; call this after setting object data">resizeEvent</a>();
 <a name="l00065"></a>00065 
-<a name="l00066"></a>00066         <span class="keywordflow">return</span> (<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*)b;
+<a name="l00066"></a>00066         <span class="keywordflow">return</span> (<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>*)b;
 <a name="l00067"></a>00067     };
 <a name="l00068"></a>00068 
 <a name="l00069"></a>00069     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_subpatch.html#a55eee1e1bcedde736c14a2a53eec898a">setSubpatchWindow</a>(QMainWindow* cwindow);
@@ -261,7 +261,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 29 2017 11:26:43 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 29 2017 20:26:35 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

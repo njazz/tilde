@@ -102,7 +102,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00018"></a>00018 
 <a name="l00019"></a>00019 <span class="keyword">namespace </span>qtpd {
 <a name="l00020"></a>00020 
-<a name="l00024"></a><a class="code" href="classqtpd_1_1_u_i_class.html">00024</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_u_i_class.html" title="gui object: oopd class">UIClass</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a> {
+<a name="l00024"></a><a class="code" href="classqtpd_1_1_u_i_class.html">00024</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_u_i_class.html" title="gui object: oopd class (pdclass)">UIClass</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a> {
 <a name="l00025"></a>00025 
 <a name="l00026"></a>00026     Q_OBJECT
 <a name="l00027"></a>00027 
@@ -120,7 +120,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00039"></a>00039         }
 <a name="l00040"></a>00040     };
 <a name="l00041"></a>00041 
-<a name="l00042"></a><a class="code" href="classqtpd_1_1_u_i_class.html#a54cec74530b0e8c27c32a859f074bf91">00042</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_class.html#a54cec74530b0e8c27c32a859f074bf91">createObject</a>(QString <a class="code" href="classqtpd_1_1_u_i_object.html#a36456ea5fb11ff6b752bc56de2ce5584" title="gets object text data /usually overriden by ui objects/">objectData</a>, <a class="code" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a>* pdCanvas, QGraphicsView* parent = 0)
+<a name="l00042"></a><a class="code" href="classqtpd_1_1_u_i_class.html#a54cec74530b0e8c27c32a859f074bf91">00042</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_class.html#a54cec74530b0e8c27c32a859f074bf91">createObject</a>(QString <a class="code" href="classqtpd_1_1_u_i_object.html#a36456ea5fb11ff6b752bc56de2ce5584" title="gets object text data /usually overriden by ui objects/">objectData</a>, <a class="code" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a>* pdCanvas, QGraphicsView* parent = 0)
 <a name="l00043"></a>00043     {
 <a name="l00044"></a>00044         <span class="comment">//TODO fix all constructors</span>
 <a name="l00045"></a>00045         <span class="comment">//t_canvas* pd_Canvas;</span>
@@ -129,7 +129,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00048"></a>00048         <span class="keywordflow">if</span> (objectData == <span class="stringliteral">&quot;&quot;</span>)
 <a name="l00049"></a>00049             objectData = <span class="stringliteral">&quot;pdclass&quot;</span>;
 <a name="l00050"></a>00050 
-<a name="l00051"></a>00051         <a class="code" href="classqtpd_1_1_u_i_class.html" title="gui object: oopd class">UIClass</a>* b = <span class="keyword">new</span> <a class="code" href="classqtpd_1_1_u_i_class.html#a967500c3fd7cefecfce0bfed38e42799">UIClass</a>(); <span class="comment">//(UIObject*)parent);</span>
+<a name="l00051"></a>00051         <a class="code" href="classqtpd_1_1_u_i_class.html" title="gui object: oopd class (pdclass)">UIClass</a>* b = <span class="keyword">new</span> <a class="code" href="classqtpd_1_1_u_i_class.html#a967500c3fd7cefecfce0bfed38e42799">UIClass</a>(); <span class="comment">//(UIObject*)parent);</span>
 <a name="l00052"></a>00052         b-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a2e6fec1e7e23c49c16330281d84f099f">setCanvas</a>((<span class="keywordtype">void</span>*)parent);
 <a name="l00053"></a>00053 
 <a name="l00054"></a>00054         QStringList list = QString(objectData).split(<span class="stringliteral">&quot; &quot;</span>);
@@ -195,7 +195,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00114"></a>00114 
 <a name="l00115"></a>00115         connect(b, &amp;<a class="code" href="classqtpd_1_1_u_i_class.html#a16076b70f90b37156c204cc71a212085">UIClass::updateUISignal</a>, b, &amp;UIClass::updateUISlot);
 <a name="l00116"></a>00116 
-<a name="l00117"></a>00117         <span class="keywordflow">return</span> (<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard and special">UIObject</a>*)b;
+<a name="l00117"></a>00117         <span class="keywordflow">return</span> (<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>*)b;
 <a name="l00118"></a>00118     };
 <a name="l00119"></a>00119 
 <a name="l00123"></a>00123     <span class="comment">//void paintEvent(QPaintEvent*)</span>
@@ -391,7 +391,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00324"></a>00324     {
 <a name="l00325"></a>00325         <span class="comment">// message handling here - probably move somewhere else?</span>
 <a name="l00326"></a>00326 
-<a name="l00327"></a>00327         <a class="code" href="classqtpd_1_1_u_i_class.html" title="gui object: oopd class">UIClass</a>* x = (<a class="code" href="classqtpd_1_1_u_i_class.html" title="gui object: oopd class">UIClass</a>*)uiobj;
+<a name="l00327"></a>00327         <a class="code" href="classqtpd_1_1_u_i_class.html" title="gui object: oopd class (pdclass)">UIClass</a>* x = (<a class="code" href="classqtpd_1_1_u_i_class.html" title="gui object: oopd class (pdclass)">UIClass</a>*)uiobj;
 <a name="l00328"></a>00328 
 <a name="l00329"></a>00329         <span class="keywordflow">if</span> (msg.<a class="code" href="classceammc_1_1_atom_list.html#ad52fdc5b4f54329460495caa1b00d1ac">size</a>() &lt; 1)
 <a name="l00330"></a>00330             <span class="keywordflow">return</span>;
@@ -425,7 +425,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00358"></a>00358         <span class="keywordflow">if</span> ((msg.<a class="code" href="classceammc_1_1_atom_list.html#ad8682c33d61365c0f715fbfee1b122b2" title="returns reference to element at specified position">at</a>(0).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>() == <span class="stringliteral">&quot;write&quot;</span>))
 <a name="l00359"></a>00359             x-&gt;_opClass-&gt;<a class="code" href="classqtpd_1_1_o_p_class.html#a1a3b8c02c6d6f53a525299995935edd0">writeFile</a>();
 <a name="l00360"></a>00360 
-<a name="l00361"></a>00361         emit((<a class="code" href="classqtpd_1_1_u_i_class.html" title="gui object: oopd class">UIClass</a>*)uiobj)-&gt;updateUISignal();
+<a name="l00361"></a>00361         emit((<a class="code" href="classqtpd_1_1_u_i_class.html" title="gui object: oopd class (pdclass)">UIClass</a>*)uiobj)-&gt;updateUISignal();
 <a name="l00362"></a>00362     }
 <a name="l00363"></a>00363 
 <a name="l00364"></a>00364 signals:
@@ -464,7 +464,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 29 2017 11:26:43 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 29 2017 20:26:35 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

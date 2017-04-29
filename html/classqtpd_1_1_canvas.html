@@ -109,7 +109,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="qtpd::Canvas" -->
-<p>'t_canvas' counterpart. creates objects  
+<p>'t_canvas' counterpart - for now it's both view and 'view controller'. creates pd+gui objects  
  <a href="classqtpd_1_1_canvas.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_canvas_8h_source.html">Canvas.h</a>&gt;</code></p>
@@ -150,8 +150,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">this returns "restore ..." for canvas as box or calls filesaver for canvas  <a href="#a76e63b8ae387b95094bec26fbc721730"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a057d349fb3b1c6143219a53223baa460">patchcordAsPdFileString</a> (<a class="el" href="classqtpd_1_1_patchcord.html">Patchcord</a> *pcord)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns patchcord as pd string  <a href="#a057d349fb3b1c6143219a53223baa460"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#ac7726eb93bb40c830f8f5e1bd891cdbe">structPatchcordNumbers</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a95d57b6df49669c45bd5728c25709ffd">patchcordAsNumbers</a> (<a class="el" href="classqtpd_1_1_patchcord.html">Patchcord</a> *pcord)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">converts UI patchcord object with 4 pointers to 4 numbers of objects in canvas  <a href="#a95d57b6df49669c45bd5728c25709ffd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#a4d975c32d29ce6a398847118e1826bd5">t_patchcordAsNumbers</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a2d6b67b0064bcd9580ec21a8dd6e7136">patchcordAsNumbers</a> (<a class="el" href="classqtpd_1_1_patchcord.html">Patchcord</a> *pcord)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">converts UI patchcord object with 4 pointers to 4 numbers of objects in canvas  <a href="#a2d6b67b0064bcd9580ec21a8dd6e7136"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a18731398b2b475020f5b3aecb4ae70d5">selectObject</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">selects single box. mostly used by replace object routine in objectmaker  <a href="#a18731398b2b475020f5b3aecb4ae70d5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a8e5778d7d39d203aba3ab6886a76b4c8">selectAll</a> ()</td></tr>
@@ -231,7 +231,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete all selected patchcords  <a href="#a9d0db66c2bf59c3075d0c57eca390663"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>'t_canvas' counterpart. creates objects </p>
+<div class="textblock"><p>'t_canvas' counterpart - for now it's both view and 'view controller'. creates pd+gui objects </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ad2ad6a6f41eda5fd0f3c21ffeeeadb0d"></a><!-- doxytag: member="qtpd::Canvas::Canvas" ref="ad2ad6a6f41eda5fd0f3c21ffeeeadb0d" args="(QGraphicsView *parent=0)" -->
 <div class="memitem">
@@ -1009,12 +1009,12 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a95d57b6df49669c45bd5728c25709ffd"></a><!-- doxytag: member="qtpd::Canvas::patchcordAsNumbers" ref="a95d57b6df49669c45bd5728c25709ffd" args="(Patchcord *pcord)" -->
+<a class="anchor" id="a2d6b67b0064bcd9580ec21a8dd6e7136"></a><!-- doxytag: member="qtpd::Canvas::patchcordAsNumbers" ref="a2d6b67b0064bcd9580ec21a8dd6e7136" args="(Patchcord *pcord)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceqtpd.html#ac7726eb93bb40c830f8f5e1bd891cdbe">structPatchcordNumbers</a> <a class="el" href="classqtpd_1_1_canvas.html#a95d57b6df49669c45bd5728c25709ffd">qtpd::Canvas::patchcordAsNumbers</a> </td>
+          <td class="memname"><a class="el" href="namespaceqtpd.html#a4d975c32d29ce6a398847118e1826bd5">t_patchcordAsNumbers</a> <a class="el" href="classqtpd_1_1_canvas.html#a2d6b67b0064bcd9580ec21a8dd6e7136">qtpd::Canvas::patchcordAsNumbers</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classqtpd_1_1_patchcord.html">Patchcord</a> *&#160;</td>
           <td class="paramname"><em>pcord</em></td><td>)</td>
@@ -1748,7 +1748,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 29 2017 11:26:43 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 29 2017 20:26:36 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
