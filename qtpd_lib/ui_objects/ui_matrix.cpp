@@ -38,10 +38,10 @@ extern "C" void uimatrix_set_updateUI(t_pd* x, void* obj, t_updateUI func)
 
 ///////
 
-static void uifloat_set(t_ui_matrix* x, t_symbol* s, int argc, t_atom* argv)
+static void uimatrix_set(t_ui_matrix* x, t_symbol* s, int argc, t_atom* argv)
 {
     if (argc)
-        x->val = AtomList(argc, argv).at(0).asFloat();
+        x->val = int(AtomList(argc, argv).at(0).asFloat());
 
     AtomList msg = AtomList(Atom(x->val));
 
@@ -49,12 +49,12 @@ static void uifloat_set(t_ui_matrix* x, t_symbol* s, int argc, t_atom* argv)
         x->updateUI(x->uiobj, msg);
 }
 
-static void uifloat_bang(t_ui_matrix* x)
+static void uimatrix_bang(t_ui_matrix* x)
 {
     AtomList(Atom(x->val)).output(x->out1);
 }
 
-static void uifloat_float(t_ui_matrix* x, t_float f)
+static void uimatrix_float(t_ui_matrix* x, t_float f)
 {
     x->val = f;
 
@@ -68,7 +68,7 @@ static void uifloat_float(t_ui_matrix* x, t_float f)
 
 ///////
 
-static void* uifloat_new(t_symbol* s, int argc, t_atom* argv)
+static void* uimatrix_new(t_symbol* s, int argc, t_atom* argv)
 {
     t_ui_matrix* x = (t_ui_matrix*)pd_new(ui_matrix_class);
 
@@ -81,7 +81,7 @@ static void* uifloat_new(t_symbol* s, int argc, t_atom* argv)
     return (void*)x;
 }
 
-static void uifloat_free(t_object* obj)
+static void uimatrix_free(t_object* obj)
 {
 }
 
@@ -89,12 +89,12 @@ static void uifloat_free(t_object* obj)
 extern "C" void setup_ui0x2ematrix()
 {
     ui_matrix_class = class_new(gensym("ui.matrix"),
-        (t_newmethod)(uifloat_new),
+        (t_newmethod)(uimatrix_new),
         (t_method)(0),
         sizeof(t_ui_matrix), 0, A_GIMME, 0);
 
-    class_addmethod(ui_matrix_class, (t_method)uifloat_set, &s_anything, A_GIMME, 0);
-    class_addmethod(ui_matrix_class, (t_method)uifloat_bang, &s_bang, A_NULL, 0);
+    class_addmethod(ui_matrix_class, (t_method)uimatrix_set, &s_anything, A_GIMME, 0);
+    class_addmethod(ui_matrix_class, (t_method)uimatrix_bang, &s_bang, A_NULL, 0);
 
-    class_addfloat(ui_matrix_class, (t_method)uifloat_float);
+    class_addfloat(ui_matrix_class, (t_method)uimatrix_float);
 }

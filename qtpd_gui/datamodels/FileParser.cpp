@@ -98,7 +98,7 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
         list2[1] = list[1];
         list2[2] = list[2];
 
-        list2.append("@Size " + list2[4] + list2[4]);
+        list2.append("@Size " + list[4] + list[4]);
 
         // TODO
 
@@ -114,7 +114,7 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
         list2[1] = list[1];
         list2[2] = list[2];
 
-        list2.append("@Size " + list2[4] + list2[4]);
+        list2.append("@Size " + list[4] + list[4]);
 
         // TODO
 
@@ -129,11 +129,10 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
         list2[1] = list[1];
         list2[2] = list[2];
 
-        if (list.size()>5)
-        {
-        list2.append("@Size" + list[4] + list[5]);
-        list2.append("@Offset" + list[6]);
-        list2.append("@Range" + list[7]);
+        if (list.size() > 5) {
+            list2.append("@Size " + list[4] + " " + list[5]);
+            list2.append("@Offset " + list[6]);
+            list2.append("@Range " + list[7]);
         }
 
         FileParser::sendStringToCanvas(cmcanvas, list2);
@@ -144,7 +143,7 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
 
     else if ((list.at(0) == "obj") && (list.at(3) == "number2")) {
 
-            return true;
+        return true;
 
     } else if ((list.at(0) == "obj") && (list.at(3) == "hradio")) {
 
@@ -153,12 +152,14 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
         list2[1] = list[1];
         list2[2] = list[2];
 
-        if (list.size()>4)
-        list2.append("@Size" + QString::number(list[4].toFloat() * 5) + list[4]); //replace 5 with size
-        //list2.append("@Offset " + list2[6] );
-        //list2.append("@Range" +  list2[7]);
         // temporary
         list2.append("@Columns 5 @Rows 1");
+
+        if (list.size() > 4)
+            list2.append("@Size " + QString::number(list[4].toFloat() * 5) + " "+ list[4]); //replace 5 with size
+
+        //list2.append("@Offset " + list2[6] );
+        //list2.append("@Range" +  list2[7]);
 
         FileParser::sendStringToCanvas(cmcanvas, list2);
 
@@ -171,12 +172,14 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
         list2[1] = list[1];
         list2[2] = list[2];
 
-        if (list.size()>4)
-        list2.append("@Size" + list[4] + QString::number(list[4].toFloat() * 5));
-        //list2.append("@Offset " + list2[6] );
-        //list2.append("@Range" +  list2[7]);
         // temporary
         list2.append("@Columns 1 @Rows 5");
+
+        if (list.size() > 4)
+            list2.append("@Size " + list[4]+ " " + QString::number(list[4].toFloat() * 5));
+
+        //list2.append("@Offset " + list2[6] );
+        //list2.append("@Range" +  list2[7]);
 
         FileParser::sendStringToCanvas(cmcanvas, list2);
 
