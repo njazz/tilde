@@ -109,8 +109,9 @@ This is the complete list of members for <a class="el" href="classqtpd_1_1_canva
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#a54ae5b1d5352bcce723481073db40647">deleteBox</a>(UIObject *box)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#a3acb20ed7949140e54e4055ba7dd3213">deletePatchcordsFor</a>(UIItem *obj)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#a5df34a2d1f5b8fe34713fafc67bf1b78">deleteSelectedBoxes</a>()</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#af8e0dde6555249f775562b2cd4ab02bd">delSelectedPatchcords</a>()</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#a9d0db66c2bf59c3075d0c57eca390663">deleteSelectedPatchcords</a>()</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#aa6b4a032d370f6ca85319752ad9fd0ab">dragObject</a>()</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#ad3413ead809bac21a510553fe4ce8269">drawBackground</a>(QPainter *painter, const QRectF &amp;rect)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#a43f3a275c9b0352360cfe1b0a3da7a07">fileName</a>()</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#a030f062eca37255b3748de7ec4e353cd">filePath</a>()</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#a2168110e781257d16b176086714a4921">findObjectIndex</a>(UIObject *obj)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td></td></tr>
@@ -144,6 +145,7 @@ This is the complete list of members for <a class="el" href="classqtpd_1_1_canva
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#ac989e6a21f501ac78bac254a977bd424">s_OutMousePressed</a>(UIItem *obj, QGraphicsSceneMouseEvent *)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td><code> [slot]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#a2956abcf442bae7e5b54642c6929aba1">s_OutMouseReleased</a>(UIItem *, QGraphicsSceneMouseEvent *)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td><code> [slot]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#ada8bf731d4d259b3595c89b7f0a7006c">s_SelectBox</a>(UIItem *box, QGraphicsSceneMouseEvent *ev)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#a5f6d5c4aaf6ec6e3e4e54347d30a3da4">scrollContentsBy</a>(int dx, int dy)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#a8e5778d7d39d203aba3ab6886a76b4c8">selectAll</a>()</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#ab076136df83599356a5ba7ba891c7207">selectBox</a>(UIItem *box)</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classqtpd_1_1_canvas.html#a0f81941962e9900ba06288636a1a6f74">selectedObjectBoxes</a>()</td><td><a class="el" href="classqtpd_1_1_canvas.html">qtpd::Canvas</a></td><td></td></tr>
@@ -181,7 +183,7 @@ This is the complete list of members for <a class="el" href="classqtpd_1_1_canva
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 29 2017 09:03:18 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 29 2017 11:10:11 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

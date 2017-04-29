@@ -15,6 +15,7 @@ var searchData=
   ['scalar_5fredraw',['scalar_redraw',['../g__canvas_8h.html#a8d49cd2ec1062bb584b8631710e071e4',1,'g_canvas.h']]],
   ['sched_5fgeteventno',['sched_geteventno',['../m__pd_8h.html#a91e87fbff0731002ec50573c97b52e77',1,'m_pd.h']]],
   ['scriptdata',['scriptData',['../class_u_i_script_common.html#aab22109c007651adea2e34d0a65acbb7',1,'UIScriptCommon']]],
+  ['scrollcontentsby',['scrollContentsBy',['../classqtpd_1_1_canvas.html#a5f6d5c4aaf6ec6e3e4e54347d30a3da4',1,'qtpd::Canvas']]],
   ['select',['select',['../classqtpd_1_1_u_i_item.html#a73739a4c2f2883ac10ab7087deaf57af',1,'qtpd::UIItem']]],
   ['selectall',['selectAll',['../classqtpd_1_1_canvas.html#a8e5778d7d39d203aba3ab6886a76b4c8',1,'qtpd::Canvas::selectAll()'],['../classqtpd_1_1_patch_window.html#a97f29c370effd24cd7462696cd05fb97',1,'qtpd::PatchWindow::selectAll()']]],
   ['selectbox',['selectBox',['../classqtpd_1_1_canvas.html#ab076136df83599356a5ba7ba891c7207',1,'qtpd::Canvas::selectBox()'],['../classqtpd_1_1canvas_data.html#a7690375d0f21f692be69b803db578f41',1,'qtpd::canvasData::selectBox()'],['../classqtpd_1_1_u_i_item.html#ad8f51ce2a929d36c866cb16e884f7a28',1,'qtpd::UIItem::selectBox()']]],
