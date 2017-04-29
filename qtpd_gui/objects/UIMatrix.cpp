@@ -21,7 +21,7 @@ UIMatrix::UIMatrix()
 
     //setObjectSizeMode(os_Square);
 
-    _value = false;
+    //_value = false;
 
     initProperties();
 

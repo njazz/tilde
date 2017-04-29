@@ -33,7 +33,7 @@ class UIMatrix : public UIObject {
 
 private:
     bool _clicked;
-    bool _value;
+    //bool _value;
 
 public:
     explicit UIMatrix();
@@ -334,10 +334,9 @@ public:
 
                 properties()->set("Value", v);
 
-                std::string val_str = "set "+std::to_string(v);
+                std::string val_str = "set " + std::to_string(v);
                 cmp_sendstring((t_pd*)pdObject(), val_str);
                 cmp_sendstring((t_pd*)pdObject(), "bang");
-
             }
 
             if (matrixType() == mt_VRadio) {
@@ -348,7 +347,7 @@ public:
 
                 properties()->set("Value", v);
 
-                std::string val_str = "set "+std::to_string(v);
+                std::string val_str = "set " + std::to_string(v);
                 cmp_sendstring((t_pd*)pdObject(), val_str);
                 cmp_sendstring((t_pd*)pdObject(), "bang");
             }
@@ -390,10 +389,12 @@ public:
         //qDebug("update ui");
         UIMatrix* x = (UIMatrix*)uiobj;
 
-        if (msg.size() > 0) {
-            if (msg.at(0).isFloat())
-                x->_value = msg.at(0).asFloat() > 0;
-        }
+        if ((x->matrixType() == mt_HRadio) || (x->matrixType() == mt_VRadio))
+            if (msg.size() > 0) {
+                if (msg.at(0).isFloat())
+                    //x->_value = msg.at(0).asFloat() ;
+                    x->properties()->set("Value", msg.at(0).asFloat());
+            }
 
         emit x->callRepaint();
     }
