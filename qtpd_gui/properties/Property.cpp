@@ -3,11 +3,6 @@
 
 #include "Property.h"
 
-//cm_property::cm_property()
-//{
-
-//}
-
 #include <QDebug>
 
 namespace qtpd {

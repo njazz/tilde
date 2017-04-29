@@ -11,13 +11,9 @@ UIBox::UIBox()
     qDebug("constructor");
 
     setHeight(20);
-
     deselect();
-
     setBgColor(QColor(240, 240, 240));
-
     setErrorBox(false);
-
     setSubpatchWindow(0);
 
     _objectDataModel.setObjectSize(os_FixedHeight, 40, 20);

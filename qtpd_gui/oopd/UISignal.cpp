@@ -6,15 +6,10 @@
 #include "Canvas.h"
 
 namespace qtpd {
-UISignal::UISignal() //UIObject* parent)
-//: UIObject(parent)
+UISignal::UISignal()
 {
-
     setHeight(20);
-    deselect(); // = false;
-
-    //setErrorBox(false);
-
+    deselect();
     setSubpatchWindow(0);
 
     _objectDataModel.setObjectSize(os_FixedHeight, 40, 20);
@@ -54,7 +49,6 @@ UIObject* UISignal::createObject(QString objectData, t_canvas* pdCanvas, QGraphi
     t_object* new_obj = 0;
     int in_c = 0, out_c = 0;
 
-
     b->setHelpName("pdsignal~-help.pd");
 
     b->addInlet(1);
@@ -70,13 +64,10 @@ UIObject* UISignal::createObject(QString objectData, t_canvas* pdCanvas, QGraphi
 
         QString cnvName = QString::number((long)cnv);
         b->_signalSendName = "s" + cnvName.toStdString() + b->_signalName;
-        b->_signalReceiveName = "r" + cnvName.toStdString()+ b->_signalName;
-    }
-    else
-    {
-        b->_signalSendName = "s_error"+ b->_signalName;
-        b->_signalReceiveName = "r_error"+ b->_signalName;
-
+        b->_signalReceiveName = "r" + cnvName.toStdString() + b->_signalName;
+    } else {
+        b->_signalSendName = "s_error" + b->_signalName;
+        b->_signalReceiveName = "r_error" + b->_signalName;
     }
 
     b->_opClass = OOPD::inst()->classByCanvas(cnv);
@@ -107,8 +98,8 @@ UIObject* UISignal::createObject(QString objectData, t_canvas* pdCanvas, QGraphi
         b->setErrorBox(true);
     } else {
 
-//        b->_pdsend_object = cmp_create_object(pdCanvas, "send~ " + b->_signalSendName, 0, 0);
-//        b->_pdreceive_object = cmp_create_object(pdCanvas, "send~ " + b->_signalReceiveName, 0, 0);
+        //        b->_pdsend_object = cmp_create_object(pdCanvas, "send~ " + b->_signalSendName, 0, 0);
+        //        b->_pdreceive_object = cmp_create_object(pdCanvas, "send~ " + b->_signalReceiveName, 0, 0);
 
         t_object* pd_obj = cmp_create_object(pdCanvas, "pdsignal~ " + b->_signalSendName, 0, 0);
 

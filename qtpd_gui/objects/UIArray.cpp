@@ -9,20 +9,11 @@ UIArray::UIArray()
     setHeight(20);
 
     deselect();
-
-//    setBgColor(QColor(240, 240, 240));
-
     setErrorBox(false);
-
     setSubpatchWindow(0);
 
-    //setMinimumBoxWidth(40);
-    //setMinimumBoxHeight(20);
-
-    _objectDataModel.setObjectSize(os_FixedHeight, 40,20);
-
+    _objectDataModel.setObjectSize(os_FixedHeight, 40, 20);
     initProperties();
-
     resizeEvent();
 }
 }

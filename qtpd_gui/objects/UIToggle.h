@@ -16,7 +16,7 @@
 namespace qtpd {
 
 ////
-/// \brief gui object: message box (ui.msg)
+/// \brief gui object: toggle (ui.toggle)
 ///
 class UIToggle : public UIObject {
     Q_OBJECT

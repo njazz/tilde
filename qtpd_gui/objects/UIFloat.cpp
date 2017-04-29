@@ -7,13 +7,8 @@ namespace qtpd {
 
 UIFloat::UIFloat()
 {
-
     setSize(35, 20);
-
-    //setMinimumBoxWidth(30);
-    //setMinimumBoxHeight(20);
-
-    _objectDataModel.setObjectSize(os_FixedHeight, 30,20);
+    _objectDataModel.setObjectSize(os_FixedHeight, 30, 20);
 
     deselect();
 

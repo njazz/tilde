@@ -28,7 +28,7 @@
 namespace qtpd {
 
 ////
-/// \brief 't_canvas' counterpart. creates objects
+/// \brief 't_canvas' counterpart - for now it's both view and 'view controller'. creates pd+gui objects
 ///
 class Canvas : public QGraphicsView {
 private:
@@ -54,7 +54,6 @@ private:
 
     t_editMode* _canvasEditMode;
 
-    // ----- NEW
     Grid* _grid;
     SelectionRect* _selectionRect;
     NewPatchcord* _newLine;
@@ -287,7 +286,7 @@ public:
     /// \param pcord
     /// \return
     ///
-    structPatchcordNumbers patchcordAsNumbers(Patchcord* pcord);
+    t_patchcordAsNumbers patchcordAsNumbers(Patchcord* pcord);
 
     ////
     /// \brief selects single box. mostly used by replace object routine in objectmaker

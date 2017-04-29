@@ -5,35 +5,18 @@
 
 namespace qtpd {
 
-UIInstance::UIInstance()//UIObject* parent)
-    //: UIObject(parent)
+UIInstance::UIInstance()
 {
-    //setPdObjectName("ui.bang");
+    //setPdObjectName("pdinstance");
 
     setHeight(20);
-    //setMinimumWidth(22);
-    //setMouseTracking(true);
-
     deselect(); // = false;
 
-//    QPalette Pal(palette());
-//    Pal.setColor(QPalette::Background, QColor(240, 240, 240));
-//    setAutoFillBackground(true);
-//    setPalette(Pal);
-
     setErrorBox(false);
-
     setSubpatchWindow(0);
 
-//    setMinimumBoxWidth(40);
-//    setMinimumBoxHeight(20);
-
-//    setObjectSizeMode(os_FixedHeight);
-
-    _objectDataModel.setObjectSize(os_FixedHeight, 40,20);
-
+    _objectDataModel.setObjectSize(os_FixedHeight, 40, 20);
     _opInstance = 0;
-
     _hasType = false;
 }
 

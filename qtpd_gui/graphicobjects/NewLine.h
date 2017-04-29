@@ -11,7 +11,7 @@
 namespace qtpd {
 
 ////
-/// \brief New patchcord dashed line
+/// \brief New patchcord - dashed line
 ///
 class NewPatchcord : public UIItem {
     bool _active;

@@ -26,7 +26,7 @@ namespace qtpd {
 typedef std::vector<Port*> portItemVec;
 
 ////
-/// \brief base class for all object boxes - standard and special
+/// \brief base class for all object boxes - standard (UIBox) and special
 ///
 class UIObject : public UIItem {
 

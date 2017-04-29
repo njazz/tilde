@@ -11,7 +11,6 @@
 namespace qtpd {
 
 UIScriptBox::UIScriptBox()
-
 {
 
     deselect();

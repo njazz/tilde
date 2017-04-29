@@ -13,7 +13,7 @@
 
 namespace qtpd {
 ////
-/// \brief The editor for UIScript.
+/// \brief The text editor for UIScript editor widget.
 /// \details contains parts of PythonQt
 ///
 class UIScriptTextEdit : public QPlainTextEdit {

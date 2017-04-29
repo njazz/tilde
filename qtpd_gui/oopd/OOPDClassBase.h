@@ -1,3 +1,4 @@
+// License: GPL3
 //
 //  OOPDClassBase.h
 //
@@ -26,6 +27,9 @@ namespace qtpd {
 //class OPInstance;
 class PatchWindow;
 
+////
+/// \brief stores pointers to t_outlets of pd objects
+///
 class OPOutputs {
 private:
     vector<t_outlet*> _outlets;

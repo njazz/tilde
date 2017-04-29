@@ -6,16 +6,11 @@
 #include <QGraphicsProxyWidget>
 
 namespace qtpd {
-UIText::UIText() //UIObject* parent)
-//: UIObject(parent)
+UIText::UIText()
 {
     //setPdObjectName("ui.text");
 
-    //setMinimumWidth(30);
     setSize(65, 20);
-
-    //setMouseTracking(true);
-
     initProperties();
 
     deselect();
@@ -34,10 +29,6 @@ UIText::UIText() //UIObject* parent)
     connect(_editor, &QPlainTextEdit::textChanged, this, &UIText::editorChanged);
 
     _editor->installEventFilter(this);
-
-    //setMinimumBoxWidth(80);
-    //setMinimumBoxHeight(20);
-
     _objectDataModel.setObjectSize(os_Free, 80,20);
 
     resizeEvent();

@@ -713,11 +713,11 @@ std::string Canvas::patchcordAsPdFileString(Patchcord* pcord)
     return "";
 }
 
-structPatchcordNumbers Canvas::patchcordAsNumbers(Patchcord* pcord)
+t_patchcordAsNumbers Canvas::patchcordAsNumbers(Patchcord* pcord)
 {
     //TODO
 
-    structPatchcordNumbers ret;
+    t_patchcordAsNumbers ret;
 
     int obj1i = findObjectIndex(pcord->obj1());
     int obj2i = findObjectIndex(pcord->obj2());

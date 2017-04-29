@@ -1,3 +1,6 @@
+// (c) 2017 Alex Nadzharov
+// License: GPL3
+
 #ifndef UIARRAYEDITOR_H
 #define UIARRAYEDITOR_H
 
@@ -9,6 +12,9 @@
 
 #include "math.h"
 
+////
+/// \brief Array Editor QWidget
+///
 class UIArrayEditor : public QWidget {
     Q_OBJECT
 private:

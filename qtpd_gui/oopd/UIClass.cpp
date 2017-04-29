@@ -5,19 +5,14 @@
 
 namespace qtpd {
 
-UIClass::UIClass() //UIObject* parent)
-//: UIObject(parent)
+UIClass::UIClass()
 {
-    //setPdObjectName("ui.bang");
+    //setPdObjectName("pdclass");
 
     setHeight(20);
-
-    deselect(); // = false;
-
+    deselect();
     setErrorBox(false);
-
     setSubpatchWindow(0);
-
     _objectDataModel.setObjectSize(os_FixedHeight, 40, 20);
 }
 }

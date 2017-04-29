@@ -1,3 +1,6 @@
+// (c) 2017 Alex Nadzharov
+// License: GPL3
+
 #include "PropertiesWindow.h"
 
 //move here later

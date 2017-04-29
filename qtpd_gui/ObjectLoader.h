@@ -50,7 +50,8 @@ namespace qtpd {
 typedef UIObject* (*cmObjectConstructor)(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent);
 
 ////
-/// \brief prototype for ui externals handling. stub
+/// \brief prototype for ui externals handling
+/// \deprecated stub
 ///
 class ObjectLoader {
 public:

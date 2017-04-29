@@ -3,6 +3,9 @@
 
 // testing precompiled headers
 
+#include "Property.h"
+#include "PropertyList.h"
+
 #include "BaseWindow.h"
 #include "Preferences.h"
 #include "UIObject.h"

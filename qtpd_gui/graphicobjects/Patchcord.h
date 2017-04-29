@@ -17,15 +17,17 @@ namespace qtpd {
 ////
 /// \brief patchcord as numbers
 /// \deprecated todo: merge that
-typedef struct structPatchcordNumbers_ {
+typedef struct _patchcordAsNumbers {
     int obj1;
     int obj2;
     int out1;
     int in2;
-} structPatchcordNumbers;
+} t_patchcordAsNumbers;
 
-typedef enum { cm_pt_anything,
-    cm_pt_signal } patchcordTypeEnum;
+////
+/// \brief patchcord type  - message / signal, can be extended later
+typedef enum { cm_pt_anything = 0,
+    cm_pt_signal = 1 } patchcordTypeEnum;
 
 ////
 /// \brief Patchcord QGraphicsObject class

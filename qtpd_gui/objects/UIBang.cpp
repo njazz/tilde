@@ -4,17 +4,11 @@
 #include "UIBang.h"
 
 namespace qtpd {
-
 UIBang::UIBang()
 {
     setSize(20, 20);
 
-    //setMinimumBoxWidth(20);
-    //setMinimumBoxHeight(20);
-
-    //setObjectSizeMode(os_Square);
-
-    _objectDataModel.setObjectSize(os_Square, 20,20);
+    _objectDataModel.setObjectSize(os_Square, 20, 20);
 
     deselect();
     _clicked = false;
@@ -27,7 +21,6 @@ UIBang::UIBang()
     _timer->setInterval(33); //default 100
 
     connect(_timer, &QTimer::timeout, this, &UIBang::timerAction);
-
     connect(this, SIGNAL(setBangTimer(int)), _timer, SLOT(start(int)));
 
     resizeEvent();

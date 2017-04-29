@@ -10,6 +10,9 @@
 
 namespace qtpd {
 
+////
+/// \brief selection rectangle QGraphicsObject (UIItem)
+///
 class SelectionRect : public UIItem {
     bool _active;
     QPoint _start;

@@ -19,7 +19,7 @@
 namespace qtpd {
 
 ////
-/// \brief gui object: oop method box
+/// \brief gui object: oop signal box (pdsignal~)
 ///
 class UISignal : public UIObject {
 

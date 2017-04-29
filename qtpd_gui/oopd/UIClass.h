@@ -19,7 +19,7 @@
 namespace qtpd {
 
 ////
-/// \brief gui object: oopd class
+/// \brief gui object: oopd class (pdclass)
 ///
 class UIClass : public UIObject {
 

@@ -16,7 +16,7 @@
 namespace qtpd {
 
 ////
-/// \brief gui object: message box (ui.msg)
+/// \brief gui object: dsp switch box (ui.dsp)
 ///
 class UIDSP : public UIObject {
     Q_OBJECT

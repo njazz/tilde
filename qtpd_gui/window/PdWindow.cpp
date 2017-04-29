@@ -1,3 +1,6 @@
+// (c) 2017 Alex Nadzharov
+// License: GPL3
+
 #include "PdWindow.h"
 #include "ui_cm_pdwindow.h"
 

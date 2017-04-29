@@ -1,3 +1,6 @@
+// (c) 2017 Alex Nadzharov
+// License: GPL3
+
 #include "BaseWindow.h"
 #include "ui_cm_basewindow.h"
 #include <QApplication>

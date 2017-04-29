@@ -29,7 +29,7 @@
 namespace qtpd {
 
 ////
-/// \brief app preferences singleton
+/// \brief app Preferences singleton
 ///
 class Preferences : public PropertyList // TODO
 {

@@ -16,7 +16,7 @@ namespace qtpd {
 
 ////
 /// \brief gui object: float number box (ui.float)
-///
+/// \details TODO: this object should inherit all features from iemgui number2 and vanilla floatatom
 class UIFloat : public UIObject {
     Q_OBJECT
 

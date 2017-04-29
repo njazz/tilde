@@ -1,3 +1,6 @@
+// (c) 2017 Alex Nadzharov
+// License: GPL3
+
 #ifndef UISCRIPTCOMMON_H
 #define UISCRIPTCOMMON_H
 
@@ -9,14 +12,19 @@
 
 #include <QStringList>
 
+namespace qtpd {
+
+////
+/// \brief Basic data model for scripteditor
+/// \deprecated it's a string list now - probably should be removed
 class UIScriptData {
 public:
     QStringList inputList;
 };
 
 ////
-/// \brief Sort of view controller for UIScript/UISCriptBox - test that later
-///
+/// \brief Sort of view controller for UIScript/UISCriptBox
+/// \deprecated TODO test that later
 class UIScriptCommon : public QObject {
     Q_OBJECT
 
@@ -33,7 +41,7 @@ private:
 public:
     explicit UIScriptCommon(QObject* parent = 0);
 
-    UIScriptData* scriptData(){return _scriptData;}
+    UIScriptData* scriptData() { return _scriptData; }
 
     void setEditor(UIScriptEditor* editor)
     {
@@ -45,8 +53,6 @@ public:
         connect(_editor, &UIScriptEditor::btnClearSignal, this, &UIScriptCommon::btnClear);
     }
     UIScriptEditor* editor() { return _editor; }
-
-
 
     static void updateUI(void* uiobj, ceammc::AtomList msg)
     {
@@ -63,7 +69,6 @@ public:
 
         x->_scriptData->inputList = list;
         emit x->callRun();
-
     }
 signals:
     void callRun();
@@ -147,5 +152,6 @@ public slots:
         _editor->textEdit()->clear();
     }
 };
+}
 
 #endif // UISCRIPTCOMMON_H

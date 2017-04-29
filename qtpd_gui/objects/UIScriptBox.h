@@ -22,7 +22,7 @@
 namespace qtpd {
 
 ////
-/// \brief gui object: script editor box (ui.script)
+/// \brief gui object: script box (ui.scriptbox)
 ///
 class UIScriptBox : public UIObject {
     Q_OBJECT

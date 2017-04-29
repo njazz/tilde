@@ -33,7 +33,8 @@ typedef enum {
 } UIPropertyType;
 
 ////
-/// \brief yet another property handling class for ui object.
+/// \brief property handling class for ui object.
+/// \details this is different from CEAMMC library property handling library - later merge / unify that
 ///
 class Property : public QObject {
 

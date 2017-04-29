@@ -7,7 +7,6 @@
 
 namespace qtpd {
 UIMessage::UIMessage()
-
 {
 
     deselect();
@@ -28,10 +27,7 @@ UIMessage::UIMessage()
     connect(_editor, &QLineEdit::editingFinished, this, &UIMessage::editorDone);
     connect(_editor, &QLineEdit::textEdited, this, &UIMessage::editorChanged);
 
-    //setMinimumBoxWidth(40);
-    //setMinimumBoxHeight(20);
-
-    _objectDataModel.setObjectSize(os_FixedHeight, 40,20);
+    _objectDataModel.setObjectSize(os_FixedHeight, 40, 20);
 
     setSize(65, 20);
 

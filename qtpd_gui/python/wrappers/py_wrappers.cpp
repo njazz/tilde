@@ -1,8 +1,9 @@
+// (c) 2017 Alex Nadzharov
+// License: GPL3
+
 #include "py_wrappers.h"
 
 // generic
-
-
 
 #include "py_pdlib.h"
 #include "py_qtpd.h"
@@ -26,16 +27,15 @@ pyWrapper::pyWrapper()
 
     PythonQt::self()->registerCPPClass("objectVec");
     PythonQt::self()->registerCPPClass("UIObject");
-
 }
 
-PythonQtObjectPtr pyWrapper::withCanvas(QObject *canvas)
+PythonQtObjectPtr pyWrapper::withCanvas(QObject* canvas)
 {
     PythonQtObjectPtr ctx;
     ctx = PythonQt::self()->createUniqueModule();
     ctx.addObject("Qtpd", new pyQtpd());
 
-    pyLocal * loc = new pyLocal;
+    pyLocal* loc = new pyLocal;
     loc->setCanvas((Canvas*)canvas); // canvas, canvas, canvas, canvas
     loc->setPdObject(0);
     ctx.addObject("local", loc);
@@ -49,30 +49,27 @@ PythonQtObjectPtr pyWrapper::withCanvasAndPdObject(QObject* canvas, t_object* ob
     ctx = PythonQt::self()->createUniqueModule();
     ctx.addObject("Qtpd", new pyQtpd());
 
-    pyLocal * loc = new pyLocal;
+    pyLocal* loc = new pyLocal;
     loc->setCanvas((Canvas*)canvas); // canvas, canvas, canvas, canvas
     loc->setPdObject(obj);
     ctx.addObject("local", loc);
-
 
     return ctx;
 }
 
 // weird method name competition winner
 
-PythonQtObjectPtr pyWrapper::withCanvasPdObjectAndInput(QObject *canvas, t_object* obj, QStringList* list)
+PythonQtObjectPtr pyWrapper::withCanvasPdObjectAndInput(QObject* canvas, t_object* obj, QStringList* list)
 {
     PythonQtObjectPtr ctx;
     ctx = PythonQt::self()->createUniqueModule();
     ctx.addObject("Qtpd", new pyQtpd());
 
-    pyLocal * loc = new pyLocal;
+    pyLocal* loc = new pyLocal;
     loc->setCanvas((Canvas*)canvas); // canvas, canvas, canvas, canvas
     loc->setPdObject(obj);
     loc->setInput(list);
     ctx.addObject("local", loc);
 
-
     return ctx;
 }
-

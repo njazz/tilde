@@ -28,7 +28,7 @@ typedef std::map<std::string, UIPropertyData*>::iterator UIPropertyGroupIterator
 //typedef void (UIObject:: * t_PropertyListener)() ;
 
 ////
-/// \brief yet another property handling class for ui object. List
+/// \brief Property handling class for ui object - property list
 ///
 class PropertyList : public QObject {
     Q_OBJECT

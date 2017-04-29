@@ -11,7 +11,6 @@
 namespace qtpd {
 
 UIScript::UIScript()
-
 {
 
     deselect();
@@ -35,7 +34,7 @@ UIScript::UIScript()
 
     setSize(300, 200);
 
-    _objectDataModel.setObjectSize(os_Free,300,200);
+    _objectDataModel.setObjectSize(os_Free, 300, 200);
 
     resizeEvent();
 }

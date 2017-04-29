@@ -10,7 +10,7 @@
 
 namespace qtpd {
 ////
-/// \brief creates lineedit box for new object
+/// \brief creates QLineEdit box for new object
 ///
 class ObjectMaker : public QLineEdit {
 

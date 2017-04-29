@@ -9,24 +9,14 @@ namespace qtpd {
 UISubpatch::UISubpatch()
 
 {
-    qDebug("constructor");
+    qDebug("subpatch - constructor");
 
     setHeight(20);
-
     deselect();
-
     setBgColor(QColor(240, 240, 240));
-
     setErrorBox(false);
 
-    //setSubpatchWindow(0);
-
-//    setMinimumBoxWidth(40);
-//    setMinimumBoxHeight(20);
-
-//    setObjectSizeMode(os_FixedHeight);
-
-    _objectDataModel.setObjectSize(os_FixedHeight, 40,20);
+    _objectDataModel.setObjectSize(os_FixedHeight, 40, 20);
 
     setAcceptHoverEvents(true);
 

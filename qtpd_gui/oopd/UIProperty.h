@@ -21,7 +21,7 @@
 namespace qtpd {
 
 ////
-/// \brief gui object: oop method box
+/// \brief gui object: oop property box (property)
 ///
 class UIProperty : public UIObject {
 

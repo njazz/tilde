@@ -21,8 +21,8 @@ typedef std::vector<Patchcord*> patchcordVec;
 //patchcord set?
 
 ////
-/// \brief shared canvas data - boxes, patchcords
-///
+/// \brief shared canvas data model - boxes, patchcords
+/// \details this should be developed better as a full data model for canvas
 class canvasData {
 
     objectVec _boxes;

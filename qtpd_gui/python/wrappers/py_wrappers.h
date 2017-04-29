@@ -34,7 +34,7 @@ public:
     /// \return
     ///
 
-    // FIX
+    // FIX that later
 
     PythonQtObjectPtr withCanvas(QObject* canvas);
     PythonQtObjectPtr withCanvasAndPdObject(QObject* canvas, t_object* obj);

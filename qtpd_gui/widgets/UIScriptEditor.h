@@ -1,3 +1,6 @@
+// (c) 2017 Alex Nadzharov
+// License: GPL3
+
 #ifndef UISCRIPTEDITOR_H
 #define UISCRIPTEDITOR_H
 
@@ -7,6 +10,9 @@
 
 namespace qtpd {
 
+////
+/// \brief Script editor QWidget
+///
 class UIScriptEditor : public QWidget {
     Q_OBJECT
 

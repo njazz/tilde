@@ -20,7 +20,7 @@
 namespace qtpd {
 
 ////
-/// \brief gui object: standard object box
+/// \brief gui object: standard object box for subpatch
 ///
 class UISubpatch : public UIObject {
 
