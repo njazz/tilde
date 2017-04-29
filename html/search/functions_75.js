@@ -25,7 +25,7 @@ var searchData=
   ['uislider',['UISlider',['../classqtpd_1_1_u_i_slider.html#a34167f7d3cb6cf46ef4836e4a6b5abc6',1,'qtpd::UISlider']]],
   ['uisubpatch',['UISubpatch',['../classqtpd_1_1_u_i_subpatch.html#adf6e2b1064c7380bd82f1065ffee5a02',1,'qtpd::UISubpatch']]],
   ['uitext',['UIText',['../classqtpd_1_1_u_i_text.html#a63c32d16e0b759e74452444b9a7590e7',1,'qtpd::UIText']]],
-  ['uitexteditor',['UITextEditor',['../class_u_i_text_editor.html#a5e7eaee2b7eda76b3858988c4cd6cb0e',1,'UITextEditor']]],
+  ['uitexteditor',['UITextEditor',['../classqtpd_1_1_u_i_text_editor.html#a5e7eaee2b7eda76b3858988c4cd6cb0e',1,'qtpd::UITextEditor']]],
   ['uitoggle',['UIToggle',['../classqtpd_1_1_u_i_toggle.html#a4e91f313e67310863be8aaf0dab003ce',1,'qtpd::UIToggle']]],
   ['unescapestring',['unescapeString',['../classqtpd_1_1_file_parser.html#a913f7dec69523e9fb2ef3054e8904b65',1,'qtpd::FileParser::unescapeString()'],['../classqtpd_1_1_property.html#a29144b681f142100e87eb128b052ed74',1,'qtpd::Property::unescapeString()']]],
   ['unregisterclass',['unregisterClass',['../classqtpd_1_1_o_o_p_d.html#a345e1c4fe7de65214d0303aba74d9b85',1,'qtpd::OOPD']]],

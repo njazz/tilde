@@ -100,30 +100,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00016"></a>00016 <span class="preprocessor">#include &lt;map&gt;</span>
 <a name="l00017"></a>00017 
 <a name="l00018"></a>00018 <span class="keyword">namespace </span>qtpd {
-<a name="l00019"></a><a class="code" href="classqtpd_1_1_properties_window.html">00019</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_properties_window.html">PropertiesWindow</a> : <span class="keyword">public</span> QWidget {
-<a name="l00020"></a>00020 
-<a name="l00021"></a>00021 <span class="keyword">private</span>:
-<a name="l00022"></a>00022     std::map&lt;QLineEdit*, QString&gt; _propertyNames; <span class="comment">//lookup table</span>
-<a name="l00023"></a>00023     <a class="code" href="classqtpd_1_1_property_list.html" title="Property handling class for ui object - property list.">PropertyList</a>* _propertyList;
+<a name="l00019"></a>00019 
+<a name="l00023"></a><a class="code" href="classqtpd_1_1_properties_window.html">00023</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_properties_window.html" title="Properties window class.">PropertiesWindow</a> : <span class="keyword">public</span> QWidget {
 <a name="l00024"></a>00024 
-<a name="l00025"></a>00025 <span class="keyword">public</span>:
-<a name="l00026"></a>00026     <a class="code" href="classqtpd_1_1_properties_window.html#a00963af1db4eec6663d1c54e58c2c05a">PropertiesWindow</a>(<a class="code" href="classqtpd_1_1_property_list.html" title="Property handling class for ui object - property list.">PropertyList</a>* plist);
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028 <span class="keyword">public</span> slots:
-<a name="l00029"></a><a class="code" href="classqtpd_1_1_properties_window.html#ae14aa4b9b2b68526804977021bb8ea22">00029</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_properties_window.html#ae14aa4b9b2b68526804977021bb8ea22">editedProperty</a>()
-<a name="l00030"></a>00030     {
-<a name="l00031"></a>00031         qDebug() &lt;&lt; <span class="stringliteral">&quot;edited&quot;</span>;
-<a name="l00032"></a>00032 
-<a name="l00033"></a>00033         QLineEdit* sender = (QLineEdit*)QObject::sender();
-<a name="l00034"></a>00034         QString pname = _propertyNames[sender];
-<a name="l00035"></a>00035         _propertyList-&gt;<a class="code" href="classqtpd_1_1_property_list.html#a29af3e410e9b5fd3fd8a86d295215a44">set</a>(pname.toStdString(), sender-&gt;text().split(<span class="stringliteral">&quot; &quot;</span>));
+<a name="l00025"></a>00025 <span class="keyword">private</span>:
+<a name="l00026"></a>00026     std::map&lt;QLineEdit*, QString&gt; _propertyNames; <span class="comment">//lookup table</span>
+<a name="l00027"></a>00027     <a class="code" href="classqtpd_1_1_property_list.html" title="Property handling class for ui object - property list.">PropertyList</a>* _propertyList;
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 <span class="keyword">public</span>:
+<a name="l00030"></a>00030     <a class="code" href="classqtpd_1_1_properties_window.html#a00963af1db4eec6663d1c54e58c2c05a">PropertiesWindow</a>(<a class="code" href="classqtpd_1_1_property_list.html" title="Property handling class for ui object - property list.">PropertyList</a>* plist);
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032 <span class="keyword">public</span> slots:
+<a name="l00033"></a><a class="code" href="classqtpd_1_1_properties_window.html#ae14aa4b9b2b68526804977021bb8ea22">00033</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_properties_window.html#ae14aa4b9b2b68526804977021bb8ea22">editedProperty</a>()
+<a name="l00034"></a>00034     {
+<a name="l00035"></a>00035         qDebug() &lt;&lt; <span class="stringliteral">&quot;edited&quot;</span>;
 <a name="l00036"></a>00036 
-<a name="l00037"></a>00037         qDebug() &lt;&lt; pname &lt;&lt; sender-&gt;text();
-<a name="l00038"></a>00038     }
-<a name="l00039"></a>00039 };
-<a name="l00040"></a>00040 }
-<a name="l00041"></a>00041 
-<a name="l00042"></a>00042 <span class="preprocessor">#endif // CM_PROPERTIESWINDOW_H</span>
+<a name="l00037"></a>00037         QLineEdit* sender = (QLineEdit*)QObject::sender();
+<a name="l00038"></a>00038         QString pname = _propertyNames[sender];
+<a name="l00039"></a>00039         _propertyList-&gt;<a class="code" href="classqtpd_1_1_property_list.html#a29af3e410e9b5fd3fd8a86d295215a44">set</a>(pname.toStdString(), sender-&gt;text().split(<span class="stringliteral">&quot; &quot;</span>));
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041         qDebug() &lt;&lt; pname &lt;&lt; sender-&gt;text();
+<a name="l00042"></a>00042     }
+<a name="l00043"></a>00043 };
+<a name="l00044"></a>00044 }
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046 <span class="preprocessor">#endif // CM_PROPERTIESWINDOW_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -142,7 +143,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 29 2017 20:26:35 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 29 2017 21:52:56 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
