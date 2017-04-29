@@ -118,6 +118,8 @@ public:
     }
     QString filePath() { return _filePath; };
 
+
+
     ////
     /// \brief minimumCanvasSize
     /// \return

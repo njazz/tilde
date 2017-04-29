@@ -337,6 +337,9 @@ public:
         if (canvas->getEditMode() != em_Locked) {
             canvas->showNewObjectMaker();
         }
+
+        //change later
+        setWindowModified(true);
     }
 
     void newMessageBox()
@@ -349,6 +352,8 @@ public:
             canvas->update();
             //newMsg->show();
         }
+
+        setWindowModified(true);
     }
 
     void newFloatBox()
@@ -363,6 +368,8 @@ public:
 
             //newFlo->show();
         }
+
+        setWindowModified(true);
     }
 
     void newCommentBox()
@@ -376,6 +383,8 @@ public:
            canvas->update();
            // newTxt->show();
         }
+
+        setWindowModified(true);
     }
 
     void newBangBox()
@@ -388,6 +397,8 @@ public:
             canvas->update();
             //newBng->show();
         }
+
+        setWindowModified(true);
     }
 
     void newToggleBox()
@@ -400,6 +411,8 @@ public:
             canvas->update();
             //newBng->show();
         }
+
+        setWindowModified(true);
     }
 
     void newScriptBox()
@@ -412,6 +425,8 @@ public:
             canvas->update();
             //newBng->show();
         }
+
+        setWindowModified(true);
     }
 
     void newArrayBox()
@@ -424,6 +439,8 @@ public:
             canvas->update();
             //newArr->show();
         }
+
+        setWindowModified(true);
     }
 
     void newPdClassBox()
@@ -436,6 +453,8 @@ public:
             canvas->update();
             //newArr->show();
         }
+
+        setWindowModified(true);
     }
 
     void newPdInstanceBox()
@@ -448,6 +467,8 @@ public:
             canvas->update();
             //newArr->show();
         }
+
+        setWindowModified(true);
     }
 
     // ----------------------------------------------------
@@ -456,12 +477,16 @@ public:
     {
         canvas->deleteSelectedBoxes();
         canvas->delSelectedPatchcords();
+
+        setWindowModified(true);
     }
 
     void selectAll()
     {
         // todo direct slot connection
         canvas->selectAll();
+
+        setWindowModified(true);
     }
 
     void objectMakerDone();
@@ -508,7 +533,22 @@ public:
         //if (!canvas->keepPdObject())
             //cmp_closepatch((t_canvas*)canvas->pdObject());
 
-        event->accept();
+        if (isWindowModified())
+        {
+            QMessageBox::StandardButton reply;
+            reply = QMessageBox::question(this, "Qtpd", "The patch was modified. Do you want to save it?",
+                                        QMessageBox::Yes|QMessageBox::No|QMessageBox::Cancel);
+
+            if (reply == QMessageBox::No)
+                event->accept();
+            if (reply == QMessageBox::Cancel)
+                event->ignore();
+            if (reply == QMessageBox::Yes)
+                save();
+
+        }
+
+
     }
 
     ////

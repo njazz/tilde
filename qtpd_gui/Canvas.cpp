@@ -943,6 +943,8 @@ void Canvas::setWindowSize(QSize wsize)
     _windowSize = wsize;
 }
 
+
+
 // ==========================================
 
 void Canvas::dataCut()

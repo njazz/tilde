@@ -144,6 +144,7 @@ void PatchWindow::doSave(QString fname)
 
         setWindowTitle(file);
         setWindowFilePath(fname);
+        setWindowModified(false);
     }
 }
 
