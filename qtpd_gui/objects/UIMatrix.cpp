@@ -7,21 +7,14 @@ namespace qtpd {
 
 UIMatrix::UIMatrix()
 {
-    //setPdObjectName("ui.toggle");
+    //setPdObjectName("ui.matrix");
 
     setSize(20, 20);
 
-    //setMinimumBoxWidth(20);
-    //setMinimumBoxHeight(20);
-
-    _objectDataModel.setObjectSize(os_FixedHeight, 100,20);
+    _objectDataModel.setObjectSize(os_FixedHeight, 100, 20);
 
     deselect();
     _clicked = false;
-
-    //setObjectSizeMode(os_Square);
-
-    //_value = false;
 
     initProperties();
 
