@@ -152,7 +152,8 @@ SOURCES += main.cpp\
     widgets/UIScriptEditor.cpp \
     widgets/UIScriptCommon.cpp \
     oopd/UISignal.cpp \
-    objects/UIMatrix.cpp
+    objects/UIMatrix.cpp \
+    objects/UISubCanvas.cpp
 
 
 
@@ -224,7 +225,8 @@ HEADERS  += \
     widgets/UIScriptEditor.h \
     widgets/UIScriptCommon.h \
     oopd/UISignal.h \
-    objects/UIMatrix.h
+    objects/UIMatrix.h \
+    objects/UISubCanvas.h
 
 
 
