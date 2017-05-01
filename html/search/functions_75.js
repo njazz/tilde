@@ -23,6 +23,7 @@ var searchData=
   ['uiscripttextedit',['UIScriptTextEdit',['../classqtpd_1_1_u_i_script_text_edit.html#a81b5bb6c5506dbf27390bd05ae271388',1,'qtpd::UIScriptTextEdit']]],
   ['uisignal',['UISignal',['../classqtpd_1_1_u_i_signal.html#a0c2b76b33775a415e9a43b8a6e34bd90',1,'qtpd::UISignal']]],
   ['uislider',['UISlider',['../classqtpd_1_1_u_i_slider.html#a34167f7d3cb6cf46ef4836e4a6b5abc6',1,'qtpd::UISlider']]],
+  ['uisubcanvas',['UISubCanvas',['../classqtpd_1_1_u_i_sub_canvas.html#a483e20e77dfc7cb05ec4d5f90a89cf95',1,'qtpd::UISubCanvas']]],
   ['uisubpatch',['UISubpatch',['../classqtpd_1_1_u_i_subpatch.html#adf6e2b1064c7380bd82f1065ffee5a02',1,'qtpd::UISubpatch']]],
   ['uitext',['UIText',['../classqtpd_1_1_u_i_text.html#a63c32d16e0b759e74452444b9a7590e7',1,'qtpd::UIText']]],
   ['uitexteditor',['UITextEditor',['../classqtpd_1_1_u_i_text_editor.html#a5e7eaee2b7eda76b3858988c4cd6cb0e',1,'qtpd::UITextEditor']]],
