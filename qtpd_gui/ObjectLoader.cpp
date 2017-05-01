@@ -37,6 +37,7 @@ void ObjectLoader::loadObjects()
 
     addUIobject("ui.dsp", &UIDSP::createObject);
 
+    addUIobject("pds", &UISubCanvas::createObject);
 
 }
 

@@ -341,6 +341,7 @@ UIObject* Canvas::createObject(QString objectData1, QPoint pos) //std::string UI
     //(later - inlets/outlets)
 
     if (list.count()) {
+
         if (list.at(0) == "pd") {
             //lol
             std::pair<QMainWindow*, UIObject*> newPatch;
@@ -349,8 +350,6 @@ UIObject* Canvas::createObject(QString objectData1, QPoint pos) //std::string UI
             newPatch = emit createSubpatchWindow();
 
             QMainWindow* subPatch = newPatch.first;
-            //Canvas* newCanvas = (Canvas*)newPatch.second;
-
             UIObject* obj = UISubpatch::createObject(objectData1, 0, this);
 
             ((UISubpatch*)obj)->setSubpatchWindow(subPatch);
@@ -367,6 +366,38 @@ UIObject* Canvas::createObject(QString objectData1, QPoint pos) //std::string UI
             obj->move(pos.x(), pos.y());
             _canvasData.addUniqueBox(_canvasData.boxes(), obj);
             scene()->addItem(obj);
+
+            return obj;
+        }
+
+        // temporary to check G-O-P
+        if (list.at(0) == "pds") {
+            //lol
+            std::pair<QMainWindow*, UIObject*> newPatch;
+
+            // todo return just QMainWindow
+            newPatch = emit createSubpatchWindow();
+
+            QMainWindow* subPatch = newPatch.first;
+            UIObject* obj = UISubpatch::createObject(objectData1, 0, this);
+
+            ((UISubpatch*)obj)->setSubpatchWindow(subPatch);
+
+            //qDebug()<<"objdata1" << objectData1;
+            qDebug("subpatch>>");
+
+            subPatch->show();
+
+            connect(obj, &UIObject::selectBox, this, &Canvas::s_SelectBox);
+            connect(obj, &UIObject::moveBox, this, &Canvas::s_MoveBox);
+
+            obj->setEditModeRef(_canvasEditMode); //Canvas::getEditModeRef());
+            obj->move(pos.x(), pos.y());
+            _canvasData.addUniqueBox(_canvasData.boxes(), obj);
+            scene()->addItem(obj);
+
+            //temp
+            obj->setSize(400,300);
 
             return obj;
         }

@@ -12,8 +12,8 @@
 #include <QFileDialog>
 
 //#include "cm_pdlink.h"
-
 //#include "UIScriptTextEdit.h"
+
 #include "UIScriptEditor.h"
 
 #include "UIScriptCommon.h"

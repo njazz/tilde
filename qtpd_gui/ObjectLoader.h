@@ -23,6 +23,8 @@
 #include "UISlider.h"
 #include "UIMatrix.h"
 
+#include "UISubCanvas.h"
+
 #include "UILink.h"
 
 #include "UIArray.h"

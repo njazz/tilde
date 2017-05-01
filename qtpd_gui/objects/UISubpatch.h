@@ -63,6 +63,8 @@ public:
 
         b->resizeEvent();
 
+        b->setBgColor(QColor(224,224,224));
+
         return (UIObject*)b;
     };
 
