@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>qtpd: /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/Patchcord.h Source File</title>
+<title>qtpd: /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIPatchcord.h Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -79,10 +79,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="headertitle">
-<div class="title">/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/Patchcord.h</div>  </div>
+<div class="title">/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIPatchcord.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_patchcord_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// (c) 2017 Alex Nadzharov</span>
+<a href="_u_i_patchcord_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// (c) 2017 Alex Nadzharov</span>
 <a name="l00002"></a>00002 <span class="comment">// License: GPL3</span>
 <a name="l00003"></a>00003 
 <a name="l00004"></a>00004 <span class="preprocessor">#ifndef CM_PATCHCORD_H</span>
@@ -108,7 +108,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00029"></a><a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3a">00029</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> { <a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3aa8ba461362f560cd18d438c3c02fd9e73">cm_pt_anything</a> = 0,
 <a name="l00030"></a><a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3aa26f0769dd61021da2d4af0555b3e3e78">00030</a>     <a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3aa26f0769dd61021da2d4af0555b3e3e78">cm_pt_signal</a> = 1 } <a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3a" title="patchcord type - message / signal, can be extended later">patchcordTypeEnum</a>;
 <a name="l00031"></a>00031 
-<a name="l00036"></a><a class="code" href="classqtpd_1_1_patchcord.html">00036</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_patchcord.html" title="Patchcord QGraphicsObject class.">Patchcord</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a> {
+<a name="l00036"></a><a class="code" href="classqtpd_1_1_u_i_patchcord.html">00036</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_u_i_patchcord.html" title="Patchcord QGraphicsObject class.">UIPatchcord</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a> {
 <a name="l00037"></a>00037 <span class="keyword">private</span>:
 <a name="l00038"></a>00038     <a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* _obj1;
 <a name="l00039"></a>00039     <a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* _out1;
@@ -120,44 +120,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00045"></a>00045     QPainterPath _path;
 <a name="l00046"></a>00046 
 <a name="l00047"></a>00047 <span class="keyword">public</span>:
-<a name="l00048"></a>00048     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_patchcord.html#acf03de814e1b49b4de6a99353461df70">Patchcord</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* _obj1, <a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* _out1, <a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* _obj2, <a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* _in2);
+<a name="l00048"></a>00048     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_u_i_patchcord.html#ac3c6ff6f6a2d287400a07a3b93a8919b">UIPatchcord</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* _obj1, <a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* _out1, <a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* _obj2, <a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* _in2);
 <a name="l00049"></a>00049 
-<a name="l00050"></a>00050     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patchcord.html#a7eab926c56b6c04290040eec0108c122">paint</a>(QPainter* painter, <span class="keyword">const</span> QStyleOptionGraphicsItem*, QWidget*);
+<a name="l00050"></a>00050     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_patchcord.html#a124fbe095c737abdda322c7dd896c524">paint</a>(QPainter* painter, <span class="keyword">const</span> QStyleOptionGraphicsItem*, QWidget*);
 <a name="l00051"></a>00051 
 <a name="l00055"></a>00055 
-<a name="l00056"></a>00056     QPoint <a class="code" href="classqtpd_1_1_patchcord.html#a067732a8c5322c8d32f9d39ab016080c">startPoint</a>();
-<a name="l00057"></a>00057     QPoint <a class="code" href="classqtpd_1_1_patchcord.html#ab268c90dfe60162baaf3a7792bc26d03">endPoint</a>();
+<a name="l00056"></a>00056     QPoint <a class="code" href="classqtpd_1_1_u_i_patchcord.html#ae597220fe088f82083ba055406f8c704">startPoint</a>();
+<a name="l00057"></a>00057     QPoint <a class="code" href="classqtpd_1_1_u_i_patchcord.html#a91f033218b14738a458fad5c38fd04cd">endPoint</a>();
 <a name="l00058"></a>00058 
-<a name="l00059"></a><a class="code" href="classqtpd_1_1_patchcord.html#a1b5fb2d27b98da2e715060294b0599d7">00059</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patchcord.html#a1b5fb2d27b98da2e715060294b0599d7">setPatchcordType</a>(<a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3a" title="patchcord type - message / signal, can be extended later">patchcordTypeEnum</a> v) { _patchcordType = v; }
+<a name="l00059"></a><a class="code" href="classqtpd_1_1_u_i_patchcord.html#a592372e203dcc28a4fa200c20631baa5">00059</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_patchcord.html#a592372e203dcc28a4fa200c20631baa5">setPatchcordType</a>(<a class="code" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3a" title="patchcord type - message / signal, can be extended later">patchcordTypeEnum</a> v) { _patchcordType = v; }
 <a name="l00060"></a>00060 
-<a name="l00061"></a><a class="code" href="classqtpd_1_1_patchcord.html#a9a5decac9d1ded5a0b94717b18890169">00061</a>     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* <a class="code" href="classqtpd_1_1_patchcord.html#a9a5decac9d1ded5a0b94717b18890169">obj1</a>() { <span class="keywordflow">return</span> (<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>*)_obj1; }
-<a name="l00062"></a><a class="code" href="classqtpd_1_1_patchcord.html#afac1fa9dd84063a62137044cf29bd045">00062</a>     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* <a class="code" href="classqtpd_1_1_patchcord.html#afac1fa9dd84063a62137044cf29bd045">obj2</a>() { <span class="keywordflow">return</span> (<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>*)_obj2; }
+<a name="l00061"></a><a class="code" href="classqtpd_1_1_u_i_patchcord.html#ae1bd6d258fdc4f97b0e72e71e3dd2c88">00061</a>     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_patchcord.html#ae1bd6d258fdc4f97b0e72e71e3dd2c88">obj1</a>() { <span class="keywordflow">return</span> (<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>*)_obj1; }
+<a name="l00062"></a><a class="code" href="classqtpd_1_1_u_i_patchcord.html#a6dfd301e556859b844a8e7c1341b058c">00062</a>     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_patchcord.html#a6dfd301e556859b844a8e7c1341b058c">obj2</a>() { <span class="keywordflow">return</span> (<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>*)_obj2; }
 <a name="l00063"></a>00063 
-<a name="l00064"></a><a class="code" href="classqtpd_1_1_patchcord.html#abf722a2a6cbc46a40aa73af15756e2df">00064</a>     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_patchcord.html#abf722a2a6cbc46a40aa73af15756e2df">outletIndex</a>() { <span class="keywordflow">return</span> ((<a class="code" href="classqtpd_1_1_port.html" title="Port QGraphicsItem class.">Port</a>*)_out1) ? ((<a class="code" href="classqtpd_1_1_port.html" title="Port QGraphicsItem class.">Port</a>*)_out1)-&gt;portIndex() : -1; }
-<a name="l00065"></a><a class="code" href="classqtpd_1_1_patchcord.html#a0d933ac877c243182fe02ba4fb6aeb32">00065</a>     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_patchcord.html#a0d933ac877c243182fe02ba4fb6aeb32">inletIndex</a>() { <span class="keywordflow">return</span> ((<a class="code" href="classqtpd_1_1_port.html" title="Port QGraphicsItem class.">Port</a>*)_in2) ? ((<a class="code" href="classqtpd_1_1_port.html" title="Port QGraphicsItem class.">Port</a>*)_in2)-&gt;portIndex() : -1; }
+<a name="l00064"></a><a class="code" href="classqtpd_1_1_u_i_patchcord.html#a5fecd682a5f7ffccafcf49358db9a053">00064</a>     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_u_i_patchcord.html#a5fecd682a5f7ffccafcf49358db9a053">outletIndex</a>() { <span class="keywordflow">return</span> ((<a class="code" href="classqtpd_1_1_port.html" title="Port QGraphicsItem class.">Port</a>*)_out1) ? ((<a class="code" href="classqtpd_1_1_port.html" title="Port QGraphicsItem class.">Port</a>*)_out1)-&gt;portIndex() : -1; }
+<a name="l00065"></a><a class="code" href="classqtpd_1_1_u_i_patchcord.html#abf4ef43f4de59746c67f8114ccb77c6d">00065</a>     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_u_i_patchcord.html#abf4ef43f4de59746c67f8114ccb77c6d">inletIndex</a>() { <span class="keywordflow">return</span> ((<a class="code" href="classqtpd_1_1_port.html" title="Port QGraphicsItem class.">Port</a>*)_in2) ? ((<a class="code" href="classqtpd_1_1_port.html" title="Port QGraphicsItem class.">Port</a>*)_in2)-&gt;portIndex() : -1; }
 <a name="l00066"></a>00066 
-<a name="l00067"></a><a class="code" href="classqtpd_1_1_patchcord.html#aee154302b18479c1e897716e7d385847">00067</a>     QPainterPath <a class="code" href="classqtpd_1_1_patchcord.html#aee154302b18479c1e897716e7d385847">shape</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _path; }
+<a name="l00067"></a><a class="code" href="classqtpd_1_1_u_i_patchcord.html#af442ce8e26698d0704e0b799f348cbac">00067</a>     QPainterPath <a class="code" href="classqtpd_1_1_u_i_patchcord.html#af442ce8e26698d0704e0b799f348cbac">shape</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _path; }
 <a name="l00068"></a>00068 
-<a name="l00069"></a><a class="code" href="classqtpd_1_1_patchcord.html#a0df0e18257c70b698ff0a7e82efea48b">00069</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_patchcord.html#a0df0e18257c70b698ff0a7e82efea48b">isConnectedToObject</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* obj) { <span class="keywordflow">return</span> ((obj == _obj1) || (obj == _obj2)); }
+<a name="l00069"></a><a class="code" href="classqtpd_1_1_u_i_patchcord.html#a20045a0be7d91de608196dff252ea435">00069</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_u_i_patchcord.html#a20045a0be7d91de608196dff252ea435">isConnectedToObject</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* obj) { <span class="keywordflow">return</span> ((obj == _obj1) || (obj == _obj2)); }
 <a name="l00070"></a>00070 
 <a name="l00073"></a>00073 
 <a name="l00074"></a>00074 
 <a name="l00075"></a>00075 
 <a name="l00076"></a>00076 
-<a name="l00077"></a><a class="code" href="classqtpd_1_1_patchcord.html#a81a35090adb920272611fb821549af55">00077</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patchcord.html#a81a35090adb920272611fb821549af55">hoverEnterEvent</a>(QGraphicsSceneHoverEvent*)
+<a name="l00077"></a><a class="code" href="classqtpd_1_1_u_i_patchcord.html#a878af9e636e01e0f0b36426c60372a54">00077</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_patchcord.html#a878af9e636e01e0f0b36426c60372a54">hoverEnterEvent</a>(QGraphicsSceneHoverEvent*)
 <a name="l00078"></a>00078     {
 <a name="l00079"></a>00079         qDebug() &lt;&lt; <span class="stringliteral">&quot;hover patchcord&quot;</span>;
 <a name="l00080"></a>00080         <a class="code" href="classqtpd_1_1_u_i_item.html#a049c5b6ff7a83ae3716e7b828d9da67a">setHover</a>(<span class="keyword">true</span>);
 <a name="l00081"></a>00081         update();
 <a name="l00082"></a>00082     }
 <a name="l00083"></a>00083 
-<a name="l00084"></a><a class="code" href="classqtpd_1_1_patchcord.html#ae30f949b451e0f239aa29dacb30fbabf">00084</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patchcord.html#ae30f949b451e0f239aa29dacb30fbabf">hoverLeaveEvent</a>(QGraphicsSceneHoverEvent*)
+<a name="l00084"></a><a class="code" href="classqtpd_1_1_u_i_patchcord.html#a80fd71686427c96e425c2c5f3ff441c2">00084</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_patchcord.html#a80fd71686427c96e425c2c5f3ff441c2">hoverLeaveEvent</a>(QGraphicsSceneHoverEvent*)
 <a name="l00085"></a>00085     {
 <a name="l00086"></a>00086         <a class="code" href="classqtpd_1_1_u_i_item.html#a049c5b6ff7a83ae3716e7b828d9da67a">setHover</a>(<span class="keyword">false</span>);
 <a name="l00087"></a>00087         update();
 <a name="l00088"></a>00088     }
 <a name="l00089"></a>00089 
-<a name="l00090"></a><a class="code" href="classqtpd_1_1_patchcord.html#ab10ac2907d2e9ed08c7721e746cf55da">00090</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patchcord.html#ab10ac2907d2e9ed08c7721e746cf55da">mousePressEvent</a>(QGraphicsSceneMouseEvent*)
+<a name="l00090"></a><a class="code" href="classqtpd_1_1_u_i_patchcord.html#a93a4f11c81c580fe22e42d8a3ae7797d">00090</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_patchcord.html#a93a4f11c81c580fe22e42d8a3ae7797d">mousePressEvent</a>(QGraphicsSceneMouseEvent*)
 <a name="l00091"></a>00091     {
 <a name="l00092"></a>00092         qDebug() &lt;&lt; <span class="stringliteral">&quot;click patchcord&quot;</span>;
 <a name="l00093"></a>00093         <a class="code" href="classqtpd_1_1_u_i_item.html#a73739a4c2f2883ac10ab7087deaf57af">select</a>(); <span class="comment">//(true);</span>
@@ -165,9 +165,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00095"></a>00095     }
 <a name="l00096"></a>00096 
 <a name="l00099"></a>00099 signals:
-<a name="l00100"></a>00100     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patchcord.html#a392ab8cd508d80b32da3cbe797ec0246">selected</a>(); 
-<a name="l00101"></a>00101     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patchcord.html#a738041f165f4962b73c37ceca952d4e3" title="&gt; basic select signal - same as in UIObject class">shiftClicked</a>(); 
-<a name="l00102"></a>00102     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patchcord.html#a04670e604f557e832fe80279ad353540" title="&gt; deletes object and makes new line from obj2 out &#39;new line&#39;">altClicked</a>(); 
+<a name="l00100"></a>00100     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_patchcord.html#a8fd173679c9a791864997d9358403cb8">selected</a>(); 
+<a name="l00101"></a>00101     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_patchcord.html#a492d4b1c3a6af758e6414638a37b40ef" title="&gt; basic select signal - same as in UIObject class">shiftClicked</a>(); 
+<a name="l00102"></a>00102     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_patchcord.html#a7bb545a9f90c47b9833bf323981d8584" title="&gt; deletes object and makes new line from obj2 out &#39;new line&#39;">altClicked</a>(); 
 <a name="l00103"></a>00103 };
 <a name="l00104"></a>00104 }
 <a name="l00105"></a>00105 
@@ -190,7 +190,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 19 2017 17:14:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 19 2017 17:27:48 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

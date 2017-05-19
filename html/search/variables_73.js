@@ -30,6 +30,7 @@ var searchData=
   ['sc_5ftemplate',['sc_template',['../struct__scalar.html#a6ecb80a3eac23b970b37f0cfda4f1941',1,'_scalar']]],
   ['sc_5fvec',['sc_vec',['../struct__scalar.html#a533d6c370f87108feb5372e2250a1e35',1,'_scalar']]],
   ['scalar_5fclass',['scalar_class',['../m__pd_8h.html#a4d99ec83203b72ac7c006e1492699ac7',1,'m_pd.h']]],
+  ['scenes',['scenes',['../class_patch_window_controller.html#a9887ff2f18a8771c6f7ea2129c3db705',1,'PatchWindowController']]],
   ['sel_5fnext',['sel_next',['../struct__selection.html#a7755b96133489ff250c49bb3e03ef113',1,'_selection']]],
   ['sel_5fwhat',['sel_what',['../struct__selection.html#a6e9a7ca0c21e0a08244a6584a27b888b',1,'_selection']]],
   ['sys_5ffont',['sys_font',['../m__pd_8h.html#a9072b62529e8151dc4cc259879526386',1,'m_pd.h']]],

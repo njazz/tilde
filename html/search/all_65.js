@@ -35,7 +35,7 @@ var searchData=
   ['em_5funlocked',['em_Unlocked',['../namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aaa528336eacc29596e8365b88a4f62d82',1,'qtpd']]],
   ['empty',['empty',['../classceammc_1_1_atom_list.html#ab715e73830704d7b06248bd137e5ccfa',1,'ceammc::AtomList']]],
   ['end',['end',['../classqtpd_1_1_selection_rect.html#ae786b53ab171864c31be191713cee0f4',1,'qtpd::SelectionRect']]],
-  ['endpoint',['endPoint',['../classqtpd_1_1_patchcord.html#ab268c90dfe60162baaf3a7792bc26d03',1,'qtpd::Patchcord']]],
+  ['endpoint',['endPoint',['../classqtpd_1_1_u_i_patchcord.html#a91f033218b14738a458fad5c38fd04cd',1,'qtpd::UIPatchcord']]],
   ['endpost',['endpost',['../m__pd_8h.html#ac3a51d43b7d1183250700b59941c2508',1,'m_pd.h']]],
   ['error',['error',['../m__pd_8h.html#a62da26087ac7b125bdf1519b3200195a',1,'m_pd.h']]],
   ['errorbox',['errorBox',['../classqtpd_1_1_u_i_object_data.html#a4cc9402d31f79c07d656fdd9f5b39d6e',1,'qtpd::UIObjectData::errorBox()'],['../classqtpd_1_1_u_i_object.html#a1a55479c564318cbf31c0f09d02d39bb',1,'qtpd::UIObject::errorBox()']]],

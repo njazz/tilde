@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>qtpd: /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/Patchcord.h File Reference</title>
+<title>qtpd: /home/travis/build/njazz/qtpd/qtpd_gui/controller/ControllerObserver.h Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -78,43 +78,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
-<div class="title">/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/Patchcord.h File Reference</div>  </div>
+<div class="title">/home/travis/build/njazz/qtpd/qtpd_gui/controller/ControllerObserver.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="_port_8h_source.html">Port.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="_u_i_object_8h_source.html">UIObject.h</a>&quot;</code><br/>
-<code>#include &lt;math.h&gt;</code><br/>
-</div>
-<p><a href="_patchcord_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr><td colspan="2"><h2><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structqtpd_1_1__patchcord_as_numbers.html">qtpd::_patchcordAsNumbers</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">patchcord as numbers  <a href="structqtpd_1_1__patchcord_as_numbers.html#details">More...</a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patchcord.html">qtpd::Patchcord</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classqtpd_1_1_patchcord.html" title="Patchcord QGraphicsObject class.">Patchcord</a> QGraphicsObject class.  <a href="classqtpd_1_1_patchcord.html#details">More...</a><br/></td></tr>
-<tr><td colspan="2"><h2><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html">qtpd</a></td></tr>
-<tr><td colspan="2"><h2><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef struct <br class="typebreak"/>
-<a class="el" href="structqtpd_1_1__patchcord_as_numbers.html">qtpd::_patchcordAsNumbers</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a4d975c32d29ce6a398847118e1826bd5">qtpd::t_patchcordAsNumbers</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">patchcord as numbers  <a href="#a4d975c32d29ce6a398847118e1826bd5"></a><br/></td></tr>
-<tr><td colspan="2"><h2><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3a">qtpd::patchcordTypeEnum</a> { <a class="el" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3aa8ba461362f560cd18d438c3c02fd9e73">qtpd::cm_pt_anything</a> =  0, 
-<a class="el" href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3aa26f0769dd61021da2d4af0555b3e3e78">qtpd::cm_pt_signal</a> =  1
- }</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">patchcord type - message / signal, can be extended later  <a href="namespaceqtpd.html#aeb90db8c4429db4c0e2875b083534a3a">More...</a><br/></td></tr>
-</table>
-</div><!-- contents -->
+<a href="_controller_observer_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// (c) 2017 Alex Nadzharov</span>
+<a name="l00002"></a>00002 <span class="comment">// License: GPL3</span>
+<a name="l00003"></a>00003 
+<a name="l00004"></a>00004 <span class="preprocessor">#ifndef CONTROLLEROBSERVER</span>
+<a name="l00005"></a>00005 <span class="preprocessor"></span><span class="preprocessor">#define CONTROLLEROBSERVER</span>
+<a name="l00006"></a>00006 <span class="preprocessor"></span>
+<a name="l00007"></a>00007 <span class="keyword">class </span><a class="code" href="class_patch_window_controller.html">PatchWindowController</a>;
+<a name="l00008"></a>00008 
+<a name="l00009"></a><a class="code" href="class_controller_observer.html">00009</a> <span class="keyword">class </span><a class="code" href="class_controller_observer.html">ControllerObserver</a> : Observer {
+<a name="l00010"></a>00010 <span class="keyword">public</span>:
+<a name="l00011"></a><a class="code" href="class_controller_observer.html#a26aef2ea4c4162e39d9b48ddc4c91236">00011</a>     <a class="code" href="class_controller_observer.html#a26aef2ea4c4162e39d9b48ddc4c91236">ControllerObserver</a>(<a class="code" href="class_patch_window_controller.html">PatchWindowController</a>* Controller = 0){};
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_controller_observer.html#acfed92e885335d1dfc2f341c952920ca">update</a>(); <span class="comment">// controller-&gt;updateDspOn()</span>
+<a name="l00014"></a>00014 };
+<a name="l00015"></a>00015 
+<a name="l00016"></a>00016 <span class="preprocessor">#endif // CM_PDLINK_H</span>
+</pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -132,7 +116,7 @@ Enumerations</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 19 2017 17:14:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 19 2017 17:27:48 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

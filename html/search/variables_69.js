@@ -5,5 +5,5 @@ var searchData=
   ['inputdevicecount',['inputDeviceCount',['../struct__cmp__audio__info.html#abb46e4a7caa397873793617c0816945c',1,'_cmp_audio_info']]],
   ['inputdevicelist',['inputDeviceList',['../struct__cmp__audio__info.html#aaa14da2783c9d73cb8985b085e4aef2c',1,'_cmp_audio_info']]],
   ['inputlist',['inputList',['../classqtpd_1_1_u_i_script_data.html#a17506bf353708287341c46af768f2d62',1,'qtpd::UIScriptData']]],
-  ['instance',['instance',['../namespaceqtpd.html#a3dde6489d34303c66ea710aa2116b426',1,'qtpd']]]
+  ['instance',['instance',['../class_patch_window_controller.html#acc29fa8c445712ba54415d39fbfdbe78',1,'PatchWindowController::instance()'],['../namespaceqtpd.html#a3dde6489d34303c66ea710aa2116b426',1,'qtpd::instance()']]]
 ];

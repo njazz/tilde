@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>qtpd: /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/NewLine.h Source File</title>
+<title>qtpd: Member List</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -49,8 +49,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -72,47 +72,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 </div>
 <div class="header">
   <div class="headertitle">
-<div class="title">/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/NewLine.h</div>  </div>
+<div class="title">ApplicationController Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_new_line_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// (c) 2017 Alex Nadzharov</span>
-<a name="l00002"></a>00002 <span class="comment">// License: GPL3</span>
-<a name="l00003"></a>00003 
-<a name="l00004"></a>00004 <span class="preprocessor">#ifndef NewLine_H</span>
-<a name="l00005"></a>00005 <span class="preprocessor"></span><span class="preprocessor">#define NewLine_H</span>
-<a name="l00006"></a>00006 <span class="preprocessor"></span>
-<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;<a class="code" href="_u_i_item_8h.html">UIItem.h</a>&quot;</span>
-<a name="l00008"></a>00008 
-<a name="l00009"></a>00009 <span class="preprocessor">#include &lt;QPainter&gt;</span>
-<a name="l00010"></a>00010 
-<a name="l00011"></a>00011 <span class="keyword">namespace </span>qtpd {
-<a name="l00012"></a>00012 
-<a name="l00016"></a><a class="code" href="classqtpd_1_1_new_patchcord.html">00016</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_new_patchcord.html" title="New patchcord - dashed line.">NewPatchcord</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a> {
-<a name="l00017"></a>00017     <span class="keywordtype">bool</span> _active;
-<a name="l00018"></a>00018     QPoint _start;
-<a name="l00019"></a>00019     QPoint _end;
-<a name="l00020"></a>00020 
-<a name="l00021"></a>00021 <span class="keyword">public</span>:
-<a name="l00022"></a>00022     <a class="code" href="classqtpd_1_1_new_patchcord.html#a42f8aa1d32bd2efeec424a3a9ab8a302">NewPatchcord</a>();
-<a name="l00023"></a>00023 
-<a name="l00027"></a>00027 
-<a name="l00028"></a><a class="code" href="classqtpd_1_1_new_patchcord.html#a3848546427931ad6e75bc673b2772b90">00028</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_new_patchcord.html#a3848546427931ad6e75bc673b2772b90">setActive</a>(<span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_new_patchcord.html#a1ced6b922c2fd6c4ee08d356ae1efcf9">active</a>) { _active = <a class="code" href="classqtpd_1_1_new_patchcord.html#a1ced6b922c2fd6c4ee08d356ae1efcf9">active</a>; }
-<a name="l00029"></a><a class="code" href="classqtpd_1_1_new_patchcord.html#a1ced6b922c2fd6c4ee08d356ae1efcf9">00029</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_new_patchcord.html#a1ced6b922c2fd6c4ee08d356ae1efcf9">active</a>() { <span class="keywordflow">return</span> _active; }
-<a name="l00030"></a><a class="code" href="classqtpd_1_1_new_patchcord.html#aad215fe6b10a7b497e99e4f5a68fd521">00030</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_new_patchcord.html#aad215fe6b10a7b497e99e4f5a68fd521">setStart</a>(QPoint start) { _start = start; }
-<a name="l00031"></a><a class="code" href="classqtpd_1_1_new_patchcord.html#ae0cac4aeb71811f09f03eae4269b5898">00031</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_new_patchcord.html#ae0cac4aeb71811f09f03eae4269b5898">setEnd</a>(QPoint end) { _end = end; }
-<a name="l00032"></a>00032 
-<a name="l00035"></a>00035     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_new_patchcord.html#acdf7b2fde6e094c4b345e43f2199b7ff">paint</a>(QPainter* painter, <span class="keyword">const</span> QStyleOptionGraphicsItem*, QWidget*);
-<a name="l00036"></a>00036 };
-<a name="l00037"></a>00037 }
-<a name="l00038"></a>00038 <span class="preprocessor">#endif // NewLine_H</span>
-</pre></div></div><!-- contents -->
+This is the complete list of members for <a class="el" href="class_application_controller.html">ApplicationController</a>, including all inherited members.<table>
+  <tr class="memlist"><td><a class="el" href="class_application_controller.html#abec435c688c3a733278e580b71ff2063">controllerObserver</a>()</td><td><a class="el" href="class_application_controller.html">ApplicationController</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_application_controller.html#ade91f50967ef1852dd8baeed310e277e">createPatchWindow</a>()</td><td><a class="el" href="class_application_controller.html">ApplicationController</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_application_controller.html#a50eeef64446733ef89eaa50c9fc2b0da">loadFile</a>()</td><td><a class="el" href="class_application_controller.html">ApplicationController</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_application_controller.html#af31d9e33de12c907914fd64ff7a9d4b6">newCanvas</a>()</td><td><a class="el" href="class_application_controller.html">ApplicationController</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_application_controller.html#a4f74632b4e49fdf201fed27b0f16ef95">newServerInstance</a>()</td><td><a class="el" href="class_application_controller.html">ApplicationController</a></td><td></td></tr>
+</table></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -130,7 +108,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 19 2017 17:14:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 19 2017 17:27:48 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -18,5 +18,6 @@ var searchData=
   ['w_5fparentvisfn',['w_parentvisfn',['../struct__parentwidgetbehavior.html#a973651ea231d023e49c73506e6531335',1,'_parentwidgetbehavior']]],
   ['w_5fselectfn',['w_selectfn',['../struct__widgetbehavior.html#a9ca2ce8db0ba6d6e8d175a582b611bd6',1,'_widgetbehavior']]],
   ['w_5fsymbol',['w_symbol',['../unionword.html#af1275a854994a7c2abd89dc178609617',1,'word']]],
-  ['w_5fvisfn',['w_visfn',['../struct__widgetbehavior.html#a3df94c90b5fa0d33dbe816f775fd4e78',1,'_widgetbehavior']]]
+  ['w_5fvisfn',['w_visfn',['../struct__widgetbehavior.html#a3df94c90b5fa0d33dbe816f775fd4e78',1,'_widgetbehavior']]],
+  ['windows',['windows',['../class_patch_window_controller.html#a168aacc746ff590745bdde6c9d7c19de',1,'PatchWindowController']]]
 ];
