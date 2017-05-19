@@ -5,7 +5,7 @@
 #define CM_CANVAS_TYPES_H
 
 //#include "UIObjectItem.h"
-#include "Patchcord.h"
+#include "UIPatchcord.h"
 
 #include <set>
 
@@ -14,7 +14,7 @@
 namespace qtpd {
 
 typedef std::vector<UIObject*> objectVec;
-typedef std::vector<Patchcord*> patchcordVec;
+typedef std::vector<UIPatchcord*> patchcordVec;
 
 // TODO move to sets?
 //typedef std::set<UIObject*> objectSet;
@@ -87,7 +87,7 @@ public:
         boxes->push_back(box);
     }
 
-    void addUniquePatchcord(patchcordVec* patchcords, Patchcord* pcord)
+    void addUniquePatchcord(patchcordVec* patchcords, UIPatchcord* pcord)
     {
         int p = findPatchcord(patchcords, pcord);
 
@@ -110,7 +110,7 @@ public:
         return -1;
     }
 
-    int findPatchcord(patchcordVec* patchcords, Patchcord* pcord)
+    int findPatchcord(patchcordVec* patchcords, UIPatchcord* pcord)
     {
         //todo
         for (size_t i = 0; i < patchcords->size(); i++) {
@@ -123,12 +123,12 @@ public:
 
     // ------------------------------
 
-    void addPatchcord(Patchcord* pc)
+    void addPatchcord(UIPatchcord* pc)
     {
         addUniquePatchcord(&_patchcords, pc);
     }
 
-    void selectPatchcord(Patchcord* pc) //pcord
+    void selectPatchcord(UIPatchcord* pc) //pcord
     {
         addUniquePatchcord(&_selectedPatchcords, pc);
         pc->select();
@@ -157,8 +157,8 @@ public:
 
         for (it2 = _patchcords.begin(); it2 != _patchcords.end(); ++it2) {
 
-            ((Patchcord*)*it2)->deselect();
-            ((Patchcord*)*it2)->setHover(false);
+            ((UIPatchcord*)*it2)->deselect();
+            ((UIPatchcord*)*it2)->setHover(false);
         }
     }
 
@@ -216,7 +216,7 @@ public:
         return ret;
     }
 
-    std::string patchcordAsPdFileString(Patchcord* pcord)
+    std::string patchcordAsPdFileString(UIPatchcord* pcord)
     {
         //TODO
 

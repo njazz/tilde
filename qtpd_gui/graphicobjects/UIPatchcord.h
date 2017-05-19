@@ -33,7 +33,7 @@ typedef enum { cm_pt_anything = 0,
 /// \brief Patchcord QGraphicsObject class
 /// \details gui representation of Pd patchcord
 ///
-class Patchcord : public UIItem {
+class UIPatchcord : public UIItem {
 private:
     UIItem* _obj1;
     UIItem* _out1;
@@ -45,7 +45,7 @@ private:
     QPainterPath _path;
 
 public:
-    explicit Patchcord(UIItem* _obj1, UIItem* _out1, UIItem* _obj2, UIItem* _in2);
+    explicit UIPatchcord(UIItem* _obj1, UIItem* _out1, UIItem* _obj2, UIItem* _in2);
 
     void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*);
 

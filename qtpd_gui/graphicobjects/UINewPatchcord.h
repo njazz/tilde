@@ -13,13 +13,13 @@ namespace qtpd {
 ////
 /// \brief New patchcord - dashed line
 ///
-class NewPatchcord : public UIItem {
+class UINewPatchcord : public UIItem {
     bool _active;
     QPoint _start;
     QPoint _end;
 
 public:
-    NewPatchcord();
+    UINewPatchcord();
 
     ////
     /// \group prop Properties

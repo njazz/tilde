@@ -8,7 +8,7 @@
 #include <QtGui>
 #include <QtWidgets>
 
-#include "Patchcord.h"
+#include "UIPatchcord.h"
 
 #include "ObjectMaker.h"
 
@@ -16,7 +16,7 @@
 
 //
 #include "Grid.h"
-#include "NewLine.h"
+#include "UINewPatchcord.h"
 #include "SelectionRect.h"
 
 //todo - move to window?
@@ -56,7 +56,7 @@ private:
 
     Grid* _grid;
     SelectionRect* _selectionRect;
-    NewPatchcord* _newLine;
+    UINewPatchcord* _newLine;
 
     t_canvas* _pdObject;
     UIObject* _dragObject;
@@ -279,7 +279,7 @@ public:
     /// \param patchcord
     /// \return
     ///
-    std::string patchcordAsPdFileString(Patchcord* pcord);
+    std::string patchcordAsPdFileString(UIPatchcord* pcord);
 
     ////
     /// \brief converts UI patchcord object with 4 pointers to 4 numbers of objects in canvas
@@ -287,7 +287,7 @@ public:
     /// \param pcord
     /// \return
     ///
-    t_patchcordAsNumbers patchcordAsNumbers(Patchcord* pcord);
+    t_patchcordAsNumbers patchcordAsNumbers(UIPatchcord* pcord);
 
     ////
     /// \brief selects single box. mostly used by replace object routine in objectmaker

@@ -18,7 +18,7 @@ Canvas::Canvas(QGraphicsView* parent)
 
     setMouseTracking(true);
 
-    _newLine = new NewPatchcord;
+    _newLine = new UINewPatchcord;
     _newLine->setActive(false);
 
     _selectionRect = new SelectionRect;
@@ -488,7 +488,7 @@ void Canvas::patchcord(UIObject* obj1, int outlet, UIObject* obj2, int inlet)
         Port* outport = obj1->outletAt(outlet);
         Port* inport = obj2->inletAt(inlet);
 
-        Patchcord* pc = new Patchcord(obj1, outport, obj2, inport);
+        UIPatchcord* pc = new UIPatchcord(obj1, outport, obj2, inport);
 
         if (obj1->pdOutletType(outlet))
             pc->setPatchcordType(cm_pt_signal);
@@ -515,7 +515,7 @@ void Canvas::patchcord(UIObject* obj1, UIItem* outport, UIObject* obj2, UIItem* 
 void Canvas::deletePatchcordsFor(UIItem* obj)
 {
     //for //(int i=0;i<data_.patchcords()->size();i++)
-    std::vector<Patchcord*>::iterator it;
+    std::vector<UIPatchcord*>::iterator it;
     for (it = _canvasData.patchcords()->begin(); it != _canvasData.patchcords()->end();) {
         if ((*it)->isConnectedToObject(obj)) {
             scene()->removeItem(*it);
@@ -587,9 +587,9 @@ void Canvas::deleteSelectedPatchcords()
 
     //cleanup
     //for (int i=0;i<data_.patchcords()->size(); i++)
-    std::vector<Patchcord*>::iterator it;
+    std::vector<UIPatchcord*>::iterator it;
     for (it = _canvasData.patchcords()->begin(); it != _canvasData.patchcords()->end();) {
-        Patchcord* p = *it;
+        UIPatchcord* p = *it;
 
         if (p->isSelected()) {
 
@@ -692,8 +692,8 @@ patchcordVec Canvas::patchcordsForObject(UIObject* obj)
     patchcordVec::iterator it;
     for (it = _canvasData.patchcords()->begin(); it != _canvasData.patchcords()->end(); ++it) {
         if (
-            (((Patchcord*)*it)->obj1() == obj)
-            || (((Patchcord*)*it)->obj2() == obj)) {
+            (((UIPatchcord*)*it)->obj1() == obj)
+            || (((UIPatchcord*)*it)->obj2() == obj)) {
             ret.push_back(*it);
         }
     }
@@ -725,7 +725,7 @@ std::string Canvas::asPdFileString()
     return "";
 }
 
-std::string Canvas::patchcordAsPdFileString(Patchcord* pcord)
+std::string Canvas::patchcordAsPdFileString(UIPatchcord* pcord)
 {
     //TODO
 
@@ -749,7 +749,7 @@ std::string Canvas::patchcordAsPdFileString(Patchcord* pcord)
     return "";
 }
 
-t_patchcordAsNumbers Canvas::patchcordAsNumbers(Patchcord* pcord)
+t_patchcordAsNumbers Canvas::patchcordAsNumbers(UIPatchcord* pcord)
 {
     //TODO
 

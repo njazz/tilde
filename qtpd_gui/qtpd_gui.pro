@@ -202,9 +202,7 @@ HEADERS  += \
     graphicobjects/UIItem.h \
     graphicobjects/Grid.h \
     graphicobjects/SelectionRect.h \
-    graphicobjects/NewLine.h \
     objects/UISubpatch.h \
-    graphicobjects/Patchcord.h \
 #
     graphicobjects/UIObject.h \
     datamodels/Clipboard.h \
@@ -226,7 +224,12 @@ HEADERS  += \
     widgets/UIScriptCommon.h \
     oopd/UISignal.h \
     objects/UIMatrix.h \
-    objects/UISubCanvas.h
+    objects/UISubCanvas.h \
+    controller/ApplicationController.h \
+    controller/PatchWindowController.h \
+    controller/ControllerObserver.h \
+    graphicobjects/UIPatchcord.h \
+    graphicobjects/UINewPatchcord.h
 
 
 

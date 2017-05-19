@@ -186,7 +186,7 @@ void PatchWindow::objectMakerDone()
 
             patchcordVec::iterator it;
             for (it = cords.begin(); it != cords.end(); ++it) {
-                Patchcord* pc = ((Patchcord*)*it);
+                UIPatchcord* pc = ((UIPatchcord*)*it);
                 UIObject* obj1 = pc->obj1();
                 UIObject* obj2 = pc->obj2();
 

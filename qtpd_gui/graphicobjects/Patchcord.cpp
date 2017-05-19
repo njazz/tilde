@@ -1,10 +1,10 @@
 // (c) 2017 Alex Nadzharov
 // License: GPL3
 
-#include "Patchcord.h"
+#include "UIPatchcord.h"
 
 namespace qtpd {
-Patchcord::Patchcord(UIItem* obj1, UIItem* out1, UIItem* obj2, UIItem* in2)
+UIPatchcord::UIPatchcord(UIItem* obj1, UIItem* out1, UIItem* obj2, UIItem* in2)
 {
     _obj1 = obj1;
     _out1 = out1;
@@ -20,7 +20,7 @@ Patchcord::Patchcord(UIItem* obj1, UIItem* out1, UIItem* obj2, UIItem* in2)
     startPoint();
 }
 
-void Patchcord::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*)
+void UIPatchcord::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*)
 {
     QColor b_pc_color = (_patchcordType == cm_pt_signal) ? QColor(128, 160, 192) : QColor(0, 0, 0);
     // cleanup
@@ -66,7 +66,7 @@ void Patchcord::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidge
 
 // ---------
 
-QPoint Patchcord::startPoint()
+QPoint UIPatchcord::startPoint()
 {
 
     QPoint start = QPoint(0, 0);
@@ -80,7 +80,7 @@ QPoint Patchcord::startPoint()
     return QPoint(0, 0);
 }
 
-QPoint Patchcord::endPoint()
+QPoint UIPatchcord::endPoint()
 {
     QPoint end = QPoint(0, 0);
     if (_obj2 && _in2)

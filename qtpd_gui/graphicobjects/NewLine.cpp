@@ -1,9 +1,9 @@
-#include "NewLine.h"
+#include "UINewPatchcord.h"
 
 namespace qtpd {
-NewPatchcord::NewPatchcord() {}
+UINewPatchcord::UINewPatchcord() {}
 
-void NewPatchcord::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*)
+void UINewPatchcord::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*)
 {
     if (_active) {
 

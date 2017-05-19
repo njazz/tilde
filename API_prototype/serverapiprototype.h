@@ -6,9 +6,8 @@
 using namespace std;
 
 typedef vector<string> ServerPath;
-typedef
 
-    class Observer {
+class Observer {
 public:
     virtual void update();
 };
