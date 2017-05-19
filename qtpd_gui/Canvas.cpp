@@ -136,6 +136,11 @@ void Canvas::s_SelectBox(UIItem* box, QGraphicsSceneMouseEvent* ev)
     viewport()->update();
 }
 
+////
+/// \brief Canvas::s_MoveBox
+/// \param box
+/// \param event
+/// \deprecated move to UIBox
 void Canvas::s_MoveBox(UIItem* box, QGraphicsSceneMouseEvent* event)
 {
     if (!(Canvas::getEditMode() == em_Unlocked))
@@ -525,18 +530,18 @@ void Canvas::deletePatchcordsFor(UIItem* obj)
 ////
 /// \brief delete single box
 ///
-void Canvas::deleteBox(UIObject* box)
+void Canvas::deleteObject(UIObject* box)
 {
     _canvasData.deselectBoxes();
     //_selectionData.addUniqueBox(box);
     _canvasData.selectBox(box);
-    deleteSelectedBoxes();
+    deleteSelectedObjects();
 }
 
 ////
 /// \brief delete all selected object boxes()
 ///
-void Canvas::deleteSelectedBoxes()
+void Canvas::deleteSelectedObjects()
 {
     qDebug("del selected");
 
@@ -993,7 +998,7 @@ void Canvas::dataCut()
 
     _canvasData.cut();
 
-    deleteSelectedBoxes();
+    deleteSelectedObjects();
 }
 
 void Canvas::dataCopy()

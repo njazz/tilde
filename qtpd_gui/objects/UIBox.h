@@ -49,6 +49,8 @@ public:
         const char* obj_name = list_s.toStdString().c_str();
         QString data1 = b->properties()->extractFromPdFileString(obj_name); //test
 
+        qDebug()<<"data: " << data1;
+
         // todo cleanup
         const char* obj_name2 = data1.toStdString().c_str();
 

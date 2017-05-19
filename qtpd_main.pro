@@ -11,6 +11,7 @@ SUBDIRS = \
     $$PWD/qtpd_lib \
     $$PWD/qtpd_ceammc_lib \
     $$PWD/qtpd_gui \
+    API_prototype/API_prototype
 
 
 WithPython {

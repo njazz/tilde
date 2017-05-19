@@ -203,7 +203,7 @@ void PatchWindow::objectMakerDone()
                     qDebug("replace object - patchcord error");
             }
 
-            canvas->deleteBox(obj);
+            canvas->deleteObject(obj);
         }
         else
         {

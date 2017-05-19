@@ -163,6 +163,7 @@ public:
     /// \param message
     /// \param pos
     /// \return
+    /// \deprecated move to window/controller
     ///
     UIObject* createObject(QString objectData1, QPoint pos);
 
@@ -202,12 +203,12 @@ public:
     ////
     /// \brief delete single box
     ///
-    void deleteBox(UIObject* box);
+    void deleteObject(UIObject* box);
 
     ////
     /// \brief delete all selected object boxes
     ///
-    void deleteSelectedBoxes();
+    void deleteSelectedObjects();
 
     ////
     /// \brief delete all selected patchcords

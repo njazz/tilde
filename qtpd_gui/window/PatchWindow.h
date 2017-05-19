@@ -475,7 +475,7 @@ public:
 
     void delSelected()
     {
-        canvas->deleteSelectedBoxes();
+        canvas->deleteSelectedObjects();
         canvas->deleteSelectedPatchcords();
 
         setWindowModified(true);

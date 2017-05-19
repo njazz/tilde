@@ -223,6 +223,8 @@ void cmp_clear_searchpath()
 
 #pragma mark -
 
+// --------------------------------
+
 t_canvas* cmp_newpatch()
 {
     qDebug("new patch: %lu", (long)cm_pd);
@@ -279,6 +281,8 @@ void cmp_closepatch(t_canvas* canvas)
     qDebug("closed patch");
 }
 
+// --------------------------------
+
 AtomList* AtomListFromString(std::string in_string)
 {
     AtomList* list;
@@ -298,7 +302,7 @@ AtomList* AtomListFromString(std::string in_string)
     return list;
 }
 
-////////
+// --------------------------------
 
 t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int y)
 {
@@ -355,7 +359,7 @@ void cmp_deleteobject(t_canvas* canvas, t_object* obj)
     qDebug("deleted obj");
 }
 
-///////
+// --------------------------------
 
 void cmp_patchcord(t_object* obj1, int outno, t_object* obj2, int inno)
 {
@@ -373,6 +377,8 @@ void cmp_delete_patchcord(t_object* obj1, int outno, t_object* obj2, int inno)
 
 #pragma mark -
 
+// --------------------------------
+
 int cmp_get_outlet_count(t_object* obj)
 {
     //qDebug("inlet count for %lu", (long)obj);
@@ -386,6 +392,8 @@ int cmp_get_inlet_count(t_object* obj)
 
 #pragma mark -
 
+// --------------------------------
+
 int cmp_get_inlet_type(t_object* obj, int idx)
 {
     return obj_issignalinlet(obj, idx);
@@ -396,7 +404,9 @@ int cmp_get_outlet_type(t_object* obj, int idx)
     return obj_issignaloutlet(obj, idx);
 };
 
+// --------------------------------
 //temporary here
+
 union inletunion {
     t_symbol* iu_symto;
     t_gpointer* iu_pointerslot;
@@ -450,6 +460,7 @@ t_inlet* cmp_get_inlet(t_object* x, int idx)
 }
 
 #pragma mark -
+
 // --------------------------------------------
 // dsp
 
@@ -526,7 +537,7 @@ void cmp_set_verbose(int v)
     sys_verbose = v;
 }
 
-// -----
+// --------------------------------
 
 EXTERN void cmp_loadbang(t_canvas* canvas)
 {
@@ -534,7 +545,7 @@ EXTERN void cmp_loadbang(t_canvas* canvas)
     canvas_loadbang(canvas);
 }
 
-// -----
+// --------------------------------
 
 EXTERN t_cmp_audio_info cmp_get_audio_device_info()
 {

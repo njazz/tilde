@@ -141,7 +141,7 @@ public Q_SLOTS:
 
     void deleteObjectInCanvas(Canvas* c, UIObject* obj)
     {
-        c->deleteBox(obj);
+        c->deleteObject(obj);
     }
 
     void patchcord(Canvas* c, UIObject* obj1, int out1, UIObject* obj2, int in2)

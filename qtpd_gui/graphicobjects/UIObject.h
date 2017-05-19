@@ -38,9 +38,9 @@ private:
 
     SizeBox* _sizeBox;
 
-    QMainWindow* _SubpatchWindow;
+    QMainWindow* _SubpatchWindow;   // move to UIBox
 
-    QMenu _popupMenu;
+    QMenu _popupMenu;   //pointer
 
     QAction* pmProperties;
     QAction* pmHelp;
