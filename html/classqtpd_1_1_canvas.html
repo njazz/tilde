@@ -223,10 +223,10 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates patchcord, uses pointers to inlets/outlets. TODO temporary?  <a href="#a2623978c611a4871f19f5da0ca5631d2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a3acb20ed7949140e54e4055ba7dd3213">deletePatchcordsFor</a> (<a class="el" href="classqtpd_1_1_u_i_item.html">UIItem</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete all patchcords for object  <a href="#a3acb20ed7949140e54e4055ba7dd3213"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a54ae5b1d5352bcce723481073db40647">deleteBox</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *box)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete single box  <a href="#a54ae5b1d5352bcce723481073db40647"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a5df34a2d1f5b8fe34713fafc67bf1b78">deleteSelectedBoxes</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete all selected object boxes  <a href="#a5df34a2d1f5b8fe34713fafc67bf1b78"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a4e4dccb6800add10119b25965fe61889">deleteObject</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *box)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete single box  <a href="#a4e4dccb6800add10119b25965fe61889"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#adf2bdea543875f60eb0f28ecfe7ac247">deleteSelectedObjects</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete all selected object boxes  <a href="#adf2bdea543875f60eb0f28ecfe7ac247"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas.html#a9d0db66c2bf59c3075d0c57eca390663">deleteSelectedPatchcords</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete all selected patchcords  <a href="#a9d0db66c2bf59c3075d0c57eca390663"></a><br/></td></tr>
 </table>
@@ -453,6 +453,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated:</a></b></dt><dd>move to window/controller </dd></dl>
 
 </div>
 </div>
@@ -536,12 +537,12 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a54ae5b1d5352bcce723481073db40647"></a><!-- doxytag: member="qtpd::Canvas::deleteBox" ref="a54ae5b1d5352bcce723481073db40647" args="(UIObject *box)" -->
+<a class="anchor" id="a4e4dccb6800add10119b25965fe61889"></a><!-- doxytag: member="qtpd::Canvas::deleteObject" ref="a4e4dccb6800add10119b25965fe61889" args="(UIObject *box)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas.html#a54ae5b1d5352bcce723481073db40647">qtpd::Canvas::deleteBox</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas.html#a4e4dccb6800add10119b25965fe61889">qtpd::Canvas::deleteObject</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td>
           <td class="paramname"><em>box</em></td><td>)</td>
@@ -580,12 +581,12 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a5df34a2d1f5b8fe34713fafc67bf1b78"></a><!-- doxytag: member="qtpd::Canvas::deleteSelectedBoxes" ref="a5df34a2d1f5b8fe34713fafc67bf1b78" args="()" -->
+<a class="anchor" id="adf2bdea543875f60eb0f28ecfe7ac247"></a><!-- doxytag: member="qtpd::Canvas::deleteSelectedObjects" ref="adf2bdea543875f60eb0f28ecfe7ac247" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas.html#a5df34a2d1f5b8fe34713fafc67bf1b78">qtpd::Canvas::deleteSelectedBoxes</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas.html#adf2bdea543875f60eb0f28ecfe7ac247">qtpd::Canvas::deleteSelectedObjects</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1291,13 +1292,17 @@ Public Member Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>TODO check. slot called by box when it starts moving. </p>
+<p><a class="el" href="classqtpd_1_1_canvas.html#a9f43be392284fbed0841c6b8af375b44" title="TODO check. slot called by box when it starts moving.">Canvas::s_MoveBox</a>.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
+    <tr><td class="paramname">box</td><td></td></tr>
+    <tr><td class="paramname">event</td><td></td></tr>
     <tr><td class="paramname">box</td><td></td></tr>
     <tr><td class="paramname">event</td><td></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd>move to <a class="el" href="classqtpd_1_1_u_i_box.html" title="gui object: standard object box">UIBox</a> </dd></dl>
 
 </div>
 </div>
@@ -1748,7 +1753,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 1 2017 22:42:30 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 19 2017 17:14:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
