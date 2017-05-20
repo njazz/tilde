@@ -14,7 +14,7 @@ PatchWindow::PatchWindow()
     scroll = new QScrollArea(this);
     //scroll->setFrameShape(QFrame::NoFrame);
 
-    canvas = new Canvas((QGraphicsView*)this);
+    canvas = new CanvasView((QGraphicsView*)this);
 
     //scroll->setWidget(canvas);
 
@@ -53,7 +53,7 @@ PatchWindow::PatchWindow()
     editModeAct->setChecked(true);
 
     //connect subpatch creation routine
-    connect(canvas, &Canvas::createSubpatchWindow, this, &PatchWindow::s_createSubpatchWindow);
+    connect(canvas, &CanvasView::createSubpatchWindow, this, &PatchWindow::s_createSubpatchWindow);
 
     //
     connect(cutAct, &QAction::triggered, this, &PatchWindow::cut);

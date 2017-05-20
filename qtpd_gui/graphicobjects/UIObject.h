@@ -23,6 +23,9 @@
 
 namespace qtpd {
 
+class CanvasView;
+class CanvasData;
+
 typedef std::vector<Port*> portItemVec;
 
 ////
@@ -48,11 +51,20 @@ private:
 
     void* _canvas; ///> QGraphicsView
 
+    //new 0517
+    CanvasView* _parentCanvasView;
+    CanvasData* _subCanvasData;
+
 protected:
     virtual void hoverEnterEvent(QGraphicsSceneHoverEvent*);
     virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent*);
 
 public:
+
+    //new 0517
+    CanvasView* parentCanvasView(){return _parentCanvasView;};
+    CanvasData* subCanvasData(){return _subCanvasData;};
+
     //TODO
     bool disableObjectMaker;
 

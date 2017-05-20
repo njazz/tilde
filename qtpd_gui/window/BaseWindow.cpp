@@ -8,7 +8,7 @@
 #include <QLabel>
 #include <QtGui>
 
-#include "Canvas.h"
+#include "CanvasView.h"
 #include <UIBox.h>
 
 //#include "BaseWindow.h"

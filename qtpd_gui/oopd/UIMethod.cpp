@@ -3,7 +3,7 @@
 
 #include "UIMethod.h"
 
-#include "Canvas.h"
+#include "CanvasView.h"
 
 namespace qtpd {
 UIMethod::UIMethod()
@@ -85,7 +85,7 @@ UIObject* UIMethod::createObject(QString objectData, t_canvas* pdCanvas, QGraphi
     // OOPD
 
     // not very clean
-    t_canvas* cnv = ((Canvas*)parent)->pdObject();
+    t_canvas* cnv = ((CanvasView*)parent)->pdObject();
 
     if (OOPD::inst()->canvasIsPatch(cnv)) {
         //fix that

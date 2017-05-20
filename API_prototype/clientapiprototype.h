@@ -1,6 +1,10 @@
 #ifndef CLIENTAPIPROTOTYPE_H
 #define CLIENTAPIPROTOTYPE_H
 
+// !!! this is unused
+//
+//
+
 #include <QGraphicsObject>
 #include <QGraphicsScene>
 #include <QGraphicsView>
@@ -102,7 +106,7 @@ class ObjectMaker : QWidget {
 public:
     PatchWindowController* parentController;
 signals:
-    void doneEditing();
+    void objectMakerDoneSignal();
 };
 
 class PatchWindowController {

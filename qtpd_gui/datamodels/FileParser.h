@@ -64,7 +64,7 @@ public:
     /// \brief [3.2] process legacy pd files
     /// \param list
     ///
-    static bool legacyProcess(Canvas* cmcanvas, QStringList list);
+    static bool legacyProcess(CanvasView* cmcanvas, QStringList list);
 
     ////
     /// \brief [3.1] subroutine - formats list and send it to canvas as a string
@@ -72,7 +72,7 @@ public:
     /// \param list
     /// \returns uiobject - that may be needed by legacyProcess to add more properties after object is created
     ///
-    static UIObject* sendStringToCanvas(Canvas* cmcanvas, QStringList list);
+    static UIObject* sendStringToCanvas(CanvasView* cmcanvas, QStringList list);
 
     ////
     /// \brief [3] parses QStringLists of atoms to canvas - creates objects etc
@@ -80,7 +80,7 @@ public:
     /// \param cmcanvas
     /// \param list
     ///
-    static void parseStringListAtoms(Canvas* cmcanvas, QStringList list);
+    static void parseStringListAtoms(CanvasView* cmcanvas, QStringList list);
 
     ////
     /// \brief [2] checks first atoms ("#N", "#X" etc) and sends QStringList of contents to canvas

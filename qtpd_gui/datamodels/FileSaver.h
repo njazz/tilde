@@ -21,7 +21,7 @@ public:
     /// \param file
     /// \param canvas
     ///
-    static void saveCanvas(Canvas* canvas, QFile* file)
+    static void saveCanvas(CanvasView* canvas, QFile* file)
     {
 
         // this calls top 'canvas' and gets all data as QStringList
@@ -41,7 +41,7 @@ public:
     /// \param fname
     /// \param canvas
     ///
-    static void save(QString fname, Canvas* canvas)
+    static void save(QString fname, CanvasView* canvas)
     {
         QFile f(fname);
         f.open(QIODevice::WriteOnly);

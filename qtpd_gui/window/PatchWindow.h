@@ -2,7 +2,7 @@
 #define CM_PATCHWINDOW_H
 
 #include "BaseWindow.h"
-#include "Canvas.h"
+#include "CanvasView.h"
 #include "UIBox.h"
 
 #include "PdLink.h"
@@ -97,7 +97,7 @@ public:
     static PatchWindow* newSubpatch(t_canvas* subpatch = 0);
 
     //todo encapsulate!
-    Canvas* canvas;
+    CanvasView* canvas;
 
     void createActions()
     {
@@ -612,7 +612,7 @@ public slots:
         t_canvas* newPdCanvas = cmp_newpatch();
 
         PatchWindow* subPatch = PatchWindow::newSubpatch((t_canvas*)newPdCanvas);
-        Canvas* newCanvas = subPatch->canvas;
+        CanvasView* newCanvas = subPatch->canvas;
 
         return std::pair<QMainWindow*, qtpd::UIObject*>(subPatch, (qtpd::UIObject*)newCanvas);
     };

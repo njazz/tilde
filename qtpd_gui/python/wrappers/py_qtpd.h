@@ -69,7 +69,7 @@ class pyPatchWindowDecorator : public QObject {
 
 public Q_SLOTS:
 
-    Canvas* canvas(PatchWindow* w)
+    CanvasView* canvas(PatchWindow* w)
     {
         return w->canvas;
     }
@@ -99,13 +99,13 @@ class pyCanvasDecorator : public QObject {
 
 public Q_SLOTS:
 
-    UIObject* createObject(Canvas* c, QString obj_data, int x, int y)
+    UIObject* createObject(CanvasView* c, QString obj_data, int x, int y)
     {
-        return c->Canvas::createObject(obj_data, QPoint(x, y));
+        return c->CanvasView::createObject(obj_data, QPoint(x, y));
     }
 
     //todo templates
-    void moveObject(Canvas* o, int x, int y)
+    void moveObject(CanvasView* o, int x, int y)
     {
         o->move(x, y);
     }
@@ -123,28 +123,28 @@ public Q_SLOTS:
     //////////
     // edit
 
-    void selectObject(Canvas* c, UIObject* obj)
+    void selectObject(CanvasView* c, UIObject* obj)
     {
         c->selectBox(obj);
     }
 
-    void selectAll(Canvas* c)
+    void selectAll(CanvasView* c)
     {
         c->selectAll();
     }
 
-    void deselectAll(Canvas* c)
+    void deselectAll(CanvasView* c)
     {
         c->canvasData()->deselectBoxes();
         c->update();
     }
 
-    void deleteObjectInCanvas(Canvas* c, UIObject* obj)
+    void deleteObjectInCanvas(CanvasView* c, UIObject* obj)
     {
         c->deleteObject(obj);
     }
 
-    void patchcord(Canvas* c, UIObject* obj1, int out1, UIObject* obj2, int in2)
+    void patchcord(CanvasView* c, UIObject* obj1, int out1, UIObject* obj2, int in2)
     {
         c->patchcord(obj1, out1, obj2, in2);
     }
@@ -153,12 +153,12 @@ public Q_SLOTS:
     // objects
 
     // TODO
-    objectVec objects(Canvas* c)
+    objectVec objects(CanvasView* c)
     {
         return c->objectBoxes();
     }
 
-    objectVec selectedObjects(Canvas* c)
+    objectVec selectedObjects(CanvasView* c)
     {
         return c->selectedObjectBoxes();
     }
@@ -166,22 +166,22 @@ public Q_SLOTS:
     //////////
     // patchcords
 
-    patchcordVec patchcords(Canvas* c)
+    patchcordVec patchcords(CanvasView* c)
     {
         return c->patchcords();
     }
 
-    patchcordVec selectedPatchcords(Canvas* c)
+    patchcordVec selectedPatchcords(CanvasView* c)
     {
         return c->selectedPatchcords();
     }
 
-    patchcordVec patchcordsFor(Canvas* c, UIObject* obj)
+    patchcordVec patchcordsFor(CanvasView* c, UIObject* obj)
     {
         return c->patchcordsForObject(obj);
     }
 
-    void deletePatchcordsFor(Canvas* c, UIObject* obj)
+    void deletePatchcordsFor(CanvasView* c, UIObject* obj)
     {
         c->deletePatchcordsFor(obj);
     }
@@ -189,19 +189,19 @@ public Q_SLOTS:
     //////////
     // file
 
-    QStringList pdPatch(Canvas* c)
+    QStringList pdPatch(CanvasView* c)
     {
         return c->canvasAsPdStrings();
     }
 
     // test
-    void scale(Canvas* c, float scale)
+    void scale(CanvasView* c, float scale)
     {
         c->scale(scale,scale);
     }
 
     // arrays: yet here
-    void newArray(Canvas* c, QString name, int size)
+    void newArray(CanvasView* c, QString name, int size)
     {
         if (c->pdObject()) {
             t_canvas* pdCanvas = (t_canvas*)c->pdObject();
@@ -241,7 +241,7 @@ class pyLocal : public QObject {
     Q_OBJECT
 
 private:
-    Canvas* _canvas;
+    CanvasView* _canvas;
     t_object* _pdObject;
     QStringList* _list;
 
@@ -252,7 +252,7 @@ public:
         _list = 0;
     };
 
-    void setCanvas(Canvas* c)
+    void setCanvas(CanvasView* c)
     {
         _canvas = c;
     };
@@ -290,7 +290,7 @@ public Q_SLOTS:
             return *_list;
     }
 
-    Canvas* canvas() { return _canvas; }
+    CanvasView* canvas() { return _canvas; }
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -118,7 +118,6 @@ SOURCES += main.cpp\
 #
     widgets/UIArrayEditor.cpp \
 #
-    Canvas.cpp \
     datamodels/FileParser.cpp \
 #
     ObjectLoader.cpp \
@@ -153,7 +152,9 @@ SOURCES += main.cpp\
     widgets/UIScriptCommon.cpp \
     oopd/UISignal.cpp \
     objects/UIMatrix.cpp \
-    objects/UISubCanvas.cpp
+    objects/UISubCanvas.cpp \
+    CanvasView.cpp \
+    serverAPIPrototype.cpp
 
 
 
@@ -184,7 +185,6 @@ HEADERS  += \
     window/PatchWindow.h \
     window/PdWindow.h \
     window/PropertiesWindow.h \
-    Canvas.h \
 #
     datamodels/FileParser.h \
     datamodels/FileSaver.h \
@@ -229,7 +229,8 @@ HEADERS  += \
     controller/PatchWindowController.h \
     controller/ControllerObserver.h \
     graphicobjects/UIPatchcord.h \
-    graphicobjects/UINewPatchcord.h
+    graphicobjects/UINewPatchcord.h \
+    CanvasView.h
 
 
 

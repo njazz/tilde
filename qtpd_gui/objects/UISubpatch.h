@@ -15,7 +15,7 @@
 #include <QGraphicsView>
 #include <QMainWindow>
 
-#include "Canvas.h"
+#include "CanvasView.h"
 
 namespace qtpd {
 

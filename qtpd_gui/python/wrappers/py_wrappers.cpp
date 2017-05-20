@@ -36,7 +36,7 @@ PythonQtObjectPtr pyWrapper::withCanvas(QObject* canvas)
     ctx.addObject("Qtpd", new pyQtpd());
 
     pyLocal* loc = new pyLocal;
-    loc->setCanvas((Canvas*)canvas); // canvas, canvas, canvas, canvas
+    loc->setCanvas((CanvasView*)canvas); // canvas, canvas, canvas, canvas
     loc->setPdObject(0);
     ctx.addObject("local", loc);
 
@@ -50,7 +50,7 @@ PythonQtObjectPtr pyWrapper::withCanvasAndPdObject(QObject* canvas, t_object* ob
     ctx.addObject("Qtpd", new pyQtpd());
 
     pyLocal* loc = new pyLocal;
-    loc->setCanvas((Canvas*)canvas); // canvas, canvas, canvas, canvas
+    loc->setCanvas((CanvasView*)canvas); // canvas, canvas, canvas, canvas
     loc->setPdObject(obj);
     ctx.addObject("local", loc);
 
@@ -66,7 +66,7 @@ PythonQtObjectPtr pyWrapper::withCanvasPdObjectAndInput(QObject* canvas, t_objec
     ctx.addObject("Qtpd", new pyQtpd());
 
     pyLocal* loc = new pyLocal;
-    loc->setCanvas((Canvas*)canvas); // canvas, canvas, canvas, canvas
+    loc->setCanvas((CanvasView*)canvas); // canvas, canvas, canvas, canvas
     loc->setPdObject(obj);
     loc->setInput(list);
     ctx.addObject("local", loc);

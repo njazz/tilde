@@ -11,7 +11,13 @@
 
 #include "Clipboard.h"
 
+//#include "../API_prototype/clientAPIPrototype.h"
+
+class ServerCanvas;
+
 namespace qtpd {
+
+
 
 typedef std::vector<UIObject*> objectVec;
 typedef std::vector<UIPatchcord*> patchcordVec;
@@ -36,12 +42,19 @@ class canvasData {
     portItemVec* _inlets;
     portItemVec* _outlets;
 
+    // new 0517
+    ServerCanvas* _serverCanvas;
+
 public:
+    // new 0517
+    ServerCanvas* serverCanvas(){return _serverCanvas;}
+    void setServerCanvas(ServerCanvas* canvas){_serverCanvas = canvas;}
+
     portItemVec* inlets() { return _inlets; }
     portItemVec* outlets() { return _outlets; }
 
-    void setInlets(portItemVec* inlets) {_inlets = inlets;}
-    void setOutlets(portItemVec* outlets) {_outlets = outlets;}
+    void setInlets(portItemVec* inlets) { _inlets = inlets; }
+    void setOutlets(portItemVec* outlets) { _outlets = outlets; }
 
     bool hasObjects()
     {

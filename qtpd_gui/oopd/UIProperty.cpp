@@ -3,7 +3,7 @@
 
 #include "UIProperty.h"
 
-#include "Canvas.h"
+#include "CanvasView.h"
 
 namespace qtpd {
 UIProperty::UIProperty()
@@ -89,7 +89,7 @@ UIObject* UIProperty::createObject(QString objectData, t_canvas* pdCanvas, QGrap
 
     // OOPD
 
-    t_canvas* cnv = ((Canvas*)parent)->pdObject();
+    t_canvas* cnv = ((CanvasView*)parent)->pdObject();
 
     if (OOPD::inst()->canvasIsPatch(cnv)) {
         //fix that

@@ -51,7 +51,7 @@ void UISubpatch::setSubpatchWindow(QMainWindow* cwindow)
     if (0) {
         PatchWindow* p = (PatchWindow*)cwindow;
 
-        Canvas* _subCanvas;
+        CanvasView* _subCanvas;
         //if (p)
         _subCanvas = p->canvas;
 

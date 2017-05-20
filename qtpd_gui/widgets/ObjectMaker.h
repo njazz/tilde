@@ -9,6 +9,9 @@
 #include <QWidget>
 
 namespace qtpd {
+
+class PatchWindowController;
+
 ////
 /// \brief creates QLineEdit box for new object
 ///
@@ -17,8 +20,13 @@ class ObjectMaker : public QLineEdit {
     Q_OBJECT
 
 private:
+    PatchWindowController* _parentController;
+
 public:
     explicit ObjectMaker(QLineEdit* parent = 0);
+
+    PatchWindowController* parentController(){return _parentController;}
+    void setParentController(PatchWindowController* controller){_parentController = controller;}
 
     void focusOutEvent(QFocusEvent*)
     {

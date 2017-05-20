@@ -30,7 +30,7 @@ namespace qtpd {
 ////
 /// \brief 't_canvas' counterpart - for now it's both view and 'view controller'. creates pd+gui objects
 ///
-class Canvas : public QGraphicsView {
+class CanvasView : public QGraphicsView {
 private:
     canvasData _canvasData;
 
@@ -64,6 +64,8 @@ private:
     float _zoom;
 
     QString _fileName;
+
+    //
 
     Q_OBJECT
 
@@ -134,7 +136,7 @@ public:
 
     // -------------------------------------------------------
 
-    explicit Canvas(QGraphicsView* parent = 0);
+    explicit CanvasView(QGraphicsView* parent = 0);
 
     //todo
     void addInlet();

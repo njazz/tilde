@@ -9,7 +9,7 @@ PatchWindow* FileParser::_pdParserWindow = 0;
 PatchWindow* FileParser::_pdParserFirstWindow = 0;
 std::string FileParser::pdParserFileName = "";
 
-bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
+bool FileParser::legacyProcess(CanvasView* cmcanvas, QStringList list)
 {
     //qDebug() << "legacy process:" << list;
 
@@ -220,7 +220,7 @@ bool FileParser::legacyProcess(Canvas* cmcanvas, QStringList list)
     return false; // if it is not a special legacy object
 }
 
-UIObject* FileParser::sendStringToCanvas(Canvas* cmcanvas, QStringList list)
+UIObject* FileParser::sendStringToCanvas(CanvasView* cmcanvas, QStringList list)
 {
     qDebug("new obj");
     if (list.size() > 3) {
@@ -256,7 +256,7 @@ UIObject* FileParser::sendStringToCanvas(Canvas* cmcanvas, QStringList list)
     }
 }
 
-void FileParser::parseStringListAtoms(Canvas* cmcanvas, QStringList list) //rename
+void FileParser::parseStringListAtoms(CanvasView* cmcanvas, QStringList list) //rename
 {
     //legacy parser first
     if (FileParser::legacyProcess(cmcanvas, list))
