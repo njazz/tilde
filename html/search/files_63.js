@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['canvas_2ecpp',['Canvas.cpp',['../_canvas_8cpp.html',1,'']]],
-  ['canvas_2eh',['Canvas.h',['../_canvas_8h.html',1,'']]],
   ['canvasdata_2eh',['CanvasData.h',['../_canvas_data_8h.html',1,'']]],
+  ['canvasview_2ecpp',['CanvasView.cpp',['../_canvas_view_8cpp.html',1,'']]],
+  ['canvasview_2eh',['CanvasView.h',['../_canvas_view_8h.html',1,'']]],
   ['ceammc_5fatom_2eh',['ceammc_atom.h',['../ceammc__atom_8h.html',1,'']]],
   ['ceammc_5fatomlist_2eh',['ceammc_atomlist.h',['../ceammc__atomlist_8h.html',1,'']]],
   ['clipboard_2ecpp',['Clipboard.cpp',['../_clipboard_8cpp.html',1,'']]],

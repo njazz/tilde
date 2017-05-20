@@ -116,20 +116,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_saver.html#a2db24f952e2cadd93738e705503f7849">saveCanvas</a> (<a class="el" href="classqtpd_1_1_canvas.html">Canvas</a> *canvas, QFile *file)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">save canvas TODO move parts to canvas  <a href="#a2db24f952e2cadd93738e705503f7849"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_saver.html#a3b8cd7c71623be3a95c952a638abbc8b">save</a> (QString fname, <a class="el" href="classqtpd_1_1_canvas.html">Canvas</a> *canvas)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">save file to disk; runs 'savecanvas' recursively  <a href="#a3b8cd7c71623be3a95c952a638abbc8b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_saver.html#ab2c7d435bb5011cce1dddfe61d397534">saveCanvas</a> (<a class="el" href="classqtpd_1_1_canvas_view.html">CanvasView</a> *canvas, QFile *file)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">save canvas TODO move parts to canvas  <a href="#ab2c7d435bb5011cce1dddfe61d397534"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_saver.html#a9eb88ab869e69c38a8d4759b963a3d61">save</a> (QString fname, <a class="el" href="classqtpd_1_1_canvas_view.html">CanvasView</a> *canvas)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">save file to disk; runs 'savecanvas' recursively  <a href="#a9eb88ab869e69c38a8d4759b963a3d61"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>saves pd files on 'client' (GUI) side </p>
 </div><hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a3b8cd7c71623be3a95c952a638abbc8b"></a><!-- doxytag: member="qtpd::FileSaver::save" ref="a3b8cd7c71623be3a95c952a638abbc8b" args="(QString fname, Canvas *canvas)" -->
+<a class="anchor" id="a9eb88ab869e69c38a8d4759b963a3d61"></a><!-- doxytag: member="qtpd::FileSaver::save" ref="a9eb88ab869e69c38a8d4759b963a3d61" args="(QString fname, CanvasView *canvas)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static void <a class="el" href="classqtpd_1_1_file_saver.html#a3b8cd7c71623be3a95c952a638abbc8b">qtpd::FileSaver::save</a> </td>
+          <td class="memname">static void <a class="el" href="classqtpd_1_1_file_saver.html#a9eb88ab869e69c38a8d4759b963a3d61">qtpd::FileSaver::save</a> </td>
           <td>(</td>
           <td class="paramtype">QString&#160;</td>
           <td class="paramname"><em>fname</em>, </td>
@@ -137,7 +137,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classqtpd_1_1_canvas.html">Canvas</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_canvas_view.html">CanvasView</a> *&#160;</td>
           <td class="paramname"><em>canvas</em>&#160;</td>
         </tr>
         <tr>
@@ -160,14 +160,14 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a2db24f952e2cadd93738e705503f7849"></a><!-- doxytag: member="qtpd::FileSaver::saveCanvas" ref="a2db24f952e2cadd93738e705503f7849" args="(Canvas *canvas, QFile *file)" -->
+<a class="anchor" id="ab2c7d435bb5011cce1dddfe61d397534"></a><!-- doxytag: member="qtpd::FileSaver::saveCanvas" ref="ab2c7d435bb5011cce1dddfe61d397534" args="(CanvasView *canvas, QFile *file)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static void <a class="el" href="classqtpd_1_1_file_saver.html#a2db24f952e2cadd93738e705503f7849">qtpd::FileSaver::saveCanvas</a> </td>
+          <td class="memname">static void <a class="el" href="classqtpd_1_1_file_saver.html#ab2c7d435bb5011cce1dddfe61d397534">qtpd::FileSaver::saveCanvas</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classqtpd_1_1_canvas.html">Canvas</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_canvas_view.html">CanvasView</a> *&#160;</td>
           <td class="paramname"><em>canvas</em>, </td>
         </tr>
         <tr>
@@ -217,7 +217,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 19 2017 17:27:48 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat May 20 2017 15:19:46 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
