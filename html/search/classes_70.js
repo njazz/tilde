@@ -1,7 +1,7 @@
 var searchData=
 [
   ['patchwindow',['PatchWindow',['../classqtpd_1_1_patch_window.html',1,'qtpd']]],
-  ['patchwindowcontroller',['PatchWindowController',['../class_patch_window_controller.html',1,'']]],
+  ['patchwindowcontroller',['PatchWindowController',['../classqtpd_1_1_patch_window_controller.html',1,'qtpd']]],
   ['pdwindow',['PdWindow',['../classqtpd_1_1_pd_window.html',1,'qtpd']]],
   ['port',['Port',['../classqtpd_1_1_port.html',1,'qtpd']]],
   ['preferences',['Preferences',['../classqtpd_1_1_preferences.html',1,'qtpd']]],

@@ -93,22 +93,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application_controller.html#a71b581d9d5ff28f782a19faa7f2ffadb">ApplicationController</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">ServerInstance *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application_controller.html#a4f74632b4e49fdf201fed27b0f16ef95">newServerInstance</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">PatchWindow *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application_controller.html#af31d9e33de12c907914fd64ff7a9d4b6">newCanvas</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ServerInstance *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application_controller.html#a90522980e6a7c40926749c60ab1491ee">mainInstance</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">PatchWindowController *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application_controller.html#aec1107ff648f9dae116e3922befbd1f6">newPatchWindowController</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application_controller.html#a50eeef64446733ef89eaa50c9fc2b0da">loadFile</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">PatchWindow *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application_controller.html#ade91f50967ef1852dd8baeed310e277e">createPatchWindow</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_controller_observer.html">ControllerObserver</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application_controller.html#abec435c688c3a733278e580b71ff2063">controllerObserver</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Observer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application_controller.html#ac4a9c4e5993815856534c67085db9bb9">controllerObserver</a> ()</td></tr>
 </table>
-<hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="abec435c688c3a733278e580b71ff2063"></a><!-- doxytag: member="ApplicationController::controllerObserver" ref="abec435c688c3a733278e580b71ff2063" args="()" -->
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a71b581d9d5ff28f782a19faa7f2ffadb"></a><!-- doxytag: member="ApplicationController::ApplicationController" ref="a71b581d9d5ff28f782a19faa7f2ffadb" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_controller_observer.html">ControllerObserver</a>* <a class="el" href="class_application_controller.html#abec435c688c3a733278e580b71ff2063">ApplicationController::controllerObserver</a> </td>
+          <td class="memname"><a class="el" href="class_application_controller.html#a71b581d9d5ff28f782a19faa7f2ffadb">ApplicationController::ApplicationController</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -116,12 +117,13 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ade91f50967ef1852dd8baeed310e277e"></a><!-- doxytag: member="ApplicationController::createPatchWindow" ref="ade91f50967ef1852dd8baeed310e277e" args="()" -->
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ac4a9c4e5993815856534c67085db9bb9"></a><!-- doxytag: member="ApplicationController::controllerObserver" ref="ac4a9c4e5993815856534c67085db9bb9" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">PatchWindow* <a class="el" href="class_application_controller.html#ade91f50967ef1852dd8baeed310e277e">ApplicationController::createPatchWindow</a> </td>
+          <td class="memname">Observer* <a class="el" href="class_application_controller.html#ac4a9c4e5993815856534c67085db9bb9">ApplicationController::controllerObserver</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -148,15 +150,31 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="af31d9e33de12c907914fd64ff7a9d4b6"></a><!-- doxytag: member="ApplicationController::newCanvas" ref="af31d9e33de12c907914fd64ff7a9d4b6" args="()" -->
+<a class="anchor" id="a90522980e6a7c40926749c60ab1491ee"></a><!-- doxytag: member="ApplicationController::mainInstance" ref="a90522980e6a7c40926749c60ab1491ee" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">PatchWindow* <a class="el" href="class_application_controller.html#af31d9e33de12c907914fd64ff7a9d4b6">ApplicationController::newCanvas</a> </td>
+          <td class="memname">ServerInstance* <a class="el" href="class_application_controller.html#a90522980e6a7c40926749c60ab1491ee">ApplicationController::mainInstance</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aec1107ff648f9dae116e3922befbd1f6"></a><!-- doxytag: member="ApplicationController::newPatchWindowController" ref="aec1107ff648f9dae116e3922befbd1f6" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PatchWindowController* <a class="el" href="class_application_controller.html#aec1107ff648f9dae116e3922befbd1f6">ApplicationController::newPatchWindowController</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -172,7 +190,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">ServerInstance* <a class="el" href="class_application_controller.html#a4f74632b4e49fdf201fed27b0f16ef95">ApplicationController::newServerInstance</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -201,7 +219,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat May 20 2017 15:19:46 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 21 2017 17:59:04 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -2,9 +2,9 @@ var searchData=
 [
   ['hascallback',['hasCallback',['../struct__cmp__audio__info.html#a41b8d9c720c5b7850d09167a188834f6',1,'_cmp_audio_info']]],
   ['hasmulti',['hasMulti',['../struct__cmp__audio__info.html#a3a4b5eb592c6801dcb24813f3f21e23c',1,'_cmp_audio_info']]],
-  ['hasobjects',['hasObjects',['../classqtpd_1_1canvas_data.html#a305166078a86754479e7903367be1a59',1,'qtpd::canvasData']]],
+  ['hasobjects',['hasObjects',['../classqtpd_1_1_canvas_data.html#a5ac222f1e1a7cafb92b6b15f8956f386',1,'qtpd::CanvasData']]],
   ['hasproperty',['hasProperty',['../classceammc_1_1_atom_list.html#ae7857e5cca7d55ff167bbf4b52927dc4',1,'ceammc::AtomList::hasProperty()'],['../classqtpd_1_1_o_o_p_d_class_base.html#ab90a64531308986d0d960e1f86c3a97a',1,'qtpd::OOPDClassBase::hasProperty()']]],
-  ['hasselectedobjects',['hasSelectedObjects',['../classqtpd_1_1canvas_data.html#a307cbe85cd9d94b02b7643f8f2567eb4',1,'qtpd::canvasData']]],
+  ['hasselectedobjects',['hasSelectedObjects',['../classqtpd_1_1_canvas_data.html#a37b1856e8c2279ae20a1835380da20a9',1,'qtpd::CanvasData']]],
   ['hasui',['hasUI',['../classqtpd_1_1_object_loader.html#af239c0e007aed45a838eeca575f4e22b',1,'qtpd::ObjectLoader']]],
   ['height',['height',['../classqtpd_1_1_u_i_item.html#a5bbd8fe0417078d386176ace5a01f261',1,'qtpd::UIItem']]],
   ['helpmenu',['helpMenu',['../classqtpd_1_1_base_window.html#a0e973c545dc57ac03f2e0dbe4aa6f69e',1,'qtpd::BaseWindow']]],

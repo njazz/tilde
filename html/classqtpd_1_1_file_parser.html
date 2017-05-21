@@ -119,6 +119,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#a635ba8164c801509c205bb1ab24787a9">setParserWindow</a> (<a class="el" href="classqtpd_1_1_patch_window.html">PatchWindow</a> *wnd)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#af36576b1a6f7cc5062c19b4755b0c48e">setParserWindows</a> (<a class="el" href="classqtpd_1_1_patch_window.html">PatchWindow</a> *wnd, <a class="el" href="classqtpd_1_1_patch_window.html">PatchWindow</a> *prev, <a class="el" href="classqtpd_1_1_patch_window.html">PatchWindow</a> *first)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#ae40e5eef1f2e3051398b918eb9d3b2ce">setCurrentData</a> (<a class="el" href="classqtpd_1_1_canvas_data.html">CanvasData</a> *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#a716c44595fd7faafca9d399ca63e3483">setCanvasData</a> (<a class="el" href="classqtpd_1_1_canvas_data.html">CanvasData</a> *data, <a class="el" href="classqtpd_1_1_canvas_data.html">CanvasData</a> *prev, <a class="el" href="classqtpd_1_1_canvas_data.html">CanvasData</a> *first)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_patch_window.html">PatchWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#ae55d821e20852e98617ff5a93057f5d5">parserFirstWindow</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns first created window  <a href="#ae55d821e20852e98617ff5a93057f5d5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_patch_window.html">PatchWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#aee0f14a3d05554a9020d4eaed943622b">parserWindow</a> ()</td></tr>
@@ -133,6 +135,8 @@ Static Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">[2] checks first atoms ("#N", "#X" etc) and sends QStringList of contents to canvas  <a href="#a5a17d655a501583acbc54ce76d8140d4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#a7a1d4de73d63affb0825b0889a3b94f7">open</a> (QString fname)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">[1] opens file, converts to QStrings, calls 'parseString'  <a href="#a7a1d4de73d63affb0825b0889a3b94f7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#a8569f73870a2981691d93c18fec7e52c">open</a> (QString fname, <a class="el" href="classqtpd_1_1_canvas_data.html">CanvasData</a> *<a class="el" href="classqtpd_1_1_canvas_data.html">CanvasData</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">new API open  <a href="#a8569f73870a2981691d93c18fec7e52c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#a913f7dec69523e9fb2ef3054e8904b65">unescapeString</a> (QString input)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">unescapeString  <a href="#a913f7dec69523e9fb2ef3054e8904b65"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#ababb5fcbce9370ddeffe2049c774ac2e">escapeString</a> (QString input)</td></tr>
@@ -223,6 +227,41 @@ Static Public Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>[1] opens file, converts to QStrings, calls 'parseString' </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fname</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8569f73870a2981691d93c18fec7e52c"></a><!-- doxytag: member="qtpd::FileParser::open" ref="a8569f73870a2981691d93c18fec7e52c" args="(QString fname, CanvasData *CanvasData)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_file_parser.html#a7a1d4de73d63affb0825b0889a3b94f7">qtpd::FileParser::open</a> </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>fname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_canvas_data.html">CanvasData</a> *&#160;</td>
+          <td class="paramname"><em>CanvasData</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>new API open </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">fname</td><td></td></tr>
@@ -383,6 +422,56 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a716c44595fd7faafca9d399ca63e3483"></a><!-- doxytag: member="qtpd::FileParser::setCanvasData" ref="a716c44595fd7faafca9d399ca63e3483" args="(CanvasData *data, CanvasData *prev, CanvasData *first)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="classqtpd_1_1_file_parser.html#a716c44595fd7faafca9d399ca63e3483">qtpd::FileParser::setCanvasData</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_canvas_data.html">CanvasData</a> *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_canvas_data.html">CanvasData</a> *&#160;</td>
+          <td class="paramname"><em>prev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_canvas_data.html">CanvasData</a> *&#160;</td>
+          <td class="paramname"><em>first</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae40e5eef1f2e3051398b918eb9d3b2ce"></a><!-- doxytag: member="qtpd::FileParser::setCurrentData" ref="ae40e5eef1f2e3051398b918eb9d3b2ce" args="(CanvasData *data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="classqtpd_1_1_file_parser.html#ae40e5eef1f2e3051398b918eb9d3b2ce">qtpd::FileParser::setCurrentData</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_canvas_data.html">CanvasData</a> *&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a635ba8164c801509c205bb1ab24787a9"></a><!-- doxytag: member="qtpd::FileParser::setParserWindow" ref="a635ba8164c801509c205bb1ab24787a9" args="(PatchWindow *wnd)" -->
 <div class="memitem">
 <div class="memproto">
@@ -496,7 +585,7 @@ Static Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat May 20 2017 15:19:46 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 21 2017 17:59:04 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

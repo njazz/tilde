@@ -21,7 +21,7 @@ var searchData=
   ['w_5fvisfn',['w_visfn',['../struct__widgetbehavior.html#a3df94c90b5fa0d33dbe816f775fd4e78',1,'_widgetbehavior']]],
   ['widget',['widget',['../classqtpd_1_1_u_i_d_s_p.html#a5e52c52310c35718295ee7b72844859f',1,'qtpd::UIDSP']]],
   ['width',['width',['../classqtpd_1_1_u_i_item.html#a89b7d0bcdcb226800c37d95305a1f441',1,'qtpd::UIItem']]],
-  ['windows',['windows',['../class_patch_window_controller.html#a168aacc746ff590745bdde6c9d7c19de',1,'PatchWindowController']]],
+  ['windows',['windows',['../classqtpd_1_1_patch_window_controller.html#a2092ec71343f675b52a5248d99b2581f',1,'qtpd::PatchWindowController']]],
   ['word',['word',['../unionword.html',1,'']]],
   ['word_5ffree',['word_free',['../g__canvas_8h.html#af9fe434bf59b89f39acd06d5f999d88e',1,'g_canvas.h']]],
   ['word_5finit',['word_init',['../g__canvas_8h.html#a6cafe91efc696e42d7faa3ec2965c7a7',1,'g_canvas.h']]],
