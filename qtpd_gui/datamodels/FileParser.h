@@ -23,6 +23,10 @@ private:
     static PatchWindow* _pdParserWindow;
     static PatchWindow* _pdParserFirstWindow;
 
+    static CanvasData* _currentData;
+    static CanvasData* _previousData;
+    static CanvasData* _firstData;
+
 public:
     // or t_canvas?
 
@@ -39,6 +43,18 @@ public:
         _pdParserWindow = wnd;
         _pdParserPrevWindow = prev;
         _pdParserFirstWindow = first;
+    }
+
+    static void setCurrentData(CanvasData* data)
+    {
+        _previousData = data;
+        _currentData = data;
+    }
+    static void setCanvasData(CanvasData* data, CanvasData* prev, CanvasData* first)
+    {
+        _currentData = data;
+        _previousData = prev;
+        _firstData = first;
     }
 
     ////
@@ -93,6 +109,12 @@ public:
     /// \param fname
     ///
     static void open(QString fname);
+
+    ////
+    /// \brief new API open
+    /// \param fname
+    ///
+    static void open(QString fname, CanvasData* CanvasData);
 
     ////
     /// \brief unescapeString

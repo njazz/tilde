@@ -13,33 +13,39 @@
 // TODO
 #include "../API_prototype/serverAPIprototype.h"
 
+//#include "ControllerObserver.h"
+
+namespace qtpd {
+
+//class CanvasData;
+
 class PatchWindowController {
     CanvasData* _canvasData;
+    QGraphicsScene* _scene;
+    Observer* _observer;    //ControllerObserver
+    ServerInstance* _instance;
+
+    vector<PatchWindow*> _windows;
+    vector<QGraphicsScene*> _scenes;
 
 public:
-    PatchWindowController()
-    {
-        _canvasData->serverCanvas = instance->createCanvas();
-        // create scene
-        // register observer
-    };
+    PatchWindowController(ServerInstance* instance); //replace with parent (appcontroller)
 
-    ServerInstance* instance;
-    CanvasData* canvasData;
-    vector<PatchWindow*> windows;
-    vector<QGraphicsScene*> scenes;
+    ServerInstance* instance();
+
+    CanvasData* canvasData();
+
+    vector<PatchWindow*> windows();
+    vector<QGraphicsScene*> scenes();
+
     void loadFile();
     void saveFile();
+
     PatchWindowController* createSubpatchWindow();
     //
     void createObjectMaker();
     //
-    bool createObject(string name, QPoint pos)
-    {
-        ServerObject* serverObject = _canvasData->serverCanvas->createObject(name);
-        UIObject* uiObject = ObjectLoader::createUIObject(name);
-        syncData(serverObject, uiObject);
-    };
+    bool createObject(string name, QPoint pos);
 
     bool connect(UIObject* src, int out, UIObject* dest, int in);
     void deletePatchcordsForObject(UIObject* o);
@@ -54,5 +60,6 @@ public:
     //
     void update(); // <<-- from observer
 };
+}
 
 #endif // CM_PDLINK_H

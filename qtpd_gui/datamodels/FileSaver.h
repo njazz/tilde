@@ -37,6 +37,13 @@ public:
     };
 
     ////
+    /// \brief new API saveCanvas
+    /// \param canvas
+    /// \param file
+    ///
+    static void saveCanvas(CanvasData* CanvasData, QFile* file);
+
+    ////
     /// \brief save file to disk; runs 'savecanvas' recursively
     /// \param fname
     /// \param canvas
@@ -47,6 +54,16 @@ public:
         f.open(QIODevice::WriteOnly);
 
         FileSaver::saveCanvas(canvas, &f);
+
+        f.close();
+    }
+
+    static void save(QString fname, CanvasData* canvasData)
+    {
+        QFile f(fname);
+        f.open(QIODevice::WriteOnly);
+
+        FileSaver::saveCanvas(canvasData, &f);
 
         f.close();
     }

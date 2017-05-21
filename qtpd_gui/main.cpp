@@ -12,8 +12,8 @@
 
 #include "ObjectLoader.h"
 
-#include "Preferences.h"
 #include "AudioSettings.h"
+#include "Preferences.h"
 
 //python
 
@@ -21,9 +21,11 @@
 #include <PythonQt.h>
 #include <PythonQt_QtAll.h>
 
-#include "python/wrappers/py_wrappers.h"
 #include "python/PythonQtScriptingConsole.h"
+#include "python/wrappers/py_wrappers.h"
 #endif
+
+#include "ApplicationController.h"
 
 using namespace qtpd;
 
@@ -42,34 +44,34 @@ int main(int argc, char* argv[])
 
     QTPD_PREF_INIT;
 
-
 #ifdef WITH_PYTHON
     //python
     PythonQt::init(PythonQt::RedirectStdOut); //PythonQt::IgnoreSiteModule |
     PythonQt_QtAll::init();
 
-    //temporary
-    //new BaseMenu();
-    //init python
     pyWrapper::inst();
 #endif
 
     ObjectLoader::inst().loadObjects();
 
-    cmp_pdinit();
+    // TODO move all to appcontroller
+
+    ApplicationController* controller = new ApplicationController();
+
+    //cmp_pdinit();
     cmp_setprinthook(&pd_window_printhook);
 
     QTPD_AUDIOSETTINGS_INIT;
 
+    //move to appcontroller
     PdWindow::inst()->move(0, 100);
     PdWindow::inst()->show();
 
-    qDebug()<<"started";
+    qDebug() << "started";
     cmp_post("qtpd started");
     cmp_post("---");
 
     a.setCursorFlashTime(0);
-
 
     //temporary folders properties
 
@@ -98,7 +100,6 @@ int main(int argc, char* argv[])
     Preferences::inst().addPath(extPath1.c_str());
     Preferences::inst().addPath(extPath2.c_str());
     Preferences::inst().addPath(extPath3.c_str());
-
 
 
 

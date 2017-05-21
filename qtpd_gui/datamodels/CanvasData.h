@@ -17,8 +17,6 @@ class ServerCanvas;
 
 namespace qtpd {
 
-
-
 typedef std::vector<UIObject*> objectVec;
 typedef std::vector<UIPatchcord*> patchcordVec;
 
@@ -29,7 +27,7 @@ typedef std::vector<UIPatchcord*> patchcordVec;
 ////
 /// \brief shared canvas data model - boxes, patchcords
 /// \details this should be developed better as a full data model for canvas
-class canvasData {
+class CanvasData {
 
     objectVec _boxes;
     patchcordVec _patchcords;
@@ -45,16 +43,21 @@ class canvasData {
     // new 0517
     ServerCanvas* _serverCanvas;
 
+    QString _fileName;
+
 public:
     // new 0517
-    ServerCanvas* serverCanvas(){return _serverCanvas;}
-    void setServerCanvas(ServerCanvas* canvas){_serverCanvas = canvas;}
+    ServerCanvas* serverCanvas() { return _serverCanvas; }
+    void setServerCanvas(ServerCanvas* canvas) { _serverCanvas = canvas; }
 
     portItemVec* inlets() { return _inlets; }
     portItemVec* outlets() { return _outlets; }
 
     void setInlets(portItemVec* inlets) { _inlets = inlets; }
     void setOutlets(portItemVec* outlets) { _outlets = outlets; }
+
+    void setFileName(QString fName){_fileName = fName;}
+    QString fileName() {return _fileName;}
 
     bool hasObjects()
     {
@@ -278,6 +281,32 @@ public:
 
         QStringList ret = boxesAsPdFileStrings(&_boxes);
         ret += patchcordsAsPdFileStrings(&_patchcords);
+
+        return ret;
+    }
+
+    QString canvasAsPdFileString()
+    {
+        // TODO
+        return QString("#N canvas 0 0 400 300 10;\r\n");
+
+        //        std::string ret;
+
+        //        ret = "#N canvas ";
+        //        ret += std::to_string(x()) + " ";
+        //        ret += std::to_string(y()) + " ";
+        //        ret += std::to_string(width()) + " ";
+        //        ret += std::to_string(height()) + " ";
+        //        ret += "10; \r\n";
+
+        //        return ret;
+    }
+
+    QStringList asPdFileStrings()
+    {
+        QStringList ret;
+        ret.append(canvasAsPdFileString());
+        ret += objectsAsPdFileStrings();
 
         return ret;
     }

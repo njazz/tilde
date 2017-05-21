@@ -9,7 +9,7 @@
 namespace qtpd {
 class UISubCanvas : public UIObject {
 private:
-    canvasData* _canvasData;
+    CanvasData* _canvasData;
 //    QGraphicsView _view;
 //    QGraphicsProxyWidget _viewProxy;
 //    QWidget _viewWidget;
@@ -104,7 +104,7 @@ public:
         return (UIObject*)b;
     };
 
-    void setCanvasData(canvasData* data)
+    void setCanvasData(CanvasData* data)
     {
         _canvasData = data;
 

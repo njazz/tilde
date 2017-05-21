@@ -32,7 +32,7 @@ namespace qtpd {
 ///
 class CanvasView : public QGraphicsView {
 private:
-    canvasData _canvasData;
+    CanvasData _canvasData;
 
     UIObject* _connectionStartObject;
     UIObject* _connectionStartOutlet;
@@ -63,7 +63,7 @@ private:
 
     float _zoom;
 
-    QString _fileName;
+    //QString _fileName;
 
     //
 
@@ -76,13 +76,13 @@ public:
     // todo fix
     QPoint newObjectPos() { return _newObjectPos; }
 
-    canvasData* canvasData() { return &_canvasData; }
+    CanvasData* canvasData() { return &_canvasData; }
 
     UIObject* dragObject() { return _dragObject; }
     void setDragObject(UIObject* object) { _dragObject = object; }
 
-    QString fileName() { return _fileName; }
-    void setFileName(QString object) { _fileName = object; }
+    QString fileName() { return _canvasData.fileName(); }
+    void setFileName(QString object) { _canvasData.setFileName(object); }
 
     t_canvas* pdObject() { return _pdObject; }
     void setPdObject(t_canvas* c) { _pdObject = c; }

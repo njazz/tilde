@@ -9,18 +9,36 @@
 
 #include "PatchWindow.h"
 
-#include "ControllerObserver.h"
+//#include "ControllerObserver.h"
 
-class ApplicationController {
+class ApplicationController : QObject {
 private:
     TheServer* _server;
+    ServerInstance* _mainInstance;
 
 public:
-    ServerInstance* newServerInstance();
-    PatchWindow* newCanvas();
+    ApplicationController()
+    {
+        _server = new TheServer();
+        _mainInstance = newServerInstance();
+    };
+
+    ServerInstance* newServerInstance()
+    {
+        return _server->createInstance();
+    };
+
+    ServerInstance* mainInstance(){return _mainInstance;}
+
+    PatchWindowController* newPatchWindowController()
+    {
+        // in .cpp
+        //return new PatchWindowController(this->mainInstance());
+    };
+
     void loadFile();
-    PatchWindow* createPatchWindow();
-    ControllerObserver* controllerObserver();
+
+    Observer* controllerObserver();     //ControllerObserver*
 };
 
 #endif // CM_PDLINK_H

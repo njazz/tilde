@@ -24,7 +24,7 @@ CanvasView::CanvasView(QGraphicsView* parent)
     _selectionRect = new SelectionRect;
     _selectionRect->setActive(false);
 
-    _fileName = "";
+    //_fileName = "";
 
     _canvasEditMode = new t_editMode;
     //    qDebug() << "new em ref";
@@ -402,7 +402,7 @@ UIObject* CanvasView::createObject(QString objectData1, QPoint pos) //std::strin
             scene()->addItem(obj);
 
             //temp
-            obj->setSize(400,300);
+            obj->setSize(400, 300);
 
             return obj;
         }
@@ -612,7 +612,6 @@ void CanvasView::deleteSelectedPatchcords()
 
             it = _canvasData.patchcords()->erase(it);
 
-
         } else
             ++it;
     }
@@ -721,8 +720,6 @@ std::string CanvasView::asPdFileString()
     ret += "10; \r\n";
 
     return ret;
-
-    return "";
 }
 
 std::string CanvasView::patchcordAsPdFileString(UIPatchcord* pcord)

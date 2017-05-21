@@ -7,6 +7,11 @@ namespace qtpd {
 PatchWindow* FileParser::_pdParserPrevWindow = 0;
 PatchWindow* FileParser::_pdParserWindow = 0;
 PatchWindow* FileParser::_pdParserFirstWindow = 0;
+
+CanvasData* FileParser::_currentData = 0;
+CanvasData* FileParser::_previousData = 0;
+CanvasData* FileParser::_firstData = 0;
+
 std::string FileParser::pdParserFileName = "";
 
 bool FileParser::legacyProcess(CanvasView* cmcanvas, QStringList list)
@@ -465,7 +470,9 @@ void FileParser::open(QString fname)
     if (f.open(QIODevice::ReadOnly)) {
         QStringList stringList;
 
-        setParserWindow(0);
+        //setParserWindow(0);
+        setCanvasData(0,0,0);
+
 
         pdParserFileName = fname.toStdString();
 
@@ -495,4 +502,46 @@ void FileParser::open(QString fname)
         f.close();
     }
 }
+
+// NEW API
+void FileParser::open(QString fname, CanvasData* canvasData)
+{
+
+    QFile f(fname);
+    if (f.open(QIODevice::ReadOnly)) {
+
+        QStringList stringList;
+
+        setParserWindow(0);
+
+        pdParserFileName = fname.toStdString();
+
+        QTextStream textStream(&f);
+        while (true) {
+            QString line = textStream.readLine();
+            if (line.isNull())
+                break;
+            else {
+                stringList.append(line);
+                //qDebug("* %s", line.toStdString().c_str());
+                //
+
+                // another one
+                FileParser::parseQString(line);
+            }
+        }
+
+        if (_pdParserWindow) {
+            _pdParserWindow->setFileName(fname);
+            _pdParserWindow->canvas->setEditMode(em_Locked);
+
+            cmp_loadbang(_pdParserWindow->canvas->pdObject());
+
+            _pdParserWindow->show();
+        }
+
+        f.close();
+    }
+}
+
 }

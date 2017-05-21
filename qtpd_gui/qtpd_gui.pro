@@ -154,7 +154,9 @@ SOURCES += main.cpp\
     objects/UIMatrix.cpp \
     objects/UISubCanvas.cpp \
     CanvasView.cpp \
-    serverAPIPrototype.cpp
+    serverAPIPrototype.cpp \
+    controller/PatchWindowController.cpp \
+    datamodels/FileSaver.cpp
 
 
 
@@ -282,7 +284,8 @@ INCLUDEPATH += \
     widgets/ \
     properties/ \
     graphicobjects/ \
-    datamodels/
+    datamodels/ \
+    controller/
 
 
 
