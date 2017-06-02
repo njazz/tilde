@@ -13,6 +13,8 @@
 
 //#include "../API_prototype/clientAPIPrototype.h"
 
+#include "UIBox.h"
+
 class ServerCanvas;
 
 namespace qtpd {

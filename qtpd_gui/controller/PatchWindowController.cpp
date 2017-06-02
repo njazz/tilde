@@ -8,7 +8,7 @@
 #include "FileParser.h"
 #include "FileSaver.h"
 
-namespace qtpd{
+namespace qtpd {
 
 PatchWindowController::PatchWindowController(ServerInstance* instance) //replace with parent (appcontroller)
 {
@@ -16,36 +16,46 @@ PatchWindowController::PatchWindowController(ServerInstance* instance) //replace
     _scene = new QGraphicsScene();
     _observer = new Observer();
     instance->registerObserver(_observer);
-    _instance = instance;
+    _serverInstance = instance;
     //_canvasData = new CanvasData();
 };
 
-ServerInstance* PatchWindowController::instance() { return _instance; }
+ServerInstance* PatchWindowController::instance() { return _serverInstance; }
 
 //CanvasData* PatchWindowController::canvasData() { return _canvasData; }
 
-vector<PatchWindow*> PatchWindowController::windows(){return _windows;};
-vector<QGraphicsScene*> PatchWindowController::scenes(){return _scenes;};
+vector<PatchWindow*> PatchWindowController::windows() { return _windows; };
+vector<QGraphicsScene*> PatchWindowController::scenes() { return _scenes; };
 
-void PatchWindowController::loadFile(){
+PatchWindow* PatchWindowController::newWindow()
+{
+    PatchWindow* ret = PatchWindow::newWindow();
 
-    //todo dialog
-    QString fileName;
+    _windows.push_back(ret);
+    ret->canvas->setScene(_scene);
+
+    return ret;
+}
+
+void PatchWindowController::openFile(QString fileName)
+{
+
     FileParser::open(fileName, _canvasData);
 }
-void PatchWindowController::saveFile(){
-    QString fileName;
+
+void PatchWindowController::saveFile(QString fileName)
+{
+    //todo dialog
     FileSaver::save(fileName, _canvasData);
-
-
 }
 
-PatchWindowController* PatchWindowController::createSubpatchWindow(){};
+void PatchWindowController::saveFileDialog(){};
+
+PatchWindowController* PatchWindowController::createSubpatchWindowController(){};
 //
 void PatchWindowController::createObjectMaker(){};
 //
-bool PatchWindowController::createObject(string name, QPoint pos)
-{
+bool PatchWindowController::createObject(string name, QPoint pos){
     //ServerObject* serverObject = _canvasData->serverCanvas->createObject(name);
     //UIObject* uiObject = ObjectLoader::createUIObject(name);
     //syncData(serverObject, uiObject);
@@ -63,5 +73,4 @@ void PatchWindowController::deleteSelectedPatchcords(vector<UIPatchcord*>){};
 void PatchWindowController::clickPort(){}; //?
 //
 void PatchWindowController::update(){}; // <<-- from observer
-
 }

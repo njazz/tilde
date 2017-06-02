@@ -14,6 +14,8 @@
 
 #endif
 
+class ApplicationController;
+
 namespace Ui {
 class cm_basewindow;
 }
@@ -25,13 +27,19 @@ namespace qtpd {
 class BaseWindow : public QMainWindow {
     Q_OBJECT
 
-private:
+    ApplicationController* _appController;
 
+private:
     static PythonQtScriptingConsole* pythonConsole_;
 
 public:
     explicit BaseWindow(QWidget* parent = 0);
     //~BaseWindow();
+
+    void setAppController(ApplicationController* appController)
+    {
+        _appController = appController;
+    }
 
     ////
     /// \brief create menu actions (File, Edit)
@@ -42,8 +50,6 @@ public:
     /// \brief create all menus
     ///
     void createMenus();
-
-
 
 private:
     Ui::cm_basewindow* ui;
@@ -98,13 +104,11 @@ private slots:
     void dspOn();
     void dspOff();
 
-
-
     void preferencesWindow();
     void audioSettingsWindow();
 
-    static void newFile();
-    static void open();
+    void newFile();
+    void openFileDialog();
 
     static void pdWindow();
     static void pythonConsole();

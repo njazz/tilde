@@ -3,6 +3,9 @@
 
 //#include "PdLink.h"
 
+#include <vector>
+#include <string>
+
 namespace ceammc {
 class AtomList;
 }

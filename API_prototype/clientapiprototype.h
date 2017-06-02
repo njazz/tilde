@@ -168,7 +168,7 @@ private:
 
 public:
     ServerInstance* newServerInstance();
-    PatchWindow* newCanvas();
+    //PatchWindow* newCanvas();
     void loadFile();
     PatchWindow* createPatchWindow();
     ControllerObserver* controllerObserver();

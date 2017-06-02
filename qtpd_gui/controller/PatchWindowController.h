@@ -20,16 +20,19 @@ namespace qtpd {
 //class CanvasData;
 
 class PatchWindowController {
+
     CanvasData* _canvasData;
     QGraphicsScene* _scene;
-    Observer* _observer;    //ControllerObserver
-    ServerInstance* _instance;
+    Observer* _observer; //ControllerObserver
+    ServerInstance* _serverInstance;
 
     vector<PatchWindow*> _windows;
     vector<QGraphicsScene*> _scenes;
 
 public:
     PatchWindowController(ServerInstance* instance); //replace with parent (appcontroller)
+
+    PatchWindowController* createSubpatchWindowController();
 
     ServerInstance* instance();
 
@@ -38,10 +41,13 @@ public:
     vector<PatchWindow*> windows();
     vector<QGraphicsScene*> scenes();
 
-    void loadFile();
-    void saveFile();
+    PatchWindow* newWindow();
 
-    PatchWindowController* createSubpatchWindow();
+    void openFile(QString fileName);
+
+    void saveFile(QString fileName);
+    void saveFileDialog();
+
     //
     void createObjectMaker();
     //

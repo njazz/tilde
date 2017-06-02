@@ -37,10 +37,6 @@ public:
 
     explicit UIItem(QGraphicsObject* parent = 0);
 
-    ////
-    /// \group prop Properties
-    /// @{
-    ///
     void setSize(QSize size) { _size = size; }
     void setSize(float w, float h) { _size = QSize(w, h); }
     void setWidth(float w) { _size.setWidth(w); }
@@ -83,8 +79,6 @@ public:
 
     QRectF boundingRect() const { return QRectF(0, 0, _size.width(), _size.height()); }
     QPainterPath shape() const;
-
-    /** @}*/
 
     void move(float x, float y);
     void move(QPoint pos);

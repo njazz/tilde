@@ -11,16 +11,32 @@
 
 //#include "ControllerObserver.h"
 
+#include "PdWindow.h"
+
+#ifdef WITH_PYTHON
+
+#include "python/PythonQtScriptingConsole.h"
+
+#endif
+
 class ApplicationController : QObject {
 private:
     TheServer* _server;
     ServerInstance* _mainInstance;
+
+    static PythonQtScriptingConsole* _pythonConsole;
 
 public:
     ApplicationController()
     {
         _server = new TheServer();
         _mainInstance = newServerInstance();
+
+#ifdef WITH_PYTHON
+        PythonQtObjectPtr mainContext = PythonQt::self()->getMainModule();
+        _pythonConsole = new PythonQtScriptingConsole(NULL, mainContext);
+        qDebug("pyConsole %lu", (long)_pythonConsole);
+#endif
     };
 
     ServerInstance* newServerInstance()
@@ -28,17 +44,16 @@ public:
         return _server->createInstance();
     };
 
-    ServerInstance* mainInstance(){return _mainInstance;}
+    ServerInstance* mainInstance() { return _mainInstance; }
 
-    PatchWindowController* newPatchWindowController()
-    {
-        // in .cpp
-        //return new PatchWindowController(this->mainInstance());
-    };
+    Observer* controllerObserver(); //ControllerObserver*
 
-    void loadFile();
+public slots:
+    void newPatchWindowController(); //older createPatch //PatchWindowController*
+    void openFileDialog();
 
-    Observer* controllerObserver();     //ControllerObserver*
+    void pdWindow();
+    void pythonConsole();
 };
 
 #endif // CM_PDLINK_H

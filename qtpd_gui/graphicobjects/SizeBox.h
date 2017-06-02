@@ -24,8 +24,7 @@ class SizeBox : public UIItem {
     Q_OBJECT
 
 private:
-    int _prevX;
-    int _prevY;
+    QPoint _previousPosition;
 
     t_objectSize* _objectSizeType;
 
@@ -42,17 +41,13 @@ public:
         p->drawRect(0, 0, boundingRect().width(), boundingRect().height());
     };
 
-    ////
-    /// \group mouse Mouse
-    /// @{
     void mousePressEvent(QGraphicsSceneMouseEvent* ev)
     {
         setCursor(QCursor(Qt::SizeHorCursor));
 
         ev->accept();
 
-        _prevX = ev->pos().toPoint().x();
-        _prevY = ev->pos().toPoint().y();
+        _previousPosition = ev->pos().toPoint();
     };
 
     void mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
@@ -64,9 +59,8 @@ public:
 
     void mouseMoveEvent(QGraphicsSceneMouseEvent* ev)
     {
-        emit resizeBoxEvent(ev->pos().toPoint().x() - _prevX, ev->pos().toPoint().y() - _prevY);
+        emit resizeBoxEvent(ev->pos().toPoint().x() - _previousPosition.x(), ev->pos().toPoint().y() - _previousPosition.y());
     }
-    /** @}*/
 
 signals:
 

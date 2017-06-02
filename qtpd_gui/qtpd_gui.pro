@@ -97,7 +97,7 @@ HEADERS += \
 }
 
 macx:PRECOMPILED_HEADER = _headers.h
-macx:CONFIG += precompile_header
+#macx:CONFIG += precompile_header
 
 SOURCES += main.cpp\
 #
@@ -156,7 +156,8 @@ SOURCES += main.cpp\
     CanvasView.cpp \
     serverAPIPrototype.cpp \
     controller/PatchWindowController.cpp \
-    datamodels/FileSaver.cpp
+    datamodels/FileSaver.cpp \
+    controller/ApplicationController.cpp
 
 
 

@@ -21,6 +21,8 @@
 #include "PatchWindow.h" //weird
 #include "PdWindow.h"
 
+#include "ApplicationController.h"
+
 namespace qtpd {
 BaseWindow::BaseWindow(QWidget* parent)
     :
@@ -55,7 +57,7 @@ void BaseWindow::createActions()
 
     openAct = new QAction(tr("&Open..."), this);
     openAct->setShortcuts(QKeySequence::Open);
-    connect(openAct, &QAction::triggered, this, &BaseWindow::open);
+    connect(openAct, &QAction::triggered, this, &BaseWindow::openFileDialog);
 
     saveAct = new QAction(tr("&Save"), this);
     saveAct->setShortcuts(QKeySequence::Save);
@@ -261,16 +263,22 @@ void BaseWindow::newFile()
 {
     PatchWindow* newWindow = PatchWindow::newWindow();
     newWindow->show();
+
+    // NEW 0517
+    _appController->newPatchWindowController();
 }
 
 ////
 /// \brief new patch window from file
 ///
-void BaseWindow::open()
+void BaseWindow::openFileDialog()
 {
     QString fname = QFileDialog::getOpenFileName(0, QString("Open patch"), QString("~/"), QString("*.pd"), 0, 0);
     if (fname != "")
         FileParser::open(fname);
+
+    // NEW 0517
+    _appController->openFileDialog();
 }
 
 ////
@@ -278,6 +286,8 @@ void BaseWindow::open()
 ///
 void BaseWindow::pdWindow()
 {
+    //PdWindow::inst()->setAppController(_appController);
+
     if (PdWindow::inst()->isVisible())
         PdWindow::inst()->hide();
     else
@@ -299,4 +309,5 @@ void BaseWindow::pythonConsole()
     cmp_post("This build is compiled without Python!");
 #endif
 }
+
 }
