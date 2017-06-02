@@ -211,7 +211,9 @@ void BaseWindow::close()
     ((QMainWindow*)this)->close();
 }
 
-//////////
+//////////////////////////////////////
+
+// TODO move to AppController
 
 void BaseWindow::dspOn()
 {
@@ -225,10 +227,8 @@ void BaseWindow::dspOff()
     dspOnAct->setChecked(false);
 }
 
-//void BaseWindow::pdWindow()
-//{
-//    //if (pdw->isVisible()) pdw->hide(); else pdw->show();
-//}
+
+// TODO move to AppController
 
 void BaseWindow::preferencesWindow()
 {
@@ -265,7 +265,7 @@ void BaseWindow::newFile()
     newWindow->show();
 
     // NEW 0517
-    _appController->newPatchWindowController();
+    //_appController->newPatchWindowController();
 }
 
 ////
@@ -278,7 +278,7 @@ void BaseWindow::openFileDialog()
         FileParser::open(fname);
 
     // NEW 0517
-    _appController->openFileDialog();
+    //_appController->openFileDialog();
 }
 
 ////
@@ -288,14 +288,20 @@ void BaseWindow::pdWindow()
 {
     //PdWindow::inst()->setAppController(_appController);
 
+
     if (PdWindow::inst()->isVisible())
         PdWindow::inst()->hide();
     else
         PdWindow::inst()->show();
+
 }
 
 void BaseWindow::pythonConsole()
 {
+
+    //_appController->pythonConsole();
+
+
 #ifdef WITH_PYTHON
     if (pythonConsole_) {
         if (pythonConsole_->isVisible())
@@ -308,6 +314,6 @@ void BaseWindow::pythonConsole()
 #else
     cmp_post("This build is compiled without Python!");
 #endif
-}
 
+}
 }

@@ -329,6 +329,8 @@ public:
 
     //----------------------------------------------------------------------------------------
 
+    // TODO move to patchController
+
     // todo less spaghetti
 
     void newObjectBox()

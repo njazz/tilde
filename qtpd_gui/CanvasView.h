@@ -16,8 +16,8 @@
 
 //
 #include "Grid.h"
-#include "UINewPatchcord.h"
 #include "SelectionRect.h"
+#include "UINewPatchcord.h"
 
 //todo - move to window?
 //#include "cm_clipboard.h"
@@ -32,7 +32,7 @@ namespace qtpd {
 ///
 class CanvasView : public QGraphicsView {
 private:
-    CanvasData _canvasData;
+    CanvasData _canvasData; //todo less direct
 
     UIObject* _connectionStartObject;
     UIObject* _connectionStartOutlet;
@@ -70,9 +70,6 @@ private:
     Q_OBJECT
 
 public:
-    ////
-    /// \group prop Properties
-    /// @{
     // todo fix
     QPoint newObjectPos() { return _newObjectPos; }
 
@@ -119,8 +116,6 @@ public:
     }
     QString filePath() { return _filePath; };
 
-
-
     ////
     /// \brief minimumCanvasSize
     /// \return
@@ -131,8 +126,6 @@ public:
 
     void setReplaceObject(UIObject* obj); ///>sets 'replaceobject' pointer
     UIObject* replaceObject();
-
-    /** @}*/
 
     // -------------------------------------------------------
 

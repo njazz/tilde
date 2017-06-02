@@ -48,8 +48,4 @@ void ApplicationController::pythonConsole()
 }
 
 
-#ifdef WITH_PYTHON
 
-PythonQtScriptingConsole* ApplicationController::_pythonConsole;
-
-#endif

@@ -24,7 +24,7 @@ private:
     TheServer* _server;
     ServerInstance* _mainInstance;
 
-    static PythonQtScriptingConsole* _pythonConsole;
+    PythonQtScriptingConsole* _pythonConsole;
 
 public:
     ApplicationController()

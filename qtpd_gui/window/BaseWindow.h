@@ -110,8 +110,8 @@ private slots:
     void newFile();
     void openFileDialog();
 
-    static void pdWindow();
-    static void pythonConsole();
+    void pdWindow();
+    void pythonConsole();
 };
 }
 
