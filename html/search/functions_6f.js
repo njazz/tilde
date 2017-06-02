@@ -16,6 +16,8 @@ var searchData=
   ['opclass',['OPClass',['../classqtpd_1_1_o_p_class.html#ae7f01057539156ec4cb21867bd6f33d0',1,'qtpd::OPClass::OPClass()'],['../classqtpd_1_1_o_p_class.html#a334dd9becddd92691c03f4d43ac8ebcd',1,'qtpd::OPClass::OPClass(string className)']]],
   ['open',['open',['../classqtpd_1_1_file_parser.html#a7a1d4de73d63affb0825b0889a3b94f7',1,'qtpd::FileParser::open(QString fname)'],['../classqtpd_1_1_file_parser.html#a8569f73870a2981691d93c18fec7e52c',1,'qtpd::FileParser::open(QString fname, CanvasData *CanvasData)']]],
   ['open_5fvia_5fpath',['open_via_path',['../m__pd_8h.html#aa76af2d4f9e8dca21ce4aea129d14d90',1,'m_pd.h']]],
+  ['openfile',['openFile',['../classqtpd_1_1_patch_window_controller.html#ae7bcd9ecce3836bfbcaac5e3707fbe05',1,'qtpd::PatchWindowController']]],
+  ['openfiledialog',['openFileDialog',['../class_application_controller.html#a15e1e72ea98d72a3a4727a856b54a935',1,'ApplicationController']]],
   ['operator_21_3d',['operator!=',['../namespaceceammc.html#a25cae8de6c442dcc576385d88e0c7c84',1,'ceammc::operator!=(const Atom &amp;a1, const Atom &amp;a2)'],['../namespaceceammc.html#aa973001c57677ba29a786896cb787640',1,'ceammc::operator!=(const AtomList &amp;l1, const AtomList &amp;l2)']]],
   ['operator_2a',['operator*',['../classceammc_1_1_atom.html#a520955d5ca192dfc2491f3809075e04f',1,'ceammc::Atom::operator*()'],['../classceammc_1_1_atom_list.html#aa7206cb962fcba12c4b005bf39c1396f',1,'ceammc::AtomList::operator*()']]],
   ['operator_2a_3d',['operator*=',['../classceammc_1_1_atom.html#af01e43514f78552e64b490b02c94669b',1,'ceammc::Atom::operator*=()'],['../classceammc_1_1_atom_list.html#a675e379b3b94f2d6df47d4796c9fc865',1,'ceammc::AtomList::operator*=()']]],

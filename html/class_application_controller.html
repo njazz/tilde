@@ -81,6 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
+<a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ApplicationController Class Reference</div>  </div>
@@ -91,13 +92,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p><a href="class_application_controller-members.html">List of all members.</a></p>
 <table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-slots"></a>
+Public Slots</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application_controller.html#ae4c6ffed01781d29cdbea54aa1dff99e">newPatchWindowController</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application_controller.html#a15e1e72ea98d72a3a4727a856b54a935">openFileDialog</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application_controller.html#a8824f7e2390da5336dd8820153a676cd">pdWindow</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application_controller.html#aa3da992b8adef7025a195fdb0a2a0064">pythonConsole</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application_controller.html#a71b581d9d5ff28f782a19faa7f2ffadb">ApplicationController</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">ServerInstance *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application_controller.html#a4f74632b4e49fdf201fed27b0f16ef95">newServerInstance</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">ServerInstance *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application_controller.html#a90522980e6a7c40926749c60ab1491ee">mainInstance</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">PatchWindowController *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application_controller.html#aec1107ff648f9dae116e3922befbd1f6">newPatchWindowController</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application_controller.html#a50eeef64446733ef89eaa50c9fc2b0da">loadFile</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Observer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application_controller.html#ac4a9c4e5993815856534c67085db9bb9">controllerObserver</a> ()</td></tr>
 </table>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
@@ -134,22 +139,6 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a50eeef64446733ef89eaa50c9fc2b0da"></a><!-- doxytag: member="ApplicationController::loadFile" ref="a50eeef64446733ef89eaa50c9fc2b0da" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_application_controller.html#a50eeef64446733ef89eaa50c9fc2b0da">ApplicationController::loadFile</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a90522980e6a7c40926749c60ab1491ee"></a><!-- doxytag: member="ApplicationController::mainInstance" ref="a90522980e6a7c40926749c60ab1491ee" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -166,15 +155,15 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aec1107ff648f9dae116e3922befbd1f6"></a><!-- doxytag: member="ApplicationController::newPatchWindowController" ref="aec1107ff648f9dae116e3922befbd1f6" args="()" -->
+<a class="anchor" id="ae4c6ffed01781d29cdbea54aa1dff99e"></a><!-- doxytag: member="ApplicationController::newPatchWindowController" ref="ae4c6ffed01781d29cdbea54aa1dff99e" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">PatchWindowController* <a class="el" href="class_application_controller.html#aec1107ff648f9dae116e3922befbd1f6">ApplicationController::newPatchWindowController</a> </td>
+          <td class="memname">void <a class="el" href="class_application_controller.html#ae4c6ffed01781d29cdbea54aa1dff99e">ApplicationController::newPatchWindowController</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td><code> [slot]</code></td>
         </tr>
       </table>
 </div>
@@ -198,8 +187,57 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a class="anchor" id="a15e1e72ea98d72a3a4727a856b54a935"></a><!-- doxytag: member="ApplicationController::openFileDialog" ref="a15e1e72ea98d72a3a4727a856b54a935" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_application_controller.html#a15e1e72ea98d72a3a4727a856b54a935">ApplicationController::openFileDialog</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8824f7e2390da5336dd8820153a676cd"></a><!-- doxytag: member="ApplicationController::pdWindow" ref="a8824f7e2390da5336dd8820153a676cd" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_application_controller.html#a8824f7e2390da5336dd8820153a676cd">ApplicationController::pdWindow</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa3da992b8adef7025a195fdb0a2a0064"></a><!-- doxytag: member="ApplicationController::pythonConsole" ref="aa3da992b8adef7025a195fdb0a2a0064" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_application_controller.html#aa3da992b8adef7025a195fdb0a2a0064">ApplicationController::pythonConsole</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/travis/build/njazz/qtpd/qtpd_gui/controller/<a class="el" href="_application_controller_8h_source.html">ApplicationController.h</a></li>
+<li>/home/travis/build/njazz/qtpd/qtpd_gui/controller/<a class="el" href="_application_controller_8cpp.html">ApplicationController.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- window showing the filter options -->
@@ -219,7 +257,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 21 2017 17:59:04 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 2 2017 23:16:37 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
