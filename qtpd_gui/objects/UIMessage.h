@@ -28,12 +28,20 @@ private:
 public:
     explicit UIMessage();
 
+    static UIObject* createObj(QString data)
+    {
+        UIMessage* ret = new UIMessage();
+        ret->setObjectData(data);
+
+        return ret;
+    }
+
     static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
     {
         qDebug() << "<< ui.msg";
 
         UIMessage* b = new UIMessage();
-        b->setCanvas((void*)parent);
+        //b->setCanvas((void*)parent);
 
         //fix: remove "ui.msg"
         //do this normal way later
@@ -47,8 +55,6 @@ public:
         qDebug() << "msg data:" << messageDataList;
 
         b->autoResize();
-
-
 
         std::string message = "ui.msg";
 
@@ -127,7 +133,7 @@ public:
                 && scene()->views().first()->viewport()) {
 
                 QGraphicsView* v = scene()->views().first();
-                QPoint pos = v->viewport()->mapToGlobal(ev->pos().toPoint() );
+                QPoint pos = v->viewport()->mapToGlobal(ev->pos().toPoint());
 
                 // TODO
                 showPopupMenu(pos + this->pos().toPoint());

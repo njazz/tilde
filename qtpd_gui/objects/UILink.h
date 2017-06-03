@@ -29,10 +29,18 @@ private:
 public:
     explicit UILink(); //UIObject* parent = 0);
 
+    static UIObject* createObj(QString data)
+    {
+        UILink* ret = new UILink();
+        ret->setObjectData(data);
+
+        return ret;
+    }
+
     static UIObject* createObject(QString objectData, t_canvas*, QGraphicsView* parent = 0)
     {
         UILink* b = new UILink();
-        b->setCanvas((void*)parent);
+        //b->setCanvas((void*)parent);
 
         b->properties()->extractFromPdFileString(objectData);
         b->setObjectData("");

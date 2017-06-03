@@ -18,7 +18,6 @@
 
 #include "UIScriptCommon.h"
 
-
 namespace qtpd {
 
 ////
@@ -41,12 +40,19 @@ private:
 public:
     explicit UIScriptBox();
 
+    static UIObject* createObj(QString data)
+    {
+        UIScriptBox* ret = new UIScriptBox();
+        ret->setObjectData(data);
+
+        return ret;
+    }
     static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
     {
         qDebug() << "ui.scriptbox";
 
         UIScriptBox* b = new UIScriptBox();
-        b->setCanvas((void*)parent);
+        //b->setCanvas((void*)parent);
 
         b->_editor->textEdit()->setContext(pyWrapper::inst().withCanvas((QObject*)parent));
 

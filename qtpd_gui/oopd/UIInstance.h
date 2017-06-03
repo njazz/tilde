@@ -49,7 +49,7 @@ public:
             objectData = "pdclass";
 
         UIInstance* b = new UIInstance(); //(UIObject*)parent);
-        b->setCanvas((void*)parent);
+        //b->setCanvas((void*)parent);
 
         QStringList list = QString(objectData).split(" ");
 

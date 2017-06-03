@@ -28,10 +28,18 @@ private:
 public:
     explicit UIToggle();
 
+    static UIObject* createObj(QString data)
+    {
+        UIToggle* ret = new UIToggle();
+        ret->setObjectData(data);
+
+        return ret;
+    }
+
     static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
     {
         UIToggle* b = new UIToggle();
-        b->setCanvas((void*)parent);
+        //b->setCanvas((void*)parent);
 
         QString data1 = b->properties()->extractFromPdFileString(objectData);
         b->setObjectData("ui.toggle");

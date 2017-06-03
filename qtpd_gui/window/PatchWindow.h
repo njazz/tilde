@@ -9,6 +9,8 @@
 
 #include "FileSaver.h"
 
+#include "PatchWindowController.h"
+
 namespace qtpd {
 
 
@@ -354,134 +356,19 @@ public:
         setWindowModified(true);
     }
 
-    void newMessageBox()
-    {
+    // ============================================
 
-        if (canvasView()->getEditMode() != em_Locked) {
-            UIObject* newMsg = canvasView()->createObject("ui.msg", QPoint(100, 100));
-            canvasView()->setDragObject ( newMsg );
-            //todo
-            canvasView()->update();
-            //newMsg->show();
-        }
 
-        setWindowModified(true);
-    }
-
-    void newFloatBox()
-    {
-
-        if (canvasView()->getEditMode() != em_Locked) {
-            UIObject* newFlo = canvasView()->createObject("ui.float 0", QPoint(100, 100));
-            canvasView()->setDragObject ( newFlo );
-
-            //todo
-            canvasView()->update();
-
-            //newFlo->show();
-        }
-
-        setWindowModified(true);
-    }
-
-    void newCommentBox()
-    {
-
-        if (canvasView()->getEditMode() != em_Locked) {
-            UIObject* newTxt = canvasView()->createObject("ui.text", QPoint(100, 100));
-           canvasView()->setDragObject ( newTxt );
-
-           //todo
-           canvasView()->update();
-           // newTxt->show();
-        }
-
-        setWindowModified(true);
-    }
-
-    void newBangBox()
-    {
-        if (canvasView()->getEditMode() != em_Locked) {
-            UIObject* newBng = canvasView()->createObject("ui.bang", QPoint(100, 100));
-            canvasView()->setDragObject ( newBng );
-
-            //todo
-            canvasView()->update();
-            //newBng->show();
-        }
-
-        setWindowModified(true);
-    }
-
-    void newToggleBox()
-    {
-        if (canvasView()->getEditMode() != em_Locked) {
-            UIObject* newBng = canvasView()->createObject("ui.toggle", QPoint(100, 100));
-            canvasView()->setDragObject ( newBng);
-
-            //todo
-            canvasView()->update();
-            //newBng->show();
-        }
-
-        setWindowModified(true);
-    }
-
-    void newScriptBox()
-    {
-        if (canvasView()->getEditMode() != em_Locked) {
-            UIObject* newBng = canvasView()->createObject("ui.script", QPoint(100, 100));
-            canvasView()->setDragObject (newBng);
-
-            //todo
-            canvasView()->update();
-            //newBng->show();
-        }
-
-        setWindowModified(true);
-    }
-
-    void newArrayBox()
-    {
-        if (canvasView()->getEditMode() != em_Locked) {
-            UIObject* newArr = canvasView()->createObject("ui.array", QPoint(100, 100));
-            canvasView()->setDragObject (newArr);
-
-            //todo
-            canvasView()->update();
-            //newArr->show();
-        }
-
-        setWindowModified(true);
-    }
-
-    void newPdClassBox()
-    {
-        if (canvasView()->getEditMode() != em_Locked) {
-            UIObject* newArr = canvasView()->createObject("pdclass", QPoint(100, 100));
-            canvasView()->setDragObject (newArr);
-
-            //todo
-            canvasView()->update();
-            //newArr->show();
-        }
-
-        setWindowModified(true);
-    }
-
-    void newPdInstanceBox()
-    {
-        if (canvasView()->getEditMode() != em_Locked) {
-            UIObject* newArr = canvasView()->createObject("pdinstance", QPoint(100, 100));
-            canvasView()->setDragObject (newArr);
-
-            //todo
-            canvasView()->update();
-            //newArr->show();
-        }
-
-        setWindowModified(true);
-    }
+    //canvasView() -> controller
+    void newMessageBox();
+    void newFloatBox();
+    void newCommentBox();
+    void newBangBox();
+    void newToggleBox();
+    void newScriptBox();
+    void newArrayBox();
+    void newPdClassBox();
+    void newPdInstanceBox();
 
     // ----------------------------------------------------
 

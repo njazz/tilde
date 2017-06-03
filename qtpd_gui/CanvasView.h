@@ -131,7 +131,6 @@ public:
 
     explicit CanvasView(QGraphicsView* parent = 0);
 
-    //todo
     void addInlet();
     void addOutlet();
 
@@ -152,7 +151,7 @@ public:
     /// \return
     /// \deprecated move to window/controller
     ///
-    UIObject* createObject(QString objectData1, QPoint pos);
+    //UIObject* createObject(QString objectData1, QPoint pos);
 
     ////
     /// \brief create object box for subpatch (when loaded from file)

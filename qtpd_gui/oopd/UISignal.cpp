@@ -29,7 +29,7 @@ UIObject* UISignal::createObject(QString objectData, t_canvas* pdCanvas, QGraphi
         objectData = "pdsignal~";
 
     UISignal* b = new UISignal(); //(UIObject*)parent);
-    b->setCanvas((void*)parent);
+    //b->setCanvas((void*)parent);
 
     //truncate "ui.obj". todo cleanup
     QStringList list = QString(objectData).split(" ");

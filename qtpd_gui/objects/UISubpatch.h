@@ -36,6 +36,13 @@ private:
 public:
     explicit UISubpatch();
 
+    static UIObject* createObj(QString data)
+    {
+        UISubpatch* ret = new UISubpatch();
+        ret->setObjectData(data);
+
+        return ret;
+    }
     static UIObject* createObject(QString objectData, t_canvas*, QGraphicsView* parent = 0)
     {
         //TODO fix all constructors
@@ -44,7 +51,7 @@ public:
 
         UISubpatch* b = new UISubpatch(); //(UIObjectItem*)parent);
 
-        b->setCanvas((void*)parent);
+        //b->setCanvas((void*)parent);
 
         QStringList list = QString(objectData).split(" ");
         // list.removeAt(0);
@@ -63,7 +70,7 @@ public:
 
         b->resizeEvent();
 
-        b->setBgColor(QColor(224,224,224));
+        b->setBgColor(QColor(224, 224, 224));
 
         return (UIObject*)b;
     };

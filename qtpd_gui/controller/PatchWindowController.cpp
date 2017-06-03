@@ -18,6 +18,10 @@ PatchWindowController::PatchWindowController(ServerInstance* instance) //replace
     instance->registerObserver(_observer);
     _serverInstance = instance;
     _canvasData = new CanvasData();
+
+    _serverCanvas = _serverInstance->createCanvas();
+    _canvasData->setServerCanvas(_serverCanvas);
+
 };
 
 ServerInstance* PatchWindowController::instance() { return _serverInstance; }
@@ -60,13 +64,24 @@ PatchWindowController* PatchWindowController::createSubpatchWindowController(){}
 //
 void PatchWindowController::createObjectMaker(){};
 //
-bool PatchWindowController::createObject(string name, QPoint pos)
+UIObject* PatchWindowController::createObject(string name, QPoint pos)
 {
     qDebug("* create object *");
 
+    if (!_canvasData) {
+        qDebug("** canvas data error!");
+        return 0;
+    }
+    if (!_canvasData->serverCanvas()) {
+        qDebug("** server canvas error!");
+        return 0;
+    }
+
     ServerObject* serverObject = _canvasData->serverCanvas()->createObject(name);
+
     UIObject* uiObject = ObjectLoader::inst().createUIObject(name.c_str());
 
+    uiObject->setParentCanvasView(_windows[0]->canvasView());
     uiObject->setServerObject(serverObject);
     uiObject->sync();
 
@@ -77,7 +92,6 @@ bool PatchWindowController::createObject(string name, QPoint pos)
 
     //uiObject->setEditModeRef( _windows[0]->canvasEditMode()); //Canvas::getEditModeRef());
     //connect(uiObject, &UIObject::editObject, this, &CanvasView::objectStartsEdit);
-
 
     uiObject->move(pos.x(), pos.y());
     _canvasData->addUniqueBox(_canvasData->boxes(), uiObject);
@@ -99,7 +113,7 @@ bool PatchWindowController::createObject(string name, QPoint pos)
 
     //resizeToObjects();
 
-    return true;
+    return uiObject;
 
     // ======================================================
 
@@ -253,6 +267,16 @@ void PatchWindowController::doSave(QString fileName)
         _windows[0]->setWindowTitle(file);
         _windows[0]->setWindowFilePath(fileName);
         _windows[0]->setWindowModified(false);
+    }
+}
+
+void PatchWindowController::updateViewports()
+{
+    vector<PatchWindow*>::iterator it;
+    for (it = _windows.begin(); it != _windows.end(); ++it) {
+        PatchWindow* w = *it;
+
+        w->canvasView()->viewport()->update();
     }
 }
 }

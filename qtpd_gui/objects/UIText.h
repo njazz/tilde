@@ -29,10 +29,17 @@ private:
 public:
     explicit UIText(); //UIObject* parent = 0);
 
+    static UIObject* createObj(QString data)
+    {
+        UIText* ret = new UIText();
+        ret->setObjectData(data);
+
+        return ret;
+    }
     static UIObject* createObject(QString objectData, t_canvas*, QGraphicsView* parent = 0)
     {
         UIText* b = new UIText();
-        b->setCanvas((void*)parent);
+        //b->setCanvas((void*)parent);
 
         //temporary
         QString data1 = b->properties()->extractFromPdFileString(objectData);
@@ -213,7 +220,7 @@ public:
         return 0;
     }
 
-    bool eventFilter(QObject* , QEvent* event)
+    bool eventFilter(QObject*, QEvent* event)
     {
         if (event->type() == QEvent::KeyPress) {
 

@@ -51,7 +51,7 @@ private:
     QAction* pmHelp;
     QAction* pmOpen;
 
-    void* _canvas; ///> QGraphicsView
+    //void* _canvas; ///> QGraphicsView
 
     //new 0517
     CanvasView* _parentCanvasView;
@@ -101,8 +101,8 @@ public:
     ////
     /// \group prop Properties
     /// @{
-    void setCanvas(void* canvas) { _canvas = canvas; }
-    void* canvas() { return _canvas; } //?
+    //void setCanvas(void* canvas) { _canvas = canvas; }
+    //void* canvas() { return _canvas; } //?
 
     SizeBox* sizeBox() { return _sizeBox; }
 
@@ -131,6 +131,8 @@ public:
 
         int in_c = _serverObject->inletCount();
         int out_c = _serverObject->outletCount();
+
+        qDebug() << "i/o " << in_c << out_c;
 
         for (int i = 0; i < in_c; i++)
             addInlet();

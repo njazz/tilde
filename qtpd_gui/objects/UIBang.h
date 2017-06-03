@@ -29,10 +29,18 @@ private:
 public:
     explicit UIBang();
 
+    static UIObject* createObj(QString data)
+    {
+        UIBang* ret = new UIBang();
+        ret->setObjectData(data);
+
+        return ret;
+    }
+
     static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
     {
         UIBang* b = new UIBang();
-        b->setCanvas((void*)parent);
+        //b->setCanvas((void*)parent);
 
         QString data1 = b->properties()->extractFromPdFileString(objectData);
         b->setObjectData("ui.bang");

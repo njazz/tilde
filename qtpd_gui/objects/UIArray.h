@@ -29,10 +29,18 @@ private:
 public:
     explicit UIArray(); //UIObject* parent = 0);
 
+    static UIObject* createObj(QString data)
+    {
+        UIArray* ret = new UIArray();
+        ret->setObjectData(data);
+
+        return ret;
+    }
+
     static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
     {
         UIArray* b = new UIArray();
-        b->setCanvas((void*)parent);
+        //b->setCanvas((void*)parent);
 
         //truncate "ui.obj". todo cleanup
         QStringList list = QString(objectData).split(" ");

@@ -39,6 +39,9 @@ UIObject::UIObject(UIItem* parent)
     _objectDataModel.setObjectSize(os_FixedHeight, 40, 20);
 
     setAcceptHoverEvents(true);
+
+    _parentCanvasView = 0;
+    _subCanvasData = 0;
 }
 
 //---------------------------------------
@@ -203,12 +206,14 @@ void UIObject::setOutletsPos()
 
 void UIObject::addInlet()
 {
-    int _portClass_;
+    int _portClass_ = 0;
 
+    /*
     if (pdObject()) {
         _portClass_ = cmp_get_inlet_type((t_object*)pdObject(), _inlets->size());
     } else
         _portClass_ = 0;
+        */
 
     addInlet(_portClass_);
 }
@@ -223,8 +228,10 @@ void UIObject::addInlet(int _portClass_)
 
     _inlets->push_back(new_in);
 
-    connect(new_in, &Port::mousePressed, static_cast<CanvasView*>(_canvas), &CanvasView::s_InMousePressed);
-    connect(new_in, &Port::mouseReleased, static_cast<CanvasView*>(_canvas), &CanvasView::s_InMouseReleased);
+    if (_parentCanvasView) {
+        connect(new_in, &Port::mousePressed, (_parentCanvasView), &CanvasView::s_InMousePressed);
+        connect(new_in, &Port::mouseReleased,(_parentCanvasView), &CanvasView::s_InMouseReleased);
+    }
 
     new_in->show();
 
@@ -233,12 +240,14 @@ void UIObject::addInlet(int _portClass_)
 
 void UIObject::addOutlet()
 {
-    int _portClass_;
+    int _portClass_ = 0;
 
+    /*
     if (pdObject()) {
         _portClass_ = cmp_get_outlet_type((t_object*)pdObject(), _outlets->size());
     } else
         _portClass_ = 0;
+        */
 
     addOutlet(_portClass_);
 }
@@ -253,8 +262,10 @@ void UIObject::addOutlet(int _portClass_)
 
     _outlets->push_back(new_out);
 
-    connect(new_out, &Port::mousePressed, static_cast<CanvasView*>(_canvas), &CanvasView::s_OutMousePressed);
-    connect(new_out, &Port::mouseReleased, static_cast<CanvasView*>(_canvas), &CanvasView::s_OutMouseReleased);
+    if (_parentCanvasView) {
+        connect(new_out, &Port::mousePressed, _parentCanvasView, &CanvasView::s_OutMousePressed);
+        connect(new_out, &Port::mouseReleased, _parentCanvasView, &CanvasView::s_OutMouseReleased);
+    }
 
     new_out->show();
 

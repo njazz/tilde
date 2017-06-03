@@ -13,7 +13,6 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QGraphicsView>
 
-
 namespace qtpd {
 
 ////
@@ -32,14 +31,12 @@ public:
     explicit UIBox(); //(UIObjectItem* parent = 0);
     //~UIBox();
 
-    static UIObject* createObj(QString data) {
-
-        UIBox * ret = new UIBox();
-
+    static UIObject* createObj(QString data)
+    {
+        UIBox* ret = new UIBox();
         ret->setObjectData(data);
 
         return ret;
-
     }
 
     static UIObject* createObject(QString objectData, t_canvas* pd_Canvas, QGraphicsView* parent = 0)
@@ -50,7 +47,7 @@ public:
 
         UIBox* b = new UIBox(); //(UIObjectItem*)parent);
 
-        b->setCanvas((void*)parent);
+        //b->setCanvas((void*)parent);
 
         //truncate "ui.obj". todo cleanup
         QStringList list = QString(objectData).split(" ");
@@ -59,7 +56,7 @@ public:
         const char* obj_name = list_s.toStdString().c_str();
         QString data1 = b->properties()->extractFromPdFileString(obj_name); //test
 
-        qDebug()<<"data: " << data1;
+        qDebug() << "data: " << data1;
 
         // todo cleanup
         const char* obj_name2 = data1.toStdString().c_str();
@@ -154,7 +151,9 @@ public:
         p->setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
         p->setFont(QFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize(), 0, false));
-        p->drawText(2, 3, boundingRect().width() - 2, boundingRect().height() - 3, 0, _objectDataModel.objectData(), 0);
+        QStringList textList = _objectDataModel.objectData().split(" ");
+        textList.removeFirst();
+        p->drawText(2, 3, boundingRect().width() - 2, boundingRect().height() - 3, 0, textList.join(" "), 0);
 
         if (isSelected()) {
             p->setPen(QPen(QColor(0, 192, 255), 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));

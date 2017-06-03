@@ -28,7 +28,7 @@ UIObject* UIProperty::createObject(QString objectData, t_canvas* pdCanvas, QGrap
         objectData = "property";
 
     UIProperty* b = new UIProperty(); //(UIObject*)parent);
-    b->setCanvas((void*)parent);
+    //b->setCanvas((void*)parent);
 
     //truncate "ui.obj". todo cleanup
     QStringList list = QString(objectData).split(" ");

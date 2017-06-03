@@ -9,35 +9,37 @@ void ObjectLoader::loadObjects()
 {
     //temporary
     addUIobject("ui.obj", &UIBox::createObject, &UIBox::createObj);
-    addUIobject("ui.msg", &UIMessage::createObject, &UIBox::createObj);
-    addUIobject("ui.float", &UIFloat::createObject, &UIBox::createObj);
-    addUIobject("ui.text", &UIText::createObject, &UIBox::createObj);
+    addUIobject("ui.msg", &UIMessage::createObject, &UIMessage::createObj);
+    addUIobject("ui.float", &UIFloat::createObject, &UIFloat::createObj);
+    addUIobject("ui.text", &UIText::createObject, &UIText::createObj);
 
-    addUIobject("ui.bang", &UIBang::createObject, &UIBox::createObj);
-    addUIobject("ui.toggle", &UIToggle::createObject, &UIBox::createObj);
+    addUIobject("ui.bang", &UIBang::createObject, &UIBang::createObj);
+    addUIobject("ui.toggle", &UIToggle::createObject, &UIToggle::createObj);
 
-    addUIobject("ui.slider", &UISlider::createObject, &UIBox::createObj);
-    addUIobject("ui.matrix", &UIMatrix::createObject, &UIBox::createObj);
+    addUIobject("ui.slider", &UISlider::createObject, &UISlider::createObj);
+    addUIobject("ui.matrix", &UIMatrix::createObject, &UIMatrix::createObj);
 
-    addUIobject("ui.link", &UILink::createObject, &UIBox::createObj);
+    addUIobject("ui.link", &UILink::createObject, &UILink::createObj);
 
     #ifdef WITH_PYTHON
-    addUIobject("ui.script", &UIScript::createObject, &UIBox::createObj);
-    addUIobject("ui.scriptbox", &UIScriptBox::createObject, &UIBox::createObj);
-    addUIobject("py", &UIScriptBox::createObject, &UIBox::createObj);
+    addUIobject("ui.script", &UIScript::createObject, &UIScript::createObj);
+    addUIobject("ui.scriptbox", &UIScriptBox::createObject, &UIScriptBox::createObj);
+    addUIobject("py", &UIScriptBox::createObject, &UIScriptBox::createObj);
     #endif
 
-    addUIobject("ui.array", &UIArray::createObject, &UIBox::createObj);
+    addUIobject("ui.array", &UIArray::createObject, &UIArray::createObj);
 
-    addUIobject("pdclass", &UIClass::createObject, &UIBox::createObj);
-    addUIobject("pdinstance", &UIInstance::createObject, &UIBox::createObj);
-    addUIobject("method", &UIMethod::createObject, &UIBox::createObj);
-    addUIobject("property", &UIProperty::createObject, &UIBox::createObj);
-    addUIobject("pdsignal~", &UISignal::createObject, &UIBox::createObj);
+    /*
+    addUIobject("pdclass", &UIClass::createObject, &UIClass::createObj);
+    addUIobject("pdinstance", &UIInstance::createObject, &UIInstance::createObj);
+    addUIobject("method", &UIMethod::createObject, &UIMethod::createObj);
+    addUIobject("property", &UIProperty::createObject, &UIProperty::createObj);
+    addUIobject("pdsignal~", &UISignal::createObject, &UISignal::createObj);
+    */
 
-    addUIobject("ui.dsp", &UIDSP::createObject, &UIBox::createObj);
+    addUIobject("ui.dsp", &UIDSP::createObject, &UIDSP::createObj);
 
-    addUIobject("pds", &UISubCanvas::createObject, &UIBox::createObj);
+    addUIobject("pds", &UISubCanvas::createObject, &UISubCanvas::createObj);
 
 
     // ---------------------------------------------

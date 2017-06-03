@@ -75,8 +75,11 @@ private:
     ServerObjectType _type;
     ServerProperties* _properties;
 
+
+
 public:
     ServerObject();
+
     ServerObject(ServerObject* parent, string text);
 
     virtual ServerObject* parent();

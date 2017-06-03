@@ -333,6 +333,10 @@ void CanvasView::mouseReleaseEvent(QMouseEvent* ev)
 //    viewport()->update();
 //}
 
+// ====================================================================================
+
+/*
+
 UIObject* CanvasView::createObject(QString objectData1, QPoint pos) //std::string UIObjectItemName,
 {
 
@@ -448,6 +452,10 @@ UIObject* CanvasView::createObject(QString objectData1, QPoint pos) //std::strin
 
     return (UIObject*)obj;
 }
+
+*/
+
+// ====================================================================================
 
 UIObject* CanvasView::createBoxForPatchWindow(QMainWindow* patchWindow, QString objectData, QPoint pos)
 {

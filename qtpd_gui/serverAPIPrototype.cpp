@@ -88,7 +88,9 @@ ServerCanvas::ServerCanvas()
 
 ServerObject* ServerCanvas::createObject(string name)
 {
-    ServerCanvas* ret = new ServerCanvas();
+    //ServerCanvas* ret = new ServerCanvas();
+
+    ServerObject* ret = new ServerObject(this, name);
     _objects.push_back(ret);
     return ret;
 };

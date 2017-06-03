@@ -101,7 +101,7 @@ public Q_SLOTS:
 
     UIObject* createObject(CanvasView* c, QString obj_data, int x, int y)
     {
-        return c->CanvasView::createObject(obj_data, QPoint(x, y));
+        return  0;// TODO  c->CanvasView::createObject(obj_data, QPoint(x, y));
     }
 
     //todo templates

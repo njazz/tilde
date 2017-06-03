@@ -7,11 +7,16 @@
 #include <QFile>
 #include <QTextStream>
 
-#include "PatchWindow.h"
+
 
 // todo non-static class
 
 namespace qtpd {
+class PatchWindow;
+class CanvasData;
+class CanvasView;
+class UIObject;
+
 ////
 /// \brief Parses pd files on 'client' (GUI) side
 /// \details 'FileParser' and 'FileSaver' should be moved to separate library

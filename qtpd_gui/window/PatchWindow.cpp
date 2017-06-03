@@ -5,7 +5,7 @@
 
 #include "FileParser.h"
 
-#include "PatchWindowController.h"
+//#include "PatchWindowController.h"
 
 namespace qtpd {
 PatchWindow::PatchWindow()
@@ -218,7 +218,7 @@ void PatchWindow::objectMakerDone()
 
         if (_canvasView->replaceObject()) {
 
-            UIObject* new_obj = _canvasView->createObject(obj_name, _canvasView->replaceObject()->pos().toPoint());
+            UIObject* new_obj = _controller->createObject(obj_name.toStdString(), _canvasView->replaceObject()->pos().toPoint());
 
             UIObject* obj = _canvasView->replaceObject();
             patchcordVec cords = _canvasView->patchcordsForObject(obj);
@@ -244,7 +244,7 @@ void PatchWindow::objectMakerDone()
 
             _controller->deleteObject(obj);
         } else {
-            UIObject* new_obj = _canvasView->createObject(obj_name, _canvasView->newObjectPos());
+            UIObject* new_obj = _controller->createObject(obj_name.toStdString(), _canvasView->newObjectPos());
         }
 
         _canvasView->setDragObject(0);
@@ -297,4 +297,137 @@ void PatchWindow::resizeEvent(QResizeEvent* event)
     //        //FIX
     //        canvas->move(0,0);
 }
+
+// ===============================================
+
+void PatchWindow:: newMessageBox()
+{
+
+    if (canvasView()->getEditMode() != em_Locked) {
+        UIObject* newMsg = _controller->createObject("ui.msg", QPoint(100, 100));
+
+        canvasView()->setDragObject ( newMsg );
+        //todo
+        canvasView()->update();
+        //newMsg->show();
+    }
+
+    setWindowModified(true);
+}
+
+void PatchWindow:: newFloatBox()
+{
+
+    if (canvasView()->getEditMode() != em_Locked) {
+        UIObject* newFlo = _controller->createObject("ui.float 0", QPoint(100, 100));
+        canvasView()->setDragObject ( newFlo );
+
+        //todo
+        canvasView()->update();
+
+        //newFlo->show();
+    }
+
+    setWindowModified(true);
+}
+
+void PatchWindow:: newCommentBox()
+{
+
+    if (canvasView()->getEditMode() != em_Locked) {
+        UIObject* newTxt = _controller->createObject("ui.text", QPoint(100, 100));
+       canvasView()->setDragObject ( newTxt );
+
+       //todo
+       canvasView()->update();
+       // newTxt->show();
+    }
+
+    setWindowModified(true);
+}
+
+void PatchWindow:: newBangBox()
+{
+    if (canvasView()->getEditMode() != em_Locked) {
+        UIObject* newBng = _controller->createObject("ui.bang", QPoint(100, 100));
+        canvasView()->setDragObject ( newBng );
+
+        //todo
+        canvasView()->update();
+        //newBng->show();
+    }
+
+    setWindowModified(true);
+}
+
+void PatchWindow:: newToggleBox()
+{
+    if (canvasView()->getEditMode() != em_Locked) {
+        UIObject* newBng = _controller->createObject("ui.toggle", QPoint(100, 100));
+        canvasView()->setDragObject ( newBng);
+
+        //todo
+        canvasView()->update();
+        //newBng->show();
+    }
+
+    setWindowModified(true);
+}
+
+void PatchWindow:: newScriptBox()
+{
+    if (canvasView()->getEditMode() != em_Locked) {
+        UIObject* newBng = _controller->createObject("ui.script", QPoint(100, 100));
+        canvasView()->setDragObject (newBng);
+
+        //todo
+        canvasView()->update();
+        //newBng->show();
+    }
+
+    setWindowModified(true);
+}
+
+void PatchWindow:: newArrayBox()
+{
+    if (canvasView()->getEditMode() != em_Locked) {
+        UIObject* newArr = _controller->createObject("ui.array", QPoint(100, 100));
+        canvasView()->setDragObject (newArr);
+
+        //todo
+        canvasView()->update();
+        //newArr->show();
+    }
+
+    setWindowModified(true);
+}
+
+void PatchWindow:: newPdClassBox()
+{
+    if (canvasView()->getEditMode() != em_Locked) {
+        UIObject* newArr = _controller->createObject("pdclass", QPoint(100, 100));
+        canvasView()->setDragObject (newArr);
+
+        //todo
+        canvasView()->update();
+        //newArr->show();
+    }
+
+    setWindowModified(true);
+}
+
+void PatchWindow:: newPdInstanceBox()
+{
+    if (canvasView()->getEditMode() != em_Locked) {
+        UIObject* newArr = _controller->createObject("pdinstance", QPoint(100, 100));
+        canvasView()->setDragObject (newArr);
+
+        //todo
+        canvasView()->update();
+        //newArr->show();
+    }
+
+    setWindowModified(true);
+}
+
 }

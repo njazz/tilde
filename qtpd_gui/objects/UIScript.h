@@ -18,7 +18,6 @@
 
 #include "UIScriptCommon.h"
 
-
 namespace qtpd {
 
 ////
@@ -41,12 +40,20 @@ private:
 public:
     explicit UIScript();
 
+    static UIObject* createObj(QString data)
+    {
+        UIScript* ret = new UIScript();
+        ret->setObjectData(data);
+
+        return ret;
+    }
+
     static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
     {
         qDebug() << "ui.script";
 
         UIScript* b = new UIScript();
-        b->setCanvas((void*)parent);
+        //b->setCanvas((void*)parent);
 
         b->_editor->textEdit()->setContext(pyWrapper::inst().withCanvas((QObject*)parent));
 
@@ -106,7 +113,7 @@ public:
 
     void resizeEvent()
     {
-        _editor->setFixedSize(width()-2,height()-2);
+        _editor->setFixedSize(width() - 2, height() - 2);
     }
 
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)

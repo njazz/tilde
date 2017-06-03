@@ -38,10 +38,17 @@ private:
 public:
     explicit UIMatrix();
 
+    static UIObject* createObj(QString data)
+    {
+        UIMatrix* ret = new UIMatrix();
+        ret->setObjectData(data);
+
+        return ret;
+    }
     static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
     {
         UIMatrix* b = new UIMatrix();
-        b->setCanvas((void*)parent);
+        //b->setCanvas((void*)parent);
 
         QString data1 = b->properties()->extractFromPdFileString(objectData);
         b->setObjectData("ui.matrix");

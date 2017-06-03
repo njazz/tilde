@@ -26,10 +26,18 @@ private:
 public:
     explicit UIFloat(); //UIObject* parent = 0);
 
+    static UIObject* createObj(QString data)
+    {
+        UIFloat* ret = new UIFloat();
+        ret->setObjectData(data);
+
+        return ret;
+    }
+
     static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
     {
         UIFloat* b = new UIFloat(); //(UIObject*)parent);
-        b->setCanvas((void*)parent);
+        //b->setCanvas((void*)parent);
 
         QString data1 = b->properties()->extractFromPdFileString(objectData);
         b->setObjectData("ui.float"); //todo

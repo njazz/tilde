@@ -3,6 +3,8 @@
 
 #include "FileParser.h"
 
+#include "PatchWindow.h"
+
 namespace qtpd {
 PatchWindow* FileParser::_pdParserPrevWindow = 0;
 PatchWindow* FileParser::_pdParserWindow = 0;
@@ -252,7 +254,7 @@ UIObject* FileParser::sendStringToCanvas(CanvasView* cmcanvas, QStringList list)
         // check property handling
         // probably should be moved here?
 
-        return cmcanvas->createObject(list.at(3) + " " + msgname, pos);
+        return 0;// TODO cmcanvas->createObject(list.at(3) + " " + msgname, pos);
 
     } else {
         qDebug("list error");
@@ -377,7 +379,9 @@ void FileParser::parseStringListAtoms(CanvasView* cmcanvas, QStringList list) //
             qDebug() << "objname" << objname;
             //temporary
             //cmcanvasView()->createBox(objname.toStdString(), pos);
-            cmcanvas->createObject(objname, pos);
+
+
+            // TODO cmcanvas->createObject(objname, pos);
         }
     }
 }

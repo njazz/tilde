@@ -232,7 +232,7 @@ public:
     //
     void createObjectMaker();
     //
-    bool createObject(string name, QPoint pos);
+    UIObject* createObject(string name, QPoint pos);
 
     bool connect(UIObject* src, int out, UIObject* dest, int in);
     void deletePatchcordsForObject(UIObject* o);
@@ -248,15 +248,8 @@ public:
     void update(); // <<-- from observer
 
     //
-    void updateViewports()
-    {
-        vector<PatchWindow*>::iterator it;
-        for (it = _windows.begin(); it != _windows.end(); ++it) {
-            PatchWindow* w = *it;
+    void updateViewports();
 
-            w->canvasView()->viewport()->update();
-        }
-    }
 
 public slots:
     void menuSave();

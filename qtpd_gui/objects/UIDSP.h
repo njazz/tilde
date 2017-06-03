@@ -61,10 +61,17 @@ public:
         _value = false;
     };
 
+    static UIObject* createObj(QString data)
+    {
+        UIDSP* ret = new UIDSP();
+        ret->setObjectData(data);
+
+        return ret;
+    }
     static UIObject* createObject(QString objectData, t_canvas*, QGraphicsView* parent = 0)
     {
         UIDSP* b = new UIDSP();
-        b->setCanvas((void*)parent);
+        //b->setCanvas((void*)parent);
 
         QString data1 = b->properties()->extractFromPdFileString(objectData);
         b->setObjectData("ui.dsp");

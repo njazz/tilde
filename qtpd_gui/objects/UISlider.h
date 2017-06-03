@@ -29,10 +29,18 @@ private:
 public:
     explicit UISlider();
 
+    static UIObject* createObj(QString data)
+    {
+        UISlider* ret = new UISlider();
+        ret->setObjectData(data);
+
+        return ret;
+    }
+
     static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
     {
         UISlider* b = new UISlider();
-        b->setCanvas((void*)parent);
+        //b->setCanvas((void*)parent);
 
         QString data1 = b->properties()->extractFromPdFileString(objectData);
         b->setObjectData("ui.slider");
@@ -155,8 +163,6 @@ public:
 
             return;
         }
-
-
 
         dragOffset = ev->pos().toPoint();
 

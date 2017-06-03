@@ -10,15 +10,23 @@ namespace qtpd {
 class UISubCanvas : public UIObject {
 private:
     CanvasData* _canvasData;
-//    QGraphicsView _view;
-//    QGraphicsProxyWidget _viewProxy;
-//    QWidget _viewWidget;
+    //    QGraphicsView _view;
+    //    QGraphicsProxyWidget _viewProxy;
+    //    QWidget _viewWidget;
 
     bool _isAbstraction;
     QString _abstractionPath;
 
 public:
     explicit UISubCanvas();
+
+    static UIObject* createObj(QString data)
+    {
+        UISubCanvas* ret = new UISubCanvas();
+        ret->setObjectData(data);
+
+        return ret;
+    }
 
     static UIObject* createObject(QString objectData, t_canvas* pd_Canvas, QGraphicsView* parent = 0)
     {
@@ -28,7 +36,7 @@ public:
 
         UISubCanvas* b = new UISubCanvas(); //(UIObjectItem*)parent);
 
-        b->setCanvas((void*)parent);
+        //b->setCanvas((void*)parent);
 
         //truncate "ui.obj". todo cleanup
         QStringList list = QString(objectData).split(" ");
@@ -45,7 +53,7 @@ public:
         b->autoResize();
 
         //temp
-        b->setSize(400,300);
+        b->setSize(400, 300);
 
         t_object* new_obj = 0;
         int in_c = 0, out_c = 0;
@@ -117,10 +125,7 @@ public:
 
     void resizeEvent()
     {
-
     }
-
-
 };
 }
 #endif // UISUBCANVAS_H
