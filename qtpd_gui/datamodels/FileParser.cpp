@@ -290,7 +290,7 @@ void FileParser::parseStringListAtoms(CanvasView* cmcanvas, QStringList list) //
                 int idx1 = ((QString)list.value(2)).toInt();
                 int idx2 = ((QString)list.value(4)).toInt();
 
-                //cmcanvas->patchcord();
+                //cmcanvasView()->patchcord();
                 if (!obj1->errorBox() && !obj2->errorBox()) {
                     qDebug("patchcord");
                     cmcanvas->patchcord(obj1, idx1, obj2, idx2);
@@ -330,16 +330,16 @@ void FileParser::parseStringListAtoms(CanvasView* cmcanvas, QStringList list) //
 
             if (objList.at(0) == "pd") {
                 if (_pdParserPrevWindow) {
-                    if (_pdParserPrevWindow->canvas) {
+                    if (_pdParserPrevWindow->canvasView()) {
                         //                                                UIBox *b1 = 0;
 
-                        //                                                b1 = pdParserPrevWindow->canvas->restoreSubcanvas(objname.toStdString(), pos, pdParserWindow->canvas->pdCanvas);
+                        //                                                b1 = pdParserPrevWindow->canvasView()->restoreSubcanvas(objname.toStdString(), pos, pdParserWindow->canvasView()->pdCanvas);
                         //                                                b1->cmSubcanvas = pdParserWindow;
 
                         qDebug("restore");
 
-                        UIObject* b = _pdParserPrevWindow->canvas->createBoxForPatchWindow(_pdParserWindow, objData, pos);
-                        //UIObject* b = _pdParserPrevWindow->canvas->createObject(QString(objData.c_str()), pos);
+                        UIObject* b = _pdParserPrevWindow->canvasView()->createBoxForPatchWindow(_pdParserWindow, objData, pos);
+                        //UIObject* b = _pdParserPrevWindow->canvasView()->createObject(QString(objData.c_str()), pos);
 
                         //IObject *b = createBoxForCanvas(newCanvas, objectData, pos);
                         //((UIBox*)b)->setSubpatchWindow((QMainWindow*)_pdParserPrevWindow);
@@ -376,7 +376,7 @@ void FileParser::parseStringListAtoms(CanvasView* cmcanvas, QStringList list) //
 
             qDebug() << "objname" << objname;
             //temporary
-            //cmcanvas->createBox(objname.toStdString(), pos);
+            //cmcanvasView()->createBox(objname.toStdString(), pos);
             cmcanvas->createObject(objname, pos);
         }
     }
@@ -430,7 +430,7 @@ void FileParser::parseQString(QString line)
 
         qDebug() << "dim" << pos << size;
 
-        newWnd->canvas->setWindowSize(size);
+        newWnd->canvasView()->setWindowSize(size);
         newWnd->move(pos);
 
         // TODO
@@ -451,7 +451,7 @@ void FileParser::parseQString(QString line)
 
         if (_pdParserWindow) {
             //qDebug("X");
-            FileParser::parseStringListAtoms(_pdParserWindow->canvas, msg);
+            FileParser::parseStringListAtoms(_pdParserWindow->canvasView(), msg);
         } else {
             qDebug("parser error - no canvas");
         }
@@ -492,9 +492,9 @@ void FileParser::open(QString fname)
 
         if (_pdParserWindow) {
             _pdParserWindow->setFileName(fname);
-            _pdParserWindow->canvas->setEditMode(em_Locked);
+            _pdParserWindow->canvasView()->setEditMode(em_Locked);
 
-            cmp_loadbang(_pdParserWindow->canvas->pdObject());
+            cmp_loadbang(_pdParserWindow->canvasView()->pdObject());
 
             _pdParserWindow->show();
         }
@@ -533,9 +533,9 @@ void FileParser::open(QString fname, CanvasData* canvasData)
 
         if (_pdParserWindow) {
             _pdParserWindow->setFileName(fname);
-            _pdParserWindow->canvas->setEditMode(em_Locked);
+            _pdParserWindow->canvasView()->setEditMode(em_Locked);
 
-            cmp_loadbang(_pdParserWindow->canvas->pdObject());
+            cmp_loadbang(_pdParserWindow->canvasView()->pdObject());
 
             _pdParserWindow->show();
         }

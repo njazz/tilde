@@ -17,7 +17,7 @@ PatchWindowController::PatchWindowController(ServerInstance* instance) //replace
     _observer = new Observer();
     instance->registerObserver(_observer);
     _serverInstance = instance;
-    //_canvasData = new CanvasData();
+    _canvasData = new CanvasData();
 };
 
 ServerInstance* PatchWindowController::instance() { return _serverInstance; }
@@ -31,10 +31,12 @@ PatchWindow* PatchWindowController::newWindow()
 {
     PatchWindow* ret = PatchWindow::newWindow();
 
+    ret->setController(this);
+
     ret->show();
 
     _windows.push_back(ret);
-    ret->canvas->setScene(_scene);
+    ret->canvasView()->setScene(_scene);
 
     return ret;
 }
@@ -75,4 +77,52 @@ void PatchWindowController::deleteSelectedPatchcords(vector<UIPatchcord*>){};
 void PatchWindowController::clickPort(){}; //?
 //
 void PatchWindowController::update(){}; // <<-- from observer
+
+void PatchWindowController::menuSave()
+{
+    QString fname;
+
+    if (_canvasData->fileName() != "")
+        fname = _canvasData->fileName();
+    else
+        fname = QFileDialog::getSaveFileName(_windows[0], QString("Save patch as..."), QString("~/"), QString("*.pd"), 0, 0);
+
+    doSave(fname);
 }
+
+////
+/// \brief first save of the patch
+///
+void PatchWindowController::menuSaveAs()
+{
+    QString fname = QFileDialog::getSaveFileName(_windows[0], QString("Save patch as..."), QString("~/"), QString("*.pd"), 0, 0);
+
+    doSave(fname);
+}
+
+void PatchWindowController::doSave(QString fileName)
+{
+    if (fileName != "") {
+        QString file = fileName.section("/", -1, -1);
+        QString dir = fileName.section("/", 0, -2);
+
+        qDebug("filename: %s %s", file.toStdString().c_str(), dir.toStdString().c_str());
+
+        FileSaver::save(fileName, _canvasData);
+
+        //
+        _canvasData->setFileName(fileName);
+
+        // TODO
+        _windows[0]->setWindowTitle(file);
+        _windows[0]->setWindowFilePath(fileName);
+        _windows[0]->setWindowModified(false);
+    }
+}
+
+
+
+}
+
+
+

@@ -25,10 +25,10 @@ OPClass::OPClass(string className)
 
     QString windowTitle = QString("pdclass: ") + QString(className.c_str());
     _patchWindow->setWindowTitle(windowTitle);
-    _patchWindow->canvas->setKeepPdObject(true);
+    _patchWindow->canvasView()->setKeepPdObject(true);
     _patchWindow->hide();
 
-    _canvas = (t_canvas*)_patchWindow->canvas->pdObject();
+    _canvas = (t_canvas*)_patchWindow->canvasView()->pdObject();
     _symbol = gensym(_className.c_str());
 
     _className = className;
@@ -54,7 +54,7 @@ void OPClass::readFile()
     // TODO
     //PatchWindow *oldWindow = FileParser::parserWindow();
 
-    qDebug() << "pw cnv " << (long)_patchWindow << (long)_patchWindow->canvas;
+    qDebug() << "pw cnv " << (long)_patchWindow << (long)_patchWindow->canvasView();
 
     PatchWindow* _prevWindow = FileParser::parserPrevWindow();
     PatchWindow* _pWindow = FileParser::parserWindow();
@@ -72,20 +72,20 @@ void OPClass::readFile()
 
         FileParser::parserFirstWindow()->hide();
 
-        _patchWindow->canvas->selectAll();
-        _patchWindow->canvas->deleteSelectedObjects();
+        _patchWindow->canvasView()->selectAll();
+        _patchWindow->canvasView()->deleteSelectedObjects();
 
-        QStringList canvasStrings = FileParser::parserFirstWindow()->canvas->canvasAsPdStrings();
+        QStringList canvasStrings = FileParser::parserFirstWindow()->canvasView()->canvasAsPdStrings();
         // TODO fix
         PatchWindow* tmp = FileParser::parserWindow();
         FileParser::setParserWindow(_patchWindow);
-        _patchWindow->canvas->canvasFromPdStrings(canvasStrings);
+        _patchWindow->canvasView()->canvasFromPdStrings(canvasStrings);
         FileParser::setParserWindow(tmp);
 
         delete FileParser::parserFirstWindow();
     }
 
-    qDebug() << "pw cnv " << (long)_patchWindow << (long)_patchWindow->canvas;
+    qDebug() << "pw cnv " << (long)_patchWindow << (long)_patchWindow->canvasView();
 
     FileParser::setParserWindows(_pWindow, _prevWindow, _pFirstWindow);
 }
@@ -97,6 +97,6 @@ void OPClass::writeFile()
     QString fileName = QString(classPath.c_str()) + "/" + _className.c_str();
     fileName = fileName + ".class.pd";
 
-    FileSaver::save(fileName, _patchWindow->canvas);
+    FileSaver::save(fileName, _patchWindow->canvasView());
 }
 }

@@ -71,7 +71,7 @@ public Q_SLOTS:
 
     CanvasView* canvas(PatchWindow* w)
     {
-        return w->canvas;
+        return w->canvasView();
     }
 };
 

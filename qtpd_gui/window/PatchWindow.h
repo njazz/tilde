@@ -10,12 +10,16 @@
 #include "FileSaver.h"
 
 namespace qtpd {
+
+
 ////
 /// \brief Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas
-///
 class PatchWindow : public BaseWindow {
 
 private:
+
+    PatchWindowController* _controller;
+
     QScrollArea* scroll;
 
     ////
@@ -82,12 +86,15 @@ private:
 
     //ObjectMaker* objectMaker;
 
-    void doSave(QString fname);
+    //void doSave(QString fname);
+
+    CanvasData* _canvasData;
+    CanvasView* _canvasView;
 
 private slots:
     //void open();
-    void save();
-    void saveAs();
+    //void save();
+    //void saveAs();
 
     // this is hidden, use "newWindow"
     PatchWindow();
@@ -96,14 +103,18 @@ public:
     static PatchWindow* newWindow();
     static PatchWindow* newSubpatch(t_canvas* subpatch = 0);
 
-    //todo encapsulate!
-    CanvasView* canvas;
+    CanvasData* canvasData() {return _canvasData;};
+    void setCanvasData(CanvasData* d){_canvasData = d;}
+
+    CanvasView* canvasView() {return _canvasView;};
+    void setCanvasView(CanvasView* v){_canvasView = v;}
+
+    void setController(PatchWindowController* c);
 
     void createActions()
     {
         //        connect(openAct, &QAction::triggered, this, &cm_patchwindow::open);
-        connect(saveAsAct, &QAction::triggered, this, &PatchWindow::saveAs);
-        connect(saveAct, &QAction::triggered, this, &PatchWindow::save);
+
 
         delObjectAct = new QAction(tr("Delete object"), this);
         delObjectAct->setShortcut(tr("Backspace"));
@@ -329,15 +340,13 @@ public:
 
     //----------------------------------------------------------------------------------------
 
-    // TODO move to patchController
-
     // todo less spaghetti
 
     void newObjectBox()
     {
 
-        if (canvas->getEditMode() != em_Locked) {
-            canvas->showNewObjectMaker();
+        if (canvasView()->getEditMode() != em_Locked) {
+            canvasView()->showNewObjectMaker();
         }
 
         //change later
@@ -347,11 +356,11 @@ public:
     void newMessageBox()
     {
 
-        if (canvas->getEditMode() != em_Locked) {
-            UIObject* newMsg = canvas->createObject("ui.msg", QPoint(100, 100));
-            canvas->setDragObject ( newMsg );
+        if (canvasView()->getEditMode() != em_Locked) {
+            UIObject* newMsg = canvasView()->createObject("ui.msg", QPoint(100, 100));
+            canvasView()->setDragObject ( newMsg );
             //todo
-            canvas->update();
+            canvasView()->update();
             //newMsg->show();
         }
 
@@ -361,12 +370,12 @@ public:
     void newFloatBox()
     {
 
-        if (canvas->getEditMode() != em_Locked) {
-            UIObject* newFlo = canvas->createObject("ui.float 0", QPoint(100, 100));
-            canvas->setDragObject ( newFlo );
+        if (canvasView()->getEditMode() != em_Locked) {
+            UIObject* newFlo = canvasView()->createObject("ui.float 0", QPoint(100, 100));
+            canvasView()->setDragObject ( newFlo );
 
             //todo
-            canvas->update();
+            canvasView()->update();
 
             //newFlo->show();
         }
@@ -377,12 +386,12 @@ public:
     void newCommentBox()
     {
 
-        if (canvas->getEditMode() != em_Locked) {
-            UIObject* newTxt = canvas->createObject("ui.text", QPoint(100, 100));
-           canvas->setDragObject ( newTxt );
+        if (canvasView()->getEditMode() != em_Locked) {
+            UIObject* newTxt = canvasView()->createObject("ui.text", QPoint(100, 100));
+           canvasView()->setDragObject ( newTxt );
 
            //todo
-           canvas->update();
+           canvasView()->update();
            // newTxt->show();
         }
 
@@ -391,12 +400,12 @@ public:
 
     void newBangBox()
     {
-        if (canvas->getEditMode() != em_Locked) {
-            UIObject* newBng = canvas->createObject("ui.bang", QPoint(100, 100));
-            canvas->setDragObject ( newBng );
+        if (canvasView()->getEditMode() != em_Locked) {
+            UIObject* newBng = canvasView()->createObject("ui.bang", QPoint(100, 100));
+            canvasView()->setDragObject ( newBng );
 
             //todo
-            canvas->update();
+            canvasView()->update();
             //newBng->show();
         }
 
@@ -405,12 +414,12 @@ public:
 
     void newToggleBox()
     {
-        if (canvas->getEditMode() != em_Locked) {
-            UIObject* newBng = canvas->createObject("ui.toggle", QPoint(100, 100));
-            canvas->setDragObject ( newBng);
+        if (canvasView()->getEditMode() != em_Locked) {
+            UIObject* newBng = canvasView()->createObject("ui.toggle", QPoint(100, 100));
+            canvasView()->setDragObject ( newBng);
 
             //todo
-            canvas->update();
+            canvasView()->update();
             //newBng->show();
         }
 
@@ -419,12 +428,12 @@ public:
 
     void newScriptBox()
     {
-        if (canvas->getEditMode() != em_Locked) {
-            UIObject* newBng = canvas->createObject("ui.script", QPoint(100, 100));
-            canvas->setDragObject (newBng);
+        if (canvasView()->getEditMode() != em_Locked) {
+            UIObject* newBng = canvasView()->createObject("ui.script", QPoint(100, 100));
+            canvasView()->setDragObject (newBng);
 
             //todo
-            canvas->update();
+            canvasView()->update();
             //newBng->show();
         }
 
@@ -433,12 +442,12 @@ public:
 
     void newArrayBox()
     {
-        if (canvas->getEditMode() != em_Locked) {
-            UIObject* newArr = canvas->createObject("ui.array", QPoint(100, 100));
-            canvas->setDragObject (newArr);
+        if (canvasView()->getEditMode() != em_Locked) {
+            UIObject* newArr = canvasView()->createObject("ui.array", QPoint(100, 100));
+            canvasView()->setDragObject (newArr);
 
             //todo
-            canvas->update();
+            canvasView()->update();
             //newArr->show();
         }
 
@@ -447,12 +456,12 @@ public:
 
     void newPdClassBox()
     {
-        if (canvas->getEditMode() != em_Locked) {
-            UIObject* newArr = canvas->createObject("pdclass", QPoint(100, 100));
-            canvas->setDragObject (newArr);
+        if (canvasView()->getEditMode() != em_Locked) {
+            UIObject* newArr = canvasView()->createObject("pdclass", QPoint(100, 100));
+            canvasView()->setDragObject (newArr);
 
             //todo
-            canvas->update();
+            canvasView()->update();
             //newArr->show();
         }
 
@@ -461,12 +470,12 @@ public:
 
     void newPdInstanceBox()
     {
-        if (canvas->getEditMode() != em_Locked) {
-            UIObject* newArr = canvas->createObject("pdinstance", QPoint(100, 100));
-            canvas->setDragObject (newArr);
+        if (canvasView()->getEditMode() != em_Locked) {
+            UIObject* newArr = canvasView()->createObject("pdinstance", QPoint(100, 100));
+            canvasView()->setDragObject (newArr);
 
             //todo
-            canvas->update();
+            canvasView()->update();
             //newArr->show();
         }
 
@@ -477,8 +486,8 @@ public:
 
     void delSelected()
     {
-        canvas->deleteSelectedObjects();
-        canvas->deleteSelectedPatchcords();
+        canvasView()->deleteSelectedObjects();
+        canvasView()->deleteSelectedPatchcords();
 
         setWindowModified(true);
     }
@@ -486,7 +495,7 @@ public:
     void selectAll()
     {
         // todo direct slot connection
-        canvas->selectAll();
+        canvasView()->selectAll();
 
         setWindowModified(true);
     }
@@ -495,63 +504,30 @@ public:
 
     void setEditMode()
     {
-        if (!((canvas->getEditMode()) == em_Locked))
-            canvas->setEditMode(em_Locked);
+        if (!((canvasView()->getEditMode()) == em_Locked))
+            canvasView()->setEditMode(em_Locked);
         else
-            canvas->setEditMode(em_Unlocked);
-        editModeAct->setChecked(canvas->getEditMode() == em_Unlocked);
+            canvasView()->setEditMode(em_Unlocked);
+        editModeAct->setChecked(canvasView()->getEditMode() == em_Unlocked);
     }
 
     void setGridVisible()
     {
         showGridAct->setChecked(showGridAct->isChecked());
-        canvas->setGridEnabled(showGridAct->isChecked());
-        //canvas->viewport()->update();//canvas->sceneRect());
+        canvasView()->setGridEnabled(showGridAct->isChecked());
+        //canvasView()->viewport()->update();//canvasView()->sceneRect());
     }
 
     void setGridSnap()
     {
         snapToGridAct->setChecked(snapToGridAct->isChecked());
-        canvas->setGridSnap(snapToGridAct->isChecked());
-        //canvas-> viewport()->update();
+        canvasView()->setGridSnap(snapToGridAct->isChecked());
+        //canvasView()-> viewport()->update();
     }
 
     /////
 
-    //    void keyPressEvent(QKeyEvent *event)
-    //    {
-    //        if (event->modifiers() & Qt::ControlModifier)
-    //        {
-    //            canvas->setEditMode(false);
-    //        }
-    //        else
-    //            canvas->setEditMode(true);
-    //    }
-
-    void closeEvent(QCloseEvent* event)
-    {
-        // FIX
-
-        //if (!canvas->keepPdObject())
-            //cmp_closepatch((t_canvas*)canvas->pdObject());
-
-        if (isWindowModified())
-        {
-            QMessageBox::StandardButton reply;
-            reply = QMessageBox::question(this, "Qtpd", "The patch was modified. Do you want to save it?",
-                                        QMessageBox::Yes|QMessageBox::No|QMessageBox::Cancel);
-
-            if (reply == QMessageBox::No)
-                event->accept();
-            if (reply == QMessageBox::Cancel)
-                event->ignore();
-            if (reply == QMessageBox::Yes)
-                save();
-
-        }
-
-
-    }
+    void closeEvent(QCloseEvent* event);
 
     ////
 
@@ -565,24 +541,24 @@ public:
     {
 
         if (event->modifiers() & Qt::ControlModifier) {
-            if (canvas->getEditMode() != em_Locked)
-                canvas->setEditMode(em_Temporary);
+            if (canvasView()->getEditMode() != em_Locked)
+                canvasView()->setEditMode(em_Temporary);
         }
 
         if (event->key() == Qt::Key_Escape) {
-            canvas->objectMaker()->setText("");
+            canvasView()->objectMaker()->setText("");
             //objectMakerDone();
-            canvas->objectMaker()->cancel();
+            canvasView()->objectMaker()->cancel();
 
-            canvas->cancelPatchcord();
+            canvasView()->cancelPatchcord();
         }
     }
 
     void keyReleaseEvent(QKeyEvent* event)
     {
         if (event->key() == Qt::Key_Control) {
-            if (canvas->getEditMode() == em_Temporary)
-                canvas->setEditMode(em_Unlocked);
+            if (canvasView()->getEditMode() == em_Temporary)
+                canvasView()->setEditMode(em_Unlocked);
         }
     }
 
@@ -596,14 +572,14 @@ public:
     //
     void zoomIn()
     {
-        canvas->setZoom(1.1);
-        qDebug()<<"zoom"<<canvas->getZoom();
+        canvasView()->setZoom(1.1);
+        qDebug()<<"zoom"<<canvasView()->getZoom();
     }
 
     void zoomOut()
     {
-        canvas->setZoom(1/1.1);
-        qDebug()<<"zoom"<<canvas->getZoom();
+        canvasView()->setZoom(1/1.1);
+        qDebug()<<"zoom"<<canvasView()->getZoom();
     }
 
 
@@ -614,7 +590,7 @@ public slots:
         t_canvas* newPdCanvas = cmp_newpatch();
 
         PatchWindow* subPatch = PatchWindow::newSubpatch((t_canvas*)newPdCanvas);
-        CanvasView* newCanvas = subPatch->canvas;
+        CanvasView* newCanvas = subPatch->canvasView();
 
         return std::pair<QMainWindow*, qtpd::UIObject*>(subPatch, (qtpd::UIObject*)newCanvas);
     };

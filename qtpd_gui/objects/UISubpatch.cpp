@@ -28,7 +28,7 @@ std::string UISubpatch::asPdFileString()
     std::string ret;
 
     if (subpatchWindow()) {
-        QStringList patchList = ((PatchWindow*)subpatchWindow())->canvas->canvasAsPdStrings();
+        QStringList patchList = ((PatchWindow*)subpatchWindow())->canvasView()->canvasAsPdStrings();
 
         ret += patchList.join("\r\n").toStdString();
     } else {
@@ -51,16 +51,16 @@ void UISubpatch::setSubpatchWindow(QMainWindow* cwindow)
     if (0) {
         PatchWindow* p = (PatchWindow*)cwindow;
 
-        CanvasView* _subCanvas;
+        CanvasView* subCanvas;
         //if (p)
-        _subCanvas = p->canvas;
+        subCanvas = p->canvasView();
 
         QWidget* test = new QWidget();
-        //    //_subCanvas->show();
-        //_subCanvas->setParent(test);
+        //    //_subcanvasView()->show();
+        //_subcanvasView()->setParent(test);
 
         QGraphicsScene* sc;// = new QGraphicsScene();
-        sc = _subCanvas->scene();
+        sc = subCanvas->scene();
 
         QGraphicsView* v = new QGraphicsView;
         v->setScene(sc);

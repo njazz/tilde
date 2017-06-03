@@ -8,11 +8,11 @@
 //
 
 #include "OPInstance.h"
-#include "OPClass.h"
 #include "OOPD.h"
+#include "OPClass.h"
 
-#include "PatchWindow.h"
 #include "FileParser.h"
+#include "PatchWindow.h"
 
 namespace qtpd {
 
@@ -29,28 +29,28 @@ OPInstance::OPInstance(OPClass* opClass)
 
         // TODO
         // copy canvas here
-        QStringList canvasStrings = opClass->_patchWindow->canvas->canvasAsPdStrings();
+        QStringList canvasStrings = opClass->_patchWindow->canvasView()->canvasAsPdStrings();
 
         _patchWindow = PatchWindow::newWindow();
         FileParser::setParserWindow(_patchWindow);
 
-        _canvas = (t_canvas*)_patchWindow->canvas->pdObject();
+        _canvas = (t_canvas*)_patchWindow->canvasView()->pdObject();
         // register instance before copying objects
         OOPD::inst()->registerInstance(this, _className, _canvas, _symbol);
 
-        _patchWindow->canvas->canvasFromPdStrings(canvasStrings);
+        _patchWindow->canvasView()->canvasFromPdStrings(canvasStrings);
         QString windowTitle = QString("(read only) instance: ") + QString(_className.c_str());
         _patchWindow->setWindowTitle(windowTitle);
-        _patchWindow->canvas->setKeepPdObject(true);
+        _patchWindow->canvasView()->setKeepPdObject(true);
         _patchWindow->hide();
 
-        _patchWindow->canvas->setReadOnly(true);
+        _patchWindow->canvasView()->setReadOnly(true);
 
         _refCount = 1;
     }
 
     //generate properties
-    setPropertyNames( opClass->getPropertyNames() );
+    setPropertyNames(opClass->getPropertyNames());
 
     //TODO
 
@@ -106,5 +106,4 @@ OPInstance::~OPInstance()
     printf("~OPInstance\n");
     printf("canvas: %lu\n", (long)_canvas);
 }
-
 }

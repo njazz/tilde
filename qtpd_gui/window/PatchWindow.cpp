@@ -5,6 +5,8 @@
 
 #include "FileParser.h"
 
+#include "PatchWindowController.h"
+
 namespace qtpd {
 PatchWindow::PatchWindow()
 {
@@ -14,7 +16,7 @@ PatchWindow::PatchWindow()
     scroll = new QScrollArea(this);
     //scroll->setFrameShape(QFrame::NoFrame);
 
-    canvas = new CanvasView((QGraphicsView*)this);
+    _canvasView = new CanvasView((QGraphicsView*)this);
 
     //scroll->setWidget(canvas);
 
@@ -25,13 +27,13 @@ PatchWindow::PatchWindow()
 
 //    scroll->setWidget(canvas);
 
-    canvas->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-    canvas->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+    _canvasView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+    _canvasView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 
     //canvas->setMinimumSize(400,300);
 //    setCentralWidget(scroll);
 
-    setCentralWidget(canvas);
+    setCentralWidget(_canvasView);
 
     //canvas->setParent(centralWidget());
     //scroll->setParent(this);
@@ -46,14 +48,14 @@ PatchWindow::PatchWindow()
 
     //objectMaker->setParent(canvas);
 
-    connect(canvas->objectMaker(), &ObjectMaker::objectMakerDoneSignal, this, &PatchWindow::objectMakerDone);
+    connect(_canvasView->objectMaker(), &ObjectMaker::objectMakerDoneSignal, this, &PatchWindow::objectMakerDone);
 
-    canvas->objectMaker()->close();
+    _canvasView->objectMaker()->close();
 
     editModeAct->setChecked(true);
 
     //connect subpatch creation routine
-    connect(canvas, &CanvasView::createSubpatchWindow, this, &PatchWindow::s_createSubpatchWindow);
+    connect(_canvasView, &CanvasView::createSubpatchWindow, this, &PatchWindow::s_createSubpatchWindow);
 
     //
     connect(cutAct, &QAction::triggered, this, &PatchWindow::cut);
@@ -72,9 +74,9 @@ PatchWindow* PatchWindow::newWindow()
     //todo
     ((QMainWindow*)this_)->setWindowTitle("Untitled-1");
 
-    this_->canvas->setPdObject(cmp_newpatch());
+    this_->_canvasView->setPdObject(cmp_newpatch());
 
-    if (!this_->canvas->pdObject()) {
+    if (!this_->_canvasView->pdObject()) {
         qDebug("Failed to create canvas!");
     }
     //else
@@ -94,9 +96,9 @@ PatchWindow* PatchWindow::newSubpatch(t_canvas* subpatch)
 
     ((QMainWindow*)this_)->setWindowTitle("<subpatch>");
 
-    this_->canvas->setPdObject(subpatch);
+    this_->_canvasView->setPdObject(subpatch);
 
-    if (!this_->canvas->pdObject()) {
+    if (!this_->_canvasView->pdObject()) {
         qDebug("Failed to create canvas!");
     }
 //    else
@@ -105,51 +107,84 @@ PatchWindow* PatchWindow::newSubpatch(t_canvas* subpatch)
     return this_;
 }
 
-////
-/// \brief re-save patch, uses its current name
-///
-void PatchWindow::save()
+void PatchWindow::setController(PatchWindowController* c)
 {
+    _controller = c;
 
-    QString fname;
-
-    if (canvas->fileName() != "")
-        fname = canvas->fileName();
-    else
-        fname = QFileDialog::getSaveFileName(this, QString("Save patch as..."), QString("~/"), QString("*.pd"), 0, 0);
-
-    doSave(fname);
+    connect(saveAsAct, &QAction::triggered, _controller, &PatchWindowController::menuSaveAs);
+    connect(saveAct, &QAction::triggered, _controller, &PatchWindowController::menuSave);
 }
 
-////
-/// \brief first save of the patch
-///
-void PatchWindow::saveAs()
+void PatchWindow::closeEvent(QCloseEvent* event)
 {
+    // FIX
 
-    QString fname = QFileDialog::getSaveFileName(this, QString("Save patch as..."), QString("~/"), QString("*.pd"), 0, 0);
+    //if (!canvas->keepPdObject())
+        //cmp_closepatch((t_canvas*)canvas->pdObject());
 
-    doSave(fname);
-}
+    if (isWindowModified())
+    {
+        QMessageBox::StandardButton reply;
+        reply = QMessageBox::question(this, "Qtpd", "The patch was modified. Do you want to save it?",
+                                    QMessageBox::Yes|QMessageBox::No|QMessageBox::Cancel);
 
-void PatchWindow::doSave(QString fname)
-{
-    if (fname != "") {
-        QString file = fname.section("/", -1, -1);
-        QString dir = fname.section("/", 0, -2);
+        if (reply == QMessageBox::No)
+            event->accept();
+        if (reply == QMessageBox::Cancel)
+            event->ignore();
+        if (reply == QMessageBox::Yes)
+            _controller->menuSave();
 
-        qDebug("filename: %s %s", file.toStdString().c_str(), dir.toStdString().c_str());
-
-        FileSaver::save(fname, canvas);
-
-        //
-        canvas->setFileName (fname);
-
-        setWindowTitle(file);
-        setWindowFilePath(fname);
-        setWindowModified(false);
     }
+
+
 }
+
+//////
+///// \brief re-save patch, uses its current name
+/////
+//void PatchWindow::save()
+//{
+
+//    QString fname;
+
+//    if (canvas->fileName() != "")
+//        fname = canvas->fileName();
+//    else
+//        fname = QFileDialog::getSaveFileName(this, QString("Save patch as..."), QString("~/"), QString("*.pd"), 0, 0);
+
+//    doSave(fname);
+//}
+
+//////
+///// \brief first save of the patch
+/////
+//void PatchWindow::saveAs()
+//{
+
+//    QString fname = QFileDialog::getSaveFileName(this, QString("Save patch as..."), QString("~/"), QString("*.pd"), 0, 0);
+
+//    doSave(fname);
+//}
+
+//void PatchWindow::doSave(QString fname)
+//{
+//    if (fname != "") {
+//        QString file = fname.section("/", -1, -1);
+//        QString dir = fname.section("/", 0, -2);
+
+//        qDebug("filename: %s %s", file.toStdString().c_str(), dir.toStdString().c_str());
+
+//        FileSaver::save(fname, canvas);
+
+//        //
+//        canvas->setFileName (fname);
+
+//        setWindowTitle(file);
+//        setWindowFilePath(fname);
+//        setWindowModified(false);
+//    }
+//}
 
 ////
 /// \brief set file name when opening patch file
@@ -158,7 +193,7 @@ void PatchWindow::doSave(QString fname)
 void PatchWindow::setFileName(QString fname)
 {
 
-    canvas->setFileName (fname);
+    _canvasView->setFileName (fname);
 
     QString file = fname.section("/", -1, -1);
 
@@ -171,18 +206,18 @@ void PatchWindow::setFileName(QString fname)
 ///
 void PatchWindow::objectMakerDone()
 {
-    QString obj_name = canvas->objectMaker()->text(); //.toStdString();
+    QString obj_name = _canvasView->objectMaker()->text(); //.toStdString();
 
     if (obj_name != "") {
 
         //"ui.obj",
 
-        if (canvas->replaceObject()) {
+        if (_canvasView->replaceObject()) {
 
-            UIObject* new_obj = canvas->createObject(obj_name, canvas->replaceObject()->pos().toPoint());
+            UIObject* new_obj = _canvasView->createObject(obj_name, _canvasView->replaceObject()->pos().toPoint());
 
-            UIObject* obj = canvas->replaceObject();
-            patchcordVec cords = canvas->patchcordsForObject(obj);
+            UIObject* obj = _canvasView->replaceObject();
+            patchcordVec cords = _canvasView->patchcordsForObject(obj);
 
             patchcordVec::iterator it;
             for (it = cords.begin(); it != cords.end(); ++it) {
@@ -198,21 +233,21 @@ void PatchWindow::objectMakerDone()
                     obj2 = new_obj;
 
                 if (obj1 && obj2)
-                    canvas->patchcord(obj1, pc->outletIndex(), obj2, pc->inletIndex());
+                    _canvasView->patchcord(obj1, pc->outletIndex(), obj2, pc->inletIndex());
                 else
                     qDebug("replace object - patchcord error");
             }
 
-            canvas->deleteObject(obj);
+            _canvasView->deleteObject(obj);
         }
         else
         {
-            UIObject* new_obj = canvas->createObject(obj_name, canvas->newObjectPos());
+            UIObject* new_obj = _canvasView->createObject(obj_name, _canvasView->newObjectPos());
         }
 
-        canvas->setDragObject(0);
-        canvas->setReplaceObject(0);
-        canvas->objectMaker()->close();
+        _canvasView->setDragObject(0);
+        _canvasView->setReplaceObject(0);
+        _canvasView->objectMaker()->close();
     }
 }
 
@@ -220,23 +255,23 @@ void PatchWindow::objectMakerDone()
 
 void PatchWindow::cut()
 {
-    canvas->dataCut();
+    _canvasView->dataCut();
 }
 
 void PatchWindow::copy()
 {
-    canvas->dataCopy();
+    _canvasView->dataCopy();
 }
 
 void PatchWindow::duplicate()
 {
-    canvas->dataDuplicate();
+    _canvasView->dataDuplicate();
 }
 
 void PatchWindow::paste()
 {
     FileParser::setParserWindow(this);
-    canvas->dataPaste();
+    _canvasView->dataPaste();
 }
 
 // ----------
@@ -246,7 +281,7 @@ void PatchWindow::resizeEvent(QResizeEvent* event)
     //        canvas->move(0,0);
 
     //        // todo move to canvas
-    QSize newSize = canvas->minimumCanvasSize();
+    QSize newSize = _canvasView->minimumCanvasSize();
     if (newSize.width() < event->size().width())
         newSize.setWidth(event->size().width());
     if (newSize.height() < event->size().height())
