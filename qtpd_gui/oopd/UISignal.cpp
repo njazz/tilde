@@ -108,7 +108,8 @@ UIObject* UISignal::createObject(QString objectData, t_canvas* pdCanvas, QGraphi
 
         t_object* pd_obj = cmp_create_object(pdCanvas, "pdsignal~ " + b->_signalSendName, 0, 0);
 
-        b->setPdObject(pd_obj);
+        // TODO-PD_OBJECT
+        //b->setPdObject(pd_obj);
     }
 
     connect(b, &UISignal::updateUISignal, b, &UISignal::updateUISlot);

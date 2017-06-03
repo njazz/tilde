@@ -71,7 +71,7 @@ public:
 
         if (new_obj) {
             qDebug("created ui.matrix %s | ptr %lu\n", message.c_str(), (long)new_obj);
-            b->setPdObject(new_obj);
+            //b->setPdObject(new_obj);
         } else {
             qDebug("Error: no such object %s", message.c_str());
         }
@@ -356,8 +356,10 @@ public:
                 properties()->set("Value", v);
 
                 std::string val_str = "set " + std::to_string(v);
-                cmp_sendstring((t_pd*)pdObject(), val_str);
-                cmp_sendstring((t_pd*)pdObject(), "bang");
+
+                // TODO-PD_OBJECT
+//                cmp_sendstring((t_pd*)pdObject(), val_str);
+//                cmp_sendstring((t_pd*)pdObject(), "bang");
             }
 
             if (matrixType() == mt_VRadio) {
@@ -369,15 +371,17 @@ public:
                 properties()->set("Value", v);
 
                 std::string val_str = "set " + std::to_string(v);
-                cmp_sendstring((t_pd*)pdObject(), val_str);
-                cmp_sendstring((t_pd*)pdObject(), "bang");
+                // TODO-PD_OBJECT
+//                cmp_sendstring((t_pd*)pdObject(), val_str);
+//                cmp_sendstring((t_pd*)pdObject(), "bang");
             }
 
-            if (!pdObject()) {
-                qDebug("msg: bad pd object!");
-            } else {
-                cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
-            }
+            // TODO-PD_OBJECT
+//            if (!pdObject()) {
+//                qDebug("msg: bad pd object!");
+//            } else {
+//                cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
+//            }
         }
     }
 
@@ -424,11 +428,18 @@ public:
         emit x->callRepaint();
     }
 
-    void setPdObject(void* obj)
+//    void setPdObject(void* obj)
+//    {
+//        UIObject::setPdObject(obj);
+//        cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIMatrix::updateUI);
+//    }
+
+    virtual void setServerObject(ServerObject* o)
     {
-        UIObject::setPdObject(obj);
-        cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIMatrix::updateUI);
-    }
+        UIObject::setServerObject(o);
+        if (o)
+            o->connectUI(this, &UIMatrix::updateUI);
+    };
 };
 }
 

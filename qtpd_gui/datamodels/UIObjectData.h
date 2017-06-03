@@ -20,7 +20,7 @@ typedef std::vector<Port*> portItemVec;
 class UIObjectData : public QObject {
     Q_OBJECT
 
-    void* _pdObject;
+    //void* _pdObject;
 
     QString _objectData;
     PropertyList* _properties;
@@ -33,8 +33,8 @@ class UIObjectData : public QObject {
     int _minimumBoxHeight;
 
 public:
-    void setPdObject(void* pdObject) { _pdObject = pdObject; }
-    void* pdObject() { return _pdObject; }
+//    void setPdObject(void* pdObject) { _pdObject = pdObject; }
+//    void* pdObject() { return _pdObject; }
 
     void setData(QString inputData) ///> set both properties and Pd object string
     {

@@ -243,6 +243,13 @@ public:
         return _editor->document()->toPlainText().split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
     }
 
+
+    virtual void setServerObject(ServerObject* o)
+    {
+        UIObject::setServerObject(o);
+        if (o)
+            o->connectUI(this, &UIText::updateUI);
+    };
 signals:
 
 private slots:

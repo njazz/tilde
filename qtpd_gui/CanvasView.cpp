@@ -155,7 +155,8 @@ void CanvasView::s_MoveBox(UIItem* box, QGraphicsSceneMouseEvent* event)
         }
 
         w->move(pos);
-        t_object* obj = (t_object*)w->pdObject();
+        // TODO-PD_OBJECT
+        t_object* obj = 0;//(t_object*)w->pdObject();
         if (obj)
             cmp_moveobject(obj, (int)pos.x(), (int)pos.y()); //possibly useless
 
@@ -483,30 +484,32 @@ UIObject* CanvasView::createBoxForPatchWindow(QMainWindow* patchWindow, QString 
 
 void CanvasView::patchcord(UIObject* obj1, int outlet, UIObject* obj2, int inlet)
 {
-    if (obj1->pdObject() && obj2->pdObject()) {
-        if (((UIBox*)obj1)->errorBox()) {
-            //create dummy inlets / outlets
-            qDebug() << "errorbox";
-        };
-        if (((UIBox*)obj2)->errorBox()) {
-            //create dummy inlets / outlets
-            qDebug() << "errorbox";
-        };
+    // TODO-PD_OBJECT
 
-        Port* outport = obj1->outletAt(outlet);
-        Port* inport = obj2->inletAt(inlet);
+//    if (obj1->pdObject() && obj2->pdObject()) {
+//        if (((UIBox*)obj1)->errorBox()) {
+//            //create dummy inlets / outlets
+//            qDebug() << "errorbox";
+//        };
+//        if (((UIBox*)obj2)->errorBox()) {
+//            //create dummy inlets / outlets
+//            qDebug() << "errorbox";
+//        };
 
-        UIPatchcord* pc = new UIPatchcord(obj1, outport, obj2, inport);
+//        Port* outport = obj1->outletAt(outlet);
+//        Port* inport = obj2->inletAt(inlet);
 
-        if (obj1->pdOutletType(outlet))
-            pc->setPatchcordType(cm_pt_signal);
+//        UIPatchcord* pc = new UIPatchcord(obj1, outport, obj2, inport);
 
-        qDebug("pdlib patchcord");
-        cmp_patchcord((t_object*)obj1->pdObject(), outlet, (t_object*)obj2->pdObject(), inlet);
-        _canvasData.addPatchcord(pc); //patchcords()->push_back(pc);
+//        if (obj1->pdOutletType(outlet))
+//            pc->setPatchcordType(cm_pt_signal);
 
-        scene()->addItem(pc);
-    } else
+//        qDebug("pdlib patchcord");
+//        cmp_patchcord((t_object*)obj1->pdObject(), outlet, (t_object*)obj2->pdObject(), inlet);
+//        _canvasData.addPatchcord(pc); //patchcords()->push_back(pc);
+
+//        scene()->addItem(pc);
+//    } else
         qDebug("canvas patchcord error");
 }
 

@@ -60,7 +60,7 @@ public:
 
         if (new_obj) {
             qDebug("created msgbox %s | ptr %lu\n", message.c_str(), (long)new_obj);
-            b->setPdObject(new_obj);
+            //b->setPdObject(new_obj);
         } else {
             qDebug("Error: no such object %s", message.c_str());
         }
@@ -157,8 +157,10 @@ public:
             _startY = event->pos().y();
 
             std::string send = "set " + _objectDataModel.objectData().toStdString();
-            cmp_sendstring((t_pd*)pdObject(), send.c_str());
-            cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
+
+            // TODO-PD_OBJECT
+            // cmp_sendstring((t_pd*)pdObject(), send.c_str());
+            // cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
 
             update();
         }
@@ -188,15 +190,16 @@ public:
 
         //temporary
         //move
-        if (getEditMode() == em_Unlocked) {
-            if (!pdObject()) {
-                qDebug("msg: bad pd object!");
-            } else {
+        // TODO-PD_OBJECT
+//        if (getEditMode() == em_Unlocked) {
+//            if (!pdObject()) {
+//                qDebug("msg: bad pd object!");
+//            } else {
 
-                std::string msg = ("set " + _objectDataModel.objectData().toStdString());
-                cmp_sendstring((t_pd*)pdObject(), msg);
-            }
-        }
+//                std::string msg = ("set " + _objectDataModel.objectData().toStdString());
+//                cmp_sendstring((t_pd*)pdObject(), msg);
+//            }
+//        }
     }
 
     static void updateUI(void* uiobj, ceammc::AtomList msg)
@@ -209,11 +212,11 @@ public:
         }
     }
 
-    void setPdObject(void* obj)
-    {
-        UIObject::setPdObject(obj);
-        cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIFloat::updateUI);
-    }
+//    void setPdObject(void* obj)
+//    {
+//        UIObject::setPdObject(obj);
+//        cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIFloat::updateUI);
+//    }
 
     std::string asPdFileString()
     {
@@ -227,6 +230,13 @@ public:
 
         return ret;
     }
+
+    virtual void setServerObject(ServerObject* o)
+    {
+        UIObject::setServerObject(o);
+        if (o)
+            o->connectUI(this, &UIFloat::updateUI);
+    };
 };
 }
 

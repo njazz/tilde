@@ -90,7 +90,7 @@ public:
 
         if (new_obj) {
             qDebug("created ui.script %s | ptr %lu\n", message.c_str(), (long)new_obj);
-            b->setPdObject(new_obj);
+            //b->setPdObject(new_obj);
 
             b->_editor->textEdit()->setContext(pyWrapper::inst().withCanvasPdObjectAndInput((UIObject*)parent, new_obj, &b->_scriptCommon->scriptData()->inputList));
 
@@ -204,13 +204,19 @@ public:
         setSize(300, 200);
     }
 
-    void setPdObject(void* obj)
-    {
-        UIObject::setPdObject(obj);
-        //connect(this, &UIScriptBox::callRun, this, &UIScriptBox::btnRun);
-        cmp_connectUI((t_pd*)pdObject(), (void*)this->_scriptCommon, &UIScriptCommon::updateUI);
-    }
+//    void setPdObject(void* obj)
+//    {
+//        UIObject::setPdObject(obj);
+//        //connect(this, &UIScriptBox::callRun, this, &UIScriptBox::btnRun);
+//        cmp_connectUI((t_pd*)pdObject(), (void*)this->_scriptCommon, &UIScriptCommon::updateUI);
+//    }
 
+    virtual void setServerObject(ServerObject* o)
+    {
+        UIObject::setServerObject(o);
+        if (o)
+            o->connectUI(this, &UIScriptBox::updateUI);
+    };
 private slots:
     void editorChanged();
 };

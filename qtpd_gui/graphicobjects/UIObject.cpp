@@ -16,7 +16,7 @@ UIObject::UIObject(UIItem* parent)
 
     setParent(parent);
 
-    setPdObject(0);
+    //setPdObject(0);
 
     _inlets = new portItemVec;
     _outlets = new portItemVec;
@@ -290,9 +290,9 @@ Port* UIObject::outletAt(int idx)
 
 int UIObject::pdInletType(int idx)
 {
-    if ((t_object*)pdObject())
-        return cmp_get_inlet_type((t_object*)pdObject(), idx);
-    else
+//    if ((t_object*)pdObject())
+//        return cmp_get_inlet_type((t_object*)pdObject(), idx);
+//    else
         return 0;
 }
 
@@ -303,9 +303,9 @@ int UIObject::inletCount()
 
 int UIObject::pdOutletType(int idx)
 {
-    if ((t_object*)pdObject())
-        return cmp_get_outlet_type((t_object*)pdObject(), idx);
-    else
+//    if ((t_object*)pdObject())
+//        return cmp_get_outlet_type((t_object*)pdObject(), idx);
+//    else
         return 0;
 }
 
@@ -337,8 +337,8 @@ QString UIObject::objectData()
     return _objectDataModel.objectData(); //_objectData;
 }
 
-void* UIObject::pdObject() { return _objectDataModel.pdObject(); }
-void UIObject::setPdObject(void* obj) { _objectDataModel.setPdObject(obj); }
+//void* UIObject::pdObject() { return _objectDataModel.pdObject(); }
+//void UIObject::setPdObject(void* obj) { _objectDataModel.setPdObject(obj); }
 
 bool UIObject::errorBox() { return _objectDataModel.errorBox(); }
 void UIObject::setErrorBox(bool val) { _objectDataModel.setErrorBox(val); }

@@ -81,7 +81,7 @@ public:
             in_c = cmp_get_inlet_count(new_obj);
             out_c = cmp_get_outlet_count(new_obj);
 
-            b->setPdObject(new_obj);
+            //b->setPdObject(new_obj);
 
             cmp_connectUI((t_pd*)new_obj, (void*)b, &UIInstance::updateUI);
 
@@ -297,14 +297,15 @@ public:
         _opInstance = new OPInstance(_opClass);
         cmp_post("new instance");
 
-        if (pdObject()) {
-            _out1 = cmp_get_outlet((t_object*)pdObject(), 0);
+        // TODO-PD_OBJECT
+//        if (pdObject()) {
+//            _out1 = cmp_get_outlet((t_object*)pdObject(), 0);
 
-            if (_out1)
-                _opInstance->addInstanceOut(_out1);
-            else
-                cmp_post("instance pd object outlet error");
-        }
+//            if (_out1)
+//                _opInstance->addInstanceOut(_out1);
+//            else
+//                cmp_post("instance pd object outlet error");
+//        }
 
         //cmp_get_inlet/outlet
         _opInstance->addInstanceOut(0);
@@ -325,14 +326,15 @@ public:
     {
 
         if (_opInstance) {
-            if (pdObject()) {
-                t_outlet* out1 = cmp_get_outlet((t_object*)pdObject(), 0);
-                if (out1)
+            // TODO-PD_OBJECT
+//            if (pdObject()) {
+//                t_outlet* out1 = cmp_get_outlet((t_object*)pdObject(), 0);
+//                if (out1)
 
-                    _opInstance->freeInstanceOut(out1);
-                else
-                    cmp_post("instance pd object outlet error");
-            }
+//                    _opInstance->freeInstanceOut(out1);
+//                else
+//                    cmp_post("instance pd object outlet error");
+//            }
 
             _opInstance->freeInstanceOut(0);
             //delete _opInstance;
@@ -408,17 +410,19 @@ public:
 
                 // inlets and outlets
                 for (size_t i = 0; i < _opClass->getPropertyList().size(); i++) {
-                    cmp_sendstring((t_pd*)pdObject(), "__newin");
-                    cmp_sendstring((t_pd*)pdObject(), "__newout");
-                    addInlet();
-                    addOutlet();
+                    // TODO-PD_OBJECT
+//                    cmp_sendstring((t_pd*)pdObject(), "__newin");
+//                    cmp_sendstring((t_pd*)pdObject(), "__newout");
+//                    addInlet();
+//                    addOutlet();
                 }
 
                 for (size_t i = 0; i < _opClass->getMethodList().size(); i++) {
-                    cmp_sendstring((t_pd*)pdObject(), "__newin");
-                    cmp_sendstring((t_pd*)pdObject(), "__newout");
-                    addInlet();
-                    addOutlet();
+                    // TODO-PD_OBJECT
+//                    cmp_sendstring((t_pd*)pdObject(), "__newin");
+//                    cmp_sendstring((t_pd*)pdObject(), "__newout");
+//                    addInlet();
+//                    addOutlet();
                 }
 
                 _hasType = true;

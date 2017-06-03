@@ -10,7 +10,7 @@
 
 #include "Preferences.h"
 
-#include "PdLink.h"
+//#include "PdLink.h"
 
 #include <QMainWindow>
 #include <QMenu>
@@ -121,7 +121,7 @@ public:
     /// \details gui-only objects can ovverride it with function that returns 0
     /// \return
     ///
-    virtual void* pdObject();
+    //virtual void* pdObject();
 
     virtual ServerObject* serverObject() { return _serverObject; };
     virtual void setServerObject(ServerObject* o)
@@ -147,12 +147,12 @@ public:
             addOutlet();
     };
 
-    ////
-    /// \brief sets pointer to pd object
-    /// \details overriden by ui objects to be able to connect to pd objects
-    /// \param obj
-    ///
-    virtual void setPdObject(void* obj);
+//    //
+//    / \brief sets pointer to pd object
+//    / \details overriden by ui objects to be able to connect to pd objects
+//    / \param obj
+//    /
+//    virtual void setPdObject(void* obj);
 
     ////
     /// \brief returns true if object doesn't exist

@@ -6,8 +6,6 @@
 #include <string>
 #include <vector>
 
-
-
 namespace ceammc {
 class AtomList;
 }

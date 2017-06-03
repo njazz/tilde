@@ -177,7 +177,9 @@ public:
                     list1.append(_prop.at(i).asString().c_str());
                 }
 
-                cmp_sendstring((t_pd*)b->pdObject(), (std::string) "__output " + list1.join(" ").toStdString());
+                // TODO-PD_OBJECT
+//                cmp_sendstring((t_pd*)b->pdObject(), (std::string) "__output " + list1.join(" ").toStdString());
+
             } else if (msg.at(0).asSymbol() == gensym("set")) {
                 cmp_post("set!");
                 //AtomList msg2 = msg;

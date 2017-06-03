@@ -67,7 +67,7 @@ UIObject* UIProperty::createObject(QString objectData, t_canvas* pdCanvas, QGrap
         in_c = cmp_get_inlet_count(new_obj);
         out_c = cmp_get_outlet_count(new_obj);
 
-        b->setPdObject(new_obj);
+        //b->setPdObject(new_obj);
 
         cmp_connectUI((t_pd*)new_obj, (void*)b, &UIProperty::updateUI);
 
@@ -112,13 +112,15 @@ UIObject* UIProperty::createObject(QString objectData, t_canvas* pdCanvas, QGrap
     if (b->_opInstance) {
         qDebug("property in instance");
 
-        t_outlet* out1 = cmp_get_outlet((t_object*)b->pdObject(), 1);
-        t_outlet* out2 = cmp_get_outlet((t_object*)b->pdObject(), 2);
-        if (out1 && out2) {
+        // TODO-PD_OBJECT
 
-            b->_opInstance->addProperty(gensym(b->_propertyName.c_str()), out1, out2);
-        } else
-            cmp_post("property pd object outlet error");
+//        t_outlet* out1 = cmp_get_outlet((t_object*)b->pdObject(), 1);
+//        t_outlet* out2 = cmp_get_outlet((t_object*)b->pdObject(), 2);
+//        if (out1 && out2) {
+
+//            b->_opInstance->addProperty(gensym(b->_propertyName.c_str()), out1, out2);
+//        } else
+//            cmp_post("property pd object outlet error");
     }
 
     connect(b, &UIProperty::updateUISignal, b, &UIProperty::updateUISlot);

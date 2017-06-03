@@ -62,7 +62,7 @@ public:
 
         if (new_obj) {
             qDebug("created toggle %s | ptr %lu\n", message.c_str(), (long)new_obj);
-            b->setPdObject(new_obj);
+            //b->setPdObject(new_obj);
         } else {
             qDebug("Error: no such object %s", message.c_str());
         }
@@ -185,11 +185,11 @@ public:
             o->connectUI(this, &UIToggle::updateUI);
     };
 
-    void setPdObject(void* obj)
-    {
-        UIObject::setPdObject(obj);
-        //cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIToggle::updateUI);
-    }
+//    void setPdObject(void* obj)
+//    {
+//        UIObject::setPdObject(obj);
+//        //cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIToggle::updateUI);
+//    }
 };
 }
 

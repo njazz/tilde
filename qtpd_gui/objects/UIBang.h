@@ -61,7 +61,7 @@ public:
 
         if (new_obj) {
             qDebug("created bang %s | ptr %lu\n", message.c_str(), (long)new_obj);
-            b->setPdObject(new_obj);
+            //b->setPdObject(new_obj);
         } else {
             qDebug("Error: no such object %s", message.c_str());
         }
@@ -125,13 +125,14 @@ public:
 
         //temporary
         //move
-        if (getEditMode() != em_Unlocked) {
-            if (!pdObject()) {
-                qDebug("msg: bad pd object!");
-            } else {
-                cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
-            }
-        }
+        // TODO-PD_OBJECT
+//        if (getEditMode() != em_Unlocked) {
+//            if (!pdObject()) {
+//                qDebug("msg: bad pd object!");
+//            } else {
+//                cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
+//            }
+//        }
     }
 
     void mouseReleaseEvent(QGraphicsSceneMouseEvent*)
@@ -167,18 +168,25 @@ public:
         }
     }
 
-    void setPdObject(void* obj)
-    {
-        UIObject::setPdObject(obj);
+//    void setPdObject(void* obj)
+//    {
+//        UIObject::setPdObject(obj);
 
-        cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIBang::updateUI);
-        qDebug("connectUI");
-    }
+//        cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIBang::updateUI);
+//        qDebug("connectUI");
+//    }
 
     void timerStart()
     {
         emit setBangTimer(50);
     }
+
+    virtual void setServerObject(ServerObject* o)
+    {
+        UIObject::setServerObject(o);
+        if (o)
+            o->connectUI(this, &UIBang::updateUI);
+    };
 
 signals:
     void setBangTimer(int msec);

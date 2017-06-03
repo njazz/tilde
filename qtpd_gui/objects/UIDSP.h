@@ -187,11 +187,18 @@ public:
     //    {
     //    }
 
-    void setPdObject(void* obj)
+//    void setPdObject(void* obj)
+//    {
+//        UIObject::setPdObject(obj);
+//        //cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIDSP::updateUI);
+//    }
+
+    virtual void setServerObject(ServerObject* o)
     {
-        UIObject::setPdObject(obj);
-        //cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIDSP::updateUI);
-    }
+        UIObject::setServerObject(o);
+        if (o)
+            o->connectUI(this, &UIDSP::updateUI);
+    };
 };
 }
 

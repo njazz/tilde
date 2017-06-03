@@ -145,6 +145,9 @@ public:
         {
             //
             UIObject* box = *it;
+
+            // TODO-PD_OBJECT
+            /*
             qDebug("delete %lu | %lu", (long)box, (long)box->pdObject());
 
             box->pdObject();
@@ -161,6 +164,7 @@ public:
             } else {
                 qDebug("didn't delete pd object");
             }
+            */
 
             deletePatchcordsFor(box);
 
@@ -187,19 +191,20 @@ public:
 
             if (p->isSelected()) {
 
-                t_object* obj1 = (t_object*)p->obj1()->pdObject();
-                t_object* obj2 = (t_object*)p->obj2()->pdObject();
+                // TODO-PD_OBJECT
+//                t_object* obj1 = (t_object*)p->obj1()->pdObject();
+//                t_object* obj2 = (t_object*)p->obj2()->pdObject();
 
-                if (obj1 && obj2) {
-                    int out1 = p->outletIndex();
-                    int in2 = p->inletIndex();
+//                if (obj1 && obj2) {
+//                    int out1 = p->outletIndex();
+//                    int in2 = p->inletIndex();
 
-                    if ((out1 >= 0) && (in2 >= 0))
-                        cmp_delete_patchcord(obj1, out1, obj2, in2);
-                    else
-                        qDebug("object error. didn't delete pd patchcord");
-                } else
-                    qDebug("object error. didn't delete pd patchcord");
+//                    if ((out1 >= 0) && (in2 >= 0))
+//                        cmp_delete_patchcord(obj1, out1, obj2, in2);
+//                    else
+//                        qDebug("object error. didn't delete pd patchcord");
+//                } else
+//                    qDebug("object error. didn't delete pd patchcord");
 
                 _scene->removeItem(p);
                 //qDebug() << "remove item";

@@ -43,9 +43,10 @@ public Q_SLOTS:
 
     void pdMessage(UIObject* obj, QString data)
     {
-        if (obj->pdObject()) {
-            cmp_sendstring((t_pd*)obj->pdObject(), data.toStdString());
-        }
+        // TODO-PD_OBJECT
+//        if (obj->pdObject()) {
+//            cmp_sendstring((t_pd*)obj->pdObject(), data.toStdString());
+//        }
     }
 
     // test

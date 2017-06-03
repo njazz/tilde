@@ -76,7 +76,7 @@ public:
 
             qDebug("created object %s ins %i outs %i ptr %lu", obj_name, in_c, out_c, (long)new_obj);
 
-            b->setPdObject(new_obj);
+            //b->setPdObject(new_obj);
 
             b->_isAbstraction = cmp_is_abstraction(new_obj);
             //qDebug() << "*** is abstraction: " << b->_isAbstraction;
@@ -129,6 +129,13 @@ public:
     void resizeEvent()
     {
     }
+
+    virtual void setServerObject(ServerObject* o)
+    {
+        UIObject::setServerObject(o);
+        if (o)
+            o->connectUI(this, &UISubCanvas::updateUI);
+    };
 };
 }
 #endif // UISUBCANVAS_H

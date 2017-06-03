@@ -63,7 +63,7 @@ public:
 
         if (new_obj) {
             qDebug("created slider %s | ptr %lu\n", message.c_str(), (long)new_obj);
-            b->setPdObject(new_obj);
+            //b->setPdObject(new_obj);
         } else {
             qDebug("Error: no such object %s", message.c_str());
         }
@@ -174,12 +174,13 @@ public:
             float val = valueFromPoint(ev->pos().toPoint());
             std::string val_str = std::to_string(val);
 
-            if (!pdObject()) {
-                qDebug("msg: bad pd object!");
-            } else {
-                cmp_sendstring((t_pd*)pdObject(), ((std::string) "set " + val_str).c_str());
-                cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang ").c_str());
-            }
+            // TODO-PD_OBJECT
+//            if (!pdObject()) {
+//                qDebug("msg: bad pd object!");
+//            } else {
+//                cmp_sendstring((t_pd*)pdObject(), ((std::string) "set " + val_str).c_str());
+//                cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang ").c_str());
+//            }
         }
     }
 
@@ -204,10 +205,11 @@ public:
             setCursor(QCursor(Qt::ArrowCursor));
         }
 
-        if (pdObject()) {
-            cmp_sendstring((t_pd*)pdObject(), ((std::string) "set " + val_str).c_str());
-            cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang ").c_str());
-        }
+        // TODO-PD_OBJECT
+//        if (pdObject()) {
+//            cmp_sendstring((t_pd*)pdObject(), ((std::string) "set " + val_str).c_str());
+//            cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang ").c_str());
+//        }
     }
 
     ///////
@@ -235,11 +237,11 @@ public:
         emit x->callRepaint();
     }
 
-    void setPdObject(void* obj)
-    {
-        UIObject::setPdObject(obj);
-        cmp_connectUI((t_pd*)pdObject(), (void*)this, &UISlider::updateUI);
-    }
+//    void setPdObject(void* obj)
+//    {
+//        UIObject::setPdObject(obj);
+//        cmp_connectUI((t_pd*)pdObject(), (void*)this, &UISlider::updateUI);
+//    }
 
     void resizeEvent()
     {
@@ -247,6 +249,13 @@ public:
 
         _isHorizontal = width() > height();
     }
+
+    virtual void setServerObject(ServerObject* o)
+    {
+        UIObject::setServerObject(o);
+        if (o)
+            o->connectUI(this, &UISlider::updateUI);
+    };
 };
 }
 

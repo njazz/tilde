@@ -66,7 +66,7 @@ UIObject* UIMethod::createObject(QString objectData, t_canvas* pdCanvas, QGraphi
         in_c = cmp_get_inlet_count(new_obj);
         out_c = cmp_get_outlet_count(new_obj);
 
-        b->setPdObject(new_obj);
+        //b->setPdObject(new_obj);
 
         cmp_connectUI((t_pd*)new_obj, (void*)b, &UIMethod::updateUI);
 
@@ -109,11 +109,12 @@ UIObject* UIMethod::createObject(QString objectData, t_canvas* pdCanvas, QGraphi
     if (b->_opInstance) {
         qDebug("method in instance");
 
-        t_outlet* out1 = cmp_get_outlet((t_object*)b->pdObject(), 0);
-        if (out1)
-            b->_opInstance->addMethodOutlet(gensym(b->_methodName.c_str()), out1);
-        else
-            cmp_post("method pd object outlet error");
+        // TODO-PD_OBJECT
+//        t_outlet* out1 = cmp_get_outlet((t_object*)b->pdObject(), 0);
+//        if (out1)
+//            b->_opInstance->addMethodOutlet(gensym(b->_methodName.c_str()), out1);
+//        else
+//            cmp_post("method pd object outlet error");
     }
 
     connect(b, &UIMethod::updateUISignal, b, &UIMethod::updateUISlot);

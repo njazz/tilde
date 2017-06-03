@@ -15,6 +15,7 @@
 #include <QGraphicsView>
 #include <QMainWindow>
 
+// TODO
 #include "CanvasView.h"
 
 namespace qtpd {
@@ -180,6 +181,12 @@ public:
 
     std::string asPdFileString();
 
+    virtual void setServerObject(ServerObject* o)
+    {
+        UIObject::setServerObject(o);
+        if (o)
+            o->connectUI(this, &UISubpatch::updateUI);
+    };
 signals:
 
     void mouseMoved();
