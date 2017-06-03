@@ -29,6 +29,7 @@ var searchData=
   ['menupaste',['menuPaste',['../classqtpd_1_1_patch_window_controller.html#a452923604f75028b0943e8d994394580',1,'qtpd::PatchWindowController']]],
   ['menusave',['menuSave',['../classqtpd_1_1_patch_window_controller.html#a3b48ab647f885a2783ace092dbe1ad68',1,'qtpd::PatchWindowController']]],
   ['menusaveas',['menuSaveAs',['../classqtpd_1_1_patch_window_controller.html#ad4be0234f1e019a04b0d93639449d65a',1,'qtpd::PatchWindowController']]],
+  ['menuselectall',['menuSelectAll',['../classqtpd_1_1_patch_window_controller.html#a0c0f14c564df7314a3d6c2ce1723d62d',1,'qtpd::PatchWindowController']]],
   ['mess0',['mess0',['../m__pd_8h.html#a1342c871b59520bc67a204afee1499e7',1,'m_pd.h']]],
   ['mess1',['mess1',['../m__pd_8h.html#ae324b7b2700c94b8b90834fb2a404306',1,'m_pd.h']]],
   ['mess2',['mess2',['../m__pd_8h.html#a5b6f0ab71b03a6befa6ca3bf6f01a692',1,'m_pd.h']]],

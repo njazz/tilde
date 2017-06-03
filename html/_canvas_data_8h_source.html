@@ -361,46 +361,75 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00280"></a>00280         <span class="keywordflow">return</span> ret;
 <a name="l00281"></a>00281     }
 <a name="l00282"></a>00282 
-<a name="l00283"></a><a class="code" href="classqtpd_1_1_canvas_data.html#ae7fcba22560cf3e71b5bd596c0e8db3f">00283</a>     QStringList <a class="code" href="classqtpd_1_1_canvas_data.html#ae7fcba22560cf3e71b5bd596c0e8db3f">objectsAsPdFileStrings</a>()
+<a name="l00283"></a><a class="code" href="classqtpd_1_1_canvas_data.html#ae4bbb013b890276e16524276f4b39e10">00283</a>     <a class="code" href="structqtpd_1_1__patchcord_as_numbers.html" title="patchcord as numbers">t_patchcordAsNumbers</a> <a class="code" href="classqtpd_1_1_canvas_data.html#ae4bbb013b890276e16524276f4b39e10">patchcordAsNumbers</a>(<a class="code" href="classqtpd_1_1_u_i_patchcord.html" title="Patchcord QGraphicsObject class.">UIPatchcord</a>* pcord)
 <a name="l00284"></a>00284     {
-<a name="l00285"></a>00285 
-<a name="l00286"></a>00286         QStringList ret = <a class="code" href="classqtpd_1_1_canvas_data.html#a2feadf5b43121b15a8635300cccf1ccf">boxesAsPdFileStrings</a>(&amp;_boxes);
-<a name="l00287"></a>00287         ret += <a class="code" href="classqtpd_1_1_canvas_data.html#a13d9919a4358f17e60829f16995f0bea">patchcordsAsPdFileStrings</a>(&amp;_patchcords);
+<a name="l00285"></a>00285         <span class="comment">//TODO</span>
+<a name="l00286"></a>00286 
+<a name="l00287"></a>00287         <a class="code" href="structqtpd_1_1__patchcord_as_numbers.html" title="patchcord as numbers">t_patchcordAsNumbers</a> ret;
 <a name="l00288"></a>00288 
-<a name="l00289"></a>00289         <span class="keywordflow">return</span> ret;
-<a name="l00290"></a>00290     }
+<a name="l00289"></a>00289         <span class="keywordtype">int</span> obj1i = <a class="code" href="classqtpd_1_1_canvas_data.html#a238ece132e0cec35984f5f15d7fa93c1">findObjectIndex</a>(pcord-&gt;<a class="code" href="classqtpd_1_1_u_i_patchcord.html#ae1bd6d258fdc4f97b0e72e71e3dd2c88">obj1</a>());
+<a name="l00290"></a>00290         <span class="keywordtype">int</span> obj2i = <a class="code" href="classqtpd_1_1_canvas_data.html#a238ece132e0cec35984f5f15d7fa93c1">findObjectIndex</a>(pcord-&gt;<a class="code" href="classqtpd_1_1_u_i_patchcord.html#a6dfd301e556859b844a8e7c1341b058c">obj2</a>());
 <a name="l00291"></a>00291 
-<a name="l00292"></a><a class="code" href="classqtpd_1_1_canvas_data.html#aba763f0d79f33892a3269e9f9e671263">00292</a>     QString <a class="code" href="classqtpd_1_1_canvas_data.html#aba763f0d79f33892a3269e9f9e671263">canvasAsPdFileString</a>()
-<a name="l00293"></a>00293     {
-<a name="l00294"></a>00294         <span class="comment">// TODO</span>
-<a name="l00295"></a>00295         <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;#N canvas 0 0 400 300 10;\r\n&quot;</span>);
-<a name="l00296"></a>00296 
-<a name="l00297"></a>00297         <span class="comment">//        std::string ret;</span>
-<a name="l00298"></a>00298 
-<a name="l00299"></a>00299         <span class="comment">//        ret = &quot;#N canvas &quot;;</span>
-<a name="l00300"></a>00300         <span class="comment">//        ret += std::to_string(x()) + &quot; &quot;;</span>
-<a name="l00301"></a>00301         <span class="comment">//        ret += std::to_string(y()) + &quot; &quot;;</span>
-<a name="l00302"></a>00302         <span class="comment">//        ret += std::to_string(width()) + &quot; &quot;;</span>
-<a name="l00303"></a>00303         <span class="comment">//        ret += std::to_string(height()) + &quot; &quot;;</span>
-<a name="l00304"></a>00304         <span class="comment">//        ret += &quot;10; \r\n&quot;;</span>
-<a name="l00305"></a>00305 
-<a name="l00306"></a>00306         <span class="comment">//        return ret;</span>
-<a name="l00307"></a>00307     }
+<a name="l00292"></a>00292         <span class="keywordflow">if</span> ((obj1i &gt;= 0) &amp;&amp; (obj2i &gt;= 0)) {
+<a name="l00293"></a>00293             <span class="comment">//std::string ret;</span>
+<a name="l00294"></a>00294 
+<a name="l00295"></a>00295             ret.<a class="code" href="structqtpd_1_1__patchcord_as_numbers.html#a657fdf0b7239ee4ebdb1f44a26fc5a8d">obj1</a> = (obj1i);
+<a name="l00296"></a>00296             ret.<a class="code" href="structqtpd_1_1__patchcord_as_numbers.html#a83802e91adfcaebeabe14bd917438471">out1</a> = pcord-&gt;<a class="code" href="classqtpd_1_1_u_i_patchcord.html#a5fecd682a5f7ffccafcf49358db9a053">outletIndex</a>();
+<a name="l00297"></a>00297 
+<a name="l00298"></a>00298             ret.<a class="code" href="structqtpd_1_1__patchcord_as_numbers.html#a8f29c63349259097c546937d9455d5f8">obj2</a> = (obj2i);
+<a name="l00299"></a>00299             ret.<a class="code" href="structqtpd_1_1__patchcord_as_numbers.html#a589c99e911ac56d67639b8c96c8b7ab7">in2</a> = pcord-&gt;<a class="code" href="classqtpd_1_1_u_i_patchcord.html#abf4ef43f4de59746c67f8114ccb77c6d">inletIndex</a>();
+<a name="l00300"></a>00300 
+<a name="l00301"></a>00301         } <span class="keywordflow">else</span> {
+<a name="l00302"></a>00302             qDebug(<span class="stringliteral">&quot;patchcord to string error&quot;</span>);
+<a name="l00303"></a>00303             ret.<a class="code" href="structqtpd_1_1__patchcord_as_numbers.html#a657fdf0b7239ee4ebdb1f44a26fc5a8d">obj1</a> = 0;
+<a name="l00304"></a>00304             ret.<a class="code" href="structqtpd_1_1__patchcord_as_numbers.html#a8f29c63349259097c546937d9455d5f8">obj2</a> = 0;
+<a name="l00305"></a>00305             ret.<a class="code" href="structqtpd_1_1__patchcord_as_numbers.html#a83802e91adfcaebeabe14bd917438471">out1</a> = 0;
+<a name="l00306"></a>00306             ret.<a class="code" href="structqtpd_1_1__patchcord_as_numbers.html#a589c99e911ac56d67639b8c96c8b7ab7">in2</a> = 0;
+<a name="l00307"></a>00307         }
 <a name="l00308"></a>00308 
-<a name="l00309"></a><a class="code" href="classqtpd_1_1_canvas_data.html#a56f451f6c6b948d99dab3f782a1993ff">00309</a>     QStringList <a class="code" href="classqtpd_1_1_canvas_data.html#a56f451f6c6b948d99dab3f782a1993ff">asPdFileStrings</a>()
-<a name="l00310"></a>00310     {
-<a name="l00311"></a>00311         QStringList ret;
-<a name="l00312"></a>00312         ret.append(<a class="code" href="classqtpd_1_1_canvas_data.html#aba763f0d79f33892a3269e9f9e671263">canvasAsPdFileString</a>());
-<a name="l00313"></a>00313         ret += <a class="code" href="classqtpd_1_1_canvas_data.html#ae7fcba22560cf3e71b5bd596c0e8db3f">objectsAsPdFileStrings</a>();
+<a name="l00309"></a>00309         <span class="keywordflow">return</span> ret;
+<a name="l00310"></a>00310     }
+<a name="l00311"></a>00311 
+<a name="l00312"></a><a class="code" href="classqtpd_1_1_canvas_data.html#ae7fcba22560cf3e71b5bd596c0e8db3f">00312</a>     QStringList <a class="code" href="classqtpd_1_1_canvas_data.html#ae7fcba22560cf3e71b5bd596c0e8db3f">objectsAsPdFileStrings</a>()
+<a name="l00313"></a>00313     {
 <a name="l00314"></a>00314 
-<a name="l00315"></a>00315         <span class="keywordflow">return</span> ret;
-<a name="l00316"></a>00316     }
+<a name="l00315"></a>00315         QStringList ret = <a class="code" href="classqtpd_1_1_canvas_data.html#a2feadf5b43121b15a8635300cccf1ccf">boxesAsPdFileStrings</a>(&amp;_boxes);
+<a name="l00316"></a>00316         ret += <a class="code" href="classqtpd_1_1_canvas_data.html#a13d9919a4358f17e60829f16995f0bea">patchcordsAsPdFileStrings</a>(&amp;_patchcords);
 <a name="l00317"></a>00317 
-<a name="l00318"></a>00318     <span class="comment">// -------</span>
-<a name="l00319"></a>00319 };
-<a name="l00320"></a>00320 }
-<a name="l00321"></a>00321 
-<a name="l00322"></a>00322 <span class="preprocessor">#endif // CM_CANVAS_TYPES_H</span>
+<a name="l00318"></a>00318         <span class="keywordflow">return</span> ret;
+<a name="l00319"></a>00319     }
+<a name="l00320"></a>00320 
+<a name="l00321"></a><a class="code" href="classqtpd_1_1_canvas_data.html#aba763f0d79f33892a3269e9f9e671263">00321</a>     QString <a class="code" href="classqtpd_1_1_canvas_data.html#aba763f0d79f33892a3269e9f9e671263">canvasAsPdFileString</a>()
+<a name="l00322"></a>00322     {
+<a name="l00323"></a>00323         <span class="comment">// TODO</span>
+<a name="l00324"></a>00324         <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;#N canvas 0 0 400 300 10;\r\n&quot;</span>);
+<a name="l00325"></a>00325 
+<a name="l00326"></a>00326         <span class="comment">//        std::string ret;</span>
+<a name="l00327"></a>00327 
+<a name="l00328"></a>00328         <span class="comment">//        ret = &quot;#N canvas &quot;;</span>
+<a name="l00329"></a>00329         <span class="comment">//        ret += std::to_string(x()) + &quot; &quot;;</span>
+<a name="l00330"></a>00330         <span class="comment">//        ret += std::to_string(y()) + &quot; &quot;;</span>
+<a name="l00331"></a>00331         <span class="comment">//        ret += std::to_string(width()) + &quot; &quot;;</span>
+<a name="l00332"></a>00332         <span class="comment">//        ret += std::to_string(height()) + &quot; &quot;;</span>
+<a name="l00333"></a>00333         <span class="comment">//        ret += &quot;10; \r\n&quot;;</span>
+<a name="l00334"></a>00334 
+<a name="l00335"></a>00335         <span class="comment">//        return ret;</span>
+<a name="l00336"></a>00336     }
+<a name="l00337"></a>00337 
+<a name="l00338"></a><a class="code" href="classqtpd_1_1_canvas_data.html#a56f451f6c6b948d99dab3f782a1993ff">00338</a>     QStringList <a class="code" href="classqtpd_1_1_canvas_data.html#a56f451f6c6b948d99dab3f782a1993ff">asPdFileStrings</a>()
+<a name="l00339"></a>00339     {
+<a name="l00340"></a>00340         QStringList ret;
+<a name="l00341"></a>00341         ret.append(<a class="code" href="classqtpd_1_1_canvas_data.html#aba763f0d79f33892a3269e9f9e671263">canvasAsPdFileString</a>());
+<a name="l00342"></a>00342         ret += <a class="code" href="classqtpd_1_1_canvas_data.html#ae7fcba22560cf3e71b5bd596c0e8db3f">objectsAsPdFileStrings</a>();
+<a name="l00343"></a>00343 
+<a name="l00344"></a>00344         <span class="keywordflow">return</span> ret;
+<a name="l00345"></a>00345     }
+<a name="l00346"></a>00346 
+<a name="l00347"></a>00347     <span class="comment">// -------</span>
+<a name="l00348"></a>00348 };
+<a name="l00349"></a>00349 }
+<a name="l00350"></a>00350 
+<a name="l00351"></a>00351 <span class="preprocessor">#endif // CM_CANVAS_TYPES_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -419,7 +448,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 3 2017 10:38:36 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jun 3 2017 12:38:47 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

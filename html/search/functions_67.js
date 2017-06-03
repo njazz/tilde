@@ -42,6 +42,7 @@ var searchData=
   ['getsignallist',['getSignalList',['../classqtpd_1_1_o_o_p_d_class_base.html#af852b2822097548bfc8f08ea3fc0e689',1,'qtpd::OOPDClassBase']]],
   ['getstring',['getString',['../classceammc_1_1_atom.html#a237cb08dc27e3e1961934fad35285a36',1,'ceammc::Atom']]],
   ['getsymbol',['getSymbol',['../classceammc_1_1_atom.html#ab74c627d7c3f23f878123222c43f4fd7',1,'ceammc::Atom']]],
+  ['getuiconstructorfor',['getUIConstructorFor',['../classqtpd_1_1_object_loader.html#a2bc0626df89b5510daeee26e386170d9',1,'qtpd::ObjectLoader']]],
   ['getuinames',['getUINames',['../classqtpd_1_1_object_loader.html#a41b6b563c0b98f5d6016865e842e42a5',1,'qtpd::ObjectLoader']]],
   ['getzbytes',['getzbytes',['../m__pd_8h.html#a2430dc8c949f4ba60c70049480ed0353',1,'m_pd.h']]],
   ['getzoom',['getZoom',['../classqtpd_1_1_canvas_view.html#a7589e6f6be011e3ef6c81928046b9aa3',1,'qtpd::CanvasView']]],
