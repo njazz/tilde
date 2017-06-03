@@ -159,59 +159,9 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a4f56c2337113bfa28db329c414596476">CanvasView</a> (QGraphicsView *parent=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#ae3e66293fb4f5678b333be183158a74c">addInlet</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#aa2c9dae3a0a2046b575b3f63122b32c7">addOutlet</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a4ff88138c73802e1522e2bf6f3005846">getObjectByIndex</a> (int idx)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns object by index - this is needed by parser  <a href="#a4ff88138c73802e1522e2bf6f3005846"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#afd559ba823ec75738510eb0b1e9ddba7">objectVec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#ab43ca41d5ffd75e1608dd4078feb323f">objectBoxes</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns vector of all object boxes - needed by filesaver  <a href="#ab43ca41d5ffd75e1608dd4078feb323f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#a99b7f74529942387e07a5470a410975b">patchcordVec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#ad5b2afc5a5a2aaa79828e9a16aefa497">patchcords</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns vector of all patchcords - needed by filesaver  <a href="#ad5b2afc5a5a2aaa79828e9a16aefa497"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#afd559ba823ec75738510eb0b1e9ddba7">objectVec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a052556f13bd6b8e677ada16312dab71d">selectedObjectBoxes</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns vector of selected object boxes  <a href="#a052556f13bd6b8e677ada16312dab71d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#a99b7f74529942387e07a5470a410975b">patchcordVec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#abad637b8339774395c27140053c67748">selectedPatchcords</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns vector of selected patchcords  <a href="#abad637b8339774395c27140053c67748"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#a99b7f74529942387e07a5470a410975b">patchcordVec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#ab69fd50d63c369387ec783c1fb9bccfd">patchcordsForObject</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns patchcords that are connected to specific object  <a href="#ab69fd50d63c369387ec783c1fb9bccfd"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a798ed560a926872f63d4fa2c193816c9">findObjectIndex</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">find object index in list  <a href="#a798ed560a926872f63d4fa2c193816c9"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#aaa294942b3c141fec1786068c27186a7">asPdFileString</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">this returns "restore ..." for canvas as box or calls filesaver for canvas  <a href="#aaa294942b3c141fec1786068c27186a7"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a3c693e3d7e0d31b45e1cdaf612563c5c">patchcordAsPdFileString</a> (<a class="el" href="classqtpd_1_1_u_i_patchcord.html">UIPatchcord</a> *pcord)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns patchcord as pd string  <a href="#a3c693e3d7e0d31b45e1cdaf612563c5c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#a4d975c32d29ce6a398847118e1826bd5">t_patchcordAsNumbers</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a0bee5a1007bd30ca1baedd2765b37d42">patchcordAsNumbers</a> (<a class="el" href="classqtpd_1_1_u_i_patchcord.html">UIPatchcord</a> *pcord)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">converts UI patchcord object with 4 pointers to 4 numbers of objects in canvas  <a href="#a0bee5a1007bd30ca1baedd2765b37d42"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a3e7b6e39e71fd3896589701b4d18c213">selectObject</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">selects single box. mostly used by replace object routine in objectmaker  <a href="#a3e7b6e39e71fd3896589701b4d18c213"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a176ec29fe74fb92372a0188f44634f9d">selectAll</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">select all boxes  <a href="#a176ec29fe74fb92372a0188f44634f9d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#aa92798d74d15cbcbb55789e8fb5d91cc">resizeToObjects</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">change size to fit all objects  <a href="#aa92798d74d15cbcbb55789e8fb5d91cc"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#afc2794230e1d56bbe439c349f21fbad2">canvasAsPdStrings</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns canvas data for saving  <a href="#afc2794230e1d56bbe439c349f21fbad2"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a4dadda554b129370df6a244fad1d0145">canvasFromPdStrings</a> (QStringList strings)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">this is for loading or copying canvases. not yet used in fileparser  <a href="#a4dadda554b129370df6a244fad1d0145"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a51f8b4bf74dd84ec81692bfe6e652135">selectBox</a> (<a class="el" href="classqtpd_1_1_u_i_item.html">UIItem</a> *box)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#ad031609879f13076656f2ed7a64cd2cd">s_SelectBox</a> (<a class="el" href="classqtpd_1_1_u_i_item.html">UIItem</a> *box, QGraphicsSceneMouseEvent *ev)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">slot called by box when it is selected  <a href="#ad031609879f13076656f2ed7a64cd2cd"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#ae2ad532481a10ca915c594b568b7dc39">s_MoveBox</a> (<a class="el" href="classqtpd_1_1_u_i_item.html">UIItem</a> *box, QGraphicsSceneMouseEvent *event)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">TODO check. slot called by box when it starts moving.  <a href="#ae2ad532481a10ca915c594b568b7dc39"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#ac13cd7f65fc1dd9bfbaeb715538f9a43">cancelPatchcord</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">cancels patchcord creation  <a href="#ac13cd7f65fc1dd9bfbaeb715538f9a43"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_object_maker.html">ObjectMaker</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a6770763c6c47fbf72d3f34ac5763d882">objectMaker</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to objectMaker widget  <a href="#a6770763c6c47fbf72d3f34ac5763d882"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#ad1ed9d902dfce6d254aefe266ea835f7">portLocalCountUpdated</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">this is called when 'inlet' etc object is created in subpatch  <a href="#ad1ed9d902dfce6d254aefe266ea835f7"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a676aa454258a98ff4a2b5417e31837dc">showNewObjectMaker</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">shows object maker for 'new object' menu command  <a href="#a676aa454258a98ff4a2b5417e31837dc"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a33d3738dd89fb7e1ced53f07b61ebf4d">dataCut</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a3797957d9de0d0038c45510f5adef1a5">dataCopy</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a97cc0950eaa6d718731048b64f679108">dataDuplicate</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#ab1e57d85f807411d6483cf12856ba0b7">dataPaste</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#aac8af81acc60b26f357a679e50563656">resizeEvent</a> (QResizeEvent *)</td></tr>
-<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a3f2b0324bb3860a07c9b75a28f246a66">mouseMoveEvent</a> (QMouseEvent *ev)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a98f2648af771e0704bd120981c3bce0f">mousePressEvent</a> (QMouseEvent *ev)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a59dab94a0a450965fddd6175025b84e7">mouseReleaseEvent</a> (QMouseEvent *ev)</td></tr>
-<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#af6fb7d45fd5fa9ae0a113ff863276dc9">createObject</a> (QString objectData1, QPoint pos)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">prototype for universal object 'constructor'  <a href="#af6fb7d45fd5fa9ae0a113ff863276dc9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#ad1e902c87fb962c24b62b9bc6aa4bf11">createBoxForPatchWindow</a> (QMainWindow *patchWindow, QString objectData, QPoint pos)</td></tr>
@@ -228,6 +178,46 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete all selected object boxes  <a href="#a2b9a2458617d00560c5b0d655ad0643e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a9edc391a18e5d4aaa512f5c697c01be5">deleteSelectedPatchcords</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete all selected patchcords  <a href="#a9edc391a18e5d4aaa512f5c697c01be5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a4ff88138c73802e1522e2bf6f3005846">getObjectByIndex</a> (int idx)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns object by index - this is needed by parser  <a href="#a4ff88138c73802e1522e2bf6f3005846"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#afd559ba823ec75738510eb0b1e9ddba7">objectVec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#ab43ca41d5ffd75e1608dd4078feb323f">objectBoxes</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns vector of all object boxes - needed by filesaver  <a href="#ab43ca41d5ffd75e1608dd4078feb323f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#a99b7f74529942387e07a5470a410975b">patchcordVec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#ad5b2afc5a5a2aaa79828e9a16aefa497">patchcords</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns vector of all patchcords - needed by filesaver  <a href="#ad5b2afc5a5a2aaa79828e9a16aefa497"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#afd559ba823ec75738510eb0b1e9ddba7">objectVec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a052556f13bd6b8e677ada16312dab71d">selectedObjectBoxes</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns vector of selected object boxes  <a href="#a052556f13bd6b8e677ada16312dab71d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#a99b7f74529942387e07a5470a410975b">patchcordVec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#abad637b8339774395c27140053c67748">selectedPatchcords</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns vector of selected patchcords  <a href="#abad637b8339774395c27140053c67748"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#a99b7f74529942387e07a5470a410975b">patchcordVec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#ab69fd50d63c369387ec783c1fb9bccfd">patchcordsForObject</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns patchcords that are connected to specific object  <a href="#ab69fd50d63c369387ec783c1fb9bccfd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a798ed560a926872f63d4fa2c193816c9">findObjectIndex</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">find object index in list  <a href="#a798ed560a926872f63d4fa2c193816c9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a3c693e3d7e0d31b45e1cdaf612563c5c">patchcordAsPdFileString</a> (<a class="el" href="classqtpd_1_1_u_i_patchcord.html">UIPatchcord</a> *pcord)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns patchcord as pd string  <a href="#a3c693e3d7e0d31b45e1cdaf612563c5c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#a4d975c32d29ce6a398847118e1826bd5">t_patchcordAsNumbers</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a0bee5a1007bd30ca1baedd2765b37d42">patchcordAsNumbers</a> (<a class="el" href="classqtpd_1_1_u_i_patchcord.html">UIPatchcord</a> *pcord)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">converts UI patchcord object with 4 pointers to 4 numbers of objects in canvas  <a href="#a0bee5a1007bd30ca1baedd2765b37d42"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a3e7b6e39e71fd3896589701b4d18c213">selectObject</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">selects single box. mostly used by replace object routine in objectmaker  <a href="#a3e7b6e39e71fd3896589701b4d18c213"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a176ec29fe74fb92372a0188f44634f9d">selectAll</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">select all boxes  <a href="#a176ec29fe74fb92372a0188f44634f9d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#aa92798d74d15cbcbb55789e8fb5d91cc">resizeToObjects</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">change size to fit all objects  <a href="#aa92798d74d15cbcbb55789e8fb5d91cc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a4dadda554b129370df6a244fad1d0145">canvasFromPdStrings</a> (QStringList strings)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">this is for loading or copying canvases. not yet used in fileparser  <a href="#a4dadda554b129370df6a244fad1d0145"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a51f8b4bf74dd84ec81692bfe6e652135">selectBox</a> (<a class="el" href="classqtpd_1_1_u_i_item.html">UIItem</a> *box)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#ad031609879f13076656f2ed7a64cd2cd">s_SelectBox</a> (<a class="el" href="classqtpd_1_1_u_i_item.html">UIItem</a> *box, QGraphicsSceneMouseEvent *ev)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">slot called by box when it is selected  <a href="#ad031609879f13076656f2ed7a64cd2cd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#ae2ad532481a10ca915c594b568b7dc39">s_MoveBox</a> (<a class="el" href="classqtpd_1_1_u_i_item.html">UIItem</a> *box, QGraphicsSceneMouseEvent *event)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">TODO check. slot called by box when it starts moving.  <a href="#ae2ad532481a10ca915c594b568b7dc39"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#ac13cd7f65fc1dd9bfbaeb715538f9a43">cancelPatchcord</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">cancels patchcord creation  <a href="#ac13cd7f65fc1dd9bfbaeb715538f9a43"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_object_maker.html">ObjectMaker</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a6770763c6c47fbf72d3f34ac5763d882">objectMaker</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to objectMaker widget  <a href="#a6770763c6c47fbf72d3f34ac5763d882"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#ad1ed9d902dfce6d254aefe266ea835f7">portLocalCountUpdated</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">this is called when 'inlet' etc object is created in subpatch  <a href="#ad1ed9d902dfce6d254aefe266ea835f7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a676aa454258a98ff4a2b5417e31837dc">showNewObjectMaker</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">shows object maker for 'new object' menu command  <a href="#a676aa454258a98ff4a2b5417e31837dc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#aac8af81acc60b26f357a679e50563656">resizeEvent</a> (QResizeEvent *)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>'t_canvas' counterpart - for now it's both view and 'view controller'. creates pd+gui objects </p>
@@ -282,25 +272,6 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aaa294942b3c141fec1786068c27186a7"></a><!-- doxytag: member="qtpd::CanvasView::asPdFileString" ref="aaa294942b3c141fec1786068c27186a7" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string <a class="el" href="classqtpd_1_1_canvas_view.html#aaa294942b3c141fec1786068c27186a7">qtpd::CanvasView::asPdFileString</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>this returns "restore ..." for canvas as box or calls filesaver for canvas </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="ac13cd7f65fc1dd9bfbaeb715538f9a43"></a><!-- doxytag: member="qtpd::CanvasView::cancelPatchcord" ref="ac13cd7f65fc1dd9bfbaeb715538f9a43" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -316,25 +287,6 @@ Public Member Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>cancels patchcord creation </p>
-
-</div>
-</div>
-<a class="anchor" id="afc2794230e1d56bbe439c349f21fbad2"></a><!-- doxytag: member="qtpd::CanvasView::canvasAsPdStrings" ref="afc2794230e1d56bbe439c349f21fbad2" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QStringList <a class="el" href="classqtpd_1_1_canvas_view.html#afc2794230e1d56bbe439c349f21fbad2">qtpd::CanvasView::canvasAsPdStrings</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>returns canvas data for saving </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -443,7 +395,6 @@ Public Member Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>prototype for universal object 'constructor' </p>
-<p>createdelete Create / delete objects and patchcords </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">message</td><td></td></tr>
@@ -465,70 +416,6 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [signal]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a3797957d9de0d0038c45510f5adef1a5"></a><!-- doxytag: member="qtpd::CanvasView::dataCopy" ref="a3797957d9de0d0038c45510f5adef1a5" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas_view.html#a3797957d9de0d0038c45510f5adef1a5">qtpd::CanvasView::dataCopy</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a33d3738dd89fb7e1ced53f07b61ebf4d"></a><!-- doxytag: member="qtpd::CanvasView::dataCut" ref="a33d3738dd89fb7e1ced53f07b61ebf4d" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas_view.html#a33d3738dd89fb7e1ced53f07b61ebf4d">qtpd::CanvasView::dataCut</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a97cc0950eaa6d718731048b64f679108"></a><!-- doxytag: member="qtpd::CanvasView::dataDuplicate" ref="a97cc0950eaa6d718731048b64f679108" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas_view.html#a97cc0950eaa6d718731048b64f679108">qtpd::CanvasView::dataDuplicate</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ab1e57d85f807411d6483cf12856ba0b7"></a><!-- doxytag: member="qtpd::CanvasView::dataPaste" ref="ab1e57d85f807411d6483cf12856ba0b7" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas_view.html#ab1e57d85f807411d6483cf12856ba0b7">qtpd::CanvasView::dataPaste</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
         </tr>
       </table>
 </div>
@@ -816,7 +703,6 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>mouse Mouse </p>
 
 </div>
 </div>
@@ -1751,7 +1637,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 2 2017 23:29:24 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jun 3 2017 10:38:36 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

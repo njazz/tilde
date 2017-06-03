@@ -82,11 +82,10 @@ var searchData=
   ['canvas_5fwritescalar',['canvas_writescalar',['../g__canvas_8h.html#a382b5bdd20094072ab458d3d223bf8db',1,'g_canvas.h']]],
   ['canvas_5fzapallfortemplate',['canvas_zapallfortemplate',['../g__canvas_8h.html#a8afaf9fde7bd8e6bd57d21bfe4480f70',1,'g_canvas.h']]],
   ['canvasaspdfilestring',['canvasAsPdFileString',['../classqtpd_1_1_canvas_data.html#aba763f0d79f33892a3269e9f9e671263',1,'qtpd::CanvasData']]],
-  ['canvasaspdstrings',['canvasAsPdStrings',['../classqtpd_1_1_canvas_view.html#afc2794230e1d56bbe439c349f21fbad2',1,'qtpd::CanvasView']]],
   ['canvasdata',['canvasData',['../classqtpd_1_1_canvas_view.html#a90901f91e1a94c810229b8bce858dc4d',1,'qtpd::CanvasView::canvasData()'],['../classqtpd_1_1_patch_window_controller.html#ae43f167cb947e9db38021cad3a3104a6',1,'qtpd::PatchWindowController::canvasData()']]],
   ['canvasfrompdstrings',['canvasFromPdStrings',['../classqtpd_1_1_canvas_view.html#a4dadda554b129370df6a244fad1d0145',1,'qtpd::CanvasView']]],
   ['canvasispatch',['canvasIsPatch',['../classqtpd_1_1_o_o_p_d.html#abb8789fde690d6e92c92ac5a84630590',1,'qtpd::OOPD']]],
-  ['canvasview',['CanvasView',['../classqtpd_1_1_canvas_view.html#a4f56c2337113bfa28db329c414596476',1,'qtpd::CanvasView']]],
+  ['canvasview',['CanvasView',['../classqtpd_1_1_canvas_view.html#a4f56c2337113bfa28db329c414596476',1,'qtpd::CanvasView::CanvasView()'],['../classqtpd_1_1_patch_window.html#a55ba53058c5962b95c518478f0920726',1,'qtpd::PatchWindow::canvasView()']]],
   ['changed',['changed',['../classqtpd_1_1_property.html#a3d3e519149c11b6f6779d833148b8964',1,'qtpd::Property']]],
   ['class_5faddanything',['class_addanything',['../m__pd_8h.html#a840453962b1071896a57fb2230984852',1,'m_pd.h']]],
   ['class_5faddbang',['class_addbang',['../m__pd_8h.html#a6fb3702ffdcd2340994b4575ab0d11e0',1,'m_pd.h']]],
@@ -173,8 +172,9 @@ var searchData=
   ['connect',['connect',['../classqtpd_1_1_patch_window_controller.html#a25a1535f92a3ee4a1797ad7578dfc39b',1,'qtpd::PatchWindowController']]],
   ['contains',['contains',['../classceammc_1_1_atom_list.html#a64fec50cf58275a65472a2dc9a706455',1,'ceammc::AtomList']]],
   ['context',['context',['../classqtpd_1_1_u_i_script_text_edit.html#ac8c44e94e6d826790065a04cf462e787',1,'qtpd::UIScriptTextEdit']]],
+  ['controller',['controller',['../classqtpd_1_1_patch_window.html#a1ff4345e33d74fd202b8f2d9edfad73e',1,'qtpd::PatchWindow']]],
   ['controllerobserver',['controllerObserver',['../class_application_controller.html#ac4a9c4e5993815856534c67085db9bb9',1,'ApplicationController::controllerObserver()'],['../class_controller_observer.html#a26aef2ea4c4162e39d9b48ddc4c91236',1,'ControllerObserver::ControllerObserver()']]],
-  ['copy',['copy',['../classqtpd_1_1_canvas_data.html#aad8dca9630dd41adb78a79335a69adbd',1,'qtpd::CanvasData::copy()'],['../classqtpd_1_1_patch_window.html#aa4f03a7f7cb369309a81385e6279768d',1,'qtpd::PatchWindow::copy()']]],
+  ['copy',['copy',['../classqtpd_1_1_canvas_data.html#aad8dca9630dd41adb78a79335a69adbd',1,'qtpd::CanvasData']]],
   ['copy_5fperform',['copy_perform',['../m__pd_8h.html#a5590104c00e3168793fb43a7357fc5b7',1,'m_pd.h']]],
   ['copybytes',['copybytes',['../m__pd_8h.html#af80e667284f408ae3981923da47abc06',1,'m_pd.h']]],
   ['count',['count',['../classceammc_1_1_atom_list.html#a79e0ec7012d71d4d240f7b6785658106',1,'ceammc::AtomList::count(const Atom &amp;a) const '],['../classceammc_1_1_atom_list.html#a43925a17c1e64ea52fdf1cf709111c34',1,'ceammc::AtomList::count(AtomPredicate pred) const ']]],
@@ -187,5 +187,5 @@ var searchData=
   ['createobjectmaker',['createObjectMaker',['../classqtpd_1_1_patch_window_controller.html#a92c7b1523afba244815d00e5f62f9f6b',1,'qtpd::PatchWindowController']]],
   ['createsubpatchwindow',['createSubpatchWindow',['../classqtpd_1_1_canvas_view.html#a67677c5dc5c650b478ad26d181fe2d95',1,'qtpd::CanvasView']]],
   ['createsubpatchwindowcontroller',['createSubpatchWindowController',['../classqtpd_1_1_patch_window_controller.html#ac419655d2ed11d933db465528f648dea',1,'qtpd::PatchWindowController']]],
-  ['cut',['cut',['../classqtpd_1_1_canvas_data.html#a461cd0c7e9fbae9ec94ed5a7c437d030',1,'qtpd::CanvasData::cut()'],['../classqtpd_1_1_patch_window.html#a732b3bf5ac49c7b69fa310da3cc57eea',1,'qtpd::PatchWindow::cut()']]]
+  ['cut',['cut',['../classqtpd_1_1_canvas_data.html#a461cd0c7e9fbae9ec94ed5a7c437d030',1,'qtpd::CanvasData']]]
 ];
