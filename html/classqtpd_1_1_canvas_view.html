@@ -167,10 +167,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a3f2b0324bb3860a07c9b75a28f246a66">mouseMoveEvent</a> (QMouseEvent *ev)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a98f2648af771e0704bd120981c3bce0f">mousePressEvent</a> (QMouseEvent *ev)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a59dab94a0a450965fddd6175025b84e7">mouseReleaseEvent</a> (QMouseEvent *ev)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#af6fb7d45fd5fa9ae0a113ff863276dc9">createObject</a> (QString objectData1, QPoint pos)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">prototype for universal object 'constructor'  <a href="#af6fb7d45fd5fa9ae0a113ff863276dc9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#ad1e902c87fb962c24b62b9bc6aa4bf11">createBoxForPatchWindow</a> (QMainWindow *patchWindow, QString objectData, QPoint pos)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">create object box for subpatch (when loaded from file)  <a href="#ad1e902c87fb962c24b62b9bc6aa4bf11"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">prototype for universal object 'constructor'  <a href="#ad1e902c87fb962c24b62b9bc6aa4bf11"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a3013f2984968a8a53cced8bd5cd7bee1">patchcord</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *obj1, int outlet, <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *obj2, int inlet)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates patchcord  <a href="#a3013f2984968a8a53cced8bd5cd7bee1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a6791ead8fe17f9a1cb0291922e6d26b8">patchcord</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *obj1, <a class="el" href="classqtpd_1_1_u_i_item.html">UIItem</a> *outport, <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *obj2, <a class="el" href="classqtpd_1_1_u_i_item.html">UIItem</a> *inport)</td></tr>
@@ -337,44 +335,6 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>create object box for subpatch (when loaded from file) </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">patchWindow</td><td></td></tr>
-    <tr><td class="paramname">objectData</td><td></td></tr>
-    <tr><td class="paramname">pos</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="af6fb7d45fd5fa9ae0a113ff863276dc9"></a><!-- doxytag: member="qtpd::CanvasView::createObject" ref="af6fb7d45fd5fa9ae0a113ff863276dc9" args="(QString objectData1, QPoint pos)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> * <a class="el" href="classqtpd_1_1_canvas_view.html#af6fb7d45fd5fa9ae0a113ff863276dc9">qtpd::CanvasView::createObject</a> </td>
-          <td>(</td>
-          <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>objectData1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">QPoint&#160;</td>
-          <td class="paramname"><em>pos</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
 <p>prototype for universal object 'constructor' </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -385,6 +345,16 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated:</a></b></dt><dd>move to window/controller </dd></dl>
+<p>create object box for subpatch (when loaded from file) </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">patchWindow</td><td></td></tr>
+    <tr><td class="paramname">objectData</td><td></td></tr>
+    <tr><td class="paramname">pos</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -1408,7 +1378,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 3 2017 12:38:47 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jun 3 2017 16:39:16 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
