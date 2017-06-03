@@ -27,7 +27,8 @@ public:
         // this calls top 'canvas' and gets all data as QStringList
         // canvas saves contents recursively
 
-        QStringList fileData = canvas->canvasAsPdStrings();
+        // OLD, remove
+        QStringList fileData;// = canvas->canvasAsPdStrings();
 
         //todo check
         for (int i = 0; i < fileData.count(); i++) {

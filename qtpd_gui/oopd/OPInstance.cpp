@@ -29,7 +29,7 @@ OPInstance::OPInstance(OPClass* opClass)
 
         // TODO
         // copy canvas here
-        QStringList canvasStrings = opClass->_patchWindow->canvasView()->canvasAsPdStrings();
+        QStringList canvasStrings = opClass->_patchWindow->canvasData()->asPdFileStrings();
 
         _patchWindow = PatchWindow::newWindow();
         FileParser::setParserWindow(_patchWindow);

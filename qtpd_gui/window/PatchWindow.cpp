@@ -20,18 +20,18 @@ PatchWindow::PatchWindow()
 
     //scroll->setWidget(canvas);
 
-//    QGridLayout* layout1 = new QGridLayout();
-//    layout1->setMargin(20);
-//    layout1->addWidget(canvas);
-//    scroll->setLayout(layout1);
+    //    QGridLayout* layout1 = new QGridLayout();
+    //    layout1->setMargin(20);
+    //    layout1->addWidget(canvas);
+    //    scroll->setLayout(layout1);
 
-//    scroll->setWidget(canvas);
+    //    scroll->setWidget(canvas);
 
     _canvasView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
     _canvasView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 
     //canvas->setMinimumSize(400,300);
-//    setCentralWidget(scroll);
+    //    setCentralWidget(scroll);
 
     setCentralWidget(_canvasView);
 
@@ -58,10 +58,10 @@ PatchWindow::PatchWindow()
     connect(_canvasView, &CanvasView::createSubpatchWindow, this, &PatchWindow::s_createSubpatchWindow);
 
     //
-    connect(cutAct, &QAction::triggered, this, &PatchWindow::cut);
-    connect(copyAct, &QAction::triggered, this, &PatchWindow::copy);
-    connect(duplicateAct, &QAction::triggered, this, &PatchWindow::duplicate);
-    connect(pasteAct, &QAction::triggered, this, &PatchWindow::paste);
+//    connect(cutAct, &QAction::triggered, this, &PatchWindow::cut);
+//    connect(copyAct, &QAction::triggered, this, &PatchWindow::copy);
+//    connect(duplicateAct, &QAction::triggered, this, &PatchWindow::duplicate);
+//    connect(pasteAct, &QAction::triggered, this, &PatchWindow::paste);
 }
 
 PatchWindow* PatchWindow::newWindow()
@@ -80,7 +80,6 @@ PatchWindow* PatchWindow::newWindow()
         qDebug("Failed to create canvas!");
     }
     //else
-
 
     return this_;
 }
@@ -101,8 +100,8 @@ PatchWindow* PatchWindow::newSubpatch(t_canvas* subpatch)
     if (!this_->_canvasView->pdObject()) {
         qDebug("Failed to create canvas!");
     }
-//    else
-//        cmp_loadbang(this_->canvas->pdObject());
+    //    else
+    //        cmp_loadbang(this_->canvas->pdObject());
 
     return this_;
 }
@@ -113,6 +112,14 @@ void PatchWindow::setController(PatchWindowController* c)
 
     connect(saveAsAct, &QAction::triggered, _controller, &PatchWindowController::menuSaveAs);
     connect(saveAct, &QAction::triggered, _controller, &PatchWindowController::menuSave);
+
+    connect(delObjectAct, &QAction::triggered, _controller, &PatchWindowController::menuDelete);
+
+    connect(cutAct, &QAction::triggered, _controller, &PatchWindowController::menuCut);
+    connect(copyAct, &QAction::triggered, _controller, &PatchWindowController::menuCopy);
+    connect(pasteAct, &QAction::triggered, _controller, &PatchWindowController::menuPaste);
+    connect(duplicateAct, &QAction::triggered, _controller, &PatchWindowController::menuDuplicate);
+
 }
 
 void PatchWindow::closeEvent(QCloseEvent* event)
@@ -120,13 +127,12 @@ void PatchWindow::closeEvent(QCloseEvent* event)
     // FIX
 
     //if (!canvas->keepPdObject())
-        //cmp_closepatch((t_canvas*)canvas->pdObject());
+    //cmp_closepatch((t_canvas*)canvas->pdObject());
 
-    if (isWindowModified())
-    {
+    if (isWindowModified()) {
         QMessageBox::StandardButton reply;
         reply = QMessageBox::question(this, "Qtpd", "The patch was modified. Do you want to save it?",
-                                    QMessageBox::Yes|QMessageBox::No|QMessageBox::Cancel);
+            QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel);
 
         if (reply == QMessageBox::No)
             event->accept();
@@ -134,10 +140,7 @@ void PatchWindow::closeEvent(QCloseEvent* event)
             event->ignore();
         if (reply == QMessageBox::Yes)
             _controller->menuSave();
-
     }
-
-
 }
 
 //////
@@ -193,7 +196,7 @@ void PatchWindow::closeEvent(QCloseEvent* event)
 void PatchWindow::setFileName(QString fname)
 {
 
-    _canvasView->setFileName (fname);
+    _canvasView->setFileName(fname);
 
     QString file = fname.section("/", -1, -1);
 
@@ -239,9 +242,7 @@ void PatchWindow::objectMakerDone()
             }
 
             _canvasView->deleteObject(obj);
-        }
-        else
-        {
+        } else {
             UIObject* new_obj = _canvasView->createObject(obj_name, _canvasView->newObjectPos());
         }
 
@@ -252,27 +253,28 @@ void PatchWindow::objectMakerDone()
 }
 
 // ==============================
+// TODO move to controller
 
-void PatchWindow::cut()
-{
-    _canvasView->dataCut();
-}
+//void PatchWindow::cut()
+//{
+//    _canvasView->dataCut();
+//}
 
-void PatchWindow::copy()
-{
-    _canvasView->dataCopy();
-}
+//void PatchWindow::copy()
+//{
+//    _canvasView->dataCopy();
+//}
 
-void PatchWindow::duplicate()
-{
-    _canvasView->dataDuplicate();
-}
+//void PatchWindow::duplicate()
+//{
+//    _canvasView->dataDuplicate();
+//}
 
-void PatchWindow::paste()
-{
-    FileParser::setParserWindow(this);
-    _canvasView->dataPaste();
-}
+//void PatchWindow::paste()
+//{
+//    FileParser::setParserWindow(this);
+//    _canvasView->dataPaste();
+//}
 
 // ----------
 

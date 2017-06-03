@@ -28,7 +28,7 @@ std::string UISubpatch::asPdFileString()
     std::string ret;
 
     if (subpatchWindow()) {
-        QStringList patchList = ((PatchWindow*)subpatchWindow())->canvasView()->canvasAsPdStrings();
+        QStringList patchList = ((PatchWindow*)subpatchWindow())->canvasData()->asPdFileStrings();
 
         ret += patchList.join("\r\n").toStdString();
     } else {

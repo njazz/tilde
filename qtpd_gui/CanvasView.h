@@ -137,21 +137,13 @@ public:
 
     // -------------------------------------------------------
 
-    ////
-    /// \group mouse Mouse
-    /// @{
-
     void mouseMoveEvent(QMouseEvent* ev);
     void mousePressEvent(QMouseEvent* ev);
     void mouseReleaseEvent(QMouseEvent* ev);
 
-    /** @}*/
-
     // -------------------------------------------------------
 
     ////
-    /// \group createdelete Create / delete objects and patchcords
-    /// @{
 
     ////
     /// \brief prototype for universal object 'constructor'
@@ -210,8 +202,6 @@ public:
     ///
     void deleteSelectedPatchcords();
 
-    /** @}*/
-
     // -------------------------------------------------------
 
     ////
@@ -260,11 +250,12 @@ public:
     ///
     int findObjectIndex(UIObject* obj);
 
-    ////
-    /// \brief this returns "restore ..." for canvas as box or calls filesaver for canvas
-    /// \return
-    ///
-    virtual std::string asPdFileString();
+    //remove
+//    ////
+//    /// \brief this returns "restore ..." for canvas as box or calls filesaver for canvas
+//    /// \return
+//    ///
+//    virtual std::string asPdFileString();
 
     ///////
     ///
@@ -300,11 +291,11 @@ public:
     ///
     void resizeToObjects();
 
-    ////
-    /// \brief returns canvas data for saving
-    /// \return
-    ///
-    QStringList canvasAsPdStrings();
+//    ////
+//    /// \brief returns canvas data for saving
+//    /// \return
+//    ///
+//    QStringList canvasAsPdStrings();
 
     ////
     /// \brief this is for loading or copying canvases. not yet used in fileparser
@@ -347,10 +338,10 @@ public:
     ///
     void showNewObjectMaker();
 
-    void dataCut();
-    void dataCopy();
-    void dataDuplicate();
-    void dataPaste();
+//    void dataCut();
+//    void dataCopy();
+//    void dataDuplicate();
+//    void dataPaste();
 
     // -- NEW
 

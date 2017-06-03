@@ -189,9 +189,9 @@ public Q_SLOTS:
     //////////
     // file
 
-    QStringList pdPatch(CanvasView* c)
+    QStringList pdPatch(CanvasData* c)
     {
-        return c->canvasAsPdStrings();
+        return c->asPdFileStrings();
     }
 
     // test

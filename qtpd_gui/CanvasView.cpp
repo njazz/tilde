@@ -706,21 +706,21 @@ int CanvasView::findObjectIndex(UIObject* obj)
     return _canvasData.findObjectIndex(obj);
 }
 
-std::string CanvasView::asPdFileString()
-{
+//std::string CanvasView::asPdFileString()
+//{
 
-    // todo cleanup
-    std::string ret;
+//    // todo cleanup
+//    std::string ret;
 
-    ret = "#N canvas ";
-    ret += std::to_string(x()) + " ";
-    ret += std::to_string(y()) + " ";
-    ret += std::to_string(width()) + " ";
-    ret += std::to_string(height()) + " ";
-    ret += "10; \r\n";
+//    ret = "#N canvas ";
+//    ret += std::to_string(x()) + " ";
+//    ret += std::to_string(y()) + " ";
+//    ret += std::to_string(width()) + " ";
+//    ret += std::to_string(height()) + " ";
+//    ret += "10; \r\n";
 
-    return ret;
-}
+//    return ret;
+//}
 
 std::string CanvasView::patchcordAsPdFileString(UIPatchcord* pcord)
 {
@@ -798,23 +798,23 @@ void CanvasView::resizeToObjects()
     _grid->setSize(scene()->itemsBoundingRect().size().toSize());
 }
 
-QStringList CanvasView::canvasAsPdStrings()
-{
+//QStringList CanvasView::canvasAsPdStrings()
+//{
 
-    QStringList ret;
+//    QStringList ret;
 
-    //save canvas
-    //todo canvas is subpatch flag
-    std::string out1;
+//    //save canvas
+//    //todo canvas is subpatch flag
+//    std::string out1;
 
-    out1 = asPdFileString(); //"#N canvas 0 0 400 300 10;\r\n";     //temporary
+//    out1 = asPdFileString(); //"#N canvas 0 0 400 300 10;\r\n";     //temporary
 
-    ret.append(out1.c_str());
+//    ret.append(out1.c_str());
 
-    ret += _canvasData.objectsAsPdFileStrings();
+//    ret += _canvasData.objectsAsPdFileStrings();
 
-    return ret;
-}
+//    return ret;
+//}
 
 void CanvasView::canvasFromPdStrings(QStringList strings)
 {
@@ -987,69 +987,71 @@ void CanvasView::setWindowSize(QSize wsize)
 
 // ==========================================
 
-void CanvasView::dataCut()
-{
+//void CanvasView::dataCut()
+//{
 
-    if (!_canvasData.hasSelectedObjects())
-        return;
+//    if (!_canvasData.hasSelectedObjects())
+//        return;
 
-    _canvasData.cut();
+//    _canvasData.cut();
 
-    deleteSelectedObjects();
-}
+//    deleteSelectedObjects();
+//}
 
-void CanvasView::dataCopy()
-{
-    if (!_canvasData.hasSelectedObjects())
-        return;
+//void CanvasView::dataCopy()
+//{
+//    if (!_canvasData.hasSelectedObjects())
+//        return;
 
-    _canvasData.cut();
+//    _canvasData.cut();
 
-    qDebug() << "***copy\n"
-             << Clipboard::inst()->get();
-}
+//    qDebug() << "***copy\n"
+//             << Clipboard::inst()->get();
+//}
 
-void CanvasView::dataDuplicate()
-{
-    CanvasView::dataCopy();
-    CanvasView::dataPaste();
-}
+//void CanvasView::dataDuplicate()
+//{
+//    CanvasView::dataCopy();
+//    CanvasView::dataPaste();
+//}
 
-void CanvasView::dataPaste()
-{
+//void CanvasView::dataPaste()
+//{
 
-    qDebug() << "***paste:\n"
-             << Clipboard::inst()->get();
+//    qDebug() << "***paste:\n"
+//             << Clipboard::inst()->get();
 
-    if (Clipboard::inst()->get().size() < 1)
-        return;
+//    if (Clipboard::inst()->get().size() < 1)
+//        return;
 
-    QStringList list1;
+//    QStringList list1;
 
-    for (size_t i = 0; i < Clipboard::inst()->size(); i++) {
-        QString str = Clipboard::inst()->at(i);
+//    for (size_t i = 0; i < Clipboard::inst()->size(); i++) {
+//        QString str = Clipboard::inst()->at(i);
 
-        QStringList subList = str.split(" ");
+//        QStringList subList = str.split(" ");
 
-        // offset copied objects
-        if (subList.size() >= 3) {
-            if (subList.at(1) == "obj") {
-                int x = ((QString)subList.at(2)).toFloat();
-                int y = ((QString)subList.at(3)).toFloat();
+//        // offset copied objects
+//        if (subList.size() >= 3) {
+//            if (subList.at(1) == "obj") {
+//                int x = ((QString)subList.at(2)).toFloat();
+//                int y = ((QString)subList.at(3)).toFloat();
 
-                subList[2] = QString::number(x + 20);
-                subList[3] = QString::number(y + 20);
-            }
+//                subList[2] = QString::number(x + 20);
+//                subList[3] = QString::number(y + 20);
+//            }
 
-            qDebug() << "paste" << subList;
+//            qDebug() << "paste" << subList;
 
-            Clipboard::inst()->setStringAt(i, subList.join(" "));
-            FileParser::parseQString(Clipboard::inst()->at(i));
-        }
-    }
+//            Clipboard::inst()->setStringAt(i, subList.join(" "));
+//            FileParser::parseQString(Clipboard::inst()->at(i));
+//        }
+//    }
 
-    // TODO copy patchcords
-}
+//    // TODO copy patchcords
+//}
+
+// ------------------------------------
 
 void CanvasView::setZoom(float zoom)
 {

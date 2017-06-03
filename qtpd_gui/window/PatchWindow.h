@@ -118,7 +118,7 @@ public:
 
         delObjectAct = new QAction(tr("Delete object"), this);
         delObjectAct->setShortcut(tr("Backspace"));
-        connect(delObjectAct, &QAction::triggered, this, &PatchWindow::delSelected);
+        //connect(delObjectAct, &QAction::triggered, this, &PatchWindow::delSelected);
 
         selectAllAct = new QAction(tr("Select all"), this);
         selectAllAct->setShortcut(tr("Ctrl+A"));
@@ -564,10 +564,10 @@ public:
 
     // ==============================
 
-    void cut();
-    void copy();
-    void duplicate();
-    void paste();
+//    void cut();
+//    void copy();
+//    void duplicate();
+//    void paste();
 
     //
     void zoomIn()
