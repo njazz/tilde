@@ -98,6 +98,9 @@ public slots:
 
     void preferencesWindow();
     void audioSettingsWindow();
+
+    void dspOn();
+    void dspOff();
 };
 
 #endif // CM_PDLINK_H

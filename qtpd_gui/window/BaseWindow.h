@@ -98,18 +98,18 @@ private slots:
 
     void close();
 
-    void dspOn();
-    void dspOff();
+//    void dspOn();
+//    void dspOff();
 
     // remove
-    void preferencesWindow();
-    void audioSettingsWindow();
+//    void preferencesWindow();
+//    void audioSettingsWindow();
 
-    void newFile();
-    void openFileDialog();
+//    void newFile();
+//    void openFileDialog();
 
-    void pdWindow();
-    void pythonConsole();
+//    void pdWindow();
+//    void pythonConsole();
 };
 }
 

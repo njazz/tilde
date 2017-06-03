@@ -35,11 +35,11 @@ BaseWindow::BaseWindow(QWidget* parent)
     createActions();
     createMenus();
 
-#ifdef WITH_PYTHON
-    PythonQtObjectPtr mainContext = PythonQt::self()->getMainModule();
-    pythonConsole_ = new PythonQtScriptingConsole(NULL, mainContext);
-    qDebug("pyConsole %lu", (long)pythonConsole_);
-#endif
+//#ifdef WITH_PYTHON
+//    PythonQtObjectPtr mainContext = PythonQt::self()->getMainModule();
+//    pythonConsole_ = new PythonQtScriptingConsole(NULL, mainContext);
+//    qDebug("pyConsole %lu", (long)pythonConsole_);
+//#endif
 
     _appController=0;
 }
@@ -59,6 +59,9 @@ void BaseWindow::setAppController(ApplicationController* appController)
     connect(pythonConsoleAct, &QAction::triggered, _appController, &ApplicationController::pythonConsole);
     connect(pdAudioSettingsAct, &QAction::triggered, _appController, &ApplicationController::audioSettingsWindow);
     connect(pdPreferencesAct, &QAction::triggered, _appController, &ApplicationController::preferencesWindow);
+
+    connect(dspOnAct, &QAction::triggered, _appController, &ApplicationController::dspOn);
+    connect(dspOffAct, &QAction::triggered, _appController, &ApplicationController::dspOff);
 
 }
 
@@ -129,11 +132,11 @@ void BaseWindow::createActions()
 
     dspOnAct = new QAction(tr("DSP On"), this);
     dspOnAct->setShortcut(tr("Ctrl+/"));
-    connect(dspOnAct, &QAction::triggered, this, &BaseWindow::dspOn);
+//    connect(dspOnAct, &QAction::triggered, this, &BaseWindow::dspOn);
 
     dspOffAct = new QAction(tr("DSP Off"), this);
     dspOffAct->setShortcut(tr("Ctrl+."));
-    connect(dspOffAct, &QAction::triggered, this, &BaseWindow::dspOff);
+//    connect(dspOffAct, &QAction::triggered, this, &BaseWindow::dspOff);
 
     pdWindowAct = new QAction(tr("Pd Window"), this);
     pdWindowAct->setShortcut(tr("Ctrl+R"));
@@ -230,105 +233,105 @@ void BaseWindow::close()
 
 // TODO move to AppController
 
-void BaseWindow::dspOn()
-{
-    cmp_switch_dsp(true);
-    dspOnAct->setChecked(true);
-}
+//void BaseWindow::dspOn()
+//{
+//    cmp_switch_dsp(true);
+//    dspOnAct->setChecked(true);
+//}
 
-void BaseWindow::dspOff()
-{
-    cmp_switch_dsp(false);
-    dspOnAct->setChecked(false);
-}
+//void BaseWindow::dspOff()
+//{
+//    cmp_switch_dsp(false);
+//    dspOnAct->setChecked(false);
+//}
 
 
 // TODO move to AppController
 
-void BaseWindow::preferencesWindow()
-{
-    qDebug() << "preferences";
-    PropertyList* l1 = &Preferences::inst();
-    PropertiesWindow* p1 = new PropertiesWindow(l1);
-    p1->setWindowTitle("Qtpd preferences");
-    p1->move(30, 30);
-    p1->show();
-}
+//void BaseWindow::preferencesWindow()
+//{
+//    qDebug() << "preferences";
+//    PropertyList* l1 = &Preferences::inst();
+//    PropertiesWindow* p1 = new PropertiesWindow(l1);
+//    p1->setWindowTitle("Qtpd preferences");
+//    p1->move(30, 30);
+//    p1->show();
+//}
 
-void BaseWindow::audioSettingsWindow()
-{
-    qDebug() << "audio settings";
-    PropertyList* l1 = &AudioSettings::inst();
-    PropertiesWindow* p1 = new PropertiesWindow(l1);
-    p1->setWindowTitle("Audio settings");
-    p1->move(30, 30);
-    p1->show();
-}
+//void BaseWindow::audioSettingsWindow()
+//{
+//    qDebug() << "audio settings";
+//    PropertyList* l1 = &AudioSettings::inst();
+//    PropertiesWindow* p1 = new PropertiesWindow(l1);
+//    p1->setWindowTitle("Audio settings");
+//    p1->move(30, 30);
+//    p1->show();
+//}
 
-#ifdef WITH_PYTHON
+//#ifdef WITH_PYTHON
 
-PythonQtScriptingConsole* BaseWindow::pythonConsole_;
+//PythonQtScriptingConsole* BaseWindow::pythonConsole_;
 
-#endif
+//#endif
 
-////
-/// \brief new patch window
-///
-void BaseWindow::newFile()
-{
-    PatchWindow* newWindow = PatchWindow::newWindow();
-    newWindow->show();
+//////
+///// \brief new patch window
+/////
+//void BaseWindow::newFile()
+//{
+//    PatchWindow* newWindow = PatchWindow::newWindow();
+//    newWindow->show();
 
-    // NEW 0517
-    //_appController->newPatchWindowController();
-}
+//    // NEW 0517
+//    //_appController->newPatchWindowController();
+//}
 
-////
-/// \brief new patch window from file
-///
-void BaseWindow::openFileDialog()
-{
-    QString fname = QFileDialog::getOpenFileName(0, QString("Open patch"), QString("~/"), QString("*.pd"), 0, 0);
-    if (fname != "")
-        FileParser::open(fname);
+//////
+///// \brief new patch window from file
+/////
+//void BaseWindow::openFileDialog()
+//{
+//    QString fname = QFileDialog::getOpenFileName(0, QString("Open patch"), QString("~/"), QString("*.pd"), 0, 0);
+//    if (fname != "")
+//        FileParser::open(fname);
 
-    // NEW 0517
-    //_appController->openFileDialog();
-}
+//    // NEW 0517
+//    //_appController->openFileDialog();
+//}
 
-////
-/// \brief show/hide Pd console
-///
-void BaseWindow::pdWindow()
-{
-    //PdWindow::inst()->setAppController(_appController);
-
-
-//    if (PdWindow::inst()->isVisible())
-//        PdWindow::inst()->hide();
-//    else
-//        PdWindow::inst()->show();
-
-}
-
-void BaseWindow::pythonConsole()
-{
-
-    //_appController->pythonConsole();
+//////
+///// \brief show/hide Pd console
+/////
+//void BaseWindow::pdWindow()
+//{
+//    //PdWindow::inst()->setAppController(_appController);
 
 
-#ifdef WITH_PYTHON
-    if (pythonConsole_) {
-        if (pythonConsole_->isVisible())
-            pythonConsole_->hide();
-        else {
-            pythonConsole_->show();
-        }
-    }
+////    if (PdWindow::inst()->isVisible())
+////        PdWindow::inst()->hide();
+////    else
+////        PdWindow::inst()->show();
 
-#else
-    cmp_post("This build is compiled without Python!");
-#endif
+//}
 
-}
+//void BaseWindow::pythonConsole()
+//{
+
+//    //_appController->pythonConsole();
+
+
+//#ifdef WITH_PYTHON
+//    if (pythonConsole_) {
+//        if (pythonConsole_->isVisible())
+//            pythonConsole_->hide();
+//        else {
+//            pythonConsole_->show();
+//        }
+//    }
+
+//#else
+//    cmp_post("This build is compiled without Python!");
+//#endif
+
+//}
 }

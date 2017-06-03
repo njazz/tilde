@@ -71,4 +71,21 @@ void ApplicationController::audioSettingsWindow()
 }
 
 
+void ApplicationController::dspOn()
+{
+    //cmp_switch_dsp(true);
+    //dspOnAct->setChecked(true);
+    _mainInstance->dspOn();
+
+    //todo DSP observer
+}
+
+void ApplicationController::dspOff()
+{
+    //cmp_switch_dsp(false);
+    //dspOnAct->setChecked(false);
+     _mainInstance->dspOff();
+}
+
+
 
