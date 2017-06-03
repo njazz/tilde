@@ -486,30 +486,36 @@ void CanvasView::patchcord(UIObject* obj1, int outlet, UIObject* obj2, int inlet
 {
     // TODO-PD_OBJECT
 
-//    if (obj1->pdObject() && obj2->pdObject()) {
-//        if (((UIBox*)obj1)->errorBox()) {
-//            //create dummy inlets / outlets
-//            qDebug() << "errorbox";
-//        };
-//        if (((UIBox*)obj2)->errorBox()) {
-//            //create dummy inlets / outlets
-//            qDebug() << "errorbox";
-//        };
 
-//        Port* outport = obj1->outletAt(outlet);
-//        Port* inport = obj2->inletAt(inlet);
 
-//        UIPatchcord* pc = new UIPatchcord(obj1, outport, obj2, inport);
+    if (obj1->serverObject() && obj2->serverObject()) {
+        if (((UIBox*)obj1)->errorBox()) {
+            //create dummy inlets / outlets
+            qDebug() << "errorbox";
+        };
 
-//        if (obj1->pdOutletType(outlet))
-//            pc->setPatchcordType(cm_pt_signal);
+        if (((UIBox*)obj2)->errorBox()) {
+            //create dummy inlets / outlets
+            qDebug() << "errorbox";
+        };
 
-//        qDebug("pdlib patchcord");
+        Port* outport = obj1->outletAt(outlet);
+        Port* inport = obj2->inletAt(inlet);
+
+        UIPatchcord* pc = new UIPatchcord(obj1, outport, obj2, inport);
+
+        if (obj1->pdOutletType(outlet))
+            pc->setPatchcordType(cm_pt_signal);
+
+        qDebug("server patchcord");
+
+        _canvasData.serverCanvas()->connect(obj1->serverObject(), outlet, obj1->serverObject(), inlet);
+
 //        cmp_patchcord((t_object*)obj1->pdObject(), outlet, (t_object*)obj2->pdObject(), inlet);
 //        _canvasData.addPatchcord(pc); //patchcords()->push_back(pc);
 
-//        scene()->addItem(pc);
-//    } else
+        scene()->addItem(pc);
+    } else
         qDebug("canvas patchcord error");
 }
 

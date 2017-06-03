@@ -5,7 +5,7 @@
 #include "CanvasView.h"
 #include "UIBox.h"
 
-#include "PdLink.h"
+//#include "PdLink.h"
 
 #include "FileSaver.h"
 
@@ -13,13 +13,11 @@
 
 namespace qtpd {
 
-
 ////
 /// \brief Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas
 class PatchWindow : public BaseWindow {
 
 private:
-
     PatchWindowController* _controller;
 
     QScrollArea* scroll;
@@ -90,7 +88,7 @@ private:
 
     //void doSave(QString fname);
 
-//    CanvasData* _canvasData;
+    //    CanvasData* _canvasData;
     CanvasView* _canvasView;
 
 private slots:
@@ -105,19 +103,18 @@ public:
     static PatchWindow* newWindow();
     static PatchWindow* newSubpatch(t_canvas* subpatch = 0);
 
-//    CanvasData* canvasData() {return _canvasData;};
-//    void setCanvasData(CanvasData* d){_canvasData = d;}
+    //    CanvasData* canvasData() {return _canvasData;};
+    //    void setCanvasData(CanvasData* d){_canvasData = d;}
 
-    CanvasView* canvasView() {return _canvasView;};
-    void setCanvasView(CanvasView* v){_canvasView = v;}
+    CanvasView* canvasView() { return _canvasView; };
+    void setCanvasView(CanvasView* v) { _canvasView = v; }
 
     void setController(PatchWindowController* c);
-    PatchWindowController* controller(){return _controller;} //temporary!
+    PatchWindowController* controller() { return _controller; } //temporary!
 
     void createActions()
     {
         //        connect(openAct, &QAction::triggered, this, &cm_patchwindow::open);
-
 
         delObjectAct = new QAction(tr("Delete object"), this);
         delObjectAct->setShortcut(tr("Backspace"));
@@ -125,7 +122,6 @@ public:
 
         selectAllAct = new QAction(tr("Select all"), this);
         selectAllAct->setShortcut(tr("Ctrl+A"));
-
 
         selectAgainAct = new QAction(tr("Select again"), this);
         //selectAgainAct->setShortcut(tr("Ctrl+A"));
@@ -340,7 +336,6 @@ public:
 
     void resizeEvent(QResizeEvent* event);
 
-
     //----------------------------------------------------------------------------------------
 
     // todo less spaghetti
@@ -358,7 +353,6 @@ public:
 
     // ============================================
 
-
     //canvasView() -> controller
     void newMessageBox();
     void newFloatBox();
@@ -372,23 +366,23 @@ public:
 
     // ----------------------------------------------------
 
-//    void delSelected()
-//    {
-//        canvasView()->deleteSelectedObjects();
-//        canvasView()->deleteSelectedPatchcords();
+    //    void delSelected()
+    //    {
+    //        canvasView()->deleteSelectedObjects();
+    //        canvasView()->deleteSelectedPatchcords();
 
-//        setWindowModified(true);
-//    }
+    //        setWindowModified(true);
+    //    }
 
-//    void selectAll()
-//    {
-//        // todo direct slot connection
-//        //canvasView()->selectAll();
+    //    void selectAll()
+    //    {
+    //        // todo direct slot connection
+    //        //canvasView()->selectAll();
 
-//        _controller->menuSelectAll();
+    //        _controller->menuSelectAll();
 
-//        setWindowModified(true);
-//    }
+    //        setWindowModified(true);
+    //    }
 
     void objectMakerDone();
 
@@ -454,25 +448,23 @@ public:
 
     // ==============================
 
-//    void cut();
-//    void copy();
-//    void duplicate();
-//    void paste();
+    //    void cut();
+    //    void copy();
+    //    void duplicate();
+    //    void paste();
 
     //
     void zoomIn()
     {
         canvasView()->setZoom(1.1);
-        qDebug()<<"zoom"<<canvasView()->getZoom();
+        qDebug() << "zoom" << canvasView()->getZoom();
     }
 
     void zoomOut()
     {
-        canvasView()->setZoom(1/1.1);
-        qDebug()<<"zoom"<<canvasView()->getZoom();
+        canvasView()->setZoom(1 / 1.1);
+        qDebug() << "zoom" << canvasView()->getZoom();
     }
-
-
 
 public slots:
     std::pair<QMainWindow*, qtpd::UIObject*> s_createSubpatchWindow()

@@ -9,7 +9,7 @@
 #include "Port.h"
 #include "UIObject.h"
 
-#include "PdLink.h"
+//#include "PdLink.h"
 
 #include <QGraphicsView>
 
@@ -139,23 +139,7 @@ public:
 
     // ------------------------------------------------
 
-    void mousePressEvent(QGraphicsSceneMouseEvent* ev)
-    {
-
-        if (getEditMode() == em_Unlocked)
-            emit selectBox(this, ev);
-
-        dragOffset = ev->pos().toPoint();
-
-        if (getEditMode() != em_Unlocked) {
-
-            _value = !_value;
-
-            cmp_switch_dsp(_value);
-
-            update();
-        }
-    }
+    void mousePressEvent(QGraphicsSceneMouseEvent* ev);
 
     void mouseReleaseEvent(QGraphicsSceneMouseEvent*)
     {

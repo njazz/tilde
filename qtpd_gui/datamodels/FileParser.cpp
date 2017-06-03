@@ -511,6 +511,8 @@ void FileParser::open(QString fname)
 void FileParser::open(QString fname, CanvasData* canvasData)
 {
 
+    qDebug("new parser");
+
     QFile f(fname);
     if (f.open(QIODevice::ReadOnly)) {
 
@@ -539,7 +541,8 @@ void FileParser::open(QString fname, CanvasData* canvasData)
             _pdParserWindow->setFileName(fname);
             _pdParserWindow->canvasView()->setEditMode(em_Locked);
 
-            cmp_loadbang(_pdParserWindow->canvasView()->pdObject());
+            // TODO
+            //_pdParserWindow->controller()->canvasData()->serverCanvas()->loadbang();
 
             _pdParserWindow->show();
         }

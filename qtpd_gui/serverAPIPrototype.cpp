@@ -73,9 +73,10 @@ void ServerObject::setType(ServerObjectType type) { _type = type; }
 
 ServerProperties* ServerObject::properties() { return _properties; };
 
-void ServerObject::connectUI(void* uiObject, t_updateUI uiFunction) {
+void ServerObject::connectUI(void* uiObject, t_updateUI uiFunction)
+{
 
-    cmp_connectUI((t_pd*)_pdObject, uiObject, uiFunction );
+    cmp_connectUI((t_pd*)_pdObject, uiObject, uiFunction);
 };
 
 // ----------------------------------------
@@ -122,7 +123,11 @@ ServerCanvas* ServerCanvas::createEmptySubCanvas(){};
 ServerArray* ServerCanvas::createArray(){};
 void ServerCanvas::deleteArray(ServerArray* a){};
 
-ServerPatchcord* ServerCanvas::connect(ServerObject src, int srcIdx, ServerObject dest, int destIdx){}; //?
+ServerPatchcord* ServerCanvas::connect(ServerObject* src, int srcIdx, ServerObject* dest, int destIdx)
+{
+    cmp_patchcord((t_object*)src->_pdObject, srcIdx, (t_object*)dest->_pdObject, destIdx);
+};
+
 void ServerCanvas::disconnect(ServerPatchcord* p){}; //??
 
 vector<ServerObject*> ServerCanvas::getObjectList()
@@ -141,6 +146,12 @@ ServerPath ServerCanvas::path()
 {
     return _path;
 };
+
+void ServerCanvas::loadbang()
+{
+    if (_pdObject)
+        cmp_loadbang((t_canvas*)_pdObject);
+}
 
 // --------
 class printHook {
@@ -174,6 +185,7 @@ ServerInstance::ServerInstance()
 ServerCanvas* ServerInstance::createCanvas()
 {
     ServerCanvas* ret = new ServerCanvas();
+    ret->setParentInstance(this);
     _canvases.push_back(ret);
     return ret;
 };
@@ -184,6 +196,7 @@ void ServerInstance::deleteCanvas(){
 
 void ServerInstance::dspOn() { cmp_switch_dsp(true); };
 void ServerInstance::dspOff() { cmp_switch_dsp(false); };
+void ServerInstance::dspSwitch(bool value) { cmp_switch_dsp(value); };
 
 void ServerInstance::registerObserver(Observer* o){};
 void ServerInstance::deleteObserver(Observer* o){};

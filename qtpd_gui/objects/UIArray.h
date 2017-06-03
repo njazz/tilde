@@ -67,7 +67,8 @@ public:
                 t_symbol* name = gensym(list.at(1).toStdString().c_str());
                 t_floatarg size = list.at(2).toFloat();
 
-                b->_editor.setPdArray(cmp_new_array(pdCanvas, name, size, 1, 1));
+                // TODO
+                //b->_editor.setServerArray(cmp_new_array(pdCanvas, name, size, 1, 1));
                 b->_editor.setWindowTitle("array: " + list.at(1));
             }
         }

@@ -10,7 +10,7 @@
 #include "Port.h"
 #include "UIObject.h"
 
-#include "PdLink.h"
+//#include "PdLink.h"
 
 #include <QGraphicsView>
 

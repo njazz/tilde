@@ -71,13 +71,16 @@ enum ServerObjectType { typeObject,
 
 class ServerObject {
 private:
-    void* _pdObject;
+
 
     ServerObject* _parent;
     ServerObjectType _type;
     ServerProperties* _properties;
 
 public:
+    // temporary
+    void* _pdObject;
+
     ServerObject();
 
     ServerObject(ServerObject* parent, string text);
@@ -121,6 +124,8 @@ public:
 
 // ----------------------------------------
 
+class ServerInstance;
+
 class ServerCanvas : ServerObject {
 private:
     void* _canvas;
@@ -129,8 +134,13 @@ private:
     vector<ServerPatchcord*> _patchcords;
     ServerPath _path;
 
+    ServerInstance* _parentInstance;
+
 public:
     ServerCanvas();
+
+    void setParentInstance(ServerInstance *p){_parentInstance = p;}
+    ServerInstance* parentInstance(){return _parentInstance;}
 
     ServerObject* createObject(string name); // Object* || Canvas*
     void deleteObject(ServerObject* o);
@@ -142,7 +152,7 @@ public:
     ServerArray* createArray();
     void deleteArray(ServerArray* a);
 
-    ServerPatchcord* connect(ServerObject src, int srcIdx, ServerObject dest, int destIdx); //?
+    ServerPatchcord* connect(ServerObject *src, int srcIdx, ServerObject *dest, int destIdx); //?
     void disconnect(ServerPatchcord* p); //??
 
     vector<ServerObject*> getObjectList();
@@ -150,6 +160,8 @@ public:
     virtual void registerObserver(Observer* o);
     virtual void deleteObserver(Observer* o);
     ServerPath path();
+
+    void loadbang();
 };
 
 class ServerAudioDevice {
@@ -179,6 +191,7 @@ public:
 
     void dspOn();
     void dspOff();
+    void dspSwitch(bool value);
 
     void registerObserver(Observer* o);
     void deleteObserver(Observer* o);
@@ -191,9 +204,9 @@ public:
 
     void loadLibrary();
 
-    void post(string text);
-    void error(string text);
-    void verbose(int level, string text);
+    static void post(string text);
+    static void error(string text);
+    static void verbose(int level, string text);
 
     ServerAudioDevice* audioDevice();
     ServerMIDIDevice* midiDevice();

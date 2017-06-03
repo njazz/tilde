@@ -8,9 +8,11 @@
 #include <QPainter>
 #include <QWidget>
 
-#include "PdLink.h"
+//#include "PdLink.h"
 
 #include "math.h"
+
+#include "../API_prototype/serverAPIPrototype.h"
 
 ////
 /// \brief Array Editor QWidget
@@ -18,16 +20,21 @@
 class UIArrayEditor : public QWidget {
     Q_OBJECT
 private:
-    t_garray* _pdArray;
+    //t_garray* _pdArray;
     int _arrSize;
-    t_word* _arrData;
+    float* _arrData;
+
+    ServerArray* _serverArray;
+
 
 public:
     void paintEvent(QPaintEvent*)
     {
-        if (_pdArray) {
+        if (_serverArray) {
 
-            cmp_get_array_data(_pdArray, &_arrSize, &_arrData);
+            //cmp_get_array_data(_pdArray, &_arrSize, &_arrData);
+
+            _serverArray->getData(_arrData, _arrSize);
 
             if (_arrSize < 67108864) // temporary 64M samples limit
             {
@@ -44,21 +51,24 @@ public:
                 for (int x = 0; x < (width() - 1); x++) {
 
                     int index = floor(float(x) / width() * _arrSize);
-                    float y = ((_arrData[index].w_float * .5) + .5) * height();
+                    float y = ((_arrData[index] * .5f) + .5) * height();
                     p.drawLine(x, y0, x + 1, y);
                     y0 = y;
                 }
             } else {
-                cmp_post("bad array size!");
+                //cmp_post("bad array size!");
+
+                ServerInstance::post("bad array size");
             }
         } else {
-            cmp_post("bad pd array!");
+            //cmp_post("bad pd array!");
+            ServerInstance::post("bad server array");
         }
     }
 
-    void setPdArray(t_garray* arr)
+    void setServerArray(ServerArray* arr)
     {
-        _pdArray = arr;
+        _serverArray = arr;
     }
 
     explicit UIArrayEditor(QWidget* parent = 0);
