@@ -34,15 +34,16 @@ ServerObject::ServerObject(ServerObject* parent, string text)
 //void ServerObject::setParent(ServerObject* parent) { _parent = parent; };
 ServerObject* ServerObject::parent() { return _parent; };
 
-void ServerObject::message(const AtomList& list)
-{
-    string msg;
+//void ServerObject::message(const AtomList& list)
+//{
+//    string msg;
 
-    //todo convert
+//    //todo convert
 
-    if (_pdObject)
-        cmp_sendstring(reinterpret_cast<t_pd*>(_pdObject), msg);
-};
+
+//    if (_pdObject)
+//        cmp_sendstring(reinterpret_cast<t_pd*>(_pdObject), msg);
+//};
 
 void ServerObject::message(const string str)
 {
@@ -51,9 +52,15 @@ void ServerObject::message(const string str)
     cout << "msg " << msg << endl;
 
     if (_pdObject)
+    {
+        cout << "send->" << endl;
         cmp_sendstring(reinterpret_cast<t_pd*>(_pdObject), msg);
+    }
     else
+    {
         cmp_post("internal pdObject error");
+        cout << "pdobject error" << endl;
+    }
 };
 
 int ServerObject::inletCount()
@@ -189,6 +196,11 @@ ServerInstance::ServerInstance()
 {
     cmp_pdinit();
     cmp_setprinthook(&printHook::hookFunction);
+
+    _consoleObserver = 0;
+    _midiDevice = 0;
+    _audioDevice = 0;
+    _path = 0;
 }
 
 ServerCanvas* ServerInstance::createCanvas()

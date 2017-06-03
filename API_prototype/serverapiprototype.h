@@ -87,7 +87,7 @@ public:
 
     virtual ServerObject* parent();
 
-    void message(const AtomList& list);
+    //void message(const AtomList& list);
     void message(const string str);
 
     virtual int inletCount();

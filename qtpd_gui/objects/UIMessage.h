@@ -78,7 +78,7 @@ public:
             qDebug("Error: no such object %s", message.c_str());
         }
 
-        b->setPdMessage(data1.toStdString().c_str());
+        b->setPdMessage(data1);
 
         b->addInlet();
         b->addOutlet();
@@ -224,6 +224,7 @@ public:
 
                 std::string msg = ("set " + _objectDataModel.objectData().toStdString());
                 serverObject()->message(msg);
+                qDebug() << "sync";
             }
         }
 

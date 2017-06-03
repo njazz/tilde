@@ -483,14 +483,19 @@ void cmp_switch_dsp(bool on)
 
 void cmp_sendstring(t_pd* obj, std::string msg)
 {
+    std::cout <<"sendstring " <<std::endl;
+
     AtomList* list = AtomListFromString(msg);
+
+    std::cout << "atomlist1 " << list->size() << std::endl;
 
     AtomList* list2 = new AtomList;
     *list2 = list->subList(1, list->size());
 
-    std::cout << "atomlist" << list2->size() << list2 << "\n";
+    std::cout << "atomlist2 " << list2->size() <<" " << list2 << std::endl;
 
     pd_typedmess(obj, list->at(0).asSymbol(), (int)list2->size(), list2->toPdData());
+    //pd_typedmess(obj, gensym("float"), 0, 0);
 }
 
 void cmp_post(std::string text)
