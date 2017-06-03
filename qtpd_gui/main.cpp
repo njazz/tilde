@@ -29,13 +29,6 @@
 
 using namespace qtpd;
 
-void pd_window_printhook(const char* s)
-{
-    //qDebug("print hook %s",s);
-    //if (pdw)
-    emit PdWindow::inst()->cm_log_signal(QString(s));
-}
-
 int main(int argc, char* argv[])
 {
     QApplication a(argc, argv);
@@ -58,14 +51,7 @@ int main(int argc, char* argv[])
 
     ApplicationController* controller = new ApplicationController();
 
-    //cmp_pdinit();
-    cmp_setprinthook(&pd_window_printhook);
-
     QTPD_AUDIOSETTINGS_INIT;
-
-    //move to appcontroller
-    PdWindow::inst()->move(0, 100);
-    PdWindow::inst()->show();
 
     qDebug() << "started";
     cmp_post("qtpd started");
@@ -100,8 +86,6 @@ int main(int argc, char* argv[])
     Preferences::inst().addPath(extPath1.c_str());
     Preferences::inst().addPath(extPath2.c_str());
     Preferences::inst().addPath(extPath3.c_str());
-
-
 
     return a.exec();
 }

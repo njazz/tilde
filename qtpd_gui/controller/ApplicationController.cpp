@@ -25,10 +25,10 @@ void ApplicationController::pdWindow()
 {
     //PdWindow::inst()->setAppController(_appController);
 
-    if (PdWindow::inst()->isVisible())
-        PdWindow::inst()->hide();
+    if (_pdWindow->isVisible())
+        _pdWindow->hide();
     else
-        PdWindow::inst()->show();
+        _pdWindow->show();
 }
 
 void ApplicationController::pythonConsole()

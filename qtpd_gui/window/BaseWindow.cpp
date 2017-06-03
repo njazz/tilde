@@ -289,10 +289,10 @@ void BaseWindow::pdWindow()
     //PdWindow::inst()->setAppController(_appController);
 
 
-    if (PdWindow::inst()->isVisible())
-        PdWindow::inst()->hide();
-    else
-        PdWindow::inst()->show();
+//    if (PdWindow::inst()->isVisible())
+//        PdWindow::inst()->hide();
+//    else
+//        PdWindow::inst()->show();
 
 }
 

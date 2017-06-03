@@ -3,8 +3,8 @@
 
 //#include "PdLink.h"
 
-#include <vector>
 #include <string>
+#include <vector>
 
 namespace ceammc {
 class AtomList;
@@ -23,6 +23,15 @@ public:
 class PropertyObserver {
 public:
     virtual void update();
+};
+
+class ConsoleObserver : public Observer {
+private:
+    string _text;
+
+public:
+    void setText(string text){_text = text;};
+    string text(){return _text;};
 };
 
 typedef enum { XLetMessage,
@@ -48,13 +57,13 @@ class ServerProperties {
     vector<PropertyObserver*> _observers;
 
 public:
-    void addObserver(PropertyObserver *p);
-    void removeObserver(PropertyObserver *p);
+    void addObserver(PropertyObserver* p);
+    void removeObserver(PropertyObserver* p);
 };
 
 enum ServerObjectType { typeObject,
     typeCanvas,
-    typeArray } ;
+    typeArray };
 
 //class t_pd;
 
@@ -88,6 +97,7 @@ public:
 
 class ServerArray : ServerObject {
     int _size;
+
 public:
     ServerArray();
 
@@ -103,7 +113,6 @@ public:
 };
 
 // ----------------------------------------
-
 
 class ServerCanvas : ServerObject {
 private:
@@ -153,6 +162,7 @@ private:
     ServerPath* _path;
     ServerAudioDevice* _audioDevice;
     ServerMIDIDevice* _midiDevice;
+    ConsoleObserver* _consoleObserver;
 
 public:
     ServerInstance();
@@ -165,6 +175,8 @@ public:
 
     void registerObserver(Observer* o);
     void deleteObserver(Observer* o);
+
+    void setConsoleObserver(ConsoleObserver* o);
 
     ServerPath* path();
 

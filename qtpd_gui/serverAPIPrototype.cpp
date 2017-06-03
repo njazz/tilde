@@ -68,7 +68,6 @@ ServerProperties* ServerObject::properties() { return _properties; };
 // ----------------------------------------
 ServerArray::ServerArray()
 {
-
 }
 int ServerArray::size()
 {
@@ -128,10 +127,33 @@ ServerPath ServerCanvas::path()
     return _path;
 };
 
+// --------
+class printHook {
+private:
+    static vector<ConsoleObserver*> _consoleObservers;
+
+public:
+    static void addObserver(ConsoleObserver* c) { _consoleObservers.push_back(c); };
+    static void deleteObserver(ConsoleObserver* c){ /*todo*/ };
+
+    static void hookFunction(const char* str)
+    {
+        vector<ConsoleObserver*>::iterator it;
+        for (it = _consoleObservers.begin(); it != _consoleObservers.end(); ++it) {
+            ConsoleObserver* c = *it;
+            c->setText(str);
+            c->update();
+        }
+    }
+};
+
+vector<ConsoleObserver*> printHook::_consoleObservers;
+
 // ----------------------------------------
 ServerInstance::ServerInstance()
 {
     cmp_pdinit();
+    cmp_setprinthook(&printHook::hookFunction);
 }
 
 ServerCanvas* ServerInstance::createCanvas()
@@ -150,6 +172,13 @@ void ServerInstance::dspOff() { cmp_switch_dsp(false); };
 
 void ServerInstance::registerObserver(Observer* o){};
 void ServerInstance::deleteObserver(Observer* o){};
+
+void ServerInstance::setConsoleObserver(ConsoleObserver* o)
+{
+    _consoleObserver = o;
+
+    printHook::addObserver(o);
+};
 
 ServerPath* ServerInstance::path() { return _path; };
 
