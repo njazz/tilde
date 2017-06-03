@@ -14,7 +14,7 @@ var searchData=
   ['parserwindow',['parserWindow',['../classqtpd_1_1_file_parser.html#aee0f14a3d05554a9020d4eaed943622b',1,'qtpd::FileParser']]],
   ['parsestringlistatoms',['parseStringListAtoms',['../classqtpd_1_1_file_parser.html#aaa3c3140e868a8f9bf356cad33226b12',1,'qtpd::FileParser']]],
   ['paste',['paste',['../classqtpd_1_1_canvas_data.html#ac0d3e6dd6fdc4a3d0321c5a271448318',1,'qtpd::CanvasData']]],
-  ['patchcord',['patchcord',['../classqtpd_1_1_canvas_view.html#a3013f2984968a8a53cced8bd5cd7bee1',1,'qtpd::CanvasView::patchcord(UIObject *obj1, int outlet, UIObject *obj2, int inlet)'],['../classqtpd_1_1_canvas_view.html#a6791ead8fe17f9a1cb0291922e6d26b8',1,'qtpd::CanvasView::patchcord(UIObject *obj1, UIItem *outport, UIObject *obj2, UIItem *inport)']]],
+  ['patchcord',['patchcord',['../classqtpd_1_1_canvas_view.html#a3013f2984968a8a53cced8bd5cd7bee1',1,'qtpd::CanvasView::patchcord(UIObject *obj1, int outlet, UIObject *obj2, int inlet)'],['../classqtpd_1_1_canvas_view.html#a6791ead8fe17f9a1cb0291922e6d26b8',1,'qtpd::CanvasView::patchcord(UIObject *obj1, UIItem *outport, UIObject *obj2, UIItem *inport)'],['../classqtpd_1_1_patch_window_controller.html#a3a0fac93e23155b2d9ae34c70f38afe1',1,'qtpd::PatchWindowController::patchcord()']]],
   ['patchcordasnumbers',['patchcordAsNumbers',['../classqtpd_1_1_canvas_data.html#ae4bbb013b890276e16524276f4b39e10',1,'qtpd::CanvasData']]],
   ['patchcordaspdfilestring',['patchcordAsPdFileString',['../classqtpd_1_1_canvas_data.html#ab9342fdf6a9cb0661b9587247f832223',1,'qtpd::CanvasData']]],
   ['patchcords',['patchcords',['../classqtpd_1_1_canvas_data.html#aa6a1ff15e1a75edd6b28ad4bcb6a578d',1,'qtpd::CanvasData']]],

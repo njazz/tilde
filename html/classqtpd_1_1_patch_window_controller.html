@@ -145,7 +145,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#ae1d634d4109766367c72193eb2f26e43">deletePatchcordsFor</a> (<a class="el" href="classqtpd_1_1_u_i_item.html">UIItem</a> *obj)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a92c7b1523afba244815d00e5f62f9f6b">createObjectMaker</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#aafeb3f3466f85a0c2c05cc8818cc6d5f">createObject</a> (string name, QPoint pos)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a25a1535f92a3ee4a1797ad7578dfc39b">connect</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *src, int out, <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *dest, int in)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a3a0fac93e23155b2d9ae34c70f38afe1">patchcord</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *src, int out, <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *dest, int in)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a7128fa5199c0fae44d99e6a2efd010b3">deletePatchcordsForObject</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *o)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a294ae819aa8fd6d25060797014582226">deleteObject</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *o)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a5a259287635fcd919f0887503d003631">syncData</a> (ServerObject *serverObject, <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *uiObject)</td></tr>
@@ -199,45 +199,6 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a25a1535f92a3ee4a1797ad7578dfc39b"></a><!-- doxytag: member="qtpd::PatchWindowController::connect" ref="a25a1535f92a3ee4a1797ad7578dfc39b" args="(UIObject *src, int out, UIObject *dest, int in)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="classqtpd_1_1_patch_window_controller.html#a25a1535f92a3ee4a1797ad7578dfc39b">qtpd::PatchWindowController::connect</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td>
-          <td class="paramname"><em>src</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>out</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td>
-          <td class="paramname"><em>dest</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>in</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div>
@@ -680,6 +641,45 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a3a0fac93e23155b2d9ae34c70f38afe1"></a><!-- doxytag: member="qtpd::PatchWindowController::patchcord" ref="a3a0fac93e23155b2d9ae34c70f38afe1" args="(UIObject *src, int out, UIObject *dest, int in)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classqtpd_1_1_patch_window_controller.html#a3a0fac93e23155b2d9ae34c70f38afe1">qtpd::PatchWindowController::patchcord</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td>
+          <td class="paramname"><em>dest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>in</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a9cfb860b860d3cfdf520375fbe9d4710"></a><!-- doxytag: member="qtpd::PatchWindowController::saveFile" ref="a9cfb860b860d3cfdf520375fbe9d4710" args="(QString fileName)" -->
 <div class="memitem">
 <div class="memproto">
@@ -826,7 +826,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 3 2017 17:39:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jun 3 2017 23:01:47 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

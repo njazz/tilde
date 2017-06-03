@@ -168,7 +168,6 @@ var searchData=
   ['cmp_5fset_5fverbose',['cmp_set_verbose',['../_pd_link_8h.html#a1d2cd6f5f314f952bd32974edefd0962',1,'PdLink.h']]],
   ['cmp_5fsetprinthook',['cmp_setprinthook',['../_pd_link_8h.html#ac9fb723d2c58a1e062720cc19e199e08',1,'PdLink.h']]],
   ['cmp_5fswitch_5fdsp',['cmp_switch_dsp',['../_pd_link_8h.html#a0f1f4951cf99dff0634789791dcde1ba',1,'PdLink.h']]],
-  ['connect',['connect',['../classqtpd_1_1_patch_window_controller.html#a25a1535f92a3ee4a1797ad7578dfc39b',1,'qtpd::PatchWindowController']]],
   ['contains',['contains',['../classceammc_1_1_atom_list.html#a64fec50cf58275a65472a2dc9a706455',1,'ceammc::AtomList']]],
   ['context',['context',['../classqtpd_1_1_u_i_script_text_edit.html#ac8c44e94e6d826790065a04cf462e787',1,'qtpd::UIScriptTextEdit']]],
   ['controller',['controller',['../classqtpd_1_1_patch_window.html#a1ff4345e33d74fd202b8f2d9edfad73e',1,'qtpd::PatchWindow']]],
