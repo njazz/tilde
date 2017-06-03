@@ -32,6 +32,9 @@ public:
     static UIObject* createObj(QString data)
     {
         UIArray* ret = new UIArray();
+
+        QStringList l = data.split(" ");l.removeFirst();
+        data = l.join(" ");
         ret->setObjectData(data);
 
         return ret;

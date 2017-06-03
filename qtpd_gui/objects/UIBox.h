@@ -34,6 +34,9 @@ public:
     static UIObject* createObj(QString data)
     {
         UIBox* ret = new UIBox();
+
+        QStringList l = data.split(" ");l.removeFirst();
+        data = l.join(" ");
         ret->setObjectData(data);
 
         return ret;
@@ -151,9 +154,9 @@ public:
         p->setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
         p->setFont(QFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize(), 0, false));
-        QStringList textList = _objectDataModel.objectData().split(" ");
-        textList.removeFirst();
-        p->drawText(2, 3, boundingRect().width() - 2, boundingRect().height() - 3, 0, textList.join(" "), 0);
+        //QStringList textList = _objectDataModel.objectData().split(" ");
+        //textList.removeFirst();
+        p->drawText(2, 3, boundingRect().width() - 2, boundingRect().height() - 3, 0, _objectDataModel.objectData(), 0);
 
         if (isSelected()) {
             p->setPen(QPen(QColor(0, 192, 255), 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));

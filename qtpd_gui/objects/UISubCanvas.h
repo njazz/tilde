@@ -23,6 +23,9 @@ public:
     static UIObject* createObj(QString data)
     {
         UISubCanvas* ret = new UISubCanvas();
+
+        QStringList l = data.split(" ");l.removeFirst();
+        data = l.join(" ");
         ret->setObjectData(data);
 
         return ret;

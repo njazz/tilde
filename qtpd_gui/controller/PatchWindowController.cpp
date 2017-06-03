@@ -85,6 +85,10 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
     uiObject->setServerObject(serverObject);
     uiObject->sync();
 
+    uiObject->setEditModeRef(_windows[0]->canvasView()->getEditModeRef());
+
+
+
     // TODO
 
     //connect(uiObject, &UIObject::selectBox, _windows[0]->canvasView(), &CanvasView::s_SelectBox);

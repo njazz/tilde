@@ -123,11 +123,18 @@ public:
     ///
     virtual void* pdObject();
 
-    virtual ServerObject* serverObject(){return _serverObject;};
-    virtual void setServerObject(ServerObject* o){_serverObject = o;};
+    virtual ServerObject* serverObject() { return _serverObject; };
+    virtual void setServerObject(ServerObject* o)
+    {
+        _serverObject = o;
+        if (o)
+            _serverObject->connectUI(this, &UIObject::updateUI);
+    };
 
-    virtual void sync(){
-        if (!_serverObject) return;
+    virtual void sync()
+    {
+        if (!_serverObject)
+            return;
 
         int in_c = _serverObject->inletCount();
         int out_c = _serverObject->outletCount();
@@ -138,7 +145,6 @@ public:
             addInlet();
         for (int i = 0; i < out_c; i++)
             addOutlet();
-
     };
 
     ////

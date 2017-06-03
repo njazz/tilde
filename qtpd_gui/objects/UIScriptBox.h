@@ -43,6 +43,9 @@ public:
     static UIObject* createObj(QString data)
     {
         UIScriptBox* ret = new UIScriptBox();
+
+        QStringList l = data.split(" ");l.removeFirst();
+        data = l.join(" ");
         ret->setObjectData(data);
 
         return ret;

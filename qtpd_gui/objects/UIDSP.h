@@ -64,6 +64,9 @@ public:
     static UIObject* createObj(QString data)
     {
         UIDSP* ret = new UIDSP();
+
+        QStringList l = data.split(" ");l.removeFirst();
+        data = l.join(" ");
         ret->setObjectData(data);
 
         return ret;

@@ -31,6 +31,9 @@ public:
     static UIObject* createObj(QString data)
     {
         UIToggle* ret = new UIToggle();
+
+        QStringList l = data.split(" ");l.removeFirst();
+        data = l.join(" ");
         ret->setObjectData(data);
 
         return ret;
@@ -123,10 +126,17 @@ public:
 
         if (getEditMode() != em_Unlocked) {
 
-            if (!pdObject()) {
-                qDebug("msg: bad pd object!");
+//            if (!pdObject()) {
+//                qDebug("msg: bad pd object!");
+//            } else {
+//                cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
+//            }
+
+            if (!serverObject()) {
+                qDebug("msg: bad server object!");
             } else {
-                cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
+                //cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
+                serverObject()->message("bang");
             }
         }
     }
@@ -168,10 +178,17 @@ public:
         emit x->callRepaint();
     }
 
+    virtual void setServerObject(ServerObject* o)
+    {
+        UIObject::setServerObject(o);
+        if (o)
+            o->connectUI(this, &UIToggle::updateUI);
+    };
+
     void setPdObject(void* obj)
     {
         UIObject::setPdObject(obj);
-        cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIToggle::updateUI);
+        //cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIToggle::updateUI);
     }
 };
 }

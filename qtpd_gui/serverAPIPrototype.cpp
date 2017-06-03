@@ -38,8 +38,16 @@ void ServerObject::message(const AtomList& list)
 {
     string msg;
 
+    //todo convert
+
     if (_pdObject)
         cmp_sendstring(reinterpret_cast<t_pd*>(_pdObject), msg);
+};
+
+void ServerObject::message(const string str)
+{
+    if (_pdObject)
+        cmp_sendstring(reinterpret_cast<t_pd*>(_pdObject), str);
 };
 
 int ServerObject::inletCount()
@@ -64,6 +72,11 @@ ServerObjectType ServerObject::type() { return _type; };
 void ServerObject::setType(ServerObjectType type) { _type = type; }
 
 ServerProperties* ServerObject::properties() { return _properties; };
+
+void ServerObject::connectUI(void* uiObject, t_updateUI uiFunction) {
+
+    cmp_connectUI((t_pd*)_pdObject, uiObject, uiFunction );
+};
 
 // ----------------------------------------
 ServerArray::ServerArray()

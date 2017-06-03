@@ -6,12 +6,16 @@
 #include <string>
 #include <vector>
 
+
+
 namespace ceammc {
 class AtomList;
 }
 
 using namespace std;
 using namespace ceammc;
+
+typedef void (*t_updateUI)(void* uiobj, AtomList msg);
 
 typedef vector<string> ServerPath;
 
@@ -30,8 +34,8 @@ private:
     string _text;
 
 public:
-    void setText(string text){_text = text;};
-    string text(){return _text;};
+    void setText(string text) { _text = text; };
+    string text() { return _text; };
 };
 
 typedef enum { XLetMessage,
@@ -75,8 +79,6 @@ private:
     ServerObjectType _type;
     ServerProperties* _properties;
 
-
-
 public:
     ServerObject();
 
@@ -85,6 +87,7 @@ public:
     virtual ServerObject* parent();
 
     void message(const AtomList& list);
+    void message(const string str);
 
     virtual int inletCount();
     virtual int outletCount();
@@ -96,6 +99,9 @@ public:
     void setType(ServerObjectType type);
 
     ServerProperties* properties();
+
+    //TEMPORARY
+    void connectUI(void* uiObject, t_updateUI uiFunction);
 };
 
 class ServerArray : ServerObject {
