@@ -229,150 +229,155 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00145"></a>00145         {
 <a name="l00146"></a>00146             <span class="comment">//</span>
 <a name="l00147"></a>00147             <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* box = *it;
-<a name="l00148"></a>00148             qDebug(<span class="stringliteral">&quot;delete %lu | %lu&quot;</span>, (<span class="keywordtype">long</span>)box, (<span class="keywordtype">long</span>)box-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ad41f2f9ff8447ea8dc061c3e8fc6528b" title="returns pointer to pd object.">pdObject</a>());
-<a name="l00149"></a>00149 
-<a name="l00150"></a>00150             box-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ad41f2f9ff8447ea8dc061c3e8fc6528b" title="returns pointer to pd object.">pdObject</a>();
-<a name="l00151"></a>00151 
-<a name="l00152"></a>00152             <span class="keywordflow">if</span> (box-&gt;pdObject()) {
-<a name="l00153"></a>00153                 <span class="comment">//NEEDS FIX</span>
-<a name="l00154"></a>00154                 <span class="keywordflow">if</span> ((<a class="code" href="struct__text.html">t_object</a>*)(box-&gt;pdObject())) {
-<a name="l00155"></a>00155                     <span class="keywordflow">if</span> (!box-&gt;errorBox())
-<a name="l00156"></a>00156                         <span class="comment">//cmp_deleteobject((t_canvas*)pdObject(), (t_object*)box-&gt;pdObject());</span>
-<a name="l00157"></a>00157                         <span class="comment">// TODO</span>
-<a name="l00158"></a>00158                         _serverCanvas-&gt;deleteObject((ServerObject*)box-&gt;pdObject());
-<a name="l00159"></a>00159                     box-&gt;setPdObject(0);
-<a name="l00160"></a>00160                 }
-<a name="l00161"></a>00161             } <span class="keywordflow">else</span> {
-<a name="l00162"></a>00162                 qDebug(<span class="stringliteral">&quot;didn&#39;t delete pd object&quot;</span>);
-<a name="l00163"></a>00163             }
-<a name="l00164"></a>00164 
-<a name="l00165"></a>00165             <a class="code" href="classqtpd_1_1_patch_window_controller.html#ae1d634d4109766367c72193eb2f26e43">deletePatchcordsFor</a>(box);
-<a name="l00166"></a>00166 
-<a name="l00167"></a>00167             _scene-&gt;removeItem(box);
-<a name="l00168"></a>00168             <a class="code" href="classqtpd_1_1_patch_window_controller.html#afdb85489fa8e4d91e67f7a8d99be84ba">updateViewports</a>();
-<a name="l00169"></a>00169 
-<a name="l00170"></a>00170             _canvasData-&gt;<a class="code" href="classqtpd_1_1_canvas_data.html#a47f7935e671ebcdfeddba6904eb90509">boxes</a>()-&gt;erase(std::remove(_canvasData-&gt;<a class="code" href="classqtpd_1_1_canvas_data.html#a47f7935e671ebcdfeddba6904eb90509">boxes</a>()-&gt;begin(), _canvasData-&gt;<a class="code" href="classqtpd_1_1_canvas_data.html#a47f7935e671ebcdfeddba6904eb90509">boxes</a>()-&gt;end(), *it), _canvasData-&gt;<a class="code" href="classqtpd_1_1_canvas_data.html#a47f7935e671ebcdfeddba6904eb90509">boxes</a>()-&gt;end());
-<a name="l00171"></a>00171             <span class="comment">//selectionData_.boxes()-&gt;erase(std::remove(selectionData_.boxes()-&gt;begin(), selectionData_.boxes()-&gt;end(), *it), selectionData_.boxes()-&gt;end());</span>
-<a name="l00172"></a>00172         }
+<a name="l00148"></a>00148 
+<a name="l00149"></a>00149             <span class="comment">// TODO-PD_OBJECT</span>
+<a name="l00150"></a>00150             <span class="comment">/*</span>
+<a name="l00151"></a>00151 <span class="comment">            qDebug(&quot;delete %lu | %lu&quot;, (long)box, (long)box-&gt;pdObject());</span>
+<a name="l00152"></a>00152 <span class="comment"></span>
+<a name="l00153"></a>00153 <span class="comment">            box-&gt;pdObject();</span>
+<a name="l00154"></a>00154 <span class="comment"></span>
+<a name="l00155"></a>00155 <span class="comment">            if (box-&gt;pdObject()) {</span>
+<a name="l00156"></a>00156 <span class="comment">                //NEEDS FIX</span>
+<a name="l00157"></a>00157 <span class="comment">                if ((t_object*)(box-&gt;pdObject())) {</span>
+<a name="l00158"></a>00158 <span class="comment">                    if (!box-&gt;errorBox())</span>
+<a name="l00159"></a>00159 <span class="comment">                        //cmp_deleteobject((t_canvas*)pdObject(), (t_object*)box-&gt;pdObject());</span>
+<a name="l00160"></a>00160 <span class="comment">                        // TODO</span>
+<a name="l00161"></a>00161 <span class="comment">                        _serverCanvas-&gt;deleteObject((ServerObject*)box-&gt;pdObject());</span>
+<a name="l00162"></a>00162 <span class="comment">                    box-&gt;setPdObject(0);</span>
+<a name="l00163"></a>00163 <span class="comment">                }</span>
+<a name="l00164"></a>00164 <span class="comment">            } else {</span>
+<a name="l00165"></a>00165 <span class="comment">                qDebug(&quot;didn&#39;t delete pd object&quot;);</span>
+<a name="l00166"></a>00166 <span class="comment">            }</span>
+<a name="l00167"></a>00167 <span class="comment">            */</span>
+<a name="l00168"></a>00168 
+<a name="l00169"></a>00169             <a class="code" href="classqtpd_1_1_patch_window_controller.html#ae1d634d4109766367c72193eb2f26e43">deletePatchcordsFor</a>(box);
+<a name="l00170"></a>00170 
+<a name="l00171"></a>00171             _scene-&gt;removeItem(box);
+<a name="l00172"></a>00172             <a class="code" href="classqtpd_1_1_patch_window_controller.html#afdb85489fa8e4d91e67f7a8d99be84ba">updateViewports</a>();
 <a name="l00173"></a>00173 
-<a name="l00174"></a>00174         _canvasData-&gt;<a class="code" href="classqtpd_1_1_canvas_data.html#a92fe4991496b0cab0fb76cebb7eb6cb6">selectedBoxes</a>()-&gt;clear();
-<a name="l00175"></a>00175     }
-<a name="l00176"></a>00176 
-<a name="l00177"></a>00177     <span class="comment">// TODO</span>
-<a name="l00178"></a><a class="code" href="classqtpd_1_1_patch_window_controller.html#a5fb6a264e68f704e4b09d21aa839decc">00178</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a5fb6a264e68f704e4b09d21aa839decc">deleteSelectedPatchcords</a>(){
-<a name="l00179"></a>00179 
-<a name="l00180"></a>00180         qDebug() &lt;&lt; <span class="stringliteral">&quot;del selected patchcords&quot;</span>;
-<a name="l00181"></a>00181 
-<a name="l00182"></a>00182         <span class="comment">//cleanup</span>
-<a name="l00183"></a>00183         <span class="comment">//for (int i=0;i&lt;data_.patchcords()-&gt;size(); i++)</span>
-<a name="l00184"></a>00184         std::vector&lt;UIPatchcord*&gt;::iterator it;
-<a name="l00185"></a>00185         <span class="keywordflow">for</span> (it = _canvasData-&gt;<a class="code" href="classqtpd_1_1_canvas_data.html#aa6a1ff15e1a75edd6b28ad4bcb6a578d">patchcords</a>()-&gt;begin(); it != _canvasData-&gt;<a class="code" href="classqtpd_1_1_canvas_data.html#aa6a1ff15e1a75edd6b28ad4bcb6a578d">patchcords</a>()-&gt;end();) {
-<a name="l00186"></a>00186             <a class="code" href="classqtpd_1_1_u_i_patchcord.html" title="Patchcord QGraphicsObject class.">UIPatchcord</a>* p = *it;
-<a name="l00187"></a>00187 
-<a name="l00188"></a>00188             <span class="keywordflow">if</span> (p-&gt;<a class="code" href="classqtpd_1_1_u_i_item.html#ab3ac9bcca4d6c092b1d10fe506ba48c6" title="&gt; deselect object">isSelected</a>()) {
-<a name="l00189"></a>00189 
-<a name="l00190"></a>00190                 <a class="code" href="struct__text.html">t_object</a>* obj1 = (<a class="code" href="struct__text.html">t_object</a>*)p-&gt;<a class="code" href="classqtpd_1_1_u_i_patchcord.html#ae1bd6d258fdc4f97b0e72e71e3dd2c88">obj1</a>()-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ad41f2f9ff8447ea8dc061c3e8fc6528b" title="returns pointer to pd object.">pdObject</a>();
-<a name="l00191"></a>00191                 <a class="code" href="struct__text.html">t_object</a>* obj2 = (<a class="code" href="struct__text.html">t_object</a>*)p-&gt;<a class="code" href="classqtpd_1_1_u_i_patchcord.html#a6dfd301e556859b844a8e7c1341b058c">obj2</a>()-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#ad41f2f9ff8447ea8dc061c3e8fc6528b" title="returns pointer to pd object.">pdObject</a>();
-<a name="l00192"></a>00192 
-<a name="l00193"></a>00193                 <span class="keywordflow">if</span> (obj1 &amp;&amp; obj2) {
-<a name="l00194"></a>00194                     <span class="keywordtype">int</span> out1 = p-&gt;<a class="code" href="classqtpd_1_1_u_i_patchcord.html#a5fecd682a5f7ffccafcf49358db9a053">outletIndex</a>();
-<a name="l00195"></a>00195                     <span class="keywordtype">int</span> in2 = p-&gt;<a class="code" href="classqtpd_1_1_u_i_patchcord.html#abf4ef43f4de59746c67f8114ccb77c6d">inletIndex</a>();
-<a name="l00196"></a>00196 
-<a name="l00197"></a>00197                     <span class="keywordflow">if</span> ((out1 &gt;= 0) &amp;&amp; (in2 &gt;= 0))
-<a name="l00198"></a>00198                         <a class="code" href="_pd_link_8h.html#a3b0a14ab77137204a0f68e45f45e92c8" title="delete patchcord">cmp_delete_patchcord</a>(obj1, out1, obj2, in2);
-<a name="l00199"></a>00199                     <span class="keywordflow">else</span>
-<a name="l00200"></a>00200                         qDebug(<span class="stringliteral">&quot;object error. didn&#39;t delete pd patchcord&quot;</span>);
-<a name="l00201"></a>00201                 } <span class="keywordflow">else</span>
-<a name="l00202"></a>00202                     qDebug(<span class="stringliteral">&quot;object error. didn&#39;t delete pd patchcord&quot;</span>);
-<a name="l00203"></a>00203 
-<a name="l00204"></a>00204                 _scene-&gt;removeItem(p);
-<a name="l00205"></a>00205                 <span class="comment">//qDebug() &lt;&lt; &quot;remove item&quot;;</span>
-<a name="l00206"></a>00206 
-<a name="l00207"></a>00207                 it = _canvasData-&gt;<a class="code" href="classqtpd_1_1_canvas_data.html#aa6a1ff15e1a75edd6b28ad4bcb6a578d">patchcords</a>()-&gt;erase(it);
+<a name="l00174"></a>00174             _canvasData-&gt;<a class="code" href="classqtpd_1_1_canvas_data.html#a47f7935e671ebcdfeddba6904eb90509">boxes</a>()-&gt;erase(std::remove(_canvasData-&gt;<a class="code" href="classqtpd_1_1_canvas_data.html#a47f7935e671ebcdfeddba6904eb90509">boxes</a>()-&gt;begin(), _canvasData-&gt;<a class="code" href="classqtpd_1_1_canvas_data.html#a47f7935e671ebcdfeddba6904eb90509">boxes</a>()-&gt;end(), *it), _canvasData-&gt;<a class="code" href="classqtpd_1_1_canvas_data.html#a47f7935e671ebcdfeddba6904eb90509">boxes</a>()-&gt;end());
+<a name="l00175"></a>00175             <span class="comment">//selectionData_.boxes()-&gt;erase(std::remove(selectionData_.boxes()-&gt;begin(), selectionData_.boxes()-&gt;end(), *it), selectionData_.boxes()-&gt;end());</span>
+<a name="l00176"></a>00176         }
+<a name="l00177"></a>00177 
+<a name="l00178"></a>00178         _canvasData-&gt;<a class="code" href="classqtpd_1_1_canvas_data.html#a92fe4991496b0cab0fb76cebb7eb6cb6">selectedBoxes</a>()-&gt;clear();
+<a name="l00179"></a>00179     }
+<a name="l00180"></a>00180 
+<a name="l00181"></a>00181     <span class="comment">// TODO</span>
+<a name="l00182"></a><a class="code" href="classqtpd_1_1_patch_window_controller.html#a5fb6a264e68f704e4b09d21aa839decc">00182</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a5fb6a264e68f704e4b09d21aa839decc">deleteSelectedPatchcords</a>(){
+<a name="l00183"></a>00183 
+<a name="l00184"></a>00184         qDebug() &lt;&lt; <span class="stringliteral">&quot;del selected patchcords&quot;</span>;
+<a name="l00185"></a>00185 
+<a name="l00186"></a>00186         <span class="comment">//cleanup</span>
+<a name="l00187"></a>00187         <span class="comment">//for (int i=0;i&lt;data_.patchcords()-&gt;size(); i++)</span>
+<a name="l00188"></a>00188         std::vector&lt;UIPatchcord*&gt;::iterator it;
+<a name="l00189"></a>00189         <span class="keywordflow">for</span> (it = _canvasData-&gt;<a class="code" href="classqtpd_1_1_canvas_data.html#aa6a1ff15e1a75edd6b28ad4bcb6a578d">patchcords</a>()-&gt;begin(); it != _canvasData-&gt;<a class="code" href="classqtpd_1_1_canvas_data.html#aa6a1ff15e1a75edd6b28ad4bcb6a578d">patchcords</a>()-&gt;end();) {
+<a name="l00190"></a>00190             <a class="code" href="classqtpd_1_1_u_i_patchcord.html" title="Patchcord QGraphicsObject class.">UIPatchcord</a>* p = *it;
+<a name="l00191"></a>00191 
+<a name="l00192"></a>00192             <span class="keywordflow">if</span> (p-&gt;<a class="code" href="classqtpd_1_1_u_i_item.html#ab3ac9bcca4d6c092b1d10fe506ba48c6" title="&gt; deselect object">isSelected</a>()) {
+<a name="l00193"></a>00193 
+<a name="l00194"></a>00194                 <span class="comment">// TODO-PD_OBJECT</span>
+<a name="l00195"></a>00195 <span class="comment">//                t_object* obj1 = (t_object*)p-&gt;obj1()-&gt;pdObject();</span>
+<a name="l00196"></a>00196 <span class="comment">//                t_object* obj2 = (t_object*)p-&gt;obj2()-&gt;pdObject();</span>
+<a name="l00197"></a>00197 
+<a name="l00198"></a>00198 <span class="comment">//                if (obj1 &amp;&amp; obj2) {</span>
+<a name="l00199"></a>00199 <span class="comment">//                    int out1 = p-&gt;outletIndex();</span>
+<a name="l00200"></a>00200 <span class="comment">//                    int in2 = p-&gt;inletIndex();</span>
+<a name="l00201"></a>00201 
+<a name="l00202"></a>00202 <span class="comment">//                    if ((out1 &gt;= 0) &amp;&amp; (in2 &gt;= 0))</span>
+<a name="l00203"></a>00203 <span class="comment">//                        cmp_delete_patchcord(obj1, out1, obj2, in2);</span>
+<a name="l00204"></a>00204 <span class="comment">//                    else</span>
+<a name="l00205"></a>00205 <span class="comment">//                        qDebug(&quot;object error. didn&#39;t delete pd patchcord&quot;);</span>
+<a name="l00206"></a>00206 <span class="comment">//                } else</span>
+<a name="l00207"></a>00207 <span class="comment">//                    qDebug(&quot;object error. didn&#39;t delete pd patchcord&quot;);</span>
 <a name="l00208"></a>00208 
-<a name="l00209"></a>00209             } <span class="keywordflow">else</span>
-<a name="l00210"></a>00210                 ++it;
-<a name="l00211"></a>00211         }
-<a name="l00212"></a>00212 
-<a name="l00213"></a>00213         _canvasData-&gt;<a class="code" href="classqtpd_1_1_canvas_data.html#a5b4dbafe8e21e9ea28e7b849be931a42">selectedPatchcords</a>()-&gt;clear();
-<a name="l00214"></a>00214         <a class="code" href="classqtpd_1_1_patch_window_controller.html#aab5fe39150113d8a3739c7374f512f4e">update</a>();
-<a name="l00215"></a>00215 
-<a name="l00216"></a>00216     };
+<a name="l00209"></a>00209                 _scene-&gt;removeItem(p);
+<a name="l00210"></a>00210                 <span class="comment">//qDebug() &lt;&lt; &quot;remove item&quot;;</span>
+<a name="l00211"></a>00211 
+<a name="l00212"></a>00212                 it = _canvasData-&gt;<a class="code" href="classqtpd_1_1_canvas_data.html#aa6a1ff15e1a75edd6b28ad4bcb6a578d">patchcords</a>()-&gt;erase(it);
+<a name="l00213"></a>00213 
+<a name="l00214"></a>00214             } <span class="keywordflow">else</span>
+<a name="l00215"></a>00215                 ++it;
+<a name="l00216"></a>00216         }
 <a name="l00217"></a>00217 
-<a name="l00218"></a><a class="code" href="classqtpd_1_1_patch_window_controller.html#ae1d634d4109766367c72193eb2f26e43">00218</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#ae1d634d4109766367c72193eb2f26e43">deletePatchcordsFor</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* obj)
-<a name="l00219"></a>00219     {
-<a name="l00220"></a>00220         <span class="comment">//for //(int i=0;i&lt;data_.patchcords()-&gt;size();i++)</span>
-<a name="l00221"></a>00221         std::vector&lt;UIPatchcord*&gt;::iterator it;
-<a name="l00222"></a>00222         <span class="keywordflow">for</span> (it = _canvasData-&gt;<a class="code" href="classqtpd_1_1_canvas_data.html#aa6a1ff15e1a75edd6b28ad4bcb6a578d">patchcords</a>()-&gt;begin(); it != _canvasData-&gt;<a class="code" href="classqtpd_1_1_canvas_data.html#aa6a1ff15e1a75edd6b28ad4bcb6a578d">patchcords</a>()-&gt;end();) {
-<a name="l00223"></a>00223             <span class="keywordflow">if</span> ((*it)-&gt;isConnectedToObject(obj)) {
-<a name="l00224"></a>00224                 _scene-&gt;removeItem(*it);
-<a name="l00225"></a>00225                 it = _canvasData-&gt;<a class="code" href="classqtpd_1_1_canvas_data.html#aa6a1ff15e1a75edd6b28ad4bcb6a578d">patchcords</a>()-&gt;erase(it);
-<a name="l00226"></a>00226             } <span class="keywordflow">else</span>
-<a name="l00227"></a>00227                 ++it;
-<a name="l00228"></a>00228         }
-<a name="l00229"></a>00229 
-<a name="l00230"></a>00230         <a class="code" href="classqtpd_1_1_patch_window_controller.html#afdb85489fa8e4d91e67f7a8d99be84ba">updateViewports</a>();
-<a name="l00231"></a>00231     }
-<a name="l00232"></a>00232     <span class="comment">//</span>
-<a name="l00233"></a>00233     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a92c7b1523afba244815d00e5f62f9f6b">createObjectMaker</a>();
-<a name="l00234"></a>00234     <span class="comment">//</span>
-<a name="l00235"></a>00235     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* <a class="code" href="classqtpd_1_1_patch_window_controller.html#aafeb3f3466f85a0c2c05cc8818cc6d5f">createObject</a>(<span class="keywordtype">string</span> name, QPoint pos);
-<a name="l00236"></a>00236 
-<a name="l00237"></a>00237     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a25a1535f92a3ee4a1797ad7578dfc39b">connect</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* src, <span class="keywordtype">int</span> out, <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* dest, <span class="keywordtype">int</span> in);
-<a name="l00238"></a>00238     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a7128fa5199c0fae44d99e6a2efd010b3">deletePatchcordsForObject</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* o);
-<a name="l00239"></a>00239     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a294ae819aa8fd6d25060797014582226">deleteObject</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* o);
-<a name="l00240"></a>00240     <span class="comment">//</span>
-<a name="l00241"></a>00241     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a5a259287635fcd919f0887503d003631">syncData</a>(ServerObject* serverObject, <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* uiObject);
-<a name="l00242"></a>00242     <span class="comment">//</span>
-<a name="l00243"></a>00243     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#ae92a33f99db1bfa48f6b223f1e3466ca">deleteSelectedObjects</a>(vector&lt;UIObject*&gt;);
-<a name="l00244"></a>00244     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a5fb6a264e68f704e4b09d21aa839decc">deleteSelectedPatchcords</a>(vector&lt;UIPatchcord*&gt;);
+<a name="l00218"></a>00218         _canvasData-&gt;<a class="code" href="classqtpd_1_1_canvas_data.html#a5b4dbafe8e21e9ea28e7b849be931a42">selectedPatchcords</a>()-&gt;clear();
+<a name="l00219"></a>00219         <a class="code" href="classqtpd_1_1_patch_window_controller.html#aab5fe39150113d8a3739c7374f512f4e">update</a>();
+<a name="l00220"></a>00220 
+<a name="l00221"></a>00221     };
+<a name="l00222"></a>00222 
+<a name="l00223"></a><a class="code" href="classqtpd_1_1_patch_window_controller.html#ae1d634d4109766367c72193eb2f26e43">00223</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#ae1d634d4109766367c72193eb2f26e43">deletePatchcordsFor</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* obj)
+<a name="l00224"></a>00224     {
+<a name="l00225"></a>00225         <span class="comment">//for //(int i=0;i&lt;data_.patchcords()-&gt;size();i++)</span>
+<a name="l00226"></a>00226         std::vector&lt;UIPatchcord*&gt;::iterator it;
+<a name="l00227"></a>00227         <span class="keywordflow">for</span> (it = _canvasData-&gt;<a class="code" href="classqtpd_1_1_canvas_data.html#aa6a1ff15e1a75edd6b28ad4bcb6a578d">patchcords</a>()-&gt;begin(); it != _canvasData-&gt;<a class="code" href="classqtpd_1_1_canvas_data.html#aa6a1ff15e1a75edd6b28ad4bcb6a578d">patchcords</a>()-&gt;end();) {
+<a name="l00228"></a>00228             <span class="keywordflow">if</span> ((*it)-&gt;isConnectedToObject(obj)) {
+<a name="l00229"></a>00229                 _scene-&gt;removeItem(*it);
+<a name="l00230"></a>00230                 it = _canvasData-&gt;<a class="code" href="classqtpd_1_1_canvas_data.html#aa6a1ff15e1a75edd6b28ad4bcb6a578d">patchcords</a>()-&gt;erase(it);
+<a name="l00231"></a>00231             } <span class="keywordflow">else</span>
+<a name="l00232"></a>00232                 ++it;
+<a name="l00233"></a>00233         }
+<a name="l00234"></a>00234 
+<a name="l00235"></a>00235         <a class="code" href="classqtpd_1_1_patch_window_controller.html#afdb85489fa8e4d91e67f7a8d99be84ba">updateViewports</a>();
+<a name="l00236"></a>00236     }
+<a name="l00237"></a>00237     <span class="comment">//</span>
+<a name="l00238"></a>00238     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a92c7b1523afba244815d00e5f62f9f6b">createObjectMaker</a>();
+<a name="l00239"></a>00239     <span class="comment">//</span>
+<a name="l00240"></a>00240     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* <a class="code" href="classqtpd_1_1_patch_window_controller.html#aafeb3f3466f85a0c2c05cc8818cc6d5f">createObject</a>(<span class="keywordtype">string</span> name, QPoint pos);
+<a name="l00241"></a>00241 
+<a name="l00242"></a>00242     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a25a1535f92a3ee4a1797ad7578dfc39b">connect</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* src, <span class="keywordtype">int</span> out, <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* dest, <span class="keywordtype">int</span> in);
+<a name="l00243"></a>00243     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a7128fa5199c0fae44d99e6a2efd010b3">deletePatchcordsForObject</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* o);
+<a name="l00244"></a>00244     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a294ae819aa8fd6d25060797014582226">deleteObject</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* o);
 <a name="l00245"></a>00245     <span class="comment">//</span>
-<a name="l00246"></a>00246     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a665086039bc4f3115e0f6b18db2451b3">clickPort</a>(); <span class="comment">//?</span>
+<a name="l00246"></a>00246     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a5a259287635fcd919f0887503d003631">syncData</a>(ServerObject* serverObject, <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* uiObject);
 <a name="l00247"></a>00247     <span class="comment">//</span>
-<a name="l00248"></a>00248     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#aab5fe39150113d8a3739c7374f512f4e">update</a>(); <span class="comment">// &lt;&lt;-- from observer</span>
-<a name="l00249"></a>00249 
+<a name="l00248"></a>00248     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#ae92a33f99db1bfa48f6b223f1e3466ca">deleteSelectedObjects</a>(vector&lt;UIObject*&gt;);
+<a name="l00249"></a>00249     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a5fb6a264e68f704e4b09d21aa839decc">deleteSelectedPatchcords</a>(vector&lt;UIPatchcord*&gt;);
 <a name="l00250"></a>00250     <span class="comment">//</span>
-<a name="l00251"></a>00251     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#afdb85489fa8e4d91e67f7a8d99be84ba">updateViewports</a>();
-<a name="l00252"></a>00252 
-<a name="l00253"></a>00253 
-<a name="l00254"></a>00254 <span class="keyword">public</span> slots:
-<a name="l00255"></a>00255     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a3b48ab647f885a2783ace092dbe1ad68">menuSave</a>();
-<a name="l00256"></a>00256     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#ad4be0234f1e019a04b0d93639449d65a" title="first save of the patch">menuSaveAs</a>();
+<a name="l00251"></a>00251     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a665086039bc4f3115e0f6b18db2451b3">clickPort</a>(); <span class="comment">//?</span>
+<a name="l00252"></a>00252     <span class="comment">//</span>
+<a name="l00253"></a>00253     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#aab5fe39150113d8a3739c7374f512f4e">update</a>(); <span class="comment">// &lt;&lt;-- from observer</span>
+<a name="l00254"></a>00254 
+<a name="l00255"></a>00255     <span class="comment">//</span>
+<a name="l00256"></a>00256     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#afdb85489fa8e4d91e67f7a8d99be84ba">updateViewports</a>();
 <a name="l00257"></a>00257 
-<a name="l00258"></a><a class="code" href="classqtpd_1_1_patch_window_controller.html#a5b7903ba7da8e4b26724537f7e578d0a">00258</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a5b7903ba7da8e4b26724537f7e578d0a">menuCut</a>()
-<a name="l00259"></a>00259     {
-<a name="l00260"></a>00260         <a class="code" href="classqtpd_1_1_patch_window_controller.html#ad6cbfd60e91d01742ac2bf7dfe40692f">dataCut</a>();
-<a name="l00261"></a>00261     };
+<a name="l00258"></a>00258 
+<a name="l00259"></a>00259 <span class="keyword">public</span> slots:
+<a name="l00260"></a>00260     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a3b48ab647f885a2783ace092dbe1ad68">menuSave</a>();
+<a name="l00261"></a>00261     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#ad4be0234f1e019a04b0d93639449d65a" title="first save of the patch">menuSaveAs</a>();
 <a name="l00262"></a>00262 
-<a name="l00263"></a><a class="code" href="classqtpd_1_1_patch_window_controller.html#a5eab68649c2992c7867a95046cd06227">00263</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a5eab68649c2992c7867a95046cd06227">menuCopy</a>()
+<a name="l00263"></a><a class="code" href="classqtpd_1_1_patch_window_controller.html#a5b7903ba7da8e4b26724537f7e578d0a">00263</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a5b7903ba7da8e4b26724537f7e578d0a">menuCut</a>()
 <a name="l00264"></a>00264     {
-<a name="l00265"></a>00265         <a class="code" href="classqtpd_1_1_patch_window_controller.html#aab4ec2a593279cfad25088d524d0b98d">dataCopy</a>();
+<a name="l00265"></a>00265         <a class="code" href="classqtpd_1_1_patch_window_controller.html#ad6cbfd60e91d01742ac2bf7dfe40692f">dataCut</a>();
 <a name="l00266"></a>00266     };
 <a name="l00267"></a>00267 
-<a name="l00268"></a><a class="code" href="classqtpd_1_1_patch_window_controller.html#a452923604f75028b0943e8d994394580">00268</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a452923604f75028b0943e8d994394580">menuPaste</a>()
+<a name="l00268"></a><a class="code" href="classqtpd_1_1_patch_window_controller.html#a5eab68649c2992c7867a95046cd06227">00268</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a5eab68649c2992c7867a95046cd06227">menuCopy</a>()
 <a name="l00269"></a>00269     {
-<a name="l00270"></a>00270         <a class="code" href="classqtpd_1_1_patch_window_controller.html#a2baeb7f3e288c33e299d4b60fd33b156">dataPaste</a>();
+<a name="l00270"></a>00270         <a class="code" href="classqtpd_1_1_patch_window_controller.html#aab4ec2a593279cfad25088d524d0b98d">dataCopy</a>();
 <a name="l00271"></a>00271     };
 <a name="l00272"></a>00272 
-<a name="l00273"></a><a class="code" href="classqtpd_1_1_patch_window_controller.html#a1bb9db15039686031edd0393f34e6e18">00273</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a1bb9db15039686031edd0393f34e6e18">menuDuplicate</a>()
+<a name="l00273"></a><a class="code" href="classqtpd_1_1_patch_window_controller.html#a452923604f75028b0943e8d994394580">00273</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a452923604f75028b0943e8d994394580">menuPaste</a>()
 <a name="l00274"></a>00274     {
-<a name="l00275"></a>00275         <a class="code" href="classqtpd_1_1_patch_window_controller.html#a7b717a2474df3263be0761439a3eeff0">dataDuplicate</a>();
+<a name="l00275"></a>00275         <a class="code" href="classqtpd_1_1_patch_window_controller.html#a2baeb7f3e288c33e299d4b60fd33b156">dataPaste</a>();
 <a name="l00276"></a>00276     };
 <a name="l00277"></a>00277 
-<a name="l00278"></a><a class="code" href="classqtpd_1_1_patch_window_controller.html#a50095df4f2ef11a3f92c029539ea2bbb">00278</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a50095df4f2ef11a3f92c029539ea2bbb">menuDelete</a>()
+<a name="l00278"></a><a class="code" href="classqtpd_1_1_patch_window_controller.html#a1bb9db15039686031edd0393f34e6e18">00278</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a1bb9db15039686031edd0393f34e6e18">menuDuplicate</a>()
 <a name="l00279"></a>00279     {
-<a name="l00280"></a>00280         <a class="code" href="classqtpd_1_1_patch_window_controller.html#ae92a33f99db1bfa48f6b223f1e3466ca">deleteSelectedObjects</a>();
-<a name="l00281"></a>00281         <a class="code" href="classqtpd_1_1_patch_window_controller.html#a5fb6a264e68f704e4b09d21aa839decc">deleteSelectedPatchcords</a>();
-<a name="l00282"></a>00282     };
-<a name="l00283"></a>00283 
-<a name="l00284"></a><a class="code" href="classqtpd_1_1_patch_window_controller.html#a0c0f14c564df7314a3d6c2ce1723d62d">00284</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a0c0f14c564df7314a3d6c2ce1723d62d">menuSelectAll</a>()
-<a name="l00285"></a>00285     {
-<a name="l00286"></a>00286         <a class="code" href="classqtpd_1_1_patch_window_controller.html#a4ef913c8819dcc1d489ec8f9ca66a01b">dataSelectAllObjects</a>();
+<a name="l00280"></a>00280         <a class="code" href="classqtpd_1_1_patch_window_controller.html#a7b717a2474df3263be0761439a3eeff0">dataDuplicate</a>();
+<a name="l00281"></a>00281     };
+<a name="l00282"></a>00282 
+<a name="l00283"></a><a class="code" href="classqtpd_1_1_patch_window_controller.html#a50095df4f2ef11a3f92c029539ea2bbb">00283</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a50095df4f2ef11a3f92c029539ea2bbb">menuDelete</a>()
+<a name="l00284"></a>00284     {
+<a name="l00285"></a>00285         <a class="code" href="classqtpd_1_1_patch_window_controller.html#ae92a33f99db1bfa48f6b223f1e3466ca">deleteSelectedObjects</a>();
+<a name="l00286"></a>00286         <a class="code" href="classqtpd_1_1_patch_window_controller.html#a5fb6a264e68f704e4b09d21aa839decc">deleteSelectedPatchcords</a>();
 <a name="l00287"></a>00287     };
-<a name="l00288"></a>00288 };
-<a name="l00289"></a>00289 }
-<a name="l00290"></a>00290 
-<a name="l00291"></a>00291 <span class="preprocessor">#endif // CM_PDLINK_H</span>
+<a name="l00288"></a>00288 
+<a name="l00289"></a><a class="code" href="classqtpd_1_1_patch_window_controller.html#a0c0f14c564df7314a3d6c2ce1723d62d">00289</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a0c0f14c564df7314a3d6c2ce1723d62d">menuSelectAll</a>()
+<a name="l00290"></a>00290     {
+<a name="l00291"></a>00291         <a class="code" href="classqtpd_1_1_patch_window_controller.html#a4ef913c8819dcc1d489ec8f9ca66a01b">dataSelectAllObjects</a>();
+<a name="l00292"></a>00292     };
+<a name="l00293"></a>00293 };
+<a name="l00294"></a>00294 }
+<a name="l00295"></a>00295 
+<a name="l00296"></a>00296 <span class="preprocessor">#endif // CM_PDLINK_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -391,7 +396,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 3 2017 16:39:16 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jun 3 2017 17:39:42 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
