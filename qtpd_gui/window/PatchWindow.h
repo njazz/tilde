@@ -88,7 +88,7 @@ private:
 
     //void doSave(QString fname);
 
-    CanvasData* _canvasData;
+//    CanvasData* _canvasData;
     CanvasView* _canvasView;
 
 private slots:
@@ -103,13 +103,14 @@ public:
     static PatchWindow* newWindow();
     static PatchWindow* newSubpatch(t_canvas* subpatch = 0);
 
-    CanvasData* canvasData() {return _canvasData;};
-    void setCanvasData(CanvasData* d){_canvasData = d;}
+//    CanvasData* canvasData() {return _canvasData;};
+//    void setCanvasData(CanvasData* d){_canvasData = d;}
 
     CanvasView* canvasView() {return _canvasView;};
     void setCanvasView(CanvasView* v){_canvasView = v;}
 
     void setController(PatchWindowController* c);
+    PatchWindowController* controller(){return _controller;} //temporary!
 
     void createActions()
     {

@@ -3,7 +3,12 @@
 
 #include "UITextEditor.h"
 
+namespace qtpd {
+
+
 UITextEditor::UITextEditor()
 {
+
+}
 
 }

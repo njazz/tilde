@@ -41,7 +41,7 @@ public:
 
     ServerInstance* instance();
 
-    CanvasData* canvasData();
+    CanvasData* canvasData() {return _canvasData;};
 
     vector<PatchWindow*> windows();
     vector<QGraphicsScene*> scenes();

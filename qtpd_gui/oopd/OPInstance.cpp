@@ -13,6 +13,7 @@
 
 #include "FileParser.h"
 #include "PatchWindow.h"
+#include "PatchWindowController.h"
 
 namespace qtpd {
 
@@ -29,7 +30,7 @@ OPInstance::OPInstance(OPClass* opClass)
 
         // TODO
         // copy canvas here
-        QStringList canvasStrings = opClass->_patchWindow->canvasData()->asPdFileStrings();
+        QStringList canvasStrings = opClass->_patchWindow->controller()->canvasData()->asPdFileStrings();
 
         _patchWindow = PatchWindow::newWindow();
         FileParser::setParserWindow(_patchWindow);

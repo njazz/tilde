@@ -14,6 +14,8 @@
 #include "FileParser.h"
 #include "FileSaver.h"
 
+#include "PatchWindowController.h"
+
 namespace qtpd {
 
 OPClass::OPClass(string className)
@@ -75,7 +77,7 @@ void OPClass::readFile()
         _patchWindow->canvasView()->selectAll();
         _patchWindow->canvasView()->deleteSelectedObjects();
 
-        QStringList canvasStrings = FileParser::parserFirstWindow()->canvasData()->asPdFileStrings();
+        QStringList canvasStrings = FileParser::parserFirstWindow()->controller()->canvasData()->asPdFileStrings();
         // TODO fix
         PatchWindow* tmp = FileParser::parserWindow();
         FileParser::setParserWindow(_patchWindow);

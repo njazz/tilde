@@ -5,6 +5,8 @@
 
 #include "PatchWindow.h"
 
+#include "PatchWindowController.h"
+
 namespace qtpd {
 UISubpatch::UISubpatch()
 
@@ -28,7 +30,7 @@ std::string UISubpatch::asPdFileString()
     std::string ret;
 
     if (subpatchWindow()) {
-        QStringList patchList = ((PatchWindow*)subpatchWindow())->canvasData()->asPdFileStrings();
+        QStringList patchList = ((PatchWindow*)subpatchWindow())->controller()->canvasData()->asPdFileStrings();
 
         ret += patchList.join("\r\n").toStdString();
     } else {

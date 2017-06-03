@@ -36,7 +36,8 @@ PatchWindow* PatchWindowController::newWindow()
     ret->show();
 
     _windows.push_back(ret);
-    ret->canvasView()->setScene(_scene);
+    //ret->canvasView()->setScene(_scene);
+    _scene = ret->canvasView()->scene();
 
     return ret;
 }
