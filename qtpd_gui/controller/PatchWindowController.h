@@ -239,7 +239,7 @@ public:
     //
     UIObject* createObject(string name, QPoint pos);
 
-    bool connect(UIObject* src, int out, UIObject* dest, int in);
+    bool patchcord(UIObject* src, int out, UIObject* dest, int in);
     void deletePatchcordsForObject(UIObject* o);
     void deleteObject(UIObject* o);
     //

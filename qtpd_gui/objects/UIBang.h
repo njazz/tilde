@@ -123,13 +123,15 @@ public:
             timerStart();
         }
 
+        qDebug()<<"err";
+
         //move ?
         if (getEditMode() != em_Unlocked) {
             if (!serverObject()) {
                 qDebug("msg: bad pd object!");
             } else {
                 //cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
-                serverObject()->message("bang");
+                serverObject()->message("bang ");
             }
         }
     }

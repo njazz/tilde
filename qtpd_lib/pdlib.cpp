@@ -488,6 +488,8 @@ void cmp_sendstring(t_pd* obj, std::string msg)
     AtomList* list2 = new AtomList;
     *list2 = list->subList(1, list->size());
 
+    std::cout << "atomlist" << list2->size() << list2 << "\n";
+
     pd_typedmess(obj, list->at(0).asSymbol(), (int)list2->size(), list2->toPdData());
 }
 

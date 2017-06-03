@@ -101,6 +101,10 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
     _canvasData->addUniqueBox(_canvasData->boxes(), uiObject);
     _scene->addItem(uiObject);
 
+    connect(uiObject, &UIObject::selectBox, _windows[0]->canvasView(), &CanvasView::s_SelectBox);
+    connect(uiObject, &UIObject::moveBox, _windows[0]->canvasView(), &CanvasView::s_MoveBox);
+
+
     // check port count
     /*
     if (list.count()) {
@@ -214,7 +218,7 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
     */
 };
 
-bool PatchWindowController::connect(UIObject* src, int out, UIObject* dest, int in){};
+bool PatchWindowController::patchcord(UIObject* src, int out, UIObject* dest, int in){};
 void PatchWindowController::deletePatchcordsForObject(UIObject* o){};
 void PatchWindowController::deleteObject(UIObject* o)
 {

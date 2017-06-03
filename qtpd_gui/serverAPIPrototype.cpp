@@ -46,8 +46,12 @@ void ServerObject::message(const AtomList& list)
 
 void ServerObject::message(const string str)
 {
+    string msg = str;
+
+    cout << "msg " << msg << endl;
+
     if (_pdObject)
-        cmp_sendstring(reinterpret_cast<t_pd*>(_pdObject), str);
+        cmp_sendstring(reinterpret_cast<t_pd*>(_pdObject), msg);
     else
         cmp_post("internal pdObject error");
 };
@@ -165,11 +169,15 @@ public:
 
     static void hookFunction(const char* str)
     {
+
         vector<ConsoleObserver*>::iterator it;
         for (it = _consoleObservers.begin(); it != _consoleObservers.end(); ++it) {
             ConsoleObserver* c = *it;
-            c->setText(str);
-            c->update();
+            if (c) {
+                cout << "print hook: " << str << endl;
+                c->setText(str);
+                c->update();
+            }
         }
     }
 };

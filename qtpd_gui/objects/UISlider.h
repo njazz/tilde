@@ -174,13 +174,14 @@ public:
             float val = valueFromPoint(ev->pos().toPoint());
             std::string val_str = std::to_string(val);
 
-            // TODO-PD_OBJECT
-//            if (!pdObject()) {
-//                qDebug("msg: bad pd object!");
-//            } else {
+            if (!serverObject()) {
+                qDebug("msg: bad pd object!");
+            } else {
 //                cmp_sendstring((t_pd*)pdObject(), ((std::string) "set " + val_str).c_str());
 //                cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang ").c_str());
-//            }
+                serverObject()->message(((std::string) "set " + val_str));
+                serverObject()->message(((std::string) "bang " + val_str));
+            }
         }
     }
 

@@ -92,6 +92,8 @@ extern "C" void setup_ui0x2esliders()
         (t_method)(0),
         sizeof(t_ui_sliders), 0, A_GIMME, 0);
 
+//    class_addcreator((t_newmethod)(uisliders_new),"ui.slider", A_NULL);
+
     class_addmethod(ui_sliders_class, (t_method)uisliders_set, &s_anything, A_GIMME, 0);
     class_addmethod(ui_sliders_class, (t_method)uisliders_bang, &s_bang, A_NULL, 0);
 

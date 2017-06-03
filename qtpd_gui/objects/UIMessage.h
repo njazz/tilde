@@ -32,7 +32,8 @@ public:
     {
         UIMessage* ret = new UIMessage();
 
-        QStringList l = data.split(" ");l.removeFirst();
+        QStringList l = data.split(" ");
+        l.removeFirst();
         data = l.join(" ");
         ret->setObjectData(data);
 
@@ -164,17 +165,16 @@ public:
             //todo timer
         }
 
-        //temporary
         //move
-        // TODO-PD_OBJECT
-//        if (getEditMode() != em_Unlocked) {
-//            if (!pdObject()) {
-//                qDebug("msg: bad pd object!");
-//            } else {
+        if (getEditMode() != em_Unlocked) {
+            if (!serverObject()) {
+                qDebug("msg: bad pd object!");
+            } else {
 
-//                cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
-//            }
-//        }
+                //cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
+                serverObject()->message("bang");
+            }
+        }
     }
 
     void mouseReleaseEvent(QGraphicsSceneMouseEvent*)
@@ -216,16 +216,16 @@ public:
 
         //temporary
         //move
-        // TODO-PD_OBJECT
-//        if (getEditMode() == em_Unlocked) {
-//            if (!pdObject()) {
-//                qDebug("msg: bad pd object!");
-//            } else {
 
-//                std::string msg = ("set " + _objectDataModel.objectData().toStdString());
-//                cmp_sendstring((t_pd*)pdObject(), msg);
-//            }
-//        }
+        if (getEditMode() == em_Unlocked) {
+            if (!serverObject()) {
+                qDebug("msg: bad pd object!");
+            } else {
+
+                std::string msg = ("set " + _objectDataModel.objectData().toStdString());
+                serverObject()->message(msg);
+            }
+        }
 
         resizeEvent();
     }
@@ -254,11 +254,11 @@ public:
         emit x->callRepaint();
     }
 
-//    void setPdObject(void* obj)
-//    {
-//        UIObject::setPdObject(obj);
-//        cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIMessage::updateUI);
-//    }
+    //    void setPdObject(void* obj)
+    //    {
+    //        UIObject::setPdObject(obj);
+    //        cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIMessage::updateUI);
+    //    }
 
     std::string asPdFileString()
     {
