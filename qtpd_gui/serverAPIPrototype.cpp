@@ -48,6 +48,8 @@ void ServerObject::message(const string str)
 {
     if (_pdObject)
         cmp_sendstring(reinterpret_cast<t_pd*>(_pdObject), str);
+    else
+        cmp_post("internal pdObject error");
 };
 
 int ServerObject::inletCount()
@@ -75,7 +77,6 @@ ServerProperties* ServerObject::properties() { return _properties; };
 
 void ServerObject::connectUI(void* uiObject, t_updateUI uiFunction)
 {
-
     cmp_connectUI((t_pd*)_pdObject, uiObject, uiFunction);
 };
 

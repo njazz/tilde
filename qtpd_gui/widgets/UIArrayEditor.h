@@ -8,7 +8,7 @@
 #include <QPainter>
 #include <QWidget>
 
-//#include "PdLink.h"
+
 
 #include "math.h"
 

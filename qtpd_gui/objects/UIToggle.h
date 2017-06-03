@@ -9,8 +9,6 @@
 #include "Port.h"
 #include "UIObject.h"
 
-//#include "PdLink.h"
-
 #include <QGraphicsView>
 
 namespace qtpd {
@@ -32,7 +30,8 @@ public:
     {
         UIToggle* ret = new UIToggle();
 
-        QStringList l = data.split(" ");l.removeFirst();
+        QStringList l = data.split(" ");
+        l.removeFirst();
         data = l.join(" ");
         ret->setObjectData(data);
 
@@ -126,17 +125,18 @@ public:
 
         if (getEditMode() != em_Unlocked) {
 
-//            if (!pdObject()) {
-//                qDebug("msg: bad pd object!");
-//            } else {
-//                cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
-//            }
+            //            if (!pdObject()) {
+            //                qDebug("msg: bad pd object!");
+            //            } else {
+            //                cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
+            //            }
 
             if (!serverObject()) {
                 qDebug("msg: bad server object!");
             } else {
                 //cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
                 serverObject()->message("bang");
+                //qDebug("server msg");
             }
         }
     }
@@ -185,11 +185,11 @@ public:
             o->connectUI(this, &UIToggle::updateUI);
     };
 
-//    void setPdObject(void* obj)
-//    {
-//        UIObject::setPdObject(obj);
-//        //cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIToggle::updateUI);
-//    }
+    //    void setPdObject(void* obj)
+    //    {
+    //        UIObject::setPdObject(obj);
+    //        //cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIToggle::updateUI);
+    //    }
 };
 }
 

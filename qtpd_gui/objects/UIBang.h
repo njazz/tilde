@@ -10,7 +10,7 @@
 #include "Port.h"
 #include "UIObject.h"
 
-//#include "PdLink.h"
+
 
 #include <QGraphicsView>
 
@@ -123,16 +123,15 @@ public:
             timerStart();
         }
 
-        //temporary
-        //move
-        // TODO-PD_OBJECT
-//        if (getEditMode() != em_Unlocked) {
-//            if (!pdObject()) {
-//                qDebug("msg: bad pd object!");
-//            } else {
-//                cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
-//            }
-//        }
+        //move ?
+        if (getEditMode() != em_Unlocked) {
+            if (!serverObject()) {
+                qDebug("msg: bad pd object!");
+            } else {
+                //cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
+                serverObject()->message("bang");
+            }
+        }
     }
 
     void mouseReleaseEvent(QGraphicsSceneMouseEvent*)

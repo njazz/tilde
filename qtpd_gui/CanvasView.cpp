@@ -155,10 +155,6 @@ void CanvasView::s_MoveBox(UIItem* box, QGraphicsSceneMouseEvent* event)
         }
 
         w->move(pos);
-        // TODO-PD_OBJECT
-        t_object* obj = 0;//(t_object*)w->pdObject();
-        if (obj)
-            cmp_moveobject(obj, (int)pos.x(), (int)pos.y()); //possibly useless
 
         //todo
         viewport()->update();
@@ -484,9 +480,6 @@ UIObject* CanvasView::createBoxForPatchWindow(QMainWindow* patchWindow, QString 
 
 void CanvasView::patchcord(UIObject* obj1, int outlet, UIObject* obj2, int inlet)
 {
-    // TODO-PD_OBJECT
-
-
 
     if (obj1->serverObject() && obj2->serverObject()) {
         if (((UIBox*)obj1)->errorBox()) {
@@ -509,10 +502,13 @@ void CanvasView::patchcord(UIObject* obj1, int outlet, UIObject* obj2, int inlet
 
         qDebug("server patchcord");
 
-        _canvasData.serverCanvas()->connect(obj1->serverObject(), outlet, obj1->serverObject(), inlet);
+        qDebug() << "pc: " <<  obj1->serverObject() << outlet << obj2->serverObject() << inlet ;
+        _canvasData.serverCanvas()->connect(obj1->serverObject(), outlet, obj2->serverObject(), inlet);
 
-//        cmp_patchcord((t_object*)obj1->pdObject(), outlet, (t_object*)obj2->pdObject(), inlet);
-//        _canvasData.addPatchcord(pc); //patchcords()->push_back(pc);
+        //        cmp_patchcord((t_object*)obj1->pdObject(), outlet, (t_object*)obj2->pdObject(), inlet);
+        //        _canvasData.addPatchcord(pc); //patchcords()->push_back(pc);
+
+        _canvasData.addPatchcord(pc);
 
         scene()->addItem(pc);
     } else
