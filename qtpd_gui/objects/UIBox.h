@@ -32,6 +32,16 @@ public:
     explicit UIBox(); //(UIObjectItem* parent = 0);
     //~UIBox();
 
+    static UIObject* createObj(QString data) {
+
+        UIBox * ret = new UIBox();
+
+        ret->setObjectData(data);
+
+        return ret;
+
+    }
+
     static UIObject* createObject(QString objectData, t_canvas* pd_Canvas, QGraphicsView* parent = 0)
     {
         //TODO fix all constructors

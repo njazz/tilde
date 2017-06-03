@@ -21,6 +21,8 @@
 
 #include "UIObjectData.h"
 
+#include "../API_prototype/serverAPIPrototype.h"
+
 namespace qtpd {
 
 class CanvasView;
@@ -41,9 +43,9 @@ private:
 
     SizeBox* _sizeBox;
 
-    QMainWindow* _SubpatchWindow;   // move to UIBox
+    QMainWindow* _SubpatchWindow; // move to UIBox
 
-    QMenu _popupMenu;   //pointer
+    QMenu _popupMenu; //pointer
 
     QAction* pmProperties;
     QAction* pmHelp;
@@ -55,15 +57,19 @@ private:
     CanvasView* _parentCanvasView;
     CanvasData* _subCanvasData;
 
+    ServerObject* _serverObject;
+
 protected:
     virtual void hoverEnterEvent(QGraphicsSceneHoverEvent*);
     virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent*);
 
 public:
-
     //new 0517
-    CanvasView* parentCanvasView(){return _parentCanvasView;};
-    CanvasData* subCanvasData(){return _subCanvasData;};
+    CanvasView* parentCanvasView() { return _parentCanvasView; };
+    void setParentCanvasView(CanvasView* v) { _parentCanvasView = v; }
+
+    CanvasData* subCanvasData() { return _subCanvasData; };
+    void setSubCanvasData(CanvasData* c) { _subCanvasData = c; }
 
     //TODO
     bool disableObjectMaker;
@@ -76,10 +82,10 @@ public:
 
     explicit UIObject(UIItem* parent = 0);
 
-    virtual void initProperties();  ///>init properties for the class - called from constructor
-    PropertyList* properties();     ///> UIObject properties
+    virtual void initProperties(); ///>init properties for the class - called from constructor
+    PropertyList* properties(); ///> UIObject properties
 
-    void createContextMenu();       ///> createContextMenu
+    void createContextMenu(); ///> createContextMenu
     void showPopupMenu(QPoint pos);
 
     virtual void autoResize(); ///> call this after setting object data
@@ -116,6 +122,22 @@ public:
     /// \return
     ///
     virtual void* pdObject();
+
+    virtual ServerObject* serverObject(){return _serverObject;};
+    virtual void setServerObject(ServerObject* o){_serverObject = o;};
+
+    virtual void sync(){
+        if (!_serverObject) return;
+
+        int in_c = _serverObject->inletCount();
+        int out_c = _serverObject->outletCount();
+
+        for (int i = 0; i < in_c; i++)
+            addInlet();
+        for (int i = 0; i < out_c; i++)
+            addOutlet();
+
+    };
 
     ////
     /// \brief sets pointer to pd object
@@ -240,7 +262,7 @@ private slots:
 
     void propertySize(); ///> called when size property is changed
     void propertyFontSize();
-    void propertyUpdate();   ///> basic update - calls update() probably remove later
+    void propertyUpdate(); ///> basic update - calls update() probably remove later
 
 signals:
     void editObject(void* box);

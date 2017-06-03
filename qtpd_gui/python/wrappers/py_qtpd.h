@@ -128,9 +128,10 @@ public Q_SLOTS:
         c->selectBox(obj);
     }
 
-    void selectAll(CanvasView* c)
+    void selectAll(PatchWindowController* p)
     {
-        c->selectAll();
+        // TODO
+        //p->menuSelectAll();
     }
 
     void deselectAll(CanvasView* c)
@@ -141,7 +142,9 @@ public Q_SLOTS:
 
     void deleteObjectInCanvas(CanvasView* c, UIObject* obj)
     {
-        c->deleteObject(obj);
+        // TODO
+
+        //c->deleteObject(obj);
     }
 
     void patchcord(CanvasView* c, UIObject* obj1, int out1, UIObject* obj2, int in2)
@@ -153,25 +156,25 @@ public Q_SLOTS:
     // objects
 
     // TODO
-    objectVec objects(CanvasView* c)
+    objectVec* objects(CanvasData* c)
     {
-        return c->objectBoxes();
+        return c->boxes();
     }
 
-    objectVec selectedObjects(CanvasView* c)
+    objectVec* selectedObjects(CanvasData* c)
     {
-        return c->selectedObjectBoxes();
+        return c->selectedBoxes();
     }
 
     //////////
     // patchcords
 
-    patchcordVec patchcords(CanvasView* c)
+    patchcordVec* patchcords(CanvasData* c)
     {
         return c->patchcords();
     }
 
-    patchcordVec selectedPatchcords(CanvasView* c)
+    patchcordVec* selectedPatchcords(CanvasData* c)
     {
         return c->selectedPatchcords();
     }
@@ -183,7 +186,8 @@ public Q_SLOTS:
 
     void deletePatchcordsFor(CanvasView* c, UIObject* obj)
     {
-        c->deletePatchcordsFor(obj);
+        // TODO
+        //c->deletePatchcordsFor(obj);
     }
 
     //////////

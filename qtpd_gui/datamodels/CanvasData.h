@@ -280,6 +280,35 @@ public:
         return ret;
     }
 
+    t_patchcordAsNumbers patchcordAsNumbers(UIPatchcord* pcord)
+    {
+        //TODO
+
+        t_patchcordAsNumbers ret;
+
+        int obj1i = findObjectIndex(pcord->obj1());
+        int obj2i = findObjectIndex(pcord->obj2());
+
+        if ((obj1i >= 0) && (obj2i >= 0)) {
+            //std::string ret;
+
+            ret.obj1 = (obj1i);
+            ret.out1 = pcord->outletIndex();
+
+            ret.obj2 = (obj2i);
+            ret.in2 = pcord->inletIndex();
+
+        } else {
+            qDebug("patchcord to string error");
+            ret.obj1 = 0;
+            ret.obj2 = 0;
+            ret.out1 = 0;
+            ret.in2 = 0;
+        }
+
+        return ret;
+    }
+
     QStringList objectsAsPdFileStrings()
     {
 

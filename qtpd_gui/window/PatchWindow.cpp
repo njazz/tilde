@@ -120,6 +120,7 @@ void PatchWindow::setController(PatchWindowController* c)
     connect(pasteAct, &QAction::triggered, _controller, &PatchWindowController::menuPaste);
     connect(duplicateAct, &QAction::triggered, _controller, &PatchWindowController::menuDuplicate);
 
+    connect(selectAllAct, &QAction::triggered, _controller, &PatchWindowController::menuSelectAll);
 }
 
 void PatchWindow::closeEvent(QCloseEvent* event)
@@ -241,7 +242,7 @@ void PatchWindow::objectMakerDone()
                     qDebug("replace object - patchcord error");
             }
 
-            _canvasView->deleteObject(obj);
+            _controller->deleteObject(obj);
         } else {
             UIObject* new_obj = _canvasView->createObject(obj_name, _canvasView->newObjectPos());
         }

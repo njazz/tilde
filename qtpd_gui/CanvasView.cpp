@@ -512,113 +512,113 @@ void CanvasView::patchcord(UIObject* obj1, UIItem* outport, UIObject* obj2, UIIt
     patchcord(obj1, n1, obj2, n2);
 }
 
-void CanvasView::deletePatchcordsFor(UIItem* obj)
-{
-    //for //(int i=0;i<data_.patchcords()->size();i++)
-    std::vector<UIPatchcord*>::iterator it;
-    for (it = _canvasData.patchcords()->begin(); it != _canvasData.patchcords()->end();) {
-        if ((*it)->isConnectedToObject(obj)) {
-            scene()->removeItem(*it);
-            it = _canvasData.patchcords()->erase(it);
-        } else
-            ++it;
-    }
+//void CanvasView::deletePatchcordsFor(UIItem* obj)
+//{
+//    //for //(int i=0;i<data_.patchcords()->size();i++)
+//    std::vector<UIPatchcord*>::iterator it;
+//    for (it = _canvasData.patchcords()->begin(); it != _canvasData.patchcords()->end();) {
+//        if ((*it)->isConnectedToObject(obj)) {
+//            scene()->removeItem(*it);
+//            it = _canvasData.patchcords()->erase(it);
+//        } else
+//            ++it;
+//    }
 
-    viewport()->update();
-}
+//    viewport()->update();
+//}
 
 ////
 /// \brief delete single box
 ///
-void CanvasView::deleteObject(UIObject* box)
-{
-    _canvasData.deselectBoxes();
-    //_selectionData.addUniqueBox(box);
-    _canvasData.selectBox(box);
-    deleteSelectedObjects();
-}
+//void CanvasView::deleteObject(UIObject* box)
+//{
+//    _canvasData.deselectBoxes();
+//    //_selectionData.addUniqueBox(box);
+//    _canvasData.selectBox(box);
+//    deleteSelectedObjects();
+//}
 
-////
-/// \brief delete all selected object boxes()
-///
-void CanvasView::deleteSelectedObjects()
-{
-    qDebug("del selected");
+//////
+///// \brief delete all selected object boxes()
+/////
+//void CanvasView::deleteSelectedObjects()
+//{
+//    qDebug("del selected");
 
-    objectVec::iterator it;
-    for (it = _canvasData.selectedBoxes()->begin(); it != _canvasData.selectedBoxes()->end(); ++it)
+//    objectVec::iterator it;
+//    for (it = _canvasData.selectedBoxes()->begin(); it != _canvasData.selectedBoxes()->end(); ++it)
 
-    {
-        //
-        UIObject* box = *it;
-        qDebug("delete %lu | %lu", (long)box, (long)box->pdObject());
+//    {
+//        //
+//        UIObject* box = *it;
+//        qDebug("delete %lu | %lu", (long)box, (long)box->pdObject());
 
-        if (box->pdObject()) {
-            //NEEDS FIX
-            if ((t_object*)(box->pdObject())) {
-                if (!box->errorBox())
-                    cmp_deleteobject((t_canvas*)pdObject(), (t_object*)box->pdObject());
-                box->setPdObject(0);
-            }
-        } else {
-            qDebug("didn't delete pd object");
-        }
+//        if (box->pdObject()) {
+//            //NEEDS FIX
+//            if ((t_object*)(box->pdObject())) {
+//                if (!box->errorBox())
+//                    cmp_deleteobject((t_canvas*)pdObject(), (t_object*)box->pdObject());
+//                box->setPdObject(0);
+//            }
+//        } else {
+//            qDebug("didn't delete pd object");
+//        }
 
-        deletePatchcordsFor(box);
+//        deletePatchcordsFor(box);
 
-        scene()->removeItem(box);
-        viewport()->update();
-        //box->close();
+//        scene()->removeItem(box);
+//        viewport()->update();
+//        //box->close();
 
-        _canvasData.boxes()->erase(std::remove(_canvasData.boxes()->begin(), _canvasData.boxes()->end(), *it), _canvasData.boxes()->end());
-        //selectionData_.boxes()->erase(std::remove(selectionData_.boxes()->begin(), selectionData_.boxes()->end(), *it), selectionData_.boxes()->end());
-    }
+//        _canvasData.boxes()->erase(std::remove(_canvasData.boxes()->begin(), _canvasData.boxes()->end(), *it), _canvasData.boxes()->end());
+//        //selectionData_.boxes()->erase(std::remove(selectionData_.boxes()->begin(), selectionData_.boxes()->end(), *it), selectionData_.boxes()->end());
+//    }
 
-    _canvasData.selectedBoxes()->clear();
-    ;
-}
+//    _canvasData.selectedBoxes()->clear();
+//    ;
+//}
 
-////
-/// \brief delete all selected patchcords()
-///
-void CanvasView::deleteSelectedPatchcords()
-{
-    qDebug() << "del selected patchcords";
+//////
+///// \brief delete all selected patchcords()
+/////
+//void CanvasView::deleteSelectedPatchcords()
+//{
+//    qDebug() << "del selected patchcords";
 
-    //cleanup
-    //for (int i=0;i<data_.patchcords()->size(); i++)
-    std::vector<UIPatchcord*>::iterator it;
-    for (it = _canvasData.patchcords()->begin(); it != _canvasData.patchcords()->end();) {
-        UIPatchcord* p = *it;
+//    //cleanup
+//    //for (int i=0;i<data_.patchcords()->size(); i++)
+//    std::vector<UIPatchcord*>::iterator it;
+//    for (it = _canvasData.patchcords()->begin(); it != _canvasData.patchcords()->end();) {
+//        UIPatchcord* p = *it;
 
-        if (p->isSelected()) {
+//        if (p->isSelected()) {
 
-            t_object* obj1 = (t_object*)p->obj1()->pdObject();
-            t_object* obj2 = (t_object*)p->obj2()->pdObject();
+//            t_object* obj1 = (t_object*)p->obj1()->pdObject();
+//            t_object* obj2 = (t_object*)p->obj2()->pdObject();
 
-            if (obj1 && obj2) {
-                int out1 = p->outletIndex();
-                int in2 = p->inletIndex();
+//            if (obj1 && obj2) {
+//                int out1 = p->outletIndex();
+//                int in2 = p->inletIndex();
 
-                if ((out1 >= 0) && (in2 >= 0))
-                    cmp_delete_patchcord(obj1, out1, obj2, in2);
-                else
-                    qDebug("object error. didn't delete pd patchcord");
-            } else
-                qDebug("object error. didn't delete pd patchcord");
+//                if ((out1 >= 0) && (in2 >= 0))
+//                    cmp_delete_patchcord(obj1, out1, obj2, in2);
+//                else
+//                    qDebug("object error. didn't delete pd patchcord");
+//            } else
+//                qDebug("object error. didn't delete pd patchcord");
 
-            scene()->removeItem(p);
-            //qDebug() << "remove item";
+//            scene()->removeItem(p);
+//            //qDebug() << "remove item";
 
-            it = _canvasData.patchcords()->erase(it);
+//            it = _canvasData.patchcords()->erase(it);
 
-        } else
-            ++it;
-    }
+//        } else
+//            ++it;
+//    }
 
-    _canvasData.selectedPatchcords()->clear();
-    update();
-}
+//    _canvasData.selectedPatchcords()->clear();
+//    update();
+//}
 
 void CanvasView::setEditMode(t_editMode mode)
 {
@@ -664,25 +664,25 @@ void CanvasView::setGridSnap(bool val)
     _gridSnap = val;
 }
 
-objectVec CanvasView::objectBoxes()
-{
-    return *_canvasData.boxes();
-}
+//objectVec CanvasView::objectBoxes()
+//{
+//    return *_canvasData.boxes();
+//}
 
-patchcordVec CanvasView::patchcords()
-{
-    return *_canvasData.patchcords();
-}
+//patchcordVec CanvasView::patchcords()
+//{
+//    return *_canvasData.patchcords();
+//}
 
-objectVec CanvasView::selectedObjectBoxes()
-{
-    return *_canvasData.selectedBoxes();
-}
+//objectVec CanvasView::selectedObjectBoxes()
+//{
+//    return *_canvasData.selectedBoxes();
+//}
 
-patchcordVec CanvasView::selectedPatchcords()
-{
-    return *_canvasData.selectedPatchcords();
-}
+//patchcordVec CanvasView::selectedPatchcords()
+//{
+//    return *_canvasData.selectedPatchcords();
+//}
 
 patchcordVec CanvasView::patchcordsForObject(UIObject* obj)
 {
@@ -700,11 +700,11 @@ patchcordVec CanvasView::patchcordsForObject(UIObject* obj)
     return ret;
 }
 
-int CanvasView::findObjectIndex(UIObject* obj)
-{
+//int CanvasView::findObjectIndex(UIObject* obj)
+//{
 
-    return _canvasData.findObjectIndex(obj);
-}
+//    return _canvasData.findObjectIndex(obj);
+//}
 
 //std::string CanvasView::asPdFileString()
 //{
@@ -722,58 +722,58 @@ int CanvasView::findObjectIndex(UIObject* obj)
 //    return ret;
 //}
 
-std::string CanvasView::patchcordAsPdFileString(UIPatchcord* pcord)
-{
-    //TODO
+//std::string CanvasView::patchcordAsPdFileString(UIPatchcord* pcord)
+//{
+//    //TODO
 
-    int obj1i = findObjectIndex(pcord->obj1());
-    int obj2i = findObjectIndex(pcord->obj2());
+//    int obj1i = findObjectIndex(pcord->obj1());
+//    int obj2i = findObjectIndex(pcord->obj2());
 
-    if ((obj1i >= 0) && (obj2i >= 0)) {
-        std::string ret;
+//    if ((obj1i >= 0) && (obj2i >= 0)) {
+//        std::string ret;
 
-        ret += std::to_string(obj1i) + " ";
-        ret += std::to_string(pcord->outletIndex()) + " ";
+//        ret += std::to_string(obj1i) + " ";
+//        ret += std::to_string(pcord->outletIndex()) + " ";
 
-        ret += std::to_string(obj2i) + " ";
-        ret += std::to_string(pcord->inletIndex()) + " ";
+//        ret += std::to_string(obj2i) + " ";
+//        ret += std::to_string(pcord->inletIndex()) + " ";
 
-        return ret;
+//        return ret;
 
-    } else
-        qDebug("patchcord to string error");
+//    } else
+//        qDebug("patchcord to string error");
 
-    return "";
-}
+//    return "";
+//}
 
-t_patchcordAsNumbers CanvasView::patchcordAsNumbers(UIPatchcord* pcord)
-{
-    //TODO
+//t_patchcordAsNumbers CanvasView::patchcordAsNumbers(UIPatchcord* pcord)
+//{
+//    //TODO
 
-    t_patchcordAsNumbers ret;
+//    t_patchcordAsNumbers ret;
 
-    int obj1i = findObjectIndex(pcord->obj1());
-    int obj2i = findObjectIndex(pcord->obj2());
+//    int obj1i = findObjectIndex(pcord->obj1());
+//    int obj2i = findObjectIndex(pcord->obj2());
 
-    if ((obj1i >= 0) && (obj2i >= 0)) {
-        //std::string ret;
+//    if ((obj1i >= 0) && (obj2i >= 0)) {
+//        //std::string ret;
 
-        ret.obj1 = (obj1i);
-        ret.out1 = pcord->outletIndex();
+//        ret.obj1 = (obj1i);
+//        ret.out1 = pcord->outletIndex();
 
-        ret.obj2 = (obj2i);
-        ret.in2 = pcord->inletIndex();
+//        ret.obj2 = (obj2i);
+//        ret.in2 = pcord->inletIndex();
 
-    } else {
-        qDebug("patchcord to string error");
-        ret.obj1 = 0;
-        ret.obj2 = 0;
-        ret.out1 = 0;
-        ret.in2 = 0;
-    }
+//    } else {
+//        qDebug("patchcord to string error");
+//        ret.obj1 = 0;
+//        ret.obj2 = 0;
+//        ret.out1 = 0;
+//        ret.in2 = 0;
+//    }
 
-    return ret;
-}
+//    return ret;
+//}
 
 void CanvasView::selectObject(UIObject* obj)
 {
@@ -781,16 +781,16 @@ void CanvasView::selectObject(UIObject* obj)
     _canvasData.selectBox(obj);
 }
 
-void CanvasView::selectAll()
-{
-    qDebug("select all");
-    objectVec::iterator it;
-    for (it = _canvasData.boxes()->begin(); it != _canvasData.boxes()->end(); ++it) {
-        selectObject(*it);
-    }
+//void CanvasView::selectAll()
+//{
+//    qDebug("select all");
+//    objectVec::iterator it;
+//    for (it = _canvasData.boxes()->begin(); it != _canvasData.boxes()->end(); ++it) {
+//        selectObject(*it);
+//    }
 
-    //selectionData_.patchcords()_ = data_.patchcords()_;
-}
+//    //selectionData_.patchcords()_ = data_.patchcords()_;
+//}
 
 void CanvasView::resizeToObjects()
 {

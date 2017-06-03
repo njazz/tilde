@@ -51,6 +51,8 @@ namespace qtpd {
 ///
 typedef UIObject* (*cmObjectConstructor)(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent);
 
+typedef UIObject* (*UIObjectConstructor)(QString objectData);//, ServerCanvas* serverCanvas, PatchWindowController* controller);
+
 ////
 /// \brief prototype for ui externals handling
 /// \deprecated stub
@@ -68,6 +70,7 @@ private:
     std::vector<std::string> _pdNames; ///> pd object names - for auto-completion
 
     std::map<std::string, cmObjectConstructor> _objectConstructors;
+    std::map<std::string, UIObjectConstructor> _uiObjectConstructors;
 
     ObjectLoader()
     {
@@ -82,7 +85,7 @@ public:
     ///
     void loadObjects();
 
-    void addUIobject(std::string name, cmObjectConstructor constructor);
+    void addUIobject(std::string name, cmObjectConstructor constructor, UIObjectConstructor constructor2);
 
     std::vector<std::string> getUINames();
 
@@ -92,8 +95,10 @@ public:
 
     // todo remove?
     cmObjectConstructor getConstructorFor(QString objName);
+    UIObjectConstructor getUIConstructorFor(QString objName);
 
     UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView *parent);
+    UIObject* createUIObject(QString objectData);
 };
 }
 

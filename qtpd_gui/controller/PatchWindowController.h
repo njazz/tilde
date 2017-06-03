@@ -119,6 +119,20 @@ public:
         // TODO copy patchcords
     }
 
+    void dataSelectAllObjects()
+    {
+        qDebug("select all");
+        objectVec::iterator it;
+        for (it = _canvasData->boxes()->begin(); it != _canvasData->boxes()->end(); ++it) {
+            _canvasData->selectBox(*it);
+
+
+
+        }
+
+        //selectionData_.patchcords()_ = data_.patchcords()_;
+    }
+
     // ------------
 
     void deleteSelectedObjects()
@@ -272,6 +286,11 @@ public slots:
     {
         deleteSelectedObjects();
         deleteSelectedPatchcords();
+    };
+
+    void menuSelectAll()
+    {
+        dataSelectAllObjects();
     };
 };
 }

@@ -185,22 +185,22 @@ public:
     /// \brief delete all patchcords for object
     /// \param obj
     ///
-    void deletePatchcordsFor(UIItem* obj);
+    //void deletePatchcordsFor(UIItem* obj);
 
     ////
     /// \brief delete single box
     ///
-    void deleteObject(UIObject* box);
+    //void deleteObject(UIObject* box);
 
-    ////
-    /// \brief delete all selected object boxes
-    ///
-    void deleteSelectedObjects();
+//    ////
+//    /// \brief delete all selected object boxes
+//    ///
+//    void deleteSelectedObjects();
 
-    ////
-    /// \brief delete all selected patchcords
-    ///
-    void deleteSelectedPatchcords();
+//    ////
+//    /// \brief delete all selected patchcords
+//    ///
+//    void deleteSelectedPatchcords();
 
     // -------------------------------------------------------
 
@@ -211,29 +211,29 @@ public:
     ///
     UIObject* getObjectByIndex(int idx);
 
-    ////
-    /// \brief returns vector of all object boxes - needed by filesaver
-    /// \return
-    ///
-    objectVec objectBoxes();
+//    ////
+//    /// \brief returns vector of all object boxes - needed by filesaver
+//    /// \return
+//    ///
+//    objectVec objectBoxes();
 
-    ////
-    /// \brief returns vector of all patchcords - needed by filesaver
-    /// \return
-    ///
-    patchcordVec patchcords();
+//    ////
+//    /// \brief returns vector of all patchcords - needed by filesaver
+//    /// \return
+//    ///
+//    patchcordVec patchcords();
 
-    ////
-    /// \brief returns vector of selected object boxes
-    /// \return
-    ///
-    objectVec selectedObjectBoxes();
+//    ////
+//    /// \brief returns vector of selected object boxes
+//    /// \return
+//    ///
+//    objectVec selectedObjectBoxes();
 
-    ////
-    /// \brief returns vector of selected patchcords
-    /// \return
-    ///
-    patchcordVec selectedPatchcords();
+//    ////
+//    /// \brief returns vector of selected patchcords
+//    /// \return
+//    ///
+//    patchcordVec selectedPatchcords();
 
     ////
     /// \brief returns patchcords that are connected to specific object
@@ -242,13 +242,13 @@ public:
     ///
     patchcordVec patchcordsForObject(UIObject* obj);
 
-    ////
-    /// \brief find object index in list
-    /// \details this may be different from object index inside pd canvas
-    /// \param obj
-    /// \return
-    ///
-    int findObjectIndex(UIObject* obj);
+//    ////
+//    /// \brief find object index in list
+//    /// \details this may be different from object index inside pd canvas
+//    /// \param obj
+//    /// \return
+//    ///
+//    int findObjectIndex(UIObject* obj);
 
     //remove
 //    ////
@@ -257,23 +257,23 @@ public:
 //    ///
 //    virtual std::string asPdFileString();
 
-    ///////
-    ///
-    /////
-    /// \brief returns patchcord as pd string
-    /// \details move this later
-    /// \param patchcord
-    /// \return
-    ///
-    std::string patchcordAsPdFileString(UIPatchcord* pcord);
+//    ///////
+//    ///
+//    /////
+//    /// \brief returns patchcord as pd string
+//    /// \details move this later
+//    /// \param patchcord
+//    /// \return
+//    ///
+//    std::string patchcordAsPdFileString(UIPatchcord* pcord);
 
-    ////
-    /// \brief converts UI patchcord object with 4 pointers to 4 numbers of objects in canvas
-    /// \details this is mostly for saving file
-    /// \param pcord
-    /// \return
-    ///
-    t_patchcordAsNumbers patchcordAsNumbers(UIPatchcord* pcord);
+//    ////
+//    /// \brief converts UI patchcord object with 4 pointers to 4 numbers of objects in canvas
+//    /// \details this is mostly for saving file
+//    /// \param pcord
+//    /// \return
+//    ///
+//    t_patchcordAsNumbers patchcordAsNumbers(UIPatchcord* pcord);
 
     ////
     /// \brief selects single box. mostly used by replace object routine in objectmaker
@@ -281,10 +281,10 @@ public:
     ///
     void selectObject(UIObject* obj);
 
-    ////
-    /// \brief select all boxes
-    ///
-    void selectAll();
+//    //
+//    / \brief select all boxes
+//    /
+//    void selectAll();
 
     ////
     /// \brief change size to fit all objects
@@ -359,7 +359,7 @@ public slots:
     void s_OutMouseReleased(UIItem*, QGraphicsSceneMouseEvent*);
 
 private:
-private slots:
+public slots:
 
     ////
     /// \brief slot in Box-style canvas for handling new ins/outs

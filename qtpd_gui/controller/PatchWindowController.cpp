@@ -60,15 +60,150 @@ PatchWindowController* PatchWindowController::createSubpatchWindowController(){}
 //
 void PatchWindowController::createObjectMaker(){};
 //
-bool PatchWindowController::createObject(string name, QPoint pos){
-    //ServerObject* serverObject = _canvasData->serverCanvas->createObject(name);
-    //UIObject* uiObject = ObjectLoader::createUIObject(name);
-    //syncData(serverObject, uiObject);
+bool PatchWindowController::createObject(string name, QPoint pos)
+{
+    qDebug("* create object *");
+
+    ServerObject* serverObject = _canvasData->serverCanvas()->createObject(name);
+    UIObject* uiObject = ObjectLoader::inst().createUIObject(name.c_str());
+
+    uiObject->setServerObject(serverObject);
+    uiObject->sync();
+
+    // TODO
+
+    //connect(uiObject, &UIObject::selectBox, _windows[0]->canvasView(), &CanvasView::s_SelectBox);
+    //connect(uiObject, &UIObject::moveBox, _windows[0]->canvasView(), &CanvasView::s_MoveBox);
+
+    //uiObject->setEditModeRef( _windows[0]->canvasEditMode()); //Canvas::getEditModeRef());
+    //connect(uiObject, &UIObject::editObject, this, &CanvasView::objectStartsEdit);
+
+
+    uiObject->move(pos.x(), pos.y());
+    _canvasData->addUniqueBox(_canvasData->boxes(), uiObject);
+    _scene->addItem(uiObject);
+
+    // check port count
+    /*
+    if (list.count()) {
+        if (
+            (list.at(0) == "inlet") || (list.at(0) == "inlet~") || (list.at(0) == "outlet") || (list.at(0) == "outlet~")) {
+            //qDebug("ports");
+            emit updatePortCount();
+            //
+
+            portLocalCountUpdated();
+        }
+    }
+    */
+
+    //resizeToObjects();
+
+    return true;
+
+    // ======================================================
+
+    /*
+
+    QString objectData1 = name.c_str();
+    QStringList list = QString(objectData1).split(" ");
+
+    if (list.count()) {
+
+        if (list.at(0) == "pd") {
+            //lol
+            std::pair<QMainWindow*, UIObject*> newPatch;
+
+            // todo return just QMainWindow
+            //newPatch = emit createSubpatchWindow();
+
+            //t_canvas* newPdCanvas = cmp_newpatch();
+
+            ServerCanvas* newCanvas = _serverInstance->createCanvas();
+            // temporary
+            //PatchWindow* subPatch = PatchWindow::newSubpatch((t_canvas*)newPdCanvas);
+
+            PatchWindowController* subPatchCtrl = createSubpatchWindowController();
+            PatchWindow* subPatch = subPatchCtrl->windows()[0];
+
+            //CanvasView* newCanvas = subPatch->canvasView();
+
+            UIObject* obj = UISubpatch::createObject(objectData1, 0, this);
+
+            ((UISubpatch*)obj)->setSubpatchWindow(subPatch);
+
+            //qDebug()<<"objdata1" << objectData1;
+            qDebug("subpatch>>");
+
+            subPatch->show();
+
+            connect(obj, &UIObject::selectBox, this, &CanvasView::s_SelectBox);
+            connect(obj, &UIObject::moveBox, this, &CanvasView::s_MoveBox);
+
+            obj->setEditModeRef(_canvasEditMode); //Canvas::getEditModeRef());
+            obj->move(pos.x(), pos.y());
+            _canvasData.addUniqueBox(_canvasData.boxes(), obj);
+            _scene->addItem(obj);
+
+            return obj;
+        }
+
+        // temporary to check G-O-P
+        if (list.at(0) == "pds") {
+            //lol
+            std::pair<QMainWindow*, UIObject*> newPatch;
+
+            // todo return just QMainWindow
+            //newPatch = emit createSubpatchWindow();
+
+            QMainWindow* subPatch = newPatch.first;
+            UIObject* obj = UISubpatch::createObject(objectData1, 0, this);
+
+            ((UISubpatch*)obj)->setSubpatchWindow(subPatch);
+
+            //qDebug()<<"objdata1" << objectData1;
+            qDebug("subpatch>>");
+
+            subPatch->show();
+
+            connect(obj, &UIObject::selectBox, this, &CanvasView::s_SelectBox);
+            connect(obj, &UIObject::moveBox, this, &CanvasView::s_MoveBox);
+
+            obj->setEditModeRef(_canvasEditMode); //Canvas::getEditModeRef());
+            obj->move(pos.x(), pos.y());
+            _canvasData.addUniqueBox(_canvasData.boxes(), obj);
+            scene()->addItem(obj);
+
+            //temp
+            obj->setSize(400, 300);
+
+            return obj;
+        }
+
+        if (list.at(0) == "restore") {
+            // unused?
+            return 0;
+        }
+    }
+
+    UIObject* obj = ObjectLoader::inst().createObject(objectData1, (t_canvas*)pdObject(), this);
+
+    //obj->setCanvas((void*)this);
+
+
+
+
+    */
 };
 
 bool PatchWindowController::connect(UIObject* src, int out, UIObject* dest, int in){};
 void PatchWindowController::deletePatchcordsForObject(UIObject* o){};
-void PatchWindowController::deleteObject(UIObject* o){};
+void PatchWindowController::deleteObject(UIObject* o)
+{
+    _canvasData->deselectBoxes();
+    _canvasData->selectBox(o);
+    deleteSelectedObjects();
+};
 //
 bool PatchWindowController::syncData(ServerObject* serverObject, UIObject* uiObject){};
 //
@@ -120,10 +255,4 @@ void PatchWindowController::doSave(QString fileName)
         _windows[0]->setWindowModified(false);
     }
 }
-
-
-
 }
-
-
-

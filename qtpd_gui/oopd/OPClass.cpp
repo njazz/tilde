@@ -74,8 +74,8 @@ void OPClass::readFile()
 
         FileParser::parserFirstWindow()->hide();
 
-        _patchWindow->canvasView()->selectAll();
-        _patchWindow->canvasView()->deleteSelectedObjects();
+        _patchWindow->controller()->menuSelectAll();
+        _patchWindow->controller()->deleteSelectedObjects();
 
         QStringList canvasStrings = FileParser::parserFirstWindow()->controller()->canvasData()->asPdFileStrings();
         // TODO fix
