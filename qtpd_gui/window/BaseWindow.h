@@ -36,10 +36,7 @@ public:
     explicit BaseWindow(QWidget* parent = 0);
     //~BaseWindow();
 
-    void setAppController(ApplicationController* appController)
-    {
-        _appController = appController;
-    }
+    void setAppController(ApplicationController* appController);
 
     ////
     /// \brief create menu actions (File, Edit)
@@ -104,6 +101,7 @@ private slots:
     void dspOn();
     void dspOff();
 
+    // remove
     void preferencesWindow();
     void audioSettingsWindow();
 

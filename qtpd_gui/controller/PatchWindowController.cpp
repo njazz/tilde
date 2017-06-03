@@ -31,6 +31,8 @@ PatchWindow* PatchWindowController::newWindow()
 {
     PatchWindow* ret = PatchWindow::newWindow();
 
+    ret->show();
+
     _windows.push_back(ret);
     ret->canvas->setScene(_scene);
 

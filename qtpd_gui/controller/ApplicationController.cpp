@@ -4,10 +4,13 @@
 #include "ApplicationController.h"
 #include "PatchWindowController.h"
 
+#include "AudioSettings.h"
+
 void ApplicationController::newPatchWindowController()
 {
     //return
-    new PatchWindowController(this->mainInstance());
+    PatchWindowController* newP = new PatchWindowController(this->mainInstance());
+    newP->newWindow();
 };
 
 void ApplicationController::openFileDialog()
@@ -45,6 +48,26 @@ void ApplicationController::pythonConsole()
 #else
     cmp_post("This build is compiled without Python!");
 #endif
+}
+
+void ApplicationController::preferencesWindow()
+{
+    qDebug() << "preferences";
+    PropertyList* l1 = &Preferences::inst();
+    PropertiesWindow* p1 = new PropertiesWindow(l1);
+    p1->setWindowTitle("Qtpd preferences");
+    p1->move(30, 30);
+    p1->show();
+}
+
+void ApplicationController::audioSettingsWindow()
+{
+    qDebug() << "audio settings";
+    PropertyList* l1 = &AudioSettings::inst();
+    PropertiesWindow* p1 = new PropertiesWindow(l1);
+    p1->setWindowTitle("Audio settings");
+    p1->move(30, 30);
+    p1->show();
 }
 
 

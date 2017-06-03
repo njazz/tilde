@@ -40,6 +40,8 @@ BaseWindow::BaseWindow(QWidget* parent)
     pythonConsole_ = new PythonQtScriptingConsole(NULL, mainContext);
     qDebug("pyConsole %lu", (long)pythonConsole_);
 #endif
+
+    _appController=0;
 }
 
 //BaseWindow::~BaseWindow()
@@ -47,17 +49,30 @@ BaseWindow::BaseWindow(QWidget* parent)
 //    delete ui;
 //}
 
+void BaseWindow::setAppController(ApplicationController* appController)
+{
+    _appController = appController;
+
+    connect(newAct, &QAction::triggered, _appController, &ApplicationController::newPatchWindowController);
+    connect(openAct, &QAction::triggered, _appController, &ApplicationController::openFileDialog);
+    connect(pdWindowAct, &QAction::triggered, _appController, &ApplicationController::pdWindow);
+    connect(pythonConsoleAct, &QAction::triggered, _appController, &ApplicationController::pythonConsole);
+    connect(pdAudioSettingsAct, &QAction::triggered, _appController, &ApplicationController::audioSettingsWindow);
+    connect(pdPreferencesAct, &QAction::triggered, _appController, &ApplicationController::preferencesWindow);
+
+}
+
 // ---------
 
 void BaseWindow::createActions()
 {
     newAct = new QAction(tr("&New"), this);
     newAct->setShortcuts(QKeySequence::New);
-    connect(newAct, &QAction::triggered, this, &BaseWindow::newFile);
+    //connect(newAct, &QAction::triggered, this, &BaseWindow::newFile);
 
     openAct = new QAction(tr("&Open..."), this);
     openAct->setShortcuts(QKeySequence::Open);
-    connect(openAct, &QAction::triggered, this, &BaseWindow::openFileDialog);
+    //connect(openAct, &QAction::triggered, this, &BaseWindow::openFileDialog);
 
     saveAct = new QAction(tr("&Save"), this);
     saveAct->setShortcuts(QKeySequence::Save);
@@ -122,21 +137,21 @@ void BaseWindow::createActions()
 
     pdWindowAct = new QAction(tr("Pd Window"), this);
     pdWindowAct->setShortcut(tr("Ctrl+R"));
-    connect(pdWindowAct, &QAction::triggered, this, &BaseWindow::pdWindow);
+    //connect(pdWindowAct, &QAction::triggered, this, &BaseWindow::pdWindow);
 
     pythonConsoleAct = new QAction(tr("Python Console"), this);
     pythonConsoleAct->setShortcut(tr("Ctrl+Alt+R"));
-    connect(pythonConsoleAct, &QAction::triggered, this, &BaseWindow::pythonConsole);
+    //connect(pythonConsoleAct, &QAction::triggered, this, &BaseWindow::pythonConsole);
 
     pdAudioSettingsAct = new QAction(tr("Audio / MIDI Settings..."), this);
     pdAudioSettingsAct->setShortcut(tr("Ctrl+Shift+,"));
-    connect(pdAudioSettingsAct, &QAction::triggered, this, &BaseWindow::audioSettingsWindow);
+    //connect(pdAudioSettingsAct, &QAction::triggered, this, &BaseWindow::audioSettingsWindow);
     //pdAudioSettingsAct->setShortcut(tr("Ctrl+R"));
 
     //moves to app menu on mac
     pdPreferencesAct = new QAction(tr("Preferences..."), this);
     pdPreferencesAct->setShortcut(tr("Ctrl+,"));
-    connect(pdPreferencesAct, &QAction::triggered, this, &BaseWindow::preferencesWindow);
+    //connect(pdPreferencesAct, &QAction::triggered, this, &BaseWindow::preferencesWindow);
 
     pdKeyBindingsAct = new QAction(tr("Key bindings..."), this);
     //pdKeyBindingsAct->setShortcut(tr("Ctrl+R"));

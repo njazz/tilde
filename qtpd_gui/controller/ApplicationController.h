@@ -39,7 +39,7 @@ public:
     };
 };
 
-class ApplicationController : QObject {
+class ApplicationController : public QObject {
 private:
     TheServer* _server;
     ServerInstance* _mainInstance;
@@ -75,6 +75,7 @@ public:
         _pdWindow = new PdWindow();
         _pdWindow->move(0, 100);
         _pdWindow->show();
+        _pdWindow->setAppController(this);
 
         _consoleObserver->setWindow(_pdWindow);
     };
@@ -94,6 +95,9 @@ public slots:
 
     void pdWindow();
     void pythonConsole();
+
+    void preferencesWindow();
+    void audioSettingsWindow();
 };
 
 #endif // CM_PDLINK_H
