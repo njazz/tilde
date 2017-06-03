@@ -299,91 +299,90 @@ Parsing file /home/travis//home/travis/build/njazz/qtpd/qtpd_gui/serverAPIProtot
 /home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:21: warning: documented function `ServerObject::ServerObject' was not declared or defined.
 /home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:24: warning: documented function `ServerObject::ServerObject' was not declared or defined.
 /home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:35: warning: documented function `ServerObject * ServerObject::parent' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:38: warning: documented function `void ServerObject::message' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:48: warning: documented function `void ServerObject::message' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:60: warning: no matching class member found for 
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:49: warning: documented function `void ServerObject::message' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:67: warning: no matching class member found for 
   int ServerObject::inletCount()
 
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:67: warning: no matching class member found for 
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:74: warning: no matching class member found for 
   int ServerObject::outletCount()
 
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:74: warning: documented function `void ServerObject::registerObserver' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:75: warning: no matching class member found for 
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:81: warning: documented function `void ServerObject::registerObserver' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:82: warning: no matching class member found for 
   void ServerObject::deleteObserver(Observer *o)
 
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:77: warning: no uniquely matching class member found for 
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:84: warning: no uniquely matching class member found for 
   ServerObjectType ServerObject::type()
 
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:78: warning: documented function `void ServerObject::setType' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:80: warning: no uniquely matching class member found for 
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:85: warning: documented function `void ServerObject::setType' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:87: warning: no uniquely matching class member found for 
   ServerProperties * ServerObject::properties()
 
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:83: warning: documented function `void ServerObject::connectUI' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:89: warning: documented function `ServerArray::ServerArray' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:92: warning: no uniquely matching class member found for 
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:90: warning: documented function `void ServerObject::connectUI' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:96: warning: documented function `ServerArray::ServerArray' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:99: warning: no uniquely matching class member found for 
   int ServerArray::size()
 
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:95: warning: no uniquely matching class member found for 
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:102: warning: no uniquely matching class member found for 
   void ServerArray::setSize(int size)
 
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:98: warning: documented function `bool ServerArray::getData' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:99: warning: documented function `void ServerArray::registerObserver' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:103: warning: documented function `ServerCanvas::ServerCanvas' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:109: warning: no uniquely matching class member found for 
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:105: warning: documented function `bool ServerArray::getData' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:106: warning: documented function `void ServerArray::registerObserver' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:110: warning: documented function `ServerCanvas::ServerCanvas' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:116: warning: no uniquely matching class member found for 
   ServerObject * ServerCanvas::createObject(string name)
 
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:117: warning: no matching class member found for 
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:124: warning: no matching class member found for 
   void ServerCanvas::deleteObject(ServerObject *o)
 
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:122: warning: documented function `void * ServerCanvas::canvasObject' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:126: warning: documented function `ServerCanvas * ServerCanvas::createEmptySubCanvas' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:128: warning: documented function `ServerArray * ServerCanvas::createArray' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:129: warning: documented function `void ServerCanvas::deleteArray' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:132: warning: documented function `ServerPatchcord * ServerCanvas::connect' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:136: warning: documented function `void ServerCanvas::disconnect' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:139: warning: documented function `vector< ServerObject * > ServerCanvas::getObjectList' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:143: warning: documented function `vector< ServerPatchcord * > ServerCanvas::getConnectionList' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:147: warning: documented function `void ServerCanvas::registerObserver' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:148: warning: no matching class member found for 
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:129: warning: documented function `void * ServerCanvas::canvasObject' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:133: warning: documented function `ServerCanvas * ServerCanvas::createEmptySubCanvas' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:135: warning: documented function `ServerArray * ServerCanvas::createArray' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:136: warning: documented function `void ServerCanvas::deleteArray' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:139: warning: documented function `ServerPatchcord * ServerCanvas::connect' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:143: warning: documented function `void ServerCanvas::disconnect' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:146: warning: documented function `vector< ServerObject * > ServerCanvas::getObjectList' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:150: warning: documented function `vector< ServerPatchcord * > ServerCanvas::getConnectionList' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:154: warning: documented function `void ServerCanvas::registerObserver' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:155: warning: no matching class member found for 
   void ServerCanvas::deleteObserver(Observer *o)
 
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:151: warning: documented function `ServerPath ServerCanvas::path' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:156: warning: documented function `void ServerCanvas::loadbang' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:189: warning: documented function `ServerInstance::ServerInstance' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:195: warning: documented function `ServerCanvas * ServerInstance::createCanvas' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:202: warning: documented function `void ServerInstance::deleteCanvas' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:206: warning: no matching class member found for 
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:158: warning: documented function `ServerPath ServerCanvas::path' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:163: warning: documented function `void ServerCanvas::loadbang' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:196: warning: documented function `ServerInstance::ServerInstance' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:207: warning: documented function `ServerCanvas * ServerInstance::createCanvas' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:214: warning: documented function `void ServerInstance::deleteCanvas' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:218: warning: no matching class member found for 
   void ServerInstance::dspOn()
 
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:207: warning: no matching class member found for 
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:219: warning: no matching class member found for 
   void ServerInstance::dspOff()
 
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:208: warning: documented function `void ServerInstance::dspSwitch' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:210: warning: documented function `void ServerInstance::registerObserver' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:211: warning: no matching class member found for 
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:220: warning: documented function `void ServerInstance::dspSwitch' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:222: warning: documented function `void ServerInstance::registerObserver' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:223: warning: no matching class member found for 
   void ServerInstance::deleteObserver(Observer *o)
 
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:214: warning: documented function `void ServerInstance::setConsoleObserver' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:220: warning: documented function `ServerPath * ServerInstance::path' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:222: warning: documented function `vector< string * > ServerInstance::listRegisteredObjects' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:224: warning: documented function `void ServerInstance::loadLibrary' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:226: warning: no matching file member found for 
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:226: warning: documented function `void ServerInstance::setConsoleObserver' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:232: warning: documented function `ServerPath * ServerInstance::path' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:234: warning: documented function `vector< string * > ServerInstance::listRegisteredObjects' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:236: warning: documented function `void ServerInstance::loadLibrary' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:238: warning: no matching file member found for 
 void ServerInstance::post(string text)Possible candidates:
   EXTERN void post(const char *fmt,...)
 
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:227: warning: no matching file member found for 
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:239: warning: no matching file member found for 
 void ServerInstance::error(string text)Possible candidates:
   EXTERN void error(const char *fmt,...) ATTRIBUTE_FORMAT_PRINTF(1
 
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:228: warning: no matching file member found for 
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:240: warning: no matching file member found for 
 void ServerInstance::verbose(int level, string text)Possible candidates:
   EXTERN void EXTERN void verbose(int level, const char *fmt,...) ATTRIBUTE_FORMAT_PRINTF(2
 
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:230: warning: documented function `ServerAudioDevice * ServerInstance::audioDevice' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:231: warning: documented function `ServerMIDIDevice * ServerInstance::midiDevice' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:235: warning: documented function `TheServer::TheServer' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:237: warning: documented function `vector< ServerInstance * > TheServer::instances' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:240: warning: documented function `ServerInstance * TheServer::createInstance' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:242: warning: documented function `ServerAudioDevice * ServerInstance::audioDevice' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:243: warning: documented function `ServerMIDIDevice * ServerInstance::midiDevice' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:247: warning: documented function `TheServer::TheServer' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:249: warning: documented function `vector< ServerInstance * > TheServer::instances' was not declared or defined.
+/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:252: warning: documented function `ServerInstance * TheServer::createInstance' was not declared or defined.
 /home/travis/build/njazz/qtpd/qtpd_gui/lib_headers/ceammc_atomlist.h:67: warning: included file pos is not found. Check your EXAMPLE_PATH
 build/njazz/qtpd/qtpd_gui/window/PdWindow.cpp...
 Preprocessing /home/travis/build/njazz/qtpd/qtpd_gui/window/PdWindow.h...
