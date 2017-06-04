@@ -88,6 +88,9 @@ public:
     void setGridEnabled(bool val);
     void setGridSnap(bool val);
 
+    bool gridSnap() { return _gridSnap; }
+    int gridStep() { return _grid->gridStep(); }
+
     void setKeepPdObject(bool v) { _keepPdObject = v; }
     bool keepPdObject() { return _keepPdObject; }
 
@@ -99,7 +102,7 @@ public:
             setEditMode(em_Locked);
     }
 
-    bool readOnly(){ return _readOnly;}
+    bool readOnly() { return _readOnly; }
 
     // void setFilePath(QString filePath){ _filePath = filePath;}
     // QString filePath() { return _filePath; };
@@ -128,54 +131,54 @@ public:
 
     // -------------------------------------------------------
 
-//    //
+    //    //
 
-//    //
-//    / \brief prototype for universal object 'constructor'
-//    / \param message
-//    / \param pos
-//    / \return
-//    / \deprecated move to window/controller
-//    /
-//    UIObject* createObject(QString objectData1, QPoint pos);
+    //    //
+    //    / \brief prototype for universal object 'constructor'
+    //    / \param message
+    //    / \param pos
+    //    / \return
+    //    / \deprecated move to window/controller
+    //    /
+    //    UIObject* createObject(QString objectData1, QPoint pos);
 
-//    //
-//    / \brief create object box for subpatch (when loaded from file)
-//    / \param patchWindow
-//    / \param objectData
-//    / \param pos
-//    / \return
-//    /
-//     UIObject* createBoxForPatchWindow(QMainWindow* patchWindow, QString objectData, QPoint pos);
+    //    //
+    //    / \brief create object box for subpatch (when loaded from file)
+    //    / \param patchWindow
+    //    / \param objectData
+    //    / \param pos
+    //    / \return
+    //    /
+    //     UIObject* createBoxForPatchWindow(QMainWindow* patchWindow, QString objectData, QPoint pos);
 
-//    ////
-//    /// \brief creates patchcord
-//    /// \param obj1
-//    /// \param outlet
-//    /// \param obj2
-//    /// \param inlet
-//    ///
-//    void patchcord(UIObject* obj1, int outlet, UIObject* obj2, int inlet);
+    //    ////
+    //    /// \brief creates patchcord
+    //    /// \param obj1
+    //    /// \param outlet
+    //    /// \param obj2
+    //    /// \param inlet
+    //    ///
+    //    void patchcord(UIObject* obj1, int outlet, UIObject* obj2, int inlet);
 
-//    ////
-//    /// \brief creates patchcord, uses pointers to inlets/outlets. TODO temporary?
-//    /// \param obj1
-//    /// \param outport
-//    /// \param obj2
-//    /// \param inport
-//    ///
-//    void patchcord(UIObject* obj1, UIItem* outport, UIObject* obj2, UIItem* inport);
+    //    ////
+    //    /// \brief creates patchcord, uses pointers to inlets/outlets. TODO temporary?
+    //    /// \param obj1
+    //    /// \param outport
+    //    /// \param obj2
+    //    /// \param inport
+    //    ///
+    //    void patchcord(UIObject* obj1, UIItem* outport, UIObject* obj2, UIItem* inport);
 
-//    //
-//    / \brief delete all patchcords for object
-//    / \param obj
-//    /
-//    void deletePatchcordsFor(UIItem* obj);
+    //    //
+    //    / \brief delete all patchcords for object
+    //    / \param obj
+    //    /
+    //    void deletePatchcordsFor(UIItem* obj);
 
-//    //
-//    / \brief delete single box
-//    /
-//    void deleteObject(UIObject* box);
+    //    //
+    //    / \brief delete single box
+    //    /
+    //    void deleteObject(UIObject* box);
 
     //    ////
     //    /// \brief delete all selected object boxes
@@ -189,12 +192,12 @@ public:
 
     // -------------------------------------------------------
 
-//    ////
-//    /// \brief returns object by index - this is needed by parser
-//    /// \param idx
-//    /// \return cm_widget pointer
-//    ///
-//    UIObject* getObjectByIndex(int idx);
+    //    ////
+    //    /// \brief returns object by index - this is needed by parser
+    //    /// \param idx
+    //    /// \return cm_widget pointer
+    //    ///
+    //    UIObject* getObjectByIndex(int idx);
 
     //    ////
     //    /// \brief returns vector of all object boxes - needed by filesaver
@@ -220,11 +223,11 @@ public:
     //    ///
     //    patchcordVec selectedPatchcords();
 
-//    //
-//    / \brief returns patchcords that are connected to specific object
-//    / \param obj
-//    / \return
-//    /
+    //    //
+    //    / \brief returns patchcords that are connected to specific object
+    //    / \param obj
+    //    / \return
+    //    /
     //patchcordVec patchcordsForObject(UIObject* obj);
 
     //    ////
@@ -357,7 +360,7 @@ signals:
     void signalDeselectObjects();
 
     void signalSelectionFrame(QPoint start, QPoint end);
-
+    void signalMoveSelectedBoxes(QPoint eventPos);
 };
 }
 

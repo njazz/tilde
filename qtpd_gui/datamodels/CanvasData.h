@@ -76,6 +76,7 @@ public:
 
     //
     void selectBoxesInFrame(QPoint start, QPoint end);
+    void moveSelectedBoxes(QPoint pos, bool gridSnap);
 
     // ------------------------------
 

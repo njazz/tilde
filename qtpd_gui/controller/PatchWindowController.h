@@ -103,6 +103,8 @@ public:
     // moved from canvas-view
     void selectBox(UIItem* box);
 
+    void moveSelectedBoxes(QPoint eventPos);
+
 public slots:
     void menuSave();
     void menuSaveAs();
@@ -153,6 +155,7 @@ private slots:
     void slotDeselectObjects();
 
     void slotSelectionFrame(QPoint start, QPoint end);
+    void slotMoveSelectedBoxes(QPoint eventPos);
 };
 }
 

@@ -64,6 +64,7 @@ PatchWindow* PatchWindowController::newWindow()
     connect(ret->canvasView(), &CanvasView::signalDeselectObjects, this, &PatchWindowController::slotDeselectObjects);
 
     connect(ret->canvasView(), &CanvasView::signalSelectionFrame, this, &PatchWindowController::slotSelectionFrame);
+    connect(ret->canvasView(), &CanvasView::signalMoveSelectedBoxes, this, &PatchWindowController::slotMoveSelectedBoxes);
 
     return ret;
 }
@@ -634,5 +635,28 @@ void PatchWindowController::slotDeselectObjects()
 void PatchWindowController::slotSelectionFrame(QPoint start, QPoint end)
 {
     _canvasData->selectBoxesInFrame(start,end);
+}
+
+
+void PatchWindowController::slotMoveSelectedBoxes(QPoint eventPos)
+{
+    for (int i = 0; i < (int)_canvasData->selectedBoxes()->size(); i++)
+    {
+        UIObject* w = ((UIObject*)_canvasData->selectedBoxes()->at(i));
+
+        // TODO
+        QPoint pos = (((UIObject*)_canvasData->selectedBoxes()->at(i))->pos().toPoint()) + eventPos; //mapToParent((event->pos().toPoint() - box->dragOffset));
+
+        if (firstWindow()->canvasView()->gridSnap()) {
+            pos.setX(ceil(pos.x() / firstWindow()->canvasView()->gridStep()) * firstWindow()->canvasView()->gridStep());
+            pos.setY(ceil(pos.y() / firstWindow()->canvasView()->gridStep()) * firstWindow()->canvasView()->gridStep());
+        }
+
+        w->move(pos);
+
+        //todo
+        firstWindow()->canvasView()->viewport()->update();
+    }
+
 }
 }

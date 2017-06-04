@@ -84,6 +84,8 @@ void CanvasData::selectBoxesInFrame(QPoint start, QPoint end)
     }
 }
 
+
+
 void CanvasData::selectBox(UIObject* box)
 {
     addUniqueBox(&_selectedBoxes, box);

@@ -134,28 +134,7 @@ void CanvasView::slotSelectBox(UIItem* box, QGraphicsSceneMouseEvent* ev)
         emit signalSelectObject((UIObject*)box);
     }
 
-    //        if (!(ev->modifiers() & Qt::ShiftModifier))
-    //            if (_canvasData.selectedBoxes()->size() < 2)
-    //                if (_canvasData.selectedBoxes()->size() == 1)
-    //                    if (_canvasData.findBox(_canvasData.selectedBoxes(), (UIObject*)box) == -1) //fix
-    //                    {
-    //                        qDebug() << "deselect";
-    //                        _canvasData.deselectBoxes();
-
-    //                    } else {
-    //                        qDebug() << "edit";
-    //                        objectStartsEdit((void*)box);
-    //                    }
-    //                else
-    //                    qDebug() << "size" << _canvasData.selectedBoxes()->size();
-
-    //        selectBox(box);
-    //    }
-
-    //temporary
     setDragObject(0);
-
-    //    viewport()->update();
 }
 
 ////
@@ -167,26 +146,13 @@ void CanvasView::slotMoveBox(UIItem* box, QGraphicsSceneMouseEvent* event)
 {
     // TODO
 
-    /*
     if (!(CanvasView::getEditMode() == em_Unlocked))
         return;
-    for (int i = 0; i < (int)_canvasData.selectedBoxes()->size(); i++) {
-        UIObject* w = ((UIObject*)_canvasData.selectedBoxes()->at(i));
-        QPoint pos = (((UIObject*)_canvasData.selectedBoxes()->at(i))->pos().toPoint()) + mapToParent((event->pos().toPoint() - box->dragOffset));
 
-        if (_gridSnap) {
-            pos.setX(ceil(pos.x() / _grid->gridStep()) * _grid->gridStep());
-            pos.setY(ceil(pos.y() / _grid->gridStep()) * _grid->gridStep());
-        }
 
-        w->move(pos);
-
-        //todo
-        viewport()->update();
-    }
+    emit signalMoveSelectedBoxes(mapToParent((event->pos().toPoint() - box->dragOffset)));
 
     resizeToObjects();
-    */
 }
 
 // -----------------------------------------------------------------------
@@ -249,17 +215,12 @@ void CanvasView::mouseMoveEvent(QMouseEvent* ev)
 
         // TODO
 
-
-
-
         emit signalSelectionFrame(_selectionRect->start(), _selectionRect->end());
 
         //_selectionRect->update();
 
         // todo
         viewport()->update();
-
-
     }
 
     //todo
