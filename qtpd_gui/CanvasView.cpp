@@ -71,7 +71,7 @@ CanvasView::CanvasView(QGraphicsView* parent)
 
 // ---------------------------------------------
 
-void CanvasView::s_InMousePressed(UIItem* obj, QGraphicsSceneMouseEvent*)
+void CanvasView::slotInletMousePress(UIItem* obj, QGraphicsSceneMouseEvent*)
 {
     qDebug("in: mouse pressed\n");
     _newLine->setActive(false);
@@ -92,9 +92,9 @@ void CanvasView::s_InMousePressed(UIItem* obj, QGraphicsSceneMouseEvent*)
     _connectionStartOutlet = 0;
 }
 
-void CanvasView::s_InMouseReleased(UIItem*, QGraphicsSceneMouseEvent*) {}
+void CanvasView::slotInletMouseRelease(UIItem*, QGraphicsSceneMouseEvent*) {}
 
-void CanvasView::s_OutMousePressed(UIItem* obj, QGraphicsSceneMouseEvent*)
+void CanvasView::slotOutletMousePressed(UIItem* obj, QGraphicsSceneMouseEvent*)
 {
     qDebug("out: mouse pressed\n");
 
@@ -105,7 +105,7 @@ void CanvasView::s_OutMousePressed(UIItem* obj, QGraphicsSceneMouseEvent*)
     _connectionStartOutlet = (UIObject*)obj;
 }
 
-void CanvasView::s_OutMouseReleased(UIItem*, QGraphicsSceneMouseEvent*) {}
+void CanvasView::slotOutletMouseReleased(UIItem*, QGraphicsSceneMouseEvent*) {}
 
 //void CanvasView::selectBox(UIItem* box)
 //{
@@ -953,7 +953,7 @@ void CanvasView::showNewObjectMaker()
     objectMaker()->show();
 }
 
-void CanvasView::portCountUpdated()
+void CanvasView::slotPortCountUpdated()
 {
     qDebug("port count update");
 
@@ -984,7 +984,7 @@ void CanvasView::portCountUpdated()
     //}
 };
 
-void CanvasView::objectStartsEdit(void* obj)
+void CanvasView::slotObjectStartsEdit(void* obj)
 {
     // TODO
     // move that

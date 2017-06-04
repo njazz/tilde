@@ -119,6 +119,7 @@ SOURCES += main.cpp\
     widgets/UIArrayEditor.cpp \
 #
     datamodels/FileParser.cpp \
+    datamodels/CanvasData.cpp \
 #
     ObjectLoader.cpp \
     widgets/ObjectMaker.cpp \
