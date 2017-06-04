@@ -55,7 +55,6 @@ CanvasView::CanvasView(QGraphicsView* parent)
 
     _replaceObject = 0;
 
-
     // ------NEW
     setStyleSheet("QGraphicsView { border-style: none; }");
     setMouseTracking(true);
@@ -80,7 +79,7 @@ void CanvasView::slotInletMousePress(UIItem* obj, QGraphicsSceneMouseEvent*)
 
         //patchcord(_connectionStartObject, _connectionStartOutlet, (UIObject*)obj->parent(), obj);
 
-        int nOut = ((Port*)_connectionStartObject)->portIndex();
+        int nOut = ((Port*)_connectionStartOutlet)->portIndex();
         int nIn = ((Port*)obj)->portIndex();
 
         emit signalPatchcord(_connectionStartObject, nOut, (UIObject*)obj->parent(), nIn);
@@ -119,33 +118,44 @@ void CanvasView::slotOutletMouseReleased(UIItem*, QGraphicsSceneMouseEvent*) {}
 void CanvasView::slotSelectBox(UIItem* box, QGraphicsSceneMouseEvent* ev)
 {
 
-    /*
     qDebug() << "select box";
 
-    if (CanvasView::getEditMode() == em_Unlocked) {
-        if (!(ev->modifiers() & Qt::ShiftModifier))
-            if (_canvasData.selectedBoxes()->size() < 2)
-                if (_canvasData.selectedBoxes()->size() == 1)
-                    if (_canvasData.findBox(_canvasData.selectedBoxes(), (UIObject*)box) == -1) //fix
-                    {
-                        qDebug() << "deselect";
-                        _canvasData.deselectBoxes();
-
-                    } else {
-                        qDebug() << "edit";
-                        objectStartsEdit((void*)box);
-                    }
-                else
-                    qDebug() << "size" << _canvasData.selectedBoxes()->size();
-
-        selectBox(box);
+    if (box->isSelected()) {
+        slotObjectStartsEdit((void*)box);
+        return;
     }
+
+    if (CanvasView::getEditMode() == em_Unlocked) {
+
+        if (!(ev->modifiers() & Qt::ShiftModifier)) {
+            emit signalDeselectObjects();
+        }
+
+        emit signalSelectObject((UIObject*)box);
+    }
+
+    //        if (!(ev->modifiers() & Qt::ShiftModifier))
+    //            if (_canvasData.selectedBoxes()->size() < 2)
+    //                if (_canvasData.selectedBoxes()->size() == 1)
+    //                    if (_canvasData.findBox(_canvasData.selectedBoxes(), (UIObject*)box) == -1) //fix
+    //                    {
+    //                        qDebug() << "deselect";
+    //                        _canvasData.deselectBoxes();
+
+    //                    } else {
+    //                        qDebug() << "edit";
+    //                        objectStartsEdit((void*)box);
+    //                    }
+    //                else
+    //                    qDebug() << "size" << _canvasData.selectedBoxes()->size();
+
+    //        selectBox(box);
+    //    }
 
     //temporary
     setDragObject(0);
 
-    viewport()->update();
-    */
+    //    viewport()->update();
 }
 
 ////
@@ -548,8 +558,6 @@ UIObject* CanvasView::createBoxForPatchWindow(QMainWindow* patchWindow, QString 
 //        //        cmp_patchcord((t_object*)obj1->pdObject(), outlet, (t_object*)obj2->pdObject(), inlet);
 //        //        _canvasData.addPatchcord(pc); //patchcords()->push_back(pc);
 
-
-
 //        scene()->addItem(pc);
 //    } else
 //        qDebug("canvas patchcord error");
@@ -746,9 +754,7 @@ void CanvasView::setGridSnap(bool val)
 //    return *_canvasData.selectedPatchcords();
 //}
 
-
 // TODO MOVE
-
 
 //int CanvasView::findObjectIndex(UIObject* obj)
 //{
@@ -938,8 +944,8 @@ void CanvasView::portLocalCountUpdated()
     //}
 };
 
-void CanvasView::setReplaceObject(UIObject* obj){_replaceObject = obj;}
-UIObject* CanvasView::replaceObject(){return _replaceObject;}
+void CanvasView::setReplaceObject(UIObject* obj) { _replaceObject = obj; }
+UIObject* CanvasView::replaceObject() { return _replaceObject; }
 
 void CanvasView::showNewObjectMaker()
 {
@@ -1001,7 +1007,6 @@ void CanvasView::slotObjectStartsEdit(void* obj)
     //replaceObject_->hide();
     objectMaker()->show();
     objectMaker()->raise();
-
 }
 
 // TODO move to data

@@ -141,6 +141,16 @@ public slots:
     //
     void signalSelectBox(UIItem* box, QGraphicsSceneMouseEvent* event);
     void signalMoveBox(UIItem* box, QGraphicsSceneMouseEvent* event);
+
+private slots:
+    void slotSelectObject(UIObject* object);
+    void slotPatchcord(UIObject* src, int nOut, UIObject* dest, int nIn);
+
+    void slotMousePress(QPoint pos);
+    void slotMouseMove(QPoint pos);
+    void slotMouseRelease(QPoint pos);
+
+    void slotDeselectObjects();
 };
 }
 

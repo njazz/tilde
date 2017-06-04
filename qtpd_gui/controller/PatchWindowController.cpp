@@ -53,6 +53,16 @@ PatchWindow* PatchWindowController::newWindow()
     _windows.push_back(ret);
     _scene = ret->canvasView()->scene();
 
+    // connections
+    connect(ret->canvasView(), &CanvasView::signalMouseMove, this, &PatchWindowController::slotMouseMove);
+    connect(ret->canvasView(), &CanvasView::signalMousePress, this, &PatchWindowController::slotMousePress);
+    connect(ret->canvasView(), &CanvasView::signalMouseRelease, this, &PatchWindowController::slotMouseRelease);
+
+    connect(ret->canvasView(), &CanvasView::signalSelectObject, this, &PatchWindowController::slotSelectObject);
+    connect(ret->canvasView(), &CanvasView::signalPatchcord, this, &PatchWindowController::slotPatchcord);
+
+    connect(ret->canvasView(), &CanvasView::signalDeselectObjects, this, &PatchWindowController::slotDeselectObjects);
+
     return ret;
 }
 
@@ -551,17 +561,13 @@ void PatchWindowController::signalMoveBox(UIItem* box, QGraphicsSceneMouseEvent*
 
 void PatchWindowController::patchcord(UIObject* obj1, int outlet, UIObject* obj2, int inlet)
 {
-    // TODO
 
-    /*
     if (obj1->serverObject() && obj2->serverObject()) {
         if (((UIBox*)obj1)->errorBox()) {
-            //create dummy inlets / outlets
             qDebug() << "errorbox";
         };
 
         if (((UIBox*)obj2)->errorBox()) {
-            //create dummy inlets / outlets
             qDebug() << "errorbox";
         };
 
@@ -575,22 +581,18 @@ void PatchWindowController::patchcord(UIObject* obj1, int outlet, UIObject* obj2
 
         qDebug("server patchcord");
 
-        qDebug() << "pc: " <<  obj1->serverObject() << outlet << obj2->serverObject() << inlet ;
+        qDebug() << "pc: " << obj1->serverObject() << outlet << obj2->serverObject() << inlet;
 
         // TODO
-        // _canvasData.serverCanvas()->connect(obj1->serverObject(), outlet, obj2->serverObject(), inlet);
-        // _canvasData.addPatchcord(pc);
+        _canvasData->serverCanvas()->connect(obj1->serverObject(), outlet, obj2->serverObject(), inlet);
+        _canvasData->addPatchcord(pc);
 
         //        cmp_patchcord((t_object*)obj1->pdObject(), outlet, (t_object*)obj2->pdObject(), inlet);
         //        _canvasData.addPatchcord(pc); //patchcords()->push_back(pc);
 
-
-
-        scene()->addItem(pc);
+        _scene->addItem(pc);
     } else
         qDebug("canvas patchcord error");
-
-    */
 }
 
 //void PatchWindowController::patchcord(UIObject* obj1, UIItem* outport, UIObject* obj2, UIItem* inport)
@@ -603,4 +605,27 @@ void PatchWindowController::patchcord(UIObject* obj1, int outlet, UIObject* obj2
 //    patchcord(obj1, n1, obj2, n2);
 //    */
 //}
+
+void PatchWindowController::slotSelectObject(UIObject* object)
+{
+    _canvasData->selectBox(object);
+}
+void PatchWindowController::slotPatchcord(UIObject* src, int nOut, UIObject* dest, int nIn)
+{
+    patchcord(src, nOut, dest, nIn);
+}
+
+void PatchWindowController::slotMousePress(QPoint pos)
+{
+    _canvasData->deselectBoxes();
+    _canvasData->deselectPatchcords();
+}
+void PatchWindowController::slotMouseMove(QPoint pos) {}
+void PatchWindowController::slotMouseRelease(QPoint pos) {}
+
+void PatchWindowController::slotDeselectObjects()
+{
+    _canvasData->deselectBoxes();
+    _canvasData->deselectPatchcords();
+}
 }

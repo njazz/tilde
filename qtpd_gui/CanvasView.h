@@ -354,6 +354,8 @@ signals:
     void signalMouseMove(QPoint pos);
     void signalMouseRelease(QPoint pos);
 
+    void signalDeselectObjects();
+
 };
 }
 
