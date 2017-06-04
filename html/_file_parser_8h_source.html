@@ -99,105 +99,115 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00015"></a>00015 <span class="keyword">class </span>CanvasView;
 <a name="l00016"></a>00016 <span class="keyword">class </span>UIObject;
 <a name="l00017"></a>00017 
-<a name="l00021"></a><a class="code" href="classqtpd_1_1_file_parser.html">00021</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_file_parser.html" title="Parses pd files on &#39;client&#39; (GUI) side.">FileParser</a> {
-<a name="l00022"></a>00022 <span class="keyword">private</span>:
-<a name="l00023"></a>00023     <a class="code" href="classqtpd_1_1_file_parser.html" title="Parses pd files on &#39;client&#39; (GUI) side.">FileParser</a>(){};
-<a name="l00024"></a>00024 
-<a name="l00025"></a>00025     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* _pdParserPrevWindow;
-<a name="l00026"></a>00026     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* _pdParserWindow;
-<a name="l00027"></a>00027     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* _pdParserFirstWindow;
-<a name="l00028"></a>00028 
-<a name="l00029"></a>00029     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_canvas_data.html" title="shared canvas data model - boxes, patchcords">CanvasData</a>* _currentData;
-<a name="l00030"></a>00030     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_canvas_data.html" title="shared canvas data model - boxes, patchcords">CanvasData</a>* _previousData;
-<a name="l00031"></a>00031     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_canvas_data.html" title="shared canvas data model - boxes, patchcords">CanvasData</a>* _firstData;
-<a name="l00032"></a>00032 
-<a name="l00033"></a>00033 <span class="keyword">public</span>:
-<a name="l00034"></a>00034     <span class="comment">// or t_canvas?</span>
+<a name="l00018"></a>00018 <span class="keyword">class </span>ApplicationController;
+<a name="l00019"></a>00019 <span class="keyword">class </span>PatchWindowController;
+<a name="l00020"></a>00020 
+<a name="l00024"></a><a class="code" href="classqtpd_1_1_file_parser.html">00024</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_file_parser.html" title="Parses pd files on &#39;client&#39; (GUI) side.">FileParser</a> {
+<a name="l00025"></a>00025 <span class="keyword">private</span>:
+<a name="l00026"></a>00026     <a class="code" href="classqtpd_1_1_file_parser.html" title="Parses pd files on &#39;client&#39; (GUI) side.">FileParser</a>(){};
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a>* _pdParserPrevWindowController;
+<a name="l00029"></a>00029     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a>* _pdParserWindowController;
+<a name="l00030"></a>00030     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a>* _pdParserFirstWindowController;
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032 <span class="comment">//    static CanvasData* _currentData;</span>
+<a name="l00033"></a>00033 <span class="comment">//    static CanvasData* _previousData;</span>
+<a name="l00034"></a>00034 <span class="comment">//    static CanvasData* _firstData;</span>
 <a name="l00035"></a>00035 
-<a name="l00036"></a><a class="code" href="classqtpd_1_1_file_parser.html#ab7dc8008ff768523c4633c29f8c030d2">00036</a>     <span class="keyword">static</span> std::string <a class="code" href="classqtpd_1_1_file_parser.html#ab7dc8008ff768523c4633c29f8c030d2">pdParserFileName</a>;
+<a name="l00036"></a>00036     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_application_controller.html">ApplicationController</a>* _appController;
 <a name="l00037"></a>00037 
-<a name="l00038"></a><a class="code" href="classqtpd_1_1_file_parser.html#a635ba8164c801509c205bb1ab24787a9">00038</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_file_parser.html#a635ba8164c801509c205bb1ab24787a9">setParserWindow</a>(<a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* wnd)
-<a name="l00039"></a>00039     {
-<a name="l00040"></a>00040         _pdParserPrevWindow = wnd;
-<a name="l00041"></a>00041         _pdParserWindow = wnd;
-<a name="l00042"></a>00042     }
+<a name="l00038"></a>00038 <span class="keyword">public</span>:
+<a name="l00039"></a>00039 
+<a name="l00040"></a><a class="code" href="classqtpd_1_1_file_parser.html#ab7dc8008ff768523c4633c29f8c030d2">00040</a>     <span class="keyword">static</span> std::string <a class="code" href="classqtpd_1_1_file_parser.html#ab7dc8008ff768523c4633c29f8c030d2">pdParserFileName</a>;
+<a name="l00041"></a>00041 
+<a name="l00042"></a><a class="code" href="classqtpd_1_1_file_parser.html#a45e16e04efd8d7f03abcd54cf8b16df4">00042</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_file_parser.html#a45e16e04efd8d7f03abcd54cf8b16df4">setAppController</a>(<a class="code" href="classqtpd_1_1_application_controller.html">ApplicationController</a>* appController) {_appController = appController;}
 <a name="l00043"></a>00043 
-<a name="l00044"></a><a class="code" href="classqtpd_1_1_file_parser.html#af36576b1a6f7cc5062c19b4755b0c48e">00044</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_file_parser.html#af36576b1a6f7cc5062c19b4755b0c48e">setParserWindows</a>(<a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* wnd, <a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* prev, <a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* first)
+<a name="l00044"></a><a class="code" href="classqtpd_1_1_file_parser.html#ae1832c5b6124099e0e2f05fd71fd6ca9">00044</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_file_parser.html#ae1832c5b6124099e0e2f05fd71fd6ca9">setParserWindowController</a>(<a class="code" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a>* wnd)
 <a name="l00045"></a>00045     {
-<a name="l00046"></a>00046         _pdParserWindow = wnd;
-<a name="l00047"></a>00047         _pdParserPrevWindow = prev;
-<a name="l00048"></a>00048         _pdParserFirstWindow = first;
-<a name="l00049"></a>00049     }
-<a name="l00050"></a>00050 
-<a name="l00051"></a><a class="code" href="classqtpd_1_1_file_parser.html#ae40e5eef1f2e3051398b918eb9d3b2ce">00051</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_file_parser.html#ae40e5eef1f2e3051398b918eb9d3b2ce">setCurrentData</a>(<a class="code" href="classqtpd_1_1_canvas_data.html" title="shared canvas data model - boxes, patchcords">CanvasData</a>* data)
-<a name="l00052"></a>00052     {
-<a name="l00053"></a>00053         _previousData = data;
-<a name="l00054"></a>00054         _currentData = data;
+<a name="l00046"></a>00046         _pdParserPrevWindowController = wnd;
+<a name="l00047"></a>00047         _pdParserWindowController = wnd;
+<a name="l00048"></a>00048     }
+<a name="l00049"></a>00049 
+<a name="l00050"></a><a class="code" href="classqtpd_1_1_file_parser.html#a57a8b706c680ab176d1f2f12c12dd232">00050</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_file_parser.html#a57a8b706c680ab176d1f2f12c12dd232">setParserWindowControllers</a>(<a class="code" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a>* wnd, <a class="code" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a>* prev, <a class="code" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a>* first)
+<a name="l00051"></a>00051     {
+<a name="l00052"></a>00052         _pdParserWindowController = wnd;
+<a name="l00053"></a>00053         _pdParserPrevWindowController = prev;
+<a name="l00054"></a>00054         _pdParserFirstWindowController = first;
 <a name="l00055"></a>00055     }
-<a name="l00056"></a><a class="code" href="classqtpd_1_1_file_parser.html#a716c44595fd7faafca9d399ca63e3483">00056</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_file_parser.html#a716c44595fd7faafca9d399ca63e3483">setCanvasData</a>(<a class="code" href="classqtpd_1_1_canvas_data.html" title="shared canvas data model - boxes, patchcords">CanvasData</a>* data, <a class="code" href="classqtpd_1_1_canvas_data.html" title="shared canvas data model - boxes, patchcords">CanvasData</a>* prev, <a class="code" href="classqtpd_1_1_canvas_data.html" title="shared canvas data model - boxes, patchcords">CanvasData</a>* first)
-<a name="l00057"></a>00057     {
-<a name="l00058"></a>00058         _currentData = data;
-<a name="l00059"></a>00059         _previousData = prev;
-<a name="l00060"></a>00060         _firstData = first;
-<a name="l00061"></a>00061     }
-<a name="l00062"></a>00062 
-<a name="l00068"></a><a class="code" href="classqtpd_1_1_file_parser.html#ae55d821e20852e98617ff5a93057f5d5">00068</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* <a class="code" href="classqtpd_1_1_file_parser.html#ae55d821e20852e98617ff5a93057f5d5" title="returns first created window">parserFirstWindow</a>()
-<a name="l00069"></a>00069     {
-<a name="l00070"></a>00070         <span class="keywordflow">return</span> _pdParserFirstWindow;
-<a name="l00071"></a>00071     }
-<a name="l00072"></a>00072 
-<a name="l00073"></a><a class="code" href="classqtpd_1_1_file_parser.html#aee0f14a3d05554a9020d4eaed943622b">00073</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* <a class="code" href="classqtpd_1_1_file_parser.html#aee0f14a3d05554a9020d4eaed943622b">parserWindow</a>()
-<a name="l00074"></a>00074     {
-<a name="l00075"></a>00075         <span class="keywordflow">return</span> _pdParserWindow;
-<a name="l00076"></a>00076     }
-<a name="l00077"></a>00077 
-<a name="l00078"></a><a class="code" href="classqtpd_1_1_file_parser.html#ab2609a2131b6ac36dc6f8519c1cc7710">00078</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a>* <a class="code" href="classqtpd_1_1_file_parser.html#ab2609a2131b6ac36dc6f8519c1cc7710">parserPrevWindow</a>()
-<a name="l00079"></a>00079     {
-<a name="l00080"></a>00080         <span class="keywordflow">return</span> _pdParserPrevWindow;
-<a name="l00081"></a>00081     }
-<a name="l00086"></a>00086     <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_file_parser.html#aba83c301aa141aa782ed569f55fa90ec" title="[3.2] process legacy pd files">legacyProcess</a>(<a class="code" href="classqtpd_1_1_canvas_view.html" title="&#39;t_canvas&#39; counterpart - for now it&#39;s both view and &#39;view controller&#39;. creates pd+gui objects...">CanvasView</a>* cmcanvas, QStringList list);
-<a name="l00087"></a>00087 
-<a name="l00094"></a>00094     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* <a class="code" href="classqtpd_1_1_file_parser.html#a37237d5db553dca0252a48b372c20114" title="[3.1] subroutine - formats list and send it to canvas as a string">sendStringToCanvas</a>(<a class="code" href="classqtpd_1_1_canvas_view.html" title="&#39;t_canvas&#39; counterpart - for now it&#39;s both view and &#39;view controller&#39;. creates pd+gui objects...">CanvasView</a>* cmcanvas, QStringList list);
-<a name="l00095"></a>00095 
-<a name="l00102"></a>00102     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_file_parser.html#aaa3c3140e868a8f9bf356cad33226b12" title="[3] parses QStringLists of atoms to canvas - creates objects etc">parseStringListAtoms</a>(<a class="code" href="classqtpd_1_1_canvas_view.html" title="&#39;t_canvas&#39; counterpart - for now it&#39;s both view and &#39;view controller&#39;. creates pd+gui objects...">CanvasView</a>* cmcanvas, QStringList list);
-<a name="l00103"></a>00103 
-<a name="l00108"></a>00108     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_file_parser.html#a5a17d655a501583acbc54ce76d8140d4" title="[2] checks first atoms (&quot;#N&quot;, &quot;#X&quot; etc) and sends QStringList of contents to canvas">parseQString</a>(QString line);
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057 <span class="comment">//    static void setCurrentData(CanvasData* data)</span>
+<a name="l00058"></a>00058 <span class="comment">//    {</span>
+<a name="l00059"></a>00059 <span class="comment">//        _previousData = data;</span>
+<a name="l00060"></a>00060 <span class="comment">//        _currentData = data;</span>
+<a name="l00061"></a>00061 <span class="comment">//    }</span>
+<a name="l00062"></a>00062 <span class="comment">//    static void setCanvasData(CanvasData* data, CanvasData* prev, CanvasData* first)</span>
+<a name="l00063"></a>00063 <span class="comment">//    {</span>
+<a name="l00064"></a>00064 <span class="comment">//        _currentData = data;</span>
+<a name="l00065"></a>00065 <span class="comment">//        _previousData = prev;</span>
+<a name="l00066"></a>00066 <span class="comment">//        _firstData = first;</span>
+<a name="l00067"></a>00067 <span class="comment">//    }</span>
+<a name="l00068"></a>00068 
+<a name="l00074"></a><a class="code" href="classqtpd_1_1_file_parser.html#ae96285351a2cf468205aeebf06a4de83">00074</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a>* <a class="code" href="classqtpd_1_1_file_parser.html#ae96285351a2cf468205aeebf06a4de83" title="returns first created window">parserFirstWindowController</a>()
+<a name="l00075"></a>00075     {
+<a name="l00076"></a>00076         <span class="keywordflow">return</span> _pdParserFirstWindowController;
+<a name="l00077"></a>00077     }
+<a name="l00078"></a>00078 
+<a name="l00079"></a><a class="code" href="classqtpd_1_1_file_parser.html#abf3822d6f0f317199a318ceaed5e44c7">00079</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a>* <a class="code" href="classqtpd_1_1_file_parser.html#abf3822d6f0f317199a318ceaed5e44c7">parserWindowController</a>()
+<a name="l00080"></a>00080     {
+<a name="l00081"></a>00081         <span class="keywordflow">return</span> _pdParserWindowController;
+<a name="l00082"></a>00082     }
+<a name="l00083"></a>00083 
+<a name="l00084"></a><a class="code" href="classqtpd_1_1_file_parser.html#abbf12cec34481939ed711e0f4b86f8b0">00084</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a>* <a class="code" href="classqtpd_1_1_file_parser.html#abbf12cec34481939ed711e0f4b86f8b0">parserPrevWindowController</a>()
+<a name="l00085"></a>00085     {
+<a name="l00086"></a>00086         <span class="keywordflow">return</span> _pdParserPrevWindowController;
+<a name="l00087"></a>00087     }
+<a name="l00092"></a>00092     <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_file_parser.html#ad4f4fe794696583c73c113b49f14d2a4" title="[3.2] process legacy pd files">legacyProcess</a>(<a class="code" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *controller, QStringList list);
+<a name="l00093"></a>00093 
+<a name="l00100"></a>00100     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* <a class="code" href="classqtpd_1_1_file_parser.html#a5d8fca36677fb7c2d73de520a556df39" title="[3.1] subroutine - formats list and send it to canvas as a string">sendStringToCanvas</a>(<a class="code" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *controller, QStringList list);
+<a name="l00101"></a>00101 
+<a name="l00108"></a>00108     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_file_parser.html#a7248ccd79a363148cf546c7138c6e7b7" title="[3] parses QStringLists of atoms to canvas - creates objects etc">parseStringListAtoms</a>(<a class="code" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a>* controller, QStringList list);
 <a name="l00109"></a>00109 
-<a name="l00114"></a>00114     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_file_parser.html#a7a1d4de73d63affb0825b0889a3b94f7" title="[1] opens file, converts to QStrings, calls &#39;parseString&#39;">open</a>(QString fname);
+<a name="l00114"></a>00114     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_file_parser.html#a5a17d655a501583acbc54ce76d8140d4" title="[2] checks first atoms (&quot;#N&quot;, &quot;#X&quot; etc) and sends QStringList of contents to canvas">parseQString</a>(QString line);
 <a name="l00115"></a>00115 
-<a name="l00120"></a>00120     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_file_parser.html#a7a1d4de73d63affb0825b0889a3b94f7" title="[1] opens file, converts to QStrings, calls &#39;parseString&#39;">open</a>(QString fname, <a class="code" href="classqtpd_1_1_canvas_data.html" title="shared canvas data model - boxes, patchcords">CanvasData</a>* <a class="code" href="classqtpd_1_1_canvas_data.html" title="shared canvas data model - boxes, patchcords">CanvasData</a>);
+<a name="l00120"></a>00120     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_file_parser.html#a7a1d4de73d63affb0825b0889a3b94f7" title="[1] opens file, converts to QStrings, calls &#39;parseString&#39;">open</a>(QString fname);
 <a name="l00121"></a>00121 
-<a name="l00127"></a><a class="code" href="classqtpd_1_1_file_parser.html#a913f7dec69523e9fb2ef3054e8904b65">00127</a>     <span class="keyword">static</span> QString <a class="code" href="classqtpd_1_1_file_parser.html#a913f7dec69523e9fb2ef3054e8904b65" title="unescapeString">unescapeString</a>(QString input)
-<a name="l00128"></a>00128     {
-<a name="l00129"></a>00129         <span class="comment">// todo regexp</span>
-<a name="l00130"></a>00130 
-<a name="l00131"></a>00131         QString ret;
-<a name="l00132"></a>00132 
-<a name="l00133"></a>00133         ret = input.split(<span class="stringliteral">&quot;\\ &quot;</span>).join(<span class="stringliteral">&quot; &quot;</span>);
-<a name="l00134"></a>00134         ret = ret.split(<span class="stringliteral">&quot;\\n&quot;</span>).join(<span class="stringliteral">&quot;\n&quot;</span>);
-<a name="l00135"></a>00135         ret = ret.split(<span class="stringliteral">&quot;\\,&quot;</span>).join(<span class="stringliteral">&quot;,&quot;</span>);
-<a name="l00136"></a>00136         ret = ret.split(<span class="stringliteral">&quot;\\.&quot;</span>).join(<span class="stringliteral">&quot;.&quot;</span>);
-<a name="l00137"></a>00137         <span class="comment">//ret = ret.split(&quot;\;&quot;).join(&quot;;&quot;);</span>
-<a name="l00138"></a>00138         <span class="keywordflow">return</span> ret;
-<a name="l00139"></a>00139     }
-<a name="l00140"></a>00140 
-<a name="l00146"></a><a class="code" href="classqtpd_1_1_file_parser.html#ababb5fcbce9370ddeffe2049c774ac2e">00146</a>     <span class="keyword">static</span> QString <a class="code" href="classqtpd_1_1_file_parser.html#ababb5fcbce9370ddeffe2049c774ac2e" title="escapeString">escapeString</a>(QString input)
-<a name="l00147"></a>00147     {
-<a name="l00148"></a>00148         <span class="comment">// todo regexp</span>
-<a name="l00149"></a>00149 
-<a name="l00150"></a>00150         QString ret;
-<a name="l00151"></a>00151 
-<a name="l00152"></a>00152         ret = input.split(<span class="stringliteral">&quot;\ &quot;</span>).join(<span class="stringliteral">&quot;\\ &quot;</span>);
-<a name="l00153"></a>00153         ret = ret.split(<span class="stringliteral">&quot;\n&quot;</span>).join(<span class="stringliteral">&quot;\\n&quot;</span>);
-<a name="l00154"></a>00154         ret = ret.split(<span class="stringliteral">&quot;,&quot;</span>).join(<span class="stringliteral">&quot;\\,&quot;</span>);
-<a name="l00155"></a>00155         ret = ret.split(<span class="stringliteral">&quot;.&quot;</span>).join(<span class="stringliteral">&quot;\\.&quot;</span>);
-<a name="l00156"></a>00156         <span class="comment">//ret = ret.split(&quot;;&quot;).join(&quot;\\;&quot;);</span>
-<a name="l00157"></a>00157         <span class="keywordflow">return</span> ret;
-<a name="l00158"></a>00158     }
-<a name="l00159"></a>00159 };
-<a name="l00160"></a>00160 }
-<a name="l00161"></a>00161 
-<a name="l00162"></a>00162 <span class="preprocessor">#endif // CM_FILEPARSER_H</span>
+<a name="l00122"></a>00122 <span class="comment">//    ////</span>
+<a name="l00123"></a>00123 <span class="comment">//    /// \brief new API open</span>
+<a name="l00124"></a>00124 <span class="comment">//    /// \param fname</span>
+<a name="l00125"></a>00125 <span class="comment">//    ///</span>
+<a name="l00126"></a>00126 <span class="comment">//    static void open(QString fname, CanvasData* CanvasData);</span>
+<a name="l00127"></a>00127 
+<a name="l00133"></a><a class="code" href="classqtpd_1_1_file_parser.html#a913f7dec69523e9fb2ef3054e8904b65">00133</a>     <span class="keyword">static</span> QString <a class="code" href="classqtpd_1_1_file_parser.html#a913f7dec69523e9fb2ef3054e8904b65" title="unescapeString">unescapeString</a>(QString input)
+<a name="l00134"></a>00134     {
+<a name="l00135"></a>00135         <span class="comment">// todo regexp</span>
+<a name="l00136"></a>00136 
+<a name="l00137"></a>00137         QString ret;
+<a name="l00138"></a>00138 
+<a name="l00139"></a>00139         ret = input.split(<span class="stringliteral">&quot;\\ &quot;</span>).join(<span class="stringliteral">&quot; &quot;</span>);
+<a name="l00140"></a>00140         ret = ret.split(<span class="stringliteral">&quot;\\n&quot;</span>).join(<span class="stringliteral">&quot;\n&quot;</span>);
+<a name="l00141"></a>00141         ret = ret.split(<span class="stringliteral">&quot;\\,&quot;</span>).join(<span class="stringliteral">&quot;,&quot;</span>);
+<a name="l00142"></a>00142         ret = ret.split(<span class="stringliteral">&quot;\\.&quot;</span>).join(<span class="stringliteral">&quot;.&quot;</span>);
+<a name="l00143"></a>00143         <span class="comment">//ret = ret.split(&quot;\;&quot;).join(&quot;;&quot;);</span>
+<a name="l00144"></a>00144         <span class="keywordflow">return</span> ret;
+<a name="l00145"></a>00145     }
+<a name="l00146"></a>00146 
+<a name="l00152"></a><a class="code" href="classqtpd_1_1_file_parser.html#ababb5fcbce9370ddeffe2049c774ac2e">00152</a>     <span class="keyword">static</span> QString <a class="code" href="classqtpd_1_1_file_parser.html#ababb5fcbce9370ddeffe2049c774ac2e" title="escapeString">escapeString</a>(QString input)
+<a name="l00153"></a>00153     {
+<a name="l00154"></a>00154         <span class="comment">// todo regexp</span>
+<a name="l00155"></a>00155 
+<a name="l00156"></a>00156         QString ret;
+<a name="l00157"></a>00157 
+<a name="l00158"></a>00158         ret = input.split(<span class="stringliteral">&quot;\ &quot;</span>).join(<span class="stringliteral">&quot;\\ &quot;</span>);
+<a name="l00159"></a>00159         ret = ret.split(<span class="stringliteral">&quot;\n&quot;</span>).join(<span class="stringliteral">&quot;\\n&quot;</span>);
+<a name="l00160"></a>00160         ret = ret.split(<span class="stringliteral">&quot;,&quot;</span>).join(<span class="stringliteral">&quot;\\,&quot;</span>);
+<a name="l00161"></a>00161         ret = ret.split(<span class="stringliteral">&quot;.&quot;</span>).join(<span class="stringliteral">&quot;\\.&quot;</span>);
+<a name="l00162"></a>00162         <span class="comment">//ret = ret.split(&quot;;&quot;).join(&quot;\\;&quot;);</span>
+<a name="l00163"></a>00163         <span class="keywordflow">return</span> ret;
+<a name="l00164"></a>00164     }
+<a name="l00165"></a>00165 };
+<a name="l00166"></a>00166 }
+<a name="l00167"></a>00167 
+<a name="l00168"></a>00168 <span class="preprocessor">#endif // CM_FILEPARSER_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -216,7 +226,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 4 2017 20:15:46 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 4 2017 21:45:25 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

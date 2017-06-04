@@ -676,12 +676,19 @@ Generating docs for compound _widg/home/travis/build/njazz/qtpd/qtpd_gui/lib_hea
 /home/travis/build/njazz/qtpd/qtpd_gui/CanvasView.h:272: warning: argument 'obj' of command @param is not found in the argument list of qtpd::CanvasView::resizeToObjects()
 /home/travis/build/njazz/qtpd/qtpd_gui/CanvasView.h:284: warning: The following parameters of qtpd::CanvasView::slotSelectBox(UIItem *box, QGraphicsSceneMouseEvent *ev) are not documented:
   parameter 'ev'
-/home/travis/build/njazz/qtpd/qtpd_gui/datamodels/FileParser.h:82: warning: The following parameters of qtpd::FileParser::legacyProcess(CanvasView *cmcanvas, QStringList list) are not documented:
-  parameter 'cmcanvas'
-/home/travis/build/njazz/qtpd/qtpd_gui/datamodels/FileParser.h:116: warning: The following parameters of qtpd::FileParser::open(QString fname, CanvasData *CanvasData) are not documented:
-  parameter 'CanvasData'
-/home/travis/build/njazz/qtpd/qtpd_gui/datamodels/FileSaver.h:28: warning: argument 'canvas' of command @param is not found in the argument list of qtpd::FileSaver::saveCanvas(CanvasData *CanvasData, QFile *file)
-/home/travis/build/njazz/qtpd/qtpd_gui/datamodels/FileSaver.h:28: warning: The following parameters of qtpd::FileSaver::saveCanvas(CanvasData *CanvasData, QFile *file) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/datamodels/FileParser.h:88: warning: The following parameters of qtpd::FileParser::legacyProcess(PatchWindowController *controller, QStringList list) are not documented:
+  parameter 'controller'
+/home/travis/build/njazz/qtpd/qtpd_gui/datamodels/FileParser.h:102: warning: argument 'cmcanvas' of command @param is not found in the argument list of qtpd::FileParser::parseStringListAtoms(PatchWindowController *controller, QStringList list)
+/home/travis/build/njazz/qtpd/qtpd_gui/datamodels/FileParser.h:102: warning: The following parameters of qtpd::FileParser::parseStringListAtoms(PatchWindowController *controller, QStringList list) are not documented:
+  parameter 'controller'
+/home/travis/build/njazz/qtpd/qtpd_gui/datamodels/FileParser.h:94: warning: argument 'cmcanvas' of command @param is not found in the argument list of qtpd::FileParser::sendStringToCanvas(PatchWindowController *controller, QStringList list)
+/home/travis/build/njazz/qtpd/qtpd_gui/datamodels/FileParser.h:94: warning: The following parameters of qtpd::FileParser::sendStringToCanvas(PatchWindowController *controller, QStringList list) are not documented:
+  parameter 'controller'
+/home/travis/build/njazz/qtpd/qtpd_gui/datamodels/FileSaver.h:22: warning: argument 'canvas' of command @param is not found in the argument list of qtpd::FileSaver::save(QString fname, CanvasData *canvasData)
+/home/travis/build/njazz/qtpd/qtpd_gui/datamodels/FileSaver.h:22: warning: The following parameters of qtpd::FileSaver::save(QString fname, CanvasData *canvasData) are not documented:
+  parameter 'canvasData'
+/home/travis/build/njazz/qtpd/qtpd_gui/datamodels/FileSaver.h:29: warning: argument 'canvas' of command @param is not found in the argument list of qtpd::FileSaver::saveCanvas(CanvasData *CanvasData, QFile *file)
+/home/travis/build/njazz/qtpd/qtpd_gui/datamodels/FileSaver.h:29: warning: The following parameters of qtpd::FileSaver::saveCanvas(CanvasData *CanvasData, QFile *file) are not documented:
   parameter 'CanvasData'
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/Port.h:46: warning: Found unknown command `\group'
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/Port.h:32: warning: Found unknown command `\group'
@@ -787,6 +794,6 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-symbol cache used 2293/65536 hits=174811 misses=2293
-lookup cache used 3951/65536 hits=22175 misses=4157
+symbol cache used 2287/65536 hits=174561 misses=2287
+lookup cache used 3947/65536 hits=22096 misses=4153
 finished...
