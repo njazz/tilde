@@ -489,7 +489,7 @@ void PatchWindow::objectMakerDone()
             UIObject* new_obj = _controller->createObject(obj_name.toStdString(), _canvasView->replaceObject()->pos().toPoint());
 
             UIObject* obj = _canvasView->replaceObject();
-            patchcordVec cords = _canvasView->patchcordsForObject(obj);
+            patchcordVec cords = _controller->canvasData()->patchcordsForObject(obj);
 
             patchcordVec::iterator it;
             for (it = cords.begin(); it != cords.end(); ++it) {
@@ -505,7 +505,7 @@ void PatchWindow::objectMakerDone()
                     obj2 = new_obj;
 
                 if (obj1 && obj2)
-                    _canvasView->patchcord(obj1, pc->outletIndex(), obj2, pc->inletIndex());
+                    _controller->patchcord(obj1, pc->outletIndex(), obj2, pc->inletIndex());
                 else
                     qDebug("replace object - patchcord error");
             }

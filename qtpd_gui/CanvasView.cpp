@@ -55,7 +55,6 @@ CanvasView::CanvasView(QGraphicsView* parent)
 
     _replaceObject = 0;
 
-    _filePath = Preferences::inst().get("Patches")->asQString();
 
     // ------NEW
     setStyleSheet("QGraphicsView { border-style: none; }");
@@ -78,7 +77,13 @@ void CanvasView::s_InMousePressed(UIItem* obj, QGraphicsSceneMouseEvent*)
     _newLine->setActive(false);
 
     if ((_connectionStartObject) && (_connectionStartOutlet)) {
-        patchcord(_connectionStartObject, _connectionStartOutlet, (UIObject*)obj->parent(), obj);
+
+        //patchcord(_connectionStartObject, _connectionStartOutlet, (UIObject*)obj->parent(), obj);
+
+        int nOut = ((Port*)_connectionStartObject)->portIndex();
+        int nIn = ((Port*)obj)->portIndex();
+
+        emit signalPatchcord(_connectionStartObject, nOut, (UIObject*)obj->parent(), nIn);
 
         viewport()->update();
     }
@@ -111,7 +116,7 @@ void CanvasView::s_OutMouseReleased(UIItem*, QGraphicsSceneMouseEvent*) {}
 //    viewport()->update(); //
 //}
 
-void CanvasView::signalSelectBox(UIItem* box, QGraphicsSceneMouseEvent* ev)
+void CanvasView::slotSelectBox(UIItem* box, QGraphicsSceneMouseEvent* ev)
 {
 
     /*
@@ -148,7 +153,7 @@ void CanvasView::signalSelectBox(UIItem* box, QGraphicsSceneMouseEvent* ev)
 /// \param box
 /// \param event
 /// \deprecated move to UIBox
-void CanvasView::signalMoveBox(UIItem* box, QGraphicsSceneMouseEvent* event)
+void CanvasView::slotMoveBox(UIItem* box, QGraphicsSceneMouseEvent* event)
 {
     // TODO
 
@@ -267,6 +272,8 @@ void CanvasView::mouseMoveEvent(QMouseEvent* ev)
     if (_newLine->active()) {
         viewport()->update();
     }
+
+    emit signalMouseMove(pos);
 }
 
 void CanvasView::mousePressEvent(QMouseEvent* ev)
@@ -311,6 +318,9 @@ void CanvasView::mousePressEvent(QMouseEvent* ev)
         //_objectMaker->cancel();
         _objectMaker->done();
     }
+
+    QPoint pos = ev->pos();
+    emit signalMousePress(pos);
 }
 
 void CanvasView::mouseReleaseEvent(QMouseEvent* ev)
@@ -331,6 +341,9 @@ void CanvasView::mouseReleaseEvent(QMouseEvent* ev)
 
     //todo
     viewport()->update();
+
+    QPoint pos = ev->pos();
+    emit signalMouseRelease(pos);
 }
 
 // ---------------------------------------------------------------------------
@@ -472,6 +485,8 @@ UIObject* CanvasView::createObject(QString objectData1, QPoint pos) //std::strin
 
 // ====================================================================================
 
+// TODO ???
+/*
 UIObject* CanvasView::createBoxForPatchWindow(QMainWindow* patchWindow, QString objectData, QPoint pos)
 {
     std::pair<QMainWindow*, UIObject*> newPatch;
@@ -498,56 +513,57 @@ UIObject* CanvasView::createBoxForPatchWindow(QMainWindow* patchWindow, QString 
 
     return obj;
 }
+*/
 
-void CanvasView::patchcord(UIObject* obj1, int outlet, UIObject* obj2, int inlet)
-{
+//void CanvasView::patchcord(UIObject* obj1, int outlet, UIObject* obj2, int inlet)
+//{
 
-    if (obj1->serverObject() && obj2->serverObject()) {
-        if (((UIBox*)obj1)->errorBox()) {
-            //create dummy inlets / outlets
-            qDebug() << "errorbox";
-        };
+//    if (obj1->serverObject() && obj2->serverObject()) {
+//        if (((UIBox*)obj1)->errorBox()) {
+//            //create dummy inlets / outlets
+//            qDebug() << "errorbox";
+//        };
 
-        if (((UIBox*)obj2)->errorBox()) {
-            //create dummy inlets / outlets
-            qDebug() << "errorbox";
-        };
+//        if (((UIBox*)obj2)->errorBox()) {
+//            //create dummy inlets / outlets
+//            qDebug() << "errorbox";
+//        };
 
-        Port* outport = obj1->outletAt(outlet);
-        Port* inport = obj2->inletAt(inlet);
+//        Port* outport = obj1->outletAt(outlet);
+//        Port* inport = obj2->inletAt(inlet);
 
-        UIPatchcord* pc = new UIPatchcord(obj1, outport, obj2, inport);
+//        UIPatchcord* pc = new UIPatchcord(obj1, outport, obj2, inport);
 
-        if (obj1->pdOutletType(outlet))
-            pc->setPatchcordType(cm_pt_signal);
+//        if (obj1->pdOutletType(outlet))
+//            pc->setPatchcordType(cm_pt_signal);
 
-        qDebug("server patchcord");
+//        qDebug("server patchcord");
 
-        qDebug() << "pc: " <<  obj1->serverObject() << outlet << obj2->serverObject() << inlet ;
+//        qDebug() << "pc: " <<  obj1->serverObject() << outlet << obj2->serverObject() << inlet ;
 
-        // TODO
-        // _canvasData.serverCanvas()->connect(obj1->serverObject(), outlet, obj2->serverObject(), inlet);
-        // _canvasData.addPatchcord(pc);
+//        // TODO
+//        // _canvasData.serverCanvas()->connect(obj1->serverObject(), outlet, obj2->serverObject(), inlet);
+//        // _canvasData.addPatchcord(pc);
 
-        //        cmp_patchcord((t_object*)obj1->pdObject(), outlet, (t_object*)obj2->pdObject(), inlet);
-        //        _canvasData.addPatchcord(pc); //patchcords()->push_back(pc);
+//        //        cmp_patchcord((t_object*)obj1->pdObject(), outlet, (t_object*)obj2->pdObject(), inlet);
+//        //        _canvasData.addPatchcord(pc); //patchcords()->push_back(pc);
 
 
 
-        scene()->addItem(pc);
-    } else
-        qDebug("canvas patchcord error");
-}
+//        scene()->addItem(pc);
+//    } else
+//        qDebug("canvas patchcord error");
+//}
 
-void CanvasView::patchcord(UIObject* obj1, UIItem* outport, UIObject* obj2, UIItem* inport)
-{
+//void CanvasView::patchcord(UIObject* obj1, UIItem* outport, UIObject* obj2, UIItem* inport)
+//{
 
-    //todo
+//    //todo
 
-    int n1 = ((Port*)outport)->portIndex();
-    int n2 = ((Port*)inport)->portIndex();
-    patchcord(obj1, n1, obj2, n2);
-}
+//    int n1 = ((Port*)outport)->portIndex();
+//    int n2 = ((Port*)inport)->portIndex();
+//    patchcord(obj1, n1, obj2, n2);
+//}
 
 //void CanvasView::deletePatchcordsFor(UIItem* obj)
 //{
@@ -686,19 +702,19 @@ void CanvasView::setEditMode(t_editMode mode)
     }
 }
 
-UIObject* CanvasView::getObjectByIndex(int idx)
-{
-    // getobjbyindex
-    // TODO
-    /*
-    if ((idx < (int)_canvasData.boxes()->size()) && (idx >= 0))
-        return _canvasData.boxes()->at(idx);
-    else {
-        qDebug("object not found");
-        return 0;
-    }
-    */
-}
+//UIObject* CanvasView::getObjectByIndex(int idx)
+//{
+//    // getobjbyindex
+//    // TODO
+//    /*
+//    if ((idx < (int)_canvasData.boxes()->size()) && (idx >= 0))
+//        return _canvasData.boxes()->at(idx);
+//    else {
+//        qDebug("object not found");
+//        return 0;
+//    }
+//    */
+//}
 
 void CanvasView::setGridEnabled(bool val)
 {
@@ -732,26 +748,7 @@ void CanvasView::setGridSnap(bool val)
 
 
 // TODO MOVE
-patchcordVec CanvasView::patchcordsForObject(UIObject* obj)
-{
 
-    patchcordVec ret;
-
-    /*
-
-    patchcordVec::iterator it;
-    for (it = _canvasData.patchcords()->begin(); it != _canvasData.patchcords()->end(); ++it) {
-        if (
-            (((UIPatchcord*)*it)->obj1() == obj)
-            || (((UIPatchcord*)*it)->obj2() == obj)) {
-            ret.push_back(*it);
-        }
-    }
-
-    */
-
-    return ret;
-}
 
 //int CanvasView::findObjectIndex(UIObject* obj)
 //{
@@ -828,12 +825,12 @@ patchcordVec CanvasView::patchcordsForObject(UIObject* obj)
 //    return ret;
 //}
 
-void CanvasView::selectObject(UIObject* obj)
-{
-    // TODO
-    //obj->select();
-    //_canvasData.selectBox(obj);
-}
+//void CanvasView::selectObject(UIObject* obj)
+//{
+//    // TODO
+//    //obj->select();
+//    //_canvasData.selectBox(obj);
+//}
 
 //void CanvasView::selectAll()
 //{
@@ -870,6 +867,7 @@ void CanvasView::resizeToObjects()
 //    return ret;
 //}
 
+// TODO MOVE
 void CanvasView::canvasFromPdStrings(QStringList strings)
 {
 
@@ -940,15 +938,8 @@ void CanvasView::portLocalCountUpdated()
     //}
 };
 
-void CanvasView::setReplaceObject(UIObject* obj)
-{
-    _replaceObject = obj;
-}
-
-UIObject* CanvasView::replaceObject()
-{
-    return _replaceObject;
-}
+void CanvasView::setReplaceObject(UIObject* obj){_replaceObject = obj;}
+UIObject* CanvasView::replaceObject(){return _replaceObject;}
 
 void CanvasView::showNewObjectMaker()
 {

@@ -283,8 +283,14 @@ void FileParser::parseStringListAtoms(CanvasView* cmcanvas, QStringList list) //
         if (list.size() > 4) {
             //if (cmcanvas)
             {
+                // TODO
+
+                /*
+
                 UIObject* obj1 = cmcanvas->getObjectByIndex(((QString)list.value(1)).toInt());
                 UIObject* obj2 = cmcanvas->getObjectByIndex(((QString)list.value(3)).toInt());
+
+
 
                 if (!obj1 || !obj2) {
                     qDebug("object not found - could not connect");
@@ -299,6 +305,8 @@ void FileParser::parseStringListAtoms(CanvasView* cmcanvas, QStringList list) //
                     qDebug("patchcord");
                     cmcanvas->patchcord(obj1, idx1, obj2, idx2);
                 }
+                */
+
             }
         }
 
@@ -342,7 +350,10 @@ void FileParser::parseStringListAtoms(CanvasView* cmcanvas, QStringList list) //
 
                         qDebug("restore");
 
-                        UIObject* b = _pdParserPrevWindow->canvasView()->createBoxForPatchWindow(_pdParserWindow, objData, pos);
+                        // TODO
+                        // UIObject* b = _pdParserPrevWindow->canvasView()->createBoxForPatchWindow(_pdParserWindow, objData, pos);
+
+
                         //UIObject* b = _pdParserPrevWindow->canvasView()->createObject(QString(objData.c_str()), pos);
 
                         //IObject *b = createBoxForCanvas(newCanvas, objectData, pos);

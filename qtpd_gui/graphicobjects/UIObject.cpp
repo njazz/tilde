@@ -229,8 +229,8 @@ void UIObject::addInlet(int _portClass_)
     _inlets->push_back(new_in);
 
     if (_parentCanvasView) {
-        connect(new_in, &Port::mousePressed, (_parentCanvasView), &CanvasView::s_InMousePressed);
-        connect(new_in, &Port::mouseReleased,(_parentCanvasView), &CanvasView::s_InMouseReleased);
+        connect(new_in, &Port::mousePressed, (_parentCanvasView), &CanvasView::slotInletMousePress);
+        connect(new_in, &Port::mouseReleased,(_parentCanvasView), &CanvasView::slotInletMouseRelease);
     }
 
     new_in->show();
@@ -263,8 +263,8 @@ void UIObject::addOutlet(int _portClass_)
     _outlets->push_back(new_out);
 
     if (_parentCanvasView) {
-        connect(new_out, &Port::mousePressed, _parentCanvasView, &CanvasView::s_OutMousePressed);
-        connect(new_out, &Port::mouseReleased, _parentCanvasView, &CanvasView::s_OutMouseReleased);
+        connect(new_out, &Port::mousePressed, _parentCanvasView, &CanvasView::slotOutletMousePressed);
+        connect(new_out, &Port::mouseReleased, _parentCanvasView, &CanvasView::slotOutletMouseReleased);
     }
 
     new_out->show();

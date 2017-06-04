@@ -50,7 +50,7 @@ private:
     bool _keepPdObject;
     bool _readOnly;
 
-    QString _filePath;
+    //QString _filePath;
 
     t_editMode* _canvasEditMode;
 
@@ -75,8 +75,8 @@ public:
     UIObject* dragObject() { return _dragObject; }
     void setDragObject(UIObject* object) { _dragObject = object; }
 
-//    QString fileName() { return _canvasData.fileName(); }
-//    void setFileName(QString object) { _canvasData.setFileName(object); }
+    //    QString fileName() { return _canvasData.fileName(); }
+    //    void setFileName(QString object) { _canvasData.setFileName(object); }
 
     void setZoom(float zoom);
     float getZoom() { return _zoom; }
@@ -99,16 +99,10 @@ public:
             setEditMode(em_Locked);
     }
 
-    bool readOnly()
-    {
-        return _readOnly;
-    }
+    bool readOnly(){ return _readOnly;}
 
-    void setFilePath(QString filePath)
-    {
-        _filePath = filePath;
-    }
-    QString filePath() { return _filePath; };
+    // void setFilePath(QString filePath){ _filePath = filePath;}
+    // QString filePath() { return _filePath; };
 
     ////
     /// \brief minimumCanvasSize
@@ -123,8 +117,6 @@ public:
 
     // -------------------------------------------------------
 
-
-
     void addInlet();
     void addOutlet();
 
@@ -136,54 +128,54 @@ public:
 
     // -------------------------------------------------------
 
-    ////
+//    //
 
-    ////
-    /// \brief prototype for universal object 'constructor'
-    /// \param message
-    /// \param pos
-    /// \return
-    /// \deprecated move to window/controller
-    ///
-    //UIObject* createObject(QString objectData1, QPoint pos);
+//    //
+//    / \brief prototype for universal object 'constructor'
+//    / \param message
+//    / \param pos
+//    / \return
+//    / \deprecated move to window/controller
+//    /
+//    UIObject* createObject(QString objectData1, QPoint pos);
 
-    ////
-    /// \brief create object box for subpatch (when loaded from file)
-    /// \param patchWindow
-    /// \param objectData
-    /// \param pos
-    /// \return
-    ///
-    UIObject* createBoxForPatchWindow(QMainWindow* patchWindow, QString objectData, QPoint pos);
+//    //
+//    / \brief create object box for subpatch (when loaded from file)
+//    / \param patchWindow
+//    / \param objectData
+//    / \param pos
+//    / \return
+//    /
+//     UIObject* createBoxForPatchWindow(QMainWindow* patchWindow, QString objectData, QPoint pos);
 
-    ////
-    /// \brief creates patchcord
-    /// \param obj1
-    /// \param outlet
-    /// \param obj2
-    /// \param inlet
-    ///
-    void patchcord(UIObject* obj1, int outlet, UIObject* obj2, int inlet);
+//    ////
+//    /// \brief creates patchcord
+//    /// \param obj1
+//    /// \param outlet
+//    /// \param obj2
+//    /// \param inlet
+//    ///
+//    void patchcord(UIObject* obj1, int outlet, UIObject* obj2, int inlet);
 
-    ////
-    /// \brief creates patchcord, uses pointers to inlets/outlets. TODO temporary?
-    /// \param obj1
-    /// \param outport
-    /// \param obj2
-    /// \param inport
-    ///
-    void patchcord(UIObject* obj1, UIItem* outport, UIObject* obj2, UIItem* inport);
+//    ////
+//    /// \brief creates patchcord, uses pointers to inlets/outlets. TODO temporary?
+//    /// \param obj1
+//    /// \param outport
+//    /// \param obj2
+//    /// \param inport
+//    ///
+//    void patchcord(UIObject* obj1, UIItem* outport, UIObject* obj2, UIItem* inport);
 
-    ////
-    /// \brief delete all patchcords for object
-    /// \param obj
-    ///
-    //void deletePatchcordsFor(UIItem* obj);
+//    //
+//    / \brief delete all patchcords for object
+//    / \param obj
+//    /
+//    void deletePatchcordsFor(UIItem* obj);
 
-    ////
-    /// \brief delete single box
-    ///
-    //void deleteObject(UIObject* box);
+//    //
+//    / \brief delete single box
+//    /
+//    void deleteObject(UIObject* box);
 
     //    ////
     //    /// \brief delete all selected object boxes
@@ -197,12 +189,12 @@ public:
 
     // -------------------------------------------------------
 
-    ////
-    /// \brief returns object by index - this is needed by parser
-    /// \param idx
-    /// \return cm_widget pointer
-    ///
-    UIObject* getObjectByIndex(int idx);
+//    ////
+//    /// \brief returns object by index - this is needed by parser
+//    /// \param idx
+//    /// \return cm_widget pointer
+//    ///
+//    UIObject* getObjectByIndex(int idx);
 
     //    ////
     //    /// \brief returns vector of all object boxes - needed by filesaver
@@ -228,12 +220,12 @@ public:
     //    ///
     //    patchcordVec selectedPatchcords();
 
-    ////
-    /// \brief returns patchcords that are connected to specific object
-    /// \param obj
-    /// \return
-    ///
-    patchcordVec patchcordsForObject(UIObject* obj);
+//    //
+//    / \brief returns patchcords that are connected to specific object
+//    / \param obj
+//    / \return
+//    /
+    //patchcordVec patchcordsForObject(UIObject* obj);
 
     //    ////
     //    /// \brief find object index in list
@@ -272,7 +264,7 @@ public:
     /// \brief selects single box. mostly used by replace object routine in objectmaker
     /// \param obj
     ///
-    void selectObject(UIObject* obj);
+    //void selectObject(UIObject* obj);
 
     ////
     /// \brief change size to fit all objects
@@ -290,14 +282,14 @@ public:
     /// \brief slot called by box when it is selected
     /// \param box
     ///
-    void signalSelectBox(UIItem* box, QGraphicsSceneMouseEvent* ev);
+    Q_SLOT void slotSelectBox(UIItem* box, QGraphicsSceneMouseEvent* ev);
 
     ////
     /// \brief TODO check. slot called by box when it starts moving
     /// \param box
     /// \param event
     ///
-    void signalMoveBox(UIItem* box, QGraphicsSceneMouseEvent* event);
+    Q_SLOT void slotMoveBox(UIItem* box, QGraphicsSceneMouseEvent* event);
 
     ////
     /// \brief cancels patchcord creation
@@ -330,10 +322,10 @@ public:
 
 public slots:
 
-    void s_InMousePressed(UIItem* obj, QGraphicsSceneMouseEvent* ev);
-    void s_InMouseReleased(UIItem*, QGraphicsSceneMouseEvent*);
-    void s_OutMousePressed(UIItem* obj, QGraphicsSceneMouseEvent*);
-    void s_OutMouseReleased(UIItem*, QGraphicsSceneMouseEvent*);
+    void slotInletMousePress(UIItem* obj, QGraphicsSceneMouseEvent* ev);
+    void slotInletMouseRelease(UIItem*, QGraphicsSceneMouseEvent*);
+    void slotOutletMousePressed(UIItem* obj, QGraphicsSceneMouseEvent*);
+    void slotOutletMouseReleased(UIItem*, QGraphicsSceneMouseEvent*);
 
 private:
 public slots:
@@ -341,18 +333,27 @@ public slots:
     ////
     /// \brief slot in Box-style canvas for handling new ins/outs
     ///
-    void portCountUpdated();
+    void slotPortCountUpdated();
 
     ////
     /// \brief creates objectmaker atop existiong object box
     /// \details after typing the text in the objectmaker with nonzero 'replaceobject' the old object is deleted, the new object is created and old connections are restored
     /// \param obj
     ///
-    void objectStartsEdit(void* obj);
+    void slotObjectStartsEdit(void* obj);
 
 signals:
     std::pair<QMainWindow*, qtpd::UIObject*> createSubpatchWindow();
-    void updatePortCount();
+    void signalUpdatePortCount();
+
+    // new 0617
+    void signalSelectObject(UIObject* object);
+    void signalPatchcord(UIObject* src, int nOut, UIObject* dest, int nIn);
+
+    void signalMousePress(QPoint pos);
+    void signalMouseMove(QPoint pos);
+    void signalMouseRelease(QPoint pos);
+
 };
 }
 

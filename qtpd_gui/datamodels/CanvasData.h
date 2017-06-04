@@ -36,8 +36,13 @@ class CanvasData {
     ServerCanvas* _serverCanvas;
 
     QString _fileName;
+    QString _filePath;
 
 public:
+    CanvasData()
+    {
+        //_filePath = Preferences::inst().get("Patches")->asQString();
+    }
     // new 0517
     ServerCanvas* serverCanvas() { return _serverCanvas; }
     void setServerCanvas(ServerCanvas* canvas) { _serverCanvas = canvas; }
@@ -50,6 +55,9 @@ public:
 
     void setFileName(QString fName) { _fileName = fName; }
     QString fileName() { return _fileName; }
+
+    void setFilePath(QString filePath) { _filePath = filePath; }
+    QString filePath() { return _filePath; };
 
     bool hasObjects()
     {
@@ -336,6 +344,32 @@ public:
         return ret;
     }
 
+    UIObject* getObjectByIndex(int idx)
+    {
+
+        if ((idx < (int)boxes()->size()) && (idx >= 0))
+            return boxes()->at(idx);
+        else {
+            qDebug("object not found");
+            return 0;
+        }
+    }
+
+    patchcordVec patchcordsForObject(UIObject* obj)
+    {
+        patchcordVec ret;
+        patchcordVec::iterator it;
+
+        for (it = patchcords()->begin(); it != patchcords()->end(); ++it) {
+            if (
+                (((UIPatchcord*)*it)->obj1() == obj)
+                || (((UIPatchcord*)*it)->obj2() == obj)) {
+                ret.push_back(*it);
+            }
+        }
+
+        return ret;
+    }
     // -------
 };
 }

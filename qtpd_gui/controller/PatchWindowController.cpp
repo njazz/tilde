@@ -109,8 +109,8 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
     _canvasData->addUniqueBox(_canvasData->boxes(), uiObject);
     _scene->addItem(uiObject);
 
-    connect(uiObject, &UIObject::selectBox, _windows[0]->canvasView(), &CanvasView::signalSelectBox);
-    connect(uiObject, &UIObject::moveBox, _windows[0]->canvasView(), &CanvasView::signalMoveBox);
+    connect(uiObject, &UIObject::selectBox, _windows[0]->canvasView(), &CanvasView::slotSelectBox);
+    connect(uiObject, &UIObject::moveBox, _windows[0]->canvasView(), &CanvasView::slotMoveBox);
 
     // check port count
     /*
@@ -551,6 +551,8 @@ void PatchWindowController::signalMoveBox(UIItem* box, QGraphicsSceneMouseEvent*
 
 void PatchWindowController::patchcord(UIObject* obj1, int outlet, UIObject* obj2, int inlet)
 {
+    // TODO
+
     /*
     if (obj1->serverObject() && obj2->serverObject()) {
         if (((UIBox*)obj1)->errorBox()) {
@@ -591,14 +593,14 @@ void PatchWindowController::patchcord(UIObject* obj1, int outlet, UIObject* obj2
     */
 }
 
-void PatchWindowController::patchcord(UIObject* obj1, UIItem* outport, UIObject* obj2, UIItem* inport)
-{
+//void PatchWindowController::patchcord(UIObject* obj1, UIItem* outport, UIObject* obj2, UIItem* inport)
+//{
 
-    //todo
-    /*
-    int n1 = ((Port*)outport)->portIndex();
-    int n2 = ((Port*)inport)->portIndex();
-    patchcord(obj1, n1, obj2, n2);
-    */
-}
+//    //todo
+//    /*
+//    int n1 = ((Port*)outport)->portIndex();
+//    int n2 = ((Port*)inport)->portIndex();
+//    patchcord(obj1, n1, obj2, n2);
+//    */
+//}
 }
