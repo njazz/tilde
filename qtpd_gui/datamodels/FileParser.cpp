@@ -5,9 +5,9 @@
 
 #include "PatchWindow.h"
 
+#include "ApplicationController.h"
 #include "CanvasView.h"
 #include "PatchWindowController.h"
-#include "ApplicationController.h"
 
 namespace qtpd {
 PatchWindowController* FileParser::_pdParserPrevWindowController = 0;
@@ -260,7 +260,7 @@ UIObject* FileParser::sendStringToCanvas(PatchWindowController* controller, QStr
         // check property handling
         // probably should be moved here?
 
-        return  controller->createObject(QString(list.at(3) + " " + msgname).toStdString(), pos);
+        return controller->createObject(QString(list.at(3) + " " + msgname).toStdString(), pos);
 
     } else {
         qDebug("list error");
@@ -285,16 +285,11 @@ void FileParser::parseStringListAtoms(PatchWindowController* controller, QString
         //qDebug("new connect");
 
         if (list.size() > 4) {
-            //if (cmcanvas)
-            {
+            if (controller) {
                 // TODO
 
-                /*
-
-                UIObject* obj1 = cmcanvas->getObjectByIndex(((QString)list.value(1)).toInt());
-                UIObject* obj2 = cmcanvas->getObjectByIndex(((QString)list.value(3)).toInt());
-
-
+                UIObject* obj1 = controller->canvasData()->getObjectByIndex(((QString)list.value(1)).toInt());
+                UIObject* obj2 = controller->canvasData()->getObjectByIndex(((QString)list.value(3)).toInt());
 
                 if (!obj1 || !obj2) {
                     qDebug("object not found - could not connect");
@@ -307,9 +302,8 @@ void FileParser::parseStringListAtoms(PatchWindowController* controller, QString
                 //cmcanvasView()->patchcord();
                 if (!obj1->errorBox() && !obj2->errorBox()) {
                     qDebug("patchcord");
-                    cmcanvas->patchcord(obj1, idx1, obj2, idx2);
+                    controller->patchcord(obj1, idx1, obj2, idx2);
                 }
-                */
             }
         }
 
