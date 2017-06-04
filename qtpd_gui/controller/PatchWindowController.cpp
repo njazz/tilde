@@ -611,6 +611,11 @@ void PatchWindowController::patchcord(UIObject* obj1, int outlet, UIObject* obj2
 
 void PatchWindowController::slotSelectObject(UIObject* object)
 {
+    if (object->isSelected() && (_canvasData->selectedBoxes()->size() < 2)) {
+        firstWindow()->canvasView()->slotObjectStartsEdit((void*)object);
+        return;
+    }
+
     _canvasData->selectBox(object);
 }
 void PatchWindowController::slotPatchcord(UIObject* src, int nOut, UIObject* dest, int nIn)
@@ -634,14 +639,12 @@ void PatchWindowController::slotDeselectObjects()
 
 void PatchWindowController::slotSelectionFrame(QPoint start, QPoint end)
 {
-    _canvasData->selectBoxesInFrame(start,end);
+    _canvasData->selectBoxesInFrame(start, end);
 }
-
 
 void PatchWindowController::slotMoveSelectedBoxes(QPoint eventPos)
 {
-    for (int i = 0; i < (int)_canvasData->selectedBoxes()->size(); i++)
-    {
+    for (int i = 0; i < (int)_canvasData->selectedBoxes()->size(); i++) {
         UIObject* w = ((UIObject*)_canvasData->selectedBoxes()->at(i));
 
         // TODO
@@ -657,6 +660,5 @@ void PatchWindowController::slotMoveSelectedBoxes(QPoint eventPos)
         //todo
         firstWindow()->canvasView()->viewport()->update();
     }
-
 }
 }

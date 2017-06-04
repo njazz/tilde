@@ -120,11 +120,6 @@ void CanvasView::slotSelectBox(UIItem* box, QGraphicsSceneMouseEvent* ev)
 
     qDebug() << "select box";
 
-    if (box->isSelected()) {
-        slotObjectStartsEdit((void*)box);
-        return;
-    }
-
     if (CanvasView::getEditMode() == em_Unlocked) {
 
         if (!(ev->modifiers() & Qt::ShiftModifier)) {
@@ -148,7 +143,6 @@ void CanvasView::slotMoveBox(UIItem* box, QGraphicsSceneMouseEvent* event)
 
     if (!(CanvasView::getEditMode() == em_Unlocked))
         return;
-
 
     emit signalMoveSelectedBoxes(mapToParent((event->pos().toPoint() - box->dragOffset)));
 
@@ -251,14 +245,6 @@ void CanvasView::mousePressEvent(QMouseEvent* ev)
         ev->accept();
         return;
     }
-
-    // TODO
-    //_canvasData.deselectBoxes();
-    //_canvasData.deselectPatchcords();
-
-    //deselect
-    // TODO
-    //    hoverPatchcordsOff();
 
     //setFocus();
 

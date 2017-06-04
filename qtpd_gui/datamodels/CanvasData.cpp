@@ -77,20 +77,19 @@ void CanvasData::selectBoxesInFrame(QPoint start, QPoint end)
             ((UIBox*)boxes()->at(i))->deselect();
 
             auto it = std::find(selectedBoxes()->begin(), selectedBoxes()->end(), boxes()->at(i));
-            if (it !=selectedBoxes()->end()) {
+            if (it != selectedBoxes()->end()) {
                 selectedBoxes()->erase(it);
             }
         }
     }
 }
 
-
-
 void CanvasData::selectBox(UIObject* box)
 {
     addUniqueBox(&_selectedBoxes, box);
     box->select();
 }
+
 void CanvasData::selectPatchcord(UIPatchcord* pc)
 {
     addUniquePatchcord(&_selectedPatchcords, pc);
