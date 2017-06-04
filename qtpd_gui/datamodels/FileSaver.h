@@ -18,12 +18,13 @@ private:
     FileSaver(){};
 
 public:
+
     ////
-    /// \brief save canvas TODO move parts to canvas
-    /// \param file
+    /// \brief save file to disk; runs 'savecanvas' recursively
+    /// \param fname
     /// \param canvas
     ///
-    static void saveCanvas(CanvasView* canvas, QFile* file);
+    static void save(QString fname, CanvasData* canvasData);
 
     ////
     /// \brief new API saveCanvas
@@ -32,13 +33,7 @@ public:
     ///
     static void saveCanvas(CanvasData* CanvasData, QFile* file);
 
-    ////
-    /// \brief save file to disk; runs 'savecanvas' recursively
-    /// \param fname
-    /// \param canvas
-    ///
-    static void save(QString fname, CanvasView* canvas);
-    static void save(QString fname, CanvasData* canvasData);
+
 
 };
 }

@@ -37,7 +37,7 @@ public:
 class ApplicationController : public QObject {
 private:
     TheServer* _server;
-    ServerInstance* _mainInstance;
+    ServerInstance* _mainServerInstance;
 
     PdWindow* _pdWindow;
     PythonQtScriptingConsole* _pythonConsole;
@@ -46,7 +46,7 @@ private:
 
 public:
     ApplicationController();
-    ServerInstance* mainInstance() {return _mainInstance;}
+    ServerInstance* mainServerInstance() {return _mainServerInstance;}
     Observer* controllerObserver();
 
 public slots:

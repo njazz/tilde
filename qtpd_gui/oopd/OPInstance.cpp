@@ -32,10 +32,11 @@ OPInstance::OPInstance(OPClass* opClass)
 
         // TODO
         // copy canvas here
-        QStringList canvasStrings = opClass->_patchWindow->controller()->canvasData()->asPdFileStrings();
+        QStringList canvasStrings = opClass->_patchWindow->canvasData()->asPdFileStrings();
 
-        _patchWindow = new PatchWindow();
-        FileParser::setParserWindow(_patchWindow);
+        // TODO
+        _patchWindow = new PatchWindowController(0);
+        FileParser::setParserWindowController(_patchWindow);
 
         // TODO
         //_canvas = (t_canvas*)_patchWindow->canvasView()->pdObject();
@@ -43,13 +44,13 @@ OPInstance::OPInstance(OPClass* opClass)
         // register instance before copying objects
         OOPD::inst()->registerInstance(this, _className, _canvas, _symbol);
 
-        _patchWindow->canvasView()->canvasFromPdStrings(canvasStrings);
+        _patchWindow->firstWindow()->canvasView()->canvasFromPdStrings(canvasStrings);
         QString windowTitle = QString("(read only) instance: ") + QString(_className.c_str());
-        _patchWindow->setWindowTitle(windowTitle);
-        _patchWindow->canvasView()->setKeepPdObject(true);
-        _patchWindow->hide();
+        _patchWindow->firstWindow()->setWindowTitle(windowTitle);
+        _patchWindow->firstWindow()->canvasView()->setKeepPdObject(true);
+        _patchWindow->firstWindow()->hide();
 
-        _patchWindow->canvasView()->setReadOnly(true);
+        _patchWindow->firstWindow()->canvasView()->setReadOnly(true);
 
         _refCount = 1;
     }
@@ -87,7 +88,7 @@ OPInstance::OPInstance(OPClass* opClass)
 void OPInstance::showWindow()
 {
     if (_patchWindow)
-        _patchWindow->show();
+        _patchWindow->firstWindow()->show();
 }
 
 OPInstance* OPInstance::fromObjectSymbol(t_symbol* objSymbol)

@@ -8,6 +8,8 @@
 
 #include "PdWindow.h"
 
+#include "FileParser.h"
+
 namespace qtpd{
 
 ApplicationController:: ApplicationController()
@@ -15,7 +17,7 @@ ApplicationController:: ApplicationController()
     qDebug("new app controller");
 
     _server = new TheServer();
-    _mainInstance = _server->createInstance();
+    _mainServerInstance = _server->createInstance();
 
 #ifdef WITH_PYTHON
     PythonQtObjectPtr mainContext = PythonQt::self()->getMainModule();
@@ -25,7 +27,7 @@ ApplicationController:: ApplicationController()
 
     _consoleObserver = new PdWindowConsoleObserver;
 
-    _mainInstance->setConsoleObserver(_consoleObserver);
+    _mainServerInstance->setConsoleObserver(_consoleObserver);
 
     _pdWindow = new PdWindow();
     _pdWindow->move(0, 100);
@@ -33,21 +35,24 @@ ApplicationController:: ApplicationController()
     _pdWindow->setAppController(this);
 
     _consoleObserver->setWindow(_pdWindow);
+
+    FileParser::setAppController(this);
 };
 
 void ApplicationController::newPatchWindowController()
 {
     //return
-    PatchWindowController* newP = new PatchWindowController(this->mainInstance());
+    PatchWindowController* newP = new PatchWindowController(this->mainServerInstance());
     newP->firstWindow()->show();
 };
 
 void ApplicationController::openFileDialog()
 {
     QString fileName = QFileDialog::getOpenFileName(0, QString("Open patch"), QString("~/"), QString("*.pd"), 0, 0);
+
     if (fileName != "")
     {
-        PatchWindowController* newP = new PatchWindowController(this->mainInstance());
+        PatchWindowController* newP = new PatchWindowController(this->mainServerInstance());
         newP->openFile(fileName);
     }
 
@@ -106,7 +111,7 @@ void ApplicationController::dspOn()
     //dspOnAct->setChecked(true);
 
     qDebug() << "dsp on";
-    _mainInstance->dspOn();
+    _mainServerInstance->dspOn();
 
     //todo DSP observer
 }
@@ -115,7 +120,7 @@ void ApplicationController::dspOff()
 {
     //cmp_switch_dsp(false);
     //dspOnAct->setChecked(false);
-     _mainInstance->dspOff();
+     _mainServerInstance->dspOff();
 }
 
 void PdWindowConsoleObserver:: update()

@@ -25,12 +25,13 @@ OPClass::OPClass(string className)
 
     //TODO
     // create canvas here
-    _patchWindow = new PatchWindow();
+    // TODO instance
+    _patchWindow = new PatchWindowController(0);
 
     QString windowTitle = QString("pdclass: ") + QString(className.c_str());
-    _patchWindow->setWindowTitle(windowTitle);
-    _patchWindow->canvasView()->setKeepPdObject(true);
-    _patchWindow->hide();
+    _patchWindow->firstWindow()->setWindowTitle(windowTitle);
+    _patchWindow->firstWindow()->canvasView()->setKeepPdObject(true);
+    _patchWindow->firstWindow()->hide();
 
     // TODO
     //_canvas = (t_canvas*)_patchWindow->canvasView()->pdObject();
@@ -44,7 +45,7 @@ OPClass::OPClass(string className)
 void OPClass::showWindow()
 {
     if (_patchWindow)
-        _patchWindow->show();
+        _patchWindow->firstWindow()->show();
 }
 
 // ===========================
@@ -59,40 +60,40 @@ void OPClass::readFile()
     // TODO
     //PatchWindow *oldWindow = FileParser::parserWindow();
 
-    qDebug() << "pw cnv " << (long)_patchWindow << (long)_patchWindow->canvasView();
+    qDebug() << "pw cnv " << (long)_patchWindow << (long)_patchWindow->firstWindow()->canvasView();
 
-    PatchWindow* _prevWindow = FileParser::parserPrevWindow();
-    PatchWindow* _pWindow = FileParser::parserWindow();
-    PatchWindow* _pFirstWindow = FileParser::parserFirstWindow();
+    PatchWindowController* _prevWindow = FileParser::parserPrevWindowController();
+    PatchWindowController* _pWindow = FileParser::parserWindowController();
+    PatchWindowController* _pFirstWindow = FileParser::parserFirstWindowController();
     //
 
     FileParser::open(fileName);
 
-    if (FileParser::parserFirstWindow() != _pFirstWindow) {
+    if (FileParser::parserFirstWindowController() != _pFirstWindow) {
         //OOPD::inst()->unregisterClass(this, _className, _canvas, _symbol);
 
         // erase and copy
         // need to copy canvas - otherwise it is registered after all objects are loaded
         // probably fix that later
 
-        FileParser::parserFirstWindow()->hide();
+        FileParser::parserFirstWindowController()->firstWindow()->hide();
 
-        _patchWindow->controller()->menuSelectAll();
-        _patchWindow->controller()->deleteSelectedObjects();
+        _patchWindow->menuSelectAll();
+        _patchWindow->deleteSelectedObjects();
 
-        QStringList canvasStrings = FileParser::parserFirstWindow()->controller()->canvasData()->asPdFileStrings();
+        QStringList canvasStrings = FileParser::parserFirstWindowController()->canvasData()->asPdFileStrings();
         // TODO fix
-        PatchWindow* tmp = FileParser::parserWindow();
-        FileParser::setParserWindow(_patchWindow);
-        _patchWindow->canvasView()->canvasFromPdStrings(canvasStrings);
-        FileParser::setParserWindow(tmp);
+        PatchWindowController* tmp = FileParser::parserWindowController();
+        FileParser::setParserWindowController(_patchWindow);
+        _patchWindow->firstWindow()->canvasView()->canvasFromPdStrings(canvasStrings);
+        FileParser::setParserWindowController(tmp);
 
-        delete FileParser::parserFirstWindow();
+        delete FileParser::parserFirstWindowController();
     }
 
-    qDebug() << "pw cnv " << (long)_patchWindow << (long)_patchWindow->canvasView();
+    qDebug() << "pw cnv " << (long)_patchWindow << (long)_patchWindow->firstWindow()->canvasView();
 
-    FileParser::setParserWindows(_pWindow, _prevWindow, _pFirstWindow);
+    FileParser::setParserWindowControllers(_pWindow, _prevWindow, _pFirstWindow);
 }
 
 void OPClass::writeFile()
@@ -102,6 +103,6 @@ void OPClass::writeFile()
     QString fileName = QString(classPath.c_str()) + "/" + _className.c_str();
     fileName = fileName + ".class.pd";
 
-    FileSaver::save(fileName, _patchWindow->canvasView());
+    FileSaver::save(fileName, _patchWindow->canvasData());
 }
 }

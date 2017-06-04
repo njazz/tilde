@@ -6,19 +6,23 @@
 #include "PatchWindow.h"
 
 #include "CanvasView.h"
+#include "PatchWindowController.h"
+#include "ApplicationController.h"
 
 namespace qtpd {
-PatchWindow* FileParser::_pdParserPrevWindow = 0;
-PatchWindow* FileParser::_pdParserWindow = 0;
-PatchWindow* FileParser::_pdParserFirstWindow = 0;
+PatchWindowController* FileParser::_pdParserPrevWindowController = 0;
+PatchWindowController* FileParser::_pdParserWindowController = 0;
+PatchWindowController* FileParser::_pdParserFirstWindowController = 0;
 
-CanvasData* FileParser::_currentData = 0;
-CanvasData* FileParser::_previousData = 0;
-CanvasData* FileParser::_firstData = 0;
+//CanvasData* FileParser::_currentData = 0;
+//CanvasData* FileParser::_previousData = 0;
+//CanvasData* FileParser::_firstData = 0;
+
+ApplicationController* FileParser::_appController = 0;
 
 std::string FileParser::pdParserFileName = "";
 
-bool FileParser::legacyProcess(CanvasView* cmcanvas, QStringList list)
+bool FileParser::legacyProcess(PatchWindowController* controller, QStringList list)
 {
     //qDebug() << "legacy process:" << list;
 
@@ -29,7 +33,7 @@ bool FileParser::legacyProcess(CanvasView* cmcanvas, QStringList list)
     if (list.at(0) == "msg") {
         list[0] = "obj";
         list.insert(3, "ui.msg");
-        FileParser::sendStringToCanvas(cmcanvas, list);
+        FileParser::sendStringToCanvas(controller, list);
 
         // no special properties
         return true;
@@ -39,7 +43,7 @@ bool FileParser::legacyProcess(CanvasView* cmcanvas, QStringList list)
         list.insert(3, "ui.text");
         list.insert(4, "@Text");
         //UIObject* obj =
-        FileParser::sendStringToCanvas(cmcanvas, list);
+        FileParser::sendStringToCanvas(controller, list);
 
         //        list.removeAt(0);
         //        list.removeAt(0);
@@ -54,7 +58,7 @@ bool FileParser::legacyProcess(CanvasView* cmcanvas, QStringList list)
         list[0] = "obj";
         list.insert(3, "ui.float");
         //UIObject* obj =
-        FileParser::sendStringToCanvas(cmcanvas, list);
+        FileParser::sendStringToCanvas(controller, list);
 
         //temporary - to have readable list at some point
         //box_width lower upper 1 label send receive
@@ -78,7 +82,7 @@ bool FileParser::legacyProcess(CanvasView* cmcanvas, QStringList list)
         list2[1] = list[1];
         list2[2] = list[2];
 
-        FileParser::sendStringToCanvas(cmcanvas, list2);
+        FileParser::sendStringToCanvas(controller, list2);
 
         //temporary - to have readable list at some point
         //box_width lower upper 1 label send receive
@@ -111,7 +115,7 @@ bool FileParser::legacyProcess(CanvasView* cmcanvas, QStringList list)
 
         // TODO
 
-        FileParser::sendStringToCanvas(cmcanvas, list2);
+        FileParser::sendStringToCanvas(controller, list2);
 
         return true;
 
@@ -127,7 +131,7 @@ bool FileParser::legacyProcess(CanvasView* cmcanvas, QStringList list)
 
         // TODO
 
-        FileParser::sendStringToCanvas(cmcanvas, list2);
+        FileParser::sendStringToCanvas(controller, list2);
 
         return true;
 
@@ -144,7 +148,7 @@ bool FileParser::legacyProcess(CanvasView* cmcanvas, QStringList list)
             list2.append("@Range " + list[7]);
         }
 
-        FileParser::sendStringToCanvas(cmcanvas, list2);
+        FileParser::sendStringToCanvas(controller, list2);
 
         return true;
 
@@ -165,12 +169,12 @@ bool FileParser::legacyProcess(CanvasView* cmcanvas, QStringList list)
         list2.append("@Columns 5 @Rows 1");
 
         if (list.size() > 4)
-            list2.append("@Size " + QString::number(list[4].toFloat() * 5) + " "+ list[4]); //replace 5 with size
+            list2.append("@Size " + QString::number(list[4].toFloat() * 5) + " " + list[4]); //replace 5 with size
 
         //list2.append("@Offset " + list2[6] );
         //list2.append("@Range" +  list2[7]);
 
-        FileParser::sendStringToCanvas(cmcanvas, list2);
+        FileParser::sendStringToCanvas(controller, list2);
 
         return true;
 
@@ -185,12 +189,12 @@ bool FileParser::legacyProcess(CanvasView* cmcanvas, QStringList list)
         list2.append("@Columns 1 @Rows 5");
 
         if (list.size() > 4)
-            list2.append("@Size " + list[4]+ " " + QString::number(list[4].toFloat() * 5));
+            list2.append("@Size " + list[4] + " " + QString::number(list[4].toFloat() * 5));
 
         //list2.append("@Offset " + list2[6] );
         //list2.append("@Range" +  list2[7]);
 
-        FileParser::sendStringToCanvas(cmcanvas, list2);
+        FileParser::sendStringToCanvas(controller, list2);
 
         return true;
 
@@ -221,7 +225,7 @@ bool FileParser::legacyProcess(CanvasView* cmcanvas, QStringList list)
         list2.push_back(fontSize);
 
         //UIObject* obj =
-        FileParser::sendStringToCanvas(cmcanvas, list2);
+        FileParser::sendStringToCanvas(controller, list2);
 
         return true;
     }
@@ -229,7 +233,7 @@ bool FileParser::legacyProcess(CanvasView* cmcanvas, QStringList list)
     return false; // if it is not a special legacy object
 }
 
-UIObject* FileParser::sendStringToCanvas(CanvasView* cmcanvas, QStringList list)
+UIObject* FileParser::sendStringToCanvas(PatchWindowController* controller, QStringList list)
 {
     qDebug("new obj");
     if (list.size() > 3) {
@@ -256,7 +260,7 @@ UIObject* FileParser::sendStringToCanvas(CanvasView* cmcanvas, QStringList list)
         // check property handling
         // probably should be moved here?
 
-        return 0;// TODO cmcanvas->createObject(list.at(3) + " " + msgname, pos);
+        return  controller->createObject(QString(list.at(3) + " " + msgname).toStdString(), pos);
 
     } else {
         qDebug("list error");
@@ -265,16 +269,16 @@ UIObject* FileParser::sendStringToCanvas(CanvasView* cmcanvas, QStringList list)
     }
 }
 
-void FileParser::parseStringListAtoms(CanvasView* cmcanvas, QStringList list) //rename
+void FileParser::parseStringListAtoms(PatchWindowController* controller, QStringList list) //rename
 {
     //legacy parser first
-    if (FileParser::legacyProcess(cmcanvas, list))
+    if (FileParser::legacyProcess(controller, list))
         return;
 
     //qDebug() << "list at 0" << list.at(0);
 
     if (list.at(0) == "obj") {
-        FileParser::sendStringToCanvas(cmcanvas, list);
+        FileParser::sendStringToCanvas(controller, list);
     } else
 
         if (list.at(0) == "connect") {
@@ -306,7 +310,6 @@ void FileParser::parseStringListAtoms(CanvasView* cmcanvas, QStringList list) //
                     cmcanvas->patchcord(obj1, idx1, obj2, idx2);
                 }
                 */
-
             }
         }
 
@@ -315,7 +318,7 @@ void FileParser::parseStringListAtoms(CanvasView* cmcanvas, QStringList list) //
         }
     } else if (list.at(0) == "restore") {
 
-        qDebug("restore canvas: %lu | previous %lu", _pdParserWindow, _pdParserPrevWindow);
+        qDebug("restore canvas: %lu | previous %lu", _pdParserWindowController, _pdParserPrevWindowController);
 
         //parserwindow - subpatch
         //prev window - parent patch
@@ -341,8 +344,8 @@ void FileParser::parseStringListAtoms(CanvasView* cmcanvas, QStringList list) //
             QString objData = objList.join(" ");
 
             if (objList.at(0) == "pd") {
-                if (_pdParserPrevWindow) {
-                    if (_pdParserPrevWindow->canvasView()) {
+                if (_pdParserPrevWindowController) {
+                    if (_pdParserPrevWindowController->firstWindow()->canvasView()) {
                         //                                                UIBox *b1 = 0;
 
                         //                                                b1 = pdParserPrevWindow->canvasView()->restoreSubcanvas(objname.toStdString(), pos, pdParserWindow->canvasView()->pdCanvas);
@@ -352,7 +355,6 @@ void FileParser::parseStringListAtoms(CanvasView* cmcanvas, QStringList list) //
 
                         // TODO
                         // UIObject* b = _pdParserPrevWindow->canvasView()->createBoxForPatchWindow(_pdParserWindow, objData, pos);
-
 
                         //UIObject* b = _pdParserPrevWindow->canvasView()->createObject(QString(objData.c_str()), pos);
 
@@ -366,7 +368,7 @@ void FileParser::parseStringListAtoms(CanvasView* cmcanvas, QStringList list) //
             }
 
             //draw subpatch
-            _pdParserWindow = _pdParserPrevWindow;
+            _pdParserWindowController = _pdParserPrevWindowController;
 
         } else {
             qDebug("list error");
@@ -393,7 +395,6 @@ void FileParser::parseStringListAtoms(CanvasView* cmcanvas, QStringList list) //
             //temporary
             //cmcanvasView()->createBox(objname.toStdString(), pos);
 
-
             // TODO cmcanvas->createObject(objname, pos);
         }
     }
@@ -417,19 +418,20 @@ void FileParser::parseQString(QString line)
         QStringList msg = atoms;
         msg.removeFirst();
 
-        _pdParserPrevWindow = _pdParserWindow;
+        _pdParserPrevWindowController = _pdParserWindowController;
 
-        PatchWindow* newWnd = new PatchWindow();
-        _pdParserWindow = newWnd;
+        PatchWindowController* newWnd = new PatchWindowController(FileParser::_appController->mainServerInstance());
+        newWnd->setAppController(FileParser::_appController);
+        _pdParserWindowController = newWnd;
 
         //save pointer to first canvas. needed to set file name
-        if (!_pdParserPrevWindow)
-            _pdParserFirstWindow = _pdParserWindow;
+        if (!_pdParserPrevWindowController)
+            _pdParserFirstWindowController = _pdParserWindowController;
 
         msg.removeFirst();
 
-        if (_pdParserPrevWindow)
-            newWnd->setWindowTitle(msg.at(4));
+        if (_pdParserPrevWindowController)
+            newWnd->firstWindow()->setWindowTitle(msg.at(4));
 
         // todo different canvas argumentlists
 
@@ -447,28 +449,28 @@ void FileParser::parseQString(QString line)
 
         qDebug() << "dim" << pos << size;
 
-        newWnd->canvasView()->setWindowSize(size);
-        newWnd->move(pos);
+        newWnd->firstWindow()->canvasView()->setWindowSize(size);
+        newWnd->firstWindow()->move(pos);
 
         // TODO
 
         if (msg.size() > 5) {
 
             if (msg.at(5).toInt())
-                newWnd->show();
+                newWnd->firstWindow()->show();
             else
-                newWnd->hide();
+                newWnd->firstWindow()->hide();
         } else
-            newWnd->show();
+            newWnd->firstWindow()->show();
     }
 
     if (atoms.at(0) == "#X") {
         QStringList msg = atoms;
         msg.removeFirst();
 
-        if (_pdParserWindow) {
+        if (_pdParserWindowController) {
             //qDebug("X");
-            FileParser::parseStringListAtoms(_pdParserWindow->canvasView(), msg);
+            FileParser::parseStringListAtoms(_pdParserWindowController, msg);
         } else {
             qDebug("parser error - no canvas");
         }
@@ -484,12 +486,12 @@ void FileParser::open(QString fname)
 {
 
     QFile f(fname);
+
     if (f.open(QIODevice::ReadOnly)) {
         QStringList stringList;
 
-        //setParserWindow(0);
-        setCanvasData(0,0,0);
-
+        setParserWindowController(0);
+        //setCanvasData(0,0,0);
 
         pdParserFileName = fname.toStdString();
 
@@ -507,14 +509,14 @@ void FileParser::open(QString fname)
             }
         }
 
-        if (_pdParserWindow) {
-            _pdParserWindow->setFileName(fname);
-            _pdParserWindow->canvasView()->setEditMode(em_Locked);
+        if (_pdParserWindowController) {
+            _pdParserWindowController->firstWindow()->setFileName(fname);
+            _pdParserWindowController->firstWindow()->canvasView()->setEditMode(em_Locked);
 
             // TODO
             //cmp_loadbang(_pdParserWindow->canvasView()->pdObject());
 
-            _pdParserWindow->show();
+            _pdParserWindowController->firstWindow()->show();
         }
 
         f.close();
@@ -522,47 +524,46 @@ void FileParser::open(QString fname)
 }
 
 // NEW API
-void FileParser::open(QString fname, CanvasData* canvasData)
-{
+//void FileParser::open(QString fname, CanvasData* canvasData)
+//{
 
-    qDebug("new parser");
+//    qDebug("new parser");
 
-    QFile f(fname);
-    if (f.open(QIODevice::ReadOnly)) {
+//    QFile f(fname);
+//    if (f.open(QIODevice::ReadOnly)) {
 
-        QStringList stringList;
+//        QStringList stringList;
 
-        setParserWindow(0);
+//        setParserWindow(0);
 
-        pdParserFileName = fname.toStdString();
+//        pdParserFileName = fname.toStdString();
 
-        QTextStream textStream(&f);
-        while (true) {
-            QString line = textStream.readLine();
-            if (line.isNull())
-                break;
-            else {
-                stringList.append(line);
-                //qDebug("* %s", line.toStdString().c_str());
-                //
+//        QTextStream textStream(&f);
+//        while (true) {
+//            QString line = textStream.readLine();
+//            if (line.isNull())
+//                break;
+//            else {
+//                stringList.append(line);
+//                //qDebug("* %s", line.toStdString().c_str());
+//                //
 
-                // another one
-                FileParser::parseQString(line);
-            }
-        }
+//                // another one
+//                FileParser::parseQString(line);
+//            }
+//        }
 
-        if (_pdParserWindow) {
-            _pdParserWindow->setFileName(fname);
-            _pdParserWindow->canvasView()->setEditMode(em_Locked);
+//        if (_pdParserWindow) {
+//            _pdParserWindow->setFileName(fname);
+//            _pdParserWindow->canvasView()->setEditMode(em_Locked);
 
-            // TODO
-            //_pdParserWindow->controller()->canvasData()->serverCanvas()->loadbang();
+//            // TODO
+//            //_pdParserWindow->controller()->canvasData()->serverCanvas()->loadbang();
 
-            _pdParserWindow->show();
-        }
+//            _pdParserWindow->show();
+//        }
 
-        f.close();
-    }
-}
-
+//        f.close();
+//    }
+//}
 }

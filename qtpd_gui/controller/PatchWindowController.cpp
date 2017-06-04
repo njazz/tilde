@@ -71,8 +71,8 @@ PatchWindow* PatchWindowController::newWindow()
 
 void PatchWindowController::openFile(QString fileName)
 {
-
-    FileParser::open(fileName, _canvasData);
+    //
+    FileParser::open(fileName);
 }
 
 void PatchWindowController::saveFile(QString fileName)
@@ -95,6 +95,7 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
         qDebug("** canvas data error!");
         return 0;
     }
+
     if (!_canvasData->serverCanvas()) {
         qDebug("** server canvas error!");
         return 0;
@@ -102,7 +103,14 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
 
     ServerObject* serverObject = _canvasData->serverCanvas()->createObject(name);
 
+    qDebug() << "server object ok";
+
     UIObject* uiObject = ObjectLoader::inst().createUIObject(name.c_str());
+
+    if (!uiObject) {
+        qDebug() << "bad ui object!";
+        return 0;
+    }
 
     uiObject->setParentCanvasView(_windows[0]->canvasView());
     uiObject->setServerObject(serverObject);
@@ -119,6 +127,7 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
     //connect(uiObject, &UIObject::editObject, this, &CanvasView::objectStartsEdit);
 
     uiObject->move(pos.x(), pos.y());
+
     _canvasData->addUniqueBox(_canvasData->boxes(), uiObject);
     _scene->addItem(uiObject);
 
@@ -611,7 +620,7 @@ void PatchWindowController::patchcord(UIObject* obj1, int outlet, UIObject* obj2
 
 void PatchWindowController::slotSelectObject(UIObject* object)
 {
-    if (object->isSelected() && (_canvasData->selectedBoxes()->size() < 2)) {
+    if (object->isSelected() && (_canvasData->selectedBoxes()->size() == 1)) {
         firstWindow()->canvasView()->slotObjectStartsEdit((void*)object);
         return;
     }

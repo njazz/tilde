@@ -35,6 +35,7 @@ public:
     {
         UIBox* ret = new UIBox();
 
+        // this is needed here
         QStringList l = data.split(" ");l.removeFirst();
         data = l.join(" ");
         ret->setObjectData(data);

@@ -10,6 +10,8 @@ namespace qtpd {
 CanvasData::CanvasData()
 {
     _filePath = Preferences::inst().get("Patches")->asQString();
+
+    _serverCanvas = 0;
 }
 
 void CanvasData::addUniqueBox(objectVec* boxes, UIObject* box)

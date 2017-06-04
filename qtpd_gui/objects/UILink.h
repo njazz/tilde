@@ -33,8 +33,9 @@ public:
     {
         UILink* ret = new UILink();
 
-        QStringList l = data.split(" ");l.removeFirst();
-        data = l.join(" ");
+//        QStringList l = data.split(" ");l.removeFirst();
+//        data = l.join(" ");
+
         ret->setObjectData(data);
 
         return ret;

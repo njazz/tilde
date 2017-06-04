@@ -10,8 +10,6 @@
 #include "Port.h"
 #include "UIObject.h"
 
-
-
 #include <QGraphicsView>
 
 namespace qtpd {
@@ -33,8 +31,9 @@ public:
     {
         UIBang* ret = new UIBang();
 
-        QStringList l = data.split(" ");l.removeFirst();
-        data = l.join(" ");
+//        QStringList l = data.split(" ");
+//        l.removeFirst();
+//        data = l.join(" ");
         ret->setObjectData(data);
 
         return ret;
@@ -123,7 +122,7 @@ public:
             timerStart();
         }
 
-        qDebug()<<"err";
+        qDebug() << "err";
 
         //move ?
         if (getEditMode() != em_Unlocked) {
@@ -169,13 +168,13 @@ public:
         }
     }
 
-//    void setPdObject(void* obj)
-//    {
-//        UIObject::setPdObject(obj);
+    //    void setPdObject(void* obj)
+    //    {
+    //        UIObject::setPdObject(obj);
 
-//        cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIBang::updateUI);
-//        qDebug("connectUI");
-//    }
+    //        cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIBang::updateUI);
+    //        qDebug("connectUI");
+    //    }
 
     void timerStart()
     {

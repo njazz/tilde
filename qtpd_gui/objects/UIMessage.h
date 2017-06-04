@@ -32,9 +32,10 @@ public:
     {
         UIMessage* ret = new UIMessage();
 
-        QStringList l = data.split(" ");
-        l.removeFirst();
-        data = l.join(" ");
+//        QStringList l = data.split(" ");
+//        l.removeFirst();
+//        data = l.join(" ");
+
         ret->setObjectData(data);
 
         return ret;

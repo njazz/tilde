@@ -30,9 +30,10 @@ public:
     {
         UIToggle* ret = new UIToggle();
 
-        QStringList l = data.split(" ");
-        l.removeFirst();
-        data = l.join(" ");
+//        QStringList l = data.split(" ");
+//        l.removeFirst();
+//        data = l.join(" ");
+
         ret->setObjectData(data);
 
         return ret;
