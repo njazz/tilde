@@ -74,6 +74,9 @@ public:
     int findBox(objectVec* boxes, UIObject* box);
     int findPatchcord(patchcordVec* patchcords, UIPatchcord* pcord);
 
+    //
+    void selectBoxesInFrame(QPoint start, QPoint end);
+
     // ------------------------------
 
     void addBox(UIObject* box) { addUniqueBox(&_boxes, box); }

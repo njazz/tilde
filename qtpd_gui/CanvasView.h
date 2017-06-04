@@ -356,6 +356,8 @@ signals:
 
     void signalDeselectObjects();
 
+    void signalSelectionFrame(QPoint start, QPoint end);
+
 };
 }
 

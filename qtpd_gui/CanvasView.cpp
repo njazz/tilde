@@ -249,33 +249,17 @@ void CanvasView::mouseMoveEvent(QMouseEvent* ev)
 
         // TODO
 
-        /*
 
-        for (int i = 0; i < (int)_canvasData.boxes()->size(); i++) {
-            QPointF pos = ((UIBox*)_canvasData.boxes()->at(i))->pos();
-            QPoint pos_ = QPoint(pos.x(), pos.y());
-            QSizeF size = ((UIBox*)_canvasData.boxes()->at(i))->size();
-            QRect r = QRect(pos_, pos_ + QPoint(size.width(), size.height()));
 
-            QRect frame = QRect(_selectionRect->start(), _selectionRect->start() + _selectionRect->end());
 
-            if (frame.contains(r, false)) {
-                ((UIBox*)_canvasData.boxes()->at(i))->select();
-                //_selectionData.addUniqueBox(_canvasData.boxes()->at(i));
-                _canvasData.selectBox(_canvasData.boxes()->at(i));
-            } else {
-                ((UIBox*)_canvasData.boxes()->at(i))->deselect();
+        emit signalSelectionFrame(_selectionRect->start(), _selectionRect->end());
 
-                auto it = std::find(_canvasData.selectedBoxes()->begin(), _canvasData.selectedBoxes()->end(), _canvasData.boxes()->at(i));
-                if (it != _canvasData.selectedBoxes()->end()) {
-                    _canvasData.selectedBoxes()->erase(it);
-                }
-            }
-        }
+        //_selectionRect->update();
 
+        // todo
         viewport()->update();
 
-        */
+
     }
 
     //todo

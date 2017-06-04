@@ -63,6 +63,8 @@ PatchWindow* PatchWindowController::newWindow()
 
     connect(ret->canvasView(), &CanvasView::signalDeselectObjects, this, &PatchWindowController::slotDeselectObjects);
 
+    connect(ret->canvasView(), &CanvasView::signalSelectionFrame, this, &PatchWindowController::slotSelectionFrame);
+
     return ret;
 }
 
@@ -627,5 +629,10 @@ void PatchWindowController::slotDeselectObjects()
 {
     _canvasData->deselectBoxes();
     _canvasData->deselectPatchcords();
+}
+
+void PatchWindowController::slotSelectionFrame(QPoint start, QPoint end)
+{
+    _canvasData->selectBoxesInFrame(start,end);
 }
 }

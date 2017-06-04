@@ -151,6 +151,8 @@ private slots:
     void slotMouseRelease(QPoint pos);
 
     void slotDeselectObjects();
+
+    void slotSelectionFrame(QPoint start, QPoint end);
 };
 }
 

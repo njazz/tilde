@@ -12,7 +12,6 @@ CanvasData::CanvasData()
     _filePath = Preferences::inst().get("Patches")->asQString();
 }
 
-
 void CanvasData::addUniqueBox(objectVec* boxes, UIObject* box)
 {
     int p = findBox(boxes, box);
@@ -59,21 +58,44 @@ int CanvasData::findPatchcord(patchcordVec* patchcords, UIPatchcord* pcord)
     return -1;
 }
 
+void CanvasData::selectBoxesInFrame(QPoint start, QPoint end)
+{
 
+    for (int i = 0; i < (int)boxes()->size(); i++) {
+        QPointF pos = ((UIBox*)boxes()->at(i))->pos();
+        QPoint pos_ = QPoint(pos.x(), pos.y());
+        QSizeF size = ((UIBox*)boxes()->at(i))->size();
+        QRect r = QRect(pos_, pos_ + QPoint(size.width(), size.height()));
 
+        QRect frame = QRect(start, start + end);
 
-void  CanvasData:: selectBox(UIObject* box)
+        if (frame.contains(r, false)) {
+            ((UIBox*)boxes()->at(i))->select();
+            //_selectionData.addUniqueBox(_canvasData.boxes()->at(i));
+            selectBox(boxes()->at(i));
+        } else {
+            ((UIBox*)boxes()->at(i))->deselect();
+
+            auto it = std::find(selectedBoxes()->begin(), selectedBoxes()->end(), boxes()->at(i));
+            if (it !=selectedBoxes()->end()) {
+                selectedBoxes()->erase(it);
+            }
+        }
+    }
+}
+
+void CanvasData::selectBox(UIObject* box)
 {
     addUniqueBox(&_selectedBoxes, box);
     box->select();
 }
-void  CanvasData::selectPatchcord(UIPatchcord* pc)
+void CanvasData::selectPatchcord(UIPatchcord* pc)
 {
     addUniquePatchcord(&_selectedPatchcords, pc);
     pc->select();
 }
 
-void  CanvasData::deselectBoxes()
+void CanvasData::deselectBoxes()
 {
     qDebug() << "deselect";
 
@@ -87,7 +109,7 @@ void  CanvasData::deselectBoxes()
     _selectedBoxes.clear();
 }
 
-void  CanvasData::deselectPatchcords()
+void CanvasData::deselectPatchcords()
 {
     patchcordVec::iterator it2;
 
@@ -101,7 +123,7 @@ void  CanvasData::deselectPatchcords()
 
 // ----------
 
-void  CanvasData::cut()
+void CanvasData::cut()
 {
     _clipboard->inst()->clear();
     _clipboard->inst()->append(boxesAsPdFileStrings(&_selectedBoxes));
@@ -110,20 +132,20 @@ void  CanvasData::cut()
     // todo move delete objects to this class; put here
 }
 
-void  CanvasData::copy()
+void CanvasData::copy()
 {
     _clipboard->inst()->clear();
     _clipboard->inst()->append(boxesAsPdFileStrings(&_selectedBoxes));
     _clipboard->inst()->append(patchcordsAsPdFileStrings(&_selectedPatchcords));
 }
 
-void CanvasData:: paste()
+void CanvasData::paste()
 {
     // todo move here
 }
 
 // -------
-int  CanvasData::findObjectIndex(UIObject* obj)
+int CanvasData::findObjectIndex(UIObject* obj)
 {
     //UIObject* obj1;
     std::vector<UIObject*>::iterator iter = std::find(_boxes.begin(), _boxes.end(), obj);
@@ -134,7 +156,7 @@ int  CanvasData::findObjectIndex(UIObject* obj)
     return -1;
 }
 
-UIObject*  CanvasData::getObjectByIndex(int idx)
+UIObject* CanvasData::getObjectByIndex(int idx)
 {
 
     if ((idx < (int)boxes()->size()) && (idx >= 0))
@@ -145,7 +167,7 @@ UIObject*  CanvasData::getObjectByIndex(int idx)
     }
 }
 
-patchcordVec  CanvasData::patchcordsForObject(UIObject* obj)
+patchcordVec CanvasData::patchcordsForObject(UIObject* obj)
 {
     patchcordVec ret;
     patchcordVec::iterator it;
@@ -163,7 +185,7 @@ patchcordVec  CanvasData::patchcordsForObject(UIObject* obj)
 
 // ------------------------------
 
-QStringList  CanvasData::boxesAsPdFileStrings(objectVec* boxes)
+QStringList CanvasData::boxesAsPdFileStrings(objectVec* boxes)
 {
     QStringList ret;
     objectVec::iterator it;
@@ -179,7 +201,7 @@ QStringList  CanvasData::boxesAsPdFileStrings(objectVec* boxes)
     return ret;
 }
 
-std::string  CanvasData::patchcordAsPdFileString(UIPatchcord* pcord)
+std::string CanvasData::patchcordAsPdFileString(UIPatchcord* pcord)
 {
     //TODO
 
@@ -203,7 +225,7 @@ std::string  CanvasData::patchcordAsPdFileString(UIPatchcord* pcord)
     return "";
 }
 
-QStringList  CanvasData::patchcordsAsPdFileStrings(patchcordVec* patchcords)
+QStringList CanvasData::patchcordsAsPdFileStrings(patchcordVec* patchcords)
 {
     QStringList ret;
     //patchcordVec patchcords = patchcords;
@@ -223,7 +245,7 @@ QStringList  CanvasData::patchcordsAsPdFileStrings(patchcordVec* patchcords)
     return ret;
 }
 
-t_patchcordAsNumbers  CanvasData::patchcordAsNumbers(UIPatchcord* pcord)
+t_patchcordAsNumbers CanvasData::patchcordAsNumbers(UIPatchcord* pcord)
 {
     //TODO
 
@@ -252,7 +274,7 @@ t_patchcordAsNumbers  CanvasData::patchcordAsNumbers(UIPatchcord* pcord)
     return ret;
 }
 
-QStringList  CanvasData::objectsAsPdFileStrings()
+QStringList CanvasData::objectsAsPdFileStrings()
 {
 
     QStringList ret = boxesAsPdFileStrings(&_boxes);
@@ -261,7 +283,7 @@ QStringList  CanvasData::objectsAsPdFileStrings()
     return ret;
 }
 
-QString  CanvasData::canvasAsPdFileString()
+QString CanvasData::canvasAsPdFileString()
 {
     // TODO
     // should be stored by windows
@@ -280,7 +302,7 @@ QString  CanvasData::canvasAsPdFileString()
     //        return ret;
 }
 
-QStringList  CanvasData::asPdFileStrings()
+QStringList CanvasData::asPdFileStrings()
 {
     QStringList ret;
     ret.append(canvasAsPdFileString());
