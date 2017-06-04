@@ -10,6 +10,7 @@
 #include <QObject>
 
 class QGraphicsScene;
+class QGraphicsSceneMouseEvent;
 
 namespace qtpd {
 
@@ -67,7 +68,9 @@ public:
     void createObjectMaker();
     //
     UIObject* createObject(string name, QPoint pos);
-    bool patchcord(UIObject* src, int out, UIObject* dest, int in);
+    //
+    void patchcord(UIObject* src, int out, UIObject* dest, int in);
+    void patchcord(UIObject* obj1, UIItem* outport, UIObject* obj2, UIItem* inport);
     // ------------
     void deleteSelectedObjects();
     // TODO
@@ -91,6 +94,13 @@ public:
     void update(); // <<-- from observer
     //
     void updateViewports();
+
+    // =======================
+
+    void setFileName(QString fname){};
+
+    // moved from canvas-view
+    void selectBox(UIItem* box);
 
 public slots:
     void menuSave();
@@ -126,6 +136,10 @@ public slots:
     {
         dataSelectAllObjects();
     };
+
+    //
+    void signalSelectBox(UIItem* box, QGraphicsSceneMouseEvent* event);
+    void signalMoveBox(UIItem* box, QGraphicsSceneMouseEvent* event);
 };
 }
 

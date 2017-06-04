@@ -127,7 +127,8 @@ public Q_SLOTS:
 
     void selectObject(CanvasView* c, UIObject* obj)
     {
-        c->selectBox(obj);
+        //TODO
+        //c->selectBox(obj);
     }
 
     void selectAll(PatchWindowController* p)
@@ -136,10 +137,11 @@ public Q_SLOTS:
         //p->menuSelectAll();
     }
 
-    void deselectAll(CanvasView* c)
+    void deselectAll(CanvasData* d)
     {
-        c->canvasData()->deselectBoxes();
-        c->update();
+        d->deselectBoxes();
+        // TODO
+        //c->update();
     }
 
     void deleteObjectInCanvas(CanvasView* c, UIObject* obj)
@@ -210,7 +212,7 @@ public Q_SLOTS:
     void newArray(CanvasView* c, QString name, int size)
     {
         // TODO
-        c->canvasData()->serverCanvas()->createArray();
+        // c->canvasData()->serverCanvas()->createArray();
 
 //        if (c->pdObject()) {
 //            t_canvas* pdCanvas = (t_canvas*)c->pdObject();

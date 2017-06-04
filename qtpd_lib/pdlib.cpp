@@ -94,6 +94,8 @@ void cmp_pdinit()
 {
     //pd_init();
 
+    std::cout << "##### cmp_pdinit" << std::endl;
+
     // copied from libpd
     signal(SIGFPE, SIG_IGN);
     sys_soundin = NULL;
@@ -141,7 +143,6 @@ void cmp_pdinit()
     setup_pdmethod();
     setup_pdproperty();
     setup_pdsignal();
-
 
     //temporary initialisations
     //    setup_ui0x2ebpfunc();
@@ -483,7 +484,7 @@ void cmp_switch_dsp(bool on)
 
 void cmp_sendstring(t_pd* obj, std::string msg)
 {
-    std::cout <<"sendstring " <<std::endl;
+    std::cout << "sendstring " << std::endl;
 
     AtomList* list = AtomListFromString(msg);
 
@@ -492,7 +493,7 @@ void cmp_sendstring(t_pd* obj, std::string msg)
     AtomList* list2 = new AtomList;
     *list2 = list->subList(1, list->size());
 
-    std::cout << "atomlist2 " << list2->size() <<" " << list2 << std::endl;
+    std::cout << "atomlist2 " << list2->size() << " " << list2 << std::endl;
 
     pd_typedmess(obj, list->at(0).asSymbol(), (int)list2->size(), list2->toPdData());
     //pd_typedmess(obj, gensym("float"), 0, 0);
@@ -548,7 +549,7 @@ void cmp_set_verbose(int v)
 
 EXTERN void cmp_loadbang(t_canvas* canvas)
 {
-    qDebug()<<"cmp_loadbang";
+    qDebug() << "cmp_loadbang";
     canvas_loadbang(canvas);
 }
 

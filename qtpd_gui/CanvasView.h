@@ -32,7 +32,7 @@ namespace qtpd {
 ///
 class CanvasView : public QGraphicsView {
 private:
-    CanvasData _canvasData; //todo less direct
+    //CanvasData _canvasData; //todo less direct
 
     UIObject* _connectionStartObject;
     UIObject* _connectionStartOutlet;
@@ -70,13 +70,13 @@ public:
     // todo fix
     QPoint newObjectPos() { return _newObjectPos; }
 
-    CanvasData* canvasData() { return &_canvasData; }
+    //CanvasData* canvasData() { return &_canvasData; }
 
     UIObject* dragObject() { return _dragObject; }
     void setDragObject(UIObject* object) { _dragObject = object; }
 
-    QString fileName() { return _canvasData.fileName(); }
-    void setFileName(QString object) { _canvasData.setFileName(object); }
+//    QString fileName() { return _canvasData.fileName(); }
+//    void setFileName(QString object) { _canvasData.setFileName(object); }
 
     void setZoom(float zoom);
     float getZoom() { return _zoom; }
@@ -284,20 +284,20 @@ public:
     ///
     void canvasFromPdStrings(QStringList strings);
 
-    void selectBox(UIItem* box);
+    //void selectBox(UIItem* box);
 
     ////
     /// \brief slot called by box when it is selected
     /// \param box
     ///
-    void s_SelectBox(UIItem* box, QGraphicsSceneMouseEvent* ev);
+    void signalSelectBox(UIItem* box, QGraphicsSceneMouseEvent* ev);
 
     ////
     /// \brief TODO check. slot called by box when it starts moving
     /// \param box
     /// \param event
     ///
-    void s_MoveBox(UIItem* box, QGraphicsSceneMouseEvent* event);
+    void signalMoveBox(UIItem* box, QGraphicsSceneMouseEvent* event);
 
     ////
     /// \brief cancels patchcord creation

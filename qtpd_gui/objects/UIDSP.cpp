@@ -20,10 +20,10 @@ void UIDSP::mousePressEvent(QGraphicsSceneMouseEvent* ev)
     if (getEditMode() != em_Unlocked) {
 
         _value = !_value;
-
         //cmp_switch_dsp(_value);
 
-        parentCanvasView()->canvasData()->serverCanvas()->parentInstance()->dspOn();
+        // TODO
+        //parentCanvasView()->canvasData()->serverCanvas()->parentInstance()->dspOn();
 
         update();
     }

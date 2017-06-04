@@ -150,10 +150,13 @@ public:
 
     void deselectBoxes()
     {
-        for (int i = 0; i < (int)_boxes.size(); i++) {
-            if (_boxes.at(i))
+        qDebug() << "deselect";
 
+        for (int i = 0; i < (int)_boxes.size(); i++) {
+            if (_boxes.at(i)) {
                 ((UIBox*)_boxes.at(i))->deselect();
+                ((UIBox*)_boxes.at(i))->update();
+            }
         }
 
         _selectedBoxes.clear();
@@ -167,6 +170,7 @@ public:
 
             ((UIPatchcord*)*it2)->deselect();
             ((UIPatchcord*)*it2)->setHover(false);
+            ((UIPatchcord*)*it2)->update();
         }
     }
 

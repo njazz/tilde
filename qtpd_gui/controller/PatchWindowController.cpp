@@ -20,13 +20,13 @@ namespace qtpd {
 
 PatchWindowController::PatchWindowController(ServerInstance* instance) //replace with parent (appcontroller)
 {
-    //_canvasData->serverCanvas = instance->createCanvas();
+
     _scene = new QGraphicsScene();
     _observer = new Observer();
     instance->registerObserver(_observer);
     _serverInstance = instance;
-    _canvasData = new CanvasData();
 
+    _canvasData = new CanvasData();
     _serverCanvas = _serverInstance->createCanvas();
     _canvasData->setServerCanvas(_serverCanvas);
 
@@ -109,8 +109,8 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
     _canvasData->addUniqueBox(_canvasData->boxes(), uiObject);
     _scene->addItem(uiObject);
 
-    connect(uiObject, &UIObject::selectBox, _windows[0]->canvasView(), &CanvasView::s_SelectBox);
-    connect(uiObject, &UIObject::moveBox, _windows[0]->canvasView(), &CanvasView::s_MoveBox);
+    connect(uiObject, &UIObject::selectBox, _windows[0]->canvasView(), &CanvasView::signalSelectBox);
+    connect(uiObject, &UIObject::moveBox, _windows[0]->canvasView(), &CanvasView::signalMoveBox);
 
     // check port count
     /*
@@ -225,7 +225,7 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
     */
 };
 
-bool PatchWindowController::patchcord(UIObject* src, int out, UIObject* dest, int in){};
+//bool PatchWindowController::patchcord(UIObject* src, int out, UIObject* dest, int in){};
 void PatchWindowController::deletePatchcordsForObject(UIObject* o){};
 void PatchWindowController::deleteObject(UIObject* o)
 {
@@ -472,5 +472,133 @@ void PatchWindowController::deletePatchcordsFor(UIItem* obj)
     }
 
     updateViewports();
+}
+
+// ============
+
+void PatchWindowController::selectBox(UIItem* box)
+{
+    qDebug() << "canvas selectbox";
+
+    _canvasData->selectBox((UIObject*)box);
+
+    firstWindow()->canvasView()->viewport()->update();
+}
+
+void PatchWindowController::signalSelectBox(UIItem* box, QGraphicsSceneMouseEvent* event)
+{
+    // TODO
+    //}
+
+    /*
+    qDebug() << "select box";
+
+    if (CanvasView::getEditMode() == em_Unlocked) {
+        if (!(event->modifiers() & Qt::ShiftModifier))
+            if (_canvasData.selectedBoxes()->size() < 2)
+                if (_canvasData.selectedBoxes()->size() == 1)
+                    if (_canvasData.findBox(_canvasData.selectedBoxes(), (UIObject*)box) == -1) //fix
+                    {
+                        qDebug() << "deselect";
+                        _canvasData.deselectBoxes();
+
+                    } else {
+                        qDebug() << "edit";
+                        objectStartsEdit((void*)box);
+                    }
+                else
+                    qDebug() << "size" << _canvasData.selectedBoxes()->size();
+
+        selectBox(box);
+    }
+
+    //temporary
+    setDragObject(0);
+
+    viewport()->update();
+    */
+}
+
+////
+/// \brief Canvas::s_MoveBox
+/// \param box
+/// \param event
+/// \deprecated move to UIBox
+void PatchWindowController::signalMoveBox(UIItem* box, QGraphicsSceneMouseEvent* event)
+{
+    // TODO
+    /*
+    if (!(CanvasView::getEditMode() == em_Unlocked))
+        return;
+    for (int i = 0; i < (int)_canvasData.selectedBoxes()->size(); i++) {
+        UIObject* w = ((UIObject*)_canvasData.selectedBoxes()->at(i));
+        QPoint pos = (((UIObject*)_canvasData.selectedBoxes()->at(i))->pos().toPoint()) + mapToParent((event->pos().toPoint() - box->dragOffset));
+
+        if (_gridSnap) {
+            pos.setX(ceil(pos.x() / _grid->gridStep()) * _grid->gridStep());
+            pos.setY(ceil(pos.y() / _grid->gridStep()) * _grid->gridStep());
+        }
+
+        w->move(pos);
+
+        //todo
+        viewport()->update();
+    }
+
+    resizeToObjects();
+    */
+}
+
+void PatchWindowController::patchcord(UIObject* obj1, int outlet, UIObject* obj2, int inlet)
+{
+    /*
+    if (obj1->serverObject() && obj2->serverObject()) {
+        if (((UIBox*)obj1)->errorBox()) {
+            //create dummy inlets / outlets
+            qDebug() << "errorbox";
+        };
+
+        if (((UIBox*)obj2)->errorBox()) {
+            //create dummy inlets / outlets
+            qDebug() << "errorbox";
+        };
+
+        Port* outport = obj1->outletAt(outlet);
+        Port* inport = obj2->inletAt(inlet);
+
+        UIPatchcord* pc = new UIPatchcord(obj1, outport, obj2, inport);
+
+        if (obj1->pdOutletType(outlet))
+            pc->setPatchcordType(cm_pt_signal);
+
+        qDebug("server patchcord");
+
+        qDebug() << "pc: " <<  obj1->serverObject() << outlet << obj2->serverObject() << inlet ;
+
+        // TODO
+        // _canvasData.serverCanvas()->connect(obj1->serverObject(), outlet, obj2->serverObject(), inlet);
+        // _canvasData.addPatchcord(pc);
+
+        //        cmp_patchcord((t_object*)obj1->pdObject(), outlet, (t_object*)obj2->pdObject(), inlet);
+        //        _canvasData.addPatchcord(pc); //patchcords()->push_back(pc);
+
+
+
+        scene()->addItem(pc);
+    } else
+        qDebug("canvas patchcord error");
+
+    */
+}
+
+void PatchWindowController::patchcord(UIObject* obj1, UIItem* outport, UIObject* obj2, UIItem* inport)
+{
+
+    //todo
+    /*
+    int n1 = ((Port*)outport)->portIndex();
+    int n2 = ((Port*)inport)->portIndex();
+    patchcord(obj1, n1, obj2, n2);
+    */
 }
 }

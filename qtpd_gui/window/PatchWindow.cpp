@@ -421,7 +421,10 @@ void PatchWindow::closeEvent(QCloseEvent* event)
 void PatchWindow::setFileName(QString fname)
 {
 
-    _canvasView->setFileName(fname);
+    // TODO
+    //_canvasView->setFileName(fname);
+    _controller->setFileName(fname);
+    //
 
     QString file = fname.section("/", -1, -1);
 
