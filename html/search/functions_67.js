@@ -29,7 +29,7 @@ var searchData=
   ['getmethodoutletforreferencename',['getMethodOutletForReferenceName',['../classqtpd_1_1_o_p_class.html#abf16a7fd6b77b3ff3c0f4d16a626ff4c',1,'qtpd::OPClass']]],
   ['getmethodoutlets',['getMethodOutlets',['../classqtpd_1_1_o_p_class.html#a635ebd646292b8b08191d7ddbe6e587a',1,'qtpd::OPClass']]],
   ['getmethodpointeroutletforreferencename',['getMethodPointerOutletForReferenceName',['../classqtpd_1_1_o_p_class.html#a9ec1f1cea0a11cb284f9cd7d2901eb90',1,'qtpd::OPClass']]],
-  ['getobjectbyindex',['getObjectByIndex',['../classqtpd_1_1_canvas_data.html#ab17cf19a4f5edd0776f5e64702cd97d3',1,'qtpd::CanvasData']]],
+  ['getobjectbyindex',['getObjectByIndex',['../classqtpd_1_1_canvas_data.html#af3428dec9b47cf33ab8293e8e62a100b',1,'qtpd::CanvasData']]],
   ['getobjects',['getObjects',['../classqtpd_1_1_clipboard.html#a1135b1401321ec1e5e183a4c547cb0c3',1,'qtpd::Clipboard']]],
   ['getobjectsymbol',['getObjectSymbol',['../classqtpd_1_1_o_p_instance.html#ad55a70a4df6bfd1762c75540c76cc171',1,'qtpd::OPInstance']]],
   ['getparentclass',['getParentClass',['../classqtpd_1_1_o_p_class.html#a06508c49bb1be8fca9f5accdfd57f9b0',1,'qtpd::OPClass']]],

@@ -93,6 +93,7 @@ var searchData=
   ['showpopupmenu',['showPopupMenu',['../classqtpd_1_1_u_i_object.html#ac910dc268c5457c9ce9149378794eb9a',1,'qtpd::UIObject']]],
   ['showwindow',['showWindow',['../classqtpd_1_1_o_p_class.html#af2f86912ea8f3a5ab89cd723a3b7b0d3',1,'qtpd::OPClass::showWindow()'],['../classqtpd_1_1_o_p_instance.html#adc9a62373aba939954a07e15855e48a3',1,'qtpd::OPInstance::showWindow()']]],
   ['shuffle',['shuffle',['../classceammc_1_1_atom_list.html#abf80f0b307369920bc7aef849caa7567',1,'ceammc::AtomList']]],
+  ['signaldeselectobjects',['signalDeselectObjects',['../classqtpd_1_1_canvas_view.html#a91bc47dbd9632eb34b775678bb3caf35',1,'qtpd::CanvasView']]],
   ['signalinlet_5fnew',['signalinlet_new',['../m__pd_8h.html#ac613524f7af3047e851649baec2eb2b7',1,'m_pd.h']]],
   ['signalmousemove',['signalMouseMove',['../classqtpd_1_1_canvas_view.html#ab07b98bfc42e797a737b4a26f41f8531',1,'qtpd::CanvasView']]],
   ['signalmousepress',['signalMousePress',['../classqtpd_1_1_canvas_view.html#adaae3e67273be47f9b7275eae241d927',1,'qtpd::CanvasView']]],
