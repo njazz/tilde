@@ -83,7 +83,7 @@ public:
 
     ServerObject();
 
-    ServerObject(ServerObject* parent, string text);
+    explicit ServerObject(ServerObject* parent, string text);
 
     virtual ServerObject* parent();
 

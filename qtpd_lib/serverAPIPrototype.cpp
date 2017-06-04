@@ -2,7 +2,7 @@
 
 #include "../API_prototype/serverAPIPrototype.h"
 
-#include "PdLink.h"
+#include "../qtpd_gui/PdLink.h"
 
 //class AtomList;
 
@@ -18,10 +18,21 @@ void ServerProperties::addObserver(PropertyObserver* p){};
 void ServerProperties::removeObserver(PropertyObserver* p){};
 
 // ---------------------------------------
-ServerObject::ServerObject() {}
+ServerObject::ServerObject()
+{
+    _parent = 0;
+    _pdObject = 0;
+    _type = typeObject;
+    _properties = 0;
+}
 
 ServerObject::ServerObject(ServerObject* parent, string text)
 {
+
+    _parent = 0;
+    _pdObject = 0;
+    _type = typeObject;
+    _properties = 0;
 
     if (parent->type() == typeCanvas) {
         t_canvas* canvas = reinterpret_cast<t_canvas*>(reinterpret_cast<ServerCanvas*>(parent)->canvasObject());
@@ -34,30 +45,16 @@ ServerObject::ServerObject(ServerObject* parent, string text)
 //void ServerObject::setParent(ServerObject* parent) { _parent = parent; };
 ServerObject* ServerObject::parent() { return _parent; };
 
-//void ServerObject::message(const AtomList& list)
-//{
-//    string msg;
-
-//    //todo convert
-
-
-//    if (_pdObject)
-//        cmp_sendstring(reinterpret_cast<t_pd*>(_pdObject), msg);
-//};
-
 void ServerObject::message(const string str)
 {
     string msg = str;
 
     cout << "msg " << msg << endl;
 
-    if (_pdObject)
-    {
-        cout << "send->" << endl;
-        cmp_sendstring(reinterpret_cast<t_pd*>(_pdObject), msg);
-    }
-    else
-    {
+    if (_pdObject) {
+        cout << "send-> " << this << " " << _pdObject << endl;
+        cmp_sendstring(static_cast<t_pd*>(_pdObject), msg);
+    } else {
         cmp_post("internal pdObject error");
         cout << "pdobject error" << endl;
     }
@@ -181,7 +178,7 @@ public:
         for (it = _consoleObservers.begin(); it != _consoleObservers.end(); ++it) {
             ConsoleObserver* c = *it;
             if (c) {
-                cout << "print hook: " << str << endl;
+                //cout << "print hook: " << str << endl;
                 c->setText(str);
                 c->update();
             }

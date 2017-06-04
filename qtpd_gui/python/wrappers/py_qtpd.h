@@ -293,7 +293,9 @@ public Q_SLOTS:
         }
 
         std::string msg_ = "__output " + msg.toStdString();
-        cmp_sendstring((t_pd*)_pdObject, msg_);
+        // TODO
+
+        //cmp_sendstring((t_pd*)_pdObject, msg_);
     }
 
     QStringList input()

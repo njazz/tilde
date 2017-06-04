@@ -134,7 +134,10 @@ public:
     virtual void sync()
     {
         if (!_serverObject)
+        {
+            setErrorBox(true);
             return;
+        }
 
         int in_c = _serverObject->inletCount();
         int out_c = _serverObject->outletCount();

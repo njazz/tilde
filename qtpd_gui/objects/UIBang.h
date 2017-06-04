@@ -36,6 +36,8 @@ public:
 //        data = l.join(" ");
         ret->setObjectData(data);
 
+        connect(ret, &UIBang::signalBang, ret, &UIBang::slotBang);
+
         return ret;
     }
 
@@ -113,6 +115,7 @@ public:
     {
 
         emit selectBox(this, ev);
+
         dragOffset = ev->pos().toPoint();
 
         if (!(getEditMode() == em_Unlocked)) {
@@ -130,9 +133,12 @@ public:
                 qDebug("msg: bad pd object!");
             } else {
                 //cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
-                serverObject()->message("bang ");
+
+                emit signalBang();
             }
         }
+
+        emit signalBang();
     }
 
     void mouseReleaseEvent(QGraphicsSceneMouseEvent*)
@@ -191,11 +197,18 @@ public:
 signals:
     void setBangTimer(int msec);
 
+    void signalBang();
+
 private slots:
     void timerAction()
     {
         _clicked = false;
         emit callRepaint();
+    }
+
+    void slotBang()
+    {
+        serverObject()->message("bang ");
     }
 };
 }

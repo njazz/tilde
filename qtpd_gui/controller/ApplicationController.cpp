@@ -26,7 +26,6 @@ ApplicationController:: ApplicationController()
 #endif
 
     _consoleObserver = new PdWindowConsoleObserver;
-
     _mainServerInstance->setConsoleObserver(_consoleObserver);
 
     _pdWindow = new PdWindow();
@@ -43,6 +42,7 @@ void ApplicationController::newPatchWindowController()
 {
     //return
     PatchWindowController* newP = new PatchWindowController(this->mainServerInstance());
+    newP->setAppController(this);
     newP->firstWindow()->show();
 };
 

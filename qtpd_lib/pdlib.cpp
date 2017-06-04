@@ -116,7 +116,7 @@ void cmp_pdinit()
     sys_init_fdpoll();
 
     pd_init();
-    sys_set_audio_api(API_PORTAUDIO);
+    sys_set_audio_api(API_PORTAUDIO);    //
     sys_searchpath = NULL;
     sys_startgui(NULL);
 
@@ -307,10 +307,11 @@ AtomList* AtomListFromString(std::string in_string)
 
 t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int y)
 {
-    t_object* ret2;
-    t_object* ret1;
+    t_object* ret2 = 0;
+    t_object* ret1 = 0;
 
     AtomList* list = AtomListFromString(class_name);
+
     if (list->size() == 0) {
         delete list;
         return 0;
@@ -333,7 +334,7 @@ t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int
         return 0;
 
     char* bufp = new char[1024];
-    int lenp;
+    int lenp = 0;
 
     binbuf_gettext(ret2->te_binbuf, &bufp, &lenp);
     qDebug("object data: %s", bufp);

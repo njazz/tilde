@@ -155,10 +155,11 @@ SOURCES += main.cpp\
     objects/UIMatrix.cpp \
     objects/UISubCanvas.cpp \
     CanvasView.cpp \
-    serverAPIPrototype.cpp \
     controller/PatchWindowController.cpp \
     datamodels/FileSaver.cpp \
-    controller/ApplicationController.cpp
+    controller/ApplicationController.cpp \
+#
+#    serverAPIPrototype.cpp \
 
 
 
