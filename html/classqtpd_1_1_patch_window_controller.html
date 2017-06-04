@@ -123,6 +123,9 @@ Public Slots</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a1bb9db15039686031edd0393f34e6e18">menuDuplicate</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a50095df4f2ef11a3f92c029539ea2bbb">menuDelete</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a0c0f14c564df7314a3d6c2ce1723d62d">menuSelectAll</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a020a5707582cb12c580d84597dd6710a">signalSelectBox</a> (<a class="el" href="classqtpd_1_1_u_i_item.html">UIItem</a> *box, QGraphicsSceneMouseEvent *event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a0c6b2b1394f58e556e54a95bd5218623">signalMoveBox</a> (<a class="el" href="classqtpd_1_1_u_i_item.html">UIItem</a> *box, QGraphicsSceneMouseEvent *event)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Canvas::s_MoveBox.  <a href="#a0c6b2b1394f58e556e54a95bd5218623"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#ac0ec5e4dd4fc0e5b7154c43100916f4f">PatchWindowController</a> (ServerInstance *<a class="el" href="namespaceqtpd.html#a3dde6489d34303c66ea710aa2116b426">instance</a>)</td></tr>
@@ -139,7 +142,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a60fd79d95af6bb0699e98260de830429">saveFileDialog</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a92c7b1523afba244815d00e5f62f9f6b">createObjectMaker</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#aafeb3f3466f85a0c2c05cc8818cc6d5f">createObject</a> (string name, QPoint pos)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a3a0fac93e23155b2d9ae34c70f38afe1">patchcord</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *src, int out, <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *dest, int in)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#ae9f3c56d63cf7866cf91e2cb3498381d">patchcord</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *src, int out, <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *dest, int in)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#ae92a33f99db1bfa48f6b223f1e3466ca">deleteSelectedObjects</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a5fb6a264e68f704e4b09d21aa839decc">deleteSelectedPatchcords</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#ae1d634d4109766367c72193eb2f26e43">deletePatchcordsFor</a> (<a class="el" href="classqtpd_1_1_u_i_item.html">UIItem</a> *obj)</td></tr>
@@ -155,6 +158,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a665086039bc4f3115e0f6b18db2451b3">clickPort</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#aab5fe39150113d8a3739c7374f512f4e">update</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#afdb85489fa8e4d91e67f7a8d99be84ba">updateViewports</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#aeb40afa6c184fc46367aad3442fdf781">setFileName</a> (QString fname)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#ad1db0e8d48810b40a3399cb134462d84">selectBox</a> (<a class="el" href="classqtpd_1_1_u_i_item.html">UIItem</a> *box)</td></tr>
 </table>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ac0ec5e4dd4fc0e5b7154c43100916f4f"></a><!-- doxytag: member="qtpd::PatchWindowController::PatchWindowController" ref="ac0ec5e4dd4fc0e5b7154c43100916f4f" args="(ServerInstance *instance)" -->
@@ -642,12 +647,12 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a3a0fac93e23155b2d9ae34c70f38afe1"></a><!-- doxytag: member="qtpd::PatchWindowController::patchcord" ref="a3a0fac93e23155b2d9ae34c70f38afe1" args="(UIObject *src, int out, UIObject *dest, int in)" -->
+<a class="anchor" id="ae9f3c56d63cf7866cf91e2cb3498381d"></a><!-- doxytag: member="qtpd::PatchWindowController::patchcord" ref="ae9f3c56d63cf7866cf91e2cb3498381d" args="(UIObject *src, int out, UIObject *dest, int in)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classqtpd_1_1_patch_window_controller.html#a3a0fac93e23155b2d9ae34c70f38afe1">qtpd::PatchWindowController::patchcord</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window_controller.html#ae9f3c56d63cf7866cf91e2cb3498381d">qtpd::PatchWindowController::patchcord</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td>
           <td class="paramname"><em>src</em>, </td>
@@ -714,6 +719,23 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ad1db0e8d48810b40a3399cb134462d84"></a><!-- doxytag: member="qtpd::PatchWindowController::selectBox" ref="ad1db0e8d48810b40a3399cb134462d84" args="(UIItem *box)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window_controller.html#ad1db0e8d48810b40a3399cb134462d84">qtpd::PatchWindowController::selectBox</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_item.html">UIItem</a> *&#160;</td>
+          <td class="paramname"><em>box</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a15718557f555321944594afb6b2a7ef1"></a><!-- doxytag: member="qtpd::PatchWindowController::serverInstance" ref="a15718557f555321944594afb6b2a7ef1" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -740,6 +762,87 @@ Public Member Functions</h2></td></tr>
           <td class="paramtype"><a class="el" href="classqtpd_1_1_application_controller.html">ApplicationController</a> *&#160;</td>
           <td class="paramname"><em>a</em></td><td>)</td>
           <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aeb40afa6c184fc46367aad3442fdf781"></a><!-- doxytag: member="qtpd::PatchWindowController::setFileName" ref="aeb40afa6c184fc46367aad3442fdf781" args="(QString fname)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window_controller.html#aeb40afa6c184fc46367aad3442fdf781">qtpd::PatchWindowController::setFileName</a> </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>fname</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0c6b2b1394f58e556e54a95bd5218623"></a><!-- doxytag: member="qtpd::PatchWindowController::signalMoveBox" ref="a0c6b2b1394f58e556e54a95bd5218623" args="(UIItem *box, QGraphicsSceneMouseEvent *event)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window_controller.html#a0c6b2b1394f58e556e54a95bd5218623">qtpd::PatchWindowController::signalMoveBox</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_item.html">UIItem</a> *&#160;</td>
+          <td class="paramname"><em>box</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Canvas::s_MoveBox. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">box</td><td></td></tr>
+    <tr><td class="paramname">event</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated:</a></b></dt><dd>move to <a class="el" href="classqtpd_1_1_u_i_box.html" title="gui object: standard object box">UIBox</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a020a5707582cb12c580d84597dd6710a"></a><!-- doxytag: member="qtpd::PatchWindowController::signalSelectBox" ref="a020a5707582cb12c580d84597dd6710a" args="(UIItem *box, QGraphicsSceneMouseEvent *event)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window_controller.html#a020a5707582cb12c580d84597dd6710a">qtpd::PatchWindowController::signalSelectBox</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_item.html">UIItem</a> *&#160;</td>
+          <td class="paramname"><em>box</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [slot]</code></td>
         </tr>
       </table>
 </div>
@@ -844,7 +947,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 4 2017 11:24:55 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 4 2017 18:58:09 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

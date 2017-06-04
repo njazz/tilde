@@ -11,7 +11,6 @@ var searchData=
   ['objectmakerdonesignal',['objectMakerDoneSignal',['../classqtpd_1_1_object_maker.html#adc36d63bedc3740d9c65ce949be5eb87',1,'qtpd::ObjectMaker']]],
   ['objectsaspdfilestrings',['objectsAsPdFileStrings',['../classqtpd_1_1_canvas_data.html#ae7fcba22560cf3e71b5bd596c0e8db3f',1,'qtpd::CanvasData']]],
   ['objectsizemode',['objectSizeMode',['../classqtpd_1_1_u_i_object_data.html#ad5062ea166760bbf3a531eb5c3372b9d',1,'qtpd::UIObjectData']]],
-  ['objectstartsedit',['objectStartsEdit',['../classqtpd_1_1_canvas_view.html#a08d204464ab6844041c2676b4a69a5b0',1,'qtpd::CanvasView']]],
   ['ones',['ones',['../classceammc_1_1_atom_list.html#ad23bf636c31bea6a15fd92535747d588',1,'ceammc::AtomList']]],
   ['opclass',['OPClass',['../classqtpd_1_1_o_p_class.html#ae7f01057539156ec4cb21867bd6f33d0',1,'qtpd::OPClass::OPClass()'],['../classqtpd_1_1_o_p_class.html#a334dd9becddd92691c03f4d43ac8ebcd',1,'qtpd::OPClass::OPClass(string className)']]],
   ['open',['open',['../classqtpd_1_1_file_parser.html#a7a1d4de73d63affb0825b0889a3b94f7',1,'qtpd::FileParser::open(QString fname)'],['../classqtpd_1_1_file_parser.html#a8569f73870a2981691d93c18fec7e52c',1,'qtpd::FileParser::open(QString fname, CanvasData *CanvasData)']]],

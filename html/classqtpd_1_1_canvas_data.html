@@ -116,6 +116,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_data.html#a885d21d54488c30dd9b3ec70a00a4353">CanvasData</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">ServerCanvas *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_data.html#a7b2fff297bf71f8990df050790a0d143">serverCanvas</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_data.html#a878f66df3775df08acb98a39a1eba64a">setServerCanvas</a> (ServerCanvas *canvas)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#a629f357522e6dd21f0708fdb23b9cd5b">portItemVec</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_data.html#a61409ca72a1d66d257556de080c400f3">inlets</a> ()</td></tr>
@@ -124,6 +125,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_data.html#ab2b8bf3e1a3d94d5f5181c9d9c543b36">setOutlets</a> (<a class="el" href="namespaceqtpd.html#a629f357522e6dd21f0708fdb23b9cd5b">portItemVec</a> *<a class="el" href="classqtpd_1_1_canvas_data.html#a8cd45d5c58a1a413590a99191e347041">outlets</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_data.html#a97750cf889091a49f82199270fdef866">setFileName</a> (QString fName)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_data.html#aa8214ca2980e0ce488120a071ed1476e">fileName</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_data.html#a789343c47183df2e7e51d58aa5bcb87c">setFilePath</a> (QString <a class="el" href="classqtpd_1_1_canvas_data.html#a9588a64641031ac502cf95733e4b81ad">filePath</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_data.html#a9588a64641031ac502cf95733e4b81ad">filePath</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_data.html#a5ac222f1e1a7cafb92b6b15f8956f386">hasObjects</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_data.html#a37b1856e8c2279ae20a1835380da20a9">hasSelectedObjects</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#afd559ba823ec75738510eb0b1e9ddba7">objectVec</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_data.html#a47f7935e671ebcdfeddba6904eb90509">boxes</a> ()</td></tr>
@@ -150,11 +153,30 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_data.html#ae7fcba22560cf3e71b5bd596c0e8db3f">objectsAsPdFileStrings</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_data.html#aba763f0d79f33892a3269e9f9e671263">canvasAsPdFileString</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_data.html#a56f451f6c6b948d99dab3f782a1993ff">asPdFileStrings</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_data.html#ab17cf19a4f5edd0776f5e64702cd97d3">getObjectByIndex</a> (int idx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceqtpd.html#a99b7f74529942387e07a5470a410975b">patchcordVec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_data.html#a9e382308171baf185c84c007fe96c0b7">patchcordsForObject</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *obj)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>shared canvas data model - boxes, patchcords </p>
 <p>this should be developed better as a full data model for canvas </p>
-</div><hr/><h2>Member Function Documentation</h2>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a885d21d54488c30dd9b3ec70a00a4353"></a><!-- doxytag: member="qtpd::CanvasData::CanvasData" ref="a885d21d54488c30dd9b3ec70a00a4353" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqtpd_1_1_canvas_data.html#a885d21d54488c30dd9b3ec70a00a4353">qtpd::CanvasData::CanvasData</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a7d0877db8db1b4202c69a31d7eeda5da"></a><!-- doxytag: member="qtpd::CanvasData::addPatchcord" ref="a7d0877db8db1b4202c69a31d7eeda5da" args="(UIPatchcord *pc)" -->
 <div class="memitem">
 <div class="memproto">
@@ -371,6 +393,22 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a9588a64641031ac502cf95733e4b81ad"></a><!-- doxytag: member="qtpd::CanvasData::filePath" ref="a9588a64641031ac502cf95733e4b81ad" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString <a class="el" href="classqtpd_1_1_canvas_data.html#a9588a64641031ac502cf95733e4b81ad">qtpd::CanvasData::filePath</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a4f3db22c9bef4556170d8c25e8578e9a"></a><!-- doxytag: member="qtpd::CanvasData::findBox" ref="a4f3db22c9bef4556170d8c25e8578e9a" args="(objectVec *boxes, UIObject *box)" -->
 <div class="memitem">
 <div class="memproto">
@@ -435,6 +473,23 @@ Public Member Functions</h2></td></tr>
           <td></td>
           <td>)</td>
           <td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab17cf19a4f5edd0776f5e64702cd97d3"></a><!-- doxytag: member="qtpd::CanvasData::getObjectByIndex" ref="ab17cf19a4f5edd0776f5e64702cd97d3" args="(int idx)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a>* <a class="el" href="classqtpd_1_1_canvas_data.html#ab17cf19a4f5edd0776f5e64702cd97d3">qtpd::CanvasData::getObjectByIndex</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>idx</em></td><td>)</td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -605,6 +660,23 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a9e382308171baf185c84c007fe96c0b7"></a><!-- doxytag: member="qtpd::CanvasData::patchcordsForObject" ref="a9e382308171baf185c84c007fe96c0b7" args="(UIObject *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceqtpd.html#a99b7f74529942387e07a5470a410975b">patchcordVec</a> <a class="el" href="classqtpd_1_1_canvas_data.html#a9e382308171baf185c84c007fe96c0b7">qtpd::CanvasData::patchcordsForObject</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="aae8f9f3c4c0e086f651685e7f5d7c882"></a><!-- doxytag: member="qtpd::CanvasData::selectBox" ref="aae8f9f3c4c0e086f651685e7f5d7c882" args="(UIObject *box)" -->
 <div class="memitem">
 <div class="memproto">
@@ -704,6 +776,23 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a789343c47183df2e7e51d58aa5bcb87c"></a><!-- doxytag: member="qtpd::CanvasData::setFilePath" ref="a789343c47183df2e7e51d58aa5bcb87c" args="(QString filePath)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas_data.html#a789343c47183df2e7e51d58aa5bcb87c">qtpd::CanvasData::setFilePath</a> </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>filePath</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a567ef05f7373b9c90bcb31df1c65d392"></a><!-- doxytag: member="qtpd::CanvasData::setInlets" ref="a567ef05f7373b9c90bcb31df1c65d392" args="(portItemVec *inlets)" -->
 <div class="memitem">
 <div class="memproto">
@@ -776,7 +865,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 4 2017 11:24:55 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 4 2017 18:58:09 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

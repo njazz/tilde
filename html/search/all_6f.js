@@ -22,7 +22,6 @@ var searchData=
   ['objectmakerdonesignal',['objectMakerDoneSignal',['../classqtpd_1_1_object_maker.html#adc36d63bedc3740d9c65ce949be5eb87',1,'qtpd::ObjectMaker']]],
   ['objectsaspdfilestrings',['objectsAsPdFileStrings',['../classqtpd_1_1_canvas_data.html#ae7fcba22560cf3e71b5bd596c0e8db3f',1,'qtpd::CanvasData']]],
   ['objectsizemode',['objectSizeMode',['../classqtpd_1_1_u_i_object_data.html#ad5062ea166760bbf3a531eb5c3372b9d',1,'qtpd::UIObjectData']]],
-  ['objectstartsedit',['objectStartsEdit',['../classqtpd_1_1_canvas_view.html#a08d204464ab6844041c2676b4a69a5b0',1,'qtpd::CanvasView']]],
   ['objectvec',['objectVec',['../namespaceqtpd.html#afd559ba823ec75738510eb0b1e9ddba7',1,'qtpd']]],
   ['ones',['ones',['../classceammc_1_1_atom_list.html#ad23bf636c31bea6a15fd92535747d588',1,'ceammc::AtomList']]],
   ['oopd',['OOPD',['../classqtpd_1_1_o_o_p_d.html',1,'qtpd']]],
