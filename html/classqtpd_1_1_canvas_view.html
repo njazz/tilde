@@ -137,6 +137,8 @@ Signals</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#ab07b98bfc42e797a737b4a26f41f8531">signalMouseMove</a> (QPoint pos)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#af92f5454398e3bdd49c113cc330bb972">signalMouseRelease</a> (QPoint pos)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a91bc47dbd9632eb34b775678bb3caf35">signalDeselectObjects</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#ac6c5f54966cd4000948b067451b31da6">signalSelectionFrame</a> (QPoint start, QPoint end)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#ac4770dca5bc9f4cb11294faf00df1f7d">signalMoveSelectedBoxes</a> (QPoint eventPos)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a4f56c2337113bfa28db329c414596476">CanvasView</a> (QGraphicsView *parent=0)</td></tr>
@@ -151,6 +153,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">delete single box  <a href="#a6af77db153555e29b9112512fcd26104"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#af8173e8f22309b86280c8bbcaa464990">setGridEnabled</a> (bool val)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a1cc818c0eab5ca815356a0ee97bc7365">setGridSnap</a> (bool val)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a92f8d2f051ef33082622ef9a96ebcbf8">gridSnap</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a3f9d33c579846c07682ea81535afa92e">gridStep</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#ad1a73f8fd01cb08fb0be196ffcd463e7">setKeepPdObject</a> (bool v)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a49e28d739ed4faf2a400812390499900">keepPdObject</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_view.html#a7514ba89e2110ca7555398fae15dd5c2">setReadOnly</a> (bool val)</td></tr>
@@ -344,6 +348,38 @@ Public Member Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">float <a class="el" href="classqtpd_1_1_canvas_view.html#a7589e6f6be011e3ef6c81928046b9aa3">qtpd::CanvasView::getZoom</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a92f8d2f051ef33082622ef9a96ebcbf8"></a><!-- doxytag: member="qtpd::CanvasView::gridSnap" ref="a92f8d2f051ef33082622ef9a96ebcbf8" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classqtpd_1_1_canvas_view.html#a92f8d2f051ef33082622ef9a96ebcbf8">qtpd::CanvasView::gridSnap</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3f9d33c579846c07682ea81535afa92e"></a><!-- doxytag: member="qtpd::CanvasView::gridStep" ref="a3f9d33c579846c07682ea81535afa92e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classqtpd_1_1_canvas_view.html#a3f9d33c579846c07682ea81535afa92e">qtpd::CanvasView::gridStep</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [inline]</code></td>
@@ -808,6 +844,23 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ac4770dca5bc9f4cb11294faf00df1f7d"></a><!-- doxytag: member="qtpd::CanvasView::signalMoveSelectedBoxes" ref="ac4770dca5bc9f4cb11294faf00df1f7d" args="(QPoint eventPos)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas_view.html#ac4770dca5bc9f4cb11294faf00df1f7d">qtpd::CanvasView::signalMoveSelectedBoxes</a> </td>
+          <td>(</td>
+          <td class="paramtype">QPoint&#160;</td>
+          <td class="paramname"><em>eventPos</em></td><td>)</td>
+          <td><code> [signal]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a40e9754589206b6db8685b91b745ebab"></a><!-- doxytag: member="qtpd::CanvasView::signalPatchcord" ref="a40e9754589206b6db8685b91b745ebab" args="(UIObject *src, int nOut, UIObject *dest, int nIn)" -->
 <div class="memitem">
 <div class="memproto">
@@ -835,6 +888,33 @@ Public Member Functions</h2></td></tr>
           <td></td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>nIn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [signal]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac6c5f54966cd4000948b067451b31da6"></a><!-- doxytag: member="qtpd::CanvasView::signalSelectionFrame" ref="ac6c5f54966cd4000948b067451b31da6" args="(QPoint start, QPoint end)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas_view.html#ac6c5f54966cd4000948b067451b31da6">qtpd::CanvasView::signalSelectionFrame</a> </td>
+          <td>(</td>
+          <td class="paramtype">QPoint&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QPoint&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1129,7 +1209,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 4 2017 19:40:04 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 4 2017 20:15:46 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

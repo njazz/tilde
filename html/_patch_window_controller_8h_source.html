@@ -187,58 +187,63 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00103"></a>00103     <span class="comment">// moved from canvas-view</span>
 <a name="l00104"></a>00104     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#ad1db0e8d48810b40a3399cb134462d84">selectBox</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* box);
 <a name="l00105"></a>00105 
-<a name="l00106"></a>00106 <span class="keyword">public</span> slots:
-<a name="l00107"></a>00107     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a3b48ab647f885a2783ace092dbe1ad68">menuSave</a>();
-<a name="l00108"></a>00108     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#ad4be0234f1e019a04b0d93639449d65a" title="first save of the patch">menuSaveAs</a>();
-<a name="l00109"></a>00109 
-<a name="l00110"></a><a class="code" href="classqtpd_1_1_patch_window_controller.html#a5b7903ba7da8e4b26724537f7e578d0a">00110</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a5b7903ba7da8e4b26724537f7e578d0a">menuCut</a>()
-<a name="l00111"></a>00111     {
-<a name="l00112"></a>00112         <a class="code" href="classqtpd_1_1_patch_window_controller.html#ad6cbfd60e91d01742ac2bf7dfe40692f">dataCut</a>();
-<a name="l00113"></a>00113     };
-<a name="l00114"></a>00114 
-<a name="l00115"></a><a class="code" href="classqtpd_1_1_patch_window_controller.html#a5eab68649c2992c7867a95046cd06227">00115</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a5eab68649c2992c7867a95046cd06227">menuCopy</a>()
-<a name="l00116"></a>00116     {
-<a name="l00117"></a>00117         <a class="code" href="classqtpd_1_1_patch_window_controller.html#aab4ec2a593279cfad25088d524d0b98d">dataCopy</a>();
-<a name="l00118"></a>00118     };
-<a name="l00119"></a>00119 
-<a name="l00120"></a><a class="code" href="classqtpd_1_1_patch_window_controller.html#a452923604f75028b0943e8d994394580">00120</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a452923604f75028b0943e8d994394580">menuPaste</a>()
-<a name="l00121"></a>00121     {
-<a name="l00122"></a>00122         <a class="code" href="classqtpd_1_1_patch_window_controller.html#a2baeb7f3e288c33e299d4b60fd33b156">dataPaste</a>();
-<a name="l00123"></a>00123     };
-<a name="l00124"></a>00124 
-<a name="l00125"></a><a class="code" href="classqtpd_1_1_patch_window_controller.html#a1bb9db15039686031edd0393f34e6e18">00125</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a1bb9db15039686031edd0393f34e6e18">menuDuplicate</a>()
-<a name="l00126"></a>00126     {
-<a name="l00127"></a>00127         <a class="code" href="classqtpd_1_1_patch_window_controller.html#a7b717a2474df3263be0761439a3eeff0">dataDuplicate</a>();
-<a name="l00128"></a>00128     };
-<a name="l00129"></a>00129 
-<a name="l00130"></a><a class="code" href="classqtpd_1_1_patch_window_controller.html#a50095df4f2ef11a3f92c029539ea2bbb">00130</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a50095df4f2ef11a3f92c029539ea2bbb">menuDelete</a>()
-<a name="l00131"></a>00131     {
-<a name="l00132"></a>00132         <a class="code" href="classqtpd_1_1_patch_window_controller.html#ae92a33f99db1bfa48f6b223f1e3466ca">deleteSelectedObjects</a>();
-<a name="l00133"></a>00133         <a class="code" href="classqtpd_1_1_patch_window_controller.html#a5fb6a264e68f704e4b09d21aa839decc">deleteSelectedPatchcords</a>();
-<a name="l00134"></a>00134     };
-<a name="l00135"></a>00135 
-<a name="l00136"></a><a class="code" href="classqtpd_1_1_patch_window_controller.html#a0c0f14c564df7314a3d6c2ce1723d62d">00136</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a0c0f14c564df7314a3d6c2ce1723d62d">menuSelectAll</a>()
-<a name="l00137"></a>00137     {
-<a name="l00138"></a>00138         <a class="code" href="classqtpd_1_1_patch_window_controller.html#a4ef913c8819dcc1d489ec8f9ca66a01b">dataSelectAllObjects</a>();
-<a name="l00139"></a>00139     };
-<a name="l00140"></a>00140 
-<a name="l00141"></a>00141     <span class="comment">//</span>
-<a name="l00142"></a>00142     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a020a5707582cb12c580d84597dd6710a">signalSelectBox</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* box, QGraphicsSceneMouseEvent* event);
-<a name="l00143"></a>00143     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a0c6b2b1394f58e556e54a95bd5218623" title="Canvas::s_MoveBox.">signalMoveBox</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* box, QGraphicsSceneMouseEvent* event);
-<a name="l00144"></a>00144 
-<a name="l00145"></a>00145 <span class="keyword">private</span> slots:
-<a name="l00146"></a>00146     <span class="keywordtype">void</span> slotSelectObject(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* <span class="keywordtype">object</span>);
-<a name="l00147"></a>00147     <span class="keywordtype">void</span> slotPatchcord(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* src, <span class="keywordtype">int</span> nOut, <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* dest, <span class="keywordtype">int</span> nIn);
-<a name="l00148"></a>00148 
-<a name="l00149"></a>00149     <span class="keywordtype">void</span> slotMousePress(QPoint pos);
-<a name="l00150"></a>00150     <span class="keywordtype">void</span> slotMouseMove(QPoint pos);
-<a name="l00151"></a>00151     <span class="keywordtype">void</span> slotMouseRelease(QPoint pos);
-<a name="l00152"></a>00152 
-<a name="l00153"></a>00153     <span class="keywordtype">void</span> slotDeselectObjects();
-<a name="l00154"></a>00154 };
-<a name="l00155"></a>00155 }
+<a name="l00106"></a>00106     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a3fc68cd3a2dc6edb02b79a40306afc49">moveSelectedBoxes</a>(QPoint eventPos);
+<a name="l00107"></a>00107 
+<a name="l00108"></a>00108 <span class="keyword">public</span> slots:
+<a name="l00109"></a>00109     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a3b48ab647f885a2783ace092dbe1ad68">menuSave</a>();
+<a name="l00110"></a>00110     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#ad4be0234f1e019a04b0d93639449d65a" title="first save of the patch">menuSaveAs</a>();
+<a name="l00111"></a>00111 
+<a name="l00112"></a><a class="code" href="classqtpd_1_1_patch_window_controller.html#a5b7903ba7da8e4b26724537f7e578d0a">00112</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a5b7903ba7da8e4b26724537f7e578d0a">menuCut</a>()
+<a name="l00113"></a>00113     {
+<a name="l00114"></a>00114         <a class="code" href="classqtpd_1_1_patch_window_controller.html#ad6cbfd60e91d01742ac2bf7dfe40692f">dataCut</a>();
+<a name="l00115"></a>00115     };
+<a name="l00116"></a>00116 
+<a name="l00117"></a><a class="code" href="classqtpd_1_1_patch_window_controller.html#a5eab68649c2992c7867a95046cd06227">00117</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a5eab68649c2992c7867a95046cd06227">menuCopy</a>()
+<a name="l00118"></a>00118     {
+<a name="l00119"></a>00119         <a class="code" href="classqtpd_1_1_patch_window_controller.html#aab4ec2a593279cfad25088d524d0b98d">dataCopy</a>();
+<a name="l00120"></a>00120     };
+<a name="l00121"></a>00121 
+<a name="l00122"></a><a class="code" href="classqtpd_1_1_patch_window_controller.html#a452923604f75028b0943e8d994394580">00122</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a452923604f75028b0943e8d994394580">menuPaste</a>()
+<a name="l00123"></a>00123     {
+<a name="l00124"></a>00124         <a class="code" href="classqtpd_1_1_patch_window_controller.html#a2baeb7f3e288c33e299d4b60fd33b156">dataPaste</a>();
+<a name="l00125"></a>00125     };
+<a name="l00126"></a>00126 
+<a name="l00127"></a><a class="code" href="classqtpd_1_1_patch_window_controller.html#a1bb9db15039686031edd0393f34e6e18">00127</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a1bb9db15039686031edd0393f34e6e18">menuDuplicate</a>()
+<a name="l00128"></a>00128     {
+<a name="l00129"></a>00129         <a class="code" href="classqtpd_1_1_patch_window_controller.html#a7b717a2474df3263be0761439a3eeff0">dataDuplicate</a>();
+<a name="l00130"></a>00130     };
+<a name="l00131"></a>00131 
+<a name="l00132"></a><a class="code" href="classqtpd_1_1_patch_window_controller.html#a50095df4f2ef11a3f92c029539ea2bbb">00132</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a50095df4f2ef11a3f92c029539ea2bbb">menuDelete</a>()
+<a name="l00133"></a>00133     {
+<a name="l00134"></a>00134         <a class="code" href="classqtpd_1_1_patch_window_controller.html#ae92a33f99db1bfa48f6b223f1e3466ca">deleteSelectedObjects</a>();
+<a name="l00135"></a>00135         <a class="code" href="classqtpd_1_1_patch_window_controller.html#a5fb6a264e68f704e4b09d21aa839decc">deleteSelectedPatchcords</a>();
+<a name="l00136"></a>00136     };
+<a name="l00137"></a>00137 
+<a name="l00138"></a><a class="code" href="classqtpd_1_1_patch_window_controller.html#a0c0f14c564df7314a3d6c2ce1723d62d">00138</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a0c0f14c564df7314a3d6c2ce1723d62d">menuSelectAll</a>()
+<a name="l00139"></a>00139     {
+<a name="l00140"></a>00140         <a class="code" href="classqtpd_1_1_patch_window_controller.html#a4ef913c8819dcc1d489ec8f9ca66a01b">dataSelectAllObjects</a>();
+<a name="l00141"></a>00141     };
+<a name="l00142"></a>00142 
+<a name="l00143"></a>00143     <span class="comment">//</span>
+<a name="l00144"></a>00144     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a020a5707582cb12c580d84597dd6710a">signalSelectBox</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* box, QGraphicsSceneMouseEvent* event);
+<a name="l00145"></a>00145     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a0c6b2b1394f58e556e54a95bd5218623" title="Canvas::s_MoveBox.">signalMoveBox</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* box, QGraphicsSceneMouseEvent* event);
+<a name="l00146"></a>00146 
+<a name="l00147"></a>00147 <span class="keyword">private</span> slots:
+<a name="l00148"></a>00148     <span class="keywordtype">void</span> slotSelectObject(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* <span class="keywordtype">object</span>);
+<a name="l00149"></a>00149     <span class="keywordtype">void</span> slotPatchcord(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* src, <span class="keywordtype">int</span> nOut, <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* dest, <span class="keywordtype">int</span> nIn);
+<a name="l00150"></a>00150 
+<a name="l00151"></a>00151     <span class="keywordtype">void</span> slotMousePress(QPoint pos);
+<a name="l00152"></a>00152     <span class="keywordtype">void</span> slotMouseMove(QPoint pos);
+<a name="l00153"></a>00153     <span class="keywordtype">void</span> slotMouseRelease(QPoint pos);
+<a name="l00154"></a>00154 
+<a name="l00155"></a>00155     <span class="keywordtype">void</span> slotDeselectObjects();
 <a name="l00156"></a>00156 
-<a name="l00157"></a>00157 <span class="preprocessor">#endif // CM_PDLINK_H</span>
+<a name="l00157"></a>00157     <span class="keywordtype">void</span> slotSelectionFrame(QPoint start, QPoint end);
+<a name="l00158"></a>00158     <span class="keywordtype">void</span> slotMoveSelectedBoxes(QPoint eventPos);
+<a name="l00159"></a>00159 };
+<a name="l00160"></a>00160 }
+<a name="l00161"></a>00161 
+<a name="l00162"></a>00162 <span class="preprocessor">#endif // CM_PDLINK_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -257,7 +262,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 4 2017 19:40:03 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 4 2017 20:15:46 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

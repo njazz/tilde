@@ -137,6 +137,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_data.html#a7eb70639d25ca7abf2a99648c443da31">addUniquePatchcord</a> (<a class="el" href="namespaceqtpd.html#a99b7f74529942387e07a5470a410975b">patchcordVec</a> *<a class="el" href="classqtpd_1_1_canvas_data.html#aa6a1ff15e1a75edd6b28ad4bcb6a578d">patchcords</a>, <a class="el" href="classqtpd_1_1_u_i_patchcord.html">UIPatchcord</a> *pcord)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_data.html#a4f3db22c9bef4556170d8c25e8578e9a">findBox</a> (<a class="el" href="namespaceqtpd.html#afd559ba823ec75738510eb0b1e9ddba7">objectVec</a> *<a class="el" href="classqtpd_1_1_canvas_data.html#a47f7935e671ebcdfeddba6904eb90509">boxes</a>, <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *box)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_data.html#a5ef8913f04f5ee65aebc31c542748d37">findPatchcord</a> (<a class="el" href="namespaceqtpd.html#a99b7f74529942387e07a5470a410975b">patchcordVec</a> *<a class="el" href="classqtpd_1_1_canvas_data.html#aa6a1ff15e1a75edd6b28ad4bcb6a578d">patchcords</a>, <a class="el" href="classqtpd_1_1_u_i_patchcord.html">UIPatchcord</a> *pcord)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_data.html#af00e375ff144c85c36c4ec98044698a5">selectBoxesInFrame</a> (QPoint start, QPoint end)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_data.html#a50f8d59002c39ba657b21608718ec548">moveSelectedBoxes</a> (QPoint pos, bool gridSnap)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_data.html#a70146bc4afcd6085f314c3f0db8631bf">addBox</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *box)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_data.html#a7d0877db8db1b4202c69a31d7eeda5da">addPatchcord</a> (<a class="el" href="classqtpd_1_1_u_i_patchcord.html">UIPatchcord</a> *pc)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_canvas_data.html#aae8f9f3c4c0e086f651685e7f5d7c882">selectBox</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *box)</td></tr>
@@ -563,6 +565,33 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a50f8d59002c39ba657b21608718ec548"></a><!-- doxytag: member="qtpd::CanvasData::moveSelectedBoxes" ref="a50f8d59002c39ba657b21608718ec548" args="(QPoint pos, bool gridSnap)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas_data.html#a50f8d59002c39ba657b21608718ec548">qtpd::CanvasData::moveSelectedBoxes</a> </td>
+          <td>(</td>
+          <td class="paramtype">QPoint&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>gridSnap</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ae7fcba22560cf3e71b5bd596c0e8db3f"></a><!-- doxytag: member="qtpd::CanvasData::objectsAsPdFileStrings" ref="ae7fcba22560cf3e71b5bd596c0e8db3f" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -705,6 +734,33 @@ Public Member Functions</h2></td></tr>
           <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td>
           <td class="paramname"><em>box</em></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af00e375ff144c85c36c4ec98044698a5"></a><!-- doxytag: member="qtpd::CanvasData::selectBoxesInFrame" ref="af00e375ff144c85c36c4ec98044698a5" args="(QPoint start, QPoint end)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_canvas_data.html#af00e375ff144c85c36c4ec98044698a5">qtpd::CanvasData::selectBoxesInFrame</a> </td>
+          <td>(</td>
+          <td class="paramtype">QPoint&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QPoint&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div>
@@ -884,7 +940,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 4 2017 19:40:04 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 4 2017 20:15:46 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
