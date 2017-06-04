@@ -41,13 +41,13 @@ private:
     void doSave(QString fileName);
 
 public:
-    PatchWindowController(ServerInstance* instance); //replace with parent (appcontroller)
+    PatchWindowController(ApplicationController *appController); //replace with parent (appcontroller)
 
     PatchWindowController* createSubpatchWindowController();
 
     ServerInstance* serverInstance();
 
-    void setAppController(ApplicationController* a) { _appController = a; }
+    void setAppController(ApplicationController* a);
     CanvasData* canvasData() { return _canvasData; };
 
     vector<PatchWindow*> windows();
@@ -65,7 +65,7 @@ public:
     void saveFile(QString fileName);
     void saveFileDialog();
     //
-    void createObjectMaker();
+    //void createObjectMaker();
     //
     UIObject* createObject(string name, QPoint pos);
     //

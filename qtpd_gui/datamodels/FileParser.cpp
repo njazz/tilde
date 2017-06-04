@@ -414,7 +414,7 @@ void FileParser::parseQString(QString line)
 
         _pdParserPrevWindowController = _pdParserWindowController;
 
-        PatchWindowController* newWnd = new PatchWindowController(FileParser::_appController->mainServerInstance());
+        PatchWindowController* newWnd = new PatchWindowController(FileParser::_appController);
         newWnd->setAppController(FileParser::_appController);
         _pdParserWindowController = newWnd;
 

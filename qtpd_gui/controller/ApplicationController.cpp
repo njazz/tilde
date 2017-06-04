@@ -10,9 +10,9 @@
 
 #include "FileParser.h"
 
-namespace qtpd{
+namespace qtpd {
 
-ApplicationController:: ApplicationController()
+ApplicationController::ApplicationController()
 {
     qDebug("new app controller");
 
@@ -29,9 +29,9 @@ ApplicationController:: ApplicationController()
     _mainServerInstance->setConsoleObserver(_consoleObserver);
 
     _pdWindow = new PdWindow();
+    _pdWindow->setAppController(this);
     _pdWindow->move(0, 100);
     _pdWindow->show();
-    _pdWindow->setAppController(this);
 
     _consoleObserver->setWindow(_pdWindow);
 
@@ -40,22 +40,22 @@ ApplicationController:: ApplicationController()
 
 void ApplicationController::newPatchWindowController()
 {
+    qDebug("new patch from menu >>");
     //return
-    PatchWindowController* newP = new PatchWindowController(this->mainServerInstance());
-    newP->setAppController(this);
+    PatchWindowController* newP = new PatchWindowController(this);
+    //newP->setAppController(this);
     newP->firstWindow()->show();
+    qDebug("<<");
 };
 
 void ApplicationController::openFileDialog()
 {
     QString fileName = QFileDialog::getOpenFileName(0, QString("Open patch"), QString("~/"), QString("*.pd"), 0, 0);
 
-    if (fileName != "")
-    {
-        PatchWindowController* newP = new PatchWindowController(this->mainServerInstance());
+    if (fileName != "") {
+        PatchWindowController* newP = new PatchWindowController(this);
         newP->openFile(fileName);
     }
-
 }
 
 void ApplicationController::pdWindow()
@@ -104,7 +104,6 @@ void ApplicationController::audioSettingsWindow()
     p1->show();
 }
 
-
 void ApplicationController::dspOn()
 {
     //cmp_switch_dsp(true);
@@ -120,16 +119,13 @@ void ApplicationController::dspOff()
 {
     //cmp_switch_dsp(false);
     //dspOnAct->setChecked(false);
-     _mainServerInstance->dspOff();
+    _mainServerInstance->dspOff();
 }
 
-void PdWindowConsoleObserver:: update()
+void PdWindowConsoleObserver::update()
 {
     if (_window) {
         emit _window->cm_log_signal(QString(text().c_str()));
     }
 };
-
 }
-
-

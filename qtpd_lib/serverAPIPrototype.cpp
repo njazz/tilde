@@ -35,7 +35,7 @@ ServerObject::ServerObject(ServerObject* parent, string text)
     _properties = 0;
 
     if (parent->type() == typeCanvas) {
-        t_canvas* canvas = reinterpret_cast<t_canvas*>(reinterpret_cast<ServerCanvas*>(parent)->canvasObject());
+        t_canvas* canvas = static_cast<t_canvas*>(reinterpret_cast<ServerCanvas*>(parent)->canvasObject());
         _pdObject = cmp_create_object(canvas, text, 0, 0);
     }
 
@@ -106,6 +106,7 @@ void ServerArray::registerObserver(Observer* o){};
 ServerCanvas::ServerCanvas()
 {
     _canvas = cmp_newpatch();
+    std::cout << "canvas ptr " << _canvas << std::endl;
     setType(typeCanvas);
 }
 

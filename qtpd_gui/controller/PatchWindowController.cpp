@@ -16,21 +16,24 @@
 #include "UIObject.h"
 #include "UIPatchcord.h"
 
+#include "ApplicationController.h"
+
 namespace qtpd {
 
-PatchWindowController::PatchWindowController(ServerInstance* instance) //replace with parent (appcontroller)
+PatchWindowController::PatchWindowController(ApplicationController* appController) //replace with parent (appcontroller)
 {
 
     _scene = new QGraphicsScene();
     _observer = new Observer();
-    instance->registerObserver(_observer);
-    _serverInstance = instance;
+
+    _serverInstance = appController->mainServerInstance();
+    _serverInstance->registerObserver(_observer);
 
     _canvasData = new CanvasData();
     _serverCanvas = _serverInstance->createCanvas();
     _canvasData->setServerCanvas(_serverCanvas);
 
-    _appController = 0;
+    _appController = appController;
 
     newWindow();
 };
@@ -84,8 +87,14 @@ void PatchWindowController::saveFile(QString fileName)
 void PatchWindowController::saveFileDialog(){};
 
 PatchWindowController* PatchWindowController::createSubpatchWindowController(){};
+
+void PatchWindowController::setAppController(ApplicationController* a)
+{
+    _appController = a;
+    firstWindow()->setAppController(a);
+}
 //
-void PatchWindowController::createObjectMaker(){};
+//void PatchWindowController::createObjectMaker(){};
 //
 UIObject* PatchWindowController::createObject(string name, QPoint pos)
 {

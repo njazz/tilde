@@ -172,6 +172,8 @@ void cmp_pdinit()
 
     //hack lol - removes empty canvas with array template and creates an empty new one
     cmp_closepatch(cmp_newpatch());
+
+    qDebug("## cm_pd: %lu", cm_pd);
 }
 
 void cmp_setprinthook(t_printhook h)
@@ -472,6 +474,9 @@ void cmp_switch_dsp(bool on)
         cmp_error("library not yet initialized");
         return;
     }
+
+    qDebug("## cm_pd: %lu", cm_pd);
+
     AtomList list;
     list.append(Atom(on ? 1 : 0));
 
