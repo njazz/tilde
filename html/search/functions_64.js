@@ -10,7 +10,6 @@ var searchData=
   ['dbtorms',['dbtorms',['../m__pd_8h.html#a35754550b878de776ca3aef939c72ec3',1,'m_pd.h']]],
   ['defaultdata',['defaultData',['../classqtpd_1_1_property.html#acd0a450082813074a467c4dcefc95f83',1,'qtpd::Property']]],
   ['deleteobject',['deleteObject',['../classqtpd_1_1_patch_window_controller.html#a294ae819aa8fd6d25060797014582226',1,'qtpd::PatchWindowController']]],
-  ['deleteobserver',['deleteObserver',['../classprint_hook.html#a11fdd634a0a609724f1a8dd3da9d13d0',1,'printHook']]],
   ['deletepatchcordsfor',['deletePatchcordsFor',['../classqtpd_1_1_patch_window_controller.html#ae1d634d4109766367c72193eb2f26e43',1,'qtpd::PatchWindowController']]],
   ['deletepatchcordsforobject',['deletePatchcordsForObject',['../classqtpd_1_1_patch_window_controller.html#a7128fa5199c0fae44d99e6a2efd010b3',1,'qtpd::PatchWindowController']]],
   ['deleteselectedobjects',['deleteSelectedObjects',['../classqtpd_1_1_patch_window_controller.html#ae92a33f99db1bfa48f6b223f1e3466ca',1,'qtpd::PatchWindowController::deleteSelectedObjects()'],['../classqtpd_1_1_patch_window_controller.html#a58590eb81ff67387cb8529523d8e0e4a',1,'qtpd::PatchWindowController::deleteSelectedObjects(vector&lt; UIObject * &gt;)']]],

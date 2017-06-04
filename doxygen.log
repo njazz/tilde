@@ -251,8 +251,6 @@ Preprocessing /home/travis/build/njazz/qtpd/qtpd_gui/properties/PropertyList.cpp
 Parsing file /home/travis/build/njazz/qtpd/qtpd_gui/properties/PropertyList.cpp...
 Preprocessing /home/travis/build/njazz/qtpd/qtpd_gui/properties/PropertyList.h...
 Parsing file /home/travis/build/njazz/qtpd/qtpd_gui/properties/PropertyList.h...
-Preprocessing /home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp...
-Parsing file /home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp...
 Preprocessing /home/travis/build/njazz/qtpd/qtpd_gui/SizeBox.cpp...
 Parsing file /home/travis/build/njazz/qtpd/qtpd_gui/SizeBox.cpp...
 Preprocessing /home/travis/build/njazz/qtpd/qtpd_gui/widgets/ObjectMaker.cpp...
@@ -286,107 +284,10 @@ Parsing file /home/travis/build/njazz/qtpd/qtpd_gui/window/BaseWindow.h...
 Preprocessing /home/travis/build/njazz/qtpd/qtpd_gui/window/PatchWindow.cpp...
 Parsing file /home/travis/build/njazz/qtpd/qtpd_gui/window/PatchWindow.cpp...
 Preprocessing /home/travis/build/njazz/qtpd/qtpd_gui/window/PatchWindow.h...
-Parsing file /h/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:11: warning: no uniquely matching class member found for 
-  void Observer::update()
-
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:13: warning: no uniquely matching class member found for 
-  void PropertyObserver::update()
-
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:17: warning: no matching class member found for 
-  void ServerProperties::addObserver(PropertyObserver *p)
-
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:18: warning: documented function `void ServerProperties::removeObserver' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:21: warning: documented function `ServerObject::ServerObject' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:24: warning: documented function `ServerObject::ServerObject' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:35: warning: documented function `ServerObject * ServerObject::parent' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:49: warning: documented function `void ServerObject::message' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:67: warning: no matching class member found for 
-  int ServerObject::inletCount()
-
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:74: warning: no matching class member found for 
-  int ServerObject::outletCount()
-
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:81: warning: documented function `void ServerObject::registerObserver' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:82: warning: no matching class member found for 
-  void ServerObject::deleteObserver(Observer *o)
-
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:84: warning: no uniquely matching class member found for 
-  ServerObjectType ServerObject::type()
-
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:85: warning: documented function `void ServerObject::setType' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:87: warning: no uniquely matching class member found for 
-  ServerProperties * ServerObject::properties()
-
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:90: warning: documented function `void ServerObject::connectUI' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:96: warning: documented function `ServerArray::ServerArray' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:99: warning: no uniquely matching class member found for 
-  int ServerArray::size()
-
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:102: warning: no uniquely matching class member found for 
-  void ServerArray::setSize(int size)
-
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:105: warning: documented function `bool ServerArray::getData' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:106: warning: documented function `void ServerArray::registerObserver' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:110: warning: documented function `ServerCanvas::ServerCanvas' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:116: warning: no uniquely matching class member found for 
-  ServerObject * ServerCanvas::createObject(string name)
-
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:124: warning: no matching class member found for 
-  void ServerCanvas::deleteObject(ServerObject *o)
-
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:129: warning: documented function `void * ServerCanvas::canvasObject' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:133: warning: documented function `ServerCanvas * ServerCanvas::createEmptySubCanvas' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:135: warning: documented function `ServerArray * ServerCanvas::createArray' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:136: warning: documented function `void ServerCanvas::deleteArray' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:139: warning: documented function `ServerPatchcord * ServerCanvas::connect' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:143: warning: documented function `void ServerCanvas::disconnect' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:146: warning: documented function `vector< ServerObject * > ServerCanvas::getObjectList' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:150: warning: documented function `vector< ServerPatchcord * > ServerCanvas::getConnectionList' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:154: warning: documented function `void ServerCanvas::registerObserver' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:155: warning: no matching class member found for 
-  void ServerCanvas::deleteObserver(Observer *o)
-
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:158: warning: documented function `ServerPath ServerCanvas::path' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:163: warning: documented function `void ServerCanvas::loadbang' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:196: warning: documented function `ServerInstance::ServerInstance' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:209: warning: documented function `ServerCanvas * ServerInstance::createCanvas' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:216: warning: documented function `void ServerInstance::deleteCanvas' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:220: warning: no matching class member found for 
-  void ServerInstance::dspOn()
-
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:221: warning: no matching class member found for 
-  void ServerInstance::dspOff()
-
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:222: warning: documented function `void ServerInstance::dspSwitch' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:224: warning: documented function `void ServerInstance::registerObserver' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:225: warning: no matching class member found for 
-  void ServerInstance::deleteObserver(Observer *o)
-
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:228: warning: documented function `void ServerInstance::setConsoleObserver' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:234: warning: documented function `ServerPath * ServerInstance::path' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:236: warning: documented function `vector< string * > ServerInstance::listRegisteredObjects' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:238: warning: documented function `void ServerInstance::loadLibrary' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:240: warning: no matching file member found for 
-void ServerInstance::post(string text)Possible candidates:
-  EXTERN void post(const char *fmt,...)
-
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:241: warning: no matching file member found for 
-void ServerInstance::error(string text)Possible candidates:
-  EXTERN void error(const char *fmt,...) ATTRIBUTE_FORMAT_PRINTF(1
-
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:242: warning: no matching file member found for 
-void ServerInstance::verbose(int level, string text)Possible candidates:
-  EXTERN void EXTERN void verbose(int level, const char *fmt,...) ATTRIBUTE_FORMAT_PRINTF(2
-
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:244: warning: documented function `ServerAudioDevice * ServerInstance::audioDevice' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:245: warning: documented function `ServerMIDIDevice * ServerInstance::midiDevice' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:249: warning: documented function `TheServer::TheServer' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:251: warning: documented function `vector< ServerInstance * > TheServer::instances' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp:254: warning: documented function `ServerInstance * TheServer::createInstance' was not declared or defined.
-/home/travis/build/njazz/qtpd/qtpd_gui/lib_headers/ceammc_atomlist.h:67: warning: included file pos is not found. Check your EXAMPLE_PATH
-ome/travis/build/njazz/qtpd/qtpd_gui/window/PatchWindow.h...
+Parsing file /home/travis/build/njazz/qtpd/qtpd_gui/window/PatchWindow.h...
 Preprocessing /home/travis/build/njazz/qtpd/qtpd_gui/window/PdWindow.cpp...
-Parsing file /home/travis/build/njazz/qtpd/qtpd_gui/window/PdWindow.cpp...
+Parsing file /home/t/home/travis/build/njazz/qtpd/qtpd_gui/lib_headers/ceammc_atomlist.h:67: warning: included file pos is not found. Check your EXAMPLE_PATH
+ravis/build/njazz/qtpd/qtpd_gui/window/PdWindow.cpp...
 Preprocessing /home/travis/build/njazz/qtpd/qtpd_gui/window/PdWindow.h...
 Parsing file /home/travis/build/njazz/qtpd/qtpd_gui/window/PdWindow.h...
 Preprocessing /home/travis/build/njazz/qtpd/qtpd_gui/window/PropertiesWindow.cpp...
@@ -602,12 +503,12 @@ Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIClass.h..
 Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIInstance.cpp...
 Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIInstance.h...
 Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIMethod.cpp...
-Generating do/home/travis/build/njazz/qtpd/qtpd_gui/PdLink.h:226: warning: The following parameters of cmp_connectUI(t_pd *obj, void *uiobj, t_updateUI func) are not documented:
+Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIMethod.h...
+Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIProperty.cpp...
+/home/travis/build/njazz/qtpd/qtpd_gui/PdLink.h:226: warning: The following parameters of cmp_connectUI(t_pd *obj, void *uiobj, t_updateUI func) are not documented:
   parameter 'uiobj'
 /home/travis/build/njazz/qtpd/qtpd_gui/PdLink.h:128: warning: argument 'canvas' of command @param is not found in the argument list of cmp_moveobject(t_object *obj, int x, int y)
 /home/travis/build/njazz/qtpd/qtpd_gui/PdLink.h:128: warning: argument 'message' of command @param is not found in the argument list of cmp_moveobject(t_object *obj, int x, int y)
-cs for file /home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIMethod.h...
-Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIProperty.cpp...
 Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIProperty.h...
 Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/oopd/UISignal.cpp...
 Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/oopd/UISignal.h...
@@ -618,7 +519,6 @@ Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/properties/Prope
 Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/properties/Property.h...
 Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/properties/PropertyList.cpp...
 Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/properties/PropertyList.h...
-Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/serverAPIPrototype.cpp...
 Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/widgets/ObjectMaker.cpp...
 Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/widgets/ObjectMaker.h...
 Generating docs for file /home/travis/build/njazz/qtpd/qtpd_gui/widgets/UIArrayEditor.cpp...
@@ -666,7 +566,13 @@ Generating docs for compound _template...
 Generating docs for compound _text...
 Generating docs for compound _tick...
 Generating docs for compound _updateheader...
-Generating docs for compound _widg/home/travis/build/njazz/qtpd/qtpd_gui/lib_headers/ceammc_atomlist.h:259: warning: argument 'l' of command @param is not found in the argument list of ceammc::AtomList::add(const AtomList &a, const AtomList &b, NonEqualLengthBehaivor lb=MINSIZE)
+Generating docs for compound _widgetbehavior...
+Generating docs for compound UIArrayEditor...
+Generating docs for compound word...
+Generating namespace index...
+Generating docs for namespace ceammc
+Generating docs for compound ceammc::Atom...
+Generating docs for compound ceammc::A/home/travis/build/njazz/qtpd/qtpd_gui/lib_headers/ceammc_atomlist.h:259: warning: argument 'l' of command @param is not found in the argument list of ceammc::AtomList::add(const AtomList &a, const AtomList &b, NonEqualLengthBehaivor lb=MINSIZE)
 /home/travis/build/njazz/qtpd/qtpd_gui/lib_headers/ceammc_atomlist.h:259: warning: The following parameters of ceammc::AtomList::add(const AtomList &a, const AtomList &b, NonEqualLengthBehaivor lb=MINSIZE) are not documented:
   parameter 'a'
   parameter 'lb'
@@ -697,27 +603,20 @@ Generating docs for compound _widg/home/travis/build/njazz/qtpd/qtpd_gui/lib_hea
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIItem.h:60: warning: The following parameters of qtpd::UIItem::setEditModeRef(t_editMode *canvasEditModeRef) are not documented:
   parameter 'canvasEditModeRef'
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UINewPatchcord.h:24: warning: Found unknown command `\group'
-/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:210: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addInlet()
-/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:221: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addOutlet()
-/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:194: warning: Found unknown command `\group'
-/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:194: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setInletsPos()
-/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:201: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setOutletsPos()
+/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:213: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addInlet()
+/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:224: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addOutlet()
+/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:197: warning: Found unknown command `\group'
+/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:197: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setInletsPos()
+/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:204: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setOutletsPos()
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:101: warning: Found unknown command `\group'
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIPatchcord.h:73: warning: Found unknown command `\group'
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIPatchcord.h:52: warning: Found unknown command `\group'
-/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:194: warning: Found unknown command `\group'
-/home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIInstance.h:316: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIInstance::setInletsPos() inherited from member setInletsPos at line 194 in file /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h
-/home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIInstance.h:317: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIInstance::setOutletsPos() inherited from member setOutletsPos at line 201 in file /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h
+/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:197: warning: Found unknown command `\group'
+/home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIInstance.h:316: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIInstance::setInletsPos() inherited from member setInletsPos at line 197 in file /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h
+/home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIInstance.h:317: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIInstance::setOutletsPos() inherited from member setOutletsPos at line 204 in file /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h
 /home/travis/build/njazz/qtpd/qtpd_gui/properties/PropertyList.h:110: warning: Found unknown command `\detais'
 /home/travis/build/njazz/qtpd/qtpd_gui/properties/PropertyList.h:110: warning: Found unknown command `\detais'
-etbehavior...
-Generating docs for compound printHook...
-Generating docs for compound UIArrayEditor...
-Generating docs for compound word...
-Generating namespace index...
-Generating docs for namespace ceammc
-Generating docs for compound ceammc::Atom...
-Generating docs for compound ceammc::AtomList...
+tomList...
 Generating docs for namespace qtpd
 Generating docs for compound qtpd::CanvasView...
 Generating docs for compound qtpd::Clipboard...
@@ -794,6 +693,6 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-symbol cache used 2287/65536 hits=174561 misses=2287
-lookup cache used 3947/65536 hits=22096 misses=4153
+symbol cache used 2285/65536 hits=174369 misses=2285
+lookup cache used 3946/65536 hits=22103 misses=4152
 finished...
