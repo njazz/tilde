@@ -6,17 +6,13 @@
 
 // TODO
 #include "../API_prototype/serverAPIprototype.h"
-
 #include "PatchWindow.h"
+//#include "PdWindow.h"
 
 //#include "ControllerObserver.h"
 
-#include "PdWindow.h"
-
 #ifdef WITH_PYTHON
-
 #include "python/PythonQtScriptingConsole.h"
-
 #endif
 
 //void pd_window_printhook(const char* s)
@@ -24,19 +20,18 @@
 //    //emit _pdWindow->cm_log_signal(QString(s));
 //}
 
+namespace qtpd{
+
+class PdWindow;
+
 class PdWindowConsoleObserver : public ConsoleObserver {
 private:
     PdWindow* _window;
 
 public:
     void setWindow(PdWindow* w) { _window = w; };
+    void update();
 
-    void update()
-    {
-        if (_window) {
-            emit _window->cm_log_signal(QString(text().c_str()));
-        }
-    };
 };
 
 class ApplicationController : public QObject {
@@ -50,44 +45,9 @@ private:
     PdWindowConsoleObserver* _consoleObserver;
 
 public:
-    ApplicationController()
-    {
-        qDebug("new app controller");
-
-        _server = new TheServer();
-        _mainInstance = newServerInstance();
-
-#ifdef WITH_PYTHON
-        PythonQtObjectPtr mainContext = PythonQt::self()->getMainModule();
-        _pythonConsole = new PythonQtScriptingConsole(NULL, mainContext);
-        qDebug("pyConsole %lu", (long)_pythonConsole);
-#endif
-
-        //cmp_pdinit();
-        //        cmp_setprinthook([](const char* str) {
-        //            emit _pdWindow->cm_log_signal(QString(str));
-        //        });
-
-        _consoleObserver = new PdWindowConsoleObserver;
-
-        _mainInstance->setConsoleObserver(_consoleObserver);
-
-        _pdWindow = new PdWindow();
-        _pdWindow->move(0, 100);
-        _pdWindow->show();
-        _pdWindow->setAppController(this);
-
-        _consoleObserver->setWindow(_pdWindow);
-    };
-
-    ServerInstance* newServerInstance()
-    {
-        return _server->createInstance();
-    };
-
-    ServerInstance* mainInstance() { return _mainInstance; }
-
-    Observer* controllerObserver(); //ControllerObserver*
+    ApplicationController();
+    ServerInstance* mainInstance() {return _mainInstance;}
+    Observer* controllerObserver();
 
 public slots:
     void newPatchWindowController(); //older createPatch //PatchWindowController*
@@ -102,5 +62,6 @@ public slots:
     void dspOn();
     void dspOff();
 };
+}
 
 #endif // CM_PDLINK_H

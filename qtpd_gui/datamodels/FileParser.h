@@ -7,8 +7,6 @@
 #include <QFile>
 #include <QTextStream>
 
-
-
 // todo non-static class
 
 namespace qtpd {

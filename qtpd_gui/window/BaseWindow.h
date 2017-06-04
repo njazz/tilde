@@ -4,23 +4,14 @@
 #include <QMainWindow>
 #include <QtWidgets>
 
-//#include "BaseMenu.h"
-
-
-
-#ifdef WITH_PYTHON
-
-#include "python/PythonQtScriptingConsole.h"
-
-#endif
-
-class ApplicationController;
-
 namespace Ui {
 class cm_basewindow;
 }
 
 namespace qtpd {
+
+class ApplicationController;
+
 ////
 /// \brief Base class for windows (patch, pd)
 ///
@@ -29,12 +20,9 @@ class BaseWindow : public QMainWindow {
 
     ApplicationController* _appController;
 
-private:
-    static PythonQtScriptingConsole* pythonConsole_;
 
 public:
     explicit BaseWindow(QWidget* parent = 0);
-    //~BaseWindow();
 
     void setAppController(ApplicationController* appController);
 
@@ -97,19 +85,6 @@ public:
 private slots:
 
     void close();
-
-//    void dspOn();
-//    void dspOff();
-
-    // remove
-//    void preferencesWindow();
-//    void audioSettingsWindow();
-
-//    void newFile();
-//    void openFileDialog();
-
-//    void pdWindow();
-//    void pythonConsole();
 };
 }
 

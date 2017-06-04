@@ -15,6 +15,10 @@
 #include "Preferences.h"
 
 #include "FileSaver.h"
+#include "UIObject.h"
+
+#include "CanvasView.h"
+
 
 using namespace qtpd;
 
@@ -205,11 +209,14 @@ public Q_SLOTS:
     // arrays: yet here
     void newArray(CanvasView* c, QString name, int size)
     {
-        if (c->pdObject()) {
-            t_canvas* pdCanvas = (t_canvas*)c->pdObject();
-            //yet this way:
-            cmp_new_array(pdCanvas, gensym(name.toStdString().c_str()), (t_floatarg)size, 1, 1);
-        }
+        // TODO
+        c->canvasData()->serverCanvas()->createArray();
+
+//        if (c->pdObject()) {
+//            t_canvas* pdCanvas = (t_canvas*)c->pdObject();
+//            //yet this way:
+//            cmp_new_array(pdCanvas, gensym(name.toStdString().c_str()), (t_floatarg)size, 1, 1);
+//        }
     }
 };
 
@@ -314,7 +321,7 @@ public Q_SLOTS:
     PatchWindow* newPatchWindow()
     {
         PatchWindow* ret;
-        ret = PatchWindow::newWindow();
+        ret = new PatchWindow();
         ret->show();
         return ret;
     };

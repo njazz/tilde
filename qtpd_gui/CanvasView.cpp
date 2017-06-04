@@ -46,7 +46,7 @@ CanvasView::CanvasView(QGraphicsView* parent)
     _connectionStartObject = 0;
     _connectionStartOutlet = 0;
     setDragObject(0);
-    setPdObject(0); //extra
+    //setPdObject(0); //extra
 
     _readOnly = false;
 
@@ -63,6 +63,11 @@ CanvasView::CanvasView(QGraphicsView* parent)
 
     scale(1, 1);
     _zoom = 1;
+
+    setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+    setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+
+    objectMaker()->close();
 }
 
 // ---------------------------------------------

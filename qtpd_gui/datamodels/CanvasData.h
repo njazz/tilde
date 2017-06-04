@@ -4,14 +4,8 @@
 #ifndef CM_CANVAS_TYPES_H
 #define CM_CANVAS_TYPES_H
 
-//#include "UIObjectItem.h"
-#include "UIPatchcord.h"
-
-#include <set>
-
 #include "Clipboard.h"
-
-//#include "../API_prototype/clientAPIPrototype.h"
+#include "UIPatchcord.h"
 
 #include "UIBox.h"
 
@@ -21,10 +15,6 @@ namespace qtpd {
 
 typedef std::vector<UIObject*> objectVec;
 typedef std::vector<UIPatchcord*> patchcordVec;
-
-// TODO move to sets?
-//typedef std::set<UIObject*> objectSet;
-//patchcord set?
 
 ////
 /// \brief shared canvas data model - boxes, patchcords
@@ -58,8 +48,8 @@ public:
     void setInlets(portItemVec* inlets) { _inlets = inlets; }
     void setOutlets(portItemVec* outlets) { _outlets = outlets; }
 
-    void setFileName(QString fName){_fileName = fName;}
-    QString fileName() {return _fileName;}
+    void setFileName(QString fName) { _fileName = fName; }
+    QString fileName() { return _fileName; }
 
     bool hasObjects()
     {
@@ -179,8 +169,6 @@ public:
             ((UIPatchcord*)*it2)->setHover(false);
         }
     }
-
-
 
     // ----------
 

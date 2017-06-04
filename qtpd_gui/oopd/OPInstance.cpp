@@ -15,6 +15,8 @@
 #include "PatchWindow.h"
 #include "PatchWindowController.h"
 
+#include "CanvasView.h"
+
 namespace qtpd {
 
 OPInstance::OPInstance(OPClass* opClass)
@@ -32,10 +34,12 @@ OPInstance::OPInstance(OPClass* opClass)
         // copy canvas here
         QStringList canvasStrings = opClass->_patchWindow->controller()->canvasData()->asPdFileStrings();
 
-        _patchWindow = PatchWindow::newWindow();
+        _patchWindow = new PatchWindow();
         FileParser::setParserWindow(_patchWindow);
 
-        _canvas = (t_canvas*)_patchWindow->canvasView()->pdObject();
+        // TODO
+        //_canvas = (t_canvas*)_patchWindow->canvasView()->pdObject();
+
         // register instance before copying objects
         OOPD::inst()->registerInstance(this, _className, _canvas, _symbol);
 

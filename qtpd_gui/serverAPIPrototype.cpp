@@ -194,6 +194,8 @@ vector<ConsoleObserver*> printHook::_consoleObservers;
 // ----------------------------------------
 ServerInstance::ServerInstance()
 {
+    cout << "######### new server instance" << endl;
+
     cmp_pdinit();
     cmp_setprinthook(&printHook::hookFunction);
 

@@ -6,8 +6,6 @@
 #include <QMainWindow>
 #include <QtWidgets>
 
-
-
 #include "Preferences.h"
 
 #include "UIDSP.h"
@@ -17,8 +15,6 @@
 namespace Ui {
 class cm_pdwindow;
 }
-
-
 
 namespace qtpd {
 ////

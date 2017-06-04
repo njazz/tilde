@@ -8,6 +8,8 @@
 
 namespace qtpd {
 
+class CanvasData;
+
 ////
 /// \brief saves pd files on 'client' (GUI) side
 ///
@@ -21,21 +23,7 @@ public:
     /// \param file
     /// \param canvas
     ///
-    static void saveCanvas(CanvasView* canvas, QFile* file)
-    {
-
-        // this calls top 'canvas' and gets all data as QStringList
-        // canvas saves contents recursively
-
-        // OLD, remove
-        QStringList fileData;// = canvas->canvasAsPdStrings();
-
-        //todo check
-        for (int i = 0; i < fileData.count(); i++) {
-            QString str1 = fileData.at(i);
-            file->write(str1.toStdString().c_str(), str1.size());
-        }
-    };
+    static void saveCanvas(CanvasView* canvas, QFile* file);
 
     ////
     /// \brief new API saveCanvas
@@ -49,25 +37,9 @@ public:
     /// \param fname
     /// \param canvas
     ///
-    static void save(QString fname, CanvasView* canvas)
-    {
-        QFile f(fname);
-        f.open(QIODevice::WriteOnly);
+    static void save(QString fname, CanvasView* canvas);
+    static void save(QString fname, CanvasData* canvasData);
 
-        FileSaver::saveCanvas(canvas, &f);
-
-        f.close();
-    }
-
-    static void save(QString fname, CanvasData* canvasData)
-    {
-        QFile f(fname);
-        f.open(QIODevice::WriteOnly);
-
-        FileSaver::saveCanvas(canvasData, &f);
-
-        f.close();
-    }
 };
 }
 

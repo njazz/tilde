@@ -14,6 +14,8 @@
 #include "FileParser.h"
 #include "FileSaver.h"
 
+#include "CanvasView.h"
+
 #include "PatchWindowController.h"
 
 namespace qtpd {
@@ -23,14 +25,15 @@ OPClass::OPClass(string className)
 
     //TODO
     // create canvas here
-    _patchWindow = PatchWindow::newWindow();
+    _patchWindow = new PatchWindow();
 
     QString windowTitle = QString("pdclass: ") + QString(className.c_str());
     _patchWindow->setWindowTitle(windowTitle);
     _patchWindow->canvasView()->setKeepPdObject(true);
     _patchWindow->hide();
 
-    _canvas = (t_canvas*)_patchWindow->canvasView()->pdObject();
+    // TODO
+    //_canvas = (t_canvas*)_patchWindow->canvasView()->pdObject();
     _symbol = gensym(_className.c_str());
 
     _className = className;

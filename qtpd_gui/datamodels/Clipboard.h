@@ -5,7 +5,6 @@
 #define CLIPBOARD_H
 
 #include <QObject>
-
 #include <QDebug>
 
 namespace qtpd{

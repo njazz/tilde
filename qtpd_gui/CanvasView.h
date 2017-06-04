@@ -58,18 +58,15 @@ private:
     SelectionRect* _selectionRect;
     UINewPatchcord* _newLine;
 
-    t_canvas* _pdObject;
     UIObject* _dragObject;
 
     float _zoom;
 
-    //QString _fileName;
-
-    //
-
     Q_OBJECT
 
 public:
+    explicit CanvasView(QGraphicsView* parent = 0);
+
     // todo fix
     QPoint newObjectPos() { return _newObjectPos; }
 
@@ -80,9 +77,6 @@ public:
 
     QString fileName() { return _canvasData.fileName(); }
     void setFileName(QString object) { _canvasData.setFileName(object); }
-
-    t_canvas* pdObject() { return _pdObject; }
-    void setPdObject(t_canvas* c) { _pdObject = c; }
 
     void setZoom(float zoom);
     float getZoom() { return _zoom; }
@@ -129,7 +123,7 @@ public:
 
     // -------------------------------------------------------
 
-    explicit CanvasView(QGraphicsView* parent = 0);
+
 
     void addInlet();
     void addOutlet();
@@ -191,15 +185,15 @@ public:
     ///
     //void deleteObject(UIObject* box);
 
-//    ////
-//    /// \brief delete all selected object boxes
-//    ///
-//    void deleteSelectedObjects();
+    //    ////
+    //    /// \brief delete all selected object boxes
+    //    ///
+    //    void deleteSelectedObjects();
 
-//    ////
-//    /// \brief delete all selected patchcords
-//    ///
-//    void deleteSelectedPatchcords();
+    //    ////
+    //    /// \brief delete all selected patchcords
+    //    ///
+    //    void deleteSelectedPatchcords();
 
     // -------------------------------------------------------
 
@@ -210,29 +204,29 @@ public:
     ///
     UIObject* getObjectByIndex(int idx);
 
-//    ////
-//    /// \brief returns vector of all object boxes - needed by filesaver
-//    /// \return
-//    ///
-//    objectVec objectBoxes();
+    //    ////
+    //    /// \brief returns vector of all object boxes - needed by filesaver
+    //    /// \return
+    //    ///
+    //    objectVec objectBoxes();
 
-//    ////
-//    /// \brief returns vector of all patchcords - needed by filesaver
-//    /// \return
-//    ///
-//    patchcordVec patchcords();
+    //    ////
+    //    /// \brief returns vector of all patchcords - needed by filesaver
+    //    /// \return
+    //    ///
+    //    patchcordVec patchcords();
 
-//    ////
-//    /// \brief returns vector of selected object boxes
-//    /// \return
-//    ///
-//    objectVec selectedObjectBoxes();
+    //    ////
+    //    /// \brief returns vector of selected object boxes
+    //    /// \return
+    //    ///
+    //    objectVec selectedObjectBoxes();
 
-//    ////
-//    /// \brief returns vector of selected patchcords
-//    /// \return
-//    ///
-//    patchcordVec selectedPatchcords();
+    //    ////
+    //    /// \brief returns vector of selected patchcords
+    //    /// \return
+    //    ///
+    //    patchcordVec selectedPatchcords();
 
     ////
     /// \brief returns patchcords that are connected to specific object
@@ -241,38 +235,38 @@ public:
     ///
     patchcordVec patchcordsForObject(UIObject* obj);
 
-//    ////
-//    /// \brief find object index in list
-//    /// \details this may be different from object index inside pd canvas
-//    /// \param obj
-//    /// \return
-//    ///
-//    int findObjectIndex(UIObject* obj);
+    //    ////
+    //    /// \brief find object index in list
+    //    /// \details this may be different from object index inside pd canvas
+    //    /// \param obj
+    //    /// \return
+    //    ///
+    //    int findObjectIndex(UIObject* obj);
 
     //remove
-//    ////
-//    /// \brief this returns "restore ..." for canvas as box or calls filesaver for canvas
-//    /// \return
-//    ///
-//    virtual std::string asPdFileString();
+    //    ////
+    //    /// \brief this returns "restore ..." for canvas as box or calls filesaver for canvas
+    //    /// \return
+    //    ///
+    //    virtual std::string asPdFileString();
 
-//    ///////
-//    ///
-//    /////
-//    /// \brief returns patchcord as pd string
-//    /// \details move this later
-//    /// \param patchcord
-//    /// \return
-//    ///
-//    std::string patchcordAsPdFileString(UIPatchcord* pcord);
+    //    ///////
+    //    ///
+    //    /////
+    //    /// \brief returns patchcord as pd string
+    //    /// \details move this later
+    //    /// \param patchcord
+    //    /// \return
+    //    ///
+    //    std::string patchcordAsPdFileString(UIPatchcord* pcord);
 
-//    ////
-//    /// \brief converts UI patchcord object with 4 pointers to 4 numbers of objects in canvas
-//    /// \details this is mostly for saving file
-//    /// \param pcord
-//    /// \return
-//    ///
-//    t_patchcordAsNumbers patchcordAsNumbers(UIPatchcord* pcord);
+    //    ////
+    //    /// \brief converts UI patchcord object with 4 pointers to 4 numbers of objects in canvas
+    //    /// \details this is mostly for saving file
+    //    /// \param pcord
+    //    /// \return
+    //    ///
+    //    t_patchcordAsNumbers patchcordAsNumbers(UIPatchcord* pcord);
 
     ////
     /// \brief selects single box. mostly used by replace object routine in objectmaker
@@ -280,21 +274,10 @@ public:
     ///
     void selectObject(UIObject* obj);
 
-//    //
-//    / \brief select all boxes
-//    /
-//    void selectAll();
-
     ////
     /// \brief change size to fit all objects
     ///
     void resizeToObjects();
-
-//    ////
-//    /// \brief returns canvas data for saving
-//    /// \return
-//    ///
-//    QStringList canvasAsPdStrings();
 
     ////
     /// \brief this is for loading or copying canvases. not yet used in fileparser
@@ -336,11 +319,6 @@ public:
     /// \brief shows object maker for 'new object' menu command
     ///
     void showNewObjectMaker();
-
-//    void dataCut();
-//    void dataCopy();
-//    void dataDuplicate();
-//    void dataPaste();
 
     // -- NEW
 

@@ -85,7 +85,10 @@ UIObject* UIMethod::createObject(QString objectData, t_canvas* pdCanvas, QGraphi
     // OOPD
 
     // not very clean
-    t_canvas* cnv = ((CanvasView*)parent)->pdObject();
+
+    // TODO
+    //t_canvas* cnv = ((CanvasView*)parent)->pdObject();
+    t_canvas *cnv = 0;
 
     if (OOPD::inst()->canvasIsPatch(cnv)) {
         //fix that

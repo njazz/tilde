@@ -5,6 +5,8 @@
 
 #include "PatchWindow.h"
 
+#include "CanvasView.h"
+
 namespace qtpd {
 PatchWindow* FileParser::_pdParserPrevWindow = 0;
 PatchWindow* FileParser::_pdParserWindow = 0;
@@ -406,7 +408,7 @@ void FileParser::parseQString(QString line)
 
         _pdParserPrevWindow = _pdParserWindow;
 
-        PatchWindow* newWnd = PatchWindow::newWindow();
+        PatchWindow* newWnd = new PatchWindow();
         _pdParserWindow = newWnd;
 
         //save pointer to first canvas. needed to set file name
@@ -498,7 +500,8 @@ void FileParser::open(QString fname)
             _pdParserWindow->setFileName(fname);
             _pdParserWindow->canvasView()->setEditMode(em_Locked);
 
-            cmp_loadbang(_pdParserWindow->canvasView()->pdObject());
+            // TODO
+            //cmp_loadbang(_pdParserWindow->canvasView()->pdObject());
 
             _pdParserWindow->show();
         }

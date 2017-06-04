@@ -6,11 +6,40 @@
 
 #include "AudioSettings.h"
 
+#include "PdWindow.h"
+
+namespace qtpd{
+
+ApplicationController:: ApplicationController()
+{
+    qDebug("new app controller");
+
+    _server = new TheServer();
+    _mainInstance = _server->createInstance();
+
+#ifdef WITH_PYTHON
+    PythonQtObjectPtr mainContext = PythonQt::self()->getMainModule();
+    _pythonConsole = new PythonQtScriptingConsole(NULL, mainContext);
+    qDebug("pyConsole %lu", (long)_pythonConsole);
+#endif
+
+    _consoleObserver = new PdWindowConsoleObserver;
+
+    _mainInstance->setConsoleObserver(_consoleObserver);
+
+    _pdWindow = new PdWindow();
+    _pdWindow->move(0, 100);
+    _pdWindow->show();
+    _pdWindow->setAppController(this);
+
+    _consoleObserver->setWindow(_pdWindow);
+};
+
 void ApplicationController::newPatchWindowController()
 {
     //return
     PatchWindowController* newP = new PatchWindowController(this->mainInstance());
-    newP->newWindow();
+    newP->firstWindow()->show();
 };
 
 void ApplicationController::openFileDialog()
@@ -75,6 +104,8 @@ void ApplicationController::dspOn()
 {
     //cmp_switch_dsp(true);
     //dspOnAct->setChecked(true);
+
+    qDebug() << "dsp on";
     _mainInstance->dspOn();
 
     //todo DSP observer
@@ -87,5 +118,13 @@ void ApplicationController::dspOff()
      _mainInstance->dspOff();
 }
 
+void PdWindowConsoleObserver:: update()
+{
+    if (_window) {
+        emit _window->cm_log_signal(QString(text().c_str()));
+    }
+};
+
+}
 
 

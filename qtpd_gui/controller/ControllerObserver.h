@@ -4,13 +4,16 @@
 #ifndef CONTROLLEROBSERVER
 #define CONTROLLEROBSERVER
 
+namespace qtpd {
+
 class PatchWindowController;
 
 class ControllerObserver : Observer {
 public:
     ControllerObserver(PatchWindowController* Controller = 0){};
 
-    virtual void update(); // controller->updateDspOn()
+    virtual void update();
 };
+}
 
 #endif // CM_PDLINK_H
