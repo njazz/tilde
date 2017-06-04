@@ -20,6 +20,7 @@ var searchData=
   ['patchcords',['patchcords',['../classqtpd_1_1_canvas_data.html#aa6a1ff15e1a75edd6b28ad4bcb6a578d',1,'qtpd::CanvasData']]],
   ['patchcordsaspdfilestrings',['patchcordsAsPdFileStrings',['../classqtpd_1_1_canvas_data.html#a13d9919a4358f17e60829f16995f0bea',1,'qtpd::CanvasData']]],
   ['patchcordsforobject',['patchcordsForObject',['../classqtpd_1_1_canvas_view.html#ab69fd50d63c369387ec783c1fb9bccfd',1,'qtpd::CanvasView']]],
+  ['patchwindow',['PatchWindow',['../classqtpd_1_1_patch_window.html#a69d314b0dd596b5ce889f855fca01764',1,'qtpd::PatchWindow']]],
   ['patchwindowcontroller',['PatchWindowController',['../classqtpd_1_1_patch_window_controller.html#ac0ec5e4dd4fc0e5b7154c43100916f4f',1,'qtpd::PatchWindowController']]],
   ['paths',['paths',['../classqtpd_1_1_preferences.html#add69fd0a89a565bc23d08eb6a1dd59c6',1,'qtpd::Preferences']]],
   ['pd_5fanything',['pd_anything',['../m__pd_8h.html#ae7a0acd905d14285537e620457b09af3',1,'m_pd.h']]],
@@ -52,9 +53,9 @@ var searchData=
   ['pdinlettype',['pdInletType',['../classqtpd_1_1_u_i_object.html#a77f34c6557cd08be98617e6768672da5',1,'qtpd::UIObject']]],
   ['pdinstance_5ffree',['pdinstance_free',['../m__pd_8h.html#a22e32b73d9c46791f0eb01d4a8520d30',1,'m_pd.h']]],
   ['pdinstance_5fnew',['pdinstance_new',['../m__pd_8h.html#ab0455bd0c1539b77c89b0d1ad22ab759',1,'m_pd.h']]],
-  ['pdobject',['pdObject',['../classqtpd_1_1_canvas_view.html#a473440eff5c9c85c6f967c5a55bd060e',1,'qtpd::CanvasView::pdObject()'],['../classqtpd_1_1_u_i_link.html#abf2d491d721f909e9f6f98559ae71fbe',1,'qtpd::UILink::pdObject()'],['../classqtpd_1_1_u_i_text.html#a20a1e21b277ddf6fb89ecce5ffdb0af8',1,'qtpd::UIText::pdObject()']]],
+  ['pdobject',['pdObject',['../classqtpd_1_1_u_i_link.html#abf2d491d721f909e9f6f98559ae71fbe',1,'qtpd::UILink::pdObject()'],['../classqtpd_1_1_u_i_text.html#a20a1e21b277ddf6fb89ecce5ffdb0af8',1,'qtpd::UIText::pdObject()']]],
   ['pdoutlettype',['pdOutletType',['../classqtpd_1_1_u_i_object.html#a765ab43f6b07c8f94c06d3ffa4da4996',1,'qtpd::UIObject']]],
-  ['pdwindow',['pdWindow',['../class_application_controller.html#a8824f7e2390da5336dd8820153a676cd',1,'ApplicationController::pdWindow()'],['../classqtpd_1_1_pd_window.html#a916bc5d8c3d803b541ab325d8e9d0d1c',1,'qtpd::PdWindow::PdWindow()']]],
+  ['pdwindow',['PdWindow',['../classqtpd_1_1_pd_window.html#a916bc5d8c3d803b541ab325d8e9d0d1c',1,'qtpd::PdWindow::PdWindow()'],['../classqtpd_1_1_application_controller.html#ae366e0bcd2883171be312b6c74a9c1cd',1,'qtpd::ApplicationController::pdWindow()']]],
   ['plus_5fperform',['plus_perform',['../m__pd_8h.html#a0e2c87e5829496d5d7f02537adebf4e0',1,'m_pd.h']]],
   ['pointerinlet_5fnew',['pointerinlet_new',['../m__pd_8h.html#a62f4c920b87f89291f10c14d62e34781',1,'m_pd.h']]],
   ['port',['Port',['../classqtpd_1_1_port.html#ad995d08ebf05486c0e102c7147294d2e',1,'qtpd::Port']]],
@@ -69,7 +70,7 @@ var searchData=
   ['poststring',['poststring',['../m__pd_8h.html#a7bdfa77c804e50d0bad6b3a95108c8b6',1,'m_pd.h']]],
   ['powtodb',['powtodb',['../m__pd_8h.html#ad5e7e1cbea489ca87cd52eba2dd0ddc0',1,'m_pd.h']]],
   ['preferences',['Preferences',['../classqtpd_1_1_preferences.html#a1cfa3de6eaba61e9abb98852167a5c29',1,'qtpd::Preferences']]],
-  ['preferenceswindow',['preferencesWindow',['../class_application_controller.html#a36e7ec8a351498a6cceed47d5fb0a580',1,'ApplicationController']]],
+  ['preferenceswindow',['preferencesWindow',['../classqtpd_1_1_application_controller.html#a5b33b7c0b80a64f19da53310ad240cc6',1,'qtpd::ApplicationController']]],
   ['product',['product',['../classceammc_1_1_atom_list.html#ad77936233acbf196b9003c38cbb8a35e',1,'ceammc::AtomList']]],
   ['properties',['properties',['../classqtpd_1_1_u_i_object_data.html#aff81eb652c5d7b094f551edca2e3ce38',1,'qtpd::UIObjectData::properties()'],['../classqtpd_1_1_u_i_object.html#a69ed99ca86c7019f489f56b6dc96f8a4',1,'qtpd::UIObject::properties()'],['../classceammc_1_1_atom_list.html#a5b502470932003c7f606da6552fe0de7',1,'ceammc::AtomList::properties()']]],
   ['propertieswindow',['PropertiesWindow',['../classqtpd_1_1_properties_window.html#a00963af1db4eec6663d1c54e58c2c05a',1,'qtpd::PropertiesWindow']]],
@@ -79,5 +80,5 @@ var searchData=
   ['propertylist',['PropertyList',['../classqtpd_1_1_property_list.html#a66afd40f65771ed469a3a74d1446d4f5',1,'qtpd::PropertyList']]],
   ['propertymatrixsize',['propertyMatrixSize',['../classqtpd_1_1_u_i_matrix.html#a8f4b2d0e49aec13bc008ef96e57c84bc',1,'qtpd::UIMatrix']]],
   ['propertyupdate',['propertyUpdate',['../classqtpd_1_1_u_i_matrix.html#aa1dbab768f17342179bfa2cb347ac8a7',1,'qtpd::UIMatrix']]],
-  ['pythonconsole',['pythonConsole',['../class_application_controller.html#aa3da992b8adef7025a195fdb0a2a0064',1,'ApplicationController']]]
+  ['pythonconsole',['pythonConsole',['../classqtpd_1_1_application_controller.html#a44b57839794b7091d344fcb819724a80',1,'qtpd::ApplicationController']]]
 ];

@@ -28,6 +28,6 @@ var searchData=
   ['dsp_5fadd_5fscalarcopy',['dsp_add_scalarcopy',['../m__pd_8h.html#a8ed687e9b1efc6965d144929fb0a4b2f',1,'m_pd.h']]],
   ['dsp_5fadd_5fzero',['dsp_add_zero',['../m__pd_8h.html#a48e41487a3333392c0a3ddaa4844b4ae',1,'m_pd.h']]],
   ['dsp_5faddv',['dsp_addv',['../m__pd_8h.html#a5cfade43d51ed06a64845cfd90ef27ac',1,'m_pd.h']]],
-  ['dspoff',['dspOff',['../class_application_controller.html#a0f6f8517372d84ea687763d17f9d439a',1,'ApplicationController']]],
-  ['dspon',['dspOn',['../class_application_controller.html#aaa8890c4bc0e3865697f69e609018ef8',1,'ApplicationController']]]
+  ['dspoff',['dspOff',['../classqtpd_1_1_application_controller.html#afc82ce265ea8dee1311a2fe9cb827971',1,'qtpd::ApplicationController']]],
+  ['dspon',['dspOn',['../classqtpd_1_1_application_controller.html#a6213dd85bbbdbfbaf13a38e12800d7b4',1,'qtpd::ApplicationController']]]
 ];

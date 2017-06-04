@@ -24,6 +24,7 @@ var searchData=
   ['findpatchcord',['findPatchcord',['../classqtpd_1_1_canvas_data.html#a5ef8913f04f5ee65aebc31c542748d37',1,'qtpd::CanvasData']]],
   ['findpos',['findPos',['../classceammc_1_1_atom_list.html#a30f74ed1b06307572594bfa223f21d55',1,'ceammc::AtomList::findPos(const Atom &amp;a) const '],['../classceammc_1_1_atom_list.html#a3faa298a474fb19d94ddacf0ac9a9174',1,'ceammc::AtomList::findPos(AtomPredicate pred) const ']]],
   ['first',['first',['../classceammc_1_1_atom_list.html#a621130328f1786c6f80ec125f085b768',1,'ceammc::AtomList::first()'],['../classceammc_1_1_atom_list.html#a51e3048cc32689dcc3968bfc8109d6d2',1,'ceammc::AtomList::first() const ']]],
+  ['firstwindow',['firstWindow',['../classqtpd_1_1_patch_window_controller.html#a59eefbfea73744f949e65aec46f2e33f',1,'qtpd::PatchWindowController']]],
   ['float',['FLOAT',['../classceammc_1_1_atom.html#a7da58aeebfc1db2f1064e24089f84e0da6a330096aef884d421af5f5e2f5c0c5d',1,'ceammc::Atom']]],
   ['floatinlet_5fnew',['floatinlet_new',['../m__pd_8h.html#a140fa09e63662fe90e174c0c97e2df81',1,'m_pd.h']]],
   ['floatlist',['FloatList',['../namespaceceammc.html#ac9da2dc91c29d7d0d692407b272d5207',1,'ceammc']]],
