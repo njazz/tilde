@@ -18,6 +18,9 @@
 
 #include "ApplicationController.h"
 
+// TEST
+//#include "PdLink.h"
+
 namespace qtpd {
 
 PatchWindowController::PatchWindowController(ApplicationController* appController) //replace with parent (appcontroller)
@@ -113,7 +116,6 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
         return 0;
     }
 
-
     //qDebug() << "server object ok";
 
     UIObject* uiObject = ObjectLoader::inst().createUIObject(name.c_str());
@@ -123,8 +125,14 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
         return 0;
     }
 
-    ServerObject* serverObject = _serverCanvas->createObject(name);
+    //
+    connect(this, &PatchWindowController::signalCreateObject, _appController, &ApplicationController::slotCreateObject);
 
+    ServerObject* serverObject = emit signalCreateObject(_serverCanvas, name);
+
+    //ServerObject* serverObject = _serverCanvas->createObject(name);
+    // TEST
+    //serverObject->_pdObject = cmp_create_object((t_canvas*)_serverCanvas->canvasObject(),name,0,0);
 
     uiObject->setParentCanvasView(_windows[0]->canvasView());
     uiObject->setServerObject(serverObject);
@@ -509,7 +517,6 @@ void PatchWindowController::deletePatchcordsFor(UIItem* obj)
 
     updateViewports();
 }
-
 
 void PatchWindowController::setFileName(QString fname)
 {

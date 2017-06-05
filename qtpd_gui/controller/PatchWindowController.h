@@ -8,6 +8,7 @@
 #include "../API_prototype/serverAPIprototype.h"
 
 #include <QObject>
+#include <QPoint>
 
 class QGraphicsScene;
 class QGraphicsSceneMouseEvent;
@@ -23,6 +24,8 @@ class ApplicationController;
 class UIItem;
 
 class PatchWindowController : public QObject {
+    Q_OBJECT
+
 private:
     ApplicationController* _appController;
 
@@ -40,7 +43,6 @@ private:
 
     // temporary
     void doSave(QString fileName);
-
 
 public:
     PatchWindowController(ApplicationController* appController); //replace with parent (appcontroller)
@@ -143,8 +145,8 @@ public slots:
     };
 
     //
-//    void signalSelectBox(UIItem* box, QGraphicsSceneMouseEvent* event);
-//    void signalMoveBox(UIItem* box, QGraphicsSceneMouseEvent* event);
+    //    void signalSelectBox(UIItem* box, QGraphicsSceneMouseEvent* event);
+    //    void signalMoveBox(UIItem* box, QGraphicsSceneMouseEvent* event);
 
 private slots:
     void slotSelectObject(UIObject* object);
@@ -158,6 +160,9 @@ private slots:
 
     void slotSelectionFrame(QPoint start, QPoint end);
     void slotMoveSelectedBoxes(QPoint eventPos);
+
+signals:
+    ServerObject* signalCreateObject(ServerCanvas* canvas, string name);
 };
 }
 

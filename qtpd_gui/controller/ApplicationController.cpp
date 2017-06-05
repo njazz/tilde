@@ -6,8 +6,8 @@
 
 #include "AudioSettings.h"
 
-#include "PdWindow.h"
 #include "PatchWindow.h"
+#include "PdWindow.h"
 
 #include "FileParser.h"
 
@@ -18,7 +18,7 @@ ApplicationController::ApplicationController()
     qDebug("new app controller");
 
     _server = new TheServer();
-    //_mainServerInstance = _server->createInstance();
+//_mainServerInstance = _server->createInstance();
 
 #ifdef WITH_PYTHON
     PythonQtObjectPtr mainContext = PythonQt::self()->getMainModule();
@@ -129,4 +129,37 @@ void PdWindowConsoleObserver::update()
         emit _window->cm_log_signal(QString(text().c_str()));
     }
 };
+
+ServerObject* ApplicationController::slotCreateObject(ServerCanvas* canvas, string name)
+{
+    qDebug()<<"create obj slot";
+
+    ServerObject* serverObject = canvas->createObject(name);
+    // TEST
+    //serverObject->_pdObject = cmp_create_object((t_canvas*)_serverCanvas->canvasObject(),name,0,0);
+
+    //    uiObject->setParentCanvasView(_windows[0]->canvasView());
+    //    uiObject->setServerObject(serverObject);
+    //    uiObject->sync();
+
+    //    uiObject->setEditModeRef(_windows[0]->canvasView()->getEditModeRef());
+
+    //    // TODO
+
+    //    //connect(uiObject, &UIObject::selectBox, _windows[0]->canvasView(), &CanvasView::s_SelectBox);
+    //    //connect(uiObject, &UIObject::moveBox, _windows[0]->canvasView(), &CanvasView::s_MoveBox);
+
+    //    //uiObject->setEditModeRef( _windows[0]->canvasEditMode()); //Canvas::getEditModeRef());
+    //    //connect(uiObject, &UIObject::editObject, this, &CanvasView::objectStartsEdit);
+
+    //    uiObject->move(pos.x(), pos.y());
+
+    //    _canvasData->addUniqueBox(_canvasData->boxes(), uiObject);
+    //    _scene->addItem(uiObject);
+
+    //    connect(uiObject, &UIObject::selectBox, _windows[0]->canvasView(), &CanvasView::slotSelectBox);
+    //    connect(uiObject, &UIObject::moveBox, _windows[0]->canvasView(), &CanvasView::slotMoveBox);
+
+    return serverObject;
+}
 }

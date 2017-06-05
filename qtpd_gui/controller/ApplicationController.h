@@ -17,6 +17,7 @@ namespace qtpd {
 
 class PdWindow;
 class PatchWindow;
+class UIObject;
 
 class PdWindowConsoleObserver : public ConsoleObserver {
 private:
@@ -28,6 +29,8 @@ public:
 };
 
 class ApplicationController : public QObject {
+    //Q_OBJECT
+
 private:
     TheServer* _server;
     //ServerInstance* _mainServerInstance;
@@ -54,6 +57,8 @@ public slots:
 
     void dspOn();
     void dspOff();
+
+    ServerObject* slotCreateObject(ServerCanvas*canvas, string name);
 };
 }
 
