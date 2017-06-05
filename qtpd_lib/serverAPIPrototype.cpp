@@ -29,7 +29,7 @@ ServerObject::ServerObject()
 ServerObject::ServerObject(ServerObject* parent, string text)
 {
 
-    _parent = 0;
+    _parent = parent;
     _pdObject = 0;
     _type = typeObject;
     _properties = 0;
@@ -37,7 +37,11 @@ ServerObject::ServerObject(ServerObject* parent, string text)
     if (parent->type() == typeCanvas) {
         t_canvas* canvas = static_cast<t_canvas*>(reinterpret_cast<ServerCanvas*>(parent)->canvasObject());
         _pdObject = cmp_create_object(canvas, text, 0, 0);
+
+        std::cout << "|||||||||| new object canvas: " << canvas << " || pd object ptr " << _pdObject << std::endl;
     }
+
+    _errorBox = (!_pdObject);
 
     setType(typeObject);
 }
@@ -106,8 +110,8 @@ void ServerArray::registerObserver(Observer* o){};
 // ----------------------------------------
 ServerCanvas::ServerCanvas()
 {
-    _canvas = cmp_newpatch();
-    std::cout << "canvas ptr " << _canvas << std::endl;
+    _canvas = (void*)cmp_newpatch();
+    std::cout << "|||||||||| server canvas: " << this << " || pd canvas ptr " << _canvas << std::endl;
     setType(typeCanvas);
 }
 
@@ -256,7 +260,6 @@ ServerInstance* TheServer::firstInstance()
 }
 
 vector<ServerInstance*> TheServer::instances() { return _instances; };
-
 
 ServerInstance* TheServer::createInstance()
 {

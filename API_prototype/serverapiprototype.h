@@ -1,8 +1,6 @@
 #ifndef PDSERVERPROTOTYPE_H
 #define PDSERVERPROTOTYPE_H
 
-
-
 #include <string>
 #include <vector>
 
@@ -71,15 +69,17 @@ enum ServerObjectType { typeObject,
 
 class ServerObject {
 private:
-
-
     ServerObject* _parent;
     ServerObjectType _type;
     ServerProperties* _properties;
 
+    bool _errorBox;
+
 public:
     // temporary
     void* _pdObject;
+
+    bool errorBox(){return _errorBox;}
 
     ServerObject();
 
@@ -139,8 +139,8 @@ private:
 public:
     ServerCanvas();
 
-    void setParentInstance(ServerInstance *p){_parentInstance = p;}
-    ServerInstance* parentInstance(){return _parentInstance;}
+    void setParentInstance(ServerInstance* p) { _parentInstance = p; }
+    ServerInstance* parentInstance() { return _parentInstance; }
 
     ServerObject* createObject(string name); // Object* || Canvas*
     void deleteObject(ServerObject* o);
@@ -152,7 +152,7 @@ public:
     ServerArray* createArray();
     void deleteArray(ServerArray* a);
 
-    ServerPatchcord* patchcord(ServerObject *src, int srcIdx, ServerObject *dest, int destIdx); //?
+    ServerPatchcord* patchcord(ServerObject* src, int srcIdx, ServerObject* dest, int destIdx); //?
     void disconnect(ServerPatchcord* p); //??
 
     vector<ServerObject*> getObjectList();

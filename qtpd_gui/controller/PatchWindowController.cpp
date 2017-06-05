@@ -113,9 +113,8 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
         return 0;
     }
 
-    ServerObject* serverObject = _serverCanvas->createObject(name);
 
-    qDebug() << "server object ok";
+    //qDebug() << "server object ok";
 
     UIObject* uiObject = ObjectLoader::inst().createUIObject(name.c_str());
 
@@ -123,6 +122,9 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
         qDebug() << "bad ui object!";
         return 0;
     }
+
+    ServerObject* serverObject = _serverCanvas->createObject(name);
+
 
     uiObject->setParentCanvasView(_windows[0]->canvasView());
     uiObject->setServerObject(serverObject);

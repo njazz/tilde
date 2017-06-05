@@ -330,6 +330,7 @@ t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int
     delete list;
 
     ret2 = (t_object*)pd_newest();
+
     if (!ret2)
         return 0;
     if (ret2 != pd_checkobject((t_pd*)ret2))
@@ -337,11 +338,15 @@ t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int
     if (ret2 == ret1)
         return 0;
 
+    /*
     char* bufp = new char[1024];
     int lenp = 0;
 
     binbuf_gettext(ret2->te_binbuf, &bufp, &lenp);
     qDebug("object data: %s", bufp);
+
+    delete bufp;
+    */
 
     return ret2;
 }

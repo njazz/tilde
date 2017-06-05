@@ -133,7 +133,7 @@ public:
 
     virtual void sync()
     {
-        if (!_serverObject)
+        if (_serverObject->errorBox())
         {
             setErrorBox(true);
             return;
