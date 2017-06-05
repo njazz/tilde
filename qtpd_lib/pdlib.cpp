@@ -116,7 +116,7 @@ void cmp_pdinit()
     sys_init_fdpoll();
 
     pd_init();
-    sys_set_audio_api(API_PORTAUDIO);    //
+    sys_set_audio_api(API_PORTAUDIO); //
     sys_searchpath = NULL;
     sys_startgui(NULL);
 
@@ -173,7 +173,9 @@ void cmp_pdinit()
     //hack lol - removes empty canvas with array template and creates an empty new one
     cmp_closepatch(cmp_newpatch());
 
-    qDebug("## cm_pd: %lu", cm_pd);
+    qDebug("## cm_pd: %lu", (long)cm_pd);
+
+    qDebug() << "audio ins: " << sys_get_inchannels() << " outs: " << sys_get_outchannels();
 }
 
 void cmp_setprinthook(t_printhook h)
@@ -475,16 +477,18 @@ void cmp_switch_dsp(bool on)
         return;
     }
 
-    qDebug("## cm_pd: %lu", cm_pd);
+    qDebug("## cm_pd: %x || pd_this: %x", cm_pd, pd_this);
 
     AtomList list;
-    list.append(Atom(on ? 1 : 0));
+    list.append(Atom(on ? 1.0f : 0.0f));
 
     t_pd* dest = gensym("pd")->s_thing;
+
     if (dest == NULL) {
         cmp_error("Pd object not found");
         return;
     };
+
     pd_typedmess(dest, gensym("dsp"), (int)list.size(), list.toPdData());
 };
 
@@ -561,29 +565,39 @@ EXTERN void cmp_loadbang(t_canvas* canvas)
 
 // --------------------------------
 
-EXTERN t_cmp_audio_info cmp_get_audio_device_info()
+EXTERN t_cmp_audio_info* cmp_get_audio_device_info()
 {
-    t_cmp_audio_info ret;
+    t_cmp_audio_info* ret = new t_cmp_audio_info;
 
-    char* indevlist = new char;
-    char* outdevlist = new char;
+    char* indevlist = new char[32*1024];
+    char* outdevlist = new char[32*1024];
 
-    const int maxndev = 16;
+    const int maxndev = 32;
     const int devdescsize = 1024;
-    //    sys_get_audio_devs(indevlist, &ret.inputDeviceCount,
-    //                              outdevlist, &ret.outputDeviceCount, &ret.hasMulti, &ret.hasCallback,
-    //                              maxndev, devdescsize);
 
-    ret.inputDeviceList = indevlist;
-    ret.outputDeviceList = outdevlist;
+    sys_get_audio_devs(indevlist, &ret->inputDeviceCount,
+        outdevlist, &ret->outputDeviceCount, &ret->hasMulti, &ret->hasCallback,
+        maxndev, devdescsize);
 
-    return ret;
+    qDebug () << indevlist << "||" << outdevlist;
+
+    //ret->inputDeviceList = std::string(indevlist,1024);
+    //ret->outputDeviceList = std::string(outdevlist,1024);
+
+    return 0;
 }
 
 EXTERN std::string cmp_get_audio_apis()
 {
-    char* buf = new char;
-    //    sys_get_audio_apis(buf);
+    char* buf = new char[1024];
+    sys_get_audio_apis(buf);
 
-    return buf;
+    std::string c = buf;
+
+    return c;
+}
+
+EXTERN void* cmp_pdthis()
+{
+    return pd_this;
 }

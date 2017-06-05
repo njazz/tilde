@@ -45,15 +45,16 @@ ServerObject::ServerObject(ServerObject* parent, string text)
 //void ServerObject::setParent(ServerObject* parent) { _parent = parent; };
 ServerObject* ServerObject::parent() { return _parent; };
 
-void ServerObject::message(const string str)
+void ServerObject::message(string str)
 {
-    string msg = str;
+    string* msg = new string;
+    *msg = str;
 
     cout << "msg " << msg << endl;
 
     if (_pdObject) {
         cout << "send-> " << this << " " << _pdObject << endl;
-        cmp_sendstring(static_cast<t_pd*>(_pdObject), msg);
+        cmp_sendstring(static_cast<t_pd*>(_pdObject), *msg);
     } else {
         cmp_post("internal pdObject error");
         cout << "pdobject error" << endl;
@@ -133,7 +134,7 @@ ServerCanvas* ServerCanvas::createEmptySubCanvas(){};
 ServerArray* ServerCanvas::createArray(){};
 void ServerCanvas::deleteArray(ServerArray* a){};
 
-ServerPatchcord* ServerCanvas::connect(ServerObject* src, int srcIdx, ServerObject* dest, int destIdx)
+ServerPatchcord* ServerCanvas::patchcord(ServerObject* src, int srcIdx, ServerObject* dest, int destIdx)
 {
     cmp_patchcord((t_object*)src->_pdObject, srcIdx, (t_object*)dest->_pdObject, destIdx);
 };
@@ -190,6 +191,7 @@ public:
 vector<ConsoleObserver*> printHook::_consoleObservers;
 
 // ----------------------------------------
+
 ServerInstance::ServerInstance()
 {
     cout << "######### new server instance" << endl;
@@ -244,9 +246,17 @@ ServerMIDIDevice* ServerInstance::midiDevice() { return _midiDevice; };
 
 // ----------------------------------------
 
-TheServer::TheServer() {}
+TheServer::TheServer()
+{
+    createInstance();
+}
+ServerInstance* TheServer::firstInstance()
+{
+    return _instances[0];
+}
 
 vector<ServerInstance*> TheServer::instances() { return _instances; };
+
 
 ServerInstance* TheServer::createInstance()
 {

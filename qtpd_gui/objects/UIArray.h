@@ -65,8 +65,8 @@ public:
                 b->setErrorBox(true);
             } else {
 
-                t_symbol* name = gensym(list.at(1).toStdString().c_str());
-                t_floatarg size = list.at(2).toFloat();
+                //t_symbol* name = gensym(list.at(1).toStdString().c_str());
+                //t_floatarg size = list.at(2).toFloat();
 
                 // TODO
                 //b->_editor.setServerArray(cmp_new_array(pdCanvas, name, size, 1, 1));

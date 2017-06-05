@@ -7,6 +7,7 @@
 #include "AudioSettings.h"
 
 #include "PdWindow.h"
+#include "PatchWindow.h"
 
 #include "FileParser.h"
 
@@ -17,7 +18,7 @@ ApplicationController::ApplicationController()
     qDebug("new app controller");
 
     _server = new TheServer();
-    _mainServerInstance = _server->createInstance();
+    //_mainServerInstance = _server->createInstance();
 
 #ifdef WITH_PYTHON
     PythonQtObjectPtr mainContext = PythonQt::self()->getMainModule();
@@ -26,7 +27,7 @@ ApplicationController::ApplicationController()
 #endif
 
     _consoleObserver = new PdWindowConsoleObserver;
-    _mainServerInstance->setConsoleObserver(_consoleObserver);
+    mainServerInstance()->setConsoleObserver(_consoleObserver);
 
     _pdWindow = new PdWindow();
     _pdWindow->setAppController(this);
@@ -110,7 +111,7 @@ void ApplicationController::dspOn()
     //dspOnAct->setChecked(true);
 
     qDebug() << "dsp on";
-    _mainServerInstance->dspOn();
+    mainServerInstance()->dspOn();
 
     //todo DSP observer
 }
@@ -119,7 +120,7 @@ void ApplicationController::dspOff()
 {
     //cmp_switch_dsp(false);
     //dspOnAct->setChecked(false);
-    _mainServerInstance->dspOff();
+    mainServerInstance()->dspOff();
 }
 
 void PdWindowConsoleObserver::update()

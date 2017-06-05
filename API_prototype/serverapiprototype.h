@@ -88,7 +88,7 @@ public:
     virtual ServerObject* parent();
 
     //void message(const AtomList& list);
-    void message(const string str);
+    void message(string str);
 
     virtual int inletCount();
     virtual int outletCount();
@@ -152,7 +152,7 @@ public:
     ServerArray* createArray();
     void deleteArray(ServerArray* a);
 
-    ServerPatchcord* connect(ServerObject *src, int srcIdx, ServerObject *dest, int destIdx); //?
+    ServerPatchcord* patchcord(ServerObject *src, int srcIdx, ServerObject *dest, int destIdx); //?
     void disconnect(ServerPatchcord* p); //??
 
     vector<ServerObject*> getObjectList();
@@ -222,6 +222,8 @@ public:
     TheServer();
 
     vector<ServerInstance*> instances();
+    ServerInstance* firstInstance();
+
     ServerInstance* createInstance();
 };
 

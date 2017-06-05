@@ -302,12 +302,17 @@ typedef struct _cmp_audio_info {
 /// \brief get audio info structure
 /// \return
 ///
-t_cmp_audio_info cmp_get_audio_device_info();
+t_cmp_audio_info* cmp_get_audio_device_info();
 
 ////
 /// \brief get list of audio api names as Tcl string {{api name} {api name 2} ...}
 /// \return
 ///
 std::string cmp_get_audio_apis();
+
+// ------
+// debug
+
+void* cmp_pdthis();
 
 #endif // CM_PDLINK_H

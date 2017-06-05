@@ -356,7 +356,7 @@ public:
 
                 properties()->set("Value", v);
 
-                std::string val_str = "set " + std::to_string(v);
+                //std::string val_str = "set " + std::to_string(v);
 
                 // TODO-PD_OBJECT
 //                cmp_sendstring((t_pd*)pdObject(), val_str);
@@ -371,7 +371,7 @@ public:
 
                 properties()->set("Value", v);
 
-                std::string val_str = "set " + std::to_string(v);
+                //std::string val_str = "set " + std::to_string(v);
                 // TODO-PD_OBJECT
 //                cmp_sendstring((t_pd*)pdObject(), val_str);
 //                cmp_sendstring((t_pd*)pdObject(), "bang");

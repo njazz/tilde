@@ -63,10 +63,12 @@ public:
     {
 
         // TODO fix: these values are tcl {} lists
-        t_cmp_audio_info info = cmp_get_audio_device_info();
+        // t_cmp_audio_info* info = cmp_get_audio_device_info();
+
         create("Driver", "Audio", QTPD_APP_VERSION, cmp_get_audio_apis());
-        create("Input", "Audio", QTPD_APP_VERSION, info.inputDeviceList);
-        create("Output", "Audio", QTPD_APP_VERSION, info.outputDeviceList);
+
+        //create("Input", "Audio", QTPD_APP_VERSION, info->inputDeviceList);
+        //create("Output", "Audio", QTPD_APP_VERSION, info->outputDeviceList);
 
         create("BufferSize", "Settings", QTPD_APP_VERSION, 256);
         create("BlockSize", "Settings", QTPD_APP_VERSION, 64);

@@ -6,8 +6,6 @@
 
 // TODO
 #include "../API_prototype/serverAPIprototype.h"
-#include "PatchWindow.h"
-//#include "PdWindow.h"
 
 //#include "ControllerObserver.h"
 
@@ -15,14 +13,10 @@
 #include "python/PythonQtScriptingConsole.h"
 #endif
 
-//void pd_window_printhook(const char* s)
-//{
-//    //emit _pdWindow->cm_log_signal(QString(s));
-//}
-
-namespace qtpd{
+namespace qtpd {
 
 class PdWindow;
+class PatchWindow;
 
 class PdWindowConsoleObserver : public ConsoleObserver {
 private:
@@ -31,13 +25,12 @@ private:
 public:
     void setWindow(PdWindow* w) { _window = w; };
     void update();
-
 };
 
 class ApplicationController : public QObject {
 private:
     TheServer* _server;
-    ServerInstance* _mainServerInstance;
+    //ServerInstance* _mainServerInstance;
 
     PdWindow* _pdWindow;
     PythonQtScriptingConsole* _pythonConsole;
@@ -46,7 +39,7 @@ private:
 
 public:
     ApplicationController();
-    ServerInstance* mainServerInstance() {return _mainServerInstance;}
+    ServerInstance* mainServerInstance() { return _server->firstInstance(); }
     Observer* controllerObserver();
 
 public slots:

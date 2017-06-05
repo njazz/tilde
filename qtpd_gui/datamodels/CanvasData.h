@@ -33,7 +33,7 @@ class CanvasData {
     portItemVec* _outlets;
 
     // new 0517
-    ServerCanvas* _serverCanvas;
+    //ServerCanvas* _serverCanvas;
 
     QString _fileName;
     QString _filePath;
@@ -42,8 +42,8 @@ public:
     CanvasData();
 
     // new 0517
-    ServerCanvas* serverCanvas() { return _serverCanvas; }
-    void setServerCanvas(ServerCanvas* canvas) { _serverCanvas = canvas; }
+    //ServerCanvas* serverCanvas() { return _serverCanvas; }
+    //void setServerCanvas(ServerCanvas* canvas) { _serverCanvas = canvas; }
 
     portItemVec* inlets() { return _inlets; }
     portItemVec* outlets() { return _outlets; }

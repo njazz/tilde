@@ -195,12 +195,12 @@ public:
         }
         event->ignore();
 
-        std::string val_str;
+        //std::string val_str;
         //todo move!
         if (getEditMode() != em_Unlocked) {
 
             float val = valueFromPoint(event->pos().toPoint());
-            val_str = std::to_string(val);
+            //val_str = std::to_string(val);
 
             setCursor(QCursor(Qt::PointingHandCursor));
         } else {

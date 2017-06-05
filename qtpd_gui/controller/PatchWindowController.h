@@ -24,24 +24,26 @@ class UIItem;
 
 class PatchWindowController : public QObject {
 private:
+    ApplicationController* _appController;
+
     CanvasData* _canvasData;
     Observer* _observer; //ControllerObserver
 
-    ServerInstance* _serverInstance;
+    //ServerInstance* _serverInstance;
     ServerCanvas* _serverCanvas;
-
-    ApplicationController* _appController;
 
     vector<PatchWindow*> _windows;
     QGraphicsScene* _scene;
+
     // reserved
     // vector<QGraphicsScene*> _scenes;
 
     // temporary
     void doSave(QString fileName);
 
+
 public:
-    PatchWindowController(ApplicationController *appController); //replace with parent (appcontroller)
+    PatchWindowController(ApplicationController* appController); //replace with parent (appcontroller)
 
     PatchWindowController* createSubpatchWindowController();
 
@@ -74,6 +76,7 @@ public:
 
     // ------------
     void deleteSelectedObjects();
+
     // TODO
     void deleteSelectedPatchcords();
     void deletePatchcordsFor(UIItem* obj);
@@ -97,8 +100,7 @@ public:
     void updateViewports();
 
     // =======================
-
-    void setFileName(QString fname){};
+    void setFileName(QString fname);
 
     // moved from canvas-view
     void selectBox(UIItem* box);
@@ -141,8 +143,8 @@ public slots:
     };
 
     //
-    void signalSelectBox(UIItem* box, QGraphicsSceneMouseEvent* event);
-    void signalMoveBox(UIItem* box, QGraphicsSceneMouseEvent* event);
+//    void signalSelectBox(UIItem* box, QGraphicsSceneMouseEvent* event);
+//    void signalMoveBox(UIItem* box, QGraphicsSceneMouseEvent* event);
 
 private slots:
     void slotSelectObject(UIObject* object);

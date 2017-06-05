@@ -82,7 +82,7 @@ public:
 
         qDebug() << "obj data" << QString(data1);
 
-        std::string message = "ui.dsp";
+        //std::string message = "ui.dsp";
 
         return (UIObject*)b;
     };
