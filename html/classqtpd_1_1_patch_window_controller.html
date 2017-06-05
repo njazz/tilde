@@ -102,6 +102,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
+<a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">qtpd::PatchWindowController Class Reference</div>  </div>
@@ -123,6 +124,9 @@ Public Slots</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a1bb9db15039686031edd0393f34e6e18">menuDuplicate</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a50095df4f2ef11a3f92c029539ea2bbb">menuDelete</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a0c0f14c564df7314a3d6c2ce1723d62d">menuSelectAll</a> ()</td></tr>
+<tr><td colspan="2"><h2><a name="signals"></a>
+Signals</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ServerObject *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#abeeeeecbdad3b9eaa305c78a76f4b4fd">signalCreateObject</a> (ServerCanvas *canvas, string name)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a1c0b6eb75a8b9fe9e4577988157eca6c">PatchWindowController</a> (<a class="el" href="classqtpd_1_1_application_controller.html">ApplicationController</a> *appController)</td></tr>
@@ -784,6 +788,33 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="abeeeeecbdad3b9eaa305c78a76f4b4fd"></a><!-- doxytag: member="qtpd::PatchWindowController::signalCreateObject" ref="abeeeeecbdad3b9eaa305c78a76f4b4fd" args="(ServerCanvas *canvas, string name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ServerObject* <a class="el" href="classqtpd_1_1_patch_window_controller.html#abeeeeecbdad3b9eaa305c78a76f4b4fd">qtpd::PatchWindowController::signalCreateObject</a> </td>
+          <td>(</td>
+          <td class="paramtype">ServerCanvas *&#160;</td>
+          <td class="paramname"><em>canvas</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [signal]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a5a259287635fcd919f0887503d003631"></a><!-- doxytag: member="qtpd::PatchWindowController::syncData" ref="a5a259287635fcd919f0887503d003631" args="(ServerObject *serverObject, UIObject *uiObject)" -->
 <div class="memitem">
 <div class="memproto">
@@ -881,7 +912,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 5 2017 12:01:16 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 5 2017 12:27:11 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
