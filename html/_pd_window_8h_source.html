@@ -90,60 +90,55 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00006"></a>00006 <span class="preprocessor">#include &lt;QMainWindow&gt;</span>
 <a name="l00007"></a>00007 <span class="preprocessor">#include &lt;QtWidgets&gt;</span>
 <a name="l00008"></a>00008 
-<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;<a class="code" href="_pd_link_8h.html">PdLink.h</a>&quot;</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;<a class="code" href="_preferences_8h.html">Preferences.h</a>&quot;</span>
 <a name="l00010"></a>00010 
-<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="_preferences_8h.html">Preferences.h</a>&quot;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="_u_i_d_s_p_8h.html">UIDSP.h</a>&quot;</span>
 <a name="l00012"></a>00012 
-<a name="l00013"></a>00013 <span class="preprocessor">#include &quot;<a class="code" href="_u_i_d_s_p_8h.html">UIDSP.h</a>&quot;</span>
+<a name="l00013"></a>00013 <span class="comment">//temporary</span>
 <a name="l00014"></a>00014 
-<a name="l00015"></a>00015 <span class="comment">//temporary</span>
-<a name="l00016"></a>00016 
-<a name="l00017"></a>00017 <span class="keyword">namespace </span>Ui {
-<a name="l00018"></a>00018 <span class="keyword">class </span>cm_pdwindow;
-<a name="l00019"></a>00019 }
-<a name="l00020"></a>00020 
-<a name="l00021"></a>00021 <span class="keyword">namespace </span>qtpd {
-<a name="l00025"></a><a class="code" href="classqtpd_1_1_pd_window.html">00025</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_pd_window.html" title="Pd console window.">PdWindow</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1_base_window.html" title="Base class for windows (patch, pd)">BaseWindow</a> {
-<a name="l00026"></a>00026     Q_OBJECT
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028 <span class="keyword">private</span>:
-<a name="l00029"></a>00029     Ui::cm_pdwindow* ui;
+<a name="l00015"></a>00015 <span class="keyword">namespace </span>Ui {
+<a name="l00016"></a>00016 <span class="keyword">class </span>cm_pdwindow;
+<a name="l00017"></a>00017 }
+<a name="l00018"></a>00018 
+<a name="l00019"></a>00019 <span class="keyword">namespace </span>qtpd {
+<a name="l00023"></a><a class="code" href="classqtpd_1_1_pd_window.html">00023</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_pd_window.html" title="Pd console window.">PdWindow</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1_base_window.html" title="Base class for windows (patch, pd)">BaseWindow</a> {
+<a name="l00024"></a>00024     Q_OBJECT
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026 <span class="keyword">private</span>:
+<a name="l00027"></a>00027     Ui::cm_pdwindow* ui;
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029     ~<a class="code" href="classqtpd_1_1_pd_window.html" title="Pd console window.">PdWindow</a>(){};
 <a name="l00030"></a>00030 
-<a name="l00031"></a>00031     <a class="code" href="classqtpd_1_1_pd_window.html" title="Pd console window.">PdWindow</a>();
-<a name="l00032"></a>00032 
-<a name="l00033"></a>00033     ~<a class="code" href="classqtpd_1_1_pd_window.html" title="Pd console window.">PdWindow</a>(){};
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035 <span class="keyword">public</span>:
-<a name="l00036"></a><a class="code" href="classqtpd_1_1_pd_window.html#aae730e90cc844f29fe580406a0893a00">00036</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_pd_window.html" title="Pd console window.">PdWindow</a>* <a class="code" href="classqtpd_1_1_pd_window.html#aae730e90cc844f29fe580406a0893a00">inst</a>()
-<a name="l00037"></a>00037     {
-<a name="l00038"></a>00038         <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_pd_window.html" title="Pd console window.">PdWindow</a>* <a class="code" href="namespaceqtpd.html#a3dde6489d34303c66ea710aa2116b426">instance</a>;
-<a name="l00039"></a>00039         <span class="comment">//instance.setParent(0);</span>
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041         <span class="keywordflow">if</span> (!instance)
-<a name="l00042"></a>00042         {
-<a name="l00043"></a>00043             instance = <span class="keyword">new</span> <a class="code" href="classqtpd_1_1_pd_window.html" title="Pd console window.">PdWindow</a>();
-<a name="l00044"></a>00044             qDebug() &lt;&lt; <span class="stringliteral">&quot;singleton lol&quot;</span>;
-<a name="l00045"></a>00045         }
-<a name="l00046"></a>00046 
-<a name="l00047"></a>00047         <span class="keywordflow">return</span> <a class="code" href="namespaceqtpd.html#a3dde6489d34303c66ea710aa2116b426">instance</a>;
-<a name="l00048"></a>00048     }
-<a name="l00049"></a>00049 
-<a name="l00050"></a>00050 
-<a name="l00051"></a>00051     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_pd_window.html#a4a9b5c6f0156018fe76e19f74add5587">cm_post</a>(QString text);
+<a name="l00031"></a>00031 <span class="keyword">public</span>:
+<a name="l00032"></a>00032     <a class="code" href="classqtpd_1_1_pd_window.html#a916bc5d8c3d803b541ab325d8e9d0d1c">PdWindow</a>();
+<a name="l00033"></a>00033     <span class="comment">//    static PdWindow* inst()</span>
+<a name="l00034"></a>00034     <span class="comment">//    {</span>
+<a name="l00035"></a>00035     <span class="comment">//        static PdWindow* instance;</span>
+<a name="l00036"></a>00036     <span class="comment">//        //instance.setParent(0);</span>
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038     <span class="comment">//        if (!instance) {</span>
+<a name="l00039"></a>00039     <span class="comment">//            instance = new PdWindow();</span>
+<a name="l00040"></a>00040     <span class="comment">//            qDebug() &lt;&lt; &quot;singleton lol&quot;;</span>
+<a name="l00041"></a>00041     <span class="comment">//        }</span>
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043     <span class="comment">//        return instance;</span>
+<a name="l00044"></a>00044     <span class="comment">//    }</span>
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_pd_window.html#a4a9b5c6f0156018fe76e19f74add5587">cm_post</a>(QString text);
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048 signals:
+<a name="l00049"></a>00049     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_pd_window.html#ac604d375b619f78812eed116ab687fe1">cm_log_signal</a>(QString text);
+<a name="l00050"></a>00050 <span class="keyword">public</span> slots:
+<a name="l00051"></a>00051     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_pd_window.html#a906f2742dc6e83fab99c256cdc60bb17">cm_log</a>(QString text);
 <a name="l00052"></a>00052 
-<a name="l00053"></a>00053 signals:
-<a name="l00054"></a>00054     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_pd_window.html#ac604d375b619f78812eed116ab687fe1">cm_log_signal</a>(QString text);
-<a name="l00055"></a>00055 <span class="keyword">public</span> slots:
-<a name="l00056"></a>00056     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_pd_window.html#a906f2742dc6e83fab99c256cdc60bb17">cm_log</a>(QString text);
-<a name="l00057"></a>00057 
-<a name="l00058"></a>00058 <span class="comment">//    void resizeEvent();</span>
-<a name="l00059"></a>00059 };
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061 <span class="comment">//fix - normal singleton here</span>
-<a name="l00062"></a>00062 <span class="comment">//static PdWindow* pdw;</span>
-<a name="l00063"></a>00063 }
-<a name="l00064"></a>00064 
-<a name="l00065"></a>00065 <span class="preprocessor">#endif // CM_PDWINDOW_H</span>
+<a name="l00053"></a>00053     <span class="comment">//    void resizeEvent();</span>
+<a name="l00054"></a>00054 };
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056 <span class="comment">//fix - normal singleton here</span>
+<a name="l00057"></a>00057 <span class="comment">//static PdWindow* pdw;</span>
+<a name="l00058"></a>00058 }
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060 <span class="preprocessor">#endif // CM_PDWINDOW_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -162,7 +157,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 5 2017 11:20:50 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 5 2017 12:01:16 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -128,8 +128,10 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_sub_canvas.html#a209cdf94b3a63926709c512aa4959cd1">setCanvasData</a> (<a class="el" href="classqtpd_1_1_canvas_data.html">CanvasData</a> *data)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_sub_canvas.html#ae241f3a29ba68cc63140c51449b1bd66">resizeEvent</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; call this after setting object data  <a href="#ae241f3a29ba68cc63140c51449b1bd66"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_sub_canvas.html#a353b7290049dd857f1af0eab6df641e0">setServerObject</a> (ServerObject *o)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_sub_canvas.html#ade68083f623c2dc9d6d583548a72fb1b">createObj</a> (QString data)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_sub_canvas.html#a3274b2f9bcc54c9dd5b98580b130c903">createObject</a> (QString <a class="el" href="classqtpd_1_1_u_i_object.html#a36456ea5fb11ff6b752bc56de2ce5584">objectData</a>, <a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *pd_Canvas, QGraphicsView *parent=0)</td></tr>
 </table>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
@@ -150,6 +152,23 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ade68083f623c2dc9d6d583548a72fb1b"></a><!-- doxytag: member="qtpd::UISubCanvas::createObj" ref="ade68083f623c2dc9d6d583548a72fb1b" args="(QString data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a>* <a class="el" href="classqtpd_1_1_u_i_sub_canvas.html#ade68083f623c2dc9d6d583548a72fb1b">qtpd::UISubCanvas::createObj</a> </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a3274b2f9bcc54c9dd5b98580b130c903"></a><!-- doxytag: member="qtpd::UISubCanvas::createObject" ref="a3274b2f9bcc54c9dd5b98580b130c903" args="(QString objectData, t_canvas *pd_Canvas, QGraphicsView *parent=0)" -->
 <div class="memitem">
 <div class="memproto">
@@ -220,6 +239,25 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a353b7290049dd857f1af0eab6df641e0"></a><!-- doxytag: member="qtpd::UISubCanvas::setServerObject" ref="a353b7290049dd857f1af0eab6df641e0" args="(ServerObject *o)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classqtpd_1_1_u_i_sub_canvas.html#a353b7290049dd857f1af0eab6df641e0">qtpd::UISubCanvas::setServerObject</a> </td>
+          <td>(</td>
+          <td class="paramtype">ServerObject *&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#a6717f5a5134affe1b5cc72a140da0e69">qtpd::UIObject</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/travis/build/njazz/qtpd/qtpd_gui/objects/<a class="el" href="_u_i_sub_canvas_8h_source.html">UISubCanvas.h</a></li>
 <li>/home/travis/build/njazz/qtpd/qtpd_gui/objects/<a class="el" href="_u_i_sub_canvas_8cpp.html">UISubCanvas.cpp</a></li>
@@ -242,7 +280,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 5 2017 11:20:50 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 5 2017 12:01:16 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

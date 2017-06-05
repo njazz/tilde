@@ -135,12 +135,12 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_message.html#af0dab275956434b21146c3cb4a67e8b5">mouseReleaseEvent</a> (QGraphicsSceneMouseEvent *)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_message.html#aeef3da11868e346d816fd1e191d0bbac">mouseMoveEvent</a> (QGraphicsSceneMouseEvent *event)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_message.html#a763a3a9c037a23169b6b53c223caf46e">setPdMessage</a> (QString message)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_message.html#aaf6f192ff6c569daaa7b8ab34e1087b4">setPdObject</a> (void *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets pointer to pd object  <a href="#aaf6f192ff6c569daaa7b8ab34e1087b4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_message.html#a57424e0098d84cf1fa667a8451d7f392">asPdFileString</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; custom resize event  <a href="#a57424e0098d84cf1fa667a8451d7f392"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_message.html#acaa0b7f2af700f8b233ee5f44523326e">setServerObject</a> (ServerObject *o)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_message.html#a6bdcdee4c12776de338f91dab1621e8c">createObj</a> (QString data)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_message.html#aa5d92f2fb11d39ab3f8b5a8323b0d3f4">createObject</a> (QString <a class="el" href="classqtpd_1_1_u_i_object.html#a36456ea5fb11ff6b752bc56de2ce5584">objectData</a>, <a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *pdCanvas, QGraphicsView *parent=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_message.html#a5b6f85f83def25fc402511fbbdfcfcd2">updateUI</a> (void *uiobj, <a class="el" href="classceammc_1_1_atom_list.html">ceammc::AtomList</a> msg)</td></tr>
 </table>
@@ -181,6 +181,23 @@ Static Public Member Functions</h2></td></tr>
 <p>&gt; custom resize event </p>
 
 <p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#a89a9d36ac67cceab237cdc01a1ec2376">qtpd::UIObject</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6bdcdee4c12776de338f91dab1621e8c"></a><!-- doxytag: member="qtpd::UIMessage::createObj" ref="a6bdcdee4c12776de338f91dab1621e8c" args="(QString data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a>* <a class="el" href="classqtpd_1_1_u_i_message.html#a6bdcdee4c12776de338f91dab1621e8c">qtpd::UIMessage::createObj</a> </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
 </div>
 </div>
@@ -340,31 +357,22 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aaf6f192ff6c569daaa7b8ab34e1087b4"></a><!-- doxytag: member="qtpd::UIMessage::setPdObject" ref="aaf6f192ff6c569daaa7b8ab34e1087b4" args="(void *obj)" -->
+<a class="anchor" id="acaa0b7f2af700f8b233ee5f44523326e"></a><!-- doxytag: member="qtpd::UIMessage::setServerObject" ref="acaa0b7f2af700f8b233ee5f44523326e" args="(ServerObject *o)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_message.html#aaf6f192ff6c569daaa7b8ab34e1087b4">qtpd::UIMessage::setPdObject</a> </td>
+          <td class="memname">virtual void <a class="el" href="classqtpd_1_1_u_i_message.html#acaa0b7f2af700f8b233ee5f44523326e">qtpd::UIMessage::setServerObject</a> </td>
           <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td class="paramtype">ServerObject *&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
           <td><code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>sets pointer to pd object </p>
-<p>overriden by ui objects to be able to connect to pd objects </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#a8d514a69e4a316b43095faaeea415dad">qtpd::UIObject</a>.</p>
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#a6717f5a5134affe1b5cc72a140da0e69">qtpd::UIObject</a>.</p>
 
 </div>
 </div>
@@ -419,7 +427,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 5 2017 11:20:50 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 5 2017 12:01:16 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

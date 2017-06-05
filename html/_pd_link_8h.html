@@ -172,10 +172,11 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">new Pd array  <a href="#a5e3a540ebc4655748e2c87cabd76213c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="m__pd_8h.html#a77366c1bd428629dc898e188bfd182a3">EXTERN</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a8a20b999b802c71b229de8a524283645">cmp_loadbang</a> (<a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *canvas)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">send loadbang  <a href="#a8a20b999b802c71b229de8a524283645"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_pd_link_8h.html#a6dfb84d0c4c74fc07153deac0b400570">t_cmp_audio_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a43ae3195ceb778e536547297dd13a5a7">cmp_get_audio_device_info</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get audio info structure  <a href="#a43ae3195ceb778e536547297dd13a5a7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_pd_link_8h.html#a6dfb84d0c4c74fc07153deac0b400570">t_cmp_audio_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#accf99e429fe4ad619c29bdbea8cfffe9">cmp_get_audio_device_info</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get audio info structure  <a href="#accf99e429fe4ad619c29bdbea8cfffe9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a1c1f679912fa18aaed166b3e863408c0">cmp_get_audio_apis</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get list of audio api names as Tcl string {{api name} {api name 2} ...}  <a href="#a1c1f679912fa18aaed166b3e863408c0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_pd_link_8h.html#a64487a4f00194cfbe0745ed99b70668e">cmp_pdthis</a> ()</td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
 <a class="anchor" id="a6dfb84d0c4c74fc07153deac0b400570"></a><!-- doxytag: member="PdLink.h::t_cmp_audio_info" ref="a6dfb84d0c4c74fc07153deac0b400570" args="" -->
@@ -585,12 +586,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a43ae3195ceb778e536547297dd13a5a7"></a><!-- doxytag: member="PdLink.h::cmp_get_audio_device_info" ref="a43ae3195ceb778e536547297dd13a5a7" args="()" -->
+<a class="anchor" id="accf99e429fe4ad619c29bdbea8cfffe9"></a><!-- doxytag: member="PdLink.h::cmp_get_audio_device_info" ref="accf99e429fe4ad619c29bdbea8cfffe9" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_pd_link_8h.html#a6dfb84d0c4c74fc07153deac0b400570">t_cmp_audio_info</a> <a class="el" href="_pd_link_8h.html#a43ae3195ceb778e536547297dd13a5a7">cmp_get_audio_device_info</a> </td>
+          <td class="memname"><a class="el" href="_pd_link_8h.html#a6dfb84d0c4c74fc07153deac0b400570">t_cmp_audio_info</a>* <a class="el" href="_pd_link_8h.html#accf99e429fe4ad619c29bdbea8cfffe9">cmp_get_audio_device_info</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -949,7 +950,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>pointer to object </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000011">Deprecated:</a></b></dt><dd>using only objects now </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000010">Deprecated:</a></b></dt><dd>using only objects now </dd></dl>
 <p>move pd object to new location </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1073,7 +1074,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>new canvas or 0 if failed </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000009">Deprecated:</a></b></dt><dd>not used for now - the files are loaded by 'client' </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000008">Deprecated:</a></b></dt><dd>not used for now - the files are loaded by 'client' </dd></dl>
 
 </div>
 </div>
@@ -1142,6 +1143,22 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>initializes pd library </p>
+
+</div>
+</div>
+<a class="anchor" id="a64487a4f00194cfbe0745ed99b70668e"></a><!-- doxytag: member="PdLink.h::cmp_pdthis" ref="a64487a4f00194cfbe0745ed99b70668e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* <a class="el" href="_pd_link_8h.html#a64487a4f00194cfbe0745ed99b70668e">cmp_pdthis</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
 </div>
 </div>
@@ -1236,7 +1253,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000010">Deprecated:</a></b></dt><dd>not used for now - the files are saved by 'client' </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000009">Deprecated:</a></b></dt><dd>not used for now - the files are saved by 'client' </dd></dl>
 
 </div>
 </div>
@@ -1369,7 +1386,7 @@ Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 5 2017 11:20:50 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 5 2017 12:01:16 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
