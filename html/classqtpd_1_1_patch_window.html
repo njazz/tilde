@@ -101,7 +101,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-slots">Public Slots</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">qtpd::PatchWindow Class Reference</div>  </div>
 </div><!--header-->
@@ -123,13 +126,12 @@ Inheritance diagram for qtpd::PatchWindow:</div>
 
 <p><a href="classqtpd_1_1_patch_window-members.html">List of all members.</a></p>
 <table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-slots"></a>
+Public Slots</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::pair&lt; QMainWindow <br class="typebreak"/>
+*, <a class="el" href="classqtpd_1_1_u_i_object.html">qtpd::UIObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window.html#acdb1ba3048cfb4e51e88d6fe74ccb4c9">s_createSubpatchWindow</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window.html#a69d314b0dd596b5ce889f855fca01764">PatchWindow</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_canvas_view.html">CanvasView</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window.html#a55ba53058c5962b95c518478f0920726">canvasView</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window.html#a81252e25fb2a3e95779563e3a17c0fbd">setCanvasView</a> (<a class="el" href="classqtpd_1_1_canvas_view.html">CanvasView</a> *v)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window.html#a9f83e611efcb887018a683b9386d9815">setController</a> (<a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *c)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window.html#a1ff4345e33d74fd202b8f2d9edfad73e">controller</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window.html#a9e0317548dc5606f8df0fe8085d16bec">createActions</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">create menu actions (File, Edit)  <a href="#a9e0317548dc5606f8df0fe8085d16bec"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window.html#aa76806f8177fc8869defa837d2571dc8">createMenus</a> ()</td></tr>
@@ -145,8 +147,10 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window.html#a4c5b07b6abb4c4a9e25c3ed0783471bb">newArrayBox</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window.html#af2d98ca815c2232bd2e20cd3e6a80d6f">newPdClassBox</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window.html#a56ba3f87fe9d52e6b9e0160a6f399082">newPdInstanceBox</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window.html#a9f2e7fc3b36eccf313302095b33349c6">delSelected</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window.html#a97f29c370effd24cd7462696cd05fb97">selectAll</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window.html#a65452a0d74483f4351d2703898ed22eb">objectMakerDone</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates object TODO move to controller  <a href="#a65452a0d74483f4351d2703898ed22eb"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">creates object TODO move to canvas  <a href="#a65452a0d74483f4351d2703898ed22eb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window.html#af36a7d056eb78261cd495cda1c40e8b9">setEditMode</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window.html#a0c7818b279e4fa727102b64f0fab95b5">setGridVisible</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window.html#ac0135abb9a3e8dab5133d50416b19415">setGridSnap</a> ()</td></tr>
@@ -156,45 +160,24 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window.html#a34852d3b857bd5c44472b208ee7dcdf8">keyPressEvent</a> (QKeyEvent *event)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">keys: ctrl for temporary lock; esc to stop editing actions  <a href="#a34852d3b857bd5c44472b208ee7dcdf8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window.html#ae3068ea0a740fc38c62bf56e26974fec">keyReleaseEvent</a> (QKeyEvent *event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window.html#a732b3bf5ac49c7b69fa310da3cc57eea">cut</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window.html#aa4f03a7f7cb369309a81385e6279768d">copy</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window.html#af2f7c9692b92c406247a5b9edf14d421">duplicate</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window.html#a26d4a590a6dee53117a7e86160d75eb0">paste</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window.html#a8ea3ccc8ffe0ac35392c53e5b55e3145">zoomIn</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window.html#a7ba176eb5750dba2e5903e630495d848">zoomOut</a> ()</td></tr>
+<tr><td colspan="2"><h2><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_patch_window.html">PatchWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window.html#a465802c46cfee0432f72284319faf1d3">newWindow</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_patch_window.html">PatchWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window.html#a0a56073dafc551b0c5c1b7031f9ead66">newSubpatch</a> (<a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *subpatch=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor for the subpatches' windows  <a href="#a0a56073dafc551b0c5c1b7031f9ead66"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_canvas_view.html">CanvasView</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window.html#a094b612b5c22fa4a2f57844ac955ae8f">canvas</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas. </p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a69d314b0dd596b5ce889f855fca01764"></a><!-- doxytag: member="qtpd::PatchWindow::PatchWindow" ref="a69d314b0dd596b5ce889f855fca01764" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classqtpd_1_1_patch_window.html#a69d314b0dd596b5ce889f855fca01764">qtpd::PatchWindow::PatchWindow</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a55ba53058c5962b95c518478f0920726"></a><!-- doxytag: member="qtpd::PatchWindow::canvasView" ref="a55ba53058c5962b95c518478f0920726" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classqtpd_1_1_canvas_view.html">CanvasView</a>* <a class="el" href="classqtpd_1_1_patch_window.html#a55ba53058c5962b95c518478f0920726">qtpd::PatchWindow::canvasView</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
+</div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a9cf14c7e3179165fb9569516e5879879"></a><!-- doxytag: member="qtpd::PatchWindow::closeEvent" ref="a9cf14c7e3179165fb9569516e5879879" args="(QCloseEvent *event)" -->
 <div class="memitem">
 <div class="memproto">
@@ -204,7 +187,7 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">QCloseEvent *&#160;</td>
           <td class="paramname"><em>event</em></td><td>)</td>
-          <td></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -212,15 +195,15 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a1ff4345e33d74fd202b8f2d9edfad73e"></a><!-- doxytag: member="qtpd::PatchWindow::controller" ref="a1ff4345e33d74fd202b8f2d9edfad73e" args="()" -->
+<a class="anchor" id="aa4f03a7f7cb369309a81385e6279768d"></a><!-- doxytag: member="qtpd::PatchWindow::copy" ref="aa4f03a7f7cb369309a81385e6279768d" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a>* <a class="el" href="classqtpd_1_1_patch_window.html#a1ff4345e33d74fd202b8f2d9edfad73e">qtpd::PatchWindow::controller</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window.html#aa4f03a7f7cb369309a81385e6279768d">qtpd::PatchWindow::copy</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -236,7 +219,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window.html#a9e0317548dc5606f8df0fe8085d16bec">qtpd::PatchWindow::createActions</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -256,7 +239,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window.html#aa76806f8177fc8869defa837d2571dc8">qtpd::PatchWindow::createMenus</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -265,6 +248,54 @@ Public Member Functions</h2></td></tr>
 <p>create all menus </p>
 
 <p>Reimplemented from <a class="el" href="classqtpd_1_1_base_window.html#ab3647cf8d926f317e898d719798b88d8">qtpd::BaseWindow</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a732b3bf5ac49c7b69fa310da3cc57eea"></a><!-- doxytag: member="qtpd::PatchWindow::cut" ref="a732b3bf5ac49c7b69fa310da3cc57eea" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window.html#a732b3bf5ac49c7b69fa310da3cc57eea">qtpd::PatchWindow::cut</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9f2e7fc3b36eccf313302095b33349c6"></a><!-- doxytag: member="qtpd::PatchWindow::delSelected" ref="a9f2e7fc3b36eccf313302095b33349c6" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window.html#a9f2e7fc3b36eccf313302095b33349c6">qtpd::PatchWindow::delSelected</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af2f7c9692b92c406247a5b9edf14d421"></a><!-- doxytag: member="qtpd::PatchWindow::duplicate" ref="af2f7c9692b92c406247a5b9edf14d421" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window.html#af2f7c9692b92c406247a5b9edf14d421">qtpd::PatchWindow::duplicate</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
 </div>
 </div>
@@ -277,7 +308,7 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">QKeyEvent *&#160;</td>
           <td class="paramname"><em>event</em></td><td>)</td>
-          <td></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -302,7 +333,7 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">QKeyEvent *&#160;</td>
           <td class="paramname"><em>event</em></td><td>)</td>
-          <td></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -318,7 +349,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window.html#a4c5b07b6abb4c4a9e25c3ed0783471bb">qtpd::PatchWindow::newArrayBox</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -334,7 +365,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window.html#af4aba12d1c4bc7dc86e23431970c5bcc">qtpd::PatchWindow::newBangBox</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -350,7 +381,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window.html#a403ba665e965bc5e72dc54ef5d9cc5cb">qtpd::PatchWindow::newCommentBox</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -366,7 +397,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window.html#ade58be29247e42c7838db5a7b6344539">qtpd::PatchWindow::newFloatBox</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -382,7 +413,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window.html#a83e7f93159893bdaa0082fd6d8c140dc">qtpd::PatchWindow::newMessageBox</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -398,7 +429,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window.html#a9dea55bcdf6c35f6394784cfa273cdf1">qtpd::PatchWindow::newObjectBox</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -414,7 +445,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window.html#af2d98ca815c2232bd2e20cd3e6a80d6f">qtpd::PatchWindow::newPdClassBox</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -430,7 +461,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window.html#a56ba3f87fe9d52e6b9e0160a6f399082">qtpd::PatchWindow::newPdInstanceBox</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -446,11 +477,36 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window.html#aba7ab9ebe3416a454d82864899296264">qtpd::PatchWindow::newScriptBox</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0a56073dafc551b0c5c1b7031f9ead66"></a><!-- doxytag: member="qtpd::PatchWindow::newSubpatch" ref="a0a56073dafc551b0c5c1b7031f9ead66" args="(t_canvas *subpatch=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqtpd_1_1_patch_window.html">PatchWindow</a> * <a class="el" href="classqtpd_1_1_patch_window.html#a0a56073dafc551b0c5c1b7031f9ead66">qtpd::PatchWindow::newSubpatch</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *&#160;</td>
+          <td class="paramname"><em>subpatch</em> = <code>0</code></td><td>)</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>constructor for the subpatches' windows </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">subpatch</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -462,7 +518,23 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window.html#a44d1c60e80fdef22f4c4fdbb72b62389">qtpd::PatchWindow::newToggleBox</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a465802c46cfee0432f72284319faf1d3"></a><!-- doxytag: member="qtpd::PatchWindow::newWindow" ref="a465802c46cfee0432f72284319faf1d3" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqtpd_1_1_patch_window.html">PatchWindow</a> * <a class="el" href="classqtpd_1_1_patch_window.html#a465802c46cfee0432f72284319faf1d3">qtpd::PatchWindow::newWindow</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [static]</code></td>
         </tr>
       </table>
 </div>
@@ -484,8 +556,23 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>creates object TODO move to controller </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000014">Deprecated:</a></b></dt><dd>move to controller </dd></dl>
+<p>creates object TODO move to canvas </p>
+
+</div>
+</div>
+<a class="anchor" id="a26d4a590a6dee53117a7e86160d75eb0"></a><!-- doxytag: member="qtpd::PatchWindow::paste" ref="a26d4a590a6dee53117a7e86160d75eb0" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window.html#a26d4a590a6dee53117a7e86160d75eb0">qtpd::PatchWindow::paste</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
 </div>
 </div>
@@ -506,16 +593,15 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a81252e25fb2a3e95779563e3a17c0fbd"></a><!-- doxytag: member="qtpd::PatchWindow::setCanvasView" ref="a81252e25fb2a3e95779563e3a17c0fbd" args="(CanvasView *v)" -->
+<a class="anchor" id="acdb1ba3048cfb4e51e88d6fe74ccb4c9"></a><!-- doxytag: member="qtpd::PatchWindow::s_createSubpatchWindow" ref="acdb1ba3048cfb4e51e88d6fe74ccb4c9" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window.html#a81252e25fb2a3e95779563e3a17c0fbd">qtpd::PatchWindow::setCanvasView</a> </td>
+          <td class="memname">std::pair&lt;QMainWindow*, <a class="el" href="classqtpd_1_1_u_i_object.html">qtpd::UIObject</a>*&gt; <a class="el" href="classqtpd_1_1_patch_window.html#acdb1ba3048cfb4e51e88d6fe74ccb4c9">qtpd::PatchWindow::s_createSubpatchWindow</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classqtpd_1_1_canvas_view.html">CanvasView</a> *&#160;</td>
-          <td class="paramname"><em>v</em></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, slot]</code></td>
         </tr>
       </table>
 </div>
@@ -523,16 +609,15 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a9f83e611efcb887018a683b9386d9815"></a><!-- doxytag: member="qtpd::PatchWindow::setController" ref="a9f83e611efcb887018a683b9386d9815" args="(PatchWindowController *c)" -->
+<a class="anchor" id="a97f29c370effd24cd7462696cd05fb97"></a><!-- doxytag: member="qtpd::PatchWindow::selectAll" ref="a97f29c370effd24cd7462696cd05fb97" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window.html#a9f83e611efcb887018a683b9386d9815">qtpd::PatchWindow::setController</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window.html#a97f29c370effd24cd7462696cd05fb97">qtpd::PatchWindow::selectAll</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *&#160;</td>
-          <td class="paramname"><em>c</em></td><td>)</td>
-          <td></td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -548,7 +633,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window.html#af36a7d056eb78261cd495cda1c40e8b9">qtpd::PatchWindow::setEditMode</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -589,7 +674,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window.html#ac0135abb9a3e8dab5133d50416b19415">qtpd::PatchWindow::setGridSnap</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -605,7 +690,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window.html#a0c7818b279e4fa727102b64f0fab95b5">qtpd::PatchWindow::setGridVisible</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -621,7 +706,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window.html#a8ea3ccc8ffe0ac35392c53e5b55e3145">qtpd::PatchWindow::zoomIn</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -637,7 +722,21 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window.html#a7ba176eb5750dba2e5903e630495d848">qtpd::PatchWindow::zoomOut</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a094b612b5c22fa4a2f57844ac955ae8f"></a><!-- doxytag: member="qtpd::PatchWindow::canvas" ref="a094b612b5c22fa4a2f57844ac955ae8f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqtpd_1_1_canvas_view.html">CanvasView</a>* <a class="el" href="classqtpd_1_1_patch_window.html#a094b612b5c22fa4a2f57844ac955ae8f">qtpd::PatchWindow::canvas</a></td>
         </tr>
       </table>
 </div>
@@ -667,7 +766,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 5 2017 11:15:02 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 5 2017 11:20:50 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

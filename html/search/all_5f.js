@@ -31,7 +31,7 @@ var searchData=
   ['_5fparent',['_parent',['../classqtpd_1_1_o_p_instance.html#aca34361b179cf26aad9dfe263464a6e8',1,'qtpd::OPInstance']]],
   ['_5fparentwidgetbehavior',['_parentwidgetbehavior',['../struct__parentwidgetbehavior.html',1,'_parentwidgetbehavior'],['../m__pd_8h.html#a40419d9946c08905e1311996f9c13f1b',1,'_parentwidgetbehavior():&#160;m_pd.h']]],
   ['_5fpatchcordasnumbers',['_patchcordAsNumbers',['../structqtpd_1_1__patchcord_as_numbers.html',1,'qtpd']]],
-  ['_5fpatchwindow',['_patchWindow',['../classqtpd_1_1_o_o_p_d_class_base.html#aa0e2ab43d981d1bd901eb700055fdecb',1,'qtpd::OOPDClassBase']]],
+  ['_5fpatchwindow',['_patchWindow',['../classqtpd_1_1_o_o_p_d_class_base.html#ab0b21c4d9f3b19c7b13f20b8cd224d65',1,'qtpd::OOPDClassBase']]],
   ['_5fpdinstance',['_pdinstance',['../m__pd_8h.html#a4c152a89162bfbab608b0fc6be7ed9a8',1,'m_pd.h']]],
   ['_5fresample',['_resample',['../struct__resample.html',1,'']]],
   ['_5frtext',['_rtext',['../g__canvas_8h.html#acd49421bf2c4093bc39f9c4c6bd630a1',1,'g_canvas.h']]],

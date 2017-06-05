@@ -101,7 +101,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00020"></a><a class="code" href="classqtpd_1_1_u_i_object_data.html">00020</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_u_i_object_data.html" title="Data model for UIObject.">UIObjectData</a> : <span class="keyword">public</span> QObject {
 <a name="l00021"></a>00021     Q_OBJECT
 <a name="l00022"></a>00022 
-<a name="l00023"></a>00023     <span class="comment">//void* _pdObject;</span>
+<a name="l00023"></a>00023     <span class="keywordtype">void</span>* _pdObject;
 <a name="l00024"></a>00024 
 <a name="l00025"></a>00025     QString _objectData;
 <a name="l00026"></a>00026     <a class="code" href="classqtpd_1_1_property_list.html" title="Property handling class for ui object - property list.">PropertyList</a>* _properties;
@@ -114,8 +114,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00033"></a>00033     <span class="keywordtype">int</span> _minimumBoxHeight;
 <a name="l00034"></a>00034 
 <a name="l00035"></a>00035 <span class="keyword">public</span>:
-<a name="l00036"></a>00036 <span class="comment">//    void setPdObject(void* pdObject) { _pdObject = pdObject; }</span>
-<a name="l00037"></a>00037 <span class="comment">//    void* pdObject() { return _pdObject; }</span>
+<a name="l00036"></a><a class="code" href="classqtpd_1_1_u_i_object_data.html#a5b7ad0ec37e337c12a50c6b8b5a49a67">00036</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object_data.html#a5b7ad0ec37e337c12a50c6b8b5a49a67">setPdObject</a>(<span class="keywordtype">void</span>* <a class="code" href="classqtpd_1_1_u_i_object_data.html#a73e910cd8aab2f701ec9d17ae92bf11a">pdObject</a>) { _pdObject = <a class="code" href="classqtpd_1_1_u_i_object_data.html#a73e910cd8aab2f701ec9d17ae92bf11a">pdObject</a>; }
+<a name="l00037"></a><a class="code" href="classqtpd_1_1_u_i_object_data.html#a73e910cd8aab2f701ec9d17ae92bf11a">00037</a>     <span class="keywordtype">void</span>* <a class="code" href="classqtpd_1_1_u_i_object_data.html#a73e910cd8aab2f701ec9d17ae92bf11a">pdObject</a>() { <span class="keywordflow">return</span> _pdObject; }
 <a name="l00038"></a>00038 
 <a name="l00039"></a><a class="code" href="classqtpd_1_1_u_i_object_data.html#a6bfffb4f3e721eac47b713da98b26c19">00039</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object_data.html#a6bfffb4f3e721eac47b713da98b26c19" title="&gt; set both properties and Pd object string">setData</a>(QString inputData) 
 <a name="l00040"></a>00040     {
@@ -168,7 +168,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 5 2017 11:15:02 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 5 2017 11:20:50 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

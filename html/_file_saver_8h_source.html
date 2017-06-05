@@ -92,24 +92,51 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00008"></a>00008 
 <a name="l00009"></a>00009 <span class="keyword">namespace </span>qtpd {
 <a name="l00010"></a>00010 
-<a name="l00011"></a>00011 <span class="keyword">class </span>CanvasData;
-<a name="l00012"></a>00012 
-<a name="l00016"></a><a class="code" href="classqtpd_1_1_file_saver.html">00016</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_file_saver.html" title="saves pd files on &#39;client&#39; (GUI) side">FileSaver</a> {
-<a name="l00017"></a>00017 <span class="keyword">private</span>:
-<a name="l00018"></a>00018     <a class="code" href="classqtpd_1_1_file_saver.html" title="saves pd files on &#39;client&#39; (GUI) side">FileSaver</a>(){};
-<a name="l00019"></a>00019 
-<a name="l00020"></a>00020 <span class="keyword">public</span>:
-<a name="l00021"></a>00021 
-<a name="l00027"></a>00027     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_file_saver.html#adb49c2d8ca0add03af5bd81029bb9eae" title="save file to disk; runs &#39;savecanvas&#39; recursively">save</a>(QString fname, <a class="code" href="classqtpd_1_1_canvas_data.html" title="shared canvas data model - boxes, patchcords">CanvasData</a>* canvasData);
-<a name="l00028"></a>00028 
-<a name="l00034"></a>00034     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_file_saver.html#aeff69ac1022ff1fc8854f557fab456a3" title="new API saveCanvas">saveCanvas</a>(<a class="code" href="classqtpd_1_1_canvas_data.html" title="shared canvas data model - boxes, patchcords">CanvasData</a>* <a class="code" href="classqtpd_1_1_canvas_data.html" title="shared canvas data model - boxes, patchcords">CanvasData</a>, QFile* file);
-<a name="l00035"></a>00035 
-<a name="l00036"></a>00036 
-<a name="l00037"></a>00037 
-<a name="l00038"></a>00038 };
-<a name="l00039"></a>00039 }
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041 <span class="preprocessor">#endif // CM_FILESAVER_H</span>
+<a name="l00014"></a><a class="code" href="classqtpd_1_1_file_saver.html">00014</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_file_saver.html" title="saves pd files on &#39;client&#39; (GUI) side">FileSaver</a> {
+<a name="l00015"></a>00015 <span class="keyword">private</span>:
+<a name="l00016"></a>00016     <a class="code" href="classqtpd_1_1_file_saver.html" title="saves pd files on &#39;client&#39; (GUI) side">FileSaver</a>(){};
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 <span class="keyword">public</span>:
+<a name="l00024"></a><a class="code" href="classqtpd_1_1_file_saver.html#ab2c7d435bb5011cce1dddfe61d397534">00024</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_file_saver.html#ab2c7d435bb5011cce1dddfe61d397534" title="save canvas TODO move parts to canvas">saveCanvas</a>(<a class="code" href="classqtpd_1_1_canvas_view.html" title="&#39;t_canvas&#39; counterpart - for now it&#39;s both view and &#39;view controller&#39;. creates pd+gui objects...">CanvasView</a>* canvas, QFile* file)
+<a name="l00025"></a>00025     {
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027         <span class="comment">// this calls top &#39;canvas&#39; and gets all data as QStringList</span>
+<a name="l00028"></a>00028         <span class="comment">// canvas saves contents recursively</span>
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030         QStringList fileData = canvas-&gt;<a class="code" href="classqtpd_1_1_canvas_view.html#afc2794230e1d56bbe439c349f21fbad2" title="returns canvas data for saving">canvasAsPdStrings</a>();
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032         <span class="comment">//todo check</span>
+<a name="l00033"></a>00033         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; fileData.count(); i++) {
+<a name="l00034"></a>00034             QString str1 = fileData.at(i);
+<a name="l00035"></a>00035             file-&gt;write(str1.toStdString().c_str(), str1.size());
+<a name="l00036"></a>00036         }
+<a name="l00037"></a>00037     };
+<a name="l00038"></a>00038 
+<a name="l00044"></a>00044     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_file_saver.html#ab2c7d435bb5011cce1dddfe61d397534" title="save canvas TODO move parts to canvas">saveCanvas</a>(<a class="code" href="classqtpd_1_1_canvas_data.html" title="shared canvas data model - boxes, patchcords">CanvasData</a>* <a class="code" href="classqtpd_1_1_canvas_data.html" title="shared canvas data model - boxes, patchcords">CanvasData</a>, QFile* file);
+<a name="l00045"></a>00045 
+<a name="l00051"></a><a class="code" href="classqtpd_1_1_file_saver.html#a9eb88ab869e69c38a8d4759b963a3d61">00051</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_file_saver.html#a9eb88ab869e69c38a8d4759b963a3d61" title="save file to disk; runs &#39;savecanvas&#39; recursively">save</a>(QString fname, <a class="code" href="classqtpd_1_1_canvas_view.html" title="&#39;t_canvas&#39; counterpart - for now it&#39;s both view and &#39;view controller&#39;. creates pd+gui objects...">CanvasView</a>* canvas)
+<a name="l00052"></a>00052     {
+<a name="l00053"></a>00053         QFile f(fname);
+<a name="l00054"></a>00054         f.open(QIODevice::WriteOnly);
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056         <a class="code" href="classqtpd_1_1_file_saver.html#ab2c7d435bb5011cce1dddfe61d397534" title="save canvas TODO move parts to canvas">FileSaver::saveCanvas</a>(canvas, &amp;f);
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058         f.close();
+<a name="l00059"></a>00059     }
+<a name="l00060"></a>00060 
+<a name="l00061"></a><a class="code" href="classqtpd_1_1_file_saver.html#ad2703e18292905ecd4ac1fbf6008f132">00061</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_file_saver.html#a9eb88ab869e69c38a8d4759b963a3d61" title="save file to disk; runs &#39;savecanvas&#39; recursively">save</a>(QString fname, <a class="code" href="classqtpd_1_1_canvas_data.html" title="shared canvas data model - boxes, patchcords">CanvasData</a>* canvasData)
+<a name="l00062"></a>00062     {
+<a name="l00063"></a>00063         QFile f(fname);
+<a name="l00064"></a>00064         f.open(QIODevice::WriteOnly);
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066         <a class="code" href="classqtpd_1_1_file_saver.html#ab2c7d435bb5011cce1dddfe61d397534" title="save canvas TODO move parts to canvas">FileSaver::saveCanvas</a>(canvasData, &amp;f);
+<a name="l00067"></a>00067 
+<a name="l00068"></a>00068         f.close();
+<a name="l00069"></a>00069     }
+<a name="l00070"></a>00070 };
+<a name="l00071"></a>00071 }
+<a name="l00072"></a>00072 
+<a name="l00073"></a>00073 <span class="preprocessor">#endif // CM_FILESAVER_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -128,7 +155,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 5 2017 11:15:02 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 5 2017 11:20:50 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['canvasdata_2ecpp',['CanvasData.cpp',['../_canvas_data_8cpp.html',1,'']]],
   ['canvasdata_2eh',['CanvasData.h',['../_canvas_data_8h.html',1,'']]],
   ['canvasview_2ecpp',['CanvasView.cpp',['../_canvas_view_8cpp.html',1,'']]],
   ['canvasview_2eh',['CanvasView.h',['../_canvas_view_8h.html',1,'']]],
