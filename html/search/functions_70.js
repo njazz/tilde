@@ -21,7 +21,7 @@ var searchData=
   ['patchcordsaspdfilestrings',['patchcordsAsPdFileStrings',['../classqtpd_1_1_canvas_data.html#a13d9919a4358f17e60829f16995f0bea',1,'qtpd::CanvasData']]],
   ['patchcordsforobject',['patchcordsForObject',['../classqtpd_1_1_canvas_data.html#a9e382308171baf185c84c007fe96c0b7',1,'qtpd::CanvasData']]],
   ['patchwindow',['PatchWindow',['../classqtpd_1_1_patch_window.html#a69d314b0dd596b5ce889f855fca01764',1,'qtpd::PatchWindow']]],
-  ['patchwindowcontroller',['PatchWindowController',['../classqtpd_1_1_patch_window_controller.html#ac0ec5e4dd4fc0e5b7154c43100916f4f',1,'qtpd::PatchWindowController']]],
+  ['patchwindowcontroller',['PatchWindowController',['../classqtpd_1_1_patch_window_controller.html#a1c0b6eb75a8b9fe9e4577988157eca6c',1,'qtpd::PatchWindowController']]],
   ['paths',['paths',['../classqtpd_1_1_preferences.html#add69fd0a89a565bc23d08eb6a1dd59c6',1,'qtpd::Preferences']]],
   ['pd_5fanything',['pd_anything',['../m__pd_8h.html#ae7a0acd905d14285537e620457b09af3',1,'m_pd.h']]],
   ['pd_5fbang',['pd_bang',['../m__pd_8h.html#acb1870a9023b98edfe31baf031068634',1,'m_pd.h']]],

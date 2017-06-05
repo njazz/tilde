@@ -30,7 +30,7 @@ var searchData=
   ['patchwindow_2ecpp',['PatchWindow.cpp',['../_patch_window_8cpp.html',1,'']]],
   ['patchwindow_2eh',['PatchWindow.h',['../_patch_window_8h.html',1,'']]],
   ['patchwindowcontroller',['PatchWindowController',['../classqtpd_1_1_patch_window_controller.html',1,'qtpd']]],
-  ['patchwindowcontroller',['PatchWindowController',['../classqtpd_1_1_patch_window_controller.html#ac0ec5e4dd4fc0e5b7154c43100916f4f',1,'qtpd::PatchWindowController']]],
+  ['patchwindowcontroller',['PatchWindowController',['../classqtpd_1_1_patch_window_controller.html#a1c0b6eb75a8b9fe9e4577988157eca6c',1,'qtpd::PatchWindowController']]],
   ['patchwindowcontroller_2ecpp',['PatchWindowController.cpp',['../_patch_window_controller_8cpp.html',1,'']]],
   ['patchwindowcontroller_2eh',['PatchWindowController.h',['../_patch_window_controller_8h.html',1,'']]],
   ['paths',['paths',['../classqtpd_1_1_preferences.html#add69fd0a89a565bc23d08eb6a1dd59c6',1,'qtpd::Preferences']]],
