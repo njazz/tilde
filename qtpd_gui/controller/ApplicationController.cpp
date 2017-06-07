@@ -17,7 +17,24 @@ ApplicationController::ApplicationController()
 {
     qDebug("new app controller");
 
-    _server = new TheServer();
+    //_server = new TheServer();
+
+    _localServer = 0;
+
+
+    _serverWorker = new ServerWorker();
+
+    _serverThread = new QThread();
+
+    connect(_serverThread, &QThread::started, _serverWorker, &ServerWorker::start);
+    connect(_serverThread, &QThread::finished, _serverWorker, &ServerWorker::stop);
+
+    //connect(_serverWorker, &ServerWorker::setServer, this, &ApplicationController::setServer);
+
+    _serverWorker->moveToThread(_serverThread);
+
+    _serverThread->start();
+
 //_mainServerInstance = _server->createInstance();
 
 #ifdef WITH_PYTHON
@@ -132,7 +149,7 @@ void PdWindowConsoleObserver::update()
 
 ServerObject* ApplicationController::slotCreateObject(ServerCanvas* canvas, string name)
 {
-    qDebug()<<"create obj slot";
+    qDebug() << "create obj slot";
 
     ServerObject* serverObject = canvas->createObject(name);
     // TEST

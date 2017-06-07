@@ -5,13 +5,17 @@
 #define APPLICATIONCONTROLLER
 
 // TODO
-#include "../API_prototype/serverAPIprototype.h"
+//#include "../API_prototype/serverAPIprototype.h"
+
+#include "ServerWorker.h"
 
 //#include "ControllerObserver.h"
 
 #ifdef WITH_PYTHON
 #include "python/PythonQtScriptingConsole.h"
 #endif
+
+#include <QApplication>
 
 namespace qtpd {
 
@@ -29,10 +33,13 @@ public:
 };
 
 class ApplicationController : public QObject {
-    //Q_OBJECT
+    Q_OBJECT
 
 private:
-    TheServer* _server;
+    LocalServer* _localServer;
+
+    ServerWorker* _serverWorker;
+    QThread* _serverThread;
     //ServerInstance* _mainServerInstance;
 
     PdWindow* _pdWindow;
@@ -42,7 +49,20 @@ private:
 
 public:
     ApplicationController();
-    ServerInstance* mainServerInstance() { return _server->firstInstance(); }
+
+    ServerInstance* mainServerInstance()
+    {
+
+        while (!_localServer) {
+
+            _localServer = _serverWorker->localServer();
+
+            qDebug() << "server @appc " << _localServer;
+        }
+
+        return _localServer->firstInstance();
+    }
+
     Observer* controllerObserver();
 
 public slots:
@@ -58,7 +78,17 @@ public slots:
     void dspOn();
     void dspOff();
 
-    ServerObject* slotCreateObject(ServerCanvas*canvas, string name);
+    ServerObject* slotCreateObject(ServerCanvas* canvas, string name);
+
+//    void setServer(LocalServer* server)
+//    {
+//        qDebug() << "set server " << server;
+
+//        _localServer = server;
+//    }
+
+//signals:
+//    LocalServer* getServer();
 };
 }
 

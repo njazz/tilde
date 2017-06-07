@@ -227,7 +227,7 @@ public:
     ServerInstance* createInstance();
 };
 
-class LocalServer : TheServer {
+class LocalServer : public TheServer {
 };
 
 #endif // PDSERVERPROTOTYPE_H

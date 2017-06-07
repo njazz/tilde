@@ -158,6 +158,7 @@ SOURCES += main.cpp\
     controller/PatchWindowController.cpp \
     datamodels/FileSaver.cpp \
     controller/ApplicationController.cpp \
+    ServerWorker.cpp
 #
 #    serverAPIPrototype.cpp \
 
@@ -235,7 +236,8 @@ HEADERS  += \
     controller/ControllerObserver.h \
     graphicobjects/UIPatchcord.h \
     graphicobjects/UINewPatchcord.h \
-    CanvasView.h
+    CanvasView.h \
+    ServerWorker.h
 
 
 
