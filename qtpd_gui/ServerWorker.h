@@ -17,11 +17,11 @@ public:
 
     };
 
-    LocalServer* localServer() {return _localServer;};
+    LocalServer* localServer() { return _localServer; };
 
-//signals:
-//    void getServer();
-//    void setServer(LocalServer* server);
+    //signals:
+    //    void getServer();
+    //    void setServer(LocalServer* server);
 
 public slots:
     void start()
@@ -33,7 +33,6 @@ public slots:
         //emit setServer(_localServer);
 
         qDebug() << ">>emit";
-
     };
 
     void stop()
@@ -41,13 +40,13 @@ public slots:
         delete _localServer;
     };
 
-//    void slotGetServer()
-//    {
+    //    void slotGetServer()
+    //    {
 
-//        qDebug() << "server get " << _localServer;
+    //        qDebug() << "server get " << _localServer;
 
-//        emit setServer(_localServer);
-//    }
+    //        emit setServer(_localServer);
+    //    }
 };
 
 #endif // LOCALSERVER_H
