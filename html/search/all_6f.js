@@ -15,7 +15,7 @@ var searchData=
   ['objectloader_2ecpp',['ObjectLoader.cpp',['../_object_loader_8cpp.html',1,'']]],
   ['objectloader_2eh',['ObjectLoader.h',['../_object_loader_8h.html',1,'']]],
   ['objectmaker',['ObjectMaker',['../classqtpd_1_1_object_maker.html',1,'qtpd']]],
-  ['objectmaker',['ObjectMaker',['../classqtpd_1_1_object_maker.html#a9302b224a677c13f8a335d33db2bcbb4',1,'qtpd::ObjectMaker::ObjectMaker()'],['../classqtpd_1_1_canvas_view.html#a6770763c6c47fbf72d3f34ac5763d882',1,'qtpd::CanvasView::objectMaker()']]],
+  ['objectmaker',['objectMaker',['../classqtpd_1_1_canvas_view.html#a6770763c6c47fbf72d3f34ac5763d882',1,'qtpd::CanvasView::objectMaker()'],['../classqtpd_1_1_object_maker.html#a9302b224a677c13f8a335d33db2bcbb4',1,'qtpd::ObjectMaker::ObjectMaker()']]],
   ['objectmaker_2ecpp',['ObjectMaker.cpp',['../_object_maker_8cpp.html',1,'']]],
   ['objectmaker_2eh',['ObjectMaker.h',['../_object_maker_8h.html',1,'']]],
   ['objectmakerdone',['objectMakerDone',['../classqtpd_1_1_patch_window.html#a65452a0d74483f4351d2703898ed22eb',1,'qtpd::PatchWindow']]],
