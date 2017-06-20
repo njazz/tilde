@@ -157,10 +157,13 @@ public:
             autoResize();
             _startY = event->pos().y();
 
-            std::string send = "set " + _objectDataModel.objectData().toStdString();
+            QString send = "set " + _objectDataModel.objectData();
 
-            serverObject()->message(send);
-            serverObject()->message("bang");
+            emit sendMessage(this->serverObject(),send);
+            emit sendMessage(this->serverObject(),QString("bang "));
+
+            //serverObject()->message(send);
+            //serverObject()->message("bang");
 
             // cmp_sendstring((t_pd*)pdObject(), send.c_str());
             // cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());

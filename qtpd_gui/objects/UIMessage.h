@@ -173,7 +173,9 @@ public:
             } else {
 
                 //cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
-                serverObject()->message("bang");
+                //serverObject()->message("bang");
+
+                emit sendMessage(this->serverObject(),QString("bang "));
             }
         }
     }
@@ -223,8 +225,10 @@ public:
                 qDebug("msg: bad pd object!");
             } else {
 
-                std::string msg = ("set " + _objectDataModel.objectData().toStdString());
-                serverObject()->message(msg);
+                QString msg = ("set " + _objectDataModel.objectData());
+                //serverObject()->message(msg);
+
+                emit sendMessage(this->serverObject(), msg);
                 qDebug() << "sync";
             }
         }

@@ -136,7 +136,10 @@ public:
                 qDebug("msg: bad server object!");
             } else {
                 //cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
-                serverObject()->message("bang");
+                //serverObject()->message("bang");
+
+                emit sendMessage(this->serverObject(),QString("bang "));
+
                 //qDebug("server msg");
             }
         }
