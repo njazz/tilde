@@ -28,6 +28,7 @@ var searchData=
   ['geteditordata',['getEditorData',['../classqtpd_1_1_u_i_script.html#a25660f1d0bd3bbd053b2603e147661ce',1,'qtpd::UIScript::getEditorData()'],['../classqtpd_1_1_u_i_text.html#a717276407aeca410161b2e664b85efed',1,'qtpd::UIText::getEditorData()']]],
   ['getfloat',['getFloat',['../classceammc_1_1_atom.html#a3dab310f75807221b10fd2a344d76c35',1,'ceammc::Atom']]],
   ['getfn',['getfn',['../m__pd_8h.html#a4b3e55ce2f01f63fea708c862dffedc8',1,'m_pd.h']]],
+  ['getlocalserver',['getLocalServer',['../classqtpd_1_1_application_controller.html#aba9fc1d3358588190c7f6aa5b8cb349a',1,'qtpd::ApplicationController']]],
   ['getmethodlist',['getMethodList',['../classqtpd_1_1_o_o_p_d_class_base.html#a1fc8eeace45da7bd34b5991664bfab55',1,'qtpd::OOPDClassBase']]],
   ['getmethodnames',['getMethodNames',['../classqtpd_1_1_o_o_p_d_class_base.html#a080bcb73e6876503a06ea50dd4d19fe6',1,'qtpd::OOPDClassBase']]],
   ['getmethodoutletforreferencename',['getMethodOutletForReferenceName',['../classqtpd_1_1_o_p_class.html#abf16a7fd6b77b3ff3c0f4d16a626ff4c',1,'qtpd::OPClass']]],

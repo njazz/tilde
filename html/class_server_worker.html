@@ -82,6 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
+<a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ServerWorker Class Reference</div>  </div>
@@ -96,10 +97,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Public Slots</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_server_worker.html#ab00a9af5806ff66596da1a62dcf5506a">start</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_server_worker.html#a9e10abe22326fe683368198616acb783">stop</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_server_worker.html#af32f4f1284a42212995ee42807438aaa">sendMessageToObject</a> (ServerObject *object, QString msg)</td></tr>
+<tr><td colspan="2"><h2><a name="signals"></a>
+Signals</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_server_worker.html#a412611bc9b4131e20a430860d7f1ac84">sendMessageSignal</a> (ServerObject *object, string msg)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_server_worker.html#acc9ab52ce5a63fae803f8bf3b1b79e5b">ServerWorker</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">LocalServer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_server_worker.html#a64de947c6716e1db43a43a1509df8dd2">localServer</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">LocalServer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_server_worker.html#aa100b14d6296dfcb79d3eba7c341d6ca">localServer</a> () const </td></tr>
 </table>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="acc9ab52ce5a63fae803f8bf3b1b79e5b"></a><!-- doxytag: member="ServerWorker::ServerWorker" ref="acc9ab52ce5a63fae803f8bf3b1b79e5b" args="()" -->
@@ -119,15 +124,69 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a64de947c6716e1db43a43a1509df8dd2"></a><!-- doxytag: member="ServerWorker::localServer" ref="a64de947c6716e1db43a43a1509df8dd2" args="()" -->
+<a class="anchor" id="aa100b14d6296dfcb79d3eba7c341d6ca"></a><!-- doxytag: member="ServerWorker::localServer" ref="aa100b14d6296dfcb79d3eba7c341d6ca" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">LocalServer* <a class="el" href="class_server_worker.html#a64de947c6716e1db43a43a1509df8dd2">ServerWorker::localServer</a> </td>
+          <td class="memname">LocalServer* <a class="el" href="class_server_worker.html#aa100b14d6296dfcb79d3eba7c341d6ca">ServerWorker::localServer</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a412611bc9b4131e20a430860d7f1ac84"></a><!-- doxytag: member="ServerWorker::sendMessageSignal" ref="a412611bc9b4131e20a430860d7f1ac84" args="(ServerObject *object, string msg)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_server_worker.html#a412611bc9b4131e20a430860d7f1ac84">ServerWorker::sendMessageSignal</a> </td>
+          <td>(</td>
+          <td class="paramtype">ServerObject *&#160;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>msg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [signal]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af32f4f1284a42212995ee42807438aaa"></a><!-- doxytag: member="ServerWorker::sendMessageToObject" ref="af32f4f1284a42212995ee42807438aaa" args="(ServerObject *object, QString msg)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_server_worker.html#af32f4f1284a42212995ee42807438aaa">ServerWorker::sendMessageToObject</a> </td>
+          <td>(</td>
+          <td class="paramtype">ServerObject *&#160;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>msg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, slot]</code></td>
         </tr>
       </table>
 </div>
@@ -188,7 +247,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jun 7 2017 18:47:52 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jun 20 2017 13:59:55 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
