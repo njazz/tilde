@@ -40,7 +40,6 @@ private:
 
     ServerWorker* _serverWorker;
     QThread* _serverThread;
-    //ServerInstance* _mainServerInstance;
 
     PdWindow* _pdWindow;
     PythonQtScriptingConsole* _pythonConsole;
@@ -52,18 +51,29 @@ public:
 
     ServerInstance* mainServerInstance()
     {
+//        emit this->getLocalServer(_localServer);
 
         while (!_localServer) {
 
-            _localServer = _serverWorker->localServer();
+            //_serverWorker->localServer();
 
-            qDebug() << "server @appc " << _localServer;
+            //emit this->getLocalServer(_localServer);
+
+            //qDebug() << _localServer;
+
+            _localServer = _serverWorker->localServer();
         }
 
+        qDebug() << "server @appc " << _localServer;
         return _localServer->firstInstance();
     }
 
     Observer* controllerObserver();
+
+    ServerWorker* serverWorker() {return _serverWorker;};
+
+signals:
+    void getLocalServer(LocalServer* ret);
 
 public slots:
     void newPatchWindowController(); //older createPatch //PatchWindowController*
@@ -80,15 +90,15 @@ public slots:
 
     ServerObject* slotCreateObject(ServerCanvas* canvas, string name);
 
-//    void setServer(LocalServer* server)
-//    {
-//        qDebug() << "set server " << server;
+    //    void setServer(LocalServer* server)
+    //    {
+    //        qDebug() << "set server " << server;
 
-//        _localServer = server;
-//    }
+    //        _localServer = server;
+    //    }
 
-//signals:
-//    LocalServer* getServer();
+    //signals:
+    //    LocalServer* getServer();
 };
 }
 

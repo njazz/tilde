@@ -1,6 +1,6 @@
 TEMPLATE = subdirs
 
-#CONFIG += static
+CONFIG += static
 CONFIG += ordered
 macx: CONFIG += withPython
 win32: CONFIG -= WithPython

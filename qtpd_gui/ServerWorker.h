@@ -13,40 +13,60 @@ class ServerWorker : public QObject {
     LocalServer* _localServer;
 
 public:
-    ServerWorker(){
+    ServerWorker()
+    {
 
+        qDebug() << "new server worker " << this;
+
+        // connect(this, &ServerWorker::getLocalServer, this, &ServerWorker::getLocalServerSlot);
+
+        //connect(this, &ServerWorker::sendMessageSignal, this, &ServerWorker::sendMessageToObject);
     };
 
-    LocalServer* localServer() { return _localServer; };
-
-    //signals:
-    //    void getServer();
-    //    void setServer(LocalServer* server);
+    LocalServer* localServer() const { return _localServer; };
 
 public slots:
     void start()
     {
         _localServer = new LocalServer();
 
-        qDebug() << "server in thread: " << _localServer;
-
-        //emit setServer(_localServer);
-
-        qDebug() << ">>emit";
+        qDebug() << "server " << _localServer << " in thread / worker: " << this;
     };
 
     void stop()
     {
+        qDebug() << "deleted server";
         delete _localServer;
     };
 
-    //    void slotGetServer()
+    void sendMessageToObject(ServerObject* object, QString msg)
+    {
+        qDebug() << "send message";
+        object->message(msg.toStdString());
+    }
+
+signals:
+    void sendMessageSignal(ServerObject* object, string msg);
+
+    //signals:
+    //    LocalServer* getLocalServer();
+
+    //public slots:
+    //     void getLocalServerSlot(LocalServer* ret)
     //    {
+    //        qDebug() << "server worker slot";
 
-    //        qDebug() << "server get " << _localServer;
+    //        if (!_localServer)
+    //        {
+    //            _localServer = new LocalServer();
 
-    //        emit setServer(_localServer);
-    //    }
+    //            qDebug() << "new server " << _localServer << " in thread / worker: " << this;
+
+    //        }
+    //        qDebug() << _localServer;
+
+    //        ret = _localServer;
+    //    };
 };
 
 #endif // LOCALSERVER_H

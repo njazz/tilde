@@ -79,7 +79,7 @@ EXTERN void uimsg_set_updateUI(t_pd* x, void* uiobj, t_updateUI func);
 
 using namespace ceammc;
 
-t_pdinstance* cm_pd;
+static t_pdinstance* cm_pd;
 
 //EXTERN t_pd* newest; /* OK - this should go into a .h file now :) */
 
@@ -92,7 +92,7 @@ void cmp_error(std::string msg)
 
 void cmp_pdinit()
 {
-    //pd_init();
+    pd_init();
 
     std::cout << "##### cmp_pdinit" << std::endl;
 
@@ -115,7 +115,8 @@ void cmp_pdinit()
     sys_nmidiout = 0;
     sys_init_fdpoll();
 
-    pd_init();
+    //pd_init();
+
     sys_set_audio_api(API_PORTAUDIO); //
     sys_searchpath = NULL;
     sys_startgui(NULL);
@@ -125,7 +126,7 @@ void cmp_pdinit()
     if (!cm_pd)
         cmp_error("Initialization failed");
     else
-        qDebug("Pd library initialized: %lu", (long)cm_pd);
+        qDebug("Pd library initialized: %x", cm_pd);
 
     // temporary extra objects
     // should be compiled as externals
@@ -173,7 +174,7 @@ void cmp_pdinit()
     //hack lol - removes empty canvas with array template and creates an empty new one
     cmp_closepatch(cmp_newpatch());
 
-    qDebug("## cm_pd: %lu", (long)cm_pd);
+    qDebug("## cm_pd: %x", cm_pd);
 
     qDebug() << "audio ins: " << sys_get_inchannels() << " outs: " << sys_get_outchannels();
 }
@@ -232,10 +233,11 @@ void cmp_clear_searchpath()
 
 t_canvas* cmp_newpatch()
 {
-    qDebug("new patch: %lu", (long)cm_pd);
+    qDebug("new patch for pd instance: %x", (long)cm_pd);
 
-    AtomList list(Atom(gensym("Untitled-1")));
-    list.append(Atom(gensym("~/")));
+    AtomList* list = new AtomList;
+    *list = Atom(gensym("Untitled-1"));
+    list->append(Atom(gensym("~/")));
 
     t_pd* dest = gensym("pd")->s_thing;
     if (dest == NULL) {
@@ -243,7 +245,7 @@ t_canvas* cmp_newpatch()
         return 0;
     };
 
-    pd_typedmess(dest, gensym("menunew"), (int)list.size(), list.toPdData());
+    pd_typedmess(dest, gensym("menunew"), (int)list->size(), list->toPdData());
 
     t_canvas* ret = 0;
     ret = (t_canvas*)pd_newest(); //canvas_getcurrent();
@@ -252,7 +254,7 @@ t_canvas* cmp_newpatch()
         ret = pd_this->pd_canvaslist->gl_next;
     }
 
-    qDebug("new canvas: %lu", (long)ret);
+    qDebug("new canvas: %x", (long)ret);
 
     return ret;
 }
@@ -392,7 +394,7 @@ void cmp_delete_patchcord(t_object* obj1, int outno, t_object* obj2, int inno)
 
 int cmp_get_outlet_count(t_object* obj)
 {
-    //qDebug("inlet count for %lu", (long)obj);
+    //qDebug("inlet count for %x", (long)obj);
     return obj_noutlets(obj);
 };
 
@@ -508,10 +510,13 @@ void cmp_sendstring(t_pd* obj, std::string msg)
     AtomList* list2 = new AtomList;
     *list2 = list->subList(1, list->size());
 
-    std::cout << "atomlist2 " << list2->size() << " " << list2 << std::endl;
+    std::cout << "atomlist2 " << list->at(0).asSymbol()->s_name << " " << list2->size() << " " << list2 << std::endl;
 
     pd_typedmess(obj, list->at(0).asSymbol(), (int)list2->size(), list2->toPdData());
     //pd_typedmess(obj, gensym("float"), 0, 0);
+
+    delete list;
+    delete list2;
 }
 
 void cmp_post(std::string text)
@@ -574,8 +579,8 @@ EXTERN t_cmp_audio_info* cmp_get_audio_device_info()
 {
     t_cmp_audio_info* ret = new t_cmp_audio_info;
 
-    char* indevlist = new char[32*1024];
-    char* outdevlist = new char[32*1024];
+    char* indevlist = new char[32 * 1024];
+    char* outdevlist = new char[32 * 1024];
 
     const int maxndev = 32;
     const int devdescsize = 1024;
@@ -584,7 +589,7 @@ EXTERN t_cmp_audio_info* cmp_get_audio_device_info()
         outdevlist, &ret->outputDeviceCount, &ret->hasMulti, &ret->hasCallback,
         maxndev, devdescsize);
 
-    qDebug () << indevlist << "||" << outdevlist;
+    qDebug() << indevlist << "||" << outdevlist;
 
     //ret->inputDeviceList = std::string(indevlist,1024);
     //ret->outputDeviceList = std::string(outdevlist,1024);

@@ -21,8 +21,9 @@ ApplicationController::ApplicationController()
 
     _localServer = 0;
 
-
     _serverWorker = new ServerWorker();
+
+    //connect(this, &ApplicationController::getLocalServer, _serverWorker, &ServerWorker::getLocalServerSlot);
 
     _serverThread = new QThread();
 
@@ -32,7 +33,6 @@ ApplicationController::ApplicationController()
     //connect(_serverWorker, &ServerWorker::setServer, this, &ApplicationController::setServer);
 
     _serverWorker->moveToThread(_serverThread);
-
     _serverThread->start();
 
 //_mainServerInstance = _server->createInstance();
@@ -44,6 +44,7 @@ ApplicationController::ApplicationController()
 #endif
 
     _consoleObserver = new PdWindowConsoleObserver;
+
     mainServerInstance()->setConsoleObserver(_consoleObserver);
 
     _pdWindow = new PdWindow();
@@ -128,6 +129,7 @@ void ApplicationController::dspOn()
     //dspOnAct->setChecked(true);
 
     qDebug() << "dsp on";
+
     mainServerInstance()->dspOn();
 
     //todo DSP observer

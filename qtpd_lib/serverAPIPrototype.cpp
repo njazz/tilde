@@ -1,5 +1,3 @@
-
-
 #include "../API_prototype/serverAPIPrototype.h"
 
 #include "../qtpd_gui/PdLink.h"
@@ -24,6 +22,7 @@ ServerObject::ServerObject()
     _pdObject = 0;
     _type = typeObject;
     _properties = 0;
+    _errorBox = false;
 }
 
 ServerObject::ServerObject(ServerObject* parent, string text)
@@ -96,6 +95,7 @@ void ServerObject::connectUI(void* uiObject, t_updateUI uiFunction)
 // ----------------------------------------
 ServerArray::ServerArray()
 {
+    _size = 0;
 }
 int ServerArray::size()
 {
@@ -117,8 +117,6 @@ ServerCanvas::ServerCanvas()
 
 ServerObject* ServerCanvas::createObject(string name)
 {
-    //ServerCanvas* ret = new ServerCanvas();
-
     ServerObject* ret = new ServerObject(this, name);
     _objects.push_back(ret);
     return ret;
@@ -168,7 +166,8 @@ void ServerCanvas::loadbang()
         cmp_loadbang((t_canvas*)_pdObject);
 }
 
-// --------
+// -----------------------------------------------
+
 class printHook {
 private:
     static vector<ConsoleObserver*> _consoleObservers;
@@ -194,7 +193,7 @@ public:
 
 vector<ConsoleObserver*> printHook::_consoleObservers;
 
-// ----------------------------------------
+// ----------------------------------------------
 
 ServerInstance::ServerInstance()
 {
@@ -254,9 +253,13 @@ TheServer::TheServer()
 {
     createInstance();
 }
+
 ServerInstance* TheServer::firstInstance()
 {
-    return _instances[0];
+    if (_instances.size() > 0)
+        return _instances[0];
+    else
+        return 0;
 }
 
 vector<ServerInstance*> TheServer::instances() { return _instances; };

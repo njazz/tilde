@@ -281,6 +281,8 @@ signals:
     /// \details pd calls UIUpdate(...) -> it emits 's_repaint()' that is connected to 'callRepaint()'
     void callRepaint();
 
+    void sendMessage(ServerObject* obj, QString msg);
+
 public slots:
     void resizeBox(int dx, int dy);
     void s_repaint(); ///>needed for proper threading

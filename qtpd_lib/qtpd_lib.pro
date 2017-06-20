@@ -11,6 +11,8 @@ TARGET = qtpd
 
 TEMPLATE = lib
 
+CONFIG += staticÏ
+
 #win32:CONFIG += staticlib
 
 macx:CONFIG += staticlib

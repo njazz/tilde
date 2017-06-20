@@ -49,7 +49,7 @@ int main(int argc, char* argv[])
 
     // TODO move all to appcontroller
 
-    ApplicationController* controller = new ApplicationController();
+    const ApplicationController* controller = new ApplicationController();
 
     QTPD_AUDIOSETTINGS_INIT;
 

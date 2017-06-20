@@ -34,6 +34,7 @@ public:
 //        QStringList l = data.split(" ");
 //        l.removeFirst();
 //        data = l.join(" ");
+
         ret->setObjectData(data);
 
         connect(ret, &UIBang::signalBang, ret, &UIBang::slotBang);
@@ -208,7 +209,9 @@ private slots:
 
     void slotBang()
     {
-        serverObject()->message("bang ");
+        //serverObject()->message("bang ");
+
+        emit sendMessage(this->serverObject(),QString("bang "));
     }
 };
 }

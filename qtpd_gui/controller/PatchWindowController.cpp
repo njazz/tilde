@@ -128,6 +128,7 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
     //
     connect(this, &PatchWindowController::signalCreateObject, _appController, &ApplicationController::slotCreateObject);
 
+
     ServerObject* serverObject = emit signalCreateObject(_serverCanvas, name);
 
     //ServerObject* serverObject = _serverCanvas->createObject(name);
@@ -137,6 +138,9 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
     uiObject->setParentCanvasView(_windows[0]->canvasView());
     uiObject->setServerObject(serverObject);
     uiObject->sync();
+
+    connect(uiObject, &UIObject::sendMessage, _appController->serverWorker(), &ServerWorker::sendMessageToObject);
+
 
     uiObject->setEditModeRef(_windows[0]->canvasView()->getEditModeRef());
 
