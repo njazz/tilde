@@ -1,6 +1,7 @@
 #include "../API_prototype/serverAPIPrototype.h"
 
 #include "../qtpd_gui/PdLink.h"
+#include <cassert>
 
 //class AtomList;
 
@@ -34,10 +35,15 @@ ServerObject::ServerObject(ServerObject* parent, string text)
     _properties = 0;
 
     if (parent->type() == typeCanvas) {
-        t_canvas* canvas = static_cast<t_canvas*>(reinterpret_cast<ServerCanvas*>(parent)->canvasObject());
+
+        ServerCanvas* p = dynamic_cast<ServerCanvas*>(parent);
+        assert(p);
+        t_canvas* canvas = static_cast<t_canvas*>(p->canvasObject());
         _pdObject = cmp_create_object(canvas, text, 0, 0);
 
-        std::cout << "|||||||||| new object canvas: " << canvas << " || pd object ptr " << _pdObject << std::endl;
+        std::cout << "|||||||||| new object on canvas: " << canvas << " || pd object ptr " << _pdObject << std::endl;
+
+
     }
 
     _errorBox = (!_pdObject);
@@ -56,8 +62,8 @@ void ServerObject::message(string str)
     cout << "msg " << msg << endl;
 
     if (_pdObject) {
-        cout << "send-> " << this << " " << _pdObject << endl;
-        cmp_sendstring(static_cast<t_pd*>(_pdObject), *msg);
+        cout << "send-> " << this << " pd object:" << _pdObject << endl;
+        cmp_sendstring(reinterpret_cast<t_pd*>(_pdObject), *msg);
     } else {
         cmp_post("internal pdObject error");
         cout << "pdobject error" << endl;

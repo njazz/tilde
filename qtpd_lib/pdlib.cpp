@@ -8,12 +8,15 @@ std::map<std::string, t_updateUI>* updateUImap;
 #include <signal.h>
 #endif
 
+
 extern "C" {
 
 #include <g_canvas.h>
 #include <m_imp.h>
 #include <m_pd.h>
 #include <s_stuff.h>
+
+#include <cassert>
 
 void pd_init(void);
 int sys_startgui(const char* libdir);
@@ -92,7 +95,7 @@ void cmp_error(std::string msg)
 
 void cmp_pdinit()
 {
-    pd_init();
+    //pd_init();
 
     std::cout << "##### cmp_pdinit" << std::endl;
 
@@ -115,7 +118,11 @@ void cmp_pdinit()
     sys_nmidiout = 0;
     sys_init_fdpoll();
 
-    //pd_init();
+    sys_printhook = 0;
+
+    //sys_time = 0;
+
+    pd_init();
 
     sys_set_audio_api(API_PORTAUDIO); //
     sys_searchpath = NULL;
@@ -139,11 +146,11 @@ void cmp_pdinit()
     setup_ui0x2esliders();
     setup_ui0x2ematrix();
 
-    setup_pdclass();
-    setup_pdinstance();
-    setup_pdmethod();
-    setup_pdproperty();
-    setup_pdsignal();
+    //    setup_pdclass();
+    //    setup_pdinstance();
+    //    setup_pdmethod();
+    //    setup_pdproperty();
+    //    setup_pdsignal();
 
     //temporary initialisations
     //    setup_ui0x2ebpfunc();
@@ -248,10 +255,14 @@ t_canvas* cmp_newpatch()
     pd_typedmess(dest, gensym("menunew"), (int)list->size(), list->toPdData());
 
     t_canvas* ret = 0;
-    ret = (t_canvas*)pd_newest(); //canvas_getcurrent();
+    //ret = (t_canvas*)pd_newest(); //canvas_getcurrent();
 
     if (pd_this) {
+
         ret = pd_this->pd_canvaslist->gl_next;
+
+        while (ret->gl_next)
+            ret = ret->gl_next;
     }
 
     qDebug("new canvas: %x", (long)ret);
@@ -311,46 +322,121 @@ AtomList* AtomListFromString(std::string in_string)
 
 // --------------------------------
 
+typedef t_object* (*t_newempty)();
+typedef t_object* (*t_newfloat)(t_float);
+typedef t_object* (*t_newgimme)(t_symbol* s, int argc, t_atom* argv);
+
 t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int y)
 {
+    std::cout << "create object\n";
+
     t_object* ret2 = 0;
     t_object* ret1 = 0;
 
     AtomList* list = AtomListFromString(class_name);
+    std::cout << "LIST" << *list << "\n";
 
     if (list->size() == 0) {
         delete list;
         return 0;
     }
 
-    list->insert(0, Atom((float)x));
-    list->insert(1, Atom((float)y));
+    //list->insert(0, Atom((float)x));
+    //list->insert(1, Atom((float)y));
 
-    ret1 = (t_object*)pd_newest();
-    pd_typedmess((t_pd*)canvas, gensym("obj"), (int)list->size(), list->toPdData());
+    //ret1 = (t_object*)pd_newest();
 
-    delete list;
+    //pd_typedmess((t_pd*)canvas, gensym("obj"), (int)list->size(), list->toPdData());
 
-    ret2 = (t_object*)pd_newest();
+    // *****************
 
-    if (!ret2)
-        return 0;
-    if (ret2 != pd_checkobject((t_pd*)ret2))
-        return 0;
+    t_symbol* OBJ_NAME = list->at(0).asSymbol();// gensym(list->at(0).asString());
+    t_object* obj_ = 0;
+    t_methodentry* m = pd_objectmaker->c_methods;
+
+    for (int i = 0; i < pd_objectmaker->c_nmethod; i++) {
+        if (m[i].me_name == OBJ_NAME) {
+            if (m[i].me_arg[0] == A_GIMME) {
+                t_newgimme new_fn = (t_newgimme)m[i].me_fun;
+                t_atom* al = list->toPdData();
+                obj_ = (*new_fn)(OBJ_NAME, list->size(), al);
+                std::cout<< "GIMME" <<std::endl;
+                break;
+            }
+
+            if (list->size() > 5) {
+                break;
+            }
+
+            if (m[i].me_arg[0] == A_NULL) {
+                t_newempty new_fn = (t_newempty)m[i].me_fun;
+                obj_ = (*new_fn)();
+                std::cout<< "NULL" <<std::endl;
+                break;
+            }
+
+            if (m[i].me_arg[0] == A_DEFFLOAT) {
+                t_newfloat new_fn = (t_newfloat)m[i].me_fun;
+                t_float f = list->empty() ? 0 : list->at(0).asFloat(0);
+                obj_ = (*new_fn)(f);
+                std::cout<< "DEFFLOAT" <<std::endl;
+                break;
+            }
+
+            if (m[i].me_arg[0] == A_FLOAT) {
+                t_newfloat new_fn = (t_newfloat)m[i].me_fun;
+                t_float f = list->empty() ? 0 : list->at(0).asFloat(0);
+                obj_ = (*new_fn)(f);
+                std::cout<< "FLOAT" <<std::endl;
+                break;
+            }
+        }
+    }
+
+    assert(obj_);
+
+    //if (!obj_)
+
+    //ret1 = obj_;
+
+    // *****************
+    //    t_gobj* last = ((t_canvas*)canvas)->gl_list;
+
+    //    int fuse_c = 10000;
+    //    while (last->g_next && fuse_c) {
+    //        last = ((t_canvas*)canvas)->gl_list->g_next;
+    //        fuse_c--;
+    //    }
+
+    //ret2 = (t_object*)pd_newest();
+    //   ret2->te_g = *last;
+
+    //    if (!ret2)
+    //        return 0;
+    //    if (ret2 != pd_checkobject((t_pd*)ret2))
+    //        return 0;
+    // ***
+    /*
     if (ret2 == ret1)
         return 0;
+        */
 
-    /*
-    char* bufp = new char[1024];
-    int lenp = 0;
+    //
+    //    char* bufp = new char[1024];
+    //    int lenp = 0;
 
-    binbuf_gettext(ret2->te_binbuf, &bufp, &lenp);
-    qDebug("object data: %s", bufp);
+    //    binbuf_gettext(ret2->te_binbuf, &bufp, &lenp);
+    //    qDebug("object data: %s", bufp);
 
-    delete bufp;
-    */
+    //    delete bufp;
+    //
 
-    return ret2;
+    std::cout << "class name: " << obj_->te_g.g_pd->c_name->s_name << std::endl;
+    //std::cout << "class help name: " << ((t_class*)ret2)->c_helpname->s_name << std::endl;
+
+    //delete list;
+
+    return obj_;
 }
 
 void cmp_moveobject(t_object* obj, int x, int y)
@@ -507,16 +593,18 @@ void cmp_sendstring(t_pd* obj, std::string msg)
 
     std::cout << "atomlist1 " << list->size() << std::endl;
 
-    AtomList* list2 = new AtomList;
-    *list2 = list->subList(1, list->size());
+    AtomList list2 = list->subList(1, list->size());
 
-    std::cout << "atomlist2 " << list->at(0).asSymbol()->s_name << " " << list2->size() << " " << list2 << std::endl;
+    std::cout << "atomlist2 " << list->at(0).asSymbol()->s_name << " " << list2.size() << " " << list2 << std::endl;
+    std::cout << "pd object: " << obj << std::endl;
 
-    pd_typedmess(obj, list->at(0).asSymbol(), (int)list2->size(), list2->toPdData());
+    std::cout << "object class name " << ((t_class*)obj)->c_name->s_name << std::endl;
+    std::cout << "as sym: " << list->at(0).asSymbol() << "\n";
+
+    pd_typedmess(obj, list->at(0).asSymbol(), (int)list2.size(), list2.toPdData());
     //pd_typedmess(obj, gensym("float"), 0, 0);
 
     delete list;
-    delete list2;
 }
 
 void cmp_post(std::string text)

@@ -126,7 +126,7 @@ public:
 
 class ServerInstance;
 
-class ServerCanvas : ServerObject {
+class ServerCanvas : public ServerObject {
 private:
     void* _canvas;
 
