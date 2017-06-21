@@ -26,6 +26,10 @@ ServerObject::ServerObject()
     _errorBox = false;
 }
 
+// TEMPORARY
+
+#include "m_imp.h"
+
 ServerObject::ServerObject(ServerObject* parent, string text)
 {
 
@@ -39,10 +43,19 @@ ServerObject::ServerObject(ServerObject* parent, string text)
         ServerCanvas* p = dynamic_cast<ServerCanvas*>(parent);
         assert(p);
         t_canvas* canvas = static_cast<t_canvas*>(p->canvasObject());
-        _pdObject = cmp_create_object(canvas, text, 0, 0);
+
+        t_object* obj = cmp_create_object(canvas, text, 0, 0);
+
+        //t_class* cl = (t_class*)obj;
+        std::cout << "class name after object is created: " << obj->te_g.g_pd->c_name->s_name << "\n";
+
+        _pdObject =  (void*)obj;
+
 
         std::cout << "|||||||||| new object on canvas: " << canvas << " || pd object ptr " << _pdObject << std::endl;
 
+        t_class* cl = (t_class*)_pdObject;
+        std::cout << "class name after object is created (pointer): " << cl->c_name->s_name << "\n";
 
     }
 
@@ -54,12 +67,18 @@ ServerObject::ServerObject(ServerObject* parent, string text)
 //void ServerObject::setParent(ServerObject* parent) { _parent = parent; };
 ServerObject* ServerObject::parent() { return _parent; };
 
+// TEMPORARY
+#include "m_imp.h"
 void ServerObject::message(string str)
 {
     string* msg = new string;
     *msg = str;
 
     cout << "msg " << msg << endl;
+
+    t_class *cl = (t_class*)_pdObject;
+
+    std::cout << "class name from serverObject: " << cl->c_name->s_name << "\n";
 
     if (_pdObject) {
         cout << "send-> " << this << " pd object:" << _pdObject << endl;

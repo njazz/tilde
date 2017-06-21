@@ -341,6 +341,8 @@ t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int
         return 0;
     }
 
+
+
     //list->insert(0, Atom((float)x));
     //list->insert(1, Atom((float)y));
 
@@ -353,6 +355,8 @@ t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int
     t_symbol* OBJ_NAME = list->at(0).asSymbol();// gensym(list->at(0).asString());
     t_object* obj_ = 0;
     t_methodentry* m = pd_objectmaker->c_methods;
+
+    list->remove(0);
 
     for (int i = 0; i < pd_objectmaker->c_nmethod; i++) {
         if (m[i].me_name == OBJ_NAME) {
@@ -436,6 +440,8 @@ t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int
 
     //delete list;
 
+
+    // t_object BREAKS HERE
     return obj_;
 }
 
@@ -587,19 +593,19 @@ void cmp_switch_dsp(bool on)
 
 void cmp_sendstring(t_pd* obj, std::string msg)
 {
-    std::cout << "sendstring " << std::endl;
+    std::cout << "\n ||| sendstring " << std::endl;
 
     AtomList* list = AtomListFromString(msg);
 
-    std::cout << "atomlist1 " << list->size() << std::endl;
+    std::cout << "list size: " << list->size() << std::endl;
 
     AtomList list2 = list->subList(1, list->size());
 
-    std::cout << "atomlist2 " << list->at(0).asSymbol()->s_name << " " << list2.size() << " " << list2 << std::endl;
+    std::cout << "list2: first element " << list->at(0).asSymbol()->s_name << " size: " << list2.size() << " " << list2 << std::endl;
     std::cout << "pd object: " << obj << std::endl;
 
     std::cout << "object class name " << ((t_class*)obj)->c_name->s_name << std::endl;
-    std::cout << "as sym: " << list->at(0).asSymbol() << "\n";
+    std::cout << "as symbol: " << list->at(0).asSymbol() << "\n";
 
     pd_typedmess(obj, list->at(0).asSymbol(), (int)list2.size(), list2.toPdData());
     //pd_typedmess(obj, gensym("float"), 0, 0);
