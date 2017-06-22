@@ -343,7 +343,7 @@ t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int
     t_object* ret1 = 0;
 
     AtomList* list = AtomListFromString(class_name);
-    std::cout << "LIST" << *list << "\n";
+    std::cout << "list: " << *list << "\n";
 
     if (list->size() == 0) {
         delete list;
@@ -404,7 +404,13 @@ t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int
         }
     }
 
-    assert(obj_);
+    //assert(obj_);
+
+    if (!obj_)
+    {
+        cout << "object creation error\n";
+        return 0;
+    }
 
     //if (!obj_)
 
@@ -441,6 +447,9 @@ t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int
 
     //    delete bufp;
     //
+
+
+
 
     std::cout << "class name: " << obj_->te_g.g_pd->c_name->s_name << std::endl;
     //std::cout << "class help name: " << ((t_class*)ret2)->c_helpname->s_name << std::endl;
@@ -604,6 +613,8 @@ void cmp_sendstring(t_object* obj, std::string msg)
     AtomList* list = AtomListFromString(msg);
 
     std::cout << "list size: " << list->size() << std::endl;
+
+    std::cout << "list: " << list << std::endl;
 
     AtomList list2 = list->subList(1, list->size());
 

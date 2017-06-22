@@ -110,6 +110,6 @@ OPInstance::~OPInstance()
     OOPD::inst()->unregisterInstance(this, _className, _canvas, _symbol);
 
     printf("~OPInstance\n");
-    printf("canvas: %lu\n", (long)_canvas);
+    printf("canvas: %x\n", _canvas);
 }
 }

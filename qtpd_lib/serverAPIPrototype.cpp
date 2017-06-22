@@ -48,16 +48,19 @@ ServerObject::ServerObject(ServerObject* parent, string text)
         t_object* obj = cmp_create_object(canvas, text, 0, 0);
 
         //t_class* cl = (t_class*)obj;
-        std::cout << "class name after object is created: " << obj->te_g.g_pd->c_name->s_name << "\n";
 
         _pdObject = (void*)obj;
 
         std::cout << "|||||||||| new object on canvas: " << canvas << " || pd object ptr " << _pdObject << std::endl;
 
-        t_class* cl = (t_class*)(obj);
+        if (obj) {
+            std::cout << "class name after object is created: " << obj->te_g.g_pd->c_name->s_name << "\n";
 
-        //t_class
-        std::cout << "class name after object is created (pointer): " << cl->c_name->s_name << "\n";
+            t_class* cl = (t_class*)(obj);
+
+            //t_class
+            std::cout << "class name after object is created (pointer): " << cl->c_name->s_name << "\n";
+        }
     }
 
     _errorBox = (!_pdObject);

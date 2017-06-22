@@ -153,6 +153,8 @@ ServerObject* ApplicationController::slotCreateObject(ServerCanvas* canvas, stri
 {
     qDebug() << "create obj slot";
 
+    assert(canvas);
+
     ServerObject* serverObject = canvas->createObject(name);
     // TEST
     //serverObject->_pdObject = cmp_create_object((t_canvas*)_serverCanvas->canvasObject(),name,0,0);

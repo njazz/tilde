@@ -1,5 +1,8 @@
 #include "SelectionRect.h"
 
 namespace qtpd {
-SelectionRect::SelectionRect() {}
+SelectionRect::SelectionRect() {
+
+    _active = 0;
+}
 }

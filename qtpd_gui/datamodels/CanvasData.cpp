@@ -11,6 +11,9 @@ CanvasData::CanvasData()
 {
     _filePath = Preferences::inst().get("Patches")->asQString();
 
+    //TODO
+    _inlets = new portItemVec;
+    _outlets = new portItemVec;
     //_serverCanvas = 0;
 }
 

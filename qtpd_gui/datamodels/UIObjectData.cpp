@@ -12,6 +12,5 @@ UIObjectData::UIObjectData(QObject* parent)
     _properties = new PropertyList();
 
     _errorBox = false;
-
 }
 }

@@ -142,7 +142,7 @@ public:
         int in_c = _serverObject->inletCount();
         int out_c = _serverObject->outletCount();
 
-        qDebug() << "i/o " << in_c << out_c;
+        //qDebug() << "i/o " << in_c << out_c;
 
         for (int i = 0; i < in_c; i++)
             addInlet();
