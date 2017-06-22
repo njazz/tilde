@@ -139,7 +139,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00058"></a>00058             qDebug(<span class="stringliteral">&quot;bad pd canvas instance&quot;</span>);
 <a name="l00059"></a>00059         } <span class="keywordflow">else</span> {
 <a name="l00060"></a>00060             QPoint pos = QPoint(0, 0);
-<a name="l00061"></a>00061             new_obj = <a class="code" href="_pd_link_8h.html#a2c0a0d9150791897b85a167998ecf7c2" title="creates pd object">cmp_create_object</a>(pdCanvas, message, pos.x(), pos.y());
+<a name="l00061"></a>00061             new_obj = cmp_create_object(pdCanvas, message, pos.x(), pos.y());
 <a name="l00062"></a>00062         }
 <a name="l00063"></a>00063 
 <a name="l00064"></a>00064         <span class="keywordflow">if</span> (new_obj) {
@@ -263,7 +263,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00182"></a>00182     {
 <a name="l00183"></a>00183         <a class="code" href="classqtpd_1_1_u_i_script.html#a7cee0bd7c694e07f389606acb3ad7048">UIObject::setPdObject</a>(obj);
 <a name="l00184"></a>00184         connect(<span class="keyword">this</span>, &amp;<a class="code" href="classqtpd_1_1_u_i_script.html#a287113500154deeb8abe43a21649621b">UIScript::callRun</a>, <span class="keyword">this</span>, &amp;<a class="code" href="classqtpd_1_1_u_i_script.html#a707172a196120191b1d3fff972e2d040">UIScript::btnRun</a>);
-<a name="l00185"></a>00185         <a class="code" href="_pd_link_8h.html#a9b4bef98ca39e6d157ee073b5139ae9d" title="set the &#39;repaint&#39; function of the ui object to be accessible from pd object">cmp_connectUI</a>((<a class="code" href="m__pd_8h.html#ac085bef486c0e262349075ffce8a9752">t_pd</a>*)pdObject(), (<span class="keywordtype">void</span>*)<span class="keyword">this</span>, &amp;<a class="code" href="classqtpd_1_1_u_i_script.html#a603bd9c41cabb2107391c4a8c3b3ba20">UIScript::updateUI</a>);
+<a name="l00185"></a>00185         cmp_connectUI((<a class="code" href="m__pd_8h.html#ac085bef486c0e262349075ffce8a9752">t_pd</a>*)pdObject(), (<span class="keywordtype">void</span>*)<span class="keyword">this</span>, &amp;<a class="code" href="classqtpd_1_1_u_i_script.html#a603bd9c41cabb2107391c4a8c3b3ba20">UIScript::updateUI</a>);
 <a name="l00186"></a>00186 
 <a name="l00187"></a>00187         <span class="comment">//cmp_connectUI(&quot;ui.script&quot;, (void*)this, &amp;UIScript::updateUI);</span>
 <a name="l00188"></a>00188 
@@ -308,10 +308,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00227"></a>00227 
 <a name="l00228"></a>00228             <span class="keywordflow">if</span> (_stdOut != <span class="stringliteral">&quot;&quot;</span>) {
 <a name="l00229"></a>00229 
-<a name="l00230"></a>00230                 <a class="code" href="_pd_link_8h.html#a766e12f26830eee9deae0fe8e9f70535" title="post plain text to Pd window">cmp_post</a>((std::string) <span class="stringliteral">&quot;Python: &quot;</span> + _stdOut.toStdString());
+<a name="l00230"></a>00230                 cmp_post((std::string) <span class="stringliteral">&quot;Python: &quot;</span> + _stdOut.toStdString());
 <a name="l00231"></a>00231             }
 <a name="l00232"></a>00232             <span class="keywordflow">if</span> (_stdErr != <span class="stringliteral">&quot;&quot;</span>) {
-<a name="l00233"></a>00233                 <a class="code" href="_pd_link_8h.html#a766e12f26830eee9deae0fe8e9f70535" title="post plain text to Pd window">cmp_post</a>((std::string) <span class="stringliteral">&quot;Python error: &quot;</span> + _stdOut.toStdString());
+<a name="l00233"></a>00233                 cmp_post((std::string) <span class="stringliteral">&quot;Python error: &quot;</span> + _stdOut.toStdString());
 <a name="l00234"></a>00234             }
 <a name="l00235"></a>00235         }
 <a name="l00236"></a>00236     }
@@ -372,7 +372,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jun 22 2017 13:01:57 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 22 2017 14:00:35 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

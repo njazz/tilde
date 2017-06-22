@@ -3,7 +3,6 @@ var searchData=
   ['_5farray',['_array',['../struct__array.html',1,'']]],
   ['_5farrayvis',['_arrayvis',['../struct__arrayvis.html',1,'']]],
   ['_5fatom',['_atom',['../struct__atom.html',1,'']]],
-  ['_5fcmp_5faudio_5finfo',['_cmp_audio_info',['../struct__cmp__audio__info.html',1,'']]],
   ['_5fdataslot',['_dataslot',['../struct__dataslot.html',1,'']]],
   ['_5feditor',['_editor',['../struct__editor.html',1,'']]],
   ['_5fglist',['_glist',['../struct__glist.html',1,'']]],

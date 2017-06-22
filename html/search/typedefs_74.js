@@ -6,7 +6,6 @@ var searchData=
   ['t_5fcanvas_5fpath_5fiterator',['t_canvas_path_iterator',['../g__canvas_8h.html#ab7e4a798b9f397339e211b6a587af328',1,'g_canvas.h']]],
   ['t_5fcanvasapply',['t_canvasapply',['../g__canvas_8h.html#a06648af1a50b6c09199b6cb352d9c023',1,'g_canvas.h']]],
   ['t_5fclickfn',['t_clickfn',['../g__canvas_8h.html#a7db8880ebebaa760a83642fa04a67df5',1,'g_canvas.h']]],
-  ['t_5fcmp_5faudio_5finfo',['t_cmp_audio_info',['../_pd_link_8h.html#a6dfb84d0c4c74fc07153deac0b400570',1,'PdLink.h']]],
   ['t_5fdataslot',['t_dataslot',['../g__canvas_8h.html#a3942145737110151cfc2d719cda68a47',1,'g_canvas.h']]],
   ['t_5fdeletefn',['t_deletefn',['../g__canvas_8h.html#aa75cd1c6db3db22e0ff24c785bb5c001',1,'g_canvas.h']]],
   ['t_5fdisplacefn',['t_displacefn',['../g__canvas_8h.html#a194105f4ad66c842e3b06fe82a2017d5',1,'g_canvas.h']]],
@@ -48,7 +47,6 @@ var searchData=
   ['t_5fpatchcordasnumbers',['t_patchcordAsNumbers',['../namespaceqtpd.html#a4d975c32d29ce6a398847118e1826bd5',1,'qtpd']]],
   ['t_5fpd',['t_pd',['../m__pd_8h.html#ac085bef486c0e262349075ffce8a9752',1,'m_pd.h']]],
   ['t_5fperfroutine',['t_perfroutine',['../m__pd_8h.html#ad1bc58df327774373ee9e10ad9026564',1,'m_pd.h']]],
-  ['t_5fprinthook',['t_printhook',['../_pd_link_8h.html#a60e4f3209d8f267b0aa06105b0b1a4ff',1,'PdLink.h']]],
   ['t_5fpropertiesfn',['t_propertiesfn',['../m__pd_8h.html#a588441fce6e6467b836aecf32a47419b',1,'m_pd.h']]],
   ['t_5fresample',['t_resample',['../m__pd_8h.html#a5419b42f9dde7dd0dab7dbbcd789c678',1,'m_pd.h']]],
   ['t_5fsample',['t_sample',['../m__pd_8h.html#ac270cb9478f28b671e00b6e943175a35',1,'m_pd.h']]],
@@ -64,7 +62,6 @@ var searchData=
   ['t_5ftick',['t_tick',['../g__canvas_8h.html#aa0daee6f340430a8384d33b649d6ebfc',1,'g_canvas.h']]],
   ['t_5fundofn',['t_undofn',['../g__canvas_8h.html#a56fcf6d27d78fa17fa649e5f6e089a15',1,'g_canvas.h']]],
   ['t_5fupdateheader',['t_updateheader',['../g__canvas_8h.html#a11e7e88f07d1666adbe673daefff52ba',1,'g_canvas.h']]],
-  ['t_5fupdateui',['t_updateUI',['../_pd_link_8h.html#aef7ba73145c14cf0ffca487d734e38f0',1,'PdLink.h']]],
   ['t_5fvisfn',['t_visfn',['../g__canvas_8h.html#a03abaae15a31911f83186c8e221d2956',1,'g_canvas.h']]],
   ['t_5fword',['t_word',['../m__pd_8h.html#a8967c5ba87b9455fd29726f7794235d2',1,'m_pd.h']]]
 ];

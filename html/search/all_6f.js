@@ -15,7 +15,7 @@ var searchData=
   ['objectloader_2ecpp',['ObjectLoader.cpp',['../_object_loader_8cpp.html',1,'']]],
   ['objectloader_2eh',['ObjectLoader.h',['../_object_loader_8h.html',1,'']]],
   ['objectmaker',['ObjectMaker',['../classqtpd_1_1_object_maker.html',1,'qtpd']]],
-  ['objectmaker',['ObjectMaker',['../classqtpd_1_1_object_maker.html#a9302b224a677c13f8a335d33db2bcbb4',1,'qtpd::ObjectMaker::ObjectMaker()'],['../classqtpd_1_1_canvas_view.html#a6770763c6c47fbf72d3f34ac5763d882',1,'qtpd::CanvasView::objectMaker()']]],
+  ['objectmaker',['objectMaker',['../classqtpd_1_1_canvas_view.html#a6770763c6c47fbf72d3f34ac5763d882',1,'qtpd::CanvasView::objectMaker()'],['../classqtpd_1_1_object_maker.html#a9302b224a677c13f8a335d33db2bcbb4',1,'qtpd::ObjectMaker::ObjectMaker()']]],
   ['objectmaker_2ecpp',['ObjectMaker.cpp',['../_object_maker_8cpp.html',1,'']]],
   ['objectmaker_2eh',['ObjectMaker.h',['../_object_maker_8h.html',1,'']]],
   ['objectmakerdone',['objectMakerDone',['../classqtpd_1_1_patch_window.html#a65452a0d74483f4351d2703898ed22eb',1,'qtpd::PatchWindow']]],
@@ -84,7 +84,5 @@ var searchData=
   ['outlist',['outList',['../classqtpd_1_1_o_p_outputs.html#ab1594f6979198cc0f86d626f32fc293d',1,'qtpd::OPOutputs']]],
   ['output',['output',['../classceammc_1_1_atom.html#aad55d8d25f247d50a8cc4980c33ed595',1,'ceammc::Atom::output()'],['../classceammc_1_1_atom_list.html#a0c9b1478f4d137abaea403b33cff6c2c',1,'ceammc::AtomList::output()']]],
   ['outputasany',['outputAsAny',['../classceammc_1_1_atom.html#a3689c5a34f24485896fec83a5f41593c',1,'ceammc::Atom::outputAsAny()'],['../classceammc_1_1_atom_list.html#a47a3313ad11915f5d2bf5a1bb20e3bb1',1,'ceammc::AtomList::outputAsAny(t_outlet *x) const '],['../classceammc_1_1_atom_list.html#a5a4485283acfee77dee987abe8e8adfd',1,'ceammc::AtomList::outputAsAny(t_outlet *x, t_symbol *s) const ']]],
-  ['outputatoms',['outputAtoms',['../classceammc_1_1_atom_list.html#ad9ab20dba34f17a62c10d842231b97a9',1,'ceammc::AtomList']]],
-  ['outputdevicecount',['outputDeviceCount',['../struct__cmp__audio__info.html#a2efceb3552277858fb2b4fc3a0326bf8',1,'_cmp_audio_info']]],
-  ['outputdevicelist',['outputDeviceList',['../struct__cmp__audio__info.html#a7bc24c3c68e1040f736d1fe2bf06c892',1,'_cmp_audio_info']]]
+  ['outputatoms',['outputAtoms',['../classceammc_1_1_atom_list.html#ad9ab20dba34f17a62c10d842231b97a9',1,'ceammc::AtomList']]]
 ];

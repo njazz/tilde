@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['hascallback',['hasCallback',['../struct__cmp__audio__info.html#a41b8d9c720c5b7850d09167a188834f6',1,'_cmp_audio_info']]],
-  ['hasmulti',['hasMulti',['../struct__cmp__audio__info.html#a3a4b5eb592c6801dcb24813f3f21e23c',1,'_cmp_audio_info']]],
   ['hasobjects',['hasObjects',['../classqtpd_1_1_canvas_data.html#a5ac222f1e1a7cafb92b6b15f8956f386',1,'qtpd::CanvasData']]],
   ['hasproperty',['hasProperty',['../classceammc_1_1_atom_list.html#ae7857e5cca7d55ff167bbf4b52927dc4',1,'ceammc::AtomList::hasProperty()'],['../classqtpd_1_1_o_o_p_d_class_base.html#ab90a64531308986d0d960e1f86c3a97a',1,'qtpd::OOPDClassBase::hasProperty()']]],
   ['hasselectedobjects',['hasSelectedObjects',['../classqtpd_1_1_canvas_data.html#a37b1856e8c2279ae20a1835380da20a9',1,'qtpd::CanvasData']]],

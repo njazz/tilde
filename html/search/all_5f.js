@@ -10,7 +10,6 @@ var searchData=
   ['_5fclass',['_class',['../m__pd_8h.html#a453f93c247a3140922e3e58c32488781',1,'m_pd.h']]],
   ['_5fclassname',['_className',['../classqtpd_1_1_o_o_p_d_class_base.html#af49aba2510e177e17ffb43fd18bb1b4e',1,'qtpd::OOPDClassBase']]],
   ['_5fclock',['_clock',['../m__pd_8h.html#a5295ba0b52ba13b2ae9726479297b103',1,'m_pd.h']]],
-  ['_5fcmp_5faudio_5finfo',['_cmp_audio_info',['../struct__cmp__audio__info.html',1,'']]],
   ['_5fdataslot',['_dataslot',['../struct__dataslot.html',1,'']]],
   ['_5feditor',['_editor',['../struct__editor.html',1,'']]],
   ['_5ffielddesc',['_fielddesc',['../g__canvas_8h.html#a9531b08b4d261cdbfb0882af6d6b9b19',1,'g_canvas.h']]],

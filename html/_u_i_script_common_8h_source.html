@@ -186,53 +186,55 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00108"></a>00108             }
 <a name="l00109"></a>00109 
 <a name="l00110"></a>00110             <span class="keywordflow">if</span> (_stdOut != <span class="stringliteral">&quot;&quot;</span>) {
-<a name="l00111"></a>00111                 <a class="code" href="_pd_link_8h.html#a766e12f26830eee9deae0fe8e9f70535" title="post plain text to Pd window">cmp_post</a>((std::string) <span class="stringliteral">&quot;Python: &quot;</span> + _stdOut.toStdString());
-<a name="l00112"></a>00112             }
-<a name="l00113"></a>00113             <span class="keywordflow">if</span> (_stdErr != <span class="stringliteral">&quot;&quot;</span>) {
-<a name="l00114"></a>00114                 <a class="code" href="_pd_link_8h.html#a766e12f26830eee9deae0fe8e9f70535" title="post plain text to Pd window">cmp_post</a>((std::string) <span class="stringliteral">&quot;Python error: &quot;</span> + _stdOut.toStdString());
-<a name="l00115"></a>00115             }
-<a name="l00116"></a>00116         }
-<a name="l00117"></a>00117     }
-<a name="l00118"></a>00118 
-<a name="l00119"></a><a class="code" href="classqtpd_1_1_u_i_script_common.html#a1fcaf142178b247638cf793d45e227f2">00119</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_script_common.html#a1fcaf142178b247638cf793d45e227f2">btnLoad</a>()
-<a name="l00120"></a>00120     {
-<a name="l00121"></a>00121         QString fname = QFileDialog::getOpenFileName(0, QString(<span class="stringliteral">&quot;Open Python script&quot;</span>), QString(<span class="stringliteral">&quot;~/&quot;</span>), QString(<span class="stringliteral">&quot;*.py&quot;</span>), 0, 0);
-<a name="l00122"></a>00122         <span class="keywordflow">if</span> (fname != <span class="stringliteral">&quot;&quot;</span>) {
-<a name="l00123"></a>00123             QFile file(fname);
-<a name="l00124"></a>00124 
-<a name="l00125"></a>00125             file.open(QFile::ReadOnly | QFile::Text);
+<a name="l00111"></a>00111                 <span class="comment">// TODO</span>
+<a name="l00112"></a>00112                 <span class="comment">//cmp_post((std::string) &quot;Python: &quot; + _stdOut.toStdString());</span>
+<a name="l00113"></a>00113             }
+<a name="l00114"></a>00114             <span class="keywordflow">if</span> (_stdErr != <span class="stringliteral">&quot;&quot;</span>) {
+<a name="l00115"></a>00115                 <span class="comment">// TODO</span>
+<a name="l00116"></a>00116                 <span class="comment">//cmp_post((std::string) &quot;Python error: &quot; + _stdOut.toStdString());</span>
+<a name="l00117"></a>00117             }
+<a name="l00118"></a>00118         }
+<a name="l00119"></a>00119     }
+<a name="l00120"></a>00120 
+<a name="l00121"></a><a class="code" href="classqtpd_1_1_u_i_script_common.html#a1fcaf142178b247638cf793d45e227f2">00121</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_script_common.html#a1fcaf142178b247638cf793d45e227f2">btnLoad</a>()
+<a name="l00122"></a>00122     {
+<a name="l00123"></a>00123         QString fname = QFileDialog::getOpenFileName(0, QString(<span class="stringliteral">&quot;Open Python script&quot;</span>), QString(<span class="stringliteral">&quot;~/&quot;</span>), QString(<span class="stringliteral">&quot;*.py&quot;</span>), 0, 0);
+<a name="l00124"></a>00124         <span class="keywordflow">if</span> (fname != <span class="stringliteral">&quot;&quot;</span>) {
+<a name="l00125"></a>00125             QFile file(fname);
 <a name="l00126"></a>00126 
-<a name="l00127"></a>00127             QTextStream ReadFile(&amp;file);
-<a name="l00128"></a>00128             <span class="comment">// TODO set data; &#39;editor-&gt;update&#39;</span>
-<a name="l00129"></a>00129             <a class="code" href="struct__editor.html">_editor</a>-&gt;textEdit()-&gt;document()-&gt;setPlainText(ReadFile.readAll());
-<a name="l00130"></a>00130             file.close();
-<a name="l00131"></a>00131         }
-<a name="l00132"></a>00132     }
-<a name="l00133"></a>00133 
-<a name="l00134"></a><a class="code" href="classqtpd_1_1_u_i_script_common.html#a637fd498155030cb202098b94a28ba53">00134</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_script_common.html#a637fd498155030cb202098b94a28ba53">btnSave</a>()
-<a name="l00135"></a>00135     {
-<a name="l00136"></a>00136         QString fname = QFileDialog::getSaveFileName(0, QString(<span class="stringliteral">&quot;Save Python script&quot;</span>), QString(<span class="stringliteral">&quot;~/&quot;</span>), QString(<span class="stringliteral">&quot;*.py&quot;</span>), 0, 0);
-<a name="l00137"></a>00137         <span class="keywordflow">if</span> (fname != <span class="stringliteral">&quot;&quot;</span>) {
-<a name="l00138"></a>00138             QFile file(fname);
-<a name="l00139"></a>00139 
-<a name="l00140"></a>00140             file.open(QFile::WriteOnly | QFile::Text);
+<a name="l00127"></a>00127             file.open(QFile::ReadOnly | QFile::Text);
+<a name="l00128"></a>00128 
+<a name="l00129"></a>00129             QTextStream ReadFile(&amp;file);
+<a name="l00130"></a>00130             <span class="comment">// TODO set data; &#39;editor-&gt;update&#39;</span>
+<a name="l00131"></a>00131             <a class="code" href="struct__editor.html">_editor</a>-&gt;textEdit()-&gt;document()-&gt;setPlainText(ReadFile.readAll());
+<a name="l00132"></a>00132             file.close();
+<a name="l00133"></a>00133         }
+<a name="l00134"></a>00134     }
+<a name="l00135"></a>00135 
+<a name="l00136"></a><a class="code" href="classqtpd_1_1_u_i_script_common.html#a637fd498155030cb202098b94a28ba53">00136</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_script_common.html#a637fd498155030cb202098b94a28ba53">btnSave</a>()
+<a name="l00137"></a>00137     {
+<a name="l00138"></a>00138         QString fname = QFileDialog::getSaveFileName(0, QString(<span class="stringliteral">&quot;Save Python script&quot;</span>), QString(<span class="stringliteral">&quot;~/&quot;</span>), QString(<span class="stringliteral">&quot;*.py&quot;</span>), 0, 0);
+<a name="l00139"></a>00139         <span class="keywordflow">if</span> (fname != <span class="stringliteral">&quot;&quot;</span>) {
+<a name="l00140"></a>00140             QFile file(fname);
 <a name="l00141"></a>00141 
-<a name="l00142"></a>00142             QTextStream WriteFile(&amp;file);
-<a name="l00143"></a>00143             <span class="comment">// TODO get data</span>
-<a name="l00144"></a>00144             WriteFile &lt;&lt; <a class="code" href="struct__editor.html">_editor</a>-&gt;textEdit()-&gt;document()-&gt;toPlainText();
-<a name="l00145"></a>00145             file.close();
-<a name="l00146"></a>00146         }
-<a name="l00147"></a>00147     }
-<a name="l00148"></a>00148 
-<a name="l00149"></a><a class="code" href="classqtpd_1_1_u_i_script_common.html#a2ac221ae189fa92fb3085b8424f5c731">00149</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_script_common.html#a2ac221ae189fa92fb3085b8424f5c731">btnClear</a>()
-<a name="l00150"></a>00150     {
-<a name="l00151"></a>00151         <span class="comment">// TODO set data; &#39;editor-&gt;update&#39;</span>
-<a name="l00152"></a>00152         <a class="code" href="struct__editor.html">_editor</a>-&gt;textEdit()-&gt;clear();
-<a name="l00153"></a>00153     }
-<a name="l00154"></a>00154 };
-<a name="l00155"></a>00155 }
-<a name="l00156"></a>00156 
-<a name="l00157"></a>00157 <span class="preprocessor">#endif // UISCRIPTCOMMON_H</span>
+<a name="l00142"></a>00142             file.open(QFile::WriteOnly | QFile::Text);
+<a name="l00143"></a>00143 
+<a name="l00144"></a>00144             QTextStream WriteFile(&amp;file);
+<a name="l00145"></a>00145             <span class="comment">// TODO get data</span>
+<a name="l00146"></a>00146             WriteFile &lt;&lt; <a class="code" href="struct__editor.html">_editor</a>-&gt;textEdit()-&gt;document()-&gt;toPlainText();
+<a name="l00147"></a>00147             file.close();
+<a name="l00148"></a>00148         }
+<a name="l00149"></a>00149     }
+<a name="l00150"></a>00150 
+<a name="l00151"></a><a class="code" href="classqtpd_1_1_u_i_script_common.html#a2ac221ae189fa92fb3085b8424f5c731">00151</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_script_common.html#a2ac221ae189fa92fb3085b8424f5c731">btnClear</a>()
+<a name="l00152"></a>00152     {
+<a name="l00153"></a>00153         <span class="comment">// TODO set data; &#39;editor-&gt;update&#39;</span>
+<a name="l00154"></a>00154         <a class="code" href="struct__editor.html">_editor</a>-&gt;textEdit()-&gt;clear();
+<a name="l00155"></a>00155     }
+<a name="l00156"></a>00156 };
+<a name="l00157"></a>00157 }
+<a name="l00158"></a>00158 
+<a name="l00159"></a>00159 <span class="preprocessor">#endif // UISCRIPTCOMMON_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -251,7 +253,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jun 22 2017 13:01:57 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 22 2017 14:00:35 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
