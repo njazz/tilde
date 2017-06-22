@@ -12,7 +12,7 @@
 
 #include <QDebug>
 
-#include "PdLink.h"
+//#include "PdLink.h"
 
 #include "Preferences.h"
 
@@ -65,7 +65,8 @@ public:
         // TODO fix: these values are tcl {} lists
         // t_cmp_audio_info* info = cmp_get_audio_device_info();
 
-        create("Driver", "Audio", QTPD_APP_VERSION, cmp_get_audio_apis());
+        // TODO
+        //create("Driver", "Audio", QTPD_APP_VERSION, cmp_get_audio_apis());
 
         //create("Input", "Audio", QTPD_APP_VERSION, info->inputDeviceList);
         //create("Output", "Audio", QTPD_APP_VERSION, info->outputDeviceList);

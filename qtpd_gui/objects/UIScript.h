@@ -53,6 +53,8 @@ public:
     }
 
     static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
+    {return 0;} /*
+
     {
         qDebug() << "ui.script";
 
@@ -107,6 +109,8 @@ public:
 
         return (UIObject*)b;
     };
+
+    */
 
     void initProperties()
     {

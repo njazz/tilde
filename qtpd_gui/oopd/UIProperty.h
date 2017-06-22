@@ -169,7 +169,7 @@ public:
 
         if (b->_opInstance) {
             if (msg.at(0).asSymbol() == gensym("bang")) {
-                //cmp_post("bang!");
+                ///* TODO */ //cmp_post("bang!");
 
                 AtomList _prop = b->_opInstance->getAtomListProperty(gensym(b->_propertyName.c_str()));
                 QStringList list1;
@@ -181,7 +181,9 @@ public:
 //                cmp_sendstring((t_pd*)b->pdObject(), (std::string) "__output " + list1.join(" ").toStdString());
 
             } else if (msg.at(0).asSymbol() == gensym("set")) {
-                cmp_post("set!");
+                // TODO
+                // /* TODO */ //cmp_post("set!");
+
                 //AtomList msg2 = msg;
                 //msg2.at(0) = gensym(b->_propertyName.c_str());
                 b->_opInstance->setAtomListProperty(gensym(b->_propertyName.c_str()), msg); //.subList(1,msg.size()-1));

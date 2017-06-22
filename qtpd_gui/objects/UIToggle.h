@@ -40,6 +40,8 @@ public:
     }
 
     static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
+    {return 0;} /*
+
     {
         UIToggle* b = new UIToggle();
         //b->setCanvas((void*)parent);
@@ -74,6 +76,8 @@ public:
 
         return (UIObject*)b;
     };
+
+    */
 
     void initProperties()
     {

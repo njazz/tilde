@@ -484,7 +484,9 @@ QString UIObject::fullHelpName()
 
     if (paths.size() == 0) {
         _objectDataModel.setFullHelpName("");
-        cmp_post("Help: bad search paths");
+
+        // TODO
+        //cmp_post("Help: bad search paths");
         return "";
     }
 
@@ -508,7 +510,9 @@ QString UIObject::fullHelpName()
     }
 
     QString p1 = "Help: not found: " + name;
-    cmp_post(p1.toStdString().c_str());
+
+    // TODO
+    //cmp_post(p1.toStdString().c_str());
 
     return name;
 }

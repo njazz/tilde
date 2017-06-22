@@ -52,6 +52,8 @@ public:
         return ret;
     }
     static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
+    {return 0;} /*
+
     {
         qDebug() << "ui.scriptbox";
 
@@ -106,7 +108,7 @@ public:
 
         return (UIObject*)b;
     };
-
+*/
     void initProperties()
     {
         UIObject::initProperties();

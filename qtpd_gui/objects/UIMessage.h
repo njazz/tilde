@@ -42,6 +42,8 @@ public:
     }
 
     static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
+  {return 0;} /*
+
     {
         qDebug() << "<< ui.msg";
 
@@ -88,6 +90,7 @@ public:
 
         return (UIObject*)b;
     };
+*/
 
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
     {

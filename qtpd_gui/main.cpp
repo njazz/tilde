@@ -49,13 +49,18 @@ int main(int argc, char* argv[])
 
     // TODO move all to appcontroller
 
-    const ApplicationController* controller = new ApplicationController();
+    //const
+            ApplicationController* controller = new ApplicationController();
 
     QTPD_AUDIOSETTINGS_INIT;
 
     qDebug() << "started";
-    cmp_post("qtpd started");
-    cmp_post("---");
+
+    controller->mainServerInstance()->post("qtpd started");
+    controller->mainServerInstance()->post("----");
+
+    //TODO //cmp_post("qtpd started");
+    //TODO //cmp_post("---");
 
     a.setCursorFlashTime(0);
 

@@ -33,6 +33,8 @@ public:
     }
 
     static UIObject* createObject(QString objectData, t_canvas* pd_Canvas, QGraphicsView* parent = 0)
+    {return 0;} /*
+
     {
         //TODO fix all constructors
 
@@ -115,7 +117,7 @@ public:
 
         return (UIObject*)b;
     };
-
+*/
     void setCanvasData(CanvasData* data)
     {
         _canvasData = data;

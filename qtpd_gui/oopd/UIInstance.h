@@ -40,6 +40,7 @@ public:
     //~UIInstance();
 
     static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
+    {return 0;} /*
     {
         //TODO fix all constructors
         //t_canvas* pd_Canvas;
@@ -74,11 +75,11 @@ public:
             qDebug("bad pd canvas instance");
             b->setErrorBox(true);
         } else {
-            new_obj = cmp_create_object(pdCanvas, "pdinstance", 0, 0);
+            //new_obj = cmp_create_object(pdCanvas, "pdinstance", 0, 0);
         }
 
         if (new_obj) {
-            in_c = cmp_get_inlet_count(new_obj);
+            //in_c = cmp_get_inlet_count(new_obj);
             out_c = cmp_get_outlet_count(new_obj);
 
             //b->setPdObject(new_obj);
@@ -111,6 +112,7 @@ public:
 
         return (UIObject*)b;
     };
+    */
 
     ////
     /// \brief paint event
@@ -289,13 +291,14 @@ public:
         _opClass = OOPD::inst()->classByName(msg.at(1).asString());
 
         if (!_opClass) {
-            cmp_post("class not found: ");
-            cmp_post(msg.at(1).asString());
+            // TODO
+            ///* TODO */ //cmp_post("class not found: ");
+            /* TODO */ //cmp_post(msg.at(1).asString());
             return;
         }
 
         _opInstance = new OPInstance(_opClass);
-        cmp_post("new instance");
+        /* TODO */ //cmp_post("new instance");
 
         // TODO-PD_OBJECT
 //        if (pdObject()) {
@@ -304,7 +307,7 @@ public:
 //            if (_out1)
 //                _opInstance->addInstanceOut(_out1);
 //            else
-//                cmp_post("instance pd object outlet error");
+//                /* TODO */ //cmp_post("instance pd object outlet error");
 //        }
 
         //cmp_get_inlet/outlet
@@ -333,7 +336,7 @@ public:
 
 //                    _opInstance->freeInstanceOut(out1);
 //                else
-//                    cmp_post("instance pd object outlet error");
+//                    /* TODO */ //cmp_post("instance pd object outlet error");
 //            }
 
             _opInstance->freeInstanceOut(0);
@@ -342,15 +345,15 @@ public:
         }
 
         _opInstance = 0;
-        cmp_post("free instance");
+        /* TODO */ //cmp_post("free instance");
     }
 
     void msgSetObject(AtomList msg)
     {
-        cmp_post("pdobject");
+        /* TODO */ //cmp_post("pdobject");
 
         if (msg.size() < 2) {
-            cmp_post("setobject: needs pdobject pointer");
+            /* TODO */ //cmp_post("setobject: needs pdobject pointer");
             return;
         }
 
@@ -378,7 +381,7 @@ public:
             list1.output(_out1);
 
         } else {
-            cmp_post("instance outlet error!");
+            /* TODO */ //cmp_post("instance outlet error!");
         }
     }
 
@@ -434,8 +437,8 @@ public:
                 _className = msg.at(1).asString().c_str();
 
             } else {
-                cmp_post("class not found!");
-                cmp_post(msg.at(1).asString().c_str());
+                /* TODO */ //cmp_post("class not found!");
+                /* TODO */ //cmp_post(msg.at(1).asString().c_str());
                 setHeight(20);
             }
 
@@ -502,7 +505,7 @@ public:
                     //                    if (x->_out1) {
                     //                        list.output(x->_out1);
                     //                    } else {
-                    //                        cmp_post("bad pdobject outlet pointer");
+                    //                        /* TODO */ //cmp_post("bad pdobject outlet pointer");
                     //}
                 }
             } else {

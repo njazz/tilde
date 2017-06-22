@@ -40,6 +40,8 @@ public:
     };
 
     static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
+    {return 0;} /*
+
     {
         //TODO fix all constructors
         //t_canvas* pd_Canvas;
@@ -116,7 +118,7 @@ public:
 
         return (UIObject*)b;
     };
-
+*/
     ////
     /// \brief paint event
     ///
@@ -260,7 +262,8 @@ public:
             _opClass = new OPClass(msg.at(1).asString());
 
         } else {
-            cmp_post("cannot create new class - use empty 'pdclass' box for dynamic class creation");
+            // TODO
+            // cmp_post("cannot create new class - use empty 'pdclass' box for dynamic class creation");
         }
     }
 
@@ -312,9 +315,11 @@ public:
                 output += (l3.at(i).asString().c_str());
             }
 
-            cmp_post(output.join("\n").toStdString().c_str());
+            // TODO
+            // cmp_post(output.join("\n").toStdString().c_str());
         } else {
-            cmp_post("no class");
+            // TODO
+            //cmp_post("no class");
         }
     }
 

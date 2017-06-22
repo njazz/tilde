@@ -218,6 +218,7 @@ HEADERS += \
 #    ceammc-lib/ceammc_timeline.h \
 #    ceammc-lib/memrss.h \
 #    ceammc-lib/memsize.h \
+    pdlib_old.h
 
 
 INCLUDEPATH += src/ \

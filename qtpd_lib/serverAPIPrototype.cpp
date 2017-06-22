@@ -1,10 +1,13 @@
 #include "../API_prototype/serverAPIPrototype.h"
 
-#include "../qtpd_gui/PdLink.h"
+#include "pdlib_old.h"
 
 #include <cassert>
 
-//class AtomList;
+// TEMPORARY
+extern "C" {
+#include "m_imp.h"
+}
 
 using namespace std;
 
@@ -18,6 +21,7 @@ void ServerProperties::addObserver(PropertyObserver* p){};
 void ServerProperties::removeObserver(PropertyObserver* p){};
 
 // ---------------------------------------
+
 ServerObject::ServerObject()
 {
     _parent = 0;
@@ -26,10 +30,6 @@ ServerObject::ServerObject()
     _properties = 0;
     _errorBox = false;
 }
-
-// TEMPORARY
-
-#include "m_imp.h"
 
 ServerObject::ServerObject(ServerObject* parent, string text)
 {
@@ -50,8 +50,7 @@ ServerObject::ServerObject(ServerObject* parent, string text)
         //t_class* cl = (t_class*)obj;
         std::cout << "class name after object is created: " << obj->te_g.g_pd->c_name->s_name << "\n";
 
-        _pdObject =  (void*)obj;
-
+        _pdObject = (void*)obj;
 
         std::cout << "|||||||||| new object on canvas: " << canvas << " || pd object ptr " << _pdObject << std::endl;
 
@@ -59,7 +58,6 @@ ServerObject::ServerObject(ServerObject* parent, string text)
 
         //t_class
         std::cout << "class name after object is created (pointer): " << cl->c_name->s_name << "\n";
-
     }
 
     _errorBox = (!_pdObject);
@@ -79,7 +77,7 @@ void ServerObject::message(string str)
 
     cout << "msg " << msg << endl;
 
-    t_class *cl = (t_class*)_pdObject;
+    t_class* cl = (t_class*)_pdObject;
 
     std::cout << "class name from serverObject: " << cl->c_name->s_name << "\n";
 

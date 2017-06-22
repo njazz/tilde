@@ -42,6 +42,8 @@ public:
     }
 
     static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
+  {return 0;} /*
+
     {
         UISlider* b = new UISlider();
         //b->setCanvas((void*)parent);
@@ -76,7 +78,7 @@ public:
 
         return (UIObject*)b;
     };
-
+*/
     void initProperties()
     {
         //cmp_post("init slider prop");

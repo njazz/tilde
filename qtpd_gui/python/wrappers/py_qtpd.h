@@ -288,7 +288,7 @@ public Q_SLOTS:
     void output(QString msg)
     {
         if (!_pdObject) {
-            cmp_post("Error: bad pd object");
+            /* TODO */ //cmp_post("Error: bad pd object");
             return;
         }
 
@@ -336,28 +336,30 @@ public Q_SLOTS:
 
     void startDsp()
     {
-        cmp_switch_dsp(true);
+        // TODO
+        //cmp_switch_dsp(true);
     }
 
     void stopDsp()
     {
-        cmp_switch_dsp(false);
+        //TODO
+        //cmp_switch_dsp(false);
     }
 
     QStringList getAudioAPIs()
     {
-        std::string apis = cmp_get_audio_apis();
+        std::string apis = "TODO"; // cmp_get_audio_apis();
         return QString(apis.c_str()).split(" ");
     }
 
     void post(QString msg)
     {
-        cmp_post(msg.toStdString());
+        /* TODO */ //cmp_post(msg.toStdString());
     }
 
     QStringList externals()
     {
-        AtomList list = cmp_get_loaded_list();
+        AtomList list; //TODO = cmp_get_loaded_list();
         QStringList ret;
 
         for (int i = 0; i < list.size(); i++) {
@@ -369,7 +371,8 @@ public Q_SLOTS:
 
     void loadLib(QString lib)
     {
-        cmp_loadlib(lib.toStdString());
+        //TODO
+        //cmp_loadlib(lib.toStdString());
     }
 
     //////////

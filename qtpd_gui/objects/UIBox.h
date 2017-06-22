@@ -44,6 +44,7 @@ public:
     }
 
     static UIObject* createObject(QString objectData, t_canvas* pd_Canvas, QGraphicsView* parent = 0)
+    {return 0;} /*
     {
         //TODO fix all constructors
 
@@ -78,7 +79,7 @@ public:
         } else {
             //temp pos = 0;
             QPoint pos = QPoint(0, 0);
-            new_obj = cmp_create_object(pd_Canvas, (char*)obj_name2, pos.x(), pos.y());
+            //new_obj = cmp_create_object(pd_Canvas, (char*)obj_name2, pos.x(), pos.y());
         }
 
         if (new_obj) {
@@ -125,6 +126,7 @@ public:
 
         return (UIObject*)b;
     };
+    */
 
     ////
     /// \brief paint event

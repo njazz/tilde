@@ -21,6 +21,8 @@ UISignal::UISignal()
 }
 
 UIObject* UISignal::createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent)
+{return 0;}
+/*
 {
     //TODO fix all constructors
     //t_canvas* pd_Canvas;
@@ -44,7 +46,8 @@ UIObject* UISignal::createObject(QString objectData, t_canvas* pdCanvas, QGraphi
 
     //std::string methodName;
     if (list.size() < 2) {
-        cmp_post("missing argument: signal name");
+        // TODO
+        //cmp_post("missing argument: signal name");
         b->setErrorBox(true);
         return (UIObject*)b;
     } else {
@@ -118,4 +121,5 @@ UIObject* UISignal::createObject(QString objectData, t_canvas* pdCanvas, QGraphi
 
     return (UIObject*)b;
 };
+*/
 }

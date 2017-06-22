@@ -20,6 +20,8 @@ UIMethod::UIMethod()
 }
 
 UIObject* UIMethod::createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent)
+{return 0;} /*
+
 {
     //TODO fix all constructors
     //t_canvas* pd_Canvas;
@@ -43,7 +45,8 @@ UIObject* UIMethod::createObject(QString objectData, t_canvas* pdCanvas, QGraphi
 
     //std::string methodName;
     if (list.size() < 2) {
-        cmp_post("missing argument: method name");
+        // TODO
+ //cmp_post("missing argument: method name");
         b->setErrorBox(true);
         return (UIObject*)b;
     } else {
@@ -92,7 +95,7 @@ UIObject* UIMethod::createObject(QString objectData, t_canvas* pdCanvas, QGraphi
 
     if (OOPD::inst()->canvasIsPatch(cnv)) {
         //fix that
-        cmp_post("method in basic patch");
+        // TODO  //cmp_post("method in basic patch");
         //b->setErrorBox(true);
     }
 
@@ -117,11 +120,13 @@ UIObject* UIMethod::createObject(QString objectData, t_canvas* pdCanvas, QGraphi
 //        if (out1)
 //            b->_opInstance->addMethodOutlet(gensym(b->_methodName.c_str()), out1);
 //        else
-//            cmp_post("method pd object outlet error");
+//            // TODO
+            //cmp_post("method pd object outlet error");
     }
 
     connect(b, &UIMethod::updateUISignal, b, &UIMethod::updateUISlot);
 
     return (UIObject*)b;
 };
-}
+*/
+    }

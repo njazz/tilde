@@ -108,10 +108,12 @@ public slots:
             }
 
             if (_stdOut != "") {
-                cmp_post((std::string) "Python: " + _stdOut.toStdString());
+                // TODO
+                //cmp_post((std::string) "Python: " + _stdOut.toStdString());
             }
             if (_stdErr != "") {
-                cmp_post((std::string) "Python error: " + _stdOut.toStdString());
+                // TODO
+                //cmp_post((std::string) "Python error: " + _stdOut.toStdString());
             }
         }
     }

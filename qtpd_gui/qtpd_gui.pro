@@ -197,7 +197,7 @@ HEADERS  += \
 #
     ObjectLoader.h \
     widgets/ObjectMaker.h \
-    PdLink.h \
+    #PdLink.h \
     _headers.h \
     properties/Preferences.h \
     properties/Property.h \

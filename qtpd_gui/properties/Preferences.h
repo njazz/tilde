@@ -12,7 +12,7 @@
 
 #include <QDebug>
 
-#include "PdLink.h"
+//#include "PdLink.h"
 
 //#define cmp_font "Source Code Pro"
 
@@ -79,7 +79,8 @@ public:
             set("Paths", (QString) "");
 
         QStringList paths = get("Paths")->asQStringList();
-        cmp_add_searchpath(gensym(newPath.toStdString().c_str()));
+        // TODO
+        //cmp_add_searchpath(gensym(newPath.toStdString().c_str()));
         paths.append(newPath);
         set("Paths", paths);
     }

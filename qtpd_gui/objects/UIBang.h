@@ -43,6 +43,7 @@ public:
     }
 
     static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
+{return 0;} /*
     {
         UIBang* b = new UIBang();
         //b->setCanvas((void*)parent);
@@ -75,7 +76,7 @@ public:
 
         return (UIObject*)b;
     };
-
+*/
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
     {
         p->setClipRect(option->exposedRect);

@@ -20,6 +20,7 @@ UIProperty::UIProperty()
 }
 
 UIObject* UIProperty::createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent)
+{return 0;}/*
 {
     //TODO fix all constructors
     //t_canvas* pd_Canvas;
@@ -69,7 +70,8 @@ UIObject* UIProperty::createObject(QString objectData, t_canvas* pdCanvas, QGrap
 
         //b->setPdObject(new_obj);
 
-        cmp_connectUI((t_pd*)new_obj, (void*)b, &UIProperty::updateUI);
+        // TODO
+        //cmp_connectUI((t_pd*)new_obj, (void*)b, &UIProperty::updateUI);
 
         b->setHelpName("property-help.pd");
 
@@ -95,7 +97,8 @@ UIObject* UIProperty::createObject(QString objectData, t_canvas* pdCanvas, QGrap
 
     if (OOPD::inst()->canvasIsPatch(cnv)) {
         //fix that
-        cmp_post("property in basic patch");
+        // TODO
+        //cmp_post("property in basic patch");
     }
 
     b->_opClass = OOPD::inst()->classByCanvas(cnv);
@@ -129,4 +132,6 @@ UIObject* UIProperty::createObject(QString objectData, t_canvas* pdCanvas, QGrap
 
     return (UIObject*)b;
 };
+*/
+
 }
