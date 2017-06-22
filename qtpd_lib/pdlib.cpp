@@ -8,7 +8,6 @@ std::map<std::string, t_updateUI>* updateUImap;
 #include <signal.h>
 #endif
 
-
 extern "C" {
 
 #include <g_canvas.h>
@@ -18,7 +17,7 @@ extern "C" {
 
 #include <cassert>
 
-void pd_init(void);
+EXTERN void pd_init(void);
 int sys_startgui(const char* libdir);
 
 //temporary EXTERNals setup
@@ -78,17 +77,19 @@ EXTERN void uimsg_set_updateUI(t_pd* x, void* uiobj, t_updateUI func);
 #include <sstream>
 #include <string>
 
-#include <QDebug>
+//#include <QDebug>
 
 using namespace ceammc;
 
-static t_pdinstance* cm_pd;
+using namespace std;
+
+//static t_pdinstance* cm_pd;
 
 //EXTERN t_pd* newest; /* OK - this should go into a .h file now :) */
 
 void cmp_error(std::string msg)
 {
-    qDebug("## Pd lib error: %s\n", msg.c_str());
+    cout << "## Pd lib error: %s\n" << msg<< "\n";
 }
 
 // copied from libpd
@@ -128,12 +129,16 @@ void cmp_pdinit()
     sys_searchpath = NULL;
     sys_startgui(NULL);
 
-    cm_pd = pdinstance_new();
+    //cm_pd = pdinstance_new();
 
-    if (!cm_pd)
+    //cm_pd = pd_this;
+
+    //cout << ("pd_this \n");
+
+    if (!pd_this)
         cmp_error("Initialization failed");
     else
-        qDebug("Pd library initialized: %x", cm_pd);
+        cout << ("Pd library initialized: %x") << pd_this << "\n";
 
     // temporary extra objects
     // should be compiled as externals
@@ -162,7 +167,7 @@ void cmp_pdinit()
     //    setup_ui0x2eslider();
     //    setup_ui0x2espectroscope_tilde();
 
-    qDebug("pd extras");
+    cout << ("pd extras\n");
 
     // init audio
     int indev[MAXAUDIOINDEV], inch[MAXAUDIOINDEV],
@@ -181,9 +186,9 @@ void cmp_pdinit()
     //hack lol - removes empty canvas with array template and creates an empty new one
     cmp_closepatch(cmp_newpatch());
 
-    qDebug("## cm_pd: %x", cm_pd);
+    cout << ("## cm_pd: %x") << pd_this << "\n";
 
-    qDebug() << "audio ins: " << sys_get_inchannels() << " outs: " << sys_get_outchannels();
+    cout << "audio ins: " << sys_get_inchannels() << " outs: " << sys_get_outchannels() << "\n";
 }
 
 void cmp_setprinthook(t_printhook h)
@@ -240,7 +245,7 @@ void cmp_clear_searchpath()
 
 t_canvas* cmp_newpatch()
 {
-    qDebug("new patch for pd instance: %x", (long)cm_pd);
+    cout << ("new patch for pd instance: %x") << (long)pd_this << "\n";
 
     AtomList* list = new AtomList;
     *list = Atom(gensym("Untitled-1"));
@@ -263,9 +268,13 @@ t_canvas* cmp_newpatch()
 
         while (ret->gl_next)
             ret = ret->gl_next;
+
+        std::cout << "pd_this: " << pd_this << "\n";
+    } else {
+        std::cout << "pd_this ERROR!\n";
     }
 
-    qDebug("new canvas: %x", (long)ret);
+    cout << ("new canvas: %x") << (long)ret << "\n";
 
     return ret;
 }
@@ -296,7 +305,7 @@ void cmp_closepatch(t_canvas* canvas)
     if (canvas)
         pd_free((t_pd*)canvas);
 
-    qDebug("closed patch");
+    cout <<("closed patch") << "\n'";
 }
 
 // --------------------------------
@@ -341,8 +350,6 @@ t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int
         return 0;
     }
 
-
-
     //list->insert(0, Atom((float)x));
     //list->insert(1, Atom((float)y));
 
@@ -352,7 +359,7 @@ t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int
 
     // *****************
 
-    t_symbol* OBJ_NAME = list->at(0).asSymbol();// gensym(list->at(0).asString());
+    t_symbol* OBJ_NAME = list->at(0).asSymbol(); // gensym(list->at(0).asString());
     t_object* obj_ = 0;
     t_methodentry* m = pd_objectmaker->c_methods;
 
@@ -364,7 +371,7 @@ t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int
                 t_newgimme new_fn = (t_newgimme)m[i].me_fun;
                 t_atom* al = list->toPdData();
                 obj_ = (*new_fn)(OBJ_NAME, list->size(), al);
-                std::cout<< "GIMME" <<std::endl;
+                std::cout << "GIMME" << std::endl;
                 break;
             }
 
@@ -375,7 +382,7 @@ t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int
             if (m[i].me_arg[0] == A_NULL) {
                 t_newempty new_fn = (t_newempty)m[i].me_fun;
                 obj_ = (*new_fn)();
-                std::cout<< "NULL" <<std::endl;
+                std::cout << "NULL" << std::endl;
                 break;
             }
 
@@ -383,7 +390,7 @@ t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int
                 t_newfloat new_fn = (t_newfloat)m[i].me_fun;
                 t_float f = list->empty() ? 0 : list->at(0).asFloat(0);
                 obj_ = (*new_fn)(f);
-                std::cout<< "DEFFLOAT" <<std::endl;
+                std::cout << "DEFFLOAT" << std::endl;
                 break;
             }
 
@@ -391,7 +398,7 @@ t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int
                 t_newfloat new_fn = (t_newfloat)m[i].me_fun;
                 t_float f = list->empty() ? 0 : list->at(0).asFloat(0);
                 obj_ = (*new_fn)(f);
-                std::cout<< "FLOAT" <<std::endl;
+                std::cout << "FLOAT" << std::endl;
                 break;
             }
         }
@@ -440,7 +447,6 @@ t_object* cmp_create_object(t_canvas* canvas, std::string class_name, int x, int
 
     //delete list;
 
-
     // t_object BREAKS HERE
     return obj_;
 }
@@ -459,9 +465,9 @@ void cmp_deleteobject(t_canvas* canvas, t_object* obj)
         glist_delete(canvas, &obj->te_g);
         //canvas_restoreconnections(glist_getcanvas(canvas));
     } else {
-        qDebug("pd canvas not found - not deleted");
+        cout << ("pd canvas not found - not deleted") << "\n";
     }
-    qDebug("deleted obj");
+    cout << ("deleted obj") << "\n";
 }
 
 // --------------------------------
@@ -571,12 +577,12 @@ t_inlet* cmp_get_inlet(t_object* x, int idx)
 
 void cmp_switch_dsp(bool on)
 {
-    if (!cm_pd) {
+    if (!pd_this) {
         cmp_error("library not yet initialized");
         return;
     }
 
-    qDebug("## cm_pd: %x || pd_this: %x", cm_pd, pd_this);
+    cout << ("## pd_this: %x") << pd_this << "\n";
 
     AtomList list;
     list.append(Atom(on ? 1.0f : 0.0f));
@@ -591,7 +597,7 @@ void cmp_switch_dsp(bool on)
     pd_typedmess(dest, gensym("dsp"), (int)list.size(), list.toPdData());
 };
 
-void cmp_sendstring(t_pd* obj, std::string msg)
+void cmp_sendstring(t_object* obj, std::string msg)
 {
     std::cout << "\n ||| sendstring " << std::endl;
 
@@ -607,7 +613,17 @@ void cmp_sendstring(t_pd* obj, std::string msg)
     std::cout << "object class name " << ((t_class*)obj)->c_name->s_name << std::endl;
     std::cout << "as symbol: " << list->at(0).asSymbol() << "\n";
 
-    pd_typedmess(obj, list->at(0).asSymbol(), (int)list2.size(), list2.toPdData());
+    //t_object* o = (t_object*)obj;
+
+    cout << ("pd_this in sendstring: %x") << pd_this << "\n";
+
+    t_pd* pd = 0;
+
+    if (obj)
+        pd = &obj->te_g.g_pd;
+    if (pd)
+        pd_typedmess(pd, list->at(0).asSymbol(), (int)list2.size(), list2.toPdData());
+
     //pd_typedmess(obj, gensym("float"), 0, 0);
 
     delete list;
@@ -663,7 +679,7 @@ void cmp_set_verbose(int v)
 
 EXTERN void cmp_loadbang(t_canvas* canvas)
 {
-    qDebug() << "cmp_loadbang";
+    cout << "cmp_loadbang" << "\n";
     canvas_loadbang(canvas);
 }
 
@@ -683,7 +699,7 @@ EXTERN t_cmp_audio_info* cmp_get_audio_device_info()
         outdevlist, &ret->outputDeviceCount, &ret->hasMulti, &ret->hasCallback,
         maxndev, devdescsize);
 
-    qDebug() << indevlist << "||" << outdevlist;
+    cout << indevlist << "||" << outdevlist << "\n";
 
     //ret->inputDeviceList = std::string(indevlist,1024);
     //ret->outputDeviceList = std::string(outdevlist,1024);

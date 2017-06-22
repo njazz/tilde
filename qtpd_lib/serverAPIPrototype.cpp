@@ -1,6 +1,7 @@
 #include "../API_prototype/serverAPIPrototype.h"
 
 #include "../qtpd_gui/PdLink.h"
+
 #include <cassert>
 
 //class AtomList;
@@ -54,7 +55,9 @@ ServerObject::ServerObject(ServerObject* parent, string text)
 
         std::cout << "|||||||||| new object on canvas: " << canvas << " || pd object ptr " << _pdObject << std::endl;
 
-        t_class* cl = (t_class*)_pdObject;
+        t_class* cl = (t_class*)(obj);
+
+        //t_class
         std::cout << "class name after object is created (pointer): " << cl->c_name->s_name << "\n";
 
     }
@@ -82,7 +85,7 @@ void ServerObject::message(string str)
 
     if (_pdObject) {
         cout << "send-> " << this << " pd object:" << _pdObject << endl;
-        cmp_sendstring(reinterpret_cast<t_pd*>(_pdObject), *msg);
+        cmp_sendstring(static_cast<t_object*>(_pdObject), *msg);
     } else {
         cmp_post("internal pdObject error");
         cout << "pdobject error" << endl;

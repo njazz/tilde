@@ -294,7 +294,7 @@ void conf_init(void);
 void glob_init(void);
 void garray_init(void);
 
-t_pdinstance *pd_this;
+t_pdinstance *pd_this = 0;
 
 static t_symbol *midi_gensym(const char *prefix, const char *name)
 {
