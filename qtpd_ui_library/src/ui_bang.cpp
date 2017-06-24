@@ -54,7 +54,7 @@ static void uibang_free(t_ui_bang* obj)
     outlet_free(obj->out1);
 }
 
-EXTERN void setup_ui0x2ebang()
+extern "C" void setup_ui0x2ebang()
 {
     ui_bang_class = class_new(gensym("ui.bang"),
         (t_newmethod)(uibang_new),

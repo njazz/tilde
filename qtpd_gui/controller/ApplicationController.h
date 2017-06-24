@@ -65,7 +65,6 @@ public:
 
         qDebug() << "server @appc " << _localServer;
 
-        _localServer->firstInstance()->loadLibrary("libqtpd_ui.1.0.0");
         return _localServer->firstInstance();
     }
 
