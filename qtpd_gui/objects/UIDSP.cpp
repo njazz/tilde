@@ -3,7 +3,7 @@
 
 #include "UIDSP.h"
 
-#include "../API_prototype/serverAPIPrototype.h"
+#include <pdServer.hpp>
 
 #include "CanvasView.h"
 

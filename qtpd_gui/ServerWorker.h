@@ -1,7 +1,7 @@
 #ifndef LOCALSERVER_H
 #define LOCALSERVER_H
 
-#include "../API_prototype/serverapiprototype.h"
+#include <pdServer.hpp>
 
 #include <QDebug>
 #include <QThread>

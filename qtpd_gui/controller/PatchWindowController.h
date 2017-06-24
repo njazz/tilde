@@ -5,7 +5,7 @@
 #define PATCHWINDOWCONTROLLER
 
 // TODO
-#include "../API_prototype/serverAPIprototype.h"
+#include <pdServer.hpp>
 
 #include <QObject>
 #include <QPoint>

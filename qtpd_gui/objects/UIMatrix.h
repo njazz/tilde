@@ -9,8 +9,6 @@
 #include "Port.h"
 #include "UIObject.h"
 
-
-
 #include <QGraphicsView>
 
 namespace qtpd {
@@ -42,15 +40,17 @@ public:
     {
         UIMatrix* ret = new UIMatrix();
 
-//        QStringList l = data.split(" ");l.removeFirst();
-//        data = l.join(" ");
+        //        QStringList l = data.split(" ");l.removeFirst();
+        //        data = l.join(" ");
 
         ret->setObjectData(data);
 
         return ret;
     }
     static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
-    {return 0;} /*
+    {
+        return 0;
+    } /*
 
     {
         UIMatrix* b = new UIMatrix();
@@ -362,8 +362,8 @@ public:
                 //std::string val_str = "set " + std::to_string(v);
 
                 // TODO-PD_OBJECT
-//                cmp_sendstring((t_pd*)pdObject(), val_str);
-//                cmp_sendstring((t_pd*)pdObject(), "bang");
+                //                cmp_sendstring((t_pd*)pdObject(), val_str);
+                //                cmp_sendstring((t_pd*)pdObject(), "bang");
             }
 
             if (matrixType() == mt_VRadio) {
@@ -376,16 +376,16 @@ public:
 
                 //std::string val_str = "set " + std::to_string(v);
                 // TODO-PD_OBJECT
-//                cmp_sendstring((t_pd*)pdObject(), val_str);
-//                cmp_sendstring((t_pd*)pdObject(), "bang");
+                //                cmp_sendstring((t_pd*)pdObject(), val_str);
+                //                cmp_sendstring((t_pd*)pdObject(), "bang");
             }
 
             // TODO-PD_OBJECT
-//            if (!pdObject()) {
-//                qDebug("msg: bad pd object!");
-//            } else {
-//                cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
-//            }
+            //            if (!pdObject()) {
+            //                qDebug("msg: bad pd object!");
+            //            } else {
+            //                cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
+            //            }
         }
     }
 
@@ -432,11 +432,11 @@ public:
         emit x->callRepaint();
     }
 
-//    void setPdObject(void* obj)
-//    {
-//        UIObject::setPdObject(obj);
-//        cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIMatrix::updateUI);
-//    }
+    //    void setPdObject(void* obj)
+    //    {
+    //        UIObject::setPdObject(obj);
+    //        cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIMatrix::updateUI);
+    //    }
 
     virtual void setServerObject(ServerObject* o)
     {

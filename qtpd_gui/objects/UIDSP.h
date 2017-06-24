@@ -9,8 +9,6 @@
 #include "Port.h"
 #include "UIObject.h"
 
-
-
 #include <QGraphicsView>
 
 namespace qtpd {
@@ -65,8 +63,8 @@ public:
     {
         UIDSP* ret = new UIDSP();
 
-//        QStringList l = data.split(" ");l.removeFirst();
-//        data = l.join(" ");
+        //        QStringList l = data.split(" ");l.removeFirst();
+        //        data = l.join(" ");
 
         ret->setObjectData(data);
 
@@ -172,11 +170,11 @@ public:
     //    {
     //    }
 
-//    void setPdObject(void* obj)
-//    {
-//        UIObject::setPdObject(obj);
-//        //cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIDSP::updateUI);
-//    }
+    //    void setPdObject(void* obj)
+    //    {
+    //        UIObject::setPdObject(obj);
+    //        //cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIDSP::updateUI);
+    //    }
 
     virtual void setServerObject(ServerObject* o)
     {

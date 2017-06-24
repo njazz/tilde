@@ -291,7 +291,8 @@ INCLUDEPATH += \
     properties/ \
     graphicobjects/ \
     datamodels/ \
-    controller/
+    controller/ \
+    ../../pd-server/src/
 
 
 

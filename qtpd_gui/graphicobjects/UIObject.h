@@ -21,7 +21,7 @@
 
 #include "UIObjectData.h"
 
-#include "../API_prototype/serverAPIPrototype.h"
+#include <pdServer.hpp>
 
 namespace qtpd {
 
