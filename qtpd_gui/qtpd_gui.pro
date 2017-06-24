@@ -253,18 +253,19 @@ FORMS    += \
 
 win32: {
     DEFINES += PD_INTERNAL WINVER=0x502
-    LIBS += $$OUT_PWD/../qtpd_lib/debug/libqtpd.a
+    #LIBS += $$OUT_PWD/../qtpd_lib/debug/libqtpd.a
 }
 
 macx: {
-    LIBS += -L"../qtpd_lib/" -lqtpd
     LIBS += -L"/usr/local/lib/" -lportaudio
+    LIBS += -L$$OUT_PWD/../../pd-server/src/qt-creator-project -lpd-server
     LIBS += -L$$OUT_PWD/../qtpd_ceammc_lib/ -lqtpd_ceammc_lib
 }
 
 unix: {
-    LIBS += -L"../qtpd_lib/" -lqtpd
+    #LIBS += -L"../qtpd_lib/" -lqtpd
     LIBS += -L"/usr/local/lib/" -lportaudio
+    LIBS += -L$$OUT_PWD/../../pd-server/src/qt-creator-project -lpd-server
     LIBS += -L$$OUT_PWD/../qtpd_ceammc_lib/ -lqtpd_ceammc_lib
 }
 
