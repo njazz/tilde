@@ -648,7 +648,8 @@ void cmp_post(std::string text)
 void cmp_connectUI(t_pd* obj, void* uiobj, t_updateUI func)
 {
     // fix that !!!
-    uimsg_set_updateUI(obj, uiobj, func);
+
+    // uimsg_set_updateUI(obj, uiobj, func);
 }
 
 // ---------------------------------------------
