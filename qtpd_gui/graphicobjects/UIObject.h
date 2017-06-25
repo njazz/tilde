@@ -30,6 +30,8 @@ typedef std::vector<Port*> portItemVec;
 
 class UIObject;
 
+class PatchWindowController;
+
 class ObjectObserver : public Observer {
 private:
     UIObject* _object;
@@ -86,7 +88,7 @@ public:
     void setSubCanvasData(CanvasData* c) { _subCanvasData = c; }
 
     //new 0617
-    ObjectObserver* observer(){return _observer;}
+    ObjectObserver* observer() { return _observer; }
 
     //TODO
     bool disableObjectMaker;
@@ -113,12 +115,6 @@ public:
     void hide(); // ??
     void hideSizeBox();
 
-    ////
-    /// \group prop Properties
-    /// @{
-    //void setCanvas(void* canvas) { _canvas = canvas; }
-    //void* canvas() { return _canvas; } //?
-
     SizeBox* sizeBox() { return _sizeBox; }
 
     ////
@@ -136,15 +132,9 @@ public:
     /// \details gui-only objects can ovverride it with function that returns 0
     /// \return
     ///
-    //virtual void* pdObject();
 
     virtual ServerObject* serverObject() { return _serverObject; };
-    virtual void setServerObject(ServerObject* o)
-    {
-        _serverObject = o;
-        //        if (o)
-        //            _serverObject->connectUI(this, &UIObject::updateUI);
-    };
+    virtual void setServerObject(ServerObject* o) { _serverObject = o; };
 
     virtual void sync()
     {
@@ -163,13 +153,6 @@ public:
         for (int i = 0; i < out_c; i++)
             addOutlet();
     };
-
-    //    //
-    //    / \brief sets pointer to pd object
-    //    / \details overriden by ui objects to be able to connect to pd objects
-    //    / \param obj
-    //    /
-    //    virtual void setPdObject(void* obj);
 
     ////
     /// \brief returns true if object doesn't exist
@@ -190,6 +173,9 @@ public:
     QMainWindow* subpatchWindow();
     virtual void setSubpatchWindow(QMainWindow* cwindow);
 
+    PatchWindowController* subpatchController();
+    virtual void setSubpatchController(PatchWindowController* cwindow) {};
+
     ////
     /// \brief set short name for help patch (without path)
     /// \param name
@@ -200,13 +186,7 @@ public:
     /// \return
     QString fullHelpName();
 
-    /** @}*/
-
     // -----------------------------------------------------------------
-
-    ////
-    /// \group iolets Inlets and outlets
-    /// @{
 
     ////
     /// \brief sets inlet position (cm_port)
@@ -277,12 +257,7 @@ public:
     /// \return
     int outletCount();
 
-    /** @}*/
-
-    ////\deprecated
-    static void updateUI(void* uiobj, ceammc::AtomList) {}
-
-    virtual void updateUI(AtomList list) {};
+    virtual void updateUI(AtomList){};
 
 private slots:
     void openPropertiesWindow();

@@ -61,6 +61,17 @@ ApplicationController::ApplicationController()
     FileParser::setAppController(this);
 };
 
+ServerInstance* ApplicationController::mainServerInstance()
+{
+    while (!_localServer) {
+        _localServer = _serverWorker->localServer();
+    }
+
+    qDebug() << "server @appc " << _localServer;
+
+    return _localServer->firstInstance();
+}
+
 void ApplicationController::newPatchWindowController()
 {
     qDebug("new patch from menu >>");
@@ -151,7 +162,7 @@ void PdWindowConsoleObserver::update()
 
 ServerObject* ApplicationController::slotCreateObject(ServerCanvas* canvas, string name)
 {
-    qDebug() << "create obj slot";
+    //qDebug() << "create obj slot";
 
     assert(canvas);
 

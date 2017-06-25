@@ -14,6 +14,8 @@
 
 #include "UIArrayEditor.h"
 
+#include "CanvasView.h"
+
 namespace qtpd {
 
 ////
@@ -36,13 +38,17 @@ public:
 //        QStringList l = data.split(" ");l.removeFirst();
 //        data = l.join(" ");
 
+        ((ServerCanvas*)serverObject()->parent())->createArray();
+
         ret->setObjectData(data);
 
         return ret;
     }
 
     static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
-    {
+    {return 0;}
+
+    /*
         UIArray* b = new UIArray();
         //b->setCanvas((void*)parent);
 
@@ -78,6 +84,7 @@ public:
 
         return (UIObject*)b;
     };
+    */
 
     void initProperties()
     {

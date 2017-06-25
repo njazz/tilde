@@ -83,13 +83,12 @@ public:
     void openFile(QString fileName);
     void saveFile(QString fileName);
     void saveFileDialog();
-    //
-    //void createObjectMaker();
+
     //
     UIObject* createObject(string name, QPoint pos);
+
     //
     void patchcord(UIObject* src, int out, UIObject* dest, int in);
-    //void patchcord(UIObject* obj1, UIItem* outport, UIObject* obj2, UIItem* inport);
 
     // ------------
     void deleteSelectedObjects();

@@ -4,8 +4,6 @@
 #ifndef APPLICATIONCONTROLLER
 #define APPLICATIONCONTROLLER
 
-
-
 #include "ServerWorker.h"
 
 //#include "ControllerObserver.h"
@@ -48,35 +46,17 @@ private:
 public:
     ApplicationController();
 
-    ServerInstance* mainServerInstance()
-    {
-//        emit this->getLocalServer(_localServer);
-
-        while (!_localServer) {
-
-            //_serverWorker->localServer();
-
-            //emit this->getLocalServer(_localServer);
-
-            //qDebug() << _localServer;
-
-            _localServer = _serverWorker->localServer();
-        }
-
-        qDebug() << "server @appc " << _localServer;
-
-        return _localServer->firstInstance();
-    }
+    ServerInstance* mainServerInstance();
 
     Observer* controllerObserver();
 
-    ServerWorker* serverWorker() {return _serverWorker;};
+    ServerWorker* serverWorker() { return _serverWorker; };
 
 signals:
     void getLocalServer(LocalServer* ret);
 
 public slots:
-    void newPatchWindowController(); //older createPatch //PatchWindowController*
+    void newPatchWindowController();
     void openFileDialog();
 
     void pdWindow();
@@ -89,16 +69,6 @@ public slots:
     void dspOff();
 
     ServerObject* slotCreateObject(ServerCanvas* canvas, string name);
-
-    //    void setServer(LocalServer* server)
-    //    {
-    //        qDebug() << "set server " << server;
-
-    //        _localServer = server;
-    //    }
-
-    //signals:
-    //    LocalServer* getServer();
 };
 }
 

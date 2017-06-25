@@ -219,6 +219,14 @@ public:
         setOutletsPos();
     }
 
+    virtual void sync()
+    {
+        UIObject::sync();
+
+        _isAbstraction = serverObject()->type()==typeAbstraction;
+        update();
+    }
+
 //    virtual void setServerObject(ServerObject* o)
 //    {
 //        UIObject::setServerObject(o);
