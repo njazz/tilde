@@ -87,10 +87,16 @@ int main(int argc, char* argv[])
 
     //std::string extPath3 = extPath + "/pof";
 
+    // TODO
     Preferences::inst().addPath(extPath.c_str());
     Preferences::inst().addPath(extPath1.c_str());
     Preferences::inst().addPath(extPath2.c_str());
     Preferences::inst().addPath(extPath3.c_str());
+
+    controller->mainServerInstance()->addSearchPath(extPath);
+    controller->mainServerInstance()->addSearchPath(extPath1);
+    controller->mainServerInstance()->addSearchPath(extPath2);
+    controller->mainServerInstance()->addSearchPath(extPath3);
 
     return a.exec();
 }

@@ -382,8 +382,6 @@ public:
                 //                cmp_sendstring((t_pd*)pdObject(), val_str);
                 //                cmp_sendstring((t_pd*)pdObject(), "bang");
 
-
-
                 emit sendMessage(this->serverObject(), QString(val_str.c_str()));
                 emit sendMessage(this->serverObject(), QString("bang "));
             }
@@ -395,8 +393,7 @@ public:
             //                cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
             //            }
 
-            if (serverObject())
-            {
+            if (serverObject()) {
 
                 emit sendMessage(this->serverObject(), QString("bang "));
             }
