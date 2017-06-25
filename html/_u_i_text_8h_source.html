@@ -324,12 +324,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00246"></a>00246     }
 <a name="l00247"></a>00247 
 <a name="l00248"></a>00248 
-<a name="l00249"></a><a class="code" href="classqtpd_1_1_u_i_text.html#acd132f7e4e681a6a668b890b15a5b675">00249</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_text.html#acd132f7e4e681a6a668b890b15a5b675">setServerObject</a>(ServerObject* o)
-<a name="l00250"></a>00250     {
-<a name="l00251"></a>00251         <a class="code" href="classqtpd_1_1_u_i_text.html#acd132f7e4e681a6a668b890b15a5b675">UIObject::setServerObject</a>(o);
-<a name="l00252"></a>00252         <span class="keywordflow">if</span> (o)
-<a name="l00253"></a>00253             o-&gt;connectUI(<span class="keyword">this</span>, &amp;<a class="code" href="classqtpd_1_1_u_i_text.html#a8bf9d3f08b1fa8ceb7c01bfb71ec0e69">UIText::updateUI</a>);
-<a name="l00254"></a>00254     };
+<a name="l00249"></a>00249 <span class="comment">//    virtual void setServerObject(ServerObject* o)</span>
+<a name="l00250"></a>00250 <span class="comment">//    {</span>
+<a name="l00251"></a>00251 <span class="comment">//        UIObject::setServerObject(o);</span>
+<a name="l00252"></a>00252 <span class="comment">//        if (o)</span>
+<a name="l00253"></a>00253 <span class="comment">//            o-&gt;connectUI(this, &amp;UIText::updateUI);</span>
+<a name="l00254"></a>00254 <span class="comment">//    };</span>
 <a name="l00255"></a>00255 signals:
 <a name="l00256"></a>00256 
 <a name="l00257"></a>00257 <span class="keyword">private</span> slots:
@@ -356,7 +356,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 24 2017 23:09:35 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 25 2017 12:12:55 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

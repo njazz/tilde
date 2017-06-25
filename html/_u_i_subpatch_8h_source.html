@@ -249,12 +249,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00182"></a>00182 
 <a name="l00183"></a>00183     std::string <a class="code" href="classqtpd_1_1_u_i_subpatch.html#aea50465f383a50517e2810bf0727b46d" title="&gt; custom resize event">asPdFileString</a>();
 <a name="l00184"></a>00184 
-<a name="l00185"></a><a class="code" href="classqtpd_1_1_u_i_subpatch.html#a6b50dec53909a5b3a808905ac0e5cf76">00185</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_subpatch.html#a6b50dec53909a5b3a808905ac0e5cf76">setServerObject</a>(ServerObject* o)
-<a name="l00186"></a>00186     {
-<a name="l00187"></a>00187         <a class="code" href="classqtpd_1_1_u_i_subpatch.html#a6b50dec53909a5b3a808905ac0e5cf76">UIObject::setServerObject</a>(o);
-<a name="l00188"></a>00188         <span class="keywordflow">if</span> (o)
-<a name="l00189"></a>00189             o-&gt;connectUI(<span class="keyword">this</span>, &amp;<a class="code" href="classqtpd_1_1_u_i_object.html#adf1a3fee8ddb81d1342065d68073d5ec">UISubpatch::updateUI</a>);
-<a name="l00190"></a>00190     };
+<a name="l00185"></a>00185 <span class="comment">//    virtual void setServerObject(ServerObject* o)</span>
+<a name="l00186"></a>00186 <span class="comment">//    {</span>
+<a name="l00187"></a>00187 <span class="comment">//        UIObject::setServerObject(o);</span>
+<a name="l00188"></a>00188 <span class="comment">//        if (o)</span>
+<a name="l00189"></a>00189 <span class="comment">//            o-&gt;connectUI(this, &amp;UISubpatch::updateUI);</span>
+<a name="l00190"></a>00190 <span class="comment">//    };</span>
 <a name="l00191"></a>00191 signals:
 <a name="l00192"></a>00192 
 <a name="l00193"></a>00193     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_subpatch.html#a10888079e610e29b2e1543772a191726">mouseMoved</a>();
@@ -281,7 +281,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 24 2017 23:09:35 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 25 2017 12:12:55 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -518,12 +518,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00438"></a>00438     <span class="comment">//        cmp_connectUI((t_pd*)pdObject(), (void*)this, &amp;UIMatrix::updateUI);</span>
 <a name="l00439"></a>00439     <span class="comment">//    }</span>
 <a name="l00440"></a>00440 
-<a name="l00441"></a><a class="code" href="classqtpd_1_1_u_i_matrix.html#ae45d763f38028c4c99ba0e79928cbfa5">00441</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#ae45d763f38028c4c99ba0e79928cbfa5">setServerObject</a>(ServerObject* o)
-<a name="l00442"></a>00442     {
-<a name="l00443"></a>00443         <a class="code" href="classqtpd_1_1_u_i_matrix.html#ae45d763f38028c4c99ba0e79928cbfa5">UIObject::setServerObject</a>(o);
-<a name="l00444"></a>00444         <span class="keywordflow">if</span> (o)
-<a name="l00445"></a>00445             o-&gt;connectUI(<span class="keyword">this</span>, &amp;<a class="code" href="classqtpd_1_1_u_i_matrix.html#a1b562873121bf0bb0ea0cd8af1005af4">UIMatrix::updateUI</a>);
-<a name="l00446"></a>00446     };
+<a name="l00441"></a>00441 <span class="comment">//    virtual void setServerObject(ServerObject* o)</span>
+<a name="l00442"></a>00442 <span class="comment">//    {</span>
+<a name="l00443"></a>00443 <span class="comment">//        UIObject::setServerObject(o);</span>
+<a name="l00444"></a>00444 <span class="comment">//        if (o)</span>
+<a name="l00445"></a>00445 <span class="comment">//            o-&gt;connectUI(this, &amp;UIMatrix::updateUI);</span>
+<a name="l00446"></a>00446 <span class="comment">//    };</span>
 <a name="l00447"></a>00447 };
 <a name="l00448"></a>00448 }
 <a name="l00449"></a>00449 
@@ -546,7 +546,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 24 2017 23:09:35 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 25 2017 12:12:55 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
