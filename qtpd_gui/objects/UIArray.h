@@ -38,7 +38,8 @@ public:
 //        QStringList l = data.split(" ");l.removeFirst();
 //        data = l.join(" ");
 
-        ((ServerCanvas*)serverObject()->parent())->createArray();
+        // TODO
+        //((ServerCanvas*)serverObject()->parent())->createArray();
 
         ret->setObjectData(data);
 

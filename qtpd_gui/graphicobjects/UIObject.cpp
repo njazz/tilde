@@ -330,8 +330,10 @@ void UIObject::autoResize()
     QFont myFont(PREF_QSTRING("Font"), 11);
     QFontMetrics fm(myFont);
 
-    setWidth((int)fm.width(_objectDataModel.objectData()) + 5);
-    if (boundingRect().width() < _objectDataModel.minimumBoxWidth())
+    int w = (int)fm.width(_objectDataModel.objectData()) + 10;
+    setWidth(w);
+
+    if (w < _objectDataModel.minimumBoxWidth())
         setWidth(_objectDataModel.minimumBoxWidth());
 }
 

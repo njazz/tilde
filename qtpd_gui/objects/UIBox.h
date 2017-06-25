@@ -36,7 +36,8 @@ public:
         UIBox* ret = new UIBox();
 
         // this is needed here
-        QStringList l = data.split(" ");l.removeFirst();
+        QStringList l = data.split(" ");
+        l.removeFirst();
         data = l.join(" ");
         ret->setObjectData(data);
 
@@ -44,7 +45,9 @@ public:
     }
 
     static UIObject* createObject(QString objectData, t_canvas* pd_Canvas, QGraphicsView* parent = 0)
-    {return 0;} /*
+    {
+        return 0;
+    } /*
     {
         //TODO fix all constructors
 
@@ -205,34 +208,43 @@ public:
 
     void setPdMessage(QString message)
     {
-        setObjectData(message);
+        UIBox::setObjectData(message);
+    }
+
+    void setObjectData(QString message)
+    {
+        UIObject::setObjectData(message);
+
         autoResize();
 
         QFont myFont(PREF_QSTRING("Font"), 11);
         QFontMetrics fm(myFont);
-        int new_w = fm.width(_objectDataModel.objectData()) + 10;
+        int new_w = fm.width(message) + 10;
         new_w = (new_w < 25) ? 25 : new_w;
         setWidth(new_w);
 
         //
         setInletsPos();
         setOutletsPos();
+
+        //
+        sizeBox()->move(boundingRect().width() - 7, boundingRect().height() - 7);
     }
 
-    virtual void sync()
+    void sync()
     {
         UIObject::sync();
 
-        _isAbstraction = serverObject()->type()==typeAbstraction;
+        _isAbstraction = serverObject()->type() == typeAbstraction;
         update();
     }
 
-//    virtual void setServerObject(ServerObject* o)
-//    {
-//        UIObject::setServerObject(o);
-//        if (o)
-//            o->connectUI(this, &UIBox::updateUI);
-//    };
+    //    virtual void setServerObject(ServerObject* o)
+    //    {
+    //        UIObject::setServerObject(o);
+    //        if (o)
+    //            o->connectUI(this, &UIBox::updateUI);
+    //    };
 
 signals:
 
