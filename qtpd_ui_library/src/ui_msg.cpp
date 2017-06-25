@@ -188,6 +188,8 @@ extern "C" void setup_ui0x2emsg()
     ObjectFactory<UIpdMsg> obj("ui.msg");
 }
 
+
+
 //static void* uimsg_new(t_symbol* s, int argc, t_atom* argv)
 //{
 //    t_ui_msg* x = (t_ui_msg*)pd_new(ui_msg_class);

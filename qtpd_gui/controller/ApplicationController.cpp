@@ -129,9 +129,6 @@ void ApplicationController::audioSettingsWindow()
 
 void ApplicationController::dspOn()
 {
-    //cmp_switch_dsp(true);
-    //dspOnAct->setChecked(true);
-
     qDebug() << "dsp on";
 
     mainServerInstance()->dspOn();
@@ -141,8 +138,7 @@ void ApplicationController::dspOn()
 
 void ApplicationController::dspOff()
 {
-    //cmp_switch_dsp(false);
-    //dspOnAct->setChecked(false);
+
     mainServerInstance()->dspOff();
 }
 

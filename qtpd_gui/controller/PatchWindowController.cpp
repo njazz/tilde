@@ -118,6 +118,7 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
 
     //qDebug() << "server object ok";
 
+
     UIObject* uiObject = ObjectLoader::inst().createUIObject(name.c_str());
 
     if (!uiObject) {

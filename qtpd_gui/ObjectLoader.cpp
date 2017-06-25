@@ -120,7 +120,11 @@ UIObject* ObjectLoader::createUIObject(QString objectData)//, ServerCanvas *canv
 {
     QString objectName = "";
     if (objectData != "")
+    {
+        objectData = objectData.split("@").at(0);
+
         objectName = objectData.split(" ").at(0);
+    }
 
     if (hasUI(objectName.toStdString())) {
 
