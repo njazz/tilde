@@ -359,11 +359,14 @@ public:
 
                 properties()->set("Value", v);
 
-                //std::string val_str = "set " + std::to_string(v);
+                std::string val_str = "set " + std::to_string(v);
 
                 // TODO-PD_OBJECT
                 //                cmp_sendstring((t_pd*)pdObject(), val_str);
                 //                cmp_sendstring((t_pd*)pdObject(), "bang");
+
+                emit sendMessage(this->serverObject(), QString(val_str.c_str()));
+                emit sendMessage(this->serverObject(), QString("bang "));
             }
 
             if (matrixType() == mt_VRadio) {
@@ -374,10 +377,15 @@ public:
 
                 properties()->set("Value", v);
 
-                //std::string val_str = "set " + std::to_string(v);
+                std::string val_str = "set " + std::to_string(v);
                 // TODO-PD_OBJECT
                 //                cmp_sendstring((t_pd*)pdObject(), val_str);
                 //                cmp_sendstring((t_pd*)pdObject(), "bang");
+
+
+
+                emit sendMessage(this->serverObject(), QString(val_str.c_str()));
+                emit sendMessage(this->serverObject(), QString("bang "));
             }
 
             // TODO-PD_OBJECT
@@ -386,6 +394,12 @@ public:
             //            } else {
             //                cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
             //            }
+
+            if (serverObject())
+            {
+
+                emit sendMessage(this->serverObject(), QString("bang "));
+            }
         }
     }
 
@@ -413,23 +427,39 @@ public:
         setObjectData(message);
     }
 
-    static void updateUI(void* uiobj, ceammc::AtomList msg)
-    {
-        //qDebug("update ui");
-        UIMatrix* x = (UIMatrix*)uiobj;
+    //    static void updateUI(void* uiobj, ceammc::AtomList msg)
+    //    {
+    //        //qDebug("update ui");
+    //        UIMatrix* x = (UIMatrix*)uiobj;
 
-        if ((x->matrixType() == mt_HRadio) || (x->matrixType() == mt_VRadio))
+    //        if ((x->matrixType() == mt_HRadio) || (x->matrixType() == mt_VRadio))
+    //            if (msg.size() > 0) {
+    //                if (msg.at(0).isFloat()) {
+    //                    int v = msg.at(0).asInt();
+    //                    if (v > (x->radioSize() - 1))
+    //                        v = x->radioSize() - 1;
+
+    //                    x->properties()->set("Value", v);
+    //                }
+    //            }
+
+    //        emit x->callRepaint();
+    //    }
+
+    void updateUI(AtomList msg)
+    {
+        if ((matrixType() == mt_HRadio) || (matrixType() == mt_VRadio))
             if (msg.size() > 0) {
                 if (msg.at(0).isFloat()) {
                     int v = msg.at(0).asInt();
-                    if (v > (x->radioSize() - 1))
-                        v = x->radioSize() - 1;
+                    if (v > (radioSize() - 1))
+                        v = radioSize() - 1;
 
-                    x->properties()->set("Value", v);
+                    properties()->set("Value", v);
                 }
             }
 
-        emit x->callRepaint();
+        emit callRepaint();
     }
 
     //    void setPdObject(void* obj)
@@ -438,12 +468,12 @@ public:
     //        cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIMatrix::updateUI);
     //    }
 
-//    virtual void setServerObject(ServerObject* o)
-//    {
-//        UIObject::setServerObject(o);
-//        if (o)
-//            o->connectUI(this, &UIMatrix::updateUI);
-//    };
+    //    virtual void setServerObject(ServerObject* o)
+    //    {
+    //        UIObject::setServerObject(o);
+    //        if (o)
+    //            o->connectUI(this, &UIMatrix::updateUI);
+    //    };
 };
 }
 

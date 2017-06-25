@@ -19,10 +19,10 @@ extern "C" void qtpd_ui_setup() //0x2e
     setup_ui0x2ebang();
     setup_ui0x2efloat();
 
-    //    setup_ui0x2ematrix();
+    setup_ui0x2ematrix();
     setup_ui0x2emsg();
-    //    setup_ui0x2escript();
-    //    setup_ui0x2esliders();
+    setup_ui0x2escript();
+    setup_ui0x2esliders();
     setup_ui0x2etoggle();
 }
 

@@ -9,8 +9,6 @@
 #include "Port.h"
 #include "UIObject.h"
 
-
-
 #include <QGraphicsView>
 
 namespace qtpd {
@@ -33,8 +31,8 @@ public:
     {
         UISlider* ret = new UISlider();
 
-//        QStringList l = data.split(" ");l.removeFirst();
-//        data = l.join(" ");
+        //        QStringList l = data.split(" ");l.removeFirst();
+        //        data = l.join(" ");
 
         ret->setObjectData(data);
 
@@ -42,7 +40,9 @@ public:
     }
 
     static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
-  {return 0;} /*
+    {
+        return 0;
+    } /*
 
     {
         UISlider* b = new UISlider();
@@ -180,14 +180,13 @@ public:
             if (!serverObject()) {
                 qDebug("msg: bad pd object!");
             } else {
-//                cmp_sendstring((t_pd*)pdObject(), ((std::string) "set " + val_str).c_str());
-//                cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang ").c_str());
-               // serverObject()->message(((std::string) "set " + val_str));
-               // serverObject()->message(((std::string) "bang " + val_str));
+                //                cmp_sendstring((t_pd*)pdObject(), ((std::string) "set " + val_str).c_str());
+                //                cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang ").c_str());
+                // serverObject()->message(((std::string) "set " + val_str));
+                // serverObject()->message(((std::string) "bang " + val_str));
 
-                emit sendMessage(this->serverObject(),QString("set " + val_str));
-                emit sendMessage(this->serverObject(),QString("bang "));
-
+                emit sendMessage(this->serverObject(), QString("set " + val_str));
+                emit sendMessage(this->serverObject(), QString("bang "));
             }
         }
     }
@@ -214,10 +213,20 @@ public:
         }
 
         // TODO-PD_OBJECT
-//        if (pdObject()) {
-//            cmp_sendstring((t_pd*)pdObject(), ((std::string) "set " + val_str).c_str());
-//            cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang ").c_str());
-//        }
+        //        if (pdObject()) {
+        //            cmp_sendstring((t_pd*)pdObject(), ((std::string) "set " + val_str).c_str());
+        //            cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang ").c_str());
+
+        if (serverObject()) {
+            float val = valueFromPoint(event->pos().toPoint());
+
+            QString val_str = std::to_string(val).c_str();
+
+            emit sendMessage(this->serverObject(), QString("set " + val_str));
+            emit sendMessage(this->serverObject(), QString("bang "));
+        }
+
+        //        }
     }
 
     ///////
@@ -227,14 +236,29 @@ public:
         setObjectData(message);
     }
 
-    static void updateUI(void* uiobj, ceammc::AtomList msg)
-    {
-        //qDebug("update ui");
-        UISlider* x = (UISlider*)uiobj;
+    //    static void updateUI(void* uiobj, ceammc::AtomList msg)
+    //    {
+    //        //qDebug("update ui");
+    //        UISlider* x = (UISlider*)uiobj;
 
+    //        if (msg.size() > 0) {
+    //            if (msg.at(0).isFloat())
+    //                x->_value = msg.at(0).asFloat();
+
+    //            //            if (x->_value < 0)
+    //            //                x->_value = 0;
+    //            //            if (x->_value > 1)
+    //            //                x->_value = 1;
+    //        }
+
+    //        emit x->callRepaint();
+    //    }
+
+    void updateUI(AtomList msg)
+    {
         if (msg.size() > 0) {
             if (msg.at(0).isFloat())
-                x->_value = msg.at(0).asFloat();
+                _value = msg.at(0).asFloat();
 
             //            if (x->_value < 0)
             //                x->_value = 0;
@@ -242,14 +266,14 @@ public:
             //                x->_value = 1;
         }
 
-        emit x->callRepaint();
+        emit callRepaint();
     }
 
-//    void setPdObject(void* obj)
-//    {
-//        UIObject::setPdObject(obj);
-//        cmp_connectUI((t_pd*)pdObject(), (void*)this, &UISlider::updateUI);
-//    }
+    //    void setPdObject(void* obj)
+    //    {
+    //        UIObject::setPdObject(obj);
+    //        cmp_connectUI((t_pd*)pdObject(), (void*)this, &UISlider::updateUI);
+    //    }
 
     void resizeEvent()
     {
@@ -258,12 +282,12 @@ public:
         _isHorizontal = width() > height();
     }
 
-//    virtual void setServerObject(ServerObject* o)
-//    {
-//        UIObject::setServerObject(o);
-//        if (o)
-//            o->connectUI(this, &UISlider::updateUI);
-//    };
+    //    virtual void setServerObject(ServerObject* o)
+    //    {
+    //        UIObject::setServerObject(o);
+    //        if (o)
+    //            o->connectUI(this, &UISlider::updateUI);
+    //    };
 };
 }
 

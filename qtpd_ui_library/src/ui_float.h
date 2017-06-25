@@ -1,5 +1,5 @@
-#ifndef UI_BANG_H
-#define UI_BANG_H
+#ifndef UI_FLOAT_H
+#define UI_FLOAT_H
 
 #include <ceammc_object.h>
 

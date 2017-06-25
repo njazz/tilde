@@ -1,5 +1,5 @@
-#ifndef UI_BANG_H
-#define UI_BANG_H
+#ifndef UI_TOGGLE
+#define UI_TOGGLE
 
 #include <ceammc_object.h>
 

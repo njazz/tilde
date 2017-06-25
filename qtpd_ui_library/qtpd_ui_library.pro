@@ -23,11 +23,11 @@ SOURCES += qtpd_ui_library/qtpd_ui_library.cpp \
     ../qtpd_ceammc_lib/src/ceammc_format.cpp \
     ../qtpd_ceammc_lib/src/ceammc_message.cpp \
     src/ui_bang.cpp \
-#    src/ui_sliders.cpp \
-#    src/ui_matrix.cpp \
+    src/ui_sliders.cpp \
+    src/ui_matrix.cpp \
     src/ui_float.cpp \
     src/ui_msg.cpp \
-#    src/ui_script.cpp \
+    src/ui_script.cpp \
     src/ui_toggle.cpp
 
 HEADERS += qtpd_ui_library/qtpd_ui_library.h\
@@ -41,6 +41,9 @@ HEADERS += qtpd_ui_library/qtpd_ui_library.h\
     src/ui_float.h \
     src/ui_msg.h \
     src/ui_toggle.h \
+    src/ui_matrix.h \
+    src/ui_script.h \
+    src/ui_sliders.h
 
 INCLUDEPATH += ../qtpd_ceammc_lib/src/ \
     ../../pd-server/pure-data-src/src/ \
