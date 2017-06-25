@@ -596,17 +596,14 @@ Generating docs for compound/home/travis/build/njazz/qtpd/qtpd_gui/lib_headers/c
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIItem.h:60: warning: The following parameters of qtpd::UIItem::setEditModeRef(t_editMode *canvasEditModeRef) are not documented:
   parameter 'canvasEditModeRef'
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UINewPatchcord.h:24: warning: Found unknown command `\group'
-/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:227: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addInlet()
-/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:238: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addOutlet()
-/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:211: warning: Found unknown command `\group'
-/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:211: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setInletsPos()
-/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:218: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setOutletsPos()
-/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:116: warning: Found unknown command `\group'
+/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:207: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addInlet()
+/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:218: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addOutlet()
+/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:191: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setInletsPos()
+/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:198: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setOutletsPos()
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIPatchcord.h:73: warning: Found unknown command `\group'
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIPatchcord.h:52: warning: Found unknown command `\group'
-/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:211: warning: Found unknown command `\group'
-/home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIInstance.h:319: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIInstance::setInletsPos() inherited from member setInletsPos at line 211 in file /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h
-/home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIInstance.h:320: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIInstance::setOutletsPos() inherited from member setOutletsPos at line 218 in file /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h
+/home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIInstance.h:319: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIInstance::setInletsPos() inherited from member setInletsPos at line 191 in file /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h
+/home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIInstance.h:320: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIInstance::setOutletsPos() inherited from member setOutletsPos at line 198 in file /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h
 /home/travis/build/njazz/qtpd/qtpd_gui/properties/PropertyList.h:110: warning: Found unknown command `\detais'
 /home/travis/build/njazz/qtpd/qtpd_gui/properties/PropertyList.h:110: warning: Found unknown command `\detais'
  ServerWorker...
@@ -693,6 +690,6 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-symbol cache used 2238/65536 hits=167356 misses=2238
-lookup cache used 3794/65536 hits=21571 misses=4006
+symbol cache used 2240/65536 hits=167051 misses=2240
+lookup cache used 3801/65536 hits=21567 misses=4013
 finished...
