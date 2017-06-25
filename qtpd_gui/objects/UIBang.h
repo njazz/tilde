@@ -176,6 +176,15 @@ public:
         }
     }
 
+    void updateUI(AtomList list)
+    {
+        if (!_clicked) {
+            timerStart();
+            _clicked = true;
+            update();
+        }
+    }
+
     //    void setPdObject(void* obj)
     //    {
     //        UIObject::setPdObject(obj);
@@ -189,12 +198,12 @@ public:
         emit setBangTimer(50);
     }
 
-    virtual void setServerObject(ServerObject* o)
-    {
-        UIObject::setServerObject(o);
-        if (o)
-            o->connectUI(this, &UIBang::updateUI);
-    };
+//    virtual void setServerObject(ServerObject* o)
+//    {
+//        UIObject::setServerObject(o);
+//        if (o)
+//            o->connectUI(this, &UIBang::updateUI);
+//    };
 
 signals:
     void setBangTimer(int msec);

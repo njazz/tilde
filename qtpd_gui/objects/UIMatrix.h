@@ -438,12 +438,12 @@ public:
     //        cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIMatrix::updateUI);
     //    }
 
-    virtual void setServerObject(ServerObject* o)
-    {
-        UIObject::setServerObject(o);
-        if (o)
-            o->connectUI(this, &UIMatrix::updateUI);
-    };
+//    virtual void setServerObject(ServerObject* o)
+//    {
+//        UIObject::setServerObject(o);
+//        if (o)
+//            o->connectUI(this, &UIMatrix::updateUI);
+//    };
 };
 }
 

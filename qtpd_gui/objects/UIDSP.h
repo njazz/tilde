@@ -176,12 +176,12 @@ public:
     //        //cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIDSP::updateUI);
     //    }
 
-    virtual void setServerObject(ServerObject* o)
-    {
-        UIObject::setServerObject(o);
-        if (o)
-            o->connectUI(this, &UIDSP::updateUI);
-    };
+//    virtual void setServerObject(ServerObject* o)
+//    {
+//        UIObject::setServerObject(o);
+//        if (o)
+//            o->connectUI(this, &UIDSP::updateUI);
+//    };
 };
 }
 

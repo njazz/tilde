@@ -138,6 +138,10 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
 
     uiObject->setParentCanvasView(_windows[0]->canvasView());
     uiObject->setServerObject(serverObject);
+
+    uiObject->observer()->setObject(uiObject);
+    uiObject->serverObject()->registerObserver(uiObject->observer());
+
     uiObject->sync();
 
     connect(uiObject, &UIObject::sendMessage, _appController->serverWorker(), &ServerWorker::sendMessageToObject);

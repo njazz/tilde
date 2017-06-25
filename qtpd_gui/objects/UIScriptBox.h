@@ -214,12 +214,12 @@ public:
 //        cmp_connectUI((t_pd*)pdObject(), (void*)this->_scriptCommon, &UIScriptCommon::updateUI);
 //    }
 
-    virtual void setServerObject(ServerObject* o)
-    {
-        UIObject::setServerObject(o);
-        if (o)
-            o->connectUI(this, &UIScriptBox::updateUI);
-    };
+//    virtual void setServerObject(ServerObject* o)
+//    {
+//        UIObject::setServerObject(o);
+//        if (o)
+//            o->connectUI(this, &UIScriptBox::updateUI);
+//    };
 private slots:
     void editorChanged();
 };

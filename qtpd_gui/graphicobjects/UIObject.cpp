@@ -42,6 +42,9 @@ UIObject::UIObject(UIItem* parent)
 
     _parentCanvasView = 0;
     _subCanvasData = 0;
+
+    _observer = new ObjectObserver;
+    _observer->setObject(this);
 }
 
 //---------------------------------------
@@ -553,4 +556,17 @@ void UIObject::propertyChanged(QString pname)
     if (pname == "BorderColor")
         update();
 }
+
+
+// ----------------
+
+void ObjectObserver::update()
+{
+    qDebug() << "ui object observer update";
+
+    if (_object) {
+        _object->updateUI(data());
+    }
+};
+
 }

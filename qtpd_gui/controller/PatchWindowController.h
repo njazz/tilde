@@ -22,6 +22,21 @@ class UIPatchcord;
 class ApplicationController;
 
 class UIItem;
+class PatchWindowController;
+
+// STUB
+//class ControllerObserver : public Observer
+//{
+//private:
+//    PatchWindowController* _patchController;
+//public:
+//    void setPatchController(PatchWindowController* c){_patchController = c;}
+//    virtual void update()
+//    {
+//        //something
+
+//    };
+//}
 
 class PatchWindowController : public QObject {
     Q_OBJECT

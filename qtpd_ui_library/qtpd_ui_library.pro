@@ -30,7 +30,8 @@ HEADERS += qtpd_ui_library/qtpd_ui_library.h\
     ../../pd-server/pure-data-src/src/m_pd.h
 
 INCLUDEPATH += ../qtpd_ceammc_lib/src \
-    ../../pd-server/pure-data-src/src/
+    ../../pd-server/pure-data-src/src/ \
+    ../../pd-server/src/
 
 unix {
     target.path = $$PWD/bin #/usr/local/lib

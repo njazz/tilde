@@ -246,12 +246,12 @@ public:
     }
 
 
-    virtual void setServerObject(ServerObject* o)
-    {
-        UIObject::setServerObject(o);
-        if (o)
-            o->connectUI(this, &UIText::updateUI);
-    };
+//    virtual void setServerObject(ServerObject* o)
+//    {
+//        UIObject::setServerObject(o);
+//        if (o)
+//            o->connectUI(this, &UIText::updateUI);
+//    };
 signals:
 
 private slots:

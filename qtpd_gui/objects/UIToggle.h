@@ -186,12 +186,12 @@ public:
         emit x->callRepaint();
     }
 
-    virtual void setServerObject(ServerObject* o)
-    {
-        UIObject::setServerObject(o);
-        if (o)
-            o->connectUI(this, &UIToggle::updateUI);
-    };
+//    virtual void setServerObject(ServerObject* o)
+//    {
+//        UIObject::setServerObject(o);
+//        if (o)
+//            o->connectUI(this, &UIToggle::updateUI);
+//    };
 
     //    void setPdObject(void* obj)
     //    {

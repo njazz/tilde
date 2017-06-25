@@ -182,12 +182,12 @@ public:
 
     std::string asPdFileString();
 
-    virtual void setServerObject(ServerObject* o)
-    {
-        UIObject::setServerObject(o);
-        if (o)
-            o->connectUI(this, &UISubpatch::updateUI);
-    };
+//    virtual void setServerObject(ServerObject* o)
+//    {
+//        UIObject::setServerObject(o);
+//        if (o)
+//            o->connectUI(this, &UISubpatch::updateUI);
+//    };
 signals:
 
     void mouseMoved();

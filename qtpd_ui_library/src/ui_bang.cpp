@@ -14,6 +14,8 @@ extern "C" {
 
 #include <stdlib.h>
 
+#include <pdUpdate.hpp>
+
 using namespace ceammc;
 
 static t_class* ui_bang_class;
@@ -26,8 +28,9 @@ typedef struct _ui_bang {
 
 static void qtpd_update(t_ui_bang* x)
 {
-    if (gensym("qtpd_ui")->s_thing)
-        pd_typedmess(gensym("qtpd_ui")->s_thing, gensym("update"), 1, AtomList(Atom((long)x)).toPdData());
+    //if (gensym("qtpd_ui")->s_thing)
+        //pd_typedmess(gensym("qtpd_ui")->s_thing, gensym("update"), 1, AtomList(Atom((long)x)).toPdData());
+    qtpdUpdate(AtomList(Atom((long)x)));
 }
 
 static void uibang_anything(t_ui_bang* x, t_symbol*, int, t_atom*)
@@ -39,6 +42,7 @@ static void uibang_anything(t_ui_bang* x, t_symbol*, int, t_atom*)
 static void uibang_bang(t_ui_bang* x)
 {
     outlet_bang(x->out1);
+    qtpd_update(x);
 }
 
 static void* uibang_new(t_symbol*, int, t_atom*)

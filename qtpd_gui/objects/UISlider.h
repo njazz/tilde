@@ -258,12 +258,12 @@ public:
         _isHorizontal = width() > height();
     }
 
-    virtual void setServerObject(ServerObject* o)
-    {
-        UIObject::setServerObject(o);
-        if (o)
-            o->connectUI(this, &UISlider::updateUI);
-    };
+//    virtual void setServerObject(ServerObject* o)
+//    {
+//        UIObject::setServerObject(o);
+//        if (o)
+//            o->connectUI(this, &UISlider::updateUI);
+//    };
 };
 }
 

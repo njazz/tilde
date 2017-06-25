@@ -133,12 +133,12 @@ public:
     {
     }
 
-    virtual void setServerObject(ServerObject* o)
-    {
-        UIObject::setServerObject(o);
-        if (o)
-            o->connectUI(this, &UISubCanvas::updateUI);
-    };
+//    virtual void setServerObject(ServerObject* o)
+//    {
+//        UIObject::setServerObject(o);
+//        if (o)
+//            o->connectUI(this, &UISubCanvas::updateUI);
+//    };
 };
 }
 #endif // UISUBCANVAS_H

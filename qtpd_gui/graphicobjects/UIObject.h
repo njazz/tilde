@@ -10,8 +10,6 @@
 
 #include "Preferences.h"
 
-
-
 #include <QMainWindow>
 #include <QMenu>
 #include <QObject>
@@ -29,6 +27,17 @@ class CanvasView;
 class CanvasData;
 
 typedef std::vector<Port*> portItemVec;
+
+class UIObject;
+
+class ObjectObserver : public Observer {
+private:
+    UIObject* _object;
+
+public:
+    void setObject(UIObject* o) { _object = o; }
+    virtual void update();
+};
 
 ////
 /// \brief base class for all object boxes - standard (UIBox) and special
@@ -59,17 +68,25 @@ private:
 
     ServerObject* _serverObject;
 
+    //
+    ObjectObserver* _observer;
+
 protected:
     virtual void hoverEnterEvent(QGraphicsSceneHoverEvent*);
     virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent*);
 
 public:
+    explicit UIObject(UIItem* parent = 0);
+
     //new 0517
     CanvasView* parentCanvasView() { return _parentCanvasView; };
     void setParentCanvasView(CanvasView* v) { _parentCanvasView = v; }
 
     CanvasData* subCanvasData() { return _subCanvasData; };
     void setSubCanvasData(CanvasData* c) { _subCanvasData = c; }
+
+    //new 0617
+    ObjectObserver* observer(){return _observer;}
 
     //TODO
     bool disableObjectMaker;
@@ -79,8 +96,6 @@ public:
 
     // just a template, copy from here
     virtual void paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*){};
-
-    explicit UIObject(UIItem* parent = 0);
 
     virtual void initProperties(); ///>init properties for the class - called from constructor
     PropertyList* properties(); ///> UIObject properties
@@ -127,14 +142,13 @@ public:
     virtual void setServerObject(ServerObject* o)
     {
         _serverObject = o;
-        if (o)
-            _serverObject->connectUI(this, &UIObject::updateUI);
+        //        if (o)
+        //            _serverObject->connectUI(this, &UIObject::updateUI);
     };
 
     virtual void sync()
     {
-        if (_serverObject->errorBox())
-        {
+        if (_serverObject->errorBox()) {
             setErrorBox(true);
             return;
         }
@@ -150,12 +164,12 @@ public:
             addOutlet();
     };
 
-//    //
-//    / \brief sets pointer to pd object
-//    / \details overriden by ui objects to be able to connect to pd objects
-//    / \param obj
-//    /
-//    virtual void setPdObject(void* obj);
+    //    //
+    //    / \brief sets pointer to pd object
+    //    / \details overriden by ui objects to be able to connect to pd objects
+    //    / \param obj
+    //    /
+    //    virtual void setPdObject(void* obj);
 
     ////
     /// \brief returns true if object doesn't exist
@@ -265,7 +279,10 @@ public:
 
     /** @}*/
 
+    ////\deprecated
     static void updateUI(void* uiobj, ceammc::AtomList) {}
+
+    virtual void updateUI(AtomList list) {};
 
 private slots:
     void openPropertiesWindow();
