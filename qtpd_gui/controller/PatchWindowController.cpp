@@ -140,7 +140,9 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
     uiObject->setServerObject(serverObject);
 
     uiObject->observer()->setObject(uiObject);
-    uiObject->serverObject()->registerObserver(uiObject->observer());
+    uiObject->serverObject()->ServerObject::registerObserver(uiObject->observer());
+
+    qDebug() << "*** registered observer: " << uiObject->observer();
 
     uiObject->sync();
 

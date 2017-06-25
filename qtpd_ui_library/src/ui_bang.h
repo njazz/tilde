@@ -11,6 +11,7 @@ public:
    UIpdBang(const PdArgs& a);
    void onBang();
    void onAny(t_symbol *, const AtomList &);
+   void onFloat(float);
 
 };
 

@@ -6,95 +6,51 @@
 //
 //
 
-#include "m_pd.h"
+#include <ceammc_factory.h>
+#include <pdUpdate.hpp>
 
-//#include "pdlib.hpp"
-
-#include "../ceammc-lib/ceammc_atomlist.h"
-#include <stdlib.h>
+#include "ui_float.h"
 
 using namespace ceammc;
 
-static t_class* ui_float_class;
+class UIpdFloat;
 
-typedef struct _ui_float {
-    t_object x_obj;
-
-    t_updateUI updateUI;
-    void* uiobj;
-
-    float val;
-
-    t_outlet* out1;
-
-} t_ui_float;
-
-// special
-extern "C" void uifloat_set_updateUI(t_pd* x, void* obj, t_updateUI func)
+static void qtpd_update(UIpdFloat* x)
 {
-    ((t_ui_float*)x)->updateUI = func;
-    ((t_ui_float*)x)->uiobj = obj;
+    qtpdUpdate((long)x->owner(), AtomList(Atom(x->value())));
 }
 
-///////
-
-static void uifloat_set(t_ui_float* x, t_symbol* s, int argc, t_atom* argv)
+float UIpdFloat::value()
 {
-    if (argc)
-        x->val = AtomList(argc, argv).at(0).asFloat();
-
-    AtomList msg = AtomList(Atom(x->val));
-
-    if (x->updateUI)
-        x->updateUI(x->uiobj, msg);
+    return _value;
 }
 
-static void uifloat_bang(t_ui_float* x)
+UIpdFloat::UIpdFloat(const PdArgs& a)
+    : BaseObject(a)
 {
-    AtomList(Atom(x->val)).output(x->out1);
+    _value = 0;
+    createOutlet();
 }
 
-static void uifloat_float(t_ui_float* x, t_float f)
+void UIpdFloat::onBang()
 {
-    x->val = f;
-
-    AtomList msg = AtomList(Atom(x->val));
-
-    msg.output(x->out1);
-
-    if (x->updateUI)
-        x->updateUI(x->uiobj, msg);
+    floatTo(0, _value);
+    qtpd_update(this);
 }
 
-///////
-
-static void* uifloat_new(t_symbol* s, int argc, t_atom* argv)
+void UIpdFloat::onFloat(float f)
 {
-    t_ui_float* x = (t_ui_float*)pd_new(ui_float_class);
-
-    x->val = 0;
-
-    x->out1 = outlet_new((t_object*)x, &s_anything);
-
-    x->uiobj = 0;
-
-    return (void*)x;
+    _value = f;
+    UIpdFloat::onBang();
 }
 
-static void uifloat_free(t_object* obj)
+void UIpdFloat::onAny(t_symbol* s, const AtomList& list)
 {
+    if (s == gensym("set") && list.size() > 0) {
+        _value = list.at(0).asFloat();
+    }
 }
-
-//extern "C"
 extern "C" void setup_ui0x2efloat()
 {
-    ui_float_class = class_new(gensym("ui.float"),
-        (t_newmethod)(uifloat_new),
-        (t_method)(0),
-        sizeof(t_ui_float), 0, A_GIMME, 0);
-
-    class_addmethod(ui_float_class, (t_method)uifloat_set, &s_anything, A_GIMME, 0);
-    class_addmethod(ui_float_class, (t_method)uifloat_bang, &s_bang, A_NULL, 0);
-
-    class_addfloat(ui_float_class, (t_method)uifloat_float);
+    ObjectFactory<UIpdFloat> obj("ui.float");
 }

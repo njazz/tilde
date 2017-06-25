@@ -127,7 +127,7 @@ public:
             timerStart();
         }
 
-        qDebug() << "err";
+        //qDebug() << "err";
 
         //move ?
         if (getEditMode() != em_Unlocked) {
@@ -140,7 +140,7 @@ public:
             }
         }
 
-        emit signalBang();
+        //emit signalBang();
     }
 
     void mouseReleaseEvent(QGraphicsSceneMouseEvent*)
@@ -164,19 +164,19 @@ public:
 
     // -------------------------
 
-    static void updateUI(void* uiobj, ceammc::AtomList)
-    {
-        qDebug("uibang update ui");
-        UIBang* x = (UIBang*)uiobj;
+//    static void updateUI(void* uiobj, ceammc::AtomList)
+//    {
+//        qDebug("uibang update ui");
+//        UIBang* x = (UIBang*)uiobj;
 
-        if (!x->_clicked) {
-            x->timerStart();
-            x->_clicked = true;
-            x->update(); //x->sceneRect());
-        }
-    }
+//        if (!x->_clicked) {
+//            x->timerStart();
+//            x->_clicked = true;
+//            x->update(); //x->sceneRect());
+//        }
+//    }
 
-    void updateUI(AtomList list)
+    void updateUI(AtomList)
     {
         if (!_clicked) {
             timerStart();
@@ -219,9 +219,7 @@ private slots:
 
     void slotBang()
     {
-        //serverObject()->message("bang ");
-
-        emit sendMessage(this->serverObject(),QString("bang "));
+        emit sendMessage(this->serverObject(),QString("bang"));
     }
 };
 }

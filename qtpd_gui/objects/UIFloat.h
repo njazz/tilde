@@ -33,7 +33,7 @@ public:
 //        QStringList l = data.split(" ");l.removeFirst();
 //        data = l.join(" ");
 
-        ret->setObjectData(data);
+        //ret->setObjectData(data);
 
         return ret;
     }
@@ -210,16 +210,23 @@ public:
 //        }
     }
 
-    static void updateUI(void* uiobj, ceammc::AtomList msg)
-    {
-        UIFloat* x = (UIFloat*)uiobj;
+//    static void updateUI(void* uiobj, ceammc::AtomList msg)
+//    {
+//        UIFloat* x = (UIFloat*)uiobj;
 
+//        if (msg.size() > 0) {
+//            x->setObjectData(msg.at(0).asString().c_str());
+//            emit x->callRepaint();
+//        }
+//    }
+
+    void updateUI(AtomList msg)
+    {
         if (msg.size() > 0) {
-            x->setObjectData(msg.at(0).asString().c_str());
-            emit x->callRepaint();
+            setObjectData(msg.at(0).asString().c_str());
+            emit callRepaint();
         }
     }
-
 //    void setPdObject(void* obj)
 //    {
 //        UIObject::setPdObject(obj);

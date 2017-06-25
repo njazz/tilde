@@ -186,6 +186,17 @@ public:
         emit x->callRepaint();
     }
 
+    void updateUI(AtomList list)
+    {
+        if (list.size() > 0) {
+            if (list.at(0).isFloat())
+                _value = list.at(0).asFloat() > 0;
+        }
+
+        emit callRepaint();
+
+    }
+
 //    virtual void setServerObject(ServerObject* o)
 //    {
 //        UIObject::setServerObject(o);

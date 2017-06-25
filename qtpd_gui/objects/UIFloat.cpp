@@ -17,5 +17,7 @@ UIFloat::UIFloat()
     setHeight(20);
 
     resizeEvent();
+
+    setObjectData("0");
 }
 }

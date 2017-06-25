@@ -178,7 +178,7 @@ public:
                 //cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
                 //serverObject()->message("bang");
 
-                emit sendMessage(this->serverObject(),QString("bang "));
+                emit sendMessage(this->serverObject(),QString("bang"));
             }
         }
     }
@@ -239,28 +239,50 @@ public:
         resizeEvent();
     }
 
-    static void updateUI(void* uiobj, ceammc::AtomList msg)
-    {
-        UIMessage* x = (UIMessage*)uiobj;
+//    static void updateUI(void* uiobj, ceammc::AtomList msg)
+//    {
+//        UIMessage* x = (UIMessage*)uiobj;
 
+//        std::string obj_data;
+//        for (size_t i = 0; i < msg.size(); i++) {
+//            // workaround
+//            if (AtomList(msg.at(i)).toPdData()->a_type == A_COMMA)
+//                obj_data += ", ";
+//            else if (AtomList(msg.at(i)).toPdData()->a_type == A_SEMI)
+//                obj_data += "; ";
+//            else if (AtomList(msg.at(i)).toPdData()->a_type == A_DOLLAR)
+//                obj_data += "$" + QString::number(AtomList(msg.at(i)).toPdData()->a_w.w_index).toStdString() + " ";
+//            else
+//                obj_data += msg.at(i).asString() + " ";
+//        }
+
+//        x->setObjectData(obj_data.c_str());
+//        x->autoResize();
+
+//        //
+//        emit x->callRepaint();
+//    }
+
+    void updateUI(AtomList list)
+    {
         std::string obj_data;
-        for (size_t i = 0; i < msg.size(); i++) {
+        for (size_t i = 0; i < list.size(); i++) {
             // workaround
-            if (AtomList(msg.at(i)).toPdData()->a_type == A_COMMA)
+            if (AtomList(list.at(i)).toPdData()->a_type == A_COMMA)
                 obj_data += ", ";
-            else if (AtomList(msg.at(i)).toPdData()->a_type == A_SEMI)
+            else if (AtomList(list.at(i)).toPdData()->a_type == A_SEMI)
                 obj_data += "; ";
-            else if (AtomList(msg.at(i)).toPdData()->a_type == A_DOLLAR)
-                obj_data += "$" + QString::number(AtomList(msg.at(i)).toPdData()->a_w.w_index).toStdString() + " ";
+            else if (AtomList(list.at(i)).toPdData()->a_type == A_DOLLAR)
+                obj_data += "$" + QString::number(AtomList(list.at(i)).toPdData()->a_w.w_index).toStdString() + " ";
             else
-                obj_data += msg.at(i).asString() + " ";
+                obj_data += list.at(i).asString() + " ";
         }
 
-        x->setObjectData(obj_data.c_str());
-        x->autoResize();
+        setObjectData(obj_data.c_str());
+        autoResize();
 
         //
-        emit x->callRepaint();
+        emit callRepaint();
     }
 
     //    void setPdObject(void* obj)
