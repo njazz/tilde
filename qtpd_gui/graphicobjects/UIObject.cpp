@@ -562,7 +562,7 @@ void UIObject::propertyChanged(QString pname)
 
 void ObjectObserver::update()
 {
-    qDebug() << "ui object observer update";
+    //qDebug() << "ui object observer update";
 
     if (_object) {
         _object->updateUI(data());
