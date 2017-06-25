@@ -149,11 +149,11 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_matrix.html#ae66642f8c93e28719873280effa252b0">mouseReleaseEvent</a> (QGraphicsSceneMouseEvent *)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_matrix.html#af1a8d9809d63aac1c5f1a156fd725fc2">mouseMoveEvent</a> (QGraphicsSceneMouseEvent *event)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_matrix.html#a5cdbcfaaa127ed5ed88f0f5aebae17db">setPdMessage</a> (QString message)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_matrix.html#ab96f06dea9b78840f7c320baf3c91770">updateUI</a> (<a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> msg)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_matrix.html#af2cd08a5607bee6af6114ae2ed53ad3f">createObj</a> (QString data)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_matrix.html#a13e1007fbe7c5a56ed2d3498d742db3e">createObject</a> (QString <a class="el" href="classqtpd_1_1_u_i_object.html#a36456ea5fb11ff6b752bc56de2ce5584">objectData</a>, <a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *pdCanvas, QGraphicsView *parent=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_matrix.html#a1b562873121bf0bb0ea0cd8af1005af4">updateUI</a> (void *uiobj, <a class="el" href="classceammc_1_1_atom_list.html">ceammc::AtomList</a> msg)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>gui object: ui.matrix - substitute all objects with multiple buttons (hradio, vradio, ui.matrix) </p>
@@ -576,32 +576,22 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a1b562873121bf0bb0ea0cd8af1005af4"></a><!-- doxytag: member="qtpd::UIMatrix::updateUI" ref="a1b562873121bf0bb0ea0cd8af1005af4" args="(void *uiobj, ceammc::AtomList msg)" -->
+<a class="anchor" id="ab96f06dea9b78840f7c320baf3c91770"></a><!-- doxytag: member="qtpd::UIMatrix::updateUI" ref="ab96f06dea9b78840f7c320baf3c91770" args="(AtomList msg)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static void <a class="el" href="classqtpd_1_1_u_i_matrix.html#a1b562873121bf0bb0ea0cd8af1005af4">qtpd::UIMatrix::updateUI</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_matrix.html#ab96f06dea9b78840f7c320baf3c91770">qtpd::UIMatrix::updateUI</a> </td>
           <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>uiobj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classceammc_1_1_atom_list.html">ceammc::AtomList</a>&#160;</td>
-          <td class="paramname"><em>msg</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [inline, static]</code></td>
+          <td class="paramtype"><a class="el" href="classceammc_1_1_atom_list.html">AtomList</a>&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#adf1a3fee8ddb81d1342065d68073d5ec">qtpd::UIObject</a>.</p>
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#a5bcc1cf682fee4c35da6b4f77fe35814">qtpd::UIObject</a>.</p>
 
 </div>
 </div>
@@ -627,7 +617,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 25 2017 13:48:50 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 25 2017 14:38:00 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
