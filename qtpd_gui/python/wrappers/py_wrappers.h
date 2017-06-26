@@ -16,17 +16,27 @@ using namespace qtpd;
 ///
 ///
 
+namespace qtpd{
+class ApplicationController;
+}
+
 class pyWrapper
 {
 private:
 
    pyWrapper();
+    ApplicationController* _appController;
 public:
     static pyWrapper& inst()
     {
         static pyWrapper instance;
         return instance;
     }
+
+    void setAppController(ApplicationController* appC){_appController = appC;}
+
+    // TODO no singleton
+    //pyWrapper(ApplicationController* appC){_appController = appC;};
 
     ////
     /// \brief this one is for UIScript - adds UI Canvas to Python context

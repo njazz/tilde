@@ -19,6 +19,11 @@
 
 #include "CanvasView.h"
 
+// NEW
+#include "PatchWindowController.h"
+#include "ApplicationController.h"
+
+
 
 using namespace qtpd;
 
@@ -312,8 +317,10 @@ public Q_SLOTS:
 class pyQtpd : public QObject {
     Q_OBJECT
 
+    ApplicationController* _appController;
+
 public:
-    explicit pyQtpd(QObject* parent = 0){};
+    explicit pyQtpd(QObject* parent = 0, ApplicationController* ctl = 0){_appController = ctl;};
 
 public Q_SLOTS:
     PyObject* getMainModule()
@@ -323,11 +330,12 @@ public Q_SLOTS:
 
     //todo separate classes / decorators
 
-    PatchWindow* newPatchWindow()
+    PatchWindowController* newPatchWindow()
     {
-        PatchWindow* ret;
-        ret = new PatchWindow();
-        ret->show();
+        PatchWindowController* ret;
+        ret = new PatchWindowController(_appController);
+        ret->firstWindow()->show();
+        //ret->show();
         return ret;
     };
 
