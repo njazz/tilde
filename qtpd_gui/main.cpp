@@ -3,8 +3,6 @@
 
 #include <QApplication>
 
-
-
 #include "PatchWindow.h"
 #include "PdWindow.h"
 
@@ -42,7 +40,8 @@ int main(int argc, char* argv[])
     PythonQt::init(PythonQt::RedirectStdOut); //PythonQt::IgnoreSiteModule |
     PythonQt_QtAll::init();
 
-    pyWrapper::inst();
+    //pyWrapper::inst();
+    //
 #endif
 
     ObjectLoader::inst().loadObjects();
@@ -50,7 +49,11 @@ int main(int argc, char* argv[])
     // TODO move all to appcontroller
 
     //const
-            ApplicationController* controller = new ApplicationController();
+    ApplicationController* controller = new ApplicationController();
+
+#ifdef WITH_PYTHON
+    pyWrapper::inst().setAppController(controller);
+#endif
 
     QTPD_AUDIOSETTINGS_INIT;
 
@@ -59,12 +62,14 @@ int main(int argc, char* argv[])
     controller->mainServerInstance()->post("qtpd started");
     controller->mainServerInstance()->post("----");
 
-    //TODO //cmp_post("qtpd started");
-    //TODO //cmp_post("---");
+//TODO //cmp_post("qtpd started");
+//TODO //cmp_post("---");
 
-    a.setCursorFlashTime(0);
 
-    //temporary folders properties
+
+    a.setCursorFlashTime(500);
+
+    //temporary folders pÏroperties
 
     QString docFolder = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).last();
 

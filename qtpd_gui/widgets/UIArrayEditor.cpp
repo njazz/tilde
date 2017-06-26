@@ -6,5 +6,5 @@
 UIArrayEditor::UIArrayEditor(QWidget* parent)
     : QWidget(parent)
 {
-    _arrSize = 0;
+    //_arrSize = 0;
 }

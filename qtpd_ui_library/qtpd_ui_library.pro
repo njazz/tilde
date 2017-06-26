@@ -14,7 +14,7 @@ QMAKE_LFLAGS += -undefined dynamic_lookup
 
 DEFINES += QT_DEPRECATED_WARNINGS
 
-SOURCES += qtpd_ui_library/qtpd_ui_library.cpp \
+SOURCES += \
     ../qtpd_ceammc_lib/src/ceammc_atomlist.cpp \
     ../qtpd_ceammc_lib/src/ceammc_atom.cpp \
     ../qtpd_ceammc_lib/src/ceammc_log.cpp \
@@ -28,9 +28,11 @@ SOURCES += qtpd_ui_library/qtpd_ui_library.cpp \
     src/ui_float.cpp \
     src/ui_msg.cpp \
     src/ui_script.cpp \
-    src/ui_toggle.cpp
+    src/ui_toggle.cpp \
+    src/ui_array.cpp \
+    qtpd_ui_library/qtpd_ui_library.cpp
 
-HEADERS += qtpd_ui_library/qtpd_ui_library.h\
+HEADERS +=\
     ../../pd-server/pure-data-src/src/m_pd.h \
     ../qtpd_ceammc_lib/src/ceammc_object.h \
     ../qtpd_ceammc_lib/src/ceammc_factory.h \
@@ -43,7 +45,8 @@ HEADERS += qtpd_ui_library/qtpd_ui_library.h\
     src/ui_toggle.h \
     src/ui_matrix.h \
     src/ui_script.h \
-    src/ui_sliders.h
+    src/ui_sliders.h \
+    src/ui_array.h
 
 INCLUDEPATH += ../qtpd_ceammc_lib/src/ \
     ../../pd-server/pure-data-src/src/ \

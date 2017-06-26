@@ -15,5 +15,7 @@ UIArray::UIArray()
     _objectDataModel.setObjectSize(os_FixedHeight, 40, 20);
     initProperties();
     resizeEvent();
+
+    _array = 0;
 }
 }

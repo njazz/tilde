@@ -27,6 +27,10 @@ class UIArray : public UIObject {
 
 private:
     UIArrayEditor _editor;
+    QString _arrayName;
+    int _arraySize;
+
+    ServerArray* _array;
 
 public:
     explicit UIArray(); //UIObject* parent = 0);
@@ -35,19 +39,47 @@ public:
     {
         UIArray* ret = new UIArray();
 
-//        QStringList l = data.split(" ");l.removeFirst();
-//        data = l.join(" ");
+        //        QStringList l = data.split(" ");l.removeFirst();
+        //        data = l.join(" ");
 
         // TODO
-        //((ServerCanvas*)serverObject()->parent())->createArray();
 
         ret->setObjectData(data);
+
+        //ret->createServerArray();
 
         return ret;
     }
 
+
+
+    void createServerArray()
+    {
+
+        ServerObject* o = serverObject();
+
+        if (!o) {
+            qDebug() << "server object error!";
+            return;
+        }
+
+        ServerCanvas* c = serverObject()->parent();
+        if (!c) {
+            qDebug() << "server canvas error!";
+            return;
+        }
+
+        qDebug() << "object / canvas :" << o  << c;
+
+        _array = c->createArray(_arrayName.toStdString(), _arraySize);
+
+        _editor.setServerArray(_array);
+    }
+
     static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
-    {return 0;}
+    {
+        return 0;
+    }
 
     /*
         UIArray* b = new UIArray();
@@ -195,27 +227,75 @@ public:
         }
     }
 
-    void setPdMessage(std::string message)
+    //    void setPdMessage(std::string message)
+    //    {
+    //        setObjectData(message.c_str());
+    //        autoResize();
+
+    //        QFont myFont(PREF_QSTRING("Font"), 11);
+    //        QFontMetrics fm(myFont);
+    //        int new_w = fm.width(QString(_objectDataModel.objectData())) + 10;
+    //        new_w = (new_w < 25) ? 25 : new_w;
+    //        setWidth(new_w);
+    //        //
+    //        setInletsPos();
+    //        setOutletsPos();
+    //    }
+
+    void setPdMessage(QString message)
     {
-        setObjectData(message.c_str());
+        UIArray::setObjectData(message);
+    }
+
+    void setObjectData(QString message)
+    {
+        UIObject::setObjectData(message);
+
         autoResize();
 
         QFont myFont(PREF_QSTRING("Font"), 11);
         QFontMetrics fm(myFont);
-        int new_w = fm.width(QString(_objectDataModel.objectData())) + 10;
+        int new_w = fm.width(message) + 10;
         new_w = (new_w < 25) ? 25 : new_w;
         setWidth(new_w);
+
+        //
+        QStringList list = message.split((" "));
+
+        // TODO workaround
+        if (list.at(0) == "") list.removeAt(0);
+        if (list.at(0) == "ui.array") list.removeAt(0);
+
+        _arrayName = list.at(0);
+        if (list.size() > 1) {
+            _arraySize = list.at(1).toFloat();
+        } else {
+            _arraySize = 256;
+        }
+
+        qDebug() << "array name / size : " << _arrayName << _arraySize;
+
         //
         setInletsPos();
         setOutletsPos();
+
+        //
+        sizeBox()->move(boundingRect().width() - 7, boundingRect().height() - 7);
     }
 
-//    virtual void setServerObject(ServerObject* o)
-//    {
-//        UIObject::setServerObject(o);
-//        if (o)
-//            o->connectUI(this, &UIArray::updateUI);
-//    };
+    void sync()
+    {
+        UIObject::sync();
+
+        if (!_array)
+            createServerArray();
+    }
+    //    virtual void setServerObject(ServerObject* o)
+    //    {
+    //        UIObject::setServerObject(o);
+    //        if (o)
+    //            o->connectUI(this, &UIArray::updateUI);
+    //    };
 
 signals:
 
