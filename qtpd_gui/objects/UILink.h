@@ -33,38 +33,12 @@ public:
     {
         UILink* ret = new UILink();
 
-//        QStringList l = data.split(" ");l.removeFirst();
-//        data = l.join(" ");
-
         ret->setObjectData(data);
 
         return ret;
     }
 
-    static UIObject* createObject(QString objectData, t_canvas*, QGraphicsView* parent = 0)
-    {
-        UILink* b = new UILink();
-        //b->setCanvas((void*)parent);
-
-        b->properties()->extractFromPdFileString(objectData);
-        b->setObjectData("");
-
-        // the zoo lol
-        QString data = b->properties()->get("title")->asQString(); //.split("\\n ").join("\n");
-
-        b->_objectText = data;
-
-        if (!b->properties())
-            b->initProperties();
-
-        //int fontSize = b->properties()->get("FontSize")->asQString().toInt();
-
-        b->autoResize();
-
-        b->resizeEvent();
-
-        return (UIObject*)b;
-    };
+    static UIObject* createObject(QString objectData, t_canvas*, QGraphicsView* parent = 0) { return 0; }
 
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
     {
@@ -217,34 +191,23 @@ public:
         autoResize();
     }
 
-    static void updateUI(void* uiobj, ceammc::AtomList msg)
+    virtual void updateUI(AtomList msg)
     {
-        qDebug("update ui");
-
-        UILink* x = (UILink*)uiobj;
-
         std::string obj_data;
         for (size_t i = 0; i < msg.size(); i++) {
             obj_data += msg.at(i).asString() + " ";
         }
 
-        x->setObjectData(obj_data.c_str());
-        x->autoResize();
+        setObjectData(obj_data.c_str());
+        autoResize();
 
-        x->update();
+        update();
     }
 
     void* pdObject()
     {
         return 0;
     }
-
-//    virtual void setServerObject(ServerObject* o)
-//    {
-//        UIObject::setServerObject(o);
-//        if (o)
-//            o->connectUI(this, &UILink::updateUI);
-//    };
 
 signals:
 };

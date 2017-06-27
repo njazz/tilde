@@ -79,12 +79,24 @@ public slots:
     {
         qDebug() << "btnRun";
 
+        if (!_editor)
+        {
+            ServerInstance::post("UIScript editor error!");
+            return;
+        }
         //this code is from PythonQt
         PythonQtObjectPtr context = _editor->textEdit()->context(); //PythonQt::self()->getMainModule();
         QString _stdOut = "";
         QString _stdErr = "";
         PythonQtObjectPtr p;
         PyObject* dict = NULL;
+
+        if (!_editor->textEdit()->context())
+        {
+            ServerInstance::post("Bad Python context!");
+            return;
+        }
+
         if (PyModule_Check(context)) {
             dict = PyModule_GetDict(context);
         } else if (PyDict_Check(context)) {

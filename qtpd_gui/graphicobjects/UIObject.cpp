@@ -325,6 +325,26 @@ void UIObject::setObjectData(QString objData)
     _objectDataModel.setData(objData);
 }
 
+// ----------------------------
+
+void UIObject::sync()
+{
+    if (_serverObject->errorBox()) {
+        setErrorBox(true);
+        return;
+    }
+
+    int in_c = _serverObject->inletCount();
+    int out_c = _serverObject->outletCount();
+
+    //qDebug() << "i/o " << in_c << out_c;
+
+    for (int i = 0; i < in_c; i++)
+        addInlet();
+    for (int i = 0; i < out_c; i++)
+        addOutlet();
+};
+
 void UIObject::autoResize()
 {
     QFont myFont(PREF_QSTRING("Font"), 11);

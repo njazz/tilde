@@ -69,7 +69,6 @@ private:
     CanvasData* _subCanvasData;
 
     ServerObject* _serverObject;
-
     //
     ObjectObserver* _observer;
 
@@ -136,23 +135,7 @@ public:
     virtual ServerObject* serverObject() { return _serverObject; };
     virtual void setServerObject(ServerObject* o) { _serverObject = o; };
 
-    virtual void sync()
-    {
-        if (_serverObject->errorBox()) {
-            setErrorBox(true);
-            return;
-        }
-
-        int in_c = _serverObject->inletCount();
-        int out_c = _serverObject->outletCount();
-
-        //qDebug() << "i/o " << in_c << out_c;
-
-        for (int i = 0; i < in_c; i++)
-            addInlet();
-        for (int i = 0; i < out_c; i++)
-            addOutlet();
-    };
+    virtual void sync();
 
     ////
     /// \brief returns true if object doesn't exist

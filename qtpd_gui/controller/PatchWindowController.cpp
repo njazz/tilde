@@ -633,7 +633,7 @@ void PatchWindowController::patchcord(UIObject* obj1, int outlet, UIObject* obj2
 
         qDebug() << "patchcord: " << obj1->serverObject() << outlet << obj2->serverObject() << inlet;
 
-        _serverCanvas->patchcord(obj1->serverObject(), outlet, obj2->serverObject(), inlet);
+        _serverCanvas->createPatchcord(obj1->serverObject(), outlet, obj2->serverObject(), inlet);
         _canvasData->addPatchcord(pc);
 
 

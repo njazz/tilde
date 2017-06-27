@@ -33,39 +33,15 @@ public:
     {
         UIText* ret = new UIText();
 
-//        QStringList l = data.split(" ");l.removeFirst();
-//        data = l.join(" ");
-
         ret->setObjectData(data);
 
         return ret;
     }
     static UIObject* createObject(QString objectData, t_canvas*, QGraphicsView* parent = 0)
-    {return 0;} /*
     {
-        UIText* b = new UIText();
-        //b->setCanvas((void*)parent);
+        return 0;
+    }
 
-        //temporary
-        QString data1 = b->properties()->extractFromPdFileString(objectData);
-        b->setObjectData("");
-
-        // the zoo lol
-        QString data = b->properties()->get("Text")->asQString().split("\\n ").join("\n");
-        b->_editor->document()->setPlainText(data);
-
-        b->_objectText = data;
-
-        int fontSize = b->properties()->get("FontSize")->asQString().toInt();
-        b->_editor->setFont(QFont(PREF_QSTRING("Font"), fontSize, 0, false));
-
-        b->autoResize();
-
-        b->resizeEvent();
-
-        return (UIObject*)b;
-    };
-*/
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
     {
         p->setClipRect(option->exposedRect);
@@ -245,13 +221,11 @@ public:
         return _editor->document()->toPlainText().split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
     }
 
+    virtual void sync()
+    {
 
-//    virtual void setServerObject(ServerObject* o)
-//    {
-//        UIObject::setServerObject(o);
-//        if (o)
-//            o->connectUI(this, &UIText::updateUI);
-//    };
+    }
+
 signals:
 
 private slots:
