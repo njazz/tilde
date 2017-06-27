@@ -69,6 +69,6 @@ var searchData=
   ['mt_5fmatrixtogglemomentary',['mt_MatrixToggleMomentary',['../namespaceqtpd.html#a40c698b26106feb24ba7172b4fdefecfa1f72ec30f46d0af9acf53f436aa7fcbe',1,'qtpd']]],
   ['mt_5fvradio',['mt_VRadio',['../namespaceqtpd.html#a40c698b26106feb24ba7172b4fdefecfa761b2a8d723a21636c177bc7258bd0eb',1,'qtpd']]],
   ['mtof',['mtof',['../m__pd_8h.html#aa0fc1002dc2c7212e22f19ae3b8bbf51',1,'m_pd.h']]],
-  ['mtp',['MTP',['../_u_i_matrix_8h.html#aa012eddd5a74ed5b213f7162a3cf9353',1,'UIMatrix.h']]],
+  ['mtp',['MTP',['../_u_i_matrix_8cpp.html#aa012eddd5a74ed5b213f7162a3cf9353',1,'UIMatrix.cpp']]],
   ['multipleoutput',['multipleOutput',['../classqtpd_1_1_o_p_instance.html#a9e2addc8b1f9f6964b0eea7b79ecd603',1,'qtpd::OPInstance']]]
 ];

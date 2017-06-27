@@ -129,7 +129,7 @@ Inheritance diagram for qtpd::UIToggle:</div>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_toggle.html#a4e91f313e67310863be8aaf0dab003ce">UIToggle</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_toggle.html#a4f8854faeb9c3592371f37da6a9a190b">initProperties</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_toggle.html#a15b3386bfcc334de0b87aa8a175cfff5">paint</a> (QPainter *p, const QStyleOptionGraphicsItem *option, QWidget *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_toggle.html#a4e38212f47944f4ef9af3518a3866a30">paint</a> (QPainter *p, const QStyleOptionGraphicsItem *option, QWidget *)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_toggle.html#ad08a617056c61e9b1c25b51ef37f69e1">resizeEvent</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; call this after setting object data  <a href="#ad08a617056c61e9b1c25b51ef37f69e1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_toggle.html#ae5c536b0c28b4ef442ea70ebf643697a">mousePressEvent</a> (QGraphicsSceneMouseEvent *ev)</td></tr>
@@ -139,9 +139,9 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_toggle.html#a110e8296eb77ac9c95e6c8234ab736d8">updateUI</a> (<a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> list)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_toggle.html#a17a13e040c06a3f58044964affcac1d1">createObj</a> (QString data)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_toggle.html#a25689897ae83a834bd2aa6dfff734fe8">createObject</a> (QString <a class="el" href="classqtpd_1_1_u_i_object.html#a36456ea5fb11ff6b752bc56de2ce5584">objectData</a>, <a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *pdCanvas, QGraphicsView *parent=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_toggle.html#a3b873c6339f64313fb2d39fac0244a4f">updateUI</a> (void *uiobj, <a class="el" href="classceammc_1_1_atom_list.html">ceammc::AtomList</a> msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_toggle.html#adb3f9627c12f331f751544eae0c90e76">createObj</a> (QString data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_toggle.html#a92d6e345251364cf549d758d53ad3da7">createObject</a> (QString, <a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *, QGraphicsView *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_toggle.html#aeee94e533ed53300efeeee46f78d0ac1">updateUI</a> (void *uiobj, <a class="el" href="classceammc_1_1_atom_list.html">ceammc::AtomList</a> msg)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>gui object: toggle (ui.toggle) </p>
@@ -163,16 +163,16 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a17a13e040c06a3f58044964affcac1d1"></a><!-- doxytag: member="qtpd::UIToggle::createObj" ref="a17a13e040c06a3f58044964affcac1d1" args="(QString data)" -->
+<a class="anchor" id="adb3f9627c12f331f751544eae0c90e76"></a><!-- doxytag: member="qtpd::UIToggle::createObj" ref="adb3f9627c12f331f751544eae0c90e76" args="(QString data)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a>* <a class="el" href="classqtpd_1_1_u_i_toggle.html#a17a13e040c06a3f58044964affcac1d1">qtpd::UIToggle::createObj</a> </td>
+          <td class="memname"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> * <a class="el" href="classqtpd_1_1_u_i_toggle.html#adb3f9627c12f331f751544eae0c90e76">qtpd::UIToggle::createObj</a> </td>
           <td>(</td>
           <td class="paramtype">QString&#160;</td>
           <td class="paramname"><em>data</em></td><td>)</td>
-          <td><code> [inline, static]</code></td>
+          <td><code> [static]</code></td>
         </tr>
       </table>
 </div>
@@ -180,32 +180,32 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a25689897ae83a834bd2aa6dfff734fe8"></a><!-- doxytag: member="qtpd::UIToggle::createObject" ref="a25689897ae83a834bd2aa6dfff734fe8" args="(QString objectData, t_canvas *pdCanvas, QGraphicsView *parent=0)" -->
+<a class="anchor" id="a92d6e345251364cf549d758d53ad3da7"></a><!-- doxytag: member="qtpd::UIToggle::createObject" ref="a92d6e345251364cf549d758d53ad3da7" args="(QString, t_canvas *, QGraphicsView *)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a>* <a class="el" href="classqtpd_1_1_u_i_toggle.html#a25689897ae83a834bd2aa6dfff734fe8">qtpd::UIToggle::createObject</a> </td>
+          <td class="memname"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> * <a class="el" href="classqtpd_1_1_u_i_toggle.html#a92d6e345251364cf549d758d53ad3da7">qtpd::UIToggle::createObject</a> </td>
           <td>(</td>
           <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>objectData</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *&#160;</td>
-          <td class="paramname"><em>pdCanvas</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">QGraphicsView *&#160;</td>
-          <td class="paramname"><em>parent</em> = <code>0</code>&#160;</td>
+          <td class="paramname">&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td><code> [inline, static]</code></td>
+          <td></td><td><code> [static]</code></td>
         </tr>
       </table>
 </div>
@@ -221,7 +221,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_toggle.html#a4f8854faeb9c3592371f37da6a9a190b">qtpd::UIToggle::initProperties</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline, virtual]</code></td>
+          <td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -240,7 +240,7 @@ Static Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
           <td class="paramname"><em>event</em></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -257,7 +257,7 @@ Static Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
           <td class="paramname"><em>ev</em></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -274,7 +274,7 @@ Static Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -282,12 +282,12 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a15b3386bfcc334de0b87aa8a175cfff5"></a><!-- doxytag: member="qtpd::UIToggle::paint" ref="a15b3386bfcc334de0b87aa8a175cfff5" args="(QPainter *p, const QStyleOptionGraphicsItem *option, QWidget *)" -->
+<a class="anchor" id="a4e38212f47944f4ef9af3518a3866a30"></a><!-- doxytag: member="qtpd::UIToggle::paint" ref="a4e38212f47944f4ef9af3518a3866a30" args="(QPainter *p, const QStyleOptionGraphicsItem *option, QWidget *)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="classqtpd_1_1_u_i_toggle.html#a15b3386bfcc334de0b87aa8a175cfff5">qtpd::UIToggle::paint</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_toggle.html#a4e38212f47944f4ef9af3518a3866a30">qtpd::UIToggle::paint</a> </td>
           <td>(</td>
           <td class="paramtype">QPainter *&#160;</td>
           <td class="paramname"><em>p</em>, </td>
@@ -307,7 +307,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td><code> [inline, virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -325,7 +325,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_toggle.html#ad08a617056c61e9b1c25b51ef37f69e1">qtpd::UIToggle::resizeEvent</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline, virtual]</code></td>
+          <td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -346,7 +346,7 @@ Static Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">QString&#160;</td>
           <td class="paramname"><em>message</em></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -354,12 +354,12 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a3b873c6339f64313fb2d39fac0244a4f"></a><!-- doxytag: member="qtpd::UIToggle::updateUI" ref="a3b873c6339f64313fb2d39fac0244a4f" args="(void *uiobj, ceammc::AtomList msg)" -->
+<a class="anchor" id="aeee94e533ed53300efeeee46f78d0ac1"></a><!-- doxytag: member="qtpd::UIToggle::updateUI" ref="aeee94e533ed53300efeeee46f78d0ac1" args="(void *uiobj, ceammc::AtomList msg)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static void <a class="el" href="classqtpd_1_1_u_i_toggle.html#a3b873c6339f64313fb2d39fac0244a4f">qtpd::UIToggle::updateUI</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_toggle.html#aeee94e533ed53300efeeee46f78d0ac1">qtpd::UIToggle::updateUI</a> </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>uiobj</em>, </td>
@@ -373,7 +373,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td><code> [inline, static]</code></td>
+          <td></td><td><code> [static]</code></td>
         </tr>
       </table>
 </div>
@@ -386,11 +386,11 @@ Static Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_toggle.html#a3b873c6339f64313fb2d39fac0244a4f">qtpd::UIToggle::updateUI</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_toggle.html#aeee94e533ed53300efeeee46f78d0ac1">qtpd::UIToggle::updateUI</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classceammc_1_1_atom_list.html">AtomList</a>&#160;</td>
           <td class="paramname"><em>list</em></td><td>)</td>
-          <td><code> [inline, virtual]</code></td>
+          <td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -422,7 +422,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 26 2017 15:43:27 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jun 27 2017 15:55:16 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

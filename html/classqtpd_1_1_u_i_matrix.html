@@ -141,8 +141,9 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_matrix.html#aa433fdb5bb48f78dddcf5c9f7492f110">paintToggleMatrix</a> (QPainter *p)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; draws buttons as ui.toggle  <a href="#aa433fdb5bb48f78dddcf5c9f7492f110"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_matrix.html#a4707923e850d36098ffdd6bd9c4776f6">paintButtonMatrix</a> (QPainter *p)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; draws buttons as boxes  <a href="#a4707923e850d36098ffdd6bd9c4776f6"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_matrix.html#a27967e6b248890b60f92c2cd7bff3248">paint</a> (QPainter *p, const QStyleOptionGraphicsItem *option, QWidget *)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; draws buttons as ui.toggle  <a href="#a4707923e850d36098ffdd6bd9c4776f6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_matrix.html#a5baac97789b310da7c424972b385dc0a">paint</a> (QPainter *p, const QStyleOptionGraphicsItem *option, QWidget *)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; draws buttons as boxes  <a href="#a5baac97789b310da7c424972b385dc0a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_matrix.html#ae980cee31866349134e01cbdfbaa7c4b">resizeEvent</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; call this after setting object data  <a href="#ae980cee31866349134e01cbdfbaa7c4b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_matrix.html#a9a54e7251459946e579a43bc13c16ff3">mousePressEvent</a> (QGraphicsSceneMouseEvent *ev)</td></tr>
@@ -152,8 +153,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_matrix.html#ab96f06dea9b78840f7c320baf3c91770">updateUI</a> (<a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> msg)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_matrix.html#af2cd08a5607bee6af6114ae2ed53ad3f">createObj</a> (QString data)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_matrix.html#a13e1007fbe7c5a56ed2d3498d742db3e">createObject</a> (QString <a class="el" href="classqtpd_1_1_u_i_object.html#a36456ea5fb11ff6b752bc56de2ce5584">objectData</a>, <a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *pdCanvas, QGraphicsView *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_matrix.html#aecce7d92e19afe0bfb6d3190156ad206">createObj</a> (QString data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_matrix.html#a72817c9f0409919208bd1bd5ead81679">createObject</a> (QString, <a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *, QGraphicsView *)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>gui object: ui.matrix - substitute all objects with multiple buttons (hradio, vradio, ui.matrix) </p>
@@ -175,16 +176,16 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="af2cd08a5607bee6af6114ae2ed53ad3f"></a><!-- doxytag: member="qtpd::UIMatrix::createObj" ref="af2cd08a5607bee6af6114ae2ed53ad3f" args="(QString data)" -->
+<a class="anchor" id="aecce7d92e19afe0bfb6d3190156ad206"></a><!-- doxytag: member="qtpd::UIMatrix::createObj" ref="aecce7d92e19afe0bfb6d3190156ad206" args="(QString data)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a>* <a class="el" href="classqtpd_1_1_u_i_matrix.html#af2cd08a5607bee6af6114ae2ed53ad3f">qtpd::UIMatrix::createObj</a> </td>
+          <td class="memname"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> * <a class="el" href="classqtpd_1_1_u_i_matrix.html#aecce7d92e19afe0bfb6d3190156ad206">qtpd::UIMatrix::createObj</a> </td>
           <td>(</td>
           <td class="paramtype">QString&#160;</td>
           <td class="paramname"><em>data</em></td><td>)</td>
-          <td><code> [inline, static]</code></td>
+          <td><code> [static]</code></td>
         </tr>
       </table>
 </div>
@@ -192,32 +193,32 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a13e1007fbe7c5a56ed2d3498d742db3e"></a><!-- doxytag: member="qtpd::UIMatrix::createObject" ref="a13e1007fbe7c5a56ed2d3498d742db3e" args="(QString objectData, t_canvas *pdCanvas, QGraphicsView *parent=0)" -->
+<a class="anchor" id="a72817c9f0409919208bd1bd5ead81679"></a><!-- doxytag: member="qtpd::UIMatrix::createObject" ref="a72817c9f0409919208bd1bd5ead81679" args="(QString, t_canvas *, QGraphicsView *)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a>* <a class="el" href="classqtpd_1_1_u_i_matrix.html#a13e1007fbe7c5a56ed2d3498d742db3e">qtpd::UIMatrix::createObject</a> </td>
+          <td class="memname"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> * <a class="el" href="classqtpd_1_1_u_i_matrix.html#a72817c9f0409919208bd1bd5ead81679">qtpd::UIMatrix::createObject</a> </td>
           <td>(</td>
           <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>objectData</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *&#160;</td>
-          <td class="paramname"><em>pdCanvas</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">QGraphicsView *&#160;</td>
-          <td class="paramname"><em>parent</em> = <code>0</code>&#160;</td>
+          <td class="paramname">&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td><code> [inline, static]</code></td>
+          <td></td><td><code> [static]</code></td>
         </tr>
       </table>
 </div>
@@ -244,7 +245,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td><code> [inline]</code></td>
+          <td></td><td></td>
         </tr>
       </table>
 </div>
@@ -271,7 +272,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td><code> [inline]</code></td>
+          <td></td><td></td>
         </tr>
       </table>
 </div>
@@ -287,7 +288,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_matrix.html#a9302ee46a560256acfaad75be808638c">qtpd::UIMatrix::initProperties</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline, virtual]</code></td>
+          <td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -306,7 +307,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname"><a class="el" href="namespaceqtpd.html#a40c698b26106feb24ba7172b4fdefecf">uiMatrixType</a> <a class="el" href="classqtpd_1_1_u_i_matrix.html#acb121f85f9ef8ee7eba8872ee038cf2a">qtpd::UIMatrix::matrixType</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -323,7 +324,7 @@ Static Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
           <td class="paramname"><em>event</em></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -340,7 +341,7 @@ Static Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
           <td class="paramname"><em>ev</em></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -357,7 +358,7 @@ Static Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -365,12 +366,12 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a27967e6b248890b60f92c2cd7bff3248"></a><!-- doxytag: member="qtpd::UIMatrix::paint" ref="a27967e6b248890b60f92c2cd7bff3248" args="(QPainter *p, const QStyleOptionGraphicsItem *option, QWidget *)" -->
+<a class="anchor" id="a5baac97789b310da7c424972b385dc0a"></a><!-- doxytag: member="qtpd::UIMatrix::paint" ref="a5baac97789b310da7c424972b385dc0a" args="(QPainter *p, const QStyleOptionGraphicsItem *option, QWidget *)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="classqtpd_1_1_u_i_matrix.html#a27967e6b248890b60f92c2cd7bff3248">qtpd::UIMatrix::paint</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_matrix.html#a5baac97789b310da7c424972b385dc0a">qtpd::UIMatrix::paint</a> </td>
           <td>(</td>
           <td class="paramtype">QPainter *&#160;</td>
           <td class="paramname"><em>p</em>, </td>
@@ -390,11 +391,13 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td><code> [inline, virtual]</code></td>
+          <td></td><td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>&gt; draws buttons as boxes </p>
 
 <p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#ae6c38741873376fda63405d73f2697cd">qtpd::UIObject</a>.</p>
 
@@ -409,12 +412,13 @@ Static Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">QPainter *&#160;</td>
           <td class="paramname"><em>p</em></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
+<p>&gt; draws buttons as ui.toggle </p>
 <p>&gt; draws buttons as boxes </p>
 
 </div>
@@ -428,7 +432,7 @@ Static Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">QPainter *&#160;</td>
           <td class="paramname"><em>p</em></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -445,7 +449,7 @@ Static Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">QPainter *&#160;</td>
           <td class="paramname"><em>p</em></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -464,7 +468,7 @@ Static Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">QPainter *&#160;</td>
           <td class="paramname"><em>p</em></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -480,7 +484,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">Q_SLOT void <a class="el" href="classqtpd_1_1_u_i_matrix.html#a8f4b2d0e49aec13bc008ef96e57c84bc">qtpd::UIMatrix::propertyMatrixSize</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -496,7 +500,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">Q_SLOT void <a class="el" href="classqtpd_1_1_u_i_matrix.html#aa1dbab768f17342179bfa2cb347ac8a7">qtpd::UIMatrix::propertyUpdate</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -514,7 +518,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">int <a class="el" href="classqtpd_1_1_u_i_matrix.html#a941a487ce0db11cf6123016234d57076">qtpd::UIMatrix::radioSize</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -531,7 +535,7 @@ Static Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">QPoint&#160;</td>
           <td class="paramname"><em>matrixPos</em></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -547,7 +551,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_matrix.html#ae980cee31866349134e01cbdfbaa7c4b">qtpd::UIMatrix::resizeEvent</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline, virtual]</code></td>
+          <td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -568,7 +572,7 @@ Static Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">QString&#160;</td>
           <td class="paramname"><em>message</em></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -585,7 +589,7 @@ Static Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classceammc_1_1_atom_list.html">AtomList</a>&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
-          <td><code> [inline, virtual]</code></td>
+          <td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -617,7 +621,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 26 2017 15:43:27 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jun 27 2017 15:55:16 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

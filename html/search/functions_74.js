@@ -20,7 +20,6 @@ var searchData=
   ['text_5fypix',['text_ypix',['../g__canvas_8h.html#a98825fb8f7a5cdf7205a26b6bc837a21',1,'g_canvas.h']]],
   ['textchangedsignal',['textChangedSignal',['../classqtpd_1_1_u_i_script_editor.html#a1390dc926eea33531b4503b75188c05c',1,'qtpd::UIScriptEditor']]],
   ['textedit',['textEdit',['../classqtpd_1_1_u_i_script_editor.html#a634c46fc8deeb79e4c48e5ab433bfdc2',1,'qtpd::UIScriptEditor']]],
-  ['timerstart',['timerStart',['../classqtpd_1_1_u_i_bang.html#ab1179e2f8376188024891806317c6289',1,'qtpd::UIBang']]],
   ['to_5foutlet',['to_outlet',['../namespaceceammc.html#a6295c782bd42c995e7f09274529cbf14',1,'ceammc::to_outlet(t_outlet *x, const Atom &amp;a)'],['../namespaceceammc.html#a9bbb87f0da99e46257db348e15aeda06',1,'ceammc::to_outlet(t_outlet *x, const AtomList &amp;a)']]],
   ['topddata',['toPdData',['../classceammc_1_1_atom_list.html#ad03d847e65574621731dc432df39931f',1,'ceammc::AtomList']]],
   ['tosymbol',['toSymbol',['../classqtpd_1_1_o_p_instance.html#a791108546e906618f7054e479db5afc0',1,'qtpd::OPInstance']]],
