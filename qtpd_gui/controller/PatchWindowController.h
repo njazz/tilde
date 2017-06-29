@@ -83,6 +83,7 @@ public:
     PatchWindow* newWindow();
 
     //
+    // UNUSED
     bool syncData(ServerObject* serverObject, UIObject* uiObject);
 
     void openFile(QString fileName);

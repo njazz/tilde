@@ -147,14 +147,7 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
 
     //
     connect(this, &PatchWindowController::signalCreateObject, _appController, &ApplicationController::slotCreateObject);
-
     ServerObject* serverObject = emit signalCreateObject(_serverCanvas, name);
-
-    // = _appController->slotCreateObject(_serverCanvas, name); //
-
-    //ServerObject* serverObject = _serverCanvas->createObject(name);
-    // TEST
-    //serverObject->_pdObject = cmp_create_object((t_canvas*)_serverCanvas->canvasObject(),name,0,0);
 
     uiObject->setParentCanvasView(_windows[0]->canvasView());
     uiObject->setServerObject(serverObject);
@@ -162,21 +155,12 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
     uiObject->observer()->setObject(uiObject);
     uiObject->serverObject()->ServerObject::registerObserver(uiObject->observer());
 
-    qDebug() << "*** registered observer: " << uiObject->observer();
+    //qDebug() << "*** registered observer: " << uiObject->observer();
 
     uiObject->sync();
 
     connect(uiObject, &UIObject::sendMessage, _appController->serverWorker(), &ServerWorker::sendMessageToObject);
-
     uiObject->setEditModeRef(_windows[0]->canvasView()->getEditModeRef());
-
-    // TODO
-
-    //connect(uiObject, &UIObject::selectBox, _windows[0]->canvasView(), &CanvasView::s_SelectBox);
-    //connect(uiObject, &UIObject::moveBox, _windows[0]->canvasView(), &CanvasView::s_MoveBox);
-
-    //uiObject->setEditModeRef( _windows[0]->canvasEditMode()); //Canvas::getEditModeRef());
-    //connect(uiObject, &UIObject::editObject, this, &CanvasView::objectStartsEdit);
 
     uiObject->move(pos.x(), pos.y());
 
@@ -185,22 +169,6 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
 
     connect(uiObject, &UIObject::selectBox, _windows[0]->canvasView(), &CanvasView::slotSelectBox);
     connect(uiObject, &UIObject::moveBox, _windows[0]->canvasView(), &CanvasView::slotMoveBox);
-
-    // check port count
-    /*
-    if (list.count()) {
-        if (
-            (list.at(0) == "inlet") || (list.at(0) == "inlet~") || (list.at(0) == "outlet") || (list.at(0) == "outlet~")) {
-            //qDebug("ports");
-            emit updatePortCount();
-            //
-
-            portLocalCountUpdated();
-        }
-    }
-    */
-
-    //resizeToObjects();
 
     return uiObject;
 

@@ -6,6 +6,7 @@
 #include "FileParser.h"
 
 #include "PatchWindowController.h"
+#include "PatchWindow.h"
 
 namespace qtpd {
 UIBox::UIBox()
@@ -33,11 +34,11 @@ void UIBox::objectPressEvent(QGraphicsSceneMouseEvent* event)
 {
 
     //open canvas for subpatch
-//    if (getEditMode() != em_Unlocked) {
-//        if (subpatchWindow()) {
-//            subpatchWindow()->show();
-//        }
-//    }
+    if (getEditMode() != em_Unlocked) {
+        if (subpatchController()) {
+            subpatchController()->firstWindow()->show();
+        }
+    }
 
     //abstraction opening. Fix
     if (getEditMode() != em_Unlocked) {
@@ -186,6 +187,8 @@ void UIBox::sync()
     // create subpatch window controller here
     if (isSubpatch())
     {
+        qDebug() << "subpatch server canvas: " << serverObject()->toServerCanvas();
+
         _subpatchController = new PatchWindowController(parentController()->appController(), serverObject()->toServerCanvas());
     }
     update();
