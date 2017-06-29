@@ -40,7 +40,7 @@ public:
     explicit UIBox();
 
     static UIObject* createObj(QString data);
-    static UIObject* createObject(QString, t_canvas*, QGraphicsView*);
+    //static UIObject* createObject(QString, t_canvas*, QGraphicsView*);
 
     PatchWindowController* subpatchController(){return _subpatchController;};
     virtual void setSubpatchController(PatchWindowController* cwindow) {_subpatchController = cwindow;};
@@ -72,6 +72,8 @@ public:
     void setObjectData(QString message);
 
     void sync();
+
+    virtual string asPdFileString();
 
 signals:
 

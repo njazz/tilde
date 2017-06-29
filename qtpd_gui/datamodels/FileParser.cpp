@@ -335,15 +335,26 @@ void FileParser::parseStringListAtoms(PatchWindowController* controller, QString
             qDebug() << "objname" << objname;
             //temporary
 
-            QString objData = objList.join(" ");
+            QString objectData = objList.join(" ");
 
             if (objList.at(0) == "pd") {
                 if (_pdParserPrevWindowController) {
-                    if (_pdParserPrevWindowController->firstWindow()->canvasView()) {
+                    //if (_pdParserPrevWindowController->firstWindow()->canvasView())
+                    //{
+
                         //                                                UIBox *b1 = 0;
 
                         //                                                b1 = pdParserPrevWindow->canvasView()->restoreSubcanvas(objname.toStdString(), pos, pdParserWindow->canvasView()->pdCanvas);
                         //                                                b1->cmSubcanvas = pdParserWindow;
+
+//                        UIBox* b1 = _pdParserWindowController->subpatchBox();
+
+//                        b1->setPos(pos.x(),pos.y());
+//                        b1->setPdMessage(objData);
+
+                        _pdParserPrevWindowController->creatBoxForSubpatch(_pdParserWindowController,objectData,pos);
+
+
 
                         qDebug("restore");
 
@@ -357,7 +368,8 @@ void FileParser::parseStringListAtoms(PatchWindowController* controller, QString
                         //((Canvas*)b)->setSubcanvas(_pdParserPrevWindow->canvas);
                     }
                 }
-            } else {
+//            }
+            else {
                 qDebug("pd subpatch error");
             }
 
@@ -423,7 +435,6 @@ void FileParser::parseQString(QString line)
             _pdParserFirstWindowController = _pdParserWindowController;
 
         msg.removeFirst();
-
         if (_pdParserPrevWindowController)
             newWnd->firstWindow()->setWindowTitle(msg.at(4));
 

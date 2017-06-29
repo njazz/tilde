@@ -5,12 +5,15 @@
 
 #include "FileParser.h"
 
-#include "PatchWindowController.h"
+#include "CanvasData.h"
 #include "PatchWindow.h"
+#include "PatchWindowController.h"
 
 namespace qtpd {
 UIBox::UIBox()
 {
+//    UIObject::UIObject();
+
     qDebug("constructor");
 
     setHeight(20);
@@ -24,6 +27,8 @@ UIBox::UIBox()
     setAcceptHoverEvents(true);
 
     resizeEvent();
+
+    _subpatchController = 0;
 }
 
 ////
@@ -55,8 +60,6 @@ void UIBox::objectPressEvent(QGraphicsSceneMouseEvent* event)
         return;
     }
 
-
-
     dragOffset = QPoint(event->pos().x(), event->pos().y());
 
     event->accept();
@@ -76,15 +79,15 @@ UIObject* UIBox::createObj(QString data)
     ret->setObjectData(data);
 
     // TODO
-//    if (objName=="pd")
-//    {
-//        ret->_isAbstraction = true;
-//    }
+    //    if (objName=="pd")
+    //    {
+    //        ret->_isAbstraction = true;
+    //    }
 
     return ret;
 }
 
-UIObject* UIBox::createObject(QString, t_canvas*, QGraphicsView*) { return 0; }
+//UIObject* UIBox::createObject(QString, t_canvas*, QGraphicsView*) { return 0; }
 
 ////
 /// \brief paint event
@@ -145,8 +148,6 @@ void UIBox::objectMoveEvent(QGraphicsSceneMouseEvent* event)
     } else {
         setCursor(QCursor(Qt::ArrowCursor));
     }
-
-
 }
 
 void UIBox::setPdMessage(QString message)
@@ -176,7 +177,6 @@ void UIBox::setObjectData(QString message)
     _isSubpatch = (message.split(" ").at(0) == "pd");
 }
 
-
 //#include "CanvasView.h"
 void UIBox::sync()
 {
@@ -184,13 +184,32 @@ void UIBox::sync()
 
     _isAbstraction = (serverObject()->type() == typeAbstraction);
 
-    // create subpatch window controller here
-    if (isSubpatch())
-    {
+    // create subpatch window controller here (if not already created)
+    if (isSubpatch() && !_subpatchController) {
         qDebug() << "subpatch server canvas: " << serverObject()->toServerCanvas();
 
         _subpatchController = new PatchWindowController(parentController()->appController(), serverObject()->toServerCanvas());
     }
     update();
+}
+
+string UIBox::asPdFileString()
+{
+    string ret;
+
+    if (isSubpatch()) {
+        ret = subpatchController()->canvasData()->asPdFileStrings().join("").toStdString() + "\n";
+        ret += "#X restore ";
+        ret += std::to_string(int(x())) + " " + std::to_string(int(y())) + " ";
+
+        //ret += pdObjectName_ + " " ;//
+
+        ret += ((_objectDataModel.objectData() == "") ? ((std::string) "") : (_objectDataModel.objectData().toStdString() + " ")) + _objectDataModel.properties()->asPdFileString();
+
+    } else {
+        ret = UIObject::asPdFileString();
+    }
+
+    return ret;
 }
 }

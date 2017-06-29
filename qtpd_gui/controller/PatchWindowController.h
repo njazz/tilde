@@ -24,6 +24,8 @@ class ApplicationController;
 class UIItem;
 class PatchWindowController;
 
+class UIBox;
+
 // STUB
 //class ControllerObserver : public Observer
 //{
@@ -59,6 +61,8 @@ private:
     // temporary
     void doSave(QString fileName);
 
+    void doCreateObject(UIObject* uiObject);
+
 public:
     PatchWindowController(ApplicationController* appController); //replace with parent (appcontroller)
 
@@ -66,6 +70,10 @@ public:
     PatchWindowController(ApplicationController* appController, ServerCanvas* canvas);
 
     //PatchWindowController* createSubpatchWindowController();
+
+    //new
+    UIBox* subpatchBox();
+    ServerObject* serverCanvasAsObject();
 
     ServerInstance* serverInstance();
 
@@ -92,6 +100,7 @@ public:
 
     //
     UIObject* createObject(string name, QPoint pos);
+    void creatBoxForSubpatch(PatchWindowController* controller, QString data, QPoint pos);
 
     //
     void patchcord(UIObject* src, int out, UIObject* dest, int in);

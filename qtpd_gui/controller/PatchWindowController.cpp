@@ -60,6 +60,20 @@ PatchWindowController::PatchWindowController(ApplicationController* appControlle
     newWindow();
 };
 
+UIBox* PatchWindowController::subpatchBox()
+{
+    UIBox* ret = new UIBox();
+
+    ret->setSubpatchController(this);
+
+    return ret;
+}
+
+ServerObject* PatchWindowController:: serverCanvasAsObject()
+{
+    return _serverCanvas->toServerObject();
+}
+
 ServerInstance* PatchWindowController::serverInstance() { return _appController->mainServerInstance(); }
 
 vector<PatchWindow*> PatchWindowController::windows() { return _windows; };
@@ -120,6 +134,30 @@ void PatchWindowController::setAppController(ApplicationController* a)
 //
 //void PatchWindowController::createObjectMaker(){};
 //
+
+void PatchWindowController::doCreateObject(UIObject* uiObject)
+{
+    uiObject->setParentController(this);
+
+    uiObject->setParentCanvasView(_windows[0]->canvasView());
+
+    uiObject->observer()->setObject(uiObject);
+    uiObject->serverObject()->ServerObject::registerObserver(uiObject->observer());
+
+    //qDebug() << "*** registered observer: " << uiObject->observer();
+
+    uiObject->sync();
+
+    connect(uiObject, &UIObject::sendMessage, _appController->serverWorker(), &ServerWorker::sendMessageToObject);
+    uiObject->setEditModeRef(_windows[0]->canvasView()->getEditModeRef());
+
+    _canvasData->addUniqueBox(_canvasData->boxes(), uiObject);
+    _scene->addItem(uiObject);
+
+    connect(uiObject, &UIObject::selectBox, _windows[0]->canvasView(), &CanvasView::slotSelectBox);
+    connect(uiObject, &UIObject::moveBox, _windows[0]->canvasView(), &CanvasView::slotMoveBox);
+}
+
 UIObject* PatchWindowController::createObject(string name, QPoint pos)
 {
     qDebug("* create object *");
@@ -138,37 +176,23 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
 
     UIObject* uiObject = ObjectLoader::inst().createUIObject(name.c_str());
 
+    connect(this, &PatchWindowController::signalCreateObject, _appController, &ApplicationController::slotCreateObject);
+    ServerObject* serverObject = emit signalCreateObject(_serverCanvas, name);
+
+    // TODO wait?
+    uiObject->setServerObject(serverObject);
+
+
+    //
+
     if (!uiObject) {
         qDebug() << "bad ui object!";
         return 0;
     }
 
-    uiObject->setParentController(this);
-
-    //
-    connect(this, &PatchWindowController::signalCreateObject, _appController, &ApplicationController::slotCreateObject);
-    ServerObject* serverObject = emit signalCreateObject(_serverCanvas, name);
-
-    uiObject->setParentCanvasView(_windows[0]->canvasView());
-    uiObject->setServerObject(serverObject);
-
-    uiObject->observer()->setObject(uiObject);
-    uiObject->serverObject()->ServerObject::registerObserver(uiObject->observer());
-
-    //qDebug() << "*** registered observer: " << uiObject->observer();
-
-    uiObject->sync();
-
-    connect(uiObject, &UIObject::sendMessage, _appController->serverWorker(), &ServerWorker::sendMessageToObject);
-    uiObject->setEditModeRef(_windows[0]->canvasView()->getEditModeRef());
-
     uiObject->move(pos.x(), pos.y());
 
-    _canvasData->addUniqueBox(_canvasData->boxes(), uiObject);
-    _scene->addItem(uiObject);
-
-    connect(uiObject, &UIObject::selectBox, _windows[0]->canvasView(), &CanvasView::slotSelectBox);
-    connect(uiObject, &UIObject::moveBox, _windows[0]->canvasView(), &CanvasView::slotMoveBox);
+    doCreateObject(uiObject);
 
     return uiObject;
 
@@ -266,6 +290,30 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
 
     */
 };
+
+void PatchWindowController:: creatBoxForSubpatch(PatchWindowController* controller, QString data, QPoint pos)
+{
+    UIObject* uiObject = controller->subpatchBox();
+
+    // already have server object here
+
+    if (!uiObject) {
+        qDebug() << "bad subpatch ui object!";
+        return;
+    }
+
+    uiObject->move(pos.x(), pos.y());
+    uiObject->setObjectData(data);
+
+    // TODO move inside controller->subpatchBox
+    uiObject->setServerObject(controller->serverCanvasAsObject());
+
+    qDebug() << "server canvas as object:" << controller->serverCanvasAsObject();
+
+    doCreateObject(uiObject);
+
+    return;
+}
 
 //bool PatchWindowController::patchcord(UIObject* src, int out, UIObject* dest, int in){};
 void PatchWindowController::deletePatchcordsForObject(UIObject* o){};
