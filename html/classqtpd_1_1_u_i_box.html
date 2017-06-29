@@ -119,8 +119,12 @@ Inheritance diagram for qtpd::UIBox:</div>
  <div class="center">
   <img src="classqtpd_1_1_u_i_box.png" usemap="#qtpd::UIBox_map" alt=""/>
   <map id="qtpd::UIBox_map" name="qtpd::UIBox_map">
-<area href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special" alt="qtpd::UIObject" shape="rect" coords="0,56,89,80"/>
-<area href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class." alt="qtpd::UIItem" shape="rect" coords="0,0,89,24"/>
+<area href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special" alt="qtpd::UIObject" shape="rect" coords="166,56,267,80"/>
+<area href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class." alt="qtpd::UIItem" shape="rect" coords="166,0,267,24"/>
+<area href="classqtpd_1_1_u_i_class.html" title="gui object: oopd class (pdclass)" alt="qtpd::UIClass" shape="rect" coords="0,168,101,192"/>
+<area href="classqtpd_1_1_u_i_instance.html" title="gui object: oopd instance (pdinstance)" alt="qtpd::UIInstance" shape="rect" coords="111,168,212,192"/>
+<area href="classqtpd_1_1_u_i_method.html" title="gui object: oop method box (method)" alt="qtpd::UIMethod" shape="rect" coords="222,168,323,192"/>
+<area href="classqtpd_1_1_u_i_property.html" title="gui object: oop property box (property)" alt="qtpd::UIProperty" shape="rect" coords="333,168,434,192"/>
 </map>
  </div></div>
 
@@ -133,6 +137,8 @@ Signals</h2></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_box.html#af09bcd0063ebcc43076fbc7715fd5eeb">UIBox</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_box.html#a7720b79ee4bb25ef64bbb155a2132ae4">subpatchController</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_box.html#ac384df1355f0d0739fc7993a41321690">setSubpatchController</a> (<a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *cwindow)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_box.html#a7da83e2275333d239e85b44981c40450">paint</a> (QPainter *p, const QStyleOptionGraphicsItem *option, QWidget *)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">paint event  <a href="#a7da83e2275333d239e85b44981c40450"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_box.html#ad4ddec63907a5b42f1d4ec0b8572e6d7">objectPressEvent</a> (QGraphicsSceneMouseEvent *event)</td></tr>
@@ -218,6 +224,8 @@ Static Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_property.html#aab0af3970588a4f2fd5e08441fc05b87">qtpd::UIProperty</a>, <a class="el" href="classqtpd_1_1_u_i_instance.html#a120f11635c5b3c45d9c0a89c0cd1332d">qtpd::UIInstance</a>, <a class="el" href="classqtpd_1_1_u_i_method.html#a6a1751ecf5d8f77d48f5a56189e44f48">qtpd::UIMethod</a>, and <a class="el" href="classqtpd_1_1_u_i_class.html#a54cec74530b0e8c27c32a859f074bf91">qtpd::UIClass</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a9cdc73685f9c103b1f101222db9088a2"></a><!-- doxytag: member="qtpd::UIBox::mouseMoved" ref="a9cdc73685f9c103b1f101222db9088a2" args="()" -->
@@ -233,6 +241,8 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_instance.html#a6d2f769756a4c026ba95c1574ff01063">qtpd::UIInstance</a>, <a class="el" href="classqtpd_1_1_u_i_class.html#a5e228633d2b877fea9e433e281b694ad">qtpd::UIClass</a>, <a class="el" href="classqtpd_1_1_u_i_property.html#a7f468e9ae64cfd53082908bc350ac52b">qtpd::UIProperty</a>, and <a class="el" href="classqtpd_1_1_u_i_method.html#a9c394664f69aa7ca3d124cf0dd4b56cd">qtpd::UIMethod</a>.</p>
 
 </div>
 </div>
@@ -254,6 +264,8 @@ Static Public Member Functions</h2></td></tr>
 <p>mouse up </p>
 
 <p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#a4982c1fb0ab5870c83450308ad768112">qtpd::UIObject</a>.</p>
+
+<p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_instance.html#a75907b2411351598b7c83934007623b8">qtpd::UIInstance</a>, <a class="el" href="classqtpd_1_1_u_i_class.html#ada8f3d905ed067c2ec2e0708a082bd69">qtpd::UIClass</a>, <a class="el" href="classqtpd_1_1_u_i_method.html#ae79fabd026ea7878c03dc8a8362d6257">qtpd::UIMethod</a>, and <a class="el" href="classqtpd_1_1_u_i_property.html#ab4d1eaf8dde479f7d4b897f6b3b956b0">qtpd::UIProperty</a>.</p>
 
 </div>
 </div>
@@ -346,6 +358,8 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#ae6c38741873376fda63405d73f2697cd">qtpd::UIObject</a>.</p>
 
+<p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_class.html#ae427b4c6a023b208756197f74df3b22d">qtpd::UIClass</a>, <a class="el" href="classqtpd_1_1_u_i_instance.html#a06544d7a57d46436810862faca89cefd">qtpd::UIInstance</a>, <a class="el" href="classqtpd_1_1_u_i_property.html#a3e3b3216710dc9bc7035c4f53ba09383">qtpd::UIProperty</a>, and <a class="el" href="classqtpd_1_1_u_i_method.html#abae471a843ae506b04bcb861ca6931bd">qtpd::UIMethod</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a77675f4dd6901d7118fc86f2db1b2943"></a><!-- doxytag: member="qtpd::UIBox::rightClicked" ref="a77675f4dd6901d7118fc86f2db1b2943" args="()" -->
@@ -361,6 +375,8 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_instance.html#a7ffb2acb46f63fafa7f5b175492f3cc0">qtpd::UIInstance</a>, <a class="el" href="classqtpd_1_1_u_i_class.html#aa9ac8b711b1b8657c4e404de926105a8">qtpd::UIClass</a>, <a class="el" href="classqtpd_1_1_u_i_property.html#afd7e8b324ea61bfe270e6294191cbb2b">qtpd::UIProperty</a>, and <a class="el" href="classqtpd_1_1_u_i_method.html#a7fb75a196f69708aff74a2d819379d5c">qtpd::UIMethod</a>.</p>
 
 </div>
 </div>
@@ -396,6 +412,41 @@ Static Public Member Functions</h2></td></tr>
           <td class="paramtype">QString&#160;</td>
           <td class="paramname"><em>message</em></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_instance.html#a6c2fb11775cd6a033e1557d9176fcdb7">qtpd::UIInstance</a>, <a class="el" href="classqtpd_1_1_u_i_class.html#af5ec049949c5a9cc639f137a0717c001">qtpd::UIClass</a>, <a class="el" href="classqtpd_1_1_u_i_method.html#a1e980bacd9e6e22bcbf17f1dda1548ae">qtpd::UIMethod</a>, and <a class="el" href="classqtpd_1_1_u_i_property.html#a8a9c56dcbbfab551fd9fe730dc0930c0">qtpd::UIProperty</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac384df1355f0d0739fc7993a41321690"></a><!-- doxytag: member="qtpd::UIBox::setSubpatchController" ref="ac384df1355f0d0739fc7993a41321690" args="(PatchWindowController *cwindow)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classqtpd_1_1_u_i_box.html#ac384df1355f0d0739fc7993a41321690">qtpd::UIBox::setSubpatchController</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *&#160;</td>
+          <td class="paramname"><em>cwindow</em></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7720b79ee4bb25ef64bbb155a2132ae4"></a><!-- doxytag: member="qtpd::UIBox::subpatchController" ref="a7720b79ee4bb25ef64bbb155a2132ae4" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a>* <a class="el" href="classqtpd_1_1_u_i_box.html#a7720b79ee4bb25ef64bbb155a2132ae4">qtpd::UIBox::subpatchController</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -443,7 +494,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jun 29 2017 13:15:40 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 29 2017 15:49:28 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

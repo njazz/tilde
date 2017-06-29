@@ -596,17 +596,17 @@ Generating docs for compound/home/travis/build/njazz/qtpd/qtpd_gui/lib_headers/c
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIItem.h:60: warning: The following parameters of qtpd::UIItem::setEditModeRef(t_editMode *canvasEditModeRef) are not documented:
   parameter 'canvasEditModeRef'
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UINewPatchcord.h:24: warning: Found unknown command `\group'
-/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:190: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addInlet()
-/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:201: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addOutlet()
-/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:174: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setInletsPos()
-/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:181: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setOutletsPos()
+/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:195: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addInlet()
+/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:206: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addOutlet()
+/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:179: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setInletsPos()
+/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:186: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setOutletsPos()
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIPatchcord.h:73: warning: Found unknown command `\group'
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIPatchcord.h:52: warning: Found unknown command `\group'
-/home/travis/build/njazz/qtpd/qtpd_gui/objects/UIBox.h:42: warning: argument 'ev' of command @param is not found in the argument list of qtpd::UIBox::objectPressEvent(QGraphicsSceneMouseEvent *event)
-/home/travis/build/njazz/qtpd/qtpd_gui/objects/UIBox.h:42: warning: The following parameters of qtpd::UIBox::objectPressEvent(QGraphicsSceneMouseEvent *event) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/objects/UIBox.h:53: warning: argument 'ev' of command @param is not found in the argument list of qtpd::UIBox::objectPressEvent(QGraphicsSceneMouseEvent *event)
+/home/travis/build/njazz/qtpd/qtpd_gui/objects/UIBox.h:53: warning: The following parameters of qtpd::UIBox::objectPressEvent(QGraphicsSceneMouseEvent *event) are not documented:
   parameter 'event'
-/home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIInstance.h:319: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIInstance::setInletsPos() inherited from member setInletsPos at line 174 in file /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h
-/home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIInstance.h:320: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIInstance::setOutletsPos() inherited from member setOutletsPos at line 181 in file /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h
+/home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIInstance.h:323: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIInstance::setInletsPos() inherited from member setInletsPos at line 179 in file /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h
+/home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIInstance.h:324: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIInstance::setOutletsPos() inherited from member setOutletsPos at line 186 in file /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h
 /home/travis/build/njazz/qtpd/qtpd_gui/properties/PropertyList.h:110: warning: Found unknown command `\detais'
 /home/travis/build/njazz/qtpd/qtpd_gui/properties/PropertyList.h:110: warning: Found unknown command `\detais'
  ServerWorker...
@@ -693,6 +693,6 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-symbol cache used 2248/65536 hits=163763 misses=2248
-lookup cache used 3695/65536 hits=21285 misses=3907
+symbol cache used 2246/65536 hits=163816 misses=2246
+lookup cache used 3708/65536 hits=21304 misses=3922
 finished...
