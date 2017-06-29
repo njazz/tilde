@@ -42,6 +42,24 @@ PatchWindowController::PatchWindowController(ApplicationController* appControlle
     newWindow();
 };
 
+PatchWindowController::PatchWindowController(ApplicationController* appController, ServerCanvas* canvas)
+{
+    _scene = new QGraphicsScene();
+    _observer = new Observer();
+
+    _appController = appController;
+
+    //_serverInstance = appController->mainServerInstance();
+    serverInstance()->registerObserver(_observer);
+
+    _canvasData = new CanvasData();
+    _serverCanvas = canvas;
+
+    //_canvasData->setServerCanvas(_serverCanvas);
+
+    newWindow();
+};
+
 ServerInstance* PatchWindowController::serverInstance() { return _appController->mainServerInstance(); }
 
 vector<PatchWindow*> PatchWindowController::windows() { return _windows; };
@@ -90,9 +108,9 @@ void PatchWindowController::saveFile(QString fileName)
 
 void PatchWindowController::saveFileDialog(){};
 
-PatchWindowController* PatchWindowController::createSubpatchWindowController(){
-    // TODO
-};
+//PatchWindowController* PatchWindowController::createSubpatchWindowController(){
+//    // TODO
+//};
 
 void PatchWindowController::setAppController(ApplicationController* a)
 {
@@ -118,13 +136,14 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
 
     //qDebug() << "server object ok";
 
-
     UIObject* uiObject = ObjectLoader::inst().createUIObject(name.c_str());
 
     if (!uiObject) {
         qDebug() << "bad ui object!";
         return 0;
     }
+
+    uiObject->setParentController(this);
 
     //
     connect(this, &PatchWindowController::signalCreateObject, _appController, &ApplicationController::slotCreateObject);
@@ -635,8 +654,6 @@ void PatchWindowController::patchcord(UIObject* obj1, int outlet, UIObject* obj2
 
         _serverCanvas->createPatchcord(obj1->serverObject(), outlet, obj2->serverObject(), inlet);
         _canvasData->addPatchcord(pc);
-
-
 
         //        cmp_patchcord((t_object*)obj1->pdObject(), outlet, (t_object*)obj2->pdObject(), inlet);
         //        _canvasData.addPatchcord(pc); //patchcords()->push_back(pc);

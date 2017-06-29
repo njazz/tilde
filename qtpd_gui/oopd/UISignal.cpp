@@ -15,7 +15,7 @@ UISignal::UISignal()
 
     setHeight(20);
     deselect();
-    setSubpatchWindow(0);
+    //setSubpatchWindow(0);
 
     _objectDataModel.setObjectSize(os_FixedHeight, 40, 20);
 }

@@ -5,6 +5,8 @@
 
 #include "FileParser.h"
 
+#include "PatchWindowController.h"
+
 namespace qtpd {
 UIBox::UIBox()
 {
@@ -14,7 +16,7 @@ UIBox::UIBox()
     deselect();
     setBgColor(QColor(240, 240, 240));
     setErrorBox(false);
-    setSubpatchWindow(0);
+    //setSubpatchWindow(0);
 
     _objectDataModel.setObjectSize(os_FixedHeight, 40, 20);
 
@@ -31,11 +33,11 @@ void UIBox::objectPressEvent(QGraphicsSceneMouseEvent* event)
 {
 
     //open canvas for subpatch
-    if (getEditMode() != em_Unlocked) {
-        if (subpatchWindow()) {
-            subpatchWindow()->show();
-        }
-    }
+//    if (getEditMode() != em_Unlocked) {
+//        if (subpatchWindow()) {
+//            subpatchWindow()->show();
+//        }
+//    }
 
     //abstraction opening. Fix
     if (getEditMode() != em_Unlocked) {
@@ -67,9 +69,16 @@ UIObject* UIBox::createObj(QString data)
 
     // this is needed here
     QStringList l = data.split(" ");
+    QString objName = l.first();
     l.removeFirst();
     data = l.join(" ");
     ret->setObjectData(data);
+
+    // TODO
+//    if (objName=="pd")
+//    {
+//        ret->_isAbstraction = true;
+//    }
 
     return ret;
 }
@@ -92,7 +101,7 @@ void UIBox::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
 
     //remove this later
 
-    if (subpatchWindow()) {
+    if (isSubpatch()) {
         p->setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
         p->drawRect(0, 2, boundingRect().width(), boundingRect().height() - 4);
     }
@@ -130,7 +139,7 @@ void UIBox::mouseReleaseEvent(QGraphicsSceneMouseEvent* ev)
 void UIBox::objectMoveEvent(QGraphicsSceneMouseEvent* event)
 {
 
-    if ((getEditMode() != em_Unlocked) && (subpatchWindow())) {
+    if ((getEditMode() != em_Unlocked) && (subpatchController())) {
         setCursor(QCursor(Qt::PointingHandCursor));
     } else {
         setCursor(QCursor(Qt::ArrowCursor));
@@ -162,13 +171,23 @@ void UIBox::setObjectData(QString message)
 
     //
     sizeBox()->move(boundingRect().width() - 7, boundingRect().height() - 7);
+
+    _isSubpatch = (message.split(" ").at(0) == "pd");
 }
 
+
+//#include "CanvasView.h"
 void UIBox::sync()
 {
     UIObject::sync();
 
-    _isAbstraction = serverObject()->type() == typeAbstraction;
+    _isAbstraction = (serverObject()->type() == typeAbstraction);
+
+    // create subpatch window controller here
+    if (isSubpatch())
+    {
+        _subpatchController = new PatchWindowController(parentController()->appController(), serverObject()->toServerCanvas());
+    }
     update();
 }
 }

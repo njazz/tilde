@@ -62,11 +62,16 @@ private:
 public:
     PatchWindowController(ApplicationController* appController); //replace with parent (appcontroller)
 
-    PatchWindowController* createSubpatchWindowController();
+    // for subpatches
+    PatchWindowController(ApplicationController* appController, ServerCanvas* canvas);
+
+    //PatchWindowController* createSubpatchWindowController();
 
     ServerInstance* serverInstance();
 
     void setAppController(ApplicationController* a);
+    ApplicationController* appController(){return _appController;}
+
     CanvasData* canvasData() { return _canvasData; };
 
     vector<PatchWindow*> windows();

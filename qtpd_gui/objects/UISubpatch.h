@@ -124,11 +124,11 @@ public:
         qDebug("click");
 
         //open canvas for subpatch
-        if (getEditMode() != em_Unlocked) {
-            if (subpatchWindow()) {
-                subpatchWindow()->show();
-            }
-        }
+//        if (getEditMode() != em_Unlocked) {
+//            if (subpatchWindow()) {
+//                subpatchWindow()->show();
+//            }
+//        }
 
         emit UIObject::selectBox(this, ev);
         dragOffset = ev->pos().toPoint();
@@ -155,7 +155,7 @@ public:
         }
         event->ignore();
 
-        if ((getEditMode() != em_Unlocked) && (subpatchWindow())) {
+        if ((getEditMode() != em_Unlocked)){// && (subpatchController())) {
             setCursor(QCursor(Qt::PointingHandCursor));
         } else {
             setCursor(QCursor(Qt::ArrowCursor));

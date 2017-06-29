@@ -11,17 +11,21 @@
 #include "Port.h"
 
 #include "UIObject.h"
+#include "UIBox.h"
 
 #include "OOPDHeaders.h"
 
 #include <QGraphicsView>
+
+#include "PatchWindowController.h"
+#include "PatchWindow.h"
 
 namespace qtpd {
 
 ////
 /// \brief gui object: oopd instance (pdinstance)
 ///
-class UIInstance : public UIObject {
+class UIInstance : public UIBox {
 
     Q_OBJECT
 
@@ -135,10 +139,10 @@ public:
         p->drawRect(0, 1, width(), height() - 2);
 
         //remove this later
-        if (subpatchWindow()) {
-            p->setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-            p->drawRect(0, 2, width(), height() - 4);
-        }
+//        if (subpatchWindow()) {
+//            p->setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+//            p->drawRect(0, 2, width(), height() - 4);
+//        }
 
         QColor rectColor = (errorBox()) ? QColor(255, 0, 0) : properties()->get("BorderColor")->asQColor(); //QColor(128, 128, 128);
         p->setPen(QPen(rectColor, 1, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
@@ -214,8 +218,8 @@ public:
 
         //open canvas for subpatch
         if (getEditMode() != em_Unlocked) {
-            if (subpatchWindow()) {
-                subpatchWindow()->show();
+            if (subpatchController()) {
+                subpatchController()->firstWindow()->show();
             }
         }
 
@@ -256,7 +260,7 @@ public:
         }
         event->ignore();
 
-        if ((getEditMode() != em_Unlocked) && (subpatchWindow())) {
+        if ((getEditMode() != em_Unlocked) && (subpatchController())) {
             setCursor(QCursor(Qt::PointingHandCursor));
         } else {
             setCursor(QCursor(Qt::ArrowCursor));

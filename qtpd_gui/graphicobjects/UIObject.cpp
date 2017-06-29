@@ -41,7 +41,7 @@ UIObject::UIObject(UIItem* parent)
     setAcceptHoverEvents(true);
 
     _parentCanvasView = 0;
-    _subCanvasData = 0;
+    //_subCanvasData = 0;
 
     _observer = new ObjectObserver;
     _observer->setObject(this);
@@ -443,15 +443,15 @@ std::string UIObject::asPdFileString()
     return ret;
 }
 
-QMainWindow* UIObject::subpatchWindow()
-{
-    return _SubpatchWindow;
-}
+//QMainWindow* UIObject::subpatchWindow()
+//{
+//    return _SubpatchWindow;
+//}
 
-void UIObject::setSubpatchWindow(QMainWindow* cwindow)
-{
-    _SubpatchWindow = cwindow;
-}
+//void UIObject::setSubpatchWindow(QMainWindow* cwindow)
+//{
+//    _SubpatchWindow = cwindow;
+//}
 
 void UIObject::setEditModeRef(t_editMode* canvasEditMode)
 {
@@ -543,12 +543,12 @@ int UIObject::minimumBoxHeight()
 void UIObject::hide()
 {
 
-    if (subpatchWindow()) {
-        qDebug("hide subcanvas window");
+//    if (subpatchWindow()) {
+//        qDebug("hide subcanvas window");
 
-        subpatchWindow()->hide();
-        delete _SubpatchWindow;
-    }
+//        subpatchWindow()->hide();
+//        delete _SubpatchWindow;
+//    }
 }
 
 void UIObject::hideSizeBox()

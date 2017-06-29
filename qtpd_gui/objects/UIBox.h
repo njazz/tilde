@@ -26,13 +26,24 @@ private:
     // for abstracions
     bool _isAbstraction;
     QString _abstractionPath;
+    PatchWindowController *_subpatchController;
+
+    //TEMP
+    bool _isSubpatch;
+
+    bool isSubpatch()
+    {
+        return _isSubpatch;
+    }
 
 public:
     explicit UIBox();
 
     static UIObject* createObj(QString data);
-
     static UIObject* createObject(QString, t_canvas*, QGraphicsView*);
+
+    PatchWindowController* subpatchController(){return _subpatchController;};
+    virtual void setSubpatchController(PatchWindowController* cwindow) {_subpatchController = cwindow;};
 
     ////
     /// \brief paint event

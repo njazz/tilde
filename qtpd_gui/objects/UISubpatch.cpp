@@ -29,13 +29,13 @@ std::string UISubpatch::asPdFileString()
 {
     std::string ret;
 
-    if (subpatchWindow()) {
-        QStringList patchList = ((PatchWindow*)subpatchWindow())->controller()->canvasData()->asPdFileStrings();
+//    if (subpatchWindow()) {
+//        QStringList patchList = ((PatchWindow*)subpatchWindow())->controller()->canvasData()->asPdFileStrings();
 
-        ret += patchList.join("\r\n").toStdString();
-    } else {
-        qDebug() << "missing subcanvas data";
-    }
+//        ret += patchList.join("\r\n").toStdString();
+//    } else {
+//        qDebug() << "missing subcanvas data";
+//    }
 
     ret += "#X restore ";
     ret += std::to_string(pos().x()) + " " + std::to_string(pos().y()) + " ";
@@ -48,7 +48,7 @@ std::string UISubpatch::asPdFileString()
 
 void UISubpatch::setSubpatchWindow(QMainWindow* cwindow)
 {
-    UIObject::setSubpatchWindow(cwindow);
+    //UIObject::setSubpatchWindow(cwindow);
 
     if (0) {
         PatchWindow* p = (PatchWindow*)cwindow;

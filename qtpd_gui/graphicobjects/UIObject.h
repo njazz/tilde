@@ -54,7 +54,7 @@ private:
 
     SizeBox* _sizeBox;
 
-    QMainWindow* _SubpatchWindow; // move to UIBox
+//    QMainWindow* _SubpatchWindow; // move to UIBox
 
     QMenu _popupMenu; //pointer
 
@@ -66,7 +66,9 @@ private:
 
     //new 0517
     CanvasView* _parentCanvasView;
-    CanvasData* _subCanvasData;
+    //CanvasData* _subCanvasData;
+
+    PatchWindowController* _parentController;
 
     ServerObject* _serverObject;
     //
@@ -83,8 +85,12 @@ public:
     CanvasView* parentCanvasView() { return _parentCanvasView; };
     void setParentCanvasView(CanvasView* v) { _parentCanvasView = v; }
 
-    CanvasData* subCanvasData() { return _subCanvasData; };
-    void setSubCanvasData(CanvasData* c) { _subCanvasData = c; }
+    PatchWindowController* parentController() {return _parentController;}
+
+    void setParentController(PatchWindowController* p){_parentController = p;}
+
+//    CanvasData* subCanvasData() { return _subCanvasData; };
+//    void setSubCanvasData(CanvasData* c) { _subCanvasData = c; }
 
     //new 0617
     ObjectObserver* observer() { return _observer; }
@@ -150,14 +156,13 @@ public:
     ///
     void setErrorBox(bool val);
 
-    ////
-    /// \brief temporary - remove later
-    /// \details nonzero pointer for different drawing
-    QMainWindow* subpatchWindow();
-    virtual void setSubpatchWindow(QMainWindow* cwindow);
+//    ////
+//    /// \brief temporary - remove later
+//    /// \details nonzero pointer for different drawing
+//    QMainWindow* subpatchWindow();
+//    virtual void setSubpatchWindow(QMainWindow* cwindow);
 
-    PatchWindowController* subpatchController();
-    virtual void setSubpatchController(PatchWindowController* cwindow) {};
+
 
     ////
     /// \brief set short name for help patch (without path)

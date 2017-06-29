@@ -14,7 +14,7 @@ UIProperty::UIProperty()
     setHeight(20);
     deselect(); // = false;
     setErrorBox(false);
-    setSubpatchWindow(0);
+    //setSubpatchWindow(0);
 
     _objectDataModel.setObjectSize(os_FixedHeight, 40, 20);
 }
