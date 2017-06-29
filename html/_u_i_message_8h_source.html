@@ -117,23 +117,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00036"></a>00036 
 <a name="l00037"></a>00037     <span class="comment">// ------------------------------------------------------</span>
 <a name="l00038"></a>00038 
-<a name="l00039"></a>00039     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_message.html#a26d9dea3aac260ab3726bc99a3bda832">mousePressEvent</a>(QGraphicsSceneMouseEvent* ev);
-<a name="l00040"></a>00040     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_message.html#af0dab275956434b21146c3cb4a67e8b5">mouseReleaseEvent</a>(QGraphicsSceneMouseEvent*);
-<a name="l00041"></a>00041     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_message.html#aeef3da11868e346d816fd1e191d0bbac">mouseMoveEvent</a>(QGraphicsSceneMouseEvent* event);
+<a name="l00039"></a>00039     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_message.html#a2522f19bcf7afdde150b6d08249453d7">objectPressEvent</a>(QGraphicsSceneMouseEvent* ev);
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041     <span class="comment">//void mouseMoveEvent(QGraphicsSceneMouseEvent* event);</span>
 <a name="l00042"></a>00042 
-<a name="l00043"></a>00043     <span class="comment">// ------------------------------------</span>
+<a name="l00043"></a>00043     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_message.html#a4cb431224be0733b502623015f3679f0">objectReleaseEvent</a>(QGraphicsSceneMouseEvent*);
 <a name="l00044"></a>00044 
-<a name="l00045"></a>00045     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_message.html#a763a3a9c037a23169b6b53c223caf46e">setPdMessage</a>(QString message);
-<a name="l00046"></a>00046     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_message.html#ac5c37f0756071d238520265e6de04d46">updateUI</a>(<a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> list);
-<a name="l00047"></a>00047     std::string <a class="code" href="classqtpd_1_1_u_i_message.html#a57424e0098d84cf1fa667a8451d7f392" title="&gt; custom resize event">asPdFileString</a>();
+<a name="l00045"></a>00045     <span class="comment">// ------------------------------------</span>
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_message.html#af641d52e9d18e101e506a7daea7293fd" title="sets object text data">setObjectData</a>(QString objData);
 <a name="l00048"></a>00048 
-<a name="l00049"></a>00049 <span class="keyword">private</span> slots:
-<a name="l00050"></a>00050     <span class="keywordtype">void</span> editorDone();
-<a name="l00051"></a>00051     <span class="keywordtype">void</span> editorChanged();
-<a name="l00052"></a>00052 };
-<a name="l00053"></a>00053 }
-<a name="l00054"></a>00054 
-<a name="l00055"></a>00055 <span class="preprocessor">#endif // CMO_MSG_H</span>
+<a name="l00049"></a>00049     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_message.html#a763a3a9c037a23169b6b53c223caf46e">setPdMessage</a>(QString message);
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_message.html#ac5c37f0756071d238520265e6de04d46">updateUI</a>(<a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> list);
+<a name="l00052"></a>00052     <span class="keyword">virtual</span> std::string <a class="code" href="classqtpd_1_1_u_i_message.html#a57424e0098d84cf1fa667a8451d7f392" title="&gt; custom resize event">asPdFileString</a>();
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054 <span class="keyword">private</span> slots:
+<a name="l00055"></a>00055     <span class="keywordtype">void</span> editorDone();
+<a name="l00056"></a>00056     <span class="keywordtype">void</span> editorChanged();
+<a name="l00057"></a>00057 };
+<a name="l00058"></a>00058 }
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060 <span class="preprocessor">#endif // CMO_MSG_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -152,7 +157,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 27 2017 15:55:16 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 29 2017 13:15:40 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
