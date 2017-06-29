@@ -11,6 +11,7 @@
 #include "Port.h"
 
 #include "UIObject.h"
+#include "UIBox.h"
 
 //#include "cm_pdlink.h"
 
@@ -18,12 +19,15 @@
 
 #include <QGraphicsView>
 
+#include "PatchWindowController.h"
+#include "PatchWindow.h"
+
 namespace qtpd {
 
 ////
 /// \brief gui object: oop property box (property)
 ///
-class UIProperty : public UIObject {
+class UIProperty : public UIBox {
 
     Q_OBJECT
 
@@ -58,7 +62,7 @@ public:
         p->scale(scale(), scale());
 
         //remove this later
-        if (subpatchWindow()) {
+        if (subpatchController()) {
             p->setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
             p->drawRect(0, 2, width(), height() - 4);
         }
@@ -104,10 +108,11 @@ public:
             return;
         }
 
+
         //open canvas for subpatch
         if (getEditMode() != em_Unlocked) {
-            if (subpatchWindow()) {
-                subpatchWindow()->show();
+            if (subpatchController()) {
+                subpatchController()->firstWindow()->show();
             }
         }
 
@@ -137,7 +142,7 @@ public:
         }
         event->ignore();
 
-        if ((getEditMode() != em_Unlocked) && (subpatchWindow())) {
+        if ((getEditMode() != em_Unlocked) && (subpatchController())) {
             setCursor(QCursor(Qt::PointingHandCursor));
         } else {
             setCursor(QCursor(Qt::ArrowCursor));
@@ -169,7 +174,7 @@ public:
 
         if (b->_opInstance) {
             if (msg.at(0).asSymbol() == gensym("bang")) {
-                //cmp_post("bang!");
+                ///* TODO */ //cmp_post("bang!");
 
                 AtomList _prop = b->_opInstance->getAtomListProperty(gensym(b->_propertyName.c_str()));
                 QStringList list1;
@@ -177,9 +182,13 @@ public:
                     list1.append(_prop.at(i).asString().c_str());
                 }
 
-                cmp_sendstring((t_pd*)b->pdObject(), (std::string) "__output " + list1.join(" ").toStdString());
+                // TODO-PD_OBJECT
+//                cmp_sendstring((t_pd*)b->pdObject(), (std::string) "__output " + list1.join(" ").toStdString());
+
             } else if (msg.at(0).asSymbol() == gensym("set")) {
-                cmp_post("set!");
+                // TODO
+                // /* TODO */ //cmp_post("set!");
+
                 //AtomList msg2 = msg;
                 //msg2.at(0) = gensym(b->_propertyName.c_str());
                 b->_opInstance->setAtomListProperty(gensym(b->_propertyName.c_str()), msg); //.subList(1,msg.size()-1));

@@ -8,9 +8,9 @@
 #include <QPainter>
 #include <QWidget>
 
-#include "PdLink.h"
-
 #include "math.h"
+
+#include <pdServer.hpp>
 
 ////
 /// \brief Array Editor QWidget
@@ -18,47 +18,77 @@
 class UIArrayEditor : public QWidget {
     Q_OBJECT
 private:
-    t_garray* _pdArray;
-    int _arrSize;
-    t_word* _arrData;
+    //t_garray* _pdArray;
+    //int _arrSize;
+    //float* _arrData;
+
+    ServerArrayData* _arrayData;
+
+    ServerArray* _serverArray;
 
 public:
     void paintEvent(QPaintEvent*)
     {
-        if (_pdArray) {
+        if (_serverArray) {
 
-            cmp_get_array_data(_pdArray, &_arrSize, &_arrData);
+            //cmp_get_array_data(_pdArray, &_arrSize, &_arrData);
+            //_arrSize = _serverArray->size();
 
-            if (_arrSize < 67108864) // temporary 64M samples limit
-            {
 
-                QPainter p(this);
 
-                int y = height() / 2;
-                int y0 = y;
+            //_arrData = new float[_arrSize];
 
-                p.setPen(QPen(QColor(0, 0, 0), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+            _arrayData = _serverArray->getData();//_arrData, _arrSize);
 
-                p.drawLine(0, y0, width(), y0);
+            // temporary
+            if (_arrayData->size > 67108864)
+                _arrayData->size = 67108864;
 
-                for (int x = 0; x < (width() - 1); x++) {
-
-                    int index = floor(float(x) / width() * _arrSize);
-                    float y = ((_arrData[index].w_float * .5) + .5) * height();
-                    p.drawLine(x, y0, x + 1, y);
-                    y0 = y;
-                }
-            } else {
-                cmp_post("bad array size!");
+            /*
+            try {
+                _serverArray->getData(_arrData, _arrSize);
+            } catch (long) {
+                ServerInstance::post(">> bad array data");
             }
+            */
+
+            //if (_arrSize < 67108864) // temporary 64M samples limit
+            //            {
+
+            if (!_arrayData)
+            {
+                ServerInstance::post("Array data error!");
+                return;
+            }
+
+            QPainter p(this);
+
+            int y = height() / 2;
+            int y0 = y;
+
+            p.setPen(QPen(QColor(0, 0, 0), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+
+            p.drawLine(0, y0, width(), y0);
+
+            for (int x = 0; x < (width() - 1); x++) {
+
+                int index = floor(float(x) / width() * _arrayData->size);
+                float y = ((_arrayData->sample[index] * .5f) + .5) * height();
+                p.drawLine(x, y0, x + 1, y);
+                y0 = y;
+            }
+            //            }
+            //            else {
+            //                ServerInstance::post("bad array size");
+            //            }
         } else {
-            cmp_post("bad pd array!");
+            ServerInstance::post("bad server array");
         }
     }
 
-    void setPdArray(t_garray* arr)
+    void setServerArray(ServerArray* arr)
     {
-        _pdArray = arr;
+        _serverArray = arr;
     }
 
     explicit UIArrayEditor(QWidget* parent = 0);

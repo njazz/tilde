@@ -18,7 +18,6 @@
 
 #include "UIScriptCommon.h"
 
-
 namespace qtpd {
 
 ////
@@ -41,171 +40,25 @@ private:
 public:
     explicit UIScript();
 
-    static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
-    {
-        qDebug() << "ui.script";
+    static UIObject* createObj(QString data);
+    static UIObject* createObject(QString , t_canvas* , QGraphicsView* );
 
-        UIScript* b = new UIScript();
-        b->setCanvas((void*)parent);
+    void initProperties();
+    void resizeEvent();
 
-        b->_editor->textEdit()->setContext(pyWrapper::inst().withCanvas((QObject*)parent));
-
-        QString data1 = b->properties()->extractFromPdFileString(objectData);
-        if (data1 != "") {
-            QStringList l = data1.split(" ");
-            if (l.size() > 1) {
-                l.removeAt(0);
-                b->properties()->get("ScriptFile")->set(l.at(0));
-            }
-        }
-
-        b->setObjectData("ui.script");
-
-        // the zoo lol
-        //QString data = b->properties()->get("Script")->asQString().split("\\n ").join("\n");
-        QString data = "";
-
-        b->_editor->textEdit()->document()->setPlainText(data);
-
-        // pd object
-        std::string message = "ui.script";
-
-        //temp
-        t_object* new_obj = 0;
-        if (!pdCanvas) {
-            qDebug("bad pd canvas instance");
-        } else {
-            QPoint pos = QPoint(0, 0);
-            new_obj = cmp_create_object(pdCanvas, message, pos.x(), pos.y());
-        }
-
-        if (new_obj) {
-            qDebug("created ui.script %s | ptr %lu\n", message.c_str(), (long)new_obj);
-            b->setPdObject(new_obj);
-
-            b->_editor->textEdit()->setContext(pyWrapper::inst().withCanvasPdObjectAndInput((UIObject*)parent, new_obj, &b->_scriptCommon->scriptData()->inputList));
-
-            b->addInlet();
-            b->addOutlet();
-
-        } else {
-            qDebug("Error: no such object %s", message.c_str());
-        }
-
-        b->resizeEvent();
-
-        return (UIObject*)b;
-    };
-
-    void initProperties()
-    {
-        UIObject::initProperties();
-
-        properties()->create("Script", "Data", "0.1", QStringList(""));
-    };
-
-    void resizeEvent()
-    {
-        _editor->setFixedSize(width()-2,height()-2);
-    }
-
-    virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
-    {
-        p->setClipRect(option->exposedRect);
-
-        QBrush brush(bgColor());
-        p->setBrush(brush);
-        p->drawRect(boundingRect());
-        p->setBrush(QBrush());
-
-        if (getEditMode() == em_Unlocked) {
-            if (isSelected()) {
-                p->setPen(QPen(QColor(0, 192, 255), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-            } else if (_clicked) {
-                p->setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
-            } else {
-                p->setPen(QPen(QColor(128, 128, 128), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-            }
-
-            p->drawRect(0, 0, width(), height());
-        }
-
-        //p->setPen(QPen(QColor(0, 0, 0), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-        //p->setFont(QFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize(), 0, false));
-        //p->drawText(2, 3, boundingRect().width() - 2, boundingRect().height() - 3, 0, "py " + properties()->get("ScriptFile")->asQString(), 0);
-    }
-
+    virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*);
     // ------------------------
 
-    void mousePressEvent(QGraphicsSceneMouseEvent* ev)
-    {
-
-        if (getEditMode() != em_Unlocked) {
-            _editor->show();
-        }
-        if (getEditMode() == em_Unlocked) {
-            emit selectBox(this, ev);
-            dragOffset = ev->pos().toPoint();
-            ev->accept();
-        }
-
-        //context menu
-        if (ev->button() == Qt::RightButton) {
-
-            QPoint pos;
-
-            if (scene()
-                && !scene()->views().isEmpty()
-                && scene()->views().first()
-                && scene()->views().first()->viewport()) {
-
-                QGraphicsView* v = scene()->views().first();
-                pos = v->viewport()->mapToGlobal(ev->pos().toPoint());
-
-                // TODO
-                showPopupMenu(pos + this->pos().toPoint());
-                ev->accept();
-            }
-
-            return;
-        }
-    }
-
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev)
-    {
-        ev->accept();
-    }
-
-    void mouseMoveEvent(QGraphicsSceneMouseEvent* event)
-    {
-        if (event->buttons() & Qt::LeftButton) {
-            emit moveBox(this, event);
-        }
-        event->accept();
-
-        //todo move!
-        if (getEditMode() != em_Unlocked) {
-            setCursor(QCursor(Qt::PointingHandCursor));
-        } else {
-            setCursor(QCursor(Qt::ArrowCursor));
-        }
-    }
+    void mousePressEvent(QGraphicsSceneMouseEvent* ev);
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev);
+    void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
 
     // ----------------------
 
-    void setPdMessage(QString message)
-    {
-        setObjectData(message);
+    void setPdMessage(QString message);
 
-        setSize(300, 200);
-    }
+    virtual void sync();
 
-    void setPdObject(void* obj)
-    {
-        UIObject::setPdObject(obj);
-        //connect(this, &UIScript::callRun, this, &UIScript::btnRun);
-        cmp_connectUI((t_pd*)pdObject(), (void*)this->_scriptCommon, &UIScriptCommon::updateUI);
-    }
 
 private slots:
     void editorChanged();

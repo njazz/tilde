@@ -5,7 +5,7 @@
 
 // generic
 
-#include "py_pdlib.h"
+//#include "py_pdlib.h"
 #include "py_qtpd.h"
 
 using namespace qtpd;
@@ -17,7 +17,7 @@ pyWrapper::pyWrapper()
 
     //todo fix
 
-    mainContext.addObject("Qtpd", new pyQtpd());
+    mainContext.addObject("Qtpd", new pyQtpd(_appController));
 
     PythonQt::self()->addDecorators(new pyPatchWindowDecorator());
     PythonQt::self()->addDecorators(new pyCanvasDecorator());
@@ -33,7 +33,7 @@ PythonQtObjectPtr pyWrapper::withCanvas(QObject* canvas)
 {
     PythonQtObjectPtr ctx;
     ctx = PythonQt::self()->createUniqueModule();
-    ctx.addObject("Qtpd", new pyQtpd());
+    ctx.addObject("Qtpd", new pyQtpd(_appController));
 
     pyLocal* loc = new pyLocal;
     loc->setCanvas((CanvasView*)canvas); // canvas, canvas, canvas, canvas
@@ -47,7 +47,7 @@ PythonQtObjectPtr pyWrapper::withCanvasAndPdObject(QObject* canvas, t_object* ob
 {
     PythonQtObjectPtr ctx;
     ctx = PythonQt::self()->createUniqueModule();
-    ctx.addObject("Qtpd", new pyQtpd());
+    ctx.addObject("Qtpd", new pyQtpd(_appController));
 
     pyLocal* loc = new pyLocal;
     loc->setCanvas((CanvasView*)canvas); // canvas, canvas, canvas, canvas
@@ -63,7 +63,7 @@ PythonQtObjectPtr pyWrapper::withCanvasPdObjectAndInput(QObject* canvas, t_objec
 {
     PythonQtObjectPtr ctx;
     ctx = PythonQt::self()->createUniqueModule();
-    ctx.addObject("Qtpd", new pyQtpd());
+    ctx.addObject("Qtpd", new pyQtpd(_appController));
 
     pyLocal* loc = new pyLocal;
     loc->setCanvas((CanvasView*)canvas); // canvas, canvas, canvas, canvas

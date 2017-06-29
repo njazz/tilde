@@ -18,7 +18,6 @@
 
 #include "UIScriptCommon.h"
 
-
 namespace qtpd {
 
 ////
@@ -41,12 +40,15 @@ private:
 public:
     explicit UIScriptBox();
 
-    static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
+    static UIObject* createObj(QString data);
+    static UIObject* createObject(QString, t_canvas*, QGraphicsView*);
+    /*
+
     {
         qDebug() << "ui.scriptbox";
 
         UIScriptBox* b = new UIScriptBox();
-        b->setCanvas((void*)parent);
+        //b->setCanvas((void*)parent);
 
         b->_editor->textEdit()->setContext(pyWrapper::inst().withCanvas((QObject*)parent));
 
@@ -81,7 +83,7 @@ public:
 
         if (new_obj) {
             qDebug("created ui.script %s | ptr %lu\n", message.c_str(), (long)new_obj);
-            b->setPdObject(new_obj);
+            //b->setPdObject(new_obj);
 
             b->_editor->textEdit()->setContext(pyWrapper::inst().withCanvasPdObjectAndInput((UIObject*)parent, new_obj, &b->_scriptCommon->scriptData()->inputList));
 
@@ -96,111 +98,22 @@ public:
 
         return (UIObject*)b;
     };
+*/
+    void initProperties();
 
-    void initProperties()
-    {
-        UIObject::initProperties();
-
-        properties()->create("ScriptFile", "Data", "0.1", QString(""));
-    };
-
-    virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
-    {
-        p->setClipRect(option->exposedRect);
-
-        QBrush brush(bgColor());
-        p->setBrush(brush);
-        p->drawRect(boundingRect());
-        p->setBrush(QBrush());
-
-        if (getEditMode() == em_Unlocked) {
-            if (isSelected()) {
-                p->setPen(QPen(QColor(0, 192, 255), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-            } else if (_clicked) {
-                p->setPen(QPen(QColor(0, 192, 255), 2, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
-            } else {
-                p->setPen(QPen(QColor(128, 128, 128), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-            }
-
-            p->drawRect(0, 0, width(), height());
-        }
-
-        p->setPen(QPen(QColor(0, 0, 0), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-        p->setFont(QFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize(), 0, false));
-        p->drawText(2, 3, boundingRect().width() - 2, boundingRect().height() - 3, 0, "py " + properties()->get("ScriptFile")->asQString(), 0);
-    }
+    virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*);
 
     // ------------------------
 
-    void mousePressEvent(QGraphicsSceneMouseEvent* ev)
-    {
+    void mousePressEvent(QGraphicsSceneMouseEvent* ev);
 
-        if (getEditMode() != em_Unlocked) {
-            _editor->show();
-        }
-        if (getEditMode() == em_Unlocked) {
-            emit selectBox(this, ev);
-            dragOffset = ev->pos().toPoint();
-            ev->accept();
-        }
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev);
 
-        //context menu
-        if (ev->button() == Qt::RightButton) {
-
-            QPoint pos;
-
-            if (scene()
-                && !scene()->views().isEmpty()
-                && scene()->views().first()
-                && scene()->views().first()->viewport()) {
-
-                QGraphicsView* v = scene()->views().first();
-                pos = v->viewport()->mapToGlobal(ev->pos().toPoint());
-
-                // TODO
-                showPopupMenu(pos + this->pos().toPoint());
-                ev->accept();
-            }
-
-            return;
-        }
-    }
-
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev)
-    {
-        ev->accept();
-    }
-
-    void mouseMoveEvent(QGraphicsSceneMouseEvent* event)
-    {
-        if (event->buttons() & Qt::LeftButton) {
-            emit moveBox(this, event);
-        }
-        event->accept();
-
-        //todo move!
-        if (getEditMode() != em_Unlocked) {
-            setCursor(QCursor(Qt::PointingHandCursor));
-        } else {
-            setCursor(QCursor(Qt::ArrowCursor));
-        }
-    }
+    void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
 
     // ----------------------
 
-    void setPdMessage(QString message)
-    {
-        setObjectData(message);
-
-        setSize(300, 200);
-    }
-
-    void setPdObject(void* obj)
-    {
-        UIObject::setPdObject(obj);
-        //connect(this, &UIScriptBox::callRun, this, &UIScriptBox::btnRun);
-        cmp_connectUI((t_pd*)pdObject(), (void*)this->_scriptCommon, &UIScriptCommon::updateUI);
-    }
+    void setPdMessage(QString message);
 
 private slots:
     void editorChanged();

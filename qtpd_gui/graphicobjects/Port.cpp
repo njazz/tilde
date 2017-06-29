@@ -11,6 +11,7 @@ Port::Port(UIItem* parent)
 
     _portType = portInlet;
     _portIndex = 0;
+    _portClass = 0;
 }
 
 void Port::paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)

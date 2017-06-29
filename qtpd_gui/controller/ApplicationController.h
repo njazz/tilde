@@ -4,56 +4,72 @@
 #ifndef APPLICATIONCONTROLLER
 #define APPLICATIONCONTROLLER
 
-// TODO
-#include "../API_prototype/serverAPIprototype.h"
-
-#include "PatchWindow.h"
+#include "ServerWorker.h"
 
 //#include "ControllerObserver.h"
 
-#include "PdWindow.h"
-
 #ifdef WITH_PYTHON
-
 #include "python/PythonQtScriptingConsole.h"
-
 #endif
 
-class ApplicationController : QObject {
-private:
-    TheServer* _server;
-    ServerInstance* _mainInstance;
+#include <QApplication>
 
-    PythonQtScriptingConsole* _pythonConsole;
+namespace qtpd {
+
+class PdWindow;
+class PatchWindow;
+class UIObject;
+
+class PdWindowConsoleObserver : public ConsoleObserver {
+private:
+    PdWindow* _window;
 
 public:
-    ApplicationController()
-    {
-        _server = new TheServer();
-        _mainInstance = newServerInstance();
+    void setWindow(PdWindow* w) { _window = w; };
+    void update();
+};
 
-#ifdef WITH_PYTHON
-        PythonQtObjectPtr mainContext = PythonQt::self()->getMainModule();
-        _pythonConsole = new PythonQtScriptingConsole(NULL, mainContext);
-        qDebug("pyConsole %lu", (long)_pythonConsole);
-#endif
-    };
+class ApplicationController : public QObject {
+    Q_OBJECT
 
-    ServerInstance* newServerInstance()
-    {
-        return _server->createInstance();
-    };
+private:
+    LocalServer* _localServer;
 
-    ServerInstance* mainInstance() { return _mainInstance; }
+    ServerWorker* _serverWorker;
+    QThread* _serverThread;
 
-    Observer* controllerObserver(); //ControllerObserver*
+    PdWindow* _pdWindow;
+    PythonQtScriptingConsole* _pythonConsole;
+
+    PdWindowConsoleObserver* _consoleObserver;
+
+public:
+    ApplicationController();
+
+    ServerInstance* mainServerInstance();
+
+    Observer* controllerObserver();
+
+    ServerWorker* serverWorker() { return _serverWorker; };
+
+signals:
+    void getLocalServer(LocalServer* ret);
 
 public slots:
-    void newPatchWindowController(); //older createPatch //PatchWindowController*
+    void newPatchWindowController();
     void openFileDialog();
 
     void pdWindow();
     void pythonConsole();
+
+    void preferencesWindow();
+    void audioSettingsWindow();
+
+    void dspOn();
+    void dspOff();
+
+    ServerObject* slotCreateObject(ServerCanvas* canvas, string name);
 };
+}
 
 #endif // CM_PDLINK_H

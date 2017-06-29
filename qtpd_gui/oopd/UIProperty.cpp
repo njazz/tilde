@@ -14,12 +14,13 @@ UIProperty::UIProperty()
     setHeight(20);
     deselect(); // = false;
     setErrorBox(false);
-    setSubpatchWindow(0);
+    //setSubpatchWindow(0);
 
     _objectDataModel.setObjectSize(os_FixedHeight, 40, 20);
 }
 
 UIObject* UIProperty::createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent)
+{return 0;}/*
 {
     //TODO fix all constructors
     //t_canvas* pd_Canvas;
@@ -28,7 +29,7 @@ UIObject* UIProperty::createObject(QString objectData, t_canvas* pdCanvas, QGrap
         objectData = "property";
 
     UIProperty* b = new UIProperty(); //(UIObject*)parent);
-    b->setCanvas((void*)parent);
+    //b->setCanvas((void*)parent);
 
     //truncate "ui.obj". todo cleanup
     QStringList list = QString(objectData).split(" ");
@@ -67,9 +68,10 @@ UIObject* UIProperty::createObject(QString objectData, t_canvas* pdCanvas, QGrap
         in_c = cmp_get_inlet_count(new_obj);
         out_c = cmp_get_outlet_count(new_obj);
 
-        b->setPdObject(new_obj);
+        //b->setPdObject(new_obj);
 
-        cmp_connectUI((t_pd*)new_obj, (void*)b, &UIProperty::updateUI);
+        // TODO
+        //cmp_connectUI((t_pd*)new_obj, (void*)b, &UIProperty::updateUI);
 
         b->setHelpName("property-help.pd");
 
@@ -89,11 +91,14 @@ UIObject* UIProperty::createObject(QString objectData, t_canvas* pdCanvas, QGrap
 
     // OOPD
 
-    t_canvas* cnv = ((CanvasView*)parent)->pdObject();
+    // TODO
+    // t_canvas* cnv = ((CanvasView*)parent)->pdObject();
+    t_canvas* cnv=0;
 
     if (OOPD::inst()->canvasIsPatch(cnv)) {
         //fix that
-        cmp_post("property in basic patch");
+        // TODO
+        //cmp_post("property in basic patch");
     }
 
     b->_opClass = OOPD::inst()->classByCanvas(cnv);
@@ -112,17 +117,21 @@ UIObject* UIProperty::createObject(QString objectData, t_canvas* pdCanvas, QGrap
     if (b->_opInstance) {
         qDebug("property in instance");
 
-        t_outlet* out1 = cmp_get_outlet((t_object*)b->pdObject(), 1);
-        t_outlet* out2 = cmp_get_outlet((t_object*)b->pdObject(), 2);
-        if (out1 && out2) {
+        // TODO-PD_OBJECT
 
-            b->_opInstance->addProperty(gensym(b->_propertyName.c_str()), out1, out2);
-        } else
-            cmp_post("property pd object outlet error");
+//        t_outlet* out1 = cmp_get_outlet((t_object*)b->pdObject(), 1);
+//        t_outlet* out2 = cmp_get_outlet((t_object*)b->pdObject(), 2);
+//        if (out1 && out2) {
+
+//            b->_opInstance->addProperty(gensym(b->_propertyName.c_str()), out1, out2);
+//        } else
+//            cmp_post("property pd object outlet error");
     }
 
     connect(b, &UIProperty::updateUISignal, b, &UIProperty::updateUISlot);
 
     return (UIObject*)b;
 };
+*/
+
 }

@@ -15,6 +15,7 @@
 #include <QGraphicsView>
 #include <QMainWindow>
 
+// TODO
 #include "CanvasView.h"
 
 namespace qtpd {
@@ -36,6 +37,17 @@ private:
 public:
     explicit UISubpatch();
 
+    static UIObject* createObj(QString data)
+    {
+        UISubpatch* ret = new UISubpatch();
+
+//        QStringList l = data.split(" ");l.removeFirst();
+//        data = l.join(" ");
+
+        ret->setObjectData(data);
+
+        return ret;
+    }
     static UIObject* createObject(QString objectData, t_canvas*, QGraphicsView* parent = 0)
     {
         //TODO fix all constructors
@@ -44,7 +56,7 @@ public:
 
         UISubpatch* b = new UISubpatch(); //(UIObjectItem*)parent);
 
-        b->setCanvas((void*)parent);
+        //b->setCanvas((void*)parent);
 
         QStringList list = QString(objectData).split(" ");
         // list.removeAt(0);
@@ -63,7 +75,7 @@ public:
 
         b->resizeEvent();
 
-        b->setBgColor(QColor(224,224,224));
+        b->setBgColor(QColor(224, 224, 224));
 
         return (UIObject*)b;
     };
@@ -112,11 +124,11 @@ public:
         qDebug("click");
 
         //open canvas for subpatch
-        if (getEditMode() != em_Unlocked) {
-            if (subpatchWindow()) {
-                subpatchWindow()->show();
-            }
-        }
+//        if (getEditMode() != em_Unlocked) {
+//            if (subpatchWindow()) {
+//                subpatchWindow()->show();
+//            }
+//        }
 
         emit UIObject::selectBox(this, ev);
         dragOffset = ev->pos().toPoint();
@@ -143,7 +155,7 @@ public:
         }
         event->ignore();
 
-        if ((getEditMode() != em_Unlocked) && (subpatchWindow())) {
+        if ((getEditMode() != em_Unlocked)){// && (subpatchController())) {
             setCursor(QCursor(Qt::PointingHandCursor));
         } else {
             setCursor(QCursor(Qt::ArrowCursor));
@@ -170,6 +182,12 @@ public:
 
     std::string asPdFileString();
 
+//    virtual void setServerObject(ServerObject* o)
+//    {
+//        UIObject::setServerObject(o);
+//        if (o)
+//            o->connectUI(this, &UISubpatch::updateUI);
+//    };
 signals:
 
     void mouseMoved();

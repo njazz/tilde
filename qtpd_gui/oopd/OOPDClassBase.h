@@ -26,6 +26,7 @@ namespace qtpd {
 //class OPClass;
 //class OPInstance;
 class PatchWindow;
+class PatchWindowController;
 
 ////
 /// \brief stores pointers to t_outlets of pd objects
@@ -79,7 +80,7 @@ public:
     string _className;
     t_canvas* _canvas;
     t_symbol* _symbol;
-    PatchWindow* _patchWindow;
+    PatchWindowController* _patchWindow;
 
     void addMethod(string methodName, string referenceName)
     {

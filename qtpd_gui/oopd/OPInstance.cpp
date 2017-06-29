@@ -8,11 +8,14 @@
 //
 
 #include "OPInstance.h"
-#include "OPClass.h"
 #include "OOPD.h"
+#include "OPClass.h"
 
-#include "PatchWindow.h"
 #include "FileParser.h"
+#include "PatchWindow.h"
+#include "PatchWindowController.h"
+
+#include "CanvasView.h"
 
 namespace qtpd {
 
@@ -29,28 +32,31 @@ OPInstance::OPInstance(OPClass* opClass)
 
         // TODO
         // copy canvas here
-        QStringList canvasStrings = opClass->_patchWindow->canvas->canvasAsPdStrings();
+        QStringList canvasStrings = opClass->_patchWindow->canvasData()->asPdFileStrings();
 
-        _patchWindow = PatchWindow::newWindow();
-        FileParser::setParserWindow(_patchWindow);
+        // TODO
+        _patchWindow = new PatchWindowController(0);
+        FileParser::setParserWindowController(_patchWindow);
 
-        _canvas = (t_canvas*)_patchWindow->canvas->pdObject();
+        // TODO
+        //_canvas = (t_canvas*)_patchWindow->canvasView()->pdObject();
+
         // register instance before copying objects
         OOPD::inst()->registerInstance(this, _className, _canvas, _symbol);
 
-        _patchWindow->canvas->canvasFromPdStrings(canvasStrings);
+        _patchWindow->firstWindow()->canvasView()->canvasFromPdStrings(canvasStrings);
         QString windowTitle = QString("(read only) instance: ") + QString(_className.c_str());
-        _patchWindow->setWindowTitle(windowTitle);
-        _patchWindow->canvas->setKeepPdObject(true);
-        _patchWindow->hide();
+        _patchWindow->firstWindow()->setWindowTitle(windowTitle);
+        _patchWindow->firstWindow()->canvasView()->setKeepPdObject(true);
+        _patchWindow->firstWindow()->hide();
 
-        _patchWindow->canvas->setReadOnly(true);
+        _patchWindow->firstWindow()->canvasView()->setReadOnly(true);
 
         _refCount = 1;
     }
 
     //generate properties
-    setPropertyNames( opClass->getPropertyNames() );
+    setPropertyNames(opClass->getPropertyNames());
 
     //TODO
 
@@ -82,7 +88,7 @@ OPInstance::OPInstance(OPClass* opClass)
 void OPInstance::showWindow()
 {
     if (_patchWindow)
-        _patchWindow->show();
+        _patchWindow->firstWindow()->show();
 }
 
 OPInstance* OPInstance::fromObjectSymbol(t_symbol* objSymbol)
@@ -104,7 +110,6 @@ OPInstance::~OPInstance()
     OOPD::inst()->unregisterInstance(this, _className, _canvas, _symbol);
 
     printf("~OPInstance\n");
-    printf("canvas: %lu\n", (long)_canvas);
+    printf("canvas: %x\n", _canvas);
 }
-
 }

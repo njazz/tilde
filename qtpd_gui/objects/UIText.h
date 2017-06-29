@@ -29,30 +29,18 @@ private:
 public:
     explicit UIText(); //UIObject* parent = 0);
 
+    static UIObject* createObj(QString data)
+    {
+        UIText* ret = new UIText();
+
+        ret->setObjectData(data);
+
+        return ret;
+    }
     static UIObject* createObject(QString objectData, t_canvas*, QGraphicsView* parent = 0)
     {
-        UIText* b = new UIText();
-        b->setCanvas((void*)parent);
-
-        //temporary
-        QString data1 = b->properties()->extractFromPdFileString(objectData);
-        b->setObjectData("");
-
-        // the zoo lol
-        QString data = b->properties()->get("Text")->asQString().split("\\n ").join("\n");
-        b->_editor->document()->setPlainText(data);
-
-        b->_objectText = data;
-
-        int fontSize = b->properties()->get("FontSize")->asQString().toInt();
-        b->_editor->setFont(QFont(PREF_QSTRING("Font"), fontSize, 0, false));
-
-        b->autoResize();
-
-        b->resizeEvent();
-
-        return (UIObject*)b;
-    };
+        return 0;
+    }
 
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
     {
@@ -98,7 +86,7 @@ public:
 
     ///////////////////
 
-    void mousePressEvent(QGraphicsSceneMouseEvent* ev)
+    void objectPressEvent(QGraphicsSceneMouseEvent* ev)
     {
 
         if ((getEditMode() == em_Unlocked) && isSelected()) {
@@ -110,37 +98,37 @@ public:
             return;
         }
 
-        emit selectBox(this, ev);
-        dragOffset = ev->pos().toPoint();
+//        emit selectBox(this, ev);
+//        dragOffset = ev->pos().toPoint();
 
-        if (!(getEditMode() == em_Unlocked)) {
-            _clicked = true;
-            update();
+//        if (!(getEditMode() == em_Unlocked)) {
+//            _clicked = true;
+//            update();
 
-            //todo timer
-        }
+//            //todo timer
+//        }
     }
 
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent*)
-    {
-        _clicked = false;
-        update();
-    }
+//    void mouseReleaseEvent(QGraphicsSceneMouseEvent*)
+//    {
+//        _clicked = false;
+//        update();
+//    }
 
-    void mouseMoveEvent(QGraphicsSceneMouseEvent* event)
-    {
-        if (event->buttons() & Qt::LeftButton) {
-            emit moveBox(this, event);
-        }
-        event->ignore();
+//    void mouseMoveEvent(QGraphicsSceneMouseEvent* event)
+//    {
+//        if (event->buttons() & Qt::LeftButton) {
+//            emit moveBox(this, event);
+//        }
+//        event->ignore();
 
-        //todo move!
-        if (getEditMode() != em_Unlocked) {
-            setCursor(QCursor(Qt::PointingHandCursor));
-        } else {
-            setCursor(QCursor(Qt::ArrowCursor));
-        }
-    }
+//        //todo move!
+//        if (getEditMode() != em_Unlocked) {
+//            setCursor(QCursor(Qt::PointingHandCursor));
+//        } else {
+//            setCursor(QCursor(Qt::ArrowCursor));
+//        }
+//    }
 
     void autoResize()
     {
@@ -213,7 +201,7 @@ public:
         return 0;
     }
 
-    bool eventFilter(QObject* , QEvent* event)
+    bool eventFilter(QObject*, QEvent* event)
     {
         if (event->type() == QEvent::KeyPress) {
 
@@ -231,6 +219,11 @@ public:
     QStringList getEditorData()
     {
         return _editor->document()->toPlainText().split(QRegExp("[\r\n]"), QString::SkipEmptyParts);
+    }
+
+    virtual void sync()
+    {
+
     }
 
 signals:

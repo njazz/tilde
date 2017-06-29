@@ -15,12 +15,14 @@ UISignal::UISignal()
 
     setHeight(20);
     deselect();
-    setSubpatchWindow(0);
+    //setSubpatchWindow(0);
 
     _objectDataModel.setObjectSize(os_FixedHeight, 40, 20);
 }
 
 UIObject* UISignal::createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent)
+{return 0;}
+/*
 {
     //TODO fix all constructors
     //t_canvas* pd_Canvas;
@@ -29,7 +31,7 @@ UIObject* UISignal::createObject(QString objectData, t_canvas* pdCanvas, QGraphi
         objectData = "pdsignal~";
 
     UISignal* b = new UISignal(); //(UIObject*)parent);
-    b->setCanvas((void*)parent);
+    //b->setCanvas((void*)parent);
 
     //truncate "ui.obj". todo cleanup
     QStringList list = QString(objectData).split(" ");
@@ -44,7 +46,8 @@ UIObject* UISignal::createObject(QString objectData, t_canvas* pdCanvas, QGraphi
 
     //std::string methodName;
     if (list.size() < 2) {
-        cmp_post("missing argument: signal name");
+        // TODO
+        //cmp_post("missing argument: signal name");
         b->setErrorBox(true);
         return (UIObject*)b;
     } else {
@@ -62,7 +65,9 @@ UIObject* UISignal::createObject(QString objectData, t_canvas* pdCanvas, QGraphi
     // OOPD
 
     // not very clean
-    t_canvas* cnv = ((CanvasView*)parent)->pdObject();
+    // TODO
+    //t_canvas* cnv = ((CanvasView*)parent)->pdObject();
+    t_canvas* cnv = 0;
 
     if (OOPD::inst()->canvasIsPatch(cnv)) {
         cmp_post("method in basic patch");
@@ -108,11 +113,13 @@ UIObject* UISignal::createObject(QString objectData, t_canvas* pdCanvas, QGraphi
 
         t_object* pd_obj = cmp_create_object(pdCanvas, "pdsignal~ " + b->_signalSendName, 0, 0);
 
-        b->setPdObject(pd_obj);
+        // TODO-PD_OBJECT
+        //b->setPdObject(pd_obj);
     }
 
     connect(b, &UISignal::updateUISignal, b, &UISignal::updateUISlot);
 
     return (UIObject*)b;
 };
+*/
 }

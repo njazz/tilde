@@ -3,8 +3,6 @@
 
 #include <QApplication>
 
-#include "PdLink.h"
-
 #include "PatchWindow.h"
 #include "PdWindow.h"
 
@@ -29,13 +27,6 @@
 
 using namespace qtpd;
 
-void pd_window_printhook(const char* s)
-{
-    //qDebug("print hook %s",s);
-    //if (pdw)
-    emit PdWindow::inst()->cm_log_signal(QString(s));
-}
-
 int main(int argc, char* argv[])
 {
     QApplication a(argc, argv);
@@ -49,31 +40,36 @@ int main(int argc, char* argv[])
     PythonQt::init(PythonQt::RedirectStdOut); //PythonQt::IgnoreSiteModule |
     PythonQt_QtAll::init();
 
-    pyWrapper::inst();
+    //pyWrapper::inst();
+    //
 #endif
 
     ObjectLoader::inst().loadObjects();
 
     // TODO move all to appcontroller
 
+    //const
     ApplicationController* controller = new ApplicationController();
 
-    //cmp_pdinit();
-    cmp_setprinthook(&pd_window_printhook);
+#ifdef WITH_PYTHON
+    pyWrapper::inst().setAppController(controller);
+#endif
 
     QTPD_AUDIOSETTINGS_INIT;
 
-    //move to appcontroller
-    PdWindow::inst()->move(0, 100);
-    PdWindow::inst()->show();
-
     qDebug() << "started";
-    cmp_post("qtpd started");
-    cmp_post("---");
 
-    a.setCursorFlashTime(0);
+    controller->mainServerInstance()->post("qtpd started");
+    controller->mainServerInstance()->post("----");
 
-    //temporary folders properties
+//TODO //cmp_post("qtpd started");
+//TODO //cmp_post("---");
+
+
+
+    a.setCursorFlashTime(500);
+
+    //temporary folders pÏroperties
 
     QString docFolder = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).last();
 
@@ -96,12 +92,16 @@ int main(int argc, char* argv[])
 
     //std::string extPath3 = extPath + "/pof";
 
+    // TODO
     Preferences::inst().addPath(extPath.c_str());
     Preferences::inst().addPath(extPath1.c_str());
     Preferences::inst().addPath(extPath2.c_str());
     Preferences::inst().addPath(extPath3.c_str());
 
-
+    controller->mainServerInstance()->addSearchPath(extPath);
+    controller->mainServerInstance()->addSearchPath(extPath1);
+    controller->mainServerInstance()->addSearchPath(extPath2);
+    controller->mainServerInstance()->addSearchPath(extPath3);
 
     return a.exec();
 }

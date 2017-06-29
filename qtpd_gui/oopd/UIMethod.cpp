@@ -14,12 +14,14 @@ UIMethod::UIMethod()
     setHeight(20);
     deselect(); // = false;
     setErrorBox(false);
-    setSubpatchWindow(0);
+    //setSubpatchWindow(0);
 
     _objectDataModel.setObjectSize(os_FixedHeight, 40, 20);
 }
 
 UIObject* UIMethod::createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent)
+{return 0;} /*
+
 {
     //TODO fix all constructors
     //t_canvas* pd_Canvas;
@@ -28,7 +30,7 @@ UIObject* UIMethod::createObject(QString objectData, t_canvas* pdCanvas, QGraphi
         objectData = "method";
 
     UIMethod* b = new UIMethod(); //(UIObject*)parent);
-    b->setCanvas((void*)parent);
+    //b->setCanvas((void*)parent);
 
     //truncate "ui.obj". todo cleanup
     QStringList list = QString(objectData).split(" ");
@@ -43,7 +45,8 @@ UIObject* UIMethod::createObject(QString objectData, t_canvas* pdCanvas, QGraphi
 
     //std::string methodName;
     if (list.size() < 2) {
-        cmp_post("missing argument: method name");
+        // TODO
+ //cmp_post("missing argument: method name");
         b->setErrorBox(true);
         return (UIObject*)b;
     } else {
@@ -66,7 +69,7 @@ UIObject* UIMethod::createObject(QString objectData, t_canvas* pdCanvas, QGraphi
         in_c = cmp_get_inlet_count(new_obj);
         out_c = cmp_get_outlet_count(new_obj);
 
-        b->setPdObject(new_obj);
+        //b->setPdObject(new_obj);
 
         cmp_connectUI((t_pd*)new_obj, (void*)b, &UIMethod::updateUI);
 
@@ -85,11 +88,14 @@ UIObject* UIMethod::createObject(QString objectData, t_canvas* pdCanvas, QGraphi
     // OOPD
 
     // not very clean
-    t_canvas* cnv = ((CanvasView*)parent)->pdObject();
+
+    // TODO
+    //t_canvas* cnv = ((CanvasView*)parent)->pdObject();
+    t_canvas *cnv = 0;
 
     if (OOPD::inst()->canvasIsPatch(cnv)) {
         //fix that
-        cmp_post("method in basic patch");
+        // TODO  //cmp_post("method in basic patch");
         //b->setErrorBox(true);
     }
 
@@ -109,15 +115,18 @@ UIObject* UIMethod::createObject(QString objectData, t_canvas* pdCanvas, QGraphi
     if (b->_opInstance) {
         qDebug("method in instance");
 
-        t_outlet* out1 = cmp_get_outlet((t_object*)b->pdObject(), 0);
-        if (out1)
-            b->_opInstance->addMethodOutlet(gensym(b->_methodName.c_str()), out1);
-        else
-            cmp_post("method pd object outlet error");
+        // TODO-PD_OBJECT
+//        t_outlet* out1 = cmp_get_outlet((t_object*)b->pdObject(), 0);
+//        if (out1)
+//            b->_opInstance->addMethodOutlet(gensym(b->_methodName.c_str()), out1);
+//        else
+//            // TODO
+            //cmp_post("method pd object outlet error");
     }
 
     connect(b, &UIMethod::updateUISignal, b, &UIMethod::updateUISlot);
 
     return (UIObject*)b;
 };
-}
+*/
+    }

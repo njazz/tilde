@@ -15,6 +15,15 @@
 #include "Preferences.h"
 
 #include "FileSaver.h"
+#include "UIObject.h"
+
+#include "CanvasView.h"
+
+// NEW
+#include "PatchWindowController.h"
+#include "ApplicationController.h"
+
+
 
 using namespace qtpd;
 
@@ -43,9 +52,7 @@ public Q_SLOTS:
 
     void pdMessage(UIObject* obj, QString data)
     {
-        if (obj->pdObject()) {
-            cmp_sendstring((t_pd*)obj->pdObject(), data.toStdString());
-        }
+        obj->serverObject()->message(data.toStdString());
     }
 
     // test
@@ -71,7 +78,7 @@ public Q_SLOTS:
 
     CanvasView* canvas(PatchWindow* w)
     {
-        return w->canvas;
+        return w->canvasView();
     }
 };
 
@@ -101,7 +108,7 @@ public Q_SLOTS:
 
     UIObject* createObject(CanvasView* c, QString obj_data, int x, int y)
     {
-        return c->CanvasView::createObject(obj_data, QPoint(x, y));
+        return  0;// TODO  c->CanvasView::createObject(obj_data, QPoint(x, y));
     }
 
     //todo templates
@@ -125,73 +132,80 @@ public Q_SLOTS:
 
     void selectObject(CanvasView* c, UIObject* obj)
     {
-        c->selectBox(obj);
+        //TODO
+        //c->selectBox(obj);
     }
 
-    void selectAll(CanvasView* c)
+    void selectAll(PatchWindowController* p)
     {
-        c->selectAll();
+        // TODO
+        //p->menuSelectAll();
     }
 
-    void deselectAll(CanvasView* c)
+    void deselectAll(CanvasData* d)
     {
-        c->canvasData()->deselectBoxes();
-        c->update();
+        d->deselectBoxes();
+        // TODO
+        //c->update();
     }
 
     void deleteObjectInCanvas(CanvasView* c, UIObject* obj)
     {
-        c->deleteObject(obj);
+        // TODO
+
+        //c->deleteObject(obj);
     }
 
     void patchcord(CanvasView* c, UIObject* obj1, int out1, UIObject* obj2, int in2)
     {
-        c->patchcord(obj1, out1, obj2, in2);
+        //c->patchcord(obj1, out1, obj2, in2);
+        //TODO
     }
 
     //////////
     // objects
 
     // TODO
-    objectVec objects(CanvasView* c)
+    objectVec* objects(CanvasData* c)
     {
-        return c->objectBoxes();
+        return c->boxes();
     }
 
-    objectVec selectedObjects(CanvasView* c)
+    objectVec* selectedObjects(CanvasData* c)
     {
-        return c->selectedObjectBoxes();
+        return c->selectedBoxes();
     }
 
     //////////
     // patchcords
 
-    patchcordVec patchcords(CanvasView* c)
+    patchcordVec* patchcords(CanvasData* c)
     {
         return c->patchcords();
     }
 
-    patchcordVec selectedPatchcords(CanvasView* c)
+    patchcordVec* selectedPatchcords(CanvasData* c)
     {
         return c->selectedPatchcords();
     }
 
     patchcordVec patchcordsFor(CanvasView* c, UIObject* obj)
     {
-        return c->patchcordsForObject(obj);
+        //return c->patchcordsForObject(obj);
     }
 
     void deletePatchcordsFor(CanvasView* c, UIObject* obj)
     {
-        c->deletePatchcordsFor(obj);
+        // TODO
+        //c->deletePatchcordsFor(obj);
     }
 
     //////////
     // file
 
-    QStringList pdPatch(CanvasView* c)
+    QStringList pdPatch(CanvasData* c)
     {
-        return c->canvasAsPdStrings();
+        return c->asPdFileStrings();
     }
 
     // test
@@ -203,11 +217,14 @@ public Q_SLOTS:
     // arrays: yet here
     void newArray(CanvasView* c, QString name, int size)
     {
-        if (c->pdObject()) {
-            t_canvas* pdCanvas = (t_canvas*)c->pdObject();
-            //yet this way:
-            cmp_new_array(pdCanvas, gensym(name.toStdString().c_str()), (t_floatarg)size, 1, 1);
-        }
+        // TODO
+        // c->canvasData()->serverCanvas()->createArray();
+
+//        if (c->pdObject()) {
+//            t_canvas* pdCanvas = (t_canvas*)c->pdObject();
+//            //yet this way:
+//            cmp_new_array(pdCanvas, gensym(name.toStdString().c_str()), (t_floatarg)size, 1, 1);
+//        }
     }
 };
 
@@ -276,12 +293,14 @@ public Q_SLOTS:
     void output(QString msg)
     {
         if (!_pdObject) {
-            cmp_post("Error: bad pd object");
+            /* TODO */ //cmp_post("Error: bad pd object");
             return;
         }
 
         std::string msg_ = "__output " + msg.toStdString();
-        cmp_sendstring((t_pd*)_pdObject, msg_);
+        // TODO
+
+        //cmp_sendstring((t_pd*)_pdObject, msg_);
     }
 
     QStringList input()
@@ -298,8 +317,10 @@ public Q_SLOTS:
 class pyQtpd : public QObject {
     Q_OBJECT
 
+    ApplicationController* _appController;
+
 public:
-    explicit pyQtpd(QObject* parent = 0){};
+    explicit pyQtpd(QObject* parent = 0, ApplicationController* ctl = 0){_appController = ctl;};
 
 public Q_SLOTS:
     PyObject* getMainModule()
@@ -309,11 +330,12 @@ public Q_SLOTS:
 
     //todo separate classes / decorators
 
-    PatchWindow* newPatchWindow()
+    PatchWindowController* newPatchWindow()
     {
-        PatchWindow* ret;
-        ret = PatchWindow::newWindow();
-        ret->show();
+        PatchWindowController* ret;
+        ret = new PatchWindowController(_appController);
+        ret->firstWindow()->show();
+        //ret->show();
         return ret;
     };
 
@@ -322,28 +344,30 @@ public Q_SLOTS:
 
     void startDsp()
     {
-        cmp_switch_dsp(true);
+        // TODO
+        //cmp_switch_dsp(true);
     }
 
     void stopDsp()
     {
-        cmp_switch_dsp(false);
+        //TODO
+        //cmp_switch_dsp(false);
     }
 
     QStringList getAudioAPIs()
     {
-        std::string apis = cmp_get_audio_apis();
+        std::string apis = "TODO"; // cmp_get_audio_apis();
         return QString(apis.c_str()).split(" ");
     }
 
     void post(QString msg)
     {
-        cmp_post(msg.toStdString());
+        /* TODO */ //cmp_post(msg.toStdString());
     }
 
     QStringList externals()
     {
-        AtomList list = cmp_get_loaded_list();
+        AtomList list; //TODO = cmp_get_loaded_list();
         QStringList ret;
 
         for (int i = 0; i < list.size(); i++) {
@@ -355,7 +379,8 @@ public Q_SLOTS:
 
     void loadLib(QString lib)
     {
-        cmp_loadlib(lib.toStdString());
+        //TODO
+        //cmp_loadlib(lib.toStdString());
     }
 
     //////////

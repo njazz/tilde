@@ -11,6 +11,8 @@ TARGET = qtpd
 
 TEMPLATE = lib
 
+CONFIG += staticÏ
+
 #win32:CONFIG += staticlib
 
 macx:CONFIG += staticlib
@@ -25,6 +27,7 @@ DEFINES += QT_DEPRECATED_WARNINGS \
     PD \
     HAVE_UNISTD_H \
     USEAPI_PORTAUDIO \
+    USEAPI_DUMMY \
     THREAD_LOCKING \
     HAVE_LIBDL
 }
@@ -35,7 +38,7 @@ DEFINES += QT_DEPRECATED_WARNINGS \
     PD \
     HAVE_UNISTD_H \
     USEAPI_PORTAUDIO \
-    THREAD_LOCKING \
+#    THREAD_LOCKING \
     HAVE_LIBDL
 }
 
@@ -101,6 +104,7 @@ SOURCES += \
 #    src/s_audio_mmio.c \
 #    src/s_audio_oss.c \
     src/s_audio_paring.c \
+#
     src/s_entry.c \
     src/s_file.c \
     src/s_inter.c \
@@ -170,10 +174,12 @@ SOURCES += \
 #
     ui_objects/ui_sliders.cpp \
     ui_objects/pdsignal.cpp \
-    ui_objects/ui_matrix.cpp
+    ui_objects/ui_matrix.cpp \
+#
+    serverAPIPrototype.cpp \
 
-macx:SOURCES += src/s_audio_pa.c
-unix:SOURCES += src/s_audio_pa.c
+ macx:SOURCES += src/s_audio_pa.c
+ unix:SOURCES += src/s_audio_pa.c
 
 HEADERS += \
     src/m_pd.h \
@@ -212,6 +218,7 @@ HEADERS += \
 #    ceammc-lib/ceammc_timeline.h \
 #    ceammc-lib/memrss.h \
 #    ceammc-lib/memsize.h \
+    pdlib_old.h
 
 
 INCLUDEPATH += src/ \

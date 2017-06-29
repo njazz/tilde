@@ -3,9 +3,9 @@
 
 #include "UITextEditor.h"
 
-namespace qtpd{
+namespace qtpd {
+
 UITextEditor::UITextEditor()
 {
-
 }
 }

@@ -49,7 +49,9 @@ namespace qtpd {
 /// \brief 'constructor' method for each ui object derived from UIObject
 /// \details todo: proper way for constructors in UI* objects
 ///
-typedef UIObject* (*cmObjectConstructor)(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent);
+//typedef UIObject* (*cmObjectConstructor)(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent);
+
+typedef UIObject* (*UIObjectConstructor)(QString objectData);//, ServerCanvas* serverCanvas, PatchWindowController* controller);
 
 ////
 /// \brief prototype for ui externals handling
@@ -67,7 +69,8 @@ private:
     std::vector<std::string> _names; ///> ui object names
     std::vector<std::string> _pdNames; ///> pd object names - for auto-completion
 
-    std::map<std::string, cmObjectConstructor> _objectConstructors;
+    //std::map<std::string, cmObjectConstructor> _objectConstructors;
+    std::map<std::string, UIObjectConstructor> _uiObjectConstructors;
 
     ObjectLoader()
     {
@@ -82,7 +85,7 @@ public:
     ///
     void loadObjects();
 
-    void addUIobject(std::string name, cmObjectConstructor constructor);
+    void addUIobject(std::string name, UIObjectConstructor constructor);
 
     std::vector<std::string> getUINames();
 
@@ -91,9 +94,11 @@ public:
     bool hasUI(std::string objName);
 
     // todo remove?
-    cmObjectConstructor getConstructorFor(QString objName);
+    //cmObjectConstructor getConstructorFor(QString objName);
+    UIObjectConstructor getUIConstructorFor(QString objName);
 
     UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView *parent);
+    UIObject* createUIObject(QString objectData);
 };
 }
 

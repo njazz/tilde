@@ -16,7 +16,7 @@ UIObject::UIObject(UIItem* parent)
 
     setParent(parent);
 
-    setPdObject(0);
+    //setPdObject(0);
 
     _inlets = new portItemVec;
     _outlets = new portItemVec;
@@ -39,12 +39,20 @@ UIObject::UIObject(UIItem* parent)
     _objectDataModel.setObjectSize(os_FixedHeight, 40, 20);
 
     setAcceptHoverEvents(true);
+
+    _parentCanvasView = 0;
+    //_subCanvasData = 0;
+
+    _observer = new ObjectObserver;
+    _observer->setObject(this);
 }
 
 //---------------------------------------
 
 void UIObject::resizeBox(int dx, int dy)
 {
+    QRect r = boundingRect().toRect();
+
     if (_objectDataModel.objectSizeMode() != os_Fixed)
         setWidth(boundingRect().width() + dx);
     if (_objectDataModel.objectSizeMode() == os_Free)
@@ -69,7 +77,7 @@ void UIObject::resizeBox(int dx, int dy)
 
     resizeEvent();
 
-    update();
+    scene()->update(r.left(), r.top(), r.width(), r.height());
 };
 
 void UIObject::initProperties()
@@ -203,12 +211,14 @@ void UIObject::setOutletsPos()
 
 void UIObject::addInlet()
 {
-    int _portClass_;
+    int _portClass_ = 0;
 
+    /*
     if (pdObject()) {
         _portClass_ = cmp_get_inlet_type((t_object*)pdObject(), _inlets->size());
     } else
         _portClass_ = 0;
+        */
 
     addInlet(_portClass_);
 }
@@ -223,8 +233,10 @@ void UIObject::addInlet(int _portClass_)
 
     _inlets->push_back(new_in);
 
-    connect(new_in, &Port::mousePressed, static_cast<CanvasView*>(_canvas), &CanvasView::s_InMousePressed);
-    connect(new_in, &Port::mouseReleased, static_cast<CanvasView*>(_canvas), &CanvasView::s_InMouseReleased);
+    if (_parentCanvasView) {
+        connect(new_in, &Port::mousePressed, (_parentCanvasView), &CanvasView::slotInletMousePress);
+        connect(new_in, &Port::mouseReleased, (_parentCanvasView), &CanvasView::slotInletMouseRelease);
+    }
 
     new_in->show();
 
@@ -233,12 +245,14 @@ void UIObject::addInlet(int _portClass_)
 
 void UIObject::addOutlet()
 {
-    int _portClass_;
+    int _portClass_ = 0;
 
+    /*
     if (pdObject()) {
         _portClass_ = cmp_get_outlet_type((t_object*)pdObject(), _outlets->size());
     } else
         _portClass_ = 0;
+        */
 
     addOutlet(_portClass_);
 }
@@ -253,8 +267,10 @@ void UIObject::addOutlet(int _portClass_)
 
     _outlets->push_back(new_out);
 
-    connect(new_out, &Port::mousePressed, static_cast<CanvasView*>(_canvas), &CanvasView::s_OutMousePressed);
-    connect(new_out, &Port::mouseReleased, static_cast<CanvasView*>(_canvas), &CanvasView::s_OutMouseReleased);
+    if (_parentCanvasView) {
+        connect(new_out, &Port::mousePressed, _parentCanvasView, &CanvasView::slotOutletMousePressed);
+        connect(new_out, &Port::mouseReleased, _parentCanvasView, &CanvasView::slotOutletMouseReleased);
+    }
 
     new_out->show();
 
@@ -279,10 +295,10 @@ Port* UIObject::outletAt(int idx)
 
 int UIObject::pdInletType(int idx)
 {
-    if ((t_object*)pdObject())
-        return cmp_get_inlet_type((t_object*)pdObject(), idx);
-    else
-        return 0;
+    //    if ((t_object*)pdObject())
+    //        return cmp_get_inlet_type((t_object*)pdObject(), idx);
+    //    else
+    return 0;
 }
 
 int UIObject::inletCount()
@@ -292,10 +308,10 @@ int UIObject::inletCount()
 
 int UIObject::pdOutletType(int idx)
 {
-    if ((t_object*)pdObject())
-        return cmp_get_outlet_type((t_object*)pdObject(), idx);
-    else
-        return 0;
+    //    if ((t_object*)pdObject())
+    //        return cmp_get_outlet_type((t_object*)pdObject(), idx);
+    //    else
+    return 0;
 }
 
 int UIObject::outletCount()
@@ -303,21 +319,102 @@ int UIObject::outletCount()
     return _outlets->size();
 }
 
-////////
+// ------------------------------
+
+void UIObject::mousePressEvent(QGraphicsSceneMouseEvent* event)
+{
+
+    QGraphicsItem::mousePressEvent(event);
+
+    QPoint pos = event->pos().toPoint();
+
+    //context menu
+    if (event->button() == Qt::RightButton) {
+
+        QPoint menuPos;
+
+        if (scene()
+            && !scene()->views().isEmpty()
+            && scene()->views().first()
+            && scene()->views().first()->viewport()) {
+
+            QGraphicsView* v = scene()->views().first();
+
+            menuPos = v->viewport()->mapToGlobal(pos);
+
+            // TODO
+            showPopupMenu(menuPos + this->pos().toPoint());
+            event->accept();
+        }
+
+        return;
+    }
+
+    //if (event->button() & Qt::LeftButton) {
+
+    //}
+
+    objectPressEvent(event);
+
+    if (event) {
+        event->accept();
+        emit selectBox(this, event);
+    }
+}
+
+void UIObject::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
+{
+
+    if (event->buttons() & Qt::LeftButton) {
+        emit moveBox(this, event);
+    }
+
+    objectMoveEvent(event);
+
+    QGraphicsObject::mouseMoveEvent(event);
+}
+
+void UIObject::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
+{
+    objectReleaseEvent(event);
+}
+
+// ---------------------------------
 
 void UIObject::setObjectData(QString objData)
 {
-    //_objectData = objData;
     _objectDataModel.setData(objData);
 }
+
+// ----------------------------
+
+void UIObject::sync()
+{
+    if (_serverObject->errorBox()) {
+        setErrorBox(true);
+        return;
+    }
+
+    int in_c = _serverObject->inletCount();
+    int out_c = _serverObject->outletCount();
+
+    //qDebug() << "i/o " << in_c << out_c;
+
+    for (int i = 0; i < in_c; i++)
+        addInlet();
+    for (int i = 0; i < out_c; i++)
+        addOutlet();
+};
 
 void UIObject::autoResize()
 {
     QFont myFont(PREF_QSTRING("Font"), 11);
     QFontMetrics fm(myFont);
 
-    setWidth((int)fm.width(_objectDataModel.objectData()) + 5);
-    if (boundingRect().width() < _objectDataModel.minimumBoxWidth())
+    int w = (int)fm.width(_objectDataModel.objectData()) + 10;
+    setWidth(w);
+
+    if (w < _objectDataModel.minimumBoxWidth())
         setWidth(_objectDataModel.minimumBoxWidth());
 }
 
@@ -326,8 +423,8 @@ QString UIObject::objectData()
     return _objectDataModel.objectData(); //_objectData;
 }
 
-void* UIObject::pdObject() { return _objectDataModel.pdObject(); }
-void UIObject::setPdObject(void* obj) { _objectDataModel.setPdObject(obj); }
+//void* UIObject::pdObject() { return _objectDataModel.pdObject(); }
+//void UIObject::setPdObject(void* obj) { _objectDataModel.setPdObject(obj); }
 
 bool UIObject::errorBox() { return _objectDataModel.errorBox(); }
 void UIObject::setErrorBox(bool val) { _objectDataModel.setErrorBox(val); }
@@ -346,15 +443,15 @@ std::string UIObject::asPdFileString()
     return ret;
 }
 
-QMainWindow* UIObject::subpatchWindow()
-{
-    return _SubpatchWindow;
-}
+//QMainWindow* UIObject::subpatchWindow()
+//{
+//    return _SubpatchWindow;
+//}
 
-void UIObject::setSubpatchWindow(QMainWindow* cwindow)
-{
-    _SubpatchWindow = cwindow;
-}
+//void UIObject::setSubpatchWindow(QMainWindow* cwindow)
+//{
+//    _SubpatchWindow = cwindow;
+//}
 
 void UIObject::setEditModeRef(t_editMode* canvasEditMode)
 {
@@ -446,12 +543,12 @@ int UIObject::minimumBoxHeight()
 void UIObject::hide()
 {
 
-    if (subpatchWindow()) {
-        qDebug("hide subcanvas window");
+//    if (subpatchWindow()) {
+//        qDebug("hide subcanvas window");
 
-        subpatchWindow()->hide();
-        delete _SubpatchWindow;
-    }
+//        subpatchWindow()->hide();
+//        delete _SubpatchWindow;
+//    }
 }
 
 void UIObject::hideSizeBox()
@@ -473,7 +570,9 @@ QString UIObject::fullHelpName()
 
     if (paths.size() == 0) {
         _objectDataModel.setFullHelpName("");
-        cmp_post("Help: bad search paths");
+
+        // TODO
+        //cmp_post("Help: bad search paths");
         return "";
     }
 
@@ -497,7 +596,9 @@ QString UIObject::fullHelpName()
     }
 
     QString p1 = "Help: not found: " + name;
-    cmp_post(p1.toStdString().c_str());
+
+    // TODO
+    //cmp_post(p1.toStdString().c_str());
 
     return name;
 }
@@ -538,4 +639,15 @@ void UIObject::propertyChanged(QString pname)
     if (pname == "BorderColor")
         update();
 }
+
+// ----------------
+
+void ObjectObserver::update()
+{
+    //qDebug() << "ui object observer update";
+
+    if (_object) {
+        _object->updateUI(data());
+    }
+};
 }

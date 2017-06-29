@@ -29,7 +29,7 @@ CONFIG(debug, debug|release) {
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-#CONFIG += static
+CONFIG += static
 
 win32: CONFIG -= WithPython
 macx: CONFIG += WithPython
@@ -119,6 +119,7 @@ SOURCES += main.cpp\
     widgets/UIArrayEditor.cpp \
 #
     datamodels/FileParser.cpp \
+    datamodels/CanvasData.cpp \
 #
     ObjectLoader.cpp \
     widgets/ObjectMaker.cpp \
@@ -154,10 +155,12 @@ SOURCES += main.cpp\
     objects/UIMatrix.cpp \
     objects/UISubCanvas.cpp \
     CanvasView.cpp \
-    serverAPIPrototype.cpp \
     controller/PatchWindowController.cpp \
     datamodels/FileSaver.cpp \
-    controller/ApplicationController.cpp
+    controller/ApplicationController.cpp \
+    ServerWorker.cpp
+#
+#    serverAPIPrototype.cpp \
 
 
 
@@ -194,7 +197,7 @@ HEADERS  += \
 #
     ObjectLoader.h \
     widgets/ObjectMaker.h \
-    PdLink.h \
+    #PdLink.h \
     _headers.h \
     properties/Preferences.h \
     properties/Property.h \
@@ -233,7 +236,8 @@ HEADERS  += \
     controller/ControllerObserver.h \
     graphicobjects/UIPatchcord.h \
     graphicobjects/UINewPatchcord.h \
-    CanvasView.h
+    CanvasView.h \
+    ServerWorker.h
 
 
 
@@ -249,18 +253,19 @@ FORMS    += \
 
 win32: {
     DEFINES += PD_INTERNAL WINVER=0x502
-    LIBS += $$OUT_PWD/../qtpd_lib/debug/libqtpd.a
+    #LIBS += $$OUT_PWD/../qtpd_lib/debug/libqtpd.a
 }
 
 macx: {
-    LIBS += -L"../qtpd_lib/" -lqtpd
     LIBS += -L"/usr/local/lib/" -lportaudio
+    LIBS += -L$$OUT_PWD/../../pd-server/src/qt-creator-project -lpd-server
     LIBS += -L$$OUT_PWD/../qtpd_ceammc_lib/ -lqtpd_ceammc_lib
 }
 
 unix: {
-    LIBS += -L"../qtpd_lib/" -lqtpd
+    #LIBS += -L"../qtpd_lib/" -lqtpd
     LIBS += -L"/usr/local/lib/" -lportaudio
+    LIBS += -L$$OUT_PWD/../../pd-server/src/qt-creator-project -lpd-server
     LIBS += -L$$OUT_PWD/../qtpd_ceammc_lib/ -lqtpd_ceammc_lib
 }
 
@@ -286,7 +291,8 @@ INCLUDEPATH += \
     properties/ \
     graphicobjects/ \
     datamodels/ \
-    controller/
+    controller/ \
+    ../../pd-server/src/
 
 
 

@@ -10,8 +10,6 @@
 
 #include "Preferences.h"
 
-#include "PdLink.h"
-
 #include <QMainWindow>
 #include <QMenu>
 #include <QObject>
@@ -21,12 +19,27 @@
 
 #include "UIObjectData.h"
 
+#include <pdServer.hpp>
+
 namespace qtpd {
 
 class CanvasView;
 class CanvasData;
 
 typedef std::vector<Port*> portItemVec;
+
+class UIObject;
+
+class PatchWindowController;
+
+class ObjectObserver : public Observer {
+private:
+    UIObject* _object;
+
+public:
+    void setObject(UIObject* o) { _object = o; }
+    virtual void update();
+};
 
 ////
 /// \brief base class for all object boxes - standard (UIBox) and special
@@ -41,29 +54,46 @@ private:
 
     SizeBox* _sizeBox;
 
-    QMainWindow* _SubpatchWindow;   // move to UIBox
+//    QMainWindow* _SubpatchWindow; // move to UIBox
 
-    QMenu _popupMenu;   //pointer
+    QMenu _popupMenu; //pointer
 
     QAction* pmProperties;
     QAction* pmHelp;
     QAction* pmOpen;
 
-    void* _canvas; ///> QGraphicsView
+    //void* _canvas; ///> QGraphicsView
 
     //new 0517
     CanvasView* _parentCanvasView;
-    CanvasData* _subCanvasData;
+    //CanvasData* _subCanvasData;
+
+    PatchWindowController* _parentController;
+
+    ServerObject* _serverObject;
+    //
+    ObjectObserver* _observer;
 
 protected:
     virtual void hoverEnterEvent(QGraphicsSceneHoverEvent*);
     virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent*);
 
 public:
+    explicit UIObject(UIItem* parent = 0);
 
     //new 0517
-    CanvasView* parentCanvasView(){return _parentCanvasView;};
-    CanvasData* subCanvasData(){return _subCanvasData;};
+    CanvasView* parentCanvasView() { return _parentCanvasView; };
+    void setParentCanvasView(CanvasView* v) { _parentCanvasView = v; }
+
+    PatchWindowController* parentController() {return _parentController;}
+
+    void setParentController(PatchWindowController* p){_parentController = p;}
+
+//    CanvasData* subCanvasData() { return _subCanvasData; };
+//    void setSubCanvasData(CanvasData* c) { _subCanvasData = c; }
+
+    //new 0617
+    ObjectObserver* observer() { return _observer; }
 
     //TODO
     bool disableObjectMaker;
@@ -74,12 +104,10 @@ public:
     // just a template, copy from here
     virtual void paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*){};
 
-    explicit UIObject(UIItem* parent = 0);
+    virtual void initProperties(); ///>init properties for the class - called from constructor
+    PropertyList* properties(); ///> UIObject properties
 
-    virtual void initProperties();  ///>init properties for the class - called from constructor
-    PropertyList* properties();     ///> UIObject properties
-
-    void createContextMenu();       ///> createContextMenu
+    void createContextMenu(); ///> createContextMenu
     void showPopupMenu(QPoint pos);
 
     virtual void autoResize(); ///> call this after setting object data
@@ -91,12 +119,6 @@ public:
 
     void hide(); // ??
     void hideSizeBox();
-
-    ////
-    /// \group prop Properties
-    /// @{
-    void setCanvas(void* canvas) { _canvas = canvas; }
-    void* canvas() { return _canvas; } //?
 
     SizeBox* sizeBox() { return _sizeBox; }
 
@@ -115,14 +137,11 @@ public:
     /// \details gui-only objects can ovverride it with function that returns 0
     /// \return
     ///
-    virtual void* pdObject();
 
-    ////
-    /// \brief sets pointer to pd object
-    /// \details overriden by ui objects to be able to connect to pd objects
-    /// \param obj
-    ///
-    virtual void setPdObject(void* obj);
+    virtual ServerObject* serverObject() { return _serverObject; };
+    virtual void setServerObject(ServerObject* o) { _serverObject = o; };
+
+    virtual void sync();
 
     ////
     /// \brief returns true if object doesn't exist
@@ -137,11 +156,13 @@ public:
     ///
     void setErrorBox(bool val);
 
-    ////
-    /// \brief temporary - remove later
-    /// \details nonzero pointer for different drawing
-    QMainWindow* subpatchWindow();
-    virtual void setSubpatchWindow(QMainWindow* cwindow);
+//    ////
+//    /// \brief temporary - remove later
+//    /// \details nonzero pointer for different drawing
+//    QMainWindow* subpatchWindow();
+//    virtual void setSubpatchWindow(QMainWindow* cwindow);
+
+
 
     ////
     /// \brief set short name for help patch (without path)
@@ -153,13 +174,7 @@ public:
     /// \return
     QString fullHelpName();
 
-    /** @}*/
-
     // -----------------------------------------------------------------
-
-    ////
-    /// \group iolets Inlets and outlets
-    /// @{
 
     ////
     /// \brief sets inlet position (cm_port)
@@ -230,9 +245,20 @@ public:
     /// \return
     int outletCount();
 
-    /** @}*/
+    // -----------------------------------------
 
-    static void updateUI(void* uiobj, ceammc::AtomList) {}
+    virtual void objectPressEvent(QGraphicsSceneMouseEvent *event){}
+    virtual void objectMoveEvent(QGraphicsSceneMouseEvent *event){}
+    virtual void objectReleaseEvent(QGraphicsSceneMouseEvent *event){}
+
+
+    virtual void mousePressEvent(QGraphicsSceneMouseEvent *event);
+    virtual void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
+    virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
+
+    // -----------------------------------------
+
+    virtual void updateUI(AtomList){};
 
 private slots:
     void openPropertiesWindow();
@@ -240,13 +266,15 @@ private slots:
 
     void propertySize(); ///> called when size property is changed
     void propertyFontSize();
-    void propertyUpdate();   ///> basic update - calls update() probably remove later
+    void propertyUpdate(); ///> basic update - calls update() probably remove later
 
 signals:
     void editObject(void* box);
     //// \brief this is needed for proper threading
     /// \details pd calls UIUpdate(...) -> it emits 's_repaint()' that is connected to 'callRepaint()'
     void callRepaint();
+
+    void sendMessage(ServerObject* obj, QString msg);
 
 public slots:
     void resizeBox(int dx, int dy);

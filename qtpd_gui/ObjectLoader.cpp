@@ -8,43 +8,47 @@ namespace qtpd {
 void ObjectLoader::loadObjects()
 {
     //temporary
-    addUIobject("ui.obj", &UIBox::createObject);
-    addUIobject("ui.msg", &UIMessage::createObject);
-    addUIobject("ui.float", &UIFloat::createObject);
-    addUIobject("ui.text", &UIText::createObject);
+    addUIobject("ui.obj", &UIBox::createObj);
+    addUIobject("ui.msg", &UIMessage::createObj);
+    addUIobject("ui.float", &UIFloat::createObj);
+    addUIobject("ui.text", &UIText::createObj);
 
-    addUIobject("ui.bang", &UIBang::createObject);
-    addUIobject("ui.toggle", &UIToggle::createObject);
+    addUIobject("ui.bang", &UIBang::createObj);
+    addUIobject("ui.toggle", &UIToggle::createObj);
 
-    addUIobject("ui.slider", &UISlider::createObject);
-    addUIobject("ui.matrix", &UIMatrix::createObject);
+    addUIobject("ui.slider", &UISlider::createObj);
+    addUIobject("ui.matrix", &UIMatrix::createObj);
 
-    addUIobject("ui.link", &UILink::createObject);
+    addUIobject("ui.link", &UILink::createObj);
 
-    #ifdef WITH_PYTHON
-    addUIobject("ui.script", &UIScript::createObject);
-    addUIobject("ui.scriptbox", &UIScriptBox::createObject);
-    addUIobject("py", &UIScriptBox::createObject);
-    #endif
+#ifdef WITH_PYTHON
+    addUIobject("ui.script", &UIScript::createObj);
+    addUIobject("ui.scriptbox", &UIScriptBox::createObj);
+    addUIobject("py", &UIScriptBox::createObj);
+#endif
 
-    addUIobject("ui.array", &UIArray::createObject);
+    addUIobject("ui.array", &UIArray::createObj);
 
-    addUIobject("pdclass", &UIClass::createObject);
-    addUIobject("pdinstance", &UIInstance::createObject);
-    addUIobject("method", &UIMethod::createObject);
-    addUIobject("property", &UIProperty::createObject);
-    addUIobject("pdsignal~", &UISignal::createObject);
+    /*
+    addUIobject("pdclass", &UIClass::createObject, &UIClass::createObj);
+    addUIobject("pdinstance", &UIInstance::createObject, &UIInstance::createObj);
+    addUIobject("method", &UIMethod::createObject, &UIMethod::createObj);
+    addUIobject("property", &UIProperty::createObject, &UIProperty::createObj);
+    addUIobject("pdsignal~", &UISignal::createObject, &UISignal::createObj);
+    */
 
-    addUIobject("ui.dsp", &UIDSP::createObject);
+    addUIobject("ui.dsp", &UIDSP::createObj);
 
-    addUIobject("pds", &UISubCanvas::createObject);
+    addUIobject("pds", &UISubCanvas::createObj);
 
+    // ---------------------------------------------
 }
 
-void ObjectLoader::addUIobject(std::string name, cmObjectConstructor constructor)
+void ObjectLoader::addUIobject(std::string name, UIObjectConstructor constructor)
 {
     _names.push_back(name);
-    _objectConstructors[name] = constructor;
+    //_objectConstructors[name] = constructor;
+    _uiObjectConstructors[name] = constructor;
 }
 
 std::vector<std::string> ObjectLoader::getUINames()
@@ -63,37 +67,68 @@ bool ObjectLoader::hasUI(std::string objName)
 }
 
 // todo remove?
-cmObjectConstructor ObjectLoader::getConstructorFor(QString objName)
+//cmObjectConstructor ObjectLoader::getConstructorFor(QString objName)
+//{
+//    // extra
+//    if (hasUI(objName.toStdString())) {
+//        return _objectConstructors[objName.toStdString()];
+//    }
+
+//    // now this is dummy
+//    return _objectConstructors["ui.obj"];
+//}
+
+UIObjectConstructor ObjectLoader::getUIConstructorFor(QString objName)
 {
     // extra
     if (hasUI(objName.toStdString())) {
-        return _objectConstructors[objName.toStdString()];
-    }
-
-    // now this is dummy
-    return _objectConstructors["ui.obj"];
+        return _uiObjectConstructors[objName.toStdString()];
+    } else
+        return _uiObjectConstructors["ui.obj"];
 }
 
-UIObject* ObjectLoader::createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent)
-{
+//UIObject* ObjectLoader::createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent)
+//{
 
+//    QString objectName = "";
+//    if (objectData != "")
+//        objectName = objectData.split(" ").at(0);
+
+//    if (hasUI(objectName.toStdString())) {
+
+//        //cmObjectConstructor cmc = getConstructorFor(objectName);
+
+//        //        if (cmc == getConstructorFor("ui.obj"))
+//        //            objectData = objName + " " + objectData;
+
+//        return cmc(objectData, pdCanvas, parent);
+//    } else {
+//        cmObjectConstructor cmc = getConstructorFor("ui.obj");
+//        objectData = "ui.obj " + objectData; //+ objectName + " "
+
+//        return cmc(objectData, pdCanvas, parent);
+//    }
+//}
+
+UIObject* ObjectLoader::createUIObject(QString objectData) //, ServerCanvas *canvas, PatchWindowController *controller)
+{
     QString objectName = "";
-    if (objectData != "")
+    if (objectData != "") {
+        objectData = objectData.split("@").at(0);
+
         objectName = objectData.split(" ").at(0);
+    }
 
     if (hasUI(objectName.toStdString())) {
 
-        cmObjectConstructor cmc = getConstructorFor(objectName);
+        UIObjectConstructor cmc = getUIConstructorFor(objectName);
 
-        //        if (cmc == getConstructorFor("ui.obj"))
-        //            objectData = objName + " " + objectData;
-
-        return cmc(objectData, pdCanvas, parent);
+        return cmc(objectData);
     } else {
-        cmObjectConstructor cmc = getConstructorFor("ui.obj");
-        objectData = "ui.obj " + objectData; //+ objectName + " "
+        UIObjectConstructor cmc = getUIConstructorFor("ui.obj");
+        objectData = "ui.obj " + objectData;
 
-        return cmc(objectData, pdCanvas, parent);
+        return cmc(objectData);
     }
 }
 }

@@ -47,6 +47,7 @@ static void uibang_anything(t_ui_bang* x, t_symbol* s, int argc, t_atom* argv)
 static void uibang_bang(t_ui_bang* x)
 {
     outlet_bang(x->out1);
+
     if (x->updateUI)
         x->updateUI(x->uiobj, AtomList(0.0f));
 }

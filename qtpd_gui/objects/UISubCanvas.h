@@ -10,9 +10,9 @@ namespace qtpd {
 class UISubCanvas : public UIObject {
 private:
     CanvasData* _canvasData;
-//    QGraphicsView _view;
-//    QGraphicsProxyWidget _viewProxy;
-//    QWidget _viewWidget;
+    //    QGraphicsView _view;
+    //    QGraphicsProxyWidget _viewProxy;
+    //    QWidget _viewWidget;
 
     bool _isAbstraction;
     QString _abstractionPath;
@@ -20,7 +20,21 @@ private:
 public:
     explicit UISubCanvas();
 
+    static UIObject* createObj(QString data)
+    {
+        UISubCanvas* ret = new UISubCanvas();
+
+//        QStringList l = data.split(" ");l.removeFirst();
+//        data = l.join(" ");
+
+        ret->setObjectData(data);
+
+        return ret;
+    }
+
     static UIObject* createObject(QString objectData, t_canvas* pd_Canvas, QGraphicsView* parent = 0)
+    {return 0;} /*
+
     {
         //TODO fix all constructors
 
@@ -28,7 +42,7 @@ public:
 
         UISubCanvas* b = new UISubCanvas(); //(UIObjectItem*)parent);
 
-        b->setCanvas((void*)parent);
+        //b->setCanvas((void*)parent);
 
         //truncate "ui.obj". todo cleanup
         QStringList list = QString(objectData).split(" ");
@@ -45,7 +59,7 @@ public:
         b->autoResize();
 
         //temp
-        b->setSize(400,300);
+        b->setSize(400, 300);
 
         t_object* new_obj = 0;
         int in_c = 0, out_c = 0;
@@ -65,7 +79,7 @@ public:
 
             qDebug("created object %s ins %i outs %i ptr %lu", obj_name, in_c, out_c, (long)new_obj);
 
-            b->setPdObject(new_obj);
+            //b->setPdObject(new_obj);
 
             b->_isAbstraction = cmp_is_abstraction(new_obj);
             //qDebug() << "*** is abstraction: " << b->_isAbstraction;
@@ -103,7 +117,7 @@ public:
 
         return (UIObject*)b;
     };
-
+*/
     void setCanvasData(CanvasData* data)
     {
         _canvasData = data;
@@ -117,10 +131,14 @@ public:
 
     void resizeEvent()
     {
-
     }
 
-
+//    virtual void setServerObject(ServerObject* o)
+//    {
+//        UIObject::setServerObject(o);
+//        if (o)
+//            o->connectUI(this, &UISubCanvas::updateUI);
+//    };
 };
 }
 #endif // UISUBCANVAS_H

@@ -58,7 +58,10 @@ public:
     //should be here for precompiled headers
     void set(QString string);
 
-    explicit Property(){};
+    explicit Property(){
+        _type = ptList; //?
+        _applyToPd = false;
+    };
 
     ////
     /// \brief copy current value to default value
@@ -200,7 +203,7 @@ public:
 
     QString asQString()
     {
-        QString ret = "";
+        QString ret;// = "";
 
         //temporary
         ret = QString(asStdString().c_str());

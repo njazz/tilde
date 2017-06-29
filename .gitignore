@@ -35,3 +35,7 @@ qtpd_gui/python/PyExampleObject.o
 qtpd_gui/python/examples/PythonQtDoc.h
 
 qtpd_gui/oopd/oop_common.h
+
+*.dylib
+
+API_prototype/API_prototype_bkup.zip

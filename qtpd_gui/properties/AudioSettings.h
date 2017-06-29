@@ -12,13 +12,14 @@
 
 #include <QDebug>
 
-#include "PdLink.h"
+//#include "PdLink.h"
+
+#include "Preferences.h"
 
 //#define cmp_font "Source Code Pro"
 
 #define AUDIOSETTINGS_QSTRING(x) qtpd::AudioSettings::inst().getQString(x)
 //#define PREF_INT(x) qtpd::AudioSettings::inst().getInt()
-
 #define QTPD_AUDIOSETTINGS_INIT qtpd::AudioSettings::inst().init()
 
 //move
@@ -62,10 +63,13 @@ public:
     {
 
         // TODO fix: these values are tcl {} lists
-        t_cmp_audio_info info = cmp_get_audio_device_info();
-        create("Driver", "Audio", QTPD_APP_VERSION, cmp_get_audio_apis());
-        create("Input", "Audio", QTPD_APP_VERSION, info.inputDeviceList);
-        create("Output", "Audio", QTPD_APP_VERSION, info.outputDeviceList);
+        // t_cmp_audio_info* info = cmp_get_audio_device_info();
+
+        // TODO
+        //create("Driver", "Audio", QTPD_APP_VERSION, cmp_get_audio_apis());
+
+        //create("Input", "Audio", QTPD_APP_VERSION, info->inputDeviceList);
+        //create("Output", "Audio", QTPD_APP_VERSION, info->outputDeviceList);
 
         create("BufferSize", "Settings", QTPD_APP_VERSION, 256);
         create("BlockSize", "Settings", QTPD_APP_VERSION, 64);

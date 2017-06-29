@@ -4,67 +4,194 @@
 #ifndef PATCHWINDOWCONTROLLER
 #define PATCHWINDOWCONTROLLER
 
-#include "CanvasData.h"
-#include "PatchWindow.h"
-
-#include "UIObject.h"
-#include "UIPatchcord.h"
-
 // TODO
-#include "../API_prototype/serverAPIprototype.h"
+#include <pdServer.hpp>
 
-//#include "ControllerObserver.h"
+#include <QObject>
+#include <QPoint>
+
+class QGraphicsScene;
+class QGraphicsSceneMouseEvent;
 
 namespace qtpd {
 
-//class CanvasData;
+class CanvasData;
+class PatchWindow;
+class UIObject;
+class UIPatchcord;
+class ApplicationController;
 
-class PatchWindowController {
+class UIItem;
+class PatchWindowController;
+
+class UIBox;
+
+// STUB
+//class ControllerObserver : public Observer
+//{
+//private:
+//    PatchWindowController* _patchController;
+//public:
+//    void setPatchController(PatchWindowController* c){_patchController = c;}
+//    virtual void update()
+//    {
+//        //something
+
+//    };
+//}
+
+class PatchWindowController : public QObject {
+    Q_OBJECT
+
+private:
+    ApplicationController* _appController;
 
     CanvasData* _canvasData;
-    QGraphicsScene* _scene;
     Observer* _observer; //ControllerObserver
-    ServerInstance* _serverInstance;
+
+    //ServerInstance* _serverInstance;
+    ServerCanvas* _serverCanvas;
 
     vector<PatchWindow*> _windows;
-    vector<QGraphicsScene*> _scenes;
+    QGraphicsScene* _scene;
+
+    // reserved
+    // vector<QGraphicsScene*> _scenes;
+
+    // temporary
+    void doSave(QString fileName);
+
+    void doCreateObject(UIObject* uiObject);
 
 public:
-    PatchWindowController(ServerInstance* instance); //replace with parent (appcontroller)
+    PatchWindowController(ApplicationController* appController); //replace with parent (appcontroller)
 
-    PatchWindowController* createSubpatchWindowController();
+    // for subpatches
+    PatchWindowController(ApplicationController* appController, ServerCanvas* canvas);
 
-    ServerInstance* instance();
+    //PatchWindowController* createSubpatchWindowController();
 
-    CanvasData* canvasData();
+    //new
+    UIBox* subpatchBox();
+    ServerObject* serverCanvasAsObject();
+
+    ServerInstance* serverInstance();
+
+    void setAppController(ApplicationController* a);
+    ApplicationController* appController(){return _appController;}
+
+    CanvasData* canvasData() { return _canvasData; };
 
     vector<PatchWindow*> windows();
-    vector<QGraphicsScene*> scenes();
+    PatchWindow* firstWindow();
+
+    // reserved
+    // vector<QGraphicsScene*> scenes();
 
     PatchWindow* newWindow();
 
-    void openFile(QString fileName);
+    //
+    // UNUSED
+    bool syncData(ServerObject* serverObject, UIObject* uiObject);
 
+    void openFile(QString fileName);
     void saveFile(QString fileName);
     void saveFileDialog();
 
     //
-    void createObjectMaker();
-    //
-    bool createObject(string name, QPoint pos);
+    UIObject* createObject(string name, QPoint pos);
+    void creatBoxForSubpatch(PatchWindowController* controller, QString data, QPoint pos);
 
-    bool connect(UIObject* src, int out, UIObject* dest, int in);
+    //
+    void patchcord(UIObject* src, int out, UIObject* dest, int in);
+
+    // ------------
+    void deleteSelectedObjects();
+
+    // TODO
+    void deleteSelectedPatchcords();
+    void deletePatchcordsFor(UIItem* obj);
     void deletePatchcordsForObject(UIObject* o);
     void deleteObject(UIObject* o);
-    //
-    bool syncData(ServerObject* serverObject, UIObject* uiObject);
-    //
     void deleteSelectedObjects(vector<UIObject*>);
     void deleteSelectedPatchcords(vector<UIPatchcord*>);
+
+    // ------------
+    void dataCut();
+    void dataCopy();
+    void dataDuplicate();
+    void dataPaste();
+    void dataSelectAllObjects();
+
     //
     void clickPort(); //?
     //
     void update(); // <<-- from observer
+    //
+    void updateViewports();
+
+    // =======================
+    void setFileName(QString fname);
+
+    // moved from canvas-view
+    void selectBox(UIItem* box);
+
+    void moveSelectedBoxes(QPoint eventPos);
+
+public slots:
+    void menuSave();
+    void menuSaveAs();
+
+    void menuCut()
+    {
+        dataCut();
+    };
+
+    void menuCopy()
+    {
+        dataCopy();
+    };
+
+    void menuPaste()
+    {
+        dataPaste();
+    };
+
+    void menuDuplicate()
+    {
+        dataDuplicate();
+    };
+
+    void menuDelete()
+    {
+        deleteSelectedObjects();
+        deleteSelectedPatchcords();
+    };
+
+    void menuSelectAll()
+    {
+        dataSelectAllObjects();
+    };
+
+    //
+    //    void signalSelectBox(UIItem* box, QGraphicsSceneMouseEvent* event);
+    //    void signalMoveBox(UIItem* box, QGraphicsSceneMouseEvent* event);
+
+private slots:
+    void slotSelectObject(UIObject* object);
+    void slotPatchcord(UIObject* src, int nOut, UIObject* dest, int nIn);
+
+    void slotMousePress(QPoint pos);
+    void slotMouseMove(QPoint pos);
+    void slotMouseRelease(QPoint pos);
+
+    void slotDeselectObjects();
+
+    void slotSelectionFrame(QPoint start, QPoint end);
+    void slotMoveSelectedBoxes(QPoint eventPos);
+
+signals:
+    ServerObject* signalCreateObject(ServerCanvas* canvas, string name);
 };
 }
 

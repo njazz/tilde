@@ -5,7 +5,6 @@
 #define CLIPBOARD_H
 
 #include <QObject>
-
 #include <QDebug>
 
 namespace qtpd{
@@ -65,12 +64,13 @@ public:
     // change to pointer?
     QString at(int idx)
     {
-        QString ret = "";
+        QString ret = QString("");
 
         if (idx < _data.size())
-            return _data[idx];
+            return QString(_data[idx]);
         else
             qDebug() << "clipboard: out of range";
+
         return ret;
     }
 

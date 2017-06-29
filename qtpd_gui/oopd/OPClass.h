@@ -51,6 +51,7 @@ public:
     {
         _canvas = 0;
         _symbol = gensym("");
+        _parent = 0;
     }
 
     // for canvas-based (change arguments?)

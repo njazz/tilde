@@ -11,6 +11,7 @@
 #include "Port.h"
 
 #include "UIObject.h"
+#include "UIBox.h"
 
 #include "OOPDHeaders.h"
 
@@ -21,7 +22,7 @@ namespace qtpd {
 ////
 /// \brief gui object: oopd class (pdclass)
 ///
-class UIClass : public UIObject {
+class UIClass : public UIBox {
 
     Q_OBJECT
 
@@ -40,6 +41,8 @@ public:
     };
 
     static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
+    {return 0;} /*
+
     {
         //TODO fix all constructors
         //t_canvas* pd_Canvas;
@@ -49,7 +52,7 @@ public:
             objectData = "pdclass";
 
         UIClass* b = new UIClass(); //(UIObject*)parent);
-        b->setCanvas((void*)parent);
+        //b->setCanvas((void*)parent);
 
         QStringList list = QString(objectData).split(" ");
 
@@ -96,7 +99,7 @@ public:
             in_c = cmp_get_inlet_count(new_obj);
             out_c = cmp_get_outlet_count(new_obj);
 
-            b->setPdObject(new_obj);
+            //b->setPdObject(new_obj);
 
             cmp_connectUI((t_pd*)new_obj, (void*)b, &UIClass::updateUI);
 
@@ -116,7 +119,7 @@ public:
 
         return (UIObject*)b;
     };
-
+*/
     ////
     /// \brief paint event
     ///
@@ -137,10 +140,10 @@ public:
         p->drawRect(0, 1, width(), height() - 2);
 
         //remove this later
-        if (subpatchWindow()) {
-            p->setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-            p->drawRect(0, 2, width(), height() - 4);
-        }
+//        if (subpatchWindow()) {
+//            p->setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+//            p->drawRect(0, 2, width(), height() - 4);
+//        }
 
         QColor rectColor = (errorBox()) ? QColor(255, 0, 0) : properties()->get("BorderColor")->asQColor(); //QColor(128, 128, 128);
         p->setPen(QPen(rectColor, 1, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
@@ -226,7 +229,7 @@ public:
         }
         event->ignore();
 
-        if ((getEditMode() != em_Unlocked) && (subpatchWindow())) {
+        if ((getEditMode() != em_Unlocked) && (subpatchController())) {
             setCursor(QCursor(Qt::PointingHandCursor));
         } else {
             setCursor(QCursor(Qt::ArrowCursor));
@@ -260,7 +263,8 @@ public:
             _opClass = new OPClass(msg.at(1).asString());
 
         } else {
-            cmp_post("cannot create new class - use empty 'pdclass' box for dynamic class creation");
+            // TODO
+            // cmp_post("cannot create new class - use empty 'pdclass' box for dynamic class creation");
         }
     }
 
@@ -312,9 +316,11 @@ public:
                 output += (l3.at(i).asString().c_str());
             }
 
-            cmp_post(output.join("\n").toStdString().c_str());
+            // TODO
+            // cmp_post(output.join("\n").toStdString().c_str());
         } else {
-            cmp_post("no class");
+            // TODO
+            //cmp_post("no class");
         }
     }
 

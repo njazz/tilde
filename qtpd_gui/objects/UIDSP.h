@@ -9,8 +9,6 @@
 #include "Port.h"
 #include "UIObject.h"
 
-#include "PdLink.h"
-
 #include <QGraphicsView>
 
 namespace qtpd {
@@ -61,17 +59,28 @@ public:
         _value = false;
     };
 
+    static UIObject* createObj(QString data)
+    {
+        UIDSP* ret = new UIDSP();
+
+        //        QStringList l = data.split(" ");l.removeFirst();
+        //        data = l.join(" ");
+
+        ret->setObjectData(data);
+
+        return ret;
+    }
     static UIObject* createObject(QString objectData, t_canvas*, QGraphicsView* parent = 0)
     {
         UIDSP* b = new UIDSP();
-        b->setCanvas((void*)parent);
+        //b->setCanvas((void*)parent);
 
         QString data1 = b->properties()->extractFromPdFileString(objectData);
         b->setObjectData("ui.dsp");
 
         qDebug() << "obj data" << QString(data1);
 
-        std::string message = "ui.dsp";
+        //std::string message = "ui.dsp";
 
         return (UIObject*)b;
     };
@@ -129,23 +138,7 @@ public:
 
     // ------------------------------------------------
 
-    void mousePressEvent(QGraphicsSceneMouseEvent* ev)
-    {
-
-        if (getEditMode() == em_Unlocked)
-            emit selectBox(this, ev);
-
-        dragOffset = ev->pos().toPoint();
-
-        if (getEditMode() != em_Unlocked) {
-
-            _value = !_value;
-
-            cmp_switch_dsp(_value);
-
-            update();
-        }
-    }
+    void mousePressEvent(QGraphicsSceneMouseEvent* ev);
 
     void mouseReleaseEvent(QGraphicsSceneMouseEvent*)
     {
@@ -177,11 +170,18 @@ public:
     //    {
     //    }
 
-    void setPdObject(void* obj)
-    {
-        UIObject::setPdObject(obj);
-        //cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIDSP::updateUI);
-    }
+    //    void setPdObject(void* obj)
+    //    {
+    //        UIObject::setPdObject(obj);
+    //        //cmp_connectUI((t_pd*)pdObject(), (void*)this, &UIDSP::updateUI);
+    //    }
+
+//    virtual void setServerObject(ServerObject* o)
+//    {
+//        UIObject::setServerObject(o);
+//        if (o)
+//            o->connectUI(this, &UIDSP::updateUI);
+//    };
 };
 }
 

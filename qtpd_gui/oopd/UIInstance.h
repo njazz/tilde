@@ -11,17 +11,21 @@
 #include "Port.h"
 
 #include "UIObject.h"
+#include "UIBox.h"
 
 #include "OOPDHeaders.h"
 
 #include <QGraphicsView>
+
+#include "PatchWindowController.h"
+#include "PatchWindow.h"
 
 namespace qtpd {
 
 ////
 /// \brief gui object: oopd instance (pdinstance)
 ///
-class UIInstance : public UIObject {
+class UIInstance : public UIBox {
 
     Q_OBJECT
 
@@ -40,6 +44,7 @@ public:
     //~UIInstance();
 
     static UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
+    {return 0;} /*
     {
         //TODO fix all constructors
         //t_canvas* pd_Canvas;
@@ -49,7 +54,7 @@ public:
             objectData = "pdclass";
 
         UIInstance* b = new UIInstance(); //(UIObject*)parent);
-        b->setCanvas((void*)parent);
+        //b->setCanvas((void*)parent);
 
         QStringList list = QString(objectData).split(" ");
 
@@ -74,14 +79,14 @@ public:
             qDebug("bad pd canvas instance");
             b->setErrorBox(true);
         } else {
-            new_obj = cmp_create_object(pdCanvas, "pdinstance", 0, 0);
+            //new_obj = cmp_create_object(pdCanvas, "pdinstance", 0, 0);
         }
 
         if (new_obj) {
-            in_c = cmp_get_inlet_count(new_obj);
+            //in_c = cmp_get_inlet_count(new_obj);
             out_c = cmp_get_outlet_count(new_obj);
 
-            b->setPdObject(new_obj);
+            //b->setPdObject(new_obj);
 
             cmp_connectUI((t_pd*)new_obj, (void*)b, &UIInstance::updateUI);
 
@@ -111,6 +116,7 @@ public:
 
         return (UIObject*)b;
     };
+    */
 
     ////
     /// \brief paint event
@@ -133,10 +139,10 @@ public:
         p->drawRect(0, 1, width(), height() - 2);
 
         //remove this later
-        if (subpatchWindow()) {
-            p->setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-            p->drawRect(0, 2, width(), height() - 4);
-        }
+//        if (subpatchWindow()) {
+//            p->setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+//            p->drawRect(0, 2, width(), height() - 4);
+//        }
 
         QColor rectColor = (errorBox()) ? QColor(255, 0, 0) : properties()->get("BorderColor")->asQColor(); //QColor(128, 128, 128);
         p->setPen(QPen(rectColor, 1, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
@@ -212,8 +218,8 @@ public:
 
         //open canvas for subpatch
         if (getEditMode() != em_Unlocked) {
-            if (subpatchWindow()) {
-                subpatchWindow()->show();
+            if (subpatchController()) {
+                subpatchController()->firstWindow()->show();
             }
         }
 
@@ -254,7 +260,7 @@ public:
         }
         event->ignore();
 
-        if ((getEditMode() != em_Unlocked) && (subpatchWindow())) {
+        if ((getEditMode() != em_Unlocked) && (subpatchController())) {
             setCursor(QCursor(Qt::PointingHandCursor));
         } else {
             setCursor(QCursor(Qt::ArrowCursor));
@@ -289,22 +295,24 @@ public:
         _opClass = OOPD::inst()->classByName(msg.at(1).asString());
 
         if (!_opClass) {
-            cmp_post("class not found: ");
-            cmp_post(msg.at(1).asString());
+            // TODO
+            ///* TODO */ //cmp_post("class not found: ");
+            /* TODO */ //cmp_post(msg.at(1).asString());
             return;
         }
 
         _opInstance = new OPInstance(_opClass);
-        cmp_post("new instance");
+        /* TODO */ //cmp_post("new instance");
 
-        if (pdObject()) {
-            _out1 = cmp_get_outlet((t_object*)pdObject(), 0);
+        // TODO-PD_OBJECT
+//        if (pdObject()) {
+//            _out1 = cmp_get_outlet((t_object*)pdObject(), 0);
 
-            if (_out1)
-                _opInstance->addInstanceOut(_out1);
-            else
-                cmp_post("instance pd object outlet error");
-        }
+//            if (_out1)
+//                _opInstance->addInstanceOut(_out1);
+//            else
+//                /* TODO */ //cmp_post("instance pd object outlet error");
+//        }
 
         //cmp_get_inlet/outlet
         _opInstance->addInstanceOut(0);
@@ -325,14 +333,15 @@ public:
     {
 
         if (_opInstance) {
-            if (pdObject()) {
-                t_outlet* out1 = cmp_get_outlet((t_object*)pdObject(), 0);
-                if (out1)
+            // TODO-PD_OBJECT
+//            if (pdObject()) {
+//                t_outlet* out1 = cmp_get_outlet((t_object*)pdObject(), 0);
+//                if (out1)
 
-                    _opInstance->freeInstanceOut(out1);
-                else
-                    cmp_post("instance pd object outlet error");
-            }
+//                    _opInstance->freeInstanceOut(out1);
+//                else
+//                    /* TODO */ //cmp_post("instance pd object outlet error");
+//            }
 
             _opInstance->freeInstanceOut(0);
             //delete _opInstance;
@@ -340,15 +349,15 @@ public:
         }
 
         _opInstance = 0;
-        cmp_post("free instance");
+        /* TODO */ //cmp_post("free instance");
     }
 
     void msgSetObject(AtomList msg)
     {
-        cmp_post("pdobject");
+        /* TODO */ //cmp_post("pdobject");
 
         if (msg.size() < 2) {
-            cmp_post("setobject: needs pdobject pointer");
+            /* TODO */ //cmp_post("setobject: needs pdobject pointer");
             return;
         }
 
@@ -376,7 +385,7 @@ public:
             list1.output(_out1);
 
         } else {
-            cmp_post("instance outlet error!");
+            /* TODO */ //cmp_post("instance outlet error!");
         }
     }
 
@@ -408,17 +417,19 @@ public:
 
                 // inlets and outlets
                 for (size_t i = 0; i < _opClass->getPropertyList().size(); i++) {
-                    cmp_sendstring((t_pd*)pdObject(), "__newin");
-                    cmp_sendstring((t_pd*)pdObject(), "__newout");
-                    addInlet();
-                    addOutlet();
+                    // TODO-PD_OBJECT
+//                    cmp_sendstring((t_pd*)pdObject(), "__newin");
+//                    cmp_sendstring((t_pd*)pdObject(), "__newout");
+//                    addInlet();
+//                    addOutlet();
                 }
 
                 for (size_t i = 0; i < _opClass->getMethodList().size(); i++) {
-                    cmp_sendstring((t_pd*)pdObject(), "__newin");
-                    cmp_sendstring((t_pd*)pdObject(), "__newout");
-                    addInlet();
-                    addOutlet();
+                    // TODO-PD_OBJECT
+//                    cmp_sendstring((t_pd*)pdObject(), "__newin");
+//                    cmp_sendstring((t_pd*)pdObject(), "__newout");
+//                    addInlet();
+//                    addOutlet();
                 }
 
                 _hasType = true;
@@ -430,8 +441,8 @@ public:
                 _className = msg.at(1).asString().c_str();
 
             } else {
-                cmp_post("class not found!");
-                cmp_post(msg.at(1).asString().c_str());
+                /* TODO */ //cmp_post("class not found!");
+                /* TODO */ //cmp_post(msg.at(1).asString().c_str());
                 setHeight(20);
             }
 
@@ -498,7 +509,7 @@ public:
                     //                    if (x->_out1) {
                     //                        list.output(x->_out1);
                     //                    } else {
-                    //                        cmp_post("bad pdobject outlet pointer");
+                    //                        /* TODO */ //cmp_post("bad pdobject outlet pointer");
                     //}
                 }
             } else {
