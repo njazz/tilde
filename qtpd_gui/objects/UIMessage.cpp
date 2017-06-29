@@ -111,25 +111,8 @@ void UIMessage::resizeEvent()
 
 // ------------------------------------------------------
 
-void UIMessage::mousePressEvent(QGraphicsSceneMouseEvent* ev)
+void UIMessage::objectPressEvent(QGraphicsSceneMouseEvent* ev)
 {
-    //context menu
-    if (ev->button() == Qt::RightButton) {
-        if (scene()
-            && !scene()->views().isEmpty()
-            && scene()->views().first()
-            && scene()->views().first()->viewport()) {
-
-            QGraphicsView* v = scene()->views().first();
-            QPoint pos = v->viewport()->mapToGlobal(ev->pos().toPoint());
-
-            // TODO
-            showPopupMenu(pos + this->pos().toPoint());
-            ev->accept();
-        }
-
-        return;
-    }
 
     if ((getEditMode() == em_Unlocked) && isSelected()) {
         _editor->setText(QString(_objectDataModel.objectData()));
@@ -138,9 +121,6 @@ void UIMessage::mousePressEvent(QGraphicsSceneMouseEvent* ev)
         ev->accept();
         return;
     }
-
-    emit selectBox(this, ev);
-    dragOffset = ev->pos().toPoint();
 
     if (!(getEditMode() == em_Unlocked)) {
         _clicked = true;
@@ -155,50 +135,53 @@ void UIMessage::mousePressEvent(QGraphicsSceneMouseEvent* ev)
             qDebug("msg: bad pd object!");
         } else {
 
-            //cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
-            //serverObject()->message("bang");
-
             emit sendMessage(this->serverObject(), QString("bang"));
         }
     }
 }
 
-void UIMessage::mouseReleaseEvent(QGraphicsSceneMouseEvent*)
+//void UIMessage::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
+//{
+//    if (event->buttons() & Qt::LeftButton) {
+//        emit moveBox(this, event);
+//    }
+//    event->ignore();
+
+//    //todo move!
+//    if (getEditMode() != em_Unlocked) {
+//        setCursor(QCursor(Qt::PointingHandCursor));
+//    } else {
+//        setCursor(QCursor(Qt::ArrowCursor));
+//    }
+//}
+
+void UIMessage::objectReleaseEvent(QGraphicsSceneMouseEvent*)
 {
     //if (!getEditMode())
-    {
-        _clicked = false;
-        update();
-    }
-}
-
-void UIMessage::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
-{
-    if (event->buttons() & Qt::LeftButton) {
-        emit moveBox(this, event);
-    }
-    event->ignore();
-
-    //todo move!
-    if (getEditMode() != em_Unlocked) {
-        setCursor(QCursor(Qt::PointingHandCursor));
-    } else {
-        setCursor(QCursor(Qt::ArrowCursor));
-    }
+    _clicked = false;
+    update();
 }
 
 // ------------------------------------
+
+void UIMessage::setObjectData(QString objData)
+{
+    // TODO fix!
+    if (objData == "ui.msg") objData = "";
+
+    _objectDataModel.setData(objData);
+}
 
 void UIMessage::setPdMessage(QString message)
 {
     setObjectData(message);
     autoResize();
 
-    QFont myFont(PREF_QSTRING("Font"), 11);
-    QFontMetrics fm(myFont);
-    int new_w = fm.width(QString(_objectDataModel.objectData())) + 10;
-    new_w = (new_w < 25) ? 25 : new_w;
-    setWidth(new_w);
+//    QFont myFont(PREF_QSTRING("Font"), 11);
+//    QFontMetrics fm(myFont);
+//    int new_w = fm.width(QString(_objectDataModel.objectData())) + 10;
+//    new_w = (new_w < 25) ? 25 : new_w;
+//    setWidth(new_w);
 
     //temporary
     //move
@@ -247,7 +230,7 @@ std::string UIMessage::asPdFileString()
     std::string ret;
 
     ret = "#X obj ";
-    ret += std::to_string(x()) + " " + std::to_string(y()) + " ";
+    ret += std::to_string(int(x())) + " " + std::to_string(int(y())) + " ";
     ret += "ui.msg ";
     ret += ((objectData() == "") ? ((std::string) "") : (_objectDataModel.objectData().toStdString() + " ")) + properties()->asPdFileString();
 

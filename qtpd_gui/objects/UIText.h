@@ -86,7 +86,7 @@ public:
 
     ///////////////////
 
-    void mousePressEvent(QGraphicsSceneMouseEvent* ev)
+    void objectPressEvent(QGraphicsSceneMouseEvent* ev)
     {
 
         if ((getEditMode() == em_Unlocked) && isSelected()) {
@@ -98,37 +98,37 @@ public:
             return;
         }
 
-        emit selectBox(this, ev);
-        dragOffset = ev->pos().toPoint();
+//        emit selectBox(this, ev);
+//        dragOffset = ev->pos().toPoint();
 
-        if (!(getEditMode() == em_Unlocked)) {
-            _clicked = true;
-            update();
+//        if (!(getEditMode() == em_Unlocked)) {
+//            _clicked = true;
+//            update();
 
-            //todo timer
-        }
+//            //todo timer
+//        }
     }
 
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent*)
-    {
-        _clicked = false;
-        update();
-    }
+//    void mouseReleaseEvent(QGraphicsSceneMouseEvent*)
+//    {
+//        _clicked = false;
+//        update();
+//    }
 
-    void mouseMoveEvent(QGraphicsSceneMouseEvent* event)
-    {
-        if (event->buttons() & Qt::LeftButton) {
-            emit moveBox(this, event);
-        }
-        event->ignore();
+//    void mouseMoveEvent(QGraphicsSceneMouseEvent* event)
+//    {
+//        if (event->buttons() & Qt::LeftButton) {
+//            emit moveBox(this, event);
+//        }
+//        event->ignore();
 
-        //todo move!
-        if (getEditMode() != em_Unlocked) {
-            setCursor(QCursor(Qt::PointingHandCursor));
-        } else {
-            setCursor(QCursor(Qt::ArrowCursor));
-        }
-    }
+//        //todo move!
+//        if (getEditMode() != em_Unlocked) {
+//            setCursor(QCursor(Qt::PointingHandCursor));
+//        } else {
+//            setCursor(QCursor(Qt::ArrowCursor));
+//        }
+//    }
 
     void autoResize()
     {

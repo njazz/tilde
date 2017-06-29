@@ -43,18 +43,18 @@ public:
     /// \brief mouse down
     /// \param ev
     ///
-    void mousePressEvent(QGraphicsSceneMouseEvent* ev);
-
-    ////
-    /// \brief mouse up
-    ///
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev);
+    void objectPressEvent(QGraphicsSceneMouseEvent* event);
 
     ////
     /// \brief mouse move
     /// \param event
     ///
-    void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
+    void objectMoveEvent(QGraphicsSceneMouseEvent* event);
+
+    ////
+    /// \brief mouse up
+    ///
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev);
 
     void setPdMessage(QString message);
 

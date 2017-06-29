@@ -27,32 +27,8 @@ UIBox::UIBox()
 /// \brief mouse down
 /// \param ev
 ///
-void UIBox::mousePressEvent(QGraphicsSceneMouseEvent* ev)
+void UIBox::objectPressEvent(QGraphicsSceneMouseEvent* event)
 {
-    qDebug("click");
-    QGraphicsItem::mousePressEvent(ev);
-
-    //context menu
-    //TODO MOVE
-    if (ev->button() == Qt::RightButton) {
-
-        QPoint pos;
-
-        if (scene()
-            && !scene()->views().isEmpty()
-            && scene()->views().first()
-            && scene()->views().first()->viewport()) {
-
-            QGraphicsView* v = scene()->views().first();
-            pos = v->viewport()->mapToGlobal(ev->pos().toPoint());
-
-            // TODO
-            showPopupMenu(pos + this->pos().toPoint());
-            ev->accept();
-        }
-
-        return;
-    }
 
     //open canvas for subpatch
     if (getEditMode() != em_Unlocked) {
@@ -69,18 +45,18 @@ void UIBox::mousePressEvent(QGraphicsSceneMouseEvent* ev)
         }
     }
 
-    //        if ((getEditMode() == em_Unlocked) && isSelected()) {
-    //            //ev->accept();
-    //            //emit editObject(this);
-    //            //            qDebug("edit box");
-    //            return;
-    //        }
+    if ((getEditMode() == em_Unlocked) && isSelected()) {
+        //ev->accept();
+        //emit editObject(this);
+        //            qDebug("edit box");
+        return;
+    }
 
-    emit selectBox(this, ev);
 
-    dragOffset = QPoint(ev->pos().x(), ev->pos().y());
 
-    ev->accept();
+    dragOffset = QPoint(event->pos().x(), event->pos().y());
+
+    event->accept();
 }
 
 // -------------------
@@ -151,14 +127,8 @@ void UIBox::mouseReleaseEvent(QGraphicsSceneMouseEvent* ev)
 /// \brief mouse move
 /// \param event
 ///
-void UIBox::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
+void UIBox::objectMoveEvent(QGraphicsSceneMouseEvent* event)
 {
-    //qDebug("box move");
-
-    if (event->buttons() & Qt::LeftButton) {
-        emit moveBox(this, event);
-    }
-    //event->ignore();
 
     if ((getEditMode() != em_Unlocked) && (subpatchWindow())) {
         setCursor(QCursor(Qt::PointingHandCursor));
@@ -166,7 +136,7 @@ void UIBox::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
         setCursor(QCursor(Qt::ArrowCursor));
     }
 
-    QGraphicsItem::mouseMoveEvent(event);
+
 }
 
 void UIBox::setPdMessage(QString message)

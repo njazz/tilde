@@ -51,6 +51,8 @@ UIObject::UIObject(UIItem* parent)
 
 void UIObject::resizeBox(int dx, int dy)
 {
+    QRect r = boundingRect().toRect();
+
     if (_objectDataModel.objectSizeMode() != os_Fixed)
         setWidth(boundingRect().width() + dx);
     if (_objectDataModel.objectSizeMode() == os_Free)
@@ -75,7 +77,7 @@ void UIObject::resizeBox(int dx, int dy)
 
     resizeEvent();
 
-    update();
+    scene()->update(r.left(), r.top(), r.width(), r.height());
 };
 
 void UIObject::initProperties()
@@ -233,7 +235,7 @@ void UIObject::addInlet(int _portClass_)
 
     if (_parentCanvasView) {
         connect(new_in, &Port::mousePressed, (_parentCanvasView), &CanvasView::slotInletMousePress);
-        connect(new_in, &Port::mouseReleased,(_parentCanvasView), &CanvasView::slotInletMouseRelease);
+        connect(new_in, &Port::mouseReleased, (_parentCanvasView), &CanvasView::slotInletMouseRelease);
     }
 
     new_in->show();
@@ -293,10 +295,10 @@ Port* UIObject::outletAt(int idx)
 
 int UIObject::pdInletType(int idx)
 {
-//    if ((t_object*)pdObject())
-//        return cmp_get_inlet_type((t_object*)pdObject(), idx);
-//    else
-        return 0;
+    //    if ((t_object*)pdObject())
+    //        return cmp_get_inlet_type((t_object*)pdObject(), idx);
+    //    else
+    return 0;
 }
 
 int UIObject::inletCount()
@@ -306,10 +308,10 @@ int UIObject::inletCount()
 
 int UIObject::pdOutletType(int idx)
 {
-//    if ((t_object*)pdObject())
-//        return cmp_get_outlet_type((t_object*)pdObject(), idx);
-//    else
-        return 0;
+    //    if ((t_object*)pdObject())
+    //        return cmp_get_outlet_type((t_object*)pdObject(), idx);
+    //    else
+    return 0;
 }
 
 int UIObject::outletCount()
@@ -317,11 +319,70 @@ int UIObject::outletCount()
     return _outlets->size();
 }
 
-////////
+// ------------------------------
+
+void UIObject::mousePressEvent(QGraphicsSceneMouseEvent* event)
+{
+
+    QGraphicsItem::mousePressEvent(event);
+
+    QPoint pos = event->pos().toPoint();
+
+    //context menu
+    if (event->button() == Qt::RightButton) {
+
+        QPoint menuPos;
+
+        if (scene()
+            && !scene()->views().isEmpty()
+            && scene()->views().first()
+            && scene()->views().first()->viewport()) {
+
+            QGraphicsView* v = scene()->views().first();
+
+            menuPos = v->viewport()->mapToGlobal(pos);
+
+            // TODO
+            showPopupMenu(menuPos + this->pos().toPoint());
+            event->accept();
+        }
+
+        return;
+    }
+
+    //if (event->button() & Qt::LeftButton) {
+
+    //}
+
+    objectPressEvent(event);
+
+    if (event) {
+        event->accept();
+        emit selectBox(this, event);
+    }
+}
+
+void UIObject::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
+{
+
+    if (event->buttons() & Qt::LeftButton) {
+        emit moveBox(this, event);
+    }
+
+    objectMoveEvent(event);
+
+    QGraphicsObject::mouseMoveEvent(event);
+}
+
+void UIObject::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
+{
+    objectReleaseEvent(event);
+}
+
+// ---------------------------------
 
 void UIObject::setObjectData(QString objData)
 {
-    //_objectData = objData;
     _objectDataModel.setData(objData);
 }
 
@@ -579,7 +640,6 @@ void UIObject::propertyChanged(QString pname)
         update();
 }
 
-
 // ----------------
 
 void ObjectObserver::update()
@@ -590,5 +650,4 @@ void ObjectObserver::update()
         _object->updateUI(data());
     }
 };
-
 }

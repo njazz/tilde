@@ -240,6 +240,19 @@ public:
     /// \return
     int outletCount();
 
+    // -----------------------------------------
+
+    virtual void objectPressEvent(QGraphicsSceneMouseEvent *event){}
+    virtual void objectMoveEvent(QGraphicsSceneMouseEvent *event){}
+    virtual void objectReleaseEvent(QGraphicsSceneMouseEvent *event){}
+
+
+    virtual void mousePressEvent(QGraphicsSceneMouseEvent *event);
+    virtual void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
+    virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
+
+    // -----------------------------------------
+
     virtual void updateUI(AtomList){};
 
 private slots:

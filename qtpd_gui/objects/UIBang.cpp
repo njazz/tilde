@@ -80,54 +80,43 @@ void UIBang::resizeEvent()
 
 // -------------------
 
-void UIBang::mousePressEvent(QGraphicsSceneMouseEvent* ev)
+void UIBang::objectPressEvent(QGraphicsSceneMouseEvent* ev)
 {
 
-    emit selectBox(this, ev);
 
-    dragOffset = ev->pos().toPoint();
 
-    if (!(getEditMode() == em_Unlocked)) {
-        _clicked = true;
-        update();
-
-        timerStart();
-    }
-
-    //qDebug() << "err";
 
     //move ?
     if (getEditMode() != em_Unlocked) {
         if (!serverObject()) {
             qDebug("msg: bad pd object!");
         } else {
-            //cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
 
             emit signalBang();
         }
     }
 
-    //emit signalBang();
+
 }
 
-void UIBang::mouseReleaseEvent(QGraphicsSceneMouseEvent*)
-{
-}
+//void UIBang::mouseReleaseEvent(QGraphicsSceneMouseEvent*)
+//{
+//}
 
-void UIBang::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
-{
-    if (event->buttons() & Qt::LeftButton) {
-        emit moveBox(this, event);
-    }
-    event->ignore();
+//void UIBang::objectMoveEvent(QGraphicsSceneMouseEvent* event)
+//{
+//    if (event->buttons() & Qt::LeftButton) {
+//        emit moveBox(this, event);
+//    }
+//    event->ignore();
 
-    //todo move!
-    if (getEditMode() != em_Unlocked) {
-        setCursor(QCursor(Qt::PointingHandCursor));
-    } else {
-        setCursor(QCursor(Qt::ArrowCursor));
-    }
-}
+//    //todo move!
+//    if (getEditMode() != em_Unlocked) {
+//        setCursor(QCursor(Qt::PointingHandCursor));
+//    } else {
+//        setCursor(QCursor(Qt::ArrowCursor));
+//    }
+//}
 
 // -------------------------
 

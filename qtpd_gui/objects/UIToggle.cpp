@@ -74,7 +74,7 @@ void UIToggle::resizeEvent()
 
 // ---------------------------------------------------------------
 
-void UIToggle::mousePressEvent(QGraphicsSceneMouseEvent* ev)
+void UIToggle::objectPressEvent(QGraphicsSceneMouseEvent* ev)
 {
 
     if (getEditMode() == em_Unlocked)
@@ -103,22 +103,22 @@ void UIToggle::mousePressEvent(QGraphicsSceneMouseEvent* ev)
     }
 }
 
-void UIToggle::mouseReleaseEvent(QGraphicsSceneMouseEvent*) {}
 
-void UIToggle::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
-{
-    if (event->buttons() & Qt::LeftButton) {
-        emit moveBox(this, event);
-    }
-    event->ignore();
 
-    //todo move!
-    if (getEditMode() != em_Unlocked) {
-        setCursor(QCursor(Qt::PointingHandCursor));
-    } else {
-        setCursor(QCursor(Qt::ArrowCursor));
-    }
-}
+//void UIToggle::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
+//{
+//    if (event->buttons() & Qt::LeftButton) {
+//        emit moveBox(this, event);
+//    }
+//    event->ignore();
+
+//    //todo move!
+//    if (getEditMode() != em_Unlocked) {
+//        setCursor(QCursor(Qt::PointingHandCursor));
+//    } else {
+//        setCursor(QCursor(Qt::ArrowCursor));
+//    }
+//}
 
 ///////
 

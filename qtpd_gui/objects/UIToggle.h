@@ -36,9 +36,8 @@ public:
 
     // ---------------------------------------------------------------
 
-    void mousePressEvent(QGraphicsSceneMouseEvent* ev);
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent*);
-    void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
+    void objectPressEvent(QGraphicsSceneMouseEvent* ev);
+//    void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
 
     ///////
 

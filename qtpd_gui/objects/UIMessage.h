@@ -36,15 +36,20 @@ public:
 
     // ------------------------------------------------------
 
-    void mousePressEvent(QGraphicsSceneMouseEvent* ev);
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent*);
-    void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
+    void objectPressEvent(QGraphicsSceneMouseEvent* ev);
+
+    //void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
+
+    void objectReleaseEvent(QGraphicsSceneMouseEvent*);
 
     // ------------------------------------
 
+    void setObjectData(QString objData);
+
     void setPdMessage(QString message);
+
     void updateUI(AtomList list);
-    std::string asPdFileString();
+    virtual std::string asPdFileString();
 
 private slots:
     void editorDone();
