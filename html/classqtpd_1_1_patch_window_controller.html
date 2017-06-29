@@ -131,6 +131,8 @@ Signals</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a1c0b6eb75a8b9fe9e4577988157eca6c">PatchWindowController</a> (<a class="el" href="classqtpd_1_1_application_controller.html">ApplicationController</a> *<a class="el" href="classqtpd_1_1_patch_window_controller.html#a9237b0907517ffc20174bac47c183683">appController</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a0cebee247505a763369632d3aa5b1f07">PatchWindowController</a> (<a class="el" href="classqtpd_1_1_application_controller.html">ApplicationController</a> *<a class="el" href="classqtpd_1_1_patch_window_controller.html#a9237b0907517ffc20174bac47c183683">appController</a>, ServerCanvas *canvas)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_u_i_box.html">UIBox</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#ad121b460f4c764154e32e64adad17538">subpatchBox</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ServerObject *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#af6671576d39d08f049fd213ae1c2e3bd">serverCanvasAsObject</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">ServerInstance *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a15718557f555321944594afb6b2a7ef1">serverInstance</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#acf6eef15c968921890ed5f9a61e115ce">setAppController</a> (<a class="el" href="classqtpd_1_1_application_controller.html">ApplicationController</a> *a)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_application_controller.html">ApplicationController</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a9237b0907517ffc20174bac47c183683">appController</a> ()</td></tr>
@@ -143,6 +145,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a9cfb860b860d3cfdf520375fbe9d4710">saveFile</a> (QString fileName)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a60fd79d95af6bb0699e98260de830429">saveFileDialog</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#aafeb3f3466f85a0c2c05cc8818cc6d5f">createObject</a> (string name, QPoint pos)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a5b350c6a133d908dc8b257b1d80fbebb">creatBoxForSubpatch</a> (<a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *controller, QString data, QPoint pos)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#ae9f3c56d63cf7866cf91e2cb3498381d">patchcord</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *src, int out, <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *dest, int in)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#ae92a33f99db1bfa48f6b223f1e3466ca">deleteSelectedObjects</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a5fb6a264e68f704e4b09d21aa839decc">deleteSelectedPatchcords</a> ()</td></tr>
@@ -250,6 +253,39 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5b350c6a133d908dc8b257b1d80fbebb"></a><!-- doxytag: member="qtpd::PatchWindowController::creatBoxForSubpatch" ref="a5b350c6a133d908dc8b257b1d80fbebb" args="(PatchWindowController *controller, QString data, QPoint pos)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window_controller.html#a5b350c6a133d908dc8b257b1d80fbebb">qtpd::PatchWindowController::creatBoxForSubpatch</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *&#160;</td>
+          <td class="paramname"><em>controller</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QPoint&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div>
@@ -766,6 +802,22 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="af6671576d39d08f049fd213ae1c2e3bd"></a><!-- doxytag: member="qtpd::PatchWindowController::serverCanvasAsObject" ref="af6671576d39d08f049fd213ae1c2e3bd" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ServerObject * <a class="el" href="classqtpd_1_1_patch_window_controller.html#af6671576d39d08f049fd213ae1c2e3bd">qtpd::PatchWindowController::serverCanvasAsObject</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a15718557f555321944594afb6b2a7ef1"></a><!-- doxytag: member="qtpd::PatchWindowController::serverInstance" ref="a15718557f555321944594afb6b2a7ef1" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -836,6 +888,22 @@ Public Member Functions</h2></td></tr>
           <td></td>
           <td>)</td>
           <td></td><td><code> [signal]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad121b460f4c764154e32e64adad17538"></a><!-- doxytag: member="qtpd::PatchWindowController::subpatchBox" ref="ad121b460f4c764154e32e64adad17538" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classqtpd_1_1_u_i_box.html">UIBox</a> * <a class="el" href="classqtpd_1_1_patch_window_controller.html#ad121b460f4c764154e32e64adad17538">qtpd::PatchWindowController::subpatchBox</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -940,7 +1008,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jun 29 2017 21:52:29 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 29 2017 23:10:14 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

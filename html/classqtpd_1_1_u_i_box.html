@@ -151,10 +151,11 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_box.html#a81cf681910e1ac5851dc134f35f3ce1d">setObjectData</a> (QString message)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets object text data  <a href="#a81cf681910e1ac5851dc134f35f3ce1d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_box.html#a08475b46ff890049b1402e1e4de73377">sync</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_box.html#a37ddc79c74264798197a1b6fead155ce">asPdFileString</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; custom resize event  <a href="#a37ddc79c74264798197a1b6fead155ce"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_box.html#af9b384f261a58637f776f8e1f1a5c5c2">createObj</a> (QString data)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_box.html#afc64e9d3221ac594e1fd66b84c82eac4">createObject</a> (QString, <a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *, QGraphicsView *)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>gui object: standard object box </p>
@@ -176,6 +177,26 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a37ddc79c74264798197a1b6fead155ce"></a><!-- doxytag: member="qtpd::UIBox::asPdFileString" ref="a37ddc79c74264798197a1b6fead155ce" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="classqtpd_1_1_u_i_box.html#a37ddc79c74264798197a1b6fead155ce">qtpd::UIBox::asPdFileString</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>&gt; custom resize event </p>
+
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#a89a9d36ac67cceab237cdc01a1ec2376">qtpd::UIObject</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="af9b384f261a58637f776f8e1f1a5c5c2"></a><!-- doxytag: member="qtpd::UIBox::createObj" ref="af9b384f261a58637f776f8e1f1a5c5c2" args="(QString data)" -->
 <div class="memitem">
 <div class="memproto">
@@ -190,41 +211,6 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="afc64e9d3221ac594e1fd66b84c82eac4"></a><!-- doxytag: member="qtpd::UIBox::createObject" ref="afc64e9d3221ac594e1fd66b84c82eac4" args="(QString, t_canvas *, QGraphicsView *)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> * <a class="el" href="classqtpd_1_1_u_i_box.html#afc64e9d3221ac594e1fd66b84c82eac4">qtpd::UIBox::createObject</a> </td>
-          <td>(</td>
-          <td class="paramtype">QString&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">QGraphicsView *&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_property.html#aab0af3970588a4f2fd5e08441fc05b87">qtpd::UIProperty</a>, <a class="el" href="classqtpd_1_1_u_i_instance.html#a120f11635c5b3c45d9c0a89c0cd1332d">qtpd::UIInstance</a>, <a class="el" href="classqtpd_1_1_u_i_method.html#a6a1751ecf5d8f77d48f5a56189e44f48">qtpd::UIMethod</a>, and <a class="el" href="classqtpd_1_1_u_i_class.html#a54cec74530b0e8c27c32a859f074bf91">qtpd::UIClass</a>.</p>
 
 </div>
 </div>
@@ -494,7 +480,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jun 29 2017 21:52:29 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 29 2017 23:10:14 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
