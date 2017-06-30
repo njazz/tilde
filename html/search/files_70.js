@@ -1,12 +1,13 @@
 var searchData=
 [
-  ['patchcord_2ecpp',['Patchcord.cpp',['../_patchcord_8cpp.html',1,'']]],
   ['patchwindow_2ecpp',['PatchWindow.cpp',['../_patch_window_8cpp.html',1,'']]],
   ['patchwindow_2eh',['PatchWindow.h',['../_patch_window_8h.html',1,'']]],
   ['patchwindowcontroller_2ecpp',['PatchWindowController.cpp',['../_patch_window_controller_8cpp.html',1,'']]],
   ['patchwindowcontroller_2eh',['PatchWindowController.h',['../_patch_window_controller_8h.html',1,'']]],
   ['pdwindow_2ecpp',['PdWindow.cpp',['../_pd_window_8cpp.html',1,'']]],
   ['pdwindow_2eh',['PdWindow.h',['../_pd_window_8h.html',1,'']]],
+  ['pdwindowconsoleobserver_2ecpp',['pdWindowConsoleObserver.cpp',['../pd_window_console_observer_8cpp.html',1,'']]],
+  ['pdwindowconsoleobserver_2eh',['pdWindowConsoleObserver.h',['../pd_window_console_observer_8h.html',1,'']]],
   ['port_2ecpp',['Port.cpp',['../_port_8cpp.html',1,'']]],
   ['port_2eh',['Port.h',['../_port_8h.html',1,'']]],
   ['preferences_2eh',['Preferences.h',['../_preferences_8h.html',1,'']]],

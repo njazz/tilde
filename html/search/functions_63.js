@@ -135,7 +135,7 @@ var searchData=
   ['contains',['contains',['../classceammc_1_1_atom_list.html#a64fec50cf58275a65472a2dc9a706455',1,'ceammc::AtomList']]],
   ['context',['context',['../classqtpd_1_1_u_i_script_text_edit.html#ac8c44e94e6d826790065a04cf462e787',1,'qtpd::UIScriptTextEdit']]],
   ['controller',['controller',['../classqtpd_1_1_patch_window.html#a1ff4345e33d74fd202b8f2d9edfad73e',1,'qtpd::PatchWindow']]],
-  ['controllerobserver',['ControllerObserver',['../classqtpd_1_1_controller_observer.html#a230291b19ae46cdb67e03375eebed7c3',1,'qtpd::ControllerObserver::ControllerObserver()'],['../classqtpd_1_1_application_controller.html#a9e531bfea32cc3561d1c3d318949d865',1,'qtpd::ApplicationController::controllerObserver()']]],
+  ['controllerobserver',['controllerObserver',['../classqtpd_1_1_application_controller.html#a9e531bfea32cc3561d1c3d318949d865',1,'qtpd::ApplicationController::controllerObserver()'],['../classqtpd_1_1_controller_observer.html#aeabbacabed068072fe07653e51aca17e',1,'qtpd::ControllerObserver::ControllerObserver()']]],
   ['copy',['copy',['../classqtpd_1_1_canvas_data.html#aad8dca9630dd41adb78a79335a69adbd',1,'qtpd::CanvasData']]],
   ['copy_5fperform',['copy_perform',['../m__pd_8h.html#a5590104c00e3168793fb43a7357fc5b7',1,'m_pd.h']]],
   ['copybytes',['copybytes',['../m__pd_8h.html#af80e667284f408ae3981923da47abc06',1,'m_pd.h']]],

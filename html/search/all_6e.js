@@ -5,7 +5,6 @@ var searchData=
   ['newbangbox',['newBangBox',['../classqtpd_1_1_patch_window.html#af4aba12d1c4bc7dc86e23431970c5bcc',1,'qtpd::PatchWindow']]],
   ['newcommentbox',['newCommentBox',['../classqtpd_1_1_patch_window.html#a403ba665e965bc5e72dc54ef5d9cc5cb',1,'qtpd::PatchWindow']]],
   ['newfloatbox',['newFloatBox',['../classqtpd_1_1_patch_window.html#ade58be29247e42c7838db5a7b6344539',1,'qtpd::PatchWindow']]],
-  ['newline_2ecpp',['NewLine.cpp',['../_new_line_8cpp.html',1,'']]],
   ['newmessagebox',['newMessageBox',['../classqtpd_1_1_patch_window.html#a83e7f93159893bdaa0082fd6d8c140dc',1,'qtpd::PatchWindow']]],
   ['newobjectbox',['newObjectBox',['../classqtpd_1_1_patch_window.html#a9dea55bcdf6c35f6394784cfa273cdf1',1,'qtpd::PatchWindow']]],
   ['newobjectpos',['newObjectPos',['../classqtpd_1_1_canvas_view.html#aba4fc9ecc0a76fc9488c03d910efcecc',1,'qtpd::CanvasView']]],

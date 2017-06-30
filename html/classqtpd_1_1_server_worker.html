@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>qtpd: ServerWorker Class Reference</title>
+<title>qtpd: qtpd::ServerWorker Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -78,6 +78,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><a class="el" href="namespaceqtpd.html">qtpd</a>      </li>
+      <li class="navelem"><a class="el" href="classqtpd_1_1_server_worker.html">ServerWorker</a>      </li>
+    </ul>
+  </div>
 </div>
 <div class="header">
   <div class="summary">
@@ -85,34 +105,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
-<div class="title">ServerWorker Class Reference</div>  </div>
+<div class="title">qtpd::ServerWorker Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="ServerWorker" -->
+<!-- doxytag: class="qtpd::ServerWorker" -->
 <p><code>#include &lt;<a class="el" href="_server_worker_8h_source.html">ServerWorker.h</a>&gt;</code></p>
 
-<p><a href="class_server_worker-members.html">List of all members.</a></p>
+<p><a href="classqtpd_1_1_server_worker-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_server_worker.html#ab00a9af5806ff66596da1a62dcf5506a">start</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_server_worker.html#a9e10abe22326fe683368198616acb783">stop</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_server_worker.html#af32f4f1284a42212995ee42807438aaa">sendMessageToObject</a> (ServerObject *object, QString msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_server_worker.html#ae474cd0abbeb2e400e0ba00c8f25358d">start</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_server_worker.html#a282bfd3ccec56b8be9ac297004c9e648">stop</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_server_worker.html#a5d00a96f51ca38c32cfd4351508bfc92">sendMessageToObject</a> (ServerObject *object, QString msg)</td></tr>
 <tr><td colspan="2"><h2><a name="signals"></a>
 Signals</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_server_worker.html#a412611bc9b4131e20a430860d7f1ac84">sendMessageSignal</a> (ServerObject *object, string msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_server_worker.html#acd43b9b235c865e6f72699a6b890ce7e">sendMessageSignal</a> (ServerObject *object, string msg)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_server_worker.html#acc9ab52ce5a63fae803f8bf3b1b79e5b">ServerWorker</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">LocalServer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_server_worker.html#aa100b14d6296dfcb79d3eba7c341d6ca">localServer</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_server_worker.html#a6b7a2221d2f217bbbd0e63907193514c">ServerWorker</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">LocalServer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_server_worker.html#a51651f3e7bb489c9ea6a1a0620e19f46">localServer</a> () const </td></tr>
 </table>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="acc9ab52ce5a63fae803f8bf3b1b79e5b"></a><!-- doxytag: member="ServerWorker::ServerWorker" ref="acc9ab52ce5a63fae803f8bf3b1b79e5b" args="()" -->
+<a class="anchor" id="a6b7a2221d2f217bbbd0e63907193514c"></a><!-- doxytag: member="qtpd::ServerWorker::ServerWorker" ref="a6b7a2221d2f217bbbd0e63907193514c" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_server_worker.html#acc9ab52ce5a63fae803f8bf3b1b79e5b">ServerWorker::ServerWorker</a> </td>
+          <td class="memname"><a class="el" href="classqtpd_1_1_server_worker.html#a6b7a2221d2f217bbbd0e63907193514c">qtpd::ServerWorker::ServerWorker</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [inline]</code></td>
@@ -124,12 +144,12 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="aa100b14d6296dfcb79d3eba7c341d6ca"></a><!-- doxytag: member="ServerWorker::localServer" ref="aa100b14d6296dfcb79d3eba7c341d6ca" args="() const " -->
+<a class="anchor" id="a51651f3e7bb489c9ea6a1a0620e19f46"></a><!-- doxytag: member="qtpd::ServerWorker::localServer" ref="a51651f3e7bb489c9ea6a1a0620e19f46" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">LocalServer* <a class="el" href="class_server_worker.html#aa100b14d6296dfcb79d3eba7c341d6ca">ServerWorker::localServer</a> </td>
+          <td class="memname">LocalServer* <a class="el" href="classqtpd_1_1_server_worker.html#a51651f3e7bb489c9ea6a1a0620e19f46">qtpd::ServerWorker::localServer</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const<code> [inline]</code></td>
@@ -140,12 +160,12 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a412611bc9b4131e20a430860d7f1ac84"></a><!-- doxytag: member="ServerWorker::sendMessageSignal" ref="a412611bc9b4131e20a430860d7f1ac84" args="(ServerObject *object, string msg)" -->
+<a class="anchor" id="acd43b9b235c865e6f72699a6b890ce7e"></a><!-- doxytag: member="qtpd::ServerWorker::sendMessageSignal" ref="acd43b9b235c865e6f72699a6b890ce7e" args="(ServerObject *object, string msg)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_server_worker.html#a412611bc9b4131e20a430860d7f1ac84">ServerWorker::sendMessageSignal</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_server_worker.html#acd43b9b235c865e6f72699a6b890ce7e">qtpd::ServerWorker::sendMessageSignal</a> </td>
           <td>(</td>
           <td class="paramtype">ServerObject *&#160;</td>
           <td class="paramname"><em>object</em>, </td>
@@ -167,12 +187,12 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="af32f4f1284a42212995ee42807438aaa"></a><!-- doxytag: member="ServerWorker::sendMessageToObject" ref="af32f4f1284a42212995ee42807438aaa" args="(ServerObject *object, QString msg)" -->
+<a class="anchor" id="a5d00a96f51ca38c32cfd4351508bfc92"></a><!-- doxytag: member="qtpd::ServerWorker::sendMessageToObject" ref="a5d00a96f51ca38c32cfd4351508bfc92" args="(ServerObject *object, QString msg)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_server_worker.html#af32f4f1284a42212995ee42807438aaa">ServerWorker::sendMessageToObject</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_server_worker.html#a5d00a96f51ca38c32cfd4351508bfc92">qtpd::ServerWorker::sendMessageToObject</a> </td>
           <td>(</td>
           <td class="paramtype">ServerObject *&#160;</td>
           <td class="paramname"><em>object</em>, </td>
@@ -194,12 +214,12 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab00a9af5806ff66596da1a62dcf5506a"></a><!-- doxytag: member="ServerWorker::start" ref="ab00a9af5806ff66596da1a62dcf5506a" args="()" -->
+<a class="anchor" id="ae474cd0abbeb2e400e0ba00c8f25358d"></a><!-- doxytag: member="qtpd::ServerWorker::start" ref="ae474cd0abbeb2e400e0ba00c8f25358d" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_server_worker.html#ab00a9af5806ff66596da1a62dcf5506a">ServerWorker::start</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_server_worker.html#ae474cd0abbeb2e400e0ba00c8f25358d">qtpd::ServerWorker::start</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [inline, slot]</code></td>
@@ -210,12 +230,12 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a9e10abe22326fe683368198616acb783"></a><!-- doxytag: member="ServerWorker::stop" ref="a9e10abe22326fe683368198616acb783" args="()" -->
+<a class="anchor" id="a282bfd3ccec56b8be9ac297004c9e648"></a><!-- doxytag: member="qtpd::ServerWorker::stop" ref="a282bfd3ccec56b8be9ac297004c9e648" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_server_worker.html#a9e10abe22326fe683368198616acb783">ServerWorker::stop</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_server_worker.html#a282bfd3ccec56b8be9ac297004c9e648">qtpd::ServerWorker::stop</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [inline, slot]</code></td>
@@ -247,7 +267,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 30 2017 13:38:17 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 30 2017 16:42:27 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
