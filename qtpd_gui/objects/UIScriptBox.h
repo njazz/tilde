@@ -17,6 +17,8 @@
 #include "UIScriptEditor.h"
 #include "UIScriptCommon.h"
 
+#include "UIBox.h"
+
 class QGraphicsView;
 
 namespace qtpd {
@@ -24,7 +26,7 @@ namespace qtpd {
 ////
 /// \brief gui object: script box (ui.scriptbox)
 ///
-class UIScriptBox : public UIObject {
+class UIScriptBox : public UIBox {
     Q_OBJECT
 
 private:
@@ -111,6 +113,8 @@ public:
 //    void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev);
 
 //    void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
+
+    virtual void objectPressEvent(QGraphicsSceneMouseEvent * event);
 
     // ----------------------
 

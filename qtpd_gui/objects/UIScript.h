@@ -8,6 +8,7 @@
 
 #include "Port.h"
 #include "UIObject.h"
+#include "UIBox.h"
 
 #include <QFileDialog>
 
@@ -21,7 +22,7 @@ namespace qtpd {
 ////
 /// \brief gui object: script editor embedded box (ui.script)
 ///
-class UIScript : public UIObject {
+class UIScript : public UIBox {
     Q_OBJECT
 
 private:
@@ -50,6 +51,8 @@ public:
 //    void mousePressEvent(QGraphicsSceneMouseEvent* ev);
 //    void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev);
 //    void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
+
+
 
     // ----------------------
 

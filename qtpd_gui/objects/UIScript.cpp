@@ -112,6 +112,8 @@ void UIScript::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidge
 
 // ------------------------
 
+
+
 //void UIScript::mousePressEvent(QGraphicsSceneMouseEvent* ev)
 //{
 
@@ -177,6 +179,8 @@ void UIScript::setPdMessage(QString message)
 
 void UIScript::sync()
 {
+    UIObject::sync();
+
     _editor->textEdit()->document()->setPlainText("");
     _editor->textEdit()->setContext(pyWrapper::inst().withPatchControllerServerObjectAndList(this->parentController(), serverObject(), &_scriptCommon->scriptData()->inputList));
 }

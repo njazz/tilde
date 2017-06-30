@@ -8,8 +8,8 @@
 #include <QGraphicsProxyWidget>
 #include <QPalette>
 
-#include <QGraphicsView>
 #include <QGraphicsScene>
+#include <QGraphicsView>
 
 namespace qtpd {
 
@@ -55,7 +55,7 @@ void UIScriptBox::editorChanged()
     //update();
 }
 
- UIObject* UIScriptBox::createObj(QString data)
+UIObject* UIScriptBox::createObj(QString data)
 {
     UIScriptBox* ret = new UIScriptBox();
 
@@ -63,7 +63,7 @@ void UIScriptBox::editorChanged()
 
     return ret;
 }
- UIObject* UIScriptBox::createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
+UIObject* UIScriptBox::createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
 {
     return 0;
 } /*
@@ -158,6 +158,12 @@ void UIScriptBox::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWi
 
 // ------------------------
 
+void UIScriptBox::objectPressEvent(QGraphicsSceneMouseEvent* event)
+{
+    if (getEditMode() != em_Unlocked) {
+        _editor->show();
+    }
+}
 //void UIScriptBox::mousePressEvent(QGraphicsSceneMouseEvent* ev)
 //{
 
@@ -227,7 +233,6 @@ void UIScriptBox::sync()
 
     _editor->textEdit()->document()->setPlainText("");
     _editor->textEdit()->setContext(pyWrapper::inst().withPatchControllerServerObjectAndList(this->parentController(), serverObject(), &_scriptCommon->scriptData()->inputList));
-
 }
 
 void UIScriptBox::updateUI(AtomList list)
