@@ -130,10 +130,9 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_box.html#a1d9c5ace799f1de391ed0652f77ecd13">UIScriptBox</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_box.html#a842c65678324437bd8b4ee2e4ed43960">initProperties</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_box.html#adca9c9bd680f0f04251ca88e20c7a114">paint</a> (QPainter *p, const QStyleOptionGraphicsItem *option, QWidget *)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_box.html#a179c1cb4cf5a65bc106b624c43bbea4a">mousePressEvent</a> (QGraphicsSceneMouseEvent *ev)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_box.html#a17178e88460ce03b24e1729459b1515a">mouseReleaseEvent</a> (QGraphicsSceneMouseEvent *ev)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_box.html#a0dff543a78c694d8885eefff6a50ec24">mouseMoveEvent</a> (QGraphicsSceneMouseEvent *event)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_box.html#aeca00d744ea7e694763d8cfc0418b2b8">setPdMessage</a> (QString message)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_box.html#a7c94fdc68b2abe231742fc67bbd165c8">sync</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_box.html#a2513c4e600c43810c44099fe85aa7892">updateUI</a> (<a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> list)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_box.html#ab92eaf47406f6be0aae0fc52d06c4a62">createObj</a> (QString data)</td></tr>
@@ -227,63 +226,6 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a0dff543a78c694d8885eefff6a50ec24"></a><!-- doxytag: member="qtpd::UIScriptBox::mouseMoveEvent" ref="a0dff543a78c694d8885eefff6a50ec24" args="(QGraphicsSceneMouseEvent *event)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_script_box.html#a0dff543a78c694d8885eefff6a50ec24">qtpd::UIScriptBox::mouseMoveEvent</a> </td>
-          <td>(</td>
-          <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
-          <td class="paramname"><em>event</em></td><td>)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#a40b303ad8ae0b94f4a64f697c1967deb">qtpd::UIObject</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a179c1cb4cf5a65bc106b624c43bbea4a"></a><!-- doxytag: member="qtpd::UIScriptBox::mousePressEvent" ref="a179c1cb4cf5a65bc106b624c43bbea4a" args="(QGraphicsSceneMouseEvent *ev)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_script_box.html#a179c1cb4cf5a65bc106b624c43bbea4a">qtpd::UIScriptBox::mousePressEvent</a> </td>
-          <td>(</td>
-          <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
-          <td class="paramname"><em>ev</em></td><td>)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#a5ab52afcf2bc31f842ca9ea7f077f326">qtpd::UIObject</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a17178e88460ce03b24e1729459b1515a"></a><!-- doxytag: member="qtpd::UIScriptBox::mouseReleaseEvent" ref="a17178e88460ce03b24e1729459b1515a" args="(QGraphicsSceneMouseEvent *ev)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_script_box.html#a17178e88460ce03b24e1729459b1515a">qtpd::UIScriptBox::mouseReleaseEvent</a> </td>
-          <td>(</td>
-          <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
-          <td class="paramname"><em>ev</em></td><td>)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#a4982c1fb0ab5870c83450308ad768112">qtpd::UIObject</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="adca9c9bd680f0f04251ca88e20c7a114"></a><!-- doxytag: member="qtpd::UIScriptBox::paint" ref="adca9c9bd680f0f04251ca88e20c7a114" args="(QPainter *p, const QStyleOptionGraphicsItem *option, QWidget *)" -->
 <div class="memitem">
 <div class="memproto">
@@ -336,6 +278,43 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a7c94fdc68b2abe231742fc67bbd165c8"></a><!-- doxytag: member="qtpd::UIScriptBox::sync" ref="a7c94fdc68b2abe231742fc67bbd165c8" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_script_box.html#a7c94fdc68b2abe231742fc67bbd165c8">qtpd::UIScriptBox::sync</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#a1151171b60b0fd072f121202b9fc6e98">qtpd::UIObject</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2513c4e600c43810c44099fe85aa7892"></a><!-- doxytag: member="qtpd::UIScriptBox::updateUI" ref="a2513c4e600c43810c44099fe85aa7892" args="(AtomList list)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_script_box.html#a2513c4e600c43810c44099fe85aa7892">qtpd::UIScriptBox::updateUI</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classceammc_1_1_atom_list.html">AtomList</a>&#160;</td>
+          <td class="paramname"><em>list</em></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#a55ef919c2d0a6c3fe5f4457aaa824f89">qtpd::UIObject</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/travis/build/njazz/qtpd/qtpd_gui/objects/<a class="el" href="_u_i_script_box_8h_source.html">UIScriptBox.h</a></li>
 <li>/home/travis/build/njazz/qtpd/qtpd_gui/objects/<a class="el" href="_u_i_script_box_8cpp.html">UIScriptBox.cpp</a></li>
@@ -358,7 +337,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jun 29 2017 23:18:16 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 30 2017 13:00:02 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

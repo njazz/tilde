@@ -129,12 +129,12 @@ Signals</h2></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_common.html#ad2cc847b2b01f76d198b1cdfe16b419c">UIScriptCommon</a> (QObject *parent=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_u_i_script_data.html">UIScriptData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_common.html#ae51bd4c1e5341e54cef7d5045bcda4c5">scriptData</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_common.html#a38697bb94d75be269572f5f18e24bd4c">setEditor</a> (<a class="el" href="classqtpd_1_1_u_i_script_editor.html">UIScriptEditor</a> *<a class="el" href="classqtpd_1_1_u_i_script_common.html#af9d3ac1d00d742002eb98042157dd34c">editor</a>)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_u_i_script_editor.html">UIScriptEditor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_common.html#af9d3ac1d00d742002eb98042157dd34c">editor</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_u_i_script_data.html">UIScriptData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_common.html#a225ceabd41ff272f3f2641cb46dfa4e0">scriptData</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_common.html#a38697bb94d75be269572f5f18e24bd4c">setEditor</a> (<a class="el" href="classqtpd_1_1_u_i_script_editor.html">UIScriptEditor</a> *<a class="el" href="classqtpd_1_1_u_i_script_common.html#a1305d0fa46e0b28d46da452b89762967">editor</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_u_i_script_editor.html">UIScriptEditor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_common.html#a1305d0fa46e0b28d46da452b89762967">editor</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_common.html#a4f3c04bc5cfdb563dcd5a844a6aec73d">updateUI</a> (void *uiobj, <a class="el" href="classceammc_1_1_atom_list.html">ceammc::AtomList</a> msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_common.html#a3be93b31e6df87b6efbd75f130e3bc5a">AtomListToStringList</a> (<a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> list)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Sort of view controller for UIScript/UISCriptBox. </p>
@@ -158,6 +158,23 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a3be93b31e6df87b6efbd75f130e3bc5a"></a><!-- doxytag: member="qtpd::UIScriptCommon::AtomListToStringList" ref="a3be93b31e6df87b6efbd75f130e3bc5a" args="(AtomList list)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList <a class="el" href="classqtpd_1_1_u_i_script_common.html#a3be93b31e6df87b6efbd75f130e3bc5a">qtpd::UIScriptCommon::AtomListToStringList</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classceammc_1_1_atom_list.html">AtomList</a>&#160;</td>
+          <td class="paramname"><em>list</em></td><td>)</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a2ac221ae189fa92fb3085b8424f5c731"></a><!-- doxytag: member="qtpd::UIScriptCommon::btnClear" ref="a2ac221ae189fa92fb3085b8424f5c731" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -166,7 +183,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_script_common.html#a2ac221ae189fa92fb3085b8424f5c731">qtpd::UIScriptCommon::btnClear</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline, slot]</code></td>
+          <td><code> [slot]</code></td>
         </tr>
       </table>
 </div>
@@ -182,7 +199,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_script_common.html#a1fcaf142178b247638cf793d45e227f2">qtpd::UIScriptCommon::btnLoad</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline, slot]</code></td>
+          <td><code> [slot]</code></td>
         </tr>
       </table>
 </div>
@@ -198,7 +215,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_script_common.html#aab0a5dbf9bb336f029798f2864fe53c9">qtpd::UIScriptCommon::btnRun</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline, slot]</code></td>
+          <td><code> [slot]</code></td>
         </tr>
       </table>
 </div>
@@ -214,7 +231,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_script_common.html#a637fd498155030cb202098b94a28ba53">qtpd::UIScriptCommon::btnSave</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline, slot]</code></td>
+          <td><code> [slot]</code></td>
         </tr>
       </table>
 </div>
@@ -238,15 +255,15 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="af9d3ac1d00d742002eb98042157dd34c"></a><!-- doxytag: member="qtpd::UIScriptCommon::editor" ref="af9d3ac1d00d742002eb98042157dd34c" args="()" -->
+<a class="anchor" id="a1305d0fa46e0b28d46da452b89762967"></a><!-- doxytag: member="qtpd::UIScriptCommon::editor" ref="a1305d0fa46e0b28d46da452b89762967" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classqtpd_1_1_u_i_script_editor.html">UIScriptEditor</a>* <a class="el" href="classqtpd_1_1_u_i_script_common.html#af9d3ac1d00d742002eb98042157dd34c">qtpd::UIScriptCommon::editor</a> </td>
+          <td class="memname"><a class="el" href="classqtpd_1_1_u_i_script_editor.html">UIScriptEditor</a> * <a class="el" href="classqtpd_1_1_u_i_script_common.html#a1305d0fa46e0b28d46da452b89762967">qtpd::UIScriptCommon::editor</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -254,15 +271,15 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae51bd4c1e5341e54cef7d5045bcda4c5"></a><!-- doxytag: member="qtpd::UIScriptCommon::scriptData" ref="ae51bd4c1e5341e54cef7d5045bcda4c5" args="()" -->
+<a class="anchor" id="a225ceabd41ff272f3f2641cb46dfa4e0"></a><!-- doxytag: member="qtpd::UIScriptCommon::scriptData" ref="a225ceabd41ff272f3f2641cb46dfa4e0" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classqtpd_1_1_u_i_script_data.html">UIScriptData</a>* <a class="el" href="classqtpd_1_1_u_i_script_common.html#ae51bd4c1e5341e54cef7d5045bcda4c5">qtpd::UIScriptCommon::scriptData</a> </td>
+          <td class="memname"><a class="el" href="classqtpd_1_1_u_i_script_data.html">UIScriptData</a> * <a class="el" href="classqtpd_1_1_u_i_script_common.html#a225ceabd41ff272f3f2641cb46dfa4e0">qtpd::UIScriptCommon::scriptData</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -279,34 +296,7 @@ Static Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_script_editor.html">UIScriptEditor</a> *&#160;</td>
           <td class="paramname"><em>editor</em></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a4f3c04bc5cfdb563dcd5a844a6aec73d"></a><!-- doxytag: member="qtpd::UIScriptCommon::updateUI" ref="a4f3c04bc5cfdb563dcd5a844a6aec73d" args="(void *uiobj, ceammc::AtomList msg)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void <a class="el" href="classqtpd_1_1_u_i_script_common.html#a4f3c04bc5cfdb563dcd5a844a6aec73d">qtpd::UIScriptCommon::updateUI</a> </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>uiobj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classceammc_1_1_atom_list.html">ceammc::AtomList</a>&#160;</td>
-          <td class="paramname"><em>msg</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [inline, static]</code></td>
         </tr>
       </table>
 </div>
@@ -336,7 +326,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jun 29 2017 23:18:16 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 30 2017 13:00:02 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

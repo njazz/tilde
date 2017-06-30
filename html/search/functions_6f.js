@@ -6,7 +6,7 @@ var searchData=
   ['obj_5fsaveformat',['obj_saveformat',['../m__pd_8h.html#af2cd6f19a4285e4829290b57609c1ff5',1,'m_pd.h']]],
   ['objectdata',['objectData',['../classqtpd_1_1_u_i_object_data.html#a0b3265574c39fe9494b7555358d7b1b0',1,'qtpd::UIObjectData::objectData()'],['../classqtpd_1_1_u_i_object.html#a36456ea5fb11ff6b752bc56de2ce5584',1,'qtpd::UIObject::objectData()']]],
   ['objectloader',['ObjectLoader',['../classqtpd_1_1_object_loader.html#a07f146c235f7edf606366fa76b68355c',1,'qtpd::ObjectLoader']]],
-  ['objectmaker',['ObjectMaker',['../classqtpd_1_1_object_maker.html#a9302b224a677c13f8a335d33db2bcbb4',1,'qtpd::ObjectMaker::ObjectMaker()'],['../classqtpd_1_1_canvas_view.html#a6770763c6c47fbf72d3f34ac5763d882',1,'qtpd::CanvasView::objectMaker()']]],
+  ['objectmaker',['objectMaker',['../classqtpd_1_1_canvas_view.html#a6770763c6c47fbf72d3f34ac5763d882',1,'qtpd::CanvasView::objectMaker()'],['../classqtpd_1_1_object_maker.html#a9302b224a677c13f8a335d33db2bcbb4',1,'qtpd::ObjectMaker::ObjectMaker()']]],
   ['objectmakerdone',['objectMakerDone',['../classqtpd_1_1_patch_window.html#a65452a0d74483f4351d2703898ed22eb',1,'qtpd::PatchWindow']]],
   ['objectmakerdonesignal',['objectMakerDoneSignal',['../classqtpd_1_1_object_maker.html#adc36d63bedc3740d9c65ce949be5eb87',1,'qtpd::ObjectMaker']]],
   ['objectmoveevent',['objectMoveEvent',['../classqtpd_1_1_u_i_object.html#a06c6641909aff389311eb33c2c6513a4',1,'qtpd::UIObject::objectMoveEvent()'],['../classqtpd_1_1_u_i_box.html#a9ae29d63f5bbd60724c15180a19cd4af',1,'qtpd::UIBox::objectMoveEvent()']]],

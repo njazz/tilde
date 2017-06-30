@@ -167,7 +167,7 @@ var searchData=
   ['context',['context',['../classqtpd_1_1_u_i_script_text_edit.html#ac8c44e94e6d826790065a04cf462e787',1,'qtpd::UIScriptTextEdit']]],
   ['controller',['controller',['../classqtpd_1_1_patch_window.html#a1ff4345e33d74fd202b8f2d9edfad73e',1,'qtpd::PatchWindow']]],
   ['controllerobserver',['ControllerObserver',['../classqtpd_1_1_controller_observer.html',1,'qtpd']]],
-  ['controllerobserver',['controllerObserver',['../classqtpd_1_1_application_controller.html#a9e531bfea32cc3561d1c3d318949d865',1,'qtpd::ApplicationController::controllerObserver()'],['../classqtpd_1_1_controller_observer.html#a230291b19ae46cdb67e03375eebed7c3',1,'qtpd::ControllerObserver::ControllerObserver()']]],
+  ['controllerobserver',['ControllerObserver',['../classqtpd_1_1_controller_observer.html#a230291b19ae46cdb67e03375eebed7c3',1,'qtpd::ControllerObserver::ControllerObserver()'],['../classqtpd_1_1_application_controller.html#a9e531bfea32cc3561d1c3d318949d865',1,'qtpd::ApplicationController::controllerObserver()']]],
   ['controllerobserver_2eh',['ControllerObserver.h',['../_controller_observer_8h.html',1,'']]],
   ['copy',['copy',['../classqtpd_1_1_canvas_data.html#aad8dca9630dd41adb78a79335a69adbd',1,'qtpd::CanvasData']]],
   ['copy_5fperform',['copy_perform',['../m__pd_8h.html#a5590104c00e3168793fb43a7357fc5b7',1,'m_pd.h']]],
