@@ -7,6 +7,20 @@
 
 #include "FileParser.h"
 
+#include "Port.h"
+#include "SizeBox.h"
+
+#include "Preferences.h"
+
+#include <QMainWindow>
+#include <QMenu>
+#include <QObject>
+#include <QStyleOption>
+
+#include "PropertiesWindow.h"
+
+#include "UIObjectData.h"
+
 namespace qtpd {
 
 UIObject::UIObject(UIItem* parent)

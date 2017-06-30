@@ -41,10 +41,6 @@ class CanvasData {
 public:
     CanvasData();
 
-    // new 0517
-    //ServerCanvas* serverCanvas() { return _serverCanvas; }
-    //void setServerCanvas(ServerCanvas* canvas) { _serverCanvas = canvas; }
-
     portItemVec* inlets() { return _inlets; }
     portItemVec* outlets() { return _outlets; }
 

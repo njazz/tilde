@@ -135,12 +135,10 @@ SOURCES += main.cpp\
     graphicobjects/UIItem.cpp \
     graphicobjects/Grid.cpp \
     graphicobjects/SelectionRect.cpp \
-    graphicobjects/NewLine.cpp \
-    graphicobjects/Patchcord.cpp \
 #
     objects/UISubpatch.cpp \
     graphicobjects/UIObject.cpp \
-    Clipboard.cpp \
+    datamodels/Clipboard.cpp \
     objects/UILink.cpp \
     graphicobjects/LinkLine.cpp \
     widgets/UITextEditor.cpp \
@@ -158,7 +156,10 @@ SOURCES += main.cpp\
     controller/PatchWindowController.cpp \
     datamodels/FileSaver.cpp \
     controller/ApplicationController.cpp \
-    ServerWorker.cpp
+    ServerWorker.cpp \
+    controller/pdWindowConsoleObserver.cpp \
+    graphicobjects/UINewPatchcord.cpp \
+    graphicobjects/UIPatchcord.cpp
 #
 #    serverAPIPrototype.cpp \
 
@@ -237,7 +238,8 @@ HEADERS  += \
     graphicobjects/UIPatchcord.h \
     graphicobjects/UINewPatchcord.h \
     CanvasView.h \
-    ServerWorker.h
+    ServerWorker.h \
+    controller/pdWindowConsoleObserver.h
 
 
 

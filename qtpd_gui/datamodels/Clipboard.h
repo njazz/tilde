@@ -5,7 +5,7 @@
 #define CLIPBOARD_H
 
 #include <QObject>
-#include <QDebug>
+
 
 namespace qtpd{
 ////
@@ -21,58 +21,18 @@ private:
     QStringList _data;
 
 public:
-    static Clipboard* inst()
-    {
-        if (!_instance) {
-            qDebug() << "new clipboard instance";
-            _instance = new Clipboard();
-        }
-
-        return _instance;
-    }
+    static Clipboard* inst();
 
     // -----------------------------
 
-    void append(QStringList data)
-    {
-        _data += data;
-    }
-
-    void clear()
-    {
-        _data.clear();
-    }
-
-    size_t size()
-    {
-        return _data.size();
-    }
-
-    QStringList get()
-    {
-        return _data;
-    }
-
-    void setStringAt(int idx, QString str)
-    {
-        if (idx < _data.size())
-            _data[idx] = str;
-        else
-            qDebug() << "clipboard: out of range";
-    }
+    void append(QStringList data);
+    void clear();
+    size_t size();
+    QStringList get();
+    void setStringAt(int idx, QString str);
 
     // change to pointer?
-    QString at(int idx)
-    {
-        QString ret = QString("");
-
-        if (idx < _data.size())
-            return QString(_data[idx]);
-        else
-            qDebug() << "clipboard: out of range";
-
-        return ret;
-    }
+    QString at(int idx);
 
 signals:
 

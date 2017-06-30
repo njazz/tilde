@@ -6,6 +6,8 @@
 #include <QDebug>
 #include <QThread>
 
+namespace qtpd{
+
 class ServerWorker : public QObject {
 
     Q_OBJECT
@@ -68,5 +70,7 @@ signals:
     //        ret = _localServer;
     //    };
 };
+
+}
 
 #endif // LOCALSERVER_H

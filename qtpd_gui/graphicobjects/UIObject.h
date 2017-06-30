@@ -4,27 +4,26 @@
 #ifndef CM_OBJECTITEM_H
 #define CM_OBJECTITEM_H
 
-#include "Port.h"
-#include "SizeBox.h"
+
 #include "UIItem.h"
-
-#include "Preferences.h"
-
-#include <QMainWindow>
-#include <QMenu>
-#include <QObject>
-#include <QStyleOption>
-
-#include "PropertiesWindow.h"
 
 #include "UIObjectData.h"
 
 #include <pdServer.hpp>
 
+// TODO
+#include <QMenu>
+#include "ceammc_atomlist.h"
+
+class QAction;
+//class QMenu;
+
 namespace qtpd {
 
 class CanvasView;
 class CanvasData;
+
+class SizeBox;
 
 typedef std::vector<Port*> portItemVec;
 
@@ -247,9 +246,9 @@ public:
 
     // -----------------------------------------
 
-    virtual void objectPressEvent(QGraphicsSceneMouseEvent *event){}
-    virtual void objectMoveEvent(QGraphicsSceneMouseEvent *event){}
-    virtual void objectReleaseEvent(QGraphicsSceneMouseEvent *event){}
+    virtual void objectPressEvent(QGraphicsSceneMouseEvent *){}
+    virtual void objectMoveEvent(QGraphicsSceneMouseEvent *){}
+    virtual void objectReleaseEvent(QGraphicsSceneMouseEvent *){}
 
 
     virtual void mousePressEvent(QGraphicsSceneMouseEvent *event);

@@ -571,4 +571,116 @@ void FileParser::open(QString fname)
 //        f.close();
 //    }
 //}
+
+
+// --------------------------------------------------
+
+
+ void FileParser:: setAppController(ApplicationController* appController) { _appController = appController; }
+
+ void FileParser:: setParserWindowController(PatchWindowController* wnd)
+{
+    _pdParserPrevWindowController = wnd;
+    _pdParserWindowController = wnd;
+}
+
+ void FileParser:: setParserWindowControllers(PatchWindowController* wnd, PatchWindowController* prev, PatchWindowController* first)
+{
+    _pdParserWindowController = wnd;
+    _pdParserPrevWindowController = prev;
+    _pdParserFirstWindowController = first;
+}
+
+////
+/// \brief returns first created window
+/// \details mostly used by OOP loader
+/// \return
+///
+ PatchWindowController* FileParser:: parserFirstWindowController()
+{
+    return _pdParserFirstWindowController;
+}
+
+ PatchWindowController* FileParser:: parserWindowController()
+{
+    return _pdParserWindowController;
+}
+
+ PatchWindowController* FileParser:: parserPrevWindowController()
+{
+    return _pdParserPrevWindowController;
+}
+
+
+//////
+///// \brief [3.1] subroutine - formats list and send it to canvas as a string
+///// \param cmcanvas
+///// \param list
+///// \returns uiobject - that may be needed by legacyProcess to add more properties after object is created
+/////
+// UIObject* FileParser:: sendStringToCanvas(PatchWindowController* controller, QStringList list);
+
+//////
+///// \brief [3] parses QStringLists of atoms to canvas - creates objects etc
+///// \details converts list, passes data to 'sendStringToCanvas'
+///// \param cmcanvas
+///// \param list
+/////
+// void FileParser:: parseStringListAtoms(PatchWindowController* controller, QStringList list);
+
+//////
+///// \brief [2] checks first atoms ("#N", "#X" etc) and sends QStringList of contents to canvas
+///// \param line
+/////
+// void FileParser:: parseQString(QString line);
+
+//////
+///// \brief [1] opens file, converts to QStrings, calls 'parseString'
+///// \param fname
+/////
+// void FileParser:: open(QString fname);
+
+//    ////
+//    /// \brief new API open
+//    /// \param fname
+//    ///
+//     void open(QString fname, CanvasData* CanvasData);
+
+////
+/// \brief unescapeString
+/// \param input
+/// \return
+/// \deprecated needs cleanup - duplicate in PropertyList class
+ QString FileParser:: unescapeString(QString input)
+{
+    // todo regexp
+
+    QString ret;
+
+    ret = input.split("\\ ").join(" ");
+    ret = ret.split("\\n").join("\n");
+    ret = ret.split("\\,").join(",");
+    ret = ret.split("\\.").join(".");
+    //ret = ret.split("\;").join(";");
+    return ret;
+}
+
+////
+/// \brief escapeString
+/// \param input
+/// \return
+/// \deprecated needs cleanup - duplicate in PropertyList class
+ QString FileParser:: escapeString(QString input)
+{
+    // todo regexp
+
+    QString ret;
+
+    ret = input.split(" ").join("\\ ");
+    ret = ret.split("\n").join("\\n");
+    ret = ret.split(",").join("\\,");
+    ret = ret.split(".").join("\\.");
+    //ret = ret.split(";").join("\\;");
+    return ret;
+}
 }

@@ -3,6 +3,8 @@
 
 #include "UIArray.h"
 
+#include "SizeBox.h"
+
 namespace qtpd {
 UIArray::UIArray()
 {

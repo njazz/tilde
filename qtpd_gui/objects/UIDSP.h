@@ -10,6 +10,11 @@
 #include "UIObject.h"
 
 #include <QGraphicsView>
+#include <QStyleOptionGraphicsItem>
+
+#include "Preferences.h"
+
+
 
 namespace qtpd {
 

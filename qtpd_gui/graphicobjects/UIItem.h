@@ -5,9 +5,6 @@
 #define UIITEM_H
 
 #include <QGraphicsObject>
-#include <QWidget>
-
-#include <QDebug>
 
 // Widget extension
 // check / fix

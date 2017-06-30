@@ -10,7 +10,7 @@ class PatchWindowController;
 
 class ControllerObserver : Observer {
 public:
-    ControllerObserver(PatchWindowController* Controller = 0){};
+    ControllerObserver(PatchWindowController* ){};
 
     virtual void update();
 };

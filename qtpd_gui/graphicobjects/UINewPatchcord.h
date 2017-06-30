@@ -6,8 +6,6 @@
 
 #include "UIItem.h"
 
-#include <QPainter>
-
 namespace qtpd {
 
 ////
@@ -21,16 +19,10 @@ class UINewPatchcord : public UIItem {
 public:
     UINewPatchcord();
 
-    ////
-    /// \group prop Properties
-    /// @{
-
     void setActive(bool active) { _active = active; }
     bool active() { return _active; }
     void setStart(QPoint start) { _start = start; }
     void setEnd(QPoint end) { _end = end; }
-
-    /** @}*/
 
     void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*);
 };

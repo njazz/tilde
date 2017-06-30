@@ -16,6 +16,9 @@
 
 #include <QGraphicsView>
 
+#include "Preferences.h"
+#include "PropertyList.h"
+
 namespace qtpd {
 
 ////

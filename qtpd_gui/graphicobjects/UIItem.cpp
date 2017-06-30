@@ -4,6 +4,7 @@
 #include "UIItem.h"
 
 #include <QDebug>
+#include <QWidget>
 
 namespace qtpd {
 UIItem::UIItem(QGraphicsObject* parent)
@@ -63,7 +64,6 @@ QPainterPath UIItem::shape() const
     return path;
 }
 
-
 void UIItem::move(float x, float y)
 {
     _pos = QPoint(x, y);
@@ -79,7 +79,4 @@ void UIItem::move(QPointF pos)
     _pos = QPoint(pos.x(), pos.y());
     setPos(_pos.x(), _pos.y());
 }
-
-
-
 }

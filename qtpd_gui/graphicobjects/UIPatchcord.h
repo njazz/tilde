@@ -4,13 +4,15 @@
 #ifndef CM_PATCHCORD_H
 #define CM_PATCHCORD_H
 
-#include "Port.h"
+
 #include "UIObject.h"
 
 #include <math.h>
 
 //#include <QWidget>
 //#include <QtGui>
+
+#include "Port.h"
 
 namespace qtpd {
 

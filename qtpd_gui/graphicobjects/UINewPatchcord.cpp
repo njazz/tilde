@@ -1,5 +1,7 @@
 #include "UINewPatchcord.h"
 
+#include <QPainter>
+
 namespace qtpd {
 UINewPatchcord::UINewPatchcord() {}
 

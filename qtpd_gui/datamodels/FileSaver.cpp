@@ -3,6 +3,8 @@
 
 #include "CanvasData.h"
 
+#include "PatchWindow.h"
+
 namespace qtpd {
 
 //void FileSaver::saveCanvas(CanvasView* canvas, QFile* file)

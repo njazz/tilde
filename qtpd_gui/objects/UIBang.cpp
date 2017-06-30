@@ -3,6 +3,10 @@
 
 #include "UIBang.h"
 
+#include <QPainter>
+#include <QWidget>
+#include <QStyleOptionGraphicsItem>
+
 namespace qtpd {
 UIBang::UIBang()
 {

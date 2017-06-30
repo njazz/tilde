@@ -3,6 +3,12 @@
 
 #include "UIFloat.h"
 
+#include "PropertyList.h"
+
+#include <QStyleOptionGraphicsItem>
+
+#include "Preferences.h"
+
 namespace qtpd {
 
 UIFloat::UIFloat()

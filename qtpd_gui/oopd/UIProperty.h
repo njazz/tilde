@@ -22,6 +22,9 @@
 #include "PatchWindowController.h"
 #include "PatchWindow.h"
 
+#include "Preferences.h"
+#include "PropertyList.h"
+
 namespace qtpd {
 
 ////

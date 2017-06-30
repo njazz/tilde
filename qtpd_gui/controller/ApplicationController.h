@@ -4,9 +4,7 @@
 #ifndef APPLICATIONCONTROLLER
 #define APPLICATIONCONTROLLER
 
-#include "ServerWorker.h"
-
-//#include "ControllerObserver.h"
+#include "pdServer.hpp"
 
 #ifdef WITH_PYTHON
 #include "python/PythonQtScriptingConsole.h"
@@ -19,15 +17,8 @@ namespace qtpd {
 class PdWindow;
 class PatchWindow;
 class UIObject;
-
-class PdWindowConsoleObserver : public ConsoleObserver {
-private:
-    PdWindow* _window;
-
-public:
-    void setWindow(PdWindow* w) { _window = w; };
-    void update();
-};
+class ServerWorker;
+class PdWindowConsoleObserver;
 
 class ApplicationController : public QObject {
     Q_OBJECT

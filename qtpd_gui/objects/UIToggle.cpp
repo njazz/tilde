@@ -3,6 +3,11 @@
 
 #include "UIToggle.h"
 
+#include "PropertyList.h"
+
+#include <QPainter>
+#include <QStyleOptionGraphicsItem>
+
 namespace qtpd {
 
 UIToggle::UIToggle()

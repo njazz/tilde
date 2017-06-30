@@ -11,6 +11,10 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 
+#include "Preferences.h"
+
+#include "PropertyList.h"
+
 namespace qtpd {
 
 UIScript::UIScript()
@@ -112,8 +116,6 @@ void UIScript::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidge
 
 // ------------------------
 
-
-
 //void UIScript::mousePressEvent(QGraphicsSceneMouseEvent* ev)
 //{
 
@@ -184,8 +186,6 @@ void UIScript::sync()
     _editor->textEdit()->document()->setPlainText("");
     _editor->textEdit()->setContext(pyWrapper::inst().withPatchControllerServerObjectAndList(this->parentController(), serverObject(), &_scriptCommon->scriptData()->inputList));
 }
-
-
 
 void UIScript::updateUI(AtomList list)
 {

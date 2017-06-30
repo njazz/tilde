@@ -3,6 +3,10 @@
 
 #include "UISlider.h"
 
+#include "PropertyList.h"
+
+#include <QStyleOptionGraphicsItem>
+
 namespace qtpd {
 
 UISlider::UISlider()

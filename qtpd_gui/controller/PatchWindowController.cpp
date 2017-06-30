@@ -18,6 +18,8 @@
 
 #include "ApplicationController.h"
 
+#include "ServerWorker.h"
+
 // TEST
 //#include "PdLink.h"
 
@@ -363,6 +365,37 @@ void PatchWindowController::menuSaveAs()
 
     doSave(fname);
 }
+
+void PatchWindowController::menuCut()
+{
+    dataCut();
+};
+
+void PatchWindowController::menuCopy()
+{
+    dataCopy();
+};
+
+void PatchWindowController::menuPaste()
+{
+    dataPaste();
+};
+
+void PatchWindowController::menuDuplicate()
+{
+    dataDuplicate();
+};
+
+void PatchWindowController::menuDelete()
+{
+    deleteSelectedObjects();
+    deleteSelectedPatchcords();
+};
+
+void PatchWindowController::menuSelectAll()
+{
+    dataSelectAllObjects();
+};
 
 void PatchWindowController::doSave(QString fileName)
 {

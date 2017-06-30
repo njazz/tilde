@@ -11,6 +11,12 @@
 
 #include <QGraphicsView>
 
+#include "PropertyList.h"
+
+#include <QStyleOptionGraphicsItem>
+
+#include "Preferences.h"
+
 //#include "cm_pdlink.h"
 
 namespace qtpd {

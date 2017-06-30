@@ -8,6 +8,8 @@
 
 #include <QPainter>
 
+class QPainter;
+
 namespace qtpd {
 
 ////

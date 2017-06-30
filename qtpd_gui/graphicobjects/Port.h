@@ -5,12 +5,12 @@
 #define CM_PORTG_H
 
 #include <QWidget>
-
 #include <QtGui>
+#include <QGraphicsSceneMouseEvent>
 
 #include "UIItem.h"
 
-#include <QGraphicsSceneMouseEvent>
+
 
 namespace qtpd {
 

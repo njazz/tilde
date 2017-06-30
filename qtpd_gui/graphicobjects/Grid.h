@@ -6,7 +6,7 @@
 
 #include "UIItem.h"
 
-#include <QPainter>
+
 
 namespace qtpd {
 

@@ -148,38 +148,13 @@ public slots:
     void menuSave();
     void menuSaveAs();
 
-    void menuCut()
-    {
-        dataCut();
-    };
+    void menuCut();
+    void menuCopy();
+    void menuPaste();
+    void menuDuplicate();
+    void menuDelete();
+    void menuSelectAll();
 
-    void menuCopy()
-    {
-        dataCopy();
-    };
-
-    void menuPaste()
-    {
-        dataPaste();
-    };
-
-    void menuDuplicate()
-    {
-        dataDuplicate();
-    };
-
-    void menuDelete()
-    {
-        deleteSelectedObjects();
-        deleteSelectedPatchcords();
-    };
-
-    void menuSelectAll()
-    {
-        dataSelectAllObjects();
-    };
-
-    //
     //    void signalSelectBox(UIItem* box, QGraphicsSceneMouseEvent* event);
     //    void signalMoveBox(UIItem* box, QGraphicsSceneMouseEvent* event);
 

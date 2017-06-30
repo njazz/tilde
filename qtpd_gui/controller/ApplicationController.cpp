@@ -13,6 +13,14 @@
 
 #include "python/wrappers/py_wrappers.h"
 
+#include "ServerWorker.h"
+
+#include "pdWindowConsoleObserver.h"
+
+#include "ControllerObserver.h"
+
+#include "PropertiesWindow.h"
+
 namespace qtpd {
 
 ApplicationController::ApplicationController()
@@ -156,12 +164,7 @@ void ApplicationController::dspOff()
     mainServerInstance()->dspOff();
 }
 
-void PdWindowConsoleObserver::update()
-{
-    if (_window) {
-        emit _window->cm_log_signal(QString(text().c_str()));
-    }
-};
+
 
 ServerObject* ApplicationController::slotCreateObject(ServerCanvas* canvas, string name)
 {

@@ -3,6 +3,10 @@
 
 #include "UIMatrix.h"
 
+#include "PropertyList.h"
+
+#include <QStyleOptionGraphicsItem>
+
 namespace qtpd {
 
 UIMatrix::UIMatrix()

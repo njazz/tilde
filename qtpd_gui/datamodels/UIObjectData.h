@@ -7,10 +7,13 @@
 #include <QObject>
 
 #include "CommonTypes.h"
-#include "Port.h"
-#include "PropertyList.h"
+
+
 
 namespace qtpd {
+
+class PropertyList;
+class Port;
 
 typedef std::vector<Port*> portItemVec;
 
@@ -19,8 +22,6 @@ typedef std::vector<Port*> portItemVec;
 ///
 class UIObjectData : public QObject {
     Q_OBJECT
-
-    //void* _pdObject;
 
     QString _objectData;
     PropertyList* _properties;
@@ -33,32 +34,20 @@ class UIObjectData : public QObject {
     int _minimumBoxHeight;
 
 public:
-//    void setPdObject(void* pdObject) { _pdObject = pdObject; }
-//    void* pdObject() { return _pdObject; }
+    QString objectData();
+    PropertyList* properties();
 
-    void setData(QString inputData) ///> set both properties and Pd object string
-    {
+    QString fullHelpName();
+    bool errorBox();
+    void setFullHelpName(QString fullHelpName);
+    void setErrorBox(bool errorBox);
 
-        _objectData = _properties->extractFromPdFileString(inputData);
-    }
-    QString objectData() { return _objectData; }
-    PropertyList* properties() { return _properties; }
+    void setData(QString inputData); ///> set both properties and Pd object string
+    void setObjectSize(t_objectSize sizeMode, int minW, int minH); ///> sets all size constraints
 
-    QString fullHelpName() { return _fullHelpName; }
-    bool errorBox() { return _errorBox; }
-    void setFullHelpName(QString fullHelpName) { _fullHelpName = fullHelpName; }
-    void setErrorBox(bool errorBox) { _errorBox = errorBox; }
-
-    void setObjectSize(t_objectSize sizeMode, int minW, int minH) ///> sets all size constraints
-    {
-        _objectSizeMode = sizeMode;
-        _minimumBoxWidth = minW;
-        _minimumBoxHeight = minH;
-    }
-
-    int minimumBoxWidth() { return _minimumBoxWidth; }
-    int minimumBoxHeight() { return _minimumBoxHeight; }
-    t_objectSize objectSizeMode() { return _objectSizeMode; }
+    int minimumBoxWidth();
+    int minimumBoxHeight();
+    t_objectSize objectSizeMode();
 
     explicit UIObjectData(QObject* parent = 0);
 

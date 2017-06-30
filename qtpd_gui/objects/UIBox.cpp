@@ -9,6 +9,11 @@
 #include "PatchWindow.h"
 #include "PatchWindowController.h"
 
+#include "PropertyList.h"
+#include "Preferences.h"
+
+#include "SizeBox.h"
+
 namespace qtpd {
 UIBox::UIBox()
 {

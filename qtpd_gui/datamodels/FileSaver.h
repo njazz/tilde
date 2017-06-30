@@ -4,9 +4,13 @@
 #ifndef CM_FILESAVER_H
 #define CM_FILESAVER_H
 
-#include "PatchWindow.h"
+//
+class QString;
+class QFile;
 
 namespace qtpd {
+
+class PatchWindow;
 
 class CanvasData;
 

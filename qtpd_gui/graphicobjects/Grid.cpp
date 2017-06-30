@@ -1,5 +1,7 @@
 #include "Grid.h"
 
+#include <QPainter>
+
 namespace qtpd {
 
 Grid::Grid()
