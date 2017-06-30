@@ -8,6 +8,9 @@
 #include <QGraphicsProxyWidget>
 #include <QPalette>
 
+#include <QGraphicsScene>
+#include <QGraphicsView>
+
 namespace qtpd {
 
 UIScript::UIScript()
@@ -58,9 +61,7 @@ void UIScript::editorChanged()
     //update();
 }
 
-
-
- UIObject* UIScript::createObj(QString data)
+UIObject* UIScript::createObj(QString data)
 {
     UIScript* ret = new UIScript();
 
@@ -69,9 +70,9 @@ void UIScript::editorChanged()
     return ret;
 }
 
- UIObject* UIScript::createObject(QString, t_canvas*, QGraphicsView* ) { return 0; }
+UIObject* UIScript::createObject(QString, t_canvas*, QGraphicsView*) { return 0; }
 
-void UIScript:: initProperties()
+void UIScript::initProperties()
 {
     UIObject::initProperties();
 
@@ -83,7 +84,7 @@ void UIScript::resizeEvent()
     _editor->setFixedSize(width() - 2, height() - 2);
 }
 
- void UIScript::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
+void UIScript::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
 {
     p->setClipRect(option->exposedRect);
 
@@ -111,59 +112,59 @@ void UIScript::resizeEvent()
 
 // ------------------------
 
-void UIScript::mousePressEvent(QGraphicsSceneMouseEvent* ev)
-{
+//void UIScript::mousePressEvent(QGraphicsSceneMouseEvent* ev)
+//{
 
-    if (getEditMode() != em_Unlocked) {
-        _editor->show();
-    }
-    if (getEditMode() == em_Unlocked) {
-        emit selectBox(this, ev);
-        dragOffset = ev->pos().toPoint();
-        ev->accept();
-    }
+//    if (getEditMode() != em_Unlocked) {
+//        _editor->show();
+//    }
+//    if (getEditMode() == em_Unlocked) {
+//        emit selectBox(this, ev);
+//        dragOffset = ev->pos().toPoint();
+//        ev->accept();
+//    }
 
-    //context menu
-    if (ev->button() == Qt::RightButton) {
+//    //context menu
+//    if (ev->button() == Qt::RightButton) {
 
-        QPoint pos;
+//        QPoint pos;
 
-        if (scene()
-            && !scene()->views().isEmpty()
-            && scene()->views().first()
-            && scene()->views().first()->viewport()) {
+//        if (scene()
+//            && !scene()->views().isEmpty()
+//            && scene()->views().first()
+//            && scene()->views().first()->viewport()) {
 
-            QGraphicsView* v = scene()->views().first();
-            pos = v->viewport()->mapToGlobal(ev->pos().toPoint());
+//            QGraphicsView* v = scene()->views().first();
+//            pos = v->viewport()->mapToGlobal(ev->pos().toPoint());
 
-            // TODO
-            showPopupMenu(pos + this->pos().toPoint());
-            ev->accept();
-        }
+//            // TODO
+//            showPopupMenu(pos + this->pos().toPoint());
+//            ev->accept();
+//        }
 
-        return;
-    }
-}
+//        return;
+//    }
+//}
 
-void UIScript::mouseReleaseEvent(QGraphicsSceneMouseEvent* ev)
-{
-    ev->accept();
-}
+//void UIScript::mouseReleaseEvent(QGraphicsSceneMouseEvent* ev)
+//{
+//    ev->accept();
+//}
 
-void UIScript::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
-{
-    if (event->buttons() & Qt::LeftButton) {
-        emit moveBox(this, event);
-    }
-    event->accept();
+//void UIScript::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
+//{
+//    if (event->buttons() & Qt::LeftButton) {
+//        emit moveBox(this, event);
+//    }
+//    event->accept();
 
-    //todo move!
-    if (getEditMode() != em_Unlocked) {
-        setCursor(QCursor(Qt::PointingHandCursor));
-    } else {
-        setCursor(QCursor(Qt::ArrowCursor));
-    }
-}
+//    //todo move!
+//    if (getEditMode() != em_Unlocked) {
+//        setCursor(QCursor(Qt::PointingHandCursor));
+//    } else {
+//        setCursor(QCursor(Qt::ArrowCursor));
+//    }
+//}
 
 // ----------------------
 
@@ -174,13 +175,18 @@ void UIScript::setPdMessage(QString message)
     setSize(300, 200);
 }
 
-
 void UIScript::sync()
 {
     _editor->textEdit()->document()->setPlainText("");
+    _editor->textEdit()->setContext(pyWrapper::inst().withPatchControllerServerObjectAndList(this->parentController(), serverObject(), &_scriptCommon->scriptData()->inputList));
+}
 
-    // TODO
-    //_editor->textEdit()->setContext(pyWrapper::inst().withCanvasPdObjectAndInput((UIObject*)this->parentCanvasView(), 0, &_scriptCommon->scriptData()->inputList));
 
+
+void UIScript::updateUI(AtomList list)
+{
+
+    _scriptCommon->scriptData()->inputList = UIScriptCommon::AtomListToStringList(list);
+    _scriptCommon->btnRun();
 }
 }

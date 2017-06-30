@@ -31,6 +31,7 @@ int main(int argc, char* argv[])
 {
     QApplication a(argc, argv);
     a.setQuitOnLastWindowClosed(false);
+
     //a.setWindowIcon(QIcon("./pd_ceammc.icns"));
 
     QTPD_PREF_INIT;
@@ -40,7 +41,7 @@ int main(int argc, char* argv[])
     PythonQt::init(PythonQt::RedirectStdOut); //PythonQt::IgnoreSiteModule |
     PythonQt_QtAll::init();
 
-    //pyWrapper::inst();
+    pyWrapper::inst();
     //
 #endif
 
@@ -51,9 +52,7 @@ int main(int argc, char* argv[])
     //const
     ApplicationController* controller = new ApplicationController();
 
-#ifdef WITH_PYTHON
-    pyWrapper::inst().setAppController(controller);
-#endif
+
 
     QTPD_AUDIOSETTINGS_INIT;
 

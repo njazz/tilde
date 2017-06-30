@@ -11,6 +11,8 @@
 
 #include "FileParser.h"
 
+#include "python/wrappers/py_wrappers.h"
+
 namespace qtpd {
 
 ApplicationController::ApplicationController()
@@ -35,12 +37,13 @@ ApplicationController::ApplicationController()
     _serverWorker->moveToThread(_serverThread);
     _serverThread->start();
 
-//_mainServerInstance = _server->createInstance();
+    //_mainServerInstance = _server->createInstance();
 
 #ifdef WITH_PYTHON
-    PythonQtObjectPtr mainContext = PythonQt::self()->getMainModule();
+    pyWrapper::inst().setAppController(this);
+    PythonQtObjectPtr mainContext = pyWrapper::inst().newContext(); //PythonQt::self()->getMainModule();
     _pythonConsole = new PythonQtScriptingConsole(NULL, mainContext);
-    qDebug("pyConsole %lu", (long)_pythonConsole);
+//qDebug("pyConsole %lu", (long)_pythonConsole);
 #endif
 
     _consoleObserver = new PdWindowConsoleObserver;

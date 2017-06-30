@@ -69,16 +69,16 @@ public Q_SLOTS:
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//class pyPatchWindowDecorator : public QObject {
-//    Q_OBJECT
+class pyPatchWindowDecorator : public QObject {
+    Q_OBJECT
 
-//public Q_SLOTS:
+public Q_SLOTS:
 
-//    CanvasView* canvas(PatchWindow* w)
-//    {
-//        return w->canvasView();
-//    }
-//};
+    CanvasView* canvas(PatchWindow* w)
+    {
+        return w->canvasView();
+    }
+};
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -290,13 +290,12 @@ public Q_SLOTS:
     void output(QString msg)
     {
         if (!_serverObject) {
-            ServerInstance::post("Python: server object error!");
+
             return;
         }
 
-        string msg_ = "-py-output " + msg.toStdString();
+        string msg_ = "__output " + msg.toStdString();
         _serverObject->message(msg_);
-
     }
 
     QStringList input()
@@ -314,11 +313,7 @@ class pyQtpd : public QObject {
     ApplicationController* _appController;
 
 public:
-    explicit pyQtpd(ApplicationController* ctl = 0)
-    {
-        qDebug() << "new pyQtpd" << ctl;
-        _appController = ctl;
-    };
+    explicit pyQtpd(QObject* parent = 0, ApplicationController* ctl = 0) { _appController = ctl; };
 
 public Q_SLOTS:
     PyObject* getMainModule()
@@ -330,10 +325,6 @@ public Q_SLOTS:
 
     PatchWindowController* newPatchWindow()
     {
-        if (!_appController) {
-            ServerInstance::post("Python: App controller error!");
-            return 0;
-        }
         PatchWindowController* ret;
         ret = new PatchWindowController(_appController);
         ret->firstWindow()->show();

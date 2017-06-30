@@ -15,6 +15,7 @@ class QGraphicsSceneMouseEvent;
 
 namespace qtpd {
 
+class CanvasView;
 class CanvasData;
 class PatchWindow;
 class UIObject;
@@ -63,6 +64,9 @@ private:
 
     void doCreateObject(UIObject* uiObject);
 
+    CanvasView* _boxOnlyCanvas;
+    QGraphicsScene* _boxOnlyScene;
+
 public:
     PatchWindowController(ApplicationController* appController); //replace with parent (appcontroller)
 
@@ -75,10 +79,12 @@ public:
     UIBox* subpatchBox();
     ServerObject* serverCanvasAsObject();
 
+    CanvasView* boxOnlyCanvas(); // for GOP functionality
+
     ServerInstance* serverInstance();
 
     void setAppController(ApplicationController* a);
-    ApplicationController* appController(){return _appController;}
+    ApplicationController* appController() { return _appController; }
 
     CanvasData* canvasData() { return _canvasData; };
 

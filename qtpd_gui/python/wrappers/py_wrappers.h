@@ -4,28 +4,31 @@
 #ifndef PY_WRAPERS_H
 #define PY_WRAPERS_H
 
-#include "UIBox.h"
-#include "UIObject.h"
+//#include "UIBox.h"
+//#include "UIObject.h"
 
 #include <PythonQt.h>
 #include <PythonQt_QtAll.h>
 
-using namespace qtpd;
+//
 ////
 /// \brief python wrapper singleton class
 ///
 ///
 
-namespace qtpd{
+namespace qtpd {
 class ApplicationController;
+class PatchWindowController;
 }
+class ServerObject;
 
-class pyWrapper
-{
+using namespace qtpd;
+
+class pyWrapper {
 private:
-
-   pyWrapper();
+    pyWrapper();
     ApplicationController* _appController;
+
 public:
     static pyWrapper& inst()
     {
@@ -33,7 +36,7 @@ public:
         return instance;
     }
 
-    void setAppController(ApplicationController* appC){_appController = appC;}
+    void setAppController(ApplicationController* appC) { _appController = appC; }
 
     // TODO no singleton
     //pyWrapper(ApplicationController* appC){_appController = appC;};
@@ -46,9 +49,14 @@ public:
 
     // FIX that later
 
-    PythonQtObjectPtr withCanvas(QObject* canvas);
-    PythonQtObjectPtr withCanvasAndPdObject(QObject* canvas, t_object* obj);
-    PythonQtObjectPtr withCanvasPdObjectAndInput(QObject* canvas, t_object* obj, QStringList* list);
+    //    PythonQtObjectPtr withCanvas(QObject* canvas);
+    //    PythonQtObjectPtr withCanvasAndPdObject(QObject* canvas, t_object* obj);
+    //    PythonQtObjectPtr withCanvasPdObjectAndInput(QObject* canvas, t_object* obj, QStringList* list);
+
+    PythonQtObjectPtr newContext();
+    PythonQtObjectPtr withPatchController(PatchWindowController* controller);
+    PythonQtObjectPtr withPatchControllerAndServerObject(PatchWindowController* controller, ServerObject* object);
+    PythonQtObjectPtr withPatchControllerServerObjectAndList(PatchWindowController* controller, ServerObject* object, QStringList* list);
 };
 
 #endif // PY_WRAPERS_H

@@ -8,6 +8,9 @@
 #include <QGraphicsProxyWidget>
 #include <QPalette>
 
+#include <QGraphicsView>
+#include <QGraphicsScene>
+
 namespace qtpd {
 
 UIScriptBox::UIScriptBox()
@@ -155,59 +158,59 @@ void UIScriptBox::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWi
 
 // ------------------------
 
-void UIScriptBox::mousePressEvent(QGraphicsSceneMouseEvent* ev)
-{
+//void UIScriptBox::mousePressEvent(QGraphicsSceneMouseEvent* ev)
+//{
 
-    if (getEditMode() != em_Unlocked) {
-        _editor->show();
-    }
-    if (getEditMode() == em_Unlocked) {
-        emit selectBox(this, ev);
-        dragOffset = ev->pos().toPoint();
-        ev->accept();
-    }
+//    if (getEditMode() != em_Unlocked) {
+//        _editor->show();
+//    }
+//    if (getEditMode() == em_Unlocked) {
+//        emit selectBox(this, ev);
+//        dragOffset = ev->pos().toPoint();
+//        ev->accept();
+//    }
 
-    //context menu
-    if (ev->button() == Qt::RightButton) {
+//    //context menu
+//    if (ev->button() == Qt::RightButton) {
 
-        QPoint pos;
+//        QPoint pos;
 
-        if (scene()
-            && !scene()->views().isEmpty()
-            && scene()->views().first()
-            && scene()->views().first()->viewport()) {
+//        if (scene()
+//            && !scene()->views().isEmpty()
+//            && scene()->views().first()
+//            && scene()->views().first()->viewport()) {
 
-            QGraphicsView* v = scene()->views().first();
-            pos = v->viewport()->mapToGlobal(ev->pos().toPoint());
+//            QGraphicsView* v = scene()->views().first();
+//            pos = v->viewport()->mapToGlobal(ev->pos().toPoint());
 
-            // TODO
-            showPopupMenu(pos + this->pos().toPoint());
-            ev->accept();
-        }
+//            // TODO
+//            showPopupMenu(pos + this->pos().toPoint());
+//            ev->accept();
+//        }
 
-        return;
-    }
-}
+//        return;
+//    }
+//}
 
-void UIScriptBox::mouseReleaseEvent(QGraphicsSceneMouseEvent* ev)
-{
-    ev->accept();
-}
+//void UIScriptBox::mouseReleaseEvent(QGraphicsSceneMouseEvent* ev)
+//{
+//    ev->accept();
+//}
 
-void UIScriptBox::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
-{
-    if (event->buttons() & Qt::LeftButton) {
-        emit moveBox(this, event);
-    }
-    event->accept();
+//void UIScriptBox::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
+//{
+//    if (event->buttons() & Qt::LeftButton) {
+//        emit moveBox(this, event);
+//    }
+//    event->accept();
 
-    //todo move!
-    if (getEditMode() != em_Unlocked) {
-        setCursor(QCursor(Qt::PointingHandCursor));
-    } else {
-        setCursor(QCursor(Qt::ArrowCursor));
-    }
-}
+//    //todo move!
+//    if (getEditMode() != em_Unlocked) {
+//        setCursor(QCursor(Qt::PointingHandCursor));
+//    } else {
+//        setCursor(QCursor(Qt::ArrowCursor));
+//    }
+//}
 
 // ----------------------
 
@@ -216,5 +219,21 @@ void UIScriptBox::setPdMessage(QString message)
     setObjectData(message);
 
     setSize(300, 200);
+}
+
+void UIScriptBox::sync()
+{
+    UIObject::sync();
+
+    _editor->textEdit()->document()->setPlainText("");
+    _editor->textEdit()->setContext(pyWrapper::inst().withPatchControllerServerObjectAndList(this->parentController(), serverObject(), &_scriptCommon->scriptData()->inputList));
+
+}
+
+void UIScriptBox::updateUI(AtomList list)
+{
+
+    _scriptCommon->scriptData()->inputList = UIScriptCommon::AtomListToStringList(list);
+    _scriptCommon->btnRun();
 }
 }

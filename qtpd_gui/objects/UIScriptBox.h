@@ -15,8 +15,9 @@
 //#include "UIScriptTextEdit.h"
 
 #include "UIScriptEditor.h"
-
 #include "UIScriptCommon.h"
+
+class QGraphicsView;
 
 namespace qtpd {
 
@@ -105,15 +106,20 @@ public:
 
     // ------------------------
 
-    void mousePressEvent(QGraphicsSceneMouseEvent* ev);
+//    void mousePressEvent(QGraphicsSceneMouseEvent* ev);
 
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev);
+//    void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev);
 
-    void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
+//    void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
 
     // ----------------------
 
     void setPdMessage(QString message);
+
+    virtual void sync();
+
+    virtual void updateUI(AtomList list);
+
 
 private slots:
     void editorChanged();

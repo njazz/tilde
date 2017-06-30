@@ -5,6 +5,8 @@
 
 #include <QPushButton>
 
+#include "Preferences.h"
+
 namespace qtpd {
 UIScriptEditor::UIScriptEditor(QWidget* parent)
     : QWidget(parent)

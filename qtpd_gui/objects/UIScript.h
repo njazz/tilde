@@ -11,12 +11,10 @@
 
 #include <QFileDialog>
 
-//#include "cm_pdlink.h"
-
-//#include "UIScriptTextEdit.h"
 #include "UIScriptEditor.h"
-
 #include "UIScriptCommon.h"
+
+class QGraphicsView;
 
 namespace qtpd {
 
@@ -49,13 +47,15 @@ public:
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*);
     // ------------------------
 
-    void mousePressEvent(QGraphicsSceneMouseEvent* ev);
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev);
-    void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
+//    void mousePressEvent(QGraphicsSceneMouseEvent* ev);
+//    void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev);
+//    void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
 
     // ----------------------
 
     void setPdMessage(QString message);
+
+    virtual void updateUI(AtomList list);
 
     virtual void sync();
 

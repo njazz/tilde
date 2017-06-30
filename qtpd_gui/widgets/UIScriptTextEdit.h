@@ -9,6 +9,8 @@
 #include <QScrollBar>
 #include <QTextCursor>
 
+#include <QStringListModel>
+
 #include "python/wrappers/py_wrappers.h"
 
 namespace qtpd {

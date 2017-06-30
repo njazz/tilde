@@ -69,9 +69,19 @@ UIBox* PatchWindowController::subpatchBox()
     return ret;
 }
 
-ServerObject* PatchWindowController:: serverCanvasAsObject()
+ServerObject* PatchWindowController::serverCanvasAsObject()
 {
     return _serverCanvas->toServerObject();
+}
+
+CanvasView* PatchWindowController::boxOnlyCanvas()
+{
+    if (!_boxOnlyCanvas)
+        _boxOnlyCanvas = new CanvasView();
+
+    _boxOnlyScene = _boxOnlyCanvas->scene();
+
+    return _boxOnlyCanvas;
 }
 
 ServerInstance* PatchWindowController::serverInstance() { return _appController->mainServerInstance(); }
@@ -182,7 +192,6 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
     // TODO wait?
     uiObject->setServerObject(serverObject);
 
-
     //
 
     if (!uiObject) {
@@ -291,7 +300,7 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
     */
 };
 
-void PatchWindowController:: creatBoxForSubpatch(PatchWindowController* controller, QString data, QPoint pos)
+void PatchWindowController::creatBoxForSubpatch(PatchWindowController* controller, QString data, QPoint pos)
 {
     UIObject* uiObject = controller->subpatchBox();
 
