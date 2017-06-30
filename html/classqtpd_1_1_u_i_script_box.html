@@ -107,7 +107,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">qtpd::UIScriptBox Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="qtpd::UIScriptBox" --><!-- doxytag: inherits="qtpd::UIObject" -->
+<!-- doxytag: class="qtpd::UIScriptBox" --><!-- doxytag: inherits="qtpd::UIBox" -->
 <p>gui object: script box (ui.scriptbox)  
  <a href="classqtpd_1_1_u_i_script_box.html#details">More...</a></p>
 
@@ -118,6 +118,7 @@ Inheritance diagram for qtpd::UIScriptBox:</div>
  <div class="center">
   <img src="classqtpd_1_1_u_i_script_box.png" usemap="#qtpd::UIScriptBox_map" alt=""/>
   <map id="qtpd::UIScriptBox_map" name="qtpd::UIScriptBox_map">
+<area href="classqtpd_1_1_u_i_box.html" title="gui object: standard object box" alt="qtpd::UIBox" shape="rect" coords="0,112,106,136"/>
 <area href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special" alt="qtpd::UIObject" shape="rect" coords="0,56,106,80"/>
 <area href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class." alt="qtpd::UIItem" shape="rect" coords="0,0,106,24"/>
 </map>
@@ -130,6 +131,9 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_box.html#a1d9c5ace799f1de391ed0652f77ecd13">UIScriptBox</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_box.html#a842c65678324437bd8b4ee2e4ed43960">initProperties</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_box.html#adca9c9bd680f0f04251ca88e20c7a114">paint</a> (QPainter *p, const QStyleOptionGraphicsItem *option, QWidget *)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">paint event  <a href="#adca9c9bd680f0f04251ca88e20c7a114"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_box.html#a1d8c3c58a5c90eb3bddf1dff312cda0b">objectPressEvent</a> (QGraphicsSceneMouseEvent *event)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">mouse down  <a href="#a1d8c3c58a5c90eb3bddf1dff312cda0b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_box.html#aeca00d744ea7e694763d8cfc0418b2b8">setPdMessage</a> (QString message)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_box.html#a7c94fdc68b2abe231742fc67bbd165c8">sync</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_box.html#a2513c4e600c43810c44099fe85aa7892">updateUI</a> (<a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> list)</td></tr>
@@ -172,6 +176,8 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_box.html#af9b384f261a58637f776f8e1f1a5c5c2">qtpd::UIBox</a>.</p>
 
 </div>
 </div>
@@ -226,6 +232,33 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a1d8c3c58a5c90eb3bddf1dff312cda0b"></a><!-- doxytag: member="qtpd::UIScriptBox::objectPressEvent" ref="a1d8c3c58a5c90eb3bddf1dff312cda0b" args="(QGraphicsSceneMouseEvent *event)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_script_box.html#a1d8c3c58a5c90eb3bddf1dff312cda0b">qtpd::UIScriptBox::objectPressEvent</a> </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>mouse down </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ev</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_box.html#ad4ddec63907a5b42f1d4ec0b8572e6d7">qtpd::UIBox</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="adca9c9bd680f0f04251ca88e20c7a114"></a><!-- doxytag: member="qtpd::UIScriptBox::paint" ref="adca9c9bd680f0f04251ca88e20c7a114" args="(QPainter *p, const QStyleOptionGraphicsItem *option, QWidget *)" -->
 <div class="memitem">
 <div class="memproto">
@@ -257,7 +290,9 @@ Static Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#ae6c38741873376fda63405d73f2697cd">qtpd::UIObject</a>.</p>
+<p>paint event </p>
+
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_box.html#a7da83e2275333d239e85b44981c40450">qtpd::UIBox</a>.</p>
 
 </div>
 </div>
@@ -276,6 +311,8 @@ Static Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_box.html#af28c0feb06a5998d970b5d29fb6f61d6">qtpd::UIBox</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a7c94fdc68b2abe231742fc67bbd165c8"></a><!-- doxytag: member="qtpd::UIScriptBox::sync" ref="a7c94fdc68b2abe231742fc67bbd165c8" args="()" -->
@@ -292,7 +329,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#a1151171b60b0fd072f121202b9fc6e98">qtpd::UIObject</a>.</p>
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_box.html#a08475b46ff890049b1402e1e4de73377">qtpd::UIBox</a>.</p>
 
 </div>
 </div>
@@ -337,7 +374,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 30 2017 13:00:02 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 30 2017 13:38:17 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
