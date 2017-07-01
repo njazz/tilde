@@ -132,7 +132,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_text.html#a56d8f9ba20c632198216ba5d8daac247">initProperties</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_text.html#ac113238a32b846f796429040df09a85d">objectPressEvent</a> (QGraphicsSceneMouseEvent *ev)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_text.html#abe3b5d63ecd147d71afa4c834f12245c">autoResize</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_text.html#a5ce5e9a1342d499b7702d7ec8cbddfb6">setPdMessage</a> (std::string message)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_text.html#a3077b0cc2345a64bb7e0b246c352c6b8">setObjectData</a> (QString objData)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets object text data  <a href="#a3077b0cc2345a64bb7e0b246c352c6b8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_text.html#a20a1e21b277ddf6fb89ecce5ffdb0af8">pdObject</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_text.html#a586b396b5f81a55c2f3ca9486de395a3">eventFilter</a> (QObject *, QEvent *event)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_text.html#a717276407aeca410161b2e664b85efed">getEditorData</a> ()</td></tr>
@@ -362,20 +363,25 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a5ce5e9a1342d499b7702d7ec8cbddfb6"></a><!-- doxytag: member="qtpd::UIText::setPdMessage" ref="a5ce5e9a1342d499b7702d7ec8cbddfb6" args="(std::string message)" -->
+<a class="anchor" id="a3077b0cc2345a64bb7e0b246c352c6b8"></a><!-- doxytag: member="qtpd::UIText::setObjectData" ref="a3077b0cc2345a64bb7e0b246c352c6b8" args="(QString objData)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_text.html#a5ce5e9a1342d499b7702d7ec8cbddfb6">qtpd::UIText::setPdMessage</a> </td>
+          <td class="memname">virtual void <a class="el" href="classqtpd_1_1_u_i_text.html#a3077b0cc2345a64bb7e0b246c352c6b8">qtpd::UIText::setObjectData</a> </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>message</em></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>objData</em></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>sets object text data </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#a79408701823ecce79ece7cdf5a10103f">qtpd::UIObject</a>.</p>
 
 </div>
 </div>
@@ -446,7 +452,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 1 2017 13:04:20 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jul 1 2017 18:39:40 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

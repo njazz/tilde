@@ -55,7 +55,7 @@ var searchData=
   ['pdinstance_5fnew',['pdinstance_new',['../m__pd_8h.html#ab0455bd0c1539b77c89b0d1ad22ab759',1,'m_pd.h']]],
   ['pdobject',['pdObject',['../classqtpd_1_1_u_i_link.html#abf2d491d721f909e9f6f98559ae71fbe',1,'qtpd::UILink::pdObject()'],['../classqtpd_1_1_u_i_text.html#a20a1e21b277ddf6fb89ecce5ffdb0af8',1,'qtpd::UIText::pdObject()']]],
   ['pdoutlettype',['pdOutletType',['../classqtpd_1_1_u_i_object.html#a765ab43f6b07c8f94c06d3ffa4da4996',1,'qtpd::UIObject']]],
-  ['pdwindow',['pdWindow',['../classqtpd_1_1_application_controller.html#ae366e0bcd2883171be312b6c74a9c1cd',1,'qtpd::ApplicationController::pdWindow()'],['../classqtpd_1_1_pd_window.html#a916bc5d8c3d803b541ab325d8e9d0d1c',1,'qtpd::PdWindow::PdWindow()']]],
+  ['pdwindow',['PdWindow',['../classqtpd_1_1_pd_window.html#a916bc5d8c3d803b541ab325d8e9d0d1c',1,'qtpd::PdWindow::PdWindow()'],['../classqtpd_1_1_application_controller.html#ae366e0bcd2883171be312b6c74a9c1cd',1,'qtpd::ApplicationController::pdWindow()']]],
   ['plus_5fperform',['plus_perform',['../m__pd_8h.html#a0e2c87e5829496d5d7f02537adebf4e0',1,'m_pd.h']]],
   ['pointerinlet_5fnew',['pointerinlet_new',['../m__pd_8h.html#a62f4c920b87f89291f10c14d62e34781',1,'m_pd.h']]],
   ['port',['Port',['../classqtpd_1_1_port.html#ad995d08ebf05486c0e102c7147294d2e',1,'qtpd::Port']]],
