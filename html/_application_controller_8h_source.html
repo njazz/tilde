@@ -104,50 +104,50 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00020"></a>00020 <span class="keyword">class </span>ServerWorker;
 <a name="l00021"></a>00021 <span class="keyword">class </span>PdWindowConsoleObserver;
 <a name="l00022"></a>00022 
-<a name="l00023"></a><a class="code" href="classqtpd_1_1_application_controller.html">00023</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_application_controller.html">ApplicationController</a> : <span class="keyword">public</span> QObject {
-<a name="l00024"></a>00024     Q_OBJECT
-<a name="l00025"></a>00025 
-<a name="l00026"></a>00026 <span class="keyword">private</span>:
-<a name="l00027"></a>00027     LocalServer* _localServer;
+<a name="l00026"></a><a class="code" href="classqtpd_1_1_application_controller.html">00026</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_application_controller.html" title="The Application Controller class.">ApplicationController</a> : <span class="keyword">public</span> QObject {
+<a name="l00027"></a>00027     Q_OBJECT
 <a name="l00028"></a>00028 
-<a name="l00029"></a>00029     <a class="code" href="classqtpd_1_1_server_worker.html">ServerWorker</a>* _serverWorker;
-<a name="l00030"></a>00030     QThread* _serverThread;
+<a name="l00029"></a>00029 <span class="keyword">private</span>:
+<a name="l00030"></a>00030     LocalServer* _localServer;
 <a name="l00031"></a>00031 
-<a name="l00032"></a>00032     <a class="code" href="classqtpd_1_1_pd_window.html" title="Pd console window.">PdWindow</a>* _pdWindow;
-<a name="l00033"></a>00033     PythonQtScriptingConsole* _pythonConsole;
+<a name="l00032"></a>00032     <a class="code" href="classqtpd_1_1_server_worker.html" title="Stub for the server in separate thread.">ServerWorker</a>* _serverWorker;
+<a name="l00033"></a>00033     QThread* _serverThread;
 <a name="l00034"></a>00034 
-<a name="l00035"></a>00035     <a class="code" href="classqtpd_1_1_pd_window_console_observer.html">PdWindowConsoleObserver</a>* _consoleObserver;
-<a name="l00036"></a>00036 
-<a name="l00037"></a>00037 <span class="keyword">public</span>:
-<a name="l00038"></a>00038     <a class="code" href="classqtpd_1_1_application_controller.html#a848539082aa06cbfb5429f83c1a6ea54">ApplicationController</a>();
+<a name="l00035"></a>00035     <a class="code" href="classqtpd_1_1_pd_window.html" title="Pd console window.">PdWindow</a>* _pdWindow;
+<a name="l00036"></a>00036     PythonQtScriptingConsole* _pythonConsole;
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038     <a class="code" href="classqtpd_1_1_pd_window_console_observer.html" title="The observer for the Pd console.">PdWindowConsoleObserver</a>* _consoleObserver;
 <a name="l00039"></a>00039 
-<a name="l00040"></a>00040     ServerInstance* <a class="code" href="classqtpd_1_1_application_controller.html#add2bb2a4912c94030207b1972a3a37ea">mainServerInstance</a>();
-<a name="l00041"></a>00041 
-<a name="l00042"></a>00042     Observer* <a class="code" href="classqtpd_1_1_application_controller.html#a9e531bfea32cc3561d1c3d318949d865">controllerObserver</a>();
-<a name="l00043"></a>00043 
-<a name="l00044"></a><a class="code" href="classqtpd_1_1_application_controller.html#a1b201ad281e4e27e65fd3c216edf91de">00044</a>     <a class="code" href="classqtpd_1_1_server_worker.html">ServerWorker</a>* <a class="code" href="classqtpd_1_1_application_controller.html#a1b201ad281e4e27e65fd3c216edf91de">serverWorker</a>() { <span class="keywordflow">return</span> _serverWorker; };
-<a name="l00045"></a>00045 
-<a name="l00046"></a>00046 signals:
-<a name="l00047"></a>00047     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_application_controller.html#aba9fc1d3358588190c7f6aa5b8cb349a">getLocalServer</a>(LocalServer* ret);
+<a name="l00040"></a>00040 <span class="keyword">public</span>:
+<a name="l00041"></a>00041     <a class="code" href="classqtpd_1_1_application_controller.html#a848539082aa06cbfb5429f83c1a6ea54">ApplicationController</a>();
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043     ServerInstance* <a class="code" href="classqtpd_1_1_application_controller.html#add2bb2a4912c94030207b1972a3a37ea">mainServerInstance</a>();
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045     Observer* <a class="code" href="classqtpd_1_1_application_controller.html#a9e531bfea32cc3561d1c3d318949d865">controllerObserver</a>();
+<a name="l00046"></a>00046 
+<a name="l00047"></a><a class="code" href="classqtpd_1_1_application_controller.html#a1b201ad281e4e27e65fd3c216edf91de">00047</a>     <a class="code" href="classqtpd_1_1_server_worker.html" title="Stub for the server in separate thread.">ServerWorker</a>* <a class="code" href="classqtpd_1_1_application_controller.html#a1b201ad281e4e27e65fd3c216edf91de">serverWorker</a>() { <span class="keywordflow">return</span> _serverWorker; };
 <a name="l00048"></a>00048 
-<a name="l00049"></a>00049 <span class="keyword">public</span> slots:
-<a name="l00050"></a>00050     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_application_controller.html#a985b0f4ff669b15e89b41f258d1eacce">newPatchWindowController</a>();
-<a name="l00051"></a>00051     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_application_controller.html#aab27504e4328f4d2e3b77f5794214cb1">openFileDialog</a>();
-<a name="l00052"></a>00052 
-<a name="l00053"></a>00053     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_application_controller.html#ae366e0bcd2883171be312b6c74a9c1cd">pdWindow</a>();
-<a name="l00054"></a>00054     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_application_controller.html#a44b57839794b7091d344fcb819724a80">pythonConsole</a>();
+<a name="l00049"></a>00049 signals:
+<a name="l00050"></a>00050     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_application_controller.html#aba9fc1d3358588190c7f6aa5b8cb349a">getLocalServer</a>(LocalServer* ret);
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052 <span class="keyword">public</span> slots:
+<a name="l00053"></a>00053     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_application_controller.html#a985b0f4ff669b15e89b41f258d1eacce">newPatchWindowController</a>();
+<a name="l00054"></a>00054     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_application_controller.html#aab27504e4328f4d2e3b77f5794214cb1">openFileDialog</a>();
 <a name="l00055"></a>00055 
-<a name="l00056"></a>00056     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_application_controller.html#a5b33b7c0b80a64f19da53310ad240cc6">preferencesWindow</a>();
-<a name="l00057"></a>00057     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_application_controller.html#a23001f723b3e6e5e6fd2c2d52b846724">audioSettingsWindow</a>();
+<a name="l00056"></a>00056     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_application_controller.html#ae366e0bcd2883171be312b6c74a9c1cd">pdWindow</a>();
+<a name="l00057"></a>00057     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_application_controller.html#a44b57839794b7091d344fcb819724a80">pythonConsole</a>();
 <a name="l00058"></a>00058 
-<a name="l00059"></a>00059     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_application_controller.html#a6213dd85bbbdbfbaf13a38e12800d7b4">dspOn</a>();
-<a name="l00060"></a>00060     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_application_controller.html#afc82ce265ea8dee1311a2fe9cb827971">dspOff</a>();
+<a name="l00059"></a>00059     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_application_controller.html#a5b33b7c0b80a64f19da53310ad240cc6">preferencesWindow</a>();
+<a name="l00060"></a>00060     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_application_controller.html#a23001f723b3e6e5e6fd2c2d52b846724">audioSettingsWindow</a>();
 <a name="l00061"></a>00061 
-<a name="l00062"></a>00062     ServerObject* <a class="code" href="classqtpd_1_1_application_controller.html#aaa0d42e985b2e3ebfdc9f57fd2bdd13c">slotCreateObject</a>(ServerCanvas* canvas, <span class="keywordtype">string</span> name);
-<a name="l00063"></a>00063 };
-<a name="l00064"></a>00064 }
-<a name="l00065"></a>00065 
-<a name="l00066"></a>00066 <span class="preprocessor">#endif // CM_PDLINK_H</span>
+<a name="l00062"></a>00062     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_application_controller.html#a6213dd85bbbdbfbaf13a38e12800d7b4">dspOn</a>();
+<a name="l00063"></a>00063     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_application_controller.html#afc82ce265ea8dee1311a2fe9cb827971">dspOff</a>();
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065     ServerObject* <a class="code" href="classqtpd_1_1_application_controller.html#aaa0d42e985b2e3ebfdc9f57fd2bdd13c">slotCreateObject</a>(ServerCanvas* canvas, <span class="keywordtype">string</span> name);
+<a name="l00066"></a>00066 };
+<a name="l00067"></a>00067 }
+<a name="l00068"></a>00068 
+<a name="l00069"></a>00069 <span class="preprocessor">#endif // CM_PDLINK_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -166,7 +166,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 1 2017 22:24:27 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jul 1 2017 23:58:19 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
