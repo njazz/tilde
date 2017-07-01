@@ -37,32 +37,32 @@ public:
     void createMenus();
 
 private:
-    Ui::cm_basewindow* ui;
+    Ui::cm_basewindow* _ui;
 
-    QMenu* findMenu;
-    QMenu* mediaMenu;
-    QMenu* windowMenu;
+    QMenu* _findMenu;
+    QMenu* _mediaMenu;
+    QMenu* _windowMenu;
 
-    QAction* newAct;
+    QAction* _newAct;
 
-    QAction* closeAct;
-    QAction* messageAct;
+    QAction* _closeAct;
+    QAction* _messageAct;
 
-    QAction* exitAct;
+    QAction* _exitAct;
 
-    QAction* undoAct;
-    QAction* redoAct;
+    QAction* _undoAct;
+    QAction* _redoAct;
 
-    QAction* dspOnAct;
-    QAction* dspOffAct;
+    QAction* _dspOnAct;
+    QAction* _dspOffAct;
 
-    QAction* pdWindowAct;
-    QAction* pythonConsoleAct;
-    QAction* pdAudioSettingsAct;
-    QAction* pdPreferencesAct;
-    QAction* pdKeyBindingsAct;
+    QAction* _pdWindowAct;
+    QAction* _pythonConsoleAct;
+    QAction* _pdAudioSettingsAct;
+    QAction* _pdPreferencesAct;
+    QAction* _pdKeyBindingsAct;
 
-    QAction* pdHelpAct;
+    QAction* _pdHelpAct;
 
 public:
     QAction* openAct;

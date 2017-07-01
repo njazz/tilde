@@ -582,7 +582,7 @@
       <widget class="QComboBox" name="logLevelBox">
        <property name="geometry">
         <rect>
-         <x>60</x>
+         <x>69</x>
          <y>20</y>
          <width>101</width>
          <height>21</height>
@@ -610,7 +610,7 @@
       <widget class="QLabel" name="label">
        <property name="geometry">
         <rect>
-         <x>64</x>
+         <x>72</x>
          <y>0</y>
          <width>101</width>
          <height>16</height>

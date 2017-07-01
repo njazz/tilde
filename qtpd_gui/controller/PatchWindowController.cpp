@@ -329,7 +329,12 @@ void PatchWindowController::creatBoxForSubpatch(PatchWindowController* controlle
 }
 
 //bool PatchWindowController::patchcord(UIObject* src, int out, UIObject* dest, int in){};
-void PatchWindowController::deletePatchcordsForObject(UIObject* o){};
+void PatchWindowController::deletePatchcordsForObject(UIObject* o)
+{
+    // TODO
+    deletePatchcordsFor((UIItem*)o);
+};
+
 void PatchWindowController::deleteObject(UIObject* o)
 {
     _canvasData->deselectBoxes();

@@ -16,7 +16,7 @@ class PatchWindow : public BaseWindow {
 private:
     PatchWindowController* _controller;
 
-    QScrollArea* scroll;
+    QScrollArea* _scroll;
 
     ////
 

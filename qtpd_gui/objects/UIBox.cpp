@@ -14,6 +14,8 @@
 
 #include "SizeBox.h"
 
+#include "pdServer.hpp"
+
 namespace qtpd {
 UIBox::UIBox()
 {
@@ -51,7 +53,17 @@ void UIBox::objectPressEvent(QGraphicsSceneMouseEvent* event)
     //abstraction opening. Fix
     if (getEditMode() != em_Unlocked) {
         if (_isAbstraction) {
-            FileParser::open(_abstractionPath);
+            _abstractionPath = serverObject()->toServerCanvas()->path().c_str();
+
+            qDebug() << "abs object:" << serverObject() << "to canvas: " << serverObject()->toServerCanvas();
+            qDebug() <<  "objects: " << serverObject()->hasInternalObject() << serverObject()->toServerCanvas()->hasInternalObject();
+            qDebug() << "path: " <<  serverObject()->toServerCanvas()->path().c_str();
+
+            QString fullName = _abstractionPath + "/" + _objectDataModel.objectData() + ".pd";
+            ServerInstance::post("abstraction path: "+fullName.toStdString());
+
+            FileParser::open(fullName);
+
             return;
         }
     }
@@ -114,7 +126,7 @@ void UIBox::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
     }
 
     QColor rectColor = (errorBox()) ? QColor(255, 0, 0) : properties()->get("BorderColor")->asQColor(); //QColor(128, 128, 128);
-    p->setPen(QPen(rectColor, 1 + _isAbstraction, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+    p->setPen(QPen(rectColor, 1 + _isAbstraction*2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
     p->drawRect(0, 0, boundingRect().width(), boundingRect().height());
     QTextOption* op = new QTextOption;
     op->setAlignment(Qt::AlignLeft);
@@ -123,6 +135,7 @@ void UIBox::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
     p->setFont(QFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize(), 0, false));
     //QStringList textList = _objectDataModel.objectData().split(" ");
     //textList.removeFirst();
+
     p->drawText(2, 3, boundingRect().width() - 2, boundingRect().height() - 3, 0, _objectDataModel.objectData(), 0);
 
     if (isSelected()) {
@@ -193,6 +206,7 @@ void UIBox::sync()
         qDebug() << "subpatch server canvas: " << serverObject()->toServerCanvas();
         _subpatchController = new PatchWindowController(parentController()->appController(), serverObject()->toServerCanvas());
     }
+
     update();
 }
 

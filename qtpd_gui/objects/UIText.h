@@ -161,12 +161,17 @@ public:
 
     ///////
 
-    void setPdMessage(std::string message)
+//    void setPdMessage(std::string message)
+//    {
+
+//    }
+
+    virtual void setObjectData(QString objData)
     {
-        setObjectData("ui.text");
+        UIObject::setObjectData("ui.text");
 
         //TODO temporary fix!
-        QString msg = QString(message.c_str());
+        QString msg = objData;//QString(message);
         QStringList list = msg.split("\n");
         for (int i = 0; i < list.size(); i++) {
             list[i] = list[i] + "\\n";
@@ -183,6 +188,7 @@ public:
         _editor->setFixedHeight(height() - 2);
 
         _editor->hide();
+
     }
 
     static void updateUI(void* uiobj, ceammc::AtomList msg)
@@ -230,6 +236,9 @@ public:
     virtual void sync()
     {
 
+        UIObject::sync();
+
+       setObjectData(properties()->get("Text")->asQString().split("\\n ").join("\n"));
     }
 
 signals:

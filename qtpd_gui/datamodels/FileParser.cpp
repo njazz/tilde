@@ -526,6 +526,10 @@ void FileParser::open(QString fname)
 
         f.close();
     }
+    else
+    {
+        ServerInstance::error("cannot open file: " + fname.toStdString());
+    }
 }
 
 // NEW API

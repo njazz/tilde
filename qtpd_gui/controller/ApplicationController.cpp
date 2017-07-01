@@ -80,7 +80,7 @@ ApplicationController::ApplicationController()
     _consoleObserver->setWindow(_pdWindow);
 
     _localServer->firstInstance()->post("Server started");
-    _localServer->firstInstance()->setVerboseLevel(5);
+    //_localServer->firstInstance()->setVerboseLevel(5);
     _localServer->firstInstance()->loadLibrary("~/Documents/Qtpd/Libraries/qtpd_ui");
 
     FileParser::setAppController(this);

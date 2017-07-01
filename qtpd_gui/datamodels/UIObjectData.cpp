@@ -21,6 +21,8 @@ void UIObjectData::setData(QString inputData) ///> set both properties and Pd ob
 {
 
     _objectData = _properties->extractFromPdFileString(inputData);
+
+    _fullHelpName = _objectData.split(" ").at(0) + "-help.pd";
 }
 
 void UIObjectData::setObjectSize(t_objectSize sizeMode, int minW, int minH) ///> sets all size constraints

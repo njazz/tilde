@@ -16,7 +16,7 @@ PatchWindow::PatchWindow()
     createActions();
     createMenus();
 
-    scroll = new QScrollArea(this);
+    _scroll = new QScrollArea(this);
     _canvasView = new CanvasView((QGraphicsView*)this);
 
     //scroll->setWidget(canvas);

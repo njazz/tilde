@@ -40,7 +40,7 @@ void UIText::editorDone()
 {
     qDebug("editor done");
 
-    setPdMessage(_editor->document()->toPlainText().toStdString()); //text().toStdString());
+    setObjectData(_editor->document()->toPlainText()); //text().toStdString());
     //todo
 
     //properties()->set("Text", getEditorData());

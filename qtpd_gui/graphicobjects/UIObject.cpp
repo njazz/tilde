@@ -631,6 +631,10 @@ void UIObject::openHelpWindow()
     if (fullHelpName_ != "") {
         FileParser::open(fullHelpName_);
     }
+    else
+    {
+        ServerInstance::error("bad error help file name!");
+    }
 }
 
 void UIObject::s_repaint() //needed for proper threading

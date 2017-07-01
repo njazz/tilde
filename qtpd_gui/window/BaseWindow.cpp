@@ -26,9 +26,9 @@ BaseWindow::BaseWindow(QWidget* parent)
     :
 
     QMainWindow(parent)
-    , ui(new Ui::cm_basewindow)
+    , _ui(new Ui::cm_basewindow)
 {
-    ui->setupUi(this);
+    _ui->setupUi(this);
 
     createActions();
     createMenus();
@@ -50,23 +50,23 @@ void BaseWindow::setAppController(ApplicationController* appController)
         return;
     }
 
-    connect(newAct, &QAction::triggered, _appController, &ApplicationController::newPatchWindowController);
+    connect(_newAct, &QAction::triggered, _appController, &ApplicationController::newPatchWindowController);
     connect(openAct, &QAction::triggered, _appController, &ApplicationController::openFileDialog);
-    connect(pdWindowAct, &QAction::triggered, _appController, &ApplicationController::pdWindow);
-    connect(pythonConsoleAct, &QAction::triggered, _appController, &ApplicationController::pythonConsole);
-    connect(pdAudioSettingsAct, &QAction::triggered, _appController, &ApplicationController::audioSettingsWindow);
-    connect(pdPreferencesAct, &QAction::triggered, _appController, &ApplicationController::preferencesWindow);
+    connect(_pdWindowAct, &QAction::triggered, _appController, &ApplicationController::pdWindow);
+    connect(_pythonConsoleAct, &QAction::triggered, _appController, &ApplicationController::pythonConsole);
+    connect(_pdAudioSettingsAct, &QAction::triggered, _appController, &ApplicationController::audioSettingsWindow);
+    connect(_pdPreferencesAct, &QAction::triggered, _appController, &ApplicationController::preferencesWindow);
 
-    connect(dspOnAct, &QAction::triggered, _appController, &ApplicationController::dspOn);
-    connect(dspOffAct, &QAction::triggered, _appController, &ApplicationController::dspOff);
+    connect(_dspOnAct, &QAction::triggered, _appController, &ApplicationController::dspOn);
+    connect(_dspOffAct, &QAction::triggered, _appController, &ApplicationController::dspOff);
 }
 
 // ---------
 
 void BaseWindow::createActions()
 {
-    newAct = new QAction(tr("&New"), this);
-    newAct->setShortcuts(QKeySequence::New);
+    _newAct = new QAction(tr("&New"), this);
+    _newAct->setShortcuts(QKeySequence::New);
 
     openAct = new QAction(tr("&Open..."), this);
     openAct->setShortcuts(QKeySequence::Open);
@@ -77,28 +77,28 @@ void BaseWindow::createActions()
     saveAsAct = new QAction(tr("&Save As..."), this);
     saveAsAct->setShortcuts(QKeySequence::SaveAs);
 
-    closeAct = new QAction(tr("Close"), this);
-    closeAct->setShortcut(tr("Ctrl+W"));
-    connect(closeAct, &QAction::triggered, this, &BaseWindow::close);
+    _closeAct = new QAction(tr("Close"), this);
+    _closeAct->setShortcut(tr("Ctrl+W"));
+    connect(_closeAct, &QAction::triggered, this, &BaseWindow::close);
 
-    messageAct = new QAction(tr("Message..."), this);
-    messageAct->setShortcut(tr("Ctrl+Shift+M"));
+    _messageAct = new QAction(tr("Message..."), this);
+    _messageAct->setShortcut(tr("Ctrl+Shift+M"));
 
     //printAct = new QAction(tr("&Print..."), this);
     //printAct->setShortcuts(QKeySequence::Print);
     //printAct->setStatusTip(tr("Print the document"));
     //connect(printAct, &QAction::triggered, this, &cm_basewindow::print);
 
-    exitAct = new QAction(tr("E&xit"), this);
-    exitAct->setShortcuts(QKeySequence::Quit);
-    connect(exitAct, &QAction::triggered, this, &QApplication::quit);
+    _exitAct = new QAction(tr("E&xit"), this);
+    _exitAct->setShortcuts(QKeySequence::Quit);
+    connect(_exitAct, &QAction::triggered, this, &QApplication::quit);
 
-    undoAct = new QAction(tr("&Undo"), this);
-    undoAct->setShortcuts(QKeySequence::Undo);
+    _undoAct = new QAction(tr("&Undo"), this);
+    _undoAct->setShortcuts(QKeySequence::Undo);
     //undoAct->setStatusTip(tr("Undo the last operation"));
 
-    redoAct = new QAction(tr("&Redo"), this);
-    redoAct->setShortcuts(QKeySequence::Redo);
+    _redoAct = new QAction(tr("&Redo"), this);
+    _redoAct->setShortcuts(QKeySequence::Redo);
     //redoAct->setStatusTip(tr("Redo the last operation"));
 
     cutAct = new QAction(tr("Cu&t"), this);
@@ -116,28 +116,28 @@ void BaseWindow::createActions()
     pasteAct->setShortcuts(QKeySequence::Paste);
     //pasteAct->setStatusTip(tr("Paste the clipboard's contents into the current "
 
-    dspOnAct = new QAction(tr("DSP On"), this);
-    dspOnAct->setShortcut(tr("Ctrl+/"));
+    _dspOnAct = new QAction(tr("DSP On"), this);
+    _dspOnAct->setShortcut(tr("Ctrl+/"));
 
-    dspOffAct = new QAction(tr("DSP Off"), this);
-    dspOffAct->setShortcut(tr("Ctrl+."));
+    _dspOffAct = new QAction(tr("DSP Off"), this);
+    _dspOffAct->setShortcut(tr("Ctrl+."));
 
-    pdWindowAct = new QAction(tr("Pd Window"), this);
-    pdWindowAct->setShortcut(tr("Ctrl+R"));
+    _pdWindowAct = new QAction(tr("Pd Window"), this);
+    _pdWindowAct->setShortcut(tr("Ctrl+R"));
 
-    pythonConsoleAct = new QAction(tr("Python Console"), this);
-    pythonConsoleAct->setShortcut(tr("Ctrl+Alt+R"));
+    _pythonConsoleAct = new QAction(tr("Python Console"), this);
+    _pythonConsoleAct->setShortcut(tr("Ctrl+Alt+R"));
 
-    pdAudioSettingsAct = new QAction(tr("Audio / MIDI Settings..."), this);
-    pdAudioSettingsAct->setShortcut(tr("Ctrl+Shift+,"));
+    _pdAudioSettingsAct = new QAction(tr("Audio / MIDI Settings..."), this);
+    _pdAudioSettingsAct->setShortcut(tr("Ctrl+Shift+,"));
 
     //moves to app menu on mac
-    pdPreferencesAct = new QAction(tr("Preferences..."), this);
-    pdPreferencesAct->setShortcut(tr("Ctrl+,"));
+    _pdPreferencesAct = new QAction(tr("Preferences..."), this);
+    _pdPreferencesAct->setShortcut(tr("Ctrl+,"));
 
-    pdKeyBindingsAct = new QAction(tr("Key bindings..."), this);
+    _pdKeyBindingsAct = new QAction(tr("Key bindings..."), this);
 
-    pdHelpAct = new QAction(tr("Pd help"), this);
+    _pdHelpAct = new QAction(tr("Pd help"), this);
 }
 
 ////
@@ -146,21 +146,21 @@ void BaseWindow::createActions()
 void BaseWindow::createMenus()
 {
     fileMenu = menuBar()->addMenu(tr("&File"));
-    fileMenu->addAction(newAct);
+    fileMenu->addAction(_newAct);
     fileMenu->addAction(openAct);
     //QMenu *recent =
     fileMenu->addMenu(tr("Open Recent"));
     fileMenu->addSeparator();
-    fileMenu->addAction(closeAct);
+    fileMenu->addAction(_closeAct);
     fileMenu->addSeparator();
     fileMenu->addAction(saveAct);
     fileMenu->addAction(saveAsAct);
     fileMenu->addSeparator();
-    fileMenu->addAction(exitAct);
+    fileMenu->addAction(_exitAct);
 
     editMenu = menuBar()->addMenu(tr("&Edit"));
-    editMenu->addAction(undoAct);
-    editMenu->addAction(redoAct);
+    editMenu->addAction(_undoAct);
+    editMenu->addAction(_redoAct);
     editMenu->addSeparator();
     editMenu->addAction(cutAct);
     editMenu->addAction(copyAct);
@@ -172,25 +172,25 @@ void BaseWindow::createMenus()
 
     arrangeMenu = menuBar()->addMenu(tr("&Arrange"));
 
-    findMenu = menuBar()->addMenu(tr("&Find"));
-    findMenu->addSeparator();
+    _findMenu = menuBar()->addMenu(tr("&Find"));
+    _findMenu->addSeparator();
 
-    mediaMenu = menuBar()->addMenu(tr("&Media"));
-    mediaMenu->addAction(dspOnAct);
-    mediaMenu->addAction(dspOffAct);
+    _mediaMenu = menuBar()->addMenu(tr("&Media"));
+    _mediaMenu->addAction(_dspOnAct);
+    _mediaMenu->addAction(_dspOffAct);
     //mediaMenu->addSeparator();
 
-    windowMenu = menuBar()->addMenu(tr("&Window"));
-    windowMenu->addAction(pdWindowAct);
-    windowMenu->addAction(pythonConsoleAct);
-    windowMenu->addSeparator();
-    windowMenu->addAction(pdAudioSettingsAct);
-    windowMenu->addAction(pdPreferencesAct);
-    windowMenu->addAction(pdKeyBindingsAct);
-    windowMenu->addSeparator();
+    _windowMenu = menuBar()->addMenu(tr("&Window"));
+    _windowMenu->addAction(_pdWindowAct);
+    _windowMenu->addAction(_pythonConsoleAct);
+    _windowMenu->addSeparator();
+    _windowMenu->addAction(_pdAudioSettingsAct);
+    _windowMenu->addAction(_pdPreferencesAct);
+    _windowMenu->addAction(_pdKeyBindingsAct);
+    _windowMenu->addSeparator();
 
     helpMenu = menuBar()->addMenu(tr("&Help"));
-    helpMenu->addAction(pdHelpAct);
+    helpMenu->addAction(_pdHelpAct);
 }
 
 //////////////////////////////////////

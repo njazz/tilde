@@ -10,6 +10,7 @@ extern "C" void setup_ui0x2emsg();
 extern "C" void setup_ui0x2escript();
 extern "C" void setup_ui0x2esliders();
 extern "C" void setup_ui0x2etoggle();
+extern "C" void setup_ui0x2etext();
 
 extern "C" void setup_ui0x2earray();
 
@@ -29,7 +30,7 @@ extern "C" void qtpd_ui_setup() //0x2e
 
     setup_ui0x2earray();
 
-
+    setup_ui0x2etext();
 }
 
 //#endif // QTPD_UI_LIBRARY_H
