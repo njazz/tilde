@@ -38,7 +38,7 @@ var searchData=
   ['addpath',['addPath',['../classqtpd_1_1_preferences.html#a4f9c5e5681b1250d3a6b6a05909bc91b',1,'qtpd::Preferences']]],
   ['addproperty',['addProperty',['../classqtpd_1_1_o_o_p_d_class_base.html#af21d112787c540b91e9714ee2ae01f8b',1,'qtpd::OOPDClassBase::addProperty()'],['../classqtpd_1_1_o_p_instance.html#a456b277ce6fe62b183b57a98906f2beb',1,'qtpd::OPInstance::addProperty()']]],
   ['addsignal',['addSignal',['../classqtpd_1_1_o_o_p_d_class_base.html#a4d9c93b61561e84c00cb3c6b07746efd',1,'qtpd::OOPDClassBase']]],
-  ['adduiobject',['addUIobject',['../classqtpd_1_1_object_loader.html#a9f3c92c043d9fb30a6c60c88a48d48ae',1,'qtpd::ObjectLoader']]],
+  ['adduiobject',['addUIobject',['../classqtpd_1_1_object_loader.html#ac9b967d359b5dea77a7969500d342c0d',1,'qtpd::ObjectLoader']]],
   ['adduniquebox',['addUniqueBox',['../classqtpd_1_1_canvas_data.html#a83caa3ad4c0937d601a46872594e6054',1,'qtpd::CanvasData']]],
   ['adduniquepatchcord',['addUniquePatchcord',['../classqtpd_1_1_canvas_data.html#a7eb70639d25ca7abf2a99648c443da31',1,'qtpd::CanvasData']]],
   ['alloff',['allOff',['../classceammc_1_1_atom_list.html#ab7beef0d45f83b2213b1408b5702e5f8',1,'ceammc::AtomList']]],

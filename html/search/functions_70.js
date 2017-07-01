@@ -66,6 +66,8 @@ var searchData=
   ['post',['post',['../m__pd_8h.html#ae4c319876559f88eab0a870473a3dc3e',1,'m_pd.h']]],
   ['postatom',['postatom',['../m__pd_8h.html#a24ed3437e608b78dec2c2a28c63ae81b',1,'m_pd.h']]],
   ['postfloat',['postfloat',['../m__pd_8h.html#a74327ebe3bcad05e23dbea6e07ba0b0c',1,'m_pd.h']]],
+  ['postsignal',['postSignal',['../classqtpd_1_1_pd_window.html#ab3e2aadc5552a09ac8ad5d4c50a852fd',1,'qtpd::PdWindow']]],
+  ['postslot',['postSlot',['../classqtpd_1_1_pd_window.html#a2350192a9fe895f775d35aad9b47686c',1,'qtpd::PdWindow']]],
   ['poststring',['poststring',['../m__pd_8h.html#a7bdfa77c804e50d0bad6b3a95108c8b6',1,'m_pd.h']]],
   ['powtodb',['powtodb',['../m__pd_8h.html#ad5e7e1cbea489ca87cd52eba2dd0ddc0',1,'m_pd.h']]],
   ['preferences',['Preferences',['../classqtpd_1_1_preferences.html#a1cfa3de6eaba61e9abb98852167a5c29',1,'qtpd::Preferences']]],

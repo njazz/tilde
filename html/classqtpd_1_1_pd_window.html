@@ -127,14 +127,13 @@ Inheritance diagram for qtpd::PdWindow:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_pd_window.html#a906f2742dc6e83fab99c256cdc60bb17">cm_log</a> (QString text)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_pd_window.html#a2350192a9fe895f775d35aad9b47686c">postSlot</a> (QString text)</td></tr>
 <tr><td colspan="2"><h2><a name="signals"></a>
 Signals</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_pd_window.html#ac604d375b619f78812eed116ab687fe1">cm_log_signal</a> (QString text)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_pd_window.html#ab3e2aadc5552a09ac8ad5d4c50a852fd">postSignal</a> (QString text)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_pd_window.html#a916bc5d8c3d803b541ab325d8e9d0d1c">PdWindow</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_pd_window.html#a4a9b5c6f0156018fe76e19f74add5587">cm_post</a> (QString text)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Pd console window. </p>
@@ -156,29 +155,12 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a906f2742dc6e83fab99c256cdc60bb17"></a><!-- doxytag: member="qtpd::PdWindow::cm_log" ref="a906f2742dc6e83fab99c256cdc60bb17" args="(QString text)" -->
+<a class="anchor" id="ab3e2aadc5552a09ac8ad5d4c50a852fd"></a><!-- doxytag: member="qtpd::PdWindow::postSignal" ref="ab3e2aadc5552a09ac8ad5d4c50a852fd" args="(QString text)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_pd_window.html#a906f2742dc6e83fab99c256cdc60bb17">qtpd::PdWindow::cm_log</a> </td>
-          <td>(</td>
-          <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>text</em></td><td>)</td>
-          <td><code> [slot]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ac604d375b619f78812eed116ab687fe1"></a><!-- doxytag: member="qtpd::PdWindow::cm_log_signal" ref="ac604d375b619f78812eed116ab687fe1" args="(QString text)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_pd_window.html#ac604d375b619f78812eed116ab687fe1">qtpd::PdWindow::cm_log_signal</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_pd_window.html#ab3e2aadc5552a09ac8ad5d4c50a852fd">qtpd::PdWindow::postSignal</a> </td>
           <td>(</td>
           <td class="paramtype">QString&#160;</td>
           <td class="paramname"><em>text</em></td><td>)</td>
@@ -190,16 +172,16 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a4a9b5c6f0156018fe76e19f74add5587"></a><!-- doxytag: member="qtpd::PdWindow::cm_post" ref="a4a9b5c6f0156018fe76e19f74add5587" args="(QString text)" -->
+<a class="anchor" id="a2350192a9fe895f775d35aad9b47686c"></a><!-- doxytag: member="qtpd::PdWindow::postSlot" ref="a2350192a9fe895f775d35aad9b47686c" args="(QString text)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_pd_window.html#a4a9b5c6f0156018fe76e19f74add5587">qtpd::PdWindow::cm_post</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_pd_window.html#a2350192a9fe895f775d35aad9b47686c">qtpd::PdWindow::postSlot</a> </td>
           <td>(</td>
           <td class="paramtype">QString&#160;</td>
           <td class="paramname"><em>text</em></td><td>)</td>
-          <td></td>
+          <td><code> [slot]</code></td>
         </tr>
       </table>
 </div>
@@ -229,7 +211,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 30 2017 16:42:27 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jul 1 2017 13:04:20 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
