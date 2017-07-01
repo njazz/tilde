@@ -170,7 +170,15 @@ void UIMessage::objectReleaseEvent(QGraphicsSceneMouseEvent*)
 void UIMessage::setObjectData(QString objData)
 {
     // TODO fix!
-    if (objData == "ui.msg") objData = "";
+    if (objData.split(" ").at(0) == "ui.msg")
+    {
+        QStringList odL = objData.split(" ");
+        odL.removeAt(0);
+        objData = odL.join(" ");
+    }
+
+    // test
+
 
     _objectDataModel.setData(objData);
 }

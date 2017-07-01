@@ -43,10 +43,10 @@ public:
 
         return ret;
     }
-    static UIObject* createObject(QString objectData, t_canvas*, QGraphicsView* parent = 0)
-    {
-        return 0;
-    }
+    //    static UIObject* createObject(QString objectData, t_canvas*, QGraphicsView* parent = 0)
+    //    {
+    //        return 0;
+    //    }
 
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
     {
@@ -97,44 +97,44 @@ public:
 
         if ((getEditMode() == em_Unlocked) && isSelected()) {
 
-            _editor->document()->setPlainText(QString(_objectDataModel.objectData()));
+            _editor->document()->setPlainText(QString(_objectText));
             _editor->show();
             _editor->setFocus();
             ev->accept();
             return;
         }
 
-//        emit selectBox(this, ev);
-//        dragOffset = ev->pos().toPoint();
+        //        emit selectBox(this, ev);
+        //        dragOffset = ev->pos().toPoint();
 
-//        if (!(getEditMode() == em_Unlocked)) {
-//            _clicked = true;
-//            update();
+        //        if (!(getEditMode() == em_Unlocked)) {
+        //            _clicked = true;
+        //            update();
 
-//            //todo timer
-//        }
+        //            //todo timer
+        //        }
     }
 
-//    void mouseReleaseEvent(QGraphicsSceneMouseEvent*)
-//    {
-//        _clicked = false;
-//        update();
-//    }
+    //    void mouseReleaseEvent(QGraphicsSceneMouseEvent*)
+    //    {
+    //        _clicked = false;
+    //        update();
+    //    }
 
-//    void mouseMoveEvent(QGraphicsSceneMouseEvent* event)
-//    {
-//        if (event->buttons() & Qt::LeftButton) {
-//            emit moveBox(this, event);
-//        }
-//        event->ignore();
+    //    void mouseMoveEvent(QGraphicsSceneMouseEvent* event)
+    //    {
+    //        if (event->buttons() & Qt::LeftButton) {
+    //            emit moveBox(this, event);
+    //        }
+    //        event->ignore();
 
-//        //todo move!
-//        if (getEditMode() != em_Unlocked) {
-//            setCursor(QCursor(Qt::PointingHandCursor));
-//        } else {
-//            setCursor(QCursor(Qt::ArrowCursor));
-//        }
-//    }
+    //        //todo move!
+    //        if (getEditMode() != em_Unlocked) {
+    //            setCursor(QCursor(Qt::PointingHandCursor));
+    //        } else {
+    //            setCursor(QCursor(Qt::ArrowCursor));
+    //        }
+    //    }
 
     void autoResize()
     {
@@ -161,22 +161,23 @@ public:
 
     ///////
 
-//    void setPdMessage(std::string message)
-//    {
+    //    void setPdMessage(std::string message)
+    //    {
 
-//    }
+    //    }
 
     virtual void setObjectData(QString objData)
     {
-        UIObject::setObjectData("ui.text");
+        UIObject::setObjectData(objData);
 
         //TODO temporary fix!
-        QString msg = objData;//QString(message);
+        QString msg = objData; //QString(message);
         QStringList list = msg.split("\n");
         for (int i = 0; i < list.size(); i++) {
             list[i] = list[i] + "\\n";
         }
-        properties()->set("Text", list);
+
+        //properties()->set("Text", list);
 
         QString data = properties()->get("Text")->asQString().split("\\n ").join("\n");
 
@@ -188,7 +189,6 @@ public:
         _editor->setFixedHeight(height() - 2);
 
         _editor->hide();
-
     }
 
     static void updateUI(void* uiobj, ceammc::AtomList msg)
@@ -238,7 +238,7 @@ public:
 
         UIObject::sync();
 
-       setObjectData(properties()->get("Text")->asQString().split("\\n ").join("\n"));
+        //setObjectData(properties()->get("Text")->asQString().split("\\n ").join("\n"));
     }
 
 signals:

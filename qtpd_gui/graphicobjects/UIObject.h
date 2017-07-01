@@ -31,6 +31,10 @@ class UIObject;
 
 class PatchWindowController;
 
+////
+/// \brief The object observer class
+/// \details used for UI objects to update ui from pd(server) object
+///
 class ObjectObserver : public Observer {
 private:
     UIObject* _object;

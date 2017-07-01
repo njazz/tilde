@@ -8,6 +8,9 @@
 
 namespace qtpd{
 
+////
+/// \brief Stub for the server in separate thread
+///
 class ServerWorker : public QObject {
 
     Q_OBJECT

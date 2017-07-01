@@ -14,22 +14,21 @@ using namespace ceammc;
 
 #include "ui_text.h"
 
-UIpdText::UIpdText(const PdArgs& a)
-    : BaseObject(a)
-{
+// dummy object example
 
-}
+
+static t_class* ui_text_class;
 
 void* new_ui_text()
 {
 
-    return 0;
+    return (void*)pd_new(ui_text_class);
 }
 
 extern "C" void setup_ui0x2etext()
 {
     //ObjectFactory<UIpdText> obj("ui.text");
-    class_new(gensym("ui.text"),(t_newmethod)&new_ui_text,0,0,0,A_NULL);
+    ui_text_class = class_new(gensym("ui.text"),(t_newmethod)&new_ui_text,0,sizeof(t_object),CLASS_NOINLET,A_NULL);
 
 
 }

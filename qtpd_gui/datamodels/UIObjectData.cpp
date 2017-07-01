@@ -20,7 +20,8 @@ UIObjectData::UIObjectData(QObject* parent)
 void UIObjectData::setData(QString inputData) ///> set both properties and Pd object string
 {
 
-    _objectData = _properties->extractFromPdFileString(inputData);
+    _objectData = inputData;//
+    _properties->extractFromPdFileString(inputData);
 
     _fullHelpName = _objectData.split(" ").at(0) + "-help.pd";
 }

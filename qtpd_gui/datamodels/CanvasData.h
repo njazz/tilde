@@ -18,7 +18,7 @@ typedef std::vector<UIPatchcord*> patchcordVec;
 
 ////
 /// \brief shared canvas data model - boxes, patchcords
-/// \details this should be developed better as a full data model for canvas
+
 class CanvasData {
 
     objectVec _boxes;

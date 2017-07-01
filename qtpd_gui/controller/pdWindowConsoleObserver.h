@@ -12,6 +12,10 @@ namespace qtpd {
 
 class PdWindow;
 
+////
+/// \brief The observer for the Pd console
+///
+
 class PdWindowConsoleObserver : public ConsoleObserver {
 private:
     PdWindow* _window;

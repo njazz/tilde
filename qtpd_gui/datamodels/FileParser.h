@@ -20,7 +20,7 @@ class PatchWindowController;
 
 ////
 /// \brief Parses pd files on 'client' (GUI) side
-/// \details 'FileParser' and 'FileSaver' should be moved to separate library
+/// \details 'FileParser' and 'FileSaver' should probably be moved to separate library
 class FileParser {
 private:
     FileParser(){};

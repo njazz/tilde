@@ -8,6 +8,9 @@ namespace qtpd {
 
 class PatchWindowController;
 
+////
+/// \brief The observer stub
+///
 class ControllerObserver : Observer {
 public:
     ControllerObserver(PatchWindowController* ){};

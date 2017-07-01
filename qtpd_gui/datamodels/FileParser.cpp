@@ -521,6 +521,7 @@ void FileParser::open(QString fname)
             // TODO
             //cmp_loadbang(_pdParserWindow->canvasView()->pdObject());
 
+            _pdParserWindowController->firstWindow()->canvasView()->resizeToObjects();
             _pdParserWindowController->firstWindow()->show();
         }
 

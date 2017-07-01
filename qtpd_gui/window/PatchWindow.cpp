@@ -637,7 +637,7 @@ void PatchWindow::newCommentBox()
 {
 
     if (canvasView()->getEditMode() != em_Locked) {
-        UIObject* newTxt = _controller->createObject("ui.text", QPoint(100, 100));
+        UIObject* newTxt = _controller->createObject("ui.text @Text comment", QPoint(100, 100));
         canvasView()->setDragObject(newTxt);
 
         //todo

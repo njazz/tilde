@@ -28,7 +28,7 @@
 namespace qtpd {
 
 ////
-/// \brief 't_canvas' counterpart - for now it's both view and 'view controller'. creates pd+gui objects
+/// \brief Canvas View - used by Patch window controller
 ///
 class CanvasView : public QGraphicsView {
 private:

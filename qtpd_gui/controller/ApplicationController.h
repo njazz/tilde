@@ -20,6 +20,9 @@ class UIObject;
 class ServerWorker;
 class PdWindowConsoleObserver;
 
+////
+/// \brief The Application Controller class
+///
 class ApplicationController : public QObject {
     Q_OBJECT
 

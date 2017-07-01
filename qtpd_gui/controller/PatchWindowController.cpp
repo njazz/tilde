@@ -188,10 +188,14 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
 
     //qDebug() << "server object ok";
 
+    //ServerInstance::post("create: " + name);
+
     UIObject* uiObject = ObjectLoader::inst().createUIObject(name.c_str());
 
-    connect(this, &PatchWindowController::signalCreateObject, _appController, &ApplicationController::slotCreateObject);
-    ServerObject* serverObject = emit signalCreateObject(_serverCanvas, name);
+    //removed
+    //connect(this, &PatchWindowController::signalCreateObject, _appController, &ApplicationController::slotCreateObject);
+
+    ServerObject* serverObject = _appController->slotCreateObject(_serverCanvas,name);//emit signalCreateObject(_serverCanvas, name);
 
     // TODO wait?
     uiObject->setServerObject(serverObject);
@@ -787,8 +791,10 @@ void PatchWindowController::slotMoveSelectedBoxes(QPoint eventPos)
 
         w->move(pos);
 
-        //todo
-        firstWindow()->canvasView()->viewport()->update();
+
     }
+
+    //todo
+    firstWindow()->canvasView()->viewport()->update();
 }
 }
