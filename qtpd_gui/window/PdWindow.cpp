@@ -29,12 +29,12 @@ void PdWindow::postSlot(QString text)
     }
     if ((text == "\n") || (last_c == "\n")) {
 
-        ui->log->insertRow(0);
+        _ui->log->insertRow(0);
         QTableWidgetItem* item = new QTableWidgetItem;
         item->setFlags(item->flags() & ~Qt::ItemIsEditable);
         item->setText(QDateTime().currentDateTime().toString((QString("hh:mm:ss"))));
         item->setTextAlignment(Qt::AlignTop & Qt::AlignCenter);
-        ui->log->setItem(0, 0, item);
+        _ui->log->setItem(0, 0, item);
 
         item = new QTableWidgetItem;
         QString txt = cm_log_string;
@@ -44,38 +44,38 @@ void PdWindow::postSlot(QString text)
             txt.remove(txt.length() - 1, 1);
 
         item->setText(txt);
-        ui->log->setItem(0, 1, item);
+        _ui->log->setItem(0, 1, item);
 
         cm_log_string = "";
     } else {
         cm_log_string += text;
     }
 
-    ui->log->resizeRowsToContents();
+    _ui->log->resizeRowsToContents();
 }
 
 PdWindow::PdWindow()
     :
 
-    ui(new Ui::cm_pdwindow)
+    _ui(new Ui::cm_pdwindow)
 {
-    ui->setupUi(this);
+    _ui->setupUi(this);
 
     ((BaseWindow*)this)->createActions();
     ((BaseWindow*)this)->createMenus();
 
     ((QMainWindow*)this)->setWindowTitle("Pd");
 
-    QHeaderView* verticalHeader = ui->log->verticalHeader();
+    QHeaderView* verticalHeader = _ui->log->verticalHeader();
     verticalHeader->setSectionResizeMode(QHeaderView::Fixed);
     verticalHeader->setDefaultSectionSize(18);
-    ui->log->horizontalHeader()->setStretchLastSection(true);
+    _ui->log->horizontalHeader()->setStretchLastSection(true);
 
-    ui->log->insertColumn(0);
+    _ui->log->insertColumn(0);
 
-    ui->log->setFont(QFont(PREF_QSTRING("Font"), 12, 0, false));
+    _ui->log->setFont(QFont(PREF_QSTRING("Font"), 12, 0, false));
 
-    ui->log->setColumnWidth(0, 70);
+    _ui->log->setColumnWidth(0, 70);
 
     fileMenu->removeAction(saveAct);
     fileMenu->removeAction(saveAsAct);
@@ -86,20 +86,36 @@ PdWindow::PdWindow()
     QGraphicsView* dsp = uidsp->widget();
     dsp->move(0, 0);
     dsp->setFixedSize(40, 40);
-    dsp->setParent(ui->toolbar);
+    dsp->setParent(_ui->toolbar);
     dsp->show();
 
-    ui->logLevelBox->addItem("0 fatal");
-    ui->logLevelBox->addItem("1 error");
-    ui->logLevelBox->addItem("2 normal");
-    ui->logLevelBox->addItem("3 debug");
-    ui->logLevelBox->addItem("4 all");
+    _ui->logLevelBox->addItem("0 fatal");
+    _ui->logLevelBox->addItem("1 error");
+    _ui->logLevelBox->addItem("2 normal");
+    _ui->logLevelBox->addItem("3 debug");
+    _ui->logLevelBox->addItem("4 all");
 
-    connect(ui->logLevelBox, SIGNAL(&QComboBox::currentIndexChanged(int)), this, SLOT(&PdWindow::logBoxChange(int)));
+    connect(_ui->logLevelBox, SIGNAL(currentIndexChanged(int)), this, SLOT(logBoxChange(int)));
+
+    _clearConsoleAct = new QAction("Clear console");
+    _clearConsoleAct->setShortcut(tr("Ctrl+Shift+L"));
+
+    connect(_clearConsoleAct, &QAction::triggered, this, &PdWindow::clearConsoleSlot);
+
+    editMenu->addAction(_clearConsoleAct);
+
+    _ui->logLevelBox->setCurrentIndex(1);
 }
 
 void PdWindow::logBoxChange(int index)
 {
     ServerInstance::setVerboseLevel(index);
 }
+
+void PdWindow::clearConsoleSlot()
+{
+    _ui->log->clearContents();
+
+}
+
 }

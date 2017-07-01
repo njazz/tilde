@@ -24,9 +24,11 @@ class PdWindow : public BaseWindow {
     Q_OBJECT
 
 private:
-    Ui::cm_pdwindow* ui;
+    Ui::cm_pdwindow* _ui;
 
     ~PdWindow(){};
+
+    QAction* _clearConsoleAct;
 
     Q_SLOT void logBoxChange(int index);
 
@@ -37,6 +39,7 @@ signals:
     void postSignal(QString text);
 public slots:
     void postSlot(QString text);
+    void clearConsoleSlot();
 };
 
 //fix - normal singleton here
