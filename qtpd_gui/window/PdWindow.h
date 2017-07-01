@@ -28,29 +28,15 @@ private:
 
     ~PdWindow(){};
 
+    Q_SLOT void logBoxChange(int index);
+
 public:
     PdWindow();
-    //    static PdWindow* inst()
-    //    {
-    //        static PdWindow* instance;
-    //        //instance.setParent(0);
-
-    //        if (!instance) {
-    //            instance = new PdWindow();
-    //            qDebug() << "singleton lol";
-    //        }
-
-    //        return instance;
-    //    }
-
-    void cm_post(QString text);
 
 signals:
-    void cm_log_signal(QString text);
+    void postSignal(QString text);
 public slots:
-    void cm_log(QString text);
-
-    //    void resizeEvent();
+    void postSlot(QString text);
 };
 
 //fix - normal singleton here

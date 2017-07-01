@@ -9,41 +9,17 @@
 #include <string>
 #include <vector>
 
-//temporary
-#include "UIBox.h"
-#include "UIFloat.h"
-#include "UIMessage.h"
-#include "UIText.h"
-
-#include "UISubpatch.h"
-
-#include "UIBang.h"
-#include "UIToggle.h"
-
-#include "UISlider.h"
-#include "UIMatrix.h"
-
-#include "UISubCanvas.h"
-
-#include "UILink.h"
-
-#include "UIArray.h"
 
 
-#ifdef WITH_PYTHON
-#include "UIScript.h"
-#include "UIScriptBox.h"
-#endif
+using namespace std;
 
-#include "oopd/UIClass.h"
-#include "oopd/UIInstance.h"
-#include "oopd/UIMethod.h"
-#include "oopd/UIProperty.h"
-#include "oopd/UISignal.h"
-
-#include "UIDSP.h"
+class QString;
+class QGraphicsView;
 
 namespace qtpd {
+
+class UIObject;
+
 
 ////
 /// \brief 'constructor' method for each ui object derived from UIObject
@@ -85,19 +61,18 @@ public:
     ///
     void loadObjects();
 
-    void addUIobject(std::string name, UIObjectConstructor constructor);
+    void addUIobject(string name, UIObjectConstructor constructor);
 
-    std::vector<std::string> getUINames();
+    vector<string> getUINames();
+    vector<string> getPDNames();
 
-    std::vector<std::string> getPDNames();
-
-    bool hasUI(std::string objName);
+    bool hasUI(string objName);
 
     // todo remove?
     //cmObjectConstructor getConstructorFor(QString objName);
     UIObjectConstructor getUIConstructorFor(QString objName);
 
-    UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView *parent);
+    //UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView *parent);
     UIObject* createUIObject(QString objectData);
 };
 }

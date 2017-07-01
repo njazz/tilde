@@ -9,13 +9,15 @@
 #include <QLabel>
 #include <QtGui>
 
+#include "pdServer.hpp"
+
+#include <QComboBox>
+
 namespace qtpd {
 static QString cm_log_string;
 
-void PdWindow::cm_log(QString text)
+void PdWindow::postSlot(QString text)
 {
-    //qDebug("cm_log %s", text.c_str());
-
     //temporary
     if (!text.length())
         return;
@@ -50,15 +52,6 @@ void PdWindow::cm_log(QString text)
     }
 
     ui->log->resizeRowsToContents();
-
-
-
-}
-
-void PdWindow::cm_post(QString text)
-{
-    PdWindow::cm_log(text);
-    PdWindow::cm_log("\n");
 }
 
 PdWindow::PdWindow()
@@ -87,21 +80,26 @@ PdWindow::PdWindow()
     fileMenu->removeAction(saveAct);
     fileMenu->removeAction(saveAsAct);
 
-    connect(this,&PdWindow::cm_log_signal, this, &PdWindow::cm_log);
+    connect(this, &PdWindow::postSignal, this, &PdWindow::postSlot);
 
     UIDSP* uidsp = new UIDSP();
-    QGraphicsView *dsp = uidsp->widget();
-    dsp->move(0,0);
-    dsp->setFixedSize(40,40);
+    QGraphicsView* dsp = uidsp->widget();
+    dsp->move(0, 0);
+    dsp->setFixedSize(40, 40);
     dsp->setParent(ui->toolbar);
     dsp->show();
 
+    ui->logLevelBox->addItem("0 fatal");
+    ui->logLevelBox->addItem("1 error");
+    ui->logLevelBox->addItem("2 normal");
+    ui->logLevelBox->addItem("3 debug");
+    ui->logLevelBox->addItem("4 all");
+
+    connect(ui->logLevelBox, SIGNAL(&QComboBox::currentIndexChanged(int)), this, SLOT(&PdWindow::logBoxChange(int)));
 }
 
-//void PdWindow::resizeEvent()
-//{
-//    // todo check
-//    ui->log->resizeRowsToContents();
-//};
-
+void PdWindow::logBoxChange(int index)
+{
+    ServerInstance::setVerboseLevel(index);
+}
 }

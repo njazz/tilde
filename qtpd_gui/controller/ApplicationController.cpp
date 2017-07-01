@@ -21,6 +21,8 @@
 
 #include "PropertiesWindow.h"
 
+#include "ObjectLoader.h"
+
 namespace qtpd {
 
 ApplicationController::ApplicationController()
@@ -30,6 +32,18 @@ ApplicationController::ApplicationController()
     //_server = new TheServer();
 
     _localServer = 0;
+
+    ObjectLoader::inst().loadObjects();
+
+    QTPD_PREF_INIT;
+
+#ifdef WITH_PYTHON
+    PythonQt::init(PythonQt::RedirectStdOut);
+    PythonQt_QtAll::init();
+//pyWrapper::inst();
+#endif
+
+    QTPD_AUDIOSETTINGS_INIT;
 
     _serverWorker = new ServerWorker();
 
@@ -70,6 +84,9 @@ ApplicationController::ApplicationController()
     _localServer->firstInstance()->loadLibrary("~/Documents/Qtpd/Libraries/qtpd_ui");
 
     FileParser::setAppController(this);
+
+    mainServerInstance()->post("qtpd started");
+    mainServerInstance()->post("----");
 };
 
 ServerInstance* ApplicationController::mainServerInstance()

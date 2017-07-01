@@ -5,6 +5,9 @@
 
 #include "SizeBox.h"
 
+#include "PropertyList.h"
+#include "Preferences.h"
+
 namespace qtpd {
 UIArray::UIArray()
 {

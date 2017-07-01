@@ -20,6 +20,8 @@
 
 #include "ServerWorker.h"
 
+#include "UIBox.h"
+
 // TEST
 //#include "PdLink.h"
 

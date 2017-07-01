@@ -18,6 +18,11 @@
 // TODO
 #include "CanvasView.h"
 
+#include "UISubpatch.h"
+
+#include "Preferences.h"
+#include "PropertyList.h"
+
 namespace qtpd {
 
 ////
@@ -41,13 +46,14 @@ public:
     {
         UISubpatch* ret = new UISubpatch();
 
-//        QStringList l = data.split(" ");l.removeFirst();
-//        data = l.join(" ");
+        //        QStringList l = data.split(" ");l.removeFirst();
+        //        data = l.join(" ");
 
         ret->setObjectData(data);
 
         return ret;
     }
+
     static UIObject* createObject(QString objectData, t_canvas*, QGraphicsView* parent = 0)
     {
         //TODO fix all constructors
@@ -124,11 +130,11 @@ public:
         qDebug("click");
 
         //open canvas for subpatch
-//        if (getEditMode() != em_Unlocked) {
-//            if (subpatchWindow()) {
-//                subpatchWindow()->show();
-//            }
-//        }
+        //        if (getEditMode() != em_Unlocked) {
+        //            if (subpatchWindow()) {
+        //                subpatchWindow()->show();
+        //            }
+        //        }
 
         emit UIObject::selectBox(this, ev);
         dragOffset = ev->pos().toPoint();
@@ -155,7 +161,7 @@ public:
         }
         event->ignore();
 
-        if ((getEditMode() != em_Unlocked)){// && (subpatchController())) {
+        if ((getEditMode() != em_Unlocked)) { // && (subpatchController())) {
             setCursor(QCursor(Qt::PointingHandCursor));
         } else {
             setCursor(QCursor(Qt::ArrowCursor));
@@ -182,12 +188,12 @@ public:
 
     std::string asPdFileString();
 
-//    virtual void setServerObject(ServerObject* o)
-//    {
-//        UIObject::setServerObject(o);
-//        if (o)
-//            o->connectUI(this, &UISubpatch::updateUI);
-//    };
+    //    virtual void setServerObject(ServerObject* o)
+    //    {
+    //        UIObject::setServerObject(o);
+    //        if (o)
+    //            o->connectUI(this, &UISubpatch::updateUI);
+    //    };
 signals:
 
     void mouseMoved();

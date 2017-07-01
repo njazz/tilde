@@ -579,6 +579,53 @@
         <height>40</height>
        </size>
       </property>
+      <widget class="QComboBox" name="logLevelBox">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>20</y>
+         <width>101</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Source Code Pro</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="currentText">
+        <string notr="true"/>
+       </property>
+       <property name="maxVisibleItems">
+        <number>5</number>
+       </property>
+       <property name="maxCount">
+        <number>5</number>
+       </property>
+       <property name="frame">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>64</x>
+         <y>0</y>
+         <width>101</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Source Code Pro</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Log level:</string>
+       </property>
+      </widget>
      </widget>
     </item>
    </layout>

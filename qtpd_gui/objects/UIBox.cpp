@@ -9,16 +9,14 @@
 #include "PatchWindow.h"
 #include "PatchWindowController.h"
 
-#include "PropertyList.h"
 #include "Preferences.h"
+#include "PropertyList.h"
 
 #include "SizeBox.h"
 
 namespace qtpd {
 UIBox::UIBox()
 {
-//    UIObject::UIObject();
-
     qDebug("constructor");
 
     setHeight(20);
@@ -186,13 +184,13 @@ void UIBox::setObjectData(QString message)
 void UIBox::sync()
 {
     UIObject::sync();
-
     _isAbstraction = (serverObject()->type() == typeAbstraction);
+
+    qDebug() << "is abstraction: " << _isAbstraction;
 
     // create subpatch window controller here (if not already created)
     if (isSubpatch() && !_subpatchController) {
         qDebug() << "subpatch server canvas: " << serverObject()->toServerCanvas();
-
         _subpatchController = new PatchWindowController(parentController()->appController(), serverObject()->toServerCanvas());
     }
     update();

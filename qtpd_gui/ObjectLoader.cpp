@@ -3,6 +3,35 @@
 
 #include "ObjectLoader.h"
 
+
+#include "UIBox.h"
+#include "UIFloat.h"
+#include "UIMessage.h"
+#include "UIText.h"
+#include "UISubpatch.h"
+#include "UIBang.h"
+#include "UIToggle.h"
+#include "UISlider.h"
+#include "UIMatrix.h"
+#include "UISubCanvas.h"
+#include "UILink.h"
+#include "UIArray.h"
+
+
+#ifdef WITH_PYTHON
+#include "UIScript.h"
+#include "UIScriptBox.h"
+#endif
+
+#include "oopd/UIClass.h"
+#include "oopd/UIInstance.h"
+#include "oopd/UIMethod.h"
+#include "oopd/UIProperty.h"
+#include "oopd/UISignal.h"
+
+#include "UIDSP.h"
+
+
 namespace qtpd {
 
 void ObjectLoader::loadObjects()

@@ -7,6 +7,8 @@
 
 #include "PatchWindowController.h"
 
+#include "PropertyList.h"
+
 namespace qtpd {
 UISubpatch::UISubpatch()
 

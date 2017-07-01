@@ -17,6 +17,9 @@
 #include "CanvasView.h"
 
 #include "PatchWindowController.h"
+#include "PatchWindow.h"
+
+#include "Preferences.h"
 
 namespace qtpd {
 
