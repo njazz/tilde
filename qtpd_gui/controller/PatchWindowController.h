@@ -41,6 +41,9 @@ class UIBox;
 //    };
 //}
 
+////
+/// \brief The Patch window controller
+///
 class PatchWindowController : public QObject {
     Q_OBJECT
 
