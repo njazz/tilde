@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['value',['value',['../class_color___wheel.html#a4ac64df0c7253d840edb29b180ddcae4',1,'Color_Wheel']]],
   ['value_5fget',['value_get',['../m__pd_8h.html#aa1c9c1c50ce3454b70bf4670d93081a5',1,'m_pd.h']]],
   ['value_5fgetfloat',['value_getfloat',['../m__pd_8h.html#a07fb00122f68cf626a73ddae15afe957',1,'m_pd.h']]],
   ['value_5frelease',['value_release',['../m__pd_8h.html#a56d4710df2fd2624cb601750b43d8d64',1,'m_pd.h']]],

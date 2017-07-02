@@ -16,6 +16,7 @@ var searchData=
   ['findpatchcord',['findPatchcord',['../classqtpd_1_1_canvas_data.html#a5ef8913f04f5ee65aebc31c542748d37',1,'qtpd::CanvasData']]],
   ['findpos',['findPos',['../classceammc_1_1_atom_list.html#a30f74ed1b06307572594bfa223f21d55',1,'ceammc::AtomList::findPos(const Atom &amp;a) const '],['../classceammc_1_1_atom_list.html#a3faa298a474fb19d94ddacf0ac9a9174',1,'ceammc::AtomList::findPos(AtomPredicate pred) const ']]],
   ['first',['first',['../classceammc_1_1_atom_list.html#a621130328f1786c6f80ec125f085b768',1,'ceammc::AtomList::first()'],['../classceammc_1_1_atom_list.html#a51e3048cc32689dcc3968bfc8109d6d2',1,'ceammc::AtomList::first() const ']]],
+  ['firstcolor',['firstColor',['../class_gradient___slider.html#a4b3fd4d1a6aa3445d7f8f55ae2f41913',1,'Gradient_Slider']]],
   ['firstwindow',['firstWindow',['../classqtpd_1_1_patch_window_controller.html#a59eefbfea73744f949e65aec46f2e33f',1,'qtpd::PatchWindowController']]],
   ['floatinlet_5fnew',['floatinlet_new',['../m__pd_8h.html#a140fa09e63662fe90e174c0c97e2df81',1,'m_pd.h']]],
   ['focusoutevent',['focusOutEvent',['../classqtpd_1_1_object_maker.html#a3fc3823d8cd442c2754c898e7eb5da9f',1,'qtpd::ObjectMaker']]],

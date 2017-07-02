@@ -1,15 +1,17 @@
 var searchData=
 [
   ['last',['last',['../classceammc_1_1_atom_list.html#afbd8f79f94b361c537d36c3a5ec45f80',1,'ceammc::AtomList::last()'],['../classceammc_1_1_atom_list.html#a6fa2a859b339348f45ca59bb823afca3',1,'ceammc::AtomList::last() const ']]],
+  ['lastcolor',['lastColor',['../class_gradient___slider.html#ac1cba43d9c9ca54fe3f9c69d78566d13',1,'Gradient_Slider::lastColor()'],['../class_gradient___slider.html#abbc058c9eeee9a1d187457bd9841d0dd',1,'Gradient_Slider::lastColor() const ']]],
   ['lb_5fclose',['LB_CLOSE',['../g__canvas_8h.html#a27eb5af7880c6f9407adf4754e902600',1,'g_canvas.h']]],
   ['lb_5finit',['LB_INIT',['../g__canvas_8h.html#a40a220ebc6c22ed57e64881bf2952459',1,'g_canvas.h']]],
   ['lb_5fload',['LB_LOAD',['../g__canvas_8h.html#ad7f7a8be722d79a02efd815dbac650b9',1,'g_canvas.h']]],
   ['legacyprocess',['legacyProcess',['../classqtpd_1_1_file_parser.html#ad4f4fe794696583c73c113b49f14d2a4',1,'qtpd::FileParser']]],
+  ['line_5fto_5fpoint',['line_to_point',['../class_color___wheel_1_1_private.html#af649d69c97a0e85656106695c227b79d',1,'Color_Wheel::Private']]],
   ['linetraverser_5fnext',['linetraverser_next',['../g__canvas_8h.html#ab9cabaa4b1c4f843e8180800fd3e23f4',1,'g_canvas.h']]],
   ['linetraverser_5fskipobject',['linetraverser_skipobject',['../g__canvas_8h.html#aecd9089ac6695389c714be21de7ae658',1,'g_canvas.h']]],
   ['linetraverser_5fstart',['linetraverser_start',['../g__canvas_8h.html#af758699c9eafa74b8e5bdd64c1ce0ed2',1,'g_canvas.h']]],
-  ['linkline',['LinkLine',['../classqtpd_1_1_link_line.html',1,'qtpd']]],
   ['linkline',['LinkLine',['../classqtpd_1_1_link_line.html#a7b7fdc2cd5d37fb8e175d438b981eef0',1,'qtpd::LinkLine']]],
+  ['linkline',['LinkLine',['../classqtpd_1_1_link_line.html',1,'qtpd']]],
   ['linkline_2ecpp',['LinkLine.cpp',['../_link_line_8cpp.html',1,'']]],
   ['linkline_2eh',['LinkLine.h',['../_link_line_8h.html',1,'']]],
   ['listfrom',['listFrom',['../namespaceceammc.html#a464c3b8d0f4a94781622384fdfe3e70a',1,'ceammc::listFrom(bool v)'],['../namespaceceammc.html#a4a5e55eaba74b6f43ee54be0731b7422',1,'ceammc::listFrom(const std::string &amp;v)'],['../namespaceceammc.html#a311cab762539c4bbb2ee839e6b80e6c3',1,'ceammc::listFrom(const std::vector&lt; std::string &gt; &amp;v)'],['../namespaceceammc.html#a0e8d2aa576676cf07cb8fdcc5f2a440e',1,'ceammc::listFrom(const AtomList &amp;v)']]],

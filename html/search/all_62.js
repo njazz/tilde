@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['basewindow',['BaseWindow',['../classqtpd_1_1_base_window.html',1,'qtpd']]],
+  ['back',['back',['../class_color___preview_1_1_private.html#ae884a3d99540e76706d0408849927924',1,'Color_Preview::Private::back()'],['../class_gradient___slider_1_1_private.html#a8d585f26a1b40d9bbc015afdd94db9ee',1,'Gradient_Slider::Private::back()']]],
+  ['background',['background',['../class_color___preview.html#a3f91f2b663b828fa8c7c3c553fa88acb',1,'Color_Preview::background()'],['../class_gradient___slider.html#adf64dcbcf4deb64886ff0ce1131480c0',1,'Gradient_Slider::background()'],['../class_color___preview.html#a4bec74083e6222fbdadf6ba16edecb3a',1,'Color_Preview::background()'],['../class_gradient___slider.html#abae1296645fcc4a29030c780bcd41370',1,'Gradient_Slider::background()']]],
   ['basewindow',['BaseWindow',['../classqtpd_1_1_base_window.html#ae2a076d8f8a489795f2b7fbf26fadd5d',1,'qtpd::BaseWindow']]],
+  ['basewindow',['BaseWindow',['../classqtpd_1_1_base_window.html',1,'qtpd']]],
   ['basewindow_2ecpp',['BaseWindow.cpp',['../_base_window_8cpp.html',1,'']]],
   ['basewindow_2eh',['BaseWindow.h',['../_base_window_8h.html',1,'']]],
   ['bgcolor',['bgColor',['../classqtpd_1_1_u_i_item.html#a15c57968966de733a09cf02973b63696',1,'qtpd::UIItem']]],
@@ -27,6 +29,9 @@ var searchData=
   ['binbuf_5frestore',['binbuf_restore',['../m__pd_8h.html#a237d44b667cf26ec0909eb54bf8f3ab9',1,'m_pd.h']]],
   ['binbuf_5ftext',['binbuf_text',['../m__pd_8h.html#aef348b4a593ebd7d02e6bda61dbb0604',1,'m_pd.h']]],
   ['binbuf_5fwrite',['binbuf_write',['../m__pd_8h.html#aacb6016dcafbb9b7c5547dd0f13bf6b2',1,'m_pd.h']]],
+  ['bound_5fcolor_5fselector',['Bound_Color_Selector',['../class_bound___color___selector.html',1,'Bound_Color_Selector'],['../class_bound___color___selector.html#a2aae44b238b500332e90263cde7e4db6',1,'Bound_Color_Selector::Bound_Color_Selector()']]],
+  ['bound_5fcolor_5fselector_2ecpp',['bound_color_selector.cpp',['../bound__color__selector_8cpp.html',1,'']]],
+  ['bound_5fcolor_5fselector_2ehpp',['bound_color_selector.hpp',['../bound__color__selector_8hpp.html',1,'']]],
   ['boundingrect',['boundingRect',['../classqtpd_1_1_u_i_item.html#a0a8d5299d5a0a2ebcef2135913bc97da',1,'qtpd::UIItem']]],
   ['boxes',['boxes',['../classqtpd_1_1_canvas_data.html#a47f7935e671ebcdfeddba6904eb90509',1,'qtpd::CanvasData']]],
   ['boxesaspdfilestrings',['boxesAsPdFileStrings',['../classqtpd_1_1_canvas_data.html#a2feadf5b43121b15a8635300cccf1ccf',1,'qtpd::CanvasData']]],
@@ -41,5 +46,7 @@ var searchData=
   ['btnsavesignal',['btnSaveSignal',['../classqtpd_1_1_u_i_script_editor.html#acccfaed92e82138faacbeec8279a862f',1,'qtpd::UIScriptEditor']]],
   ['buffer',['buffer',['../struct__resample.html#a8fe41b983e1710c3d71afb4fb85f8042',1,'_resample']]],
   ['bufsize',['bufsize',['../struct__resample.html#a837225771d04d2e70c84d6eca43e6ea7',1,'_resample']]],
-  ['bug',['bug',['../m__pd_8h.html#a3e4d99cc272e4a5cb21332f8bda27ec8',1,'m_pd.h']]]
+  ['bug',['bug',['../m__pd_8h.html#a3e4d99cc272e4a5cb21332f8bda27ec8',1,'m_pd.h']]],
+  ['button_5fmode',['button_mode',['../class_color___dialog_1_1_private.html#afd017a10b78cc574773ed3f33ad909fb',1,'Color_Dialog::Private::button_mode()'],['../class_color___dialog.html#a4fa5f34e3b5899faf5608ceaf170c7b8',1,'Color_Dialog::Button_Mode()']]],
+  ['buttonmode',['buttonMode',['../class_color___dialog.html#a6c4d903ab21dcc79a157495bba9d4ff6',1,'Color_Dialog']]]
 ];

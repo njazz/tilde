@@ -11,5 +11,10 @@ var searchData=
   ['a_5fnull',['A_NULL',['../m__pd_8h.html#af04c9af457d12f1f4b68f9b90c252937ad65e844f89e546fc78277f1660ed9d7b',1,'m_pd.h']]],
   ['a_5fpointer',['A_POINTER',['../m__pd_8h.html#af04c9af457d12f1f4b68f9b90c252937abcdc5da1c897781c2301326e17dc18fe',1,'m_pd.h']]],
   ['a_5fsemi',['A_SEMI',['../m__pd_8h.html#af04c9af457d12f1f4b68f9b90c252937ac105be4ef726ee36c4330e16bb24706e',1,'m_pd.h']]],
-  ['a_5fsymbol',['A_SYMBOL',['../m__pd_8h.html#af04c9af457d12f1f4b68f9b90c252937a2a3d0cfb689b3968ed25b1e60468c0a5',1,'m_pd.h']]]
+  ['a_5fsymbol',['A_SYMBOL',['../m__pd_8h.html#af04c9af457d12f1f4b68f9b90c252937a2a3d0cfb689b3968ed25b1e60468c0a5',1,'m_pd.h']]],
+  ['allalpha',['AllAlpha',['../class_color___preview.html#a2e3512e6b9f74e6abe67d888e15ce1a7a0971eb04cf4a91b50028f2b6d5f77df5',1,'Color_Preview']]],
+  ['angle_5fdefault',['ANGLE_DEFAULT',['../class_color___wheel.html#a0b1a710f479af5c6f3f4333abe023746a699a6df7ac062722522378f1da5d0a72',1,'Color_Wheel']]],
+  ['angle_5ffixed',['ANGLE_FIXED',['../class_color___wheel.html#a0b1a710f479af5c6f3f4333abe023746ad41683275e15da536a880f0812c92e06',1,'Color_Wheel']]],
+  ['angle_5fflags',['ANGLE_FLAGS',['../class_color___wheel.html#a0b1a710f479af5c6f3f4333abe023746abb648e136da4f04305641b59ca28110b',1,'Color_Wheel']]],
+  ['angle_5frotating',['ANGLE_ROTATING',['../class_color___wheel.html#a0b1a710f479af5c6f3f4333abe023746a1a4907ad81b81afabcdf69f2ed7910ed',1,'Color_Wheel']]]
 ];

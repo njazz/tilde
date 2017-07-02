@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['val',['val',['../class_color___wheel_1_1_private.html#ab0b2791f2669331cd4870dfd033a2c23',1,'Color_Wheel::Private']]],
+  ['value',['value',['../class_color___wheel.html#af39af4a3f45fdb3c36d624c63ce10586',1,'Color_Wheel::value()'],['../class_hue___slider_1_1_private.html#a904a48ce631ef4487dfb63135b31ae38',1,'Hue_Slider::Private::value()'],['../class_color___wheel.html#a4ac64df0c7253d840edb29b180ddcae4',1,'Color_Wheel::value()']]],
   ['value_5fget',['value_get',['../m__pd_8h.html#aa1c9c1c50ce3454b70bf4670d93081a5',1,'m_pd.h']]],
   ['value_5fgetfloat',['value_getfloat',['../m__pd_8h.html#a07fb00122f68cf626a73ddae15afe957',1,'m_pd.h']]],
   ['value_5frelease',['value_release',['../m__pd_8h.html#a56d4710df2fd2624cb601750b43d8d64',1,'m_pd.h']]],

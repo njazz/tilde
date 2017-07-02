@@ -14,9 +14,11 @@ var searchData=
   ['newscriptbox',['newScriptBox',['../classqtpd_1_1_patch_window.html#aba7ab9ebe3416a454d82864899296264',1,'qtpd::PatchWindow']]],
   ['newtogglebox',['newToggleBox',['../classqtpd_1_1_patch_window.html#a44d1c60e80fdef22f4c4fdbb72b62389',1,'qtpd::PatchWindow']]],
   ['newwindow',['newWindow',['../classqtpd_1_1_patch_window_controller.html#a2e847824f78c58024ec22448b94852e5',1,'qtpd::PatchWindowController']]],
+  ['noalpha',['NoAlpha',['../class_color___preview.html#a2e3512e6b9f74e6abe67d888e15ce1a7adc9b1554bf329e93417c4933ab2c41ea',1,'Color_Preview']]],
   ['none',['NONE',['../classceammc_1_1_atom.html#a7da58aeebfc1db2f1064e24089f84e0daa76b5bbc10ec2e88976660e18ad0a8bd',1,'ceammc::Atom']]],
   ['noneoff',['noneOff',['../classceammc_1_1_atom_list.html#a6ed911c35a83b24c3216f1697735771e',1,'ceammc::AtomList']]],
   ['nonequallengthbehaivor',['NonEqualLengthBehaivor',['../classceammc_1_1_atom_list.html#adcc13ae2c5194b6d83691b56835ed29e',1,'ceammc::AtomList']]],
   ['normalizefloats',['normalizeFloats',['../classceammc_1_1_atom_list.html#aaec92e339b35846963cb66fbcb7ba0e7',1,'ceammc::AtomList']]],
+  ['nothing',['Nothing',['../color__wheel_8cpp.html#a57cf809db9b33be0d3b8436c19d366dda0b44d4e916221e52c4ba47a8efb5e2fc',1,'color_wheel.cpp']]],
   ['nullfn',['nullfn',['../m__pd_8h.html#a67de44598e77c806ba60602e89329186',1,'m_pd.h']]]
 ];

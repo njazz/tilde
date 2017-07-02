@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['abstract_5fwidget_5flist',['Abstract_Widget_List',['../class_abstract___widget___list.html#a0493f2c94870e1f23dfc55a7fc5f59c3',1,'Abstract_Widget_List']]],
   ['active',['active',['../classqtpd_1_1_selection_rect.html#ad7a573173906bd18a0a9f26b9ee5590e',1,'qtpd::SelectionRect::active()'],['../classqtpd_1_1_u_i_new_patchcord.html#a9820501271c9d01a0a069a1c3672a90d',1,'qtpd::UINewPatchcord::active()']]],
   ['add',['add',['../classceammc_1_1_atom_list.html#af3887ba60573169c03a1d472efdbb8e7',1,'ceammc::AtomList']]],
   ['addbox',['addBox',['../classqtpd_1_1_canvas_data.html#a70146bc4afcd6085f314c3f0db8631bf',1,'qtpd::CanvasData']]],
@@ -20,10 +21,12 @@ var searchData=
   ['adduniquebox',['addUniqueBox',['../classqtpd_1_1_canvas_data.html#a83caa3ad4c0937d601a46872594e6054',1,'qtpd::CanvasData']]],
   ['adduniquepatchcord',['addUniquePatchcord',['../classqtpd_1_1_canvas_data.html#a7eb70639d25ca7abf2a99648c443da31',1,'qtpd::CanvasData']]],
   ['alloff',['allOff',['../classceammc_1_1_atom_list.html#ab7beef0d45f83b2213b1408b5702e5f8',1,'ceammc::AtomList']]],
+  ['alphaenabled',['alphaEnabled',['../class_color___dialog.html#ae02a816350fa7fdde5b1ad7642b3373f',1,'Color_Dialog']]],
   ['altclicked',['altClicked',['../classqtpd_1_1_u_i_patchcord.html#a7bb545a9f90c47b9833bf323981d8584',1,'qtpd::UIPatchcord']]],
   ['anyoff',['anyOff',['../classceammc_1_1_atom_list.html#a6bc97f1e25bda4e6fc05cde22bbe01d5',1,'ceammc::AtomList']]],
   ['appcontroller',['appController',['../classqtpd_1_1_patch_window_controller.html#a9237b0907517ffc20174bac47c183683',1,'qtpd::PatchWindowController']]],
-  ['append',['append',['../classqtpd_1_1_clipboard.html#a210bddb869e01f68a20ada2d1bda4694',1,'qtpd::Clipboard::append()'],['../classceammc_1_1_atom_list.html#af9d70f5330ecc54ef2158a7207292fc0',1,'ceammc::AtomList::append(const Atom &amp;a)'],['../classceammc_1_1_atom_list.html#aeda2045696b1b65791f0b249d855c238',1,'ceammc::AtomList::append(const AtomList &amp;l)']]],
+  ['append',['append',['../classqtpd_1_1_clipboard.html#a210bddb869e01f68a20ada2d1bda4694',1,'qtpd::Clipboard::append()'],['../classceammc_1_1_atom_list.html#af9d70f5330ecc54ef2158a7207292fc0',1,'ceammc::AtomList::append(const Atom &amp;a)'],['../classceammc_1_1_atom_list.html#aeda2045696b1b65791f0b249d855c238',1,'ceammc::AtomList::append(const AtomList &amp;l)'],['../class_abstract___widget___list.html#a2c5a1aa4b33808313f9405fdd3a8e6cb',1,'Abstract_Widget_List::append()'],['../class_color___list___widget.html#a2bae87010e694118e5b9065d4087bbe5',1,'Color_List_Widget::append()']]],
+  ['appendwidget',['appendWidget',['../class_abstract___widget___list.html#a3e06757cc60c62776f8a20387048d8cb',1,'Abstract_Widget_List']]],
   ['applicationcontroller',['ApplicationController',['../classqtpd_1_1_application_controller.html#a848539082aa06cbfb5429f83c1a6ea54',1,'qtpd::ApplicationController']]],
   ['array_5ffree',['array_free',['../g__canvas_8h.html#a817b78f4c5d7d3a5e1a2ad6725e4a54b',1,'g_canvas.h']]],
   ['array_5fgetcoordinate',['array_getcoordinate',['../g__canvas_8h.html#adec8b7fc411a8bcaa990ee34d49e13fa',1,'g_canvas.h']]],

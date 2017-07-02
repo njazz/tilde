@@ -18,5 +18,8 @@ var searchData=
   ['w_5fparentvisfn',['w_parentvisfn',['../struct__parentwidgetbehavior.html#a973651ea231d023e49c73506e6531335',1,'_parentwidgetbehavior']]],
   ['w_5fselectfn',['w_selectfn',['../struct__widgetbehavior.html#a9ca2ce8db0ba6d6e8d175a582b611bd6',1,'_widgetbehavior']]],
   ['w_5fsymbol',['w_symbol',['../unionword.html#af1275a854994a7c2abd89dc178609617',1,'word']]],
-  ['w_5fvisfn',['w_visfn',['../struct__widgetbehavior.html#a3df94c90b5fa0d33dbe816f775fd4e78',1,'_widgetbehavior']]]
+  ['w_5fvisfn',['w_visfn',['../struct__widgetbehavior.html#a3df94c90b5fa0d33dbe816f775fd4e78',1,'_widgetbehavior']]],
+  ['wheel_5fflags',['wheel_flags',['../class_color___list___widget_1_1_private.html#a45ca484d50626906faf12a6fd6d03b2b',1,'Color_List_Widget::Private']]],
+  ['wheel_5fwidth',['wheel_width',['../class_color___wheel_1_1_private.html#a98279934c5ad2e8f4bac583f53f119ba',1,'Color_Wheel::Private']]],
+  ['widgets',['widgets',['../class_abstract___widget___list_1_1_private.html#ae282bcdab9f0edd7521a5e9baccdcccc',1,'Abstract_Widget_List::Private']]]
 ];

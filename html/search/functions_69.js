@@ -13,6 +13,7 @@ var searchData=
   ['inletcount',['inletCount',['../classqtpd_1_1_u_i_object.html#a64ad65d9eba38d18c6cf475fa0fbdd65',1,'qtpd::UIObject']]],
   ['inletindex',['inletIndex',['../classqtpd_1_1_u_i_patchcord.html#abf4ef43f4de59746c67f8114ccb77c6d',1,'qtpd::UIPatchcord']]],
   ['inlets',['inlets',['../classqtpd_1_1_canvas_data.html#a61409ca72a1d66d257556de080c400f3',1,'qtpd::CanvasData']]],
+  ['inner_5fradius',['inner_radius',['../class_color___wheel_1_1_private.html#ad99d2565b6e3cb39747aeddaea7c59e8',1,'Color_Wheel::Private']]],
   ['insert',['insert',['../classceammc_1_1_atom_list.html#a8fb783701919036bb9c026375626859d',1,'ceammc::AtomList::insert(size_t pos, const Atom &amp;a)'],['../classceammc_1_1_atom_list.html#afcb0933bbdae8cdb4fc4fd6ff9667ad9',1,'ceammc::AtomList::insert(size_t pos, const AtomList &amp;l)']]],
   ['inst',['inst',['../classqtpd_1_1_clipboard.html#aba78dff625fda18095009854d8c40cb0',1,'qtpd::Clipboard::inst()'],['../classqtpd_1_1_clipboard.html#a2cf7bfee528574dbbf5bcd7801076037',1,'qtpd::Clipboard::inst()'],['../classqtpd_1_1_object_loader.html#ab0d2dafc82b31dc7e2e35f8527de3df7',1,'qtpd::ObjectLoader::inst()'],['../classqtpd_1_1_o_o_p_d.html#afe32b67551b6003bfdf4c36db51b7f40',1,'qtpd::OOPD::inst()'],['../classqtpd_1_1_audio_settings.html#a57a94409f3c5fb1dace61ec644c3cda1',1,'qtpd::AudioSettings::inst()'],['../classqtpd_1_1_preferences.html#a43710c0b803cec200c7add487aae2c08',1,'qtpd::Preferences::inst()']]],
   ['instancebycanvas',['instanceByCanvas',['../classqtpd_1_1_o_o_p_d.html#aa53de61e37e520c0415260fdfb7368ba',1,'qtpd::OOPD']]],
@@ -25,5 +26,6 @@ var searchData=
   ['isnone',['isNone',['../classceammc_1_1_atom.html#a9ba8cc4558b5171aa3cd7db98ee25ae1',1,'ceammc::Atom']]],
   ['isproperty',['isProperty',['../classceammc_1_1_atom.html#a879285cc6caf4f0dfa82bd642df52c3f',1,'ceammc::Atom']]],
   ['isselected',['isSelected',['../classqtpd_1_1_u_i_item.html#ab3ac9bcca4d6c092b1d10fe506ba48c6',1,'qtpd::UIItem']]],
-  ['issymbol',['isSymbol',['../classceammc_1_1_atom.html#a2c4bb5cf0db422ac820ffb70f20c4d42',1,'ceammc::Atom']]]
+  ['issymbol',['isSymbol',['../classceammc_1_1_atom.html#a2c4bb5cf0db422ac820ffb70f20c4d42',1,'ceammc::Atom']]],
+  ['isvalidrow',['isValidRow',['../class_abstract___widget___list.html#abfdfe4429a5b08856b5ab741c68a8ba4',1,'Abstract_Widget_List']]]
 ];

@@ -56,6 +56,7 @@ var searchData=
   ['gp_5fun',['gp_un',['../struct__gpointer.html#a03651391bcf8e04f1b097fcd4a9262dc',1,'_gpointer']]],
   ['gp_5fvalid',['gp_valid',['../struct__gpointer.html#a520f2e30e49af6e4bee7c163f11b1fde',1,'_gpointer']]],
   ['gp_5fw',['gp_w',['../struct__gpointer.html#acce8ceb638d84e73ac62f0ac1011eca7',1,'_gpointer']]],
+  ['gradient',['gradient',['../class_gradient___slider_1_1_private.html#a80eb531780e2d66f9da92314bde2deeb',1,'Gradient_Slider::Private']]],
   ['gs_5farray',['gs_array',['../struct__gstub.html#ae0ef1e37b9a19cabf8ad3a4532a61e9b',1,'_gstub']]],
   ['gs_5fglist',['gs_glist',['../struct__gstub.html#ad782b9e92cc9ef1acb1ecc526eef5a1b',1,'_gstub']]],
   ['gs_5frefcount',['gs_refcount',['../struct__gstub.html#a5a79aa2dc5b3d394798c4df955d24bb2',1,'_gstub']]],

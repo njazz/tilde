@@ -104,6 +104,8 @@ var searchData=
   ['gpointer_5fsetarray',['gpointer_setarray',['../g__canvas_8h.html#ab685a08be27669a34534ce489423ad12',1,'g_canvas.h']]],
   ['gpointer_5fsetglist',['gpointer_setglist',['../g__canvas_8h.html#a0e32b3cbec2cffb4ef167cc7dde2b638',1,'g_canvas.h']]],
   ['gpointer_5funset',['gpointer_unset',['../m__pd_8h.html#a8af1b26542b188790cd726b59a951c26',1,'m_pd.h']]],
+  ['gradient',['gradient',['../class_gradient___slider.html#a63c0de16093e0cf51852b44b56a16940',1,'Gradient_Slider']]],
+  ['gradient_5fslider',['Gradient_Slider',['../class_gradient___slider.html#a4ef92094b65610bdc2a2aaa04cfe314b',1,'Gradient_Slider::Gradient_Slider(QWidget *parent=0)'],['../class_gradient___slider.html#ad42dff53a08b323cd32e4dc93ce4a5b8',1,'Gradient_Slider::Gradient_Slider(Qt::Orientation orientation, QWidget *parent=0)']]],
   ['graph_5farray',['graph_array',['../g__canvas_8h.html#ae15a12b91f3f5e954c6cca61fee0dcaa',1,'g_canvas.h']]],
   ['grid',['Grid',['../classqtpd_1_1_grid.html#abce97be5174bec93af1ff5e9f3cb4bb3',1,'qtpd::Grid']]],
   ['gridsnap',['gridSnap',['../classqtpd_1_1_canvas_view.html#a92f8d2f051ef33082622ef9a96ebcbf8',1,'qtpd::CanvasView']]],

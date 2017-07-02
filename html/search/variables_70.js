@@ -5,6 +5,7 @@ var searchData=
   ['pd_5fcompatibilitylevel',['pd_compatibilitylevel',['../m__pd_8h.html#a6a452cb0267d543605574edb4f0002fd',1,'m_pd.h']]],
   ['pd_5fobjectmaker',['pd_objectmaker',['../m__pd_8h.html#a5af161a5dc240815e8fe6cdaf1aed015',1,'m_pd.h']]],
   ['pdparserfilename',['pdParserFileName',['../classqtpd_1_1_file_parser.html#ab7dc8008ff768523c4633c29f8c030d2',1,'qtpd::FileParser']]],
+  ['pick_5ffrom_5fscreen',['pick_from_screen',['../class_color___dialog_1_1_private.html#a13518c437086bdc2ee55cf3ccbd46736',1,'Color_Dialog::Private']]],
   ['prop_5fprefix',['PROP_PREFIX',['../classceammc_1_1_atom.html#a6cbcf07e2831445164c5c115326128cb',1,'ceammc::Atom']]],
   ['putmenu',['putMenu',['../classqtpd_1_1_base_window.html#a0173ffc9eceb29b6c95bb5601ea7d6d7',1,'qtpd::BaseWindow']]]
 ];

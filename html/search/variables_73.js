@@ -24,6 +24,8 @@ var searchData=
   ['s_5fvecsize',['s_vecsize',['../struct__signal.html#a29f3f9f0e751aee947d063c15217464e',1,'_signal']]],
   ['s_5fx',['s_x',['../m__pd_8h.html#a9f620b818107f1de166e24d2fc4f902e',1,'m_pd.h']]],
   ['s_5fy',['s_y',['../m__pd_8h.html#a5dce56c0385d03cb5dea146acf893f7a',1,'m_pd.h']]],
+  ['sat',['sat',['../class_color___wheel_1_1_private.html#aca7ef64b0c82a0a09dd2ce5ac0de82d8',1,'Color_Wheel::Private']]],
+  ['saturation',['saturation',['../class_hue___slider_1_1_private.html#ae7b7803e79d2f943fd305b6d2cbfd720',1,'Hue_Slider::Private']]],
   ['saveact',['saveAct',['../classqtpd_1_1_base_window.html#aaa3a2ed7429dc62b3ea6d25a4c397de2',1,'qtpd::BaseWindow']]],
   ['saveasact',['saveAsAct',['../classqtpd_1_1_base_window.html#a4aac4f28cf7b733653ad465297bc2038',1,'qtpd::BaseWindow']]],
   ['sc_5fgobj',['sc_gobj',['../struct__scalar.html#a4f758ed3ce0f921fb88db061b857d88b',1,'_scalar']]],

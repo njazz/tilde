@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['background',['background',['../class_color___preview.html#a4bec74083e6222fbdadf6ba16edecb3a',1,'Color_Preview::background()'],['../class_gradient___slider.html#abae1296645fcc4a29030c780bcd41370',1,'Gradient_Slider::background()']]],
   ['basewindow',['BaseWindow',['../classqtpd_1_1_base_window.html#ae2a076d8f8a489795f2b7fbf26fadd5d',1,'qtpd::BaseWindow']]],
   ['bgcolor',['bgColor',['../classqtpd_1_1_u_i_item.html#a15c57968966de733a09cf02973b63696',1,'qtpd::UIItem']]],
   ['binbuf_5fadd',['binbuf_add',['../m__pd_8h.html#a35695fba26e38a1fdc55509906e6cd91',1,'m_pd.h']]],
@@ -24,6 +25,7 @@ var searchData=
   ['binbuf_5frestore',['binbuf_restore',['../m__pd_8h.html#a237d44b667cf26ec0909eb54bf8f3ab9',1,'m_pd.h']]],
   ['binbuf_5ftext',['binbuf_text',['../m__pd_8h.html#aef348b4a593ebd7d02e6bda61dbb0604',1,'m_pd.h']]],
   ['binbuf_5fwrite',['binbuf_write',['../m__pd_8h.html#aacb6016dcafbb9b7c5547dd0f13bf6b2',1,'m_pd.h']]],
+  ['bound_5fcolor_5fselector',['Bound_Color_Selector',['../class_bound___color___selector.html#a2aae44b238b500332e90263cde7e4db6',1,'Bound_Color_Selector']]],
   ['boundingrect',['boundingRect',['../classqtpd_1_1_u_i_item.html#a0a8d5299d5a0a2ebcef2135913bc97da',1,'qtpd::UIItem']]],
   ['boxes',['boxes',['../classqtpd_1_1_canvas_data.html#a47f7935e671ebcdfeddba6904eb90509',1,'qtpd::CanvasData']]],
   ['boxesaspdfilestrings',['boxesAsPdFileStrings',['../classqtpd_1_1_canvas_data.html#a2feadf5b43121b15a8635300cccf1ccf',1,'qtpd::CanvasData']]],
@@ -36,5 +38,6 @@ var searchData=
   ['btnrunsignal',['btnRunSignal',['../classqtpd_1_1_u_i_script_editor.html#aa625ac6d0865ac25b2f2bf7c770c4284',1,'qtpd::UIScriptEditor']]],
   ['btnsave',['btnSave',['../classqtpd_1_1_u_i_script_common.html#a637fd498155030cb202098b94a28ba53',1,'qtpd::UIScriptCommon']]],
   ['btnsavesignal',['btnSaveSignal',['../classqtpd_1_1_u_i_script_editor.html#acccfaed92e82138faacbeec8279a862f',1,'qtpd::UIScriptEditor']]],
-  ['bug',['bug',['../m__pd_8h.html#a3e4d99cc272e4a5cb21332f8bda27ec8',1,'m_pd.h']]]
+  ['bug',['bug',['../m__pd_8h.html#a3e4d99cc272e4a5cb21332f8bda27ec8',1,'m_pd.h']]],
+  ['buttonmode',['buttonMode',['../class_color___dialog.html#a6c4d903ab21dcc79a157495bba9d4ff6',1,'Color_Dialog']]]
 ];
