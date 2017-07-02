@@ -11,6 +11,8 @@
 
 #include <map>
 
+class QTableWidget;
+
 namespace qtpd {
 
 ////
@@ -18,15 +20,26 @@ namespace qtpd {
 ///
 class PropertiesWindow : public QWidget {
 
+    Q_OBJECT
+
 private:
-    std::map<QLineEdit*, QString> _propertyNames; //lookup table
+    std::map<QObject*, QString> _propertyNames; //lookup table
     PropertyList* _propertyList;
 
+    void loadTableWidget(QString pName, QTableWidget* tv);
+
 public:
-    PropertiesWindow(PropertyList* plist);
+    PropertiesWindow(){};
+    explicit PropertiesWindow(PropertyList* plist);
 
 public slots:
-    void editedProperty();
+    // spaghetti time
+    void editedText();
+    void editedColor();
+    void editedBool();
+    void editedInt(int);
+    void editedFloat(double);
+    void editedStringList(int index, int);
 };
 }
 

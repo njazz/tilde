@@ -28,6 +28,8 @@ typedef enum {
     ptString,
     ptVector,
     ptColor,
+    ptVec2,
+    ptStringList,
     ptText ///< multiline text for comments, script
 
 } UIPropertyType;

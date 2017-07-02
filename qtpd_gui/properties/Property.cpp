@@ -184,7 +184,7 @@ void Property::set(QStringList strlist)
     //qDebug() << "data size" << list->size();
 
     //check, different type for text files
-    _type = ptList;
+    _type = ptStringList;
     _data = (*list);
 
     emit changed();
