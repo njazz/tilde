@@ -75,7 +75,7 @@ public:
 
         return ret;
     }
-    static UIObject* createObject(QString objectData, t_canvas*, QGraphicsView* parent = 0)
+    /*static UIObject* createObject(QString objectData, t_canvas*, QGraphicsView* parent = 0)
     {
         UIDSP* b = new UIDSP();
         //b->setCanvas((void*)parent);
@@ -88,7 +88,7 @@ public:
         //std::string message = "ui.dsp";
 
         return (UIObject*)b;
-    };
+    };*/
 
     QGraphicsView* widget()
     {

@@ -1,0 +1,57 @@
+Color Dialog and Widgets
+========================
+
+Here is a color dialog that is more user-friendly than the default QColorDialog
+and color-related widgets
+
+The provided widgets are:
+
+* Color_Wheel, An analog widget used to select a color
+* Color_Preview, A simple widget that dislay a color
+* Gradient_Slider, A slider that has a gradient background
+* Hue_Slider, A variant of Gradient_Slider that has a rainbow background
+* Color_Selector, A Color_Preview that shows a Color_Dialog when clicked
+* Color_Dialog,  A dialog that uses the above widgets to provide a better user experience than QColorDialog
+* Color_List_Widget, A widget to edit a list of colors
+    
+    
+Demonstration
+-------------
+
+A simple demo of the widget is provided in ./color_widgets_demo
+
+You can see a screenshot of the dialog at
+https://github.com/mbasaglia/Qt-Color-Picker/blob/master/color_widgets_demo/screenshot.png
+
+Using it in a project
+---------------------
+
+Include color_widgets.pri in the QMake project file. 
+All the required files are in ./src
+
+
+Installing as a Qt Designer/Creator Plugin
+------------------------------------------
+
+The sources for the designer plugin are in ./color_widgets_designer_plugin
+
+Compile the library and install in
+(Qt SDK)/Tools/QtCreator/bin/designer/
+(Qt SDK)/(Qt Version)/(Toolchain)/plugins/designer
+
+cd color_widgets_designer_plugin && qmake && make && make install
+
+
+Latest Version
+--------------
+
+The latest version of the sources can be found at the following locations
+https://github.com/mbasaglia/Qt-Color-Picker
+git://github.com/mbasaglia/Qt-Color-Picker.git
+
+
+License
+-------
+
+LGPLv3+, See COPYING
+Copyright (C) 2013 Mattia Basaglia <mattia.basaglia@gmail.com>

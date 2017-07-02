@@ -159,7 +159,17 @@ SOURCES += main.cpp\
     ServerWorker.cpp \
     controller/pdWindowConsoleObserver.cpp \
     graphicobjects/UINewPatchcord.cpp \
-    graphicobjects/UIPatchcord.cpp
+    graphicobjects/UIPatchcord.cpp \
+    properties/QtColorPicker/src/color_dialog.cpp \
+    properties/QtColorPicker/src/color_preview.cpp \
+    properties/QtColorPicker/src/color_selector.cpp \
+    properties/QtColorPicker/src/abstract_widget_list.cpp \
+    properties/QtColorPicker/src/bound_color_selector.cpp \
+    properties/QtColorPicker/src/color_delegate.cpp \
+    properties/QtColorPicker/src/color_list_widget.cpp \
+    properties/QtColorPicker/src/color_wheel.cpp \
+    properties/QtColorPicker/src/gradient_slider.cpp \
+    properties/QtColorPicker/src/hue_slider.cpp
 #
 #    serverAPIPrototype.cpp \
 
@@ -239,7 +249,19 @@ HEADERS  += \
     graphicobjects/UINewPatchcord.h \
     CanvasView.h \
     ServerWorker.h \
-    controller/pdWindowConsoleObserver.h
+    controller/pdWindowConsoleObserver.h \
+    properties/QtColorPicker/include/color_dialog.hpp \
+    properties/QtColorPicker/include/color_preview.hpp \
+    properties/QtColorPicker/include/color_selector.hpp \
+    properties/QtColorPicker/include/colorpicker_global.hpp \
+    properties/QtColorPicker/include/abstract_widget_list.hpp \
+    properties/QtColorPicker/include/bound_color_selector.hpp \
+    properties/QtColorPicker/include/color_delegate.hpp \
+    properties/QtColorPicker/include/color_list_widget.hpp \
+    properties/QtColorPicker/include/color_wheel.hpp \
+    properties/QtColorPicker/include/gradient_slider.hpp \
+    properties/QtColorPicker/include/hue_slider.hpp \
+    properties/QtColorPicker/src/paint_border.hpp
 
 
 
@@ -247,7 +269,8 @@ HEADERS  += \
 FORMS    += \
     window/cm_pdwindow.ui \
     canvasmenu.ui \
-    window/cm_basewindow.ui
+    window/cm_basewindow.ui \
+    properties/QtColorPicker/src/color_dialog.ui
 
 #CONFIG += static
 
@@ -276,7 +299,8 @@ unix: {
 DISTFILES += \
     pd_ceammc.ico \
     pd_ceammc.png \
-    qtpd.icns
+    qtpd.icns \
+    properties/QtColorPicker/src/alphaback.png
 
 #include(python/build/common.prf)
 #include(python/build/PythonQt_QtAll.prf)
@@ -294,11 +318,15 @@ INCLUDEPATH += \
     graphicobjects/ \
     datamodels/ \
     controller/ \
-    ../../pd-server/src/
+    ../../pd-server/src/ \
+    properties/QtColorPicker/include
 
 
 
 #$$PWD
+
+RESOURCES += \
+    properties/QtColorPicker/src/pattern.qrc
 
 
 

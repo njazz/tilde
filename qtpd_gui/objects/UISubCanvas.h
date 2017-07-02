@@ -32,8 +32,8 @@ public:
         return ret;
     }
 
-    static UIObject* createObject(QString objectData, t_canvas* pd_Canvas, QGraphicsView* parent = 0)
-    {return 0;} /*
+    //static UIObject* createObject(QString objectData, t_canvas* pd_Canvas, QGraphicsView* parent = 0)
+    /*{return 0;} /*
 
     {
         //TODO fix all constructors

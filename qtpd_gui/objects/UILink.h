@@ -42,7 +42,7 @@ public:
         return ret;
     }
 
-    static UIObject* createObject(QString objectData, t_canvas*, QGraphicsView* parent = 0) { return 0; }
+    //static UIObject* createObject(QString objectData, t_canvas*, QGraphicsView* parent = 0) { return 0; }
 
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
     {

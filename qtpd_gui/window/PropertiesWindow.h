@@ -9,10 +9,6 @@
 #include "Preferences.h"
 #include "PropertyList.h"
 
-#include <QGridLayout>
-#include <QHBoxLayout>
-#include <QVBoxLayout>
-
 #include <map>
 
 namespace qtpd {
@@ -30,16 +26,7 @@ public:
     PropertiesWindow(PropertyList* plist);
 
 public slots:
-    void editedProperty()
-    {
-        qDebug() << "edited";
-
-        QLineEdit* sender = (QLineEdit*)QObject::sender();
-        QString pname = _propertyNames[sender];
-        _propertyList->set(pname.toStdString(), sender->text().split(" "));
-
-        qDebug() << pname << sender->text();
-    }
+    void editedProperty();
 };
 }
 
