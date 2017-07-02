@@ -154,7 +154,7 @@ template <>
 void Property::set(int val)
 {
     _data = AtomList(val);
-    _type = ptFloat;
+    _type = ptInt;
 
     emit changed();
 }

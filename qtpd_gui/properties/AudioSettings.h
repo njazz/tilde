@@ -16,6 +16,8 @@
 
 #include "Preferences.h"
 
+#include "pdServer.hpp"
+
 //#define cmp_font "Source Code Pro"
 
 #define AUDIOSETTINGS_QSTRING(x) qtpd::AudioSettings::inst().getQString(x)
@@ -66,7 +68,7 @@ public:
         // t_cmp_audio_info* info = cmp_get_audio_device_info();
 
         // TODO
-        //create("Driver", "Audio", QTPD_APP_VERSION, cmp_get_audio_apis());
+        create("Driver", "Audio", QTPD_APP_VERSION, QString(ServerInstance::getAudioAPIs().c_str()).split(","));
 
         //create("Input", "Audio", QTPD_APP_VERSION, info->inputDeviceList);
         //create("Output", "Audio", QTPD_APP_VERSION, info->outputDeviceList);
