@@ -110,7 +110,7 @@ var searchData=
   ['audiosettings_2eh',['AudioSettings.h',['../_audio_settings_8h.html',1,'']]],
   ['audiosettings_5fqstring',['AUDIOSETTINGS_QSTRING',['../_audio_settings_8h.html#a6b1401e3ca4767d09919b9fbb9d8e478',1,'AudioSettings.h']]],
   ['audiosettingswindow',['audioSettingsWindow',['../classqtpd_1_1_application_controller.html#a23001f723b3e6e5e6fd2c2d52b846724',1,'qtpd::ApplicationController']]],
-  ['autoresize',['autoResize',['../classqtpd_1_1_u_i_object.html#a1c7d66be6089715aaf5c03adb64a915b',1,'qtpd::UIObject::autoResize()'],['../classqtpd_1_1_u_i_float.html#afd7a834215767a9a9f87163ac94e26d5',1,'qtpd::UIFloat::autoResize()'],['../classqtpd_1_1_u_i_link.html#aac1437ebee95d623e07c24bf948c75b4',1,'qtpd::UILink::autoResize()'],['../classqtpd_1_1_u_i_text.html#abe3b5d63ecd147d71afa4c834f12245c',1,'qtpd::UIText::autoResize()']]],
+  ['autoresize',['autoResize',['../classqtpd_1_1_u_i_object.html#a1c7d66be6089715aaf5c03adb64a915b',1,'qtpd::UIObject::autoResize()'],['../classqtpd_1_1_u_i_box.html#a826f22b1f19cb4722e7a8f61b68726cf',1,'qtpd::UIBox::autoResize()'],['../classqtpd_1_1_u_i_float.html#afd7a834215767a9a9f87163ac94e26d5',1,'qtpd::UIFloat::autoResize()'],['../classqtpd_1_1_u_i_link.html#aac1437ebee95d623e07c24bf948c75b4',1,'qtpd::UILink::autoResize()'],['../classqtpd_1_1_u_i_text.html#abe3b5d63ecd147d71afa4c834f12245c',1,'qtpd::UIText::autoResize()']]],
   ['av_5fgarray',['av_garray',['../struct__arrayvis.html#abb410872a2fc37a0ffdd5961dc44bfef',1,'_arrayvis']]],
   ['av_5fupd',['av_upd',['../struct__arrayvis.html#a20cb8f5e2b4fd44860e746e7e893a3ad',1,'_arrayvis']]]
 ];
