@@ -114,6 +114,8 @@ public:
     void showPopupMenu(QPoint pos);
 
     virtual void autoResize(); ///> call this after setting object data
+    //virtual void setSize(QSize size);
+    void doSetSize(QSize size);
     void resizeEvent(); ///> custom resize event
 
     virtual std::string asPdFileString(); ///>returns object's text for client-based file saving

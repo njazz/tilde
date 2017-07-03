@@ -26,6 +26,8 @@ private:
     t_editMode* _editMode;
 
     QSize _size;
+    QSize _minSize;
+
     QPoint _pos; //?
     QColor _bgColor;
 
@@ -38,9 +40,13 @@ public:
     void setSize(float w, float h) { _size = QSize(w, h); }
     void setWidth(float w) { _size.setWidth(w); }
     void setHeight(float h) { _size.setHeight(h); }
+    void setMinWidth(float w) { _minSize.setWidth(w); }
+    void setMinHeight(float h) { _minSize.setHeight(h); }
 
     float width() { return _size.width(); }
     float height() { return _size.height(); }
+    float minWidth() { return _minSize.width(); }
+    float minHeight() { return _minSize.height(); }
 
     QSize size() { return _size; }
 

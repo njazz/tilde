@@ -183,6 +183,8 @@ void UIBox::setObjectData(QString message)
     new_w = (new_w < 25) ? 25 : new_w;
     setWidth(new_w);
 
+    _objectDataModel.setMminimumBoxWidth(new_w);
+
     //
     setInletsPos();
     setOutletsPos();

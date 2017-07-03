@@ -45,6 +45,10 @@ public:
     void setData(QString inputData); ///> set both properties and Pd object string
     void setObjectSize(t_objectSize sizeMode, int minW, int minH); ///> sets all size constraints
 
+    void setMminimumBoxWidth(int w);
+    void setMminimumBoxHeight(int h);
+
+
     int minimumBoxWidth();
     int minimumBoxHeight();
     t_objectSize objectSizeMode();

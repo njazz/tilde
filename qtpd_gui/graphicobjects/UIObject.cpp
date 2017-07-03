@@ -76,20 +76,9 @@ void UIObject::resizeBox(int dx, int dy)
         setHeight(boundingRect().width());
     }
 
-    _sizeBox->move(boundingRect().width() - 7, boundingRect().height() - 7);
-
-    //todo fixed width
-    if (boundingRect().width() < _objectDataModel.minimumBoxWidth())
-        setWidth(_objectDataModel.minimumBoxWidth());
-    if (boundingRect().height() < _objectDataModel.minimumBoxHeight())
-        setHeight(_objectDataModel.minimumBoxHeight());
-
-    setInletsPos();
-    setOutletsPos();
-
     properties()->set("Size", boundingRect().size());
 
-    resizeEvent();
+    //resizeEvent();
 
     scene()->update(r.left(), r.top(), r.width(), r.height());
 };
@@ -122,6 +111,8 @@ void UIObject::propertySize()
     Property* o = (Property*)QObject::sender();
     QSize size = o->asQSize();
 
+    //    if (!o) return;
+
     if (size.width() < 20) {
         size.setWidth(20);
     }
@@ -129,13 +120,15 @@ void UIObject::propertySize()
         size.setHeight(20);
     }
 
+    //    if (!properties()) return;
+    //    if (!properties()->get("FontSize")) return;
+
     float fs = properties()->get("FontSize")->asFloat();
     if (size.height() < (fs + 9)) {
         size.setHeight(fs + 9);
     }
 
-    setSize(size);
-    resizeEvent();
+    doSetSize(size);
 
     update();
 
@@ -145,13 +138,13 @@ void UIObject::propertySize()
 void UIObject::propertyFontSize()
 {
     //remove
+
+    UIObject::propertySize();
 }
 
 void UIObject::propertyUpdate()
 {
     update();
-
-    //cmp_post("property updated");
 }
 
 PropertyList* UIObject::properties()
@@ -422,14 +415,19 @@ void UIObject::sync()
 
 void UIObject::autoResize()
 {
-    QFont myFont(PREF_QSTRING("Font"), 11);
+    QFont myFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize());
     QFontMetrics fm(myFont);
 
     int w = (int)fm.width(_objectDataModel.objectData()) + 10;
-    setWidth(w);
+    _objectDataModel.setMminimumBoxWidth(w);
+    //setWidth(w);
 
-    if (w < _objectDataModel.minimumBoxWidth())
-        setWidth(_objectDataModel.minimumBoxWidth());
+    QRect r = boundingRect().toRect();
+
+    if (r.width() < w) {
+        setWidth(w);
+        properties()->set("Size", r.size());
+    }
 }
 
 QString UIObject::objectData()
@@ -483,10 +481,13 @@ void UIObject::setEditModeRef(t_editMode* canvasEditMode)
 
 //----------------------------------------
 
-void UIObject::resizeEvent() //QGraphicsSceneResizeEvent *event)
+void UIObject::doSetSize(QSize size)
 {
 
-    _sizeBox->move(boundingRect().width() - 7, boundingRect().height() - 7);
+    autoResize();
+
+    UIItem::setSize(size);
+
 
     //todo fixed width
     if (boundingRect().width() < _objectDataModel.minimumBoxWidth())
@@ -494,11 +495,35 @@ void UIObject::resizeEvent() //QGraphicsSceneResizeEvent *event)
     if (boundingRect().height() < _objectDataModel.minimumBoxHeight())
         setHeight(_objectDataModel.minimumBoxHeight());
 
+    _sizeBox->move(boundingRect().width() - 7, boundingRect().height() - 7);
+
+
     setInletsPos();
     setOutletsPos();
+}
+
+//void UIObject::setSize(QSize size)
+//{
+
+//    properties()->set("Size", boundingRect().size());
+//}
+
+void UIObject::resizeEvent() //QGraphicsSceneResizeEvent *event)
+{
+
+    //    _sizeBox->move(boundingRect().width() - 7, boundingRect().height() - 7);
+
+    //    //todo fixed width
+    //    if (boundingRect().width() < _objectDataModel.minimumBoxWidth())
+    //        setWidth(_objectDataModel.minimumBoxWidth());
+    //    if (boundingRect().height() < _objectDataModel.minimumBoxHeight())
+    //        setHeight(_objectDataModel.minimumBoxHeight());
+
+    //    setInletsPos();
+    //    setOutletsPos();
 
     // needs fix
-    //properties()->set("Size", boundingRect().size());
+    properties()->set("Size", boundingRect().size());
 }
 
 void UIObject::hoverEnterEvent(QGraphicsSceneHoverEvent*)
@@ -557,12 +582,12 @@ int UIObject::minimumBoxHeight()
 void UIObject::hide()
 {
 
-//    if (subpatchWindow()) {
-//        qDebug("hide subcanvas window");
+    //    if (subpatchWindow()) {
+    //        qDebug("hide subcanvas window");
 
-//        subpatchWindow()->hide();
-//        delete _SubpatchWindow;
-//    }
+    //        subpatchWindow()->hide();
+    //        delete _SubpatchWindow;
+    //    }
 }
 
 void UIObject::hideSizeBox()
@@ -630,9 +655,7 @@ void UIObject::openHelpWindow()
     QString fullHelpName_ = fullHelpName();
     if (fullHelpName_ != "") {
         FileParser::open(fullHelpName_);
-    }
-    else
-    {
+    } else {
         ServerInstance::error("bad error help file name!");
     }
 }
@@ -646,10 +669,8 @@ void UIObject::s_repaint() //needed for proper threading
 void UIObject::propertyChanged(QString pname)
 {
 
-    // DEPRECATED
-
-    if (pname == "Size")
-        setSize(properties()->get("Size")->asQSize());
+    //if (pname == "Size")
+    //    setSize(properties()->get("Size")->asQSize());
 
     //just visuals
     if (pname == "FontSize")

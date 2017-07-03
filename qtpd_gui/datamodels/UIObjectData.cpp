@@ -1,7 +1,7 @@
 #include "UIObjectData.h"
 
-#include "PropertyList.h"
 #include "Port.h"
+#include "PropertyList.h"
 
 namespace qtpd {
 UIObjectData::UIObjectData(QObject* parent)
@@ -20,7 +20,7 @@ UIObjectData::UIObjectData(QObject* parent)
 void UIObjectData::setData(QString inputData) ///> set both properties and Pd object string
 {
 
-    _objectData = inputData;//
+    _objectData = inputData; //
     _properties->extractFromPdFileString(inputData);
 
     _fullHelpName = _objectData.split(" ").at(0) + "-help.pd";
@@ -40,6 +40,9 @@ QString UIObjectData::fullHelpName() { return _fullHelpName; }
 bool UIObjectData::errorBox() { return _errorBox; }
 void UIObjectData::setFullHelpName(QString fullHelpName) { _fullHelpName = fullHelpName; }
 void UIObjectData::setErrorBox(bool errorBox) { _errorBox = errorBox; }
+
+void UIObjectData::setMminimumBoxWidth(int w) { _minimumBoxWidth = w; };
+void UIObjectData::setMminimumBoxHeight(int h) { _minimumBoxHeight = h; };
 
 int UIObjectData::minimumBoxWidth() { return _minimumBoxWidth; }
 int UIObjectData::minimumBoxHeight() { return _minimumBoxHeight; }
