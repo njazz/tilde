@@ -172,8 +172,9 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ac910dc268c5457c9ce9149378794eb9a">showPopupMenu</a> (QPoint pos)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; createContextMenu  <a href="#ac910dc268c5457c9ce9149378794eb9a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a1c7d66be6089715aaf5c03adb64a915b">autoResize</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#af76e1c11e822197843e1712f9306469c">doSetSize</a> (QSize <a class="el" href="classqtpd_1_1_u_i_item.html#a5459c088d2279385386e14fff826f12f">size</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; call this after setting object data  <a href="#af76e1c11e822197843e1712f9306469c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ae10cb3996474a7c1ba94d5e48c740106">resizeEvent</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; call this after setting object data  <a href="#ae10cb3996474a7c1ba94d5e48c740106"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a89a9d36ac67cceab237cdc01a1ec2376">asPdFileString</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; custom resize event  <a href="#a89a9d36ac67cceab237cdc01a1ec2376"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a0590d2f5ec52a3010373b7f4fc19c610">setEditModeRef</a> (<a class="el" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a">t_editMode</a> *canvasEditMode)</td></tr>
@@ -413,6 +414,25 @@ Protected Member Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>&gt; <a class="el" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a> properties </p>
+
+</div>
+</div>
+<a class="anchor" id="af76e1c11e822197843e1712f9306469c"></a><!-- doxytag: member="qtpd::UIObject::doSetSize" ref="af76e1c11e822197843e1712f9306469c" args="(QSize size)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_object.html#af76e1c11e822197843e1712f9306469c">qtpd::UIObject::doSetSize</a> </td>
+          <td>(</td>
+          <td class="paramtype">QSize&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>&gt; call this after setting object data </p>
 
 </div>
 </div>
@@ -1007,8 +1027,6 @@ Protected Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>&gt; call this after setting object data </p>
-
 <p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_item.html#acba2e2b595964278ce9ebef09996f597">qtpd::UIItem</a>.</p>
 
 <p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_sub_canvas.html#ae241f3a29ba68cc63140c51449b1bd66">qtpd::UISubCanvas</a>, <a class="el" href="classqtpd_1_1_u_i_script.html#a7b66e6fa4f2f78b251333098778b3ade">qtpd::UIScript</a>, <a class="el" href="classqtpd_1_1_u_i_matrix.html#ae980cee31866349134e01cbdfbaa7c4b">qtpd::UIMatrix</a>, <a class="el" href="classqtpd_1_1_u_i_slider.html#a23fac1aa8d77018716fc6aaddab8afb0">qtpd::UISlider</a>, <a class="el" href="classqtpd_1_1_u_i_script.html#a7b66e6fa4f2f78b251333098778b3ade">qtpd::UIScript</a>, <a class="el" href="classqtpd_1_1_u_i_bang.html#a5677b3f28ab86d0d8d5e133262a60802">qtpd::UIBang</a>, <a class="el" href="classqtpd_1_1_u_i_message.html#a43f5631496ca6b14ab418aa1171a37f7">qtpd::UIMessage</a>, and <a class="el" href="classqtpd_1_1_u_i_toggle.html#ad08a617056c61e9b1c25b51ef37f69e1">qtpd::UIToggle</a>.</p>
@@ -1399,7 +1417,7 @@ Protected Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 2 2017 23:34:47 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 3 2017 09:40:33 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
