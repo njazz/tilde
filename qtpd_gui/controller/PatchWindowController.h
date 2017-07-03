@@ -160,6 +160,19 @@ public slots:
 
     void openPropertiesWindow();
 
+    //
+    void slotAlignLeft();
+    void slotAlignRight();
+
+    void slotAlignTop();
+    void slotAlignBottom();
+
+    void slotAlignCenter();
+
+
+    void slotHDistribute();
+    void slotVDistribute();
+
     //    void signalSelectBox(UIItem* box, QGraphicsSceneMouseEvent* event);
     //    void signalMoveBox(UIItem* box, QGraphicsSceneMouseEvent* event);
 
@@ -175,6 +188,8 @@ private slots:
 
     void slotSelectionFrame(QPoint start, QPoint end);
     void slotMoveSelectedBoxes(QPoint eventPos);
+
+
 
 signals:
     ServerObject* signalCreateObject(ServerCanvas* canvas, string name);

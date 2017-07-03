@@ -9,7 +9,6 @@
 #include "FileParser.h"
 #include "PatchWindowController.h"
 
-
 namespace qtpd {
 PatchWindow::PatchWindow()
 {
@@ -175,32 +174,43 @@ void PatchWindow::createActions()
     snapToGridAct->setChecked(true);
     connect(snapToGridAct, &QAction::triggered, this, &PatchWindow::setGridSnap);
 
+    // -------
     alignToGridAct = new QAction(tr("Align to grid"), this);
-    alignToGridAct->setEnabled(false);
+
+    //alignToGridAct->setEnabled(false);
     //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
+
+    // ------------------------------
 
     alignLeftAct = new QAction(tr("Align left"), this);
-    alignLeftAct->setEnabled(false);
+    //alignLeftAct->setEnabled(false);
     //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
 
+    alignCenterAct = new QAction(tr("Align center"), this);
+
     alignRightAct = new QAction(tr("Align right"), this);
-    alignRightAct->setEnabled(false);
+
+    //alignRightAct->setEnabled(false);
     //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
 
     alignTopAct = new QAction(tr("Align top"), this);
-    alignTopAct->setEnabled(false);
+
+    //alignTopAct->setEnabled(false);
     //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
 
     alignBottomAct = new QAction(tr("Align bottom"), this);
-    alignBottomAct->setEnabled(false);
+
+    //alignBottomAct->setEnabled(false);
     //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
 
     distHAct = new QAction(tr("Distribute objects horizontaly"), this);
-    distHAct->setEnabled(false);
+
+    //distHAct->setEnabled(false);
     //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
 
     distVAct = new QAction(tr("Distribute objects verticaly"), this);
-    distVAct->setEnabled(false);
+
+    //distVAct->setEnabled(false);
     //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
 
     tidyUpAct = new QAction(tr("Tidy up"), this);
@@ -208,6 +218,7 @@ void PatchWindow::createActions()
     //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
 
     groupObjAct = new QAction(tr("Group objects"), this);
+    groupObjAct->setEnabled(false);
 
     ungroupObjAct = new QAction(tr("Ungroup objects"), this);
     ungroupObjAct->setEnabled(false);
@@ -266,10 +277,13 @@ void PatchWindow::createMenus()
 
     arrangeMenu->addAction(showGridAct);
     arrangeMenu->addAction(snapToGridAct);
-    arrangeMenu->addSeparator();
     arrangeMenu->addAction(alignToGridAct);
+    arrangeMenu->addSeparator();
+
     arrangeMenu->addAction(alignLeftAct);
+    arrangeMenu->addAction(alignCenterAct);
     arrangeMenu->addAction(alignRightAct);
+
     arrangeMenu->addAction(alignTopAct);
     arrangeMenu->addAction(alignBottomAct);
     arrangeMenu->addSeparator();
@@ -346,6 +360,15 @@ void PatchWindow::setController(PatchWindowController* c)
     connect(duplicateAct, &QAction::triggered, _controller, &PatchWindowController::menuDuplicate);
 
     connect(selectAllAct, &QAction::triggered, _controller, &PatchWindowController::menuSelectAll);
+
+    //
+    connect(alignLeftAct, &QAction::triggered, _controller, &PatchWindowController::slotAlignLeft);
+    connect(alignCenterAct, &QAction::triggered, _controller, &PatchWindowController::slotAlignCenter);
+    connect(alignRightAct, &QAction::triggered, _controller, &PatchWindowController::slotAlignRight);
+    connect(alignTopAct, &QAction::triggered, _controller, &PatchWindowController::slotAlignTop);
+    connect(alignBottomAct, &QAction::triggered, _controller, &PatchWindowController::slotAlignBottom);
+    connect(distHAct, &QAction::triggered, _controller, &PatchWindowController::slotHDistribute);
+    connect(distVAct, &QAction::triggered, _controller, &PatchWindowController::slotVDistribute);
 
     if (_canvasView)
         _canvasView->setController(_controller);

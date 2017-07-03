@@ -567,7 +567,6 @@ float CanvasView::getZoom() { return _zoom; }
 t_editMode CanvasView::getEditMode() { return *_canvasEditMode; }
 t_editMode* CanvasView::getEditModeRef() { return _canvasEditMode; }
 
-
 bool CanvasView::gridSnap() { return _gridSnap; }
 int CanvasView::gridStep() { return _grid->gridStep(); }
 

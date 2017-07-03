@@ -24,6 +24,8 @@
 
 #include "PropertiesWindow.h"
 
+#include "ArrangeObjects.h"
+
 // TEST
 //#include "PdLink.h"
 
@@ -511,7 +513,11 @@ void PatchWindowController::dataPaste()
             qDebug() << "paste" << subList;
 
             Clipboard::inst()->setStringAt(i, subList.join(" "));
+
+            PatchWindowController* tc = FileParser::parserWindowController();
+            FileParser::setParserWindowController(this);
             FileParser::parseQString(Clipboard::inst()->at(i));
+            FileParser::setParserWindowController(tc);
         }
     }
 
@@ -808,5 +814,39 @@ void PatchWindowController::slotMoveSelectedBoxes(QPoint eventPos)
 
     //todo
     firstWindow()->canvasView()->viewport()->update();
+}
+
+void PatchWindowController::slotAlignLeft()
+{
+    ArrangeObjects::alignLeft(_canvasData->selectedBoxes());
+}
+
+void PatchWindowController::slotAlignRight()
+{
+    ArrangeObjects::alignRight(_canvasData->selectedBoxes());
+}
+
+void PatchWindowController::slotAlignTop()
+{
+    ArrangeObjects::alignTop(_canvasData->selectedBoxes());
+}
+
+void PatchWindowController::slotAlignBottom()
+{
+    ArrangeObjects::alignBottom(_canvasData->selectedBoxes());
+}
+
+void PatchWindowController::slotAlignCenter()
+{
+    ArrangeObjects::alignCenter(_canvasData->selectedBoxes());
+}
+
+void PatchWindowController::slotHDistribute()
+{
+    ArrangeObjects::distributeHorizontal(_canvasData->selectedBoxes());
+}
+void PatchWindowController::slotVDistribute()
+{
+    ArrangeObjects::distributeVertical(_canvasData->selectedBoxes());
 }
 }

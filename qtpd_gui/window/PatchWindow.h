@@ -65,6 +65,7 @@ private:
     QAction* alignToGridAct;
 
     QAction* alignLeftAct;
+    QAction* alignCenterAct;
     QAction* alignRightAct;
     QAction* alignTopAct;
     QAction* alignBottomAct;
@@ -117,24 +118,6 @@ public:
 
     // ----------------------------------------------------
 
-    //    void delSelected()
-    //    {
-    //        canvasView()->deleteSelectedObjects();
-    //        canvasView()->deleteSelectedPatchcords();
-
-    //        setWindowModified(true);
-    //    }
-
-    //    void selectAll()
-    //    {
-    //        // todo direct slot connection
-    //        //canvasView()->selectAll();
-
-    //        _controller->menuSelectAll();
-
-    //        setWindowModified(true);
-    //    }
-
     void objectMakerDone();
 
     void setEditMode();
@@ -159,17 +142,6 @@ public:
     //
     void zoomIn();
     void zoomOut();
-
-    //public slots:
-    //    std::pair<QMainWindow*, qtpd::UIObject*> s_createSubpatchWindow()
-    //    {
-    //        //t_canvas* newPdCanvas = cmp_newpatch();
-
-    //        PatchWindow* subPatch = new PatchWindow(); //PatchWindow::newSubpatch((t_canvas*)newPdCanvas);
-    //        CanvasView* newCanvas = subPatch->canvasView();
-
-    //        return std::pair<QMainWindow*, qtpd::UIObject*>(subPatch, (qtpd::UIObject*)newCanvas);
-    //    };
 };
 }
 

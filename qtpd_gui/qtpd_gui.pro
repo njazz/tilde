@@ -169,7 +169,8 @@ SOURCES += main.cpp\
     properties/QtColorPicker/src/color_list_widget.cpp \
     properties/QtColorPicker/src/color_wheel.cpp \
     properties/QtColorPicker/src/gradient_slider.cpp \
-    properties/QtColorPicker/src/hue_slider.cpp
+    properties/QtColorPicker/src/hue_slider.cpp \
+    datamodels/ArrangeObjects.cpp
 #
 #    serverAPIPrototype.cpp \
 
@@ -261,7 +262,8 @@ HEADERS  += \
     properties/QtColorPicker/include/color_wheel.hpp \
     properties/QtColorPicker/include/gradient_slider.hpp \
     properties/QtColorPicker/include/hue_slider.hpp \
-    properties/QtColorPicker/src/paint_border.hpp
+    properties/QtColorPicker/src/paint_border.hpp \
+    datamodels/ArrangeObjects.h
 
 
 
