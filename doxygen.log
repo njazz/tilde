@@ -320,11 +320,14 @@ Preprocessing /home/travis/build/njazz/qtpd/qtpd_gui/widgets/UIArrayEditor.h...
 Parsing file /home/travis/build/njazz/qtpd/qtpd_gui/widgets/UIArrayEditor.h...
 Preprocessing /home/travis/build/njazz/qtpd/qtpd_gui/widgets/UIScriptCommon.cpp...
 Parsing file /home/travis/build/njazz/qtpd/qtpd_gui/widgets/UIScriptCommon.cpp...
-Preprocessing /home/travis/build/njazz/qtpd/qtpd_gui/widgets/UISc/home/travis/build/njazz/qtpd/qtpd_gui/objects/UIToggle.cpp:149: warning: no uniquely matching class member found for 
+Preprocessing /home/travis/build/njazz/qtpd/qtpd_gui/widgets/UISc/home/travis/build/njazz/qtpd/qtpd_gui/objects/UIMatrix.cpp:376: warning: no uniquely matching class member found for 
+  void qtpd::UIMatrix::setPdMessage(QString message)
+
+/home/travis/build/njazz/qtpd/qtpd_gui/objects/UIToggle.cpp:149: warning: no uniquely matching class member found for 
   void qtpd::UIToggle::updateUI(ceammc::AtomList list)
 Possible candidates:
-  static void qtpd::UIToggle::updateUI(void *uiobj, ceammc::AtomList msg) at line 46 of file /home/travis/build/njazz/qtpd/qtpd_gui/objects/UIToggle.h
-  void qtpd::UIToggle::updateUI(AtomList list) at line 47 of file /home/travis/build/njazz/qtpd/qtpd_gui/objects/UIToggle.h
+  static void qtpd::UIToggle::updateUI(void *uiobj, ceammc::AtomList msg) at line 45 of file /home/travis/build/njazz/qtpd/qtpd_gui/objects/UIToggle.h
+  void qtpd::UIToggle::updateUI(AtomList list) at line 46 of file /home/travis/build/njazz/qtpd/qtpd_gui/objects/UIToggle.h
 
 /home/travis/build/njazz/qtpd/qtpd_gui/lib_headers/ceammc_atomlist.h:67: warning: included file pos is not found. Check your EXAMPLE_PATH
 riptCommon.h...
@@ -738,10 +741,10 @@ Generating docs for compound /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjec
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:192: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setOutletsPos()
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIPatchcord.h:75: warning: Found unknown command `\group'
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIPatchcord.h:54: warning: Found unknown command `\group'
-/home/travis/build/njazz/qtpd/qtpd_gui/objects/UIBox.h:53: warning: argument 'ev' of command @param is not found in the argument list of qtpd::UIBox::objectPressEvent(QGraphicsSceneMouseEvent *event)
-/home/travis/build/njazz/qtpd/qtpd_gui/objects/UIBox.h:53: warning: The following parameters of qtpd::UIBox::objectPressEvent(QGraphicsSceneMouseEvent *event) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/objects/UIBox.h:49: warning: argument 'ev' of command @param is not found in the argument list of qtpd::UIBox::objectPressEvent(QGraphicsSceneMouseEvent *event)
+/home/travis/build/njazz/qtpd/qtpd_gui/objects/UIBox.h:49: warning: The following parameters of qtpd::UIBox::objectPressEvent(QGraphicsSceneMouseEvent *event) are not documented:
   parameter 'event'
-/home/travis/build/njazz/qtpd/qtpd_gui/objects/UIScriptBox.h:117: warning: argument 'ev' of command @param is not found in the argument list of qtpd::UIScriptBox::objectPressEvent(QGraphicsSceneMouseEvent *event) inherited from member objectPressEvent at line 53 in file /home/travis/build/njazz/qtpd/qtpd_gui/objects/UIBox.h
+/home/travis/build/njazz/qtpd/qtpd_gui/objects/UIScriptBox.h:117: warning: argument 'ev' of command @param is not found in the argument list of qtpd::UIScriptBox::objectPressEvent(QGraphicsSceneMouseEvent *event) inherited from member objectPressEvent at line 49 in file /home/travis/build/njazz/qtpd/qtpd_gui/objects/UIBox.h
 /home/travis/build/njazz/qtpd/qtpd_gui/objects/UIScriptBox.h:117: warning: The following parameters of qtpd::UIScriptBox::objectPressEvent(QGraphicsSceneMouseEvent *event) are not documented:
   parameter 'event'
 /home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIInstance.h:326: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIInstance::setInletsPos() inherited from member setInletsPos at line 185 in file /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h
@@ -814,6 +817,6 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-symbol cache used 2580/65536 hits=184156 misses=2580
-lookup cache used 4230/65536 hits=23534 misses=4463
+symbol cache used 2573/65536 hits=181224 misses=2573
+lookup cache used 4213/65536 hits=23395 misses=4446
 finished...

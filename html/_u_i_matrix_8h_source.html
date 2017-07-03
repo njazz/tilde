@@ -112,59 +112,58 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00031"></a>00031 
 <a name="l00032"></a>00032 <span class="keyword">private</span>:
 <a name="l00033"></a>00033     <span class="keywordtype">bool</span> _clicked;
-<a name="l00034"></a>00034     <span class="comment">//bool _value;</span>
-<a name="l00035"></a>00035 
-<a name="l00036"></a>00036 <span class="keyword">public</span>:
-<a name="l00037"></a>00037     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#a3932a5c260c63d2ac2d10e2b09b294a9">UIMatrix</a>();
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_matrix.html#aecce7d92e19afe0bfb6d3190156ad206">createObj</a>(QString data);
-<a name="l00040"></a>00040     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_matrix.html#a72817c9f0409919208bd1bd5ead81679">createObject</a>(QString, <a class="code" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a>*, QGraphicsView* );
-<a name="l00041"></a>00041 
-<a name="l00042"></a>00042     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#a9302ee46a560256acfaad75be808638c">initProperties</a>();
-<a name="l00043"></a>00043 
-<a name="l00044"></a>00044     Q_SLOT <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#aa1dbab768f17342179bfa2cb347ac8a7">propertyUpdate</a>();
-<a name="l00045"></a>00045     Q_SLOT <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#a8f4b2d0e49aec13bc008ef96e57c84bc">propertyMatrixSize</a>();
-<a name="l00046"></a>00046 
-<a name="l00047"></a>00047     <span class="comment">// ------------------------------------------</span>
-<a name="l00048"></a>00048 
-<a name="l00049"></a>00049     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#a6db855111d2205f1a12d05f56bb5e1ce">drawCross</a>(QPainter* p, QPoint matrixPos);
-<a name="l00050"></a>00050     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#ae21b172aaf057ccdc30f082e5e1ace2d">drawBox</a>(QPainter* p, QPoint matrixPos);
-<a name="l00051"></a>00051 
-<a name="l00052"></a>00052     <span class="comment">// ---- move to private</span>
-<a name="l00053"></a>00053 
-<a name="l00054"></a>00054     <a class="code" href="namespaceqtpd.html#a40c698b26106feb24ba7172b4fdefecf">uiMatrixType</a> <a class="code" href="classqtpd_1_1_u_i_matrix.html#acb121f85f9ef8ee7eba8872ee038cf2a">matrixType</a>();
-<a name="l00055"></a>00055 
-<a name="l00056"></a>00056     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#a941a487ce0db11cf6123016234d57076">radioSize</a>();
-<a name="l00057"></a>00057 
-<a name="l00058"></a>00058     QRect <a class="code" href="classqtpd_1_1_u_i_matrix.html#a281827e4355884a96ac17c3a984e2f8f">rectFromMatrixPos</a>(QPoint matrixPos);
-<a name="l00059"></a>00059 
-<a name="l00060"></a>00060     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#adac9f323788a3103adc9897575456a53">paintHRadio</a>(QPainter* p);
-<a name="l00061"></a>00061     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#ab510ff36120b4d544bddc105f0dacae8">paintVRadio</a>(QPainter* p);
-<a name="l00062"></a>00062 
-<a name="l00063"></a>00063     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#aa433fdb5bb48f78dddcf5c9f7492f110" title="&gt; draws buttons as ui.toggle">paintToggleMatrix</a>(QPainter* p); 
-<a name="l00064"></a>00064     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#a4707923e850d36098ffdd6bd9c4776f6" title="&gt; draws buttons as ui.toggle">paintButtonMatrix</a>(QPainter* p); 
-<a name="l00065"></a>00065 
-<a name="l00066"></a>00066     <span class="comment">// ---- move to private</span>
-<a name="l00067"></a>00067 
-<a name="l00068"></a>00068     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#a5baac97789b310da7c424972b385dc0a" title="&gt; draws buttons as boxes">paint</a>(QPainter* p, <span class="keyword">const</span> QStyleOptionGraphicsItem* option, QWidget*);
-<a name="l00069"></a>00069 
-<a name="l00070"></a>00070     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#ae980cee31866349134e01cbdfbaa7c4b">resizeEvent</a>();
-<a name="l00071"></a>00071 
-<a name="l00072"></a>00072     <span class="comment">// ---------------------------------------------------------------</span>
-<a name="l00073"></a>00073 
-<a name="l00074"></a>00074     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#a9a54e7251459946e579a43bc13c16ff3">mousePressEvent</a>(QGraphicsSceneMouseEvent* ev);
-<a name="l00075"></a>00075     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#ae66642f8c93e28719873280effa252b0">mouseReleaseEvent</a>(QGraphicsSceneMouseEvent*);
-<a name="l00076"></a>00076     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#af1a8d9809d63aac1c5f1a156fd725fc2">mouseMoveEvent</a>(QGraphicsSceneMouseEvent* event);
-<a name="l00077"></a>00077 
-<a name="l00079"></a>00079 
-<a name="l00080"></a>00080     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#a5cdbcfaaa127ed5ed88f0f5aebae17db">setPdMessage</a>(QString message);
-<a name="l00081"></a>00081 
-<a name="l00082"></a>00082     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#ab96f06dea9b78840f7c320baf3c91770">updateUI</a>(AtomList msg);
-<a name="l00083"></a>00083 
-<a name="l00084"></a>00084 };
-<a name="l00085"></a>00085 }
-<a name="l00086"></a>00086 
-<a name="l00087"></a>00087 <span class="preprocessor">#endif // CMO_MSG_H</span>
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035 <span class="keyword">public</span>:
+<a name="l00036"></a>00036     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#a3932a5c260c63d2ac2d10e2b09b294a9">UIMatrix</a>();
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_matrix.html#aecce7d92e19afe0bfb6d3190156ad206">createObj</a>(QString data);
+<a name="l00039"></a>00039     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_matrix.html#a72817c9f0409919208bd1bd5ead81679">createObject</a>(QString, <a class="code" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a>*, QGraphicsView* );
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#a9302ee46a560256acfaad75be808638c">initProperties</a>();
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043     Q_SLOT <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#aa1dbab768f17342179bfa2cb347ac8a7">propertyUpdate</a>();
+<a name="l00044"></a>00044     Q_SLOT <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#a8f4b2d0e49aec13bc008ef96e57c84bc">propertyMatrixSize</a>();
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046     <span class="comment">// ------------------------------------------</span>
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#a6db855111d2205f1a12d05f56bb5e1ce">drawCross</a>(QPainter* p, QPoint matrixPos);
+<a name="l00049"></a>00049     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#ae21b172aaf057ccdc30f082e5e1ace2d">drawBox</a>(QPainter* p, QPoint matrixPos);
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051     <span class="comment">// ---- move to private</span>
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053     <a class="code" href="namespaceqtpd.html#a40c698b26106feb24ba7172b4fdefecf">uiMatrixType</a> <a class="code" href="classqtpd_1_1_u_i_matrix.html#acb121f85f9ef8ee7eba8872ee038cf2a">matrixType</a>();
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#a941a487ce0db11cf6123016234d57076">radioSize</a>();
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057     QRect <a class="code" href="classqtpd_1_1_u_i_matrix.html#a281827e4355884a96ac17c3a984e2f8f">rectFromMatrixPos</a>(QPoint matrixPos);
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#adac9f323788a3103adc9897575456a53">paintHRadio</a>(QPainter* p);
+<a name="l00060"></a>00060     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#ab510ff36120b4d544bddc105f0dacae8">paintVRadio</a>(QPainter* p);
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#aa433fdb5bb48f78dddcf5c9f7492f110" title="&gt; draws buttons as ui.toggle">paintToggleMatrix</a>(QPainter* p); 
+<a name="l00063"></a>00063     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#a4707923e850d36098ffdd6bd9c4776f6" title="&gt; draws buttons as ui.toggle">paintButtonMatrix</a>(QPainter* p); 
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065     <span class="comment">// ---- move to private</span>
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#a5baac97789b310da7c424972b385dc0a" title="&gt; draws buttons as boxes">paint</a>(QPainter* p, <span class="keyword">const</span> QStyleOptionGraphicsItem* option, QWidget*);
+<a name="l00068"></a>00068 
+<a name="l00069"></a>00069     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#ae980cee31866349134e01cbdfbaa7c4b">resizeEvent</a>();
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071     <span class="comment">// ---------------------------------------------------------------</span>
+<a name="l00072"></a>00072 
+<a name="l00073"></a>00073     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#a9a54e7251459946e579a43bc13c16ff3">mousePressEvent</a>(QGraphicsSceneMouseEvent* ev);
+<a name="l00074"></a>00074     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#ae66642f8c93e28719873280effa252b0">mouseReleaseEvent</a>(QGraphicsSceneMouseEvent*);
+<a name="l00075"></a>00075     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#af1a8d9809d63aac1c5f1a156fd725fc2">mouseMoveEvent</a>(QGraphicsSceneMouseEvent* event);
+<a name="l00076"></a>00076 
+<a name="l00078"></a>00078 
+<a name="l00079"></a>00079 <span class="comment">//    void setPdMessage(QString message);</span>
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_matrix.html#ab96f06dea9b78840f7c320baf3c91770">updateUI</a>(AtomList msg);
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083 };
+<a name="l00084"></a>00084 }
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086 <span class="preprocessor">#endif // CMO_MSG_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -183,7 +182,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 3 2017 17:09:03 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 3 2017 18:57:23 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

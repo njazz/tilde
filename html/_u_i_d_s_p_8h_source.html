@@ -98,180 +98,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00014"></a>00014 
 <a name="l00015"></a>00015 <span class="preprocessor">#include &quot;<a class="code" href="_preferences_8h.html">Preferences.h</a>&quot;</span>
 <a name="l00016"></a>00016 
-<a name="l00017"></a>00017 
+<a name="l00017"></a>00017 <span class="keyword">namespace </span>qtpd {
 <a name="l00018"></a>00018 
-<a name="l00019"></a>00019 <span class="keyword">namespace </span>qtpd {
-<a name="l00020"></a>00020 
-<a name="l00024"></a><a class="code" href="classqtpd_1_1_u_i_d_s_p.html">00024</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_u_i_d_s_p.html" title="gui object: dsp switch box (ui.dsp)">UIDSP</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a> {
-<a name="l00025"></a>00025     Q_OBJECT
-<a name="l00026"></a>00026 
-<a name="l00027"></a>00027 <span class="keyword">private</span>:
-<a name="l00028"></a>00028     <span class="keywordtype">bool</span> _clicked;
-<a name="l00029"></a>00029     <span class="keywordtype">bool</span> _value;
+<a name="l00022"></a><a class="code" href="classqtpd_1_1_u_i_d_s_p.html">00022</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_u_i_d_s_p.html" title="gui object: dsp switch box (ui.dsp)">UIDSP</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a> {
+<a name="l00023"></a>00023     Q_OBJECT
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="keyword">private</span>:
+<a name="l00026"></a>00026     <span class="keywordtype">bool</span> _clicked;
+<a name="l00027"></a>00027     <span class="keywordtype">bool</span> _value;
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029     QGraphicsView* _widget;
 <a name="l00030"></a>00030 
-<a name="l00031"></a>00031     QGraphicsView* _widget;
-<a name="l00032"></a>00032 
-<a name="l00033"></a>00033 <span class="keyword">public</span>:
-<a name="l00034"></a><a class="code" href="classqtpd_1_1_u_i_d_s_p.html#a3e492bb9470b2d650ed2f58a55dcf2c2">00034</a>     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_u_i_d_s_p.html#a3e492bb9470b2d650ed2f58a55dcf2c2">UIDSP</a>()
-<a name="l00035"></a>00035     {
-<a name="l00036"></a>00036         <a class="code" href="classqtpd_1_1_u_i_item.html#ac247c4809958f915f53a2a76a9436176" title="&gt; select object">deselect</a>();
-<a name="l00037"></a>00037         _clicked = <span class="keyword">false</span>;
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039         _value = <span class="keyword">false</span>;
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041         qDebug() &lt;&lt; <span class="stringliteral">&quot;uidsp&quot;</span>;
-<a name="l00042"></a>00042 
-<a name="l00043"></a>00043         <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a" title="edit mode types">t_editMode</a>* em = <span class="keyword">new</span> <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a" title="edit mode types">t_editMode</a>;
-<a name="l00044"></a>00044         *em = <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aac9d3b5321b0a8c731588f74bb4302eb1">em_Locked</a>;
-<a name="l00045"></a>00045         <a class="code" href="classqtpd_1_1_u_i_object.html#a0590d2f5ec52a3010373b7f4fc19c610" title="&gt;returns object&#39;s text for client-based file saving">setEditModeRef</a>(em);
+<a name="l00031"></a>00031 <span class="keyword">public</span>:
+<a name="l00032"></a>00032     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_u_i_d_s_p.html#a3e492bb9470b2d650ed2f58a55dcf2c2">UIDSP</a>();
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_d_s_p.html#a41ff7666722c742f87959bd1379fadc9">createObj</a>(QString data);
+<a name="l00035"></a>00035     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_d_s_p.html#a7487c06ad95cb44189639efc4690fa35">objectPressEvent</a>(QGraphicsSceneMouseEvent*);
+<a name="l00036"></a>00036 
+<a name="l00037"></a>00037     QGraphicsView* <a class="code" href="classqtpd_1_1_u_i_d_s_p.html#ad1bcf8cb2c7f849942f65e6b463e98fb">widget</a>();
+<a name="l00038"></a>00038     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_d_s_p.html#ac8f79bc98ea8a9484ae324e9080db2d9">initProperties</a>();
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040     <span class="comment">// ---------------</span>
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_d_s_p.html#a51cf0cb423196720c7e25f9a90cd78c4">paint</a>(QPainter* p, <span class="keyword">const</span> QStyleOptionGraphicsItem* option, QWidget*);
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044 };
+<a name="l00045"></a>00045 }
 <a name="l00046"></a>00046 
-<a name="l00047"></a>00047         <a class="code" href="classqtpd_1_1_u_i_item.html#a8eeca95be6c277797b9e1588f9a6397c">setWidth</a>(40);
-<a name="l00048"></a>00048         <a class="code" href="classqtpd_1_1_u_i_item.html#a9f78aac561b9e06d076e81c5d5479cbc">setHeight</a>(40);
-<a name="l00049"></a>00049 
-<a name="l00050"></a>00050         <span class="comment">//setMinimumBoxWidth(40);</span>
-<a name="l00051"></a>00051         <span class="comment">//setMinimumBoxHeight(40);</span>
-<a name="l00052"></a>00052 
-<a name="l00053"></a>00053         <span class="comment">//setObjectSizeMode(os_Fixed);</span>
-<a name="l00054"></a>00054 
-<a name="l00055"></a>00055         <a class="code" href="classqtpd_1_1_u_i_object.html#a5039d9d6c10909333a30af566ee2800c">_objectDataModel</a>.<a class="code" href="classqtpd_1_1_u_i_object_data.html#ac7ed428e1b53052bad68310f947765fa" title="&gt; set both properties and Pd object string">setObjectSize</a>(<a class="code" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3a0af9814af3758d6fd8a9c5de202f937e">os_Fixed</a>, 40, 40);
-<a name="l00056"></a>00056 
-<a name="l00057"></a>00057         _widget = <span class="keyword">new</span> QGraphicsView();
-<a name="l00058"></a>00058         _widget-&gt;setScene(<span class="keyword">new</span> QGraphicsScene(0, 0, 40, 40, _widget));
-<a name="l00059"></a>00059         _widget-&gt;scene()-&gt;addItem(<span class="keyword">this</span>);
-<a name="l00060"></a>00060         _widget-&gt;setFixedSize(40, 40);
-<a name="l00061"></a>00061         _widget-&gt;setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-<a name="l00062"></a>00062         _widget-&gt;setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-<a name="l00063"></a>00063         _widget-&gt;setStyleSheet(<span class="stringliteral">&quot;QGraphicsView { border-style: none; }&quot;</span>);
-<a name="l00064"></a>00064         _value = <span class="keyword">false</span>;
-<a name="l00065"></a>00065     };
-<a name="l00066"></a>00066 
-<a name="l00067"></a><a class="code" href="classqtpd_1_1_u_i_d_s_p.html#a98f6e6f3af93fe0967ab65198abfd2f2">00067</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_d_s_p.html#a98f6e6f3af93fe0967ab65198abfd2f2">createObj</a>(QString data)
-<a name="l00068"></a>00068     {
-<a name="l00069"></a>00069         <a class="code" href="classqtpd_1_1_u_i_d_s_p.html" title="gui object: dsp switch box (ui.dsp)">UIDSP</a>* ret = <span class="keyword">new</span> <a class="code" href="classqtpd_1_1_u_i_d_s_p.html#a3e492bb9470b2d650ed2f58a55dcf2c2">UIDSP</a>();
-<a name="l00070"></a>00070 
-<a name="l00071"></a>00071         <span class="comment">//        QStringList l = data.split(&quot; &quot;);l.removeFirst();</span>
-<a name="l00072"></a>00072         <span class="comment">//        data = l.join(&quot; &quot;);</span>
-<a name="l00073"></a>00073 
-<a name="l00074"></a>00074         ret-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a79408701823ecce79ece7cdf5a10103f" title="sets object text data">setObjectData</a>(data);
-<a name="l00075"></a>00075 
-<a name="l00076"></a>00076         <span class="keywordflow">return</span> ret;
-<a name="l00077"></a>00077     }
-<a name="l00078"></a>00078     <span class="comment">/*static UIObject* createObject(QString objectData, t_canvas*, QGraphicsView* parent = 0)</span>
-<a name="l00079"></a>00079 <span class="comment">    {</span>
-<a name="l00080"></a>00080 <span class="comment">        UIDSP* b = new UIDSP();</span>
-<a name="l00081"></a>00081 <span class="comment">        //b-&gt;setCanvas((void*)parent);</span>
-<a name="l00082"></a>00082 <span class="comment"></span>
-<a name="l00083"></a>00083 <span class="comment">        QString data1 = b-&gt;properties()-&gt;extractFromPdFileString(objectData);</span>
-<a name="l00084"></a>00084 <span class="comment">        b-&gt;setObjectData(&quot;ui.dsp&quot;);</span>
-<a name="l00085"></a>00085 <span class="comment"></span>
-<a name="l00086"></a>00086 <span class="comment">        qDebug() &lt;&lt; &quot;obj data&quot; &lt;&lt; QString(data1);</span>
-<a name="l00087"></a>00087 <span class="comment"></span>
-<a name="l00088"></a>00088 <span class="comment">        //std::string message = &quot;ui.dsp&quot;;</span>
-<a name="l00089"></a>00089 <span class="comment"></span>
-<a name="l00090"></a>00090 <span class="comment">        return (UIObject*)b;</span>
-<a name="l00091"></a>00091 <span class="comment">    };*/</span>
-<a name="l00092"></a>00092 
-<a name="l00093"></a><a class="code" href="classqtpd_1_1_u_i_d_s_p.html#a5e52c52310c35718295ee7b72844859f">00093</a>     QGraphicsView* <a class="code" href="classqtpd_1_1_u_i_d_s_p.html#a5e52c52310c35718295ee7b72844859f">widget</a>()
-<a name="l00094"></a>00094     {
-<a name="l00095"></a>00095         <span class="keywordflow">return</span> _widget;
-<a name="l00096"></a>00096     }
-<a name="l00097"></a>00097 
-<a name="l00098"></a><a class="code" href="classqtpd_1_1_u_i_d_s_p.html#ac8f79bc98ea8a9484ae324e9080db2d9">00098</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_d_s_p.html#ac8f79bc98ea8a9484ae324e9080db2d9">initProperties</a>()
-<a name="l00099"></a>00099     {
-<a name="l00100"></a>00100         <a class="code" href="classqtpd_1_1_u_i_d_s_p.html#ac8f79bc98ea8a9484ae324e9080db2d9">UIObject::initProperties</a>();
-<a name="l00101"></a>00101 
-<a name="l00102"></a>00102         <a class="code" href="classqtpd_1_1_u_i_object.html#a69ed99ca86c7019f489f56b6dc96f8a4" title="&gt;init properties for the class - called from constructor">properties</a>()-&gt;<a class="code" href="classqtpd_1_1_property_list.html#afbe5c3673f39e28c8327b99749925379">create</a>(<span class="stringliteral">&quot;Value&quot;</span>, <span class="stringliteral">&quot;Preset&quot;</span>, <span class="stringliteral">&quot;0.1&quot;</span>, 0.);
-<a name="l00103"></a>00103     }
-<a name="l00104"></a>00104 
-<a name="l00105"></a>00105     <span class="comment">// ---------------</span>
-<a name="l00106"></a>00106 
-<a name="l00107"></a><a class="code" href="classqtpd_1_1_u_i_d_s_p.html#a777a938bdb238edc1b66f1bd5db6a0f8">00107</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_d_s_p.html#a777a938bdb238edc1b66f1bd5db6a0f8">paint</a>(QPainter* p, <span class="keyword">const</span> QStyleOptionGraphicsItem* option, QWidget*)
-<a name="l00108"></a>00108     {
-<a name="l00109"></a>00109         p-&gt;setClipRect(option-&gt;exposedRect);
-<a name="l00110"></a>00110 
-<a name="l00111"></a>00111         QBrush brush(<a class="code" href="classqtpd_1_1_u_i_item.html#a15c57968966de733a09cf02973b63696">bgColor</a>());
-<a name="l00112"></a>00112         p-&gt;setBrush(brush);
-<a name="l00113"></a>00113         p-&gt;drawRect(<a class="code" href="classqtpd_1_1_u_i_item.html#a0a8d5299d5a0a2ebcef2135913bc97da">boundingRect</a>());
-<a name="l00114"></a>00114         p-&gt;setBrush(QBrush());
-<a name="l00115"></a>00115 
-<a name="l00116"></a>00116         p-&gt;setRenderHint(QPainter::HighQualityAntialiasing, <span class="keyword">true</span>);
-<a name="l00117"></a>00117 
-<a name="l00118"></a>00118         <span class="keywordflow">if</span> (_value) {
-<a name="l00119"></a>00119 
-<a name="l00120"></a>00120             p-&gt;setPen(QPen(QColor(0, 192, 255), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
-<a name="l00121"></a>00121 
-<a name="l00122"></a>00122         } <span class="keywordflow">else</span> {
-<a name="l00123"></a>00123             p-&gt;setPen(QPen(QColor(128, 128, 128), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
-<a name="l00124"></a>00124         }
-<a name="l00125"></a>00125 
-<a name="l00126"></a>00126         <span class="keywordtype">float</span> posx = <a class="code" href="classqtpd_1_1_u_i_item.html#a89b7d0bcdcb226800c37d95305a1f441">width</a>() * .4;
-<a name="l00127"></a>00127         <span class="keywordtype">float</span> posy = <a class="code" href="classqtpd_1_1_u_i_item.html#a5bbd8fe0417078d386176ace5a01f261">height</a>() / 2;
-<a name="l00128"></a>00128 
-<a name="l00129"></a>00129         p-&gt;setFont(QFont(<a class="code" href="_preferences_8h.html#a3f95dcdc217e1a88365c8306beaf1c72">PREF_QSTRING</a>(<span class="stringliteral">&quot;Font&quot;</span>), 8, 0, <span class="keyword">false</span>));
-<a name="l00130"></a>00130         p-&gt;drawText(posx * .4, posy - 4, <a class="code" href="classqtpd_1_1_u_i_item.html#a89b7d0bcdcb226800c37d95305a1f441">width</a>() - 2, <a class="code" href="classqtpd_1_1_u_i_item.html#a5bbd8fe0417078d386176ace5a01f261">height</a>() / 2 - 10, 0, <span class="stringliteral">&quot;DSP&quot;</span>, 0);
-<a name="l00131"></a>00131 
-<a name="l00132"></a>00132         p-&gt;drawArc(posx - 10, posy - 10, 20, 20, -60 * 16, 120 * 16);
-<a name="l00133"></a>00133         p-&gt;drawArc(posx - 17, posy - 17, 34, 34, -60 * 16, 120 * 16);
-<a name="l00134"></a>00134 
-<a name="l00135"></a>00135         <span class="keywordflow">if</span> (<a class="code" href="classqtpd_1_1_u_i_item.html#ab3ac9bcca4d6c092b1d10fe506ba48c6" title="&gt; deselect object">isSelected</a>()) {
-<a name="l00136"></a>00136             p-&gt;setPen(QPen(QColor(0, 192, 255), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-<a name="l00137"></a>00137         } <span class="keywordflow">else</span> {
-<a name="l00138"></a>00138             p-&gt;setPen(QPen(QColor(128, 128, 128), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-<a name="l00139"></a>00139         }
-<a name="l00140"></a>00140 
-<a name="l00141"></a>00141         p-&gt;drawRect(0, 0, <a class="code" href="classqtpd_1_1_u_i_item.html#a89b7d0bcdcb226800c37d95305a1f441">width</a>(), <a class="code" href="classqtpd_1_1_u_i_item.html#a5bbd8fe0417078d386176ace5a01f261">height</a>());
-<a name="l00142"></a>00142     }
-<a name="l00143"></a>00143 
-<a name="l00144"></a>00144     <span class="comment">// ------------------------------------------------</span>
-<a name="l00145"></a>00145 
-<a name="l00146"></a>00146     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_d_s_p.html#a0970d78fe209753158597f08b5846970">mousePressEvent</a>(QGraphicsSceneMouseEvent* ev);
-<a name="l00147"></a>00147 
-<a name="l00148"></a><a class="code" href="classqtpd_1_1_u_i_d_s_p.html#a2275e0e604174b79ddcccd348d087f4b">00148</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_d_s_p.html#a2275e0e604174b79ddcccd348d087f4b">mouseReleaseEvent</a>(QGraphicsSceneMouseEvent*)
-<a name="l00149"></a>00149     {
-<a name="l00150"></a>00150     }
-<a name="l00151"></a>00151 
-<a name="l00152"></a><a class="code" href="classqtpd_1_1_u_i_d_s_p.html#a76e31f360cb2fa8b62f3a078e41f8c11">00152</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_d_s_p.html#a76e31f360cb2fa8b62f3a078e41f8c11">mouseMoveEvent</a>(QGraphicsSceneMouseEvent* event)
-<a name="l00153"></a>00153     {
-<a name="l00154"></a>00154         <span class="keywordflow">if</span> (event-&gt;buttons() &amp; Qt::LeftButton) {
-<a name="l00155"></a>00155             emit <a class="code" href="classqtpd_1_1_u_i_item.html#a72e28d805ae5dc2f30e9774cdf5c4be6">moveBox</a>(<span class="keyword">this</span>, event);
-<a name="l00156"></a>00156         }
-<a name="l00157"></a>00157         <span class="keyword">event</span>-&gt;ignore();
-<a name="l00158"></a>00158 
-<a name="l00159"></a>00159         <span class="comment">//todo move!</span>
-<a name="l00160"></a>00160         <span class="keywordflow">if</span> (<a class="code" href="classqtpd_1_1_u_i_item.html#a2e13bcc5d691a5505200843d80b71e6d" title="get edit mode flag value">getEditMode</a>() != <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aaa528336eacc29596e8365b88a4f62d82">em_Unlocked</a>) {
-<a name="l00161"></a>00161             setCursor(QCursor(Qt::PointingHandCursor));
-<a name="l00162"></a>00162         } <span class="keywordflow">else</span> {
-<a name="l00163"></a>00163             setCursor(QCursor(Qt::ArrowCursor));
-<a name="l00164"></a>00164         }
-<a name="l00165"></a>00165     }
-<a name="l00166"></a>00166 
-<a name="l00167"></a>00167     <span class="comment">// ------------------------------------------------</span>
-<a name="l00168"></a>00168 
-<a name="l00169"></a><a class="code" href="classqtpd_1_1_u_i_d_s_p.html#a9f3a4b3910e6ad778dec8b7dc5f85c54">00169</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_d_s_p.html#a9f3a4b3910e6ad778dec8b7dc5f85c54">setPdMessage</a>(QString message)
-<a name="l00170"></a>00170     {
-<a name="l00171"></a>00171         <a class="code" href="classqtpd_1_1_u_i_object.html#a79408701823ecce79ece7cdf5a10103f" title="sets object text data">setObjectData</a>(message);
-<a name="l00172"></a>00172     }
-<a name="l00173"></a>00173 
-<a name="l00174"></a>00174     <span class="comment">//    static void updateUI(void* , ceammc::AtomList )</span>
-<a name="l00175"></a>00175     <span class="comment">//    {</span>
-<a name="l00176"></a>00176     <span class="comment">//    }</span>
-<a name="l00177"></a>00177 
-<a name="l00178"></a>00178     <span class="comment">//    void setPdObject(void* obj)</span>
-<a name="l00179"></a>00179     <span class="comment">//    {</span>
-<a name="l00180"></a>00180     <span class="comment">//        UIObject::setPdObject(obj);</span>
-<a name="l00181"></a>00181     <span class="comment">//        //cmp_connectUI((t_pd*)pdObject(), (void*)this, &amp;UIDSP::updateUI);</span>
-<a name="l00182"></a>00182     <span class="comment">//    }</span>
-<a name="l00183"></a>00183 
-<a name="l00184"></a>00184 <span class="comment">//    virtual void setServerObject(ServerObject* o)</span>
-<a name="l00185"></a>00185 <span class="comment">//    {</span>
-<a name="l00186"></a>00186 <span class="comment">//        UIObject::setServerObject(o);</span>
-<a name="l00187"></a>00187 <span class="comment">//        if (o)</span>
-<a name="l00188"></a>00188 <span class="comment">//            o-&gt;connectUI(this, &amp;UIDSP::updateUI);</span>
-<a name="l00189"></a>00189 <span class="comment">//    };</span>
-<a name="l00190"></a>00190 };
-<a name="l00191"></a>00191 }
-<a name="l00192"></a>00192 
-<a name="l00193"></a>00193 <span class="preprocessor">#endif // CMO_MSG_H</span>
+<a name="l00047"></a>00047 <span class="preprocessor">#endif // CMO_MSG_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -290,7 +144,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 3 2017 17:09:03 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 3 2017 18:57:23 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

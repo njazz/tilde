@@ -24,7 +24,7 @@ var searchData=
   ['getclassname',['getClassName',['../classqtpd_1_1_o_p_class.html#a490f03a156391aa27ba59bef9a5de91a',1,'qtpd::OPClass']]],
   ['geteditmode',['getEditMode',['../classqtpd_1_1_canvas_view.html#af6c2c45459af9853a4930f68163e9906',1,'qtpd::CanvasView::getEditMode()'],['../classqtpd_1_1_u_i_item.html#a2e13bcc5d691a5505200843d80b71e6d',1,'qtpd::UIItem::getEditMode()']]],
   ['geteditmoderef',['getEditModeRef',['../classqtpd_1_1_canvas_view.html#a343b691d9fc55b9f2a7441534498583f',1,'qtpd::CanvasView::getEditModeRef()'],['../classqtpd_1_1_u_i_item.html#a8b886acf0acff012034a00dfad7b8ffc',1,'qtpd::UIItem::getEditModeRef()']]],
-  ['geteditordata',['getEditorData',['../classqtpd_1_1_u_i_script.html#a25660f1d0bd3bbd053b2603e147661ce',1,'qtpd::UIScript::getEditorData()'],['../classqtpd_1_1_u_i_text.html#a717276407aeca410161b2e664b85efed',1,'qtpd::UIText::getEditorData()']]],
+  ['geteditordata',['getEditorData',['../classqtpd_1_1_u_i_script.html#a25660f1d0bd3bbd053b2603e147661ce',1,'qtpd::UIScript']]],
   ['getfloat',['getFloat',['../classceammc_1_1_atom.html#a3dab310f75807221b10fd2a344d76c35',1,'ceammc::Atom']]],
   ['getfn',['getfn',['../m__pd_8h.html#a4b3e55ce2f01f63fea708c862dffedc8',1,'m_pd.h']]],
   ['getlocalserver',['getLocalServer',['../classqtpd_1_1_application_controller.html#aba9fc1d3358588190c7f6aa5b8cb349a',1,'qtpd::ApplicationController']]],
