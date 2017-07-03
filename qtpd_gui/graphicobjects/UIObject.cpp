@@ -220,12 +220,11 @@ void UIObject::addInlet()
 {
     int _portClass_ = 0;
 
-    /*
-    if (pdObject()) {
-        _portClass_ = cmp_get_inlet_type((t_object*)pdObject(), _inlets->size());
-    } else
-        _portClass_ = 0;
-        */
+    qDebug() << "addInlet";
+
+    if (_serverObject) {
+        _portClass_ = (_serverObject->getInletType(inletCount()) == XLetSignal);
+    }
 
     addInlet(_portClass_);
 }
@@ -254,12 +253,9 @@ void UIObject::addOutlet()
 {
     int _portClass_ = 0;
 
-    /*
-    if (pdObject()) {
-        _portClass_ = cmp_get_outlet_type((t_object*)pdObject(), _outlets->size());
-    } else
-        _portClass_ = 0;
-        */
+    if (_serverObject) {
+        _portClass_ = (_serverObject->getOutletType(outletCount()) == XLetSignal);
+    }
 
     addOutlet(_portClass_);
 }
@@ -415,19 +411,19 @@ void UIObject::sync()
 
 void UIObject::autoResize()
 {
-    QFont myFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize());
-    QFontMetrics fm(myFont);
+    //    QFont myFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize());
+    //    QFontMetrics fm(myFont);
 
-    int w = (int)fm.width(_objectDataModel.objectData()) + 10;
-    _objectDataModel.setMminimumBoxWidth(w);
-    //setWidth(w);
+    //    int w = (int)fm.width(_objectDataModel.objectData()) + 10;
+    //    _objectDataModel.setMminimumBoxWidth(w);
+    //    //setWidth(w);
 
-    QRect r = boundingRect().toRect();
+    //    QRect r = boundingRect().toRect();
 
-    if (r.width() < w) {
-        setWidth(w);
-        properties()->set("Size", r.size());
-    }
+    //    if (r.width() < w) {
+    //        setWidth(w);
+    //        properties()->set("Size", r.size());
+    //    }
 }
 
 QString UIObject::objectData()
@@ -488,7 +484,6 @@ void UIObject::doSetSize(QSize size)
 
     UIItem::setSize(size);
 
-
     //todo fixed width
     if (boundingRect().width() < _objectDataModel.minimumBoxWidth())
         setWidth(_objectDataModel.minimumBoxWidth());
@@ -496,7 +491,6 @@ void UIObject::doSetSize(QSize size)
         setHeight(_objectDataModel.minimumBoxHeight());
 
     _sizeBox->move(boundingRect().width() - 7, boundingRect().height() - 7);
-
 
     setInletsPos();
     setOutletsPos();

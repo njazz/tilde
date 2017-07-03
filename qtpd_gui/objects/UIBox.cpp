@@ -231,4 +231,22 @@ string UIBox::asPdFileString()
 
     return ret;
 }
+
+void UIBox::autoResize()
+{
+    QFont myFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize());
+    QFontMetrics fm(myFont);
+
+    int w = (int)fm.width(_objectDataModel.objectData()) + 10;
+    _objectDataModel.setMminimumBoxWidth(w);
+    //setWidth(w);
+
+    QRect r = boundingRect().toRect();
+
+    if (r.width() < w) {
+        setWidth(w);
+        properties()->set("Size", r.size());
+    }
+}
+
 }

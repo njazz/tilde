@@ -75,6 +75,8 @@ public:
 
     virtual string asPdFileString();
 
+    virtual void autoResize();
+
 signals:
 
     void mouseMoved();
