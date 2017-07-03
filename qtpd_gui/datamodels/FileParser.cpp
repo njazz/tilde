@@ -99,6 +99,16 @@ bool FileParser::legacyProcess(PatchWindowController* controller, QStringList li
         //todo set / create
 
         return true;
+    } else if (list.at(0) == "array") {
+
+        // lol
+        QStringList l2 = QString(QString("obj ") + QString("20 ") + QString("20 ") + QString("ui.array ") + list.at(1) + " " + list.at(2)).split(" ");
+
+        //QStringList l2 = QString("obj 20 20 ui.array temp 100").split(" ");
+        qDebug() << "array parse" << l2;
+        FileParser::sendStringToCanvas(controller, l2);
+
+        return true;
     } else
         //
         // iemgui objects
@@ -337,41 +347,40 @@ void FileParser::parseStringListAtoms(PatchWindowController* controller, QString
 
             QString objectData = objList.join(" ");
 
-            if (objList.at(0) == "pd") {
+            //if (objList.at(0) == "pd")
+            {
                 if (_pdParserPrevWindowController) {
                     //if (_pdParserPrevWindowController->firstWindow()->canvasView())
                     //{
 
-                        //                                                UIBox *b1 = 0;
+                    //                                                UIBox *b1 = 0;
 
-                        //                                                b1 = pdParserPrevWindow->canvasView()->restoreSubcanvas(objname.toStdString(), pos, pdParserWindow->canvasView()->pdCanvas);
-                        //                                                b1->cmSubcanvas = pdParserWindow;
+                    //                                                b1 = pdParserPrevWindow->canvasView()->restoreSubcanvas(objname.toStdString(), pos, pdParserWindow->canvasView()->pdCanvas);
+                    //                                                b1->cmSubcanvas = pdParserWindow;
 
-//                        UIBox* b1 = _pdParserWindowController->subpatchBox();
+                    //                        UIBox* b1 = _pdParserWindowController->subpatchBox();
 
-//                        b1->setPos(pos.x(),pos.y());
-//                        b1->setPdMessage(objData);
+                    //                        b1->setPos(pos.x(),pos.y());
+                    //                        b1->setPdMessage(objData);
 
-                        _pdParserPrevWindowController->creatBoxForSubpatch(_pdParserWindowController,objectData,pos);
+                    _pdParserPrevWindowController->creatBoxForSubpatch(_pdParserWindowController, objectData, pos);
 
+                    qDebug("restore");
 
+                    // TODO
+                    // UIObject* b = _pdParserPrevWindow->canvasView()->createBoxForPatchWindow(_pdParserWindow, objData, pos);
 
-                        qDebug("restore");
+                    //UIObject* b = _pdParserPrevWindow->canvasView()->createObject(QString(objData.c_str()), pos);
 
-                        // TODO
-                        // UIObject* b = _pdParserPrevWindow->canvasView()->createBoxForPatchWindow(_pdParserWindow, objData, pos);
-
-                        //UIObject* b = _pdParserPrevWindow->canvasView()->createObject(QString(objData.c_str()), pos);
-
-                        //IObject *b = createBoxForCanvas(newCanvas, objectData, pos);
-                        //((UIBox*)b)->setSubpatchWindow((QMainWindow*)_pdParserPrevWindow);
-                        //((Canvas*)b)->setSubcanvas(_pdParserPrevWindow->canvas);
-                    }
+                    //IObject *b = createBoxForCanvas(newCanvas, objectData, pos);
+                    //((UIBox*)b)->setSubpatchWindow((QMainWindow*)_pdParserPrevWindow);
+                    //((Canvas*)b)->setSubcanvas(_pdParserPrevWindow->canvas);
                 }
-//            }
-            else {
-                qDebug("pd subpatch error");
             }
+            //            }
+//            else {
+//                qDebug("pd subpatch error");
+//            }
 
             //draw subpatch
             _pdParserWindowController = _pdParserPrevWindowController;
@@ -526,9 +535,7 @@ void FileParser::open(QString fname)
         }
 
         f.close();
-    }
-    else
-    {
+    } else {
         ServerInstance::error("cannot open file: " + fname.toStdString());
     }
 }
@@ -577,19 +584,17 @@ void FileParser::open(QString fname)
 //    }
 //}
 
-
 // --------------------------------------------------
 
+void FileParser::setAppController(ApplicationController* appController) { _appController = appController; }
 
- void FileParser:: setAppController(ApplicationController* appController) { _appController = appController; }
-
- void FileParser:: setParserWindowController(PatchWindowController* wnd)
+void FileParser::setParserWindowController(PatchWindowController* wnd)
 {
     _pdParserPrevWindowController = wnd;
     _pdParserWindowController = wnd;
 }
 
- void FileParser:: setParserWindowControllers(PatchWindowController* wnd, PatchWindowController* prev, PatchWindowController* first)
+void FileParser::setParserWindowControllers(PatchWindowController* wnd, PatchWindowController* prev, PatchWindowController* first)
 {
     _pdParserWindowController = wnd;
     _pdParserPrevWindowController = prev;
@@ -601,21 +606,20 @@ void FileParser::open(QString fname)
 /// \details mostly used by OOP loader
 /// \return
 ///
- PatchWindowController* FileParser:: parserFirstWindowController()
+PatchWindowController* FileParser::parserFirstWindowController()
 {
     return _pdParserFirstWindowController;
 }
 
- PatchWindowController* FileParser:: parserWindowController()
+PatchWindowController* FileParser::parserWindowController()
 {
     return _pdParserWindowController;
 }
 
- PatchWindowController* FileParser:: parserPrevWindowController()
+PatchWindowController* FileParser::parserPrevWindowController()
 {
     return _pdParserPrevWindowController;
 }
-
 
 //////
 ///// \brief [3.1] subroutine - formats list and send it to canvas as a string
@@ -656,7 +660,7 @@ void FileParser::open(QString fname)
 /// \param input
 /// \return
 /// \deprecated needs cleanup - duplicate in PropertyList class
- QString FileParser:: unescapeString(QString input)
+QString FileParser::unescapeString(QString input)
 {
     // todo regexp
 
@@ -675,7 +679,7 @@ void FileParser::open(QString fname)
 /// \param input
 /// \return
 /// \deprecated needs cleanup - duplicate in PropertyList class
- QString FileParser:: escapeString(QString input)
+QString FileParser::escapeString(QString input)
 {
     // todo regexp
 

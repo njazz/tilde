@@ -232,7 +232,7 @@ public:
     /// \brief returns 1 if signal~
     /// \param idx
     /// \return
-    int pdInletType(int idx);
+    int pdInletClass(int idx);
 
     ////
     /// \brief inlet count
@@ -243,7 +243,7 @@ public:
     /// \brief for pd object outlet: returns 1 if signal~
     /// \param idx
     /// \return
-    int pdOutletType(int idx);
+    int pdOutletClass(int idx);
 
     ////
     /// \brief outlet count

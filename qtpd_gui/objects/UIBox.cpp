@@ -56,11 +56,11 @@ void UIBox::objectPressEvent(QGraphicsSceneMouseEvent* event)
             _abstractionPath = serverObject()->toServerCanvas()->path().c_str();
 
             qDebug() << "abs object:" << serverObject() << "to canvas: " << serverObject()->toServerCanvas();
-            qDebug() <<  "objects: " << serverObject()->hasInternalObject() << serverObject()->toServerCanvas()->hasInternalObject();
-            qDebug() << "path: " <<  serverObject()->toServerCanvas()->path().c_str();
+            qDebug() << "objects: " << serverObject()->hasInternalObject() << serverObject()->toServerCanvas()->hasInternalObject();
+            qDebug() << "path: " << serverObject()->toServerCanvas()->path().c_str();
 
             QString fullName = _abstractionPath + "/" + _objectDataModel.objectData() + ".pd";
-            ServerInstance::post("abstraction path: "+fullName.toStdString());
+            ServerInstance::post("abstraction path: " + fullName.toStdString());
 
             FileParser::open(fullName);
 
@@ -126,7 +126,7 @@ void UIBox::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
     }
 
     QColor rectColor = (errorBox()) ? QColor(255, 0, 0) : properties()->get("BorderColor")->asQColor(); //QColor(128, 128, 128);
-    p->setPen(QPen(rectColor, 1 + _isAbstraction*2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+    p->setPen(QPen(rectColor, 1 + _isAbstraction * 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
     p->drawRect(0, 0, boundingRect().width(), boundingRect().height());
     QTextOption* op = new QTextOption;
     op->setAlignment(Qt::AlignLeft);
@@ -210,6 +210,15 @@ void UIBox::sync()
     }
 
     update();
+
+    //
+    if (_isAbstraction || isSubpatch()) {
+
+        properties()->create("ShowBoxes", "Canvas", "0.1", false);
+        properties()->create("ShowCanvas", "Canvas", "0.1", false);
+        properties()->create("FixedSize", "Canvas", "0.1", false);
+        properties()->create("FixedSizeBox", "Canvas", "0.1", QRect(0, 0, 300, 200));
+    }
 }
 
 string UIBox::asPdFileString()
@@ -248,5 +257,4 @@ void UIBox::autoResize()
         properties()->set("Size", r.size());
     }
 }
-
 }

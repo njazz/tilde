@@ -714,7 +714,7 @@ void PatchWindowController::patchcord(UIObject* obj1, int outlet, UIObject* obj2
 
         UIPatchcord* pc = new UIPatchcord(obj1, outport, obj2, inport);
 
-        if (obj1->pdOutletType(outlet))
+        if (obj1->pdOutletClass(outlet))
             pc->setPatchcordType(cm_pt_signal);
 
         qDebug("server patchcord");

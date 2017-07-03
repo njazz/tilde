@@ -296,10 +296,13 @@ Port* UIObject::outletAt(int idx)
         return 0;
 }
 
-int UIObject::pdInletType(int idx)
+int UIObject::pdInletClass(int idx)
 {
 
-    return inletAt(idx)->portClass();
+    if (inletAt(idx))
+        return inletAt(idx)->portClass();
+    else
+        return -1;
 }
 
 int UIObject::inletCount()
@@ -307,10 +310,12 @@ int UIObject::inletCount()
     return _inlets->size();
 }
 
-int UIObject::pdOutletType(int idx)
+int UIObject::pdOutletClass(int idx)
 {
-
-    return outletAt(idx)->portClass();
+    if (outletAt(idx))
+        return outletAt(idx)->portClass();
+    else
+        return -1;
 }
 
 int UIObject::outletCount()

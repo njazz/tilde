@@ -15,6 +15,12 @@ CanvasData::CanvasData()
     _inlets = new portItemVec;
     _outlets = new portItemVec;
     //_serverCanvas = 0;
+
+    _properties = new PropertyList();
+    _properties->create("FixedSize", "Canvas", "0.1", false);
+
+    //_properties->create("DrawBoxes", "Canvas", "0.1", false);
+
 }
 
 void CanvasData::addUniqueBox(objectVec* boxes, UIObject* box)

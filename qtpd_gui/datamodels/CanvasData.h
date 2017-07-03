@@ -38,6 +38,8 @@ class CanvasData {
     QString _fileName;
     QString _filePath;
 
+    PropertyList* _properties;
+
 public:
     CanvasData();
 
@@ -53,6 +55,8 @@ public:
     void setFilePath(QString filePath) { _filePath = filePath; }
     QString filePath() { return _filePath; };
 
+    PropertyList* properties() { return _properties; };
+    void setProperties(PropertyList* p) { _properties = p; };
     //
 
     bool hasObjects() { return ((_boxes.size() > 0) || (_patchcords.size() > 0)); }
