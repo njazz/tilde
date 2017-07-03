@@ -18,9 +18,6 @@ void Port::paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)
 {
     p->setRenderHint(QPainter::HighQualityAntialiasing, true);
 
-    //QBrush brush(bgColor());
-    //p->setBrush(brush);
-
     p->drawRect(boundingRect());
 
     if (_portClass) {
@@ -36,6 +33,46 @@ void Port::paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)
         p->drawRect(0, 0, boundingRect().width(), boundingRect().height());
     }
 }
+
+// --------------------------
+
+ void Port:: hoverEnterEvent(QGraphicsSceneHoverEvent*)
+{
+    if (getEditMode() == em_Unlocked) {
+        setHover(true);
+        update();
+    }
+}
+
+ void Port:: hoverLeaveEvent(QGraphicsSceneHoverEvent*)
+{
+    if (getEditMode() == em_Unlocked) {
+        setHover(false);
+        update();
+    }
+}
+
+void Port:: mousePressEvent(QGraphicsSceneMouseEvent* ev)
+{
+    qDebug("click port");
+    if (getEditMode() == em_Unlocked) {
+
+        ev->accept();
+
+        emit mousePressed(this, ev);
+    }
+}
+
+void Port:: mouseReleaseEvent(QGraphicsSceneMouseEvent* ev)
+{
+    if (getEditMode() == em_Unlocked) {
+
+        ev->accept();
+
+        emit mouseReleased(this, ev);
+    }
+}
+
 }
 
 //////////

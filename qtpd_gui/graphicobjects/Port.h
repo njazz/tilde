@@ -34,56 +34,23 @@ public:
     /// @{
     UIPortType portType() { return _portType; }
     void setPortType(UIPortType pt) { _portType = pt; }
+
     int portClass() { return _portClass; }
     void setPortClass(int pc) { _portClass = pc; }
+
     int portIndex() { return _portIndex; }
     void setPortIndex(int pi) { _portIndex = pi; }
 
-    /** @}*/
+
 
     void paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*);
 
-    ////
-    /// \group mouse Mouse
-    /// @{
-    virtual void hoverEnterEvent(QGraphicsSceneHoverEvent*)
-    {
-        if (getEditMode() == em_Unlocked) {
-            setHover(true);
-            update();
-        }
-    }
+    virtual void hoverEnterEvent(QGraphicsSceneHoverEvent*);
+    virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent*);
+    void mousePressEvent(QGraphicsSceneMouseEvent* ev);
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev);
 
-    virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent*)
-    {
-        if (getEditMode() == em_Unlocked) {
-            setHover(false);
-            update();
-        }
-    }
 
-    void mousePressEvent(QGraphicsSceneMouseEvent* ev)
-    {
-        qDebug("click port");
-        if (getEditMode() == em_Unlocked) {
-
-            ev->accept();
-
-            emit mousePressed(this, ev);
-        }
-    }
-
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev)
-    {
-        if (getEditMode() == em_Unlocked) {
-
-            ev->accept();
-
-            emit mouseReleased(this, ev);
-        }
-    }
-
-    /** @}*/
 
 public slots:
 };
