@@ -298,10 +298,8 @@ Port* UIObject::outletAt(int idx)
 
 int UIObject::pdInletType(int idx)
 {
-    //    if ((t_object*)pdObject())
-    //        return cmp_get_inlet_type((t_object*)pdObject(), idx);
-    //    else
-    return 0;
+
+    return inletAt(idx)->type();
 }
 
 int UIObject::inletCount()
@@ -314,7 +312,11 @@ int UIObject::pdOutletType(int idx)
     //    if ((t_object*)pdObject())
     //        return cmp_get_outlet_type((t_object*)pdObject(), idx);
     //    else
-    return 0;
+
+
+
+
+    return outletAt(idx)->type();
 }
 
 int UIObject::outletCount()

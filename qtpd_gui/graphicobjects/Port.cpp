@@ -23,17 +23,12 @@ void Port::paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)
 
     p->drawRect(boundingRect());
 
-    if (_portClass)
-    {
+    if (_portClass) {
         QBrush brush2(QColor(128, 160, 192));
-        //p->setBrush(brush2);
         p->fillRect(0, 0, boundingRect().width(), boundingRect().height(), brush2);
-
-        //p->setBrush(brush);
     }
 
-
-    p->setPen(QPen(QColor(128, 128, 128), 1 , Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+    p->setPen(QPen(QColor(128, 128, 128), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
     p->drawRect(0, 0, boundingRect().width(), boundingRect().height());
 
     if (hover()) {
