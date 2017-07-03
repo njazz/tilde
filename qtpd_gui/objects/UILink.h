@@ -42,7 +42,6 @@ public:
         return ret;
     }
 
-    //static UIObject* createObject(QString objectData, t_canvas*, QGraphicsView* parent = 0) { return 0; }
 
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
     {
@@ -115,41 +114,37 @@ public:
     ///
     ///
 
-    void mousePressEvent(QGraphicsSceneMouseEvent* ev)
+    void objectPressEvent(QGraphicsSceneMouseEvent* ev)
     {
 
         dragOffset = ev->pos().toPoint();
 
         if (!(getEditMode() == em_Unlocked)) {
-            emit selectBox(this, ev);
-            _clicked = true;
-            update();
+//action
 
-        } else {
-            // action
         }
     }
 
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent*)
+    void objectReleaseEvent(QGraphicsSceneMouseEvent*)
     {
         _clicked = false;
         update();
     }
 
-    void mouseMoveEvent(QGraphicsSceneMouseEvent* event)
-    {
-        if (event->buttons() & Qt::LeftButton) {
-            emit moveBox(this, event);
-        }
-        event->ignore();
+//    void mouseMoveEvent(QGraphicsSceneMouseEvent* event)
+//    {
+//        if (event->buttons() & Qt::LeftButton) {
+//            emit moveBox(this, event);
+//        }
+//        event->ignore();
 
-        //todo move!
-        if (getEditMode() != em_Unlocked) {
-            setCursor(QCursor(Qt::PointingHandCursor));
-        } else {
-            setCursor(QCursor(Qt::ArrowCursor));
-        }
-    }
+//        //todo move!
+//        if (getEditMode() != em_Unlocked) {
+//            setCursor(QCursor(Qt::PointingHandCursor));
+//        } else {
+//            setCursor(QCursor(Qt::ArrowCursor));
+//        }
+//    }
 
     void autoResize()
     {
@@ -176,12 +171,12 @@ public:
 
     ///////
 
-    void setPdMessage(std::string message)
+    void setObjectData(QString objData)//setPdMessage(std::string message)
     {
-        setObjectData("ui.text");
+        //setObjectData("ui.text");
 
         //TODO temporary fix!
-        QString msg = QString(message.c_str());
+        QString msg = objData;//QString(message.c_str());
         QStringList list = msg.split("\n");
         for (int i = 0; i < list.size(); i++) {
             list[i] = list[i] + "\\n";

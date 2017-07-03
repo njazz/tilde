@@ -27,7 +27,7 @@ namespace qtpd {
 
 ////
 /// \brief gui object: standard object box for subpatch
-///
+/// \deprecated implemented in uibox
 class UISubpatch : public UIObject {
 
     Q_OBJECT

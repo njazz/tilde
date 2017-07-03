@@ -30,16 +30,13 @@ public:
 
     static UIObject* createObj(QString data);
 
-    static UIObject* createObject(QString , t_canvas* , QGraphicsView* ) ;
+    static UIObject* createObject(QString, t_canvas*, QGraphicsView*);
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*);
     void resizeEvent();
 
     // ------------------------------------------------------
 
     void objectPressEvent(QGraphicsSceneMouseEvent* ev);
-
-    //void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
-
     void objectReleaseEvent(QGraphicsSceneMouseEvent*);
 
     // ------------------------------------

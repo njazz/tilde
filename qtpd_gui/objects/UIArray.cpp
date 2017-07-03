@@ -162,10 +162,10 @@ void UIArray::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
     }
 }
 
-void UIArray::setPdMessage(QString message)
-{
-    UIArray::setObjectData(message);
-}
+//void UIArray::setPdMessage(QString message)
+//{
+//    UIArray::setObjectData(message);
+//}
 
 void UIArray::setObjectData(QString message)
 {

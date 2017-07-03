@@ -37,13 +37,12 @@ public:
 
     ///////////////////
 
-    void mousePressEvent(QGraphicsSceneMouseEvent* ev);
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent*);
+    void objectPressEvent(QGraphicsSceneMouseEvent* ev);
     void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
-
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent*);
     ///////
 
-    void setPdMessage(QString message);
+    //void setPdMessage(QString message);
 
     void updateUI(AtomList msg);
     std::string asPdFileString();

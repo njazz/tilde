@@ -89,7 +89,7 @@ void UIFloat::autoResize()
 
 ///////////////////
 
-void UIFloat::mousePressEvent(QGraphicsSceneMouseEvent* ev)
+void UIFloat::objectPressEvent(QGraphicsSceneMouseEvent* ev)
 {
 
     _startY = ev->pos().y();
@@ -123,12 +123,6 @@ void UIFloat::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
         emit sendMessage(this->serverObject(), send);
         emit sendMessage(this->serverObject(), QString("bang "));
 
-        //serverObject()->message(send);
-        //serverObject()->message("bang");
-
-        // cmp_sendstring((t_pd*)pdObject(), send.c_str());
-        // cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
-
         update();
     }
 
@@ -144,30 +138,30 @@ void UIFloat::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 
 ///////
 
-void UIFloat::setPdMessage(QString message)
-{
-    setObjectData(message);
-    autoResize();
+//void UIFloat::setPdMessage(QString message)
+//{
+//    setObjectData(message);
+//    autoResize();
 
-    QFont myFont(PREF_QSTRING("Font"), 11);
-    QFontMetrics fm(myFont);
-    int new_w = fm.width(objectData()) + 10;
-    new_w = (new_w < 25) ? 25 : new_w;
-    setWidth(new_w);
+//    QFont myFont(PREF_QSTRING("Font"), 11);
+//    QFontMetrics fm(myFont);
+//    int new_w = fm.width(objectData()) + 10;
+//    new_w = (new_w < 25) ? 25 : new_w;
+//    setWidth(new_w);
 
-    //temporary
-    //move
-    // TODO-PD_OBJECT
-    //        if (getEditMode() == em_Unlocked) {
-    //            if (!pdObject()) {
-    //                qDebug("msg: bad pd object!");
-    //            } else {
+//    //temporary
+//    //move
+//    // TODO-PD_OBJECT
+//    //        if (getEditMode() == em_Unlocked) {
+//    //            if (!pdObject()) {
+//    //                qDebug("msg: bad pd object!");
+//    //            } else {
 
-    //                std::string msg = ("set " + _objectDataModel.objectData().toStdString());
-    //                cmp_sendstring((t_pd*)pdObject(), msg);
-    //            }
-    //        }
-}
+//    //                std::string msg = ("set " + _objectDataModel.objectData().toStdString());
+//    //                cmp_sendstring((t_pd*)pdObject(), msg);
+//    //            }
+//    //        }
+//}
 
 void UIFloat::updateUI(AtomList msg)
 {

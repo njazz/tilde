@@ -59,7 +59,7 @@ ApplicationController::ApplicationController()
     _serverWorker->moveToThread(_serverThread);
     _serverThread->start();
 
-    //_mainServerInstance = _server->createInstance();
+//_mainServerInstance = _server->createInstance();
 
 #ifdef WITH_PYTHON
     pyWrapper::inst().setAppController(this);
@@ -85,11 +85,7 @@ ApplicationController::ApplicationController()
 
     FileParser::setAppController(this);
 
-
-
     // --------
-
-
 
     //temporary folders properties
     QString docFolder = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).last();
@@ -221,8 +217,6 @@ void ApplicationController::dspOff()
 
     mainServerInstance()->dspOff();
 }
-
-
 
 ServerObject* ApplicationController::slotCreateObject(ServerCanvas* canvas, string name)
 {

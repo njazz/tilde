@@ -257,4 +257,10 @@ void UIBox::autoResize()
         properties()->set("Size", r.size());
     }
 }
+
+bool UIBox::isSubpatch()
+{
+    return _isSubpatch;
+}
+
 }

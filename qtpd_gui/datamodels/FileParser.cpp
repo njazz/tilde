@@ -361,7 +361,6 @@ void FileParser::parseStringListAtoms(PatchWindowController* controller, QString
                     //                        UIBox* b1 = _pdParserWindowController->subpatchBox();
 
                     //                        b1->setPos(pos.x(),pos.y());
-                    //                        b1->setPdMessage(objData);
 
                     _pdParserPrevWindowController->creatBoxForSubpatch(_pdParserWindowController, objectData, pos);
 

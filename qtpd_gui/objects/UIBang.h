@@ -30,7 +30,6 @@ public:
     explicit UIBang();
 
     static UIObject* createObj(QString data);
-    static UIObject* createObject(QString, t_canvas*, QGraphicsView*); ////>\deprecated
 
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*);
 

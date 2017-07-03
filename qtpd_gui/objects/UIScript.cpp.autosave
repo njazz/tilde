@@ -175,8 +175,6 @@ void UIScript::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidge
 void UIScript::setPdMessage(QString message)
 {
     setObjectData(message);
-
-
 }
 
 void UIScript::setObjectData(QString message)

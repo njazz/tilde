@@ -7,13 +7,13 @@
 #include <QPlainTextEdit>
 
 #include "Port.h"
-#include "UIObject.h"
 #include "UIBox.h"
+#include "UIObject.h"
 
 #include <QFileDialog>
 
-#include "UIScriptEditor.h"
 #include "UIScriptCommon.h"
+#include "UIScriptEditor.h"
 
 class QGraphicsView;
 
@@ -29,18 +29,14 @@ private:
     bool _clicked;
     UIScriptEditor* _editor;
 
-    //UIScriptData* _data;
-
     //temporary
     UIScriptCommon* _scriptCommon;
-
-    //    QStringList _inputList;
 
 public:
     explicit UIScript();
 
     static UIObject* createObj(QString data);
-    static UIObject* createObject(QString , t_canvas* , QGraphicsView* );
+    static UIObject* createObject(QString, t_canvas*, QGraphicsView*);
 
     void initProperties();
     void resizeEvent();
@@ -48,20 +44,17 @@ public:
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*);
     // ------------------------
 
-//    void mousePressEvent(QGraphicsSceneMouseEvent* ev);
-//    void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev);
-//    void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
-
-
+    // mouse?
 
     // ----------------------
 
     void setPdMessage(QString message);
 
+    virtual void setObjectData(QString message);
+
     virtual void updateUI(AtomList list);
 
     virtual void sync();
-
 
 private slots:
     void editorChanged();

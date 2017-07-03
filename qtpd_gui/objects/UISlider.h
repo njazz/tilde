@@ -24,19 +24,19 @@ private:
     float _value; ///> 0..1 here
     float _isHorizontal;
 
+    void initProperties();
+    float valueFromPoint(QPoint pos);
+
 public:
     explicit UISlider();
 
     static UIObject* createObj(QString data);
 
-    static UIObject* createObject(QString , t_canvas* , QGraphicsView* );
+    static UIObject* createObject(QString, t_canvas*, QGraphicsView*);
 
-    void initProperties();
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*);
 
     // ---------------------------------------------------------------
-
-    float valueFromPoint(QPoint pos);
 
     void mousePressEvent(QGraphicsSceneMouseEvent* ev);
     void mouseReleaseEvent(QGraphicsSceneMouseEvent*);
@@ -49,7 +49,6 @@ public:
     void updateUI(AtomList msg);
 
     void resizeEvent();
-
 };
 }
 

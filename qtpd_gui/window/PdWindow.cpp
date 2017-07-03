@@ -104,7 +104,7 @@ PdWindow::PdWindow()
 
     editMenu->addAction(_clearConsoleAct);
 
-    _ui->logLevelBox->setCurrentIndex(1);
+    _ui->logLevelBox->setCurrentIndex(0);
 }
 
 void PdWindow::logBoxChange(int index)

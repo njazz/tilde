@@ -37,14 +37,14 @@ public:
     // ---------------------------------------------------------------
 
     void objectPressEvent(QGraphicsSceneMouseEvent* ev);
-//    void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
 
-    ///////
+    // ---------------------------------------------------------------
 
     void setPdMessage(QString message);
 
     static void updateUI(void* uiobj, ceammc::AtomList msg);
     void updateUI(AtomList list);
+
 };
 }
 

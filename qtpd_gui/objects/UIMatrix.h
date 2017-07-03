@@ -31,7 +31,6 @@ class UIMatrix : public UIObject {
 
 private:
     bool _clicked;
-    //bool _value;
 
 public:
     explicit UIMatrix();
@@ -77,7 +76,7 @@ public:
 
     ///////
 
-    void setPdMessage(QString message);
+//    void setPdMessage(QString message);
 
     void updateUI(AtomList msg);
 

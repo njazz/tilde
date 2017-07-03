@@ -32,13 +32,12 @@ private:
 
     ServerArray* _array;
 
+    void createServerArray();
+
 public:
     explicit UIArray(); //UIObject* parent = 0);
 
     static UIObject* createObj(QString data);
-
-    // private?
-    void createServerArray();
 
     static UIObject* createObject(QString, t_canvas*, QGraphicsView*) { return 0; }
 
@@ -66,7 +65,7 @@ public:
     ///
     void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
 
-    void setPdMessage(QString message);
+    //void setPdMessage(QString message);
 
     void setObjectData(QString message);
 

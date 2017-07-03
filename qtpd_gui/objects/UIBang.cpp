@@ -39,10 +39,7 @@ UIObject* UIBang::createObj(QString data)
     return ret;
 }
 
-UIObject* UIBang::createObject(QString, t_canvas*, QGraphicsView*)
-{
-    return 0;
-}
+
 
 void UIBang::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
 {

@@ -32,17 +32,19 @@ private:
     QPlainTextEdit* _editor;
     QString _objectText;
 
+    QStringList getEditorData();
+
 public:
     explicit UIText();
 
     static UIObject* createObj(QString data);
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*);
 
-    //////////
+    // ------------------
 
     void initProperties();
 
-    ///////////////////
+    // ------------------
 
     void objectPressEvent(QGraphicsSceneMouseEvent* ev);
     void autoResize();
@@ -50,7 +52,7 @@ public:
     // ---------------------------
 
     virtual void setObjectData(QString objData);
-    QStringList getEditorData();
+
 
     bool eventFilter(QObject*, QEvent* event);
 
