@@ -33,7 +33,7 @@ var searchData=
   ['drag_5fcircle',['Drag_Circle',['../color__wheel_8cpp.html#a57cf809db9b33be0d3b8436c19d366ddaf576a2ccfeee8b3df5193e66b29ac848',1,'color_wheel.cpp']]],
   ['drag_5fsquare',['Drag_Square',['../color__wheel_8cpp.html#a57cf809db9b33be0d3b8436c19d366dda0ac6f8bed2b079a7f0fb127e010bbc98',1,'color_wheel.cpp']]],
   ['dragenterevent',['dragEnterEvent',['../class_color___dialog.html#a333dc301f0db9d20f01fc25ea531b8f5',1,'Color_Dialog::dragEnterEvent()'],['../class_color___selector.html#a2f26f9c71ac505b683e1885eea01800b',1,'Color_Selector::dragEnterEvent()']]],
-  ['dragobject',['dragObject',['../classqtpd_1_1_canvas_view.html#ab9dc5643a0b4e9ab2b25d5ad30f6e4e2',1,'qtpd::CanvasView']]],
+  ['dragobject',['dragObject',['../classqtpd_1_1_canvas_view.html#ad9bf767814b187baa6d0a872e3fce1a6',1,'qtpd::CanvasView']]],
   ['dragoffset',['dragOffset',['../classqtpd_1_1_u_i_item.html#afa31f6c6b2497b60610ad8325325b843',1,'qtpd::UIItem']]],
   ['drawbox',['drawBox',['../classqtpd_1_1_u_i_matrix.html#ae21b172aaf057ccdc30f082e5e1ace2d',1,'qtpd::UIMatrix']]],
   ['drawcross',['drawCross',['../classqtpd_1_1_u_i_matrix.html#a6db855111d2205f1a12d05f56bb5e1ce',1,'qtpd::UIMatrix']]],

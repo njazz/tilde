@@ -25,7 +25,7 @@ var searchData=
   ['done',['done',['../classqtpd_1_1_object_maker.html#ab8daa1f2d71f2d580b515ad430686ea8',1,'qtpd::ObjectMaker']]],
   ['dosetsize',['doSetSize',['../classqtpd_1_1_u_i_object.html#af76e1c11e822197843e1712f9306469c',1,'qtpd::UIObject']]],
   ['dragenterevent',['dragEnterEvent',['../class_color___dialog.html#a333dc301f0db9d20f01fc25ea531b8f5',1,'Color_Dialog::dragEnterEvent()'],['../class_color___selector.html#a2f26f9c71ac505b683e1885eea01800b',1,'Color_Selector::dragEnterEvent()']]],
-  ['dragobject',['dragObject',['../classqtpd_1_1_canvas_view.html#ab9dc5643a0b4e9ab2b25d5ad30f6e4e2',1,'qtpd::CanvasView']]],
+  ['dragobject',['dragObject',['../classqtpd_1_1_canvas_view.html#ad9bf767814b187baa6d0a872e3fce1a6',1,'qtpd::CanvasView']]],
   ['drawbox',['drawBox',['../classqtpd_1_1_u_i_matrix.html#ae21b172aaf057ccdc30f082e5e1ace2d',1,'qtpd::UIMatrix']]],
   ['drawcross',['drawCross',['../classqtpd_1_1_u_i_matrix.html#a6db855111d2205f1a12d05f56bb5e1ce',1,'qtpd::UIMatrix']]],
   ['dropevent',['dropEvent',['../class_color___dialog.html#a677828f71b45dddfd9fe05bc6aa03019',1,'Color_Dialog::dropEvent()'],['../class_color___selector.html#a81945dfa30750311efdc077cc1d83ce6',1,'Color_Selector::dropEvent()']]],

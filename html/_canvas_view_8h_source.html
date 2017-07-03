@@ -98,310 +98,164 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00014"></a>00014 
 <a name="l00015"></a>00015 <span class="preprocessor">#include &quot;<a class="code" href="_object_loader_8h.html">ObjectLoader.h</a>&quot;</span>
 <a name="l00016"></a>00016 
-<a name="l00017"></a>00017 <span class="comment">//</span>
-<a name="l00018"></a>00018 <span class="preprocessor">#include &quot;<a class="code" href="_grid_8h.html">Grid.h</a>&quot;</span>
-<a name="l00019"></a>00019 <span class="preprocessor">#include &quot;<a class="code" href="_selection_rect_8h.html">SelectionRect.h</a>&quot;</span>
-<a name="l00020"></a>00020 <span class="preprocessor">#include &quot;<a class="code" href="_u_i_new_patchcord_8h.html">UINewPatchcord.h</a>&quot;</span>
-<a name="l00021"></a>00021 
-<a name="l00022"></a>00022 <span class="comment">//todo - move to window?</span>
-<a name="l00023"></a>00023 <span class="comment">//#include &quot;cm_clipboard.h&quot;</span>
-<a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="_canvas_data_8h.html">CanvasData.h</a>&quot;</span>
-<a name="l00025"></a>00025 
-<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="_clipboard_8h.html">Clipboard.h</a>&quot;</span>
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028 <span class="keyword">namespace </span>qtpd {
-<a name="l00029"></a>00029 
-<a name="l00033"></a><a class="code" href="classqtpd_1_1_canvas_view.html">00033</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_canvas_view.html" title="Canvas View - used by Patch window controller.">CanvasView</a> : <span class="keyword">public</span> QGraphicsView {
-<a name="l00034"></a>00034 <span class="keyword">private</span>:
-<a name="l00035"></a>00035     <span class="comment">//CanvasData _canvasData; //todo less direct</span>
-<a name="l00036"></a>00036 
-<a name="l00037"></a>00037     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* _connectionStartObject;
-<a name="l00038"></a>00038     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* _connectionStartOutlet;
-<a name="l00039"></a>00039     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* _replaceObject;
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041     QPoint _newObjectPos;
-<a name="l00042"></a>00042     QPoint _dragPrevPos;
-<a name="l00043"></a>00043 
-<a name="l00044"></a>00044     <span class="keywordtype">bool</span> _gridSnap;
-<a name="l00045"></a>00045 
-<a name="l00046"></a>00046     QSize _windowSize;
-<a name="l00047"></a>00047 
-<a name="l00048"></a>00048     <a class="code" href="classqtpd_1_1_object_maker.html" title="creates QLineEdit box for new object">ObjectMaker</a>* _objectMaker;
-<a name="l00049"></a>00049 
-<a name="l00050"></a>00050     <span class="keywordtype">bool</span> _keepPdObject;
-<a name="l00051"></a>00051     <span class="keywordtype">bool</span> _readOnly;
-<a name="l00052"></a>00052 
-<a name="l00053"></a>00053     <span class="comment">//QString _filePath;</span>
-<a name="l00054"></a>00054 
-<a name="l00055"></a>00055     <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a" title="edit mode types">t_editMode</a>* _canvasEditMode;
-<a name="l00056"></a>00056 
-<a name="l00057"></a>00057     <a class="code" href="classqtpd_1_1_grid.html" title="Grid for the canvas.">Grid</a>* _grid;
-<a name="l00058"></a>00058     <a class="code" href="classqtpd_1_1_selection_rect.html" title="selection rectangle QGraphicsObject (UIItem)">SelectionRect</a>* _selectionRect;
-<a name="l00059"></a>00059     <a class="code" href="classqtpd_1_1_u_i_new_patchcord.html" title="New patchcord - dashed line.">UINewPatchcord</a>* _newLine;
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* _dragObject;
-<a name="l00062"></a>00062 
-<a name="l00063"></a>00063     <span class="keywordtype">float</span> _zoom;
+<a name="l00017"></a>00017 <span class="preprocessor">#include &quot;<a class="code" href="_grid_8h.html">Grid.h</a>&quot;</span>
+<a name="l00018"></a>00018 <span class="preprocessor">#include &quot;<a class="code" href="_selection_rect_8h.html">SelectionRect.h</a>&quot;</span>
+<a name="l00019"></a>00019 <span class="preprocessor">#include &quot;<a class="code" href="_u_i_new_patchcord_8h.html">UINewPatchcord.h</a>&quot;</span>
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021 <span class="preprocessor">#include &quot;<a class="code" href="_canvas_data_8h.html">CanvasData.h</a>&quot;</span>
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023 <span class="preprocessor">#include &quot;<a class="code" href="_clipboard_8h.html">Clipboard.h</a>&quot;</span>
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;QMenu&gt;</span>
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 <span class="comment">//class QMenu;</span>
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 <span class="keyword">namespace </span>qtpd {
+<a name="l00030"></a>00030 
+<a name="l00034"></a><a class="code" href="classqtpd_1_1_canvas_view.html">00034</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_canvas_view.html" title="Canvas View - used by Patch window controller.">CanvasView</a> : <span class="keyword">public</span> QGraphicsView {
+<a name="l00035"></a>00035 <span class="keyword">private</span>:
+<a name="l00036"></a>00036     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* _connectionStartObject;
+<a name="l00037"></a>00037     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* _connectionStartOutlet;
+<a name="l00038"></a>00038     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* _replaceObject;
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040     QPoint _newObjectPos;
+<a name="l00041"></a>00041     QPoint _dragPrevPos;
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043     <span class="keywordtype">bool</span> _gridSnap;
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045     QSize _windowSize;
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047     <a class="code" href="classqtpd_1_1_object_maker.html" title="creates QLineEdit box for new object">ObjectMaker</a>* _objectMaker;
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049     <span class="keywordtype">bool</span> _keepPdObject;
+<a name="l00050"></a>00050     <span class="keywordtype">bool</span> _readOnly;
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052     <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a" title="edit mode types">t_editMode</a>* _canvasEditMode;
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054     <a class="code" href="classqtpd_1_1_grid.html" title="Grid for the canvas.">Grid</a>* _grid;
+<a name="l00055"></a>00055     <a class="code" href="classqtpd_1_1_selection_rect.html" title="selection rectangle QGraphicsObject (UIItem)">SelectionRect</a>* _selectionRect;
+<a name="l00056"></a>00056     <a class="code" href="classqtpd_1_1_u_i_new_patchcord.html" title="New patchcord - dashed line.">UINewPatchcord</a>* _newLine;
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* _dragObject;
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060     <span class="keywordtype">float</span> _zoom;
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062     QMenu _popupMenu;
+<a name="l00063"></a>00063     QAction* _pmProperties;
 <a name="l00064"></a>00064 
-<a name="l00065"></a>00065     Q_OBJECT
+<a name="l00065"></a>00065     <a class="code" href="classqtpd_1_1_patch_window_controller.html" title="The Patch window controller.">PatchWindowController</a>* _controller;
 <a name="l00066"></a>00066 
-<a name="l00067"></a>00067 <span class="keyword">public</span>:
-<a name="l00068"></a>00068     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a4f56c2337113bfa28db329c414596476">CanvasView</a>(QGraphicsView* parent = 0);
-<a name="l00069"></a>00069 
-<a name="l00070"></a>00070     <span class="comment">// todo fix</span>
-<a name="l00071"></a><a class="code" href="classqtpd_1_1_canvas_view.html#aba4fc9ecc0a76fc9488c03d910efcecc">00071</a>     QPoint <a class="code" href="classqtpd_1_1_canvas_view.html#aba4fc9ecc0a76fc9488c03d910efcecc">newObjectPos</a>() { <span class="keywordflow">return</span> _newObjectPos; }
-<a name="l00072"></a>00072 
-<a name="l00073"></a>00073     <span class="comment">//CanvasData* canvasData() { return &amp;_canvasData; }</span>
+<a name="l00067"></a>00067     Q_OBJECT
+<a name="l00068"></a>00068 
+<a name="l00069"></a>00069 <span class="keyword">public</span>:
+<a name="l00070"></a>00070     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a4f56c2337113bfa28db329c414596476">CanvasView</a>(QGraphicsView* parent = 0);
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072     <span class="comment">// todo fix</span>
+<a name="l00073"></a>00073     QPoint <a class="code" href="classqtpd_1_1_canvas_view.html#aba4fc9ecc0a76fc9488c03d910efcecc">newObjectPos</a>();
 <a name="l00074"></a>00074 
-<a name="l00075"></a><a class="code" href="classqtpd_1_1_canvas_view.html#ab9dc5643a0b4e9ab2b25d5ad30f6e4e2">00075</a>     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* <a class="code" href="classqtpd_1_1_canvas_view.html#ab9dc5643a0b4e9ab2b25d5ad30f6e4e2">dragObject</a>() { <span class="keywordflow">return</span> _dragObject; }
-<a name="l00076"></a><a class="code" href="classqtpd_1_1_canvas_view.html#acdbd2250f7259cc6a336757b66876757">00076</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#acdbd2250f7259cc6a336757b66876757">setDragObject</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* <span class="keywordtype">object</span>) { _dragObject = object; }
+<a name="l00075"></a>00075     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* <a class="code" href="classqtpd_1_1_canvas_view.html#ad9bf767814b187baa6d0a872e3fce1a6">dragObject</a>();
+<a name="l00076"></a>00076     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#acdbd2250f7259cc6a336757b66876757">setDragObject</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* <span class="keywordtype">object</span>);
 <a name="l00077"></a>00077 
-<a name="l00078"></a>00078     <span class="comment">//    QString fileName() { return _canvasData.fileName(); }</span>
-<a name="l00079"></a>00079     <span class="comment">//    void setFileName(QString object) { _canvasData.setFileName(object); }</span>
-<a name="l00080"></a>00080 
-<a name="l00081"></a>00081     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#aade1a87234a84fb7b515351978df96e2">setZoom</a>(<span class="keywordtype">float</span> zoom);
-<a name="l00082"></a><a class="code" href="classqtpd_1_1_canvas_view.html#a7589e6f6be011e3ef6c81928046b9aa3">00082</a>     <span class="keywordtype">float</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a7589e6f6be011e3ef6c81928046b9aa3">getZoom</a>() { <span class="keywordflow">return</span> _zoom; }
-<a name="l00083"></a>00083 
-<a name="l00084"></a><a class="code" href="classqtpd_1_1_canvas_view.html#a7b4aac7c19be1a0f74bc11adc06d3cc5">00084</a>     <span class="keyword">virtual</span> <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a" title="edit mode types">t_editMode</a> <a class="code" href="classqtpd_1_1_canvas_view.html#a7b4aac7c19be1a0f74bc11adc06d3cc5">getEditMode</a>() { <span class="keywordflow">return</span> *_canvasEditMode; }
-<a name="l00085"></a><a class="code" href="classqtpd_1_1_canvas_view.html#a57cefd37d709607f76e0890d6cbe1226">00085</a>     <span class="keyword">virtual</span> <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a" title="edit mode types">t_editMode</a>* <a class="code" href="classqtpd_1_1_canvas_view.html#a57cefd37d709607f76e0890d6cbe1226">getEditModeRef</a>() { <span class="keywordflow">return</span> _canvasEditMode; }
-<a name="l00086"></a>00086 
-<a name="l00087"></a>00087     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a6af77db153555e29b9112512fcd26104" title="delete single box">setEditMode</a>(<a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a" title="edit mode types">t_editMode</a> mode);
-<a name="l00088"></a>00088     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#af8173e8f22309b86280c8bbcaa464990">setGridEnabled</a>(<span class="keywordtype">bool</span> val);
-<a name="l00089"></a>00089     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a1cc818c0eab5ca815356a0ee97bc7365">setGridSnap</a>(<span class="keywordtype">bool</span> val);
-<a name="l00090"></a>00090 
-<a name="l00091"></a><a class="code" href="classqtpd_1_1_canvas_view.html#a92f8d2f051ef33082622ef9a96ebcbf8">00091</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a92f8d2f051ef33082622ef9a96ebcbf8">gridSnap</a>() { <span class="keywordflow">return</span> _gridSnap; }
-<a name="l00092"></a><a class="code" href="classqtpd_1_1_canvas_view.html#a3f9d33c579846c07682ea81535afa92e">00092</a>     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a3f9d33c579846c07682ea81535afa92e">gridStep</a>() { <span class="keywordflow">return</span> _grid-&gt;<a class="code" href="classqtpd_1_1_grid.html#af76b4a96b780e31d888ce9c43cf6bf88">gridStep</a>(); }
-<a name="l00093"></a>00093 
-<a name="l00094"></a><a class="code" href="classqtpd_1_1_canvas_view.html#ad1a73f8fd01cb08fb0be196ffcd463e7">00094</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#ad1a73f8fd01cb08fb0be196ffcd463e7">setKeepPdObject</a>(<span class="keywordtype">bool</span> v) { _keepPdObject = v; }
-<a name="l00095"></a><a class="code" href="classqtpd_1_1_canvas_view.html#a49e28d739ed4faf2a400812390499900">00095</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a49e28d739ed4faf2a400812390499900">keepPdObject</a>() { <span class="keywordflow">return</span> _keepPdObject; }
-<a name="l00096"></a>00096 
-<a name="l00097"></a><a class="code" href="classqtpd_1_1_canvas_view.html#a7514ba89e2110ca7555398fae15dd5c2">00097</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a7514ba89e2110ca7555398fae15dd5c2">setReadOnly</a>(<span class="keywordtype">bool</span> val)
-<a name="l00098"></a>00098     {
-<a name="l00099"></a>00099         _readOnly = val;
-<a name="l00100"></a>00100 
-<a name="l00101"></a>00101         <span class="keywordflow">if</span> (_readOnly)
-<a name="l00102"></a>00102             <a class="code" href="classqtpd_1_1_canvas_view.html#a6af77db153555e29b9112512fcd26104" title="delete single box">setEditMode</a>(<a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aac9d3b5321b0a8c731588f74bb4302eb1">em_Locked</a>);
-<a name="l00103"></a>00103     }
-<a name="l00104"></a>00104 
-<a name="l00105"></a><a class="code" href="classqtpd_1_1_canvas_view.html#ad5a7d0fd80d3e9cf606b48fbef666f1c">00105</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_canvas_view.html#ad5a7d0fd80d3e9cf606b48fbef666f1c">readOnly</a>() { <span class="keywordflow">return</span> _readOnly; }
-<a name="l00106"></a>00106 
-<a name="l00107"></a>00107     <span class="comment">// void setFilePath(QString filePath){ _filePath = filePath;}</span>
-<a name="l00108"></a>00108     <span class="comment">// QString filePath() { return _filePath; };</span>
-<a name="l00109"></a>00109 
-<a name="l00114"></a>00114     QSize <a class="code" href="classqtpd_1_1_canvas_view.html#aa2d6fa94390aff23679abafb6742a1e1" title="minimumCanvasSize">minimumCanvasSize</a>();
+<a name="l00078"></a>00078     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a8eb4b89e705a5c2860839e2a065f6703">setController</a>(<a class="code" href="classqtpd_1_1_patch_window_controller.html" title="The Patch window controller.">PatchWindowController</a>* c);
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#aade1a87234a84fb7b515351978df96e2">setZoom</a>(<span class="keywordtype">float</span> zoom);
+<a name="l00081"></a>00081     <span class="keywordtype">float</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a7589e6f6be011e3ef6c81928046b9aa3">getZoom</a>();
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083     <span class="keyword">virtual</span> <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a" title="edit mode types">t_editMode</a> <a class="code" href="classqtpd_1_1_canvas_view.html#af6c2c45459af9853a4930f68163e9906">getEditMode</a>();
+<a name="l00084"></a>00084     <span class="keyword">virtual</span> <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a" title="edit mode types">t_editMode</a>* <a class="code" href="classqtpd_1_1_canvas_view.html#a343b691d9fc55b9f2a7441534498583f">getEditModeRef</a>();
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a6af77db153555e29b9112512fcd26104">setEditMode</a>(<a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a" title="edit mode types">t_editMode</a> mode);
+<a name="l00087"></a>00087     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#af8173e8f22309b86280c8bbcaa464990">setGridEnabled</a>(<span class="keywordtype">bool</span> val);
+<a name="l00088"></a>00088     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a1cc818c0eab5ca815356a0ee97bc7365">setGridSnap</a>(<span class="keywordtype">bool</span> val);
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a92f8d2f051ef33082622ef9a96ebcbf8">gridSnap</a>();
+<a name="l00091"></a>00091     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a3f9d33c579846c07682ea81535afa92e">gridStep</a>();
+<a name="l00092"></a>00092 
+<a name="l00093"></a>00093     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#ad1a73f8fd01cb08fb0be196ffcd463e7">setKeepPdObject</a>(<span class="keywordtype">bool</span> v);
+<a name="l00094"></a>00094     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a49e28d739ed4faf2a400812390499900">keepPdObject</a>();
+<a name="l00095"></a>00095 
+<a name="l00096"></a>00096     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a7514ba89e2110ca7555398fae15dd5c2">setReadOnly</a>(<span class="keywordtype">bool</span> val);
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_canvas_view.html#ad5a7d0fd80d3e9cf606b48fbef666f1c">readOnly</a>();
+<a name="l00099"></a>00099 
+<a name="l00104"></a>00104     QSize <a class="code" href="classqtpd_1_1_canvas_view.html#aa2d6fa94390aff23679abafb6742a1e1" title="minimumCanvasSize">minimumCanvasSize</a>();
+<a name="l00105"></a>00105 
+<a name="l00106"></a>00106     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a5e4a3cc7de9aeb8df919b4a1c4b57a8b">setWindowSize</a>(QSize wsize);
+<a name="l00107"></a>00107 
+<a name="l00108"></a>00108     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a49a4974a4f153940f85114fbe59f9682">setReplaceObject</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* obj); 
+<a name="l00109"></a>00109     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* <a class="code" href="classqtpd_1_1_canvas_view.html#a43a1f746d9703f20f54d2c47289248e0" title="&gt;sets &#39;replaceobject&#39; pointer">replaceObject</a>();
+<a name="l00110"></a>00110 
+<a name="l00111"></a>00111     <span class="comment">// -------------------------------------------------------</span>
+<a name="l00112"></a>00112 
+<a name="l00113"></a>00113     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#ae3e66293fb4f5678b333be183158a74c">addInlet</a>();
+<a name="l00114"></a>00114     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#aa2c9dae3a0a2046b575b3f63122b32c7">addOutlet</a>();
 <a name="l00115"></a>00115 
-<a name="l00116"></a>00116     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a5e4a3cc7de9aeb8df919b4a1c4b57a8b">setWindowSize</a>(QSize wsize);
+<a name="l00116"></a>00116     <span class="comment">// -------------------------------------------------------</span>
 <a name="l00117"></a>00117 
-<a name="l00118"></a>00118     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a49a4974a4f153940f85114fbe59f9682">setReplaceObject</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* obj); 
-<a name="l00119"></a>00119     <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* <a class="code" href="classqtpd_1_1_canvas_view.html#a43a1f746d9703f20f54d2c47289248e0" title="&gt;sets &#39;replaceobject&#39; pointer">replaceObject</a>();
-<a name="l00120"></a>00120 
-<a name="l00121"></a>00121     <span class="comment">// -------------------------------------------------------</span>
-<a name="l00122"></a>00122 
-<a name="l00123"></a>00123     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#ae3e66293fb4f5678b333be183158a74c">addInlet</a>();
-<a name="l00124"></a>00124     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#aa2c9dae3a0a2046b575b3f63122b32c7">addOutlet</a>();
-<a name="l00125"></a>00125 
-<a name="l00126"></a>00126     <span class="comment">// -------------------------------------------------------</span>
-<a name="l00127"></a>00127 
-<a name="l00128"></a>00128     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a3f2b0324bb3860a07c9b75a28f246a66">mouseMoveEvent</a>(QMouseEvent* ev);
-<a name="l00129"></a>00129     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a98f2648af771e0704bd120981c3bce0f">mousePressEvent</a>(QMouseEvent* ev);
-<a name="l00130"></a>00130     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a59dab94a0a450965fddd6175025b84e7">mouseReleaseEvent</a>(QMouseEvent* ev);
-<a name="l00131"></a>00131 
-<a name="l00132"></a>00132     <span class="comment">// -------------------------------------------------------</span>
-<a name="l00133"></a>00133 
-<a name="l00134"></a>00134     <span class="comment">//    //</span>
-<a name="l00135"></a>00135 
-<a name="l00136"></a>00136     <span class="comment">//    //</span>
-<a name="l00137"></a>00137     <span class="comment">//    / \brief prototype for universal object &#39;constructor&#39;</span>
-<a name="l00138"></a>00138     <span class="comment">//    / \param message</span>
-<a name="l00139"></a>00139     <span class="comment">//    / \param pos</span>
-<a name="l00140"></a>00140     <span class="comment">//    / \return</span>
-<a name="l00141"></a>00141     <span class="comment">//    / \deprecated move to window/controller</span>
-<a name="l00142"></a>00142     <span class="comment">//    /</span>
-<a name="l00143"></a>00143     <span class="comment">//    UIObject* createObject(QString objectData1, QPoint pos);</span>
-<a name="l00144"></a>00144 
-<a name="l00145"></a>00145     <span class="comment">//    //</span>
-<a name="l00146"></a>00146     <span class="comment">//    / \brief create object box for subpatch (when loaded from file)</span>
-<a name="l00147"></a>00147     <span class="comment">//    / \param patchWindow</span>
-<a name="l00148"></a>00148     <span class="comment">//    / \param objectData</span>
-<a name="l00149"></a>00149     <span class="comment">//    / \param pos</span>
-<a name="l00150"></a>00150     <span class="comment">//    / \return</span>
-<a name="l00151"></a>00151     <span class="comment">//    /</span>
-<a name="l00152"></a>00152     <span class="comment">//     UIObject* createBoxForPatchWindow(QMainWindow* patchWindow, QString objectData, QPoint pos);</span>
-<a name="l00153"></a>00153 
-<a name="l00154"></a>00154     <span class="comment">//    ////</span>
-<a name="l00155"></a>00155     <span class="comment">//    /// \brief creates patchcord</span>
-<a name="l00156"></a>00156     <span class="comment">//    /// \param obj1</span>
-<a name="l00157"></a>00157     <span class="comment">//    /// \param outlet</span>
-<a name="l00158"></a>00158     <span class="comment">//    /// \param obj2</span>
-<a name="l00159"></a>00159     <span class="comment">//    /// \param inlet</span>
-<a name="l00160"></a>00160     <span class="comment">//    ///</span>
-<a name="l00161"></a>00161     <span class="comment">//    void patchcord(UIObject* obj1, int outlet, UIObject* obj2, int inlet);</span>
-<a name="l00162"></a>00162 
-<a name="l00163"></a>00163     <span class="comment">//    ////</span>
-<a name="l00164"></a>00164     <span class="comment">//    /// \brief creates patchcord, uses pointers to inlets/outlets. TODO temporary?</span>
-<a name="l00165"></a>00165     <span class="comment">//    /// \param obj1</span>
-<a name="l00166"></a>00166     <span class="comment">//    /// \param outport</span>
-<a name="l00167"></a>00167     <span class="comment">//    /// \param obj2</span>
-<a name="l00168"></a>00168     <span class="comment">//    /// \param inport</span>
-<a name="l00169"></a>00169     <span class="comment">//    ///</span>
-<a name="l00170"></a>00170     <span class="comment">//    void patchcord(UIObject* obj1, UIItem* outport, UIObject* obj2, UIItem* inport);</span>
-<a name="l00171"></a>00171 
-<a name="l00172"></a>00172     <span class="comment">//    //</span>
-<a name="l00173"></a>00173     <span class="comment">//    / \brief delete all patchcords for object</span>
-<a name="l00174"></a>00174     <span class="comment">//    / \param obj</span>
-<a name="l00175"></a>00175     <span class="comment">//    /</span>
-<a name="l00176"></a>00176     <span class="comment">//    void deletePatchcordsFor(UIItem* obj);</span>
-<a name="l00177"></a>00177 
-<a name="l00178"></a>00178     <span class="comment">//    //</span>
-<a name="l00179"></a>00179     <span class="comment">//    / \brief delete single box</span>
-<a name="l00180"></a>00180     <span class="comment">//    /</span>
-<a name="l00181"></a>00181     <span class="comment">//    void deleteObject(UIObject* box);</span>
-<a name="l00182"></a>00182 
-<a name="l00183"></a>00183     <span class="comment">//    ////</span>
-<a name="l00184"></a>00184     <span class="comment">//    /// \brief delete all selected object boxes</span>
-<a name="l00185"></a>00185     <span class="comment">//    ///</span>
-<a name="l00186"></a>00186     <span class="comment">//    void deleteSelectedObjects();</span>
-<a name="l00187"></a>00187 
-<a name="l00188"></a>00188     <span class="comment">//    ////</span>
-<a name="l00189"></a>00189     <span class="comment">//    /// \brief delete all selected patchcords</span>
-<a name="l00190"></a>00190     <span class="comment">//    ///</span>
-<a name="l00191"></a>00191     <span class="comment">//    void deleteSelectedPatchcords();</span>
-<a name="l00192"></a>00192 
-<a name="l00193"></a>00193     <span class="comment">// -------------------------------------------------------</span>
-<a name="l00194"></a>00194 
-<a name="l00195"></a>00195     <span class="comment">//    ////</span>
-<a name="l00196"></a>00196     <span class="comment">//    /// \brief returns object by index - this is needed by parser</span>
-<a name="l00197"></a>00197     <span class="comment">//    /// \param idx</span>
-<a name="l00198"></a>00198     <span class="comment">//    /// \return cm_widget pointer</span>
-<a name="l00199"></a>00199     <span class="comment">//    ///</span>
-<a name="l00200"></a>00200     <span class="comment">//    UIObject* getObjectByIndex(int idx);</span>
-<a name="l00201"></a>00201 
-<a name="l00202"></a>00202     <span class="comment">//    ////</span>
-<a name="l00203"></a>00203     <span class="comment">//    /// \brief returns vector of all object boxes - needed by filesaver</span>
-<a name="l00204"></a>00204     <span class="comment">//    /// \return</span>
-<a name="l00205"></a>00205     <span class="comment">//    ///</span>
-<a name="l00206"></a>00206     <span class="comment">//    objectVec objectBoxes();</span>
-<a name="l00207"></a>00207 
-<a name="l00208"></a>00208     <span class="comment">//    ////</span>
-<a name="l00209"></a>00209     <span class="comment">//    /// \brief returns vector of all patchcords - needed by filesaver</span>
-<a name="l00210"></a>00210     <span class="comment">//    /// \return</span>
-<a name="l00211"></a>00211     <span class="comment">//    ///</span>
-<a name="l00212"></a>00212     <span class="comment">//    patchcordVec patchcords();</span>
-<a name="l00213"></a>00213 
-<a name="l00214"></a>00214     <span class="comment">//    ////</span>
-<a name="l00215"></a>00215     <span class="comment">//    /// \brief returns vector of selected object boxes</span>
-<a name="l00216"></a>00216     <span class="comment">//    /// \return</span>
-<a name="l00217"></a>00217     <span class="comment">//    ///</span>
-<a name="l00218"></a>00218     <span class="comment">//    objectVec selectedObjectBoxes();</span>
-<a name="l00219"></a>00219 
-<a name="l00220"></a>00220     <span class="comment">//    ////</span>
-<a name="l00221"></a>00221     <span class="comment">//    /// \brief returns vector of selected patchcords</span>
-<a name="l00222"></a>00222     <span class="comment">//    /// \return</span>
-<a name="l00223"></a>00223     <span class="comment">//    ///</span>
-<a name="l00224"></a>00224     <span class="comment">//    patchcordVec selectedPatchcords();</span>
-<a name="l00225"></a>00225 
-<a name="l00226"></a>00226     <span class="comment">//    //</span>
-<a name="l00227"></a>00227     <span class="comment">//    / \brief returns patchcords that are connected to specific object</span>
-<a name="l00228"></a>00228     <span class="comment">//    / \param obj</span>
-<a name="l00229"></a>00229     <span class="comment">//    / \return</span>
-<a name="l00230"></a>00230     <span class="comment">//    /</span>
-<a name="l00231"></a>00231     <span class="comment">//patchcordVec patchcordsForObject(UIObject* obj);</span>
-<a name="l00232"></a>00232 
-<a name="l00233"></a>00233     <span class="comment">//    ////</span>
-<a name="l00234"></a>00234     <span class="comment">//    /// \brief find object index in list</span>
-<a name="l00235"></a>00235     <span class="comment">//    /// \details this may be different from object index inside pd canvas</span>
-<a name="l00236"></a>00236     <span class="comment">//    /// \param obj</span>
-<a name="l00237"></a>00237     <span class="comment">//    /// \return</span>
-<a name="l00238"></a>00238     <span class="comment">//    ///</span>
-<a name="l00239"></a>00239     <span class="comment">//    int findObjectIndex(UIObject* obj);</span>
-<a name="l00240"></a>00240 
-<a name="l00241"></a>00241     <span class="comment">//remove</span>
-<a name="l00242"></a>00242     <span class="comment">//    ////</span>
-<a name="l00243"></a>00243     <span class="comment">//    /// \brief this returns &quot;restore ...&quot; for canvas as box or calls filesaver for canvas</span>
-<a name="l00244"></a>00244     <span class="comment">//    /// \return</span>
-<a name="l00245"></a>00245     <span class="comment">//    ///</span>
-<a name="l00246"></a>00246     <span class="comment">//    virtual std::string asPdFileString();</span>
-<a name="l00247"></a>00247 
-<a name="l00248"></a>00248     <span class="comment">//    ///////</span>
-<a name="l00249"></a>00249     <span class="comment">//    ///</span>
-<a name="l00250"></a>00250     <span class="comment">//    /////</span>
-<a name="l00251"></a>00251     <span class="comment">//    /// \brief returns patchcord as pd string</span>
-<a name="l00252"></a>00252     <span class="comment">//    /// \details move this later</span>
-<a name="l00253"></a>00253     <span class="comment">//    /// \param patchcord</span>
-<a name="l00254"></a>00254     <span class="comment">//    /// \return</span>
-<a name="l00255"></a>00255     <span class="comment">//    ///</span>
-<a name="l00256"></a>00256     <span class="comment">//    std::string patchcordAsPdFileString(UIPatchcord* pcord);</span>
-<a name="l00257"></a>00257 
-<a name="l00258"></a>00258     <span class="comment">//    ////</span>
-<a name="l00259"></a>00259     <span class="comment">//    /// \brief converts UI patchcord object with 4 pointers to 4 numbers of objects in canvas</span>
-<a name="l00260"></a>00260     <span class="comment">//    /// \details this is mostly for saving file</span>
-<a name="l00261"></a>00261     <span class="comment">//    /// \param pcord</span>
-<a name="l00262"></a>00262     <span class="comment">//    /// \return</span>
-<a name="l00263"></a>00263     <span class="comment">//    ///</span>
-<a name="l00264"></a>00264     <span class="comment">//    t_patchcordAsNumbers patchcordAsNumbers(UIPatchcord* pcord);</span>
-<a name="l00265"></a>00265 
-<a name="l00270"></a>00270     <span class="comment">//void selectObject(UIObject* obj);</span>
-<a name="l00271"></a>00271 
-<a name="l00275"></a>00275     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#aa92798d74d15cbcbb55789e8fb5d91cc" title="selects single box. mostly used by replace object routine in objectmaker">resizeToObjects</a>();
-<a name="l00276"></a>00276 
-<a name="l00280"></a>00280     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a4dadda554b129370df6a244fad1d0145" title="this is for loading or copying canvases. not yet used in fileparser">canvasFromPdStrings</a>(QStringList strings);
-<a name="l00281"></a>00281 
-<a name="l00282"></a>00282     <span class="comment">//void selectBox(UIItem* box);</span>
-<a name="l00283"></a>00283 
-<a name="l00288"></a>00288     Q_SLOT <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#ad99c58da0470bfdbe4d9aa360aae1026" title="slot called by box when it is selected">slotSelectBox</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* box, QGraphicsSceneMouseEvent* ev);
-<a name="l00289"></a>00289 
-<a name="l00295"></a>00295     Q_SLOT <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#ada2df225445845a5a1365c45e578981a" title="TODO check. slot called by box when it starts moving.">slotMoveBox</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* box, QGraphicsSceneMouseEvent* event);
-<a name="l00296"></a>00296 
-<a name="l00300"></a>00300     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#ac13cd7f65fc1dd9bfbaeb715538f9a43" title="cancels patchcord creation">cancelPatchcord</a>();
-<a name="l00301"></a>00301 
-<a name="l00306"></a>00306     <a class="code" href="classqtpd_1_1_object_maker.html" title="creates QLineEdit box for new object">ObjectMaker</a>* <a class="code" href="classqtpd_1_1_canvas_view.html#a6770763c6c47fbf72d3f34ac5763d882" title="pointer to objectMaker widget">objectMaker</a>();
-<a name="l00307"></a>00307 
-<a name="l00311"></a>00311     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#ad1ed9d902dfce6d254aefe266ea835f7" title="this is called when &#39;inlet&#39; etc object is created in subpatch">portLocalCountUpdated</a>();
-<a name="l00312"></a>00312 
-<a name="l00316"></a>00316     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a676aa454258a98ff4a2b5417e31837dc" title="shows object maker for &#39;new object&#39; menu command">showNewObjectMaker</a>();
-<a name="l00317"></a>00317 
-<a name="l00318"></a>00318     <span class="comment">// -- NEW</span>
-<a name="l00319"></a>00319 
-<a name="l00320"></a><a class="code" href="classqtpd_1_1_canvas_view.html#aac8af81acc60b26f357a679e50563656">00320</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#aac8af81acc60b26f357a679e50563656">resizeEvent</a>(QResizeEvent*)
-<a name="l00321"></a>00321     {
-<a name="l00322"></a>00322         _grid-&gt;<a class="code" href="classqtpd_1_1_u_i_item.html#ad04bc59adbae89c02f35f69685e15662">setSize</a>(size());
-<a name="l00323"></a>00323         _grid-&gt;<a class="code" href="classqtpd_1_1_u_i_item.html#a5a7a2c46ce27ed5cde4d56f027b60d9a">move</a>(0, 0);
-<a name="l00324"></a>00324     }
-<a name="l00325"></a>00325 
-<a name="l00326"></a>00326 <span class="keyword">public</span> slots:
-<a name="l00327"></a>00327 
-<a name="l00328"></a>00328     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#aed81b9878bb6bf0e53a783628876bb9a">slotInletMousePress</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* obj, QGraphicsSceneMouseEvent* ev);
-<a name="l00329"></a>00329     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#aaee2fbbd66f08c84ae462190d8ba3f92">slotInletMouseRelease</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>*, QGraphicsSceneMouseEvent*);
-<a name="l00330"></a>00330     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a7573bf4fa76498aba529e6c0064dc50c">slotOutletMousePressed</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* obj, QGraphicsSceneMouseEvent*);
-<a name="l00331"></a>00331     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a4037487eb98476b0c24227990a2bc094">slotOutletMouseReleased</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>*, QGraphicsSceneMouseEvent*);
-<a name="l00332"></a>00332 
-<a name="l00333"></a>00333 <span class="keyword">private</span>:
-<a name="l00334"></a>00334 <span class="keyword">public</span> slots:
-<a name="l00335"></a>00335 
-<a name="l00339"></a>00339     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a25bff5f8c870a64e71971c21ea11ad15" title="slot in Box-style canvas for handling new ins/outs">slotPortCountUpdated</a>();
-<a name="l00340"></a>00340 
-<a name="l00346"></a>00346     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a5d460f786dfdf3fc4b19c073cb2366a2" title="creates objectmaker atop existiong object box">slotObjectStartsEdit</a>(<span class="keywordtype">void</span>* obj);
-<a name="l00347"></a>00347 
-<a name="l00348"></a>00348 signals:
-<a name="l00349"></a>00349     std::pair&lt;QMainWindow*, qtpd::UIObject*&gt; <a class="code" href="classqtpd_1_1_canvas_view.html#a67677c5dc5c650b478ad26d181fe2d95">createSubpatchWindow</a>();
-<a name="l00350"></a>00350     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a238fcffc6bfae9d1be1e3eeab6aa1fbe">signalUpdatePortCount</a>();
-<a name="l00351"></a>00351 
-<a name="l00352"></a>00352     <span class="comment">// new 0617</span>
-<a name="l00353"></a>00353     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a57abea9c00d39b16f46066fb064133b2">signalSelectObject</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* <span class="keywordtype">object</span>);
-<a name="l00354"></a>00354     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a40e9754589206b6db8685b91b745ebab">signalPatchcord</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* src, <span class="keywordtype">int</span> nOut, <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* dest, <span class="keywordtype">int</span> nIn);
-<a name="l00355"></a>00355 
-<a name="l00356"></a>00356     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#adaae3e67273be47f9b7275eae241d927">signalMousePress</a>(QPoint pos);
-<a name="l00357"></a>00357     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#ab07b98bfc42e797a737b4a26f41f8531">signalMouseMove</a>(QPoint pos);
-<a name="l00358"></a>00358     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#af92f5454398e3bdd49c113cc330bb972">signalMouseRelease</a>(QPoint pos);
-<a name="l00359"></a>00359 
-<a name="l00360"></a>00360     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a91bc47dbd9632eb34b775678bb3caf35">signalDeselectObjects</a>();
-<a name="l00361"></a>00361 
-<a name="l00362"></a>00362     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#ac6c5f54966cd4000948b067451b31da6">signalSelectionFrame</a>(QPoint start, QPoint end);
-<a name="l00363"></a>00363     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#ac4770dca5bc9f4cb11294faf00df1f7d">signalMoveSelectedBoxes</a>(QPoint eventPos);
-<a name="l00364"></a>00364 };
-<a name="l00365"></a>00365 }
-<a name="l00366"></a>00366 
-<a name="l00367"></a>00367 <span class="preprocessor">#endif // CM_CANVAS_H</span>
+<a name="l00118"></a>00118     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a3f2b0324bb3860a07c9b75a28f246a66">mouseMoveEvent</a>(QMouseEvent* ev);
+<a name="l00119"></a>00119     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a98f2648af771e0704bd120981c3bce0f">mousePressEvent</a>(QMouseEvent* ev);
+<a name="l00120"></a>00120     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a59dab94a0a450965fddd6175025b84e7">mouseReleaseEvent</a>(QMouseEvent* ev);
+<a name="l00121"></a>00121 
+<a name="l00122"></a>00122     <span class="comment">// -------------------------------------------------------</span>
+<a name="l00123"></a>00123 
+<a name="l00127"></a>00127     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#aa92798d74d15cbcbb55789e8fb5d91cc" title="change size to fit all objects">resizeToObjects</a>();
+<a name="l00128"></a>00128 
+<a name="l00133"></a>00133     Q_SLOT <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#ad99c58da0470bfdbe4d9aa360aae1026" title="slot called by box when it is selected">slotSelectBox</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* box, QGraphicsSceneMouseEvent* ev);
+<a name="l00134"></a>00134 
+<a name="l00140"></a>00140     Q_SLOT <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#ada2df225445845a5a1365c45e578981a" title="TODO check. slot called by box when it starts moving.">slotMoveBox</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* box, QGraphicsSceneMouseEvent* event);
+<a name="l00141"></a>00141 
+<a name="l00145"></a>00145     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#ac13cd7f65fc1dd9bfbaeb715538f9a43" title="cancels patchcord creation">cancelPatchcord</a>();
+<a name="l00146"></a>00146 
+<a name="l00151"></a>00151     <a class="code" href="classqtpd_1_1_object_maker.html" title="creates QLineEdit box for new object">ObjectMaker</a>* <a class="code" href="classqtpd_1_1_canvas_view.html#a6770763c6c47fbf72d3f34ac5763d882" title="pointer to objectMaker widget">objectMaker</a>();
+<a name="l00152"></a>00152 
+<a name="l00156"></a>00156     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#ad1ed9d902dfce6d254aefe266ea835f7" title="this is called when &#39;inlet&#39; etc object is created in subpatch">portLocalCountUpdated</a>();
+<a name="l00157"></a>00157 
+<a name="l00160"></a>00160     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a676aa454258a98ff4a2b5417e31837dc" title="shows object maker for &#39;new object&#39; menu command">showNewObjectMaker</a>();
+<a name="l00161"></a>00161 
+<a name="l00162"></a>00162     <span class="comment">//deprecated</span>
+<a name="l00163"></a>00163     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a4dadda554b129370df6a244fad1d0145">canvasFromPdStrings</a>(QStringList strings);
+<a name="l00164"></a>00164 
+<a name="l00165"></a>00165     <span class="comment">// -- NEW ---------------------------------------</span>
+<a name="l00166"></a>00166 
+<a name="l00167"></a>00167     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#aac8af81acc60b26f357a679e50563656">resizeEvent</a>(QResizeEvent*);
+<a name="l00168"></a>00168     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a3296ef6ab0bb1ffe1f987be691b7b5b3">createContextMenu</a>();
+<a name="l00169"></a>00169 
+<a name="l00170"></a>00170 <span class="keyword">private</span> slots:
+<a name="l00171"></a>00171     <span class="keywordtype">void</span> slotPopupMenu();
+<a name="l00172"></a>00172 
+<a name="l00173"></a>00173 <span class="keyword">public</span> slots:
+<a name="l00174"></a>00174 
+<a name="l00175"></a>00175     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#aed81b9878bb6bf0e53a783628876bb9a">slotInletMousePress</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* obj, QGraphicsSceneMouseEvent* ev);
+<a name="l00176"></a>00176     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#aaee2fbbd66f08c84ae462190d8ba3f92">slotInletMouseRelease</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>*, QGraphicsSceneMouseEvent*);
+<a name="l00177"></a>00177     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a7573bf4fa76498aba529e6c0064dc50c">slotOutletMousePressed</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* obj, QGraphicsSceneMouseEvent*);
+<a name="l00178"></a>00178     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a4037487eb98476b0c24227990a2bc094">slotOutletMouseReleased</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>*, QGraphicsSceneMouseEvent*);
+<a name="l00179"></a>00179 
+<a name="l00183"></a>00183     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a25bff5f8c870a64e71971c21ea11ad15" title="slot in Box-style canvas for handling new ins/outs">slotPortCountUpdated</a>();
+<a name="l00184"></a>00184 
+<a name="l00190"></a>00190     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a5d460f786dfdf3fc4b19c073cb2366a2" title="creates objectmaker atop existiong object box">slotObjectStartsEdit</a>(<span class="keywordtype">void</span>* obj);
+<a name="l00191"></a>00191 
+<a name="l00192"></a>00192 signals:
+<a name="l00193"></a>00193     std::pair&lt;QMainWindow*, qtpd::UIObject*&gt; <a class="code" href="classqtpd_1_1_canvas_view.html#a67677c5dc5c650b478ad26d181fe2d95">createSubpatchWindow</a>();
+<a name="l00194"></a>00194     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a238fcffc6bfae9d1be1e3eeab6aa1fbe">signalUpdatePortCount</a>();
+<a name="l00195"></a>00195 
+<a name="l00196"></a>00196     <span class="comment">// new 0617</span>
+<a name="l00197"></a>00197     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a57abea9c00d39b16f46066fb064133b2">signalSelectObject</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* <span class="keywordtype">object</span>);
+<a name="l00198"></a>00198     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a40e9754589206b6db8685b91b745ebab">signalPatchcord</a>(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* src, <span class="keywordtype">int</span> nOut, <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* dest, <span class="keywordtype">int</span> nIn);
+<a name="l00199"></a>00199 
+<a name="l00200"></a>00200     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#adaae3e67273be47f9b7275eae241d927">signalMousePress</a>(QPoint pos);
+<a name="l00201"></a>00201     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#ab07b98bfc42e797a737b4a26f41f8531">signalMouseMove</a>(QPoint pos);
+<a name="l00202"></a>00202     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#af92f5454398e3bdd49c113cc330bb972">signalMouseRelease</a>(QPoint pos);
+<a name="l00203"></a>00203 
+<a name="l00204"></a>00204     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#a91bc47dbd9632eb34b775678bb3caf35">signalDeselectObjects</a>();
+<a name="l00205"></a>00205 
+<a name="l00206"></a>00206     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#ac6c5f54966cd4000948b067451b31da6">signalSelectionFrame</a>(QPoint start, QPoint end);
+<a name="l00207"></a>00207     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#ac4770dca5bc9f4cb11294faf00df1f7d">signalMoveSelectedBoxes</a>(QPoint eventPos);
+<a name="l00208"></a>00208 
+<a name="l00209"></a>00209     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_view.html#acbecdcca2ebff233dcfb850dd0f2e0f4">signalPopupMenu</a>();
+<a name="l00210"></a>00210 };
+<a name="l00211"></a>00211 }
+<a name="l00212"></a>00212 
+<a name="l00213"></a>00213 <span class="preprocessor">#endif // CM_CANVAS_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -420,7 +274,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 3 2017 13:45:15 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 3 2017 16:04:00 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

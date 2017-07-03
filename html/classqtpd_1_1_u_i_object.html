@@ -212,12 +212,12 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gets inlet (cm_port) at specified index  <a href="#affed6bc718dcfa37071c856895d70230"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_port.html">Port</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a5c8f235bdc4571fdf1a5c125fbcde2b2">outletAt</a> (int idx)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gets outlet (cm_port) at specified index  <a href="#a5c8f235bdc4571fdf1a5c125fbcde2b2"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a77f34c6557cd08be98617e6768672da5">pdInletType</a> (int idx)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns 1 if signal~  <a href="#a77f34c6557cd08be98617e6768672da5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a34e76ede549006eef8b78ff813453958">pdInletClass</a> (int idx)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns 1 if signal~  <a href="#a34e76ede549006eef8b78ff813453958"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a64ad65d9eba38d18c6cf475fa0fbdd65">inletCount</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">inlet count  <a href="#a64ad65d9eba38d18c6cf475fa0fbdd65"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a765ab43f6b07c8f94c06d3ffa4da4996">pdOutletType</a> (int idx)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">for pd object outlet: returns 1 if signal~  <a href="#a765ab43f6b07c8f94c06d3ffa4da4996"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#aa1b1cd605c80405f5e9529db3aaa3569">pdOutletClass</a> (int idx)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">for pd object outlet: returns 1 if signal~  <a href="#aa1b1cd605c80405f5e9529db3aaa3569"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#aea2322187b24bf09a4769fba5104f886">outletCount</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">outlet count  <a href="#aea2322187b24bf09a4769fba5104f886"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a8485d89915602c85ad50d9423bf3d0e8">objectPressEvent</a> (QGraphicsSceneMouseEvent *)</td></tr>
@@ -376,7 +376,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_link.html#aac1437ebee95d623e07c24bf948c75b4">qtpd::UILink</a>, <a class="el" href="classqtpd_1_1_u_i_box.html#a826f22b1f19cb4722e7a8f61b68726cf">qtpd::UIBox</a>, <a class="el" href="classqtpd_1_1_u_i_text.html#abe3b5d63ecd147d71afa4c834f12245c">qtpd::UIText</a>, and <a class="el" href="classqtpd_1_1_u_i_float.html#afd7a834215767a9a9f87163ac94e26d5">qtpd::UIFloat</a>.</p>
+<p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_link.html#aac1437ebee95d623e07c24bf948c75b4">qtpd::UILink</a>, <a class="el" href="classqtpd_1_1_u_i_box.html#a826f22b1f19cb4722e7a8f61b68726cf">qtpd::UIBox</a>, <a class="el" href="classqtpd_1_1_u_i_message.html#aa0ce3a4bc5fc9fb740444011a48c9372">qtpd::UIMessage</a>, <a class="el" href="classqtpd_1_1_u_i_text.html#abe3b5d63ecd147d71afa4c834f12245c">qtpd::UIText</a>, and <a class="el" href="classqtpd_1_1_u_i_float.html#afd7a834215767a9a9f87163ac94e26d5">qtpd::UIFloat</a>.</p>
 
 </div>
 </div>
@@ -889,12 +889,12 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a77f34c6557cd08be98617e6768672da5"></a><!-- doxytag: member="qtpd::UIObject::pdInletType" ref="a77f34c6557cd08be98617e6768672da5" args="(int idx)" -->
+<a class="anchor" id="a34e76ede549006eef8b78ff813453958"></a><!-- doxytag: member="qtpd::UIObject::pdInletClass" ref="a34e76ede549006eef8b78ff813453958" args="(int idx)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="classqtpd_1_1_u_i_object.html#a77f34c6557cd08be98617e6768672da5">qtpd::UIObject::pdInletType</a> </td>
+          <td class="memname">int <a class="el" href="classqtpd_1_1_u_i_object.html#a34e76ede549006eef8b78ff813453958">qtpd::UIObject::pdInletClass</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>idx</em></td><td>)</td>
@@ -915,12 +915,12 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a765ab43f6b07c8f94c06d3ffa4da4996"></a><!-- doxytag: member="qtpd::UIObject::pdOutletType" ref="a765ab43f6b07c8f94c06d3ffa4da4996" args="(int idx)" -->
+<a class="anchor" id="aa1b1cd605c80405f5e9529db3aaa3569"></a><!-- doxytag: member="qtpd::UIObject::pdOutletClass" ref="aa1b1cd605c80405f5e9529db3aaa3569" args="(int idx)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="classqtpd_1_1_u_i_object.html#a765ab43f6b07c8f94c06d3ffa4da4996">qtpd::UIObject::pdOutletType</a> </td>
+          <td class="memname">int <a class="el" href="classqtpd_1_1_u_i_object.html#aa1b1cd605c80405f5e9529db3aaa3569">qtpd::UIObject::pdOutletClass</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>idx</em></td><td>)</td>
@@ -1417,7 +1417,7 @@ Protected Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 3 2017 13:45:16 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 3 2017 16:04:00 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

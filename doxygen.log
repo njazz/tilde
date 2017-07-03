@@ -634,8 +634,7 @@ Generating docs for file /home/travis/home/travis/build/njazz/qtpd/qtpd_gui/lib_
 /home/travis/build/njazz/qtpd/qtpd_gui/lib_headers/ceammc_atomlist.h:103: warning: argument 'v' of command @param is not found in the argument list of ceammc::AtomList::resizeClip(size_t n)
 /home/travis/build/njazz/qtpd/qtpd_gui/lib_headers/ceammc_atomlist.h:121: warning: argument 'v' of command @param is not found in the argument list of ceammc::AtomList::resizeFold(size_t n)
 /home/travis/build/njazz/qtpd/qtpd_gui/lib_headers/ceammc_atomlist.h:112: warning: argument 'v' of command @param is not found in the argument list of ceammc::AtomList::resizeWrap(size_t n)
-/home/travis/build/njazz/qtpd/qtpd_gui/CanvasView.h:272: warning: argument 'obj' of command @param is not found in the argument list of qtpd::CanvasView::resizeToObjects()
-/home/travis/build/njazz/qtpd/qtpd_gui/CanvasView.h:284: warning: The following parameters of qtpd::CanvasView::slotSelectBox(UIItem *box, QGraphicsSceneMouseEvent *ev) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/CanvasView.h:129: warning: The following parameters of qtpd::CanvasView::slotSelectBox(UIItem *box, QGraphicsSceneMouseEvent *ev) are not documented:
   parameter 'ev'
 /home/travis/build/njazz/qtpd/qtpd_gui/datamodels/FileParser.h:49: warning: The following parameters of qtpd::FileParser::legacyProcess(PatchWindowController *controller, QStringList list) are not documented:
   parameter 'controller'
@@ -656,10 +655,10 @@ Generating docs for file /home/travis/home/travis/build/njazz/qtpd/qtpd_gui/lib_
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIItem.h:63: warning: argument 'canvasEditMode' of command @param is not found in the argument list of qtpd::UIItem::setEditModeRef(t_editMode *canvasEditModeRef)
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIItem.h:63: warning: The following parameters of qtpd::UIItem::setEditModeRef(t_editMode *canvasEditModeRef) are not documented:
   parameter 'canvasEditModeRef'
-/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:200: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addInlet()
-/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:211: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addOutlet()
-/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:184: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setInletsPos()
-/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:191: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setOutletsPos()
+/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:201: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addInlet()
+/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:212: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addOutlet()
+/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:185: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setInletsPos()
+/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:192: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setOutletsPos()
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIPatchcord.h:75: warning: Found unknown command `\group'
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIPatchcord.h:54: warning: Found unknown command `\group'
 /home/travis/build/njazz/qtpd/qtpd_gui/objects/UIBox.h:53: warning: argument 'ev' of command @param is not found in the argument list of qtpd::UIBox::objectPressEvent(QGraphicsSceneMouseEvent *event)
@@ -751,8 +750,8 @@ Generating docs for compound qtpd::UIBox...
 Generating docs for compoun/home/travis/build/njazz/qtpd/qtpd_gui/objects/UIScriptBox.h:117: warning: argument 'ev' of command @param is not found in the argument list of qtpd::UIScriptBox::objectPressEvent(QGraphicsSceneMouseEvent *event) inherited from member objectPressEvent at line 53 in file /home/travis/build/njazz/qtpd/qtpd_gui/objects/UIBox.h
 /home/travis/build/njazz/qtpd/qtpd_gui/objects/UIScriptBox.h:117: warning: The following parameters of qtpd::UIScriptBox::objectPressEvent(QGraphicsSceneMouseEvent *event) are not documented:
   parameter 'event'
-/home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIInstance.h:326: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIInstance::setInletsPos() inherited from member setInletsPos at line 184 in file /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h
-/home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIInstance.h:327: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIInstance::setOutletsPos() inherited from member setOutletsPos at line 191 in file /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h
+/home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIInstance.h:326: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIInstance::setInletsPos() inherited from member setInletsPos at line 185 in file /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h
+/home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIInstance.h:327: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIInstance::setOutletsPos() inherited from member setOutletsPos at line 192 in file /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h
 /home/travis/build/njazz/qtpd/qtpd_gui/properties/PropertyList.h:111: warning: Found unknown command `\detais'
 /home/travis/build/njazz/qtpd/qtpd_gui/properties/PropertyList.h:111: warning: Found unknown command `\detais'
 d qtpd::UIDSP...
@@ -807,6 +806,6 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-symbol cache used 2552/65536 hits=182256 misses=2552
-lookup cache used 4191/65536 hits=23321 misses=4420
+symbol cache used 2564/65536 hits=183002 misses=2564
+lookup cache used 4199/65536 hits=23377 misses=4432
 finished...
