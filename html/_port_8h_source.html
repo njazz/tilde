@@ -111,55 +111,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00031"></a>00031 
 <a name="l00035"></a><a class="code" href="classqtpd_1_1_port.html#aca62a570537dd20667f3401c11297c07">00035</a>     <a class="code" href="namespaceqtpd.html#a2378a83cd6f032332dd14c885bc24bb8" title="port type - in or out">UIPortType</a> <a class="code" href="classqtpd_1_1_port.html#aca62a570537dd20667f3401c11297c07">portType</a>() { <span class="keywordflow">return</span> _portType; }
 <a name="l00036"></a><a class="code" href="classqtpd_1_1_port.html#ac967a49a51df8bf3b3849c364b649721">00036</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_port.html#ac967a49a51df8bf3b3849c364b649721">setPortType</a>(<a class="code" href="namespaceqtpd.html#a2378a83cd6f032332dd14c885bc24bb8" title="port type - in or out">UIPortType</a> pt) { _portType = pt; }
-<a name="l00037"></a><a class="code" href="classqtpd_1_1_port.html#a0069bf51bb11bfbb9b996ea87f549c46">00037</a>     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_port.html#a0069bf51bb11bfbb9b996ea87f549c46">portClass</a>() { <span class="keywordflow">return</span> _portClass; }
-<a name="l00038"></a><a class="code" href="classqtpd_1_1_port.html#a74eff975ec57e97c8553cd70c6bd25c0">00038</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_port.html#a74eff975ec57e97c8553cd70c6bd25c0">setPortClass</a>(<span class="keywordtype">int</span> pc) { _portClass = pc; }
-<a name="l00039"></a><a class="code" href="classqtpd_1_1_port.html#a009237b01a33c51bec489383174737e2">00039</a>     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_port.html#a009237b01a33c51bec489383174737e2">portIndex</a>() { <span class="keywordflow">return</span> _portIndex; }
-<a name="l00040"></a><a class="code" href="classqtpd_1_1_port.html#a66bb5ddd424af43a1d5634298c313fac">00040</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_port.html#a66bb5ddd424af43a1d5634298c313fac">setPortIndex</a>(<span class="keywordtype">int</span> pi) { _portIndex = pi; }
-<a name="l00041"></a>00041 
-<a name="l00044"></a>00044     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_port.html#af13fd8945e32a2967373740988ef4b7c">paint</a>(QPainter* p, <span class="keyword">const</span> QStyleOptionGraphicsItem*, QWidget*);
+<a name="l00037"></a>00037 
+<a name="l00038"></a><a class="code" href="classqtpd_1_1_port.html#a0069bf51bb11bfbb9b996ea87f549c46">00038</a>     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_port.html#a0069bf51bb11bfbb9b996ea87f549c46">portClass</a>() { <span class="keywordflow">return</span> _portClass; }
+<a name="l00039"></a><a class="code" href="classqtpd_1_1_port.html#a74eff975ec57e97c8553cd70c6bd25c0">00039</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_port.html#a74eff975ec57e97c8553cd70c6bd25c0">setPortClass</a>(<span class="keywordtype">int</span> pc) { _portClass = pc; }
+<a name="l00040"></a>00040 
+<a name="l00041"></a><a class="code" href="classqtpd_1_1_port.html#a009237b01a33c51bec489383174737e2">00041</a>     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_port.html#a009237b01a33c51bec489383174737e2">portIndex</a>() { <span class="keywordflow">return</span> _portIndex; }
+<a name="l00042"></a><a class="code" href="classqtpd_1_1_port.html#a66bb5ddd424af43a1d5634298c313fac">00042</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_port.html#a66bb5ddd424af43a1d5634298c313fac">setPortIndex</a>(<span class="keywordtype">int</span> pi) { _portIndex = pi; }
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044 
 <a name="l00045"></a>00045 
-<a name="l00049"></a><a class="code" href="classqtpd_1_1_port.html#a9e65d318284c73f34ccb85eb28d32844">00049</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_port.html#a9e65d318284c73f34ccb85eb28d32844">hoverEnterEvent</a>(QGraphicsSceneHoverEvent*)
-<a name="l00050"></a>00050     {
-<a name="l00051"></a>00051         <span class="keywordflow">if</span> (<a class="code" href="classqtpd_1_1_u_i_item.html#a2e13bcc5d691a5505200843d80b71e6d" title="get edit mode flag value">getEditMode</a>() == <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aaa528336eacc29596e8365b88a4f62d82">em_Unlocked</a>) {
-<a name="l00052"></a>00052             <a class="code" href="classqtpd_1_1_u_i_item.html#a049c5b6ff7a83ae3716e7b828d9da67a">setHover</a>(<span class="keyword">true</span>);
-<a name="l00053"></a>00053             update();
-<a name="l00054"></a>00054         }
-<a name="l00055"></a>00055     }
-<a name="l00056"></a>00056 
-<a name="l00057"></a><a class="code" href="classqtpd_1_1_port.html#a93264e4fd7a721b1c0a711bf90ebd363">00057</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_port.html#a93264e4fd7a721b1c0a711bf90ebd363">hoverLeaveEvent</a>(QGraphicsSceneHoverEvent*)
-<a name="l00058"></a>00058     {
-<a name="l00059"></a>00059         <span class="keywordflow">if</span> (<a class="code" href="classqtpd_1_1_u_i_item.html#a2e13bcc5d691a5505200843d80b71e6d" title="get edit mode flag value">getEditMode</a>() == <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aaa528336eacc29596e8365b88a4f62d82">em_Unlocked</a>) {
-<a name="l00060"></a>00060             <a class="code" href="classqtpd_1_1_u_i_item.html#a049c5b6ff7a83ae3716e7b828d9da67a">setHover</a>(<span class="keyword">false</span>);
-<a name="l00061"></a>00061             update();
-<a name="l00062"></a>00062         }
-<a name="l00063"></a>00063     }
-<a name="l00064"></a>00064 
-<a name="l00065"></a><a class="code" href="classqtpd_1_1_port.html#a26156c74b5d036694dc3cdc65eaaee2b">00065</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_port.html#a26156c74b5d036694dc3cdc65eaaee2b">mousePressEvent</a>(QGraphicsSceneMouseEvent* ev)
-<a name="l00066"></a>00066     {
-<a name="l00067"></a>00067         qDebug(<span class="stringliteral">&quot;click port&quot;</span>);
-<a name="l00068"></a>00068         <span class="keywordflow">if</span> (<a class="code" href="classqtpd_1_1_u_i_item.html#a2e13bcc5d691a5505200843d80b71e6d" title="get edit mode flag value">getEditMode</a>() == <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aaa528336eacc29596e8365b88a4f62d82">em_Unlocked</a>) {
-<a name="l00069"></a>00069 
-<a name="l00070"></a>00070             ev-&gt;accept();
-<a name="l00071"></a>00071 
-<a name="l00072"></a>00072             emit <a class="code" href="classqtpd_1_1_u_i_item.html#adcaa90c907268dec3ad006b8815269a4">mousePressed</a>(<span class="keyword">this</span>, ev);
-<a name="l00073"></a>00073         }
-<a name="l00074"></a>00074     }
-<a name="l00075"></a>00075 
-<a name="l00076"></a><a class="code" href="classqtpd_1_1_port.html#a48974dfafb38e5dd183612075b2aa993">00076</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_port.html#a48974dfafb38e5dd183612075b2aa993">mouseReleaseEvent</a>(QGraphicsSceneMouseEvent* ev)
-<a name="l00077"></a>00077     {
-<a name="l00078"></a>00078         <span class="keywordflow">if</span> (<a class="code" href="classqtpd_1_1_u_i_item.html#a2e13bcc5d691a5505200843d80b71e6d" title="get edit mode flag value">getEditMode</a>() == <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aaa528336eacc29596e8365b88a4f62d82">em_Unlocked</a>) {
-<a name="l00079"></a>00079 
-<a name="l00080"></a>00080             ev-&gt;accept();
-<a name="l00081"></a>00081 
-<a name="l00082"></a>00082             emit <a class="code" href="classqtpd_1_1_u_i_item.html#a4ef86e08c77326eb7f1ce41bca3ca823">mouseReleased</a>(<span class="keyword">this</span>, ev);
-<a name="l00083"></a>00083         }
-<a name="l00084"></a>00084     }
-<a name="l00085"></a>00085 
-<a name="l00088"></a>00088 <span class="keyword">public</span> slots:
-<a name="l00089"></a>00089 };
-<a name="l00090"></a>00090 }
-<a name="l00091"></a>00091 
-<a name="l00092"></a>00092 <span class="preprocessor">#endif // CM_PORT_H</span>
+<a name="l00046"></a>00046     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_port.html#af13fd8945e32a2967373740988ef4b7c">paint</a>(QPainter* p, <span class="keyword">const</span> QStyleOptionGraphicsItem*, QWidget*);
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_port.html#aeee0962ecb4eccee430a115926924c86">hoverEnterEvent</a>(QGraphicsSceneHoverEvent*);
+<a name="l00049"></a>00049     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_port.html#a1e314842706c098800c63dc1145fa7ff">hoverLeaveEvent</a>(QGraphicsSceneHoverEvent*);
+<a name="l00050"></a>00050     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_port.html#a26156c74b5d036694dc3cdc65eaaee2b">mousePressEvent</a>(QGraphicsSceneMouseEvent* ev);
+<a name="l00051"></a>00051     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_port.html#a48974dfafb38e5dd183612075b2aa993">mouseReleaseEvent</a>(QGraphicsSceneMouseEvent* ev);
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055 <span class="keyword">public</span> slots:
+<a name="l00056"></a>00056 };
+<a name="l00057"></a>00057 }
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059 <span class="preprocessor">#endif // CM_PORT_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -178,7 +152,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 3 2017 10:24:41 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 3 2017 13:45:16 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
