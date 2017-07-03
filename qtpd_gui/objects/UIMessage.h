@@ -51,6 +51,8 @@ public:
     void updateUI(AtomList list);
     virtual std::string asPdFileString();
 
+    virtual void autoResize();
+
 private slots:
     void editorDone();
     void editorChanged();

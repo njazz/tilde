@@ -22,6 +22,8 @@
 
 #include "UIBox.h"
 
+#include "PropertiesWindow.h"
+
 // TEST
 //#include "PdLink.h"
 
@@ -44,6 +46,10 @@ PatchWindowController::PatchWindowController(ApplicationController* appControlle
     //_canvasData->setServerCanvas(_serverCanvas);
 
     newWindow();
+
+    connect(firstWindow()->canvasView(), &CanvasView::signalPopupMenu, this, &PatchWindowController::openPropertiesWindow);
+
+    //PatchWindowController(appController, serverInstance()->createCanvas());
 };
 
 PatchWindowController::PatchWindowController(ApplicationController* appController, ServerCanvas* canvas)
@@ -62,6 +68,8 @@ PatchWindowController::PatchWindowController(ApplicationController* appControlle
     //_canvasData->setServerCanvas(_serverCanvas);
 
     newWindow();
+
+    connect(firstWindow()->canvasView(), &CanvasView::signalPopupMenu, this, &PatchWindowController::openPropertiesWindow);
 };
 
 UIBox* PatchWindowController::subpatchBox()
@@ -195,7 +203,7 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
     //removed
     //connect(this, &PatchWindowController::signalCreateObject, _appController, &ApplicationController::slotCreateObject);
 
-    ServerObject* serverObject = _appController->slotCreateObject(_serverCanvas,name);//emit signalCreateObject(_serverCanvas, name);
+    ServerObject* serverObject = _appController->slotCreateObject(_serverCanvas, name); //emit signalCreateObject(_serverCanvas, name);
 
     // TODO wait?
     uiObject->setServerObject(serverObject);
@@ -407,6 +415,12 @@ void PatchWindowController::menuSelectAll()
 {
     dataSelectAllObjects();
 };
+
+void PatchWindowController::openPropertiesWindow()
+{
+    PropertiesWindow* pw = new PropertiesWindow(_canvasData->properties());
+    pw->show();
+}
 
 void PatchWindowController::doSave(QString fileName)
 {
@@ -790,8 +804,6 @@ void PatchWindowController::slotMoveSelectedBoxes(QPoint eventPos)
         }
 
         w->move(pos);
-
-
     }
 
     //todo

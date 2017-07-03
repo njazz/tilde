@@ -5,6 +5,10 @@
 
 #include "FileParser.h"
 
+#include "PatchWindowController.h"
+
+#include <assert.h>
+
 namespace qtpd {
 
 static const QSize EmptyCanvasSize = QSize(300, 200);
@@ -66,6 +70,11 @@ CanvasView::CanvasView(QGraphicsView* parent)
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 
     objectMaker()->close();
+
+    _controller = 0;
+    _pmProperties = 0;
+
+    createContextMenu();
 }
 
 // ---------------------------------------------
@@ -76,8 +85,6 @@ void CanvasView::slotInletMousePress(UIItem* obj, QGraphicsSceneMouseEvent*)
     _newLine->setActive(false);
 
     if ((_connectionStartObject) && (_connectionStartOutlet)) {
-
-        //patchcord(_connectionStartObject, _connectionStartOutlet, (UIObject*)obj->parent(), obj);
 
         int nOut = ((Port*)_connectionStartOutlet)->portIndex();
         int nIn = ((Port*)obj)->portIndex();
@@ -105,15 +112,6 @@ void CanvasView::slotOutletMousePressed(UIItem* obj, QGraphicsSceneMouseEvent*)
 }
 
 void CanvasView::slotOutletMouseReleased(UIItem*, QGraphicsSceneMouseEvent*) {}
-
-//void CanvasView::selectBox(UIItem* box)
-//{
-//    qDebug() << "canvas selectbox";
-
-//    _canvasData.selectBox((UIObject*)box);
-
-//    viewport()->update(); //
-//}
 
 void CanvasView::slotSelectBox(UIItem* box, QGraphicsSceneMouseEvent* ev)
 {
@@ -176,11 +174,6 @@ void CanvasView::mouseMoveEvent(QMouseEvent* ev)
     if (!ev)
         return;
 
-    //    if (ev->isAccepted())
-    //        return;
-
-    //    qDebug() << "canvas mouse move accepted";
-
     QPoint pos = ev->pos();
 
     if (!_objectMaker->isVisible())
@@ -239,9 +232,14 @@ void CanvasView::mousePressEvent(QMouseEvent* ev)
     qDebug("click canvas accepted");
 
     //context menu
-    if (ev->button() == Qt::RightButton) {
-        //QPoint pos = mapToGlobal(ev->pos());
-        //showPopupMenu(pos);
+    if (ev->button() & Qt::RightButton) {
+
+        qDebug() << "menu";
+
+        QPoint pos = mapToGlobal(ev->pos());
+        _popupMenu.move(pos);
+        _popupMenu.show();
+
         ev->accept();
         return;
     }
@@ -287,330 +285,7 @@ void CanvasView::mouseReleaseEvent(QMouseEvent* ev)
     emit signalMouseRelease(pos);
 }
 
-// ---------------------------------------------------------------------------
-
-//void Canvas::deselectBoxes()
-//{
-//    for (int i = 0; i < (int)_canvasData.selectedBoxes()->size(); i++) {
-//        if (_canvasData.selectedBoxes()->at(i))
-
-//            ((UIBox*)_canvasData.selectedBoxes()->at(i))->deselect();
-//    }
-
-//    _canvasData.selectedBoxes()->clear();
-
-//    viewport()->update();
-//}
-
-// ====================================================================================
-
-/*
-
-UIObject* CanvasView::createObject(QString objectData1, QPoint pos) //std::string UIObjectItemName,
-{
-
-    qDebug("* create object *");
-
-    //pos = objectMaker()->pos();
-
-    QStringList list = objectData1.split(" ");
-
-    //this is moved here to have all checks for special objects in one place
-    //(later - inlets/outlets)
-
-    if (list.count()) {
-
-        if (list.at(0) == "pd") {
-            //lol
-            std::pair<QMainWindow*, UIObject*> newPatch;
-
-            // todo return just QMainWindow
-            newPatch = emit createSubpatchWindow();
-
-            QMainWindow* subPatch = newPatch.first;
-            UIObject* obj = UISubpatch::createObject(objectData1, 0, this);
-
-            ((UISubpatch*)obj)->setSubpatchWindow(subPatch);
-
-            //qDebug()<<"objdata1" << objectData1;
-            qDebug("subpatch>>");
-
-            subPatch->show();
-
-            connect(obj, &UIObject::selectBox, this, &CanvasView::s_SelectBox);
-            connect(obj, &UIObject::moveBox, this, &CanvasView::s_MoveBox);
-
-            obj->setEditModeRef(_canvasEditMode); //Canvas::getEditModeRef());
-            obj->move(pos.x(), pos.y());
-            _canvasData.addUniqueBox(_canvasData.boxes(), obj);
-            scene()->addItem(obj);
-
-            return obj;
-        }
-
-        // temporary to check G-O-P
-        if (list.at(0) == "pds") {
-            //lol
-            std::pair<QMainWindow*, UIObject*> newPatch;
-
-            // todo return just QMainWindow
-            newPatch = emit createSubpatchWindow();
-
-            QMainWindow* subPatch = newPatch.first;
-            UIObject* obj = UISubpatch::createObject(objectData1, 0, this);
-
-            ((UISubpatch*)obj)->setSubpatchWindow(subPatch);
-
-            //qDebug()<<"objdata1" << objectData1;
-            qDebug("subpatch>>");
-
-            subPatch->show();
-
-            connect(obj, &UIObject::selectBox, this, &CanvasView::s_SelectBox);
-            connect(obj, &UIObject::moveBox, this, &CanvasView::s_MoveBox);
-
-            obj->setEditModeRef(_canvasEditMode); //Canvas::getEditModeRef());
-            obj->move(pos.x(), pos.y());
-            _canvasData.addUniqueBox(_canvasData.boxes(), obj);
-            scene()->addItem(obj);
-
-            //temp
-            obj->setSize(400, 300);
-
-            return obj;
-        }
-
-        if (list.at(0) == "restore") {
-            // unused?
-            return 0;
-        }
-    }
-
-    UIObject* obj = ObjectLoader::inst().createObject(objectData1, (t_canvas*)pdObject(), this);
-
-    //obj->setCanvas((void*)this);
-
-    connect(obj, &UIObject::selectBox, this, &CanvasView::s_SelectBox);
-    connect(obj, &UIObject::moveBox, this, &CanvasView::s_MoveBox);
-
-    obj->setEditModeRef(_canvasEditMode); //Canvas::getEditModeRef());
-    obj->move(pos.x(), pos.y());
-    _canvasData.addUniqueBox(_canvasData.boxes(), obj);
-    scene()->addItem(obj);
-
-    //qDebug() << "created object: [" << objectData1 << "] :" << list.count() << "@" << QString(std::to_string((long)pdObject()).c_str());
-
-    if (list.count()) {
-        if (
-            (list.at(0) == "inlet") || (list.at(0) == "inlet~") || (list.at(0) == "outlet") || (list.at(0) == "outlet~")) {
-            //qDebug("ports");
-            emit updatePortCount();
-            //
-
-            portLocalCountUpdated();
-        }
-    }
-
-    connect(obj, &UIObject::editObject, this, &CanvasView::objectStartsEdit);
-
-    //if (drawStyle() == ds_Canvas)
-
-    //setFixedSize(minimumCanvasSize());
-
-    resizeToObjects();
-
-    return (UIObject*)obj;
-}
-
-*/
-
-// ====================================================================================
-
-// TODO ???
-/*
-UIObject* CanvasView::createBoxForPatchWindow(QMainWindow* patchWindow, QString objectData, QPoint pos)
-{
-    std::pair<QMainWindow*, UIObject*> newPatch;
-
-    UIObject* obj = UISubpatch::createObject(objectData, 0, this);
-    ((UIBox*)obj)->setSubpatchWindow((QMainWindow*)patchWindow);
-
-    qDebug("subpatch restored>>");
-
-    //patchWindow->show();
-
-    connect(obj, &UIObject::selectBox, this, &CanvasView::signalSelectBox);
-    connect(obj, &UIObject::moveBox, this, &CanvasView::signalMoveBox);
-
-    obj->setEditModeRef(_canvasEditMode); //Canvas::getEditModeRef());
-    obj->move(pos.x(), pos.y());
-
-    // TODO
-    //_canvasData.addUniqueBox(_canvasData.boxes(), obj);
-
-    scene()->addItem(obj);
-
-    resizeToObjects();
-
-    return obj;
-}
-*/
-
-//void CanvasView::patchcord(UIObject* obj1, int outlet, UIObject* obj2, int inlet)
-//{
-
-//    if (obj1->serverObject() && obj2->serverObject()) {
-//        if (((UIBox*)obj1)->errorBox()) {
-//            //create dummy inlets / outlets
-//            qDebug() << "errorbox";
-//        };
-
-//        if (((UIBox*)obj2)->errorBox()) {
-//            //create dummy inlets / outlets
-//            qDebug() << "errorbox";
-//        };
-
-//        Port* outport = obj1->outletAt(outlet);
-//        Port* inport = obj2->inletAt(inlet);
-
-//        UIPatchcord* pc = new UIPatchcord(obj1, outport, obj2, inport);
-
-//        if (obj1->pdOutletType(outlet))
-//            pc->setPatchcordType(cm_pt_signal);
-
-//        qDebug("server patchcord");
-
-//        qDebug() << "pc: " <<  obj1->serverObject() << outlet << obj2->serverObject() << inlet ;
-
-//        // TODO
-//        // _canvasData.serverCanvas()->connect(obj1->serverObject(), outlet, obj2->serverObject(), inlet);
-//        // _canvasData.addPatchcord(pc);
-
-//        //        cmp_patchcord((t_object*)obj1->pdObject(), outlet, (t_object*)obj2->pdObject(), inlet);
-//        //        _canvasData.addPatchcord(pc); //patchcords()->push_back(pc);
-
-//        scene()->addItem(pc);
-//    } else
-//        qDebug("canvas patchcord error");
-//}
-
-//void CanvasView::patchcord(UIObject* obj1, UIItem* outport, UIObject* obj2, UIItem* inport)
-//{
-
-//    //todo
-
-//    int n1 = ((Port*)outport)->portIndex();
-//    int n2 = ((Port*)inport)->portIndex();
-//    patchcord(obj1, n1, obj2, n2);
-//}
-
-//void CanvasView::deletePatchcordsFor(UIItem* obj)
-//{
-//    //for //(int i=0;i<data_.patchcords()->size();i++)
-//    std::vector<UIPatchcord*>::iterator it;
-//    for (it = _canvasData.patchcords()->begin(); it != _canvasData.patchcords()->end();) {
-//        if ((*it)->isConnectedToObject(obj)) {
-//            scene()->removeItem(*it);
-//            it = _canvasData.patchcords()->erase(it);
-//        } else
-//            ++it;
-//    }
-
-//    viewport()->update();
-//}
-
-////
-/// \brief delete single box
-///
-//void CanvasView::deleteObject(UIObject* box)
-//{
-//    _canvasData.deselectBoxes();
-//    //_selectionData.addUniqueBox(box);
-//    _canvasData.selectBox(box);
-//    deleteSelectedObjects();
-//}
-
-//////
-///// \brief delete all selected object boxes()
-/////
-//void CanvasView::deleteSelectedObjects()
-//{
-//    qDebug("del selected");
-
-//    objectVec::iterator it;
-//    for (it = _canvasData.selectedBoxes()->begin(); it != _canvasData.selectedBoxes()->end(); ++it)
-
-//    {
-//        //
-//        UIObject* box = *it;
-//        qDebug("delete %lu | %lu", (long)box, (long)box->pdObject());
-
-//        if (box->pdObject()) {
-//            //NEEDS FIX
-//            if ((t_object*)(box->pdObject())) {
-//                if (!box->errorBox())
-//                    cmp_deleteobject((t_canvas*)pdObject(), (t_object*)box->pdObject());
-//                box->setPdObject(0);
-//            }
-//        } else {
-//            qDebug("didn't delete pd object");
-//        }
-
-//        deletePatchcordsFor(box);
-
-//        scene()->removeItem(box);
-//        viewport()->update();
-//        //box->close();
-
-//        _canvasData.boxes()->erase(std::remove(_canvasData.boxes()->begin(), _canvasData.boxes()->end(), *it), _canvasData.boxes()->end());
-//        //selectionData_.boxes()->erase(std::remove(selectionData_.boxes()->begin(), selectionData_.boxes()->end(), *it), selectionData_.boxes()->end());
-//    }
-
-//    _canvasData.selectedBoxes()->clear();
-//    ;
-//}
-
-//////
-///// \brief delete all selected patchcords()
-/////
-//void CanvasView::deleteSelectedPatchcords()
-//{
-//    qDebug() << "del selected patchcords";
-
-//    //cleanup
-//    //for (int i=0;i<data_.patchcords()->size(); i++)
-//    std::vector<UIPatchcord*>::iterator it;
-//    for (it = _canvasData.patchcords()->begin(); it != _canvasData.patchcords()->end();) {
-//        UIPatchcord* p = *it;
-
-//        if (p->isSelected()) {
-
-//            t_object* obj1 = (t_object*)p->obj1()->pdObject();
-//            t_object* obj2 = (t_object*)p->obj2()->pdObject();
-
-//            if (obj1 && obj2) {
-//                int out1 = p->outletIndex();
-//                int in2 = p->inletIndex();
-
-//                if ((out1 >= 0) && (in2 >= 0))
-//                    cmp_delete_patchcord(obj1, out1, obj2, in2);
-//                else
-//                    qDebug("object error. didn't delete pd patchcord");
-//            } else
-//                qDebug("object error. didn't delete pd patchcord");
-
-//            scene()->removeItem(p);
-//            //qDebug() << "remove item";
-
-//            it = _canvasData.patchcords()->erase(it);
-
-//        } else
-//            ++it;
-//    }
-
-//    _canvasData.selectedPatchcords()->clear();
-//    update();
-//}
+// -------------------------------------------
 
 void CanvasView::setEditMode(t_editMode mode)
 {
@@ -641,20 +316,6 @@ void CanvasView::setEditMode(t_editMode mode)
     }
 }
 
-//UIObject* CanvasView::getObjectByIndex(int idx)
-//{
-//    // getobjbyindex
-//    // TODO
-//    /*
-//    if ((idx < (int)_canvasData.boxes()->size()) && (idx >= 0))
-//        return _canvasData.boxes()->at(idx);
-//    else {
-//        qDebug("object not found");
-//        return 0;
-//    }
-//    */
-//}
-
 void CanvasView::setGridEnabled(bool val)
 {
     _grid->setVisible(val);
@@ -665,120 +326,7 @@ void CanvasView::setGridSnap(bool val)
     _gridSnap = val;
 }
 
-//objectVec CanvasView::objectBoxes()
-//{
-//    return *_canvasData.boxes();
-//}
-
-//patchcordVec CanvasView::patchcords()
-//{
-//    return *_canvasData.patchcords();
-//}
-
-//objectVec CanvasView::selectedObjectBoxes()
-//{
-//    return *_canvasData.selectedBoxes();
-//}
-
-//patchcordVec CanvasView::selectedPatchcords()
-//{
-//    return *_canvasData.selectedPatchcords();
-//}
-
-// TODO MOVE
-
-//int CanvasView::findObjectIndex(UIObject* obj)
-//{
-
-//    return _canvasData.findObjectIndex(obj);
-//}
-
-//std::string CanvasView::asPdFileString()
-//{
-
-//    // todo cleanup
-//    std::string ret;
-
-//    ret = "#N canvas ";
-//    ret += std::to_string(x()) + " ";
-//    ret += std::to_string(y()) + " ";
-//    ret += std::to_string(width()) + " ";
-//    ret += std::to_string(height()) + " ";
-//    ret += "10; \r\n";
-
-//    return ret;
-//}
-
-//std::string CanvasView::patchcordAsPdFileString(UIPatchcord* pcord)
-//{
-//    //TODO
-
-//    int obj1i = findObjectIndex(pcord->obj1());
-//    int obj2i = findObjectIndex(pcord->obj2());
-
-//    if ((obj1i >= 0) && (obj2i >= 0)) {
-//        std::string ret;
-
-//        ret += std::to_string(obj1i) + " ";
-//        ret += std::to_string(pcord->outletIndex()) + " ";
-
-//        ret += std::to_string(obj2i) + " ";
-//        ret += std::to_string(pcord->inletIndex()) + " ";
-
-//        return ret;
-
-//    } else
-//        qDebug("patchcord to string error");
-
-//    return "";
-//}
-
-//t_patchcordAsNumbers CanvasView::patchcordAsNumbers(UIPatchcord* pcord)
-//{
-//    //TODO
-
-//    t_patchcordAsNumbers ret;
-
-//    int obj1i = findObjectIndex(pcord->obj1());
-//    int obj2i = findObjectIndex(pcord->obj2());
-
-//    if ((obj1i >= 0) && (obj2i >= 0)) {
-//        //std::string ret;
-
-//        ret.obj1 = (obj1i);
-//        ret.out1 = pcord->outletIndex();
-
-//        ret.obj2 = (obj2i);
-//        ret.in2 = pcord->inletIndex();
-
-//    } else {
-//        qDebug("patchcord to string error");
-//        ret.obj1 = 0;
-//        ret.obj2 = 0;
-//        ret.out1 = 0;
-//        ret.in2 = 0;
-//    }
-
-//    return ret;
-//}
-
-//void CanvasView::selectObject(UIObject* obj)
-//{
-//    // TODO
-//    //obj->select();
-//    //_canvasData.selectBox(obj);
-//}
-
-//void CanvasView::selectAll()
-//{
-//    qDebug("select all");
-//    objectVec::iterator it;
-//    for (it = _canvasData.boxes()->begin(); it != _canvasData.boxes()->end(); ++it) {
-//        selectObject(*it);
-//    }
-
-//    //selectionData_.patchcords()_ = data_.patchcords()_;
-//}
+// -------------------------------
 
 void CanvasView::resizeToObjects()
 {
@@ -786,23 +334,7 @@ void CanvasView::resizeToObjects()
     _grid->setSize(scene()->itemsBoundingRect().size().toSize());
 }
 
-//QStringList CanvasView::canvasAsPdStrings()
-//{
-
-//    QStringList ret;
-
-//    //save canvas
-//    //todo canvas is subpatch flag
-//    std::string out1;
-
-//    out1 = asPdFileString(); //"#N canvas 0 0 400 300 10;\r\n";     //temporary
-
-//    ret.append(out1.c_str());
-
-//    ret += _canvasData.objectsAsPdFileStrings();
-
-//    return ret;
-//}
+// --------------------------------
 
 // TODO MOVE
 void CanvasView::canvasFromPdStrings(QStringList strings)
@@ -838,6 +370,8 @@ ObjectMaker* CanvasView::objectMaker()
 
 void CanvasView::portLocalCountUpdated()
 {
+    // TODO move!
+
     qDebug("port local count update");
 
     //    if (pdObject()) {
@@ -974,72 +508,6 @@ void CanvasView::setWindowSize(QSize wsize)
     _windowSize = wsize;
 }
 
-// ==========================================
-
-//void CanvasView::dataCut()
-//{
-
-//    if (!_canvasData.hasSelectedObjects())
-//        return;
-
-//    _canvasData.cut();
-
-//    deleteSelectedObjects();
-//}
-
-//void CanvasView::dataCopy()
-//{
-//    if (!_canvasData.hasSelectedObjects())
-//        return;
-
-//    _canvasData.cut();
-
-//    qDebug() << "***copy\n"
-//             << Clipboard::inst()->get();
-//}
-
-//void CanvasView::dataDuplicate()
-//{
-//    CanvasView::dataCopy();
-//    CanvasView::dataPaste();
-//}
-
-//void CanvasView::dataPaste()
-//{
-
-//    qDebug() << "***paste:\n"
-//             << Clipboard::inst()->get();
-
-//    if (Clipboard::inst()->get().size() < 1)
-//        return;
-
-//    QStringList list1;
-
-//    for (size_t i = 0; i < Clipboard::inst()->size(); i++) {
-//        QString str = Clipboard::inst()->at(i);
-
-//        QStringList subList = str.split(" ");
-
-//        // offset copied objects
-//        if (subList.size() >= 3) {
-//            if (subList.at(1) == "obj") {
-//                int x = ((QString)subList.at(2)).toFloat();
-//                int y = ((QString)subList.at(3)).toFloat();
-
-//                subList[2] = QString::number(x + 20);
-//                subList[3] = QString::number(y + 20);
-//            }
-
-//            qDebug() << "paste" << subList;
-
-//            Clipboard::inst()->setStringAt(i, subList.join(" "));
-//            FileParser::parseQString(Clipboard::inst()->at(i));
-//        }
-//    }
-
-//    // TODO copy patchcords
-//}
-
 // ------------------------------------
 
 void CanvasView::setZoom(float zoom)
@@ -1057,6 +525,71 @@ void CanvasView::setZoom(float zoom)
 
     scale(zoom, zoom);
     viewport()->update();
+}
+
+// -------------------------------
+
+void CanvasView::createContextMenu()
+{
+
+    _pmProperties = new QAction(tr("Properties"), this);
+    _pmProperties->setShortcut(tr("Ctrl+Shift+P"));
+
+    //------------
+
+    _popupMenu.addAction(_pmProperties);
+
+    connect(_pmProperties, &QAction::triggered, this, &CanvasView::slotPopupMenu);
+}
+
+void CanvasView::slotPopupMenu()
+{
+    emit signalPopupMenu();
+}
+
+void CanvasView::setController(PatchWindowController* c)
+{
+    _controller = c;
+    // connect(_pmProperties, &QAction::triggered, _controller, &PatchWindowController::openPropertiesWindow);
+}
+
+// todo fix
+
+// ------------------------------
+
+QPoint CanvasView::newObjectPos() { return _newObjectPos; }
+
+UIObject* CanvasView::dragObject() { return _dragObject; }
+void CanvasView::setDragObject(UIObject* object) { _dragObject = object; }
+
+float CanvasView::getZoom() { return _zoom; }
+
+t_editMode CanvasView::getEditMode() { return *_canvasEditMode; }
+t_editMode* CanvasView::getEditModeRef() { return _canvasEditMode; }
+
+
+bool CanvasView::gridSnap() { return _gridSnap; }
+int CanvasView::gridStep() { return _grid->gridStep(); }
+
+void CanvasView::setKeepPdObject(bool v) { _keepPdObject = v; }
+bool CanvasView::keepPdObject() { return _keepPdObject; }
+
+void CanvasView::setReadOnly(bool val)
+{
+    _readOnly = val;
+
+    if (_readOnly)
+        setEditMode(em_Locked);
+}
+
+bool CanvasView::readOnly() { return _readOnly; }
+
+// -- NEW ---------------------------------------
+
+void CanvasView::resizeEvent(QResizeEvent*)
+{
+    _grid->setSize(size());
+    _grid->move(0, 0);
 }
 
 // end namespace

@@ -32,7 +32,7 @@ UIMessage::UIMessage()
 
     _objectDataModel.setObjectSize(os_FixedHeight, 40, 20);
 
-    setSize(65, 20);
+    setSize(40, 20);
 
     resizeEvent();
 }
@@ -66,6 +66,8 @@ UIObject* UIMessage::createObj(QString data)
     UIMessage* ret = new UIMessage();
 
     ret->setObjectData(data);
+
+    ret->autoResize();
 
     return ret;
 }
@@ -181,12 +183,14 @@ void UIMessage::setObjectData(QString objData)
 
 
     _objectDataModel.setData(objData);
+
+    autoResize();
 }
 
 void UIMessage::setPdMessage(QString message)
 {
     setObjectData(message);
-    autoResize();
+    //autoResize();
 
 //    QFont myFont(PREF_QSTRING("Font"), 11);
 //    QFontMetrics fm(myFont);
@@ -233,6 +237,24 @@ void UIMessage::updateUI(AtomList list)
 
     //
     emit callRepaint();
+}
+
+void UIMessage::autoResize()
+{
+    QFont myFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize());
+    QFontMetrics fm(myFont);
+
+    int w = (int)fm.width(_objectDataModel.objectData()) + 10;
+    _objectDataModel.setMminimumBoxWidth(w);
+    //setWidth(w);
+
+    QRect r = boundingRect().toRect();
+
+    if (r.width() < w) {
+        setWidth(w);
+        properties()->set("Size", r.size());
+    }
+
 }
 
 std::string UIMessage::asPdFileString()

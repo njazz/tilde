@@ -115,6 +115,7 @@ public:
 
     virtual void autoResize(); ///> call this after setting object data
     //virtual void setSize(QSize size);
+
     void doSetSize(QSize size);
     void resizeEvent(); ///> custom resize event
 

@@ -158,6 +158,8 @@ public slots:
     void menuDelete();
     void menuSelectAll();
 
+    void openPropertiesWindow();
+
     //    void signalSelectBox(UIItem* box, QGraphicsSceneMouseEvent* event);
     //    void signalMoveBox(UIItem* box, QGraphicsSceneMouseEvent* event);
 

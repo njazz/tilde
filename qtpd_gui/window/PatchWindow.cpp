@@ -18,6 +18,7 @@ PatchWindow::PatchWindow()
 
     _scroll = new QScrollArea(this);
     _canvasView = new CanvasView((QGraphicsView*)this);
+    _canvasView->setController(_controller);
 
     //scroll->setWidget(canvas);
 
@@ -345,6 +346,9 @@ void PatchWindow::setController(PatchWindowController* c)
     connect(duplicateAct, &QAction::triggered, _controller, &PatchWindowController::menuDuplicate);
 
     connect(selectAllAct, &QAction::triggered, _controller, &PatchWindowController::menuSelectAll);
+
+    if (_canvasView)
+        _canvasView->setController(_controller);
 }
 
 void PatchWindow::closeEvent(QCloseEvent* event)

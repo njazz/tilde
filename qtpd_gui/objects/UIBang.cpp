@@ -4,21 +4,17 @@
 #include "UIBang.h"
 
 #include <QPainter>
-#include <QWidget>
 #include <QStyleOptionGraphicsItem>
+#include <QWidget>
 
 namespace qtpd {
 UIBang::UIBang()
 {
     setSize(20, 20);
-
     _objectDataModel.setObjectSize(os_Square, 20, 20);
 
     deselect();
     _clicked = false;
-
-    setWidth(20);
-    setHeight(20);
 
     _timer = new QTimer;
     _timer->setSingleShot(true);
@@ -43,7 +39,7 @@ UIObject* UIBang::createObj(QString data)
     return ret;
 }
 
-UIObject* UIBang::createObject(QString , t_canvas* , QGraphicsView* )
+UIObject* UIBang::createObject(QString, t_canvas*, QGraphicsView*)
 {
     return 0;
 }
@@ -87,9 +83,6 @@ void UIBang::resizeEvent()
 void UIBang::objectPressEvent(QGraphicsSceneMouseEvent* ev)
 {
 
-
-
-
     //move ?
     if (getEditMode() != em_Unlocked) {
         if (!serverObject()) {
@@ -99,8 +92,6 @@ void UIBang::objectPressEvent(QGraphicsSceneMouseEvent* ev)
             emit signalBang();
         }
     }
-
-
 }
 
 //void UIBang::mouseReleaseEvent(QGraphicsSceneMouseEvent*)
