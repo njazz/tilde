@@ -22,6 +22,8 @@ var searchData=
   ['displayflags',['displayFlags',['../class_color___wheel.html#a92504653a2c1165267d333c2053861fe',1,'Color_Wheel']]],
   ['displayflagschanged',['displayFlagsChanged',['../class_color___wheel.html#a430bd5e759c15860158434ed96ba1d86',1,'Color_Wheel']]],
   ['displaymode',['displayMode',['../class_color___preview.html#a6b8421f8ff613eac69508f7939410b10',1,'Color_Preview']]],
+  ['distributehorizontal',['distributeHorizontal',['../classqtpd_1_1_arrange_objects.html#a2e37dedf43569ee791d2cafa3352247b',1,'qtpd::ArrangeObjects']]],
+  ['distributevertical',['distributeVertical',['../classqtpd_1_1_arrange_objects.html#ae9036b0d1ca94898adf5b004d579fd32',1,'qtpd::ArrangeObjects']]],
   ['done',['done',['../classqtpd_1_1_object_maker.html#ab8daa1f2d71f2d580b515ad430686ea8',1,'qtpd::ObjectMaker']]],
   ['dosetsize',['doSetSize',['../classqtpd_1_1_u_i_object.html#af76e1c11e822197843e1712f9306469c',1,'qtpd::UIObject']]],
   ['dragenterevent',['dragEnterEvent',['../class_color___dialog.html#a333dc301f0db9d20f01fc25ea531b8f5',1,'Color_Dialog::dragEnterEvent()'],['../class_color___selector.html#a2f26f9c71ac505b683e1885eea01800b',1,'Color_Selector::dragEnterEvent()']]],

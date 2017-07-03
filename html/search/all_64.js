@@ -27,6 +27,8 @@ var searchData=
   ['displayflags',['displayFlags',['../class_color___wheel.html#a51c2712d964b93a0fa58f64462aa1997',1,'Color_Wheel::displayFlags()'],['../class_color___wheel.html#a92504653a2c1165267d333c2053861fe',1,'Color_Wheel::displayFlags(Display_Flags mask=FLAGS_ALL) const ']]],
   ['displayflagschanged',['displayFlagsChanged',['../class_color___wheel.html#a430bd5e759c15860158434ed96ba1d86',1,'Color_Wheel']]],
   ['displaymode',['displayMode',['../class_color___preview.html#a6b8421f8ff613eac69508f7939410b10',1,'Color_Preview']]],
+  ['distributehorizontal',['distributeHorizontal',['../classqtpd_1_1_arrange_objects.html#a2e37dedf43569ee791d2cafa3352247b',1,'qtpd::ArrangeObjects']]],
+  ['distributevertical',['distributeVertical',['../classqtpd_1_1_arrange_objects.html#ae9036b0d1ca94898adf5b004d579fd32',1,'qtpd::ArrangeObjects']]],
   ['done',['done',['../classqtpd_1_1_object_maker.html#ab8daa1f2d71f2d580b515ad430686ea8',1,'qtpd::ObjectMaker']]],
   ['dosetsize',['doSetSize',['../classqtpd_1_1_u_i_object.html#af76e1c11e822197843e1712f9306469c',1,'qtpd::UIObject']]],
   ['downsample',['downsample',['../struct__resample.html#ab1119ec2c6c5a9ec40365bb624494a94',1,'_resample']]],

@@ -241,28 +241,43 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00160"></a>00160 
 <a name="l00161"></a>00161     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a8fcbae1abad2037943f3053bd4f98099">openPropertiesWindow</a>();
 <a name="l00162"></a>00162 
-<a name="l00163"></a>00163     <span class="comment">//    void signalSelectBox(UIItem* box, QGraphicsSceneMouseEvent* event);</span>
-<a name="l00164"></a>00164     <span class="comment">//    void signalMoveBox(UIItem* box, QGraphicsSceneMouseEvent* event);</span>
-<a name="l00165"></a>00165 
-<a name="l00166"></a>00166 <span class="keyword">private</span> slots:
-<a name="l00167"></a>00167     <span class="keywordtype">void</span> slotSelectObject(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* <span class="keywordtype">object</span>);
-<a name="l00168"></a>00168     <span class="keywordtype">void</span> slotPatchcord(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* src, <span class="keywordtype">int</span> nOut, <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* dest, <span class="keywordtype">int</span> nIn);
+<a name="l00163"></a>00163     <span class="comment">//</span>
+<a name="l00164"></a>00164     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#aac2170d2305a2907346188f01d0ccdd4">slotAlignLeft</a>();
+<a name="l00165"></a>00165     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a15056b3c83d5e787de41606c1b68f160">slotAlignRight</a>();
+<a name="l00166"></a>00166 
+<a name="l00167"></a>00167     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a33b9ab2f10edc5495da9713380bd7aad">slotAlignTop</a>();
+<a name="l00168"></a>00168     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a592d041e3aad220e024eaf42db364fc4">slotAlignBottom</a>();
 <a name="l00169"></a>00169 
-<a name="l00170"></a>00170     <span class="keywordtype">void</span> slotMousePress(QPoint pos);
-<a name="l00171"></a>00171     <span class="keywordtype">void</span> slotMouseMove(QPoint pos);
-<a name="l00172"></a>00172     <span class="keywordtype">void</span> slotMouseRelease(QPoint pos);
-<a name="l00173"></a>00173 
-<a name="l00174"></a>00174     <span class="keywordtype">void</span> slotDeselectObjects();
+<a name="l00170"></a>00170     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#af6b12104689b8e58d61d81b77789680f">slotAlignCenter</a>();
+<a name="l00171"></a>00171 
+<a name="l00172"></a>00172 
+<a name="l00173"></a>00173     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#a243774c1c9f52d2c3473f41a4e433d25">slotHDistribute</a>();
+<a name="l00174"></a>00174     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window_controller.html#abb685977ca5b0b1fe95af03280244ace">slotVDistribute</a>();
 <a name="l00175"></a>00175 
-<a name="l00176"></a>00176     <span class="keywordtype">void</span> slotSelectionFrame(QPoint start, QPoint end);
-<a name="l00177"></a>00177     <span class="keywordtype">void</span> slotMoveSelectedBoxes(QPoint eventPos);
+<a name="l00176"></a>00176     <span class="comment">//    void signalSelectBox(UIItem* box, QGraphicsSceneMouseEvent* event);</span>
+<a name="l00177"></a>00177     <span class="comment">//    void signalMoveBox(UIItem* box, QGraphicsSceneMouseEvent* event);</span>
 <a name="l00178"></a>00178 
-<a name="l00179"></a>00179 signals:
-<a name="l00180"></a>00180     ServerObject* <a class="code" href="classqtpd_1_1_patch_window_controller.html#abeeeeecbdad3b9eaa305c78a76f4b4fd">signalCreateObject</a>(ServerCanvas* canvas, <span class="keywordtype">string</span> name);
-<a name="l00181"></a>00181 };
-<a name="l00182"></a>00182 }
-<a name="l00183"></a>00183 
-<a name="l00184"></a>00184 <span class="preprocessor">#endif // CM_PDLINK_H</span>
+<a name="l00179"></a>00179 <span class="keyword">private</span> slots:
+<a name="l00180"></a>00180     <span class="keywordtype">void</span> slotSelectObject(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* <span class="keywordtype">object</span>);
+<a name="l00181"></a>00181     <span class="keywordtype">void</span> slotPatchcord(<a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* src, <span class="keywordtype">int</span> nOut, <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* dest, <span class="keywordtype">int</span> nIn);
+<a name="l00182"></a>00182 
+<a name="l00183"></a>00183     <span class="keywordtype">void</span> slotMousePress(QPoint pos);
+<a name="l00184"></a>00184     <span class="keywordtype">void</span> slotMouseMove(QPoint pos);
+<a name="l00185"></a>00185     <span class="keywordtype">void</span> slotMouseRelease(QPoint pos);
+<a name="l00186"></a>00186 
+<a name="l00187"></a>00187     <span class="keywordtype">void</span> slotDeselectObjects();
+<a name="l00188"></a>00188 
+<a name="l00189"></a>00189     <span class="keywordtype">void</span> slotSelectionFrame(QPoint start, QPoint end);
+<a name="l00190"></a>00190     <span class="keywordtype">void</span> slotMoveSelectedBoxes(QPoint eventPos);
+<a name="l00191"></a>00191 
+<a name="l00192"></a>00192 
+<a name="l00193"></a>00193 
+<a name="l00194"></a>00194 signals:
+<a name="l00195"></a>00195     ServerObject* <a class="code" href="classqtpd_1_1_patch_window_controller.html#abeeeeecbdad3b9eaa305c78a76f4b4fd">signalCreateObject</a>(ServerCanvas* canvas, <span class="keywordtype">string</span> name);
+<a name="l00196"></a>00196 };
+<a name="l00197"></a>00197 }
+<a name="l00198"></a>00198 
+<a name="l00199"></a>00199 <span class="preprocessor">#endif // CM_PDLINK_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -281,7 +296,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 3 2017 16:04:00 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 3 2017 17:09:03 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
