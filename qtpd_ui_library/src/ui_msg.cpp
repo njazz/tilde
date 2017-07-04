@@ -82,11 +82,12 @@ void UIpdMsg::_doOutput()
                             AtomList l1 = _message.subList(start, end);
                             _processDollars(&l1);
 
-                            t_object* obj = pd_checkobject(sym->s_thing);
+                            //t_object* obj = pd_checkobject(sym->s_thing);
+                            t_object* obj = (t_object*)sym->s_thing;
                             if (obj) {
                                 pd_forwardmess((t_pd*)obj, l1.size(), l1.toPdData());
                             } else {
-                                error("ui.msg: bad destination object!");
+                                error("ui.msg: bad destination object for symbol: %s", sym->s_name);
                             }
 
                         } else {

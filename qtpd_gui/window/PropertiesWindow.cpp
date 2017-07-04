@@ -273,7 +273,11 @@ void PropertiesWindow::editedText()
 {
     QLineEdit* sender = (QLineEdit*)QObject::sender();
     QString pname = _propertyNames[sender];
-    _propertyList->set(pname.toStdString(), sender->text().split(" "));
+
+    // TODO fix
+    _propertyList->set(pname.toStdString(), sender->text().toStdString());
+
+
 };
 
 void PropertiesWindow::editedColor()

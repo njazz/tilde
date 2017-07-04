@@ -274,6 +274,8 @@ private slots:
     void propertyFontSize();
     void propertyUpdate(); ///> basic update - calls update() probably remove later
 
+    void propertyReceiveSymbol();  ///> binds object to symbol
+
 signals:
     void editObject(void* box);
     //// \brief this is needed for proper threading

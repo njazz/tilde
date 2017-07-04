@@ -56,6 +56,7 @@ CanvasView::CanvasView(QGraphicsView* parent)
 
     _objectMaker = new ObjectMaker((QLineEdit*)this);
     _objectMaker->hide();
+    _objectMaker->setFocusPolicy(Qt::StrongFocus);
 
     _replaceObject = 0;
 
@@ -163,11 +164,13 @@ void CanvasView::mouseMoveEvent(QMouseEvent* ev)
 {
     //    qDebug() << "canvas mouse move";
 
+    ev->accept();
+
     //workaround
-    if (_objectMaker->isVisible()) {
-        _objectMaker->setFocus();
-        return;
-    }
+    //    if (_objectMaker->isVisible()) {
+    //        _objectMaker->setFocus();
+    //        return;
+    //    }
 
     QGraphicsView::mouseMoveEvent(ev);
 

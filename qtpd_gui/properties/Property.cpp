@@ -145,7 +145,7 @@ template <>
 void Property::set(std::string string)
 {
     _data = AtomList(gensym(string.c_str()));
-    _type = ptList;
+    _type = ptString;
 
     emit changed();
 }
@@ -181,9 +181,6 @@ void Property::set(QStringList strlist)
         }
     }
 
-    //qDebug() << "data size" << list->size();
-
-    //check, different type for text files
     _type = ptStringList;
     _data = (*list);
 
@@ -193,9 +190,9 @@ void Property::set(QStringList strlist)
 //template <>
 void Property::set(QString string)
 {
-    //    data_ = AtomList(gensym(string.toStdString().c_str()));
-    //    type_ = ptString;
-    Property::set(string.split(" "));
+
+    _data = AtomList(gensym(string.toStdString().c_str()));
+    _type = ptString;
 
     emit changed();
 }

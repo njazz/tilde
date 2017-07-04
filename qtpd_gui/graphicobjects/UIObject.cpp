@@ -91,19 +91,18 @@ void UIObject::initProperties()
     _objectDataModel.properties()->create("Position", "Box", "0.1", pos());
     _objectDataModel.properties()->create("FontSize", "Box", "0.1", 11.);
 
-    _objectDataModel.properties()->create("PresetName", "Preset", "0.1", gensym(""));
-    _objectDataModel.properties()->create("SendSymbol", "Preset", "0.1", gensym(""));
-    _objectDataModel.properties()->create("ReceiveSymbol", "Preset", "0.1", gensym(""));
+    _objectDataModel.properties()->create("PresetName", "Bindings", "0.1", gensym(""));
+    _objectDataModel.properties()->create("SendSymbol", "Bindings", "0.1", gensym(""));
+    _objectDataModel.properties()->create("ReceiveSymbol", "Bindings", "0.1", QString(""));
+    _objectDataModel.properties()->create("AutoOSCSymbol", "Bindings", "0.1", gensym(""));
 
     _objectDataModel.properties()->create("BorderColor", "Color", "0.1", QColor(192, 192, 192, 255));
-
-    //_objectDataModel.properties()->addListener("Size", this, &UIObject::propertySize);
-
-    //connect(_objectDataModel.properties()->get("Size"), &Property::changed, this, &UIObject::propertySize);
 
     PROPERTY_LISTENER("Size", &UIObject::propertySize);
     PROPERTY_LISTENER("FontSize", &UIObject::propertySize);
     PROPERTY_LISTENER("BorderColor", &UIObject::propertyUpdate);
+
+    PROPERTY_LISTENER("ReceiveSymbol", &UIObject::propertyReceiveSymbol);
 }
 
 void UIObject::propertySize()
@@ -145,6 +144,19 @@ void UIObject::propertyFontSize()
 void UIObject::propertyUpdate()
 {
     update();
+}
+
+void UIObject::propertyReceiveSymbol()
+{
+
+    string symbolName = properties()->get("ReceiveSymbol")->asStdString();
+
+//    ServerInstance::post("changed receive symbol");
+//    ServerInstance::post(symbolName);
+
+    if (symbolName != "") {
+        _serverObject->setReceiveSymbol(symbolName);
+    }
 }
 
 PropertyList* UIObject::properties()

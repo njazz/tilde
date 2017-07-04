@@ -23,6 +23,7 @@ UIMessage::UIMessage()
     _editor->hide();
     _editor->setAttribute(Qt::WA_MacShowFocusRect, 0);
     _editor->setFrame(false);
+    _editor->setFocusPolicy(Qt::StrongFocus);
 
     QGraphicsProxyWidget* proxy = new QGraphicsProxyWidget(this);
     proxy->setWidget(_editor);
@@ -122,6 +123,7 @@ void UIMessage::objectPressEvent(QGraphicsSceneMouseEvent* ev)
     if ((getEditMode() == em_Unlocked) && isSelected()) {
         _editor->setText(QString(_objectDataModel.objectData()));
         _editor->show();
+        _editor->setFocusPolicy(Qt::StrongFocus);
         _editor->setFocus();
         ev->accept();
         return;
