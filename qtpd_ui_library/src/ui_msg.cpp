@@ -43,10 +43,9 @@ void UIpdMsg::_processDollars(AtomList* list)
         if (AtomList(list->at(i)).toPdData()->a_type == A_DOLLAR) {
 
             //post("dollar args");
-            size_t idx = AtomList(list->at(i)).toPdData()->a_w.w_index-1;
+            size_t idx = AtomList(list->at(i)).toPdData()->a_w.w_index - 1;
 
-
-            if ((idx < _inputList.size() ) && (idx>=0)) {
+            if ((idx < _inputList.size()) && (idx >= 0)) {
                 list->at(i) = _inputList.at(idx);
             } else {
                 list->at(i) = Atom(0.f);
@@ -72,33 +71,33 @@ void UIpdMsg::_doOutput()
 
                     start += 1;
                     if (!_message.at(start).isSymbol()) {
-                        post("bad destination");
+                        error("ui.msg: bad destination!");
 
                     } else {
                         t_symbol* sym = _message.at(start).asSymbol();
                         start += 1;
 
                         if (sym->s_thing) {
+
                             AtomList l1 = _message.subList(start, end);
-                            //_uimsg_processdollars(x, &l1);
                             _processDollars(&l1);
 
                             t_object* obj = pd_checkobject(sym->s_thing);
                             if (obj) {
                                 pd_forwardmess((t_pd*)obj, l1.size(), l1.toPdData());
-                            } //else
-                            //post("send error");
-                            //post("sent");
-                        } //else
-                        //post("not sent");
+                            } else {
+                                error("ui.msg: bad destination object!");
+                            }
+
+                        } else {
+                            error("ui.msg: destination not found!");
+                        }
                     }
 
                 } else {
                     AtomList l1 = _message.subList(start, end);
                     _processDollars(&l1);
-                    //_uimsg_processdollars(x, &l1);
 
-                    //
                     if (l1[0].isSymbol()) {
                         if (l1.size() > 1) {
                             // TODO!
@@ -106,10 +105,8 @@ void UIpdMsg::_doOutput()
                             outList.remove(0);
                             anyTo(0, l1[0].asSymbol(), outList);
                         } else
-                            //outlet_anything(x->out1, l1[0].asSymbol(), 0, 0);
                             symbolTo(0, l1[0].asSymbol());
                     } else {
-                        //outlet_anything(x->out1, &s_list, l1.size(), l1.toPdData());
                         listTo(0, l1);
                     }
                     //                    l1.outputAsAny(x->out1);
@@ -145,7 +142,7 @@ void UIpdMsg::onAny(t_symbol* s, const AtomList& list0)
     }
 }
 
-void UIpdMsg::onList(const AtomList &list)
+void UIpdMsg::onList(const AtomList& list)
 {
     UIpdMsg::onAny(gensym("list"), list);
 }
