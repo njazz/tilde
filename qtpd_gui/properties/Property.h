@@ -134,6 +134,14 @@ public:
         return int(_data.at(0).asFloat());
     }
 
+    bool asBool()
+    {
+        if (!_data.size())
+            return 0;
+
+        return (_data.at(0).asFloat()>0);
+    }
+
     float asFontSize()
     {
         return (asFloat() < 8) ? 8 : asFloat();

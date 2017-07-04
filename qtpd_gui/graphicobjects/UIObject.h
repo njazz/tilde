@@ -147,6 +147,7 @@ public:
     virtual ServerObject* serverObject() { return _serverObject; };
     virtual void setServerObject(ServerObject* o) { _serverObject = o; };
 
+    void removeXLets();
     virtual void sync();
 
     ////

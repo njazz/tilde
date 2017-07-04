@@ -16,10 +16,34 @@
 
 #include "pdServer.hpp"
 
+#include "CanvasView.h"
+
+
 namespace qtpd {
+
+void CanvasBoxObserver::setUIBox(UIBox* b) { _box = b; };
+
+void CanvasBoxObserver::inletAdded()
+{
+    _box->sync();
+
+};
+void CanvasBoxObserver::outletAdded()
+{
+    _box->sync();
+
+};
+
+void CanvasBoxObserver::inletRemoved() { _box->sync(); };
+void CanvasBoxObserver::outletRemoved() { _box->sync(); };
+
+
+
+
+
 UIBox::UIBox()
 {
-    qDebug("constructor");
+    //qDebug("constructor");
 
     setHeight(20);
     deselect();
@@ -34,6 +58,9 @@ UIBox::UIBox()
     resizeEvent();
 
     _subpatchController = 0;
+
+    _boxObserver = new CanvasBoxObserver();
+    _boxObserver->setUIBox(this);
 }
 
 ////
@@ -101,6 +128,12 @@ UIObject* UIBox::createObj(QString data)
 
     return ret;
 }
+
+//void UIBox::initProperties()
+//{
+//    UIObject::initProperties();
+
+//}
 
 //UIObject* UIBox::createObject(QString, t_canvas*, QGraphicsView*) { return 0; }
 
@@ -194,6 +227,7 @@ void UIBox::setObjectData(QString message)
 void UIBox::sync()
 {
     UIObject::sync();
+
     _isAbstraction = (serverObject()->type() == typeAbstraction);
 
     qDebug() << "is abstraction: " << _isAbstraction;
@@ -204,6 +238,14 @@ void UIBox::sync()
         _subpatchController = new PatchWindowController(parentController()->appController(), serverObject()->toServerCanvas());
     }
 
+    //redundant
+    if (isSubpatch())
+        if (serverObject()->toServerCanvas())
+        {
+            //serverObject()->toServerCanvas()->registerObserver(_boxObserver);
+            _subpatchController->serverCanvas()->registerObserver(_boxObserver);
+        }
+
     update();
 
     //
@@ -213,6 +255,46 @@ void UIBox::sync()
         properties()->create("ShowCanvas", "Canvas", "0.1", false);
         properties()->create("FixedSize", "Canvas", "0.1", false);
         properties()->create("FixedSizeBox", "Canvas", "0.1", QRect(0, 0, 300, 200));
+
+        PROPERTY_LISTENER("ShowBoxes", &UIBox::propertyShowBoxes);
+    }
+}
+
+void UIBox::propertyShowBoxes()
+{
+    bool v = properties()->get("ShowBoxes")->asBool();
+
+    if (v) {
+
+        _subpatchCanvasProxy = new QGraphicsProxyWidget(this);
+        _subpatchCanvasProxy->setWidget(_subpatchController->boxOnlyCanvas());
+        _subpatchCanvasProxy->setPos(1, 1);
+
+        //scene()->addItem(_subpatchCanvasProxy);
+
+        setSize(QSize(300, 200));
+        //_subpatchCanvasProxy->setMinimumSize(300,200);
+        resizeBox(0, 0);
+
+    } else {
+        if (_subpatchCanvasProxy) {
+
+            //            if (this->scene())
+            //                this->scene()->removeItem(_subpatchCanvasProxy);
+
+            //_subpatchCanvasProxy->hide();
+            _subpatchController->boxOnlyCanvas()->hide();
+
+            autoResize();
+
+            //_subpatchController->boxOnlyCanvas()->scene()->removeItem(_subpatchCanvasProxy);
+            //_subpatchCanvasProxy->setWidget(0);
+
+            //            if (!_subpatchCanvasProxy->scene())
+            //                delete _subpatchCanvasProxy;
+        }
+
+        //_subpatchController->firstWindow()->canvasView()->setParent(_subpatchController->firstWindow());
     }
 }
 
@@ -250,6 +332,12 @@ void UIBox::autoResize()
     if (r.width() < w) {
         setWidth(w);
         properties()->set("Size", r.size());
+    }
+
+    size().setHeight(20);
+    float fs = properties()->get("FontSize")->asFloat();
+    if (size().height() < (fs + 9)) {
+        size().setHeight(fs + 9);
     }
 }
 

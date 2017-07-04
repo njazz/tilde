@@ -168,6 +168,7 @@ public:
     void createContextMenu();
 
 private slots:
+
     void slotPopupMenu();
 
 public slots:

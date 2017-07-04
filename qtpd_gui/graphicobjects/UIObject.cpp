@@ -151,8 +151,8 @@ void UIObject::propertyReceiveSymbol()
 
     string symbolName = properties()->get("ReceiveSymbol")->asStdString();
 
-//    ServerInstance::post("changed receive symbol");
-//    ServerInstance::post(symbolName);
+    //    ServerInstance::post("changed receive symbol");
+    //    ServerInstance::post(symbolName);
 
     if (symbolName != "") {
         _serverObject->setReceiveSymbol(symbolName);
@@ -239,6 +239,25 @@ void UIObject::addInlet()
     }
 
     addInlet(_portClass_);
+}
+
+void UIObject::removeXLets()
+{
+
+    for (portItemVec::iterator it = _inlets->begin(); it != _inlets->end(); ++it) {
+        Port* p = *it;
+        p->hide();
+        scene()->removeItem(p);
+    }
+
+    for (portItemVec::iterator it = _inlets->begin(); it != _inlets->end(); ++it) {
+        Port* p = *it;
+        p->hide();
+        scene()->removeItem(p);
+    }
+
+    _inlets->clear();
+    _outlets->clear();
 }
 
 void UIObject::addInlet(int _portClass_)
@@ -406,6 +425,8 @@ void UIObject::setObjectData(QString objData)
 
 void UIObject::sync()
 {
+    removeXLets();
+
     if (_serverObject->errorBox()) {
         setErrorBox(true);
         return;

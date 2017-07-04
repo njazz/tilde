@@ -28,18 +28,18 @@ class PatchWindowController;
 class UIBox;
 
 // STUB
-//class ControllerObserver : public Observer
-//{
-//private:
-//    PatchWindowController* _patchController;
-//public:
-//    void setPatchController(PatchWindowController* c){_patchController = c;}
-//    virtual void update()
-//    {
-//        //something
+class PatchObserver : public Observer
+{
+private:
+    PatchWindowController* _patchController;
+public:
+    void setPatchController(PatchWindowController* c)   {_patchController = c;}
+    virtual void update()
+    {
+        //something
 
-//    };
-//}
+    };
+};
 
 ////
 /// \brief The Patch window controller
@@ -85,6 +85,8 @@ public:
     UIBox* subpatchBox();
     ServerObject* serverCanvasAsObject();
 
+    ServerCanvas* serverCanvas();
+
     CanvasView* boxOnlyCanvas(); // for GOP functionality
 
     ServerInstance* serverInstance();
@@ -102,6 +104,8 @@ public:
 
     PatchWindow* newWindow();
 
+    //
+    void syncBoxOnlyCanvas();
     //
     // UNUSED
     bool syncData(ServerObject* serverObject, UIObject* uiObject);

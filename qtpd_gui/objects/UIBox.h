@@ -13,7 +13,28 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QGraphicsView>
 
+#include "pdServer.hpp"
+
+class QGraphicsProxyWidget;
+
 namespace qtpd {
+
+class UIBox;
+
+class CanvasBoxObserver : public CanvasObserver {
+    UIBox* _box;
+
+public:
+    CanvasBoxObserver(){};
+
+    void setUIBox(UIBox* b);
+
+    virtual void inletAdded();
+    virtual void outletAdded();
+
+    virtual void inletRemoved();
+    virtual void outletRemoved();
+};
 
 ////
 /// \brief gui object: standard object box
@@ -32,6 +53,10 @@ private:
     //TEMP
     bool _isSubpatch;
     bool isSubpatch();
+
+    QGraphicsProxyWidget* _subpatchCanvasProxy;
+
+    CanvasBoxObserver* _boxObserver;
 
 public:
     explicit UIBox();
@@ -75,6 +100,9 @@ signals:
 
     void mouseMoved();
     void rightClicked();
+
+public slots:
+    void propertyShowBoxes();
 };
 }
 

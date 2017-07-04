@@ -31,11 +31,11 @@ CanvasView::CanvasView(QGraphicsView* parent)
     //_fileName = "";
 
     _canvasEditMode = new t_editMode;
-    //    qDebug() << "new em ref";
 
     CanvasView::setEditMode(em_Unlocked);
 
     _grid = new Grid;
+
     setScene(new QGraphicsScene(0, 0, 400, 300, this));
     scene()->addItem(_grid);
     scene()->addItem(_newLine);

@@ -51,6 +51,9 @@ PatchWindowController::PatchWindowController(ApplicationController* appControlle
 
     connect(firstWindow()->canvasView(), &CanvasView::signalPopupMenu, this, &PatchWindowController::openPropertiesWindow);
 
+    _boxOnlyCanvas = 0;
+    _boxOnlyScene = 0;
+
     //PatchWindowController(appController, serverInstance()->createCanvas());
 };
 
@@ -67,15 +70,20 @@ PatchWindowController::PatchWindowController(ApplicationController* appControlle
     _canvasData = new CanvasData();
     _serverCanvas = canvas;
 
-//    if (!_serverCanvas)
-//        _serverCanvas = serverInstance()->createCanvas();
+    //    if (!_serverCanvas)
+    //        _serverCanvas = serverInstance()->createCanvas();
 
     //_canvasData->setServerCanvas(_serverCanvas);
+
+    _boxOnlyCanvas = 0;
+    _boxOnlyScene = 0;
 
     newWindow();
 
     connect(firstWindow()->canvasView(), &CanvasView::signalPopupMenu, this, &PatchWindowController::openPropertiesWindow);
 };
+
+ServerCanvas* PatchWindowController:: serverCanvas() {return _serverCanvas;}
 
 UIBox* PatchWindowController::subpatchBox()
 {
@@ -94,11 +102,40 @@ ServerObject* PatchWindowController::serverCanvasAsObject()
 CanvasView* PatchWindowController::boxOnlyCanvas()
 {
     if (!_boxOnlyCanvas)
+    {
         _boxOnlyCanvas = new CanvasView();
+        _boxOnlyCanvas->setController(this);
 
-    _boxOnlyScene = _boxOnlyCanvas->scene();
+    }
+
+//    QGraphicsScene* _boxOnlyScene = new QGraphicsScene();
+
+//    if (!_boxOnlyCanvas->scene())
+//        _boxOnlyCanvas->setScene(_boxOnlyScene);
+
+    _boxOnlyCanvas->setReadOnly(true);
+
+    syncBoxOnlyCanvas();
 
     return _boxOnlyCanvas;
+}
+
+void PatchWindowController::syncBoxOnlyCanvas()
+{
+    if (!_boxOnlyCanvas->scene()) {
+        ServerInstance::post("bad CanvasView scene!");
+        return;
+    }
+
+    //_boxOnlyCanvas->scene()->clear();
+
+    objectVec::iterator it;
+
+    for (it = _canvasData->boxes()->begin(); it != _canvasData->boxes()->end(); ++it) {
+        _boxOnlyCanvas->scene()->addItem(*it);
+    }
+
+    _boxOnlyCanvas->update();
 }
 
 ServerInstance* PatchWindowController::serverInstance() { return _appController->mainServerInstance(); }
