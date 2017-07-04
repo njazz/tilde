@@ -13,6 +13,7 @@ using namespace ceammc;
 #include "ui_bang.h"
 
 class UIpdBang;
+
 static void qtpd_update(UIpdBang* x)
 {
     qtpdUpdate((long)x->owner(), AtomList(Atom(gensym("bang"))));

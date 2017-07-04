@@ -268,14 +268,14 @@ void CanvasView::mousePressEvent(QMouseEvent* ev)
 void CanvasView::mouseReleaseEvent(QMouseEvent* ev)
 {
 
-    qDebug("canvas mouseup");
+    //qDebug("canvas mouseup");
 
     QGraphicsView::mouseReleaseEvent(ev);
 
     //    if (ev->isAccepted())
     //        return;
 
-    qDebug("canvas mouseup accepted");
+    //qDebug("canvas mouseup accepted");
 
     setDragObject(0);
 

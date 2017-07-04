@@ -42,7 +42,6 @@ public:
         return ret;
     }
 
-
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
     {
         p->setClipRect(option->exposedRect);
@@ -76,7 +75,7 @@ public:
         font.setItalic(true);
         p->setFont(font);
 
-        QString text = properties()->get("title")->asQString();
+        QString text = properties()->get("Title")->asQString();
         p->drawText(2, 3, width() - 2, height() - 3, 0, text, 0);
     }
 
@@ -86,10 +85,10 @@ public:
     {
         //qDebug() << "properties init";
         UIObject::initProperties();
-        QStringList list;
+        QString list = "-";
 
-        properties()->create("title", "Data", "0.1", list);
-        properties()->create("url", "Data", "0.1", list);
+        properties()->create("Title", "Data", "0.1", list);
+        properties()->create("Url", "Data", "0.1", list);
     };
 
     virtual void hoverEnterEvent(QGraphicsSceneHoverEvent*)
@@ -120,8 +119,7 @@ public:
         dragOffset = ev->pos().toPoint();
 
         if (!(getEditMode() == em_Unlocked)) {
-//action
-
+            //action
         }
     }
 
@@ -131,20 +129,20 @@ public:
         update();
     }
 
-//    void mouseMoveEvent(QGraphicsSceneMouseEvent* event)
-//    {
-//        if (event->buttons() & Qt::LeftButton) {
-//            emit moveBox(this, event);
-//        }
-//        event->ignore();
+    //    void mouseMoveEvent(QGraphicsSceneMouseEvent* event)
+    //    {
+    //        if (event->buttons() & Qt::LeftButton) {
+    //            emit moveBox(this, event);
+    //        }
+    //        event->ignore();
 
-//        //todo move!
-//        if (getEditMode() != em_Unlocked) {
-//            setCursor(QCursor(Qt::PointingHandCursor));
-//        } else {
-//            setCursor(QCursor(Qt::ArrowCursor));
-//        }
-//    }
+    //        //todo move!
+    //        if (getEditMode() != em_Unlocked) {
+    //            setCursor(QCursor(Qt::PointingHandCursor));
+    //        } else {
+    //            setCursor(QCursor(Qt::ArrowCursor));
+    //        }
+    //    }
 
     void autoResize()
     {
@@ -171,21 +169,22 @@ public:
 
     ///////
 
-    void setObjectData(QString objData)//setPdMessage(std::string message)
+    void setObjectData(QString objData) //setPdMessage(std::string message)
     {
         //setObjectData("ui.text");
 
         //TODO temporary fix!
-        QString msg = objData;//QString(message.c_str());
-        QStringList list = msg.split("\n");
-        for (int i = 0; i < list.size(); i++) {
-            list[i] = list[i] + "\\n";
-        }
-        properties()->set("Text", list);
+//        QString msg = objData; //QString(message.c_str());
+//        QStringList list = msg.split("\n");
+//        for (int i = 0; i < list.size(); i++) {
+//            list[i] = list[i] + "\\n";
+//        }
 
-        QString data = properties()->get("Text")->asQString().split("\\n ").join("\n");
+//        properties()->set("Text", list.join("\n"));
 
-        _objectText = data;
+//        QString data = properties()->get("Text")->asQString().split("\\n ").join("\n");
+
+        _objectText = objData;
 
         autoResize();
     }

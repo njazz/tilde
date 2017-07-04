@@ -81,9 +81,12 @@ PatchWindowController::PatchWindowController(ApplicationController* appControlle
     newWindow();
 
     connect(firstWindow()->canvasView(), &CanvasView::signalPopupMenu, this, &PatchWindowController::openPropertiesWindow);
+
+    // TODO
+    firstWindow()->canvasView()->setEditMode(em_Locked);
 };
 
-ServerCanvas* PatchWindowController:: serverCanvas() {return _serverCanvas;}
+ServerCanvas* PatchWindowController::serverCanvas() { return _serverCanvas; }
 
 UIBox* PatchWindowController::subpatchBox()
 {
@@ -101,17 +104,15 @@ ServerObject* PatchWindowController::serverCanvasAsObject()
 
 CanvasView* PatchWindowController::boxOnlyCanvas()
 {
-    if (!_boxOnlyCanvas)
-    {
+    if (!_boxOnlyCanvas) {
         _boxOnlyCanvas = new CanvasView();
         _boxOnlyCanvas->setController(this);
-
     }
 
-//    QGraphicsScene* _boxOnlyScene = new QGraphicsScene();
+    //    QGraphicsScene* _boxOnlyScene = new QGraphicsScene();
 
-//    if (!_boxOnlyCanvas->scene())
-//        _boxOnlyCanvas->setScene(_boxOnlyScene);
+    //    if (!_boxOnlyCanvas->scene())
+    //        _boxOnlyCanvas->setScene(_boxOnlyScene);
 
     _boxOnlyCanvas->setReadOnly(true);
 
@@ -667,9 +668,21 @@ void PatchWindowController::deletePatchcordsFor(UIItem* obj)
     //for //(int i=0;i<data_.patchcords()->size();i++)
     std::vector<UIPatchcord*>::iterator it;
     for (it = _canvasData->patchcords()->begin(); it != _canvasData->patchcords()->end();) {
-        if ((*it)->isConnectedToObject(obj)) {
-            _scene->removeItem(*it);
-            it = _canvasData->patchcords()->erase(it);
+
+        UIPatchcord* p = *it;
+
+        if (p->isConnectedToObject(obj)) {
+
+            //ServerInstance::post("remove patchcord");
+
+            _scene->removeItem(p);
+
+            _canvasData->patchcords()->erase(std::remove(_canvasData->patchcords()->begin(), _canvasData->patchcords()->end(), *it), _canvasData->patchcords()->end());
+
+            p->remove();
+
+            _scene->update();
+            //it = _canvasData->patchcords()->erase(it);
         } else
             ++it;
     }
@@ -763,10 +776,12 @@ void PatchWindowController::patchcord(UIObject* obj1, int outlet, UIObject* obj2
     if (obj1->serverObject() && obj2->serverObject()) {
         if (((UIBox*)obj1)->errorBox()) {
             qDebug() << "errorbox";
+            return;
         };
 
         if (((UIBox*)obj2)->errorBox()) {
             qDebug() << "errorbox";
+            return;
         };
 
         Port* outport = obj1->outletAt(outlet);
@@ -777,7 +792,7 @@ void PatchWindowController::patchcord(UIObject* obj1, int outlet, UIObject* obj2
         if (obj1->pdOutletClass(outlet))
             pc->setPatchcordType(cm_pt_signal);
 
-        qDebug("server patchcord");
+        //qDebug("server patchcord");
 
         qDebug() << "patchcord: " << obj1->serverObject() << outlet << obj2->serverObject() << inlet;
 

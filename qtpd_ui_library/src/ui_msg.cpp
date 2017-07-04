@@ -100,18 +100,14 @@ void UIpdMsg::_doOutput()
                     _processDollars(&l1);
 
                     if (l1[0].isSymbol()) {
-                        if (l1.size() > 1) {
-                            // TODO!
-                            AtomList outList = l1;
-                            outList.remove(0);
-                            anyTo(0, l1[0].asSymbol(), outList);
-                        } else
-                            anyTo(0, l1[0].asSymbol(), AtomList());
+
+                        AtomList outList = l1;
+                        outList.remove(0);
+                        anyTo(0, l1[0].asSymbol(), outList);
+
                     } else {
                         listTo(0, l1);
                     }
-                    //                    l1.outputAsAny(x->out1);
-                    //                    outlet_anything(x->out1, &s_list, l1.size(), l1.toPdData());
                 }
 
                 start = i + 1;
