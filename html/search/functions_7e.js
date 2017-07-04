@@ -7,5 +7,6 @@ var searchData=
   ['_7ecolor_5fwheel',['~Color_Wheel',['../class_color___wheel.html#a862eedb5e8f84047797c7625a47e36af',1,'Color_Wheel']]],
   ['_7egradient_5fslider',['~Gradient_Slider',['../class_gradient___slider.html#a18cafeab27f4d9e6bba2f040e1bac05a',1,'Gradient_Slider']]],
   ['_7ehue_5fslider',['~Hue_Slider',['../class_hue___slider.html#a7fdc4c9dd845e24ae4e92328939d6ffc',1,'Hue_Slider']]],
-  ['_7euiclass',['~UIClass',['../classqtpd_1_1_u_i_class.html#a5e670d74f25eb10be0ba1b17cb69ec75',1,'qtpd::UIClass']]]
+  ['_7euiclass',['~UIClass',['../classqtpd_1_1_u_i_class.html#a5e670d74f25eb10be0ba1b17cb69ec75',1,'qtpd::UIClass']]],
+  ['_7euipatchcord',['~UIPatchcord',['../classqtpd_1_1_u_i_patchcord.html#a20b2ba3d5b71ce5c55a690ca060e8176',1,'qtpd::UIPatchcord']]]
 ];

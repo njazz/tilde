@@ -736,8 +736,8 @@ Generating docs for /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/Port.h
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:213: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::addOutlet()
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:186: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setInletsPos()
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIObject.h:193: warning: argument 'idx' of command @param is not found in the argument list of qtpd::UIObject::setOutletsPos()
-/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIPatchcord.h:75: warning: Found unknown command `\group'
-/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIPatchcord.h:54: warning: Found unknown command `\group'
+/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIPatchcord.h:82: warning: Found unknown command `\group'
+/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIPatchcord.h:55: warning: Found unknown command `\group'
 /home/travis/build/njazz/qtpd/qtpd_gui/objects/UIBox.h:74: warning: argument 'ev' of command @param is not found in the argument list of qtpd::UIBox::objectPressEvent(QGraphicsSceneMouseEvent *event)
 /home/travis/build/njazz/qtpd/qtpd_gui/objects/UIBox.h:74: warning: The following parameters of qtpd::UIBox::objectPressEvent(QGraphicsSceneMouseEvent *event) are not documented:
   parameter 'event'
@@ -816,6 +816,6 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-symbol cache used 2591/65536 hits=182512 misses=2591
-lookup cache used 4246/65536 hits=23500 misses=4485
+symbol cache used 2592/65536 hits=182513 misses=2592
+lookup cache used 4247/65536 hits=23470 misses=4486
 finished...

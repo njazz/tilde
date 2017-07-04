@@ -11,7 +11,7 @@ var searchData=
   ['registerinstance',['registerInstance',['../classqtpd_1_1_o_o_p_d.html#ab87578d701d09d6495e2f39b9c6df7dd',1,'qtpd::OOPD']]],
   ['relativeat',['relativeAt',['../classceammc_1_1_atom_list.html#af48ddc735be1a1a080ff79ae791d4d0e',1,'ceammc::AtomList::relativeAt(int pos)'],['../classceammc_1_1_atom_list.html#a07b82a5d4f0618f8a14e0b70d56adeac',1,'ceammc::AtomList::relativeAt(int pos) const ']]],
   ['release',['release',['../classqtpd_1_1_o_p_instance.html#a16996332ae6b9e7b720584625e4f8604',1,'qtpd::OPInstance']]],
-  ['remove',['remove',['../classceammc_1_1_atom_list.html#a929f479eb5bafe5725ea4ce8298f97e0',1,'ceammc::AtomList::remove()'],['../class_abstract___widget___list.html#a8b69053c439bf4038c164bdcc021b714',1,'Abstract_Widget_List::remove()']]],
+  ['remove',['remove',['../classqtpd_1_1_u_i_patchcord.html#a0d18e51db47af45b65700459e1825f25',1,'qtpd::UIPatchcord::remove()'],['../classceammc_1_1_atom_list.html#a929f479eb5bafe5725ea4ce8298f97e0',1,'ceammc::AtomList::remove()'],['../class_abstract___widget___list.html#a8b69053c439bf4038c164bdcc021b714',1,'Abstract_Widget_List::remove()']]],
   ['removeall',['removeAll',['../classceammc_1_1_atom_list.html#a5f756117cbb03f6531b0ed1a27a08961',1,'ceammc::AtomList::removeAll(const Atom &amp;a)'],['../classceammc_1_1_atom_list.html#a3e6d3901d56759ca0478a4ad1e324b03',1,'ceammc::AtomList::removeAll(AtomPredicate pred)']]],
   ['removed',['removed',['../class_abstract___widget___list.html#a1b3b5827601a72f46c4f2f24257ff36e',1,'Abstract_Widget_List']]],
   ['removexlets',['removeXLets',['../classqtpd_1_1_u_i_object.html#a4d8ece4d966bb25229d175a0da92345f',1,'qtpd::UIObject']]],
