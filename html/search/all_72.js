@@ -15,6 +15,7 @@ var searchData=
   ['remove',['remove',['../classceammc_1_1_atom_list.html#a929f479eb5bafe5725ea4ce8298f97e0',1,'ceammc::AtomList::remove()'],['../class_abstract___widget___list.html#a8b69053c439bf4038c164bdcc021b714',1,'Abstract_Widget_List::remove()']]],
   ['removeall',['removeAll',['../classceammc_1_1_atom_list.html#a5f756117cbb03f6531b0ed1a27a08961',1,'ceammc::AtomList::removeAll(const Atom &amp;a)'],['../classceammc_1_1_atom_list.html#a3e6d3901d56759ca0478a4ad1e324b03',1,'ceammc::AtomList::removeAll(AtomPredicate pred)']]],
   ['removed',['removed',['../class_abstract___widget___list.html#a1b3b5827601a72f46c4f2f24257ff36e',1,'Abstract_Widget_List']]],
+  ['removexlets',['removeXLets',['../classqtpd_1_1_u_i_object.html#a4d8ece4d966bb25229d175a0da92345f',1,'qtpd::UIObject']]],
   ['render_5finner_5fselector',['render_inner_selector',['../class_color___wheel_1_1_private.html#ab9dc926d753be65c7fc067aa1fd6f3f0',1,'Color_Wheel::Private']]],
   ['render_5fring',['render_ring',['../class_color___wheel_1_1_private.html#aad2b93ad82fd34f936f481e15e831cac',1,'Color_Wheel::Private']]],
   ['render_5fsquare',['render_square',['../class_color___wheel_1_1_private.html#a89185bfad78836778dbc4f93979ace35',1,'Color_Wheel::Private']]],

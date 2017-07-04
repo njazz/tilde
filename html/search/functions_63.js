@@ -81,6 +81,7 @@ var searchData=
   ['canvas_5fwritescalar',['canvas_writescalar',['../g__canvas_8h.html#a382b5bdd20094072ab458d3d223bf8db',1,'g_canvas.h']]],
   ['canvas_5fzapallfortemplate',['canvas_zapallfortemplate',['../g__canvas_8h.html#a8afaf9fde7bd8e6bd57d21bfe4480f70',1,'g_canvas.h']]],
   ['canvasaspdfilestring',['canvasAsPdFileString',['../classqtpd_1_1_canvas_data.html#aba763f0d79f33892a3269e9f9e671263',1,'qtpd::CanvasData']]],
+  ['canvasboxobserver',['CanvasBoxObserver',['../classqtpd_1_1_canvas_box_observer.html#a25fef2f942e75cec61e2dffb8e0d7635',1,'qtpd::CanvasBoxObserver']]],
   ['canvasdata',['canvasData',['../classqtpd_1_1_patch_window_controller.html#ae43f167cb947e9db38021cad3a3104a6',1,'qtpd::PatchWindowController::canvasData()'],['../classqtpd_1_1_canvas_data.html#a885d21d54488c30dd9b3ec70a00a4353',1,'qtpd::CanvasData::CanvasData()']]],
   ['canvasfrompdstrings',['canvasFromPdStrings',['../classqtpd_1_1_canvas_view.html#a4dadda554b129370df6a244fad1d0145',1,'qtpd::CanvasView']]],
   ['canvasispatch',['canvasIsPatch',['../classqtpd_1_1_o_o_p_d.html#abb8789fde690d6e92c92ac5a84630590',1,'qtpd::OOPD']]],

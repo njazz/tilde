@@ -84,6 +84,7 @@ var searchData=
   ['propertychangedsignal',['propertyChangedSignal',['../classqtpd_1_1_property_list.html#a14dca92ec761ba024e24299a0f717da5',1,'qtpd::PropertyList']]],
   ['propertylist',['PropertyList',['../classqtpd_1_1_property_list.html#a66afd40f65771ed469a3a74d1446d4f5',1,'qtpd::PropertyList']]],
   ['propertymatrixsize',['propertyMatrixSize',['../classqtpd_1_1_u_i_matrix.html#a8f4b2d0e49aec13bc008ef96e57c84bc',1,'qtpd::UIMatrix']]],
+  ['propertyshowboxes',['propertyShowBoxes',['../classqtpd_1_1_u_i_box.html#aa5b9b0eacd93f5e3f0130c01081e0121',1,'qtpd::UIBox']]],
   ['propertyupdate',['propertyUpdate',['../classqtpd_1_1_u_i_matrix.html#aa1dbab768f17342179bfa2cb347ac8a7',1,'qtpd::UIMatrix']]],
   ['pythonconsole',['pythonConsole',['../classqtpd_1_1_application_controller.html#a44b57839794b7091d344fcb819724a80',1,'qtpd::ApplicationController']]]
 ];
