@@ -4,7 +4,6 @@
 #ifndef CM_PATCHCORD_H
 #define CM_PATCHCORD_H
 
-
 #include "UIObject.h"
 
 #include <math.h>
@@ -44,10 +43,12 @@ private:
 
     patchcordTypeEnum _patchcordType;
 
-    QPainterPath _path;
+    //QPainterPath* _path;
+    QPainterPath _shape;
 
 public:
     explicit UIPatchcord(UIItem* _obj1, UIItem* _out1, UIItem* _obj2, UIItem* _in2);
+    ~UIPatchcord();
 
     void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*);
 
@@ -60,13 +61,19 @@ public:
 
     void setPatchcordType(patchcordTypeEnum v) { _patchcordType = v; }
 
+    //workaround
+    void remove() {_obj1 = 0; _obj2 = 0;}
+
     UIObject* obj1() { return (UIObject*)_obj1; }
     UIObject* obj2() { return (UIObject*)_obj2; }
 
     int outletIndex() { return ((Port*)_out1) ? ((Port*)_out1)->portIndex() : -1; }
     int inletIndex() { return ((Port*)_in2) ? ((Port*)_in2)->portIndex() : -1; }
 
-    QPainterPath shape() const { return _path; }
+//    QPainterPath shape() const
+//    {
+//        return _shape;
+//    }
 
     bool isConnectedToObject(UIItem* obj) { return ((obj == _obj1) || (obj == _obj2)); }
 

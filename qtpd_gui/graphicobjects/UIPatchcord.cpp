@@ -18,10 +18,27 @@ UIPatchcord::UIPatchcord(UIItem* obj1, UIItem* out1, UIItem* obj2, UIItem* in2)
     //
     endPoint();
     startPoint();
+
+    //_path = new QPainterPath();
+}
+
+UIPatchcord::~UIPatchcord()
+{
+
+    QPainterPath path;// = new QPainterPath();
+    _shape.swap(path);
+
+    _obj1 = 0;
+    _obj2 = 0;
+    //delete _path;
 }
 
 void UIPatchcord::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*)
 {
+    // TODO
+    // workaround - disables drawing for deleted object
+    if ((!_obj1) && (!_obj2)) return;
+
     QColor b_pc_color = (_patchcordType == cm_pt_signal) ? QColor(128, 160, 192) : QColor(0, 0, 0);
     // cleanup
     QColor pc_color = (hover()) ? QColor(255, 192, 0) : b_pc_color;
@@ -33,7 +50,6 @@ void UIPatchcord::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWid
 
     //todo option
 
-    QPainterPath path;
     // todo fix
     QPoint end = endPoint();
     QPoint start = startPoint();
@@ -57,11 +73,18 @@ void UIPatchcord::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWid
 
     // TODO positive size
 
-    path.moveTo(start);
-    path.cubicTo(b1, b2, end);
+    QPainterPath path;
 
-    painter->drawPath(path);
-    _path = path;
+    _shape = path;
+
+    _shape.moveTo(start);
+    _shape.cubicTo(b1, b2, end);
+
+    //    _shape.swap(*_path);
+
+    painter->drawPath(_shape);
+
+    //qDebug() << "patchcord paint";
 }
 
 // ---------
