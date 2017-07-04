@@ -188,6 +188,15 @@ void UIArray::setObjectData(QString message)
     if (list.at(0) == "ui.array")
         list.removeAt(0);
 
+    autoResize();
+
+    if (list.size()<1)
+    {
+        ServerInstance::error("array: bad arguments!");
+        setErrorBox(true);
+        return;
+    }
+
     _arrayName = list.at(0);
     if (list.size() > 1) {
         _arraySize = list.at(1).toFloat();

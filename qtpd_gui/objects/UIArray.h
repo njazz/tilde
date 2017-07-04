@@ -11,6 +11,7 @@
 
 #include "Port.h"
 #include "UIObject.h"
+#include "UIBox.h"
 
 #include "UIArrayEditor.h"
 
@@ -21,7 +22,7 @@ namespace qtpd {
 ////
 /// \brief gui object: array box (ui.array)
 ///
-class UIArray : public UIObject {
+class UIArray : public UIBox {
 
     Q_OBJECT
 
