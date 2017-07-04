@@ -106,7 +106,7 @@ void UIpdMsg::_doOutput()
                             outList.remove(0);
                             anyTo(0, l1[0].asSymbol(), outList);
                         } else
-                            symbolTo(0, l1[0].asSymbol());
+                            anyTo(0, l1[0].asSymbol(), AtomList());
                     } else {
                         listTo(0, l1);
                     }
