@@ -14,9 +14,6 @@ namespace qtpd {
 class UISubCanvas : public UIObject {
 private:
     CanvasData* _canvasData;
-    //    QGraphicsView _view;
-    //    QGraphicsProxyWidget _viewProxy;
-    //    QWidget _viewWidget;
 
     bool _isAbstraction;
     QString _abstractionPath;
@@ -28,8 +25,7 @@ public:
     {
         UISubCanvas* ret = new UISubCanvas();
 
-//        QStringList l = data.split(" ");l.removeFirst();
-//        data = l.join(" ");
+
 
         ret->setObjectData(data);
 
@@ -137,12 +133,7 @@ public:
     {
     }
 
-//    virtual void setServerObject(ServerObject* o)
-//    {
-//        UIObject::setServerObject(o);
-//        if (o)
-//            o->connectUI(this, &UISubCanvas::updateUI);
-//    };
+
 };
 }
 #endif // UISUBCANVAS_H

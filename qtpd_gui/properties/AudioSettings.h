@@ -81,7 +81,4 @@ public:
 };
 }
 
-//ideas:
-// -compatibility level for saving files
-
 #endif // CM_AudioSettings_H

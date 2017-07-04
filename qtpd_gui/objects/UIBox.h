@@ -26,20 +26,20 @@ private:
     // for abstracions
     bool _isAbstraction;
     QString _abstractionPath;
-    PatchWindowController *_subpatchController;
+
+    PatchWindowController* _subpatchController;
 
     //TEMP
     bool _isSubpatch;
     bool isSubpatch();
-
 
 public:
     explicit UIBox();
 
     static UIObject* createObj(QString data);
 
-    PatchWindowController* subpatchController(){return _subpatchController;};
-    virtual void setSubpatchController(PatchWindowController* cwindow) {_subpatchController = cwindow;};
+    PatchWindowController* subpatchController() { return _subpatchController; };
+    virtual void setSubpatchController(PatchWindowController* cwindow) { _subpatchController = cwindow; };
 
     ////
     /// \brief paint event
@@ -62,8 +62,6 @@ public:
     /// \brief mouse up
     ///
     void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev);
-
-    void setPdMessage(QString message);
 
     void setObjectData(QString message);
 

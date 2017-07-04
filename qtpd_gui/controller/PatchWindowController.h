@@ -70,6 +70,9 @@ private:
     CanvasView* _boxOnlyCanvas;
     QGraphicsScene* _boxOnlyScene;
 
+    //TODO
+    CanvasView* _activeCanvasView;
+
 public:
     PatchWindowController(ApplicationController* appController); //replace with parent (appcontroller)
 

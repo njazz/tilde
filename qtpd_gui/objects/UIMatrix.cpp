@@ -372,10 +372,10 @@ void UIMatrix:: mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 
 ///////
 
-void UIMatrix::setPdMessage(QString message)
-{
-    setObjectData(message);
-}
+//void UIMatrix::setPdMessage(QString message)
+//{
+//    setObjectData(message);
+//}
 
 void UIMatrix::updateUI(AtomList msg)
 {

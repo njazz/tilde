@@ -54,7 +54,7 @@ PatchWindowController::PatchWindowController(ApplicationController* appControlle
     //PatchWindowController(appController, serverInstance()->createCanvas());
 };
 
-PatchWindowController::PatchWindowController(ApplicationController* appController, ServerCanvas* canvas)
+PatchWindowController::PatchWindowController(ApplicationController* appController, ServerCanvas* canvas = 0)
 {
     _scene = new QGraphicsScene();
     _observer = new Observer();
@@ -66,6 +66,9 @@ PatchWindowController::PatchWindowController(ApplicationController* appControlle
 
     _canvasData = new CanvasData();
     _serverCanvas = canvas;
+
+//    if (!_serverCanvas)
+//        _serverCanvas = serverInstance()->createCanvas();
 
     //_canvasData->setServerCanvas(_serverCanvas);
 

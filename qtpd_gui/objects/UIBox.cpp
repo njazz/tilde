@@ -166,11 +166,6 @@ void UIBox::objectMoveEvent(QGraphicsSceneMouseEvent* event)
     }
 }
 
-void UIBox::setPdMessage(QString message)
-{
-    UIBox::setObjectData(message);
-}
-
 void UIBox::setObjectData(QString message)
 {
     UIObject::setObjectData(message);
@@ -262,5 +257,4 @@ bool UIBox::isSubpatch()
 {
     return _isSubpatch;
 }
-
 }
