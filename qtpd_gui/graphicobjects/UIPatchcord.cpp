@@ -3,6 +3,8 @@
 
 #include "UIPatchcord.h"
 
+#include "UIObject.h"
+
 namespace qtpd {
 UIPatchcord::UIPatchcord(UIItem* obj1, UIItem* out1, UIItem* obj2, UIItem* in2)
 {
@@ -20,6 +22,11 @@ UIPatchcord::UIPatchcord(UIItem* obj1, UIItem* out1, UIItem* obj2, UIItem* in2)
     startPoint();
 
     //_path = new QPainterPath();
+
+    // TODO
+    //_serverPatchcord = ((UIObject*)obj1)->serverObject()->parent()->createPatchcord(((UIObject*)obj1)->serverObject(), outlet, ((UIObject*)obj2)->serverObject(), inlet);
+
+    _serverPatchcord = 0;
 }
 
 UIPatchcord::~UIPatchcord()

@@ -46,6 +46,8 @@ private:
     //QPainterPath* _path;
     QPainterPath _shape;
 
+    ServerPatchcord* _serverPatchcord;
+
 public:
     explicit UIPatchcord(UIItem* _obj1, UIItem* _out1, UIItem* _obj2, UIItem* _in2);
     ~UIPatchcord();

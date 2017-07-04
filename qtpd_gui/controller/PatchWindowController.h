@@ -122,14 +122,16 @@ public:
     void patchcord(UIObject* src, int out, UIObject* dest, int in);
 
     // ------------
-    void deleteSelectedObjects();
+
 
     // TODO
     void deleteSelectedPatchcords();
     void deletePatchcordsFor(UIItem* obj);
     void deletePatchcordsForObject(UIObject* o);
+
     void deleteObject(UIObject* o);
     void deleteSelectedObjects(vector<UIObject*>);
+    void deleteSelectedObjects(); //
     void deleteSelectedPatchcords(vector<UIPatchcord*>);
 
     // ------------

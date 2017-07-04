@@ -655,6 +655,8 @@ void PatchWindowController::deleteSelectedPatchcords()
 
             it = _canvasData->patchcords()->erase(it);
 
+            p->remove();
+
         } else
             ++it;
     }
@@ -796,7 +798,9 @@ void PatchWindowController::patchcord(UIObject* obj1, int outlet, UIObject* obj2
 
         qDebug() << "patchcord: " << obj1->serverObject() << outlet << obj2->serverObject() << inlet;
 
+        //replace
         _serverCanvas->createPatchcord(obj1->serverObject(), outlet, obj2->serverObject(), inlet);
+
         _canvasData->addPatchcord(pc);
 
         //        cmp_patchcord((t_object*)obj1->pdObject(), outlet, (t_object*)obj2->pdObject(), inlet);
