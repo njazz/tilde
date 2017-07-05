@@ -18,6 +18,7 @@ unix {
     INSTALLS += target
 }
 
+#win32: DEFINES += PD_INTERNAL
 
 HEADERS += \
     src/ceammc.h \

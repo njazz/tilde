@@ -43,7 +43,10 @@ WithPython {
 SOURCES += python/PythonQtScriptingConsole.cpp \
     python/wrappers/py_wrappers.cpp \
     objects/UIScript.cpp \
-    objects/UIScriptBox.cpp
+    objects/UIScriptBox.cpp \
+    widgets/UIScriptTextEdit.cpp \
+    widgets/UIScriptEditor.cpp \
+    widgets/UIScriptCommon.cpp \
 
 
 HEADERS += \
@@ -78,7 +81,10 @@ HEADERS += \
     python/wrappers/py_qtpd.h \
     python/wrappers/py_wrappers.h \
     objects/UIScript.h \
-    objects/UIScriptBox.h
+    objects/UIScriptBox.h \
+    widgets/UIScriptTextEdit.h \
+    widgets/UIScriptEditor.h \
+    widgets/UIScriptCommon.h \
 
 
     LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt_QtAll$${DEBUG_EXT}.1.0.0
@@ -146,9 +152,9 @@ SOURCES += main.cpp\
 #
     datamodels/UIObjectData.cpp \
 #
-    widgets/UIScriptTextEdit.cpp \
-    widgets/UIScriptEditor.cpp \
-    widgets/UIScriptCommon.cpp \
+#    widgets/UIScriptTextEdit.cpp \
+#    widgets/UIScriptEditor.cpp \
+#    widgets/UIScriptCommon.cpp \
     oopd/UISignal.cpp \
     objects/UIMatrix.cpp \
     objects/UISubCanvas.cpp \
@@ -237,9 +243,9 @@ HEADERS  += \
     objects/UISlider.h \
     datamodels/UIObjectData.h \
 #
-    widgets/UIScriptTextEdit.h \
-    widgets/UIScriptEditor.h \
-    widgets/UIScriptCommon.h \
+#    widgets/UIScriptTextEdit.h \
+#    widgets/UIScriptEditor.h \
+#    widgets/UIScriptCommon.h \
     oopd/UISignal.h \
     objects/UIMatrix.h \
     objects/UISubCanvas.h \
@@ -279,8 +285,14 @@ FORMS    += \
 #linking
 
 win32: {
-    DEFINES += PD_INTERNAL WINVER=0x502
+    DEFINES += \
+# PD_INTERNAL \
+    WINVER=0x502 \
+    QTCOLORPICKER_LIBRARY
+
     #LIBS += $$OUT_PWD/../qtpd_lib/debug/libqtpd.a
+    LIBS += -L$$OUT_PWD/../../pd-server/src/qt-creator-project/debug -lpd-server
+    LIBS += -L$$OUT_PWD/../qtpd_ceammc_lib/debug -lqtpd_ceammc_lib
 }
 
 macx: {

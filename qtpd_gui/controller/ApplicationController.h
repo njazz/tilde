@@ -8,6 +8,10 @@
 
 #ifdef WITH_PYTHON
 #include "python/PythonQtScriptingConsole.h"
+#else
+namespace qtpd {
+class PythonQtScriptingConsole;
+}
 #endif
 
 #include <QApplication>

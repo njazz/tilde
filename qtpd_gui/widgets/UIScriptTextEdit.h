@@ -1,7 +1,9 @@
 #ifndef UISCRIPTTEXTEDIT_H
 #define UISCRIPTTEXTEDIT_H
 
+#ifdef WITH_PYTHON
 #include "PythonQt.h"
+#endif
 
 #include <QAbstractItemView>
 #include <QCompleter>
@@ -11,7 +13,11 @@
 
 #include <QStringListModel>
 
+#ifdef WITH_PYTHON
 #include "python/wrappers/py_wrappers.h"
+#else
+class PythonQtObjectPtr;
+#endif
 
 namespace qtpd {
 ////
@@ -23,13 +29,16 @@ class UIScriptTextEdit : public QPlainTextEdit {
 
 private:
     QCompleter* _completer;
+    #ifdef WITH_PYTHON
     PythonQtObjectPtr _context;
-
+    #endif
 public:
     explicit UIScriptTextEdit(QPlainTextEdit* parent = 0);
 
+    #ifdef WITH_PYTHON
     void setContext(PythonQtObjectPtr ctx) { _context = ctx; }
     PythonQtObjectPtr context() { return _context; }
+    #endif
 
 private slots:
     //-----------------------------------------------------------------------------

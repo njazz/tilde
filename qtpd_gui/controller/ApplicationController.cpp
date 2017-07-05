@@ -11,7 +11,9 @@
 
 #include "FileParser.h"
 
+#ifdef WITH_PYTHON
 #include "python/wrappers/py_wrappers.h"
+#endif
 
 #include "ServerWorker.h"
 
@@ -22,6 +24,8 @@
 #include "PropertiesWindow.h"
 
 #include "ObjectLoader.h"
+
+#include <assert.h>
 
 namespace qtpd {
 
@@ -179,7 +183,7 @@ void ApplicationController::pythonConsole()
     }
 
 #else
-    cmp_post("This build is compiled without Python!");
+    ServerInstance::post("This build is compiled without Python!");
 #endif
 }
 

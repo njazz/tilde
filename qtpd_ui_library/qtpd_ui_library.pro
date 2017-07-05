@@ -10,9 +10,10 @@ TARGET = qtpd_ui
 
 TEMPLATE = lib
 
-QMAKE_LFLAGS += -undefined dynamic_lookup
+unix:QMAKE_LFLAGS += -undefined dynamic_lookup
 
-DEFINES += QT_DEPRECATED_WARNINGS
+DEFINES += QT_DEPRECATED_WARNINGS \
+    PD_INTERNAL
 
 SOURCES += \
     ../qtpd_ceammc_lib/src/ceammc_atomlist.cpp \
@@ -35,6 +36,7 @@ SOURCES += \
 
 HEADERS +=\
     ../../pd-server/pure-data-src/src/m_pd.h \
+    ../../pd-server/pure-data-src/src/m_imp.h \
     ../qtpd_ceammc_lib/src/ceammc_object.h \
     ../qtpd_ceammc_lib/src/ceammc_factory.h \
     ../qtpd_ceammc_lib/src/ceammc_format.h \
@@ -60,3 +62,7 @@ unix {
     INSTALLS += target
 }
 
+win32:{
+    LIBS += -L$$OUT_PWD/../../pd-server/src/qt-creator-project/debug -lpd-server \
+    -L$$OUT_PWD/../qtpd_ceammc_lib/debug -lqtpd_ceammc_lib
+}
