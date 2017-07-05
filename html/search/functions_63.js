@@ -147,7 +147,6 @@ var searchData=
   ['colorvalue',['colorValue',['../class_hue___slider.html#a180567e17c3b9bc2ccd7e43cae6ae1f3',1,'Hue_Slider']]],
   ['comparisoncolor',['comparisonColor',['../class_color___preview.html#a4b0b1ecc951cc194b351fcd3bd39da52',1,'Color_Preview']]],
   ['contains',['contains',['../classceammc_1_1_atom_list.html#a64fec50cf58275a65472a2dc9a706455',1,'ceammc::AtomList']]],
-  ['context',['context',['../classqtpd_1_1_u_i_script_text_edit.html#ac8c44e94e6d826790065a04cf462e787',1,'qtpd::UIScriptTextEdit']]],
   ['controller',['controller',['../classqtpd_1_1_patch_window.html#a1ff4345e33d74fd202b8f2d9edfad73e',1,'qtpd::PatchWindow']]],
   ['controllerobserver',['controllerObserver',['../classqtpd_1_1_application_controller.html#a9e531bfea32cc3561d1c3d318949d865',1,'qtpd::ApplicationController::controllerObserver()'],['../classqtpd_1_1_controller_observer.html#aeabbacabed068072fe07653e51aca17e',1,'qtpd::ControllerObserver::ControllerObserver()']]],
   ['copy',['copy',['../classqtpd_1_1_canvas_data.html#aad8dca9630dd41adb78a79335a69adbd',1,'qtpd::CanvasData']]],
