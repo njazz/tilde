@@ -41,7 +41,7 @@ UIScript::UIScript()
 
     setSize(300, 200);
 
-    _objectDataModel.setObjectSize(os_Free, 300, 200);
+    objectData()->setObjectSize(os_Free, 300, 200);
 
     resizeEvent();
 }
@@ -69,7 +69,7 @@ UIObject* UIScript::createObj(QString data)
 {
     UIScript* ret = new UIScript();
 
-    ret->setObjectData(data);
+    ret->fromQString(data);
 
     return ret;
 }
@@ -174,12 +174,12 @@ void UIScript::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidge
 
 void UIScript::setPdMessage(QString message)
 {
-    setObjectData(message);
+    fromQString(message);
 }
 
-void UIScript::setObjectData(QString message)
+void UIScript::fromQString(QString message)
 {
-    UIObject::setObjectData(message);
+    UIObject::fromQString(message);
     setSize(300, 200);
 }
 

@@ -16,7 +16,7 @@ UIInstance::UIInstance()
     setErrorBox(false);
     //setSubpatchWindow(0);
 
-    _objectDataModel.setObjectSize(os_FixedHeight, 40, 20);
+    objectData()->setObjectSize(os_FixedHeight, 40, 20);
     _opInstance = 0;
     _hasType = false;
 }

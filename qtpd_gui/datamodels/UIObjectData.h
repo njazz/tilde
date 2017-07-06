@@ -23,7 +23,7 @@ typedef std::vector<Port*> portItemVec;
 class UIObjectData : public QObject {
     Q_OBJECT
 
-    QString _objectData;
+    QString _dataString;
     PropertyList* _properties;
 
     QString _fullHelpName;
@@ -34,7 +34,7 @@ class UIObjectData : public QObject {
     int _minimumBoxHeight;
 
 public:
-    QString objectData();
+    QString toQString();
     PropertyList* properties();
 
     QString fullHelpName();

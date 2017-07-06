@@ -109,10 +109,10 @@ CanvasView* PatchWindowController::boxOnlyCanvas()
         _boxOnlyCanvas->setController(this);
     }
 
-    //    QGraphicsScene* _boxOnlyScene = new QGraphicsScene();
+    QGraphicsScene* _boxOnlyScene = new QGraphicsScene();
 
-    //    if (!_boxOnlyCanvas->scene())
-    //        _boxOnlyCanvas->setScene(_boxOnlyScene);
+    //   if (!_boxOnlyCanvas->scene())
+    _boxOnlyCanvas->setScene(_boxOnlyScene);
 
     _boxOnlyCanvas->setReadOnly(true);
 
@@ -133,7 +133,31 @@ void PatchWindowController::syncBoxOnlyCanvas()
     objectVec::iterator it;
 
     for (it = _canvasData->boxes()->begin(); it != _canvasData->boxes()->end(); ++it) {
-        _boxOnlyCanvas->scene()->addItem(*it);
+
+        UIObject* src = *it;
+
+        QString data = src->toQString();
+
+        //
+        if (data != "") {
+            UIObject* dest = ObjectLoader::inst().createUIObject(data);
+
+            dest->setObjectData(src->objectData());
+
+            if (dest) {
+
+                dest->setServerObject(src->serverObject());
+                dest->move(src->pos().x(), src->pos().y());
+
+                doCreateObject(dest);
+
+                _boxOnlyCanvas->scene()->addItem(dest);
+            } else {
+                ServerInstance::post("bad dest object");
+            }
+        } else {
+            ServerInstance::post("bad data for object");
+        }
     }
 
     _boxOnlyCanvas->update();
@@ -216,9 +240,6 @@ void PatchWindowController::doCreateObject(UIObject* uiObject)
     connect(uiObject, &UIObject::sendMessage, _appController->serverWorker(), &ServerWorker::sendMessageToObject);
     uiObject->setEditModeRef(_windows[0]->canvasView()->getEditModeRef());
 
-    _canvasData->addUniqueBox(_canvasData->boxes(), uiObject);
-    _scene->addItem(uiObject);
-
     connect(uiObject, &UIObject::selectBox, _windows[0]->canvasView(), &CanvasView::slotSelectBox);
     connect(uiObject, &UIObject::moveBox, _windows[0]->canvasView(), &CanvasView::slotMoveBox);
 }
@@ -242,10 +263,6 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
     //ServerInstance::post("create: " + name);
 
     UIObject* uiObject = ObjectLoader::inst().createUIObject(name.c_str());
-
-    //removed
-    //connect(this, &PatchWindowController::signalCreateObject, _appController, &ApplicationController::slotCreateObject);
-
     ServerObject* serverObject = _appController->slotCreateObject(_serverCanvas, name); //emit signalCreateObject(_serverCanvas, name);
 
     // TODO wait?
@@ -261,6 +278,9 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
     uiObject->move(pos.x(), pos.y());
 
     doCreateObject(uiObject);
+
+    _canvasData->addUniqueBox(_canvasData->boxes(), uiObject);
+    _scene->addItem(uiObject);
 
     return uiObject;
 
@@ -371,7 +391,7 @@ void PatchWindowController::creatBoxForSubpatch(PatchWindowController* controlle
     }
 
     uiObject->move(pos.x(), pos.y());
-    uiObject->setObjectData(data);
+    uiObject->fromQString(data);
 
     // TODO move inside controller->subpatchBox
     uiObject->setServerObject(controller->serverCanvasAsObject());

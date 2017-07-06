@@ -15,7 +15,7 @@ UIToggle::UIToggle()
     //setPdObjectName("ui.toggle");
 
     setSize(20, 20);
-    _objectDataModel.setObjectSize(os_Square, 20, 20);
+    objectData()->setObjectSize(os_Square, 20, 20);
 
     deselect();
     _clicked = false;
@@ -28,7 +28,7 @@ UIObject* UIToggle::createObj(QString data)
 {
     UIToggle* ret = new UIToggle();
 
-    ret->setObjectData(data);
+    ret->fromQString(data);
 
     return ret;
 }
@@ -129,7 +129,7 @@ void UIToggle::objectPressEvent(QGraphicsSceneMouseEvent* ev)
 
 void UIToggle::setPdMessage(QString message)
 {
-    setObjectData(message);
+    fromQString(message);
 }
 
 void UIToggle::updateUI(void* uiobj, ceammc::AtomList msg)

@@ -68,7 +68,7 @@ public:
 
     //void setPdMessage(QString message);
 
-    void setObjectData(QString message);
+    void fromQString(QString message);
 
     virtual void sync();
 

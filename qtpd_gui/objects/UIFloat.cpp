@@ -15,7 +15,7 @@ UIFloat::UIFloat()
 {
 
     setSize(35, 20);
-    _objectDataModel.setObjectSize(os_FixedHeight, 30, 20);
+    objectData()->setObjectSize(os_FixedHeight, 30, 20);
 
     deselect();
 
@@ -24,7 +24,7 @@ UIFloat::UIFloat()
 
     resizeEvent();
 
-    setObjectData("0");
+    fromQString("0");
 }
 
 UIObject* UIFloat::createObj(QString)
@@ -74,7 +74,7 @@ void UIFloat::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget
     p->setPen(QPen(QColor(0, 0, 0), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
     p->setFont(QFont(PREF_QSTRING("Font"), 11, 0, false));
-    p->drawText(2, 3, width() - 2, height() - 3, 0, _objectDataModel.objectData(), 0);
+    p->drawText(2, 3, width() - 2, height() - 3, 0, objectData()->toQString(), 0);
 }
 
 void UIFloat::autoResize()
@@ -83,8 +83,8 @@ void UIFloat::autoResize()
     QFontMetrics fm(myFont);
 
     setWidth((int)fm.width(QString("00.00")) + 5); //todo
-    if (width() < _objectDataModel.minimumBoxWidth())
-        setWidth(_objectDataModel.minimumBoxWidth());
+    if (width() < objectData()->minimumBoxWidth())
+        setWidth(objectData()->minimumBoxWidth());
 }
 
 ///////////////////
@@ -113,12 +113,12 @@ void UIFloat::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
     if ((event->buttons() & Qt::LeftButton) && (getEditMode() != em_Unlocked)) {
         //todo fix
         //
-        std::string str = std::to_string(::atof(objectData().toStdString().c_str()) - event->pos().y() + _startY);
-        setObjectData(str.c_str()); //- startY
+        std::string str = std::to_string(::atof(toQString().toStdString().c_str()) - event->pos().y() + _startY);
+        fromQString(str.c_str()); //- startY
         autoResize();
         _startY = event->pos().y();
 
-        QString send = "set " + _objectDataModel.objectData();
+        QString send = "set " + objectData()->toQString();
 
         emit sendMessage(this->serverObject(), send);
         emit sendMessage(this->serverObject(), QString("bang "));
@@ -166,7 +166,7 @@ void UIFloat::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 void UIFloat::updateUI(AtomList msg)
 {
     if (msg.size() > 0) {
-        setObjectData(msg.at(0).asString().c_str());
+        fromQString(msg.at(0).asString().c_str());
         emit callRepaint();
     }
 }
@@ -179,7 +179,7 @@ std::string UIFloat::asPdFileString()
     ret = "#X obj ";
     ret += std::to_string(x()) + " " + std::to_string(y()) + " ";
     ret += "ui.float ";
-    ret += ((objectData() == "") ? ((std::string) "") : (_objectDataModel.objectData().toStdString() + " ")) + properties()->asPdFileString();
+    ret += ((toQString() == "") ? ((std::string) "") : (objectData()->toQString().toStdString() + " ")) + properties()->asPdFileString();
 
     return ret;
 }

@@ -20,7 +20,7 @@ UISubpatch::UISubpatch()
     setBgColor(QColor(240, 240, 240));
     setErrorBox(false);
 
-    _objectDataModel.setObjectSize(os_FixedHeight, 40, 20);
+    objectData()->setObjectSize(os_FixedHeight, 40, 20);
 
     setAcceptHoverEvents(true);
 
@@ -42,7 +42,7 @@ std::string UISubpatch::asPdFileString()
     ret += "#X restore ";
     ret += std::to_string(pos().x()) + " " + std::to_string(pos().y()) + " ";
 
-    ret += _objectDataModel.objectData().toStdString() + properties()->asPdFileString();
+    ret += objectData()->toQString().toStdString() + properties()->asPdFileString();
     //ret += objectData();
 
     return ret;

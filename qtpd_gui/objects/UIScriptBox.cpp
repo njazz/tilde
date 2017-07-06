@@ -63,7 +63,7 @@ UIObject* UIScriptBox::createObj(QString data)
 {
     UIScriptBox* ret = new UIScriptBox();
 
-    ret->setObjectData(data);
+    ret->fromQString(data);
 
     return ret;
 }
@@ -226,7 +226,7 @@ void UIScriptBox::objectPressEvent(QGraphicsSceneMouseEvent* event)
 
 void UIScriptBox::setPdMessage(QString message)
 {
-    setObjectData(message);
+    fromQString(message);
 
     setSize(300, 200);
 }

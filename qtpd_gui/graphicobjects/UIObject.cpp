@@ -30,6 +30,9 @@ UIObject::UIObject(UIItem* parent)
 
     setParent(parent);
 
+    _objectData = new UIObjectData;
+    objectData()->setObjectSize(os_FixedHeight, 40, 20);
+
     //setPdObject(0);
 
     _inlets = new portItemVec;
@@ -45,12 +48,12 @@ UIObject::UIObject(UIItem* parent)
 
     initProperties();
 
-    createContextMenu();
+    _pmProperties = 0;
+
+    createPopupMenu();
 
     //this is default
     //_objectSizeMode = os_FixedHeight;
-
-    _objectDataModel.setObjectSize(os_FixedHeight, 40, 20);
 
     setAcceptHoverEvents(true);
 
@@ -63,16 +66,45 @@ UIObject::UIObject(UIItem* parent)
 
 //---------------------------------------
 
+//UIObject::UIObject(const UIObject& source)
+//{
+//}
+
+//UIObject& UIObject::operator=(const UIObject& source)
+//{
+//}
+
+//---------------------------------------
+
+CanvasView* UIObject::parentCanvasView() { return _parentCanvasView; };
+void UIObject::setParentCanvasView(CanvasView* v) { _parentCanvasView = v; }
+
+PatchWindowController* UIObject::parentController() { return _parentController; }
+void UIObject::setParentController(PatchWindowController* p) { _parentController = p; }
+
+ServerObject* UIObject::serverObject() { return _serverObject; };
+void UIObject::setServerObject(ServerObject* o) { _serverObject = o; };
+
+void UIObject::setObjectData(UIObjectData* m) { _objectData = m; }
+UIObjectData* UIObject::objectData()
+{
+    return _objectData;
+}
+
+ObjectObserver* UIObject::observer() { return _observer; }
+
+//---------------------------------------
+
 void UIObject::resizeBox(int dx, int dy)
 {
     QRect r = boundingRect().toRect();
 
-    if (_objectDataModel.objectSizeMode() != os_Fixed)
+    if (objectData()->objectSizeMode() != os_Fixed)
         setWidth(boundingRect().width() + dx);
-    if (_objectDataModel.objectSizeMode() == os_Free)
+    if (objectData()->objectSizeMode() == os_Free)
         setHeight(boundingRect().height() + dy);
 
-    if (_objectDataModel.objectSizeMode() == os_Square) {
+    if (objectData()->objectSizeMode() == os_Square) {
         setHeight(boundingRect().width());
     }
 
@@ -87,16 +119,16 @@ void UIObject::initProperties()
 {
     //connect(_objectDataModel.properties(), &PropertyList::propertyChangedSignal, this, &UIObject::propertyChanged);
 
-    _objectDataModel.properties()->create("Size", "Box", "0.1", boundingRect().size());
-    _objectDataModel.properties()->create("Position", "Box", "0.1", pos());
-    _objectDataModel.properties()->create("FontSize", "Box", "0.1", 11.);
+    objectData()->properties()->create("Size", "Box", "0.1", boundingRect().size());
+    objectData()->properties()->create("Position", "Box", "0.1", pos());
+    objectData()->properties()->create("FontSize", "Box", "0.1", 11.);
 
-    _objectDataModel.properties()->create("PresetName", "Bindings", "0.1", gensym(""));
-    _objectDataModel.properties()->create("SendSymbol", "Bindings", "0.1", gensym(""));
-    _objectDataModel.properties()->create("ReceiveSymbol", "Bindings", "0.1", QString(""));
-    _objectDataModel.properties()->create("AutoOSCSymbol", "Bindings", "0.1", gensym(""));
+    objectData()->properties()->create("PresetName", "Bindings", "0.1", gensym(""));
+    objectData()->properties()->create("SendSymbol", "Bindings", "0.1", gensym(""));
+    objectData()->properties()->create("ReceiveSymbol", "Bindings", "0.1", QString(""));
+    objectData()->properties()->create("AutoOSCSymbol", "Bindings", "0.1", gensym(""));
 
-    _objectDataModel.properties()->create("BorderColor", "Color", "0.1", QColor(192, 192, 192, 255));
+    objectData()->properties()->create("BorderColor", "Color", "0.1", QColor(192, 192, 192, 255));
 
     PROPERTY_LISTENER("Size", &UIObject::propertySize);
     PROPERTY_LISTENER("FontSize", &UIObject::propertySize);
@@ -161,30 +193,30 @@ void UIObject::propertyReceiveSymbol()
 
 PropertyList* UIObject::properties()
 {
-    return _objectDataModel.properties(); //&_properties;
+    return objectData()->properties(); //&_properties;
 }
 
-void UIObject::createContextMenu()
+void UIObject::createPopupMenu()
 {
-    pmProperties = new QAction(tr("Properties"), this);
-    pmProperties->setShortcut(tr("Ctrl+Shift+P"));
-    connect(pmProperties, &QAction::triggered, this, &UIObject::openPropertiesWindow);
+    _pmProperties = new QAction(tr("Properties"), this);
+    _pmProperties->setShortcut(tr("Ctrl+Shift+P"));
+    connect(_pmProperties, &QAction::triggered, this, &UIObject::openPropertiesWindow);
 
-    pmHelp = new QAction(tr("Help"), this);
-    pmHelp->setShortcut(tr("Ctrl+Shift+H"));
-    connect(pmHelp, &QAction::triggered, this, &UIObject::openHelpWindow);
+    _pmHelp = new QAction(tr("Help"), this);
+    _pmHelp->setShortcut(tr("Ctrl+Shift+H"));
+    connect(_pmHelp, &QAction::triggered, this, &UIObject::openHelpWindow);
 
-    pmOpen = new QAction(tr("Open"), this);
-    pmOpen->setShortcut(tr("Ctrl+R"));
-    pmOpen->setEnabled(false);
+    _pmOpen = new QAction(tr("Open"), this);
+    _pmOpen->setShortcut(tr("Ctrl+R"));
+    _pmOpen->setEnabled(false);
     //connect(pmProperties, &QAction::triggered, this, &UIObjectItem::pmProperties);
 
     //------------
 
-    _popupMenu.addAction(pmProperties);
-    _popupMenu.addAction(pmHelp);
+    _popupMenu.addAction(_pmProperties);
+    _popupMenu.addAction(_pmHelp);
     _popupMenu.addSeparator();
-    _popupMenu.addAction(pmOpen);
+    _popupMenu.addAction(_pmOpen);
 }
 
 void UIObject::showPopupMenu(QPoint pos)
@@ -206,6 +238,7 @@ void UIObject::setInletsPos()
         float y = 0;
 
         _inlets->at(i)->move(x, y);
+
         //if (_inlets->at(i)->scene())
         //_inlets->at(i)->viewport()->update();
     }
@@ -223,6 +256,7 @@ void UIObject::setOutletsPos()
         float y = boundingRect().height() - 3;
 
         _outlets->at(i)->move(x, y);
+
         //if (_outlets->at(i)->scene())
         //_outlets->at(i)->viewport()->update();
     }
@@ -356,6 +390,12 @@ int UIObject::outletCount()
 
 // ------------------------------
 
+void UIObject::objectPressEvent(QGraphicsSceneMouseEvent*) {}
+void UIObject::objectMoveEvent(QGraphicsSceneMouseEvent*) {}
+void UIObject::objectReleaseEvent(QGraphicsSceneMouseEvent*) {}
+
+// ------------------------------
+
 void UIObject::mousePressEvent(QGraphicsSceneMouseEvent* event)
 {
 
@@ -385,10 +425,6 @@ void UIObject::mousePressEvent(QGraphicsSceneMouseEvent* event)
         return;
     }
 
-    //if (event->button() & Qt::LeftButton) {
-
-    //}
-
     objectPressEvent(event);
 
     if (event) {
@@ -416,9 +452,9 @@ void UIObject::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 
 // ---------------------------------
 
-void UIObject::setObjectData(QString objData)
+void UIObject::fromQString(QString objData)
 {
-    _objectDataModel.setData(objData);
+    objectData()->setData(objData);
 }
 
 // ----------------------------
@@ -435,13 +471,16 @@ void UIObject::sync()
     int in_c = _serverObject->inletCount();
     int out_c = _serverObject->outletCount();
 
-    //qDebug() << "i/o " << in_c << out_c;
-
     for (int i = 0; i < in_c; i++)
         addInlet();
     for (int i = 0; i < out_c; i++)
         addOutlet();
 };
+
+//UIObject* UIObject::clone() const
+//{
+//    return new UIObject(*this);
+//}
 
 void UIObject::autoResize()
 {
@@ -460,16 +499,16 @@ void UIObject::autoResize()
     //    }
 }
 
-QString UIObject::objectData()
+QString UIObject::toQString()
 {
-    return _objectDataModel.objectData(); //_objectData;
+    if (objectData())
+        return objectData()->toQString(); //_objectData;
+    else
+        return "";
 }
 
-//void* UIObject::pdObject() { return _objectDataModel.pdObject(); }
-//void UIObject::setPdObject(void* obj) { _objectDataModel.setPdObject(obj); }
-
-bool UIObject::errorBox() { return _objectDataModel.errorBox(); }
-void UIObject::setErrorBox(bool val) { _objectDataModel.setErrorBox(val); }
+bool UIObject::errorBox() { return objectData()->errorBox(); }
+void UIObject::setErrorBox(bool val) { objectData()->setErrorBox(val); }
 
 std::string UIObject::asPdFileString()
 {
@@ -478,33 +517,20 @@ std::string UIObject::asPdFileString()
     ret = "#X obj ";
     ret += std::to_string(int(x())) + " " + std::to_string(int(y())) + " ";
 
-    //ret += pdObjectName_ + " " ;//
-
-    ret += ((_objectDataModel.objectData() == "") ? ((std::string) "") : (_objectDataModel.objectData().toStdString() + " ")) + _objectDataModel.properties()->asPdFileString();
+    ret += ((objectData()->toQString() == "") ? ((std::string) "") : (objectData()->toQString().toStdString() + " ")) + objectData()->properties()->asPdFileString();
 
     return ret;
 }
-
-//QMainWindow* UIObject::subpatchWindow()
-//{
-//    return _SubpatchWindow;
-//}
-
-//void UIObject::setSubpatchWindow(QMainWindow* cwindow)
-//{
-//    _SubpatchWindow = cwindow;
-//}
 
 void UIObject::setEditModeRef(t_editMode* canvasEditMode)
 {
     UIItem::setEditModeRef(canvasEditMode);
 
-    // todo
-    for (int i = 0; i < _inlets->size(); i++) {
+    for (size_t i = 0; i < _inlets->size(); i++) {
         inletAt(i)->setEditModeRef(canvasEditMode);
     }
 
-    for (int i = 0; i < _outlets->size(); i++) {
+    for (size_t i = 0; i < _outlets->size(); i++) {
         outletAt(i)->setEditModeRef(canvasEditMode);
     }
 }
@@ -519,22 +545,16 @@ void UIObject::doSetSize(QSize size)
     UIItem::setSize(size);
 
     //todo fixed width
-    if (boundingRect().width() < _objectDataModel.minimumBoxWidth())
-        setWidth(_objectDataModel.minimumBoxWidth());
-    if (boundingRect().height() < _objectDataModel.minimumBoxHeight())
-        setHeight(_objectDataModel.minimumBoxHeight());
+    if (boundingRect().width() < objectData()->minimumBoxWidth())
+        setWidth(objectData()->minimumBoxWidth());
+    if (boundingRect().height() < objectData()->minimumBoxHeight())
+        setHeight(objectData()->minimumBoxHeight());
 
     _sizeBox->move(boundingRect().width() - 7, boundingRect().height() - 7);
 
     setInletsPos();
     setOutletsPos();
 }
-
-//void UIObject::setSize(QSize size)
-//{
-
-//    properties()->set("Size", boundingRect().size());
-//}
 
 void UIObject::resizeEvent() //QGraphicsSceneResizeEvent *event)
 {
@@ -568,78 +588,44 @@ void UIObject::hoverLeaveEvent(QGraphicsSceneHoverEvent*)
 
 //---------------------------------
 
-/*
-////
-/// \brief set secondary 'minimum width' value - used for object box resize
-/// \param w
-///
-void UIObject::setMinimumBoxWidth(int w)
-{
-    _minimumBoxWidth = w;
-}
-
-////
-/// \brief set secondary 'minimum height' value - used for object box resize
-/// \param w
-///
-void UIObject::setMinimumBoxHeight(int h)
-{
-    _minimumBoxHeight = h;
-}
-
-////
-/// \brief get secondary 'minimum width' value - used for object box resize
-/// \param w
-///
-int UIObject::minimumBoxWidth()
-{
-    return _minimumBoxWidth;
-}
-
-////
-/// \brief get secondary 'minimum height' value - used for object box resize
-/// \param w
-///
-int UIObject::minimumBoxHeight()
-{
-    return _minimumBoxHeight;
-}
-*/
-
 // ??
-void UIObject::hide()
-{
+//void UIObject::hide()
+//{
 
-    //    if (subpatchWindow()) {
-    //        qDebug("hide subcanvas window");
+//    //    if (subpatchWindow()) {
+//    //        qDebug("hide subcanvas window");
 
-    //        subpatchWindow()->hide();
-    //        delete _SubpatchWindow;
-    //    }
-}
+//    //        subpatchWindow()->hide();
+//    //        delete _SubpatchWindow;
+//    //    }
+//}
 
 void UIObject::hideSizeBox()
 {
     _sizeBox->hide();
 }
 
+SizeBox* UIObject::sizeBox()
+{
+    return _sizeBox;
+}
+
 void UIObject::setHelpName(QString name)
 {
-    _objectDataModel.setFullHelpName(name);
+    objectData()->setFullHelpName(name);
 }
 
 QString UIObject::fullHelpName()
 {
 
-    QString name = _objectDataModel.fullHelpName();
+    QString name = objectData()->fullHelpName();
 
     QStringList paths = Preferences::inst().paths();
 
     if (paths.size() == 0) {
-        _objectDataModel.setFullHelpName("");
+        objectData()->setFullHelpName("");
 
-        // TODO
-        //cmp_post("Help: bad search paths");
+        ServerInstance::post("Help: bad search paths");
         return "";
     }
 
@@ -664,9 +650,6 @@ QString UIObject::fullHelpName()
 
     QString p1 = "Help: not found: " + name;
 
-    // TODO
-    //cmp_post(p1.toStdString().c_str());
-
     return name;
 }
 
@@ -690,15 +673,12 @@ void UIObject::openHelpWindow()
 
 void UIObject::s_repaint() //needed for proper threading
 {
-    //qDebug() << "s_repaint";
+
     update();
 }
 
 void UIObject::propertyChanged(QString pname)
 {
-
-    //if (pname == "Size")
-    //    setSize(properties()->get("Size")->asQSize());
 
     //just visuals
     if (pname == "FontSize")
@@ -711,7 +691,6 @@ void UIObject::propertyChanged(QString pname)
 
 void ObjectObserver::update()
 {
-    //qDebug() << "ui object observer update";
 
     if (_object) {
         _object->updateUI(data());

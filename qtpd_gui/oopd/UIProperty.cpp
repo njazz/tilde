@@ -16,7 +16,7 @@ UIProperty::UIProperty()
     setErrorBox(false);
     //setSubpatchWindow(0);
 
-    _objectDataModel.setObjectSize(os_FixedHeight, 40, 20);
+    objectData()->setObjectSize(os_FixedHeight, 40, 20);
 }
 
 UIObject* UIProperty::createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent)

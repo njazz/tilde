@@ -51,7 +51,7 @@ public:
 
     // ---------------------------
 
-    virtual void setObjectData(QString objData);
+    virtual void fromQString(QString objData);
 
 
     bool eventFilter(QObject*, QEvent* event);

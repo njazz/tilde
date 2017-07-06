@@ -50,7 +50,7 @@ public:
 
     void setPdMessage(QString message);
 
-    virtual void setObjectData(QString message);
+    virtual void fromQString(QString message);
 
     virtual void updateUI(AtomList list);
 

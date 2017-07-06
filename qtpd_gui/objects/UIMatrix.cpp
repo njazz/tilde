@@ -13,7 +13,7 @@ UIMatrix::UIMatrix()
 {
     setSize(20, 20);
 
-    _objectDataModel.setObjectSize(os_FixedHeight, 100, 20);
+    objectData()->setObjectSize(os_FixedHeight, 100, 20);
 
     deselect();
     _clicked = false;
@@ -32,7 +32,7 @@ UIMatrix::UIMatrix()
     //        QStringList l = data.split(" ");l.removeFirst();
     //        data = l.join(" ");
 
-    ret->setObjectData(data);
+    ret->fromQString(data);
 
     return ret;
 }
@@ -75,7 +75,7 @@ Q_SLOT void UIMatrix::propertyMatrixSize()
         if (bwidth < 20)
             bwidth = 20;
 
-        _objectDataModel.setObjectSize(os_FixedHeight, bwidth * count, bwidth);
+        objectData()->setObjectSize(os_FixedHeight, bwidth * count, bwidth);
     }
 
     if (matrixType() == mt_VRadio) {
@@ -86,7 +86,7 @@ Q_SLOT void UIMatrix::propertyMatrixSize()
         if (bheight < 20)
             bheight = 20;
 
-        _objectDataModel.setObjectSize(os_FixedWidth, bheight, bheight * count);
+        objectData()->setObjectSize(os_FixedWidth, bheight, bheight * count);
     }
 }
 // ------------------------------------------

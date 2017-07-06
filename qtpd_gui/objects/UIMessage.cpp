@@ -31,7 +31,9 @@ UIMessage::UIMessage()
     connect(_editor, &QLineEdit::editingFinished, this, &UIMessage::editorDone);
     connect(_editor, &QLineEdit::textEdited, this, &UIMessage::editorChanged);
 
-    _objectDataModel.setObjectSize(os_FixedHeight, 40, 20);
+    //_objectData = new UIObjectData;
+
+    objectData()->setObjectSize(os_FixedHeight, 40, 20);
 
     setSize(40, 20);
 
@@ -66,7 +68,7 @@ UIObject* UIMessage::createObj(QString data)
 {
     UIMessage* ret = new UIMessage();
 
-    ret->setObjectData(data);
+    ret->fromQString(data);
 
     ret->autoResize();
 
@@ -106,7 +108,7 @@ void UIMessage::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidg
     p->setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
     p->setFont(QFont(PREF_QSTRING("Font"), 11, 0, false));
-    p->drawText(2, 3, width() - 2, height() - 3, 0, _objectDataModel.objectData(), 0);
+    p->drawText(2, 3, width() - 2, height() - 3, 0, objectData()->toQString(), 0);
 }
 
 void UIMessage::resizeEvent()
@@ -121,7 +123,7 @@ void UIMessage::objectPressEvent(QGraphicsSceneMouseEvent* ev)
 {
 
     if ((getEditMode() == em_Unlocked) && isSelected()) {
-        _editor->setText(QString(_objectDataModel.objectData()));
+        _editor->setText(QString(objectData()->toQString()));
         _editor->show();
         _editor->setFocusPolicy(Qt::StrongFocus);
         _editor->setFocus();
@@ -171,7 +173,7 @@ void UIMessage::objectReleaseEvent(QGraphicsSceneMouseEvent*)
 
 // ------------------------------------
 
-void UIMessage::setObjectData(QString objData)
+void UIMessage::fromQString(QString objData)
 {
     // TODO fix!
     if (objData.split(" ").at(0) == "ui.msg")
@@ -184,14 +186,14 @@ void UIMessage::setObjectData(QString objData)
     // test
 
 
-    _objectDataModel.setData(objData);
+    objectData()->setData(objData);
 
     autoResize();
 }
 
 void UIMessage::setPdMessage(QString message)
 {
-    setObjectData(message);
+    fromQString(message);
     //autoResize();
 
 //    QFont myFont(PREF_QSTRING("Font"), 11);
@@ -208,7 +210,7 @@ void UIMessage::setPdMessage(QString message)
             qDebug("msg: bad pd object!");
         } else {
 
-            QString msg = ("set " + _objectDataModel.objectData());
+            QString msg = ("set " + objectData()->toQString());
             //serverObject()->message(msg);
 
             emit sendMessage(this->serverObject(), msg);
@@ -234,7 +236,7 @@ void UIMessage::updateUI(AtomList list)
             obj_data += list.at(i).asString() + " ";
     }
 
-    setObjectData(obj_data.c_str());
+    fromQString(obj_data.c_str());
     autoResize();
 
     //
@@ -246,8 +248,8 @@ void UIMessage::autoResize()
     QFont myFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize());
     QFontMetrics fm(myFont);
 
-    int w = (int)fm.width(_objectDataModel.objectData()) + 10;
-    _objectDataModel.setMminimumBoxWidth(w);
+    int w = (int)fm.width(objectData()->toQString()) + 10;
+    objectData()->setMminimumBoxWidth(w);
     //setWidth(w);
 
     QRect r = boundingRect().toRect();
@@ -267,7 +269,7 @@ std::string UIMessage::asPdFileString()
     ret = "#X obj ";
     ret += std::to_string(int(x())) + " " + std::to_string(int(y())) + " ";
     ret += "ui.msg ";
-    ret += ((objectData() == "") ? ((std::string) "") : (_objectDataModel.objectData().toStdString() + " ")) + properties()->asPdFileString();
+    ret += ((toQString() == "") ? ((std::string) "") : (objectData()->toQString().toStdString() + " ")) + properties()->asPdFileString();
 
     return ret;
 }

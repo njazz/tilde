@@ -29,7 +29,7 @@ UIText::UIText()
     connect(_editor, &QPlainTextEdit::textChanged, this, &UIText::editorChanged);
 
     _editor->installEventFilter(this);
-    _objectDataModel.setObjectSize(os_Free, 80, 20);
+    objectData()->setObjectSize(os_Free, 80, 20);
 
     resizeEvent();
 }
@@ -40,7 +40,7 @@ void UIText::editorDone()
 {
     qDebug("editor done");
 
-    setObjectData(_editor->document()->toPlainText()); //text().toStdString());
+    fromQString(_editor->document()->toPlainText()); //text().toStdString());
     //todo
 
     //properties()->set("Text", getEditorData());
@@ -76,7 +76,7 @@ UIObject* UIText::createObj(QString data)
 {
     UIText* ret = new UIText();
 
-    ret->setObjectData(data);
+    ret->fromQString(data);
 
     return ret;
 }
@@ -154,8 +154,8 @@ void UIText::autoResize()
     QFontMetrics fm(myFont);
 
     setWidth((int)fm.width(_objectText) + 5);
-    if (width() < _objectDataModel.minimumBoxWidth())
-        setWidth(_objectDataModel.minimumBoxWidth());
+    if (width() < objectData()->minimumBoxWidth())
+        setWidth(objectData()->minimumBoxWidth());
 
     //duplicate?
     int new_w = fm.width(_objectText) + 20;
@@ -171,9 +171,9 @@ void UIText::autoResize()
 
 // ---------------------------
 
-void UIText::setObjectData(QString objData)
+void UIText::fromQString(QString objData)
 {
-    UIObject::setObjectData(objData);
+    UIObject::fromQString(objData);
 
     //TODO temporary fix!
     QString msg = objData; //QString(message);

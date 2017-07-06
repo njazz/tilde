@@ -27,7 +27,7 @@ public:
 
 
 
-        ret->setObjectData(data);
+        ret->fromQString(data);
 
         return ret;
     }

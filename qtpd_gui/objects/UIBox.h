@@ -88,7 +88,7 @@ public:
     ///
     void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev);
 
-    void setObjectData(QString message);
+    void fromQString(QString message);
 
     void sync();
 

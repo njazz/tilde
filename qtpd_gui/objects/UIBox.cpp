@@ -51,7 +51,7 @@ UIBox::UIBox()
     setErrorBox(false);
     //setSubpatchWindow(0);
 
-    _objectDataModel.setObjectSize(os_FixedHeight, 40, 20);
+    objectData()->setObjectSize(os_FixedHeight, 40, 20);
 
     setAcceptHoverEvents(true);
 
@@ -86,7 +86,7 @@ void UIBox::objectPressEvent(QGraphicsSceneMouseEvent* event)
             qDebug() << "objects: " << serverObject()->hasInternalObject() << serverObject()->toServerCanvas()->hasInternalObject();
             qDebug() << "path: " << serverObject()->toServerCanvas()->path().c_str();
 
-            QString fullName = _abstractionPath + "/" + _objectDataModel.objectData() + ".pd";
+            QString fullName = _abstractionPath + "/" + objectData()->toQString() + ".pd";
             ServerInstance::post("abstraction path: " + fullName.toStdString());
 
             FileParser::open(fullName);
@@ -118,7 +118,7 @@ UIObject* UIBox::createObj(QString data)
     QString objName = l.first();
     l.removeFirst();
     data = l.join(" ");
-    ret->setObjectData(data);
+    ret->fromQString(data);
 
     // TODO
     //    if (objName=="pd")
@@ -169,7 +169,7 @@ void UIBox::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
     //QStringList textList = _objectDataModel.objectData().split(" ");
     //textList.removeFirst();
 
-    p->drawText(2, 3, boundingRect().width() - 2, boundingRect().height() - 3, 0, _objectDataModel.objectData(), 0);
+    p->drawText(2, 3, boundingRect().width() - 2, boundingRect().height() - 3, 0, objectData()->toQString(), 0);
 
     if (isSelected()) {
         p->setPen(QPen(QColor(0, 192, 255), 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
@@ -199,9 +199,9 @@ void UIBox::objectMoveEvent(QGraphicsSceneMouseEvent* event)
     }
 }
 
-void UIBox::setObjectData(QString message)
+void UIBox::fromQString(QString message)
 {
-    UIObject::setObjectData(message);
+    UIObject::fromQString(message);
 
     autoResize();
 
@@ -211,7 +211,7 @@ void UIBox::setObjectData(QString message)
     new_w = (new_w < 25) ? 25 : new_w;
     setWidth(new_w);
 
-    _objectDataModel.setMminimumBoxWidth(new_w);
+    objectData()->setMminimumBoxWidth(new_w);
 
     //
     setInletsPos();
@@ -309,7 +309,7 @@ string UIBox::asPdFileString()
 
         //ret += pdObjectName_ + " " ;//
 
-        ret += ((_objectDataModel.objectData() == "") ? ((std::string) "") : (_objectDataModel.objectData().toStdString() + " ")) + _objectDataModel.properties()->asPdFileString();
+        ret += ((objectData()->toQString() == "") ? ((std::string) "") : (objectData()->toQString().toStdString() + " ")) + objectData()->properties()->asPdFileString();
 
     } else {
         ret = UIObject::asPdFileString();
@@ -323,8 +323,8 @@ void UIBox::autoResize()
     QFont myFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize());
     QFontMetrics fm(myFont);
 
-    int w = (int)fm.width(_objectDataModel.objectData()) + 10;
-    _objectDataModel.setMminimumBoxWidth(w);
+    int w = (int)fm.width(objectData()->toQString()) + 10;
+    objectData()->setMminimumBoxWidth(w);
     //setWidth(w);
 
     QRect r = boundingRect().toRect();

@@ -17,7 +17,7 @@ UIArray::UIArray()
     setErrorBox(false);
     //setSubpatchWindow(0);
 
-    _objectDataModel.setObjectSize(os_FixedHeight, 40, 20);
+    objectData()->setObjectSize(os_FixedHeight, 40, 20);
     initProperties();
     resizeEvent();
 
@@ -28,7 +28,7 @@ UIObject* UIArray::createObj(QString data)
 {
     UIArray* ret = new UIArray();
 
-    ret->setObjectData(data);
+    ret->fromQString(data);
     return ret;
 }
 
@@ -92,7 +92,7 @@ void UIArray::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget
     p->setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
     p->setFont(QFont(PREF_QSTRING("Font"), 11, 0, false));
-    p->drawText(2, 3, width() - 2, height() - 3, 0, _objectDataModel.objectData(), 0);
+    p->drawText(2, 3, width() - 2, height() - 3, 0, objectData()->toQString(), 0);
 
     if (isSelected()) {
         p->setPen(QPen(QColor(0, 192, 255), 1, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
@@ -167,9 +167,9 @@ void UIArray::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 //    UIArray::setObjectData(message);
 //}
 
-void UIArray::setObjectData(QString message)
+void UIArray::fromQString(QString message)
 {
-    UIObject::setObjectData(message);
+    UIObject::fromQString(message);
 
     autoResize();
 

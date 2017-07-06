@@ -18,7 +18,7 @@ UISlider::UISlider()
     deselect();
     _clicked = false;
 
-    _objectDataModel.setObjectSize(os_Free, 20, 20);
+    objectData()->setObjectSize(os_Free, 20, 20);
 
     _value = false;
 
@@ -34,7 +34,7 @@ UIObject* UISlider::createObj(QString data)
     //        QStringList l = data.split(" ");l.removeFirst();
     //        data = l.join(" ");
 
-    ret->setObjectData(data);
+    ret->fromQString(data);
 
     return ret;
 }
@@ -198,7 +198,7 @@ void UISlider::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 
 void UISlider::setPdMessage(QString message)
 {
-    setObjectData(message);
+    fromQString(message);
 }
 
 void UISlider::updateUI(AtomList msg)

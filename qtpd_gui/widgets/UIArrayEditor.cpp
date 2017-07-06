@@ -6,5 +6,6 @@
 UIArrayEditor::UIArrayEditor(QWidget* parent)
     : QWidget(parent)
 {
+    _serverArray = 0;
     //_arrSize = 0;
 }

@@ -14,6 +14,7 @@ UIClass::UIClass()
     deselect();
     setErrorBox(false);
     //setSubpatchWindow(0);
-    _objectDataModel.setObjectSize(os_FixedHeight, 40, 20);
+
+    objectData()->setObjectSize(os_FixedHeight, 40, 20);
 }
 }

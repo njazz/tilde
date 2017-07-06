@@ -49,7 +49,7 @@ public:
         //        QStringList l = data.split(" ");l.removeFirst();
         //        data = l.join(" ");
 
-        ret->setObjectData(data);
+        ret->fromQString(data);
 
         return ret;
     }
@@ -76,7 +76,7 @@ public:
         //const char* obj_name2 = data1.c_str(); //(QString(data1.c_str()).split(" ").at(0)).toStdString().c_str();
 
         // fix size changes
-        b->setObjectData(data1);
+        b->fromQString(data1);
         b->autoResize();
 
         b->resizeEvent();
@@ -113,7 +113,7 @@ public:
         p->setPen(QPen(QColor(0, 0, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
         p->setFont(QFont(PREF_QSTRING("Font"), 11, 0, false));
-        p->drawText(2, 3, width() - 2, height() - 3, 0, _objectDataModel.objectData(), 0);
+        p->drawText(2, 3, width() - 2, height() - 3, 0, objectData()->toQString(), 0);
 
         if (isSelected()) {
             p->setPen(QPen(QColor(0, 192, 255), 1, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
@@ -172,12 +172,12 @@ public:
 
     void setPdMessage(QString message)
     {
-        setObjectData(message);
+        fromQString(message);
         autoResize();
 
         QFont myFont(PREF_QSTRING("Font"), 11);
         QFontMetrics fm(myFont);
-        int new_w = fm.width(QString(_objectDataModel.objectData())) + 10;
+        int new_w = fm.width(QString(objectData()->toQString())) + 10;
         new_w = (new_w < 25) ? 25 : new_w;
         setWidth(new_w);
 

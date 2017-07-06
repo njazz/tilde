@@ -11,7 +11,7 @@ namespace qtpd {
 UIBang::UIBang()
 {
     setSize(20, 20);
-    _objectDataModel.setObjectSize(os_Square, 20, 20);
+    objectData()->setObjectSize(os_Square, 20, 20);
 
     deselect();
     _clicked = false;
@@ -32,7 +32,7 @@ UIObject* UIBang::createObj(QString data)
 {
     UIBang* ret = new UIBang();
 
-    ret->setObjectData(data);
+    ret->fromQString(data);
 
     connect(ret, &UIBang::signalBang, ret, &UIBang::slotBang);
 

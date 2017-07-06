@@ -37,7 +37,7 @@ public:
     {
         UILink* ret = new UILink();
 
-        ret->setObjectData(data);
+        ret->fromQString(data);
 
         return ret;
     }
@@ -152,8 +152,8 @@ public:
         QFontMetrics fm(myFont);
 
         setWidth((int)fm.width(_objectText) + 5);
-        if (width() < _objectDataModel.minimumBoxWidth())
-            setWidth(_objectDataModel.minimumBoxWidth());
+        if (width() < objectData()->minimumBoxWidth())
+            setWidth(objectData()->minimumBoxWidth());
 
         //duplicate?
         int new_w = fm.width(_objectText) + 20;
@@ -169,7 +169,7 @@ public:
 
     ///////
 
-    void setObjectData(QString objData) //setPdMessage(std::string message)
+    void fromQString(QString objData) //setPdMessage(std::string message)
     {
         //setObjectData("ui.text");
 
@@ -196,7 +196,7 @@ public:
             obj_data += msg.at(i).asString() + " ";
         }
 
-        setObjectData(obj_data.c_str());
+        fromQString(obj_data.c_str());
         autoResize();
 
         update();

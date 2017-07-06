@@ -15,7 +15,7 @@ UILink::UILink()
     deselect();
     _clicked = false;
 
-    _objectDataModel.setObjectSize(os_FixedHeight, 80, 20);
+    objectData()->setObjectSize(os_FixedHeight, 80, 20);
 
     resizeEvent();
 }

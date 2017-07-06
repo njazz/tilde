@@ -25,7 +25,7 @@ namespace qtpd {
     setWidth(40);
     setHeight(40);
 
-    _objectDataModel.setObjectSize(os_Fixed, 40, 40);
+    objectData()->setObjectSize(os_Fixed, 40, 40);
 
     _widget = new QGraphicsView();
     _widget->setScene(new QGraphicsScene(0, 0, 40, 40, _widget));
@@ -41,7 +41,7 @@ namespace qtpd {
 {
     UIDSP* ret = new UIDSP();
 
-    ret->setObjectData(data);
+    ret->fromQString(data);
 
     return ret;
 }

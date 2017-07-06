@@ -470,7 +470,7 @@ void CanvasView::slotObjectStartsEdit(void* obj)
 
     objectMaker()->move(_replaceObject->pos().toPoint());
     objectMaker()->setFixedSize(_replaceObject->size());
-    objectMaker()->setText(QString(_replaceObject->_objectDataModel.objectData()));
+    objectMaker()->setText(QString(_replaceObject->objectData()->toQString()));
     objectMaker()->setFocus();
     //replaceObject_->hide();
     objectMaker()->show();

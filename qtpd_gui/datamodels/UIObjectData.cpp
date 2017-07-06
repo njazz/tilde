@@ -20,10 +20,10 @@ UIObjectData::UIObjectData(QObject* parent)
 void UIObjectData::setData(QString inputData) ///> set both properties and Pd object string
 {
 
-    _objectData = inputData; //
+    _dataString = inputData; //
     _properties->extractFromPdFileString(inputData);
 
-    _fullHelpName = _objectData.split(" ").at(0) + "-help.pd";
+    _fullHelpName = _dataString.split(" ").at(0) + "-help.pd";
 }
 
 void UIObjectData::setObjectSize(t_objectSize sizeMode, int minW, int minH) ///> sets all size constraints
@@ -33,7 +33,7 @@ void UIObjectData::setObjectSize(t_objectSize sizeMode, int minW, int minH) ///>
     _minimumBoxHeight = minH;
 }
 
-QString UIObjectData::objectData() { return _objectData; }
+QString UIObjectData::toQString() { return _dataString; }
 PropertyList* UIObjectData::properties() { return _properties; }
 
 QString UIObjectData::fullHelpName() { return _fullHelpName; }

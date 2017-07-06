@@ -190,7 +190,7 @@ public:
         } else {
 
             p->setFont(QFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize(), 0, false));
-            p->drawText(2, 3, width() - 2, height() - 3, 0, _objectDataModel.objectData(), 0);
+            p->drawText(2, 3, width() - 2, height() - 3, 0, objectData()->toQString(), 0);
         }
     }
 
@@ -272,12 +272,12 @@ public:
 
     void setPdMessage(QString message)
     {
-        setObjectData(message);
+        fromQString(message);
         autoResize();
 
         QFont myFont(PREF_QSTRING("Font"), 11);
         QFontMetrics fm(myFont);
-        int new_w = fm.width(QString(_objectDataModel.objectData())) + 10;
+        int new_w = fm.width(QString(objectData()->toQString())) + 10;
         new_w = (new_w < 25) ? 25 : new_w;
         setWidth(new_w);
         //editor_->setFixedWidth(width() - 5);
@@ -408,7 +408,7 @@ public:
 
             //setObjectSizeMode(os_Free);
 
-            _objectDataModel.setObjectSize(os_Free,40,20);
+            objectData()->setObjectSize(os_Free,40,20);
 
             //resize
             if (_opClass) {

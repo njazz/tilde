@@ -4,7 +4,6 @@
 #ifndef CM_OBJECTITEM_H
 #define CM_OBJECTITEM_H
 
-
 #include "UIItem.h"
 
 #include "UIObjectData.h"
@@ -12,8 +11,8 @@
 #include <pdServer.hpp>
 
 // TODO
-#include <QMenu>
 #include "ceammc_atomlist.h"
+#include <QMenu>
 
 class QAction;
 //class QMenu;
@@ -55,27 +54,24 @@ private:
     portItemVec* _inlets;
     portItemVec* _outlets;
 
+    UIObjectData* _objectData;
+
     SizeBox* _sizeBox;
 
-//    QMainWindow* _SubpatchWindow; // move to UIBox
+    QMenu _popupMenu; //TODO pointer
 
-    QMenu _popupMenu; //pointer
+    QAction* _pmProperties;
+    QAction* _pmHelp;
+    QAction* _pmOpen; //TODO move to UIBox
 
-    QAction* pmProperties;
-    QAction* pmHelp;
-    QAction* pmOpen;
-
-    //void* _canvas; ///> QGraphicsView
-
-    //new 0517
     CanvasView* _parentCanvasView;
-    //CanvasData* _subCanvasData;
-
     PatchWindowController* _parentController;
 
     ServerObject* _serverObject;
-    //
+
     ObjectObserver* _observer;
+
+    //bool _disableObjectMaker;
 
 protected:
     virtual void hoverEnterEvent(QGraphicsSceneHoverEvent*);
@@ -84,184 +80,96 @@ protected:
 public:
     explicit UIObject(UIItem* parent = 0);
 
-    //new 0517
-    CanvasView* parentCanvasView() { return _parentCanvasView; };
-    void setParentCanvasView(CanvasView* v) { _parentCanvasView = v; }
+//    UIObject(const UIObject& source);
+//    UIObject& operator=(const UIObject& source);
 
-    PatchWindowController* parentController() {return _parentController;}
+    // ----------------------
 
-    void setParentController(PatchWindowController* p){_parentController = p;}
+    CanvasView* parentCanvasView();
+    void setParentCanvasView(CanvasView* v);
 
-//    CanvasData* subCanvasData() { return _subCanvasData; };
-//    void setSubCanvasData(CanvasData* c) { _subCanvasData = c; }
+    PatchWindowController* parentController();
+    void setParentController(PatchWindowController* p);
 
-    //new 0617
-    ObjectObserver* observer() { return _observer; }
+    void setObjectData(UIObjectData* m);
+    UIObjectData* objectData();
 
-    //TODO
-    bool disableObjectMaker;
+    virtual ServerObject* serverObject();
+    virtual void setServerObject(ServerObject* o);
+
+    ObjectObserver* observer();
+
+    // ----------------------
+
+    virtual void fromQString(QString objData); ///> sets object text data
+    QString toQString(); ///> gets object text data /usually overriden by ui objects/
+
+    // ----------------------
 
     //TODO
     UIObjectData _objectDataModel;
 
-    // just a template, copy from here
-    virtual void paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*){};
+    virtual void paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*){}; ///> template
 
     virtual void initProperties(); ///>init properties for the class - called from constructor
     PropertyList* properties(); ///> UIObject properties
 
-    void createContextMenu(); ///> createContextMenu
+    void createPopupMenu(); ///> createContextMenu
     void showPopupMenu(QPoint pos);
 
     virtual void autoResize(); ///> call this after setting object data
-    //virtual void setSize(QSize size);
 
     void doSetSize(QSize size);
-    void resizeEvent(); ///> custom resize event
+    virtual void resizeEvent(); ///> custom resize event
 
     virtual std::string asPdFileString(); ///>returns object's text for client-based file saving
 
     void setEditModeRef(t_editMode* canvasEditMode); ////>sets pointer to edit mode flag value in parent canvas
 
-    void hide(); // ??
+    SizeBox* sizeBox();
     void hideSizeBox();
-
-    SizeBox* sizeBox() { return _sizeBox; }
-
-    ////
-    /// \brief gets object text data /usually overriden by ui objects/
-    /// \return
-    QString objectData();
-
-    ////
-    /// \brief sets object text data
-    /// \return
-    virtual void setObjectData(QString objData);
-
-    ////
-    /// \brief returns pointer to pd object.
-    /// \details gui-only objects can ovverride it with function that returns 0
-    /// \return
-    ///
-
-    virtual ServerObject* serverObject() { return _serverObject; };
-    virtual void setServerObject(ServerObject* o) { _serverObject = o; };
 
     void removeXLets();
     virtual void sync();
 
-    ////
-    /// \brief returns true if object doesn't exist
-    /// \details
-    /// \return
-    ///
-    bool errorBox();
+    //virtual UIObject* clone() const; ///> to be used when canvases are copied (for G-O-P feature)
 
-    ////
-    /// \brief sets object box error flag
-    /// \param val
-    ///
-    void setErrorBox(bool val);
+    bool errorBox(); ///> returns true if object doesn't exist
+    void setErrorBox(bool val); ///> sets object box error flag
 
-//    ////
-//    /// \brief temporary - remove later
-//    /// \details nonzero pointer for different drawing
-//    QMainWindow* subpatchWindow();
-//    virtual void setSubpatchWindow(QMainWindow* cwindow);
+    void setHelpName(QString name); ///> set short name for help patch (without path)
 
-
-
-    ////
-    /// \brief set short name for help patch (without path)
-    /// \param name
-    void setHelpName(QString name);
-
-    ////
-    /// \brief returns help patch name with path if the file is found
-    /// \return
-    QString fullHelpName();
+    QString fullHelpName(); ///> returns help patch name with path if the file is found
 
     // -----------------------------------------------------------------
 
-    ////
-    /// \brief sets inlet position (cm_port)
-    /// \details this is reserved for more versatile UI
-    /// \param idx
-    /// \return
-    virtual void setInletsPos();
+    virtual void setInletsPos(); ///> sets inlet position. could be overriden for custom inlet positions
+    virtual void setOutletsPos(); ///> sets inlet position. could be overriden for custom inlet positions
 
-    ////
-    /// \brief sets outlet position (cm_port)
-    /// \details this is reserved for more versatile UI
-    /// \param idx
-    /// \return
-    ///
-    ///
-    virtual void setOutletsPos();
-
-    ////
-    /// \brief adds single inlet (cm_port)
-    /// \details overriden by canvas to hide ports in canvas view
-    /// \param idx
-    /// \return
-    ///
-    ///
-    virtual void addInlet();
-
+    virtual void addInlet(); ///> adds single inlet. now no need to be overriden
     virtual void addInlet(int _portClass_);
 
-    ////
-    /// \brief adds single outlet (cm_port)
-    /// \param idx
-    /// \return
-    virtual void addOutlet();
-
+    virtual void addOutlet(); ///> adds single outlet.
     virtual void addOutlet(int _portClass_);
 
-    ////
-    /// \brief gets inlet (cm_port) at specified index
-    /// \param idx
-    /// \return
-    Port* inletAt(int idx);
+    Port* inletAt(int idx); ///> gets inlet (UIPort) at specified index
+    Port* outletAt(int idx); ///> gets outlet (UIPort) at specified index
 
-    ////
-    /// \brief gets outlet (cm_port) at specified index
-    /// \param idx
-    /// \return
-    Port* outletAt(int idx);
-
-    ////
-    /// \brief returns 1 if signal~
-    /// \param idx
-    /// \return
-    int pdInletClass(int idx);
-
-    ////
-    /// \brief inlet count
-    /// \return
     int inletCount();
-
-    ////
-    /// \brief for pd object outlet: returns 1 if signal~
-    /// \param idx
-    /// \return
-    int pdOutletClass(int idx);
-
-    ////
-    /// \brief outlet count
-    /// \return
     int outletCount();
+
+    int pdInletClass(int idx); ///> returns 1 if signal~
+    int pdOutletClass(int idx); ///> returns 1 if signal~
 
     // -----------------------------------------
 
-    virtual void objectPressEvent(QGraphicsSceneMouseEvent *){}
-    virtual void objectMoveEvent(QGraphicsSceneMouseEvent *){}
-    virtual void objectReleaseEvent(QGraphicsSceneMouseEvent *){}
+    virtual void objectPressEvent(QGraphicsSceneMouseEvent*);
+    virtual void objectMoveEvent(QGraphicsSceneMouseEvent*);
+    virtual void objectReleaseEvent(QGraphicsSceneMouseEvent*);
 
-
-    virtual void mousePressEvent(QGraphicsSceneMouseEvent *event);
+    virtual void mousePressEvent(QGraphicsSceneMouseEvent* event);
     virtual void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
-    virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
+    virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent* event);
 
     // -----------------------------------------
 
@@ -275,10 +183,11 @@ private slots:
     void propertyFontSize();
     void propertyUpdate(); ///> basic update - calls update() probably remove later
 
-    void propertyReceiveSymbol();  ///> binds object to symbol
+    void propertyReceiveSymbol(); ///> binds object to symbol
 
 signals:
     void editObject(void* box);
+
     //// \brief this is needed for proper threading
     /// \details pd calls UIUpdate(...) -> it emits 's_repaint()' that is connected to 'callRepaint()'
     void callRepaint();

@@ -41,11 +41,12 @@ public:
 
     // ------------------------------------
 
-    void setObjectData(QString objData);
+    void fromQString(QString objData);
 
     void setPdMessage(QString message);
 
     void updateUI(AtomList list);
+
     virtual std::string asPdFileString();
 
     virtual void autoResize();
