@@ -1,7 +1,6 @@
 var searchData=
 [
   ['dialog',['dialog',['../class_color___selector_1_1_private.html#a99d6e4f5a6de068921edc215f0bb4390',1,'Color_Selector::Private']]],
-  ['disableobjectmaker',['disableObjectMaker',['../classqtpd_1_1_u_i_object.html#aca50a3b8c69080fe8276ceab276079f4',1,'qtpd::UIObject']]],
   ['display_5fflags',['display_flags',['../class_color___wheel_1_1_private.html#a7368ac00712562c702ab0aaf31c96ed3',1,'Color_Wheel::Private']]],
   ['display_5fmode',['display_mode',['../class_color___preview_1_1_private.html#a4b79f956c81fe6e10ff58d809977a2a5',1,'Color_Preview::Private']]],
   ['downsample',['downsample',['../struct__resample.html#ab1119ec2c6c5a9ec40365bb624494a94',1,'_resample']]],

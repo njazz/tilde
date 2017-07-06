@@ -146,9 +146,9 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_instance.html#a6c2fb11775cd6a033e1557d9176fcdb7">setPdMessage</a> (QString message)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_instance.html#ab5a32239a8182a087747c41339391714">msgNew</a> (<a class="el" href="classceammc_1_1_atom_list.html">ceammc::AtomList</a> msg)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_instance.html#a85c17e63937058aa479184886c2b3653">setInletsPos</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets inlet position (cm_port)  <a href="#a85c17e63937058aa479184886c2b3653"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; returns help patch name with path if the file is found  <a href="#a85c17e63937058aa479184886c2b3653"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_instance.html#abb7431031fa333658e645bdd564c4f56">setOutletsPos</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets outlet position (cm_port)  <a href="#abb7431031fa333658e645bdd564c4f56"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; sets inlet position. could be overriden for custom inlet positions  <a href="#abb7431031fa333658e645bdd564c4f56"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_instance.html#a41a026602f3541805fc0e95219ab84e9">typedInlets</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_instance.html#a29295e1f1f9287445909ca1bff384547">msgFree</a> (<a class="el" href="classceammc_1_1_atom_list.html">AtomList</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_instance.html#a87264a285762fbf71c3ec485fd888750">msgSetObject</a> (<a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> msg)</td></tr>
@@ -156,7 +156,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_instance.html#a901beeea5d5f67a49f0d0a7cd6f9f51c">msgSetType</a> (<a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> msg)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_instance.html#a120f11635c5b3c45d9c0a89c0cd1332d">createObject</a> (QString <a class="el" href="classqtpd_1_1_u_i_object.html#a36456ea5fb11ff6b752bc56de2ce5584">objectData</a>, <a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *pdCanvas, QGraphicsView *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_instance.html#a120f11635c5b3c45d9c0a89c0cd1332d">createObject</a> (QString <a class="el" href="classqtpd_1_1_u_i_object.html#a83ff692a908d325f474cb634ea291102">objectData</a>, <a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *pdCanvas, QGraphicsView *parent=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_instance.html#a2446844afb72bf4cd784f7d24a1381eb">updateUI</a> (void *uiobj, <a class="el" href="classceammc_1_1_atom_list.html">ceammc::AtomList</a> msg)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
@@ -460,15 +460,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>sets inlet position (cm_port) </p>
-<p>this is reserved for more versatile UI </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">idx</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+<p>&gt; returns help patch name with path if the file is found </p>
 
 <p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#abd253cdb46eec3e920bc2e195f24bf84">qtpd::UIObject</a>.</p>
 
@@ -488,15 +480,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>sets outlet position (cm_port) </p>
-<p>this is reserved for more versatile UI </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">idx</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+<p>&gt; sets inlet position. could be overriden for custom inlet positions </p>
 
 <p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#a0f7e507f8949b1a58bf343279a488c44">qtpd::UIObject</a>.</p>
 
@@ -600,7 +584,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 5 2017 12:55:45 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jul 6 2017 11:54:31 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

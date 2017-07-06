@@ -154,8 +154,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">mouse move  <a href="#a9ae29d63f5bbd60724c15180a19cd4af"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_box.html#a26dd64c2f5ee8abe30d1dfdfd6912243">mouseReleaseEvent</a> (QGraphicsSceneMouseEvent *ev)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">mouse up  <a href="#a26dd64c2f5ee8abe30d1dfdfd6912243"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_box.html#a81cf681910e1ac5851dc134f35f3ce1d">setObjectData</a> (QString message)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">sets object text data  <a href="#a81cf681910e1ac5851dc134f35f3ce1d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_box.html#a63ef5e0400a8208758c3a78c3008adda">fromQString</a> (QString message)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_box.html#a08475b46ff890049b1402e1e4de73377">sync</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_box.html#a37ddc79c74264798197a1b6fead155ce">asPdFileString</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; custom resize event  <a href="#a37ddc79c74264798197a1b6fead155ce"></a><br/></td></tr>
@@ -241,6 +240,27 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a63ef5e0400a8208758c3a78c3008adda"></a><!-- doxytag: member="qtpd::UIBox::fromQString" ref="a63ef5e0400a8208758c3a78c3008adda" args="(QString message)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_box.html#a63ef5e0400a8208758c3a78c3008adda">qtpd::UIBox::fromQString</a> </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#a38d28850e9f30d2549920d86bb65082f">qtpd::UIObject</a>.</p>
+
+<p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_array.html#a079e7c94533b8cd9df44d19a383921a9">qtpd::UIArray</a>, and <a class="el" href="classqtpd_1_1_u_i_script.html#aee406546456575ac7274a64f5a44894a">qtpd::UIScript</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a9cdc73685f9c103b1f101222db9088a2"></a><!-- doxytag: member="qtpd::UIBox::mouseMoved" ref="a9cdc73685f9c103b1f101222db9088a2" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -305,7 +325,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#ac28ae9c474d4f5b560f80882b8980e72">qtpd::UIObject</a>.</p>
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#af96a63a2a13ad277397de78e9860551f">qtpd::UIObject</a>.</p>
 
 </div>
 </div>
@@ -332,7 +352,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#a8485d89915602c85ad50d9423bf3d0e8">qtpd::UIObject</a>.</p>
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#ae3d796cac7e501c372e9ba1f9c4ac59d">qtpd::UIObject</a>.</p>
 
 <p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_script_box.html#a1d8c3c58a5c90eb3bddf1dff312cda0b">qtpd::UIScriptBox</a>.</p>
 
@@ -411,30 +431,6 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a81cf681910e1ac5851dc134f35f3ce1d"></a><!-- doxytag: member="qtpd::UIBox::setObjectData" ref="a81cf681910e1ac5851dc134f35f3ce1d" args="(QString message)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_box.html#a81cf681910e1ac5851dc134f35f3ce1d">qtpd::UIBox::setObjectData</a> </td>
-          <td>(</td>
-          <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>objData</em></td><td>)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>sets object text data </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
-
-<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#a79408701823ecce79ece7cdf5a10103f">qtpd::UIObject</a>.</p>
-
-<p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_array.html#a8f673c4e80528f8efe55af86adbf566f">qtpd::UIArray</a>, and <a class="el" href="classqtpd_1_1_u_i_script.html#ac03a86129cacf0220bf545a5dc47a3e7">qtpd::UIScript</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="ac384df1355f0d0739fc7993a41321690"></a><!-- doxytag: member="qtpd::UIBox::setSubpatchController" ref="ac384df1355f0d0739fc7993a41321690" args="(PatchWindowController *cwindow)" -->
 <div class="memitem">
 <div class="memproto">
@@ -510,7 +506,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 5 2017 12:55:45 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jul 6 2017 11:54:31 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

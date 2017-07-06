@@ -108,7 +108,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00024"></a><a class="code" href="namespaceqtpd.html#a147788b39dc51afa9d6b2a6d030e8038">00024</a> <span class="keyword">typedef</span> std::map&lt;std::string, Property*&gt;::iterator <a class="code" href="namespaceqtpd.html#a147788b39dc51afa9d6b2a6d030e8038">UIPropertyDataIterator</a>;
 <a name="l00025"></a><a class="code" href="namespaceqtpd.html#a5de80d70f22f21b977f7595cfa4b714b">00025</a> <span class="keyword">typedef</span> std::map&lt;std::string, UIPropertyData*&gt;::iterator <a class="code" href="namespaceqtpd.html#a5de80d70f22f21b977f7595cfa4b714b">UIPropertyGroupIterator</a>;
 <a name="l00026"></a>00026 
-<a name="l00027"></a><a class="code" href="_property_list_8h.html#ac912e7907abcb03f00d5011566dd2bba">00027</a> <span class="preprocessor">#define PROPERTY_LISTENER(x, y) connect(_objectDataModel.properties()-&gt;get(x), &amp;Property::changed, this, y)</span>
+<a name="l00027"></a><a class="code" href="_property_list_8h.html#ac912e7907abcb03f00d5011566dd2bba">00027</a> <span class="preprocessor">#define PROPERTY_LISTENER(x, y) connect(objectData()-&gt;properties()-&gt;get(x), &amp;Property::changed, this, y)</span>
 <a name="l00028"></a>00028 <span class="preprocessor"></span>
 <a name="l00029"></a>00029 <span class="comment">//typedef void (UIObject:: * t_PropertyListener)() ;</span>
 <a name="l00030"></a>00030 
@@ -221,7 +221,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 5 2017 12:55:44 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jul 6 2017 11:54:30 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

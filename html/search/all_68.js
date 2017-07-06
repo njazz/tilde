@@ -6,7 +6,6 @@ var searchData=
   ['hasui',['hasUI',['../classqtpd_1_1_object_loader.html#a134ca204fe0a6e710c047c084645082a',1,'qtpd::ObjectLoader']]],
   ['height',['height',['../classqtpd_1_1_u_i_item.html#a5bbd8fe0417078d386176ace5a01f261',1,'qtpd::UIItem']]],
   ['helpmenu',['helpMenu',['../classqtpd_1_1_base_window.html#a0e973c545dc57ac03f2e0dbe4aa6f69e',1,'qtpd::BaseWindow']]],
-  ['hide',['hide',['../classqtpd_1_1_u_i_object.html#ad4a986f565df4216f3643053a8e19868',1,'qtpd::UIObject']]],
   ['hidesizebox',['hideSizeBox',['../classqtpd_1_1_u_i_object.html#a67dc3600d5357c9befab0af91cb8b5f9',1,'qtpd::UIObject']]],
   ['hover',['hover',['../classqtpd_1_1_u_i_item.html#a2ca6449c88dc277945266ad0413402a7',1,'qtpd::UIItem']]],
   ['hoverenterevent',['hoverEnterEvent',['../classqtpd_1_1_port.html#aeee0962ecb4eccee430a115926924c86',1,'qtpd::Port::hoverEnterEvent()'],['../classqtpd_1_1_u_i_object.html#ae3b8ec06c4aa92e121faf2810c2babf5',1,'qtpd::UIObject::hoverEnterEvent()'],['../classqtpd_1_1_u_i_patchcord.html#a878af9e636e01e0f0b36426c60372a54',1,'qtpd::UIPatchcord::hoverEnterEvent()'],['../classqtpd_1_1_u_i_link.html#a5a51a715dc1f037e128677948a3d95fc',1,'qtpd::UILink::hoverEnterEvent()']]],
