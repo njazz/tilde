@@ -57,7 +57,7 @@ var searchData=
   ['pdinstance_5fnew',['pdinstance_new',['../m__pd_8h.html#ab0455bd0c1539b77c89b0d1ad22ab759',1,'m_pd.h']]],
   ['pdobject',['pdObject',['../classqtpd_1_1_u_i_link.html#abf2d491d721f909e9f6f98559ae71fbe',1,'qtpd::UILink']]],
   ['pdoutletclass',['pdOutletClass',['../classqtpd_1_1_u_i_object.html#aa1b1cd605c80405f5e9529db3aaa3569',1,'qtpd::UIObject']]],
-  ['pdwindow',['pdWindow',['../classqtpd_1_1_application_controller.html#ae366e0bcd2883171be312b6c74a9c1cd',1,'qtpd::ApplicationController::pdWindow()'],['../classqtpd_1_1_pd_window.html#a916bc5d8c3d803b541ab325d8e9d0d1c',1,'qtpd::PdWindow::PdWindow()']]],
+  ['pdwindow',['PdWindow',['../classqtpd_1_1_pd_window.html#a916bc5d8c3d803b541ab325d8e9d0d1c',1,'qtpd::PdWindow::PdWindow()'],['../classqtpd_1_1_application_controller.html#ae366e0bcd2883171be312b6c74a9c1cd',1,'qtpd::ApplicationController::pdWindow()']]],
   ['plus_5fperform',['plus_perform',['../m__pd_8h.html#a0e2c87e5829496d5d7f02537adebf4e0',1,'m_pd.h']]],
   ['pointerinlet_5fnew',['pointerinlet_new',['../m__pd_8h.html#a62f4c920b87f89291f10c14d62e34781',1,'m_pd.h']]],
   ['port',['Port',['../classqtpd_1_1_port.html#ad995d08ebf05486c0e102c7147294d2e',1,'qtpd::Port']]],
@@ -82,9 +82,9 @@ var searchData=
   ['property',['Property',['../classqtpd_1_1_property.html#a5bb7501b62515636741db369dde1749f',1,'qtpd::Property::Property()'],['../classceammc_1_1_atom_list.html#aa358bda48f6f306d78265c277532425d',1,'ceammc::AtomList::property()']]],
   ['propertychanged',['propertyChanged',['../classqtpd_1_1_u_i_object.html#aa75e37df9af2518a6f01c284b0bbaf58',1,'qtpd::UIObject']]],
   ['propertychangedsignal',['propertyChangedSignal',['../classqtpd_1_1_property_list.html#a14dca92ec761ba024e24299a0f717da5',1,'qtpd::PropertyList']]],
+  ['propertyembed',['propertyEmbed',['../classqtpd_1_1_u_i_box.html#affe1b86bd6be391b9f4579062367d4d5',1,'qtpd::UIBox']]],
   ['propertylist',['PropertyList',['../classqtpd_1_1_property_list.html#a66afd40f65771ed469a3a74d1446d4f5',1,'qtpd::PropertyList']]],
   ['propertymatrixsize',['propertyMatrixSize',['../classqtpd_1_1_u_i_matrix.html#a8f4b2d0e49aec13bc008ef96e57c84bc',1,'qtpd::UIMatrix']]],
-  ['propertyshowboxes',['propertyShowBoxes',['../classqtpd_1_1_u_i_box.html#aa5b9b0eacd93f5e3f0130c01081e0121',1,'qtpd::UIBox']]],
   ['propertyupdate',['propertyUpdate',['../classqtpd_1_1_u_i_matrix.html#aa1dbab768f17342179bfa2cb347ac8a7',1,'qtpd::UIMatrix']]],
   ['pythonconsole',['pythonConsole',['../classqtpd_1_1_application_controller.html#a44b57839794b7091d344fcb819724a80',1,'qtpd::ApplicationController']]]
 ];

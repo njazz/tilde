@@ -39,6 +39,7 @@ var searchData=
   ['em_5ftemporary',['em_Temporary',['../namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aa9911e692d63257d7be0dbee257aba9f7',1,'qtpd']]],
   ['em_5funlocked',['em_Unlocked',['../namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aaa528336eacc29596e8365b88a4f62d82',1,'qtpd']]],
   ['empty',['empty',['../classceammc_1_1_atom_list.html#ab715e73830704d7b06248bd137e5ccfa',1,'ceammc::AtomList']]],
+  ['enableobjectsonparent',['enableObjectsOnParent',['../classqtpd_1_1_patch_window_controller.html#a286505a867cce1eabec531d2e4c9f775',1,'qtpd::PatchWindowController']]],
   ['end',['end',['../classqtpd_1_1_selection_rect.html#ae786b53ab171864c31be191713cee0f4',1,'qtpd::SelectionRect']]],
   ['endpoint',['endPoint',['../classqtpd_1_1_u_i_patchcord.html#a91f033218b14738a458fad5c38fd04cd',1,'qtpd::UIPatchcord']]],
   ['endpost',['endpost',['../m__pd_8h.html#ac3a51d43b7d1183250700b59941c2508',1,'m_pd.h']]],

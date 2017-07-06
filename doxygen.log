@@ -734,10 +734,10 @@ Generating docs for /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/Port.h
   parameter 'canvasEditModeRef'
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIPatchcord.h:84: warning: Found unknown command `\group'
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIPatchcord.h:57: warning: Found unknown command `\group'
-/home/travis/build/njazz/qtpd/qtpd_gui/objects/UIBox.h:76: warning: argument 'ev' of command @param is not found in the argument list of qtpd::UIBox::objectPressEvent(QGraphicsSceneMouseEvent *event)
-/home/travis/build/njazz/qtpd/qtpd_gui/objects/UIBox.h:76: warning: The following parameters of qtpd::UIBox::objectPressEvent(QGraphicsSceneMouseEvent *event) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/objects/UIBox.cpp:61: warning: argument 'ev' of command @param is not found in the argument list of qtpd::UIBox::objectPressEvent(QGraphicsSceneMouseEvent *event)
+/home/travis/build/njazz/qtpd/qtpd_gui/objects/UIBox.cpp:61: warning: The following parameters of qtpd::UIBox::objectPressEvent(QGraphicsSceneMouseEvent *event) are not documented:
   parameter 'event'
-/home/travis/build/njazz/qtpd/qtpd_gui/objects/UIScriptBox.h:117: warning: argument 'ev' of command @param is not found in the argument list of qtpd::UIScriptBox::objectPressEvent(QGraphicsSceneMouseEvent *event) inherited from member objectPressEvent at line 76 in file /home/travis/build/njazz/qtpd/qtpd_gui/objects/UIBox.h
+/home/travis/build/njazz/qtpd/qtpd_gui/objects/UIScriptBox.h:117: warning: argument 'ev' of command @param is not found in the argument list of qtpd::UIScriptBox::objectPressEvent(QGraphicsSceneMouseEvent *event) inherited from member objectPressEvent at line 61 in file /home/travis/build/njazz/qtpd/qtpd_gui/objects/UIBox.cpp
 /home/travis/build/njazz/qtpd/qtpd_gui/objects/UIScriptBox.h:117: warning: The following parameters of qtpd::UIScriptBox::objectPressEvent(QGraphicsSceneMouseEvent *event) are not documented:
   parameter 'event'
 /home/travis/build/njazz/qtpd/qtpd_gui/properties/PropertyList.h:111: warning: Found unknown command `\detais'
@@ -810,6 +810,6 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-symbol cache used 2593/65536 hits=182597 misses=2593
-lookup cache used 4244/65536 hits=23492 misses=4485
+symbol cache used 2595/65536 hits=182774 misses=2595
+lookup cache used 4246/65536 hits=23506 misses=4487
 finished...

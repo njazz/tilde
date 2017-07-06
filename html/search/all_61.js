@@ -35,6 +35,7 @@ var searchData=
   ['addmethodpointeroutlet',['addMethodPointerOutlet',['../classqtpd_1_1_o_p_class.html#ac93c4de8ac495a84812181661259b8f7',1,'qtpd::OPClass::addMethodPointerOutlet()'],['../classqtpd_1_1_o_p_instance.html#a62983a3a0638c9190f9fc61cfc5aeb39',1,'qtpd::OPInstance::addMethodPointerOutlet()']]],
   ['addobject',['addObject',['../classqtpd_1_1_clipboard.html#ac8a67a5e7402908924ee6df2109dfbb3',1,'qtpd::Clipboard']]],
   ['addobjects',['addObjects',['../classqtpd_1_1_clipboard.html#add3477828c8de4709aeb700527c8aff0',1,'qtpd::Clipboard']]],
+  ['addobjecttoparent',['addObjectToParent',['../classqtpd_1_1_patch_window_controller.html#a1b3d8a58cea8fd583dd3d186d651347b',1,'qtpd::PatchWindowController']]],
   ['addoutlet',['addOutlet',['../classqtpd_1_1_canvas_view.html#aa2c9dae3a0a2046b575b3f63122b32c7',1,'qtpd::CanvasView::addOutlet()'],['../classqtpd_1_1_u_i_object.html#a935156fec3fd59c05525f046bafb3ebc',1,'qtpd::UIObject::addOutlet()'],['../classqtpd_1_1_u_i_object.html#a46b6b9393b4c8ce758a1d4370bbea3c7',1,'qtpd::UIObject::addOutlet(int _portClass_)'],['../classqtpd_1_1_o_p_outputs.html#a759016a37ec59f7ce12b8b9bd35baccb',1,'qtpd::OPOutputs::addOutlet()']]],
   ['addpatchcord',['addPatchcord',['../classqtpd_1_1_clipboard.html#a9808a8ab113c4e10fc197ce98e3b866c',1,'qtpd::Clipboard::addPatchcord()'],['../classqtpd_1_1_canvas_data.html#a7d0877db8db1b4202c69a31d7eeda5da',1,'qtpd::CanvasData::addPatchcord()']]],
   ['addpatchcords',['addPatchcords',['../classqtpd_1_1_clipboard.html#ae775bcd458421a9a53e9b31c41615830',1,'qtpd::Clipboard']]],

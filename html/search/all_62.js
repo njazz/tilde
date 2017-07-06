@@ -35,7 +35,6 @@ var searchData=
   ['boundingrect',['boundingRect',['../classqtpd_1_1_u_i_item.html#a0a8d5299d5a0a2ebcef2135913bc97da',1,'qtpd::UIItem']]],
   ['boxes',['boxes',['../classqtpd_1_1_canvas_data.html#a47f7935e671ebcdfeddba6904eb90509',1,'qtpd::CanvasData']]],
   ['boxesaspdfilestrings',['boxesAsPdFileStrings',['../classqtpd_1_1_canvas_data.html#a2feadf5b43121b15a8635300cccf1ccf',1,'qtpd::CanvasData']]],
-  ['boxonlycanvas',['boxOnlyCanvas',['../classqtpd_1_1_patch_window_controller.html#aafd7be4c4089c2d90d5fe879cdebbe91',1,'qtpd::PatchWindowController']]],
   ['btnclear',['btnClear',['../classqtpd_1_1_u_i_script_common.html#a2ac221ae189fa92fb3085b8424f5c731',1,'qtpd::UIScriptCommon']]],
   ['btnclearsignal',['btnClearSignal',['../classqtpd_1_1_u_i_script_editor.html#aa55181a25a88d0eb45f558710f3678d4',1,'qtpd::UIScriptEditor']]],
   ['btnload',['btnLoad',['../classqtpd_1_1_u_i_script_common.html#a1fcaf142178b247638cf793d45e227f2',1,'qtpd::UIScriptCommon']]],

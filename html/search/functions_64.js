@@ -19,6 +19,7 @@ var searchData=
   ['deselectboxes',['deselectBoxes',['../classqtpd_1_1_canvas_data.html#ab69c7611bf7c9bbf57aa6a7178087fd1',1,'qtpd::CanvasData']]],
   ['deselectpatchcords',['deselectPatchcords',['../classqtpd_1_1_canvas_data.html#ae7683b489148afdedd334b7a09f64237',1,'qtpd::CanvasData']]],
   ['dialogmodality',['dialogModality',['../class_color___selector.html#a5d341e4a155b076207941cba13062f3e',1,'Color_Selector']]],
+  ['disableobjectsonparent',['disableObjectsOnParent',['../classqtpd_1_1_patch_window_controller.html#a8054b7bd8988db4bdc428feb95235853',1,'qtpd::PatchWindowController']]],
   ['displayflags',['displayFlags',['../class_color___wheel.html#a92504653a2c1165267d333c2053861fe',1,'Color_Wheel']]],
   ['displayflagschanged',['displayFlagsChanged',['../class_color___wheel.html#a430bd5e759c15860158434ed96ba1d86',1,'Color_Wheel']]],
   ['displaymode',['displayMode',['../class_color___preview.html#a6b8421f8ff613eac69508f7939410b10',1,'Color_Preview']]],

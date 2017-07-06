@@ -136,7 +136,7 @@ Inheritance diagram for qtpd::UIBox:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_box.html#aa5b9b0eacd93f5e3f0130c01081e0121">propertyShowBoxes</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_box.html#affe1b86bd6be391b9f4579062367d4d5">propertyEmbed</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="signals"></a>
 Signals</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_box.html#a9cdc73685f9c103b1f101222db9088a2">mouseMoved</a> ()</td></tr>
@@ -147,14 +147,14 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_box.html#a7720b79ee4bb25ef64bbb155a2132ae4">subpatchController</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_box.html#ac384df1355f0d0739fc7993a41321690">setSubpatchController</a> (<a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *cwindow)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_box.html#a7da83e2275333d239e85b44981c40450">paint</a> (QPainter *p, const QStyleOptionGraphicsItem *option, QWidget *)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">paint event  <a href="#a7da83e2275333d239e85b44981c40450"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_box.html#ad4ddec63907a5b42f1d4ec0b8572e6d7">objectPressEvent</a> (QGraphicsSceneMouseEvent *event)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">mouse down  <a href="#ad4ddec63907a5b42f1d4ec0b8572e6d7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_box.html#a9ae29d63f5bbd60724c15180a19cd4af">objectMoveEvent</a> (QGraphicsSceneMouseEvent *event)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">mouse move  <a href="#a9ae29d63f5bbd60724c15180a19cd4af"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; object mouse down  <a href="#a9ae29d63f5bbd60724c15180a19cd4af"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_box.html#a26dd64c2f5ee8abe30d1dfdfd6912243">mouseReleaseEvent</a> (QGraphicsSceneMouseEvent *ev)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">mouse up  <a href="#a26dd64c2f5ee8abe30d1dfdfd6912243"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; object mouse move  <a href="#a26dd64c2f5ee8abe30d1dfdfd6912243"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_box.html#a63ef5e0400a8208758c3a78c3008adda">fromQString</a> (QString message)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; basic mouse up  <a href="#a63ef5e0400a8208758c3a78c3008adda"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_box.html#a08475b46ff890049b1402e1e4de73377">sync</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_box.html#a37ddc79c74264798197a1b6fead155ce">asPdFileString</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; custom resize event  <a href="#a37ddc79c74264798197a1b6fead155ce"></a><br/></td></tr>
@@ -255,6 +255,8 @@ Static Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>&gt; basic mouse up </p>
+
 <p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#a38d28850e9f30d2549920d86bb65082f">qtpd::UIObject</a>.</p>
 
 <p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_array.html#a079e7c94533b8cd9df44d19a383921a9">qtpd::UIArray</a>, and <a class="el" href="classqtpd_1_1_u_i_script.html#aee406546456575ac7274a64f5a44894a">qtpd::UIScript</a>.</p>
@@ -294,6 +296,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>&gt; object mouse move </p>
 <p>mouse up </p>
 
 <p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#a4982c1fb0ab5870c83450308ad768112">qtpd::UIObject</a>.</p>
@@ -317,7 +320,8 @@ Static Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>mouse move </p>
+<p>&gt; object mouse down </p>
+<p>mouse move</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">event</td><td></td></tr>
@@ -389,20 +393,18 @@ Static Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>paint event </p>
-
 <p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#ae6c38741873376fda63405d73f2697cd">qtpd::UIObject</a>.</p>
 
 <p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_class.html#ae427b4c6a023b208756197f74df3b22d">qtpd::UIClass</a>, <a class="el" href="classqtpd_1_1_u_i_instance.html#a06544d7a57d46436810862faca89cefd">qtpd::UIInstance</a>, <a class="el" href="classqtpd_1_1_u_i_script_box.html#adca9c9bd680f0f04251ca88e20c7a114">qtpd::UIScriptBox</a>, <a class="el" href="classqtpd_1_1_u_i_script.html#a9a30da6925215d62a8a630af95cebeb3">qtpd::UIScript</a>, <a class="el" href="classqtpd_1_1_u_i_property.html#a3e3b3216710dc9bc7035c4f53ba09383">qtpd::UIProperty</a>, <a class="el" href="classqtpd_1_1_u_i_method.html#abae471a843ae506b04bcb861ca6931bd">qtpd::UIMethod</a>, <a class="el" href="classqtpd_1_1_u_i_array.html#ad652ece2bd81bb93752bb74c76a94844">qtpd::UIArray</a>, and <a class="el" href="classqtpd_1_1_u_i_script.html#ac6d061f4e341a36afdf1cad6b48cb46b">qtpd::UIScript</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aa5b9b0eacd93f5e3f0130c01081e0121"></a><!-- doxytag: member="qtpd::UIBox::propertyShowBoxes" ref="aa5b9b0eacd93f5e3f0130c01081e0121" args="()" -->
+<a class="anchor" id="affe1b86bd6be391b9f4579062367d4d5"></a><!-- doxytag: member="qtpd::UIBox::propertyEmbed" ref="affe1b86bd6be391b9f4579062367d4d5" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_box.html#aa5b9b0eacd93f5e3f0130c01081e0121">qtpd::UIBox::propertyShowBoxes</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_box.html#affe1b86bd6be391b9f4579062367d4d5">qtpd::UIBox::propertyEmbed</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [slot]</code></td>
@@ -506,7 +508,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 6 2017 11:54:31 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jul 6 2017 12:55:48 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

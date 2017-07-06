@@ -9,6 +9,7 @@ var searchData=
   ['editobject',['editObject',['../classqtpd_1_1_u_i_object.html#af7d4bc79f4fb46e194a380a7f32b8694',1,'qtpd::UIObject']]],
   ['editor',['editor',['../classqtpd_1_1_u_i_script_common.html#a1305d0fa46e0b28d46da452b89762967',1,'qtpd::UIScriptCommon']]],
   ['empty',['empty',['../classceammc_1_1_atom_list.html#ab715e73830704d7b06248bd137e5ccfa',1,'ceammc::AtomList']]],
+  ['enableobjectsonparent',['enableObjectsOnParent',['../classqtpd_1_1_patch_window_controller.html#a286505a867cce1eabec531d2e4c9f775',1,'qtpd::PatchWindowController']]],
   ['end',['end',['../classqtpd_1_1_selection_rect.html#ae786b53ab171864c31be191713cee0f4',1,'qtpd::SelectionRect']]],
   ['endpoint',['endPoint',['../classqtpd_1_1_u_i_patchcord.html#a91f033218b14738a458fad5c38fd04cd',1,'qtpd::UIPatchcord']]],
   ['endpost',['endpost',['../m__pd_8h.html#ac3a51d43b7d1183250700b59941c2508',1,'m_pd.h']]],
