@@ -68,27 +68,12 @@ public:
     PatchWindowController* subpatchController() { return _subpatchController; };
     virtual void setSubpatchController(PatchWindowController* cwindow) { _subpatchController = cwindow; };
 
-    ////
-    /// \brief paint event
-    ///
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*);
 
-    ////
-    /// \brief mouse down
-    /// \param ev
-    ///
-    void objectPressEvent(QGraphicsSceneMouseEvent* event);
+    void objectPressEvent(QGraphicsSceneMouseEvent* event);     ///> object mouse down
+    void objectMoveEvent(QGraphicsSceneMouseEvent* event);      ///> object mouse move
 
-    ////
-    /// \brief mouse move
-    /// \param event
-    ///
-    void objectMoveEvent(QGraphicsSceneMouseEvent* event);
-
-    ////
-    /// \brief mouse up
-    ///
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev);
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev);            ///> basic mouse up
 
     void fromQString(QString message);
 
@@ -104,7 +89,7 @@ signals:
     void rightClicked();
 
 public slots:
-    void propertyShowBoxes();
+    void propertyEmbed();
 };
 }
 

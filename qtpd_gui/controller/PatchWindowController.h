@@ -88,7 +88,8 @@ public:
 
     ServerCanvas* serverCanvas();
 
-    void boxOnlyCanvas(UIObject *parentObject); // for GOP functionality
+    void enableObjectsOnParent(UIObject *parentObject); // for GOP functionality
+    void disableObjectsOnParent();
 
     ServerInstance* serverInstance();
 
@@ -106,7 +107,8 @@ public:
     PatchWindow* newWindow();
 
     //
-    void syncBoxOnlyCanvas();
+    void syncObjectsOnParent();
+    void addObjectToParent(UIObject* src);
     //
     // UNUSED
     bool syncData(ServerObject* serverObject, UIObject* uiObject);

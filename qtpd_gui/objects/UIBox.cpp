@@ -54,6 +54,8 @@ UIBox::UIBox()
 
     _boxObserver = new CanvasBoxObserver();
     _boxObserver->setUIBox(this);
+
+    setFlag(QGraphicsItem::ItemClipsChildrenToShape, true);
 }
 
 ////
@@ -62,10 +64,9 @@ UIBox::UIBox()
 ///
 void UIBox::objectPressEvent(QGraphicsSceneMouseEvent* event)
 {
-    if (isGraphOnParentSubpatch())
-    {
+    if (isGraphOnParentSubpatch()) {
         event->accept();
-        return;
+        //return;
     }
 
     //open canvas for subpatch
@@ -135,14 +136,12 @@ UIObject* UIBox::createObj(QString data)
 
 //UIObject* UIBox::createObject(QString, t_canvas*, QGraphicsView*) { return 0; }
 
-
-
 bool UIBox::isGraphOnParentSubpatch()
 {
     if (!isSubpatch())
         return false;
     else
-        return properties()->get("ShowBoxes")->asBool();
+        return properties()->get("Embed")->asBool();
 }
 
 void UIBox::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
@@ -151,8 +150,8 @@ void UIBox::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
 
     p->setRenderHint(QPainter::HighQualityAntialiasing, true);
 
-
-    if (!isGraphOnParentSubpatch()) {
+    //if (!isGraphOnParentSubpatch())
+    {
         QBrush brush(bgColor());
         p->setBrush(brush);
         p->drawRect(boundingRect());
@@ -178,7 +177,7 @@ void UIBox::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
     //textList.removeFirst();
 
     if (!isGraphOnParentSubpatch())
-    p->drawText(2, 3, boundingRect().width() - 2, boundingRect().height() - 3, 0, objectData()->toQString(), 0);
+        p->drawText(2, 3, boundingRect().width() - 2, boundingRect().height() - 3, 0, objectData()->toQString(), 0);
 
     if (isSelected()) {
         p->setPen(QPen(QColor(0, 192, 255), 2, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
@@ -259,49 +258,34 @@ void UIBox::sync()
     //
     if (_isAbstraction || isSubpatch()) {
 
-        properties()->create("ShowBoxes", "Canvas", "0.1", false);
-        properties()->create("ShowCanvas", "Canvas", "0.1", false);
-        properties()->create("FixedSize", "Canvas", "0.1", false);
-        properties()->create("FixedSizeBox", "Canvas", "0.1", QRect(0, 0, 300, 200));
+        properties()->create("Embed", "Subcanvas", "0.1", false);
+        properties()->create("EmbedBoxes", "Subcanvas", "0.1", false);
+        properties()->create("EmbedEditable", "Subcanvas", "0.1", false);
+        properties()->create("FixedSize", "Subcanvas", "0.1", false);
+        properties()->create("FixedSizeBox", "Subcanvas", "0.1", QRect(0, 0, 300, 200));
 
-        PROPERTY_LISTENER("ShowBoxes", &UIBox::propertyShowBoxes);
+        PROPERTY_LISTENER("Embed", &UIBox::propertyEmbed);
     }
 }
 
-void UIBox::propertyShowBoxes()
+void UIBox::propertyEmbed()
 {
-    bool v = properties()->get("ShowBoxes")->asBool();
+    bool v = properties()->get("Embed")->asBool();
 
     if (v) {
 
-        //        _subpatchCanvasProxy = new QGraphicsProxyWidget(this);
-        //        _subpatchCanvasProxy->setWidget();
-        //        _subpatchCanvasProxy->setPos(1, 1);
+        _subpatchController->enableObjectsOnParent(this);
 
-        _subpatchController->boxOnlyCanvas(this);
-
-        //scene()->addItem(_subpatchCanvasProxy);
+        objectData()->setObjectSize(os_Free, 300, 200);
 
         setSize(QSize(300, 200));
-        //_subpatchCanvasProxy->setMinimumSize(300,200);
-        //resizeBox(0, 0);
+        resizeEvent();
+        autoResize();
 
     } else {
         if (_subpatchCanvasProxy) {
 
-            //            if (this->scene())
-            //                this->scene()->removeItem(_subpatchCanvasProxy);
-
-            //_subpatchCanvasProxy->hide();
-            //_subpatchController->boxOnlyCanvas()->hide();
-
             autoResize();
-
-            //_subpatchController->boxOnlyCanvas()->scene()->removeItem(_subpatchCanvasProxy);
-            //_subpatchCanvasProxy->setWidget(0);
-
-            //            if (!_subpatchCanvasProxy->scene())
-            //                delete _subpatchCanvasProxy;
         }
 
         //_subpatchController->firstWindow()->canvasView()->setParent(_subpatchController->firstWindow());

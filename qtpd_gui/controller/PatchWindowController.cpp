@@ -104,68 +104,62 @@ ServerObject* PatchWindowController::serverCanvasAsObject()
     return _serverCanvas->toServerObject();
 }
 
-void PatchWindowController::boxOnlyCanvas(UIObject* parentObject)
+void PatchWindowController::enableObjectsOnParent(UIObject* parentObject)
 {
-
-
     _parentObject = parentObject;
 
-    syncBoxOnlyCanvas();
-
+    syncObjectsOnParent();
 }
 
-void PatchWindowController::syncBoxOnlyCanvas()
+void PatchWindowController::disableObjectsOnParent()
 {
-    //    if (!_boxOnlyCanvas->scene()) {
-    //        ServerInstance::post("bad CanvasView scene!");
-    //        return;
-    //    }
+    _parentObject = 0;
+}
 
-    //_boxOnlyCanvas->scene()->clear();
+void PatchWindowController::addObjectToParent(UIObject* src)
+{
 
+    QString data = src->toQString();
+
+    //
+    if (data != "") {
+        UIObject* dest = ObjectLoader::inst().createUIObject(data);
+
+        dest->setObjectData(src->objectData());
+        //workaround
+        dest->initProperties();
+
+        if (dest) {
+
+            dest->setServerObject(src->serverObject());
+            dest->move(src->pos().x(), src->pos().y());
+
+            doCreateObject(dest);
+
+            t_editMode* readOnly = new t_editMode;
+            *readOnly = em_Locked;
+
+            dest->setEditModeRef(readOnly); //_parentObject->getEditModeRef()
+
+            dest->setParentItem(_parentObject);
+
+        } else {
+            ServerInstance::post("bad dest object");
+        }
+    } else {
+        ServerInstance::post("bad data for object");
+    }
+}
+
+void PatchWindowController::syncObjectsOnParent()
+{
     objectVec::iterator it;
 
     for (it = _canvasData->boxes()->begin(); it != _canvasData->boxes()->end(); ++it) {
 
-        UIObject* src = *it;
-
-        QString data = src->toQString();
-
-        //
-        if (data != "") {
-            UIObject* dest = ObjectLoader::inst().createUIObject(data);
-
-            dest->setObjectData(src->objectData());
-            //woraround
-            dest->initProperties();
-
-
-            if (dest) {
-
-                dest->setServerObject(src->serverObject());
-                dest->move(src->pos().x(), src->pos().y());
-
-                doCreateObject(dest);
-
-                dest->setEditModeRef(_parentObject->getEditModeRef());
-
-                //firstWindow()->canvasView()->scene()->addItem(dest);
-
-                //_boxOnlyScene->addItem(dest);
-
-                //dest->setParent(_parentObject);
-                dest->setParentItem(_parentObject);
-                //qDebug() << "dest << " << dest << " parent " << _parentObject;
-            } else {
-                ServerInstance::post("bad dest object");
-            }
-        } else {
-            ServerInstance::post("bad data for object");
-        }
+        addObjectToParent(*it);
     }
 
-    //firstWindow()->canvasView()->update();
-    //_boxOnlyScene->update();
     _parentObject->update();
 }
 
@@ -286,6 +280,11 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
 
     _canvasData->addUniqueBox(_canvasData->boxes(), uiObject);
     _scene->addItem(uiObject);
+
+    if (_parentObject)
+    {
+        addObjectToParent(uiObject);
+    }
 
     return uiObject;
 
