@@ -69,6 +69,7 @@ private:
 
     CanvasView* _boxOnlyCanvas;
     QGraphicsScene* _boxOnlyScene;
+    UIObject* _parentObject;
 
     //TODO
     CanvasView* _activeCanvasView;
@@ -87,7 +88,7 @@ public:
 
     ServerCanvas* serverCanvas();
 
-    CanvasView* boxOnlyCanvas(); // for GOP functionality
+    void boxOnlyCanvas(UIObject *parentObject); // for GOP functionality
 
     ServerInstance* serverInstance();
 

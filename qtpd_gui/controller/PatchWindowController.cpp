@@ -54,6 +54,8 @@ PatchWindowController::PatchWindowController(ApplicationController* appControlle
     _boxOnlyCanvas = 0;
     _boxOnlyScene = 0;
 
+    _parentObject = 0;
+
     //PatchWindowController(appController, serverInstance()->createCanvas());
 };
 
@@ -102,31 +104,22 @@ ServerObject* PatchWindowController::serverCanvasAsObject()
     return _serverCanvas->toServerObject();
 }
 
-CanvasView* PatchWindowController::boxOnlyCanvas()
+void PatchWindowController::boxOnlyCanvas(UIObject* parentObject)
 {
-    if (!_boxOnlyCanvas) {
-        _boxOnlyCanvas = new CanvasView();
-        _boxOnlyCanvas->setController(this);
-    }
 
-    QGraphicsScene* _boxOnlyScene = new QGraphicsScene();
 
-    //   if (!_boxOnlyCanvas->scene())
-    _boxOnlyCanvas->setScene(_boxOnlyScene);
-
-    _boxOnlyCanvas->setReadOnly(true);
+    _parentObject = parentObject;
 
     syncBoxOnlyCanvas();
 
-    return _boxOnlyCanvas;
 }
 
 void PatchWindowController::syncBoxOnlyCanvas()
 {
-    if (!_boxOnlyCanvas->scene()) {
-        ServerInstance::post("bad CanvasView scene!");
-        return;
-    }
+    //    if (!_boxOnlyCanvas->scene()) {
+    //        ServerInstance::post("bad CanvasView scene!");
+    //        return;
+    //    }
 
     //_boxOnlyCanvas->scene()->clear();
 
@@ -143,6 +136,9 @@ void PatchWindowController::syncBoxOnlyCanvas()
             UIObject* dest = ObjectLoader::inst().createUIObject(data);
 
             dest->setObjectData(src->objectData());
+            //woraround
+            dest->initProperties();
+
 
             if (dest) {
 
@@ -151,7 +147,15 @@ void PatchWindowController::syncBoxOnlyCanvas()
 
                 doCreateObject(dest);
 
-                _boxOnlyCanvas->scene()->addItem(dest);
+                dest->setEditModeRef(_parentObject->getEditModeRef());
+
+                //firstWindow()->canvasView()->scene()->addItem(dest);
+
+                //_boxOnlyScene->addItem(dest);
+
+                //dest->setParent(_parentObject);
+                dest->setParentItem(_parentObject);
+                //qDebug() << "dest << " << dest << " parent " << _parentObject;
             } else {
                 ServerInstance::post("bad dest object");
             }
@@ -160,7 +164,9 @@ void PatchWindowController::syncBoxOnlyCanvas()
         }
     }
 
-    _boxOnlyCanvas->update();
+    //firstWindow()->canvasView()->update();
+    //_boxOnlyScene->update();
+    _parentObject->update();
 }
 
 ServerInstance* PatchWindowController::serverInstance() { return _appController->mainServerInstance(); }
@@ -233,15 +239,11 @@ void PatchWindowController::doCreateObject(UIObject* uiObject)
     uiObject->observer()->setObject(uiObject);
     uiObject->serverObject()->ServerObject::registerObserver(uiObject->observer());
 
-    //qDebug() << "*** registered observer: " << uiObject->observer();
+    uiObject->setEditModeRef(_windows[0]->canvasView()->getEditModeRef());
 
     uiObject->sync();
 
     connect(uiObject, &UIObject::sendMessage, _appController->serverWorker(), &ServerWorker::sendMessageToObject);
-    uiObject->setEditModeRef(_windows[0]->canvasView()->getEditModeRef());
-
-    connect(uiObject, &UIObject::selectBox, _windows[0]->canvasView(), &CanvasView::slotSelectBox);
-    connect(uiObject, &UIObject::moveBox, _windows[0]->canvasView(), &CanvasView::slotMoveBox);
 }
 
 UIObject* PatchWindowController::createObject(string name, QPoint pos)
@@ -278,6 +280,9 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
     uiObject->move(pos.x(), pos.y());
 
     doCreateObject(uiObject);
+
+    connect(uiObject, &UIObject::selectBox, _windows[0]->canvasView(), &CanvasView::slotSelectBox);
+    connect(uiObject, &UIObject::moveBox, _windows[0]->canvasView(), &CanvasView::slotMoveBox);
 
     _canvasData->addUniqueBox(_canvasData->boxes(), uiObject);
     _scene->addItem(uiObject);

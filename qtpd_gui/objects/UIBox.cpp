@@ -18,7 +18,6 @@
 
 #include "CanvasView.h"
 
-
 namespace qtpd {
 
 void CanvasBoxObserver::setUIBox(UIBox* b) { _box = b; };
@@ -26,20 +25,14 @@ void CanvasBoxObserver::setUIBox(UIBox* b) { _box = b; };
 void CanvasBoxObserver::inletAdded()
 {
     _box->sync();
-
 };
 void CanvasBoxObserver::outletAdded()
 {
     _box->sync();
-
 };
 
 void CanvasBoxObserver::inletRemoved() { _box->sync(); };
 void CanvasBoxObserver::outletRemoved() { _box->sync(); };
-
-
-
-
 
 UIBox::UIBox()
 {
@@ -69,6 +62,11 @@ UIBox::UIBox()
 ///
 void UIBox::objectPressEvent(QGraphicsSceneMouseEvent* event)
 {
+    if (isGraphOnParentSubpatch())
+    {
+        event->accept();
+        return;
+    }
 
     //open canvas for subpatch
     if (getEditMode() != em_Unlocked) {
@@ -137,19 +135,29 @@ UIObject* UIBox::createObj(QString data)
 
 //UIObject* UIBox::createObject(QString, t_canvas*, QGraphicsView*) { return 0; }
 
-////
-/// \brief paint event
-///
+
+
+bool UIBox::isGraphOnParentSubpatch()
+{
+    if (!isSubpatch())
+        return false;
+    else
+        return properties()->get("ShowBoxes")->asBool();
+}
+
 void UIBox::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
 {
     p->setClipRect(option->exposedRect);
 
     p->setRenderHint(QPainter::HighQualityAntialiasing, true);
 
-    QBrush brush(bgColor());
-    p->setBrush(brush);
-    p->drawRect(boundingRect());
-    p->setBrush(QBrush());
+
+    if (!isGraphOnParentSubpatch()) {
+        QBrush brush(bgColor());
+        p->setBrush(brush);
+        p->drawRect(boundingRect());
+        p->setBrush(QBrush());
+    }
 
     //remove this later
 
@@ -169,6 +177,7 @@ void UIBox::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
     //QStringList textList = _objectDataModel.objectData().split(" ");
     //textList.removeFirst();
 
+    if (!isGraphOnParentSubpatch())
     p->drawText(2, 3, boundingRect().width() - 2, boundingRect().height() - 3, 0, objectData()->toQString(), 0);
 
     if (isSelected()) {
@@ -240,8 +249,7 @@ void UIBox::sync()
 
     //redundant
     if (isSubpatch())
-        if (serverObject()->toServerCanvas())
-        {
+        if (serverObject()->toServerCanvas()) {
             //serverObject()->toServerCanvas()->registerObserver(_boxObserver);
             _subpatchController->serverCanvas()->registerObserver(_boxObserver);
         }
@@ -266,15 +274,17 @@ void UIBox::propertyShowBoxes()
 
     if (v) {
 
-        _subpatchCanvasProxy = new QGraphicsProxyWidget(this);
-        _subpatchCanvasProxy->setWidget(_subpatchController->boxOnlyCanvas());
-        _subpatchCanvasProxy->setPos(1, 1);
+        //        _subpatchCanvasProxy = new QGraphicsProxyWidget(this);
+        //        _subpatchCanvasProxy->setWidget();
+        //        _subpatchCanvasProxy->setPos(1, 1);
+
+        _subpatchController->boxOnlyCanvas(this);
 
         //scene()->addItem(_subpatchCanvasProxy);
 
         setSize(QSize(300, 200));
         //_subpatchCanvasProxy->setMinimumSize(300,200);
-        resizeBox(0, 0);
+        //resizeBox(0, 0);
 
     } else {
         if (_subpatchCanvasProxy) {
@@ -283,7 +293,7 @@ void UIBox::propertyShowBoxes()
             //                this->scene()->removeItem(_subpatchCanvasProxy);
 
             //_subpatchCanvasProxy->hide();
-            _subpatchController->boxOnlyCanvas()->hide();
+            //_subpatchController->boxOnlyCanvas()->hide();
 
             autoResize();
 

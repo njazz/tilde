@@ -54,6 +54,8 @@ private:
     bool _isSubpatch;
     bool isSubpatch();
 
+    bool isGraphOnParentSubpatch();
+
     QGraphicsProxyWidget* _subpatchCanvasProxy;
 
     CanvasBoxObserver* _boxObserver;
