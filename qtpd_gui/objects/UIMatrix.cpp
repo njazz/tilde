@@ -7,6 +7,10 @@
 
 #include <QStyleOptionGraphicsItem>
 
+#include "UIObjectData.h"
+
+#include "ceammc_atomlist.h"
+
 namespace qtpd {
 
 UIMatrix::UIMatrix()
@@ -36,10 +40,10 @@ UIMatrix::UIMatrix()
 
     return ret;
 }
- UIObject* UIMatrix::createObject(QString , t_canvas* , QGraphicsView*)
-{
-    return 0;
-}
+// UIObject* UIMatrix::createObject(QString , t_canvas* , QGraphicsView*)
+//{
+//    return 0;
+//}
 
 void UIMatrix::initProperties()
 {
@@ -377,12 +381,12 @@ void UIMatrix:: mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 //    setObjectData(message);
 //}
 
-void UIMatrix::updateUI(AtomList msg)
+void UIMatrix::updateUI(AtomList* msg)
 {
     if ((matrixType() == mt_HRadio) || (matrixType() == mt_VRadio))
-        if (msg.size() > 0) {
-            if (msg.at(0).isFloat()) {
-                int v = msg.at(0).asInt();
+        if (msg->size() > 0) {
+            if (msg->at(0).isFloat()) {
+                int v = msg->at(0).asInt();
                 if (v > (radioSize() - 1))
                     v = radioSize() - 1;
 

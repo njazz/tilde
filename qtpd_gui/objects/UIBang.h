@@ -41,7 +41,7 @@ public:
 
     // -------------------------
 
-    void updateUI(AtomList);
+    void updateUI(AtomList*);
 
 signals:
     void setBangTimer(int msec);

@@ -3,6 +3,8 @@
 #include "Port.h"
 #include "PropertyList.h"
 
+#include "UIObjectData.h"
+
 namespace qtpd {
 UIObjectData::UIObjectData(QObject* parent)
     : QObject(parent)

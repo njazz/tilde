@@ -15,7 +15,9 @@
 
 #include <QStyleOptionGraphicsItem>
 
-//#include "cm_pdlink.h"
+#include "UIObjectData.h"
+
+#include "ceammc_atomlist.h"
 
 namespace qtpd {
 
@@ -174,26 +176,26 @@ public:
         //setObjectData("ui.text");
 
         //TODO temporary fix!
-//        QString msg = objData; //QString(message.c_str());
-//        QStringList list = msg.split("\n");
-//        for (int i = 0; i < list.size(); i++) {
-//            list[i] = list[i] + "\\n";
-//        }
+        //        QString msg = objData; //QString(message.c_str());
+        //        QStringList list = msg.split("\n");
+        //        for (int i = 0; i < list.size(); i++) {
+        //            list[i] = list[i] + "\\n";
+        //        }
 
-//        properties()->set("Text", list.join("\n"));
+        //        properties()->set("Text", list.join("\n"));
 
-//        QString data = properties()->get("Text")->asQString().split("\\n ").join("\n");
+        //        QString data = properties()->get("Text")->asQString().split("\\n ").join("\n");
 
         _objectText = objData;
 
         autoResize();
     }
 
-    virtual void updateUI(AtomList msg)
+    virtual void updateUI(AtomList* msg)
     {
         std::string obj_data;
-        for (size_t i = 0; i < msg.size(); i++) {
-            obj_data += msg.at(i).asString() + " ";
+        for (size_t i = 0; i < msg->size(); i++) {
+            obj_data += msg->at(i).asString() + " ";
         }
 
         fromQString(obj_data.c_str());

@@ -5,7 +5,6 @@
 #-------------------------------------------------
 
 QT       += core gui
-
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = qtpd
@@ -172,7 +171,10 @@ SOURCES += main.cpp\
     properties/QtColorPicker/src/color_wheel.cpp \
     properties/QtColorPicker/src/gradient_slider.cpp \
     properties/QtColorPicker/src/hue_slider.cpp \
-    datamodels/ArrangeObjects.cpp
+    datamodels/ArrangeObjects.cpp \
+    controller/patchObserver.cpp \
+    controller/objectObserver.cpp \
+    controller/copyobject.cpp
 #
 #    serverAPIPrototype.cpp \
 
@@ -185,6 +187,7 @@ HEADERS  += \
     objects/UIFloat.h \
     objects/UIBox.h \
     objects/UIMessage.h \
+    objects/UIDSP.h \
     #
     oopd/OOPD.h \
     oopd/OOPDClassBase.h \
@@ -195,6 +198,7 @@ HEADERS  += \
     oopd/OPInstance.h \
     oopd/UIMethod.h \
     oopd/UIProperty.h \
+    objects/UILink.h \
     #
     widgets/UIArrayEditor.h \
     #
@@ -208,12 +212,11 @@ HEADERS  += \
 #
     ObjectLoader.h \
     widgets/ObjectMaker.h \
-    #PdLink.h \
-    _headers.h \
+#
     properties/Preferences.h \
     properties/Property.h \
     properties/PropertyList.h \
-    objects/UIDSP.h \
+#
     graphicobjects/Port.h \
     graphicobjects/SizeBox.h \
     graphicobjects/UIItem.h \
@@ -228,7 +231,6 @@ HEADERS  += \
     lib_headers/m_pd.h \
     lib_headers/ceammc_atomlist.h \
     lib_headers/ceammc_atom.h \
-    objects/UILink.h \
     properties/AudioSettings.h \
     graphicobjects/LinkLine.h \
     widgets/UITextEditor.h \
@@ -262,7 +264,9 @@ HEADERS  += \
     properties/QtColorPicker/include/gradient_slider.hpp \
     properties/QtColorPicker/include/hue_slider.hpp \
     properties/QtColorPicker/src/paint_border.hpp \
-    datamodels/ArrangeObjects.h
+    datamodels/ArrangeObjects.h \
+    controller/patchObserver.h \
+    controller/objectObserver.h \
 
 
 

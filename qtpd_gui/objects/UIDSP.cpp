@@ -7,6 +7,8 @@
 
 #include "CanvasView.h"
 
+#include "UIObjectData.h"
+
 namespace qtpd {
 
  UIDSP::UIDSP()

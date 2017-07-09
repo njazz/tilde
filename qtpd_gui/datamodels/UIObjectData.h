@@ -8,8 +8,6 @@
 
 #include "CommonTypes.h"
 
-
-
 namespace qtpd {
 
 class PropertyList;
@@ -47,7 +45,6 @@ public:
 
     void setMminimumBoxWidth(int w);
     void setMminimumBoxHeight(int h);
-
 
     int minimumBoxWidth();
     int minimumBoxHeight();

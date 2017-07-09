@@ -1,6 +1,9 @@
 #include "UISubCanvas.h"
 
 #include <QGraphicsProxyWidget>
+
+#include "UIObjectData.h"
+
 namespace qtpd {
 
 UISubCanvas::UISubCanvas()

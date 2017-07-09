@@ -5,13 +5,20 @@
 #define PATCHWINDOWCONTROLLER
 
 // TODO
-#include <pdServer.hpp>
+//#include <pdServer.hpp>
 
 #include <QObject>
 #include <QPoint>
 
 class QGraphicsScene;
 class QGraphicsSceneMouseEvent;
+
+class Observer;
+class ServerCanvas;
+class ServerInstance;
+class ServerObject;
+
+using namespace std;
 
 namespace qtpd {
 
@@ -26,19 +33,6 @@ class UIItem;
 class PatchWindowController;
 
 class UIBox;
-
-// STUB
-class PatchObserver : public Observer {
-private:
-    PatchWindowController* _patchController;
-
-public:
-    void setPatchController(PatchWindowController* c) { _patchController = c; }
-    virtual void update(){
-        //something
-
-    };
-};
 
 ////
 /// \brief The Patch window controller
@@ -102,6 +96,7 @@ public:
     // ------------
 
     void syncObjectsOnParent();
+    UIObject* copyObject(UIObject* src);
     void addObjectToParent(UIObject* src);
 
     UIBox* asUIBox();

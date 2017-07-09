@@ -7,6 +7,8 @@
 #include <QStyleOptionGraphicsItem>
 #include <QWidget>
 
+#include "UIObjectData.h"
+
 namespace qtpd {
 UIBang::UIBang()
 {
@@ -112,7 +114,7 @@ void UIBang::objectPressEvent(QGraphicsSceneMouseEvent* ev)
 
 // -------------------------
 
-void UIBang::updateUI(AtomList)
+void UIBang::updateUI(AtomList*)
 {
     if (!_clicked) {
         timerStart();

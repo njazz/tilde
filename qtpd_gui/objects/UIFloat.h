@@ -27,7 +27,7 @@ public:
     explicit UIFloat(); //UIObject* parent = 0);
 
     static UIObject* createObj(QString);
-    static UIObject* createObject(QString, t_canvas*, QGraphicsView*);
+    //static UIObject* createObject(QString, t_canvas*, QGraphicsView*);
 
     void initProperties();
 
@@ -42,7 +42,7 @@ public:
     void mouseReleaseEvent(QGraphicsSceneMouseEvent*);
     ///////
 
-    void updateUI(AtomList msg);
+    void updateUI(AtomList* msg);
     std::string asPdFileString();
 };
 }

@@ -40,7 +40,7 @@ public:
 
     static UIObject* createObj(QString data);
 
-    static UIObject* createObject(QString, t_canvas*, QGraphicsView*) { return 0; }
+    //static UIObject* createObject(QString, t_canvas*, QGraphicsView*) { return 0; }
 
     virtual void initProperties();
 

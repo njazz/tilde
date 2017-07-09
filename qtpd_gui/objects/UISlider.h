@@ -32,7 +32,7 @@ public:
 
     static UIObject* createObj(QString data);
 
-    static UIObject* createObject(QString, t_canvas*, QGraphicsView*);
+    //static UIObject* createObject(QString, t_canvas*, QGraphicsView*);
 
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*);
 
@@ -46,7 +46,7 @@ public:
 
     void setPdMessage(QString message);
 
-    void updateUI(AtomList msg);
+    void updateUI(AtomList* msg);
 
     void resizeEvent();
 };

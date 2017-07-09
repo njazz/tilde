@@ -191,7 +191,7 @@ void UIScript::sync()
     _editor->textEdit()->setContext(pyWrapper::inst().withPatchControllerServerObjectAndList(this->parentController(), serverObject(), &_scriptCommon->scriptData()->inputList));
 }
 
-void UIScript::updateUI(AtomList list)
+void UIScript::updateUI(AtomList* list)
 {
 
     _scriptCommon->scriptData()->inputList = UIScriptCommon::AtomListToStringList(list);

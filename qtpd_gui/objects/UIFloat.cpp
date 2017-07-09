@@ -9,6 +9,10 @@
 
 #include "Preferences.h"
 
+#include "UIObjectData.h"
+
+#include "ceammc_atomlist.h"
+
 namespace qtpd {
 
 UIFloat::UIFloat()
@@ -34,10 +38,10 @@ UIObject* UIFloat::createObj(QString)
     return ret;
 }
 
-UIObject* UIFloat::createObject(QString, t_canvas*, QGraphicsView* = 0)
-{
-    return 0;
-}
+//UIObject* UIFloat::createObject(QString, t_canvas*, QGraphicsView* = 0)
+//{
+//    return 0;
+//}
 
 void UIFloat::initProperties()
 {
@@ -163,10 +167,10 @@ void UIFloat::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 //    //        }
 //}
 
-void UIFloat::updateUI(AtomList msg)
+void UIFloat::updateUI(AtomList* msg)
 {
-    if (msg.size() > 0) {
-        fromQString(msg.at(0).asString().c_str());
+    if (msg->size() > 0) {
+        fromQString(msg->at(0).asString().c_str());
         emit callRepaint();
     }
 }

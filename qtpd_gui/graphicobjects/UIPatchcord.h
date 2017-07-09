@@ -13,6 +13,8 @@
 
 #include "Port.h"
 
+class ServerPatchcord;
+
 namespace qtpd {
 
 ////

@@ -9,8 +9,6 @@
 #include <string>
 #include <vector>
 
-
-
 using namespace std;
 
 class QString;
@@ -20,14 +18,13 @@ namespace qtpd {
 
 class UIObject;
 
-
 ////
 /// \brief 'constructor' method for each ui object derived from UIObject
 /// \details todo: proper way for constructors in UI* objects
 ///
 //typedef UIObject* (*cmObjectConstructor)(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent);
 
-typedef UIObject* (*UIObjectConstructor)(QString objectData);//, ServerCanvas* serverCanvas, PatchWindowController* controller);
+typedef UIObject* (*UIObjectConstructor)(QString objectData); //, ServerCanvas* serverCanvas, PatchWindowController* controller);
 
 ////
 /// \brief prototype for ui externals handling

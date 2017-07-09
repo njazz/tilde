@@ -2,6 +2,9 @@
 // License: GPL3
 
 #include "UIObject.h"
+#include "UIObjectData.h"
+
+#include <pdServer.hpp>
 
 #include "CanvasView.h"
 
@@ -21,6 +24,10 @@
 
 #include "UIObjectData.h"
 
+#include "ceammc_atomlist.h"
+
+#include "objectObserver.h"
+
 namespace qtpd {
 
 UIObject::UIObject(UIItem* parent)
@@ -29,6 +36,8 @@ UIObject::UIObject(UIItem* parent)
     //_objectDataModel.setErrorBox(false);
 
     setParent(parent);
+
+    _popupMenu = new QMenu;
 
     _objectData = new UIObjectData;
     objectData()->setObjectSize(os_FixedHeight, 40, 20);
@@ -213,17 +222,17 @@ void UIObject::createPopupMenu()
 
     //------------
 
-    _popupMenu.addAction(_pmProperties);
-    _popupMenu.addAction(_pmHelp);
-    _popupMenu.addSeparator();
-    _popupMenu.addAction(_pmOpen);
+    _popupMenu->addAction(_pmProperties);
+    _popupMenu->addAction(_pmHelp);
+    _popupMenu->addSeparator();
+    _popupMenu->addAction(_pmOpen);
 }
 
 void UIObject::showPopupMenu(QPoint pos)
 {
 
-    _popupMenu.move(pos);
-    _popupMenu.show();
+    _popupMenu->move(pos);
+    _popupMenu->show();
 }
 
 void UIObject::setInletsPos()

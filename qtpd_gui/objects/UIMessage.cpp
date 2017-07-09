@@ -8,6 +8,12 @@
 
 #include "Preferences.h"
 
+#include "UIObjectData.h"
+
+#include "ceammc_atomlist.h"
+
+#include "m_pd.h"
+
 namespace qtpd {
 UIMessage::UIMessage()
 {
@@ -75,10 +81,10 @@ UIObject* UIMessage::createObj(QString data)
     return ret;
 }
 
-UIObject* UIMessage::createObject(QString, t_canvas*, QGraphicsView*)
-{
-    return 0;
-}
+//UIObject* UIMessage::createObject(QString, t_canvas*, QGraphicsView*)
+//{
+//    return 0;
+//}
 
 void UIMessage::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
 {
@@ -221,19 +227,19 @@ void UIMessage::setPdMessage(QString message)
     resizeEvent();
 }
 
-void UIMessage::updateUI(AtomList list)
+void UIMessage::updateUI(AtomList* list)
 {
     std::string obj_data;
-    for (size_t i = 0; i < list.size(); i++) {
+    for (size_t i = 0; i < list->size(); i++) {
         // workaround
-        if (AtomList(list.at(i)).toPdData()->a_type == A_COMMA)
+        if (AtomList(list->at(i)).toPdData()->a_type == A_COMMA)
             obj_data += ", ";
-        else if (AtomList(list.at(i)).toPdData()->a_type == A_SEMI)
+        else if (AtomList(list->at(i)).toPdData()->a_type == A_SEMI)
             obj_data += "; ";
-        else if (AtomList(list.at(i)).toPdData()->a_type == A_DOLLAR)
-            obj_data += "$" + QString::number(AtomList(list.at(i)).toPdData()->a_w.w_index).toStdString() + " ";
+        else if (AtomList(list->at(i)).toPdData()->a_type == A_DOLLAR)
+            obj_data += "$" + QString::number(AtomList(list->at(i)).toPdData()->a_w.w_index).toStdString() + " ";
         else
-            obj_data += list.at(i).asString() + " ";
+            obj_data += list->at(i).asString() + " ";
     }
 
     fromQString(obj_data.c_str());

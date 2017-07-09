@@ -122,7 +122,7 @@ public:
 
     virtual void sync();
 
-    virtual void updateUI(AtomList list);
+    virtual void updateUI(AtomList* list);
 
 
 private slots:

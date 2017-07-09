@@ -25,6 +25,8 @@
 #include "Preferences.h"
 #include "PropertyList.h"
 
+#include "UIObjectData.h"
+
 namespace qtpd {
 
 ////

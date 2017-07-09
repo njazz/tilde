@@ -2,16 +2,13 @@
 // License: GPL3
 
 #include "PatchWindowController.h"
-
-#include "CanvasData.h"
+#include "PatchWindow.h"
 
 #include "FileParser.h"
 #include "FileSaver.h"
 
 #include "CanvasData.h"
 #include "CanvasView.h"
-
-#include "PatchWindow.h"
 
 #include "UIObject.h"
 #include "UIPatchcord.h"
@@ -26,8 +23,10 @@
 
 #include "ArrangeObjects.h"
 
-// TEST
-//#include "PdLink.h"
+#include "UIObjectData.h"
+#include "objectObserver.h"
+
+#include <pdServer.hpp>
 
 namespace qtpd {
 
@@ -116,49 +115,22 @@ void PatchWindowController::disableObjectsOnParent()
     _parentObject = 0;
 }
 
+
+
 void PatchWindowController::addObjectToParent(UIObject* src)
 {
 
-    QString data = src->toQString();
+    UIObject* dest = copyObject(src);
 
-    //
-    if (data != "") {
-        UIObject* dest = ObjectLoader::inst().createUIObject(data);
+    doCreateObject(dest);
 
-        if (dest) {
+    if (dest) {
 
-            dest->setObjectData(src->objectData());
-            //workaround
-            //dest->initProperties();
+        t_editMode* readOnly = new t_editMode;
+        *readOnly = em_Locked;
 
-            qDebug() << "src properties " << src->properties()->asPdFileString().c_str() << "dest properties " << dest->properties()->asPdFileString().c_str();
-            // *dest->objectData()->properties() = *src->objectData()->properties();
-
-            dest->setServerObject(src->serverObject());
-            dest->move(src->pos().x(), src->pos().y());
-
-            if (data.split(" ").at(0) == "pd") {
-                //qDebug() << "setSubpatchController";
-                UIBox* boxSrc = (UIBox*)src;
-                UIBox* boxDest = (UIBox*)dest;
-
-                boxDest->setSubpatchController(boxSrc->subpatchController());
-            }
-
-            doCreateObject(dest);
-
-            t_editMode* readOnly = new t_editMode;
-            *readOnly = em_Locked;
-
-            dest->setEditModeRef(readOnly); //_parentObject->getEditModeRef()
-
-            dest->setParentItem(_parentObject);
-
-        } else {
-            ServerInstance::post("bad dest object");
-        }
-    } else {
-        ServerInstance::post("bad data for object");
+        dest->setEditModeRef(readOnly); //_parentObject->getEditModeRef()
+        dest->setParentItem(_parentObject);
     }
 }
 
@@ -238,7 +210,6 @@ void PatchWindowController::setAppController(ApplicationController* a)
 void PatchWindowController::doCreateObject(UIObject* uiObject)
 {
     uiObject->setParentController(this);
-
     uiObject->setParentCanvasView(_windows[0]->canvasView());
 
     uiObject->observer()->setObject(uiObject);
@@ -436,7 +407,6 @@ void PatchWindowController::deleteObject(UIObject* o)
 void PatchWindowController::deleteSelectedObjects(vector<UIObject*>){};
 void PatchWindowController::deleteSelectedPatchcords(vector<UIPatchcord*>){};
 //
-
 
 void PatchWindowController::menuSave()
 {

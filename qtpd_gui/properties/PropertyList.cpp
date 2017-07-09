@@ -3,8 +3,6 @@
 
 #include "PropertyList.h"
 
-
-
 namespace qtpd {
 
 UIPropertyData* PropertyList::group(QString grpName)
@@ -92,8 +90,6 @@ QString PropertyList::extractFromPdFileString(QString input)
 {
     QStringList propertyList = input.split(" @");
 
-    //qDebug() << "list" << propertyList;
-
     if (!propertyList.size())
         return "";
 
@@ -103,7 +99,7 @@ QString PropertyList::extractFromPdFileString(QString input)
             ret = ret.left(ret.size() - 1);
 
     if (propertyList.size() == 1)
-        return ret;//.toStdString();
+        return ret;
 
     propertyList.removeAt(0);
 
@@ -112,22 +108,13 @@ QString PropertyList::extractFromPdFileString(QString input)
         s = Property::unescapeString(s);
         QStringList list = s.split(" ");
 
-        //if (list.size() > 1)
-        //{
         QString pname = list.at(0);
-
-        // lol. fix that later
-
-       // qDebug() << "load" << pname << list.join("_");
 
         if (_data[pname.toStdString()]) {
             list.removeAt(0);
             set(pname.toStdString(), list);
         } else
             ret.append(" @" + s);
-        //}
-
-        // TODO! property type should be saved
     }
 
     return ret;

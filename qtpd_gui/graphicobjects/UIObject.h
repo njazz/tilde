@@ -6,21 +6,27 @@
 
 #include "UIItem.h"
 
-#include "UIObjectData.h"
+namespace ceammc {
+class AtomList;
+}
 
-#include <pdServer.hpp>
-
-// TODO
-#include "ceammc_atomlist.h"
-#include <QMenu>
+using namespace ceammc;
 
 class QAction;
-//class QMenu;
+class QMenu;
+
+class ServerObject;
 
 namespace qtpd {
 
 class CanvasView;
 class CanvasData;
+
+class ObjectObserver;
+
+class PropertyList;
+
+class Port;
 
 class SizeBox;
 
@@ -30,23 +36,9 @@ class UIObject;
 
 class PatchWindowController;
 
-////
-/// \brief The object observer class
-/// \details used for UI objects to update ui from pd(server) object
-///
-class ObjectObserver : public Observer {
-private:
-    UIObject* _object;
+class UIObjectData;
 
-public:
-    void setObject(UIObject* o) { _object = o; }
-    virtual void update();
-};
-
-////
-/// \brief base class for all object boxes - standard (UIBox) and special
-///
-class UIObject : public UIItem {
+class UIObject : public UIItem { ///>base class for all object boxes - standard (UIBox) and special
 
     Q_OBJECT
 
@@ -58,7 +50,7 @@ private:
 
     SizeBox* _sizeBox;
 
-    QMenu _popupMenu; //TODO pointer
+    QMenu* _popupMenu; //TODO pointer
 
     QAction* _pmProperties;
     QAction* _pmHelp;
@@ -169,7 +161,7 @@ public:
 
     // -----------------------------------------
 
-    virtual void updateUI(AtomList){};
+    virtual void updateUI(AtomList*){};
 
 private slots:
     void openPropertiesWindow();

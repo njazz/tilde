@@ -5,6 +5,8 @@
 
 #include <QGraphicsProxyWidget>
 
+#include "UIObjectData.h"
+
 namespace qtpd {
 UIText::UIText()
 {

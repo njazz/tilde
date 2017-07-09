@@ -36,7 +36,7 @@ public:
     explicit UIMatrix();
 
     static UIObject* createObj(QString data);
-    static UIObject* createObject(QString, t_canvas*, QGraphicsView* );
+    //static UIObject* createObject(QString, t_canvas*, QGraphicsView* );
 
     void initProperties();
 
@@ -78,7 +78,7 @@ public:
 
 //    void setPdMessage(QString message);
 
-    void updateUI(AtomList msg);
+    void updateUI(AtomList* msg);
 
 };
 }

@@ -52,7 +52,7 @@ public:
 
     virtual void fromQString(QString message);
 
-    virtual void updateUI(AtomList list);
+    virtual void updateUI(AtomList* list);
 
     virtual void sync();
 

@@ -7,6 +7,10 @@
 
 #include <QStyleOptionGraphicsItem>
 
+#include "UIObjectData.h"
+
+#include "ceammc_atomlist.h"
+
 namespace qtpd {
 
 UISlider::UISlider()
@@ -39,10 +43,10 @@ UIObject* UISlider::createObj(QString data)
     return ret;
 }
 
-UIObject* UISlider::createObject(QString, t_canvas*, QGraphicsView*)
-{
-    return 0;
-}
+//UIObject* UISlider::createObject(QString, t_canvas*, QGraphicsView*)
+//{
+//    return 0;
+//}
 
 void UISlider::initProperties()
 {
@@ -201,11 +205,11 @@ void UISlider::setPdMessage(QString message)
     fromQString(message);
 }
 
-void UISlider::updateUI(AtomList msg)
+void UISlider::updateUI(AtomList* msg)
 {
-    if (msg.size() > 0) {
-        if (msg.at(0).isFloat())
-            _value = msg.at(0).asFloat();
+    if (msg->size() > 0) {
+        if (msg->at(0).isFloat())
+            _value = msg->at(0).asFloat();
 
         //            if (x->_value < 0)
         //                x->_value = 0;

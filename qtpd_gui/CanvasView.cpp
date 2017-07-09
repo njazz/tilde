@@ -7,6 +7,8 @@
 
 #include "PatchWindowController.h"
 
+#include "UIObjectData.h"
+
 #include <assert.h>
 
 namespace qtpd {

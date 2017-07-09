@@ -5,6 +5,8 @@
 
 #include "CanvasView.h"
 
+#include "UIObjectData.h"
+
 namespace qtpd {
 UISignal::UISignal()
 {

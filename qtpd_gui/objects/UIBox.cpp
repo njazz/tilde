@@ -18,6 +18,8 @@
 
 #include "CanvasView.h"
 
+#include "UIObjectData.h"
+
 namespace qtpd {
 
 void CanvasBoxObserver::setUIBox(UIBox* b) { _box = b; };

@@ -8,6 +8,10 @@
 #include <QPainter>
 #include <QStyleOptionGraphicsItem>
 
+#include "UIObjectData.h"
+
+#include "ceammc_atomlist.h"
+
 namespace qtpd {
 
 UIToggle::UIToggle()
@@ -33,10 +37,10 @@ UIObject* UIToggle::createObj(QString data)
     return ret;
 }
 
-UIObject* UIToggle::createObject(QString, t_canvas*, QGraphicsView*)
-{
-    return 0;
-}
+//UIObject* UIToggle::createObject(QString, t_canvas*, QGraphicsView*)
+//{
+//    return 0;
+//}
 
 void UIToggle::initProperties()
 {
@@ -145,11 +149,11 @@ void UIToggle::updateUI(void* uiobj, ceammc::AtomList msg)
     emit x->callRepaint();
 }
 
-void UIToggle::updateUI(AtomList list)
+void UIToggle::updateUI(AtomList* list)
 {
-    if (list.size() > 0) {
-        if (list.at(0).isFloat())
-            _value = list.at(0).asFloat() > 0;
+    if (list->size() > 0) {
+        if (list->at(0).isFloat())
+            _value = list->at(0).asFloat() > 0;
     }
 
     emit callRepaint();
