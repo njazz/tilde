@@ -129,12 +129,13 @@ Inheritance diagram for qtpd::UIText:</div>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_text.html#a63c32d16e0b759e74452444b9a7590e7">UIText</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_text.html#a3f3acc8e9cf951b6b084196799a3a750">paint</a> (QPainter *p, const QStyleOptionGraphicsItem *option, QWidget *)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; <a class="el" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a> properties  <a href="#a3f3acc8e9cf951b6b084196799a3a750"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_text.html#a56d8f9ba20c632198216ba5d8daac247">initProperties</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; template  <a href="#a56d8f9ba20c632198216ba5d8daac247"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_text.html#ac113238a32b846f796429040df09a85d">objectPressEvent</a> (QGraphicsSceneMouseEvent *ev)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; returns 1 if signal~  <a href="#ac113238a32b846f796429040df09a85d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_text.html#abe3b5d63ecd147d71afa4c834f12245c">autoResize</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; custom resize event  <a href="#abe3b5d63ecd147d71afa4c834f12245c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_text.html#a5ded808567b669e4b163a7a8a4a93b89">fromQString</a> (QString objData)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; template  <a href="#a5ded808567b669e4b163a7a8a4a93b89"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_text.html#a586b396b5f81a55c2f3ca9486de395a3">eventFilter</a> (QObject *, QEvent *event)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_text.html#aaf9046683c3d89e034e4c788027a3b31">sync</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
@@ -174,6 +175,8 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>&gt; custom resize event </p>
 
 <p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#a1c7d66be6089715aaf5c03adb64a915b">qtpd::UIObject</a>.</p>
 
@@ -238,6 +241,8 @@ Static Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>&gt; template </p>
+
 <p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#a38d28850e9f30d2549920d86bb65082f">qtpd::UIObject</a>.</p>
 
 </div>
@@ -256,8 +261,6 @@ Static Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>&gt; template </p>
-
 <p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#a07fc14ec32a45e628bece60f892500b8">qtpd::UIObject</a>.</p>
 
 </div>
@@ -270,14 +273,12 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_text.html#ac113238a32b846f796429040df09a85d">qtpd::UIText::objectPressEvent</a> </td>
           <td>(</td>
           <td class="paramtype">QGraphicsSceneMouseEvent *&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>ev</em></td><td>)</td>
           <td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>&gt; returns 1 if signal~ </p>
 
 <p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#ae3d796cac7e501c372e9ba1f9c4ac59d">qtpd::UIObject</a>.</p>
 
@@ -291,13 +292,13 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_text.html#a3f3acc8e9cf951b6b084196799a3a750">qtpd::UIText::paint</a> </td>
           <td>(</td>
           <td class="paramtype">QPainter *&#160;</td>
-          <td class="paramname"><em>p</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const QStyleOptionGraphicsItem *&#160;</td>
-          <td class="paramname"><em>option</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -313,6 +314,8 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>&gt; <a class="el" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a> properties </p>
 
 <p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#ae6c38741873376fda63405d73f2697cd">qtpd::UIObject</a>.</p>
 
@@ -358,7 +361,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 6 2017 12:55:48 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jul 9 2017 07:58:40 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

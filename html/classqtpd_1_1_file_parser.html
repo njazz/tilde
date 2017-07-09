@@ -118,6 +118,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#ab21ff0afb007885f763ce1bea9b1cca4">setAppController</a> (<a class="el" href="classqtpd_1_1_application_controller.html">ApplicationController</a> *appController)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; used for #X coords  <a href="#ab21ff0afb007885f763ce1bea9b1cca4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#ac219f09682f791d96960816821b86f16">setParserWindowController</a> (<a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *wnd)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#ae9e44725e5efaa11f63f96ffba499b8e">setParserWindowControllers</a> (<a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *wnd, <a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *prev, <a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *first)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#aae813930cd14b02aedfa2cac20bfa170">parserFirstWindowController</a> ()</td></tr>
@@ -140,7 +141,8 @@ Static Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">escapeString  <a href="#a80c7a168052ba9515c074dcab70915e7"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#ab7dc8008ff768523c4633c29f8c030d2">pdParserFileName</a> = &quot;&quot;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#adc7053eeab3caf1659443aa27c842809">pdParserFileName</a> = &quot;&quot;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#a58d7991c6f13bd8a1b00d72cf7c8ca31">legacyCanvasCoords</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Parses pd files on 'client' (GUI) side. </p>
@@ -407,6 +409,8 @@ Static Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>&gt; used for #X coords </p>
+
 </div>
 </div>
 <a class="anchor" id="ac219f09682f791d96960816821b86f16"></a><!-- doxytag: member="qtpd::FileParser::setParserWindowController" ref="ac219f09682f791d96960816821b86f16" args="(PatchWindowController *wnd)" -->
@@ -495,12 +499,25 @@ Static Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="ab7dc8008ff768523c4633c29f8c030d2"></a><!-- doxytag: member="qtpd::FileParser::pdParserFileName" ref="ab7dc8008ff768523c4633c29f8c030d2" args="" -->
+<a class="anchor" id="a58d7991c6f13bd8a1b00d72cf7c8ca31"></a><!-- doxytag: member="qtpd::FileParser::legacyCanvasCoords" ref="a58d7991c6f13bd8a1b00d72cf7c8ca31" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string <a class="el" href="classqtpd_1_1_file_parser.html#ab7dc8008ff768523c4633c29f8c030d2">qtpd::FileParser::pdParserFileName</a> = &quot;&quot;<code> [static]</code></td>
+          <td class="memname">string <a class="el" href="classqtpd_1_1_file_parser.html#a58d7991c6f13bd8a1b00d72cf7c8ca31">qtpd::FileParser::legacyCanvasCoords</a><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adc7053eeab3caf1659443aa27c842809"></a><!-- doxytag: member="qtpd::FileParser::pdParserFileName" ref="adc7053eeab3caf1659443aa27c842809" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="classqtpd_1_1_file_parser.html#adc7053eeab3caf1659443aa27c842809">qtpd::FileParser::pdParserFileName</a> = &quot;&quot;<code> [static]</code></td>
         </tr>
       </table>
 </div>
@@ -530,7 +547,7 @@ Static Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 6 2017 12:55:48 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jul 9 2017 07:58:39 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

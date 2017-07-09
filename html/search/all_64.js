@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['data',['data',['../classqtpd_1_1_property.html#a9d55f5422aed6f74981dc7e5130399d4',1,'qtpd::Property']]],
+  ['data',['data',['../classqtpd_1_1_property.html#a7df44bcb3dba9285999a0a088b2a4179',1,'qtpd::Property']]],
   ['datacopy',['dataCopy',['../classqtpd_1_1_patch_window_controller.html#aab4ec2a593279cfad25088d524d0b98d',1,'qtpd::PatchWindowController']]],
   ['datacut',['dataCut',['../classqtpd_1_1_patch_window_controller.html#ad6cbfd60e91d01742ac2bf7dfe40692f',1,'qtpd::PatchWindowController']]],
   ['dataduplicate',['dataDuplicate',['../classqtpd_1_1_patch_window_controller.html#a7b717a2474df3263be0761439a3eeff0',1,'qtpd::PatchWindowController']]],
@@ -8,7 +8,7 @@ var searchData=
   ['dataselectallobjects',['dataSelectAllObjects',['../classqtpd_1_1_patch_window_controller.html#a4ef913c8819dcc1d489ec8f9ca66a01b',1,'qtpd::PatchWindowController']]],
   ['dbtopow',['dbtopow',['../m__pd_8h.html#a30b3faf04d8f63d86991f11abaa81c4f',1,'m_pd.h']]],
   ['dbtorms',['dbtorms',['../m__pd_8h.html#a35754550b878de776ca3aef939c72ec3',1,'m_pd.h']]],
-  ['defaultdata',['defaultData',['../classqtpd_1_1_property.html#acd0a450082813074a467c4dcefc95f83',1,'qtpd::Property']]],
+  ['defaultdata',['defaultData',['../classqtpd_1_1_property.html#aa06ad82b1fc482cc5d634c9156d2a5ab',1,'qtpd::Property']]],
   ['defaultdisplayflags',['defaultDisplayFlags',['../class_color___wheel.html#a36ddea665d3e4aa3a30c2e4a28e8be6b',1,'Color_Wheel']]],
   ['deleteobject',['deleteObject',['../classqtpd_1_1_patch_window_controller.html#a294ae819aa8fd6d25060797014582226',1,'qtpd::PatchWindowController']]],
   ['deletepatchcordsfor',['deletePatchcordsFor',['../classqtpd_1_1_patch_window_controller.html#ae1d634d4109766367c72193eb2f26e43',1,'qtpd::PatchWindowController']]],
