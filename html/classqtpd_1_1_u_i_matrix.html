@@ -118,7 +118,7 @@ Inheritance diagram for qtpd::UIMatrix:</div>
  <div class="center">
   <img src="classqtpd_1_1_u_i_matrix.png" usemap="#qtpd::UIMatrix_map" alt=""/>
   <map id="qtpd::UIMatrix_map" name="qtpd::UIMatrix_map">
-<area href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special" alt="qtpd::UIObject" shape="rect" coords="0,56,89,80"/>
+<area href="classqtpd_1_1_u_i_object.html" alt="qtpd::UIObject" shape="rect" coords="0,56,89,80"/>
 <area href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class." alt="qtpd::UIItem" shape="rect" coords="0,0,89,24"/>
 </map>
  </div></div>
@@ -148,11 +148,10 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_matrix.html#a9a54e7251459946e579a43bc13c16ff3">mousePressEvent</a> (QGraphicsSceneMouseEvent *ev)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_matrix.html#ae66642f8c93e28719873280effa252b0">mouseReleaseEvent</a> (QGraphicsSceneMouseEvent *)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_matrix.html#af1a8d9809d63aac1c5f1a156fd725fc2">mouseMoveEvent</a> (QGraphicsSceneMouseEvent *event)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_matrix.html#ab96f06dea9b78840f7c320baf3c91770">updateUI</a> (AtomList msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_matrix.html#a9cc83a0fe5bb1fca423c5cd57e0d015f">updateUI</a> (<a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> *msg)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_matrix.html#aecce7d92e19afe0bfb6d3190156ad206">createObj</a> (QString data)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_matrix.html#a72817c9f0409919208bd1bd5ead81679">createObject</a> (QString, <a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *, QGraphicsView *)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>gui object: ui.matrix - substitute all objects with multiple buttons (hradio, vradio, ui.matrix) </p>
@@ -184,39 +183,6 @@ Static Public Member Functions</h2></td></tr>
           <td class="paramtype">QString&#160;</td>
           <td class="paramname"><em>data</em></td><td>)</td>
           <td><code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a72817c9f0409919208bd1bd5ead81679"></a><!-- doxytag: member="qtpd::UIMatrix::createObject" ref="a72817c9f0409919208bd1bd5ead81679" args="(QString, t_canvas *, QGraphicsView *)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> * <a class="el" href="classqtpd_1_1_u_i_matrix.html#a72817c9f0409919208bd1bd5ead81679">qtpd::UIMatrix::createObject</a> </td>
-          <td>(</td>
-          <td class="paramtype">QString&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">QGraphicsView *&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [static]</code></td>
         </tr>
       </table>
 </div>
@@ -565,14 +531,14 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab96f06dea9b78840f7c320baf3c91770"></a><!-- doxytag: member="qtpd::UIMatrix::updateUI" ref="ab96f06dea9b78840f7c320baf3c91770" args="(AtomList msg)" -->
+<a class="anchor" id="a9cc83a0fe5bb1fca423c5cd57e0d015f"></a><!-- doxytag: member="qtpd::UIMatrix::updateUI" ref="a9cc83a0fe5bb1fca423c5cd57e0d015f" args="(AtomList *msg)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_matrix.html#ab96f06dea9b78840f7c320baf3c91770">qtpd::UIMatrix::updateUI</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_matrix.html#a9cc83a0fe5bb1fca423c5cd57e0d015f">qtpd::UIMatrix::updateUI</a> </td>
           <td>(</td>
-          <td class="paramtype">AtomList&#160;</td>
+          <td class="paramtype"><a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
           <td><code> [virtual]</code></td>
         </tr>
@@ -580,7 +546,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#a55ef919c2d0a6c3fe5f4457aaa824f89">qtpd::UIObject</a>.</p>
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#aa4bbab416640cabb722c06ffad3b23e3">qtpd::UIObject</a>.</p>
 
 </div>
 </div>
@@ -606,7 +572,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 9 2017 07:58:40 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jul 9 2017 14:01:19 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

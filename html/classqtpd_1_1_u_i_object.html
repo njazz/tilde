@@ -110,9 +110,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="qtpd::UIObject" --><!-- doxytag: inherits="qtpd::UIItem" -->
-<p>base class for all object boxes - standard (<a class="el" href="classqtpd_1_1_u_i_box.html" title="gui object: standard object box">UIBox</a>) and special  
- <a href="classqtpd_1_1_u_i_object.html#details">More...</a></p>
-
 <p><code>#include &lt;<a class="el" href="_u_i_object_8h_source.html">UIObject.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for qtpd::UIObject:</div>
@@ -151,6 +148,8 @@ Signals</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a7cd66a9ac05bd493a0f17a61513cc5ae">callRepaint</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">this is needed for proper threading  <a href="#a7cd66a9ac05bd493a0f17a61513cc5ae"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a652ba42b5aa0d97157d9c5cba41c0f09">sendMessage</a> (ServerObject *obj, QString msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ac5fb89be53467d8817089105e4d20162">signalOpenPropertiesWindow</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#aa59e23701cd0eddcab497095336a0ff7">signalOpenHelpWindow</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a7fcf552df3978236b474406118df604c">UIObject</a> (<a class="el" href="classqtpd_1_1_u_i_item.html">UIItem</a> *parent=0)</td></tr>
@@ -167,7 +166,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classqtpd_1_1_property_list.html">PropertyList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a69ed99ca86c7019f489f56b6dc96f8a4">properties</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt;init properties for the class - called from constructor  <a href="#a69ed99ca86c7019f489f56b6dc96f8a4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ae6c38741873376fda63405d73f2697cd">paint</a> (QPainter *, const QStyleOptionGraphicsItem *, QWidget *)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; <a class="el" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a> properties  <a href="#ae6c38741873376fda63405d73f2697cd"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> properties  <a href="#ae6c38741873376fda63405d73f2697cd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a38d28850e9f30d2549920d86bb65082f">fromQString</a> (QString objData)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; template  <a href="#a38d28850e9f30d2549920d86bb65082f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a7c650b3a5532516f45a8f270f670880f">toQString</a> ()</td></tr>
@@ -223,15 +222,13 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a5ab52afcf2bc31f842ca9ea7f077f326">mousePressEvent</a> (QGraphicsSceneMouseEvent *event)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a40b303ad8ae0b94f4a64f697c1967deb">mouseMoveEvent</a> (QGraphicsSceneMouseEvent *event)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a4982c1fb0ab5870c83450308ad768112">mouseReleaseEvent</a> (QGraphicsSceneMouseEvent *event)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a55ef919c2d0a6c3fe5f4457aaa824f89">updateUI</a> (AtomList)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#aa4bbab416640cabb722c06ffad3b23e3">updateUI</a> (<a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> *)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#ae3b8ec06c4aa92e121faf2810c2babf5">hoverEnterEvent</a> (QGraphicsSceneHoverEvent *)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_object.html#a3b05e154739411d1eed522f7dbf1d9c7">hoverLeaveEvent</a> (QGraphicsSceneHoverEvent *)</td></tr>
 </table>
-<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>base class for all object boxes - standard (<a class="el" href="classqtpd_1_1_u_i_box.html" title="gui object: standard object box">UIBox</a>) and special </p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a7fcf552df3978236b474406118df604c"></a><!-- doxytag: member="qtpd::UIObject::UIObject" ref="a7fcf552df3978236b474406118df604c" args="(UIItem *parent=0)" -->
 <div class="memitem">
 <div class="memproto">
@@ -825,7 +822,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>&gt; <a class="el" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a> properties </p>
+<p>&gt; <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> properties </p>
 
 <p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_item.html#a7d35cc78930b523be25a55b0167e5a13">qtpd::UIItem</a>.</p>
 
@@ -1229,6 +1226,38 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aa59e23701cd0eddcab497095336a0ff7"></a><!-- doxytag: member="qtpd::UIObject::signalOpenHelpWindow" ref="aa59e23701cd0eddcab497095336a0ff7" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_object.html#aa59e23701cd0eddcab497095336a0ff7">qtpd::UIObject::signalOpenHelpWindow</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [signal]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac5fb89be53467d8817089105e4d20162"></a><!-- doxytag: member="qtpd::UIObject::signalOpenPropertiesWindow" ref="ac5fb89be53467d8817089105e4d20162" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_object.html#ac5fb89be53467d8817089105e4d20162">qtpd::UIObject::signalOpenPropertiesWindow</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [signal]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a148d3b54b6c276f35ca01427daca6be6"></a><!-- doxytag: member="qtpd::UIObject::sizeBox" ref="a148d3b54b6c276f35ca01427daca6be6" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -1281,14 +1310,14 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a55ef919c2d0a6c3fe5f4457aaa824f89"></a><!-- doxytag: member="qtpd::UIObject::updateUI" ref="a55ef919c2d0a6c3fe5f4457aaa824f89" args="(AtomList)" -->
+<a class="anchor" id="aa4bbab416640cabb722c06ffad3b23e3"></a><!-- doxytag: member="qtpd::UIObject::updateUI" ref="aa4bbab416640cabb722c06ffad3b23e3" args="(AtomList *)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="classqtpd_1_1_u_i_object.html#a55ef919c2d0a6c3fe5f4457aaa824f89">qtpd::UIObject::updateUI</a> </td>
+          <td class="memname">virtual void <a class="el" href="classqtpd_1_1_u_i_object.html#aa4bbab416640cabb722c06ffad3b23e3">qtpd::UIObject::updateUI</a> </td>
           <td>(</td>
-          <td class="paramtype">AtomList&#160;</td>
+          <td class="paramtype"><a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> *&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [inline, virtual]</code></td>
         </tr>
@@ -1296,7 +1325,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_link.html#a20a69fbf96b03d08cf04f33f61622ce6">qtpd::UILink</a>, <a class="el" href="classqtpd_1_1_u_i_matrix.html#ab96f06dea9b78840f7c320baf3c91770">qtpd::UIMatrix</a>, <a class="el" href="classqtpd_1_1_u_i_slider.html#ab554a8350e4cb6f39bc2c686bd102ef0">qtpd::UISlider</a>, <a class="el" href="classqtpd_1_1_u_i_message.html#ac5c37f0756071d238520265e6de04d46">qtpd::UIMessage</a>, <a class="el" href="classqtpd_1_1_u_i_toggle.html#a110e8296eb77ac9c95e6c8234ab736d8">qtpd::UIToggle</a>, <a class="el" href="classqtpd_1_1_u_i_float.html#a1ab17f6e812566996c9e24eec0241850">qtpd::UIFloat</a>, and <a class="el" href="classqtpd_1_1_u_i_bang.html#ad76c2b5427c1de0d4cba40060db624f9">qtpd::UIBang</a>.</p>
+<p>Reimplemented in <a class="el" href="classqtpd_1_1_u_i_link.html#a31e4d49b29126acd55c92ce4c3abbedd">qtpd::UILink</a>, <a class="el" href="classqtpd_1_1_u_i_script_box.html#abc118b839285f479949c01562b43a6f2">qtpd::UIScriptBox</a>, <a class="el" href="classqtpd_1_1_u_i_matrix.html#a9cc83a0fe5bb1fca423c5cd57e0d015f">qtpd::UIMatrix</a>, <a class="el" href="classqtpd_1_1_u_i_script.html#a5b63c25c05c597fbce25ca2bafad34ab">qtpd::UIScript</a>, <a class="el" href="classqtpd_1_1_u_i_slider.html#ab8a1b706fad5c17c5f799051d19aa84f">qtpd::UISlider</a>, <a class="el" href="classqtpd_1_1_u_i_message.html#a0b54fa88b7c192d1a9c885416803d78d">qtpd::UIMessage</a>, <a class="el" href="classqtpd_1_1_u_i_toggle.html#ad3a30b59828c224cab341116ee84715d">qtpd::UIToggle</a>, <a class="el" href="classqtpd_1_1_u_i_float.html#a9e233fa06173f64c8cbb48a5e87207be">qtpd::UIFloat</a>, and <a class="el" href="classqtpd_1_1_u_i_bang.html#a445a36292e7031c085a8a8619a362740">qtpd::UIBang</a>.</p>
 
 </div>
 </div>
@@ -1322,7 +1351,7 @@ Protected Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 9 2017 07:58:39 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jul 9 2017 14:01:19 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

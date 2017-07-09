@@ -118,7 +118,7 @@ Inheritance diagram for qtpd::UIToggle:</div>
  <div class="center">
   <img src="classqtpd_1_1_u_i_toggle.png" usemap="#qtpd::UIToggle_map" alt=""/>
   <map id="qtpd::UIToggle_map" name="qtpd::UIToggle_map">
-<area href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special" alt="qtpd::UIObject" shape="rect" coords="0,56,90,80"/>
+<area href="classqtpd_1_1_u_i_object.html" alt="qtpd::UIObject" shape="rect" coords="0,56,90,80"/>
 <area href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class." alt="qtpd::UIItem" shape="rect" coords="0,0,90,24"/>
 </map>
  </div></div>
@@ -130,15 +130,14 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_toggle.html#a4e91f313e67310863be8aaf0dab003ce">UIToggle</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_toggle.html#a4f8854faeb9c3592371f37da6a9a190b">initProperties</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_toggle.html#a4e38212f47944f4ef9af3518a3866a30">paint</a> (QPainter *p, const QStyleOptionGraphicsItem *option, QWidget *)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; <a class="el" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a> properties  <a href="#a4e38212f47944f4ef9af3518a3866a30"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> properties  <a href="#a4e38212f47944f4ef9af3518a3866a30"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_toggle.html#ad08a617056c61e9b1c25b51ef37f69e1">resizeEvent</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_toggle.html#a890ec0096ca76757e54b08b3ac22b331">objectPressEvent</a> (QGraphicsSceneMouseEvent *ev)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_toggle.html#a4fdc007c98055244beca4f62bc095fd6">setPdMessage</a> (QString message)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_toggle.html#a110e8296eb77ac9c95e6c8234ab736d8">updateUI</a> (AtomList list)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_toggle.html#ad3a30b59828c224cab341116ee84715d">updateUI</a> (<a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> *list)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_toggle.html#adb3f9627c12f331f751544eae0c90e76">createObj</a> (QString data)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_toggle.html#a92d6e345251364cf549d758d53ad3da7">createObject</a> (QString, <a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *, QGraphicsView *)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_toggle.html#aeee94e533ed53300efeeee46f78d0ac1">updateUI</a> (void *uiobj, <a class="el" href="classceammc_1_1_atom_list.html">ceammc::AtomList</a> msg)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
@@ -171,39 +170,6 @@ Static Public Member Functions</h2></td></tr>
           <td class="paramtype">QString&#160;</td>
           <td class="paramname"><em>data</em></td><td>)</td>
           <td><code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a92d6e345251364cf549d758d53ad3da7"></a><!-- doxytag: member="qtpd::UIToggle::createObject" ref="a92d6e345251364cf549d758d53ad3da7" args="(QString, t_canvas *, QGraphicsView *)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> * <a class="el" href="classqtpd_1_1_u_i_toggle.html#a92d6e345251364cf549d758d53ad3da7">qtpd::UIToggle::createObject</a> </td>
-          <td>(</td>
-          <td class="paramtype">QString&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a> *&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">QGraphicsView *&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [static]</code></td>
         </tr>
       </table>
 </div>
@@ -279,7 +245,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>&gt; <a class="el" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a> properties </p>
+<p>&gt; <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> properties </p>
 
 <p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#ae6c38741873376fda63405d73f2697cd">qtpd::UIObject</a>.</p>
 
@@ -347,14 +313,14 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a110e8296eb77ac9c95e6c8234ab736d8"></a><!-- doxytag: member="qtpd::UIToggle::updateUI" ref="a110e8296eb77ac9c95e6c8234ab736d8" args="(AtomList list)" -->
+<a class="anchor" id="ad3a30b59828c224cab341116ee84715d"></a><!-- doxytag: member="qtpd::UIToggle::updateUI" ref="ad3a30b59828c224cab341116ee84715d" args="(AtomList *list)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_toggle.html#aeee94e533ed53300efeeee46f78d0ac1">qtpd::UIToggle::updateUI</a> </td>
           <td>(</td>
-          <td class="paramtype">AtomList&#160;</td>
+          <td class="paramtype"><a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> *&#160;</td>
           <td class="paramname"><em>list</em></td><td>)</td>
           <td><code> [virtual]</code></td>
         </tr>
@@ -362,7 +328,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#a55ef919c2d0a6c3fe5f4457aaa824f89">qtpd::UIObject</a>.</p>
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#aa4bbab416640cabb722c06ffad3b23e3">qtpd::UIObject</a>.</p>
 
 </div>
 </div>
@@ -388,7 +354,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 9 2017 07:58:40 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jul 9 2017 14:01:19 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -4,6 +4,8 @@ var searchData=
   ['objectloader_2eh',['ObjectLoader.h',['../_object_loader_8h.html',1,'']]],
   ['objectmaker_2ecpp',['ObjectMaker.cpp',['../_object_maker_8cpp.html',1,'']]],
   ['objectmaker_2eh',['ObjectMaker.h',['../_object_maker_8h.html',1,'']]],
+  ['objectobserver_2ecpp',['objectObserver.cpp',['../object_observer_8cpp.html',1,'']]],
+  ['objectobserver_2eh',['objectObserver.h',['../object_observer_8h.html',1,'']]],
   ['oopd_2ecpp',['OOPD.cpp',['../_o_o_p_d_8cpp.html',1,'']]],
   ['oopd_2eh',['OOPD.h',['../_o_o_p_d_8h.html',1,'']]],
   ['oopdclassbase_2eh',['OOPDClassBase.h',['../_o_o_p_d_class_base_8h.html',1,'']]],

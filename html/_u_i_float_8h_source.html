@@ -98,7 +98,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00014"></a>00014 
 <a name="l00015"></a>00015 <span class="keyword">namespace </span>qtpd {
 <a name="l00016"></a>00016 
-<a name="l00020"></a><a class="code" href="classqtpd_1_1_u_i_float.html">00020</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_u_i_float.html" title="gui object: float number box (ui.float)">UIFloat</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a> {
+<a name="l00020"></a><a class="code" href="classqtpd_1_1_u_i_float.html">00020</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_u_i_float.html" title="gui object: float number box (ui.float)">UIFloat</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1_u_i_object.html">UIObject</a> {
 <a name="l00021"></a>00021     Q_OBJECT
 <a name="l00022"></a>00022 
 <a name="l00023"></a>00023 <span class="keyword">private</span>:
@@ -107,8 +107,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00026"></a>00026 <span class="keyword">public</span>:
 <a name="l00027"></a>00027     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_u_i_float.html#a8b112b3017a48079f96d2c307e44523b">UIFloat</a>(); <span class="comment">//UIObject* parent = 0);</span>
 <a name="l00028"></a>00028 
-<a name="l00029"></a>00029     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_float.html#a98051fd847c1bafbf94c000ee4dec2a3">createObj</a>(QString);
-<a name="l00030"></a>00030     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_float.html#a1bdfd4c741a94ef3f345b5de5cb9a2ce">createObject</a>(QString, <a class="code" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a>*, QGraphicsView*);
+<a name="l00029"></a>00029     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_float.html#a98051fd847c1bafbf94c000ee4dec2a3">createObj</a>(QString);
+<a name="l00030"></a>00030     <span class="comment">//static UIObject* createObject(QString, t_canvas*, QGraphicsView*);</span>
 <a name="l00031"></a>00031 
 <a name="l00032"></a>00032     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_float.html#a4e5922d37567b6c609a861a7f848ed57">initProperties</a>();
 <a name="l00033"></a>00033 
@@ -121,7 +121,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00041"></a>00041     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_float.html#a9ba9ee4ddd188879dd644540a6bbe735">mouseMoveEvent</a>(QGraphicsSceneMouseEvent* event);
 <a name="l00042"></a>00042     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_float.html#a458b8643e53e41728eff85581043fb52">mouseReleaseEvent</a>(QGraphicsSceneMouseEvent*);
 <a name="l00044"></a>00044 
-<a name="l00045"></a>00045     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_float.html#a1ab17f6e812566996c9e24eec0241850">updateUI</a>(AtomList msg);
+<a name="l00045"></a>00045     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_float.html#a9e233fa06173f64c8cbb48a5e87207be">updateUI</a>(<a class="code" href="classceammc_1_1_atom_list.html">AtomList</a>* msg);
 <a name="l00046"></a>00046     std::string <a class="code" href="classqtpd_1_1_u_i_float.html#ae4f091c6565095c7fa1418b51e4f574d" title="&gt; call this after setting object data">asPdFileString</a>();
 <a name="l00047"></a>00047 };
 <a name="l00048"></a>00048 }
@@ -145,7 +145,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 9 2017 07:58:39 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jul 9 2017 14:01:18 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

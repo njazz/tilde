@@ -8,7 +8,6 @@ var searchData=
   ['ceammc_5fatomlist_2eh',['ceammc_atomlist.h',['../ceammc__atomlist_8h.html',1,'']]],
   ['clipboard_2ecpp',['Clipboard.cpp',['../_clipboard_8cpp.html',1,'']]],
   ['clipboard_2eh',['Clipboard.h',['../_clipboard_8h.html',1,'']]],
-  ['cm_5fclipboard_2eh',['cm_clipboard.h',['../cm__clipboard_8h.html',1,'']]],
   ['color_5fdelegate_2ecpp',['color_delegate.cpp',['../color__delegate_8cpp.html',1,'']]],
   ['color_5fdelegate_2ehpp',['color_delegate.hpp',['../color__delegate_8hpp.html',1,'']]],
   ['color_5fdialog_2ecpp',['color_dialog.cpp',['../color__dialog_8cpp.html',1,'']]],
@@ -23,5 +22,6 @@ var searchData=
   ['color_5fwheel_2ehpp',['color_wheel.hpp',['../color__wheel_8hpp.html',1,'']]],
   ['colorpicker_5fglobal_2ehpp',['colorpicker_global.hpp',['../colorpicker__global_8hpp.html',1,'']]],
   ['commontypes_2eh',['CommonTypes.h',['../_common_types_8h.html',1,'']]],
-  ['controllerobserver_2eh',['ControllerObserver.h',['../_controller_observer_8h.html',1,'']]]
+  ['controllerobserver_2eh',['ControllerObserver.h',['../_controller_observer_8h.html',1,'']]],
+  ['copyobject_2ecpp',['copyobject.cpp',['../copyobject_8cpp.html',1,'']]]
 ];

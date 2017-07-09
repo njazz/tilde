@@ -1,6 +1,8 @@
 var searchData=
 [
   ['paint_5fborder_2ehpp',['paint_border.hpp',['../paint__border_8hpp.html',1,'']]],
+  ['patchobserver_2ecpp',['patchObserver.cpp',['../patch_observer_8cpp.html',1,'']]],
+  ['patchobserver_2eh',['patchObserver.h',['../patch_observer_8h.html',1,'']]],
   ['patchwindow_2ecpp',['PatchWindow.cpp',['../_patch_window_8cpp.html',1,'']]],
   ['patchwindow_2eh',['PatchWindow.h',['../_patch_window_8h.html',1,'']]],
   ['patchwindowcontroller_2ecpp',['PatchWindowController.cpp',['../_patch_window_controller_8cpp.html',1,'']]],

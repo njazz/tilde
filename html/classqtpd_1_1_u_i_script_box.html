@@ -119,7 +119,7 @@ Inheritance diagram for qtpd::UIScriptBox:</div>
   <img src="classqtpd_1_1_u_i_script_box.png" usemap="#qtpd::UIScriptBox_map" alt=""/>
   <map id="qtpd::UIScriptBox_map" name="qtpd::UIScriptBox_map">
 <area href="classqtpd_1_1_u_i_box.html" title="gui object: standard object box" alt="qtpd::UIBox" shape="rect" coords="0,112,106,136"/>
-<area href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special" alt="qtpd::UIObject" shape="rect" coords="0,56,106,80"/>
+<area href="classqtpd_1_1_u_i_object.html" alt="qtpd::UIObject" shape="rect" coords="0,56,106,80"/>
 <area href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class." alt="qtpd::UIItem" shape="rect" coords="0,0,106,24"/>
 </map>
  </div></div>
@@ -131,12 +131,12 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_box.html#a1d9c5ace799f1de391ed0652f77ecd13">UIScriptBox</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_box.html#a842c65678324437bd8b4ee2e4ed43960">initProperties</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_box.html#adca9c9bd680f0f04251ca88e20c7a114">paint</a> (QPainter *p, const QStyleOptionGraphicsItem *option, QWidget *)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; <a class="el" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a> properties  <a href="#adca9c9bd680f0f04251ca88e20c7a114"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> properties  <a href="#adca9c9bd680f0f04251ca88e20c7a114"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_box.html#a1d8c3c58a5c90eb3bddf1dff312cda0b">objectPressEvent</a> (QGraphicsSceneMouseEvent *event)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">mouse down  <a href="#a1d8c3c58a5c90eb3bddf1dff312cda0b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_box.html#aeca00d744ea7e694763d8cfc0418b2b8">setPdMessage</a> (QString message)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_box.html#a7c94fdc68b2abe231742fc67bbd165c8">sync</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_box.html#a2513c4e600c43810c44099fe85aa7892">updateUI</a> (<a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> list)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_box.html#abc118b839285f479949c01562b43a6f2">updateUI</a> (<a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> *list)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_script_box.html#ab92eaf47406f6be0aae0fc52d06c4a62">createObj</a> (QString data)</td></tr>
@@ -290,7 +290,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>&gt; <a class="el" href="classqtpd_1_1_u_i_object.html" title="base class for all object boxes - standard (UIBox) and special">UIObject</a> properties </p>
+<p>&gt; <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> properties </p>
 
 <p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_box.html#a7da83e2275333d239e85b44981c40450">qtpd::UIBox</a>.</p>
 
@@ -331,20 +331,22 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a2513c4e600c43810c44099fe85aa7892"></a><!-- doxytag: member="qtpd::UIScriptBox::updateUI" ref="a2513c4e600c43810c44099fe85aa7892" args="(AtomList list)" -->
+<a class="anchor" id="abc118b839285f479949c01562b43a6f2"></a><!-- doxytag: member="qtpd::UIScriptBox::updateUI" ref="abc118b839285f479949c01562b43a6f2" args="(AtomList *list)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_script_box.html#a2513c4e600c43810c44099fe85aa7892">qtpd::UIScriptBox::updateUI</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_script_box.html#abc118b839285f479949c01562b43a6f2">qtpd::UIScriptBox::updateUI</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classceammc_1_1_atom_list.html">AtomList</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classceammc_1_1_atom_list.html">AtomList</a> *&#160;</td>
           <td class="paramname"><em>list</em></td><td>)</td>
           <td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classqtpd_1_1_u_i_object.html#aa4bbab416640cabb722c06ffad3b23e3">qtpd::UIObject</a>.</p>
 
 </div>
 </div>
@@ -370,7 +372,7 @@ Static Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 9 2017 07:58:40 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jul 9 2017 14:01:19 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
