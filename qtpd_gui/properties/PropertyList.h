@@ -11,9 +11,6 @@
 #include <QDebug>
 #include <QObject>
 
-
-
-
 namespace qtpd {
 
 class UIObject;
@@ -71,26 +68,25 @@ public:
     {
         if (_data[pName]) {
             _data[pName]->set(value);
-//            emit propertyChangedSignal(QString(pName.c_str()));
+            //            emit propertyChangedSignal(QString(pName.c_str()));
 
             emit get(pName.c_str())->changed();
         }
-
     };
 
     Property* get(QString pName);
 
     //todo
 
-//    Property* operator[](QString pName)
-//    {
-//        return get(pName);
-//    }
+    //    Property* operator[](QString pName)
+    //    {
+    //        return get(pName);
+    //    }
 
-//    Property* operator[](QString pName) const
-//    {
-//        return get(pName);
-//    }
+    //    Property* operator[](QString pName) const
+    //    {
+    //        return get(pName);
+    //    }
 
     // ------------
 
@@ -126,17 +122,17 @@ public:
     ///
     QString extractFromPdFileString(QString input);
 
-//    void addListener(QString name, QObject *obj, t_PropertyListener func)
-//    {
-//        Property *prop = get(name);
+    //    void addListener(QString name, QObject *obj, t_PropertyListener func)
+    //    {
+    //        Property *prop = get(name);
 
-//        if (prop)
-//        {
-//            connect(prop, &Property::changed, (UIObject*)obj, func);
+    //        if (prop)
+    //        {
+    //            connect(prop, &Property::changed, (UIObject*)obj, func);
 
-//        }
+    //        }
 
-//    }
+    //    }
 
 signals:
     void propertyChangedSignal();

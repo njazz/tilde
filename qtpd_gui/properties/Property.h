@@ -4,7 +4,8 @@
 #ifndef CM_PROPERTY_H
 #define CM_PROPERTY_H
 
-#include "ceammc_atomlist.h"
+//#include "ceammc_atomlist.h"
+#include <QVariant>
 
 #include <QColor>
 #include <QObject>
@@ -15,7 +16,7 @@
 
 #include <QDebug>
 
-using namespace ceammc;
+using namespace std;
 
 namespace qtpd {
 
@@ -43,8 +44,8 @@ class Property : public QObject {
     Q_OBJECT
 
 private:
-    AtomList _data;
-    AtomList _defaultData;
+    QVariant _data;
+    QVariant _defaultData;
 
     QString _group;
     QString _version;
@@ -54,206 +55,45 @@ private:
     bool _applyToPd; ///> true if property value should be passed to pd object
 
 public:
-    template <typename T>
-    void set(T val);
-
-    //should be here for precompiled headers
-    void set(QString string);
-
-    explicit Property(){
-        _type = ptList; //?
-        _applyToPd = false;
-    };
-
-    ////
-    /// \brief copy current value to default value
-    ///
-    void setDefault()
-    {
-        _defaultData = _data;
-    }
-
-    void setVersion(QString version)
-    {
-        _version = version;
-    }
-
-    QString version() { return _version; }
-
-    //////////
-
-    UIPropertyType type() { return _type; };
-
-    AtomList data()
-    {
-        return _data;
-    }
-
-    AtomList defaultData()
-    {
-        return _defaultData;
-    }
+    explicit Property();
 
     // -------
 
-    QSize asQSize()
-    {
-        QSize ret = QSize(40, 20);
+    template <typename T>
+    void set(T val);
 
-        if (_data.size() < 2)
-            return ret;
-        if (!(_data.at(0).isFloat()) && !(_data.at(1).isFloat()))
-            return ret;
+    void setDefault(); ///> copy current value to default value
 
-        ret.setWidth(_data.at(0).asFloat());
-        ret.setHeight(_data.at(1).asFloat());
+    void setVersion(QString version);
+    QString version();
 
-        if (ret.width() < 20)
-            ret.setWidth(20);
-        if (ret.height() < 20)
-            ret.setHeight(20);
+    // -------
 
-        return ret;
-    }
+    UIPropertyType type();
 
-    float asFloat()
-    {
+    QVariant data();
+    QVariant defaultData();
 
-        if (!_data.size())
-            return 0;
+    // -------
 
-        return _data.at(0).asFloat();
-    }
+    QSize asQSize();
+    float asFloat();
+    int asInt();
+    bool asBool();
+    float asFontSize();
+    QColor asQColor();
+    QStringList asQStringList();
+    string asStdString();
+    QString asQString();
 
-    int asInt()
-    {
+    QString asPdSaveString();
 
-        if (!_data.size())
-            return 0;
-
-        return int(_data.at(0).asFloat());
-    }
-
-    bool asBool()
-    {
-        if (!_data.size())
-            return 0;
-
-        return (_data.at(0).asFloat()>0);
-    }
-
-    float asFontSize()
-    {
-        return (asFloat() < 8) ? 8 : asFloat();
-    }
-
-    QColor asQColor()
-    {
-        QColor ret = QColor(128, 128, 128, 255); //default gray
-
-        if (_data.size() < 4)
-            return ret;
-        if (!(_data.at(0).isFloat()) && !(_data.at(1).isFloat()) && !(_data.at(2).isFloat()) && !(_data.at(3).isFloat()))
-            return ret;
-
-        ret = QColor(_data.at(0).asFloat(),
-            _data.at(1).asFloat(),
-            _data.at(2).asFloat(),
-            _data.at(3).asFloat());
-
-        return ret;
-    }
-
-    QStringList asQStringList()
-    {
-        QStringList ret;
-
-        for (size_t i = 0; i < _data.size(); i++) {
-
-            ret.push_back(_data.at(i).asString().c_str());
-        }
-
-        return ret;
-    }
-
-    std::string asStdString()
-    {
-        std::string ret = "";
-
-        if (_data.size() > 1) {
-            for (size_t i = 0; i < _data.size(); i++) {
-
-                // + "\\n" was removed, for multi-line text we need extra fix. whould be rewritten with type system
-                ret += _data.at(i).asString() + " ";
-            }
-
-        } else if (_data.size() == 1)
-            ret = _data.at(0).asString();
-
-        return ret;
-    }
-
-    QString asPdSaveString()
-    {
-        QString ret = "";
-
-        if (_data.size() > 1) {
-            for (size_t i = 0; i < _data.size(); i++) {
-
-                ret += QString(_data.at(i).asString().c_str()) + " "; //\\n removed
-            }
-
-        } else if (_data.size() == 1)
-            ret = QString(_data.at(0).asString().c_str());
-
-        ret = escapeString(ret);
-
-        return ret;
-    }
-
-    QString asQString()
-    {
-        QString ret;// = "";
-
-        //temporary
-        ret = QString(asStdString().c_str());
-
-        return ret;
-    }
-
-    // ----------
+    // -------
 
     // todo move?
-    static QString escapeString(QString input)
-    {
-        // todo regexp
+    static QString escapeString(QString input);
+    static QString unescapeString(QString input);
 
-        QString ret;
-
-        ret = input.split(" ").join("\\ ");
-        ret = ret.split("\n").join("\\n");
-        ret = ret.split("\r").join("");
-        ret = ret.split(",").join("\\,");
-        ret = ret.split(".").join("\\.");
-        ret = ret.split("@").join("\\@");
-        ret = ret.split(";").join("\\;");
-        return ret;
-    }
-
-    static QString unescapeString(QString input)
-    {
-        // todo regexp
-
-        QString ret;
-
-        ret = input.split("\\ ").join(" ");
-        ret = ret.split("\\n").join("\n");
-        ret = ret.split("\\,").join(",");
-        ret = ret.split("\\.").join(".");
-        ret = ret.split("\\@").join("@");
-        ret = ret.split("\\;").join(";");
-        return ret;
-    }
 signals:
     void changed();
 };

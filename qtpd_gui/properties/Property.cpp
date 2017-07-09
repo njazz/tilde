@@ -5,24 +5,14 @@
 
 #include <QDebug>
 
-namespace qtpd {
+using namespace std;
 
-template <>
-void Property::set(AtomList list)
-{
-    _data = list;
-    _type = ptList;
-}
+namespace qtpd {
 
 template <>
 void Property::set(QPoint point)
 {
-    AtomList list;
-
-    list.append(point.x());
-    list.append(point.y());
-
-    _data = list;
+    _data.fromValue(point);
     _type = ptVector;
 
     emit changed();
@@ -31,11 +21,8 @@ void Property::set(QPoint point)
 template <>
 void Property::set(bool value)
 {
-    AtomList list;
 
-    list.append(int(value));
-
-    _data = list;
+    _data = (value);
     _type = ptBool;
 
     emit changed();
@@ -44,12 +31,8 @@ void Property::set(bool value)
 template <>
 void Property::set(QPointF point)
 {
-    AtomList list;
 
-    list.append(point.toPoint().x());
-    list.append(point.toPoint().y());
-
-    _data = list;
+    _data = (point);
     _type = ptVector;
 
     emit changed();
@@ -58,14 +41,8 @@ void Property::set(QPointF point)
 template <>
 void Property::set(QRect rect)
 {
-    AtomList list;
 
-    list.append(rect.top());
-    list.append(rect.left());
-    list.append(rect.width());
-    list.append(rect.height());
-
-    _data = list;
+    _data = (rect);
     _type = ptVector;
 
     emit changed();
@@ -73,12 +50,8 @@ void Property::set(QRect rect)
 template <>
 void Property::set(QSize size)
 {
-    AtomList list;
 
-    list.append(size.width());
-    list.append(size.height());
-
-    _data = list;
+    _data = (size);
     _type = ptVector;
 
     emit changed();
@@ -87,12 +60,7 @@ void Property::set(QSize size)
 template <>
 void Property::set(QSizeF size)
 {
-    AtomList list;
-
-    list.append(size.toSize().width());
-    list.append(size.toSize().height());
-
-    _data = list;
+    _data = (size);
     _type = ptVector;
 
     emit changed();
@@ -101,14 +69,14 @@ void Property::set(QSizeF size)
 template <>
 void Property::set(QColor color)
 {
-    AtomList list;
+    QStringList sL;
 
-    list.append(color.red());
-    list.append(color.green());
-    list.append(color.blue());
-    list.append(color.alpha());
+    sL.append(QString(color.red()));
+    sL.append(QString(color.green()));
+    sL.append(QString(color.blue()));
+    sL.append(QString(color.alpha()));
 
-    _data = list;
+    _data.fromValue(color);
     _type = ptColor;
 
     emit changed();
@@ -117,7 +85,8 @@ void Property::set(QColor color)
 template <>
 void Property::set(float val)
 {
-    _data = AtomList(val);
+
+    _data = (val);
     _type = ptFloat;
 
     emit changed();
@@ -126,25 +95,18 @@ void Property::set(float val)
 template <>
 void Property::set(double val)
 {
-    _data = AtomList(val);
+
+    _data = (val);
     _type = ptFloat;
 
     emit changed();
 }
 
 template <>
-void Property::set(t_symbol* s)
+void Property::set(string string)
 {
-    _data = AtomList(s);
-    _type = ptSymbol;
+    _data = (QString(string.c_str()));
 
-    emit changed();
-}
-
-template <>
-void Property::set(std::string string)
-{
-    _data = AtomList(gensym(string.c_str()));
     _type = ptString;
 
     emit changed();
@@ -153,7 +115,8 @@ void Property::set(std::string string)
 template <>
 void Property::set(int val)
 {
-    _data = AtomList(val);
+
+    _data = (val);
     _type = ptInt;
 
     emit changed();
@@ -162,38 +125,156 @@ void Property::set(int val)
 template <>
 void Property::set(QStringList strlist)
 {
-    QStringList::iterator it;
-    AtomList* list = new AtomList();
 
-    for (it = strlist.begin(); it != strlist.end(); ++it) {
-        QString str = *it;
-        //qDebug() << "str" << str;
-        if (str != "") {
-            //check if it is not float
-            if (str.toFloat() != 0)
-                list->append(Atom(str.toFloat()));
-            else
-
-                list->append(Atom(gensym(str.toStdString().c_str())));
-        } else {
-            //fix missing spaces
-            list->append(Atom(gensym("")));
-        }
-    }
+    _data = strlist;
 
     _type = ptStringList;
-    _data = (*list);
 
     emit changed();
 }
 
-//template <>
+template <>
 void Property::set(QString string)
 {
 
-    _data = AtomList(gensym(string.toStdString().c_str()));
+    _data = (string);
+
     _type = ptString;
 
     emit changed();
+}
+
+// -------------------------
+
+Property::Property()
+{
+    _type = ptList; //?
+    _applyToPd = false;
+};
+
+void Property::setDefault()
+{
+    _defaultData = _data;
+}
+
+void Property::setVersion(QString version)
+{
+    _version = version;
+}
+
+QString Property::version() { return _version; }
+
+//////////
+
+UIPropertyType Property::type() { return _type; };
+
+QVariant Property::data()
+{
+    return _data;
+}
+
+QVariant Property::defaultData()
+{
+    return _defaultData;
+}
+
+// -------
+
+QSize Property::asQSize()
+{
+
+    return _data.toSize();
+}
+
+float Property::asFloat()
+{
+
+    return _data.toFloat();
+}
+
+int Property::asInt()
+{
+
+    return _data.toInt();
+}
+
+bool Property::asBool()
+{
+
+    return _data.toInt() > 0;
+}
+
+float Property::asFontSize()
+{
+    return (_data.toFloat() < 8) ? 8 : _data.toFloat();
+}
+
+QColor Property::asQColor()
+{
+    QColor defaultColor = QColor(128, 128, 128, 255); //default gray
+
+    QStringList sL = _data.toStringList();
+
+    if (sL.size() < 4)
+        return defaultColor;
+
+    return QColor(QString(sL.at(0)).toFloat(), QString(sL.at(1)).toFloat(), QString(sL.at(2)).toFloat(), QString(sL.at(3)).toFloat());
+}
+
+QStringList Property::asQStringList()
+{
+
+    return _data.toStringList();
+}
+
+string Property::asStdString()
+{
+
+    return _data.toString().toStdString();
+}
+
+QString Property::asPdSaveString()
+{
+    QString ret = _data.toStringList().join(" ");
+    ret = escapeString(ret);
+    return ret;
+}
+
+QString Property::asQString()
+{
+    return _data.toString();
+}
+
+// ----------
+
+QString Property::escapeString(QString input)
+{
+    // todo regexp
+
+    QString ret;
+
+    ret = input.split(" ").join("\\ ");
+    ret = ret.split("\n").join("\\n");
+    ret = ret.split("\r").join("");
+    ret = ret.split(",").join("\\,");
+    ret = ret.split(".").join("\\.");
+    ret = ret.split("@").join("\\@");
+    ret = ret.split(";").join("\\;");
+    return ret;
+}
+
+QString Property::unescapeString(QString input)
+{
+    // todo regexp
+
+    QString ret;
+
+    ret = input.split("\\ ").join(" ");
+    ret = ret.split("\\n").join("\n");
+    ret = ret.split("\\,").join(",");
+    ret = ret.split("\\.").join(".");
+    ret = ret.split("\\@").join("@");
+    ret = ret.split("\\;").join(";");
+    return ret;
 }
 }
