@@ -10,23 +10,13 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = qtpd
 TEMPLATE = app
 
-# The following define makes your compiler emit warnings if you use
-# any feature of Qt which as been marked as deprecated (the exact warnings
-# depend on your compiler). Please consult the documentation of the
-# deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
 
-# check if debug or release
 CONFIG(debug, debug|release) {
   DEBUG_EXT = _d
 } else {
   DEBUG_EXT =
 }
-
-# You can also make your code fail to compile if you use deprecated APIs.
-# In order to do so, uncomment the following line.
-# You can also select to disable deprecated APIs only up to a certain version of Qt.
-#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 CONFIG += static
 
@@ -46,7 +36,6 @@ SOURCES += python/PythonQtScriptingConsole.cpp \
     widgets/UIScriptTextEdit.cpp \
     widgets/UIScriptEditor.cpp \
     widgets/UIScriptCommon.cpp \
-
 
 HEADERS += \
     python/PythonQtScriptingConsole.h \
@@ -85,7 +74,6 @@ HEADERS += \
     widgets/UIScriptEditor.h \
     widgets/UIScriptCommon.h \
 
-
     LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt_QtAll$${DEBUG_EXT}.1.0.0
     LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt$${DEBUG_EXT}.1.0.0
 
@@ -98,13 +86,10 @@ HEADERS += \
     DEPENDPATH += $$PWD/python/headers
 
     INCLUDEPATH +=     python/headers/
-
 }
 
-
-
 SOURCES += main.cpp\
-#
+#### UI objects
     objects/UIArray.cpp \
     objects/UIBox.cpp \
     objects/UIMessage.cpp \
@@ -119,48 +104,52 @@ SOURCES += main.cpp\
     oopd/UIProperty.cpp \
     oopd/OPInstance.cpp \
     oopd/OPClass.cpp \
-#
-    widgets/UIArrayEditor.cpp \
-#
-    datamodels/FileParser.cpp \
-    datamodels/CanvasData.cpp \
-#
-    ObjectLoader.cpp \
-    widgets/ObjectMaker.cpp \
-    window/PatchWindow.cpp \
-    window/PdWindow.cpp \
-    window/BaseWindow.cpp \
-    window/PropertiesWindow.cpp \
-    properties/Property.cpp \
-    properties/PropertyList.cpp \
     objects/UIDSP.cpp \
+    objects/UISubpatch.cpp \
+    objects/UILink.cpp \
+    objects/UISlider.cpp \
+    oopd/UISignal.cpp \
+    objects/UIMatrix.cpp \
+    objects/UISubCanvas.cpp \
+#### graphic objects
     graphicobjects/Port.cpp \
     graphicobjects/SizeBox.cpp \
     graphicobjects/UIItem.cpp \
     graphicobjects/Grid.cpp \
     graphicobjects/SelectionRect.cpp \
-#
-    objects/UISubpatch.cpp \
     graphicobjects/UIObject.cpp \
-    datamodels/Clipboard.cpp \
-    objects/UILink.cpp \
     graphicobjects/LinkLine.cpp \
-    widgets/UITextEditor.cpp \
-    objects/UISlider.cpp \
-#
-    datamodels/UIObjectData.cpp \
-#
-    oopd/UISignal.cpp \
-    objects/UIMatrix.cpp \
-    objects/UISubCanvas.cpp \
-    CanvasView.cpp \
-    controller/PatchWindowController.cpp \
-    datamodels/FileSaver.cpp \
-    controller/ApplicationController.cpp \
-    ServerWorker.cpp \
-    controller/pdWindowConsoleObserver.cpp \
     graphicobjects/UINewPatchcord.cpp \
     graphicobjects/UIPatchcord.cpp \
+    graphicobjects/CanvasView.cpp \
+#### UI widgets
+    widgets/UIArrayEditor.cpp \
+    widgets/ObjectMaker.cpp \
+    widgets/UITextEditor.cpp \
+#### data models
+    datamodels/FileParser.cpp \
+    datamodels/CanvasData.cpp \
+    datamodels/Clipboard.cpp \
+    datamodels/FileSaver.cpp \
+    datamodels/ArrangeObjects.cpp \
+    datamodels/UIObjectData.cpp \
+    datamodels/ObjectLoader.cpp \
+#### windows
+    window/PatchWindow.cpp \
+    window/PdWindow.cpp \
+    window/BaseWindow.cpp \
+    window/PropertiesWindow.cpp \
+#### controller
+    controller/patchObserver.cpp \
+    controller/objectObserver.cpp \
+    controller/copyobject.cpp \
+    controller/PatchWindowController.cpp \
+    controller/pdWindowConsoleObserver.cpp \
+    controller/ApplicationController.cpp \
+    controller/ServerWorker.cpp \
+#### properties
+    properties/Property.cpp \
+    properties/PropertyList.cpp \
     properties/QtColorPicker/src/color_dialog.cpp \
     properties/QtColorPicker/src/color_preview.cpp \
     properties/QtColorPicker/src/color_selector.cpp \
@@ -171,12 +160,10 @@ SOURCES += main.cpp\
     properties/QtColorPicker/src/color_wheel.cpp \
     properties/QtColorPicker/src/gradient_slider.cpp \
     properties/QtColorPicker/src/hue_slider.cpp \
-    datamodels/ArrangeObjects.cpp \
-    controller/patchObserver.cpp \
-    controller/objectObserver.cpp \
-    controller/copyobject.cpp
+
+
 #
-#    serverAPIPrototype.cpp \
+
 
 HEADERS  += \
     #
@@ -188,7 +175,6 @@ HEADERS  += \
     objects/UIBox.h \
     objects/UIMessage.h \
     objects/UIDSP.h \
-    #
     oopd/OOPD.h \
     oopd/OOPDClassBase.h \
     oopd/OOPDHeaders.h \
@@ -210,7 +196,7 @@ HEADERS  += \
     datamodels/FileParser.h \
     datamodels/FileSaver.h \
 #
-    ObjectLoader.h \
+    datamodels/ObjectLoader.h \
     widgets/ObjectMaker.h \
 #
     properties/Preferences.h \
@@ -237,7 +223,6 @@ HEADERS  += \
     graphicobjects/CommonTypes.h \
     objects/UISlider.h \
     datamodels/UIObjectData.h \
-#
 #    widgets/UIScriptTextEdit.h \
 #    widgets/UIScriptEditor.h \
 #    widgets/UIScriptCommon.h \
@@ -249,8 +234,8 @@ HEADERS  += \
     controller/ControllerObserver.h \
     graphicobjects/UIPatchcord.h \
     graphicobjects/UINewPatchcord.h \
-    CanvasView.h \
-    ServerWorker.h \
+    graphicobjects/CanvasView.h \
+    controller/ServerWorker.h \
     controller/pdWindowConsoleObserver.h \
     properties/QtColorPicker/include/color_dialog.hpp \
     properties/QtColorPicker/include/color_preview.hpp \
@@ -267,9 +252,6 @@ HEADERS  += \
     datamodels/ArrangeObjects.h \
     controller/patchObserver.h \
     controller/objectObserver.h \
-
-
-
 
 FORMS    += \
     window/cm_pdwindow.ui \
@@ -305,8 +287,6 @@ unix: {
     LIBS += -L$$OUT_PWD/../qtpd_ceammc_lib/ -lqtpd_ceammc_lib
 }
 
-
-
 DISTFILES += \
     pd_ceammc.ico \
     pd_ceammc.png \
@@ -331,9 +311,6 @@ INCLUDEPATH += \
     controller/ \
     ../../pd-server/src/ \
     properties/QtColorPicker/include
-
-#macx: INCLUDEPATH += /usr/local/Cellar
-
 
 RESOURCES += \
     properties/QtColorPicker/src/pattern.qrc
