@@ -182,6 +182,9 @@ signals:
 
     void sendMessage(ServerObject* obj, QString msg);
 
+    void signalOpenPropertiesWindow();
+    void signalOpenHelpWindow();
+
 public slots:
     void resizeBox(int dx, int dy);
     void s_repaint(); ///>needed for proper threading

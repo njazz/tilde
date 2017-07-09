@@ -1,11 +1,9 @@
 #include <QString>
 #include <QtTest>
 
-//#include <QGRaphicsObject>
 
-//#include "../qtpd_gui/graphicobjects/UIObject.h"
+#include "PropertyList.h"
 
-#include "../qtpd_gui/properties/PropertyList.h"
 
 using namespace qtpd;
 
@@ -22,6 +20,8 @@ private Q_SLOTS:
     void propertyTestDataTypes();
     void propertyTestEscape();
     void propertyTestLoad();
+    //
+    void  patchControllerCopyObject();
 };
 
 Qtpd_tests::Qtpd_tests()
@@ -89,6 +89,13 @@ void Qtpd_tests::propertyTestLoad()
         }
 
     QVERIFY("object.name @unused string value" == output);
+}
+
+void Qtpd_tests::patchControllerCopyObject()
+{
+    //PatchWindowController *w = new PatchWindowController(0);
+
+    //w->createObject("text @Text test object", QPoint(0,0));
 }
 
 QTEST_APPLESS_MAIN(Qtpd_tests)

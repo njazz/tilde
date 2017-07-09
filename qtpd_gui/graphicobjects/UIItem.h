@@ -5,10 +5,6 @@
 #define UIITEM_H
 
 #include <QGraphicsObject>
-
-// Widget extension
-// check / fix
-
 #include "CommonTypes.h"
 
 namespace qtpd {
@@ -103,4 +99,4 @@ public slots:
 };
 }
 
-#endif // CM_WIDGET_H
+#endif //

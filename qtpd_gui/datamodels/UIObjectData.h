@@ -5,7 +5,6 @@
 #define UIOBJECTDATA_H
 
 #include <QObject>
-
 #include "CommonTypes.h"
 
 namespace qtpd {

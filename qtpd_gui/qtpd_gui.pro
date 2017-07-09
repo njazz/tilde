@@ -166,7 +166,7 @@ SOURCES += main.cpp\
 
 
 HEADERS  += \
-    #
+#### objects
     objects/UIBang.h \
     objects/UIArray.h \
     objects/UIToggle.h \
@@ -185,58 +185,33 @@ HEADERS  += \
     oopd/UIMethod.h \
     oopd/UIProperty.h \
     objects/UILink.h \
-    #
+    objects/UISubpatch.h \
+    objects/UISlider.h \
+    oopd/UISignal.h \
+    objects/UIMatrix.h \
+    objects/UISubCanvas.h \
+#### widgets
     widgets/UIArrayEditor.h \
-    #
+    widgets/ObjectMaker.h \
+    widgets/UITextEditor.h \
+#### window
     window/BaseWindow.h \
     window/PatchWindow.h \
     window/PdWindow.h \
     window/PropertiesWindow.h \
-#
+#### data models
     datamodels/FileParser.h \
     datamodels/FileSaver.h \
-#
     datamodels/ObjectLoader.h \
-    widgets/ObjectMaker.h \
-#
+    datamodels/Clipboard.h \
+    datamodels/CanvasData.h \
+    datamodels/UIObjectData.h \
+    datamodels/ArrangeObjects.h \
+#### properties
     properties/Preferences.h \
     properties/Property.h \
     properties/PropertyList.h \
-#
-    graphicobjects/Port.h \
-    graphicobjects/SizeBox.h \
-    graphicobjects/UIItem.h \
-    graphicobjects/Grid.h \
-    graphicobjects/SelectionRect.h \
-    objects/UISubpatch.h \
-#
-    graphicobjects/UIObject.h \
-    datamodels/Clipboard.h \
-    datamodels/CanvasData.h \
-    lib_headers/g_canvas.h \
-    lib_headers/m_pd.h \
-    lib_headers/ceammc_atomlist.h \
-    lib_headers/ceammc_atom.h \
     properties/AudioSettings.h \
-    graphicobjects/LinkLine.h \
-    widgets/UITextEditor.h \
-    graphicobjects/CommonTypes.h \
-    objects/UISlider.h \
-    datamodels/UIObjectData.h \
-#    widgets/UIScriptTextEdit.h \
-#    widgets/UIScriptEditor.h \
-#    widgets/UIScriptCommon.h \
-    oopd/UISignal.h \
-    objects/UIMatrix.h \
-    objects/UISubCanvas.h \
-    controller/ApplicationController.h \
-    controller/PatchWindowController.h \
-    controller/ControllerObserver.h \
-    graphicobjects/UIPatchcord.h \
-    graphicobjects/UINewPatchcord.h \
-    graphicobjects/CanvasView.h \
-    controller/ServerWorker.h \
-    controller/pdWindowConsoleObserver.h \
     properties/QtColorPicker/include/color_dialog.hpp \
     properties/QtColorPicker/include/color_preview.hpp \
     properties/QtColorPicker/include/color_selector.hpp \
@@ -249,13 +224,41 @@ HEADERS  += \
     properties/QtColorPicker/include/gradient_slider.hpp \
     properties/QtColorPicker/include/hue_slider.hpp \
     properties/QtColorPicker/src/paint_border.hpp \
-    datamodels/ArrangeObjects.h \
+#### graphicobjects
+    graphicobjects/Port.h \
+    graphicobjects/SizeBox.h \
+    graphicobjects/UIItem.h \
+    graphicobjects/Grid.h \
+    graphicobjects/SelectionRect.h \
+    graphicobjects/UIObject.h \
+    graphicobjects/LinkLine.h \
+    graphicobjects/CommonTypes.h \
+    graphicobjects/UIPatchcord.h \
+    graphicobjects/UINewPatchcord.h \
+    graphicobjects/CanvasView.h \
+#### lib headers
+    lib_headers/g_canvas.h \
+    lib_headers/m_pd.h \
+    lib_headers/ceammc_atomlist.h \
+    lib_headers/ceammc_atom.h \
+#### controller
+    controller/ApplicationController.h \
+    controller/PatchWindowController.h \
+    controller/ControllerObserver.h \
+    controller/ServerWorker.h \
+    controller/pdWindowConsoleObserver.h \
     controller/patchObserver.h \
     controller/objectObserver.h \
 
+#    widgets/UIScriptTextEdit.h \
+#    widgets/UIScriptEditor.h \
+#    widgets/UIScriptCommon.h \
+
+
+
 FORMS    += \
     window/cm_pdwindow.ui \
-    canvasmenu.ui \
+#    canvasmenu.ui \
     window/cm_basewindow.ui \
     properties/QtColorPicker/src/color_dialog.ui
 

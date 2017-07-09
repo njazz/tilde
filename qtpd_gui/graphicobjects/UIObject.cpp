@@ -1,32 +1,27 @@
 // (c) 2017 Alex Nadzharov
 // License: GPL3
 
-#include "UIObject.h"
-#include "UIObjectData.h"
-
-#include <pdServer.hpp>
-
-#include "CanvasView.h"
-
-#include "FileParser.h"
-
-#include "Port.h"
-#include "SizeBox.h"
-
-#include "Preferences.h"
-
 #include <QMainWindow>
 #include <QMenu>
 #include <QObject>
 #include <QStyleOption>
 
-#include "PropertiesWindow.h"
-
+#include "UIObject.h"
 #include "UIObjectData.h"
 
-#include "ceammc_atomlist.h"
+#include "Port.h"
+#include "SizeBox.h"
+
+#include <pdServer.hpp>
 
 #include "objectObserver.h"
+
+// to be removed:
+
+#include "FileParser.h"
+#include "PropertiesWindow.h"
+
+#include "CanvasView.h"
 
 namespace qtpd {
 
@@ -486,26 +481,8 @@ void UIObject::sync()
         addOutlet();
 };
 
-//UIObject* UIObject::clone() const
-//{
-//    return new UIObject(*this);
-//}
-
 void UIObject::autoResize()
 {
-    //    QFont myFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize());
-    //    QFontMetrics fm(myFont);
-
-    //    int w = (int)fm.width(_objectDataModel.objectData()) + 10;
-    //    _objectDataModel.setMminimumBoxWidth(w);
-    //    //setWidth(w);
-
-    //    QRect r = boundingRect().toRect();
-
-    //    if (r.width() < w) {
-    //        setWidth(w);
-    //        properties()->set("Size", r.size());
-    //    }
 }
 
 QString UIObject::toQString()
@@ -573,17 +550,6 @@ void UIObject::doSetSize(QSize size)
 void UIObject::resizeEvent() //QGraphicsSceneResizeEvent *event)
 {
 
-    //    _sizeBox->move(boundingRect().width() - 7, boundingRect().height() - 7);
-
-    //    //todo fixed width
-    //    if (boundingRect().width() < _objectDataModel.minimumBoxWidth())
-    //        setWidth(_objectDataModel.minimumBoxWidth());
-    //    if (boundingRect().height() < _objectDataModel.minimumBoxHeight())
-    //        setHeight(_objectDataModel.minimumBoxHeight());
-
-    //    setInletsPos();
-    //    setOutletsPos();
-
     // needs fix
     properties()->set("Size", boundingRect().size());
 }
@@ -601,18 +567,6 @@ void UIObject::hoverLeaveEvent(QGraphicsSceneHoverEvent*)
 };
 
 //---------------------------------
-
-// ??
-//void UIObject::hide()
-//{
-
-//    //    if (subpatchWindow()) {
-//    //        qDebug("hide subcanvas window");
-
-//    //        subpatchWindow()->hide();
-//    //        delete _SubpatchWindow;
-//    //    }
-//}
 
 void UIObject::hideSizeBox()
 {
@@ -673,6 +627,8 @@ void UIObject::openPropertiesWindow()
 {
     PropertiesWindow* pw = new PropertiesWindow(properties());
     pw->show();
+
+    emit signalOpenPropertiesWindow();
 }
 
 void UIObject::openHelpWindow()
@@ -683,23 +639,14 @@ void UIObject::openHelpWindow()
     } else {
         ServerInstance::error("bad error help file name!");
     }
+
+    emit signalOpenHelpWindow();
 }
 
 void UIObject::s_repaint() //needed for proper threading
 {
-
     update();
 }
-
-//void UIObject::propertyChanged(QString pname)
-//{
-
-//    //just visuals
-//    if (pname == "FontSize")
-//        update();
-//    if (pname == "BorderColor")
-//        update();
-//}
 
 // ----------------
 
