@@ -77,6 +77,9 @@ public:
     // -------
 
     QSize asQSize();
+    QPoint asQPoint();
+    QSizeF asQSizeF();
+    QPointF asQPointF();
     float asFloat();
     int asInt();
     bool asBool();

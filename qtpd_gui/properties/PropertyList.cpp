@@ -92,7 +92,7 @@ QString PropertyList::extractFromPdFileString(QString input)
 {
     QStringList propertyList = input.split(" @");
 
-    qDebug() << "list" << propertyList;
+    //qDebug() << "list" << propertyList;
 
     if (!propertyList.size())
         return "";
@@ -118,13 +118,13 @@ QString PropertyList::extractFromPdFileString(QString input)
 
         // lol. fix that later
 
-        qDebug() << "load" << pname << list.join("_");
+       // qDebug() << "load" << pname << list.join("_");
 
         if (_data[pname.toStdString()]) {
             list.removeAt(0);
             set(pname.toStdString(), list);
         } else
-            ret.append("@" + s);
+            ret.append(" @" + s);
         //}
 
         // TODO! property type should be saved

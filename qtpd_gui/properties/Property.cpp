@@ -12,7 +12,7 @@ namespace qtpd {
 template <>
 void Property::set(QPoint point)
 {
-    _data.fromValue(point);
+    _data= point;
     _type = ptVector;
 
     emit changed();
@@ -32,7 +32,7 @@ template <>
 void Property::set(QPointF point)
 {
 
-    _data = (point);
+    _data = point;
     _type = ptVector;
 
     emit changed();
@@ -71,13 +71,15 @@ void Property::set(QColor color)
 {
     QStringList sL;
 
-    sL.append(QString(color.red()));
-    sL.append(QString(color.green()));
-    sL.append(QString(color.blue()));
-    sL.append(QString(color.alpha()));
+    sL.append(QString::number(color.red()));
+    sL.append(QString::number(color.green()));
+    sL.append(QString::number(color.blue()));
+    sL.append(QString::number(color.alpha()));
 
-    _data.fromValue(color);
+    _data = (sL);
     _type = ptColor;
+
+    //qDebug() << "set" << sL;
 
     emit changed();
 }
@@ -85,7 +87,6 @@ void Property::set(QColor color)
 template <>
 void Property::set(float val)
 {
-
     _data = (val);
     _type = ptFloat;
 
@@ -136,9 +137,16 @@ void Property::set(QStringList strlist)
 template <>
 void Property::set(QString string)
 {
-
     _data = (string);
+    _type = ptString;
 
+    emit changed();
+}
+
+template <>
+void Property::set(char const* string)
+{
+    _data = QString(string);
     _type = ptString;
 
     emit changed();
@@ -182,25 +190,36 @@ QVariant Property::defaultData()
 
 QSize Property::asQSize()
 {
-
     return _data.toSize();
+}
+
+QPoint Property::asQPoint()
+{
+    return _data.toPoint();
+}
+
+QSizeF Property::asQSizeF()
+{
+    return _data.toSizeF();
+}
+
+QPointF Property::asQPointF()
+{
+    return _data.toPointF();
 }
 
 float Property::asFloat()
 {
-
     return _data.toFloat();
 }
 
 int Property::asInt()
 {
-
     return _data.toInt();
 }
 
 bool Property::asBool()
 {
-
     return _data.toInt() > 0;
 }
 
@@ -218,18 +237,24 @@ QColor Property::asQColor()
     if (sL.size() < 4)
         return defaultColor;
 
-    return QColor(QString(sL.at(0)).toFloat(), QString(sL.at(1)).toFloat(), QString(sL.at(2)).toFloat(), QString(sL.at(3)).toFloat());
+    //qDebug() << "get" << sL;
+
+
+
+    QColor ret =  QColor(QString(sL.at(0)).toInt(), QString(sL.at(1)).toInt(), QString(sL.at(2)).toInt(), QString(sL.at(3)).toInt());
+
+    //qDebug() << "color" << ret;
+
+    return ret;
 }
 
 QStringList Property::asQStringList()
 {
-
     return _data.toStringList();
 }
 
 string Property::asStdString()
 {
-
     return _data.toString().toStdString();
 }
 
