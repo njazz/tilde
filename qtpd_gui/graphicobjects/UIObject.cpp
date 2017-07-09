@@ -123,10 +123,10 @@ void UIObject::initProperties()
     objectData()->properties()->create("Position", "Box", "0.1", pos());
     objectData()->properties()->create("FontSize", "Box", "0.1", 11.);
 
-    objectData()->properties()->create("PresetName", "Bindings", "0.1", gensym(""));
-    objectData()->properties()->create("SendSymbol", "Bindings", "0.1", gensym(""));
+    objectData()->properties()->create("PresetName", "Bindings", "0.1", QString(""));
+    objectData()->properties()->create("SendSymbol", "Bindings", "0.1", QString(""));
     objectData()->properties()->create("ReceiveSymbol", "Bindings", "0.1", QString(""));
-    objectData()->properties()->create("AutoOSCSymbol", "Bindings", "0.1", gensym(""));
+    objectData()->properties()->create("AutoOSCSymbol", "Bindings", "0.1", QString(""));
 
     objectData()->properties()->create("BorderColor", "Color", "0.1", QColor(192, 192, 192, 255));
 
@@ -507,6 +507,11 @@ QString UIObject::toQString()
         return "";
 }
 
+QString UIObject::objectClass()
+{
+    return toQString().split(" ").at(0);
+}
+
 bool UIObject::errorBox() { return objectData()->errorBox(); }
 void UIObject::setErrorBox(bool val) { objectData()->setErrorBox(val); }
 
@@ -677,15 +682,15 @@ void UIObject::s_repaint() //needed for proper threading
     update();
 }
 
-void UIObject::propertyChanged(QString pname)
-{
+//void UIObject::propertyChanged(QString pname)
+//{
 
-    //just visuals
-    if (pname == "FontSize")
-        update();
-    if (pname == "BorderColor")
-        update();
-}
+//    //just visuals
+//    if (pname == "FontSize")
+//        update();
+//    if (pname == "BorderColor")
+//        update();
+//}
 
 // ----------------
 

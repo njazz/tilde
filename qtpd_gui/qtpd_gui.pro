@@ -32,13 +32,13 @@ CONFIG(debug, debug|release) {
 CONFIG += static
 
 win32: CONFIG -= WithPython
-macx: CONFIG += WithPython
+macx: CONFIG -= WithPython
 
 WithPython {
 #include(python/build/python.prf)
     DEFINES += WITH_PYTHON
-  INCLUDEPATH += python/py2.7headers/
-  macx: LIBS += -F/System/Library/Frameworks -framework Python
+    INCLUDEPATH += python/py2.7headers/
+    macx: LIBS += -F/System/Library/Frameworks -framework Python
 
 SOURCES += python/PythonQtScriptingConsole.cpp \
     python/wrappers/py_wrappers.cpp \
@@ -102,8 +102,7 @@ HEADERS += \
 
 }
 
-macx:PRECOMPILED_HEADER = _headers.h
-#macx:CONFIG += precompile_header
+
 
 SOURCES += main.cpp\
 #
@@ -152,9 +151,6 @@ SOURCES += main.cpp\
 #
     datamodels/UIObjectData.cpp \
 #
-#    widgets/UIScriptTextEdit.cpp \
-#    widgets/UIScriptEditor.cpp \
-#    widgets/UIScriptCommon.cpp \
     oopd/UISignal.cpp \
     objects/UIMatrix.cpp \
     objects/UISubCanvas.cpp \
@@ -179,9 +175,6 @@ SOURCES += main.cpp\
     datamodels/ArrangeObjects.cpp
 #
 #    serverAPIPrototype.cpp \
-
-
-
 
 HEADERS  += \
     #
@@ -335,9 +328,8 @@ INCLUDEPATH += \
     ../../pd-server/src/ \
     properties/QtColorPicker/include
 
+#macx: INCLUDEPATH += /usr/local/Cellar
 
-
-#$$PWD
 
 RESOURCES += \
     properties/QtColorPicker/src/pattern.qrc

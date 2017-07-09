@@ -71,17 +71,12 @@ private:
 
     ObjectObserver* _observer;
 
-    //bool _disableObjectMaker;
-
 protected:
     virtual void hoverEnterEvent(QGraphicsSceneHoverEvent*);
     virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent*);
 
 public:
     explicit UIObject(UIItem* parent = 0);
-
-//    UIObject(const UIObject& source);
-//    UIObject& operator=(const UIObject& source);
 
     // ----------------------
 
@@ -99,28 +94,30 @@ public:
 
     ObjectObserver* observer();
 
+    virtual void initProperties(); ///>init properties for the class - called from constructor
+    PropertyList* properties(); ///> UIObject properties
+
+    // ----------------------
+
+    virtual void paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*){}; ///> template
+
     // ----------------------
 
     virtual void fromQString(QString objData); ///> sets object text data
     QString toQString(); ///> gets object text data /usually overriden by ui objects/
 
+    QString objectClass();
+
     // ----------------------
 
-    //TODO
-    UIObjectData _objectDataModel;
-
-    virtual void paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*){}; ///> template
-
-    virtual void initProperties(); ///>init properties for the class - called from constructor
-    PropertyList* properties(); ///> UIObject properties
+    //UIObjectData _objectDataModel;
 
     void createPopupMenu(); ///> createContextMenu
     void showPopupMenu(QPoint pos);
 
-    virtual void autoResize(); ///> call this after setting object data
-
     void doSetSize(QSize size);
     virtual void resizeEvent(); ///> custom resize event
+    virtual void autoResize(); ///> call this after setting object data
 
     virtual std::string asPdFileString(); ///>returns object's text for client-based file saving
 
@@ -129,10 +126,7 @@ public:
     SizeBox* sizeBox();
     void hideSizeBox();
 
-    void removeXLets();
     virtual void sync();
-
-    //virtual UIObject* clone() const; ///> to be used when canvases are copied (for G-O-P feature)
 
     bool errorBox(); ///> returns true if object doesn't exist
     void setErrorBox(bool val); ///> sets object box error flag
@@ -160,6 +154,8 @@ public:
 
     int pdInletClass(int idx); ///> returns 1 if signal~
     int pdOutletClass(int idx); ///> returns 1 if signal~
+
+    void removeXLets();
 
     // -----------------------------------------
 
@@ -202,7 +198,7 @@ public slots:
     /// \brief this slot is called by property editor or anything that changes property
     /// \details fix this later with better property system
     /// \param pname
-    void propertyChanged(QString pname);
+    //  void propertyChanged(QString pname);
 };
 }
 

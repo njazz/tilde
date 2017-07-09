@@ -35,7 +35,7 @@
 #include "PythonQt.h"
 
 void PythonQt_init_QtGui(PyObject*);
-void PythonQt_init_QtSvg(PyObject*);
+//void PythonQt_init_QtSvg(PyObject*);
 //void PythonQt_init_QtSql(PyObject*);
 void PythonQt_init_QtNetwork(PyObject*);
 void PythonQt_init_QtCore(PyObject*);
@@ -58,7 +58,7 @@ namespace PythonQt_QtAll
     PythonQt_init_QtNetwork(0);
     PythonQt_init_QtGui(0);
     PythonQt_init_QtXml(0);
-    PythonQt_init_QtSvg(0);
+    //PythonQt_init_QtSvg(0);
     //PythonQt_init_QtSql(0);
 #ifdef PYTHONQT_WITH_WEBKIT
     PythonQt_init_QtWebKit(0);

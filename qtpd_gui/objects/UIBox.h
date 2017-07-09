@@ -70,10 +70,10 @@ public:
 
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*);
 
-    void objectPressEvent(QGraphicsSceneMouseEvent* event);     ///> object mouse down
-    void objectMoveEvent(QGraphicsSceneMouseEvent* event);      ///> object mouse move
+    void objectPressEvent(QGraphicsSceneMouseEvent* event); ///> object mouse down
+    void objectMoveEvent(QGraphicsSceneMouseEvent* event); ///> object mouse move
 
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev);            ///> basic mouse up
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev); ///> basic mouse up
 
     void fromQString(QString message);
 

@@ -28,14 +28,13 @@ class PatchWindowController;
 class UIBox;
 
 // STUB
-class PatchObserver : public Observer
-{
+class PatchObserver : public Observer {
 private:
     PatchWindowController* _patchController;
+
 public:
-    void setPatchController(PatchWindowController* c)   {_patchController = c;}
-    virtual void update()
-    {
+    void setPatchController(PatchWindowController* c) { _patchController = c; }
+    virtual void update(){
         //something
 
     };
@@ -75,23 +74,14 @@ private:
     CanvasView* _activeCanvasView;
 
 public:
-    PatchWindowController(ApplicationController* appController); //replace with parent (appcontroller)
+    PatchWindowController(ApplicationController* appController);
+    PatchWindowController(ApplicationController* appController, ServerCanvas* canvas); ///> this is for subpatches
 
-    // for subpatches
-    PatchWindowController(ApplicationController* appController, ServerCanvas* canvas);
-
-    //PatchWindowController* createSubpatchWindowController();
-
-    //new
-    UIBox* subpatchBox();
-    ServerObject* serverCanvasAsObject();
-
-    ServerCanvas* serverCanvas();
-
-    void enableObjectsOnParent(UIObject *parentObject); // for GOP functionality
-    void disableObjectsOnParent();
+    // ----------------------
 
     ServerInstance* serverInstance();
+    ServerObject* serverCanvasAsObject();
+    ServerCanvas* serverCanvas();
 
     void setAppController(ApplicationController* a);
     ApplicationController* appController() { return _appController; }
@@ -100,34 +90,31 @@ public:
 
     vector<PatchWindow*> windows();
     PatchWindow* firstWindow();
-
-    // reserved
-    // vector<QGraphicsScene*> scenes();
-
     PatchWindow* newWindow();
 
-    //
+    // ----------------------
+
+    UIObject* createObject(string name, QPoint pos);
+    void restoreUIBoxForSubpatch(PatchWindowController* controller, QString data, QPoint pos); ///> used in patch parsing with 'restore'
+
+    void patchcord(UIObject* src, int out, UIObject* dest, int in);
+
+    // ------------
+
     void syncObjectsOnParent();
     void addObjectToParent(UIObject* src);
-    //
-    // UNUSED
-    bool syncData(ServerObject* serverObject, UIObject* uiObject);
+
+    UIBox* asUIBox();
+
+    void enableObjectsOnParent(UIObject* parentObject); // for GOP functionality
+    void disableObjectsOnParent();
+
+    // ----------------------
 
     void openFile(QString fileName);
     void saveFile(QString fileName);
     void saveFileDialog();
 
-    //
-    UIObject* createObject(string name, QPoint pos);
-    void creatBoxForSubpatch(PatchWindowController* controller, QString data, QPoint pos);
-
-    //
-    void patchcord(UIObject* src, int out, UIObject* dest, int in);
-
-    // ------------
-
-
-    // TODO
     void deleteSelectedPatchcords();
     void deletePatchcordsFor(UIItem* obj);
     void deletePatchcordsForObject(UIObject* o);
@@ -144,11 +131,7 @@ public:
     void dataPaste();
     void dataSelectAllObjects();
 
-    //
-    void clickPort(); //?
-    //
-    void update(); // <<-- from observer
-    //
+    // -----------------------
     void updateViewports();
 
     // =======================
@@ -156,7 +139,6 @@ public:
 
     // moved from canvas-view
     void selectBox(UIItem* box);
-
     void moveSelectedBoxes(QPoint eventPos);
 
 public slots:
@@ -181,14 +163,11 @@ public slots:
 
     void slotAlignCenter();
 
-
     void slotHDistribute();
     void slotVDistribute();
 
-    //    void signalSelectBox(UIItem* box, QGraphicsSceneMouseEvent* event);
-    //    void signalMoveBox(UIItem* box, QGraphicsSceneMouseEvent* event);
-
 private slots:
+
     void slotSelectObject(UIObject* object);
     void slotPatchcord(UIObject* src, int nOut, UIObject* dest, int nIn);
 
@@ -200,8 +179,6 @@ private slots:
 
     void slotSelectionFrame(QPoint start, QPoint end);
     void slotMoveSelectedBoxes(QPoint eventPos);
-
-
 
 signals:
     ServerObject* signalCreateObject(ServerCanvas* canvas, string name);

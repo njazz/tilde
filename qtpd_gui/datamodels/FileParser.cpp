@@ -9,235 +9,312 @@
 #include "CanvasView.h"
 #include "PatchWindowController.h"
 
+#include <QFile>
+#include <QTextStream>
+
+using namespace std;
+
 namespace qtpd {
+
 PatchWindowController* FileParser::_pdParserPrevWindowController = 0;
 PatchWindowController* FileParser::_pdParserWindowController = 0;
 PatchWindowController* FileParser::_pdParserFirstWindowController = 0;
 
-//CanvasData* FileParser::_currentData = 0;
-//CanvasData* FileParser::_previousData = 0;
-//CanvasData* FileParser::_firstData = 0;
-
 ApplicationController* FileParser::_appController = 0;
 
-std::string FileParser::pdParserFileName = "";
+string FileParser::pdParserFileName = "";
+
+string FileParser::legacyCanvasCoords;
+
+// ----------------
+
+inline void legacyProcessMsg(PatchWindowController* controller, QStringList list)
+{
+    list[0] = "obj";
+    list.insert(3, "ui.msg");
+    FileParser::sendStringToCanvas(controller, list);
+
+    // no special properties
+}
+
+inline void legacyProcessText(PatchWindowController* controller, QStringList list)
+{
+    list[0] = "obj";
+    list.insert(3, "ui.text");
+    list.insert(4, "@Text");
+    //UIObject* obj =
+    FileParser::sendStringToCanvas(controller, list);
+
+    //        list.removeAt(0);
+    //        list.removeAt(0);
+    //        list.removeAt(0);
+    //        list.removeAt(0);
+    //        QString text = list.join(" ");
+    //        obj->properties()->set("Text", text);
+}
+
+inline void legacyProcessAtom(PatchWindowController* controller, QStringList list)
+{
+    list[0] = "obj";
+    list.insert(3, "ui.float");
+    //UIObject* obj =
+    FileParser::sendStringToCanvas(controller, list);
+
+    //temporary - to have readable list at some point
+    //box_width lower upper 1 label send receive
+
+    //check bounds
+    //int lBoxWidth = ((QString)list.at(4)).toInt();
+    //float lMinimum = ((QString)list.at(5)).toFloat();
+    //float lMaximum = ((QString)list.at(6)).toFloat();
+    //int lInit = ((QString)list.at(7)).toInt();
+    QString lLabel = ((QString)list.at(8));
+    QString lSend = ((QString)list.at(9));
+    QString lReceive = ((QString)list.at(10));
+
+    //todo set / create
+}
+
+inline void legacyProcessSymbolAtom(PatchWindowController* controller, QStringList list)
+{
+
+    QStringList list2 = QString("obj 0 0 ui.msg <symbol>").split(" ");
+
+    list2[1] = list[1];
+    list2[2] = list[2];
+
+    FileParser::sendStringToCanvas(controller, list2);
+
+    //temporary - to have readable list at some point
+    //box_width lower upper 1 label send receive
+
+    //check bounds
+    //        int lBoxWidth = ((QString)list.at(4)).toInt();
+    //        float lMinimum = ((QString)list.at(5)).toFloat();
+    //        float lMaximum = ((QString)list.at(6)).toFloat();
+    //        int lInit = ((QString)list.at(7)).toInt();
+    //        QString lLabel = ((QString)list.at(8));
+    //        QString lSend = ((QString)list.at(9));
+    //        QString lReceive = ((QString)list.at(10));
+
+    //todo set / create
+}
+
+inline void legacyProcessArray(PatchWindowController* controller, QStringList list)
+{
+    // lol
+    QStringList l2 = QString(QString("obj ") + QString("20 ") + QString("20 ") + QString("ui.array ") + list.at(1) + " " + list.at(2)).split(" ");
+
+    //QStringList l2 = QString("obj 20 20 ui.array temp 100").split(" ");
+    qDebug() << "array parse" << l2;
+    FileParser::sendStringToCanvas(controller, l2);
+}
+
+// ----------
+
+inline void legacyProcessUIBang(PatchWindowController* controller, QStringList list)
+{
+    //box_width time1 time2 init send_ receive_ label label_offset_x label_offset_y (font) font_size bgcolor frontcolor labelcolor ?
+
+    QStringList list2 = QString("obj 0 0 ui.bang").split(" ");
+
+    list2[1] = list[1];
+    list2[2] = list[2];
+
+    list2.append("@Size " + list[4] + list[4]);
+
+    // TODO
+
+    FileParser::sendStringToCanvas(controller, list2);
+}
+
+inline void legacyProcessUIToggle(PatchWindowController* controller, QStringList list)
+{
+
+    //box_width init send_ receive_ label label_offset_x label_offset_y (font) font_size bgcolor frontcolor labelcolor low_value high_value
+
+    QStringList list2 = QString("obj 0 0 ui.toggle").split(" ");
+
+    list2[1] = list[1];
+    list2[2] = list[2];
+
+    list2.append("@Size " + list[4] + list[4]);
+
+    // TODO
+
+    FileParser::sendStringToCanvas(controller, list2);
+}
+
+inline void legacyProcessUISlider(PatchWindowController* controller, QStringList list)
+{
+
+    QStringList list2 = QString("obj 0 0 ui.slider").split(" ");
+
+    list2[1] = list[1];
+    list2[2] = list[2];
+
+    if (list.size() > 5) {
+        list2.append("@Size " + list[4] + " " + list[5]);
+        list2.append("@Offset " + list[6]);
+        list2.append("@Range " + list[7]);
+    }
+
+    FileParser::sendStringToCanvas(controller, list2);
+}
+
+inline void legacyProcessUIHRadio(PatchWindowController* controller, QStringList list)
+{
+
+    QStringList list2 = QString("obj 0 0 ui.matrix").split(" ");
+
+    list2[1] = list[1];
+    list2[2] = list[2];
+
+    // temporary
+    list2.append("@Columns 5 @Rows 1");
+
+    if (list.size() > 4)
+        list2.append("@Size " + QString::number(list[4].toFloat() * 5) + " " + list[4]); //replace 5 with size
+
+    //list2.append("@Offset " + list2[6] );
+    //list2.append("@Range" +  list2[7]);
+
+    FileParser::sendStringToCanvas(controller, list2);
+}
+
+inline void legacyProcessUIVRadio(PatchWindowController* controller, QStringList list)
+{
+
+    QStringList list2 = QString("obj 0 0 ui.matrix").split(" ");
+
+    list2[1] = list[1];
+    list2[2] = list[2];
+
+    // temporary
+    list2.append("@Columns 1 @Rows 5");
+
+    if (list.size() > 4)
+        list2.append("@Size " + list[4] + " " + QString::number(list[4].toFloat() * 5));
+
+    //list2.append("@Offset " + list2[6] );
+    //list2.append("@Range" +  list2[7]);
+
+    FileParser::sendStringToCanvas(controller, list2);
+}
+
+inline void legacyProcessUINumber2(PatchWindowController* controller, QStringList list)
+{
+    // TODO
+}
+
+inline void legacyProcessUICnv(PatchWindowController* controller, QStringList list)
+{
+
+    // ----- canvas
+
+    //temporary
+    //check bounds
+    //int lBoxWidth = ((QString)list.at(4)).toInt(); //?
+    QString lSend = ((QString)list.at(7));
+    QString lReceive = ((QString)list.at(8));
+    QString lLabel = ((QString)list.at(9));
+    QString fontSize = ((QString)list.at(13));
+    if (lLabel == "empty")
+        lLabel = "";
+    //...
+    //int lFontSize = ((QString)list.at(4)).toInt() * 8 + 3;
+
+    QStringList list2;
+    list2.push_back("obj");
+    list2.push_back(list.at(1));
+    list2.push_back(list.at(2));
+    list2.push_back("ui.text");
+    list2.push_back("@Text");
+    list2.push_back(lLabel);
+    list2.push_back("@FontSize");
+    list2.push_back(fontSize);
+
+    //UIObject* obj =
+    FileParser::sendStringToCanvas(controller, list2);
+}
+
+// ----------
 
 bool FileParser::legacyProcess(PatchWindowController* controller, QStringList list)
 {
-    //qDebug() << "legacy process:" << list;
 
-    // special cases:
-    // msg - text - floatatom - symbolatom
-
-    //compatibility
     if (list.at(0) == "msg") {
-        list[0] = "obj";
-        list.insert(3, "ui.msg");
-        FileParser::sendStringToCanvas(controller, list);
 
-        // no special properties
+        legacyProcessMsg(controller, list);
         return true;
-
-    } else if (list.at(0) == "text") {
-        list[0] = "obj";
-        list.insert(3, "ui.text");
-        list.insert(4, "@Text");
-        //UIObject* obj =
-        FileParser::sendStringToCanvas(controller, list);
-
-        //        list.removeAt(0);
-        //        list.removeAt(0);
-        //        list.removeAt(0);
-        //        list.removeAt(0);
-        //        QString text = list.join(" ");
-        //        obj->properties()->set("Text", text);
-
-        return true;
-
-    } else if (list.at(0) == "floatatom") {
-        list[0] = "obj";
-        list.insert(3, "ui.float");
-        //UIObject* obj =
-        FileParser::sendStringToCanvas(controller, list);
-
-        //temporary - to have readable list at some point
-        //box_width lower upper 1 label send receive
-
-        //check bounds
-        //int lBoxWidth = ((QString)list.at(4)).toInt();
-        //float lMinimum = ((QString)list.at(5)).toFloat();
-        //float lMaximum = ((QString)list.at(6)).toFloat();
-        //int lInit = ((QString)list.at(7)).toInt();
-        QString lLabel = ((QString)list.at(8));
-        QString lSend = ((QString)list.at(9));
-        QString lReceive = ((QString)list.at(10));
-
-        //todo set / create
-
-        return true;
-    } else if (list.at(0) == "symbolatom") {
-
-        QStringList list2 = QString("obj 0 0 ui.msg <symbol>").split(" ");
-
-        list2[1] = list[1];
-        list2[2] = list[2];
-
-        FileParser::sendStringToCanvas(controller, list2);
-
-        //temporary - to have readable list at some point
-        //box_width lower upper 1 label send receive
-
-        //check bounds
-        //        int lBoxWidth = ((QString)list.at(4)).toInt();
-        //        float lMinimum = ((QString)list.at(5)).toFloat();
-        //        float lMaximum = ((QString)list.at(6)).toFloat();
-        //        int lInit = ((QString)list.at(7)).toInt();
-        //        QString lLabel = ((QString)list.at(8));
-        //        QString lSend = ((QString)list.at(9));
-        //        QString lReceive = ((QString)list.at(10));
-
-        //todo set / create
-
-        return true;
-    } else if (list.at(0) == "array") {
-
-        // lol
-        QStringList l2 = QString(QString("obj ") + QString("20 ") + QString("20 ") + QString("ui.array ") + list.at(1) + " " + list.at(2)).split(" ");
-
-        //QStringList l2 = QString("obj 20 20 ui.array temp 100").split(" ");
-        qDebug() << "array parse" << l2;
-        FileParser::sendStringToCanvas(controller, l2);
-
-        return true;
-    } else
-        //
-        // iemgui objects
-        //
-        if ((list.at(0) == "obj") && (list.at(3) == "bng")) {
-        //box_width time1 time2 init send_ receive_ label label_offset_x label_offset_y (font) font_size bgcolor frontcolor labelcolor ?
-
-        QStringList list2 = QString("obj 0 0 ui.bang").split(" ");
-
-        list2[1] = list[1];
-        list2[2] = list[2];
-
-        list2.append("@Size " + list[4] + list[4]);
-
-        // TODO
-
-        FileParser::sendStringToCanvas(controller, list2);
-
-        return true;
-
-    } else if ((list.at(0) == "obj") && (list.at(3) == "tgl")) {
-        //box_width init send_ receive_ label label_offset_x label_offset_y (font) font_size bgcolor frontcolor labelcolor low_value high_value
-
-        QStringList list2 = QString("obj 0 0 ui.toggle").split(" ");
-
-        list2[1] = list[1];
-        list2[2] = list[2];
-
-        list2.append("@Size " + list[4] + list[4]);
-
-        // TODO
-
-        FileParser::sendStringToCanvas(controller, list2);
-
-        return true;
-
-    } else if ((list.at(0) == "obj") && (list.at(3) == "hsl") || (list.at(0) == "obj") && (list.at(3) == "vsl")) {
-
-        QStringList list2 = QString("obj 0 0 ui.slider").split(" ");
-
-        list2[1] = list[1];
-        list2[2] = list[2];
-
-        if (list.size() > 5) {
-            list2.append("@Size " + list[4] + " " + list[5]);
-            list2.append("@Offset " + list[6]);
-            list2.append("@Range " + list[7]);
-        }
-
-        FileParser::sendStringToCanvas(controller, list2);
-
-        return true;
-
     }
 
-    else if ((list.at(0) == "obj") && (list.at(3) == "number2")) {
+    if (list.at(0) == "text") {
+
+        legacyProcessText(controller, list);
+        return true;
+    }
+
+    if (list.at(0) == "floatatom") {
+
+        legacyProcessAtom(controller, list);
+        return true;
+    }
+
+    if (list.at(0) == "symbolatom") {
+
+        legacyProcessSymbolAtom(controller, list);
+        return true;
+    }
+
+    if (list.at(0) == "array") {
+
+        legacyProcessArray(controller, list);
 
         return true;
+    }
 
-    } else if ((list.at(0) == "obj") && (list.at(3) == "hradio")) {
+    // IEMGUI
 
-        QStringList list2 = QString("obj 0 0 ui.matrix").split(" ");
+    if (list.at(0) == "obj") {
+        if (list.at(3) == "bng") {
+            legacyProcessUIBang(controller, list);
+            return true;
+        }
 
-        list2[1] = list[1];
-        list2[2] = list[2];
+        if (list.at(3) == "tgl") {
 
-        // temporary
-        list2.append("@Columns 5 @Rows 1");
+            legacyProcessUIToggle(controller, list);
+            return true;
+        }
 
-        if (list.size() > 4)
-            list2.append("@Size " + QString::number(list[4].toFloat() * 5) + " " + list[4]); //replace 5 with size
+        if ((list.at(3) == "hsl") || (list.at(3) == "vsl")) {
 
-        //list2.append("@Offset " + list2[6] );
-        //list2.append("@Range" +  list2[7]);
+            legacyProcessUISlider(controller, list);
+            return true;
+        }
 
-        FileParser::sendStringToCanvas(controller, list2);
+        if (list.at(3) == "number2") {
 
-        return true;
+            legacyProcessUINumber2(controller, list);
+            return true;
+        }
 
-    } else if ((list.at(0) == "obj") && (list.at(3) == "vradio")) {
+        if (list.at(3) == "hradio") {
 
-        QStringList list2 = QString("obj 0 0 ui.matrix").split(" ");
+            legacyProcessUIHRadio(controller, list);
+            return true;
+        }
+        if (list.at(3) == "vradio") {
 
-        list2[1] = list[1];
-        list2[2] = list[2];
+            legacyProcessUIVRadio(controller, list);
+            return true;
+        }
+        if (list.at(3) == "cnv") {
 
-        // temporary
-        list2.append("@Columns 1 @Rows 5");
-
-        if (list.size() > 4)
-            list2.append("@Size " + list[4] + " " + QString::number(list[4].toFloat() * 5));
-
-        //list2.append("@Offset " + list2[6] );
-        //list2.append("@Range" +  list2[7]);
-
-        FileParser::sendStringToCanvas(controller, list2);
-
-        return true;
-
-    } else
-        // ----- canvas
-        if ((list.at(0) == "obj") && (list.at(3) == "cnv")) {
-
-        //temporary
-        //check bounds
-        //int lBoxWidth = ((QString)list.at(4)).toInt(); //?
-        QString lSend = ((QString)list.at(7));
-        QString lReceive = ((QString)list.at(8));
-        QString lLabel = ((QString)list.at(9));
-        QString fontSize = ((QString)list.at(13));
-        if (lLabel == "empty")
-            lLabel = "";
-        //...
-        //int lFontSize = ((QString)list.at(4)).toInt() * 8 + 3;
-
-        QStringList list2;
-        list2.push_back("obj");
-        list2.push_back(list.at(1));
-        list2.push_back(list.at(2));
-        list2.push_back("ui.text");
-        list2.push_back("@Text");
-        list2.push_back(lLabel);
-        list2.push_back("@FontSize");
-        list2.push_back(fontSize);
-
-        //UIObject* obj =
-        FileParser::sendStringToCanvas(controller, list2);
-
-        return true;
+            legacyProcessUICnv(controller, list);
+            return true;
+        }
     }
 
     return false; // if it is not a special legacy object
@@ -246,6 +323,7 @@ bool FileParser::legacyProcess(PatchWindowController* controller, QStringList li
 UIObject* FileParser::sendStringToCanvas(PatchWindowController* controller, QStringList list)
 {
     qDebug("new obj");
+
     if (list.size() > 3) {
         QString objname;
         QString msgname;
@@ -320,6 +398,7 @@ void FileParser::parseStringListAtoms(PatchWindowController* controller, QString
         else {
             qDebug("list error");
         }
+    } else if (list.at(0) == "coords") {
     } else if (list.at(0) == "restore") {
 
         qDebug("restore canvas: %lu | previous %lu", _pdParserWindowController, _pdParserPrevWindowController);
@@ -362,7 +441,7 @@ void FileParser::parseStringListAtoms(PatchWindowController* controller, QString
 
                     //                        b1->setPos(pos.x(),pos.y());
 
-                    _pdParserPrevWindowController->creatBoxForSubpatch(_pdParserWindowController, objectData, pos);
+                    _pdParserPrevWindowController->restoreUIBoxForSubpatch(_pdParserWindowController, objectData, pos);
 
                     qDebug("restore");
 
@@ -377,9 +456,9 @@ void FileParser::parseStringListAtoms(PatchWindowController* controller, QString
                 }
             }
             //            }
-//            else {
-//                qDebug("pd subpatch error");
-//            }
+            //            else {
+            //                qDebug("pd subpatch error");
+            //            }
 
             //draw subpatch
             _pdParserWindowController = _pdParserPrevWindowController;

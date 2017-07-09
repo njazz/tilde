@@ -90,7 +90,7 @@ PatchWindowController::PatchWindowController(ApplicationController* appControlle
 
 ServerCanvas* PatchWindowController::serverCanvas() { return _serverCanvas; }
 
-UIBox* PatchWindowController::subpatchBox()
+UIBox* PatchWindowController::asUIBox()
 {
     UIBox* ret = new UIBox();
 
@@ -125,14 +125,25 @@ void PatchWindowController::addObjectToParent(UIObject* src)
     if (data != "") {
         UIObject* dest = ObjectLoader::inst().createUIObject(data);
 
-        dest->setObjectData(src->objectData());
-        //workaround
-        dest->initProperties();
-
         if (dest) {
+
+            dest->setObjectData(src->objectData());
+            //workaround
+            //dest->initProperties();
+
+            qDebug() << "src properties " << src->properties()->asPdFileString().c_str() << "dest properties " << dest->properties()->asPdFileString().c_str();
+            // *dest->objectData()->properties() = *src->objectData()->properties();
 
             dest->setServerObject(src->serverObject());
             dest->move(src->pos().x(), src->pos().y());
+
+            if (data.split(" ").at(0) == "pd") {
+                //qDebug() << "setSubpatchController";
+                UIBox* boxSrc = (UIBox*)src;
+                UIBox* boxDest = (UIBox*)dest;
+
+                boxDest->setSubpatchController(boxSrc->subpatchController());
+            }
 
             doCreateObject(dest);
 
@@ -281,8 +292,7 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
     _canvasData->addUniqueBox(_canvasData->boxes(), uiObject);
     _scene->addItem(uiObject);
 
-    if (_parentObject)
-    {
+    if (_parentObject) {
         addObjectToParent(uiObject);
     }
 
@@ -383,9 +393,9 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
     */
 };
 
-void PatchWindowController::creatBoxForSubpatch(PatchWindowController* controller, QString data, QPoint pos)
+void PatchWindowController::restoreUIBoxForSubpatch(PatchWindowController* controller, QString data, QPoint pos)
 {
-    UIObject* uiObject = controller->subpatchBox();
+    UIObject* uiObject = controller->asUIBox();
 
     // already have server object here
 
@@ -421,14 +431,12 @@ void PatchWindowController::deleteObject(UIObject* o)
     deleteSelectedObjects();
 };
 //
-bool PatchWindowController::syncData(ServerObject* serverObject, UIObject* uiObject){};
+//bool PatchWindowController::syncData(ServerObject* serverObject, UIObject* uiObject){};
 //
 void PatchWindowController::deleteSelectedObjects(vector<UIObject*>){};
 void PatchWindowController::deleteSelectedPatchcords(vector<UIPatchcord*>){};
 //
-void PatchWindowController::clickPort(){}; //?
-//
-void PatchWindowController::update(){}; // <<-- from observer
+
 
 void PatchWindowController::menuSave()
 {
@@ -686,7 +694,8 @@ void PatchWindowController::deleteSelectedPatchcords()
     }
 
     _canvasData->selectedPatchcords()->clear();
-    update();
+    //update();
+    firstWindow()->canvasView()->update();
 };
 
 void PatchWindowController::deletePatchcordsFor(UIItem* obj)

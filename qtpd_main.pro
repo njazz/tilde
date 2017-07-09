@@ -2,8 +2,9 @@ TEMPLATE = subdirs
 
 CONFIG += static
 CONFIG += ordered
-macx: CONFIG += withPython
+macx: CONFIG -= withPython
 win32: CONFIG -= WithPython
+
 
 
 SUBDIRS = \
@@ -13,6 +14,7 @@ SUBDIRS = \
     $$PWD/qtpd_gui \
     $$PWD/qtpd_ui_library \
     #API_prototype/API_prototype
+    qtpd_tests
 
 
 WithPython {

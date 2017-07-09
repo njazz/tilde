@@ -4,10 +4,14 @@
 #ifndef CM_FILEPARSER_H
 #define CM_FILEPARSER_H
 
-#include <QFile>
-#include <QTextStream>
+#include <string>
 
 // todo non-static class ?
+
+using namespace std;
+
+class QStringList;
+class QString;
 
 namespace qtpd {
 class PatchWindow;
@@ -32,7 +36,8 @@ private:
     static ApplicationController* _appController;
 
 public:
-    static std::string pdParserFileName;
+    static string pdParserFileName;
+    static string legacyCanvasCoords;       ///> used for #X coords
 
     static void setAppController(ApplicationController* appController);
     static void setParserWindowController(PatchWindowController* wnd);

@@ -19,14 +19,14 @@ HEADERS +=                \
 SOURCES +=                \
   PythonQt_QtAll.cpp
 
-QT += gui svg network xml xmlpatterns opengl        #sql
+QT += gui  network xml xmlpatterns opengl        #sql svg
 QT += widgets printsupport #multimedia multimediawidgets
 #QT += quick qml quickwidgets
 QT += uitools
 
 include ($$PYTHONQT_GENERATED_PATH/com_trolltech_qt_core/com_trolltech_qt_core.pri)
 include ($$PYTHONQT_GENERATED_PATH/com_trolltech_qt_gui/com_trolltech_qt_gui.pri)
-include ($$PYTHONQT_GENERATED_PATH/com_trolltech_qt_svg/com_trolltech_qt_svg.pri)
+#include ($$PYTHONQT_GENERATED_PATH/com_trolltech_qt_svg/com_trolltech_qt_svg.pri)
 #include ($$PYTHONQT_GENERATED_PATH/com_trolltech_qt_sql/com_trolltech_qt_sql.pri)
 include ($$PYTHONQT_GENERATED_PATH/com_trolltech_qt_network/com_trolltech_qt_network.pri)
 include ($$PYTHONQT_GENERATED_PATH/com_trolltech_qt_opengl/com_trolltech_qt_opengl.pri)
@@ -41,4 +41,10 @@ PythonQtWebKit {
   QT += webkit webkitwidgets
   DEFINES += PYTHONQT_WITH_WEBKIT
   include ($$PYTHONQT_GENERATED_PATH/com_trolltech_qt_webkit/com_trolltech_qt_webkit.pri)
+}
+
+macx:{
+    target.path = /usr/local/lib
+
+    INSTALLS += target
 }

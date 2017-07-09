@@ -56,6 +56,7 @@ UIBox::UIBox()
     _boxObserver->setUIBox(this);
 
     setFlag(QGraphicsItem::ItemClipsChildrenToShape, true);
+
 }
 
 ////
