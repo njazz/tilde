@@ -112,19 +112,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00031"></a>00031     QAction* _clearConsoleAct;
 <a name="l00032"></a>00032 
 <a name="l00033"></a>00033     Q_SLOT <span class="keywordtype">void</span> logBoxChange(<span class="keywordtype">int</span> index);
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035 <span class="keyword">public</span>:
-<a name="l00036"></a>00036     <a class="code" href="classqtpd_1_1_pd_window.html#a916bc5d8c3d803b541ab325d8e9d0d1c">PdWindow</a>();
-<a name="l00037"></a>00037 
-<a name="l00038"></a>00038 signals:
-<a name="l00039"></a>00039     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_pd_window.html#ab3e2aadc5552a09ac8ad5d4c50a852fd">postSignal</a>(QString text);
-<a name="l00040"></a>00040 <span class="keyword">public</span> slots:
-<a name="l00041"></a>00041     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_pd_window.html#a2350192a9fe895f775d35aad9b47686c">postSlot</a>(QString text);
-<a name="l00042"></a>00042     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_pd_window.html#a597cc5de10e62b986128713a6ed24405">clearConsoleSlot</a>();
-<a name="l00043"></a>00043 };
-<a name="l00044"></a>00044 
-<a name="l00045"></a>00045 <span class="comment">//fix - normal singleton here</span>
-<a name="l00046"></a>00046 <span class="comment">//static PdWindow* pdw;</span>
+<a name="l00034"></a>00034     Q_SLOT <span class="keywordtype">void</span> sendMessageChanged();
+<a name="l00035"></a>00035     Q_SLOT <span class="keywordtype">void</span> focusOnSendMessage();
+<a name="l00036"></a>00036 
+<a name="l00037"></a>00037 <span class="keyword">public</span>:
+<a name="l00038"></a>00038     <a class="code" href="classqtpd_1_1_pd_window.html#a916bc5d8c3d803b541ab325d8e9d0d1c">PdWindow</a>();
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040 signals:
+<a name="l00041"></a>00041     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_pd_window.html#ab3e2aadc5552a09ac8ad5d4c50a852fd">postSignal</a>(QString text);
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043 <span class="keyword">public</span> slots:
+<a name="l00044"></a>00044     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_pd_window.html#a2350192a9fe895f775d35aad9b47686c">postSlot</a>(QString text);
+<a name="l00045"></a>00045     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_pd_window.html#a597cc5de10e62b986128713a6ed24405">clearConsoleSlot</a>();
+<a name="l00046"></a>00046 };
 <a name="l00047"></a>00047 }
 <a name="l00048"></a>00048 
 <a name="l00049"></a>00049 <span class="preprocessor">#endif // CM_PDWINDOW_H</span>
@@ -146,7 +146,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 10 2017 13:50:52 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 10 2017 15:16:53 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

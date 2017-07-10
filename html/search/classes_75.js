@@ -31,7 +31,9 @@ var searchData=
   ['uitext',['UIText',['../classqtpd_1_1_u_i_text.html',1,'qtpd']]],
   ['uitexteditor',['UITextEditor',['../classqtpd_1_1_u_i_text_editor.html',1,'qtpd']]],
   ['uitoggle',['UIToggle',['../classqtpd_1_1_u_i_toggle.html',1,'qtpd']]],
-  ['undoaddobject',['undoAddObject',['../classqtpd_1_1undo_add_object.html',1,'qtpd']]],
-  ['undoaddpatchcord',['undoAddPatchcord',['../classqtpd_1_1undo_add_patchcord.html',1,'qtpd']]],
-  ['undochangeproperty',['undoChangeProperty',['../classqtpd_1_1undo_change_property.html',1,'qtpd']]]
+  ['undochangeproperty',['undoChangeProperty',['../classqtpd_1_1undo_change_property.html',1,'qtpd']]],
+  ['undocreateobject',['undoCreateObject',['../classqtpd_1_1undo_create_object.html',1,'qtpd']]],
+  ['undocreatepatchcord',['undoCreatePatchcord',['../classqtpd_1_1undo_create_patchcord.html',1,'qtpd']]],
+  ['undodeleteobject',['undoDeleteObject',['../classqtpd_1_1undo_delete_object.html',1,'qtpd']]],
+  ['undodeletepatchcord',['undoDeletePatchcord',['../classqtpd_1_1undo_delete_patchcord.html',1,'qtpd']]]
 ];
