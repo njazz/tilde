@@ -9,6 +9,7 @@
 
 #include <QObject>
 #include <QPoint>
+#include <QUndoStack>
 
 class QGraphicsScene;
 class QGraphicsSceneMouseEvent;
@@ -57,7 +58,6 @@ private:
 
     // temporary
     void doSave(QString fileName);
-
     void doCreateObject(UIObject* uiObject);
 
     CanvasView* _boxOnlyCanvas;
@@ -66,6 +66,8 @@ private:
 
     //TODO
     CanvasView* _activeCanvasView;
+
+    QUndoStack* _undoStack;
 
 public:
     PatchWindowController(ApplicationController* appController);
@@ -91,7 +93,7 @@ public:
     UIObject* createObject(string name, QPoint pos);
     void restoreUIBoxForSubpatch(PatchWindowController* controller, QString data, QPoint pos); ///> used in patch parsing with 'restore'
 
-    void patchcord(UIObject* src, int out, UIObject* dest, int in);
+    void createPatchcord(UIObject* src, int out, UIObject* dest, int in);
 
     // ------------
 
@@ -147,6 +149,9 @@ public slots:
     void menuDelete();
     void menuSelectAll();
 
+    void menuUndo();
+    void menuRedo();
+
     void openPropertiesWindow();
 
     //
@@ -176,7 +181,12 @@ private slots:
     void slotMoveSelectedBoxes(QPoint eventPos);
 
 signals:
-    ServerObject* signalCreateObject(ServerCanvas* canvas, string name);
+
+    ServerObject* signalCreateObject(ServerCanvas* canvas, string name);    // check that
+
+    void signalEnableUndo(bool v);
+    void signalEnableRedo(bool v);
+
 };
 }
 

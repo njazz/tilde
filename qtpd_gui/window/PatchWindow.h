@@ -85,6 +85,9 @@ private:
 
 private slots:
 
+    void slotEnableUndo(bool v);
+    void slotEnableRedo(bool v);
+
 public:
     PatchWindow();
 

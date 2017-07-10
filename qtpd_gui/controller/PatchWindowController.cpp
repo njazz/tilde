@@ -28,6 +28,8 @@
 
 #include <pdServer.hpp>
 
+#include "undocommands.h"
+
 namespace qtpd {
 
 PatchWindowController::PatchWindowController(ApplicationController* appController) //replace with parent (appcontroller)
@@ -55,6 +57,7 @@ PatchWindowController::PatchWindowController(ApplicationController* appControlle
 
     _parentObject = 0;
 
+    _undoStack = new QUndoStack;
     //PatchWindowController(appController, serverInstance()->createCanvas());
 };
 
@@ -78,6 +81,8 @@ PatchWindowController::PatchWindowController(ApplicationController* appControlle
 
     _boxOnlyCanvas = 0;
     _boxOnlyScene = 0;
+
+    _undoStack = new QUndoStack;
 
     newWindow();
 
@@ -265,6 +270,10 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
         addObjectToParent(uiObject);
     }
 
+    undoCreateObject* undo = new undoCreateObject(this, QString(name.c_str()));
+    _undoStack->push(undo);
+    emit signalEnableUndo(true);
+
     return uiObject;
 
     // ======================================================
@@ -395,6 +404,10 @@ void PatchWindowController::deletePatchcordsForObject(UIObject* o)
 
 void PatchWindowController::deleteObject(UIObject* o)
 {
+    undoDeleteObject* undo = new undoDeleteObject(this, o->asPdFileString().c_str());
+    _undoStack->push(undo);
+    emit signalEnableUndo(true);
+
     _canvasData->deselectBoxes();
     _canvasData->selectBox(o);
     deleteSelectedObjects();
@@ -458,6 +471,20 @@ void PatchWindowController::menuSelectAll()
 {
     dataSelectAllObjects();
 };
+
+void PatchWindowController::menuUndo()
+{
+    ServerInstance::post("menu undo stub");
+
+    emit signalEnableRedo(_undoStack->canRedo());
+}
+
+void PatchWindowController::menuRedo()
+{
+    ServerInstance::post("menu redo stub");
+
+    emit signalEnableUndo(_undoStack->canUndo());
+}
 
 void PatchWindowController::openPropertiesWindow()
 {
@@ -684,6 +711,10 @@ void PatchWindowController::deletePatchcordsFor(UIItem* obj)
 
             //ServerInstance::post("remove patchcord");
 
+            undoDeletePatchcord* undo = new undoDeletePatchcord(this, p);
+            _undoStack->push(undo);
+            emit signalEnableUndo(true);
+
             _scene->removeItem(p);
 
             _canvasData->patchcords()->erase(std::remove(_canvasData->patchcords()->begin(), _canvasData->patchcords()->end(), *it), _canvasData->patchcords()->end());
@@ -779,7 +810,7 @@ void PatchWindowController::selectBox(UIItem* box)
 //    */
 //}
 
-void PatchWindowController::patchcord(UIObject* obj1, int outlet, UIObject* obj2, int inlet)
+void PatchWindowController::createPatchcord(UIObject* obj1, int outlet, UIObject* obj2, int inlet)
 {
 
     if (obj1->serverObject() && obj2->serverObject()) {
@@ -816,6 +847,10 @@ void PatchWindowController::patchcord(UIObject* obj1, int outlet, UIObject* obj2
         _scene->addItem(pc);
     } else
         qDebug("canvas patchcord error");
+
+    undoCreatePatchcord* undo = new undoCreatePatchcord(this, obj1, outlet, obj2, inlet);
+    _undoStack->push(undo);
+    emit signalEnableUndo(true);
 }
 
 //void PatchWindowController::patchcord(UIObject* obj1, UIItem* outport, UIObject* obj2, UIItem* inport)
@@ -840,7 +875,7 @@ void PatchWindowController::slotSelectObject(UIObject* object)
 }
 void PatchWindowController::slotPatchcord(UIObject* src, int nOut, UIObject* dest, int nIn)
 {
-    patchcord(src, nOut, dest, nIn);
+    createPatchcord(src, nOut, dest, nIn);
 }
 
 void PatchWindowController::slotMousePress(QPoint pos)

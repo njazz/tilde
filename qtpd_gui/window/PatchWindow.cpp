@@ -380,6 +380,9 @@ void PatchWindow::setController(PatchWindowController* c)
     connect(pasteAct, &QAction::triggered, _controller, &PatchWindowController::menuPaste);
     connect(duplicateAct, &QAction::triggered, _controller, &PatchWindowController::menuDuplicate);
 
+    connect(undoAct, &QAction::triggered, _controller, &PatchWindowController::menuUndo);
+    connect(redoAct, &QAction::triggered, _controller, &PatchWindowController::menuRedo);
+
     connect(_selectAllAct, &QAction::triggered, _controller, &PatchWindowController::menuSelectAll);
 
     //
@@ -393,6 +396,9 @@ void PatchWindow::setController(PatchWindowController* c)
 
     if (_canvasView)
         _canvasView->setController(_controller);
+
+    connect(_controller,   &PatchWindowController::signalEnableRedo, this, &PatchWindow::slotEnableRedo);
+    connect(_controller,   &PatchWindowController::signalEnableUndo, this, &PatchWindow::slotEnableUndo);
 }
 
 void PatchWindow::closeEvent(QCloseEvent* event)
@@ -553,7 +559,7 @@ void PatchWindow::objectMakerDone()
                     obj2 = new_obj;
 
                 if (obj1 && obj2)
-                    _controller->patchcord(obj1, pc->outletIndex(), obj2, pc->inletIndex());
+                    _controller->createPatchcord(obj1, pc->outletIndex(), obj2, pc->inletIndex());
                 else
                     qDebug("replace object - patchcord error");
             }
@@ -590,6 +596,20 @@ void PatchWindow::setGridSnap()
     snapToGridAct->setChecked(snapToGridAct->isChecked());
     canvasView()->setGridSnap(snapToGridAct->isChecked());
     //canvasView()-> viewport()->update();
+}
+
+
+// --------
+
+
+void PatchWindow::slotEnableRedo(bool v)
+{
+    redoAct->setEnabled(v);
+}
+
+void PatchWindow::slotEnableUndo(bool v)
+{
+    undoAct->setEnabled(v);
 }
 
 // ==============================

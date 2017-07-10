@@ -94,12 +94,14 @@ void BaseWindow::createActions()
     _exitAct->setShortcuts(QKeySequence::Quit);
     connect(_exitAct, &QAction::triggered, this, &QApplication::quit);
 
-    _undoAct = new QAction(tr("&Undo"), this);
-    _undoAct->setShortcuts(QKeySequence::Undo);
+    undoAct = new QAction(tr("&Undo"), this);
+    undoAct->setShortcuts(QKeySequence::Undo);
+    undoAct->setEnabled(false);
     //undoAct->setStatusTip(tr("Undo the last operation"));
 
-    _redoAct = new QAction(tr("&Redo"), this);
-    _redoAct->setShortcuts(QKeySequence::Redo);
+    redoAct = new QAction(tr("&Redo"), this);
+    redoAct->setShortcuts(QKeySequence::Redo);
+    redoAct->setEnabled(false);
     //redoAct->setStatusTip(tr("Redo the last operation"));
 
     cutAct = new QAction(tr("Cu&t"), this);
@@ -167,8 +169,8 @@ void BaseWindow::createMenus()
     fileMenu->addAction(_exitAct);
 
     editMenu = menuBar()->addMenu(tr("&Edit"));
-    editMenu->addAction(_undoAct);
-    editMenu->addAction(_redoAct);
+    editMenu->addAction(undoAct);
+    editMenu->addAction(redoAct);
     editMenu->addSeparator();
     editMenu->addAction(cutAct);
     editMenu->addAction(copyAct);

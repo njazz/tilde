@@ -314,6 +314,7 @@ INCLUDEPATH += \
     graphicobjects/ \
     datamodels/ \
     controller/ \
+    undo/ \
     ../../pd-server/src/ \
     properties/QtColorPicker/include
 
