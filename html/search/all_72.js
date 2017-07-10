@@ -6,6 +6,7 @@ var searchData=
   ['readfile',['readFile',['../classqtpd_1_1_o_p_class.html#a29e29ae0ee6fe71da77304f11e3c2073',1,'qtpd::OPClass']]],
   ['readonly',['readOnly',['../classqtpd_1_1_canvas_view.html#ad5a7d0fd80d3e9cf606b48fbef666f1c',1,'qtpd::CanvasView']]],
   ['rectfrommatrixpos',['rectFromMatrixPos',['../classqtpd_1_1_u_i_matrix.html#a281827e4355884a96ac17c3a984e2f8f',1,'qtpd::UIMatrix']]],
+  ['redo',['redo',['../classqtpd_1_1undo_add_object.html#a2de38457ab00d83474f422da7d6ed500',1,'qtpd::undoAddObject::redo()'],['../classqtpd_1_1undo_add_patchcord.html#a6cc9daed5767f49c6f963730e7cca794',1,'qtpd::undoAddPatchcord::redo()'],['../classqtpd_1_1undo_change_property.html#aa020486bfd4d5c92392e343d5e993761',1,'qtpd::undoChangeProperty::redo()']]],
   ['reduce',['reduce',['../classceammc_1_1_atom_list.html#a0eeabb283199335ebed66f0f88c0ff28',1,'ceammc::AtomList']]],
   ['reducefloat',['reduceFloat',['../classceammc_1_1_atom_list.html#af5cad5d028dbca0d2cbb25352b326063',1,'ceammc::AtomList']]],
   ['registerclass',['registerClass',['../classqtpd_1_1_o_o_p_d.html#a69dca97d16f5d497d2c6480831fbee00',1,'qtpd::OOPD']]],

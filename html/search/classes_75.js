@@ -30,5 +30,8 @@ var searchData=
   ['uisubpatch',['UISubpatch',['../classqtpd_1_1_u_i_subpatch.html',1,'qtpd']]],
   ['uitext',['UIText',['../classqtpd_1_1_u_i_text.html',1,'qtpd']]],
   ['uitexteditor',['UITextEditor',['../classqtpd_1_1_u_i_text_editor.html',1,'qtpd']]],
-  ['uitoggle',['UIToggle',['../classqtpd_1_1_u_i_toggle.html',1,'qtpd']]]
+  ['uitoggle',['UIToggle',['../classqtpd_1_1_u_i_toggle.html',1,'qtpd']]],
+  ['undoaddobject',['undoAddObject',['../classqtpd_1_1undo_add_object.html',1,'qtpd']]],
+  ['undoaddpatchcord',['undoAddPatchcord',['../classqtpd_1_1undo_add_patchcord.html',1,'qtpd']]],
+  ['undochangeproperty',['undoChangeProperty',['../classqtpd_1_1undo_change_property.html',1,'qtpd']]]
 ];

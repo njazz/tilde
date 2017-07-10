@@ -200,7 +200,7 @@ var searchData=
   ['signalselectobject',['signalSelectObject',['../classqtpd_1_1_canvas_view.html#a57abea9c00d39b16f46066fb064133b2',1,'qtpd::CanvasView']]],
   ['signalupdateportcount',['signalUpdatePortCount',['../classqtpd_1_1_canvas_view.html#a238fcffc6bfae9d1be1e3eeab6aa1fbe',1,'qtpd::CanvasView']]],
   ['size',['size',['../classqtpd_1_1_clipboard.html#a3c2d1d7df865c4505827e8eadc7074af',1,'qtpd::Clipboard::size()'],['../classqtpd_1_1_u_i_item.html#a5459c088d2279385386e14fff826f12f',1,'qtpd::UIItem::size()'],['../classceammc_1_1_atom_list.html#ad52fdc5b4f54329460495caa1b00d1ac',1,'ceammc::AtomList::size()']]],
-  ['sizebox',['sizeBox',['../classqtpd_1_1_u_i_object.html#a148d3b54b6c276f35ca01427daca6be6',1,'qtpd::UIObject::sizeBox()'],['../classqtpd_1_1_size_box.html#adf64d0032ffe2544e78020599192da82',1,'qtpd::SizeBox::SizeBox()']]],
+  ['sizebox',['SizeBox',['../classqtpd_1_1_size_box.html#adf64d0032ffe2544e78020599192da82',1,'qtpd::SizeBox::SizeBox()'],['../classqtpd_1_1_u_i_object.html#a148d3b54b6c276f35ca01427daca6be6',1,'qtpd::UIObject::sizeBox()']]],
   ['sizebox',['SizeBox',['../classqtpd_1_1_size_box.html',1,'qtpd']]],
   ['sizebox_2ecpp',['SizeBox.cpp',['../_size_box_8cpp.html',1,'']]],
   ['sizebox_2eh',['SizeBox.h',['../_size_box_8h.html',1,'']]],
