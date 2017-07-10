@@ -9,6 +9,7 @@ var searchData=
   ['obj2',['obj2',['../structqtpd_1_1__patchcord_as_numbers.html#a8f29c63349259097c546937d9455d5f8',1,'qtpd::_patchcordAsNumbers::obj2()'],['../classqtpd_1_1_u_i_patchcord.html#a6dfd301e556859b844a8e7c1341b058c',1,'qtpd::UIPatchcord::obj2()']]],
   ['obj_5flist',['obj_list',['../m__pd_8h.html#a116b3486b0efda6f09fd8c743d76ba7f',1,'m_pd.h']]],
   ['obj_5fsaveformat',['obj_saveformat',['../m__pd_8h.html#af2cd6f19a4285e4829290b57609c1ff5',1,'m_pd.h']]],
+  ['object',['object',['../classqtpd_1_1undo_create_object.html#a9e6c7989a76dc607c54485e029565d45',1,'qtpd::undoCreateObject']]],
   ['objectclass',['objectClass',['../classqtpd_1_1_u_i_object.html#a37e6b2ff34eaa7b005812e41f257a8cd',1,'qtpd::UIObject']]],
   ['objectdata',['objectData',['../classqtpd_1_1_u_i_object.html#a83ff692a908d325f474cb634ea291102',1,'qtpd::UIObject']]],
   ['objectloader',['ObjectLoader',['../classqtpd_1_1_object_loader.html',1,'qtpd']]],
