@@ -111,8 +111,18 @@ PdWindow::PdWindow()
     _ui->logLevelBox->setCurrentIndex(0);
 
     connect(_ui->sendMessage, &QLineEdit::returnPressed, this, &PdWindow::sendMessageChanged);
+    connect(_ui->sendMessage, &QLineEdit::textEdited, this, &PdWindow::editSendMessage);
 
     connect(messageAct, &QAction::triggered, this, &PdWindow::focusOnSendMessage);
+
+    _sendMessageCompleter = new QCompleter();
+    _sendMessageCompleterModel = new QStringListModel();
+    _sendMessageCompleter->setModel(_sendMessageCompleterModel);
+    _ui->sendMessage->setCompleter(_sendMessageCompleter);
+
+    connect(_ui->sendMessage, &QLineEdit::textChanged, _ui->sendMessage->completer(), &QCompleter::popup);
+
+    _ui->sendMessage->setFocusPolicy(Qt::ClickFocus);
 }
 
 void PdWindow::logBoxChange(int index)
@@ -125,13 +135,10 @@ void PdWindow::clearConsoleSlot()
     _ui->log->clearContents();
 }
 
-
- void PdWindow::focusOnSendMessage()
- {
-     _ui->sendMessage->setFocus();
-
- }
-
+void PdWindow::focusOnSendMessage()
+{
+    _ui->sendMessage->setFocus();
+}
 
 void PdWindow::sendMessageChanged()
 {
@@ -148,5 +155,16 @@ void PdWindow::sendMessageChanged()
     list.removeAt(0);
     string text = list.join(" ").toStdString();
     ServerInstance::sendMessage(object, text);
+}
+
+void PdWindow::editSendMessage(QString)
+{
+    string s = ServerInstance::getBindObjectsList();
+    QStringList sL = QString(s.c_str()).split(",");
+
+    QStringListModel* model = (QStringListModel*)(_ui->sendMessage->completer()->model());
+    model->setStringList(sL);
+
+    //ServerInstance::post(s);
 }
 }

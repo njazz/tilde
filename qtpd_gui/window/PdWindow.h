@@ -33,6 +33,10 @@ private:
     Q_SLOT void logBoxChange(int index);
     Q_SLOT void sendMessageChanged();
     Q_SLOT void focusOnSendMessage();
+    Q_SLOT void editSendMessage(QString);
+
+    QCompleter* _sendMessageCompleter;
+    QStringListModel* _sendMessageCompleterModel;
 
 public:
     PdWindow();
