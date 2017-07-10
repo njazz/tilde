@@ -221,6 +221,20 @@ inline void legacyProcessUICnv(PatchWindowController* controller, QStringList li
     QString fontSize = ((QString)list.at(13));
     if (lLabel == "empty")
         lLabel = "";
+
+    union color {
+        int c_i;
+        char c_char[4];
+    };
+
+    color color1;
+    color1.c_i = ((QString)list.at(14)).toInt();
+    color color2;
+    color2.c_i = ((QString)list.at(15)).toInt();
+
+    QString lcolor1 = QString::number(((int)color1.c_char[0])) + " " + QString::number(((int)color1.c_char[1])) + " " + QString::number(((int)color1.c_char[2])) +" 255";
+    QString lcolor2 = QString::number(((int)color2.c_char[0])) + " " + QString::number(((int)color2.c_char[1])) + " " + QString::number(((int)color2.c_char[2])) +" 255";
+
     //...
     //int lFontSize = ((QString)list.at(4)).toInt() * 8 + 3;
 
@@ -233,6 +247,10 @@ inline void legacyProcessUICnv(PatchWindowController* controller, QStringList li
     list2.push_back(lLabel);
     list2.push_back("@FontSize");
     list2.push_back(fontSize);
+//    list2.push_back("@TextColor");
+//    list2.push_back(lcolor1);
+//    list2.push_back("@BackgroundColor");
+//    list2.push_back(lcolor2);
 
     //UIObject* obj =
     FileParser::sendStringToCanvas(controller, list2);
