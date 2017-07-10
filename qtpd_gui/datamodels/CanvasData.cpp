@@ -139,6 +139,14 @@ void CanvasData::deselectPatchcords()
 
 // ----------
 
+void CanvasData::deletePatchcord(UIPatchcord* pc)
+{
+    patchcords()->erase(std::remove(patchcords()->begin(), patchcords()->end(), pc), patchcords()->end());
+
+}
+
+// ----------
+
 void CanvasData::cut()
 {
     _clipboard->inst()->clear();

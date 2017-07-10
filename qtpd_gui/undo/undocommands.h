@@ -3,7 +3,6 @@
 
 #include <QUndoCommand>
 
-
 // template
 //class undoCommands : public QUndoCommand
 //{
@@ -31,6 +30,7 @@ class undoCreateObject : public QUndoCommand {
     QString _objectData;
     UIObject* _object;
     QPoint* _pos;
+
 public:
     undoCreateObject(PatchWindowController* ctrl, QString objectData, QPoint pos);
 
@@ -43,8 +43,17 @@ public:
 // -------
 
 class undoCreatePatchcord : public QUndoCommand {
+    PatchWindowController* _controller;
+    UIObject* _obj1;
+    int _out1;
+    UIObject* _obj2;
+    int _in2;
+    UIPatchcord* _p;
+
 public:
     undoCreatePatchcord(PatchWindowController* ctrl, UIObject* obj1, int out1, UIObject* obj2, int in2);
+
+//    UIPatchcord* patchcord();
 
     void undo();
     void redo();
@@ -87,7 +96,6 @@ public:
 //    void undo();
 //    void redo();
 //};
-
 }
 
 #endif // UNDOCOMMANDS_H

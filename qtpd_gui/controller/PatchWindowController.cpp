@@ -120,6 +120,11 @@ void PatchWindowController::disableObjectsOnParent()
     _parentObject = 0;
 }
 
+QUndoStack* PatchWindowController::undoStack()
+{
+    return _undoStack;
+}
+
 void PatchWindowController::addObjectToParent(UIObject* src)
 {
 
@@ -227,11 +232,13 @@ void PatchWindowController::doCreateObject(UIObject* uiObject)
 
 UIObject* PatchWindowController::createObject(string name, QPoint pos)
 {
-    UIObject* ret;// = createObjectWithoutUndo(name,pos);
+    UIObject* ret; // = createObjectWithoutUndo(name,pos);
 
     undoCreateObject* undo = new undoCreateObject(this, QString(name.c_str()), pos);
     _undoStack->push(undo);
     emit signalEnableUndo(true);
+
+    ret = undo->object();
 
     return ret;
 }
@@ -253,8 +260,6 @@ UIObject* PatchWindowController::createObjectWithoutUndo(string name, QPoint pos
     //qDebug() << "server object ok";
 
     //ServerInstance::post("create: " + name);
-
-
 
     UIObject* uiObject = ObjectLoader::inst().createUIObject(name.c_str());
     ServerObject* serverObject = _appController->slotCreateObject(_serverCanvas, name); //emit signalCreateObject(_serverCanvas, name);
@@ -282,7 +287,6 @@ UIObject* PatchWindowController::createObjectWithoutUndo(string name, QPoint pos
     if (_parentObject) {
         addObjectToParent(uiObject);
     }
-
 
     return uiObject;
 
@@ -403,6 +407,14 @@ void PatchWindowController::restoreUIBoxForSubpatch(PatchWindowController* contr
     doCreateObject(uiObject);
 
     return;
+}
+
+void PatchWindowController::deletePatchcord(UIPatchcord* p)
+{
+    _scene->removeItem(p);
+    p->remove();
+    _canvasData->deletePatchcord(p);
+    _scene->update();
 }
 
 //bool PatchWindowController::patchcord(UIObject* src, int out, UIObject* dest, int in){};
@@ -722,14 +734,14 @@ void PatchWindowController::deletePatchcordsFor(UIItem* obj)
 
             //ServerInstance::post("remove patchcord");
 
-            undoDeletePatchcord* undo = new undoDeletePatchcord(this, p);
-            _undoStack->push(undo);
-            emit signalEnableUndo(true);
+            //            undoDeletePatchcord* undo = new undoDeletePatchcord(this, p);
+            //            _undoStack->push(undo);
+            //            emit signalEnableUndo(true);
 
             _scene->removeItem(p);
 
-            _canvasData->patchcords()->erase(std::remove(_canvasData->patchcords()->begin(), _canvasData->patchcords()->end(), *it), _canvasData->patchcords()->end());
-
+            //_canvasData->patchcords()->erase(std::remove(_canvasData->patchcords()->begin(), _canvasData->patchcords()->end(), *it), _canvasData->patchcords()->end());
+            canvasData()->deletePatchcord(p);
             p->remove();
 
             _scene->update();
@@ -823,16 +835,23 @@ void PatchWindowController::selectBox(UIItem* box)
 
 void PatchWindowController::createPatchcord(UIObject* obj1, int outlet, UIObject* obj2, int inlet)
 {
+    undoCreatePatchcord* undo = new undoCreatePatchcord(this, obj1, outlet, obj2, inlet);
+    _undoStack->push(undo);
+    emit signalEnableUndo(true);
+}
+
+UIPatchcord* PatchWindowController::createPatchcordWithoutUndo(UIObject* obj1, int outlet, UIObject* obj2, int inlet)
+{
 
     if (obj1->serverObject() && obj2->serverObject()) {
         if (((UIBox*)obj1)->errorBox()) {
             qDebug() << "errorbox";
-            return;
+            return 0;
         };
 
         if (((UIBox*)obj2)->errorBox()) {
             qDebug() << "errorbox";
-            return;
+            return 0;
         };
 
         Port* outport = obj1->outletAt(outlet);
@@ -856,12 +875,12 @@ void PatchWindowController::createPatchcord(UIObject* obj1, int outlet, UIObject
         //        _canvasData.addPatchcord(pc); //patchcords()->push_back(pc);
 
         _scene->addItem(pc);
+
+        return pc;
     } else
         qDebug("canvas patchcord error");
 
-    undoCreatePatchcord* undo = new undoCreatePatchcord(this, obj1, outlet, obj2, inlet);
-    _undoStack->push(undo);
-    emit signalEnableUndo(true);
+    return 0;
 }
 
 //void PatchWindowController::patchcord(UIObject* obj1, UIItem* outport, UIObject* obj2, UIItem* inport)

@@ -96,6 +96,7 @@ public:
     void restoreUIBoxForSubpatch(PatchWindowController* controller, QString data, QPoint pos); ///> used in patch parsing with 'restore'
 
     void createPatchcord(UIObject* src, int out, UIObject* dest, int in);
+    UIPatchcord *createPatchcordWithoutUndo(UIObject* src, int out, UIObject* dest, int in);
 
     // ------------
 
@@ -110,6 +111,10 @@ public:
 
     // ----------------------
 
+    QUndoStack* undoStack();
+
+    // ----------------------
+
     void openFile(QString fileName);
     void saveFile(QString fileName);
     void saveFileDialog();
@@ -121,6 +126,7 @@ public:
     void deleteObject(UIObject* o);
     void deleteSelectedObjects(vector<UIObject*>);
     void deleteSelectedObjects(); //
+    void deletePatchcord(UIPatchcord* p);
     void deleteSelectedPatchcords(vector<UIPatchcord*>);
 
     // ------------

@@ -95,6 +95,10 @@ public:
 
     // ----------
 
+    void deletePatchcord(UIPatchcord* pc);
+
+    // ----------
+
     void cut();
     void copy();
     void paste();

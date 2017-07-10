@@ -674,7 +674,7 @@ void PatchWindow::newMessageBox()
 {
 
     if (canvasView()->getEditMode() != em_Locked) {
-        UIObject* newMsg = _controller->createObject("ui.msg", QPoint(100, 100));
+        UIObject* newMsg = _controller->createObject("ui.msg", canvasView()->newObjectPos());
 
         canvasView()->setDragObject(newMsg);
         //todo
@@ -689,7 +689,7 @@ void PatchWindow::newFloatBox()
 {
 
     if (canvasView()->getEditMode() != em_Locked) {
-        UIObject* newFlo = _controller->createObject("ui.float 0", QPoint(100, 100));
+        UIObject* newFlo = _controller->createObject("ui.float 0", canvasView()->newObjectPos());
         canvasView()->setDragObject(newFlo);
 
         //todo
@@ -705,7 +705,7 @@ void PatchWindow::newCommentBox()
 {
 
     if (canvasView()->getEditMode() != em_Locked) {
-        UIObject* newTxt = _controller->createObject("ui.text @Text comment", QPoint(100, 100));
+        UIObject* newTxt = _controller->createObject("ui.text @Text comment", canvasView()->newObjectPos());
         canvasView()->setDragObject(newTxt);
 
         //todo
@@ -719,7 +719,7 @@ void PatchWindow::newCommentBox()
 void PatchWindow::newBangBox()
 {
     if (canvasView()->getEditMode() != em_Locked) {
-        UIObject* newBng = _controller->createObject("ui.bang", QPoint(100, 100));
+        UIObject* newBng = _controller->createObject("ui.bang", canvasView()->newObjectPos());
         canvasView()->setDragObject(newBng);
 
         //todo
@@ -733,7 +733,7 @@ void PatchWindow::newBangBox()
 void PatchWindow::newToggleBox()
 {
     if (canvasView()->getEditMode() != em_Locked) {
-        UIObject* newBng = _controller->createObject("ui.toggle", QPoint(100, 100));
+        UIObject* newBng = _controller->createObject("ui.toggle", canvasView()->newObjectPos());
         canvasView()->setDragObject(newBng);
 
         //todo
@@ -747,7 +747,7 @@ void PatchWindow::newToggleBox()
 void PatchWindow::newScriptBox()
 {
     if (canvasView()->getEditMode() != em_Locked) {
-        UIObject* newBng = _controller->createObject("ui.script", QPoint(100, 100));
+        UIObject* newBng = _controller->createObject("ui.script", canvasView()->newObjectPos());
         canvasView()->setDragObject(newBng);
 
         //todo
@@ -761,7 +761,7 @@ void PatchWindow::newScriptBox()
 void PatchWindow::newArrayBox()
 {
     if (canvasView()->getEditMode() != em_Locked) {
-        UIObject* newArr = _controller->createObject("ui.array", QPoint(100, 100));
+        UIObject* newArr = _controller->createObject("ui.array", canvasView()->newObjectPos());
         canvasView()->setDragObject(newArr);
 
         //todo
@@ -776,7 +776,7 @@ void PatchWindow::newArrayBox()
 void PatchWindow::newSliderBox()
 {
     if (canvasView()->getEditMode() != em_Locked) {
-        UIObject* newArr = _controller->createObject("ui.slider", QPoint(100, 100));
+        UIObject* newArr = _controller->createObject("ui.slider", canvasView()->newObjectPos());
         canvasView()->setDragObject(newArr);
 
         //todo
@@ -790,7 +790,7 @@ void PatchWindow::newSliderBox()
 void PatchWindow::newRadioBox()
 {
     if (canvasView()->getEditMode() != em_Locked) {
-        UIObject* newArr = _controller->createObject("ui.radio", QPoint(100, 100));
+        UIObject* newArr = _controller->createObject("ui.radio", canvasView()->newObjectPos());
         canvasView()->setDragObject(newArr);
 
         //todo
@@ -804,7 +804,7 @@ void PatchWindow::newRadioBox()
 void PatchWindow::newPdClassBox()
 {
     if (canvasView()->getEditMode() != em_Locked) {
-        UIObject* newArr = _controller->createObject("pdclass", QPoint(100, 100));
+        UIObject* newArr = _controller->createObject("pdclass", canvasView()->newObjectPos());
         canvasView()->setDragObject(newArr);
 
         //todo
@@ -818,7 +818,7 @@ void PatchWindow::newPdClassBox()
 void PatchWindow::newPdInstanceBox()
 {
     if (canvasView()->getEditMode() != em_Locked) {
-        UIObject* newArr = _controller->createObject("pdinstance", QPoint(100, 100));
+        UIObject* newArr = _controller->createObject("pdinstance", canvasView()->newObjectPos());
         canvasView()->setDragObject(newArr);
 
         //todo
