@@ -89,10 +89,10 @@ void UIText::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*
 
     // does it need a background?
 
-    //        QBrush brush(bgColor());
-    //        p->setBrush(brush);
-    //        p->drawRect(boundingRect());
-    //        p->setBrush(QBrush());
+    QBrush brush(properties()->get("BackgroundColor")->asQColor());
+    p->setBrush(brush);
+    p->drawRect(boundingRect());
+    p->setBrush(QBrush());
 
     if (getEditMode() == em_Unlocked) {
         if (isSelected()) {
@@ -108,9 +108,9 @@ void UIText::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*
 
     QTextOption* op = new QTextOption;
     op->setAlignment(Qt::AlignLeft);
-    p->setPen(QPen(QColor(0, 0, 0), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+    p->setPen(QPen(properties()->get("TextColor")->asQColor(), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 
-    int fontSize = properties()->get("FontSize")->asQString().toInt();
+    int fontSize = properties()->get("FontSize")->asFontSize();
     p->setFont(QFont(PREF_QSTRING("Font"), fontSize, 0, false));
     p->drawText(2, 3, width() - 2, height() - 3, 0, properties()->get("Text")->asQString(), 0);
 }
@@ -204,7 +204,7 @@ bool UIText::eventFilter(QObject*, QEvent* event)
 
         QKeyEvent* keyEvent = static_cast<QKeyEvent*>(event);
 
-        if ((keyEvent->key() == Qt::Key_Return) && (keyEvent->modifiers() == Qt::ShiftModifier)) {
+        if ((keyEvent->key() == Qt::Key_Return) && (keyEvent->modifiers() != Qt::ShiftModifier)) {
             editorDone();
             return true;
         }
@@ -226,6 +226,7 @@ void UIText::sync()
 
 void UIText::textPropertyChanged()
 {
+    //UIObject::propertySize();
 }
 
 void UIText::colorPropertyChanged()
