@@ -4,6 +4,13 @@
 #include "ObjectMaker.h"
 #include "Preferences.h"
 
+#include "pdServer.hpp"
+
+#include <QCompleter>
+#include <QStringListModel>
+
+using namespace std;
+
 namespace qtpd {
 
 ObjectMaker::ObjectMaker(QLineEdit* parent)
@@ -14,6 +21,22 @@ ObjectMaker::ObjectMaker(QLineEdit* parent)
 
     connect(this, &ObjectMaker::textEdited, this, &ObjectMaker::editorChanged);
     connect(this, &ObjectMaker::returnPressed, this, &ObjectMaker::done);
+
+    QStringListModel *m = new QStringListModel;
+
+    vector<string> vlist = ServerInstance::listLoadedClasses();
+    QStringList sL;
+
+    for (vector<string>::iterator it = vlist.begin(); it != vlist.end(); ++it)
+    {
+        string s = *it;
+        sL.push_back(s.c_str());
+    }
+
+    m->setStringList(sL);
+
+    if (!completer()) setCompleter(new QCompleter);
+    completer()->setModel(m);
 }
 
 void ObjectMaker::editorChanged()
@@ -24,6 +47,8 @@ void ObjectMaker::editorChanged()
     new_w = (new_w < 65) ? 65 : new_w;
     setFixedWidth(new_w);
     setFixedHeight(20);
+
+    completer()->popup();
 }
 
 void ObjectMaker::done()

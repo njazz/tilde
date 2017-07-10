@@ -128,6 +128,14 @@ ApplicationController::ApplicationController()
 
     mainServerInstance()->post("qtpd started");
     mainServerInstance()->post("----");
+
+    //tests
+//    string l = ServerInstance::listLoadedLibraries();
+//    ServerInstance::post(l);
+
+//    vector<string> vl = ServerInstance::listLoadedClasses();
+
+//    ServerInstance::post(vl.at(33));
 };
 
 ServerInstance* ApplicationController::mainServerInstance()
