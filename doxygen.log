@@ -702,7 +702,7 @@ Generating docs for compound Abs/home/travis/build/njazz/qtpd/qtpd_gui/lib_heade
 /home/travis/build/njazz/qtpd/qtpd_gui/datamodels/FileSaver.h:33: warning: argument 'canvas' of command @param is not found in the argument list of qtpd::FileSaver::saveCanvas(CanvasData *CanvasData, QFile *file)
 /home/travis/build/njazz/qtpd/qtpd_gui/datamodels/FileSaver.h:33: warning: The following parameters of qtpd::FileSaver::saveCanvas(CanvasData *CanvasData, QFile *file) are not documented:
   parameter 'CanvasData'
-/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/CanvasView.h:129: warning: The following parameters of qtpd::CanvasView::slotSelectBox(UIItem *box, QGraphicsSceneMouseEvent *ev) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/CanvasView.h:125: warning: The following parameters of qtpd::CanvasView::slotSelectBox(UIItem *box, QGraphicsSceneMouseEvent *ev) are not documented:
   parameter 'ev'
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/Port.h:30: warning: Found unknown command `\group'
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/SelectionRect.h:26: warning: Found unknown command `\group'
@@ -829,6 +829,6 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-symbol cache used 2626/65536 hits=182869 misses=2626
-lookup cache used 4539/65536 hits=24303 misses=4781
+symbol cache used 2636/65536 hits=183614 misses=2636
+lookup cache used 4559/65536 hits=24419 misses=4807
 finished...
