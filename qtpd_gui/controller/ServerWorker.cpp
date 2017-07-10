@@ -6,6 +6,8 @@ ServerWorker::ServerWorker()
 
     qDebug() << "new server worker " << this;
 
+    _localServer = 0;
+
     // connect(this, &ServerWorker::getLocalServer, this, &ServerWorker::getLocalServerSlot);
     //connect(this, &ServerWorker::sendMessageSignal, this, &ServerWorker::sendMessageToObject);
 };
@@ -16,7 +18,7 @@ void ServerWorker::start()
 {
     _localServer = new LocalServer();
 
-    qDebug() << "server " << _localServer << " in thread / worker: " << this;
+    //qDebug() << "server " << _localServer << " in thread / worker: " << this;
 };
 
 void ServerWorker::stop()

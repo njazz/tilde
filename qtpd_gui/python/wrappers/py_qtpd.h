@@ -151,7 +151,7 @@ public Q_SLOTS:
 
     void patchcord(PatchWindowController* c, UIObject* obj1, int out1, UIObject* obj2, int in2)
     {
-        c->patchcord(obj1, out1, obj2, in2);
+        c->createPatchcord(obj1, out1, obj2, in2);
     }
 
     //////////

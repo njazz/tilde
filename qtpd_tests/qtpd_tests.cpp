@@ -1,9 +1,7 @@
 #include <QString>
 #include <QtTest>
 
-
 #include "PropertyList.h"
-
 
 using namespace qtpd;
 
@@ -17,11 +15,12 @@ private Q_SLOTS:
     void initTestCase();
     void cleanupTestCase();
     //    void UIObjectTest();
-    void propertyTestDataTypes();
-    void propertyTestEscape();
-    void propertyTestLoad();
+    void propertyDataTypes();
+    void propertyEscapeString();
+    void propertyLoad();
+    //    void propertyCopy();
     //
-    void  patchControllerCopyObject();
+    void patchControllerCopyObject();
 };
 
 Qtpd_tests::Qtpd_tests()
@@ -40,7 +39,7 @@ void Qtpd_tests::cleanupTestCase()
 
 // ----------
 
-void Qtpd_tests::propertyTestDataTypes()
+void Qtpd_tests::propertyDataTypes()
 {
     PropertyList* l = new PropertyList;
 
@@ -63,7 +62,7 @@ void Qtpd_tests::propertyTestDataTypes()
     QVERIFY(((l->get("pointf")->asQPointF()) == QPointF(30, 70)));
 }
 
-void Qtpd_tests::propertyTestEscape()
+void Qtpd_tests::propertyEscapeString()
 {
     QString testEscape = "1 2\n 3, 4. 5@ 6;";
 
@@ -74,22 +73,26 @@ void Qtpd_tests::propertyTestEscape()
     QVERIFY(Property::unescapeString(Property::escapeString(testEscape)) == testEscape);
 }
 
-void Qtpd_tests::propertyTestLoad()
+void Qtpd_tests::propertyLoad()
 {
-    PropertyList *l = new PropertyList();
+    PropertyList* l = new PropertyList();
 
     l->create("used", "Group", "0.1", "test");
 
     QString input = "object.name @used string value @unused string value";
     QString output = l->extractFromPdFileString(input);
 
-    if ("object.name @unused string value" != output)
-        {
-            qDebug() << input << ">>" << output;
-        }
+    if ("object.name @unused string value" != output) {
+        qDebug() << input << ">>" << output;
+    }
 
     QVERIFY("object.name @unused string value" == output);
 }
+
+//void Qtpd_tests::propertyCopy()
+//{
+
+//}
 
 void Qtpd_tests::patchControllerCopyObject()
 {

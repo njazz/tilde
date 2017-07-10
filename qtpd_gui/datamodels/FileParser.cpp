@@ -390,7 +390,7 @@ void FileParser::parseStringListAtoms(PatchWindowController* controller, QString
                 //cmcanvasView()->patchcord();
                 if (!obj1->errorBox() && !obj2->errorBox()) {
                     qDebug("patchcord");
-                    controller->patchcord(obj1, idx1, obj2, idx2);
+                    controller->createPatchcord(obj1, idx1, obj2, idx2);
                 }
             }
         }

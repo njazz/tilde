@@ -6,9 +6,7 @@
 using namespace std;
 
 //
-
 //#include "UIObject.h"
-
 
 namespace qtpd {
 
@@ -32,7 +30,6 @@ public:
     static void distributeHorizontal(objectVec* v);
     static void distributeVertical(objectVec* v);
 };
-
 }
 
 #endif // ARRANGEOBJECTS_H

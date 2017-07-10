@@ -20,7 +20,6 @@ class BaseWindow : public QMainWindow {
 
     ApplicationController* _appController;
 
-
 public:
     explicit BaseWindow(QWidget* parent = 0);
 
@@ -50,9 +49,6 @@ private:
 
     QAction* _exitAct;
 
-    QAction* _undoAct;
-    QAction* _redoAct;
-
     QAction* _dspOnAct;
     QAction* _dspOffAct;
 
@@ -74,6 +70,9 @@ public:
     QAction* copyAct;
     QAction* duplicateAct;
     QAction* pasteAct;
+
+    QAction* undoAct;
+    QAction* redoAct;
 
     QMenu* fileMenu;
     QMenu* editMenu;
