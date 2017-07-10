@@ -260,14 +260,18 @@ string Property::asStdString()
 
 QString Property::asPdSaveString()
 {
-    QString ret = _data.toStringList().join(" ");
+    // if (!_type == ptString)
+        QString ret = _data.toStringList().join(" ");
+    // else
+    //     QString ret = _data.toStringList().join("\ ");
+
     ret = escapeString(ret);
     return ret;
 }
 
 QString Property::asQString()
 {
-    return _data.toString();
+    return _data.toStringList().join(" ");
 }
 
 // ----------

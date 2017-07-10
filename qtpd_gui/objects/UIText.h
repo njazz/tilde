@@ -30,7 +30,7 @@ class UIText : public UIObject {
 private:
     bool _clicked;
     QPlainTextEdit* _editor;
-    QString _objectText;
+    //QString _objectText;
 
     QStringList getEditorData();
 
@@ -52,7 +52,6 @@ public:
     // ---------------------------
 
     virtual void fromQString(QString objData);
-
 
     bool eventFilter(QObject*, QEvent* event);
 

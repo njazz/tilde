@@ -42,10 +42,10 @@ void UIText::editorDone()
 {
     qDebug("editor done");
 
-    fromQString(_editor->document()->toPlainText()); //text().toStdString());
+    //fromQString(_editor->document()->toPlainText()); //text().toStdString());
     //todo
 
-    //properties()->set("Text", getEditorData());
+    properties()->set("Text", getEditorData());
     properties()->set("FontSize", 11);
 
     _editor->hide();
@@ -112,7 +112,7 @@ void UIText::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*
 
     int fontSize = properties()->get("FontSize")->asQString().toInt();
     p->setFont(QFont(PREF_QSTRING("Font"), fontSize, 0, false));
-    p->drawText(2, 3, width() - 2, height() - 3, 0, _objectText, 0);
+    p->drawText(2, 3, width() - 2, height() - 3, 0, properties()->get("Text")->asQString(), 0);
 }
 
 //////////
@@ -140,7 +140,7 @@ void UIText::objectPressEvent(QGraphicsSceneMouseEvent* ev)
 
     if ((getEditMode() == em_Unlocked) && isSelected()) {
 
-        _editor->document()->setPlainText(QString(_objectText));
+        _editor->document()->setPlainText(properties()->get("Text")->asQString());
         _editor->show();
         _editor->setFocus();
         ev->accept();
@@ -155,15 +155,15 @@ void UIText::autoResize()
     QFont myFont(PREF_QSTRING("Font"), fontSize);
     QFontMetrics fm(myFont);
 
-    setWidth((int)fm.width(_objectText) + 5);
+    setWidth((int)fm.width(properties()->get("Text")->asQString()) + 5);
     if (width() < objectData()->minimumBoxWidth())
         setWidth(objectData()->minimumBoxWidth());
 
     //duplicate?
-    int new_w = fm.width(_objectText) + 20;
+    int new_w = fm.width(properties()->get("Text")->asQString()) + 20;
     new_w = (new_w < 25) ? 25 : new_w;
 
-    int new_h = fm.boundingRect(QRect(0, 0, new_w, 100), 0, _objectText).height() + 7;
+    int new_h = fm.boundingRect(QRect(0, 0, new_w, 100), 0, properties()->get("Text")->asQString()).height() + 7;
 
     new_h = (new_h < 25) ? 25 : new_h;
 
@@ -188,7 +188,7 @@ void UIText::fromQString(QString objData)
 
     QString data = properties()->get("Text")->asQString().split("\\n ").join("\n");
 
-    _objectText = data;
+    //_objectText = data;
 
     autoResize();
 
