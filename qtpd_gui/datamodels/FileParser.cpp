@@ -230,7 +230,7 @@ inline void legacyProcessUICnv(PatchWindowController* controller, QStringList li
     color color1;
     color1.c_i = ((QString)list.at(14)).toInt();
     color color2;
-    color2.c_i = ((QString)list.at(15)).toInt();
+    color2.c_i = (list.size()>15) ? ((QString)list.at(15)).toInt() : 0;
 
     QString lcolor1 = QString::number(((int)color1.c_char[0])) + " " + QString::number(((int)color1.c_char[1])) + " " + QString::number(((int)color1.c_char[2])) +" 255";
     QString lcolor2 = QString::number(((int)color2.c_char[0])) + " " + QString::number(((int)color2.c_char[1])) + " " + QString::number(((int)color2.c_char[2])) +" 255";

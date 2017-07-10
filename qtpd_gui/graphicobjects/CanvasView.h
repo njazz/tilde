@@ -97,10 +97,6 @@ public:
 
     bool readOnly();
 
-    ////
-    /// \brief minimumCanvasSize
-    /// \return
-    ///
     QSize minimumCanvasSize();
 
     void setWindowSize(QSize wsize);

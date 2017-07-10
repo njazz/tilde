@@ -87,11 +87,9 @@ void UIText::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*
 {
     p->setClipRect(option->exposedRect);
 
-    // does it need a background?
-
     QBrush brush(properties()->get("BackgroundColor")->asQColor());
     p->setBrush(brush);
-    p->drawRect(boundingRect());
+    //p->drawRect(boundingRect());
     p->setBrush(QBrush());
 
     if (getEditMode() == em_Unlocked) {
@@ -100,7 +98,7 @@ void UIText::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*
         } else if (_clicked) {
             p->setPen(QPen(QColor(0, 192, 255), 2, Qt::DotLine, Qt::RoundCap, Qt::RoundJoin));
         } else {
-            p->setPen(QPen(QColor(128, 128, 128), 1, Qt::DotLine, Qt::SquareCap, Qt::BevelJoin));
+            p->setPen(QPen(properties()->get("BorderColor")->asQColor(), 1, Qt::DotLine, Qt::SquareCap, Qt::BevelJoin));
         }
 
         p->drawRect(0, 0, width(), height());
@@ -126,6 +124,8 @@ void UIText::initProperties()
 
     properties()->create("TextColor", "Color", "0.1", QColor(0, 0, 0));
     properties()->create("BackgroundColor", "Color", "0.1", QColor(255, 255, 255, 0));
+
+    properties()->set("BorderColor", QColor(0,0,0,0));
 
     PROPERTY_LISTENER("TextColor", &UIText::colorPropertyChanged);
     PROPERTY_LISTENER("BackgroundColor", &UIText::colorPropertyChanged);
