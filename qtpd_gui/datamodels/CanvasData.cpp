@@ -111,6 +111,8 @@ void CanvasData::deselectBoxes()
 {
     qDebug() << "deselect";
 
+    _previouslySelectedBoxes = _selectedBoxes;
+
     for (int i = 0; i < (int)_boxes.size(); i++) {
         if (_boxes.at(i)) {
             ((UIBox*)_boxes.at(i))->deselect();
@@ -123,13 +125,15 @@ void CanvasData::deselectBoxes()
 
 void CanvasData::deselectPatchcords()
 {
-    patchcordVec::iterator it2;
 
-    for (it2 = _patchcords.begin(); it2 != _patchcords.end(); ++it2) {
+    _previouslySelectedPatchcords = _selectedPatchcords;
+    patchcordVec::iterator it;
 
-        ((UIPatchcord*)*it2)->deselect();
-        ((UIPatchcord*)*it2)->setHover(false);
-        ((UIPatchcord*)*it2)->update();
+    for (it = _patchcords.begin(); it != _patchcords.end(); ++it) {
+
+        ((UIPatchcord*)*it)->deselect();
+        ((UIPatchcord*)*it)->setHover(false);
+        ((UIPatchcord*)*it)->update();
     }
 }
 

@@ -46,7 +46,7 @@ void ObjectLoader::loadObjects()
     addUIobject("ui.toggle", &UIToggle::createObj);
 
     addUIobject("ui.slider", &UISlider::createObj);
-    addUIobject("ui.matrix", &UIMatrix::createObj);
+    addUIobject("ui.radio", &UIMatrix::createObj);
 
     addUIobject("ui.link", &UILink::createObj);
 

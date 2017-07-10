@@ -65,24 +65,25 @@ void BaseWindow::setAppController(ApplicationController* appController)
 
 void BaseWindow::createActions()
 {
-    _newAct = new QAction(tr("&New"), this);
+    _newAct = new QAction(tr("&New Patch"), this);
     _newAct->setShortcuts(QKeySequence::New);
 
-    openAct = new QAction(tr("&Open..."), this);
+    openAct = new QAction(tr("&Open Patch..."), this);
     openAct->setShortcuts(QKeySequence::Open);
 
-    saveAct = new QAction(tr("&Save"), this);
+    saveAct = new QAction(tr("&Save Patch"), this);
     saveAct->setShortcuts(QKeySequence::Save);
 
-    saveAsAct = new QAction(tr("&Save As..."), this);
+    saveAsAct = new QAction(tr("&Save Patch As..."), this);
     saveAsAct->setShortcuts(QKeySequence::SaveAs);
 
-    _closeAct = new QAction(tr("Close"), this);
+    _closeAct = new QAction(tr("Close Patch"), this);
     _closeAct->setShortcut(tr("Ctrl+W"));
     connect(_closeAct, &QAction::triggered, this, &BaseWindow::close);
 
-    _messageAct = new QAction(tr("Message..."), this);
+    _messageAct = new QAction(tr("Send Message..."), this);
     _messageAct->setShortcut(tr("Ctrl+Shift+M"));
+    _messageAct->setEnabled(false);
 
     //printAct = new QAction(tr("&Print..."), this);
     //printAct->setShortcuts(QKeySequence::Print);
@@ -128,6 +129,10 @@ void BaseWindow::createActions()
     _pythonConsoleAct = new QAction(tr("Python Console"), this);
     _pythonConsoleAct->setShortcut(tr("Ctrl+Alt+R"));
 
+#ifndef WITH_PYTHON
+    _pythonConsoleAct->setEnabled(false);
+#endif
+
     _pdAudioSettingsAct = new QAction(tr("Audio / MIDI Settings..."), this);
     _pdAudioSettingsAct->setShortcut(tr("Ctrl+Shift+,"));
 
@@ -136,6 +141,7 @@ void BaseWindow::createActions()
     _pdPreferencesAct->setShortcut(tr("Ctrl+,"));
 
     _pdKeyBindingsAct = new QAction(tr("Key bindings..."), this);
+    _pdKeyBindingsAct->setEnabled(false);
 
     _pdHelpAct = new QAction(tr("Pd help"), this);
 }
@@ -155,6 +161,8 @@ void BaseWindow::createMenus()
     fileMenu->addSeparator();
     fileMenu->addAction(saveAct);
     fileMenu->addAction(saveAsAct);
+    fileMenu->addSeparator();
+    fileMenu->addAction(_messageAct);
     fileMenu->addSeparator();
     fileMenu->addAction(_exitAct);
 

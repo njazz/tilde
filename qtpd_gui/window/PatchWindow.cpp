@@ -48,7 +48,7 @@ PatchWindow::PatchWindow()
 
     connect(_canvasView->objectMaker(), &ObjectMaker::objectMakerDoneSignal, this, &PatchWindow::objectMakerDone);
 
-    editModeAct->setChecked(true);
+    _editModeAct->setChecked(true);
 
     // TODO
     //connect subpatch creation routine
@@ -66,30 +66,32 @@ PatchWindow::PatchWindow()
 
 void PatchWindow::createActions()
 {
+    // spaghetti time
+
     //        connect(openAct, &QAction::triggered, this, &cm_patchwindow::open);
 
-    delObjectAct = new QAction(tr("Delete object"), this);
-    delObjectAct->setShortcut(tr("Backspace"));
+    _delObjectAct = new QAction(tr("Delete object"), this);
+    _delObjectAct->setShortcut(tr("Backspace"));
     //connect(delObjectAct, &QAction::triggered, this, &PatchWindow::delSelected);
 
-    selectAllAct = new QAction(tr("Select all"), this);
-    selectAllAct->setShortcut(tr("Ctrl+A"));
+    _selectAllAct = new QAction(tr("Select all"), this);
+    _selectAllAct->setShortcut(tr("Ctrl+A"));
 
-    selectAgainAct = new QAction(tr("Select again"), this);
+    _selectAgainAct = new QAction(tr("Select again"), this);
     //selectAgainAct->setShortcut(tr("Ctrl+A"));
 
-    editModeAct = new QAction(tr("Edit mode"), this);
-    editModeAct->setShortcut(tr("Ctrl+E"));
-    editModeAct->setCheckable(true);
-    connect(editModeAct, &QAction::triggered, this, &PatchWindow::setEditMode);
+    _editModeAct = new QAction(tr("Edit mode"), this);
+    _editModeAct->setShortcut(tr("Ctrl+E"));
+    _editModeAct->setCheckable(true);
+    connect(_editModeAct, &QAction::triggered, this, &PatchWindow::setEditMode);
 
-    putObjectAct = new QAction(tr("Object"), this);
-    putObjectAct->setShortcut(tr("Ctrl+1"));
-    connect(putObjectAct, &QAction::triggered, this, &PatchWindow::newObjectBox);
+    _putObjectAct = new QAction(tr("Object"), this);
+    _putObjectAct->setShortcut(tr("Ctrl+1"));
+    connect(_putObjectAct, &QAction::triggered, this, &PatchWindow::newObjectBox);
 
-    putMessageAct = new QAction(tr("Message"), this);
-    putMessageAct->setShortcut(tr("Ctrl+2"));
-    connect(putMessageAct, &QAction::triggered, this, &PatchWindow::newMessageBox);
+    _putMessageAct = new QAction(tr("Message"), this);
+    _putMessageAct->setShortcut(tr("Ctrl+2"));
+    connect(_putMessageAct, &QAction::triggered, this, &PatchWindow::newMessageBox);
 
     //        putSymbolAct = new QAction(tr("Symbol"), this);
     //        putSymbolAct->setShortcut(tr("Ctrl+4"));
@@ -114,24 +116,33 @@ void PatchWindow::createActions()
 
     putSliderAct = new QAction(tr("Slider"), this);
     putSliderAct->setShortcut(tr("Ctrl+Shift+V"));
+    connect(putSliderAct, &QAction::triggered, this, &PatchWindow::newSliderBox);
 
     putRangeSliderAct = new QAction(tr("Range Slider"), this);
+    putRangeSliderAct->setEnabled(false);
 
     putSlider2D = new QAction(tr("Slider2D"), this);
+    putSlider2D->setEnabled(false);
 
     putSlidersAct = new QAction(tr("Sliders"), this);
+    putSlidersAct->setEnabled(false);
 
     putIncDecAct = new QAction(tr("Inc/Dec"), this);
+    putIncDecAct->setEnabled(false);
 
     putKnobAct = new QAction(tr("Knob"), this);
     putKnobAct->setShortcut(tr("Ctrl+Shift+K"));
+    putKnobAct->setEnabled(false);
 
     putMatrixAct = new QAction(tr("Matrix buttons"), this);
+    putMatrixAct->setEnabled(false);
 
     putRadioAct = new QAction(tr("Radio buttons"), this);
     putRadioAct->setShortcut(tr("Ctrl+Shift+D"));
+    connect(putRadioAct, &QAction::triggered, this, &PatchWindow::newRadioBox);
 
     putDisplay = new QAction(tr("Display"), this);
+    putDisplay->setEnabled(false);
     //putDisplay->setShortcut(tr("Ctrl+Shift+T"));
 
     putArray = new QAction(tr("Array"), this);
@@ -139,28 +150,37 @@ void PatchWindow::createActions()
     connect(putArray, &QAction::triggered, this, &PatchWindow::newArrayBox);
 
     putKeyboard = new QAction(tr("Keyboard"), this);
+    putKeyboard->setEnabled(false);
     //putArray->setShortcut(tr("Ctrl+Shift+T"));
 
     putBPF = new QAction(tr("BPF"), this);
+    putBPF->setEnabled(false);
     //putArray->setShortcut(tr("Ctrl+Shift+T"));
 
     putScope = new QAction(tr("Scope"), this);
+    putScope->setEnabled(false);
     //putArray->setShortcut(tr("Ctrl+Shift+T"));
 
     putSpectroscope = new QAction(tr("Spectroscope"), this);
+    putSpectroscope->setEnabled(false);
     //putArray->setShortcut(tr("Ctrl+Shift+T"));
 
     putScriptAct = new QAction(tr("Script"), this);
     putScriptAct->setShortcut(tr("Ctrl+7"));
     connect(putScriptAct, &QAction::triggered, this, &PatchWindow::newScriptBox);
+#ifndef WITH_PYTHON
+    putScriptAct->setEnabled(false);
+#endif
 
     putPdClass = new QAction(tr("Pd Class"), this);
     putPdClass->setShortcut(tr("Ctrl+8"));
     connect(putPdClass, &QAction::triggered, this, &PatchWindow::newPdClassBox);
+    putPdClass->setEnabled(false);
 
     putPdInstance = new QAction(tr("Pd Instance"), this);
     putPdInstance->setShortcut(tr("Ctrl+9"));
     connect(putPdInstance, &QAction::triggered, this, &PatchWindow::newPdInstanceBox);
+    putPdInstance->setEnabled(false);
 
     showGridAct = new QAction(tr("Show grid"), this);
     showGridAct->setShortcut(tr("Ctrl+Shift+G"));
@@ -176,6 +196,7 @@ void PatchWindow::createActions()
 
     // -------
     alignToGridAct = new QAction(tr("Align to grid"), this);
+    alignToGridAct->setEnabled(false);
 
     //alignToGridAct->setEnabled(false);
     //showGridAct->setShortcut(tr("Ctrl+Shift+G"));
@@ -236,14 +257,14 @@ void PatchWindow::createMenus()
 {
 
     editMenu->addSeparator();
-    editMenu->addAction(selectAllAct);
-    editMenu->addAction(selectAgainAct);
+    editMenu->addAction(_selectAllAct);
+    editMenu->addAction(_selectAgainAct);
     editMenu->addSeparator();
-    editMenu->addAction(delObjectAct);
-    editMenu->addAction(editModeAct);
+    editMenu->addAction(_delObjectAct);
+    editMenu->addAction(_editModeAct);
 
-    putMenu->addAction(putObjectAct);
-    putMenu->addAction(putMessageAct);
+    putMenu->addAction(_putObjectAct);
+    putMenu->addAction(_putMessageAct);
     //        putMenu->addAction(putNumberAct);
     //        putMenu->addAction(putSymbolAct);
     putMenu->addAction(putCommentAct);
@@ -352,14 +373,14 @@ void PatchWindow::setController(PatchWindowController* c)
     connect(saveAsAct, &QAction::triggered, _controller, &PatchWindowController::menuSaveAs);
     connect(saveAct, &QAction::triggered, _controller, &PatchWindowController::menuSave);
 
-    connect(delObjectAct, &QAction::triggered, _controller, &PatchWindowController::menuDelete);
+    connect(_delObjectAct, &QAction::triggered, _controller, &PatchWindowController::menuDelete);
 
     connect(cutAct, &QAction::triggered, _controller, &PatchWindowController::menuCut);
     connect(copyAct, &QAction::triggered, _controller, &PatchWindowController::menuCopy);
     connect(pasteAct, &QAction::triggered, _controller, &PatchWindowController::menuPaste);
     connect(duplicateAct, &QAction::triggered, _controller, &PatchWindowController::menuDuplicate);
 
-    connect(selectAllAct, &QAction::triggered, _controller, &PatchWindowController::menuSelectAll);
+    connect(_selectAllAct, &QAction::triggered, _controller, &PatchWindowController::menuSelectAll);
 
     //
     connect(alignLeftAct, &QAction::triggered, _controller, &PatchWindowController::slotAlignLeft);
@@ -554,7 +575,7 @@ void PatchWindow::setEditMode()
         canvasView()->setEditMode(em_Locked);
     else
         canvasView()->setEditMode(em_Unlocked);
-    editModeAct->setChecked(canvasView()->getEditMode() == em_Unlocked);
+    _editModeAct->setChecked(canvasView()->getEditMode() == em_Unlocked);
 }
 
 void PatchWindow::setGridVisible()
@@ -721,6 +742,35 @@ void PatchWindow::newArrayBox()
 {
     if (canvasView()->getEditMode() != em_Locked) {
         UIObject* newArr = _controller->createObject("ui.array", QPoint(100, 100));
+        canvasView()->setDragObject(newArr);
+
+        //todo
+        canvasView()->update();
+        //newArr->show();
+    }
+
+    setWindowModified(true);
+}
+
+
+void PatchWindow::newSliderBox()
+{
+    if (canvasView()->getEditMode() != em_Locked) {
+        UIObject* newArr = _controller->createObject("ui.slider", QPoint(100, 100));
+        canvasView()->setDragObject(newArr);
+
+        //todo
+        canvasView()->update();
+        //newArr->show();
+    }
+
+    setWindowModified(true);
+}
+
+void PatchWindow::newRadioBox()
+{
+    if (canvasView()->getEditMode() != em_Locked) {
+        UIObject* newArr = _controller->createObject("ui.radio", QPoint(100, 100));
         canvasView()->setDragObject(newArr);
 
         //todo

@@ -115,8 +115,6 @@ void PatchWindowController::disableObjectsOnParent()
     _parentObject = 0;
 }
 
-
-
 void PatchWindowController::addObjectToParent(UIObject* src)
 {
 
@@ -577,6 +575,12 @@ void PatchWindowController::dataSelectAllObjects()
 
     //selectionData_.patchcords()_ = data_.patchcords()_;
 }
+
+//void PatchWindowController::dataDeselectAll()
+//{
+//    _canvasData->deselectBoxes();
+//    _canvasData->deselectPatchcords();
+//}
 
 // ------------
 

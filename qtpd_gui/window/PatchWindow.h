@@ -20,14 +20,14 @@ private:
 
     ////
 
-    QAction* selectAllAct;
-    QAction* selectAgainAct;
+    QAction* _selectAllAct;
+    QAction* _selectAgainAct;
 
-    QAction* delObjectAct;
-    QAction* editModeAct;
+    QAction* _delObjectAct;
+    QAction* _editModeAct;
 
-    QAction* putObjectAct;
-    QAction* putMessageAct;
+    QAction* _putObjectAct;
+    QAction* _putMessageAct;
 
     //    QAction *putSymbolAct;
     QAction* putCommentAct;
@@ -113,6 +113,8 @@ public:
     void newToggleBox();
     void newScriptBox();
     void newArrayBox();
+    void newSliderBox();
+    void newRadioBox();
     void newPdClassBox();
     void newPdInstanceBox();
 
@@ -124,11 +126,11 @@ public:
     void setGridVisible();
     void setGridSnap();
 
-    /////
+    // -------
 
     void closeEvent(QCloseEvent* event);
 
-    ////
+    // -------
 
     void setFileName(QString fname);
 

@@ -4,13 +4,11 @@
 #ifndef CM_PORTG_H
 #define CM_PORTG_H
 
+#include <QGraphicsSceneMouseEvent>
 #include <QWidget>
 #include <QtGui>
-#include <QGraphicsSceneMouseEvent>
 
 #include "UIItem.h"
-
-
 
 namespace qtpd {
 
@@ -41,16 +39,12 @@ public:
     int portIndex() { return _portIndex; }
     void setPortIndex(int pi) { _portIndex = pi; }
 
-
-
     void paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*);
 
     virtual void hoverEnterEvent(QGraphicsSceneHoverEvent*);
     virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent*);
     void mousePressEvent(QGraphicsSceneMouseEvent* ev);
     void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev);
-
-
 
 public slots:
 };

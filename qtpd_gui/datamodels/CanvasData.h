@@ -27,6 +27,9 @@ class CanvasData {
     objectVec _selectedBoxes;
     patchcordVec _selectedPatchcords;
 
+    objectVec _previouslySelectedBoxes;
+    patchcordVec _previouslySelectedPatchcords;
+
     Clipboard* _clipboard;
 
     portItemVec* _inlets;
