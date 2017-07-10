@@ -84,9 +84,9 @@ void UIBox::objectPressEvent(QGraphicsSceneMouseEvent* event)
         if (_isAbstraction) {
             _abstractionPath = serverObject()->toServerCanvas()->path().c_str();
 
-            qDebug() << "abs object:" << serverObject() << "to canvas: " << serverObject()->toServerCanvas();
-            qDebug() << "objects: " << serverObject()->hasInternalObject() << serverObject()->toServerCanvas()->hasInternalObject();
-            qDebug() << "path: " << serverObject()->toServerCanvas()->path().c_str();
+            //qDebug() << "abs object:" << serverObject() << "to canvas: " << serverObject()->toServerCanvas();
+            //qDebug() << "objects: " << serverObject()->hasInternalObject() << serverObject()->toServerCanvas()->hasInternalObject();
+            //qDebug() << "path: " << serverObject()->toServerCanvas()->path().c_str();
 
             QString fullName = _abstractionPath + "/" + objectData()->toQString() + ".pd";
             ServerInstance::post("abstraction path: " + fullName.toStdString());

@@ -54,19 +54,19 @@ void PropertiesWindow::loadTableWidget(QString pName, QTableWidget* tv)
     tv->setFixedHeight((1 + sl.size()) * rowSize);
 }
 
-PropertiesWindow::PropertiesWindow(PropertyList* plist) : QWidget(0)
+PropertiesWindow::PropertiesWindow(PropertyList* plist)
+    : QWidget(0)
 {
 
     _propertyList = plist;
 
     QStringList grpList = plist->groupNames();
 
-
-
     QVBoxLayout* main_layout = new QVBoxLayout();
     main_layout->setMargin(2);
 
     setWindowTitle("Properties");
+    setWindowFlags(Qt::Tool | Qt::WindowCloseButtonHint);
 
     setMinimumWidth(240);
 
@@ -75,7 +75,7 @@ PropertiesWindow::PropertiesWindow(PropertyList* plist) : QWidget(0)
     int x2 = 100;
     int y = 0;
 
-    QToolBox *tbox = new QToolBox(this);
+    QToolBox* tbox = new QToolBox(this);
     main_layout->addWidget(tbox);
 
     QFont myFont(PREF_QSTRING("Font"), 13);
@@ -85,8 +85,7 @@ PropertiesWindow::PropertiesWindow(PropertyList* plist) : QWidget(0)
 
     for (int j = 0; j < grpList.size(); j++) {
 
-        QWidget *pWidget = new QWidget(tbox);
-
+        QWidget* pWidget = new QWidget(tbox);
 
         QVBoxLayout* layout = new QVBoxLayout();
         layout->setMargin(2);
@@ -94,33 +93,30 @@ PropertiesWindow::PropertiesWindow(PropertyList* plist) : QWidget(0)
 
         pWidget->setLayout(layout);
 
-//        QHBoxLayout* layoutLine = new QHBoxLayout();
+        //        QHBoxLayout* layoutLine = new QHBoxLayout();
 
         UIPropertyData* groupData = plist->group(grpList.at(j));
         QStringList list = plist->names(groupData);
 
         y = y0;
 
-//        QLabel* l1 = new QLabel(this);
-
+        //        QLabel* l1 = new QLabel(this);
 
         //pWidget->setFont(myFont);
 
-//        myFont.setBold(true);
-//        l1->setFont(myFont);
-//        l1->setText(grpList.at(j));
-//        l1->setFixedSize(100, 20);
-//        l1->move(x1 / 2, y);
-//        l1->show();
+        //        myFont.setBold(true);
+        //        l1->setFont(myFont);
+        //        l1->setText(grpList.at(j));
+        //        l1->setFixedSize(100, 20);
+        //        l1->move(x1 / 2, y);
+        //        l1->show();
 
-//        y0 += 20;
+        //        y0 += 20;
 
-//        layoutLine->addWidget(l1);
-//        layoutLine->setMargin(0);
+        //        layoutLine->addWidget(l1);
+        //        layoutLine->setMargin(0);
 
-//        layout->addLayout(layoutLine);
-
-
+        //        layout->addLayout(layoutLine);
 
         tbox->addItem(pWidget, grpList.at(j));
 
@@ -256,8 +252,6 @@ PropertiesWindow::PropertiesWindow(PropertyList* plist) : QWidget(0)
 
     setLayout(main_layout);
 
-
-
     setBaseSize(200, y0 + 30);
     setMinimumHeight(y0 + 30);
 }
@@ -276,8 +270,6 @@ void PropertiesWindow::editedText()
 
     // TODO fix
     _propertyList->set(pname.toStdString(), sender->text().toStdString());
-
-
 };
 
 void PropertiesWindow::editedColor()
@@ -316,28 +308,22 @@ void PropertiesWindow::editedStringList(int index, int)
 
     QStringList sl = _propertyList->get(pname)->asQStringList();
 
-    if (index==0)
-    {
+    if (index == 0) {
         QString s = sender->model()->index(0, 0).data().toString();
-        sl.insert(0,s);
+        sl.insert(0, s);
 
+    } else {
+        for (int i = sender->rowCount(); i > 1; i--) {
+            int idx = sender->rowCount() - i;
 
-    }
-    else
-    {
-    for (int i = sender->rowCount(); i > 1; i--) {
-        int idx = sender->rowCount() - i ;
-
-        QString s = sender->model()->index(i-1, 0).data().toString();
-        sl[idx] = s;
-    }
+            QString s = sender->model()->index(i - 1, 0).data().toString();
+            sl[idx] = s;
+        }
     }
 
     sender->clear();
 
-
     _propertyList->set(pname.toStdString(), sl);
-
 
     // TODO
     disconnect(sender, SIGNAL(cellChanged(int, int)), this, SLOT(editedStringList(int, int)));
@@ -345,6 +331,5 @@ void PropertiesWindow::editedStringList(int index, int)
     loadTableWidget(pname, sender);
 
     connect(sender, SIGNAL(cellChanged(int, int)), this, SLOT(editedStringList(int, int)));
-
 };
 }
