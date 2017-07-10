@@ -81,9 +81,8 @@ void BaseWindow::createActions()
     _closeAct->setShortcut(tr("Ctrl+W"));
     connect(_closeAct, &QAction::triggered, this, &BaseWindow::close);
 
-    _messageAct = new QAction(tr("Send Message..."), this);
-    _messageAct->setShortcut(tr("Ctrl+Shift+M"));
-    _messageAct->setEnabled(false);
+    messageAct = new QAction(tr("Send Message..."), this);
+    messageAct->setShortcut(tr("Ctrl+Shift+M"));
 
     //printAct = new QAction(tr("&Print..."), this);
     //printAct->setShortcuts(QKeySequence::Print);
@@ -164,7 +163,7 @@ void BaseWindow::createMenus()
     fileMenu->addAction(saveAct);
     fileMenu->addAction(saveAsAct);
     fileMenu->addSeparator();
-    fileMenu->addAction(_messageAct);
+    fileMenu->addAction(messageAct);
     fileMenu->addSeparator();
     fileMenu->addAction(_exitAct);
 

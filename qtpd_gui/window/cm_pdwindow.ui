@@ -21,6 +21,69 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QWidget" name="toolbar" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>40</height>
+       </size>
+      </property>
+      <widget class="QComboBox" name="logLevelBox">
+       <property name="geometry">
+        <rect>
+         <x>69</x>
+         <y>20</y>
+         <width>101</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Source Code Pro</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="currentText">
+        <string notr="true"/>
+       </property>
+       <property name="maxVisibleItems">
+        <number>5</number>
+       </property>
+       <property name="maxCount">
+        <number>5</number>
+       </property>
+       <property name="frame">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>72</x>
+         <y>0</y>
+         <width>101</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Source Code Pro</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Log level:</string>
+       </property>
+      </widget>
+     </widget>
+    </item>
     <item row="1" column="0">
      <widget class="QTableWidget" name="log">
       <property name="sizePolicy">
@@ -565,67 +628,14 @@
       <column/>
      </widget>
     </item>
-    <item row="0" column="0">
-     <widget class="QWidget" name="toolbar" native="true">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>40</height>
-       </size>
+    <item row="2" column="0">
+     <widget class="QLineEdit" name="sendMessage">
+      <property name="font">
+       <font>
+        <family>Source Code Pro</family>
+        <pointsize>14</pointsize>
+       </font>
       </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>40</height>
-       </size>
-      </property>
-      <widget class="QComboBox" name="logLevelBox">
-       <property name="geometry">
-        <rect>
-         <x>69</x>
-         <y>20</y>
-         <width>101</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Source Code Pro</family>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="currentText">
-        <string notr="true"/>
-       </property>
-       <property name="maxVisibleItems">
-        <number>5</number>
-       </property>
-       <property name="maxCount">
-        <number>5</number>
-       </property>
-       <property name="frame">
-        <bool>true</bool>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label">
-       <property name="geometry">
-        <rect>
-         <x>72</x>
-         <y>0</y>
-         <width>101</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Source Code Pro</family>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Log level:</string>
-       </property>
-      </widget>
      </widget>
     </item>
    </layout>

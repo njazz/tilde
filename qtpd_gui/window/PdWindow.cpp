@@ -13,6 +13,10 @@
 
 #include <QComboBox>
 
+#include <string>
+
+using namespace std;
+
 namespace qtpd {
 static QString cm_log_string;
 
@@ -105,6 +109,10 @@ PdWindow::PdWindow()
     editMenu->addAction(_clearConsoleAct);
 
     _ui->logLevelBox->setCurrentIndex(0);
+
+    connect(_ui->sendMessage, &QLineEdit::returnPressed, this, &PdWindow::sendMessageChanged);
+
+    connect(messageAct, &QAction::triggered, this, &PdWindow::focusOnSendMessage);
 }
 
 void PdWindow::logBoxChange(int index)
@@ -115,7 +123,30 @@ void PdWindow::logBoxChange(int index)
 void PdWindow::clearConsoleSlot()
 {
     _ui->log->clearContents();
-
 }
 
+
+ void PdWindow::focusOnSendMessage()
+ {
+     _ui->sendMessage->setFocus();
+
+ }
+
+
+void PdWindow::sendMessageChanged()
+{
+    QString input = ((QLineEdit*)QObject::sender())->text();
+    ((QLineEdit*)QObject::sender())->setText("");
+
+    QStringList list = input.split(" ");
+    if (list.size() < 2) {
+        ServerInstance::error("nothing to send");
+        return;
+    }
+
+    string object = QString(list.at(0)).toStdString();
+    list.removeAt(0);
+    string text = list.join(" ").toStdString();
+    ServerInstance::sendMessage(object, text);
+}
 }

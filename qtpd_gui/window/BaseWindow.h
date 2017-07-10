@@ -45,7 +45,7 @@ private:
     QAction* _newAct;
 
     QAction* _closeAct;
-    QAction* _messageAct;
+
 
     QAction* _exitAct;
 
@@ -61,6 +61,9 @@ private:
     QAction* _pdHelpAct;
 
 public:
+
+    QAction* messageAct;
+
     QAction* openAct;
 
     QAction* saveAct;

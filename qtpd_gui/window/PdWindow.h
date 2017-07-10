@@ -31,19 +31,19 @@ private:
     QAction* _clearConsoleAct;
 
     Q_SLOT void logBoxChange(int index);
+    Q_SLOT void sendMessageChanged();
+    Q_SLOT void focusOnSendMessage();
 
 public:
     PdWindow();
 
 signals:
     void postSignal(QString text);
+
 public slots:
     void postSlot(QString text);
     void clearConsoleSlot();
 };
-
-//fix - normal singleton here
-//static PdWindow* pdw;
 }
 
 #endif // CM_PDWINDOW_H
