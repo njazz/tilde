@@ -91,6 +91,8 @@ public:
     // ----------------------
 
     UIObject* createObject(string name, QPoint pos);
+    UIObject* createObjectWithoutUndo(string name, QPoint pos);
+
     void restoreUIBoxForSubpatch(PatchWindowController* controller, QString data, QPoint pos); ///> used in patch parsing with 'restore'
 
     void createPatchcord(UIObject* src, int out, UIObject* dest, int in);

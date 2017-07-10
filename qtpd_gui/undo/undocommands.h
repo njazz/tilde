@@ -15,6 +15,7 @@
 //};
 
 class QString;
+class QPoint;
 
 namespace qtpd {
 // -------
@@ -26,51 +27,57 @@ class UIObject;
 class UIPatchcord;
 
 class undoCreateObject : public QUndoCommand {
+    PatchWindowController* _controller;
+    QString _objectData;
+    UIObject* _object;
+    QPoint* _pos;
 public:
-    undoCreateObject(PatchWindowController* ctrl, QString objectData){};
+    undoCreateObject(PatchWindowController* ctrl, QString objectData, QPoint pos);
 
-    void undo(){};
-    void redo(){};
+    UIObject* object();
+
+    void undo();
+    void redo();
 };
 
 // -------
 
 class undoCreatePatchcord : public QUndoCommand {
 public:
-    undoCreatePatchcord(PatchWindowController* ctrl, UIObject* obj1, int out1, UIObject* obj2, int in2){};
+    undoCreatePatchcord(PatchWindowController* ctrl, UIObject* obj1, int out1, UIObject* obj2, int in2);
 
-    void undo(){};
-    void redo(){};
+    void undo();
+    void redo();
 };
 
 // -------
 
 class undoChangeProperty : public QUndoCommand {
 public:
-    undoChangeProperty(PropertyList* list, Property* property){};
+    undoChangeProperty(PropertyList* list, Property* property);
 
-    void undo(){};
-    void redo(){};
+    void undo();
+    void redo();
 };
 
 // -------
 
 class undoDeleteObject : public QUndoCommand {
 public:
-    undoDeleteObject(PatchWindowController* ctrl, QString objectData){};
+    undoDeleteObject(PatchWindowController* ctrl, QString objectData);
 
-    void undo(){};
-    void redo(){};
+    void undo();
+    void redo();
 };
 
 // -------
 
 class undoDeletePatchcord : public QUndoCommand {
 public:
-    undoDeletePatchcord(PatchWindowController* ctrl, UIPatchcord* p){};
+    undoDeletePatchcord(PatchWindowController* ctrl, UIPatchcord* p);
 
-    void undo(){};
-    void redo(){};
+    void undo();
+    void redo();
 };
 
 //class undoChangeProperty : public QUndoCommand {

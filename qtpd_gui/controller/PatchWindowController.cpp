@@ -227,6 +227,17 @@ void PatchWindowController::doCreateObject(UIObject* uiObject)
 
 UIObject* PatchWindowController::createObject(string name, QPoint pos)
 {
+    UIObject* ret;// = createObjectWithoutUndo(name,pos);
+
+    undoCreateObject* undo = new undoCreateObject(this, QString(name.c_str()), pos);
+    _undoStack->push(undo);
+    emit signalEnableUndo(true);
+
+    return ret;
+}
+
+UIObject* PatchWindowController::createObjectWithoutUndo(string name, QPoint pos)
+{
     qDebug("* create object *");
 
     if (!_canvasData) {
@@ -242,6 +253,8 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
     //qDebug() << "server object ok";
 
     //ServerInstance::post("create: " + name);
+
+
 
     UIObject* uiObject = ObjectLoader::inst().createUIObject(name.c_str());
     ServerObject* serverObject = _appController->slotCreateObject(_serverCanvas, name); //emit signalCreateObject(_serverCanvas, name);
@@ -270,9 +283,6 @@ UIObject* PatchWindowController::createObject(string name, QPoint pos)
         addObjectToParent(uiObject);
     }
 
-    undoCreateObject* undo = new undoCreateObject(this, QString(name.c_str()));
-    _undoStack->push(undo);
-    emit signalEnableUndo(true);
 
     return uiObject;
 
@@ -475,13 +485,14 @@ void PatchWindowController::menuSelectAll()
 void PatchWindowController::menuUndo()
 {
     ServerInstance::post("menu undo stub");
-
+    _undoStack->undo();
     emit signalEnableRedo(_undoStack->canRedo());
 }
 
 void PatchWindowController::menuRedo()
 {
     ServerInstance::post("menu redo stub");
+    _undoStack->redo();
 
     emit signalEnableUndo(_undoStack->canUndo());
 }
