@@ -156,33 +156,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00072"></a>00072 <span class="comment">// -------</span>
 <a name="l00073"></a>00073 
 <a name="l00074"></a><a class="code" href="classqtpd_1_1undo_delete_object.html">00074</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1undo_delete_object.html">undoDeleteObject</a> : <span class="keyword">public</span> QUndoCommand {
-<a name="l00075"></a>00075 <span class="keyword">public</span>:
-<a name="l00076"></a>00076     <a class="code" href="classqtpd_1_1undo_delete_object.html#a133b7d868fdda33538f8c02b92c7fa62">undoDeleteObject</a>(<a class="code" href="classqtpd_1_1_patch_window_controller.html" title="The Patch window controller.">PatchWindowController</a>* ctrl, QString objectData);
-<a name="l00077"></a>00077 
-<a name="l00078"></a>00078     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1undo_delete_object.html#ab4dc1e389403332a58c6a2d48257ae0b">undo</a>();
-<a name="l00079"></a>00079     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1undo_delete_object.html#a52c8ab2ddca793d6bfc24689484d7715">redo</a>();
-<a name="l00080"></a>00080 };
-<a name="l00081"></a>00081 
-<a name="l00082"></a>00082 <span class="comment">// -------</span>
-<a name="l00083"></a>00083 
-<a name="l00084"></a><a class="code" href="classqtpd_1_1undo_delete_patchcord.html">00084</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1undo_delete_patchcord.html">undoDeletePatchcord</a> : <span class="keyword">public</span> QUndoCommand {
-<a name="l00085"></a>00085 <span class="keyword">public</span>:
-<a name="l00086"></a>00086     <a class="code" href="classqtpd_1_1undo_delete_patchcord.html#ae404cd626b729bffbf80cc38f76625e6">undoDeletePatchcord</a>(<a class="code" href="classqtpd_1_1_patch_window_controller.html" title="The Patch window controller.">PatchWindowController</a>* ctrl, <a class="code" href="classqtpd_1_1_u_i_patchcord.html" title="Patchcord QGraphicsObject class.">UIPatchcord</a>* p);
-<a name="l00087"></a>00087 
-<a name="l00088"></a>00088     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1undo_delete_patchcord.html#a079bf5fdf39a4bd79bb4b2197b9ab2e8">undo</a>();
-<a name="l00089"></a>00089     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1undo_delete_patchcord.html#a468934c05ea55a799b718463d902af81">redo</a>();
-<a name="l00090"></a>00090 };
-<a name="l00091"></a>00091 
-<a name="l00092"></a>00092 <span class="comment">//class undoChangeProperty : public QUndoCommand {</span>
-<a name="l00093"></a>00093 <span class="comment">//public:</span>
-<a name="l00094"></a>00094 <span class="comment">//    undoAddObject(PropertyList* list, Property* property);</span>
-<a name="l00095"></a>00095 
-<a name="l00096"></a>00096 <span class="comment">//    void undo();</span>
-<a name="l00097"></a>00097 <span class="comment">//    void redo();</span>
-<a name="l00098"></a>00098 <span class="comment">//};</span>
-<a name="l00099"></a>00099 }
+<a name="l00075"></a>00075     <a class="code" href="classqtpd_1_1_patch_window_controller.html" title="The Patch window controller.">PatchWindowController</a>* _controller;
+<a name="l00076"></a>00076     QString _objectData;
+<a name="l00077"></a>00077     <a class="code" href="classqtpd_1_1_u_i_object.html">UIObject</a>* _object;
+<a name="l00078"></a>00078     QPoint* _pos;
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080 <span class="keyword">public</span>:
+<a name="l00081"></a>00081     <a class="code" href="classqtpd_1_1undo_delete_object.html#a79217178058036aa78c4ec6f8608a6d0">undoDeleteObject</a>(<a class="code" href="classqtpd_1_1_patch_window_controller.html" title="The Patch window controller.">PatchWindowController</a>* ctrl,<a class="code" href="classqtpd_1_1_u_i_object.html">UIObject</a>* <span class="keywordtype">object</span>);
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1undo_delete_object.html#ab4dc1e389403332a58c6a2d48257ae0b">undo</a>();
+<a name="l00084"></a>00084     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1undo_delete_object.html#a52c8ab2ddca793d6bfc24689484d7715">redo</a>();
+<a name="l00085"></a>00085 };
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087 <span class="comment">// -------</span>
+<a name="l00088"></a>00088 
+<a name="l00089"></a><a class="code" href="classqtpd_1_1undo_delete_patchcord.html">00089</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1undo_delete_patchcord.html">undoDeletePatchcord</a> : <span class="keyword">public</span> QUndoCommand {
+<a name="l00090"></a>00090 <span class="keyword">public</span>:
+<a name="l00091"></a>00091     <a class="code" href="classqtpd_1_1undo_delete_patchcord.html#ae404cd626b729bffbf80cc38f76625e6">undoDeletePatchcord</a>(<a class="code" href="classqtpd_1_1_patch_window_controller.html" title="The Patch window controller.">PatchWindowController</a>* ctrl, <a class="code" href="classqtpd_1_1_u_i_patchcord.html" title="Patchcord QGraphicsObject class.">UIPatchcord</a>* p);
+<a name="l00092"></a>00092 
+<a name="l00093"></a>00093     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1undo_delete_patchcord.html#a079bf5fdf39a4bd79bb4b2197b9ab2e8">undo</a>();
+<a name="l00094"></a>00094     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1undo_delete_patchcord.html#a468934c05ea55a799b718463d902af81">redo</a>();
+<a name="l00095"></a>00095 };
+<a name="l00096"></a>00096 
+<a name="l00097"></a>00097 <span class="comment">//class undoChangeProperty : public QUndoCommand {</span>
+<a name="l00098"></a>00098 <span class="comment">//public:</span>
+<a name="l00099"></a>00099 <span class="comment">//    undoAddObject(PropertyList* list, Property* property);</span>
 <a name="l00100"></a>00100 
-<a name="l00101"></a>00101 <span class="preprocessor">#endif // UNDOCOMMANDS_H</span>
+<a name="l00101"></a>00101 <span class="comment">//    void undo();</span>
+<a name="l00102"></a>00102 <span class="comment">//    void redo();</span>
+<a name="l00103"></a>00103 <span class="comment">//};</span>
+<a name="l00104"></a>00104 }
+<a name="l00105"></a>00105 
+<a name="l00106"></a>00106 <span class="preprocessor">#endif // UNDOCOMMANDS_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -201,7 +206,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 11 2017 22:24:20 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 11 2017 22:59:30 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

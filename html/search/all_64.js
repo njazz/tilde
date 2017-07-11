@@ -11,6 +11,7 @@ var searchData=
   ['defaultdata',['defaultData',['../classqtpd_1_1_property.html#aa06ad82b1fc482cc5d634c9156d2a5ab',1,'qtpd::Property']]],
   ['defaultdisplayflags',['defaultDisplayFlags',['../class_color___wheel.html#a36ddea665d3e4aa3a30c2e4a28e8be6b',1,'Color_Wheel']]],
   ['deleteobject',['deleteObject',['../classqtpd_1_1_patch_window_controller.html#a294ae819aa8fd6d25060797014582226',1,'qtpd::PatchWindowController']]],
+  ['deleteobjectwithoutundo',['deleteObjectWithoutUndo',['../classqtpd_1_1_patch_window_controller.html#a9db4fe95db48ddff9b9130bb3446df1e',1,'qtpd::PatchWindowController']]],
   ['deletepatchcord',['deletePatchcord',['../classqtpd_1_1_patch_window_controller.html#a7f15c0e688fed0bebf0d6adf588509dd',1,'qtpd::PatchWindowController::deletePatchcord()'],['../classqtpd_1_1_canvas_data.html#aaacdd3fc09b426cbda895b88ce28c50e',1,'qtpd::CanvasData::deletePatchcord()']]],
   ['deletepatchcordsfor',['deletePatchcordsFor',['../classqtpd_1_1_patch_window_controller.html#ae1d634d4109766367c72193eb2f26e43',1,'qtpd::PatchWindowController']]],
   ['deletepatchcordsforobject',['deletePatchcordsForObject',['../classqtpd_1_1_patch_window_controller.html#a7128fa5199c0fae44d99e6a2efd010b3',1,'qtpd::PatchWindowController']]],

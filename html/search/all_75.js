@@ -145,7 +145,7 @@ var searchData=
   ['undocreatepatchcord',['undoCreatePatchcord',['../classqtpd_1_1undo_create_patchcord.html',1,'qtpd']]],
   ['undocreatepatchcord',['undoCreatePatchcord',['../classqtpd_1_1undo_create_patchcord.html#ae65b41298c772fdbd249260f1b9a2e0c',1,'qtpd::undoCreatePatchcord']]],
   ['undodeleteobject',['undoDeleteObject',['../classqtpd_1_1undo_delete_object.html',1,'qtpd']]],
-  ['undodeleteobject',['undoDeleteObject',['../classqtpd_1_1undo_delete_object.html#a133b7d868fdda33538f8c02b92c7fa62',1,'qtpd::undoDeleteObject']]],
+  ['undodeleteobject',['undoDeleteObject',['../classqtpd_1_1undo_delete_object.html#a79217178058036aa78c4ec6f8608a6d0',1,'qtpd::undoDeleteObject']]],
   ['undodeletepatchcord',['undoDeletePatchcord',['../classqtpd_1_1undo_delete_patchcord.html',1,'qtpd']]],
   ['undodeletepatchcord',['undoDeletePatchcord',['../classqtpd_1_1undo_delete_patchcord.html#ae404cd626b729bffbf80cc38f76625e6',1,'qtpd::undoDeletePatchcord']]],
   ['undostack',['undoStack',['../classqtpd_1_1_patch_window_controller.html#a82abe89febabc8a6917b5a0cea5da431',1,'qtpd::PatchWindowController']]],
