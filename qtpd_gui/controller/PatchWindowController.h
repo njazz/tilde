@@ -174,6 +174,8 @@ public slots:
     void slotHDistribute();
     void slotVDistribute();
 
+    void slotRecentMenuAction();
+
 private slots:
 
     void slotSelectObject(UIObject* object);

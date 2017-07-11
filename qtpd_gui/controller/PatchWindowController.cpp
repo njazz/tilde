@@ -984,4 +984,12 @@ void PatchWindowController::slotVDistribute()
 {
     ArrangeObjects::distributeVertical(_canvasData->selectedBoxes());
 }
+
+void PatchWindowController::slotRecentMenuAction()
+{
+    QAction* a = (QAction*)QObject::sender();
+
+    openFile(a->text());
+}
+
 }

@@ -85,6 +85,8 @@ public slots:
     void dspOn();
     void dspOff();
 
+    void openFile();
+
     ServerObject* slotCreateObject(ServerCanvas* canvas, string name);
 };
 }

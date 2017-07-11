@@ -262,10 +262,19 @@ void ApplicationController::createRecentMenu()
         //add menuitems here
         _recentMenu->addAction(a);
         //qDebug() << a;
+
+        connect(a,&QAction::triggered, this, &ApplicationController::openFile);
     }
 
     _recentMenu->setTitle("Open Recent Patch...");
 };
+
+void ApplicationController::openFile()
+{
+    QAction *a = (QAction*)QObject::sender();
+
+    FileParser::open(a->text());
+}
 
 ServerObject* ApplicationController::slotCreateObject(ServerCanvas* canvas, string name)
 {
