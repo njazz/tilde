@@ -40,6 +40,8 @@ public:
     void setErrorBox(bool errorBox);
 
     void setData(QString inputData); ///> set both properties and Pd object string
+    QString data();
+
     void setObjectSize(t_objectSize sizeMode, int minW, int minH); ///> sets all size constraints
 
     void setMminimumBoxWidth(int w);

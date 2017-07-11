@@ -15,6 +15,8 @@ PatchWindow::PatchWindow()
     createActions();
     createMenus();
 
+
+
     _scroll = new QScrollArea(this);
     _canvasView = new CanvasView((QGraphicsView*)this);
     _canvasView->setController(_controller);
@@ -32,6 +34,7 @@ PatchWindow::PatchWindow()
     //    setCentralWidget(scroll);
 
     setCentralWidget(_canvasView);
+    //setBaseSize(QSize(640,480));
 
     //canvas->setParent(centralWidget());
     //scroll->setParent(this);
@@ -55,7 +58,7 @@ PatchWindow::PatchWindow()
     //connect(_canvasView, &CanvasView::createSubpatchWindow, this, &PatchWindow::s_createSubpatchWindow);
 
     //todo
-    setWindowTitle("<TODO> Untitled-1");
+    setWindowTitle("<new patch>");
 
     //
     //    connect(cutAct, &QAction::triggered, this, &PatchWindow::cut);

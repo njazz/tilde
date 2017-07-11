@@ -28,6 +28,11 @@ void UIObjectData::setData(QString inputData) ///> set both properties and Pd ob
     _fullHelpName = _dataString.split(" ").at(0) + "-help.pd";
 }
 
+QString UIObjectData::data()
+{
+    return _dataString;
+}
+
 void UIObjectData::setObjectSize(t_objectSize sizeMode, int minW, int minH) ///> sets all size constraints
 {
     _objectSizeMode = sizeMode;

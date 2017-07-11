@@ -756,7 +756,11 @@ void PatchWindowController::deletePatchcordsFor(UIItem* obj)
 void PatchWindowController::setFileName(QString fname)
 {
     // TODO
-    firstWindow()->setWindowFilePath(fname);
+    //firstWindow()->setWindowFilePath(fname);
+
+    _canvasData->setFileName(fname);
+    firstWindow()->setWindowTitle(fname);
+
 }
 // ============
 

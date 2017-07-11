@@ -44,7 +44,6 @@ UIBox::UIBox()
     deselect();
     setBgColor(QColor(240, 240, 240));
     setErrorBox(false);
-    //setSubpatchWindow(0);
 
     objectData()->setObjectSize(os_FixedHeight, 40, 20);
 
@@ -58,7 +57,6 @@ UIBox::UIBox()
     _boxObserver->setUIBox(this);
 
     setFlag(QGraphicsItem::ItemClipsChildrenToShape, true);
-
 }
 
 ////
@@ -245,8 +243,14 @@ void UIBox::sync()
 
     // create subpatch window controller here (if not already created)
     if (isSubpatch() && !_subpatchController) {
-        qDebug() << "subpatch server canvas: " << serverObject()->toServerCanvas();
+        //qDebug() << "subpatch server canvas: " << serverObject()->toServerCanvas();
         _subpatchController = new PatchWindowController(parentController()->appController(), serverObject()->toServerCanvas());
+
+        QStringList dataList = objectData()->data().split(" ");
+        if (dataList.size() > 1)
+            _subpatchController->firstWindow()->setWindowTitle(dataList.at(1));
+        else
+            _subpatchController->firstWindow()->setWindowTitle("<new subpatch>");
     }
 
     //redundant

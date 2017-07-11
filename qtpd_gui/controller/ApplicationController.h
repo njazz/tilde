@@ -41,6 +41,8 @@ private:
 
     PdWindowConsoleObserver* _consoleObserver;
 
+    int _newFilenameCounter;
+
 public:
     ApplicationController();
 
@@ -49,6 +51,12 @@ public:
     Observer* controllerObserver();
 
     ServerWorker* serverWorker() { return _serverWorker; };
+
+    QString newFileName()
+    {
+        return QString("Untitled-" + QString::number(_newFilenameCounter++));
+
+    }
 
 signals:
     void getLocalServer(LocalServer* ret);

@@ -136,6 +136,8 @@ ApplicationController::ApplicationController()
 //    vector<string> vl = ServerInstance::listLoadedClasses();
 
 //    ServerInstance::post(vl.at(33));
+
+    _newFilenameCounter = 1;
 };
 
 ServerInstance* ApplicationController::mainServerInstance()
@@ -155,6 +157,7 @@ void ApplicationController::newPatchWindowController()
     //return
     PatchWindowController* newP = new PatchWindowController(this);
     //newP->setAppController(this);
+    newP->setFileName(newFileName());
     newP->firstWindow()->show();
     qDebug("<<");
 };
