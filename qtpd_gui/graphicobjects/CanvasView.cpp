@@ -11,6 +11,8 @@
 
 #include <assert.h>
 
+#include "UIBox.h"
+
 namespace qtpd {
 
 static const QSize EmptyCanvasSize = QSize(300, 200);
@@ -122,6 +124,13 @@ void CanvasView::slotSelectBox(UIItem* box, QGraphicsSceneMouseEvent* ev)
     qDebug() << "select box";
 
     if (CanvasView::getEditMode() == em_Unlocked) {
+
+        if (box->isSelected()) {
+            if (_controller->canvasData()->selectedBoxes()->size() < 2) {
+                if (qobject_cast<UIBox*>(box))
+                    slotObjectStartsEdit((void*)box);
+            }
+        }
 
         if (!(ev->modifiers() & Qt::ShiftModifier)) {
             emit signalDeselectObjects();
@@ -545,6 +554,11 @@ void CanvasView::createContextMenu()
     _popupMenu.addAction(_pmProperties);
 
     connect(_pmProperties, &QAction::triggered, this, &CanvasView::slotPopupMenu);
+}
+
+SizeBox* CanvasView::sizeBox()
+{
+    return _sizeBox;
 }
 
 void CanvasView::slotPopupMenu()
