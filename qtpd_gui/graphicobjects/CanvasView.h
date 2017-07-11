@@ -53,7 +53,7 @@ private:
 
     Grid* _grid;
     SelectionRect* _selectionRect;
-    UINewPatchcord* _newLine;
+    UINewPatchcord* _newPatchcord;
 
     UIObject* _dragObject;
 
@@ -175,7 +175,11 @@ private slots:
 public slots:
 
     void slotInletMousePress(UIItem* obj, QGraphicsSceneMouseEvent* ev);
-    void slotInletMouseRelease(UIItem*, QGraphicsSceneMouseEvent*);
+    void slotInletMouseRelease(UIItem* obj, QGraphicsSceneMouseEvent*ev);
+
+    void slotInletMouseEnter(UIItem* obj, QGraphicsSceneHoverEvent* ev);
+    void slotInletMouseLeave(UIItem* obj, QGraphicsSceneHoverEvent *ev);
+
     void slotOutletMousePressed(UIItem* obj, QGraphicsSceneMouseEvent*);
     void slotOutletMouseReleased(UIItem*, QGraphicsSceneMouseEvent*);
 

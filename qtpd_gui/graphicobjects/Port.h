@@ -41,8 +41,8 @@ public:
 
     void paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*);
 
-    virtual void hoverEnterEvent(QGraphicsSceneHoverEvent*);
-    virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent*);
+    virtual void hoverEnterEvent(QGraphicsSceneHoverEvent* ev);
+    virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent* ev);
     void mousePressEvent(QGraphicsSceneMouseEvent* ev);
     void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev);
 

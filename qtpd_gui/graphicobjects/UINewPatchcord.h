@@ -16,11 +16,23 @@ class UINewPatchcord : public UIItem {
     QPoint _start;
     QPoint _end;
 
+    //todo
+    int _patchcordType;
+
+    bool _error;
+
 public:
     UINewPatchcord();
 
     void setActive(bool active) { _active = active; }
     bool active() { return _active; }
+
+    void setError(bool error) { _error = error; }
+    bool error() { return _error; }
+
+    void setPatchcordType(int type) { _patchcordType = type; }
+    bool patchcordType() { return _patchcordType; }
+
     void setStart(QPoint start) { _start = start; }
     void setEnd(QPoint end) { _end = end; }
 

@@ -26,8 +26,8 @@ CanvasView::CanvasView(QGraphicsView* parent)
 
     setMouseTracking(true);
 
-    _newLine = new UINewPatchcord;
-    _newLine->setActive(false);
+    _newPatchcord = new UINewPatchcord;
+    _newPatchcord->setActive(false);
 
     _selectionRect = new SelectionRect;
     _selectionRect->setActive(false);
@@ -42,7 +42,7 @@ CanvasView::CanvasView(QGraphicsView* parent)
 
     setScene(new QGraphicsScene(0, 0, 400, 300, this));
     scene()->addItem(_grid);
-    scene()->addItem(_newLine);
+    scene()->addItem(_newPatchcord);
     scene()->addItem(_selectionRect);
 
     _grid->setSize(300, 300);
@@ -86,8 +86,13 @@ CanvasView::CanvasView(QGraphicsView* parent)
 
 void CanvasView::slotInletMousePress(UIItem* obj, QGraphicsSceneMouseEvent*)
 {
-    qDebug("in: mouse pressed\n");
-    _newLine->setActive(false);
+    //qDebug("in: mouse pressed\n");
+
+    if (_newPatchcord)
+        if (_newPatchcord->error())
+            return;
+
+    _newPatchcord->setActive(false);
 
     if ((_connectionStartObject) && (_connectionStartOutlet)) {
 
@@ -103,17 +108,40 @@ void CanvasView::slotInletMousePress(UIItem* obj, QGraphicsSceneMouseEvent*)
     _connectionStartOutlet = 0;
 }
 
-void CanvasView::slotInletMouseRelease(UIItem*, QGraphicsSceneMouseEvent*) {}
+void CanvasView::slotInletMouseEnter(UIItem* obj, QGraphicsSceneHoverEvent* ev)
+{
+
+    if (!_connectionStartOutlet)
+        return;
+
+    int ptOut = ((Port*)_connectionStartOutlet)->portClass();
+    int ptIn = ((Port*)obj)->portClass();
+
+    if ((ptOut != ptIn) && (ptOut > 0)) {
+        _newPatchcord->setError(true);
+    }
+}
+
+void CanvasView::slotInletMouseLeave(UIItem*, QGraphicsSceneHoverEvent* ev)
+{
+    _newPatchcord->setError(false);
+}
+
+void CanvasView::slotInletMouseRelease(UIItem*, QGraphicsSceneMouseEvent* ev) {}
 
 void CanvasView::slotOutletMousePressed(UIItem* obj, QGraphicsSceneMouseEvent*)
 {
-    qDebug("out: mouse pressed\n");
+    //qDebug("out: mouse pressed\n");
 
-    _newLine->setStart(((UIItem*)obj->parent())->pos().toPoint() + obj->pos().toPoint() + QPoint(5, 1)); //((QWidget*)obj->parent())->pos() +
-    _newLine->setActive(true);
+    _newPatchcord->setStart(((UIItem*)obj->parent())->pos().toPoint() + obj->pos().toPoint() + QPoint(5, 1)); //((QWidget*)obj->parent())->pos() +
+    _newPatchcord->setActive(true);
 
     _connectionStartObject = (UIObject*)obj->parent();
     _connectionStartOutlet = (UIObject*)obj;
+
+    Port* p = (Port*)obj;
+
+    _newPatchcord->setPatchcordType(p->portClass() > 0);
 }
 
 void CanvasView::slotOutletMouseReleased(UIItem*, QGraphicsSceneMouseEvent*) {}
@@ -121,7 +149,7 @@ void CanvasView::slotOutletMouseReleased(UIItem*, QGraphicsSceneMouseEvent*) {}
 void CanvasView::slotSelectBox(UIItem* box, QGraphicsSceneMouseEvent* ev)
 {
 
-    qDebug() << "select box";
+    //qDebug() << "select box";
 
     if (CanvasView::getEditMode() == em_Unlocked) {
 
@@ -194,7 +222,7 @@ void CanvasView::mouseMoveEvent(QMouseEvent* ev)
         _newObjectPos = pos;
 
     _selectionRect->setEnd(pos - _selectionRect->start());
-    _newLine->setEnd(pos);
+    _newPatchcord->setEnd(pos);
 
     // move new object
     if (dragObject()) {
@@ -225,7 +253,7 @@ void CanvasView::mouseMoveEvent(QMouseEvent* ev)
     }
 
     //todo
-    if (_newLine->active()) {
+    if (_newPatchcord->active()) {
         viewport()->update();
     }
 
@@ -371,7 +399,7 @@ void CanvasView::canvasFromPdStrings(QStringList strings)
 
 void CanvasView::cancelPatchcord()
 {
-    _newLine->setActive(false);
+    _newPatchcord->setActive(false);
 
     // TODO
     viewport()->update();

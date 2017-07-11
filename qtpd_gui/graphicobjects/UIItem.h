@@ -92,6 +92,9 @@ signals:
     void mousePressed(UIItem* obj, QGraphicsSceneMouseEvent* ev);
     void mouseReleased(UIItem* obj, QGraphicsSceneMouseEvent* ev);
 
+    void mouseEntered(UIItem* obj, QGraphicsSceneHoverEvent* ev);
+    void mouseLeaved(UIItem* obj, QGraphicsSceneHoverEvent* ev);
+
     void selectBox(UIItem* box, QGraphicsSceneMouseEvent* event);
     void moveBox(UIItem* box, QGraphicsSceneMouseEvent* event);
 

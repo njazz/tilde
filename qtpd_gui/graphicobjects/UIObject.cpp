@@ -319,6 +319,8 @@ void UIObject::addInlet(int _portClass_)
     if (_parentCanvasView) {
         connect(new_in, &Port::mousePressed, (_parentCanvasView), &CanvasView::slotInletMousePress);
         connect(new_in, &Port::mouseReleased, (_parentCanvasView), &CanvasView::slotInletMouseRelease);
+        connect(new_in, &Port::mouseEntered, (_parentCanvasView), &CanvasView::slotInletMouseEnter);
+        connect(new_in, &Port::mouseLeaved, (_parentCanvasView), &CanvasView::slotInletMouseLeave);
     }
 
     new_in->show();

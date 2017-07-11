@@ -36,17 +36,19 @@ void Port::paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)
 
 // --------------------------
 
- void Port:: hoverEnterEvent(QGraphicsSceneHoverEvent*)
+ void Port:: hoverEnterEvent(QGraphicsSceneHoverEvent* ev)
 {
     if (getEditMode() == em_Unlocked) {
+        emit mouseEntered(this, ev);
         setHover(true);
         update();
     }
 }
 
- void Port:: hoverLeaveEvent(QGraphicsSceneHoverEvent*)
+ void Port:: hoverLeaveEvent(QGraphicsSceneHoverEvent* ev)
 {
     if (getEditMode() == em_Unlocked) {
+        emit mouseLeaved(this, ev);
         setHover(false);
         update();
     }
