@@ -121,24 +121,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00040"></a>00040     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object_data.html#a42c6687a2bf5fbcdd03321c3ab9f498d">setErrorBox</a>(<span class="keywordtype">bool</span> errorBox);
 <a name="l00041"></a>00041 
 <a name="l00042"></a>00042     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object_data.html#a6bfffb4f3e721eac47b713da98b26c19" title="&gt; set both properties and Pd object string">setData</a>(QString inputData); 
-<a name="l00043"></a>00043     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object_data.html#ac7ed428e1b53052bad68310f947765fa" title="&gt; set both properties and Pd object string">setObjectSize</a>(<a class="code" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3" title="object box size constraints">t_objectSize</a> sizeMode, <span class="keywordtype">int</span> minW, <span class="keywordtype">int</span> minH); 
+<a name="l00043"></a>00043     QString <a class="code" href="classqtpd_1_1_u_i_object_data.html#a9b13f3dee27d2074dcfeb8d403a9c2a3" title="&gt; set both properties and Pd object string">data</a>();
 <a name="l00044"></a>00044 
-<a name="l00045"></a>00045     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object_data.html#a91a54298c5f3376ba72e33a057f6d802" title="&gt; sets all size constraints">setMminimumBoxWidth</a>(<span class="keywordtype">int</span> w);
-<a name="l00046"></a>00046     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object_data.html#ad499c5655657642d1810e846e016025f">setMminimumBoxHeight</a>(<span class="keywordtype">int</span> h);
-<a name="l00047"></a>00047 
-<a name="l00048"></a>00048     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_u_i_object_data.html#a7dc9a6fd177a6f2a8d24abbbf2c8a14d">minimumBoxWidth</a>();
-<a name="l00049"></a>00049     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_u_i_object_data.html#ad5db18e03539dc9abf59216eccebc0d6">minimumBoxHeight</a>();
-<a name="l00050"></a>00050     <a class="code" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3" title="object box size constraints">t_objectSize</a> <a class="code" href="classqtpd_1_1_u_i_object_data.html#ad5062ea166760bbf3a531eb5c3372b9d">objectSizeMode</a>();
-<a name="l00051"></a>00051 
-<a name="l00052"></a>00052     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_u_i_object_data.html#aaa28676d725be85f8d36c450c58521b6">UIObjectData</a>(QObject* parent = 0);
+<a name="l00045"></a>00045     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object_data.html#ac7ed428e1b53052bad68310f947765fa" title="&gt; sets all size constraints">setObjectSize</a>(<a class="code" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3" title="object box size constraints">t_objectSize</a> sizeMode, <span class="keywordtype">int</span> minW, <span class="keywordtype">int</span> minH); 
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object_data.html#a91a54298c5f3376ba72e33a057f6d802" title="&gt; sets all size constraints">setMminimumBoxWidth</a>(<span class="keywordtype">int</span> w);
+<a name="l00048"></a>00048     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_object_data.html#ad499c5655657642d1810e846e016025f">setMminimumBoxHeight</a>(<span class="keywordtype">int</span> h);
+<a name="l00049"></a>00049 
+<a name="l00050"></a>00050     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_u_i_object_data.html#a7dc9a6fd177a6f2a8d24abbbf2c8a14d">minimumBoxWidth</a>();
+<a name="l00051"></a>00051     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_u_i_object_data.html#ad5db18e03539dc9abf59216eccebc0d6">minimumBoxHeight</a>();
+<a name="l00052"></a>00052     <a class="code" href="namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3" title="object box size constraints">t_objectSize</a> <a class="code" href="classqtpd_1_1_u_i_object_data.html#ad5062ea166760bbf3a531eb5c3372b9d">objectSizeMode</a>();
 <a name="l00053"></a>00053 
-<a name="l00054"></a>00054 signals:
+<a name="l00054"></a>00054     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_u_i_object_data.html#aaa28676d725be85f8d36c450c58521b6">UIObjectData</a>(QObject* parent = 0);
 <a name="l00055"></a>00055 
-<a name="l00056"></a>00056 <span class="keyword">public</span> slots:
-<a name="l00057"></a>00057 };
-<a name="l00058"></a>00058 }
-<a name="l00059"></a>00059 
-<a name="l00060"></a>00060 <span class="preprocessor">#endif // UIOBJECTDATA_H</span>
+<a name="l00056"></a>00056 signals:
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058 <span class="keyword">public</span> slots:
+<a name="l00059"></a>00059 };
+<a name="l00060"></a>00060 }
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062 <span class="preprocessor">#endif // UIOBJECTDATA_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -157,7 +159,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 11 2017 13:22:36 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 11 2017 14:29:52 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

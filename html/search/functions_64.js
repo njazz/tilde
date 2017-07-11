@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['data',['data',['../classqtpd_1_1_property.html#a7df44bcb3dba9285999a0a088b2a4179',1,'qtpd::Property']]],
+  ['data',['data',['../classqtpd_1_1_u_i_object_data.html#a9b13f3dee27d2074dcfeb8d403a9c2a3',1,'qtpd::UIObjectData::data()'],['../classqtpd_1_1_property.html#a7df44bcb3dba9285999a0a088b2a4179',1,'qtpd::Property::data()']]],
   ['datacopy',['dataCopy',['../classqtpd_1_1_patch_window_controller.html#aab4ec2a593279cfad25088d524d0b98d',1,'qtpd::PatchWindowController']]],
   ['datacut',['dataCut',['../classqtpd_1_1_patch_window_controller.html#ad6cbfd60e91d01742ac2bf7dfe40692f',1,'qtpd::PatchWindowController']]],
   ['dataduplicate',['dataDuplicate',['../classqtpd_1_1_patch_window_controller.html#a7b717a2474df3263be0761439a3eeff0',1,'qtpd::PatchWindowController']]],

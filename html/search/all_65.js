@@ -43,7 +43,7 @@ var searchData=
   ['end',['end',['../classqtpd_1_1_selection_rect.html#ae786b53ab171864c31be191713cee0f4',1,'qtpd::SelectionRect']]],
   ['endpoint',['endPoint',['../classqtpd_1_1_u_i_patchcord.html#a91f033218b14738a458fad5c38fd04cd',1,'qtpd::UIPatchcord']]],
   ['endpost',['endpost',['../m__pd_8h.html#ac3a51d43b7d1183250700b59941c2508',1,'m_pd.h']]],
-  ['error',['error',['../m__pd_8h.html#a62da26087ac7b125bdf1519b3200195a',1,'m_pd.h']]],
+  ['error',['error',['../classqtpd_1_1_u_i_new_patchcord.html#a38c7bbd1654056baa65d0f0efa66ef69',1,'qtpd::UINewPatchcord::error()'],['../m__pd_8h.html#a62da26087ac7b125bdf1519b3200195a',1,'error():&#160;m_pd.h']]],
   ['errorbox',['errorBox',['../classqtpd_1_1_u_i_object_data.html#a4cc9402d31f79c07d656fdd9f5b39d6e',1,'qtpd::UIObjectData::errorBox()'],['../classqtpd_1_1_u_i_object.html#a1a55479c564318cbf31c0f09d02d39bb',1,'qtpd::UIObject::errorBox()']]],
   ['escapestring',['escapeString',['../classqtpd_1_1_file_parser.html#a80c7a168052ba9515c074dcab70915e7',1,'qtpd::FileParser::escapeString()'],['../classqtpd_1_1_property.html#a29609c6282f98fe403cf2a74551516ed',1,'qtpd::Property::escapeString()']]],
   ['eventfilter',['eventFilter',['../classqtpd_1_1_u_i_text.html#a586b396b5f81a55c2f3ca9486de395a3',1,'qtpd::UIText']]],
