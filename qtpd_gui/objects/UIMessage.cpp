@@ -262,7 +262,7 @@ void UIMessage::autoResize()
 
     if (r.width() < w) {
         setWidth(w);
-        properties()->set("Size", r.size());
+        PROPERTY_SET("Size", r.size());
     }
 
 }

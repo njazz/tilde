@@ -10,15 +10,6 @@ using namespace std;
 namespace qtpd {
 
 template <>
-void Property::set(QPoint point)
-{
-    _data= point;
-    _type = ptVector;
-
-    emit changed();
-}
-
-template <>
 void Property::set(bool value)
 {
 
@@ -29,11 +20,20 @@ void Property::set(bool value)
 }
 
 template <>
+void Property::set(QPoint point)
+{
+    _data = QString::number(point.x()) + " " + QString::number(point.y());
+    _type = ptVec2;
+
+    emit changed();
+}
+
+template <>
 void Property::set(QPointF point)
 {
 
     _data = point;
-    _type = ptVector;
+    _type = ptVec2;
 
     emit changed();
 }
@@ -51,8 +51,8 @@ template <>
 void Property::set(QSize size)
 {
 
-    _data = (size);
-    _type = ptVector;
+    _data = QString::number(size.width()) + " " + QString::number(size.height());
+    _type = ptVec2;
 
     emit changed();
 }
@@ -61,7 +61,7 @@ template <>
 void Property::set(QSizeF size)
 {
     _data = (size);
-    _type = ptVector;
+    _type = ptVec2;
 
     emit changed();
 }
@@ -190,12 +190,22 @@ QVariant Property::defaultData()
 
 QSize Property::asQSize()
 {
-    return _data.toSize();
+    if (_data.toString().split(" ").size() < 2)
+        return QSize(20, 20);
+
+    QStringList sL = _data.toString().split(" ");
+
+    return QSize(QString(sL.at(0)).toInt(), QString(sL.at(1)).toInt());
 }
 
 QPoint Property::asQPoint()
 {
-    return _data.toPoint();
+    if (_data.toString().split(" ").size() < 2)
+        return QPoint(0, 0);
+
+    QStringList sL = _data.toString().split(" ");
+
+    return QPoint(QString(sL.at(0)).toInt(), QString(sL.at(1)).toInt());
 }
 
 QSizeF Property::asQSizeF()
@@ -239,9 +249,7 @@ QColor Property::asQColor()
 
     //qDebug() << "get" << sL;
 
-
-
-    QColor ret =  QColor(QString(sL.at(0)).toInt(), QString(sL.at(1)).toInt(), QString(sL.at(2)).toInt(), QString(sL.at(3)).toInt());
+    QColor ret = QColor(QString(sL.at(0)).toInt(), QString(sL.at(1)).toInt(), QString(sL.at(2)).toInt(), QString(sL.at(3)).toInt());
 
     //qDebug() << "color" << ret;
 
@@ -261,7 +269,7 @@ string Property::asStdString()
 QString Property::asPdSaveString()
 {
     // if (!_type == ptString)
-        QString ret = _data.toStringList().join(" ");
+    QString ret = _data.toStringList().join(" ");
     // else
     //     QString ret = _data.toStringList().join("\ ");
 
@@ -271,6 +279,7 @@ QString Property::asPdSaveString()
 
 QString Property::asQString()
 {
+
     return _data.toStringList().join(" ");
 }
 

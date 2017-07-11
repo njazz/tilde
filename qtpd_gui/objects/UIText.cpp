@@ -45,8 +45,8 @@ void UIText::editorDone()
     //fromQString(_editor->document()->toPlainText()); //text().toStdString());
     //todo
 
-    properties()->set("Text", getEditorData());
-    properties()->set("FontSize", 11);
+    PROPERTY_SET("Text", getEditorData());
+    PROPERTY_SET("FontSize", 11);
 
     _editor->hide();
 }
@@ -71,7 +71,7 @@ void UIText::editorChanged()
     _editor->setFixedHeight(height() - 2);
 
     // fix later
-    properties()->set("Text", getEditorData());
+    PROPERTY_SET("Text", getEditorData());
 }
 
 UIObject* UIText::createObj(QString data)
@@ -125,7 +125,7 @@ void UIText::initProperties()
     properties()->create("TextColor", "Color", "0.1", QColor(0, 0, 0));
     properties()->create("BackgroundColor", "Color", "0.1", QColor(255, 255, 255, 0));
 
-    properties()->set("BorderColor", QColor(0,0,0,0));
+    PROPERTY_SET("BorderColor", QColor(0,0,0,0));
 
     PROPERTY_LISTENER("TextColor", &UIText::colorPropertyChanged);
     PROPERTY_LISTENER("BackgroundColor", &UIText::colorPropertyChanged);
@@ -184,7 +184,7 @@ void UIText::fromQString(QString objData)
         list[i] = list[i] + "\\n";
     }
 
-    //properties()->set("Text", list);
+    //PROPERTY_SET("Text", list);
 
     QString data = properties()->get("Text")->asQString().split("\\n ").join("\n");
 

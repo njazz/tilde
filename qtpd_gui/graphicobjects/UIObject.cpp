@@ -112,7 +112,7 @@ void UIObject::resizeBox(int dx, int dy)
         setHeight(boundingRect().width());
     }
 
-    properties()->set("Size", boundingRect().size());
+    PROPERTY_SET("Size", boundingRect().size());
 
     //resizeEvent();
 
@@ -125,6 +125,7 @@ void UIObject::initProperties()
 
     objectData()->properties()->create("Size", "Box", "0.1", boundingRect().size());
     objectData()->properties()->create("Position", "Box", "0.1", pos());
+
     objectData()->properties()->create("FontSize", "Box", "0.1", 11.);
 
     objectData()->properties()->create("PresetName", "Bindings", "0.1", QString(""));
@@ -136,6 +137,9 @@ void UIObject::initProperties()
 
     PROPERTY_LISTENER("Size", &UIObject::propertySize);
     PROPERTY_LISTENER("FontSize", &UIObject::propertySize);
+
+    PROPERTY_LISTENER("Position", &UIObject::propertyPosition);
+
     PROPERTY_LISTENER("BorderColor", &UIObject::propertyUpdate);
 
     PROPERTY_LISTENER("ReceiveSymbol", &UIObject::propertyReceiveSymbol);
@@ -167,15 +171,19 @@ void UIObject::propertySize()
 
     update();
 
-    //cmp_post("property size updated");
+    //ServerInstance::post("property size updated");
 }
 
-void UIObject::propertyFontSize()
+void UIObject::propertyPosition()
 {
-    //remove
 
-    UIObject::propertySize();
 }
+//void UIObject::propertyFontSize()
+//{
+//    //remove
+
+//    UIObject::propertySize();
+//}
 
 void UIObject::propertyUpdate()
 {
@@ -551,7 +559,7 @@ void UIObject::resizeEvent() //QGraphicsSceneResizeEvent *event)
 {
 
     // needs fix
-    properties()->set("Size", boundingRect().size());
+    PROPERTY_SET("Size", boundingRect().size());
 }
 
 void UIObject::hoverEnterEvent(QGraphicsSceneHoverEvent*)

@@ -168,7 +168,10 @@ private slots:
     void openHelpWindow();
 
     void propertySize(); ///> called when size property is changed
-    void propertyFontSize();
+//    void propertyFontSize();
+
+    void propertyPosition();
+
     void propertyUpdate(); ///> basic update - calls update() probably remove later
 
     void propertyReceiveSymbol(); ///> binds object to symbol

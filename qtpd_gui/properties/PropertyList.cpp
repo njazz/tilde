@@ -28,6 +28,16 @@ Property* PropertyList::get(QString pName)
     return ret;
 };
 
+template <>
+void PropertyList::set(std::string pName, Property* value)
+{
+    if (_data[pName]) {
+
+        _data[pName] = value;
+        emit get(pName.c_str())->changed();
+    }
+};
+
 // -----------------
 
 std::string PropertyList::asPdFileString()

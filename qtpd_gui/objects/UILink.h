@@ -182,7 +182,7 @@ public:
         //            list[i] = list[i] + "\\n";
         //        }
 
-        //        properties()->set("Text", list.join("\n"));
+        //        PROPERTY_SET("Text", list.join("\n"));
 
         //        QString data = properties()->get("Text")->asQString().split("\\n ").join("\n");
 

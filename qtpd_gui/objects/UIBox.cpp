@@ -328,11 +328,11 @@ void UIBox::autoResize()
 
     if (r.width() < w) {
         setWidth(w);
-        properties()->set("Size", r.size());
+        PROPERTY_SET("Size", r.size());
     }
 
     size().setHeight(20);
-    float fs = properties()->get("FontSize")->asFloat();
+    float fs = properties()->get("FontSize")->asFontSize();
     if (size().height() < (fs + 9)) {
         size().setHeight(fs + 9);
     }

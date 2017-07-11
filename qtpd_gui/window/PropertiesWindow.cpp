@@ -229,6 +229,7 @@ PropertiesWindow::PropertiesWindow(PropertyList* plist)
                 _propertyNames[tv] = list.at(i);
 
             } else {
+
                 QLineEdit* le = new QLineEdit(pWidget);
                 le->setFont(myFont);
                 le->setText(plist->get(list.at(i))->asQString());

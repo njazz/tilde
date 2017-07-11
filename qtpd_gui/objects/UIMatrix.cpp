@@ -314,7 +314,7 @@ void UIMatrix::mousePressEvent(QGraphicsSceneMouseEvent* ev)
                 count = 1;
             int v = floor(ev->pos().x() / width() * count);
 
-            properties()->set("Value", v);
+            PROPERTY_SET("Value", v);
 
             std::string val_str = "set " + std::to_string(v);
 
@@ -332,7 +332,7 @@ void UIMatrix::mousePressEvent(QGraphicsSceneMouseEvent* ev)
                 count = 1;
             int v = floor(ev->pos().y() / height() * count);
 
-            properties()->set("Value", v);
+            PROPERTY_SET("Value", v);
 
             std::string val_str = "set " + std::to_string(v);
             // TODO-PD_OBJECT
@@ -390,7 +390,7 @@ void UIMatrix::updateUI(AtomList* msg)
                 if (v > (radioSize() - 1))
                     v = radioSize() - 1;
 
-                properties()->set("Value", v);
+                PROPERTY_SET("Value", v);
             }
         }
 
