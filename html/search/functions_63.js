@@ -163,6 +163,7 @@ var searchData=
   ['createpatchcord',['createPatchcord',['../classqtpd_1_1_patch_window_controller.html#a60d03999bf4178865af4d714bbe2e500',1,'qtpd::PatchWindowController']]],
   ['createpatchcordwithoutundo',['createPatchcordWithoutUndo',['../classqtpd_1_1_patch_window_controller.html#ae10117346e95dd2c8c1794073f10c4ed',1,'qtpd::PatchWindowController']]],
   ['createpopupmenu',['createPopupMenu',['../classqtpd_1_1_u_i_object.html#a3b55cce220c7117f67c3dd7947e639b4',1,'qtpd::UIObject']]],
+  ['createrecentmenu',['createRecentMenu',['../classqtpd_1_1_application_controller.html#aa0a93ae0ab398a5c728d04ec2e204858',1,'qtpd::ApplicationController']]],
   ['createsubpatchwindow',['createSubpatchWindow',['../classqtpd_1_1_canvas_view.html#a67677c5dc5c650b478ad26d181fe2d95',1,'qtpd::CanvasView']]],
   ['createuiobject',['createUIObject',['../classqtpd_1_1_object_loader.html#aa193a9b4cd06758ac0f6261bf32056fd',1,'qtpd::ObjectLoader']]],
   ['cut',['cut',['../classqtpd_1_1_canvas_data.html#a461cd0c7e9fbae9ec94ed5a7c437d030',1,'qtpd::CanvasData']]]
