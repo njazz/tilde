@@ -2,6 +2,7 @@
 
 #include "PatchWindowController.h"
 #include "UIObject.h"
+#include <QDebug>
 
 namespace qtpd {
 
@@ -15,7 +16,7 @@ undoCreateObject::undoCreateObject(PatchWindowController* ctrl, QString objectDa
 
 void undoCreateObject::undo()
 {
-    _controller->deleteObject(_object);
+    _controller->deleteObjectWithoutUndo(_object);
 };
 
 UIObject* undoCreateObject::object()
@@ -51,8 +52,7 @@ void undoCreatePatchcord::undo()
 //}
 void undoCreatePatchcord::redo()
 {
-    _p =
-            _controller->createPatchcordWithoutUndo(_obj1, _out1, _obj2, _in2);
+    _p = _controller->createPatchcordWithoutUndo(_obj1, _out1, _obj2, _in2);
 };
 
 // -------
@@ -64,10 +64,25 @@ void undoChangeProperty::redo(){};
 
 // -------
 
-undoDeleteObject::undoDeleteObject(PatchWindowController* ctrl, QString objectData){};
+undoDeleteObject::undoDeleteObject(PatchWindowController* ctrl, UIObject* object)
+{
+    _controller = ctrl;
+    _object = object;
+    _objectData = object->toQString();
+    _pos = new QPoint(object->pos().toPoint());
+    //qDebug() << "undo qstring" << _objectData;
+};
 
-void undoDeleteObject::undo(){};
-void undoDeleteObject::redo(){};
+void undoDeleteObject::undo()
+{
+    qDebug() << "undo";
+    _controller->createObjectWithoutUndo(_objectData.toStdString(), *_pos);
+};
+
+void undoDeleteObject::redo()
+{
+    _controller->deleteObjectWithoutUndo(_object);
+};
 
 // -------
 

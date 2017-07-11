@@ -426,13 +426,24 @@ void PatchWindowController::deletePatchcordsForObject(UIObject* o)
 
 void PatchWindowController::deleteObject(UIObject* o)
 {
-    undoDeleteObject* undo = new undoDeleteObject(this, o->asPdFileString().c_str());
+    undoDeleteObject* undo = new undoDeleteObject(this, o);
     _undoStack->push(undo);
     emit signalEnableUndo(true);
+}
 
-    _canvasData->deselectBoxes();
-    _canvasData->selectBox(o);
-    deleteSelectedObjects();
+void PatchWindowController::deleteObjectWithoutUndo(UIObject* o)
+{
+//    _canvasData->deselectBoxes();
+//    _canvasData->selectBox(o);
+//    deleteSelectedObjects();
+
+    deletePatchcordsFor(o);
+
+    _scene->removeItem(o);
+    updateViewports();
+
+    _canvasData->boxes()->erase(std::remove(_canvasData->boxes()->begin(), _canvasData->boxes()->end(), o), _canvasData->boxes()->end());
+
 };
 //
 //bool PatchWindowController::syncData(ServerObject* serverObject, UIObject* uiObject){};
@@ -665,12 +676,8 @@ void PatchWindowController::deleteSelectedObjects()
         }
         */
 
-        deletePatchcordsFor(box);
+        deleteObject(box);
 
-        _scene->removeItem(box);
-        updateViewports();
-
-        _canvasData->boxes()->erase(std::remove(_canvasData->boxes()->begin(), _canvasData->boxes()->end(), *it), _canvasData->boxes()->end());
         //selectionData_.boxes()->erase(std::remove(selectionData_.boxes()->begin(), selectionData_.boxes()->end(), *it), selectionData_.boxes()->end());
     }
 
@@ -738,6 +745,7 @@ void PatchWindowController::deletePatchcordsFor(UIItem* obj)
             //            _undoStack->push(undo);
             //            emit signalEnableUndo(true);
 
+
             _scene->removeItem(p);
 
             //_canvasData->patchcords()->erase(std::remove(_canvasData->patchcords()->begin(), _canvasData->patchcords()->end(), *it), _canvasData->patchcords()->end());
@@ -760,7 +768,6 @@ void PatchWindowController::setFileName(QString fname)
 
     _canvasData->setFileName(fname);
     firstWindow()->setWindowTitle(fname);
-
 }
 // ============
 
@@ -991,5 +998,4 @@ void PatchWindowController::slotRecentMenuAction()
 
     openFile(a->text());
 }
-
 }

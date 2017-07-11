@@ -124,8 +124,11 @@ public:
     void deletePatchcordsForObject(UIObject* o);
 
     void deleteObject(UIObject* o);
+    void deleteObjectWithoutUndo(UIObject* o);
+
     void deleteSelectedObjects(vector<UIObject*>);
     void deleteSelectedObjects(); //
+
     void deletePatchcord(UIPatchcord* p);
     void deleteSelectedPatchcords(vector<UIPatchcord*>);
 

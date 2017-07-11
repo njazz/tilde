@@ -72,8 +72,13 @@ public:
 // -------
 
 class undoDeleteObject : public QUndoCommand {
+    PatchWindowController* _controller;
+    QString _objectData;
+    UIObject* _object;
+    QPoint* _pos;
+
 public:
-    undoDeleteObject(PatchWindowController* ctrl, QString objectData);
+    undoDeleteObject(PatchWindowController* ctrl,UIObject* object);
 
     void undo();
     void redo();
