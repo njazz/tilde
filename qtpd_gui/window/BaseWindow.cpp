@@ -59,6 +59,8 @@ void BaseWindow::setAppController(ApplicationController* appController)
 
     connect(_dspOnAct, &QAction::triggered, _appController, &ApplicationController::dspOn);
     connect(_dspOffAct, &QAction::triggered, _appController, &ApplicationController::dspOff);
+
+
 }
 
 // ---------
@@ -77,9 +79,9 @@ void BaseWindow::createActions()
     saveAsAct = new QAction(tr("&Save Patch As..."), this);
     saveAsAct->setShortcuts(QKeySequence::SaveAs);
 
-    _closeAct = new QAction(tr("Close Patch"), this);
-    _closeAct->setShortcut(tr("Ctrl+W"));
-    connect(_closeAct, &QAction::triggered, this, &BaseWindow::close);
+    closeAct = new QAction(tr("Close Patch"), this);
+    closeAct->setShortcut(tr("Ctrl+W"));
+    connect(closeAct, &QAction::triggered, this, &BaseWindow::close);
 
     messageAct = new QAction(tr("Send Message..."), this);
     messageAct->setShortcut(tr("Ctrl+Shift+M"));
@@ -156,9 +158,14 @@ void BaseWindow::createMenus()
     fileMenu->addAction(_newAct);
     fileMenu->addAction(openAct);
     //QMenu *recent =
-    fileMenu->addMenu(tr("Open Recent"));
-    fileMenu->addSeparator();
-    fileMenu->addAction(_closeAct);
+
+    //_recentMenu = new QMenu(tr("Open Recent"));
+    //fileMenu->addMenu(_recentMenu);
+
+
+
+    //fileMenu->addSeparator();
+    fileMenu->addAction(closeAct);
     fileMenu->addSeparator();
     fileMenu->addAction(saveAct);
     fileMenu->addAction(saveAsAct);
@@ -202,6 +209,20 @@ void BaseWindow::createMenus()
     helpMenu->addAction(_pdHelpAct);
 }
 
+void BaseWindow::setRecentMenu(QMenu *menu)
+{
+    _recentMenu = menu;
+
+    if (_appController) {
+        _appController->createRecentMenu();
+        //setRecentMenu(appController()->recentMenu());
+        //c->appController()->recentMenu()->setTitle("Open Recent");
+        //qDebug() << c->appController()->recentMenu()->actions().size();
+        fileMenu->insertMenu(closeAct, _appController->recentMenu());
+        fileMenu->insertSeparator(closeAct);
+    }
+
+}
 //////////////////////////////////////
 
 void BaseWindow::close()

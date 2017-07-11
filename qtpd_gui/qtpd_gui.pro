@@ -160,7 +160,8 @@ SOURCES += main.cpp\
     properties/QtColorPicker/src/color_wheel.cpp \
     properties/QtColorPicker/src/gradient_slider.cpp \
     properties/QtColorPicker/src/hue_slider.cpp \
-    undo/undocommands.cpp
+    undo/undocommands.cpp \
+    datamodels/recentfiles.cpp
 
 
 #
@@ -250,7 +251,8 @@ HEADERS  += \
     controller/pdWindowConsoleObserver.h \
     controller/patchObserver.h \
     controller/objectObserver.h \
-    undo/undocommands.h
+    undo/undocommands.h \
+    datamodels/recentfiles.h
 
 #    widgets/UIScriptTextEdit.h \
 #    widgets/UIScriptEditor.h \

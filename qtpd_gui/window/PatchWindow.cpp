@@ -5,6 +5,7 @@
 
 #include "FileParser.h"
 
+#include "ApplicationController.h"
 #include "CanvasView.h"
 #include "FileParser.h"
 #include "PatchWindowController.h"
@@ -14,8 +15,6 @@ PatchWindow::PatchWindow()
 {
     createActions();
     createMenus();
-
-
 
     _scroll = new QScrollArea(this);
     _canvasView = new CanvasView((QGraphicsView*)this);
@@ -400,8 +399,17 @@ void PatchWindow::setController(PatchWindowController* c)
     if (_canvasView)
         _canvasView->setController(_controller);
 
-    connect(_controller,   &PatchWindowController::signalEnableRedo, this, &PatchWindow::slotEnableRedo);
-    connect(_controller,   &PatchWindowController::signalEnableUndo, this, &PatchWindow::slotEnableUndo);
+    connect(_controller, &PatchWindowController::signalEnableRedo, this, &PatchWindow::slotEnableRedo);
+    connect(_controller, &PatchWindowController::signalEnableUndo, this, &PatchWindow::slotEnableUndo);
+
+    if (c->appController()) {
+        c->appController()->createRecentMenu();
+        setRecentMenu(c->appController()->recentMenu());
+        //c->appController()->recentMenu()->setTitle("Open Recent");
+        //qDebug() << c->appController()->recentMenu()->actions().size();
+        fileMenu->insertMenu(closeAct, c->appController()->recentMenu());
+        fileMenu->insertSeparator(closeAct);
+    }
 }
 
 void PatchWindow::closeEvent(QCloseEvent* event)
@@ -601,9 +609,7 @@ void PatchWindow::setGridSnap()
     //canvasView()-> viewport()->update();
 }
 
-
 // --------
-
 
 void PatchWindow::slotEnableRedo(bool v)
 {
@@ -774,7 +780,6 @@ void PatchWindow::newArrayBox()
 
     setWindowModified(true);
 }
-
 
 void PatchWindow::newSliderBox()
 {

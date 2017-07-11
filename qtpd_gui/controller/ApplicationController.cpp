@@ -25,6 +25,8 @@
 
 #include "ObjectLoader.h"
 
+#include "recentfiles.h"
+
 #include <assert.h>
 
 namespace qtpd {
@@ -81,6 +83,8 @@ ApplicationController::ApplicationController()
     _pdWindow->move(0, 100);
     _pdWindow->show();
 
+
+
     _consoleObserver->setWindow(_pdWindow);
 
     _localServer->firstInstance()->post("Server started");
@@ -130,14 +134,19 @@ ApplicationController::ApplicationController()
     mainServerInstance()->post("----");
 
     //tests
-//    string l = ServerInstance::listLoadedLibraries();
-//    ServerInstance::post(l);
+    //    string l = ServerInstance::listLoadedLibraries();
+    //    ServerInstance::post(l);
 
-//    vector<string> vl = ServerInstance::listLoadedClasses();
+    //    vector<string> vl = ServerInstance::listLoadedClasses();
 
-//    ServerInstance::post(vl.at(33));
+    //    ServerInstance::post(vl.at(33));
 
     _newFilenameCounter = 1;
+
+    _recentFiles = new RecentFiles();
+    _recentMenu = new QMenu();
+
+    _pdWindow->setRecentMenu(_recentMenu);
 };
 
 ServerInstance* ApplicationController::mainServerInstance()
@@ -167,8 +176,11 @@ void ApplicationController::openFileDialog()
     QString fileName = QFileDialog::getOpenFileName(0, QString("Open patch"), QString("~/"), QString("*.pd"), 0, 0);
 
     if (fileName != "") {
+
         PatchWindowController* newP = new PatchWindowController(this);
         newP->openFile(fileName);
+        _recentFiles->addFile(fileName);
+        createRecentMenu();
     }
 }
 
@@ -232,6 +244,28 @@ void ApplicationController::dspOff()
 
     mainServerInstance()->dspOff();
 }
+
+void ApplicationController::createRecentMenu()
+{
+
+    QStringList l = *_recentFiles->list();
+
+    //qDebug() << l;
+
+    _recentMenu->clear();
+
+    for (int i = 0; i < l.size(); i++) {
+
+        QAction* a = new QAction();
+        a->setText(l.at(i));
+
+        //add menuitems here
+        _recentMenu->addAction(a);
+        //qDebug() << a;
+    }
+
+    _recentMenu->setTitle("Open Recent Patch...");
+};
 
 ServerObject* ApplicationController::slotCreateObject(ServerCanvas* canvas, string name)
 {

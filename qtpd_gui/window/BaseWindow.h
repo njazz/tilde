@@ -20,6 +20,8 @@ class BaseWindow : public QMainWindow {
 
     ApplicationController* _appController;
 
+    QMenu* _recentMenu;
+
 public:
     explicit BaseWindow(QWidget* parent = 0);
 
@@ -35,6 +37,8 @@ public:
     ///
     void createMenus();
 
+    void setRecentMenu(QMenu* menu);
+
 private:
     Ui::cm_basewindow* _ui;
 
@@ -43,9 +47,6 @@ private:
     QMenu* _windowMenu;
 
     QAction* _newAct;
-
-    QAction* _closeAct;
-
 
     QAction* _exitAct;
 
@@ -61,13 +62,14 @@ private:
     QAction* _pdHelpAct;
 
 public:
-
     QAction* messageAct;
 
     QAction* openAct;
 
     QAction* saveAct;
     QAction* saveAsAct;
+
+    QAction* closeAct;
 
     QAction* cutAct;
     QAction* copyAct;

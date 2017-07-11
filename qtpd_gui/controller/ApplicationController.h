@@ -6,6 +6,10 @@
 
 #include "pdServer.hpp"
 
+#include "recentfiles.h"
+
+#include <QAction>
+
 #ifdef WITH_PYTHON
 #include "python/PythonQtScriptingConsole.h"
 #else
@@ -23,6 +27,7 @@ class PatchWindow;
 class UIObject;
 class ServerWorker;
 class PdWindowConsoleObserver;
+class RecentFiles;
 
 ////
 /// \brief The Application Controller class
@@ -43,6 +48,9 @@ private:
 
     int _newFilenameCounter;
 
+    RecentFiles* _recentFiles;
+    QMenu* _recentMenu;
+
 public:
     ApplicationController();
 
@@ -55,8 +63,11 @@ public:
     QString newFileName()
     {
         return QString("Untitled-" + QString::number(_newFilenameCounter++));
-
     }
+
+    void createRecentMenu();
+
+    QMenu* recentMenu() { return _recentMenu; }
 
 signals:
     void getLocalServer(LocalServer* ret);
