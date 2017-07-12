@@ -1,4 +1,6 @@
 #include "ServerWorker.h"
+#include "UIObject.h"
+#include "PropertyList.h"
 
 namespace qtpd {
 ServerWorker::ServerWorker()
@@ -32,7 +34,13 @@ void ServerWorker::stop()
 
 void ServerWorker::sendMessageToObject(ServerObject* object, QString msg)
 {
-    qDebug() << "send message";
+    UIObject* obj = (UIObject*)QObject::sender();
+    QString dest = obj->properties()->get("SendSymbol")->asQString();
+
+    if (dest != "")
+        ServerInstance::sendMessage(dest.toStdString(), msg.toStdString());
+
+    //qDebug() << "send message";
     object->message(msg.toStdString());
 }
 }

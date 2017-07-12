@@ -2,6 +2,7 @@
 // License: GPL3
 
 #include "objectObserver.h"
+#include "UIObject.h"
 
 namespace qtpd {
 
