@@ -138,6 +138,8 @@ Public Slots</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a243774c1c9f52d2c3473f41a4e433d25">slotHDistribute</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#abb685977ca5b0b1fe95af03280244ace">slotVDistribute</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#ae33f7fd42d85400420b58f1d58244017">slotRecentMenuAction</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#aa01839d68a2ca122f947664bde70d394">slotObjectHoverEnter</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a7410913c6639cc7cd6d360bc71670cb7">slotObjectHoverLeave</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="signals"></a>
 Signals</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">ServerObject *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#abeeeeecbdad3b9eaa305c78a76f4b4fd">signalCreateObject</a> (ServerCanvas *canvas, string name)</td></tr>
@@ -191,6 +193,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#aeb40afa6c184fc46367aad3442fdf781">setFileName</a> (QString fname)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#ad1db0e8d48810b40a3399cb134462d84">selectBox</a> (<a class="el" href="classqtpd_1_1_u_i_item.html">UIItem</a> *box)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a3fc68cd3a2dc6edb02b79a40306afc49">moveSelectedBoxes</a> (QPoint eventPos)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a46de61428b8ccf56de19b42ba792ce56">sizeBoxShow</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *object)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#ac4023bc57957985a1119e01080bb3da4">sizeBoxHide</a> ()</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>The Patch window controller. </p>
@@ -1192,6 +1196,39 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ac4023bc57957985a1119e01080bb3da4"></a><!-- doxytag: member="qtpd::PatchWindowController::sizeBoxHide" ref="ac4023bc57957985a1119e01080bb3da4" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window_controller.html#ac4023bc57957985a1119e01080bb3da4">qtpd::PatchWindowController::sizeBoxHide</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a46de61428b8ccf56de19b42ba792ce56"></a><!-- doxytag: member="qtpd::PatchWindowController::sizeBoxShow" ref="a46de61428b8ccf56de19b42ba792ce56" args="(UIObject *object)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window_controller.html#a46de61428b8ccf56de19b42ba792ce56">qtpd::PatchWindowController::sizeBoxShow</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td>
+          <td class="paramname"><em>object</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a592d041e3aad220e024eaf42db364fc4"></a><!-- doxytag: member="qtpd::PatchWindowController::slotAlignBottom" ref="a592d041e3aad220e024eaf42db364fc4" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -1278,6 +1315,38 @@ Public Member Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window_controller.html#a243774c1c9f52d2c3473f41a4e433d25">qtpd::PatchWindowController::slotHDistribute</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa01839d68a2ca122f947664bde70d394"></a><!-- doxytag: member="qtpd::PatchWindowController::slotObjectHoverEnter" ref="aa01839d68a2ca122f947664bde70d394" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window_controller.html#aa01839d68a2ca122f947664bde70d394">qtpd::PatchWindowController::slotObjectHoverEnter</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7410913c6639cc7cd6d360bc71670cb7"></a><!-- doxytag: member="qtpd::PatchWindowController::slotObjectHoverLeave" ref="a7410913c6639cc7cd6d360bc71670cb7" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window_controller.html#a7410913c6639cc7cd6d360bc71670cb7">qtpd::PatchWindowController::slotObjectHoverLeave</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [slot]</code></td>
@@ -1407,7 +1476,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 11 2017 22:59:31 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 12 2017 10:28:58 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

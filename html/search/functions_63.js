@@ -4,7 +4,6 @@ var searchData=
   ['c_5fextern',['c_extern',['../m__pd_8h.html#a37580f48f516ffe97cc5d955f493dc5e',1,'m_pd.h']]],
   ['callgetter',['callGetter',['../classqtpd_1_1_o_p_instance.html#a7a8710617ef1c9d559516a7c3dbfb1b2',1,'qtpd::OPInstance::callGetter(AtomList list)'],['../classqtpd_1_1_o_p_instance.html#a455a8dd82365ba002e37d0572f939449',1,'qtpd::OPInstance::callGetter(t_symbol *propertyName)']]],
   ['callmethod',['callMethod',['../classqtpd_1_1_o_p_instance.html#ad72aa5914beafca47cf4ef78a245c073',1,'qtpd::OPInstance']]],
-  ['callrepaint',['callRepaint',['../classqtpd_1_1_u_i_object.html#a7cd66a9ac05bd493a0f17a61513cc5ae',1,'qtpd::UIObject']]],
   ['callrun',['callRun',['../classqtpd_1_1_u_i_script.html#a287113500154deeb8abe43a21649621b',1,'qtpd::UIScript::callRun()'],['../classqtpd_1_1_u_i_script_common.html#a67e0edf99db6e86f5d35c6192c714b70',1,'qtpd::UIScriptCommon::callRun()']]],
   ['callsetter',['callSetter',['../classqtpd_1_1_o_p_instance.html#aad6f8ffb305d100701ee244efbf8d7fa',1,'qtpd::OPInstance::callSetter(AtomList list)'],['../classqtpd_1_1_o_p_instance.html#a63eb7d4e85ea527fb37f284a083acf2c',1,'qtpd::OPInstance::callSetter(t_symbol *propertyName, AtomList list)']]],
   ['cancel',['cancel',['../classqtpd_1_1_object_maker.html#ace3e2f217478e776f4f167eb26f31ca9',1,'qtpd::ObjectMaker']]],

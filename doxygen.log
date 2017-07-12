@@ -695,9 +695,8 @@ Generating docs for compound _linetrave/home/travis/build/njazz/qtpd/qtpd_gui/li
 /home/travis/build/njazz/qtpd/qtpd_gui/datamodels/FileSaver.h:33: warning: argument 'canvas' of command @param is not found in the argument list of qtpd::FileSaver::saveCanvas(CanvasData *CanvasData, QFile *file)
 /home/travis/build/njazz/qtpd/qtpd_gui/datamodels/FileSaver.h:33: warning: The following parameters of qtpd::FileSaver::saveCanvas(CanvasData *CanvasData, QFile *file) are not documented:
   parameter 'CanvasData'
-/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/CanvasView.h:128: warning: The following parameters of qtpd::CanvasView::slotSelectBox(UIItem *box, QGraphicsSceneMouseEvent *ev) are not documented:
+/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/CanvasView.h:127: warning: The following parameters of qtpd::CanvasView::slotSelectBox(UIItem *box, QGraphicsSceneMouseEvent *ev) are not documented:
   parameter 'ev'
-/home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/Port.h:30: warning: Found unknown command `\group'
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/SelectionRect.h:26: warning: Found unknown command `\group'
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIItem.h:59: warning: argument 'canvasEditMode' of command @param is not found in the argument list of qtpd::UIItem::setEditModeRef(t_editMode *canvasEditModeRef)
 /home/travis/build/njazz/qtpd/qtpd_gui/graphicobjects/UIItem.h:59: warning: The following parameters of qtpd::UIItem::setEditModeRef(t_editMode *canvasEditModeRef) are not documented:
@@ -837,6 +836,6 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-symbol cache used 2670/65536 hits=186020 misses=2670
-lookup cache used 4635/65536 hits=24859 misses=4891
+symbol cache used 2681/65536 hits=187223 misses=2681
+lookup cache used 4649/65536 hits=24964 misses=4903
 finished...

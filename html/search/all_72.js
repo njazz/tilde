@@ -34,7 +34,6 @@ var searchData=
   ['resample_5finit',['resample_init',['../m__pd_8h.html#a4101cd6f092fd13ffe8b8b0560041888',1,'m_pd.h']]],
   ['resamplefrom_5fdsp',['resamplefrom_dsp',['../m__pd_8h.html#ab36d2605603c74a989e773fa5e7adb93',1,'m_pd.h']]],
   ['resampleto_5fdsp',['resampleto_dsp',['../m__pd_8h.html#a0e662ea7ae50ae77b3333dfd2a7189ab',1,'m_pd.h']]],
-  ['resizebox',['resizeBox',['../classqtpd_1_1_u_i_object.html#ac5164efbefa045172ec27eaf957a8fb0',1,'qtpd::UIObject']]],
   ['resizeboxevent',['resizeBoxEvent',['../classqtpd_1_1_size_box.html#a75140b9a1a4c99eb147050a22f0a134e',1,'qtpd::SizeBox']]],
   ['resizebytes',['resizebytes',['../m__pd_8h.html#a9e8e9c7b64b4a5400672b3a876d172ce',1,'m_pd.h']]],
   ['resizeclip',['resizeClip',['../classceammc_1_1_atom_list.html#a71c714e98fc5bf14b289b4b5ba961f66',1,'ceammc::AtomList']]],

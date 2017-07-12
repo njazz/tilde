@@ -108,13 +108,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00028"></a>00028     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_size_box.html#a77503363cb5af54dcbda924e3d6efe68">mouseReleaseEvent</a>(QGraphicsSceneMouseEvent* event);
 <a name="l00029"></a>00029     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_size_box.html#aab12e83c20548a01b6740eabb17be76f">mouseMoveEvent</a>(QGraphicsSceneMouseEvent* ev);
 <a name="l00030"></a>00030 
-<a name="l00031"></a>00031 signals:
-<a name="l00032"></a>00032 
-<a name="l00033"></a>00033     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_size_box.html#a75140b9a1a4c99eb147050a22f0a134e">resizeBoxEvent</a>(<span class="keywordtype">int</span> dx, <span class="keywordtype">int</span> dy);
-<a name="l00034"></a>00034 };
-<a name="l00035"></a>00035 }
-<a name="l00036"></a>00036 
-<a name="l00037"></a>00037 <span class="preprocessor">#endif // CM_SIZEBOX_H</span>
+<a name="l00031"></a>00031     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_size_box.html#ac13f7682540c80f21b998a534e930748">hoverEnterEvent</a>(QGraphicsSceneHoverEvent* ev);
+<a name="l00032"></a>00032     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_size_box.html#a877859aa1747419263aa026a95ff368d">hoverLeaveEvent</a>(QGraphicsSceneHoverEvent* ev);
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034 signals:
+<a name="l00035"></a>00035 
+<a name="l00036"></a>00036     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_size_box.html#a75140b9a1a4c99eb147050a22f0a134e">resizeBoxEvent</a>(<span class="keywordtype">int</span> dx, <span class="keywordtype">int</span> dy);
+<a name="l00037"></a>00037 };
+<a name="l00038"></a>00038 }
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040 <span class="preprocessor">#endif // CM_SIZEBOX_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -133,7 +136,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 11 2017 22:59:30 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 12 2017 10:28:58 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
