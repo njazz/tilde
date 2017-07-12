@@ -136,7 +136,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00058"></a>00058     {
 <a name="l00059"></a>00059         QBrush brush(<a class="code" href="classqtpd_1_1_u_i_item.html#a15c57968966de733a09cf02973b63696">bgColor</a>());
 <a name="l00060"></a>00060         p-&gt;setBrush(brush);
-<a name="l00061"></a>00061         p-&gt;drawRect(<a class="code" href="classqtpd_1_1_u_i_item.html#a0a8d5299d5a0a2ebcef2135913bc97da">boundingRect</a>());
+<a name="l00061"></a>00061         p-&gt;drawRect(<a class="code" href="classqtpd_1_1_u_i_item.html#a0a8d5299d5a0a2ebcef2135913bc97da" title="&gt; get edit mode flag value">boundingRect</a>());
 <a name="l00062"></a>00062         p-&gt;setBrush(QBrush());
 <a name="l00063"></a>00063 
 <a name="l00064"></a>00064         <span class="comment">//QPainter p(viewport());</span>
@@ -200,7 +200,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00126"></a>00126         <span class="comment">//            }</span>
 <a name="l00127"></a>00127         <span class="comment">//        }</span>
 <a name="l00128"></a>00128 
-<a name="l00129"></a>00129         <span class="keywordflow">if</span> ((<a class="code" href="classqtpd_1_1_u_i_item.html#a2e13bcc5d691a5505200843d80b71e6d" title="get edit mode flag value">getEditMode</a>() == <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aaa528336eacc29596e8365b88a4f62d82">em_Unlocked</a>) &amp;&amp; <a class="code" href="classqtpd_1_1_u_i_item.html#ab3ac9bcca4d6c092b1d10fe506ba48c6" title="&gt; deselect object">isSelected</a>()) {
+<a name="l00129"></a>00129         <span class="keywordflow">if</span> ((<a class="code" href="classqtpd_1_1_u_i_item.html#a2e13bcc5d691a5505200843d80b71e6d" title="&gt; get edit mode pointer - for inlets/outlets">getEditMode</a>() == <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aaa528336eacc29596e8365b88a4f62d82">em_Unlocked</a>) &amp;&amp; <a class="code" href="classqtpd_1_1_u_i_item.html#ab3ac9bcca4d6c092b1d10fe506ba48c6" title="&gt; deselect object">isSelected</a>()) {
 <a name="l00130"></a>00130             <span class="comment">//            editor_-&gt;setText(QString(_objectDataModel.objectData()));</span>
 <a name="l00131"></a>00131             <span class="comment">//            editor_-&gt;show();</span>
 <a name="l00132"></a>00132 
@@ -224,7 +224,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00157"></a>00157         }
 <a name="l00158"></a>00158         <span class="keyword">event</span>-&gt;ignore();
 <a name="l00159"></a>00159 
-<a name="l00160"></a>00160         <span class="keywordflow">if</span> ((<a class="code" href="classqtpd_1_1_u_i_item.html#a2e13bcc5d691a5505200843d80b71e6d" title="get edit mode flag value">getEditMode</a>() != <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aaa528336eacc29596e8365b88a4f62d82">em_Unlocked</a>)  ) {
+<a name="l00160"></a>00160         <span class="keywordflow">if</span> ((<a class="code" href="classqtpd_1_1_u_i_item.html#a2e13bcc5d691a5505200843d80b71e6d" title="&gt; get edit mode pointer - for inlets/outlets">getEditMode</a>() != <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aaa528336eacc29596e8365b88a4f62d82">em_Unlocked</a>)  ) {
 <a name="l00161"></a>00161             setCursor(QCursor(Qt::PointingHandCursor));
 <a name="l00162"></a>00162         } <span class="keywordflow">else</span> {
 <a name="l00163"></a>00163             setCursor(QCursor(Qt::ArrowCursor));
@@ -299,7 +299,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 12 2017 12:30:14 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 12 2017 13:18:52 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

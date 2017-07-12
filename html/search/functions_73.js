@@ -111,7 +111,7 @@ var searchData=
   ['setreplaceobject',['setReplaceObject',['../classqtpd_1_1_canvas_view.html#a49a4974a4f153940f85114fbe59f9682',1,'qtpd::CanvasView']]],
   ['setrowheight',['setRowHeight',['../class_abstract___widget___list.html#a5d765a623aa154a17610fb3592eb01e6',1,'Abstract_Widget_List']]],
   ['setsaturation',['setSaturation',['../class_color___wheel.html#a6f1fcff6312f29decfb08916062d8e0d',1,'Color_Wheel']]],
-  ['setserverarray',['setServerArray',['../class_u_i_array_editor.html#a0bb9840f717312f0ef8f69ea961f8e33',1,'UIArrayEditor']]],
+  ['setserverarray',['setServerArray',['../classqtpd_1_1_u_i_array_editor.html#a48b2fe4c92004ba6c3f6b613efdef119',1,'qtpd::UIArrayEditor']]],
   ['setserverobject',['setServerObject',['../classqtpd_1_1_u_i_object.html#af2bf5ef83bb8f28a75d6aa9c66329e48',1,'qtpd::UIObject']]],
   ['setsize',['setSize',['../classqtpd_1_1_u_i_item.html#ad04bc59adbae89c02f35f69685e15662',1,'qtpd::UIItem::setSize(QSize size)'],['../classqtpd_1_1_u_i_item.html#aa09e9ef88f0a04d6e6a384d3f848fdf3',1,'qtpd::UIItem::setSize(float w, float h)']]],
   ['setstart',['setStart',['../classqtpd_1_1_selection_rect.html#ae7648e709d14ff1e779bf083752864c9',1,'qtpd::SelectionRect::setStart()'],['../classqtpd_1_1_u_i_new_patchcord.html#af917b6f75359a489dc7d7acad2457b2b',1,'qtpd::UINewPatchcord::setStart()']]],

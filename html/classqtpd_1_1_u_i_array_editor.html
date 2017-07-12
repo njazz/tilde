@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>qtpd: UIArrayEditor Class Reference</title>
+<title>qtpd: qtpd::UIArrayEditor Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -78,37 +78,57 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><a class="el" href="namespaceqtpd.html">qtpd</a>      </li>
+      <li class="navelem"><a class="el" href="classqtpd_1_1_u_i_array_editor.html">UIArrayEditor</a>      </li>
+    </ul>
+  </div>
 </div>
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
-<div class="title">UIArrayEditor Class Reference</div>  </div>
+<div class="title">qtpd::UIArrayEditor Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="UIArrayEditor" -->
+<!-- doxytag: class="qtpd::UIArrayEditor" -->
 <p>Array Editor QWidget.  
- <a href="class_u_i_array_editor.html#details">More...</a></p>
+ <a href="classqtpd_1_1_u_i_array_editor.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_u_i_array_editor_8h_source.html">UIArrayEditor.h</a>&gt;</code></p>
 
-<p><a href="class_u_i_array_editor-members.html">List of all members.</a></p>
+<p><a href="classqtpd_1_1_u_i_array_editor-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_i_array_editor.html#a0a654fc4a39eeb65d8392a5c81f4cf96">paintEvent</a> (QPaintEvent *)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_i_array_editor.html#a0bb9840f717312f0ef8f69ea961f8e33">setServerArray</a> (ServerArray *arr)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_i_array_editor.html#a188840374e11a35ff6ffb48341d29e5a">UIArrayEditor</a> (QWidget *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_array_editor.html#a58359419a0b0cdca1a364b0a2ed48e77">UIArrayEditor</a> (QWidget *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_array_editor.html#a0137d2cedb07413e48ca04a47416136f">paintEvent</a> (QPaintEvent *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_u_i_array_editor.html#a48b2fe4c92004ba6c3f6b613efdef119">setServerArray</a> (ServerArray *arr)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Array Editor QWidget. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a188840374e11a35ff6ffb48341d29e5a"></a><!-- doxytag: member="UIArrayEditor::UIArrayEditor" ref="a188840374e11a35ff6ffb48341d29e5a" args="(QWidget *parent=0)" -->
+<a class="anchor" id="a58359419a0b0cdca1a364b0a2ed48e77"></a><!-- doxytag: member="qtpd::UIArrayEditor::UIArrayEditor" ref="a58359419a0b0cdca1a364b0a2ed48e77" args="(QWidget *parent=0)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_u_i_array_editor.html#a188840374e11a35ff6ffb48341d29e5a">UIArrayEditor::UIArrayEditor</a> </td>
+          <td class="memname"><a class="el" href="classqtpd_1_1_u_i_array_editor.html#a58359419a0b0cdca1a364b0a2ed48e77">qtpd::UIArrayEditor::UIArrayEditor</a> </td>
           <td>(</td>
           <td class="paramtype">QWidget *&#160;</td>
           <td class="paramname"><em>parent</em> = <code>0</code></td><td>)</td>
@@ -121,16 +141,16 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a0a654fc4a39eeb65d8392a5c81f4cf96"></a><!-- doxytag: member="UIArrayEditor::paintEvent" ref="a0a654fc4a39eeb65d8392a5c81f4cf96" args="(QPaintEvent *)" -->
+<a class="anchor" id="a0137d2cedb07413e48ca04a47416136f"></a><!-- doxytag: member="qtpd::UIArrayEditor::paintEvent" ref="a0137d2cedb07413e48ca04a47416136f" args="(QPaintEvent *)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_u_i_array_editor.html#a0a654fc4a39eeb65d8392a5c81f4cf96">UIArrayEditor::paintEvent</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_array_editor.html#a0137d2cedb07413e48ca04a47416136f">qtpd::UIArrayEditor::paintEvent</a> </td>
           <td>(</td>
           <td class="paramtype">QPaintEvent *&#160;</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -138,16 +158,16 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a0bb9840f717312f0ef8f69ea961f8e33"></a><!-- doxytag: member="UIArrayEditor::setServerArray" ref="a0bb9840f717312f0ef8f69ea961f8e33" args="(ServerArray *arr)" -->
+<a class="anchor" id="a48b2fe4c92004ba6c3f6b613efdef119"></a><!-- doxytag: member="qtpd::UIArrayEditor::setServerArray" ref="a48b2fe4c92004ba6c3f6b613efdef119" args="(ServerArray *arr)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_u_i_array_editor.html#a0bb9840f717312f0ef8f69ea961f8e33">UIArrayEditor::setServerArray</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_u_i_array_editor.html#a48b2fe4c92004ba6c3f6b613efdef119">qtpd::UIArrayEditor::setServerArray</a> </td>
           <td>(</td>
           <td class="paramtype">ServerArray *&#160;</td>
           <td class="paramname"><em>arr</em></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -177,7 +197,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 12 2017 12:30:14 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 12 2017 13:18:53 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

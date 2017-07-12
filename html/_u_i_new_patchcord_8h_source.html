@@ -92,35 +92,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00008"></a>00008 
 <a name="l00009"></a>00009 <span class="keyword">namespace </span>qtpd {
 <a name="l00010"></a>00010 
-<a name="l00014"></a><a class="code" href="classqtpd_1_1_u_i_new_patchcord.html">00014</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_u_i_new_patchcord.html" title="New patchcord - dashed line.">UINewPatchcord</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a> {
-<a name="l00015"></a>00015     <span class="keywordtype">bool</span> _active;
-<a name="l00016"></a>00016     QPoint _start;
-<a name="l00017"></a>00017     QPoint _end;
-<a name="l00018"></a>00018 
-<a name="l00019"></a>00019     <span class="comment">//todo</span>
-<a name="l00020"></a>00020     <span class="keywordtype">int</span> _patchcordType;
-<a name="l00021"></a>00021 
-<a name="l00022"></a>00022     <span class="keywordtype">bool</span> _error;
-<a name="l00023"></a>00023 
-<a name="l00024"></a>00024 <span class="keyword">public</span>:
-<a name="l00025"></a>00025     <a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#a3f96f15cfd8b4e42cf4a6df4cc6dc631">UINewPatchcord</a>();
-<a name="l00026"></a>00026 
-<a name="l00027"></a><a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#adf5e7bd9f3dbd4a8e0f966b8457ad287">00027</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#adf5e7bd9f3dbd4a8e0f966b8457ad287">setActive</a>(<span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#a9820501271c9d01a0a069a1c3672a90d">active</a>) { _active = <a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#a9820501271c9d01a0a069a1c3672a90d">active</a>; }
-<a name="l00028"></a><a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#a9820501271c9d01a0a069a1c3672a90d">00028</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#a9820501271c9d01a0a069a1c3672a90d">active</a>() { <span class="keywordflow">return</span> _active; }
-<a name="l00029"></a>00029 
-<a name="l00030"></a><a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#affb8b9cbb335cb1740eef50d18df0bf8">00030</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#affb8b9cbb335cb1740eef50d18df0bf8">setError</a>(<span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#a38c7bbd1654056baa65d0f0efa66ef69">error</a>) { _error = <a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#a38c7bbd1654056baa65d0f0efa66ef69">error</a>; }
-<a name="l00031"></a><a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#a38c7bbd1654056baa65d0f0efa66ef69">00031</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#a38c7bbd1654056baa65d0f0efa66ef69">error</a>() { <span class="keywordflow">return</span> _error; }
-<a name="l00032"></a>00032 
-<a name="l00033"></a><a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#a73b26c5a3a4c0e5ba7c141a5eb441166">00033</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#a73b26c5a3a4c0e5ba7c141a5eb441166">setPatchcordType</a>(<span class="keywordtype">int</span> type) { _patchcordType = type; }
-<a name="l00034"></a><a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#a05586fa8a0016e62906e37fe17763b4e">00034</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#a05586fa8a0016e62906e37fe17763b4e">patchcordType</a>() { <span class="keywordflow">return</span> _patchcordType; }
-<a name="l00035"></a>00035 
-<a name="l00036"></a><a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#af917b6f75359a489dc7d7acad2457b2b">00036</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#af917b6f75359a489dc7d7acad2457b2b">setStart</a>(QPoint start) { _start = start; }
-<a name="l00037"></a><a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#aca8cac0ff8f096b9f2d39820d245437f">00037</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#aca8cac0ff8f096b9f2d39820d245437f">setEnd</a>(QPoint end) { _end = end; }
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#a77aac4b30f09d1d6b3a055d1324cde47">paint</a>(QPainter* painter, <span class="keyword">const</span> QStyleOptionGraphicsItem*, QWidget*);
-<a name="l00040"></a>00040 };
-<a name="l00041"></a>00041 }
-<a name="l00042"></a>00042 <span class="preprocessor">#endif // NewLine_H</span>
+<a name="l00013"></a><a class="code" href="classqtpd_1_1_u_i_new_patchcord.html">00013</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_u_i_new_patchcord.html" title="New patchcord - dashed line.">UINewPatchcord</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a> {
+<a name="l00014"></a>00014     <span class="keywordtype">bool</span> _active;
+<a name="l00015"></a>00015     QPoint _start;
+<a name="l00016"></a>00016     QPoint _end;
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018     <span class="comment">//todo</span>
+<a name="l00019"></a>00019     <span class="keywordtype">int</span> _patchcordType;
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021     <span class="keywordtype">bool</span> _error;
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023 <span class="keyword">public</span>:
+<a name="l00024"></a>00024     <a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#a3f96f15cfd8b4e42cf4a6df4cc6dc631">UINewPatchcord</a>();
+<a name="l00025"></a>00025 
+<a name="l00026"></a><a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#adf5e7bd9f3dbd4a8e0f966b8457ad287">00026</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#adf5e7bd9f3dbd4a8e0f966b8457ad287">setActive</a>(<span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#a9820501271c9d01a0a069a1c3672a90d">active</a>) { _active = <a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#a9820501271c9d01a0a069a1c3672a90d">active</a>; }
+<a name="l00027"></a><a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#a9820501271c9d01a0a069a1c3672a90d">00027</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#a9820501271c9d01a0a069a1c3672a90d">active</a>() { <span class="keywordflow">return</span> _active; }
+<a name="l00028"></a>00028 
+<a name="l00029"></a><a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#affb8b9cbb335cb1740eef50d18df0bf8">00029</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#affb8b9cbb335cb1740eef50d18df0bf8">setError</a>(<span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#a38c7bbd1654056baa65d0f0efa66ef69">error</a>) { _error = <a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#a38c7bbd1654056baa65d0f0efa66ef69">error</a>; }
+<a name="l00030"></a><a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#a38c7bbd1654056baa65d0f0efa66ef69">00030</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#a38c7bbd1654056baa65d0f0efa66ef69">error</a>() { <span class="keywordflow">return</span> _error; }
+<a name="l00031"></a>00031 
+<a name="l00032"></a><a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#a73b26c5a3a4c0e5ba7c141a5eb441166">00032</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#a73b26c5a3a4c0e5ba7c141a5eb441166">setPatchcordType</a>(<span class="keywordtype">int</span> type) { _patchcordType = type; }
+<a name="l00033"></a><a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#a05586fa8a0016e62906e37fe17763b4e">00033</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#a05586fa8a0016e62906e37fe17763b4e">patchcordType</a>() { <span class="keywordflow">return</span> _patchcordType; }
+<a name="l00034"></a>00034 
+<a name="l00035"></a><a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#af917b6f75359a489dc7d7acad2457b2b">00035</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#af917b6f75359a489dc7d7acad2457b2b">setStart</a>(QPoint start) { _start = start; }
+<a name="l00036"></a><a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#aca8cac0ff8f096b9f2d39820d245437f">00036</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#aca8cac0ff8f096b9f2d39820d245437f">setEnd</a>(QPoint end) { _end = end; }
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_new_patchcord.html#a77aac4b30f09d1d6b3a055d1324cde47">paint</a>(QPainter* painter, <span class="keyword">const</span> QStyleOptionGraphicsItem*, QWidget*);
+<a name="l00039"></a>00039 };
+<a name="l00040"></a>00040 }
+<a name="l00041"></a>00041 <span class="preprocessor">#endif // NewLine_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -139,7 +139,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 12 2017 12:30:13 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 12 2017 13:18:52 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
