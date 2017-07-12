@@ -210,12 +210,21 @@ QPoint Property::asQPoint()
 
 QSizeF Property::asQSizeF()
 {
-    return _data.toSizeF();
+    if(_data.toString().split(" ").size() < 2) return QSizeF(20, 20);
+
+    QStringList sL = _data.toString().split(" ");
+
+    return QSizeF(QString(sL.at(0)).toFloat(), QString(sL.at(1)).toFloat());
 }
 
 QPointF Property::asQPointF()
 {
-    return _data.toPointF();
+    if (_data.toString().split(" ").size() < 2)
+        return QPointF(0, 0);
+
+    QStringList sL = _data.toString().split(" ");
+
+    return QPointF(QString(sL.at(0)).toFloat(), QString(sL.at(1)).toFloat());
 }
 
 float Property::asFloat()

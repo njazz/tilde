@@ -27,9 +27,6 @@ private:
 public:
     explicit Port(UIItem* parent = 0);
 
-    ////
-    /// \group prop Properties
-    /// @{
     UIPortType portType() { return _portType; }
     void setPortType(UIPortType pt) { _portType = pt; }
 
@@ -43,6 +40,7 @@ public:
 
     virtual void hoverEnterEvent(QGraphicsSceneHoverEvent* ev);
     virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent* ev);
+
     void mousePressEvent(QGraphicsSceneMouseEvent* ev);
     void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev);
 

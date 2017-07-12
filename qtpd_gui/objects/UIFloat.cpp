@@ -124,8 +124,8 @@ void UIFloat::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 
         QString send = "set " + objectData()->toQString();
 
-        emit sendMessage(this->serverObject(), send);
-        emit sendMessage(this->serverObject(), QString("bang "));
+        emit signalSendMessage(this->serverObject(), send);
+        emit signalSendMessage(this->serverObject(), QString("bang "));
 
         update();
     }
@@ -171,7 +171,7 @@ void UIFloat::updateUI(AtomList* msg)
 {
     if (msg->size() > 0) {
         fromQString(msg->at(0).asString().c_str());
-        emit callRepaint();
+        emit signalCallRepaint();
     }
 }
 

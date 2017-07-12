@@ -150,7 +150,7 @@ void UIMessage::objectPressEvent(QGraphicsSceneMouseEvent* ev)
             qDebug("msg: bad pd object!");
         } else {
 
-            emit sendMessage(this->serverObject(), QString("bang"));
+            emit signalSendMessage(this->serverObject(), QString("bang"));
         }
     }
 }
@@ -219,7 +219,7 @@ void UIMessage::setPdMessage(QString message)
             QString msg = ("set " + objectData()->toQString());
             //serverObject()->message(msg);
 
-            emit sendMessage(this->serverObject(), msg);
+            emit signalSendMessage(this->serverObject(), msg);
             qDebug() << "sync";
         }
     }
@@ -246,7 +246,7 @@ void UIMessage::updateUI(AtomList* list)
     autoResize();
 
     //
-    emit callRepaint();
+    emit signalCallRepaint();
 }
 
 void UIMessage::autoResize()

@@ -28,6 +28,9 @@ public:
     void mouseReleaseEvent(QGraphicsSceneMouseEvent* event);
     void mouseMoveEvent(QGraphicsSceneMouseEvent* ev);
 
+    virtual void hoverEnterEvent(QGraphicsSceneHoverEvent* ev);
+    virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent* ev);
+
 signals:
 
     void resizeBoxEvent(int dx, int dy);

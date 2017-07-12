@@ -322,8 +322,8 @@ void UIMatrix::mousePressEvent(QGraphicsSceneMouseEvent* ev)
             //                cmp_sendstring((t_pd*)pdObject(), val_str);
             //                cmp_sendstring((t_pd*)pdObject(), "bang");
 
-            emit sendMessage(this->serverObject(), QString(val_str.c_str()));
-            emit sendMessage(this->serverObject(), QString("bang "));
+            emit signalSendMessage(this->serverObject(), QString(val_str.c_str()));
+            emit signalSendMessage(this->serverObject(), QString("bang "));
         }
 
         if (matrixType() == mt_VRadio) {
@@ -339,8 +339,8 @@ void UIMatrix::mousePressEvent(QGraphicsSceneMouseEvent* ev)
             //                cmp_sendstring((t_pd*)pdObject(), val_str);
             //                cmp_sendstring((t_pd*)pdObject(), "bang");
 
-            emit sendMessage(this->serverObject(), QString(val_str.c_str()));
-            emit sendMessage(this->serverObject(), QString("bang "));
+            emit signalSendMessage(this->serverObject(), QString(val_str.c_str()));
+            emit signalSendMessage(this->serverObject(), QString("bang "));
         }
 
         // TODO-PD_OBJECT
@@ -352,7 +352,7 @@ void UIMatrix::mousePressEvent(QGraphicsSceneMouseEvent* ev)
 
         if (serverObject()) {
 
-            emit sendMessage(this->serverObject(), QString("bang "));
+            emit signalSendMessage(this->serverObject(), QString("bang "));
         }
     }
 }
@@ -394,7 +394,7 @@ void UIMatrix::updateUI(AtomList* msg)
             }
         }
 
-    emit callRepaint();
+    emit signalCallRepaint();
 }
 
 }

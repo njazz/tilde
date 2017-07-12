@@ -13,6 +13,8 @@
 
 #include "UIBox.h"
 
+#include "SizeBox.h"
+
 namespace qtpd {
 
 static const QSize EmptyCanvasSize = QSize(300, 200);
@@ -80,6 +82,11 @@ CanvasView::CanvasView(QGraphicsView* parent)
     _pmProperties = 0;
 
     createContextMenu();
+
+//    _sizeBox = new SizeBox();
+//    _sizeBox->hide();
+//    scene()->addItem(_sizeBox);
+
 }
 
 // ---------------------------------------------
@@ -584,10 +591,10 @@ void CanvasView::createContextMenu()
     connect(_pmProperties, &QAction::triggered, this, &CanvasView::slotPopupMenu);
 }
 
-SizeBox* CanvasView::sizeBox()
-{
-    return _sizeBox;
-}
+//SizeBox* CanvasView::sizeBox()
+//{
+////    return _sizeBox;
+//}
 
 void CanvasView::slotPopupMenu()
 {

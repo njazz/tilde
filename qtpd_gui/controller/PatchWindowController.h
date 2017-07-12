@@ -149,6 +149,9 @@ public:
     void selectBox(UIItem* box);
     void moveSelectedBoxes(QPoint eventPos);
 
+    void sizeBoxShow(UIObject* object);
+    void sizeBoxHide();
+
 public slots:
     void menuSave();
     void menuSaveAs();
@@ -179,6 +182,9 @@ public slots:
 
     void slotRecentMenuAction();
 
+    void slotObjectHoverEnter();
+    void slotObjectHoverLeave();
+
 private slots:
 
     void slotSelectObject(UIObject* object);
@@ -192,6 +198,8 @@ private slots:
 
     void slotSelectionFrame(QPoint start, QPoint end);
     void slotMoveSelectedBoxes(QPoint eventPos);
+
+    void slotResizeBoxes(int dx, int dy);
 
 signals:
 

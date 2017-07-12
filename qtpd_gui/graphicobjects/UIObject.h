@@ -21,21 +21,15 @@ namespace qtpd {
 
 class CanvasView;
 class CanvasData;
-
 class ObjectObserver;
-
 class PropertyList;
-
 class Port;
-
 class SizeBox;
 
 typedef std::vector<Port*> portItemVec;
 
 class UIObject;
-
 class PatchWindowController;
-
 class UIObjectData;
 
 class UIObject : public UIItem { ///>base class for all object boxes - standard (UIBox) and special
@@ -168,7 +162,7 @@ private slots:
     void openHelpWindow();
 
     void propertySize(); ///> called when size property is changed
-//    void propertyFontSize();
+    //    void propertyFontSize();
 
     void propertyPosition();
 
@@ -177,20 +171,23 @@ private slots:
     void propertyReceiveSymbol(); ///> binds object to symbol
 
 signals:
-    void editObject(void* box);
+    void signalEditObject(void* box);
 
     //// \brief this is needed for proper threading
     /// \details pd calls UIUpdate(...) -> it emits 's_repaint()' that is connected to 'callRepaint()'
-    void callRepaint();
+    void signalCallRepaint();
 
-    void sendMessage(ServerObject* obj, QString msg);
+    void signalSendMessage(ServerObject* obj, QString msg);
 
     void signalOpenPropertiesWindow();
     void signalOpenHelpWindow();
 
+    void signalObjectHoverEnter();
+    void signalObjectHoverLeave();
+
 public slots:
-    void resizeBox(int dx, int dy);
-    void s_repaint(); ///>needed for proper threading
+    void slotResizeDeselectedBox(int dx, int dy);     ///>deprecated
+    void slotRepaint(); ///>needed for proper threading
 
     ////
     /// \brief this slot is called by property editor or anything that changes property

@@ -105,7 +105,7 @@ void UIToggle::objectPressEvent(QGraphicsSceneMouseEvent* ev)
             //cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
             //serverObject()->message("bang");
 
-            emit sendMessage(this->serverObject(), QString("bang"));
+            emit signalSendMessage(this->serverObject(), QString("bang"));
 
             //qDebug("server msg");
         }
@@ -146,7 +146,7 @@ void UIToggle::updateUI(void* uiobj, ceammc::AtomList msg)
             x->_value = msg.at(0).asFloat() > 0;
     }
 
-    emit x->callRepaint();
+    emit x->signalCallRepaint();
 }
 
 void UIToggle::updateUI(AtomList* list)
@@ -156,6 +156,6 @@ void UIToggle::updateUI(AtomList* list)
             _value = list->at(0).asFloat() > 0;
     }
 
-    emit callRepaint();
+    emit signalCallRepaint();
 }
 }

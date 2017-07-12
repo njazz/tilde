@@ -133,11 +133,11 @@ void UIBang::timerStart()
 void UIBang::timerAction()
 {
     _clicked = false;
-    emit callRepaint();
+    emit signalCallRepaint();
 }
 
 void UIBang::slotBang()
 {
-    emit sendMessage(this->serverObject(), QString("bang"));
+    emit signalSendMessage(this->serverObject(), QString("bang"));
 }
 }

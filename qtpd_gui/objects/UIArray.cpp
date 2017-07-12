@@ -128,7 +128,7 @@ void UIArray::mousePressEvent(QGraphicsSceneMouseEvent* ev)
 
     if ((getEditMode() == em_Unlocked) && isSelected()) {
 
-        emit editObject(this);
+        emit signalEditObject(this);
         return;
     }
 

@@ -129,7 +129,7 @@ public:
             //            editor_->setText(QString(_objectDataModel.objectData()));
             //            editor_->show();
 
-            emit editObject(this);
+            emit signalEditObject(this);
             return;
         }
 

@@ -154,8 +154,8 @@ void UISlider::mousePressEvent(QGraphicsSceneMouseEvent* ev)
             // serverObject()->message(((std::string) "set " + val_str));
             // serverObject()->message(((std::string) "bang " + val_str));
 
-            emit sendMessage(this->serverObject(), QString("set " + val_str));
-            emit sendMessage(this->serverObject(), QString("bang "));
+            emit signalSendMessage(this->serverObject(), QString("set " + val_str));
+            emit signalSendMessage(this->serverObject(), QString("bang "));
         }
     }
 }
@@ -191,8 +191,8 @@ void UISlider::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 
         QString val_str = std::to_string(val).c_str();
 
-        emit sendMessage(this->serverObject(), QString("set " + val_str));
-        emit sendMessage(this->serverObject(), QString("bang "));
+        emit signalSendMessage(this->serverObject(), QString("set " + val_str));
+        emit signalSendMessage(this->serverObject(), QString("bang "));
     }
 
     //        }
@@ -217,7 +217,7 @@ void UISlider::updateUI(AtomList* msg)
         //                x->_value = 1;
     }
 
-    emit callRepaint();
+    emit signalCallRepaint();
 }
 
 void UISlider::resizeEvent()

@@ -64,8 +64,7 @@ private:
 
     PatchWindowController* _controller;
 
-    //this should be moved here
-    SizeBox* _sizeBox;
+    //SizeBox* _sizeBox;
 
     Q_OBJECT
 
@@ -166,7 +165,7 @@ public:
     void resizeEvent(QResizeEvent*);
     void createContextMenu();
 
-    SizeBox* sizeBox();
+    //SizeBox* sizeBox();
 
 private slots:
 

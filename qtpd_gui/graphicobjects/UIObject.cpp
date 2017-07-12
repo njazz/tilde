@@ -45,10 +45,11 @@ UIObject::UIObject(UIItem* parent)
     _sizeBox = new SizeBox(this);
     _sizeBox->hide();
 
-    connect(_sizeBox, &SizeBox::resizeBoxEvent, this, &UIObject::resizeBox);
+    // this works for unselected object when mouse is over it
+    connect(_sizeBox, &SizeBox::resizeBoxEvent, this, &UIObject::slotResizeDeselectedBox);
 
     // repaint, handling for threads
-    connect(this, &UIObject::callRepaint, this, &UIObject::s_repaint);
+    connect(this, &UIObject::signalCallRepaint, this, &UIObject::slotRepaint);
 
     initProperties();
 
@@ -99,8 +100,10 @@ ObjectObserver* UIObject::observer() { return _observer; }
 
 //---------------------------------------
 
-void UIObject::resizeBox(int dx, int dy)
+void UIObject::slotResizeDeselectedBox(int dx, int dy)
 {
+    if (isSelected()) return;
+
     QRect r = boundingRect().toRect();
 
     if (objectData()->objectSizeMode() != os_Fixed)
@@ -112,7 +115,7 @@ void UIObject::resizeBox(int dx, int dy)
         setHeight(boundingRect().width());
     }
 
-    PROPERTY_SET("Size", boundingRect().size());
+    PROPERTY_SET("Size", boundingRect().size().toSize());
 
     //resizeEvent();
 
@@ -568,12 +571,16 @@ void UIObject::hoverEnterEvent(QGraphicsSceneHoverEvent*)
 {
     if (getEditMode() == em_Unlocked)
         _sizeBox->show();
+
+    //emit signalObjectHoverEnter();
 }
 
 void UIObject::hoverLeaveEvent(QGraphicsSceneHoverEvent*)
 {
     if (getEditMode() == em_Unlocked)
         _sizeBox->hide();
+
+    //emit signalObjectHoverLeave();
 };
 
 //---------------------------------
@@ -653,7 +660,7 @@ void UIObject::openHelpWindow()
     emit signalOpenHelpWindow();
 }
 
-void UIObject::s_repaint() //needed for proper threading
+void UIObject::slotRepaint() //needed for proper threading
 {
     update();
 }

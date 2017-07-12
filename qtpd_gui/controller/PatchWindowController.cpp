@@ -30,6 +30,8 @@
 
 #include "undocommands.h"
 
+#include "SizeBox.h"
+
 namespace qtpd {
 
 PatchWindowController::PatchWindowController(ApplicationController* appController) //replace with parent (appcontroller)
@@ -227,7 +229,15 @@ void PatchWindowController::doCreateObject(UIObject* uiObject)
 
     uiObject->sync();
 
-    connect(uiObject, &UIObject::sendMessage, _appController->serverWorker(), &ServerWorker::sendMessageToObject);
+    connect(uiObject, &UIObject::signalSendMessage, _appController->serverWorker(), &ServerWorker::sendMessageToObject);
+
+    connect(uiObject, &UIObject::selectBox, _windows[0]->canvasView(), &CanvasView::slotSelectBox);
+    connect(uiObject, &UIObject::moveBox, _windows[0]->canvasView(), &CanvasView::slotMoveBox);
+
+    connect(uiObject, &UIObject::signalObjectHoverEnter, this, &PatchWindowController::slotObjectHoverEnter);
+    connect(uiObject, &UIObject::signalObjectHoverLeave, this, &PatchWindowController::slotObjectHoverLeave);
+
+    connect(uiObject->sizeBox(), &SizeBox::resizeBoxEvent, this, &PatchWindowController::slotResizeBoxes);
 }
 
 UIObject* PatchWindowController::createObject(string name, QPoint pos)
@@ -277,9 +287,6 @@ UIObject* PatchWindowController::createObjectWithoutUndo(string name, QPoint pos
     uiObject->move(pos.x(), pos.y());
 
     doCreateObject(uiObject);
-
-    connect(uiObject, &UIObject::selectBox, _windows[0]->canvasView(), &CanvasView::slotSelectBox);
-    connect(uiObject, &UIObject::moveBox, _windows[0]->canvasView(), &CanvasView::slotMoveBox);
 
     _canvasData->addUniqueBox(_canvasData->boxes(), uiObject);
     _scene->addItem(uiObject);
@@ -433,9 +440,9 @@ void PatchWindowController::deleteObject(UIObject* o)
 
 void PatchWindowController::deleteObjectWithoutUndo(UIObject* o)
 {
-//    _canvasData->deselectBoxes();
-//    _canvasData->selectBox(o);
-//    deleteSelectedObjects();
+    //    _canvasData->deselectBoxes();
+    //    _canvasData->selectBox(o);
+    //    deleteSelectedObjects();
 
     deletePatchcordsFor(o);
 
@@ -443,7 +450,6 @@ void PatchWindowController::deleteObjectWithoutUndo(UIObject* o)
     updateViewports();
 
     _canvasData->boxes()->erase(std::remove(_canvasData->boxes()->begin(), _canvasData->boxes()->end(), o), _canvasData->boxes()->end());
-
 };
 //
 //bool PatchWindowController::syncData(ServerObject* serverObject, UIObject* uiObject){};
@@ -745,7 +751,6 @@ void PatchWindowController::deletePatchcordsFor(UIItem* obj)
             //            _undoStack->push(undo);
             //            emit signalEnableUndo(true);
 
-
             _scene->removeItem(p);
 
             //_canvasData->patchcords()->erase(std::remove(_canvasData->patchcords()->begin(), _canvasData->patchcords()->end(), *it), _canvasData->patchcords()->end());
@@ -778,6 +783,39 @@ void PatchWindowController::selectBox(UIItem* box)
     _canvasData->selectBox((UIObject*)box);
 
     firstWindow()->canvasView()->viewport()->update();
+}
+
+void PatchWindowController::sizeBoxShow(UIObject* object)
+{
+    //z-position fix
+    //    if (!firstWindow()->canvasView()->sizeBox()->scene())
+    //        firstWindow()->canvasView()->scene()->addItem(firstWindow()->canvasView()->sizeBox());
+
+    //    firstWindow()->canvasView()->sizeBox()->move(
+    //        object->pos().toPoint().x() + object->boundingRect().width() - 7,
+    //        object->pos().toPoint().y() + object->boundingRect().height() - 7);
+
+    //    firstWindow()->canvasView()->sizeBox()->show();
+}
+
+void PatchWindowController::sizeBoxHide()
+{
+    //    if (firstWindow()->canvasView()->sizeBox()->scene())
+    //        firstWindow()->canvasView()->scene()->removeItem(firstWindow()->canvasView()->sizeBox());
+
+    //    firstWindow()->canvasView()->sizeBox()->hide();
+}
+
+void PatchWindowController::slotObjectHoverEnter()
+{
+
+    UIObject* b = (UIObject*)QObject::sender();
+    sizeBoxShow(b);
+}
+
+void PatchWindowController::slotObjectHoverLeave()
+{
+    //sizeBoxHide();
 }
 
 //void PatchWindowController::signalSelectBox(UIItem* box, QGraphicsSceneMouseEvent* event)
@@ -956,6 +994,43 @@ void PatchWindowController::slotMoveSelectedBoxes(QPoint eventPos)
 
     //todo
     firstWindow()->canvasView()->viewport()->update();
+}
+
+void PatchWindowController::slotResizeBoxes(int dx, int dy)
+{
+    // TODO
+
+    for (int i = 0; i < _canvasData->selectedBoxes()->size(); i++) {
+        UIObject* o = (UIObject*)_canvasData->selectedBoxes()->at(i);
+
+        QRect r = o->boundingRect().toRect();
+
+        if (o->objectData()->objectSizeMode() != os_Fixed)
+            o->setWidth(o->boundingRect().width() + dx);
+        if (o->objectData()->objectSizeMode() == os_Free)
+            o->setHeight(o->boundingRect().height() + dy);
+
+        if (o->objectData()->objectSizeMode() == os_Square) {
+            o->setHeight(o->boundingRect().width());
+        }
+
+        o->PROPERTY_SET("Size", o->boundingRect().size().toSize());
+    }
+
+    //    QRect r = boundingRect().toRect();
+
+    //    if (objectData()->objectSizeMode() != os_Fixed)
+    //        setWidth(boundingRect().width() + dx);
+    //    if (objectData()->objectSizeMode() == os_Free)
+    //        setHeight(boundingRect().height() + dy);
+
+    //    if (objectData()->objectSizeMode() == os_Square) {
+    //        setHeight(boundingRect().width());
+    //    }
+
+    //    PROPERTY_SET("Size", boundingRect().size().toSize());
+
+    //    scene()->update(r.left(), r.top(), r.width(), r.height());
 }
 
 void PatchWindowController::slotAlignLeft()

@@ -3,12 +3,12 @@
 
 #include "SizeBox.h"
 
+#include <QCursor>
 #include <QDebug>
 #include <QGraphicsSceneMouseEvent>
 #include <QMouseEvent>
 #include <QObject>
 #include <QPainter>
-#include <QCursor>
 
 namespace qtpd {
 
@@ -28,7 +28,7 @@ void SizeBox::paint(QPainter* p, const QStyleOptionGraphicsItem*, QWidget*)
     p->setBrush(brush);
     p->drawRect(boundingRect());
 
-    p->setPen(QPen(QColor(128, 128, 128), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+    p->setPen(QPen(hover() ? QColor(255, 128, 0) : QColor(128, 128, 128), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
     p->drawRect(0, 0, boundingRect().width(), boundingRect().height());
 };
 
@@ -51,5 +51,17 @@ void SizeBox::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 void SizeBox::mouseMoveEvent(QGraphicsSceneMouseEvent* ev)
 {
     emit resizeBoxEvent(ev->pos().toPoint().x() - _previousPosition.x(), ev->pos().toPoint().y() - _previousPosition.y());
+}
+
+void SizeBox::hoverEnterEvent(QGraphicsSceneHoverEvent* ev)
+{
+    setHover(true);
+    update();
+}
+
+void SizeBox::hoverLeaveEvent(QGraphicsSceneHoverEvent* ev)
+{
+    setHover(false);
+    update();
 }
 }
