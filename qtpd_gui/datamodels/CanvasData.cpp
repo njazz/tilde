@@ -20,7 +20,6 @@ CanvasData::CanvasData()
     _properties->create("FixedSize", "Canvas", "0.1", false);
 
     //_properties->create("DrawBoxes", "Canvas", "0.1", false);
-
 }
 
 void CanvasData::addUniqueBox(objectVec* boxes, UIObject* box)
@@ -142,7 +141,6 @@ void CanvasData::deselectPatchcords()
 void CanvasData::deletePatchcord(UIPatchcord* pc)
 {
     patchcords()->erase(std::remove(patchcords()->begin(), patchcords()->end(), pc), patchcords()->end());
-
 }
 
 // ----------

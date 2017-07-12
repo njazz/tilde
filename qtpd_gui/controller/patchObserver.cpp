@@ -7,5 +7,4 @@
 namespace qtpd {
 
 void PatchObserver::setPatchController(PatchWindowController* c) { _patchController = c; }
-
 }

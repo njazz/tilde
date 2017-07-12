@@ -83,8 +83,6 @@ ApplicationController::ApplicationController()
     _pdWindow->move(0, 100);
     _pdWindow->show();
 
-
-
     _consoleObserver->setWindow(_pdWindow);
 
     _localServer->firstInstance()->post("Server started");
@@ -263,7 +261,7 @@ void ApplicationController::createRecentMenu()
         _recentMenu->addAction(a);
         //qDebug() << a;
 
-        connect(a,&QAction::triggered, this, &ApplicationController::openFile);
+        connect(a, &QAction::triggered, this, &ApplicationController::openFile);
     }
 
     _recentMenu->setTitle("Open Recent Patch...");
@@ -271,7 +269,7 @@ void ApplicationController::createRecentMenu()
 
 void ApplicationController::openFile()
 {
-    QAction *a = (QAction*)QObject::sender();
+    QAction* a = (QAction*)QObject::sender();
 
     FileParser::open(a->text());
 }

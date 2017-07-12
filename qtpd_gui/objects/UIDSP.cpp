@@ -11,7 +11,7 @@
 
 namespace qtpd {
 
- UIDSP::UIDSP()
+UIDSP::UIDSP()
 {
     deselect();
     _clicked = false;
@@ -39,7 +39,7 @@ namespace qtpd {
     _value = false;
 };
 
- UIObject* UIDSP::createObj(QString data)
+UIObject* UIDSP::createObj(QString data)
 {
     UIDSP* ret = new UIDSP();
 
@@ -62,7 +62,7 @@ void UIDSP::initProperties()
 
 // ---------------
 
- void UIDSP::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
+void UIDSP::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
 {
     p->setClipRect(option->exposedRect);
 

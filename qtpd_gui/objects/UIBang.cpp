@@ -41,8 +41,6 @@ UIObject* UIBang::createObj(QString data)
     return ret;
 }
 
-
-
 void UIBang::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
 {
     p->setClipRect(option->exposedRect);

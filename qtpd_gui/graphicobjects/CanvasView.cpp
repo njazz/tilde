@@ -83,10 +83,9 @@ CanvasView::CanvasView(QGraphicsView* parent)
 
     createContextMenu();
 
-//    _sizeBox = new SizeBox();
-//    _sizeBox->hide();
-//    scene()->addItem(_sizeBox);
-
+    //    _sizeBox = new SizeBox();
+    //    _sizeBox->hide();
+    //    scene()->addItem(_sizeBox);
 }
 
 // ---------------------------------------------
@@ -590,11 +589,6 @@ void CanvasView::createContextMenu()
 
     connect(_pmProperties, &QAction::triggered, this, &CanvasView::slotPopupMenu);
 }
-
-//SizeBox* CanvasView::sizeBox()
-//{
-////    return _sizeBox;
-//}
 
 void CanvasView::slotPopupMenu()
 {

@@ -4,11 +4,10 @@
 #include "Clipboard.h"
 #include <QDebug>
 
-namespace qtpd{
+namespace qtpd {
 Clipboard* Clipboard::_instance;
 
-
- Clipboard* Clipboard::inst()
+Clipboard* Clipboard::inst()
 {
     if (!_instance) {
         qDebug() << "new clipboard instance";

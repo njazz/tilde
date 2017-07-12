@@ -92,18 +92,6 @@ bool ObjectLoader::hasUI(std::string objName)
     return std::find(_names.begin(), _names.end(), objName) != _names.end();
 }
 
-// todo remove?
-//cmObjectConstructor ObjectLoader::getConstructorFor(QString objName)
-//{
-//    // extra
-//    if (hasUI(objName.toStdString())) {
-//        return _objectConstructors[objName.toStdString()];
-//    }
-
-//    // now this is dummy
-//    return _objectConstructors["ui.obj"];
-//}
-
 UIObjectConstructor ObjectLoader::getUIConstructorFor(QString objName)
 {
     // extra
@@ -112,29 +100,6 @@ UIObjectConstructor ObjectLoader::getUIConstructorFor(QString objName)
     } else
         return _uiObjectConstructors["ui.obj"];
 }
-
-//UIObject* ObjectLoader::createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent)
-//{
-
-//    QString objectName = "";
-//    if (objectData != "")
-//        objectName = objectData.split(" ").at(0);
-
-//    if (hasUI(objectName.toStdString())) {
-
-//        //cmObjectConstructor cmc = getConstructorFor(objectName);
-
-//        //        if (cmc == getConstructorFor("ui.obj"))
-//        //            objectData = objName + " " + objectData;
-
-//        return cmc(objectData, pdCanvas, parent);
-//    } else {
-//        cmObjectConstructor cmc = getConstructorFor("ui.obj");
-//        objectData = "ui.obj " + objectData; //+ objectName + " "
-
-//        return cmc(objectData, pdCanvas, parent);
-//    }
-//}
 
 UIObject* ObjectLoader::createUIObject(QString objectData) //, ServerCanvas *canvas, PatchWindowController *controller)
 {

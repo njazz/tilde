@@ -129,14 +129,6 @@ UIObject* UIBox::createObj(QString data)
     return ret;
 }
 
-//void UIBox::initProperties()
-//{
-//    UIObject::initProperties();
-
-//}
-
-//UIObject* UIBox::createObject(QString, t_canvas*, QGraphicsView*) { return 0; }
-
 bool UIBox::isGraphOnParentSubpatch()
 {
     if (!isSubpatch())

@@ -112,8 +112,6 @@ void UIToggle::objectPressEvent(QGraphicsSceneMouseEvent* ev)
     }
 }
 
-
-
 //void UIToggle::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 //{
 //    if (event->buttons() & Qt::LeftButton) {

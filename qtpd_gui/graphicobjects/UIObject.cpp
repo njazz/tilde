@@ -102,7 +102,8 @@ ObjectObserver* UIObject::observer() { return _observer; }
 
 void UIObject::slotResizeDeselectedBox(int dx, int dy)
 {
-    if (isSelected()) return;
+    if (isSelected())
+        return;
 
     QRect r = boundingRect().toRect();
 
@@ -669,12 +670,4 @@ void UIObject::slotRepaint() //needed for proper threading
 }
 
 // ----------------
-
-void ObjectObserver::update()
-{
-
-    if (_object) {
-        _object->updateUI(data());
-    }
-};
 }

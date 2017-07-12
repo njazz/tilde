@@ -67,7 +67,7 @@ class undoChangeProperty : public QUndoCommand {
     Property* _newValue;
 
 public:
-    undoChangeProperty(PropertyList* list, Property* property, Property* oldValue, Property* newValue);
+    undoChangeProperty(PropertyList*, Property* property, Property* oldValue, Property* newValue);
 
     void undo();
     void redo();

@@ -172,7 +172,7 @@ Property::Property(const Property& rval)
     setRawDefaultData(src->defaultData());
 }
 
-Property::Property( Property& src)
+Property::Property(Property& src)
 {
     //Property* src = const_cast<Property*>(&rval);
 
@@ -195,7 +195,7 @@ Property Property::operator=(Property& rval)
 {
     Property ret(rval);
     qDebug() << "non const" << ret.asQString();
-    return Property (rval);
+    return Property(rval);
 }
 
 void Property::copyDataToDefault()
