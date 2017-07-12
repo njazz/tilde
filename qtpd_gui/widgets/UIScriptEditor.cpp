@@ -60,4 +60,13 @@ UIScriptEditor::UIScriptEditor(QWidget* parent)
     b1->show();
     connect(b1, &QPushButton::clicked, this, &UIScriptEditor::btnClear);
 }
+
+void UIScriptEditor::resizeEvent(QResizeEvent*)
+{
+    _textEdit->move(2, 22);
+    _textEdit->setFixedSize(width() - 5, height() - 25);
+}
+
+UIScriptTextEdit* UIScriptEditor::textEdit() { return _textEdit; }
+void UIScriptEditor::setTextEdit(UIScriptTextEdit* textEdit) { _textEdit = textEdit; }
 }

@@ -12,16 +12,11 @@
 
 #include <QDebug>
 
-//#include "PdLink.h"
-
 #include "Preferences.h"
 
 #include "pdServer.hpp"
 
-//#define cmp_font "Source Code Pro"
-
 #define AUDIOSETTINGS_QSTRING(x) qtpd::AudioSettings::inst().getQString(x)
-//#define PREF_INT(x) qtpd::AudioSettings::inst().getInt()
 #define QTPD_AUDIOSETTINGS_INIT qtpd::AudioSettings::inst().init()
 
 //move
@@ -31,7 +26,6 @@ namespace qtpd {
 
 ////
 /// \brief app AudioSettings singleton
-///
 class AudioSettings : public PropertyList // TODO
 {
 public:

@@ -25,14 +25,11 @@ private:
     bool _clicked;
     QLineEdit* _editor;
 
-    //QGraphicsProxyWidget* _editorProxy;
-
 public:
     explicit UIMessage();
 
     static UIObject* createObj(QString data);
 
-    //static UIObject* createObject(QString, t_canvas*, QGraphicsView*);
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*);
     void resizeEvent();
 
@@ -58,8 +55,6 @@ public:
     virtual std::string asPdFileString();
 
     virtual void autoResize();
-
-
 
 private slots:
     void editorDone();

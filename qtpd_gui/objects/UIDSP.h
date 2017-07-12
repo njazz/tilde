@@ -40,7 +40,6 @@ public:
     // ---------------
 
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*);
-
 };
 }
 

@@ -37,7 +37,7 @@ private:
 
 public:
     static string pdParserFileName;
-    static string legacyCanvasCoords;       ///> used for #X coords
+    static string legacyCanvasCoords; ///> used for #X coords
 
     static void setAppController(ApplicationController* appController);
     static void setParserWindowController(PatchWindowController* wnd);
@@ -84,8 +84,6 @@ public:
     /// \param fname
     ///
     static void open(QString fname);
-
-
 
     ////
     /// \brief unescapeString

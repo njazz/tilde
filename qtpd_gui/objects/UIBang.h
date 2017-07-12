@@ -32,7 +32,6 @@ public:
     static UIObject* createObj(QString data);
 
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*);
-
     virtual void resizeEvent();
 
     // -------------------

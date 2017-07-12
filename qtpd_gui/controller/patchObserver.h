@@ -6,7 +6,6 @@
 
 #include "pdServer.hpp"
 
-
 namespace qtpd {
 
 class PatchWindowController;
@@ -22,7 +21,6 @@ public:
 
     };
 };
-
 }
 
 #endif // CM_PDLINK_H

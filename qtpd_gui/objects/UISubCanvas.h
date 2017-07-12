@@ -24,11 +24,7 @@ public:
     static UIObject* createObj(QString data)
     {
         UISubCanvas* ret = new UISubCanvas();
-
-
-
         ret->fromQString(data);
-
         return ret;
     }
 
@@ -132,8 +128,6 @@ public:
     void resizeEvent()
     {
     }
-
-
 };
 }
 #endif // UISUBCANVAS_H

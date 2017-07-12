@@ -13,11 +13,9 @@ namespace qtpd {
 class LinkLine : public UIItem {
 public:
     LinkLine(){};
-    //explicit LinkLine(UIItem* _obj1, UIItem* _out1, UIItem* _obj2, UIItem* _in2);
 
     void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*);
 };
-
 }
 
 #endif // LINKLINE_H

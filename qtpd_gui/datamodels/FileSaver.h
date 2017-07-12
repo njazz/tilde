@@ -22,7 +22,6 @@ private:
     FileSaver(){};
 
 public:
-
     ////
     /// \brief save file to disk; runs 'savecanvas' recursively
     /// \param fname
@@ -36,9 +35,6 @@ public:
     /// \param file
     ///
     static void saveCanvas(CanvasData* CanvasData, QFile* file);
-
-
-
 };
 }
 

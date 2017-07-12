@@ -8,9 +8,6 @@
 
 #include <math.h>
 
-//#include <QWidget>
-//#include <QtGui>
-
 #include "Port.h"
 
 class ServerPatchcord;
@@ -45,7 +42,6 @@ private:
 
     patchcordTypeEnum _patchcordType;
 
-    //QPainterPath* _path;
     QPainterPath _shape;
 
     ServerPatchcord* _serverPatchcord;
@@ -56,58 +52,26 @@ public:
 
     void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*);
 
-    ////
-    /// \group prop Properties
-    /// @{
-
     QPoint startPoint();
     QPoint endPoint();
 
-    void setPatchcordType(patchcordTypeEnum v) { _patchcordType = v; }
+    void setPatchcordType(patchcordTypeEnum v);
 
     //workaround
-    void remove() {_obj1 = 0; _obj2 = 0;}
+    void remove();
 
-    UIObject* obj1() { return (UIObject*)_obj1; }
-    UIObject* obj2() { return (UIObject*)_obj2; }
+    UIObject* obj1();
+    UIObject* obj2();
 
-    int outletIndex() { return ((Port*)_out1) ? ((Port*)_out1)->portIndex() : -1; }
-    int inletIndex() { return ((Port*)_in2) ? ((Port*)_in2)->portIndex() : -1; }
+    int outletIndex();
+    int inletIndex();
 
-//    QPainterPath shape() const
-//    {
-//        return _shape;
-//    }
+    bool isConnectedToObject(UIItem* obj);
 
-    bool isConnectedToObject(UIItem* obj) { return ((obj == _obj1) || (obj == _obj2)); }
+    void hoverEnterEvent(QGraphicsSceneHoverEvent*);
+    void hoverLeaveEvent(QGraphicsSceneHoverEvent*);
 
-    /** @}*/
-
-    ////
-    /// \group mouse Mouse
-    /// @{
-
-    void hoverEnterEvent(QGraphicsSceneHoverEvent*)
-    {
-        qDebug() << "hover patchcord";
-        setHover(true);
-        update();
-    }
-
-    void hoverLeaveEvent(QGraphicsSceneHoverEvent*)
-    {
-        setHover(false);
-        update();
-    }
-
-    void mousePressEvent(QGraphicsSceneMouseEvent*)
-    {
-        qDebug() << "click patchcord";
-        select(); //(true);
-        update();
-    }
-
-    /** @}*/
+    void mousePressEvent(QGraphicsSceneMouseEvent*);
 
 signals:
     void selected(); ///> basic select signal - same as in UIObject class

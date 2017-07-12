@@ -18,18 +18,11 @@ namespace qtpd {
 
 class UIObject;
 
-////
-/// \brief 'constructor' method for each ui object derived from UIObject
-/// \details todo: proper way for constructors in UI* objects
-///
-//typedef UIObject* (*cmObjectConstructor)(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent);
-
-typedef UIObject* (*UIObjectConstructor)(QString objectData); //, ServerCanvas* serverCanvas, PatchWindowController* controller);
+typedef UIObject* (*UIObjectConstructor)(QString objectData);
 
 ////
 /// \brief prototype for ui externals handling
 /// \deprecated stub
-///
 class ObjectLoader {
 public:
     static ObjectLoader& inst()
@@ -53,10 +46,7 @@ public:
     ObjectLoader(ObjectLoader const&) = delete;
     void operator=(ObjectLoader const&) = delete;
 
-    ////
-    /// \brief hardcoded internal UIObjects are loaded here
-    ///
-    void loadObjects();
+    void loadObjects(); ///> hardcoded internal UIObjects are loaded here
 
     void addUIobject(string name, UIObjectConstructor constructor);
 
@@ -65,11 +55,8 @@ public:
 
     bool hasUI(string objName);
 
-    // todo remove?
-    //cmObjectConstructor getConstructorFor(QString objName);
     UIObjectConstructor getUIConstructorFor(QString objName);
 
-    //UIObject* createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView *parent);
     UIObject* createUIObject(QString objectData);
 };
 }

@@ -1,10 +1,20 @@
 // (c) 2017 Alex Nadzharov
 // License: GPL3
 
-#include "patchObserver.h"
-//#include "PdWindow.h"
+#include "objectObserver.h"
 
 namespace qtpd {
 
+void ObjectObserver::setObject(UIObject* o)
+{
+    _object = o;
+}
 
+void ObjectObserver::update()
+{
+
+    if (_object) {
+        _object->updateUI(data());
+    }
+};
 }

@@ -11,11 +11,8 @@
 
 #include <QFileDialog>
 
-//#include "cm_pdlink.h"
-//#include "UIScriptTextEdit.h"
-
-#include "UIScriptEditor.h"
 #include "UIScriptCommon.h"
+#include "UIScriptEditor.h"
 
 #include "UIBox.h"
 
@@ -25,7 +22,6 @@ namespace qtpd {
 
 ////
 /// \brief gui object: script box (ui.scriptbox)
-///
 class UIScriptBox : public UIBox {
     Q_OBJECT
 
@@ -33,12 +29,8 @@ private:
     bool _clicked;
     UIScriptEditor* _editor;
 
-    //UIScriptData* _data;
-
     //temporary
     UIScriptCommon* _scriptCommon;
-
-    //    QStringList _inputList;
 
 public:
     explicit UIScriptBox();
@@ -108,13 +100,7 @@ public:
 
     // ------------------------
 
-//    void mousePressEvent(QGraphicsSceneMouseEvent* ev);
-
-//    void mouseReleaseEvent(QGraphicsSceneMouseEvent* ev);
-
-//    void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
-
-    virtual void objectPressEvent(QGraphicsSceneMouseEvent * event);
+    virtual void objectPressEvent(QGraphicsSceneMouseEvent* event);
 
     // ----------------------
 
@@ -123,7 +109,6 @@ public:
     virtual void sync();
 
     virtual void updateUI(AtomList* list);
-
 
 private slots:
     void editorChanged();

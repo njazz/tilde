@@ -15,7 +15,6 @@ namespace qtpd {
 ////
 /// \brief Port QGraphicsItem class
 /// \details gui representation of t_inlet / t_outlet
-///
 class Port : public UIItem {
     Q_OBJECT
 

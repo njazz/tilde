@@ -6,14 +6,11 @@
 
 #include "UIItem.h"
 
-
-
 namespace qtpd {
 
 ////
 /// \brief Grid for the canvas.
 /// \deprecated this should be replaced with background paint style in Canvas for better performance
-///
 class Grid : public UIItem {
     int _gridStep;
 

@@ -3,20 +3,18 @@
 
 #include "ObjectLoader.h"
 
-
+#include "UIArray.h"
+#include "UIBang.h"
 #include "UIBox.h"
 #include "UIFloat.h"
-#include "UIMessage.h"
-#include "UIText.h"
-#include "UISubpatch.h"
-#include "UIBang.h"
-#include "UIToggle.h"
-#include "UISlider.h"
-#include "UIMatrix.h"
-#include "UISubCanvas.h"
 #include "UILink.h"
-#include "UIArray.h"
-
+#include "UIMatrix.h"
+#include "UIMessage.h"
+#include "UISlider.h"
+#include "UISubCanvas.h"
+#include "UISubpatch.h"
+#include "UIText.h"
+#include "UIToggle.h"
 
 #ifdef WITH_PYTHON
 #include "UIScript.h"
@@ -30,7 +28,6 @@
 #include "oopd/UISignal.h"
 
 #include "UIDSP.h"
-
 
 namespace qtpd {
 

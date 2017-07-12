@@ -10,7 +10,6 @@ namespace qtpd {
 
 ////
 /// \brief New patchcord - dashed line
-///
 class UINewPatchcord : public UIItem {
     bool _active;
     QPoint _start;

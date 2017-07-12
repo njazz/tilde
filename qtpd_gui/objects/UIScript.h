@@ -21,7 +21,6 @@ namespace qtpd {
 
 ////
 /// \brief gui object: script editor embedded box (ui.script)
-///
 class UIScript : public UIBox {
     Q_OBJECT
 
@@ -42,10 +41,9 @@ public:
     void resizeEvent();
 
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*);
+
     // ------------------------
-
     // mouse?
-
     // ----------------------
 
     void setPdMessage(QString message);

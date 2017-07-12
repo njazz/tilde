@@ -42,6 +42,7 @@ inline void legacyProcessText(PatchWindowController* controller, QStringList lis
     list[0] = "obj";
     list.insert(3, "ui.text");
     list.insert(4, "@Text");
+
     //UIObject* obj =
     FileParser::sendStringToCanvas(controller, list);
 
@@ -230,10 +231,10 @@ inline void legacyProcessUICnv(PatchWindowController* controller, QStringList li
     color color1;
     color1.c_i = ((QString)list.at(14)).toInt();
     color color2;
-    color2.c_i = (list.size()>15) ? ((QString)list.at(15)).toInt() : 0;
+    color2.c_i = (list.size() > 15) ? ((QString)list.at(15)).toInt() : 0;
 
-    QString lcolor1 = QString::number(((int)color1.c_char[0])) + " " + QString::number(((int)color1.c_char[1])) + " " + QString::number(((int)color1.c_char[2])) +" 255";
-    QString lcolor2 = QString::number(((int)color2.c_char[0])) + " " + QString::number(((int)color2.c_char[1])) + " " + QString::number(((int)color2.c_char[2])) +" 255";
+    QString lcolor1 = QString::number(((int)color1.c_char[0])) + " " + QString::number(((int)color1.c_char[1])) + " " + QString::number(((int)color1.c_char[2])) + " 255";
+    QString lcolor2 = QString::number(((int)color2.c_char[0])) + " " + QString::number(((int)color2.c_char[1])) + " " + QString::number(((int)color2.c_char[2])) + " 255";
 
     //...
     //int lFontSize = ((QString)list.at(4)).toInt() * 8 + 3;
@@ -247,10 +248,10 @@ inline void legacyProcessUICnv(PatchWindowController* controller, QStringList li
     list2.push_back(lLabel);
     list2.push_back("@FontSize");
     list2.push_back(fontSize);
-//    list2.push_back("@TextColor");
-//    list2.push_back(lcolor1);
-//    list2.push_back("@BackgroundColor");
-//    list2.push_back(lcolor2);
+    //    list2.push_back("@TextColor");
+    //    list2.push_back(lcolor1);
+    //    list2.push_back("@BackgroundColor");
+    //    list2.push_back(lcolor2);
 
     //UIObject* obj =
     FileParser::sendStringToCanvas(controller, list2);

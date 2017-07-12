@@ -10,7 +10,6 @@ namespace qtpd {
 
 ////
 /// \brief edit mode types
-///
 typedef enum {
     em_Unlocked,
     em_Locked,
@@ -24,11 +23,10 @@ typedef enum { portInlet,
 
 ////
 /// \brief object box size constraints
-///
 typedef enum {
     os_Fixed,
     os_FixedHeight,
-    os_FixedWidth,          ///> this is used only in vertical radio (ui.matrix)
+    os_FixedWidth, ///> this is used only in vertical radio (ui.matrix)
     os_Free,
     os_Square
 } t_objectSize;

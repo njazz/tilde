@@ -12,7 +12,10 @@ ServerWorker::ServerWorker()
     //connect(this, &ServerWorker::sendMessageSignal, this, &ServerWorker::sendMessageToObject);
 };
 
-LocalServer* ServerWorker::localServer() const { return _localServer; };
+LocalServer* ServerWorker::localServer() const
+{
+    return _localServer;
+};
 
 void ServerWorker::start()
 {

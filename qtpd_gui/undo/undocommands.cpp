@@ -52,10 +52,6 @@ void undoCreatePatchcord::undo()
     _controller->deletePatchcord(_p);
 };
 
-//UIPatchcord* undoCreatePatchcord::patchcord()
-//{
-//    return _p;
-//}
 void undoCreatePatchcord::redo()
 {
     _p = _controller->createPatchcordWithoutUndo(_obj1, _out1, _obj2, _in2);
@@ -63,7 +59,7 @@ void undoCreatePatchcord::redo()
 
 // -------
 
-undoChangeProperty::undoChangeProperty(PropertyList* list, Property* property, Property* oldValue, Property* newValue)
+undoChangeProperty::undoChangeProperty(PropertyList*, Property* property, Property* oldValue, Property* newValue)
 {
     _property = property;
     _oldValue = oldValue;
@@ -72,10 +68,12 @@ undoChangeProperty::undoChangeProperty(PropertyList* list, Property* property, P
     setText("Change Property");
 };
 
-void undoChangeProperty::undo(){
+void undoChangeProperty::undo()
+{
     *_property = *_oldValue;
 };
-void undoChangeProperty::redo(){
+void undoChangeProperty::redo()
+{
     *_property = *_newValue;
 };
 

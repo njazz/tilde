@@ -12,25 +12,16 @@
 
 #include <QDebug>
 
-//#include "PdLink.h"
-
-//#define cmp_font "Source Code Pro"
-
 #define PREF_QSTRING(x) qtpd::Preferences::inst().getQString(x)
-//#define PREF_INT(x) qtpd::Preferences::inst().getInt()
 
 //move
 #define QTPD_APP_VERSION "0.1"
 #define QTPD_PREF_INIT qtpd::Preferences::inst().init()
 
-//move
-//#define QTPD_PREF_STR(x) AtomList(gensym(x))
-
 namespace qtpd {
 
 ////
 /// \brief app Preferences singleton
-///
 class Preferences : public PropertyList // TODO
 {
 public:

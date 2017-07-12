@@ -18,7 +18,7 @@ private:
     UIObject* _object;
 
 public:
-    void setObject(UIObject* o) { _object = o; }
+    void setObject(UIObject* o);
     virtual void update();
 };
 }

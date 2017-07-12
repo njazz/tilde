@@ -38,15 +38,9 @@ UIObject* UIFloat::createObj(QString)
     return ret;
 }
 
-//UIObject* UIFloat::createObject(QString, t_canvas*, QGraphicsView* = 0)
-//{
-//    return 0;
-//}
-
 void UIFloat::initProperties()
 {
     UIObject::initProperties();
-
     properties()->create("Value", "Preset", "0.1", 0.);
 }
 

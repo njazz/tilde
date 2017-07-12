@@ -61,4 +61,18 @@ void ObjectMaker::done()
 
 }
 
+
+PatchWindowController* ObjectMaker::parentController(){return _parentController;}
+void ObjectMaker::setParentController(PatchWindowController* controller){_parentController = controller;}
+
+void ObjectMaker::focusOutEvent(QFocusEvent*)
+{
+    //emit objectMakerDoneSignal();
+}
+
+void ObjectMaker::cancel()
+{
+    hide();
+}
+
 }

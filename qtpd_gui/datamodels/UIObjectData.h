@@ -4,8 +4,8 @@
 #ifndef UIOBJECTDATA_H
 #define UIOBJECTDATA_H
 
-#include <QObject>
 #include "CommonTypes.h"
+#include <QObject>
 
 namespace qtpd {
 

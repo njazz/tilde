@@ -25,18 +25,12 @@ private:
 public:
     explicit ObjectMaker(QLineEdit* parent = 0);
 
-    PatchWindowController* parentController(){return _parentController;}
-    void setParentController(PatchWindowController* controller){_parentController = controller;}
+    PatchWindowController* parentController();
+    void setParentController(PatchWindowController* controller);
 
-    void focusOutEvent(QFocusEvent*)
-    {
-        //emit objectMakerDoneSignal();
-    }
+    void focusOutEvent(QFocusEvent*);
 
-    void cancel()
-    {
-        hide();
-    }
+    void cancel();
 
 public slots:
     void done();
@@ -45,8 +39,6 @@ signals:
     void objectMakerDoneSignal();
 
 private slots:
-
-
 
     ////
     /// \brief resize to text

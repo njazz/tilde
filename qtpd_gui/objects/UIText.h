@@ -17,8 +17,6 @@
 
 #include "Preferences.h"
 
-//#include "cm_pdlink.h"
-
 namespace qtpd {
 
 ////
@@ -30,7 +28,6 @@ class UIText : public UIObject {
 private:
     bool _clicked;
     QPlainTextEdit* _editor;
-    //QString _objectText;
 
     QStringList getEditorData();
 

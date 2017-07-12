@@ -27,7 +27,6 @@ public:
     explicit UIToggle();
 
     static UIObject* createObj(QString data);
-    //static UIObject* createObject(QString, t_canvas*, QGraphicsView* );
 
     void initProperties();
 
@@ -44,7 +43,6 @@ public:
 
     static void updateUI(void* uiobj, ceammc::AtomList msg);
     void updateUI(AtomList* list);
-
 };
 }
 

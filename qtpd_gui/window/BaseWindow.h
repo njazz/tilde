@@ -27,15 +27,9 @@ public:
 
     void setAppController(ApplicationController* appController);
 
-    ////
-    /// \brief create menu actions (File, Edit)
-    ///
-    void createActions();
+    void createActions(); ////> create menu actions (File, Edit)
 
-    ////
-    /// \brief create all menus
-    ///
-    void createMenus();
+    void createMenus(); ///>  create all menus
 
     void setRecentMenu(QMenu* menu);
 

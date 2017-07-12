@@ -24,10 +24,9 @@ private:
     float _startY;
 
 public:
-    explicit UIFloat(); //UIObject* parent = 0);
+    explicit UIFloat();
 
     static UIObject* createObj(QString);
-    //static UIObject* createObject(QString, t_canvas*, QGraphicsView*);
 
     void initProperties();
 
@@ -35,12 +34,12 @@ public:
 
     void autoResize();
 
-    ///////////////////
+    // -------
 
     void objectPressEvent(QGraphicsSceneMouseEvent* ev);
     void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
     void mouseReleaseEvent(QGraphicsSceneMouseEvent*);
-    ///////
+    // -------
 
     void updateUI(AtomList* msg);
     std::string asPdFileString();

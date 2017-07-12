@@ -14,7 +14,6 @@ namespace qtpd {
 
 ////
 /// \brief selection rectangle QGraphicsObject (UIItem)
-///
 class SelectionRect : public UIItem {
     bool _active;
     QPoint _start;
@@ -23,16 +22,12 @@ class SelectionRect : public UIItem {
 public:
     SelectionRect();
 
-    ////
-    /// \group prop Properties
-    /// @{
     void setActive(bool active) { _active = active; }
     void setStart(QPoint start) { _start = start; }
     void setEnd(QPoint end) { _end = end; }
     QPoint end() { return _end; }
     QPoint start() { return _start; }
     bool active() { return _active; }
-    /** @}*/
 
     void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*)
     {

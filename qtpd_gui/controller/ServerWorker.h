@@ -6,7 +6,7 @@
 #include <QDebug>
 #include <QThread>
 
-namespace qtpd{
+namespace qtpd {
 
 ////
 /// \brief Stub for the server in separate thread
@@ -20,7 +20,7 @@ class ServerWorker : public QObject {
 public:
     ServerWorker();
 
-    LocalServer* localServer() const ;
+    LocalServer* localServer() const;
 
 public slots:
     void start();
@@ -29,9 +29,7 @@ public slots:
 
 signals:
     void sendMessageSignal(ServerObject* object, string msg);
-
 };
-
 }
 
 #endif // LOCALSERVER_H

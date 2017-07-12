@@ -4,8 +4,8 @@
 #ifndef UIITEM_H
 #define UIITEM_H
 
-#include <QGraphicsObject>
 #include "CommonTypes.h"
+#include <QGraphicsObject>
 
 namespace qtpd {
 
@@ -64,17 +64,9 @@ public:
     ///
     virtual void setEditModeRef(t_editMode* canvasEditModeRef);
 
-    ////
-    /// \brief get edit mode pointer - for inlets/outlets
-    /// \return
-    ///
-    virtual t_editMode* getEditModeRef();
+    virtual t_editMode* getEditModeRef(); ///> get edit mode pointer - for inlets/outlets
 
-    ////
-    /// \brief get edit mode flag value
-    /// \return
-    ///
-    t_editMode getEditMode();
+    t_editMode getEditMode(); ///> get edit mode flag value
 
     QRectF boundingRect() const { return QRectF(0, 0, _size.width(), _size.height()); }
     QPainterPath shape() const;

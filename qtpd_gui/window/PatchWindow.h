@@ -108,7 +108,6 @@ public:
     // todo less spaghetti
 
     void newObjectBox();
-    //canvasView() -> controller
     void newMessageBox();
     void newFloatBox();
     void newCommentBox();
@@ -139,8 +138,6 @@ public:
 
     ////
     /// \brief keys: ctrl for temporary lock; esc to stop editing actions
-    /// \param event
-    ///
     void keyPressEvent(QKeyEvent* event);
     void keyReleaseEvent(QKeyEvent* event);
 

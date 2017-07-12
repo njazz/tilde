@@ -32,8 +32,6 @@ public:
 
     static UIObject* createObj(QString data);
 
-    //static UIObject* createObject(QString, t_canvas*, QGraphicsView*);
-
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*);
 
     // ---------------------------------------------------------------
@@ -42,7 +40,7 @@ public:
     void mouseReleaseEvent(QGraphicsSceneMouseEvent*);
     void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
 
-    ///////
+    // -------
 
     void setPdMessage(QString message);
 

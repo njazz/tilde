@@ -39,8 +39,6 @@ private:
     bool _isAbstraction;
     QString _abstractionPath;
 
-    //QMainWindow *_Subcanvas;
-
 public:
     explicit UISubpatch();
 
@@ -48,45 +46,42 @@ public:
     {
         UISubpatch* ret = new UISubpatch();
 
-        //        QStringList l = data.split(" ");l.removeFirst();
-        //        data = l.join(" ");
-
         ret->fromQString(data);
 
         return ret;
     }
 
-//    static UIObject* createObject(QString objectData, t_canvas*, QGraphicsView* parent = 0)
-//    {
-//        //TODO fix all constructors
+    //    static UIObject* createObject(QString objectData, t_canvas*, QGraphicsView* parent = 0)
+    //    {
+    //        //TODO fix all constructors
 
-//        qDebug("UISubpatch");
+    //        qDebug("UISubpatch");
 
-//        UISubpatch* b = new UISubpatch(); //(UIObjectItem*)parent);
+    //        UISubpatch* b = new UISubpatch(); //(UIObjectItem*)parent);
 
-//        //b->setCanvas((void*)parent);
+    //        //b->setCanvas((void*)parent);
 
-//        QStringList list = QString(objectData).split(" ");
-//        // list.removeAt(0);
-//        QString list_s = list.join(" ");
+    //        QStringList list = QString(objectData).split(" ");
+    //        // list.removeAt(0);
+    //        QString list_s = list.join(" ");
 
-//        // fix that
-//        const char* obj_name = list_s.toStdString().c_str();
-//        QString data1 = b->properties()->extractFromPdFileString(obj_name); //test
+    //        // fix that
+    //        const char* obj_name = list_s.toStdString().c_str();
+    //        QString data1 = b->properties()->extractFromPdFileString(obj_name); //test
 
-//        // todo cleanup
-//        //const char* obj_name2 = data1.c_str(); //(QString(data1.c_str()).split(" ").at(0)).toStdString().c_str();
+    //        // todo cleanup
+    //        //const char* obj_name2 = data1.c_str(); //(QString(data1.c_str()).split(" ").at(0)).toStdString().c_str();
 
-//        // fix size changes
-//        b->fromQString(data1);
-//        b->autoResize();
+    //        // fix size changes
+    //        b->fromQString(data1);
+    //        b->autoResize();
 
-//        b->resizeEvent();
+    //        b->resizeEvent();
 
-//        b->setBgColor(QColor(224, 224, 224));
+    //        b->setBgColor(QColor(224, 224, 224));
 
-//        return (UIObject*)b;
-//    };
+    //        return (UIObject*)b;
+    //    };
 
     void setSubpatchWindow(QMainWindow* cwindow);
 
@@ -190,12 +185,6 @@ public:
 
     std::string asPdFileString();
 
-    //    virtual void setServerObject(ServerObject* o)
-    //    {
-    //        UIObject::setServerObject(o);
-    //        if (o)
-    //            o->connectUI(this, &UISubpatch::updateUI);
-    //    };
 signals:
 
     void mouseMoved();

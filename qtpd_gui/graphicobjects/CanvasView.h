@@ -64,8 +64,6 @@ private:
 
     PatchWindowController* _controller;
 
-    //SizeBox* _sizeBox;
-
     Q_OBJECT
 
 public:
@@ -119,46 +117,21 @@ public:
 
     // -------------------------------------------------------
 
-    ////
-    /// \brief change size to fit all objects
-    ///
-    void resizeToObjects();
+    void resizeToObjects(); ///> change size to fit all objects
 
-    ////
-    /// \brief slot called by box when it is selected
-    /// \param box
-    ///
-    Q_SLOT void slotSelectBox(UIItem* box, QGraphicsSceneMouseEvent* ev);
+    Q_SLOT void slotSelectBox(UIItem* box, QGraphicsSceneMouseEvent* ev); ///> slot called by box when it is selected
 
-    ////
-    /// \brief TODO check. slot called by box when it starts moving
-    /// \param box
-    /// \param event
-    ///
-    Q_SLOT void slotMoveBox(UIItem* box, QGraphicsSceneMouseEvent* event);
+    Q_SLOT void slotMoveBox(UIItem* box, QGraphicsSceneMouseEvent* event); ///> TODO check. slot called by box when it starts moving
 
-    ////
-    /// \brief cancels patchcord creation
-    ///
-    void cancelPatchcord();
+    void cancelPatchcord(); ///> cancels patchcord creation
 
-    ////
-    /// \brief pointer to objectMaker widget
-    /// \return
-    ///
-    ObjectMaker* objectMaker();
+    ObjectMaker* objectMaker(); ///> pointer to objectMaker widget
 
-    ////
-    /// \brief this is called when 'inlet' etc object is created in subpatch
-    ///
-    void portLocalCountUpdated();
+    void portLocalCountUpdated(); ///> this is called when 'inlet' etc object is created in subpatch
 
-    ////
-    /// \brief shows object maker for 'new object' menu command
-    void showNewObjectMaker();
+    void showNewObjectMaker(); ///> shows object maker for 'new object' menu command
 
-    //deprecated
-    void canvasFromPdStrings(QStringList strings);
+    void canvasFromPdStrings(QStringList strings); ///> deprecated
 
     // -- NEW ---------------------------------------
 
@@ -174,10 +147,10 @@ private slots:
 public slots:
 
     void slotInletMousePress(UIItem* obj, QGraphicsSceneMouseEvent* ev);
-    void slotInletMouseRelease(UIItem* obj, QGraphicsSceneMouseEvent*ev);
+    void slotInletMouseRelease(UIItem* obj, QGraphicsSceneMouseEvent* ev);
 
     void slotInletMouseEnter(UIItem* obj, QGraphicsSceneHoverEvent* ev);
-    void slotInletMouseLeave(UIItem* obj, QGraphicsSceneHoverEvent *ev);
+    void slotInletMouseLeave(UIItem* obj, QGraphicsSceneHoverEvent* ev);
 
     void slotOutletMousePressed(UIItem* obj, QGraphicsSceneMouseEvent*);
     void slotOutletMouseReleased(UIItem*, QGraphicsSceneMouseEvent*);

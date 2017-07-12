@@ -11,7 +11,6 @@ namespace qtpd {
 ////
 /// \brief SizeBox QGraphicsObject class
 /// \details resize widget for all object boxes in the patch
-///
 class SizeBox : public UIItem {
     Q_OBJECT
 

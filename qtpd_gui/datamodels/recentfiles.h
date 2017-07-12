@@ -4,10 +4,10 @@
 class QStringList;
 class QString;
 
-namespace qtpd{
-class RecentFiles
-{
+namespace qtpd {
+class RecentFiles {
     QStringList* _list;
+
 public:
     RecentFiles();
 

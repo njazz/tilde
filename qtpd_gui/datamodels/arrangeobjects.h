@@ -5,7 +5,6 @@
 
 using namespace std;
 
-//
 //#include "UIObject.h"
 
 namespace qtpd {

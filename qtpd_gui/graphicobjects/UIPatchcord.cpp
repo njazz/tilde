@@ -32,7 +32,7 @@ UIPatchcord::UIPatchcord(UIItem* obj1, UIItem* out1, UIItem* obj2, UIItem* in2)
 UIPatchcord::~UIPatchcord()
 {
 
-    QPainterPath path;// = new QPainterPath();
+    QPainterPath path; // = new QPainterPath();
     _shape.swap(path);
 
     _obj1 = 0;
@@ -44,7 +44,8 @@ void UIPatchcord::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWid
 {
     // TODO
     // workaround - disables drawing for deleted object
-    if ((!_obj1) && (!_obj2)) return;
+    if ((!_obj1) && (!_obj2))
+        return;
 
     QColor b_pc_color = (_patchcordType == cm_pt_signal) ? QColor(128, 160, 192) : QColor(0, 0, 0);
     // cleanup
@@ -123,5 +124,62 @@ QPoint UIPatchcord::endPoint()
     setSize(end.x() - pos().x(), end.y() - pos().y());
 
     return QPoint(size().width(), size().height());
+}
+
+// ----------
+
+void UIPatchcord::setPatchcordType(patchcordTypeEnum v)
+{
+    _patchcordType = v;
+}
+
+//workaround
+void UIPatchcord::remove()
+{
+    _obj1 = 0;
+    _obj2 = 0;
+}
+
+UIObject* UIPatchcord::obj1()
+{
+    return (UIObject*)_obj1;
+}
+UIObject* UIPatchcord::obj2()
+{
+    return (UIObject*)_obj2;
+}
+
+int UIPatchcord::outletIndex()
+{
+    return ((Port*)_out1) ? ((Port*)_out1)->portIndex() : -1;
+}
+int UIPatchcord::inletIndex()
+{
+    return ((Port*)_in2) ? ((Port*)_in2)->portIndex() : -1;
+}
+
+bool UIPatchcord::isConnectedToObject(UIItem* obj)
+{
+    return ((obj == _obj1) || (obj == _obj2));
+}
+
+void UIPatchcord::hoverEnterEvent(QGraphicsSceneHoverEvent*)
+{
+    qDebug() << "hover patchcord";
+    setHover(true);
+    update();
+}
+
+void UIPatchcord::hoverLeaveEvent(QGraphicsSceneHoverEvent*)
+{
+    setHover(false);
+    update();
+}
+
+void UIPatchcord::mousePressEvent(QGraphicsSceneMouseEvent*)
+{
+    qDebug() << "click patchcord";
+    select(); //(true);
+    update();
 }
 }

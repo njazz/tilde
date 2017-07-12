@@ -36,7 +36,6 @@ public:
     explicit UIMatrix();
 
     static UIObject* createObj(QString data);
-    //static UIObject* createObject(QString, t_canvas*, QGraphicsView* );
 
     void initProperties();
 
@@ -74,12 +73,7 @@ public:
     void mouseReleaseEvent(QGraphicsSceneMouseEvent*);
     void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
 
-    ///////
-
-//    void setPdMessage(QString message);
-
     void updateUI(AtomList* msg);
-
 };
 }
 
