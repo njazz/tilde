@@ -177,7 +177,7 @@ var searchData=
   ['grid_2eh',['Grid.h',['../_grid_8h.html',1,'']]],
   ['gridsnap',['gridSnap',['../classqtpd_1_1_canvas_view.html#a92f8d2f051ef33082622ef9a96ebcbf8',1,'qtpd::CanvasView']]],
   ['gridstep',['gridStep',['../classqtpd_1_1_canvas_view.html#a3f9d33c579846c07682ea81535afa92e',1,'qtpd::CanvasView::gridStep()'],['../classqtpd_1_1_grid.html#af76b4a96b780e31d888ce9c43cf6bf88',1,'qtpd::Grid::gridStep()']]],
-  ['group',['group',['../classqtpd_1_1_property_list.html#a2a63cdb21615991daf98e4af47be4c73',1,'qtpd::PropertyList']]],
+  ['group',['group',['../classqtpd_1_1_property.html#aa39c6d0500134893bb32676e5c3392ac',1,'qtpd::Property::group()'],['../classqtpd_1_1_property_list.html#a2a63cdb21615991daf98e4af47be4c73',1,'qtpd::PropertyList::group()']]],
   ['groupnames',['groupNames',['../classqtpd_1_1_property_list.html#a941a95520f1c8c2ed972ce43f2e8e5fd',1,'qtpd::PropertyList']]],
   ['gs_5farray',['gs_array',['../struct__gstub.html#ae0ef1e37b9a19cabf8ad3a4532a61e9b',1,'_gstub']]],
   ['gs_5fglist',['gs_glist',['../struct__gstub.html#ad782b9e92cc9ef1acb1ecc526eef5a1b',1,'_gstub']]],

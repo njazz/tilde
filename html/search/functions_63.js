@@ -149,6 +149,7 @@ var searchData=
   ['copy',['copy',['../classqtpd_1_1_canvas_data.html#aad8dca9630dd41adb78a79335a69adbd',1,'qtpd::CanvasData']]],
   ['copy_5fperform',['copy_perform',['../m__pd_8h.html#a5590104c00e3168793fb43a7357fc5b7',1,'m_pd.h']]],
   ['copybytes',['copybytes',['../m__pd_8h.html#af80e667284f408ae3981923da47abc06',1,'m_pd.h']]],
+  ['copydatatodefault',['copyDataToDefault',['../classqtpd_1_1_property.html#a4fc8ab7435e1782d44d7b0f2dbe7970e',1,'qtpd::Property']]],
   ['copyobject',['copyObject',['../classqtpd_1_1_patch_window_controller.html#a6e08a5c891afb650f7c9be132c982269',1,'qtpd::PatchWindowController']]],
   ['count',['count',['../classceammc_1_1_atom_list.html#a79e0ec7012d71d4d240f7b6785658106',1,'ceammc::AtomList::count(const Atom &amp;a) const '],['../classceammc_1_1_atom_list.html#a43925a17c1e64ea52fdf1cf709111c34',1,'ceammc::AtomList::count(AtomPredicate pred) const '],['../class_abstract___widget___list.html#a875673fe0bdf9936cc8d330edf8c42d2',1,'Abstract_Widget_List::count()']]],
   ['create',['create',['../classqtpd_1_1_property_list.html#afbe5c3673f39e28c8327b99749925379',1,'qtpd::PropertyList']]],
