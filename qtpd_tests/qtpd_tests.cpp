@@ -20,6 +20,8 @@ private Q_SLOTS:
     void propertyLoad();
 
     void propertyVec2Converters();
+
+    void propertyCopy();
     //    void propertyCopy();
     //
     void patchControllerCopyObject();
@@ -103,8 +105,24 @@ void Qtpd_tests::propertyVec2Converters()
     l->create("size", "Group", "0.1", "30 70");
     l->create("point", "Group", "0.1", "30 70");
 
-    QVERIFY(l->get("size")->asQSize() == QSize(30,70));
-    QVERIFY(l->get("point")->asQPoint() == QPoint(30,70));
+    QVERIFY(l->get("size")->asQSize() == QSize(30, 70));
+    QVERIFY(l->get("point")->asQPoint() == QPoint(30, 70));
+}
+
+void Qtpd_tests::propertyCopy()
+{
+    PropertyList* l = new PropertyList();
+
+    l->create("source", "Group", "0.1", "30 70");
+
+    Property a =  *l->get("source");
+    qDebug() << a.asQString();
+
+    Property* b = new Property(*l->get("source"));
+    qDebug() << b->asQString();
+
+    QVERIFY(a.asQPoint() == l->get("source")->asQPoint());
+    QVERIFY(a.asQString() == l->get("source")->asQString());
 }
 
 void Qtpd_tests::patchControllerCopyObject()

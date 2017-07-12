@@ -56,23 +56,32 @@ private:
 
 public:
     explicit Property();
+    Property(const Property& src);
+    Property( Property& src);
+
+    const Property operator=(const Property& rval);
+    Property operator=(Property& rval);
 
     // -------
 
     template <typename T>
     void set(T val);
 
-    void setDefault(); ///> copy current value to default value
+    void copyDataToDefault(); ///> copy current value to default value
 
     void setVersion(QString version);
-    QString version();
+    void setGroup(QString grp);
+    void setType(UIPropertyType t);
+    void setRawData(QVariant data);
+    void setRawDefaultData(QVariant data);
 
     // -------
 
-    UIPropertyType type();
-
     QVariant data();
     QVariant defaultData();
+    QString group();
+    QString version();
+    UIPropertyType type();
 
     // -------
 

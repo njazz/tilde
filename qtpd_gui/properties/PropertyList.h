@@ -50,7 +50,7 @@ public:
         //newP->setGroup(pGroup);
         newP->setVersion(pVersion);
         newP->set(defaultData);
-        newP->setDefault();
+        newP->copyDataToDefault();
 
         _data[pName] = newP;
         //fix

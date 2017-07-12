@@ -160,7 +160,45 @@ Property::Property()
     _applyToPd = false;
 };
 
-void Property::setDefault()
+Property::Property(const Property& rval)
+{
+    Property* src = const_cast<Property*>(&rval);
+
+    setGroup(src->group());
+    setVersion(src->version());
+    setType(src->type());
+
+    setRawData(src->data());
+    setRawDefaultData(src->defaultData());
+}
+
+Property::Property( Property& src)
+{
+    //Property* src = const_cast<Property*>(&rval);
+
+    setGroup(src.group());
+    setVersion(src.version());
+    setType(src.type());
+
+    setRawData(src.data());
+    setRawDefaultData(src.defaultData());
+}
+
+const Property Property::operator=(const Property& rval)
+{
+    Property ret(rval);
+    //qDebug() << "const" << ret.asQString();
+    return ret;
+}
+
+Property Property::operator=(Property& rval)
+{
+    Property ret(rval);
+    qDebug() << "non const" << ret.asQString();
+    return Property (rval);
+}
+
+void Property::copyDataToDefault()
 {
     _defaultData = _data;
 }
@@ -170,7 +208,28 @@ void Property::setVersion(QString version)
     _version = version;
 }
 
+void Property::setGroup(QString grp)
+{
+    _group = grp;
+}
+
+void Property::setType(UIPropertyType type)
+{
+    _type = type;
+}
+
+void Property::setRawData(QVariant data)
+{
+    _data = data;
+}
+
+void Property::setRawDefaultData(QVariant data)
+{
+    _defaultData = data;
+}
+
 QString Property::version() { return _version; }
+QString Property::group() { return _group; }
 
 //////////
 
@@ -210,7 +269,8 @@ QPoint Property::asQPoint()
 
 QSizeF Property::asQSizeF()
 {
-    if(_data.toString().split(" ").size() < 2) return QSizeF(20, 20);
+    if (_data.toString().split(" ").size() < 2)
+        return QSizeF(20, 20);
 
     QStringList sL = _data.toString().split(" ");
 
