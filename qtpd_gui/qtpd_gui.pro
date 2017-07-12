@@ -278,7 +278,7 @@ win32: {
 
     #LIBS += $$OUT_PWD/../qtpd_lib/debug/libqtpd.a
     LIBS += -L$$OUT_PWD/../../pd-server/src/qt-creator-project/debug -lpd-server
-    LIBS += -L$$OUT_PWD/../qtpd_ceammc_lib/debug -lqtpd_ceammc_lib
+    #LIBS += -L$$OUT_PWD/../qtpd_ceammc_lib/debug -lqtpd_ceammc_lib
 }
 
 macx: {

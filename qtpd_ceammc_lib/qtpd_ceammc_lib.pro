@@ -18,6 +18,11 @@ unix {
     INSTALLS += target
 }
 
+win32{
+    target.path = ../qtpd_gui/$$TARGET
+    INSTALLS += target
+}
+
 #win32: DEFINES += PD_INTERNAL
 
 HEADERS += \
