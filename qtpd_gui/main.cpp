@@ -33,7 +33,10 @@ int main(int argc, char* argv[])
 {
 
     QApplication a(argc, argv);
+
+#ifndef _WIN32
     a.setQuitOnLastWindowClosed(false);
+#endif
 
     a.setCursorFlashTime(500);
 

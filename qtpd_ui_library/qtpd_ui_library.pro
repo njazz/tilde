@@ -16,8 +16,8 @@ DEFINES += QT_DEPRECATED_WARNINGS \
     PD_INTERNAL
 
 SOURCES += \
-    ../qtpd_ceammc_lib/src/ceammc_atomlist.cpp \
-    ../qtpd_ceammc_lib/src/ceammc_atom.cpp \
+    #../qtpd_ceammc_lib/src/ceammc_atomlist.cpp \
+    #../qtpd_ceammc_lib/src/ceammc_atom.cpp \
     ../qtpd_ceammc_lib/src/ceammc_log.cpp \
     ../qtpd_ceammc_lib/src/ceammc_object.cpp \
     ../qtpd_ceammc_lib/src/ceammc_property.cpp \
@@ -38,6 +38,8 @@ SOURCES += \
 HEADERS +=\
     ../../pd-server/pure-data-src/src/m_pd.h \
     ../../pd-server/pure-data-src/src/m_imp.h \
+    ../../pd-server/pure-data-src/ceammc/ext/src/lib/ceammc_atomlist.h \
+    ../../pd-server/pure-data-src/ceammc/ext/src/lib/ceammc_atom.h \
     ../qtpd_ceammc_lib/src/ceammc_object.h \
     ../qtpd_ceammc_lib/src/ceammc_factory.h \
     ../qtpd_ceammc_lib/src/ceammc_format.h \
@@ -52,7 +54,8 @@ HEADERS +=\
     src/ui_sliders.h \
     src/ui_array.h \
     src/ui_text.h \
-    src/baseUIClass.h
+    src/baseUIClass.h \
+    qtpd_ui_library/qtpd_ui_library.h
 
 INCLUDEPATH += ../qtpd_ceammc_lib/src/ \
     ../../pd-server/pure-data-src/src/ \
@@ -60,12 +63,18 @@ INCLUDEPATH += ../qtpd_ceammc_lib/src/ \
     ../../pd-server/qtpd_ui_library/
 
 unix {
-    target.path = $$PWD/bin #/usr/local/lib
+    #target.path = $$PWD/bin #/usr/local/lib
+    target.path = ~/Documents/Qtpd/Libraries
+    INSTALLS += target
+}
+
+win32 {
+    #target.path = $$PWD/bin #/usr/local/lib
     target.path = ~/Documents/Qtpd/Libraries
     INSTALLS += target
 }
 
 win32:{
-    LIBS += -L$$OUT_PWD/../../pd-server/src/qt-creator-project/debug -lpd-server \
-    -L$$OUT_PWD/../qtpd_ceammc_lib/debug -lqtpd_ceammc_lib
+    LIBS += -L$$OUT_PWD/../../pd-server/src/qt-creator-project/debug -lpd-server \ #-L~/Documents/Qtpd/Libraries -lpd-server #
+   # -L$$OUT_PWD/../qtpd_ceammc_lib/debug -lqtpd_ceammc_lib
 }

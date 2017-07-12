@@ -15,8 +15,7 @@
 namespace qtpd {
 PatchWindow::PatchWindow()
 {
-    createActions();
-    createMenus();
+
 
     _scroll = new QScrollArea(this);
     _canvasView = new CanvasView((QGraphicsView*)this);
@@ -52,7 +51,7 @@ PatchWindow::PatchWindow()
 
     connect(_canvasView->objectMaker(), &ObjectMaker::objectMakerDoneSignal, this, &PatchWindow::objectMakerDone);
 
-    _editModeAct->setChecked(true);
+
 
     // TODO
     //connect subpatch creation routine
@@ -66,10 +65,17 @@ PatchWindow::PatchWindow()
     //    connect(copyAct, &QAction::triggered, this, &PatchWindow::copy);
     //    connect(duplicateAct, &QAction::triggered, this, &PatchWindow::duplicate);
     //    connect(pasteAct, &QAction::triggered, this, &PatchWindow::paste);
+
+    PatchWindow::createActions();
+    PatchWindow::createMenus();
+
+    _editModeAct->setChecked(true);
 }
 
 void PatchWindow::createActions()
 {
+    BaseWindow::createActions();
+
     // spaghetti time
 
     //        connect(openAct, &QAction::triggered, this, &cm_patchwindow::open);
@@ -260,6 +266,7 @@ void PatchWindow::createActions()
 
 void PatchWindow::createMenus()
 {
+    BaseWindow::createMenus();
 
     editMenu->addSeparator();
     editMenu->addAction(_selectAllAct);

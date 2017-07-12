@@ -154,7 +154,10 @@ void BaseWindow::createActions()
 ///
 void BaseWindow::createMenus()
 {
-    fileMenu = menuBar()->addMenu(tr("&File"));
+    _menuBar = new QMenuBar(this);
+    setMenuBar(_menuBar);
+
+    fileMenu = _menuBar->addMenu(tr("&File"));
     fileMenu->addAction(_newAct);
     fileMenu->addAction(openAct);
     //QMenu *recent =
@@ -174,7 +177,7 @@ void BaseWindow::createMenus()
     fileMenu->addSeparator();
     fileMenu->addAction(_exitAct);
 
-    editMenu = menuBar()->addMenu(tr("&Edit"));
+    editMenu = _menuBar->addMenu(tr("&Edit"));
     editMenu->addAction(undoAct);
     editMenu->addAction(redoAct);
     editMenu->addSeparator();
@@ -184,19 +187,19 @@ void BaseWindow::createMenus()
     editMenu->addAction(pasteAct);
     editMenu->addSeparator();
 
-    putMenu = menuBar()->addMenu(tr("&Put"));
+    putMenu = _menuBar->addMenu(tr("&Put"));
 
-    arrangeMenu = menuBar()->addMenu(tr("&Arrange"));
+    arrangeMenu = _menuBar->addMenu(tr("&Arrange"));
 
-    _findMenu = menuBar()->addMenu(tr("&Find"));
+    _findMenu = _menuBar->addMenu(tr("&Find"));
     _findMenu->addSeparator();
 
-    _mediaMenu = menuBar()->addMenu(tr("&Media"));
+    _mediaMenu = _menuBar->addMenu(tr("&Media"));
     _mediaMenu->addAction(_dspOnAct);
     _mediaMenu->addAction(_dspOffAct);
     //mediaMenu->addSeparator();
 
-    _windowMenu = menuBar()->addMenu(tr("&Window"));
+    _windowMenu = _menuBar->addMenu(tr("&Window"));
     _windowMenu->addAction(_pdWindowAct);
     _windowMenu->addAction(_pythonConsoleAct);
     _windowMenu->addSeparator();
@@ -205,7 +208,7 @@ void BaseWindow::createMenus()
     _windowMenu->addAction(_pdKeyBindingsAct);
     _windowMenu->addSeparator();
 
-    helpMenu = menuBar()->addMenu(tr("&Help"));
+    helpMenu = _menuBar->addMenu(tr("&Help"));
     helpMenu->addAction(_pdHelpAct);
 }
 

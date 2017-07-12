@@ -87,7 +87,10 @@ ApplicationController::ApplicationController()
 
     _localServer->firstInstance()->post("Server started");
     //_localServer->firstInstance()->setVerboseLevel(5);
-    _localServer->firstInstance()->loadLibrary("~/Documents/Qtpd/Libraries/qtpd_ui");
+
+    //ServerInstance::setVerboseLevel(4);
+    QString tilde = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).at(0);
+    _localServer->firstInstance()->loadLibrary(QString(tilde+"/Qtpd/Libraries/qtpd_ui").toStdString());
 
     FileParser::setAppController(this);
 

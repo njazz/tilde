@@ -3,18 +3,25 @@
 
 #include <m_pd.h>
 
-extern "C" void setup_ui0x2ebang();
-extern "C" void setup_ui0x2efloat();
-extern "C" void setup_ui0x2ematrix();
-extern "C" void setup_ui0x2emsg();
-extern "C" void setup_ui0x2escript();
-extern "C" void setup_ui0x2esliders();
-extern "C" void setup_ui0x2etoggle();
-extern "C" void setup_ui0x2etext();
+#include "qtpd_ui_library.h"
 
-extern "C" void setup_ui0x2earray();
+extern "C"
+{
 
-extern "C" void qtpd_ui_setup() //0x2e
+extern void setup_ui0x2ebang();
+extern void setup_ui0x2efloat();
+extern void setup_ui0x2ematrix();
+extern void setup_ui0x2emsg();
+extern void setup_ui0x2escript();
+extern void setup_ui0x2esliders();
+extern void setup_ui0x2etoggle();
+extern void setup_ui0x2etext();
+
+extern void setup_ui0x2earray();
+
+}
+
+extern "C" void setup() //0x2e //qtpd_ui_
 {
 
     post("loading Qtpd ui library");
@@ -32,5 +39,7 @@ extern "C" void qtpd_ui_setup() //0x2e
 
     setup_ui0x2etext();
 }
+
+
 
 //#endif // QTPD_UI_LIBRARY_H

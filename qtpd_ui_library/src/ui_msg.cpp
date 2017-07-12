@@ -79,7 +79,7 @@ void UIpdMsg::_doOutput()
 
                         if (sym->s_thing) {
 
-                            AtomList l1 = _message.subList(start, end);
+                            AtomList l1 = _message.slice(start, end);
                             _processDollars(&l1);
 
                             //t_object* obj = pd_checkobject(sym->s_thing);
@@ -96,7 +96,7 @@ void UIpdMsg::_doOutput()
                     }
 
                 } else {
-                    AtomList l1 = _message.subList(start, end);
+                    AtomList l1 = _message.slice(start, end);
                     _processDollars(&l1);
 
                     if (l1[0].isSymbol()) {

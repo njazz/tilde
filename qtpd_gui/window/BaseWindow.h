@@ -36,6 +36,8 @@ public:
 private:
     Ui::cm_basewindow* _ui;
 
+    QMenuBar* _menuBar;
+
     QMenu* _findMenu;
     QMenu* _mediaMenu;
     QMenu* _windowMenu;

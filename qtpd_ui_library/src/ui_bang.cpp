@@ -42,6 +42,7 @@ void UIpdBang::onFloat(float)
     bangTo(0);
     updateUI();
 }
+
 extern "C" void setup_ui0x2ebang()
 {
     ObjectFactory<UIpdBang> obj("ui.bang");
