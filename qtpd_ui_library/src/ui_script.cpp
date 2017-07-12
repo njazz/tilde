@@ -16,10 +16,8 @@
 using namespace ceammc;
 
 UIpdScript::UIpdScript(const PdArgs& a)
-    : BaseObject(a)
+    : BaseUIObject(a)
 {
-    //    _inSymbol = gensym("__output");
-    //    createInlet(&_inSymbol);
 
     createOutlet();
 }
@@ -32,6 +30,7 @@ void UIpdScript::onFloat(float f)
 {
     qtpdUpdate((long)this->owner(), AtomList(Atom(f)));
 }
+
 void UIpdScript::onAny(t_symbol* s, const AtomList& list)
 {
     if (s == gensym("-py-output") && list.size() > 0) {

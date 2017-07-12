@@ -15,13 +15,13 @@ using namespace ceammc;
 
 class UIpdToggle;
 
-static void qtpd_update(UIpdToggle* x)
+ void UIpdToggle::updateUI()
 {
-    qtpdUpdate((long)x->owner(), AtomList(Atom(x->value())));
+    qtpdUpdate((long)owner(), AtomList(Atom(value())));
 }
 
 UIpdToggle::UIpdToggle(const PdArgs& a)
-    : BaseObject(a)
+    : BaseUIObject(a)
 {
     _value = 0;
     createOutlet();
@@ -31,14 +31,14 @@ void UIpdToggle::onBang()
 {
     _value = float(!(_value > 0));
     floatTo(0, _value);
-    qtpd_update(this);
+    updateUI();
 }
 
 void UIpdToggle::onFloat(float f)
 {
     _value = f;
     floatTo(0, _value);
-    qtpd_update(this);
+    updateUI();
 }
 
 extern "C" void setup_ui0x2etoggle()

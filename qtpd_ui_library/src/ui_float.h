@@ -1,11 +1,11 @@
 #ifndef UI_FLOAT_H
 #define UI_FLOAT_H
 
-#include <ceammc_object.h>
+#include "baseUIClass.h"
 
 using namespace ceammc;
 
-class UIpdFloat : public BaseObject
+class UIpdFloat : public BaseUIObject
 {
 private:
     float _value;
@@ -18,6 +18,7 @@ public:
 
    float value();
 
+   void updateUI();
 };
 
 #endif // UI_BANG_H

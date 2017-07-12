@@ -1,11 +1,11 @@
 #ifndef UI_MSG_H
 #define UI_MSG_H
 
-#include <ceammc_object.h>
+#include "baseUIClass.h"
 
 using namespace ceammc;
 
-class UIpdMsg : public BaseObject {
+class UIpdMsg : public BaseUIObject {
 private:
     AtomList _inputList;
     AtomList _message;
@@ -22,6 +22,8 @@ public:
     void onFloat(float f);
 
     AtomList getMessage();
+
+    void updateUI();
 };
 
 #endif // UI_BANG_H

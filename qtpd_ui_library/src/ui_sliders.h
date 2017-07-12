@@ -1,11 +1,11 @@
 #ifndef UI_SLIDERS_H
 #define UI_SLIDERS_H
 
-#include <ceammc_object.h>
+#include "baseUIClass.h"
 
 using namespace ceammc;
 
-class UIpdSliders : public BaseObject
+class UIpdSliders : public BaseUIObject
 {
 private:
     float _value;
@@ -18,5 +18,6 @@ public:
 
    float value();
 
+   void updateUI();
 };
 #endif // UI_BANG_H

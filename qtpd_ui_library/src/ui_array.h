@@ -1,11 +1,11 @@
 #ifndef UI_ARRAY_H
 #define UI_ARRAY_H
 
-#include <ceammc_object.h>
+#include "baseUIClass.h"
 
 using namespace ceammc;
 
-class UIpdArray : public BaseObject {
+class UIpdArray : public BaseUIObject {
 public:
     UIpdArray(const PdArgs& a);
 };

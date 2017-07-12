@@ -17,9 +17,9 @@ using namespace ceammc;
 
 class UIpdSliders;
 
-static void qtpd_update(UIpdSliders* x)
+void UIpdSliders::updateUI()
 {
-    qtpdUpdate((long)x->owner(), AtomList(Atom(x->value())));
+    qtpdUpdate((long)owner(), AtomList(Atom(value())));
 }
 
 float UIpdSliders::value()
@@ -28,7 +28,7 @@ float UIpdSliders::value()
 }
 
 UIpdSliders::UIpdSliders(const PdArgs& a)
-    : BaseObject(a)
+    : BaseUIObject(a)
 {
     _value = 0;
     createOutlet();
@@ -37,7 +37,7 @@ UIpdSliders::UIpdSliders(const PdArgs& a)
 void UIpdSliders::onBang()
 {
     floatTo(0, _value);
-    qtpd_update(this);
+    updateUI();
 }
 
 void UIpdSliders::onFloat(float f)

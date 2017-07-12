@@ -21,9 +21,9 @@ using namespace ceammc;
 
 class UIpdMatrix;
 
-static void qtpd_update(UIpdMatrix* x)
+void UIpdMatrix::updateUI()
 {
-    qtpdUpdate((long)x->owner(), AtomList(Atom(x->value())));
+    qtpdUpdate((long)owner(), AtomList(Atom(value())));
 }
 
 float UIpdMatrix::value()
@@ -32,7 +32,7 @@ float UIpdMatrix::value()
 }
 
 UIpdMatrix::UIpdMatrix(const PdArgs& a)
-    : BaseObject(a)
+    : BaseUIObject(a)
 {
     _value = 0;
     createOutlet();
@@ -41,7 +41,7 @@ UIpdMatrix::UIpdMatrix(const PdArgs& a)
 void UIpdMatrix::onBang()
 {
     floatTo(0, _value);
-    qtpd_update(this);
+    updateUI();
 }
 
 void UIpdMatrix::onFloat(float f)

@@ -17,13 +17,13 @@ using namespace ceammc;
 
 class UIpdMsg;
 
-static void qtpd_update(UIpdMsg* x)
+void UIpdMsg::updateUI()
 {
-    qtpdUpdate((long)x->owner(), x->getMessage());
+    qtpdUpdate((long)owner(), getMessage());
 }
 
 UIpdMsg::UIpdMsg(const PdArgs& a)
-    : BaseObject(a)
+    : BaseUIObject(a)
 {
     createOutlet();
 }
@@ -33,7 +33,7 @@ void UIpdMsg::_setMessage(AtomList list)
     _message.clear();
     if (list.size() != 0) {
         _message = list;
-        qtpd_update(this);
+        updateUI();
     }
 }
 

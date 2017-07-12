@@ -1,13 +1,13 @@
 #ifndef UI_SCRIPT_H
 #define UI_SCRIPT_H
 
-#include <ceammc_object.h>
+#include "baseUIClass.h"
 
 using namespace ceammc;
 
 //typedef void t_symbol;
 
-class UIpdScript : public BaseObject
+class UIpdScript : public BaseUIObject
 {
 private:
     float _value;

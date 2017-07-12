@@ -1,11 +1,11 @@
 #ifndef UI_TOGGLE
 #define UI_TOGGLE
 
-#include <ceammc_object.h>
+#include "baseUIClass.h"
 
 using namespace ceammc;
 
-class UIpdToggle : public BaseObject
+class UIpdToggle : public BaseUIObject
 {
 private:
     float _value;
@@ -18,5 +18,6 @@ public:
 
    float value(){return _value;}
 
+   void updateUI();
 };
 #endif // UI_BANG_H

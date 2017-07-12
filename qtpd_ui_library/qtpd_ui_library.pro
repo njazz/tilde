@@ -33,7 +33,7 @@ SOURCES += \
     src/ui_array.cpp \
     qtpd_ui_library/qtpd_ui_library.cpp \
     src/ui_text.cpp \
-    qtpd_ui_library/baseUIClass.cpp
+    src/baseUIClass.cpp
 
 HEADERS +=\
     ../../pd-server/pure-data-src/src/m_pd.h \
@@ -52,11 +52,12 @@ HEADERS +=\
     src/ui_sliders.h \
     src/ui_array.h \
     src/ui_text.h \
-    qtpd_ui_library/baseUIClass.h
+    src/baseUIClass.h
 
 INCLUDEPATH += ../qtpd_ceammc_lib/src/ \
     ../../pd-server/pure-data-src/src/ \
     ../../pd-server/src/
+    ../../pd-server/qtpd_ui_library/
 
 unix {
     target.path = $$PWD/bin #/usr/local/lib

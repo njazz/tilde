@@ -1,11 +1,11 @@
 #ifndef UI_MATRIX_H
 #define UI_MATRIX_H
 
-#include <ceammc_object.h>
+#include "baseUIClass.h"
 
 using namespace ceammc;
 
-class UIpdMatrix : public BaseObject
+class UIpdMatrix : public BaseUIObject
 {
 private:
     float _value;
@@ -17,6 +17,8 @@ public:
    void onFloat(float);
 
    float value();
+
+   void updateUI();
 
 };
 #endif // UI_BANG_H

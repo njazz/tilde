@@ -14,13 +14,13 @@ using namespace ceammc;
 
 class UIpdBang;
 
-static void qtpd_update(UIpdBang* x)
+void UIpdBang::updateUI()
 {
-    qtpdUpdate((long)x->owner(), AtomList(Atom(gensym("bang"))));
+    qtpdUpdate((long)owner(), AtomList(Atom(gensym("bang"))));
 }
 
 UIpdBang::UIpdBang(const PdArgs& a)
-    : BaseObject(a)
+    : BaseUIObject(a)
 {
     createOutlet();
 }
@@ -28,19 +28,19 @@ UIpdBang::UIpdBang(const PdArgs& a)
 void UIpdBang::onBang()
 {
     bangTo(0);
-    qtpd_update(this);
+    updateUI();
 }
 
 void UIpdBang::onAny(t_symbol*, const AtomList&)
 {
     bangTo(0);
-    qtpd_update(this);
+    updateUI();
 }
 
 void UIpdBang::onFloat(float)
 {
     bangTo(0);
-    qtpd_update(this);
+    updateUI();
 }
 extern "C" void setup_ui0x2ebang()
 {

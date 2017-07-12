@@ -15,9 +15,9 @@ using namespace ceammc;
 
 class UIpdFloat;
 
-static void qtpd_update(UIpdFloat* x)
+void UIpdFloat::updateUI()
 {
-    qtpdUpdate((long)x->owner(), AtomList(Atom(x->value())));
+    qtpdUpdate((long)owner(), AtomList(Atom(value())));
 }
 
 float UIpdFloat::value()
@@ -26,7 +26,7 @@ float UIpdFloat::value()
 }
 
 UIpdFloat::UIpdFloat(const PdArgs& a)
-    : BaseObject(a)
+    : BaseUIObject(a)
 {
     _value = 0;
     createOutlet();
@@ -35,7 +35,7 @@ UIpdFloat::UIpdFloat(const PdArgs& a)
 void UIpdFloat::onBang()
 {
     floatTo(0, _value);
-    qtpd_update(this);
+    updateUI();
 }
 
 void UIpdFloat::onFloat(float f)

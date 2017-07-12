@@ -19,7 +19,7 @@ static void qtpd_update(UIpdArray* x)
 }
 
 UIpdArray::UIpdArray(const PdArgs& a)
-    : BaseObject(a)
+    : BaseUIObject(a)
 {
 
     //createOutlet();
