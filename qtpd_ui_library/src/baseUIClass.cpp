@@ -7,3 +7,6 @@ BaseUIObject::BaseUIObject(const PdArgs& a)
 
     //createOutlet();
 }
+
+void BaseUIObject::updateUI()
+{}

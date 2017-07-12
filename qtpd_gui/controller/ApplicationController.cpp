@@ -46,7 +46,7 @@ ApplicationController::ApplicationController()
 #ifdef WITH_PYTHON
     PythonQt::init(PythonQt::RedirectStdOut);
     PythonQt_QtAll::init();
-//pyWrapper::inst();
+    pyWrapper::inst();
 #endif
 
     QTPD_AUDIOSETTINGS_INIT;

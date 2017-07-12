@@ -15,6 +15,10 @@
 
 #include "PropertyList.h"
 
+#include "UIObjectData.h"
+
+#include "ceammc_atomlist.h"
+
 namespace qtpd {
 
 UIScript::UIScript()
@@ -74,7 +78,7 @@ UIObject* UIScript::createObj(QString data)
     return ret;
 }
 
-UIObject* UIScript::createObject(QString, t_canvas*, QGraphicsView*) { return 0; }
+//UIObject* UIScript::createObject(QString, t_canvas*, QGraphicsView*) { return 0; }
 
 void UIScript::initProperties()
 {
@@ -194,7 +198,7 @@ void UIScript::sync()
 void UIScript::updateUI(AtomList* list)
 {
 
-    _scriptCommon->scriptData()->inputList = UIScriptCommon::AtomListToStringList(list);
+    _scriptCommon->scriptData()->inputList = UIScriptCommon::AtomListToStringList(*list);
     _scriptCommon->btnRun();
 }
 }

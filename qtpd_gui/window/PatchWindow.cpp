@@ -172,6 +172,7 @@ void PatchWindow::createActions()
     putScriptAct = new QAction(tr("Script"), this);
     putScriptAct->setShortcut(tr("Ctrl+7"));
     connect(putScriptAct, &QAction::triggered, this, &PatchWindow::newScriptBox);
+
 #ifndef WITH_PYTHON
     putScriptAct->setEnabled(false);
 #endif

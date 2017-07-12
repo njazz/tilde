@@ -21,7 +21,7 @@ CONFIG(debug, debug|release) {
 CONFIG += static
 
 win32: CONFIG -= WithPython
-macx: CONFIG -= WithPython
+macx: CONFIG += WithPython
 
 WithPython {
 #include(python/build/python.prf)

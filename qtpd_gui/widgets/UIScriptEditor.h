@@ -22,14 +22,10 @@ private:
 public:
     explicit UIScriptEditor(QWidget* parent = 0);
 
-    void resizeEvent(QResizeEvent*)
-    {
-        _textEdit->move(2, 22);
-        _textEdit->setFixedSize(width() - 5, height() - 25);
-    }
+    void resizeEvent(QResizeEvent*);
 
-    UIScriptTextEdit* textEdit() { return _textEdit; }
-    void setTextEdit(UIScriptTextEdit* textEdit) { _textEdit = textEdit; }
+    UIScriptTextEdit* textEdit() ;
+    void setTextEdit(UIScriptTextEdit* textEdit) ;
 
 signals:
 

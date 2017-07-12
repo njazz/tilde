@@ -15,6 +15,8 @@
 
 #include "Preferences.h"
 
+#include "ceammc_atomlist.h"
+
 namespace qtpd {
 
 UIScriptBox::UIScriptBox()
@@ -67,10 +69,10 @@ UIObject* UIScriptBox::createObj(QString data)
 
     return ret;
 }
-UIObject* UIScriptBox::createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
+/*UIObject* UIScriptBox::createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
 {
     return 0;
-} /*
+}*/ /*
 
 {
     qDebug() << "ui.scriptbox";
@@ -242,7 +244,7 @@ void UIScriptBox::sync()
 void UIScriptBox::updateUI(AtomList* list)
 {
 
-    _scriptCommon->scriptData()->inputList = UIScriptCommon::AtomListToStringList(list);
+    _scriptCommon->scriptData()->inputList = UIScriptCommon::AtomListToStringList(*list);
     _scriptCommon->btnRun();
 }
 }

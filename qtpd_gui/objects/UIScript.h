@@ -35,7 +35,7 @@ public:
     explicit UIScript();
 
     static UIObject* createObj(QString data);
-    static UIObject* createObject(QString, t_canvas*, QGraphicsView*);
+    //static UIObject* createObject(QString, t_canvas*, QGraphicsView*);
 
     void initProperties();
     void resizeEvent();
