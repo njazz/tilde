@@ -284,7 +284,9 @@ UIObject* PatchWindowController::createObjectWithoutUndo(string name, QPoint pos
         return 0;
     }
 
-    uiObject->move(pos.x(), pos.y());
+    //uiObject->move(pos.x(), pos.y());
+
+    uiObject->properties()->set("Position", pos);
 
     doCreateObject(uiObject);
 
@@ -403,8 +405,10 @@ void PatchWindowController::restoreUIBoxForSubpatch(PatchWindowController* contr
         return;
     }
 
-    uiObject->move(pos.x(), pos.y());
+    //uiObject->move(pos.x(), pos.y());
+
     uiObject->fromQString(data);
+    uiObject->properties()->set("Position", pos);
 
     // TODO move inside controller->subpatchBox
     uiObject->setServerObject(controller->serverCanvasAsObject());
@@ -989,7 +993,9 @@ void PatchWindowController::slotMoveSelectedBoxes(QPoint eventPos)
             pos.setY(ceil(pos.y() / firstWindow()->canvasView()->gridStep()) * firstWindow()->canvasView()->gridStep());
         }
 
-        w->move(pos);
+        //w->move(pos);
+
+        w->properties()->set("Position", pos);
     }
 
     //todo

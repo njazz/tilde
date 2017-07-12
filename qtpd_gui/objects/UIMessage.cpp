@@ -14,25 +14,26 @@
 
 #include "m_pd.h"
 
+#include "CanvasView.h"
+
 namespace qtpd {
 UIMessage::UIMessage()
 {
-
     deselect();
     _clicked = false;
 
     _editor = new QLineEdit(); //this
 
     _editor->setFixedSize(65 - 5, 18);
-    _editor->move(1, 1);
     _editor->setFont(QFont(PREF_QSTRING("Font"), 11, 0, false));
-    _editor->hide();
+    //_editor->hide();
+
     _editor->setAttribute(Qt::WA_MacShowFocusRect, 0);
     _editor->setFrame(false);
     _editor->setFocusPolicy(Qt::StrongFocus);
 
-    QGraphicsProxyWidget* proxy = new QGraphicsProxyWidget(this);
-    proxy->setWidget(_editor);
+    //    _editorProxy = new QGraphicsProxyWidget(this);
+    //    _editorProxy->setWidget(_editor);
 
     connect(_editor, &QLineEdit::editingFinished, this, &UIMessage::editorDone);
     connect(_editor, &QLineEdit::textEdited, this, &UIMessage::editorChanged);
@@ -65,7 +66,19 @@ void UIMessage::editorChanged()
     int new_w = fm.width(QString(_editor->text())) + 10;
     new_w = (new_w < 25) ? 25 : new_w;
     setWidth(new_w);
+
     _editor->setFixedWidth(width() - 5);
+
+    //resizeEvent();
+    // _editor->setParent((QWidget*)parentCanvasView());
+
+    update();
+    //    _editor->update();
+    //    _editor->setFocus();
+
+    //_editorProxy->resize(_editor->size());
+    //if (!_editorProxy->scene())
+    //   scene()->addItem(_editorProxy);
 }
 
 // ------------------------------------
@@ -88,6 +101,7 @@ UIObject* UIMessage::createObj(QString data)
 
 void UIMessage::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
 {
+    //TEST
     p->setClipRect(option->exposedRect);
 
     QPolygon poly;
@@ -170,6 +184,29 @@ void UIMessage::objectPressEvent(QGraphicsSceneMouseEvent* ev)
 //    }
 //}
 
+void UIMessage::move(float x, float y)
+{
+    UIObject::move(x, y);
+    _editor->move(x + 1, y + 1);
+}
+
+void UIMessage::move(QPoint p)
+{
+    UIObject::move(p);
+    _editor->move(QPoint(p.x() + 1, p.y() + 1));
+}
+
+void UIMessage::move(QPointF pf)
+{
+    UIObject::move(pf);
+    QPoint p = pf.toPoint();
+
+    //p.setX((p.x() + 1) * parentCanvasView()->getZoom());
+    //p.setY((p.y() + 1) * parentCanvasView()->getZoom());
+
+    _editor->move(QPoint(p.x(), p.y()));
+}
+
 void UIMessage::objectReleaseEvent(QGraphicsSceneMouseEvent*)
 {
     //if (!getEditMode())
@@ -178,19 +215,29 @@ void UIMessage::objectReleaseEvent(QGraphicsSceneMouseEvent*)
 }
 
 // ------------------------------------
+void UIMessage::setParentCanvasView(CanvasView* v)
+{
+    UIObject::setParentCanvasView(v);
+
+    _editor->setParent((QWidget*)parentCanvasView());
+    _editor->raise();
+
+    _editor->setAttribute(Qt::WA_MacShowFocusRect, 0);
+    _editor->setFrame(false);
+    _editor->setFocusPolicy(Qt::StrongFocus);
+}
+// ------------------------------------
 
 void UIMessage::fromQString(QString objData)
 {
     // TODO fix!
-    if (objData.split(" ").at(0) == "ui.msg")
-    {
+    if (objData.split(" ").at(0) == "ui.msg") {
         QStringList odL = objData.split(" ");
         odL.removeAt(0);
         objData = odL.join(" ");
     }
 
     // test
-
 
     objectData()->setData(objData);
 
@@ -202,11 +249,11 @@ void UIMessage::setPdMessage(QString message)
     fromQString(message);
     //autoResize();
 
-//    QFont myFont(PREF_QSTRING("Font"), 11);
-//    QFontMetrics fm(myFont);
-//    int new_w = fm.width(QString(_objectDataModel.objectData())) + 10;
-//    new_w = (new_w < 25) ? 25 : new_w;
-//    setWidth(new_w);
+    //    QFont myFont(PREF_QSTRING("Font"), 11);
+    //    QFontMetrics fm(myFont);
+    //    int new_w = fm.width(QString(_objectDataModel.objectData())) + 10;
+    //    new_w = (new_w < 25) ? 25 : new_w;
+    //    setWidth(new_w);
 
     //temporary
     //move
@@ -264,7 +311,6 @@ void UIMessage::autoResize()
         setWidth(w);
         PROPERTY_SET("Size", r.size());
     }
-
 }
 
 std::string UIMessage::asPdFileString()

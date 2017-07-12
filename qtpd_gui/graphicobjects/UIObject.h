@@ -67,7 +67,7 @@ public:
     // ----------------------
 
     CanvasView* parentCanvasView();
-    void setParentCanvasView(CanvasView* v);
+    virtual void setParentCanvasView(CanvasView* v);
 
     PatchWindowController* parentController();
     void setParentController(PatchWindowController* p);

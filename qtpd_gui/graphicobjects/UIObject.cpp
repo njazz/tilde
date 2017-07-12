@@ -179,7 +179,10 @@ void UIObject::propertySize()
 
 void UIObject::propertyPosition()
 {
+    Property* o = (Property*)QObject::sender();
+    QPoint pos = o->asQPoint();
 
+    move(pos);
 }
 //void UIObject::propertyFontSize()
 //{

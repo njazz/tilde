@@ -79,9 +79,9 @@ public:
     QRectF boundingRect() const { return QRectF(0, 0, _size.width(), _size.height()); }
     QPainterPath shape() const;
 
-    void move(float x, float y);
-    void move(QPoint pos);
-    void move(QPointF pos);
+    virtual void move(float x, float y);
+    virtual void move(QPoint pos);
+    virtual void move(QPointF pos);
 
     void paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*){};
 

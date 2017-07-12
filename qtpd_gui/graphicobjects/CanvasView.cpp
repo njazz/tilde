@@ -76,7 +76,7 @@ CanvasView::CanvasView(QGraphicsView* parent)
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 
-    objectMaker()->close();
+    //objectMaker()->close();
 
     _controller = 0;
     _pmProperties = 0;

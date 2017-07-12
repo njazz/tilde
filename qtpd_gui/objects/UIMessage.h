@@ -25,6 +25,8 @@ private:
     bool _clicked;
     QLineEdit* _editor;
 
+    //QGraphicsProxyWidget* _editorProxy;
+
 public:
     explicit UIMessage();
 
@@ -41,6 +43,12 @@ public:
 
     // ------------------------------------
 
+    virtual void move(float x, float y);
+    virtual void move(QPoint p);
+    virtual void move(QPointF p);
+
+    virtual void setParentCanvasView(CanvasView* v);
+
     void fromQString(QString objData);
 
     void setPdMessage(QString message);
@@ -50,6 +58,8 @@ public:
     virtual std::string asPdFileString();
 
     virtual void autoResize();
+
+
 
 private slots:
     void editorDone();
