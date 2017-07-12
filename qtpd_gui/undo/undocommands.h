@@ -53,7 +53,7 @@ class undoCreatePatchcord : public QUndoCommand {
 public:
     undoCreatePatchcord(PatchWindowController* ctrl, UIObject* obj1, int out1, UIObject* obj2, int in2);
 
-//    UIPatchcord* patchcord();
+    //    UIPatchcord* patchcord();
 
     void undo();
     void redo();
@@ -62,8 +62,12 @@ public:
 // -------
 
 class undoChangeProperty : public QUndoCommand {
+    Property* _property;
+    Property* _oldValue;
+    Property* _newValue;
+
 public:
-    undoChangeProperty(PropertyList* list, Property* property);
+    undoChangeProperty(PropertyList* list, Property* property, Property* oldValue, Property* newValue);
 
     void undo();
     void redo();
@@ -78,7 +82,7 @@ class undoDeleteObject : public QUndoCommand {
     QPoint* _pos;
 
 public:
-    undoDeleteObject(PatchWindowController* ctrl,UIObject* object);
+    undoDeleteObject(PatchWindowController* ctrl, UIObject* object);
 
     void undo();
     void redo();
@@ -93,14 +97,6 @@ public:
     void undo();
     void redo();
 };
-
-//class undoChangeProperty : public QUndoCommand {
-//public:
-//    undoAddObject(PropertyList* list, Property* property);
-
-//    void undo();
-//    void redo();
-//};
 }
 
 #endif // UNDOCOMMANDS_H

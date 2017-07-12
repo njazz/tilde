@@ -26,6 +26,9 @@
 
 #include "QtColorPicker/include/color_selector.hpp"
 
+#include "undocommands.h"
+#include "PatchWindowController.h"
+
 namespace qtpd {
 
 void PropertiesWindow::loadTableWidget(QString pName, QTableWidget* tv)
@@ -269,8 +272,18 @@ void PropertiesWindow::editedText()
     QLineEdit* sender = (QLineEdit*)QObject::sender();
     QString pname = _propertyNames[sender];
 
+    Property* oldValue = new Property(*_propertyList->get(pname));
     // TODO fix
     _propertyList->set(pname.toStdString(), sender->text().toStdString());
+
+    Property* newValue = new Property(*_propertyList->get(pname));
+
+    // UNDO
+//    undoChangeProperty* undo = new undoChangeProperty(_propertyList,_propertyList->get(pname),oldValue, newValue);
+//    if (_patchController->undoStack())
+//    _patchController->undoStack()->push(undo);
+
+    // signalEnableUndo(true);
 };
 
 void PropertiesWindow::editedColor()
@@ -333,4 +346,9 @@ void PropertiesWindow::editedStringList(int index, int)
 
     connect(sender, SIGNAL(cellChanged(int, int)), this, SLOT(editedStringList(int, int)));
 };
+
+void PropertiesWindow::setWindowController(PatchWindowController* c)
+{
+    _patchController = c;
+}
 }

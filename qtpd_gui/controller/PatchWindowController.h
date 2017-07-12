@@ -152,6 +152,8 @@ public:
     void sizeBoxShow(UIObject* object);
     void sizeBoxHide();
 
+    void enableUndo(bool v);
+
 public slots:
     void menuSave();
     void menuSaveAs();

@@ -15,6 +15,8 @@ class QTableWidget;
 
 namespace qtpd {
 
+class PatchWindowController;
+
 ////
 /// \brief Properties window class
 ///
@@ -28,9 +30,13 @@ private:
 
     void loadTableWidget(QString pName, QTableWidget* tv);
 
+    PatchWindowController* _patchController;
+
 public:
     PropertiesWindow(){};
     explicit PropertiesWindow(PropertyList* plist);
+
+    void setWindowController(PatchWindowController* c);
 
 public slots:
     // spaghetti time

@@ -533,6 +533,7 @@ void PatchWindowController::menuRedo()
 void PatchWindowController::openPropertiesWindow()
 {
     PropertiesWindow* pw = new PropertiesWindow(_canvasData->properties());
+    pw->setWindowController(this);
     pw->show();
 }
 
@@ -808,6 +809,11 @@ void PatchWindowController::sizeBoxHide()
     //        firstWindow()->canvasView()->scene()->removeItem(firstWindow()->canvasView()->sizeBox());
 
     //    firstWindow()->canvasView()->sizeBox()->hide();
+}
+
+void PatchWindowController::enableUndo(bool v)
+{
+    emit signalEnableUndo(v);
 }
 
 void PatchWindowController::slotObjectHoverEnter()

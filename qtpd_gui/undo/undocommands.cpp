@@ -4,6 +4,8 @@
 #include "UIObject.h"
 #include <QDebug>
 
+#include "Property.h"
+
 namespace qtpd {
 
 undoCreateObject::undoCreateObject(PatchWindowController* ctrl, QString objectData, QPoint pos)
@@ -12,6 +14,8 @@ undoCreateObject::undoCreateObject(PatchWindowController* ctrl, QString objectDa
     _objectData = objectData;
     _pos = new QPoint(pos);
     _object = 0;
+
+    setText("Create Object");
 };
 
 void undoCreateObject::undo()
@@ -39,6 +43,8 @@ undoCreatePatchcord::undoCreatePatchcord(PatchWindowController* ctrl, UIObject* 
     _obj2 = obj2;
     _in2 = in2;
     _p = 0;
+
+    setText("Create Patchcord");
 };
 
 void undoCreatePatchcord::undo()
@@ -57,10 +63,21 @@ void undoCreatePatchcord::redo()
 
 // -------
 
-undoChangeProperty::undoChangeProperty(PropertyList* list, Property* property){};
+undoChangeProperty::undoChangeProperty(PropertyList* list, Property* property, Property* oldValue, Property* newValue)
+{
+    _property = property;
+    _oldValue = oldValue;
+    _newValue = newValue;
 
-void undoChangeProperty::undo(){};
-void undoChangeProperty::redo(){};
+    setText("Change Property");
+};
+
+void undoChangeProperty::undo(){
+    *_property = *_oldValue;
+};
+void undoChangeProperty::redo(){
+    *_property = *_newValue;
+};
 
 // -------
 
@@ -71,6 +88,8 @@ undoDeleteObject::undoDeleteObject(PatchWindowController* ctrl, UIObject* object
     _objectData = object->toQString();
     _pos = new QPoint(object->pos().toPoint());
     //qDebug() << "undo qstring" << _objectData;
+
+    setText("Delete Object");
 };
 
 void undoDeleteObject::undo()

@@ -10,6 +10,8 @@
 #include "FileParser.h"
 #include "PatchWindowController.h"
 
+#include <QUndoCommand>
+
 namespace qtpd {
 PatchWindow::PatchWindow()
 {
@@ -614,11 +616,47 @@ void PatchWindow::setGridSnap()
 void PatchWindow::slotEnableRedo(bool v)
 {
     redoAct->setEnabled(v);
+
+//    if (_controller->undoStack()->count()>0) {
+//        QString title = _controller->undoStack()->command(_controller->undoStack()->count()-1)->text();
+
+//        undoAct->setText("Undo " + title);
+//    }
+
+//    if (_controller->undoStack()->count()>1) {
+//        QString title = _controller->undoStack()->command(_controller->undoStack()->count()-2)->text();
+
+//        redoAct->setText("Redo " + title);
+//    }
+//    else
+//    {
+//       undoAct->setText("Can't Redo");
+//    }
 }
 
 void PatchWindow::slotEnableUndo(bool v)
 {
     undoAct->setEnabled(v);
+
+    if (_controller->undoStack()->count()>0) {
+        QString title = _controller->undoStack()->command(_controller->undoStack()->count()-1)->text();
+
+        undoAct->setText("Undo " + title);
+    }
+    else
+    {
+       undoAct->setText("Can't Undo");
+    }
+
+//    if (_controller->undoStack()->count()>1) {
+//        QString title = _controller->undoStack()->command(_controller->undoStack()->count()-2)->text();
+
+//        redoAct->setText("Redo " + title);
+//    }
+//    else
+//    {
+//       redoAct->setText("Can't Redo");
+//    }
 }
 
 // ==============================
