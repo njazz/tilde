@@ -81,6 +81,8 @@ private:
     QAction* zoomInAct;
     QAction* zoomOutAct;
 
+    QAction* zoom100Act;
+
     CanvasView* _canvasView;
 
 private slots:
@@ -144,6 +146,8 @@ public:
     //
     void zoomIn();
     void zoomOut();
+
+    void zoom100();
 };
 }
 

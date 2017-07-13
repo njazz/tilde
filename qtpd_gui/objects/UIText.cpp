@@ -125,7 +125,7 @@ void UIText::initProperties()
     properties()->create("TextColor", "Color", "0.1", QColor(0, 0, 0));
     properties()->create("BackgroundColor", "Color", "0.1", QColor(255, 255, 255, 0));
 
-    PROPERTY_SET("BorderColor", QColor(0,0,0,0));
+    PROPERTY_SET("BorderColor", QColor(0, 0, 0, 0));
 
     PROPERTY_LISTENER("TextColor", &UIText::colorPropertyChanged);
     PROPERTY_LISTENER("BackgroundColor", &UIText::colorPropertyChanged);
@@ -155,12 +155,12 @@ void UIText::autoResize()
     QFont myFont(PREF_QSTRING("Font"), fontSize);
     QFontMetrics fm(myFont);
 
-    setWidth((int)fm.width(properties()->get("Text")->asQString()) + 5);
+    setWidth((int)fm.width(properties()->get("Text")->asQString()) + 0);
     if (width() < objectData()->minimumBoxWidth())
         setWidth(objectData()->minimumBoxWidth());
 
     //duplicate?
-    int new_w = fm.width(properties()->get("Text")->asQString()) + 20;
+    int new_w = fm.width(properties()->get("Text")->asQString()) + 0;
     new_w = (new_w < 25) ? 25 : new_w;
 
     int new_h = fm.boundingRect(QRect(0, 0, new_w, 100), 0, properties()->get("Text")->asQString()).height() + 7;

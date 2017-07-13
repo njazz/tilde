@@ -16,7 +16,6 @@ namespace qtpd {
 PatchWindow::PatchWindow()
 {
 
-
     _scroll = new QScrollArea(this);
     _canvasView = new CanvasView((QGraphicsView*)this);
     _canvasView->setController(_controller);
@@ -50,8 +49,6 @@ PatchWindow::PatchWindow()
     //objectMaker->setParent(canvas);
 
     connect(_canvasView->objectMaker(), &ObjectMaker::objectMakerDoneSignal, this, &PatchWindow::objectMakerDone);
-
-
 
     // TODO
     //connect subpatch creation routine
@@ -262,6 +259,10 @@ void PatchWindow::createActions()
     zoomOutAct = new QAction(tr("Zoom out"), this);
     zoomOutAct->setShortcut(tr("Ctrl+-"));
     connect(zoomOutAct, &QAction::triggered, this, &PatchWindow::zoomOut);
+
+    zoom100Act = new QAction(tr("Zoom 100%"), this);
+    zoom100Act->setShortcut(tr("Ctrl+="));
+    connect(zoom100Act, &QAction::triggered, this, &PatchWindow::zoom100);
 }
 
 void PatchWindow::createMenus()
@@ -330,6 +331,7 @@ void PatchWindow::createMenus()
     arrangeMenu->addSeparator();
     arrangeMenu->addAction(zoomInAct);
     arrangeMenu->addAction(zoomOutAct);
+    arrangeMenu->addAction(zoom100Act);
 }
 
 //PatchWindow:: PatchWindow()
@@ -512,13 +514,19 @@ void PatchWindow::setFileName(QString fname)
 void PatchWindow::zoomIn()
 {
     canvasView()->setZoom(1.1);
-    qDebug() << "zoom" << canvasView()->getZoom();
+    //qDebug() << "zoom" << canvasView()->getZoom();
 }
 
 void PatchWindow::zoomOut()
 {
     canvasView()->setZoom(1 / 1.1);
-    qDebug() << "zoom" << canvasView()->getZoom();
+    //qDebug() << "zoom" << canvasView()->getZoom();
+}
+
+void PatchWindow::zoom100()
+{
+    canvasView()->setZoom(1);
+    //qDebug() << "zoom" << canvasView()->getZoom();
 }
 
 // ---------
@@ -625,46 +633,44 @@ void PatchWindow::slotEnableRedo(bool v)
 {
     redoAct->setEnabled(v);
 
-//    if (_controller->undoStack()->count()>0) {
-//        QString title = _controller->undoStack()->command(_controller->undoStack()->count()-1)->text();
+    //    if (_controller->undoStack()->count()>0) {
+    //        QString title = _controller->undoStack()->command(_controller->undoStack()->count()-1)->text();
 
-//        undoAct->setText("Undo " + title);
-//    }
+    //        undoAct->setText("Undo " + title);
+    //    }
 
-//    if (_controller->undoStack()->count()>1) {
-//        QString title = _controller->undoStack()->command(_controller->undoStack()->count()-2)->text();
+    //    if (_controller->undoStack()->count()>1) {
+    //        QString title = _controller->undoStack()->command(_controller->undoStack()->count()-2)->text();
 
-//        redoAct->setText("Redo " + title);
-//    }
-//    else
-//    {
-//       undoAct->setText("Can't Redo");
-//    }
+    //        redoAct->setText("Redo " + title);
+    //    }
+    //    else
+    //    {
+    //       undoAct->setText("Can't Redo");
+    //    }
 }
 
 void PatchWindow::slotEnableUndo(bool v)
 {
     undoAct->setEnabled(v);
 
-    if (_controller->undoStack()->count()>0) {
-        QString title = _controller->undoStack()->command(_controller->undoStack()->count()-1)->text();
+    if (_controller->undoStack()->count() > 0) {
+        QString title = _controller->undoStack()->command(_controller->undoStack()->count() - 1)->text();
 
         undoAct->setText("Undo " + title);
-    }
-    else
-    {
-       undoAct->setText("Can't Undo");
+    } else {
+        undoAct->setText("Can't Undo");
     }
 
-//    if (_controller->undoStack()->count()>1) {
-//        QString title = _controller->undoStack()->command(_controller->undoStack()->count()-2)->text();
+    //    if (_controller->undoStack()->count()>1) {
+    //        QString title = _controller->undoStack()->command(_controller->undoStack()->count()-2)->text();
 
-//        redoAct->setText("Redo " + title);
-//    }
-//    else
-//    {
-//       redoAct->setText("Can't Redo");
-//    }
+    //        redoAct->setText("Redo " + title);
+    //    }
+    //    else
+    //    {
+    //       redoAct->setText("Can't Redo");
+    //    }
 }
 
 // ==============================
