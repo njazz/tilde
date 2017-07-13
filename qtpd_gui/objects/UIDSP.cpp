@@ -9,6 +9,8 @@
 
 #include "UIObjectData.h"
 
+#include "ceammc_atomlist.h"
+
 namespace qtpd {
 
 UIDSP::UIDSP()
@@ -84,7 +86,7 @@ void UIDSP::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
     float posx = width() * .4;
     float posy = height() / 2;
 
-    QFont font (PREF_QSTRING("Font"), 8, 0, false);
+    QFont font(PREF_QSTRING("Font"), 8, 0, false);
     font.setPixelSize(8);
 
     p->setFont(font);
@@ -113,5 +115,11 @@ void UIDSP::objectPressEvent(QGraphicsSceneMouseEvent* ev)
 
         update();
     }
+}
+
+void UIDSP::updateUI(AtomList* l)
+{
+    _value = l->at(0).asInt();
+    update();
 }
 }

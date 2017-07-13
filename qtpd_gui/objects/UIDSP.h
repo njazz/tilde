@@ -40,6 +40,8 @@ public:
     // ---------------
 
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*);
+
+    virtual void updateUI(AtomList* l);
 };
 }
 
