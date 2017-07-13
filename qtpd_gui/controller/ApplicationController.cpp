@@ -35,8 +35,6 @@ ApplicationController::ApplicationController()
 {
     qDebug("new app controller");
 
-    //_server = new TheServer();
-
     _localServer = 0;
 
     ObjectLoader::inst().loadObjects();
@@ -52,26 +50,18 @@ ApplicationController::ApplicationController()
     QTPD_AUDIOSETTINGS_INIT;
 
     _serverWorker = new ServerWorker();
-
-    //connect(this, &ApplicationController::getLocalServer, _serverWorker, &ServerWorker::getLocalServerSlot);
-
     _serverThread = new QThread();
 
     connect(_serverThread, &QThread::started, _serverWorker, &ServerWorker::start);
     connect(_serverThread, &QThread::finished, _serverWorker, &ServerWorker::stop);
 
-    //connect(_serverWorker, &ServerWorker::setServer, this, &ApplicationController::setServer);
-
     _serverWorker->moveToThread(_serverThread);
     _serverThread->start();
 
-//_mainServerInstance = _server->createInstance();
-
 #ifdef WITH_PYTHON
     pyWrapper::inst().setAppController(this);
-    PythonQtObjectPtr mainContext = pyWrapper::inst().newContext(); //PythonQt::self()->getMainModule();
+    PythonQtObjectPtr mainContext = pyWrapper::inst().newContext();
     _pythonConsole = new PythonQtScriptingConsole(NULL, mainContext);
-//qDebug("pyConsole %lu", (long)_pythonConsole);
 #endif
 
     _consoleObserver = new PdWindowConsoleObserver;
@@ -86,11 +76,9 @@ ApplicationController::ApplicationController()
     _consoleObserver->setWindow(_pdWindow);
 
     _localServer->firstInstance()->post("Server started");
-    //_localServer->firstInstance()->setVerboseLevel(5);
 
-    //ServerInstance::setVerboseLevel(4);
     QString tilde = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).at(0);
-    _localServer->firstInstance()->loadLibrary(QString(tilde+"/Qtpd/Libraries/qtpd_ui").toStdString());
+    _localServer->firstInstance()->loadLibrary(QString(tilde + "/Qtpd/Libraries/qtpd_ui").toStdString());
 
     FileParser::setAppController(this);
 
@@ -107,8 +95,16 @@ ApplicationController::ApplicationController()
     Preferences::inst().create("Classes", "Folders", "0.1", docFolder + "/Qtpd/Classes");
     Preferences::inst().create("Libraries", "Folders", "0.1", docFolder + "/Qtpd/Libraries");
 
+    Preferences::inst().get("Externals")->setType(ptStringList);
+    Preferences::inst().get("Scripts")->setType(ptStringList);
+    Preferences::inst().get("Help")->setType(ptStringList);
+    Preferences::inst().get("Patches")->setType(ptStringList);
+    Preferences::inst().get("Classes")->setType(ptStringList);
+    Preferences::inst().get("Libraries")->setType(ptStringList);
+
     //temporary fix
     Preferences::inst().create("Paths", "Folders", "0.1", docFolder);
+    Preferences::inst().get("Paths")->setType(ptStringList);
 
     std::string extPath = Preferences::inst().get("Externals")->asStdString();
     std::string extPath1 = extPath + "/ceammc";
@@ -152,24 +148,20 @@ ApplicationController::ApplicationController()
 
 ServerInstance* ApplicationController::mainServerInstance()
 {
+    //?
     while (!_localServer) {
         _localServer = _serverWorker->localServer();
     }
-
-    qDebug() << "server @appc " << _localServer;
 
     return _localServer->firstInstance();
 }
 
 void ApplicationController::newPatchWindowController()
 {
-    qDebug("new patch from menu >>");
-    //return
+
     PatchWindowController* newP = new PatchWindowController(this);
-    //newP->setAppController(this);
     newP->setFileName(newFileName());
     newP->firstWindow()->show();
-    qDebug("<<");
 };
 
 void ApplicationController::openFileDialog()
@@ -187,8 +179,6 @@ void ApplicationController::openFileDialog()
 
 void ApplicationController::pdWindow()
 {
-    //PdWindow::inst()->setAppController(_appController);
-
     if (_pdWindow->isVisible())
         _pdWindow->hide();
     else
@@ -234,7 +224,6 @@ void ApplicationController::audioSettingsWindow()
 void ApplicationController::dspOn()
 {
     qDebug() << "dsp on";
-
     mainServerInstance()->dspOn();
 
     //todo DSP observer
@@ -248,7 +237,6 @@ void ApplicationController::dspOff()
 
 void ApplicationController::createRecentMenu()
 {
-
     QStringList l = *_recentFiles->list();
 
     //qDebug() << l;

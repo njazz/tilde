@@ -17,6 +17,8 @@ extern void setup_ui0x2esliders();
 extern void setup_ui0x2etoggle();
 extern void setup_ui0x2etext();
 
+extern void setup_ui0x2edsp();
+
 extern void setup_ui0x2earray();
 
 }
@@ -38,6 +40,8 @@ extern "C" void setup() //0x2e //qtpd_ui_
     setup_ui0x2earray();
 
     setup_ui0x2etext();
+
+    setup_ui0x2edsp();
 }
 
 

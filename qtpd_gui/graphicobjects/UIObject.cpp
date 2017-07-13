@@ -127,7 +127,7 @@ void UIObject::initProperties()
 {
     //connect(_objectDataModel.properties(), &PropertyList::propertyChangedSignal, this, &UIObject::propertyChanged);
 
-    objectData()->properties()->create("Size", "Box", "0.1", boundingRect().size());
+    objectData()->properties()->create("Size", "Box", "0.1", QSize(objectData()->minimumBoxWidth(), objectData()->minimumBoxHeight()));
     objectData()->properties()->create("Position", "Box", "0.1", pos());
 
     objectData()->properties()->create("FontSize", "Box", "0.1", 11.);
@@ -576,7 +576,7 @@ void UIObject::resizeEvent() //QGraphicsSceneResizeEvent *event)
 
 void UIObject::hoverEnterEvent(QGraphicsSceneHoverEvent*)
 {
-    if (getEditMode() == em_Unlocked)
+    if ((getEditMode() == em_Unlocked) && (_objectData->objectSizeMode() != os_Fixed))
         _sizeBox->show();
 
     //emit signalObjectHoverEnter();

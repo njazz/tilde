@@ -14,6 +14,8 @@ UIText::UIText()
 
     //setSize(65, 20);
 
+    objectData()->setObjectSize(os_Free, 80, 20);
+
     initProperties();
 
     deselect();
@@ -32,9 +34,10 @@ UIText::UIText()
     connect(_editor, &QPlainTextEdit::textChanged, this, &UIText::editorChanged);
 
     _editor->installEventFilter(this);
-    objectData()->setObjectSize(os_Free, 80, 1);
 
-    resizeEvent();
+    //resizeEvent();
+
+    properties()->set("Size", properties()->get("Size")->asQSize());
 }
 
 ///////
@@ -136,8 +139,6 @@ void UIText::initProperties()
     PROPERTY_LISTENER("Text", &UIText::textPropertyChanged);
 
     PROPERTY_LISTENER("AutoResizeToText", &UIText::propertyAutoResize);
-
-    //PROPERTY_DISCONNECT_LISTENER("FontSize", &UIObject::propertySize);
 };
 
 ///////////////////
@@ -203,9 +204,9 @@ void UIText::fromQString(QString objData)
 
     //PROPERTY_SET("Text", list);
 
-//    qDebug() << properties()->get("Text") << properties()->get("Size") << "||";
+    //    qDebug() << properties()->get("Text") << properties()->get("Size") << "||";
 
-//    PROPERTY_SET("Size",properties()->get("Size")->asQSize() );
+    //    PROPERTY_SET("Size",properties()->get("Size")->asQSize() );
 
     QString data = properties()->get("Text")->asQString().split("\\n ").join("\n");
 
@@ -257,7 +258,6 @@ void UIText::sync()
 
 void UIText::propertyFontSize()
 {
-
 }
 
 void UIText::textPropertyChanged()
@@ -272,13 +272,10 @@ void UIText::colorPropertyChanged()
 void UIText::propertyAutoResize()
 {
 
-    if (!properties()->get("AutoResizeToText")->asBool())
-    {
-       objectData()->setObjectSize(os_NoAutoResize,objectData()->minimumBoxWidth(),objectData()->minimumBoxHeight());
-    }
-    else
-    {
-        objectData()->setObjectSize(os_Free,objectData()->minimumBoxWidth(),objectData()->minimumBoxHeight());
+    if (!properties()->get("AutoResizeToText")->asBool()) {
+        objectData()->setObjectSize(os_NoAutoResize,80, 1);
+    } else {
+        objectData()->setObjectSize(os_Free, 80, 20);
         autoResize();
     }
 }

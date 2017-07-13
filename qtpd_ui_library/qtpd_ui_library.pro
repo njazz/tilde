@@ -33,7 +33,8 @@ SOURCES += \
     src/ui_array.cpp \
     qtpd_ui_library/qtpd_ui_library.cpp \
     src/ui_text.cpp \
-    src/baseUIClass.cpp
+    src/baseUIClass.cpp \
+    src/ui_dsp.cpp
 
 HEADERS +=\
     ../../pd-server/pure-data-src/src/m_pd.h \
@@ -55,7 +56,8 @@ HEADERS +=\
     src/ui_array.h \
     src/ui_text.h \
     src/baseUIClass.h \
-    qtpd_ui_library/qtpd_ui_library.h
+    qtpd_ui_library/qtpd_ui_library.h \
+    src/ui_dsp.h
 
 INCLUDEPATH += ../qtpd_ceammc_lib/src/ \
     ../../pd-server/pure-data-src/src/ \
