@@ -76,6 +76,7 @@ var searchData=
   ['os_5ffixedheight',['os_FixedHeight',['../namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3a71f8acecda7a72aa0247ed121da53c1e',1,'qtpd']]],
   ['os_5ffixedwidth',['os_FixedWidth',['../namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3aa94bc22d356bbb877198efa9c84c2217',1,'qtpd']]],
   ['os_5ffree',['os_Free',['../namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3a57b863bd243ae8d733c28c3ac9b6c631',1,'qtpd']]],
+  ['os_5fnoautoresize',['os_NoAutoResize',['../namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3a279a188ebe9f5a3cadf09ee93020a44c',1,'qtpd']]],
   ['os_5fsquare',['os_Square',['../namespaceqtpd.html#a86591890dbdc21ee6f482edc5b5726d3a6f0eb67fd8384b3f74a50f6f8b1950b1',1,'qtpd']]],
   ['out1',['out1',['../structqtpd_1_1__patchcord_as_numbers.html#a83802e91adfcaebeabe14bd917438471',1,'qtpd::_patchcordAsNumbers']]],
   ['outbang',['outBang',['../classqtpd_1_1_o_p_outputs.html#ad7916bf43f23cd09ce7ce6ccf30fda95',1,'qtpd::OPOutputs']]],

@@ -104,6 +104,7 @@ Namespaces</h2></td></tr>
 <tr><td colspan="2"><h2><a name="define-members"></a>
 Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_property_list_8h.html#ac912e7907abcb03f00d5011566dd2bba">PROPERTY_LISTENER</a>(x, y)&#160;&#160;&#160;connect(objectData()-&gt;properties()-&gt;get(x), &amp;Property::changed, this, y)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_property_list_8h.html#aa54cd9eeed894075652d44c41ba861fc">PROPERTY_DISCONNECT_LISTENER</a>(x, y)&#160;&#160;&#160;disconnect(objectData()-&gt;properties()-&gt;get(x), &amp;Property::changed, this, y)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_property_list_8h.html#a407a544835122df7578d61ffad7d9ea9">PROPERTY_SET</a>(x, y)&#160;&#160;&#160;objectData()-&gt;properties()-&gt;set(x, y)</td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -117,6 +118,33 @@ Property * &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a 
 UIPropertyData * &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceqtpd.html#a5de80d70f22f21b977f7595cfa4b714b">qtpd::UIPropertyGroupIterator</a></td></tr>
 </table>
 <hr/><h2>Define Documentation</h2>
+<a class="anchor" id="aa54cd9eeed894075652d44c41ba861fc"></a><!-- doxytag: member="PropertyList.h::PROPERTY_DISCONNECT_LISTENER" ref="aa54cd9eeed894075652d44c41ba861fc" args="(x, y)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="_property_list_8h.html#aa54cd9eeed894075652d44c41ba861fc">PROPERTY_DISCONNECT_LISTENER</a></td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">y&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;disconnect(objectData()-&gt;properties()-&gt;get(x), &amp;Property::changed, this, y)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ac912e7907abcb03f00d5011566dd2bba"></a><!-- doxytag: member="PropertyList.h::PROPERTY_LISTENER" ref="ac912e7907abcb03f00d5011566dd2bba" args="(x, y)" -->
 <div class="memitem">
 <div class="memproto">
@@ -189,7 +217,7 @@ UIPropertyData * &gt;::iterator&#160;</td><td class="memItemRight" valign="botto
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 13 2017 14:21:21 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jul 13 2017 21:15:31 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

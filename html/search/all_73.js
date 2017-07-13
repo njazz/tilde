@@ -89,6 +89,7 @@ var searchData=
   ['setcontroller',['setController',['../classqtpd_1_1_canvas_view.html#a8eb4b89e705a5c2860839e2a065f6703',1,'qtpd::CanvasView::setController()'],['../classqtpd_1_1_patch_window.html#a9f83e611efcb887018a683b9386d9815',1,'qtpd::PatchWindow::setController()']]],
   ['setdata',['setData',['../classqtpd_1_1_u_i_object_data.html#a6bfffb4f3e721eac47b713da98b26c19',1,'qtpd::UIObjectData']]],
   ['setdefaultdisplayflags',['setDefaultDisplayFlags',['../class_color___wheel.html#a7e76031e3bbbce6e741d3e83e626444d',1,'Color_Wheel']]],
+  ['setdefaulttype',['setDefaultType',['../classqtpd_1_1_property.html#a3f062553f46f6c01d1c8ef7ca5040c52',1,'qtpd::Property']]],
   ['setdialogmodality',['setDialogModality',['../class_color___selector.html#ab022cb40e55eeb5a4b4962b2b7c46e95',1,'Color_Selector']]],
   ['setdisplayflag',['setDisplayFlag',['../class_color___wheel.html#a690e257a415af9c23a999f93bb8dbf0a',1,'Color_Wheel']]],
   ['setdisplayflags',['setDisplayFlags',['../class_color___wheel.html#aa74b97e8f7bfeb826296994eaf0e253d',1,'Color_Wheel']]],

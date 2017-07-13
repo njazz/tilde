@@ -157,41 +157,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00077"></a>00077 
 <a name="l00078"></a>00078     <span class="comment">// -------</span>
 <a name="l00079"></a>00079 
-<a name="l00080"></a>00080     QVariant data();
-<a name="l00081"></a>00081     QVariant defaultData();
-<a name="l00082"></a>00082     QString group();
-<a name="l00083"></a>00083     QString version();
-<a name="l00084"></a>00084     <a class="code" href="namespaceqtpd.html#a4755ed0e035538f41ccaa52507907924">UIPropertyType</a> type();
-<a name="l00085"></a>00085 
-<a name="l00086"></a>00086     <span class="comment">// -------</span>
-<a name="l00087"></a>00087 
-<a name="l00088"></a>00088     QSize asQSize();
-<a name="l00089"></a>00089     QSizeF asQSizeF();
-<a name="l00090"></a>00090     QPoint asQPoint();
-<a name="l00091"></a>00091     QPointF asQPointF();
-<a name="l00092"></a>00092     <span class="keywordtype">float</span> asFloat();
-<a name="l00093"></a>00093     <span class="keywordtype">int</span> asInt();
-<a name="l00094"></a>00094     <span class="keywordtype">bool</span> asBool();
-<a name="l00095"></a>00095     <span class="keywordtype">float</span> asFontSize();
-<a name="l00096"></a>00096     QColor asQColor();
-<a name="l00097"></a>00097     QStringList asQStringList();
-<a name="l00098"></a>00098     <span class="keywordtype">string</span> asStdString();
-<a name="l00099"></a>00099     QString asQString();
-<a name="l00100"></a>00100 
-<a name="l00101"></a>00101     QString asPdSaveString();
-<a name="l00102"></a>00102 
-<a name="l00103"></a>00103     <span class="comment">// -------</span>
+<a name="l00080"></a>00080     <span class="keywordtype">void</span> setDefaultType(<a class="code" href="namespaceqtpd.html#a4755ed0e035538f41ccaa52507907924">UIPropertyType</a> type);
+<a name="l00081"></a>00081 
+<a name="l00082"></a>00082     <span class="comment">// -------</span>
+<a name="l00083"></a>00083 
+<a name="l00084"></a>00084     QVariant data();
+<a name="l00085"></a>00085     QVariant defaultData();
+<a name="l00086"></a>00086     QString group();
+<a name="l00087"></a>00087     QString version();
+<a name="l00088"></a>00088     <a class="code" href="namespaceqtpd.html#a4755ed0e035538f41ccaa52507907924">UIPropertyType</a> type();
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090     <span class="comment">// -------</span>
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092     QSize asQSize();
+<a name="l00093"></a>00093     QSizeF asQSizeF();
+<a name="l00094"></a>00094     QPoint asQPoint();
+<a name="l00095"></a>00095     QPointF asQPointF();
+<a name="l00096"></a>00096     <span class="keywordtype">float</span> asFloat();
+<a name="l00097"></a>00097     <span class="keywordtype">int</span> asInt();
+<a name="l00098"></a>00098     <span class="keywordtype">bool</span> asBool();
+<a name="l00099"></a>00099     <span class="keywordtype">float</span> asFontSize();
+<a name="l00100"></a>00100     QColor asQColor();
+<a name="l00101"></a>00101     QStringList asQStringList();
+<a name="l00102"></a>00102     <span class="keywordtype">string</span> asStdString();
+<a name="l00103"></a>00103     QString asQString();
 <a name="l00104"></a>00104 
-<a name="l00105"></a>00105     <span class="comment">// todo move?</span>
-<a name="l00106"></a>00106     <span class="keyword">static</span> QString escapeString(QString input);
-<a name="l00107"></a>00107     <span class="keyword">static</span> QString unescapeString(QString input);
+<a name="l00105"></a>00105     QString asPdSaveString();
+<a name="l00106"></a>00106 
+<a name="l00107"></a>00107     <span class="comment">// -------</span>
 <a name="l00108"></a>00108 
-<a name="l00109"></a>00109 signals:
-<a name="l00110"></a>00110     <span class="keywordtype">void</span> changed();
-<a name="l00111"></a>00111 };
-<a name="l00112"></a>00112 }
-<a name="l00113"></a>00113 
-<a name="l00114"></a>00114 <span class="preprocessor">#endif // CM_PROPERTY_H</span>
+<a name="l00109"></a>00109     <span class="comment">// todo move?</span>
+<a name="l00110"></a>00110     <span class="keyword">static</span> QString escapeString(QString input);
+<a name="l00111"></a>00111     <span class="keyword">static</span> QString unescapeString(QString input);
+<a name="l00112"></a>00112 
+<a name="l00113"></a>00113 signals:
+<a name="l00114"></a>00114     <span class="keywordtype">void</span> changed();
+<a name="l00115"></a>00115 };
+<a name="l00116"></a>00116 }
+<a name="l00117"></a>00117 
+<a name="l00118"></a>00118 <span class="preprocessor">#endif // CM_PROPERTY_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -210,7 +214,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 13 2017 14:21:21 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jul 13 2017 21:15:31 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

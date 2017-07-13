@@ -86,7 +86,7 @@ var searchData=
   ['t_5fsym',['t_sym',['../struct__template.html#a275bb91d82b44b6ab12d4d06c6c16e00',1,'_template']]],
   ['t_5fsymbol',['t_symbol',['../m__pd_8h.html#a2db18d99dc6ea00736f0a356270160ba',1,'m_pd.h']]],
   ['t_5ftemplate',['t_template',['../g__canvas_8h.html#a74db188a025d263eed18c50007c91c2b',1,'g_canvas.h']]],
-  ['t_5ftext',['t_text',['../m__pd_8h.html#a9e953231a85890e8c466aa68d3345b5c',1,'t_text():&#160;m_pd.h'],['../m__pd_8h.html#afaf02c150ea1b8449ce451420c245743',1,'T_TEXT():&#160;m_pd.h']]],
+  ['t_5ftext',['T_TEXT',['../m__pd_8h.html#afaf02c150ea1b8449ce451420c245743',1,'T_TEXT():&#160;m_pd.h'],['../m__pd_8h.html#a9e953231a85890e8c466aa68d3345b5c',1,'t_text():&#160;m_pd.h']]],
   ['t_5ftick',['t_tick',['../g__canvas_8h.html#aa0daee6f340430a8384d33b649d6ebfc',1,'g_canvas.h']]],
   ['t_5ftscalar',['t_tscalar',['../g__canvas_8h.html#a8bfa6e6a3bd7efaefa6114190f49c760',1,'g_canvas.h']]],
   ['t_5fundofn',['t_undofn',['../g__canvas_8h.html#a56fcf6d27d78fa17fa649e5f6e089a15',1,'g_canvas.h']]],
