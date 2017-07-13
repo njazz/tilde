@@ -12,7 +12,8 @@ UIText::UIText()
 {
     //setPdObjectName("ui.text");
 
-    setSize(65, 20);
+    //setSize(65, 20);
+
     initProperties();
 
     deselect();
@@ -31,7 +32,7 @@ UIText::UIText()
     connect(_editor, &QPlainTextEdit::textChanged, this, &UIText::editorChanged);
 
     _editor->installEventFilter(this);
-    objectData()->setObjectSize(os_Free, 80, 20);
+    objectData()->setObjectSize(os_Free, 80, 1);
 
     resizeEvent();
 }
@@ -89,7 +90,7 @@ void UIText::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*
 
     QBrush brush(properties()->get("BackgroundColor")->asQColor());
     p->setBrush(brush);
-    //p->drawRect(boundingRect());
+    p->drawRect(boundingRect());
     p->setBrush(QBrush());
 
     if (getEditMode() == em_Unlocked) {
@@ -125,12 +126,18 @@ void UIText::initProperties()
     properties()->create("TextColor", "Color", "0.1", QColor(0, 0, 0));
     properties()->create("BackgroundColor", "Color", "0.1", QColor(255, 255, 255, 0));
 
+    properties()->create("AutoResizeToText", "Box", "0.1", true);
+
     PROPERTY_SET("BorderColor", QColor(0, 0, 0, 0));
 
     PROPERTY_LISTENER("TextColor", &UIText::colorPropertyChanged);
     PROPERTY_LISTENER("BackgroundColor", &UIText::colorPropertyChanged);
 
     PROPERTY_LISTENER("Text", &UIText::textPropertyChanged);
+
+    PROPERTY_LISTENER("AutoResizeToText", &UIText::propertyAutoResize);
+
+    //PROPERTY_DISCONNECT_LISTENER("FontSize", &UIObject::propertySize);
 };
 
 ///////////////////
@@ -155,9 +162,12 @@ void UIText::autoResize()
     QFont myFont(PREF_QSTRING("Font"), fontSize);
     QFontMetrics fm(myFont);
 
-    setWidth((int)fm.width(properties()->get("Text")->asQString()) + 0);
-    if (width() < objectData()->minimumBoxWidth())
-        setWidth(objectData()->minimumBoxWidth());
+    if (properties()->get("AutoResizeToText")->asBool()) {
+
+        setWidth((int)fm.width(properties()->get("Text")->asQString()) + 0);
+        if (width() < objectData()->minimumBoxWidth())
+            setWidth(objectData()->minimumBoxWidth());
+    }
 
     //duplicate?
     int new_w = fm.width(properties()->get("Text")->asQString()) + 0;
@@ -167,8 +177,15 @@ void UIText::autoResize()
 
     new_h = (new_h < 25) ? 25 : new_h;
 
-    setWidth(new_w);
-    setHeight(new_h);
+    if (properties()->get("AutoResizeToText")->asBool()) {
+
+        setWidth(new_w);
+        setHeight(new_h);
+    } else {
+        //        QSize s = properties()->get("Size")->asQSize();
+        //        setWidth(s.width());
+        //        setHeight(s.height());
+    }
 }
 
 // ---------------------------
@@ -185,6 +202,10 @@ void UIText::fromQString(QString objData)
     }
 
     //PROPERTY_SET("Text", list);
+
+//    qDebug() << properties()->get("Text") << properties()->get("Size") << "||";
+
+//    PROPERTY_SET("Size",properties()->get("Size")->asQSize() );
 
     QString data = properties()->get("Text")->asQString().split("\\n ").join("\n");
 
@@ -222,6 +243,21 @@ void UIText::sync()
 {
 
     UIObject::sync();
+
+    //fix
+    if (!properties()->get("AutoResizeToText")->asBool()) {
+
+        QSize s = properties()->get("Size")->asQSize();
+        setWidth(s.width());
+        setHeight(s.height());
+
+        qDebug() << "sync" << s;
+    }
+}
+
+void UIText::propertyFontSize()
+{
+
 }
 
 void UIText::textPropertyChanged()
@@ -231,5 +267,19 @@ void UIText::textPropertyChanged()
 
 void UIText::colorPropertyChanged()
 {
+}
+
+void UIText::propertyAutoResize()
+{
+
+    if (!properties()->get("AutoResizeToText")->asBool())
+    {
+       objectData()->setObjectSize(os_NoAutoResize,objectData()->minimumBoxWidth(),objectData()->minimumBoxHeight());
+    }
+    else
+    {
+        objectData()->setObjectSize(os_Free,objectData()->minimumBoxWidth(),objectData()->minimumBoxHeight());
+        autoResize();
+    }
 }
 }

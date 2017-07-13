@@ -28,7 +28,8 @@ typedef enum {
     os_FixedHeight,
     os_FixedWidth, ///> this is used only in vertical radio (ui.matrix)
     os_Free,
-    os_Square
+    os_Square,
+    os_NoAutoResize ///> probably remove later
 } t_objectSize;
 }
 

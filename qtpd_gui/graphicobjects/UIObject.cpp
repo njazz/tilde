@@ -140,7 +140,7 @@ void UIObject::initProperties()
     objectData()->properties()->create("BorderColor", "Color", "0.1", QColor(192, 192, 192, 255));
 
     PROPERTY_LISTENER("Size", &UIObject::propertySize);
-    PROPERTY_LISTENER("FontSize", &UIObject::propertySize);
+    PROPERTY_LISTENER("FontSize", &UIObject::propertyFontSize);
 
     PROPERTY_LISTENER("Position", &UIObject::propertyPosition);
 
@@ -156,16 +156,6 @@ void UIObject::propertySize()
 
     //    if (!o) return;
 
-    if (size.width() < 20) {
-        size.setWidth(20);
-    }
-    if (size.height() < 20) {
-        size.setHeight(20);
-    }
-
-    //    if (!properties()) return;
-    //    if (!properties()->get("FontSize")) return;
-
     float fs = properties()->get("FontSize")->asFloat();
     if (size.height() < (fs + 9)) {
         size.setHeight(fs + 9);
@@ -176,6 +166,11 @@ void UIObject::propertySize()
     update();
 
     //ServerInstance::post("property size updated");
+}
+
+void UIObject::propertyFontSize()
+{
+    propertySize();
 }
 
 void UIObject::propertyPosition()
@@ -548,7 +543,15 @@ void UIObject::setEditModeRef(t_editMode* canvasEditMode)
 void UIObject::doSetSize(QSize size)
 {
 
-    autoResize();
+    if (size.width() < objectData()->minimumBoxWidth()) {
+        size.setWidth(objectData()->minimumBoxWidth());
+    }
+    if (size.height() < objectData()->minimumBoxHeight()) {
+        size.setHeight(objectData()->minimumBoxHeight());
+    }
+
+    if (_objectData->objectSizeMode() != os_NoAutoResize)
+        autoResize();
 
     UIItem::setSize(size);
 

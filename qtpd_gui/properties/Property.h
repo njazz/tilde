@@ -77,6 +77,10 @@ public:
 
     // -------
 
+    void setDefaultType(UIPropertyType type);
+
+    // -------
+
     QVariant data();
     QVariant defaultData();
     QString group();

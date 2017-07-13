@@ -64,6 +64,11 @@ void Qtpd_tests::propertyDataTypes()
     QVERIFY(((l->get("sizef")->asQSizeF()) == QSizeF(30, 70)));
     QVERIFY(((l->get("point")->asQPoint()) == QPoint(30, 70)));
     QVERIFY(((l->get("pointf")->asQPointF()) == QPointF(30, 70)));
+
+    l->create("bool_str", "Group", "0.1", "1");
+    QVERIFY(((l->get("bool_str")->asBool()) == true));
+    l->set("bool_str","0");
+    QVERIFY(((l->get("bool_str")->asBool()) == false));
 }
 
 void Qtpd_tests::propertyEscapeString()

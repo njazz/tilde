@@ -9,12 +9,19 @@ using namespace std;
 
 namespace qtpd {
 
+void Property::setDefaultType(UIPropertyType type)
+{
+    if (_defaultData == QVariant())
+        _type = type;
+}
+
 template <>
 void Property::set(bool value)
 {
 
     _data = (value);
-    _type = ptBool;
+
+    setDefaultType(ptBool);
 
     emit changed();
 }
@@ -23,7 +30,7 @@ template <>
 void Property::set(QPoint point)
 {
     _data = QString::number(point.x()) + " " + QString::number(point.y());
-    _type = ptVec2;
+    setDefaultType(ptVec2);
 
     emit changed();
 }
@@ -32,8 +39,8 @@ template <>
 void Property::set(QPointF point)
 {
 
-    _data = point;
-    _type = ptVec2;
+    _data = QString::number(point.x()) + " " + QString::number(point.y());
+    setDefaultType(ptVec2);
 
     emit changed();
 }
@@ -43,7 +50,7 @@ void Property::set(QRect rect)
 {
 
     _data = (rect);
-    _type = ptVector;
+    setDefaultType(ptVector);
 
     emit changed();
 }
@@ -52,7 +59,7 @@ void Property::set(QSize size)
 {
 
     _data = QString::number(size.width()) + " " + QString::number(size.height());
-    _type = ptVec2;
+    setDefaultType(ptVec2);
 
     emit changed();
 }
@@ -60,8 +67,8 @@ void Property::set(QSize size)
 template <>
 void Property::set(QSizeF size)
 {
-    _data = (size);
-    _type = ptVec2;
+    _data = QString::number(size.width()) + " " + QString::number(size.height());
+    setDefaultType(ptVec2);
 
     emit changed();
 }
@@ -77,7 +84,7 @@ void Property::set(QColor color)
     sL.append(QString::number(color.alpha()));
 
     _data = (sL);
-    _type = ptColor;
+    setDefaultType(ptColor);
 
     //qDebug() << "set" << sL;
 
@@ -88,7 +95,7 @@ template <>
 void Property::set(float val)
 {
     _data = (val);
-    _type = ptFloat;
+    setDefaultType(ptFloat);
 
     emit changed();
 }
@@ -98,7 +105,7 @@ void Property::set(double val)
 {
 
     _data = (val);
-    _type = ptFloat;
+    setDefaultType(ptFloat);
 
     emit changed();
 }
@@ -108,7 +115,7 @@ void Property::set(string string)
 {
     _data = (QString(string.c_str()));
 
-    _type = ptString;
+    setDefaultType(ptString);
 
     emit changed();
 }
@@ -118,7 +125,7 @@ void Property::set(int val)
 {
 
     _data = (val);
-    _type = ptInt;
+    setDefaultType(ptInt);
 
     emit changed();
 }
@@ -129,7 +136,7 @@ void Property::set(QStringList strlist)
 
     _data = strlist;
 
-    _type = ptStringList;
+    setDefaultType(ptStringList);
 
     emit changed();
 }
@@ -138,7 +145,7 @@ template <>
 void Property::set(QString string)
 {
     _data = (string);
-    _type = ptString;
+    setDefaultType(ptString);
 
     emit changed();
 }
@@ -147,7 +154,7 @@ template <>
 void Property::set(char const* string)
 {
     _data = QString(string);
-    _type = ptString;
+    setDefaultType(ptString);
 
     emit changed();
 }
@@ -299,7 +306,10 @@ int Property::asInt()
 
 bool Property::asBool()
 {
-    return _data.toInt() > 0;
+
+    QStringList sL = _data.toString().split(" ");
+
+    return sL.at(0).toInt() > 0;
 }
 
 float Property::asFontSize()

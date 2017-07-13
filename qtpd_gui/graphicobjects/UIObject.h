@@ -162,7 +162,7 @@ private slots:
     void openHelpWindow();
 
     void propertySize(); ///> called when size property is changed
-    //    void propertyFontSize();
+    virtual void propertyFontSize();
 
     void propertyPosition();
 

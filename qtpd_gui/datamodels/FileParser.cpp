@@ -223,18 +223,57 @@ inline void legacyProcessUICnv(PatchWindowController* controller, QStringList li
     if (lLabel == "empty")
         lLabel = "";
 
+    //    union color {
+    //        int32_t c_i;
+    //        int8_t c_char[4];
+    //    };
+
+    long color2;
+    color2 = (list.size() > 14) ? ((QString)list.at(14)).toLong() : 0;
+    long color1;
+    color1 = (list.size() > 15) ? ((QString)list.at(15)).toLong() : 0;
+
+    //    color1.c_i &= 0xFFFFFFFF;
+    //    color2.c_i &= 0xFFFFFFFF;
+
+    //    QByteArray arr1 = QByteArray::fromRawData((char*)color1.c_i, 1);
+    //    QByteArray arr2 = QByteArray::fromRawData((char*)color2.c_i, 1);
+
+    qDebug() << "*** colors" << color1 << color2;
+    //qDebug() << "*** colors" << (QString)list.at(17) << (QString)list.at(16);
+    //qDebug() << "*** colors" << ((QString)list.at(17)).toLong() << ((QString)list.at(16)).toLongLong();
+
     union color {
-        int c_i;
-        char c_char[4];
+        int32_t c_int;
+        struct {
+            uint8_t b[8];
+        } c_byte;
     };
 
-    color color1;
-    color1.c_i = ((QString)list.at(14)).toInt();
-    color color2;
-    color2.c_i = (list.size() > 15) ? ((QString)list.at(15)).toInt() : 0;
+    color c1;
+    c1.c_int = color1;
+    color c2;
+    c2.c_int = color2;
 
-    QString lcolor1 = QString::number(((int)color1.c_char[0])) + " " + QString::number(((int)color1.c_char[1])) + " " + QString::number(((int)color1.c_char[2])) + " 255";
-    QString lcolor2 = QString::number(((int)color2.c_char[0])) + " " + QString::number(((int)color2.c_char[1])) + " " + QString::number(((int)color2.c_char[2])) + " 255";
+    qDebug() << "*** colors" << c1.c_int << c2.c_int;
+
+    c1.c_int = -1 - c1.c_int;
+    c1.c_int = ((c1.c_int & 0x3f000) << 6) | ((c1.c_int & 0xfc0) << 4) | ((c1.c_int & 0x3f) << 2);
+
+    c2.c_int = -1 - c2.c_int;
+    c2.c_int = ((c2.c_int & 0x3f000) << 6) | ((c2.c_int & 0xfc0) << 4) | ((c2.c_int & 0x3f) << 2);
+
+    qDebug() << (c1.c_int & 0xFF) << ((c1.c_int >> 8) & 0xFF) << ((c1.c_int >> 16) & 0xFF) << ((c1.c_int >> 24) & 0xFF);
+
+    QString lcolor1 = QString::number(c1.c_byte.b[2]) + " " + QString::number(c1.c_byte.b[1]) + " " + QString::number(c1.c_byte.b[0]) + " 255";
+    QString lcolor2 = QString::number(c2.c_byte.b[2]) + " " + QString::number(c2.c_byte.b[1]) + " " + QString::number(c2.c_byte.b[0]) + " 255";
+
+    //QString lcolor2 = "128 128 255 255"; //QString::number((uint8_t)arr2.at(0)) + " " + QString::number((uint8_t)arr2.at(1)) + " " + QString::number((uint8_t)arr2.at(2)) + " "+ QString::number((uint8_t)arr2.at(2));
+
+    qDebug() << lcolor1 << lcolor2 << " ***";
+
+    //QString lcolor1 = QString::number(((int)color1.c_char[0])) + " " + QString::number(((int)color1.c_char[1])) + " " + QString::number(((int)color1.c_char[2])) + " 255";
+    //QString lcolor2 = "0 0 0 255"; // = QString::number(((int)color2.c_char[0])) + " " + QString::number(((int)color2.c_char[1])) + " " + QString::number(((int)color2.c_char[2])) + " 255";
 
     //...
     //int lFontSize = ((QString)list.at(4)).toInt() * 8 + 3;
@@ -248,10 +287,15 @@ inline void legacyProcessUICnv(PatchWindowController* controller, QStringList li
     list2.push_back(lLabel);
     list2.push_back("@FontSize");
     list2.push_back(fontSize);
-    //    list2.push_back("@TextColor");
-    //    list2.push_back(lcolor1);
-    //    list2.push_back("@BackgroundColor");
-    //    list2.push_back(lcolor2);
+    list2.push_back("@TextColor");
+    list2.push_back(lcolor1);
+    list2.push_back("@BackgroundColor");
+    list2.push_back(lcolor2);
+    list2.push_back("@AutoResizeToText");
+    list2.push_back(0);
+    list2.push_back("@Size");
+    list2.push_back(list.at(5));
+    list2.push_back(list.at(6));
 
     //UIObject* obj =
     FileParser::sendStringToCanvas(controller, list2);

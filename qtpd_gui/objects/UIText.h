@@ -62,6 +62,10 @@ private slots:
 
     void textPropertyChanged();
     void colorPropertyChanged();
+
+    virtual void propertyFontSize();
+
+    void propertyAutoResize();
 };
 }
 #endif // cmo_text_H
