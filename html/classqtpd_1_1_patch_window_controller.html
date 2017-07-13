@@ -182,7 +182,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a9db4fe95db48ddff9b9130bb3446df1e">deleteObjectWithoutUndo</a> (<a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *o)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a58590eb81ff67387cb8529523d8e0e4a">deleteSelectedObjects</a> (vector&lt; <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> * &gt;)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#ae92a33f99db1bfa48f6b223f1e3466ca">deleteSelectedObjects</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#a7f15c0e688fed0bebf0d6adf588509dd">deletePatchcord</a> (<a class="el" href="classqtpd_1_1_u_i_patchcord.html">UIPatchcord</a> *p)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#ab1df7dcf5a254a66bdbb32054eed3a78">deleteSinglePatchcord</a> (<a class="el" href="classqtpd_1_1_u_i_patchcord.html">UIPatchcord</a> *p)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#ae77b3b37db1efb70e5e565385a6d8c64">deleteSelectedPatchcords</a> (vector&lt; <a class="el" href="classqtpd_1_1_u_i_patchcord.html">UIPatchcord</a> * &gt;)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#ad6cbfd60e91d01742ac2bf7dfe40692f">dataCut</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_patch_window_controller.html#aab4ec2a593279cfad25088d524d0b98d">dataCopy</a> ()</td></tr>
@@ -575,23 +575,6 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a7f15c0e688fed0bebf0d6adf588509dd"></a><!-- doxytag: member="qtpd::PatchWindowController::deletePatchcord" ref="a7f15c0e688fed0bebf0d6adf588509dd" args="(UIPatchcord *p)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window_controller.html#a7f15c0e688fed0bebf0d6adf588509dd">qtpd::PatchWindowController::deletePatchcord</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_patchcord.html">UIPatchcord</a> *&#160;</td>
-          <td class="paramname"><em>p</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="ae1d634d4109766367c72193eb2f26e43"></a><!-- doxytag: member="qtpd::PatchWindowController::deletePatchcordsFor" ref="ae1d634d4109766367c72193eb2f26e43" args="(UIItem *obj)" -->
 <div class="memitem">
 <div class="memproto">
@@ -684,6 +667,23 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">vector&lt; <a class="el" href="classqtpd_1_1_u_i_patchcord.html">UIPatchcord</a> * &gt;&#160;</td>
           <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab1df7dcf5a254a66bdbb32054eed3a78"></a><!-- doxytag: member="qtpd::PatchWindowController::deleteSinglePatchcord" ref="ab1df7dcf5a254a66bdbb32054eed3a78" args="(UIPatchcord *p)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_patch_window_controller.html#ab1df7dcf5a254a66bdbb32054eed3a78">qtpd::PatchWindowController::deleteSinglePatchcord</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classqtpd_1_1_u_i_patchcord.html">UIPatchcord</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1494,7 +1494,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 13 2017 10:44:47 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jul 13 2017 14:21:21 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

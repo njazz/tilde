@@ -148,14 +148,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00073"></a>00073 
 <a name="l00074"></a>00074     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_patchcord.html#a93a4f11c81c580fe22e42d8a3ae7797d">mousePressEvent</a>(QGraphicsSceneMouseEvent*);
 <a name="l00075"></a>00075 
-<a name="l00076"></a>00076 signals:
-<a name="l00077"></a>00077     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_patchcord.html#a8fd173679c9a791864997d9358403cb8">selected</a>(); 
-<a name="l00078"></a>00078     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_patchcord.html#a492d4b1c3a6af758e6414638a37b40ef" title="&gt; basic select signal - same as in UIObject class">shiftClicked</a>(); 
-<a name="l00079"></a>00079     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_patchcord.html#a7bb545a9f90c47b9833bf323981d8584" title="&gt; deletes object and makes new line from obj2 out &#39;new line&#39;">altClicked</a>(); 
-<a name="l00080"></a>00080 };
-<a name="l00081"></a>00081 }
-<a name="l00082"></a>00082 
-<a name="l00083"></a>00083 <span class="preprocessor">#endif // CM_PATCHCORD_H</span>
+<a name="l00076"></a><a class="code" href="classqtpd_1_1_u_i_patchcord.html#a62b97f71e45a615e7955557d8e20f6c5">00076</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_patchcord.html#a62b97f71e45a615e7955557d8e20f6c5">setServerPatchcord</a>(ServerPatchcord* p) { _serverPatchcord = p; }
+<a name="l00077"></a><a class="code" href="classqtpd_1_1_u_i_patchcord.html#a087b35ee912ff6472383d4a6a939d6e7">00077</a>     ServerPatchcord* <a class="code" href="classqtpd_1_1_u_i_patchcord.html#a087b35ee912ff6472383d4a6a939d6e7">serverPatchcord</a>() { <span class="keywordflow">return</span> _serverPatchcord; }
+<a name="l00078"></a>00078 
+<a name="l00079"></a>00079     <span class="comment">//void deleteServerPatchcord();       ///&gt; we don&#39;t delete server patchcord when we delete boxes - server does that automatically</span>
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081 signals:
+<a name="l00082"></a>00082     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_patchcord.html#a8fd173679c9a791864997d9358403cb8">selected</a>(); 
+<a name="l00083"></a>00083     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_patchcord.html#a492d4b1c3a6af758e6414638a37b40ef" title="&gt; basic select signal - same as in UIObject class">shiftClicked</a>(); 
+<a name="l00084"></a>00084     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_patchcord.html#a7bb545a9f90c47b9833bf323981d8584" title="&gt; deletes object and makes new line from obj2 out &#39;new line&#39;">altClicked</a>(); 
+<a name="l00085"></a>00085 };
+<a name="l00086"></a>00086 }
+<a name="l00087"></a>00087 
+<a name="l00088"></a>00088 <span class="preprocessor">#endif // CM_PATCHCORD_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -174,7 +179,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 13 2017 10:44:46 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jul 13 2017 14:21:21 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
