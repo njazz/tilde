@@ -420,12 +420,15 @@ void PatchWindowController::restoreUIBoxForSubpatch(PatchWindowController* contr
     return;
 }
 
-void PatchWindowController::deletePatchcord(UIPatchcord* p)
+void PatchWindowController::deleteSinglePatchcord(UIPatchcord* p)
 {
     _scene->removeItem(p);
     p->remove();
     _canvasData->deletePatchcord(p);
     _scene->update();
+
+    _serverCanvas->deletePatchcord(p->serverPatchcord());
+
 }
 
 //bool PatchWindowController::patchcord(UIObject* src, int out, UIObject* dest, int in){};
@@ -724,10 +727,12 @@ void PatchWindowController::deleteSelectedPatchcords()
             //                } else
             //                    qDebug("object error. didn't delete pd patchcord");
 
-            _scene->removeItem(p);
-            //qDebug() << "remove item";
+//            _scene->removeItem(p);
+//            //qDebug() << "remove item";
 
-            it = _canvasData->patchcords()->erase(it);
+//            it = _canvasData->patchcords()->erase(it);
+
+            deleteSinglePatchcord(p);
 
             p->remove();
 
@@ -926,7 +931,7 @@ UIPatchcord* PatchWindowController::createPatchcordWithoutUndo(UIObject* obj1, i
         qDebug() << "patchcord: " << obj1->serverObject() << outlet << obj2->serverObject() << inlet;
 
         //replace
-        _serverCanvas->createPatchcord(obj1->serverObject(), outlet, obj2->serverObject(), inlet);
+        pc->setServerPatchcord( _serverCanvas->createPatchcord(obj1->serverObject(), outlet, obj2->serverObject(), inlet) );
 
         _canvasData->addPatchcord(pc);
 

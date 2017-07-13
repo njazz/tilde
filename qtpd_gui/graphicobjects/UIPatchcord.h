@@ -73,6 +73,11 @@ public:
 
     void mousePressEvent(QGraphicsSceneMouseEvent*);
 
+    void setServerPatchcord(ServerPatchcord* p) { _serverPatchcord = p; }
+    ServerPatchcord* serverPatchcord() { return _serverPatchcord; }
+
+    //void deleteServerPatchcord();       ///> we don't delete server patchcord when we delete boxes - server does that automatically
+
 signals:
     void selected(); ///> basic select signal - same as in UIObject class
     void shiftClicked(); ///> deletes object and makes new line from obj2 out 'new line'

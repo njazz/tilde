@@ -49,7 +49,7 @@ undoCreatePatchcord::undoCreatePatchcord(PatchWindowController* ctrl, UIObject* 
 
 void undoCreatePatchcord::undo()
 {
-    _controller->deletePatchcord(_p);
+    _controller->deleteSinglePatchcord(_p);
 };
 
 void undoCreatePatchcord::redo()

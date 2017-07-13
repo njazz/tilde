@@ -129,7 +129,7 @@ public:
     void deleteSelectedObjects(vector<UIObject*>);
     void deleteSelectedObjects(); //
 
-    void deletePatchcord(UIPatchcord* p);
+    void deleteSinglePatchcord(UIPatchcord* p);
     void deleteSelectedPatchcords(vector<UIPatchcord*>);
 
     // ------------

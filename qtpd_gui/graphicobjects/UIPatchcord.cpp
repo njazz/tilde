@@ -182,4 +182,10 @@ void UIPatchcord::mousePressEvent(QGraphicsSceneMouseEvent*)
     select(); //(true);
     update();
 }
+
+//void UIPatchcord::deleteServerPatchcord()
+//{
+
+//}
+
 }
