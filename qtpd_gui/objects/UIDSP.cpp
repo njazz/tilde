@@ -84,7 +84,10 @@ void UIDSP::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
     float posx = width() * .4;
     float posy = height() / 2;
 
-    p->setFont(QFont(PREF_QSTRING("Font"), 8, 0, false));
+    QFont font (PREF_QSTRING("Font"), 8, 0, false);
+    font.setPixelSize(8);
+
+    p->setFont(font);
     p->drawText(posx * .4, posy - 4, width() - 2, height() / 2 - 10, 0, "DSP", 0);
 
     p->drawArc(posx - 10, posy - 10, 20, 20, -60 * 16, 120 * 16);

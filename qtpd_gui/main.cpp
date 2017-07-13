@@ -34,6 +34,8 @@ int main(int argc, char* argv[])
 
     QApplication a(argc, argv);
 
+    QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+
 #ifndef _WIN32
     a.setQuitOnLastWindowClosed(false);
 #endif

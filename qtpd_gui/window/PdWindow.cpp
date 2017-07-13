@@ -12,6 +12,7 @@
 #include "pdServer.hpp"
 
 #include <QComboBox>
+#include <QLabel>
 
 #include <string>
 
@@ -77,7 +78,11 @@ PdWindow::PdWindow()
 
     _ui->log->insertColumn(0);
 
-    _ui->log->setFont(QFont(PREF_QSTRING("Font"), 12, 0, false));
+    QFont font(PREF_QSTRING("Font"), 12, 0, false);
+    font.setPixelSize(12);
+
+    _ui->log->setFont(font);
+
 
     _ui->log->setColumnWidth(0, 70);
 
@@ -98,6 +103,9 @@ PdWindow::PdWindow()
     _ui->logLevelBox->addItem("2 normal");
     _ui->logLevelBox->addItem("3 debug");
     _ui->logLevelBox->addItem("4 all");
+
+    _ui->logLevelBox->setFont(font);
+    _ui->label->setFont(font);
 
     connect(_ui->logLevelBox, SIGNAL(currentIndexChanged(int)), this, SLOT(logBoxChange(int)));
 
