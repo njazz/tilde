@@ -2,6 +2,7 @@ var searchData=
 [
   ['back',['back',['../class_color___preview_1_1_private.html#ae884a3d99540e76706d0408849927924',1,'Color_Preview::Private::back()'],['../class_gradient___slider_1_1_private.html#a8d585f26a1b40d9bbc015afdd94db9ee',1,'Gradient_Slider::Private::back()']]],
   ['background',['background',['../class_color___preview.html#a3f91f2b663b828fa8c7c3c553fa88acb',1,'Color_Preview::background()'],['../class_gradient___slider.html#adf64dcbcf4deb64886ff0ce1131480c0',1,'Gradient_Slider::background()'],['../class_color___preview.html#a4bec74083e6222fbdadf6ba16edecb3a',1,'Color_Preview::background()'],['../class_gradient___slider.html#abae1296645fcc4a29030c780bcd41370',1,'Gradient_Slider::background()']]],
+  ['basepath',['basePath',['../classqtpd_1_1_file_paths.html#ad49ae475ad43bce92c4e2cd647669465',1,'qtpd::FilePaths']]],
   ['basewindow',['BaseWindow',['../classqtpd_1_1_base_window.html#ae2a076d8f8a489795f2b7fbf26fadd5d',1,'qtpd::BaseWindow']]],
   ['basewindow',['BaseWindow',['../classqtpd_1_1_base_window.html',1,'qtpd']]],
   ['basewindow_2ecpp',['BaseWindow.cpp',['../_base_window_8cpp.html',1,'']]],
@@ -46,6 +47,6 @@ var searchData=
   ['buffer',['buffer',['../struct__resample.html#a8fe41b983e1710c3d71afb4fb85f8042',1,'_resample']]],
   ['bufsize',['bufsize',['../struct__resample.html#a837225771d04d2e70c84d6eca43e6ea7',1,'_resample']]],
   ['bug',['bug',['../m__pd_8h.html#a3e4d99cc272e4a5cb21332f8bda27ec8',1,'m_pd.h']]],
-  ['button_5fmode',['button_mode',['../class_color___dialog_1_1_private.html#afd017a10b78cc574773ed3f33ad909fb',1,'Color_Dialog::Private::button_mode()'],['../class_color___dialog.html#a4fa5f34e3b5899faf5608ceaf170c7b8',1,'Color_Dialog::Button_Mode()']]],
+  ['button_5fmode',['Button_Mode',['../class_color___dialog.html#a4fa5f34e3b5899faf5608ceaf170c7b8',1,'Color_Dialog::Button_Mode()'],['../class_color___dialog_1_1_private.html#afd017a10b78cc574773ed3f33ad909fb',1,'Color_Dialog::Private::button_mode()']]],
   ['buttonmode',['buttonMode',['../class_color___dialog.html#a6c4d903ab21dcc79a157495bba9d4ff6',1,'Color_Dialog']]]
 ];

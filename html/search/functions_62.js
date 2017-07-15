@@ -1,6 +1,7 @@
 var searchData=
 [
   ['background',['background',['../class_color___preview.html#a4bec74083e6222fbdadf6ba16edecb3a',1,'Color_Preview::background()'],['../class_gradient___slider.html#abae1296645fcc4a29030c780bcd41370',1,'Gradient_Slider::background()']]],
+  ['basepath',['basePath',['../classqtpd_1_1_file_paths.html#ad49ae475ad43bce92c4e2cd647669465',1,'qtpd::FilePaths']]],
   ['basewindow',['BaseWindow',['../classqtpd_1_1_base_window.html#ae2a076d8f8a489795f2b7fbf26fadd5d',1,'qtpd::BaseWindow']]],
   ['bgcolor',['bgColor',['../classqtpd_1_1_u_i_item.html#a15c57968966de733a09cf02973b63696',1,'qtpd::UIItem']]],
   ['binbuf_5fadd',['binbuf_add',['../m__pd_8h.html#a35695fba26e38a1fdc55509906e6cd91',1,'m_pd.h']]],

@@ -22,6 +22,7 @@ var searchData=
   ['patchcordsaspdfilestrings',['patchcordsAsPdFileStrings',['../classqtpd_1_1_canvas_data.html#a13d9919a4358f17e60829f16995f0bea',1,'qtpd::CanvasData']]],
   ['patchcordsforobject',['patchcordsForObject',['../classqtpd_1_1_canvas_data.html#a9e382308171baf185c84c007fe96c0b7',1,'qtpd::CanvasData']]],
   ['patchcordtype',['patchcordType',['../classqtpd_1_1_u_i_new_patchcord.html#a05586fa8a0016e62906e37fe17763b4e',1,'qtpd::UINewPatchcord']]],
+  ['patches',['patches',['../classqtpd_1_1_file_paths.html#a40adaaf2aff328216eb717a39ec61c35',1,'qtpd::FilePaths']]],
   ['patchwindow',['PatchWindow',['../classqtpd_1_1_patch_window.html#a69d314b0dd596b5ce889f855fca01764',1,'qtpd::PatchWindow']]],
   ['patchwindowcontroller',['PatchWindowController',['../classqtpd_1_1_patch_window_controller.html#a1c0b6eb75a8b9fe9e4577988157eca6c',1,'qtpd::PatchWindowController::PatchWindowController(ApplicationController *appController)'],['../classqtpd_1_1_patch_window_controller.html#a0cebee247505a763369632d3aa5b1f07',1,'qtpd::PatchWindowController::PatchWindowController(ApplicationController *appController, ServerCanvas *canvas)']]],
   ['paths',['paths',['../classqtpd_1_1_preferences.html#add69fd0a89a565bc23d08eb6a1dd59c6',1,'qtpd::Preferences']]],
