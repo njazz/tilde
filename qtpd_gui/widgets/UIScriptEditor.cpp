@@ -4,9 +4,7 @@
 #include "UIScriptEditor.h"
 
 #include <QPushButton>
-
 #include "Preferences.h"
-
 #include "UIScriptCommon.h"
 
 namespace qtpd {

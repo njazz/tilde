@@ -3,11 +3,9 @@
 
 #include "UIDSP.h"
 
-#include <pdServer.hpp>
-
 #include "CanvasView.h"
-
 #include "UIObjectData.h"
+#include <pdServer.hpp>
 
 #include "ceammc_atomlist.h"
 

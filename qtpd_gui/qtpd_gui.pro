@@ -111,12 +111,10 @@ SOURCES += main.cpp\
     oopd/OPInstance.cpp \
     oopd/OPClass.cpp \
     objects/UIDSP.cpp \
-    objects/UISubpatch.cpp \
     objects/UILink.cpp \
     objects/UISlider.cpp \
     oopd/UISignal.cpp \
     objects/UIMatrix.cpp \
-    objects/UISubCanvas.cpp \
 #### graphic objects
     graphicobjects/Port.cpp \
     graphicobjects/SizeBox.cpp \
@@ -194,11 +192,9 @@ HEADERS  += \
     oopd/UIMethod.h \
     oopd/UIProperty.h \
     objects/UILink.h \
-    objects/UISubpatch.h \
     objects/UISlider.h \
     oopd/UISignal.h \
     objects/UIMatrix.h \
-    objects/UISubCanvas.h \
 #### widgets
     widgets/UIArrayEditor.h \
     widgets/ObjectMaker.h \

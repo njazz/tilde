@@ -3,9 +3,6 @@
 
 #include "py_wrappers.h"
 
-// generic
-
-//#include "py_pdlib.h"
 #include "py_qtpd.h"
 
 using namespace qtpd;
@@ -17,9 +14,6 @@ pyWrapper::pyWrapper()
 
     //todo fix
 
-    //mainContext.addObject("Qtpd", new pyQtpd(_appController));
-
-    //PythonQt::self()->addDecorators(new pyPatchWindowDecorator());
     PythonQt::self()->addDecorators(new pyWindowControllerDecorator());
     //PythonQt::self()->addDecorators(new py());
     PythonQt::self()->addDecorators(new pyUIObjectDecorator());
@@ -29,20 +23,6 @@ pyWrapper::pyWrapper()
     PythonQt::self()->registerCPPClass("objectVec");
     PythonQt::self()->registerCPPClass("UIObject");
 }
-
-//PythonQtObjectPtr pyWrapper::withCanvas(QObject* canvas)
-//{
-//    PythonQtObjectPtr ctx;
-//    ctx = PythonQt::self()->createUniqueModule();
-//    ctx.addObject("Qtpd", new pyQtpd(_appController));
-
-//    pyLocal* loc = new pyLocal;
-//    loc->setCanvas((CanvasView*)canvas); // canvas, canvas, canvas, canvas
-//    loc->setPdObject(0);
-//    ctx.addObject("local", loc);
-
-//    return ctx;
-//}
 
 // ----------------------------------------------------
 
@@ -55,7 +35,7 @@ PythonQtObjectPtr pyWrapper::newContext()
     return ctx;
 }
 
-PythonQtObjectPtr pyWrapper::withPatchController(PatchWindowController* controller)
+PythonQtObjectPtr pyWrapper::newContextWithPatchController(PatchWindowController* controller)
 {
     PythonQtObjectPtr ctx;
     ctx = PythonQt::self()->createUniqueModule();
@@ -70,7 +50,7 @@ PythonQtObjectPtr pyWrapper::withPatchController(PatchWindowController* controll
     return ctx;
 }
 
-PythonQtObjectPtr pyWrapper::withPatchControllerAndServerObject(PatchWindowController* controller, ServerObject* object)
+PythonQtObjectPtr pyWrapper::newContextWithPatchControllerAndServerObject(PatchWindowController* controller, ServerObject* object)
 {
     PythonQtObjectPtr ctx;
     ctx = PythonQt::self()->createUniqueModule();
@@ -85,7 +65,7 @@ PythonQtObjectPtr pyWrapper::withPatchControllerAndServerObject(PatchWindowContr
     return ctx;
 }
 
-PythonQtObjectPtr pyWrapper::withPatchControllerServerObjectAndList(PatchWindowController* controller, ServerObject* object, QStringList* list)
+PythonQtObjectPtr pyWrapper::newContextWithPatchControllerServerObjectAndList(PatchWindowController* controller, ServerObject* object, QStringList* list) ///> "weird method name competition" winner
 {
     PythonQtObjectPtr ctx;
     ctx = PythonQt::self()->createUniqueModule();
@@ -100,35 +80,3 @@ PythonQtObjectPtr pyWrapper::withPatchControllerServerObjectAndList(PatchWindowC
 
     return ctx;
 }
-
-// ----------------------------------------------------
-//PythonQtObjectPtr pyWrapper::withCanvasAndPdObject(QObject* canvas, t_object* obj)
-//{
-//    PythonQtObjectPtr ctx;
-//    ctx = PythonQt::self()->createUniqueModule();
-//    ctx.addObject("Qtpd", new pyQtpd(_appController));
-
-//    pyLocal* loc = new pyLocal;
-//    loc->setCanvas((CanvasView*)canvas); // canvas, canvas, canvas, canvas
-//    loc->setPdObject(obj);
-//    ctx.addObject("local", loc);
-
-//    return ctx;
-//}
-
-//// weird method name competition winner
-
-//PythonQtObjectPtr pyWrapper::withCanvasPdObjectAndInput(QObject* canvas, t_object* obj, QStringList* list)
-//{
-//    PythonQtObjectPtr ctx;
-//    ctx = PythonQt::self()->createUniqueModule();
-//    ctx.addObject("Qtpd", new pyQtpd(_appController));
-
-//    pyLocal* loc = new pyLocal;
-//    loc->setCanvas((CanvasView*)canvas); // canvas, canvas, canvas, canvas
-//    loc->setPdObject(obj);
-//    loc->setInput(list);
-//    ctx.addObject("local", loc);
-
-//    return ctx;
-//}

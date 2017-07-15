@@ -55,9 +55,9 @@ public:
     //    PythonQtObjectPtr withCanvasPdObjectAndInput(QObject* canvas, t_object* obj, QStringList* list);
 
     PythonQtObjectPtr newContext();
-    PythonQtObjectPtr withPatchController(PatchWindowController* controller);
-    PythonQtObjectPtr withPatchControllerAndServerObject(PatchWindowController* controller, ServerObject* object);
-    PythonQtObjectPtr withPatchControllerServerObjectAndList(PatchWindowController* controller, ServerObject* object, QStringList* list);
+    PythonQtObjectPtr newContextWithPatchController(PatchWindowController* controller);
+    PythonQtObjectPtr newContextWithPatchControllerAndServerObject(PatchWindowController* controller, ServerObject* object);
+    PythonQtObjectPtr newContextWithPatchControllerServerObjectAndList(PatchWindowController* controller, ServerObject* object, QStringList* list);
 };
 
 #endif // PY_WRAPERS_H

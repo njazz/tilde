@@ -16,8 +16,6 @@ namespace qtpd {
 
 UIToggle::UIToggle()
 {
-    //setPdObjectName("ui.toggle");
-
     setSize(20, 20);
     objectData()->setObjectSize(os_Square, 20, 20);
 
@@ -36,11 +34,6 @@ UIObject* UIToggle::createObj(QString data)
 
     return ret;
 }
-
-//UIObject* UIToggle::createObject(QString, t_canvas*, QGraphicsView*)
-//{
-//    return 0;
-//}
 
 void UIToggle::initProperties()
 {
@@ -112,22 +105,7 @@ void UIToggle::objectPressEvent(QGraphicsSceneMouseEvent* ev)
     }
 }
 
-//void UIToggle::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
-//{
-//    if (event->buttons() & Qt::LeftButton) {
-//        emit moveBox(this, event);
-//    }
-//    event->ignore();
-
-//    //todo move!
-//    if (getEditMode() != em_Unlocked) {
-//        setCursor(QCursor(Qt::PointingHandCursor));
-//    } else {
-//        setCursor(QCursor(Qt::ArrowCursor));
-//    }
-//}
-
-///////
+// ----------
 
 void UIToggle::setPdMessage(QString message)
 {

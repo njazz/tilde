@@ -10,10 +10,6 @@
 namespace qtpd {
 UIText::UIText()
 {
-    //setPdObjectName("ui.text");
-
-    //setSize(65, 20);
-
     objectData()->setObjectSize(os_Free, 80, 20);
 
     initProperties();
@@ -34,8 +30,6 @@ UIText::UIText()
     connect(_editor, &QPlainTextEdit::textChanged, this, &UIText::editorChanged);
 
     _editor->installEventFilter(this);
-
-    //resizeEvent();
 
     properties()->set("Size", properties()->get("Size")->asQSize());
 }
@@ -203,9 +197,7 @@ void UIText::fromQString(QString objData)
     }
 
     //PROPERTY_SET("Text", list);
-
     //    qDebug() << properties()->get("Text") << properties()->get("Size") << "||";
-
     //    PROPERTY_SET("Size",properties()->get("Size")->asQSize() );
 
     QString data = properties()->get("Text")->asQString().split("\\n ").join("\n");
@@ -273,7 +265,7 @@ void UIText::propertyAutoResize()
 {
 
     if (!properties()->get("AutoResizeToText")->asBool()) {
-        objectData()->setObjectSize(os_NoAutoResize,80, 1);
+        objectData()->setObjectSize(os_NoAutoResize, 80, 1);
     } else {
         objectData()->setObjectSize(os_Free, 80, 20);
         autoResize();

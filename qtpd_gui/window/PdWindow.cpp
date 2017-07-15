@@ -83,7 +83,6 @@ PdWindow::PdWindow()
 
     _ui->log->setFont(font);
 
-
     _ui->log->setColumnWidth(0, 70);
 
     fileMenu->removeAction(saveAct);
@@ -172,7 +171,5 @@ void PdWindow::editSendMessage(QString)
 
     QStringListModel* model = (QStringListModel*)(_ui->sendMessage->completer()->model());
     model->setStringList(sL);
-
-    //ServerInstance::post(s);
 }
 }

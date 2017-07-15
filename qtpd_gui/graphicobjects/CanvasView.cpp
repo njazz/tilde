@@ -9,11 +9,11 @@
 
 #include "UIObjectData.h"
 
-#include <assert.h>
-
 #include "UIBox.h"
 
 #include "SizeBox.h"
+
+#include <assert.h>
 
 namespace qtpd {
 

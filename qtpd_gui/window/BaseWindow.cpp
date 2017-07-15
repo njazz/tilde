@@ -154,7 +154,6 @@ void BaseWindow::createActions()
 
 ////
 /// \brief create all menus
-///
 void BaseWindow::createMenus()
 {
     _menuBar = new QMenuBar(this);
@@ -237,9 +236,4 @@ void BaseWindow::close()
 {
     ((QMainWindow*)this)->close();
 }
-
-//void BaseWindow::slotCreateScriptList()
-//{
-
-//}
 }

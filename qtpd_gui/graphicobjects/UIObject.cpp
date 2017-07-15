@@ -16,11 +16,9 @@
 
 #include "objectObserver.h"
 
-// to be removed:
-
+// to be removed for tests:
 #include "FileParser.h"
 #include "PropertiesWindow.h"
-
 #include "CanvasView.h"
 
 namespace qtpd {

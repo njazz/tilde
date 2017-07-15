@@ -13,19 +13,17 @@
 #include "AudioSettings.h"
 #include "Preferences.h"
 
-//python
-
-#ifdef WITH_PYTHON
-#include <PythonQt.h>
-#include <PythonQt_QtAll.h>
-
-#include "python/PythonQtScriptingConsole.h"
-#include "python/wrappers/py_wrappers.h"
-#endif
-
 #include "ApplicationController.h"
 
 #include <assert.h>
+
+// python
+#ifdef WITH_PYTHON
+#include "python/PythonQtScriptingConsole.h"
+#include "python/wrappers/py_wrappers.h"
+#include <PythonQt.h>
+#include <PythonQt_QtAll.h>
+#endif
 
 using namespace qtpd;
 
@@ -33,7 +31,6 @@ int main(int argc, char* argv[])
 {
 
     QApplication a(argc, argv);
-
     QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
 #ifndef _WIN32
@@ -42,8 +39,6 @@ int main(int argc, char* argv[])
 
     a.setCursorFlashTime(500);
 
-    // TODO move all to appcontroller
     new ApplicationController();
-
     return a.exec();
 }

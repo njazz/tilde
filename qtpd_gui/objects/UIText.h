@@ -12,16 +12,13 @@
 #include <QGraphicsView>
 
 #include "PropertyList.h"
-
 #include <QStyleOptionGraphicsItem>
-
 #include "Preferences.h"
 
 namespace qtpd {
 
 ////
 /// \brief gui object: comment box (ui.text)
-///
 class UIText : public UIObject {
     Q_OBJECT
 

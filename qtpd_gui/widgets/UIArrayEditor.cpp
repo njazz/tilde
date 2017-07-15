@@ -9,17 +9,11 @@ UIArrayEditor::UIArrayEditor(QWidget* parent)
     : QWidget(parent)
 {
     _serverArray = 0;
-    //_arrSize = 0;
 }
 
 void UIArrayEditor::paintEvent(QPaintEvent*)
 {
     if (_serverArray) {
-
-        //cmp_get_array_data(_pdArray, &_arrSize, &_arrData);
-        //_arrSize = _serverArray->size();
-
-        //_arrData = new float[_arrSize];
 
         _arrayData = _serverArray->getData(); //_arrData, _arrSize);
 

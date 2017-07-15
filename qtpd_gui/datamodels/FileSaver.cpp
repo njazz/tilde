@@ -1,8 +1,8 @@
+// (c) 2017 Alex Nadzharov
+// License: GPL3
 
 #include "FileSaver.h"
-
 #include "CanvasData.h"
-
 #include "PatchWindow.h"
 
 namespace qtpd {

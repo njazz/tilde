@@ -4,10 +4,8 @@
 #include "UISlider.h"
 
 #include "PropertyList.h"
-
-#include <QStyleOptionGraphicsItem>
-
 #include "UIObjectData.h"
+#include <QStyleOptionGraphicsItem>
 
 #include "ceammc_atomlist.h"
 
@@ -15,8 +13,6 @@ namespace qtpd {
 
 UISlider::UISlider()
 {
-    //setPdObjectName("ui.slider");
-
     setSize(20, 100);
 
     deselect();
@@ -42,11 +38,6 @@ UIObject* UISlider::createObj(QString data)
 
     return ret;
 }
-
-//UIObject* UISlider::createObject(QString, t_canvas*, QGraphicsView*)
-//{
-//    return 0;
-//}
 
 void UISlider::initProperties()
 {
@@ -198,7 +189,7 @@ void UISlider::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
     //        }
 }
 
-///////
+// ----------
 
 void UISlider::setPdMessage(QString message)
 {

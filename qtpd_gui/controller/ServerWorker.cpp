@@ -1,11 +1,13 @@
+// (c) 2017 Alex Nadzharov
+// License: GPL3
+
 #include "ServerWorker.h"
-#include "UIObject.h"
 #include "PropertyList.h"
+#include "UIObject.h"
 
 namespace qtpd {
 ServerWorker::ServerWorker()
 {
-
     qDebug() << "new server worker " << this;
 
     _localServer = 0;

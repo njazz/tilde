@@ -78,12 +78,9 @@ UIObject* UIScript::createObj(QString data)
     return ret;
 }
 
-//UIObject* UIScript::createObject(QString, t_canvas*, QGraphicsView*) { return 0; }
-
 void UIScript::initProperties()
 {
     UIObject::initProperties();
-
     properties()->create("Script", "Data", "0.1", QStringList(""));
 };
 
@@ -118,62 +115,6 @@ void UIScript::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidge
     //p->drawText(2, 3, boundingRect().width() - 2, boundingRect().height() - 3, 0, "py " + properties()->get("ScriptFile")->asQString(), 0);
 }
 
-// ------------------------
-
-//void UIScript::mousePressEvent(QGraphicsSceneMouseEvent* ev)
-//{
-
-//    if (getEditMode() != em_Unlocked) {
-//        _editor->show();
-//    }
-//    if (getEditMode() == em_Unlocked) {
-//        emit selectBox(this, ev);
-//        dragOffset = ev->pos().toPoint();
-//        ev->accept();
-//    }
-
-//    //context menu
-//    if (ev->button() == Qt::RightButton) {
-
-//        QPoint pos;
-
-//        if (scene()
-//            && !scene()->views().isEmpty()
-//            && scene()->views().first()
-//            && scene()->views().first()->viewport()) {
-
-//            QGraphicsView* v = scene()->views().first();
-//            pos = v->viewport()->mapToGlobal(ev->pos().toPoint());
-
-//            // TODO
-//            showPopupMenu(pos + this->pos().toPoint());
-//            ev->accept();
-//        }
-
-//        return;
-//    }
-//}
-
-//void UIScript::mouseReleaseEvent(QGraphicsSceneMouseEvent* ev)
-//{
-//    ev->accept();
-//}
-
-//void UIScript::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
-//{
-//    if (event->buttons() & Qt::LeftButton) {
-//        emit moveBox(this, event);
-//    }
-//    event->accept();
-
-//    //todo move!
-//    if (getEditMode() != em_Unlocked) {
-//        setCursor(QCursor(Qt::PointingHandCursor));
-//    } else {
-//        setCursor(QCursor(Qt::ArrowCursor));
-//    }
-//}
-
 // ----------------------
 
 void UIScript::setPdMessage(QString message)
@@ -192,7 +133,7 @@ void UIScript::sync()
     UIObject::sync();
 
     _editor->textEdit()->document()->setPlainText("");
-    _editor->textEdit()->setContext(pyWrapper::inst().withPatchControllerServerObjectAndList(this->parentController(), serverObject(), &_scriptCommon->scriptData()->inputList));
+    _editor->textEdit()->setContext(pyWrapper::inst().newContextWithPatchControllerServerObjectAndList(this->parentController(), serverObject(), &_scriptCommon->scriptData()->inputList));
 }
 
 void UIScript::updateUI(AtomList* list)

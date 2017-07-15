@@ -136,14 +136,6 @@ ApplicationController::ApplicationController()
     mainServerInstance()->post("qtpd started");
     mainServerInstance()->post("----");
 
-    //tests
-    //    string l = ServerInstance::listLoadedLibraries();
-    //    ServerInstance::post(l);
-
-    //    vector<string> vl = ServerInstance::listLoadedClasses();
-
-    //    ServerInstance::post(vl.at(33));
-
     _newFilenameCounter = 1;
 
     _recentFiles = new RecentFiles();
@@ -283,35 +275,9 @@ void ApplicationController::newScript()
 
 ServerObject* ApplicationController::slotCreateObject(ServerCanvas* canvas, string name)
 {
-    //qDebug() << "create obj slot";
-
     assert(canvas);
 
     ServerObject* serverObject = canvas->createObject(name);
-    // TEST
-    //serverObject->_pdObject = cmp_create_object((t_canvas*)_serverCanvas->canvasObject(),name,0,0);
-
-    //    uiObject->setParentCanvasView(_windows[0]->canvasView());
-    //    uiObject->setServerObject(serverObject);
-    //    uiObject->sync();
-
-    //    uiObject->setEditModeRef(_windows[0]->canvasView()->getEditModeRef());
-
-    //    // TODO
-
-    //    //connect(uiObject, &UIObject::selectBox, _windows[0]->canvasView(), &CanvasView::s_SelectBox);
-    //    //connect(uiObject, &UIObject::moveBox, _windows[0]->canvasView(), &CanvasView::s_MoveBox);
-
-    //    //uiObject->setEditModeRef( _windows[0]->canvasEditMode()); //Canvas::getEditModeRef());
-    //    //connect(uiObject, &UIObject::editObject, this, &CanvasView::objectStartsEdit);
-
-    //    uiObject->move(pos.x(), pos.y());
-
-    //    _canvasData->addUniqueBox(_canvasData->boxes(), uiObject);
-    //    _scene->addItem(uiObject);
-
-    //    connect(uiObject, &UIObject::selectBox, _windows[0]->canvasView(), &CanvasView::slotSelectBox);
-    //    connect(uiObject, &UIObject::moveBox, _windows[0]->canvasView(), &CanvasView::slotMoveBox);
 
     return serverObject;
 }

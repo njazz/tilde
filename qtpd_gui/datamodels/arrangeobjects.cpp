@@ -1,3 +1,6 @@
+// (c) 2017 Alex Nadzharov
+// License: GPL3
+
 #include "UIObject.h"
 #include "arrangeobjects.h"
 

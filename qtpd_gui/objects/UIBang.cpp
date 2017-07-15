@@ -91,25 +91,6 @@ void UIBang::objectPressEvent(QGraphicsSceneMouseEvent* ev)
     }
 }
 
-//void UIBang::mouseReleaseEvent(QGraphicsSceneMouseEvent*)
-//{
-//}
-
-//void UIBang::objectMoveEvent(QGraphicsSceneMouseEvent* event)
-//{
-//    if (event->buttons() & Qt::LeftButton) {
-//        emit moveBox(this, event);
-//    }
-//    event->ignore();
-
-//    //todo move!
-//    if (getEditMode() != em_Unlocked) {
-//        setCursor(QCursor(Qt::PointingHandCursor));
-//    } else {
-//        setCursor(QCursor(Qt::ArrowCursor));
-//    }
-//}
-
 // -------------------------
 
 void UIBang::updateUI(AtomList*)

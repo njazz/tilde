@@ -6,9 +6,7 @@
 #include "PropertyList.h"
 
 #include <QStyleOptionGraphicsItem>
-
 #include "Preferences.h"
-
 #include "UIObjectData.h"
 
 #include "ceammc_atomlist.h"

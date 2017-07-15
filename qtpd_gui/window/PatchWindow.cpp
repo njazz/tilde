@@ -20,48 +20,12 @@ PatchWindow::PatchWindow()
     _canvasView = new CanvasView((QGraphicsView*)this);
     _canvasView->setController(_controller);
 
-    //scroll->setWidget(canvas);
-
-    //    QGridLayout* layout1 = new QGridLayout();
-    //    layout1->setMargin(20);
-    //    layout1->addWidget(canvas);
-    //    scroll->setLayout(layout1);
-
-    //    scroll->setWidget(canvas);
-
-    //canvas->setMinimumSize(400,300);
-    //    setCentralWidget(scroll);
-
     setCentralWidget(_canvasView);
-    //setBaseSize(QSize(640,480));
-
-    //canvas->setParent(centralWidget());
-    //scroll->setParent(this);
-
-    //    QGridLayout* layout2 = new QGridLayout();
-    //    layout2->addWidget(scroll);
-    //    layout2->setMargin(0);
-    //setLayout(layout1);
-
-    //TODO weird
-    //objectMaker = new ObjectMaker((QLineEdit*)canvas);
-
-    //objectMaker->setParent(canvas);
 
     connect(_canvasView->objectMaker(), &ObjectMaker::objectMakerDoneSignal, this, &PatchWindow::objectMakerDone);
 
-    // TODO
-    //connect subpatch creation routine
-    //connect(_canvasView, &CanvasView::createSubpatchWindow, this, &PatchWindow::s_createSubpatchWindow);
-
     //todo
     setWindowTitle("<new patch>");
-
-    //
-    //    connect(cutAct, &QAction::triggered, this, &PatchWindow::cut);
-    //    connect(copyAct, &QAction::triggered, this, &PatchWindow::copy);
-    //    connect(duplicateAct, &QAction::triggered, this, &PatchWindow::duplicate);
-    //    connect(pasteAct, &QAction::triggered, this, &PatchWindow::paste);
 
     PatchWindow::createActions();
     PatchWindow::createMenus();
@@ -74,7 +38,6 @@ void PatchWindow::createActions()
     BaseWindow::createActions();
 
     // spaghetti time
-
     //        connect(openAct, &QAction::triggered, this, &cm_patchwindow::open);
 
     _delObjectAct = new QAction(tr("Delete object"), this);
@@ -334,47 +297,7 @@ void PatchWindow::createMenus()
     arrangeMenu->addAction(zoom100Act);
 }
 
-//PatchWindow:: PatchWindow()
-//{
-//PatchWindow* this_;
-//this_ = new PatchWindow();
-
-// move to canvas
-
-// TODO
-
-//this_->_canvasView->setPdObject(cmp_newpatch());
-
-//    if (!this_->_canvasView->pdObject()) {
-//        qDebug("Failed to create canvas!");
-//    }
-//else
-
-//return this_;
-//}
-
-//////
-///// \brief constructor for the subpatches' windows
-///// \param subpatch
-/////
-//PatchWindow* PatchWindow::newSubpatch(t_canvas* subpatch)
-//{
-//    PatchWindow* this_;
-//    this_ = new PatchWindow;
-
-//    ((QMainWindow*)this_)->setWindowTitle("<subpatch>");
-
-////    this_->_canvasView->setPdObject(subpatch);
-
-////    if (!this_->_canvasView->pdObject()) {
-////        qDebug("Failed to create canvas!");
-////    }
-//    //    else
-//    //        cmp_loadbang(this_->canvas->pdObject());
-
-//    return this_;
-//}
-
+//
 void PatchWindow::setController(PatchWindowController* c)
 {
     _controller = c;
@@ -445,56 +368,9 @@ void PatchWindow::closeEvent(QCloseEvent* event)
     }
 }
 
-//////
-///// \brief re-save patch, uses its current name
-/////
-//void PatchWindow::save()
-//{
-
-//    QString fname;
-
-//    if (canvas->fileName() != "")
-//        fname = canvas->fileName();
-//    else
-//        fname = QFileDialog::getSaveFileName(this, QString("Save patch as..."), QString("~/"), QString("*.pd"), 0, 0);
-
-//    doSave(fname);
-//}
-
-//////
-///// \brief first save of the patch
-/////
-//void PatchWindow::saveAs()
-//{
-
-//    QString fname = QFileDialog::getSaveFileName(this, QString("Save patch as..."), QString("~/"), QString("*.pd"), 0, 0);
-
-//    doSave(fname);
-//}
-
-//void PatchWindow::doSave(QString fname)
-//{
-//    if (fname != "") {
-//        QString file = fname.section("/", -1, -1);
-//        QString dir = fname.section("/", 0, -2);
-
-//        qDebug("filename: %s %s", file.toStdString().c_str(), dir.toStdString().c_str());
-
-//        FileSaver::save(fname, canvas);
-
-//        //
-//        canvas->setFileName (fname);
-
-//        setWindowTitle(file);
-//        setWindowFilePath(fname);
-//        setWindowModified(false);
-//    }
-//}
-
 ////
 /// \brief set file name when opening patch file
 /// \param fname
-///
 void PatchWindow::setFileName(QString fname)
 {
 
@@ -633,6 +509,7 @@ void PatchWindow::slotEnableRedo(bool v)
 {
     redoAct->setEnabled(v);
 
+    // TODO
     //    if (_controller->undoStack()->count()>0) {
     //        QString title = _controller->undoStack()->command(_controller->undoStack()->count()-1)->text();
 
@@ -662,6 +539,7 @@ void PatchWindow::slotEnableUndo(bool v)
         undoAct->setText("Can't Undo");
     }
 
+    // TODO
     //    if (_controller->undoStack()->count()>1) {
     //        QString title = _controller->undoStack()->command(_controller->undoStack()->count()-2)->text();
 
@@ -673,49 +551,15 @@ void PatchWindow::slotEnableUndo(bool v)
     //    }
 }
 
-// ==============================
-// TODO move to controller
-
-//void PatchWindow::cut()
-//{
-//    _canvasView->dataCut();
-//}
-
-//void PatchWindow::copy()
-//{
-//    _canvasView->dataCopy();
-//}
-
-//void PatchWindow::duplicate()
-//{
-//    _canvasView->dataDuplicate();
-//}
-
-//void PatchWindow::paste()
-//{
-//    FileParser::setParserWindow(this);
-//    _canvasView->dataPaste();
-//}
-
 // ----------
 
 void PatchWindow::resizeEvent(QResizeEvent* event)
 {
-    //        canvas->move(0,0);
-
-    //        // todo move to canvas
     QSize newSize = _canvasView->minimumCanvasSize();
     if (newSize.width() < event->size().width())
         newSize.setWidth(event->size().width());
     if (newSize.height() < event->size().height())
         newSize.setHeight(event->size().height());
-    //canvas->setMinimumSize(newSize);
-
-    //canvas->viewport()->setMinimumSize(newSize);
-    //canvas->setWindowSize(newSize);
-
-    //        //FIX
-    //        canvas->move(0,0);
 }
 
 // ===============================================

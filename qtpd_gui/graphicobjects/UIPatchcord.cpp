@@ -21,11 +21,6 @@ UIPatchcord::UIPatchcord(UIItem* obj1, UIItem* out1, UIItem* obj2, UIItem* in2)
     endPoint();
     startPoint();
 
-    //_path = new QPainterPath();
-
-    // TODO
-    //_serverPatchcord = ((UIObject*)obj1)->serverObject()->parent()->createPatchcord(((UIObject*)obj1)->serverObject(), outlet, ((UIObject*)obj2)->serverObject(), inlet);
-
     _serverPatchcord = 0;
 }
 
@@ -37,7 +32,6 @@ UIPatchcord::~UIPatchcord()
 
     _obj1 = 0;
     _obj2 = 0;
-    //delete _path;
 }
 
 void UIPatchcord::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*)
@@ -182,10 +176,4 @@ void UIPatchcord::mousePressEvent(QGraphicsSceneMouseEvent*)
     select(); //(true);
     update();
 }
-
-//void UIPatchcord::deleteServerPatchcord()
-//{
-
-//}
-
 }

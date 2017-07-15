@@ -69,10 +69,7 @@ UIObject* UIScriptBox::createObj(QString data)
 
     return ret;
 }
-/*UIObject* UIScriptBox::createObject(QString objectData, t_canvas* pdCanvas, QGraphicsView* parent = 0)
-{
-    return 0;
-}*/ /*
+/*
 
 {
     qDebug() << "ui.scriptbox";
@@ -170,59 +167,6 @@ void UIScriptBox::objectPressEvent(QGraphicsSceneMouseEvent* event)
         _editor->show();
     }
 }
-//void UIScriptBox::mousePressEvent(QGraphicsSceneMouseEvent* ev)
-//{
-
-//    if (getEditMode() != em_Unlocked) {
-//        _editor->show();
-//    }
-//    if (getEditMode() == em_Unlocked) {
-//        emit selectBox(this, ev);
-//        dragOffset = ev->pos().toPoint();
-//        ev->accept();
-//    }
-
-//    //context menu
-//    if (ev->button() == Qt::RightButton) {
-
-//        QPoint pos;
-
-//        if (scene()
-//            && !scene()->views().isEmpty()
-//            && scene()->views().first()
-//            && scene()->views().first()->viewport()) {
-
-//            QGraphicsView* v = scene()->views().first();
-//            pos = v->viewport()->mapToGlobal(ev->pos().toPoint());
-
-//            // TODO
-//            showPopupMenu(pos + this->pos().toPoint());
-//            ev->accept();
-//        }
-
-//        return;
-//    }
-//}
-
-//void UIScriptBox::mouseReleaseEvent(QGraphicsSceneMouseEvent* ev)
-//{
-//    ev->accept();
-//}
-
-//void UIScriptBox::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
-//{
-//    if (event->buttons() & Qt::LeftButton) {
-//        emit moveBox(this, event);
-//    }
-//    event->accept();
-
-//    //todo move!
-//    if (getEditMode() != em_Unlocked) {
-//        setCursor(QCursor(Qt::PointingHandCursor));
-//    } else {
-//        setCursor(QCursor(Qt::ArrowCursor));
-//    }
-//}
 
 // ----------------------
 
@@ -238,7 +182,7 @@ void UIScriptBox::sync()
     UIObject::sync();
 
     _editor->textEdit()->document()->setPlainText("");
-    _editor->textEdit()->setContext(pyWrapper::inst().withPatchControllerServerObjectAndList(this->parentController(), serverObject(), &_scriptCommon->scriptData()->inputList));
+    _editor->textEdit()->setContext(pyWrapper::inst().newContextWithPatchControllerServerObjectAndList(this->parentController(), serverObject(), &_scriptCommon->scriptData()->inputList));
 }
 
 void UIScriptBox::updateUI(AtomList* list)

@@ -11,8 +11,6 @@
 #include "UIMatrix.h"
 #include "UIMessage.h"
 #include "UISlider.h"
-#include "UISubCanvas.h"
-#include "UISubpatch.h"
 #include "UIText.h"
 #include "UIToggle.h"
 
@@ -65,7 +63,7 @@ void ObjectLoader::loadObjects()
 
     addUIobject("ui.dsp", &UIDSP::createObj);
 
-    addUIobject("pds", &UISubCanvas::createObj);
+    //addUIobject("pds", &UISubCanvas::createObj);
 
     // ---------------------------------------------
 }

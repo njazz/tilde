@@ -3,13 +3,6 @@
 
 #include "PropertiesWindow.h"
 
-//move here later
-
-//PropertiesWindow::PropertiesWindow()
-//{
-
-//}
-
 #include <QCheckBox>
 #include <QDoubleSpinBox>
 #include <QGridLayout>
@@ -26,8 +19,8 @@
 
 #include "QtColorPicker/include/color_selector.hpp"
 
-#include "undocommands.h"
 #include "PatchWindowController.h"
+#include "undocommands.h"
 
 namespace qtpd {
 
@@ -279,9 +272,9 @@ void PropertiesWindow::editedText()
     Property* newValue = new Property(*_propertyList->get(pname));
 
     // UNDO
-//    undoChangeProperty* undo = new undoChangeProperty(_propertyList,_propertyList->get(pname),oldValue, newValue);
-//    if (_patchController->undoStack())
-//    _patchController->undoStack()->push(undo);
+    //    undoChangeProperty* undo = new undoChangeProperty(_propertyList,_propertyList->get(pname),oldValue, newValue);
+    //    if (_patchController->undoStack())
+    //    _patchController->undoStack()->push(undo);
 
     // signalEnableUndo(true);
 };

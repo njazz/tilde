@@ -70,16 +70,10 @@ PatchWindowController::PatchWindowController(ApplicationController* appControlle
 
     _appController = appController;
 
-    //_serverInstance = appController->mainServerInstance();
     serverInstance()->registerObserver(_observer);
 
     _canvasData = new CanvasData();
     _serverCanvas = canvas;
-
-    //    if (!_serverCanvas)
-    //        _serverCanvas = serverInstance()->createCanvas();
-
-    //_canvasData->setServerCanvas(_serverCanvas);
 
     _boxOnlyCanvas = 0;
     _boxOnlyScene = 0;
@@ -204,18 +198,11 @@ void PatchWindowController::saveFile(QString fileName)
 
 void PatchWindowController::saveFileDialog(){};
 
-//PatchWindowController* PatchWindowController::createSubpatchWindowController(){
-//    // TODO
-//};
-
 void PatchWindowController::setAppController(ApplicationController* a)
 {
     _appController = a;
     firstWindow()->setAppController(a);
 }
-//
-//void PatchWindowController::createObjectMaker(){};
-//
 
 void PatchWindowController::doCreateObject(UIObject* uiObject)
 {
@@ -833,70 +820,6 @@ void PatchWindowController::slotObjectHoverLeave()
     //sizeBoxHide();
 }
 
-//void PatchWindowController::signalSelectBox(UIItem* box, QGraphicsSceneMouseEvent* event)
-//{
-//    // TODO
-//    //}
-
-//    /*
-//    qDebug() << "select box";
-
-//    if (CanvasView::getEditMode() == em_Unlocked) {
-//        if (!(event->modifiers() & Qt::ShiftModifier))
-//            if (_canvasData.selectedBoxes()->size() < 2)
-//                if (_canvasData.selectedBoxes()->size() == 1)
-//                    if (_canvasData.findBox(_canvasData.selectedBoxes(), (UIObject*)box) == -1) //fix
-//                    {
-//                        qDebug() << "deselect";
-//                        _canvasData.deselectBoxes();
-
-//                    } else {
-//                        qDebug() << "edit";
-//                        objectStartsEdit((void*)box);
-//                    }
-//                else
-//                    qDebug() << "size" << _canvasData.selectedBoxes()->size();
-
-//        selectBox(box);
-//    }
-
-//    //temporary
-//    setDragObject(0);
-
-//    viewport()->update();
-//    */
-//}
-
-//////
-///// \brief Canvas::s_MoveBox
-///// \param box
-///// \param event
-///// \deprecated move to UIBox
-//void PatchWindowController::signalMoveBox(UIItem* box, QGraphicsSceneMouseEvent* event)
-//{
-//    // TODO
-//    /*
-//    if (!(CanvasView::getEditMode() == em_Unlocked))
-//        return;
-//    for (int i = 0; i < (int)_canvasData.selectedBoxes()->size(); i++) {
-//        UIObject* w = ((UIObject*)_canvasData.selectedBoxes()->at(i));
-//        QPoint pos = (((UIObject*)_canvasData.selectedBoxes()->at(i))->pos().toPoint()) + mapToParent((event->pos().toPoint() - box->dragOffset));
-
-//        if (_gridSnap) {
-//            pos.setX(ceil(pos.x() / _grid->gridStep()) * _grid->gridStep());
-//            pos.setY(ceil(pos.y() / _grid->gridStep()) * _grid->gridStep());
-//        }
-
-//        w->move(pos);
-
-//        //todo
-//        viewport()->update();
-//    }
-
-//    resizeToObjects();
-//    */
-//}
-
 void PatchWindowController::createPatchcord(UIObject* obj1, int outlet, UIObject* obj2, int inlet)
 {
     undoCreatePatchcord* undo = new undoCreatePatchcord(this, obj1, outlet, obj2, inlet);
@@ -935,9 +858,6 @@ UIPatchcord* PatchWindowController::createPatchcordWithoutUndo(UIObject* obj1, i
 
         _canvasData->addPatchcord(pc);
 
-        //        cmp_patchcord((t_object*)obj1->pdObject(), outlet, (t_object*)obj2->pdObject(), inlet);
-        //        _canvasData.addPatchcord(pc); //patchcords()->push_back(pc);
-
         _scene->addItem(pc);
 
         return pc;
@@ -946,17 +866,6 @@ UIPatchcord* PatchWindowController::createPatchcordWithoutUndo(UIObject* obj1, i
 
     return 0;
 }
-
-//void PatchWindowController::patchcord(UIObject* obj1, UIItem* outport, UIObject* obj2, UIItem* inport)
-//{
-
-//    //todo
-//    /*
-//    int n1 = ((Port*)outport)->portIndex();
-//    int n2 = ((Port*)inport)->portIndex();
-//    patchcord(obj1, n1, obj2, n2);
-//    */
-//}
 
 void PatchWindowController::slotSelectObject(UIObject* object)
 {
@@ -1033,21 +942,6 @@ void PatchWindowController::slotResizeBoxes(int dx, int dy)
 
         o->PROPERTY_SET("Size", o->boundingRect().size().toSize());
     }
-
-    //    QRect r = boundingRect().toRect();
-
-    //    if (objectData()->objectSizeMode() != os_Fixed)
-    //        setWidth(boundingRect().width() + dx);
-    //    if (objectData()->objectSizeMode() == os_Free)
-    //        setHeight(boundingRect().height() + dy);
-
-    //    if (objectData()->objectSizeMode() == os_Square) {
-    //        setHeight(boundingRect().width());
-    //    }
-
-    //    PROPERTY_SET("Size", boundingRect().size().toSize());
-
-    //    scene()->update(r.left(), r.top(), r.width(), r.height());
 }
 
 void PatchWindowController::slotAlignLeft()

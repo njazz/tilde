@@ -2,9 +2,7 @@
 // License: GPL3
 
 #include "UIScriptCommon.h"
-
 #include "pdServer.hpp"
-
 #include "ceammc_atomlist.h"
 
 namespace qtpd {
@@ -14,10 +12,7 @@ UIScriptCommon::UIScriptCommon(QObject* parent)
 {
 
     _scriptData = new UIScriptData();
-
     connect(this, &UIScriptCommon::callRun, this, &UIScriptCommon::btnRun);
-
-
 }
 
 QStringList UIScriptCommon::getEditorData()
@@ -38,24 +33,6 @@ void UIScriptCommon::setEditor(UIScriptEditor* editor)
 }
 
 UIScriptEditor* UIScriptCommon::editor() { return _editor; }
-
-// TODO
-//    static void updateUI(void* uiobj, ceammc::AtomList msg)
-//    {
-//        qDebug("script << pd message");
-//        qDebug() << (long)uiobj << msg.size();
-
-//        //temporary
-//        UIScriptCommon* x = (UIScriptCommon*)uiobj;
-
-//        QStringList list;
-//        for (size_t i = 0; i < msg.size(); i++) {
-//            list.push_back(msg.at(i).asString().c_str());
-//        }
-
-//        x->_scriptData->inputList = list;
-//        emit x->callRun();
-//    }
 
 void UIScriptCommon::btnRun()
 {
@@ -156,6 +133,4 @@ QStringList UIScriptCommon::AtomListToStringList(AtomList list)
 
     return ret;
 }
-
-
 }

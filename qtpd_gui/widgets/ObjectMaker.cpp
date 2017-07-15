@@ -22,20 +22,20 @@ ObjectMaker::ObjectMaker(QLineEdit* parent)
     connect(this, &ObjectMaker::textEdited, this, &ObjectMaker::editorChanged);
     connect(this, &ObjectMaker::returnPressed, this, &ObjectMaker::done);
 
-    QStringListModel *m = new QStringListModel;
+    QStringListModel* m = new QStringListModel;
 
     vector<string> vlist = ServerInstance::listLoadedClasses();
     QStringList sL;
 
-    for (vector<string>::iterator it = vlist.begin(); it != vlist.end(); ++it)
-    {
+    for (vector<string>::iterator it = vlist.begin(); it != vlist.end(); ++it) {
         string s = *it;
         sL.push_back(s.c_str());
     }
 
     m->setStringList(sL);
 
-    if (!completer()) setCompleter(new QCompleter);
+    if (!completer())
+        setCompleter(new QCompleter);
     completer()->setModel(m);
 }
 
@@ -53,17 +53,12 @@ void ObjectMaker::editorChanged()
 
 void ObjectMaker::done()
 {
-    //test
-//    if (parent())
-//        ((QWidget*)parent())->setFocus();
 
     emit objectMakerDoneSignal();
-
 }
 
-
-PatchWindowController* ObjectMaker::parentController(){return _parentController;}
-void ObjectMaker::setParentController(PatchWindowController* controller){_parentController = controller;}
+PatchWindowController* ObjectMaker::parentController() { return _parentController; }
+void ObjectMaker::setParentController(PatchWindowController* controller) { _parentController = controller; }
 
 void ObjectMaker::focusOutEvent(QFocusEvent*)
 {
@@ -74,5 +69,4 @@ void ObjectMaker::cancel()
 {
     hide();
 }
-
 }

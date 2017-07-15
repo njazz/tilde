@@ -77,4 +77,4 @@ void Port:: mouseReleaseEvent(QGraphicsSceneMouseEvent* ev)
 
 }
 
-//////////
+// -----------

@@ -2,7 +2,6 @@
 // License: GPL3
 
 #include "Property.h"
-
 #include <QDebug>
 
 using namespace std;
