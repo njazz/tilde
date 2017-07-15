@@ -93,12 +93,12 @@ HEADERS += ../qtpd_gui/properties/Property.h \
 
 INCLUDEPATH += \
 #    ../qtpd_gui/lib_headers/ \
-#    ../qtpd_gui/window/ \
+    ../qtpd_gui/window/ \
 #    ../qtpd_gui/objects/ \
 #    ../qtpd_gui/widgets/ \
     ../qtpd_gui/properties/ \
 #    ../qtpd_gui/graphicobjects/ \
-#    ../qtpd_gui/datamodels/ \
+    ../qtpd_gui/datamodels/ \
 #    ../qtpd_gui/controller/ \
 #    ../../pd-server/src/ \
 

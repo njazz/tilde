@@ -3,6 +3,9 @@
 
 #include "PropertyList.h"
 
+//#include "FileParser.h"
+//#include "FileSaver.h"
+
 using namespace qtpd;
 
 class Qtpd_tests : public QObject {
@@ -25,6 +28,8 @@ private Q_SLOTS:
     //    void propertyCopy();
     //
     void patchControllerCopyObject();
+
+    void fileParserEscapeString();
 };
 
 Qtpd_tests::Qtpd_tests()
@@ -135,6 +140,19 @@ void Qtpd_tests::patchControllerCopyObject()
     //PatchWindowController *w = new PatchWindowController(0);
 
     //w->createObject("text @Text test object", QPoint(0,0));
+}
+
+void Qtpd_tests::fileParserEscapeString()
+{
+
+//    QString testEscape = "1 2\n 3, 4. 5@ 6;";
+
+//    if (FileParser::unescapeString(FileParser::escapeString(testEscape)) != testEscape) {
+//        qDebug() << testEscape << FileParser::escapeString(testEscape) << FileParser::unescapeString(FileParser::unescapeString(testEscape));
+//    }
+
+//    QVERIFY(FileParser::unescapeString(FileParser::escapeString(testEscape)) == testEscape);
+
 }
 
 QTEST_APPLESS_MAIN(Qtpd_tests)
