@@ -7,6 +7,8 @@
 
 #include "Preferences.h"
 
+#include "UIScriptCommon.h"
+
 namespace qtpd {
 UIScriptEditor::UIScriptEditor(QWidget* parent)
     : QWidget(parent)
@@ -59,6 +61,8 @@ UIScriptEditor::UIScriptEditor(QWidget* parent)
     b1->setFixedSize(50, 20);
     b1->show();
     connect(b1, &QPushButton::clicked, this, &UIScriptEditor::btnClear);
+
+    _scriptCommon = 0;
 }
 
 void UIScriptEditor::resizeEvent(QResizeEvent*)
@@ -69,4 +73,13 @@ void UIScriptEditor::resizeEvent(QResizeEvent*)
 
 UIScriptTextEdit* UIScriptEditor::textEdit() { return _textEdit; }
 void UIScriptEditor::setTextEdit(UIScriptTextEdit* textEdit) { _textEdit = textEdit; }
+
+void UIScriptEditor::enableStandalone()
+{
+    _scriptCommon = new UIScriptCommon;
+
+    textEdit()->setContext(pyWrapper::inst().newContext());
+
+    _scriptCommon->setEditor(this);
+}
 }

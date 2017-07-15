@@ -10,6 +10,8 @@
 
 namespace qtpd {
 
+class UIScriptCommon;
+
 ////
 /// \brief Script editor QWidget
 ///
@@ -19,13 +21,17 @@ class UIScriptEditor : public QWidget {
 private:
     UIScriptTextEdit* _textEdit;
 
+    UIScriptCommon* _scriptCommon;
+
 public:
     explicit UIScriptEditor(QWidget* parent = 0);
 
     void resizeEvent(QResizeEvent*);
 
-    UIScriptTextEdit* textEdit() ;
-    void setTextEdit(UIScriptTextEdit* textEdit) ;
+    UIScriptTextEdit* textEdit();
+    void setTextEdit(UIScriptTextEdit* textEdit);
+
+    void enableStandalone();
 
 signals:
 
@@ -42,6 +48,8 @@ private slots:
     void btnLoad() { emit btnLoadSignal(); };
     void btnSave() { emit btnSaveSignal(); };
     void btnClear() { emit btnClearSignal(); };
+
+
 };
 }
 #endif // UISCRIPTEDITOR_H

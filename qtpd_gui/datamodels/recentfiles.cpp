@@ -5,6 +5,8 @@
 #include <QStandardPaths>
 #include <QTextStream>
 
+#include "filepaths.h"
+
 namespace qtpd {
 
 RecentFiles::RecentFiles()

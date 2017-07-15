@@ -16,6 +16,8 @@ UIScriptCommon::UIScriptCommon(QObject* parent)
     _scriptData = new UIScriptData();
 
     connect(this, &UIScriptCommon::callRun, this, &UIScriptCommon::btnRun);
+
+
 }
 
 QStringList UIScriptCommon::getEditorData()
@@ -154,4 +156,6 @@ QStringList UIScriptCommon::AtomListToStringList(AtomList list)
 
     return ret;
 }
+
+
 }

@@ -9,8 +9,9 @@
 #include "UIScriptEditor.h"
 
 #include <QFileDialog>
-
 #include <QStringList>
+
+#include "UIScriptCommon.h"
 
 namespace ceammc {
 class AtomList;
@@ -41,6 +42,8 @@ private:
 
     UIScriptEditor* _editor;
     QStringList getEditorData();
+
+    UIScriptCommon* _scriptCommon;
 
 public:
     explicit UIScriptCommon(QObject* parent = 0);

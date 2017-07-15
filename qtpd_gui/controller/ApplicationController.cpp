@@ -15,19 +15,16 @@
 #include "python/wrappers/py_wrappers.h"
 #endif
 
-#include "ServerWorker.h"
-
-#include "pdWindowConsoleObserver.h"
-
 #include "ControllerObserver.h"
-
-#include "PropertiesWindow.h"
-
 #include "ObjectLoader.h"
-
+#include "PropertiesWindow.h"
+#include "ServerWorker.h"
+#include "filepaths.h"
+#include "pdWindowConsoleObserver.h"
 #include "recentfiles.h"
-
 #include <assert.h>
+
+#include "UIScriptEditor.h"
 
 namespace qtpd {
 
@@ -84,16 +81,18 @@ ApplicationController::ApplicationController()
 
     // --------
 
+    _filePaths = new FilePaths;
+
     //temporary folders properties
     QString docFolder = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).last();
 
     // load from file later
-    Preferences::inst().create("Externals", "Folders", "0.1", docFolder + "/Qtpd/Externals");
-    Preferences::inst().create("Scripts", "Folders", "0.1", docFolder + "/Qtpd/Scripts");
-    Preferences::inst().create("Help", "Folders", "0.1", docFolder + "/Qtpd/Help");
-    Preferences::inst().create("Patches", "Folders", "0.1", docFolder + "/Qtpd/Patches");
-    Preferences::inst().create("Classes", "Folders", "0.1", docFolder + "/Qtpd/Classes");
-    Preferences::inst().create("Libraries", "Folders", "0.1", docFolder + "/Qtpd/Libraries");
+    Preferences::inst().create("Externals", "ExtraFolders", "0.1", docFolder + "/Qtpd/Externals");
+    Preferences::inst().create("Scripts", "ExtraFolders", "0.1", docFolder + "/Qtpd/Scripts");
+    Preferences::inst().create("Help", "ExtraFolders", "0.1", docFolder + "/Qtpd/Help");
+    Preferences::inst().create("Patches", "ExtraFolders", "0.1", docFolder + "/Qtpd/Patches");
+    Preferences::inst().create("Classes", "ExtraFolders", "0.1", docFolder + "/Qtpd/Classes");
+    Preferences::inst().create("Libraries", "ExtraFolders", "0.1", docFolder + "/Qtpd/Libraries");
 
     Preferences::inst().get("Externals")->setType(ptStringList);
     Preferences::inst().get("Scripts")->setType(ptStringList);
@@ -127,6 +126,13 @@ ApplicationController::ApplicationController()
     mainServerInstance()->addSearchPath(extPath3);
     //controller->mainServerInstance()->addSearchPath(extPath4);
 
+    // TODO
+    // "Paths" should be read-only list
+    // search all through "FilePath" class
+    // set only root ~/Qtpd path
+    // extrafolders for additional paths
+    Preferences::inst().create("QtpdPath", "Folders", "0.1", _filePaths->basePath());
+
     mainServerInstance()->post("qtpd started");
     mainServerInstance()->post("----");
 
@@ -144,6 +150,8 @@ ApplicationController::ApplicationController()
     _recentMenu = new QMenu();
 
     _pdWindow->setRecentMenu(_recentMenu);
+
+    Preferences::inst().readFromTextFile();
 };
 
 ServerInstance* ApplicationController::mainServerInstance()
@@ -263,6 +271,14 @@ void ApplicationController::openFile()
     QAction* a = (QAction*)QObject::sender();
 
     FileParser::open(a->text());
+}
+
+void ApplicationController::newScript()
+{
+    UIScriptEditor* s = new UIScriptEditor(0);
+    s->enableStandalone();
+
+    s->show();
 }
 
 ServerObject* ApplicationController::slotCreateObject(ServerCanvas* canvas, string name)

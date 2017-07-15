@@ -28,7 +28,6 @@ public:
     void setAppController(ApplicationController* appController);
 
     void createActions(); ////> create menu actions (File, Edit)
-
     void createMenus(); ///>  create all menus
 
     void setRecentMenu(QMenu* menu);
@@ -57,6 +56,8 @@ private:
 
     QAction* _pdHelpAct;
 
+    QAction* _newScriptAct;
+
 public:
     QAction* messageAct;
 
@@ -80,11 +81,15 @@ public:
     QMenu* putMenu;
     QMenu* arrangeMenu;
 
+    QMenu* scriptsMenu;
+
     QMenu* helpMenu;
 
 private slots:
 
     void close();
+
+//    void slotCreateScriptList();
 };
 }
 

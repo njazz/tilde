@@ -28,6 +28,7 @@ class UIObject;
 class ServerWorker;
 class PdWindowConsoleObserver;
 class RecentFiles;
+class FilePaths;
 
 ////
 /// \brief The Application Controller class
@@ -50,6 +51,8 @@ private:
 
     RecentFiles* _recentFiles;
     QMenu* _recentMenu;
+
+    FilePaths* _filePaths;
 
 public:
     ApplicationController();
@@ -86,6 +89,8 @@ public slots:
     void dspOff();
 
     void openFile();
+
+    void newScript();
 
     ServerObject* slotCreateObject(ServerCanvas* canvas, string name);
 };

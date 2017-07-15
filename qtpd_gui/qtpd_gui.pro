@@ -167,7 +167,8 @@ SOURCES += main.cpp\
     properties/QtColorPicker/src/gradient_slider.cpp \
     properties/QtColorPicker/src/hue_slider.cpp \
     undo/undocommands.cpp \
-    datamodels/recentfiles.cpp
+    datamodels/recentfiles.cpp \
+    datamodels/filepaths.cpp
 
 
 #
@@ -258,7 +259,8 @@ HEADERS  += \
     controller/patchObserver.h \
     controller/objectObserver.h \
     undo/undocommands.h \
-    datamodels/recentfiles.h
+    datamodels/recentfiles.h \
+    datamodels/filepaths.h
 
 #    widgets/UIScriptTextEdit.h \
 #    widgets/UIScriptEditor.h \

@@ -673,6 +673,8 @@ void FileParser::open(QString fname)
 
             _pdParserWindowController->firstWindow()->canvasView()->resizeToObjects();
             _pdParserWindowController->firstWindow()->show();
+
+            _pdParserWindowController->serverCanvas()->loadbang();
         }
 
         f.close();

@@ -60,7 +60,7 @@ void BaseWindow::setAppController(ApplicationController* appController)
     connect(_dspOnAct, &QAction::triggered, _appController, &ApplicationController::dspOn);
     connect(_dspOffAct, &QAction::triggered, _appController, &ApplicationController::dspOff);
 
-
+    connect(_newScriptAct, &QAction::triggered, _appController, &ApplicationController::newScript);
 }
 
 // ---------
@@ -135,6 +135,9 @@ void BaseWindow::createActions()
 #ifndef WITH_PYTHON
     _pythonConsoleAct->setEnabled(false);
 #endif
+#ifdef WITH_PYTHON
+    _newScriptAct = new QAction(tr("New script ..."), this);
+#endif
 
     _pdAudioSettingsAct = new QAction(tr("Audio / MIDI Settings..."), this);
     _pdAudioSettingsAct->setShortcut(tr("Ctrl+Shift+,"));
@@ -164,8 +167,6 @@ void BaseWindow::createMenus()
 
     //_recentMenu = new QMenu(tr("Open Recent"));
     //fileMenu->addMenu(_recentMenu);
-
-
 
     //fileMenu->addSeparator();
     fileMenu->addAction(closeAct);
@@ -197,7 +198,12 @@ void BaseWindow::createMenus()
     _mediaMenu = _menuBar->addMenu(tr("&Media"));
     _mediaMenu->addAction(_dspOnAct);
     _mediaMenu->addAction(_dspOffAct);
-    //mediaMenu->addSeparator();
+//mediaMenu->addSeparator();
+
+#ifdef WITH_PYTHON
+    scriptsMenu = _menuBar->addMenu(tr("&Scripts"));
+    scriptsMenu->addAction(_newScriptAct);
+#endif
 
     _windowMenu = _menuBar->addMenu(tr("&Window"));
     _windowMenu->addAction(_pdWindowAct);
@@ -212,7 +218,7 @@ void BaseWindow::createMenus()
     helpMenu->addAction(_pdHelpAct);
 }
 
-void BaseWindow::setRecentMenu(QMenu *menu)
+void BaseWindow::setRecentMenu(QMenu* menu)
 {
     _recentMenu = menu;
 
@@ -224,12 +230,16 @@ void BaseWindow::setRecentMenu(QMenu *menu)
         fileMenu->insertMenu(closeAct, _appController->recentMenu());
         fileMenu->insertSeparator(closeAct);
     }
-
 }
-//////////////////////////////////////
+// ---------
 
 void BaseWindow::close()
 {
     ((QMainWindow*)this)->close();
 }
+
+//void BaseWindow::slotCreateScriptList()
+//{
+
+//}
 }

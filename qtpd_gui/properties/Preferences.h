@@ -11,6 +11,8 @@
 #include "PropertyList.h"
 
 #include <QDebug>
+#include <QFile>
+#include <QStandardPaths>
 
 #define PREF_QSTRING(x) qtpd::Preferences::inst().getQString(x)
 
@@ -20,10 +22,8 @@
 
 namespace qtpd {
 
-////
 /// \brief app Preferences singleton
-class Preferences : public PropertyList // TODO
-{
+class Preferences : public PropertyList {
 public:
     static Preferences& inst()
     {
@@ -42,11 +42,13 @@ public:
     Preferences(Preferences const&) = delete;
     void operator=(Preferences const&) = delete;
 
-    //temporary
+    //    temporary
     QString getQString(QString key)
     {
         if (get(key))
             return get(key)->asQString();
+
+        saveToTextFile();
 
         return "";
     }
@@ -56,9 +58,9 @@ public:
         create("appVersion", "System", QTPD_APP_VERSION, (std::string)(QTPD_APP_VERSION));
         create("Font", "UI", QTPD_APP_VERSION, (std::string)("Source Code Pro")); //
 
-        qDebug("pref init");
-        qDebug() << getQString("appVersion");
-        qDebug() << getQString("Font");
+        //        qDebug("pref init");
+        //        qDebug() << getQString("appVersion");
+        //        qDebug() << getQString("Font");
     }
 
     //------------------------------------------
@@ -72,6 +74,7 @@ public:
         QStringList paths = get("Paths")->asQStringList();
         // TODO
         //cmp_add_searchpath(gensym(newPath.toStdString().c_str()));
+
         paths.append(newPath);
         set("Paths", paths);
     }
@@ -85,10 +88,54 @@ public:
         ret = get("Paths")->asQStringList();
         return ret;
     }
+
+    void readFromTextFile()
+    {
+        QFile textFile(QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).at(0) + "/Qtpd/Settings/Preferences.txt");
+
+        if (!textFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+            qDebug() << textFile.errorString();
+        }
+
+        QStringList prefList;
+
+        QTextStream textStream(&textFile);
+        while (true) {
+            QString line = textStream.readLine();
+            if (line.isNull())
+                break;
+            else
+                prefList.append(line);
+        }
+
+        if (prefList.size() > 0)
+            extractFromPdFileString(prefList.at(0));
+
+        textFile.close();
+    }
+
+    void saveToTextFile()
+    {
+        QFile textFile(QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).at(0) + "/Qtpd/Settings/Preferences.txt");
+
+        if (!textFile.open(QIODevice::WriteOnly)) {
+            //check and mkpath here
+            qDebug() << textFile.errorString();
+        }
+
+        QStringList prefList;
+
+        prefList.append(asPdFileString().c_str());
+
+        textFile.open(QIODevice::WriteOnly | QIODevice::Text);
+        QTextStream logStream(&textFile);
+        for (int i = 0; i < prefList.size(); i++) {
+            logStream << prefList.at(i) << "\n";
+        }
+
+        textFile.close();
+    }
 };
 }
-
-//ideas:
-// -compatibility level for saving files
 
 #endif // CM_PREFERENCES_H
