@@ -160,8 +160,8 @@ void ApplicationController::newPatchWindowController()
 {
 
     PatchWindowController* newP = new PatchWindowController(this);
-    newP->setFileName(newFileName());
-    newP->firstWindow()->show();
+    newP->setNewFileName(newFileName());
+    newP->mainWindow()->show();
 };
 
 void ApplicationController::openFileDialog()

@@ -40,6 +40,7 @@ class CanvasData {
 
     QString _fileName;
     QString _filePath;
+    bool _firstSave;
 
     PropertyList* _properties;
 
@@ -57,6 +58,9 @@ public:
 
     void setFilePath(QString filePath) { _filePath = filePath; }
     QString filePath() { return _filePath; };
+
+    void setFirstSave(bool fs) { _firstSave = fs; }
+    bool firstSave() { return _firstSave; }
 
     PropertyList* properties() { return _properties; };
     void setProperties(PropertyList* p) { _properties = p; };

@@ -586,7 +586,7 @@ void FileParser::parseQString(QString line)
 
         msg.removeFirst();
         if (_pdParserPrevWindowController)
-            newWnd->firstWindow()->setWindowTitle(msg.at(4));
+            newWnd->mainWindow()->setWindowTitle(msg.at(4));
 
         // todo different canvas argumentlists
 
@@ -604,19 +604,19 @@ void FileParser::parseQString(QString line)
 
         qDebug() << "dim" << pos << size;
 
-        newWnd->firstWindow()->canvasView()->setWindowSize(size);
-        newWnd->firstWindow()->move(pos);
+        newWnd->mainWindow()->canvasView()->setWindowSize(size);
+        newWnd->mainWindow()->move(pos);
 
         // TODO
 
         if (msg.size() > 5) {
 
             if (msg.at(5).toInt())
-                newWnd->firstWindow()->show();
+                newWnd->mainWindow()->show();
             else
-                newWnd->firstWindow()->hide();
+                newWnd->mainWindow()->hide();
         } else
-            newWnd->firstWindow()->show();
+            newWnd->mainWindow()->show();
     }
 
     if (atoms.at(0) == "#X") {
@@ -665,14 +665,14 @@ void FileParser::open(QString fname)
         }
 
         if (_pdParserWindowController) {
-            _pdParserWindowController->firstWindow()->setFileName(fname);
-            _pdParserWindowController->firstWindow()->canvasView()->setEditMode(em_Locked);
+            _pdParserWindowController->mainWindow()->setFileName(fname);
+            _pdParserWindowController->mainWindow()->canvasView()->setEditMode(em_Locked);
 
             // TODO
             //cmp_loadbang(_pdParserWindow->canvasView()->pdObject());
 
-            _pdParserWindowController->firstWindow()->canvasView()->resizeToObjects();
-            _pdParserWindowController->firstWindow()->show();
+            _pdParserWindowController->mainWindow()->canvasView()->resizeToObjects();
+            _pdParserWindowController->mainWindow()->show();
 
             _pdParserWindowController->serverCanvas()->loadbang();
         }

@@ -338,7 +338,7 @@ public Q_SLOTS:
         }
         PatchWindowController* ret;
         ret = new PatchWindowController(_appController);
-        ret->firstWindow()->show();
+        ret->mainWindow()->show();
         //ret->show();
         return ret;
     };

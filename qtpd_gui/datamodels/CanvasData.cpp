@@ -20,6 +20,8 @@ CanvasData::CanvasData()
     _properties->create("FixedSize", "Canvas", "0.1", false);
 
     //_properties->create("DrawBoxes", "Canvas", "0.1", false);
+
+    _firstSave = false;
 }
 
 void CanvasData::addUniqueBox(objectVec* boxes, UIObject* box)

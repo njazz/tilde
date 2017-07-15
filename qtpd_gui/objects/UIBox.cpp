@@ -73,7 +73,7 @@ void UIBox::objectPressEvent(QGraphicsSceneMouseEvent* event)
     //open canvas for subpatch
     if (getEditMode() != em_Unlocked) {
         if (subpatchController()) {
-            subpatchController()->firstWindow()->show();
+            subpatchController()->mainWindow()->show();
         }
     }
 
@@ -240,9 +240,9 @@ void UIBox::sync()
 
         QStringList dataList = objectData()->data().split(" ");
         if (dataList.size() > 1)
-            _subpatchController->firstWindow()->setWindowTitle(dataList.at(1));
+            _subpatchController->mainWindow()->setWindowTitle(dataList.at(1));
         else
-            _subpatchController->firstWindow()->setWindowTitle("<new subpatch>");
+            _subpatchController->mainWindow()->setWindowTitle("<new subpatch>");
     }
 
     //redundant

@@ -224,7 +224,7 @@ public:
         //open canvas for subpatch
         if (getEditMode() != em_Unlocked) {
             if (subpatchController()) {
-                subpatchController()->firstWindow()->show();
+                subpatchController()->mainWindow()->show();
             }
         }
 

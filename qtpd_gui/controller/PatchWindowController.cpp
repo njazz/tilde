@@ -52,7 +52,7 @@ PatchWindowController::PatchWindowController(ApplicationController* appControlle
 
     newWindow();
 
-    connect(firstWindow()->canvasView(), &CanvasView::signalPopupMenu, this, &PatchWindowController::openPropertiesWindow);
+    connect(mainWindow()->canvasView(), &CanvasView::signalPopupMenu, this, &PatchWindowController::openPropertiesWindow);
 
     _boxOnlyCanvas = 0;
     _boxOnlyScene = 0;
@@ -82,10 +82,10 @@ PatchWindowController::PatchWindowController(ApplicationController* appControlle
 
     newWindow();
 
-    connect(firstWindow()->canvasView(), &CanvasView::signalPopupMenu, this, &PatchWindowController::openPropertiesWindow);
+    connect(mainWindow()->canvasView(), &CanvasView::signalPopupMenu, this, &PatchWindowController::openPropertiesWindow);
 
     // TODO
-    firstWindow()->canvasView()->setEditMode(em_Locked);
+    mainWindow()->canvasView()->setEditMode(em_Locked);
 };
 
 ServerCanvas* PatchWindowController::serverCanvas() { return _serverCanvas; }
@@ -153,7 +153,7 @@ void PatchWindowController::syncObjectsOnParent()
 ServerInstance* PatchWindowController::serverInstance() { return _appController->mainServerInstance(); }
 
 vector<PatchWindow*> PatchWindowController::windows() { return _windows; };
-PatchWindow* PatchWindowController::firstWindow() { return _windows[0]; };
+PatchWindow* PatchWindowController::mainWindow() { return _windows[0]; };
 //vector<QGraphicsScene*> PatchWindowController::scenes() { return _scenes; };
 
 PatchWindow* PatchWindowController::newWindow()
@@ -201,7 +201,7 @@ void PatchWindowController::saveFileDialog(){};
 void PatchWindowController::setAppController(ApplicationController* a)
 {
     _appController = a;
-    firstWindow()->setAppController(a);
+    mainWindow()->setAppController(a);
 }
 
 void PatchWindowController::doCreateObject(UIObject* uiObject)
@@ -452,11 +452,36 @@ void PatchWindowController::deleteSelectedObjects(vector<UIObject*>){};
 void PatchWindowController::deleteSelectedPatchcords(vector<UIPatchcord*>){};
 //
 
+
+
+void PatchWindowController::selectPatchcordsForSelectedBoxes()
+{
+    patchcordVec::iterator it;
+
+    objectVec::iterator objIt;
+
+    for (objIt = _canvasData->boxes()->begin(); objIt != _canvasData->boxes()->end(); ++objIt) {
+
+        UIObject* obj = *objIt;
+
+        for (it = _canvasData->patchcords()->begin(); it != _canvasData->patchcords()->end(); ++it) {
+            UIPatchcord* p = *it;
+
+            if ( (p->obj1() == obj) || (p->obj2() == obj) )
+            {
+                p->select();
+            }
+        }
+    }
+}
+
+////
+/// \brief first save of the patch
 void PatchWindowController::menuSave()
 {
     QString fname;
 
-    if (_canvasData->fileName() != "")
+    if  ( (_canvasData->fileName() != "") && (!_canvasData->firstSave()) )
         fname = _canvasData->fileName();
     else
         fname = QFileDialog::getSaveFileName(_windows[0], QString("Save patch as..."), QString("~/"), QString("*.pd"), 0, 0);
@@ -464,9 +489,6 @@ void PatchWindowController::menuSave()
     doSave(fname);
 }
 
-////
-/// \brief first save of the patch
-///
 void PatchWindowController::menuSaveAs()
 {
     QString fname = QFileDialog::getSaveFileName(_windows[0], QString("Save patch as..."), QString("~/"), QString("*.pd"), 0, 0);
@@ -476,11 +498,13 @@ void PatchWindowController::menuSaveAs()
 
 void PatchWindowController::menuCut()
 {
+    selectPatchcordsForSelectedBoxes();
     dataCut();
 };
 
 void PatchWindowController::menuCopy()
 {
+    selectPatchcordsForSelectedBoxes();
     dataCopy();
 };
 
@@ -603,14 +627,27 @@ void PatchWindowController::dataPaste()
 
         QStringList subList = str.split(" ");
 
+        int objCount = canvasData()->boxes()->size();
+
         // offset copied objects
         if (subList.size() >= 3) {
             if (subList.at(1) == "obj") {
+
                 int x = ((QString)subList.at(2)).toFloat();
                 int y = ((QString)subList.at(3)).toFloat();
 
                 subList[2] = QString::number(x + 20);
                 subList[3] = QString::number(y + 20);
+            }
+
+            if (subList.at(1) == "connect") {
+                if (subList.size() >= 4) {
+                    int x = ((QString)subList.at(2)).toInt();
+                    int y = ((QString)subList.at(4)).toInt();
+
+                    subList[2] = QString::number(x + objCount);
+                    subList[4] = QString::number(y + objCount);
+                }
             }
 
             qDebug() << "paste" << subList;
@@ -729,7 +766,7 @@ void PatchWindowController::deleteSelectedPatchcords()
 
     _canvasData->selectedPatchcords()->clear();
     //update();
-    firstWindow()->canvasView()->update();
+    mainWindow()->canvasView()->update();
 };
 
 void PatchWindowController::deletePatchcordsFor(UIItem* obj)
@@ -769,8 +806,14 @@ void PatchWindowController::setFileName(QString fname)
     //firstWindow()->setWindowFilePath(fname);
 
     _canvasData->setFileName(fname);
-    firstWindow()->setWindowTitle(fname);
+    mainWindow()->setWindowTitle(fname);
 }
+void PatchWindowController::setNewFileName(QString fname)
+{
+    setFileName(fname);
+    _canvasData->setFirstSave(true);
+}
+
 // ============
 
 void PatchWindowController::selectBox(UIItem* box)
@@ -779,7 +822,7 @@ void PatchWindowController::selectBox(UIItem* box)
 
     _canvasData->selectBox((UIObject*)box);
 
-    firstWindow()->canvasView()->viewport()->update();
+    mainWindow()->canvasView()->viewport()->update();
 }
 
 void PatchWindowController::sizeBoxShow(UIObject* object)
@@ -870,7 +913,7 @@ UIPatchcord* PatchWindowController::createPatchcordWithoutUndo(UIObject* obj1, i
 void PatchWindowController::slotSelectObject(UIObject* object)
 {
     if (object->isSelected() && (_canvasData->selectedBoxes()->size() == 1)) {
-        firstWindow()->canvasView()->slotObjectStartsEdit((void*)object);
+        mainWindow()->canvasView()->slotObjectStartsEdit((void*)object);
         return;
     }
 
@@ -908,9 +951,9 @@ void PatchWindowController::slotMoveSelectedBoxes(QPoint eventPos)
         // TODO
         QPoint pos = (((UIObject*)_canvasData->selectedBoxes()->at(i))->pos().toPoint()) + eventPos; //mapToParent((event->pos().toPoint() - box->dragOffset));
 
-        if (firstWindow()->canvasView()->gridSnap()) {
-            pos.setX(ceil(pos.x() / firstWindow()->canvasView()->gridStep()) * firstWindow()->canvasView()->gridStep());
-            pos.setY(ceil(pos.y() / firstWindow()->canvasView()->gridStep()) * firstWindow()->canvasView()->gridStep());
+        if (mainWindow()->canvasView()->gridSnap()) {
+            pos.setX(ceil(pos.x() / mainWindow()->canvasView()->gridStep()) * mainWindow()->canvasView()->gridStep());
+            pos.setY(ceil(pos.y() / mainWindow()->canvasView()->gridStep()) * mainWindow()->canvasView()->gridStep());
         }
 
         //w->move(pos);
@@ -919,7 +962,7 @@ void PatchWindowController::slotMoveSelectedBoxes(QPoint eventPos)
     }
 
     //todo
-    firstWindow()->canvasView()->viewport()->update();
+    mainWindow()->canvasView()->viewport()->update();
 }
 
 void PatchWindowController::slotResizeBoxes(int dx, int dy)

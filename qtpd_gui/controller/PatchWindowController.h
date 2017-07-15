@@ -84,9 +84,10 @@ public:
 
     CanvasData* canvasData() { return _canvasData; };
 
-    vector<PatchWindow*> windows();
-    PatchWindow* firstWindow();
-    PatchWindow* newWindow();
+    PatchWindow* mainWindow();
+
+    vector<PatchWindow*> windows();     ///> unused/reserved
+    PatchWindow* newWindow();           ///> unused/reserved
 
     // ----------------------
 
@@ -96,7 +97,7 @@ public:
     void restoreUIBoxForSubpatch(PatchWindowController* controller, QString data, QPoint pos); ///> used in patch parsing with 'restore'
 
     void createPatchcord(UIObject* src, int out, UIObject* dest, int in);
-    UIPatchcord *createPatchcordWithoutUndo(UIObject* src, int out, UIObject* dest, int in);
+    UIPatchcord* createPatchcordWithoutUndo(UIObject* src, int out, UIObject* dest, int in);
 
     // ------------
 
@@ -132,6 +133,8 @@ public:
     void deleteSinglePatchcord(UIPatchcord* p);
     void deleteSelectedPatchcords(vector<UIPatchcord*>);
 
+    void selectPatchcordsForSelectedBoxes();
+
     // ------------
     void dataCut();
     void dataCopy();
@@ -144,6 +147,7 @@ public:
 
     // =======================
     void setFileName(QString fname);
+    void setNewFileName(QString fname);
 
     // moved from canvas-view
     void selectBox(UIItem* box);
@@ -205,11 +209,10 @@ private slots:
 
 signals:
 
-    ServerObject* signalCreateObject(ServerCanvas* canvas, string name);    // check that
+    ServerObject* signalCreateObject(ServerCanvas* canvas, string name); // check that
 
     void signalEnableUndo(bool v);
     void signalEnableRedo(bool v);
-
 };
 }
 

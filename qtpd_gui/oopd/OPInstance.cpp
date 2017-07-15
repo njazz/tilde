@@ -44,13 +44,13 @@ OPInstance::OPInstance(OPClass* opClass)
         // register instance before copying objects
         OOPD::inst()->registerInstance(this, _className, _canvas, _symbol);
 
-        _patchWindow->firstWindow()->canvasView()->canvasFromPdStrings(canvasStrings);
+        _patchWindow->mainWindow()->canvasView()->canvasFromPdStrings(canvasStrings);
         QString windowTitle = QString("(read only) instance: ") + QString(_className.c_str());
-        _patchWindow->firstWindow()->setWindowTitle(windowTitle);
-        _patchWindow->firstWindow()->canvasView()->setKeepPdObject(true);
-        _patchWindow->firstWindow()->hide();
+        _patchWindow->mainWindow()->setWindowTitle(windowTitle);
+        _patchWindow->mainWindow()->canvasView()->setKeepPdObject(true);
+        _patchWindow->mainWindow()->hide();
 
-        _patchWindow->firstWindow()->canvasView()->setReadOnly(true);
+        _patchWindow->mainWindow()->canvasView()->setReadOnly(true);
 
         _refCount = 1;
     }
@@ -88,7 +88,7 @@ OPInstance::OPInstance(OPClass* opClass)
 void OPInstance::showWindow()
 {
     if (_patchWindow)
-        _patchWindow->firstWindow()->show();
+        _patchWindow->mainWindow()->show();
 }
 
 OPInstance* OPInstance::fromObjectSymbol(t_symbol* objSymbol)
