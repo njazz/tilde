@@ -11,6 +11,7 @@ var searchData=
   ['main',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
   ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]],
   ['mainserverinstance',['mainServerInstance',['../classqtpd_1_1_application_controller.html#add2bb2a4912c94030207b1972a3a37ea',1,'qtpd::ApplicationController']]],
+  ['mainwindow',['mainWindow',['../classqtpd_1_1_patch_window_controller.html#a32116eaddcc9fd59b1aeca3a8b16fb65',1,'qtpd::PatchWindowController']]],
   ['mapper',['mapper',['../class_color___list___widget_1_1_private.html#aa31e0a2ebac30b866ce370796da87bcb',1,'Color_List_Widget::Private']]],
   ['mapper_5fdown',['mapper_down',['../class_abstract___widget___list_1_1_private.html#a60ed886cc8dd935dc789aca80eb5f42a',1,'Abstract_Widget_List::Private']]],
   ['mapper_5fremove',['mapper_remove',['../class_abstract___widget___list_1_1_private.html#a250199478fe762303f9e689b9ae20b86',1,'Abstract_Widget_List::Private']]],
