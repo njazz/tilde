@@ -452,8 +452,6 @@ void PatchWindowController::deleteSelectedObjects(vector<UIObject*>){};
 void PatchWindowController::deleteSelectedPatchcords(vector<UIPatchcord*>){};
 //
 
-
-
 void PatchWindowController::selectPatchcordsForSelectedBoxes()
 {
     patchcordVec::iterator it;
@@ -467,9 +465,9 @@ void PatchWindowController::selectPatchcordsForSelectedBoxes()
         for (it = _canvasData->patchcords()->begin(); it != _canvasData->patchcords()->end(); ++it) {
             UIPatchcord* p = *it;
 
-            if ( (p->obj1() == obj) || (p->obj2() == obj) )
-            {
-                p->select();
+            if ((p->obj1() == obj) || (p->obj2() == obj)) {
+                //p->select();
+                _canvasData->selectPatchcord(p);
             }
         }
     }
@@ -481,7 +479,7 @@ void PatchWindowController::menuSave()
 {
     QString fname;
 
-    if  ( (_canvasData->fileName() != "") && (!_canvasData->firstSave()) )
+    if ((_canvasData->fileName() != "") && (!_canvasData->firstSave()))
         fname = _canvasData->fileName();
     else
         fname = QFileDialog::getSaveFileName(_windows[0], QString("Save patch as..."), QString("~/"), QString("*.pd"), 0, 0);
@@ -601,7 +599,7 @@ void PatchWindowController::dataCopy()
 
     _canvasData->cut();
 
-    qDebug() << "***copy\n"
+    qDebug() << "*** copy\n"
              << Clipboard::inst()->get();
 }
 
@@ -622,12 +620,14 @@ void PatchWindowController::dataPaste()
 
     QStringList list1;
 
+    int objCount = canvasData()->boxes()->size();
+
+
     for (size_t i = 0; i < Clipboard::inst()->size(); i++) {
         QString str = Clipboard::inst()->at(i);
 
         QStringList subList = str.split(" ");
 
-        int objCount = canvasData()->boxes()->size();
 
         // offset copied objects
         if (subList.size() >= 3) {
@@ -641,13 +641,14 @@ void PatchWindowController::dataPaste()
             }
 
             if (subList.at(1) == "connect") {
-                if (subList.size() >= 4) {
-                    int x = ((QString)subList.at(2)).toInt();
-                    int y = ((QString)subList.at(4)).toInt();
+                if (subList.size() >= 4)
+                    if (objCount > 0) {
+                        int x = ((QString)subList.at(2)).toInt();
+                        int y = ((QString)subList.at(4)).toInt();
 
-                    subList[2] = QString::number(x + objCount);
-                    subList[4] = QString::number(y + objCount);
-                }
+                        subList[2] = QString::number(x + objCount );
+                        subList[4] = QString::number(y + objCount );
+                    }
             }
 
             qDebug() << "paste" << subList;
