@@ -3,7 +3,7 @@
 
 #include "PropertyList.h"
 
-//#include "FileParser.h"
+#include "fileparserconverter.h"
 //#include "FileSaver.h"
 
 using namespace qtpd;
@@ -145,13 +145,13 @@ void Qtpd_tests::patchControllerCopyObject()
 void Qtpd_tests::fileParserEscapeString()
 {
 
-//    QString testEscape = "1 2\n 3, 4. 5@ 6;";
+    QString testEscape = "1 2\n 3, 4. 5@ 6;";
 
-//    if (FileParser::unescapeString(FileParser::escapeString(testEscape)) != testEscape) {
-//        qDebug() << testEscape << FileParser::escapeString(testEscape) << FileParser::unescapeString(FileParser::unescapeString(testEscape));
-//    }
+    if (FileParserConverter::unescapeString(FileParserConverter::escapeString(testEscape)) != testEscape) {
+        qDebug() << testEscape << FileParserConverter::escapeString(testEscape) << FileParserConverter::unescapeString(FileParserConverter::unescapeString(testEscape));
+    }
 
-//    QVERIFY(FileParser::unescapeString(FileParser::escapeString(testEscape)) == testEscape);
+    QVERIFY(FileParserConverter::unescapeString(FileParserConverter::escapeString(testEscape)) == testEscape);
 
 }
 

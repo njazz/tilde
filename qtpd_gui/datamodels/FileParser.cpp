@@ -12,6 +12,8 @@
 #include <QFile>
 #include <QTextStream>
 
+#include "fileparserconverter.h"
+
 using namespace std;
 
 namespace qtpd {
@@ -559,7 +561,7 @@ void FileParser::parseStringListAtoms(PatchWindowController* controller, QString
 void FileParser::parseQString(QString line)
 {
 
-    line = FileParser::unescapeString(line);
+    line = FileParserConverter::unescapeString(line);
 
     QStringList atoms = line.split(" ");
 
@@ -798,41 +800,5 @@ PatchWindowController* FileParser::parserPrevWindowController()
 //    ///
 //     void open(QString fname, CanvasData* CanvasData);
 
-////
-/// \brief unescapeString
-/// \param input
-/// \return
-/// \deprecated needs cleanup - duplicate in PropertyList class
-QString FileParser::unescapeString(QString input)
-{
-    // todo regexp
 
-    QString ret;
-
-    ret = input.split("\\ ").join(" ");
-    ret = ret.split("\\n").join("\n");
-    ret = ret.split("\\,").join(",");
-    ret = ret.split("\\.").join(".");
-    //ret = ret.split("\;").join(";");
-    return ret;
-}
-
-////
-/// \brief escapeString
-/// \param input
-/// \return
-/// \deprecated needs cleanup - duplicate in PropertyList class
-QString FileParser::escapeString(QString input)
-{
-    // todo regexp
-
-    QString ret;
-
-    ret = input.split(" ").join("\\ ");
-    ret = ret.split("\n").join("\\n");
-    ret = ret.split(",").join("\\,");
-    ret = ret.split(".").join("\\.");
-    //ret = ret.split(";").join("\\;");
-    return ret;
-}
 }

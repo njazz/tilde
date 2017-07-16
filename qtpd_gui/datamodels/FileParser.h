@@ -22,6 +22,8 @@ class UIObject;
 class ApplicationController;
 class PatchWindowController;
 
+
+
 ////
 /// \brief Parses pd files on 'client' (GUI) side
 /// \details 'FileParser' and 'FileSaver' should probably be moved to separate library
@@ -85,19 +87,7 @@ public:
     ///
     static void open(QString fname);
 
-    ////
-    /// \brief unescapeString
-    /// \param input
-    /// \return
-    /// \deprecated needs cleanup - duplicate in PropertyList class
-    static QString unescapeString(QString input);
 
-    ////
-    /// \brief escapeString
-    /// \param input
-    /// \return
-    /// \deprecated needs cleanup - duplicate in PropertyList class
-    static QString escapeString(QString input);
 };
 }
 

@@ -33,7 +33,7 @@ SOURCES += \
 #    ../qtpd_gui/graphicobjects/CanvasView.cpp \
 ##### UI widgets
 ##### data models
-#    ../qtpd_gui/datamodels/FileParser.cpp \
+    ../qtpd_gui/datamodels/fileparserconverter.cpp \
 #    ../qtpd_gui/datamodels/CanvasData.cpp \
 #    ../qtpd_gui/datamodels/Clipboard.cpp \
 #    ../qtpd_gui/datamodels/FileSaver.cpp \
@@ -59,7 +59,7 @@ HEADERS += ../qtpd_gui/properties/Property.h \
 #    ../qtpd_gui/window/PatchWindow.h \
 #    ../qtpd_gui/window/PropertiesWindow.h \
 ##### data models
-#    ../qtpd_gui/datamodels/FileParser.h \
+    ../qtpd_gui/datamodels/fileparserconverter.h \
 #    ../qtpd_gui/datamodels/FileSaver.h \
 #    ../qtpd_gui/datamodels/Clipboard.h \
 #    ../qtpd_gui/datamodels/CanvasData.h \

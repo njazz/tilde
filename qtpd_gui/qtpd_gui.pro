@@ -166,7 +166,8 @@ SOURCES += main.cpp\
     properties/QtColorPicker/src/hue_slider.cpp \
     undo/undocommands.cpp \
     datamodels/recentfiles.cpp \
-    datamodels/filepaths.cpp
+    datamodels/filepaths.cpp \
+    datamodels/fileparserconverter.cpp
 
 
 #
@@ -256,7 +257,8 @@ HEADERS  += \
     controller/objectObserver.h \
     undo/undocommands.h \
     datamodels/recentfiles.h \
-    datamodels/filepaths.h
+    datamodels/filepaths.h \
+    datamodels/fileparserconverter.h
 
 #    widgets/UIScriptTextEdit.h \
 #    widgets/UIScriptEditor.h \
