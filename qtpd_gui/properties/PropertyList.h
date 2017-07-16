@@ -24,6 +24,7 @@ typedef std::map<std::string, UIPropertyData*>::iterator UIPropertyGroupIterator
 #define PROPERTY_LISTENER(x, y) connect(objectData()->properties()->get(x), &Property::changed, this, y)
 #define PROPERTY_DISCONNECT_LISTENER(x, y) disconnect(objectData()->properties()->get(x), &Property::changed, this, y)
 #define PROPERTY_SET(x, y) objectData()->properties()->set(x, y)
+#define PROPERTY_GET(x) objectData()->properties()->get(x)
 
 ////
 /// \brief Property handling class for ui object - property list

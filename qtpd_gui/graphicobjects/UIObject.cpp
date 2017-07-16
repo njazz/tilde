@@ -160,7 +160,6 @@ void UIObject::propertySize()
     }
 
     doSetSize(size);
-
     update();
 
     //ServerInstance::post("property size updated");

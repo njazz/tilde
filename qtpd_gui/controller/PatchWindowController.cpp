@@ -274,6 +274,8 @@ UIObject* PatchWindowController::createObjectWithoutUndo(string name, QPoint pos
 
     //uiObject->move(pos.x(), pos.y());
 
+    uiObject->fromQString(name.c_str());
+
     uiObject->properties()->set("Position", pos);
 
     doCreateObject(uiObject);

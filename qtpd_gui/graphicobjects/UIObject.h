@@ -165,10 +165,9 @@ private slots:
     virtual void propertyFontSize();
 
     void propertyPosition();
+    void propertyReceiveSymbol(); ///> binds object to symbol
 
     void propertyUpdate(); ///> basic update - calls update() probably remove later
-
-    void propertyReceiveSymbol(); ///> binds object to symbol
 
 signals:
     void signalEditObject(void* box);
@@ -186,7 +185,7 @@ signals:
     void signalObjectHoverLeave();
 
 public slots:
-    void slotResizeDeselectedBox(int dx, int dy);     ///>deprecated
+    void slotResizeDeselectedBox(int dx, int dy); ///>deprecated
     void slotRepaint(); ///>needed for proper threading
 
     ////
