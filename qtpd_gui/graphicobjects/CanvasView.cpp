@@ -167,7 +167,10 @@ void CanvasView::slotSelectBox(UIItem* box, QGraphicsSceneMouseEvent* ev)
         }
 
         if (!(ev->modifiers() & Qt::ShiftModifier)) {
-            emit signalDeselectObjects();
+
+            if (_controller->canvasData()->selectedBoxes()->size() < 2) {
+                emit signalDeselectObjects();
+            }
         }
 
         emit signalSelectObject((UIObject*)box);

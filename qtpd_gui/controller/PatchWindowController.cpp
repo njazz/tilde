@@ -622,12 +622,10 @@ void PatchWindowController::dataPaste()
 
     int objCount = canvasData()->boxes()->size();
 
-
     for (size_t i = 0; i < Clipboard::inst()->size(); i++) {
         QString str = Clipboard::inst()->at(i);
 
         QStringList subList = str.split(" ");
-
 
         // offset copied objects
         if (subList.size() >= 3) {
@@ -646,8 +644,8 @@ void PatchWindowController::dataPaste()
                         int x = ((QString)subList.at(2)).toInt();
                         int y = ((QString)subList.at(4)).toInt();
 
-                        subList[2] = QString::number(x + objCount );
-                        subList[4] = QString::number(y + objCount );
+                        subList[2] = QString::number(x + objCount);
+                        subList[4] = QString::number(y + objCount);
                     }
             }
 
@@ -918,7 +916,8 @@ void PatchWindowController::slotSelectObject(UIObject* object)
         return;
     }
 
-    _canvasData->selectBox(object);
+    if (_canvasData->selectedBoxes()->size() < 2)
+        _canvasData->selectBox(object);
 }
 void PatchWindowController::slotPatchcord(UIObject* src, int nOut, UIObject* dest, int nIn)
 {
@@ -927,6 +926,8 @@ void PatchWindowController::slotPatchcord(UIObject* src, int nOut, UIObject* des
 
 void PatchWindowController::slotMousePress(QPoint pos)
 {
+    // this slot is probably redundant
+
     _canvasData->deselectBoxes();
     _canvasData->deselectPatchcords();
 }

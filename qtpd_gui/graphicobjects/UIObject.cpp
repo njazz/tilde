@@ -133,7 +133,7 @@ void UIObject::initProperties()
     objectData()->properties()->create("PresetName", "Bindings", "0.1", QString(""));
     objectData()->properties()->create("SendSymbol", "Bindings", "0.1", QString(""));
     objectData()->properties()->create("ReceiveSymbol", "Bindings", "0.1", QString(""));
-    objectData()->properties()->create("AutoOSCSymbol", "Bindings", "0.1", QString(""));
+    //objectData()->properties()->create("AutoOSCSymbol", "Bindings", "0.1", QString(""));  //yet disabled
 
     objectData()->properties()->create("BorderColor", "Color", "0.1", QColor(192, 192, 192, 255));
 
