@@ -104,7 +104,10 @@ ApplicationController::ApplicationController()
     //    Preferences::inst().create("Externals", "ExtraFolders", "0.1", docFolder + "/Qtpd/Externals");
     //    Preferences::inst().create("Scripts", "ExtraFolders", "0.1", docFolder + "/Qtpd/Scripts");
     //    Preferences::inst().create("Help", "ExtraFolders", "0.1", docFolder + "/Qtpd/Help");
-    //    Preferences::inst().create("Patches", "ExtraFolders", "0.1", docFolder + "/Qtpd/Patches");
+
+    //we still need that!
+    Preferences::inst().create("Patches", "ExtraFolders", "0.1", docFolder + "/Qtpd/Patches");
+
     //    Preferences::inst().create("Classes", "ExtraFolders", "0.1", docFolder + "/Qtpd/Classes");
     //    Preferences::inst().create("Libraries", "ExtraFolders", "0.1", docFolder + "/Qtpd/Libraries");
 
@@ -160,11 +163,18 @@ ApplicationController::ApplicationController()
     qDebug() << _filePaths->externalsDirList();
 
     QStringList paths = _filePaths->externalsDirList();
-
     // external paths
     for (int i = 0; i < paths.size(); i++) {
         mainServerInstance()->addSearchPath(paths.at(i).toStdString());
     }
+
+    QStringList paths2 = _filePaths->helpDirList();
+    // help paths
+    for (int i = 0; i < paths2.size(); i++) {
+        mainServerInstance()->addSearchPath(paths2.at(i).toStdString());
+    }
+
+    Preferences::inst().create("Paths", "Folders", "0.1", paths+paths2);
 
     mainServerInstance()->post("qtpd started");
     mainServerInstance()->post("----");

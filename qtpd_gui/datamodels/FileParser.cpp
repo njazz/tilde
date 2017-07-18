@@ -18,7 +18,9 @@ using namespace std;
 
 namespace qtpd {
 
-PatchWindowController* FileParser::_pdParserPrevWindowController = 0;
+//PatchWindowController* FileParser::_pdParserPrevWindowController = 0;
+
+PatchWindowControllerStack FileParser::_stack;
 PatchWindowController* FileParser::_pdParserWindowController = 0;
 PatchWindowController* FileParser::_pdParserFirstWindowController = 0;
 
@@ -221,7 +223,8 @@ inline void legacyProcessUICnv(PatchWindowController* controller, QStringList li
     QString lSend = ((QString)list.at(7));
     QString lReceive = ((QString)list.at(8));
     QString lLabel = ((QString)list.at(9));
-    QString fontSize = ((QString)list.at(13));
+
+    QString fontSize = (list.size() > 13) ? ((QString)list.at(13)) : "11";
     if (lLabel == "empty")
         lLabel = "";
 
@@ -466,7 +469,7 @@ void FileParser::parseStringListAtoms(PatchWindowController* controller, QString
     } else if (list.at(0) == "coords") {
     } else if (list.at(0) == "restore") {
 
-        qDebug("restore canvas: %lu | previous %lu", _pdParserWindowController, _pdParserPrevWindowController);
+        qDebug("restore canvas: %lu | previous %lu", _pdParserWindowController, _stack.last());
 
         //parserwindow - subpatch
         //prev window - parent patch
@@ -493,7 +496,7 @@ void FileParser::parseStringListAtoms(PatchWindowController* controller, QString
 
             //if (objList.at(0) == "pd")
             {
-                if (_pdParserPrevWindowController) {
+                if (_stack.last()) {
                     //if (_pdParserPrevWindowController->firstWindow()->canvasView())
                     //{
 
@@ -506,9 +509,10 @@ void FileParser::parseStringListAtoms(PatchWindowController* controller, QString
 
                     //                        b1->setPos(pos.x(),pos.y());
 
-                    _pdParserPrevWindowController->restoreUIBoxForSubpatch(_pdParserWindowController, objectData, pos);
+                    _stack.last()->restoreUIBoxForSubpatch(_pdParserWindowController, objectData, pos);
 
                     qDebug("restore");
+                    qDebug() << "data" << objectData;
 
                     // TODO
                     // UIObject* b = _pdParserPrevWindow->canvasView()->createBoxForPatchWindow(_pdParserWindow, objData, pos);
@@ -526,7 +530,9 @@ void FileParser::parseStringListAtoms(PatchWindowController* controller, QString
             //            }
 
             //draw subpatch
-            _pdParserWindowController = _pdParserPrevWindowController;
+            _pdParserWindowController = _stack.last();
+//            _pdParserPrevWindowController = 0;
+            _stack.pop();
 
         } else {
             qDebug("list error");
@@ -576,18 +582,19 @@ void FileParser::parseQString(QString line)
         QStringList msg = atoms;
         msg.removeFirst();
 
-        _pdParserPrevWindowController = _pdParserWindowController;
+        //_pdParserPrevWindowController = _pdParserWindowController;
+        _stack.push(_pdParserWindowController);
 
         PatchWindowController* newWnd = new PatchWindowController(FileParser::_appController);
         newWnd->setAppController(FileParser::_appController);
         _pdParserWindowController = newWnd;
 
         //save pointer to first canvas. needed to set file name
-        if (!_pdParserPrevWindowController)
+        if (!_stack.last())
             _pdParserFirstWindowController = _pdParserWindowController;
 
         msg.removeFirst();
-        if (_pdParserPrevWindowController)
+        if (_pdParserWindowController)
             newWnd->mainWindow()->setWindowTitle(msg.at(4));
 
         // todo different canvas argumentlists
@@ -735,14 +742,16 @@ void FileParser::setAppController(ApplicationController* appController) { _appCo
 
 void FileParser::setParserWindowController(PatchWindowController* wnd)
 {
-    _pdParserPrevWindowController = wnd;
+    //_pdParserPrevWindowController = wnd;
+    _stack.clear();
     _pdParserWindowController = wnd;
 }
 
 void FileParser::setParserWindowControllers(PatchWindowController* wnd, PatchWindowController* prev, PatchWindowController* first)
 {
     _pdParserWindowController = wnd;
-    _pdParserPrevWindowController = prev;
+    //_pdParserPrevWindowController = prev;
+    _stack.clear();
     _pdParserFirstWindowController = first;
 }
 
@@ -761,10 +770,10 @@ PatchWindowController* FileParser::parserWindowController()
     return _pdParserWindowController;
 }
 
-PatchWindowController* FileParser::parserPrevWindowController()
-{
-    return _pdParserPrevWindowController;
-}
+//PatchWindowController* FileParser::parserPrevWindowController()
+//{
+//    return _pdParserPrevWindowController;
+//}
 
 //////
 ///// \brief [3.1] subroutine - formats list and send it to canvas as a string

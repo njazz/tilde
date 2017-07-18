@@ -65,7 +65,7 @@ void OPClass::readFile()
 
     qDebug() << "pw cnv " << (long)_patchWindow << (long)_patchWindow->mainWindow()->canvasView();
 
-    PatchWindowController* _prevWindow = FileParser::parserPrevWindowController();
+    PatchWindowController* _prevWindow = 0;//FileParser::parserPrevWindowController();
     PatchWindowController* _pWindow = FileParser::parserWindowController();
     PatchWindowController* _pFirstWindow = FileParser::parserFirstWindowController();
     //

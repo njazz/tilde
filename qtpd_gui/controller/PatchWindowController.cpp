@@ -226,6 +226,13 @@ void PatchWindowController::doCreateObject(UIObject* uiObject)
     connect(uiObject, &UIObject::signalObjectHoverLeave, this, &PatchWindowController::slotObjectHoverLeave);
 
     connect(uiObject->sizeBox(), &SizeBox::resizeBoxEvent, this, &PatchWindowController::slotResizeBoxes);
+
+    _canvasData->addUniqueBox(_canvasData->boxes(), uiObject);
+    _scene->addItem(uiObject);
+
+    if (_parentObject) {
+        addObjectToParent(uiObject);
+    }
 }
 
 UIObject* PatchWindowController::createObject(string name, QPoint pos)
@@ -280,12 +287,7 @@ UIObject* PatchWindowController::createObjectWithoutUndo(string name, QPoint pos
 
     doCreateObject(uiObject);
 
-    _canvasData->addUniqueBox(_canvasData->boxes(), uiObject);
-    _scene->addItem(uiObject);
 
-    if (_parentObject) {
-        addObjectToParent(uiObject);
-    }
 
     return uiObject;
 

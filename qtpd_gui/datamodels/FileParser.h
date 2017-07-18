@@ -5,6 +5,7 @@
 #define CM_FILEPARSER_H
 
 #include <string>
+#include <vector>
 
 // todo non-static class ?
 
@@ -22,7 +23,25 @@ class UIObject;
 class ApplicationController;
 class PatchWindowController;
 
+class PatchWindowControllerStack {
+    vector<PatchWindowController*> _stack;
 
+public:
+    void push(PatchWindowController* c) { _stack.push_back(c); };
+    PatchWindowController* pop()
+    {
+        PatchWindowController* ret = last();
+        _stack.pop_back();
+        return ret;
+    };
+    PatchWindowController* last()
+    {
+        if (_stack.size() == 0)
+            return 0;
+        return _stack.at(_stack.size()-1);
+    }
+    void clear() { _stack.clear(); }
+};
 
 ////
 /// \brief Parses pd files on 'client' (GUI) side
@@ -31,7 +50,8 @@ class FileParser {
 private:
     FileParser(){};
 
-    static PatchWindowController* _pdParserPrevWindowController;
+    //static PatchWindowController* _pdParserPrevWindowController;
+    static PatchWindowControllerStack _stack;
     static PatchWindowController* _pdParserWindowController;
     static PatchWindowController* _pdParserFirstWindowController;
 
@@ -52,7 +72,7 @@ public:
     ///
     static PatchWindowController* parserFirstWindowController();
     static PatchWindowController* parserWindowController();
-    static PatchWindowController* parserPrevWindowController();
+    //static PatchWindowController* parserPrevWindowController();
     ////
     /// \brief [3.2] process legacy pd files
     /// \param list
@@ -86,8 +106,6 @@ public:
     /// \param fname
     ///
     static void open(QString fname);
-
-
 };
 }
 

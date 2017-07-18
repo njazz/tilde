@@ -218,7 +218,7 @@ QStringList Property::asQStringList()
 {
     QStringList ret;
 
-    for (int i = 0; i < _data.size(); i++)
+    for (int i = 0; i < _data.toVector().size(); i++)
         ret << _data.at(i).toString();
 
     return ret;
@@ -226,7 +226,6 @@ QStringList Property::asQStringList()
 
 QString Property::asQString()
 {
-
     return asQStringList().join(" ");
 }
 
