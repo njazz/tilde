@@ -12,7 +12,6 @@ var searchData=
   ['parentcontroller',['parentController',['../classqtpd_1_1_u_i_object.html#a9a5991b5e4a70b012a218e576bd3fdee',1,'qtpd::UIObject::parentController()'],['../classqtpd_1_1_object_maker.html#a4eee30e07c43db59ded7d6c5c9777991',1,'qtpd::ObjectMaker::parentController()']]],
   ['parseqstring',['parseQString',['../classqtpd_1_1_file_parser.html#a5a17d655a501583acbc54ce76d8140d4',1,'qtpd::FileParser']]],
   ['parserfirstwindowcontroller',['parserFirstWindowController',['../classqtpd_1_1_file_parser.html#aae813930cd14b02aedfa2cac20bfa170',1,'qtpd::FileParser']]],
-  ['parserprevwindowcontroller',['parserPrevWindowController',['../classqtpd_1_1_file_parser.html#a038caccb84b5831ec06836d346b92f66',1,'qtpd::FileParser']]],
   ['parserwindowcontroller',['parserWindowController',['../classqtpd_1_1_file_parser.html#adc4ea992ac2345c4e6038cac1293971b',1,'qtpd::FileParser']]],
   ['parsestringlistatoms',['parseStringListAtoms',['../classqtpd_1_1_file_parser.html#a7248ccd79a363148cf546c7138c6e7b7',1,'qtpd::FileParser']]],
   ['paste',['paste',['../classqtpd_1_1_canvas_data.html#ac0d3e6dd6fdc4a3d0321c5a271448318',1,'qtpd::CanvasData']]],
@@ -61,6 +60,7 @@ var searchData=
   ['pdwindow',['PdWindow',['../classqtpd_1_1_pd_window.html#a916bc5d8c3d803b541ab325d8e9d0d1c',1,'qtpd::PdWindow::PdWindow()'],['../classqtpd_1_1_application_controller.html#ae366e0bcd2883171be312b6c74a9c1cd',1,'qtpd::ApplicationController::pdWindow()']]],
   ['plus_5fperform',['plus_perform',['../m__pd_8h.html#a0e2c87e5829496d5d7f02537adebf4e0',1,'m_pd.h']]],
   ['pointerinlet_5fnew',['pointerinlet_new',['../m__pd_8h.html#a62f4c920b87f89291f10c14d62e34781',1,'m_pd.h']]],
+  ['pop',['pop',['../classqtpd_1_1_patch_window_controller_stack.html#a9b5cb4e9cf8ef006d3ae2fa02f172e14',1,'qtpd::PatchWindowControllerStack']]],
   ['port',['Port',['../classqtpd_1_1_port.html#ad995d08ebf05486c0e102c7147294d2e',1,'qtpd::Port']]],
   ['portclass',['portClass',['../classqtpd_1_1_port.html#a0069bf51bb11bfbb9b996ea87f549c46',1,'qtpd::Port']]],
   ['portindex',['portIndex',['../classqtpd_1_1_port.html#a009237b01a33c51bec489383174737e2',1,'qtpd::Port']]],
@@ -86,5 +86,6 @@ var searchData=
   ['propertylist',['PropertyList',['../classqtpd_1_1_property_list.html#a66afd40f65771ed469a3a74d1446d4f5',1,'qtpd::PropertyList']]],
   ['propertymatrixsize',['propertyMatrixSize',['../classqtpd_1_1_u_i_matrix.html#a8f4b2d0e49aec13bc008ef96e57c84bc',1,'qtpd::UIMatrix']]],
   ['propertyupdate',['propertyUpdate',['../classqtpd_1_1_u_i_matrix.html#aa1dbab768f17342179bfa2cb347ac8a7',1,'qtpd::UIMatrix']]],
+  ['push',['push',['../classqtpd_1_1_patch_window_controller_stack.html#a66622d4bcc67f81a80f530a52564af23',1,'qtpd::PatchWindowControllerStack']]],
   ['pythonconsole',['pythonConsole',['../classqtpd_1_1_application_controller.html#a44b57839794b7091d344fcb819724a80',1,'qtpd::ApplicationController']]]
 ];

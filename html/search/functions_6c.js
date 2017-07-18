@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['last',['last',['../classceammc_1_1_atom_list.html#afbd8f79f94b361c537d36c3a5ec45f80',1,'ceammc::AtomList::last()'],['../classceammc_1_1_atom_list.html#a6fa2a859b339348f45ca59bb823afca3',1,'ceammc::AtomList::last() const ']]],
+  ['last',['last',['../classqtpd_1_1_patch_window_controller_stack.html#a070ddf3ee20a1810970ff5ef98e860e2',1,'qtpd::PatchWindowControllerStack::last()'],['../classceammc_1_1_atom_list.html#afbd8f79f94b361c537d36c3a5ec45f80',1,'ceammc::AtomList::last()'],['../classceammc_1_1_atom_list.html#a6fa2a859b339348f45ca59bb823afca3',1,'ceammc::AtomList::last() const ']]],
   ['lastcolor',['lastColor',['../class_gradient___slider.html#abbc058c9eeee9a1d187457bd9841d0dd',1,'Gradient_Slider']]],
   ['legacyprocess',['legacyProcess',['../classqtpd_1_1_file_parser.html#ad4f4fe794696583c73c113b49f14d2a4',1,'qtpd::FileParser']]],
   ['legacyprocessarray',['legacyProcessArray',['../namespaceqtpd.html#af0c9664e95b4f701c1d1859f3f0fe5c3',1,'qtpd']]],

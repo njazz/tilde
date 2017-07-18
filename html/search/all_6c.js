@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['last',['last',['../classceammc_1_1_atom_list.html#afbd8f79f94b361c537d36c3a5ec45f80',1,'ceammc::AtomList::last()'],['../classceammc_1_1_atom_list.html#a6fa2a859b339348f45ca59bb823afca3',1,'ceammc::AtomList::last() const ']]],
+  ['last',['last',['../classqtpd_1_1_patch_window_controller_stack.html#a070ddf3ee20a1810970ff5ef98e860e2',1,'qtpd::PatchWindowControllerStack::last()'],['../classceammc_1_1_atom_list.html#afbd8f79f94b361c537d36c3a5ec45f80',1,'ceammc::AtomList::last()'],['../classceammc_1_1_atom_list.html#a6fa2a859b339348f45ca59bb823afca3',1,'ceammc::AtomList::last() const ']]],
   ['lastcolor',['lastColor',['../class_gradient___slider.html#ac1cba43d9c9ca54fe3f9c69d78566d13',1,'Gradient_Slider::lastColor()'],['../class_gradient___slider.html#abbc058c9eeee9a1d187457bd9841d0dd',1,'Gradient_Slider::lastColor() const ']]],
   ['lb_5fclose',['LB_CLOSE',['../g__canvas_8h.html#a27eb5af7880c6f9407adf4754e902600',1,'g_canvas.h']]],
   ['lb_5finit',['LB_INIT',['../g__canvas_8h.html#a40a220ebc6c22ed57e64881bf2952459',1,'g_canvas.h']]],
