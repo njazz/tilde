@@ -16,7 +16,7 @@
 #include <vector>
 
 //todo
-#include "../qtpd_lib/ceammc-lib/ceammc_atomlist.h"
+#include "ceammc_atomlist.h"
 
 using namespace std;
 using namespace ceammc;

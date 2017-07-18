@@ -73,7 +73,10 @@ void Qtpd_tests::propertyDataTypes()
     l->create("bool_str", "Group", "0.1", "1");
     QVERIFY(((l->get("bool_str")->asBool()) == true));
     l->set("bool_str","0");
+    qDebug() << "bool" << l->get("bool_str")->asQString();
     QVERIFY(((l->get("bool_str")->asBool()) == false));
+
+
 }
 
 void Qtpd_tests::propertyEscapeString()
@@ -114,6 +117,9 @@ void Qtpd_tests::propertyVec2Converters()
 
     l->create("size", "Group", "0.1", "30 70");
     l->create("point", "Group", "0.1", "30 70");
+
+    qDebug() << "size " << l->get("size")->asQSize();
+    qDebug() << "size str l" << l->get("size")->asQStringList();
 
     QVERIFY(l->get("size")->asQSize() == QSize(30, 70));
     QVERIFY(l->get("point")->asQPoint() == QPoint(30, 70));

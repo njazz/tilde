@@ -44,8 +44,8 @@ class Property : public QObject {
     Q_OBJECT
 
 private:
-    QVariant _data;
-    QVariant _defaultData;
+    QVariantList _data;
+    QVariantList _defaultData;
 
     QString _group;
     QString _version;
@@ -72,8 +72,8 @@ public:
     void setVersion(QString version);
     void setGroup(QString grp);
     void setType(UIPropertyType t);
-    void setRawData(QVariant data);
-    void setRawDefaultData(QVariant data);
+    void setRawData(QVariantList data);
+    void setRawDefaultData(QVariantList data);
 
     // -------
 
@@ -81,8 +81,8 @@ public:
 
     // -------
 
-    QVariant data();
-    QVariant defaultData();
+    QVariantList data();
+    QVariantList defaultData();
     QString group();
     QString version();
     UIPropertyType type();
