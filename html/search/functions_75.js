@@ -35,7 +35,7 @@ var searchData=
   ['undodeleteobject',['undoDeleteObject',['../classqtpd_1_1undo_delete_object.html#a79217178058036aa78c4ec6f8608a6d0',1,'qtpd::undoDeleteObject']]],
   ['undodeletepatchcord',['undoDeletePatchcord',['../classqtpd_1_1undo_delete_patchcord.html#ae404cd626b729bffbf80cc38f76625e6',1,'qtpd::undoDeletePatchcord']]],
   ['undostack',['undoStack',['../classqtpd_1_1_patch_window_controller.html#a82abe89febabc8a6917b5a0cea5da431',1,'qtpd::PatchWindowController']]],
-  ['unescapestring',['unescapeString',['../classqtpd_1_1_file_parser.html#a2e55857a42ff1291a3b126e303b23d29',1,'qtpd::FileParser::unescapeString()'],['../classqtpd_1_1_property.html#a596eddb51edff22c5109c7ae2fd67e67',1,'qtpd::Property::unescapeString()']]],
+  ['unescapestring',['unescapeString',['../classqtpd_1_1_file_parser_converter.html#ade234813756de3a32c596a231b71a720',1,'qtpd::FileParserConverter::unescapeString()'],['../classqtpd_1_1_property.html#a596eddb51edff22c5109c7ae2fd67e67',1,'qtpd::Property::unescapeString()']]],
   ['unregisterclass',['unregisterClass',['../classqtpd_1_1_o_o_p_d.html#a345e1c4fe7de65214d0303aba74d9b85',1,'qtpd::OOPD']]],
   ['unregisterinstance',['unregisterInstance',['../classqtpd_1_1_o_o_p_d.html#abf01b52ccb580a6c4edfa3c7b87cbf32',1,'qtpd::OOPD']]],
   ['update',['update',['../classqtpd_1_1_controller_observer.html#a249a6e384c5d18af661cf992c1d34175',1,'qtpd::ControllerObserver::update()'],['../classqtpd_1_1_object_observer.html#a964aee7ea01b1518365e9c621d4840e2',1,'qtpd::ObjectObserver::update()'],['../classqtpd_1_1_patch_observer.html#a700ca32ebe80e1e6c21da40a6530ee33',1,'qtpd::PatchObserver::update()'],['../classqtpd_1_1_pd_window_console_observer.html#a0e1596d8005bea7bd5b8f9963a77e498',1,'qtpd::PdWindowConsoleObserver::update()']]],

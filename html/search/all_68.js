@@ -5,7 +5,7 @@ var searchData=
   ['hasselectedobjects',['hasSelectedObjects',['../classqtpd_1_1_canvas_data.html#a37b1856e8c2279ae20a1835380da20a9',1,'qtpd::CanvasData']]],
   ['hasui',['hasUI',['../classqtpd_1_1_object_loader.html#a134ca204fe0a6e710c047c084645082a',1,'qtpd::ObjectLoader']]],
   ['height',['height',['../classqtpd_1_1_u_i_item.html#a5bbd8fe0417078d386176ace5a01f261',1,'qtpd::UIItem']]],
-  ['help',['help',['../classqtpd_1_1_file_paths.html#aa81932732ebe14cee24ec1db07d7a296',1,'qtpd::FilePaths']]],
+  ['helpdir',['helpDir',['../classqtpd_1_1_file_paths.html#a6b42146b305d76e33b6cf8b3d4502a6a',1,'qtpd::FilePaths']]],
   ['helpmenu',['helpMenu',['../classqtpd_1_1_base_window.html#a0e973c545dc57ac03f2e0dbe4aa6f69e',1,'qtpd::BaseWindow']]],
   ['hidesizebox',['hideSizeBox',['../classqtpd_1_1_u_i_object.html#a67dc3600d5357c9befab0af91cb8b5f9',1,'qtpd::UIObject']]],
   ['hover',['hover',['../classqtpd_1_1_u_i_item.html#a2ca6449c88dc277945266ad0413402a7',1,'qtpd::UIItem']]],

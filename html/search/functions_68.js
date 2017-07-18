@@ -5,7 +5,7 @@ var searchData=
   ['hasselectedobjects',['hasSelectedObjects',['../classqtpd_1_1_canvas_data.html#a37b1856e8c2279ae20a1835380da20a9',1,'qtpd::CanvasData']]],
   ['hasui',['hasUI',['../classqtpd_1_1_object_loader.html#a134ca204fe0a6e710c047c084645082a',1,'qtpd::ObjectLoader']]],
   ['height',['height',['../classqtpd_1_1_u_i_item.html#a5bbd8fe0417078d386176ace5a01f261',1,'qtpd::UIItem']]],
-  ['help',['help',['../classqtpd_1_1_file_paths.html#aa81932732ebe14cee24ec1db07d7a296',1,'qtpd::FilePaths']]],
+  ['helpdir',['helpDir',['../classqtpd_1_1_file_paths.html#a6b42146b305d76e33b6cf8b3d4502a6a',1,'qtpd::FilePaths']]],
   ['hidesizebox',['hideSizeBox',['../classqtpd_1_1_u_i_object.html#a67dc3600d5357c9befab0af91cb8b5f9',1,'qtpd::UIObject']]],
   ['hover',['hover',['../classqtpd_1_1_u_i_item.html#a2ca6449c88dc277945266ad0413402a7',1,'qtpd::UIItem']]],
   ['hoverenterevent',['hoverEnterEvent',['../classqtpd_1_1_port.html#a67a76935ad1f1ee2c952e6fa3b48f3b7',1,'qtpd::Port::hoverEnterEvent()'],['../classqtpd_1_1_size_box.html#ac13f7682540c80f21b998a534e930748',1,'qtpd::SizeBox::hoverEnterEvent()'],['../classqtpd_1_1_u_i_object.html#ae3b8ec06c4aa92e121faf2810c2babf5',1,'qtpd::UIObject::hoverEnterEvent()'],['../classqtpd_1_1_u_i_patchcord.html#a878af9e636e01e0f0b36426c60372a54',1,'qtpd::UIPatchcord::hoverEnterEvent()'],['../classqtpd_1_1_u_i_link.html#a6b62240188fa6b55961a7ffaafd5e780',1,'qtpd::UILink::hoverEnterEvent()']]],

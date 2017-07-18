@@ -134,7 +134,7 @@ var searchData=
   ['classbycanvas',['classByCanvas',['../classqtpd_1_1_o_o_p_d.html#a576c568565520226713ad38c788765a4',1,'qtpd::OOPD']]],
   ['classbyname',['classByName',['../classqtpd_1_1_o_o_p_d.html#af933fed68618c8a5a655216295bfb4d1',1,'qtpd::OOPD']]],
   ['classbysymbol',['classBySymbol',['../classqtpd_1_1_o_o_p_d.html#a201d90ff46c9e93c62b949d592e717b1',1,'qtpd::OOPD']]],
-  ['classes',['classes',['../classqtpd_1_1_file_paths.html#a9ce12df0940423a5395a7a7b4df0ec6a',1,'qtpd::FilePaths']]],
+  ['classesdir',['classesDir',['../classqtpd_1_1_file_paths.html#aeaf59dd739769331d0540ff5723a0d92',1,'qtpd::FilePaths']]],
   ['clear',['clear',['../classqtpd_1_1_clipboard.html#a0cf14bccba6ef82e1e0f4a922cab07c4',1,'qtpd::Clipboard::clear()'],['../classceammc_1_1_atom_list.html#aad5901c10e4bf12a36db3a49ff4928ed',1,'ceammc::AtomList::clear()'],['../classqtpd_1_1_o_p_outputs.html#a8d404ef038866513b33cedeecd4778ca',1,'qtpd::OPOutputs::clear()'],['../class_abstract___widget___list.html#acac6b1ac8107e8e310d96ff3f038955c',1,'Abstract_Widget_List::clear()']]],
   ['clearconsoleslot',['clearConsoleSlot',['../classqtpd_1_1_pd_window.html#a597cc5de10e62b986128713a6ed24405',1,'qtpd::PdWindow']]],
   ['clicked',['clicked',['../class_color___preview.html#affd321ccbf922b99986b71666c1eb039',1,'Color_Preview']]],
