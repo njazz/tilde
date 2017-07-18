@@ -74,6 +74,8 @@ public:
 
     QMenu* recentMenu() { return _recentMenu; }
 
+    FilePaths* filePaths() {return _filePaths;}
+
 signals:
     void getLocalServer(LocalServer* ret);
 

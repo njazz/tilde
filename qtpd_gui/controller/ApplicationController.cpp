@@ -67,6 +67,8 @@ ApplicationController::ApplicationController()
     _serverWorker->moveToThread(_serverThread);
     _serverThread->start();
 
+    _filePaths = new FilePaths;
+
 #ifdef WITH_PYTHON
     pyWrapper::inst().setAppController(this);
     PythonQtObjectPtr mainContext = pyWrapper::inst().newContext();
@@ -94,8 +96,6 @@ ApplicationController::ApplicationController()
     FileParser::setAppController(this);
 
     // --------
-
-    _filePaths = new FilePaths;
 
     //temporary folders properties
     QString docFolder = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).last();
@@ -174,7 +174,7 @@ ApplicationController::ApplicationController()
         mainServerInstance()->addSearchPath(paths2.at(i).toStdString());
     }
 
-    Preferences::inst().create("Paths", "Folders", "0.1", paths+paths2);
+    Preferences::inst().create("Paths", "Folders", "0.1", paths + paths2);
 
     mainServerInstance()->post("qtpd started");
     mainServerInstance()->post("----");

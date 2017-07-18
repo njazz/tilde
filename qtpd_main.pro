@@ -10,6 +10,7 @@ QMAKE_MAC_SDK = macosx10.12
 SUBDIRS = \
     #$$PWD/qtpd_lib \
     $$PWD/../pd-server/src/qt-creator-project/pd-server.pro \
+    $$PWD/../pd-server/src/qt-creator-project/pd-server-tests.pro \
     #$$PWD/qtpd_ceammc_lib \
     $$PWD/qtpd_gui \
     $$PWD/qtpd_ui_library \

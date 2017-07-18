@@ -29,6 +29,7 @@ public:
 
     void createActions(); ////> create menu actions (File, Edit)
     void createMenus(); ///>  create all menus
+    void createScriptsMenu(); ///> create scripts menu
 
     void setRecentMenu(QMenu* menu);
 

@@ -26,12 +26,6 @@ public:
 
     QString settings();
 
-//    QString classesDir();
-//    QString externalsDir();
-//    QString helpDir();
-//    QString librariesDir();
-//    QString patchesDir();
-
     QStringList bundlesDirList();
 
     QStringList dirListFor(QString path);
@@ -43,8 +37,10 @@ public:
     QStringList helpDirList();
     QStringList librariesDirList();
     QStringList patchesDirList();
+    QStringList scriptsDirList();
 
     QStringList librariesFileList();
+    QStringList scriptsFileList();
 };
 }
 

@@ -164,6 +164,10 @@ QStringList FilePaths::patchesDirList()
     return dirListFor("Patches");
 }
 
+QStringList FilePaths::scriptsDirList()
+{
+    return dirListFor("Scripts");
+}
 // ----------
 
 QStringList FilePaths::fileListFor(QStringList list, QString filter)
@@ -190,5 +194,10 @@ QStringList FilePaths::fileListFor(QStringList list, QString filter)
 QStringList FilePaths::librariesFileList()
 {
     return fileListFor(librariesDirList(), "*.pd_darwin");
+}
+
+QStringList FilePaths::scriptsFileList()
+{
+    return fileListFor(scriptsDirList(), "*.py");
 }
 }
