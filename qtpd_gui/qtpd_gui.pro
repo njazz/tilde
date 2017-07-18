@@ -333,6 +333,15 @@ RESOURCES += \
     properties/QtColorPicker/src/pattern.qrc
 
 
+QMAKE_MAC_SDK = macosx10.12
+
+
+#QMAKE_LIBDIR += /usr/local/lib \
+#QMAKE_RPATHDIR += /~/Qt/5.8/clang_64/lib
+
+#LIBS += \
+QMAKE_LFLAGS += '-Wl,-rpath,/users/njazz/Qt/5.8/clang_64/lib' \
+#-Wl,-rpath-link,~/Qt/5.8/clang_64/lib \
 
 
 

@@ -5,7 +5,7 @@ CONFIG += ordered
 macx: CONFIG += withPython
 win32: CONFIG -= WithPython
 
-
+QMAKE_MAC_SDK = macosx10.12
 
 SUBDIRS = \
     #$$PWD/qtpd_lib \
