@@ -110,29 +110,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00026"></a>00026 
 <a name="l00027"></a>00027     QString <a class="code" href="classqtpd_1_1_file_paths.html#a3750951c1da853b0b5f2a6dafff5f4dc">settings</a>();
 <a name="l00028"></a>00028 
-<a name="l00029"></a>00029 <span class="comment">//    QString classesDir();</span>
-<a name="l00030"></a>00030 <span class="comment">//    QString externalsDir();</span>
-<a name="l00031"></a>00031 <span class="comment">//    QString helpDir();</span>
-<a name="l00032"></a>00032 <span class="comment">//    QString librariesDir();</span>
-<a name="l00033"></a>00033 <span class="comment">//    QString patchesDir();</span>
+<a name="l00029"></a>00029     QStringList <a class="code" href="classqtpd_1_1_file_paths.html#a3dbdad8a98cb7aae51b03088f46553da">bundlesDirList</a>();
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031     QStringList <a class="code" href="classqtpd_1_1_file_paths.html#a99d3d8bf9629fc41b2d35e499826d274">dirListFor</a>(QString path);
+<a name="l00032"></a>00032     QStringList <a class="code" href="classqtpd_1_1_file_paths.html#ad72ae47713c5461449924df21de44acb">recursiveDirListFor</a>(QStringList paths);
+<a name="l00033"></a>00033     QStringList <a class="code" href="classqtpd_1_1_file_paths.html#a2c979ab23d0739a7696cdc0c553c7310">fileListFor</a>(QStringList list, QString filter);
 <a name="l00034"></a>00034 
-<a name="l00035"></a>00035     QStringList <a class="code" href="classqtpd_1_1_file_paths.html#a3dbdad8a98cb7aae51b03088f46553da">bundlesDirList</a>();
-<a name="l00036"></a>00036 
-<a name="l00037"></a>00037     QStringList <a class="code" href="classqtpd_1_1_file_paths.html#a99d3d8bf9629fc41b2d35e499826d274">dirListFor</a>(QString path);
-<a name="l00038"></a>00038     QStringList <a class="code" href="classqtpd_1_1_file_paths.html#ad72ae47713c5461449924df21de44acb">recursiveDirListFor</a>(QStringList paths);
-<a name="l00039"></a>00039     QStringList <a class="code" href="classqtpd_1_1_file_paths.html#a2c979ab23d0739a7696cdc0c553c7310">fileListFor</a>(QStringList list, QString filter);
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041     QStringList <a class="code" href="classqtpd_1_1_file_paths.html#aa20d829eb697c5416e7897c817bc5c7b">classesDirList</a>();
-<a name="l00042"></a>00042     QStringList <a class="code" href="classqtpd_1_1_file_paths.html#ae0ffca936d3a35b2b0f0a4216dcbe241">externalsDirList</a>();
-<a name="l00043"></a>00043     QStringList <a class="code" href="classqtpd_1_1_file_paths.html#ada4f64ed142b47e3ea47cdd1be480de0">helpDirList</a>();
-<a name="l00044"></a>00044     QStringList <a class="code" href="classqtpd_1_1_file_paths.html#a19c6d683814f1388485d737de1445302">librariesDirList</a>();
-<a name="l00045"></a>00045     QStringList <a class="code" href="classqtpd_1_1_file_paths.html#a4056a57e462cbeb350ebb6a26e4ecc9f">patchesDirList</a>();
+<a name="l00035"></a>00035     QStringList <a class="code" href="classqtpd_1_1_file_paths.html#aa20d829eb697c5416e7897c817bc5c7b">classesDirList</a>();
+<a name="l00036"></a>00036     QStringList <a class="code" href="classqtpd_1_1_file_paths.html#ae0ffca936d3a35b2b0f0a4216dcbe241">externalsDirList</a>();
+<a name="l00037"></a>00037     QStringList <a class="code" href="classqtpd_1_1_file_paths.html#ada4f64ed142b47e3ea47cdd1be480de0">helpDirList</a>();
+<a name="l00038"></a>00038     QStringList <a class="code" href="classqtpd_1_1_file_paths.html#a19c6d683814f1388485d737de1445302">librariesDirList</a>();
+<a name="l00039"></a>00039     QStringList <a class="code" href="classqtpd_1_1_file_paths.html#a4056a57e462cbeb350ebb6a26e4ecc9f">patchesDirList</a>();
+<a name="l00040"></a>00040     QStringList <a class="code" href="classqtpd_1_1_file_paths.html#a347264ccc532062d71873e9dcfbdd8be">scriptsDirList</a>();
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042     QStringList <a class="code" href="classqtpd_1_1_file_paths.html#a00071ee89d171646af24a066dfdec4cb">librariesFileList</a>();
+<a name="l00043"></a>00043     QStringList <a class="code" href="classqtpd_1_1_file_paths.html#a00fef69b899ed326767de4e17f9fc7ac">scriptsFileList</a>();
+<a name="l00044"></a>00044 };
+<a name="l00045"></a>00045 }
 <a name="l00046"></a>00046 
-<a name="l00047"></a>00047     QStringList <a class="code" href="classqtpd_1_1_file_paths.html#a00071ee89d171646af24a066dfdec4cb">librariesFileList</a>();
-<a name="l00048"></a>00048 };
-<a name="l00049"></a>00049 }
-<a name="l00050"></a>00050 
-<a name="l00051"></a>00051 <span class="preprocessor">#endif // FILEPATHS_H</span>
+<a name="l00047"></a>00047 <span class="preprocessor">#endif // FILEPATHS_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -151,7 +147,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 18 2017 21:07:44 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 18 2017 22:20:38 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

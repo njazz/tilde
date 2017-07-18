@@ -15,7 +15,7 @@ var searchData=
   ['fileparserconverter_2ecpp',['fileparserconverter.cpp',['../fileparserconverter_8cpp.html',1,'']]],
   ['fileparserconverter_2eh',['fileparserconverter.h',['../fileparserconverter_8h.html',1,'']]],
   ['filepath',['filePath',['../classqtpd_1_1_canvas_data.html#a9588a64641031ac502cf95733e4b81ad',1,'qtpd::CanvasData']]],
-  ['filepaths',['FilePaths',['../classqtpd_1_1_file_paths.html#af7267947efb0470a9d04cb4a600876e6',1,'qtpd::FilePaths']]],
+  ['filepaths',['filePaths',['../classqtpd_1_1_application_controller.html#a8b138e7df34225804c99a2c0c3056fb1',1,'qtpd::ApplicationController::filePaths()'],['../classqtpd_1_1_file_paths.html#af7267947efb0470a9d04cb4a600876e6',1,'qtpd::FilePaths::FilePaths()']]],
   ['filepaths',['FilePaths',['../classqtpd_1_1_file_paths.html',1,'qtpd']]],
   ['filepaths_2ecpp',['filepaths.cpp',['../filepaths_8cpp.html',1,'']]],
   ['filepaths_2eh',['filepaths.h',['../filepaths_8h.html',1,'']]],
