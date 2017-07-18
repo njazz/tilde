@@ -26,14 +26,25 @@ public:
 
     QString settings();
 
-    // todo stringlists & bundles
-    QString classesDir();
-    QString externalsDir();
-    QString helpDir();
-    QString librariesDir();
-    QString patchesDir();
+//    QString classesDir();
+//    QString externalsDir();
+//    QString helpDir();
+//    QString librariesDir();
+//    QString patchesDir();
 
-    QStringList librariesList();
+    QStringList bundlesDirList();
+
+    QStringList dirListFor(QString path);
+    QStringList recursiveDirListFor(QStringList paths);
+    QStringList fileListFor(QStringList list, QString filter);
+
+    QStringList classesDirList();
+    QStringList externalsDirList();
+    QStringList helpDirList();
+    QStringList librariesDirList();
+    QStringList patchesDirList();
+
+    QStringList librariesFileList();
 };
 }
 

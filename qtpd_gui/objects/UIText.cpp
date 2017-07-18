@@ -87,6 +87,7 @@ void UIText::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*
 
     QBrush brush(properties()->get("BackgroundColor")->asQColor());
     p->setBrush(brush);
+    p->setPen(Qt::NoPen);
     p->drawRect(boundingRect());
     p->setBrush(QBrush());
 
@@ -250,6 +251,7 @@ void UIText::sync()
 
 void UIText::propertyFontSize()
 {
+
 }
 
 void UIText::textPropertyChanged()

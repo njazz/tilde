@@ -116,7 +116,7 @@ template <>
 void Property::set(QStringList strlist)
 {
     _data = QVariantList();
-    for (int i=0;i<strlist.size();i++)
+    for (int i = 0; i < strlist.size(); i++)
         _data << strlist.at(i);
     setDefaultType(ptStringList);
     emit changed();
@@ -131,7 +131,6 @@ void Property::set(QString string)
 template <>
 void Property::set(string string)
 {
-
     set(QString(string.c_str()));
 }
 
@@ -196,7 +195,7 @@ bool Property::asBool()
     if (_data.size() < 1)
         return 0.;
 
-    return _data.at(0).toInt()>0;
+    return _data.at(0).toInt() > 0;
 }
 
 float Property::asFontSize()

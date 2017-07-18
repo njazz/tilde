@@ -46,54 +46,149 @@ QString FilePaths::settings()
 
 // ----------
 
-QString FilePaths::classesDir()
-{
-    return basePath() + "/Classes";
-}
+//QString FilePaths::classesDir()
+//{
+//    return basePath() + "/Classes";
+//}
 
-QString FilePaths::externalsDir()
-{
-    return basePath() + "/Externals";
-}
+//QString FilePaths::externalsDir()
+//{
+//    return basePath() + "/Externals";
+//}
 
-QString FilePaths::helpDir()
-{
-    return basePath() + "/Help";
-}
+//QString FilePaths::helpDir()
+//{
+//    return basePath() + "/Help";
+//}
 
-QString FilePaths::librariesDir()
-{
-    return basePath() + "/Libraries";
-}
+//QString FilePaths::librariesDir()
+//{
+//    return basePath() + "/Libraries";
+//}
 
-QString FilePaths::patchesDir()
-{
-    return basePath() + "/Patches";
-}
-
-QStringList FilePaths::librariesList()
+//QString FilePaths::patchesDir()
+//{
+//    return basePath() + "/Patches";
+//}
+// ----------
+QStringList FilePaths::bundlesDirList()
 {
     QStringList ret;
 
-    QDirIterator* d = new QDirIterator(librariesDir() + "/", QStringList() << "*.pd_darwin", QDir::Files, QDirIterator::Subdirectories);
-    //QDirIterator* d = new QDirIterator(librariesDir());
+    ret << _basePath ;
+
+    QDirIterator* d = new QDirIterator(_basePath + "/Bundles/", QStringList() << "*", QDir::Dirs, QDirIterator::NoIteratorFlags);
 
     int maxCount = 256;
 
     while (d->hasNext() && maxCount) {
 
         QString file = d->next();
-        //if (file.split(".", Qt::).last() == "pd_darwin")
-        ret.append(file);
 
-        //        qDebug() << "lib " << file;
+        if ((file.split("/").last() != ".") && (file.split("/").last() != ".."))
+            ret.append(file);
 
         maxCount--;
     }
 
-    //delete d;
-    //    qDebug() << " ret" << ret;
+    return ret;
+}
+
+// ----------
+
+QStringList FilePaths::recursiveDirListFor(QStringList paths)
+{
+    QStringList ret;
+
+    for (int i = 0; i < paths.size(); i++) {
+
+        ret << paths.at(i) ;
+
+        QDirIterator* d = new QDirIterator(paths.at(i) + "/", QStringList() << "*", QDir::Dirs, QDirIterator::Subdirectories);
+
+        int maxCount = 256;
+
+        while (d->hasNext() && maxCount) {
+
+            QString file = d->next();
+
+            if ((file.split("/").last() != ".") && (file.split("/").last() != ".."))
+                ret.append(file);
+
+            maxCount--;
+        }
+    }
+    return ret;
+}
+
+QStringList FilePaths::dirListFor(QString path)
+{
+    QStringList ret;
+    ret.append(basePath() + "/" + path);
+
+    QStringList bundles = bundlesDirList();
+
+    QStringList paths;
+
+    for (int i = 0; i < bundles.count(); i++) {
+        paths.append(bundles.at(i) + "/" + path);
+    }
+
+    ret = recursiveDirListFor(paths);
 
     return ret;
+}
+
+QStringList FilePaths::classesDirList()
+{
+    return dirListFor("Classes");
+}
+
+QStringList FilePaths::externalsDirList()
+{
+    return dirListFor("Externals");
+}
+
+QStringList FilePaths::helpDirList()
+{
+    return dirListFor("Help");
+}
+
+QStringList FilePaths::librariesDirList()
+{
+    return dirListFor("Libraries");
+}
+
+QStringList FilePaths::patchesDirList()
+{
+    return dirListFor("Patches");
+}
+
+// ----------
+
+QStringList FilePaths::fileListFor(QStringList list, QString filter)
+{
+    QStringList ret;
+
+    for (int i = 0; i < list.size(); i++) {
+
+        QDirIterator* d = new QDirIterator(list.at(i) + "/", QStringList() << filter, QDir::Files, QDirIterator::Subdirectories);
+
+        int maxCount = 256;
+
+        while (d->hasNext() && maxCount) {
+
+            QString file = d->next();
+            ret.append(file);
+
+            maxCount--;
+        }
+    }
+    return ret;
+}
+
+QStringList FilePaths::librariesFileList()
+{
+    return fileListFor(librariesDirList(), "*.pd_darwin");
 }
 }

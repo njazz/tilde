@@ -32,10 +32,9 @@ void ApplicationController::loadAllLibraries()
 {
     //_localServer->firstInstance()->setVerboseLevel(4);
 
-    QStringList libs = _filePaths->librariesList();
+    QStringList libs = _filePaths->librariesFileList();
 
-    for (int i=0; i< libs.size(); i++)
-    {
+    for (int i = 0; i < libs.size(); i++) {
         QString file = libs.at(i).split(".").first();
         _localServer->firstInstance()->loadLibrary(file.toStdString());
     }
@@ -98,50 +97,52 @@ ApplicationController::ApplicationController()
 
     _filePaths = new FilePaths;
 
-
     //temporary folders properties
     QString docFolder = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).last();
 
     // load from file later
-    Preferences::inst().create("Externals", "ExtraFolders", "0.1", docFolder + "/Qtpd/Externals");
-    Preferences::inst().create("Scripts", "ExtraFolders", "0.1", docFolder + "/Qtpd/Scripts");
-    Preferences::inst().create("Help", "ExtraFolders", "0.1", docFolder + "/Qtpd/Help");
-    Preferences::inst().create("Patches", "ExtraFolders", "0.1", docFolder + "/Qtpd/Patches");
-    Preferences::inst().create("Classes", "ExtraFolders", "0.1", docFolder + "/Qtpd/Classes");
-    Preferences::inst().create("Libraries", "ExtraFolders", "0.1", docFolder + "/Qtpd/Libraries");
+    //    Preferences::inst().create("Externals", "ExtraFolders", "0.1", docFolder + "/Qtpd/Externals");
+    //    Preferences::inst().create("Scripts", "ExtraFolders", "0.1", docFolder + "/Qtpd/Scripts");
+    //    Preferences::inst().create("Help", "ExtraFolders", "0.1", docFolder + "/Qtpd/Help");
+    //    Preferences::inst().create("Patches", "ExtraFolders", "0.1", docFolder + "/Qtpd/Patches");
+    //    Preferences::inst().create("Classes", "ExtraFolders", "0.1", docFolder + "/Qtpd/Classes");
+    //    Preferences::inst().create("Libraries", "ExtraFolders", "0.1", docFolder + "/Qtpd/Libraries");
 
-    Preferences::inst().get("Externals")->setType(ptStringList);
-    Preferences::inst().get("Scripts")->setType(ptStringList);
-    Preferences::inst().get("Help")->setType(ptStringList);
-    Preferences::inst().get("Patches")->setType(ptStringList);
-    Preferences::inst().get("Classes")->setType(ptStringList);
-    Preferences::inst().get("Libraries")->setType(ptStringList);
+    //    Preferences::inst().get("Externals")->setType(ptStringList);
+    //    Preferences::inst().get("Scripts")->setType(ptStringList);
+    //    Preferences::inst().get("Help")->setType(ptStringList);
+    //    Preferences::inst().get("Patches")->setType(ptStringList);
+    //    Preferences::inst().get("Classes")->setType(ptStringList);
+    //    Preferences::inst().get("Libraries")->setType(ptStringList);
 
     //temporary fix
-    Preferences::inst().create("Paths", "Folders", "0.1", docFolder);
-    Preferences::inst().get("Paths")->setType(ptStringList);
+    //    Preferences::inst().create("Paths", "Folders", "0.1", docFolder);
+    //    Preferences::inst().get("Paths")->setType(ptStringList);
 
-    std::string extPath = Preferences::inst().get("Externals")->asStdString();
-    std::string extPath1 = extPath + "/ceammc";
-    std::string extPath2 = extPath + "/fiddle~";
-    std::string extPath3 = Preferences::inst().get("Help")->asStdString();
+    //    std::string extPath = Preferences::inst().get("Externals")->asStdString();
+    //    std::string extPath1 = extPath + "/ceammc";
+    //    std::string extPath2 = extPath + "/fiddle~";
+    //    std::string extPath3 = Preferences::inst().get("Help")->asStdString();
+
     //std::string extPath4 = Preferences::inst().get("Patches")->asStdString();
 
     //bug - no '/' in the end
 
     // TODO
-    Preferences::inst().addPath(extPath.c_str());
-    Preferences::inst().addPath(extPath1.c_str());
-    Preferences::inst().addPath(extPath2.c_str());
-    Preferences::inst().addPath(extPath3.c_str());
+    //    Preferences::inst().addPath(extPath.c_str());
+    //    Preferences::inst().addPath(extPath1.c_str());
+    //    Preferences::inst().addPath(extPath2.c_str());
+    //    Preferences::inst().addPath(extPath3.c_str());
+
     //Preferences::inst().addPath(extPath4.c_str());
 
-    mainServerInstance()->addSearchPath(extPath);
-    mainServerInstance()->addSearchPath(extPath1);
-    mainServerInstance()->addSearchPath(extPath2);
-    mainServerInstance()->addSearchPath(extPath3);
+    //    mainServerInstance()->addSearchPath(extPath);
+    //    mainServerInstance()->addSearchPath(extPath1);
+    //    mainServerInstance()->addSearchPath(extPath2);
+    //    mainServerInstance()->addSearchPath(extPath3);
     //controller->mainServerInstance()->addSearchPath(extPath4);
 
+    // *******************************
     // TODO
     // "Paths" should be read-only list
     // search all through "FilePath" class
@@ -150,6 +151,20 @@ ApplicationController::ApplicationController()
     Preferences::inst().create("QtpdPath", "Folders", "0.1", _filePaths->basePath());
 
     loadAllLibraries();
+
+    qDebug() << " *** paths *** ";
+    qDebug() << _filePaths->librariesDirList();
+    qDebug() << _filePaths->librariesFileList();
+    qDebug() << _filePaths->bundlesDirList();
+
+    qDebug() << _filePaths->externalsDirList();
+
+    QStringList paths = _filePaths->externalsDirList();
+
+    // external paths
+    for (int i = 0; i < paths.size(); i++) {
+        mainServerInstance()->addSearchPath(paths.at(i).toStdString());
+    }
 
     mainServerInstance()->post("qtpd started");
     mainServerInstance()->post("----");
@@ -163,8 +178,6 @@ ApplicationController::ApplicationController()
 
     Preferences::inst().readFromTextFile();
 };
-
-
 
 ServerInstance* ApplicationController::mainServerInstance()
 {
