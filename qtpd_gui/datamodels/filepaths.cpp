@@ -3,7 +3,10 @@
 
 #include "filepaths.h"
 
+#include <QDirIterator>
 #include <QStandardPaths>
+
+#include <QDebug>
 
 namespace qtpd {
 
@@ -43,28 +46,54 @@ QString FilePaths::settings()
 
 // ----------
 
-QString FilePaths::classes()
+QString FilePaths::classesDir()
 {
     return basePath() + "/Classes";
 }
 
-QString FilePaths::externals()
+QString FilePaths::externalsDir()
 {
     return basePath() + "/Externals";
 }
 
-QString FilePaths::help()
+QString FilePaths::helpDir()
 {
     return basePath() + "/Help";
 }
 
-QString FilePaths::libraries()
+QString FilePaths::librariesDir()
 {
     return basePath() + "/Libraries";
 }
 
-QString FilePaths::patches()
+QString FilePaths::patchesDir()
 {
     return basePath() + "/Patches";
+}
+
+QStringList FilePaths::librariesList()
+{
+    QStringList ret;
+
+    QDirIterator* d = new QDirIterator(librariesDir() + "/", QStringList() << "*.pd_darwin", QDir::Files, QDirIterator::Subdirectories);
+    //QDirIterator* d = new QDirIterator(librariesDir());
+
+    int maxCount = 256;
+
+    while (d->hasNext() && maxCount) {
+
+        QString file = d->next();
+        //if (file.split(".", Qt::).last() == "pd_darwin")
+        ret.append(file);
+
+        //        qDebug() << "lib " << file;
+
+        maxCount--;
+    }
+
+    //delete d;
+    //    qDebug() << " ret" << ret;
+
+    return ret;
 }
 }

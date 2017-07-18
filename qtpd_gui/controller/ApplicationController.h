@@ -54,6 +54,8 @@ private:
 
     FilePaths* _filePaths;
 
+    void loadAllLibraries();
+
 public:
     ApplicationController();
 

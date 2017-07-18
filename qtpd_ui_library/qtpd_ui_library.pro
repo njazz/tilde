@@ -80,3 +80,8 @@ win32:{
     LIBS += -L$$OUT_PWD/../../pd-server/src/qt-creator-project/debug -lpd-server \ #-L~/Documents/Qtpd/Libraries -lpd-server #
    # -L$$OUT_PWD/../qtpd_ceammc_lib/debug -lqtpd_ceammc_lib
 }
+
+QMAKE_EXTENSION_SHLIB = "pd_darwin"
+CONFIG += plugin no_plugin_name_prefix
+
+

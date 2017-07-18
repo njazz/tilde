@@ -28,6 +28,19 @@
 
 namespace qtpd {
 
+void ApplicationController::loadAllLibraries()
+{
+    //_localServer->firstInstance()->setVerboseLevel(4);
+
+    QStringList libs = _filePaths->librariesList();
+
+    for (int i=0; i< libs.size(); i++)
+    {
+        QString file = libs.at(i).split(".").first();
+        _localServer->firstInstance()->loadLibrary(file.toStdString());
+    }
+}
+
 ApplicationController::ApplicationController()
 {
     qDebug("new app controller");
@@ -74,14 +87,17 @@ ApplicationController::ApplicationController()
 
     _localServer->firstInstance()->post("Server started");
 
-    QString tilde = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).at(0);
-    _localServer->firstInstance()->loadLibrary(QString(tilde + "/Qtpd/Libraries/qtpd_ui").toStdString());
+    //_localServer->firstInstance()->setVerboseLevel(4);
+
+    //QString tilde = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).at(0);
+    //_localServer->firstInstance()->loadLibrary(QString(tilde + "/Qtpd/Libraries/qtpd_ui").toStdString());
 
     FileParser::setAppController(this);
 
     // --------
 
     _filePaths = new FilePaths;
+
 
     //temporary folders properties
     QString docFolder = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).last();
@@ -133,6 +149,8 @@ ApplicationController::ApplicationController()
     // extrafolders for additional paths
     Preferences::inst().create("QtpdPath", "Folders", "0.1", _filePaths->basePath());
 
+    loadAllLibraries();
+
     mainServerInstance()->post("qtpd started");
     mainServerInstance()->post("----");
 
@@ -145,6 +163,8 @@ ApplicationController::ApplicationController()
 
     Preferences::inst().readFromTextFile();
 };
+
+
 
 ServerInstance* ApplicationController::mainServerInstance()
 {

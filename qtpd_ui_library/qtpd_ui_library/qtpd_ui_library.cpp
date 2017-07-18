@@ -26,7 +26,7 @@ extern void setup_ui0x2earray();
 extern "C" void setup() //0x2e //qtpd_ui_
 {
 
-    post("loading Qtpd ui library");
+    post("Qtpd UI library loaded");
 
     setup_ui0x2ebang();
     setup_ui0x2efloat();

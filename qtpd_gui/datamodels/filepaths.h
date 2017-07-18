@@ -26,11 +26,14 @@ public:
 
     QString settings();
 
-    QString classes();
-    QString externals();
-    QString help();
-    QString libraries();
-    QString patches();
+    // todo stringlists & bundles
+    QString classesDir();
+    QString externalsDir();
+    QString helpDir();
+    QString librariesDir();
+    QString patchesDir();
+
+    QStringList librariesList();
 };
 }
 
