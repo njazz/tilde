@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['data',['data',['../classqtpd_1_1_u_i_object_data.html#a9b13f3dee27d2074dcfeb8d403a9c2a3',1,'qtpd::UIObjectData::data()'],['../classqtpd_1_1_property.html#a7df44bcb3dba9285999a0a088b2a4179',1,'qtpd::Property::data()']]],
+  ['data',['data',['../classqtpd_1_1_u_i_object_data.html#a9b13f3dee27d2074dcfeb8d403a9c2a3',1,'qtpd::UIObjectData::data()'],['../classqtpd_1_1_property.html#a6f7fa191d0de0951c8d8b5c482aa14ae',1,'qtpd::Property::data()']]],
   ['datacopy',['dataCopy',['../classqtpd_1_1_patch_window_controller.html#aab4ec2a593279cfad25088d524d0b98d',1,'qtpd::PatchWindowController']]],
   ['datacut',['dataCut',['../classqtpd_1_1_patch_window_controller.html#ad6cbfd60e91d01742ac2bf7dfe40692f',1,'qtpd::PatchWindowController']]],
   ['dataduplicate',['dataDuplicate',['../classqtpd_1_1_patch_window_controller.html#a7b717a2474df3263be0761439a3eeff0',1,'qtpd::PatchWindowController']]],
@@ -8,7 +8,7 @@ var searchData=
   ['dataselectallobjects',['dataSelectAllObjects',['../classqtpd_1_1_patch_window_controller.html#a4ef913c8819dcc1d489ec8f9ca66a01b',1,'qtpd::PatchWindowController']]],
   ['dbtopow',['dbtopow',['../m__pd_8h.html#a30b3faf04d8f63d86991f11abaa81c4f',1,'m_pd.h']]],
   ['dbtorms',['dbtorms',['../m__pd_8h.html#a35754550b878de776ca3aef939c72ec3',1,'m_pd.h']]],
-  ['defaultdata',['defaultData',['../classqtpd_1_1_property.html#aa06ad82b1fc482cc5d634c9156d2a5ab',1,'qtpd::Property']]],
+  ['defaultdata',['defaultData',['../classqtpd_1_1_property.html#a0dcde558c41f99b9fff514bb6c3d0ba2',1,'qtpd::Property']]],
   ['defaultdisplayflags',['defaultDisplayFlags',['../class_color___wheel.html#a36ddea665d3e4aa3a30c2e4a28e8be6b',1,'Color_Wheel']]],
   ['deleteobject',['deleteObject',['../classqtpd_1_1_patch_window_controller.html#a294ae819aa8fd6d25060797014582226',1,'qtpd::PatchWindowController']]],
   ['deleteobjectwithoutundo',['deleteObjectWithoutUndo',['../classqtpd_1_1_patch_window_controller.html#a9db4fe95db48ddff9b9130bb3446df1e',1,'qtpd::PatchWindowController']]],
@@ -22,6 +22,7 @@ var searchData=
   ['deselectboxes',['deselectBoxes',['../classqtpd_1_1_canvas_data.html#ab69c7611bf7c9bbf57aa6a7178087fd1',1,'qtpd::CanvasData']]],
   ['deselectpatchcords',['deselectPatchcords',['../classqtpd_1_1_canvas_data.html#ae7683b489148afdedd334b7a09f64237',1,'qtpd::CanvasData']]],
   ['dialogmodality',['dialogModality',['../class_color___selector.html#a5d341e4a155b076207941cba13062f3e',1,'Color_Selector']]],
+  ['dirlistfor',['dirListFor',['../classqtpd_1_1_file_paths.html#a99d3d8bf9629fc41b2d35e499826d274',1,'qtpd::FilePaths']]],
   ['disableobjectsonparent',['disableObjectsOnParent',['../classqtpd_1_1_patch_window_controller.html#a8054b7bd8988db4bdc428feb95235853',1,'qtpd::PatchWindowController']]],
   ['displayflags',['displayFlags',['../class_color___wheel.html#a92504653a2c1165267d333c2053861fe',1,'Color_Wheel']]],
   ['displayflagschanged',['displayFlagsChanged',['../class_color___wheel.html#a430bd5e759c15860158434ed96ba1d86',1,'Color_Wheel']]],

@@ -12,6 +12,7 @@ var searchData=
   ['recentfiles_2eh',['recentfiles.h',['../recentfiles_8h.html',1,'']]],
   ['recentmenu',['recentMenu',['../classqtpd_1_1_application_controller.html#aafaa554984d610009d780fed907e4e22',1,'qtpd::ApplicationController']]],
   ['rectfrommatrixpos',['rectFromMatrixPos',['../classqtpd_1_1_u_i_matrix.html#a281827e4355884a96ac17c3a984e2f8f',1,'qtpd::UIMatrix']]],
+  ['recursivedirlistfor',['recursiveDirListFor',['../classqtpd_1_1_file_paths.html#ad72ae47713c5461449924df21de44acb',1,'qtpd::FilePaths']]],
   ['redo',['redo',['../classqtpd_1_1undo_create_object.html#a42861d46907c1c2976e5bb8e1b7dd7e8',1,'qtpd::undoCreateObject::redo()'],['../classqtpd_1_1undo_create_patchcord.html#a0c664a00c262e505624d3b578abb4a37',1,'qtpd::undoCreatePatchcord::redo()'],['../classqtpd_1_1undo_change_property.html#aa020486bfd4d5c92392e343d5e993761',1,'qtpd::undoChangeProperty::redo()'],['../classqtpd_1_1undo_delete_object.html#a52c8ab2ddca793d6bfc24689484d7715',1,'qtpd::undoDeleteObject::redo()'],['../classqtpd_1_1undo_delete_patchcord.html#a468934c05ea55a799b718463d902af81',1,'qtpd::undoDeletePatchcord::redo()']]],
   ['redoact',['redoAct',['../classqtpd_1_1_base_window.html#a83225ffd39eba6208ab2499b42db3b13',1,'qtpd::BaseWindow']]],
   ['reduce',['reduce',['../classceammc_1_1_atom_list.html#a0eeabb283199335ebed66f0f88c0ff28',1,'ceammc::AtomList']]],

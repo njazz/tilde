@@ -50,6 +50,6 @@ var searchData=
   ['eventfilter',['eventFilter',['../classqtpd_1_1_u_i_text.html#a586b396b5f81a55c2f3ca9486de395a3',1,'qtpd::UIText']]],
   ['extern',['EXTERN',['../m__pd_8h.html#a77366c1bd428629dc898e188bfd182a3',1,'m_pd.h']]],
   ['extern_5fstruct',['EXTERN_STRUCT',['../m__pd_8h.html#a23dd74158d184977334557b0c9c2abdd',1,'m_pd.h']]],
-  ['externalsdir',['externalsDir',['../classqtpd_1_1_file_paths.html#a34bcae907b14e64ceb4d948848481963',1,'qtpd::FilePaths']]],
+  ['externalsdirlist',['externalsDirList',['../classqtpd_1_1_file_paths.html#ae0ffca936d3a35b2b0f0a4216dcbe241',1,'qtpd::FilePaths']]],
   ['extractfrompdfilestring',['extractFromPdFileString',['../classqtpd_1_1_property_list.html#a89f4403a97b8d32d4d655c94b8ff1f3f',1,'qtpd::PropertyList']]]
 ];

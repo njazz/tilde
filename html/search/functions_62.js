@@ -39,5 +39,6 @@ var searchData=
   ['btnsave',['btnSave',['../classqtpd_1_1_u_i_script_common.html#a637fd498155030cb202098b94a28ba53',1,'qtpd::UIScriptCommon']]],
   ['btnsavesignal',['btnSaveSignal',['../classqtpd_1_1_u_i_script_editor.html#acccfaed92e82138faacbeec8279a862f',1,'qtpd::UIScriptEditor']]],
   ['bug',['bug',['../m__pd_8h.html#a3e4d99cc272e4a5cb21332f8bda27ec8',1,'m_pd.h']]],
+  ['bundlesdirlist',['bundlesDirList',['../classqtpd_1_1_file_paths.html#a3dbdad8a98cb7aae51b03088f46553da',1,'qtpd::FilePaths']]],
   ['buttonmode',['buttonMode',['../class_color___dialog.html#a6c4d903ab21dcc79a157495bba9d4ff6',1,'Color_Dialog']]]
 ];
