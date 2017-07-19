@@ -54,6 +54,8 @@ ApplicationController::ApplicationController()
     PythonQt::init(PythonQt::RedirectStdOut);
     PythonQt_QtAll::init();
     pyWrapper::inst();
+
+    _scriptRunner = new ScriptRunner();
 #endif
 
     QTPD_AUDIOSETTINGS_INIT;

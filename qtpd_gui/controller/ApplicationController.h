@@ -12,6 +12,7 @@
 
 #ifdef WITH_PYTHON
 #include "python/PythonQtScriptingConsole.h"
+#include "scriptrunner.h"
 #else
 namespace qtpd {
 class PythonQtScriptingConsole;
@@ -56,6 +57,10 @@ private:
 
     void loadAllLibraries();
 
+#ifdef WITH_PYTHON
+    ScriptRunner* _scriptRunner;
+#endif
+
 public:
     ApplicationController();
 
@@ -74,30 +79,37 @@ public:
 
     QMenu* recentMenu() { return _recentMenu; }
 
-    FilePaths* filePaths() {return _filePaths;}
+    FilePaths* filePaths() { return _filePaths; }
 
-signals:
-    void getLocalServer(LocalServer* ret);
+#ifdef WITH_PYTHON
+    ScriptRunner* scriptRunner()
+    {
+        return _scriptRunner;
+    }
+#endif
 
-public slots:
-    void newPatchWindowController();
-    void openFileDialog();
+    signals:
+        void getLocalServer(LocalServer * ret);
 
-    void pdWindow();
-    void pythonConsole();
+    public slots:
+        void newPatchWindowController();
+        void openFileDialog();
 
-    void preferencesWindow();
-    void audioSettingsWindow();
+        void pdWindow();
+        void pythonConsole();
 
-    void dspOn();
-    void dspOff();
+        void preferencesWindow();
+        void audioSettingsWindow();
 
-    void openFile();
+        void dspOn();
+        void dspOff();
 
-    void newScript();
+        void openFile();
 
-    ServerObject* slotCreateObject(ServerCanvas* canvas, string name);
-};
+        void newScript();
+
+        ServerObject* slotCreateObject(ServerCanvas * canvas, string name);
+    };
 }
 
 #endif // CM_PDLINK_H

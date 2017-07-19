@@ -167,7 +167,8 @@ SOURCES += main.cpp\
     undo/undocommands.cpp \
     datamodels/recentfiles.cpp \
     datamodels/filepaths.cpp \
-    datamodels/fileparserconverter.cpp
+    datamodels/fileparserconverter.cpp \
+    datamodels/scriptrunner.cpp
 
 
 #
@@ -258,7 +259,8 @@ HEADERS  += \
     undo/undocommands.h \
     datamodels/recentfiles.h \
     datamodels/filepaths.h \
-    datamodels/fileparserconverter.h
+    datamodels/fileparserconverter.h \
+    datamodels/scriptrunner.h
 
 #    widgets/UIScriptTextEdit.h \
 #    widgets/UIScriptEditor.h \

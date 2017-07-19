@@ -229,12 +229,13 @@ void BaseWindow::createScriptsMenu()
 
     qDebug() << "scripts menu " << scriptFiles;
 
-    for (int i=0;i<scriptFiles.count();i++)
-    {
+    for (int i = 0; i < scriptFiles.count(); i++) {
         QString aname = QString(scriptFiles.at(i)).split("/").last().split(".").first();
-        QAction *ns = new QAction(aname, this);
+        QAction* ns = new QAction(aname, this);
         scriptsMenu->addAction(ns);
         //call script
+
+        connect(ns, &QAction::triggered, this, &BaseWindow::slotRunScript);
     }
 #endif
 }
@@ -258,4 +259,28 @@ void BaseWindow::close()
 {
     ((QMainWindow*)this)->close();
 }
+
+// ---------
+void BaseWindow::slotRunScript()
+{
+    QAction* a = qobject_cast<QAction*>(QObject::sender());
+
+    QString actionName = a->text();
+
+    QStringList fileList = _appController->filePaths()->scriptsFileList();
+
+    QString fullPath = "";
+
+    for (int i = 0; i < fileList.size(); i++) {
+        if (fileList.at(i).split("/").last().split(".").first() == actionName) {
+            fullPath = fileList.at(i);
+        }
+    }
+
+    if (fullPath != "") {
+        _appController->scriptRunner()->runScriptFile(fullPath);
+    }
+}
+
+// ---------
 }

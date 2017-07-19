@@ -1,9 +1,7 @@
 #ifndef UISCRIPTTEXTEDIT_H
 #define UISCRIPTTEXTEDIT_H
 
-#ifdef WITH_PYTHON
-#include "PythonQt.h"
-#endif
+
 
 #include <QAbstractItemView>
 #include <QCompleter>
@@ -14,6 +12,7 @@
 #include <QStringListModel>
 
 #ifdef WITH_PYTHON
+#include "PythonQt.h"
 #include "python/wrappers/py_wrappers.h"
 #else
 class PythonQtObjectPtr;

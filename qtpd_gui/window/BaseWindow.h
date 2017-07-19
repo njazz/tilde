@@ -91,6 +91,8 @@ private slots:
 
     void close();
 
+    void slotRunScript();
+
 //    void slotCreateScriptList();
 };
 }
