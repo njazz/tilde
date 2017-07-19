@@ -38,7 +38,7 @@ public:
     {
         if (_stack.size() == 0)
             return 0;
-        return _stack.at(_stack.size()-1);
+        return _stack.at(_stack.size() - 1);
     }
     void clear() { _stack.clear(); }
 };
@@ -50,7 +50,6 @@ class FileParser {
 private:
     FileParser(){};
 
-    //static PatchWindowController* _pdParserPrevWindowController;
     static PatchWindowControllerStack _stack;
     static PatchWindowController* _pdParserWindowController;
     static PatchWindowController* _pdParserFirstWindowController;
@@ -63,49 +62,20 @@ public:
 
     static void setAppController(ApplicationController* appController);
     static void setParserWindowController(PatchWindowController* wnd);
-    static void setParserWindowControllers(PatchWindowController* wnd, PatchWindowController* prev, PatchWindowController* first);
+    static void setParserWindowControllers(PatchWindowController* wnd, PatchWindowController*, PatchWindowController* first);
 
     ////
     /// \brief returns first created window
     /// \details mostly used by OOP loader
-    /// \return
-    ///
     static PatchWindowController* parserFirstWindowController();
     static PatchWindowController* parserWindowController();
-    //static PatchWindowController* parserPrevWindowController();
-    ////
-    /// \brief [3.2] process legacy pd files
-    /// \param list
-    ///
-    static bool legacyProcess(PatchWindowController* controller, QStringList list);
 
-    ////
-    /// \brief [3.1] subroutine - formats list and send it to canvas as a string
-    /// \param cmcanvas
-    /// \param list
-    /// \returns uiobject - that may be needed by legacyProcess to add more properties after object is created
-    ///
-    static UIObject* sendStringToCanvas(PatchWindowController* controller, QStringList list);
+    static void open(QString fname); ///> [1] opens file, converts to QStrings, calls 'parseString'
+    static void parseQString(QString line); ///> [2] checks first atoms ("#N", "#X" etc) and sends QStringList of contents to canvas
+    static void parseStringListAtoms(PatchWindowController* controller, QStringList list); ///> [3] parses QStringLists of atoms to canvas - creates objects etc, converts list, passes data to 'sendStringToCanvas'
 
-    ////
-    /// \brief [3] parses QStringLists of atoms to canvas - creates objects etc
-    /// \details converts list, passes data to 'sendStringToCanvas'
-    /// \param cmcanvas
-    /// \param list
-    ///
-    static void parseStringListAtoms(PatchWindowController* controller, QStringList list);
-
-    ////
-    /// \brief [2] checks first atoms ("#N", "#X" etc) and sends QStringList of contents to canvas
-    /// \param line
-    ///
-    static void parseQString(QString line);
-
-    ////
-    /// \brief [1] opens file, converts to QStrings, calls 'parseString'
-    /// \param fname
-    ///
-    static void open(QString fname);
+    static UIObject* sendStringToCanvas(PatchWindowController* controller, QStringList list); ///> [3.1] subroutine - formats list and send it to canvas as a string
+    static bool legacyProcess(PatchWindowController* controller, QStringList list); ///> [3.2] process legacy pd files
 };
 }
 

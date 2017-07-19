@@ -531,7 +531,7 @@ void FileParser::parseStringListAtoms(PatchWindowController* controller, QString
 
             //draw subpatch
             _pdParserWindowController = _stack.last();
-//            _pdParserPrevWindowController = 0;
+            //            _pdParserPrevWindowController = 0;
             _stack.pop();
 
         } else {
@@ -566,23 +566,17 @@ void FileParser::parseStringListAtoms(PatchWindowController* controller, QString
 
 void FileParser::parseQString(QString line)
 {
-
     line = FileParserConverter::unescapeString(line);
 
     QStringList atoms = line.split(" ");
 
     atoms.last() = atoms.last().remove(";");
-    //switch (atoms.at(0))
 
     if (atoms.at(0) == "#N") {
-
-        // weird here: we construct canvas in fileparser but we construct objects with their special methods
-        // todo fix
 
         QStringList msg = atoms;
         msg.removeFirst();
 
-        //_pdParserPrevWindowController = _pdParserWindowController;
         _stack.push(_pdParserWindowController);
 
         PatchWindowController* newWnd = new PatchWindowController(FileParser::_appController);
@@ -598,7 +592,6 @@ void FileParser::parseQString(QString line)
             newWnd->mainWindow()->setWindowTitle(msg.at(4));
 
         // todo different canvas argumentlists
-
         QPoint pos = QPoint(((QString)msg.at(0)).toInt(), ((QString)msg.at(1)).toInt());
         QSize size = QSize(((QString)msg.at(2)).toInt(), ((QString)msg.at(3)).toInt());
 
@@ -611,9 +604,15 @@ void FileParser::parseQString(QString line)
         if (size.height() > 700)
             size.setHeight(700);
 
-        qDebug() << "dim" << pos << size;
+        if (size.width() < 40)
+            size.setWidth(1000);
+        if (size.height() < 40)
+            size.setHeight(100);
+
+        //qDebug() << "*** canvas dim" << pos << size;
 
         newWnd->mainWindow()->canvasView()->setWindowSize(size);
+        newWnd->mainWindow()->setBaseSize(size);
         newWnd->mainWindow()->move(pos);
 
         // TODO
@@ -648,14 +647,12 @@ void FileParser::parseQString(QString line)
 
 void FileParser::open(QString fname)
 {
-
     QFile f(fname);
 
     if (f.open(QIODevice::ReadOnly)) {
         QStringList stringList;
 
         setParserWindowController(0);
-        //setCanvasData(0,0,0);
 
         pdParserFileName = fname.toStdString();
 
@@ -677,9 +674,6 @@ void FileParser::open(QString fname)
             _pdParserWindowController->mainWindow()->setFileName(fname);
             _pdParserWindowController->mainWindow()->canvasView()->setEditMode(em_Locked);
 
-            // TODO
-            //cmp_loadbang(_pdParserWindow->canvasView()->pdObject());
-
             _pdParserWindowController->mainWindow()->canvasView()->resizeToObjects();
             _pdParserWindowController->mainWindow()->show();
 
@@ -692,50 +686,6 @@ void FileParser::open(QString fname)
     }
 }
 
-// NEW API
-//void FileParser::open(QString fname, CanvasData* canvasData)
-//{
-
-//    qDebug("new parser");
-
-//    QFile f(fname);
-//    if (f.open(QIODevice::ReadOnly)) {
-
-//        QStringList stringList;
-
-//        setParserWindow(0);
-
-//        pdParserFileName = fname.toStdString();
-
-//        QTextStream textStream(&f);
-//        while (true) {
-//            QString line = textStream.readLine();
-//            if (line.isNull())
-//                break;
-//            else {
-//                stringList.append(line);
-//                //qDebug("* %s", line.toStdString().c_str());
-//                //
-
-//                // another one
-//                FileParser::parseQString(line);
-//            }
-//        }
-
-//        if (_pdParserWindow) {
-//            _pdParserWindow->setFileName(fname);
-//            _pdParserWindow->canvasView()->setEditMode(em_Locked);
-
-//            // TODO
-//            //_pdParserWindow->controller()->canvasData()->serverCanvas()->loadbang();
-
-//            _pdParserWindow->show();
-//        }
-
-//        f.close();
-//    }
-//}
-
 // --------------------------------------------------
 
 void FileParser::setAppController(ApplicationController* appController) { _appController = appController; }
@@ -747,10 +697,9 @@ void FileParser::setParserWindowController(PatchWindowController* wnd)
     _pdParserWindowController = wnd;
 }
 
-void FileParser::setParserWindowControllers(PatchWindowController* wnd, PatchWindowController* prev, PatchWindowController* first)
+void FileParser::setParserWindowControllers(PatchWindowController* wnd, PatchWindowController* , PatchWindowController* first)
 {
     _pdParserWindowController = wnd;
-    //_pdParserPrevWindowController = prev;
     _stack.clear();
     _pdParserFirstWindowController = first;
 }
@@ -769,45 +718,4 @@ PatchWindowController* FileParser::parserWindowController()
 {
     return _pdParserWindowController;
 }
-
-//PatchWindowController* FileParser::parserPrevWindowController()
-//{
-//    return _pdParserPrevWindowController;
-//}
-
-//////
-///// \brief [3.1] subroutine - formats list and send it to canvas as a string
-///// \param cmcanvas
-///// \param list
-///// \returns uiobject - that may be needed by legacyProcess to add more properties after object is created
-/////
-// UIObject* FileParser:: sendStringToCanvas(PatchWindowController* controller, QStringList list);
-
-//////
-///// \brief [3] parses QStringLists of atoms to canvas - creates objects etc
-///// \details converts list, passes data to 'sendStringToCanvas'
-///// \param cmcanvas
-///// \param list
-/////
-// void FileParser:: parseStringListAtoms(PatchWindowController* controller, QStringList list);
-
-//////
-///// \brief [2] checks first atoms ("#N", "#X" etc) and sends QStringList of contents to canvas
-///// \param line
-/////
-// void FileParser:: parseQString(QString line);
-
-//////
-///// \brief [1] opens file, converts to QStrings, calls 'parseString'
-///// \param fname
-/////
-// void FileParser:: open(QString fname);
-
-//    ////
-//    /// \brief new API open
-//    /// \param fname
-//    ///
-//     void open(QString fname, CanvasData* CanvasData);
-
-
 }

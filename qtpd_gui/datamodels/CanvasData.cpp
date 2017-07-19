@@ -19,6 +19,10 @@ CanvasData::CanvasData()
     _properties = new PropertyList();
     _properties->create("FixedSize", "Canvas", "0.1", false);
 
+    _properties->create("Size", "Canvas", "0.1", QSize(400,300));
+    _properties->create("Position", "Canvas", "0.1", QPoint(100,100));
+
+
     //_properties->create("DrawBoxes", "Canvas", "0.1", false);
 
     _firstSave = false;
@@ -312,18 +316,22 @@ QString CanvasData::canvasAsPdFileString()
     // TODO
     // should be stored by windows
 
-    return QString("#N canvas 0 0 400 300 10;\r\n");
+    //return QString("#N canvas 0 0 400 300 10;\r\n");
 
-    //        std::string ret;
+    // todo properties
+    QPoint p = properties()->get("Position")->asQPoint();
+    QSize size = properties()->get("Size")->asQSize();
 
-    //        ret = "#N canvas ";
-    //        ret += std::to_string(x()) + " ";
-    //        ret += std::to_string(y()) + " ";
-    //        ret += std::to_string(width()) + " ";
-    //        ret += std::to_string(height()) + " ";
-    //        ret += "10; \r\n";
+    QString ret;
 
-    //        return ret;
+    ret = "#N canvas ";
+    ret += QString::number(p.x()) + " ";
+    ret += QString::number(p.y()) + " ";
+    ret += QString::number(size.width()) + " ";
+    ret += QString::number(size.height()) + " ";
+    ret += "10; \r\n";
+
+    return ret;
 }
 
 QStringList CanvasData::asPdFileStrings()

@@ -9,17 +9,9 @@ namespace qtpd {
 /// \brief Escape/unescape functiond for FileParser moved here for easier testing
 class FileParserConverter {
 public:
-    ////
-    /// \brief unescapeString
-    /// \param input
-    /// \return
-    static QString unescapeString(QString input);
 
-    ////
-    /// \brief escapeString
-    /// \param input
-    /// \return
-    static QString escapeString(QString input);
+    static QString unescapeString(QString input);   ///> parse string from file
+    static QString escapeString(QString input);     ///> parse string to file
 };
 }
 #endif // FILEPARSERCONVERTER_H
