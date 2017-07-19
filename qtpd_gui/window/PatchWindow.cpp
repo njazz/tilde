@@ -31,6 +31,12 @@ PatchWindow::PatchWindow()
     PatchWindow::createMenus();
 
     _editModeAct->setChecked(true);
+
+//    connect(this, &QWindow::xChanged, this, &PatchWindow::slotMove);
+//    connect(this, &QWindow::yChanged, this, &PatchWindow::slotMove);
+
+//    connect(this->window(), &QWidget::, this, &PatchWindow::slotResize);
+//    connect(this, &QWindow::heightChanged, this, &PatchWindow::slotResize);
 }
 
 void PatchWindow::createActions()
@@ -553,6 +559,21 @@ void PatchWindow::slotEnableUndo(bool v)
 
 // ----------
 
+void PatchWindow::slotResize(int)
+{
+    _controller->canvasData()->setSize(size());
+}
+
+
+
+
+void PatchWindow::slotMove(int)
+{
+    _controller->canvasData()->setPosition(pos());
+}
+
+// ----------
+
 void PatchWindow::resizeEvent(QResizeEvent* event)
 {
     QSize newSize = _canvasView->minimumCanvasSize();
@@ -560,6 +581,13 @@ void PatchWindow::resizeEvent(QResizeEvent* event)
         newSize.setWidth(event->size().width());
     if (newSize.height() < event->size().height())
         newSize.setHeight(event->size().height());
+
+    _controller->canvasData()->setSize(size());
+}
+
+void PatchWindow::moveEvent(QMoveEvent *)
+{
+    _controller->canvasData()->setPosition(pos());
 }
 
 // ===============================================

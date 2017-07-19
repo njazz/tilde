@@ -44,6 +44,10 @@ class CanvasData {
 
     PropertyList* _properties;
 
+    // temporary - probably use properties later
+    QPoint _position;
+    QSize _size;
+
 public:
     CanvasData();
 
@@ -66,6 +70,10 @@ public:
     void setProperties(PropertyList* p) { _properties = p; };
     //
 
+    void setPosition(QPoint p) { _position = p; }
+    void setSize(QSize s) { _size = s; }
+
+    //
     bool hasObjects() { return ((_boxes.size() > 0) || (_patchcords.size() > 0)); }
     bool hasSelectedObjects() { return ((_selectedBoxes.size() > 0) || (_selectedPatchcords.size() > 0)); }
 

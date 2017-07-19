@@ -90,6 +90,9 @@ private slots:
     void slotEnableUndo(bool v);
     void slotEnableRedo(bool v);
 
+    void slotResize(int);
+    void slotMove(int);
+
 public:
     PatchWindow();
 
@@ -103,7 +106,8 @@ public:
     void createMenus();
 
     // ----------
-    void resizeEvent(QResizeEvent* event);
+    void moveEvent(QMoveEvent *);
+    void resizeEvent(QResizeEvent* );
 
     //----------------------------------------------------------------------------------------
 

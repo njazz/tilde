@@ -36,7 +36,6 @@ namespace qtpd {
 
 PatchWindowController::PatchWindowController(ApplicationController* appController) //replace with parent (appcontroller)
 {
-
     _scene = new QGraphicsScene();
     _observer = new Observer();
 
@@ -286,8 +285,6 @@ UIObject* PatchWindowController::createObjectWithoutUndo(string name, QPoint pos
     uiObject->properties()->set("Position", pos);
 
     doCreateObject(uiObject);
-
-
 
     return uiObject;
 
