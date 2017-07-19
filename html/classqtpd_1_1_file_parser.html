@@ -120,20 +120,19 @@ Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#ab21ff0afb007885f763ce1bea9b1cca4">setAppController</a> (<a class="el" href="classqtpd_1_1_application_controller.html">ApplicationController</a> *appController)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; used for #X coords  <a href="#ab21ff0afb007885f763ce1bea9b1cca4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#ac219f09682f791d96960816821b86f16">setParserWindowController</a> (<a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *wnd)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#ae9e44725e5efaa11f63f96ffba499b8e">setParserWindowControllers</a> (<a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *wnd, <a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *prev, <a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *first)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#aadd80cdf2192e9b027356ed9b4793e6a">setParserWindowControllers</a> (<a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *wnd, <a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *, <a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *first)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#aae813930cd14b02aedfa2cac20bfa170">parserFirstWindowController</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns first created window  <a href="#aae813930cd14b02aedfa2cac20bfa170"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#adc4ea992ac2345c4e6038cac1293971b">parserWindowController</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#ad4f4fe794696583c73c113b49f14d2a4">legacyProcess</a> (<a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *controller, QStringList list)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">[3.2] process legacy pd files  <a href="#ad4f4fe794696583c73c113b49f14d2a4"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#a5d8fca36677fb7c2d73de520a556df39">sendStringToCanvas</a> (<a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *controller, QStringList list)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">[3.1] subroutine - formats list and send it to canvas as a string  <a href="#a5d8fca36677fb7c2d73de520a556df39"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#a7248ccd79a363148cf546c7138c6e7b7">parseStringListAtoms</a> (<a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *controller, QStringList list)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">[3] parses QStringLists of atoms to canvas - creates objects etc  <a href="#a7248ccd79a363148cf546c7138c6e7b7"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#a5a17d655a501583acbc54ce76d8140d4">parseQString</a> (QString line)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">[2] checks first atoms ("#N", "#X" etc) and sends QStringList of contents to canvas  <a href="#a5a17d655a501583acbc54ce76d8140d4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#a7a1d4de73d63affb0825b0889a3b94f7">open</a> (QString fname)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">[1] opens file, converts to QStrings, calls 'parseString'  <a href="#a7a1d4de73d63affb0825b0889a3b94f7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#a5a17d655a501583acbc54ce76d8140d4">parseQString</a> (QString line)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; [1] opens file, converts to QStrings, calls 'parseString'  <a href="#a5a17d655a501583acbc54ce76d8140d4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#a7248ccd79a363148cf546c7138c6e7b7">parseStringListAtoms</a> (<a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *controller, QStringList list)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; [2] checks first atoms ("#N", "#X" etc) and sends QStringList of contents to canvas  <a href="#a7248ccd79a363148cf546c7138c6e7b7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classqtpd_1_1_u_i_object.html">UIObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#a5d8fca36677fb7c2d73de520a556df39">sendStringToCanvas</a> (<a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *controller, QStringList list)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; [3] parses QStringLists of atoms to canvas - creates objects etc, converts list, passes data to 'sendStringToCanvas'  <a href="#a5d8fca36677fb7c2d73de520a556df39"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#ad4f4fe794696583c73c113b49f14d2a4">legacyProcess</a> (<a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *controller, QStringList list)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">&gt; [3.1] subroutine - formats list and send it to canvas as a string  <a href="#ad4f4fe794696583c73c113b49f14d2a4"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classqtpd_1_1_file_parser.html#adc7053eeab3caf1659443aa27c842809">pdParserFileName</a> = &quot;&quot;</td></tr>
@@ -168,13 +167,7 @@ Static Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>[3.2] process legacy pd files </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">list</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
+<p>&gt; [3.1] subroutine - formats list and send it to canvas as a string </p>
 
 </div>
 </div>
@@ -193,14 +186,6 @@ Static Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>[1] opens file, converts to QStrings, calls 'parseString' </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fname</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
 </div>
 </div>
 <a class="anchor" id="a5a17d655a501583acbc54ce76d8140d4"></a><!-- doxytag: member="qtpd::FileParser::parseQString" ref="a5a17d655a501583acbc54ce76d8140d4" args="(QString line)" -->
@@ -218,13 +203,7 @@ Static Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>[2] checks first atoms ("#N", "#X" etc) and sends QStringList of contents to canvas </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">line</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
+<p>&gt; [1] opens file, converts to QStrings, calls 'parseString' </p>
 
 </div>
 </div>
@@ -243,6 +222,7 @@ Static Public Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>returns first created window </p>
+<p>mostly used by OOP loader</p>
 <p>mostly used by OOP loader </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
@@ -289,15 +269,7 @@ Static Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>[3] parses QStringLists of atoms to canvas - creates objects etc </p>
-<p>converts list, passes data to 'sendStringToCanvas' </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cmcanvas</td><td></td></tr>
-    <tr><td class="paramname">list</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
+<p>&gt; [2] checks first atoms ("#N", "#X" etc) and sends QStringList of contents to canvas </p>
 
 </div>
 </div>
@@ -326,15 +298,7 @@ Static Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>[3.1] subroutine - formats list and send it to canvas as a string </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cmcanvas</td><td></td></tr>
-    <tr><td class="paramname">list</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>uiobject - that may be needed by legacyProcess to add more properties after object is created </dd></dl>
+<p>&gt; [3] parses QStringLists of atoms to canvas - creates objects etc, converts list, passes data to 'sendStringToCanvas' </p>
 
 </div>
 </div>
@@ -374,12 +338,12 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae9e44725e5efaa11f63f96ffba499b8e"></a><!-- doxytag: member="qtpd::FileParser::setParserWindowControllers" ref="ae9e44725e5efaa11f63f96ffba499b8e" args="(PatchWindowController *wnd, PatchWindowController *prev, PatchWindowController *first)" -->
+<a class="anchor" id="aadd80cdf2192e9b027356ed9b4793e6a"></a><!-- doxytag: member="qtpd::FileParser::setParserWindowControllers" ref="aadd80cdf2192e9b027356ed9b4793e6a" args="(PatchWindowController *wnd, PatchWindowController *, PatchWindowController *first)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classqtpd_1_1_file_parser.html#ae9e44725e5efaa11f63f96ffba499b8e">qtpd::FileParser::setParserWindowControllers</a> </td>
+          <td class="memname">void <a class="el" href="classqtpd_1_1_file_parser.html#aadd80cdf2192e9b027356ed9b4793e6a">qtpd::FileParser::setParserWindowControllers</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *&#160;</td>
           <td class="paramname"><em>wnd</em>, </td>
@@ -388,7 +352,7 @@ Static Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classqtpd_1_1_patch_window_controller.html">PatchWindowController</a> *&#160;</td>
-          <td class="paramname"><em>prev</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -456,7 +420,7 @@ Static Public Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 18 2017 22:20:39 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 19 2017 09:54:53 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
