@@ -152,4 +152,12 @@ std::string UIFloat::asPdFileString()
 
     return ret;
 }
+
+void UIFloat::sync()
+{
+    UIObject::sync();
+
+    fromQString(QString::number(0));
+}
+
 }

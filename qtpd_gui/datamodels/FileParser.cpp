@@ -73,9 +73,16 @@ inline void legacyProcessAtom(PatchWindowController* controller, QStringList lis
     //float lMinimum = ((QString)list.at(5)).toFloat();
     //float lMaximum = ((QString)list.at(6)).toFloat();
     //int lInit = ((QString)list.at(7)).toInt();
-    QString lLabel = ((QString)list.at(8));
-    QString lSend = ((QString)list.at(9));
-    QString lReceive = ((QString)list.at(10));
+
+    QString lLabel = "";
+    QString lSend = "";
+    QString lReceive = "";
+
+    if (list.size() > 10) {
+        lLabel = ((QString)list.at(8));
+        lSend = ((QString)list.at(9));
+        lReceive = ((QString)list.at(10));
+    }
 
     //todo set / create
 }
@@ -697,7 +704,7 @@ void FileParser::setParserWindowController(PatchWindowController* wnd)
     _pdParserWindowController = wnd;
 }
 
-void FileParser::setParserWindowControllers(PatchWindowController* wnd, PatchWindowController* , PatchWindowController* first)
+void FileParser::setParserWindowControllers(PatchWindowController* wnd, PatchWindowController*, PatchWindowController* first)
 {
     _pdParserWindowController = wnd;
     _stack.clear();

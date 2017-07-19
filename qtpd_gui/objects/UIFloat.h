@@ -43,6 +43,9 @@ public:
 
     void updateUI(AtomList* msg);
     std::string asPdFileString();
+
+    // -----
+    void sync();
 };
 }
 
