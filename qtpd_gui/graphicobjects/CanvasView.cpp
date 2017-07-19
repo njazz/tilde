@@ -86,6 +86,10 @@ CanvasView::CanvasView(QGraphicsView* parent)
     //    _sizeBox = new SizeBox();
     //    _sizeBox->hide();
     //    scene()->addItem(_sizeBox);
+
+    _transformMatrix = new QTransform();
+
+    *_transformMatrix = transform();
 }
 
 // ---------------------------------------------
@@ -472,6 +476,7 @@ void CanvasView::showNewObjectMaker()
 
     //dragObject = (QGraphicsView*)objectMaker();
     objectMaker()->setText(QString(""));
+    objectMaker()->setModified(false);
     objectMaker()->show();
 }
 
@@ -521,6 +526,7 @@ void CanvasView::slotObjectStartsEdit(void* obj)
     objectMaker()->setText(QString(_replaceObject->objectData()->toQString()));
     objectMaker()->setFocus();
     //replaceObject_->hide();
+    objectMaker()->setModified(false);
     objectMaker()->show();
     objectMaker()->raise();
 }
@@ -561,21 +567,29 @@ void CanvasView::setWindowSize(QSize wsize)
 
 // ------------------------------------
 
-void CanvasView::setZoom(float zoom)
+void CanvasView::setZoom(float zoomDirection)
 {
-    if ((_zoom <= .5) && (zoom < 1)) {
-        zoom = .5;
-        return;
-    }
-    if ((_zoom > 2) && (zoom > 1)) {
-        zoom = 2.;
-        return;
-    }
+    if (zoomDirection)
+        _zoom *= pow(1.1,zoomDirection);
+    else
+        _zoom = 1;
 
-    _zoom *= zoom;
+    qDebug() << "zoom" << zoomDirection << _zoom;
 
-    scale(zoom, zoom);
+    QTransform matrix = *_transformMatrix;
+    matrix.scale(_zoom, _zoom);
+    setTransform(matrix, false);
+
     viewport()->update();
+
+    if ((_zoom < .5)) {
+        zoomDirection = .5;
+        return;
+    }
+    if ((_zoom > 2)) {
+        zoomDirection = 2.;
+        return;
+    }
 }
 
 // -------------------------------

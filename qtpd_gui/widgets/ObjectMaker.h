@@ -22,6 +22,8 @@ class ObjectMaker : public QLineEdit {
 private:
     PatchWindowController* _parentController;
 
+    bool _modified;
+
 public:
     explicit ObjectMaker(QLineEdit* parent = 0);
 
@@ -29,6 +31,8 @@ public:
     void setParentController(PatchWindowController* controller);
 
     void focusOutEvent(QFocusEvent*);
+
+    void setModified(bool v);
 
     void cancel();
 

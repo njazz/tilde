@@ -23,6 +23,8 @@ class BaseWindow : public QMainWindow {
 
     QMenu* _recentMenu;
 
+    QFileSystemWatcher* _scriptsFolderWatcher;
+
 public:
     explicit BaseWindow(QWidget* parent = 0);
 
@@ -93,7 +95,9 @@ private slots:
 
     void slotRunScript();
 
-//    void slotCreateScriptList();
+    void slotUpdateScriptsMenu(QString);
+
+    //    void slotCreateScriptList();
 };
 }
 

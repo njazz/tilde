@@ -36,6 +36,8 @@ BaseWindow::BaseWindow(QWidget* parent)
     createMenus();
 
     _appController = 0;
+
+    _scriptsFolderWatcher = new QFileSystemWatcher;
 }
 
 //BaseWindow::~BaseWindow()
@@ -65,6 +67,11 @@ void BaseWindow::setAppController(ApplicationController* appController)
     connect(_newScriptAct, &QAction::triggered, _appController, &ApplicationController::newScript);
 
     createScriptsMenu();
+
+    if (_appController->filePaths())
+        _scriptsFolderWatcher->addPaths(_appController->filePaths()->scriptsDirList());
+
+    QObject::connect(_scriptsFolderWatcher, &QFileSystemWatcher::directoryChanged, this, &BaseWindow::slotUpdateScriptsMenu);
 }
 
 // ---------
@@ -205,8 +212,6 @@ void BaseWindow::createMenus()
 
 #ifdef WITH_PYTHON
     scriptsMenu = _menuBar->addMenu(tr("&Scripts"));
-    scriptsMenu->addAction(_newScriptAct);
-    scriptsMenu->addSeparator();
 #endif
 
     _windowMenu = _menuBar->addMenu(tr("&Window"));
@@ -220,16 +225,26 @@ void BaseWindow::createMenus()
 
     helpMenu = _menuBar->addMenu(tr("&Help"));
     helpMenu->addAction(_pdHelpAct);
+
+    // -----------
+
+
 }
 
 void BaseWindow::createScriptsMenu()
 {
+
 #ifdef WITH_PYTHON
+    scriptsMenu->clear();
+    scriptsMenu->addAction(_newScriptAct);
+    scriptsMenu->addSeparator();
+
     QStringList scriptFiles = _appController->filePaths()->scriptsFileList();
 
     qDebug() << "scripts menu " << scriptFiles;
 
     for (int i = 0; i < scriptFiles.count(); i++) {
+
         QString aname = QString(scriptFiles.at(i)).split("/").last().split(".").first();
         QAction* ns = new QAction(aname, this);
         scriptsMenu->addAction(ns);
@@ -283,4 +298,10 @@ void BaseWindow::slotRunScript()
 }
 
 // ---------
+
+void BaseWindow::slotUpdateScriptsMenu(QString)
+{
+    qDebug() << "updated";
+    createScriptsMenu();
+}
 }

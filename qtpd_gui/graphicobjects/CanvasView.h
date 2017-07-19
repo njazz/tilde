@@ -59,6 +59,8 @@ private:
 
     float _zoom;
 
+    QTransform* _transformMatrix;
+
     QMenu _popupMenu;
     QAction* _pmProperties;
 
@@ -77,7 +79,7 @@ public:
 
     void setController(PatchWindowController* c);
 
-    void setZoom(float zoom);
+    void setZoom(float zoomDirection);
     float getZoom();
 
     virtual t_editMode getEditMode();

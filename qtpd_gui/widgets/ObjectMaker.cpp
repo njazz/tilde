@@ -37,6 +37,8 @@ ObjectMaker::ObjectMaker(QLineEdit* parent)
     if (!completer())
         setCompleter(new QCompleter);
     completer()->setModel(m);
+
+    _modified = false;
 }
 
 void ObjectMaker::editorChanged()
@@ -49,12 +51,16 @@ void ObjectMaker::editorChanged()
     setFixedHeight(20);
 
     completer()->popup();
+
+    _modified = true;
 }
 
 void ObjectMaker::done()
 {
-
-    emit objectMakerDoneSignal();
+    if (_modified)
+        emit objectMakerDoneSignal();
+    else
+        cancel();
 }
 
 PatchWindowController* ObjectMaker::parentController() { return _parentController; }
@@ -65,8 +71,14 @@ void ObjectMaker::focusOutEvent(QFocusEvent*)
     //emit objectMakerDoneSignal();
 }
 
+void ObjectMaker::setModified(bool v)
+{
+    _modified = v;
+}
+
 void ObjectMaker::cancel()
 {
     hide();
 }
+
 }

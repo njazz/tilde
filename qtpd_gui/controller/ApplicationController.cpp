@@ -44,6 +44,8 @@ ApplicationController::ApplicationController()
 {
     qDebug("new app controller");
 
+    _filePaths = new FilePaths;
+
     _localServer = 0;
 
     ObjectLoader::inst().loadObjects();
@@ -69,7 +71,7 @@ ApplicationController::ApplicationController()
     _serverWorker->moveToThread(_serverThread);
     _serverThread->start();
 
-    _filePaths = new FilePaths;
+
 
 #ifdef WITH_PYTHON
     pyWrapper::inst().setAppController(this);

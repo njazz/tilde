@@ -395,19 +395,19 @@ void PatchWindow::setFileName(QString fname)
 
 void PatchWindow::zoomIn()
 {
-    canvasView()->setZoom(1.1);
+    canvasView()->setZoom(1);
     //qDebug() << "zoom" << canvasView()->getZoom();
 }
 
 void PatchWindow::zoomOut()
 {
-    canvasView()->setZoom(1 / 1.1);
+    canvasView()->setZoom(-1);
     //qDebug() << "zoom" << canvasView()->getZoom();
 }
 
 void PatchWindow::zoom100()
 {
-    canvasView()->setZoom(1);
+    canvasView()->setZoom(0);
     //qDebug() << "zoom" << canvasView()->getZoom();
 }
 
