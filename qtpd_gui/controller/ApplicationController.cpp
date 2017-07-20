@@ -35,7 +35,9 @@ void ApplicationController::loadAllLibraries()
     QStringList libs = _filePaths->librariesFileList();
 
     for (int i = 0; i < libs.size(); i++) {
-        QString file = libs.at(i).split(".").first();
+        // todo rewrite
+        //QStringList path =
+        QString file = libs.at(i).left(libs.at(i).lastIndexOf("."));//libs.at(i).split("/").first() + libs.at(i).split("/").last().split(".").first();
         _localServer->firstInstance()->loadLibrary(file.toStdString());
     }
 }
@@ -70,8 +72,6 @@ ApplicationController::ApplicationController()
 
     _serverWorker->moveToThread(_serverThread);
     _serverThread->start();
-
-
 
 #ifdef WITH_PYTHON
     pyWrapper::inst().setAppController(this);
