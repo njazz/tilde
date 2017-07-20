@@ -563,6 +563,7 @@ void FileParser::parseStringListAtoms(PatchWindowController* controller, QString
             objname = objList.join(" ");
 
             qDebug() << "objname" << objname;
+
             //temporary
             //cmcanvasView()->createBox(objname.toStdString(), pos);
 
@@ -575,7 +576,7 @@ void FileParser::parseQString(QString line)
 {
     line = FileParserConverter::unescapeString(line);
 
-    QStringList atoms = line.split(" ");
+    QStringList atoms = line.split(QRegExp("\\ (?!\\\\\\ )")); //
 
     atoms.last() = atoms.last().remove(";");
 
