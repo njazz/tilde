@@ -8,6 +8,8 @@
 
 #include <QDebug>
 
+#include <QCoreApplication>
+
 namespace qtpd {
 
 FilePaths::FilePaths()
@@ -75,7 +77,7 @@ QStringList FilePaths::bundlesDirList()
 {
     QStringList ret;
 
-    ret << _basePath ;
+    ret << _basePath;
 
     QDirIterator* d = new QDirIterator(_basePath + "/Bundles/", QStringList() << "*", QDir::Dirs, QDirIterator::NoIteratorFlags);
 
@@ -102,7 +104,7 @@ QStringList FilePaths::recursiveDirListFor(QStringList paths)
 
     for (int i = 0; i < paths.size(); i++) {
 
-        ret << paths.at(i) ;
+        ret << paths.at(i);
 
         QDirIterator* d = new QDirIterator(paths.at(i) + "/", QStringList() << "*", QDir::Dirs, QDirIterator::Subdirectories);
 
@@ -156,7 +158,17 @@ QStringList FilePaths::helpDirList()
 
 QStringList FilePaths::librariesDirList()
 {
-    return dirListFor("Libraries");
+    QStringList ret;
+
+    QDir dir = QDir(QCoreApplication::applicationDirPath());
+    dir.cdUp();
+    dir.cd("Resources");
+    dir.cd("Libraries");
+
+    ret << dir.absolutePath();
+    ret << dirListFor("Libraries");
+
+    return ret;
 }
 
 QStringList FilePaths::patchesDirList()

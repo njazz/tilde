@@ -1,12 +1,13 @@
 #!/bin/bash
 
-#cd qtpd.app/Contents/
-#mkdir Frameworks
-#cd Frameworks
-#cp /usr/local/lib/libPythonQt.1.0.0.dylib ./libPythonQt.1.dylib
-#cp /usr/local/lib/libPythonQt_QtAll.1.0.0.dylib ./libPythonQt_QtAll.1.dylib
-#cp /usr/local/lib/libpd-server.1.0.0.dylib ./libpd-server.1.dylib
+# $1 - full app path
 
-sudo cp /usr/local/lib/libPythonQt.1.0.0.dylib /usr/lib/libPythonQt.1.dylib
-sudo cp /usr/local/lib/libPythonQt_QtAll.1.0.0.dylib /usr/lib/libPythonQt_QtAll.1.dylib
-sudo cp /usr/local/lib/libpd-server.1.0.0.dylib /usr/lib/libpd-server.1.dylib
+install_name_tool -change libPythonQt_QtAll_d.1.dylib /usr/local/lib/libPythonQt_QtAll_d.1.dylib $1
+install_name_tool -change libPythonQt_d.1.dylib /usr/local/lib/libPythonQt_d.1.dylib $1
+
+install_name_tool -change libPythonQt_QtAll.1.dylib /usr/local/lib/libPythonQt_QtAll.1.dylib $1
+install_name_tool -change libPythonQt.1.dylib /usr/local/lib/libPythonQt.1.dylib $1
+
+install_name_tool -change libpd-server.1.dylib  /usr/local/lib/libpd-server.1.dylib $1
+
+#@loader_path/
