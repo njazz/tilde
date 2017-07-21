@@ -31,7 +31,10 @@ typedef enum {
     ptColor,
     ptVec2,
     ptStringList,
-    ptText ///< multiline text for comments, script
+    ptPath,         ///> file or directory
+    ptPathList,
+    ptEnum,         ///> index and option list
+    ptText          ///< multiline text for comments, script
 
 } UIPropertyType;
 
@@ -51,6 +54,8 @@ private:
     QString _version;
 
     UIPropertyType _type;
+
+    bool _readOnly;
 
     bool _applyToPd; ///> true if property value should be passed to pd object
 
@@ -74,6 +79,9 @@ public:
     void setType(UIPropertyType t);
     void setRawData(QVariantList data);
     void setRawDefaultData(QVariantList data);
+
+    void setReadonly(bool v);
+    bool readOnly();
 
     // -------
 

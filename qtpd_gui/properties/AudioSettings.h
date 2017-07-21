@@ -64,6 +64,8 @@ public:
         // TODO
         create("Driver", "Audio", QTPD_APP_VERSION, QString(ServerInstance::getAudioAPIs().c_str()).split(","));
 
+        get("Driver")->setType(ptEnum);
+
         //create("Input", "Audio", QTPD_APP_VERSION, info->inputDeviceList);
         //create("Output", "Audio", QTPD_APP_VERSION, info->outputDeviceList);
 

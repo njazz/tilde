@@ -10,6 +10,26 @@ using namespace std;
 
 namespace qtpd {
 
+// ----------
+
+Property::Property()
+{
+    _type = ptList; //?
+    _applyToPd = false;
+};
+
+Property::Property(const Property& rval)
+{
+    Property* src = const_cast<Property*>(&rval);
+
+    setGroup(src->group());
+    setVersion(src->version());
+    setType(src->type());
+
+    setRawData(src->data());
+    setRawDefaultData(src->defaultData());
+}
+
 // -------
 
 template <>
@@ -242,26 +262,6 @@ QString Property::asPdSaveString()
     return ret;
 }
 
-// -------------------------
-
-Property::Property()
-{
-    _type = ptList; //?
-    _applyToPd = false;
-};
-
-Property::Property(const Property& rval)
-{
-    Property* src = const_cast<Property*>(&rval);
-
-    setGroup(src->group());
-    setVersion(src->version());
-    setType(src->type());
-
-    setRawData(src->data());
-    setRawDefaultData(src->defaultData());
-}
-
 // -------
 
 Property::Property(Property& src)
@@ -331,7 +331,12 @@ void Property::setRawDefaultData(QVariantList data)
 QString Property::version() { return _version; }
 QString Property::group() { return _group; }
 
-//////////
+// ----------
+
+void Property::setReadonly(bool v) { _readOnly = v; }
+bool Property::readOnly() { return _readOnly; };
+
+// ----------
 
 UIPropertyType Property::type() { return _type; };
 

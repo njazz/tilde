@@ -179,6 +179,7 @@ ApplicationController::ApplicationController()
     }
 
     Preferences::inst().create("Paths", "Folders", "0.1", paths + paths2);
+    Preferences::inst().get("Paths")->setType(ptStringList);
 
     mainServerInstance()->post("qtpd started");
     mainServerInstance()->post("----");
