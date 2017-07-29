@@ -11,15 +11,17 @@
 #include <QDebug>
 #include <QObject>
 
+using namespace std;
+
 namespace qtpd {
 
 class UIObject;
 
-typedef std::map<std::string, Property*> UIPropertyData;
-typedef std::map<std::string, UIPropertyData*> UIPropertyGroups;
+typedef map<string, Property*> UIPropertyData;
+typedef map<string, UIPropertyData*> UIPropertyGroups;
 
-typedef std::map<std::string, Property*>::iterator UIPropertyDataIterator;
-typedef std::map<std::string, UIPropertyData*>::iterator UIPropertyGroupIterator;
+typedef map<string, Property*>::iterator UIPropertyDataIterator;
+typedef map<string, UIPropertyData*>::iterator UIPropertyGroupIterator;
 
 #define PROPERTY_LISTENER(x, y) connect(objectData()->properties()->get(x), &Property::changed, this, y)
 #define PROPERTY_DISCONNECT_LISTENER(x, y) disconnect(objectData()->properties()->get(x), &Property::changed, this, y)
@@ -43,7 +45,7 @@ public:
     UIPropertyData* fromGroup(QString grpName);
 
     template <typename T>
-    void create(std::string pName, std::string pGroup, QString pVersion, T defaultData)
+    void create(string pName, string pGroup, QString pVersion, T defaultData)
     {
         Property* newP = new Property;
 
@@ -65,7 +67,7 @@ public:
     // ----------
 
     template <typename U>
-    void set(std::string pName, U value)
+    void set(string pName, U value)
     {
         if (_data[pName]) {
             _data[pName]->set(value);
@@ -95,7 +97,7 @@ public:
     /// \brief returns string for saving in file
     /// \return
     ///
-    std::string asPdFileString();
+    string asPdFileString();
 
     ////
     /// \brief list of all property names

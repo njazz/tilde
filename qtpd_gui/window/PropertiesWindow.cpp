@@ -10,6 +10,7 @@
 #include <QSpinBox>
 #include <QTableView>
 #include <QVBoxLayout>
+#include <QComboBox>
 
 #include <QHeaderView>
 #include <QTableWidget>
@@ -127,7 +128,7 @@ PropertiesWindow::PropertiesWindow(PropertyList* plist)
             l1->setText(list.at(i));
             l1->setFixedSize(100, 20);
             l1->setFixedHeight(20);
-            l1->move(x1, y);
+            l1->move(x1+5, y);
             l1->show();
 
             // TODO
@@ -224,7 +225,55 @@ PropertiesWindow::PropertiesWindow(PropertyList* plist)
                 layoutLine->addWidget(tv);
                 _propertyNames[tv] = list.at(i);
 
-            } else {
+            } else if (t == ptEnum) {
+
+                //QTableWidget* tv = new QTableWidget(pWidget);
+
+                QComboBox *cb = new QComboBox(pWidget);
+
+                //cb->insertItem(0,"");
+
+                cb->setFont(myFont);
+
+                QStringList sls = _propertyList->get(list.at(i))->asQStringList();
+
+
+
+                QStringList sL = sls.join(",").split(",", QString::SkipEmptyParts);
+
+                //qDebug() << sls << sL;
+
+                for (int i=1;i<sL.size();i++)
+                {
+
+
+                    cb->addItem(sL.at(i));
+                    //qDebug() << sL.at(i);
+                }
+//                tv->insertColumn(0);
+
+//                tv->horizontalHeader()->setHidden(true);
+//                tv->verticalHeader()->setHidden(true);
+//                tv->horizontalHeader()->setStretchLastSection(true);
+
+                //tv->setFont(myFont);
+                //tv->setText(plist->get(list.at(i))->asQStringList());
+
+                //loadTableWidget(list.at(i), tv);
+
+                cb->move(x2, y);
+                cb->show();
+
+                //                connect(le, &QLineEdit::returnPressed, this, &PropertiesWindow::editedText);
+
+                //connect(cb, SIGNAL(cellChanged(int, int)), this, SLOT(editedStringList(int, int)));
+
+                layoutLine->addWidget(cb);
+                _propertyNames[cb] = list.at(i);
+
+            }
+
+            else {
 
                 QLineEdit* le = new QLineEdit(pWidget);
                 le->setFont(myFont);

@@ -59,20 +59,26 @@ public:
     {
 
         // TODO fix: these values are tcl {} lists
-        // t_cmp_audio_info* info = cmp_get_audio_device_info();
+        //t_cmp_audio_info* info = cmp_get_audio_device_info();
 
         // TODO
-        create("Driver", "Audio", QTPD_APP_VERSION, QString(ServerInstance::getAudioAPIs().c_str()).split(","));
+        create("AudioDriver", "Basic", QTPD_APP_VERSION, QString(ServerInstance::getAudioAPIs().c_str()).split(","));
 
-        get("Driver")->setType(ptEnum);
+        get("AudioDriver")->setType(ptEnum);
 
-        //create("Input", "Audio", QTPD_APP_VERSION, info->inputDeviceList);
-        //create("Output", "Audio", QTPD_APP_VERSION, info->outputDeviceList);
+        create("AudioInput", "Basic", QTPD_APP_VERSION, QString(ServerInstance::getAudioInDevices().c_str()).split(","));
+        get("AudioInput")->setType(ptEnum);
+        create("AudioOutput", "Basic", QTPD_APP_VERSION, QString(ServerInstance::getAudioOutDevices().c_str()).split(","));
+        get("AudioOutput")->setType(ptEnum);
 
         create("BufferSize", "Settings", QTPD_APP_VERSION, 256);
+        get("BufferSize")->setType(ptInt);
         create("BlockSize", "Settings", QTPD_APP_VERSION, 64);
+        get("BlockSize")->setType(ptInt);
         create("InputCount", "Settings", QTPD_APP_VERSION, 2);
+        get("InputCount")->setType(ptInt);
         create("OutputCount", "Settings", QTPD_APP_VERSION, 2);
+        get("OutputCount")->setType(ptInt);
     }
 };
 }
