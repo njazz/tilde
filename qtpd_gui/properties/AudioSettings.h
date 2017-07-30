@@ -18,6 +18,7 @@
 
 #define AUDIOSETTINGS_QSTRING(x) qtpd::AudioSettings::inst().getQString(x)
 #define QTPD_AUDIOSETTINGS_INIT qtpd::AudioSettings::inst().init()
+#define AUDIOSETTINGS_LISTENER(x, y) connect(get(x), &Property::changed, this, y)
 
 //move
 //#define QTPD_PREF_STR(x) AtomList(gensym(x))
@@ -58,8 +59,6 @@ public:
     void init()
     {
 
-        // TODO fix: these values are tcl {} lists
-        //t_cmp_audio_info* info = cmp_get_audio_device_info();
 
         // TODO
         create("AudioDriver", "Basic", QTPD_APP_VERSION, QString(ServerInstance::getAudioAPIs().c_str()).split(","));
@@ -79,7 +78,16 @@ public:
         get("InputCount")->setType(ptInt);
         create("OutputCount", "Settings", QTPD_APP_VERSION, 2);
         get("OutputCount")->setType(ptInt);
+
+        AUDIOSETTINGS_LISTENER("AudioDriver", &AudioSettings::slotSetAudioDriver);
+        AUDIOSETTINGS_LISTENER("AudioInput", &AudioSettings::slotSetAudioInput);
+        AUDIOSETTINGS_LISTENER("AudioOutput", &AudioSettings::slotSetAudioOutput);
     }
+
+   private slots:
+    void slotSetAudioDriver(){qDebug() << "audio driver";}
+    void slotSetAudioInput(){}
+    void slotSetAudioOutput(){}
 };
 }
 

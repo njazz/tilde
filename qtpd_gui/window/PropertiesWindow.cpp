@@ -264,9 +264,7 @@ PropertiesWindow::PropertiesWindow(PropertyList* plist)
                 cb->move(x2, y);
                 cb->show();
 
-                //                connect(le, &QLineEdit::returnPressed, this, &PropertiesWindow::editedText);
-
-                //connect(cb, SIGNAL(cellChanged(int, int)), this, SLOT(editedStringList(int, int)));
+                connect(cb, SIGNAL(currentIndexChanged(int)), this,SLOT(editedEnum(int)));
 
                 layoutLine->addWidget(cb);
                 _propertyNames[cb] = list.at(i);
@@ -388,6 +386,18 @@ void PropertiesWindow::editedStringList(int index, int)
 
     connect(sender, SIGNAL(cellChanged(int, int)), this, SLOT(editedStringList(int, int)));
 };
+
+void PropertiesWindow::editedEnum(int idx)
+{
+    QDoubleSpinBox* sender = (QDoubleSpinBox*)QObject::sender();
+    QString pname = _propertyNames[sender];
+
+    QStringList list = _propertyList->get(pname.toStdString().c_str())->asQStringList();
+
+    list[0] = QString::number(idx);
+    _propertyList->set(pname.toStdString(), list);
+};
+// --------------------
 
 void PropertiesWindow::setWindowController(PatchWindowController* c)
 {

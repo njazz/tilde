@@ -46,6 +46,7 @@ public slots:
     void editedInt(int);
     void editedFloat(double);
     void editedStringList(int index, int);
+    void editedEnum(int idx);
 };
 }
 
