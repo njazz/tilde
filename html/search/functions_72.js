@@ -4,7 +4,7 @@ var searchData=
   ['range',['range',['../classceammc_1_1_atom_list.html#ab649bc0294769dae826068b40923c8c3',1,'ceammc::AtomList']]],
   ['readfile',['readFile',['../classqtpd_1_1_o_p_class.html#a29e29ae0ee6fe71da77304f11e3c2073',1,'qtpd::OPClass']]],
   ['readfromtextfile',['readFromTextFile',['../classqtpd_1_1_preferences.html#a7699d99322148af4f5aee4a77d73b017',1,'qtpd::Preferences']]],
-  ['readonly',['readOnly',['../classqtpd_1_1_canvas_view.html#ad5a7d0fd80d3e9cf606b48fbef666f1c',1,'qtpd::CanvasView']]],
+  ['readonly',['readOnly',['../classqtpd_1_1_canvas_view.html#ad5a7d0fd80d3e9cf606b48fbef666f1c',1,'qtpd::CanvasView::readOnly()'],['../classqtpd_1_1_property.html#a1f29afaddb9eb599d6d15db2f88c79a9',1,'qtpd::Property::readOnly()']]],
   ['recentfiles',['RecentFiles',['../classqtpd_1_1_recent_files.html#aeddc0351618d99e9279dcabcf492117f',1,'qtpd::RecentFiles']]],
   ['recentmenu',['recentMenu',['../classqtpd_1_1_application_controller.html#aafaa554984d610009d780fed907e4e22',1,'qtpd::ApplicationController']]],
   ['rectfrommatrixpos',['rectFromMatrixPos',['../classqtpd_1_1_u_i_matrix.html#a281827e4355884a96ac17c3a984e2f8f',1,'qtpd::UIMatrix']]],

@@ -5,7 +5,7 @@ var searchData=
   ['range',['range',['../classceammc_1_1_atom_list.html#ab649bc0294769dae826068b40923c8c3',1,'ceammc::AtomList']]],
   ['readfile',['readFile',['../classqtpd_1_1_o_p_class.html#a29e29ae0ee6fe71da77304f11e3c2073',1,'qtpd::OPClass']]],
   ['readfromtextfile',['readFromTextFile',['../classqtpd_1_1_preferences.html#a7699d99322148af4f5aee4a77d73b017',1,'qtpd::Preferences']]],
-  ['readonly',['readOnly',['../classqtpd_1_1_canvas_view.html#ad5a7d0fd80d3e9cf606b48fbef666f1c',1,'qtpd::CanvasView']]],
+  ['readonly',['readOnly',['../classqtpd_1_1_canvas_view.html#ad5a7d0fd80d3e9cf606b48fbef666f1c',1,'qtpd::CanvasView::readOnly()'],['../classqtpd_1_1_property.html#a1f29afaddb9eb599d6d15db2f88c79a9',1,'qtpd::Property::readOnly()']]],
   ['recentfiles',['RecentFiles',['../classqtpd_1_1_recent_files.html',1,'qtpd']]],
   ['recentfiles',['RecentFiles',['../classqtpd_1_1_recent_files.html#aeddc0351618d99e9279dcabcf492117f',1,'qtpd::RecentFiles']]],
   ['recentfiles_2ecpp',['recentfiles.cpp',['../recentfiles_8cpp.html',1,'']]],

@@ -215,7 +215,7 @@ var searchData=
   ['cos_5ftable',['cos_table',['../m__pd_8h.html#a884d586c203c808a5b91592dcd75bb64',1,'m_pd.h']]],
   ['costabsize',['COSTABSIZE',['../m__pd_8h.html#ac35cc1fe838cf110de6692bacf65cd1f',1,'m_pd.h']]],
   ['count',['count',['../classceammc_1_1_atom_list.html#a79e0ec7012d71d4d240f7b6785658106',1,'ceammc::AtomList::count(const Atom &amp;a) const '],['../classceammc_1_1_atom_list.html#a43925a17c1e64ea52fdf1cf709111c34',1,'ceammc::AtomList::count(AtomPredicate pred) const '],['../class_abstract___widget___list.html#a875673fe0bdf9936cc8d330edf8c42d2',1,'Abstract_Widget_List::count()']]],
-  ['create',['create',['../classqtpd_1_1_property_list.html#afbe5c3673f39e28c8327b99749925379',1,'qtpd::PropertyList']]],
+  ['create',['create',['../classqtpd_1_1_property_list.html#abfd4e70760aa06560c464b3a7e8a438a',1,'qtpd::PropertyList']]],
   ['createactions',['createActions',['../classqtpd_1_1_base_window.html#afc02f22a72d2a65105fee61be0e0b42c',1,'qtpd::BaseWindow::createActions()'],['../classqtpd_1_1_patch_window.html#a9e0317548dc5606f8df0fe8085d16bec',1,'qtpd::PatchWindow::createActions()']]],
   ['createcontextmenu',['createContextMenu',['../classqtpd_1_1_canvas_view.html#a3296ef6ab0bb1ffe1f987be691b7b5b3',1,'qtpd::CanvasView']]],
   ['createeditor',['createEditor',['../class_color___delegate.html#a11eadbd8615b4b66c38cd95d85918cc5',1,'Color_Delegate']]],
