@@ -1,8 +1,15 @@
 var searchData=
 [
+  ['canvas',['canvas',['../class_o_p_class.html#ae8ceffca149ee1eb650ed509aaf806d1',1,'OPClass::canvas()'],['../class_o_p_instance.html#ae8c6fa94a2a610b0fcf89e6eee1371de',1,'OPInstance::canvas()']]],
   ['canvas_5fclass',['canvas_class',['../g__canvas_8h.html#ac4b887f0826ee6fbedd0cdf5084d2b9b',1,'g_canvas.h']]],
   ['canvas_5fdspstate',['canvas_dspstate',['../m__pd_8h.html#a4a087b3cde1e9637bcd33c95af6e5114',1,'m_pd.h']]],
   ['canvas_5fwhichfind',['canvas_whichfind',['../g__canvas_8h.html#a929cd90e4b4dd0b8af98a40e49f77ba2',1,'g_canvas.h']]],
+  ['ce_5fargc',['ce_argc',['../structt__n__canvasenvironment.html#ae9955e65b0560c599c98e507fb713216',1,'t_n_canvasenvironment']]],
+  ['ce_5fargv',['ce_argv',['../structt__n__canvasenvironment.html#ac597a318edf7869fa9827aae3de279e2',1,'t_n_canvasenvironment']]],
+  ['ce_5fdir',['ce_dir',['../structt__n__canvasenvironment.html#a2eae28504acad7f9a14db6a14d7b51d7',1,'t_n_canvasenvironment']]],
+  ['ce_5fdollarzero',['ce_dollarzero',['../structt__n__canvasenvironment.html#a7c8bf9d2bbf2c6ad49056a46ad69cf66',1,'t_n_canvasenvironment']]],
+  ['ce_5fpath',['ce_path',['../structt__n__canvasenvironment.html#a3fb71c15f21186fa8c5ca37b785b528d',1,'t_n_canvasenvironment']]],
+  ['class_5fname',['class_name',['../class_o_p_class.html#af3f75524a60f0909f8f9923b02194a5b',1,'OPClass::class_name()'],['../class_o_p_instance.html#a698516cedb1929251b79bf4170c64e69',1,'OPInstance::class_name()']]],
   ['clone_5fclass',['clone_class',['../g__canvas_8h.html#a0719074cfb54092c23607866446da4fe',1,'g_canvas.h']]],
   ['closeact',['closeAct',['../classqtpd_1_1_base_window.html#ad558a5ee215fc73d1e9d34ee4570d916',1,'qtpd::BaseWindow']]],
   ['coeffs',['coeffs',['../struct__resample.html#a925b6ec286ecbe3260ad763d00f4af61',1,'_resample']]],

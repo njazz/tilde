@@ -35,6 +35,7 @@ var searchData=
   ['scriptsmenu',['scriptsMenu',['../classqtpd_1_1_base_window.html#a35eab5b892404a44a878ca53b80bc2ad',1,'qtpd::BaseWindow']]],
   ['sel_5fnext',['sel_next',['../struct__selection.html#a7755b96133489ff250c49bb3e03ef113',1,'_selection']]],
   ['sel_5fwhat',['sel_what',['../struct__selection.html#a6e9a7ca0c21e0a08244a6584a27b888b',1,'_selection']]],
+  ['symbol',['symbol',['../class_o_p_class.html#a9b9c909e245e1bbe0efe1ef57a4276c7',1,'OPClass::symbol()'],['../class_o_p_instance.html#a4e00d6bd04f8730574915cc206473257',1,'OPInstance::symbol()']]],
   ['sys_5ffont',['sys_font',['../m__pd_8h.html#a9072b62529e8151dc4cc259879526386',1,'m_pd.h']]],
   ['sys_5ffontweight',['sys_fontweight',['../m__pd_8h.html#ab49c40cf51d6e3db5f1aa9fa55995bc7',1,'m_pd.h']]],
   ['sys_5fidlehook',['sys_idlehook',['../m__pd_8h.html#ac994e18b12e4fe68bf1bc2c341ff6430',1,'m_pd.h']]],

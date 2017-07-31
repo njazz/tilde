@@ -50,5 +50,5 @@ var searchData=
   ['msgsetobject',['msgSetObject',['../classqtpd_1_1_u_i_instance.html#a87264a285762fbf71c3ec485fd888750',1,'qtpd::UIInstance']]],
   ['msgsettype',['msgSetType',['../classqtpd_1_1_u_i_instance.html#a901beeea5d5f67a49f0d0a7cd6f9f51c',1,'qtpd::UIInstance']]],
   ['mtof',['mtof',['../m__pd_8h.html#aa0fc1002dc2c7212e22f19ae3b8bbf51',1,'m_pd.h']]],
-  ['multipleoutput',['multipleOutput',['../classqtpd_1_1_o_p_instance.html#a9e2addc8b1f9f6964b0eea7b79ecd603',1,'qtpd::OPInstance']]]
+  ['multipleoutput',['multipleOutput',['../class_o_p_instance.html#ad22e41b57cb0497a021183e2f5dd29fe',1,'OPInstance::multipleOutput()'],['../classqtpd_1_1_o_p_instance.html#a9e2addc8b1f9f6964b0eea7b79ecd603',1,'qtpd::OPInstance::multipleOutput()']]]
 ];

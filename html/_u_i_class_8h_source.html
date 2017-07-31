@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>qtpd: /home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIClass.h Source File</title>
+<title>tilde~: /home/travis/build/njazz/qtpd/tilde~/oopd/UIClass.h Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,7 +27,7 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">qtpd
+   <div id="projectname">tilde~
    
    </div>
    <div id="projectbrief">Puredata Qt-based GUI</div>
@@ -79,7 +79,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="headertitle">
-<div class="title">/home/travis/build/njazz/qtpd/qtpd_gui/oopd/UIClass.h</div>  </div>
+<div class="title">/home/travis/build/njazz/qtpd/tilde~/oopd/UIClass.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="_u_i_class_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// (c) 2017 Alex Nadzharov</span>
@@ -97,7 +97,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00013"></a>00013 <span class="preprocessor">#include &quot;<a class="code" href="_u_i_object_8h.html">UIObject.h</a>&quot;</span>
 <a name="l00014"></a>00014 <span class="preprocessor">#include &quot;<a class="code" href="_u_i_box_8h.html">UIBox.h</a>&quot;</span>
 <a name="l00015"></a>00015 
-<a name="l00016"></a>00016 <span class="preprocessor">#include &quot;<a class="code" href="_o_o_p_d_headers_8h.html">OOPDHeaders.h</a>&quot;</span>
+<a name="l00016"></a>00016 <span class="preprocessor">#include &quot;OOPDHeaders.h&quot;</span>
 <a name="l00017"></a>00017 
 <a name="l00018"></a>00018 <span class="preprocessor">#include &lt;QGraphicsView&gt;</span>
 <a name="l00019"></a>00019 
@@ -122,7 +122,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00041"></a><a class="code" href="classqtpd_1_1_u_i_class.html#a5e670d74f25eb10be0ba1b17cb69ec75">00041</a>     <a class="code" href="classqtpd_1_1_u_i_class.html#a5e670d74f25eb10be0ba1b17cb69ec75">~UIClass</a>()
 <a name="l00042"></a>00042     {
 <a name="l00043"></a>00043         <span class="keywordflow">if</span> (_opClass) {
-<a name="l00044"></a>00044             _opClass-&gt;<a class="code" href="classqtpd_1_1_o_p_class.html#a1a3b8c02c6d6f53a525299995935edd0">writeFile</a>();
+<a name="l00044"></a>00044             _opClass-&gt;<a class="code" href="classqtpd_1_1_o_p_class.html#a3fe1c3afd4a68bd4c446b16944484116">writeFile</a>();
 <a name="l00045"></a>00045         }
 <a name="l00046"></a>00046     };
 <a name="l00047"></a>00047 
@@ -274,7 +274,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00200"></a>00200 
 <a name="l00201"></a>00201         <span class="comment">//window opening. Fix</span>
 <a name="l00202"></a>00202         <span class="keywordflow">if</span> (<a class="code" href="classqtpd_1_1_u_i_item.html#a2e13bcc5d691a5505200843d80b71e6d" title="&gt; get edit mode pointer - for inlets/outlets">getEditMode</a>() != <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aaa528336eacc29596e8365b88a4f62d82">em_Unlocked</a>) {
-<a name="l00203"></a>00203             _opClass-&gt;<a class="code" href="classqtpd_1_1_o_p_class.html#af2f86912ea8f3a5ab89cd723a3b7b0d3">showWindow</a>();
+<a name="l00203"></a>00203             _opClass-&gt;<a class="code" href="classqtpd_1_1_o_p_class.html#a599e9a583c92beccd883964f4a566877">showWindow</a>();
 <a name="l00204"></a>00204         }
 <a name="l00205"></a>00205 
 <a name="l00206"></a>00206         <span class="keywordflow">if</span> ((<a class="code" href="classqtpd_1_1_u_i_item.html#a2e13bcc5d691a5505200843d80b71e6d" title="&gt; get edit mode pointer - for inlets/outlets">getEditMode</a>() == <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aaa528336eacc29596e8365b88a4f62d82">em_Unlocked</a>) &amp;&amp; <a class="code" href="classqtpd_1_1_u_i_item.html#ab3ac9bcca4d6c092b1d10fe506ba48c6" title="&gt; deselect object">isSelected</a>()) {
@@ -431,10 +431,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00364"></a>00364         <span class="comment">// -----------</span>
 <a name="l00365"></a>00365 
 <a name="l00366"></a>00366         <span class="keywordflow">if</span> ((msg.<a class="code" href="classceammc_1_1_atom_list.html#ad8682c33d61365c0f715fbfee1b122b2" title="returns reference to element at specified position">at</a>(0).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>() == <span class="stringliteral">&quot;read&quot;</span>))
-<a name="l00367"></a>00367             x-&gt;_opClass-&gt;<a class="code" href="classqtpd_1_1_o_p_class.html#a29e29ae0ee6fe71da77304f11e3c2073">readFile</a>();
+<a name="l00367"></a>00367             x-&gt;_opClass-&gt;<a class="code" href="classqtpd_1_1_o_p_class.html#a67c83af0c5a567e1f9239d27d9b3977d">readFile</a>();
 <a name="l00368"></a>00368 
 <a name="l00369"></a>00369         <span class="keywordflow">if</span> ((msg.<a class="code" href="classceammc_1_1_atom_list.html#ad8682c33d61365c0f715fbfee1b122b2" title="returns reference to element at specified position">at</a>(0).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>() == <span class="stringliteral">&quot;write&quot;</span>))
-<a name="l00370"></a>00370             x-&gt;_opClass-&gt;<a class="code" href="classqtpd_1_1_o_p_class.html#a1a3b8c02c6d6f53a525299995935edd0">writeFile</a>();
+<a name="l00370"></a>00370             x-&gt;_opClass-&gt;<a class="code" href="classqtpd_1_1_o_p_class.html#a3fe1c3afd4a68bd4c446b16944484116">writeFile</a>();
 <a name="l00371"></a>00371 
 <a name="l00372"></a>00372         emit((<a class="code" href="classqtpd_1_1_u_i_class.html" title="gui object: oopd class (pdclass)">UIClass</a>*)uiobj)-&gt;updateUISignal();
 <a name="l00373"></a>00373     }
@@ -475,7 +475,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 30 2017 16:53:46 for qtpd by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 31 2017 14:09:15 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

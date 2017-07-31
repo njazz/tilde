@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['parent',['parent',['../class_o_p_instance.html#ae19e91b4fdfcb60735547cdd625419a9',1,'OPInstance']]],
   ['pasteact',['pasteAct',['../classqtpd_1_1_base_window.html#a6c7d8d3dab6a64173e29f46bceecbbfd',1,'qtpd::BaseWindow']]],
   ['pd_5fcanvasmaker',['pd_canvasmaker',['../m__pd_8h.html#ac3ce9e2764f599b78de38eadb6005e40',1,'m_pd.h']]],
   ['pd_5fcompatibilitylevel',['pd_compatibilitylevel',['../m__pd_8h.html#a6a452cb0267d543605574edb4f0002fd',1,'m_pd.h']]],
