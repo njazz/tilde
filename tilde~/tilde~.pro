@@ -7,7 +7,7 @@
 QT       += core gui
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = qtpd
+TARGET = tilde~
 #include("target_name.pri")
 TEMPLATE = app
 
@@ -317,7 +317,7 @@ DISTFILES += \
 #include(python/build/PythonQt.prf)
 
 win32:RC_ICONS += pd_ceammc.ico
-macx:ICON = qtpd.icns
+macx:ICON = tilde~.icns
 
 INCLUDEPATH += \
     lib_headers/ \

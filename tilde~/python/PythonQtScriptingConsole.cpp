@@ -75,7 +75,7 @@ PythonQtScriptingConsole::PythonQtScriptingConsole(QWidget* parent, const Python
     clear();
 
     setFont(QFont("Source Code Pro", 11, 0, false));
-    setWindowTitle("Python console");
+    setWindowTitle("Python Console");
     setMinimumSize(400, 500);
 
     QPalette Pal(palette());

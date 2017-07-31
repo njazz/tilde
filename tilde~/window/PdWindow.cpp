@@ -69,7 +69,7 @@ PdWindow::PdWindow()
     ((BaseWindow*)this)->createActions();
     ((BaseWindow*)this)->createMenus();
 
-    ((QMainWindow*)this)->setWindowTitle("Pd");
+    ((QMainWindow*)this)->setWindowTitle("Pd Console");
 
     QHeaderView* verticalHeader = _ui->log->verticalHeader();
     verticalHeader->setSectionResizeMode(QHeaderView::Fixed);

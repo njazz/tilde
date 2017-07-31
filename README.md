@@ -1,9 +1,9 @@
 [![Build Status](https://travis-ci.org/njazz/qtpd.svg?branch=master)](https://travis-ci.org/njazz/qtpd)
 
-# qtpd
-Qt-based GUI for Puredata.  
+# tilde~
+New integrated GUI for Puredata based on Qt.  
   
-Very early prototype, temporary repository.  
+Early prototype, temporary repository.  
 Meanwhile check out this Pd library/build:  
 https://github.com/uliss/pure-data
 

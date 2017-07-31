@@ -137,7 +137,7 @@ void BaseWindow::createActions()
     _dspOffAct = new QAction(tr("DSP Off"), this);
     _dspOffAct->setShortcut(tr("Ctrl+."));
 
-    _pdWindowAct = new QAction(tr("Pd Window"), this);
+    _pdWindowAct = new QAction(tr("Pd Console"), this);
     _pdWindowAct->setShortcut(tr("Ctrl+R"));
 
     _pythonConsoleAct = new QAction(tr("Python Console"), this);
