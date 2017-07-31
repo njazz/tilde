@@ -9,9 +9,9 @@ branches:
 # Environment variables
 env:
   global:
-    - GH_REPO_NAME: qtpd
+    - GH_REPO_NAME: tilde
     - DOXYFILE: $TRAVIS_BUILD_DIR/DOXYGEN
-    - GH_REPO_REF: github.com/njazz/qtpd.git
+    - GH_REPO_REF: github.com/njazz/tilde.git
 
 # Install dependencies
 addons:
