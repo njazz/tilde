@@ -10,13 +10,13 @@
 
 #include "filepaths.h"
 
-namespace qtpd {
+namespace tilde {
 
 RecentFiles::RecentFiles()
 {
     _list = new QStringList();
 
-    QFile textFile(QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).at(0) + "/Qtpd/Settings/recentFiles.txt");
+    QFile textFile(QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).at(0) + "/tilde~/Settings/recentFiles.txt");
 
     if (!textFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
         qDebug() << textFile.errorString();
@@ -40,7 +40,7 @@ void RecentFiles::addFile(QString fileName)
 {
     _list->append(fileName);
 
-    QFile textFile(QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).at(0) + "/Qtpd/Settings/recentFiles.txt");
+    QFile textFile(QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).at(0) + "/tilde~/Settings/recentFiles.txt");
 
     if (!textFile.open(QIODevice::WriteOnly)) {
         //check and mkpath here

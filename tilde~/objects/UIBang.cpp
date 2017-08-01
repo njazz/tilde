@@ -9,7 +9,7 @@
 
 #include "UIObjectData.h"
 
-namespace qtpd {
+namespace tilde {
 UIBang::UIBang()
 {
     setSize(20, 20);

@@ -6,7 +6,7 @@
 
 #include <QPoint>
 
-namespace qtpd {
+namespace tilde {
 
 ////
 /// \brief edit mode types

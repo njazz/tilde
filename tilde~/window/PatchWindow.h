@@ -3,7 +3,7 @@
 
 #include "BaseWindow.h"
 
-namespace qtpd {
+namespace tilde {
 
 class CanvasView;
 class UIBox;

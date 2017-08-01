@@ -17,7 +17,7 @@ class UIpdFloat;
 
 void UIpdFloat::updateUI()
 {
-    qtpdUpdate((long)owner(), AtomList(Atom(value())));
+    UIUpdate((long)owner(), AtomList(Atom(value())));
 }
 
 float UIpdFloat::value()

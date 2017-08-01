@@ -21,7 +21,7 @@
 using namespace std;
 using namespace ceammc;
 
-namespace qtpd {
+namespace tilde {
 
 //class OPClass;
 //class OPInstance;

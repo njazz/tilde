@@ -17,13 +17,13 @@
 ///
 ///
 
-namespace qtpd {
+namespace tilde {
 class ApplicationController;
 class PatchWindowController;
 }
 class ServerObject;
 
-using namespace qtpd;
+using namespace tilde;
 
 class pyWrapper {
 private:

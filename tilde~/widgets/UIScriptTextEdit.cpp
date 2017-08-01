@@ -3,7 +3,7 @@
 
 #include "UIScriptTextEdit.h"
 
-namespace qtpd {
+namespace tilde {
 
 UIScriptTextEdit::UIScriptTextEdit(QPlainTextEdit* parent)
     : QPlainTextEdit(parent)

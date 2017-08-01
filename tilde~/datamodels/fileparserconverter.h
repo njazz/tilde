@@ -3,7 +3,7 @@
 
 class QString;
 
-namespace qtpd {
+namespace tilde {
 
 ////
 /// \brief Escape/unescape functiond for FileParser moved here for easier testing

@@ -1,12 +1,8 @@
-//#ifndef QTPD_UI_LIBRARY_H
-//#define QTPD_UI_LIBRARY_H
-
 #include <m_pd.h>
 
-#include "qtpd_ui_library.h"
+#include "tilde~_ui_library.h"
 
-extern "C"
-{
+extern "C" {
 
 extern void setup_ui0x2ebang();
 extern void setup_ui0x2efloat();
@@ -20,13 +16,12 @@ extern void setup_ui0x2etext();
 extern void setup_ui0x2edsp();
 
 extern void setup_ui0x2earray();
-
 }
 
-extern "C" void setup() //0x2e //qtpd_ui_
+extern "C" void setup() //0x2e //TILDE_UI_
 {
 
-    post("Qtpd UI library loaded");
+    post("tilde~ UI library loaded");
 
     setup_ui0x2ebang();
     setup_ui0x2efloat();
@@ -43,7 +38,3 @@ extern "C" void setup() //0x2e //qtpd_ui_
 
     setup_ui0x2edsp();
 }
-
-
-
-//#endif // QTPD_UI_LIBRARY_H

@@ -7,7 +7,7 @@
 
 #include "UIObjectData.h"
 
-namespace qtpd {
+namespace tilde {
 UIText::UIText()
 {
     objectData()->setObjectSize(os_Free, 80, 20);

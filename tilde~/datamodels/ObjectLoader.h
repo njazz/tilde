@@ -14,7 +14,7 @@ using namespace std;
 class QString;
 class QGraphicsView;
 
-namespace qtpd {
+namespace tilde {
 
 class UIObject;
 

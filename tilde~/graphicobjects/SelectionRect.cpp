@@ -5,7 +5,7 @@
 
 #include <QPainter>
 
-namespace qtpd {
+namespace tilde {
 SelectionRect::SelectionRect() {
 
     _active = 0;

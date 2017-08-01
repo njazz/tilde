@@ -19,7 +19,7 @@ class UIpdMsg;
 
 void UIpdMsg::updateUI()
 {
-    qtpdUpdate((long)owner(), getMessage());
+    UIUpdate((long)owner(), getMessage());
 }
 
 UIpdMsg::UIpdMsg(const PdArgs& a)

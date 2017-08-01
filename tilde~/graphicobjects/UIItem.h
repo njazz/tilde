@@ -7,7 +7,7 @@
 #include "CommonTypes.h"
 #include <QGraphicsObject>
 
-namespace qtpd {
+namespace tilde {
 
 ////
 /// \brief UIItem QGraphicsObject class

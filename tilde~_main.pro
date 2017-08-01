@@ -29,5 +29,4 @@ WithPython {
     SUBDIRS = $$PWD/PythonQt \
 }
 
-#    qtpd_gui_autotest/qtpd_gui_autotest
-#    qtpd_lib/ceammc-lib/ceammc
+

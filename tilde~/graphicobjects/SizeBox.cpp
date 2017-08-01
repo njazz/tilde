@@ -10,7 +10,7 @@
 #include <QObject>
 #include <QPainter>
 
-namespace qtpd {
+namespace tilde {
 
 SizeBox::SizeBox(UIItem* parent)
     : UIItem(parent)

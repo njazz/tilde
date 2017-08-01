@@ -16,7 +16,7 @@
 
 using namespace std;
 
-namespace qtpd {
+namespace tilde {
 
 //PatchWindowController* FileParser::_pdParserPrevWindowController = 0;
 

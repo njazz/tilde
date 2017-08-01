@@ -4,7 +4,7 @@
 #include "patchObserver.h"
 #include "PdWindow.h"
 
-namespace qtpd {
+namespace tilde {
 
 void PatchObserver::setPatchController(PatchWindowController* c) { _patchController = c; }
 }

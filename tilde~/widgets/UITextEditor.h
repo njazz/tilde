@@ -6,7 +6,7 @@
 
 #include <QWidget>
 
-namespace qtpd{
+namespace tilde{
 ////
 /// \brief Stub for generic text editor
 /// \deprecated TODO: merge / unify with uiscripteditor

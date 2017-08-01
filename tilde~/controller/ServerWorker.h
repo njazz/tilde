@@ -6,7 +6,7 @@
 #include <QDebug>
 #include <QThread>
 
-namespace qtpd {
+namespace tilde {
 
 ////
 /// \brief Stub for the server in separate thread

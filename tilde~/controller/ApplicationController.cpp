@@ -26,7 +26,7 @@
 
 #include "UIScriptEditor.h"
 
-namespace qtpd {
+namespace tilde {
 
 void ApplicationController::loadAllLibraries()
 {
@@ -52,7 +52,7 @@ ApplicationController::ApplicationController()
 
     ObjectLoader::inst().loadObjects();
 
-    QTPD_PREF_INIT;
+    TILDE_PREF_INIT;
 
 #ifdef WITH_PYTHON
     PythonQt::init(PythonQt::RedirectStdOut);
@@ -62,7 +62,7 @@ ApplicationController::ApplicationController()
     _scriptRunner = new ScriptRunner();
 #endif
 
-    QTPD_AUDIOSETTINGS_INIT;
+    TILDE_AUDIOSETTINGS_INIT;
 
     _serverWorker = new ServerWorker();
     _serverThread = new QThread();
@@ -95,7 +95,7 @@ ApplicationController::ApplicationController()
     //_localServer->firstInstance()->setVerboseLevel(4);
 
     //QString tilde = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).at(0);
-    //_localServer->firstInstance()->loadLibrary(QString(tilde + "/Qtpd/Libraries/qtpd_ui").toStdString());
+    //_localServer->firstInstance()->loadLibrary(QString(tilde + "/tilde~/Libraries/tilde~_ui").toStdString());
 
     FileParser::setAppController(this);
 
@@ -105,15 +105,15 @@ ApplicationController::ApplicationController()
     QString docFolder = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).last();
 
     // load from file later
-    //    Preferences::inst().create("Externals", "ExtraFolders", "0.1", docFolder + "/Qtpd/Externals");
-    //    Preferences::inst().create("Scripts", "ExtraFolders", "0.1", docFolder + "/Qtpd/Scripts");
-    //    Preferences::inst().create("Help", "ExtraFolders", "0.1", docFolder + "/Qtpd/Help");
+    //    Preferences::inst().create("Externals", "ExtraFolders", "0.1", docFolder + "/tilde~/Externals");
+    //    Preferences::inst().create("Scripts", "ExtraFolders", "0.1", docFolder + "/tilde~/Scripts");
+    //    Preferences::inst().create("Help", "ExtraFolders", "0.1", docFolder + "/tilde~/Help");
 
     //we still need that!
-    Preferences::inst().create("Patches", "ExtraFolders", "0.1", docFolder + "/Qtpd/Patches");
+    Preferences::inst().create("Patches", "ExtraFolders", "0.1", docFolder + "/tilde~/Patches");
 
-    //    Preferences::inst().create("Classes", "ExtraFolders", "0.1", docFolder + "/Qtpd/Classes");
-    //    Preferences::inst().create("Libraries", "ExtraFolders", "0.1", docFolder + "/Qtpd/Libraries");
+    //    Preferences::inst().create("Classes", "ExtraFolders", "0.1", docFolder + "/tilde~/Classes");
+    //    Preferences::inst().create("Libraries", "ExtraFolders", "0.1", docFolder + "/tilde~/Libraries");
 
     //    Preferences::inst().get("Externals")->setType(ptStringList);
     //    Preferences::inst().get("Scripts")->setType(ptStringList);
@@ -153,9 +153,9 @@ ApplicationController::ApplicationController()
     // TODO
     // "Paths" should be read-only list
     // search all through "FilePath" class
-    // set only root ~/Qtpd path
+    // set only root ~/tilde~ path
     // extrafolders for additional paths
-    Preferences::inst().create("QtpdPath", "Folders", "0.1", _filePaths->basePath());
+    Preferences::inst().create("tilde~Path", "Folders", "0.1", _filePaths->basePath());
 
     loadAllLibraries();
 
@@ -181,7 +181,7 @@ ApplicationController::ApplicationController()
     Preferences::inst().create("Paths", "Folders", "0.1", paths + paths2);
     Preferences::inst().get("Paths")->setType(ptStringList);
 
-    mainServerInstance()->post("qtpd started");
+    mainServerInstance()->post("tilde~ started");
     mainServerInstance()->post("----");
 
     _newFilenameCounter = 1;
@@ -254,7 +254,7 @@ void ApplicationController::preferencesWindow()
     qDebug() << "preferences";
     PropertyList* l1 = &Preferences::inst();
     PropertiesWindow* p1 = new PropertiesWindow(l1);
-    p1->setWindowTitle("Qtpd preferences");
+    p1->setWindowTitle("tilde~ preferences");
     p1->move(30, 30);
     p1->show();
 }

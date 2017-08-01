@@ -9,7 +9,7 @@ namespace Ui {
 class cm_basewindow;
 }
 
-namespace qtpd {
+namespace tilde {
 
 class ApplicationController;
 

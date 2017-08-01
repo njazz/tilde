@@ -14,13 +14,13 @@
 #include <QFile>
 #include <QStandardPaths>
 
-#define PREF_QSTRING(x) qtpd::Preferences::inst().getQString(x)
+#define PREF_QSTRING(x) tilde::Preferences::inst().getQString(x)
 
 //move
-#define QTPD_APP_VERSION "0.1"
-#define QTPD_PREF_INIT qtpd::Preferences::inst().init()
+#define TILDE_APP_VERSION "0.1"
+#define TILDE_PREF_INIT tilde::Preferences::inst().init()
 
-namespace qtpd {
+namespace tilde {
 
 /// \brief app Preferences singleton
 class Preferences : public PropertyList {
@@ -55,8 +55,8 @@ public:
 
     void init()
     {
-        create("appVersion", "System", QTPD_APP_VERSION, (std::string)(QTPD_APP_VERSION));
-        create("Font", "UI", QTPD_APP_VERSION, (std::string)("Source Code Pro")); //
+        create("appVersion", "System", TILDE_APP_VERSION, (std::string)(TILDE_APP_VERSION));
+        create("Font", "UI", TILDE_APP_VERSION, (std::string)("Source Code Pro")); //
 
         //        qDebug("pref init");
         //        qDebug() << getQString("appVersion");
@@ -91,7 +91,7 @@ public:
 
     void readFromTextFile()
     {
-        QFile textFile(QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).at(0) + "/Qtpd/Settings/Preferences.txt");
+        QFile textFile(QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).at(0) + "/tilde~/Settings/Preferences.txt");
 
         if (!textFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
             qDebug() << textFile.errorString();
@@ -116,7 +116,7 @@ public:
 
     void saveToTextFile()
     {
-        QFile textFile(QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).at(0) + "/Qtpd/Settings/Preferences.txt");
+        QFile textFile(QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).at(0) + "/tilde~/Settings/Preferences.txt");
 
         if (!textFile.open(QIODevice::WriteOnly)) {
             //check and mkpath here

@@ -18,7 +18,7 @@
 
 using namespace std;
 
-namespace qtpd {
+namespace tilde {
 static QString cm_log_string;
 
 void PdWindow::postSlot(QString text)

@@ -25,7 +25,7 @@
 #include <PythonQt_QtAll.h>
 #endif
 
-using namespace qtpd;
+using namespace tilde;
 
 int main(int argc, char* argv[])
 {

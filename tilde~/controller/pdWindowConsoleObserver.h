@@ -8,7 +8,7 @@
 
 #include <QApplication>
 
-namespace qtpd {
+namespace tilde {
 
 class PdWindow;
 

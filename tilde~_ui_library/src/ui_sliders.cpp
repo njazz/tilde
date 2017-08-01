@@ -19,7 +19,7 @@ class UIpdSliders;
 
 void UIpdSliders::updateUI()
 {
-    qtpdUpdate((long)owner(), AtomList(Atom(value())));
+    UIUpdate((long)owner(), AtomList(Atom(value())));
 }
 
 float UIpdSliders::value()

@@ -17,7 +17,7 @@ class QMenu;
 
 class ServerObject;
 
-namespace qtpd {
+namespace tilde {
 
 class CanvasView;
 class CanvasData;

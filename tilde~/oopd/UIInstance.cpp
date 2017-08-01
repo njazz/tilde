@@ -3,7 +3,7 @@
 
 #include "UIInstance.h"
 
-namespace qtpd {
+namespace tilde {
 
 UIInstance::UIInstance()
 {

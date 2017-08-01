@@ -12,7 +12,7 @@
 
 //#include "cm_pdlink.h"
 
-namespace qtpd {
+namespace tilde {
 
 ////
 /// \brief gui object: float number box (ui.float)

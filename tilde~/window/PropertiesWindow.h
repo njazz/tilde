@@ -13,7 +13,7 @@
 
 class QTableWidget;
 
-namespace qtpd {
+namespace tilde {
 
 class PatchWindowController;
 

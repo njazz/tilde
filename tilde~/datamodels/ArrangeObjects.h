@@ -7,7 +7,7 @@ using namespace std;
 
 //#include "UIObject.h"
 
-namespace qtpd {
+namespace tilde {
 
 class UIObject;
 typedef std::vector<UIObject*> objectVec;

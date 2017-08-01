@@ -15,7 +15,7 @@
 #include "FileParser.h"
 #include "FileSaver.h"
 
-namespace qtpd {
+namespace tilde {
 
 OOPD* instance;
 

@@ -27,7 +27,7 @@ using namespace ceammc;
 
 #include "OOPDClassBase.h"
 
-namespace qtpd {
+namespace tilde {
 
 //typedef vector<t_outlet*> OPOutputs; ///< vector of method boxes outputs
 typedef vector<t_object*> OPProperties; ///< vector of property boxes

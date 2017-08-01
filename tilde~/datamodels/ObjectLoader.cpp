@@ -27,7 +27,7 @@
 
 #include "UIDSP.h"
 
-namespace qtpd {
+namespace tilde {
 
 void ObjectLoader::loadObjects()
 {

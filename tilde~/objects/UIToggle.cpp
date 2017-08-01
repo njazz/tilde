@@ -12,7 +12,7 @@
 
 #include "ceammc_atomlist.h"
 
-namespace qtpd {
+namespace tilde {
 
 UIToggle::UIToggle()
 {

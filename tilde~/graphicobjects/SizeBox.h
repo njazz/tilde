@@ -6,7 +6,7 @@
 
 #include "UIItem.h"
 
-namespace qtpd {
+namespace tilde {
 
 ////
 /// \brief SizeBox QGraphicsObject class

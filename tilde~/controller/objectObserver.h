@@ -6,7 +6,7 @@
 
 #include "pdServer.hpp"
 
-namespace qtpd {
+namespace tilde {
 
 class UIObject;
 

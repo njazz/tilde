@@ -25,7 +25,7 @@
 
 #include "UIObjectData.h"
 
-namespace qtpd {
+namespace tilde {
 
 ////
 /// \brief gui object: oop method box (method)

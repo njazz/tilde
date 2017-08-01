@@ -6,7 +6,7 @@
 
 #include "Property.h"
 
-namespace qtpd {
+namespace tilde {
 
 undoCreateObject::undoCreateObject(PatchWindowController* ctrl, QString objectData, QPoint pos)
 {

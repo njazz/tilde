@@ -14,7 +14,7 @@ using namespace std;
 class QStringList;
 class QString;
 
-namespace qtpd {
+namespace tilde {
 class PatchWindow;
 class CanvasData;
 class CanvasView;

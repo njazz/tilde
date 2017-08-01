@@ -7,7 +7,7 @@
 //#include "UIObject.h"
 #include "ObjectLoader.h"
 
-namespace qtpd {
+namespace tilde {
 
 UIObject* PatchWindowController::copyObject(UIObject* src)
 {

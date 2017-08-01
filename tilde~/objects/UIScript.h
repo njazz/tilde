@@ -17,7 +17,7 @@
 
 class QGraphicsView;
 
-namespace qtpd {
+namespace tilde {
 
 ////
 /// \brief gui object: script editor embedded box (ui.script)

@@ -4,7 +4,7 @@
 #include "Clipboard.h"
 #include <QDebug>
 
-namespace qtpd {
+namespace tilde {
 Clipboard* Clipboard::_instance;
 
 Clipboard* Clipboard::inst()

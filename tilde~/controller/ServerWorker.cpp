@@ -5,7 +5,7 @@
 #include "PropertyList.h"
 #include "UIObject.h"
 
-namespace qtpd {
+namespace tilde {
 ServerWorker::ServerWorker()
 {
     qDebug() << "new server worker " << this;

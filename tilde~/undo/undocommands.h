@@ -16,7 +16,7 @@
 class QString;
 class QPoint;
 
-namespace qtpd {
+namespace tilde {
 // -------
 
 class PatchWindowController;

@@ -3,7 +3,7 @@
 
 #include "Port.h"
 
-namespace qtpd {
+namespace tilde {
 Port::Port(UIItem* parent)
     : UIItem(parent)
 {

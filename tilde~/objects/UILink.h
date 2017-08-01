@@ -19,7 +19,7 @@
 
 #include "ceammc_atomlist.h"
 
-namespace qtpd {
+namespace tilde {
 
 ////
 /// \brief gui object: comment box (ui.text)

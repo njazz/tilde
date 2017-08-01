@@ -12,7 +12,7 @@
 
 class ServerPatchcord;
 
-namespace qtpd {
+namespace tilde {
 
 ////
 /// \brief patchcord as numbers

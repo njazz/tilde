@@ -12,7 +12,7 @@
 
 #include <QUndoCommand>
 
-namespace qtpd {
+namespace tilde {
 PatchWindow::PatchWindow()
 {
 
@@ -362,7 +362,7 @@ void PatchWindow::closeEvent(QCloseEvent* event)
 
     if (isWindowModified()) {
         QMessageBox::StandardButton reply;
-        reply = QMessageBox::question(this, "Qtpd", "The patch was modified. Do you want to save it?",
+        reply = QMessageBox::question(this, "tilde~", "The patch was modified. Do you want to save it?",
             QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel);
 
         if (reply == QMessageBox::No)

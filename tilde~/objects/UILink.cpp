@@ -5,7 +5,7 @@
 
 #include <QGraphicsProxyWidget>
 
-namespace qtpd {
+namespace tilde {
 UILink::UILink()
 {
     setSize(65, 20);

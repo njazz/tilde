@@ -27,7 +27,7 @@ using namespace ceammc;
 
 #include "OOPDClassBase.h"
 
-namespace qtpd {
+namespace tilde {
 
 // ------------------------------------------------------------
 // typedefs

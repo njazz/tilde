@@ -8,7 +8,7 @@
 #include <QMainWindow>
 #include <QWidget>
 
-namespace qtpd {
+namespace tilde {
 
 class PatchWindowController;
 

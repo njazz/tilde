@@ -11,7 +11,7 @@
 
 #include <QGraphicsView>
 
-namespace qtpd {
+namespace tilde {
 
 ////
 /// \brief gui object: slider (ui.slider)

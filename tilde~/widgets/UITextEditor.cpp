@@ -3,7 +3,7 @@
 
 #include "UITextEditor.h"
 
-namespace qtpd {
+namespace tilde {
 
 UITextEditor::UITextEditor()
 {

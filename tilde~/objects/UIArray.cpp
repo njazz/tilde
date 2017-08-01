@@ -10,7 +10,7 @@
 
 #include "UIObjectData.h"
 
-namespace qtpd {
+namespace tilde {
 UIArray::UIArray()
 {
     setHeight(20);

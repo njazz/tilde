@@ -17,7 +17,7 @@
 
 #include "CanvasView.h"
 
-namespace qtpd {
+namespace tilde {
 
 ////
 /// \brief gui object: array box (ui.array)

@@ -14,7 +14,7 @@
 
 #include "Preferences.h"
 
-namespace qtpd {
+namespace tilde {
 
 ////
 /// \brief gui object: dsp switch box (ui.dsp)

@@ -21,7 +21,7 @@ class ServerObject;
 
 using namespace std;
 
-namespace qtpd {
+namespace tilde {
 
 class CanvasView;
 class CanvasData;

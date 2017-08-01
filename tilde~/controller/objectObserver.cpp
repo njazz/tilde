@@ -4,7 +4,7 @@
 #include "objectObserver.h"
 #include "UIObject.h"
 
-namespace qtpd {
+namespace tilde {
 
 void ObjectObserver::setObject(UIObject* o)
 {

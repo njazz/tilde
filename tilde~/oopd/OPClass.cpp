@@ -21,7 +21,7 @@
 
 #include "Preferences.h"
 
-namespace qtpd {
+namespace tilde {
 
 OPClass::OPClass(string className)
 {

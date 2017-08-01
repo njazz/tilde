@@ -32,7 +32,7 @@
 
 #include "SizeBox.h"
 
-namespace qtpd {
+namespace tilde {
 
 PatchWindowController::PatchWindowController(ApplicationController* appController) //replace with parent (appcontroller)
 {

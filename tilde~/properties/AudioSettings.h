@@ -16,14 +16,11 @@
 
 #include "pdServer.hpp"
 
-#define AUDIOSETTINGS_QSTRING(x) qtpd::AudioSettings::inst().getQString(x)
-#define QTPD_AUDIOSETTINGS_INIT qtpd::AudioSettings::inst().init()
+#define AUDIOSETTINGS_QSTRING(x) tilde::AudioSettings::inst().getQString(x)
+#define TILDE_AUDIOSETTINGS_INIT tilde::AudioSettings::inst().init()
 #define AUDIOSETTINGS_LISTENER(x, y) connect(get(x), &Property::changed, this, y)
 
-//move
-//#define QTPD_PREF_STR(x) AtomList(gensym(x))
-
-namespace qtpd {
+namespace tilde {
 
 ////
 /// \brief app AudioSettings singleton
@@ -59,24 +56,23 @@ public:
     void init()
     {
 
-
         // TODO
-        create("AudioDriver", "Basic", QTPD_APP_VERSION, QString(ServerInstance::getAudioAPIs().c_str()).split(","));
+        create("AudioDriver", "Basic", TILDE_APP_VERSION, QString(ServerInstance::getAudioAPIs().c_str()).split(","));
 
         get("AudioDriver")->setType(ptEnum);
 
-        create("AudioInput", "Basic", QTPD_APP_VERSION, QString(ServerInstance::getAudioInDevices().c_str()).split(","));
+        create("AudioInput", "Basic", TILDE_APP_VERSION, QString(ServerInstance::getAudioInDevices().c_str()).split(","));
         get("AudioInput")->setType(ptEnum);
-        create("AudioOutput", "Basic", QTPD_APP_VERSION, QString(ServerInstance::getAudioOutDevices().c_str()).split(","));
+        create("AudioOutput", "Basic", TILDE_APP_VERSION, QString(ServerInstance::getAudioOutDevices().c_str()).split(","));
         get("AudioOutput")->setType(ptEnum);
 
-        create("BufferSize", "Settings", QTPD_APP_VERSION, 256);
+        create("BufferSize", "Settings", TILDE_APP_VERSION, 256);
         get("BufferSize")->setType(ptInt);
-        create("BlockSize", "Settings", QTPD_APP_VERSION, 64);
+        create("BlockSize", "Settings", TILDE_APP_VERSION, 64);
         get("BlockSize")->setType(ptInt);
-        create("InputCount", "Settings", QTPD_APP_VERSION, 2);
+        create("InputCount", "Settings", TILDE_APP_VERSION, 2);
         get("InputCount")->setType(ptInt);
-        create("OutputCount", "Settings", QTPD_APP_VERSION, 2);
+        create("OutputCount", "Settings", TILDE_APP_VERSION, 2);
         get("OutputCount")->setType(ptInt);
 
         AUDIOSETTINGS_LISTENER("AudioDriver", &AudioSettings::slotSetAudioDriver);
@@ -84,10 +80,10 @@ public:
         AUDIOSETTINGS_LISTENER("AudioOutput", &AudioSettings::slotSetAudioOutput);
     }
 
-   private slots:
-    void slotSetAudioDriver(){qDebug() << "audio driver";}
-    void slotSetAudioInput(){}
-    void slotSetAudioOutput(){}
+private slots:
+    void slotSetAudioDriver() { qDebug() << "audio driver"; }
+    void slotSetAudioInput() {}
+    void slotSetAudioOutput() {}
 };
 }
 

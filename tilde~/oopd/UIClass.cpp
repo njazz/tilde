@@ -3,7 +3,7 @@
 
 #include "UIClass.h"
 
-namespace qtpd {
+namespace tilde {
 
 UIClass::UIClass()
 {

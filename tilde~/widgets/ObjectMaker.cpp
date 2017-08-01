@@ -11,7 +11,7 @@
 
 using namespace std;
 
-namespace qtpd {
+namespace tilde {
 
 ObjectMaker::ObjectMaker(QLineEdit* parent)
     : QLineEdit(parent)

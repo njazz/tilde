@@ -5,7 +5,7 @@
 
 #include "CanvasView.h"
 
-namespace qtpd {
+namespace tilde {
 UIProperty::UIProperty()
 {
     _opInstance = 0;

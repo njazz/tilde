@@ -23,7 +23,7 @@
 
 #include "ApplicationController.h"
 
-namespace qtpd {
+namespace tilde {
 BaseWindow::BaseWindow(QWidget* parent)
     :
 

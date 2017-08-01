@@ -6,7 +6,7 @@
 
 QT       -= core gui
 
-TARGET = qtpd_ui
+TARGET = tilde~_ui
 
 TEMPLATE = lib
 
@@ -31,7 +31,7 @@ SOURCES += \
     src/ui_script.cpp \
     src/ui_toggle.cpp \
     src/ui_array.cpp \
-    qtpd_ui_library/qtpd_ui_library.cpp \
+    tilde~_ui_library/tilde~_ui_library.cpp \
     src/ui_text.cpp \
     src/baseUIClass.cpp \
     src/ui_dsp.cpp
@@ -56,28 +56,28 @@ HEADERS +=\
     src/ui_array.h \
     src/ui_text.h \
     src/baseUIClass.h \
-    qtpd_ui_library/qtpd_ui_library.h \
+    tilde~_ui_library/tilde~_ui_library.h \
     src/ui_dsp.h
 
 INCLUDEPATH += ../qtpd_ceammc_lib/src/ \
     ../../pd-server/pure-data-src/src/ \
     ../../pd-server/src/
-    ../../pd-server/qtpd_ui_library/
+    ../../pd-server/tilde~_ui_library/
 
 unix {
     #target.path = $$PWD/bin #/usr/local/lib
-    target.path = ~/Documents/Qtpd/Libraries
+    target.path = ~/Documents/tilde~/Libraries
     INSTALLS += target
 }
 
 win32 {
     #target.path = $$PWD/bin #/usr/local/lib
-    target.path = ~/Documents/Qtpd/Libraries
+    target.path = ~/Documents/tilde~/Libraries
     INSTALLS += target
 }
 
 win32:{
-    LIBS += -L$$OUT_PWD/../../pd-server/src/qt-creator-project/debug -lpd-server \ #-L~/Documents/Qtpd/Libraries -lpd-server #
+    LIBS += -L$$OUT_PWD/../../pd-server/src/qt-creator-project/debug -lpd-server \ #-L~/Documents/tilde~/Libraries -lpd-server #
    # -L$$OUT_PWD/../qtpd_ceammc_lib/debug -lqtpd_ceammc_lib
 }
 

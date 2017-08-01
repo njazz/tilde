@@ -14,14 +14,14 @@
 #include "python/PythonQtScriptingConsole.h"
 #include "scriptrunner.h"
 #else
-namespace qtpd {
+namespace tilde {
 class PythonQtScriptingConsole;
 }
 #endif
 
 #include <QApplication>
 
-namespace qtpd {
+namespace tilde {
 
 class PdWindow;
 class PatchWindow;

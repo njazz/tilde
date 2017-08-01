@@ -6,7 +6,7 @@
 
 #include <QObject>
 
-namespace qtpd {
+namespace tilde {
 ////
 /// \brief The Clipboard class - just a QStringList with Pd strings for objects
 ///

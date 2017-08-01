@@ -20,7 +20,7 @@
 
 #include "UIObjectData.h"
 
-namespace qtpd {
+namespace tilde {
 
 void CanvasBoxObserver::setUIBox(UIBox* b) { _box = b; };
 

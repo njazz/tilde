@@ -7,7 +7,7 @@
 
 #include "UIObjectData.h"
 
-namespace qtpd {
+namespace tilde {
 UISignal::UISignal()
 {
     _pdreceive_object = 0;

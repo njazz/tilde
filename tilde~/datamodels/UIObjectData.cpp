@@ -8,7 +8,7 @@
 
 #include "UIObjectData.h"
 
-namespace qtpd {
+namespace tilde {
 UIObjectData::UIObjectData(QObject* parent)
     : QObject(parent)
 {

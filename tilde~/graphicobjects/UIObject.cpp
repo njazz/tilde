@@ -21,7 +21,7 @@
 #include "PropertiesWindow.h"
 #include "CanvasView.h"
 
-namespace qtpd {
+namespace tilde {
 
 UIObject::UIObject(UIItem* parent)
     : UIItem(parent)

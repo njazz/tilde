@@ -5,7 +5,7 @@
 
 #include "CanvasView.h"
 
-namespace qtpd {
+namespace tilde {
 UIMethod::UIMethod()
 {
     _opInstance = 0;

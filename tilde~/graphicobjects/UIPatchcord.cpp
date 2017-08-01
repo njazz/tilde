@@ -5,7 +5,7 @@
 
 #include "UIObject.h"
 
-namespace qtpd {
+namespace tilde {
 UIPatchcord::UIPatchcord(UIItem* obj1, UIItem* out1, UIItem* obj2, UIItem* in2)
 {
     _obj1 = obj1;

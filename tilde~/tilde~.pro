@@ -95,7 +95,7 @@ HEADERS += \
     INCLUDEPATH +=     python/headers/
 }
 
-SOURCES += main.cpp\
+SOURCES += controller/main.cpp\
 #### UI objects
     objects/UIArray.cpp \
     objects/UIBox.cpp \
@@ -271,7 +271,7 @@ HEADERS  += \
 
 FORMS    += \
     window/cm_pdwindow.ui \
-#    canvasmenu.ui \
+#   window/canvasmenu.ui \
     window/cm_basewindow.ui \
     properties/QtColorPicker/src/color_dialog.ui
 
@@ -316,8 +316,8 @@ DISTFILES += \
 #include(python/build/PythonQt_QtAll.prf)
 #include(python/build/PythonQt.prf)
 
-win32:RC_ICONS += pd_ceammc.ico
-macx:ICON = tilde~.icns
+win32:RC_ICONS += icons/tilde~.ico
+macx:ICON = icons/tilde~.icns
 
 INCLUDEPATH += \
     lib_headers/ \

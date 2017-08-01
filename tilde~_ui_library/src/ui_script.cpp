@@ -23,12 +23,12 @@ UIpdScript::UIpdScript(const PdArgs& a)
 }
 void UIpdScript::onBang()
 {
-    qtpdUpdate((long)this->owner(), AtomList());
+    UIUpdate((long)this->owner(), AtomList());
 }
 
 void UIpdScript::onFloat(float f)
 {
-    qtpdUpdate((long)this->owner(), AtomList(Atom(f)));
+    UIUpdate((long)this->owner(), AtomList(Atom(f)));
 }
 
 void UIpdScript::onAny(t_symbol* s, const AtomList& list)

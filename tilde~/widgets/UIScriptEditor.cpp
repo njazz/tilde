@@ -7,7 +7,7 @@
 #include "Preferences.h"
 #include "UIScriptCommon.h"
 
-namespace qtpd {
+namespace tilde {
 UIScriptEditor::UIScriptEditor(QWidget* parent)
     : QWidget(parent)
 {

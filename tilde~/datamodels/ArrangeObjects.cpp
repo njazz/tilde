@@ -6,7 +6,7 @@
 
 #include "math.h"
 
-namespace qtpd {
+namespace tilde {
 
 ArrangeObjects::ArrangeObjects()
 {

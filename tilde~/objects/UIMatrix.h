@@ -11,7 +11,7 @@
 
 #include <QGraphicsView>
 
-namespace qtpd {
+namespace tilde {
 
 enum uiMatrixType {
     mt_HRadio,

@@ -6,7 +6,7 @@
 #include "CanvasData.h"
 #include "Preferences.h"
 
-namespace qtpd {
+namespace tilde {
 CanvasData::CanvasData()
 {
     _filePath = Preferences::inst().get("Patches")->asQString();

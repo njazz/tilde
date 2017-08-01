@@ -21,7 +21,7 @@ class UIpdDSP;
 
 void UIpdDSP::updateUI()
 {
-    qtpdUpdate((long)owner(), AtomList(float(_value)));
+    UIUpdate((long)owner(), AtomList(float(_value)));
 }
 
 UIpdDSP::UIpdDSP(const PdArgs& a)

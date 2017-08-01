@@ -3,7 +3,7 @@
 
 #include "UIArrayEditor.h"
 
-namespace qtpd {
+namespace tilde {
 
 UIArrayEditor::UIArrayEditor(QWidget* parent)
     : QWidget(parent)

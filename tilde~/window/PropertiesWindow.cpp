@@ -23,7 +23,7 @@
 #include "PatchWindowController.h"
 #include "undocommands.h"
 
-namespace qtpd {
+namespace tilde {
 
 void PropertiesWindow::loadTableWidget(QString pName, QTableWidget* tv)
 {

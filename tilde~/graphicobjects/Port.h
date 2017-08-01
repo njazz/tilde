@@ -10,7 +10,7 @@
 
 #include "UIItem.h"
 
-namespace qtpd {
+namespace tilde {
 
 ////
 /// \brief Port QGraphicsItem class

@@ -5,7 +5,7 @@
 #include "CanvasData.h"
 #include "PatchWindow.h"
 
-namespace qtpd {
+namespace tilde {
 
 void FileSaver::saveCanvas(CanvasData* canvasData, QFile* file)
 {

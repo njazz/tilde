@@ -17,7 +17,7 @@
 
 #include "CanvasView.h"
 
-namespace qtpd {
+namespace tilde {
 
 OPInstance::OPInstance(OPClass* opClass)
 {

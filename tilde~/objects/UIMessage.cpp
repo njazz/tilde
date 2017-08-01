@@ -16,7 +16,7 @@
 
 #include "CanvasView.h"
 
-namespace qtpd {
+namespace tilde {
 UIMessage::UIMessage()
 {
     deselect();

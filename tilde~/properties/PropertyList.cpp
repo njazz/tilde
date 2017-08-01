@@ -3,7 +3,7 @@
 
 #include "PropertyList.h"
 
-namespace qtpd {
+namespace tilde {
 
 UIPropertyData* PropertyList::group(QString grpName)
 {

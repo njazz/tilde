@@ -18,7 +18,7 @@
 
 using namespace std;
 
-namespace qtpd {
+namespace tilde {
 
 typedef enum {
     ptBool,

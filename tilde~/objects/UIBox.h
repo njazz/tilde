@@ -17,7 +17,7 @@
 
 class QGraphicsProxyWidget;
 
-namespace qtpd {
+namespace tilde {
 
 class UIBox;
 

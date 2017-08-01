@@ -9,7 +9,7 @@
 
 class ServerCanvas;
 
-namespace qtpd {
+namespace tilde {
 
 class UIBox;
 

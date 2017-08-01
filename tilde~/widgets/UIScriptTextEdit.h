@@ -18,7 +18,7 @@
 class PythonQtObjectPtr;
 #endif
 
-namespace qtpd {
+namespace tilde {
 ////
 /// \brief The text editor for UIScript editor widget.
 /// \details contains parts of PythonQt

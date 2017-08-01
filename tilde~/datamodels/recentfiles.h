@@ -4,7 +4,7 @@
 class QStringList;
 class QString;
 
-namespace qtpd {
+namespace tilde {
 class RecentFiles {
     QStringList* _list;
 

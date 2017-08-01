@@ -13,7 +13,7 @@
 
 //#include "cm_pdlink.h"
 
-namespace qtpd {
+namespace tilde {
 
 ////
 /// \brief gui object: message box (ui.msg)

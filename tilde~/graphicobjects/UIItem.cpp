@@ -6,7 +6,7 @@
 #include <QDebug>
 #include <QWidget>
 
-namespace qtpd {
+namespace tilde {
 UIItem::UIItem(QGraphicsObject* parent)
     : QGraphicsObject(parent)
 {

@@ -6,13 +6,13 @@
 #include "fileparserconverter.h"
 //#include "FileSaver.h"
 
-using namespace qtpd;
+using namespace tilde;
 
-class Qtpd_tests : public QObject {
+class Tilde_tests : public QObject {
     Q_OBJECT
 
 public:
-    Qtpd_tests();
+    Tilde_tests();
 
 private Q_SLOTS:
     void initTestCase();
@@ -32,23 +32,23 @@ private Q_SLOTS:
     void fileParserEscapeString();
 };
 
-Qtpd_tests::Qtpd_tests()
+Tilde_tests::Tilde_tests()
 {
 }
 
 // ----------
 
-void Qtpd_tests::initTestCase()
+void Tilde_tests::initTestCase()
 {
 }
 
-void Qtpd_tests::cleanupTestCase()
+void Tilde_tests::cleanupTestCase()
 {
 }
 
 // ----------
 
-void Qtpd_tests::propertyDataTypes()
+void Tilde_tests::propertyDataTypes()
 {
     PropertyList* l = new PropertyList;
 
@@ -79,7 +79,7 @@ void Qtpd_tests::propertyDataTypes()
 
 }
 
-void Qtpd_tests::propertyEscapeString()
+void Tilde_tests::propertyEscapeString()
 {
     QString testEscape = "1 2\n 3, 4. 5@ 6;";
 
@@ -90,7 +90,7 @@ void Qtpd_tests::propertyEscapeString()
     QVERIFY(Property::unescapeString(Property::escapeString(testEscape)) == testEscape);
 }
 
-void Qtpd_tests::propertyLoad()
+void Tilde_tests::propertyLoad()
 {
     PropertyList* l = new PropertyList();
 
@@ -106,12 +106,12 @@ void Qtpd_tests::propertyLoad()
     QVERIFY("object.name @unused string value" == output);
 }
 
-//void Qtpd_tests::propertyCopy()
+//void Tilde_tests::propertyCopy()
 //{
 
 //}
 
-void Qtpd_tests::propertyVec2Converters()
+void Tilde_tests::propertyVec2Converters()
 {
     PropertyList* l = new PropertyList();
 
@@ -125,7 +125,7 @@ void Qtpd_tests::propertyVec2Converters()
     QVERIFY(l->get("point")->asQPoint() == QPoint(30, 70));
 }
 
-void Qtpd_tests::propertyCopy()
+void Tilde_tests::propertyCopy()
 {
     PropertyList* l = new PropertyList();
 
@@ -141,14 +141,14 @@ void Qtpd_tests::propertyCopy()
     QVERIFY(a.asQString() == l->get("source")->asQString());
 }
 
-void Qtpd_tests::patchControllerCopyObject()
+void Tilde_tests::patchControllerCopyObject()
 {
     //PatchWindowController *w = new PatchWindowController(0);
 
     //w->createObject("text @Text test object", QPoint(0,0));
 }
 
-void Qtpd_tests::fileParserEscapeString()
+void Tilde_tests::fileParserEscapeString()
 {
 
     QString testEscape = "1 2\n 3, 4. 5@ 6;";
@@ -161,5 +161,5 @@ void Qtpd_tests::fileParserEscapeString()
 
 }
 
-QTEST_APPLESS_MAIN(Qtpd_tests)
-#include "qtpd_tests.moc"
+QTEST_APPLESS_MAIN(Tilde_tests)
+#include "tilde~_tests.moc"

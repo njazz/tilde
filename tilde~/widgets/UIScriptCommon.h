@@ -21,7 +21,7 @@ class ServerInstance;
 
 using namespace ceammc;
 
-namespace qtpd {
+namespace tilde {
 
 ////
 /// \brief Basic data model for scripteditor

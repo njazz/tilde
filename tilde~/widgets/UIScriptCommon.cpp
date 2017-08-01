@@ -5,7 +5,7 @@
 #include "pdServer.hpp"
 #include "ceammc_atomlist.h"
 
-namespace qtpd {
+namespace tilde {
 
 UIScriptCommon::UIScriptCommon(QObject* parent)
     : QObject(parent)

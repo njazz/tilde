@@ -5,7 +5,7 @@
 
 #include "py_qtpd.h"
 
-using namespace qtpd;
+using namespace tilde;
 
 pyWrapper::pyWrapper()
 {

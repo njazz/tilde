@@ -26,7 +26,9 @@
 
 //class QMenu;
 
-namespace qtpd {
+using namespace std;
+
+namespace tilde {
 
 ////
 /// \brief Canvas View - used by Patch window controller
@@ -170,7 +172,7 @@ public slots:
     void slotObjectStartsEdit(void* obj);
 
 signals:
-    std::pair<QMainWindow*, qtpd::UIObject*> createSubpatchWindow();
+    pair<QMainWindow*, tilde::UIObject*> createSubpatchWindow();
     void signalUpdatePortCount();
 
     // new 0617

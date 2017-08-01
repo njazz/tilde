@@ -8,7 +8,7 @@
 
 #include "UIScriptTextEdit.h"
 
-namespace qtpd {
+namespace tilde {
 
 class UIScriptCommon;
 

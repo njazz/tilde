@@ -7,7 +7,7 @@
 #include "CommonTypes.h"
 #include <QObject>
 
-namespace qtpd {
+namespace tilde {
 
 class PropertyList;
 class Port;

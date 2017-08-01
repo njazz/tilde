@@ -22,7 +22,7 @@
 
 #include "UIObjectData.h"
 
-namespace qtpd {
+namespace tilde {
 
 ////
 /// \brief gui object: oopd class (pdclass)

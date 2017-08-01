@@ -12,7 +12,7 @@
 
 #include <pdServer.hpp>
 
-namespace qtpd {
+namespace tilde {
 ////
 /// \brief Array Editor QWidget
 class UIArrayEditor : public QWidget {

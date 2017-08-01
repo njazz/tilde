@@ -1,8 +1,8 @@
 // (c) 2017 Alex Nadzharov
 // License: GPL3
 
-#ifndef PY_QTPD_H
-#define PY_QTPD_H
+#ifndef PY_TILDE_H
+#define PY_TILDE_H
 
 #include <QObject>
 #include <QString>
@@ -25,7 +25,7 @@
 
 #include "ceammc_atomlist.h"
 
-using namespace qtpd;
+using namespace tilde;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -398,4 +398,4 @@ public Q_SLOTS:
     }
 };
 
-#endif // PY_QTPD_H
+#endif // PY_TILDE_H

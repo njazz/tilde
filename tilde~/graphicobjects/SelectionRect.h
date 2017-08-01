@@ -10,7 +10,7 @@
 
 class QPainter;
 
-namespace qtpd {
+namespace tilde {
 
 ////
 /// \brief selection rectangle QGraphicsObject (UIItem)

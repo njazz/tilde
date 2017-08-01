@@ -10,12 +10,12 @@
 
 #include <QCoreApplication>
 
-namespace qtpd {
+namespace tilde {
 
 FilePaths::FilePaths()
 {
     _docFolder = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).last();
-    _basePath = _docFolder + "/Qtpd";
+    _basePath = _docFolder + "/tilde~";
 
     //            * Bundles
     //            Classes

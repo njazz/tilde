@@ -6,7 +6,7 @@
 
 #include "UIItem.h"
 
-namespace qtpd {
+namespace tilde {
 ////
 /// \brief Line that indicates the link between objects: it should be used with [s] [r] and [s~] [r~]
 /// \details stub

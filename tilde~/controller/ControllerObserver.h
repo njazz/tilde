@@ -4,7 +4,7 @@
 #ifndef CONTROLLEROBSERVER
 #define CONTROLLEROBSERVER
 
-namespace qtpd {
+namespace tilde {
 
 class PatchWindowController;
 

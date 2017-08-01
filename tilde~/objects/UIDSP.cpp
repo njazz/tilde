@@ -9,7 +9,7 @@
 
 #include "ceammc_atomlist.h"
 
-namespace qtpd {
+namespace tilde {
 
 UIDSP::UIDSP()
 {

@@ -5,7 +5,7 @@
 #include <QString>
 #include <QStringList>
 
-namespace qtpd {
+namespace tilde {
 ////
 /// \brief unescapeString
 /// \param input

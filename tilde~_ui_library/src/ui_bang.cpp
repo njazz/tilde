@@ -16,7 +16,7 @@ class UIpdBang;
 
 void UIpdBang::updateUI()
 {
-    qtpdUpdate((long)owner(), AtomList(Atom(gensym("bang"))));
+    UIUpdate((long)owner(), AtomList(Atom(gensym("bang"))));
 }
 
 UIpdBang::UIpdBang(const PdArgs& a)

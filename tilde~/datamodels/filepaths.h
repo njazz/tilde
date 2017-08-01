@@ -12,7 +12,7 @@
 //            Scripts
 //            Settings
 
-namespace qtpd {
+namespace tilde {
 
 class FilePaths {
     QString _docFolder;

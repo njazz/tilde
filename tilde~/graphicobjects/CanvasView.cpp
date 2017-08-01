@@ -15,7 +15,7 @@
 
 #include <assert.h>
 
-namespace qtpd {
+namespace tilde {
 
 static const QSize EmptyCanvasSize = QSize(300, 200);
 

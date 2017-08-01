@@ -7,7 +7,7 @@
 QT       += testlib core gui
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = qtpd_tests
+TARGET = tilde~_tests
 
 CONFIG   += console
 CONFIG   -= app_bundle
@@ -16,7 +16,7 @@ TEMPLATE = app
 DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
-        qtpd_tests.cpp \
+        tilde~_tests.cpp \
 #### properties
         ../tilde~/properties/Property.cpp \
         ../tilde~/properties/PropertyList.cpp \
@@ -106,11 +106,7 @@ INCLUDEPATH += \
 
 DEFINES += SRCDIR=\\\"$$PWD/\\\"
 
-#macx: {
-#    LIBS += -L"/usr/local/lib/" -lportaudio
-#    LIBS += -L$$OUT_PWD/../../pd-server/src/qt-creator-project -lpd-server
-#    LIBS += -L$$OUT_PWD/../qtpd_ceammc_lib/ -lqtpd_ceammc_lib
-#}
+
 
 
 

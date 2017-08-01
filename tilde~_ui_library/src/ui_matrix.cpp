@@ -23,7 +23,7 @@ class UIpdMatrix;
 
 void UIpdMatrix::updateUI()
 {
-    qtpdUpdate((long)owner(), AtomList(Atom(value())));
+    UIUpdate((long)owner(), AtomList(Atom(value())));
 }
 
 float UIpdMatrix::value()

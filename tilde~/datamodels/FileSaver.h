@@ -8,7 +8,7 @@
 class QString;
 class QFile;
 
-namespace qtpd {
+namespace tilde {
 
 class PatchWindow;
 

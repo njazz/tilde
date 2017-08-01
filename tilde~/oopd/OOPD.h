@@ -24,7 +24,7 @@
 using namespace std;
 using namespace ceammc;
 
-namespace qtpd {
+namespace tilde {
 
 // ------------------------------------------------------------
 // typedefs

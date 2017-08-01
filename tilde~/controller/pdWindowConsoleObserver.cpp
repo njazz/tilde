@@ -4,7 +4,7 @@
 #include "pdWindowConsoleObserver.h"
 #include "PdWindow.h"
 
-namespace qtpd {
+namespace tilde {
 
 void PdWindowConsoleObserver::update()
 {

@@ -816,7 +816,7 @@ EXTERN int pd_getdspstate(void);
 }
 #endif
 
-// Qtpd
+// tilde~
 typedef struct _loadedlist
 {
     struct _loadedlist *ll_next;

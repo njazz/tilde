@@ -17,7 +17,7 @@ class UIpdToggle;
 
  void UIpdToggle::updateUI()
 {
-    qtpdUpdate((long)owner(), AtomList(Atom(value())));
+    UIUpdate((long)owner(), AtomList(Atom(value())));
 }
 
 UIpdToggle::UIpdToggle(const PdArgs& a)

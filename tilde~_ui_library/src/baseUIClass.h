@@ -5,7 +5,7 @@
 #include <ceammc_object.h>
 #include <pdUpdate.hpp>
 
-#include "qtpd_ui_library/qtpd_ui_library.h"
+#include "tilde~_ui_library/tilde~_ui_library.h"
 
 namespace ceammc {
 class BaseUIObject : public BaseObject {
@@ -17,4 +17,4 @@ public:
 };
 }
 
-#endif // QTPD_UI_LIBRARY_GLOBAL_H
+#endif

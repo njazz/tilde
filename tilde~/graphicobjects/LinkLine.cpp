@@ -3,7 +3,7 @@
 
 #include "LinkLine.h"
 
-namespace qtpd{
+namespace tilde{
 
 
 void LinkLine::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*)
