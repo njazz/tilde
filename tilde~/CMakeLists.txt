@@ -5,6 +5,10 @@ set(CMAKE_CXX_STANDARD 11)
 
 set(CMAKE_AUTOMOC ON)
 
+if (APPLE)
+	set(CMAKE_MACOSX_RPATH FALSE)
+endif()
+
 project(tilde~)
 
 find_package(Qt5Core REQUIRED)
@@ -289,7 +293,17 @@ QT5_ADD_RESOURCES( RES_SOURCES ${RESOURCES} )
 QT5_WRAP_UI( UI_HEADERS ${UIS} )
 QT5_WRAP_CPP( MOC_SRCS ${MOC_HEADERS} )
 
-add_executable(tilde~ ${SOURCES} ${RES_SOURCES} ${UI_HEADERS} ${PYTHON_SOURCES} ${PYTHON_HEADERS} )
+##############
+
+set(MACOSX_BUNDLE_ICON_FILE tilde~.icns)
+
+set(myApp_ICON ${CMAKE_CURRENT_SOURCE_DIR}/icons/tilde~.icns)
+set_source_files_properties(${myApp_ICON} PROPERTIES
+       MACOSX_PACKAGE_LOCATION "Resources")
+
+##############
+
+add_executable(tilde~ ${SOURCES} ${RES_SOURCES} ${UI_HEADERS} ${PYTHON_SOURCES} ${PYTHON_HEADERS}  ${myApp_ICON})
 qt5_use_modules(tilde~ Core Gui Widgets)
 
 LINK_DIRECTORIES(
@@ -298,7 +312,11 @@ LINK_DIRECTORIES(
 )
 target_link_libraries(tilde~ ${QT_LIBRARIES} ${LIBS} ${PYTHON_LIBS})
 
-##############
+if (APPLE)
+    set_target_properties(tilde~ PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_SOURCE_DIR}/cmake/Info.plist.in)
+endif ()
+
+###############
 
 # generate proper GUI program on specified platform
 if(WIN32) # Check if we are on Windows
