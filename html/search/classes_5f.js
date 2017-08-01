@@ -12,7 +12,7 @@ var searchData=
   ['_5flinetraverser',['_linetraverser',['../struct__linetraverser.html',1,'']]],
   ['_5floadedlist',['_loadedlist',['../struct__loadedlist.html',1,'']]],
   ['_5fparentwidgetbehavior',['_parentwidgetbehavior',['../struct__parentwidgetbehavior.html',1,'']]],
-  ['_5fpatchcordasnumbers',['_patchcordAsNumbers',['../structqtpd_1_1__patchcord_as_numbers.html',1,'qtpd']]],
+  ['_5fpatchcordasnumbers',['_patchcordAsNumbers',['../structtilde_1_1__patchcord_as_numbers.html',1,'tilde']]],
   ['_5fresample',['_resample',['../struct__resample.html',1,'']]],
   ['_5fsampleint_5funion',['_sampleint_union',['../union__sampleint__union.html',1,'']]],
   ['_5fscalar',['_scalar',['../struct__scalar.html',1,'']]],

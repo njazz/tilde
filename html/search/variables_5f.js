@@ -2,10 +2,10 @@ var searchData=
 [
   ['_5farray',['_array',['../m__pd_8h.html#a378ec3cbd02cb10aaaad80fc99efbeff',1,'m_pd.h']]],
   ['_5fbinbuf',['_binbuf',['../m__pd_8h.html#a1b552352d2562a8ae63d9c8c38c062ee',1,'m_pd.h']]],
-  ['_5fcanvas',['_canvas',['../classqtpd_1_1_o_o_p_d_class_base.html#ab36067930bef9e8daa886150e517ef63',1,'qtpd::OOPDClassBase']]],
+  ['_5fcanvas',['_canvas',['../classtilde_1_1_o_o_p_d_class_base.html#a179142b2f2aa5d574c7a01d19226d867',1,'tilde::OOPDClassBase']]],
   ['_5fcanvasenvironment',['_canvasenvironment',['../g__canvas_8h.html#aa3e05fd8d08a6589248f546c1718f1ac',1,'g_canvas.h']]],
   ['_5fclass',['_class',['../m__pd_8h.html#a453f93c247a3140922e3e58c32488781',1,'m_pd.h']]],
-  ['_5fclassname',['_className',['../classqtpd_1_1_o_o_p_d_class_base.html#af49aba2510e177e17ffb43fd18bb1b4e',1,'qtpd::OOPDClassBase']]],
+  ['_5fclassname',['_className',['../classtilde_1_1_o_o_p_d_class_base.html#a9b8a136ce27e80f360ac3cd39b87e845',1,'tilde::OOPDClassBase']]],
   ['_5fclock',['_clock',['../m__pd_8h.html#a5295ba0b52ba13b2ae9726479297b103',1,'m_pd.h']]],
   ['_5ffielddesc',['_fielddesc',['../g__canvas_8h.html#a9531b08b4d261cdbfb0882af6d6b9b19',1,'g_canvas.h']]],
   ['_5fgarray',['_garray',['../m__pd_8h.html#a6e4caeefccbf81225c65c3f229c5469d',1,'m_pd.h']]],
@@ -15,12 +15,12 @@ var searchData=
   ['_5finlet',['_inlet',['../m__pd_8h.html#a7fc6c4afc1cfd2875b4c43e83bd8cb9b',1,'m_pd.h']]],
   ['_5foutconnect',['_outconnect',['../m__pd_8h.html#ab2ea393a42adae9f8e68312c3e1947d2',1,'m_pd.h']]],
   ['_5foutlet',['_outlet',['../m__pd_8h.html#af6077f40dc89e4c6fa0e6e21e1609f1f',1,'m_pd.h']]],
-  ['_5fparent',['_parent',['../classqtpd_1_1_o_p_instance.html#aca34361b179cf26aad9dfe263464a6e8',1,'qtpd::OPInstance']]],
+  ['_5fparent',['_parent',['../classtilde_1_1_o_p_instance.html#a401e28d8b9145f4814a0b49d6bfc928d',1,'tilde::OPInstance']]],
   ['_5fparentwidgetbehavior',['_parentwidgetbehavior',['../m__pd_8h.html#a40419d9946c08905e1311996f9c13f1b',1,'m_pd.h']]],
-  ['_5fpatchwindow',['_patchWindow',['../classqtpd_1_1_o_o_p_d_class_base.html#aa0e2ab43d981d1bd901eb700055fdecb',1,'qtpd::OOPDClassBase']]],
+  ['_5fpatchwindow',['_patchWindow',['../classtilde_1_1_o_o_p_d_class_base.html#a32a296847d7148e46a3e3f197ea79716',1,'tilde::OOPDClassBase']]],
   ['_5fpdinstance',['_pdinstance',['../m__pd_8h.html#a4c152a89162bfbab608b0fc6be7ed9a8',1,'m_pd.h']]],
   ['_5frtext',['_rtext',['../g__canvas_8h.html#acd49421bf2c4093bc39f9c4c6bd630a1',1,'g_canvas.h']]],
-  ['_5fsymbol',['_symbol',['../classqtpd_1_1_o_o_p_d_class_base.html#a330f2b1a7b90d671e11141bd1f9ddb48',1,'qtpd::OOPDClassBase']]],
+  ['_5fsymbol',['_symbol',['../classtilde_1_1_o_o_p_d_class_base.html#ae0660ddc7993f50a443752dbfac8dc6a',1,'tilde::OOPDClassBase']]],
   ['_5ftscalar',['_tscalar',['../g__canvas_8h.html#a4f119f327096049bb757ceedb95bacf3',1,'g_canvas.h']]],
   ['_5fwidgetbehavior',['_widgetbehavior',['../m__pd_8h.html#a12cb18cb5fb412fda5f9956716b983a8',1,'m_pd.h']]]
 ];

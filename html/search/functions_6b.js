@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['keeppdobject',['keepPdObject',['../classqtpd_1_1_canvas_view.html#a49e28d739ed4faf2a400812390499900',1,'qtpd::CanvasView']]],
-  ['keypressevent',['keyPressEvent',['../classqtpd_1_1_patch_window.html#a34852d3b857bd5c44472b208ee7dcdf8',1,'qtpd::PatchWindow']]],
-  ['keyreleaseevent',['keyReleaseEvent',['../classqtpd_1_1_patch_window.html#ae3068ea0a740fc38c62bf56e26974fec',1,'qtpd::PatchWindow']]]
+  ['keeppdobject',['keepPdObject',['../classtilde_1_1_canvas_view.html#ac27c1cda0c1ca3d533bfa2f87c7bbbc5',1,'tilde::CanvasView']]],
+  ['keypressevent',['keyPressEvent',['../classtilde_1_1_patch_window.html#acb6437b6bcb0ba3bea539fbcb6107204',1,'tilde::PatchWindow']]],
+  ['keyreleaseevent',['keyReleaseEvent',['../classtilde_1_1_patch_window.html#a81949b91571e442fb98ff067f44788ed',1,'tilde::PatchWindow']]]
 ];

@@ -97,50 +97,50 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00013"></a>00013 
 <a name="l00014"></a>00014 <span class="keyword">using namespace </span>std;
 <a name="l00015"></a>00015 
-<a name="l00016"></a>00016 <span class="keyword">namespace </span>qtpd {
+<a name="l00016"></a>00016 <span class="keyword">namespace </span>tilde {
 <a name="l00017"></a>00017 
-<a name="l00018"></a><a class="code" href="namespaceqtpd.html#ac28cb6dedfd57a49e7f4cbb8b2adbaf6">00018</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_u_i_object.html">UIObject</a>;
+<a name="l00018"></a><a class="code" href="namespacetilde.html#a009fd80ba774db6844dbbd1657d96348">00018</a> <span class="keyword">class </span><a class="code" href="classtilde_1_1_u_i_object.html">UIObject</a>;
 <a name="l00019"></a>00019 
-<a name="l00020"></a>00020 <span class="keyword">typedef</span> map&lt;string, Property*&gt; <a class="code" href="namespaceqtpd.html#ac28cb6dedfd57a49e7f4cbb8b2adbaf6">UIPropertyData</a>;
-<a name="l00021"></a><a class="code" href="namespaceqtpd.html#ad4a722dfb1e4df75ba87f8724b719306">00021</a> <span class="keyword">typedef</span> map&lt;string, UIPropertyData*&gt; <a class="code" href="namespaceqtpd.html#ad4a722dfb1e4df75ba87f8724b719306">UIPropertyGroups</a>;
+<a name="l00020"></a>00020 <span class="keyword">typedef</span> map&lt;string, Property*&gt; <a class="code" href="namespacetilde.html#a009fd80ba774db6844dbbd1657d96348">UIPropertyData</a>;
+<a name="l00021"></a><a class="code" href="namespacetilde.html#a84fe1a4b9b3e1aa001a9d7d3b8213c56">00021</a> <span class="keyword">typedef</span> map&lt;string, UIPropertyData*&gt; <a class="code" href="namespacetilde.html#a84fe1a4b9b3e1aa001a9d7d3b8213c56">UIPropertyGroups</a>;
 <a name="l00022"></a>00022 
-<a name="l00023"></a><a class="code" href="namespaceqtpd.html#ad8915d229afea7f0519ffbce4390f35e">00023</a> <span class="keyword">typedef</span> map&lt;string, Property*&gt;::iterator <a class="code" href="namespaceqtpd.html#ad8915d229afea7f0519ffbce4390f35e">UIPropertyDataIterator</a>;
-<a name="l00024"></a><a class="code" href="namespaceqtpd.html#aa8f99d0c04b5ee76fb8387fec43a3c53">00024</a> <span class="keyword">typedef</span> map&lt;string, UIPropertyData*&gt;::iterator <a class="code" href="namespaceqtpd.html#aa8f99d0c04b5ee76fb8387fec43a3c53">UIPropertyGroupIterator</a>;
+<a name="l00023"></a><a class="code" href="namespacetilde.html#af5c6e8f33390c41750016c740adbab5a">00023</a> <span class="keyword">typedef</span> map&lt;string, Property*&gt;::iterator <a class="code" href="namespacetilde.html#af5c6e8f33390c41750016c740adbab5a">UIPropertyDataIterator</a>;
+<a name="l00024"></a><a class="code" href="namespacetilde.html#ab5dc86a99d738da91b5aba797a413d44">00024</a> <span class="keyword">typedef</span> map&lt;string, UIPropertyData*&gt;::iterator <a class="code" href="namespacetilde.html#ab5dc86a99d738da91b5aba797a413d44">UIPropertyGroupIterator</a>;
 <a name="l00025"></a>00025 
 <a name="l00026"></a><a class="code" href="_property_list_8h.html#ac912e7907abcb03f00d5011566dd2bba">00026</a> <span class="preprocessor">#define PROPERTY_LISTENER(x, y) connect(objectData()-&gt;properties()-&gt;get(x), &amp;Property::changed, this, y)</span>
 <a name="l00027"></a><a class="code" href="_property_list_8h.html#aa54cd9eeed894075652d44c41ba861fc">00027</a> <span class="preprocessor"></span><span class="preprocessor">#define PROPERTY_DISCONNECT_LISTENER(x, y) disconnect(objectData()-&gt;properties()-&gt;get(x), &amp;Property::changed, this, y)</span>
 <a name="l00028"></a><a class="code" href="_property_list_8h.html#a407a544835122df7578d61ffad7d9ea9">00028</a> <span class="preprocessor"></span><span class="preprocessor">#define PROPERTY_SET(x, y) objectData()-&gt;properties()-&gt;set(x, y)</span>
 <a name="l00029"></a><a class="code" href="_property_list_8h.html#ae7a2aac22b00c4c234a1b07891c808d9">00029</a> <span class="preprocessor"></span><span class="preprocessor">#define PROPERTY_GET(x) objectData()-&gt;properties()-&gt;get(x)</span>
 <a name="l00030"></a>00030 <span class="preprocessor"></span>
-<a name="l00034"></a><a class="code" href="classqtpd_1_1_property_list.html">00034</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_property_list.html" title="Property handling class for ui object - property list.">PropertyList</a> : <span class="keyword">public</span> QObject {
+<a name="l00034"></a><a class="code" href="classtilde_1_1_property_list.html">00034</a> <span class="keyword">class </span><a class="code" href="classtilde_1_1_property_list.html" title="Property handling class for ui object - property list.">PropertyList</a> : <span class="keyword">public</span> QObject {
 <a name="l00035"></a>00035     Q_OBJECT
 <a name="l00036"></a>00036 
 <a name="l00037"></a>00037 <span class="keyword">private</span>:
-<a name="l00038"></a>00038     <a class="code" href="namespaceqtpd.html#ac28cb6dedfd57a49e7f4cbb8b2adbaf6">UIPropertyData</a> _data;
-<a name="l00039"></a>00039     <a class="code" href="namespaceqtpd.html#ad4a722dfb1e4df75ba87f8724b719306">UIPropertyGroups</a> _groups;
+<a name="l00038"></a>00038     <a class="code" href="namespacetilde.html#a009fd80ba774db6844dbbd1657d96348">UIPropertyData</a> _data;
+<a name="l00039"></a>00039     <a class="code" href="namespacetilde.html#a84fe1a4b9b3e1aa001a9d7d3b8213c56">UIPropertyGroups</a> _groups;
 <a name="l00040"></a>00040 
 <a name="l00041"></a>00041 <span class="keyword">public</span>:
-<a name="l00042"></a><a class="code" href="classqtpd_1_1_property_list.html#a66afd40f65771ed469a3a74d1446d4f5">00042</a>     <a class="code" href="classqtpd_1_1_property_list.html#a66afd40f65771ed469a3a74d1446d4f5">PropertyList</a>(){};
+<a name="l00042"></a><a class="code" href="classtilde_1_1_property_list.html#afffadff3ab2d60a5dfd95d67b3d9fa44">00042</a>     <a class="code" href="classtilde_1_1_property_list.html#afffadff3ab2d60a5dfd95d67b3d9fa44">PropertyList</a>(){};
 <a name="l00043"></a>00043 
-<a name="l00044"></a>00044     <a class="code" href="namespaceqtpd.html#ac28cb6dedfd57a49e7f4cbb8b2adbaf6">UIPropertyData</a>* group(QString grpName);
-<a name="l00045"></a>00045     <a class="code" href="namespaceqtpd.html#ac28cb6dedfd57a49e7f4cbb8b2adbaf6">UIPropertyData</a>* fromGroup(QString grpName);
+<a name="l00044"></a>00044     <a class="code" href="namespacetilde.html#a009fd80ba774db6844dbbd1657d96348">UIPropertyData</a>* group(QString grpName);
+<a name="l00045"></a>00045     <a class="code" href="namespacetilde.html#a009fd80ba774db6844dbbd1657d96348">UIPropertyData</a>* fromGroup(QString grpName);
 <a name="l00046"></a>00046 
 <a name="l00047"></a>00047     <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;
-<a name="l00048"></a><a class="code" href="classqtpd_1_1_property_list.html#abfd4e70760aa06560c464b3a7e8a438a">00048</a>     <span class="keywordtype">void</span> create(<span class="keywordtype">string</span> pName, <span class="keywordtype">string</span> pGroup, QString pVersion, T defaultData)
+<a name="l00048"></a><a class="code" href="classtilde_1_1_property_list.html#a16917686077fced1fde54d5536cacdcc">00048</a>     <span class="keywordtype">void</span> create(<span class="keywordtype">string</span> pName, <span class="keywordtype">string</span> pGroup, QString pVersion, T defaultData)
 <a name="l00049"></a>00049     {
-<a name="l00050"></a>00050         <a class="code" href="classqtpd_1_1_property.html" title="property handling class for ui object.">Property</a>* newP = <span class="keyword">new</span> <a class="code" href="classqtpd_1_1_property.html" title="property handling class for ui object.">Property</a>;
+<a name="l00050"></a>00050         <a class="code" href="classtilde_1_1_property.html" title="property handling class for ui object.">Property</a>* newP = <span class="keyword">new</span> <a class="code" href="classtilde_1_1_property.html" title="property handling class for ui object.">Property</a>;
 <a name="l00051"></a>00051 
 <a name="l00052"></a>00052         <span class="comment">//newP-&gt;setGroup(pGroup);</span>
-<a name="l00053"></a>00053         newP-&gt;<a class="code" href="classqtpd_1_1_property.html#aac78370e876061b0b94b28b4f5700dc8" title="&gt; copy current value to default value">setVersion</a>(pVersion);
-<a name="l00054"></a>00054         newP-&gt;<a class="code" href="classqtpd_1_1_property.html#aa865238af41d8678396ed065e00007c7">set</a>(defaultData);
-<a name="l00055"></a>00055         newP-&gt;<a class="code" href="classqtpd_1_1_property.html#a4fc8ab7435e1782d44d7b0f2dbe7970e">copyDataToDefault</a>();
+<a name="l00053"></a>00053         newP-&gt;<a class="code" href="classtilde_1_1_property.html#a647a86d69f296054c5c6529cf80397d4" title="&gt; copy current value to default value">setVersion</a>(pVersion);
+<a name="l00054"></a>00054         newP-&gt;<a class="code" href="classtilde_1_1_property.html#a2cdecefd74bc601c0cd3493d54b839dc">set</a>(defaultData);
+<a name="l00055"></a>00055         newP-&gt;<a class="code" href="classtilde_1_1_property.html#a59f28ce08ee32e316326364e23e71337">copyDataToDefault</a>();
 <a name="l00056"></a>00056 
 <a name="l00057"></a>00057         _data[pName] = newP;
 <a name="l00058"></a>00058         <span class="comment">//fix</span>
 <a name="l00059"></a>00059 
-<a name="l00060"></a>00060         <a class="code" href="namespaceqtpd.html#ac28cb6dedfd57a49e7f4cbb8b2adbaf6">UIPropertyData</a>* grp = _groups[pGroup];
+<a name="l00060"></a>00060         <a class="code" href="namespacetilde.html#a009fd80ba774db6844dbbd1657d96348">UIPropertyData</a>* grp = _groups[pGroup];
 <a name="l00061"></a>00061         <span class="keywordflow">if</span> (!grp)
-<a name="l00062"></a>00062             grp = <span class="keyword">new</span> <a class="code" href="namespaceqtpd.html#ac28cb6dedfd57a49e7f4cbb8b2adbaf6">UIPropertyData</a>();
+<a name="l00062"></a>00062             grp = <span class="keyword">new</span> <a class="code" href="namespacetilde.html#a009fd80ba774db6844dbbd1657d96348">UIPropertyData</a>();
 <a name="l00063"></a>00063         (*grp)[pName] = newP;
 <a name="l00064"></a>00064         _groups[pGroup] = grp;
 <a name="l00065"></a>00065     }
@@ -148,17 +148,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00067"></a>00067     <span class="comment">// ----------</span>
 <a name="l00068"></a>00068 
 <a name="l00069"></a>00069     <span class="keyword">template</span> &lt;<span class="keyword">typename</span> U&gt;
-<a name="l00070"></a><a class="code" href="classqtpd_1_1_property_list.html#a3c616e73f77902b3e212abb23afea8d2">00070</a>     <span class="keywordtype">void</span> <span class="keyword">set</span>(<span class="keywordtype">string</span> pName, U value)
+<a name="l00070"></a><a class="code" href="classtilde_1_1_property_list.html#a19498f5ee69023abd08803a05e39b886">00070</a>     <span class="keywordtype">void</span> <span class="keyword">set</span>(<span class="keywordtype">string</span> pName, U value)
 <a name="l00071"></a>00071     {
 <a name="l00072"></a>00072         <span class="keywordflow">if</span> (_data[pName]) {
-<a name="l00073"></a>00073             _data[pName]-&gt;<a class="code" href="classqtpd_1_1_property.html#aa865238af41d8678396ed065e00007c7">set</a>(value);
+<a name="l00073"></a>00073             _data[pName]-&gt;<a class="code" href="classtilde_1_1_property.html#a2cdecefd74bc601c0cd3493d54b839dc">set</a>(value);
 <a name="l00074"></a>00074             <span class="comment">//            emit propertyChangedSignal(QString(pName.c_str()));</span>
 <a name="l00075"></a>00075 
 <a name="l00076"></a>00076             emit <span class="keyword">get</span>(pName.c_str())-&gt;changed();
 <a name="l00077"></a>00077         }
 <a name="l00078"></a>00078     };
 <a name="l00079"></a>00079 
-<a name="l00080"></a>00080     <a class="code" href="classqtpd_1_1_property.html" title="property handling class for ui object.">Property</a>* <span class="keyword">get</span>(QString pName);
+<a name="l00080"></a>00080     <a class="code" href="classtilde_1_1_property.html" title="property handling class for ui object.">Property</a>* <span class="keyword">get</span>(QString pName);
 <a name="l00081"></a>00081 
 <a name="l00082"></a>00082     <span class="comment">//todo</span>
 <a name="l00083"></a>00083 
@@ -178,7 +178,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00101"></a>00101 
 <a name="l00106"></a>00106     QStringList names();
 <a name="l00107"></a>00107 
-<a name="l00113"></a>00113     QStringList names(<a class="code" href="namespaceqtpd.html#ac28cb6dedfd57a49e7f4cbb8b2adbaf6">UIPropertyData</a>* data1);
+<a name="l00113"></a>00113     QStringList names(<a class="code" href="namespacetilde.html#a009fd80ba774db6844dbbd1657d96348">UIPropertyData</a>* data1);
 <a name="l00114"></a>00114 
 <a name="l00119"></a>00119     QStringList groupNames();
 <a name="l00120"></a>00120 
@@ -220,7 +220,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 31 2017 14:17:53 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 1 2017 08:32:21 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

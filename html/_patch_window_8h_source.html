@@ -87,16 +87,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &quot;<a class="code" href="_base_window_8h.html">BaseWindow.h</a>&quot;</span>
 <a name="l00005"></a>00005 
-<a name="l00006"></a>00006 <span class="keyword">namespace </span>qtpd {
+<a name="l00006"></a>00006 <span class="keyword">namespace </span>tilde {
 <a name="l00007"></a>00007 
 <a name="l00008"></a>00008 <span class="keyword">class </span>CanvasView;
 <a name="l00009"></a>00009 <span class="keyword">class </span>UIBox;
 <a name="l00010"></a>00010 <span class="keyword">class </span>PatchWindowController;
 <a name="l00011"></a>00011 
-<a name="l00014"></a><a class="code" href="classqtpd_1_1_patch_window.html">00014</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1_base_window.html" title="Base class for windows (patch, pd)">BaseWindow</a> {
+<a name="l00014"></a><a class="code" href="classtilde_1_1_patch_window.html">00014</a> <span class="keyword">class </span><a class="code" href="classtilde_1_1_patch_window.html" title="Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...">PatchWindow</a> : <span class="keyword">public</span> <a class="code" href="classtilde_1_1_base_window.html" title="Base class for windows (patch, pd)">BaseWindow</a> {
 <a name="l00015"></a>00015 
 <a name="l00016"></a>00016 <span class="keyword">private</span>:
-<a name="l00017"></a>00017     <a class="code" href="classqtpd_1_1_patch_window_controller.html" title="The Patch window controller.">PatchWindowController</a>* _controller;
+<a name="l00017"></a>00017     <a class="code" href="classtilde_1_1_patch_window_controller.html" title="The Patch window controller.">PatchWindowController</a>* _controller;
 <a name="l00018"></a>00018 
 <a name="l00019"></a>00019     QScrollArea* _scroll;
 <a name="l00020"></a>00020 
@@ -164,7 +164,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00083"></a>00083 
 <a name="l00084"></a>00084     QAction* zoom100Act;
 <a name="l00085"></a>00085 
-<a name="l00086"></a>00086     <a class="code" href="classqtpd_1_1_canvas_view.html" title="Canvas View - used by Patch window controller.">CanvasView</a>* _canvasView;
+<a name="l00086"></a>00086     <a class="code" href="classtilde_1_1_canvas_view.html" title="Canvas View - used by Patch window controller.">CanvasView</a>* _canvasView;
 <a name="l00087"></a>00087 
 <a name="l00088"></a>00088 <span class="keyword">private</span> slots:
 <a name="l00089"></a>00089 
@@ -175,62 +175,62 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00094"></a>00094     <span class="keywordtype">void</span> slotMove(<span class="keywordtype">int</span>);
 <a name="l00095"></a>00095 
 <a name="l00096"></a>00096 <span class="keyword">public</span>:
-<a name="l00097"></a>00097     <a class="code" href="classqtpd_1_1_patch_window.html#a69d314b0dd596b5ce889f855fca01764">PatchWindow</a>();
+<a name="l00097"></a>00097     <a class="code" href="classtilde_1_1_patch_window.html#a77eabf4df2befe87f8523ad072f00b9d">PatchWindow</a>();
 <a name="l00098"></a>00098 
-<a name="l00099"></a><a class="code" href="classqtpd_1_1_patch_window.html#a55ba53058c5962b95c518478f0920726">00099</a>     <a class="code" href="classqtpd_1_1_canvas_view.html" title="Canvas View - used by Patch window controller.">CanvasView</a>* <a class="code" href="classqtpd_1_1_patch_window.html#a55ba53058c5962b95c518478f0920726">canvasView</a>() { <span class="keywordflow">return</span> _canvasView; };
-<a name="l00100"></a><a class="code" href="classqtpd_1_1_patch_window.html#a81252e25fb2a3e95779563e3a17c0fbd">00100</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a81252e25fb2a3e95779563e3a17c0fbd">setCanvasView</a>(<a class="code" href="classqtpd_1_1_canvas_view.html" title="Canvas View - used by Patch window controller.">CanvasView</a>* v) { _canvasView = v; }
+<a name="l00099"></a><a class="code" href="classtilde_1_1_patch_window.html#ace1b44ddb1ae8530a0d2a889c75653d1">00099</a>     <a class="code" href="classtilde_1_1_canvas_view.html" title="Canvas View - used by Patch window controller.">CanvasView</a>* <a class="code" href="classtilde_1_1_patch_window.html#ace1b44ddb1ae8530a0d2a889c75653d1">canvasView</a>() { <span class="keywordflow">return</span> _canvasView; };
+<a name="l00100"></a><a class="code" href="classtilde_1_1_patch_window.html#aa35c5e9fe688f12cfbccb675ec1345e4">00100</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_patch_window.html#aa35c5e9fe688f12cfbccb675ec1345e4">setCanvasView</a>(<a class="code" href="classtilde_1_1_canvas_view.html" title="Canvas View - used by Patch window controller.">CanvasView</a>* v) { _canvasView = v; }
 <a name="l00101"></a>00101 
-<a name="l00102"></a>00102     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a9f83e611efcb887018a683b9386d9815">setController</a>(<a class="code" href="classqtpd_1_1_patch_window_controller.html" title="The Patch window controller.">PatchWindowController</a>* c);
-<a name="l00103"></a><a class="code" href="classqtpd_1_1_patch_window.html#a1ff4345e33d74fd202b8f2d9edfad73e">00103</a>     <a class="code" href="classqtpd_1_1_patch_window_controller.html" title="The Patch window controller.">PatchWindowController</a>* <a class="code" href="classqtpd_1_1_patch_window.html#a1ff4345e33d74fd202b8f2d9edfad73e">controller</a>() { <span class="keywordflow">return</span> _controller; } <span class="comment">//temporary!</span>
+<a name="l00102"></a>00102     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_patch_window.html#a8546f42bf9da300c27907088e5f3edb2">setController</a>(<a class="code" href="classtilde_1_1_patch_window_controller.html" title="The Patch window controller.">PatchWindowController</a>* c);
+<a name="l00103"></a><a class="code" href="classtilde_1_1_patch_window.html#aea3c99383c5202cf09cb27de2f329888">00103</a>     <a class="code" href="classtilde_1_1_patch_window_controller.html" title="The Patch window controller.">PatchWindowController</a>* <a class="code" href="classtilde_1_1_patch_window.html#aea3c99383c5202cf09cb27de2f329888">controller</a>() { <span class="keywordflow">return</span> _controller; } <span class="comment">//temporary!</span>
 <a name="l00104"></a>00104 
-<a name="l00105"></a>00105     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a9e0317548dc5606f8df0fe8085d16bec">createActions</a>();
-<a name="l00106"></a>00106     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#aa76806f8177fc8869defa837d2571dc8" title="create all menus">createMenus</a>();
+<a name="l00105"></a>00105     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_patch_window.html#a87cb461262360eb9427625aba475f552">createActions</a>();
+<a name="l00106"></a>00106     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_patch_window.html#a1615267b2cf33abea7615789518821a7" title="create all menus">createMenus</a>();
 <a name="l00107"></a>00107 
 <a name="l00108"></a>00108     <span class="comment">// ----------</span>
-<a name="l00109"></a>00109     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a807011e6778d4478c733ac8ee45a4f0a">moveEvent</a>(QMoveEvent *);
-<a name="l00110"></a>00110     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a00031d2b5c877285c1bdb6f6be41693a">resizeEvent</a>(QResizeEvent* );
+<a name="l00109"></a>00109     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_patch_window.html#a6213881d21be7eafa355e55bd28e23f4">moveEvent</a>(QMoveEvent *);
+<a name="l00110"></a>00110     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_patch_window.html#a25bba44ab39234ad37f5934ca3762835">resizeEvent</a>(QResizeEvent* );
 <a name="l00111"></a>00111 
 <a name="l00112"></a>00112     <span class="comment">//----------------------------------------------------------------------------------------</span>
 <a name="l00113"></a>00113 
 <a name="l00114"></a>00114     <span class="comment">// todo less spaghetti</span>
 <a name="l00115"></a>00115 
-<a name="l00116"></a>00116     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a9dea55bcdf6c35f6394784cfa273cdf1">newObjectBox</a>();
-<a name="l00117"></a>00117     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a83e7f93159893bdaa0082fd6d8c140dc">newMessageBox</a>();
-<a name="l00118"></a>00118     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#ade58be29247e42c7838db5a7b6344539">newFloatBox</a>();
-<a name="l00119"></a>00119     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a403ba665e965bc5e72dc54ef5d9cc5cb">newCommentBox</a>();
-<a name="l00120"></a>00120     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#af4aba12d1c4bc7dc86e23431970c5bcc">newBangBox</a>();
-<a name="l00121"></a>00121     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a44d1c60e80fdef22f4c4fdbb72b62389">newToggleBox</a>();
-<a name="l00122"></a>00122     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#aba7ab9ebe3416a454d82864899296264">newScriptBox</a>();
-<a name="l00123"></a>00123     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a4c5b07b6abb4c4a9e25c3ed0783471bb">newArrayBox</a>();
-<a name="l00124"></a>00124     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a1c16841e77c7c30e67084e0b3c12545a">newSliderBox</a>();
-<a name="l00125"></a>00125     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#ae9f37320787f95dac80c6adc743e1131">newRadioBox</a>();
-<a name="l00126"></a>00126     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#af2d98ca815c2232bd2e20cd3e6a80d6f">newPdClassBox</a>();
-<a name="l00127"></a>00127     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a56ba3f87fe9d52e6b9e0160a6f399082">newPdInstanceBox</a>();
+<a name="l00116"></a>00116     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_patch_window.html#a3e37ffc900a4df7a486df598522dc153">newObjectBox</a>();
+<a name="l00117"></a>00117     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_patch_window.html#a1ce929863fc7544c1aa42154628bf53c">newMessageBox</a>();
+<a name="l00118"></a>00118     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_patch_window.html#a61aecdd9492c694e10325411983a961a">newFloatBox</a>();
+<a name="l00119"></a>00119     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_patch_window.html#a1a9b33855d2922c3593d61b5092eea67">newCommentBox</a>();
+<a name="l00120"></a>00120     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_patch_window.html#aaac169c9d2eb5d37f8028476c4392928">newBangBox</a>();
+<a name="l00121"></a>00121     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_patch_window.html#a3d0f8b7565f5d110f373aa2a5d7ed579">newToggleBox</a>();
+<a name="l00122"></a>00122     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_patch_window.html#a8243f4da9de421d0a64bd9038525f919">newScriptBox</a>();
+<a name="l00123"></a>00123     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_patch_window.html#a8869bfd0e6d8cb57533a24287c2ae883">newArrayBox</a>();
+<a name="l00124"></a>00124     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_patch_window.html#a88696ea9242c0fd0ab62434a67799f36">newSliderBox</a>();
+<a name="l00125"></a>00125     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_patch_window.html#a9e8edb74b9a0bf5f3d629674f2049ec9">newRadioBox</a>();
+<a name="l00126"></a>00126     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_patch_window.html#a019f2d5dba027befb364ee823022b431">newPdClassBox</a>();
+<a name="l00127"></a>00127     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_patch_window.html#af098cb3d94a6416a1913dca5194f56fa">newPdInstanceBox</a>();
 <a name="l00128"></a>00128 
 <a name="l00129"></a>00129     <span class="comment">// ----------------------------------------------------</span>
 <a name="l00130"></a>00130 
-<a name="l00131"></a>00131     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a65452a0d74483f4351d2703898ed22eb" title="creates object TODO move to controller">objectMakerDone</a>();
+<a name="l00131"></a>00131     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_patch_window.html#a700fd6b578e8b92a05cdf87994436652" title="creates object TODO move to controller">objectMakerDone</a>();
 <a name="l00132"></a>00132 
-<a name="l00133"></a>00133     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#af36a7d056eb78261cd495cda1c40e8b9">setEditMode</a>();
-<a name="l00134"></a>00134     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a0c7818b279e4fa727102b64f0fab95b5">setGridVisible</a>();
-<a name="l00135"></a>00135     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#ac0135abb9a3e8dab5133d50416b19415">setGridSnap</a>();
+<a name="l00133"></a>00133     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_patch_window.html#ac567e08049b6836d058237342aa536a4">setEditMode</a>();
+<a name="l00134"></a>00134     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_patch_window.html#ad9118d3e40f25b2aab6e0417e0648334">setGridVisible</a>();
+<a name="l00135"></a>00135     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_patch_window.html#ac74d23604f5eeb3facb182aeef28c5a5">setGridSnap</a>();
 <a name="l00136"></a>00136 
 <a name="l00137"></a>00137     <span class="comment">// -------</span>
 <a name="l00138"></a>00138 
-<a name="l00139"></a>00139     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a9cf14c7e3179165fb9569516e5879879">closeEvent</a>(QCloseEvent* event);
+<a name="l00139"></a>00139     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_patch_window.html#abf6010e793fd6337a2fbc2058f055d1c">closeEvent</a>(QCloseEvent* event);
 <a name="l00140"></a>00140 
 <a name="l00141"></a>00141     <span class="comment">// -------</span>
 <a name="l00142"></a>00142 
-<a name="l00143"></a>00143     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a30e20cd05bcbd200b0d00cb258eb7dfe" title="set file name when opening patch file">setFileName</a>(QString fname);
+<a name="l00143"></a>00143     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_patch_window.html#ac947dc19602ff675dc195030de8938ca" title="set file name when opening patch file">setFileName</a>(QString fname);
 <a name="l00144"></a>00144 
-<a name="l00147"></a>00147     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a34852d3b857bd5c44472b208ee7dcdf8" title="keys: ctrl for temporary lock; esc to stop editing actions">keyPressEvent</a>(QKeyEvent* event);
-<a name="l00148"></a>00148     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#ae3068ea0a740fc38c62bf56e26974fec">keyReleaseEvent</a>(QKeyEvent* event);
+<a name="l00147"></a>00147     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_patch_window.html#acb6437b6bcb0ba3bea539fbcb6107204" title="keys: ctrl for temporary lock; esc to stop editing actions">keyPressEvent</a>(QKeyEvent* event);
+<a name="l00148"></a>00148     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_patch_window.html#a81949b91571e442fb98ff067f44788ed">keyReleaseEvent</a>(QKeyEvent* event);
 <a name="l00149"></a>00149 
 <a name="l00150"></a>00150     <span class="comment">//</span>
-<a name="l00151"></a>00151     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a8ea3ccc8ffe0ac35392c53e5b55e3145">zoomIn</a>();
-<a name="l00152"></a>00152     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a7ba176eb5750dba2e5903e630495d848">zoomOut</a>();
+<a name="l00151"></a>00151     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_patch_window.html#ab73a86778518832d9b18840c99dd75e8">zoomIn</a>();
+<a name="l00152"></a>00152     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_patch_window.html#a1efdd168fb5fa8cd81230dd2d606a92d">zoomOut</a>();
 <a name="l00153"></a>00153 
-<a name="l00154"></a>00154     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_patch_window.html#a3ce480ee246b0337800635c21ba3104f">zoom100</a>();
+<a name="l00154"></a>00154     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_patch_window.html#a2f246092389665430cd191e70bfa16f0">zoom100</a>();
 <a name="l00155"></a>00155 };
 <a name="l00156"></a>00156 }
 <a name="l00157"></a>00157 
@@ -253,7 +253,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 31 2017 14:17:53 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 1 2017 08:32:21 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

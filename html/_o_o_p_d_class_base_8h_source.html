@@ -105,41 +105,41 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00021"></a>00021 <span class="keyword">using namespace </span>std;
 <a name="l00022"></a>00022 <span class="keyword">using namespace </span>ceammc;
 <a name="l00023"></a>00023 
-<a name="l00024"></a>00024 <span class="keyword">namespace </span>qtpd {
+<a name="l00024"></a>00024 <span class="keyword">namespace </span>tilde {
 <a name="l00025"></a>00025 
 <a name="l00026"></a>00026 <span class="comment">//class OPClass;</span>
 <a name="l00027"></a>00027 <span class="comment">//class OPInstance;</span>
 <a name="l00028"></a>00028 <span class="keyword">class </span>PatchWindow;
 <a name="l00029"></a>00029 <span class="keyword">class </span>PatchWindowController;
 <a name="l00030"></a>00030 
-<a name="l00034"></a><a class="code" href="classqtpd_1_1_o_p_outputs.html">00034</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_o_p_outputs.html" title="stores pointers to t_outlets of pd objects">OPOutputs</a> {
+<a name="l00034"></a><a class="code" href="classtilde_1_1_o_p_outputs.html">00034</a> <span class="keyword">class </span><a class="code" href="classtilde_1_1_o_p_outputs.html" title="stores pointers to t_outlets of pd objects">OPOutputs</a> {
 <a name="l00035"></a>00035 <span class="keyword">private</span>:
 <a name="l00036"></a>00036     vector&lt;t_outlet*&gt; _outlets;
 <a name="l00037"></a>00037 
 <a name="l00038"></a>00038 <span class="keyword">public</span>:
-<a name="l00039"></a><a class="code" href="classqtpd_1_1_o_p_outputs.html#a759016a37ec59f7ce12b8b9bd35baccb">00039</a>     <span class="keywordtype">void</span> addOutlet(<a class="code" href="m__pd_8h.html#a46dc692dc9e70ff60679462933409d90">t_outlet</a>* outlet)
+<a name="l00039"></a><a class="code" href="classtilde_1_1_o_p_outputs.html#a80b80d57c6e9ee0b71027b68caa74c02">00039</a>     <span class="keywordtype">void</span> addOutlet(<a class="code" href="m__pd_8h.html#a46dc692dc9e70ff60679462933409d90">t_outlet</a>* outlet)
 <a name="l00040"></a>00040     {
 <a name="l00041"></a>00041         _outlets.push_back(outlet);
 <a name="l00042"></a>00042     }
 <a name="l00043"></a>00043 
-<a name="l00044"></a><a class="code" href="classqtpd_1_1_o_p_outputs.html#a8ebb422405e7679a74b91224cf84d5ee">00044</a>     <span class="keywordtype">void</span> freeOutlet(<a class="code" href="m__pd_8h.html#a46dc692dc9e70ff60679462933409d90">t_outlet</a>* outlet)
+<a name="l00044"></a><a class="code" href="classtilde_1_1_o_p_outputs.html#a176ab376d99ab1324d5a771d5ea47a55">00044</a>     <span class="keywordtype">void</span> freeOutlet(<a class="code" href="m__pd_8h.html#a46dc692dc9e70ff60679462933409d90">t_outlet</a>* outlet)
 <a name="l00045"></a>00045     {
 <a name="l00046"></a>00046         _outlets.erase(<span class="keyword">remove</span>(_outlets.begin(), _outlets.end(), outlet), _outlets.end());
 <a name="l00047"></a>00047     }
 <a name="l00048"></a>00048 
-<a name="l00049"></a><a class="code" href="classqtpd_1_1_o_p_outputs.html#a8d404ef038866513b33cedeecd4778ca">00049</a>     <span class="keywordtype">void</span> clear()
+<a name="l00049"></a><a class="code" href="classtilde_1_1_o_p_outputs.html#a333be7296dabcaeeb67a8235252ef64f">00049</a>     <span class="keywordtype">void</span> clear()
 <a name="l00050"></a>00050     {
-<a name="l00051"></a>00051         _outlets.<a class="code" href="classqtpd_1_1_o_p_outputs.html#a8d404ef038866513b33cedeecd4778ca">clear</a>();
+<a name="l00051"></a>00051         _outlets.<a class="code" href="classtilde_1_1_o_p_outputs.html#a333be7296dabcaeeb67a8235252ef64f">clear</a>();
 <a name="l00052"></a>00052     }
 <a name="l00053"></a>00053 
-<a name="l00054"></a><a class="code" href="classqtpd_1_1_o_p_outputs.html#ad7916bf43f23cd09ce7ce6ccf30fda95">00054</a>     <span class="keywordtype">void</span> outBang()
+<a name="l00054"></a><a class="code" href="classtilde_1_1_o_p_outputs.html#a7cbd12a14f90a0e0807d017301c29e1f">00054</a>     <span class="keywordtype">void</span> outBang()
 <a name="l00055"></a>00055     {
 <a name="l00056"></a>00056         <span class="keywordflow">for</span> (vector&lt;t_outlet*&gt;::iterator it = _outlets.begin(); it != _outlets.end(); ++it) {
 <a name="l00057"></a>00057             <a class="code" href="m__pd_8h.html#ada1bf5f710a58ff4c741b0b01ec30b66">outlet_bang</a>(*it);
 <a name="l00058"></a>00058         }
 <a name="l00059"></a>00059     }
 <a name="l00060"></a>00060 
-<a name="l00061"></a><a class="code" href="classqtpd_1_1_o_p_outputs.html#ab1594f6979198cc0f86d626f32fc293d">00061</a>     <span class="keywordtype">void</span> outList(<a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> list)
+<a name="l00061"></a><a class="code" href="classtilde_1_1_o_p_outputs.html#a632b332d768a58074715af98eac5ff03">00061</a>     <span class="keywordtype">void</span> outList(<a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> list)
 <a name="l00062"></a>00062     {
 <a name="l00063"></a>00063         <span class="keywordflow">for</span> (vector&lt;t_outlet*&gt;::iterator it = _outlets.begin(); it != _outlets.end(); ++it) {
 <a name="l00064"></a>00064             list.<a class="code" href="classceammc_1_1_atom_list.html#a0c9b1478f4d137abaea403b33cff6c2c">output</a>(*it);
@@ -147,7 +147,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00066"></a>00066     }
 <a name="l00067"></a>00067 };
 <a name="l00068"></a>00068 
-<a name="l00072"></a><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html">00072</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html" title="base data structure for class and instance: name, canvas, symbol">OOPDClassBase</a> {
+<a name="l00072"></a><a class="code" href="classtilde_1_1_o_o_p_d_class_base.html">00072</a> <span class="keyword">class </span><a class="code" href="classtilde_1_1_o_o_p_d_class_base.html" title="base data structure for class and instance: name, canvas, symbol">OOPDClassBase</a> {
 <a name="l00073"></a>00073 <span class="keyword">private</span>:
 <a name="l00074"></a>00074     map&lt;string, string&gt; _methodNames;
 <a name="l00075"></a>00075     map&lt;string, string&gt; _propertyNames;
@@ -155,44 +155,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00077"></a>00077 
 <a name="l00078"></a>00078 <span class="keyword">public</span>:
 <a name="l00079"></a>00079     <span class="comment">//todo</span>
-<a name="l00080"></a><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#af49aba2510e177e17ffb43fd18bb1b4e">00080</a>     <span class="keywordtype">string</span> <a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#af49aba2510e177e17ffb43fd18bb1b4e">_className</a>;
-<a name="l00081"></a><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#ab36067930bef9e8daa886150e517ef63">00081</a>     <a class="code" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a>* <a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#ab36067930bef9e8daa886150e517ef63">_canvas</a>;
-<a name="l00082"></a><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#a330f2b1a7b90d671e11141bd1f9ddb48">00082</a>     <a class="code" href="struct__symbol.html">t_symbol</a>* <a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#a330f2b1a7b90d671e11141bd1f9ddb48">_symbol</a>;
-<a name="l00083"></a><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#aa0e2ab43d981d1bd901eb700055fdecb">00083</a>     <a class="code" href="classqtpd_1_1_patch_window_controller.html" title="The Patch window controller.">PatchWindowController</a>* <a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#aa0e2ab43d981d1bd901eb700055fdecb">_patchWindow</a>;
+<a name="l00080"></a><a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#a9b8a136ce27e80f360ac3cd39b87e845">00080</a>     <span class="keywordtype">string</span> <a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#a9b8a136ce27e80f360ac3cd39b87e845">_className</a>;
+<a name="l00081"></a><a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#a179142b2f2aa5d574c7a01d19226d867">00081</a>     <a class="code" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a>* <a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#a179142b2f2aa5d574c7a01d19226d867">_canvas</a>;
+<a name="l00082"></a><a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#ae0660ddc7993f50a443752dbfac8dc6a">00082</a>     <a class="code" href="struct__symbol.html">t_symbol</a>* <a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#ae0660ddc7993f50a443752dbfac8dc6a">_symbol</a>;
+<a name="l00083"></a><a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#a32a296847d7148e46a3e3f197ea79716">00083</a>     <a class="code" href="classtilde_1_1_patch_window_controller.html" title="The Patch window controller.">PatchWindowController</a>* <a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#a32a296847d7148e46a3e3f197ea79716">_patchWindow</a>;
 <a name="l00084"></a>00084 
-<a name="l00085"></a><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#a88c4dc3be28ec663dbf152122602cfc1">00085</a>     <span class="keywordtype">void</span> addMethod(<span class="keywordtype">string</span> methodName, <span class="keywordtype">string</span> referenceName)
+<a name="l00085"></a><a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#a024d1108cecf4bc49dcc764e0e2c2e07">00085</a>     <span class="keywordtype">void</span> addMethod(<span class="keywordtype">string</span> methodName, <span class="keywordtype">string</span> referenceName)
 <a name="l00086"></a>00086     {
 <a name="l00087"></a>00087         _methodNames[methodName] = referenceName;
 <a name="l00088"></a>00088     }
 <a name="l00089"></a>00089 
-<a name="l00090"></a><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#a12f6926644b827037865aaee5059fcb2">00090</a>     <span class="keywordtype">void</span> freeMethod(<span class="keywordtype">string</span> methodName)
+<a name="l00090"></a><a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#a70ea9438c1624fa663699610896491d0">00090</a>     <span class="keywordtype">void</span> freeMethod(<span class="keywordtype">string</span> methodName)
 <a name="l00091"></a>00091     {
 <a name="l00092"></a>00092         _methodNames.erase(methodName);
 <a name="l00093"></a>00093     }
 <a name="l00094"></a>00094 
-<a name="l00095"></a><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#af21d112787c540b91e9714ee2ae01f8b">00095</a>     <span class="keywordtype">void</span> addProperty(<span class="keywordtype">string</span> propertyName, <span class="keywordtype">string</span> referenceName)
+<a name="l00095"></a><a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#ad0d95b68a8130d1f59a772fa809f6f9b">00095</a>     <span class="keywordtype">void</span> addProperty(<span class="keywordtype">string</span> propertyName, <span class="keywordtype">string</span> referenceName)
 <a name="l00096"></a>00096     {
 <a name="l00097"></a>00097         _propertyNames[propertyName] = referenceName;
 <a name="l00098"></a>00098     }
 <a name="l00099"></a>00099 
-<a name="l00100"></a><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#acd465fe124da464029c90b15017ef447">00100</a>     <span class="keywordtype">void</span> freeProperty(<span class="keywordtype">string</span> propertyName)
+<a name="l00100"></a><a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#adc494cc83d0953cd6b4760d42d641152">00100</a>     <span class="keywordtype">void</span> freeProperty(<span class="keywordtype">string</span> propertyName)
 <a name="l00101"></a>00101     {
 <a name="l00102"></a>00102         _propertyNames.erase(propertyName);
 <a name="l00103"></a>00103     }
 <a name="l00104"></a>00104 
-<a name="l00105"></a><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#a4d9c93b61561e84c00cb3c6b07746efd">00105</a>     <span class="keywordtype">void</span> addSignal(<span class="keywordtype">string</span> signalName, <span class="keywordtype">string</span> referenceName)
+<a name="l00105"></a><a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#aec9aa45d0532626c5e78b62870b728be">00105</a>     <span class="keywordtype">void</span> addSignal(<span class="keywordtype">string</span> signalName, <span class="keywordtype">string</span> referenceName)
 <a name="l00106"></a>00106     {
 <a name="l00107"></a>00107         _signalNames[signalName] = referenceName;
 <a name="l00108"></a>00108     }
 <a name="l00109"></a>00109 
-<a name="l00110"></a><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#a24197c3f29474577566cabbabccc64e3">00110</a>     <span class="keywordtype">void</span> freeSignal(<span class="keywordtype">string</span> signalName)
+<a name="l00110"></a><a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#ac5d06697b3a42369bb55c279475e3519">00110</a>     <span class="keywordtype">void</span> freeSignal(<span class="keywordtype">string</span> signalName)
 <a name="l00111"></a>00111     {
 <a name="l00112"></a>00112         _signalNames.erase(signalName);
 <a name="l00113"></a>00113     }
 <a name="l00114"></a>00114 
 <a name="l00115"></a>00115     <span class="comment">// -------------------</span>
 <a name="l00116"></a>00116 
-<a name="l00117"></a><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#a7cc7d6943d461049c88bf4d8e2807443">00117</a>     <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> getPropertyList()
+<a name="l00117"></a><a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#aa6455b286c372085a933ff1b7ceaefae">00117</a>     <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> getPropertyList()
 <a name="l00118"></a>00118     {
 <a name="l00119"></a>00119         <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> ret;
 <a name="l00120"></a>00120 
@@ -203,7 +203,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00125"></a>00125         <span class="keywordflow">return</span> ret;
 <a name="l00126"></a>00126     }
 <a name="l00127"></a>00127 
-<a name="l00128"></a><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#a1fc8eeace45da7bd34b5991664bfab55">00128</a>     <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> getMethodList()
+<a name="l00128"></a><a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#afe849f389700909262e31d6204c1c2bb">00128</a>     <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> getMethodList()
 <a name="l00129"></a>00129     {
 <a name="l00130"></a>00130         <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> ret;
 <a name="l00131"></a>00131 
@@ -214,7 +214,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00136"></a>00136         <span class="keywordflow">return</span> ret;
 <a name="l00137"></a>00137     }
 <a name="l00138"></a>00138 
-<a name="l00139"></a><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#af852b2822097548bfc8f08ea3fc0e689">00139</a>     <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> getSignalList()
+<a name="l00139"></a><a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#aa1e51d8b04897c3f8dbb59c98651e949">00139</a>     <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> getSignalList()
 <a name="l00140"></a>00140     {
 <a name="l00141"></a>00141         <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> ret;
 <a name="l00142"></a>00142 
@@ -227,23 +227,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00149"></a>00149 
 <a name="l00150"></a>00150     <span class="comment">// --------------------</span>
 <a name="l00151"></a>00151 
-<a name="l00152"></a><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#a080bcb73e6876503a06ea50dd4d19fe6">00152</a>     map&lt;string, string&gt; getMethodNames()
+<a name="l00152"></a><a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#ae3afa1ee512c30b5a324dc77d0a78295">00152</a>     map&lt;string, string&gt; getMethodNames()
 <a name="l00153"></a>00153     {
 <a name="l00154"></a>00154         <span class="keywordflow">return</span> _methodNames;
 <a name="l00155"></a>00155     }
-<a name="l00156"></a><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#a53f99e5eca45bc11c26b92c1b53b3b72">00156</a>     map&lt;string, string&gt; getPropertyNames()
+<a name="l00156"></a><a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#a22dbcb0e29dcdbec32ba1556bdf5cece">00156</a>     map&lt;string, string&gt; getPropertyNames()
 <a name="l00157"></a>00157     {
 <a name="l00158"></a>00158         <span class="keywordflow">return</span> _propertyNames;
 <a name="l00159"></a>00159     }
 <a name="l00160"></a>00160 
 <a name="l00161"></a>00161     <span class="comment">// ---------------------</span>
-<a name="l00162"></a><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#ab90a64531308986d0d960e1f86c3a97a">00162</a>     <span class="keywordtype">bool</span> hasProperty(<span class="keywordtype">string</span> propertyName)
+<a name="l00162"></a><a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#a805a7fdcff0e8b8b6cda6350fd4049c2">00162</a>     <span class="keywordtype">bool</span> hasProperty(<span class="keywordtype">string</span> propertyName)
 <a name="l00163"></a>00163     {
 <a name="l00164"></a>00164         <span class="keywordflow">return</span> _propertyNames.<a class="code" href="classceammc_1_1_atom_list.html#abfb0621e62d116d28e5c78d6dda22eb8">find</a>(propertyName) != _propertyNames.end();
 <a name="l00165"></a>00165     }
 <a name="l00166"></a>00166 
 <a name="l00167"></a>00167     <span class="comment">//temp</span>
-<a name="l00168"></a><a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#ae1f4becea4751e27e56684fd0353b620">00168</a>     <span class="keywordtype">void</span> setPropertyNames(map&lt;string, string&gt; pNames)
+<a name="l00168"></a><a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#aa4976a22c491ddc0aa93a1e7caab62a5">00168</a>     <span class="keywordtype">void</span> setPropertyNames(map&lt;string, string&gt; pNames)
 <a name="l00169"></a>00169     {
 <a name="l00170"></a>00170         _propertyNames = pNames;
 <a name="l00171"></a>00171     }
@@ -269,7 +269,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 31 2017 14:17:53 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 1 2017 08:32:21 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -105,31 +105,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00021"></a>00021 
 <a name="l00022"></a>00022 <span class="keyword">using namespace </span>ceammc;
 <a name="l00023"></a>00023 
-<a name="l00024"></a>00024 <span class="keyword">namespace </span>qtpd {
+<a name="l00024"></a>00024 <span class="keyword">namespace </span>tilde {
 <a name="l00025"></a>00025 
-<a name="l00029"></a><a class="code" href="classqtpd_1_1_u_i_script_data.html">00029</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_u_i_script_data.html" title="Basic data model for scripteditor.">UIScriptData</a> {
+<a name="l00029"></a><a class="code" href="classtilde_1_1_u_i_script_data.html">00029</a> <span class="keyword">class </span><a class="code" href="classtilde_1_1_u_i_script_data.html" title="Basic data model for scripteditor.">UIScriptData</a> {
 <a name="l00030"></a>00030 <span class="keyword">public</span>:
-<a name="l00031"></a><a class="code" href="classqtpd_1_1_u_i_script_data.html#a17506bf353708287341c46af768f2d62">00031</a>     QStringList <a class="code" href="classqtpd_1_1_u_i_script_data.html#a17506bf353708287341c46af768f2d62">inputList</a>;
+<a name="l00031"></a><a class="code" href="classtilde_1_1_u_i_script_data.html#a40a46f681a8277b7c8ecbfb50e2023f8">00031</a>     QStringList <a class="code" href="classtilde_1_1_u_i_script_data.html#a40a46f681a8277b7c8ecbfb50e2023f8">inputList</a>;
 <a name="l00032"></a>00032 };
 <a name="l00033"></a>00033 
-<a name="l00037"></a><a class="code" href="classqtpd_1_1_u_i_script_common.html">00037</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_u_i_script_common.html" title="Sort of view controller for UIScript/UISCriptBox.">UIScriptCommon</a> : <span class="keyword">public</span> QObject {
+<a name="l00037"></a><a class="code" href="classtilde_1_1_u_i_script_common.html">00037</a> <span class="keyword">class </span><a class="code" href="classtilde_1_1_u_i_script_common.html" title="Sort of view controller for UIScript/UISCriptBox.">UIScriptCommon</a> : <span class="keyword">public</span> QObject {
 <a name="l00038"></a>00038     Q_OBJECT
 <a name="l00039"></a>00039 
 <a name="l00040"></a>00040 <span class="keyword">private</span>:
-<a name="l00041"></a>00041     <a class="code" href="classqtpd_1_1_u_i_script_data.html" title="Basic data model for scripteditor.">UIScriptData</a>* _scriptData;
+<a name="l00041"></a>00041     <a class="code" href="classtilde_1_1_u_i_script_data.html" title="Basic data model for scripteditor.">UIScriptData</a>* _scriptData;
 <a name="l00042"></a>00042 
-<a name="l00043"></a>00043     <a class="code" href="classqtpd_1_1_u_i_script_editor.html" title="Script editor QWidget.">UIScriptEditor</a>* <a class="code" href="struct__editor.html">_editor</a>;
+<a name="l00043"></a>00043     <a class="code" href="classtilde_1_1_u_i_script_editor.html" title="Script editor QWidget.">UIScriptEditor</a>* <a class="code" href="struct__editor.html">_editor</a>;
 <a name="l00044"></a>00044     QStringList getEditorData();
 <a name="l00045"></a>00045 
-<a name="l00046"></a>00046     <a class="code" href="classqtpd_1_1_u_i_script_common.html" title="Sort of view controller for UIScript/UISCriptBox.">UIScriptCommon</a>* _scriptCommon;
+<a name="l00046"></a>00046     <a class="code" href="classtilde_1_1_u_i_script_common.html" title="Sort of view controller for UIScript/UISCriptBox.">UIScriptCommon</a>* _scriptCommon;
 <a name="l00047"></a>00047 
 <a name="l00048"></a>00048 <span class="keyword">public</span>:
-<a name="l00049"></a>00049     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_u_i_script_common.html" title="Sort of view controller for UIScript/UISCriptBox.">UIScriptCommon</a>(QObject* parent = 0);
+<a name="l00049"></a>00049     <span class="keyword">explicit</span> <a class="code" href="classtilde_1_1_u_i_script_common.html" title="Sort of view controller for UIScript/UISCriptBox.">UIScriptCommon</a>(QObject* parent = 0);
 <a name="l00050"></a>00050 
-<a name="l00051"></a>00051     <a class="code" href="classqtpd_1_1_u_i_script_data.html" title="Basic data model for scripteditor.">UIScriptData</a>* scriptData();
+<a name="l00051"></a>00051     <a class="code" href="classtilde_1_1_u_i_script_data.html" title="Basic data model for scripteditor.">UIScriptData</a>* scriptData();
 <a name="l00052"></a>00052 
-<a name="l00053"></a>00053     <span class="keywordtype">void</span> setEditor(<a class="code" href="classqtpd_1_1_u_i_script_editor.html" title="Script editor QWidget.">UIScriptEditor</a>* editor);
-<a name="l00054"></a>00054     <a class="code" href="classqtpd_1_1_u_i_script_editor.html" title="Script editor QWidget.">UIScriptEditor</a>* editor();
+<a name="l00053"></a>00053     <span class="keywordtype">void</span> setEditor(<a class="code" href="classtilde_1_1_u_i_script_editor.html" title="Script editor QWidget.">UIScriptEditor</a>* editor);
+<a name="l00054"></a>00054     <a class="code" href="classtilde_1_1_u_i_script_editor.html" title="Script editor QWidget.">UIScriptEditor</a>* editor();
 <a name="l00055"></a>00055 
 <a name="l00056"></a>00056     <span class="comment">// temp</span>
 <a name="l00057"></a>00057     <span class="keyword">static</span> QStringList AtomListToStringList(<a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> list);
@@ -165,7 +165,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 31 2017 14:17:53 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 1 2017 08:32:21 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

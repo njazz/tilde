@@ -11,14 +11,14 @@ var searchData=
   ['ce_5fpath',['ce_path',['../structt__n__canvasenvironment.html#a3fb71c15f21186fa8c5ca37b785b528d',1,'t_n_canvasenvironment']]],
   ['class_5fname',['class_name',['../class_o_p_class.html#af3f75524a60f0909f8f9923b02194a5b',1,'OPClass::class_name()'],['../class_o_p_instance.html#a698516cedb1929251b79bf4170c64e69',1,'OPInstance::class_name()']]],
   ['clone_5fclass',['clone_class',['../g__canvas_8h.html#a0719074cfb54092c23607866446da4fe',1,'g_canvas.h']]],
-  ['closeact',['closeAct',['../classqtpd_1_1_base_window.html#ad558a5ee215fc73d1e9d34ee4570d916',1,'qtpd::BaseWindow']]],
+  ['closeact',['closeAct',['../classtilde_1_1_base_window.html#aec66de021cac4bd266b68d7a6090816c',1,'tilde::BaseWindow']]],
   ['coeffs',['coeffs',['../struct__resample.html#a925b6ec286ecbe3260ad763d00f4af61',1,'_resample']]],
   ['coefsize',['coefsize',['../struct__resample.html#a2916ee76dceb405a1773c0f590d3a716',1,'_resample']]],
   ['col',['col',['../class_color___preview_1_1_private.html#afc08b66fd472e958e7de7fbd7b1ea830',1,'Color_Preview::Private']]],
   ['color_5ffrom',['color_from',['../class_color___wheel_1_1_private.html#a44563ef3eec68f4f8a2436b64b701fbf',1,'Color_Wheel::Private']]],
   ['colors',['colors',['../class_color___list___widget_1_1_private.html#a7811503177d20df9f69e2e0238fb48e3',1,'Color_List_Widget::Private']]],
   ['comparison',['comparison',['../class_color___preview_1_1_private.html#a3207d480f10d6c5f1f59ee4eb069dfb8',1,'Color_Preview::Private']]],
-  ['copyact',['copyAct',['../classqtpd_1_1_base_window.html#a3123d84d5d55f7e61093243986f60f4e',1,'qtpd::BaseWindow']]],
+  ['copyact',['copyAct',['../classtilde_1_1_base_window.html#a255641fe29819f3739f63da9f9ec1454',1,'tilde::BaseWindow']]],
   ['cos_5ftable',['cos_table',['../m__pd_8h.html#a884d586c203c808a5b91592dcd75bb64',1,'m_pd.h']]],
-  ['cutact',['cutAct',['../classqtpd_1_1_base_window.html#a417a2dd9f40ea7afd14c5edff9246c68',1,'qtpd::BaseWindow']]]
+  ['cutact',['cutAct',['../classtilde_1_1_base_window.html#ad4a1d92a469001c405d701215fb71010',1,'tilde::BaseWindow']]]
 ];

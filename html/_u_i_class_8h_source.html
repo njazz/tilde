@@ -106,27 +106,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00022"></a>00022 
 <a name="l00023"></a>00023 <span class="preprocessor">#include &quot;<a class="code" href="_u_i_object_data_8h.html">UIObjectData.h</a>&quot;</span>
 <a name="l00024"></a>00024 
-<a name="l00025"></a>00025 <span class="keyword">namespace </span>qtpd {
+<a name="l00025"></a>00025 <span class="keyword">namespace </span>tilde {
 <a name="l00026"></a>00026 
-<a name="l00030"></a><a class="code" href="classqtpd_1_1_u_i_class.html">00030</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_u_i_class.html" title="gui object: oopd class (pdclass)">UIClass</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1_u_i_box.html" title="gui object: standard object box">UIBox</a> {
+<a name="l00030"></a><a class="code" href="classtilde_1_1_u_i_class.html">00030</a> <span class="keyword">class </span><a class="code" href="classtilde_1_1_u_i_class.html" title="gui object: oopd class (pdclass)">UIClass</a> : <span class="keyword">public</span> <a class="code" href="classtilde_1_1_u_i_box.html" title="gui object: standard object box">UIBox</a> {
 <a name="l00031"></a>00031 
 <a name="l00032"></a>00032     Q_OBJECT
 <a name="l00033"></a>00033 
 <a name="l00034"></a>00034 <span class="keyword">private</span>:
-<a name="l00035"></a>00035     <a class="code" href="classqtpd_1_1_o_p_class.html" title="OOPD class structure.">OPClass</a>* _opClass;
+<a name="l00035"></a>00035     <a class="code" href="classtilde_1_1_o_p_class.html" title="OOPD class structure.">OPClass</a>* _opClass;
 <a name="l00036"></a>00036 
 <a name="l00037"></a>00037     <span class="keywordtype">bool</span> _dynamicClass;
 <a name="l00038"></a>00038 
 <a name="l00039"></a>00039 <span class="keyword">public</span>:
-<a name="l00040"></a>00040     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_u_i_class.html#a967500c3fd7cefecfce0bfed38e42799">UIClass</a>(); <span class="comment">//UIObject* parent = 0);</span>
-<a name="l00041"></a><a class="code" href="classqtpd_1_1_u_i_class.html#a5e670d74f25eb10be0ba1b17cb69ec75">00041</a>     <a class="code" href="classqtpd_1_1_u_i_class.html#a5e670d74f25eb10be0ba1b17cb69ec75">~UIClass</a>()
+<a name="l00040"></a>00040     <span class="keyword">explicit</span> <a class="code" href="classtilde_1_1_u_i_class.html#a7b885ee198344c4b801be24a0de5352e">UIClass</a>(); <span class="comment">//UIObject* parent = 0);</span>
+<a name="l00041"></a><a class="code" href="classtilde_1_1_u_i_class.html#ae3f5fa95ae1c1849f221e492e32dac57">00041</a>     <a class="code" href="classtilde_1_1_u_i_class.html#ae3f5fa95ae1c1849f221e492e32dac57">~UIClass</a>()
 <a name="l00042"></a>00042     {
 <a name="l00043"></a>00043         <span class="keywordflow">if</span> (_opClass) {
-<a name="l00044"></a>00044             _opClass-&gt;<a class="code" href="classqtpd_1_1_o_p_class.html#a3fe1c3afd4a68bd4c446b16944484116">writeFile</a>();
+<a name="l00044"></a>00044             _opClass-&gt;<a class="code" href="classtilde_1_1_o_p_class.html#a3fe1c3afd4a68bd4c446b16944484116">writeFile</a>();
 <a name="l00045"></a>00045         }
 <a name="l00046"></a>00046     };
 <a name="l00047"></a>00047 
-<a name="l00048"></a><a class="code" href="classqtpd_1_1_u_i_class.html#a54cec74530b0e8c27c32a859f074bf91">00048</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_class.html#a54cec74530b0e8c27c32a859f074bf91">createObject</a>(QString <a class="code" href="classqtpd_1_1_u_i_object.html#a83ff692a908d325f474cb634ea291102">objectData</a>, <a class="code" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a>* pdCanvas, QGraphicsView* parent = 0)
+<a name="l00048"></a><a class="code" href="classtilde_1_1_u_i_class.html#a8a145628704e42eeb9634637aaafe941">00048</a>     <span class="keyword">static</span> <a class="code" href="classtilde_1_1_u_i_object.html">UIObject</a>* <a class="code" href="classtilde_1_1_u_i_class.html#a8a145628704e42eeb9634637aaafe941">createObject</a>(QString <a class="code" href="classtilde_1_1_u_i_object.html#acfe2005d35b5fc0abc3180b354996b4a">objectData</a>, <a class="code" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a>* pdCanvas, QGraphicsView* parent = 0)
 <a name="l00049"></a>00049     {<span class="keywordflow">return</span> 0;} <span class="comment">/*</span>
 <a name="l00050"></a>00050 <span class="comment"></span>
 <a name="l00051"></a>00051 <span class="comment">    {</span>
@@ -207,12 +207,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00126"></a>00126 <span class="comment">    };</span>
 <a name="l00127"></a>00127 <span class="comment">*/</span>
 <a name="l00131"></a>00131     <span class="comment">//void paintEvent(QPaintEvent*)</span>
-<a name="l00132"></a><a class="code" href="classqtpd_1_1_u_i_class.html#ae427b4c6a023b208756197f74df3b22d">00132</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_class.html#ae427b4c6a023b208756197f74df3b22d" title="paint event">paint</a>(QPainter* p, <span class="keyword">const</span> QStyleOptionGraphicsItem*, QWidget*)
+<a name="l00132"></a><a class="code" href="classtilde_1_1_u_i_class.html#a12c0073096d0c7178b308a2523c9fd05">00132</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#a12c0073096d0c7178b308a2523c9fd05" title="paint event">paint</a>(QPainter* p, <span class="keyword">const</span> QStyleOptionGraphicsItem*, QWidget*)
 <a name="l00133"></a>00133 
 <a name="l00134"></a>00134     {
-<a name="l00135"></a>00135         QBrush brush(<a class="code" href="classqtpd_1_1_u_i_item.html#a15c57968966de733a09cf02973b63696">bgColor</a>());
+<a name="l00135"></a>00135         QBrush brush(<a class="code" href="classtilde_1_1_u_i_item.html#a8444f00500feeed756a720dd01a44579">bgColor</a>());
 <a name="l00136"></a>00136         p-&gt;setBrush(brush);
-<a name="l00137"></a>00137         p-&gt;drawRect(<a class="code" href="classqtpd_1_1_u_i_item.html#a0a8d5299d5a0a2ebcef2135913bc97da" title="&gt; get edit mode flag value">boundingRect</a>());
+<a name="l00137"></a>00137         p-&gt;drawRect(<a class="code" href="classtilde_1_1_u_i_item.html#af2f09f2423c8c9a240fb870e2babfd2a" title="&gt; get edit mode flag value">boundingRect</a>());
 <a name="l00138"></a>00138         p-&gt;setBrush(QBrush());
 <a name="l00139"></a>00139 
 <a name="l00140"></a>00140         <span class="comment">//QPainter p(viewport());</span>
@@ -220,7 +220,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00142"></a>00142         p-&gt;scale(scale(), scale());
 <a name="l00143"></a>00143 
 <a name="l00144"></a>00144         p-&gt;setPen(QPen(QColor(255, 192, 0), 2, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-<a name="l00145"></a>00145         p-&gt;drawRect(0, 1, <a class="code" href="classqtpd_1_1_u_i_item.html#a89b7d0bcdcb226800c37d95305a1f441">width</a>(), <a class="code" href="classqtpd_1_1_u_i_item.html#a5bbd8fe0417078d386176ace5a01f261">height</a>() - 2);
+<a name="l00145"></a>00145         p-&gt;drawRect(0, 1, <a class="code" href="classtilde_1_1_u_i_item.html#a3b30e6acf11094c1205833be9eaec1fa">width</a>(), <a class="code" href="classtilde_1_1_u_i_item.html#ad5f625724d2155c2a0c1db5e878d6bce">height</a>() - 2);
 <a name="l00146"></a>00146 
 <a name="l00147"></a>00147         <span class="comment">//remove this later</span>
 <a name="l00148"></a>00148 <span class="comment">//        if (subpatchWindow()) {</span>
@@ -228,23 +228,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00150"></a>00150 <span class="comment">//            p-&gt;drawRect(0, 2, width(), height() - 4);</span>
 <a name="l00151"></a>00151 <span class="comment">//        }</span>
 <a name="l00152"></a>00152 
-<a name="l00153"></a>00153         QColor rectColor = (<a class="code" href="classqtpd_1_1_u_i_object.html#a1a55479c564318cbf31c0f09d02d39bb">errorBox</a>()) ? QColor(255, 0, 0) : <a class="code" href="classqtpd_1_1_u_i_object.html#a69ed99ca86c7019f489f56b6dc96f8a4" title="&gt;init properties for the class - called from constructor">properties</a>()-&gt;<a class="code" href="classqtpd_1_1_property_list.html#a56b8961ff1380c565c7d616166be18d4">get</a>(<span class="stringliteral">&quot;BorderColor&quot;</span>)-&gt;<a class="code" href="classqtpd_1_1_property.html#afddea0cd73e01ae6b769b0a5d25a213e">asQColor</a>(); <span class="comment">//QColor(128, 128, 128);</span>
-<a name="l00154"></a>00154         p-&gt;setPen(QPen(rectColor, 1, (<a class="code" href="classqtpd_1_1_u_i_object.html#a1a55479c564318cbf31c0f09d02d39bb">errorBox</a>()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-<a name="l00155"></a>00155         p-&gt;drawRect(0, 0, <a class="code" href="classqtpd_1_1_u_i_item.html#a89b7d0bcdcb226800c37d95305a1f441">width</a>(), <a class="code" href="classqtpd_1_1_u_i_item.html#a5bbd8fe0417078d386176ace5a01f261">height</a>());
+<a name="l00153"></a>00153         QColor rectColor = (<a class="code" href="classtilde_1_1_u_i_object.html#a1da34a7022c20069e63d024f4bffb2ee">errorBox</a>()) ? QColor(255, 0, 0) : <a class="code" href="classtilde_1_1_u_i_object.html#a2352a060ad1047b76a340ced8dd0941d" title="&gt;init properties for the class - called from constructor">properties</a>()-&gt;<a class="code" href="classtilde_1_1_property_list.html#a96d9bd8241d7ce38baeb2725fd5a7b19">get</a>(<span class="stringliteral">&quot;BorderColor&quot;</span>)-&gt;<a class="code" href="classtilde_1_1_property.html#a681a8d1c33e548a839aeb50221183543">asQColor</a>(); <span class="comment">//QColor(128, 128, 128);</span>
+<a name="l00154"></a>00154         p-&gt;setPen(QPen(rectColor, 1, (<a class="code" href="classtilde_1_1_u_i_object.html#a1da34a7022c20069e63d024f4bffb2ee">errorBox</a>()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+<a name="l00155"></a>00155         p-&gt;drawRect(0, 0, <a class="code" href="classtilde_1_1_u_i_item.html#a3b30e6acf11094c1205833be9eaec1fa">width</a>(), <a class="code" href="classtilde_1_1_u_i_item.html#ad5f625724d2155c2a0c1db5e878d6bce">height</a>());
 <a name="l00156"></a>00156         QTextOption* op = <span class="keyword">new</span> QTextOption;
 <a name="l00157"></a>00157         op-&gt;setAlignment(Qt::AlignLeft);
 <a name="l00158"></a>00158         p-&gt;setPen(QPen(QColor(0, 0, 0), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
 <a name="l00159"></a>00159 
-<a name="l00160"></a>00160         p-&gt;setFont(QFont(<a class="code" href="_preferences_8h.html#a3f95dcdc217e1a88365c8306beaf1c72">PREF_QSTRING</a>(<span class="stringliteral">&quot;Font&quot;</span>), <a class="code" href="classqtpd_1_1_u_i_object.html#a69ed99ca86c7019f489f56b6dc96f8a4" title="&gt;init properties for the class - called from constructor">properties</a>()-&gt;<span class="keyword">get</span>(<span class="stringliteral">&quot;FontSize&quot;</span>)-&gt;asFontSize(), 0, <span class="keyword">false</span>));
-<a name="l00161"></a>00161         p-&gt;drawText(2, 3, <a class="code" href="classqtpd_1_1_u_i_item.html#a89b7d0bcdcb226800c37d95305a1f441">width</a>() - 2, <a class="code" href="classqtpd_1_1_u_i_item.html#a5bbd8fe0417078d386176ace5a01f261">height</a>() - 3, 0, <a class="code" href="classqtpd_1_1_u_i_object.html#a83ff692a908d325f474cb634ea291102">objectData</a>()-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a7c650b3a5532516f45a8f270f670880f" title="&gt; sets object text data">toQString</a>(), 0);
+<a name="l00160"></a>00160         p-&gt;setFont(QFont(<a class="code" href="_preferences_8h.html#a3f95dcdc217e1a88365c8306beaf1c72">PREF_QSTRING</a>(<span class="stringliteral">&quot;Font&quot;</span>), <a class="code" href="classtilde_1_1_u_i_object.html#a2352a060ad1047b76a340ced8dd0941d" title="&gt;init properties for the class - called from constructor">properties</a>()-&gt;<span class="keyword">get</span>(<span class="stringliteral">&quot;FontSize&quot;</span>)-&gt;asFontSize(), 0, <span class="keyword">false</span>));
+<a name="l00161"></a>00161         p-&gt;drawText(2, 3, <a class="code" href="classtilde_1_1_u_i_item.html#a3b30e6acf11094c1205833be9eaec1fa">width</a>() - 2, <a class="code" href="classtilde_1_1_u_i_item.html#ad5f625724d2155c2a0c1db5e878d6bce">height</a>() - 3, 0, <a class="code" href="classtilde_1_1_u_i_object.html#acfe2005d35b5fc0abc3180b354996b4a">objectData</a>()-&gt;<a class="code" href="classtilde_1_1_u_i_object.html#a3b5a19f8acc808e63f376974424b10ae" title="&gt; sets object text data">toQString</a>(), 0);
 <a name="l00162"></a>00162 
-<a name="l00163"></a>00163         <span class="keywordflow">if</span> (<a class="code" href="classqtpd_1_1_u_i_item.html#ab3ac9bcca4d6c092b1d10fe506ba48c6" title="&gt; deselect object">isSelected</a>()) {
-<a name="l00164"></a>00164             p-&gt;setPen(QPen(QColor(0, 192, 255), 1, (<a class="code" href="classqtpd_1_1_u_i_object.html#a1a55479c564318cbf31c0f09d02d39bb">errorBox</a>()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
-<a name="l00165"></a>00165             p-&gt;drawRect(0, 0, <a class="code" href="classqtpd_1_1_u_i_item.html#a89b7d0bcdcb226800c37d95305a1f441">width</a>(), <a class="code" href="classqtpd_1_1_u_i_item.html#a5bbd8fe0417078d386176ace5a01f261">height</a>());
+<a name="l00163"></a>00163         <span class="keywordflow">if</span> (<a class="code" href="classtilde_1_1_u_i_item.html#a00841800502136dc7ff5ea6a08badfd7" title="&gt; deselect object">isSelected</a>()) {
+<a name="l00164"></a>00164             p-&gt;setPen(QPen(QColor(0, 192, 255), 1, (<a class="code" href="classtilde_1_1_u_i_object.html#a1da34a7022c20069e63d024f4bffb2ee">errorBox</a>()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
+<a name="l00165"></a>00165             p-&gt;drawRect(0, 0, <a class="code" href="classtilde_1_1_u_i_item.html#a3b30e6acf11094c1205833be9eaec1fa">width</a>(), <a class="code" href="classtilde_1_1_u_i_item.html#ad5f625724d2155c2a0c1db5e878d6bce">height</a>());
 <a name="l00166"></a>00166         }
 <a name="l00167"></a>00167     }
 <a name="l00168"></a>00168 
-<a name="l00173"></a><a class="code" href="classqtpd_1_1_u_i_class.html#ae186a86e680dbf850064a9edc481bfee">00173</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_class.html#ae186a86e680dbf850064a9edc481bfee" title="mouse down">mousePressEvent</a>(QGraphicsSceneMouseEvent* ev)
+<a name="l00173"></a><a class="code" href="classtilde_1_1_u_i_class.html#a720847593e2aeffb8c041c08721feca1">00173</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#a720847593e2aeffb8c041c08721feca1" title="mouse down">mousePressEvent</a>(QGraphicsSceneMouseEvent* ev)
 <a name="l00174"></a>00174     {
 <a name="l00175"></a>00175         <span class="comment">//context menu</span>
 <a name="l00176"></a>00176         <span class="keywordflow">if</span> (ev-&gt;button() == Qt::RightButton) {
@@ -258,7 +258,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00184"></a>00184                 QPoint pos = v-&gt;viewport()-&gt;mapToGlobal(ev-&gt;pos().toPoint());
 <a name="l00185"></a>00185 
 <a name="l00186"></a>00186                 <span class="comment">// TODO</span>
-<a name="l00187"></a>00187                 <a class="code" href="classqtpd_1_1_u_i_object.html#ac910dc268c5457c9ce9149378794eb9a" title="&gt; createContextMenu">showPopupMenu</a>(pos + this-&gt;pos().toPoint());
+<a name="l00187"></a>00187                 <a class="code" href="classtilde_1_1_u_i_object.html#a7c8664ea76e4ea070f75e8a7614c2e7a" title="&gt; createContextMenu">showPopupMenu</a>(pos + this-&gt;pos().toPoint());
 <a name="l00188"></a>00188                 ev-&gt;accept();
 <a name="l00189"></a>00189             }
 <a name="l00190"></a>00190 
@@ -273,66 +273,66 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00199"></a>00199         <span class="comment">//        }</span>
 <a name="l00200"></a>00200 
 <a name="l00201"></a>00201         <span class="comment">//window opening. Fix</span>
-<a name="l00202"></a>00202         <span class="keywordflow">if</span> (<a class="code" href="classqtpd_1_1_u_i_item.html#a2e13bcc5d691a5505200843d80b71e6d" title="&gt; get edit mode pointer - for inlets/outlets">getEditMode</a>() != <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aaa528336eacc29596e8365b88a4f62d82">em_Unlocked</a>) {
-<a name="l00203"></a>00203             _opClass-&gt;<a class="code" href="classqtpd_1_1_o_p_class.html#a599e9a583c92beccd883964f4a566877">showWindow</a>();
+<a name="l00202"></a>00202         <span class="keywordflow">if</span> (<a class="code" href="classtilde_1_1_u_i_item.html#ac626f1d95873a6461402821035f54623" title="&gt; get edit mode pointer - for inlets/outlets">getEditMode</a>() != <a class="code" href="namespacetilde.html#a788ec93ba342aa6f356829b22c07cc09a143fc17318e09729527248aed2f91b71">em_Unlocked</a>) {
+<a name="l00203"></a>00203             _opClass-&gt;<a class="code" href="classtilde_1_1_o_p_class.html#a599e9a583c92beccd883964f4a566877">showWindow</a>();
 <a name="l00204"></a>00204         }
 <a name="l00205"></a>00205 
-<a name="l00206"></a>00206         <span class="keywordflow">if</span> ((<a class="code" href="classqtpd_1_1_u_i_item.html#a2e13bcc5d691a5505200843d80b71e6d" title="&gt; get edit mode pointer - for inlets/outlets">getEditMode</a>() == <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aaa528336eacc29596e8365b88a4f62d82">em_Unlocked</a>) &amp;&amp; <a class="code" href="classqtpd_1_1_u_i_item.html#ab3ac9bcca4d6c092b1d10fe506ba48c6" title="&gt; deselect object">isSelected</a>()) {
+<a name="l00206"></a>00206         <span class="keywordflow">if</span> ((<a class="code" href="classtilde_1_1_u_i_item.html#ac626f1d95873a6461402821035f54623" title="&gt; get edit mode pointer - for inlets/outlets">getEditMode</a>() == <a class="code" href="namespacetilde.html#a788ec93ba342aa6f356829b22c07cc09a143fc17318e09729527248aed2f91b71">em_Unlocked</a>) &amp;&amp; <a class="code" href="classtilde_1_1_u_i_item.html#a00841800502136dc7ff5ea6a08badfd7" title="&gt; deselect object">isSelected</a>()) {
 <a name="l00207"></a>00207             <span class="comment">//            editor_-&gt;setText(QString(_objectDataModel.objectData()));</span>
 <a name="l00208"></a>00208             <span class="comment">//            editor_-&gt;show();</span>
 <a name="l00209"></a>00209 
-<a name="l00210"></a>00210             emit <a class="code" href="classqtpd_1_1_u_i_object.html#a139f13fe23d1b4bf8732bfc393b01427" title="&gt; basic update - calls update() probably remove later">signalEditObject</a>(<span class="keyword">this</span>);
+<a name="l00210"></a>00210             emit <a class="code" href="classtilde_1_1_u_i_object.html#a0581cd901c2af0aef333cd246f0df83c" title="&gt; basic update - calls update() probably remove later">signalEditObject</a>(<span class="keyword">this</span>);
 <a name="l00211"></a>00211             <span class="keywordflow">return</span>;
 <a name="l00212"></a>00212         }
 <a name="l00213"></a>00213 
-<a name="l00214"></a>00214         emit <a class="code" href="classqtpd_1_1_u_i_item.html#ad8f51ce2a929d36c866cb16e884f7a28">selectBox</a>(<span class="keyword">this</span>, ev);
-<a name="l00215"></a>00215         <a class="code" href="classqtpd_1_1_u_i_item.html#afa31f6c6b2497b60610ad8325325b843">dragOffset</a> = ev-&gt;pos().toPoint();
+<a name="l00214"></a>00214         emit <a class="code" href="classtilde_1_1_u_i_item.html#a9b3bad2ea628153c3fe979acf47a8b4a">selectBox</a>(<span class="keyword">this</span>, ev);
+<a name="l00215"></a>00215         <a class="code" href="classtilde_1_1_u_i_item.html#a5ec3655bd51139c73a9fcceb8ea0f57f">dragOffset</a> = ev-&gt;pos().toPoint();
 <a name="l00216"></a>00216     }
 <a name="l00217"></a>00217 
-<a name="l00221"></a><a class="code" href="classqtpd_1_1_u_i_class.html#ada8f3d905ed067c2ec2e0708a082bd69">00221</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_class.html#ada8f3d905ed067c2ec2e0708a082bd69" title="mouse up">mouseReleaseEvent</a>(QGraphicsSceneMouseEvent*)
+<a name="l00221"></a><a class="code" href="classtilde_1_1_u_i_class.html#a5fe8367b76ec025cb17ca7b740ba4363">00221</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#a5fe8367b76ec025cb17ca7b740ba4363" title="mouse up">mouseReleaseEvent</a>(QGraphicsSceneMouseEvent*)
 <a name="l00222"></a>00222     {
 <a name="l00223"></a>00223         update();
 <a name="l00224"></a>00224     }
 <a name="l00225"></a>00225 
-<a name="l00230"></a><a class="code" href="classqtpd_1_1_u_i_class.html#ade2174952ef49d15f6b851fe6b32b381">00230</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_class.html#ade2174952ef49d15f6b851fe6b32b381" title="mouse move">mouseMoveEvent</a>(QGraphicsSceneMouseEvent* event)
+<a name="l00230"></a><a class="code" href="classtilde_1_1_u_i_class.html#a78e8cec2d1f3a83216a0235dd8d3e950">00230</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#a78e8cec2d1f3a83216a0235dd8d3e950" title="mouse move">mouseMoveEvent</a>(QGraphicsSceneMouseEvent* event)
 <a name="l00231"></a>00231     {
 <a name="l00232"></a>00232         <span class="keywordflow">if</span> (event-&gt;buttons() &amp; Qt::LeftButton) {
-<a name="l00233"></a>00233             emit <a class="code" href="classqtpd_1_1_u_i_item.html#a72e28d805ae5dc2f30e9774cdf5c4be6">moveBox</a>(<span class="keyword">this</span>, event);
+<a name="l00233"></a>00233             emit <a class="code" href="classtilde_1_1_u_i_item.html#a77ab63e516415092c5c4c042ebd9845f">moveBox</a>(<span class="keyword">this</span>, event);
 <a name="l00234"></a>00234         }
 <a name="l00235"></a>00235         <span class="keyword">event</span>-&gt;ignore();
 <a name="l00236"></a>00236 
-<a name="l00237"></a>00237         <span class="keywordflow">if</span> ((<a class="code" href="classqtpd_1_1_u_i_item.html#a2e13bcc5d691a5505200843d80b71e6d" title="&gt; get edit mode pointer - for inlets/outlets">getEditMode</a>() != <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6aaa528336eacc29596e8365b88a4f62d82">em_Unlocked</a>) &amp;&amp; (<a class="code" href="classqtpd_1_1_u_i_box.html#a7720b79ee4bb25ef64bbb155a2132ae4">subpatchController</a>())) {
+<a name="l00237"></a>00237         <span class="keywordflow">if</span> ((<a class="code" href="classtilde_1_1_u_i_item.html#ac626f1d95873a6461402821035f54623" title="&gt; get edit mode pointer - for inlets/outlets">getEditMode</a>() != <a class="code" href="namespacetilde.html#a788ec93ba342aa6f356829b22c07cc09a143fc17318e09729527248aed2f91b71">em_Unlocked</a>) &amp;&amp; (<a class="code" href="classtilde_1_1_u_i_box.html#a98db148153a8c6bd0211dd9b59061263">subpatchController</a>())) {
 <a name="l00238"></a>00238             setCursor(QCursor(Qt::PointingHandCursor));
 <a name="l00239"></a>00239         } <span class="keywordflow">else</span> {
 <a name="l00240"></a>00240             setCursor(QCursor(Qt::ArrowCursor));
 <a name="l00241"></a>00241         }
 <a name="l00242"></a>00242     }
 <a name="l00243"></a>00243 
-<a name="l00244"></a><a class="code" href="classqtpd_1_1_u_i_class.html#af5ec049949c5a9cc639f137a0717c001">00244</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_class.html#af5ec049949c5a9cc639f137a0717c001">setPdMessage</a>(QString message)
+<a name="l00244"></a><a class="code" href="classtilde_1_1_u_i_class.html#a25488ecda3b1dfb5b77da4c59656fa05">00244</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#a25488ecda3b1dfb5b77da4c59656fa05">setPdMessage</a>(QString message)
 <a name="l00245"></a>00245     {
-<a name="l00246"></a>00246         <a class="code" href="classqtpd_1_1_u_i_box.html#a63ef5e0400a8208758c3a78c3008adda" title="&gt; basic mouse up">fromQString</a>(message);
-<a name="l00247"></a>00247         <a class="code" href="classqtpd_1_1_u_i_box.html#a826f22b1f19cb4722e7a8f61b68726cf" title="&gt; custom resize event">autoResize</a>();
+<a name="l00246"></a>00246         <a class="code" href="classtilde_1_1_u_i_box.html#a141a14e6aac256fc1bb94f4cb13e4cba" title="&gt; basic mouse up">fromQString</a>(message);
+<a name="l00247"></a>00247         <a class="code" href="classtilde_1_1_u_i_box.html#abf2b1ceb9f9cd39e04fb404146f66281" title="&gt; custom resize event">autoResize</a>();
 <a name="l00248"></a>00248 
 <a name="l00249"></a>00249         QFont myFont(<a class="code" href="_preferences_8h.html#a3f95dcdc217e1a88365c8306beaf1c72">PREF_QSTRING</a>(<span class="stringliteral">&quot;Font&quot;</span>), 11);
 <a name="l00250"></a>00250         QFontMetrics fm(myFont);
-<a name="l00251"></a>00251         <span class="keywordtype">int</span> new_w = fm.width(QString(<a class="code" href="classqtpd_1_1_u_i_object.html#a83ff692a908d325f474cb634ea291102">objectData</a>()-&gt;<a class="code" href="classqtpd_1_1_u_i_object.html#a7c650b3a5532516f45a8f270f670880f" title="&gt; sets object text data">toQString</a>())) + 10;
+<a name="l00251"></a>00251         <span class="keywordtype">int</span> new_w = fm.width(QString(<a class="code" href="classtilde_1_1_u_i_object.html#acfe2005d35b5fc0abc3180b354996b4a">objectData</a>()-&gt;<a class="code" href="classtilde_1_1_u_i_object.html#a3b5a19f8acc808e63f376974424b10ae" title="&gt; sets object text data">toQString</a>())) + 10;
 <a name="l00252"></a>00252         new_w = (new_w &lt; 25) ? 25 : new_w;
-<a name="l00253"></a>00253         <a class="code" href="classqtpd_1_1_u_i_item.html#a8eeca95be6c277797b9e1588f9a6397c">setWidth</a>(new_w);
+<a name="l00253"></a>00253         <a class="code" href="classtilde_1_1_u_i_item.html#aa3d7ccc05e41759009bbcaed46e4ba93">setWidth</a>(new_w);
 <a name="l00254"></a>00254         <span class="comment">//editor_-&gt;setFixedWidth(width() - 5);</span>
 <a name="l00255"></a>00255 
 <a name="l00256"></a>00256         <span class="comment">//todo: del object and create new + patchcords</span>
 <a name="l00257"></a>00257 
 <a name="l00258"></a>00258         <span class="comment">//</span>
-<a name="l00259"></a>00259         <a class="code" href="classqtpd_1_1_u_i_object.html#abd253cdb46eec3e920bc2e195f24bf84" title="&gt; returns help patch name with path if the file is found">setInletsPos</a>();
-<a name="l00260"></a>00260         <a class="code" href="classqtpd_1_1_u_i_object.html#a0f7e507f8949b1a58bf343279a488c44" title="&gt; sets inlet position. could be overriden for custom inlet positions">setOutletsPos</a>();
+<a name="l00259"></a>00259         <a class="code" href="classtilde_1_1_u_i_object.html#a0622ddcfa9d91c0ff6a033d0764c715c" title="&gt; returns help patch name with path if the file is found">setInletsPos</a>();
+<a name="l00260"></a>00260         <a class="code" href="classtilde_1_1_u_i_object.html#a7c67ce6daef53843d39499f4854600b2" title="&gt; sets inlet position. could be overriden for custom inlet positions">setOutletsPos</a>();
 <a name="l00261"></a>00261     }
 <a name="l00262"></a>00262 
 <a name="l00263"></a>00263     <span class="comment">// ---------------------------------------------------------------</span>
 <a name="l00264"></a>00264 
-<a name="l00265"></a><a class="code" href="classqtpd_1_1_u_i_class.html#ab82467a6a120df31bf7f9ac7ff1df539">00265</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_class.html#ab82467a6a120df31bf7f9ac7ff1df539">msgNewClass</a>(<a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> msg)
+<a name="l00265"></a><a class="code" href="classtilde_1_1_u_i_class.html#a36bb7b2e773f812d5db3acbf6d7e56b8">00265</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#a36bb7b2e773f812d5db3acbf6d7e56b8">msgNewClass</a>(<a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> msg)
 <a name="l00266"></a>00266     {
 <a name="l00267"></a>00267         <span class="keywordflow">if</span> (_dynamicClass) {
-<a name="l00268"></a>00268             _opClass = <span class="keyword">new</span> <a class="code" href="classqtpd_1_1_o_p_class.html" title="OOPD class structure.">OPClass</a>(msg.<a class="code" href="classceammc_1_1_atom_list.html#ad8682c33d61365c0f715fbfee1b122b2" title="returns reference to element at specified position">at</a>(1).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>());
+<a name="l00268"></a>00268             _opClass = <span class="keyword">new</span> <a class="code" href="classtilde_1_1_o_p_class.html" title="OOPD class structure.">OPClass</a>(msg.<a class="code" href="classceammc_1_1_atom_list.html#ad8682c33d61365c0f715fbfee1b122b2" title="returns reference to element at specified position">at</a>(1).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>());
 <a name="l00269"></a>00269 
 <a name="l00270"></a>00270         } <span class="keywordflow">else</span> {
 <a name="l00271"></a>00271             <span class="comment">// TODO</span>
@@ -340,38 +340,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00273"></a>00273         }
 <a name="l00274"></a>00274     }
 <a name="l00275"></a>00275 
-<a name="l00276"></a><a class="code" href="classqtpd_1_1_u_i_class.html#a37207481599873f0c052dc3044fde80e">00276</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_class.html#a37207481599873f0c052dc3044fde80e">msgAddProperty</a>(<a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> msg)
+<a name="l00276"></a><a class="code" href="classtilde_1_1_u_i_class.html#aa361275e9fd5a65873895a7ed2373d61">00276</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#aa361275e9fd5a65873895a7ed2373d61">msgAddProperty</a>(<a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> msg)
 <a name="l00277"></a>00277     {
-<a name="l00278"></a>00278         _opClass-&gt;<a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#af21d112787c540b91e9714ee2ae01f8b">addProperty</a>(msg.<a class="code" href="classceammc_1_1_atom_list.html#ad8682c33d61365c0f715fbfee1b122b2" title="returns reference to element at specified position">at</a>(1).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>(), msg.<a class="code" href="classceammc_1_1_atom_list.html#ad8682c33d61365c0f715fbfee1b122b2" title="returns reference to element at specified position">at</a>(2).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>());
+<a name="l00278"></a>00278         _opClass-&gt;<a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#ad0d95b68a8130d1f59a772fa809f6f9b">addProperty</a>(msg.<a class="code" href="classceammc_1_1_atom_list.html#ad8682c33d61365c0f715fbfee1b122b2" title="returns reference to element at specified position">at</a>(1).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>(), msg.<a class="code" href="classceammc_1_1_atom_list.html#ad8682c33d61365c0f715fbfee1b122b2" title="returns reference to element at specified position">at</a>(2).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>());
 <a name="l00279"></a>00279     }
 <a name="l00280"></a>00280 
-<a name="l00281"></a><a class="code" href="classqtpd_1_1_u_i_class.html#ae24a7148f97fa87f9ca3c16a2a9e4bc6">00281</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_class.html#ae24a7148f97fa87f9ca3c16a2a9e4bc6">msgDelProperty</a>(<a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> msg)
+<a name="l00281"></a><a class="code" href="classtilde_1_1_u_i_class.html#a6cd84bda2506e2f9e89286906bb3e8b1">00281</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#a6cd84bda2506e2f9e89286906bb3e8b1">msgDelProperty</a>(<a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> msg)
 <a name="l00282"></a>00282     {
-<a name="l00283"></a>00283         _opClass-&gt;<a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#acd465fe124da464029c90b15017ef447">freeProperty</a>(msg.<a class="code" href="classceammc_1_1_atom_list.html#ad8682c33d61365c0f715fbfee1b122b2" title="returns reference to element at specified position">at</a>(1).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>());
+<a name="l00283"></a>00283         _opClass-&gt;<a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#adc494cc83d0953cd6b4760d42d641152">freeProperty</a>(msg.<a class="code" href="classceammc_1_1_atom_list.html#ad8682c33d61365c0f715fbfee1b122b2" title="returns reference to element at specified position">at</a>(1).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>());
 <a name="l00284"></a>00284     }
 <a name="l00285"></a>00285 
-<a name="l00286"></a><a class="code" href="classqtpd_1_1_u_i_class.html#a6dc446343f744754f77b7c18778a40b5">00286</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_class.html#a6dc446343f744754f77b7c18778a40b5">msgAddMethod</a>(<a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> msg)
+<a name="l00286"></a><a class="code" href="classtilde_1_1_u_i_class.html#a57d5ba8553465ec9e655f46d726e75cd">00286</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#a57d5ba8553465ec9e655f46d726e75cd">msgAddMethod</a>(<a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> msg)
 <a name="l00287"></a>00287     {
-<a name="l00288"></a>00288         _opClass-&gt;<a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#a88c4dc3be28ec663dbf152122602cfc1">addMethod</a>(msg.<a class="code" href="classceammc_1_1_atom_list.html#ad8682c33d61365c0f715fbfee1b122b2" title="returns reference to element at specified position">at</a>(1).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>(), msg.<a class="code" href="classceammc_1_1_atom_list.html#ad8682c33d61365c0f715fbfee1b122b2" title="returns reference to element at specified position">at</a>(2).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>()); <span class="comment">//addmethod pname sendsymbol</span>
+<a name="l00288"></a>00288         _opClass-&gt;<a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#a024d1108cecf4bc49dcc764e0e2c2e07">addMethod</a>(msg.<a class="code" href="classceammc_1_1_atom_list.html#ad8682c33d61365c0f715fbfee1b122b2" title="returns reference to element at specified position">at</a>(1).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>(), msg.<a class="code" href="classceammc_1_1_atom_list.html#ad8682c33d61365c0f715fbfee1b122b2" title="returns reference to element at specified position">at</a>(2).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>()); <span class="comment">//addmethod pname sendsymbol</span>
 <a name="l00289"></a>00289     }
 <a name="l00290"></a>00290 
-<a name="l00291"></a><a class="code" href="classqtpd_1_1_u_i_class.html#a2b1ef4416692de217954c99b9de24cb0">00291</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_class.html#a2b1ef4416692de217954c99b9de24cb0">msgDelMethod</a>(<a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> msg)
+<a name="l00291"></a><a class="code" href="classtilde_1_1_u_i_class.html#a828dc28c366459fe772d322c9545d4c9">00291</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#a828dc28c366459fe772d322c9545d4c9">msgDelMethod</a>(<a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> msg)
 <a name="l00292"></a>00292     {
-<a name="l00293"></a>00293         _opClass-&gt;<a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#a12f6926644b827037865aaee5059fcb2">freeMethod</a>(msg.<a class="code" href="classceammc_1_1_atom_list.html#ad8682c33d61365c0f715fbfee1b122b2" title="returns reference to element at specified position">at</a>(1).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>());
+<a name="l00293"></a>00293         _opClass-&gt;<a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#a70ea9438c1624fa663699610896491d0">freeMethod</a>(msg.<a class="code" href="classceammc_1_1_atom_list.html#ad8682c33d61365c0f715fbfee1b122b2" title="returns reference to element at specified position">at</a>(1).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>());
 <a name="l00294"></a>00294     }
 <a name="l00295"></a>00295 
-<a name="l00296"></a><a class="code" href="classqtpd_1_1_u_i_class.html#a77807967b5714c950971f9edcfe27719">00296</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_class.html#a77807967b5714c950971f9edcfe27719">msgInfo</a>(<a class="code" href="classceammc_1_1_atom_list.html">AtomList</a>)
+<a name="l00296"></a><a class="code" href="classtilde_1_1_u_i_class.html#af9511143c36dd6161aaeb34793240162">00296</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#af9511143c36dd6161aaeb34793240162">msgInfo</a>(<a class="code" href="classceammc_1_1_atom_list.html">AtomList</a>)
 <a name="l00297"></a>00297     {
 <a name="l00298"></a>00298 
 <a name="l00299"></a>00299         <span class="keywordflow">if</span> (_opClass) {
-<a name="l00300"></a>00300             <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> l1 = _opClass-&gt;<a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#a7cc7d6943d461049c88bf4d8e2807443">getPropertyList</a>();
-<a name="l00301"></a>00301             <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> l2 = _opClass-&gt;<a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#a1fc8eeace45da7bd34b5991664bfab55">getMethodList</a>();
-<a name="l00302"></a>00302             <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> l3 = _opClass-&gt;<a class="code" href="classqtpd_1_1_o_o_p_d_class_base.html#af852b2822097548bfc8f08ea3fc0e689">getSignalList</a>();
+<a name="l00300"></a>00300             <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> l1 = _opClass-&gt;<a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#aa6455b286c372085a933ff1b7ceaefae">getPropertyList</a>();
+<a name="l00301"></a>00301             <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> l2 = _opClass-&gt;<a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#afe849f389700909262e31d6204c1c2bb">getMethodList</a>();
+<a name="l00302"></a>00302             <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> l3 = _opClass-&gt;<a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#aa1e51d8b04897c3f8dbb59c98651e949">getSignalList</a>();
 <a name="l00303"></a>00303 
 <a name="l00304"></a>00304             QStringList output;
 <a name="l00305"></a>00305 
 <a name="l00306"></a>00306             output += <span class="stringliteral">&quot;class info: &quot;</span>;
-<a name="l00307"></a>00307             output += _opClass-&gt;<a class="code" href="classqtpd_1_1_o_p_class.html#a490f03a156391aa27ba59bef9a5de91a">getClassName</a>().c_str();
+<a name="l00307"></a>00307             output += _opClass-&gt;<a class="code" href="classtilde_1_1_o_p_class.html#acfa45ee74ed8b76a57e582ee8532340f">getClassName</a>().c_str();
 <a name="l00308"></a>00308 
 <a name="l00309"></a>00309             output += <span class="stringliteral">&quot;properties:&quot;</span>;
 <a name="l00310"></a>00310             <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; l1.<a class="code" href="classceammc_1_1_atom_list.html#ad52fdc5b4f54329460495caa1b00d1ac">size</a>(); i++) {
@@ -398,11 +398,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00331"></a>00331 
 <a name="l00332"></a>00332     <span class="comment">// ---------------------------------------------------------------</span>
 <a name="l00333"></a>00333 
-<a name="l00334"></a><a class="code" href="classqtpd_1_1_u_i_class.html#a8f2402a3465732485ecf103ce40e8e34">00334</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_class.html#a8f2402a3465732485ecf103ce40e8e34">updateUI</a>(<span class="keywordtype">void</span>* uiobj, <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> msg)
+<a name="l00334"></a><a class="code" href="classtilde_1_1_u_i_class.html#a009f56b46c3e06d05f0b733ee79f63f3">00334</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#a009f56b46c3e06d05f0b733ee79f63f3">updateUI</a>(<span class="keywordtype">void</span>* uiobj, <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> msg)
 <a name="l00335"></a>00335     {
 <a name="l00336"></a>00336         <span class="comment">// message handling here - probably move somewhere else?</span>
 <a name="l00337"></a>00337 
-<a name="l00338"></a>00338         <a class="code" href="classqtpd_1_1_u_i_class.html" title="gui object: oopd class (pdclass)">UIClass</a>* x = (<a class="code" href="classqtpd_1_1_u_i_class.html" title="gui object: oopd class (pdclass)">UIClass</a>*)uiobj;
+<a name="l00338"></a>00338         <a class="code" href="classtilde_1_1_u_i_class.html" title="gui object: oopd class (pdclass)">UIClass</a>* x = (<a class="code" href="classtilde_1_1_u_i_class.html" title="gui object: oopd class (pdclass)">UIClass</a>*)uiobj;
 <a name="l00339"></a>00339 
 <a name="l00340"></a>00340         <span class="keywordflow">if</span> (msg.<a class="code" href="classceammc_1_1_atom_list.html#ad52fdc5b4f54329460495caa1b00d1ac">size</a>() &lt; 1)
 <a name="l00341"></a>00341             <span class="keywordflow">return</span>;
@@ -410,43 +410,43 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00343"></a>00343             <span class="keywordflow">return</span>;
 <a name="l00344"></a>00344 
 <a name="l00345"></a>00345         <span class="keywordflow">if</span> ((msg.<a class="code" href="classceammc_1_1_atom_list.html#ad8682c33d61365c0f715fbfee1b122b2" title="returns reference to element at specified position">at</a>(0).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>() == <span class="stringliteral">&quot;newclass&quot;</span>) &amp;&amp; (msg.<a class="code" href="classceammc_1_1_atom_list.html#ad52fdc5b4f54329460495caa1b00d1ac">size</a>() &gt; 1)) {
-<a name="l00346"></a>00346             x-&gt;<a class="code" href="classqtpd_1_1_u_i_class.html#ab82467a6a120df31bf7f9ac7ff1df539">msgNewClass</a>(msg);
+<a name="l00346"></a>00346             x-&gt;<a class="code" href="classtilde_1_1_u_i_class.html#a36bb7b2e773f812d5db3acbf6d7e56b8">msgNewClass</a>(msg);
 <a name="l00347"></a>00347         }
 <a name="l00348"></a>00348 
 <a name="l00349"></a>00349         <span class="keywordflow">if</span> ((msg.<a class="code" href="classceammc_1_1_atom_list.html#ad8682c33d61365c0f715fbfee1b122b2" title="returns reference to element at specified position">at</a>(0).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>() == <span class="stringliteral">&quot;addproperty&quot;</span>) &amp;&amp; (msg.<a class="code" href="classceammc_1_1_atom_list.html#ad52fdc5b4f54329460495caa1b00d1ac">size</a>() &gt; 2)) <span class="comment">//addproperty pname sendsymbol</span>
-<a name="l00350"></a>00350             x-&gt;<a class="code" href="classqtpd_1_1_u_i_class.html#a37207481599873f0c052dc3044fde80e">msgAddProperty</a>(msg);
+<a name="l00350"></a>00350             x-&gt;<a class="code" href="classtilde_1_1_u_i_class.html#aa361275e9fd5a65873895a7ed2373d61">msgAddProperty</a>(msg);
 <a name="l00351"></a>00351 
 <a name="l00352"></a>00352         <span class="keywordflow">if</span> ((msg.<a class="code" href="classceammc_1_1_atom_list.html#ad8682c33d61365c0f715fbfee1b122b2" title="returns reference to element at specified position">at</a>(0).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>() == <span class="stringliteral">&quot;delproperty&quot;</span>) &amp;&amp; (msg.<a class="code" href="classceammc_1_1_atom_list.html#ad52fdc5b4f54329460495caa1b00d1ac">size</a>() &gt; 1))
-<a name="l00353"></a>00353             x-&gt;<a class="code" href="classqtpd_1_1_u_i_class.html#ae24a7148f97fa87f9ca3c16a2a9e4bc6">msgDelProperty</a>(msg);
+<a name="l00353"></a>00353             x-&gt;<a class="code" href="classtilde_1_1_u_i_class.html#a6cd84bda2506e2f9e89286906bb3e8b1">msgDelProperty</a>(msg);
 <a name="l00354"></a>00354 
 <a name="l00355"></a>00355         <span class="keywordflow">if</span> ((msg.<a class="code" href="classceammc_1_1_atom_list.html#ad8682c33d61365c0f715fbfee1b122b2" title="returns reference to element at specified position">at</a>(0).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>() == <span class="stringliteral">&quot;addmethod&quot;</span>) &amp;&amp; (msg.<a class="code" href="classceammc_1_1_atom_list.html#ad52fdc5b4f54329460495caa1b00d1ac">size</a>() &gt; 2))
-<a name="l00356"></a>00356             x-&gt;<a class="code" href="classqtpd_1_1_u_i_class.html#a6dc446343f744754f77b7c18778a40b5">msgAddMethod</a>(msg);
+<a name="l00356"></a>00356             x-&gt;<a class="code" href="classtilde_1_1_u_i_class.html#a57d5ba8553465ec9e655f46d726e75cd">msgAddMethod</a>(msg);
 <a name="l00357"></a>00357 
 <a name="l00358"></a>00358         <span class="keywordflow">if</span> ((msg.<a class="code" href="classceammc_1_1_atom_list.html#ad8682c33d61365c0f715fbfee1b122b2" title="returns reference to element at specified position">at</a>(0).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>() == <span class="stringliteral">&quot;delmethod&quot;</span>) &amp;&amp; (msg.<a class="code" href="classceammc_1_1_atom_list.html#ad52fdc5b4f54329460495caa1b00d1ac">size</a>() &gt; 1))
-<a name="l00359"></a>00359             x-&gt;<a class="code" href="classqtpd_1_1_u_i_class.html#a2b1ef4416692de217954c99b9de24cb0">msgDelMethod</a>(msg);
+<a name="l00359"></a>00359             x-&gt;<a class="code" href="classtilde_1_1_u_i_class.html#a828dc28c366459fe772d322c9545d4c9">msgDelMethod</a>(msg);
 <a name="l00360"></a>00360 
 <a name="l00361"></a>00361         <span class="keywordflow">if</span> (msg.<a class="code" href="classceammc_1_1_atom_list.html#ad8682c33d61365c0f715fbfee1b122b2" title="returns reference to element at specified position">at</a>(0).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>() == <span class="stringliteral">&quot;info&quot;</span>)
-<a name="l00362"></a>00362             x-&gt;<a class="code" href="classqtpd_1_1_u_i_class.html#a77807967b5714c950971f9edcfe27719">msgInfo</a>(msg);
+<a name="l00362"></a>00362             x-&gt;<a class="code" href="classtilde_1_1_u_i_class.html#af9511143c36dd6161aaeb34793240162">msgInfo</a>(msg);
 <a name="l00363"></a>00363 
 <a name="l00364"></a>00364         <span class="comment">// -----------</span>
 <a name="l00365"></a>00365 
 <a name="l00366"></a>00366         <span class="keywordflow">if</span> ((msg.<a class="code" href="classceammc_1_1_atom_list.html#ad8682c33d61365c0f715fbfee1b122b2" title="returns reference to element at specified position">at</a>(0).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>() == <span class="stringliteral">&quot;read&quot;</span>))
-<a name="l00367"></a>00367             x-&gt;_opClass-&gt;<a class="code" href="classqtpd_1_1_o_p_class.html#a67c83af0c5a567e1f9239d27d9b3977d">readFile</a>();
+<a name="l00367"></a>00367             x-&gt;_opClass-&gt;<a class="code" href="classtilde_1_1_o_p_class.html#a67c83af0c5a567e1f9239d27d9b3977d">readFile</a>();
 <a name="l00368"></a>00368 
 <a name="l00369"></a>00369         <span class="keywordflow">if</span> ((msg.<a class="code" href="classceammc_1_1_atom_list.html#ad8682c33d61365c0f715fbfee1b122b2" title="returns reference to element at specified position">at</a>(0).<a class="code" href="classceammc_1_1_atom.html#a3cc9015ba7eb027d64e252edabfc432f">asString</a>() == <span class="stringliteral">&quot;write&quot;</span>))
-<a name="l00370"></a>00370             x-&gt;_opClass-&gt;<a class="code" href="classqtpd_1_1_o_p_class.html#a3fe1c3afd4a68bd4c446b16944484116">writeFile</a>();
+<a name="l00370"></a>00370             x-&gt;_opClass-&gt;<a class="code" href="classtilde_1_1_o_p_class.html#a3fe1c3afd4a68bd4c446b16944484116">writeFile</a>();
 <a name="l00371"></a>00371 
-<a name="l00372"></a>00372         emit((<a class="code" href="classqtpd_1_1_u_i_class.html" title="gui object: oopd class (pdclass)">UIClass</a>*)uiobj)-&gt;updateUISignal();
+<a name="l00372"></a>00372         emit((<a class="code" href="classtilde_1_1_u_i_class.html" title="gui object: oopd class (pdclass)">UIClass</a>*)uiobj)-&gt;updateUISignal();
 <a name="l00373"></a>00373     }
 <a name="l00374"></a>00374 
 <a name="l00375"></a>00375 signals:
 <a name="l00376"></a>00376 
-<a name="l00377"></a>00377     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_class.html#a5e228633d2b877fea9e433e281b694ad">mouseMoved</a>();
-<a name="l00378"></a>00378     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_class.html#aa9ac8b711b1b8657c4e404de926105a8">rightClicked</a>();
+<a name="l00377"></a>00377     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#af956d79d260d7bcf972a858fd56e09d3">mouseMoved</a>();
+<a name="l00378"></a>00378     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#abd2f576c7a7a5d4a16b45f2f5ebe38b4">rightClicked</a>();
 <a name="l00379"></a>00379 
 <a name="l00380"></a>00380     <span class="comment">//void editObject(UIObject* box);</span>
 <a name="l00381"></a>00381 signals:
-<a name="l00382"></a>00382     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_class.html#a16076b70f90b37156c204cc71a212085">updateUISignal</a>();
+<a name="l00382"></a>00382     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#a5eee48bcbec319542b40e09d5f759881">updateUISignal</a>();
 <a name="l00383"></a>00383 
 <a name="l00384"></a>00384 <span class="keyword">private</span> slots:
 <a name="l00385"></a>00385     <span class="keywordtype">void</span> updateUISlot()
@@ -475,7 +475,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 31 2017 14:17:53 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 1 2017 08:32:21 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

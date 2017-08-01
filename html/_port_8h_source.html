@@ -94,35 +94,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00010"></a>00010 
 <a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="_u_i_item_8h.html">UIItem.h</a>&quot;</span>
 <a name="l00012"></a>00012 
-<a name="l00013"></a>00013 <span class="keyword">namespace </span>qtpd {
+<a name="l00013"></a>00013 <span class="keyword">namespace </span>tilde {
 <a name="l00014"></a>00014 
-<a name="l00018"></a><a class="code" href="classqtpd_1_1_port.html">00018</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_port.html" title="Port QGraphicsItem class.">Port</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a> {
+<a name="l00018"></a><a class="code" href="classtilde_1_1_port.html">00018</a> <span class="keyword">class </span><a class="code" href="classtilde_1_1_port.html" title="Port QGraphicsItem class.">Port</a> : <span class="keyword">public</span> <a class="code" href="classtilde_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a> {
 <a name="l00019"></a>00019     Q_OBJECT
 <a name="l00020"></a>00020 
 <a name="l00021"></a>00021 <span class="keyword">private</span>:
-<a name="l00022"></a>00022     <a class="code" href="namespaceqtpd.html#a2378a83cd6f032332dd14c885bc24bb8" title="port type - in or out">UIPortType</a> _portType;
+<a name="l00022"></a>00022     <a class="code" href="namespacetilde.html#a6109fc672dff49a3e66e1cdf77417b98" title="port type - in or out">UIPortType</a> _portType;
 <a name="l00023"></a>00023     <span class="keywordtype">int</span> _portClass;
 <a name="l00024"></a>00024     <span class="keywordtype">int</span> _portIndex;
 <a name="l00025"></a>00025 
 <a name="l00026"></a>00026 <span class="keyword">public</span>:
-<a name="l00027"></a>00027     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_port.html#ad995d08ebf05486c0e102c7147294d2e">Port</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* parent = 0);
+<a name="l00027"></a>00027     <span class="keyword">explicit</span> <a class="code" href="classtilde_1_1_port.html#a640f3f3141068d05c991b6ce5d59c59d">Port</a>(<a class="code" href="classtilde_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* parent = 0);
 <a name="l00028"></a>00028 
-<a name="l00029"></a><a class="code" href="classqtpd_1_1_port.html#aca62a570537dd20667f3401c11297c07">00029</a>     <a class="code" href="namespaceqtpd.html#a2378a83cd6f032332dd14c885bc24bb8" title="port type - in or out">UIPortType</a> <a class="code" href="classqtpd_1_1_port.html#aca62a570537dd20667f3401c11297c07">portType</a>() { <span class="keywordflow">return</span> _portType; }
-<a name="l00030"></a><a class="code" href="classqtpd_1_1_port.html#ac967a49a51df8bf3b3849c364b649721">00030</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_port.html#ac967a49a51df8bf3b3849c364b649721">setPortType</a>(<a class="code" href="namespaceqtpd.html#a2378a83cd6f032332dd14c885bc24bb8" title="port type - in or out">UIPortType</a> pt) { _portType = pt; }
+<a name="l00029"></a><a class="code" href="classtilde_1_1_port.html#ad24077f9268b739a96d76a799eaf020e">00029</a>     <a class="code" href="namespacetilde.html#a6109fc672dff49a3e66e1cdf77417b98" title="port type - in or out">UIPortType</a> <a class="code" href="classtilde_1_1_port.html#ad24077f9268b739a96d76a799eaf020e">portType</a>() { <span class="keywordflow">return</span> _portType; }
+<a name="l00030"></a><a class="code" href="classtilde_1_1_port.html#ae633a54ab4a2440555cb2606ac9365ab">00030</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_port.html#ae633a54ab4a2440555cb2606ac9365ab">setPortType</a>(<a class="code" href="namespacetilde.html#a6109fc672dff49a3e66e1cdf77417b98" title="port type - in or out">UIPortType</a> pt) { _portType = pt; }
 <a name="l00031"></a>00031 
-<a name="l00032"></a><a class="code" href="classqtpd_1_1_port.html#a0069bf51bb11bfbb9b996ea87f549c46">00032</a>     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_port.html#a0069bf51bb11bfbb9b996ea87f549c46">portClass</a>() { <span class="keywordflow">return</span> _portClass; }
-<a name="l00033"></a><a class="code" href="classqtpd_1_1_port.html#a74eff975ec57e97c8553cd70c6bd25c0">00033</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_port.html#a74eff975ec57e97c8553cd70c6bd25c0">setPortClass</a>(<span class="keywordtype">int</span> pc) { _portClass = pc; }
+<a name="l00032"></a><a class="code" href="classtilde_1_1_port.html#aee3a735fdfc70aefd332784266f798f5">00032</a>     <span class="keywordtype">int</span> <a class="code" href="classtilde_1_1_port.html#aee3a735fdfc70aefd332784266f798f5">portClass</a>() { <span class="keywordflow">return</span> _portClass; }
+<a name="l00033"></a><a class="code" href="classtilde_1_1_port.html#a8f67f22faeb10ca6934ab76f1d436353">00033</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_port.html#a8f67f22faeb10ca6934ab76f1d436353">setPortClass</a>(<span class="keywordtype">int</span> pc) { _portClass = pc; }
 <a name="l00034"></a>00034 
-<a name="l00035"></a><a class="code" href="classqtpd_1_1_port.html#a009237b01a33c51bec489383174737e2">00035</a>     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_port.html#a009237b01a33c51bec489383174737e2">portIndex</a>() { <span class="keywordflow">return</span> _portIndex; }
-<a name="l00036"></a><a class="code" href="classqtpd_1_1_port.html#a66bb5ddd424af43a1d5634298c313fac">00036</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_port.html#a66bb5ddd424af43a1d5634298c313fac">setPortIndex</a>(<span class="keywordtype">int</span> pi) { _portIndex = pi; }
+<a name="l00035"></a><a class="code" href="classtilde_1_1_port.html#adffe370d5b7ce538c2c139e30643190e">00035</a>     <span class="keywordtype">int</span> <a class="code" href="classtilde_1_1_port.html#adffe370d5b7ce538c2c139e30643190e">portIndex</a>() { <span class="keywordflow">return</span> _portIndex; }
+<a name="l00036"></a><a class="code" href="classtilde_1_1_port.html#ad7f000b81d0b938f833091aa67b6df21">00036</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_port.html#ad7f000b81d0b938f833091aa67b6df21">setPortIndex</a>(<span class="keywordtype">int</span> pi) { _portIndex = pi; }
 <a name="l00037"></a>00037 
-<a name="l00038"></a>00038     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_port.html#af13fd8945e32a2967373740988ef4b7c">paint</a>(QPainter* p, <span class="keyword">const</span> QStyleOptionGraphicsItem*, QWidget*);
+<a name="l00038"></a>00038     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_port.html#aa91394190e8fda9e01b5562ad95eeeba">paint</a>(QPainter* p, <span class="keyword">const</span> QStyleOptionGraphicsItem*, QWidget*);
 <a name="l00039"></a>00039 
-<a name="l00040"></a>00040     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_port.html#a67a76935ad1f1ee2c952e6fa3b48f3b7">hoverEnterEvent</a>(QGraphicsSceneHoverEvent* ev);
-<a name="l00041"></a>00041     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_port.html#ad8915a234f4753212d5cea75b91a2678">hoverLeaveEvent</a>(QGraphicsSceneHoverEvent* ev);
+<a name="l00040"></a>00040     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_port.html#aaee71e38c8c51cace5638acd89cc2862">hoverEnterEvent</a>(QGraphicsSceneHoverEvent* ev);
+<a name="l00041"></a>00041     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_port.html#aadcbac0abd2bbab3270218902a9339b2">hoverLeaveEvent</a>(QGraphicsSceneHoverEvent* ev);
 <a name="l00042"></a>00042 
-<a name="l00043"></a>00043     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_port.html#a26156c74b5d036694dc3cdc65eaaee2b">mousePressEvent</a>(QGraphicsSceneMouseEvent* ev);
-<a name="l00044"></a>00044     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_port.html#a48974dfafb38e5dd183612075b2aa993">mouseReleaseEvent</a>(QGraphicsSceneMouseEvent* ev);
+<a name="l00043"></a>00043     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_port.html#a2d054736abc439581f256df43c8ff7cb">mousePressEvent</a>(QGraphicsSceneMouseEvent* ev);
+<a name="l00044"></a>00044     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_port.html#a336d2d49cdedd544a415253ac8f18742">mouseReleaseEvent</a>(QGraphicsSceneMouseEvent* ev);
 <a name="l00045"></a>00045 
 <a name="l00046"></a>00046 <span class="keyword">public</span> slots:
 <a name="l00047"></a>00047 };
@@ -147,7 +147,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 31 2017 14:17:53 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 1 2017 08:32:20 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

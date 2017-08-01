@@ -96,9 +96,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00012"></a>00012 
 <a name="l00013"></a>00013 <span class="preprocessor">#include &lt;QGraphicsView&gt;</span>
 <a name="l00014"></a>00014 
-<a name="l00015"></a>00015 <span class="keyword">namespace </span>qtpd {
+<a name="l00015"></a>00015 <span class="keyword">namespace </span>tilde {
 <a name="l00016"></a>00016 
-<a name="l00020"></a><a class="code" href="classqtpd_1_1_u_i_bang.html">00020</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_u_i_bang.html" title="gui object: message box (ui.msg)">UIBang</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1_u_i_object.html">UIObject</a> {
+<a name="l00020"></a><a class="code" href="classtilde_1_1_u_i_bang.html">00020</a> <span class="keyword">class </span><a class="code" href="classtilde_1_1_u_i_bang.html" title="gui object: message box (ui.msg)">UIBang</a> : <span class="keyword">public</span> <a class="code" href="classtilde_1_1_u_i_object.html">UIObject</a> {
 <a name="l00021"></a>00021     Q_OBJECT
 <a name="l00022"></a>00022 
 <a name="l00023"></a>00023 <span class="keyword">private</span>:
@@ -108,25 +108,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00027"></a>00027     <span class="keywordtype">void</span> timerStart();
 <a name="l00028"></a>00028 
 <a name="l00029"></a>00029 <span class="keyword">public</span>:
-<a name="l00030"></a>00030     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_u_i_bang.html#a6e80e1ff31401238b853f436303e2f75">UIBang</a>();
+<a name="l00030"></a>00030     <span class="keyword">explicit</span> <a class="code" href="classtilde_1_1_u_i_bang.html#a6f8aca7d4c068ec6cac4eaf767fe080b">UIBang</a>();
 <a name="l00031"></a>00031 
-<a name="l00032"></a>00032     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_u_i_object.html">UIObject</a>* <a class="code" href="classqtpd_1_1_u_i_bang.html#aed7374eba5929a7384b9d7a98e973770">createObj</a>(QString data);
+<a name="l00032"></a>00032     <span class="keyword">static</span> <a class="code" href="classtilde_1_1_u_i_object.html">UIObject</a>* <a class="code" href="classtilde_1_1_u_i_bang.html#a3b9e639795046fbd6887ac69383da7b7">createObj</a>(QString data);
 <a name="l00033"></a>00033 
-<a name="l00034"></a>00034     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_bang.html#ac9ba25cbd3692f9f4537b5377d0969d6" title="&gt; UIObject properties">paint</a>(QPainter* p, <span class="keyword">const</span> QStyleOptionGraphicsItem* option, QWidget*);
-<a name="l00035"></a>00035     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_bang.html#a5677b3f28ab86d0d8d5e133262a60802">resizeEvent</a>();
+<a name="l00034"></a>00034     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_bang.html#aa24dbba45174cd41c5aedbef887a2fb9" title="&gt; UIObject properties">paint</a>(QPainter* p, <span class="keyword">const</span> QStyleOptionGraphicsItem* option, QWidget*);
+<a name="l00035"></a>00035     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_bang.html#af7dc68ceeff41e68c135f1ec0e89341a">resizeEvent</a>();
 <a name="l00036"></a>00036 
 <a name="l00037"></a>00037     <span class="comment">// -------------------</span>
 <a name="l00038"></a>00038 
-<a name="l00039"></a>00039     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_bang.html#affff3c1414c09c34238e10af4f66942b">objectPressEvent</a>(QGraphicsSceneMouseEvent* ev);
+<a name="l00039"></a>00039     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_bang.html#a336d0203593bed1a45fc260a70de2cf9">objectPressEvent</a>(QGraphicsSceneMouseEvent* ev);
 <a name="l00040"></a>00040 
 <a name="l00041"></a>00041     <span class="comment">// -------------------------</span>
 <a name="l00042"></a>00042 
-<a name="l00043"></a>00043     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_bang.html#a445a36292e7031c085a8a8619a362740">updateUI</a>(<a class="code" href="classceammc_1_1_atom_list.html">AtomList</a>*);
+<a name="l00043"></a>00043     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_bang.html#a49ffe78a1baeb30670985b954a5a7d3e">updateUI</a>(<a class="code" href="classceammc_1_1_atom_list.html">AtomList</a>*);
 <a name="l00044"></a>00044 
 <a name="l00045"></a>00045 signals:
-<a name="l00046"></a>00046     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_bang.html#a546cc44345f7210a48fe96c1c099abd6">setBangTimer</a>(<span class="keywordtype">int</span> msec);
+<a name="l00046"></a>00046     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_bang.html#afcd3f3df257f29442dd1232992202480">setBangTimer</a>(<span class="keywordtype">int</span> msec);
 <a name="l00047"></a>00047 
-<a name="l00048"></a>00048     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_bang.html#afeb09638cd6bfd1bdc9181278e5510db">signalBang</a>();
+<a name="l00048"></a>00048     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_bang.html#aedbd8b5e0d31cceb5480422bb0001af6">signalBang</a>();
 <a name="l00049"></a>00049 
 <a name="l00050"></a>00050 <span class="keyword">private</span> slots:
 <a name="l00051"></a>00051     <span class="keywordtype">void</span> timerAction();
@@ -154,7 +154,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 31 2017 14:17:53 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 1 2017 08:32:21 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

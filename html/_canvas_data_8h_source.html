@@ -93,29 +93,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00009"></a>00009 
 <a name="l00010"></a>00010 <span class="keyword">class </span>ServerCanvas;
 <a name="l00011"></a>00011 
-<a name="l00012"></a>00012 <span class="keyword">namespace </span>qtpd {
+<a name="l00012"></a>00012 <span class="keyword">namespace </span>tilde {
 <a name="l00013"></a>00013 
 <a name="l00014"></a>00014 <span class="keyword">class </span>UIBox;
 <a name="l00015"></a>00015 
-<a name="l00016"></a>00016 <span class="keyword">typedef</span> std::vector&lt;UIObject*&gt; <a class="code" href="namespaceqtpd.html#a6b1df6dc657ffabc6347467cce8c70d2">objectVec</a>;
-<a name="l00017"></a><a class="code" href="namespaceqtpd.html#a99b7f74529942387e07a5470a410975b">00017</a> <span class="keyword">typedef</span> std::vector&lt;UIPatchcord*&gt; <a class="code" href="namespaceqtpd.html#a99b7f74529942387e07a5470a410975b">patchcordVec</a>;
+<a name="l00016"></a>00016 <span class="keyword">typedef</span> std::vector&lt;UIObject*&gt; <a class="code" href="namespacetilde.html#a8ca84e91df7943c4c12207c41fde15a2">objectVec</a>;
+<a name="l00017"></a><a class="code" href="namespacetilde.html#a62ee41606eb899e1401c252cf8d65f9e">00017</a> <span class="keyword">typedef</span> std::vector&lt;UIPatchcord*&gt; <a class="code" href="namespacetilde.html#a62ee41606eb899e1401c252cf8d65f9e">patchcordVec</a>;
 <a name="l00018"></a>00018 
 <a name="l00021"></a>00021 
-<a name="l00022"></a><a class="code" href="classqtpd_1_1_canvas_data.html">00022</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_canvas_data.html" title="shared canvas data model - boxes, patchcords">CanvasData</a> {
+<a name="l00022"></a><a class="code" href="classtilde_1_1_canvas_data.html">00022</a> <span class="keyword">class </span><a class="code" href="classtilde_1_1_canvas_data.html" title="shared canvas data model - boxes, patchcords">CanvasData</a> {
 <a name="l00023"></a>00023 
-<a name="l00024"></a>00024     <a class="code" href="namespaceqtpd.html#a6b1df6dc657ffabc6347467cce8c70d2">objectVec</a> _boxes;
-<a name="l00025"></a>00025     <a class="code" href="namespaceqtpd.html#a99b7f74529942387e07a5470a410975b">patchcordVec</a> _patchcords;
+<a name="l00024"></a>00024     <a class="code" href="namespacetilde.html#a8ca84e91df7943c4c12207c41fde15a2">objectVec</a> _boxes;
+<a name="l00025"></a>00025     <a class="code" href="namespacetilde.html#a62ee41606eb899e1401c252cf8d65f9e">patchcordVec</a> _patchcords;
 <a name="l00026"></a>00026 
-<a name="l00027"></a>00027     <a class="code" href="namespaceqtpd.html#a6b1df6dc657ffabc6347467cce8c70d2">objectVec</a> _selectedBoxes;
-<a name="l00028"></a>00028     <a class="code" href="namespaceqtpd.html#a99b7f74529942387e07a5470a410975b">patchcordVec</a> _selectedPatchcords;
+<a name="l00027"></a>00027     <a class="code" href="namespacetilde.html#a8ca84e91df7943c4c12207c41fde15a2">objectVec</a> _selectedBoxes;
+<a name="l00028"></a>00028     <a class="code" href="namespacetilde.html#a62ee41606eb899e1401c252cf8d65f9e">patchcordVec</a> _selectedPatchcords;
 <a name="l00029"></a>00029 
-<a name="l00030"></a>00030     <a class="code" href="namespaceqtpd.html#a6b1df6dc657ffabc6347467cce8c70d2">objectVec</a> _previouslySelectedBoxes;
-<a name="l00031"></a>00031     <a class="code" href="namespaceqtpd.html#a99b7f74529942387e07a5470a410975b">patchcordVec</a> _previouslySelectedPatchcords;
+<a name="l00030"></a>00030     <a class="code" href="namespacetilde.html#a8ca84e91df7943c4c12207c41fde15a2">objectVec</a> _previouslySelectedBoxes;
+<a name="l00031"></a>00031     <a class="code" href="namespacetilde.html#a62ee41606eb899e1401c252cf8d65f9e">patchcordVec</a> _previouslySelectedPatchcords;
 <a name="l00032"></a>00032 
-<a name="l00033"></a>00033     <a class="code" href="classqtpd_1_1_clipboard.html" title="The Clipboard class - just a QStringList with Pd strings for objects.">Clipboard</a>* _clipboard;
+<a name="l00033"></a>00033     <a class="code" href="classtilde_1_1_clipboard.html" title="The Clipboard class - just a QStringList with Pd strings for objects.">Clipboard</a>* _clipboard;
 <a name="l00034"></a>00034 
-<a name="l00035"></a>00035     <a class="code" href="namespaceqtpd.html#a629f357522e6dd21f0708fdb23b9cd5b">portItemVec</a>* _inlets;
-<a name="l00036"></a>00036     <a class="code" href="namespaceqtpd.html#a629f357522e6dd21f0708fdb23b9cd5b">portItemVec</a>* _outlets;
+<a name="l00035"></a>00035     <a class="code" href="namespacetilde.html#a10a058e17164e2ba279114cffdaee39a">portItemVec</a>* _inlets;
+<a name="l00036"></a>00036     <a class="code" href="namespacetilde.html#a10a058e17164e2ba279114cffdaee39a">portItemVec</a>* _outlets;
 <a name="l00037"></a>00037 
 <a name="l00038"></a>00038     <span class="comment">// new 0517</span>
 <a name="l00039"></a>00039     <span class="comment">//ServerCanvas* _serverCanvas;</span>
@@ -124,95 +124,95 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00042"></a>00042     QString _filePath;
 <a name="l00043"></a>00043     <span class="keywordtype">bool</span> _firstSave;
 <a name="l00044"></a>00044 
-<a name="l00045"></a>00045     <a class="code" href="classqtpd_1_1_property_list.html" title="Property handling class for ui object - property list.">PropertyList</a>* _properties;
+<a name="l00045"></a>00045     <a class="code" href="classtilde_1_1_property_list.html" title="Property handling class for ui object - property list.">PropertyList</a>* _properties;
 <a name="l00046"></a>00046 
 <a name="l00047"></a>00047     <span class="comment">// temporary - probably use properties later</span>
 <a name="l00048"></a>00048     QPoint _position;
 <a name="l00049"></a>00049     QSize _size;
 <a name="l00050"></a>00050 
 <a name="l00051"></a>00051 <span class="keyword">public</span>:
-<a name="l00052"></a>00052     <a class="code" href="classqtpd_1_1_canvas_data.html#a885d21d54488c30dd9b3ec70a00a4353">CanvasData</a>();
+<a name="l00052"></a>00052     <a class="code" href="classtilde_1_1_canvas_data.html#aaa5c8dc9b41d55b5ee26526f680d73cd">CanvasData</a>();
 <a name="l00053"></a>00053 
-<a name="l00054"></a><a class="code" href="classqtpd_1_1_canvas_data.html#a61409ca72a1d66d257556de080c400f3">00054</a>     <a class="code" href="namespaceqtpd.html#a629f357522e6dd21f0708fdb23b9cd5b">portItemVec</a>* <a class="code" href="classqtpd_1_1_canvas_data.html#a61409ca72a1d66d257556de080c400f3">inlets</a>() { <span class="keywordflow">return</span> _inlets; }
-<a name="l00055"></a><a class="code" href="classqtpd_1_1_canvas_data.html#a8cd45d5c58a1a413590a99191e347041">00055</a>     <a class="code" href="namespaceqtpd.html#a629f357522e6dd21f0708fdb23b9cd5b">portItemVec</a>* <a class="code" href="classqtpd_1_1_canvas_data.html#a8cd45d5c58a1a413590a99191e347041">outlets</a>() { <span class="keywordflow">return</span> _outlets; }
+<a name="l00054"></a><a class="code" href="classtilde_1_1_canvas_data.html#a798a1188a3bd203f75bebf90123cc064">00054</a>     <a class="code" href="namespacetilde.html#a10a058e17164e2ba279114cffdaee39a">portItemVec</a>* <a class="code" href="classtilde_1_1_canvas_data.html#a798a1188a3bd203f75bebf90123cc064">inlets</a>() { <span class="keywordflow">return</span> _inlets; }
+<a name="l00055"></a><a class="code" href="classtilde_1_1_canvas_data.html#a8707b04f6b1f6aae948d17794e825501">00055</a>     <a class="code" href="namespacetilde.html#a10a058e17164e2ba279114cffdaee39a">portItemVec</a>* <a class="code" href="classtilde_1_1_canvas_data.html#a8707b04f6b1f6aae948d17794e825501">outlets</a>() { <span class="keywordflow">return</span> _outlets; }
 <a name="l00056"></a>00056 
-<a name="l00057"></a><a class="code" href="classqtpd_1_1_canvas_data.html#a567ef05f7373b9c90bcb31df1c65d392">00057</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_data.html#a567ef05f7373b9c90bcb31df1c65d392">setInlets</a>(<a class="code" href="namespaceqtpd.html#a629f357522e6dd21f0708fdb23b9cd5b">portItemVec</a>* <a class="code" href="classqtpd_1_1_canvas_data.html#a61409ca72a1d66d257556de080c400f3">inlets</a>) { _inlets = <a class="code" href="classqtpd_1_1_canvas_data.html#a61409ca72a1d66d257556de080c400f3">inlets</a>; }
-<a name="l00058"></a><a class="code" href="classqtpd_1_1_canvas_data.html#ab2b8bf3e1a3d94d5f5181c9d9c543b36">00058</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_data.html#ab2b8bf3e1a3d94d5f5181c9d9c543b36">setOutlets</a>(<a class="code" href="namespaceqtpd.html#a629f357522e6dd21f0708fdb23b9cd5b">portItemVec</a>* <a class="code" href="classqtpd_1_1_canvas_data.html#a8cd45d5c58a1a413590a99191e347041">outlets</a>) { _outlets = <a class="code" href="classqtpd_1_1_canvas_data.html#a8cd45d5c58a1a413590a99191e347041">outlets</a>; }
+<a name="l00057"></a><a class="code" href="classtilde_1_1_canvas_data.html#aaca1b1474fa53e2b063a49f40f83e2ad">00057</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_canvas_data.html#aaca1b1474fa53e2b063a49f40f83e2ad">setInlets</a>(<a class="code" href="namespacetilde.html#a10a058e17164e2ba279114cffdaee39a">portItemVec</a>* <a class="code" href="classtilde_1_1_canvas_data.html#a798a1188a3bd203f75bebf90123cc064">inlets</a>) { _inlets = <a class="code" href="classtilde_1_1_canvas_data.html#a798a1188a3bd203f75bebf90123cc064">inlets</a>; }
+<a name="l00058"></a><a class="code" href="classtilde_1_1_canvas_data.html#a582b52a4fa3ec21062b9a43166450cd5">00058</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_canvas_data.html#a582b52a4fa3ec21062b9a43166450cd5">setOutlets</a>(<a class="code" href="namespacetilde.html#a10a058e17164e2ba279114cffdaee39a">portItemVec</a>* <a class="code" href="classtilde_1_1_canvas_data.html#a8707b04f6b1f6aae948d17794e825501">outlets</a>) { _outlets = <a class="code" href="classtilde_1_1_canvas_data.html#a8707b04f6b1f6aae948d17794e825501">outlets</a>; }
 <a name="l00059"></a>00059 
-<a name="l00060"></a><a class="code" href="classqtpd_1_1_canvas_data.html#a97750cf889091a49f82199270fdef866">00060</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_data.html#a97750cf889091a49f82199270fdef866">setFileName</a>(QString fName) { _fileName = fName; }
-<a name="l00061"></a><a class="code" href="classqtpd_1_1_canvas_data.html#aa8214ca2980e0ce488120a071ed1476e">00061</a>     QString <a class="code" href="classqtpd_1_1_canvas_data.html#aa8214ca2980e0ce488120a071ed1476e">fileName</a>() { <span class="keywordflow">return</span> _fileName; }
+<a name="l00060"></a><a class="code" href="classtilde_1_1_canvas_data.html#aba119929ea9cff64c5d339a151040800">00060</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_canvas_data.html#aba119929ea9cff64c5d339a151040800">setFileName</a>(QString fName) { _fileName = fName; }
+<a name="l00061"></a><a class="code" href="classtilde_1_1_canvas_data.html#abd33d2d7f2a4e383c0d27824673ea19d">00061</a>     QString <a class="code" href="classtilde_1_1_canvas_data.html#abd33d2d7f2a4e383c0d27824673ea19d">fileName</a>() { <span class="keywordflow">return</span> _fileName; }
 <a name="l00062"></a>00062 
-<a name="l00063"></a><a class="code" href="classqtpd_1_1_canvas_data.html#a789343c47183df2e7e51d58aa5bcb87c">00063</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_data.html#a789343c47183df2e7e51d58aa5bcb87c">setFilePath</a>(QString <a class="code" href="classqtpd_1_1_canvas_data.html#a9588a64641031ac502cf95733e4b81ad">filePath</a>) { _filePath = <a class="code" href="classqtpd_1_1_canvas_data.html#a9588a64641031ac502cf95733e4b81ad">filePath</a>; }
-<a name="l00064"></a><a class="code" href="classqtpd_1_1_canvas_data.html#a9588a64641031ac502cf95733e4b81ad">00064</a>     QString <a class="code" href="classqtpd_1_1_canvas_data.html#a9588a64641031ac502cf95733e4b81ad">filePath</a>() { <span class="keywordflow">return</span> _filePath; };
+<a name="l00063"></a><a class="code" href="classtilde_1_1_canvas_data.html#a45c18ec0809aed0b648a61d69af2795f">00063</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_canvas_data.html#a45c18ec0809aed0b648a61d69af2795f">setFilePath</a>(QString <a class="code" href="classtilde_1_1_canvas_data.html#aa7195bf4ab67ee75922e8e6d745b1b05">filePath</a>) { _filePath = <a class="code" href="classtilde_1_1_canvas_data.html#aa7195bf4ab67ee75922e8e6d745b1b05">filePath</a>; }
+<a name="l00064"></a><a class="code" href="classtilde_1_1_canvas_data.html#aa7195bf4ab67ee75922e8e6d745b1b05">00064</a>     QString <a class="code" href="classtilde_1_1_canvas_data.html#aa7195bf4ab67ee75922e8e6d745b1b05">filePath</a>() { <span class="keywordflow">return</span> _filePath; };
 <a name="l00065"></a>00065 
-<a name="l00066"></a><a class="code" href="classqtpd_1_1_canvas_data.html#a7369353f11e6cc4725f105d86860c4c2">00066</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_data.html#a7369353f11e6cc4725f105d86860c4c2">setFirstSave</a>(<span class="keywordtype">bool</span> fs) { _firstSave = fs; }
-<a name="l00067"></a><a class="code" href="classqtpd_1_1_canvas_data.html#a67a4195d673a54bf94f521419d29ca14">00067</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_canvas_data.html#a67a4195d673a54bf94f521419d29ca14">firstSave</a>() { <span class="keywordflow">return</span> _firstSave; }
+<a name="l00066"></a><a class="code" href="classtilde_1_1_canvas_data.html#ae2a283089255f7cda63d495ba3a1141e">00066</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_canvas_data.html#ae2a283089255f7cda63d495ba3a1141e">setFirstSave</a>(<span class="keywordtype">bool</span> fs) { _firstSave = fs; }
+<a name="l00067"></a><a class="code" href="classtilde_1_1_canvas_data.html#a95dc0fee5475ac7f10f8eb89318e0f9d">00067</a>     <span class="keywordtype">bool</span> <a class="code" href="classtilde_1_1_canvas_data.html#a95dc0fee5475ac7f10f8eb89318e0f9d">firstSave</a>() { <span class="keywordflow">return</span> _firstSave; }
 <a name="l00068"></a>00068 
-<a name="l00069"></a><a class="code" href="classqtpd_1_1_canvas_data.html#a044a06a1cb7d890a77325457a94a9939">00069</a>     <a class="code" href="classqtpd_1_1_property_list.html" title="Property handling class for ui object - property list.">PropertyList</a>* <a class="code" href="classqtpd_1_1_canvas_data.html#a044a06a1cb7d890a77325457a94a9939">properties</a>() { <span class="keywordflow">return</span> _properties; };
-<a name="l00070"></a><a class="code" href="classqtpd_1_1_canvas_data.html#a35c606f8f181c5586f8dd04d605ca2b2">00070</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_data.html#a35c606f8f181c5586f8dd04d605ca2b2">setProperties</a>(<a class="code" href="classqtpd_1_1_property_list.html" title="Property handling class for ui object - property list.">PropertyList</a>* p) { _properties = p; };
+<a name="l00069"></a><a class="code" href="classtilde_1_1_canvas_data.html#a3c131e47aefc1b5bb8dba20ed0292ebc">00069</a>     <a class="code" href="classtilde_1_1_property_list.html" title="Property handling class for ui object - property list.">PropertyList</a>* <a class="code" href="classtilde_1_1_canvas_data.html#a3c131e47aefc1b5bb8dba20ed0292ebc">properties</a>() { <span class="keywordflow">return</span> _properties; };
+<a name="l00070"></a><a class="code" href="classtilde_1_1_canvas_data.html#a25a44b098f68a653782700102039f37b">00070</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_canvas_data.html#a25a44b098f68a653782700102039f37b">setProperties</a>(<a class="code" href="classtilde_1_1_property_list.html" title="Property handling class for ui object - property list.">PropertyList</a>* p) { _properties = p; };
 <a name="l00071"></a>00071     <span class="comment">//</span>
 <a name="l00072"></a>00072 
-<a name="l00073"></a><a class="code" href="classqtpd_1_1_canvas_data.html#a68d232a640020d26a8d2424394a22b6a">00073</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_data.html#a68d232a640020d26a8d2424394a22b6a">setPosition</a>(QPoint p) { _position = p; }
-<a name="l00074"></a><a class="code" href="classqtpd_1_1_canvas_data.html#a17b04d8a889d19a901992cf38de81ccb">00074</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_data.html#a17b04d8a889d19a901992cf38de81ccb">setSize</a>(QSize s) { _size = s; }
+<a name="l00073"></a><a class="code" href="classtilde_1_1_canvas_data.html#aca941bd7948a5822d141eab170a737ee">00073</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_canvas_data.html#aca941bd7948a5822d141eab170a737ee">setPosition</a>(QPoint p) { _position = p; }
+<a name="l00074"></a><a class="code" href="classtilde_1_1_canvas_data.html#a740c3bcd86e28a8322f53b2f4ba424d7">00074</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_canvas_data.html#a740c3bcd86e28a8322f53b2f4ba424d7">setSize</a>(QSize s) { _size = s; }
 <a name="l00075"></a>00075 
 <a name="l00076"></a>00076     <span class="comment">//</span>
-<a name="l00077"></a><a class="code" href="classqtpd_1_1_canvas_data.html#a5ac222f1e1a7cafb92b6b15f8956f386">00077</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_canvas_data.html#a5ac222f1e1a7cafb92b6b15f8956f386">hasObjects</a>() { <span class="keywordflow">return</span> ((_boxes.size() &gt; 0) || (_patchcords.size() &gt; 0)); }
-<a name="l00078"></a><a class="code" href="classqtpd_1_1_canvas_data.html#a37b1856e8c2279ae20a1835380da20a9">00078</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_canvas_data.html#a37b1856e8c2279ae20a1835380da20a9">hasSelectedObjects</a>() { <span class="keywordflow">return</span> ((_selectedBoxes.size() &gt; 0) || (_selectedPatchcords.size() &gt; 0)); }
+<a name="l00077"></a><a class="code" href="classtilde_1_1_canvas_data.html#a2639d30a89148a2f4b9cdd2a2a96c1fe">00077</a>     <span class="keywordtype">bool</span> <a class="code" href="classtilde_1_1_canvas_data.html#a2639d30a89148a2f4b9cdd2a2a96c1fe">hasObjects</a>() { <span class="keywordflow">return</span> ((_boxes.size() &gt; 0) || (_patchcords.size() &gt; 0)); }
+<a name="l00078"></a><a class="code" href="classtilde_1_1_canvas_data.html#adf29319ee486221309b5dbbe8071a354">00078</a>     <span class="keywordtype">bool</span> <a class="code" href="classtilde_1_1_canvas_data.html#adf29319ee486221309b5dbbe8071a354">hasSelectedObjects</a>() { <span class="keywordflow">return</span> ((_selectedBoxes.size() &gt; 0) || (_selectedPatchcords.size() &gt; 0)); }
 <a name="l00079"></a>00079 
-<a name="l00080"></a><a class="code" href="classqtpd_1_1_canvas_data.html#a47f7935e671ebcdfeddba6904eb90509">00080</a>     <a class="code" href="namespaceqtpd.html#a6b1df6dc657ffabc6347467cce8c70d2">objectVec</a>* <a class="code" href="classqtpd_1_1_canvas_data.html#a47f7935e671ebcdfeddba6904eb90509">boxes</a>() { <span class="keywordflow">return</span> &amp;_boxes; }
-<a name="l00081"></a><a class="code" href="classqtpd_1_1_canvas_data.html#aa6a1ff15e1a75edd6b28ad4bcb6a578d">00081</a>     <a class="code" href="namespaceqtpd.html#a99b7f74529942387e07a5470a410975b">patchcordVec</a>* <a class="code" href="classqtpd_1_1_canvas_data.html#aa6a1ff15e1a75edd6b28ad4bcb6a578d">patchcords</a>() { <span class="keywordflow">return</span> &amp;_patchcords; }
-<a name="l00082"></a><a class="code" href="classqtpd_1_1_canvas_data.html#a92fe4991496b0cab0fb76cebb7eb6cb6">00082</a>     <a class="code" href="namespaceqtpd.html#a6b1df6dc657ffabc6347467cce8c70d2">objectVec</a>* <a class="code" href="classqtpd_1_1_canvas_data.html#a92fe4991496b0cab0fb76cebb7eb6cb6">selectedBoxes</a>() { <span class="keywordflow">return</span> &amp;_selectedBoxes; }
-<a name="l00083"></a><a class="code" href="classqtpd_1_1_canvas_data.html#a5b4dbafe8e21e9ea28e7b849be931a42">00083</a>     <a class="code" href="namespaceqtpd.html#a99b7f74529942387e07a5470a410975b">patchcordVec</a>* <a class="code" href="classqtpd_1_1_canvas_data.html#a5b4dbafe8e21e9ea28e7b849be931a42">selectedPatchcords</a>() { <span class="keywordflow">return</span> &amp;_selectedPatchcords; }
+<a name="l00080"></a><a class="code" href="classtilde_1_1_canvas_data.html#a5e322b15dce3e581c95fdf485618c7a9">00080</a>     <a class="code" href="namespacetilde.html#a8ca84e91df7943c4c12207c41fde15a2">objectVec</a>* <a class="code" href="classtilde_1_1_canvas_data.html#a5e322b15dce3e581c95fdf485618c7a9">boxes</a>() { <span class="keywordflow">return</span> &amp;_boxes; }
+<a name="l00081"></a><a class="code" href="classtilde_1_1_canvas_data.html#a1b0fcb04e23b346ebf9255866156e69c">00081</a>     <a class="code" href="namespacetilde.html#a62ee41606eb899e1401c252cf8d65f9e">patchcordVec</a>* <a class="code" href="classtilde_1_1_canvas_data.html#a1b0fcb04e23b346ebf9255866156e69c">patchcords</a>() { <span class="keywordflow">return</span> &amp;_patchcords; }
+<a name="l00082"></a><a class="code" href="classtilde_1_1_canvas_data.html#a6a4f71534f920918e438f133a387249b">00082</a>     <a class="code" href="namespacetilde.html#a8ca84e91df7943c4c12207c41fde15a2">objectVec</a>* <a class="code" href="classtilde_1_1_canvas_data.html#a6a4f71534f920918e438f133a387249b">selectedBoxes</a>() { <span class="keywordflow">return</span> &amp;_selectedBoxes; }
+<a name="l00083"></a><a class="code" href="classtilde_1_1_canvas_data.html#a2f200b887e6d5e32a0ae3820129b819b">00083</a>     <a class="code" href="namespacetilde.html#a62ee41606eb899e1401c252cf8d65f9e">patchcordVec</a>* <a class="code" href="classtilde_1_1_canvas_data.html#a2f200b887e6d5e32a0ae3820129b819b">selectedPatchcords</a>() { <span class="keywordflow">return</span> &amp;_selectedPatchcords; }
 <a name="l00084"></a>00084 
 <a name="l00085"></a>00085     <span class="comment">// ------------------------------</span>
 <a name="l00086"></a>00086 
-<a name="l00087"></a>00087     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_data.html#a83caa3ad4c0937d601a46872594e6054">addUniqueBox</a>(<a class="code" href="namespaceqtpd.html#a6b1df6dc657ffabc6347467cce8c70d2">objectVec</a>* <a class="code" href="classqtpd_1_1_canvas_data.html#a47f7935e671ebcdfeddba6904eb90509">boxes</a>, <a class="code" href="classqtpd_1_1_u_i_object.html">UIObject</a>* box);
-<a name="l00088"></a>00088     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_data.html#a7eb70639d25ca7abf2a99648c443da31">addUniquePatchcord</a>(<a class="code" href="namespaceqtpd.html#a99b7f74529942387e07a5470a410975b">patchcordVec</a>* <a class="code" href="classqtpd_1_1_canvas_data.html#aa6a1ff15e1a75edd6b28ad4bcb6a578d">patchcords</a>, <a class="code" href="classqtpd_1_1_u_i_patchcord.html" title="Patchcord QGraphicsObject class.">UIPatchcord</a>* pcord);
-<a name="l00089"></a>00089     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_canvas_data.html#a4f3db22c9bef4556170d8c25e8578e9a">findBox</a>(<a class="code" href="namespaceqtpd.html#a6b1df6dc657ffabc6347467cce8c70d2">objectVec</a>* <a class="code" href="classqtpd_1_1_canvas_data.html#a47f7935e671ebcdfeddba6904eb90509">boxes</a>, <a class="code" href="classqtpd_1_1_u_i_object.html">UIObject</a>* box);
-<a name="l00090"></a>00090     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_canvas_data.html#a5ef8913f04f5ee65aebc31c542748d37">findPatchcord</a>(<a class="code" href="namespaceqtpd.html#a99b7f74529942387e07a5470a410975b">patchcordVec</a>* <a class="code" href="classqtpd_1_1_canvas_data.html#aa6a1ff15e1a75edd6b28ad4bcb6a578d">patchcords</a>, <a class="code" href="classqtpd_1_1_u_i_patchcord.html" title="Patchcord QGraphicsObject class.">UIPatchcord</a>* pcord);
+<a name="l00087"></a>00087     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_canvas_data.html#aad72a4130f754ea9db172d53a1ab5078">addUniqueBox</a>(<a class="code" href="namespacetilde.html#a8ca84e91df7943c4c12207c41fde15a2">objectVec</a>* <a class="code" href="classtilde_1_1_canvas_data.html#a5e322b15dce3e581c95fdf485618c7a9">boxes</a>, <a class="code" href="classtilde_1_1_u_i_object.html">UIObject</a>* box);
+<a name="l00088"></a>00088     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_canvas_data.html#a1703113f410955d9042c3b90cc854419">addUniquePatchcord</a>(<a class="code" href="namespacetilde.html#a62ee41606eb899e1401c252cf8d65f9e">patchcordVec</a>* <a class="code" href="classtilde_1_1_canvas_data.html#a1b0fcb04e23b346ebf9255866156e69c">patchcords</a>, <a class="code" href="classtilde_1_1_u_i_patchcord.html" title="Patchcord QGraphicsObject class.">UIPatchcord</a>* pcord);
+<a name="l00089"></a>00089     <span class="keywordtype">int</span> <a class="code" href="classtilde_1_1_canvas_data.html#aeb61baa7fe8cefc1ae00c12830a4c329">findBox</a>(<a class="code" href="namespacetilde.html#a8ca84e91df7943c4c12207c41fde15a2">objectVec</a>* <a class="code" href="classtilde_1_1_canvas_data.html#a5e322b15dce3e581c95fdf485618c7a9">boxes</a>, <a class="code" href="classtilde_1_1_u_i_object.html">UIObject</a>* box);
+<a name="l00090"></a>00090     <span class="keywordtype">int</span> <a class="code" href="classtilde_1_1_canvas_data.html#a8fc95183b252c60c9b8dd95b4197a87c">findPatchcord</a>(<a class="code" href="namespacetilde.html#a62ee41606eb899e1401c252cf8d65f9e">patchcordVec</a>* <a class="code" href="classtilde_1_1_canvas_data.html#a1b0fcb04e23b346ebf9255866156e69c">patchcords</a>, <a class="code" href="classtilde_1_1_u_i_patchcord.html" title="Patchcord QGraphicsObject class.">UIPatchcord</a>* pcord);
 <a name="l00091"></a>00091 
 <a name="l00092"></a>00092     <span class="comment">//</span>
-<a name="l00093"></a>00093     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_data.html#af00e375ff144c85c36c4ec98044698a5">selectBoxesInFrame</a>(QPoint start, QPoint end);
-<a name="l00094"></a>00094     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_data.html#a50f8d59002c39ba657b21608718ec548">moveSelectedBoxes</a>(QPoint pos, <span class="keywordtype">bool</span> gridSnap);
+<a name="l00093"></a>00093     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_canvas_data.html#a3cd0d9ca6939a03eb29ede536fead1f8">selectBoxesInFrame</a>(QPoint start, QPoint end);
+<a name="l00094"></a>00094     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_canvas_data.html#a944ca7f6ae23e3a096b94117249ef8f1">moveSelectedBoxes</a>(QPoint pos, <span class="keywordtype">bool</span> gridSnap);
 <a name="l00095"></a>00095 
 <a name="l00096"></a>00096     <span class="comment">// ------------------------------</span>
 <a name="l00097"></a>00097 
-<a name="l00098"></a><a class="code" href="classqtpd_1_1_canvas_data.html#a70146bc4afcd6085f314c3f0db8631bf">00098</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_data.html#a70146bc4afcd6085f314c3f0db8631bf">addBox</a>(<a class="code" href="classqtpd_1_1_u_i_object.html">UIObject</a>* box) { <a class="code" href="classqtpd_1_1_canvas_data.html#a83caa3ad4c0937d601a46872594e6054">addUniqueBox</a>(&amp;_boxes, box); }
-<a name="l00099"></a><a class="code" href="classqtpd_1_1_canvas_data.html#a7d0877db8db1b4202c69a31d7eeda5da">00099</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_data.html#a7d0877db8db1b4202c69a31d7eeda5da">addPatchcord</a>(<a class="code" href="classqtpd_1_1_u_i_patchcord.html" title="Patchcord QGraphicsObject class.">UIPatchcord</a>* pc) { <a class="code" href="classqtpd_1_1_canvas_data.html#a7eb70639d25ca7abf2a99648c443da31">addUniquePatchcord</a>(&amp;_patchcords, pc); }
+<a name="l00098"></a><a class="code" href="classtilde_1_1_canvas_data.html#a08e593a6a2a9c5f4c75d98898d318403">00098</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_canvas_data.html#a08e593a6a2a9c5f4c75d98898d318403">addBox</a>(<a class="code" href="classtilde_1_1_u_i_object.html">UIObject</a>* box) { <a class="code" href="classtilde_1_1_canvas_data.html#aad72a4130f754ea9db172d53a1ab5078">addUniqueBox</a>(&amp;_boxes, box); }
+<a name="l00099"></a><a class="code" href="classtilde_1_1_canvas_data.html#a826f09ad3bd8ddc247b66e5a6e91220e">00099</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_canvas_data.html#a826f09ad3bd8ddc247b66e5a6e91220e">addPatchcord</a>(<a class="code" href="classtilde_1_1_u_i_patchcord.html" title="Patchcord QGraphicsObject class.">UIPatchcord</a>* pc) { <a class="code" href="classtilde_1_1_canvas_data.html#a1703113f410955d9042c3b90cc854419">addUniquePatchcord</a>(&amp;_patchcords, pc); }
 <a name="l00100"></a>00100 
 <a name="l00101"></a>00101     <span class="comment">// ------------------------------</span>
 <a name="l00102"></a>00102 
-<a name="l00103"></a>00103     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_data.html#aae8f9f3c4c0e086f651685e7f5d7c882">selectBox</a>(<a class="code" href="classqtpd_1_1_u_i_object.html">UIObject</a>* box);
-<a name="l00104"></a>00104     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_data.html#ae7fe86b392da5d2436a3bb4d1a064ba9">selectPatchcord</a>(<a class="code" href="classqtpd_1_1_u_i_patchcord.html" title="Patchcord QGraphicsObject class.">UIPatchcord</a>* pc);
-<a name="l00105"></a>00105     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_data.html#ab69c7611bf7c9bbf57aa6a7178087fd1">deselectBoxes</a>();
-<a name="l00106"></a>00106     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_data.html#ae7683b489148afdedd334b7a09f64237">deselectPatchcords</a>();
+<a name="l00103"></a>00103     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_canvas_data.html#a571f33ab2604b3c42a2c4349771a025c">selectBox</a>(<a class="code" href="classtilde_1_1_u_i_object.html">UIObject</a>* box);
+<a name="l00104"></a>00104     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_canvas_data.html#a59819e563041169be7ed58cfe4aa1662">selectPatchcord</a>(<a class="code" href="classtilde_1_1_u_i_patchcord.html" title="Patchcord QGraphicsObject class.">UIPatchcord</a>* pc);
+<a name="l00105"></a>00105     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_canvas_data.html#ac29faec8e31e0cf7afb62aaba682d880">deselectBoxes</a>();
+<a name="l00106"></a>00106     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_canvas_data.html#a27d2bcd4509c7988fcf8cd40a852b924">deselectPatchcords</a>();
 <a name="l00107"></a>00107 
 <a name="l00108"></a>00108     <span class="comment">// ----------</span>
 <a name="l00109"></a>00109 
-<a name="l00110"></a>00110     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_data.html#aaacdd3fc09b426cbda895b88ce28c50e">deletePatchcord</a>(<a class="code" href="classqtpd_1_1_u_i_patchcord.html" title="Patchcord QGraphicsObject class.">UIPatchcord</a>* pc);
+<a name="l00110"></a>00110     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_canvas_data.html#ad9c04c18df29d231db5775a27c584172">deletePatchcord</a>(<a class="code" href="classtilde_1_1_u_i_patchcord.html" title="Patchcord QGraphicsObject class.">UIPatchcord</a>* pc);
 <a name="l00111"></a>00111 
 <a name="l00112"></a>00112     <span class="comment">// ----------</span>
 <a name="l00113"></a>00113 
-<a name="l00114"></a>00114     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_data.html#a461cd0c7e9fbae9ec94ed5a7c437d030">cut</a>();
-<a name="l00115"></a>00115     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_data.html#aad8dca9630dd41adb78a79335a69adbd">copy</a>();
-<a name="l00116"></a>00116     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_canvas_data.html#ac0d3e6dd6fdc4a3d0321c5a271448318">paste</a>();
+<a name="l00114"></a>00114     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_canvas_data.html#af36ff1c195992eb63ec5cffd9728653a">cut</a>();
+<a name="l00115"></a>00115     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_canvas_data.html#a70b45d80740dbc5ea133a27dfe091cc4">copy</a>();
+<a name="l00116"></a>00116     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_canvas_data.html#a33ea3cb6b54ef2fdebfd8d3024e8d34d">paste</a>();
 <a name="l00117"></a>00117 
 <a name="l00118"></a>00118     <span class="comment">// -------</span>
 <a name="l00119"></a>00119 
-<a name="l00120"></a>00120     <span class="keywordtype">int</span> <a class="code" href="classqtpd_1_1_canvas_data.html#a238ece132e0cec35984f5f15d7fa93c1">findObjectIndex</a>(<a class="code" href="classqtpd_1_1_u_i_object.html">UIObject</a>* obj);
-<a name="l00121"></a>00121     <a class="code" href="classqtpd_1_1_u_i_object.html">UIObject</a>* <a class="code" href="classqtpd_1_1_canvas_data.html#af3428dec9b47cf33ab8293e8e62a100b">getObjectByIndex</a>(<span class="keywordtype">int</span> idx);
-<a name="l00122"></a>00122     <a class="code" href="namespaceqtpd.html#a99b7f74529942387e07a5470a410975b">patchcordVec</a> <a class="code" href="classqtpd_1_1_canvas_data.html#a9e382308171baf185c84c007fe96c0b7">patchcordsForObject</a>(<a class="code" href="classqtpd_1_1_u_i_object.html">UIObject</a>* obj);
+<a name="l00120"></a>00120     <span class="keywordtype">int</span> <a class="code" href="classtilde_1_1_canvas_data.html#af706069b3d9abea8b7640942440dadb2">findObjectIndex</a>(<a class="code" href="classtilde_1_1_u_i_object.html">UIObject</a>* obj);
+<a name="l00121"></a>00121     <a class="code" href="classtilde_1_1_u_i_object.html">UIObject</a>* <a class="code" href="classtilde_1_1_canvas_data.html#a2c0f06523dc323941c4f5d652a1acc6e">getObjectByIndex</a>(<span class="keywordtype">int</span> idx);
+<a name="l00122"></a>00122     <a class="code" href="namespacetilde.html#a62ee41606eb899e1401c252cf8d65f9e">patchcordVec</a> <a class="code" href="classtilde_1_1_canvas_data.html#afb572a5dcef1842cfc6a8bfbfcf97f3c">patchcordsForObject</a>(<a class="code" href="classtilde_1_1_u_i_object.html">UIObject</a>* obj);
 <a name="l00123"></a>00123 
 <a name="l00124"></a>00124     <span class="comment">// ------------------------------</span>
 <a name="l00125"></a>00125 
-<a name="l00126"></a>00126     QStringList <a class="code" href="classqtpd_1_1_canvas_data.html#a2feadf5b43121b15a8635300cccf1ccf">boxesAsPdFileStrings</a>(<a class="code" href="namespaceqtpd.html#a6b1df6dc657ffabc6347467cce8c70d2">objectVec</a>* <a class="code" href="classqtpd_1_1_canvas_data.html#a47f7935e671ebcdfeddba6904eb90509">boxes</a>);
-<a name="l00127"></a>00127     std::string <a class="code" href="classqtpd_1_1_canvas_data.html#ab9342fdf6a9cb0661b9587247f832223">patchcordAsPdFileString</a>(<a class="code" href="classqtpd_1_1_u_i_patchcord.html" title="Patchcord QGraphicsObject class.">UIPatchcord</a>* pcord);
-<a name="l00128"></a>00128     QStringList <a class="code" href="classqtpd_1_1_canvas_data.html#a13d9919a4358f17e60829f16995f0bea">patchcordsAsPdFileStrings</a>(<a class="code" href="namespaceqtpd.html#a99b7f74529942387e07a5470a410975b">patchcordVec</a>* <a class="code" href="classqtpd_1_1_canvas_data.html#aa6a1ff15e1a75edd6b28ad4bcb6a578d">patchcords</a>);
-<a name="l00129"></a>00129     <a class="code" href="structqtpd_1_1__patchcord_as_numbers.html" title="patchcord as numbers">t_patchcordAsNumbers</a> <a class="code" href="classqtpd_1_1_canvas_data.html#ae4bbb013b890276e16524276f4b39e10">patchcordAsNumbers</a>(<a class="code" href="classqtpd_1_1_u_i_patchcord.html" title="Patchcord QGraphicsObject class.">UIPatchcord</a>* pcord);
+<a name="l00126"></a>00126     QStringList <a class="code" href="classtilde_1_1_canvas_data.html#a0ea5e341ad774cee9db1e2bba80de4ff">boxesAsPdFileStrings</a>(<a class="code" href="namespacetilde.html#a8ca84e91df7943c4c12207c41fde15a2">objectVec</a>* <a class="code" href="classtilde_1_1_canvas_data.html#a5e322b15dce3e581c95fdf485618c7a9">boxes</a>);
+<a name="l00127"></a>00127     std::string <a class="code" href="classtilde_1_1_canvas_data.html#a2795a8e9c2734af67756671f9cf31007">patchcordAsPdFileString</a>(<a class="code" href="classtilde_1_1_u_i_patchcord.html" title="Patchcord QGraphicsObject class.">UIPatchcord</a>* pcord);
+<a name="l00128"></a>00128     QStringList <a class="code" href="classtilde_1_1_canvas_data.html#aeafe99ea38157afcb48f3a6e8a32d5e2">patchcordsAsPdFileStrings</a>(<a class="code" href="namespacetilde.html#a62ee41606eb899e1401c252cf8d65f9e">patchcordVec</a>* <a class="code" href="classtilde_1_1_canvas_data.html#a1b0fcb04e23b346ebf9255866156e69c">patchcords</a>);
+<a name="l00129"></a>00129     <a class="code" href="structtilde_1_1__patchcord_as_numbers.html" title="patchcord as numbers">t_patchcordAsNumbers</a> <a class="code" href="classtilde_1_1_canvas_data.html#a86fbe66c809bbcc148e570a94d49eb0c">patchcordAsNumbers</a>(<a class="code" href="classtilde_1_1_u_i_patchcord.html" title="Patchcord QGraphicsObject class.">UIPatchcord</a>* pcord);
 <a name="l00130"></a>00130 
-<a name="l00131"></a>00131     QStringList <a class="code" href="classqtpd_1_1_canvas_data.html#ae7fcba22560cf3e71b5bd596c0e8db3f">objectsAsPdFileStrings</a>();
-<a name="l00132"></a>00132     QString <a class="code" href="classqtpd_1_1_canvas_data.html#aba763f0d79f33892a3269e9f9e671263">canvasAsPdFileString</a>();
-<a name="l00133"></a>00133     QStringList <a class="code" href="classqtpd_1_1_canvas_data.html#a56f451f6c6b948d99dab3f782a1993ff">asPdFileStrings</a>();
+<a name="l00131"></a>00131     QStringList <a class="code" href="classtilde_1_1_canvas_data.html#a1ef8706bd43bf42adf7131c2f423bc35">objectsAsPdFileStrings</a>();
+<a name="l00132"></a>00132     QString <a class="code" href="classtilde_1_1_canvas_data.html#ad710285eeebff1056333a60a5241ea0f">canvasAsPdFileString</a>();
+<a name="l00133"></a>00133     QStringList <a class="code" href="classtilde_1_1_canvas_data.html#a181675dc56cf1e5d8e5ae4b36dc8cf52">asPdFileStrings</a>();
 <a name="l00134"></a>00134 
 <a name="l00135"></a>00135     <span class="comment">// -------</span>
 <a name="l00136"></a>00136 };
@@ -237,7 +237,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 31 2017 14:17:53 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 1 2017 08:32:20 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

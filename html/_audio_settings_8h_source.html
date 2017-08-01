@@ -100,80 +100,76 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00016"></a>00016 
 <a name="l00017"></a>00017 <span class="preprocessor">#include &quot;pdServer.hpp&quot;</span>
 <a name="l00018"></a>00018 
-<a name="l00019"></a><a class="code" href="_audio_settings_8h.html#a6b1401e3ca4767d09919b9fbb9d8e478">00019</a> <span class="preprocessor">#define AUDIOSETTINGS_QSTRING(x) qtpd::AudioSettings::inst().getQString(x)</span>
-<a name="l00020"></a><a class="code" href="_audio_settings_8h.html#ad279f5363307ec738a81c718f3e7a66f">00020</a> <span class="preprocessor"></span><span class="preprocessor">#define QTPD_AUDIOSETTINGS_INIT qtpd::AudioSettings::inst().init()</span>
+<a name="l00019"></a><a class="code" href="_audio_settings_8h.html#a6b1401e3ca4767d09919b9fbb9d8e478">00019</a> <span class="preprocessor">#define AUDIOSETTINGS_QSTRING(x) tilde::AudioSettings::inst().getQString(x)</span>
+<a name="l00020"></a><a class="code" href="_audio_settings_8h.html#a58ecf399fafdc6fd6935ad90f546004e">00020</a> <span class="preprocessor"></span><span class="preprocessor">#define TILDE_AUDIOSETTINGS_INIT tilde::AudioSettings::inst().init()</span>
 <a name="l00021"></a><a class="code" href="_audio_settings_8h.html#a6da9786b78bb81f2698c1fbec30d309e">00021</a> <span class="preprocessor"></span><span class="preprocessor">#define AUDIOSETTINGS_LISTENER(x, y) connect(get(x), &amp;Property::changed, this, y)</span>
 <a name="l00022"></a>00022 <span class="preprocessor"></span>
-<a name="l00023"></a>00023 <span class="comment">//move</span>
-<a name="l00024"></a>00024 <span class="comment">//#define QTPD_PREF_STR(x) AtomList(gensym(x))</span>
-<a name="l00025"></a>00025 
-<a name="l00026"></a>00026 <span class="keyword">namespace </span>qtpd {
-<a name="l00027"></a>00027 
-<a name="l00030"></a><a class="code" href="classqtpd_1_1_audio_settings.html">00030</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_audio_settings.html" title="app AudioSettings singleton">AudioSettings</a> : <span class="keyword">public</span> <a class="code" href="classqtpd_1_1_property_list.html" title="Property handling class for ui object - property list.">PropertyList</a> <span class="comment">// TODO</span>
-<a name="l00031"></a>00031 {
-<a name="l00032"></a>00032 <span class="keyword">public</span>:
-<a name="l00033"></a><a class="code" href="classqtpd_1_1_audio_settings.html#a57a94409f3c5fb1dace61ec644c3cda1">00033</a>     <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_audio_settings.html" title="app AudioSettings singleton">AudioSettings</a>&amp; <a class="code" href="classqtpd_1_1_audio_settings.html#a57a94409f3c5fb1dace61ec644c3cda1">inst</a>()
-<a name="l00034"></a>00034     {
-<a name="l00035"></a>00035         <span class="keyword">static</span> <a class="code" href="classqtpd_1_1_audio_settings.html" title="app AudioSettings singleton">AudioSettings</a> <a class="code" href="namespaceqtpd.html#a3dde6489d34303c66ea710aa2116b426">instance</a>;
-<a name="l00036"></a>00036         <span class="keywordflow">return</span> <a class="code" href="namespaceqtpd.html#a3dde6489d34303c66ea710aa2116b426">instance</a>;
-<a name="l00037"></a>00037     }
+<a name="l00023"></a>00023 <span class="keyword">namespace </span>tilde {
+<a name="l00024"></a>00024 
+<a name="l00027"></a><a class="code" href="classtilde_1_1_audio_settings.html">00027</a> <span class="keyword">class </span><a class="code" href="classtilde_1_1_audio_settings.html" title="app AudioSettings singleton">AudioSettings</a> : <span class="keyword">public</span> <a class="code" href="classtilde_1_1_property_list.html" title="Property handling class for ui object - property list.">PropertyList</a> <span class="comment">// TODO</span>
+<a name="l00028"></a>00028 {
+<a name="l00029"></a>00029 <span class="keyword">public</span>:
+<a name="l00030"></a><a class="code" href="classtilde_1_1_audio_settings.html#af8203ef5f6d1df57b1c79511052cd37b">00030</a>     <span class="keyword">static</span> <a class="code" href="classtilde_1_1_audio_settings.html" title="app AudioSettings singleton">AudioSettings</a>&amp; <a class="code" href="classtilde_1_1_audio_settings.html#af8203ef5f6d1df57b1c79511052cd37b">inst</a>()
+<a name="l00031"></a>00031     {
+<a name="l00032"></a>00032         <span class="keyword">static</span> <a class="code" href="classtilde_1_1_audio_settings.html" title="app AudioSettings singleton">AudioSettings</a> <a class="code" href="namespacetilde.html#a8d213f22536572108764f60c19cac421">instance</a>;
+<a name="l00033"></a>00033         <span class="keywordflow">return</span> <a class="code" href="namespacetilde.html#a8d213f22536572108764f60c19cac421">instance</a>;
+<a name="l00034"></a>00034     }
+<a name="l00035"></a>00035 
+<a name="l00036"></a>00036 <span class="keyword">private</span>:
+<a name="l00037"></a>00037     std::map&lt;std::string, QString&gt; _data;
 <a name="l00038"></a>00038 
-<a name="l00039"></a>00039 <span class="keyword">private</span>:
-<a name="l00040"></a>00040     std::map&lt;std::string, QString&gt; _data;
-<a name="l00041"></a>00041 
-<a name="l00042"></a>00042     <a class="code" href="classqtpd_1_1_audio_settings.html" title="app AudioSettings singleton">AudioSettings</a>()
-<a name="l00043"></a>00043     {
-<a name="l00044"></a>00044     }
-<a name="l00045"></a>00045 
-<a name="l00046"></a>00046 <span class="keyword">public</span>:
-<a name="l00047"></a>00047     AudioSettings(AudioSettings <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;
-<a name="l00048"></a>00048     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_audio_settings.html#a4230d61cf24e624c6be05768d4e9a550">operator=</a>(AudioSettings <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;
-<a name="l00049"></a>00049 
-<a name="l00050"></a>00050     <span class="comment">//temporary</span>
-<a name="l00051"></a><a class="code" href="classqtpd_1_1_audio_settings.html#a6f4f130ce0ca4bf65a37fda4a14c9afe">00051</a>     QString <a class="code" href="classqtpd_1_1_audio_settings.html#a6f4f130ce0ca4bf65a37fda4a14c9afe">getQString</a>(QString key)
-<a name="l00052"></a>00052     {
-<a name="l00053"></a>00053         <span class="keywordflow">if</span> (<span class="keyword">get</span>(key))
-<a name="l00054"></a>00054             <span class="keywordflow">return</span> <span class="keyword">get</span>(key)-&gt;asQString();
+<a name="l00039"></a>00039     <a class="code" href="classtilde_1_1_audio_settings.html" title="app AudioSettings singleton">AudioSettings</a>()
+<a name="l00040"></a>00040     {
+<a name="l00041"></a>00041     }
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043 <span class="keyword">public</span>:
+<a name="l00044"></a>00044     AudioSettings(AudioSettings <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;
+<a name="l00045"></a>00045     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_audio_settings.html#a5c1f6ecc1fb9318a409457e8cb2d8413">operator=</a>(AudioSettings <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047     <span class="comment">//temporary</span>
+<a name="l00048"></a><a class="code" href="classtilde_1_1_audio_settings.html#ab8a0fa08e92e30cb0e484225cfd6fb21">00048</a>     QString <a class="code" href="classtilde_1_1_audio_settings.html#ab8a0fa08e92e30cb0e484225cfd6fb21">getQString</a>(QString key)
+<a name="l00049"></a>00049     {
+<a name="l00050"></a>00050         <span class="keywordflow">if</span> (<span class="keyword">get</span>(key))
+<a name="l00051"></a>00051             <span class="keywordflow">return</span> <span class="keyword">get</span>(key)-&gt;asQString();
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053         <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;
+<a name="l00054"></a>00054     }
 <a name="l00055"></a>00055 
-<a name="l00056"></a>00056         <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;
-<a name="l00057"></a>00057     }
+<a name="l00056"></a><a class="code" href="classtilde_1_1_audio_settings.html#adce20c82a7e2b978a7ca758e9c8c4f64">00056</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_audio_settings.html#adce20c82a7e2b978a7ca758e9c8c4f64">init</a>()
+<a name="l00057"></a>00057     {
 <a name="l00058"></a>00058 
-<a name="l00059"></a><a class="code" href="classqtpd_1_1_audio_settings.html#a56dbfb6c3cdbdaa69e43f6be7e44b4b6">00059</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_audio_settings.html#a56dbfb6c3cdbdaa69e43f6be7e44b4b6">init</a>()
-<a name="l00060"></a>00060     {
+<a name="l00059"></a>00059         <span class="comment">// TODO</span>
+<a name="l00060"></a>00060         <a class="code" href="classtilde_1_1_property_list.html#a16917686077fced1fde54d5536cacdcc">create</a>(<span class="stringliteral">&quot;AudioDriver&quot;</span>, <span class="stringliteral">&quot;Basic&quot;</span>, <a class="code" href="_preferences_8h.html#a205dff9ea0fa7c7837b6e0508d4b7ee5">TILDE_APP_VERSION</a>, QString(ServerInstance::getAudioAPIs().c_str()).split(<span class="stringliteral">&quot;,&quot;</span>));
 <a name="l00061"></a>00061 
-<a name="l00062"></a>00062 
-<a name="l00063"></a>00063         <span class="comment">// TODO</span>
-<a name="l00064"></a>00064         <a class="code" href="classqtpd_1_1_property_list.html#abfd4e70760aa06560c464b3a7e8a438a">create</a>(<span class="stringliteral">&quot;AudioDriver&quot;</span>, <span class="stringliteral">&quot;Basic&quot;</span>, <a class="code" href="_preferences_8h.html#ae09bed4115d5e989b65c733ad8ace663">QTPD_APP_VERSION</a>, QString(ServerInstance::getAudioAPIs().c_str()).split(<span class="stringliteral">&quot;,&quot;</span>));
-<a name="l00065"></a>00065 
-<a name="l00066"></a>00066         <span class="keyword">get</span>(<span class="stringliteral">&quot;AudioDriver&quot;</span>)-&gt;setType(<a class="code" href="namespaceqtpd.html#a4755ed0e035538f41ccaa52507907924aa490a4c31806657f97d94e1053a6bb9e">ptEnum</a>);
-<a name="l00067"></a>00067 
-<a name="l00068"></a>00068         <a class="code" href="classqtpd_1_1_property_list.html#abfd4e70760aa06560c464b3a7e8a438a">create</a>(<span class="stringliteral">&quot;AudioInput&quot;</span>, <span class="stringliteral">&quot;Basic&quot;</span>, <a class="code" href="_preferences_8h.html#ae09bed4115d5e989b65c733ad8ace663">QTPD_APP_VERSION</a>, QString(ServerInstance::getAudioInDevices().c_str()).split(<span class="stringliteral">&quot;,&quot;</span>));
-<a name="l00069"></a>00069         <span class="keyword">get</span>(<span class="stringliteral">&quot;AudioInput&quot;</span>)-&gt;setType(<a class="code" href="namespaceqtpd.html#a4755ed0e035538f41ccaa52507907924aa490a4c31806657f97d94e1053a6bb9e">ptEnum</a>);
-<a name="l00070"></a>00070         <a class="code" href="classqtpd_1_1_property_list.html#abfd4e70760aa06560c464b3a7e8a438a">create</a>(<span class="stringliteral">&quot;AudioOutput&quot;</span>, <span class="stringliteral">&quot;Basic&quot;</span>, <a class="code" href="_preferences_8h.html#ae09bed4115d5e989b65c733ad8ace663">QTPD_APP_VERSION</a>, QString(ServerInstance::getAudioOutDevices().c_str()).split(<span class="stringliteral">&quot;,&quot;</span>));
-<a name="l00071"></a>00071         <span class="keyword">get</span>(<span class="stringliteral">&quot;AudioOutput&quot;</span>)-&gt;setType(<a class="code" href="namespaceqtpd.html#a4755ed0e035538f41ccaa52507907924aa490a4c31806657f97d94e1053a6bb9e">ptEnum</a>);
-<a name="l00072"></a>00072 
-<a name="l00073"></a>00073         <a class="code" href="classqtpd_1_1_property_list.html#abfd4e70760aa06560c464b3a7e8a438a">create</a>(<span class="stringliteral">&quot;BufferSize&quot;</span>, <span class="stringliteral">&quot;Settings&quot;</span>, <a class="code" href="_preferences_8h.html#ae09bed4115d5e989b65c733ad8ace663">QTPD_APP_VERSION</a>, 256);
-<a name="l00074"></a>00074         <span class="keyword">get</span>(<span class="stringliteral">&quot;BufferSize&quot;</span>)-&gt;setType(<a class="code" href="namespaceqtpd.html#a4755ed0e035538f41ccaa52507907924a01a782ded89c23e0bfca52ba7cf03ef2">ptInt</a>);
-<a name="l00075"></a>00075         <a class="code" href="classqtpd_1_1_property_list.html#abfd4e70760aa06560c464b3a7e8a438a">create</a>(<span class="stringliteral">&quot;BlockSize&quot;</span>, <span class="stringliteral">&quot;Settings&quot;</span>, <a class="code" href="_preferences_8h.html#ae09bed4115d5e989b65c733ad8ace663">QTPD_APP_VERSION</a>, 64);
-<a name="l00076"></a>00076         <span class="keyword">get</span>(<span class="stringliteral">&quot;BlockSize&quot;</span>)-&gt;setType(<a class="code" href="namespaceqtpd.html#a4755ed0e035538f41ccaa52507907924a01a782ded89c23e0bfca52ba7cf03ef2">ptInt</a>);
-<a name="l00077"></a>00077         <a class="code" href="classqtpd_1_1_property_list.html#abfd4e70760aa06560c464b3a7e8a438a">create</a>(<span class="stringliteral">&quot;InputCount&quot;</span>, <span class="stringliteral">&quot;Settings&quot;</span>, <a class="code" href="_preferences_8h.html#ae09bed4115d5e989b65c733ad8ace663">QTPD_APP_VERSION</a>, 2);
-<a name="l00078"></a>00078         <span class="keyword">get</span>(<span class="stringliteral">&quot;InputCount&quot;</span>)-&gt;setType(<a class="code" href="namespaceqtpd.html#a4755ed0e035538f41ccaa52507907924a01a782ded89c23e0bfca52ba7cf03ef2">ptInt</a>);
-<a name="l00079"></a>00079         <a class="code" href="classqtpd_1_1_property_list.html#abfd4e70760aa06560c464b3a7e8a438a">create</a>(<span class="stringliteral">&quot;OutputCount&quot;</span>, <span class="stringliteral">&quot;Settings&quot;</span>, <a class="code" href="_preferences_8h.html#ae09bed4115d5e989b65c733ad8ace663">QTPD_APP_VERSION</a>, 2);
-<a name="l00080"></a>00080         <span class="keyword">get</span>(<span class="stringliteral">&quot;OutputCount&quot;</span>)-&gt;setType(<a class="code" href="namespaceqtpd.html#a4755ed0e035538f41ccaa52507907924a01a782ded89c23e0bfca52ba7cf03ef2">ptInt</a>);
-<a name="l00081"></a>00081 
-<a name="l00082"></a>00082         <a class="code" href="_audio_settings_8h.html#a6da9786b78bb81f2698c1fbec30d309e">AUDIOSETTINGS_LISTENER</a>(<span class="stringliteral">&quot;AudioDriver&quot;</span>, &amp;AudioSettings::slotSetAudioDriver);
-<a name="l00083"></a>00083         <a class="code" href="_audio_settings_8h.html#a6da9786b78bb81f2698c1fbec30d309e">AUDIOSETTINGS_LISTENER</a>(<span class="stringliteral">&quot;AudioInput&quot;</span>, &amp;AudioSettings::slotSetAudioInput);
-<a name="l00084"></a>00084         <a class="code" href="_audio_settings_8h.html#a6da9786b78bb81f2698c1fbec30d309e">AUDIOSETTINGS_LISTENER</a>(<span class="stringliteral">&quot;AudioOutput&quot;</span>, &amp;AudioSettings::slotSetAudioOutput);
-<a name="l00085"></a>00085     }
-<a name="l00086"></a>00086 
-<a name="l00087"></a>00087    <span class="keyword">private</span> slots:
-<a name="l00088"></a>00088     <span class="keywordtype">void</span> slotSetAudioDriver(){qDebug() &lt;&lt; <span class="stringliteral">&quot;audio driver&quot;</span>;}
-<a name="l00089"></a>00089     <span class="keywordtype">void</span> slotSetAudioInput(){}
-<a name="l00090"></a>00090     <span class="keywordtype">void</span> slotSetAudioOutput(){}
-<a name="l00091"></a>00091 };
-<a name="l00092"></a>00092 }
-<a name="l00093"></a>00093 
-<a name="l00094"></a>00094 <span class="preprocessor">#endif // CM_AudioSettings_H</span>
+<a name="l00062"></a>00062         <span class="keyword">get</span>(<span class="stringliteral">&quot;AudioDriver&quot;</span>)-&gt;setType(<a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678ad3d5b2bcbf404668f714e13161894864">ptEnum</a>);
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064         <a class="code" href="classtilde_1_1_property_list.html#a16917686077fced1fde54d5536cacdcc">create</a>(<span class="stringliteral">&quot;AudioInput&quot;</span>, <span class="stringliteral">&quot;Basic&quot;</span>, <a class="code" href="_preferences_8h.html#a205dff9ea0fa7c7837b6e0508d4b7ee5">TILDE_APP_VERSION</a>, QString(ServerInstance::getAudioInDevices().c_str()).split(<span class="stringliteral">&quot;,&quot;</span>));
+<a name="l00065"></a>00065         <span class="keyword">get</span>(<span class="stringliteral">&quot;AudioInput&quot;</span>)-&gt;setType(<a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678ad3d5b2bcbf404668f714e13161894864">ptEnum</a>);
+<a name="l00066"></a>00066         <a class="code" href="classtilde_1_1_property_list.html#a16917686077fced1fde54d5536cacdcc">create</a>(<span class="stringliteral">&quot;AudioOutput&quot;</span>, <span class="stringliteral">&quot;Basic&quot;</span>, <a class="code" href="_preferences_8h.html#a205dff9ea0fa7c7837b6e0508d4b7ee5">TILDE_APP_VERSION</a>, QString(ServerInstance::getAudioOutDevices().c_str()).split(<span class="stringliteral">&quot;,&quot;</span>));
+<a name="l00067"></a>00067         <span class="keyword">get</span>(<span class="stringliteral">&quot;AudioOutput&quot;</span>)-&gt;setType(<a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678ad3d5b2bcbf404668f714e13161894864">ptEnum</a>);
+<a name="l00068"></a>00068 
+<a name="l00069"></a>00069         <a class="code" href="classtilde_1_1_property_list.html#a16917686077fced1fde54d5536cacdcc">create</a>(<span class="stringliteral">&quot;BufferSize&quot;</span>, <span class="stringliteral">&quot;Settings&quot;</span>, <a class="code" href="_preferences_8h.html#a205dff9ea0fa7c7837b6e0508d4b7ee5">TILDE_APP_VERSION</a>, 256);
+<a name="l00070"></a>00070         <span class="keyword">get</span>(<span class="stringliteral">&quot;BufferSize&quot;</span>)-&gt;setType(<a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678aa78fbb776b0ce15d217d41849e927434">ptInt</a>);
+<a name="l00071"></a>00071         <a class="code" href="classtilde_1_1_property_list.html#a16917686077fced1fde54d5536cacdcc">create</a>(<span class="stringliteral">&quot;BlockSize&quot;</span>, <span class="stringliteral">&quot;Settings&quot;</span>, <a class="code" href="_preferences_8h.html#a205dff9ea0fa7c7837b6e0508d4b7ee5">TILDE_APP_VERSION</a>, 64);
+<a name="l00072"></a>00072         <span class="keyword">get</span>(<span class="stringliteral">&quot;BlockSize&quot;</span>)-&gt;setType(<a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678aa78fbb776b0ce15d217d41849e927434">ptInt</a>);
+<a name="l00073"></a>00073         <a class="code" href="classtilde_1_1_property_list.html#a16917686077fced1fde54d5536cacdcc">create</a>(<span class="stringliteral">&quot;InputCount&quot;</span>, <span class="stringliteral">&quot;Settings&quot;</span>, <a class="code" href="_preferences_8h.html#a205dff9ea0fa7c7837b6e0508d4b7ee5">TILDE_APP_VERSION</a>, 2);
+<a name="l00074"></a>00074         <span class="keyword">get</span>(<span class="stringliteral">&quot;InputCount&quot;</span>)-&gt;setType(<a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678aa78fbb776b0ce15d217d41849e927434">ptInt</a>);
+<a name="l00075"></a>00075         <a class="code" href="classtilde_1_1_property_list.html#a16917686077fced1fde54d5536cacdcc">create</a>(<span class="stringliteral">&quot;OutputCount&quot;</span>, <span class="stringliteral">&quot;Settings&quot;</span>, <a class="code" href="_preferences_8h.html#a205dff9ea0fa7c7837b6e0508d4b7ee5">TILDE_APP_VERSION</a>, 2);
+<a name="l00076"></a>00076         <span class="keyword">get</span>(<span class="stringliteral">&quot;OutputCount&quot;</span>)-&gt;setType(<a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678aa78fbb776b0ce15d217d41849e927434">ptInt</a>);
+<a name="l00077"></a>00077 
+<a name="l00078"></a>00078         <a class="code" href="_audio_settings_8h.html#a6da9786b78bb81f2698c1fbec30d309e">AUDIOSETTINGS_LISTENER</a>(<span class="stringliteral">&quot;AudioDriver&quot;</span>, &amp;AudioSettings::slotSetAudioDriver);
+<a name="l00079"></a>00079         <a class="code" href="_audio_settings_8h.html#a6da9786b78bb81f2698c1fbec30d309e">AUDIOSETTINGS_LISTENER</a>(<span class="stringliteral">&quot;AudioInput&quot;</span>, &amp;AudioSettings::slotSetAudioInput);
+<a name="l00080"></a>00080         <a class="code" href="_audio_settings_8h.html#a6da9786b78bb81f2698c1fbec30d309e">AUDIOSETTINGS_LISTENER</a>(<span class="stringliteral">&quot;AudioOutput&quot;</span>, &amp;AudioSettings::slotSetAudioOutput);
+<a name="l00081"></a>00081     }
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083 <span class="keyword">private</span> slots:
+<a name="l00084"></a>00084     <span class="keywordtype">void</span> slotSetAudioDriver() { qDebug() &lt;&lt; <span class="stringliteral">&quot;audio driver&quot;</span>; }
+<a name="l00085"></a>00085     <span class="keywordtype">void</span> slotSetAudioInput() {}
+<a name="l00086"></a>00086     <span class="keywordtype">void</span> slotSetAudioOutput() {}
+<a name="l00087"></a>00087 };
+<a name="l00088"></a>00088 }
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090 <span class="preprocessor">#endif // CM_AudioSettings_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -192,7 +188,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 31 2017 14:17:53 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 1 2017 08:32:21 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

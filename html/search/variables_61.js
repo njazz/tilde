@@ -10,7 +10,7 @@ var searchData=
   ['a_5fvec',['a_vec',['../struct__array.html#a64715f91167ad9f91885a098d2d90fd1',1,'_array']]],
   ['a_5fw',['a_w',['../struct__atom.html#aa555b14371e4e988208cd1f0839a10ca',1,'_atom']]],
   ['alpha_5fenabled',['alpha_enabled',['../class_color___dialog_1_1_private.html#a7fc9f72395d71d324d4f3cd523b243cd',1,'Color_Dialog::Private']]],
-  ['arrangemenu',['arrangeMenu',['../classqtpd_1_1_base_window.html#a4765b54e6384d48b901951f5853f6401',1,'qtpd::BaseWindow']]],
+  ['arrangemenu',['arrangeMenu',['../classtilde_1_1_base_window.html#acffd93416f056cb3fd831190e229c496',1,'tilde::BaseWindow']]],
   ['av_5fgarray',['av_garray',['../struct__arrayvis.html#abb410872a2fc37a0ffdd5961dc44bfef',1,'_arrayvis']]],
   ['av_5fupd',['av_upd',['../struct__arrayvis.html#a20cb8f5e2b4fd44860e746e7e893a3ad',1,'_arrayvis']]]
 ];

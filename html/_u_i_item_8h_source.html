@@ -91,16 +91,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00007"></a>00007 <span class="preprocessor">#include &quot;<a class="code" href="_common_types_8h.html">CommonTypes.h</a>&quot;</span>
 <a name="l00008"></a>00008 <span class="preprocessor">#include &lt;QGraphicsObject&gt;</span>
 <a name="l00009"></a>00009 
-<a name="l00010"></a>00010 <span class="keyword">namespace </span>qtpd {
+<a name="l00010"></a>00010 <span class="keyword">namespace </span>tilde {
 <a name="l00011"></a>00011 
-<a name="l00015"></a><a class="code" href="classqtpd_1_1_u_i_item.html">00015</a> <span class="keyword">class </span><a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a> : <span class="keyword">public</span> QGraphicsObject {
+<a name="l00015"></a><a class="code" href="classtilde_1_1_u_i_item.html">00015</a> <span class="keyword">class </span><a class="code" href="classtilde_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a> : <span class="keyword">public</span> QGraphicsObject {
 <a name="l00016"></a>00016     Q_OBJECT
 <a name="l00017"></a>00017 
 <a name="l00018"></a>00018 <span class="keyword">private</span>:
 <a name="l00019"></a>00019     <span class="keywordtype">bool</span> _selected;
 <a name="l00020"></a>00020     <span class="keywordtype">bool</span> _hover;
 <a name="l00021"></a>00021 
-<a name="l00022"></a>00022     <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a" title="edit mode types">t_editMode</a>* _editMode;
+<a name="l00022"></a>00022     <a class="code" href="namespacetilde.html#a788ec93ba342aa6f356829b22c07cc09" title="edit mode types">t_editMode</a>* _editMode;
 <a name="l00023"></a>00023 
 <a name="l00024"></a>00024     QSize _size;
 <a name="l00025"></a>00025     QSize _minSize;
@@ -109,61 +109,61 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00028"></a>00028     QColor _bgColor;
 <a name="l00029"></a>00029 
 <a name="l00030"></a>00030 <span class="keyword">public</span>:
-<a name="l00031"></a><a class="code" href="classqtpd_1_1_u_i_item.html#afa31f6c6b2497b60610ad8325325b843">00031</a>     QPoint <a class="code" href="classqtpd_1_1_u_i_item.html#afa31f6c6b2497b60610ad8325325b843">dragOffset</a>;
+<a name="l00031"></a><a class="code" href="classtilde_1_1_u_i_item.html#a5ec3655bd51139c73a9fcceb8ea0f57f">00031</a>     QPoint <a class="code" href="classtilde_1_1_u_i_item.html#a5ec3655bd51139c73a9fcceb8ea0f57f">dragOffset</a>;
 <a name="l00032"></a>00032 
-<a name="l00033"></a>00033     <span class="keyword">explicit</span> <a class="code" href="classqtpd_1_1_u_i_item.html#ac3279633db46d303e56051d7eccc4ef8">UIItem</a>(QGraphicsObject* parent = 0);
+<a name="l00033"></a>00033     <span class="keyword">explicit</span> <a class="code" href="classtilde_1_1_u_i_item.html#ad18b86c101012226ca6d595e8eb98c4a">UIItem</a>(QGraphicsObject* parent = 0);
 <a name="l00034"></a>00034 
-<a name="l00035"></a><a class="code" href="classqtpd_1_1_u_i_item.html#ad04bc59adbae89c02f35f69685e15662">00035</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#ad04bc59adbae89c02f35f69685e15662">setSize</a>(QSize <a class="code" href="classqtpd_1_1_u_i_item.html#a5459c088d2279385386e14fff826f12f">size</a>) { _size = <a class="code" href="classqtpd_1_1_u_i_item.html#a5459c088d2279385386e14fff826f12f">size</a>; }
-<a name="l00036"></a><a class="code" href="classqtpd_1_1_u_i_item.html#aa09e9ef88f0a04d6e6a384d3f848fdf3">00036</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#aa09e9ef88f0a04d6e6a384d3f848fdf3">setSize</a>(<span class="keywordtype">float</span> w, <span class="keywordtype">float</span> h) { _size = QSize(w, h); }
-<a name="l00037"></a><a class="code" href="classqtpd_1_1_u_i_item.html#a8eeca95be6c277797b9e1588f9a6397c">00037</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#a8eeca95be6c277797b9e1588f9a6397c">setWidth</a>(<span class="keywordtype">float</span> w) { _size.setWidth(w); }
-<a name="l00038"></a><a class="code" href="classqtpd_1_1_u_i_item.html#a9f78aac561b9e06d076e81c5d5479cbc">00038</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#a9f78aac561b9e06d076e81c5d5479cbc">setHeight</a>(<span class="keywordtype">float</span> h) { _size.setHeight(h); }
-<a name="l00039"></a><a class="code" href="classqtpd_1_1_u_i_item.html#a2cde5b174c6c39d85af552ae70de1a85">00039</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#a2cde5b174c6c39d85af552ae70de1a85">setMinWidth</a>(<span class="keywordtype">float</span> w) { _minSize.setWidth(w); }
-<a name="l00040"></a><a class="code" href="classqtpd_1_1_u_i_item.html#a33df7f64441a1d1b56494f95a68e3846">00040</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#a33df7f64441a1d1b56494f95a68e3846">setMinHeight</a>(<span class="keywordtype">float</span> h) { _minSize.setHeight(h); }
+<a name="l00035"></a><a class="code" href="classtilde_1_1_u_i_item.html#a6e7396a6fd2208f82d32007ac5e9fd25">00035</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_item.html#a6e7396a6fd2208f82d32007ac5e9fd25">setSize</a>(QSize <a class="code" href="classtilde_1_1_u_i_item.html#ab41f1972e9510aa47b6606a6030d88ab">size</a>) { _size = <a class="code" href="classtilde_1_1_u_i_item.html#ab41f1972e9510aa47b6606a6030d88ab">size</a>; }
+<a name="l00036"></a><a class="code" href="classtilde_1_1_u_i_item.html#a0f92e4e560cb480ce379429f711bee5f">00036</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_item.html#a0f92e4e560cb480ce379429f711bee5f">setSize</a>(<span class="keywordtype">float</span> w, <span class="keywordtype">float</span> h) { _size = QSize(w, h); }
+<a name="l00037"></a><a class="code" href="classtilde_1_1_u_i_item.html#aa3d7ccc05e41759009bbcaed46e4ba93">00037</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_item.html#aa3d7ccc05e41759009bbcaed46e4ba93">setWidth</a>(<span class="keywordtype">float</span> w) { _size.setWidth(w); }
+<a name="l00038"></a><a class="code" href="classtilde_1_1_u_i_item.html#ac2fab18a1987d5dd8b2e237460863575">00038</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_item.html#ac2fab18a1987d5dd8b2e237460863575">setHeight</a>(<span class="keywordtype">float</span> h) { _size.setHeight(h); }
+<a name="l00039"></a><a class="code" href="classtilde_1_1_u_i_item.html#a65a8fa11386f6c6d166b90a44b53b994">00039</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_item.html#a65a8fa11386f6c6d166b90a44b53b994">setMinWidth</a>(<span class="keywordtype">float</span> w) { _minSize.setWidth(w); }
+<a name="l00040"></a><a class="code" href="classtilde_1_1_u_i_item.html#af0c6092a7b5a1b2589990b4941dadbb5">00040</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_item.html#af0c6092a7b5a1b2589990b4941dadbb5">setMinHeight</a>(<span class="keywordtype">float</span> h) { _minSize.setHeight(h); }
 <a name="l00041"></a>00041 
-<a name="l00042"></a><a class="code" href="classqtpd_1_1_u_i_item.html#a89b7d0bcdcb226800c37d95305a1f441">00042</a>     <span class="keywordtype">float</span> <a class="code" href="classqtpd_1_1_u_i_item.html#a89b7d0bcdcb226800c37d95305a1f441">width</a>() { <span class="keywordflow">return</span> _size.width(); }
-<a name="l00043"></a><a class="code" href="classqtpd_1_1_u_i_item.html#a5bbd8fe0417078d386176ace5a01f261">00043</a>     <span class="keywordtype">float</span> <a class="code" href="classqtpd_1_1_u_i_item.html#a5bbd8fe0417078d386176ace5a01f261">height</a>() { <span class="keywordflow">return</span> _size.height(); }
-<a name="l00044"></a><a class="code" href="classqtpd_1_1_u_i_item.html#a9b969bff1b5b7f18c2f5cf5600c14a00">00044</a>     <span class="keywordtype">float</span> <a class="code" href="classqtpd_1_1_u_i_item.html#a9b969bff1b5b7f18c2f5cf5600c14a00">minWidth</a>() { <span class="keywordflow">return</span> _minSize.width(); }
-<a name="l00045"></a><a class="code" href="classqtpd_1_1_u_i_item.html#a35633cca032eea2cfa055dc413b63717">00045</a>     <span class="keywordtype">float</span> <a class="code" href="classqtpd_1_1_u_i_item.html#a35633cca032eea2cfa055dc413b63717">minHeight</a>() { <span class="keywordflow">return</span> _minSize.height(); }
+<a name="l00042"></a><a class="code" href="classtilde_1_1_u_i_item.html#a3b30e6acf11094c1205833be9eaec1fa">00042</a>     <span class="keywordtype">float</span> <a class="code" href="classtilde_1_1_u_i_item.html#a3b30e6acf11094c1205833be9eaec1fa">width</a>() { <span class="keywordflow">return</span> _size.width(); }
+<a name="l00043"></a><a class="code" href="classtilde_1_1_u_i_item.html#ad5f625724d2155c2a0c1db5e878d6bce">00043</a>     <span class="keywordtype">float</span> <a class="code" href="classtilde_1_1_u_i_item.html#ad5f625724d2155c2a0c1db5e878d6bce">height</a>() { <span class="keywordflow">return</span> _size.height(); }
+<a name="l00044"></a><a class="code" href="classtilde_1_1_u_i_item.html#aaf456d63991a97c71fef80f398a79201">00044</a>     <span class="keywordtype">float</span> <a class="code" href="classtilde_1_1_u_i_item.html#aaf456d63991a97c71fef80f398a79201">minWidth</a>() { <span class="keywordflow">return</span> _minSize.width(); }
+<a name="l00045"></a><a class="code" href="classtilde_1_1_u_i_item.html#a16751846b8e037f2dbbd0c566b149445">00045</a>     <span class="keywordtype">float</span> <a class="code" href="classtilde_1_1_u_i_item.html#a16751846b8e037f2dbbd0c566b149445">minHeight</a>() { <span class="keywordflow">return</span> _minSize.height(); }
 <a name="l00046"></a>00046 
-<a name="l00047"></a><a class="code" href="classqtpd_1_1_u_i_item.html#a5459c088d2279385386e14fff826f12f">00047</a>     QSize <a class="code" href="classqtpd_1_1_u_i_item.html#a5459c088d2279385386e14fff826f12f">size</a>() { <span class="keywordflow">return</span> _size; }
+<a name="l00047"></a><a class="code" href="classtilde_1_1_u_i_item.html#ab41f1972e9510aa47b6606a6030d88ab">00047</a>     QSize <a class="code" href="classtilde_1_1_u_i_item.html#ab41f1972e9510aa47b6606a6030d88ab">size</a>() { <span class="keywordflow">return</span> _size; }
 <a name="l00048"></a>00048 
-<a name="l00049"></a><a class="code" href="classqtpd_1_1_u_i_item.html#a15c57968966de733a09cf02973b63696">00049</a>     QColor <a class="code" href="classqtpd_1_1_u_i_item.html#a15c57968966de733a09cf02973b63696">bgColor</a>() { <span class="keywordflow">return</span> _bgColor; }
-<a name="l00050"></a><a class="code" href="classqtpd_1_1_u_i_item.html#a36b3d359ef904a9f6b56b040314cb16d">00050</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#a36b3d359ef904a9f6b56b040314cb16d">setBgColor</a>(QColor bgc) { _bgColor = bgc; }
+<a name="l00049"></a><a class="code" href="classtilde_1_1_u_i_item.html#a8444f00500feeed756a720dd01a44579">00049</a>     QColor <a class="code" href="classtilde_1_1_u_i_item.html#a8444f00500feeed756a720dd01a44579">bgColor</a>() { <span class="keywordflow">return</span> _bgColor; }
+<a name="l00050"></a><a class="code" href="classtilde_1_1_u_i_item.html#a8563b7c86a0a6e163ad22ef06d639ea9">00050</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_item.html#a8563b7c86a0a6e163ad22ef06d639ea9">setBgColor</a>(QColor bgc) { _bgColor = bgc; }
 <a name="l00051"></a>00051 
-<a name="l00052"></a><a class="code" href="classqtpd_1_1_u_i_item.html#a2ca6449c88dc277945266ad0413402a7">00052</a>     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_u_i_item.html#a2ca6449c88dc277945266ad0413402a7">hover</a>() { <span class="keywordflow">return</span> _hover; }
-<a name="l00053"></a><a class="code" href="classqtpd_1_1_u_i_item.html#a049c5b6ff7a83ae3716e7b828d9da67a">00053</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#a049c5b6ff7a83ae3716e7b828d9da67a">setHover</a>(<span class="keywordtype">bool</span> h) { _hover = h; }
+<a name="l00052"></a><a class="code" href="classtilde_1_1_u_i_item.html#a9d27097c27bdde03be121ab448263529">00052</a>     <span class="keywordtype">bool</span> <a class="code" href="classtilde_1_1_u_i_item.html#a9d27097c27bdde03be121ab448263529">hover</a>() { <span class="keywordflow">return</span> _hover; }
+<a name="l00053"></a><a class="code" href="classtilde_1_1_u_i_item.html#a951287156b2a2fa3c104aa3660f885db">00053</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_item.html#a951287156b2a2fa3c104aa3660f885db">setHover</a>(<span class="keywordtype">bool</span> h) { _hover = h; }
 <a name="l00054"></a>00054 
-<a name="l00055"></a>00055     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#a73739a4c2f2883ac10ab7087deaf57af">select</a>(); 
-<a name="l00056"></a>00056     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#ac247c4809958f915f53a2a76a9436176" title="&gt; select object">deselect</a>(); 
-<a name="l00057"></a>00057     <span class="keywordtype">bool</span> <a class="code" href="classqtpd_1_1_u_i_item.html#ab3ac9bcca4d6c092b1d10fe506ba48c6" title="&gt; deselect object">isSelected</a>(); 
+<a name="l00055"></a>00055     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_item.html#ab04b43d06377d0ae678f755cc4d734f1">select</a>(); 
+<a name="l00056"></a>00056     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_item.html#aca34d8266553e5571246c791e49f59b0" title="&gt; select object">deselect</a>(); 
+<a name="l00057"></a>00057     <span class="keywordtype">bool</span> <a class="code" href="classtilde_1_1_u_i_item.html#a00841800502136dc7ff5ea6a08badfd7" title="&gt; deselect object">isSelected</a>(); 
 <a name="l00058"></a>00058 
-<a name="l00065"></a>00065     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#a362832e693fb569d2a694446fed03706" title="&gt; get object&#39;s selected flag">setEditModeRef</a>(<a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a" title="edit mode types">t_editMode</a>* canvasEditModeRef);
+<a name="l00065"></a>00065     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_item.html#aacbbd83446e38082f38caaf5e95fe473" title="&gt; get object&#39;s selected flag">setEditModeRef</a>(<a class="code" href="namespacetilde.html#a788ec93ba342aa6f356829b22c07cc09" title="edit mode types">t_editMode</a>* canvasEditModeRef);
 <a name="l00066"></a>00066 
-<a name="l00067"></a>00067     <span class="keyword">virtual</span> <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a" title="edit mode types">t_editMode</a>* <a class="code" href="classqtpd_1_1_u_i_item.html#a8b886acf0acff012034a00dfad7b8ffc">getEditModeRef</a>(); 
+<a name="l00067"></a>00067     <span class="keyword">virtual</span> <a class="code" href="namespacetilde.html#a788ec93ba342aa6f356829b22c07cc09" title="edit mode types">t_editMode</a>* <a class="code" href="classtilde_1_1_u_i_item.html#acabc553d008744be109c762a34f7ce47">getEditModeRef</a>(); 
 <a name="l00068"></a>00068 
-<a name="l00069"></a>00069     <a class="code" href="namespaceqtpd.html#ac0ad566e367f285397002cb5da886b6a" title="edit mode types">t_editMode</a> <a class="code" href="classqtpd_1_1_u_i_item.html#a2e13bcc5d691a5505200843d80b71e6d" title="&gt; get edit mode pointer - for inlets/outlets">getEditMode</a>(); 
+<a name="l00069"></a>00069     <a class="code" href="namespacetilde.html#a788ec93ba342aa6f356829b22c07cc09" title="edit mode types">t_editMode</a> <a class="code" href="classtilde_1_1_u_i_item.html#ac626f1d95873a6461402821035f54623" title="&gt; get edit mode pointer - for inlets/outlets">getEditMode</a>(); 
 <a name="l00070"></a>00070 
-<a name="l00071"></a><a class="code" href="classqtpd_1_1_u_i_item.html#a0a8d5299d5a0a2ebcef2135913bc97da">00071</a>     QRectF <a class="code" href="classqtpd_1_1_u_i_item.html#a0a8d5299d5a0a2ebcef2135913bc97da" title="&gt; get edit mode flag value">boundingRect</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> QRectF(0, 0, _size.width(), _size.height()); }
-<a name="l00072"></a>00072     QPainterPath <a class="code" href="classqtpd_1_1_u_i_item.html#ab43146d2c78f8912b609a84fe1d5d9e0">shape</a>() <span class="keyword">const</span>;
+<a name="l00071"></a><a class="code" href="classtilde_1_1_u_i_item.html#af2f09f2423c8c9a240fb870e2babfd2a">00071</a>     QRectF <a class="code" href="classtilde_1_1_u_i_item.html#af2f09f2423c8c9a240fb870e2babfd2a" title="&gt; get edit mode flag value">boundingRect</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> QRectF(0, 0, _size.width(), _size.height()); }
+<a name="l00072"></a>00072     QPainterPath <a class="code" href="classtilde_1_1_u_i_item.html#afec481b77b09cd6f55423f1a626b1a6b">shape</a>() <span class="keyword">const</span>;
 <a name="l00073"></a>00073 
-<a name="l00074"></a>00074     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#a5a7a2c46ce27ed5cde4d56f027b60d9a">move</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y);
-<a name="l00075"></a>00075     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#a5a7a2c46ce27ed5cde4d56f027b60d9a">move</a>(QPoint pos);
-<a name="l00076"></a>00076     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#a5a7a2c46ce27ed5cde4d56f027b60d9a">move</a>(QPointF pos);
+<a name="l00074"></a>00074     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_item.html#a7cdb64dc867907ca951ccace3c100f1c">move</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y);
+<a name="l00075"></a>00075     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_item.html#a7cdb64dc867907ca951ccace3c100f1c">move</a>(QPoint pos);
+<a name="l00076"></a>00076     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_item.html#a7cdb64dc867907ca951ccace3c100f1c">move</a>(QPointF pos);
 <a name="l00077"></a>00077 
-<a name="l00078"></a><a class="code" href="classqtpd_1_1_u_i_item.html#a7d35cc78930b523be25a55b0167e5a13">00078</a>     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#a7d35cc78930b523be25a55b0167e5a13">paint</a>(QPainter*, <span class="keyword">const</span> QStyleOptionGraphicsItem*, QWidget*){};
+<a name="l00078"></a><a class="code" href="classtilde_1_1_u_i_item.html#a3a7bf096ac07983c755f25d1f08b6c19">00078</a>     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_item.html#a3a7bf096ac07983c755f25d1f08b6c19">paint</a>(QPainter*, <span class="keyword">const</span> QStyleOptionGraphicsItem*, QWidget*){};
 <a name="l00079"></a>00079 
-<a name="l00080"></a><a class="code" href="classqtpd_1_1_u_i_item.html#acba2e2b595964278ce9ebef09996f597">00080</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#acba2e2b595964278ce9ebef09996f597">resizeEvent</a>() {}
+<a name="l00080"></a><a class="code" href="classtilde_1_1_u_i_item.html#ac9245a5c076d4c9500b1101e580463d4">00080</a>     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_item.html#ac9245a5c076d4c9500b1101e580463d4">resizeEvent</a>() {}
 <a name="l00081"></a>00081 
 <a name="l00082"></a>00082 signals:
 <a name="l00083"></a>00083 
-<a name="l00084"></a>00084     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#adcaa90c907268dec3ad006b8815269a4">mousePressed</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* obj, QGraphicsSceneMouseEvent* ev);
-<a name="l00085"></a>00085     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#a4ef86e08c77326eb7f1ce41bca3ca823">mouseReleased</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* obj, QGraphicsSceneMouseEvent* ev);
+<a name="l00084"></a>00084     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_item.html#af817a377fe1e025db3acc687a7233c54">mousePressed</a>(<a class="code" href="classtilde_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* obj, QGraphicsSceneMouseEvent* ev);
+<a name="l00085"></a>00085     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_item.html#ac4b90a437bd0159da00e944c2ae7cee9">mouseReleased</a>(<a class="code" href="classtilde_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* obj, QGraphicsSceneMouseEvent* ev);
 <a name="l00086"></a>00086 
-<a name="l00087"></a>00087     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#a4860b3307d8b973ec050beb405d64521">mouseEntered</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* obj, QGraphicsSceneHoverEvent* ev);
-<a name="l00088"></a>00088     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#aa70fdb45e9a2f328751711c817e2aa2c">mouseLeaved</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* obj, QGraphicsSceneHoverEvent* ev);
+<a name="l00087"></a>00087     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_item.html#a38a5cc2e79990aedad3e64b51d771343">mouseEntered</a>(<a class="code" href="classtilde_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* obj, QGraphicsSceneHoverEvent* ev);
+<a name="l00088"></a>00088     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_item.html#a5cd6f53da5e4f19c1b1f3ca9bb597935">mouseLeaved</a>(<a class="code" href="classtilde_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* obj, QGraphicsSceneHoverEvent* ev);
 <a name="l00089"></a>00089 
-<a name="l00090"></a>00090     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#ad8f51ce2a929d36c866cb16e884f7a28">selectBox</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* box, QGraphicsSceneMouseEvent* event);
-<a name="l00091"></a>00091     <span class="keywordtype">void</span> <a class="code" href="classqtpd_1_1_u_i_item.html#a72e28d805ae5dc2f30e9774cdf5c4be6">moveBox</a>(<a class="code" href="classqtpd_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* box, QGraphicsSceneMouseEvent* event);
+<a name="l00090"></a>00090     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_item.html#a9b3bad2ea628153c3fe979acf47a8b4a">selectBox</a>(<a class="code" href="classtilde_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* box, QGraphicsSceneMouseEvent* event);
+<a name="l00091"></a>00091     <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_item.html#a77ab63e516415092c5c4c042ebd9845f">moveBox</a>(<a class="code" href="classtilde_1_1_u_i_item.html" title="UIItem QGraphicsObject class.">UIItem</a>* box, QGraphicsSceneMouseEvent* event);
 <a name="l00092"></a>00092 
 <a name="l00093"></a>00093 <span class="keyword">public</span> slots:
 <a name="l00094"></a>00094 };
@@ -188,7 +188,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 31 2017 14:17:53 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 1 2017 08:32:20 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
