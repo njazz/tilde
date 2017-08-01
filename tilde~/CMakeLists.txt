@@ -2,6 +2,7 @@ cmake_minimum_required (VERSION 2.6)
 
 set (CMAKE_PREFIX_PATH ~/Qt/5.8/clang_64)
 set(CMAKE_CXX_STANDARD 11)
+set (QMAKE_MACOSX_DEPLOYMENT_TARGET 10.10)
 
 set(CMAKE_AUTOMOC ON)
 
@@ -303,7 +304,20 @@ set_source_files_properties(${myApp_ICON} PROPERTIES
 
 ##############
 
+add_custom_target(buildNumber	
+    	COMMAND ${CMAKE_SOURCE_DIR}/cmake/create_build_number.sh
+	WORKING_DIR ${CMAKE_SOURCE_DIR}/cmake/
+)
+
+
+
+
+##############
+
 add_executable(tilde~ ${SOURCES} ${RES_SOURCES} ${UI_HEADERS} ${PYTHON_SOURCES} ${PYTHON_HEADERS}  ${myApp_ICON})
+
+add_dependencies(tilde~ buildNumber)
+
 qt5_use_modules(tilde~ Core Gui Widgets)
 
 LINK_DIRECTORIES(
@@ -315,6 +329,22 @@ target_link_libraries(tilde~ ${QT_LIBRARIES} ${LIBS} ${PYTHON_LIBS})
 if (APPLE)
     set_target_properties(tilde~ PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_SOURCE_DIR}/cmake/Info.plist.in)
 endif ()
+
+###############
+
+add_custom_command(
+	TARGET tilde~	
+    	COMMAND ${CMAKE_SOURCE_DIR}/cmake/deploy_script.sh
+	WORKING_DIR ${CMAKE_BINARY_DIR}
+)
+
+add_custom_command(
+	TARGET tilde~	
+    	COMMAND ${CMAKE_SOURCE_DIR}/cmake/copy_ui_library.sh
+	WORKING_DIR ${CMAKE_BINARY_DIR}
+)
+
+
 
 ###############
 

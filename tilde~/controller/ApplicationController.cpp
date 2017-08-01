@@ -26,6 +26,8 @@
 
 #include "UIScriptEditor.h"
 
+#include "buildNumber.h"
+
 namespace tilde {
 
 void ApplicationController::loadAllLibraries()
@@ -190,6 +192,9 @@ ApplicationController::ApplicationController()
     _recentMenu = new QMenu();
 
     _pdWindow->setRecentMenu(_recentMenu);
+    
+    QString bb = QString("tilde~ build: ") + QString::number(TILDE_BUILD_NUMBER);
+    ServerInstance::post(bb.toStdString());
 
     Preferences::inst().readFromTextFile();
 };
