@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/njazz/qtpd.svg?branch=master)](https://travis-ci.org/njazz/tilde)
+[![Build Status](https://travis-ci.org/njazz/tilde.svg?branch=master)](https://travis-ci.org/njazz/tilde)
 
 # tilde~
 New integrated GUI for Puredata based on Qt.  
