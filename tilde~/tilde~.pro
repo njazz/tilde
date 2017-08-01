@@ -84,8 +84,8 @@ HEADERS += \
     LIBS += -L"/usr/local/lib" -lPythonQt_QtAll$${DEBUG_EXT}.1.0.0
     LIBS += -L"/usr/local/lib" -lPythonQt$${DEBUG_EXT}.1.0.0
 
-    LIBS += -L"/usr/local/lib" -lPythonQt_QtAll$${DEBUG_EXT}.1
-    LIBS += -L"/usr/local/lib" -lPythonQt$${DEBUG_EXT}.1
+    #LIBS += -L"/usr/local/lib" -lPythonQt_QtAll$${DEBUG_EXT}.1
+    #LIBS += -L"/usr/local/lib" -lPythonQt$${DEBUG_EXT}.1
 
     #DEPENDPATH += $$PWD/../PythonQt/lib/
 
@@ -292,17 +292,22 @@ win32: {
 
 macx: {
     LIBS += -L"/usr/local/lib/" -lportaudio
+    LIBS += -L"/usr/local/lib/" -lpd-server
+
     #LIBS += -L$$OUT_PWD/../../pd-server/src/qt-creator-project -lpd-server
     #LIBS += -L$$OUT_PWD/../qtpd_ceammc_lib/ -lqtpd_ceammc_lib
-    LIBS += -L"/usr/local/lib/" -lpd-server
+    
 }
 
 unix: {
-    #LIBS += -L"../qtpd_lib/" -lqtpd
+    
     LIBS += -L"/usr/local/lib/" -lportaudio
+    LIBS += -L"/usr/local/lib/" -lpd-server
+
+    #LIBS += -L"../qtpd_lib/" -lqtpd
     #LIBS += -L$$OUT_PWD/../../pd-server/src/qt-creator-project -lpd-server
     #LIBS += -L$$OUT_PWD/../qtpd_ceammc_lib/ -lqtpd_ceammc_lib
-    LIBS += -L"/usr/local/lib/" -lpd-server
+    
 
 }
 
