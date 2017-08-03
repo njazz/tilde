@@ -23,6 +23,8 @@
 
 #include "ApplicationController.h"
 
+#include "buildNumber.h"
+
 namespace tilde {
 BaseWindow::BaseWindow(QWidget* parent)
     :
@@ -161,6 +163,8 @@ void BaseWindow::createActions()
     _pdKeyBindingsAct->setEnabled(false);
 
     _pdHelpAct = new QAction(tr("Pd help"), this);
+
+    _aboutAct = new QAction(tr("About tilde~"), this);
 }
 
 ////
@@ -225,10 +229,11 @@ void BaseWindow::createMenus()
 
     helpMenu = _menuBar->addMenu(tr("&Help"));
     helpMenu->addAction(_pdHelpAct);
+    helpMenu->addAction(_aboutAct);
+
+    connect(_aboutAct, &QAction::triggered, this, &BaseWindow::slotAboutMenu);
 
     // -----------
-
-
 }
 
 void BaseWindow::createScriptsMenu()
@@ -303,5 +308,13 @@ void BaseWindow::slotUpdateScriptsMenu(QString)
 {
     qDebug() << "updated";
     createScriptsMenu();
+}
+
+void BaseWindow::slotAboutMenu()
+{
+    QString aboutText = "tilde~ build number " + QString::number(TILDE_BUILD_NUMBER);
+    aboutText += "\n\n© 2017 Serj Poltavsky, Alex Nadzharov\n\nBased on Puredata © 1997-2016 Miller Puckette and others\n\nGPL v3";
+
+    QMessageBox::about(this, "About tilde~", aboutText);
 }
 }

@@ -184,8 +184,8 @@ ApplicationController::ApplicationController()
     Preferences::inst().create("Paths", "Folders", "0.1", paths + paths2);
     Preferences::inst().get("Paths")->setType(ptStringList);
 
-    mainServerInstance()->post("tilde~ started");
-    mainServerInstance()->post("----");
+    //mainServerInstance()->post("tilde~ started");
+    //mainServerInstance()->post("----");
 
     _newFilenameCounter = 1;
 

@@ -59,6 +59,7 @@ private:
     QAction* _pdKeyBindingsAct;
 
     QAction* _pdHelpAct;
+    QAction* _aboutAct;
 
     QAction* _newScriptAct;
 
@@ -96,6 +97,8 @@ private slots:
     void slotRunScript();
 
     void slotUpdateScriptsMenu(QString);
+
+    void slotAboutMenu();
 
     //    void slotCreateScriptList();
 };

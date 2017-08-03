@@ -7,7 +7,7 @@ set (CMAKE_CXX_STANDARD 11)
 set (QMAKE_MACOSX_DEPLOYMENT_TARGET 10.10)
 
 set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTORCC ON)
+#set(CMAKE_AUTORCC ON)
 
 #fixes warning for app name
 cmake_policy(SET CMP0037 OLD)

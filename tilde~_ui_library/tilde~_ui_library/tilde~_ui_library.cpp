@@ -20,7 +20,7 @@ extern void setup_ui0x2earray();
 
 extern "C" void setup() //0x2e //TILDE_UI_
 {
-    post("tilde~ UI library loaded");
+    post("loading tilde~ UI library...");
 
     setup_ui0x2ebang();
     setup_ui0x2efloat();
@@ -36,4 +36,6 @@ extern "C" void setup() //0x2e //TILDE_UI_
     setup_ui0x2etext();
 
     setup_ui0x2edsp();
+
+    post("...done");
 }
