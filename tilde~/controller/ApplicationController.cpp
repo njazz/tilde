@@ -48,8 +48,9 @@ ApplicationController::ApplicationController()
 {
     qDebug("new app controller");
 
-    _filePaths = new FilePaths;
+    QFontDatabase::addApplicationFont(":/fonts/SourceCodePro-Regular.otf");
 
+    _filePaths = new FilePaths;
     _localServer = 0;
 
     ObjectLoader::inst().loadObjects();

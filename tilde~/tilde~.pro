@@ -338,7 +338,8 @@ INCLUDEPATH += \
     properties/QtColorPicker/include
 
 RESOURCES += \
-    properties/QtColorPicker/src/pattern.qrc
+    properties/QtColorPicker/src/pattern.qrc \
+    font/tilde.qrc
 
 
 QMAKE_MAC_SDK = macosx10.12

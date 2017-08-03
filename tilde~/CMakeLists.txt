@@ -1,10 +1,16 @@
-cmake_minimum_required (VERSION 2.6)
+cmake_minimum_required (VERSION 2.8)
+
+set (CMAKE_OSX_DEPLOYMENT_TARGET "10.10")
 
 set (CMAKE_PREFIX_PATH ~/Qt/5.8/clang_64)
-set(CMAKE_CXX_STANDARD 11)
+set (CMAKE_CXX_STANDARD 11)
 set (QMAKE_MACOSX_DEPLOYMENT_TARGET 10.10)
 
 set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+
+#fixes warning for app name
+cmake_policy(SET CMP0037 OLD)
 
 if (APPLE)
 	set(CMAKE_MACOSX_RPATH FALSE)
@@ -250,7 +256,8 @@ set ( MOC_HEADERS
 )
 
 set (RESOURCES
-    properties/QtColorPicker/src/pattern.qrc
+    	properties/QtColorPicker/src/pattern.qrc
+	font/tilde.qrc
 )
 
 find_library(PA_LIB portaudio)
@@ -314,7 +321,7 @@ add_custom_target(buildNumber
 
 ##############
 
-add_executable(tilde~ ${SOURCES} ${RES_SOURCES} ${UI_HEADERS} ${PYTHON_SOURCES} ${PYTHON_HEADERS}  ${myApp_ICON})
+add_executable(tilde~ ${SOURCES} ${RES_SOURCES} ${UI_HEADERS} ${PYTHON_SOURCES} ${PYTHON_HEADERS} ${RESOURCES} ${myApp_ICON})
 
 add_dependencies(tilde~ buildNumber)
 
