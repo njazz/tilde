@@ -3,8 +3,8 @@ var searchData=
   ['back',['back',['../class_color___preview_1_1_private.html#ae884a3d99540e76706d0408849927924',1,'Color_Preview::Private::back()'],['../class_gradient___slider_1_1_private.html#a8d585f26a1b40d9bbc015afdd94db9ee',1,'Gradient_Slider::Private::back()']]],
   ['background',['background',['../class_color___preview.html#a3f91f2b663b828fa8c7c3c553fa88acb',1,'Color_Preview::background()'],['../class_gradient___slider.html#adf64dcbcf4deb64886ff0ce1131480c0',1,'Gradient_Slider::background()'],['../class_color___preview.html#a4bec74083e6222fbdadf6ba16edecb3a',1,'Color_Preview::background()'],['../class_gradient___slider.html#abae1296645fcc4a29030c780bcd41370',1,'Gradient_Slider::background()']]],
   ['basepath',['basePath',['../classtilde_1_1_file_paths.html#aef4faa152746e46a8b454fb06c881b1d',1,'tilde::FilePaths']]],
-  ['basewindow',['BaseWindow',['../classtilde_1_1_base_window.html#aaf4df3ecb6938454bfa77260c24706a0',1,'tilde::BaseWindow']]],
   ['basewindow',['BaseWindow',['../classtilde_1_1_base_window.html',1,'tilde']]],
+  ['basewindow',['BaseWindow',['../classtilde_1_1_base_window.html#aaf4df3ecb6938454bfa77260c24706a0',1,'tilde::BaseWindow']]],
   ['basewindow_2ecpp',['BaseWindow.cpp',['../_base_window_8cpp.html',1,'']]],
   ['basewindow_2eh',['BaseWindow.h',['../_base_window_8h.html',1,'']]],
   ['bgcolor',['bgColor',['../classtilde_1_1_u_i_item.html#a8444f00500feeed756a720dd01a44579',1,'tilde::UIItem']]],
@@ -47,6 +47,7 @@ var searchData=
   ['buffer',['buffer',['../struct__resample.html#a8fe41b983e1710c3d71afb4fb85f8042',1,'_resample']]],
   ['bufsize',['bufsize',['../struct__resample.html#a837225771d04d2e70c84d6eca43e6ea7',1,'_resample']]],
   ['bug',['bug',['../m__pd_8h.html#a3e4d99cc272e4a5cb21332f8bda27ec8',1,'m_pd.h']]],
+  ['buildnumber_2eh',['buildNumber.h',['../build_number_8h.html',1,'']]],
   ['bundlesdirlist',['bundlesDirList',['../classtilde_1_1_file_paths.html#a98457abf921f2460eb9b79de31ea0ff7',1,'tilde::FilePaths']]],
   ['button_5fmode',['Button_Mode',['../class_color___dialog.html#a4fa5f34e3b5899faf5608ceaf170c7b8',1,'Color_Dialog::Button_Mode()'],['../class_color___dialog_1_1_private.html#afd017a10b78cc574773ed3f33ad909fb',1,'Color_Dialog::Private::button_mode()']]],
   ['buttonmode',['buttonMode',['../class_color___dialog.html#a6c4d903ab21dcc79a157495bba9d4ff6',1,'Color_Dialog']]]
