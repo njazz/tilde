@@ -2,6 +2,8 @@
 
 # tilde~
 New integrated GUI for Puredata based on Qt.  
+
+![screenshot](screenshot.png?raw=true "screenshot")
   
 Early prototype.
 
@@ -39,9 +41,10 @@ https://njazz.github.io/tilde/html/
 
 
 this work is based on / includes:
----------------------------------
+---------------------------------  
    - Pd vanilla (github.com/pure-data/)
    - libpd (https://github.com/libpd)
+   - xPd (https://github.com/uliss/xpd)
    - CICM Wrapper library (https://github.com/CICM/CicmWrapper)
    - Cream library (https://github.com/CICM/CreamLibrary)
    - hcs library (https://puredata.info/downloads/hcs)
