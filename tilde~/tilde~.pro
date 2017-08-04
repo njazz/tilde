@@ -37,6 +37,7 @@ SOURCES += python/PythonQtScriptingConsole.cpp \
     widgets/UIScriptTextEdit.cpp \
     widgets/UIScriptEditor.cpp \
     widgets/UIScriptCommon.cpp \
+    datamodels/scriptrunner.cpp \
 
 HEADERS += \
     python/PythonQtScriptingConsole.h \
@@ -74,6 +75,7 @@ HEADERS += \
     widgets/UIScriptTextEdit.h \
     widgets/UIScriptEditor.h \
     widgets/UIScriptCommon.h \
+    datamodels/scriptrunner.h \
 
 #    LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt_QtAll$${DEBUG_EXT}.1.0.0
 #    LIBS += -L$$PWD/../PythonQt/lib/ -lPythonQt$${DEBUG_EXT}.1.0.0
@@ -169,7 +171,7 @@ SOURCES += controller/main.cpp\
     datamodels/recentfiles.cpp \
     datamodels/filepaths.cpp \
     datamodels/fileparserconverter.cpp \
-    datamodels/scriptrunner.cpp
+
 
 
 #
@@ -261,7 +263,7 @@ HEADERS  += \
     datamodels/recentfiles.h \
     datamodels/filepaths.h \
     datamodels/fileparserconverter.h \
-    datamodels/scriptrunner.h
+
 
 #    widgets/UIScriptTextEdit.h \
 #    widgets/UIScriptEditor.h \

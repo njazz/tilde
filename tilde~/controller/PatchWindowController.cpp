@@ -36,6 +36,8 @@ namespace tilde {
 
 PatchWindowController::PatchWindowController(ApplicationController* appController) //replace with parent (appcontroller)
 {
+    qDebug()<<"1";
+
     _scene = new QGraphicsScene();
     _observer = new Observer();
 
@@ -49,8 +51,12 @@ PatchWindowController::PatchWindowController(ApplicationController* appControlle
 
     //_canvasData->setServerCanvas(_serverCanvas);
 
+    qDebug()<<"1";
+
     newWindow();
 
+    // fix that
+    if (mainWindow()->canvasView())
     connect(mainWindow()->canvasView(), &CanvasView::signalPopupMenu, this, &PatchWindowController::openPropertiesWindow);
 
     _boxOnlyCanvas = 0;
@@ -59,11 +65,15 @@ PatchWindowController::PatchWindowController(ApplicationController* appControlle
     _parentObject = 0;
 
     _undoStack = new QUndoStack;
+
+    qDebug()<<"1";
+
     //PatchWindowController(appController, serverInstance()->createCanvas());
 };
 
 PatchWindowController::PatchWindowController(ApplicationController* appController, ServerCanvas* canvas = 0)
 {
+
     _scene = new QGraphicsScene();
     _observer = new Observer();
 
@@ -85,6 +95,9 @@ PatchWindowController::PatchWindowController(ApplicationController* appControlle
 
     // TODO
     mainWindow()->canvasView()->setEditMode(em_Locked);
+
+
+
 };
 
 ServerCanvas* PatchWindowController::serverCanvas() { return _serverCanvas; }

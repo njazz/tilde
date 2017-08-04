@@ -283,6 +283,7 @@ void BaseWindow::close()
 // ---------
 void BaseWindow::slotRunScript()
 {
+#ifdef WITH_PYTHON
     QAction* a = qobject_cast<QAction*>(QObject::sender());
 
     QString actionName = a->text();
@@ -300,6 +301,7 @@ void BaseWindow::slotRunScript()
     if (fullPath != "") {
         _appController->scriptRunner()->runScriptFile(fullPath);
     }
+#endif
 }
 
 // ---------

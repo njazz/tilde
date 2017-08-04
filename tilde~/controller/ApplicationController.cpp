@@ -13,6 +13,7 @@
 
 #ifdef WITH_PYTHON
 #include "python/wrappers/py_wrappers.h"
+#include "UIScriptEditor.h"
 #endif
 
 #include "ControllerObserver.h"
@@ -24,7 +25,6 @@
 #include "recentfiles.h"
 #include <assert.h>
 
-#include "UIScriptEditor.h"
 
 #include "buildNumber.h"
 
@@ -212,8 +212,10 @@ ServerInstance* ApplicationController::mainServerInstance()
 
 void ApplicationController::newPatchWindowController()
 {
+    qDebug()<<"0";
 
     PatchWindowController* newP = new PatchWindowController(this);
+    if (!newP) return;
     newP->setNewFileName(newFileName());
     newP->mainWindow()->show();
 };
@@ -321,10 +323,12 @@ void ApplicationController::openFile()
 
 void ApplicationController::newScript()
 {
+#ifdef WITH_PYTHON
     UIScriptEditor* s = new UIScriptEditor(0);
     s->enableStandalone();
 
     s->show();
+#endif
 }
 
 ServerObject* ApplicationController::slotCreateObject(ServerCanvas* canvas, string name)
