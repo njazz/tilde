@@ -30,7 +30,7 @@ PythonQtObjectPtr pyWrapper::newContext()
 {
     PythonQtObjectPtr ctx;
     ctx = PythonQt::self()->createUniqueModule();
-    ctx.addObject("Qtpd", new pyQtpd(_appController));
+    ctx.addObject("tilde", new pyTilde(_appController));
 
     return ctx;
 }
@@ -39,7 +39,7 @@ PythonQtObjectPtr pyWrapper::newContextWithPatchController(PatchWindowController
 {
     PythonQtObjectPtr ctx;
     ctx = PythonQt::self()->createUniqueModule();
-    ctx.addObject("Qtpd", new pyQtpd(_appController));
+    ctx.addObject("tilde", new pyTilde(_appController));
 
     pyLocal* loc = new pyLocal;
 
@@ -54,7 +54,7 @@ PythonQtObjectPtr pyWrapper::newContextWithPatchControllerAndServerObject(PatchW
 {
     PythonQtObjectPtr ctx;
     ctx = PythonQt::self()->createUniqueModule();
-    ctx.addObject("Qtpd", new pyQtpd(_appController));
+    ctx.addObject("tilde", new pyTilde(_appController));
 
     pyLocal* loc = new pyLocal;
 
@@ -69,7 +69,7 @@ PythonQtObjectPtr pyWrapper::newContextWithPatchControllerServerObjectAndList(Pa
 {
     PythonQtObjectPtr ctx;
     ctx = PythonQt::self()->createUniqueModule();
-    ctx.addObject("Qtpd", new pyQtpd(_appController));
+    ctx.addObject("tilde", new pyTilde(_appController));
 
     pyLocal* loc = new pyLocal;
 

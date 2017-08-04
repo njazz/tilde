@@ -153,7 +153,7 @@ public Q_SLOTS:
 
     void patchcord(PatchWindowController* c, UIObject* obj1, int out1, UIObject* obj2, int in2)
     {
-        c->createPatchcord(obj1, out1, obj2, in2);
+        c->createPatchcordWithoutUndo(obj1, out1, obj2, in2);
     }
 
     //////////
@@ -310,15 +310,15 @@ public Q_SLOTS:
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-class pyQtpd : public QObject {
+class pyTilde : public QObject {
     Q_OBJECT
 
     ApplicationController* _appController;
 
 public:
-    explicit pyQtpd(ApplicationController* ctl = 0)
+    explicit pyTilde(ApplicationController* ctl = 0)
     {
-        qDebug() << "new pyQtpd" << ctl;
+        qDebug() << "new pyTilde" << ctl;
         _appController = ctl;
     };
 
