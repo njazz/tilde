@@ -29,7 +29,6 @@ var searchData=
   ['te_5fpd',['te_pd',['../m__pd_8h.html#a9e5459bf44675df616dfa76711ebfe91',1,'m_pd.h']]],
   ['tilde_5fapp_5fversion',['TILDE_APP_VERSION',['../_preferences_8h.html#a205dff9ea0fa7c7837b6e0508d4b7ee5',1,'Preferences.h']]],
   ['tilde_5faudiosettings_5finit',['TILDE_AUDIOSETTINGS_INIT',['../_audio_settings_8h.html#a58ecf399fafdc6fd6935ad90f546004e',1,'AudioSettings.h']]],
-  ['tilde_5fbuild_5fnumber',['TILDE_BUILD_NUMBER',['../build_number_8h.html#a8a6e68dfb3845c05e8b035abb4fefe2e',1,'buildNumber.h']]],
   ['tilde_5fpref_5finit',['TILDE_PREF_INIT',['../_preferences_8h.html#a73725460f2d09df8c27e259ad0af1784',1,'Preferences.h']]],
   ['typedmess',['typedmess',['../m__pd_8h.html#adba6fd1d8de56b851d869f7f7b1a34f7',1,'m_pd.h']]]
 ];
