@@ -13,7 +13,7 @@ https://github.com/uliss/pure-data
 Key concepts / roadmap for this project:
 -----------------------------
 
-   - Seperate UI 'client' and 'server' parts of the application.  
+   - Separate UI 'client' and 'server' parts of the application.  
    For now the app is built as 'pd-server' and the gui (tilde~) itself. Later it is supposed to have the possibility to split these parts over the network, to have no-gui option etc.
    - Separate UI classes for client side with simple communication with puredata objects
    - MVC architecture for 'client' app
