@@ -49,3 +49,7 @@ tilde~_ui_library/build/CMakeCache.txt
 tilde~_ui_library/build/*
 
 tilde~_ui_library/build/Makefile
+
+build/
+
+build/*
