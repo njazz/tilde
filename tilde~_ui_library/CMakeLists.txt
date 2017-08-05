@@ -90,8 +90,10 @@ set (HEADERS
 # find_library(PDSERVER_LIB pd-server)
 
 set (LIBS
-	${PDSERVER_LIB}
+	#${PDSERVER_LIB}
 )
+
+
 
 find_package(Boost 1.47.0 REQUIRED)
 include_directories(${Boost_INCLUDE_DIRS})
@@ -105,9 +107,11 @@ include_directories(../../pd-server/pure-data-src/src/)
 include_directories(../../pd-server/)
 include_directories(../../pd-server/src/)
 
-add_library(tilde~_ui SHARED ${CEAMMC_LIB_SOURCES} ${SOURCES})
-target_link_libraries(tilde~_ui ${LIBS})
+add_library(tilde~_ui SHARED ${CEAMMC_LIB_SOURCES} ${SOURCES} ${HEADERS})
+target_link_libraries(tilde~_ui ${LIBS} "-undefined dynamic_lookup")
 SET_TARGET_PROPERTIES(tilde~_ui PROPERTIES PREFIX "")
 set_target_properties(tilde~_ui PROPERTIES SUFFIX ".pd_darwin")
+
+install(TARGETS tilde~_ui LIBRARY DESTINATION ${CMAKE_BINARY_DIR}/../bin)
 
 

@@ -3,7 +3,7 @@
 cd tilde~.app/Contents/Resources
 mkdir Libraries
 cd ./Libraries
-cp ~/Documents/tilde~/Libraries/tilde~_ui.pd_darwin ./
+cp ../../../../../../tilde~_ui_library/bin/tilde~_ui.pd_darwin ./
 
 exit 0
 

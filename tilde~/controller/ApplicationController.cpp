@@ -32,7 +32,9 @@ namespace tilde {
 
 void ApplicationController::loadAllLibraries()
 {
-    //_localServer->firstInstance()->setVerboseLevel(4);
+    _localServer->firstInstance()->setVerboseLevel(4);
+    
+    
 
     QStringList libs = _filePaths->librariesFileList();
 
@@ -42,6 +44,9 @@ void ApplicationController::loadAllLibraries()
         QString file = libs.at(i).left(libs.at(i).lastIndexOf("."));//libs.at(i).split("/").first() + libs.at(i).split("/").last().split(".").first();
         _localServer->firstInstance()->loadLibrary(file.toStdString());
     }
+    
+    _localServer->firstInstance()->setVerboseLevel(1);
+    
 }
 
 ApplicationController::ApplicationController()
