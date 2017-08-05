@@ -43,3 +43,9 @@ API_prototype/API_prototype_bkup.zip
 PythonQt/lib/libPythonQt_QtAll_d.1.0.0.dylib
 
 tilde~/controller/buildNumber.h
+
+tilde~_ui_library/build/CMakeCache.txt
+
+tilde~_ui_library/build/*
+
+tilde~_ui_library/build/Makefile
