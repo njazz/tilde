@@ -53,3 +53,5 @@ tilde~_ui_library/build/Makefile
 build/
 
 build/*
+
+tilde~_tests/build/*
