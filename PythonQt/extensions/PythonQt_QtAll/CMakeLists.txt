@@ -104,15 +104,16 @@ ${eGUI}
 ${eNetwork} 
 ${eOpenGL} 
 ${eXML} 
-${eXMLPaterns}
+${eXMLPatterns}
 ${eUItools}
+	PythonQt_QtAll.cpp
 )
 
-qt5_wrap_cpp(eMOC ${eCoreH} ${eGUIH} ${eNetworkH} ${eOpenGLH} ${eXMLH} ${eXMLPaternsH} ${eUItoolsH})
+qt5_wrap_cpp(eMOC ${eCoreH} ${eGUIH} ${eNetworkH} ${eOpenGLH} ${eXMLH} ${eXMLPatternsH} ${eUItoolsH} PythonQt_QtAll.h)
 
 add_library(PythonQtExtensions SHARED ${SOURCES} ${eMOC})
 qt5_use_modules(PythonQtExtensions Core Gui Widgets Network Xml XmlPatterns OpenGL UiTools PrintSupport OpenGLExtensions)
 
 target_link_libraries(PythonQtExtensions Python PythonQt ${OpenGL_LIB} ${GLUT})
 
-install(TARGETS PythonQtExtensions LIBRARY DESTINATION ${CMAKE_BINARY_DIR}/../bin)
+install(TARGETS PythonQtExtensions LIBRARY DESTINATION ${CMAKE_BINARY_DIR}/../../bin)

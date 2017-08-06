@@ -269,8 +269,16 @@ set (LIBS
 )
 
 find_library(PYTHON27 Python)
-find_library(PYQT PythonQt.1.0.0)
-find_library(PYQTALL PythonQt_QtAll.1.0.0)
+
+#find_library(PYQT PythonQt)
+#find_library(PYQTALL PythonQtExtensions)
+
+set (PYQT
+	"${CMAKE_BINARY_DIR}/PythonQt/src/LibPythonQt.dylib"
+)
+set (PYQTALL
+	"${CMAKE_BINARY_DIR}/PythonQt/extensions/PythonQt_QtAll/LibPythonQtExtensions.dylib"
+)
 
 set (PYTHON_LIBS
 	${PYTHON27}
@@ -348,6 +356,12 @@ add_custom_command(
 add_custom_command(
 	TARGET tilde~	
     	COMMAND ${CMAKE_SOURCE_DIR}/cmake/copy_ui_library.sh
+	WORKING_DIR ${CMAKE_BINARY_DIR}
+)
+
+add_custom_command(
+	TARGET tilde~	
+    	COMMAND ${CMAKE_SOURCE_DIR}/cmake/copy_bundle.sh
 	WORKING_DIR ${CMAKE_BINARY_DIR}
 )
 
