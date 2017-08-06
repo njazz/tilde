@@ -12,24 +12,13 @@ env:
     - GH_REPO_NAME: tilde
     - DOXYFILE: $TRAVIS_BUILD_DIR/DOXYGEN
     - GH_REPO_REF: github.com/njazz/tilde.git
-
-# Install dependencies
-addons:
-  apt:
-    packages:
-      - doxygen
-      - doxygen-doc
-      - doxygen-latex
-      - doxygen-gui
-      - graphviz
-      - qt5-default 
-      - qttools5-dev-tools
-
+    
 before_install:
  - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
  - sudo apt-get update -qq
  - sudo apt-get install qtbase5-dev qtdeclarative5-dev libqt5webkit5-dev libsqlite3-dev
  - sudo apt-get install qt5-default qttools5-dev-tools
+ - sudo apt-get install doxygen doxygen-doc doxygen-latex doxygen-gui graphviz
 
 # Generate and deploy documentation #after_success
 script:
