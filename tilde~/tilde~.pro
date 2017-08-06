@@ -106,17 +106,18 @@ SOURCES += controller/main.cpp\
     objects/UIToggle.cpp \
     objects/UIBang.cpp \
     objects/UIText.cpp \
-    oopd/OOPD.cpp \
-    oopd/UIClass.cpp \
-    oopd/UIInstance.cpp \
-    oopd/UIMethod.cpp \
-    oopd/UIProperty.cpp \
-    oopd/OPInstance.cpp \
-    oopd/OPClass.cpp \
+#    oopd3/OOPD3.cpp \
+#    oopd/OOPD.cpp \
+#    oopd/UIClass.cpp \
+#    oopd/UIInstance.cpp \
+#    oopd/UIMethod.cpp \
+#    oopd/UIProperty.cpp \
+#    oopd/OPInstance.cpp \
+#    oopd/OPClass.cpp \
     objects/UIDSP.cpp \
     objects/UILink.cpp \
     objects/UISlider.cpp \
-    oopd/UISignal.cpp \
+#    oopd/UISignal.cpp \
     objects/UIMatrix.cpp \
 #### graphic objects
     graphicobjects/Port.cpp \
@@ -171,6 +172,9 @@ SOURCES += controller/main.cpp\
     datamodels/recentfiles.cpp \
     datamodels/filepaths.cpp \
     datamodels/fileparserconverter.cpp \
+#    oopd3/OPClass.cpp \
+#    oopd3/OOPDClassBase.cpp \
+#    oopd3/OPInstance.cpp
 
 
 
@@ -187,18 +191,19 @@ HEADERS  += \
     objects/UIBox.h \
     objects/UIMessage.h \
     objects/UIDSP.h \
-    oopd/OOPD.h \
-    oopd/OOPDClassBase.h \
-    oopd/OOPDHeaders.h \
-    oopd/UIClass.h \
-    oopd/UIInstance.h \
-    oopd/OPClass.h \
-    oopd/OPInstance.h \
-    oopd/UIMethod.h \
-    oopd/UIProperty.h \
+#    oopd3/OOPD3.h \
+#    oopd/OOPD.h \
+#    oopd/OOPDClassBase.h \
+#    oopd/OOPDHeaders.h \
+#    oopd/UIClass.h \
+#    oopd/UIInstance.h \
+#    oopd/OPClass.h \
+#    oopd/OPInstance.h \
+#    oopd/UIMethod.h \
+#    oopd/UIProperty.h \
     objects/UILink.h \
     objects/UISlider.h \
-    oopd/UISignal.h \
+#    oopd/UISignal.h \
     objects/UIMatrix.h \
 #### widgets
     widgets/UIArrayEditor.h \
@@ -263,6 +268,10 @@ HEADERS  += \
     datamodels/recentfiles.h \
     datamodels/filepaths.h \
     datamodels/fileparserconverter.h \
+#    oopd3/OPClass.h \
+#    oopd3/OOPDClassBase.h \
+#    oopd3/OPInstance.h \
+#    oopd3/MultipleServerOutlets.h
 
 
 #    widgets/UIScriptTextEdit.h \
