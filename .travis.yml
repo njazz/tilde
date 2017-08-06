@@ -25,15 +25,15 @@ addons:
 #      - qt5-default 
 #      - qttools5-dev-tools
 
-# Build your code e.g. by calling make
-script:
-  - mkdir build
-  - cd build
-  - cmake ..
-  - make
+
 
 # Generate and deploy documentation #after_success
 script:
   - cd $TRAVIS_BUILD_DIR
   - chmod +x generateDocs.sh
   - ./generateDocs.sh
+  - cd $TRAVIS_BUILD_DIR
+  - mkdir build
+  - cd build
+  - cmake ..
+  - make
