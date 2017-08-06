@@ -279,8 +279,6 @@ set (PYTHON_LIBS
 )
 
 include_directories( ${CMAKE_BINARY_DIR} )
-
-
 include_directories(.)
 include_directories(./lib_headers/)
 include_directories(./window/)
