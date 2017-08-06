@@ -9,13 +9,14 @@ set (QMAKE_MACOSX_DEPLOYMENT_TARGET 10.10)
 set(CMAKE_AUTOMOC ON)
 
 include_directories( py27headers )
+include_directories( src )
 
 find_package(Qt5Core REQUIRED)
 find_package(Qt5Gui REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 
 add_subdirectory(src)
-# add_subdirectory(extensions)
+add_subdirectory(extensions)
 
 
 
