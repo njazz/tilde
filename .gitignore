@@ -55,3 +55,5 @@ build/
 build/*
 
 tilde~_tests/build/*
+
+bin/*

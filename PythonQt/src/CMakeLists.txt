@@ -120,3 +120,5 @@ add_library(PythonQt SHARED ${SOURCES} ${HEADERS} ${moc_core} ${moc_gui} ${CoreB
 qt5_use_modules(PythonQt Core Gui Widgets)
 
 target_link_libraries(PythonQt Python ${Qt5Core_LIBRARIES} ${Qt5Gui_LIBRARIES}  ${Qt5Widgets_LIBRARIES} Qt5::Core Qt5::Gui)
+
+install(TARGETS PythonQt LIBRARY DESTINATION ${CMAKE_BINARY_DIR}/../bin)

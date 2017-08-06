@@ -378,5 +378,7 @@ else()
 endif(WIN32)
 
 
+install(TARGETS tilde~ DESTINATION ${CMAKE_BINARY_DIR}/../bin)
+
 
 

@@ -13,6 +13,7 @@ include_directories( ${CMAKE_BINARY_DIR}/tilde~_tests )
 add_subdirectory(tilde~_ui_library)
 add_subdirectory(tilde~)
 add_subdirectory(tilde~_tests)
+add_subdirectory(PythonQt)
 
 add_custom_target( tilde-main DEPENDS tilde~ tilde~_ui )
 # add_dependencies( tilde-main tilde~ tilde~_ui)
@@ -22,3 +23,4 @@ add_custom_command(
     	COMMAND ${CMAKE_SOURCE_DIR}/cmake/copy_to_bin.sh
 	WORKING_DIR ${CMAKE_BINARY_DIR}
 )
+
