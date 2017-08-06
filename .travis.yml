@@ -29,7 +29,7 @@ script:
   - chmod +x generateDocs.sh
   - ./generateDocs.sh
   - cd $TRAVIS_BUILD_DIR
-  - mkdir build
-  - cd build
-  - cmake ..
-  - make
+  #- mkdir build
+  #- cd build
+  #- cmake ..
+  #- make
