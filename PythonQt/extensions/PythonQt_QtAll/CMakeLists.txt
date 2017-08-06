@@ -116,4 +116,4 @@ qt5_use_modules(PythonQtExtensions Core Gui Widgets Network Xml XmlPatterns Open
 
 target_link_libraries(PythonQtExtensions Python PythonQt ${OpenGL_LIB} ${GLUT})
 
-install(TARGETS PythonQtExtensions LIBRARY DESTINATION ${CMAKE_BINARY_DIR}/../../bin)
+#install(TARGETS PythonQtExtensions LIBRARY DESTINATION ${CMAKE_BINARY_DIR}/../../bin)

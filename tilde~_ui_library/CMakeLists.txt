@@ -112,6 +112,6 @@ target_link_libraries(tilde~_ui ${LIBS} "-undefined dynamic_lookup")
 SET_TARGET_PROPERTIES(tilde~_ui PROPERTIES PREFIX "")
 set_target_properties(tilde~_ui PROPERTIES SUFFIX ".pd_darwin")
 
-install(TARGETS tilde~_ui LIBRARY DESTINATION ${CMAKE_BINARY_DIR}/../bin)
+#install(TARGETS tilde~_ui LIBRARY DESTINATION ${CMAKE_BINARY_DIR}/../bin)
 
 
