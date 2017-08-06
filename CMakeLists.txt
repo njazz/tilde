@@ -8,9 +8,11 @@ set(CMAKE_AUTOMOC ON)
 project(tilde-main)
 
 include_directories( ${CMAKE_BINARY_DIR}/tilde~ )
+include_directories( ${CMAKE_BINARY_DIR}/tilde~_tests )
 
 add_subdirectory(tilde~_ui_library)
 add_subdirectory(tilde~)
+add_subdirectory(tilde~_tests)
 
 add_custom_target( tilde-main DEPENDS tilde~ tilde~_ui )
 # add_dependencies( tilde-main tilde~ tilde~_ui)

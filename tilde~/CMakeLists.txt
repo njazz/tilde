@@ -332,6 +332,7 @@ LINK_DIRECTORIES(
 	${CMAKE_BINARY_DIR}/res
 	/usr/local/lib
 )
+
 target_link_libraries(tilde~ ${QT_LIBRARIES} ${LIBS} ${PYTHON_LIBS})
 
 if (APPLE)
