@@ -175,6 +175,7 @@ SOURCES += controller/main.cpp\
 #    oopd3/OPClass.cpp \
 #    oopd3/OOPDClassBase.cpp \
 #    oopd3/OPInstance.cpp
+    objects/UIFaustEditor.cpp
 
 
 
@@ -272,6 +273,7 @@ HEADERS  += \
 #    oopd3/OOPDClassBase.h \
 #    oopd3/OPInstance.h \
 #    oopd3/MultipleServerOutlets.h
+    objects/UIFaustEditor.h
 
 
 #    widgets/UIScriptTextEdit.h \
