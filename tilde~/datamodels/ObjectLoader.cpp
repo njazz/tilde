@@ -25,7 +25,7 @@
 #include "oopd/UIProperty.h"
 #include "oopd/UISignal.h"
 
-#include "UIFaustEditor.h"
+#include "UIFaustBox.h"
 
 #include "UIDSP.h"
 
@@ -55,7 +55,7 @@ void ObjectLoader::loadObjects()
 
     addUIobject("ui.array", &UIArray::createObj);
 
-    addUIobject("ui.faust~", &UIFaustEditor::createObj);
+    addUIobject("ui.faust~", &UIFaustBox::createObj);
 
     /*
     addUIobject("pdclass", &UIClass::createObject, &UIClass::createObj);

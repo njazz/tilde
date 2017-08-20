@@ -172,10 +172,10 @@ SOURCES += controller/main.cpp\
     datamodels/recentfiles.cpp \
     datamodels/filepaths.cpp \
     datamodels/fileparserconverter.cpp \
+    objects/UIFaustBox.cpp
 #    oopd3/OPClass.cpp \
 #    oopd3/OOPDClassBase.cpp \
 #    oopd3/OPInstance.cpp
-    objects/UIFaustEditor.cpp
 
 
 
@@ -269,11 +269,11 @@ HEADERS  += \
     datamodels/recentfiles.h \
     datamodels/filepaths.h \
     datamodels/fileparserconverter.h \
+    objects/UIFaustBox.h
 #    oopd3/OPClass.h \
 #    oopd3/OOPDClassBase.h \
 #    oopd3/OPInstance.h \
 #    oopd3/MultipleServerOutlets.h
-    objects/UIFaustEditor.h
 
 
 #    widgets/UIScriptTextEdit.h \

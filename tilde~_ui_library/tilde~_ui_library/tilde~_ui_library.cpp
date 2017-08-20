@@ -2,7 +2,13 @@
 
 #include "tilde~_ui_library.h"
 
+#include "../../tilde~/controller/buildNumber.h"
+
+
+
 extern "C" {
+
+#include <stdlib.h>
 
 extern void setup_ui0x2ebang();
 extern void setup_ui0x2efloat();
@@ -20,7 +26,10 @@ extern void setup_ui0x2earray();
 
 extern "C" void setup() //0x2e //TILDE_UI_
 {
-    post("loading tilde~ UI library...");
+    char * buildNr = (char*)malloc(8);
+
+    sprintf(buildNr,"loading tilde~ UI library build %i ...", TILDE_BUILD_NUMBER);
+    post(buildNr);
 
     setup_ui0x2ebang();
     setup_ui0x2efloat();

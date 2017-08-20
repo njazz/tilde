@@ -22,7 +22,7 @@ namespace tilde {
 
 ////
 /// \brief gui object: script box (ui.scriptbox)
-class UIFaustEditor : public UIBox {
+class UIFaustBox : public UIBox {
     Q_OBJECT
 
 private:
@@ -33,7 +33,7 @@ private:
 //    UIScriptCommon* _scriptCommon;
 
 public:
-    explicit UIFaustEditor();
+    explicit UIFaustBox();
 
     static UIObject* createObj(QString data);
 

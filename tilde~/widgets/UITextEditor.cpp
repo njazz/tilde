@@ -62,8 +62,8 @@ void UITextEditor::resizeEvent(QResizeEvent*)
 
     if (_svgView) {
 
-        QGraphicsScene* scene = new QGraphicsScene(0, 0, width() * .33 - 10, height() - 25);
-        _svgView->setScene(scene);
+        //QGraphicsScene* scene = new QGraphicsScene(0, 0, width() * .33 - 10, height() - 25);
+        //_svgView->setScene(scene);
 
         _svgView->move(width() * .5 + 2, 22);
         _svgView->setFixedSize(width() * .5 - 10, height() - 25);

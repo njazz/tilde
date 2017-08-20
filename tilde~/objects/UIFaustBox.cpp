@@ -1,7 +1,7 @@
 // (c) 2017 Alex Nadzharov
 // License: GPL3
 
-#include "UIFaustEditor.h"
+#include "UIFaustBox.h"
 
 #include <QPushButton>
 
@@ -22,7 +22,7 @@
 
 namespace tilde {
 
-UIFaustEditor::UIFaustEditor()
+UIFaustBox::UIFaustBox()
 {
 
     deselect();
@@ -32,8 +32,8 @@ UIFaustEditor::UIFaustEditor()
 
     _editor = new UITextEditor();
 
-    connect(_editor, &UITextEditor::signalCompile, this, &UIFaustEditor::slotCompile);
-    connect(_editor, &UITextEditor::signalUpdate, this, &UIFaustEditor::slotUpdate);
+    connect(_editor, &UITextEditor::signalCompile, this, &UIFaustBox::slotCompile);
+    connect(_editor, &UITextEditor::signalUpdate, this, &UIFaustBox::slotUpdate);
 
     // TODO move
     //    _scriptCommon = new UIScriptCommon();
@@ -50,27 +50,27 @@ UIFaustEditor::UIFaustEditor()
     _editor->textEdit()->setPlainText("import(\"stdfaust.lib\");\nphasor(f)   = f/ma.SR : (+,1.0:fmod) ~ _ ;\nosc(f)      = phasor(f) * 6.28318530718 : sin;\nprocess     = osc(hslider(\"freq\", 440, 20, 20000, 1)) * hslider(\"level\", 0, 0, 1, 0.01);");
 }
 
-void UIFaustEditor::editorChanged()
+void UIFaustBox::editorChanged()
 {
 }
 
-UIObject* UIFaustEditor::createObj(QString data)
+UIObject* UIFaustBox::createObj(QString data)
 {
-    UIFaustEditor* ret = new UIFaustEditor();
+    UIFaustBox* ret = new UIFaustBox();
 
     ret->fromQString(data);
 
     return ret;
 }
 
-void UIFaustEditor::initProperties()
+void UIFaustBox::initProperties()
 {
     UIObject::initProperties();
 
     properties()->create("ScriptFile", "Data", "0.1", QString(""));
 };
 
-void UIFaustEditor::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
+void UIFaustBox::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
 {
     p->setClipRect(option->exposedRect);
 
@@ -98,7 +98,7 @@ void UIFaustEditor::paint(QPainter* p, const QStyleOptionGraphicsItem* option, Q
 
 // ------------------------
 
-void UIFaustEditor::objectPressEvent(QGraphicsSceneMouseEvent* event)
+void UIFaustBox::objectPressEvent(QGraphicsSceneMouseEvent* event)
 {
     if (getEditMode() != em_Unlocked) {
         _editor->show();
@@ -107,14 +107,14 @@ void UIFaustEditor::objectPressEvent(QGraphicsSceneMouseEvent* event)
 
 // ----------------------
 
-void UIFaustEditor::setPdMessage(QString message)
+void UIFaustBox::setPdMessage(QString message)
 {
     fromQString(message);
 
     setSize(300, 200);
 }
 
-void UIFaustEditor::sync()
+void UIFaustBox::sync()
 {
     UIObject::sync();
 
@@ -122,14 +122,14 @@ void UIFaustEditor::sync()
     //_editor->textEdit()->setContext(pyWrapper::inst().newContextWithPatchControllerServerObjectAndList(this->parentController(), serverObject(), &_scriptCommon->scriptData()->inputList));
 }
 
-void UIFaustEditor::updateUI(AtomList* list)
+void UIFaustBox::updateUI(AtomList* list)
 {
 
     //_scriptCommon->scriptData()->inputList = UIScriptCommon::AtomListToStringList(*list);
     //_scriptCommon->btnRun();
 }
 
-void UIFaustEditor::slotCompile()
+void UIFaustBox::slotCompile()
 {
     QString source = _editor->textEdit()->toPlainText();
 
@@ -162,9 +162,21 @@ void UIFaustEditor::slotCompile()
 
     process.setProcessEnvironment(env);
     process.startDetached("/bin/bash", QStringList() << scriptName << dspFName); //"cd " + faustFolder + " && /bin/bash echo converting... &&
+
+    process.waitForFinished(10000);
+
+    if (process.exitCode()==0)
+    {
+
+        slotUpdate();
+    }
+    else
+    {
+        ServerInstance::post("FAUST compilation error");
+    }
 }
 
-void UIFaustEditor::slotUpdate()
+void UIFaustBox::slotUpdate()
 {
     QString docFolder = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).last() + "/tilde~";
     QString objFName = docFolder + "/FAUST/_tmp0001~";

@@ -12,25 +12,24 @@
 #include <QScrollBar>
 #include <QTextCursor>
 
-#include <QGraphicsView>
 #include <QGraphicsSvgItem>
+#include <QGraphicsView>
 
 #include <QStringListModel>
 
-namespace tilde{
+namespace tilde {
 ////
 /// \brief Stub for generic text editor
 /// \deprecated TODO: merge / unify with uiscripteditor
 /// \details test branch: FAUST code editor
-class UITextEditor : public QWidget
-{
+class UITextEditor : public QWidget {
     Q_OBJECT
 
- QPlainTextEdit* _textEdit;
+    QPlainTextEdit* _textEdit;
 
- QGraphicsView* _svgView;
- QSvgRenderer *_renderer;
-QGraphicsSvgItem *_item;
+    QGraphicsView* _svgView;
+    QSvgRenderer* _renderer;
+    QGraphicsSvgItem* _item;
 
 public:
     explicit UITextEditor(QWidget* parent = 0);
