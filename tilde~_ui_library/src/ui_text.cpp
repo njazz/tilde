@@ -37,7 +37,7 @@ extern "C" void setup_ui0x2etext()
     ui_text_class = class_new(gensym("ui.text"),(t_newmethod)&new_ui_text,0,sizeof(t_object),CLASS_NOINLET,A_NULL);
 
     // temporary for ui.faust
-    ui_text_class = class_new(gensym("ui.faust"),(t_newmethod)&new_ui_text,0,sizeof(t_object),CLASS_NOINLET,A_NULL);
+    ui_text_class = class_new(gensym("ui.faust~"),(t_newmethod)&new_ui_text,0,sizeof(t_object),CLASS_NOINLET,A_NULL);
 
     //TEMP
     //ui_array_class = class_new(gensym("ui.array"),(t_newmethod)&new_ui_array,0,sizeof(t_object),CLASS_NOINLET,A_NULL);
