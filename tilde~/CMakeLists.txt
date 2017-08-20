@@ -263,9 +263,14 @@ set (RESOURCES
 find_library(PA_LIB portaudio)
 find_library(PDSERVER_LIB pd-server)
 
+set (XPD_STATIC 
+	"${CMAKE_BINARY_DIR}/xpd/src/libxpd_static.a"
+)
+
 set (LIBS
 	${PA_LIB}
 	${PDSERVER_LIB}
+	${XPD_STATIC}
 )
 
 find_library(PYTHON27 Python)

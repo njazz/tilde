@@ -10,14 +10,15 @@ project(tilde-main)
 include_directories( ${CMAKE_BINARY_DIR}/tilde~ )
 include_directories( ${CMAKE_BINARY_DIR}/tilde~_tests )
 
+add_subdirectory(xpd)
 add_subdirectory(PythonQt)
 add_subdirectory(tilde~_ui_library)
 add_subdirectory(tilde~)
 add_subdirectory(tilde~_tests)
-#add_subdirectory(xpd)
 
 
-add_custom_target( tilde-main DEPENDS tilde~ tilde~_ui PythonQt)
+
+add_custom_target( tilde-main DEPENDS xpd_static tilde~ tilde~_ui PythonQt )
 
 add_custom_command(
 	TARGET tilde-main	
