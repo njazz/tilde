@@ -35,6 +35,7 @@ set (SOURCES
     	objects/UIToggle.cpp 
     	objects/UIBang.cpp 
     	objects/UIText.cpp 
+	objects/UIFaustEditor.cpp 
     	oopd/OOPD.cpp 
     	oopd/UIClass.cpp 
     	oopd/UIInstance.cpp 
