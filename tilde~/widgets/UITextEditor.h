@@ -12,6 +12,9 @@
 #include <QScrollBar>
 #include <QTextCursor>
 
+#include <QGraphicsView>
+#include <QGraphicsSvgItem>
+
 #include <QStringListModel>
 
 namespace tilde{
@@ -24,6 +27,11 @@ class UITextEditor : public QWidget
     Q_OBJECT
 
  QPlainTextEdit* _textEdit;
+
+ QGraphicsView* _svgView;
+ QSvgRenderer *_renderer;
+QGraphicsSvgItem *_item;
+
 public:
     explicit UITextEditor(QWidget* parent = 0);
 
