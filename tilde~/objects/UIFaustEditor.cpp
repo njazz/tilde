@@ -17,6 +17,9 @@
 
 #include "ceammc_atomlist.h"
 
+#include "ApplicationController.h"
+#include "PatchWindowController.h"
+
 namespace tilde {
 
 UIFaustEditor::UIFaustEditor()
@@ -30,6 +33,7 @@ UIFaustEditor::UIFaustEditor()
     _editor = new UITextEditor();
 
     connect(_editor, &UITextEditor::signalCompile, this, &UIFaustEditor::slotCompile);
+    connect(_editor, &UITextEditor::signalUpdate, this, &UIFaustEditor::slotUpdate);
 
     // TODO move
     //    _scriptCommon = new UIScriptCommon();
@@ -43,7 +47,7 @@ UIFaustEditor::UIFaustEditor()
 
     resizeEvent();
 
-    _editor->textEdit()->setPlainText("process = _,_;");
+    _editor->textEdit()->setPlainText("import(\"stdfaust.lib\");\nphasor(f)   = f/ma.SR : (+,1.0:fmod) ~ _ ;\nosc(f)      = phasor(f) * 6.28318530718 : sin;\nprocess     = osc(hslider(\"freq\", 440, 20, 20000, 1)) * hslider(\"level\", 0, 0, 1, 0.01);");
 }
 
 void UIFaustEditor::editorChanged()
@@ -129,8 +133,6 @@ void UIFaustEditor::slotCompile()
 {
     QString source = _editor->textEdit()->toPlainText();
 
-
-
     QString docFolder = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).last() + "/tilde~";
     QString faustFolder = docFolder + "/FAUST/";
     QString dspFName = docFolder + "/FAUST/_tmp0001.dsp";
@@ -152,14 +154,30 @@ void UIFaustEditor::slotCompile()
 
     QProcess process;
     QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
-    env.insert("PATH",env.value("PATH")+":/usr/local/bin");
-    env.insert("SCRIPT_DIR",faustFolder);
+    env.insert("PATH", env.value("PATH") + ":/usr/local/bin");
+    env.insert("SCRIPT_DIR", faustFolder);
+    qputenv("SCRIPT_DIR", faustFolder.toLocal8Bit());
 
     qDebug() << env.toStringList();
 
     process.setProcessEnvironment(env);
-    process.startDetached("/bin/bash", QStringList()<<scriptName << dspFName); //"cd " + faustFolder + " && /bin/bash echo converting... &&
-
-}
+    process.startDetached("/bin/bash", QStringList() << scriptName << dspFName); //"cd " + faustFolder + " && /bin/bash echo converting... &&
 }
 
+void UIFaustEditor::slotUpdate()
+{
+    QString docFolder = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).last() + "/tilde~";
+    QString objFName = docFolder + "/FAUST/_tmp0001~";
+    //parentController()->serverCanvas()->createObject(objFName.toStdString());
+
+    //_parentController->createObject()
+
+    ServerObject* serverObject = parentController()->appController()->slotCreateObject(parentController()->serverCanvas(), objFName.toStdString());
+    qDebug() << serverObject;
+
+    setErrorBox(false);
+    setServerObject(serverObject);
+
+    sync();
+}
+}

@@ -18,8 +18,7 @@ namespace tilde{
 ////
 /// \brief Stub for generic text editor
 /// \deprecated TODO: merge / unify with uiscripteditor
-///
-///
+/// \details test branch: FAUST code editor
 class UITextEditor : public QWidget
 {
     Q_OBJECT
@@ -37,8 +36,10 @@ public:
 
 signals:
     void signalCompile();
+    void signalUpdate();
 private slots:
     void slotCompileBtn();
+    void slotUpdateBtn();
 };
 }
 

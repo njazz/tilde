@@ -57,6 +57,7 @@ private slots:
     void editorChanged();
 
     void slotCompile();
+    void slotUpdate();
 };
 }
 #endif // cmo_text_H

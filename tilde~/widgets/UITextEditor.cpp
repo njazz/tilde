@@ -35,6 +35,14 @@ UITextEditor::UITextEditor(QWidget* parent)
     b1->setFixedSize(80, 20);
     b1->show();
     connect(b1, &QPushButton::clicked, this, &UITextEditor::slotCompileBtn);
+
+    b1 = new QPushButton("Update");
+        b1->setParent(this);
+        b1->setFont(font);
+        b1->move(110, 1);
+        b1->setFixedSize(80, 20);
+        b1->show();
+        connect(b1, &QPushButton::clicked, this, &UITextEditor::slotUpdateBtn);
 }
 
 void UITextEditor::resizeEvent(QResizeEvent*)
@@ -49,5 +57,10 @@ void UITextEditor::setTextEdit(QPlainTextEdit* textEdit) { _textEdit = textEdit;
 void UITextEditor::slotCompileBtn()
 {
     emit signalCompile();
+}
+
+void UITextEditor::slotUpdateBtn()
+{
+    emit signalUpdate();
 }
 }

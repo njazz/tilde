@@ -888,7 +888,7 @@ UIPatchcord* PatchWindowController::createPatchcordWithoutUndo(UIObject* obj1, i
 
     if (obj1->serverObject() && obj2->serverObject()) {
         if (((UIBox*)obj1)->errorBox()) {
-            qDebug() << "errorbox";
+            qDebug() << "starting object is errorbox";
             return 0;
         };
 
