@@ -14,7 +14,9 @@
 
 #include "Preferences.h"
 
-#include "pdServer.hpp"
+//#include "pdServer.hpp"
+
+#include "xpd-transition/xpd-headers.h"
 
 #define AUDIOSETTINGS_QSTRING(x) tilde::AudioSettings::inst().getQString(x)
 #define TILDE_AUDIOSETTINGS_INIT tilde::AudioSettings::inst().init()
@@ -56,6 +58,7 @@ public:
     void init()
     {
 
+        /*
         // TODO
         create("AudioDriver", "Basic", TILDE_APP_VERSION, QString(ServerInstance::getAudioAPIs().c_str()).split(","));
 
@@ -78,6 +81,7 @@ public:
         AUDIOSETTINGS_LISTENER("AudioDriver", &AudioSettings::slotSetAudioDriver);
         AUDIOSETTINGS_LISTENER("AudioInput", &AudioSettings::slotSetAudioInput);
         AUDIOSETTINGS_LISTENER("AudioOutput", &AudioSettings::slotSetAudioOutput);
+        */
     }
 
 private slots:

@@ -4,7 +4,13 @@
 #ifndef OBJECTOBSERVER
 #define OBJECTOBSERVER
 
-#include "pdServer.hpp"
+//#include "pdServer.hpp"
+
+#include "xpd-transition/xpd-headers.h"
+
+#include <memory.h>
+
+using namespace xpd;
 
 namespace tilde {
 
@@ -21,6 +27,9 @@ public:
     void setObject(UIObject* o);
     virtual void update();
 };
+
+typedef std::shared_ptr<ObjectObserver> ObjectObserverPtr;
+
 }
 
 #endif // CM_PDLINK_H

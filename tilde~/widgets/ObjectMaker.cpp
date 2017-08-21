@@ -4,7 +4,9 @@
 #include "ObjectMaker.h"
 #include "Preferences.h"
 
-#include "pdServer.hpp"
+// #include "pdServer.hpp"
+
+#include "xpd-transition/xpd-headers.h"
 
 #include <QCompleter>
 #include <QStringListModel>

@@ -28,13 +28,17 @@
 
 #include "buildNumber.h"
 
+using namespace std;
+
 namespace tilde {
 
 void ApplicationController::loadAllLibraries()
 {
-    _localServer->firstInstance()->setVerboseLevel(4);
+    // XPD-TODO
+    mainServerInstance()->setLogLevel(LOG_DUMP);
+    //_localServer->firstInstance()->setVerboseLevel(4);
     
-    
+
 
     QStringList libs = _filePaths->librariesFileList();
 
@@ -42,10 +46,13 @@ void ApplicationController::loadAllLibraries()
         // todo rewrite
         //QStringList path =
         QString file = libs.at(i).left(libs.at(i).lastIndexOf("."));//libs.at(i).split("/").first() + libs.at(i).split("/").last().split(".").first();
-        _localServer->firstInstance()->loadLibrary(file.toStdString());
+        //_localServer->firstInstance()->loadLibrary(file.toStdString());
+
+        mainServerInstance()->loadLibrary(file.toStdString());
     }
     
-    _localServer->firstInstance()->setVerboseLevel(1);
+    //_localServer->firstInstance()->setVerboseLevel(1);
+    mainServerInstance()->setLogLevel(LOG_ERROR);
     
 }
 
@@ -72,6 +79,9 @@ ApplicationController::ApplicationController()
 
     TILDE_AUDIOSETTINGS_INIT;
 
+    // XPD-TODO
+
+    /*
     _serverWorker = new ServerWorker();
     _serverThread = new QThread();
 
@@ -80,6 +90,7 @@ ApplicationController::ApplicationController()
 
     _serverWorker->moveToThread(_serverThread);
     _serverThread->start();
+    */
 
 #ifdef WITH_PYTHON
     pyWrapper::inst().setAppController(this);
@@ -87,9 +98,9 @@ ApplicationController::ApplicationController()
     _pythonConsole = new PythonQtScriptingConsole(NULL, mainContext);
 #endif
 
-    _consoleObserver = new PdWindowConsoleObserver;
+    _consoleObserver = shared_ptr<PdWindowConsoleObserver> (new PdWindowConsoleObserver);
 
-    mainServerInstance()->setConsoleObserver(_consoleObserver);
+    mainServerInstance()->registerConsoleObserver(_consoleObserver);
 
     _pdWindow = new PdWindow();
     _pdWindow->setAppController(this);
@@ -98,7 +109,7 @@ ApplicationController::ApplicationController()
 
     _consoleObserver->setWindow(_pdWindow);
 
-    _localServer->firstInstance()->post("Server started");
+    mainServerInstance()->post("Server started");
 
     //_localServer->firstInstance()->setVerboseLevel(4);
 
@@ -200,19 +211,27 @@ ApplicationController::ApplicationController()
     _pdWindow->setRecentMenu(_recentMenu);
     
     QString bb = QString("tilde~ build: ") + QString::number(TILDE_BUILD_NUMBER);
-    ServerInstance::post(bb.toStdString());
+
+    //ServerInstance::post(bb.toStdString());
+
+    mainServerInstance()->post(bb.toStdString());
 
     Preferences::inst().readFromTextFile();
 };
 
-ServerInstance* ApplicationController::mainServerInstance()
+ProcessPtr ApplicationController::mainServerInstance()
 {
     //?
-    while (!_localServer) {
-        _localServer = _serverWorker->localServer();
-    }
+//    while (!_localServer) {
+//        _localServer = _serverWorker->localServer();
+//    }
 
-    return _localServer->firstInstance();
+
+    ProcessPtr p = _localServer->processList().at(0);
+
+    //AbstractServerProcess *sp = *p;
+
+    return p;
 }
 
 void ApplicationController::newPatchWindowController()
@@ -336,11 +355,12 @@ void ApplicationController::newScript()
 #endif
 }
 
-ServerObject* ApplicationController::slotCreateObject(ServerCanvas* canvas, string name)
+ObjectId ApplicationController::slotCreateObject(CanvasPtr canvas, string name)
 {
     assert(canvas);
 
-    ServerObject* serverObject = canvas->createObject(name);
+    // XPD-TODO
+    ObjectId serverObject = canvas->createObject(name,0,0);
 
     return serverObject;
 }

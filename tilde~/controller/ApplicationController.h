@@ -4,7 +4,10 @@
 #ifndef APPLICATIONCONTROLLER
 #define APPLICATIONCONTROLLER
 
-#include "pdServer.hpp"
+//#include "pdServer.hpp"
+
+#include "xpd-transition/xpd-headers.h"
+#include "pdWindowConsoleObserver.h"
 
 #include "recentfiles.h"
 
@@ -21,13 +24,19 @@ class PythonQtScriptingConsole;
 
 #include <QApplication>
 
+
+
+using namespace xpd;
+
+using namespace std;
+
 namespace tilde {
 
 class PdWindow;
 class PatchWindow;
 class UIObject;
 class ServerWorker;
-class PdWindowConsoleObserver;
+//class PdWindowConsoleObserver;
 class RecentFiles;
 class FilePaths;
 
@@ -38,7 +47,7 @@ class ApplicationController : public QObject {
     Q_OBJECT
 
 private:
-    LocalServer* _localServer;
+    PdLocalServer* _localServer;
 
     ServerWorker* _serverWorker;
     QThread* _serverThread;
@@ -46,7 +55,7 @@ private:
     PdWindow* _pdWindow;
     PythonQtScriptingConsole* _pythonConsole;
 
-    PdWindowConsoleObserver* _consoleObserver;
+    PdWindowConsoleObserverPtr _consoleObserver;
 
     int _newFilenameCounter;
 
@@ -64,7 +73,7 @@ private:
 public:
     ApplicationController();
 
-    ServerInstance* mainServerInstance();
+    ProcessPtr mainServerInstance();
 
     Observer* controllerObserver();
 
@@ -89,7 +98,7 @@ public:
 #endif
 
     signals:
-        void getLocalServer(LocalServer * ret);
+        void getLocalServer(ProcessPtr * ret);
 
     public slots:
         void newPatchWindowController();
@@ -108,7 +117,7 @@ public:
 
         void newScript();
 
-        ServerObject* slotCreateObject(ServerCanvas * canvas, string name);
+        ObjectId slotCreateObject(CanvasPtr canvas, string name);
     };
 }
 

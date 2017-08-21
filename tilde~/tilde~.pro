@@ -273,7 +273,8 @@ HEADERS  += \
 #    oopd3/OOPDClassBase.h \
 #    oopd3/OPInstance.h \
 #    oopd3/MultipleServerOutlets.h
-    objects/UIFaustEditor.h
+    objects/UIFaustEditor.h \
+    xpd-transition/xpd-headers.h
 
 
 #    widgets/UIScriptTextEdit.h \
@@ -356,6 +357,13 @@ RESOURCES += \
 
 
 QMAKE_MAC_SDK = macosx10.12
+
+#xpd
+INCLUDEPATH += ../xpd/distrib/variant/include/
+INCLUDEPATH += ../xpd/distrib/spdlog/include/
+INCLUDEPATH += ../xpd/distrib/thread/include/
+INCLUDEPATH += ../xpd/src/
+INCLUDEPATH += ../xpd/pd/
 
 
 #QMAKE_LIBDIR += /usr/local/lib \

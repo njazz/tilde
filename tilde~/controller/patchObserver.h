@@ -4,7 +4,9 @@
 #ifndef PATCHOBSERVER
 #define PATCHOBSERVER
 
-#include "pdServer.hpp"
+// #include "pdServer.hpp"
+
+#include "xpd-transition/xpd-headers.h"
 
 namespace tilde {
 

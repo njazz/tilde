@@ -2,8 +2,10 @@
 // License: GPL3
 
 #include "UIScriptCommon.h"
-#include "pdServer.hpp"
+// #include "pdServer.hpp"
 #include "ceammc_atomlist.h"
+
+#include "xpd-transition/xpd-headers.h"
 
 namespace tilde {
 

@@ -6,22 +6,27 @@
 
 #include "UIItem.h"
 
+#include "../../xpd-transition/xpd-headers.h"
+#include "objectObserver.h"
+
 namespace ceammc {
 class AtomList;
 }
 
 using namespace ceammc;
 
+using namespace xpd;
+
 class QAction;
 class QMenu;
 
-class ServerObject;
+//class ServerObject;
 
 namespace tilde {
 
 class CanvasView;
 class CanvasData;
-class ObjectObserver;
+//class ObjectObserver;
 class PropertyList;
 class Port;
 class SizeBox;
@@ -53,9 +58,9 @@ private:
     CanvasView* _parentCanvasView;
     PatchWindowController* _parentController;
 
-    ServerObject* _serverObject;
+    ObjectPtr _serverObject;
 
-    ObjectObserver* _observer;
+    ObjectObserverPtr _observer;
 
 protected:
     virtual void hoverEnterEvent(QGraphicsSceneHoverEvent*);
@@ -75,10 +80,10 @@ public:
     void setObjectData(UIObjectData* m);
     UIObjectData* objectData();
 
-    virtual ServerObject* serverObject();
-    virtual void setServerObject(ServerObject* o);
+    virtual ObjectPtr serverObject();
+    virtual void setServerObject(ObjectPtr o);
 
-    ObjectObserver* observer();
+    ObjectObserverPtr observer();
 
     virtual void initProperties(); ///>init properties for the class - called from constructor
     PropertyList* properties(); ///> UIObject properties
@@ -176,7 +181,7 @@ signals:
     /// \details pd calls UIUpdate(...) -> it emits 's_repaint()' that is connected to 'callRepaint()'
     void signalCallRepaint();
 
-    void signalSendMessage(ServerObject* obj, QString msg);
+    void signalSendMessage(ProcessPtr* obj, QString msg);
 
     void signalOpenPropertiesWindow();
     void signalOpenHelpWindow();

@@ -26,7 +26,9 @@
 #include "UIObjectData.h"
 #include "objectObserver.h"
 
-#include <pdServer.hpp>
+//#include <pdServer.hpp>
+
+#include "xpd-transition/xpd-headers.h"
 
 #include "undocommands.h"
 
@@ -39,7 +41,7 @@ PatchWindowController::PatchWindowController(ApplicationController* appControlle
     qDebug()<<"1";
 
     _scene = new QGraphicsScene();
-    _observer = new Observer();
+    _observer = ObserverPtr(new Observer());
 
     _appController = appController;
 
@@ -71,11 +73,11 @@ PatchWindowController::PatchWindowController(ApplicationController* appControlle
     //PatchWindowController(appController, serverInstance()->createCanvas());
 };
 
-PatchWindowController::PatchWindowController(ApplicationController* appController, ServerCanvas* canvas = 0)
+PatchWindowController::PatchWindowController(ApplicationController* appController, CanvasPtr canvas = 0)
 {
 
     _scene = new QGraphicsScene();
-    _observer = new Observer();
+    _observer = ObserverPtr(new Observer());
 
     _appController = appController;
 
@@ -100,7 +102,7 @@ PatchWindowController::PatchWindowController(ApplicationController* appControlle
 
 };
 
-ServerCanvas* PatchWindowController::serverCanvas() { return _serverCanvas; }
+CanvasPtr PatchWindowController::serverCanvas() { return _serverCanvas; }
 
 UIBox* PatchWindowController::asUIBox()
 {
@@ -111,9 +113,10 @@ UIBox* PatchWindowController::asUIBox()
     return ret;
 }
 
-ServerObject* PatchWindowController::serverCanvasAsObject()
+ObjectId PatchWindowController::serverCanvasAsObject()
 {
-    return _serverCanvas->toServerObject();
+
+    return _serverCanvas->id();//_serverCanvas->toServerObject();
 }
 
 void PatchWindowController::enableObjectsOnParent(UIObject* parentObject)
@@ -162,7 +165,7 @@ void PatchWindowController::syncObjectsOnParent()
     _parentObject->update();
 }
 
-ServerInstance* PatchWindowController::serverInstance() { return _appController->mainServerInstance(); }
+ProcessPtr PatchWindowController::serverInstance() { return _appController->mainServerInstance(); }
 
 vector<PatchWindow*> PatchWindowController::windows() { return _windows; };
 PatchWindow* PatchWindowController::mainWindow() { return _windows[0]; };
@@ -223,13 +226,15 @@ void PatchWindowController::doCreateObject(UIObject* uiObject)
     uiObject->setParentCanvasView(_windows[0]->canvasView());
 
     uiObject->observer()->setObject(uiObject);
+    // XPD-TODO
     uiObject->serverObject()->ServerObject::registerObserver(uiObject->observer());
 
     uiObject->setEditModeRef(_windows[0]->canvasView()->getEditModeRef());
 
     uiObject->sync();
 
-    connect(uiObject, &UIObject::signalSendMessage, _appController->serverWorker(), &ServerWorker::sendMessageToObject);
+    // XPD-TODO
+    // connect(uiObject, &UIObject::signalSendMessage, _appController->serverWorker(), &ServerWorker::sendMessageToObject);
 
     connect(uiObject, &UIObject::selectBox, _windows[0]->canvasView(), &CanvasView::slotSelectBox);
     connect(uiObject, &UIObject::moveBox, _windows[0]->canvasView(), &CanvasView::slotMoveBox);
@@ -279,7 +284,7 @@ UIObject* PatchWindowController::createObjectWithoutUndo(string name, QPoint pos
     //ServerInstance::post("create: " + name);
 
     UIObject* uiObject = ObjectLoader::inst().createUIObject(name.c_str());
-    ServerObject* serverObject = _appController->slotCreateObject(_serverCanvas, name); //emit signalCreateObject(_serverCanvas, name);
+    ObjectPtr serverObject = _appController->slotCreateObject(_serverCanvas, name); //emit signalCreateObject(_serverCanvas, name);
 
     // TODO wait?
     uiObject->setServerObject(serverObject);
@@ -415,7 +420,7 @@ void PatchWindowController::restoreUIBoxForSubpatch(PatchWindowController* contr
     // TODO move inside controller->subpatchBox
     uiObject->setServerObject(controller->serverCanvasAsObject());
 
-    qDebug() << "server canvas as object:" << controller->serverCanvasAsObject();
+    qDebug() << "server canvas as object:" << (long)controller->serverCanvasAsObject();
 
     doCreateObject(uiObject);
 
@@ -429,7 +434,10 @@ void PatchWindowController::deleteSinglePatchcord(UIPatchcord* p)
     _canvasData->deletePatchcord(p);
     _scene->update();
 
-    _serverCanvas->deletePatchcord(p->serverPatchcord());
+
+    // XPD-TODO
+    // _serverCanvas->disconnect()
+    // _serverCanvas->deletePatchcord(p->serverPatchcord());
 }
 
 //bool PatchWindowController::patchcord(UIObject* src, int out, UIObject* dest, int in){};
@@ -543,14 +551,14 @@ void PatchWindowController::menuSelectAll()
 
 void PatchWindowController::menuUndo()
 {
-    ServerInstance::post("menu undo stub");
+    serverInstance()->post("menu undo stub");
     _undoStack->undo();
     emit signalEnableRedo(_undoStack->canRedo());
 }
 
 void PatchWindowController::menuRedo()
 {
-    ServerInstance::post("menu redo stub");
+    serverInstance()->post("menu undo stub");
     _undoStack->redo();
 
     emit signalEnableUndo(_undoStack->canUndo());

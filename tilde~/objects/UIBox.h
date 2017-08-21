@@ -13,7 +13,9 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QGraphicsView>
 
-#include "pdServer.hpp"
+// #include "pdServer.hpp"
+
+#include "xpd-transition/xpd-headers.h"
 
 class QGraphicsProxyWidget;
 

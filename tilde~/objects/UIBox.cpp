@@ -14,7 +14,9 @@
 
 #include "SizeBox.h"
 
-#include "pdServer.hpp"
+// #include "pdServer.hpp"
+
+#include "xpd-transition/xpd-headers.h"
 
 #include "CanvasView.h"
 

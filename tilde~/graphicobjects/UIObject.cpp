@@ -12,14 +12,16 @@
 #include "Port.h"
 #include "SizeBox.h"
 
-#include <pdServer.hpp>
+// #include <pdServer.hpp>
 
 #include "objectObserver.h"
 
 // to be removed for tests:
+#include "CanvasView.h"
 #include "FileParser.h"
 #include "PropertiesWindow.h"
-#include "CanvasView.h"
+
+#include "PatchWindowController.h"
 
 namespace tilde {
 
@@ -63,7 +65,7 @@ UIObject::UIObject(UIItem* parent)
     _parentCanvasView = 0;
     //_subCanvasData = 0;
 
-    _observer = new ObjectObserver;
+    _observer = ObjectObserverPtr(new ObjectObserver);
     _observer->setObject(this);
 }
 
@@ -85,8 +87,16 @@ void UIObject::setParentCanvasView(CanvasView* v) { _parentCanvasView = v; }
 PatchWindowController* UIObject::parentController() { return _parentController; }
 void UIObject::setParentController(PatchWindowController* p) { _parentController = p; }
 
-ServerObject* UIObject::serverObject() { return _serverObject; };
-void UIObject::setServerObject(ServerObject* o) { _serverObject = o; };
+ObjectPtr UIObject::serverObject() {
+    // XPD-TODO
+    // return ObjectPtr(_serverObject);
+    return 0;
+};
+void UIObject::setServerObject(ObjectPtr o)
+{
+    // XPD-TODO
+    //_serverObject = o;
+};
 
 void UIObject::setObjectData(UIObjectData* m) { _objectData = m; }
 UIObjectData* UIObject::objectData()
@@ -94,7 +104,7 @@ UIObjectData* UIObject::objectData()
     return _objectData;
 }
 
-ObjectObserver* UIObject::observer() { return _observer; }
+ObjectObserverPtr UIObject::observer() { return _observer; }
 
 //---------------------------------------
 
@@ -198,7 +208,9 @@ void UIObject::propertyReceiveSymbol()
     //    ServerInstance::post(symbolName);
 
     if (symbolName != "") {
-        _serverObject->setReceiveSymbol(symbolName);
+
+        // XPD-TODO
+        // _serverObject->setReceiveSymbol(symbolName);
     }
 }
 
@@ -279,9 +291,10 @@ void UIObject::addInlet()
 
     qDebug() << "addInlet";
 
-    if (_serverObject) {
-        _portClass_ = (_serverObject->getInletType(inletCount()) == XLetSignal);
-    }
+    // XPD-TODO
+//    if (_serverObject) {
+//        _serverObject->_portClass_ = (_serverObject->getInletType(inletCount()) == XLetSignal);
+//    }
 
     addInlet(_portClass_);
 }
@@ -331,9 +344,10 @@ void UIObject::addOutlet()
 {
     int _portClass_ = 0;
 
-    if (_serverObject) {
-        _portClass_ = (_serverObject->getOutletType(outletCount()) == XLetSignal);
-    }
+    // XPD-TODO
+//    if (_serverObject) {
+//        _portClass_ = (_serverObject->getOutletType(outletCount()) == XLetSignal);
+//    }
 
     addOutlet(_portClass_);
 }
@@ -476,7 +490,8 @@ void UIObject::sync()
 {
     removeXLets();
 
-    if (_serverObject->errorBox()) {
+    // XPD-TODO
+    if (!_serverObject) {
         setErrorBox(true);
         return;
     }
@@ -614,7 +629,8 @@ QString UIObject::fullHelpName()
     if (paths.size() == 0) {
         objectData()->setFullHelpName("");
 
-        ServerInstance::post("Help: bad search paths");
+        //ServerInstance::post("Help: bad search paths");
+        parentController()->serverInstance()->post("Help: bad search paths");
         return "";
     }
 
@@ -658,7 +674,9 @@ void UIObject::openHelpWindow()
     if (fullHelpName_ != "") {
         FileParser::open(fullHelpName_);
     } else {
-        ServerInstance::error("bad error help file name!");
+        //ServerInstance::error("bad error help file name!");
+        parentController()->serverInstance()->error("bad error help file name!");
+
     }
 
     emit signalOpenHelpWindow();

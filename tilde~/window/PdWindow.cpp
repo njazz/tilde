@@ -9,7 +9,9 @@
 #include <QLabel>
 #include <QtGui>
 
-#include "pdServer.hpp"
+// #include "pdServer.hpp"
+
+#include "xpd-transition/xpd-headers.h"
 
 #include <QComboBox>
 #include <QLabel>

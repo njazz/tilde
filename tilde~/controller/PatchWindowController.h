@@ -14,10 +14,17 @@
 class QGraphicsScene;
 class QGraphicsSceneMouseEvent;
 
-class Observer;
-class ServerCanvas;
-class ServerInstance;
-class ServerObject;
+
+#include "xpd-transition/xpd-headers.h"
+
+//namespace xpd{
+//class Observer;
+//class Canvas;
+//typedef void* ProcessPtr;
+//class Object;
+//}
+
+using namespace xpd;
 
 using namespace std;
 
@@ -45,10 +52,10 @@ private:
     ApplicationController* _appController;
 
     CanvasData* _canvasData;
-    Observer* _observer; //ControllerObserver
+    ObserverPtr _observer; //ControllerObserver
 
     //ServerInstance* _serverInstance;
-    ServerCanvas* _serverCanvas;
+    CanvasPtr _serverCanvas;
 
     vector<PatchWindow*> _windows;
     QGraphicsScene* _scene;
@@ -71,13 +78,13 @@ private:
 
 public:
     PatchWindowController(ApplicationController* appController);
-    PatchWindowController(ApplicationController* appController, ServerCanvas* canvas); ///> this is for subpatches
+    PatchWindowController(ApplicationController* appController, CanvasPtr canvas); ///> this is for subpatches
 
     // ----------------------
 
-    ServerInstance* serverInstance();
-    ServerObject* serverCanvasAsObject();
-    ServerCanvas* serverCanvas();
+    ProcessPtr serverInstance();
+    ObjectId serverCanvasAsObject();
+    CanvasPtr serverCanvas();
 
     void setAppController(ApplicationController* a);
     ApplicationController* appController() { return _appController; }
@@ -209,7 +216,7 @@ private slots:
 
 signals:
 
-    ServerObject* signalCreateObject(ServerCanvas* canvas, string name); // check that
+    Object* signalCreateObject(Canvas* canvas, string name); // check that
 
     void signalEnableUndo(bool v);
     void signalEnableRedo(bool v);
