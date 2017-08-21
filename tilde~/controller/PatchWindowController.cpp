@@ -227,7 +227,7 @@ void PatchWindowController::doCreateObject(UIObject* uiObject)
 
     uiObject->observer()->setObject(uiObject);
     // XPD-TODO
-    uiObject->serverObject()->ServerObject::registerObserver(uiObject->observer());
+    //uiObject->serverObject()//->ServerObject::registerObserver(uiObject->observer());
 
     uiObject->setEditModeRef(_windows[0]->canvasView()->getEditModeRef());
 
@@ -284,10 +284,14 @@ UIObject* PatchWindowController::createObjectWithoutUndo(string name, QPoint pos
     //ServerInstance::post("create: " + name);
 
     UIObject* uiObject = ObjectLoader::inst().createUIObject(name.c_str());
-    ObjectPtr serverObject = _appController->slotCreateObject(_serverCanvas, name); //emit signalCreateObject(_serverCanvas, name);
+    // XPD-TODO
+    //ObjectPtr serverObject = _appController->slotCreateObject(_serverCanvas, name); //emit signalCreateObject(_serverCanvas, name);
 
     // TODO wait?
-    uiObject->setServerObject(serverObject);
+
+
+    // XPD-TODO
+    // uiObject->setServerObject(serverObject);
 
     //
 
@@ -418,7 +422,9 @@ void PatchWindowController::restoreUIBoxForSubpatch(PatchWindowController* contr
     uiObject->properties()->set("Position", pos);
 
     // TODO move inside controller->subpatchBox
-    uiObject->setServerObject(controller->serverCanvasAsObject());
+
+    // XPD-TODO
+    // uiObject->setServerObject(controller->serverCanvasAsObject());
 
     qDebug() << "server canvas as object:" << (long)controller->serverCanvasAsObject();
 
@@ -915,10 +921,14 @@ UIPatchcord* PatchWindowController::createPatchcordWithoutUndo(UIObject* obj1, i
 
         //qDebug("server patchcord");
 
-        qDebug() << "patchcord: " << obj1->serverObject() << outlet << obj2->serverObject() << inlet;
+
+        // XPD-TODO
+        // qDebug() << "patchcord: " << (long)obj1->serverObject() << outlet << (long)obj2->serverObject() << inlet;
 
         //replace
-        pc->setServerPatchcord(_serverCanvas->createPatchcord(obj1->serverObject(), outlet, obj2->serverObject(), inlet));
+
+        // XPD-TODO
+        // pc->setServerPatchcord(_serverCanvas->createPatchcord(obj1->serverObject(), outlet, obj2->serverObject(), inlet));
 
         _canvasData->addPatchcord(pc);
 
