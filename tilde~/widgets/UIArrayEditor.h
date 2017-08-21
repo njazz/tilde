@@ -10,7 +10,8 @@
 
 #include "math.h"
 
-#include <pdServer.hpp>
+// #include <pdServer.hpp>
+#include "xpd-transition/xpd-headers.h"
 
 namespace tilde {
 ////
@@ -20,7 +21,7 @@ class UIArrayEditor : public QWidget {
 private:
     ServerArrayData* _arrayData;
 
-    ServerArray* _serverArray;
+    ArrayId _serverArray;
 
 public:
     explicit UIArrayEditor(QWidget* parent = 0);

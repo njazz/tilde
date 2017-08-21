@@ -41,7 +41,8 @@ void UIScriptCommon::btnRun()
     qDebug() << "btnRun";
 
     if (!_editor) {
-        ServerInstance::post("UIScript editor error!");
+        // XPD-TODO
+        // ServerInstance::post("UIScript editor error!");
         return;
     }
     //this code is from PythonQt

@@ -17,6 +17,8 @@
 
 #include "xpd-transition/xpd-headers.h"
 
+using namespace std;
+
 class QGraphicsProxyWidget;
 
 namespace tilde {
