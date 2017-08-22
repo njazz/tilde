@@ -7,6 +7,8 @@
 //#include "UIObject.h"
 #include "ObjectLoader.h"
 
+#include "ApplicationController.h"
+
 namespace tilde {
 
 UIObject* PatchWindowController::copyObject(UIObject* src)
@@ -14,14 +16,14 @@ UIObject* PatchWindowController::copyObject(UIObject* src)
     QString data = src->toQString();
 
     if (data == "") {
-        ServerInstance::post("bad data for object");
+        ApplicationController::post("bad data for object");
         return 0;
     }
 
     UIObject* dest = ObjectLoader::inst().createUIObject(data);
 
     if (!dest) {
-        ServerInstance::post("bad dest object");
+        ApplicationController::post("bad dest object");
         return 0;
     }
 

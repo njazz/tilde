@@ -13,15 +13,22 @@
 // #include <pdServer.hpp>
 #include "xpd-transition/xpd-headers.h"
 
+// XPD-TODO
+class ServerArray;
+
 namespace tilde {
 ////
 /// \brief Array Editor QWidget
 class UIArrayEditor : public QWidget {
     Q_OBJECT
 private:
+
+    // XPD-TODO
+    /*
     ServerArrayData* _arrayData;
 
     ArrayId _serverArray;
+    */
 
 public:
     explicit UIArrayEditor(QWidget* parent = 0);

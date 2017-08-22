@@ -8,6 +8,8 @@
 
 #include "xpd-transition/xpd-headers.h"
 
+using namespace xpd;
+
 namespace tilde {
 
 class PatchWindowController;

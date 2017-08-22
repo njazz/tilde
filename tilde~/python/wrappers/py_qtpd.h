@@ -52,7 +52,8 @@ public Q_SLOTS:
 
     void pdMessage(UIObject* obj, QString data)
     {
-        obj->serverObject()->message(data.toStdString());
+        // XPD-TODO
+        // obj->serverObject()->message(data.toStdString());
     }
 
     // test
@@ -292,12 +293,14 @@ public Q_SLOTS:
     void output(QString msg)
     {
         if (!_serverObject) {
-            ServerInstance::post("Python: server object error!");
+            ApplicationController::post("Python: server object error!");
             return;
         }
 
         string msg_ = "-py-output " + msg.toStdString();
-        _serverObject->message(msg_);
+
+        // XPD-TODO
+        // _serverObject->message(msg_);
 
     }
 
@@ -333,7 +336,7 @@ public Q_SLOTS:
     PatchWindowController* newPatchWindow()
     {
         if (!_appController) {
-            ServerInstance::post("Python: App controller error!");
+            ApplicationController::post("Python: App controller error!");
             return 0;
         }
         PatchWindowController* ret;
@@ -348,28 +351,26 @@ public Q_SLOTS:
 
     void startDsp()
     {
-        // TODO
-        //cmp_switch_dsp(true);
-
-        ServerInstance::dspOn();
+        // XPD-TODO
+        // ServerInstance::dspOn();
     }
 
     void stopDsp()
     {
-        //TODO
-        //cmp_switch_dsp(false);
-        ServerInstance::dspOff();
+        // XPD-TODO
+        // ServerInstance::dspOff();
     }
 
     QStringList getAudioAPIs()
     {
-        string apis = ServerInstance::getAudioAPIs();
+        // XPD-TODO
+        string apis;// = ServerInstance::getAudioAPIs();
         return QString(apis.c_str()).split(" ");
     }
 
     void post(QString msg)
     {
-        ServerInstance::post(msg.toStdString());
+        ApplicationController::post(msg);
     }
 
     QStringList loadedExternals()
@@ -386,7 +387,8 @@ public Q_SLOTS:
 
     void loadLib(QString lib)
     {
-        ServerInstance::loadLibrary(lib.toStdString());
+        // XPD-TODO
+        // ServerInstance::loadLibrary(lib.toStdString());
     }
 
     //////////

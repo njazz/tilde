@@ -14,8 +14,10 @@ void ObjectObserver::setObject(UIObject* o)
 void ObjectObserver::update()
 {
 
+    // XPD-TODO
+    // ??
     if (_object) {
-        _object->updateUI(data());
+        //_object->updateUI(data());
     }
 };
 }

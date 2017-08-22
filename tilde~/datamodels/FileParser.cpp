@@ -685,12 +685,14 @@ void FileParser::open(QString fname)
             _pdParserWindowController->mainWindow()->canvasView()->resizeToObjects();
             _pdParserWindowController->mainWindow()->show();
 
-            _pdParserWindowController->serverCanvas()->loadbang();
+            // XPD-TODO
+            // _pdParserWindowController->serverCanvas()->loadbang();
         }
 
         f.close();
     } else {
-        ServerInstance::error("cannot open file: " + fname.toStdString());
+        // XPD-TODO
+        // ServerInstance::error("cannot open file: " + fname.toStdString());
     }
 }
 

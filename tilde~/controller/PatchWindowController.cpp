@@ -281,7 +281,7 @@ UIObject* PatchWindowController::createObjectWithoutUndo(string name, QPoint pos
 
     //qDebug() << "server object ok";
 
-    //ServerInstance::post("create: " + name);
+    //applicationController::post("create: " + name);
 
     UIObject* uiObject = ObjectLoader::inst().createUIObject(name.c_str());
     // XPD-TODO
@@ -806,7 +806,7 @@ void PatchWindowController::deletePatchcordsFor(UIItem* obj)
 
         if (p->isConnectedToObject(obj)) {
 
-            //ServerInstance::post("remove patchcord");
+            //ApplicationController::post("remove patchcord");
 
             //            undoDeletePatchcord* undo = new undoDeletePatchcord(this, p);
             //            _undoStack->push(undo);

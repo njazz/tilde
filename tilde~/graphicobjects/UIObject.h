@@ -181,7 +181,7 @@ signals:
     /// \details pd calls UIUpdate(...) -> it emits 's_repaint()' that is connected to 'callRepaint()'
     void signalCallRepaint();
 
-    void signalSendMessage(ObjectPtr obj, QString msg);
+    void signalSendMessage(void* obj, QString msg);
 
     void signalOpenPropertiesWindow();
     void signalOpenHelpWindow();

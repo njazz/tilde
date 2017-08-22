@@ -145,8 +145,9 @@ void UISlider::mousePressEvent(QGraphicsSceneMouseEvent* ev)
             // serverObject()->message(((std::string) "set " + val_str));
             // serverObject()->message(((std::string) "bang " + val_str));
 
-            emit signalSendMessage(this->serverObject(), QString("set " + val_str));
-            emit signalSendMessage(this->serverObject(), QString("bang "));
+            // XPD-TODO
+            // emit signalSendMessage(this->serverObject(), QString("set " + val_str));
+            // emit signalSendMessage(this->serverObject(), QString("bang "));
         }
     }
 }
@@ -182,8 +183,9 @@ void UISlider::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 
         QString val_str = std::to_string(val).c_str();
 
-        emit signalSendMessage(this->serverObject(), QString("set " + val_str));
-        emit signalSendMessage(this->serverObject(), QString("bang "));
+        // XPD-TODO
+        // emit signalSendMessage(this->serverObject(), QString("set " + val_str));
+        // emit signalSendMessage(this->serverObject(), QString("bang "));
     }
 
     //        }

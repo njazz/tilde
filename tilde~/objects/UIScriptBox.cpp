@@ -181,8 +181,10 @@ void UIScriptBox::sync()
 {
     UIObject::sync();
 
+    // XPD-TODO
+
     _editor->textEdit()->document()->setPlainText("");
-    _editor->textEdit()->setContext(pyWrapper::inst().newContextWithPatchControllerServerObjectAndList(this->parentController(), serverObject(), &_scriptCommon->scriptData()->inputList));
+    // _editor->textEdit()->setContext(pyWrapper::inst().newContextWithPatchControllerServerObjectAndList(this->parentController(), serverObject(), &_scriptCommon->scriptData()->inputList));
 }
 
 void UIScriptBox::updateUI(AtomList* list)

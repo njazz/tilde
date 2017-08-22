@@ -133,7 +133,9 @@ void UIScript::sync()
     UIObject::sync();
 
     _editor->textEdit()->document()->setPlainText("");
-    _editor->textEdit()->setContext(pyWrapper::inst().newContextWithPatchControllerServerObjectAndList(this->parentController(), serverObject(), &_scriptCommon->scriptData()->inputList));
+
+    // XPD-TODO
+    // _editor->textEdit()->setContext(pyWrapper::inst().newContextWithPatchControllerServerObjectAndList(this->parentController(), serverObject(), &_scriptCommon->scriptData()->inputList));
 }
 
 void UIScript::updateUI(AtomList* list)

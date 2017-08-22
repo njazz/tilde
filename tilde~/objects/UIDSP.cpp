@@ -109,7 +109,8 @@ void UIDSP::objectPressEvent(QGraphicsSceneMouseEvent* ev)
 
         _value = !_value;
 
-        ServerInstance::dspSwitch(_value);
+        // XPD-TODO
+        // ServerInstance::dspSwitch(_value);
 
         update();
     }

@@ -8,11 +8,14 @@ namespace tilde {
 UIArrayEditor::UIArrayEditor(QWidget* parent)
     : QWidget(parent)
 {
-    _serverArray = 0;
+    // XPD-TODO
+    // _serverArray = 0;
 }
 
 void UIArrayEditor::paintEvent(QPaintEvent*)
 {
+    // XPD-TODO
+    /*
     if (_serverArray) {
 
         _arrayData = _serverArray->getData(); //_arrData, _arrSize);
@@ -25,15 +28,15 @@ void UIArrayEditor::paintEvent(QPaintEvent*)
         try {
             _serverArray->getData(_arrData, _arrSize);
         } catch (long) {
-            ServerInstance::post(">> bad array data");
+            ApplicationController::post(">> bad array data");
         }
-        */
+        * /
 
         //if (_arrSize < 67108864) // temporary 64M samples limit
         //            {
 
         if (!_arrayData) {
-            ServerInstance::post("Array data error!");
+            ApplicationController::post("Array data error!");
             return;
         }
 
@@ -55,15 +58,17 @@ void UIArrayEditor::paintEvent(QPaintEvent*)
         }
         //            }
         //            else {
-        //                ServerInstance::post("bad array size");
+        //                ApplicationController::post("bad array size");
         //            }
     } else {
-        ServerInstance::post("bad server array");
+        ApplicationController::post("bad server array");
     }
+    */
 }
 
 void UIArrayEditor::setServerArray(ServerArray* arr)
 {
-    _serverArray = arr;
+    // XPD-TODO
+    // _serverArray = arr;
 }
 }

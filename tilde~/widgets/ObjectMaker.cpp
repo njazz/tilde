@@ -26,7 +26,8 @@ ObjectMaker::ObjectMaker(QLineEdit* parent)
 
     QStringListModel* m = new QStringListModel;
 
-    vector<string> vlist = ServerInstance::listLoadedClasses();
+    // XPD-TODO
+    vector<string> vlist;// = ServerInstance::listLoadedClasses();
     QStringList sL;
 
     for (vector<string>::iterator it = vlist.begin(); it != vlist.end(); ++it) {

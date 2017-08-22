@@ -66,6 +66,9 @@ private:
 
     void loadAllLibraries();
 
+    // TODO
+    static ProcessPtr theServerInstance;
+
 #ifdef WITH_PYTHON
     ScriptRunner* _scriptRunner;
 #endif
@@ -89,6 +92,8 @@ public:
     QMenu* recentMenu() { return _recentMenu; }
 
     FilePaths* filePaths() { return _filePaths; }
+
+    static void post(QString text);
 
 #ifdef WITH_PYTHON
     ScriptRunner* scriptRunner()

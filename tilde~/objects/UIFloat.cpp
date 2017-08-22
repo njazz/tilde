@@ -116,8 +116,9 @@ void UIFloat::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 
         QString send = "set " + objectData()->toQString();
 
-        emit signalSendMessage(this->serverObject(), send);
-        emit signalSendMessage(this->serverObject(), QString("bang "));
+        // XPD-TODO
+        // emit signalSendMessage(this->serverObject(), send);
+        // emit signalSendMessage(this->serverObject(), QString("bang "));
 
         update();
     }

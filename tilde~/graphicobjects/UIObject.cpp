@@ -172,7 +172,7 @@ void UIObject::propertySize()
     doSetSize(size);
     update();
 
-    //ServerInstance::post("property size updated");
+    //applicationController::post("property size updated");
 }
 
 void UIObject::propertyFontSize()
@@ -204,8 +204,8 @@ void UIObject::propertyReceiveSymbol()
 
     string symbolName = properties()->get("ReceiveSymbol")->asStdString();
 
-    //    ServerInstance::post("changed receive symbol");
-    //    ServerInstance::post(symbolName);
+    //    ApplicationController::post("changed receive symbol");
+    //    ApplicationController::post(symbolName);
 
     if (symbolName != "") {
 
@@ -629,7 +629,7 @@ QString UIObject::fullHelpName()
     if (paths.size() == 0) {
         objectData()->setFullHelpName("");
 
-        //ServerInstance::post("Help: bad search paths");
+        //ApplicationController::post("Help: bad search paths");
         parentController()->serverInstance()->post("Help: bad search paths");
         return "";
     }

@@ -22,6 +22,8 @@
 
 #include "UIObjectData.h"
 
+#include "ApplicationController.h"
+
 namespace tilde {
 
 void CanvasBoxObserver::setUIBox(UIBox* b) { _box = b; };
@@ -82,14 +84,13 @@ void UIBox::objectPressEvent(QGraphicsSceneMouseEvent* event)
     //abstraction opening. Fix
     if (getEditMode() != em_Unlocked) {
         if (_isAbstraction) {
-            _abstractionPath = serverObject()->toServerCanvas()->path().c_str();
 
-            //qDebug() << "abs object:" << serverObject() << "to canvas: " << serverObject()->toServerCanvas();
-            //qDebug() << "objects: " << serverObject()->hasInternalObject() << serverObject()->toServerCanvas()->hasInternalObject();
-            //qDebug() << "path: " << serverObject()->toServerCanvas()->path().c_str();
+            // XPD-TODO
+            // _abstractionPath = serverObject()->toServerCanvas()->path().c_str();
+
 
             QString fullName = _abstractionPath + "/" + objectData()->toQString() + ".pd";
-            ServerInstance::post("abstraction path: " + fullName.toStdString());
+            ApplicationController::post("abstraction path: " + fullName);
 
             FileParser::open(fullName);
 
@@ -229,16 +230,20 @@ void UIBox::fromQString(QString message)
 //#include "CanvasView.h"
 void UIBox::sync()
 {
+
     UIObject::sync();
 
-    _isAbstraction = (serverObject()->type() == typeAbstraction);
+    // XPD-TODO
+    // _isAbstraction = (serverObject()->type() == typeAbstraction);
 
     qDebug() << "is abstraction: " << _isAbstraction;
 
     // create subpatch window controller here (if not already created)
     if (isSubpatch() && !_subpatchController) {
         //qDebug() << "subpatch server canvas: " << serverObject()->toServerCanvas();
-        _subpatchController = new PatchWindowController(parentController()->appController(), serverObject()->toServerCanvas());
+
+        // XPD-TODO
+        // _subpatchController = new PatchWindowController(parentController()->appController(), serverObject()->toServerCanvas());
 
         QStringList dataList = objectData()->data().split(" ");
         if (dataList.size() > 1)
@@ -248,11 +253,11 @@ void UIBox::sync()
     }
 
     //redundant
-    if (isSubpatch())
-        if (serverObject()->toServerCanvas()) {
-            //serverObject()->toServerCanvas()->registerObserver(_boxObserver);
-            _subpatchController->serverCanvas()->registerObserver(_boxObserver);
-        }
+    //if (isSubpatch())
+        //if (serverObject()->toServerCanvas()) {
+            // XPD-TODO
+            // _subpatchController->serverCanvas()->registerObserver(_boxObserver);
+        //}
 
     update();
 

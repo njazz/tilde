@@ -136,7 +136,8 @@ PdWindow::PdWindow()
 
 void PdWindow::logBoxChange(int index)
 {
-    ServerInstance::setVerboseLevel(index);
+    // XPD-TODO
+    // ServerInstance::setVerboseLevel(index);
 }
 
 void PdWindow::clearConsoleSlot()
@@ -156,19 +157,23 @@ void PdWindow::sendMessageChanged()
 
     QStringList list = input.split(" ");
     if (list.size() < 2) {
-        ServerInstance::error("nothing to send");
+        // XPD-TODO
+        // ServerInstance::error("nothing to send");
         return;
     }
 
     string object = QString(list.at(0)).toStdString();
     list.removeAt(0);
     string text = list.join(" ").toStdString();
-    ServerInstance::sendMessage(object, text);
+
+    // XPD-TODO
+    // ServerInstance::sendMessage(object, text);
 }
 
 void PdWindow::editSendMessage(QString)
 {
-    string s = ServerInstance::getBindObjectsList();
+    // XPD-TODO
+    string s;// = ServerInstance::getBindObjectsList();
     QStringList sL = QString(s.c_str()).split(",");
 
     QStringListModel* model = (QStringListModel*)(_ui->sendMessage->completer()->model());

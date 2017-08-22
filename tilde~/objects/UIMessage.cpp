@@ -164,7 +164,8 @@ void UIMessage::objectPressEvent(QGraphicsSceneMouseEvent* ev)
             qDebug("msg: bad pd object!");
         } else {
 
-            emit signalSendMessage(this->serverObject(), QString("bang"));
+            // XPD-TODO
+            // emit signalSendMessage(this->serverObject(), QString("bang"));
         }
     }
 }
@@ -266,7 +267,8 @@ void UIMessage::setPdMessage(QString message)
             QString msg = ("set " + objectData()->toQString());
             //serverObject()->message(msg);
 
-            emit signalSendMessage(this->serverObject(), msg);
+            // XPD-TODO
+            // emit signalSendMessage(this->serverObject(), msg);
             qDebug() << "sync";
         }
     }

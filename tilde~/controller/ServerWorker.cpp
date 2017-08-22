@@ -5,6 +5,8 @@
 #include "PropertyList.h"
 #include "UIObject.h"
 
+class ServerObject;
+
 namespace tilde {
 ServerWorker::ServerWorker()
 {
@@ -12,8 +14,6 @@ ServerWorker::ServerWorker()
 
     _localServer = 0;
 
-    // connect(this, &ServerWorker::getLocalServer, this, &ServerWorker::getLocalServerSlot);
-    //connect(this, &ServerWorker::sendMessageSignal, this, &ServerWorker::sendMessageToObject);
 };
 
 LocalServer* ServerWorker::localServer() const
@@ -23,7 +23,8 @@ LocalServer* ServerWorker::localServer() const
 
 void ServerWorker::start()
 {
-    _localServer = new LocalServer();
+    // XPD-TODO
+    // _localServer = new LocalServer();
 
     //qDebug() << "server " << _localServer << " in thread / worker: " << this;
 };
@@ -39,10 +40,13 @@ void ServerWorker::sendMessageToObject(ServerObject* object, QString msg)
     UIObject* obj = (UIObject*)QObject::sender();
     QString dest = obj->properties()->get("SendSymbol")->asQString();
 
+    // XPD-TODO
+    /*
     if (dest != "")
         ServerInstance::sendMessage(dest.toStdString(), msg.toStdString());
+        */
 
-    //qDebug() << "send message";
-    object->message(msg.toStdString());
+    // XPD-TODO
+    // object->message(msg.toStdString());
 }
 }

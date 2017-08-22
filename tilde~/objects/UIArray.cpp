@@ -22,7 +22,8 @@ UIArray::UIArray()
     initProperties();
     resizeEvent();
 
-    _array = 0;
+    // XPD-TODO
+    // _array = 0;
 }
 
 UIObject* UIArray::createObj(QString data)
@@ -35,7 +36,8 @@ UIObject* UIArray::createObj(QString data)
 
 void UIArray::createServerArray()
 {
-
+    // XPD-TODO
+    /*
     ServerObject* o = serverObject();
 
     if (!o) {
@@ -54,6 +56,7 @@ void UIArray::createServerArray()
     _array = c->createArray(_arrayName.toStdString(), _arraySize);
 
     _editor.setServerArray(_array);
+    */
 }
 
 void UIArray::initProperties()
@@ -192,7 +195,8 @@ void UIArray::fromQString(QString message)
     autoResize();
 
     if (list.size() < 1) {
-        ServerInstance::error("array: bad arguments!");
+        // XPD-TODO
+        // ServerInstance::error("array: bad arguments!");
         setErrorBox(true);
         return;
     }
@@ -216,14 +220,16 @@ void UIArray::fromQString(QString message)
 
 void UIArray::sync()
 {
-    //UIObject::sync();
+    // XPD-TODO
 
-    if (serverObject()->errorBox()) {
-        setErrorBox(true);
-        return;
-    }
+//    if (serverObject()->errorBox()) {
+//        setErrorBox(true);
+//        return;
+//    }
 
-    if (!_array)
-        createServerArray();
+    // XPD-TODO
+//    if (!_array)
+//        createServerArray();
+
 }
 }

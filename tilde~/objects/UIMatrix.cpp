@@ -318,12 +318,10 @@ void UIMatrix::mousePressEvent(QGraphicsSceneMouseEvent* ev)
 
             std::string val_str = "set " + std::to_string(v);
 
-            // TODO-PD_OBJECT
-            //                cmp_sendstring((t_pd*)pdObject(), val_str);
-            //                cmp_sendstring((t_pd*)pdObject(), "bang");
 
-            emit signalSendMessage(this->serverObject(), QString(val_str.c_str()));
-            emit signalSendMessage(this->serverObject(), QString("bang "));
+            // XPD-TODO
+            // emit signalSendMessage(this->serverObject(), QString(val_str.c_str()));
+            // emit signalSendMessage(this->serverObject(), QString("bang "));
         }
 
         if (matrixType() == mt_VRadio) {
@@ -335,12 +333,10 @@ void UIMatrix::mousePressEvent(QGraphicsSceneMouseEvent* ev)
             PROPERTY_SET("Value", v);
 
             std::string val_str = "set " + std::to_string(v);
-            // TODO-PD_OBJECT
-            //                cmp_sendstring((t_pd*)pdObject(), val_str);
-            //                cmp_sendstring((t_pd*)pdObject(), "bang");
 
-            emit signalSendMessage(this->serverObject(), QString(val_str.c_str()));
-            emit signalSendMessage(this->serverObject(), QString("bang "));
+            // XPD-TODO
+            // emit signalSendMessage(this->serverObject(), QString(val_str.c_str()));
+            // emit signalSendMessage(this->serverObject(), QString("bang "));
         }
 
         // TODO-PD_OBJECT
@@ -352,7 +348,8 @@ void UIMatrix::mousePressEvent(QGraphicsSceneMouseEvent* ev)
 
         if (serverObject()) {
 
-            emit signalSendMessage(this->serverObject(), QString("bang "));
+            // XPD-TODO
+            // emit signalSendMessage(this->serverObject(), QString("bang "));
         }
     }
 }

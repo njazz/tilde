@@ -32,6 +32,8 @@ using namespace std;
 
 namespace tilde {
 
+ProcessPtr ApplicationController::theServerInstance;
+
 void ApplicationController::loadAllLibraries()
 {
     // XPD-TODO
@@ -101,6 +103,9 @@ ApplicationController::ApplicationController()
     _consoleObserver = shared_ptr<PdWindowConsoleObserver> (new PdWindowConsoleObserver);
 
     mainServerInstance()->registerConsoleObserver(_consoleObserver);
+
+    // TODO
+    theServerInstance = mainServerInstance();
 
     _pdWindow = new PdWindow();
     _pdWindow->setAppController(this);
@@ -212,7 +217,7 @@ ApplicationController::ApplicationController()
     
     QString bb = QString("tilde~ build: ") + QString::number(TILDE_BUILD_NUMBER);
 
-    //ServerInstance::post(bb.toStdString());
+    //applicationController::post(bb.toStdString());
 
     mainServerInstance()->post(bb.toStdString());
 
@@ -277,7 +282,7 @@ void ApplicationController::pythonConsole()
     }
 
 #else
-    ServerInstance::post("This build is compiled without Python!");
+    ApplicationController::post("This build is compiled without Python!");
 #endif
 }
 
@@ -363,5 +368,13 @@ ObjectId ApplicationController::slotCreateObject(CanvasPtr canvas, string name)
     ObjectId serverObject = canvas->createObject(name,0,0);
 
     return serverObject;
+}
+
+void ApplicationController::post(QString text)
+{
+    if (!theServerInstance) return;
+
+    theServerInstance->post(text.toStdString());
+
 }
 }

@@ -1,10 +1,17 @@
 #ifndef LOCALSERVER_H
 #define LOCALSERVER_H
 
-#include <pdServer.hpp>
+// #include <pdServer.hpp>
 
 #include <QDebug>
 #include <QThread>
+
+
+class LocalServer;
+
+using namespace std;
+
+class ServerObject;
 
 namespace tilde {
 

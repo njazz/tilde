@@ -7,6 +7,8 @@
 
 #include "xpd-transition/xpd-headers.h"
 
+#include "ApplicationController.h"
+
 namespace tilde {
 
 UIScriptCommon::UIScriptCommon(QObject* parent)
@@ -42,7 +44,7 @@ void UIScriptCommon::btnRun()
 
     if (!_editor) {
         // XPD-TODO
-        // ServerInstance::post("UIScript editor error!");
+        // ApplicationController::post("UIScript editor error!");
         return;
     }
     //this code is from PythonQt
@@ -53,7 +55,7 @@ void UIScriptCommon::btnRun()
     PyObject* dict = NULL;
 
     if (!_editor->textEdit()->context()) {
-        ServerInstance::post("Bad Python context!");
+        ApplicationController::post("Bad Python context!");
         return;
     }
 
