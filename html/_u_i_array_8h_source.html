@@ -110,72 +110,75 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_canvas_view_8h.html">CanvasView.h</a>&quot;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">namespace </span>tilde {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classtilde_1_1_u_i_array.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classtilde_1_1_u_i_array.html">UIArray</a> : <span class="keyword">public</span> <a class="code" href="classtilde_1_1_u_i_box.html">UIBox</a> {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    Q_OBJECT</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classtilde_1_1_u_i_array_editor.html">UIArrayEditor</a> <a class="code" href="struct__editor.html">_editor</a>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    QString _arrayName;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">int</span> _arraySize;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    ServerArray* <a class="code" href="struct__array.html">_array</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> createServerArray();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classtilde_1_1_u_i_array.html#a7db08deb7086093cf511364d28a547e6">UIArray</a>();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">static</span> <a class="code" href="classtilde_1_1_u_i_object.html">UIObject</a>* <a class="code" href="classtilde_1_1_u_i_array.html#a41d21a9d89955ef0620a6e7474c3161d">createObj</a>(QString data);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_array.html#ab4dfa2df0ff5d531bb34b8ca67312c9a">initProperties</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// XPD-TODO</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">class </span>ServerArray;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span>tilde {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classtilde_1_1_u_i_array.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="classtilde_1_1_u_i_array.html">UIArray</a> : <span class="keyword">public</span> <a class="code" href="classtilde_1_1_u_i_box.html">UIBox</a> {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classtilde_1_1_u_i_array_editor.html">UIArrayEditor</a> <a class="code" href="struct__editor.html">_editor</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    QString _arrayName;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">int</span> _arraySize;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// XPD-TODO</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">// ServerArray* _array;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> createServerArray();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classtilde_1_1_u_i_array.html#a7db08deb7086093cf511364d28a547e6">UIArray</a>();</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_array.html#aae506eab124506fb1be506ecb20f4819">paint</a>(QPainter* p, <span class="keyword">const</span> QStyleOptionGraphicsItem* option, QWidget*); </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">static</span> <a class="code" href="classtilde_1_1_u_i_object.html">UIObject</a>* <a class="code" href="classtilde_1_1_u_i_array.html#a41d21a9d89955ef0620a6e7474c3161d">createObj</a>(QString data);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_array.html#aa392163ee394d1b75f6a316f2dca9322">mousePressEvent</a>(QGraphicsSceneMouseEvent* ev);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_array.html#a88fb3dec035b0d0fcdbaccb17288ba77">mouseReleaseEvent</a>(QGraphicsSceneMouseEvent*);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_array.html#ab24584ef101244666e02026d53321ac4">mouseMoveEvent</a>(QGraphicsSceneMouseEvent* event);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_array.html#ab4dfa2df0ff5d531bb34b8ca67312c9a">initProperties</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_array.html#aae506eab124506fb1be506ecb20f4819">paint</a>(QPainter* p, <span class="keyword">const</span> QStyleOptionGraphicsItem* option, QWidget*); </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_array.html#a5cb956d76cbb268680e04f6125c08692">fromQString</a>(QString message);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_array.html#abd0a7860d8db364fa45f5df2b7fd38c1">sync</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_array.html#aa392163ee394d1b75f6a316f2dca9322">mousePressEvent</a>(QGraphicsSceneMouseEvent* ev);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_array.html#a88fb3dec035b0d0fcdbaccb17288ba77">mouseReleaseEvent</a>(QGraphicsSceneMouseEvent*);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_array.html#ab24584ef101244666e02026d53321ac4">mouseMoveEvent</a>(QGraphicsSceneMouseEvent* event);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;signals:</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_array.html#a5cb956d76cbb268680e04f6125c08692">fromQString</a>(QString message);</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_array.html#a18882887a08293f914f7378bbd6ced27">mouseMoved</a>();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_array.html#af45e3bd142536ce6d23e13c497dcd8f9">rightClicked</a>();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif // CM_BOX_H</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_array.html#abd0a7860d8db364fa45f5df2b7fd38c1">sync</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;signals:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_array.html#a18882887a08293f914f7378bbd6ced27">mouseMoved</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_array.html#af45e3bd142536ce6d23e13c497dcd8f9">rightClicked</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif // CM_BOX_H</span></div>
 <div class="ttc" id="_canvas_view_8h_html"><div class="ttname"><a href="_canvas_view_8h.html">CanvasView.h</a></div></div>
 <div class="ttc" id="_u_i_object_8h_html"><div class="ttname"><a href="_u_i_object_8h.html">UIObject.h</a></div></div>
-<div class="ttc" id="classtilde_1_1_u_i_array_html_ab24584ef101244666e02026d53321ac4"><div class="ttname"><a href="classtilde_1_1_u_i_array.html#ab24584ef101244666e02026d53321ac4">tilde::UIArray::mouseMoveEvent</a></div><div class="ttdeci">void mouseMoveEvent(QGraphicsSceneMouseEvent *event)</div><div class="ttdoc">mouse move </div><div class="ttdef"><b>Definition:</b> UIArray.cpp:152</div></div>
+<div class="ttc" id="classtilde_1_1_u_i_array_html_ab24584ef101244666e02026d53321ac4"><div class="ttname"><a href="classtilde_1_1_u_i_array.html#ab24584ef101244666e02026d53321ac4">tilde::UIArray::mouseMoveEvent</a></div><div class="ttdeci">void mouseMoveEvent(QGraphicsSceneMouseEvent *event)</div><div class="ttdoc">mouse move </div><div class="ttdef"><b>Definition:</b> UIArray.cpp:155</div></div>
 <div class="ttc" id="_port_8h_html"><div class="ttname"><a href="_port_8h.html">Port.h</a></div></div>
 <div class="ttc" id="classtilde_1_1_u_i_array_html_af45e3bd142536ce6d23e13c497dcd8f9"><div class="ttname"><a href="classtilde_1_1_u_i_array.html#af45e3bd142536ce6d23e13c497dcd8f9">tilde::UIArray::rightClicked</a></div><div class="ttdeci">void rightClicked()</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_array_html_aa392163ee394d1b75f6a316f2dca9322"><div class="ttname"><a href="classtilde_1_1_u_i_array.html#aa392163ee394d1b75f6a316f2dca9322">tilde::UIArray::mousePressEvent</a></div><div class="ttdeci">void mousePressEvent(QGraphicsSceneMouseEvent *ev)</div><div class="ttdoc">paint event </div><div class="ttdef"><b>Definition:</b> UIArray.cpp:108</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_array_editor_html"><div class="ttname"><a href="classtilde_1_1_u_i_array_editor.html">tilde::UIArrayEditor</a></div><div class="ttdoc">Array Editor QWidget. </div><div class="ttdef"><b>Definition:</b> UIArrayEditor.h:18</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_array_html"><div class="ttname"><a href="classtilde_1_1_u_i_array.html">tilde::UIArray</a></div><div class="ttdoc">gui object: array box (ui.array) </div><div class="ttdef"><b>Definition:</b> UIArray.h:24</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_array_html_abd0a7860d8db364fa45f5df2b7fd38c1"><div class="ttname"><a href="classtilde_1_1_u_i_array.html#abd0a7860d8db364fa45f5df2b7fd38c1">tilde::UIArray::sync</a></div><div class="ttdeci">virtual void sync()</div><div class="ttdef"><b>Definition:</b> UIArray.cpp:217</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_array_html_aae506eab124506fb1be506ecb20f4819"><div class="ttname"><a href="classtilde_1_1_u_i_array.html#aae506eab124506fb1be506ecb20f4819">tilde::UIArray::paint</a></div><div class="ttdeci">virtual void paint(QPainter *p, const QStyleOptionGraphicsItem *option, QWidget *)</div><div class="ttdoc">UIObject properties </div><div class="ttdef"><b>Definition:</b> UIArray.cpp:67</div></div>
+<div class="ttc" id="classtilde_1_1_u_i_array_html_aa392163ee394d1b75f6a316f2dca9322"><div class="ttname"><a href="classtilde_1_1_u_i_array.html#aa392163ee394d1b75f6a316f2dca9322">tilde::UIArray::mousePressEvent</a></div><div class="ttdeci">void mousePressEvent(QGraphicsSceneMouseEvent *ev)</div><div class="ttdoc">paint event </div><div class="ttdef"><b>Definition:</b> UIArray.cpp:111</div></div>
+<div class="ttc" id="classtilde_1_1_u_i_array_editor_html"><div class="ttname"><a href="classtilde_1_1_u_i_array_editor.html">tilde::UIArrayEditor</a></div><div class="ttdoc">Array Editor QWidget. </div><div class="ttdef"><b>Definition:</b> UIArrayEditor.h:22</div></div>
+<div class="ttc" id="classtilde_1_1_u_i_array_html"><div class="ttname"><a href="classtilde_1_1_u_i_array.html">tilde::UIArray</a></div><div class="ttdoc">gui object: array box (ui.array) </div><div class="ttdef"><b>Definition:</b> UIArray.h:27</div></div>
+<div class="ttc" id="classtilde_1_1_u_i_array_html_abd0a7860d8db364fa45f5df2b7fd38c1"><div class="ttname"><a href="classtilde_1_1_u_i_array.html#abd0a7860d8db364fa45f5df2b7fd38c1">tilde::UIArray::sync</a></div><div class="ttdeci">virtual void sync()</div><div class="ttdef"><b>Definition:</b> UIArray.cpp:221</div></div>
+<div class="ttc" id="classtilde_1_1_u_i_array_html_aae506eab124506fb1be506ecb20f4819"><div class="ttname"><a href="classtilde_1_1_u_i_array.html#aae506eab124506fb1be506ecb20f4819">tilde::UIArray::paint</a></div><div class="ttdeci">virtual void paint(QPainter *p, const QStyleOptionGraphicsItem *option, QWidget *)</div><div class="ttdoc">UIObject properties </div><div class="ttdef"><b>Definition:</b> UIArray.cpp:70</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_array_html_a18882887a08293f914f7378bbd6ced27"><div class="ttname"><a href="classtilde_1_1_u_i_array.html#a18882887a08293f914f7378bbd6ced27">tilde::UIArray::mouseMoved</a></div><div class="ttdeci">void mouseMoved()</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_array_html_ab4dfa2df0ff5d531bb34b8ca67312c9a"><div class="ttname"><a href="classtilde_1_1_u_i_array.html#ab4dfa2df0ff5d531bb34b8ca67312c9a">tilde::UIArray::initProperties</a></div><div class="ttdeci">virtual void initProperties()</div><div class="ttdef"><b>Definition:</b> UIArray.cpp:59</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_array_html_a41d21a9d89955ef0620a6e7474c3161d"><div class="ttname"><a href="classtilde_1_1_u_i_array.html#a41d21a9d89955ef0620a6e7474c3161d">tilde::UIArray::createObj</a></div><div class="ttdeci">static UIObject * createObj(QString data)</div><div class="ttdef"><b>Definition:</b> UIArray.cpp:28</div></div>
-<div class="ttc" id="struct__array_html"><div class="ttname"><a href="struct__array.html">_array</a></div><div class="ttdef"><b>Definition:</b> g_canvas.h:226</div></div>
+<div class="ttc" id="classtilde_1_1_u_i_array_html_ab4dfa2df0ff5d531bb34b8ca67312c9a"><div class="ttname"><a href="classtilde_1_1_u_i_array.html#ab4dfa2df0ff5d531bb34b8ca67312c9a">tilde::UIArray::initProperties</a></div><div class="ttdeci">virtual void initProperties()</div><div class="ttdef"><b>Definition:</b> UIArray.cpp:62</div></div>
+<div class="ttc" id="classtilde_1_1_u_i_array_html_a41d21a9d89955ef0620a6e7474c3161d"><div class="ttname"><a href="classtilde_1_1_u_i_array.html#a41d21a9d89955ef0620a6e7474c3161d">tilde::UIArray::createObj</a></div><div class="ttdeci">static UIObject * createObj(QString data)</div><div class="ttdef"><b>Definition:</b> UIArray.cpp:29</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_array_html_a7db08deb7086093cf511364d28a547e6"><div class="ttname"><a href="classtilde_1_1_u_i_array.html#a7db08deb7086093cf511364d28a547e6">tilde::UIArray::UIArray</a></div><div class="ttdeci">UIArray()</div><div class="ttdef"><b>Definition:</b> UIArray.cpp:14</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_array_html_a88fb3dec035b0d0fcdbaccb17288ba77"><div class="ttname"><a href="classtilde_1_1_u_i_array.html#a88fb3dec035b0d0fcdbaccb17288ba77">tilde::UIArray::mouseReleaseEvent</a></div><div class="ttdeci">void mouseReleaseEvent(QGraphicsSceneMouseEvent *)</div><div class="ttdoc">mouse up </div><div class="ttdef"><b>Definition:</b> UIArray.cpp:146</div></div>
+<div class="ttc" id="classtilde_1_1_u_i_array_html_a88fb3dec035b0d0fcdbaccb17288ba77"><div class="ttname"><a href="classtilde_1_1_u_i_array.html#a88fb3dec035b0d0fcdbaccb17288ba77">tilde::UIArray::mouseReleaseEvent</a></div><div class="ttdeci">void mouseReleaseEvent(QGraphicsSceneMouseEvent *)</div><div class="ttdoc">mouse up </div><div class="ttdef"><b>Definition:</b> UIArray.cpp:149</div></div>
 <div class="ttc" id="_u_i_box_8h_html"><div class="ttname"><a href="_u_i_box_8h.html">UIBox.h</a></div></div>
-<div class="ttc" id="classtilde_1_1_u_i_object_html"><div class="ttname"><a href="classtilde_1_1_u_i_object.html">tilde::UIObject</a></div><div class="ttdef"><b>Definition:</b> UIObject.h:35</div></div>
+<div class="ttc" id="classtilde_1_1_u_i_object_html"><div class="ttname"><a href="classtilde_1_1_u_i_object.html">tilde::UIObject</a></div><div class="ttdef"><b>Definition:</b> UIObject.h:40</div></div>
 <div class="ttc" id="_u_i_array_editor_8h_html"><div class="ttname"><a href="_u_i_array_editor_8h.html">UIArrayEditor.h</a></div></div>
-<div class="ttc" id="classtilde_1_1_u_i_array_html_a5cb956d76cbb268680e04f6125c08692"><div class="ttname"><a href="classtilde_1_1_u_i_array.html#a5cb956d76cbb268680e04f6125c08692">tilde::UIArray::fromQString</a></div><div class="ttdeci">void fromQString(QString message)</div><div class="ttdoc">template </div><div class="ttdef"><b>Definition:</b> UIArray.cpp:171</div></div>
+<div class="ttc" id="classtilde_1_1_u_i_array_html_a5cb956d76cbb268680e04f6125c08692"><div class="ttname"><a href="classtilde_1_1_u_i_array.html#a5cb956d76cbb268680e04f6125c08692">tilde::UIArray::fromQString</a></div><div class="ttdeci">void fromQString(QString message)</div><div class="ttdoc">template </div><div class="ttdef"><b>Definition:</b> UIArray.cpp:174</div></div>
 <div class="ttc" id="struct__editor_html"><div class="ttname"><a href="struct__editor.html">_editor</a></div><div class="ttdef"><b>Definition:</b> g_canvas.h:89</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_box_html"><div class="ttname"><a href="classtilde_1_1_u_i_box.html">tilde::UIBox</a></div><div class="ttdoc">gui object: standard object box </div><div class="ttdef"><b>Definition:</b> UIBox.h:42</div></div>
+<div class="ttc" id="classtilde_1_1_u_i_box_html"><div class="ttname"><a href="classtilde_1_1_u_i_box.html">tilde::UIBox</a></div><div class="ttdoc">gui object: standard object box </div><div class="ttdef"><b>Definition:</b> UIBox.h:46</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 20 2017 22:59:05 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 25 2017 13:41:14 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

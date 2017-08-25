@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['objectobserverptr',['ObjectObserverPtr',['../namespacetilde.html#a78ed16896824c28d5f7288782e57f8ac',1,'tilde']]],
   ['objectvec',['objectVec',['../namespacetilde.html#a8ca84e91df7943c4c12207c41fde15a2',1,'tilde']]],
   ['opclassbycanvas',['OPClassByCanvas',['../oop__common_8h.html#a28a3ec12fb9ccdacab5159b099604686',1,'oop_common.h']]],
   ['opclassbysymbol',['OPClassBySymbol',['../oop__common_8h.html#afef4273f8e9ead6675fe375555cbc4ea',1,'oop_common.h']]],

@@ -94,46 +94,47 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="_server_worker_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef LOCALSERVER_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define LOCALSERVER_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;pdServer.hpp&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// #include &lt;pdServer.hpp&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QDebug&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QThread&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>tilde {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classtilde_1_1_server_worker.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classtilde_1_1_server_worker.html">ServerWorker</a> : <span class="keyword">public</span> QObject {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">class </span>LocalServer;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">class </span>ServerObject;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span>tilde {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    LocalServer* _localServer;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classtilde_1_1_server_worker.html#a751e9c18c743a44b00869f407901e335">ServerWorker</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classtilde_1_1_server_worker.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="classtilde_1_1_server_worker.html">ServerWorker</a> : <span class="keyword">public</span> QObject {</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    LocalServer* <a class="code" href="classtilde_1_1_server_worker.html#a0401670c74f3d0ff9c5804d7276aeea3">localServer</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    Q_OBJECT</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span> slots:</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_server_worker.html#abd0d00b05bdf3e52a33dd742382fd605">start</a>();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_server_worker.html#ad9044ddbdfbe0dbc590a0624cfefc1bf">stop</a>();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_server_worker.html#a39827a506ea3232ed647317145a34713">sendMessageToObject</a>(ServerObject* <span class="keywordtype">object</span>, QString msg);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    LocalServer* _localServer;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classtilde_1_1_server_worker.html">ServerWorker</a>();</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;signals:</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_server_worker.html#a5c6c021733495a82df84b6e41864ab52">sendMessageSignal</a>(ServerObject* <span class="keywordtype">object</span>, <span class="keywordtype">string</span> msg);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif // LOCALSERVER_H</span></div>
-<div class="ttc" id="classtilde_1_1_server_worker_html_a39827a506ea3232ed647317145a34713"><div class="ttname"><a href="classtilde_1_1_server_worker.html#a39827a506ea3232ed647317145a34713">tilde::ServerWorker::sendMessageToObject</a></div><div class="ttdeci">void sendMessageToObject(ServerObject *object, QString msg)</div><div class="ttdef"><b>Definition:</b> ServerWorker.cpp:37</div></div>
-<div class="ttc" id="classtilde_1_1_server_worker_html"><div class="ttname"><a href="classtilde_1_1_server_worker.html">tilde::ServerWorker</a></div><div class="ttdoc">Stub for the server in separate thread. </div><div class="ttdef"><b>Definition:</b> ServerWorker.h:14</div></div>
-<div class="ttc" id="classtilde_1_1_server_worker_html_a5c6c021733495a82df84b6e41864ab52"><div class="ttname"><a href="classtilde_1_1_server_worker.html#a5c6c021733495a82df84b6e41864ab52">tilde::ServerWorker::sendMessageSignal</a></div><div class="ttdeci">void sendMessageSignal(ServerObject *object, string msg)</div></div>
-<div class="ttc" id="classtilde_1_1_server_worker_html_ad9044ddbdfbe0dbc590a0624cfefc1bf"><div class="ttname"><a href="classtilde_1_1_server_worker.html#ad9044ddbdfbe0dbc590a0624cfefc1bf">tilde::ServerWorker::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdef"><b>Definition:</b> ServerWorker.cpp:31</div></div>
-<div class="ttc" id="classtilde_1_1_server_worker_html_abd0d00b05bdf3e52a33dd742382fd605"><div class="ttname"><a href="classtilde_1_1_server_worker.html#abd0d00b05bdf3e52a33dd742382fd605">tilde::ServerWorker::start</a></div><div class="ttdeci">void start()</div><div class="ttdef"><b>Definition:</b> ServerWorker.cpp:24</div></div>
-<div class="ttc" id="classtilde_1_1_server_worker_html_a0401670c74f3d0ff9c5804d7276aeea3"><div class="ttname"><a href="classtilde_1_1_server_worker.html#a0401670c74f3d0ff9c5804d7276aeea3">tilde::ServerWorker::localServer</a></div><div class="ttdeci">LocalServer * localServer() const </div><div class="ttdef"><b>Definition:</b> ServerWorker.cpp:19</div></div>
-<div class="ttc" id="classtilde_1_1_server_worker_html_a751e9c18c743a44b00869f407901e335"><div class="ttname"><a href="classtilde_1_1_server_worker.html#a751e9c18c743a44b00869f407901e335">tilde::ServerWorker::ServerWorker</a></div><div class="ttdeci">ServerWorker()</div><div class="ttdef"><b>Definition:</b> ServerWorker.cpp:9</div></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    LocalServer* localServer() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> start();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> stop();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> sendMessageToObject(ServerObject* <span class="keywordtype">object</span>, QString msg);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;signals:</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> sendMessageSignal(ServerObject* <span class="keywordtype">object</span>, <span class="keywordtype">string</span> msg);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif // LOCALSERVER_H</span></div>
+<div class="ttc" id="classtilde_1_1_server_worker_html"><div class="ttname"><a href="classtilde_1_1_server_worker.html">tilde::ServerWorker</a></div><div class="ttdoc">Stub for the server in separate thread. </div><div class="ttdef"><b>Definition:</b> ServerWorker.h:21</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 20 2017 22:59:05 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 25 2017 13:41:14 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

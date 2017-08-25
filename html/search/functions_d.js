@@ -16,7 +16,7 @@ var searchData=
   ['objectreleaseevent',['objectReleaseEvent',['../classtilde_1_1_u_i_object.html#a6bfa96aab2dacc71f1d05fee06ebcbb8',1,'tilde::UIObject::objectReleaseEvent()'],['../classtilde_1_1_u_i_link.html#a25f038d0e723126c936a7905d30a3a0c',1,'tilde::UILink::objectReleaseEvent()'],['../classtilde_1_1_u_i_message.html#a8184a5c7216725092b76c2cf0a1e134b',1,'tilde::UIMessage::objectReleaseEvent()']]],
   ['objectsaspdfilestrings',['objectsAsPdFileStrings',['../classtilde_1_1_canvas_data.html#a1ef8706bd43bf42adf7131c2f423bc35',1,'tilde::CanvasData']]],
   ['objectsizemode',['objectSizeMode',['../classtilde_1_1_u_i_object_data.html#a1a4c1975fa0e8612d57b45c4b0887ef4',1,'tilde::UIObjectData']]],
-  ['observer',['observer',['../classtilde_1_1_u_i_object.html#a426aafbee28ac5c7b0d5d8d90925a68b',1,'tilde::UIObject']]],
+  ['observer',['observer',['../classtilde_1_1_u_i_object.html#a98641edc9054fad834c2b2831e0e8743',1,'tilde::UIObject']]],
   ['ones',['ones',['../classceammc_1_1_atom_list.html#ad23bf636c31bea6a15fd92535747d588',1,'ceammc::AtomList']]],
   ['opclass',['OPClass',['../class_o_p_class.html#a022d0a281e625ba267cff8231921fffd',1,'OPClass::OPClass()'],['../class_o_p_class.html#a453e7a5a2802c3d1aafdfece13100d57',1,'OPClass::OPClass(string className)'],['../classtilde_1_1_o_p_class.html#a8c9a64bcbb80475c8c4021a0487b4bcd',1,'tilde::OPClass::OPClass()'],['../classtilde_1_1_o_p_class.html#a453e7a5a2802c3d1aafdfece13100d57',1,'tilde::OPClass::OPClass(string className)']]],
   ['open',['open',['../classtilde_1_1_file_parser.html#af51c4fe123d9260a57c97dc51dd9a3a5',1,'tilde::FileParser']]],

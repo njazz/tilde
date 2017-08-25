@@ -10,7 +10,7 @@ var searchData=
   ['ma_5fresize',['MA_RESIZE',['../g__canvas_8h.html#a27e834f3c4bb1d463ec7f54eb8ba9629',1,'g_canvas.h']]],
   ['main',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
   ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['mainserverinstance',['mainServerInstance',['../classtilde_1_1_application_controller.html#a065ff3b3b7f95498381e764404a309ca',1,'tilde::ApplicationController']]],
+  ['mainserverinstance',['mainServerInstance',['../classtilde_1_1_application_controller.html#a9df5033ef9732ba48f243b87ffd0a45b',1,'tilde::ApplicationController']]],
   ['mainwindow',['mainWindow',['../classtilde_1_1_patch_window_controller.html#ab0c9d51cf7a794543c688e678a2451d1',1,'tilde::PatchWindowController']]],
   ['mapper',['mapper',['../class_color___list___widget_1_1_private.html#aa31e0a2ebac30b866ce370796da87bcb',1,'Color_List_Widget::Private']]],
   ['mapper_5fdown',['mapper_down',['../class_abstract___widget___list_1_1_private.html#a60ed886cc8dd935dc789aca80eb5f42a',1,'Abstract_Widget_List::Private']]],

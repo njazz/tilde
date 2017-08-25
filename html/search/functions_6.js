@@ -24,7 +24,7 @@ var searchData=
   ['geteditordata',['getEditorData',['../classqtpd_1_1_u_i_script.html#a25660f1d0bd3bbd053b2603e147661ce',1,'qtpd::UIScript']]],
   ['getfloat',['getFloat',['../classceammc_1_1_atom.html#a3dab310f75807221b10fd2a344d76c35',1,'ceammc::Atom']]],
   ['getfn',['getfn',['../m__pd_8h.html#a4b3e55ce2f01f63fea708c862dffedc8',1,'m_pd.h']]],
-  ['getlocalserver',['getLocalServer',['../classtilde_1_1_application_controller.html#a6bc34cd625a6830cd46a2255b36f4f28',1,'tilde::ApplicationController']]],
+  ['getlocalserver',['getLocalServer',['../classtilde_1_1_application_controller.html#a7c29861caef6ca3385e32c2ccedc0b59',1,'tilde::ApplicationController']]],
   ['getmethodlist',['getMethodList',['../class_o_p_class.html#a425fe7fae998ccec120921f533cd286b',1,'OPClass::getMethodList()'],['../class_o_p_instance.html#a7f3d3fc363add3a626075b97332b275f',1,'OPInstance::getMethodList()'],['../classtilde_1_1_o_o_p_d_class_base.html#afe849f389700909262e31d6204c1c2bb',1,'tilde::OOPDClassBase::getMethodList()']]],
   ['getmethodnames',['getMethodNames',['../class_o_p_class.html#a91ac883c50b598949eae424c81931a68',1,'OPClass::getMethodNames()'],['../classtilde_1_1_o_o_p_d_class_base.html#ae3afa1ee512c30b5a324dc77d0a78295',1,'tilde::OOPDClassBase::getMethodNames()']]],
   ['getmethodoutletforreferencename',['getMethodOutletForReferenceName',['../class_o_p_class.html#abf32ac336b416641d4927f048ee17cc5',1,'OPClass::getMethodOutletForReferenceName()'],['../classtilde_1_1_o_p_class.html#a3ff3d53a005a99ee94f7880ef51b6d3c',1,'tilde::OPClass::getMethodOutletForReferenceName()']]],

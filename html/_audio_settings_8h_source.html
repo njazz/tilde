@@ -107,96 +107,96 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_preferences_8h.html">Preferences.h</a>&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;pdServer.hpp&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//#include &quot;pdServer.hpp&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="_audio_settings_8h.html#a6b1401e3ca4767d09919b9fbb9d8e478">   19</a></span>&#160;<span class="preprocessor">#define AUDIOSETTINGS_QSTRING(x) tilde::AudioSettings::inst().getQString(x)</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="_audio_settings_8h.html#a58ecf399fafdc6fd6935ad90f546004e">   20</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TILDE_AUDIOSETTINGS_INIT tilde::AudioSettings::inst().init()</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="_audio_settings_8h.html#a6da9786b78bb81f2698c1fbec30d309e">   21</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define AUDIOSETTINGS_LISTENER(x, y) connect(get(x), &amp;Property::changed, this, y)</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span>tilde {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classtilde_1_1_audio_settings.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="classtilde_1_1_audio_settings.html">AudioSettings</a> : <span class="keyword">public</span> <a class="code" href="classtilde_1_1_property_list.html">PropertyList</a> <span class="comment">// TODO</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classtilde_1_1_audio_settings.html#af8203ef5f6d1df57b1c79511052cd37b">   30</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="classtilde_1_1_audio_settings.html">AudioSettings</a>&amp; <a class="code" href="classtilde_1_1_audio_settings.html#af8203ef5f6d1df57b1c79511052cd37b">inst</a>()</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">static</span> <a class="code" href="classtilde_1_1_audio_settings.html">AudioSettings</a> <a class="code" href="namespacetilde.html#a8d213f22536572108764f60c19cac421">instance</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacetilde.html#a8d213f22536572108764f60c19cac421">instance</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    std::map&lt;std::string, QString&gt; _data;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classtilde_1_1_audio_settings.html">AudioSettings</a>()</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    AudioSettings(AudioSettings <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_audio_settings.html#aaae153b3925b09212430acf765458b9f">operator=</a>(AudioSettings <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">//temporary</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classtilde_1_1_audio_settings.html#ab8a0fa08e92e30cb0e484225cfd6fb21">   48</a></span>&#160;    QString <a class="code" href="classtilde_1_1_audio_settings.html#ab8a0fa08e92e30cb0e484225cfd6fb21">getQString</a>(QString key)</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">get</span>(key))</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">get</span>(key)-&gt;asQString();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classtilde_1_1_audio_settings.html#adce20c82a7e2b978a7ca758e9c8c4f64">   56</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_audio_settings.html#adce20c82a7e2b978a7ca758e9c8c4f64">init</a>()</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="comment">// TODO</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="classtilde_1_1_property_list.html#a16917686077fced1fde54d5536cacdcc">create</a>(<span class="stringliteral">&quot;AudioDriver&quot;</span>, <span class="stringliteral">&quot;Basic&quot;</span>, <a class="code" href="_preferences_8h.html#a205dff9ea0fa7c7837b6e0508d4b7ee5">TILDE_APP_VERSION</a>, QString(ServerInstance::getAudioAPIs().c_str()).split(<span class="stringliteral">&quot;,&quot;</span>));</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keyword">get</span>(<span class="stringliteral">&quot;AudioDriver&quot;</span>)-&gt;setType(<a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678ad3d5b2bcbf404668f714e13161894864">ptEnum</a>);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="classtilde_1_1_property_list.html#a16917686077fced1fde54d5536cacdcc">create</a>(<span class="stringliteral">&quot;AudioInput&quot;</span>, <span class="stringliteral">&quot;Basic&quot;</span>, <a class="code" href="_preferences_8h.html#a205dff9ea0fa7c7837b6e0508d4b7ee5">TILDE_APP_VERSION</a>, QString(ServerInstance::getAudioInDevices().c_str()).split(<span class="stringliteral">&quot;,&quot;</span>));</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keyword">get</span>(<span class="stringliteral">&quot;AudioInput&quot;</span>)-&gt;setType(<a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678ad3d5b2bcbf404668f714e13161894864">ptEnum</a>);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="classtilde_1_1_property_list.html#a16917686077fced1fde54d5536cacdcc">create</a>(<span class="stringliteral">&quot;AudioOutput&quot;</span>, <span class="stringliteral">&quot;Basic&quot;</span>, <a class="code" href="_preferences_8h.html#a205dff9ea0fa7c7837b6e0508d4b7ee5">TILDE_APP_VERSION</a>, QString(ServerInstance::getAudioOutDevices().c_str()).split(<span class="stringliteral">&quot;,&quot;</span>));</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">get</span>(<span class="stringliteral">&quot;AudioOutput&quot;</span>)-&gt;setType(<a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678ad3d5b2bcbf404668f714e13161894864">ptEnum</a>);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="classtilde_1_1_property_list.html#a16917686077fced1fde54d5536cacdcc">create</a>(<span class="stringliteral">&quot;BufferSize&quot;</span>, <span class="stringliteral">&quot;Settings&quot;</span>, <a class="code" href="_preferences_8h.html#a205dff9ea0fa7c7837b6e0508d4b7ee5">TILDE_APP_VERSION</a>, 256);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">get</span>(<span class="stringliteral">&quot;BufferSize&quot;</span>)-&gt;setType(<a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678aa78fbb776b0ce15d217d41849e927434">ptInt</a>);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="classtilde_1_1_property_list.html#a16917686077fced1fde54d5536cacdcc">create</a>(<span class="stringliteral">&quot;BlockSize&quot;</span>, <span class="stringliteral">&quot;Settings&quot;</span>, <a class="code" href="_preferences_8h.html#a205dff9ea0fa7c7837b6e0508d4b7ee5">TILDE_APP_VERSION</a>, 64);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keyword">get</span>(<span class="stringliteral">&quot;BlockSize&quot;</span>)-&gt;setType(<a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678aa78fbb776b0ce15d217d41849e927434">ptInt</a>);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="classtilde_1_1_property_list.html#a16917686077fced1fde54d5536cacdcc">create</a>(<span class="stringliteral">&quot;InputCount&quot;</span>, <span class="stringliteral">&quot;Settings&quot;</span>, <a class="code" href="_preferences_8h.html#a205dff9ea0fa7c7837b6e0508d4b7ee5">TILDE_APP_VERSION</a>, 2);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keyword">get</span>(<span class="stringliteral">&quot;InputCount&quot;</span>)-&gt;setType(<a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678aa78fbb776b0ce15d217d41849e927434">ptInt</a>);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="classtilde_1_1_property_list.html#a16917686077fced1fde54d5536cacdcc">create</a>(<span class="stringliteral">&quot;OutputCount&quot;</span>, <span class="stringliteral">&quot;Settings&quot;</span>, <a class="code" href="_preferences_8h.html#a205dff9ea0fa7c7837b6e0508d4b7ee5">TILDE_APP_VERSION</a>, 2);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keyword">get</span>(<span class="stringliteral">&quot;OutputCount&quot;</span>)-&gt;setType(<a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678aa78fbb776b0ce15d217d41849e927434">ptInt</a>);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="_audio_settings_8h.html#a6da9786b78bb81f2698c1fbec30d309e">AUDIOSETTINGS_LISTENER</a>(<span class="stringliteral">&quot;AudioDriver&quot;</span>, &amp;AudioSettings::slotSetAudioDriver);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="_audio_settings_8h.html#a6da9786b78bb81f2698c1fbec30d309e">AUDIOSETTINGS_LISTENER</a>(<span class="stringliteral">&quot;AudioInput&quot;</span>, &amp;AudioSettings::slotSetAudioInput);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="_audio_settings_8h.html#a6da9786b78bb81f2698c1fbec30d309e">AUDIOSETTINGS_LISTENER</a>(<span class="stringliteral">&quot;AudioOutput&quot;</span>, &amp;AudioSettings::slotSetAudioOutput);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">void</span> slotSetAudioDriver() { qDebug() &lt;&lt; <span class="stringliteral">&quot;audio driver&quot;</span>; }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> slotSetAudioInput() {}</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span> slotSetAudioOutput() {}</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;};</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#endif // CM_AudioSettings_H</span></div>
-<div class="ttc" id="classtilde_1_1_audio_settings_html"><div class="ttname"><a href="classtilde_1_1_audio_settings.html">tilde::AudioSettings</a></div><div class="ttdoc">app AudioSettings singleton </div><div class="ttdef"><b>Definition:</b> AudioSettings.h:27</div></div>
-<div class="ttc" id="classtilde_1_1_property_list_html_a16917686077fced1fde54d5536cacdcc"><div class="ttname"><a href="classtilde_1_1_property_list.html#a16917686077fced1fde54d5536cacdcc">tilde::PropertyList::create</a></div><div class="ttdeci">void create(string pName, string pGroup, QString pVersion, T defaultData)</div><div class="ttdef"><b>Definition:</b> PropertyList.h:48</div></div>
-<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678ad3d5b2bcbf404668f714e13161894864"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678ad3d5b2bcbf404668f714e13161894864">tilde::ptEnum</a></div><div class="ttdef"><b>Definition:</b> Property.h:36</div></div>
-<div class="ttc" id="classtilde_1_1_audio_settings_html_adce20c82a7e2b978a7ca758e9c8c4f64"><div class="ttname"><a href="classtilde_1_1_audio_settings.html#adce20c82a7e2b978a7ca758e9c8c4f64">tilde::AudioSettings::init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>Definition:</b> AudioSettings.h:56</div></div>
-<div class="ttc" id="_preferences_8h_html_a205dff9ea0fa7c7837b6e0508d4b7ee5"><div class="ttname"><a href="_preferences_8h.html#a205dff9ea0fa7c7837b6e0508d4b7ee5">TILDE_APP_VERSION</a></div><div class="ttdeci">#define TILDE_APP_VERSION</div><div class="ttdef"><b>Definition:</b> Preferences.h:20</div></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="xpd-headers_8h.html">xpd-transition/xpd-headers.h</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="_audio_settings_8h.html#a6b1401e3ca4767d09919b9fbb9d8e478">   21</a></span>&#160;<span class="preprocessor">#define AUDIOSETTINGS_QSTRING(x) tilde::AudioSettings::inst().getQString(x)</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="_audio_settings_8h.html#a58ecf399fafdc6fd6935ad90f546004e">   22</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TILDE_AUDIOSETTINGS_INIT tilde::AudioSettings::inst().init()</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="_audio_settings_8h.html#a6da9786b78bb81f2698c1fbec30d309e">   23</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define AUDIOSETTINGS_LISTENER(x, y) connect(get(x), &amp;Property::changed, this, y)</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span>tilde {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classtilde_1_1_audio_settings.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="classtilde_1_1_audio_settings.html">AudioSettings</a> : <span class="keyword">public</span> <a class="code" href="classtilde_1_1_property_list.html">PropertyList</a> <span class="comment">// TODO</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classtilde_1_1_audio_settings.html#af8203ef5f6d1df57b1c79511052cd37b">   32</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="classtilde_1_1_audio_settings.html">AudioSettings</a>&amp; <a class="code" href="classtilde_1_1_audio_settings.html#af8203ef5f6d1df57b1c79511052cd37b">inst</a>()</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">static</span> <a class="code" href="classtilde_1_1_audio_settings.html">AudioSettings</a> <a class="code" href="namespacetilde.html#a8d213f22536572108764f60c19cac421">instance</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacetilde.html#a8d213f22536572108764f60c19cac421">instance</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    std::map&lt;std::string, QString&gt; _data;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classtilde_1_1_audio_settings.html">AudioSettings</a>()</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    AudioSettings(AudioSettings <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_audio_settings.html#aaae153b3925b09212430acf765458b9f">operator=</a>(AudioSettings <span class="keyword">const</span>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">//temporary</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classtilde_1_1_audio_settings.html#ab8a0fa08e92e30cb0e484225cfd6fb21">   50</a></span>&#160;    QString <a class="code" href="classtilde_1_1_audio_settings.html#ab8a0fa08e92e30cb0e484225cfd6fb21">getQString</a>(QString key)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">get</span>(key))</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">get</span>(key)-&gt;asQString();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classtilde_1_1_audio_settings.html#adce20c82a7e2b978a7ca758e9c8c4f64">   58</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_audio_settings.html#adce20c82a7e2b978a7ca758e9c8c4f64">init</a>()</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="comment">/*</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">        // TODO</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">        create(&quot;AudioDriver&quot;, &quot;Basic&quot;, TILDE_APP_VERSION, QString(ServerInstance::getAudioAPIs().c_str()).split(&quot;,&quot;));</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">        get(&quot;AudioDriver&quot;)-&gt;setType(ptEnum);</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">        create(&quot;AudioInput&quot;, &quot;Basic&quot;, TILDE_APP_VERSION, QString(ServerInstance::getAudioInDevices().c_str()).split(&quot;,&quot;));</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">        get(&quot;AudioInput&quot;)-&gt;setType(ptEnum);</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">        create(&quot;AudioOutput&quot;, &quot;Basic&quot;, TILDE_APP_VERSION, QString(ServerInstance::getAudioOutDevices().c_str()).split(&quot;,&quot;));</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">        get(&quot;AudioOutput&quot;)-&gt;setType(ptEnum);</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">        create(&quot;BufferSize&quot;, &quot;Settings&quot;, TILDE_APP_VERSION, 256);</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">        get(&quot;BufferSize&quot;)-&gt;setType(ptInt);</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">        create(&quot;BlockSize&quot;, &quot;Settings&quot;, TILDE_APP_VERSION, 64);</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">        get(&quot;BlockSize&quot;)-&gt;setType(ptInt);</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">        create(&quot;InputCount&quot;, &quot;Settings&quot;, TILDE_APP_VERSION, 2);</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">        get(&quot;InputCount&quot;)-&gt;setType(ptInt);</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">        create(&quot;OutputCount&quot;, &quot;Settings&quot;, TILDE_APP_VERSION, 2);</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">        get(&quot;OutputCount&quot;)-&gt;setType(ptInt);</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">        AUDIOSETTINGS_LISTENER(&quot;AudioDriver&quot;, &amp;AudioSettings::slotSetAudioDriver);</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">        AUDIOSETTINGS_LISTENER(&quot;AudioInput&quot;, &amp;AudioSettings::slotSetAudioInput);</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">        AUDIOSETTINGS_LISTENER(&quot;AudioOutput&quot;, &amp;AudioSettings::slotSetAudioOutput);</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">        */</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">void</span> slotSetAudioDriver() { qDebug() &lt;&lt; <span class="stringliteral">&quot;audio driver&quot;</span>; }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">void</span> slotSetAudioInput() {}</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span> slotSetAudioOutput() {}</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;};</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif // CM_AudioSettings_H</span></div>
+<div class="ttc" id="classtilde_1_1_audio_settings_html"><div class="ttname"><a href="classtilde_1_1_audio_settings.html">tilde::AudioSettings</a></div><div class="ttdoc">app AudioSettings singleton </div><div class="ttdef"><b>Definition:</b> AudioSettings.h:29</div></div>
+<div class="ttc" id="classtilde_1_1_audio_settings_html_adce20c82a7e2b978a7ca758e9c8c4f64"><div class="ttname"><a href="classtilde_1_1_audio_settings.html#adce20c82a7e2b978a7ca758e9c8c4f64">tilde::AudioSettings::init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>Definition:</b> AudioSettings.h:58</div></div>
 <div class="ttc" id="_property_list_8h_html"><div class="ttname"><a href="_property_list_8h.html">PropertyList.h</a></div></div>
-<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678aa78fbb776b0ce15d217d41849e927434"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678aa78fbb776b0ce15d217d41849e927434">tilde::ptInt</a></div><div class="ttdef"><b>Definition:</b> Property.h:26</div></div>
-<div class="ttc" id="classtilde_1_1_audio_settings_html_ab8a0fa08e92e30cb0e484225cfd6fb21"><div class="ttname"><a href="classtilde_1_1_audio_settings.html#ab8a0fa08e92e30cb0e484225cfd6fb21">tilde::AudioSettings::getQString</a></div><div class="ttdeci">QString getQString(QString key)</div><div class="ttdef"><b>Definition:</b> AudioSettings.h:48</div></div>
+<div class="ttc" id="classtilde_1_1_audio_settings_html_ab8a0fa08e92e30cb0e484225cfd6fb21"><div class="ttname"><a href="classtilde_1_1_audio_settings.html#ab8a0fa08e92e30cb0e484225cfd6fb21">tilde::AudioSettings::getQString</a></div><div class="ttdeci">QString getQString(QString key)</div><div class="ttdef"><b>Definition:</b> AudioSettings.h:50</div></div>
 <div class="ttc" id="_preferences_8h_html"><div class="ttname"><a href="_preferences_8h.html">Preferences.h</a></div></div>
-<div class="ttc" id="classtilde_1_1_audio_settings_html_af8203ef5f6d1df57b1c79511052cd37b"><div class="ttname"><a href="classtilde_1_1_audio_settings.html#af8203ef5f6d1df57b1c79511052cd37b">tilde::AudioSettings::inst</a></div><div class="ttdeci">static AudioSettings &amp; inst()</div><div class="ttdef"><b>Definition:</b> AudioSettings.h:30</div></div>
+<div class="ttc" id="classtilde_1_1_audio_settings_html_af8203ef5f6d1df57b1c79511052cd37b"><div class="ttname"><a href="classtilde_1_1_audio_settings.html#af8203ef5f6d1df57b1c79511052cd37b">tilde::AudioSettings::inst</a></div><div class="ttdeci">static AudioSettings &amp; inst()</div><div class="ttdef"><b>Definition:</b> AudioSettings.h:32</div></div>
 <div class="ttc" id="classtilde_1_1_property_list_html"><div class="ttname"><a href="classtilde_1_1_property_list.html">tilde::PropertyList</a></div><div class="ttdoc">Property handling class for ui object - property list. </div><div class="ttdef"><b>Definition:</b> PropertyList.h:34</div></div>
 <div class="ttc" id="classtilde_1_1_audio_settings_html_aaae153b3925b09212430acf765458b9f"><div class="ttname"><a href="classtilde_1_1_audio_settings.html#aaae153b3925b09212430acf765458b9f">tilde::AudioSettings::operator=</a></div><div class="ttdeci">void operator=(AudioSettings const &amp;)=delete</div></div>
 <div class="ttc" id="namespacetilde_html_a8d213f22536572108764f60c19cac421"><div class="ttname"><a href="namespacetilde.html#a8d213f22536572108764f60c19cac421">tilde::instance</a></div><div class="ttdeci">OOPD * instance</div><div class="ttdef"><b>Definition:</b> OOPD.cpp:20</div></div>
-<div class="ttc" id="_audio_settings_8h_html_a6da9786b78bb81f2698c1fbec30d309e"><div class="ttname"><a href="_audio_settings_8h.html#a6da9786b78bb81f2698c1fbec30d309e">AUDIOSETTINGS_LISTENER</a></div><div class="ttdeci">#define AUDIOSETTINGS_LISTENER(x, y)</div><div class="ttdef"><b>Definition:</b> AudioSettings.h:21</div></div>
+<div class="ttc" id="xpd-headers_8h_html"><div class="ttname"><a href="xpd-headers_8h.html">xpd-headers.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 20 2017 22:59:05 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 25 2017 13:41:14 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

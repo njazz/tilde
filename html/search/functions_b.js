@@ -1,7 +1,7 @@
 var searchData=
 [
   ['main',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
-  ['mainserverinstance',['mainServerInstance',['../classtilde_1_1_application_controller.html#a065ff3b3b7f95498381e764404a309ca',1,'tilde::ApplicationController']]],
+  ['mainserverinstance',['mainServerInstance',['../classtilde_1_1_application_controller.html#a9df5033ef9732ba48f243b87ffd0a45b',1,'tilde::ApplicationController']]],
   ['mainwindow',['mainWindow',['../classtilde_1_1_patch_window_controller.html#ab0c9d51cf7a794543c688e678a2451d1',1,'tilde::PatchWindowController']]],
   ['matrixtype',['matrixType',['../classtilde_1_1_u_i_matrix.html#abcf0527082bcc6d75a092f17a7c868ea',1,'tilde::UIMatrix']]],
   ['max',['max',['../classceammc_1_1_atom_list.html#aa7f3fd7c0a9087045dbd7f7018f25ff5',1,'ceammc::AtomList::max() const '],['../classceammc_1_1_atom_list.html#ac4ae3a3021c5c121a348060b8a30adbf',1,'ceammc::AtomList::max()']]],
