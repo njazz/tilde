@@ -10,22 +10,21 @@
 #ifndef OPINSTANCE_H
 #define OPINSTANCE_H
 
-#include "m_pd.h"
+//#include "m_pd.h"
 #include <map>
 #include <set>
 
-//todo
-#include "ceammc_atomlist.h"
 
 //
 #include <QStringList>
 
 #include <QDebug>
+#include "OOPDClassBase.h"
 
 using namespace std;
-using namespace ceammc;
+using namespace xpd;
 
-#include "OOPDClassBase.h"
+
 
 namespace tilde {
 
@@ -51,7 +50,7 @@ private:
     map<t_symbol*, OPOutputs> _setterOutputs; ///< new
 
     //new
-    map<t_symbol*, AtomList> _propertyValues;
+    map<t_symbol*, PdArguments> _propertyValues;
 
     int _refCount;
 
@@ -131,53 +130,59 @@ public:
         OOPDClassBase::freeProperty(propertyName->s_name);
     }
 
-    void setAtomListProperty(t_symbol* propertyName, AtomList list)
+    void setPdArgumentsProperty(t_symbol* propertyName, PdArguments list)
     {
         _propertyValues[propertyName] = list;
     }
 
-    AtomList getAtomListProperty(t_symbol* propertyName)
+    PdArguments getPdArgumentsProperty(t_symbol* propertyName)
     {
-        AtomList list = _propertyValues[propertyName];
+        PdArguments list = _propertyValues[propertyName];
         return list;
     }
 
 // ---------------
 #pragma mark methods
 
+    // XPD-TODO
+
+    /*
     void addInstanceOut(t_outlet* outlet)
     {
         if (outlet)
             _instanceOutputs.addOutlet(outlet);//.push_back(outlet);
     }
+
     void freeInstanceOut(t_outlet* outlet)
     {
         _instanceOutputs.freeOutlet(outlet);
     }
 
-    void multipleOutput(AtomList list)
+    void multipleOutput(PdArguments list)
     {
 //        for (OPOutputs::iterator it = _instanceOutputs.begin(); it != _instanceOutputs.end(); ++it) {
 //            list.output(*it);
 //        }
         _instanceOutputs.outList(list);
     }
+    */
 
 // -----------------
 #pragma mark method calls
 
-    void callMethod(AtomList list)
+    void callMethod(PdArguments list)
     {
+        // XPD-TODO
+
+        /*
         t_symbol* method_name = list[0].asSymbol();
 
-        AtomList subList = list.slice(1, (int)list.size());
+        PdArguments subList = list.slice(1, (int)list.size());
 
         OPOutputs* out1 = &_methodOutputs[method_name];
 
         if (out1) {
-//            for (OPOutputs::iterator it = out1->begin(); it != out1->end(); ++it) {
-//                subList.output(*it);
-//            }
+
             out1->outList(subList);
         }
 
@@ -185,23 +190,27 @@ public:
 
         t_outlet* out2 = _methodPointerOutputs[method_name];
         if (out2) {
-            AtomList objList = AtomList(Atom(gensym("setobject")));
+            PdArguments objList = AtomList(Atom(gensym("setobject")));
 
             objList.append(Atom(gensym(to_string((long)this).c_str())));
 
             objList.output(out2);
         }
+        */
     }
 
-    void callSetter(AtomList list)
+    void callSetter(PdArguments list)
     {
+        // XPD-TODO
+
+        /*
         if (!hasProperty(list[0].asString()))
             return;
 
         t_symbol* property_name = list[0].asSymbol();
 
         AtomList list2((size_t)list.size() - 1, (t_atom*)list.toPdData() + 1); //TODO
-        setAtomListProperty(property_name, list2);
+        setPdArgumentsProperty(property_name, list2);
 
         OPOutputs* out1 = &_setterOutputs[property_name];
 
@@ -209,14 +218,20 @@ public:
 //            outlet_bang(*it);
 //        }
         out1->outBang();
+
+        */
     }
 
-    void callSetter(t_symbol* propertyName, AtomList list)
+    void callSetter(string propertyName, PdArguments list)
     {
+        // XPD-TODO
+
+        /*
+
         if (!hasProperty(propertyName->s_name))
             return;
 
-        setAtomListProperty(propertyName, list);
+        setPdArgumentsProperty(propertyName, list);
 
         OPOutputs* out1 = &_setterOutputs[propertyName];
 
@@ -224,17 +239,22 @@ public:
 //            outlet_bang(*it);
 //        }
         out1->outBang();
+
+        */
     }
 
-    void callGetter(AtomList list)
+    void callGetter(PdArguments list)
     {
+        // XPD-TODO
+
+        /*
         if (!hasProperty(list[0].asString()))
             return;
 
         t_symbol* property_name = list[0].asSymbol();
 
         AtomList list2(list[0]);
-        list2.append(getAtomListProperty(property_name));
+        list2.append(getPdArgumentsProperty(property_name));
 
         multipleOutput(list2);
 
@@ -244,17 +264,22 @@ public:
 //            outlet_bang(*it);
 //        }
         out1->outBang();
+
+        */
     }
 
-    void callGetter(t_symbol* propertyName)
+    void callGetter(string propertyName)
     {
 
+        // XPD-TODO
+
+        /*
         if (!hasProperty(propertyName->s_name))
             return;
 
         AtomList list2 = AtomList(Atom(propertyName));
 
-        list2.append(getAtomListProperty(propertyName));
+        list2.append(getPdArgumentsProperty(propertyName));
 
         multipleOutput(list2);
 
@@ -266,6 +291,8 @@ public:
         out1->outBang();
 
         //return list2;
+
+        */
     }
 
 // ------------------------------------------------

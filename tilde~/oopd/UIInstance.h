@@ -163,6 +163,9 @@ public:
 
         // -----------
 
+        //XPD-TODO
+        /*
+
         if (_hasType) {
 
             p->setFont(QFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize(), 0, false));
@@ -194,6 +197,8 @@ public:
             p->setFont(QFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize(), 0, false));
             p->drawText(2, 3, width() - 2, height() - 3, 0, objectData()->toQString(), 0);
         }
+
+        */
     }
 
     ////
@@ -293,21 +298,23 @@ public:
 
     // ---------------------------------------------
 
-    void msgNew(ceammc::AtomList msg)
+    void msgNew(PdArguments msg)
     {
+        //XPD-TODO
+        /*
         qDebug() << "new instance";
 
         _opClass = OOPD::inst()->classByName(msg.at(1).asString());
 
         if (!_opClass) {
             // TODO
-            ///* TODO */ //cmp_post("class not found: ");
-            /* TODO */ //cmp_post(msg.at(1).asString());
+            ///* TODO * / //cmp_post("class not found: ");
+            /* TODO * / //cmp_post(msg.at(1).asString());
             return;
         }
 
         _opInstance = new OPInstance(_opClass);
-        /* TODO */ //cmp_post("new instance");
+        /* TODO  * / //cmp_post("new instance");
 
         // TODO-PD_OBJECT
 //        if (pdObject()) {
@@ -316,11 +323,12 @@ public:
 //            if (_out1)
 //                _opInstance->addInstanceOut(_out1);
 //            else
-//                /* TODO */ //cmp_post("instance pd object outlet error");
+//                /* TODO * / //cmp_post("instance pd object outlet error");
 //        }
 
         //cmp_get_inlet/outlet
         _opInstance->addInstanceOut(0);
+        */
     }
 
     //
@@ -334,9 +342,10 @@ public:
         addInlet();
     }
 
-    void msgFree(AtomList)
+    void msgFree(PdArguments)
     {
-
+        //XPD-TODO
+        /*
         if (_opInstance) {
             // TODO-PD_OBJECT
 //            if (pdObject()) {
@@ -345,7 +354,7 @@ public:
 
 //                    _opInstance->freeInstanceOut(out1);
 //                else
-//                    /* TODO */ //cmp_post("instance pd object outlet error");
+//                    /* TODO * / //cmp_post("instance pd object outlet error");
 //            }
 
             _opInstance->freeInstanceOut(0);
@@ -354,15 +363,18 @@ public:
         }
 
         _opInstance = 0;
-        /* TODO */ //cmp_post("free instance");
+        /* TODO * / //cmp_post("free instance");
+          */
     }
 
-    void msgSetObject(AtomList msg)
+    void msgSetObject(PdArguments msg)
     {
-        /* TODO */ //cmp_post("pdobject");
+        //XPD-TODO
+        /*
+        /* TODO * / //cmp_post("pdobject");
 
         if (msg.size() < 2) {
-            /* TODO */ //cmp_post("setobject: needs pdobject pointer");
+            /* TODO * / //cmp_post("setobject: needs pdobject pointer");
             return;
         }
 
@@ -375,11 +387,13 @@ public:
         qDebug() << "instance: " << _opInstance;
 
         update();
+        */
     }
 
-    void msgGetObject(AtomList)
+    void msgGetObject(PdArguments)
     {
-
+        //XPD-TODO
+        /*
         t_symbol* s = _opInstance->getObjectSymbol();
 
         if (_out1) {
@@ -390,12 +404,15 @@ public:
             list1.output(_out1);
 
         } else {
-            /* TODO */ //cmp_post("instance outlet error!");
+            /* TODO * / //cmp_post("instance outlet error!");
         }
+        */
     }
 
-    void msgSetType(AtomList msg)
+    void msgSetType(PdArguments msg)
     {
+        //XPD-TODO
+        /*
         if (msg.size() < 2) {
             _hasType = false;
             _opInstance = 0;
@@ -446,19 +463,24 @@ public:
                 _className = msg.at(1).asString().c_str();
 
             } else {
-                /* TODO */ //cmp_post("class not found!");
-                /* TODO */ //cmp_post(msg.at(1).asString().c_str());
+                /* TODO * / //cmp_post("class not found!");
+                /* TODO * / //cmp_post(msg.at(1).asString().c_str());
                 setHeight(20);
             }
 
             update();
+
         }
+        */
     }
 
     // ---------------------------------------------
 
-    static void updateUI(void* uiobj, ceammc::AtomList msg)
+    static void updateUI(void* uiobj, PdArguments msg)
     {
+        //XPD-TODO
+        /*
+
         // message handling here - probably move somewhere else?
 
         if (msg.size() < 1)
@@ -514,7 +536,7 @@ public:
                     //                    if (x->_out1) {
                     //                        list.output(x->_out1);
                     //                    } else {
-                    //                        /* TODO */ //cmp_post("bad pdobject outlet pointer");
+                    //                        /* TODO * / //cmp_post("bad pdobject outlet pointer");
                     //}
                 }
             } else {
@@ -533,6 +555,7 @@ public:
         }
 
         emit((UIInstance*)uiobj)->updateUISignal();
+        */
     }
 
 signals:

@@ -54,7 +54,8 @@ public:
     UIScriptEditor* editor();
 
     // temp
-    static QStringList AtomListToStringList(AtomList list);
+    // XPD-TODO
+    // static QStringList AtomListToStringList(AtomList list);
 
 signals:
     void callRun();

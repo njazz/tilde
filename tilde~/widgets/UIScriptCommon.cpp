@@ -2,8 +2,6 @@
 // License: GPL3
 
 #include "UIScriptCommon.h"
-// #include "pdServer.hpp"
-#include "ceammc_atomlist.h"
 
 #include "xpd-transition/xpd-headers.h"
 
@@ -128,14 +126,15 @@ void UIScriptCommon::btnClear()
     _editor->textEdit()->clear();
 }
 
-QStringList UIScriptCommon::AtomListToStringList(AtomList list)
-{
-    QStringList ret;
+// XPD-TODO
+//QStringList UIScriptCommon::AtomListToStringList(AtomList list)
+//{
+//    QStringList ret;
 
-    for (int i = 0; i < list.size(); i++) {
-        ret.append(QString(list.at(i).asString().c_str()));
-    }
+//    for (int i = 0; i < list.size(); i++) {
+//        ret.append(QString(list.at(i).asString().c_str()));
+//    }
 
-    return ret;
-}
+//    return ret;
+//}
 }

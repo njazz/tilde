@@ -17,8 +17,6 @@
 
 #include "UIObjectData.h"
 
-#include "ceammc_atomlist.h"
-
 namespace tilde {
 
 ////

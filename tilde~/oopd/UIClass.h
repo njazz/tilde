@@ -262,8 +262,11 @@ public:
 
     // ---------------------------------------------------------------
 
-    void msgNewClass(AtomList msg)
+    void msgNewClass(PdArguments msg)
     {
+        //XPD-TODO
+        //
+        /*
         if (_dynamicClass) {
             _opClass = new OPClass(msg.at(1).asString());
 
@@ -271,31 +274,37 @@ public:
             // TODO
             // cmp_post("cannot create new class - use empty 'pdclass' box for dynamic class creation");
         }
+        */
     }
 
-    void msgAddProperty(AtomList msg)
+    void msgAddProperty(PdArguments msg)
     {
-        _opClass->addProperty(msg.at(1).asString(), msg.at(2).asString());
+        //XPD-TODO
+        //_opClass->addProperty(msg.at(1).asString(), msg.at(2).asString());
     }
 
-    void msgDelProperty(AtomList msg)
+    void msgDelProperty(PdArguments msg)
     {
-        _opClass->freeProperty(msg.at(1).asString());
+        //XPD-TODO
+        //_opClass->freeProperty(msg.at(1).asString());
     }
 
-    void msgAddMethod(AtomList msg)
+    void msgAddMethod(PdArguments msg)
     {
-        _opClass->addMethod(msg.at(1).asString(), msg.at(2).asString()); //addmethod pname sendsymbol
+        //XPD-TODO
+        //_opClass->addMethod(msg.at(1).asString(), msg.at(2).asString()); //addmethod pname sendsymbol
     }
 
-    void msgDelMethod(AtomList msg)
+    void msgDelMethod(PdArguments msg)
     {
-        _opClass->freeMethod(msg.at(1).asString());
+        //XPD-TODO
+        //_opClass->freeMethod(msg.at(1).asString());
     }
 
-    void msgInfo(AtomList)
+    void msgInfo(PdArguments)
     {
-
+        //XPD-TODO
+        /*
         if (_opClass) {
             AtomList l1 = _opClass->getPropertyList();
             AtomList l2 = _opClass->getMethodList();
@@ -327,12 +336,16 @@ public:
             // TODO
             //cmp_post("no class");
         }
+        */
     }
 
     // ---------------------------------------------------------------
 
-    static void updateUI(void* uiobj, AtomList msg)
+    static void updateUI(void* uiobj, PdArguments msg)
     {
+        //XPD-TODO
+        /*
+
         // message handling here - probably move somewhere else?
 
         UIClass* x = (UIClass*)uiobj;
@@ -370,6 +383,7 @@ public:
             x->_opClass->writeFile();
 
         emit((UIClass*)uiobj)->updateUISignal();
+        */
     }
 
 signals:

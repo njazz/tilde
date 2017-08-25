@@ -16,10 +16,12 @@
 #include <vector>
 
 //todo
-#include "ceammc_atomlist.h"
+//#include "ceammc_atomlist.h"
+
+#include "../xpd-transition/xpd-headers.h"
 
 using namespace std;
-using namespace ceammc;
+using namespace xpd;
 
 namespace tilde {
 
@@ -58,11 +60,14 @@ public:
         }
     }
 
-    void outList(AtomList list)
+    void outList(PdArguments list)
     {
+        // XPD-TODO
+        /*
         for (vector<t_outlet*>::iterator it = _outlets.begin(); it != _outlets.end(); ++it) {
             list.output(*it);
         }
+        */
     }
 };
 
@@ -114,35 +119,43 @@ public:
 
     // -------------------
 
-    AtomList getPropertyList()
+    PdArguments getPropertyList()
     {
-        AtomList ret;
+        PdArguments ret;
 
+        // XPD-TODO
+        /*
         for (map<string, string>::iterator it = _propertyNames.begin(); it != _propertyNames.end(); ++it) {
             ret.append(Atom(gensym(it->first.c_str())));
         }
+        */
 
         return ret;
     }
 
-    AtomList getMethodList()
+    PdArguments getMethodList()
     {
-        AtomList ret;
+        PdArguments ret;
 
+        // XPD-TODO
+        /*
         for (map<string, string>::iterator it = _methodNames.begin(); it != _methodNames.end(); ++it) {
             ret.append(Atom(gensym(it->first.c_str())));
         }
+        */
 
         return ret;
     }
 
-    AtomList getSignalList()
+    PdArguments getSignalList()
     {
-        AtomList ret;
+        PdArguments ret;
 
+        /*
         for (map<string, string>::iterator it = _signalNames.begin(); it != _signalNames.end(); ++it) {
             ret.append(Atom(gensym(it->first.c_str())));
         }
+        */
 
         return ret;
     }

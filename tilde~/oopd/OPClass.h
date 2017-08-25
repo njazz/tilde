@@ -10,12 +10,10 @@
 #ifndef OPCLASS_H
 #define OPCLASS_H
 
-#include "m_pd.h"
+//#include "m_pd.h"
 #include <map>
 #include <set>
 
-//todo
-#include "ceammc_atomlist.h"
 
 //
 #include <QStringList>
@@ -23,7 +21,7 @@
 #include <QDebug>
 
 using namespace std;
-using namespace ceammc;
+//using namespace ceammc;
 
 #include "OOPDClassBase.h"
 
@@ -85,6 +83,8 @@ public:
         _methodPointerOutlets[referenceName] = outlet;
     }
 
+    // XPD-TODO
+    /*
     t_outlet* getMethodOutletForReferenceName(string referenceName)
     {
         t_outlet* ret = 0;
@@ -106,6 +106,7 @@ public:
 
         return ret;
     }
+    */
 
     // properties
 

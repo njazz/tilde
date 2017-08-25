@@ -16,8 +16,6 @@ add_subdirectory(tilde~_ui_library)
 add_subdirectory(tilde~)
 add_subdirectory(tilde~_tests)
 
-
-
 add_custom_target( tilde-main DEPENDS xpd_static tilde~ tilde~_ui PythonQt )
 
 add_custom_command(

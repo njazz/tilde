@@ -39,6 +39,7 @@
 #include "../../xpd/src/pd_localprocess.h"
 #include "../../xpd/src/pd_localserver.h"
 #include "../../xpd/src/pd_object.h"
+#include "../../xpd/src/pd_objectobserver.h"
 
 #include "../../xpd/src/propertyobserver.h"
 

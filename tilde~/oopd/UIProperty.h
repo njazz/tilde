@@ -10,8 +10,8 @@
 
 #include "Port.h"
 
-#include "UIObject.h"
 #include "UIBox.h"
+#include "UIObject.h"
 
 //#include "cm_pdlink.h"
 
@@ -19,8 +19,8 @@
 
 #include <QGraphicsView>
 
-#include "PatchWindowController.h"
 #include "PatchWindow.h"
+#include "PatchWindowController.h"
 
 #include "Preferences.h"
 #include "PropertyList.h"
@@ -51,7 +51,6 @@ public:
     //~UIProperty();
 
     static UIObject* createObject(QString asQString, t_canvas* pdCanvas, QGraphicsView* parent = 0);
-
 
     ////
     /// \brief paint event
@@ -113,7 +112,6 @@ public:
             return;
         }
 
-
         //open canvas for subpatch
         if (getEditMode() != em_Unlocked) {
             if (subpatchController()) {
@@ -156,6 +154,8 @@ public:
 
     void setPdMessage(QString message)
     {
+        //XPD-TODO
+        /*
         fromQString(message);
         autoResize();
 
@@ -169,19 +169,23 @@ public:
         //
         setInletsPos();
         setOutletsPos();
+*/
     }
 
     static void updateUI(void* uiobj, ceammc::AtomList msg)
     {
+        //XPD-TODO
+        /*
+
         UIProperty* b = (UIProperty*)uiobj;
 
         //qDebug() << "method out";
 
         if (b->_opInstance) {
             if (msg.at(0).asSymbol() == gensym("bang")) {
-                ///* TODO */ //cmp_post("bang!");
+                ///* TODO * / //cmp_post("bang!");
 
-                AtomList _prop = b->_opInstance->getAtomListProperty(gensym(b->_propertyName.c_str()));
+                AtomList _prop = b->_opInstance->getPdArgumentsProperty(gensym(b->_propertyName.c_str()));
                 QStringList list1;
                 for (size_t i = 0; i < _prop.size(); i++) {
                     list1.append(_prop.at(i).asString().c_str());
@@ -192,11 +196,11 @@ public:
 
             } else if (msg.at(0).asSymbol() == gensym("set")) {
                 // TODO
-                // /* TODO */ //cmp_post("set!");
+                // /* TODO * / //cmp_post("set!");
 
                 //AtomList msg2 = msg;
                 //msg2.at(0) = gensym(b->_propertyName.c_str());
-                b->_opInstance->setAtomListProperty(gensym(b->_propertyName.c_str()), msg); //.subList(1,msg.size()-1));
+                b->_opInstance->setPdArgumentsProperty(gensym(b->_propertyName.c_str()), msg); //.subList(1,msg.size()-1));
                 //b->_opInstance->callSetter(msg2);
 
             } else {
@@ -207,6 +211,8 @@ public:
         }
 
         emit b->updateUISignal();
+
+*/
     }
 
 signals:

@@ -9,8 +9,7 @@ namespace tilde {
 void PdWindowConsoleObserver::update()
 {
     if (_window) {
-        // XPD-TODO
-        //emit _window->postSignal(QString(text()));
+        emit _window->postSignal(QString(text().c_str()));
     }
 };
 }

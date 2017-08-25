@@ -23,6 +23,8 @@ UIInstance::UIInstance()
 
 void UIInstance::setInletsPos()
 {
+    //XPD-TODO
+    /*
     if (_hasType) {
         float h = height() - 20;
 
@@ -40,10 +42,14 @@ void UIInstance::setInletsPos()
         }
     } else
         UIObject::setInletsPos();
+
+    */
 }
 
 void UIInstance::setOutletsPos()
 {
+    //XPD-TODO
+    /*
     if (_hasType) {
         float h = height() - 20;
 
@@ -59,5 +65,6 @@ void UIInstance::setOutletsPos()
         }
     } else
         UIObject::setOutletsPos();
+        */
 }
 }

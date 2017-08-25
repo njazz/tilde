@@ -166,6 +166,8 @@ public:
 
     void setPdMessage(QString message)
     {
+        // XPD-TODO
+        /*
         fromQString(message);
         autoResize();
 
@@ -181,10 +183,13 @@ public:
         //
         setInletsPos();
         setOutletsPos();
+        */
     }
 
     static void updateUI(void* uiobj, ceammc::AtomList msg)
     {
+        // XPD-TODO
+        /*
         UISignal* b = (UISignal*)uiobj;
 
         //qDebug() << "method out";
@@ -196,6 +201,7 @@ public:
         }
 
         emit b->updateUISignal();
+        */
     }
 
 signals:
