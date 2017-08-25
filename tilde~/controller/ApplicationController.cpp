@@ -43,6 +43,7 @@ ApplicationController::ApplicationController()
 
     ServerSettings settings("PdServer");
     _localServer = new PdLocalServer(settings);
+    _localServer->createProcess();
 
     ObjectLoader::inst().loadObjects();
 
