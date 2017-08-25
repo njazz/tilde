@@ -336,7 +336,7 @@ set_source_files_properties(${myApp_ICON} PROPERTIES
 
 add_custom_target(buildNumber	
     	COMMAND ${CMAKE_SOURCE_DIR}/cmake/create_build_number.sh
-	WORKING_DIR ${CMAKE_SOURCE_DIR}/cmake/
+        WORKING_DIR ${CMAKE_SOURCE_DIR}/
 )
 
 

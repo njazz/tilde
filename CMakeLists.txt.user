@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.3.1, 2017-08-25T20:35:18. -->
+<!-- Written by QtCreator 4.3.1, 2017-08-25T22:27:01. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -67,7 +67,7 @@
    <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
     <valuelist type="QVariantList" key="CMake.Configuration"/>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/Users/njazz/Documents/puredata-ceam/build-qtpd-Desktop_Qt_5_8_0_clang_64bit-Default</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/Users/njazz/Documents/puredata-ceam/tilde/build</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="QString" key="CMakeProjectManager.MakeStep.AdditionalArguments"></value>
@@ -341,7 +341,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">tilde~</value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments"></value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/private/var/folders/kt/n00x5k9x1j7ghp_61shv4snw0000gn/T/QtCreator-ak7PDO/qtc-cmake-7eqk3IH5/tilde~</value>
+    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/Users/njazz/Documents/puredata-ceam/tilde/build/tilde~</value>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">tilde~</value>
@@ -397,7 +397,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">tilde~_tests</value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments"></value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/private/var/folders/kt/n00x5k9x1j7ghp_61shv4snw0000gn/T/QtCreator-ak7PDO/qtc-cmake-7eqk3IH5/tilde~_tests</value>
+    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/Users/njazz/Documents/puredata-ceam/tilde/build/tilde~_tests</value>
     <value type="int" key="PE.EnvironmentAspect.Base">-1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">tilde~_tests</value>
@@ -453,7 +453,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">test_localserver</value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments"></value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/private/var/folders/kt/n00x5k9x1j7ghp_61shv4snw0000gn/T/QtCreator-ak7PDO/qtc-cmake-7eqk3IH5/xpd/tests</value>
+    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/Users/njazz/Documents/puredata-ceam/tilde/build/xpd/tests</value>
     <value type="int" key="PE.EnvironmentAspect.Base">-1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">test_localserver</value>
@@ -509,7 +509,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">test_xpd_pd_canvas</value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments"></value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/private/var/folders/kt/n00x5k9x1j7ghp_61shv4snw0000gn/T/QtCreator-ak7PDO/qtc-cmake-7eqk3IH5/xpd/tests</value>
+    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/Users/njazz/Documents/puredata-ceam/tilde/build/xpd/tests</value>
     <value type="int" key="PE.EnvironmentAspect.Base">-1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">test_xpd_pd_canvas</value>
@@ -565,7 +565,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">test_cpd_loader</value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments"></value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/private/var/folders/kt/n00x5k9x1j7ghp_61shv4snw0000gn/T/QtCreator-ak7PDO/qtc-cmake-7eqk3IH5/xpd/tests</value>
+    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/Users/njazz/Documents/puredata-ceam/tilde/build/xpd/tests</value>
     <value type="int" key="PE.EnvironmentAspect.Base">-1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">test_cpd_loader</value>
@@ -621,7 +621,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">test_xpd_array</value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments"></value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/private/var/folders/kt/n00x5k9x1j7ghp_61shv4snw0000gn/T/QtCreator-ak7PDO/qtc-cmake-7eqk3IH5/xpd/tests</value>
+    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/Users/njazz/Documents/puredata-ceam/tilde/build/xpd/tests</value>
     <value type="int" key="PE.EnvironmentAspect.Base">-1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">test_xpd_array</value>
@@ -677,7 +677,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">test_cpd_connections</value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments"></value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/private/var/folders/kt/n00x5k9x1j7ghp_61shv4snw0000gn/T/QtCreator-ak7PDO/qtc-cmake-7eqk3IH5/xpd/tests</value>
+    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/Users/njazz/Documents/puredata-ceam/tilde/build/xpd/tests</value>
     <value type="int" key="PE.EnvironmentAspect.Base">-1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">test_cpd_connections</value>
@@ -733,7 +733,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">test_cpd_array</value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments"></value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/private/var/folders/kt/n00x5k9x1j7ghp_61shv4snw0000gn/T/QtCreator-ak7PDO/qtc-cmake-7eqk3IH5/xpd/tests</value>
+    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/Users/njazz/Documents/puredata-ceam/tilde/build/xpd/tests</value>
     <value type="int" key="PE.EnvironmentAspect.Base">-1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">test_cpd_array</value>
@@ -789,7 +789,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">test_objectlist</value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments"></value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/private/var/folders/kt/n00x5k9x1j7ghp_61shv4snw0000gn/T/QtCreator-ak7PDO/qtc-cmake-7eqk3IH5/xpd/tests</value>
+    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/Users/njazz/Documents/puredata-ceam/tilde/build/xpd/tests</value>
     <value type="int" key="PE.EnvironmentAspect.Base">-1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">test_objectlist</value>
@@ -845,7 +845,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">test_cpd_dsp</value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments"></value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/private/var/folders/kt/n00x5k9x1j7ghp_61shv4snw0000gn/T/QtCreator-ak7PDO/qtc-cmake-7eqk3IH5/xpd/tests</value>
+    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/Users/njazz/Documents/puredata-ceam/tilde/build/xpd/tests</value>
     <value type="int" key="PE.EnvironmentAspect.Base">-1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">test_cpd_dsp</value>
@@ -901,7 +901,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">test_cpd_catcher</value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments"></value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/private/var/folders/kt/n00x5k9x1j7ghp_61shv4snw0000gn/T/QtCreator-ak7PDO/qtc-cmake-7eqk3IH5/xpd/tests</value>
+    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/Users/njazz/Documents/puredata-ceam/tilde/build/xpd/tests</value>
     <value type="int" key="PE.EnvironmentAspect.Base">-1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">test_cpd_catcher</value>
@@ -957,7 +957,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">test_xpd_pd_floatarray</value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments"></value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/private/var/folders/kt/n00x5k9x1j7ghp_61shv4snw0000gn/T/QtCreator-ak7PDO/qtc-cmake-7eqk3IH5/xpd/tests</value>
+    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/Users/njazz/Documents/puredata-ceam/tilde/build/xpd/tests</value>
     <value type="int" key="PE.EnvironmentAspect.Base">-1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">test_xpd_pd_floatarray</value>
@@ -1013,10 +1013,10 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">teststops</value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments"></value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/private/var/folders/kt/n00x5k9x1j7ghp_61shv4snw0000gn/T/QtCreator-ak7PDO/qtc-cmake-7eqk3IH5/xpd/distrib/rtaudio/rtaudio/tests</value>
+    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/Users/njazz/Documents/puredata-ceam/tilde/build/xpd/distrib/rtaudio/rtaudio/tests</value>
     <value type="int" key="PE.EnvironmentAspect.Base">-1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">teststops (disabled)</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">teststops</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.teststops</value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
@@ -1069,7 +1069,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">test_cpd</value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments"></value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/private/var/folders/kt/n00x5k9x1j7ghp_61shv4snw0000gn/T/QtCreator-ak7PDO/qtc-cmake-7eqk3IH5/xpd/tests</value>
+    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/Users/njazz/Documents/puredata-ceam/tilde/build/xpd/tests</value>
     <value type="int" key="PE.EnvironmentAspect.Base">-1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">test_cpd</value>
@@ -1125,7 +1125,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">test_cpd_object</value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments"></value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/private/var/folders/kt/n00x5k9x1j7ghp_61shv4snw0000gn/T/QtCreator-ak7PDO/qtc-cmake-7eqk3IH5/xpd/tests</value>
+    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/Users/njazz/Documents/puredata-ceam/tilde/build/xpd/tests</value>
     <value type="int" key="PE.EnvironmentAspect.Base">-1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">test_cpd_object</value>
@@ -1181,7 +1181,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">test_cpd_env</value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments"></value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/private/var/folders/kt/n00x5k9x1j7ghp_61shv4snw0000gn/T/QtCreator-ak7PDO/qtc-cmake-7eqk3IH5/xpd/tests</value>
+    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/Users/njazz/Documents/puredata-ceam/tilde/build/xpd/tests</value>
     <value type="int" key="PE.EnvironmentAspect.Base">-1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">test_cpd_env</value>
@@ -1237,7 +1237,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">test_cpd_canvas</value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments"></value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/private/var/folders/kt/n00x5k9x1j7ghp_61shv4snw0000gn/T/QtCreator-ak7PDO/qtc-cmake-7eqk3IH5/xpd/tests</value>
+    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/Users/njazz/Documents/puredata-ceam/tilde/build/xpd/tests</value>
     <value type="int" key="PE.EnvironmentAspect.Base">-1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">test_cpd_canvas</value>
@@ -1293,7 +1293,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">test_cpd_atom</value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments"></value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/private/var/folders/kt/n00x5k9x1j7ghp_61shv4snw0000gn/T/QtCreator-ak7PDO/qtc-cmake-7eqk3IH5/xpd/tests</value>
+    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/Users/njazz/Documents/puredata-ceam/tilde/build/xpd/tests</value>
     <value type="int" key="PE.EnvironmentAspect.Base">-1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">test_cpd_atom</value>
@@ -1349,7 +1349,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">test_cpd_list</value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments"></value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/private/var/folders/kt/n00x5k9x1j7ghp_61shv4snw0000gn/T/QtCreator-ak7PDO/qtc-cmake-7eqk3IH5/xpd/tests</value>
+    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/Users/njazz/Documents/puredata-ceam/tilde/build/xpd/tests</value>
     <value type="int" key="PE.EnvironmentAspect.Base">-1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">test_cpd_list</value>
@@ -1405,10 +1405,10 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">testall</value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments"></value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/private/var/folders/kt/n00x5k9x1j7ghp_61shv4snw0000gn/T/QtCreator-ak7PDO/qtc-cmake-7eqk3IH5/xpd/distrib/rtaudio/rtaudio/tests</value>
+    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/Users/njazz/Documents/puredata-ceam/tilde/build/xpd/distrib/rtaudio/rtaudio/tests</value>
     <value type="int" key="PE.EnvironmentAspect.Base">-1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">testall (disabled)</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">testall</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.testall</value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
@@ -1461,10 +1461,10 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">duplex</value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments"></value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/private/var/folders/kt/n00x5k9x1j7ghp_61shv4snw0000gn/T/QtCreator-ak7PDO/qtc-cmake-7eqk3IH5/xpd/distrib/rtaudio/rtaudio/tests</value>
+    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/Users/njazz/Documents/puredata-ceam/tilde/build/xpd/distrib/rtaudio/rtaudio/tests</value>
     <value type="int" key="PE.EnvironmentAspect.Base">-1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">duplex (disabled)</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">duplex</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.duplex</value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
@@ -1517,10 +1517,10 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">record</value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments"></value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/private/var/folders/kt/n00x5k9x1j7ghp_61shv4snw0000gn/T/QtCreator-ak7PDO/qtc-cmake-7eqk3IH5/xpd/distrib/rtaudio/rtaudio/tests</value>
+    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/Users/njazz/Documents/puredata-ceam/tilde/build/xpd/distrib/rtaudio/rtaudio/tests</value>
     <value type="int" key="PE.EnvironmentAspect.Base">-1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">record (disabled)</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">record</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.record</value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
@@ -1573,10 +1573,10 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">playraw</value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments"></value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/private/var/folders/kt/n00x5k9x1j7ghp_61shv4snw0000gn/T/QtCreator-ak7PDO/qtc-cmake-7eqk3IH5/xpd/distrib/rtaudio/rtaudio/tests</value>
+    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/Users/njazz/Documents/puredata-ceam/tilde/build/xpd/distrib/rtaudio/rtaudio/tests</value>
     <value type="int" key="PE.EnvironmentAspect.Base">-1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">playraw (disabled)</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">playraw</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.playraw</value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
@@ -1629,10 +1629,10 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">playsaw</value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments"></value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/private/var/folders/kt/n00x5k9x1j7ghp_61shv4snw0000gn/T/QtCreator-ak7PDO/qtc-cmake-7eqk3IH5/xpd/distrib/rtaudio/rtaudio/tests</value>
+    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/Users/njazz/Documents/puredata-ceam/tilde/build/xpd/distrib/rtaudio/rtaudio/tests</value>
     <value type="int" key="PE.EnvironmentAspect.Base">-1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">playsaw (disabled)</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">playsaw</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.playsaw</value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
@@ -1685,10 +1685,10 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">audioprobe</value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments"></value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/private/var/folders/kt/n00x5k9x1j7ghp_61shv4snw0000gn/T/QtCreator-ak7PDO/qtc-cmake-7eqk3IH5/xpd/distrib/rtaudio/rtaudio/tests</value>
+    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/Users/njazz/Documents/puredata-ceam/tilde/build/xpd/distrib/rtaudio/rtaudio/tests</value>
     <value type="int" key="PE.EnvironmentAspect.Base">-1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">audioprobe (disabled)</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">audioprobe</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.audioprobe</value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
@@ -1741,7 +1741,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguation.Title">test_pdobject</value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments"></value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
-    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/private/var/folders/kt/n00x5k9x1j7ghp_61shv4snw0000gn/T/QtCreator-ak7PDO/qtc-cmake-7eqk3IH5/xpd/tests</value>
+    <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/Users/njazz/Documents/puredata-ceam/tilde/build/xpd/tests</value>
     <value type="int" key="PE.EnvironmentAspect.Base">-1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">test_pdobject</value>

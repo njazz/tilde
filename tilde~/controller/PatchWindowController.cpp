@@ -38,7 +38,7 @@ namespace tilde {
 
 PatchWindowController::PatchWindowController(ApplicationController* appController) //replace with parent (appcontroller)
 {
-    qDebug()<<"1";
+    qDebug() << "1";
 
     _scene = new QGraphicsScene();
     _observer = ObserverPtr(new Observer());
@@ -53,13 +53,13 @@ PatchWindowController::PatchWindowController(ApplicationController* appControlle
 
     //_canvasData->setServerCanvas(_serverCanvas);
 
-    qDebug()<<"1";
+    qDebug() << "1";
 
     newWindow();
 
     // fix that
     if (mainWindow()->canvasView())
-    connect(mainWindow()->canvasView(), &CanvasView::signalPopupMenu, this, &PatchWindowController::openPropertiesWindow);
+        connect(mainWindow()->canvasView(), &CanvasView::signalPopupMenu, this, &PatchWindowController::openPropertiesWindow);
 
     _boxOnlyCanvas = 0;
     _boxOnlyScene = 0;
@@ -68,7 +68,7 @@ PatchWindowController::PatchWindowController(ApplicationController* appControlle
 
     _undoStack = new QUndoStack;
 
-    qDebug()<<"1";
+    qDebug() << "1";
 
     //PatchWindowController(appController, serverInstance()->createCanvas());
 };
@@ -97,9 +97,6 @@ PatchWindowController::PatchWindowController(ApplicationController* appControlle
 
     // TODO
     mainWindow()->canvasView()->setEditMode(em_Locked);
-
-
-
 };
 
 CanvasPtr PatchWindowController::serverCanvas() { return _serverCanvas; }
@@ -116,7 +113,7 @@ UIBox* PatchWindowController::asUIBox()
 ObjectId PatchWindowController::serverCanvasAsObject()
 {
 
-    return _serverCanvas->id();//_serverCanvas->toServerObject();
+    return _serverCanvas->id(); //_serverCanvas->toServerObject();
 }
 
 void PatchWindowController::enableObjectsOnParent(UIObject* parentObject)
@@ -234,7 +231,6 @@ void PatchWindowController::doCreateObject(UIObject* uiObject)
 
     uiObject->sync();
 
-    // XPD-TODO
     connect(uiObject, &UIObject::signalSendMessage, this, &PatchWindowController::sendMessageToObject);
 
     connect(uiObject, &UIObject::selectBox, _windows[0]->canvasView(), &CanvasView::slotSelectBox);
@@ -285,16 +281,13 @@ UIObject* PatchWindowController::createObjectWithoutUndo(string name, QPoint pos
     //applicationController::post("create: " + name);
 
     UIObject* uiObject = ObjectLoader::inst().createUIObject(name.c_str());
-    // XPD-TODO
+
     //ObjectPtr serverObject = _appController->slotCreateObject(_serverCanvas, name); //emit signalCreateObject(_serverCanvas, name);
 
-    // TODO wait?
-
+    ObjectId serverObject = _appController->slotCreateObject(_serverCanvas, name);
 
     // XPD-TODO
-    // uiObject->setServerObject(serverObject);
-
-    //
+    uiObject->setServerObject(serverObject);
 
     if (!uiObject) {
         qDebug() << "bad ui object!";
@@ -440,7 +433,6 @@ void PatchWindowController::deleteSinglePatchcord(UIPatchcord* p)
     p->remove();
     _canvasData->deletePatchcord(p);
     _scene->update();
-
 
     // XPD-TODO
     // _serverCanvas->disconnect()
@@ -917,16 +909,12 @@ UIPatchcord* PatchWindowController::createPatchcordWithoutUndo(UIObject* obj1, i
 
         UIPatchcord* pc = new UIPatchcord(obj1, outport, obj2, inport);
 
-        // XPD-TODO
-        //_serverCanvas->connect(obj1->serverObject(),outlet,obj2->serverObject(), inlet);
+        _serverCanvas->connect(obj1->serverObject(), outlet, obj2->serverObject(), inlet);
 
         if (obj1->pdOutletClass(outlet))
             pc->setPatchcordType(cm_pt_signal);
 
         //qDebug("server patchcord");
-
-
-
 
         _canvasData->addPatchcord(pc);
 
@@ -1074,5 +1062,4 @@ void PatchWindowController::sendMessageToObject(ObjectId object, QString msg)
     // XPD-TODO
     // object->message(msg.toStdString());
 }
-
 }

@@ -62,7 +62,7 @@ private:
     CanvasView* _parentCanvasView;
     PatchWindowController* _parentController;
 
-    ObjectPtr _serverObject;
+    ObjectId _serverObject;
 
     ObjectObserverPtr _observer;
 
@@ -84,8 +84,8 @@ public:
     void setObjectData(UIObjectData* m);
     UIObjectData* objectData();
 
-    virtual ObjectPtr serverObject();
-    virtual void setServerObject(ObjectPtr o);
+    virtual ObjectId serverObject();
+    virtual void setServerObject(ObjectId o);
 
     ObjectObserverPtr observer();
 

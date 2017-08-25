@@ -69,8 +69,7 @@ ApplicationController::ApplicationController()
 
     _consoleObserver = shared_ptr<PdWindowConsoleObserver>(new PdWindowConsoleObserver);
 
-    // XPD-TODO
-    // mainServerInstance()->registerConsoleObserver(_consoleObserver);
+    mainServerInstance()->registerConsoleObserver(_consoleObserver);
 
     _pdWindow = new PdWindow();
     _pdWindow->setAppController(this);
@@ -80,11 +79,6 @@ ApplicationController::ApplicationController()
     _consoleObserver->setWindow(_pdWindow);
 
     mainServerInstance()->post("Server started");
-
-    //_localServer->firstInstance()->setVerboseLevel(4);
-
-    //QString tilde = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).at(0);
-    //_localServer->firstInstance()->loadLibrary(QString(tilde + "/tilde~/Libraries/tilde~_ui").toStdString());
 
     FileParser::setAppController(this);
 
@@ -193,8 +187,9 @@ ProcessPtr ApplicationController::mainServerInstance()
 {
     assert(_localServer);
 
-    ProcessPtr p = _localServer->processList().at(0);
-    return p;
+    if (!_theServerInstance)
+        _theServerInstance = _localServer->processList().at(0);
+    return _theServerInstance;
 }
 
 void ApplicationController::newPatchWindowController()

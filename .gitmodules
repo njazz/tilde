@@ -1,4 +1,4 @@
 [submodule "xpd"]
 	path = xpd
-	url = http://github.com/uliss/xpd
-	branch = master
+	url = http://github.com/njazz/xpd
+	branch = my-develop

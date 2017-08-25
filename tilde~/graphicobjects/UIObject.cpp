@@ -87,15 +87,13 @@ void UIObject::setParentCanvasView(CanvasView* v) { _parentCanvasView = v; }
 PatchWindowController* UIObject::parentController() { return _parentController; }
 void UIObject::setParentController(PatchWindowController* p) { _parentController = p; }
 
-ObjectPtr UIObject::serverObject() {
-    // XPD-TODO
-    // return ObjectPtr(_serverObject);
-    return 0;
+ObjectId UIObject::serverObject() {
+    return _serverObject;
+    //return 0;
 };
-void UIObject::setServerObject(ObjectPtr o)
+void UIObject::setServerObject(ObjectId o)
 {
-    // XPD-TODO
-    //_serverObject = o;
+    _serverObject = o;
 };
 
 void UIObject::setObjectData(UIObjectData* m) { _objectData = m; }
@@ -490,14 +488,13 @@ void UIObject::sync()
 {
     removeXLets();
 
-    // XPD-TODO
     if (!_serverObject) {
         setErrorBox(true);
         return;
     }
 
-    int in_c = _serverObject->inletCount();
-    int out_c = _serverObject->outletCount();
+    int in_c = _parentController->serverCanvas()->objects().findObject(_serverObject)->inletCount();
+    int out_c = _parentController->serverCanvas()->objects().findObject(_serverObject)->outletCount();
 
     for (int i = 0; i < in_c; i++)
         addInlet();

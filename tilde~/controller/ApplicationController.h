@@ -47,7 +47,6 @@ class ApplicationController : public QObject {
 private:
     PdLocalServer* _localServer;
 
-    //ServerWorker* _serverWorker;
     QThread* _serverThread;
 
     PdWindow* _pdWindow;
@@ -64,7 +63,6 @@ private:
 
     void loadAllLibraries();
 
-    // TODO
     static ProcessPtr _theServerInstance;
 
 #ifdef WITH_PYTHON
