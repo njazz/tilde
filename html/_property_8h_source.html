@@ -97,142 +97,141 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef CM_PROPERTY_H</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CM_PROPERTY_H</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//#include &quot;ceammc_atomlist.h&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;QVariant&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QColor&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;QPoint&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;QRect&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;QStringList&gt;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;QDebug&gt;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">namespace </span>tilde {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678">   23</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a88fe92d6108e20e151927c136b6fa622">   24</a></span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a88fe92d6108e20e151927c136b6fa622">ptBool</a>,</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a1db06c37c71db2da72184f4a95822de4">   25</a></span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a1db06c37c71db2da72184f4a95822de4">ptFloat</a>,</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678aa78fbb776b0ce15d217d41849e927434">   26</a></span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678aa78fbb776b0ce15d217d41849e927434">ptInt</a>,</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a5b243208b6e8464c9011febbe298ee72">   27</a></span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a5b243208b6e8464c9011febbe298ee72">ptSymbol</a>,</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a06915cb0cd2f8ecdc79f4460053b57b9">   28</a></span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a06915cb0cd2f8ecdc79f4460053b57b9">ptList</a>,</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a51745da5605244e6836815c2621291c6">   29</a></span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a51745da5605244e6836815c2621291c6">ptString</a>,</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a5ee9ca0fbdaf19701d3a9d2aee1982b7">   30</a></span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a5ee9ca0fbdaf19701d3a9d2aee1982b7">ptVector</a>,</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a17deca292052a8fcef57654b12dad497">   31</a></span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a17deca292052a8fcef57654b12dad497">ptColor</a>,</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a5e04384da38fa444bea8be7c15296893">   32</a></span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a5e04384da38fa444bea8be7c15296893">ptVec2</a>,</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a6d4fa990b23328891881e46232ad9ee9">   33</a></span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a6d4fa990b23328891881e46232ad9ee9">ptStringList</a>,</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678afe61d2bb9882dbebf4d39b09fd4ff4c4">   34</a></span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678afe61d2bb9882dbebf4d39b09fd4ff4c4">ptPath</a>,         </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a41d1eff927b80d1839755baef25bc0de">   35</a></span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a41d1eff927b80d1839755baef25bc0de">ptPathList</a>,</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678ad3d5b2bcbf404668f714e13161894864">   36</a></span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678ad3d5b2bcbf404668f714e13161894864">ptEnum</a>,         </div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a61c71bea613b5aaa49b769d5652cac1e">   37</a></span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a61c71bea613b5aaa49b769d5652cac1e">ptText</a>          </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;} <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678">UIPropertyType</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classtilde_1_1_property.html">   45</a></span>&#160;<span class="keyword">class </span><a class="code" href="classtilde_1_1_property.html">Property</a> : <span class="keyword">public</span> QObject {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    Q_OBJECT</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    QVariantList _data;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    QVariantList _defaultData;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    QString _group;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    QString _version;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678">UIPropertyType</a> _type;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">bool</span> _readOnly;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">bool</span> _applyToPd; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classtilde_1_1_property.html">Property</a>();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="classtilde_1_1_property.html">Property</a>(<span class="keyword">const</span> <a class="code" href="classtilde_1_1_property.html">Property</a>&amp; src);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="classtilde_1_1_property.html">Property</a>( <a class="code" href="classtilde_1_1_property.html">Property</a>&amp; src);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">const</span> <a class="code" href="classtilde_1_1_property.html">Property</a> operator=(<span class="keyword">const</span> <a class="code" href="classtilde_1_1_property.html">Property</a>&amp; rval);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="classtilde_1_1_property.html">Property</a> operator=(<a class="code" href="classtilde_1_1_property.html">Property</a>&amp; rval);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// -------</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span> set(T val);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> copyDataToDefault(); </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> setVersion(QString version);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> setGroup(QString grp);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> setType(<a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678">UIPropertyType</a> t);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> setRawData(QVariantList data);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">void</span> setRawDefaultData(QVariantList data);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> setReadonly(<span class="keywordtype">bool</span> v);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">bool</span> readOnly();</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// -------</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">void</span> setDefaultType(<a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678">UIPropertyType</a> type);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">// -------</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    QVariantList data();</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    QVariantList defaultData();</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    QString group();</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    QString version();</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678">UIPropertyType</a> type();</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="comment">// -------</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    QSize asQSize();</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    QSizeF asQSizeF();</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    QPoint asQPoint();</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    QPointF asQPointF();</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">float</span> asFloat();</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">int</span> asInt();</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">bool</span> asBool();</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">float</span> asFontSize();</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    QColor asQColor();</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    QStringList asQStringList();</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">string</span> asStdString();</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    QString asQString();</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    QString asPdSaveString();</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">// -------</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="comment">// todo move?</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keyword">static</span> QString escapeString(QString input);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">static</span> QString unescapeString(QString input);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;signals:</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordtype">void</span> changed();</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;};</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="preprocessor">#endif // CM_PROPERTY_H</span></div>
-<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678a1db06c37c71db2da72184f4a95822de4"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a1db06c37c71db2da72184f4a95822de4">tilde::ptFloat</a></div><div class="ttdef"><b>Definition:</b> Property.h:25</div></div>
-<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678a5b243208b6e8464c9011febbe298ee72"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a5b243208b6e8464c9011febbe298ee72">tilde::ptSymbol</a></div><div class="ttdef"><b>Definition:</b> Property.h:27</div></div>
-<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678ad3d5b2bcbf404668f714e13161894864"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678ad3d5b2bcbf404668f714e13161894864">tilde::ptEnum</a></div><div class="ttdef"><b>Definition:</b> Property.h:36</div></div>
-<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678a5e04384da38fa444bea8be7c15296893"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a5e04384da38fa444bea8be7c15296893">tilde::ptVec2</a></div><div class="ttdef"><b>Definition:</b> Property.h:32</div></div>
-<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678a61c71bea613b5aaa49b769d5652cac1e"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a61c71bea613b5aaa49b769d5652cac1e">tilde::ptText</a></div><div class="ttdoc">index and option list </div><div class="ttdef"><b>Definition:</b> Property.h:37</div></div>
-<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678aa78fbb776b0ce15d217d41849e927434"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678aa78fbb776b0ce15d217d41849e927434">tilde::ptInt</a></div><div class="ttdef"><b>Definition:</b> Property.h:26</div></div>
-<div class="ttc" id="classtilde_1_1_property_html"><div class="ttname"><a href="classtilde_1_1_property.html">tilde::Property</a></div><div class="ttdoc">property handling class for ui object. </div><div class="ttdef"><b>Definition:</b> Property.h:45</div></div>
-<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678afe61d2bb9882dbebf4d39b09fd4ff4c4"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678afe61d2bb9882dbebf4d39b09fd4ff4c4">tilde::ptPath</a></div><div class="ttdef"><b>Definition:</b> Property.h:34</div></div>
-<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678a17deca292052a8fcef57654b12dad497"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a17deca292052a8fcef57654b12dad497">tilde::ptColor</a></div><div class="ttdef"><b>Definition:</b> Property.h:31</div></div>
-<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678a88fe92d6108e20e151927c136b6fa622"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a88fe92d6108e20e151927c136b6fa622">tilde::ptBool</a></div><div class="ttdef"><b>Definition:</b> Property.h:24</div></div>
-<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678">tilde::UIPropertyType</a></div><div class="ttdeci">UIPropertyType</div><div class="ttdef"><b>Definition:</b> Property.h:23</div></div>
-<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678a41d1eff927b80d1839755baef25bc0de"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a41d1eff927b80d1839755baef25bc0de">tilde::ptPathList</a></div><div class="ttdoc">file or directory </div><div class="ttdef"><b>Definition:</b> Property.h:35</div></div>
-<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678a51745da5605244e6836815c2621291c6"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a51745da5605244e6836815c2621291c6">tilde::ptString</a></div><div class="ttdef"><b>Definition:</b> Property.h:29</div></div>
-<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678a06915cb0cd2f8ecdc79f4460053b57b9"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a06915cb0cd2f8ecdc79f4460053b57b9">tilde::ptList</a></div><div class="ttdef"><b>Definition:</b> Property.h:28</div></div>
-<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678a6d4fa990b23328891881e46232ad9ee9"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a6d4fa990b23328891881e46232ad9ee9">tilde::ptStringList</a></div><div class="ttdef"><b>Definition:</b> Property.h:33</div></div>
-<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678a5ee9ca0fbdaf19701d3a9d2aee1982b7"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a5ee9ca0fbdaf19701d3a9d2aee1982b7">tilde::ptVector</a></div><div class="ttdef"><b>Definition:</b> Property.h:30</div></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QVariant&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QColor&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;QPoint&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;QRect&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;QStringList&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;QDebug&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">namespace </span>tilde {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678">   22</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a88fe92d6108e20e151927c136b6fa622">   23</a></span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a88fe92d6108e20e151927c136b6fa622">ptBool</a>,</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a1db06c37c71db2da72184f4a95822de4">   24</a></span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a1db06c37c71db2da72184f4a95822de4">ptFloat</a>,</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678aa78fbb776b0ce15d217d41849e927434">   25</a></span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678aa78fbb776b0ce15d217d41849e927434">ptInt</a>,</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a5b243208b6e8464c9011febbe298ee72">   26</a></span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a5b243208b6e8464c9011febbe298ee72">ptSymbol</a>,</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a06915cb0cd2f8ecdc79f4460053b57b9">   27</a></span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a06915cb0cd2f8ecdc79f4460053b57b9">ptList</a>,</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a51745da5605244e6836815c2621291c6">   28</a></span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a51745da5605244e6836815c2621291c6">ptString</a>,</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a5ee9ca0fbdaf19701d3a9d2aee1982b7">   29</a></span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a5ee9ca0fbdaf19701d3a9d2aee1982b7">ptVector</a>,</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a17deca292052a8fcef57654b12dad497">   30</a></span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a17deca292052a8fcef57654b12dad497">ptColor</a>,</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a5e04384da38fa444bea8be7c15296893">   31</a></span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a5e04384da38fa444bea8be7c15296893">ptVec2</a>,</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a6d4fa990b23328891881e46232ad9ee9">   32</a></span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a6d4fa990b23328891881e46232ad9ee9">ptStringList</a>,</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678afe61d2bb9882dbebf4d39b09fd4ff4c4">   33</a></span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678afe61d2bb9882dbebf4d39b09fd4ff4c4">ptPath</a>,         </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a41d1eff927b80d1839755baef25bc0de">   34</a></span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a41d1eff927b80d1839755baef25bc0de">ptPathList</a>,</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678ad3d5b2bcbf404668f714e13161894864">   35</a></span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678ad3d5b2bcbf404668f714e13161894864">ptEnum</a>,         </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a61c71bea613b5aaa49b769d5652cac1e">   36</a></span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a61c71bea613b5aaa49b769d5652cac1e">ptText</a>          </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;} <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678">UIPropertyType</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classtilde_1_1_property.html">   44</a></span>&#160;<span class="keyword">class </span><a class="code" href="classtilde_1_1_property.html">Property</a> : <span class="keyword">public</span> QObject {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    QVariantList _data;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    QVariantList _defaultData;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    QString _group;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    QString _version;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678">UIPropertyType</a> _type;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">bool</span> _readOnly;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">bool</span> _applyToPd; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classtilde_1_1_property.html">Property</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="classtilde_1_1_property.html">Property</a>(<span class="keyword">const</span> <a class="code" href="classtilde_1_1_property.html">Property</a>&amp; src);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="classtilde_1_1_property.html">Property</a>( <a class="code" href="classtilde_1_1_property.html">Property</a>&amp; src);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">const</span> <a class="code" href="classtilde_1_1_property.html">Property</a> operator=(<span class="keyword">const</span> <a class="code" href="classtilde_1_1_property.html">Property</a>&amp; rval);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="classtilde_1_1_property.html">Property</a> operator=(<a class="code" href="classtilde_1_1_property.html">Property</a>&amp; rval);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// -------</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> set(T val);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> copyDataToDefault(); </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> setVersion(QString version);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> setGroup(QString grp);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> setType(<a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678">UIPropertyType</a> t);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> setRawData(QVariantList data);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> setRawDefaultData(QVariantList data);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> setReadonly(<span class="keywordtype">bool</span> v);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">bool</span> readOnly();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// -------</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">void</span> setDefaultType(<a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678">UIPropertyType</a> type);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">// -------</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    QVariantList data();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    QVariantList defaultData();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    QString group();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    QString version();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678">UIPropertyType</a> type();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// -------</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    QSize asQSize();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    QSizeF asQSizeF();</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    QPoint asQPoint();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    QPointF asQPointF();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">float</span> asFloat();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">int</span> asInt();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">bool</span> asBool();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">float</span> asFontSize();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    QColor asQColor();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    QStringList asQStringList();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">string</span> asStdString();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    QString asQString();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    QString asPdSaveString();</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment">// -------</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">// todo move?</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keyword">static</span> QString escapeString(QString input);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keyword">static</span> QString unescapeString(QString input);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;signals:</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">void</span> changed();</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;};</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">#endif // CM_PROPERTY_H</span></div>
+<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678a1db06c37c71db2da72184f4a95822de4"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a1db06c37c71db2da72184f4a95822de4">tilde::ptFloat</a></div><div class="ttdef"><b>Definition:</b> Property.h:24</div></div>
+<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678a5b243208b6e8464c9011febbe298ee72"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a5b243208b6e8464c9011febbe298ee72">tilde::ptSymbol</a></div><div class="ttdef"><b>Definition:</b> Property.h:26</div></div>
+<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678ad3d5b2bcbf404668f714e13161894864"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678ad3d5b2bcbf404668f714e13161894864">tilde::ptEnum</a></div><div class="ttdef"><b>Definition:</b> Property.h:35</div></div>
+<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678a5e04384da38fa444bea8be7c15296893"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a5e04384da38fa444bea8be7c15296893">tilde::ptVec2</a></div><div class="ttdef"><b>Definition:</b> Property.h:31</div></div>
+<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678a61c71bea613b5aaa49b769d5652cac1e"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a61c71bea613b5aaa49b769d5652cac1e">tilde::ptText</a></div><div class="ttdoc">index and option list </div><div class="ttdef"><b>Definition:</b> Property.h:36</div></div>
+<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678aa78fbb776b0ce15d217d41849e927434"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678aa78fbb776b0ce15d217d41849e927434">tilde::ptInt</a></div><div class="ttdef"><b>Definition:</b> Property.h:25</div></div>
+<div class="ttc" id="classtilde_1_1_property_html"><div class="ttname"><a href="classtilde_1_1_property.html">tilde::Property</a></div><div class="ttdoc">property handling class for ui object. </div><div class="ttdef"><b>Definition:</b> Property.h:44</div></div>
+<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678afe61d2bb9882dbebf4d39b09fd4ff4c4"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678afe61d2bb9882dbebf4d39b09fd4ff4c4">tilde::ptPath</a></div><div class="ttdef"><b>Definition:</b> Property.h:33</div></div>
+<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678a17deca292052a8fcef57654b12dad497"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a17deca292052a8fcef57654b12dad497">tilde::ptColor</a></div><div class="ttdef"><b>Definition:</b> Property.h:30</div></div>
+<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678a88fe92d6108e20e151927c136b6fa622"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a88fe92d6108e20e151927c136b6fa622">tilde::ptBool</a></div><div class="ttdef"><b>Definition:</b> Property.h:23</div></div>
+<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678">tilde::UIPropertyType</a></div><div class="ttdeci">UIPropertyType</div><div class="ttdef"><b>Definition:</b> Property.h:22</div></div>
+<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678a41d1eff927b80d1839755baef25bc0de"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a41d1eff927b80d1839755baef25bc0de">tilde::ptPathList</a></div><div class="ttdoc">file or directory </div><div class="ttdef"><b>Definition:</b> Property.h:34</div></div>
+<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678a51745da5605244e6836815c2621291c6"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a51745da5605244e6836815c2621291c6">tilde::ptString</a></div><div class="ttdef"><b>Definition:</b> Property.h:28</div></div>
+<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678a06915cb0cd2f8ecdc79f4460053b57b9"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a06915cb0cd2f8ecdc79f4460053b57b9">tilde::ptList</a></div><div class="ttdef"><b>Definition:</b> Property.h:27</div></div>
+<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678a6d4fa990b23328891881e46232ad9ee9"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a6d4fa990b23328891881e46232ad9ee9">tilde::ptStringList</a></div><div class="ttdef"><b>Definition:</b> Property.h:32</div></div>
+<div class="ttc" id="namespacetilde_html_adf197f0d32be34a20edc8bfbd53bd678a5ee9ca0fbdaf19701d3a9d2aee1982b7"><div class="ttname"><a href="namespacetilde.html#adf197f0d32be34a20edc8bfbd53bd678a5ee9ca0fbdaf19701d3a9d2aee1982b7">tilde::ptVector</a></div><div class="ttdef"><b>Definition:</b> Property.h:29</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 25 2017 17:24:58 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 25 2017 19:40:57 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
