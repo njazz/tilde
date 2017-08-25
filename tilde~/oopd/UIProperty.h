@@ -172,7 +172,7 @@ public:
 */
     }
 
-    static void updateUI(void* uiobj, ceammc::AtomList msg)
+    static void updateUI(void* uiobj, PdArguments msg)
     {
         //XPD-TODO
         /*

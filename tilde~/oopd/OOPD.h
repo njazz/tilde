@@ -14,15 +14,13 @@
 #include <map>
 #include <set>
 
-//todo
-#include "ceammc_atomlist.h"
 
 //
 #include <QDebug>
 #include <QStringList>
 
 using namespace std;
-using namespace ceammc;
+//using namespace ceammc;
 
 namespace tilde {
 

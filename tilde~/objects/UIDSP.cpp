@@ -5,9 +5,6 @@
 
 #include "CanvasView.h"
 #include "UIObjectData.h"
-// #include <pdServer.hpp>
-
-// #include "ceammc_atomlist.h"
 #include "../../xpd-transition/xpd-headers.h"
 
 namespace tilde {

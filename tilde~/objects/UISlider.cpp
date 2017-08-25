@@ -7,7 +7,6 @@
 #include "UIObjectData.h"
 #include <QStyleOptionGraphicsItem>
 
-//#include "ceammc_atomlist.h"
 #include "../../xpd-transition/xpd-headers.h"
 
 namespace tilde {
