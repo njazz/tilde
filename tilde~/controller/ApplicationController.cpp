@@ -78,7 +78,7 @@ ApplicationController::ApplicationController()
 
     _consoleObserver->setWindow(_pdWindow);
 
-    mainServerInstance()->post("Server started");
+    ApplicationController::post("Server started");
 
     FileParser::setAppController(this);
 
@@ -150,6 +150,7 @@ ApplicationController::ApplicationController()
     qDebug() << _filePaths->externalsDirList();
 
     QStringList paths = _filePaths->externalsDirList();
+
     // external paths
     for (int i = 0; i < paths.size(); i++) {
         mainServerInstance()->addSearchPath(paths.at(i).toStdString());
@@ -164,8 +165,8 @@ ApplicationController::ApplicationController()
     Preferences::inst().create("Paths", "Folders", "0.1", paths + paths2);
     Preferences::inst().get("Paths")->setType(ptStringList);
 
-    //mainServerInstance()->post("tilde~ started");
-    //mainServerInstance()->post("----");
+    //applicationController::post("tilde~ started");
+    //applicationController::post("----");
 
     _newFilenameCounter = 1;
 
@@ -178,7 +179,7 @@ ApplicationController::ApplicationController()
 
     //applicationController::post(bb.toStdString());
 
-    mainServerInstance()->post(bb.toStdString());
+    ApplicationController::post(bb);
 
     Preferences::inst().readFromTextFile();
 };
@@ -317,7 +318,11 @@ void ApplicationController::newScript()
 ObjectId ApplicationController::slotCreateObject(CanvasPtr canvas, string name)
 {
     assert(canvas);
-    ObjectId serverObject = canvas->createObject(name, 0, 0);
+    //shared_ptr<PdCanvas> c = shared_ptr<PdCanvas>(canvas);
+
+    shared_ptr< PdCanvas > c = static_pointer_cast< PdCanvas >(canvas);
+
+    ObjectId serverObject = c->PdCanvas::createObject(name, 0, 0);
     return serverObject;
 }
 
@@ -326,7 +331,8 @@ void ApplicationController::post(QString text)
     if (!_theServerInstance)
         return;
 
-    _theServerInstance->post(text.toStdString());
+    shared_ptr <PdLocalProcess> ptr = static_pointer_cast <PdLocalProcess> (_theServerInstance);
+    ptr->PdLocalProcess::post(text.toStdString());
 }
 
 void ApplicationController::loadAllLibraries()

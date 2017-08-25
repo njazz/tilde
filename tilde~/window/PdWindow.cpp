@@ -24,6 +24,8 @@ static QString cm_log_string;
 
 void PdWindow::postSlot(QString text)
 {
+    text.append("\n");
+
     //temporary
     if (!text.length())
         return;
