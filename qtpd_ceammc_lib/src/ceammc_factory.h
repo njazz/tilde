@@ -14,7 +14,7 @@
 #ifndef CEAMMC_OBJECTCLASS_H
 #define CEAMMC_OBJECTCLASS_H
 
-#include <m_pd.h>
+//#include <m_pd.h>
 #include <map>
 #include <set>
 #include <string>

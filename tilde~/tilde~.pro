@@ -253,10 +253,10 @@ HEADERS  += \
     graphicobjects/UINewPatchcord.h \
     graphicobjects/CanvasView.h \
 #### lib headers
-    lib_headers/g_canvas.h \
-    lib_headers/m_pd.h \
-    lib_headers/ceammc_atomlist.h \
-    lib_headers/ceammc_atom.h \
+#    lib_headers/g_canvas.h \
+#    lib_headers/m_pd.h \
+#    lib_headers/ceammc_atomlist.h \
+#    lib_headers/ceammc_atom.h \
 #### controller
     controller/ApplicationController.h \
     controller/PatchWindowController.h \
