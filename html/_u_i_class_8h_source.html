@@ -338,152 +338,161 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="comment">// ---------------------------------------------------------------</span></div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;</div>
-<div class="line"><a name="l00265"></a><span class="lineno"><a class="line" href="classtilde_1_1_u_i_class.html#a36bb7b2e773f812d5db3acbf6d7e56b8">  265</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#a36bb7b2e773f812d5db3acbf6d7e56b8">msgNewClass</a>(AtomList msg)</div>
+<div class="line"><a name="l00265"></a><span class="lineno"><a class="line" href="classtilde_1_1_u_i_class.html#abacd6ac6def75a557ad63d6a78ed10a4">  265</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#abacd6ac6def75a557ad63d6a78ed10a4">msgNewClass</a>(PdArguments msg)</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    {</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <span class="keywordflow">if</span> (_dynamicClass) {</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            _opClass = <span class="keyword">new</span> <a class="code" href="classtilde_1_1_o_p_class.html">OPClass</a>(msg.at(1).asString());</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            <span class="comment">// TODO</span></div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            <span class="comment">// cmp_post(&quot;cannot create new class - use empty &#39;pdclass&#39; box for dynamic class creation&quot;);</span></div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        }</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    }</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;</div>
-<div class="line"><a name="l00276"></a><span class="lineno"><a class="line" href="classtilde_1_1_u_i_class.html#aa361275e9fd5a65873895a7ed2373d61">  276</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#aa361275e9fd5a65873895a7ed2373d61">msgAddProperty</a>(AtomList msg)</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    {</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        _opClass-&gt;<a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#ad0d95b68a8130d1f59a772fa809f6f9b">addProperty</a>(msg.at(1).asString(), msg.at(2).asString());</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    }</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;</div>
-<div class="line"><a name="l00281"></a><span class="lineno"><a class="line" href="classtilde_1_1_u_i_class.html#a6cd84bda2506e2f9e89286906bb3e8b1">  281</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#a6cd84bda2506e2f9e89286906bb3e8b1">msgDelProperty</a>(AtomList msg)</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    {</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        _opClass-&gt;<a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#adc494cc83d0953cd6b4760d42d641152">freeProperty</a>(msg.at(1).asString());</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <span class="comment">//XPD-TODO</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="comment">//</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <span class="comment">/*</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="comment">        if (_dynamicClass) {</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="comment">            _opClass = new OPClass(msg.at(1).asString());</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="comment">        } else {</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="comment">            // TODO</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="comment">            // cmp_post(&quot;cannot create new class - use empty &#39;pdclass&#39; box for dynamic class creation&quot;);</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="comment">        }</span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="comment">        */</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    }</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;</div>
+<div class="line"><a name="l00280"></a><span class="lineno"><a class="line" href="classtilde_1_1_u_i_class.html#a32e5da56d7c8d10c5ac01efe29eabbea">  280</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#a32e5da56d7c8d10c5ac01efe29eabbea">msgAddProperty</a>(PdArguments msg)</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    {</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="comment">//XPD-TODO</span></div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <span class="comment">//_opClass-&gt;addProperty(msg.at(1).asString(), msg.at(2).asString());</span></div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    }</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;</div>
-<div class="line"><a name="l00286"></a><span class="lineno"><a class="line" href="classtilde_1_1_u_i_class.html#a57d5ba8553465ec9e655f46d726e75cd">  286</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#a57d5ba8553465ec9e655f46d726e75cd">msgAddMethod</a>(AtomList msg)</div>
+<div class="line"><a name="l00286"></a><span class="lineno"><a class="line" href="classtilde_1_1_u_i_class.html#ab2605e8b4935fe228a8252b0f43a4052">  286</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#ab2605e8b4935fe228a8252b0f43a4052">msgDelProperty</a>(PdArguments msg)</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    {</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        _opClass-&gt;<a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#a024d1108cecf4bc49dcc764e0e2c2e07">addMethod</a>(msg.at(1).asString(), msg.at(2).asString()); <span class="comment">//addmethod pname sendsymbol</span></div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    }</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;</div>
-<div class="line"><a name="l00291"></a><span class="lineno"><a class="line" href="classtilde_1_1_u_i_class.html#a828dc28c366459fe772d322c9545d4c9">  291</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#a828dc28c366459fe772d322c9545d4c9">msgDelMethod</a>(AtomList msg)</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    {</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        _opClass-&gt;<a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#a70ea9438c1624fa663699610896491d0">freeMethod</a>(msg.at(1).asString());</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    }</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;</div>
-<div class="line"><a name="l00296"></a><span class="lineno"><a class="line" href="classtilde_1_1_u_i_class.html#af9511143c36dd6161aaeb34793240162">  296</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#af9511143c36dd6161aaeb34793240162">msgInfo</a>(AtomList)</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    {</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <span class="keywordflow">if</span> (_opClass) {</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            AtomList l1 = _opClass-&gt;<a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#aa6455b286c372085a933ff1b7ceaefae">getPropertyList</a>();</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            AtomList l2 = _opClass-&gt;<a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#afe849f389700909262e31d6204c1c2bb">getMethodList</a>();</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            AtomList l3 = _opClass-&gt;<a class="code" href="classtilde_1_1_o_o_p_d_class_base.html#aa1e51d8b04897c3f8dbb59c98651e949">getSignalList</a>();</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <span class="comment">//XPD-TODO</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <span class="comment">//_opClass-&gt;freeProperty(msg.at(1).asString());</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    }</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;</div>
+<div class="line"><a name="l00292"></a><span class="lineno"><a class="line" href="classtilde_1_1_u_i_class.html#ad49dd327669b446a6e00fd671b6e76b1">  292</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#ad49dd327669b446a6e00fd671b6e76b1">msgAddMethod</a>(PdArguments msg)</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    {</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="comment">//XPD-TODO</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="comment">//_opClass-&gt;addMethod(msg.at(1).asString(), msg.at(2).asString()); //addmethod pname sendsymbol</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    }</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;</div>
+<div class="line"><a name="l00298"></a><span class="lineno"><a class="line" href="classtilde_1_1_u_i_class.html#a295747f337ed3030bbe5221b96870ba9">  298</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#a295747f337ed3030bbe5221b96870ba9">msgDelMethod</a>(PdArguments msg)</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    {</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <span class="comment">//XPD-TODO</span></div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <span class="comment">//_opClass-&gt;freeMethod(msg.at(1).asString());</span></div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    }</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            QStringList output;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            output += <span class="stringliteral">&quot;class info: &quot;</span>;</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            output += _opClass-&gt;<a class="code" href="classtilde_1_1_o_p_class.html#acfa45ee74ed8b76a57e582ee8532340f">getClassName</a>().c_str();</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            output += <span class="stringliteral">&quot;properties:&quot;</span>;</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; l1.size(); i++) {</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                output += (l1.at(i).asString().c_str());</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            }</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;            output += <span class="stringliteral">&quot;methods:&quot;</span>;</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; l2.size(); i++) {</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                output += (l2.at(i).asString().c_str());</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            }</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            output += <span class="stringliteral">&quot;signals:&quot;</span>;</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; l3.size(); i++) {</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                output += (l3.at(i).asString().c_str());</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            }</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            <span class="comment">// TODO</span></div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            <span class="comment">// cmp_post(output.join(&quot;\n&quot;).toStdString().c_str());</span></div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            <span class="comment">// TODO</span></div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            <span class="comment">//cmp_post(&quot;no class&quot;);</span></div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        }</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    }</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="comment">// ---------------------------------------------------------------</span></div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;</div>
-<div class="line"><a name="l00334"></a><span class="lineno"><a class="line" href="classtilde_1_1_u_i_class.html#a009f56b46c3e06d05f0b733ee79f63f3">  334</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#a009f56b46c3e06d05f0b733ee79f63f3">updateUI</a>(<span class="keywordtype">void</span>* uiobj, AtomList msg)</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    {</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="comment">// message handling here - probably move somewhere else?</span></div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <a class="code" href="classtilde_1_1_u_i_class.html">UIClass</a>* x = (<a class="code" href="classtilde_1_1_u_i_class.html">UIClass</a>*)uiobj;</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="keywordflow">if</span> (msg.size() &lt; 1)</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        <span class="keywordflow">if</span> (!msg.at(0).isSymbol())</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        <span class="keywordflow">if</span> ((msg.at(0).asString() == <span class="stringliteral">&quot;newclass&quot;</span>) &amp;&amp; (msg.size() &gt; 1)) {</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;            x-&gt;<a class="code" href="classtilde_1_1_u_i_class.html#a36bb7b2e773f812d5db3acbf6d7e56b8">msgNewClass</a>(msg);</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        }</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        <span class="keywordflow">if</span> ((msg.at(0).asString() == <span class="stringliteral">&quot;addproperty&quot;</span>) &amp;&amp; (msg.size() &gt; 2)) <span class="comment">//addproperty pname sendsymbol</span></div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            x-&gt;<a class="code" href="classtilde_1_1_u_i_class.html#aa361275e9fd5a65873895a7ed2373d61">msgAddProperty</a>(msg);</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <span class="keywordflow">if</span> ((msg.at(0).asString() == <span class="stringliteral">&quot;delproperty&quot;</span>) &amp;&amp; (msg.size() &gt; 1))</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            x-&gt;<a class="code" href="classtilde_1_1_u_i_class.html#a6cd84bda2506e2f9e89286906bb3e8b1">msgDelProperty</a>(msg);</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <span class="keywordflow">if</span> ((msg.at(0).asString() == <span class="stringliteral">&quot;addmethod&quot;</span>) &amp;&amp; (msg.size() &gt; 2))</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            x-&gt;<a class="code" href="classtilde_1_1_u_i_class.html#a57d5ba8553465ec9e655f46d726e75cd">msgAddMethod</a>(msg);</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        <span class="keywordflow">if</span> ((msg.at(0).asString() == <span class="stringliteral">&quot;delmethod&quot;</span>) &amp;&amp; (msg.size() &gt; 1))</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            x-&gt;<a class="code" href="classtilde_1_1_u_i_class.html#a828dc28c366459fe772d322c9545d4c9">msgDelMethod</a>(msg);</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        <span class="keywordflow">if</span> (msg.at(0).asString() == <span class="stringliteral">&quot;info&quot;</span>)</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;            x-&gt;<a class="code" href="classtilde_1_1_u_i_class.html#af9511143c36dd6161aaeb34793240162">msgInfo</a>(msg);</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        <span class="comment">// -----------</span></div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        <span class="keywordflow">if</span> ((msg.at(0).asString() == <span class="stringliteral">&quot;read&quot;</span>))</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            x-&gt;_opClass-&gt;<a class="code" href="classtilde_1_1_o_p_class.html#a67c83af0c5a567e1f9239d27d9b3977d">readFile</a>();</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <span class="keywordflow">if</span> ((msg.at(0).asString() == <span class="stringliteral">&quot;write&quot;</span>))</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            x-&gt;_opClass-&gt;<a class="code" href="classtilde_1_1_o_p_class.html#a3fe1c3afd4a68bd4c446b16944484116">writeFile</a>();</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        emit((<a class="code" href="classtilde_1_1_u_i_class.html">UIClass</a>*)uiobj)-&gt;updateUISignal();</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    }</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;signals:</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#af956d79d260d7bcf972a858fd56e09d3">mouseMoved</a>();</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#abd2f576c7a7a5d4a16b45f2f5ebe38b4">rightClicked</a>();</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <span class="comment">//void editObject(UIObject* box);</span></div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;signals:</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#a5eee48bcbec319542b40e09d5f759881">updateUISignal</a>();</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    <span class="keywordtype">void</span> updateUISlot()</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    {</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        update();</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    }</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;};</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;}</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="preprocessor">#endif // CM_UICLASS_H</span></div>
+<div class="line"><a name="l00304"></a><span class="lineno"><a class="line" href="classtilde_1_1_u_i_class.html#a9604f3c9c1d84ac0c189eb1e07abd7a8">  304</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#a9604f3c9c1d84ac0c189eb1e07abd7a8">msgInfo</a>(PdArguments)</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    {</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="comment">//XPD-TODO</span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <span class="comment">/*</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="comment">        if (_opClass) {</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="comment">            AtomList l1 = _opClass-&gt;getPropertyList();</span></div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="comment">            AtomList l2 = _opClass-&gt;getMethodList();</span></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="comment">            AtomList l3 = _opClass-&gt;getSignalList();</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="comment">            QStringList output;</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="comment">            output += &quot;class info: &quot;;</span></div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="comment">            output += _opClass-&gt;getClassName().c_str();</span></div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="comment">            output += &quot;properties:&quot;;</span></div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="comment">            for (size_t i = 0; i &lt; l1.size(); i++) {</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="comment">                output += (l1.at(i).asString().c_str());</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="comment">            }</span></div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="comment">            output += &quot;methods:&quot;;</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="comment">            for (size_t i = 0; i &lt; l2.size(); i++) {</span></div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="comment">                output += (l2.at(i).asString().c_str());</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="comment">            }</span></div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;<span class="comment">            output += &quot;signals:&quot;;</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;<span class="comment">            for (size_t i = 0; i &lt; l3.size(); i++) {</span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="comment">                output += (l3.at(i).asString().c_str());</span></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="comment">            }</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="comment">            // TODO</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="comment">            // cmp_post(output.join(&quot;\n&quot;).toStdString().c_str());</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="comment">        } else {</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="comment">            // TODO</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="comment">            //cmp_post(&quot;no class&quot;);</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="comment">        }</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="comment">        */</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    }</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="comment">// ---------------------------------------------------------------</span></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;</div>
+<div class="line"><a name="l00344"></a><span class="lineno"><a class="line" href="classtilde_1_1_u_i_class.html#a0398f52c339a5c5283a1365bae8a6084">  344</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#a0398f52c339a5c5283a1365bae8a6084">updateUI</a>(<span class="keywordtype">void</span>* uiobj, PdArguments msg)</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    {</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        <span class="comment">//XPD-TODO</span></div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        <span class="comment">/*</span></div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="comment">        // message handling here - probably move somewhere else?</span></div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="comment">        UIClass* x = (UIClass*)uiobj;</span></div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="comment">        if (msg.size() &lt; 1)</span></div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="comment">            return;</span></div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="comment">        if (!msg.at(0).isSymbol())</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="comment">            return;</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="comment">        if ((msg.at(0).asString() == &quot;newclass&quot;) &amp;&amp; (msg.size() &gt; 1)) {</span></div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;<span class="comment">            x-&gt;msgNewClass(msg);</span></div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="comment">        }</span></div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="comment">        if ((msg.at(0).asString() == &quot;addproperty&quot;) &amp;&amp; (msg.size() &gt; 2)) //addproperty pname sendsymbol</span></div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="comment">            x-&gt;msgAddProperty(msg);</span></div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="comment">        if ((msg.at(0).asString() == &quot;delproperty&quot;) &amp;&amp; (msg.size() &gt; 1))</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="comment">            x-&gt;msgDelProperty(msg);</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="comment">        if ((msg.at(0).asString() == &quot;addmethod&quot;) &amp;&amp; (msg.size() &gt; 2))</span></div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="comment">            x-&gt;msgAddMethod(msg);</span></div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;<span class="comment">        if ((msg.at(0).asString() == &quot;delmethod&quot;) &amp;&amp; (msg.size() &gt; 1))</span></div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;<span class="comment">            x-&gt;msgDelMethod(msg);</span></div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="comment">        if (msg.at(0).asString() == &quot;info&quot;)</span></div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="comment">            x-&gt;msgInfo(msg);</span></div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="comment">        // -----------</span></div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;<span class="comment">        if ((msg.at(0).asString() == &quot;read&quot;))</span></div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="comment">            x-&gt;_opClass-&gt;readFile();</span></div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="comment">        if ((msg.at(0).asString() == &quot;write&quot;))</span></div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;<span class="comment">            x-&gt;_opClass-&gt;writeFile();</span></div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;<span class="comment">        emit((UIClass*)uiobj)-&gt;updateUISignal();</span></div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;<span class="comment">        */</span></div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    }</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;signals:</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#af956d79d260d7bcf972a858fd56e09d3">mouseMoved</a>();</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#abd2f576c7a7a5d4a16b45f2f5ebe38b4">rightClicked</a>();</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    <span class="comment">//void editObject(UIObject* box);</span></div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;signals:</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_class.html#a5eee48bcbec319542b40e09d5f759881">updateUISignal</a>();</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    <span class="keywordtype">void</span> updateUISlot()</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    {</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        update();</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    }</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;};</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;}</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;<span class="preprocessor">#endif // CM_UICLASS_H</span></div>
 <div class="ttc" id="classtilde_1_1_u_i_item_html_ad5f625724d2155c2a0c1db5e878d6bce"><div class="ttname"><a href="classtilde_1_1_u_i_item.html#ad5f625724d2155c2a0c1db5e878d6bce">tilde::UIItem::height</a></div><div class="ttdeci">float height()</div><div class="ttdef"><b>Definition:</b> UIItem.h:43</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_box_html_a141a14e6aac256fc1bb94f4cb13e4cba"><div class="ttname"><a href="classtilde_1_1_u_i_box.html#a141a14e6aac256fc1bb94f4cb13e4cba">tilde::UIBox::fromQString</a></div><div class="ttdeci">void fromQString(QString message)</div><div class="ttdoc">basic mouse up </div><div class="ttdef"><b>Definition:</b> UIBox.cpp:206</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_class_html_af956d79d260d7bcf972a858fd56e09d3"><div class="ttname"><a href="classtilde_1_1_u_i_class.html#af956d79d260d7bcf972a858fd56e09d3">tilde::UIClass::mouseMoved</a></div><div class="ttdeci">void mouseMoved()</div></div>
-<div class="ttc" id="classtilde_1_1_o_o_p_d_class_base_html_ad0d95b68a8130d1f59a772fa809f6f9b"><div class="ttname"><a href="classtilde_1_1_o_o_p_d_class_base.html#ad0d95b68a8130d1f59a772fa809f6f9b">tilde::OOPDClassBase::addProperty</a></div><div class="ttdeci">void addProperty(string propertyName, string referenceName)</div><div class="ttdef"><b>Definition:</b> OOPDClassBase.h:95</div></div>
 <div class="ttc" id="_u_i_object_8h_html"><div class="ttname"><a href="_u_i_object_8h.html">UIObject.h</a></div></div>
 <div class="ttc" id="classtilde_1_1_u_i_class_html_a12c0073096d0c7178b308a2523c9fd05"><div class="ttname"><a href="classtilde_1_1_u_i_class.html#a12c0073096d0c7178b308a2523c9fd05">tilde::UIClass::paint</a></div><div class="ttdeci">virtual void paint(QPainter *p, const QStyleOptionGraphicsItem *, QWidget *)</div><div class="ttdoc">paint event </div><div class="ttdef"><b>Definition:</b> UIClass.h:132</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_class_html_a5fe8367b76ec025cb17ca7b740ba4363"><div class="ttname"><a href="classtilde_1_1_u_i_class.html#a5fe8367b76ec025cb17ca7b740ba4363">tilde::UIClass::mouseReleaseEvent</a></div><div class="ttdeci">void mouseReleaseEvent(QGraphicsSceneMouseEvent *)</div><div class="ttdoc">mouse up </div><div class="ttdef"><b>Definition:</b> UIClass.h:221</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_class_html_a828dc28c366459fe772d322c9545d4c9"><div class="ttname"><a href="classtilde_1_1_u_i_class.html#a828dc28c366459fe772d322c9545d4c9">tilde::UIClass::msgDelMethod</a></div><div class="ttdeci">void msgDelMethod(AtomList msg)</div><div class="ttdef"><b>Definition:</b> UIClass.h:291</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_class_html_a009f56b46c3e06d05f0b733ee79f63f3"><div class="ttname"><a href="classtilde_1_1_u_i_class.html#a009f56b46c3e06d05f0b733ee79f63f3">tilde::UIClass::updateUI</a></div><div class="ttdeci">static void updateUI(void *uiobj, AtomList msg)</div><div class="ttdef"><b>Definition:</b> UIClass.h:334</div></div>
 <div class="ttc" id="classtilde_1_1_property_list_html_a96d9bd8241d7ce38baeb2725fd5a7b19"><div class="ttname"><a href="classtilde_1_1_property_list.html#a96d9bd8241d7ce38baeb2725fd5a7b19">tilde::PropertyList::get</a></div><div class="ttdeci">Property * get(QString pName)</div><div class="ttdef"><b>Definition:</b> PropertyList.cpp:22</div></div>
 <div class="ttc" id="classtilde_1_1_property_html_a681a8d1c33e548a839aeb50221183543"><div class="ttname"><a href="classtilde_1_1_property.html#a681a8d1c33e548a839aeb50221183543">tilde::Property::asQColor</a></div><div class="ttdeci">QColor asQColor()</div><div class="ttdef"><b>Definition:</b> Property.cpp:229</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_class_html"><div class="ttname"><a href="classtilde_1_1_u_i_class.html">tilde::UIClass</a></div><div class="ttdoc">gui object: oopd class (pdclass) </div><div class="ttdef"><b>Definition:</b> UIClass.h:30</div></div>
-<div class="ttc" id="classtilde_1_1_o_o_p_d_class_base_html_afe849f389700909262e31d6204c1c2bb"><div class="ttname"><a href="classtilde_1_1_o_o_p_d_class_base.html#afe849f389700909262e31d6204c1c2bb">tilde::OOPDClassBase::getMethodList</a></div><div class="ttdeci">AtomList getMethodList()</div><div class="ttdef"><b>Definition:</b> OOPDClassBase.h:128</div></div>
 <div class="ttc" id="_port_8h_html"><div class="ttname"><a href="_port_8h.html">Port.h</a></div></div>
 <div class="ttc" id="classtilde_1_1_u_i_item_html_a3b30e6acf11094c1205833be9eaec1fa"><div class="ttname"><a href="classtilde_1_1_u_i_item.html#a3b30e6acf11094c1205833be9eaec1fa">tilde::UIItem::width</a></div><div class="ttdeci">float width()</div><div class="ttdef"><b>Definition:</b> UIItem.h:42</div></div>
 <div class="ttc" id="classtilde_1_1_o_p_class_html_a3fe1c3afd4a68bd4c446b16944484116"><div class="ttname"><a href="classtilde_1_1_o_p_class.html#a3fe1c3afd4a68bd4c446b16944484116">tilde::OPClass::writeFile</a></div><div class="ttdeci">void writeFile()</div><div class="ttdef"><b>Definition:</b> OPClass.cpp:102</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_class_html_a6cd84bda2506e2f9e89286906bb3e8b1"><div class="ttname"><a href="classtilde_1_1_u_i_class.html#a6cd84bda2506e2f9e89286906bb3e8b1">tilde::UIClass::msgDelProperty</a></div><div class="ttdeci">void msgDelProperty(AtomList msg)</div><div class="ttdef"><b>Definition:</b> UIClass.h:281</div></div>
-<div class="ttc" id="classtilde_1_1_o_p_class_html_a67c83af0c5a567e1f9239d27d9b3977d"><div class="ttname"><a href="classtilde_1_1_o_p_class.html#a67c83af0c5a567e1f9239d27d9b3977d">tilde::OPClass::readFile</a></div><div class="ttdeci">void readFile()</div><div class="ttdef"><b>Definition:</b> OPClass.cpp:56</div></div>
+<div class="ttc" id="classtilde_1_1_u_i_class_html_a295747f337ed3030bbe5221b96870ba9"><div class="ttname"><a href="classtilde_1_1_u_i_class.html#a295747f337ed3030bbe5221b96870ba9">tilde::UIClass::msgDelMethod</a></div><div class="ttdeci">void msgDelMethod(PdArguments msg)</div><div class="ttdef"><b>Definition:</b> UIClass.h:298</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_class_html_a78e8cec2d1f3a83216a0235dd8d3e950"><div class="ttname"><a href="classtilde_1_1_u_i_class.html#a78e8cec2d1f3a83216a0235dd8d3e950">tilde::UIClass::mouseMoveEvent</a></div><div class="ttdeci">void mouseMoveEvent(QGraphicsSceneMouseEvent *event)</div><div class="ttdoc">mouse move </div><div class="ttdef"><b>Definition:</b> UIClass.h:230</div></div>
 <div class="ttc" id="_property_list_8h_html"><div class="ttname"><a href="_property_list_8h.html">PropertyList.h</a></div></div>
 <div class="ttc" id="classtilde_1_1_u_i_item_html_a5ec3655bd51139c73a9fcceb8ea0f57f"><div class="ttname"><a href="classtilde_1_1_u_i_item.html#a5ec3655bd51139c73a9fcceb8ea0f57f">tilde::UIItem::dragOffset</a></div><div class="ttdeci">QPoint dragOffset</div><div class="ttdef"><b>Definition:</b> UIItem.h:31</div></div>
@@ -491,10 +500,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="m__pd_8h_html_afc86fc309b3f7a01b7825ec451ab4714"><div class="ttname"><a href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a></div><div class="ttdeci">#define t_canvas</div><div class="ttdef"><b>Definition:</b> m_pd.h:205</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_item_html_a8444f00500feeed756a720dd01a44579"><div class="ttname"><a href="classtilde_1_1_u_i_item.html#a8444f00500feeed756a720dd01a44579">tilde::UIItem::bgColor</a></div><div class="ttdeci">QColor bgColor()</div><div class="ttdef"><b>Definition:</b> UIItem.h:49</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_object_html_a00b379a6f643ed20243f1f00f6ec3d79"><div class="ttname"><a href="classtilde_1_1_u_i_object.html#a00b379a6f643ed20243f1f00f6ec3d79">tilde::UIObject::properties</a></div><div class="ttdeci">PropertyList * properties()</div><div class="ttdoc">&gt;init properties for the class - called from constructor </div><div class="ttdef"><b>Definition:</b> UIObject.cpp:217</div></div>
-<div class="ttc" id="classtilde_1_1_o_p_class_html_acfa45ee74ed8b76a57e582ee8532340f"><div class="ttname"><a href="classtilde_1_1_o_p_class.html#acfa45ee74ed8b76a57e582ee8532340f">tilde::OPClass::getClassName</a></div><div class="ttdeci">string getClassName()</div><div class="ttdef"><b>Definition:</b> OPClass.h:140</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_object_html_a13399db82d90a6970662d59abe2fa1ba"><div class="ttname"><a href="classtilde_1_1_u_i_object.html#a13399db82d90a6970662d59abe2fa1ba">tilde::UIObject::objectData</a></div><div class="ttdeci">UIObjectData * objectData()</div><div class="ttdef"><b>Definition:</b> UIObject.cpp:102</div></div>
 <div class="ttc" id="namespacetilde_html_a788ec93ba342aa6f356829b22c07cc09a143fc17318e09729527248aed2f91b71"><div class="ttname"><a href="namespacetilde.html#a788ec93ba342aa6f356829b22c07cc09a143fc17318e09729527248aed2f91b71">tilde::em_Unlocked</a></div><div class="ttdef"><b>Definition:</b> CommonTypes.h:14</div></div>
-<div class="ttc" id="classtilde_1_1_o_o_p_d_class_base_html_a024d1108cecf4bc49dcc764e0e2c2e07"><div class="ttname"><a href="classtilde_1_1_o_o_p_d_class_base.html#a024d1108cecf4bc49dcc764e0e2c2e07">tilde::OOPDClassBase::addMethod</a></div><div class="ttdeci">void addMethod(string methodName, string referenceName)</div><div class="ttdef"><b>Definition:</b> OOPDClassBase.h:85</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_class_html_ae3f5fa95ae1c1849f221e492e32dac57"><div class="ttname"><a href="classtilde_1_1_u_i_class.html#ae3f5fa95ae1c1849f221e492e32dac57">tilde::UIClass::~UIClass</a></div><div class="ttdeci">~UIClass()</div><div class="ttdef"><b>Definition:</b> UIClass.h:41</div></div>
 <div class="ttc" id="_preferences_8h_html_a3f95dcdc217e1a88365c8306beaf1c72"><div class="ttname"><a href="_preferences_8h.html#a3f95dcdc217e1a88365c8306beaf1c72">PREF_QSTRING</a></div><div class="ttdeci">#define PREF_QSTRING(x)</div><div class="ttdef"><b>Definition:</b> Preferences.h:17</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_item_html_a77ab63e516415092c5c4c042ebd9845f"><div class="ttname"><a href="classtilde_1_1_u_i_item.html#a77ab63e516415092c5c4c042ebd9845f">tilde::UIItem::moveBox</a></div><div class="ttdeci">void moveBox(UIItem *box, QGraphicsSceneMouseEvent *event)</div></div>
@@ -503,26 +510,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classtilde_1_1_u_i_item_html_ac626f1d95873a6461402821035f54623"><div class="ttname"><a href="classtilde_1_1_u_i_item.html#ac626f1d95873a6461402821035f54623">tilde::UIItem::getEditMode</a></div><div class="ttdeci">t_editMode getEditMode()</div><div class="ttdoc">get edit mode pointer - for inlets/outlets </div><div class="ttdef"><b>Definition:</b> UIItem.cpp:54</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_box_html_a98db148153a8c6bd0211dd9b59061263"><div class="ttname"><a href="classtilde_1_1_u_i_box.html#a98db148153a8c6bd0211dd9b59061263">tilde::UIBox::subpatchController</a></div><div class="ttdeci">PatchWindowController * subpatchController()</div><div class="ttdef"><b>Definition:</b> UIBox.h:72</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_class_html_abd2f576c7a7a5d4a16b45f2f5ebe38b4"><div class="ttname"><a href="classtilde_1_1_u_i_class.html#abd2f576c7a7a5d4a16b45f2f5ebe38b4">tilde::UIClass::rightClicked</a></div><div class="ttdeci">void rightClicked()</div></div>
-<div class="ttc" id="classtilde_1_1_o_o_p_d_class_base_html_aa6455b286c372085a933ff1b7ceaefae"><div class="ttname"><a href="classtilde_1_1_o_o_p_d_class_base.html#aa6455b286c372085a933ff1b7ceaefae">tilde::OOPDClassBase::getPropertyList</a></div><div class="ttdeci">AtomList getPropertyList()</div><div class="ttdef"><b>Definition:</b> OOPDClassBase.h:117</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_class_html_aa361275e9fd5a65873895a7ed2373d61"><div class="ttname"><a href="classtilde_1_1_u_i_class.html#aa361275e9fd5a65873895a7ed2373d61">tilde::UIClass::msgAddProperty</a></div><div class="ttdeci">void msgAddProperty(AtomList msg)</div><div class="ttdef"><b>Definition:</b> UIClass.h:276</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_object_html_a888acce73d2078e9edf9eaf5f91a41d6"><div class="ttname"><a href="classtilde_1_1_u_i_object.html#a888acce73d2078e9edf9eaf5f91a41d6">tilde::UIObject::setInletsPos</a></div><div class="ttdeci">virtual void setInletsPos()</div><div class="ttdoc">returns help patch name with path if the file is found </div><div class="ttdef"><b>Definition:</b> UIObject.cpp:252</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_class_html_a57d5ba8553465ec9e655f46d726e75cd"><div class="ttname"><a href="classtilde_1_1_u_i_class.html#a57d5ba8553465ec9e655f46d726e75cd">tilde::UIClass::msgAddMethod</a></div><div class="ttdeci">void msgAddMethod(AtomList msg)</div><div class="ttdef"><b>Definition:</b> UIClass.h:286</div></div>
 <div class="ttc" id="_preferences_8h_html"><div class="ttname"><a href="_preferences_8h.html">Preferences.h</a></div></div>
 <div class="ttc" id="classtilde_1_1_u_i_box_html_abf2b1ceb9f9cd39e04fb404146f66281"><div class="ttname"><a href="classtilde_1_1_u_i_box.html#abf2b1ceb9f9cd39e04fb404146f66281">tilde::UIBox::autoResize</a></div><div class="ttdeci">virtual void autoResize()</div><div class="ttdoc">custom resize event </div><div class="ttdef"><b>Definition:</b> UIBox.cpp:321</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_object_html_a53a42cf8f19e03aed69c51213de604f6"><div class="ttname"><a href="classtilde_1_1_u_i_object.html#a53a42cf8f19e03aed69c51213de604f6">tilde::UIObject::setOutletsPos</a></div><div class="ttdeci">virtual void setOutletsPos()</div><div class="ttdoc">sets inlet position. could be overriden for custom inlet positions </div><div class="ttdef"><b>Definition:</b> UIObject.cpp:270</div></div>
+<div class="ttc" id="classtilde_1_1_u_i_class_html_ab2605e8b4935fe228a8252b0f43a4052"><div class="ttname"><a href="classtilde_1_1_u_i_class.html#ab2605e8b4935fe228a8252b0f43a4052">tilde::UIClass::msgDelProperty</a></div><div class="ttdeci">void msgDelProperty(PdArguments msg)</div><div class="ttdef"><b>Definition:</b> UIClass.h:286</div></div>
 <div class="ttc" id="_u_i_object_data_8h_html"><div class="ttname"><a href="_u_i_object_data_8h.html">UIObjectData.h</a></div></div>
 <div class="ttc" id="classtilde_1_1_u_i_object_html_a0581cd901c2af0aef333cd246f0df83c"><div class="ttname"><a href="classtilde_1_1_u_i_object.html#a0581cd901c2af0aef333cd246f0df83c">tilde::UIObject::signalEditObject</a></div><div class="ttdeci">void signalEditObject(void *box)</div><div class="ttdoc">basic update - calls update() probably remove later </div></div>
+<div class="ttc" id="classtilde_1_1_u_i_class_html_abacd6ac6def75a557ad63d6a78ed10a4"><div class="ttname"><a href="classtilde_1_1_u_i_class.html#abacd6ac6def75a557ad63d6a78ed10a4">tilde::UIClass::msgNewClass</a></div><div class="ttdeci">void msgNewClass(PdArguments msg)</div><div class="ttdef"><b>Definition:</b> UIClass.h:265</div></div>
 <div class="ttc" id="_u_i_box_8h_html"><div class="ttname"><a href="_u_i_box_8h.html">UIBox.h</a></div></div>
+<div class="ttc" id="classtilde_1_1_u_i_class_html_a9604f3c9c1d84ac0c189eb1e07abd7a8"><div class="ttname"><a href="classtilde_1_1_u_i_class.html#a9604f3c9c1d84ac0c189eb1e07abd7a8">tilde::UIClass::msgInfo</a></div><div class="ttdeci">void msgInfo(PdArguments)</div><div class="ttdef"><b>Definition:</b> UIClass.h:304</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_class_html_a7b885ee198344c4b801be24a0de5352e"><div class="ttname"><a href="classtilde_1_1_u_i_class.html#a7b885ee198344c4b801be24a0de5352e">tilde::UIClass::UIClass</a></div><div class="ttdeci">UIClass()</div><div class="ttdef"><b>Definition:</b> UIClass.cpp:8</div></div>
+<div class="ttc" id="classtilde_1_1_u_i_class_html_a0398f52c339a5c5283a1365bae8a6084"><div class="ttname"><a href="classtilde_1_1_u_i_class.html#a0398f52c339a5c5283a1365bae8a6084">tilde::UIClass::updateUI</a></div><div class="ttdeci">static void updateUI(void *uiobj, PdArguments msg)</div><div class="ttdef"><b>Definition:</b> UIClass.h:344</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_object_html_aeb84701eeb892fc29eaec061729b1754"><div class="ttname"><a href="classtilde_1_1_u_i_object.html#aeb84701eeb892fc29eaec061729b1754">tilde::UIObject::errorBox</a></div><div class="ttdeci">bool errorBox()</div><div class="ttdef"><b>Definition:</b> UIObject.cpp:525</div></div>
-<div class="ttc" id="classtilde_1_1_o_o_p_d_class_base_html_adc494cc83d0953cd6b4760d42d641152"><div class="ttname"><a href="classtilde_1_1_o_o_p_d_class_base.html#adc494cc83d0953cd6b4760d42d641152">tilde::OOPDClassBase::freeProperty</a></div><div class="ttdeci">void freeProperty(string propertyName)</div><div class="ttdef"><b>Definition:</b> OOPDClassBase.h:100</div></div>
-<div class="ttc" id="classtilde_1_1_o_p_class_html"><div class="ttname"><a href="classtilde_1_1_o_p_class.html">tilde::OPClass</a></div><div class="ttdoc">OOPD class structure. </div><div class="ttdef"><b>Definition:</b> OPClass.h:40</div></div>
-<div class="ttc" id="classtilde_1_1_o_o_p_d_class_base_html_a70ea9438c1624fa663699610896491d0"><div class="ttname"><a href="classtilde_1_1_o_o_p_d_class_base.html#a70ea9438c1624fa663699610896491d0">tilde::OOPDClassBase::freeMethod</a></div><div class="ttdeci">void freeMethod(string methodName)</div><div class="ttdef"><b>Definition:</b> OOPDClassBase.h:90</div></div>
-<div class="ttc" id="classtilde_1_1_o_o_p_d_class_base_html_aa1e51d8b04897c3f8dbb59c98651e949"><div class="ttname"><a href="classtilde_1_1_o_o_p_d_class_base.html#aa1e51d8b04897c3f8dbb59c98651e949">tilde::OOPDClassBase::getSignalList</a></div><div class="ttdeci">AtomList getSignalList()</div><div class="ttdef"><b>Definition:</b> OOPDClassBase.h:139</div></div>
+<div class="ttc" id="classtilde_1_1_u_i_class_html_ad49dd327669b446a6e00fd671b6e76b1"><div class="ttname"><a href="classtilde_1_1_u_i_class.html#ad49dd327669b446a6e00fd671b6e76b1">tilde::UIClass::msgAddMethod</a></div><div class="ttdeci">void msgAddMethod(PdArguments msg)</div><div class="ttdef"><b>Definition:</b> UIClass.h:292</div></div>
+<div class="ttc" id="classtilde_1_1_o_p_class_html"><div class="ttname"><a href="classtilde_1_1_o_p_class.html">tilde::OPClass</a></div><div class="ttdoc">OOPD class structure. </div><div class="ttdef"><b>Definition:</b> OPClass.h:38</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_item_html_a9b3bad2ea628153c3fe979acf47a8b4a"><div class="ttname"><a href="classtilde_1_1_u_i_item.html#a9b3bad2ea628153c3fe979acf47a8b4a">tilde::UIItem::selectBox</a></div><div class="ttdeci">void selectBox(UIItem *box, QGraphicsSceneMouseEvent *event)</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_class_html_a36bb7b2e773f812d5db3acbf6d7e56b8"><div class="ttname"><a href="classtilde_1_1_u_i_class.html#a36bb7b2e773f812d5db3acbf6d7e56b8">tilde::UIClass::msgNewClass</a></div><div class="ttdeci">void msgNewClass(AtomList msg)</div><div class="ttdef"><b>Definition:</b> UIClass.h:265</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_class_html_a5eee48bcbec319542b40e09d5f759881"><div class="ttname"><a href="classtilde_1_1_u_i_class.html#a5eee48bcbec319542b40e09d5f759881">tilde::UIClass::updateUISignal</a></div><div class="ttdeci">void updateUISignal()</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_class_html_af9511143c36dd6161aaeb34793240162"><div class="ttname"><a href="classtilde_1_1_u_i_class.html#af9511143c36dd6161aaeb34793240162">tilde::UIClass::msgInfo</a></div><div class="ttdeci">void msgInfo(AtomList)</div><div class="ttdef"><b>Definition:</b> UIClass.h:296</div></div>
+<div class="ttc" id="classtilde_1_1_u_i_class_html_a32e5da56d7c8d10c5ac01efe29eabbea"><div class="ttname"><a href="classtilde_1_1_u_i_class.html#a32e5da56d7c8d10c5ac01efe29eabbea">tilde::UIClass::msgAddProperty</a></div><div class="ttdeci">void msgAddProperty(PdArguments msg)</div><div class="ttdef"><b>Definition:</b> UIClass.h:280</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_item_html_a00841800502136dc7ff5ea6a08badfd7"><div class="ttname"><a href="classtilde_1_1_u_i_item.html#a00841800502136dc7ff5ea6a08badfd7">tilde::UIItem::isSelected</a></div><div class="ttdeci">bool isSelected()</div><div class="ttdoc">deselect object </div><div class="ttdef"><b>Definition:</b> UIItem.cpp:40</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_object_html"><div class="ttname"><a href="classtilde_1_1_u_i_object.html">tilde::UIObject</a></div><div class="ttdef"><b>Definition:</b> UIObject.h:44</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_item_html_aa3d7ccc05e41759009bbcaed46e4ba93"><div class="ttname"><a href="classtilde_1_1_u_i_item.html#aa3d7ccc05e41759009bbcaed46e4ba93">tilde::UIItem::setWidth</a></div><div class="ttdeci">void setWidth(float w)</div><div class="ttdef"><b>Definition:</b> UIItem.h:37</div></div>
@@ -534,7 +539,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 25 2017 14:45:40 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 25 2017 17:24:58 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

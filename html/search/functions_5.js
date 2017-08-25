@@ -26,7 +26,7 @@ var searchData=
   ['focusoutevent',['focusOutEvent',['../classtilde_1_1_object_maker.html#ad19d872908919f00d24f2c85305defb1',1,'tilde::ObjectMaker']]],
   ['foldat',['foldAt',['../classceammc_1_1_atom_list.html#a79e6ebd3e5213019e159d754686985a4',1,'ceammc::AtomList::foldAt(int pos)'],['../classceammc_1_1_atom_list.html#a5a72045c4f01f4d3e47352a4a5922afa',1,'ceammc::AtomList::foldAt(int pos) const ']]],
   ['freebytes',['freebytes',['../m__pd_8h.html#a9ab11ceb8c1c890a24f97634eb7f3b13',1,'m_pd.h']]],
-  ['freeinstanceout',['freeInstanceOut',['../class_o_p_instance.html#acbfe501714db64237b4bbd423f833fbe',1,'OPInstance::freeInstanceOut()'],['../classtilde_1_1_o_p_instance.html#ad4f5f180f7c4385a4f77874cc511e55a',1,'tilde::OPInstance::freeInstanceOut()']]],
+  ['freeinstanceout',['freeInstanceOut',['../class_o_p_instance.html#acbfe501714db64237b4bbd423f833fbe',1,'OPInstance']]],
   ['freemethod',['freeMethod',['../class_o_p_class.html#ac3d95d929ce2a879e7e0e4df74ed173a',1,'OPClass::freeMethod()'],['../class_o_p_instance.html#a8ba786fc3b19bcfbc53451d685c42475',1,'OPInstance::freeMethod()'],['../classtilde_1_1_o_o_p_d_class_base.html#a70ea9438c1624fa663699610896491d0',1,'tilde::OOPDClassBase::freeMethod()'],['../classtilde_1_1_o_p_instance.html#af77a720323b0db965d23cf9573278b6d',1,'tilde::OPInstance::freeMethod()']]],
   ['freemethodoutlet',['freeMethodOutlet',['../class_o_p_class.html#a474d1ecf778cd9c25be8f64981a97b04',1,'OPClass::freeMethodOutlet()'],['../classtilde_1_1_o_p_class.html#aef8bced5422914aaab5f654ba0266f54',1,'tilde::OPClass::freeMethodOutlet()']]],
   ['freemethodpointerout',['freeMethodPointerOut',['../class_o_p_instance.html#af1bfafbc029cc13179fbfcaf24f8471b',1,'OPInstance']]],

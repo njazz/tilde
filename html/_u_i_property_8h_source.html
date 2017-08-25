@@ -103,8 +103,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_port_8h.html">Port.h</a>&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_u_i_object_8h.html">UIObject.h</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_u_i_box_8h.html">UIBox.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_u_i_box_8h.html">UIBox.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_u_i_object_8h.html">UIObject.h</a>&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//#include &quot;cm_pdlink.h&quot;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
@@ -112,8 +112,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;QGraphicsView&gt;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_patch_window_controller_8h.html">PatchWindowController.h</a>&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_patch_window_8h.html">PatchWindow.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_patch_window_8h.html">PatchWindow.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_patch_window_controller_8h.html">PatchWindowController.h</a>&quot;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_preferences_8h.html">Preferences.h</a>&quot;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_property_list_8h.html">PropertyList.h</a>&quot;</span></div>
@@ -122,7 +122,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span>tilde {</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classtilde_1_1_u_i_property.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="classtilde_1_1_u_i_property.html">UIProperty</a> : <span class="keyword">public</span> <a class="code" href="classtilde_1_1_u_i_box.html">UIBox</a> {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">class </span>UIProperty : <span class="keyword">public</span> UIBox {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    Q_OBJECT</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
@@ -131,237 +131,199 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">bool</span> _isAbstraction;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    QString _abstractionPath;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="classtilde_1_1_o_p_class.html">OPClass</a>* _opClass;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classtilde_1_1_o_p_instance.html">OPInstance</a>* _opInstance;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="class_o_p_class.html">OPClass</a>* _opClass;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="class_o_p_instance.html">OPInstance</a>* _opInstance;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    std::string _propertyName;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classtilde_1_1_u_i_property.html#a57b4b47460af69c7f780a052e7b62677">UIProperty</a>(); <span class="comment">//UIObject* parent = 0);</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">explicit</span> UIProperty(); <span class="comment">//UIObject* parent = 0);</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">//~UIProperty();</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">static</span> <a class="code" href="classtilde_1_1_u_i_object.html">UIObject</a>* <a class="code" href="classtilde_1_1_u_i_property.html#a86aeb2b000906681f59844409aba06cf">createObject</a>(QString asQString, <a class="code" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a>* pdCanvas, QGraphicsView* parent = 0);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">static</span> UIObject* createObject(QString asQString, <a class="code" href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a>* pdCanvas, QGraphicsView* parent = 0);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classtilde_1_1_u_i_property.html#ae28dfc4052f9a1ac850fb6eca6c2e884">   59</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_property.html#ae28dfc4052f9a1ac850fb6eca6c2e884">paint</a>(QPainter* p, <span class="keyword">const</span> QStyleOptionGraphicsItem*, QWidget*)</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        QBrush brush(<a class="code" href="classtilde_1_1_u_i_item.html#a8444f00500feeed756a720dd01a44579">bgColor</a>());</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        p-&gt;setBrush(brush);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        p-&gt;drawRect(<a class="code" href="classtilde_1_1_u_i_item.html#af2f09f2423c8c9a240fb870e2babfd2a">boundingRect</a>());</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        p-&gt;setBrush(QBrush());</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        p-&gt;setRenderHint(QPainter::HighQualityAntialiasing, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        p-&gt;scale(scale(), scale());</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="comment">//remove this later</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classtilde_1_1_u_i_box.html#a98db148153a8c6bd0211dd9b59061263">subpatchController</a>()) {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            p-&gt;setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            p-&gt;drawRect(0, 2, <a class="code" href="classtilde_1_1_u_i_item.html#a3b30e6acf11094c1205833be9eaec1fa">width</a>(), <a class="code" href="classtilde_1_1_u_i_item.html#ad5f625724d2155c2a0c1db5e878d6bce">height</a>() - 4);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        QColor rectColor = (<a class="code" href="classtilde_1_1_u_i_object.html#aeb84701eeb892fc29eaec061729b1754">errorBox</a>()) ? QColor(255, 0, 0) : <a class="code" href="classtilde_1_1_u_i_object.html#a00b379a6f643ed20243f1f00f6ec3d79">properties</a>()-&gt;<a class="code" href="classtilde_1_1_property_list.html#a96d9bd8241d7ce38baeb2725fd5a7b19">get</a>(<span class="stringliteral">&quot;BorderColor&quot;</span>)-&gt;<a class="code" href="classtilde_1_1_property.html#a681a8d1c33e548a839aeb50221183543">asQColor</a>(); <span class="comment">//QColor(128, 128, 128);</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        p-&gt;setPen(QPen(rectColor, 1 + _isAbstraction, (<a class="code" href="classtilde_1_1_u_i_object.html#aeb84701eeb892fc29eaec061729b1754">errorBox</a>()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        p-&gt;drawRect(0, 0, <a class="code" href="classtilde_1_1_u_i_item.html#a3b30e6acf11094c1205833be9eaec1fa">width</a>(), <a class="code" href="classtilde_1_1_u_i_item.html#ad5f625724d2155c2a0c1db5e878d6bce">height</a>());</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        QTextOption* op = <span class="keyword">new</span> QTextOption;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        op-&gt;setAlignment(Qt::AlignLeft);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        p-&gt;setPen(QPen(QColor(0, 0, 0), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        p-&gt;setFont(QFont(<a class="code" href="_preferences_8h.html#a3f95dcdc217e1a88365c8306beaf1c72">PREF_QSTRING</a>(<span class="stringliteral">&quot;Font&quot;</span>), <a class="code" href="classtilde_1_1_u_i_object.html#a00b379a6f643ed20243f1f00f6ec3d79">properties</a>()-&gt;<span class="keyword">get</span>(<span class="stringliteral">&quot;FontSize&quot;</span>)-&gt;asFontSize(), 0, <span class="keyword">false</span>));</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        p-&gt;drawText(2, 3, <a class="code" href="classtilde_1_1_u_i_item.html#a3b30e6acf11094c1205833be9eaec1fa">width</a>() - 2, <a class="code" href="classtilde_1_1_u_i_item.html#ad5f625724d2155c2a0c1db5e878d6bce">height</a>() - 3, 0, <a class="code" href="classtilde_1_1_u_i_object.html#a13399db82d90a6970662d59abe2fa1ba">objectData</a>()-&gt;<a class="code" href="classtilde_1_1_u_i_object.html#a866d4c1caec7a5a18567f989599fac93">toQString</a>(), 0);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classtilde_1_1_u_i_item.html#a00841800502136dc7ff5ea6a08badfd7">isSelected</a>()) {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            p-&gt;setPen(QPen(QColor(0, 192, 255), 1, (<a class="code" href="classtilde_1_1_u_i_object.html#aeb84701eeb892fc29eaec061729b1754">errorBox</a>()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            p-&gt;drawRect(0, 0, <a class="code" href="classtilde_1_1_u_i_item.html#a3b30e6acf11094c1205833be9eaec1fa">width</a>(), <a class="code" href="classtilde_1_1_u_i_item.html#ad5f625724d2155c2a0c1db5e878d6bce">height</a>());</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classtilde_1_1_u_i_property.html#a40c9694ba92898a7fc8fb9a3cb6229c6">   95</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_property.html#a40c9694ba92898a7fc8fb9a3cb6229c6">mousePressEvent</a>(QGraphicsSceneMouseEvent* ev)</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="comment">//context menu</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">if</span> (ev-&gt;button() == Qt::RightButton) {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordflow">if</span> (scene()</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                &amp;&amp; !scene()-&gt;views().isEmpty()</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                &amp;&amp; scene()-&gt;views().first()</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                &amp;&amp; scene()-&gt;views().first()-&gt;viewport()) {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                QGraphicsView* v = scene()-&gt;views().first();</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                QPoint pos = v-&gt;viewport()-&gt;mapToGlobal(ev-&gt;pos().toPoint());</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                <span class="comment">// TODO</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <a class="code" href="classtilde_1_1_u_i_object.html#a65158757a2bfbb9c6f5685c7d9130ff8">showPopupMenu</a>(pos + this-&gt;pos().toPoint());</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                ev-&gt;accept();</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            }</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        }</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="comment">//open canvas for subpatch</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classtilde_1_1_u_i_item.html#ac626f1d95873a6461402821035f54623">getEditMode</a>() != <a class="code" href="namespacetilde.html#a788ec93ba342aa6f356829b22c07cc09a143fc17318e09729527248aed2f91b71">em_Unlocked</a>) {</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classtilde_1_1_u_i_box.html#a98db148153a8c6bd0211dd9b59061263">subpatchController</a>()) {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                <a class="code" href="classtilde_1_1_u_i_box.html#a98db148153a8c6bd0211dd9b59061263">subpatchController</a>()-&gt;<a class="code" href="classtilde_1_1_patch_window_controller.html#ab0c9d51cf7a794543c688e678a2451d1">mainWindow</a>()-&gt;show();</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            }</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> paint(QPainter* p, <span class="keyword">const</span> QStyleOptionGraphicsItem*, QWidget*)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        QBrush brush(bgColor());</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        p-&gt;setBrush(brush);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        p-&gt;drawRect(boundingRect());</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        p-&gt;setBrush(QBrush());</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        p-&gt;setRenderHint(QPainter::HighQualityAntialiasing, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        p-&gt;scale(scale(), scale());</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="comment">//remove this later</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">if</span> (subpatchController()) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            p-&gt;setPen(QPen(QColor(192, 192, 192), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            p-&gt;drawRect(0, 2, width(), height() - 4);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        QColor rectColor = (errorBox()) ? QColor(255, 0, 0) : properties()-&gt;get(<span class="stringliteral">&quot;BorderColor&quot;</span>)-&gt;asQColor(); <span class="comment">//QColor(128, 128, 128);</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        p-&gt;setPen(QPen(rectColor, 1 + _isAbstraction, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        p-&gt;drawRect(0, 0, width(), height());</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        QTextOption* op = <span class="keyword">new</span> QTextOption;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        op-&gt;setAlignment(Qt::AlignLeft);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        p-&gt;setPen(QPen(QColor(0, 0, 0), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        p-&gt;setFont(QFont(<a class="code" href="_preferences_8h.html#a3f95dcdc217e1a88365c8306beaf1c72">PREF_QSTRING</a>(<span class="stringliteral">&quot;Font&quot;</span>), properties()-&gt;<span class="keyword">get</span>(<span class="stringliteral">&quot;FontSize&quot;</span>)-&gt;asFontSize(), 0, <span class="keyword">false</span>));</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        p-&gt;drawText(2, 3, width() - 2, height() - 3, 0, objectData()-&gt;toQString(), 0);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">if</span> (isSelected()) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            p-&gt;setPen(QPen(QColor(0, 192, 255), 1, (errorBox()) ? Qt::DashLine : Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            p-&gt;drawRect(0, 0, width(), height());</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">void</span> mousePressEvent(QGraphicsSceneMouseEvent* ev)</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="comment">//context menu</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">if</span> (ev-&gt;button() == Qt::RightButton) {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">if</span> (scene()</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                &amp;&amp; !scene()-&gt;views().isEmpty()</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                &amp;&amp; scene()-&gt;views().first()</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                &amp;&amp; scene()-&gt;views().first()-&gt;viewport()) {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                QGraphicsView* v = scene()-&gt;views().first();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                QPoint pos = v-&gt;viewport()-&gt;mapToGlobal(ev-&gt;pos().toPoint());</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="comment">// TODO</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                showPopupMenu(pos + this-&gt;pos().toPoint());</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                ev-&gt;accept();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="comment">//open canvas for subpatch</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">if</span> (getEditMode() != <a class="code" href="namespacetilde.html#a788ec93ba342aa6f356829b22c07cc09a143fc17318e09729527248aed2f91b71">em_Unlocked</a>) {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="keywordflow">if</span> (subpatchController()) {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                subpatchController()-&gt;mainWindow()-&gt;show();</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">if</span> ((getEditMode() == <a class="code" href="namespacetilde.html#a788ec93ba342aa6f356829b22c07cc09a143fc17318e09729527248aed2f91b71">em_Unlocked</a>) &amp;&amp; isSelected()) {</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">if</span> ((<a class="code" href="classtilde_1_1_u_i_item.html#ac626f1d95873a6461402821035f54623">getEditMode</a>() == <a class="code" href="namespacetilde.html#a788ec93ba342aa6f356829b22c07cc09a143fc17318e09729527248aed2f91b71">em_Unlocked</a>) &amp;&amp; <a class="code" href="classtilde_1_1_u_i_item.html#a00841800502136dc7ff5ea6a08badfd7">isSelected</a>()) {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            emit <a class="code" href="classtilde_1_1_u_i_object.html#a0581cd901c2af0aef333cd246f0df83c">signalEditObject</a>(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        emit <a class="code" href="classtilde_1_1_u_i_item.html#a9b3bad2ea628153c3fe979acf47a8b4a">selectBox</a>(<span class="keyword">this</span>, ev);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <a class="code" href="classtilde_1_1_u_i_item.html#a5ec3655bd51139c73a9fcceb8ea0f57f">dragOffset</a> = ev-&gt;pos().toPoint();</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
-<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="classtilde_1_1_u_i_property.html#ae6d8220adfc2b2aea0590e5200ab9786">  137</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_property.html#ae6d8220adfc2b2aea0590e5200ab9786">mouseReleaseEvent</a>(QGraphicsSceneMouseEvent*) {}</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
-<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="classtilde_1_1_u_i_property.html#ab37c6ca8b104bf01a2dfc12e405685ee">  143</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_property.html#ab37c6ca8b104bf01a2dfc12e405685ee">mouseMoveEvent</a>(QGraphicsSceneMouseEvent* event)</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    {</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordflow">if</span> (event-&gt;buttons() &amp; Qt::LeftButton) {</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            emit <a class="code" href="classtilde_1_1_u_i_item.html#a77ab63e516415092c5c4c042ebd9845f">moveBox</a>(<span class="keyword">this</span>, event);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        }</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keyword">event</span>-&gt;ignore();</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordflow">if</span> ((<a class="code" href="classtilde_1_1_u_i_item.html#ac626f1d95873a6461402821035f54623">getEditMode</a>() != <a class="code" href="namespacetilde.html#a788ec93ba342aa6f356829b22c07cc09a143fc17318e09729527248aed2f91b71">em_Unlocked</a>) &amp;&amp; (<a class="code" href="classtilde_1_1_u_i_box.html#a98db148153a8c6bd0211dd9b59061263">subpatchController</a>())) {</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            setCursor(QCursor(Qt::PointingHandCursor));</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            setCursor(QCursor(Qt::ArrowCursor));</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        }</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    }</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
-<div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="classtilde_1_1_u_i_property.html#a7f36d8dd10328677437e6e46330d74cc">  157</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_property.html#a7f36d8dd10328677437e6e46330d74cc">setPdMessage</a>(QString message)</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    {</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <a class="code" href="classtilde_1_1_u_i_box.html#a141a14e6aac256fc1bb94f4cb13e4cba">fromQString</a>(message);</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <a class="code" href="classtilde_1_1_u_i_box.html#abf2b1ceb9f9cd39e04fb404146f66281">autoResize</a>();</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        QFont myFont(<a class="code" href="_preferences_8h.html#a3f95dcdc217e1a88365c8306beaf1c72">PREF_QSTRING</a>(<span class="stringliteral">&quot;Font&quot;</span>), 11);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        QFontMetrics fm(myFont);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordtype">int</span> new_w = fm.width(QString(<a class="code" href="classtilde_1_1_u_i_object.html#a13399db82d90a6970662d59abe2fa1ba">objectData</a>()-&gt;<a class="code" href="classtilde_1_1_u_i_object.html#a866d4c1caec7a5a18567f989599fac93">toQString</a>())) + 10;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        new_w = (new_w &lt; 25) ? 25 : new_w;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <a class="code" href="classtilde_1_1_u_i_item.html#aa3d7ccc05e41759009bbcaed46e4ba93">setWidth</a>(new_w);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="comment">//editor_-&gt;setFixedWidth(width() - 5);</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="comment">//</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <a class="code" href="classtilde_1_1_u_i_object.html#a888acce73d2078e9edf9eaf5f91a41d6">setInletsPos</a>();</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <a class="code" href="classtilde_1_1_u_i_object.html#a53a42cf8f19e03aed69c51213de604f6">setOutletsPos</a>();</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    }</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
-<div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="classtilde_1_1_u_i_property.html#a9c884162cdf8d2c1ef32270b4b335cc4">  174</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_property.html#a9c884162cdf8d2c1ef32270b4b335cc4">updateUI</a>(<span class="keywordtype">void</span>* uiobj, <a class="code" href="classceammc_1_1_atom_list.html">ceammc::AtomList</a> msg)</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    {</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <a class="code" href="classtilde_1_1_u_i_property.html">UIProperty</a>* b = (<a class="code" href="classtilde_1_1_u_i_property.html">UIProperty</a>*)uiobj;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="comment">//qDebug() &lt;&lt; &quot;method out&quot;;</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keywordflow">if</span> (b-&gt;_opInstance) {</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            <span class="keywordflow">if</span> (msg.<a class="code" href="classceammc_1_1_atom_list.html#ad8682c33d61365c0f715fbfee1b122b2">at</a>(0).<a class="code" href="classceammc_1_1_atom.html#a95c1fb49af53d914fef6d99aaea75b73">asSymbol</a>() == <a class="code" href="m__pd_8h.html#a4449f71b80468e7d6e79a67193e65e0b">gensym</a>(<span class="stringliteral">&quot;bang&quot;</span>)) {</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                AtomList _prop = b-&gt;_opInstance-&gt;<a class="code" href="classtilde_1_1_o_p_instance.html#a978aa03edfbf2af99a530c1a11b4c916">getAtomListProperty</a>(<a class="code" href="m__pd_8h.html#a4449f71b80468e7d6e79a67193e65e0b">gensym</a>(b-&gt;_propertyName.c_str()));</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                QStringList list1;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; _prop.size(); i++) {</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                    list1.append(_prop.at(i).asString().c_str());</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                }</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                <span class="comment">// TODO-PD_OBJECT</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="comment">//                cmp_sendstring((t_pd*)b-&gt;pdObject(), (std::string) &quot;__output &quot; + list1.join(&quot; &quot;).toStdString());</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (msg.<a class="code" href="classceammc_1_1_atom_list.html#ad8682c33d61365c0f715fbfee1b122b2">at</a>(0).<a class="code" href="classceammc_1_1_atom.html#a95c1fb49af53d914fef6d99aaea75b73">asSymbol</a>() == <a class="code" href="m__pd_8h.html#a4449f71b80468e7d6e79a67193e65e0b">gensym</a>(<span class="stringliteral">&quot;set&quot;</span>)) {</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                <span class="comment">// TODO</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                <span class="comment">// /* TODO */ //cmp_post(&quot;set!&quot;);</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                <span class="comment">//AtomList msg2 = msg;</span></div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                <span class="comment">//msg2.at(0) = gensym(b-&gt;_propertyName.c_str());</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                b-&gt;_opInstance-&gt;<a class="code" href="classtilde_1_1_o_p_instance.html#af84fea26156e6bc044762c96d8c03cf7">setAtomListProperty</a>(<a class="code" href="m__pd_8h.html#a4449f71b80468e7d6e79a67193e65e0b">gensym</a>(b-&gt;_propertyName.c_str()), msg); <span class="comment">//.subList(1,msg.size()-1));</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                <span class="comment">//b-&gt;_opInstance-&gt;callSetter(msg2);</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                AtomList fullMsg(<a class="code" href="m__pd_8h.html#a4449f71b80468e7d6e79a67193e65e0b">gensym</a>(b-&gt;_propertyName.c_str()));</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                fullMsg.append(msg);</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                b-&gt;_opInstance-&gt;<a class="code" href="classtilde_1_1_o_p_instance.html#abe65a2f3dd871d181f6ab468586519c3">multipleOutput</a>(fullMsg);</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            }</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        }</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        emit b-&gt;<a class="code" href="classtilde_1_1_u_i_property.html#a59efcc50ff7ac2860c97b3e8632c2f46">updateUISignal</a>();</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    }</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;signals:</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_property.html#a88cd256bcfaed9cbe9f9f5fdf8a1cbfc">mouseMoved</a>();</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_property.html#a6b2ad93cb32afa16965572135a3ec4e8">rightClicked</a>();</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_u_i_property.html#a59efcc50ff7ac2860c97b3e8632c2f46">updateUISignal</a>();</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordtype">void</span> updateUISlot()</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    {</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        update();</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    }</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;};</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;}</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="preprocessor">#endif // CM_BOX_H</span></div>
-<div class="ttc" id="classtilde_1_1_o_p_instance_html_af84fea26156e6bc044762c96d8c03cf7"><div class="ttname"><a href="classtilde_1_1_o_p_instance.html#af84fea26156e6bc044762c96d8c03cf7">tilde::OPInstance::setAtomListProperty</a></div><div class="ttdeci">void setAtomListProperty(t_symbol *propertyName, AtomList list)</div><div class="ttdef"><b>Definition:</b> OPInstance.h:134</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_property_html_a57b4b47460af69c7f780a052e7b62677"><div class="ttname"><a href="classtilde_1_1_u_i_property.html#a57b4b47460af69c7f780a052e7b62677">tilde::UIProperty::UIProperty</a></div><div class="ttdeci">UIProperty()</div><div class="ttdef"><b>Definition:</b> UIProperty.cpp:9</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_item_html_ad5f625724d2155c2a0c1db5e878d6bce"><div class="ttname"><a href="classtilde_1_1_u_i_item.html#ad5f625724d2155c2a0c1db5e878d6bce">tilde::UIItem::height</a></div><div class="ttdeci">float height()</div><div class="ttdef"><b>Definition:</b> UIItem.h:43</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_box_html_a141a14e6aac256fc1bb94f4cb13e4cba"><div class="ttname"><a href="classtilde_1_1_u_i_box.html#a141a14e6aac256fc1bb94f4cb13e4cba">tilde::UIBox::fromQString</a></div><div class="ttdeci">void fromQString(QString message)</div><div class="ttdoc">basic mouse up </div><div class="ttdef"><b>Definition:</b> UIBox.cpp:206</div></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            emit signalEditObject(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        emit selectBox(<span class="keyword">this</span>, ev);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        dragOffset = ev-&gt;pos().toPoint();</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordtype">void</span> mouseReleaseEvent(QGraphicsSceneMouseEvent*) {}</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordtype">void</span> mouseMoveEvent(QGraphicsSceneMouseEvent* event)</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    {</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordflow">if</span> (event-&gt;buttons() &amp; Qt::LeftButton) {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            emit moveBox(<span class="keyword">this</span>, event);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        }</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keyword">event</span>-&gt;ignore();</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">if</span> ((getEditMode() != <a class="code" href="namespacetilde.html#a788ec93ba342aa6f356829b22c07cc09a143fc17318e09729527248aed2f91b71">em_Unlocked</a>) &amp;&amp; (subpatchController())) {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            setCursor(QCursor(Qt::PointingHandCursor));</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            setCursor(QCursor(Qt::ArrowCursor));</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        }</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordtype">void</span> setPdMessage(QString message)</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="comment">//XPD-TODO</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="comment">/*</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment">        fromQString(message);</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment">        autoResize();</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="comment">        QFont myFont(PREF_QSTRING(&quot;Font&quot;), 11);</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment">        QFontMetrics fm(myFont);</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment">        int new_w = fm.width(QString(objectData()-&gt;toQString())) + 10;</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment">        new_w = (new_w &lt; 25) ? 25 : new_w;</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment">        setWidth(new_w);</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment">        //editor_-&gt;setFixedWidth(width() - 5);</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="comment">        //</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="comment">        setInletsPos();</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="comment">        setOutletsPos();</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    }</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> updateUI(<span class="keywordtype">void</span>* uiobj, <a class="code" href="classceammc_1_1_atom_list.html">ceammc::AtomList</a> msg)</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    {</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="comment">//XPD-TODO</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="comment">/*</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="comment">        UIProperty* b = (UIProperty*)uiobj;</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="comment">        //qDebug() &lt;&lt; &quot;method out&quot;;</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="comment">        if (b-&gt;_opInstance) {</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="comment">            if (msg.at(0).asSymbol() == gensym(&quot;bang&quot;)) {</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="comment">                AtomList _prop = b-&gt;_opInstance-&gt;getPdArgumentsProperty(gensym(b-&gt;_propertyName.c_str()));</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="comment">                QStringList list1;</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="comment">                for (size_t i = 0; i &lt; _prop.size(); i++) {</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="comment">                    list1.append(_prop.at(i).asString().c_str());</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="comment">                }</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="comment">                // TODO-PD_OBJECT</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="comment">//                cmp_sendstring((t_pd*)b-&gt;pdObject(), (std::string) &quot;__output &quot; + list1.join(&quot; &quot;).toStdString());</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="comment">            } else if (msg.at(0).asSymbol() == gensym(&quot;set&quot;)) {</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment">                // TODO</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment">                // /* TODO * / //cmp_post(&quot;set!&quot;);</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">                //AtomList msg2 = msg;</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="comment">                //msg2.at(0) = gensym(b-&gt;_propertyName.c_str());</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="comment">                b-&gt;_opInstance-&gt;setPdArgumentsProperty(gensym(b-&gt;_propertyName.c_str()), msg); //.subList(1,msg.size()-1));</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="comment">                //b-&gt;_opInstance-&gt;callSetter(msg2);</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="comment">            } else {</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="comment">                AtomList fullMsg(gensym(b-&gt;_propertyName.c_str()));</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="comment">                fullMsg.append(msg);</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="comment">                b-&gt;_opInstance-&gt;multipleOutput(fullMsg);</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="comment">            }</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="comment">        }</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="comment">        emit b-&gt;updateUISignal();</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    }</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;signals:</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordtype">void</span> mouseMoved();</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordtype">void</span> rightClicked();</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordtype">void</span> updateUISignal();</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keywordtype">void</span> updateUISlot()</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    {</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        update();</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    }</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;};</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;}</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="preprocessor">#endif // CM_BOX_H</span></div>
 <div class="ttc" id="_u_i_object_8h_html"><div class="ttname"><a href="_u_i_object_8h.html">UIObject.h</a></div></div>
-<div class="ttc" id="classtilde_1_1_u_i_property_html"><div class="ttname"><a href="classtilde_1_1_u_i_property.html">tilde::UIProperty</a></div><div class="ttdoc">gui object: oop property box (property) </div><div class="ttdef"><b>Definition:</b> UIProperty.h:35</div></div>
-<div class="ttc" id="classtilde_1_1_o_p_instance_html_a978aa03edfbf2af99a530c1a11b4c916"><div class="ttname"><a href="classtilde_1_1_o_p_instance.html#a978aa03edfbf2af99a530c1a11b4c916">tilde::OPInstance::getAtomListProperty</a></div><div class="ttdeci">AtomList getAtomListProperty(t_symbol *propertyName)</div><div class="ttdef"><b>Definition:</b> OPInstance.h:139</div></div>
-<div class="ttc" id="classtilde_1_1_property_list_html_a96d9bd8241d7ce38baeb2725fd5a7b19"><div class="ttname"><a href="classtilde_1_1_property_list.html#a96d9bd8241d7ce38baeb2725fd5a7b19">tilde::PropertyList::get</a></div><div class="ttdeci">Property * get(QString pName)</div><div class="ttdef"><b>Definition:</b> PropertyList.cpp:22</div></div>
-<div class="ttc" id="classtilde_1_1_property_html_a681a8d1c33e548a839aeb50221183543"><div class="ttname"><a href="classtilde_1_1_property.html#a681a8d1c33e548a839aeb50221183543">tilde::Property::asQColor</a></div><div class="ttdeci">QColor asQColor()</div><div class="ttdef"><b>Definition:</b> Property.cpp:229</div></div>
 <div class="ttc" id="_port_8h_html"><div class="ttname"><a href="_port_8h.html">Port.h</a></div></div>
-<div class="ttc" id="classtilde_1_1_u_i_item_html_a3b30e6acf11094c1205833be9eaec1fa"><div class="ttname"><a href="classtilde_1_1_u_i_item.html#a3b30e6acf11094c1205833be9eaec1fa">tilde::UIItem::width</a></div><div class="ttdeci">float width()</div><div class="ttdef"><b>Definition:</b> UIItem.h:42</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_property_html_a86aeb2b000906681f59844409aba06cf"><div class="ttname"><a href="classtilde_1_1_u_i_property.html#a86aeb2b000906681f59844409aba06cf">tilde::UIProperty::createObject</a></div><div class="ttdeci">static UIObject * createObject(QString asQString, t_canvas *pdCanvas, QGraphicsView *parent=0)</div><div class="ttdef"><b>Definition:</b> UIProperty.cpp:22</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_property_html_a9c884162cdf8d2c1ef32270b4b335cc4"><div class="ttname"><a href="classtilde_1_1_u_i_property.html#a9c884162cdf8d2c1ef32270b4b335cc4">tilde::UIProperty::updateUI</a></div><div class="ttdeci">static void updateUI(void *uiobj, ceammc::AtomList msg)</div><div class="ttdef"><b>Definition:</b> UIProperty.h:174</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_property_html_a88cd256bcfaed9cbe9f9f5fdf8a1cbfc"><div class="ttname"><a href="classtilde_1_1_u_i_property.html#a88cd256bcfaed9cbe9f9f5fdf8a1cbfc">tilde::UIProperty::mouseMoved</a></div><div class="ttdeci">void mouseMoved()</div></div>
 <div class="ttc" id="_property_list_8h_html"><div class="ttname"><a href="_property_list_8h.html">PropertyList.h</a></div></div>
 <div class="ttc" id="_patch_window_8h_html"><div class="ttname"><a href="_patch_window_8h.html">PatchWindow.h</a></div></div>
-<div class="ttc" id="classtilde_1_1_u_i_item_html_a5ec3655bd51139c73a9fcceb8ea0f57f"><div class="ttname"><a href="classtilde_1_1_u_i_item.html#a5ec3655bd51139c73a9fcceb8ea0f57f">tilde::UIItem::dragOffset</a></div><div class="ttdeci">QPoint dragOffset</div><div class="ttdef"><b>Definition:</b> UIItem.h:31</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_object_html_a866d4c1caec7a5a18567f989599fac93"><div class="ttname"><a href="classtilde_1_1_u_i_object.html#a866d4c1caec7a5a18567f989599fac93">tilde::UIObject::toQString</a></div><div class="ttdeci">QString toQString()</div><div class="ttdoc">sets object text data </div><div class="ttdef"><b>Definition:</b> UIObject.cpp:512</div></div>
 <div class="ttc" id="m__pd_8h_html_afc86fc309b3f7a01b7825ec451ab4714"><div class="ttname"><a href="m__pd_8h.html#afc86fc309b3f7a01b7825ec451ab4714">t_canvas</a></div><div class="ttdeci">#define t_canvas</div><div class="ttdef"><b>Definition:</b> m_pd.h:205</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_item_html_a8444f00500feeed756a720dd01a44579"><div class="ttname"><a href="classtilde_1_1_u_i_item.html#a8444f00500feeed756a720dd01a44579">tilde::UIItem::bgColor</a></div><div class="ttdeci">QColor bgColor()</div><div class="ttdef"><b>Definition:</b> UIItem.h:49</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_object_html_a00b379a6f643ed20243f1f00f6ec3d79"><div class="ttname"><a href="classtilde_1_1_u_i_object.html#a00b379a6f643ed20243f1f00f6ec3d79">tilde::UIObject::properties</a></div><div class="ttdeci">PropertyList * properties()</div><div class="ttdoc">&gt;init properties for the class - called from constructor </div><div class="ttdef"><b>Definition:</b> UIObject.cpp:217</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_object_html_a13399db82d90a6970662d59abe2fa1ba"><div class="ttname"><a href="classtilde_1_1_u_i_object.html#a13399db82d90a6970662d59abe2fa1ba">tilde::UIObject::objectData</a></div><div class="ttdeci">UIObjectData * objectData()</div><div class="ttdef"><b>Definition:</b> UIObject.cpp:102</div></div>
 <div class="ttc" id="namespacetilde_html_a788ec93ba342aa6f356829b22c07cc09a143fc17318e09729527248aed2f91b71"><div class="ttname"><a href="namespacetilde.html#a788ec93ba342aa6f356829b22c07cc09a143fc17318e09729527248aed2f91b71">tilde::em_Unlocked</a></div><div class="ttdef"><b>Definition:</b> CommonTypes.h:14</div></div>
 <div class="ttc" id="_preferences_8h_html_a3f95dcdc217e1a88365c8306beaf1c72"><div class="ttname"><a href="_preferences_8h.html#a3f95dcdc217e1a88365c8306beaf1c72">PREF_QSTRING</a></div><div class="ttdeci">#define PREF_QSTRING(x)</div><div class="ttdef"><b>Definition:</b> Preferences.h:17</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_item_html_a77ab63e516415092c5c4c042ebd9845f"><div class="ttname"><a href="classtilde_1_1_u_i_item.html#a77ab63e516415092c5c4c042ebd9845f">tilde::UIItem::moveBox</a></div><div class="ttdeci">void moveBox(UIItem *box, QGraphicsSceneMouseEvent *event)</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_object_html_a65158757a2bfbb9c6f5685c7d9130ff8"><div class="ttname"><a href="classtilde_1_1_u_i_object.html#a65158757a2bfbb9c6f5685c7d9130ff8">tilde::UIObject::showPopupMenu</a></div><div class="ttdeci">void showPopupMenu(QPoint pos)</div><div class="ttdoc">createContextMenu </div><div class="ttdef"><b>Definition:</b> UIObject.cpp:245</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_item_html_af2f09f2423c8c9a240fb870e2babfd2a"><div class="ttname"><a href="classtilde_1_1_u_i_item.html#af2f09f2423c8c9a240fb870e2babfd2a">tilde::UIItem::boundingRect</a></div><div class="ttdeci">QRectF boundingRect() const </div><div class="ttdoc">get edit mode flag value </div><div class="ttdef"><b>Definition:</b> UIItem.h:71</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_property_html_a6b2ad93cb32afa16965572135a3ec4e8"><div class="ttname"><a href="classtilde_1_1_u_i_property.html#a6b2ad93cb32afa16965572135a3ec4e8">tilde::UIProperty::rightClicked</a></div><div class="ttdeci">void rightClicked()</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_item_html_ac626f1d95873a6461402821035f54623"><div class="ttname"><a href="classtilde_1_1_u_i_item.html#ac626f1d95873a6461402821035f54623">tilde::UIItem::getEditMode</a></div><div class="ttdeci">t_editMode getEditMode()</div><div class="ttdoc">get edit mode pointer - for inlets/outlets </div><div class="ttdef"><b>Definition:</b> UIItem.cpp:54</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_box_html_a98db148153a8c6bd0211dd9b59061263"><div class="ttname"><a href="classtilde_1_1_u_i_box.html#a98db148153a8c6bd0211dd9b59061263">tilde::UIBox::subpatchController</a></div><div class="ttdeci">PatchWindowController * subpatchController()</div><div class="ttdef"><b>Definition:</b> UIBox.h:72</div></div>
-<div class="ttc" id="m__pd_8h_html_a4449f71b80468e7d6e79a67193e65e0b"><div class="ttname"><a href="m__pd_8h.html#a4449f71b80468e7d6e79a67193e65e0b">gensym</a></div><div class="ttdeci">EXTERN t_symbol * gensym(const char *s)</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_object_html_a888acce73d2078e9edf9eaf5f91a41d6"><div class="ttname"><a href="classtilde_1_1_u_i_object.html#a888acce73d2078e9edf9eaf5f91a41d6">tilde::UIObject::setInletsPos</a></div><div class="ttdeci">virtual void setInletsPos()</div><div class="ttdoc">returns help patch name with path if the file is found </div><div class="ttdef"><b>Definition:</b> UIObject.cpp:252</div></div>
 <div class="ttc" id="_preferences_8h_html"><div class="ttname"><a href="_preferences_8h.html">Preferences.h</a></div></div>
-<div class="ttc" id="classtilde_1_1_u_i_box_html_abf2b1ceb9f9cd39e04fb404146f66281"><div class="ttname"><a href="classtilde_1_1_u_i_box.html#abf2b1ceb9f9cd39e04fb404146f66281">tilde::UIBox::autoResize</a></div><div class="ttdeci">virtual void autoResize()</div><div class="ttdoc">custom resize event </div><div class="ttdef"><b>Definition:</b> UIBox.cpp:321</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_object_html_a53a42cf8f19e03aed69c51213de604f6"><div class="ttname"><a href="classtilde_1_1_u_i_object.html#a53a42cf8f19e03aed69c51213de604f6">tilde::UIObject::setOutletsPos</a></div><div class="ttdeci">virtual void setOutletsPos()</div><div class="ttdoc">sets inlet position. could be overriden for custom inlet positions </div><div class="ttdef"><b>Definition:</b> UIObject.cpp:270</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_property_html_ae6d8220adfc2b2aea0590e5200ab9786"><div class="ttname"><a href="classtilde_1_1_u_i_property.html#ae6d8220adfc2b2aea0590e5200ab9786">tilde::UIProperty::mouseReleaseEvent</a></div><div class="ttdeci">void mouseReleaseEvent(QGraphicsSceneMouseEvent *)</div><div class="ttdoc">mouse up </div><div class="ttdef"><b>Definition:</b> UIProperty.h:137</div></div>
 <div class="ttc" id="_patch_window_controller_8h_html"><div class="ttname"><a href="_patch_window_controller_8h.html">PatchWindowController.h</a></div></div>
-<div class="ttc" id="classceammc_1_1_atom_html_a95c1fb49af53d914fef6d99aaea75b73"><div class="ttname"><a href="classceammc_1_1_atom.html#a95c1fb49af53d914fef6d99aaea75b73">ceammc::Atom::asSymbol</a></div><div class="ttdeci">t_symbol * asSymbol() const </div></div>
-<div class="ttc" id="classtilde_1_1_u_i_property_html_a59efcc50ff7ac2860c97b3e8632c2f46"><div class="ttname"><a href="classtilde_1_1_u_i_property.html#a59efcc50ff7ac2860c97b3e8632c2f46">tilde::UIProperty::updateUISignal</a></div><div class="ttdeci">void updateUISignal()</div></div>
+<div class="ttc" id="class_o_p_instance_html"><div class="ttname"><a href="class_o_p_instance.html">OPInstance</a></div><div class="ttdef"><b>Definition:</b> oop_common.h:352</div></div>
 <div class="ttc" id="_u_i_object_data_8h_html"><div class="ttname"><a href="_u_i_object_data_8h.html">UIObjectData.h</a></div></div>
-<div class="ttc" id="classtilde_1_1_u_i_object_html_a0581cd901c2af0aef333cd246f0df83c"><div class="ttname"><a href="classtilde_1_1_u_i_object.html#a0581cd901c2af0aef333cd246f0df83c">tilde::UIObject::signalEditObject</a></div><div class="ttdeci">void signalEditObject(void *box)</div><div class="ttdoc">basic update - calls update() probably remove later </div></div>
-<div class="ttc" id="classceammc_1_1_atom_list_html_ad8682c33d61365c0f715fbfee1b122b2"><div class="ttname"><a href="classceammc_1_1_atom_list.html#ad8682c33d61365c0f715fbfee1b122b2">ceammc::AtomList::at</a></div><div class="ttdeci">Atom &amp; at(size_t pos)</div><div class="ttdoc">returns reference to element at specified position </div></div>
 <div class="ttc" id="_u_i_box_8h_html"><div class="ttname"><a href="_u_i_box_8h.html">UIBox.h</a></div></div>
 <div class="ttc" id="classceammc_1_1_atom_list_html"><div class="ttname"><a href="classceammc_1_1_atom_list.html">ceammc::AtomList</a></div><div class="ttdef"><b>Definition:</b> ceammc_atomlist.h:29</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_property_html_a40c9694ba92898a7fc8fb9a3cb6229c6"><div class="ttname"><a href="classtilde_1_1_u_i_property.html#a40c9694ba92898a7fc8fb9a3cb6229c6">tilde::UIProperty::mousePressEvent</a></div><div class="ttdeci">void mousePressEvent(QGraphicsSceneMouseEvent *ev)</div><div class="ttdoc">mouse down </div><div class="ttdef"><b>Definition:</b> UIProperty.h:95</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_object_html_aeb84701eeb892fc29eaec061729b1754"><div class="ttname"><a href="classtilde_1_1_u_i_object.html#aeb84701eeb892fc29eaec061729b1754">tilde::UIObject::errorBox</a></div><div class="ttdeci">bool errorBox()</div><div class="ttdef"><b>Definition:</b> UIObject.cpp:525</div></div>
-<div class="ttc" id="classtilde_1_1_o_p_class_html"><div class="ttname"><a href="classtilde_1_1_o_p_class.html">tilde::OPClass</a></div><div class="ttdoc">OOPD class structure. </div><div class="ttdef"><b>Definition:</b> OPClass.h:40</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_item_html_a9b3bad2ea628153c3fe979acf47a8b4a"><div class="ttname"><a href="classtilde_1_1_u_i_item.html#a9b3bad2ea628153c3fe979acf47a8b4a">tilde::UIItem::selectBox</a></div><div class="ttdeci">void selectBox(UIItem *box, QGraphicsSceneMouseEvent *event)</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_property_html_a7f36d8dd10328677437e6e46330d74cc"><div class="ttname"><a href="classtilde_1_1_u_i_property.html#a7f36d8dd10328677437e6e46330d74cc">tilde::UIProperty::setPdMessage</a></div><div class="ttdeci">void setPdMessage(QString message)</div><div class="ttdef"><b>Definition:</b> UIProperty.h:157</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_item_html_a00841800502136dc7ff5ea6a08badfd7"><div class="ttname"><a href="classtilde_1_1_u_i_item.html#a00841800502136dc7ff5ea6a08badfd7">tilde::UIItem::isSelected</a></div><div class="ttdeci">bool isSelected()</div><div class="ttdoc">deselect object </div><div class="ttdef"><b>Definition:</b> UIItem.cpp:40</div></div>
-<div class="ttc" id="classtilde_1_1_o_p_instance_html"><div class="ttname"><a href="classtilde_1_1_o_p_instance.html">tilde::OPInstance</a></div><div class="ttdoc">The OOPD class instance. </div><div class="ttdef"><b>Definition:</b> OPInstance.h:45</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_object_html"><div class="ttname"><a href="classtilde_1_1_u_i_object.html">tilde::UIObject</a></div><div class="ttdef"><b>Definition:</b> UIObject.h:44</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_property_html_ae28dfc4052f9a1ac850fb6eca6c2e884"><div class="ttname"><a href="classtilde_1_1_u_i_property.html#ae28dfc4052f9a1ac850fb6eca6c2e884">tilde::UIProperty::paint</a></div><div class="ttdeci">virtual void paint(QPainter *p, const QStyleOptionGraphicsItem *, QWidget *)</div><div class="ttdoc">paint event </div><div class="ttdef"><b>Definition:</b> UIProperty.h:59</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_item_html_aa3d7ccc05e41759009bbcaed46e4ba93"><div class="ttname"><a href="classtilde_1_1_u_i_item.html#aa3d7ccc05e41759009bbcaed46e4ba93">tilde::UIItem::setWidth</a></div><div class="ttdeci">void setWidth(float w)</div><div class="ttdef"><b>Definition:</b> UIItem.h:37</div></div>
-<div class="ttc" id="classtilde_1_1_patch_window_controller_html_ab0c9d51cf7a794543c688e678a2451d1"><div class="ttname"><a href="classtilde_1_1_patch_window_controller.html#ab0c9d51cf7a794543c688e678a2451d1">tilde::PatchWindowController::mainWindow</a></div><div class="ttdeci">PatchWindow * mainWindow()</div><div class="ttdef"><b>Definition:</b> PatchWindowController.cpp:171</div></div>
-<div class="ttc" id="classtilde_1_1_o_p_instance_html_abe65a2f3dd871d181f6ab468586519c3"><div class="ttname"><a href="classtilde_1_1_o_p_instance.html#abe65a2f3dd871d181f6ab468586519c3">tilde::OPInstance::multipleOutput</a></div><div class="ttdeci">void multipleOutput(AtomList list)</div><div class="ttdef"><b>Definition:</b> OPInstance.h:158</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_box_html"><div class="ttname"><a href="classtilde_1_1_u_i_box.html">tilde::UIBox</a></div><div class="ttdoc">gui object: standard object box </div><div class="ttdef"><b>Definition:</b> UIBox.h:46</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_property_html_ab37c6ca8b104bf01a2dfc12e405685ee"><div class="ttname"><a href="classtilde_1_1_u_i_property.html#ab37c6ca8b104bf01a2dfc12e405685ee">tilde::UIProperty::mouseMoveEvent</a></div><div class="ttdeci">void mouseMoveEvent(QGraphicsSceneMouseEvent *event)</div><div class="ttdoc">mouse move </div><div class="ttdef"><b>Definition:</b> UIProperty.h:143</div></div>
+<div class="ttc" id="class_o_p_class_html"><div class="ttname"><a href="class_o_p_class.html">OPClass</a></div><div class="ttdef"><b>Definition:</b> oop_common.h:81</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 25 2017 14:45:40 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 25 2017 17:24:58 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

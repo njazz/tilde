@@ -27,6 +27,5 @@ var searchData=
   ['tosymbol',['toSymbol',['../classtilde_1_1_o_p_instance.html#a19976b55075979734dfdf8851d57144d',1,'tilde::OPInstance']]],
   ['triangle_5fheight',['triangle_height',['../class_color___wheel_1_1_private.html#a1b3beb21f41237ce1a37d65e6ea62ab4',1,'Color_Wheel::Private']]],
   ['triangle_5fside',['triangle_side',['../class_color___wheel_1_1_private.html#a5559d40c2cbb35227cbdfbd0f03101ba',1,'Color_Wheel::Private']]],
-  ['type',['type',['../classceammc_1_1_atom.html#a50766d3e9ba18be84057457daa38ee22',1,'ceammc::Atom::type()'],['../classtilde_1_1_property.html#aaa16a5da5aa78a8b67a0536a33ea8214',1,'tilde::Property::type()']]],
-  ['typedinlets',['typedInlets',['../classtilde_1_1_u_i_instance.html#a869b7be0d6d15061dc824be68af954d7',1,'tilde::UIInstance']]]
+  ['type',['type',['../classceammc_1_1_atom.html#a50766d3e9ba18be84057457daa38ee22',1,'ceammc::Atom::type()'],['../classtilde_1_1_property.html#aaa16a5da5aa78a8b67a0536a33ea8214',1,'tilde::Property::type()']]]
 ];
