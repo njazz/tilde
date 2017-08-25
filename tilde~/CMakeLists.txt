@@ -81,8 +81,7 @@ set (SOURCES
     	controller/copyobject.cpp 
     	controller/PatchWindowController.cpp 
     	controller/pdWindowConsoleObserver.cpp 
-    	controller/ApplicationController.cpp 
-    	controller/ServerWorker.cpp 
+    	controller/ApplicationController.cpp  
 #### properties
     	properties/Property.cpp 
     	properties/PropertyList.cpp 
@@ -261,16 +260,23 @@ set (RESOURCES
 )
 
 find_library(PA_LIB portaudio)
-find_library(PDSERVER_LIB pd-server)
 
-set (XPD_STATIC 
-	"${CMAKE_BINARY_DIR}/xpd/src/libxpd_static.a"
+# find_library(PDSERVER_LIB pd-server)
+# find_library(PDSERVER_LIB pd-server)
+
+set (XPD_SHARED 
+	"${CMAKE_BINARY_DIR}/xpd/src/libxpd_shared.dylib"
+)
+
+set (PD_CORE_SHARED 
+	"${CMAKE_BINARY_DIR}/xpd/pd/libpd_core_shared.dylib"
 )
 
 set (LIBS
 	${PA_LIB}
 	${PDSERVER_LIB}
-	${XPD_STATIC}
+	${XPD_SHARED}
+	${PD_CORE_SHARED}
 )
 
 find_library(PYTHON27 Python)
@@ -308,6 +314,11 @@ include_directories(./properties/QtColorPicker/include)
 include_directories(./python)
 include_directories(./python/headers)
 include_directories(./python/py2.7headers)
+include_directories(./xpd-transition/)
+
+include_directories(./../xpd/distrib/variant/include/)
+include_directories(./../xpd/distrib/spdlog/include/)
+include_directories(./../xpd/pd/)
 
 QT5_ADD_RESOURCES( RES_SOURCES ${RESOURCES} )
 QT5_WRAP_UI( UI_HEADERS ${UIS} )

@@ -68,7 +68,8 @@ ApplicationController::ApplicationController()
 
     _consoleObserver = shared_ptr<PdWindowConsoleObserver>(new PdWindowConsoleObserver);
 
-    mainServerInstance()->registerConsoleObserver(_consoleObserver);
+    // XPD-TODO
+    // mainServerInstance()->registerConsoleObserver(_consoleObserver);
 
     _pdWindow = new PdWindow();
     _pdWindow->setAppController(this);
