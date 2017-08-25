@@ -12,8 +12,8 @@
 #include "FileParser.h"
 
 #ifdef WITH_PYTHON
-#include "python/wrappers/py_wrappers.h"
 #include "UIScriptEditor.h"
+#include "python/wrappers/py_wrappers.h"
 #endif
 
 #include "ControllerObserver.h"
@@ -25,38 +25,13 @@
 #include "recentfiles.h"
 #include <assert.h>
 
-
 #include "buildNumber.h"
 
 using namespace std;
 
 namespace tilde {
 
-ProcessPtr ApplicationController::theServerInstance;
-
-void ApplicationController::loadAllLibraries()
-{
-    // XPD-TODO
-    mainServerInstance()->setLogLevel(LOG_DUMP);
-    //_localServer->firstInstance()->setVerboseLevel(4);
-    
-
-
-    QStringList libs = _filePaths->librariesFileList();
-
-    for (int i = 0; i < libs.size(); i++) {
-        // todo rewrite
-        //QStringList path =
-        QString file = libs.at(i).left(libs.at(i).lastIndexOf("."));//libs.at(i).split("/").first() + libs.at(i).split("/").last().split(".").first();
-        //_localServer->firstInstance()->loadLibrary(file.toStdString());
-
-        mainServerInstance()->loadLibrary(file.toStdString());
-    }
-    
-    //_localServer->firstInstance()->setVerboseLevel(1);
-    mainServerInstance()->setLogLevel(LOG_ERROR);
-    
-}
+ProcessPtr ApplicationController::_theServerInstance;
 
 ApplicationController::ApplicationController()
 {
@@ -65,7 +40,9 @@ ApplicationController::ApplicationController()
     QFontDatabase::addApplicationFont(":/fonts/SourceCodePro-Regular.otf");
 
     _filePaths = new FilePaths;
-    _localServer = 0;
+
+    ServerSettings settings("PdServer");
+    _localServer = new PdLocalServer(settings);
 
     ObjectLoader::inst().loadObjects();
 
@@ -81,31 +58,17 @@ ApplicationController::ApplicationController()
 
     TILDE_AUDIOSETTINGS_INIT;
 
-    // XPD-TODO
-
-    /*
-    _serverWorker = new ServerWorker();
-    _serverThread = new QThread();
-
-    connect(_serverThread, &QThread::started, _serverWorker, &ServerWorker::start);
-    connect(_serverThread, &QThread::finished, _serverWorker, &ServerWorker::stop);
-
-    _serverWorker->moveToThread(_serverThread);
-    _serverThread->start();
-    */
-
 #ifdef WITH_PYTHON
     pyWrapper::inst().setAppController(this);
     PythonQtObjectPtr mainContext = pyWrapper::inst().newContext();
     _pythonConsole = new PythonQtScriptingConsole(NULL, mainContext);
 #endif
 
-    _consoleObserver = shared_ptr<PdWindowConsoleObserver> (new PdWindowConsoleObserver);
+    _theServerInstance = mainServerInstance();
+
+    _consoleObserver = shared_ptr<PdWindowConsoleObserver>(new PdWindowConsoleObserver);
 
     mainServerInstance()->registerConsoleObserver(_consoleObserver);
-
-    // TODO
-    theServerInstance = mainServerInstance();
 
     _pdWindow = new PdWindow();
     _pdWindow->setAppController(this);
@@ -214,7 +177,7 @@ ApplicationController::ApplicationController()
     _recentMenu = new QMenu();
 
     _pdWindow->setRecentMenu(_recentMenu);
-    
+
     QString bb = QString("tilde~ build: ") + QString::number(TILDE_BUILD_NUMBER);
 
     //applicationController::post(bb.toStdString());
@@ -226,25 +189,19 @@ ApplicationController::ApplicationController()
 
 ProcessPtr ApplicationController::mainServerInstance()
 {
-    //?
-//    while (!_localServer) {
-//        _localServer = _serverWorker->localServer();
-//    }
-
+    assert(_localServer);
 
     ProcessPtr p = _localServer->processList().at(0);
-
-    //AbstractServerProcess *sp = *p;
-
     return p;
 }
 
 void ApplicationController::newPatchWindowController()
 {
-    qDebug()<<"0";
+    qDebug() << "0";
 
     PatchWindowController* newP = new PatchWindowController(this);
-    if (!newP) return;
+    if (!newP)
+        return;
     newP->setNewFileName(newFileName());
     newP->mainWindow()->show();
 };
@@ -363,18 +320,31 @@ void ApplicationController::newScript()
 ObjectId ApplicationController::slotCreateObject(CanvasPtr canvas, string name)
 {
     assert(canvas);
-
-    // XPD-TODO
-    ObjectId serverObject = canvas->createObject(name,0,0);
-
+    ObjectId serverObject = canvas->createObject(name, 0, 0);
     return serverObject;
 }
 
 void ApplicationController::post(QString text)
 {
-    if (!theServerInstance) return;
+    if (!_theServerInstance)
+        return;
 
-    theServerInstance->post(text.toStdString());
+    _theServerInstance->post(text.toStdString());
+}
 
+void ApplicationController::loadAllLibraries()
+{
+    mainServerInstance()->setLogLevel(LOG_DUMP);
+
+    QStringList libs = _filePaths->librariesFileList();
+
+    for (int i = 0; i < libs.size(); i++) {
+
+        QString file = libs.at(i).left(libs.at(i).lastIndexOf("."));
+
+        mainServerInstance()->loadLibrary(file.toStdString());
+    }
+
+    mainServerInstance()->setLogLevel(LOG_ERROR);
 }
 }

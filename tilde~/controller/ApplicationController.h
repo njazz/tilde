@@ -6,8 +6,8 @@
 
 //#include "pdServer.hpp"
 
-#include "xpd-transition/xpd-headers.h"
 #include "pdWindowConsoleObserver.h"
+#include "xpd-transition/xpd-headers.h"
 
 #include "recentfiles.h"
 
@@ -23,8 +23,6 @@ class PythonQtScriptingConsole;
 #endif
 
 #include <QApplication>
-
-
 
 using namespace xpd;
 
@@ -49,7 +47,7 @@ class ApplicationController : public QObject {
 private:
     PdLocalServer* _localServer;
 
-    ServerWorker* _serverWorker;
+    //ServerWorker* _serverWorker;
     QThread* _serverThread;
 
     PdWindow* _pdWindow;
@@ -67,7 +65,7 @@ private:
     void loadAllLibraries();
 
     // TODO
-    static ProcessPtr theServerInstance;
+    static ProcessPtr _theServerInstance;
 
 #ifdef WITH_PYTHON
     ScriptRunner* _scriptRunner;
@@ -80,7 +78,7 @@ public:
 
     Observer* controllerObserver();
 
-    ServerWorker* serverWorker() { return _serverWorker; };
+    //ServerWorker* serverWorker() { return _serverWorker; };
 
     QString newFileName()
     {
@@ -102,28 +100,28 @@ public:
     }
 #endif
 
-    signals:
-        void getLocalServer(ProcessPtr * ret);
+signals:
+    void getLocalServer(ProcessPtr* ret);
 
-    public slots:
-        void newPatchWindowController();
-        void openFileDialog();
+public slots:
+    void newPatchWindowController();
+    void openFileDialog();
 
-        void pdWindow();
-        void pythonConsole();
+    void pdWindow();
+    void pythonConsole();
 
-        void preferencesWindow();
-        void audioSettingsWindow();
+    void preferencesWindow();
+    void audioSettingsWindow();
 
-        void dspOn();
-        void dspOff();
+    void dspOn();
+    void dspOff();
 
-        void openFile();
+    void openFile();
 
-        void newScript();
+    void newScript();
 
-        ObjectId slotCreateObject(CanvasPtr canvas, string name);
-    };
+    ObjectId slotCreateObject(CanvasPtr canvas, string name);
+};
 }
 
 #endif // CM_PDLINK_H

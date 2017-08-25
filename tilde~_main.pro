@@ -16,8 +16,8 @@ QMAKE_MAC_SDK = macosx10.12
 
 
 SUBDIRS = \
-    $$PWD/../pd-server/src/qt-creator-project/pd-server.pro \
-    $$PWD/../pd-server/src/qt-creator-project/pd-server-tests.pro \
+    # $$PWD/../pd-server/src/qt-creator-project/pd-server.pro \
+    # $$PWD/../pd-server/src/qt-creator-project/pd-server-tests.pro \
     $$PWD/tilde~ \
     $$PWD/tilde~_ui_library \
     $$PWD/tilde~_tests

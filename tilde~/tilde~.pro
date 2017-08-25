@@ -318,6 +318,10 @@ unix: {
     LIBS += -L"/usr/local/lib/" -lportaudio
     LIBS += -L"/usr/local/lib/" -lpd-server
 
+    LIBS += -L"$$PWD/xpd-transition/" -lxpd_static
+    LIBS += -L"$$PWD/xpd-transition/" -lpd_core_static
+    LIBS += -L"$$PWD/xpd-transition/" -lcpd
+
     #LIBS += -L"../qtpd_lib/" -lqtpd
     #LIBS += -L$$OUT_PWD/../../pd-server/src/qt-creator-project -lpd-server
     #LIBS += -L$$OUT_PWD/../qtpd_ceammc_lib/ -lqtpd_ceammc_lib
