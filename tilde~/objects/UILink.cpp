@@ -155,8 +155,11 @@ void UILink::fromQString(QString objData) //setPdMessage(std::string message)
     autoResize();
 }
 
- void UILink::updateUI(AtomList* msg)
+ void UILink::updateUI(t_cpd_list* msg)
 {
+     // XPD-TODO
+
+     /*
     std::string obj_data;
     for (size_t i = 0; i < msg->size(); i++) {
         obj_data += msg->at(i).asString() + " ";
@@ -164,6 +167,7 @@ void UILink::fromQString(QString objData) //setPdMessage(std::string message)
 
     fromQString(obj_data.c_str());
     autoResize();
+    */
 
     update();
 }

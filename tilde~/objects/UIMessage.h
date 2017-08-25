@@ -50,7 +50,7 @@ public:
 
     void setPdMessage(QString message);
 
-    void updateUI(AtomList* list);
+    void updateUI(t_cpd_list* list);
 
     virtual std::string asPdFileString();
 

@@ -9,7 +9,8 @@
 
 #include "UIObjectData.h"
 
-#include "ceammc_atomlist.h"
+//#include "ceammc_atomlist.h"
+#include "../../xpd-transition/xpd-headers.h"
 
 namespace tilde {
 
@@ -374,8 +375,11 @@ void UIMatrix:: mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 // ----------
 
 
-void UIMatrix::updateUI(AtomList* msg)
+void UIMatrix::updateUI(t_cpd_list* msg)
 {
+    // XPD-TODO
+
+    /*
     if ((matrixType() == mt_HRadio) || (matrixType() == mt_VRadio))
         if (msg->size() > 0) {
             if (msg->at(0).isFloat()) {
@@ -386,6 +390,7 @@ void UIMatrix::updateUI(AtomList* msg)
                 PROPERTY_SET("Value", v);
             }
         }
+        */
 
     emit signalCallRepaint();
 }

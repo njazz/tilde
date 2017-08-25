@@ -50,7 +50,7 @@ public:
 
     virtual void fromQString(QString message);
 
-    virtual void updateUI(AtomList* list);
+    virtual void updateUI(t_cpd_list* list);
 
     virtual void sync();
 

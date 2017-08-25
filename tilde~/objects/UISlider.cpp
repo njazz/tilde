@@ -7,7 +7,8 @@
 #include "UIObjectData.h"
 #include <QStyleOptionGraphicsItem>
 
-#include "ceammc_atomlist.h"
+//#include "ceammc_atomlist.h"
+#include "../../xpd-transition/xpd-headers.h"
 
 namespace tilde {
 
@@ -198,8 +199,12 @@ void UISlider::setPdMessage(QString message)
     fromQString(message);
 }
 
-void UISlider::updateUI(AtomList* msg)
+void UISlider::updateUI(t_cpd_list* msg)
 {
+    // XPD-TODO
+
+    /*
+
     if (msg->size() > 0) {
         if (msg->at(0).isFloat())
             _value = msg->at(0).asFloat();
@@ -209,6 +214,8 @@ void UISlider::updateUI(AtomList* msg)
         //            if (x->_value > 1)
         //                x->_value = 1;
     }
+
+    */
 
     emit signalCallRepaint();
 }

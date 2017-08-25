@@ -226,6 +226,7 @@ void PatchWindowController::doCreateObject(UIObject* uiObject)
     uiObject->setParentCanvasView(_windows[0]->canvasView());
 
     uiObject->observer()->setObject(uiObject);
+
     // XPD-TODO
     //uiObject->serverObject()//->ServerObject::registerObserver(uiObject->observer());
 
@@ -234,7 +235,7 @@ void PatchWindowController::doCreateObject(UIObject* uiObject)
     uiObject->sync();
 
     // XPD-TODO
-    // connect(uiObject, &UIObject::signalSendMessage, _appController->serverWorker(), &ServerWorker::sendMessageToObject);
+    connect(uiObject, &UIObject::signalSendMessage, this, &PatchWindowController::sendMessageToObject);
 
     connect(uiObject, &UIObject::selectBox, _windows[0]->canvasView(), &CanvasView::slotSelectBox);
     connect(uiObject, &UIObject::moveBox, _windows[0]->canvasView(), &CanvasView::slotMoveBox);
@@ -916,19 +917,16 @@ UIPatchcord* PatchWindowController::createPatchcordWithoutUndo(UIObject* obj1, i
 
         UIPatchcord* pc = new UIPatchcord(obj1, outport, obj2, inport);
 
+        // XPD-TODO
+        //_serverCanvas->connect(obj1->serverObject(),outlet,obj2->serverObject(), inlet);
+
         if (obj1->pdOutletClass(outlet))
             pc->setPatchcordType(cm_pt_signal);
 
         //qDebug("server patchcord");
 
 
-        // XPD-TODO
-        // qDebug() << "patchcord: " << (long)obj1->serverObject() << outlet << (long)obj2->serverObject() << inlet;
 
-        //replace
-
-        // XPD-TODO
-        // pc->setServerPatchcord(_serverCanvas->createPatchcord(obj1->serverObject(), outlet, obj2->serverObject(), inlet));
 
         _canvasData->addPatchcord(pc);
 
@@ -1061,4 +1059,20 @@ void PatchWindowController::slotRecentMenuAction()
 
     openFile(a->text());
 }
+
+void PatchWindowController::sendMessageToObject(ObjectId object, QString msg)
+{
+    UIObject* obj = (UIObject*)QObject::sender();
+    QString dest = obj->properties()->get("SendSymbol")->asQString();
+
+    // XPD-TODO
+    /*
+    if (dest != "")
+        ServerInstance::sendMessage(dest.toStdString(), msg.toStdString());
+        */
+
+    // XPD-TODO
+    // object->message(msg.toStdString());
+}
+
 }

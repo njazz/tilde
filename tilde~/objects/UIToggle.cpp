@@ -10,7 +10,8 @@
 
 #include "UIObjectData.h"
 
-#include "ceammc_atomlist.h"
+//#include "ceammc_atomlist.h"
+#include "../../xpd-transition/xpd-headers.h"
 
 namespace tilde {
 
@@ -114,6 +115,7 @@ void UIToggle::setPdMessage(QString message)
     fromQString(message);
 }
 
+/*
 void UIToggle::updateUI(void* uiobj, ceammc::AtomList msg)
 {
     //qDebug("update ui");
@@ -126,13 +128,18 @@ void UIToggle::updateUI(void* uiobj, ceammc::AtomList msg)
 
     emit x->signalCallRepaint();
 }
+*/
 
-void UIToggle::updateUI(AtomList* list)
+void UIToggle::updateUI(t_cpd_list* list)
 {
+    // XPD-TODO
+
+    /*
     if (list->size() > 0) {
         if (list->at(0).isFloat())
             _value = list->at(0).asFloat() > 0;
     }
+    */
 
     emit signalCallRepaint();
 }

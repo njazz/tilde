@@ -108,7 +108,7 @@ public:
 
     virtual void sync();
 
-    virtual void updateUI(AtomList* list);
+    virtual void updateUI(t_cpd_list* list);
 
 private slots:
     void editorChanged();

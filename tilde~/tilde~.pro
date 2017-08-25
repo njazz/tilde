@@ -154,7 +154,7 @@ SOURCES += controller/main.cpp\
     controller/PatchWindowController.cpp \
     controller/pdWindowConsoleObserver.cpp \
     controller/ApplicationController.cpp \
-    controller/ServerWorker.cpp \
+    #controller/ServerWorker.cpp \
 #### properties
     properties/Property.cpp \
     properties/PropertyList.cpp \
@@ -261,7 +261,7 @@ HEADERS  += \
     controller/ApplicationController.h \
     controller/PatchWindowController.h \
     controller/ControllerObserver.h \
-    controller/ServerWorker.h \
+    # controller/ServerWorker.h \
     controller/pdWindowConsoleObserver.h \
     controller/patchObserver.h \
     controller/objectObserver.h \

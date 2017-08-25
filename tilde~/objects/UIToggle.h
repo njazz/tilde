@@ -41,8 +41,8 @@ public:
 
     void setPdMessage(QString message);
 
-    static void updateUI(void* uiobj, ceammc::AtomList msg);
-    void updateUI(AtomList* list);
+    //static void updateUI(void* uiobj, ceammc::AtomList msg);
+    void updateUI(t_cpd_list* list);
 };
 }
 

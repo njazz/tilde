@@ -41,7 +41,7 @@ public:
     void mouseReleaseEvent(QGraphicsSceneMouseEvent*);
     // -------
 
-    void updateUI(AtomList* msg);
+    void updateUI(t_cpd_list* msg);
     std::string asPdFileString();
 
     // -----

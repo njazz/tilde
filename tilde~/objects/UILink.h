@@ -52,7 +52,7 @@ public:
     // -------
 
     void fromQString(QString objData);
-    virtual void updateUI(AtomList* msg);
+    virtual void updateUI(t_cpd_list* msg);
 
     void* pdObject();
 

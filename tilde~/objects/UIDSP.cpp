@@ -7,7 +7,8 @@
 #include "UIObjectData.h"
 // #include <pdServer.hpp>
 
-#include "ceammc_atomlist.h"
+// #include "ceammc_atomlist.h"
+#include "../../xpd-transition/xpd-headers.h"
 
 namespace tilde {
 
@@ -116,9 +117,9 @@ void UIDSP::objectPressEvent(QGraphicsSceneMouseEvent* ev)
     }
 }
 
-void UIDSP::updateUI(AtomList* l)
+void UIDSP::updateUI(t_cpd_list* l)
 {
-    _value = l->at(0).asInt();
+    // _value = l->at(0).asInt();
     update();
 }
 }

@@ -9,8 +9,7 @@
 #include <QLabel>
 #include <QtGui>
 
-// #include "pdServer.hpp"
-
+#include "ApplicationController.h"
 #include "xpd-transition/xpd-headers.h"
 
 #include <QComboBox>
@@ -136,8 +135,7 @@ PdWindow::PdWindow()
 
 void PdWindow::logBoxChange(int index)
 {
-    // XPD-TODO
-    // ServerInstance::setVerboseLevel(index);
+    appController()->mainServerInstance()->setLogLevel((xpd::LogLevel)index);
 }
 
 void PdWindow::clearConsoleSlot()
@@ -157,8 +155,7 @@ void PdWindow::sendMessageChanged()
 
     QStringList list = input.split(" ");
     if (list.size() < 2) {
-        // XPD-TODO
-        // ServerInstance::error("nothing to send");
+        appController()->mainServerInstance()->error("nothing to send");
         return;
     }
 
@@ -166,14 +163,20 @@ void PdWindow::sendMessageChanged()
     list.removeAt(0);
     string text = list.join(" ").toStdString();
 
-    // XPD-TODO
-    // ServerInstance::sendMessage(object, text);
+    if (appController())
+        appController()->mainServerInstance()->sendMessage(object, text);
 }
 
 void PdWindow::editSendMessage(QString)
 {
     // XPD-TODO
-    string s;// = ServerInstance::getBindObjectsList();
+    string s;//
+
+    /*
+    if (appController())
+        s = appController()->mainServerInstance()->getBindObjectList();
+        */
+
     QStringList sL = QString(s.c_str()).split(",");
 
     QStringListModel* model = (QStringListModel*)(_ui->sendMessage->completer()->model());

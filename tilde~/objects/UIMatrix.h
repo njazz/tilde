@@ -73,7 +73,7 @@ public:
     void mouseReleaseEvent(QGraphicsSceneMouseEvent*);
     void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
 
-    void updateUI(AtomList* msg);
+    void updateUI(t_cpd_list* msg);
 };
 }
 

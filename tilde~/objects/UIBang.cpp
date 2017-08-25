@@ -93,7 +93,7 @@ void UIBang::objectPressEvent(QGraphicsSceneMouseEvent* ev)
 
 // -------------------------
 
-void UIBang::updateUI(AtomList*)
+void UIBang::updateUI(t_cpd_list*)
 {
     if (!_clicked) {
         timerStart();

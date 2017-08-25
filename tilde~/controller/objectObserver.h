@@ -19,7 +19,7 @@ class UIObject;
 ////
 /// \brief The object observer class
 /// \details used for UI objects to update ui from pd(server) object
-class ObjectObserver : public Observer {
+class ObjectObserver : public xpd::PdObjectObserver {
 private:
     UIObject* _object;
 

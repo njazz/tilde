@@ -17,7 +17,8 @@
 
 #include "UIObjectData.h"
 
-#include "ceammc_atomlist.h"
+//#include "ceammc_atomlist.h"
+#include "../../xpd-transition/xpd-headers.h"
 
 namespace tilde {
 
@@ -138,10 +139,11 @@ void UIScript::sync()
     // _editor->textEdit()->setContext(pyWrapper::inst().newContextWithPatchControllerServerObjectAndList(this->parentController(), serverObject(), &_scriptCommon->scriptData()->inputList));
 }
 
-void UIScript::updateUI(AtomList* list)
+void UIScript::updateUI(t_cpd_list* list)
 {
 
-    _scriptCommon->scriptData()->inputList = UIScriptCommon::AtomListToStringList(*list);
-    _scriptCommon->btnRun();
+    // XPD-TODO
+    // _scriptCommon->scriptData()->inputList = UIScriptCommon::AtomListToStringList(*list);
+    // _scriptCommon->btnRun();
 }
 }

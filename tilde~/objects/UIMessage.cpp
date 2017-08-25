@@ -10,11 +10,15 @@
 
 #include "UIObjectData.h"
 
-#include "ceammc_atomlist.h"
+// #include "ceammc_atomlist.h"
+#include "../../xpd-transition/xpd-headers.h"
+#include "../../xpd/pd/cpd/cpd_list.h"
 
-#include "m_pd.h"
+//#include "m_pd.h"
 
 #include "CanvasView.h"
+
+using namespace xpd;
 
 namespace tilde {
 UIMessage::UIMessage()
@@ -276,8 +280,11 @@ void UIMessage::setPdMessage(QString message)
     resizeEvent();
 }
 
-void UIMessage::updateUI(AtomList* list)
+void UIMessage::updateUI(t_cpd_list* list)
 {
+    // XPD-TODO
+
+    /*
     std::string obj_data;
     for (size_t i = 0; i < list->size(); i++) {
         // workaround
@@ -293,6 +300,7 @@ void UIMessage::updateUI(AtomList* list)
 
     fromQString(obj_data.c_str());
     autoResize();
+    */
 
     //
     emit signalCallRepaint();

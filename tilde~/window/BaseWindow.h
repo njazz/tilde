@@ -29,7 +29,7 @@ public:
     explicit BaseWindow(QWidget* parent = 0);
 
     void setAppController(ApplicationController* appController);
-
+    ApplicationController* appController() { return _appController; };
     void createActions(); ////> create menu actions (File, Edit)
     void createMenus(); ///>  create all menus
     void createScriptsMenu(); ///> create scripts menu

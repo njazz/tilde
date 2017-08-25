@@ -40,7 +40,7 @@ public:
 
     // -------------------------
 
-    void updateUI(AtomList*);
+    void updateUI(t_cpd_list*);
 
 signals:
     void setBangTimer(int msec);

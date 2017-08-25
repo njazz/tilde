@@ -17,6 +17,9 @@ class cm_pdwindow;
 }
 
 namespace tilde {
+
+class ApplicationController;
+
 ////
 /// \brief Pd console window
 ///

@@ -9,7 +9,9 @@
 #include "Preferences.h"
 #include "UIObjectData.h"
 
-#include "ceammc_atomlist.h"
+//#include "ceammc_atomlist.h"
+#include "../../xpd-transition/xpd-headers.h"
+#include "../../xpd/pd/cpd/cpd_list.h"
 
 namespace tilde {
 
@@ -133,12 +135,16 @@ void UIFloat::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
     }
 }
 
-void UIFloat::updateUI(AtomList* msg)
+void UIFloat::updateUI(t_cpd_list* msg)
 {
+    // XPD-TODO
+
+    /*
     if (msg->size() > 0) {
         fromQString(msg->at(0).asString().c_str());
         emit signalCallRepaint();
     }
+    */
 }
 
 std::string UIFloat::asPdFileString()

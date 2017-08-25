@@ -165,6 +165,10 @@ public:
 
     void enableUndo(bool v);
 
+    //
+
+    void sendMessageToObject(ObjectId object, QString msg);
+
 public slots:
     void menuSave();
     void menuSaveAs();

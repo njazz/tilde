@@ -17,6 +17,10 @@
 
 #include "../../xpd/src/consoleobserver.h"
 
+#include "../../xpd/src/pd_localprocess.h"
+#include "../../xpd/src/pd_localserver.h"
+#include "../../xpd/src/pd_objectobserver.h"
+
 #include "../../xpd/src/device.h"
 
 #include "../../xpd/src/libraryinfo.h"
@@ -41,5 +45,7 @@
 #include "../../xpd/src/serverpath.h"
 
 #include "../../xpd/src/videodevice.h"
+
+// #include "../../xpd/pd/cpd/cpd_list.h"
 
 #endif // XPDHEADERS_H

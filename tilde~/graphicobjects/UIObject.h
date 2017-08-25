@@ -9,13 +9,17 @@
 #include "../../xpd-transition/xpd-headers.h"
 #include "objectObserver.h"
 
-namespace ceammc {
-class AtomList;
-}
+//namespace ceammc {
+//class AtomList;
+//}
 
-using namespace ceammc;
+//using namespace ceammc;
 
 using namespace xpd;
+
+//namespace xpd {
+//typedef void t_cpd_list;
+//}
 
 class QAction;
 class QMenu;
@@ -160,7 +164,7 @@ public:
 
     // -----------------------------------------
 
-    virtual void updateUI(AtomList*){};
+    virtual void updateUI(t_cpd_list*){};
 
 private slots:
     void openPropertiesWindow();
@@ -181,7 +185,7 @@ signals:
     /// \details pd calls UIUpdate(...) -> it emits 's_repaint()' that is connected to 'callRepaint()'
     void signalCallRepaint();
 
-    void signalSendMessage(void* obj, QString msg);
+    void signalSendMessage(ObjectId obj, QString msg);
 
     void signalOpenPropertiesWindow();
     void signalOpenHelpWindow();

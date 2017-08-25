@@ -41,7 +41,7 @@ public:
 
     virtual void paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*);
 
-    virtual void updateUI(AtomList* l);
+    virtual void updateUI(t_cpd_list* l);
 };
 }
 

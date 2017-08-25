@@ -375,12 +375,15 @@ public Q_SLOTS:
 
     QStringList loadedExternals()
     {
-        AtomList list; //TODO = cmp_get_loaded_list();
+        // XPD_TODO
+        //AtomList list; //TODO = cmp_get_loaded_list();
         QStringList ret;
 
+        /*
         for (int i = 0; i < list.size(); i++) {
             ret += list.at(i).asString().c_str();
         }
+        */
 
         return ret;
     }

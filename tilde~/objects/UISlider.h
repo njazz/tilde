@@ -44,7 +44,7 @@ public:
 
     void setPdMessage(QString message);
 
-    void updateUI(AtomList* msg);
+    void updateUI(t_cpd_list* msg);
 
     void resizeEvent();
 };
