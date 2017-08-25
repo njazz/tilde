@@ -266,8 +266,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="comment">//qDebug() &lt;&lt; &quot;method out&quot;;</span></div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keywordflow">if</span> (b-&gt;_opInstance) {</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            <a class="code" href="classceammc_1_1_atom_list.html">AtomList</a> fullMsg(<a class="code" href="m__pd_8h.html#a4449f71b80468e7d6e79a67193e65e0b">gensym</a>(b-&gt;_signalName.c_str()));</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            fullMsg.<a class="code" href="classceammc_1_1_atom_list.html#af9d70f5330ecc54ef2158a7207292fc0">append</a>(msg);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            AtomList fullMsg(<a class="code" href="m__pd_8h.html#a4449f71b80468e7d6e79a67193e65e0b">gensym</a>(b-&gt;_signalName.c_str()));</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            fullMsg.append(msg);</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            b-&gt;_opInstance-&gt;<a class="code" href="classtilde_1_1_o_p_instance.html#abe65a2f3dd871d181f6ab468586519c3">multipleOutput</a>(fullMsg);</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        }</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div>
@@ -316,7 +316,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classtilde_1_1_u_i_item_html_a77ab63e516415092c5c4c042ebd9845f"><div class="ttname"><a href="classtilde_1_1_u_i_item.html#a77ab63e516415092c5c4c042ebd9845f">tilde::UIItem::moveBox</a></div><div class="ttdeci">void moveBox(UIItem *box, QGraphicsSceneMouseEvent *event)</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_signal_html_a21b3d01790b3014c72c8448f73695502"><div class="ttname"><a href="classtilde_1_1_u_i_signal.html#a21b3d01790b3014c72c8448f73695502">tilde::UISignal::paint</a></div><div class="ttdeci">virtual void paint(QPainter *p, const QStyleOptionGraphicsItem *, QWidget *)</div><div class="ttdoc">paint event </div><div class="ttdef"><b>Definition:</b> UISignal.h:57</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_object_html_a65158757a2bfbb9c6f5685c7d9130ff8"><div class="ttname"><a href="classtilde_1_1_u_i_object.html#a65158757a2bfbb9c6f5685c7d9130ff8">tilde::UIObject::showPopupMenu</a></div><div class="ttdeci">void showPopupMenu(QPoint pos)</div><div class="ttdoc">createContextMenu </div><div class="ttdef"><b>Definition:</b> UIObject.cpp:245</div></div>
-<div class="ttc" id="classceammc_1_1_atom_list_html_af9d70f5330ecc54ef2158a7207292fc0"><div class="ttname"><a href="classceammc_1_1_atom_list.html#af9d70f5330ecc54ef2158a7207292fc0">ceammc::AtomList::append</a></div><div class="ttdeci">void append(const Atom &amp;a)</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_item_html_af2f09f2423c8c9a240fb870e2babfd2a"><div class="ttname"><a href="classtilde_1_1_u_i_item.html#af2f09f2423c8c9a240fb870e2babfd2a">tilde::UIItem::boundingRect</a></div><div class="ttdeci">QRectF boundingRect() const </div><div class="ttdoc">get edit mode flag value </div><div class="ttdef"><b>Definition:</b> UIItem.h:71</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_item_html_ac626f1d95873a6461402821035f54623"><div class="ttname"><a href="classtilde_1_1_u_i_item.html#ac626f1d95873a6461402821035f54623">tilde::UIItem::getEditMode</a></div><div class="ttdeci">t_editMode getEditMode()</div><div class="ttdoc">get edit mode pointer - for inlets/outlets </div><div class="ttdef"><b>Definition:</b> UIItem.cpp:54</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_signal_html_a9b66f634aea48d0f53683f77e9677980"><div class="ttname"><a href="classtilde_1_1_u_i_signal.html#a9b66f634aea48d0f53683f77e9677980">tilde::UISignal::setPdMessage</a></div><div class="ttdeci">void setPdMessage(QString message)</div><div class="ttdef"><b>Definition:</b> UISignal.h:167</div></div>
@@ -335,7 +334,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="struct__text_html"><div class="ttname"><a href="struct__text.html">_text</a></div><div class="ttdef"><b>Definition:</b> m_pd.h:222</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_item_html_a00841800502136dc7ff5ea6a08badfd7"><div class="ttname"><a href="classtilde_1_1_u_i_item.html#a00841800502136dc7ff5ea6a08badfd7">tilde::UIItem::isSelected</a></div><div class="ttdeci">bool isSelected()</div><div class="ttdoc">deselect object </div><div class="ttdef"><b>Definition:</b> UIItem.cpp:40</div></div>
 <div class="ttc" id="classtilde_1_1_o_p_instance_html"><div class="ttname"><a href="classtilde_1_1_o_p_instance.html">tilde::OPInstance</a></div><div class="ttdoc">The OOPD class instance. </div><div class="ttdef"><b>Definition:</b> OPInstance.h:45</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_object_html"><div class="ttname"><a href="classtilde_1_1_u_i_object.html">tilde::UIObject</a></div><div class="ttdef"><b>Definition:</b> UIObject.h:40</div></div>
+<div class="ttc" id="classtilde_1_1_u_i_object_html"><div class="ttname"><a href="classtilde_1_1_u_i_object.html">tilde::UIObject</a></div><div class="ttdef"><b>Definition:</b> UIObject.h:44</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_item_html_aa3d7ccc05e41759009bbcaed46e4ba93"><div class="ttname"><a href="classtilde_1_1_u_i_item.html#aa3d7ccc05e41759009bbcaed46e4ba93">tilde::UIItem::setWidth</a></div><div class="ttdeci">void setWidth(float w)</div><div class="ttdef"><b>Definition:</b> UIItem.h:37</div></div>
 <div class="ttc" id="classtilde_1_1_o_p_instance_html_abe65a2f3dd871d181f6ab468586519c3"><div class="ttname"><a href="classtilde_1_1_o_p_instance.html#abe65a2f3dd871d181f6ab468586519c3">tilde::OPInstance::multipleOutput</a></div><div class="ttdeci">void multipleOutput(AtomList list)</div><div class="ttdef"><b>Definition:</b> OPInstance.h:158</div></div>
 <div class="ttc" id="classtilde_1_1_u_i_object_html_a1654ea4ad3a3d4182560a05397a31428"><div class="ttname"><a href="classtilde_1_1_u_i_object.html#a1654ea4ad3a3d4182560a05397a31428">tilde::UIObject::fromQString</a></div><div class="ttdeci">virtual void fromQString(QString objData)</div><div class="ttdoc">template </div><div class="ttdef"><b>Definition:</b> UIObject.cpp:482</div></div>
@@ -343,7 +342,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 25 2017 13:43:04 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 25 2017 14:45:40 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

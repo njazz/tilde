@@ -118,8 +118,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classtilde_1_1_base_window.html#aaf4df3ecb6938454bfa77260c24706a0">BaseWindow</a>(QWidget* parent = 0);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_base_window.html#a31103bab4c6201f27866f1e46b2a2897">setAppController</a>(<a class="code" href="classtilde_1_1_application_controller.html">ApplicationController</a>* appController);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_base_window.html#a31103bab4c6201f27866f1e46b2a2897">setAppController</a>(<a class="code" href="classtilde_1_1_application_controller.html">ApplicationController</a>* <a class="code" href="classtilde_1_1_base_window.html#a0a4666c0b4e6852e03113bda7573bf9f">appController</a>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classtilde_1_1_base_window.html#a0a4666c0b4e6852e03113bda7573bf9f">   32</a></span>&#160;    <a class="code" href="classtilde_1_1_application_controller.html">ApplicationController</a>* <a class="code" href="classtilde_1_1_base_window.html#a0a4666c0b4e6852e03113bda7573bf9f">appController</a>() { <span class="keywordflow">return</span> _appController; };</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_base_window.html#ad069fe769d5ab74239152c43a4e0b695">createActions</a>(); </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_base_window.html#a11c1f56796d63c4dc647a8522a7387f6">createMenus</a>(); </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classtilde_1_1_base_window.html#a2edf1474f698e907abd481eb59aa4f96">createScriptsMenu</a>(); </div>
@@ -216,6 +216,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classtilde_1_1_base_window_html_ad069fe769d5ab74239152c43a4e0b695"><div class="ttname"><a href="classtilde_1_1_base_window.html#ad069fe769d5ab74239152c43a4e0b695">tilde::BaseWindow::createActions</a></div><div class="ttdeci">void createActions()</div><div class="ttdef"><b>Definition:</b> BaseWindow.cpp:81</div></div>
 <div class="ttc" id="classtilde_1_1_base_window_html_aec66de021cac4bd266b68d7a6090816c"><div class="ttname"><a href="classtilde_1_1_base_window.html#aec66de021cac4bd266b68d7a6090816c">tilde::BaseWindow::closeAct</a></div><div class="ttdeci">QAction * closeAct</div><div class="ttdef"><b>Definition:</b> BaseWindow.h:74</div></div>
 <div class="ttc" id="classtilde_1_1_base_window_html_a351acc51dd832e7d80041ca3c96b7203"><div class="ttname"><a href="classtilde_1_1_base_window.html#a351acc51dd832e7d80041ca3c96b7203">tilde::BaseWindow::editMenu</a></div><div class="ttdeci">QMenu * editMenu</div><div class="ttdef"><b>Definition:</b> BaseWindow.h:85</div></div>
+<div class="ttc" id="classtilde_1_1_base_window_html_a0a4666c0b4e6852e03113bda7573bf9f"><div class="ttname"><a href="classtilde_1_1_base_window.html#a0a4666c0b4e6852e03113bda7573bf9f">tilde::BaseWindow::appController</a></div><div class="ttdeci">ApplicationController * appController()</div><div class="ttdef"><b>Definition:</b> BaseWindow.h:32</div></div>
 <div class="ttc" id="classtilde_1_1_base_window_html_adbb32f2e152fab1713ca39d70fe38196"><div class="ttname"><a href="classtilde_1_1_base_window.html#adbb32f2e152fab1713ca39d70fe38196">tilde::BaseWindow::setRecentMenu</a></div><div class="ttdeci">void setRecentMenu(QMenu *menu)</div><div class="ttdoc">create scripts menu </div><div class="ttdef"><b>Definition:</b> BaseWindow.cpp:263</div></div>
 <div class="ttc" id="classtilde_1_1_base_window_html_aaf4df3ecb6938454bfa77260c24706a0"><div class="ttname"><a href="classtilde_1_1_base_window.html#aaf4df3ecb6938454bfa77260c24706a0">tilde::BaseWindow::BaseWindow</a></div><div class="ttdeci">BaseWindow(QWidget *parent=0)</div><div class="ttdef"><b>Definition:</b> BaseWindow.cpp:29</div></div>
 <div class="ttc" id="classtilde_1_1_base_window_html"><div class="ttname"><a href="classtilde_1_1_base_window.html">tilde::BaseWindow</a></div><div class="ttdoc">Base class for windows (patch, pd) </div><div class="ttdef"><b>Definition:</b> BaseWindow.h:19</div></div>
@@ -223,7 +224,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 25 2017 13:43:04 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 25 2017 14:45:40 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

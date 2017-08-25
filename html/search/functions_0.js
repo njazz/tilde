@@ -29,7 +29,7 @@ var searchData=
   ['alphaenabled',['alphaEnabled',['../class_color___dialog.html#ae02a816350fa7fdde5b1ad7642b3373f',1,'Color_Dialog']]],
   ['altclicked',['altClicked',['../classtilde_1_1_u_i_patchcord.html#a9f3a87caad45e4a183dd5674faa3f107',1,'tilde::UIPatchcord']]],
   ['anyoff',['anyOff',['../classceammc_1_1_atom_list.html#a6bc97f1e25bda4e6fc05cde22bbe01d5',1,'ceammc::AtomList']]],
-  ['appcontroller',['appController',['../classtilde_1_1_patch_window_controller.html#ad1512fab9af37f2178724db7e45670cb',1,'tilde::PatchWindowController']]],
+  ['appcontroller',['appController',['../classtilde_1_1_patch_window_controller.html#ad1512fab9af37f2178724db7e45670cb',1,'tilde::PatchWindowController::appController()'],['../classtilde_1_1_base_window.html#a0a4666c0b4e6852e03113bda7573bf9f',1,'tilde::BaseWindow::appController()']]],
   ['append',['append',['../classtilde_1_1_clipboard.html#aa1c8126533f9ea7e8acd94aae2b5b031',1,'tilde::Clipboard::append()'],['../classceammc_1_1_atom_list.html#af9d70f5330ecc54ef2158a7207292fc0',1,'ceammc::AtomList::append(const Atom &amp;a)'],['../classceammc_1_1_atom_list.html#aeda2045696b1b65791f0b249d855c238',1,'ceammc::AtomList::append(const AtomList &amp;l)'],['../class_abstract___widget___list.html#a2c5a1aa4b33808313f9405fdd3a8e6cb',1,'Abstract_Widget_List::append()'],['../class_color___list___widget.html#a2bae87010e694118e5b9065d4087bbe5',1,'Color_List_Widget::append()']]],
   ['appendwidget',['appendWidget',['../class_abstract___widget___list.html#a3e06757cc60c62776f8a20387048d8cb',1,'Abstract_Widget_List']]],
   ['applicationcontroller',['ApplicationController',['../classtilde_1_1_application_controller.html#a9e50dcce5c7851603b0cf4ff30fcd553',1,'tilde::ApplicationController']]],

@@ -255,65 +255,69 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordtype">void</span> enableUndo(<span class="keywordtype">bool</span> v);</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="keyword">public</span> slots:</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordtype">void</span> menuSave();</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordtype">void</span> menuSaveAs();</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordtype">void</span> sendMessageToObject(ObjectId <span class="keywordtype">object</span>, QString msg);</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordtype">void</span> menuCut();</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordtype">void</span> menuCopy();</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordtype">void</span> menuPaste();</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordtype">void</span> menuDuplicate();</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordtype">void</span> menuDelete();</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordtype">void</span> menuSelectAll();</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordtype">void</span> menuUndo();</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordtype">void</span> menuRedo();</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordtype">void</span> openPropertiesWindow();</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordtype">void</span> slotAlignLeft();</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordtype">void</span> slotAlignRight();</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordtype">void</span> menuSave();</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordtype">void</span> menuSaveAs();</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordtype">void</span> menuCut();</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordtype">void</span> menuCopy();</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordtype">void</span> menuPaste();</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordtype">void</span> menuDuplicate();</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordtype">void</span> menuDelete();</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordtype">void</span> menuSelectAll();</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordtype">void</span> menuUndo();</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordtype">void</span> menuRedo();</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordtype">void</span> openPropertiesWindow();</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordtype">void</span> slotAlignTop();</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordtype">void</span> slotAlignBottom();</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordtype">void</span> slotAlignCenter();</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordtype">void</span> slotHDistribute();</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordtype">void</span> slotVDistribute();</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordtype">void</span> slotRecentMenuAction();</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordtype">void</span> slotObjectHoverEnter();</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordtype">void</span> slotObjectHoverLeave();</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordtype">void</span> slotSelectObject(<a class="code" href="classtilde_1_1_u_i_object.html">UIObject</a>* <span class="keywordtype">object</span>);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordtype">void</span> slotPatchcord(<a class="code" href="classtilde_1_1_u_i_object.html">UIObject</a>* src, <span class="keywordtype">int</span> nOut, <a class="code" href="classtilde_1_1_u_i_object.html">UIObject</a>* dest, <span class="keywordtype">int</span> nIn);</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keywordtype">void</span> slotMousePress(QPoint pos);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordtype">void</span> slotMouseMove(QPoint pos);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordtype">void</span> slotMouseRelease(QPoint pos);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordtype">void</span> slotAlignLeft();</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordtype">void</span> slotAlignRight();</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordtype">void</span> slotAlignTop();</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordtype">void</span> slotAlignBottom();</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordtype">void</span> slotAlignCenter();</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordtype">void</span> slotHDistribute();</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordtype">void</span> slotVDistribute();</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordtype">void</span> slotRecentMenuAction();</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordtype">void</span> slotObjectHoverEnter();</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordtype">void</span> slotObjectHoverLeave();</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordtype">void</span> slotSelectObject(<a class="code" href="classtilde_1_1_u_i_object.html">UIObject</a>* <span class="keywordtype">object</span>);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordtype">void</span> slotPatchcord(<a class="code" href="classtilde_1_1_u_i_object.html">UIObject</a>* src, <span class="keywordtype">int</span> nOut, <a class="code" href="classtilde_1_1_u_i_object.html">UIObject</a>* dest, <span class="keywordtype">int</span> nIn);</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordtype">void</span> slotDeselectObjects();</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordtype">void</span> slotSelectionFrame(QPoint start, QPoint end);</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordtype">void</span> slotMoveSelectedBoxes(QPoint eventPos);</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordtype">void</span> slotResizeBoxes(<span class="keywordtype">int</span> dx, <span class="keywordtype">int</span> dy);</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;signals:</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordtype">void</span> slotMousePress(QPoint pos);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordtype">void</span> slotMouseMove(QPoint pos);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordtype">void</span> slotMouseRelease(QPoint pos);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordtype">void</span> slotDeselectObjects();</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordtype">void</span> slotSelectionFrame(QPoint start, QPoint end);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordtype">void</span> slotMoveSelectedBoxes(QPoint eventPos);</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    Object* signalCreateObject(Canvas* canvas, <span class="keywordtype">string</span> name); <span class="comment">// check that</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordtype">void</span> slotResizeBoxes(<span class="keywordtype">int</span> dx, <span class="keywordtype">int</span> dy);</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordtype">void</span> signalEnableUndo(<span class="keywordtype">bool</span> v);</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordtype">void</span> signalEnableRedo(<span class="keywordtype">bool</span> v);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;};</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;}</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="preprocessor">#endif // CM_PDLINK_H</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;signals:</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    Object* signalCreateObject(Canvas* canvas, <span class="keywordtype">string</span> name); <span class="comment">// check that</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordtype">void</span> signalEnableUndo(<span class="keywordtype">bool</span> v);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keywordtype">void</span> signalEnableRedo(<span class="keywordtype">bool</span> v);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;};</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;}</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="preprocessor">#endif // CM_PDLINK_H</span></div>
 <div class="ttc" id="classtilde_1_1_patch_window_controller_html_a7685b75ffe310d7d1841a8fae4915c7e"><div class="ttname"><a href="classtilde_1_1_patch_window_controller.html#a7685b75ffe310d7d1841a8fae4915c7e">tilde::PatchWindowController::canvasData</a></div><div class="ttdeci">CanvasData * canvasData()</div><div class="ttdef"><b>Definition:</b> PatchWindowController.h:92</div></div>
 <div class="ttc" id="classtilde_1_1_canvas_data_html"><div class="ttname"><a href="classtilde_1_1_canvas_data.html">tilde::CanvasData</a></div><div class="ttdoc">shared canvas data model - boxes, patchcords </div><div class="ttdef"><b>Definition:</b> CanvasData.h:22</div></div>
 <div class="ttc" id="classtilde_1_1_patch_window_html"><div class="ttname"><a href="classtilde_1_1_patch_window.html">tilde::PatchWindow</a></div><div class="ttdoc">Patch window. Creates scroll view and cm_canvas; Creates menu commands, forwards them to cm_canvas...</div><div class="ttdef"><b>Definition:</b> PatchWindow.h:14</div></div>
@@ -322,14 +326,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classtilde_1_1_u_i_patchcord_html"><div class="ttname"><a href="classtilde_1_1_u_i_patchcord.html">tilde::UIPatchcord</a></div><div class="ttdoc">Patchcord QGraphicsObject class. </div><div class="ttdef"><b>Definition:</b> UIPatchcord.h:36</div></div>
 <div class="ttc" id="classtilde_1_1_patch_window_controller_html_ad1512fab9af37f2178724db7e45670cb"><div class="ttname"><a href="classtilde_1_1_patch_window_controller.html#ad1512fab9af37f2178724db7e45670cb">tilde::PatchWindowController::appController</a></div><div class="ttdeci">ApplicationController * appController()</div><div class="ttdef"><b>Definition:</b> PatchWindowController.h:90</div></div>
 <div class="ttc" id="classtilde_1_1_patch_window_controller_html"><div class="ttname"><a href="classtilde_1_1_patch_window_controller.html">tilde::PatchWindowController</a></div><div class="ttdoc">The Patch window controller. </div><div class="ttdef"><b>Definition:</b> PatchWindowController.h:48</div></div>
-<div class="ttc" id="classtilde_1_1_u_i_object_html"><div class="ttname"><a href="classtilde_1_1_u_i_object.html">tilde::UIObject</a></div><div class="ttdef"><b>Definition:</b> UIObject.h:40</div></div>
+<div class="ttc" id="classtilde_1_1_u_i_object_html"><div class="ttname"><a href="classtilde_1_1_u_i_object.html">tilde::UIObject</a></div><div class="ttdef"><b>Definition:</b> UIObject.h:44</div></div>
 <div class="ttc" id="classtilde_1_1_canvas_view_html"><div class="ttname"><a href="classtilde_1_1_canvas_view.html">tilde::CanvasView</a></div><div class="ttdoc">Canvas View - used by Patch window controller. </div><div class="ttdef"><b>Definition:</b> CanvasView.h:36</div></div>
 <div class="ttc" id="xpd-headers_8h_html"><div class="ttname"><a href="xpd-headers_8h.html">xpd-headers.h</a></div></div>
 <div class="ttc" id="classtilde_1_1_u_i_box_html"><div class="ttname"><a href="classtilde_1_1_u_i_box.html">tilde::UIBox</a></div><div class="ttdoc">gui object: standard object box </div><div class="ttdef"><b>Definition:</b> UIBox.h:46</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 25 2017 13:43:04 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 25 2017 14:45:40 for tilde~ by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
