@@ -71,6 +71,7 @@ var searchData=
   ['servercanvasasobject',['serverCanvasAsObject',['../classtilde_1_1_patch_window_controller.html#a7a694e879f1d92f5ed0546635501bae8',1,'tilde::PatchWindowController']]],
   ['serverinstance',['serverInstance',['../classtilde_1_1_patch_window_controller.html#a82037701b26d5f2f9b89fbea541fce1a',1,'tilde::PatchWindowController']]],
   ['serverobject',['serverObject',['../classtilde_1_1_u_i_object.html#a2ab00760d285b9b9775cc6841fa122e7',1,'tilde::UIObject']]],
+  ['serverobjectptr',['serverObjectPtr',['../classtilde_1_1_u_i_object.html#a62eebe7edf1e62e8df7a0f7285002555',1,'tilde::UIObject']]],
   ['serverpatchcord',['serverPatchcord',['../classtilde_1_1_u_i_patchcord.html#ac55267b23f9ccdff8a54d8bf282bc3c0',1,'tilde::UIPatchcord']]],
   ['serverworker',['ServerWorker',['../classtilde_1_1_server_worker.html',1,'tilde']]],
   ['serverworker',['ServerWorker',['../classtilde_1_1_server_worker.html#a751e9c18c743a44b00869f407901e335',1,'tilde::ServerWorker']]],
