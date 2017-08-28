@@ -87,7 +87,8 @@ void UIObject::setParentCanvasView(CanvasView* v) { _parentCanvasView = v; }
 PatchWindowController* UIObject::parentController() { return _parentController; }
 void UIObject::setParentController(PatchWindowController* p) { _parentController = p; }
 
-ObjectId UIObject::serverObject() {
+ObjectId UIObject::serverObject()
+{
     return _serverObject;
     //return 0;
 };
@@ -206,9 +207,8 @@ void UIObject::propertyReceiveSymbol()
     //    ApplicationController::post(symbolName);
 
     if (symbolName != "") {
-
-        // XPD-TODO
-        // _serverObject->setReceiveSymbol(symbolName);
+        PdObject* obj = const_cast<PdObject*>(reinterpret_cast<const PdObject*>(_parentController->serverCanvas()->objects().findObject(_serverObject)));
+        obj->setReceiveSymbol(symbolName);
     }
 }
 
@@ -290,9 +290,9 @@ void UIObject::addInlet()
     qDebug() << "addInlet";
 
     // XPD-TODO
-//    if (_serverObject) {
-//        _serverObject->_portClass_ = (_serverObject->getInletType(inletCount()) == XLetSignal);
-//    }
+    //    if (_serverObject) {
+    //        _serverObject->_portClass_ = (_serverObject->getInletType(inletCount()) == XLetSignal);
+    //    }
 
     addInlet(_portClass_);
 }
@@ -343,9 +343,9 @@ void UIObject::addOutlet()
     int _portClass_ = 0;
 
     // XPD-TODO
-//    if (_serverObject) {
-//        _portClass_ = (_serverObject->getOutletType(outletCount()) == XLetSignal);
-//    }
+    //    if (_serverObject) {
+    //        _portClass_ = (_serverObject->getOutletType(outletCount()) == XLetSignal);
+    //    }
 
     addOutlet(_portClass_);
 }
@@ -599,6 +599,11 @@ void UIObject::hoverLeaveEvent(QGraphicsSceneHoverEvent*)
     //emit signalObjectHoverLeave();
 };
 
+PdObject* UIObject::serverObjectPtr(){
+    PdObject* ret = const_cast<PdObject*>(reinterpret_cast<const PdObject*>(_parentController->serverCanvas()->objects().findObject(_serverObject)));
+    return ret;
+}
+
 //---------------------------------
 
 void UIObject::hideSizeBox()
@@ -673,7 +678,6 @@ void UIObject::openHelpWindow()
     } else {
         //ServerInstance::error("bad error help file name!");
         parentController()->serverInstance()->error("bad error help file name!");
-
     }
 
     emit signalOpenHelpWindow();

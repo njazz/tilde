@@ -44,6 +44,7 @@ ApplicationController::ApplicationController()
     ServerSettings settings("PdServer");
     _localServer = new PdLocalServer(settings);
     _localServer->createProcess();
+    mainServerInstance()->setLogLevel(LOG_DUMP);
 
     ObjectLoader::inst().loadObjects();
 
@@ -65,7 +66,7 @@ ApplicationController::ApplicationController()
     _pythonConsole = new PythonQtScriptingConsole(NULL, mainContext);
 #endif
 
-    _theServerInstance = mainServerInstance();
+    _theServerInstance = (mainServerInstance());
 
     _consoleObserver = shared_ptr<PdWindowConsoleObserver>(new PdWindowConsoleObserver);
 
@@ -189,7 +190,7 @@ ProcessPtr ApplicationController::mainServerInstance()
     assert(_localServer);
 
     if (!_theServerInstance)
-        _theServerInstance = _localServer->processList().at(0);
+        _theServerInstance = (_localServer->processList().at(0));
     return _theServerInstance;
 }
 
@@ -320,7 +321,7 @@ ObjectId ApplicationController::slotCreateObject(CanvasPtr canvas, string name)
     assert(canvas);
     //shared_ptr<PdCanvas> c = shared_ptr<PdCanvas>(canvas);
 
-    shared_ptr< PdCanvas > c = static_pointer_cast< PdCanvas >(canvas);
+    shared_ptr<PdCanvas> c = static_pointer_cast<PdCanvas>(canvas);
 
     ObjectId serverObject = c->PdCanvas::createObject(name, 0, 0);
     return serverObject;
@@ -331,13 +332,14 @@ void ApplicationController::post(QString text)
     if (!_theServerInstance)
         return;
 
-    shared_ptr <PdLocalProcess> ptr = static_pointer_cast <PdLocalProcess> (_theServerInstance);
+    shared_ptr<PdLocalProcess> ptr = static_pointer_cast<PdLocalProcess>(_theServerInstance);
     ptr->PdLocalProcess::post(text.toStdString());
 }
 
 void ApplicationController::loadAllLibraries()
 {
-    mainServerInstance()->setLogLevel(LOG_DUMP);
+    shared_ptr<PdLocalProcess> ptr = static_pointer_cast<PdLocalProcess, AbstractServerProcess>(mainServerInstance());
+    ptr->setLogLevel(LOG_DUMP);
 
     QStringList libs = _filePaths->librariesFileList();
 
@@ -345,7 +347,12 @@ void ApplicationController::loadAllLibraries()
 
         QString file = libs.at(i).left(libs.at(i).lastIndexOf("."));
 
-        mainServerInstance()->loadLibrary(file.toStdString());
+        ApplicationController::post("loading library: " + file);
+
+        bool b = mainServerInstance()->loadLibrary(file.toStdString());
+
+        if (b)
+            ApplicationController::post("...failed!");
     }
 
     mainServerInstance()->setLogLevel(LOG_ERROR);

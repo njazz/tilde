@@ -70,6 +70,8 @@ protected:
     virtual void hoverEnterEvent(QGraphicsSceneHoverEvent*);
     virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent*);
 
+    PdObject* serverObjectPtr();
+
 public:
     explicit UIObject(UIItem* parent = 0);
 
