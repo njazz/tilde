@@ -163,7 +163,7 @@ void UIMessage::objectPressEvent(QGraphicsSceneMouseEvent* ev)
 
     //move
     if (getEditMode() != em_Unlocked) {
-        if (!serverObject()) {
+        if (!serverObjectId()) {
             qDebug("msg: bad pd object!");
         } else {
 
@@ -263,7 +263,7 @@ void UIMessage::setPdMessage(QString message)
     //move
 
     if (getEditMode() == em_Unlocked) {
-        if (!serverObject()) {
+        if (!serverObjectId()) {
             qDebug("msg: bad pd object!");
         } else {
 

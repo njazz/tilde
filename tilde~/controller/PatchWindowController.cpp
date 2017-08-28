@@ -224,8 +224,7 @@ void PatchWindowController::doCreateObject(UIObject* uiObject)
 
     uiObject->observer()->setObject(uiObject);
 
-    // XPD-TODO
-    //uiObject->serverObject()//->ServerObject::registerObserver(uiObject->observer());
+    uiObject->serverObjectPtr()->registerObserver(uiObject->observer());
 
     uiObject->setEditModeRef(_windows[0]->canvasView()->getEditModeRef());
 
@@ -286,8 +285,7 @@ UIObject* PatchWindowController::createObjectWithoutUndo(string name, QPoint pos
 
     ObjectId serverObject = _appController->slotCreateObject(_serverCanvas, name);
 
-    // XPD-TODO
-    uiObject->setServerObject(serverObject);
+    uiObject->setServerObjectId(serverObject);
 
     if (!uiObject) {
         qDebug() << "bad ui object!";
@@ -434,9 +432,7 @@ void PatchWindowController::deleteSinglePatchcord(UIPatchcord* p)
     _canvasData->deletePatchcord(p);
     _scene->update();
 
-    // XPD-TODO
-    // _serverCanvas->disconnect()
-    // _serverCanvas->deletePatchcord(p->serverPatchcord());
+    _serverCanvas->disconnect(p->obj1()->serverObjectId(),p->outletIndex(), p->obj2()->serverObjectId(), p->inletIndex());
 }
 
 //bool PatchWindowController::patchcord(UIObject* src, int out, UIObject* dest, int in){};
@@ -893,7 +889,7 @@ void PatchWindowController::createPatchcord(UIObject* obj1, int outlet, UIObject
 UIPatchcord* PatchWindowController::createPatchcordWithoutUndo(UIObject* obj1, int outlet, UIObject* obj2, int inlet)
 {
 
-    if (obj1->serverObject() && obj2->serverObject()) {
+    if (obj1->serverObjectId() && obj2->serverObjectId()) {
         if (((UIBox*)obj1)->errorBox()) {
             qDebug() << "errorbox";
             return 0;
@@ -909,7 +905,7 @@ UIPatchcord* PatchWindowController::createPatchcordWithoutUndo(UIObject* obj1, i
 
         UIPatchcord* pc = new UIPatchcord(obj1, outport, obj2, inport);
 
-        _serverCanvas->connect(obj1->serverObject(), outlet, obj2->serverObject(), inlet);
+        _serverCanvas->connect(obj1->serverObjectId(), outlet, obj2->serverObjectId(), inlet);
 
         if (obj1->pdOutletClass(outlet))
             pc->setPatchcordType(cm_pt_signal);
@@ -1061,5 +1057,7 @@ void PatchWindowController::sendMessageToObject(ObjectId object, QString msg)
 
     // XPD-TODO
     // object->message(msg.toStdString());
+    PdObject * objectP = _serverCanvas->objects().findObject(object);
+    //objectP->message
 }
 }

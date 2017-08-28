@@ -137,7 +137,7 @@ void UISlider::mousePressEvent(QGraphicsSceneMouseEvent* ev)
         float val = valueFromPoint(ev->pos().toPoint());
         QString val_str = std::to_string(val).c_str();
 
-        if (!serverObject()) {
+        if (!serverObjectId()) {
             qDebug("msg: bad pd object!");
         } else {
             //                cmp_sendstring((t_pd*)pdObject(), ((std::string) "set " + val_str).c_str());
@@ -178,7 +178,7 @@ void UISlider::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
     //            cmp_sendstring((t_pd*)pdObject(), ((std::string) "set " + val_str).c_str());
     //            cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang ").c_str());
 
-    if (serverObject()) {
+    if (serverObjectId()) {
         float val = valueFromPoint(event->pos().toPoint());
 
         QString val_str = std::to_string(val).c_str();

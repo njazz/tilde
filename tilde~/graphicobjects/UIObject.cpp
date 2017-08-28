@@ -87,14 +87,14 @@ void UIObject::setParentCanvasView(CanvasView* v) { _parentCanvasView = v; }
 PatchWindowController* UIObject::parentController() { return _parentController; }
 void UIObject::setParentController(PatchWindowController* p) { _parentController = p; }
 
-ObjectId UIObject::serverObject()
+ObjectId UIObject::serverObjectId()
 {
-    return _serverObject;
+    return _serverObjectId;
     //return 0;
 };
-void UIObject::setServerObject(ObjectId o)
+void UIObject::setServerObjectId(ObjectId o)
 {
-    _serverObject = o;
+    _serverObjectId = o;
 };
 
 void UIObject::setObjectData(UIObjectData* m) { _objectData = m; }
@@ -207,7 +207,7 @@ void UIObject::propertyReceiveSymbol()
     //    ApplicationController::post(symbolName);
 
     if (symbolName != "") {
-        PdObject* obj = const_cast<PdObject*>(reinterpret_cast<const PdObject*>(_parentController->serverCanvas()->objects().findObject(_serverObject)));
+        PdObject* obj = const_cast<PdObject*>(reinterpret_cast<const PdObject*>(_parentController->serverCanvas()->objects().findObject(_serverObjectId)));
         obj->setReceiveSymbol(symbolName);
     }
 }
@@ -488,13 +488,13 @@ void UIObject::sync()
 {
     removeXLets();
 
-    if (!_serverObject) {
+    if (!_serverObjectId) {
         setErrorBox(true);
         return;
     }
 
-    int in_c = _parentController->serverCanvas()->objects().findObject(_serverObject)->inletCount();
-    int out_c = _parentController->serverCanvas()->objects().findObject(_serverObject)->outletCount();
+    int in_c = _parentController->serverCanvas()->objects().findObject(_serverObjectId)->inletCount();
+    int out_c = _parentController->serverCanvas()->objects().findObject(_serverObjectId)->outletCount();
 
     for (int i = 0; i < in_c; i++)
         addInlet();
@@ -600,7 +600,7 @@ void UIObject::hoverLeaveEvent(QGraphicsSceneHoverEvent*)
 };
 
 PdObject* UIObject::serverObjectPtr(){
-    PdObject* ret = const_cast<PdObject*>(reinterpret_cast<const PdObject*>(_parentController->serverCanvas()->objects().findObject(_serverObject)));
+    PdObject* ret = const_cast<PdObject*>(reinterpret_cast<const PdObject*>(_parentController->serverCanvas()->objects().findObject(_serverObjectId)));
     return ret;
 }
 

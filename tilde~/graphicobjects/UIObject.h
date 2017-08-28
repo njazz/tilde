@@ -62,15 +62,13 @@ private:
     CanvasView* _parentCanvasView;
     PatchWindowController* _parentController;
 
-    ObjectId _serverObject;
+    ObjectId _serverObjectId;
 
     ObjectObserverPtr _observer;
 
 protected:
     virtual void hoverEnterEvent(QGraphicsSceneHoverEvent*);
     virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent*);
-
-    PdObject* serverObjectPtr();
 
 public:
     explicit UIObject(UIItem* parent = 0);
@@ -86,8 +84,8 @@ public:
     void setObjectData(UIObjectData* m);
     UIObjectData* objectData();
 
-    virtual ObjectId serverObject();
-    virtual void setServerObject(ObjectId o);
+    virtual ObjectId serverObjectId();
+    virtual void setServerObjectId(ObjectId o);
 
     ObjectObserverPtr observer();
 
@@ -167,6 +165,9 @@ public:
     // -----------------------------------------
 
     virtual void updateUI(t_cpd_list*){};
+
+    // XPD
+    PdObject* serverObjectPtr();
 
 private slots:
     void openPropertiesWindow();

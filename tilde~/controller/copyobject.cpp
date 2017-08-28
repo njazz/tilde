@@ -29,7 +29,7 @@ UIObject* PatchWindowController::copyObject(UIObject* src)
 
     dest->setObjectData(src->objectData());
 
-    dest->setServerObject(src->serverObject());
+    dest->setServerObjectId(src->serverObjectId());
     dest->move(src->pos().x(), src->pos().y());
 
     if (data.split(" ").at(0) == "pd") {

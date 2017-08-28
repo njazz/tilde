@@ -346,7 +346,7 @@ void UIMatrix::mousePressEvent(QGraphicsSceneMouseEvent* ev)
         //                cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
         //            }
 
-        if (serverObject()) {
+        if (serverObjectId()) {
 
             // XPD-TODO
             // emit signalSendMessage(this->serverObject(), QString("bang "));

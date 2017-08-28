@@ -92,7 +92,7 @@ void UIToggle::objectPressEvent(QGraphicsSceneMouseEvent* ev)
         //                cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
         //            }
 
-        if (!serverObject()) {
+        if (!serverObjectId()) {
             qDebug("msg: bad server object!");
         } else {
             //cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
