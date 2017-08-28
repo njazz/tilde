@@ -7,7 +7,7 @@
 //
 
 #include <ceammc_factory.h>
-#include <pdUpdate.hpp>
+//#include <pdUpdate.hpp>
 
 #include "m_pd.h"
 
@@ -19,7 +19,8 @@ class UIpdMsg;
 
 void UIpdMsg::updateUI()
 {
-    UIUpdate((long)owner(), getMessage());
+    // XPD-TODO
+    // UIUpdate((long)owner(), getMessage());
 }
 
 UIpdMsg::UIpdMsg(const PdArgs& a)

@@ -3,9 +3,14 @@
 
 #include "m_pd.h"
 #include <ceammc_object.h>
-#include <pdUpdate.hpp>
+// #include <pdUpdate.hpp>
 
 #include "tilde~_ui_library/tilde~_ui_library.h"
+
+using namespace ceammc;
+
+// XPD-TODO
+// extern void UIUpdate (long objectId, AtomList list);;
 
 namespace ceammc {
 class BaseUIObject : public BaseObject {

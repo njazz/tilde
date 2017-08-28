@@ -7,7 +7,7 @@
 
 //#include "baseUIClass.h"
 #include "ceammc_factory.h"
-#include <pdUpdate.hpp>
+//#include <pdUpdate.hpp>
 
 using namespace ceammc;
 
@@ -21,7 +21,8 @@ class UIpdDSP;
 
 void UIpdDSP::updateUI()
 {
-    UIUpdate((long)owner(), AtomList(float(_value)));
+    // XPD-TODO
+    // UIUpdate((long)owner(), AtomList(float(_value)));
 }
 
 UIpdDSP::UIpdDSP(const PdArgs& a)

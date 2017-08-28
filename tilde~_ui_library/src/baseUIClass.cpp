@@ -10,3 +10,8 @@ BaseUIObject::BaseUIObject(const PdArgs& a)
 
 void BaseUIObject::updateUI()
 {}
+
+//void UIUpdate (long objectId, AtomList list)
+//{
+//    // XPD-TODO
+//};

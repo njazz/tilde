@@ -7,7 +7,7 @@
 //
 
 #include <ceammc_factory.h>
-#include <pdUpdate.hpp>
+//#include <pdUpdate.hpp>
 
 //#include "pdlib.hpp"
 
@@ -23,7 +23,8 @@ class UIpdMatrix;
 
 void UIpdMatrix::updateUI()
 {
-    UIUpdate((long)owner(), AtomList(Atom(value())));
+    // XPD-TODO
+    // UIUpdate((long)owner(), AtomList(Atom(value())));
 }
 
 float UIpdMatrix::value()

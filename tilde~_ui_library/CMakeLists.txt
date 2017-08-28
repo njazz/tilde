@@ -15,7 +15,6 @@ cmake_policy(SET CMP0037 OLD)
 
 project(tilde~_ui_library)
 
-
 set(CEAMMC_LIB_SOURCES
 #    ../../pd-server/pure-data-src/ceammc/ext/src/lib/ceammc.h
 #    ../../pd-server/pure-data-src/ceammc/ext/src/lib/ceammc.hpp
@@ -39,15 +38,7 @@ set(CEAMMC_LIB_SOURCES
 
 )
 
-
-
 set (SOURCES
-#    ceammc_lib/ceammc_log.cpp 
-#    ceammc_lib/ceammc_object.cpp 
-#    ceammc_lib/ceammc_property.cpp 
-#    ceammc_lib/ceammc_format.cpp 
-#    ceammc_lib/ceammc_message.cpp 
-
     src/ui_bang.cpp 
     src/ui_sliders.cpp 
     src/ui_matrix.cpp 
@@ -93,8 +84,6 @@ set (LIBS
 	#${PDSERVER_LIB}
 )
 
-
-
 find_package(Boost 1.47.0 REQUIRED)
 include_directories(${Boost_INCLUDE_DIRS})
 include_directories( ${CMAKE_BINARY_DIR} )
@@ -104,8 +93,6 @@ include_directories(./src/)
 include_directories(./ceammc_lib/)
 include_directories(../../pd-server/pure-data-src/ceammc/ext/src/lib/)
 include_directories(../../pd-server/pure-data-src/src/)
-include_directories(../../pd-server/)
-include_directories(../../pd-server/src/)
 
 add_library(tilde~_ui SHARED ${CEAMMC_LIB_SOURCES} ${SOURCES} ${HEADERS})
 target_link_libraries(tilde~_ui ${LIBS} "-undefined dynamic_lookup")

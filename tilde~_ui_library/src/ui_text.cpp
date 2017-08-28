@@ -7,7 +7,7 @@
 //
 
 #include <ceammc_factory.h>
-#include <pdUpdate.hpp>
+//#include <pdUpdate.hpp>
 
 #include "m_pd.h"
 using namespace ceammc;
@@ -15,7 +15,6 @@ using namespace ceammc;
 #include "ui_text.h"
 
 // dummy object example
-
 
 static t_class* ui_text_class;
 //static t_class* ui_array_class;
@@ -34,11 +33,7 @@ void* new_ui_text()
 extern "C" void setup_ui0x2etext()
 {
     //ObjectFactory<UIpdText> obj("ui.text");
-    ui_text_class = class_new(gensym("ui.text"),(t_newmethod)&new_ui_text,0,sizeof(t_object),CLASS_NOINLET,A_NULL);
+    ui_text_class = class_new(gensym("ui.text"), (t_newmethod)&new_ui_text, 0, sizeof(t_object), CLASS_NOINLET, A_NULL);
     //TEMP
     //ui_array_class = class_new(gensym("ui.array"),(t_newmethod)&new_ui_array,0,sizeof(t_object),CLASS_NOINLET,A_NULL);
-
-
 }
-
-

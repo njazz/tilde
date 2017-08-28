@@ -6,7 +6,7 @@
 //
 
 #include <ceammc_factory.h>
-#include <pdUpdate.hpp>
+//#include <pdUpdate.hpp>
 
 using namespace ceammc;
 
@@ -16,7 +16,8 @@ class UIpdBang;
 
 void UIpdBang::updateUI()
 {
-    UIUpdate((long)owner(), AtomList(Atom(gensym("bang"))));
+    // XPD-TODO
+    // UIUpdate((long)owner(), AtomList(Atom(gensym("bang"))));
 }
 
 UIpdBang::UIpdBang(const PdArgs& a)

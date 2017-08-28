@@ -7,7 +7,7 @@
 //
 
 #include <ceammc_factory.h>
-#include <pdUpdate.hpp>
+//#include <pdUpdate.hpp>
 
 #include <stdlib.h>
 
@@ -23,12 +23,14 @@ UIpdScript::UIpdScript(const PdArgs& a)
 }
 void UIpdScript::onBang()
 {
-    UIUpdate((long)this->owner(), AtomList());
+    // XPD-TODO
+    // UIUpdate((long)this->owner(), AtomList());
 }
 
 void UIpdScript::onFloat(float f)
 {
-    UIUpdate((long)this->owner(), AtomList(Atom(f)));
+    // XPD-TODO
+    // UIUpdate((long)this->owner(), AtomList(Atom(f)));
 }
 
 void UIpdScript::onAny(t_symbol* s, const AtomList& list)

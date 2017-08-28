@@ -7,7 +7,7 @@
 //
 
 #include <ceammc_factory.h>
-#include <pdUpdate.hpp>
+//#include <pdUpdate.hpp>
 
 #include "ui_float.h"
 
@@ -17,7 +17,8 @@ class UIpdFloat;
 
 void UIpdFloat::updateUI()
 {
-    UIUpdate((long)owner(), AtomList(Atom(value())));
+    // XPD-TODO
+    // UIUpdate((long)owner(), AtomList(Atom(value())));
 }
 
 float UIpdFloat::value()

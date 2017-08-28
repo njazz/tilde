@@ -6,7 +6,7 @@
 //
 
 #include <ceammc_factory.h>
-#include <pdUpdate.hpp>
+//#include <pdUpdate.hpp>
 
 using namespace ceammc;
 
@@ -15,7 +15,8 @@ using namespace ceammc;
 class UIpdArray;
 static void qtpd_update(UIpdArray* x)
 {
-    UIUpdate((long)x->owner(), AtomList(Atom(gensym("bang"))));
+    // XPD-TODO
+    // UIUpdate((long)x->owner(), AtomList(Atom(gensym("bang"))));
 }
 
 UIpdArray::UIpdArray(const PdArgs& a)
