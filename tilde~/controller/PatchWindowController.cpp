@@ -224,13 +224,15 @@ void PatchWindowController::doCreateObject(UIObject* uiObject)
 
     uiObject->observer()->setObject(uiObject);
 
-    uiObject->serverObjectPtr()->registerObserver(uiObject->observer());
-
     uiObject->setEditModeRef(_windows[0]->canvasView()->getEditModeRef());
 
-    uiObject->sync();
+    if (uiObject->serverObjectPtr()) {
+        uiObject->serverObjectPtr()->registerObserver(uiObject->observer());
 
-    connect(uiObject, &UIObject::signalSendMessage, this, &PatchWindowController::sendMessageToObject);
+        connect(uiObject, &UIObject::signalSendMessage, this, &PatchWindowController::sendMessageToObject);
+    }
+
+    uiObject->sync();
 
     connect(uiObject, &UIObject::selectBox, _windows[0]->canvasView(), &CanvasView::slotSelectBox);
     connect(uiObject, &UIObject::moveBox, _windows[0]->canvasView(), &CanvasView::slotMoveBox);
@@ -292,8 +294,8 @@ UIObject* PatchWindowController::createObjectWithoutUndo(string name, QPoint pos
 
     if (!serverObject) {
         //qDebug() << "bad server object!";
-        ApplicationController::post("bad server object!");
-        return 0;
+        //        ApplicationController::post("bad server object!");
+        //        return 0;
     }
 
     uiObject->setServerObjectId(serverObject);
@@ -1067,8 +1069,7 @@ void PatchWindowController::sendMessageToObject(ObjectId object, QString msg)
 
     PdObject* objectP = const_cast<PdObject*>(reinterpret_cast<const PdObject*>(serverCanvas()->objects().findObject(object)));
 
-
-    if (msg=="bang")
+    if (msg == "bang")
         objectP->sendBang();
 
     //objectP->message
