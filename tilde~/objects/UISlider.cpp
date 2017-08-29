@@ -146,8 +146,8 @@ void UISlider::mousePressEvent(QGraphicsSceneMouseEvent* ev)
             // serverObject()->message(((std::string) "bang " + val_str));
 
             // XPD-TODO
-            // emit signalSendMessage(this->serverObject(), QString("set " + val_str));
-            // emit signalSendMessage(this->serverObject(), QString("bang "));
+            emit signalSendMessage(this->serverObjectId(), QString("set " + val_str));
+            emit signalSendMessage(this->serverObjectId(), QString("bang"));
         }
     }
 }

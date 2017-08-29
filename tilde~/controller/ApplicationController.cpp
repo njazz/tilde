@@ -333,7 +333,7 @@ void ApplicationController::post(QString text)
         return;
 
     shared_ptr<PdLocalProcess> ptr = static_pointer_cast<PdLocalProcess>(_theServerInstance);
-    ptr->PdLocalProcess::post(text.toStdString());
+    ptr->PdLocalProcess::post(text.toStdString()+"\n");
 }
 
 void ApplicationController::loadAllLibraries()

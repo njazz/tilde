@@ -82,7 +82,7 @@ public:
 
     // ----------------------
 
-    ProcessPtr serverInstance();
+    //ProcessPtr serverInstance();
     ObjectId serverCanvasAsObject();
     CanvasPtr serverCanvas();
 

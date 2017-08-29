@@ -22,6 +22,7 @@
 #include "PropertiesWindow.h"
 
 #include "PatchWindowController.h"
+#include "ApplicationController.h"
 
 namespace tilde {
 
@@ -633,8 +634,10 @@ QString UIObject::fullHelpName()
     if (paths.size() == 0) {
         objectData()->setFullHelpName("");
 
-        //ApplicationController::post("Help: bad search paths");
-        parentController()->serverInstance()->post("Help: bad search paths");
+        ApplicationController::post("Help: bad search paths");
+
+        //parentController()->appController()->mainServerInstance()->
+        //        post("Help: bad search paths");
         return "";
     }
 
@@ -678,8 +681,7 @@ void UIObject::openHelpWindow()
     if (fullHelpName_ != "") {
         FileParser::open(fullHelpName_);
     } else {
-        //ServerInstance::error("bad error help file name!");
-        parentController()->serverInstance()->error("bad error help file name!");
+        ApplicationController::post("error: bad help file name!");
     }
 
     emit signalOpenHelpWindow();

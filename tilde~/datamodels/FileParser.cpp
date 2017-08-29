@@ -690,7 +690,8 @@ void FileParser::open(QString fname)
 
         f.close();
     } else {
-        _pdParserWindowController->serverInstance()->error("cannot open file: " + fname.toStdString());
+        //_pdParserWindowController->mainServerInstance()->
+        ApplicationController::post("error: cannot open file: " + fname);
     }
 }
 

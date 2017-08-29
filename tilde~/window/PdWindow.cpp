@@ -52,6 +52,16 @@ void PdWindow::postSlot(QString text)
             txt.remove(txt.length() - 1, 1);
 
         item->setText(txt);
+
+        if (txt.split(":").first()=="error")
+            item->setBackgroundColor(QColor(255,192,192,255));
+
+        if (txt.split(":").first()=="verbose(2)")
+            item->setBackgroundColor(QColor(255,255,192,255));
+
+        if (txt.split(":").first()=="verbose(4)")
+            item->setBackgroundColor(QColor(224,224,224,255));
+
         _ui->log->setItem(0, 1, item);
 
         cm_log_string = "";

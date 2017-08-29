@@ -46,10 +46,10 @@ PatchWindowController::PatchWindowController(ApplicationController* appControlle
     _appController = appController;
 
     //_serverInstance = appController->mainServerInstance();
-    serverInstance()->registerObserver(_observer);
+    appController->mainServerInstance()->registerObserver(_observer);
 
     _canvasData = new CanvasData();
-    _serverCanvas = serverInstance()->createCanvas();
+    _serverCanvas = appController->mainServerInstance()->createCanvas();
 
     //_canvasData->setServerCanvas(_serverCanvas);
 
@@ -81,7 +81,7 @@ PatchWindowController::PatchWindowController(ApplicationController* appControlle
 
     _appController = appController;
 
-    serverInstance()->registerObserver(_observer);
+    appController->mainServerInstance()->registerObserver(_observer);
 
     _canvasData = new CanvasData();
     _serverCanvas = canvas;
@@ -162,7 +162,9 @@ void PatchWindowController::syncObjectsOnParent()
     _parentObject->update();
 }
 
-ProcessPtr PatchWindowController::serverInstance() { return _appController->mainServerInstance(); }
+//ProcessPtr PatchWindowController::serverInstance() {
+//    return _appController->mainServerInstance();
+//}
 
 vector<PatchWindow*> PatchWindowController::windows() { return _windows; };
 PatchWindow* PatchWindowController::mainWindow() { return _windows[0]; };
@@ -435,12 +437,14 @@ void PatchWindowController::restoreUIBoxForSubpatch(PatchWindowController* contr
 
 void PatchWindowController::deleteSinglePatchcord(UIPatchcord* p)
 {
+    _serverCanvas->disconnect(p->obj1()->serverObjectId(), p->outletIndex(), p->obj2()->serverObjectId(), p->inletIndex());
+
     _scene->removeItem(p);
     p->remove();
     _canvasData->deletePatchcord(p);
     _scene->update();
 
-    _serverCanvas->disconnect(p->obj1()->serverObjectId(), p->outletIndex(), p->obj2()->serverObjectId(), p->inletIndex());
+
 }
 
 //bool PatchWindowController::patchcord(UIObject* src, int out, UIObject* dest, int in){};
@@ -554,14 +558,16 @@ void PatchWindowController::menuSelectAll()
 
 void PatchWindowController::menuUndo()
 {
-    serverInstance()->post("menu undo stub");
+    //serverInstance()->
+    ApplicationController::post("menu undo stub");
     _undoStack->undo();
     emit signalEnableRedo(_undoStack->canRedo());
 }
 
 void PatchWindowController::menuRedo()
 {
-    serverInstance()->post("menu undo stub");
+    //serverInstance()->
+    ApplicationController::post("menu undo stub");
     _undoStack->redo();
 
     emit signalEnableUndo(_undoStack->canUndo());
@@ -812,8 +818,11 @@ void PatchWindowController::deletePatchcordsFor(UIItem* obj)
             _scene->removeItem(p);
 
             //_canvasData->patchcords()->erase(std::remove(_canvasData->patchcords()->begin(), _canvasData->patchcords()->end(), *it), _canvasData->patchcords()->end());
-            canvasData()->deletePatchcord(p);
-            p->remove();
+            //canvasData()->deletePatchcord(p);
+
+            deleteSinglePatchcord(p);
+
+            //p->remove();
 
             _scene->update();
             //it = _canvasData->patchcords()->erase(it);
@@ -1069,8 +1078,22 @@ void PatchWindowController::sendMessageToObject(ObjectId object, QString msg)
 
     PdObject* objectP = const_cast<PdObject*>(reinterpret_cast<const PdObject*>(serverCanvas()->objects().findObject(object)));
 
-    if (msg == "bang")
+    if (msg.split(" ").first() == "bang") {
         objectP->sendBang();
+        return;
+    }
+
+    bool ok = false;
+    float f = msg.toFloat(&ok);
+    if (ok) {
+        objectP->sendFloat(f);
+        return;
+    }
+
+    if (msg.split(" ").length() == 1) {
+        objectP->sendSymbol(msg.toStdString());
+        return;
+    }
 
     //objectP->message
 }

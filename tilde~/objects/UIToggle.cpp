@@ -99,8 +99,7 @@ void UIToggle::objectPressEvent(QGraphicsSceneMouseEvent* ev)
             //serverObject()->message("bang");
 
 
-            // XPD-TODO
-            // emit signalSendMessage(this->serverObject(), QString("bang"));
+            emit signalSendMessage(this->serverObjectId(), QString("bang"));
 
             //qDebug("server msg");
         }
