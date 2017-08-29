@@ -1062,8 +1062,15 @@ void PatchWindowController::sendMessageToObject(ObjectId object, QString msg)
         */
 
     // XPD-TODO
-    // object->message(msg.toStdString());
-    // const PdObject * objectP = _serverCanvas->objects().findObject(object);
+
+    //const PdObject * objectP = static_pointer_cast<const Object,const PdObject>(_serverCanvas->objects().findObject(object));
+
+    PdObject* objectP = const_cast<PdObject*>(reinterpret_cast<const PdObject*>(serverCanvas()->objects().findObject(object)));
+
+
+    if (msg=="bang")
+        objectP->sendBang();
+
     //objectP->message
 }
 }

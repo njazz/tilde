@@ -117,7 +117,6 @@ void UIBang::timerAction()
 
 void UIBang::slotBang()
 {
-    // XPD-TODO
-    // emit signalSendMessage(this->serverObject(), QString("bang"));
+    emit signalSendMessage(this->serverObjectId(), QString("bang"));
 }
 }

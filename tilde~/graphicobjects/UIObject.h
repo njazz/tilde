@@ -181,6 +181,7 @@ private slots:
 
     void propertyUpdate(); ///> basic update - calls update() probably remove later
 
+
 signals:
     void signalEditObject(void* box);
 
