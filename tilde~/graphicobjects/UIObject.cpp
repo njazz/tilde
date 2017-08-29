@@ -289,6 +289,7 @@ void UIObject::addInlet()
 
     qDebug() << "addInlet";
 
+    // unused?
     // XPD-TODO
     //    if (_serverObject) {
     //        _serverObject->_portClass_ = (_serverObject->getInletType(inletCount()) == XLetSignal);
@@ -342,6 +343,7 @@ void UIObject::addOutlet()
 {
     int _portClass_ = 0;
 
+    // unused?
     // XPD-TODO
     //    if (_serverObject) {
     //        _portClass_ = (_serverObject->getOutletType(outletCount()) == XLetSignal);

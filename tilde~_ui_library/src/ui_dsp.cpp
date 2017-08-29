@@ -5,17 +5,12 @@
 //  Created by Alex Nadzharov on 03/03/17.
 //
 
-//#include "baseUIClass.h"
+#include "ui_dsp.h"
+#include "ceammc_atomlist.h"
 #include "ceammc_factory.h"
-//#include <pdUpdate.hpp>
+#include "m_pd.h"
 
 using namespace ceammc;
-
-#include "ui_dsp.h"
-
-#include "ceammc_atomlist.h"
-
-#include "m_pd.h"
 
 class UIpdDSP;
 

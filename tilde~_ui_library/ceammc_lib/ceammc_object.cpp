@@ -54,6 +54,36 @@ bool BaseObject::hasProperty(t_symbol* key) const
     return props_.find(key) != props_.end();
 }
 
+bool BaseObject::hasProperty(const char* key) const
+{
+    return hasProperty(gensym(key));
+}
+
+Property* BaseObject::property(t_symbol* key)
+{
+    Properties::iterator it = props_.find(key);
+    return it == props_.end() ? 0 : it->second;
+}
+
+Property* BaseObject::property(const char* key)
+{
+    return property(gensym(key));
+}
+
+bool BaseObject::setProperty(t_symbol* key, const AtomList& v)
+{
+    Property* p = property(key);
+    if (p == 0 || p->readonly())
+        return false;
+
+    return p->set(v);
+}
+
+bool BaseObject::setProperty(const char* key, const AtomList& v)
+{
+    return setProperty(gensym(key), v);
+}
+
 void BaseObject::bangTo(size_t n)
 {
     if (n >= outlets_.size()) {
@@ -111,6 +141,16 @@ void BaseObject::messageTo(size_t n, const Message& msg)
     msg.output(outlets_[n]);
 }
 
+void BaseObject::anyTo(size_t n, const AtomList& l)
+{
+    if (n >= outlets_.size()) {
+        OBJ_ERR << "invalid outlet index: " << n;
+        return;
+    }
+
+    l.outputAsAny(outlets_[n]);
+}
+
 void BaseObject::anyTo(size_t n, t_symbol* s, const Atom& a)
 {
     if (n >= outlets_.size()) {
@@ -129,6 +169,21 @@ void BaseObject::anyTo(size_t n, t_symbol* s, const AtomList& l)
     }
 
     l.outputAsAny(outlets_[n], s);
+}
+
+void BaseObject::dataTo(size_t n, const DataPtr& d)
+{
+    if (n >= outlets_.size()) {
+        OBJ_ERR << "invalid outlet index: " << n;
+        return;
+    }
+
+    if (d.isNull()) {
+        OBJ_ERR << "NULL data";
+        return;
+    }
+
+    d.asAtom().output(outlets_[n]);
 }
 
 bool BaseObject::processAnyInlets(t_symbol* sel, const AtomList& lst)
@@ -207,9 +262,28 @@ AtomList BaseObject::listAllProps() const
     return res;
 }
 
-t_outlet* BaseObject::createOutlet(bool signal)
+void BaseObject::appendInlet(t_inlet* in)
 {
-    t_outlet* out = outlet_new(pd_.owner, signal ? &s_signal : &s_anything);
+    inlets_.push_back(in);
+}
+
+void BaseObject::appendOutlet(t_outlet* out)
+{
+    outlets_.push_back(out);
+}
+
+void BaseObject::extractPositionalArguments()
+{
+    int idx = pd_.args.findPos(isProperty);
+    if (idx < 0)
+        idx = pd_.args.size();
+
+    positional_args_ = pd_.args.slice(0, idx);
+}
+
+t_outlet* BaseObject::createOutlet()
+{
+    t_outlet* out = outlet_new(pd_.owner, &s_list);
     outlets_.push_back(out);
     return out;
 }
@@ -244,7 +318,7 @@ void BaseObject::freeInlets()
 
 size_t BaseObject::numInlets() const
 {
-    return static_cast<size_t>(obj_ninlets(pd_.owner));
+    return pd_.owner ? static_cast<size_t>(obj_ninlets(pd_.owner)) : 0;
 }
 
 t_inlet* BaseObject::createInlet()
@@ -263,6 +337,8 @@ BaseObject::BaseObject(const PdArgs& args)
     , receive_from_(0)
 {
     createCbProperty("@*", &BaseObject::listAllProps);
+
+    extractPositionalArguments();
 }
 
 BaseObject::~BaseObject()
@@ -273,7 +349,25 @@ BaseObject::~BaseObject()
     freeProps();
 }
 
-void BaseObject::parseArguments()
+Atom BaseObject::positionalArgument(size_t pos, const Atom& def) const
+{
+    return pos < positional_args_.size() ? positional_args_[pos] : def;
+}
+
+t_float BaseObject::positionalFloatArgument(size_t pos, t_float def) const
+{
+    return pos < positional_args_.size() ? positional_args_[pos].asFloat(def) : def;
+}
+
+t_symbol* BaseObject::positionalSymbolArgument(size_t pos, t_symbol* def) const
+{
+    if (pos >= positional_args_.size())
+        return def;
+
+    return positional_args_[pos].isSymbol() ? positional_args_[pos].asSymbol() : def;
+}
+
+void BaseObject::parseProperties()
 {
     std::deque<AtomList> p = pd_.args.properties();
     for (size_t i = 0; i < p.size(); i++) {
@@ -289,12 +383,149 @@ void BaseObject::parseArguments()
 
         props_[pname]->set(p[i].slice(1));
     }
+}
 
-    int idx = pd_.args.findPos(isProperty);
-    if (idx < 0)
-        return;
+bool BaseObject::checkArg(const Atom& atom, BaseObject::ArgumentType type, int pos) const
+{
+#define ARG_ERROR(msg)           \
+    {                            \
+        std::ostringstream os;   \
+        os << msg;               \
+        if (pos >= 0)            \
+            os << " at " << pos; \
+        OBJ_ERR << os.str();     \
+        return false;            \
+    }
 
-    pd_.args = pd_.args.slice(0, idx);
+    switch (type) {
+    case ARG_FLOAT:
+        if (!atom.isFloat())
+            ARG_ERROR("float expected");
+        break;
+    case ARG_SYMBOL:
+        if (!atom.isSymbol())
+            ARG_ERROR("symbol expected");
+        break;
+    case ARG_PROPERTY:
+        if (!atom.isProperty())
+            ARG_ERROR("property expected");
+        break;
+    case ARG_SNONPROPERTY:
+        if (!atom.isSymbol() || atom.isProperty())
+            ARG_ERROR("symbol and non property expected");
+        break;
+    case ARG_INT:
+        if (!atom.isInteger())
+            ARG_ERROR("integer expected");
+        break;
+    case ARG_NATURAL:
+        if (!atom.isNatural())
+            ARG_ERROR("natural expected");
+        break;
+    case ARG_BOOL:
+        if (!atom.isFloat())
+            ARG_ERROR("boolean expected");
+
+        if (atom.asFloat() != 0.f && atom.asFloat() != 1.f)
+            ARG_ERROR("only 1 or 0 accepted");
+
+        break;
+    }
+
+    return true;
+
+#undef ARG_ERROR
+}
+
+static const char* to_string(BaseObject::ArgumentType a)
+{
+    static const char* names[] = {
+        "float",
+        "int",
+        "natural",
+        "symbol",
+        "property",
+        "non-property symbol",
+        "bool"
+    };
+
+    return names[a];
+}
+
+bool BaseObject::checkArgs(const AtomList& lst, ArgumentType a1, t_symbol* method) const
+{
+    if (lst.size() < 1
+        || !checkArg(lst[0], a1, 0)) {
+
+        if (method)
+            OBJ_ERR << "Usage: " << method->s_name << " " << to_string(a1);
+
+        return false;
+    }
+
+    return true;
+}
+
+bool BaseObject::checkArgs(const AtomList& lst, BaseObject::ArgumentType a1,
+    BaseObject::ArgumentType a2, t_symbol* method) const
+{
+    if (lst.size() < 2
+        || !checkArg(lst[0], a1, 0)
+        || !checkArg(lst[1], a2, 1)) {
+
+        if (method)
+            OBJ_ERR << "Usage: " << method->s_name
+                    << " " << to_string(a1)
+                    << " " << to_string(a2);
+
+        return false;
+    }
+
+    return true;
+}
+
+bool BaseObject::checkArgs(const AtomList& lst, BaseObject::ArgumentType a1,
+    BaseObject::ArgumentType a2, BaseObject::ArgumentType a3, t_symbol* method) const
+{
+    if (lst.size() < 3
+        || !checkArg(lst[0], a1, 0)
+        || !checkArg(lst[1], a2, 1)
+        || !checkArg(lst[2], a3, 2)) {
+
+        if (method)
+            OBJ_ERR << "Usage: " << method->s_name
+                    << " " << to_string(a1)
+                    << " " << to_string(a2)
+                    << " " << to_string(a3);
+
+        return false;
+    }
+
+    return true;
+}
+
+bool BaseObject::checkArgs(const AtomList& lst, BaseObject::ArgumentType a1,
+    BaseObject::ArgumentType a2, BaseObject::ArgumentType a3,
+    BaseObject::ArgumentType a4, t_symbol* method) const
+{
+
+    if (lst.size() < 4
+        || !checkArg(lst[0], a1, 0)
+        || !checkArg(lst[1], a2, 1)
+        || !checkArg(lst[2], a3, 2)
+        || !checkArg(lst[3], a4, 3)) {
+
+        if (method)
+            OBJ_ERR << "Usage: " << method->s_name
+                    << " " << to_string(a1)
+                    << " " << to_string(a2)
+                    << " " << to_string(a3)
+                    << " " << to_string(a4);
+
+        return false;
+    }
+
+    return true;
 }
 
 void BaseObject::dump() const
@@ -365,5 +596,53 @@ t_symbol* BaseObject::tryGetPropKey(t_symbol* sel)
     }
 
     return res;
+}
+
+SoundExternal::SoundExternal(const PdArgs& a)
+    : BaseObject(a)
+    , block_size_(0)
+    , n_in_(a.hasDefaultSignalInlet() ? 1 : 0)
+    , n_out_(0)
+{
+}
+
+void SoundExternal::setupDSP(t_signal** sp)
+{
+    block_size_ = size_t(sp[0]->s_n);
+    sample_rate_ = size_t(sp[0]->s_sr);
+
+    dsp_add(dspPerform, 1, static_cast<void*>(this));
+
+    for (size_t i = 0; i < n_in_; i++)
+        in_[i] = sp[i]->s_vec;
+
+    for (size_t i = 0; i < n_out_; i++)
+        out_[i] = sp[i + n_in_]->s_vec;
+}
+
+t_inlet* SoundExternal::createSignalInlet()
+{
+    if (n_in_ == MAX_SIG_NUM) {
+        OBJ_ERR << "too many inlets: " << n_in_;
+        return 0;
+    }
+
+    t_inlet* in = inlet_new(owner(), &owner()->ob_pd, &s_signal, &s_signal);
+    appendInlet(in);
+    n_in_++;
+    return in;
+}
+
+t_outlet* SoundExternal::createSignalOutlet()
+{
+    if (n_out_ == MAX_SIG_NUM) {
+        OBJ_ERR << "too many outlets: " << n_out_;
+        return 0;
+    }
+
+    t_outlet* out = outlet_new(owner(), &s_signal);
+    appendOutlet(out);
+    n_out_++;
+    return out;
 }
 }

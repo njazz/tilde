@@ -7,13 +7,10 @@
 //
 
 #include <ceammc_factory.h>
-//#include <pdUpdate.hpp>
-
 #include "m_pd.h"
+#include "ui_msg.h"
 
 using namespace ceammc;
-
-#include "ui_msg.h"
 
 class UIpdMsg;
 

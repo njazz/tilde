@@ -281,16 +281,22 @@ UIObject* PatchWindowController::createObjectWithoutUndo(string name, QPoint pos
 
     UIObject* uiObject = ObjectLoader::inst().createUIObject(name.c_str());
 
-    //ObjectPtr serverObject = _appController->slotCreateObject(_serverCanvas, name); //emit signalCreateObject(_serverCanvas, name);
-
-    ObjectId serverObject = _appController->slotCreateObject(_serverCanvas, name);
-
-    uiObject->setServerObjectId(serverObject);
-
     if (!uiObject) {
         qDebug() << "bad ui object!";
         return 0;
     }
+
+    //ObjectPtr serverObject = _appController->slotCreateObject(_serverCanvas, name); //emit signalCreateObject(_serverCanvas, name);
+
+    ObjectId serverObject = _appController->slotCreateObject(_serverCanvas, name);
+
+    if (!serverObject) {
+        //qDebug() << "bad server object!";
+        ApplicationController::post("bad server object!");
+        return 0;
+    }
+
+    uiObject->setServerObjectId(serverObject);
 
     //uiObject->move(pos.x(), pos.y());
 
@@ -432,7 +438,7 @@ void PatchWindowController::deleteSinglePatchcord(UIPatchcord* p)
     _canvasData->deletePatchcord(p);
     _scene->update();
 
-    _serverCanvas->disconnect(p->obj1()->serverObjectId(),p->outletIndex(), p->obj2()->serverObjectId(), p->inletIndex());
+    _serverCanvas->disconnect(p->obj1()->serverObjectId(), p->outletIndex(), p->obj2()->serverObjectId(), p->inletIndex());
 }
 
 //bool PatchWindowController::patchcord(UIObject* src, int out, UIObject* dest, int in){};
@@ -1057,7 +1063,7 @@ void PatchWindowController::sendMessageToObject(ObjectId object, QString msg)
 
     // XPD-TODO
     // object->message(msg.toStdString());
-    PdObject * objectP = _serverCanvas->objects().findObject(object);
+    // const PdObject * objectP = _serverCanvas->objects().findObject(object);
     //objectP->message
 }
 }

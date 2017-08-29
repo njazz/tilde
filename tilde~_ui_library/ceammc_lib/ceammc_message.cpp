@@ -43,6 +43,8 @@ Message::Message(const Atom& a)
         type_ = FLOAT;
     if (value_.isSymbol())
         type_ = SYMBOL;
+    if (value_.isData())
+        type_ = DATA;
 }
 
 Message::Message(const AtomList& l)
@@ -80,6 +82,8 @@ void Message::setAtom(const Atom& a)
         type_ = FLOAT;
     if (a.isSymbol())
         type_ = SYMBOL;
+    if (a.isData())
+        type_ = DATA;
 }
 
 void Message::setFloat(t_float v)
@@ -162,6 +166,12 @@ void Message::output(t_outlet* x) const
     case NONE:
         break;
     }
+}
+
+bool Message::isBang() const
+{
+    // NB: this is only for testing purposes now
+    return (type_ == SYMBOL && value_.asSymbol() == &s_bang);
 }
 
 bool operator==(const Message& c1, const Message& c2)

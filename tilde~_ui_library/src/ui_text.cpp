@@ -7,12 +7,10 @@
 //
 
 #include <ceammc_factory.h>
-//#include <pdUpdate.hpp>
-
 #include "m_pd.h"
-using namespace ceammc;
-
 #include "ui_text.h"
+
+using namespace ceammc;
 
 // dummy object example
 

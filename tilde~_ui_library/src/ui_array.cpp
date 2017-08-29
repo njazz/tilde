@@ -6,11 +6,9 @@
 //
 
 #include <ceammc_factory.h>
-//#include <pdUpdate.hpp>
+#include "ui_array.h"
 
 using namespace ceammc;
-
-#include "ui_array.h"
 
 class UIpdArray;
 static void qtpd_update(UIpdArray* x)

@@ -7,8 +7,6 @@
 //
 
 #include <ceammc_factory.h>
-//#include <pdUpdate.hpp>
-
 #include "ui_toggle.h"
 
 using namespace ceammc;

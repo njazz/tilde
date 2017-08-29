@@ -6,13 +6,9 @@
 //
 
 #include <ceammc_factory.h>
-//#include <pdUpdate.hpp>
-
-using namespace ceammc;
-
 #include "ui_bang.h"
 
-class UIpdBang;
+using namespace ceammc;
 
 void UIpdBang::updateUI()
 {

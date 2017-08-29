@@ -7,10 +7,7 @@
 //
 
 #include <ceammc_factory.h>
-//#include <pdUpdate.hpp>
-
 #include <stdlib.h>
-
 #include "ui_sliders.h"
 
 using namespace ceammc;

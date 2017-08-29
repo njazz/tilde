@@ -15,6 +15,7 @@
 #define CEAMMC_OBJECT_H
 
 #include "ceammc_atomlist.h"
+#include "ceammc_data.h"
 #include "ceammc_message.h"
 #include "ceammc_property.h"
 
@@ -31,17 +32,26 @@ public:
     AtomList args;
     t_symbol* className;
     t_object* owner;
+    bool noDefaultInlet;
+    bool mainSignalInlet;
 
     PdArgs(const AtomList& lst, t_symbol* c, t_object* own)
         : args(lst)
         , className(c)
         , owner(own)
+        , noDefaultInlet(false)
+        , mainSignalInlet(false)
     {
+    }
+
+    bool hasDefaultSignalInlet() const
+    {
+        return mainSignalInlet && !noDefaultInlet;
     }
 };
 
 class BaseObject {
-    PdArgs pd_;
+    const PdArgs pd_;
     typedef std::vector<t_inlet*> InletList;
     typedef std::vector<t_outlet*> OutletList;
     typedef std::vector<t_symbol*> SymbolList;
@@ -50,19 +60,41 @@ class BaseObject {
     OutletList outlets_;
     SymbolList inlets_s_;
     Properties props_;
+    AtomList positional_args_;
     t_symbol* receive_from_;
 
 public:
     typedef AtomList (BaseObject::*GetterFn)() const;
     typedef void (BaseObject::*SetterFn)(const AtomList&);
 
+    /**
+     * @note if adding new type: see static to_string in ceammc_object.cpp
+     */
+    enum ArgumentType {
+        ARG_FLOAT = 0,
+        ARG_INT,
+        ARG_NATURAL,
+        ARG_SYMBOL,
+        ARG_PROPERTY,
+        ARG_SNONPROPERTY,
+        ARG_BOOL
+    };
+
 public:
     BaseObject(const PdArgs& args);
     virtual ~BaseObject();
 
-    inline AtomList& args() { return pd_.args; }
-    inline const AtomList& args() const { return pd_.args; }
-    void parseArguments();
+    Atom positionalArgument(size_t pos, const Atom& def = Atom()) const;
+    t_float positionalFloatArgument(size_t pos, t_float def = 0.f) const;
+    t_symbol* positionalSymbolArgument(size_t pos, t_symbol* def = 0) const;
+    inline const AtomList& positionalArguments() const { return positional_args_; }
+    virtual void parseProperties();
+
+    bool checkArg(const Atom& atom, ArgumentType type, int pos = -1) const;
+    bool checkArgs(const AtomList& lst, ArgumentType a1, t_symbol* method = 0) const;
+    bool checkArgs(const AtomList& lst, ArgumentType a1, ArgumentType a2, t_symbol* method = 0) const;
+    bool checkArgs(const AtomList& lst, ArgumentType a1, ArgumentType a2, ArgumentType a3, t_symbol* method = 0) const;
+    bool checkArgs(const AtomList& lst, ArgumentType a1, ArgumentType a2, ArgumentType a3, ArgumentType a4, t_symbol* method = 0) const;
 
     /**
      * Returns object class name as string.
@@ -72,7 +104,7 @@ public:
     /**
      * Returns pointer to pd object struct, if you need manually call pd fuctions.
      */
-    inline t_object* owner() { return pd_.owner; }
+    inline t_object* owner() const { return pd_.owner; }
 
     /**
      * Dumps object info to Pd window
@@ -86,6 +118,7 @@ public:
     virtual void onFloat(float) {}
     virtual void onSymbol(t_symbol*) {}
     virtual void onList(const AtomList&) {}
+    virtual void onData(const DataPtr&) {}
     virtual void onAny(t_symbol*, const AtomList&) {}
 
     /**
@@ -117,10 +150,9 @@ public:
     size_t numInlets() const;
 
     /**
-     * Creates outlet
-     * @param signal - if true create signal outlet
+     * Creates control outlet
      */
-    t_outlet* createOutlet(bool signal = false);
+    t_outlet* createOutlet();
 
     /**
      * Returns pointer to outlet specified by given index
@@ -144,49 +176,58 @@ public:
         createProperty(p);
     }
     bool hasProperty(t_symbol* key) const;
+    bool hasProperty(const char* key) const;
+    Property* property(t_symbol* key);
+    Property* property(const char* key);
+    bool setProperty(t_symbol* key, const AtomList& v);
+    bool setProperty(const char* key, const AtomList& v);
 
     /**
      * Outputs atom to specified outlet
      * @param n - outlet number
      * @param a - atom value
      */
-    void atomTo(size_t n, const Atom& a);
+    virtual void atomTo(size_t n, const Atom& a);
 
     /**
      * Outputs bang to specified outlet
      * @param n - outlet number
      */
-    void bangTo(size_t n);
+    virtual void bangTo(size_t n);
 
     /**
      * Outputs float value to specified outlet
      * @param n - outlet number
      * @param v - float value
      */
-    void floatTo(size_t n, float v);
+    virtual void floatTo(size_t n, float v);
 
     /**
      * Outputs symbol value to specified outlet
      * @param n - outlet number
      * @param s - symbol value
      */
-    void symbolTo(size_t n, t_symbol* s);
+    virtual void symbolTo(size_t n, t_symbol* s);
 
     /**
      * Outputs list to specified outlet
      * @param n - outlet number
      * @param l - list value
      */
-    void listTo(size_t n, const AtomList& l);
+    virtual void listTo(size_t n, const AtomList& l);
 
     /**
      * Outputs message to specified outlet
      * @param n - outlet number
      * @param msg - message value
      */
-    void messageTo(size_t n, const Message& msg);
-    void anyTo(size_t n, t_symbol* s, const Atom& a);
-    void anyTo(size_t n, t_symbol* s, const AtomList& l);
+    virtual void messageTo(size_t n, const Message& msg);
+
+    virtual void anyTo(size_t n, const AtomList& l);
+    virtual void anyTo(size_t n, t_symbol* s, const Atom& a);
+    virtual void anyTo(size_t n, t_symbol* s, const AtomList& l);
+
+    virtual void dataTo(size_t n, const DataPtr& d);
 
     virtual bool processAnyInlets(t_symbol* sel, const AtomList& lst);
     virtual bool processAnyProps(t_symbol* sel, const AtomList& lst);
@@ -199,13 +240,84 @@ public:
 public:
     static t_symbol* tryGetPropKey(t_symbol* sel);
 
-private:
+protected:
     void freeInlets();
     void freeOutlets();
     void freeProps();
     AtomList propNumInlets();
     AtomList propNumOutlets();
     AtomList listAllProps() const;
+    const AtomList& args() const { return pd_.args; }
+    void appendInlet(t_inlet* in);
+    void appendOutlet(t_outlet* out);
+
+private:
+    void extractPositionalArguments();
+};
+
+class SoundExternal : public BaseObject {
+    const static size_t MAX_SIG_NUM = 16;
+
+private:
+    size_t block_size_;
+    size_t n_in_;
+    size_t n_out_;
+    size_t sample_rate_;
+    t_sample* in_[MAX_SIG_NUM];
+    t_sample* out_[MAX_SIG_NUM];
+
+public:
+    SoundExternal(const PdArgs& a);
+    virtual void setupDSP(t_signal** sp);
+
+    /**
+     * @brief creates new signal inlet
+     * @return pointer to new inlet
+     */
+    t_inlet* createSignalInlet();
+
+    /**
+     * @brief creates new signal outlet
+     * @return pointer to new outlet
+     */
+    t_outlet* createSignalOutlet();
+
+    /**
+     * @brief returns current DSP block size
+     */
+    size_t blockSize() const { return block_size_; }
+
+    /**
+     * @brief returns number of sound inlets
+     */
+    size_t numInputChannels() const { return n_in_; }
+
+    /**
+     * @brief returns number of sound outlets
+     */
+    size_t numOutputChannels() const { return n_out_; }
+
+    /**
+     * @brief main DSP function. Overload to sound processing.
+     */
+    virtual void processBlock(const t_sample** in, t_sample** out) = 0;
+
+private:
+    inline void _processBlock()
+    {
+        processBlock((const t_sample**)in_, out_);
+    }
+
+    inline static t_int* dspPerform(t_int* w)
+    {
+        SoundExternal* ext = reinterpret_cast<SoundExternal*>(w[1]);
+        ext->_processBlock();
+        return (w + 2);
+    }
+
+protected:
+    /* only for testing! */
+    void setBlockSize(size_t s) { block_size_ = s; }
 };
 }
 

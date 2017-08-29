@@ -7,14 +7,8 @@
 //
 
 #include <ceammc_factory.h>
-//#include <pdUpdate.hpp>
-
-//#include "pdlib.hpp"
-
 #include <stdlib.h>
-
 #include "math.h"
-
 #include "ui_matrix.h"
 
 using namespace ceammc;

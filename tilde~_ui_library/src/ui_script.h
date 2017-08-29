@@ -5,8 +5,6 @@
 
 using namespace ceammc;
 
-//typedef void t_symbol;
-
 class UIpdScript : public BaseUIObject
 {
 private:

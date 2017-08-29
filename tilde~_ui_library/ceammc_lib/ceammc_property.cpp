@@ -92,6 +92,16 @@ AtomList ListProperty::get() const
     return lst_;
 }
 
+const AtomList& ListProperty::value() const
+{
+    return lst_;
+}
+
+AtomList& ListProperty::value()
+{
+    return lst_;
+}
+
 FloatProperty::FloatProperty(const std::string& name, float init, bool readonly)
     : Property(name, readonly)
     , v_(init)
@@ -227,5 +237,19 @@ bool SizeTProperty::set(const AtomList& lst)
 AtomList SizeTProperty::get() const
 {
     return AtomList::filled(static_cast<float>(v_), 1);
+}
+
+FlagProperty::FlagProperty(const std::string& name)
+    : Property(name, false)
+    , v_(false)
+{
+}
+
+AtomList FlagProperty::get() const { return listFrom(v_); }
+
+bool FlagProperty::set(const AtomList&)
+{
+    v_ = true;
+    return true;
 }
 }

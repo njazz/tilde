@@ -67,10 +67,10 @@ ApplicationController::ApplicationController()
 #endif
 
     _theServerInstance = (mainServerInstance());
-
     _consoleObserver = shared_ptr<PdWindowConsoleObserver>(new PdWindowConsoleObserver);
 
-    mainServerInstance()->registerConsoleObserver(_consoleObserver);
+    shared_ptr<PdLocalProcess> ptr = static_pointer_cast<PdLocalProcess, AbstractServerProcess>(mainServerInstance());
+    ptr->registerConsoleObserver(_consoleObserver);
 
     _pdWindow = new PdWindow();
     _pdWindow->setAppController(this);
@@ -351,7 +351,7 @@ void ApplicationController::loadAllLibraries()
 
         bool b = mainServerInstance()->loadLibrary(file.toStdString());
 
-        if (b)
+        if (!b)
             ApplicationController::post("...failed!");
     }
 
