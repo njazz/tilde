@@ -437,7 +437,15 @@ void PatchWindowController::restoreUIBoxForSubpatch(PatchWindowController* contr
 
 void PatchWindowController::deleteSinglePatchcord(UIPatchcord* p)
 {
-    _serverCanvas->disconnect(p->obj1()->serverObjectId(), p->outletIndex(), p->obj2()->serverObjectId(), p->inletIndex());
+    qDebug() << "del single patchcord";
+
+    shared_ptr<PdCanvas> p_ = static_pointer_cast<PdCanvas, Canvas>(_serverCanvas);
+
+    qDebug() << (long)p->obj1()->serverObjectId() << " : " << (long) p->obj2()->serverObjectId() << " : " <<  p->outletIndex() << " : " <<  p->inletIndex();
+
+    bool r = p_->disconnect(p->obj1()->serverObjectId(), p->outletIndex(), p->obj2()->serverObjectId(), p->inletIndex());
+
+    if (!r) qDebug()<<"failed!";
 
     _scene->removeItem(p);
     p->remove();

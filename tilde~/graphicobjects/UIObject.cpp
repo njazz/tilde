@@ -21,8 +21,8 @@
 #include "FileParser.h"
 #include "PropertiesWindow.h"
 
-#include "PatchWindowController.h"
 #include "ApplicationController.h"
+#include "PatchWindowController.h"
 
 namespace tilde {
 
@@ -290,11 +290,10 @@ void UIObject::addInlet()
 
     qDebug() << "addInlet";
 
-    // unused?
-    // XPD-TODO
-    //    if (_serverObject) {
-    //        _serverObject->_portClass_ = (_serverObject->getInletType(inletCount()) == XLetSignal);
-    //    }
+
+    //qDebug() << inletCount() << o->inlets().size() << o->inletCount();
+    PdObject* o = serverObjectPtr();
+    _portClass_ = o->inlets().at(inletCount()).type();
 
     addInlet(_portClass_);
 }
@@ -344,11 +343,9 @@ void UIObject::addOutlet()
 {
     int _portClass_ = 0;
 
-    // unused?
-    // XPD-TODO
-    //    if (_serverObject) {
-    //        _portClass_ = (_serverObject->getOutletType(outletCount()) == XLetSignal);
-    //    }
+
+    PdObject* o = serverObjectPtr();
+    _portClass_ = o->outlets().at(outletCount()).type();
 
     addOutlet(_portClass_);
 }
@@ -602,7 +599,8 @@ void UIObject::hoverLeaveEvent(QGraphicsSceneHoverEvent*)
     //emit signalObjectHoverLeave();
 };
 
-PdObject* UIObject::serverObjectPtr(){
+PdObject* UIObject::serverObjectPtr()
+{
     PdObject* ret = const_cast<PdObject*>(reinterpret_cast<const PdObject*>(_parentController->serverCanvas()->objects().findObject(_serverObjectId)));
     return ret;
 }
