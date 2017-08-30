@@ -17,8 +17,7 @@
 
 #include "CanvasView.h"
 
-// XPD-TODO
-class ServerArray;
+using namespace xpd;
 
 namespace tilde {
 
@@ -33,8 +32,7 @@ private:
     QString _arrayName;
     int _arraySize;
 
-    // XPD-TODO
-    // ServerArray* _array;
+    FloatArray* _array;
 
     void createServerArray();
 

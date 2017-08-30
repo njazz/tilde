@@ -49,6 +49,8 @@
 
 #include "../../xpd/src/xlets.h"
 
+#include "../../xpd/src/array.h"
+
 // #include "../../xpd/pd/cpd/cpd_list.h"
 
 #endif // XPDHEADERS_H

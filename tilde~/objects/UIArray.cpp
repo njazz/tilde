@@ -10,6 +10,9 @@
 
 #include "UIObjectData.h"
 
+#include "ApplicationController.h"
+#include "PatchWindowController.h"
+
 namespace tilde {
 UIArray::UIArray()
 {
@@ -22,8 +25,7 @@ UIArray::UIArray()
     initProperties();
     resizeEvent();
 
-    // XPD-TODO
-    // _array = 0;
+    _array = 0;
 }
 
 UIObject* UIArray::createObj(QString data)
@@ -36,27 +38,30 @@ UIObject* UIArray::createObj(QString data)
 
 void UIArray::createServerArray()
 {
-    // XPD-TODO
-    /*
-    ServerObject* o = serverObject();
+
+    PdObject* o = serverObjectPtr();
 
     if (!o) {
         qDebug() << "server object error!";
         return;
     }
 
-    ServerCanvas* c = serverObject()->parent();
-    if (!c) {
+    //Canvas* c = o->parent();
+    if (! o->parent()) {
         qDebug() << "server canvas error!";
         return;
     }
 
-    qDebug() << "object / canvas :" << o << c;
+    qDebug() << "object / canvas :" << o <<  o->parent();
 
-    _array = c->createArray(_arrayName.toStdString(), _arraySize);
+    PdCanvas* c = const_cast<PdCanvas*>(reinterpret_cast<const PdCanvas*>(o->parent()));
 
-    _editor.setServerArray(_array);
-    */
+    ObjectId arrId =  c->createArray(_arrayName.toStdString(), _arraySize);
+    //
+    _array = const_cast<FloatArray*>(dynamic_cast<const FloatArray*>(parentController()->serverCanvas()->objects().findObject(arrId)));
+
+    // XPD-TODO
+    // _editor.setServerArray(_array);
 }
 
 void UIArray::initProperties()
@@ -195,8 +200,7 @@ void UIArray::fromQString(QString message)
     autoResize();
 
     if (list.size() < 1) {
-        // XPD-TODO
-        // ServerInstance::error("array: bad arguments!");
+        ApplicationController::post("error: array: bad arguments!");
         setErrorBox(true);
         return;
     }
@@ -220,16 +224,12 @@ void UIArray::fromQString(QString message)
 
 void UIArray::sync()
 {
-    // XPD-TODO
+    if (!serverObjectPtr()) {
+        setErrorBox(true);
+        return;
+    }
 
-//    if (serverObject()->errorBox()) {
-//        setErrorBox(true);
-//        return;
-//    }
-
-    // XPD-TODO
-//    if (!_array)
-//        createServerArray();
-
+    if (!_array)
+        createServerArray();
 }
 }

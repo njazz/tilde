@@ -184,10 +184,8 @@ void PdWindow::editSendMessage(QString)
     // XPD-TODO
     string s;//
 
-    /*
-    if (appController())
-        s = appController()->mainServerInstance()->getBindObjectList();
-        */
+    shared_ptr<PdLocalProcess> ptr = static_pointer_cast<PdLocalProcess>(_theServerInstance);
+    s = ptr->getBindObjectList();
 
     QStringList sL = QString(s.c_str()).split(",");
 

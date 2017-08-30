@@ -290,7 +290,6 @@ void UIObject::addInlet()
 
     qDebug() << "addInlet";
 
-
     //qDebug() << inletCount() << o->inlets().size() << o->inletCount();
     PdObject* o = serverObjectPtr();
     _portClass_ = o->inlets().at(inletCount()).type();
@@ -342,7 +341,6 @@ void UIObject::addInlet(int _portClass_)
 void UIObject::addOutlet()
 {
     int _portClass_ = 0;
-
 
     PdObject* o = serverObjectPtr();
     _portClass_ = o->outlets().at(outletCount()).type();
