@@ -229,7 +229,7 @@ void PatchWindowController::doCreateObject(UIObject* uiObject)
     uiObject->setEditModeRef(_windows[0]->canvasView()->getEditModeRef());
 
     if (uiObject->serverObjectPtr()) {
-        uiObject->serverObjectPtr()->registerObserver(uiObject->observer());
+        //uiObject->serverObjectPtr()->registerObserver(uiObject->observer());
 
         connect(uiObject, &UIObject::signalSendMessage, this, &PatchWindowController::sendMessageToObject);
     }

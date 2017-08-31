@@ -504,9 +504,8 @@ void UIObject::sync()
     for (int i = 0; i < out_c; i++)
         addOutlet();
 
-    if (observer())
-        if (serverObjectPtr())
-            serverObjectPtr()->registerObserver(observer());
+    ApplicationController::post("reg observer");
+    serverObjectPtr()->registerObserver(observer());
 };
 
 void UIObject::autoResize()
