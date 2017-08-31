@@ -13,7 +13,7 @@ using namespace ceammc;
 void UIpdBang::updateUI()
 {
     // XPD-TODO
-    // UIUpdate((long)owner(), AtomList(Atom(gensym("bang"))));
+    forwardUIMessage((long)owner(), AtomList(Atom(gensym("bang"))));
 }
 
 UIpdBang::UIpdBang(const PdArgs& a)

@@ -255,6 +255,7 @@ void UIBox::sync()
 
     update();
 
+    if (!serverObjectPtr()) return;
     //
     _isAbstraction = (serverObjectPtr()->type() == OBJ_TYPE_ABSTRACTION);
     qDebug() << "is abstraction: " << _isAbstraction;

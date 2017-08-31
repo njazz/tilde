@@ -503,6 +503,10 @@ void UIObject::sync()
         addInlet();
     for (int i = 0; i < out_c; i++)
         addOutlet();
+
+    if (observer())
+        if (serverObjectPtr())
+            serverObjectPtr()->registerObserver(observer());
 };
 
 void UIObject::autoResize()

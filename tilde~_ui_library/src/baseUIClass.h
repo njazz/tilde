@@ -8,12 +8,11 @@
 
 using namespace ceammc;
 
-// XPD-TODO
-// extern void UIUpdate (long objectId, AtomList list);;
-
 namespace ceammc {
 class BaseUIObject : public BaseObject {
 
+protected:
+    void forwardUIMessage(long ptr, AtomList list);
 public:
     BaseUIObject(const PdArgs& a);
 
