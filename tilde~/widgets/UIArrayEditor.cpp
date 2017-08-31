@@ -3,42 +3,51 @@
 
 #include "UIArrayEditor.h"
 
+#include "ApplicationController.h"
+
 namespace tilde {
 
 UIArrayEditor::UIArrayEditor(QWidget* parent)
     : QWidget(parent)
 {
-    // XPD-TODO
-    // _serverArray = 0;
+    _serverArray = 0;
 }
+
+//void UIArrayEditor::getData()
+//{
+//    if (!_serverArray) return;
+
+//    _arrayData->size = _serverArray->size();
+
+//    // quick fix
+//    if (_arrayData->size > 67108864)
+//        _arrayData->size = 67108864;
+
+//    if (_arrayData->data)
+//    {
+//        delete _arrayData->data;
+
+//        try{
+//            _arrayData->data = new float[_arrayData->size];
+
+//        }catch(long)
+//        {
+//            ApplicationController::post("error: array: could not allocate memory for UI object array");
+//        }
+//    }
+
+//    for (int i=0;i<_arrayData->size;i++)
+//    {
+//        _arrayData->data[i] = _serverArray->at(i);
+//    }
+//}
 
 void UIArrayEditor::paintEvent(QPaintEvent*)
 {
-    // XPD-TODO
-    /*
+
     if (_serverArray) {
 
-        _arrayData = _serverArray->getData(); //_arrData, _arrSize);
-
-        // temporary
-        if (_arrayData->size > 67108864)
-            _arrayData->size = 67108864;
-
-        /*
-        try {
-            _serverArray->getData(_arrData, _arrSize);
-        } catch (long) {
-            ApplicationController::post(">> bad array data");
-        }
-        * /
-
-        //if (_arrSize < 67108864) // temporary 64M samples limit
-        //            {
-
-        if (!_arrayData) {
-            ApplicationController::post("Array data error!");
-            return;
-        }
+        //getData();
 
         QPainter p(this);
 
@@ -51,24 +60,20 @@ void UIArrayEditor::paintEvent(QPaintEvent*)
 
         for (int x = 0; x < (width() - 1); x++) {
 
-            int index = floor(float(x) / width() * _arrayData->size);
-            float y = ((_arrayData->sample[index] * .5f) + .5) * height();
+            int index = floor(float(x) / width() * _serverArray->size());
+            float y = ((_serverArray->at(index) * .5f) + .5) * height();
             p.drawLine(x, y0, x + 1, y);
             y0 = y;
         }
-        //            }
-        //            else {
-        //                ApplicationController::post("bad array size");
-        //            }
+
     } else {
         ApplicationController::post("bad server array");
     }
-    */
+
 }
 
-void UIArrayEditor::setServerArray(ServerArray* arr)
+void UIArrayEditor::setServerArray(FloatArray* arr)
 {
-    // XPD-TODO
-    // _serverArray = arr;
+    _serverArray = arr;
 }
 }

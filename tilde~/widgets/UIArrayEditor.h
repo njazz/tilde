@@ -13,29 +13,38 @@
 // #include <pdServer.hpp>
 #include "xpd-transition/xpd-headers.h"
 
-// XPD-TODO
-class ServerArray;
+
+//namespace xpd{
+//class FloatArray;
+//}
+
+
+
+using namespace xpd;
 
 namespace tilde {
+
+//struct ServerArrayData {
+//    float *data;
+//    size_t size;
+//} ServerArrayData;
+
 ////
 /// \brief Array Editor QWidget
 class UIArrayEditor : public QWidget {
     Q_OBJECT
 private:
 
-    // XPD-TODO
-    /*
-    ServerArrayData* _arrayData;
+//    ServerArrayData* _arrayData;
+    FloatArray* _serverArray;
 
-    ArrayId _serverArray;
-    */
-
+//    void getData();
 public:
     explicit UIArrayEditor(QWidget* parent = 0);
 
     void paintEvent(QPaintEvent*);
 
-    void setServerArray(ServerArray* arr);
+    void setServerArray(FloatArray *arr);
 
 signals:
 

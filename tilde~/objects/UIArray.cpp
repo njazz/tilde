@@ -61,7 +61,7 @@ void UIArray::createServerArray()
     _array = const_cast<FloatArray*>(dynamic_cast<const FloatArray*>(parentController()->serverCanvas()->objects().findObject(arrId)));
 
     // XPD-TODO
-    // _editor.setServerArray(_array);
+    _editor.setServerArray(_array);
 }
 
 void UIArray::initProperties()
