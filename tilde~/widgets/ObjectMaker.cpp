@@ -11,8 +11,8 @@
 #include <QCompleter>
 #include <QStringListModel>
 
-#include "PatchWindowController.h"
 #include "ApplicationController.h"
+#include "PatchWindowController.h"
 
 using namespace std;
 
@@ -27,25 +27,8 @@ ObjectMaker::ObjectMaker(QLineEdit* parent)
     connect(this, &ObjectMaker::textEdited, this, &ObjectMaker::editorChanged);
     connect(this, &ObjectMaker::returnPressed, this, &ObjectMaker::done);
 
-    QStringListModel* m = new QStringListModel;
-
-    // XPD-TODO
-    shared_ptr<PdLocalProcess> ptr = static_pointer_cast<PdLocalProcess>(parentController()->appController()->mainServerInstance());
-    ClassList cList =  ptr->loadedClasses();
-
-    //vector<string> vlist;// = ServerInstance::listLoadedClasses();
-    QStringList sL;
-
-    for (vector<ClassInfo>::iterator it = cList.begin(); it != cList.end(); ++it) {
-        ClassInfo ci = *it;
-        sL.push_back(ci.name().c_str());
-    }
-
-    m->setStringList(sL);
-
     if (!completer())
         setCompleter(new QCompleter);
-    completer()->setModel(m);
 
     _modified = false;
 }
@@ -73,7 +56,32 @@ void ObjectMaker::done()
 }
 
 PatchWindowController* ObjectMaker::parentController() { return _parentController; }
-void ObjectMaker::setParentController(PatchWindowController* controller) { _parentController = controller; }
+void ObjectMaker::setParentController(PatchWindowController* controller)
+{
+    _parentController = controller;
+    QStringListModel* m = new QStringListModel;
+
+    if (parentController() && false)
+        if (parentController()->appController())
+            if (parentController()->appController()->mainServerInstance()) {
+
+                shared_ptr<PdLocalProcess> ptr = static_pointer_cast<PdLocalProcess>(parentController()->appController()->mainServerInstance());
+
+                ClassList cList = ptr->loadedClasses();
+
+                QStringList sL;
+
+                for (vector<ClassInfo>::iterator it = cList.begin(); it != cList.end(); ++it) {
+                    ClassInfo ci = *it;
+                    sL.push_back(ci.name().c_str());
+                }
+
+                m->setStringList(sL);
+
+
+                completer()->setModel(m);
+            }
+}
 
 void ObjectMaker::focusOutEvent(QFocusEvent*)
 {
@@ -89,5 +97,4 @@ void ObjectMaker::cancel()
 {
     hide();
 }
-
 }

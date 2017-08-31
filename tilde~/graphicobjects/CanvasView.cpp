@@ -615,6 +615,9 @@ void CanvasView::slotPopupMenu()
 void CanvasView::setController(PatchWindowController* c)
 {
     _controller = c;
+
+    _objectMaker->setParentController(_controller);
+
     // connect(_pmProperties, &QAction::triggered, _controller, &PatchWindowController::openPropertiesWindow);
 }
 
