@@ -12,14 +12,12 @@ using namespace ceammc;
 
 void UIpdBang::updateUI()
 {
-    post("updateUI: %lu", (long)owner());
     forwardUIMessage((long)owner(), AtomList(Atom(gensym("bang"))));
 }
 
 UIpdBang::UIpdBang(const PdArgs& a)
     : BaseUIObject(a)
 {
-    post("created: %lu", (long)owner());
     createOutlet();
 }
 

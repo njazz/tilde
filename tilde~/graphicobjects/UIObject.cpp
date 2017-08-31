@@ -504,7 +504,7 @@ void UIObject::sync()
     for (int i = 0; i < out_c; i++)
         addOutlet();
 
-    ApplicationController::post("reg observer");
+    //ApplicationController::post("reg observer");
     serverObjectPtr()->registerObserver(observer());
 };
 

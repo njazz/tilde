@@ -16,8 +16,7 @@ class UIpdDSP;
 
 void UIpdDSP::updateUI()
 {
-    // XPD-TODO
-    // UIUpdate((long)owner(), AtomList(float(_value)));
+    forwardUIMessage((long)owner(), AtomList(Atom(_value)));
 }
 
 UIpdDSP::UIpdDSP(const PdArgs& a)

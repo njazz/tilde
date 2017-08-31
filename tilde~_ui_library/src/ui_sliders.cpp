@@ -16,8 +16,7 @@ class UIpdSliders;
 
 void UIpdSliders::updateUI()
 {
-    // XPD-TODO
-    // UIUpdate((long)owner(), AtomList(Atom(value())));
+    forwardUIMessage((long)owner(), AtomList(Atom(value())));
 }
 
 float UIpdSliders::value()

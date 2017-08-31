@@ -98,7 +98,6 @@ void UIToggle::objectPressEvent(QGraphicsSceneMouseEvent* ev)
             //cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang").c_str());
             //serverObject()->message("bang");
 
-
             emit signalSendMessage(this->serverObjectId(), QString("bang"));
 
             //qDebug("server msg");
@@ -113,31 +112,28 @@ void UIToggle::setPdMessage(QString message)
     fromQString(message);
 }
 
-/*
-void UIToggle::updateUI(void* uiobj, ceammc::AtomList msg)
-{
-    //qDebug("update ui");
-    UIToggle* x = (UIToggle*)uiobj;
-
-    if (msg.size() > 0) {
-        if (msg.at(0).isFloat())
-            x->_value = msg.at(0).asFloat() > 0;
-    }
-
-    emit x->signalCallRepaint();
-}
-*/
-
 void UIToggle::updateUI(t_cpd_list* list)
 {
-    // XPD-TODO
+    //qDebug() << " <<< toggle";
 
-    /*
-    if (list->size() > 0) {
-        if (list->at(0).isFloat())
-            _value = list->at(0).asFloat() > 0;
+    if (cpd_list_size(list) > 0) {
+
+        t_cpd_atom* a = cpd_list_at(list, 0);
+        //if (cpd_atom_is_float(a))
+        _value = cpd_atom_get_float(a) > 0;
     }
-    */
+
+    for (int i = 0; i < cpd_list_size(list); i++) {
+        t_cpd_atom* a = cpd_list_at(list, i);
+        t_cpd_symbol* s = cpd_atom_get_symbol(a);
+        if (s) {
+            std::string str = cpd_symbol_name(s);
+            printf("value %d %s\n", i, str.c_str());
+        } else {
+            float f = cpd_atom_get_float(a);
+            printf("value-s %d %f\n", i, f);
+        }
+    }
 
     emit signalCallRepaint();
 }

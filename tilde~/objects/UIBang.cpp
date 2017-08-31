@@ -93,8 +93,25 @@ void UIBang::objectPressEvent(QGraphicsSceneMouseEvent* ev)
 
 // -------------------------
 
-void UIBang::updateUI(t_cpd_list*)
+void UIBang::updateUI(t_cpd_list*list)
 {
+    for (int i=0;i<cpd_list_size(list);i++)
+    {
+        t_cpd_atom* a = cpd_list_at(list,i);
+        t_cpd_symbol* s = cpd_atom_get_symbol(a);
+        if (s)
+        {
+        std::string str = cpd_symbol_name(s);
+        printf("value %d %s\n", i , str.c_str());
+        }
+        else
+        {
+            float f = cpd_atom_get_float(a);
+            printf("value %d %f\n", i , f);
+        }
+
+    }
+
     if (!_clicked) {
         timerStart();
         _clicked = true;

@@ -6,17 +6,16 @@
 //
 //
 
-#include <ceammc_factory.h>
 #include "ui_toggle.h"
+#include <ceammc_factory.h>
 
 using namespace ceammc;
 
 class UIpdToggle;
 
- void UIpdToggle::updateUI()
+void UIpdToggle::updateUI()
 {
-    // XPD-TODO
-    // UIUpdate((long)owner(), AtomList(Atom(value())));
+    forwardUIMessage((long)owner(), AtomList(Atom(_value)));
 }
 
 UIpdToggle::UIpdToggle(const PdArgs& a)
@@ -38,8 +37,7 @@ void UIpdToggle::onFloat(float f)
     _value = f;
     floatTo(0, _value);
 
-    // XPD-TODO
-    // updateUI();
+    updateUI();
 }
 
 extern "C" void setup_ui0x2etoggle()

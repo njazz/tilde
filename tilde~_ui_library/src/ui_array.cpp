@@ -1,4 +1,3 @@
-//
 //  ui_bang.cpp
 //
 //
@@ -14,13 +13,12 @@ class UIpdArray;
 static void qtpd_update(UIpdArray* x)
 {
     // XPD-TODO
-    // UIUpdate((long)x->owner(), AtomList(Atom(gensym("bang"))));
+    //forwardUIMessage((long)x, AtomList(Atom(gensym("bang"))));
 }
 
 UIpdArray::UIpdArray(const PdArgs& a)
     : BaseUIObject(a)
 {
-
     //createOutlet();
 }
 

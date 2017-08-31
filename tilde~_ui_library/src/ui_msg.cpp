@@ -16,8 +16,7 @@ class UIpdMsg;
 
 void UIpdMsg::updateUI()
 {
-    // XPD-TODO
-    // UIUpdate((long)owner(), getMessage());
+    forwardUIMessage((long)owner(), getMessage());
 }
 
 UIpdMsg::UIpdMsg(const PdArgs& a)

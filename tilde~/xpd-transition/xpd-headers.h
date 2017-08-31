@@ -51,6 +51,8 @@
 
 #include "../../xpd/src/array.h"
 
-// #include "../../xpd/pd/cpd/cpd_list.h"
+#include "../../xpd/pd/cpd/cpd_list.h"
+#include "../../xpd/pd/cpd/cpd_atom.h"
+
 
 #endif // XPDHEADERS_H

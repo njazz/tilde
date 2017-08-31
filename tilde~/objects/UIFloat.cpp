@@ -136,14 +136,16 @@ void UIFloat::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 
 void UIFloat::updateUI(t_cpd_list* msg)
 {
-    // XPD-TODO
 
-    /*
-    if (msg->size() > 0) {
-        fromQString(msg->at(0).asString().c_str());
+    if (cpd_list_size(msg) > 0) {
+        t_cpd_atom* a = cpd_list_at(msg,0);
+        t_cpd_float s = cpd_atom_get_float(a);
+        QString q = QString::number(s);
+        fromQString(q);
+
         emit signalCallRepaint();
     }
-    */
+
 }
 
 std::string UIFloat::asPdFileString()

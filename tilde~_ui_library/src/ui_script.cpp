@@ -15,7 +15,6 @@ using namespace ceammc;
 UIpdScript::UIpdScript(const PdArgs& a)
     : BaseUIObject(a)
 {
-
     createOutlet();
 }
 void UIpdScript::onBang()
