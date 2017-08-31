@@ -88,7 +88,6 @@ void UIBox::objectPressEvent(QGraphicsSceneMouseEvent* event)
             // XPD-TODO
             // _abstractionPath = serverObject()->toServerCanvas()->path().c_str();
 
-
             QString fullName = _abstractionPath + "/" + objectData()->toQString() + ".pd";
             ApplicationController::post("abstraction path: " + fullName);
 
@@ -233,11 +232,6 @@ void UIBox::sync()
 
     UIObject::sync();
 
-    // XPD-TODO
-    // _isAbstraction = (serverObject()->type() == typeAbstraction);
-
-    qDebug() << "is abstraction: " << _isAbstraction;
-
     // create subpatch window controller here (if not already created)
     if (isSubpatch() && !_subpatchController) {
         //qDebug() << "subpatch server canvas: " << serverObject()->toServerCanvas();
@@ -254,14 +248,17 @@ void UIBox::sync()
 
     //redundant
     //if (isSubpatch())
-        //if (serverObject()->toServerCanvas()) {
-            // XPD-TODO
-            // _subpatchController->serverCanvas()->registerObserver(_boxObserver);
-        //}
+    //if (serverObject()->toServerCanvas()) {
+    // XPD-TODO
+    // _subpatchController->serverCanvas()->registerObserver(_boxObserver);
+    //}
 
     update();
 
     //
+    _isAbstraction = (serverObjectPtr()->type() == OBJ_TYPE_ABSTRACTION);
+    qDebug() << "is abstraction: " << _isAbstraction;
+
     if (_isAbstraction || isSubpatch()) {
 
         properties()->create("Embed", "Subcanvas", "0.1", false);

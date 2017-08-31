@@ -491,11 +491,11 @@ void UIObject::sync()
         return;
     }
 
-    if (!_parentController->serverCanvas()->objects().findObject(_serverObjectId))
-    {
+    if (!_parentController->serverCanvas()->objects().findObject(_serverObjectId)) {
         setErrorBox(true);
         return;
     }
+
     int in_c = _parentController->serverCanvas()->objects().findObject(_serverObjectId)->inletCount();
     int out_c = _parentController->serverCanvas()->objects().findObject(_serverObjectId)->outletCount();
 

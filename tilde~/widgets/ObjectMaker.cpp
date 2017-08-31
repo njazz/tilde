@@ -11,6 +11,9 @@
 #include <QCompleter>
 #include <QStringListModel>
 
+#include "PatchWindowController.h"
+#include "ApplicationController.h"
+
 using namespace std;
 
 namespace tilde {
@@ -27,12 +30,15 @@ ObjectMaker::ObjectMaker(QLineEdit* parent)
     QStringListModel* m = new QStringListModel;
 
     // XPD-TODO
-    vector<string> vlist;// = ServerInstance::listLoadedClasses();
+    shared_ptr<PdLocalProcess> ptr = static_pointer_cast<PdLocalProcess>(parentController()->appController()->mainServerInstance());
+    ClassList cList =  ptr->loadedClasses();
+
+    //vector<string> vlist;// = ServerInstance::listLoadedClasses();
     QStringList sL;
 
-    for (vector<string>::iterator it = vlist.begin(); it != vlist.end(); ++it) {
-        string s = *it;
-        sL.push_back(s.c_str());
+    for (vector<ClassInfo>::iterator it = cList.begin(); it != cList.end(); ++it) {
+        ClassInfo ci = *it;
+        sL.push_back(ci.name().c_str());
     }
 
     m->setStringList(sL);
