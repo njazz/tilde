@@ -91,6 +91,8 @@ public:
 
     static void post(QString text);
 
+    static void dspSwitch(bool v);
+
 #ifdef WITH_PYTHON
     ScriptRunner* scriptRunner()
     {

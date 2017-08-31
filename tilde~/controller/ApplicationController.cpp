@@ -336,6 +336,15 @@ void ApplicationController::post(QString text)
     ptr->PdLocalProcess::post(text.toStdString()+"\n");
 }
 
+void ApplicationController::dspSwitch(bool v)
+{
+    if (!_theServerInstance)
+        return;
+
+    shared_ptr<PdLocalProcess> ptr = static_pointer_cast<PdLocalProcess>(_theServerInstance);
+    ptr->PdLocalProcess::dspSwitch(v);
+}
+
 void ApplicationController::loadAllLibraries()
 {
     shared_ptr<PdLocalProcess> ptr = static_pointer_cast<PdLocalProcess, AbstractServerProcess>(mainServerInstance());

@@ -7,6 +7,8 @@
 #include "UIObjectData.h"
 #include "../../xpd-transition/xpd-headers.h"
 
+#include "ApplicationController.h"
+
 namespace tilde {
 
 UIDSP::UIDSP()
@@ -107,8 +109,8 @@ void UIDSP::objectPressEvent(QGraphicsSceneMouseEvent* ev)
 
         _value = !_value;
 
-        // XPD-TODO
-        // ServerInstance::dspSwitch(_value);
+        ApplicationController::dspSwitch(_value);
+
 
         update();
     }
