@@ -136,7 +136,14 @@ bool UIBox::isGraphOnParentSubpatch()
     if (!isSubpatch())
         return false;
     else
+    {
+        if (!properties()->get("Embed"))
+        {
+            qDebug()<< "isGraphOnParentSubpatch property error";
+            return false;
+        }
         return properties()->get("Embed")->asBool();
+    }
 }
 
 void UIBox::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)

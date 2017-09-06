@@ -53,6 +53,7 @@ void UIpdMatrix::onAny(t_symbol* s, const AtomList& list)
 extern "C" void setup_ui0x2ematrix()
 {
     ObjectFactory<UIpdMatrix> obj("ui.matrix");
+    ObjectFactory<UIpdMatrix> obj2("ui.radio");
 }
 
 //static t_class* ui_matrix_class;
