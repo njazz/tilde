@@ -122,12 +122,12 @@ void UIFaustBox::sync()
     //_editor->textEdit()->setContext(pyWrapper::inst().newContextWithPatchControllerServerObjectAndList(this->parentController(), serverObject(), &_scriptCommon->scriptData()->inputList));
 }
 
-void UIFaustBox::updateUI(AtomList* list)
-{
+//void UIFaustBox::updateUI(AtomList* list)
+//{
 
-    //_scriptCommon->scriptData()->inputList = UIScriptCommon::AtomListToStringList(*list);
-    //_scriptCommon->btnRun();
-}
+//    //_scriptCommon->scriptData()->inputList = UIScriptCommon::AtomListToStringList(*list);
+//    //_scriptCommon->btnRun();
+//}
 
 void UIFaustBox::slotCompile()
 {
@@ -172,7 +172,7 @@ void UIFaustBox::slotCompile()
     }
     else
     {
-        ServerInstance::post("FAUST compilation error");
+        ApplicationController::post("FAUST compilation error");
     }
 }
 
@@ -184,11 +184,13 @@ void UIFaustBox::slotUpdate()
 
     //_parentController->createObject()
 
-    ServerObject* serverObject = parentController()->appController()->slotCreateObject(parentController()->serverCanvas(), objFName.toStdString());
+    // XPD-TODO
+    ObjectId serverObject = parentController()->appController()->slotCreateObject(parentController()->serverCanvas(), objFName.toStdString());
     qDebug() << serverObject;
 
     setErrorBox(false);
-    setServerObject(serverObject);
+
+    setServerObjectId(serverObject);
 
     sync();
 }

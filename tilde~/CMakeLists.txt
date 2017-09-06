@@ -21,6 +21,7 @@ project(tilde~)
 find_package(Qt5Core REQUIRED)
 find_package(Qt5Gui REQUIRED)
 find_package(Qt5Widgets REQUIRED)
+find_package(Qt5Svg REQUIRED)
 
 add_definitions(-DWITH_PYTHON)
 add_definitions(-DQTCOLORPICKER_LIBRARY)
@@ -35,8 +36,7 @@ set (SOURCES
     	objects/UIToggle.cpp 
     	objects/UIBang.cpp 
     	objects/UIText.cpp 
-	objects/UIFaustEditor.cpp 
-    	oopd/OOPD.cpp 
+        oopd/OOPD.cpp
     	oopd/UIClass.cpp 
     	oopd/UIInstance.cpp 
     	oopd/UIMethod.cpp 
@@ -46,6 +46,7 @@ set (SOURCES
     	objects/UIDSP.cpp 
     	objects/UILink.cpp 
     	objects/UISlider.cpp 
+        objects/UIFaustBox.cpp
     	oopd/UISignal.cpp 
     	objects/UIMatrix.cpp 
 #### graphic objects
@@ -63,6 +64,7 @@ set (SOURCES
     	widgets/UIArrayEditor.cpp 
     	widgets/ObjectMaker.cpp 
     	widgets/UITextEditor.cpp 
+        #widgets/UIFaustEditor.cpp
 #### data models
     	datamodels/FileParser.cpp 
     	datamodels/CanvasData.cpp 
@@ -349,7 +351,7 @@ add_executable(tilde~ ${SOURCES} ${RES_SOURCES} ${UI_HEADERS} ${PYTHON_SOURCES} 
 
 add_dependencies(tilde~ buildNumber)
 
-qt5_use_modules(tilde~ Core Gui Widgets)
+qt5_use_modules(tilde~ Core Gui Widgets Svg)
 
 LINK_DIRECTORIES(
 	${CMAKE_BINARY_DIR}/res
