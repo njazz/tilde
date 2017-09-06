@@ -145,7 +145,6 @@ void UISlider::mousePressEvent(QGraphicsSceneMouseEvent* ev)
             // serverObject()->message(((std::string) "set " + val_str));
             // serverObject()->message(((std::string) "bang " + val_str));
 
-            // XPD-TODO
             emit signalSendMessage(this->serverObjectId(), QString("set " + val_str));
             emit signalSendMessage(this->serverObjectId(), QString("bang"));
         }
@@ -161,12 +160,13 @@ void UISlider::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
     }
     event->ignore();
 
-    //std::string val_str;
+    QString val_str;
     //todo move!
     if (getEditMode() != em_Unlocked) {
 
         float val = valueFromPoint(event->pos().toPoint());
         //val_str = std::to_string(val);
+        val_str = std::to_string(val).c_str();
 
         setCursor(QCursor(Qt::PointingHandCursor));
     } else {
@@ -178,6 +178,9 @@ void UISlider::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
     //            cmp_sendstring((t_pd*)pdObject(), ((std::string) "set " + val_str).c_str());
     //            cmp_sendstring((t_pd*)pdObject(), ((std::string) "bang ").c_str());
 
+   // emit signalSendMessage(this->serverObjectId(), QString("set " + val_str));
+   // emit signalSendMessage(this->serverObjectId(), QString("bang"));
+
     if (serverObjectId()) {
         float val = valueFromPoint(event->pos().toPoint());
 
@@ -186,6 +189,9 @@ void UISlider::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
         // XPD-TODO
         // emit signalSendMessage(this->serverObject(), QString("set " + val_str));
         // emit signalSendMessage(this->serverObject(), QString("bang "));
+
+        emit signalSendMessage(this->serverObjectId(), QString("set " + val_str));
+        emit signalSendMessage(this->serverObjectId(), QString("bang"));
     }
 
     //        }
@@ -202,21 +208,29 @@ void UISlider::updateUI(t_cpd_list* msg)
 {
     // XPD-TODO
 
-    /*
+    if (cpd_list_size(msg) > 0) {
+        t_cpd_atom* a = cpd_list_at(msg,0);
+        t_cpd_float s = cpd_atom_get_float(a);
+        //QString q = QString::number(s);
+        //fromQString(q);
+        _value = s;
 
-    if (msg->size() > 0) {
-        if (msg->at(0).isFloat())
-            _value = msg->at(0).asFloat();
-
-        //            if (x->_value < 0)
-        //                x->_value = 0;
-        //            if (x->_value > 1)
-        //                x->_value = 1;
+        emit signalCallRepaint();
     }
 
-    */
+//    if (msg->size() > 0) {
+//        if (msg->at(0).isFloat())
+//            _value = msg->at(0).asFloat();
 
-    emit signalCallRepaint();
+//        //            if (x->_value < 0)
+//        //                x->_value = 0;
+//        //            if (x->_value > 1)
+//        //                x->_value = 1;
+//    }
+
+
+
+    // emit signalCallRepaint();
 }
 
 void UISlider::resizeEvent()

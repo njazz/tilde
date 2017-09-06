@@ -167,7 +167,7 @@ public:
 
     //
 
-    void sendMessageToObject(ObjectId object, QString msg);
+    void slotSendMessageToObject(ObjectId object, QString msg);
 
 public slots:
     void menuSave();

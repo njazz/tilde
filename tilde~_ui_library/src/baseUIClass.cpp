@@ -18,6 +18,7 @@ void BaseUIObject::forwardUIMessage(long ptr, AtomList list)
     std::stringstream stream;
     stream << ptr;
     list.insert(0, Atom(gensym(stream.str().c_str())));
+    //Atom()
     if (receiver->s_thing)
         pd_typedmess(receiver->s_thing, gensym("pd_ui_object"), list.size(), list.toPdData());
     else

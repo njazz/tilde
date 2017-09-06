@@ -69,7 +69,8 @@ ApplicationController::ApplicationController()
     _theServerInstance = (mainServerInstance());
     _consoleObserver = shared_ptr<PdWindowConsoleObserver>(new PdWindowConsoleObserver);
 
-    shared_ptr<PdLocalProcess> ptr = static_pointer_cast<PdLocalProcess, AbstractServerProcess>(mainServerInstance());
+    auto ptr = mainServerInstance();
+//    shared_ptr<PdLocalProcess> ptr = static_pointer_cast<PdLocalProcess, AbstractServerProcess>(mainServerInstance());
     ptr->registerConsoleObserver(_consoleObserver);
 
     _pdWindow = new PdWindow();

@@ -27,9 +27,7 @@ UIMatrix::UIMatrix()
     resizeEvent();
 }
 
-
-
- UIObject* UIMatrix::createObj(QString data)
+UIObject* UIMatrix::createObj(QString data)
 {
     UIMatrix* ret = new UIMatrix();
 
@@ -225,7 +223,7 @@ void UIMatrix::paintButtonMatrix(QPainter* p) ///> draws buttons as boxes
 
 // ---- move to private
 
- void UIMatrix::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
+void UIMatrix::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWidget*)
 {
     p->setClipRect(option->exposedRect);
 
@@ -318,7 +316,6 @@ void UIMatrix::mousePressEvent(QGraphicsSceneMouseEvent* ev)
 
             std::string val_str = "set " + std::to_string(v);
 
-
             // XPD-TODO
             // emit signalSendMessage(this->serverObject(), QString(val_str.c_str()));
             // emit signalSendMessage(this->serverObject(), QString("bang "));
@@ -356,7 +353,7 @@ void UIMatrix::mousePressEvent(QGraphicsSceneMouseEvent* ev)
 
 void UIMatrix::mouseReleaseEvent(QGraphicsSceneMouseEvent*) {}
 
-void UIMatrix:: mouseMoveEvent(QGraphicsSceneMouseEvent* event)
+void UIMatrix::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 {
     if (event->buttons() & Qt::LeftButton) {
         emit moveBox(this, event);
@@ -373,25 +370,27 @@ void UIMatrix:: mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 
 // ----------
 
-
 void UIMatrix::updateUI(t_cpd_list* msg)
 {
     // XPD-TODO
 
-    /*
     if ((matrixType() == mt_HRadio) || (matrixType() == mt_VRadio))
-        if (msg->size() > 0) {
-            if (msg->at(0).isFloat()) {
-                int v = msg->at(0).asInt();
-                if (v > (radioSize() - 1))
-                    v = radioSize() - 1;
 
-                PROPERTY_SET("Value", v);
+        if (cpd_list_size(msg) > 0) {
+            {
+                t_cpd_atom* a = cpd_list_at(msg, 0);
+                if (cpd_atom_is_float(a)) {
+                    t_cpd_float s = cpd_atom_get_float(a);
+
+                    int v = s;
+                    if (v > (radioSize() - 1))
+                        v = radioSize() - 1;
+
+                    PROPERTY_SET("Value", v);
+                }
             }
         }
-        */
 
     emit signalCallRepaint();
 }
-
 }

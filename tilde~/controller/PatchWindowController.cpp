@@ -231,7 +231,7 @@ void PatchWindowController::doCreateObject(UIObject* uiObject)
     if (uiObject->serverObjectPtr()) {
         //uiObject->serverObjectPtr()->registerObserver(uiObject->observer());
 
-        connect(uiObject, &UIObject::signalSendMessage, this, &PatchWindowController::sendMessageToObject);
+        connect(uiObject, &UIObject::signalSendMessage, this, &PatchWindowController::slotSendMessageToObject);
     }
 
     uiObject->sync();
@@ -441,18 +441,17 @@ void PatchWindowController::deleteSinglePatchcord(UIPatchcord* p)
 
     shared_ptr<PdCanvas> p_ = static_pointer_cast<PdCanvas, Canvas>(_serverCanvas);
 
-    qDebug() << (long)p->obj1()->serverObjectId() << " : " << (long) p->obj2()->serverObjectId() << " : " <<  p->outletIndex() << " : " <<  p->inletIndex();
+    qDebug() << (long)p->obj1()->serverObjectId() << " : " << (long)p->obj2()->serverObjectId() << " : " << p->outletIndex() << " : " << p->inletIndex();
 
     bool r = p_->disconnect(p->obj1()->serverObjectId(), p->outletIndex(), p->obj2()->serverObjectId(), p->inletIndex());
 
-    if (!r) qDebug()<<"failed!";
+    if (!r)
+        qDebug() << "failed!";
 
     _scene->removeItem(p);
     p->remove();
     _canvasData->deletePatchcord(p);
     _scene->update();
-
-
 }
 
 //bool PatchWindowController::patchcord(UIObject* src, int out, UIObject* dest, int in){};
@@ -1069,7 +1068,7 @@ void PatchWindowController::slotRecentMenuAction()
     openFile(a->text());
 }
 
-void PatchWindowController::sendMessageToObject(ObjectId object, QString msg)
+void PatchWindowController::slotSendMessageToObject(ObjectId object, QString msg)
 {
     UIObject* obj = (UIObject*)QObject::sender();
     QString dest = obj->properties()->get("SendSymbol")->asQString();
@@ -1101,6 +1100,24 @@ void PatchWindowController::sendMessageToObject(ObjectId object, QString msg)
         return;
     }
 
-    //objectP->message
+    // lists otherwise
+    Arguments args;
+    // TODO replace
+
+    QStringList sl = msg.split(" ");
+    for (int i=0;i<sl.size();i++)
+    {
+        QString ms = sl.at(i);
+
+        bool ok = false;
+        float f = ms.toFloat(&ok);
+        if (ok)
+            args.add(f);
+        else
+            args.add(ms.toStdString());
+    }
+
+    qDebug()<< msg;
+    objectP->sendList(args);
 }
 }
