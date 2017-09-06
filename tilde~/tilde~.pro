@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui svg
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = tilde~
@@ -172,6 +172,7 @@ SOURCES += controller/main.cpp\
     datamodels/recentfiles.cpp \
     datamodels/filepaths.cpp \
     datamodels/fileparserconverter.cpp \
+    objects/UIFaustBox.cpp
 #    oopd3/OPClass.cpp \
 #    oopd3/OOPDClassBase.cpp \
 #    oopd3/OPInstance.cpp
@@ -269,6 +270,7 @@ HEADERS  += \
     datamodels/recentfiles.h \
     datamodels/filepaths.h \
     datamodels/fileparserconverter.h \
+    objects/UIFaustBox.h
 #    oopd3/OPClass.h \
 #    oopd3/OOPDClassBase.h \
 #    oopd3/OPInstance.h \
@@ -310,11 +312,11 @@ macx: {
 
     #LIBS += -L$$OUT_PWD/../../pd-server/src/qt-creator-project -lpd-server
     #LIBS += -L$$OUT_PWD/../qtpd_ceammc_lib/ -lqtpd_ceammc_lib
-    
+
 }
 
 unix: {
-    
+
     LIBS += -L"/usr/local/lib/" -lportaudio
     LIBS += -L"/usr/local/lib/" -lpd-server
 
@@ -325,7 +327,7 @@ unix: {
     #LIBS += -L"../qtpd_lib/" -lqtpd
     #LIBS += -L$$OUT_PWD/../../pd-server/src/qt-creator-project -lpd-server
     #LIBS += -L$$OUT_PWD/../qtpd_ceammc_lib/ -lqtpd_ceammc_lib
-    
+
 
 }
 
@@ -376,10 +378,3 @@ INCLUDEPATH += ../xpd/pd/
 #LIBS += \
 QMAKE_LFLAGS += '-Wl,-rpath,/users/njazz/Qt/5.8/clang_64/lib' \
 #-Wl,-rpath-link,~/Qt/5.8/clang_64/lib \
-
-
-
-
-
-
-

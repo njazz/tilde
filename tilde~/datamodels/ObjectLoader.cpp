@@ -25,6 +25,8 @@
 #include "oopd/UIProperty.h"
 #include "oopd/UISignal.h"
 
+#include "UIFaustBox.h"
+
 #include "UIDSP.h"
 
 namespace tilde {
@@ -52,6 +54,8 @@ void ObjectLoader::loadObjects()
 #endif
 
     addUIobject("ui.array", &UIArray::createObj);
+
+    addUIobject("ui.faust~", &UIFaustBox::createObj);
 
     /*
     addUIobject("pdclass", &UIClass::createObject, &UIClass::createObj);

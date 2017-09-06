@@ -915,7 +915,7 @@ UIPatchcord* PatchWindowController::createPatchcordWithoutUndo(UIObject* obj1, i
 
     if (obj1->serverObjectId() && obj2->serverObjectId()) {
         if (((UIBox*)obj1)->errorBox()) {
-            qDebug() << "errorbox";
+            qDebug() << "starting object is errorbox";
             return 0;
         };
 
