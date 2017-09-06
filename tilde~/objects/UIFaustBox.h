@@ -32,6 +32,9 @@ private:
     //temporary
 //    UIScriptCommon* _scriptCommon;
 
+    QString _faustObjectName;
+    QString _faustDiagramName;
+
 public:
     explicit UIFaustBox();
 
@@ -52,6 +55,10 @@ public:
     virtual void sync();
 
     //virtual void updateUI(AtomList* list);
+
+    static int temporaryFileCounter;
+
+
 
 private slots:
     void editorChanged();

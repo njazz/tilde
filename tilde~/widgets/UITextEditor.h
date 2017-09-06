@@ -41,6 +41,9 @@ public:
 
     void enableStandalone();
 
+    public slots:
+    void updateDiagram(QString fileName);
+
 signals:
     void signalCompile();
     void signalUpdate();

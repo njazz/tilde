@@ -55,7 +55,7 @@ void ObjectLoader::loadObjects()
 
     addUIobject("ui.array", &UIArray::createObj);
 
-    addUIobject("ui.faust~", &UIFaustBox::createObj);
+    addUIobject("ui.faustbox", &UIFaustBox::createObj);
 
     /*
     addUIobject("pdclass", &UIClass::createObject, &UIClass::createObj);

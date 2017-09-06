@@ -22,6 +22,8 @@
 
 namespace tilde {
 
+int UIFaustBox::temporaryFileCounter;
+
 UIFaustBox::UIFaustBox()
 {
 
@@ -48,6 +50,8 @@ UIFaustBox::UIFaustBox()
     resizeEvent();
 
     _editor->textEdit()->setPlainText("import(\"stdfaust.lib\");\nphasor(f)   = f/ma.SR : (+,1.0:fmod) ~ _ ;\nosc(f)      = phasor(f) * 6.28318530718 : sin;\nprocess     = osc(hslider(\"freq\", 440, 20, 20000, 1)) * hslider(\"level\", 0, 0, 1, 0.01);");
+
+    _faustObjectName = "";
 }
 
 void UIFaustBox::editorChanged()
@@ -118,6 +122,8 @@ void UIFaustBox::sync()
 {
     UIObject::sync();
 
+
+
     //_editor->textEdit()->document()->setPlainText("");
     //_editor->textEdit()->setContext(pyWrapper::inst().newContextWithPatchControllerServerObjectAndList(this->parentController(), serverObject(), &_scriptCommon->scriptData()->inputList));
 }
@@ -135,7 +141,7 @@ void UIFaustBox::slotCompile()
 
     QString docFolder = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).last() + "/tilde~";
     QString faustFolder = docFolder + "/FAUST/";
-    QString dspFName = docFolder + "/FAUST/_tmp0001.dsp";
+    QString dspFName = docFolder + "/FAUST/_tmp" + QString::number(UIFaustBox::temporaryFileCounter) + ".dsp";
 
     QFile file1(dspFName);
     file1.open(QIODevice::WriteOnly);
@@ -161,31 +167,44 @@ void UIFaustBox::slotCompile()
     qDebug() << env.toStringList();
 
     process.setProcessEnvironment(env);
-    process.startDetached("/bin/bash", QStringList() << scriptName << dspFName); //"cd " + faustFolder + " && /bin/bash echo converting... &&
-
+    process.start("/bin/bash", QStringList() << scriptName << dspFName); //"cd " + faustFolder + " && /bin/bash echo converting... &&
     process.waitForFinished(10000);
 
-    if (process.exitCode()==0)
-    {
+    if (process.exitCode() == 0) {
+        removeXLets();
 
+        //usleep(333);
+
+        _faustObjectName = docFolder + "/FAUST/_tmp" + QString::number(UIFaustBox::temporaryFileCounter) + "~";
+        _faustDiagramName = docFolder + "/FAUST/_tmp" + QString::number(UIFaustBox::temporaryFileCounter) + "-svg/process.svg";
         slotUpdate();
-    }
-    else
-    {
-        ApplicationController::post("FAUST compilation error");
+        UIFaustBox::temporaryFileCounter++;
+    } else {
+        QFile logFile(docFolder + "/FAUST/faust_log.txt") ;
+
+        QTextStream textStream(&logFile);
+        while (true) {
+            QString line = QString(textStream.readLine());
+            if (line.isNull())
+                break;
+            else
+                ApplicationController::post("debug: " + line);
+        }
+
+        ApplicationController::post("error: FAUST: compilation error");
     }
 }
 
 void UIFaustBox::slotUpdate()
 {
     QString docFolder = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).last() + "/tilde~";
-    QString objFName = docFolder + "/FAUST/_tmp0001~";
+    QString objFName = _faustObjectName; //docFolder + "/FAUST/_tmp0001~";
     //parentController()->serverCanvas()->createObject(objFName.toStdString());
 
     //_parentController->createObject()
-
+    qDebug() << "file:" << _faustObjectName.toStdString().c_str();
     // XPD-TODO
-    ObjectId serverObject = parentController()->appController()->slotCreateObject(parentController()->serverCanvas(), objFName.toStdString());
+    ObjectId serverObject = parentController()->appController()->slotCreateObject(parentController()->serverCanvas(), objFName.toStdString().c_str());
     qDebug() << serverObject;
 
     setErrorBox(false);
@@ -193,5 +212,10 @@ void UIFaustBox::slotUpdate()
     setServerObjectId(serverObject);
 
     sync();
+
+    setInletsPos();
+    setOutletsPos();
+
+    _editor->updateDiagram(_faustDiagramName);
 }
 }
