@@ -10,6 +10,7 @@ class RecentFiles {
 
 public:
     RecentFiles();
+    ~RecentFiles();
 
     void addFile(QString fileName);
     QStringList* list();

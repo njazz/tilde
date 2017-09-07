@@ -31,6 +31,9 @@ class UIObjectData : public QObject {
     int _minimumBoxHeight;
 
 public:
+    explicit UIObjectData(QObject* parent = 0);
+    ~UIObjectData();
+
     QString toQString();
     PropertyList* properties();
 
@@ -51,7 +54,7 @@ public:
     int minimumBoxHeight();
     t_objectSize objectSizeMode();
 
-    explicit UIObjectData(QObject* parent = 0);
+
 
 signals:
 

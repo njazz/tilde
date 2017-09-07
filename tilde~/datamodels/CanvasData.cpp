@@ -19,15 +19,21 @@ CanvasData::CanvasData()
     _properties = new PropertyList();
     _properties->create("FixedSize", "Canvas", "0.1", false);
 
-//    _properties->create("Size", "Canvas", "0.1", QSize(400,300));
-//    _properties->create("Position", "Canvas", "0.1", QPoint(100,100));
-
+    //    _properties->create("Size", "Canvas", "0.1", QSize(400,300));
+    //    _properties->create("Position", "Canvas", "0.1", QPoint(100,100));
 
     //_properties->create("DrawBoxes", "Canvas", "0.1", false);
 
     _firstSave = false;
 
     _clipboard = 0;
+}
+
+CanvasData::~CanvasData()
+{
+    delete _inlets;
+    delete _outlets;
+    delete _properties;
 }
 
 void CanvasData::addUniqueBox(objectVec* boxes, UIObject* box)
@@ -321,8 +327,8 @@ QString CanvasData::canvasAsPdFileString()
     //return QString("#N canvas 0 0 400 300 10;\r\n");
 
     // todo properties
-    QPoint p = _position;           //properties()->get("Position")->asQPoint();
-    QSize size = _size;             //properties()->get("Size")->asQSize();
+    QPoint p = _position; //properties()->get("Position")->asQPoint();
+    QSize size = _size; //properties()->get("Size")->asQSize();
 
     QString ret;
 

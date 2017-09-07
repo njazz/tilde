@@ -77,8 +77,8 @@ private:
     QUndoStack* _undoStack;
 
 public:
-    PatchWindowController(ApplicationController* appController);
-    PatchWindowController(ApplicationController* appController, CanvasPtr canvas); ///> this is for subpatches
+    explicit PatchWindowController(ApplicationController* appController);
+    explicit PatchWindowController(ApplicationController* appController, CanvasPtr canvas); ///> this is for subpatches
 
     // ----------------------
 

@@ -39,8 +39,6 @@ int main(int argc, char* argv[])
 
     a.setCursorFlashTime(500);
 
-
-
     new ApplicationController();
     return a.exec();
 }

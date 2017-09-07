@@ -20,7 +20,6 @@
 using namespace std;
 
 namespace tilde {
-static QString cm_log_string;
 
 void PdWindow::postSlot(QString text)
 {
@@ -38,7 +37,7 @@ void PdWindow::postSlot(QString text)
     QString last_c = text.at(text.length() - 1);
 
     if ((last_c == "\n")) {
-        cm_log_string += text;
+        _log_string += text;
     }
     if ((text == "\n") || (last_c == "\n")) {
 
@@ -50,7 +49,7 @@ void PdWindow::postSlot(QString text)
         _ui->log->setItem(0, 0, item);
 
         item = new QTableWidgetItem;
-        QString txt = cm_log_string;
+        QString txt = _log_string;
 
         //remove last \n
         if (txt.length() > 0)
@@ -69,9 +68,9 @@ void PdWindow::postSlot(QString text)
 
         _ui->log->setItem(0, 1, item);
 
-        cm_log_string = "";
+        _log_string = "";
     } else {
-        cm_log_string += text;
+        _log_string += text;
     }
 
     _ui->log->resizeRowsToContents();
@@ -83,6 +82,8 @@ PdWindow::PdWindow()
     _ui(new Ui::cm_pdwindow)
 {
     _ui->setupUi(this);
+
+    _log_string = "";
 
     ((BaseWindow*)this)->createActions();
     ((BaseWindow*)this)->createMenus();

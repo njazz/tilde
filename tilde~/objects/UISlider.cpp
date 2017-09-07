@@ -20,7 +20,7 @@ UISlider::UISlider()
 
     objectData()->setObjectSize(os_Free, 20, 20);
 
-    _value = false;
+    _value = 0.;
 
     initProperties();
 

@@ -76,6 +76,8 @@ void ArrangeObjects::alignCenter(objectVec* v)
         c++;
     }
 
+    if (c==0) return;
+
     x = x / c;
 
     for (objectVec::iterator it = v->begin(); it != v->end(); ++it) {

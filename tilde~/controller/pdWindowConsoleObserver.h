@@ -10,7 +10,7 @@
 
 #include <QApplication>
 
-#include <memory>
+//#include <memory>
 
 using namespace xpd;
 
@@ -27,10 +27,11 @@ class PdWindowConsoleObserver : public ConsoleObserver {
 private:
     PdWindow* _window;
 
+
 public:
     PdWindowConsoleObserver(){_window = 0;};
     void setWindow(PdWindow* w) { _window = w; };
-    void update();
+    virtual void update() override;
 };
 
 typedef shared_ptr<PdWindowConsoleObserver> PdWindowConsoleObserverPtr;

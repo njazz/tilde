@@ -22,6 +22,11 @@ UIObjectData::UIObjectData(QObject* parent)
     _errorBox = false;
 }
 
+UIObjectData::~UIObjectData()
+{
+    delete _properties;
+}
+
 void UIObjectData::setData(QString inputData) ///> set both properties and Pd object string
 {
 

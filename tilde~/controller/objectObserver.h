@@ -24,6 +24,7 @@ private:
     UIObject* _object;
 
 public:
+    ObjectObserver(){_object=0;}
     void setObject(UIObject* o);
     virtual void update();
 };

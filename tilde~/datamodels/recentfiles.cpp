@@ -36,6 +36,12 @@ RecentFiles::RecentFiles()
     //_list->append("recent files");
 }
 
+RecentFiles::~RecentFiles()
+{
+    delete _list;
+
+}
+
 void RecentFiles::addFile(QString fileName)
 {
     _list->append(fileName);

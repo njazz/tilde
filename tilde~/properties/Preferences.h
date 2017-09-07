@@ -95,6 +95,7 @@ public:
 
         if (!textFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
             qDebug() << textFile.errorString();
+            return;
         }
 
         QStringList prefList;
@@ -121,6 +122,7 @@ public:
         if (!textFile.open(QIODevice::WriteOnly)) {
             //check and mkpath here
             qDebug() << textFile.errorString();
+            return;
         }
 
         QStringList prefList;

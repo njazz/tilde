@@ -29,7 +29,7 @@ class CanvasBoxObserver : public CanvasObserver {
     UIBox* _box;
 
 public:
-    CanvasBoxObserver(){};
+    CanvasBoxObserver(){_box = 0;};
 
     void setUIBox(UIBox* b);
 

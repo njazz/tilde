@@ -31,6 +31,8 @@ extern "C" void setup() //0x2e //TILDE_UI_
     sprintf(buildNr,"loading tilde~ UI library build %i ...", TILDE_BUILD_NUMBER);
     post(buildNr);
 
+    free(buildNr);
+
     setup_ui0x2ebang();
     setup_ui0x2efloat();
 

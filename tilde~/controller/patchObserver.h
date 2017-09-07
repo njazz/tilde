@@ -19,6 +19,8 @@ private:
     PatchWindowController* _patchController;
 
 public:
+    PatchObserver() {_patchController = 0;}
+
     void setPatchController(PatchWindowController* c);
     virtual void update(){
         //something

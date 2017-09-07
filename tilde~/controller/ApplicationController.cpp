@@ -43,6 +43,7 @@ ApplicationController::ApplicationController()
 
     ServerSettings settings("PdServer");
     _localServer = new PdLocalServer(settings);
+
     _localServer->createProcess();
     _theServerInstance = (mainServerInstance());
     mainServerInstance()->setLogLevel(LOG_DUMP);
@@ -67,18 +68,15 @@ ApplicationController::ApplicationController()
     _pythonConsole = new PythonQtScriptingConsole(NULL, mainContext);
 #endif
 
-
-    _consoleObserver = shared_ptr<PdWindowConsoleObserver>(new PdWindowConsoleObserver);
-
-    auto ptr = mainServerInstance();
-//    shared_ptr<PdLocalProcess> ptr = static_pointer_cast<PdLocalProcess, AbstractServerProcess>(mainServerInstance());
-    ptr->registerConsoleObserver(_consoleObserver);
-
     _pdWindow = new PdWindow();
     _pdWindow->setAppController(this);
     _pdWindow->move(0, 100);
     _pdWindow->show();
 
+    _consoleObserver = shared_ptr<PdWindowConsoleObserver>(new PdWindowConsoleObserver);
+
+    auto ptr = mainServerInstance();
+    ptr->registerConsoleObserver(_consoleObserver);
     _consoleObserver->setWindow(_pdWindow);
 
     ApplicationController::post("Server started");
@@ -141,6 +139,7 @@ ApplicationController::ApplicationController()
     // search all through "FilePath" class
     // set only root ~/tilde~ path
     // extrafolders for additional paths
+
     Preferences::inst().create("tilde~Path", "Folders", "0.1", _filePaths->basePath());
 
     loadAllLibraries();
@@ -160,6 +159,7 @@ ApplicationController::ApplicationController()
     }
 
     QStringList paths2 = _filePaths->helpDirList();
+
     // help paths
     for (int i = 0; i < paths2.size(); i++) {
         mainServerInstance()->addSearchPath(paths2.at(i).toStdString());
@@ -179,8 +179,6 @@ ApplicationController::ApplicationController()
     _pdWindow->setRecentMenu(_recentMenu);
 
     QString bb = QString("tilde~ build: ") + QString::number(TILDE_BUILD_NUMBER);
-
-    //applicationController::post(bb.toStdString());
 
     ApplicationController::post(bb);
 

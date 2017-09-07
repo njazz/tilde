@@ -50,6 +50,7 @@ class CanvasData {
 
 public:
     CanvasData();
+    ~CanvasData();
 
     portItemVec* inlets() { return _inlets; }
     portItemVec* outlets() { return _outlets; }

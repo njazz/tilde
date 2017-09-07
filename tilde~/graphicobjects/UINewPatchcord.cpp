@@ -11,6 +11,7 @@ UINewPatchcord::UINewPatchcord()
 
     _patchcordType = 0;
     _error = false;
+    _active = false;
 }
 
 void UINewPatchcord::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*)

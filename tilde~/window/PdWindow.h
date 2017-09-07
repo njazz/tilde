@@ -41,6 +41,8 @@ private:
     QCompleter* _sendMessageCompleter;
     QStringListModel* _sendMessageCompleterModel;
 
+    QString _log_string;
+
 public:
     PdWindow();
 
