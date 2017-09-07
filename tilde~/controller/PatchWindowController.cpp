@@ -1118,6 +1118,8 @@ void PatchWindowController::slotSendMessageToObject(ObjectId object, QString msg
     }
 
     qDebug()<< msg;
-    objectP->sendList(args);
+    //objectP->sendList(args);
+
+    objectP->sendStringAsList(msg.toStdString());
 }
 }

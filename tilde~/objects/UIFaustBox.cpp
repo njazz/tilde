@@ -97,7 +97,7 @@ void UIFaustBox::paint(QPainter* p, const QStyleOptionGraphicsItem* option, QWid
 
     p->setPen(QPen(QColor(0, 0, 0), 1, Qt::SolidLine, Qt::SquareCap, Qt::BevelJoin));
     p->setFont(QFont(PREF_QSTRING("Font"), properties()->get("FontSize")->asFontSize(), 0, false));
-    p->drawText(2, 3, boundingRect().width() - 2, boundingRect().height() - 3, 0, "faust " + properties()->get("ScriptFile")->asQString(), 0);
+    p->drawText(2, 3, boundingRect().width() - 2, boundingRect().height() - 3, 0, "ui.faustbox " + properties()->get("ScriptFile")->asQString(), 0);
 }
 
 // ------------------------

@@ -24,6 +24,11 @@ static QString cm_log_string;
 
 void PdWindow::postSlot(QString text)
 {
+    if (!_ui)
+        return;
+    if (!_ui->log)
+        return;
+
     //text.append("\n");
 
     //temporary
@@ -53,14 +58,14 @@ void PdWindow::postSlot(QString text)
 
         item->setText(txt);
 
-        if (txt.split(":").first()=="error")
-            item->setBackgroundColor(QColor(255,192,192,255));
+        if (txt.split(":").first() == "error")
+            item->setBackgroundColor(QColor(255, 192, 192, 255));
 
-        if (txt.split(":").first()=="verbose(2)")
-            item->setBackgroundColor(QColor(255,255,192,255));
+        if (txt.split(":").first() == "verbose(2)")
+            item->setBackgroundColor(QColor(255, 255, 192, 255));
 
-        if (txt.split(":").first()=="verbose(4)")
-            item->setBackgroundColor(QColor(224,224,224,255));
+        if (txt.split(":").first() == "verbose(4)")
+            item->setBackgroundColor(QColor(224, 224, 224, 255));
 
         _ui->log->setItem(0, 1, item);
 
@@ -130,15 +135,15 @@ PdWindow::PdWindow()
 
     _ui->logLevelBox->setCurrentIndex(0);
 
-    connect(_ui->sendMessage, &QLineEdit::returnPressed, this, &PdWindow::sendMessageChanged);
-    connect(_ui->sendMessage, &QLineEdit::textEdited, this, &PdWindow::editSendMessage);
-
-    connect(messageAct, &QAction::triggered, this, &PdWindow::focusOnSendMessage);
-
     _sendMessageCompleter = new QCompleter();
     _sendMessageCompleterModel = new QStringListModel();
     _sendMessageCompleter->setModel(_sendMessageCompleterModel);
     _ui->sendMessage->setCompleter(_sendMessageCompleter);
+
+    connect(_ui->sendMessage, &QLineEdit::returnPressed, this, &PdWindow::sendMessageChanged);
+    connect(_ui->sendMessage, &QLineEdit::textEdited, this, &PdWindow::editSendMessage);
+
+    connect(messageAct, &QAction::triggered, this, &PdWindow::focusOnSendMessage);
 
     connect(_ui->sendMessage, &QLineEdit::textChanged, _ui->sendMessage->completer(), &QCompleter::popup);
 
@@ -184,14 +189,16 @@ void PdWindow::editSendMessage(QString)
     if (!appController())
         return;
 
-    string s;//
+    string s; //
 
     shared_ptr<PdLocalProcess> ptr = static_pointer_cast<PdLocalProcess>(appController()->mainServerInstance());
-    s = ptr->getBindObjectList();
+    if (ptr) {
+        s = ptr->getBindObjectList();
 
-    QStringList sL = QString(s.c_str()).split(",");
+        QStringList sL = QString(s.c_str()).split(",");
 
-    QStringListModel* model = (QStringListModel*)(_ui->sendMessage->completer()->model());
-    model->setStringList(sL);
+        QStringListModel* model = (QStringListModel*)(_ui->sendMessage->completer()->model());
+        model->setStringList(sL);
+    }
 }
 }

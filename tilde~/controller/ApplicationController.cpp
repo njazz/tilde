@@ -44,6 +44,7 @@ ApplicationController::ApplicationController()
     ServerSettings settings("PdServer");
     _localServer = new PdLocalServer(settings);
     _localServer->createProcess();
+    _theServerInstance = (mainServerInstance());
     mainServerInstance()->setLogLevel(LOG_DUMP);
 
     ObjectLoader::inst().loadObjects();
@@ -66,7 +67,7 @@ ApplicationController::ApplicationController()
     _pythonConsole = new PythonQtScriptingConsole(NULL, mainContext);
 #endif
 
-    _theServerInstance = (mainServerInstance());
+
     _consoleObserver = shared_ptr<PdWindowConsoleObserver>(new PdWindowConsoleObserver);
 
     auto ptr = mainServerInstance();

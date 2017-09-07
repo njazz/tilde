@@ -15,6 +15,8 @@ UISignal::UISignal()
     _opClass = 0;
     _opInstance = 0;
 
+    _isAbstraction = false;
+
     setHeight(20);
     deselect();
     //setSubpatchWindow(0);

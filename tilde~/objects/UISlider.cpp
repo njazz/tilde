@@ -237,6 +237,6 @@ void UISlider::resizeEvent()
 {
     UIObject::resizeEvent();
 
-    _isHorizontal = width() > height();
+    _isHorizontal = float(width() > height());
 }
 }

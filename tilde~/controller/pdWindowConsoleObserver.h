@@ -23,10 +23,12 @@ class PdWindow;
 ////
 /// \brief The observer for the Pd console
 class PdWindowConsoleObserver : public ConsoleObserver {
+
 private:
     PdWindow* _window;
 
 public:
+    PdWindowConsoleObserver(){_window = 0;};
     void setWindow(PdWindow* w) { _window = w; };
     void update();
 };

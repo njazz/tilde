@@ -241,6 +241,7 @@ void UIBox::sync()
 
     // create subpatch window controller here (if not already created)
     if (isSubpatch() && !_subpatchController) {
+
         //qDebug() << "subpatch server canvas: " << serverObject()->toServerCanvas();
 
         // XPD-TODO

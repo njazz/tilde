@@ -16,6 +16,7 @@
 namespace tilde {
 UIArray::UIArray()
 {
+
     setHeight(20);
 
     deselect();
@@ -26,6 +27,7 @@ UIArray::UIArray()
     resizeEvent();
 
     _array = 0;
+    _arraySize = 0;
 }
 
 UIObject* UIArray::createObj(QString data)

@@ -26,6 +26,8 @@ CanvasData::CanvasData()
     //_properties->create("DrawBoxes", "Canvas", "0.1", false);
 
     _firstSave = false;
+
+    _clipboard = 0;
 }
 
 void CanvasData::addUniqueBox(objectVec* boxes, UIObject* box)

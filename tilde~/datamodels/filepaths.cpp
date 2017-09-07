@@ -98,6 +98,8 @@ QStringList FilePaths::bundlesDirList()
     dir.cd("Resources");
     ret << dir.absolutePath();
 
+    delete d;
+
     return ret;
 }
 
@@ -124,6 +126,8 @@ QStringList FilePaths::recursiveDirListFor(QStringList paths)
 
             maxCount--;
         }
+
+        delete d;
     }
     return ret;
 }
@@ -204,7 +208,11 @@ QStringList FilePaths::fileListFor(QStringList list, QString filter)
 
             maxCount--;
         }
+
+        delete d;
     }
+
+
     return ret;
 }
 

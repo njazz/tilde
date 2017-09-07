@@ -262,6 +262,7 @@ public:
     {
         _list = 0;
         _serverObject = 0;
+        _windowController = 0;
     };
 
     void setWindowController(PatchWindowController* c)

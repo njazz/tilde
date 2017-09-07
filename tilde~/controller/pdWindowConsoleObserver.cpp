@@ -10,7 +10,8 @@ void PdWindowConsoleObserver::update()
 {
     if (_window) {
         //qDebug() << "POST" << text().c_str();
-        emit _window->postSignal(QString(text().c_str()));
+
+        _window->postSignal(QString(text().c_str()));
     }
 };
 }

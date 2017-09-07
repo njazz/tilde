@@ -16,6 +16,7 @@ namespace tilde {
 
 UIFloat::UIFloat()
 {
+    _startY = 0;
 
     setSize(35, 20);
     objectData()->setObjectSize(os_FixedHeight, 30, 20);

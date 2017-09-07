@@ -14,12 +14,17 @@ namespace tilde {
 
 Property::Property()
 {
+    _readOnly = false;
     _type = ptList; //?
     _applyToPd = false;
 };
 
 Property::Property(const Property& rval)
 {
+    _readOnly = false;
+    _type = ptList; //?
+    _applyToPd = false;
+
     Property* src = const_cast<Property*>(&rval);
 
     setGroup(src->group());

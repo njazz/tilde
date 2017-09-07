@@ -596,6 +596,7 @@ void CanvasView::setZoom(float zoomDirection)
 
 void CanvasView::createContextMenu()
 {
+    if (_pmProperties) return;
 
     _pmProperties = new QAction(tr("Properties"), this);
     _pmProperties->setShortcut(tr("Ctrl+Shift+P"));
