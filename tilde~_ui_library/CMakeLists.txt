@@ -51,17 +51,13 @@ set (SOURCES
 )
 
 set (HEADERS
-#    ../../pd-server/pure-data-src/src/m_pd.h
-#    ../../pd-server/pure-data-src/src/m_imp.h
-#    ../../pd-server/pure-data-src/ceammc/ext/src/lib/ceammc_atomlist.h
-#    ../../pd-server/pure-data-src/ceammc/ext/src/lib/ceammc_atom.h
     ceammc_lib/ceammc_object.h 
     ceammc_lib/ceammc_message.h 
     ceammc_lib/ceammc_format.h 
     ceammc_lib/ceammc_log.h 
     ceammc_lib/ceammc_property.h 
-#    ../../pd-server/pure-data-src/ceammc/ext/src/lib/ceammc_data.h
-    src/ui_bang.h 
+
+    src/ui_bang.h
     src/ui_float.h 
     src/ui_msg.h 
     src/ui_toggle.h 
@@ -75,12 +71,6 @@ set (HEADERS
     src/ui_dsp.h
 )
 
-# find_library(PDSERVER_LIB pd-server)
-
-set (LIBS
-	#${PDSERVER_LIB}
-)
-
 find_package(Boost 1.47.0 REQUIRED)
 include_directories(${Boost_INCLUDE_DIRS})
 include_directories( ${CMAKE_BINARY_DIR} )
@@ -88,11 +78,10 @@ include_directories( ${CMAKE_BINARY_DIR} )
 include_directories(.)
 include_directories(./src/)
 include_directories(./ceammc_lib/)
-# include_directories(../../pd-server/pure-data-src/ceammc/ext/src/lib/)
 include_directories(../../pd-server/pure-data-src/src/)
 
 add_library(tilde~_ui SHARED ${CEAMMC_LIB_SOURCES} ${SOURCES} )
-target_link_libraries(tilde~_ui ${LIBS} "-undefined dynamic_lookup")
+target_link_libraries(tilde~_ui "-undefined dynamic_lookup")
 SET_TARGET_PROPERTIES(tilde~_ui PROPERTIES PREFIX "")
 set_target_properties(tilde~_ui PROPERTIES SUFFIX ".pd_darwin")
 

@@ -241,14 +241,10 @@ set (HEADERS
     datamodels/fileparserconverter.h 
     datamodels/scriptrunner.h
 
-#    widgets/UIScriptTextEdit.h 
-#    widgets/UIScriptEditor.h 
-#    widgets/UIScriptCommon.h 
 )
 
 set (UIS
     window/cm_pdwindow.ui 
-#   window/canvasmenu.ui 
     window/cm_basewindow.ui 
     properties/QtColorPicker/src/color_dialog.ui
 )
@@ -264,8 +260,6 @@ set (RESOURCES
 
 find_library(PA_LIB portaudio)
 
-# find_library(PDSERVER_LIB pd-server)
-# find_library(PDSERVER_LIB pd-server)
 
 set (XPD_SHARED 
 	"${CMAKE_BINARY_DIR}/xpd/src/libxpd_shared.dylib"
@@ -350,6 +344,7 @@ add_custom_target(buildNumber
 add_executable(tilde~ ${SOURCES} ${RES_SOURCES} ${UI_HEADERS} ${PYTHON_SOURCES} ${PYTHON_HEADERS} ${RESOURCES} ${myApp_ICON})
 
 add_dependencies(tilde~ buildNumber)
+add_dependencies(tilde~ XPD_SHARED PD_CORE_SHARED)
 
 qt5_use_modules(tilde~ Core Gui Widgets Svg)
 
@@ -410,6 +405,7 @@ else()
 	message(SEND_ERROR "You are on an unsupported platform! (Not Win32, Mac OS X or Unix)")
 endif(WIN32)
 
+################
 
 install(TARGETS tilde~ DESTINATION ${CMAKE_BINARY_DIR}/../bin)
 
