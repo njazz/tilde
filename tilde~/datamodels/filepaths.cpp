@@ -98,7 +98,7 @@ QStringList FilePaths::bundlesDirList()
     dir.cd("Resources");
     ret << dir.absolutePath();
 
-    delete d;
+    //delete d;
 
     return ret;
 }
@@ -127,7 +127,7 @@ QStringList FilePaths::recursiveDirListFor(QStringList paths)
             maxCount--;
         }
 
-        delete d;
+//        delete d;
     }
     return ret;
 }
@@ -169,12 +169,12 @@ QStringList FilePaths::librariesDirList()
 {
     QStringList ret;
 
-//    QDir dir = QDir(QCoreApplication::applicationDirPath());
-//    dir.cdUp();
-//    dir.cd("Resources");
-//    dir.cd("Libraries");
+    //    QDir dir = QDir(QCoreApplication::applicationDirPath());
+    //    dir.cdUp();
+    //    dir.cd("Resources");
+    //    dir.cd("Libraries");
 
-//    ret << dir.absolutePath();
+    //    ret << dir.absolutePath();
     ret << dirListFor("Libraries");
 
     return ret;
@@ -209,16 +209,15 @@ QStringList FilePaths::fileListFor(QStringList list, QString filter)
             maxCount--;
         }
 
-        delete d;
+//        delete d;
     }
-
 
     return ret;
 }
 
 QStringList FilePaths::librariesFileList()
 {
-    return fileListFor(librariesDirList(), "*.pd_darwin")+fileListFor(librariesDirList(), "*.d_fat");
+    return fileListFor(librariesDirList(), "*.pd_darwin") + fileListFor(librariesDirList(), "*.d_fat");
 }
 
 QStringList FilePaths::scriptsFileList()

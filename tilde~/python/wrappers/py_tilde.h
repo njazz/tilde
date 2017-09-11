@@ -23,7 +23,9 @@
 #include "ApplicationController.h"
 #include "PatchWindowController.h"
 
-#include "ceammc_atomlist.h"
+//#include "ceammc_atomlist.h"
+
+#include "xpd-headers.h"
 
 using namespace tilde;
 
@@ -52,8 +54,7 @@ public Q_SLOTS:
 
     void pdMessage(UIObject* obj, QString data)
     {
-        // XPD-TODO
-        // obj->serverObject()->message(data.toStdString());
+        obj->serverObjectPtr()->sendStringAsList(data.toStdString());
     }
 
     // test
@@ -109,14 +110,9 @@ public Q_SLOTS:
 
     UIObject* createObject(PatchWindowController* c, QString obj_data, int x, int y)
     {
-        c->createObject(obj_data.toStdString(), QPoint(x, y));
+        UIObject* ret = c->createObject(obj_data.toStdString(), QPoint(x, y));
+        return ret;
     }
-
-    //todo templates
-    //    void moveObject(CanvasView* o, int x, int y)
-    //    {
-    //        o->move(x, y);
-    //    }
 
     void moveObject(UIObject* o, int x, int y)
     {
@@ -211,7 +207,7 @@ public Q_SLOTS:
     // arrays: yet here
     void newArray(PatchWindowController* c, QString name, int size)
     {
-        // TODO
+        // XPD-TODO
         // c->canvasData()->serverCanvas()->createArray();
 
         //        if (c->pdObject()) {
@@ -309,6 +305,9 @@ public Q_SLOTS:
     {
         if (_list)
             return *_list;
+
+        QStringList ret;
+        return ret;
     }
 };
 

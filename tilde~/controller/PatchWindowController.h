@@ -83,7 +83,7 @@ public:
     // ----------------------
 
     //ProcessPtr serverInstance();
-    ObjectId serverCanvasAsObject();
+    ObjectId serverCanvasAsObjectId();
     CanvasPtr serverCanvas();
 
     void setAppController(ApplicationController* a);

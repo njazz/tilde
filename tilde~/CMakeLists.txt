@@ -157,7 +157,7 @@ set (PYTHON_HEADERS
     python/headers/PythonQtQFileImporter.h 
     python/headers/PythonQtSystem.h 
     python/headers/PythonQtVariants.h 
-    python/wrappers/py_qtpd.h 
+    python/wrappers/py_tilde.h
     python/wrappers/py_wrappers.h 
     objects/UIScript.h 
     objects/UIScriptBox.h 

@@ -3,7 +3,7 @@
 
 #include "py_wrappers.h"
 
-#include "py_qtpd.h"
+#include "py_tilde.h"
 
 using namespace tilde;
 

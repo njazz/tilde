@@ -697,7 +697,10 @@ void FileParser::open(QString fname)
 
 // --------------------------------------------------
 
-void FileParser::setAppController(ApplicationController* appController) { _appController = appController; }
+void FileParser::setAppController(ApplicationController* appController)
+{
+    _appController = appController;
+}
 
 void FileParser::setParserWindowController(PatchWindowController* wnd)
 {

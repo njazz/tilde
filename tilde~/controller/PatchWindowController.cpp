@@ -110,7 +110,7 @@ UIBox* PatchWindowController::asUIBox()
     return ret;
 }
 
-ObjectId PatchWindowController::serverCanvasAsObject()
+ObjectId PatchWindowController::serverCanvasAsObjectId()
 {
 
     return _serverCanvas->id(); //_serverCanvas->toServerObject();
@@ -418,8 +418,6 @@ void PatchWindowController::restoreUIBoxForSubpatch(PatchWindowController* contr
         return;
     }
 
-    //uiObject->move(pos.x(), pos.y());
-
     uiObject->fromQString(data);
     uiObject->properties()->set("Position", pos);
 
@@ -428,7 +426,14 @@ void PatchWindowController::restoreUIBoxForSubpatch(PatchWindowController* contr
     // XPD-TODO
     // uiObject->setServerObject(controller->serverCanvasAsObject());
 
-    qDebug() << "server canvas as object:" << (long)controller->serverCanvasAsObject();
+    const Object* o = serverCanvas()->objects().findObject(controller->serverCanvasAsObjectId());
+    if (!o)
+        ApplicationController::post("error: subpatch box error!");
+    else
+        //uiObject->setServerObject(new std::shared_ptr<Object>(const_cast<Object*>(o)));
+        uiObject->setServerObjectId(controller->serverCanvasAsObjectId());
+
+    qDebug() << "server canvas as object:" << (long)controller->serverCanvasAsObjectId();
 
     doCreateObject(uiObject);
 
@@ -1105,8 +1110,7 @@ void PatchWindowController::slotSendMessageToObject(ObjectId object, QString msg
     // TODO replace
 
     QStringList sl = msg.split(" ");
-    for (int i=0;i<sl.size();i++)
-    {
+    for (int i = 0; i < sl.size(); i++) {
         QString ms = sl.at(i);
 
         bool ok = false;
@@ -1117,7 +1121,7 @@ void PatchWindowController::slotSendMessageToObject(ObjectId object, QString msg
             args.add(ms.toStdString());
     }
 
-    qDebug()<< msg;
+    qDebug() << msg;
     //objectP->sendList(args);
 
     objectP->sendStringAsList(msg.toStdString());
