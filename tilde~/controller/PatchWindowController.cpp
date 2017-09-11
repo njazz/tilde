@@ -426,7 +426,7 @@ void PatchWindowController::restoreUIBoxForSubpatch(PatchWindowController* contr
     // XPD-TODO
     // uiObject->setServerObject(controller->serverCanvasAsObject());
 
-    const Object* o = serverCanvas()->objects().findObject(controller->serverCanvasAsObjectId());
+    const Object* o = controller->serverCanvas()->objects().findObject(controller->serverCanvasAsObjectId());
     if (!o)
         ApplicationController::post("error: subpatch box error!");
     else

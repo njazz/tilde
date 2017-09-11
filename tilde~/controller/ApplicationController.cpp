@@ -155,7 +155,8 @@ ApplicationController::ApplicationController()
 
     // external paths
     for (int i = 0; i < paths.size(); i++) {
-        mainServerInstance()->addSearchPath(paths.at(i).toStdString());
+        auto p = static_pointer_cast<PdLocalProcess>(mainServerInstance());
+        p->addSearchPath(paths.at(i).toStdString());
     }
 
     QStringList paths2 = _filePaths->helpDirList();
@@ -358,10 +359,18 @@ void ApplicationController::loadAllLibraries()
 
         ApplicationController::post("loading library: " + file);
 
-        bool b = mainServerInstance()->loadLibrary(file.toStdString());
+        bool b;
+        try{
+         b = mainServerInstance()->loadLibrary(file.toStdString());
+         if (!b)
+             ApplicationController::post("...failed!");
+        }
+        catch(exception&)
+        {
+            ApplicationController::post("...xpd failed!");
+        }
 
-        if (!b)
-            ApplicationController::post("...failed!");
+
     }
 
     mainServerInstance()->setLogLevel(LOG_ERROR);
