@@ -28,6 +28,7 @@ add_definitions(-DQTCOLORPICKER_LIBRARY)
 
 set (SOURCES
 	controller/main.cpp
+        controller/buildNumber.cpp
 #### UI objects
     	objects/UIArray.cpp 
     	objects/UIBox.cpp 
@@ -249,7 +250,7 @@ set (UIS
     properties/QtColorPicker/src/color_dialog.ui
 )
 
-set ( MOC_HEADERS
+set (MOC_HEADERS
 	window/PdWindow.h
 )
 
@@ -336,23 +337,23 @@ add_custom_target(buildNumber
         WORKING_DIR ${PROJECT_SOURCE_DIR}/
 )
 
-
-
-
 ##############
 
 add_executable(tilde~ ${SOURCES} ${RES_SOURCES} ${UI_HEADERS} ${PYTHON_SOURCES} ${PYTHON_HEADERS} ${RESOURCES} ${myApp_ICON})
 
 add_dependencies(tilde~ buildNumber)
-add_dependencies(tilde~ XPD_SHARED PD_CORE_SHARED)
+
 
 qt5_use_modules(tilde~ Core Gui Widgets Svg)
 
 LINK_DIRECTORIES(
 	${CMAKE_BINARY_DIR}/res
 	/usr/local/lib
+        ${CMAKE_BINARY_DIR}/pd
+        ${CMAKE_BINARY_DIR}/src
 )
 
+add_dependencies(tilde~ XPD_SHARED PD_CORE_SHARED)
 target_link_libraries(tilde~ ${QT_LIBRARIES} ${LIBS} ${PYTHON_LIBS})
 
 if (APPLE)

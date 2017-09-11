@@ -41,5 +41,6 @@ void UIpdScript::onAny(t_symbol* s, const AtomList& list)
 extern "C" void setup_ui0x2escript()
 {
     ObjectFactory<UIpdScript> obj("ui.script");
-    ObjectFactory<UIpdScript> obj2("py");
+
+    obj.addAlias("py");
 }

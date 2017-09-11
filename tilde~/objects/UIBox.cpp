@@ -88,6 +88,16 @@ void UIBox::objectPressEvent(QGraphicsSceneMouseEvent* event)
             // XPD-TODO
             // _abstractionPath = serverObject()->toServerCanvas()->path().c_str();
 
+//            auto c;
+//            try{
+//            c= serverObjectPtr()->asCanvas();}
+//            catch(exception&){
+//                ApplicationController::post("error: subpatch error!");
+//                return;
+//            }
+
+            // XPD-TODO
+
             QString fullName = _abstractionPath + "/" + objectData()->toQString() + ".pd";
             ApplicationController::post("abstraction path: " + fullName);
 
@@ -245,7 +255,27 @@ void UIBox::sync()
         //qDebug() << "subpatch server canvas: " << serverObject()->toServerCanvas();
 
         // XPD-TODO
-        // _subpatchController = new PatchWindowController(parentController()->appController(), serverObject()->toServerCanvas());
+
+//        CanvasSettings setup = CanvasSettings("<subpatch>");
+//        CanvasPtr sc = parentController()->serverCanvas();
+
+//        auto c = new PdCanvas(sc.get(), setup);
+//        CanvasPtr ptr_c = c;
+
+        ApplicationController::post("server object: "+QString::number((long)serverObjectPtr()));
+        ApplicationController::post("pd object: "+QString::number((long)serverObjectPtr()->pdObject()));
+        ApplicationController::post("pd canvas: "+QString::number((long)serverObjectPtr()->asPdCanvas()));
+
+        std::shared_ptr<PdCanvas> s_p(serverObjectPtr()->asPdCanvas());
+        CanvasPtr ptr_c = static_pointer_cast<Canvas,PdCanvas>(s_p);
+        if (!ptr_c)
+        {
+            ApplicationController::post("error: canvas pointer error");
+            setErrorBox(true);
+            return;
+        }
+
+        _subpatchController = new PatchWindowController(parentController()->appController(), ptr_c);
 
         QStringList dataList = objectData()->data().split(" ");
         if (dataList.size() > 1)

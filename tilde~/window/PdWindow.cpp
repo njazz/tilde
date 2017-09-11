@@ -28,8 +28,6 @@ void PdWindow::postSlot(QString text)
     if (!_ui->log)
         return;
 
-    //text.append("\n");
-
     //temporary
     if (!text.length())
         return;
@@ -39,6 +37,7 @@ void PdWindow::postSlot(QString text)
     if ((last_c == "\n")) {
         _log_string += text;
     }
+
     if ((text == "\n") || (last_c == "\n")) {
 
         _ui->log->insertRow(0);
