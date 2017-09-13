@@ -38,7 +38,8 @@ RecentFiles::RecentFiles()
 
 RecentFiles::~RecentFiles()
 {
-    delete _list;
+    // ?
+    //delete _list;
 
 }
 

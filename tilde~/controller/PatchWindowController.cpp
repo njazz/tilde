@@ -53,7 +53,7 @@ PatchWindowController::PatchWindowController(ApplicationController* appControlle
 
     //_canvasData->setServerCanvas(_serverCanvas);
 
-    qDebug() << "1";
+    qDebug() << "2";
 
     newWindow();
 
@@ -112,7 +112,6 @@ UIBox* PatchWindowController::asUIBox()
 
 ObjectId PatchWindowController::serverCanvasAsObjectId()
 {
-
     return _serverCanvas->id(); //_serverCanvas->toServerObject();
 }
 
@@ -426,7 +425,7 @@ void PatchWindowController::restoreUIBoxForSubpatch(PatchWindowController* contr
     // XPD-TODO
     // uiObject->setServerObject(controller->serverCanvasAsObject());
 
-    const Object* o = controller->serverCanvas()->objects().findObject(controller->serverCanvasAsObjectId());
+    const Object* o = serverCanvas()->objects().findObject(controller->serverCanvasAsObjectId());
     if (!o)
         ApplicationController::post("error: subpatch box error!");
     else
@@ -1080,11 +1079,11 @@ void PatchWindowController::slotSendMessageToObject(ObjectId object, QString msg
 
     // XPD-TODO
     /*
-    if (dest != "")
+
         ServerInstance::sendMessage(dest.toStdString(), msg.toStdString());
         */
-
-    // XPD-TODO
+    if (dest != "")
+        appController()->mainServerInstance()->sendMessage(dest.toStdString(), msg.toStdString());
 
     PdObject* objectP = const_cast<PdObject*>(reinterpret_cast<const PdObject*>(serverCanvas()->objects().findObject(object)));
 
