@@ -24,6 +24,8 @@
 
 #include <QMenu>
 
+#include "interactiveview.h"
+
 //class QMenu;
 
 using namespace std;
@@ -33,7 +35,7 @@ namespace tilde {
 ////
 /// \brief Canvas View - used by Patch window controller
 ///
-class CanvasView : public QGraphicsView {
+class CanvasView : public InteractiveView {
 private:
     UIObject* _connectionStartObject;
     UIObject* _connectionStartOutlet;

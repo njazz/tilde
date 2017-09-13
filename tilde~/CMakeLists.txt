@@ -60,7 +60,8 @@ set (SOURCES
     	graphicobjects/LinkLine.cpp 
     	graphicobjects/UINewPatchcord.cpp 
     	graphicobjects/UIPatchcord.cpp 
-    	graphicobjects/CanvasView.cpp 
+        graphicobjects/CanvasView.cpp
+        graphicobjects/interactiveview.cpp
 #### UI widgets
     	widgets/UIArrayEditor.cpp 
     	widgets/ObjectMaker.cpp 

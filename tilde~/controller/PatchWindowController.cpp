@@ -1077,11 +1077,6 @@ void PatchWindowController::slotSendMessageToObject(ObjectId object, QString msg
     UIObject* obj = (UIObject*)QObject::sender();
     QString dest = obj->properties()->get("SendSymbol")->asQString();
 
-    // XPD-TODO
-    /*
-
-        ServerInstance::sendMessage(dest.toStdString(), msg.toStdString());
-        */
     if (dest != "")
         appController()->mainServerInstance()->sendMessage(dest.toStdString(), msg.toStdString());
 

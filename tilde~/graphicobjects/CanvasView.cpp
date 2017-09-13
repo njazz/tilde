@@ -20,7 +20,7 @@ namespace tilde {
 static const QSize EmptyCanvasSize = QSize(300, 200);
 
 CanvasView::CanvasView(QGraphicsView* parent)
-    : QGraphicsView(parent)
+    : InteractiveView()
 {
 
     //test
@@ -387,6 +387,7 @@ void CanvasView::resizeToObjects()
 {
     scene()->setSceneRect(scene()->itemsBoundingRect());
     _grid->setSize(scene()->itemsBoundingRect().size().toSize());
+    _grid->move(0,0);
 }
 
 // --------------------------------
@@ -569,16 +570,40 @@ void CanvasView::setWindowSize(QSize wsize)
 
 void CanvasView::setZoom(float zoomDirection)
 {
-    if (zoomDirection)
-        _zoom *= pow(1.1,zoomDirection);
+    if (zoomDirection>0)
+        zoomIn();
     else
-        _zoom = 1;
+        zoomOut();
+
+//        _zoom *= pow(1.1,zoomDirection);
+//    else
+//        _zoom = 1;
 
     qDebug() << "zoom" << zoomDirection << _zoom;
 
-    QTransform matrix = *_transformMatrix;
-    matrix.scale(_zoom, _zoom);
-    setTransform(matrix, false);
+    //QTransform matrix = *_transformMatrix;
+
+    //matrix.scale(_zoom, _zoom);
+
+//    setTransformationAnchor(AnchorUnderMouse);
+//    setResizeAnchor(AnchorUnderMouse);
+
+//    //setTransform(matrix, false);
+
+//    scale (_zoom,_zoom);
+
+    //zoom(_zoom);
+
+    float sc = (getScale()<1) ?1:getScale();
+
+    QSize gS = scene()->itemsBoundingRect().size().toSize();
+    //gS.setWidth(gS.width()*sc);
+    //gS.setHeight(gS.height()*sc);
+
+    //scene()->setSceneRect(scene()->itemsBoundingRect());
+
+    _grid->setSize(gS);
+    _grid->move(0,0);
 
     viewport()->update();
 
