@@ -266,6 +266,7 @@ void UIBox::sync()
         ApplicationController::post("pd object: "+QString::number((long)serverObjectPtr()->pdObject()));
         ApplicationController::post("pd canvas: "+QString::number((long)serverObjectPtr()->asPdCanvas()));
 
+        // !!
         std::shared_ptr<PdCanvas> s_p(serverObjectPtr()->asPdCanvas());
         CanvasPtr ptr_c = static_pointer_cast<Canvas,PdCanvas>(s_p);
         if (!ptr_c)

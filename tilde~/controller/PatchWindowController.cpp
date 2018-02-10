@@ -279,7 +279,6 @@ UIObject* PatchWindowController::createObjectWithoutUndo(string name, QPoint pos
     }
 
     //qDebug() << "server object ok";
-
     //applicationController::post("create: " + name);
 
     UIObject* uiObject = ObjectLoader::inst().createUIObject(name.c_str());

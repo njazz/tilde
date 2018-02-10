@@ -27,7 +27,7 @@ extern "C" void setup() //0x2e //TILDE_UI_
     char* buildNr = (char*)malloc(8);
 
     sprintf(buildNr, "loading tilde~ UI library build %i ...", TILDE_BUILD_NUMBER);
-    post(buildNr);
+    post("%s", buildNr);
 
     // cammot free here?
     // free(buildNr);

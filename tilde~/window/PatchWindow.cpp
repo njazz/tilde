@@ -477,7 +477,7 @@ void PatchWindow::objectMakerDone()
 
             _controller->deleteObject(obj);
         } else {
-            //UIObject* new_obj =
+
                     _controller->createObject(obj_name.toStdString(), _canvasView->newObjectPos());
         }
 

@@ -611,6 +611,8 @@ PdObject* UIObject::serverObjectPtr()
     return ret;
 }
 
+
+
 //---------------------------------
 
 void UIObject::hideSizeBox()
