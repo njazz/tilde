@@ -31,7 +31,7 @@ using namespace std;
 
 namespace tilde {
 
-ProcessPtr ApplicationController::_theServerInstance;
+PdLocalProcess* ApplicationController::_mainServerProcess;
 
 ApplicationController::ApplicationController()
 {
@@ -44,9 +44,9 @@ ApplicationController::ApplicationController()
     ServerSettings settings("PdServer");
     _localServer = new PdLocalServer(settings);
 
-    _localServer->createProcess();
-    _theServerInstance = (mainServerInstance());
-    mainServerInstance()->setLogLevel(LOG_DUMP);
+    _localServer->PdLocalServer::createProcess();
+    _mainServerProcess = (mainServerProcess());
+    _mainServerProcess->setLogLevel(LOG_DUMP);
 
     ObjectLoader::inst().loadObjects();
 
@@ -73,11 +73,17 @@ ApplicationController::ApplicationController()
     _pdWindow->move(0, 100);
     _pdWindow->show();
 
-    _consoleObserver = shared_ptr<PdWindowConsoleObserver>(new PdWindowConsoleObserver);
+    ConsoleObserver* co = new ConsoleObserver();
+    _consoleObserver = ConsoleObserverPtr(co);
 
-    auto ptr = mainServerInstance();
-    ptr->registerConsoleObserver(_consoleObserver);
-    _consoleObserver->setWindow(_pdWindow);
+    {
+
+        // todo: crashes now
+        //_mainServerProcess->registerConsoleObserver(_consoleObserver);
+        //PdConsoleObserver* co = _consoleObserver.get();
+        //co->setWindow(_pdWindow);
+    }
+
 
     ApplicationController::post("Server started");
 
@@ -95,6 +101,8 @@ ApplicationController::ApplicationController()
 
     //we still need that!
     Preferences::inst().create("Patches", "ExtraFolders", "0.1", docFolder + "/tilde~/Patches");
+
+    qDebug() << "dbg";
 
     //    Preferences::inst().create("Classes", "ExtraFolders", "0.1", docFolder + "/tilde~/Classes");
     //    Preferences::inst().create("Libraries", "ExtraFolders", "0.1", docFolder + "/tilde~/Libraries");
@@ -144,6 +152,9 @@ ApplicationController::ApplicationController()
 
     loadAllLibraries();
 
+    qDebug() <<"dbg";
+
+
     qDebug() << " *** paths *** ";
     qDebug() << _filePaths->librariesDirList();
     qDebug() << _filePaths->librariesFileList();
@@ -155,7 +166,7 @@ ApplicationController::ApplicationController()
 
     // external paths
     for (int i = 0; i < paths.size(); i++) {
-        auto p = static_pointer_cast<PdLocalProcess>(mainServerInstance());
+        auto p = (mainServerProcess()); //static_pointer_cast<PdLocalProcess>
         p->addSearchPath(paths.at(i).toStdString());
     }
 
@@ -163,7 +174,7 @@ ApplicationController::ApplicationController()
 
     // help paths
     for (int i = 0; i < paths2.size(); i++) {
-        mainServerInstance()->addSearchPath(paths2.at(i).toStdString());
+        mainServerProcess()->addSearchPath(paths2.at(i).toStdString());
     }
 
     Preferences::inst().create("Paths", "Folders", "0.1", paths + paths2);
@@ -186,13 +197,16 @@ ApplicationController::ApplicationController()
     Preferences::inst().readFromTextFile();
 };
 
-ProcessPtr ApplicationController::mainServerInstance()
+PdLocalProcess* ApplicationController::mainServerProcess()
 {
-    assert(_localServer);
+    //assert(_localServer);
+    if (!_localServer) return 0;
 
-    if (!_theServerInstance)
-        _theServerInstance = (_localServer->processList().at(0));
-    return _theServerInstance;
+    if (_localServer->processList().size()<1) return 0;
+
+    if (!_mainServerProcess)
+        _mainServerProcess = (PdLocalProcess*)(_localServer->processList().at(0)).get();
+    return _mainServerProcess;
 }
 
 void ApplicationController::newPatchWindowController()
@@ -266,7 +280,7 @@ void ApplicationController::audioSettingsWindow()
 void ApplicationController::dspOn()
 {
     qDebug() << "dsp on";
-    mainServerInstance()->dspOn();
+    mainServerProcess()->dspOn();
 
     //todo DSP observer
 }
@@ -274,7 +288,7 @@ void ApplicationController::dspOn()
 void ApplicationController::dspOff()
 {
 
-    mainServerInstance()->dspOff();
+    mainServerProcess()->dspOff();
 }
 
 void ApplicationController::createRecentMenu()
@@ -330,26 +344,38 @@ ObjectId ApplicationController::slotCreateObject(CanvasPtr canvas, string name)
 
 void ApplicationController::post(QString text)
 {
-    if (!_theServerInstance)
+    qDebug() << "post: " << text;
+    return;
+
+    if (!_mainServerProcess)
         return;
 
-    shared_ptr<PdLocalProcess> ptr = static_pointer_cast<PdLocalProcess>(_theServerInstance);
-    ptr->PdLocalProcess::post(text.toStdString()+"\n");
+    //shared_ptr<PdLocalProcess> ptr = static_pointer_cast<PdLocalProcess>(_theServerInstance);
+    _mainServerProcess->post(text.toStdString()+"\n");
+    //ptr->PdLocalProcess::post(text.toStdString()+"\n");
 }
 
 void ApplicationController::dspSwitch(bool v)
 {
-    if (!_theServerInstance)
+    if (!_mainServerProcess)
         return;
 
-    shared_ptr<PdLocalProcess> ptr = static_pointer_cast<PdLocalProcess>(_theServerInstance);
+    auto ptr = (_mainServerProcess); //static_pointer_cast<PdLocalProcess>
     ptr->PdLocalProcess::dspSwitch(v);
 }
 
 void ApplicationController::loadAllLibraries()
 {
-    shared_ptr<PdLocalProcess> ptr = static_pointer_cast<PdLocalProcess, AbstractServerProcess>(mainServerInstance());
-    ptr->setLogLevel(LOG_DUMP);
+    // ?
+    //shared_ptr<PdLocalProcess> ptr = static_pointer_cast<PdLocalProcess, AbstractServerProcess>(mainServerInstance());
+
+
+
+    if (!_mainServerProcess) return;
+
+    _mainServerProcess->setLogLevel(LOG_DUMP);
+
+    return;
 
     QStringList libs = _filePaths->librariesFileList();
 
@@ -361,7 +387,7 @@ void ApplicationController::loadAllLibraries()
 
         bool b;
         try{
-         b = mainServerInstance()->loadLibrary(file.toStdString());
+         b = _mainServerProcess->loadLibrary(file.toStdString());
          if (!b)
              ApplicationController::post("...failed!");
         }
@@ -373,6 +399,6 @@ void ApplicationController::loadAllLibraries()
 
     }
 
-    mainServerInstance()->setLogLevel(LOG_ERROR);
+    _mainServerProcess->setLogLevel(LOG_ERROR);
 }
 }

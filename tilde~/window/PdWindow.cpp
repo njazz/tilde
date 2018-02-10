@@ -152,7 +152,7 @@ PdWindow::PdWindow()
 
 void PdWindow::logBoxChange(int index)
 {
-    appController()->mainServerInstance()->setLogLevel((xpd::LogLevel)index);
+    appController()->mainServerProcess()->setLogLevel((xpd::LogLevel)index);
 }
 
 void PdWindow::clearConsoleSlot()
@@ -172,7 +172,7 @@ void PdWindow::sendMessageChanged()
 
     QStringList list = input.split(" ");
     if (list.size() < 2) {
-        appController()->mainServerInstance()->error("nothing to send");
+        appController()->mainServerProcess()->error("nothing to send");
         return;
     }
 
@@ -181,7 +181,7 @@ void PdWindow::sendMessageChanged()
     string text = list.join(" ").toStdString();
 
     if (appController())
-        appController()->mainServerInstance()->sendMessage(object, text);
+        appController()->mainServerProcess()->sendMessage(object, text);
 }
 
 void PdWindow::editSendMessage(QString)
@@ -191,7 +191,8 @@ void PdWindow::editSendMessage(QString)
 
     string s; //
 
-    shared_ptr<PdLocalProcess> ptr = static_pointer_cast<PdLocalProcess>(appController()->mainServerInstance());
+    //shared_ptr<PdLocalProcess> ptr = static_pointer_cast<PdLocalProcess>(appController()->mainServerProcess());
+    PdLocalProcess* ptr = appController()->mainServerProcess();
     if (ptr) {
         s = ptr->getBindObjectList();
 

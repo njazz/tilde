@@ -25,7 +25,6 @@ class PythonQtScriptingConsole;
 #include <QApplication>
 
 using namespace xpd;
-
 using namespace std;
 
 namespace tilde {
@@ -52,7 +51,7 @@ private:
     PdWindow* _pdWindow;
     PythonQtScriptingConsole* _pythonConsole;
 
-    PdWindowConsoleObserverPtr _consoleObserver;
+    ConsoleObserverPtr _consoleObserver;
 
     int _newFilenameCounter;
 
@@ -63,7 +62,7 @@ private:
 
     void loadAllLibraries();
 
-    static ProcessPtr _theServerInstance;
+    static PdLocalProcess* _mainServerProcess;
 
 #ifdef WITH_PYTHON
     ScriptRunner* _scriptRunner;
@@ -72,7 +71,7 @@ private:
 public:
     ApplicationController();
 
-    ProcessPtr mainServerInstance();
+    PdLocalProcess* mainServerProcess();
 
     Observer* controllerObserver();
 

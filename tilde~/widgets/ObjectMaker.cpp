@@ -63,9 +63,11 @@ void ObjectMaker::setParentController(PatchWindowController* controller)
 
     if (parentController() && false)
         if (parentController()->appController())
-            if (parentController()->appController()->mainServerInstance()) {
+            if (parentController()->appController()->mainServerProcess()) {
 
-                shared_ptr<PdLocalProcess> ptr = static_pointer_cast<PdLocalProcess>(parentController()->appController()->mainServerInstance());
+                //shared_ptr<PdLocalProcess> ptr = static_pointer_cast<PdLocalProcess>(parentController()->appController()->mainServerProcess());
+
+                PdLocalProcess* ptr = parentController()->appController()->mainServerProcess();
 
                 ClassList cList = ptr->loadedClasses();
 

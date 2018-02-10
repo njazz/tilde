@@ -16,6 +16,7 @@
 #include "../../xpd/src/connection.h"
 
 #include "../../xpd/src/consoleobserver.h"
+#include "../../xpd/src/pd_consoleobserver.h"
 
 #include "../../xpd/src/pd_localprocess.h"
 #include "../../xpd/src/pd_localserver.h"

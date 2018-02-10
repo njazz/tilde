@@ -19,7 +19,6 @@ static void qtpd_update(UIpdArray* x)
 UIpdArray::UIpdArray(const PdArgs& a)
     : BaseUIObject(a)
 {
-    //createOutlet();
 }
 
 extern "C" void setup_ui0x2earray()

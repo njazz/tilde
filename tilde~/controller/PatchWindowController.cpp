@@ -46,10 +46,10 @@ PatchWindowController::PatchWindowController(ApplicationController* appControlle
     _appController = appController;
 
     //_serverInstance = appController->mainServerInstance();
-    appController->mainServerInstance()->registerObserver(_observer);
+    appController->mainServerProcess()->registerObserver(_observer);
 
     _canvasData = new CanvasData();
-    _serverCanvas = appController->mainServerInstance()->createCanvas();
+    _serverCanvas = appController->mainServerProcess()->createCanvas();
 
     //_canvasData->setServerCanvas(_serverCanvas);
 
@@ -81,7 +81,7 @@ PatchWindowController::PatchWindowController(ApplicationController* appControlle
 
     _appController = appController;
 
-    appController->mainServerInstance()->registerObserver(_observer);
+    appController->mainServerProcess()->registerObserver(_observer);
 
     _canvasData = new CanvasData();
     _serverCanvas = canvas;
@@ -1077,7 +1077,7 @@ void PatchWindowController::slotSendMessageToObject(ObjectId object, QString msg
     QString dest = obj->properties()->get("SendSymbol")->asQString();
 
     if (dest != "")
-        appController()->mainServerInstance()->sendMessage(dest.toStdString(), msg.toStdString());
+        appController()->mainServerProcess()->sendMessage(dest.toStdString(), msg.toStdString());
 
     PdObject* objectP = const_cast<PdObject*>(reinterpret_cast<const PdObject*>(serverCanvas()->objects().findObject(object)));
 
