@@ -62,7 +62,7 @@ private:
 
     void loadAllLibraries();
 
-    static PdLocalProcess* _mainServerProcess;
+    static ProcessPtr _mainServerProcess;
 
 #ifdef WITH_PYTHON
     ScriptRunner* _scriptRunner;
@@ -71,7 +71,7 @@ private:
 public:
     ApplicationController();
 
-    PdLocalProcess* mainServerProcess();
+    ProcessPtr mainServerProcess();
 
     Observer* controllerObserver();
 

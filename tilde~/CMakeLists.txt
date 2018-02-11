@@ -23,7 +23,7 @@ find_package(Qt5Gui REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5Svg REQUIRED)
 
-add_definitions(-DWITH_PYTHON)
+#add_definitions(-DWITH_PYTHON)
 add_definitions(-DQTCOLORPICKER_LIBRARY)
 
 set (SOURCES
@@ -116,7 +116,7 @@ set (SOURCES
     	datamodels/recentfiles.cpp 
     	datamodels/filepaths.cpp 
     	datamodels/fileparserconverter.cpp 
-    	datamodels/scriptrunner.cpp
+
 )
 
 set (PYTHON_SOURCES
@@ -127,6 +127,8 @@ set (PYTHON_SOURCES
     	widgets/UIScriptTextEdit.cpp 
     	widgets/UIScriptEditor.cpp 
     	widgets/UIScriptCommon.cpp 
+
+        datamodels/scriptrunner.cpp
 )
 
 set (PYTHON_HEADERS
@@ -340,7 +342,9 @@ set_source_files_properties(${myApp_ICON} PROPERTIES
 
 ##############
 
-add_executable(tilde~ ${SOURCES} ${RES_SOURCES} ${UI_HEADERS} ${PYTHON_SOURCES} ${PYTHON_HEADERS} ${RESOURCES} ${myApp_ICON})
+add_executable(tilde~ ${SOURCES} ${RES_SOURCES} ${UI_HEADERS}
+#    ${PYTHON_SOURCES} ${PYTHON_HEADERS}
+    ${RESOURCES} ${myApp_ICON})
 
 add_dependencies(tilde~ buildNumber)
 

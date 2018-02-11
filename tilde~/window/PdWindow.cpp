@@ -192,9 +192,10 @@ void PdWindow::editSendMessage(QString)
     string s; //
 
     //shared_ptr<PdLocalProcess> ptr = static_pointer_cast<PdLocalProcess>(appController()->mainServerProcess());
-    PdLocalProcess* ptr = appController()->mainServerProcess();
+    auto ptr = appController()->mainServerProcess();
     if (ptr) {
-        s = ptr->getBindObjectList();
+        // TODO
+        //s = ptr->getBindObjectList();
 
         QStringList sL = QString(s.c_str()).split(",");
 
