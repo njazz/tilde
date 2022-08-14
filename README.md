@@ -3,6 +3,8 @@
 # tilde~
 New integrated GUI for Puredata based on Qt.  
 
+archived, to be replaced with third JUCE-based version
+
 ![screenshot](screenshot.jpg?raw=true "screenshot")
   
 Early prototype.
